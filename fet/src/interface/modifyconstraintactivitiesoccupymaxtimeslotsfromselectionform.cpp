@@ -47,15 +47,15 @@ ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::ModifyConstraintA
 	allActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	selectedActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
-	connect(selectedTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
-	connect(setAllUnselectedPushButton, SIGNAL(clicked()), this, SLOT(setAllUnselected()));
-	connect(setAllSelectedPushButton, SIGNAL(clicked()), this, SLOT(setAllSelected()));
-	connect(allActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addActivity()));
-	connect(addAllActivitiesPushButton, SIGNAL(clicked()), this, SLOT(addAllActivities()));
-	connect(selectedActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeActivity()));
-	connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::cancel);
+	connect(selectedTimesTable, &QTableWidget::itemClicked, this, &ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::itemClicked);
+	connect(setAllUnselectedPushButton, &QPushButton::clicked, this, &ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::setAllUnselected);
+	connect(setAllSelectedPushButton, &QPushButton::clicked, this, &ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::setAllSelected);
+	connect(allActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::addActivity);
+	connect(addAllActivitiesPushButton, &QPushButton::clicked, this, &ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::addAllActivities);
+	connect(selectedActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::removeActivity);
+	connect(clearPushButton, &QPushButton::clicked, this, &ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::clear);
 	
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -117,8 +117,8 @@ ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::ModifyConstraintA
 
 	selectedTimesTable->resizeRowsToContents();
 
-	connect(selectedTimesTable->horizontalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(horizontalHeaderClicked(int)));
-	connect(selectedTimesTable->verticalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(verticalHeaderClicked(int)));
+	connect(selectedTimesTable->horizontalHeader(), &QHeaderView::sectionClicked, this, &ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::horizontalHeaderClicked);
+	connect(selectedTimesTable->verticalHeader(), &QHeaderView::sectionClicked, this, &ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::verticalHeaderClicked);
 
 	selectedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 	
@@ -170,10 +170,10 @@ ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::ModifyConstraintA
 
 	filterChanged();
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::filterChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::filterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::filterChanged);
 }
 
 ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::~ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm()

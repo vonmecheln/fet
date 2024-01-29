@@ -38,11 +38,11 @@ ModifyConstraintTeacherNotAvailableTimesForm::ModifyConstraintTeacherNotAvailabl
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
-	connect(notAllowedTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
-	connect(setAllAvailablePushButton, SIGNAL(clicked()), this, SLOT(setAllAvailable()));
-	connect(setAllNotAvailablePushButton, SIGNAL(clicked()), this, SLOT(setAllNotAvailable()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintTeacherNotAvailableTimesForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintTeacherNotAvailableTimesForm::cancel);
+	connect(notAllowedTimesTable, &QTableWidget::itemClicked, this, &ModifyConstraintTeacherNotAvailableTimesForm::itemClicked);
+	connect(setAllAvailablePushButton, &QPushButton::clicked, this, &ModifyConstraintTeacherNotAvailableTimesForm::setAllAvailable);
+	connect(setAllNotAvailablePushButton, &QPushButton::clicked, this, &ModifyConstraintTeacherNotAvailableTimesForm::setAllNotAvailable);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -103,8 +103,8 @@ ModifyConstraintTeacherNotAvailableTimesForm::ModifyConstraintTeacherNotAvailabl
 		
 	notAllowedTimesTable->resizeRowsToContents();
 
-	connect(notAllowedTimesTable->horizontalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(horizontalHeaderClicked(int)));
-	connect(notAllowedTimesTable->verticalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(verticalHeaderClicked(int)));
+	connect(notAllowedTimesTable->horizontalHeader(), &QHeaderView::sectionClicked, this, &ModifyConstraintTeacherNotAvailableTimesForm::horizontalHeaderClicked);
+	connect(notAllowedTimesTable->verticalHeader(), &QHeaderView::sectionClicked, this, &ModifyConstraintTeacherNotAvailableTimesForm::verticalHeaderClicked);
 	
 	notAllowedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 	

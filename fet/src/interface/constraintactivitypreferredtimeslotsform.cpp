@@ -37,12 +37,12 @@ ConstraintActivityPreferredTimeSlotsForm::ConstraintActivityPreferredTimeSlotsFo
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintActivityPreferredTimeSlotsForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintActivityPreferredTimeSlotsForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintActivityPreferredTimeSlotsForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintActivityPreferredTimeSlotsForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintActivityPreferredTimeSlotsForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintActivityPreferredTimeSlotsForm::modifyConstraint);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -84,10 +84,10 @@ ConstraintActivityPreferredTimeSlotsForm::ConstraintActivityPreferredTimeSlotsFo
 
 	this->filterChanged();
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintActivityPreferredTimeSlotsForm::filterChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintActivityPreferredTimeSlotsForm::filterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintActivityPreferredTimeSlotsForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintActivityPreferredTimeSlotsForm::filterChanged);
 }
 
 ConstraintActivityPreferredTimeSlotsForm::~ConstraintActivityPreferredTimeSlotsForm()

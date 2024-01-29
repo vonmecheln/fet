@@ -28,12 +28,12 @@ AddConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHourForm::AddConstraint
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHourForm::addCurrentConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHourForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
-		
+	
 	maxBeginningsSpinBox->setMinimum(0);
 	maxBeginningsSpinBox->setMaximum(gt.rules.nDaysPerWeek/2);
 	maxBeginningsSpinBox->setValue(0);

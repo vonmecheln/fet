@@ -25,8 +25,8 @@ ModifyConstraintStudentsSetMaxRoomChangesPerDayForm::ModifyConstraintStudentsSet
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintStudentsSetMaxRoomChangesPerDayForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintStudentsSetMaxRoomChangesPerDayForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

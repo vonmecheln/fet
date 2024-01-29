@@ -133,11 +133,11 @@ AdvancedFilterForm::AdvancedFilterForm(QWidget* parent, const QString& title, bo
 	layout->addStretch();
 	layout->addLayout(buttonsLayout);
 	
-	connect(resetPushButton, SIGNAL(clicked()), this, SLOT(reset()));
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(accept()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(reject()));
-	connect(morePushButton, SIGNAL(clicked()), this, SLOT(more()));
-	connect(fewerPushButton, SIGNAL(clicked()), this, SLOT(fewer()));
+	connect(resetPushButton, &QPushButton::clicked, this, &AdvancedFilterForm::reset);
+	connect(okPushButton, &QPushButton::clicked, this, &AdvancedFilterForm::accept);
+	connect(cancelPushButton, &QPushButton::clicked, this, &AdvancedFilterForm::reject);
+	connect(morePushButton, &QPushButton::clicked, this, &AdvancedFilterForm::more);
+	connect(fewerPushButton, &QPushButton::clicked, this, &AdvancedFilterForm::fewer);
 	
 	int w=this->sizeHint().width();
 	int h=this->sizeHint().height();

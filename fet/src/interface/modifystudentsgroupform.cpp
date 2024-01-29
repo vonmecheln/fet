@@ -25,8 +25,8 @@ ModifyStudentsGroupForm::ModifyStudentsGroupForm(QWidget* parent, const QString&
 	
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyStudentsGroupForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyStudentsGroupForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

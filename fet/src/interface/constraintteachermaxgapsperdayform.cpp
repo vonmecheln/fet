@@ -37,13 +37,13 @@ ConstraintTeacherMaxGapsPerDayForm::ConstraintTeacherMaxGapsPerDayForm(QWidget* 
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintTeacherMaxGapsPerDayForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxGapsPerDayForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxGapsPerDayForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxGapsPerDayForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxGapsPerDayForm::modifyConstraint);
 
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintTeacherMaxGapsPerDayForm::modifyConstraint);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -59,7 +59,7 @@ ConstraintTeacherMaxGapsPerDayForm::ConstraintTeacherMaxGapsPerDayForm(QWidget* 
 
 	this->filterChanged();
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintTeacherMaxGapsPerDayForm::filterChanged);
 }
 
 ConstraintTeacherMaxGapsPerDayForm::~ConstraintTeacherMaxGapsPerDayForm()

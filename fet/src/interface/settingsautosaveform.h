@@ -28,7 +28,7 @@ public:
 	~SettingsAutosaveForm();
 
 public slots:
-	void on_enableAutosaveCheckBox_toggled();
+	void enableAutosaveCheckBox_toggled();
 
 	void ok();
 	void cancel();

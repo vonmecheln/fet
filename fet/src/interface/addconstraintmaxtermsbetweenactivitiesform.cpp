@@ -36,12 +36,12 @@ AddConstraintMaxTermsBetweenActivitiesForm::AddConstraintMaxTermsBetweenActiviti
 	allActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	selectedActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(allActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addActivity()));
-	connect(addAllActivitiesPushButton, SIGNAL(clicked()), this, SLOT(addAllActivities()));
-	connect(selectedActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeActivity()));
-	connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintMaxTermsBetweenActivitiesForm::close);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintMaxTermsBetweenActivitiesForm::addConstraint);
+	connect(allActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &AddConstraintMaxTermsBetweenActivitiesForm::addActivity);
+	connect(addAllActivitiesPushButton, &QPushButton::clicked, this, &AddConstraintMaxTermsBetweenActivitiesForm::addAllActivities);
+	connect(selectedActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &AddConstraintMaxTermsBetweenActivitiesForm::removeActivity);
+	connect(clearPushButton, &QPushButton::clicked, this, &AddConstraintMaxTermsBetweenActivitiesForm::clear);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -88,10 +88,10 @@ AddConstraintMaxTermsBetweenActivitiesForm::AddConstraintMaxTermsBetweenActiviti
 
 	filterChanged();
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintMaxTermsBetweenActivitiesForm::filterChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintMaxTermsBetweenActivitiesForm::filterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintMaxTermsBetweenActivitiesForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintMaxTermsBetweenActivitiesForm::filterChanged);
 }
 
 AddConstraintMaxTermsBetweenActivitiesForm::~AddConstraintMaxTermsBetweenActivitiesForm()

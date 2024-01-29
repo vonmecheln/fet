@@ -25,8 +25,8 @@ ModifyConstraintTeacherMaxBuildingChangesPerDayForm::ModifyConstraintTeacherMaxB
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintTeacherMaxBuildingChangesPerDayForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintTeacherMaxBuildingChangesPerDayForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

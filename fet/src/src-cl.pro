@@ -1,3 +1,13 @@
+lessThan(QT_MAJOR_VERSION, 5) {
+	error(Qt version $$QT_VERSION is not supported. The minimum supported Qt version is 5.7.0.)
+}
+
+equals(QT_MAJOR_VERSION, 5) {
+	lessThan(QT_MINOR_VERSION, 7){
+		error(Qt version $$QT_VERSION is not supported. The minimum supported Qt version is 5.7.0.)
+	}
+}
+
 SOURCES += \
 	engine/timetableexport.cpp \
 	engine/activity.cpp \
@@ -66,20 +76,13 @@ greaterThan(QT_MAJOR_VERSION, 5) {
 	CONFIG += cmdline
 }
 else {
-	greaterThan(QT_MAJOR_VERSION, 4) {
-		greaterThan(QT_MINOR_VERSION, 12) {
-			CONFIG += cmdline
-		}
-		else {
-			equals(QT_MINOR_VERSION, 12) {
-				greaterThan(QT_PATCH_VERSION, 1) {
-					CONFIG += cmdline
-				}
-				else {
-					win32 {
-						CONFIG += console
-					}
-				}
+	greaterThan(QT_MINOR_VERSION, 12) {
+		CONFIG += cmdline
+	}
+	else {
+		equals(QT_MINOR_VERSION, 12) {
+			greaterThan(QT_PATCH_VERSION, 1) {
+				CONFIG += cmdline
 			}
 			else {
 				win32 {
@@ -87,10 +90,10 @@ else {
 				}
 			}
 		}
-	}
-	else {
-		win32 {
-			CONFIG += console
+		else {
+			win32 {
+				CONFIG += console
+			}
 		}
 	}
 }

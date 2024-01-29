@@ -37,12 +37,12 @@ ConstraintStudentsSetMaxHoursContinuouslyForm::ConstraintStudentsSetMaxHoursCont
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintStudentsSetMaxHoursContinuouslyForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxHoursContinuouslyForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxHoursContinuouslyForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxHoursContinuouslyForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxHoursContinuouslyForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintStudentsSetMaxHoursContinuouslyForm::modifyConstraint);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -54,7 +54,7 @@ ConstraintStudentsSetMaxHoursContinuouslyForm::ConstraintStudentsSetMaxHoursCont
 
 	this->filterChanged();
 
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintStudentsSetMaxHoursContinuouslyForm::filterChanged);
 }
 
 ConstraintStudentsSetMaxHoursContinuouslyForm::~ConstraintStudentsSetMaxHoursContinuouslyForm()

@@ -29,13 +29,13 @@ ModifyConstraintActivityPreferredRoomForm::ModifyConstraintActivityPreferredRoom
 
 	okPushButton->setDefault(true);
 
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintActivityPreferredRoomForm::cancel);
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintActivityPreferredRoomForm::ok);
+	connect(helpPushButton, &QPushButton::clicked, this, &ModifyConstraintActivityPreferredRoomForm::help);
 
-	connect(selectedRealRoomsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeRealRoom()));
-	connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clearRealRooms()));
-	connect(allRealRoomsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addRealRoom()));
+	connect(selectedRealRoomsListWidget, &QListWidget::itemDoubleClicked, this, &ModifyConstraintActivityPreferredRoomForm::removeRealRoom);
+	connect(clearPushButton, &QPushButton::clicked, this, &ModifyConstraintActivityPreferredRoomForm::clearRealRooms);
+	connect(allRealRoomsListWidget, &QListWidget::itemDoubleClicked, this, &ModifyConstraintActivityPreferredRoomForm::addRealRoom);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

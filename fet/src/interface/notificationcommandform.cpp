@@ -44,18 +44,18 @@ NotificationCommandForm::NotificationCommandForm(QWidget* parent): QDialog(paren
 	
 	okPushButton->setDefault(true);
 
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(cancelPushButton, &QPushButton::clicked, this, &NotificationCommandForm::cancel);
+	connect(okPushButton, &QPushButton::clicked, this, &NotificationCommandForm::ok);
 
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(helpPushButton, &QPushButton::clicked, this, &NotificationCommandForm::help);
 	
 	externalCommandCheckBox->setChecked(ENABLE_COMMAND_AT_END_OF_GENERATION);
 	//detachedCheckBox->setChecked(DETACHED_NOTIFICATION);
 
-	connect(externalCommandCheckBox, SIGNAL(toggled(bool)), this, SLOT(externalCommandCheckBoxToggled()));
-	//connect(detachedCheckBox, SIGNAL(toggled(bool)), this, SLOT(detachedCheckBoxToggled()));
+	connect(externalCommandCheckBox, &QCheckBox::toggled, this, &NotificationCommandForm::externalCommandCheckBoxToggled);
+	//connect(detachedCheckBox, SIG NAL(toggled(bool)), this, SL OT(detachedCheckBoxToggled()));
 
-	connect(browsePushButton, SIGNAL(clicked()), this, SLOT(browse()));
+	connect(browsePushButton, &QPushButton::clicked, this, &NotificationCommandForm::browse);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

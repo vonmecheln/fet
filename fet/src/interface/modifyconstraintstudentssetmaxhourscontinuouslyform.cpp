@@ -26,8 +26,8 @@ ModifyConstraintStudentsSetMaxHoursContinuouslyForm::ModifyConstraintStudentsSet
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintStudentsSetMaxHoursContinuouslyForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintStudentsSetMaxHoursContinuouslyForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

@@ -37,12 +37,12 @@ ConstraintTeacherRoomNotAvailableTimesForm::ConstraintTeacherRoomNotAvailableTim
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintTeacherRoomNotAvailableTimesForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherRoomNotAvailableTimesForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintTeacherRoomNotAvailableTimesForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherRoomNotAvailableTimesForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherRoomNotAvailableTimesForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintTeacherRoomNotAvailableTimesForm::modifyConstraint);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -67,8 +67,8 @@ ConstraintTeacherRoomNotAvailableTimesForm::ConstraintTeacherRoomNotAvailableTim
 
 	this->filterChanged();
 
-	connect(roomsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(roomsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintTeacherRoomNotAvailableTimesForm::filterChanged);
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintTeacherRoomNotAvailableTimesForm::filterChanged);
 }
 
 ConstraintTeacherRoomNotAvailableTimesForm::~ConstraintTeacherRoomNotAvailableTimesForm()

@@ -50,7 +50,7 @@ public slots:
 	void setAllSlotsAllowed();
 	void setAllSlotsNotAllowed();
 
-	void on_durationCheckBox_toggled();
+	void durationCheckBox_toggled();
 };
 
 #endif

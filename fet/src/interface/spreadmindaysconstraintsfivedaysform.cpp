@@ -49,12 +49,21 @@ SpreadMinDaysConstraintsFiveDaysForm::SpreadMinDaysConstraintsFiveDaysForm(QWidg
 	
 	okPushButton->setDefault(true);
 	
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(wasAccepted()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(wasCanceled()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(okPushButton, &QPushButton::clicked, this, &SpreadMinDaysConstraintsFiveDaysForm::wasAccepted);
+	connect(cancelPushButton, &QPushButton::clicked, this, &SpreadMinDaysConstraintsFiveDaysForm::wasCanceled);
+	connect(helpPushButton, &QPushButton::clicked, this, &SpreadMinDaysConstraintsFiveDaysForm::help);
 	
 	spread2CheckBox->setChecked(false);
 	spread3CheckBox->setChecked(false);
+	spread4OrMoreCheckBox->setChecked(true);
+
+	connect(spread2CheckBox, &QCheckBox::toggled, this, &SpreadMinDaysConstraintsFiveDaysForm::spread2CheckBox_toggled);
+	connect(spread3CheckBox, &QCheckBox::toggled, this, &SpreadMinDaysConstraintsFiveDaysForm::spread3CheckBox_toggled);
+	connect(spread4OrMoreCheckBox, &QCheckBox::toggled, this, &SpreadMinDaysConstraintsFiveDaysForm::spread4OrMoreCheckBox_toggled);
+	
+	spread2CheckBox_toggled();
+	spread3CheckBox_toggled();
+	spread4OrMoreCheckBox_toggled();
 }
 
 SpreadMinDaysConstraintsFiveDaysForm::~SpreadMinDaysConstraintsFiveDaysForm()
@@ -367,8 +376,8 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 	hl->addWidget(acceptPB);
 	hl->addWidget(cancelPB);
 	
-	QObject::connect(acceptPB, SIGNAL(clicked()), &dialog, SLOT(accept()));
-	QObject::connect(cancelPB, SIGNAL(clicked()), &dialog, SLOT(reject()));
+	connect(acceptPB, &QPushButton::clicked, &dialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &dialog, &QDialog::reject);
 	
 	QPlainTextEdit* removedText=new QPlainTextEdit();
 	QPlainTextEdit* addedText=new QPlainTextEdit();
@@ -517,20 +526,20 @@ void SpreadMinDaysConstraintsFiveDaysForm::help()
 	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
 }
 
-void SpreadMinDaysConstraintsFiveDaysForm::on_spread2CheckBox_toggled()
+void SpreadMinDaysConstraintsFiveDaysForm::spread2CheckBox_toggled()
 {
 	weight2LineEdit->setEnabled(spread2CheckBox->isChecked());
 	weight2Label->setEnabled(spread2CheckBox->isChecked());
 }
 
-void SpreadMinDaysConstraintsFiveDaysForm::on_spread3CheckBox_toggled()
+void SpreadMinDaysConstraintsFiveDaysForm::spread3CheckBox_toggled()
 {
 	weight3LineEdit->setEnabled(spread3CheckBox->isChecked());
 	weight3Label->setEnabled(spread3CheckBox->isChecked());
 	aloneGroupBox->setEnabled(spread3CheckBox->isChecked());
 }
 
-void SpreadMinDaysConstraintsFiveDaysForm::on_spread4OrMoreCheckBox_toggled()
+void SpreadMinDaysConstraintsFiveDaysForm::spread4OrMoreCheckBox_toggled()
 {
 	int k=spread4OrMoreCheckBox->isChecked();
 	if(!k){

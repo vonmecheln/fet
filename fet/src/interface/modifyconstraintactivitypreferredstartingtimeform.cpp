@@ -28,8 +28,8 @@ ModifyConstraintActivityPreferredStartingTimeForm::ModifyConstraintActivityPrefe
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintActivityPreferredStartingTimeForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintActivityPreferredStartingTimeForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -95,10 +95,10 @@ ModifyConstraintActivityPreferredStartingTimeForm::ModifyConstraintActivityPrefe
 	
 	permLockedCheckBox->setChecked(this->_ctr->permanentlyLocked);
 	
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivityPreferredStartingTimeForm::filterChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivityPreferredStartingTimeForm::filterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivityPreferredStartingTimeForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivityPreferredStartingTimeForm::filterChanged);
 }
 
 ModifyConstraintActivityPreferredStartingTimeForm::~ModifyConstraintActivityPreferredStartingTimeForm()

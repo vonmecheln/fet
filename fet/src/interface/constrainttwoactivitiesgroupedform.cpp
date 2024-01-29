@@ -37,12 +37,12 @@ ConstraintTwoActivitiesGroupedForm::ConstraintTwoActivitiesGroupedForm(QWidget* 
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintTwoActivitiesGroupedForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintTwoActivitiesGroupedForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintTwoActivitiesGroupedForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintTwoActivitiesGroupedForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintTwoActivitiesGroupedForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintTwoActivitiesGroupedForm::modifyConstraint);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -84,10 +84,10 @@ ConstraintTwoActivitiesGroupedForm::ConstraintTwoActivitiesGroupedForm(QWidget* 
 
 	this->filterChanged();
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintTwoActivitiesGroupedForm::filterChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintTwoActivitiesGroupedForm::filterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintTwoActivitiesGroupedForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintTwoActivitiesGroupedForm::filterChanged);
 }
 
 ConstraintTwoActivitiesGroupedForm::~ConstraintTwoActivitiesGroupedForm()

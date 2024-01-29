@@ -37,13 +37,13 @@ ConstraintTeacherNotAvailableTimesForm::ConstraintTeacherNotAvailableTimesForm(Q
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintTeacherNotAvailableTimesForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherNotAvailableTimesForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintTeacherNotAvailableTimesForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherNotAvailableTimesForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherNotAvailableTimesForm::modifyConstraint);
 
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintTeacherNotAvailableTimesForm::modifyConstraint);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -59,7 +59,7 @@ ConstraintTeacherNotAvailableTimesForm::ConstraintTeacherNotAvailableTimesForm(Q
 
 	this->filterChanged();
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintTeacherNotAvailableTimesForm::filterChanged);
 }
 
 ConstraintTeacherNotAvailableTimesForm::~ConstraintTeacherNotAvailableTimesForm()

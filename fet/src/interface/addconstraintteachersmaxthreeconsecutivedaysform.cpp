@@ -28,9 +28,9 @@ AddConstraintTeachersMaxThreeConsecutiveDaysForm::AddConstraintTeachersMaxThreeC
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(addConstraintsPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraints()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintTeachersMaxThreeConsecutiveDaysForm::addCurrentConstraint);
+	connect(addConstraintsPushButton, &QPushButton::clicked, this, &AddConstraintTeachersMaxThreeConsecutiveDaysForm::addCurrentConstraints);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintTeachersMaxThreeConsecutiveDaysForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

@@ -37,12 +37,12 @@ ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm::ConstraintStudentsSetA
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm::modifyConstraint);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -61,8 +61,8 @@ ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm::ConstraintStudentsSetA
 
 	this->filterChanged();
 
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm::filterChanged);
 }
 
 ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm::~ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm()

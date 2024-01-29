@@ -37,12 +37,12 @@ ConstraintActivityTagPreferredRoomsForm::ConstraintActivityTagPreferredRoomsForm
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintActivityTagPreferredRoomsForm::addConstraint);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintActivityTagPreferredRoomsForm::removeConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintActivityTagPreferredRoomsForm::close);
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintActivityTagPreferredRoomsForm::constraintChanged);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintActivityTagPreferredRoomsForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintActivityTagPreferredRoomsForm::modifyConstraint);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -67,8 +67,8 @@ ConstraintActivityTagPreferredRoomsForm::ConstraintActivityTagPreferredRoomsForm
 
 	this->filterChanged();
 
-	connect(roomsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(roomsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintActivityTagPreferredRoomsForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintActivityTagPreferredRoomsForm::filterChanged);
 }
 
 ConstraintActivityTagPreferredRoomsForm::~ConstraintActivityTagPreferredRoomsForm()

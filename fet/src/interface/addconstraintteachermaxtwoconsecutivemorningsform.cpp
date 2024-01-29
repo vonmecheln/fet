@@ -28,9 +28,9 @@ AddConstraintTeacherMaxTwoConsecutiveMorningsForm::AddConstraintTeacherMaxTwoCon
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(addConstraintsPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraints()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintTeacherMaxTwoConsecutiveMorningsForm::addCurrentConstraint);
+	connect(addConstraintsPushButton, &QPushButton::clicked, this, &AddConstraintTeacherMaxTwoConsecutiveMorningsForm::addCurrentConstraints);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintTeacherMaxTwoConsecutiveMorningsForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

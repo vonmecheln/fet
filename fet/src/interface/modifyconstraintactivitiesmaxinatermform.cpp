@@ -35,12 +35,12 @@ ModifyConstraintActivitiesMaxInATermForm::ModifyConstraintActivitiesMaxInATermFo
 	allActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	selectedActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
-	connect(allActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addActivity()));
-	connect(addAllActivitiesPushButton, SIGNAL(clicked()), this, SLOT(addAllActivities()));
-	connect(selectedActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeActivity()));
-	connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintActivitiesMaxInATermForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintActivitiesMaxInATermForm::cancel);
+	connect(allActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &ModifyConstraintActivitiesMaxInATermForm::addActivity);
+	connect(addAllActivitiesPushButton, &QPushButton::clicked, this, &ModifyConstraintActivitiesMaxInATermForm::addAllActivities);
+	connect(selectedActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &ModifyConstraintActivitiesMaxInATermForm::removeActivity);
+	connect(clearPushButton, &QPushButton::clicked, this, &ModifyConstraintActivitiesMaxInATermForm::clear);
 	
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -99,10 +99,10 @@ ModifyConstraintActivitiesMaxInATermForm::ModifyConstraintActivitiesMaxInATermFo
 
 	filterChanged();
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivitiesMaxInATermForm::filterChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivitiesMaxInATermForm::filterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivitiesMaxInATermForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivitiesMaxInATermForm::filterChanged);
 }
 
 ModifyConstraintActivitiesMaxInATermForm::~ModifyConstraintActivitiesMaxInATermForm()

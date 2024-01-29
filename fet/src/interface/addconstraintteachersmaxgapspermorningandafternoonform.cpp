@@ -28,13 +28,13 @@ AddConstraintTeachersMaxGapsPerMorningAndAfternoonForm::AddConstraintTeachersMax
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(addConstraintsPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraints()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintTeachersMaxGapsPerMorningAndAfternoonForm::addCurrentConstraint);
+	connect(addConstraintsPushButton, &QPushButton::clicked, this, &AddConstraintTeachersMaxGapsPerMorningAndAfternoonForm::addCurrentConstraints);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintTeachersMaxGapsPerMorningAndAfternoonForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
-		
+	
 	maxGapsSpinBox->setMinimum(0);
 	maxGapsSpinBox->setMaximum(2*gt.rules.nHoursPerDay);
 	maxGapsSpinBox->setValue(1);

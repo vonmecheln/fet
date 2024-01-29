@@ -28,10 +28,10 @@ AddConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsForm::AddConstraintS
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsForm::addCurrentConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsForm::close);
 
-	connect(swapPushButton, SIGNAL(clicked()), this, SLOT(swap()));
+	connect(swapPushButton, &QPushButton::clicked, this, &AddConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsForm::swap);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

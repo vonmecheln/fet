@@ -36,12 +36,12 @@ AddConstraintMaxDaysBetweenActivitiesForm::AddConstraintMaxDaysBetweenActivities
 	allActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	selectedActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(allActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addActivity()));
-	connect(addAllActivitiesPushButton, SIGNAL(clicked()), this, SLOT(addAllActivities()));
-	connect(selectedActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeActivity()));
-	connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintMaxDaysBetweenActivitiesForm::close);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintMaxDaysBetweenActivitiesForm::addConstraint);
+	connect(allActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &AddConstraintMaxDaysBetweenActivitiesForm::addActivity);
+	connect(addAllActivitiesPushButton, &QPushButton::clicked, this, &AddConstraintMaxDaysBetweenActivitiesForm::addAllActivities);
+	connect(selectedActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &AddConstraintMaxDaysBetweenActivitiesForm::removeActivity);
+	connect(clearPushButton, &QPushButton::clicked, this, &AddConstraintMaxDaysBetweenActivitiesForm::clear);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -95,10 +95,10 @@ AddConstraintMaxDaysBetweenActivitiesForm::AddConstraintMaxDaysBetweenActivities
 
 	filterChanged();
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintMaxDaysBetweenActivitiesForm::filterChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintMaxDaysBetweenActivitiesForm::filterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintMaxDaysBetweenActivitiesForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintMaxDaysBetweenActivitiesForm::filterChanged);
 }
 
 AddConstraintMaxDaysBetweenActivitiesForm::~AddConstraintMaxDaysBetweenActivitiesForm()

@@ -25,8 +25,8 @@ ModifyConstraintTeachersMinGapsBetweenRoomChangesForm::ModifyConstraintTeachersM
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintTeachersMinGapsBetweenRoomChangesForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintTeachersMinGapsBetweenRoomChangesForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

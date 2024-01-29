@@ -27,7 +27,7 @@ HelpFaqForm::HelpFaqForm(QWidget* parent): QDialog(parent)
 	
 	plainTextEdit->setReadOnly(true);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(closePushButton, &QPushButton::clicked, this, &HelpFaqForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

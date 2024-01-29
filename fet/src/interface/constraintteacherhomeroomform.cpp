@@ -37,12 +37,12 @@ ConstraintTeacherHomeRoomForm::ConstraintTeacherHomeRoomForm(QWidget* parent): Q
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintTeacherHomeRoomForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherHomeRoomForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintTeacherHomeRoomForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherHomeRoomForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherHomeRoomForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintTeacherHomeRoomForm::modifyConstraint);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -63,8 +63,8 @@ ConstraintTeacherHomeRoomForm::ConstraintTeacherHomeRoomForm(QWidget* parent): Q
 
 	this->filterChanged();
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(roomsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintTeacherHomeRoomForm::filterChanged);
+	connect(roomsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintTeacherHomeRoomForm::filterChanged);
 }
 
 ConstraintTeacherHomeRoomForm::~ConstraintTeacherHomeRoomForm()

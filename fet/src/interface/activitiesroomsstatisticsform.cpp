@@ -35,7 +35,7 @@ ActivitiesRoomsStatisticsForm::ActivitiesRoomsStatisticsForm(QWidget* parent): Q
 	
 	closeButton->setDefault(true);
 
-	connect(closeButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(closeButton, &QPushButton::clicked, this, &ActivitiesRoomsStatisticsForm::close);
 	
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

@@ -108,15 +108,15 @@ TimetableViewStudentsDaysHorizontalForm::TimetableViewStudentsDaysHorizontalForm
 	subgroupsListWidget->clear();
 	
 	//These connect-s should be lower in the code
-	//connect(yearsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(yearChanged(const QString&)));
-	//connect(groupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(groupChanged(const QString&)));
-	//connect(subgroupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(subgroupChanged(const QString&)));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(studentsTimetableTable, SIGNAL(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)), this, SLOT(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)));
-	connect(lockTimePushButton, SIGNAL(clicked()), this, SLOT(lockTime()));
-	connect(lockSpacePushButton, SIGNAL(clicked()), this, SLOT(lockSpace()));
-	connect(lockTimeSpacePushButton, SIGNAL(clicked()), this, SLOT(lockTimeSpace()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	//connect(yearsListWidget, SIG NAL(currentTextChanged(const QString&)), this, SL OT(yearChanged(const QString&)));
+	//connect(groupsListWidget, SIG NAL(currentTextChanged(const QString&)), this, SL OT(groupChanged(const QString&)));
+	//connect(subgroupsListWidget, SIG NAL(currentTextChanged(const QString&)), this, SL OT(subgroupChanged(const QString&)));
+	connect(closePushButton, &QPushButton::clicked, this, &TimetableViewStudentsDaysHorizontalForm::close);
+	connect(studentsTimetableTable, &QTableWidget::currentItemChanged, this, &TimetableViewStudentsDaysHorizontalForm::currentItemChanged);
+	connect(lockTimePushButton, &QPushButton::clicked, this, &TimetableViewStudentsDaysHorizontalForm::lockTime);
+	connect(lockSpacePushButton, &QPushButton::clicked, this, &TimetableViewStudentsDaysHorizontalForm::lockSpace);
+	connect(lockTimeSpacePushButton, &QPushButton::clicked, this, &TimetableViewStudentsDaysHorizontalForm::lockTimeSpace);
+	connect(helpPushButton, &QPushButton::clicked, this, &TimetableViewStudentsDaysHorizontalForm::help);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -217,9 +217,9 @@ TimetableViewStudentsDaysHorizontalForm::TimetableViewStudentsDaysHorizontalForm
 				subgroupsListWidget->setCurrentRow(0);
 		}
 	}
-	connect(yearsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(yearChanged(const QString&)));
-	connect(groupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(groupChanged(const QString&)));
-	connect(subgroupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(subgroupChanged(const QString&)));
+	connect(yearsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysHorizontalForm::yearChanged);
+	connect(groupsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysHorizontalForm::groupChanged);
+	connect(subgroupsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysHorizontalForm::subgroupChanged);
 	
 	shownComboBox->addItem(tr("Years"));
 	shownComboBox->addItem(tr("Groups"));
@@ -233,10 +233,10 @@ TimetableViewStudentsDaysHorizontalForm::TimetableViewStudentsDaysHorizontalForm
 	else
 		shownComboBox->setCurrentIndex(0);
 
-	connect(shownComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(shownComboBoxChanged()));
+	connect(shownComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &TimetableViewStudentsDaysHorizontalForm::shownComboBoxChanged);
 
 	//added by Volker Dirr
-	connect(&communicationSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateStudentsTimetableTable()));
+	connect(&communicationSpinBox, &CommunicationSpinBox::valueChanged, this, &TimetableViewStudentsDaysHorizontalForm::updateStudentsTimetableTable);
 
 	shownComboBoxChanged();
 }
@@ -262,23 +262,23 @@ void TimetableViewStudentsDaysHorizontalForm::newTimetableGenerated()
 	groupsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	subgroupsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);*/
 
-	disconnect(groupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(groupChanged(const QString&)));
-	disconnect(subgroupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(subgroupChanged(const QString&)));
+	disconnect(groupsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysHorizontalForm::groupChanged);
+	disconnect(subgroupsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysHorizontalForm::subgroupChanged);
 	groupsListWidget->clear();
 	subgroupsListWidget->clear();
-	connect(groupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(groupChanged(const QString&)));
-	connect(subgroupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(subgroupChanged(const QString&)));
+	connect(groupsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysHorizontalForm::groupChanged);
+	connect(subgroupsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysHorizontalForm::subgroupChanged);
 	
 	//This connect should be lower in the code
-	//connect(yearsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(yearChanged(const QString&)));
-	/*connect(groupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(groupChanged(const QString&)));
-	connect(subgroupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(subgroupChanged(const QString&)));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(studentsTimetableTable, SIGNAL(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)), this, SLOT(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)));
-	connect(lockTimePushButton, SIGNAL(clicked()), this, SLOT(lockTime()));
-	connect(lockSpacePushButton, SIGNAL(clicked()), this, SLOT(lockSpace()));
-	connect(lockTimeSpacePushButton, SIGNAL(clicked()), this, SLOT(lockTimeSpace()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	//connect(yearsListWidget, SIG NAL(currentTextChanged(const QString&)), this, SL OT(yearChanged(const QString&)));
+	/*connect(groupsListWidget, SIG NAL(currentTextChanged(const QString&)), this, SL OT(groupChanged(const QString&)));
+	connect(subgroupsListWidget, SIG NAL(currentTextChanged(const QString&)), this, SL OT(subgroupChanged(const QString&)));
+	connect(closePushButton, SIG NAL(clicked()), this, SL OT(close()));
+	connect(studentsTimetableTable, SIG NAL(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)), this, SL OT(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)));
+	connect(lockTimePushButton, SIG NAL(clicked()), this, SL OT(lockTime()));
+	connect(lockSpacePushButton, SIG NAL(clicked()), this, SL OT(lockSpace()));
+	connect(lockTimeSpacePushButton, SIG NAL(clicked()), this, SL OT(lockTimeSpace()));
+	connect(helpPushButton, SIG NAL(clicked()), this, SL OT(help()));
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -359,7 +359,7 @@ void TimetableViewStudentsDaysHorizontalForm::newTimetableGenerated()
 	///////////////
 */
 	
-	disconnect(yearsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(yearChanged(const QString&)));
+	disconnect(yearsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysHorizontalForm::yearChanged);
 	yearsListWidget->clear();
 	for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
 		StudentsYear* sty=gt.rules.augmentedYearsList[i];
@@ -367,7 +367,7 @@ void TimetableViewStudentsDaysHorizontalForm::newTimetableGenerated()
 	}
 	if(yearsListWidget->count()>0)
 		yearsListWidget->setCurrentRow(0);
-	connect(yearsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(yearChanged(const QString&)));
+	connect(yearsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysHorizontalForm::yearChanged);
 	
 /*	shownComboBox->addItem(tr("Years"));
 	shownComboBox->addItem(tr("Groups"));
@@ -380,11 +380,11 @@ void TimetableViewStudentsDaysHorizontalForm::newTimetableGenerated()
 	else
 		shownComboBox->setCurrentIndex(0);
 
-	connect(shownComboBox, SIGNAL(activated(QString)), this, SLOT(shownComboBoxChanged(QString)));
+	connect(shownComboBox, SIG NAL(activated(QString)), this, SL OT(shownComboBoxChanged(QString)));
 */
 
 	//added by Volker Dirr
-	//connect(&communicationSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateStudentsTimetableTable()));
+	//connect(&communicationSpinBox, SIG NAL(valueChanged(int)), this, SL OT(updateStudentsTimetableTable()));
 
 	shownComboBoxChanged();
 }
@@ -421,7 +421,7 @@ void TimetableViewStudentsDaysHorizontalForm::shownComboBoxChanged()
 		groupsListWidget->show();
 		subgroupsListWidget->show();
 		
-		disconnect(yearsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(yearChanged(const QString&)));
+		disconnect(yearsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysHorizontalForm::yearChanged);
 		yearsListWidget->clear();
 		for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
 			StudentsYear* sty=gt.rules.augmentedYearsList[i];
@@ -429,7 +429,7 @@ void TimetableViewStudentsDaysHorizontalForm::shownComboBoxChanged()
 		}
 		if(yearsListWidget->count()>0)
 			yearsListWidget->setCurrentRow(0);
-		connect(yearsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(yearChanged(const QString&)));
+		connect(yearsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysHorizontalForm::yearChanged);
 		if(yearsListWidget->count()>0)
 			yearChanged(yearsListWidget->item(0)->text());
 	}
@@ -439,7 +439,7 @@ void TimetableViewStudentsDaysHorizontalForm::shownComboBoxChanged()
 		groupsListWidget->show();
 		subgroupsListWidget->show();
 
-		disconnect(groupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(groupChanged(const QString&)));
+		disconnect(groupsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysHorizontalForm::groupChanged);
 		groupsListWidget->clear();
 		QSet<QString> groupsSet;
 		for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
@@ -452,7 +452,7 @@ void TimetableViewStudentsDaysHorizontalForm::shownComboBoxChanged()
 		}
 		if(groupsListWidget->count()>0)
 			groupsListWidget->setCurrentRow(0);
-		connect(groupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(groupChanged(const QString&)));
+		connect(groupsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysHorizontalForm::groupChanged);
 		if(groupsListWidget->count()>0)
 			groupChanged(groupsListWidget->item(0)->text());
 	}
@@ -462,7 +462,7 @@ void TimetableViewStudentsDaysHorizontalForm::shownComboBoxChanged()
 		groupsListWidget->hide();
 		subgroupsListWidget->show();
 
-		disconnect(subgroupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(subgroupChanged(const QString&)));
+		disconnect(subgroupsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysHorizontalForm::subgroupChanged);
 		subgroupsListWidget->clear();
 		QSet<QString> subgroupsSet;
 		for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
@@ -476,7 +476,7 @@ void TimetableViewStudentsDaysHorizontalForm::shownComboBoxChanged()
 		}
 		if(subgroupsListWidget->count()>0)
 			subgroupsListWidget->setCurrentRow(0);
-		connect(subgroupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(subgroupChanged(const QString&)));
+		connect(subgroupsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysHorizontalForm::subgroupChanged);
 		if(subgroupsListWidget->count()>0)
 			subgroupChanged(subgroupsListWidget->item(0)->text());
 	}
@@ -486,7 +486,7 @@ void TimetableViewStudentsDaysHorizontalForm::shownComboBoxChanged()
 		groupsListWidget->hide();
 		subgroupsListWidget->show();
 		
-		disconnect(subgroupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(subgroupChanged(const QString&)));
+		disconnect(subgroupsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysHorizontalForm::subgroupChanged);
 		subgroupsListWidget->clear();
 		
 		QSet<QString> subgroupsSet;
@@ -506,7 +506,7 @@ void TimetableViewStudentsDaysHorizontalForm::shownComboBoxChanged()
 		
 		if(subgroupsListWidget->count()>0)
 			subgroupsListWidget->setCurrentRow(0);
-		connect(subgroupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(subgroupChanged(const QString&)));
+		connect(subgroupsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysHorizontalForm::subgroupChanged);
 		if(subgroupsListWidget->count()>0)
 			subgroupChanged(subgroupsListWidget->item(0)->text());
 	}
@@ -531,7 +531,7 @@ void TimetableViewStudentsDaysHorizontalForm::yearChanged(const QString& yearNam
 		return;
 	}
 
-	disconnect(groupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(groupChanged(const QString&)));
+	disconnect(groupsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysHorizontalForm::groupChanged);
 
 	groupsListWidget->clear();
 	StudentsYear* sty=gt.rules.augmentedYearsList.at(yearIndex);
@@ -540,7 +540,7 @@ void TimetableViewStudentsDaysHorizontalForm::yearChanged(const QString& yearNam
 		groupsListWidget->addItem(stg->name);
 	}
 
-	connect(groupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(groupChanged(const QString&)));
+	connect(groupsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysHorizontalForm::groupChanged);
 
 	if(groupsListWidget->count()>0)
 		groupsListWidget->setCurrentRow(0);
@@ -588,7 +588,7 @@ void TimetableViewStudentsDaysHorizontalForm::groupChanged(const QString& groupN
 		return;
 	}*/
 	
-	disconnect(subgroupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(subgroupChanged(const QString&)));
+	disconnect(subgroupsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysHorizontalForm::subgroupChanged);
 
 	subgroupsListWidget->clear();
 	
@@ -598,7 +598,7 @@ void TimetableViewStudentsDaysHorizontalForm::groupChanged(const QString& groupN
 		subgroupsListWidget->addItem(sts->name);
 	}
 
-	connect(subgroupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(subgroupChanged(const QString&)));
+	connect(subgroupsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysHorizontalForm::subgroupChanged);
 
 	if(subgroupsListWidget->count()>0)
 		subgroupsListWidget->setCurrentRow(0);

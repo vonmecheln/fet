@@ -294,15 +294,15 @@ ChooseFieldsDialog::ChooseFieldsDialog(QWidget *parent): QDialog(parent)
 	chooseFieldsDialogUpdateRadio3();
 	chooseFieldsDialogUpdateRadio3b();
 
-	//connect(pb, SIGNAL(clicked()), this, SLOT(accept()));
-	connect(pb, SIGNAL(clicked()), this, SLOT(chooseFieldsDialogClose()));
-	connect(cancelpb, SIGNAL(clicked()), this, SLOT(reject()));
+	//connect(pb, SIG NAL(clicked()), this, SL OT(accept()));
+	connect(pb, &QPushButton::clicked, this, &ChooseFieldsDialog::chooseFieldsDialogClose);
+	connect(cancelpb, &QPushButton::clicked, this, &ChooseFieldsDialog::reject);
 	for(int i=1; i<NUMBER_OF_FIELDS; i++){
-		connect(fieldRadio1[i], SIGNAL(toggled(bool)), this, SLOT(chooseFieldsDialogUpdateRadio1()));
-		connect(fieldRadio2[i], SIGNAL(toggled(bool)), this, SLOT(chooseFieldsDialogUpdateRadio2()));
-		connect(fieldRadio3[i], SIGNAL(toggled(bool)), this, SLOT(chooseFieldsDialogUpdateRadio3()));
-		connect(fieldRadio3b[i], SIGNAL(toggled(bool)), this, SLOT(chooseFieldsDialogUpdateRadio3b()));
-		connect(fieldLine3Text[i], SIGNAL(textChanged(QString)), this, SLOT(chooseFieldsDialogUpdateLine3Text()));
+		connect(fieldRadio1[i], &QRadioButton::toggled, this, &ChooseFieldsDialog::chooseFieldsDialogUpdateRadio1);
+		connect(fieldRadio2[i], &QRadioButton::toggled, this, &ChooseFieldsDialog::chooseFieldsDialogUpdateRadio2);
+		connect(fieldRadio3[i], &QRadioButton::toggled, this, &ChooseFieldsDialog::chooseFieldsDialogUpdateRadio3);
+		connect(fieldRadio3b[i], &QRadioButton::toggled, this, &ChooseFieldsDialog::chooseFieldsDialogUpdateRadio3b);
+		connect(fieldLine3Text[i], &QLineEdit::textChanged, this, &ChooseFieldsDialog::chooseFieldsDialogUpdateLine3Text);
 	}
 	
 	pb->setDefault(true);
@@ -460,7 +460,7 @@ LastWarningsDialog::LastWarningsDialog(QWidget *parent): QDialog(parent)
 	lastWarningsMainLayout->addWidget(lastWarningsText);
 	lastWarningsMainLayout->addLayout(hl);
 
-	QObject::connect(pb1, SIGNAL(clicked()), this, SLOT(accept()));
+	connect(pb1, &QPushButton::clicked, this, &LastWarningsDialog::accept);
 	
 	//pb1->setDefault(true);
 
@@ -816,8 +816,8 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 	}
 	separatorsMainLayout->addWidget(firstLineGroupBox);
 	separatorsMainLayout->addLayout(hl);
-	QObject::connect(pb, SIGNAL(clicked()), &separatorsDialog, SLOT(accept()));
-	QObject::connect(cancelpb, SIGNAL(clicked()), &separatorsDialog, SLOT(reject()));
+	connect(pb, &QPushButton::clicked, &separatorsDialog, &QDialog::accept);
+	connect(cancelpb, &QPushButton::clicked, &separatorsDialog, &QDialog::reject);
 	
 	pb->setDefault(true);
 	pb->setFocus();
@@ -1421,8 +1421,8 @@ FILE_STRIPPED_NAME
 	addItemsMainLayout->addLayout(dataWarningBox);
 	addItemsMainLayout->addLayout(hl);
 
-	QObject::connect(pb1, SIGNAL(clicked()), &addItemsDialog, SLOT(accept()));
-	QObject::connect(pb2, SIGNAL(clicked()), &addItemsDialog, SLOT(reject()));
+	connect(pb1, &QPushButton::clicked, &addItemsDialog, &QDialog::accept);
+	connect(pb2, &QPushButton::clicked, &addItemsDialog, &QDialog::reject);
 
 	//pb1->setDefault(true);
 	

@@ -25,8 +25,8 @@ AddStudentsSubgroupForm::AddStudentsSubgroupForm(QWidget* parent, const QString&
 
 	addStudentsSubgroupPushButton->setDefault(true);
 
-	connect(addStudentsSubgroupPushButton, SIGNAL(clicked()), this, SLOT(addStudentsSubgroup()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addStudentsSubgroupPushButton, &QPushButton::clicked, this, &AddStudentsSubgroupForm::addStudentsSubgroup);
+	connect(closePushButton, &QPushButton::clicked, this, &AddStudentsSubgroupForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

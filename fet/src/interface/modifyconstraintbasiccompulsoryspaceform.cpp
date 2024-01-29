@@ -26,8 +26,8 @@ ModifyConstraintBasicCompulsorySpaceForm::ModifyConstraintBasicCompulsorySpaceFo
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintBasicCompulsorySpaceForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintBasicCompulsorySpaceForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

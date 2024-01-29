@@ -102,14 +102,14 @@ TimetableViewRoomsDaysHorizontalForm::TimetableViewRoomsDaysHorizontalForm(QWidg
 
 	roomsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(roomsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(roomChanged(const QString&)));
-	connect(roomsTimetableTable, SIGNAL(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)), this, SLOT(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)));
-	connect(lockTimeSpacePushButton, SIGNAL(clicked()), this, SLOT(lock()));
-	connect(lockTimePushButton, SIGNAL(clicked()), this, SLOT(lockTime()));
-	connect(lockSpacePushButton, SIGNAL(clicked()), this, SLOT(lockSpace()));
+	connect(closePushButton, &QPushButton::clicked, this, &TimetableViewRoomsDaysHorizontalForm::close);
+	connect(roomsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewRoomsDaysHorizontalForm::roomChanged);
+	connect(roomsTimetableTable, &QTableWidget::currentItemChanged, this, &TimetableViewRoomsDaysHorizontalForm::currentItemChanged);
+	connect(lockTimeSpacePushButton, &QPushButton::clicked, this, &TimetableViewRoomsDaysHorizontalForm::lockTimeSpace);
+	connect(lockTimePushButton, &QPushButton::clicked, this, &TimetableViewRoomsDaysHorizontalForm::lockTime);
+	connect(lockSpacePushButton, &QPushButton::clicked, this, &TimetableViewRoomsDaysHorizontalForm::lockSpace);
 
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(helpPushButton, &QPushButton::clicked, this, &TimetableViewRoomsDaysHorizontalForm::help);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -210,7 +210,7 @@ TimetableViewRoomsDaysHorizontalForm::TimetableViewRoomsDaysHorizontalForm(QWidg
 		roomsListWidget->setCurrentRow(0);
 
 	//added by Volker Dirr
-	connect(&communicationSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateRoomsTimetableTable()));
+	connect(&communicationSpinBox, &CommunicationSpinBox::valueChanged, this, &TimetableViewRoomsDaysHorizontalForm::updateRoomsTimetableTable);
 }
 
 void TimetableViewRoomsDaysHorizontalForm::newTimetableGenerated()
@@ -232,14 +232,14 @@ void TimetableViewRoomsDaysHorizontalForm::newTimetableGenerated()
 
 	roomsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(roomsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(roomChanged(const QString&)));
-	connect(roomsTimetableTable, SIGNAL(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)), this, SLOT(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)));
-	connect(lockTimeSpacePushButton, SIGNAL(clicked()), this, SLOT(lock()));
-	connect(lockTimePushButton, SIGNAL(clicked()), this, SLOT(lockTime()));
-	connect(lockSpacePushButton, SIGNAL(clicked()), this, SLOT(lockSpace()));
+	connect(closePushButton, SIG NAL(clicked()), this, SL OT(close()));
+	connect(roomsListWidget, SIG NAL(currentTextChanged(const QString&)), this, SL OT(roomChanged(const QString&)));
+	connect(roomsTimetableTable, SIG NAL(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)), this, SL OT(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)));
+	connect(lockTimeSpacePushButton, SIG NAL(clicked()), this, SL OT(lock()));
+	connect(lockTimePushButton, SIG NAL(clicked()), this, SL OT(lockTime()));
+	connect(lockSpacePushButton, SIG NAL(clicked()), this, SL OT(lockSpace()));
 
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(helpPushButton, SIG NAL(clicked()), this, SL OT(help()));
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -330,9 +330,9 @@ void TimetableViewRoomsDaysHorizontalForm::newTimetableGenerated()
 	///////////////
 */
 
-	disconnect(roomsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(roomChanged(const QString&)));
+	disconnect(roomsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewRoomsDaysHorizontalForm::roomChanged);
 	roomsListWidget->clear();
-	connect(roomsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(roomChanged(const QString&)));
+	connect(roomsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewRoomsDaysHorizontalForm::roomChanged);
 	
 	if(gt.rules.nInternalRooms!=gt.rules.roomsList.count()){
 		assert(0);
@@ -347,7 +347,7 @@ void TimetableViewRoomsDaysHorizontalForm::newTimetableGenerated()
 		roomsListWidget->setCurrentRow(0);
 
 	//added by Volker Dirr
-	//connect(&communicationSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateRoomsTimetableTable()));
+	//connect(&communicationSpinBox, SIG NAL(valueChanged(int)), this, SL OT(updateRoomsTimetableTable()));
 }
 
 TimetableViewRoomsDaysHorizontalForm::~TimetableViewRoomsDaysHorizontalForm()
@@ -726,7 +726,7 @@ void TimetableViewRoomsDaysHorizontalForm::detailActivity(QTableWidgetItem* item
 	detailsTextEdit->setPlainText(s);
 }
 
-void TimetableViewRoomsDaysHorizontalForm::lock()
+void TimetableViewRoomsDaysHorizontalForm::lockTimeSpace()
 {
 	this->lock(true, true);
 }

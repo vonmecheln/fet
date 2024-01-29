@@ -33,15 +33,12 @@ SettingsAutosaveForm::SettingsAutosaveForm(QWidget* parent): QDialog(parent)
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 
-	//connect(buttonBox, SIGNAL(accepted()), this, SLOT(ok()));
-	//connect(buttonBox, SIGNAL(rejected()), this, SLOT(cancel()));
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	//connect(buttonBox, SIG NAL(accepted()), this, SL OT(ok()));
+	//connect(buttonBox, SIG NAL(rejected()), this, SL OT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &SettingsAutosaveForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &SettingsAutosaveForm::cancel);
 	
-	connect(chooseDirectoryPushButton, SIGNAL(clicked()), this, SLOT(chooseDirectory()));
-	
-	enableAutosaveCheckBox->setChecked(USE_AUTOSAVE);
-	on_enableAutosaveCheckBox_toggled();
+	connect(chooseDirectoryPushButton, &QPushButton::clicked, this, &SettingsAutosaveForm::chooseDirectory);
 	
 	///////////////
 	minutesSpinBox->setRange(1, 15);
@@ -79,6 +76,12 @@ SettingsAutosaveForm::SettingsAutosaveForm(QWidget* parent): QDialog(parent)
 	directoryLineEdit->setText(QDir::toNativeSeparators(DIRECTORY_AUTOSAVE));
 	fileNameSuffixLineEdit->setText(SUFFIX_FILENAME_AUTOSAVE);
 	fileNameSuffixLineEdit->setReadOnly(true);
+
+	enableAutosaveCheckBox->setChecked(USE_AUTOSAVE);
+
+	connect(enableAutosaveCheckBox, &QCheckBox::toggled, this, &SettingsAutosaveForm::enableAutosaveCheckBox_toggled);
+
+	enableAutosaveCheckBox_toggled();
 }
 
 SettingsAutosaveForm::~SettingsAutosaveForm()
@@ -86,7 +89,7 @@ SettingsAutosaveForm::~SettingsAutosaveForm()
 	saveFETDialogGeometry(this);
 }
 
-void SettingsAutosaveForm::on_enableAutosaveCheckBox_toggled()
+void SettingsAutosaveForm::enableAutosaveCheckBox_toggled()
 {
 	bool t=enableAutosaveCheckBox->isChecked();
 

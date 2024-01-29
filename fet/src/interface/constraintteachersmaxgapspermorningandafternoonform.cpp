@@ -37,12 +37,12 @@ ConstraintTeachersMaxGapsPerMorningAndAfternoonForm::ConstraintTeachersMaxGapsPe
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintTeachersMaxGapsPerMorningAndAfternoonForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeachersMaxGapsPerMorningAndAfternoonForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintTeachersMaxGapsPerMorningAndAfternoonForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeachersMaxGapsPerMorningAndAfternoonForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeachersMaxGapsPerMorningAndAfternoonForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintTeachersMaxGapsPerMorningAndAfternoonForm::modifyConstraint);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

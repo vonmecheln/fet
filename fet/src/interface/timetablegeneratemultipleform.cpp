@@ -223,9 +223,9 @@ void TimetablingThread::startGenerating()
 {
 	Worker* worker=new Worker;
 	worker->moveToThread(&workerThread);
-	connect(&workerThread, SIGNAL(finished()), worker, SLOT(deleteLater()));
-	connect(this, SIGNAL(operate(int)), worker, SLOT(doWork(int)));
-	connect(worker, SIGNAL(resultReady(int, const QString&, bool)), this, SLOT(handleResults(int, const QString&, bool)));
+	connect(&workerThread, SIG NAL(finished()), worker, SL OT(deleteLater()));
+	connect(this, SIG NAL(operate(int)), worker, SL OT(doWork(int)));
+	connect(worker, SIG NAL(resultReady(int, const QString&, bool)), this, SL OT(handleResults(int, const QString&, bool)));
 	workerThread.start();
 }
 
@@ -256,10 +256,10 @@ TimetableGenerateMultipleForm::TimetableGenerateMultipleForm(QWidget* parent): Q
 	
 	startPushButton->setDefault(true);
 
-	connect(startPushButton, SIGNAL(clicked()), this, SLOT(start()));
-	connect(stopPushButton, SIGNAL(clicked()), this, SLOT(stop()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(closePressed()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(startPushButton, &QPushButton::clicked, this, &TimetableGenerateMultipleForm::start);
+	connect(stopPushButton, &QPushButton::clicked, this, &TimetableGenerateMultipleForm::stop);
+	connect(closePushButton, &QPushButton::clicked, this, &TimetableGenerateMultipleForm::closePressed);
+	connect(helpPushButton, &QPushButton::clicked, this, &TimetableGenerateMultipleForm::help);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -279,7 +279,7 @@ TimetableGenerateMultipleForm::TimetableGenerateMultipleForm(QWidget* parent): Q
 	nThreadsSpinBox->setMaximum(std::max(1, QThread::idealThreadCount()));
 	nThreadsSpinBox->setValue(1); //this is necessary, before the connection to nThreadsChanged(int)
 
-	connect(nThreadsSpinBox, SIGNAL(valueChanged(int)), this, SLOT(nThreadsChanged(int)));
+	connect(nThreadsSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &TimetableGenerateMultipleForm::nThreadsChanged);
 	QSettings settings(COMPANY, PROGRAM);
 	nThreadsSpinBox->setValue(settings.value(this->metaObject()->className()+QString("/number-of-threads"), "1").toInt()); //this is necessary, after the connection to nThreadsChanged(int)
 	timetablesTabWidget->setCurrentIndex(0);
@@ -524,8 +524,8 @@ void TimetableGenerateMultipleForm::start(){
 		//Controller* controller=new Controller();
 		timetablingThreads[t].disconnect();
 		
-		//connect(controller, SIGNAL(timetableStarted(int, int)), this, SLOT(timetableStarted(int, int)));
-		//connect(controller, SIGNAL(timetableGenerated(int, int, const QString&, bool)), this, SLOT(timetableGenerated(int, int, const QString&, bool)));
+		//connect(controller, SIG NAL(timetableStarted(int, int)), this, SL OT(timetableStarted(int, int)));
+		//connect(controller, SIG NAL(timetableGenerated(int, int, const QString&, bool)), this, SL OT(timetableGenerated(int, int, const QString&, bool)));
 		
 		//controllersList.append(controller);
 		
@@ -534,8 +534,8 @@ void TimetableGenerateMultipleForm::start(){
 		genMultiMatrix[t].nThread=t;
 		//genMultiMatrix[t].isRunning=false;
 
-		connect(&genMultiMatrix[t], SIGNAL(activityPlaced(int, int)), this, SLOT(activityPlaced(int, int)));
-		connect(&timetablingThreads[t], SIGNAL(timetableGenerated(int, int, const QString&, bool)), this, SLOT(timetableGenerated(int, int, const QString&, bool)));
+		connect(&genMultiMatrix[t], &Generate::activityPlaced, this, &TimetableGenerateMultipleForm::activityPlaced);
+		connect(&timetablingThreads[t], &TimetablingThread::timetableGenerated, this, &TimetableGenerateMultipleForm::timetableGenerated);
 	}
 	
 	startPushButton->setDisabled(true);
@@ -725,9 +725,9 @@ void TimetableGenerateMultipleForm::timetableGenerated(int nThread, int timetabl
 		//controller->nOverallTimetable=toldn+allNThreads;
 		timetablingThreads[nThread].nOverallTimetable=toldn+allNThreads;
 		
-		//connect(controller, SIGNAL(timetableStarted(int, int)), this, SLOT(timetableStarted(int, int)));
+		//connect(controller, SIG NAL(timetableStarted(int, int)), this, SL OT(timetableStarted(int, int)));
 		
-		//connect(controller, SIGNAL(timetableGenerated(int, int, const QString&, bool)), this, SLOT(timetableGenerated(int, int, const QString&, bool)));
+		//connect(controller, SIG NAL(timetableGenerated(int, int, const QString&, bool)), this, SL OT(timetableGenerated(int, int, const QString&, bool)));
 		
 		//timetableStarted(nThread, controller->nOverallTimetable+1/*+allNThreads*/);
 		timetableStarted(nThread, timetablingThreads[nThread].nOverallTimetable+1);
@@ -1244,12 +1244,12 @@ void TimetableGenerateMultipleForm::generationFinished()
 			/*if(DETACHED_NOTIFICATION==false){
 				QProcess* myProcess=new QProcess();
 				if(terminateCommandAfterSeconds>0)
-					QTimer::singleShot(terminateCommandAfterSeconds*1000, myProcess, SLOT(terminate()));
+					QTimer::singleShot(terminateCommandAfterSeconds*1000, myProcess, SL OT(terminate()));
 				if(killCommandAfterSeconds>0)
-					QTimer::singleShot(killCommandAfterSeconds*1000, myProcess, SLOT(kill()));
+					QTimer::singleShot(killCommandAfterSeconds*1000, myProcess, SL OT(kill()));
 				
 				//https://www.qtcentre.org/threads/43083-Freeing-a-QProcess-after-it-has-finished-using-deleteLater()
-				connect(myProcess, SIGNAL(finished(int)), myProcess, SLOT(deleteLater()));
+				connect(myProcess, SIG NAL(finished(int)), myProcess, SL OT(deleteLater()));
 				myProcess->start(command, arguments);
 			}*/
 			//else{

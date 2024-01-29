@@ -32,8 +32,8 @@ public slots:
 	void wasAccepted();
 	void wasCanceled();
 	
-	void on_removeRedundantCheckBox_toggled();
-	void on_removeRedundantHalfCheckBox_toggled();
+	void removeRedundantCheckBox_toggled();
+	void removeRedundantHalfCheckBox_toggled();
 };
 
 #endif

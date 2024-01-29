@@ -28,11 +28,8 @@ SettingsRestoreDataFromDiskForm::SettingsRestoreDataFromDiskForm(QWidget* parent
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 
-	connect(buttonBox, SIGNAL(accepted()), this, SLOT(ok()));
-	connect(buttonBox, SIGNAL(rejected()), this, SLOT(cancel()));
-	
-	enableHistoryOnDiskCheckBox->setChecked(USE_UNDO_REDO_SAVE);
-	on_enableHistoryOnDiskCheckBox_toggled();
+	connect(buttonBox, &QDialogButtonBox::accepted, this, &SettingsRestoreDataFromDiskForm::ok);
+	connect(buttonBox, &QDialogButtonBox::rejected, this, &SettingsRestoreDataFromDiskForm::cancel);
 	
 	maxStatesLabel->setText(tr("Number of previous states to save/restore to/from disk:"));
 	maxStatesLabel2->setText(tr("(Default is %1. Maximum allowed is %2, to avoid a slowdown when saving/opening a file, and using too much disk space.)",
@@ -44,6 +41,12 @@ SettingsRestoreDataFromDiskForm::SettingsRestoreDataFromDiskForm(QWidget* parent
 	
 	fileNameSuffixLineEdit->setText(SUFFIX_FILENAME_SAVE_HISTORY);
 	fileNameSuffixLineEdit->setReadOnly(true);
+
+	enableHistoryOnDiskCheckBox->setChecked(USE_UNDO_REDO_SAVE);
+
+	connect(enableHistoryOnDiskCheckBox, &QCheckBox::toggled, this, &SettingsRestoreDataFromDiskForm::enableHistoryOnDiskCheckBox_toggled);
+
+	enableHistoryOnDiskCheckBox_toggled();
 }
 
 SettingsRestoreDataFromDiskForm::~SettingsRestoreDataFromDiskForm()
@@ -51,7 +54,7 @@ SettingsRestoreDataFromDiskForm::~SettingsRestoreDataFromDiskForm()
 	saveFETDialogGeometry(this);
 }
 
-void SettingsRestoreDataFromDiskForm::on_enableHistoryOnDiskCheckBox_toggled()
+void SettingsRestoreDataFromDiskForm::enableHistoryOnDiskCheckBox_toggled()
 {
 	bool t=enableHistoryOnDiskCheckBox->isChecked();
 

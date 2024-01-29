@@ -37,13 +37,13 @@ ConstraintStudentsSetMaxBuildingChangesPerDayForm::ConstraintStudentsSetMaxBuild
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintStudentsSetMaxBuildingChangesPerDayForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxBuildingChangesPerDayForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxBuildingChangesPerDayForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxBuildingChangesPerDayForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxBuildingChangesPerDayForm::modifyConstraint);
 
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintStudentsSetMaxBuildingChangesPerDayForm::modifyConstraint);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -55,7 +55,7 @@ ConstraintStudentsSetMaxBuildingChangesPerDayForm::ConstraintStudentsSetMaxBuild
 
 	this->filterChanged();
 
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintStudentsSetMaxBuildingChangesPerDayForm::filterChanged);
 }
 
 ConstraintStudentsSetMaxBuildingChangesPerDayForm::~ConstraintStudentsSetMaxBuildingChangesPerDayForm()

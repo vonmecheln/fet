@@ -37,12 +37,12 @@ ConstraintStudentsMaxRoomChangesPerWeekForm::ConstraintStudentsMaxRoomChangesPer
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintStudentsMaxRoomChangesPerWeekForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsMaxRoomChangesPerWeekForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintStudentsMaxRoomChangesPerWeekForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsMaxRoomChangesPerWeekForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsMaxRoomChangesPerWeekForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintStudentsMaxRoomChangesPerWeekForm::modifyConstraint);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

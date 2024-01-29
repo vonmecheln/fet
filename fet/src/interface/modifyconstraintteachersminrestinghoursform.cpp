@@ -26,8 +26,8 @@ ModifyConstraintTeachersMinRestingHoursForm::ModifyConstraintTeachersMinRestingH
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintTeachersMinRestingHoursForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintTeachersMinRestingHoursForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

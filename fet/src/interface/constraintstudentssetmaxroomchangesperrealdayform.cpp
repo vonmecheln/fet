@@ -37,12 +37,12 @@ ConstraintStudentsSetMaxRoomChangesPerRealDayForm::ConstraintStudentsSetMaxRoomC
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintStudentsSetMaxRoomChangesPerRealDayForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxRoomChangesPerRealDayForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxRoomChangesPerRealDayForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxRoomChangesPerRealDayForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxRoomChangesPerRealDayForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintStudentsSetMaxRoomChangesPerRealDayForm::modifyConstraint);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -54,7 +54,7 @@ ConstraintStudentsSetMaxRoomChangesPerRealDayForm::ConstraintStudentsSetMaxRoomC
 
 	this->filterChanged();
 
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintStudentsSetMaxRoomChangesPerRealDayForm::filterChanged);
 }
 
 ConstraintStudentsSetMaxRoomChangesPerRealDayForm::~ConstraintStudentsSetMaxRoomChangesPerRealDayForm()

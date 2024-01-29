@@ -28,9 +28,9 @@ AddConstraintTeacherMaxAfternoonsPerWeekForm::AddConstraintTeacherMaxAfternoonsP
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(addConstraintsPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraints()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintTeacherMaxAfternoonsPerWeekForm::addCurrentConstraint);
+	connect(addConstraintsPushButton, &QPushButton::clicked, this, &AddConstraintTeacherMaxAfternoonsPerWeekForm::addCurrentConstraints);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintTeacherMaxAfternoonsPerWeekForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

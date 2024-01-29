@@ -49,7 +49,7 @@ StudentsStatisticsForm::StudentsStatisticsForm(QWidget* parent): QDialog(parent)
 	
 	closeButton->setDefault(true);
 
-	connect(closeButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(closeButton, &QPushButton::clicked, this, &StudentsStatisticsForm::close);
 
 	tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
 	tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
@@ -57,11 +57,11 @@ StudentsStatisticsForm::StudentsStatisticsForm(QWidget* parent): QDialog(parent)
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 	
-	connect(showYearsCheckBox, SIGNAL(toggled(bool)), this, SLOT(checkBoxesModified()));
-	connect(showGroupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(checkBoxesModified()));
-	connect(showSubgroupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(checkBoxesModified()));
+	connect(showYearsCheckBox, &QCheckBox::toggled, this, &StudentsStatisticsForm::checkBoxesModified);
+	connect(showGroupsCheckBox, &QCheckBox::toggled, this, &StudentsStatisticsForm::checkBoxesModified);
+	connect(showSubgroupsCheckBox, &QCheckBox::toggled, this, &StudentsStatisticsForm::checkBoxesModified);
 
-	connect(showCompleteStructureCheckBox, SIGNAL(toggled(bool)), this, SLOT(checkBoxesModified()));
+	connect(showCompleteStructureCheckBox, &QCheckBox::toggled, this, &StudentsStatisticsForm::checkBoxesModified);
 	
 	//2014-12-18
 	QSet<StudentsYear*> allYears;
@@ -210,6 +210,8 @@ StudentsStatisticsForm::StudentsStatisticsForm(QWidget* parent): QDialog(parent)
 	}
 	
 	checkBoxesModified();
+
+	connect(helpPushButton, &QPushButton::clicked, this, &StudentsStatisticsForm::helpPushButton_clicked);
 }
 
 StudentsStatisticsForm::~StudentsStatisticsForm()
@@ -350,7 +352,7 @@ void StudentsStatisticsForm::insertStudentsSet(StudentsSet* studentsSet, int row
 	tableWidget->setItem(row, 2, newItem);
 }
 
-void StudentsStatisticsForm::on_helpPushButton_clicked()
+void StudentsStatisticsForm::helpPushButton_clicked()
 {
 	QString s;
 	

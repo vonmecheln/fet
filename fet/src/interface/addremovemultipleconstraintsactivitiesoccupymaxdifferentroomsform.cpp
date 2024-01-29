@@ -35,10 +35,10 @@ AddRemoveMultipleConstraintsActivitiesOccupyMaxDifferentRoomsForm::AddRemoveMult
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 
-	connect(addAllConstraintsPushButton, SIGNAL(clicked()), this, SLOT(addAllConstraints()));
-	connect(removeAllConstraintsPushButton, SIGNAL(clicked()), this, SLOT(removeAllConstraints()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addAllConstraintsPushButton, &QPushButton::clicked, this, &AddRemoveMultipleConstraintsActivitiesOccupyMaxDifferentRoomsForm::addAllConstraints);
+	connect(removeAllConstraintsPushButton, &QPushButton::clicked, this, &AddRemoveMultipleConstraintsActivitiesOccupyMaxDifferentRoomsForm::removeAllConstraints);
+	connect(helpPushButton, &QPushButton::clicked, this, &AddRemoveMultipleConstraintsActivitiesOccupyMaxDifferentRoomsForm::help);
+	connect(closePushButton, &QPushButton::clicked, this, &AddRemoveMultipleConstraintsActivitiesOccupyMaxDifferentRoomsForm::close);
 
 	sameSubjectCheckBox->setChecked(true);
 	sameActivityTagsCheckBox->setChecked(false);

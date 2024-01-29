@@ -37,14 +37,14 @@ ConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::ConstraintActivities
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::modifyConstraint);
 
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(helpPushButton, &QPushButton::clicked, this, &ConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::help);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -86,10 +86,10 @@ ConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::ConstraintActivities
 
 	this->filterChanged();
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::filterChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::filterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::filterChanged);
 }
 
 ConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::~ConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm()

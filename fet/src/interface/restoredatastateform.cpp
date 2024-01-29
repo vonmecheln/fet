@@ -67,9 +67,9 @@ RestoreDataStateForm::RestoreDataStateForm(QWidget* parent): QDialog(parent)
 	if(settings.contains(this->metaObject()->className()+QString("/splitter-state")))
 		splitter->restoreState(settings.value(this->metaObject()->className()+QString("/splitter-state")).toByteArray());
 
-	connect(restoreDataStateListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(restoreDataStateListWidgetSelectionChanged()));
-	connect(buttonBox, SIGNAL(accepted()), this, SLOT(ok()));
-	connect(buttonBox, SIGNAL(rejected()), this, SLOT(cancel()));
+	connect(restoreDataStateListWidget, &QListWidget::currentRowChanged, this, &RestoreDataStateForm::restoreDataStateListWidgetSelectionChanged);
+	connect(buttonBox, &QDialogButtonBox::accepted, this, &RestoreDataStateForm::ok);
+	connect(buttonBox, &QDialogButtonBox::rejected, this, &RestoreDataStateForm::cancel);
 	
 	QLocale loc(FET_LANGUAGE_WITH_LOCALE);
 	std::list<QByteArray>::const_iterator ita=oldRulesArchived.cbegin();

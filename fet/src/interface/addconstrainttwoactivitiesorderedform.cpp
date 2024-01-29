@@ -28,10 +28,10 @@ AddConstraintTwoActivitiesOrderedForm::AddConstraintTwoActivitiesOrderedForm(QWi
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintTwoActivitiesOrderedForm::addCurrentConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintTwoActivitiesOrderedForm::close);
 
-	connect(swapPushButton, SIGNAL(clicked()), this, SLOT(swap()));
+	connect(swapPushButton, &QPushButton::clicked, this, &AddConstraintTwoActivitiesOrderedForm::swap);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -79,10 +79,10 @@ AddConstraintTwoActivitiesOrderedForm::AddConstraintTwoActivitiesOrderedForm(QWi
 
 	filterChanged();
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintTwoActivitiesOrderedForm::filterChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintTwoActivitiesOrderedForm::filterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintTwoActivitiesOrderedForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintTwoActivitiesOrderedForm::filterChanged);
 }
 
 AddConstraintTwoActivitiesOrderedForm::~AddConstraintTwoActivitiesOrderedForm()

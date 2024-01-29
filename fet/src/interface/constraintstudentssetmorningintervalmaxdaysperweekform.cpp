@@ -37,12 +37,12 @@ ConstraintStudentsSetMorningIntervalMaxDaysPerWeekForm::ConstraintStudentsSetMor
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintStudentsSetMorningIntervalMaxDaysPerWeekForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMorningIntervalMaxDaysPerWeekForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMorningIntervalMaxDaysPerWeekForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMorningIntervalMaxDaysPerWeekForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMorningIntervalMaxDaysPerWeekForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintStudentsSetMorningIntervalMaxDaysPerWeekForm::modifyConstraint);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -54,7 +54,7 @@ ConstraintStudentsSetMorningIntervalMaxDaysPerWeekForm::ConstraintStudentsSetMor
 
 	this->filterChanged();
 
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintStudentsSetMorningIntervalMaxDaysPerWeekForm::filterChanged);
 }
 
 ConstraintStudentsSetMorningIntervalMaxDaysPerWeekForm::~ConstraintStudentsSetMorningIntervalMaxDaysPerWeekForm()

@@ -654,20 +654,20 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	
 	updateNamesList();
 	
-	connect(CBTables, SIGNAL(currentIndexChanged(int)), this, SLOT(updateNamesList()));
-	connect(pbSelectAll, SIGNAL(clicked()), this, SLOT(selectAll()));
-	connect(pbUnselectAll, SIGNAL(clicked()), this, SLOT(unselectAll()));
-	connect(pbPrint, SIGNAL(clicked()), this, SLOT(print()));
-	connect(pbPrintPreviewSmall, SIGNAL(clicked()), this, SLOT(printPreviewSmall()));
-	connect(pbPrintPreviewFull, SIGNAL(clicked()), this, SLOT(printPreviewFull()));
-	connect(pbClose, SIGNAL(clicked()), this, SLOT(close()));
+	connect(CBTables, qOverload<int>(&QComboBox::currentIndexChanged), this, &TimetablePrintForm::updateNamesList);
+	connect(pbSelectAll, &QPushButton::clicked, this, &TimetablePrintForm::selectAll);
+	connect(pbUnselectAll, &QPushButton::clicked, this, &TimetablePrintForm::unselectAll);
+	connect(pbPrint, &QPushButton::clicked, this, &TimetablePrintForm::print);
+	connect(pbPrintPreviewSmall, &QPushButton::clicked, this, &TimetablePrintForm::printPreviewSmall);
+	connect(pbPrintPreviewFull, &QPushButton::clicked, this, &TimetablePrintForm::printPreviewFull);
+	connect(pbClose, &QPushButton::clicked, this, &TimetablePrintForm::close);
 	
-	connect(automaticColors, SIGNAL(toggled(bool)), this, SLOT(automaticColorsCheckBoxToggled()));
+	connect(automaticColors, &QCheckBox::toggled, this, &TimetablePrintForm::automaticColorsCheckBoxToggled);
 	
-	//connect(RBDaysHorizontal, SIGNAL(toggled(bool)), this, SLOT(updateCBDivideTimeAxisByDay()));
-	//connect(RBDaysVertical, SIGNAL(toggled(bool)), this, SLOT(updateCBDivideTimeAxisByDay()));
-	//connect(RBTimeHorizontal, SIGNAL(toggled(bool)), this, SLOT(updateCBDivideTimeAxisByDay()));
-	//connect(RBTimeVertical, SIGNAL(toggled(bool)), this, SLOT(updateCBDivideTimeAxisByDay()));
+	//connect(RBDaysHorizontal, SIG NAL(toggled(bool)), this, SL OT(updateCBDivideTimeAxisByDay()));
+	//connect(RBDaysVertical, SIG NAL(toggled(bool)), this, SL OT(updateCBDivideTimeAxisByDay()));
+	//connect(RBTimeHorizontal, SIG NAL(toggled(bool)), this, SL OT(updateCBDivideTimeAxisByDay()));
+	//connect(RBTimeVertical, SIG NAL(toggled(bool)), this, SL OT(updateCBDivideTimeAxisByDay()));
 
 	int ww=this->sizeHint().width();
 	if(ww>900)
@@ -1766,7 +1766,7 @@ void TimetablePrintForm::printPreviewFull(){
 	printer.setPageMargins(leftPageMargin->value(), topPageMargin->value(), rightPageMargin->value(), bottomPageMargin->value(), QPrinter::Millimeter);
 #endif
 	QPrintPreviewDialog printPreviewFull(&printer, this);
-	connect(&printPreviewFull, SIGNAL(paintRequested(QPrinter*)), SLOT(updatePreviewFull(QPrinter*)));
+	connect(&printPreviewFull, &QPrintPreviewDialog::paintRequested, this, &TimetablePrintForm::updatePreviewFull);
 
 	const QString settingsName=QString("TimetablePrintFormPrintPreviewFullDialog");
 	restoreFETDialogGeometry(&printPreviewFull, settingsName);
@@ -1841,7 +1841,7 @@ void TimetablePrintForm::printPreviewSmall(){
 	const QString settingsName=QString("TimetablePrintFormPrintPreviewSmallDialog");
 	restoreFETDialogGeometry(&printPreviewSmall, settingsName);
 
-	connect(&printPreviewSmall, SIGNAL(paintRequested(QPrinter*)), SLOT(updatePreviewSmall(QPrinter*)));
+	connect(&printPreviewSmall, &QPrintPreviewDialog::paintRequested, this, &TimetablePrintForm::updatePreviewSmall);
 	printPreviewSmall.exec();
 
 	saveFETDialogGeometry(&printPreviewSmall, settingsName);

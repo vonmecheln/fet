@@ -28,8 +28,8 @@ AddConstraintStudentsSetMinRestingHoursForm::AddConstraintStudentsSetMinRestingH
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintStudentsSetMinRestingHoursForm::addCurrentConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintStudentsSetMinRestingHoursForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

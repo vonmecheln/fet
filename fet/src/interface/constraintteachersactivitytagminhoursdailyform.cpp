@@ -39,14 +39,14 @@ ConstraintTeachersActivityTagMinHoursDailyForm::ConstraintTeachersActivityTagMin
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintTeachersActivityTagMinHoursDailyForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeachersActivityTagMinHoursDailyForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintTeachersActivityTagMinHoursDailyForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeachersActivityTagMinHoursDailyForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeachersActivityTagMinHoursDailyForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintTeachersActivityTagMinHoursDailyForm::modifyConstraint);
 
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(helpPushButton, &QPushButton::clicked, this, &ConstraintTeachersActivityTagMinHoursDailyForm::help);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -61,7 +61,7 @@ ConstraintTeachersActivityTagMinHoursDailyForm::ConstraintTeachersActivityTagMin
 
 	this->filterChanged();
 
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintTeachersActivityTagMinHoursDailyForm::filterChanged);
 }
 
 ConstraintTeachersActivityTagMinHoursDailyForm::~ConstraintTeachersActivityTagMinHoursDailyForm()

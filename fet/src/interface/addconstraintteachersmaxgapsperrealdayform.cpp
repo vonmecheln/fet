@@ -28,9 +28,9 @@ AddConstraintTeachersMaxGapsPerRealDayForm::AddConstraintTeachersMaxGapsPerRealD
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(addConstraintsPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraints()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintTeachersMaxGapsPerRealDayForm::addCurrentConstraint);
+	connect(addConstraintsPushButton, &QPushButton::clicked, this, &AddConstraintTeachersMaxGapsPerRealDayForm::addCurrentConstraints);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintTeachersMaxGapsPerRealDayForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

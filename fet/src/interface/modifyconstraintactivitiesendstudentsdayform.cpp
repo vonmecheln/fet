@@ -26,8 +26,8 @@ ModifyConstraintActivitiesEndStudentsDayForm::ModifyConstraintActivitiesEndStude
 
 	okPushButton->setDefault(true);
 
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintActivitiesEndStudentsDayForm::cancel);
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintActivitiesEndStudentsDayForm::ok);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

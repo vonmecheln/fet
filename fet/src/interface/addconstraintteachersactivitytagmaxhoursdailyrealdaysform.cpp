@@ -28,9 +28,9 @@ AddConstraintTeachersActivityTagMaxHoursDailyRealDaysForm::AddConstraintTeachers
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(addConstraintsPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraints()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintTeachersActivityTagMaxHoursDailyRealDaysForm::addCurrentConstraint);
+	connect(addConstraintsPushButton, &QPushButton::clicked, this, &AddConstraintTeachersActivityTagMaxHoursDailyRealDaysForm::addCurrentConstraints);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintTeachersActivityTagMaxHoursDailyRealDaysForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

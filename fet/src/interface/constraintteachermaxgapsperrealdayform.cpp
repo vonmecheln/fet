@@ -39,13 +39,13 @@ ConstraintTeacherMaxGapsPerRealDayForm::ConstraintTeacherMaxGapsPerRealDayForm(Q
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintTeacherMaxGapsPerRealDayForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxGapsPerRealDayForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxGapsPerRealDayForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxGapsPerRealDayForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxGapsPerRealDayForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintTeacherMaxGapsPerRealDayForm::modifyConstraint);
+	connect(helpPushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxGapsPerRealDayForm::help);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -61,7 +61,7 @@ ConstraintTeacherMaxGapsPerRealDayForm::ConstraintTeacherMaxGapsPerRealDayForm(Q
 
 	this->filterChanged();
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintTeacherMaxGapsPerRealDayForm::filterChanged);
 }
 
 ConstraintTeacherMaxGapsPerRealDayForm::~ConstraintTeacherMaxGapsPerRealDayForm()

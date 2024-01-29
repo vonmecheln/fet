@@ -37,13 +37,12 @@ ConstraintTeacherMaxRealDaysPerWeekForm::ConstraintTeacherMaxRealDaysPerWeekForm
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(teachersComboBox, SIGNAL(activated(int)), this, SLOT(filterChanged()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintTeacherMaxRealDaysPerWeekForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxRealDaysPerWeekForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxRealDaysPerWeekForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxRealDaysPerWeekForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxRealDaysPerWeekForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintTeacherMaxRealDaysPerWeekForm::modifyConstraint);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -58,6 +57,8 @@ ConstraintTeacherMaxRealDaysPerWeekForm::ConstraintTeacherMaxRealDaysPerWeekForm
 	}
 
 	this->filterChanged();
+
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintTeacherMaxRealDaysPerWeekForm::filterChanged);
 }
 
 ConstraintTeacherMaxRealDaysPerWeekForm::~ConstraintTeacherMaxRealDaysPerWeekForm()

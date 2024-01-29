@@ -25,12 +25,12 @@ ModifyConstraintStudentsSetMaxBuildingChangesPerRealDayForm::ModifyConstraintStu
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintStudentsSetMaxBuildingChangesPerRealDayForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintStudentsSetMaxBuildingChangesPerRealDayForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
-		
+	
 	QSize tmp2=studentsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp2);
 

@@ -26,8 +26,8 @@ ModifyConstraintActivityBeginsStudentsDayForm::ModifyConstraintActivityBeginsStu
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintActivityBeginsStudentsDayForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintActivityBeginsStudentsDayForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -76,10 +76,10 @@ ModifyConstraintActivityBeginsStudentsDayForm::ModifyConstraintActivityBeginsStu
 	
 	filterChanged();
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivityBeginsStudentsDayForm::filterChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivityBeginsStudentsDayForm::filterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivityBeginsStudentsDayForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivityBeginsStudentsDayForm::filterChanged);
 }
 
 ModifyConstraintActivityBeginsStudentsDayForm::~ModifyConstraintActivityBeginsStudentsDayForm()

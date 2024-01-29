@@ -49,9 +49,9 @@ AddTeacherForm::AddTeacherForm(QWidget* parent): QDialog(parent)
 	
 	addTeacherPushButton->setDefault(true);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(addTeacherPushButton, SIGNAL(clicked()), this, SLOT(addTeacher()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(closePushButton, &QPushButton::clicked, this, &AddTeacherForm::close);
+	connect(addTeacherPushButton, &QPushButton::clicked, this, &AddTeacherForm::addTeacher);
+	connect(helpPushButton, &QPushButton::clicked, this, &AddTeacherForm::help);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

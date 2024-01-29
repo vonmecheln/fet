@@ -27,8 +27,8 @@ ChangeMinHalfDaysSelectivelyForm::ChangeMinHalfDaysSelectivelyForm(QWidget* pare
 	
 	okPushButton->setDefault(true);
 	
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ChangeMinHalfDaysSelectivelyForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ChangeMinHalfDaysSelectivelyForm::cancel);
 	
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

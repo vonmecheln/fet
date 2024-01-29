@@ -26,8 +26,8 @@ ModifyConstraintStudentsSetMinHoursPerAfternoonForm::ModifyConstraintStudentsSet
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintStudentsSetMinHoursPerAfternoonForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintStudentsSetMinHoursPerAfternoonForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -42,7 +42,7 @@ ModifyConstraintStudentsSetMinHoursPerAfternoonForm::ModifyConstraintStudentsSet
 	//assert(ctr->allowEmptyDays==true);
 	allowEmptyAfternoonsCheckBox->setChecked(ctr->allowEmptyAfternoons);
 	
-	connect(allowEmptyAfternoonsCheckBox, SIGNAL(toggled(bool)), this, SLOT(allowEmptyAfternoonsCheckBoxToggled())); //after set checked!
+	connect(allowEmptyAfternoonsCheckBox, &QCheckBox::toggled, this, &ModifyConstraintStudentsSetMinHoursPerAfternoonForm::allowEmptyAfternoonsCheckBoxToggled); //after set checked!
 	
 	if(gt.rules.mode==MORNINGS_AFTERNOONS || ENABLE_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS)
 		allowLabel->setText(tr("Advanced usage: enabled"));

@@ -28,8 +28,8 @@ AddConstraintStudentsSetMinGapsBetweenActivityTagForm::AddConstraintStudentsSetM
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintStudentsSetMinGapsBetweenActivityTagForm::addCurrentConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintStudentsSetMinGapsBetweenActivityTagForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

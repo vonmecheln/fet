@@ -26,8 +26,8 @@ ModifyConstraintStudentsMinHoursPerMorningForm::ModifyConstraintStudentsMinHours
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintStudentsMinHoursPerMorningForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintStudentsMinHoursPerMorningForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -40,7 +40,7 @@ ModifyConstraintStudentsMinHoursPerMorningForm::ModifyConstraintStudentsMinHours
 
 	allowEmptyMorningsCheckBox->setChecked(ctr->allowEmptyMornings);
 	
-	connect(allowEmptyMorningsCheckBox, SIGNAL(toggled(bool)), this, SLOT(allowEmptyMorningsCheckBoxToggled())); //after set checked!
+	connect(allowEmptyMorningsCheckBox, &QCheckBox::toggled, this, &ModifyConstraintStudentsMinHoursPerMorningForm::allowEmptyMorningsCheckBoxToggled); //after set checked!
 
 	if(gt.rules.mode==MORNINGS_AFTERNOONS || ENABLE_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS)
 		allowLabel->setText(tr("Advanced usage: enabled"));

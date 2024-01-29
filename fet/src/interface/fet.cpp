@@ -1083,7 +1083,7 @@ int main(int argc, char **argv)
 	rooms_buildings_schedule_ready=false;
 
 #ifndef FET_COMMAND_LINE
-	QObject::connect(&qapplication, SIGNAL(lastWindowClosed()), &qapplication, SLOT(quit()));
+	QObject::connect(&qapplication, &QApplication::lastWindowClosed, &qapplication, &QApplication::quit);
 #endif
 
 	//srand(unsigned(time(nullptr))); //useless, I use randomKnuth(), but just in case I use somewhere rand() by mistake...
@@ -1152,7 +1152,7 @@ int main(int argc, char **argv)
 		pFetMainForm=&fetMainForm;
 		fetMainForm.show();
 		
-		QObject::connect(&qapplication, SIGNAL(aboutToQuit()), &fetSettings, SLOT(writeGenerationParameters()));
+		QObject::connect(&qapplication, &QApplication::aboutToQuit, &fetSettings, &FetSettings::writeGenerationParameters);
 
 		int tmp2=qapplication.exec();
 	

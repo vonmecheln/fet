@@ -37,14 +37,14 @@ ConstraintTeachersMaxThreeConsecutiveDaysForm::ConstraintTeachersMaxThreeConsecu
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintTeachersMaxThreeConsecutiveDaysForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeachersMaxThreeConsecutiveDaysForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintTeachersMaxThreeConsecutiveDaysForm::close);
+	connect(helpPushButton, &QPushButton::clicked, this, &ConstraintTeachersMaxThreeConsecutiveDaysForm::help);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeachersMaxThreeConsecutiveDaysForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeachersMaxThreeConsecutiveDaysForm::modifyConstraint);
 
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintTeachersMaxThreeConsecutiveDaysForm::modifyConstraint);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

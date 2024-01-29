@@ -102,26 +102,26 @@ AddActivityForm::AddActivityForm(QWidget* parent, const QString& teacherName, co
 	allTeachersRadioButton->setChecked(settings.value(this->metaObject()->className()+QString("/all-teachers-radio-button-state"), "true").toBool());
 	qualifiedTeachersRadioButton->setChecked(settings.value(this->metaObject()->className()+QString("/qualified-teachers-radio-button-state"), "false").toBool());
 
-	connect(subgroupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showSubgroupsChanged()));
-	connect(groupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showGroupsChanged()));
-	connect(yearsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showYearsChanged()));
+	connect(subgroupsCheckBox, &QCheckBox::toggled, this, &AddActivityForm::showSubgroupsChanged);
+	connect(groupsCheckBox, &QCheckBox::toggled, this, &AddActivityForm::showGroupsChanged);
+	connect(yearsCheckBox, &QCheckBox::toggled, this, &AddActivityForm::showYearsChanged);
 
-	connect(splitSpinBox, SIGNAL(valueChanged(int)), this, SLOT(splitChanged()));
+	connect(splitSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &AddActivityForm::splitChanged);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(addActivityPushButton, SIGNAL(clicked()), this, SLOT(addActivity()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(closePushButton, &QPushButton::clicked, this, &AddActivityForm::close);
+	connect(addActivityPushButton, &QPushButton::clicked, this, &AddActivityForm::addActivity);
+	connect(helpPushButton, &QPushButton::clicked, this, &AddActivityForm::help);
 
-	connect(allTeachersListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addTeacher()));
-	connect(selectedTeachersListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeTeacher()));
-	connect(allStudentsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addStudents()));
-	connect(selectedStudentsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeStudents()));
-	connect(allActivityTagsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addActivityTag()));
-	connect(selectedActivityTagsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeActivityTag()));
+	connect(allTeachersListWidget, &QListWidget::itemDoubleClicked, this, &AddActivityForm::addTeacher);
+	connect(selectedTeachersListWidget, &QListWidget::itemDoubleClicked, this, &AddActivityForm::removeTeacher);
+	connect(allStudentsListWidget, &QListWidget::itemDoubleClicked, this, &AddActivityForm::addStudents);
+	connect(selectedStudentsListWidget, &QListWidget::itemDoubleClicked, this, &AddActivityForm::removeStudents);
+	connect(allActivityTagsListWidget, &QListWidget::itemDoubleClicked, this, &AddActivityForm::addActivityTag);
+	connect(selectedActivityTagsListWidget, &QListWidget::itemDoubleClicked, this, &AddActivityForm::removeActivityTag);
 
-	connect(clearActivityTagsPushButton, SIGNAL(clicked()), this, SLOT(clearActivityTags()));
-	connect(clearStudentsPushButton, SIGNAL(clicked()), this, SLOT(clearStudents()));
-	connect(clearTeachersPushButton, SIGNAL(clicked()), this, SLOT(clearTeachers()));
+	connect(clearActivityTagsPushButton, &QPushButton::clicked, this, &AddActivityForm::clearActivityTags);
+	connect(clearStudentsPushButton, &QPushButton::clicked, this, &AddActivityForm::clearStudents);
+	connect(clearTeachersPushButton, &QPushButton::clicked, this, &AddActivityForm::clearTeachers);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -157,9 +157,9 @@ AddActivityForm::AddActivityForm(QWidget* parent, const QString& teacherName, co
 	updateActivityTagsListWidget();
 
 	//after updateSubjectsComboBox
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(updateAllTeachersListWidget()));
-	connect(allTeachersRadioButton, SIGNAL(toggled(bool)), this, SLOT(allTeachersRadioButtonToggled(bool)));
-	connect(qualifiedTeachersRadioButton, SIGNAL(toggled(bool)), this, SLOT(qualifiedTeachersRadioButtonToggled(bool)));
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddActivityForm::updateAllTeachersListWidget);
+	connect(allTeachersRadioButton, &QRadioButton::toggled, this, &AddActivityForm::allTeachersRadioButtonToggled);
+	connect(qualifiedTeachersRadioButton, &QRadioButton::toggled, this, &AddActivityForm::qualifiedTeachersRadioButtonToggled);
 	updateAllTeachersListWidget();
 	selectedTeachersListWidget->clear();
 
@@ -170,7 +170,7 @@ AddActivityForm::AddActivityForm(QWidget* parent, const QString& teacherName, co
 	minDaysDistanceSpinBox->setMinimum(0);
 	minDaysDistanceSpinBox->setValue(1);
 	
-	connect(minDaysDistanceSpinBox, SIGNAL(valueChanged(int)), this, SLOT(minDaysChanged()));
+	connect(minDaysDistanceSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &AddActivityForm::minDaysChanged);
 	
 	int nSplit=splitSpinBox->value();
 
@@ -183,7 +183,7 @@ AddActivityForm::AddActivityForm(QWidget* parent, const QString& teacherName, co
 	forceConsecutiveCheckBox->setChecked(true);
 	forceConsecutiveCheckBox->setEnabled(nSplit>=2 && minDaysDistanceSpinBox->value()>0);
 	
-	connect(halfCheckBox, SIGNAL(toggled(bool)), this, SLOT(halfCheckBoxToggled()));
+	connect(halfCheckBox, &QCheckBox::toggled, this, &AddActivityForm::halfCheckBoxToggled);
 	
 	nStudentsSpinBox->setMinimum(-1);
 	nStudentsSpinBox->setMaximum(MAX_ROOM_CAPACITY);
@@ -556,8 +556,8 @@ SecondMinDaysDialog::SecondMinDaysDialog(QWidget* p, int minD, double w) :QDialo
 	hl->addWidget(yes);
 	hl->addWidget(no);
 	
-	connect(yes, SIGNAL(clicked()), this, SLOT(yesPressed()));
-	connect(no, SIGNAL(clicked()), this, SLOT(reject()));
+	connect(yes, &QPushButton::clicked, this, &SecondMinDaysDialog::yesPressed);
+	connect(no, &QPushButton::clicked, this, &SecondMinDaysDialog::reject);
 	
 	int ww=this->sizeHint().width();
 	if(ww>1000)
@@ -1374,7 +1374,7 @@ void AddActivityForm::help()
 
 	vl->addWidget(te);
 	vl->addLayout(hl);
-	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
+	connect(pb, &QPushButton::clicked, &dialog, &QDialog::close);
 
 	dialog.resize(700,500);
 	centerWidgetOnScreen(&dialog);

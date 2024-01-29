@@ -25,9 +25,9 @@ ActivityPlanningConfirmationForm::ActivityPlanningConfirmationForm(QWidget* pare
 	
 	continuePushButton->setDefault(true);
 	
-	connect(continuePushButton, SIGNAL(clicked()), this, SLOT(accept()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(reject()));
-	connect(dontShowAgainCheckBox, SIGNAL(toggled(bool)), this, SLOT(dontShowAgainCheckBoxToggled()));
+	connect(continuePushButton, &QPushButton::clicked, this, &ActivityPlanningConfirmationForm::accept);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ActivityPlanningConfirmationForm::reject);
+	connect(dontShowAgainCheckBox, &QCheckBox::toggled, this, &ActivityPlanningConfirmationForm::dontShowAgainCheckBoxToggled);
 	
 	dontShowAgain=dontShowAgainCheckBox->isChecked();
 	

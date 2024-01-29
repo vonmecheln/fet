@@ -27,8 +27,8 @@ AddConstraintTeacherHomeRoomForm::AddConstraintTeacherHomeRoomForm(QWidget* pare
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintTeacherHomeRoomForm::close);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintTeacherHomeRoomForm::addConstraint);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

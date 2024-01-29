@@ -192,8 +192,8 @@ void AdvancedLockUnlockForm::lockDay(QWidget* parent)
 	taMainLayout->addStretch();
 	taMainLayout->addLayout(buttons);
 
-	QObject::connect(tapb2, SIGNAL(clicked()), &taDialog, SLOT(accept()));
-	QObject::connect(tapb1, SIGNAL(clicked()), &taDialog, SLOT(reject()));
+	connect(tapb2, &QPushButton::clicked, &taDialog, &QDialog::accept);
+	connect(tapb1, &QPushButton::clicked, &taDialog, &QDialog::reject);
 
 	tapb2->setDefault(true);
 	tapb2->setFocus();
@@ -375,8 +375,8 @@ void AdvancedLockUnlockForm::lockDay(QWidget* parent)
 	//lastMainLayout->addStretch();
 	lastMainLayout->addLayout(lastButtons);
 
-	QObject::connect(lastpb2, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(accept()));
-	QObject::connect(lastpb1, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(reject()));
+	connect(lastpb2, &QPushButton::clicked, &lastConfirmationDialog, &QDialog::accept);
+	connect(lastpb1, &QPushButton::clicked, &lastConfirmationDialog, &QDialog::reject);
 
 	lastpb2->setDefault(true);
 	lastpb2->setFocus();
@@ -487,8 +487,8 @@ void AdvancedLockUnlockForm::lockDay(QWidget* parent)
 	taMainLayout->addStretch();
 	taMainLayout->addLayout(buttons);
 
-	QObject::connect(tapb2, SIGNAL(clicked()), &taDialog, SLOT(accept()));
-	QObject::connect(tapb1, SIGNAL(clicked()), &taDialog, SLOT(reject()));
+	QObj ect::connect(tapb2, SIG NAL(clicked()), &taDialog, SL OT(accept()));
+	QObj ect::connect(tapb1, SIG NAL(clicked()), &taDialog, SL OT(reject()));
 
 	tapb2->setDefault(true);
 	tapb2->setFocus();
@@ -651,8 +651,8 @@ void AdvancedLockUnlockForm::lockDay(QWidget* parent)
 	//lastMainLayout->addStretch();
 	lastMainLayout->addLayout(lastButtons);
 
-	QObject::connect(lastpb2, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(accept()));
-	QObject::connect(lastpb1, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(reject()));
+	QObj ect::connect(lastpb2, SIG NAL(clicked()), &lastConfirmationDialog, SL OT(accept()));
+	QObj ect::connect(lastpb1, SIG NAL(clicked()), &lastConfirmationDialog, SL OT(reject()));
 
 	lastpb2->setDefault(true);
 	lastpb2->setFocus();
@@ -737,8 +737,8 @@ void AdvancedLockUnlockForm::lockEndStudentsDay(QWidget* parent)
 	taMainLayout->addStretch();
 	taMainLayout->addLayout(buttons);
 
-	QObject::connect(tapb2, SIGNAL(clicked()), &taDialog, SLOT(accept()));
-	QObject::connect(tapb1, SIGNAL(clicked()), &taDialog, SLOT(reject()));
+	connect(tapb2, &QPushButton::clicked, &taDialog, &QDialog::accept);
+	connect(tapb1, &QPushButton::clicked, &taDialog, &QDialog::reject);
 
 	tapb2->setDefault(true);
 	tapb2->setFocus();
@@ -949,8 +949,8 @@ void AdvancedLockUnlockForm::lockEndStudentsDay(QWidget* parent)
 	//lastMainLayout->addStretch();
 	lastMainLayout->addLayout(lastButtons);
 
-	QObject::connect(lastpb2, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(accept()));
-	QObject::connect(lastpb1, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(reject()));
+	connect(lastpb2, &QPushButton::clicked, &lastConfirmationDialog, &QDialog::accept);
+	connect(lastpb1, &QPushButton::clicked, &lastConfirmationDialog, &QDialog::reject);
 
 	lastpb2->setDefault(true);
 	lastpb2->setFocus();
@@ -1047,8 +1047,8 @@ void AdvancedLockUnlockForm::unlockEndStudentsDay(QWidget* parent)
 	taMainLayout->addStretch();
 	taMainLayout->addLayout(buttons);
 
-	QObject::connect(tapb2, SIGNAL(clicked()), &taDialog, SLOT(accept()));
-	QObject::connect(tapb1, SIGNAL(clicked()), &taDialog, SLOT(reject()));
+	connect(tapb2, &QPushButton::clicked, &taDialog, &QDialog::accept);
+	connect(tapb1, &QPushButton::clicked, &taDialog, &QDialog::reject);
 
 	tapb2->setDefault(true);
 	tapb2->setFocus();
@@ -1217,8 +1217,8 @@ void AdvancedLockUnlockForm::unlockEndStudentsDay(QWidget* parent)
 	//lastMainLayout->addStretch();
 	lastMainLayout->addLayout(lastButtons);
 
-	QObject::connect(lastpb2, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(accept()));
-	QObject::connect(lastpb1, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(reject()));
+	connect(lastpb2, &QPushButton::clicked, &lastConfirmationDialog, &QDialog::accept);
+	connect(lastpb1, &QPushButton::clicked, &lastConfirmationDialog, &QDialog::reject);
 
 	lastpb2->setDefault(true);
 	lastpb2->setFocus();
@@ -1307,8 +1307,8 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 	taMainLayout->addStretch();
 	taMainLayout->addLayout(buttons);
 
-	QObject::connect(tapb2, SIGNAL(clicked()), &taDialog, SLOT(accept()));
-	QObject::connect(tapb1, SIGNAL(clicked()), &taDialog, SLOT(reject()));
+	connect(tapb2, &QPushButton::clicked, &taDialog, &QDialog::accept);
+	connect(tapb1, &QPushButton::clicked, &taDialog, &QDialog::reject);
 
 	tapb2->setDefault(true);
 	tapb2->setFocus();
@@ -1488,8 +1488,8 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 	//lastMainLayout->addStretch();
 	lastMainLayout->addLayout(lastButtons);
 
-	QObject::connect(lastpb2, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(accept()));
-	QObject::connect(lastpb1, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(reject()));
+	connect(lastpb2, &QPushButton::clicked, &lastConfirmationDialog, &QDialog::accept);
+	connect(lastpb1, &QPushButton::clicked, &lastConfirmationDialog, &QDialog::reject);
 
 	lastpb2->setDefault(true);
 	lastpb2->setFocus();
@@ -1588,8 +1588,8 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 	taMainLayout->addStretch();
 	taMainLayout->addLayout(buttons);
 
-	QObject::connect(tapb2, SIGNAL(clicked()), &taDialog, SLOT(accept()));
-	QObject::connect(tapb1, SIGNAL(clicked()), &taDialog, SLOT(reject()));
+	QObj ect::connect(tapb2, SIG NAL(clicked()), &taDialog, SL OT(accept()));
+	QObj ect::connect(tapb1, SIG NAL(clicked()), &taDialog, SL OT(reject()));
 
 	tapb2->setDefault(true);
 	tapb2->setFocus();
@@ -1738,8 +1738,8 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 	//lastMainLayout->addStretch();
 	lastMainLayout->addLayout(lastButtons);
 
-	QObject::connect(lastpb2, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(accept()));
-	QObject::connect(lastpb1, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(reject()));
+	QObj ect::connect(lastpb2, SIG NAL(clicked()), &lastConfirmationDialog, SL OT(accept()));
+	QObj ect::connect(lastpb1, SIG NAL(clicked()), &lastConfirmationDialog, SL OT(reject()));
 
 	lastpb2->setDefault(true);
 	lastpb2->setFocus();
@@ -1831,8 +1831,8 @@ void AdvancedLockUnlockForm::unlockAllWithoutTimetable(QWidget* parent)
 	taMainLayout->addStretch();
 	taMainLayout->addLayout(buttons);
 
-	QObject::connect(tapb2, SIGNAL(clicked()), &taDialog, SLOT(accept()));
-	QObject::connect(tapb1, SIGNAL(clicked()), &taDialog, SLOT(reject()));
+	connect(tapb2, &QPushButton::clicked, &taDialog, &QDialog::accept);
+	connect(tapb1, &QPushButton::clicked, &taDialog, &QDialog::reject);
 
 	tapb2->setDefault(true);
 	tapb2->setFocus();
@@ -1994,8 +1994,8 @@ void AdvancedLockUnlockForm::unlockAllWithoutTimetable(QWidget* parent)
 	//lastMainLayout->addStretch();
 	lastMainLayout->addLayout(lastButtons);
 
-	QObject::connect(lastpb2, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(accept()));
-	QObject::connect(lastpb1, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(reject()));
+	connect(lastpb2, &QPushButton::clicked, &lastConfirmationDialog, &QDialog::accept);
+	connect(lastpb1, &QPushButton::clicked, &lastConfirmationDialog, &QDialog::reject);
 
 	lastpb2->setDefault(true);
 	lastpb2->setFocus();
@@ -2105,8 +2105,8 @@ void AdvancedLockUnlockForm::unlockDayWithoutTimetable(QWidget* parent)
 	taMainLayout->addStretch();
 	taMainLayout->addLayout(buttons);
 
-	QObject::connect(tapb2, SIGNAL(clicked()), &taDialog, SLOT(accept()));
-	QObject::connect(tapb1, SIGNAL(clicked()), &taDialog, SLOT(reject()));
+	connect(tapb2, &QPushButton::clicked, &taDialog, &QDialog::accept);
+	connect(tapb1, &QPushButton::clicked, &taDialog, &QDialog::reject);
 
 	tapb2->setDefault(true);
 	tapb2->setFocus();
@@ -2281,8 +2281,8 @@ void AdvancedLockUnlockForm::unlockDayWithoutTimetable(QWidget* parent)
 	//lastMainLayout->addStretch();
 	lastMainLayout->addLayout(lastButtons);
 
-	QObject::connect(lastpb2, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(accept()));
-	QObject::connect(lastpb1, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(reject()));
+	connect(lastpb2, &QPushButton::clicked, &lastConfirmationDialog, &QDialog::accept);
+	connect(lastpb1, &QPushButton::clicked, &lastConfirmationDialog, &QDialog::reject);
 
 	lastpb2->setDefault(true);
 	lastpb2->setFocus();
@@ -2391,8 +2391,8 @@ void AdvancedLockUnlockForm::lockActivityTag(QWidget* parent)
 	taMainLayout->addStretch();
 	taMainLayout->addLayout(buttons);
 
-	QObject::connect(tapb2, SIGNAL(clicked()), &taDialog, SLOT(accept()));
-	QObject::connect(tapb1, SIGNAL(clicked()), &taDialog, SLOT(reject()));
+	connect(tapb2, &QPushButton::clicked, &taDialog, &QDialog::accept);
+	connect(tapb1, &QPushButton::clicked, &taDialog, &QDialog::reject);
 
 	tapb2->setDefault(true);
 	tapb2->setFocus();
@@ -2575,8 +2575,8 @@ void AdvancedLockUnlockForm::lockActivityTag(QWidget* parent)
 	//lastMainLayout->addStretch();
 	lastMainLayout->addLayout(lastButtons);
 
-	QObject::connect(lastpb2, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(accept()));
-	QObject::connect(lastpb1, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(reject()));
+	connect(lastpb2, &QPushButton::clicked, &lastConfirmationDialog, &QDialog::accept);
+	connect(lastpb1, &QPushButton::clicked, &lastConfirmationDialog, &QDialog::reject);
 
 	lastpb2->setDefault(true);
 	lastpb2->setFocus();
@@ -2694,8 +2694,8 @@ void AdvancedLockUnlockForm::lockActivityTag(QWidget* parent)
 	taMainLayout->addStretch();
 	taMainLayout->addLayout(buttons);
 
-	QObject::connect(tapb2, SIGNAL(clicked()), &taDialog, SLOT(accept()));
-	QObject::connect(tapb1, SIGNAL(clicked()), &taDialog, SLOT(reject()));
+	QObj ect::connect(tapb2, SIG NAL(clicked()), &taDialog, SL OT(accept()));
+	QObj ect::connect(tapb1, SIG NAL(clicked()), &taDialog, SL OT(reject()));
 
 	tapb2->setDefault(true);
 	tapb2->setFocus();
@@ -2852,8 +2852,8 @@ void AdvancedLockUnlockForm::lockActivityTag(QWidget* parent)
 	//lastMainLayout->addStretch();
 	lastMainLayout->addLayout(lastButtons);
 
-	QObject::connect(lastpb2, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(accept()));
-	QObject::connect(lastpb1, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(reject()));
+	QObj ect::connect(lastpb2, SIG NAL(clicked()), &lastConfirmationDialog, SL OT(accept()));
+	QObj ect::connect(lastpb1, SIG NAL(clicked()), &lastConfirmationDialog, SL OT(reject()));
 
 	lastpb2->setDefault(true);
 	lastpb2->setFocus();
@@ -2965,8 +2965,8 @@ void AdvancedLockUnlockForm::unlockActivityTagWithoutTimetable(QWidget* parent)
 	taMainLayout->addStretch();
 	taMainLayout->addLayout(buttons);
 
-	QObject::connect(tapb2, SIGNAL(clicked()), &taDialog, SLOT(accept()));
-	QObject::connect(tapb1, SIGNAL(clicked()), &taDialog, SLOT(reject()));
+	connect(tapb2, &QPushButton::clicked, &taDialog, &QDialog::accept);
+	connect(tapb1, &QPushButton::clicked, &taDialog, &QDialog::reject);
 
 	tapb2->setDefault(true);
 	tapb2->setFocus();
@@ -3133,8 +3133,8 @@ void AdvancedLockUnlockForm::unlockActivityTagWithoutTimetable(QWidget* parent)
 	//lastMainLayout->addStretch();
 	lastMainLayout->addLayout(lastButtons);
 
-	QObject::connect(lastpb2, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(accept()));
-	QObject::connect(lastpb1, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(reject()));
+	connect(lastpb2, &QPushButton::clicked, &lastConfirmationDialog, &QDialog::accept);
+	connect(lastpb1, &QPushButton::clicked, &lastConfirmationDialog, &QDialog::reject);
 
 	lastpb2->setDefault(true);
 	lastpb2->setFocus();
@@ -3234,10 +3234,10 @@ LockAdvancedDialog::LockAdvancedDialog(QWidget* parent) : QDialog(parent)
 	taMainLayout->addWidget(selectorsGroupBox);
 	taMainLayout->addLayout(buttons);
 
-	connect(tapb2, SIGNAL(clicked()), this, SLOT(accept()));
-	connect(tapb1, SIGNAL(clicked()), this, SLOT(reject()));
-	connect(helpPB, SIGNAL(clicked()), this, SLOT(help()));
-	connect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
+	connect(tapb2, &QPushButton::clicked, this, &LockAdvancedDialog::accept);
+	connect(tapb1, &QPushButton::clicked, this, &LockAdvancedDialog::reject);
+	connect(helpPB, &QPushButton::clicked, this, &LockAdvancedDialog::help);
+	connect(filterCheckBox, &QCheckBox::toggled, this, &LockAdvancedDialog::filter);
 
 	//////////////////
 	QSettings settings(COMPANY, PROGRAM);
@@ -3528,9 +3528,9 @@ void LockAdvancedDialog::filter(bool selected)
 		filterChanged();
 	}
 	else{
-		disconnect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
+		disconnect(filterCheckBox, &QCheckBox::toggled, this, &LockAdvancedDialog::filter);
 		filterCheckBox->setChecked(false);
-		connect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
+		connect(filterCheckBox, &QCheckBox::toggled, this, &LockAdvancedDialog::filter);
 	}
 	
 	delete filterForm;
@@ -3728,8 +3728,8 @@ void AdvancedLockUnlockForm::lockAdvancedFilter(QWidget* parent)
 	//lastMainLayout->addStretch();
 	lastMainLayout->addLayout(lastButtons);
 
-	QObject::connect(lastpb2, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(accept()));
-	QObject::connect(lastpb1, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(reject()));
+	connect(lastpb2, &QPushButton::clicked, &lastConfirmationDialog, &QDialog::accept);
+	connect(lastpb1, &QPushButton::clicked, &lastConfirmationDialog, &QDialog::reject);
 
 	lastpb2->setDefault(true);
 	lastpb2->setFocus();
@@ -3835,10 +3835,10 @@ UnlockAdvancedDialog::UnlockAdvancedDialog(QWidget* parent) : QDialog(parent)
 	taMainLayout->addWidget(selectorsGroupBox);
 	taMainLayout->addLayout(buttons);
 
-	connect(tapb2, SIGNAL(clicked()), this, SLOT(accept()));
-	connect(tapb1, SIGNAL(clicked()), this, SLOT(reject()));
-	connect(helpPB, SIGNAL(clicked()), this, SLOT(help()));
-	connect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
+	connect(tapb2, &QPushButton::clicked, this, &UnlockAdvancedDialog::accept);
+	connect(tapb1, &QPushButton::clicked, this, &UnlockAdvancedDialog::reject);
+	connect(helpPB, &QPushButton::clicked, this, &UnlockAdvancedDialog::help);
+	connect(filterCheckBox, &QCheckBox::toggled, this, &UnlockAdvancedDialog::filter);
 
 	//////////////////
 	QSettings settings(COMPANY, PROGRAM);
@@ -4125,9 +4125,9 @@ void UnlockAdvancedDialog::filter(bool selected)
 		filterChanged();
 	}
 	else{
-		disconnect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
+		disconnect(filterCheckBox, &QCheckBox::toggled, this, &UnlockAdvancedDialog::filter);
 		filterCheckBox->setChecked(false);
-		connect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
+		connect(filterCheckBox, &QCheckBox::toggled, this, &UnlockAdvancedDialog::filter);
 	}
 	
 	delete filterForm;
@@ -4318,8 +4318,8 @@ void AdvancedLockUnlockForm::unlockAdvancedFilterWithoutTimetable(QWidget* paren
 	//lastMainLayout->addStretch();
 	lastMainLayout->addLayout(lastButtons);
 
-	QObject::connect(lastpb2, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(accept()));
-	QObject::connect(lastpb1, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(reject()));
+	connect(lastpb2, &QPushButton::clicked, &lastConfirmationDialog, &QDialog::accept);
+	connect(lastpb1, &QPushButton::clicked, &lastConfirmationDialog, &QDialog::reject);
 
 	lastpb2->setDefault(true);
 	lastpb2->setFocus();

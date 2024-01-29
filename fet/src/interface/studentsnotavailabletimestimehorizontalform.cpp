@@ -144,10 +144,10 @@ StudentsNotAvailableTimesTimeHorizontalForm::StudentsNotAvailableTimesTimeHorizo
 		}
 	}
 
-	connect(buttonBox, SIGNAL(accepted()), this, SLOT(ok()));
-	connect(buttonBox, SIGNAL(rejected()), this, SLOT(cancel()));
-	connect(naTableWidget, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
-	connect(selectedPushButton, SIGNAL(clicked()), this, SLOT(selectedClicked()));
+	connect(buttonBox, &QDialogButtonBox::accepted, this, &StudentsNotAvailableTimesTimeHorizontalForm::ok);
+	connect(buttonBox, &QDialogButtonBox::rejected, this, &StudentsNotAvailableTimesTimeHorizontalForm::cancel);
+	connect(naTableWidget, &QTableWidget::itemClicked, this, &StudentsNotAvailableTimesTimeHorizontalForm::itemClicked);
+	connect(selectedPushButton, &QPushButton::clicked, this, &StudentsNotAvailableTimesTimeHorizontalForm::selectedClicked);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -292,8 +292,8 @@ StudentsNotAvailableTimesTimeHorizontalForm::StudentsNotAvailableTimesTimeHorizo
 	widthSpinBoxValueChanged();
 	heightSpinBoxValueChanged();
 
-	connect(widthSpinBox, SIGNAL(valueChanged(int)), this, SLOT(widthSpinBoxValueChanged()));
-	connect(heightSpinBox, SIGNAL(valueChanged(int)), this, SLOT(heightSpinBoxValueChanged()));
+	connect(widthSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &StudentsNotAvailableTimesTimeHorizontalForm::widthSpinBoxValueChanged);
+	connect(heightSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &StudentsNotAvailableTimesTimeHorizontalForm::heightSpinBoxValueChanged);
 
 	if(settings.contains(this->metaObject()->className()+QString("/years-check-box-state"))){
 		bool ycb=settings.value(this->metaObject()->className()+QString("/years-check-box-state")).toBool();
@@ -319,9 +319,9 @@ StudentsNotAvailableTimesTimeHorizontalForm::StudentsNotAvailableTimesTimeHorizo
 
 	checkBoxesChanged();
 
-	connect(yearsCheckBox, SIGNAL(toggled(bool)), this, SLOT(checkBoxesChanged()));
-	connect(groupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(checkBoxesChanged()));
-	connect(subgroupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(checkBoxesChanged()));
+	connect(yearsCheckBox, &QCheckBox::toggled, this, &StudentsNotAvailableTimesTimeHorizontalForm::checkBoxesChanged);
+	connect(groupsCheckBox, &QCheckBox::toggled, this, &StudentsNotAvailableTimesTimeHorizontalForm::checkBoxesChanged);
+	connect(subgroupsCheckBox, &QCheckBox::toggled, this, &StudentsNotAvailableTimesTimeHorizontalForm::checkBoxesChanged);
 }
 
 StudentsNotAvailableTimesTimeHorizontalForm::~StudentsNotAvailableTimesTimeHorizontalForm()

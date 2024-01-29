@@ -26,12 +26,12 @@ ModifyConstraintStudentsMinRestingHoursForm::ModifyConstraintStudentsMinRestingH
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintStudentsMinRestingHoursForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintStudentsMinRestingHoursForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
-		
+	
 	this->_ctr=ctr;
 	
 	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));

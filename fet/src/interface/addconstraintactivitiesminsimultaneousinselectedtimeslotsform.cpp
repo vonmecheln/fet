@@ -47,15 +47,15 @@ AddConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::AddConstraintActi
 	allActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	selectedActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(selectedTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
-	connect(setAllUnselectedPushButton, SIGNAL(clicked()), this, SLOT(setAllUnselected()));
-	connect(setAllSelectedPushButton, SIGNAL(clicked()), this, SLOT(setAllSelected()));
-	connect(allActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addActivity()));
-	connect(addAllActivitiesPushButton, SIGNAL(clicked()), this, SLOT(addAllActivities()));
-	connect(selectedActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeActivity()));
-	connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::addCurrentConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::close);
+	connect(selectedTimesTable, &QTableWidget::itemClicked, this, &AddConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::itemClicked);
+	connect(setAllUnselectedPushButton, &QPushButton::clicked, this, &AddConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::setAllUnselected);
+	connect(setAllSelectedPushButton, &QPushButton::clicked, this, &AddConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::setAllSelected);
+	connect(allActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &AddConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::addActivity);
+	connect(addAllActivitiesPushButton, &QPushButton::clicked, this, &AddConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::addAllActivities);
+	connect(selectedActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &AddConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::removeActivity);
+	connect(clearPushButton, &QPushButton::clicked, this, &AddConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::clear);
 	
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -94,8 +94,8 @@ AddConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::AddConstraintActi
 	selectedTimesTable->resizeRowsToContents();
 	//selectedTimesTable->resizeColumnsToContents();
 
-	connect(selectedTimesTable->horizontalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(horizontalHeaderClicked(int)));
-	connect(selectedTimesTable->verticalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(verticalHeaderClicked(int)));
+	connect(selectedTimesTable->horizontalHeader(), &QHeaderView::sectionClicked, this, &AddConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::horizontalHeaderClicked);
+	connect(selectedTimesTable->verticalHeader(), &QHeaderView::sectionClicked, this, &AddConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::verticalHeaderClicked);
 
 	selectedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 	
@@ -140,10 +140,10 @@ AddConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::AddConstraintActi
 
 	filterChanged();
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::filterChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::filterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::filterChanged);
 }
 
 AddConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::~AddConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm()

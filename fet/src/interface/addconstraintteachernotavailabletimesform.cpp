@@ -40,12 +40,12 @@ AddConstraintTeacherNotAvailableTimesForm::AddConstraintTeacherNotAvailableTimes
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(notAllowedTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
-	connect(setAllAvailablePushButton, SIGNAL(clicked()), this, SLOT(setAllAvailable()));
-	connect(setAllNotAvailablePushButton, SIGNAL(clicked()), this, SLOT(setAllNotAvailable()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintTeacherNotAvailableTimesForm::addCurrentConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintTeacherNotAvailableTimesForm::close);
+	connect(notAllowedTimesTable, &QTableWidget::itemClicked, this, &AddConstraintTeacherNotAvailableTimesForm::itemClicked);
+	connect(helpPushButton, &QPushButton::clicked, this, &AddConstraintTeacherNotAvailableTimesForm::help);
+	connect(setAllAvailablePushButton, &QPushButton::clicked, this, &AddConstraintTeacherNotAvailableTimesForm::setAllAvailable);
+	connect(setAllNotAvailablePushButton, &QPushButton::clicked, this, &AddConstraintTeacherNotAvailableTimesForm::setAllNotAvailable);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -80,8 +80,8 @@ AddConstraintTeacherNotAvailableTimesForm::AddConstraintTeacherNotAvailableTimes
 	
 	notAllowedTimesTable->resizeRowsToContents();
 
-	connect(notAllowedTimesTable->horizontalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(horizontalHeaderClicked(int)));
-	connect(notAllowedTimesTable->verticalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(verticalHeaderClicked(int)));
+	connect(notAllowedTimesTable->horizontalHeader(), &QHeaderView::sectionClicked, this, &AddConstraintTeacherNotAvailableTimesForm::horizontalHeaderClicked);
+	connect(notAllowedTimesTable->verticalHeader(), &QHeaderView::sectionClicked, this, &AddConstraintTeacherNotAvailableTimesForm::verticalHeaderClicked);
 	
 	notAllowedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 

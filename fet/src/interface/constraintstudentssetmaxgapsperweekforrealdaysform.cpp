@@ -39,13 +39,13 @@ ConstraintStudentsSetMaxGapsPerWeekForRealDaysForm::ConstraintStudentsSetMaxGaps
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintStudentsSetMaxGapsPerWeekForRealDaysForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxGapsPerWeekForRealDaysForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxGapsPerWeekForRealDaysForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxGapsPerWeekForRealDaysForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxGapsPerWeekForRealDaysForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintStudentsSetMaxGapsPerWeekForRealDaysForm::modifyConstraint);
+	connect(helpPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxGapsPerWeekForRealDaysForm::help);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -57,7 +57,7 @@ ConstraintStudentsSetMaxGapsPerWeekForRealDaysForm::ConstraintStudentsSetMaxGaps
 
 	this->filterChanged();
 
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintStudentsSetMaxGapsPerWeekForRealDaysForm::filterChanged);
 }
 
 ConstraintStudentsSetMaxGapsPerWeekForRealDaysForm::~ConstraintStudentsSetMaxGapsPerWeekForRealDaysForm()

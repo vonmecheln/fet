@@ -28,7 +28,7 @@ public:
 	~SettingsRestoreDataFromDiskForm();
 
 public slots:
-	void on_enableHistoryOnDiskCheckBox_toggled();
+	void enableHistoryOnDiskCheckBox_toggled();
 
 	void ok();
 	void cancel();

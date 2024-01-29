@@ -37,12 +37,12 @@ ConstraintStudentsSetHomeRoomsForm::ConstraintStudentsSetHomeRoomsForm(QWidget* 
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetHomeRoomsForm::addConstraint);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetHomeRoomsForm::removeConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintStudentsSetHomeRoomsForm::close);
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintStudentsSetHomeRoomsForm::constraintChanged);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetHomeRoomsForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintStudentsSetHomeRoomsForm::modifyConstraint);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -61,8 +61,8 @@ ConstraintStudentsSetHomeRoomsForm::ConstraintStudentsSetHomeRoomsForm(QWidget* 
 
 	this->filterChanged();
 
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(roomsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintStudentsSetHomeRoomsForm::filterChanged);
+	connect(roomsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintStudentsSetHomeRoomsForm::filterChanged);
 }
 
 ConstraintStudentsSetHomeRoomsForm::~ConstraintStudentsSetHomeRoomsForm()

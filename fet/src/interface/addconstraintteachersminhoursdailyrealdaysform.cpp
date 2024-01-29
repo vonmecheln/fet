@@ -28,14 +28,18 @@ AddConstraintTeachersMinHoursDailyRealDaysForm::AddConstraintTeachersMinHoursDai
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(addConstraintsPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraints()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintTeachersMinHoursDailyRealDaysForm::addCurrentConstraint);
+	connect(addConstraintsPushButton, &QPushButton::clicked, this, &AddConstraintTeachersMinHoursDailyRealDaysForm::addCurrentConstraints);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintTeachersMinHoursDailyRealDaysForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 	
 	updateMinHoursSpinBox();
+
+	connect(allowEmptyDaysCheckBox, &QCheckBox::toggled, this, &AddConstraintTeachersMinHoursDailyRealDaysForm::allowEmptyDaysCheckBox_toggled);
+	
+	allowEmptyDaysCheckBox_toggled();
 }
 
 AddConstraintTeachersMinHoursDailyRealDaysForm::~AddConstraintTeachersMinHoursDailyRealDaysForm()
@@ -138,7 +142,7 @@ void AddConstraintTeachersMinHoursDailyRealDaysForm::addCurrentConstraints()
 						  .arg(gt.rules.teachersList.count()).arg(ctrs));
 }
 
-void AddConstraintTeachersMinHoursDailyRealDaysForm::on_allowEmptyDaysCheckBox_toggled()
+void AddConstraintTeachersMinHoursDailyRealDaysForm::allowEmptyDaysCheckBox_toggled()
 {
 	bool k=allowEmptyDaysCheckBox->isChecked();
 

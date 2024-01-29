@@ -34,8 +34,8 @@ TermsForm::TermsForm(QWidget* parent): QDialog(parent)
 	
 	okPushButton->setDefault(true);
 	
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &TermsForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &TermsForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

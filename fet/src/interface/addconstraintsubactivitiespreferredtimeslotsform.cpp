@@ -46,11 +46,11 @@ AddConstraintSubactivitiesPreferredTimeSlotsForm::AddConstraintSubactivitiesPref
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(preferredTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(setAllAllowedPushButton, SIGNAL(clicked()), this, SLOT(setAllSlotsAllowed()));
-	connect(setAllNotAllowedPushButton, SIGNAL(clicked()), this, SLOT(setAllSlotsNotAllowed()));
+	connect(preferredTimesTable, &QTableWidget::itemClicked, this, &AddConstraintSubactivitiesPreferredTimeSlotsForm::itemClicked);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintSubactivitiesPreferredTimeSlotsForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintSubactivitiesPreferredTimeSlotsForm::close);
+	connect(setAllAllowedPushButton, &QPushButton::clicked, this, &AddConstraintSubactivitiesPreferredTimeSlotsForm::setAllSlotsAllowed);
+	connect(setAllNotAllowedPushButton, &QPushButton::clicked, this, &AddConstraintSubactivitiesPreferredTimeSlotsForm::setAllSlotsNotAllowed);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -94,8 +94,8 @@ AddConstraintSubactivitiesPreferredTimeSlotsForm::AddConstraintSubactivitiesPref
 		
 	preferredTimesTable->resizeRowsToContents();
 
-	connect(preferredTimesTable->horizontalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(horizontalHeaderClicked(int)));
-	connect(preferredTimesTable->verticalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(verticalHeaderClicked(int)));
+	connect(preferredTimesTable->horizontalHeader(), &QHeaderView::sectionClicked, this, &AddConstraintSubactivitiesPreferredTimeSlotsForm::horizontalHeaderClicked);
+	connect(preferredTimesTable->verticalHeader(), &QHeaderView::sectionClicked, this, &AddConstraintSubactivitiesPreferredTimeSlotsForm::verticalHeaderClicked);
 
 	preferredTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 	
@@ -104,6 +104,10 @@ AddConstraintSubactivitiesPreferredTimeSlotsForm::AddConstraintSubactivitiesPref
 	componentNumberSpinBox->setValue(1);
 
 	setStretchAvailabilityTableNicely(preferredTimesTable);
+
+	connect(durationCheckBox, &QCheckBox::toggled, this, &AddConstraintSubactivitiesPreferredTimeSlotsForm::durationCheckBox_toggled);
+	
+	durationCheckBox_toggled();
 }
 
 AddConstraintSubactivitiesPreferredTimeSlotsForm::~AddConstraintSubactivitiesPreferredTimeSlotsForm()
@@ -301,7 +305,7 @@ void AddConstraintSubactivitiesPreferredTimeSlotsForm::addConstraint()
 	}
 }
 
-void AddConstraintSubactivitiesPreferredTimeSlotsForm::on_durationCheckBox_toggled()
+void AddConstraintSubactivitiesPreferredTimeSlotsForm::durationCheckBox_toggled()
 {
 	durationSpinBox->setEnabled(durationCheckBox->isChecked());
 }

@@ -140,29 +140,29 @@ AllSpaceConstraintsForm::AllSpaceConstraintsForm(QWidget* parent): QDialog(paren
 	
 	constraintsListWidget->setSelectionMode(QAbstractItemView::ExtendedSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &AllSpaceConstraintsForm::constraintChanged);
 
 	//selectionChanged();
-	connect(constraintsListWidget, SIGNAL(itemSelectionChanged()), this, SLOT(selectionChanged()));
+	connect(constraintsListWidget, &QListWidget::itemSelectionChanged, this, &AllSpaceConstraintsForm::selectionChanged);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintsPushButton, SIGNAL(clicked()), this, SLOT(removeConstraints()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
-	connect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
+	connect(closePushButton, &QPushButton::clicked, this, &AllSpaceConstraintsForm::close);
+	connect(removeConstraintsPushButton, &QPushButton::clicked, this, &AllSpaceConstraintsForm::removeConstraints);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &AllSpaceConstraintsForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &AllSpaceConstraintsForm::modifyConstraint);
+	connect(filterCheckBox, &QCheckBox::toggled, this, &AllSpaceConstraintsForm::filter);
 
-	connect(moveSpaceConstraintUpPushButton, SIGNAL(clicked()), this, SLOT(moveSpaceConstraintUp()));
-	connect(moveSpaceConstraintDownPushButton, SIGNAL(clicked()), this, SLOT(moveSpaceConstraintDown()));
+	connect(moveSpaceConstraintUpPushButton, &QPushButton::clicked, this, &AllSpaceConstraintsForm::moveSpaceConstraintUp);
+	connect(moveSpaceConstraintDownPushButton, &QPushButton::clicked, this, &AllSpaceConstraintsForm::moveSpaceConstraintDown);
 
-	connect(sortedCheckBox, SIGNAL(toggled(bool)), this, SLOT(sortedChanged(bool)));
-	connect(activatePushButton, SIGNAL(clicked()), this, SLOT(activateConstraints()));
-	connect(deactivatePushButton, SIGNAL(clicked()), this, SLOT(deactivateConstraints()));
+	connect(sortedCheckBox, &QCheckBox::toggled, this, &AllSpaceConstraintsForm::sortedChanged);
+	connect(activatePushButton, &QPushButton::clicked, this, &AllSpaceConstraintsForm::activateConstraints);
+	connect(deactivatePushButton, &QPushButton::clicked, this, &AllSpaceConstraintsForm::deactivateConstraints);
 
-	//connect(activateAllPushButton, SIGNAL(clicked()), this, SLOT(activateAllConstraints()));
-	//connect(deactivateAllPushButton, SIGNAL(clicked()), this, SLOT(deactivateAllConstraints()));
+	//connect(activateAllPushButton, SIG NAL(clicked()), this, SL OT(activateAllConstraints()));
+	//connect(deactivateAllPushButton, SIG NAL(clicked()), this, SL OT(deactivateAllConstraints()));
 
-	//connect(sortByCommentsPushButton, SIGNAL(clicked()), this, SLOT(sortConstraintsByComments()));
-	connect(commentsPushButton, SIGNAL(clicked()), this, SLOT(constraintComments()));
+	//connect(sortByCommentsPushButton, SIG NAL(clicked()), this, SL OT(sortConstraintsByComments()));
+	connect(commentsPushButton, &QPushButton::clicked, this, &AllSpaceConstraintsForm::constraintComments);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -458,7 +458,7 @@ static int spaceConstraintsAscendingByDescription(SpaceConstraint* s1, SpaceCons
 
 void AllSpaceConstraintsForm::filterChanged()
 {
-	disconnect(constraintsListWidget, SIGNAL(itemSelectionChanged()), this, SLOT(selectionChanged()));
+	disconnect(constraintsListWidget, &QListWidget::itemSelectionChanged, this, &AllSpaceConstraintsForm::selectionChanged);
 
 	visibleSpaceConstraintsList.clear();
 	constraintsListWidget->clear();
@@ -491,7 +491,7 @@ void AllSpaceConstraintsForm::filterChanged()
 	//mSLabel->setText(tr("Multiple selection", "The list can have multiple selection. Keep translation short."));
 
 	selectionChanged();
-	connect(constraintsListWidget, SIGNAL(itemSelectionChanged()), this, SLOT(selectionChanged()));
+	connect(constraintsListWidget, &QListWidget::itemSelectionChanged, this, &AllSpaceConstraintsForm::selectionChanged);
 }
 
 void AllSpaceConstraintsForm::constraintChanged()
@@ -525,310 +525,410 @@ void AllSpaceConstraintsForm::modifyConstraint()
 	assert(i<visibleSpaceConstraintsList.count());
 	SpaceConstraint* ctr=visibleSpaceConstraintsList.at(i);
 	
-	//1
-	if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_SPACE){
-		ModifyConstraintBasicCompulsorySpaceForm form(this, (ConstraintBasicCompulsorySpace*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//2
-	else if(ctr->type==CONSTRAINT_ROOM_NOT_AVAILABLE_TIMES){
-		ModifyConstraintRoomNotAvailableTimesForm form(this, (ConstraintRoomNotAvailableTimes*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//3
-	else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
-		ModifyConstraintActivityPreferredRoomForm form(this, (ConstraintActivityPreferredRoom*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//4
-	else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOMS){
-		ModifyConstraintActivityPreferredRoomsForm form(this, (ConstraintActivityPreferredRooms*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//5
-	else if(ctr->type==CONSTRAINT_STUDENTS_SET_HOME_ROOM){
-		ModifyConstraintStudentsSetHomeRoomForm form(this, (ConstraintStudentsSetHomeRoom*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//6
-	else if(ctr->type==CONSTRAINT_STUDENTS_SET_HOME_ROOMS){
-		ModifyConstraintStudentsSetHomeRoomsForm form(this, (ConstraintStudentsSetHomeRooms*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//7
-	else if(ctr->type==CONSTRAINT_TEACHER_HOME_ROOM){
-		ModifyConstraintTeacherHomeRoomForm form(this, (ConstraintTeacherHomeRoom*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//8
-	else if(ctr->type==CONSTRAINT_TEACHER_HOME_ROOMS){
-		ModifyConstraintTeacherHomeRoomsForm form(this, (ConstraintTeacherHomeRooms*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//9
-	else if(ctr->type==CONSTRAINT_SUBJECT_PREFERRED_ROOM){
-		ModifyConstraintSubjectPreferredRoomForm form(this, (ConstraintSubjectPreferredRoom*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//10
-	else if(ctr->type==CONSTRAINT_SUBJECT_PREFERRED_ROOMS){
-		ModifyConstraintSubjectPreferredRoomsForm form(this, (ConstraintSubjectPreferredRooms*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//11
-	else if(ctr->type==CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOM){
-		ModifyConstraintSubjectActivityTagPreferredRoomForm form(this, (ConstraintSubjectActivityTagPreferredRoom*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//12
-	else if(ctr->type==CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOMS){
-		ModifyConstraintSubjectActivityTagPreferredRoomsForm form(this, (ConstraintSubjectActivityTagPreferredRooms*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	///6 apr 2009
-	//13
-	else if(ctr->type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOM){
-		ModifyConstraintActivityTagPreferredRoomForm form(this, (ConstraintActivityTagPreferredRoom*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//14
-	else if(ctr->type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOMS){
-		ModifyConstraintActivityTagPreferredRoomsForm form(this, (ConstraintActivityTagPreferredRooms*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	///
-	//15
-	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_DAY){
-		ModifyConstraintStudentsSetMaxBuildingChangesPerDayForm form(this, (ConstraintStudentsSetMaxBuildingChangesPerDay*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//16
-	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_DAY){
-		ModifyConstraintStudentsMaxBuildingChangesPerDayForm form(this, (ConstraintStudentsMaxBuildingChangesPerDay*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//17
-	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_WEEK){
-		ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm form(this, (ConstraintStudentsSetMaxBuildingChangesPerWeek*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//18
-	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_WEEK){
-		ModifyConstraintStudentsMaxBuildingChangesPerWeekForm form(this, (ConstraintStudentsMaxBuildingChangesPerWeek*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//19
-	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_BUILDING_CHANGES){
-		ModifyConstraintStudentsSetMinGapsBetweenBuildingChangesForm form(this, (ConstraintStudentsSetMinGapsBetweenBuildingChanges*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//20
-	else if(ctr->type==CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_BUILDING_CHANGES){
-		ModifyConstraintStudentsMinGapsBetweenBuildingChangesForm form(this, (ConstraintStudentsMinGapsBetweenBuildingChanges*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//21
-	else if(ctr->type==CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_DAY){
-		ModifyConstraintTeacherMaxBuildingChangesPerDayForm form(this, (ConstraintTeacherMaxBuildingChangesPerDay*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//22
-	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_DAY){
-		ModifyConstraintTeachersMaxBuildingChangesPerDayForm form(this, (ConstraintTeachersMaxBuildingChangesPerDay*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//23
-	else if(ctr->type==CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_WEEK){
-		ModifyConstraintTeacherMaxBuildingChangesPerWeekForm form(this, (ConstraintTeacherMaxBuildingChangesPerWeek*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//24
-	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_WEEK){
-		ModifyConstraintTeachersMaxBuildingChangesPerWeekForm form(this, (ConstraintTeachersMaxBuildingChangesPerWeek*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//25
-	else if(ctr->type==CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_BUILDING_CHANGES){
-		ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm form(this, (ConstraintTeacherMinGapsBetweenBuildingChanges*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//26
-	else if(ctr->type==CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_BUILDING_CHANGES){
-		ModifyConstraintTeachersMinGapsBetweenBuildingChangesForm form(this, (ConstraintTeachersMinGapsBetweenBuildingChanges*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//27
-	else if(ctr->type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_DIFFERENT_ROOMS){
-		ModifyConstraintActivitiesOccupyMaxDifferentRoomsForm form(this, (ConstraintActivitiesOccupyMaxDifferentRooms*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//28
-	else if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_ROOM_IF_CONSECUTIVE){
-		ModifyConstraintActivitiesSameRoomIfConsecutiveForm form(this, (ConstraintActivitiesSameRoomIfConsecutive*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//2019-11-14
-	//29
-	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_DAY){
-		ModifyConstraintStudentsSetMaxRoomChangesPerDayForm form(this, (ConstraintStudentsSetMaxRoomChangesPerDay*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//30
-	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_DAY){
-		ModifyConstraintStudentsMaxRoomChangesPerDayForm form(this, (ConstraintStudentsMaxRoomChangesPerDay*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//31
-	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_WEEK){
-		ModifyConstraintStudentsSetMaxRoomChangesPerWeekForm form(this, (ConstraintStudentsSetMaxRoomChangesPerWeek*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//32
-	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_WEEK){
-		ModifyConstraintStudentsMaxRoomChangesPerWeekForm form(this, (ConstraintStudentsMaxRoomChangesPerWeek*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//33
-	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ROOM_CHANGES){
-		ModifyConstraintStudentsSetMinGapsBetweenRoomChangesForm form(this, (ConstraintStudentsSetMinGapsBetweenRoomChanges*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//34
-	else if(ctr->type==CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ROOM_CHANGES){
-		ModifyConstraintStudentsMinGapsBetweenRoomChangesForm form(this, (ConstraintStudentsMinGapsBetweenRoomChanges*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//35
-	else if(ctr->type==CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_DAY){
-		ModifyConstraintTeacherMaxRoomChangesPerDayForm form(this, (ConstraintTeacherMaxRoomChangesPerDay*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//36
-	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_DAY){
-		ModifyConstraintTeachersMaxRoomChangesPerDayForm form(this, (ConstraintTeachersMaxRoomChangesPerDay*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//37
-	else if(ctr->type==CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_WEEK){
-		ModifyConstraintTeacherMaxRoomChangesPerWeekForm form(this, (ConstraintTeacherMaxRoomChangesPerWeek*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//38
-	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_WEEK){
-		ModifyConstraintTeachersMaxRoomChangesPerWeekForm form(this, (ConstraintTeachersMaxRoomChangesPerWeek*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//39
-	else if(ctr->type==CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ROOM_CHANGES){
-		ModifyConstraintTeacherMinGapsBetweenRoomChangesForm form(this, (ConstraintTeacherMinGapsBetweenRoomChanges*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//40
-	else if(ctr->type==CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ROOM_CHANGES){
-		ModifyConstraintTeachersMinGapsBetweenRoomChangesForm form(this, (ConstraintTeachersMinGapsBetweenRoomChanges*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//41
-	else if(ctr->type==CONSTRAINT_TEACHER_ROOM_NOT_AVAILABLE_TIMES){
-		ModifyConstraintTeacherRoomNotAvailableTimesForm form(this, (ConstraintTeacherRoomNotAvailableTimes*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//for mornings-afternoons
-	//42
-	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_REAL_DAY){
-		ModifyConstraintStudentsSetMaxRoomChangesPerRealDayForm form(this, (ConstraintStudentsSetMaxRoomChangesPerRealDay*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//43
-	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_REAL_DAY){
-		ModifyConstraintStudentsMaxRoomChangesPerRealDayForm form(this, (ConstraintStudentsMaxRoomChangesPerRealDay*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//44
-	else if(ctr->type==CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_REAL_DAY){
-		ModifyConstraintTeacherMaxRoomChangesPerRealDayForm form(this, (ConstraintTeacherMaxRoomChangesPerRealDay*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//45
-	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_REAL_DAY){
-		ModifyConstraintTeachersMaxRoomChangesPerRealDayForm form(this, (ConstraintTeachersMaxRoomChangesPerRealDay*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//46
-	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_REAL_DAY){
-		ModifyConstraintStudentsSetMaxBuildingChangesPerRealDayForm form(this, (ConstraintStudentsSetMaxBuildingChangesPerRealDay*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//47
-	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_REAL_DAY){
-		ModifyConstraintStudentsMaxBuildingChangesPerRealDayForm form(this, (ConstraintStudentsMaxBuildingChangesPerRealDay*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//48
-	else if(ctr->type==CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_REAL_DAY){
-		ModifyConstraintTeacherMaxBuildingChangesPerRealDayForm form(this, (ConstraintTeacherMaxBuildingChangesPerRealDay*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	//49
-	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_REAL_DAY){
-		ModifyConstraintTeachersMaxBuildingChangesPerRealDayForm form(this, (ConstraintTeachersMaxBuildingChangesPerRealDay*)ctr);
-		setParentAndOtherThings(&form, this);
-		form.exec();
-	}
-	else{
-		QMessageBox::critical(this, tr("FET critical"), tr("You have found a bug in FET. Please report it. This kind of constraint"
-		 " is not correctly recognized in all space constraints dialog. FET will skip this error, so that you can continue work."
-		 " Probably the constraint can be modified from the specific constraint dialog."));
-//		assert(0);
-//		exit(1);
+	switch(ctr->type){
+		//1
+		case CONSTRAINT_BASIC_COMPULSORY_SPACE:
+			{
+				ModifyConstraintBasicCompulsorySpaceForm form(this, (ConstraintBasicCompulsorySpace*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//2
+		case CONSTRAINT_ROOM_NOT_AVAILABLE_TIMES:
+			{
+				ModifyConstraintRoomNotAvailableTimesForm form(this, (ConstraintRoomNotAvailableTimes*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//3
+		case CONSTRAINT_ACTIVITY_PREFERRED_ROOM:
+			{
+				ModifyConstraintActivityPreferredRoomForm form(this, (ConstraintActivityPreferredRoom*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//4
+		case CONSTRAINT_ACTIVITY_PREFERRED_ROOMS:
+			{
+				ModifyConstraintActivityPreferredRoomsForm form(this, (ConstraintActivityPreferredRooms*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//5
+		case CONSTRAINT_STUDENTS_SET_HOME_ROOM:
+			{
+				ModifyConstraintStudentsSetHomeRoomForm form(this, (ConstraintStudentsSetHomeRoom*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//6
+		case CONSTRAINT_STUDENTS_SET_HOME_ROOMS:
+			{
+				ModifyConstraintStudentsSetHomeRoomsForm form(this, (ConstraintStudentsSetHomeRooms*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//7
+		case CONSTRAINT_TEACHER_HOME_ROOM:
+			{
+				ModifyConstraintTeacherHomeRoomForm form(this, (ConstraintTeacherHomeRoom*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//8
+		case CONSTRAINT_TEACHER_HOME_ROOMS:
+			{
+				ModifyConstraintTeacherHomeRoomsForm form(this, (ConstraintTeacherHomeRooms*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//9
+		case CONSTRAINT_SUBJECT_PREFERRED_ROOM:
+			{
+				ModifyConstraintSubjectPreferredRoomForm form(this, (ConstraintSubjectPreferredRoom*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//10
+		case CONSTRAINT_SUBJECT_PREFERRED_ROOMS:
+			{
+				ModifyConstraintSubjectPreferredRoomsForm form(this, (ConstraintSubjectPreferredRooms*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//11
+		case CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOM:
+			{
+				ModifyConstraintSubjectActivityTagPreferredRoomForm form(this, (ConstraintSubjectActivityTagPreferredRoom*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//12
+		case CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOMS:
+			{
+				ModifyConstraintSubjectActivityTagPreferredRoomsForm form(this, (ConstraintSubjectActivityTagPreferredRooms*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		///6 apr 2009
+		//13
+		case CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOM:
+			{
+				ModifyConstraintActivityTagPreferredRoomForm form(this, (ConstraintActivityTagPreferredRoom*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//14
+		case CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOMS:
+			{
+				ModifyConstraintActivityTagPreferredRoomsForm form(this, (ConstraintActivityTagPreferredRooms*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		///
+		//15
+		case CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_DAY:
+			{
+				ModifyConstraintStudentsSetMaxBuildingChangesPerDayForm form(this, (ConstraintStudentsSetMaxBuildingChangesPerDay*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//16
+		case CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_DAY:
+			{
+				ModifyConstraintStudentsMaxBuildingChangesPerDayForm form(this, (ConstraintStudentsMaxBuildingChangesPerDay*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//17
+		case CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_WEEK:
+			{
+				ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm form(this, (ConstraintStudentsSetMaxBuildingChangesPerWeek*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//18
+		case CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_WEEK:
+			{
+				ModifyConstraintStudentsMaxBuildingChangesPerWeekForm form(this, (ConstraintStudentsMaxBuildingChangesPerWeek*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//19
+		case CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_BUILDING_CHANGES:
+			{
+				ModifyConstraintStudentsSetMinGapsBetweenBuildingChangesForm form(this, (ConstraintStudentsSetMinGapsBetweenBuildingChanges*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//20
+		case CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_BUILDING_CHANGES:
+			{
+				ModifyConstraintStudentsMinGapsBetweenBuildingChangesForm form(this, (ConstraintStudentsMinGapsBetweenBuildingChanges*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//21
+		case CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_DAY:
+			{
+				ModifyConstraintTeacherMaxBuildingChangesPerDayForm form(this, (ConstraintTeacherMaxBuildingChangesPerDay*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//22
+		case CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_DAY:
+			{
+				ModifyConstraintTeachersMaxBuildingChangesPerDayForm form(this, (ConstraintTeachersMaxBuildingChangesPerDay*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//23
+		case CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_WEEK:
+			{
+				ModifyConstraintTeacherMaxBuildingChangesPerWeekForm form(this, (ConstraintTeacherMaxBuildingChangesPerWeek*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//24
+		case CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_WEEK:
+			{
+				ModifyConstraintTeachersMaxBuildingChangesPerWeekForm form(this, (ConstraintTeachersMaxBuildingChangesPerWeek*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//25
+		case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_BUILDING_CHANGES:
+			{
+				ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm form(this, (ConstraintTeacherMinGapsBetweenBuildingChanges*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//26
+		case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_BUILDING_CHANGES:
+			{
+				ModifyConstraintTeachersMinGapsBetweenBuildingChangesForm form(this, (ConstraintTeachersMinGapsBetweenBuildingChanges*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//27
+		case CONSTRAINT_ACTIVITIES_OCCUPY_MAX_DIFFERENT_ROOMS:
+			{
+				ModifyConstraintActivitiesOccupyMaxDifferentRoomsForm form(this, (ConstraintActivitiesOccupyMaxDifferentRooms*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//28
+		case CONSTRAINT_ACTIVITIES_SAME_ROOM_IF_CONSECUTIVE:
+			{
+				ModifyConstraintActivitiesSameRoomIfConsecutiveForm form(this, (ConstraintActivitiesSameRoomIfConsecutive*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//2019-11-14
+		//29
+		case CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_DAY:
+			{
+				ModifyConstraintStudentsSetMaxRoomChangesPerDayForm form(this, (ConstraintStudentsSetMaxRoomChangesPerDay*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//30
+		case CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_DAY:
+			{
+				ModifyConstraintStudentsMaxRoomChangesPerDayForm form(this, (ConstraintStudentsMaxRoomChangesPerDay*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//31
+		case CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_WEEK:
+			{
+				ModifyConstraintStudentsSetMaxRoomChangesPerWeekForm form(this, (ConstraintStudentsSetMaxRoomChangesPerWeek*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//32
+		case CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_WEEK:
+			{
+				ModifyConstraintStudentsMaxRoomChangesPerWeekForm form(this, (ConstraintStudentsMaxRoomChangesPerWeek*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//33
+		case CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ROOM_CHANGES:
+			{
+				ModifyConstraintStudentsSetMinGapsBetweenRoomChangesForm form(this, (ConstraintStudentsSetMinGapsBetweenRoomChanges*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//34
+		case CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ROOM_CHANGES:
+			{
+				ModifyConstraintStudentsMinGapsBetweenRoomChangesForm form(this, (ConstraintStudentsMinGapsBetweenRoomChanges*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//35
+		case CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_DAY:
+			{
+				ModifyConstraintTeacherMaxRoomChangesPerDayForm form(this, (ConstraintTeacherMaxRoomChangesPerDay*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//36
+		case CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_DAY:
+			{
+				ModifyConstraintTeachersMaxRoomChangesPerDayForm form(this, (ConstraintTeachersMaxRoomChangesPerDay*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//37
+		case CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_WEEK:
+			{
+				ModifyConstraintTeacherMaxRoomChangesPerWeekForm form(this, (ConstraintTeacherMaxRoomChangesPerWeek*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//38
+		case CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_WEEK:
+			{
+				ModifyConstraintTeachersMaxRoomChangesPerWeekForm form(this, (ConstraintTeachersMaxRoomChangesPerWeek*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//39
+		case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ROOM_CHANGES:
+			{
+				ModifyConstraintTeacherMinGapsBetweenRoomChangesForm form(this, (ConstraintTeacherMinGapsBetweenRoomChanges*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//40
+		case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ROOM_CHANGES:
+			{
+				ModifyConstraintTeachersMinGapsBetweenRoomChangesForm form(this, (ConstraintTeachersMinGapsBetweenRoomChanges*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//41
+		case CONSTRAINT_TEACHER_ROOM_NOT_AVAILABLE_TIMES:
+			{
+				ModifyConstraintTeacherRoomNotAvailableTimesForm form(this, (ConstraintTeacherRoomNotAvailableTimes*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//for mornings-afternoons
+		//42
+		case CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_REAL_DAY:
+			{
+				ModifyConstraintStudentsSetMaxRoomChangesPerRealDayForm form(this, (ConstraintStudentsSetMaxRoomChangesPerRealDay*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//43
+		case CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_REAL_DAY:
+			{
+				ModifyConstraintStudentsMaxRoomChangesPerRealDayForm form(this, (ConstraintStudentsMaxRoomChangesPerRealDay*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//44
+		case CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_REAL_DAY:
+			{
+				ModifyConstraintTeacherMaxRoomChangesPerRealDayForm form(this, (ConstraintTeacherMaxRoomChangesPerRealDay*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//45
+		case CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_REAL_DAY:
+			{
+				ModifyConstraintTeachersMaxRoomChangesPerRealDayForm form(this, (ConstraintTeachersMaxRoomChangesPerRealDay*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//46
+		case CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_REAL_DAY:
+			{
+				ModifyConstraintStudentsSetMaxBuildingChangesPerRealDayForm form(this, (ConstraintStudentsSetMaxBuildingChangesPerRealDay*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//47
+		case CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_REAL_DAY:
+			{
+				ModifyConstraintStudentsMaxBuildingChangesPerRealDayForm form(this, (ConstraintStudentsMaxBuildingChangesPerRealDay*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//48
+		case CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_REAL_DAY:
+			{
+				ModifyConstraintTeacherMaxBuildingChangesPerRealDayForm form(this, (ConstraintTeacherMaxBuildingChangesPerRealDay*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//49
+		case CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_REAL_DAY:
+			{
+				ModifyConstraintTeachersMaxBuildingChangesPerRealDayForm form(this, (ConstraintTeachersMaxBuildingChangesPerRealDay*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		default:
+			QMessageBox::critical(this, tr("FET critical"), tr("You have found a bug in FET. Please report it. This kind of constraint"
+			 " is not correctly recognized in all space constraints dialog. FET will skip this error, so that you can continue work."
+			 " Probably the constraint can be modified from the specific constraint dialog."));
+			//assert(0);
+			//exit(1);
+			break;
 	}
 
 	filterChanged();
@@ -991,9 +1091,9 @@ void AllSpaceConstraintsForm::filter(bool active)
 		assert(useFilter==false);
 		useFilter=false;
 		
-		disconnect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
+		disconnect(filterCheckBox, &QCheckBox::toggled, this, &AllSpaceConstraintsForm::filter);
 		filterCheckBox->setChecked(false);
-		connect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
+		connect(filterCheckBox, &QCheckBox::toggled, this, &AllSpaceConstraintsForm::filter);
 	}
 	
 	delete filterForm;
@@ -1150,8 +1250,8 @@ void AllSpaceConstraintsForm::constraintComments()
 	okPB->setDefault(true);
 	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
 	
-	connect(okPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(accept()));
-	connect(cancelPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(reject()));
+	connect(okPB, &QPushButton::clicked, &getCommentsDialog, &AllSpaceConstraintsForm::accept);
+	connect(cancelPB, &QPushButton::clicked, &getCommentsDialog, &AllSpaceConstraintsForm::reject);
 
 	QHBoxLayout* hl=new QHBoxLayout();
 	hl->addStretch();

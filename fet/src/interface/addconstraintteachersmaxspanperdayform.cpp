@@ -28,13 +28,13 @@ AddConstraintTeachersMaxSpanPerDayForm::AddConstraintTeachersMaxSpanPerDayForm(Q
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(addConstraintsPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraints()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintTeachersMaxSpanPerDayForm::addCurrentConstraint);
+	connect(addConstraintsPushButton, &QPushButton::clicked, this, &AddConstraintTeachersMaxSpanPerDayForm::addCurrentConstraints);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintTeachersMaxSpanPerDayForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
-		
+	
 	maxSpanSpinBox->setMinimum(1);
 	maxSpanSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	maxSpanSpinBox->setValue(gt.rules.nHoursPerDay);

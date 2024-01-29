@@ -28,9 +28,9 @@ AddConstraintTeacherMinDaysPerWeekForm::AddConstraintTeacherMinDaysPerWeekForm(Q
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(addConstraintsPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraints()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintTeacherMinDaysPerWeekForm::addCurrentConstraint);
+	connect(addConstraintsPushButton, &QPushButton::clicked, this, &AddConstraintTeacherMinDaysPerWeekForm::addCurrentConstraints);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintTeacherMinDaysPerWeekForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

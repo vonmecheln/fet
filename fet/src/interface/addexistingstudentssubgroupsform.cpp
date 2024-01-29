@@ -53,14 +53,14 @@ AddExistingStudentsSubgroupsForm::AddExistingStudentsSubgroupsForm(QWidget* pare
 	allSubgroupsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	selectedSubgroupsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
-	connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
-	connect(allSubgroupsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addSubgroup()));
-	connect(selectedSubgroupsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeSubgroup()));
+	connect(cancelPushButton, &QPushButton::clicked, this, &AddExistingStudentsSubgroupsForm::cancel);
+	connect(okPushButton, &QPushButton::clicked, this, &AddExistingStudentsSubgroupsForm::ok);
+	connect(helpPushButton, &QPushButton::clicked, this, &AddExistingStudentsSubgroupsForm::help);
+	connect(clearPushButton, &QPushButton::clicked, this, &AddExistingStudentsSubgroupsForm::clear);
+	connect(allSubgroupsListWidget, &QListWidget::itemDoubleClicked, this, &AddExistingStudentsSubgroupsForm::addSubgroup);
+	connect(selectedSubgroupsListWidget, &QListWidget::itemDoubleClicked, this, &AddExistingStudentsSubgroupsForm::removeSubgroup);
 
-	connect(sortedCheckBox, SIGNAL(toggled(bool)), this, SLOT(sortedToggled()));
+	connect(sortedCheckBox, &QCheckBox::toggled, this, &AddExistingStudentsSubgroupsForm::sortedToggled);
 	
 	sortedCheckBox->setChecked(false);
 	QSettings settings(COMPANY, PROGRAM);

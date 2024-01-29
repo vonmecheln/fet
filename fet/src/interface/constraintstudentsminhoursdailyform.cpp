@@ -47,14 +47,14 @@ ConstraintStudentsMinHoursDailyForm::ConstraintStudentsMinHoursDailyForm(QWidget
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintStudentsMinHoursDailyForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsMinHoursDailyForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintStudentsMinHoursDailyForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsMinHoursDailyForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsMinHoursDailyForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintStudentsMinHoursDailyForm::modifyConstraint);
 
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(helpPushButton, &QPushButton::clicked, this, &ConstraintStudentsMinHoursDailyForm::help);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

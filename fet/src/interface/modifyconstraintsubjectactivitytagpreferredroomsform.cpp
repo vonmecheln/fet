@@ -31,11 +31,11 @@ ModifyConstraintSubjectActivityTagPreferredRoomsForm::ModifyConstraintSubjectAct
 	roomsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	selectedRoomsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(roomsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addRoom()));
-	connect(selectedRoomsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeRoom()));
-	connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintSubjectActivityTagPreferredRoomsForm::cancel);
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintSubjectActivityTagPreferredRoomsForm::ok);
+	connect(roomsListWidget, &QListWidget::itemDoubleClicked, this, &ModifyConstraintSubjectActivityTagPreferredRoomsForm::addRoom);
+	connect(selectedRoomsListWidget, &QListWidget::itemDoubleClicked, this, &ModifyConstraintSubjectActivityTagPreferredRoomsForm::removeRoom);
+	connect(clearPushButton, &QPushButton::clicked, this, &ModifyConstraintSubjectActivityTagPreferredRoomsForm::clear);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

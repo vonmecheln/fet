@@ -26,8 +26,8 @@ ModifyConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoonForm::Modify
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoonForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoonForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

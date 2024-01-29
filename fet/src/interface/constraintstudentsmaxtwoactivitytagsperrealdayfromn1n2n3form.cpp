@@ -37,13 +37,13 @@ ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3Form::ConstraintStudents
 	
 	modifyConstraintPushButton->setDefault(true);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3Form::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3Form::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3Form::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3Form::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3Form::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3Form::modifyConstraint);
+	connect(helpPushButton, &QPushButton::clicked, this, &ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3Form::help);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

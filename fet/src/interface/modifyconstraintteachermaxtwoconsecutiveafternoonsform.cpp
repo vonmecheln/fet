@@ -26,8 +26,8 @@ ModifyConstraintTeacherMaxTwoConsecutiveAfternoonsForm::ModifyConstraintTeacherM
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintTeacherMaxTwoConsecutiveAfternoonsForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintTeacherMaxTwoConsecutiveAfternoonsForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

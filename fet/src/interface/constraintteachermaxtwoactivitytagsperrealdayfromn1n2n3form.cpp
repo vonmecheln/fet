@@ -37,13 +37,13 @@ ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3Form::ConstraintTeacherMa
 	
 	modifyConstraintPushButton->setDefault(true);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3Form::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3Form::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3Form::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3Form::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3Form::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3Form::modifyConstraint);
+	connect(helpPushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3Form::help);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -59,7 +59,7 @@ ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3Form::ConstraintTeacherMa
 	
 	this->filterChanged();
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3Form::filterChanged);
 }
 
 ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3Form::~ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3Form()

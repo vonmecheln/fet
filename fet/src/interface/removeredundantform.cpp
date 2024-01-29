@@ -51,8 +51,17 @@ RemoveRedundantForm::RemoveRedundantForm(QWidget* parent): QDialog(parent)
 	
 	okPushButton->setDefault(true);
 	
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(wasAccepted()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(wasCanceled()));
+	connect(okPushButton, &QPushButton::clicked, this, &RemoveRedundantForm::wasAccepted);
+	connect(cancelPushButton, &QPushButton::clicked, this, &RemoveRedundantForm::wasCanceled);
+	
+	removeRedundantCheckBox->setChecked(true);
+	removeRedundantHalfCheckBox->setChecked(true);
+	
+	connect(removeRedundantCheckBox, &QCheckBox::toggled, this, &RemoveRedundantForm::removeRedundantCheckBox_toggled);
+	connect(removeRedundantHalfCheckBox, &QCheckBox::toggled, this, &RemoveRedundantForm::removeRedundantHalfCheckBox_toggled);
+	
+	removeRedundantCheckBox_toggled();
+	removeRedundantHalfCheckBox_toggled();
 }
 
 RemoveRedundantForm::~RemoveRedundantForm()
@@ -354,8 +363,8 @@ void RemoveRedundantForm::wasAccepted()
 	hl->addWidget(acceptPB);
 	hl->addWidget(cancelPB);
 	
-	QObject::connect(acceptPB, SIGNAL(clicked()), &dialog, SLOT(accept()));
-	QObject::connect(cancelPB, SIGNAL(clicked()), &dialog, SLOT(reject()));
+	connect(acceptPB, &QPushButton::clicked, &dialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &dialog, &QDialog::reject);
 	
 	QPlainTextEdit* removedText=new QPlainTextEdit();
 	
@@ -419,7 +428,7 @@ void RemoveRedundantForm::wasCanceled()
 	this->reject();
 }
 
-void RemoveRedundantForm::on_removeRedundantCheckBox_toggled()
+void RemoveRedundantForm::removeRedundantCheckBox_toggled()
 {
 	int k=removeRedundantCheckBox->isChecked();
 	if(!k){
@@ -429,7 +438,7 @@ void RemoveRedundantForm::on_removeRedundantCheckBox_toggled()
 	}
 }
 
-void RemoveRedundantForm::on_removeRedundantHalfCheckBox_toggled()
+void RemoveRedundantForm::removeRedundantHalfCheckBox_toggled()
 {
 	int k=removeRedundantHalfCheckBox->isChecked();
 	if(!k){

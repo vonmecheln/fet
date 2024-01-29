@@ -50,19 +50,19 @@ BuildingsForm::BuildingsForm(QWidget* parent): QDialog(parent)
 
 	buildingsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(addBuildingPushButton, SIGNAL(clicked()), this, SLOT(addBuilding()));
-	connect(removeBuildingPushButton, SIGNAL(clicked()), this, SLOT(removeBuilding()));
-	connect(buildingsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(buildingChanged(int)));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(modifyBuildingPushButton, SIGNAL(clicked()), this, SLOT(modifyBuilding()));
+	connect(addBuildingPushButton, &QPushButton::clicked, this, &BuildingsForm::addBuilding);
+	connect(removeBuildingPushButton, &QPushButton::clicked, this, &BuildingsForm::removeBuilding);
+	connect(buildingsListWidget, &QListWidget::currentRowChanged, this, &BuildingsForm::buildingChanged);
+	connect(closePushButton, &QPushButton::clicked, this, &BuildingsForm::close);
+	connect(modifyBuildingPushButton, &QPushButton::clicked, this, &BuildingsForm::modifyBuilding);
 
-	connect(moveBuildingUpPushButton, SIGNAL(clicked()), this, SLOT(moveBuildingUp()));
-	connect(moveBuildingDownPushButton, SIGNAL(clicked()), this, SLOT(moveBuildingDown()));
+	connect(moveBuildingUpPushButton, &QPushButton::clicked, this, &BuildingsForm::moveBuildingUp);
+	connect(moveBuildingDownPushButton, &QPushButton::clicked, this, &BuildingsForm::moveBuildingDown);
 
-	connect(sortBuildingsPushButton, SIGNAL(clicked()), this, SLOT(sortBuildings()));
-	connect(buildingsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyBuilding()));
+	connect(sortBuildingsPushButton, &QPushButton::clicked, this, &BuildingsForm::sortBuildings);
+	connect(buildingsListWidget, &QListWidget::itemDoubleClicked, this, &BuildingsForm::modifyBuilding);
 
-	connect(commentsPushButton, SIGNAL(clicked()), this, SLOT(comments()));
+	connect(commentsPushButton, &QPushButton::clicked, this, &BuildingsForm::comments);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -134,8 +134,8 @@ void BuildingsForm::removeBuilding()
 	assert(bu!=nullptr);
 
 	if(QMessageBox::warning( this, tr("FET"),
-		tr("Are you sure you want to delete this building?"),
-		QMessageBox::Yes | QMessageBox::No) == QMessageBox::No)
+	 tr("Are you sure you want to delete this building?"),
+	 QMessageBox::Yes | QMessageBox::No) == QMessageBox::No)
 		return;
 	
 	QString on=bu->name;
@@ -313,8 +313,8 @@ void BuildingsForm::comments()
 	okPB->setDefault(true);
 	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
 	
-	connect(okPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(accept()));
-	connect(cancelPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(reject()));
+	connect(okPB, &QPushButton::clicked, &getCommentsDialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &getCommentsDialog, &QDialog::reject);
 
 	QHBoxLayout* hl=new QHBoxLayout();
 	hl->addStretch();

@@ -37,11 +37,11 @@ ModifyConstraintRoomNotAvailableTimesForm::ModifyConstraintRoomNotAvailableTimes
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
-	connect(notAllowedTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
-	connect(setAllAvailablePushButton, SIGNAL(clicked()), this, SLOT(setAllAvailable()));
-	connect(setAllNotAvailablePushButton, SIGNAL(clicked()), this, SLOT(setAllNotAvailable()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintRoomNotAvailableTimesForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintRoomNotAvailableTimesForm::cancel);
+	connect(notAllowedTimesTable, &QTableWidget::itemClicked, this, &ModifyConstraintRoomNotAvailableTimesForm::itemClicked);
+	connect(setAllAvailablePushButton, &QPushButton::clicked, this, &ModifyConstraintRoomNotAvailableTimesForm::setAllAvailable);
+	connect(setAllNotAvailablePushButton, &QPushButton::clicked, this, &ModifyConstraintRoomNotAvailableTimesForm::setAllNotAvailable);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -102,8 +102,8 @@ ModifyConstraintRoomNotAvailableTimesForm::ModifyConstraintRoomNotAvailableTimes
 		
 	notAllowedTimesTable->resizeRowsToContents();
 
-	connect(notAllowedTimesTable->horizontalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(horizontalHeaderClicked(int)));
-	connect(notAllowedTimesTable->verticalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(verticalHeaderClicked(int)));
+	connect(notAllowedTimesTable->horizontalHeader(), &QHeaderView::sectionClicked, this, &ModifyConstraintRoomNotAvailableTimesForm::horizontalHeaderClicked);
+	connect(notAllowedTimesTable->verticalHeader(), &QHeaderView::sectionClicked, this, &ModifyConstraintRoomNotAvailableTimesForm::verticalHeaderClicked);
 
 	notAllowedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 

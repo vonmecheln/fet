@@ -37,11 +37,11 @@ AddConstraintTeacherRoomNotAvailableTimesForm::AddConstraintTeacherRoomNotAvaila
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(notAllowedTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
-	connect(setAllAvailablePushButton, SIGNAL(clicked()), this, SLOT(setAllAvailable()));
-	connect(setAllNotAvailablePushButton, SIGNAL(clicked()), this, SLOT(setAllNotAvailable()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintTeacherRoomNotAvailableTimesForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintTeacherRoomNotAvailableTimesForm::close);
+	connect(notAllowedTimesTable, &QTableWidget::itemClicked, this, &AddConstraintTeacherRoomNotAvailableTimesForm::itemClicked);
+	connect(setAllAvailablePushButton, &QPushButton::clicked, this, &AddConstraintTeacherRoomNotAvailableTimesForm::setAllAvailable);
+	connect(setAllNotAvailablePushButton, &QPushButton::clicked, this, &AddConstraintTeacherRoomNotAvailableTimesForm::setAllNotAvailable);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -80,8 +80,8 @@ AddConstraintTeacherRoomNotAvailableTimesForm::AddConstraintTeacherRoomNotAvaila
 		
 	notAllowedTimesTable->resizeRowsToContents();
 	
-	connect(notAllowedTimesTable->horizontalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(horizontalHeaderClicked(int)));
-	connect(notAllowedTimesTable->verticalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(verticalHeaderClicked(int)));
+	connect(notAllowedTimesTable->horizontalHeader(), &QHeaderView::sectionClicked, this, &AddConstraintTeacherRoomNotAvailableTimesForm::horizontalHeaderClicked);
+	connect(notAllowedTimesTable->verticalHeader(), &QHeaderView::sectionClicked, this, &AddConstraintTeacherRoomNotAvailableTimesForm::verticalHeaderClicked);
 	
 	notAllowedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 

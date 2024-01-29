@@ -33,9 +33,9 @@ public slots:
 	void wasCanceled();
 	void help();
 	
-	void on_spread2CheckBox_toggled();
-	void on_spread3CheckBox_toggled();
-	void on_spread4OrMoreCheckBox_toggled();
+	void spread2CheckBox_toggled();
+	void spread3CheckBox_toggled();
+	void spread4OrMoreCheckBox_toggled();
 };
 
 #endif

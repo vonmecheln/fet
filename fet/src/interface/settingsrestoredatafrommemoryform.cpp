@@ -45,11 +45,8 @@ SettingsRestoreDataFromMemoryForm::SettingsRestoreDataFromMemoryForm(QWidget* pa
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 
-	connect(buttonBox, SIGNAL(accepted()), this, SLOT(ok()));
-	connect(buttonBox, SIGNAL(rejected()), this, SLOT(cancel()));
-	
-	enableHistoryInMemoryCheckBox->setChecked(USE_UNDO_REDO);
-	on_enableHistoryInMemoryCheckBox_toggled();
+	connect(buttonBox, &QDialogButtonBox::accepted, this, &SettingsRestoreDataFromMemoryForm::ok);
+	connect(buttonBox, &QDialogButtonBox::rejected, this, &SettingsRestoreDataFromMemoryForm::cancel);
 	
 	maxStatesLabel->setText(tr("Number of previous states to record in the memory:"));
 	maxStatesLabel2->setText(tr("(Default is %1. Maximum allowed is %2, to avoid using too much memory.)",
@@ -62,6 +59,12 @@ SettingsRestoreDataFromMemoryForm::SettingsRestoreDataFromMemoryForm(QWidget* pa
 	/*compressionLevelSpinBox->setMinimum(-1);
 	compressionLevelSpinBox->setMaximum(9);
 	compressionLevelSpinBox->setValue(UNDO_REDO_COMPRESSION_LEVEL);*/
+
+	enableHistoryInMemoryCheckBox->setChecked(USE_UNDO_REDO);
+
+	connect(enableHistoryInMemoryCheckBox, &QCheckBox::toggled, this, &SettingsRestoreDataFromMemoryForm::enableHistoryInMemoryCheckBox_toggled);
+
+	enableHistoryInMemoryCheckBox_toggled();
 }
 
 SettingsRestoreDataFromMemoryForm::~SettingsRestoreDataFromMemoryForm()
@@ -69,7 +72,7 @@ SettingsRestoreDataFromMemoryForm::~SettingsRestoreDataFromMemoryForm()
 	saveFETDialogGeometry(this);
 }
 
-void SettingsRestoreDataFromMemoryForm::on_enableHistoryInMemoryCheckBox_toggled()
+void SettingsRestoreDataFromMemoryForm::enableHistoryInMemoryCheckBox_toggled()
 {
 	bool t=enableHistoryInMemoryCheckBox->isChecked();
 

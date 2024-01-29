@@ -37,14 +37,14 @@ ConstraintTeacherMaxThreeConsecutiveDaysForm::ConstraintTeacherMaxThreeConsecuti
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintTeacherMaxThreeConsecutiveDaysForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxThreeConsecutiveDaysForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxThreeConsecutiveDaysForm::close);
+	connect(helpPushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxThreeConsecutiveDaysForm::help);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxThreeConsecutiveDaysForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxThreeConsecutiveDaysForm::modifyConstraint);
 
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintTeacherMaxThreeConsecutiveDaysForm::modifyConstraint);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -60,7 +60,7 @@ ConstraintTeacherMaxThreeConsecutiveDaysForm::ConstraintTeacherMaxThreeConsecuti
 
 	this->filterChanged();
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintTeacherMaxThreeConsecutiveDaysForm::filterChanged);
 }
 
 ConstraintTeacherMaxThreeConsecutiveDaysForm::~ConstraintTeacherMaxThreeConsecutiveDaysForm()

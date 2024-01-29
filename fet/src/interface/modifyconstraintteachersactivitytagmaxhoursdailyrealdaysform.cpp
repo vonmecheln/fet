@@ -26,8 +26,8 @@ ModifyConstraintTeachersActivityTagMaxHoursDailyRealDaysForm::ModifyConstraintTe
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintTeachersActivityTagMaxHoursDailyRealDaysForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintTeachersActivityTagMaxHoursDailyRealDaysForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

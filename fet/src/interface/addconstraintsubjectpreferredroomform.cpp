@@ -27,8 +27,8 @@ AddConstraintSubjectPreferredRoomForm::AddConstraintSubjectPreferredRoomForm(QWi
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintSubjectPreferredRoomForm::close);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintSubjectPreferredRoomForm::addConstraint);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

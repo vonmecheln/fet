@@ -39,13 +39,13 @@ ConstraintStudentsSetActivityTagMaxHoursDailyRealDaysForm::ConstraintStudentsSet
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintStudentsSetActivityTagMaxHoursDailyRealDaysForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetActivityTagMaxHoursDailyRealDaysForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintStudentsSetActivityTagMaxHoursDailyRealDaysForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetActivityTagMaxHoursDailyRealDaysForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetActivityTagMaxHoursDailyRealDaysForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintStudentsSetActivityTagMaxHoursDailyRealDaysForm::modifyConstraint);
+	connect(helpPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetActivityTagMaxHoursDailyRealDaysForm::help);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -64,8 +64,8 @@ ConstraintStudentsSetActivityTagMaxHoursDailyRealDaysForm::ConstraintStudentsSet
 
 	this->filterChanged();
 
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintStudentsSetActivityTagMaxHoursDailyRealDaysForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintStudentsSetActivityTagMaxHoursDailyRealDaysForm::filterChanged);
 }
 
 ConstraintStudentsSetActivityTagMaxHoursDailyRealDaysForm::~ConstraintStudentsSetActivityTagMaxHoursDailyRealDaysForm()

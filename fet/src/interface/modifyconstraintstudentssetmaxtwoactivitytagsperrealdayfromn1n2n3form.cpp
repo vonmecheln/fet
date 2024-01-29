@@ -26,8 +26,8 @@ ModifyConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3Form::ModifyCon
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3Form::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3Form::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

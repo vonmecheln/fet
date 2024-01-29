@@ -34,12 +34,12 @@ ModifyConstraintActivitiesSameRoomIfConsecutiveForm::ModifyConstraintActivitiesS
 	allActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	selectedActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
-	connect(allActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addActivity()));
-	connect(addAllActivitiesPushButton, SIGNAL(clicked()), this, SLOT(addAllActivities()));
-	connect(selectedActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeActivity()));
-	connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintActivitiesSameRoomIfConsecutiveForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintActivitiesSameRoomIfConsecutiveForm::cancel);
+	connect(allActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &ModifyConstraintActivitiesSameRoomIfConsecutiveForm::addActivity);
+	connect(addAllActivitiesPushButton, &QPushButton::clicked, this, &ModifyConstraintActivitiesSameRoomIfConsecutiveForm::addAllActivities);
+	connect(selectedActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &ModifyConstraintActivitiesSameRoomIfConsecutiveForm::removeActivity);
+	connect(clearPushButton, &QPushButton::clicked, this, &ModifyConstraintActivitiesSameRoomIfConsecutiveForm::clear);
 	
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -94,10 +94,10 @@ ModifyConstraintActivitiesSameRoomIfConsecutiveForm::ModifyConstraintActivitiesS
 
 	filterChanged();
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivitiesSameRoomIfConsecutiveForm::filterChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivitiesSameRoomIfConsecutiveForm::filterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivitiesSameRoomIfConsecutiveForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivitiesSameRoomIfConsecutiveForm::filterChanged);
 }
 
 ModifyConstraintActivitiesSameRoomIfConsecutiveForm::~ModifyConstraintActivitiesSameRoomIfConsecutiveForm()

@@ -27,10 +27,10 @@ ModifyConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm::ModifyConst
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm::cancel);
 
-	connect(swapPushButton, SIGNAL(clicked()), this, SLOT(swap()));
+	connect(swapPushButton, &QPushButton::clicked, this, &ModifyConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm::swap);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

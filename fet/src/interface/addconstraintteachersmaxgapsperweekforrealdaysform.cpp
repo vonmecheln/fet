@@ -28,13 +28,13 @@ AddConstraintTeachersMaxGapsPerWeekForRealDaysForm::AddConstraintTeachersMaxGaps
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(addConstraintsPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraints()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintTeachersMaxGapsPerWeekForRealDaysForm::addCurrentConstraint);
+	connect(addConstraintsPushButton, &QPushButton::clicked, this, &AddConstraintTeachersMaxGapsPerWeekForRealDaysForm::addCurrentConstraints);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintTeachersMaxGapsPerWeekForRealDaysForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
-		
+	
 	maxGapsSpinBox->setMinimum(0);
 	maxGapsSpinBox->setMaximum(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
 	maxGapsSpinBox->setValue(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);

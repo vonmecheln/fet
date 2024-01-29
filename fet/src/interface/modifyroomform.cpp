@@ -25,8 +25,8 @@ ModifyRoomForm::ModifyRoomForm(QWidget* parent, const QString& initialRoomName, 
 	
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyRoomForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyRoomForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

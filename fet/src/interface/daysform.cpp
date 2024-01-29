@@ -45,15 +45,15 @@ DaysForm::DaysForm(QWidget* parent): QDialog(parent)
 
 	daysListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(nDaysSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfDaysChanged()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(insertDayPushButton, SIGNAL(clicked()), this, SLOT(insertDay()));
-	connect(modifyDayPushButton, SIGNAL(clicked()), this, SLOT(modifyDay()));
-	connect(removeDayPushButton, SIGNAL(clicked()), this, SLOT(removeDay()));
-	connect(daysListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyDay()));
+	connect(nDaysSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &DaysForm::numberOfDaysChanged);
+	connect(cancelPushButton, &QPushButton::clicked, this, &DaysForm::cancel);
+	connect(okPushButton, &QPushButton::clicked, this, &DaysForm::ok);
+	connect(insertDayPushButton, &QPushButton::clicked, this, &DaysForm::insertDay);
+	connect(modifyDayPushButton, &QPushButton::clicked, this, &DaysForm::modifyDay);
+	connect(removeDayPushButton, &QPushButton::clicked, this, &DaysForm::removeDay);
+	connect(daysListWidget, &QListWidget::itemDoubleClicked, this, &DaysForm::modifyDay);
 
-	disconnect(nDaysSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfDaysChanged()));
+	disconnect(nDaysSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &DaysForm::numberOfDaysChanged);
 	nDaysSpinBox->setMinimum(1);
 	nDaysSpinBox->setMaximum(MAX_DAYS_PER_WEEK);
 	nDaysSpinBox->setValue(gt.rules.nDaysPerWeek);
@@ -64,7 +64,7 @@ DaysForm::DaysForm(QWidget* parent): QDialog(parent)
 	}
 	if(daysListWidget->count()>=1)
 		daysListWidget->setCurrentRow(0);
-	connect(nDaysSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfDaysChanged()));
+	connect(nDaysSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &DaysForm::numberOfDaysChanged);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -90,10 +90,10 @@ void DaysForm::insertDay()
 	for(int j=i+1; j<daysListWidget->count(); j++)
 		daysListWidget->item(j)->setText(tr("%1. %2", "%1 is the day index, %2 is the day name").arg(j+1).arg(realNames.at(j)));
 
-	disconnect(nDaysSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfDaysChanged()));
+	disconnect(nDaysSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &DaysForm::numberOfDaysChanged);
 	int j=nDaysSpinBox->value();
 	nDaysSpinBox->setValue(j+1);
-	connect(nDaysSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfDaysChanged()));
+	connect(nDaysSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &DaysForm::numberOfDaysChanged);
 }
 
 void DaysForm::modifyDay()
@@ -128,10 +128,10 @@ void DaysForm::removeDay()
 		for(int j=i; j<daysListWidget->count(); j++)
 			daysListWidget->item(j)->setText(tr("%1. %2", "%1 is the day index, %2 is the day name").arg(j+1).arg(realNames[j]));
 
-		disconnect(nDaysSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfDaysChanged()));
+		disconnect(nDaysSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &DaysForm::numberOfDaysChanged);
 		int j=nDaysSpinBox->value();
 		nDaysSpinBox->setValue(j-1);
-		connect(nDaysSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfDaysChanged()));
+		connect(nDaysSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &DaysForm::numberOfDaysChanged);
 	}
 	else if(daysListWidget->count()==1){
 		QMessageBox::warning(this, tr("FET information"), tr("The number of days must be at least 1"));

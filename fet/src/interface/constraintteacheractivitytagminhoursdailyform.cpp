@@ -37,14 +37,14 @@ ConstraintTeacherActivityTagMinHoursDailyForm::ConstraintTeacherActivityTagMinHo
 	
 	modifyConstraintPushButton->setDefault(true);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintTeacherActivityTagMinHoursDailyForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherActivityTagMinHoursDailyForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintTeacherActivityTagMinHoursDailyForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherActivityTagMinHoursDailyForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherActivityTagMinHoursDailyForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintTeacherActivityTagMinHoursDailyForm::modifyConstraint);
 
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(helpPushButton, &QPushButton::clicked, this, &ConstraintTeacherActivityTagMinHoursDailyForm::help);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -67,8 +67,8 @@ ConstraintTeacherActivityTagMinHoursDailyForm::ConstraintTeacherActivityTagMinHo
 
 	this->filterChanged();
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintTeacherActivityTagMinHoursDailyForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintTeacherActivityTagMinHoursDailyForm::filterChanged);
 }
 
 ConstraintTeacherActivityTagMinHoursDailyForm::~ConstraintTeacherActivityTagMinHoursDailyForm()

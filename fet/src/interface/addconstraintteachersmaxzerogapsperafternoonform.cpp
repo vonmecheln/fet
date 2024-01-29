@@ -28,9 +28,9 @@ AddConstraintTeachersMaxZeroGapsPerAfternoonForm::AddConstraintTeachersMaxZeroGa
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(addConstraintsPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraints()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintTeachersMaxZeroGapsPerAfternoonForm::addCurrentConstraint);
+	connect(addConstraintsPushButton, &QPushButton::clicked, this, &AddConstraintTeachersMaxZeroGapsPerAfternoonForm::addCurrentConstraints);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintTeachersMaxZeroGapsPerAfternoonForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

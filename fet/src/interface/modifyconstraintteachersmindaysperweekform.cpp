@@ -26,8 +26,8 @@ ModifyConstraintTeachersMinDaysPerWeekForm::ModifyConstraintTeachersMinDaysPerWe
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintTeachersMinDaysPerWeekForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintTeachersMinDaysPerWeekForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -48,7 +48,7 @@ ModifyConstraintTeachersMinDaysPerWeekForm::~ModifyConstraintTeachersMinDaysPerW
 
 void ModifyConstraintTeachersMinDaysPerWeekForm::updateMinDaysSpinBox(){
 	minDaysSpinBox->setMinimum(1);
-	minDaysSpinBox->setMaximum(gt.rules.nDaysPerWeek);	
+	minDaysSpinBox->setMaximum(gt.rules.nDaysPerWeek);
 }
 
 void ModifyConstraintTeachersMinDaysPerWeekForm::ok()

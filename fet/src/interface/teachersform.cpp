@@ -55,24 +55,24 @@ TeachersForm::TeachersForm(QWidget* parent): QDialog(parent)
 
 	teachersListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(modifyTeacherPushButton, SIGNAL(clicked()), this, SLOT(modifyTeacher()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(addTeacherPushButton, SIGNAL(clicked()), this, SLOT(addTeacher()));
+	connect(modifyTeacherPushButton, &QPushButton::clicked, this, &TeachersForm::modifyTeacher);
+	connect(closePushButton, &QPushButton::clicked, this, &TeachersForm::close);
+	connect(addTeacherPushButton, &QPushButton::clicked, this, &TeachersForm::addTeacher);
 
-	connect(targetNumberOfHoursPushButton, SIGNAL(clicked()), this, SLOT(targetNumberOfHours()));
-	connect(qualifiedSubjectsPushButton, SIGNAL(clicked()), this, SLOT(qualifiedSubjects()));
+	connect(targetNumberOfHoursPushButton, &QPushButton::clicked, this, &TeachersForm::targetNumberOfHours);
+	connect(qualifiedSubjectsPushButton, &QPushButton::clicked, this, &TeachersForm::qualifiedSubjects);
 
-	connect(moveTeacherUpPushButton, SIGNAL(clicked()), this, SLOT(moveTeacherUp()));
-	connect(moveTeacherDownPushButton, SIGNAL(clicked()), this, SLOT(moveTeacherDown()));
+	connect(moveTeacherUpPushButton, &QPushButton::clicked, this, &TeachersForm::moveTeacherUp);
+	connect(moveTeacherDownPushButton, &QPushButton::clicked, this, &TeachersForm::moveTeacherDown);
 
-	connect(sortTeachersPushButton, SIGNAL(clicked()), this, SLOT(sortTeachers()));
-	connect(removeTeacherPushButton, SIGNAL(clicked()), this, SLOT(removeTeacher()));
-	connect(teachersListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(teacherChanged(int)));
-	connect(activateTeacherPushButton, SIGNAL(clicked()), this, SLOT(activateTeacher()));
-	connect(deactivateTeacherPushButton, SIGNAL(clicked()), this, SLOT(deactivateTeacher()));
-	connect(teachersListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyTeacher()));
+	connect(sortTeachersPushButton, &QPushButton::clicked, this, &TeachersForm::sortTeachers);
+	connect(removeTeacherPushButton, &QPushButton::clicked, this, &TeachersForm::removeTeacher);
+	connect(teachersListWidget, &QListWidget::currentRowChanged, this, &TeachersForm::teacherChanged);
+	connect(activateTeacherPushButton, &QPushButton::clicked, this, &TeachersForm::activateTeacher);
+	connect(deactivateTeacherPushButton, &QPushButton::clicked, this, &TeachersForm::deactivateTeacher);
+	connect(teachersListWidget, &QListWidget::itemDoubleClicked, this, &TeachersForm::modifyTeacher);
 
-	connect(commentsPushButton, SIGNAL(clicked()), this, SLOT(comments()));
+	connect(commentsPushButton, &QPushButton::clicked, this, &TeachersForm::comments);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -158,12 +158,12 @@ void TeachersForm::removeTeacher()
 	}
 
 	/*if(QMessageBox::warning( this, tr("FET"),
-		tr("Are you sure you want to delete this teacher and all related activities and constraints?"),
-		tr("Yes"), tr("No"), QString(), 0, 1 ) == 1)
-		return;*/
+	 tr("Are you sure you want to delete this teacher and all related activities and constraints?"),
+	 tr("Yes"), tr("No"), QString(), 0, 1 ) == 1)
+	 return;*/
 	if(QMessageBox::warning( this, tr("FET"),
-		tr("Are you sure you want to delete this teacher and all related activities and constraints?"),
-		QMessageBox::Yes | QMessageBox::No) == QMessageBox::No)
+	 tr("Are you sure you want to delete this teacher and all related activities and constraints?"),
+	 QMessageBox::Yes | QMessageBox::No) == QMessageBox::No)
 		return;
 
 	int tmp=gt.rules.removeTeacher(text);
@@ -447,8 +447,8 @@ void TeachersForm::comments()
 	okPB->setDefault(true);
 	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
 	
-	connect(okPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(accept()));
-	connect(cancelPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(reject()));
+	connect(okPB, &QPushButton::clicked, &getCommentsDialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &getCommentsDialog, &QDialog::reject);
 
 	QHBoxLayout* hl=new QHBoxLayout();
 	hl->addStretch();

@@ -45,15 +45,15 @@ HoursForm::HoursForm(QWidget* parent): QDialog(parent)
 
 	hoursListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(nHoursSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfHoursChanged()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(insertHourPushButton, SIGNAL(clicked()), this, SLOT(insertHour()));
-	connect(modifyHourPushButton, SIGNAL(clicked()), this, SLOT(modifyHour()));
-	connect(removeHourPushButton, SIGNAL(clicked()), this, SLOT(removeHour()));
-	connect(hoursListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyHour()));
+	connect(nHoursSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &HoursForm::numberOfHoursChanged);
+	connect(cancelPushButton, &QPushButton::clicked, this, &HoursForm::cancel);
+	connect(okPushButton, &QPushButton::clicked, this, &HoursForm::ok);
+	connect(insertHourPushButton, &QPushButton::clicked, this, &HoursForm::insertHour);
+	connect(modifyHourPushButton, &QPushButton::clicked, this, &HoursForm::modifyHour);
+	connect(removeHourPushButton, &QPushButton::clicked, this, &HoursForm::removeHour);
+	connect(hoursListWidget, &QListWidget::itemDoubleClicked, this, &HoursForm::modifyHour);
 
-	disconnect(nHoursSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfHoursChanged()));
+	disconnect(nHoursSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &HoursForm::numberOfHoursChanged);
 	nHoursSpinBox->setMinimum(1);
 	nHoursSpinBox->setMaximum(MAX_HOURS_PER_DAY);
 	nHoursSpinBox->setValue(gt.rules.nHoursPerDay);
@@ -64,7 +64,7 @@ HoursForm::HoursForm(QWidget* parent): QDialog(parent)
 	}
 	if(hoursListWidget->count()>=1)
 		hoursListWidget->setCurrentRow(0);
-	connect(nHoursSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfHoursChanged()));
+	connect(nHoursSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &HoursForm::numberOfHoursChanged);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -90,10 +90,10 @@ void HoursForm::insertHour()
 	for(int j=i+1; j<hoursListWidget->count(); j++)
 		hoursListWidget->item(j)->setText(tr("%1. %2", "%1 is the hour index, %2 is the hour name").arg(j+1).arg(realNames.at(j)));
 
-	disconnect(nHoursSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfHoursChanged()));
+	disconnect(nHoursSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &HoursForm::numberOfHoursChanged);
 	int j=nHoursSpinBox->value();
 	nHoursSpinBox->setValue(j+1);
-	connect(nHoursSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfHoursChanged()));
+	connect(nHoursSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &HoursForm::numberOfHoursChanged);
 }
 
 void HoursForm::modifyHour()
@@ -128,10 +128,10 @@ void HoursForm::removeHour()
 		for(int j=i; j<hoursListWidget->count(); j++)
 			hoursListWidget->item(j)->setText(tr("%1. %2", "%1 is the hour index, %2 is the hour name").arg(j+1).arg(realNames[j]));
 
-		disconnect(nHoursSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfHoursChanged()));
+		disconnect(nHoursSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &HoursForm::numberOfHoursChanged);
 		int j=nHoursSpinBox->value();
 		nHoursSpinBox->setValue(j-1);
-		connect(nHoursSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfHoursChanged()));
+		connect(nHoursSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &HoursForm::numberOfHoursChanged);
 	}
 	else if(hoursListWidget->count()==1){
 		QMessageBox::warning(this, tr("FET information"), tr("The number of hours must be at least 1"));

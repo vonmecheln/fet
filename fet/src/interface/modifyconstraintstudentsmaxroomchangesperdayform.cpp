@@ -25,12 +25,12 @@ ModifyConstraintStudentsMaxRoomChangesPerDayForm::ModifyConstraintStudentsMaxRoo
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintStudentsMaxRoomChangesPerDayForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintStudentsMaxRoomChangesPerDayForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
-		
+	
 	this->_ctr=ctr;
 	
 	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));

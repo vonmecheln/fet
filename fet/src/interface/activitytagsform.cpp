@@ -53,25 +53,25 @@ ActivityTagsForm::ActivityTagsForm(QWidget* parent): QDialog(parent)
 
 	activityTagsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(addActivityTagPushButton, SIGNAL(clicked()), this, SLOT(addActivityTag()));
-	connect(removeActivityTagPushButton, SIGNAL(clicked()), this, SLOT(removeActivityTag()));
-	connect(renameActivityTagPushButton, SIGNAL(clicked()), this, SLOT(renameActivityTag()));
+	connect(closePushButton, &QPushButton::clicked, this, &ActivityTagsForm::close);
+	connect(addActivityTagPushButton, &QPushButton::clicked, this, &ActivityTagsForm::addActivityTag);
+	connect(removeActivityTagPushButton, &QPushButton::clicked, this, &ActivityTagsForm::removeActivityTag);
+	connect(renameActivityTagPushButton, &QPushButton::clicked, this, &ActivityTagsForm::renameActivityTag);
 
-	connect(moveActivityTagUpPushButton, SIGNAL(clicked()), this, SLOT(moveActivityTagUp()));
-	connect(moveActivityTagDownPushButton, SIGNAL(clicked()), this, SLOT(moveActivityTagDown()));
+	connect(moveActivityTagUpPushButton, &QPushButton::clicked, this, &ActivityTagsForm::moveActivityTagUp);
+	connect(moveActivityTagDownPushButton, &QPushButton::clicked, this, &ActivityTagsForm::moveActivityTagDown);
 
-	connect(sortActivityTagsPushButton, SIGNAL(clicked()), this, SLOT(sortActivityTags()));
-	connect(activityTagsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(activityTagChanged(int)));
-	connect(activateActivityTagPushButton, SIGNAL(clicked()), this, SLOT(activateActivityTag()));
-	connect(deactivateActivityTagPushButton, SIGNAL(clicked()), this, SLOT(deactivateActivityTag()));
-	connect(activityTagsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(renameActivityTag()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(sortActivityTagsPushButton, &QPushButton::clicked, this, &ActivityTagsForm::sortActivityTags);
+	connect(activityTagsListWidget, &QListWidget::currentRowChanged, this, &ActivityTagsForm::activityTagChanged);
+	connect(activateActivityTagPushButton, &QPushButton::clicked, this, &ActivityTagsForm::activateActivityTag);
+	connect(deactivateActivityTagPushButton, &QPushButton::clicked, this, &ActivityTagsForm::deactivateActivityTag);
+	connect(activityTagsListWidget, &QListWidget::itemDoubleClicked, this, &ActivityTagsForm::renameActivityTag);
+	connect(helpPushButton, &QPushButton::clicked, this, &ActivityTagsForm::help);
 
-	connect(printablePushButton, SIGNAL(clicked()), this, SLOT(printableActivityTag()));
-	connect(notPrintablePushButton, SIGNAL(clicked()), this, SLOT(notPrintableActivityTag()));
+	connect(printablePushButton, &QPushButton::clicked, this, &ActivityTagsForm::printableActivityTag);
+	connect(notPrintablePushButton, &QPushButton::clicked, this, &ActivityTagsForm::notPrintableActivityTag);
 
-	connect(commentsPushButton, SIGNAL(clicked()), this, SLOT(comments()));
+	connect(commentsPushButton, &QPushButton::clicked, this, &ActivityTagsForm::comments);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -144,12 +144,12 @@ void ActivityTagsForm::removeActivityTag()
 	}
 
 	/*if(QMessageBox::warning( this, tr("FET"),
-		tr("Are you sure you want to delete this activity tag?"),
-		tr("Yes"), tr("No"), QString(), 0, 1 ) == 1)
+	 tr("Are you sure you want to delete this activity tag?"),
+	 tr("Yes"), tr("No"), QString(), 0, 1 ) == 1)
 		return;*/
 	if(QMessageBox::warning( this, tr("FET"),
-		tr("Are you sure you want to delete this activity tag?"),
-		QMessageBox::Yes | QMessageBox::No) == QMessageBox::No)
+	 tr("Are you sure you want to delete this activity tag?"),
+	 QMessageBox::Yes | QMessageBox::No) == QMessageBox::No)
 		return;
 
 	int tmp=gt.rules.removeActivityTag(text);
@@ -397,8 +397,8 @@ void ActivityTagsForm::comments()
 	okPB->setDefault(true);
 	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
 	
-	connect(okPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(accept()));
-	connect(cancelPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(reject()));
+	connect(okPB, &QPushButton::clicked, &getCommentsDialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &getCommentsDialog, &QDialog::reject);
 
 	QHBoxLayout* hl=new QHBoxLayout();
 	hl->addStretch();

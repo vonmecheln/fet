@@ -26,8 +26,8 @@ ModifyConstraintBasicCompulsoryTimeForm::ModifyConstraintBasicCompulsoryTimeForm
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintBasicCompulsoryTimeForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintBasicCompulsoryTimeForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

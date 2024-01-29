@@ -37,14 +37,14 @@ ConstraintStudentsSetMaxThreeConsecutiveDaysForm::ConstraintStudentsSetMaxThreeC
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintStudentsSetMaxThreeConsecutiveDaysForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxThreeConsecutiveDaysForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxThreeConsecutiveDaysForm::close);
+	connect(helpPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxThreeConsecutiveDaysForm::help);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxThreeConsecutiveDaysForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxThreeConsecutiveDaysForm::modifyConstraint);
 
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintStudentsSetMaxThreeConsecutiveDaysForm::modifyConstraint);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -56,7 +56,7 @@ ConstraintStudentsSetMaxThreeConsecutiveDaysForm::ConstraintStudentsSetMaxThreeC
 
 	this->filterChanged();
 
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintStudentsSetMaxThreeConsecutiveDaysForm::filterChanged);
 }
 
 ConstraintStudentsSetMaxThreeConsecutiveDaysForm::~ConstraintStudentsSetMaxThreeConsecutiveDaysForm()

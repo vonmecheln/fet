@@ -2764,7 +2764,7 @@ Versions 6.14.0 - 6.14.2
 	activity tags will not appear). Suggested by pnlshd.
 	- Code cleanup.
 ---------------------------------------------------------------------------------
-Versions 6.15.0 - 6.15.v
+Versions 6.15.0 - 6.15.1
 - Version 6.15.0
 	- Added the possibility of saving the history to the hard disk, next to the saved .fet data file (suggested by uni_instructor and ngoctp29121982).
 	This option is by default disabled and must be enabled from the settings.
@@ -2774,3 +2774,10 @@ Versions 6.15.0 - 6.15.v
 	- Correction for saving/retrieving the history on/from the disk: if the data structure changes, the history will be invalidated, instead of
 	possible bugs/crashes of the program (using an idea of Volker Dirr).
 	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares. It is again complete.
+---------------------------------------------------------------------------------
+Versions 6.16.0 - 6.16.v
+- Version 6.16.0
+	- Many source code updates and improvements (using ideas from Volker Dirr).
+	- Minor bug fix in the interface (reported by Volker Dirr).
+	- Minor improvement when saving the history data file (using ideas from Volker Dirr).
+	- Updated the Bulgarian translation, by Hristiyan Dimitrov, who is the new translator.

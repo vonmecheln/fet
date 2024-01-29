@@ -35,11 +35,11 @@ AddConstraintStudentsSetHomeRoomsForm::AddConstraintStudentsSetHomeRoomsForm(QWi
 	roomsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	selectedRoomsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(roomsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addRoom()));
-	connect(selectedRoomsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeRoom()));
-	connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintStudentsSetHomeRoomsForm::close);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintStudentsSetHomeRoomsForm::addConstraint);
+	connect(roomsListWidget, &QListWidget::itemDoubleClicked, this, &AddConstraintStudentsSetHomeRoomsForm::addRoom);
+	connect(selectedRoomsListWidget, &QListWidget::itemDoubleClicked, this, &AddConstraintStudentsSetHomeRoomsForm::removeRoom);
+	connect(clearPushButton, &QPushButton::clicked, this, &AddConstraintStudentsSetHomeRoomsForm::clear);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

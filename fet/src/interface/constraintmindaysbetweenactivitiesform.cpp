@@ -42,14 +42,14 @@ ConstraintMinDaysBetweenActivitiesForm::ConstraintMinDaysBetweenActivitiesForm(Q
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintMinDaysBetweenActivitiesForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintMinDaysBetweenActivitiesForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintMinDaysBetweenActivitiesForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintMinDaysBetweenActivitiesForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintMinDaysBetweenActivitiesForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintMinDaysBetweenActivitiesForm::modifyConstraint);
 
-	connect(changeSelectivelyPushButton, SIGNAL(clicked()), this, SLOT(changeSelectively()));
+	connect(changeSelectivelyPushButton, &QPushButton::clicked, this, &ConstraintMinDaysBetweenActivitiesForm::changeSelectively);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -91,10 +91,10 @@ ConstraintMinDaysBetweenActivitiesForm::ConstraintMinDaysBetweenActivitiesForm(Q
 
 	this->filterChanged();
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintMinDaysBetweenActivitiesForm::filterChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintMinDaysBetweenActivitiesForm::filterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintMinDaysBetweenActivitiesForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintMinDaysBetweenActivitiesForm::filterChanged);
 }
 
 ConstraintMinDaysBetweenActivitiesForm::~ConstraintMinDaysBetweenActivitiesForm()

@@ -28,15 +28,15 @@ AddConstraintStudentsSetMaxSpanPerDayForm::AddConstraintStudentsSetMaxSpanPerDay
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintStudentsSetMaxSpanPerDayForm::addCurrentConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintStudentsSetMaxSpanPerDayForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 
 	QSize tmp2=studentsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp2);
-		
+	
 	maxSpanSpinBox->setMinimum(1);
 	maxSpanSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	maxSpanSpinBox->setValue(gt.rules.nHoursPerDay);

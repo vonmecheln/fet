@@ -38,18 +38,18 @@ AddConstraintTwoSetsOfActivitiesOrderedForm::AddConstraintTwoSetsOfActivitiesOrd
 	secondAllActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	secondSelectedActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(firstClearPushButton, SIGNAL(clicked()), this, SLOT(firstClear()));
-	connect(secondClearPushButton, SIGNAL(clicked()), this, SLOT(secondClear()));
-	connect(firstAllActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(firstAddActivity()));
-	connect(secondAllActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(secondAddActivity()));
-	connect(firstAddAllActivitiesPushButton, SIGNAL(clicked()), this, SLOT(firstAddAllActivities()));
-	connect(secondAddAllActivitiesPushButton, SIGNAL(clicked()), this, SLOT(secondAddAllActivities()));
-	connect(firstSelectedActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(firstRemoveActivity()));
-	connect(secondSelectedActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(secondRemoveActivity()));
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintTwoSetsOfActivitiesOrderedForm::close);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintTwoSetsOfActivitiesOrderedForm::addConstraint);
+	connect(firstClearPushButton, &QPushButton::clicked, this, &AddConstraintTwoSetsOfActivitiesOrderedForm::firstClear);
+	connect(secondClearPushButton, &QPushButton::clicked, this, &AddConstraintTwoSetsOfActivitiesOrderedForm::secondClear);
+	connect(firstAllActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &AddConstraintTwoSetsOfActivitiesOrderedForm::firstAddActivity);
+	connect(secondAllActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &AddConstraintTwoSetsOfActivitiesOrderedForm::secondAddActivity);
+	connect(firstAddAllActivitiesPushButton, &QPushButton::clicked, this, &AddConstraintTwoSetsOfActivitiesOrderedForm::firstAddAllActivities);
+	connect(secondAddAllActivitiesPushButton, &QPushButton::clicked, this, &AddConstraintTwoSetsOfActivitiesOrderedForm::secondAddAllActivities);
+	connect(firstSelectedActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &AddConstraintTwoSetsOfActivitiesOrderedForm::firstRemoveActivity);
+	connect(secondSelectedActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &AddConstraintTwoSetsOfActivitiesOrderedForm::secondRemoveActivity);
 	
-	connect(swapPushButton, SIGNAL(clicked()), this, SLOT(swap()));
+	connect(swapPushButton, &QPushButton::clicked, this, &AddConstraintTwoSetsOfActivitiesOrderedForm::swap);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -95,10 +95,10 @@ AddConstraintTwoSetsOfActivitiesOrderedForm::AddConstraintTwoSetsOfActivitiesOrd
 
 	filterChanged();
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintTwoSetsOfActivitiesOrderedForm::filterChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintTwoSetsOfActivitiesOrderedForm::filterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintTwoSetsOfActivitiesOrderedForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintTwoSetsOfActivitiesOrderedForm::filterChanged);
 }
 
 AddConstraintTwoSetsOfActivitiesOrderedForm::~AddConstraintTwoSetsOfActivitiesOrderedForm()

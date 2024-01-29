@@ -26,8 +26,8 @@ ModifyConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHourForm::ModifyCons
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHourForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHourForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

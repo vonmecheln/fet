@@ -101,14 +101,14 @@ TimetableViewTeachersDaysHorizontalForm::TimetableViewTeachersDaysHorizontalForm
 	
 	teachersListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(teachersListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(teacherChanged(const QString&)));
-	connect(teachersTimetableTable, SIGNAL(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)), this, SLOT(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)));
-	connect(lockTimePushButton, SIGNAL(clicked()), this, SLOT(lockTime()));
-	connect(lockSpacePushButton, SIGNAL(clicked()), this, SLOT(lockSpace()));
-	connect(lockTimeSpacePushButton, SIGNAL(clicked()), this, SLOT(lockTimeSpace()));
+	connect(closePushButton, &QPushButton::clicked, this, &TimetableViewTeachersDaysHorizontalForm::close);
+	connect(teachersListWidget, &QListWidget::currentTextChanged, this, &TimetableViewTeachersDaysHorizontalForm::teacherChanged);
+	connect(teachersTimetableTable, &QTableWidget::currentItemChanged, this, &TimetableViewTeachersDaysHorizontalForm::currentItemChanged);
+	connect(lockTimePushButton, &QPushButton::clicked, this, &TimetableViewTeachersDaysHorizontalForm::lockTime);
+	connect(lockSpacePushButton, &QPushButton::clicked, this, &TimetableViewTeachersDaysHorizontalForm::lockSpace);
+	connect(lockTimeSpacePushButton, &QPushButton::clicked, this, &TimetableViewTeachersDaysHorizontalForm::lockTimeSpace);
 
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(helpPushButton, &QPushButton::clicked, this, &TimetableViewTeachersDaysHorizontalForm::help);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -197,7 +197,7 @@ TimetableViewTeachersDaysHorizontalForm::TimetableViewTeachersDaysHorizontalForm
 		teachersListWidget->setCurrentRow(0);
 
 	//added by Volker Dirr
-	connect(&communicationSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateTeachersTimetableTable()));
+	connect(&communicationSpinBox, &CommunicationSpinBox::valueChanged, this, &TimetableViewTeachersDaysHorizontalForm::updateTeachersTimetableTable);
 }
 
 void TimetableViewTeachersDaysHorizontalForm::newTimetableGenerated()
@@ -219,14 +219,14 @@ void TimetableViewTeachersDaysHorizontalForm::newTimetableGenerated()
 	
 	teachersListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(teachersListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(teacherChanged(const QString&)));
-	connect(teachersTimetableTable, SIGNAL(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)), this, SLOT(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)));
-	connect(lockTimePushButton, SIGNAL(clicked()), this, SLOT(lockTime()));
-	connect(lockSpacePushButton, SIGNAL(clicked()), this, SLOT(lockSpace()));
-	connect(lockTimeSpacePushButton, SIGNAL(clicked()), this, SLOT(lockTimeSpace()));
+	connect(closePushButton, SIG NAL(clicked()), this, SL OT(close()));
+	connect(teachersListWidget, SIG NAL(currentTextChanged(const QString&)), this, SL OT(teacherChanged(const QString&)));
+	connect(teachersTimetableTable, SIG NAL(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)), this, SL OT(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)));
+	connect(lockTimePushButton, SIG NAL(clicked()), this, SL OT(lockTime()));
+	connect(lockSpacePushButton, SIG NAL(clicked()), this, SL OT(lockSpace()));
+	connect(lockTimeSpacePushButton, SIG NAL(clicked()), this, SL OT(lockTimeSpace()));
 
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(helpPushButton, SIG NAL(clicked()), this, SL OT(help()));
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -305,9 +305,9 @@ void TimetableViewTeachersDaysHorizontalForm::newTimetableGenerated()
 	////////////////
 	
 */
-	disconnect(teachersListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(teacherChanged(const QString&)));
+	disconnect(teachersListWidget, &QListWidget::currentTextChanged, this, &TimetableViewTeachersDaysHorizontalForm::teacherChanged);
 	teachersListWidget->clear();
-	connect(teachersListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(teacherChanged(const QString&)));
+	connect(teachersListWidget, &QListWidget::currentTextChanged, this, &TimetableViewTeachersDaysHorizontalForm::teacherChanged);
 
 	assert(gt.rules.nInternalTeachers==gt.rules.teachersList.count());
 	for(int i=0; i<gt.rules.nInternalTeachers; i++)
@@ -317,7 +317,7 @@ void TimetableViewTeachersDaysHorizontalForm::newTimetableGenerated()
 		teachersListWidget->setCurrentRow(0);
 
 	//added by Volker Dirr
-	//connect(&communicationSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateTeachersTimetableTable()));
+	//connect(&communicationSpinBox, SIG NAL(valueChanged(int)), this, SL OT(updateTeachersTimetableTable()));
 }
 
 TimetableViewTeachersDaysHorizontalForm::~TimetableViewTeachersDaysHorizontalForm()

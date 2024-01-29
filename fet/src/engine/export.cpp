@@ -728,8 +728,8 @@ bool Export::selectSeparatorAndTextQuote(QWidget* parent, QDialog* &newParent, Q
 	pb->setDefault(true);
 	pb->setFocus();
 	
-	QObject::connect(pb, SIGNAL(clicked()), &separatorsDialog, SLOT(accept()));
-	QObject::connect(cancelpb, SIGNAL(clicked()), &separatorsDialog, SLOT(reject()));
+	connect(pb, &QPushButton::clicked, &separatorsDialog, &QDialog::accept);
+	connect(cancelpb, &QPushButton::clicked, &separatorsDialog, &QDialog::reject);
 	
 	int w=separatorsDialog.sizeHint().width();
 	int h=separatorsDialog.sizeHint().height();
@@ -1959,7 +1959,7 @@ LastWarningsDialogE::LastWarningsDialogE(QWidget* parent, const QString& lastWar
 	lastWarningsMainLayout->addWidget(lastWarningsText);
 	lastWarningsMainLayout->addLayout(hl);
 
-	QObject::connect(pb1, SIGNAL(clicked()), this, SLOT(accept()));
+	connect(pb1, &QPushButton::clicked, this, &LastWarningsDialogE::accept);
 	
 	//pb1->setDefault(true);
 

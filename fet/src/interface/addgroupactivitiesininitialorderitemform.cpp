@@ -34,16 +34,16 @@ AddGroupActivitiesInInitialOrderItemForm::AddGroupActivitiesInInitialOrderItemFo
 	allActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	selectedActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(addItemPushButton, SIGNAL(clicked()), this, SLOT(addItem()));
-	connect(allActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addActivity()));
-	connect(addAllActivitiesPushButton, SIGNAL(clicked()), this, SLOT(addAllActivities()));
-	connect(selectedActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeActivity()));
-	connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
+	connect(closePushButton, &QPushButton::clicked, this, &AddGroupActivitiesInInitialOrderItemForm::close);
+	connect(addItemPushButton, &QPushButton::clicked, this, &AddGroupActivitiesInInitialOrderItemForm::addItem);
+	connect(allActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &AddGroupActivitiesInInitialOrderItemForm::addActivity);
+	connect(addAllActivitiesPushButton, &QPushButton::clicked, this, &AddGroupActivitiesInInitialOrderItemForm::addAllActivities);
+	connect(selectedActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &AddGroupActivitiesInInitialOrderItemForm::removeActivity);
+	connect(clearPushButton, &QPushButton::clicked, this, &AddGroupActivitiesInInitialOrderItemForm::clear);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
-		
+	
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
 	QSize tmp2=studentsComboBox->minimumSizeHint();
@@ -82,10 +82,10 @@ AddGroupActivitiesInInitialOrderItemForm::AddGroupActivitiesInInitialOrderItemFo
 
 	filterChanged();
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddGroupActivitiesInInitialOrderItemForm::filterChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddGroupActivitiesInInitialOrderItemForm::filterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddGroupActivitiesInInitialOrderItemForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddGroupActivitiesInInitialOrderItemForm::filterChanged);
 }
 
 AddGroupActivitiesInInitialOrderItemForm::~AddGroupActivitiesInInitialOrderItemForm()

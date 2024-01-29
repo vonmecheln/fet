@@ -46,9 +46,9 @@ public slots:
 
 	void currentItemChanged(QTableWidgetItem* current, QTableWidgetItem* previous);
 	
-	void lock();
 	void lockTime();
 	void lockSpace();
+	void lockTimeSpace();
 	void help();
 	
 protected:

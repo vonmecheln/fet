@@ -28,8 +28,8 @@ AddConstraintStudentsMinHoursPerMorningForm::AddConstraintStudentsMinHoursPerMor
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintStudentsMinHoursPerMorningForm::addCurrentConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintStudentsMinHoursPerMorningForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -44,6 +44,10 @@ AddConstraintStudentsMinHoursPerMorningForm::AddConstraintStudentsMinHoursPerMor
 	minHoursSpinBox->setValue(2);
 	
 	allowEmptyMorningsCheckBox->setChecked(true);
+
+	connect(allowEmptyMorningsCheckBox, &QCheckBox::toggled, this, &AddConstraintStudentsMinHoursPerMorningForm::allowEmptyMorningsCheckBox_toggled);
+	
+	allowEmptyMorningsCheckBox_toggled();
 }
 
 AddConstraintStudentsMinHoursPerMorningForm::~AddConstraintStudentsMinHoursPerMorningForm()
@@ -100,7 +104,7 @@ void AddConstraintStudentsMinHoursPerMorningForm::addCurrentConstraint()
 	}
 }
 
-void AddConstraintStudentsMinHoursPerMorningForm::on_allowEmptyMorningsCheckBox_toggled()
+void AddConstraintStudentsMinHoursPerMorningForm::allowEmptyMorningsCheckBox_toggled()
 {
 	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
 		bool k=allowEmptyMorningsCheckBox->isChecked();

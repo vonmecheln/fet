@@ -1,3 +1,13 @@
+lessThan(QT_MAJOR_VERSION, 5) {
+	error(Qt version $$QT_VERSION is not supported. The minimum supported Qt version is 5.7.0.)
+}
+
+equals(QT_MAJOR_VERSION, 5) {
+	lessThan(QT_MINOR_VERSION, 7){
+		error(Qt version $$QT_VERSION is not supported. The minimum supported Qt version is 5.7.0.)
+	}
+}
+
 SOURCES += \
 	engine/timetableexport.cpp \
 	engine/activity.cpp \
@@ -3150,12 +3160,8 @@ DEFINES += \
 	QT_STRICT_ITERATORS
 
 CONFIG += release warn_on c++17
-QT += network
-
-greaterThan(QT_MAJOR_VERSION, 4) {
-	QT += widgets
-	!isEmpty(QT.printsupport.name): QT += printsupport
-}
+QT += network widgets
+!isEmpty(QT.printsupport.name): QT += printsupport
 
 DESTDIR = ..
 TARGET = fet

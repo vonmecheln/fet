@@ -39,22 +39,22 @@ ModifyConstraintTwoSetsOfActivitiesOrderedForm::ModifyConstraintTwoSetsOfActivit
 	secondAllActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	secondSelectedActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintTwoSetsOfActivitiesOrderedForm::cancel);
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintTwoSetsOfActivitiesOrderedForm::ok);
 
-	connect(firstAllActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(firstAddActivity()));
-	connect(firstAddAllActivitiesPushButton, SIGNAL(clicked()), this, SLOT(firstAddAllActivities()));
-	connect(firstSelectedActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(firstRemoveActivity()));
+	connect(firstAllActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &ModifyConstraintTwoSetsOfActivitiesOrderedForm::firstAddActivity);
+	connect(firstAddAllActivitiesPushButton, &QPushButton::clicked, this, &ModifyConstraintTwoSetsOfActivitiesOrderedForm::firstAddAllActivities);
+	connect(firstSelectedActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &ModifyConstraintTwoSetsOfActivitiesOrderedForm::firstRemoveActivity);
 
-	connect(firstClearPushButton, SIGNAL(clicked()), this, SLOT(firstClear()));
+	connect(firstClearPushButton, &QPushButton::clicked, this, &ModifyConstraintTwoSetsOfActivitiesOrderedForm::firstClear);
 
-	connect(secondAllActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(secondAddActivity()));
-	connect(secondAddAllActivitiesPushButton, SIGNAL(clicked()), this, SLOT(secondAddAllActivities()));
-	connect(secondSelectedActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(secondRemoveActivity()));
+	connect(secondAllActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &ModifyConstraintTwoSetsOfActivitiesOrderedForm::secondAddActivity);
+	connect(secondAddAllActivitiesPushButton, &QPushButton::clicked, this, &ModifyConstraintTwoSetsOfActivitiesOrderedForm::secondAddAllActivities);
+	connect(secondSelectedActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &ModifyConstraintTwoSetsOfActivitiesOrderedForm::secondRemoveActivity);
 
-	connect(secondClearPushButton, SIGNAL(clicked()), this, SLOT(secondClear()));
+	connect(secondClearPushButton, &QPushButton::clicked, this, &ModifyConstraintTwoSetsOfActivitiesOrderedForm::secondClear);
 	
-	connect(swapPushButton, SIGNAL(clicked()), this, SLOT(swap()));
+	connect(swapPushButton, &QPushButton::clicked, this, &ModifyConstraintTwoSetsOfActivitiesOrderedForm::swap);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -123,10 +123,10 @@ ModifyConstraintTwoSetsOfActivitiesOrderedForm::ModifyConstraintTwoSetsOfActivit
 		secondSelectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
 	}
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintTwoSetsOfActivitiesOrderedForm::filterChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintTwoSetsOfActivitiesOrderedForm::filterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintTwoSetsOfActivitiesOrderedForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintTwoSetsOfActivitiesOrderedForm::filterChanged);
 }
 
 ModifyConstraintTwoSetsOfActivitiesOrderedForm::~ModifyConstraintTwoSetsOfActivitiesOrderedForm()

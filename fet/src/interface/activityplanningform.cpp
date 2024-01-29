@@ -430,44 +430,44 @@ ActivityPlanningForm::ActivityPlanningForm(QWidget *parent): QDialog(parent)
 	if(settings.contains(this->metaObject()->className()+hideFullTeachersState))
 		hideUsedTeachers->setChecked(settings.value(this->metaObject()->className()+hideFullTeachersState).toBool());
 	
-	//connect(activitiesTableView, SIGNAL(cellClicked(int, int)), this, SLOT(activitiesCellSelected(int, int)));
-	connect(activitiesTableView, SIGNAL(activated(const QModelIndex&)), this, SLOT(activitiesCellSelected(const QModelIndex&)));
+	//connect(activitiesTableView, SIG NAL(cellClicked(int, int)), this, SL OT(activitiesCellSelected(int, int)));
+	connect(activitiesTableView, &SparseTableView::activated, this, &ActivityPlanningForm::activitiesCellSelected);
 	
-	//connect(activitiesTable, SIGNAL(cellDoubleClicked(int, int)), this, SLOT(ActivitiesCellSelected(int, int)));
+	//connect(activitiesTable, SIG NAL(cellDoubleClicked(int, int)), this, SL OT(ActivitiesCellSelected(int, int)));
 
-	//connect(teachersTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(teachersCellSelected(QTableWidgetItem*)));
-	connect(teachersTableView, SIGNAL(activated(const QModelIndex&)), this, SLOT(teachersCellSelected(const QModelIndex&)));
+	//connect(teachersTable, SIG NAL(itemClicked(QTableWidgetItem*)), this, SL OT(teachersCellSelected(QTableWidgetItem*)));
+	connect(teachersTableView, &SparseTableView::activated, this, &ActivityPlanningForm::teachersCellSelected);
 
 	//mouseTracking (start 2/3)
 	/*
-	connect(activitiesTable, SIGNAL(cellEntered(int, int)), this, SLOT(ActivitiesCellEntered(int, int)));
-	connect(teachersTable, SIGNAL(cellEntered(int, int)), this, SLOT(TeachersCellEntered(int, int)));
+	connect(activitiesTable, SIG NAL(cellEntered(int, int)), this, SL OT(ActivitiesCellEntered(int, int)));
+	connect(teachersTable, SIG NAL(cellEntered(int, int)), this, SL OT(TeachersCellEntered(int, int)));
 	*/
 	//mouseTracking (end 2/3)
 	
-	connect(activitiesTableView->horizontalHeader(), SIGNAL(sectionDoubleClicked(int)), this, SLOT(activitiesTableHorizontalHeaderClicked(int)));
-	connect(activitiesTableView->verticalHeader(), SIGNAL(sectionDoubleClicked(int)), this, SLOT(activitiesTableVerticalHeaderClicked(int)));
+	connect(activitiesTableView->horizontalHeader(), &QHeaderView::sectionDoubleClicked, this, &ActivityPlanningForm::activitiesTableHorizontalHeaderClicked);
+	connect(activitiesTableView->verticalHeader(), &QHeaderView::sectionDoubleClicked, this, &ActivityPlanningForm::activitiesTableVerticalHeaderClicked);
 
-	connect(teachersTableView->horizontalHeader(), SIGNAL(sectionDoubleClicked(int)), this, SLOT(teachersTableHorizontalHeaderClicked(int)));
+	connect(teachersTableView->horizontalHeader(), &QHeaderView::sectionDoubleClicked, this, &ActivityPlanningForm::teachersTableHorizontalHeaderClicked);
 	
-	connect(CBActive, SIGNAL(currentIndexChanged(int)), this, SLOT(updateTables()));
-	connect(showDuplicates, SIGNAL(toggled(bool)), this, SLOT(updateTablesVisual()));
-	connect(showYears, SIGNAL(toggled(bool)), this, SLOT(updateTablesVisual()));
-	connect(showGroups, SIGNAL(toggled(bool)), this, SLOT(updateTablesVisual()));
+	connect(CBActive, qOverload<int>(&QComboBox::currentIndexChanged), this, &ActivityPlanningForm::updateTables);
+	connect(showDuplicates, &QCheckBox::toggled, this, &ActivityPlanningForm::updateTablesVisual);
+	connect(showYears, &QCheckBox::toggled, this, &ActivityPlanningForm::updateTablesVisual);
+	connect(showGroups, &QCheckBox::toggled, this, &ActivityPlanningForm::updateTablesVisual);
 	if(SHOW_SUBGROUPS_IN_ACTIVITY_PLANNING)
-		connect(showSubgroups, SIGNAL(toggled(bool)), this, SLOT(updateTablesVisual()));
-	connect(showTeachers, SIGNAL(toggled(bool)), this, SLOT(updateTables()));
-	connect(showActivityTags, SIGNAL(toggled(bool)), this, SLOT(updateTables()));
-	connect(hideEmptyLines, SIGNAL(toggled(bool)), this, SLOT(updateTablesVisual()));
-	connect(hideUsedTeachers, SIGNAL(toggled(bool)), this, SLOT(updateTablesVisual()));
-	connect(swapAxes, SIGNAL(toggled(bool)), this, SLOT(updateTables()));
-	connect(pbDeleteAll, SIGNAL(clicked()), this, SLOT(deleteAll()));
-	connect(pbPseudoActivities, SIGNAL(clicked()), this, SLOT(pseudoActivities()));
-	//connect(pbHelp, SIGNAL(clicked()), this, SLOT(help()));
-	connect(showHideButton, SIGNAL(clicked()), this, SLOT(showHide()));
-	connect(pbClose, SIGNAL(clicked()), this, SLOT(close()));
+		connect(showSubgroups, &QCheckBox::toggled, this, &ActivityPlanningForm::updateTablesVisual);
+	connect(showTeachers, &QCheckBox::toggled, this, &ActivityPlanningForm::updateTables);
+	connect(showActivityTags, &QCheckBox::toggled, this, &ActivityPlanningForm::updateTables);
+	connect(hideEmptyLines, &QCheckBox::toggled, this, &ActivityPlanningForm::updateTablesVisual);
+	connect(hideUsedTeachers, &QCheckBox::toggled, this, &ActivityPlanningForm::updateTablesVisual);
+	connect(swapAxes, &QCheckBox::toggled, this, &ActivityPlanningForm::updateTables);
+	connect(pbDeleteAll, &QPushButton::clicked, this, &ActivityPlanningForm::deleteAll);
+	connect(pbPseudoActivities, &QPushButton::clicked, this, &ActivityPlanningForm::pseudoActivities);
+	//connect(pbHelp, SIG NAL(clicked()), this, SL OT(help()));
+	connect(showHideButton, &QToolButton::clicked, this, &ActivityPlanningForm::showHide);
+	connect(pbClose, &QPushButton::clicked, this, &ActivityPlanningForm::close);
 	
-	connect(&planningCommunicationSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateTables()));
+	connect(&planningCommunicationSpinBox, &PlanningCommunicationSpinBox::valueChanged, this, &ActivityPlanningForm::updateTables);
 
 	updateTables();
 }
@@ -4079,7 +4079,7 @@ void ActivityPlanningForm::updateTablesVisual(){
 
 void ActivityPlanningForm::deleteAll(){
 	int ret=QMessageBox::question(this, tr("Delete all?", "It refers to activities"), tr("Are you sure you want to remove ALL the %1 activities and related constraints?", "%1 is the total number of activities")
-		.arg(gt.rules.activitiesList.count()), QMessageBox::Yes | QMessageBox::No);
+	 .arg(gt.rules.activitiesList.count()), QMessageBox::Yes | QMessageBox::No);
 	if(ret==QMessageBox::Yes){
 		ret=QMessageBox::question(this, tr("Delete all?", "It refers to activities"), tr("Are you absolutely sure you want to remove ALL activities and related constraints from your data?"), QMessageBox::Yes | QMessageBox::No);
 		if(ret==QMessageBox::Yes){

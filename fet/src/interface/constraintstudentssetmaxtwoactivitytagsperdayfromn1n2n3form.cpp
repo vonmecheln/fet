@@ -37,13 +37,13 @@ ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3Form::ConstraintStudentsS
 	
 	modifyConstraintPushButton->setDefault(true);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3Form::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3Form::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3Form::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3Form::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3Form::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3Form::modifyConstraint);
+	connect(helpPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3Form::help);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -55,7 +55,7 @@ ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3Form::ConstraintStudentsS
 
 	this->filterChanged();
 
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3Form::filterChanged);
 }
 
 ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3Form::~ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3Form()

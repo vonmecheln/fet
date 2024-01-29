@@ -38,12 +38,12 @@ ModifyConstraintActivityPreferredStartingTimesForm::ModifyConstraintActivityPref
 
 	okPushButton->setDefault(true);
 
-	connect(preferredTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(preferredTimesTable, &QTableWidget::itemClicked, this, &ModifyConstraintActivityPreferredStartingTimesForm::itemClicked);
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintActivityPreferredStartingTimesForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintActivityPreferredStartingTimesForm::cancel);
 
-	connect(setAllAllowedPushButton, SIGNAL(clicked()), this, SLOT(setAllSlotsAllowed()));
-	connect(setAllNotAllowedPushButton, SIGNAL(clicked()), this, SLOT(setAllSlotsNotAllowed()));
+	connect(setAllAllowedPushButton, &QPushButton::clicked, this, &ModifyConstraintActivityPreferredStartingTimesForm::setAllSlotsAllowed);
+	connect(setAllNotAllowedPushButton, &QPushButton::clicked, this, &ModifyConstraintActivityPreferredStartingTimesForm::setAllSlotsNotAllowed);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -137,17 +137,17 @@ ModifyConstraintActivityPreferredStartingTimesForm::ModifyConstraintActivityPref
 		
 	preferredTimesTable->resizeRowsToContents();
 
-	connect(preferredTimesTable->horizontalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(horizontalHeaderClicked(int)));
-	connect(preferredTimesTable->verticalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(verticalHeaderClicked(int)));
+	connect(preferredTimesTable->horizontalHeader(), &QHeaderView::sectionClicked, this, &ModifyConstraintActivityPreferredStartingTimesForm::horizontalHeaderClicked);
+	connect(preferredTimesTable->verticalHeader(), &QHeaderView::sectionClicked, this, &ModifyConstraintActivityPreferredStartingTimesForm::verticalHeaderClicked);
 
 	preferredTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 
 	setStretchAvailabilityTableNicely(preferredTimesTable);
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivityPreferredStartingTimesForm::filterChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivityPreferredStartingTimesForm::filterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivityPreferredStartingTimesForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivityPreferredStartingTimesForm::filterChanged);
 }
 
 ModifyConstraintActivityPreferredStartingTimesForm::~ModifyConstraintActivityPreferredStartingTimesForm()

@@ -36,8 +36,8 @@ CommentsForm::CommentsForm(QWidget* parent): QDialog(parent)
 	
 	okPushButton->setDefault(true);
 
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(okPushButton, &QPushButton::clicked, this, &CommentsForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &CommentsForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

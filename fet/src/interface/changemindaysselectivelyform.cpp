@@ -27,8 +27,8 @@ ChangeMinDaysSelectivelyForm::ChangeMinDaysSelectivelyForm(QWidget* parent): QDi
 	
 	okPushButton->setDefault(true);
 	
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ChangeMinDaysSelectivelyForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ChangeMinDaysSelectivelyForm::cancel);
 	
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

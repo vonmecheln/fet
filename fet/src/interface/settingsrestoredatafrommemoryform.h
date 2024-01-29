@@ -28,7 +28,7 @@ public:
 	~SettingsRestoreDataFromMemoryForm();
 
 public slots:
-	void on_enableHistoryInMemoryCheckBox_toggled();
+	void enableHistoryInMemoryCheckBox_toggled();
 
 	void ok();
 	void cancel();

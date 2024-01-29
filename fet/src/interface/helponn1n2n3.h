@@ -21,7 +21,7 @@
 #include <QApplication>
 
 class HelpOnN1N2N3{
-	Q_DECLARE_TR_FUNCTIONS(HelpOnN1N2N3);
+	Q_DECLARE_TR_FUNCTIONS(HelpOnN1N2N3)
 	
 public:
 	static void helpOnTeachersConstraintsDays(QWidget* parent);

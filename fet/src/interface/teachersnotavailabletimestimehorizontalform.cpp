@@ -120,10 +120,10 @@ TeachersNotAvailableTimesTimeHorizontalForm::TeachersNotAvailableTimesTimeHorizo
 		}
 	}
 
-	connect(buttonBox, SIGNAL(accepted()), this, SLOT(ok()));
-	connect(buttonBox, SIGNAL(rejected()), this, SLOT(cancel()));
-	connect(naTableWidget, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
-	connect(selectedPushButton, SIGNAL(clicked()), this, SLOT(selectedClicked()));
+	connect(buttonBox, &QDialogButtonBox::accepted, this, &TeachersNotAvailableTimesTimeHorizontalForm::ok);
+	connect(buttonBox, &QDialogButtonBox::rejected, this, &TeachersNotAvailableTimesTimeHorizontalForm::cancel);
+	connect(naTableWidget, &QTableWidget::itemClicked, this, &TeachersNotAvailableTimesTimeHorizontalForm::itemClicked);
+	connect(selectedPushButton, &QPushButton::clicked, this, &TeachersNotAvailableTimesTimeHorizontalForm::selectedClicked);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -268,8 +268,8 @@ TeachersNotAvailableTimesTimeHorizontalForm::TeachersNotAvailableTimesTimeHorizo
 	widthSpinBoxValueChanged();
 	heightSpinBoxValueChanged();
 
-	connect(widthSpinBox, SIGNAL(valueChanged(int)), this, SLOT(widthSpinBoxValueChanged()));
-	connect(heightSpinBox, SIGNAL(valueChanged(int)), this, SLOT(heightSpinBoxValueChanged()));
+	connect(widthSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &TeachersNotAvailableTimesTimeHorizontalForm::widthSpinBoxValueChanged);
+	connect(heightSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &TeachersNotAvailableTimesTimeHorizontalForm::heightSpinBoxValueChanged);
 }
 
 TeachersNotAvailableTimesTimeHorizontalForm::~TeachersNotAvailableTimesTimeHorizontalForm()

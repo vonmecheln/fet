@@ -25,8 +25,8 @@ ModifyStudentsSubgroupForm::ModifyStudentsSubgroupForm(QWidget* parent, const QS
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyStudentsSubgroupForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyStudentsSubgroupForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

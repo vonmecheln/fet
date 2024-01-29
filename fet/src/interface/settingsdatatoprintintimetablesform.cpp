@@ -28,8 +28,8 @@ SettingsDataToPrintInTimetablesForm::SettingsDataToPrintInTimetablesForm(QWidget
 	
 	okPushButton->setDefault(true);
 	
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(wasAccepted()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(wasCanceled()));
+	connect(okPushButton, &QPushButton::clicked, this, &SettingsDataToPrintInTimetablesForm::wasAccepted);
+	connect(cancelPushButton, &QPushButton::clicked, this, &SettingsDataToPrintInTimetablesForm::wasCanceled);
 	
 	subjectsCheckBox->setChecked(TIMETABLE_HTML_PRINT_SUBJECTS);
 	activityTagsCheckBox->setChecked(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);

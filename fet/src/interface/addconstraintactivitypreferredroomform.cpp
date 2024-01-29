@@ -31,13 +31,13 @@ AddConstraintActivityPreferredRoomForm::AddConstraintActivityPreferredRoomForm(Q
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintActivityPreferredRoomForm::close);
+	connect(helpPushButton, &QPushButton::clicked, this, &AddConstraintActivityPreferredRoomForm::help);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintActivityPreferredRoomForm::addConstraint);
 
-	connect(selectedRealRoomsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeRealRoom()));
-	connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clearRealRooms()));
-	connect(allRealRoomsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addRealRoom()));
+	connect(selectedRealRoomsListWidget, &QListWidget::itemDoubleClicked, this, &AddConstraintActivityPreferredRoomForm::removeRealRoom);
+	connect(clearPushButton, &QPushButton::clicked, this, &AddConstraintActivityPreferredRoomForm::clearRealRooms);
+	connect(allRealRoomsListWidget, &QListWidget::itemDoubleClicked, this, &AddConstraintActivityPreferredRoomForm::addRealRoom);
 	
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -91,10 +91,10 @@ AddConstraintActivityPreferredRoomForm::AddConstraintActivityPreferredRoomForm(Q
 			allRealRoomsListWidget->addItem(rm->name);
 	allRealRoomsListWidget->setCurrentRow(0);
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintActivityPreferredRoomForm::filterChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintActivityPreferredRoomForm::filterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintActivityPreferredRoomForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintActivityPreferredRoomForm::filterChanged);
 }
 
 AddConstraintActivityPreferredRoomForm::~AddConstraintActivityPreferredRoomForm()

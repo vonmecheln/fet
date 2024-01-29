@@ -36,7 +36,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	referencesTextBrowser->setReadOnly(true);
 	thanksToTextBrowser->setReadOnly(true);
 	
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(closePushButton, &QPushButton::clicked, this, &HelpAboutForm::close);
 	
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -145,7 +145,11 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 
 	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("bg").arg(tr("Bulgarian translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Asen Pashov").arg("pashov AT phys.uni-sofia.bg");
+	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Asen Pashov").arg("pashov AT phys.uni-sofia.bg");
+	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
+	translators+=tr("current translator: %1 (to contact %2 visit FET forum - %3, "
+	 "section about Bulgarian translation, or contact forum user %4)", "%1 is the translator's complete name, %2 is his or her shorter or complete name, %3 is the FET forum address, "
+	 "%4 is the username of the translator").arg("Hristiyan Dimitrov").arg("Hristiyan Dimitrov").arg("https://lalescu.ro/liviu/fet/forum/").arg("Creator X");
 	translators+=QString("<br /><br /><br />");
 
 	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("ca").arg(tr("Catalan translation"));
@@ -1186,6 +1190,8 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("sunnysolanki76");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("gerry");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Hristiyan Dimitrov");
 	thanksTo+=QString("<br />");
 	
 	thanksToTextBrowser->setHtml(thanksTo);

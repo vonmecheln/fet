@@ -39,14 +39,14 @@ ConstraintActivitiesSameStartingHourForm::ConstraintActivitiesSameStartingHourFo
 	
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintActivitiesSameStartingHourForm::addConstraint);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintActivitiesSameStartingHourForm::removeConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintActivitiesSameStartingHourForm::close);
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintActivitiesSameStartingHourForm::constraintChanged);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintActivitiesSameStartingHourForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintActivitiesSameStartingHourForm::modifyConstraint);
 
-	connect(addRemoveMultipleConstraintsPushButton, SIGNAL(clicked()), this, SLOT(addRemoveMultipleConstraints()));
+	connect(addRemoveMultipleConstraintsPushButton, &QPushButton::clicked, this, &ConstraintActivitiesSameStartingHourForm::addRemoveMultipleConstraints);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -88,10 +88,10 @@ ConstraintActivitiesSameStartingHourForm::ConstraintActivitiesSameStartingHourFo
 
 	this->filterChanged();
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintActivitiesSameStartingHourForm::filterChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintActivitiesSameStartingHourForm::filterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintActivitiesSameStartingHourForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintActivitiesSameStartingHourForm::filterChanged);
 }
 
 ConstraintActivitiesSameStartingHourForm::~ConstraintActivitiesSameStartingHourForm()

@@ -100,29 +100,29 @@ ActivitiesForm::ActivitiesForm(QWidget* parent, const QString& teacherName, cons
 	invertedSubjectCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/inverted-subject-check-box-state"), "false").toBool());
 	invertedActivityTagCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/inverted-activity-tag-check-box-state"), "false").toBool());*/
 	
-	connect(activitiesListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(activityChanged()));
+	connect(activitiesListWidget, &QListWidget::currentRowChanged, this, &ActivitiesForm::activityChanged);
 	
 	//selectionChanged();
-	connect(activitiesListWidget, SIGNAL(itemSelectionChanged()), this, SLOT(selectionChanged()));
+	connect(activitiesListWidget, &QListWidget::itemSelectionChanged, this, &ActivitiesForm::selectionChanged);
 	
-	connect(addActivityPushButton, SIGNAL(clicked()), this, SLOT(addActivity()));
-	connect(removeActivitiesPushButton, SIGNAL(clicked()), this, SLOT(removeActivities()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addActivityPushButton, &QPushButton::clicked, this, &ActivitiesForm::addActivity);
+	connect(removeActivitiesPushButton, &QPushButton::clicked, this, &ActivitiesForm::removeActivities);
+	connect(closePushButton, &QPushButton::clicked, this, &ActivitiesForm::close);
 
-	connect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
+	connect(filterCheckBox, &QCheckBox::toggled, this, &ActivitiesForm::filter);
 
-	connect(modifyActivityPushButton, SIGNAL(clicked()), this, SLOT(modifyActivity()));
-	connect(activitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyActivity()));
-	connect(showRelatedCheckBox, SIGNAL(toggled(bool)), this, SLOT(studentsFilterChanged()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(modifyActivityPushButton, &QPushButton::clicked, this, &ActivitiesForm::modifyActivity);
+	connect(activitiesListWidget, &QListWidget::itemDoubleClicked, this, &ActivitiesForm::modifyActivity);
+	connect(showRelatedCheckBox, &QCheckBox::toggled, this, &ActivitiesForm::studentsFilterChanged);
+	connect(helpPushButton, &QPushButton::clicked, this, &ActivitiesForm::help);
 
-	connect(activatePushButton, SIGNAL(clicked()), this, SLOT(activateActivities()));
-	connect(deactivatePushButton, SIGNAL(clicked()), this, SLOT(deactivateActivities()));
+	connect(activatePushButton, &QPushButton::clicked, this, &ActivitiesForm::activateActivities);
+	connect(deactivatePushButton, &QPushButton::clicked, this, &ActivitiesForm::deactivateActivities);
 
-	//connect(activateAllPushButton, SIGNAL(clicked()), this, SLOT(activateAllActivities()));
-	//connect(deactivateAllPushButton, SIGNAL(clicked()), this, SLOT(deactivateAllActivities()));
+	//connect(activateAllPushButton, SIG NAL(clicked()), this, SL OT(activateAllActivities()));
+	//connect(deactivateAllPushButton, SIG NAL(clicked()), this, SL OT(deactivateAllActivities()));
 
-	connect(commentsPushButton, SIGNAL(clicked()), this, SLOT(activityComments()));
+	connect(commentsPushButton, &QPushButton::clicked, this, &ActivitiesForm::activityComments);
 
 	//////////////////
 	QString settingsName="ActivitiesAdvancedFilterForm";
@@ -156,10 +156,10 @@ ActivitiesForm::ActivitiesForm(QWidget* parent, const QString& teacherName, cons
 	invertedSubjectCheckBox->setChecked(false);
 	invertedActivityTagCheckBox->setChecked(false);
 
-	connect(invertedTeacherCheckBox, SIGNAL(toggled(bool)), this, SLOT(filterChanged()));
-	connect(invertedStudentsCheckBox, SIGNAL(toggled(bool)), this, SLOT(studentsFilterChanged()));
-	connect(invertedSubjectCheckBox, SIGNAL(toggled(bool)), this, SLOT(filterChanged()));
-	connect(invertedActivityTagCheckBox, SIGNAL(toggled(bool)), this, SLOT(filterChanged()));
+	connect(invertedTeacherCheckBox, &QCheckBox::toggled, this, &ActivitiesForm::filterChanged);
+	connect(invertedStudentsCheckBox, &QCheckBox::toggled, this, &ActivitiesForm::studentsFilterChanged);
+	connect(invertedSubjectCheckBox, &QCheckBox::toggled, this, &ActivitiesForm::filterChanged);
+	connect(invertedActivityTagCheckBox, &QCheckBox::toggled, this, &ActivitiesForm::filterChanged);
 
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
@@ -230,10 +230,10 @@ ActivitiesForm::ActivitiesForm(QWidget* parent, const QString& teacherName, cons
 		}
 	}
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(studentsFilterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ActivitiesForm::filterChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ActivitiesForm::studentsFilterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ActivitiesForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ActivitiesForm::filterChanged);
 }
 
 ActivitiesForm::~ActivitiesForm()
@@ -517,7 +517,7 @@ void ActivitiesForm::studentsFilterChanged()
 
 void ActivitiesForm::filterChanged()
 {
-	disconnect(activitiesListWidget, SIGNAL(itemSelectionChanged()), this, SLOT(selectionChanged()));
+	disconnect(activitiesListWidget, &QListWidget::itemSelectionChanged, this, &ActivitiesForm::selectionChanged);
 
 	int /*nacts=0,*/ nsubacts=0, nh=0;
 	int ninact=0, ninacth=0;
@@ -591,7 +591,7 @@ void ActivitiesForm::filterChanged()
 		currentActivityTextEdit->setPlainText(QString(""));
 	
 	selectionChanged();
-	connect(activitiesListWidget, SIGNAL(itemSelectionChanged()), this, SLOT(selectionChanged()));
+	connect(activitiesListWidget, &QListWidget::itemSelectionChanged, this, &ActivitiesForm::selectionChanged);
 }
 
 void ActivitiesForm::addActivity()
@@ -902,8 +902,8 @@ void ActivitiesForm::activityComments()
 	okPB->setDefault(true);
 	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
 	
-	connect(okPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(accept()));
-	connect(cancelPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(reject()));
+	connect(okPB, &QPushButton::clicked, &getCommentsDialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &getCommentsDialog, &QDialog::reject);
 
 	QHBoxLayout* hl=new QHBoxLayout();
 	hl->addStretch();
@@ -1008,9 +1008,9 @@ void ActivitiesForm::filter(bool active)
 		assert(useFilter==false);
 		useFilter=false;
 	
-		disconnect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
+		disconnect(filterCheckBox, &QCheckBox::toggled, this, &ActivitiesForm::filter);
 		filterCheckBox->setChecked(false);
-		connect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
+		connect(filterCheckBox, &QCheckBox::toggled, this, &ActivitiesForm::filter);
 	}
 	
 	delete filterForm;

@@ -28,8 +28,8 @@ AddConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3Form::AddConstraintStu
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3Form::addCurrentConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3Form::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

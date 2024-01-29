@@ -26,8 +26,8 @@ ModifyConstraintTeachersMinHoursDailyRealDaysForm::ModifyConstraintTeachersMinHo
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintTeachersMinHoursDailyRealDaysForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintTeachersMinHoursDailyRealDaysForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -38,7 +38,7 @@ ModifyConstraintTeachersMinHoursDailyRealDaysForm::ModifyConstraintTeachersMinHo
 	
 	allowEmptyDaysCheckBox->setChecked(ctr->allowEmptyDays);
 	
-	connect(allowEmptyDaysCheckBox, SIGNAL(toggled(bool)), this, SLOT(allowEmptyDaysCheckBoxToggled())); //after setChecked(...)
+	connect(allowEmptyDaysCheckBox, &QCheckBox::toggled, this, &ModifyConstraintTeachersMinHoursDailyRealDaysForm::allowEmptyDaysCheckBoxToggled); //after setChecked(...)
 	
 	updateMinHoursSpinBox();
 	

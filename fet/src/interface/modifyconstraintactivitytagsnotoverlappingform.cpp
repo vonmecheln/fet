@@ -33,12 +33,12 @@ ModifyConstraintActivityTagsNotOverlappingForm::ModifyConstraintActivityTagsNotO
 	activityTagsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	notOverlappingActivityTagsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(activityTagsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addActivityTag()));
-	connect(addAllActivityTagsPushButton, SIGNAL(clicked()), this, SLOT(addAllActivityTags()));
-	connect(notOverlappingActivityTagsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeActivityTag()));
-	connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintActivityTagsNotOverlappingForm::cancel);
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintActivityTagsNotOverlappingForm::ok);
+	connect(activityTagsListWidget, &QListWidget::itemDoubleClicked, this, &ModifyConstraintActivityTagsNotOverlappingForm::addActivityTag);
+	connect(addAllActivityTagsPushButton, &QPushButton::clicked, this, &ModifyConstraintActivityTagsNotOverlappingForm::addAllActivityTags);
+	connect(notOverlappingActivityTagsListWidget, &QListWidget::itemDoubleClicked, this, &ModifyConstraintActivityTagsNotOverlappingForm::removeActivityTag);
+	connect(clearPushButton, &QPushButton::clicked, this, &ModifyConstraintActivityTagsNotOverlappingForm::clear);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

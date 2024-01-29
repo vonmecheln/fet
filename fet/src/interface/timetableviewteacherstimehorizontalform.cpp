@@ -148,17 +148,18 @@ TimetableViewTeachersTimeHorizontalForm::TimetableViewTeachersTimeHorizontalForm
 
 	teachersTimetableTable->setSelectionMode(QAbstractItemView::ExtendedSelection);
 	
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(teachersTimetableTable, SIGNAL(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)), this, SLOT(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)));
-	connect(lockTimePushButton, SIGNAL(clicked()), this, SLOT(lockTime()));
-	connect(lockSpacePushButton, SIGNAL(clicked()), this, SLOT(lockSpace()));
-	connect(lockTimeSpacePushButton, SIGNAL(clicked()), this, SLOT(lockTimeSpace()));
+	connect(closePushButton, &QPushButton::clicked, this, &TimetableViewTeachersTimeHorizontalForm::close);
+	connect(teachersTimetableTable, &QTableWidget::currentItemChanged, this, &TimetableViewTeachersTimeHorizontalForm::currentItemChanged);
+	connect(lockTimePushButton, &QPushButton::clicked, this, &TimetableViewTeachersTimeHorizontalForm::lockTime);
+	connect(lockSpacePushButton, &QPushButton::clicked, this, &TimetableViewTeachersTimeHorizontalForm::lockSpace);
+	connect(lockTimeSpacePushButton, &QPushButton::clicked, this, &TimetableViewTeachersTimeHorizontalForm::lockTimeSpace);
 
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(helpPushButton, &QPushButton::clicked, this, &TimetableViewTeachersTimeHorizontalForm::help);
 
-	connect(lockToDaysPushButton, SIGNAL(clicked()), this, SLOT(lockDays()));
-	connect(unlockFromDaysPushButton, SIGNAL(clicked()), this, SLOT(unlockDays()));
-	connect(unlockAllFromDaysPushButton, SIGNAL(clicked()), this, SLOT(unlockAllDays()));
+	connect(lockToDaysPushButton, &QPushButton::clicked, this, &TimetableViewTeachersTimeHorizontalForm::lockDays);
+	connect(unlockFromDaysPushButton, &QPushButton::clicked, this, &TimetableViewTeachersTimeHorizontalForm::unlockDays);
+	connect(unlockAllFromDaysPushButton, &QPushButton::clicked, this, &TimetableViewTeachersTimeHorizontalForm::unlockAllDays);
+	
 	lockToDaysWeightLineEdit->setText(QString::number(100));
 	
 	lockRadioButton->setChecked(true);
@@ -345,8 +346,8 @@ TimetableViewTeachersTimeHorizontalForm::TimetableViewTeachersTimeHorizontalForm
 	widthSpinBoxValueChanged();
 	heightSpinBoxValueChanged();
 	
-	connect(widthSpinBox, SIGNAL(valueChanged(int)), this, SLOT(widthSpinBoxValueChanged()));
-	connect(heightSpinBox, SIGNAL(valueChanged(int)), this, SLOT(heightSpinBoxValueChanged()));
+	connect(widthSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &TimetableViewTeachersTimeHorizontalForm::widthSpinBoxValueChanged);
+	connect(heightSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &TimetableViewTeachersTimeHorizontalForm::heightSpinBoxValueChanged);
 	
 //	teachersTimetableTable->verticalHeader()->setDefaultSectionSize(h);
 //	teachersTimetableTable->horizontalHeader()->setDefaultSectionSize(w);
@@ -373,11 +374,11 @@ TimetableViewTeachersTimeHorizontalForm::TimetableViewTeachersTimeHorizontalForm
 		studentsCheckBox->setChecked(state);
 	}
 	
-	connect(subjectsCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateTeachersTimetableTable()));
-	connect(studentsCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateTeachersTimetableTable()));
+	connect(subjectsCheckBox, &QCheckBox::toggled, this, &TimetableViewTeachersTimeHorizontalForm::updateTeachersTimetableTable);
+	connect(studentsCheckBox, &QCheckBox::toggled, this, &TimetableViewTeachersTimeHorizontalForm::updateTeachersTimetableTable);
 	
 	//added by Volker Dirr
-	connect(&communicationSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateTeachersTimetableTable()));
+	connect(&communicationSpinBox, &CommunicationSpinBox::valueChanged, this, &TimetableViewTeachersTimeHorizontalForm::updateTeachersTimetableTable);
 	
 	updateTeachersTimetableTable();
 }
@@ -399,13 +400,13 @@ void TimetableViewTeachersTimeHorizontalForm::newTimetableGenerated()
 
 	teachersTimetableTable->setSelectionMode(QAbstractItemView::ExtendedSelection);
 	
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(teachersTimetableTable, SIGNAL(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)), this, SLOT(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)));
-	connect(lockTimePushButton, SIGNAL(clicked()), this, SLOT(lockTime()));
-	connect(lockSpacePushButton, SIGNAL(clicked()), this, SLOT(lockSpace()));
-	connect(lockTimeSpacePushButton, SIGNAL(clicked()), this, SLOT(lockTimeSpace()));
+	connect(closePushButton, SIG NAL(clicked()), this, SL OT(close()));
+	connect(teachersTimetableTable, SIG NAL(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)), this, SL OT(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)));
+	connect(lockTimePushButton, SIG NAL(clicked()), this, SL OT(lockTime()));
+	connect(lockSpacePushButton, SIG NAL(clicked()), this, SL OT(lockSpace()));
+	connect(lockTimeSpacePushButton, SIG NAL(clicked()), this, SL OT(lockTimeSpace()));
 
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));*/
+	connect(helpPushButton, SIG NAL(clicked()), this, SL OT(help()));*/
 	
 	/*lockRadioButton->setChecked(true);
 	unlockRadioButton->setChecked(false);
@@ -584,8 +585,8 @@ void TimetableViewTeachersTimeHorizontalForm::newTimetableGenerated()
 	widthSpinBoxValueChanged();
 	heightSpinBoxValueChanged();
 	
-	connect(widthSpinBox, SIGNAL(valueChanged(int)), this, SLOT(widthSpinBoxValueChanged()));
-	connect(heightSpinBox, SIGNAL(valueChanged(int)), this, SLOT(heightSpinBoxValueChanged()));
+	connect(widthSpinBox, SIG NAL(valueChanged(int)), this, SL OT(widthSpinBoxValueChanged()));
+	connect(heightSpinBox, SIG NAL(valueChanged(int)), this, SL OT(heightSpinBoxValueChanged()));
 	
 //	teachersTimetableTable->verticalHeader()->setDefaultSectionSize(h);
 //	teachersTimetableTable->horizontalHeader()->setDefaultSectionSize(w);
@@ -612,11 +613,11 @@ void TimetableViewTeachersTimeHorizontalForm::newTimetableGenerated()
 		studentsCheckBox->setChecked(state);
 	}
 	
-	connect(subjectsCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateTeachersTimetableTable()));
-	connect(studentsCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateTeachersTimetableTable()));*/
+	connect(subjectsCheckBox, SIG NAL(toggled(bool)), this, SL OT(updateTeachersTimetableTable()));
+	connect(studentsCheckBox, SIG NAL(toggled(bool)), this, SL OT(updateTeachersTimetableTable()));*/
 	
 	//added by Volker Dirr
-	//connect(&communicationSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateTeachersTimetableTable()));
+	//connect(&communicationSpinBox, SIG NAL(valueChanged(int)), this, SL OT(updateTeachersTimetableTable()));
 	
 	updateTeachersTimetableTable();
 }

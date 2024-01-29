@@ -28,10 +28,10 @@ AddConstraintStudentsSetMaxHoursContinuouslyForm::AddConstraintStudentsSetMaxHou
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintStudentsSetMaxHoursContinuouslyForm::addCurrentConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintStudentsSetMaxHoursContinuouslyForm::close);
 
-		centerWidgetOnScreen(this);
+	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 
 	QSize tmp2=studentsComboBox->minimumSizeHint();

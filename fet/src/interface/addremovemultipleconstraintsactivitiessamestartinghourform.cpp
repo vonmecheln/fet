@@ -35,10 +35,10 @@ AddRemoveMultipleConstraintsActivitiesSameStartingHourForm::AddRemoveMultipleCon
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 
-	connect(addAllConstraintsPushButton, SIGNAL(clicked()), this, SLOT(addAllConstraints()));
-	connect(removeAllConstraintsPushButton, SIGNAL(clicked()), this, SLOT(removeAllConstraints()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addAllConstraintsPushButton, &QPushButton::clicked, this, &AddRemoveMultipleConstraintsActivitiesSameStartingHourForm::addAllConstraints);
+	connect(removeAllConstraintsPushButton, &QPushButton::clicked, this, &AddRemoveMultipleConstraintsActivitiesSameStartingHourForm::removeAllConstraints);
+	connect(helpPushButton, &QPushButton::clicked, this, &AddRemoveMultipleConstraintsActivitiesSameStartingHourForm::help);
+	connect(closePushButton, &QPushButton::clicked, this, &AddRemoveMultipleConstraintsActivitiesSameStartingHourForm::close);
 	
 	sameSubjectCheckBox->setChecked(true);
 	sameActivityTagsCheckBox->setChecked(false);

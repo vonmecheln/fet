@@ -25,8 +25,8 @@ AddStudentsGroupForm::AddStudentsGroupForm(QWidget* parent, const QString& yearN
 	
 	addStudentsGroupPushButton->setDefault(true);
 
-	connect(addStudentsGroupPushButton, SIGNAL(clicked()), this, SLOT(addStudentsGroup()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addStudentsGroupPushButton, &QPushButton::clicked, this, &AddStudentsGroupForm::addStudentsGroup);
+	connect(closePushButton, &QPushButton::clicked, this, &AddStudentsGroupForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

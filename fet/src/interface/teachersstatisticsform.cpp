@@ -39,9 +39,9 @@ TeachersStatisticsForm::TeachersStatisticsForm(QWidget* parent): QDialog(parent)
 	
 	closeButton->setDefault(true);
 
-	connect(hideFullTeachersCheckBox, SIGNAL(toggled(bool)), this, SLOT(hideFullTeachersCheckBoxModified()));
+	connect(hideFullTeachersCheckBox, &QCheckBox::toggled, this, &TeachersStatisticsForm::hideFullTeachersCheckBoxModified);
 
-	connect(closeButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(closeButton, &QPushButton::clicked, this, &TeachersStatisticsForm::close);
 	
 	tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
 	tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);

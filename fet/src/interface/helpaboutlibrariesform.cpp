@@ -31,7 +31,7 @@ HelpAboutLibrariesForm::HelpAboutLibrariesForm(QWidget* parent): QDialog(parent)
 	
 	aboutLibrariesTextBrowser->setReadOnly(true);
 	
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(closePushButton, &QPushButton::clicked, this, &HelpAboutLibrariesForm::close);
 	
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

@@ -25,8 +25,8 @@ ModifyConstraintTeacherHomeRoomForm::ModifyConstraintTeacherHomeRoomForm(QWidget
 
 	okPushButton->setDefault(true);
 
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintTeacherHomeRoomForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintTeacherHomeRoomForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

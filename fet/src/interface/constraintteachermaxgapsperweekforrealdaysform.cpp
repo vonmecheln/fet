@@ -39,13 +39,13 @@ ConstraintTeacherMaxGapsPerWeekForRealDaysForm::ConstraintTeacherMaxGapsPerWeekF
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintTeacherMaxGapsPerWeekForRealDaysForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxGapsPerWeekForRealDaysForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxGapsPerWeekForRealDaysForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxGapsPerWeekForRealDaysForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxGapsPerWeekForRealDaysForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintTeacherMaxGapsPerWeekForRealDaysForm::modifyConstraint);
+	connect(helpPushButton, &QPushButton::clicked, this, &ConstraintTeacherMaxGapsPerWeekForRealDaysForm::help);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -61,7 +61,7 @@ ConstraintTeacherMaxGapsPerWeekForRealDaysForm::ConstraintTeacherMaxGapsPerWeekF
 
 	this->filterChanged();
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintTeacherMaxGapsPerWeekForRealDaysForm::filterChanged);
 }
 
 ConstraintTeacherMaxGapsPerWeekForRealDaysForm::~ConstraintTeacherMaxGapsPerWeekForRealDaysForm()

@@ -26,8 +26,8 @@ ModifyConstraintTeachersMinHoursPerMorningForm::ModifyConstraintTeachersMinHours
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintTeachersMinHoursPerMorningForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintTeachersMinHoursPerMorningForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -38,7 +38,7 @@ ModifyConstraintTeachersMinHoursPerMorningForm::ModifyConstraintTeachersMinHours
 	
 	allowEmptyMorningsCheckBox->setChecked(ctr->allowEmptyMornings);
 	
-	connect(allowEmptyMorningsCheckBox, SIGNAL(toggled(bool)), this, SLOT(allowEmptyMorningsCheckBoxToggled())); //after setChecked(...)
+	connect(allowEmptyMorningsCheckBox, &QCheckBox::toggled, this, &ModifyConstraintTeachersMinHoursPerMorningForm::allowEmptyMorningsCheckBoxToggled); //after setChecked(...)
 	
 	updateMinHoursSpinBox();
 	

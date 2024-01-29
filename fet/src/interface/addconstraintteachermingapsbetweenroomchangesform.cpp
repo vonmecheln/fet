@@ -27,16 +27,16 @@ AddConstraintTeacherMinGapsBetweenRoomChangesForm::AddConstraintTeacherMinGapsBe
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(addConstraintsPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraints()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintTeacherMinGapsBetweenRoomChangesForm::addCurrentConstraint);
+	connect(addConstraintsPushButton, &QPushButton::clicked, this, &AddConstraintTeacherMinGapsBetweenRoomChangesForm::addCurrentConstraints);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintTeacherMinGapsBetweenRoomChangesForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
-		
+	
 	minGapsSpinBox->setMinimum(1);
 	minGapsSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	minGapsSpinBox->setValue(1);

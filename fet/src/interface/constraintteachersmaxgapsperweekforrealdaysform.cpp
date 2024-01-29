@@ -39,13 +39,13 @@ ConstraintTeachersMaxGapsPerWeekForRealDaysForm::ConstraintTeachersMaxGapsPerWee
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintTeachersMaxGapsPerWeekForRealDaysForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeachersMaxGapsPerWeekForRealDaysForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintTeachersMaxGapsPerWeekForRealDaysForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeachersMaxGapsPerWeekForRealDaysForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeachersMaxGapsPerWeekForRealDaysForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintTeachersMaxGapsPerWeekForRealDaysForm::modifyConstraint);
+	connect(helpPushButton, &QPushButton::clicked, this, &ConstraintTeachersMaxGapsPerWeekForRealDaysForm::help);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

@@ -41,24 +41,24 @@ RoomMakeEditVirtualForm::RoomMakeEditVirtualForm(QWidget* parent, Room* _editedR
 	selectedRealRoomsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	allRealRoomsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	
-	connect(setsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(setChanged()));
-	connect(addSetPushButton, SIGNAL(clicked()), this, SLOT(addSet()));
-	connect(removeSetPushButton, SIGNAL(clicked()), this, SLOT(removeSet()));
+	connect(setsListWidget, &QListWidget::currentRowChanged, this, &RoomMakeEditVirtualForm::setChanged);
+	connect(addSetPushButton, &QPushButton::clicked, this, &RoomMakeEditVirtualForm::addSet);
+	connect(removeSetPushButton, &QPushButton::clicked, this, &RoomMakeEditVirtualForm::removeSet);
 	
-	connect(selectedRealRoomsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeRoom()));
-	connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clearRooms()));
+	connect(selectedRealRoomsListWidget, &QListWidget::itemDoubleClicked, this, &RoomMakeEditVirtualForm::removeRoom);
+	connect(clearPushButton, &QPushButton::clicked, this, &RoomMakeEditVirtualForm::clearRooms);
 	
-	connect(allRealRoomsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addRoom()));
-	connect(allPushButton, SIGNAL(clicked()), this, SLOT(addAllRooms()));
+	connect(allRealRoomsListWidget, &QListWidget::itemDoubleClicked, this, &RoomMakeEditVirtualForm::addRoom);
+	connect(allPushButton, &QPushButton::clicked, this, &RoomMakeEditVirtualForm::addAllRooms);
 	
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &RoomMakeEditVirtualForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &RoomMakeEditVirtualForm::cancel);
 	
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(helpPushButton, &QPushButton::clicked, this, &RoomMakeEditVirtualForm::help);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
-		
+	
 	editedRoom=_editedRoom;
 	
 	if(editedRoom->isVirtual)
@@ -131,9 +131,9 @@ void RoomMakeEditVirtualForm::removeSet()
 	assert(setsListWidget->count()==sets.count());
 	assert(sets.count()>0);
 	sets.removeAt(ind);
-	disconnect(setsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(setChanged()));
+	disconnect(setsListWidget, &QListWidget::currentRowChanged, this, &RoomMakeEditVirtualForm::setChanged);
 	QListWidgetItem* item=setsListWidget->takeItem(ind);
-	connect(setsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(setChanged()));
+	connect(setsListWidget, &QListWidget::currentRowChanged, this, &RoomMakeEditVirtualForm::setChanged);
 	delete item;
 
 	assert(setsListWidget->count()==sets.count());

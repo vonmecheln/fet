@@ -29,8 +29,8 @@ SettingsTimetableHtmlLevelForm::SettingsTimetableHtmlLevelForm(QWidget* parent):
 	
 	okPushButton->setDefault(true);
 	
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &SettingsTimetableHtmlLevelForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &SettingsTimetableHtmlLevelForm::cancel);
 	
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

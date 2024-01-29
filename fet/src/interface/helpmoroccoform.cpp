@@ -25,7 +25,7 @@ HelpMoroccoForm::HelpMoroccoForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(closePushButton, &QPushButton::clicked, this, &HelpMoroccoForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

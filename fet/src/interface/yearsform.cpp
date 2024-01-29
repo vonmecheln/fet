@@ -53,22 +53,22 @@ YearsForm::YearsForm(QWidget* parent): QDialog(parent)
 
 	yearsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(addYearPushButton, SIGNAL(clicked()), this, SLOT(addYear()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeYearPushButton, SIGNAL(clicked()), this, SLOT(removeYear()));
-	connect(yearsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(yearChanged()));
-	connect(modifyYearPushButton, SIGNAL(clicked()), this, SLOT(modifyYear()));
+	connect(addYearPushButton, &QPushButton::clicked, this, &YearsForm::addYear);
+	connect(closePushButton, &QPushButton::clicked, this, &YearsForm::close);
+	connect(removeYearPushButton, &QPushButton::clicked, this, &YearsForm::removeYear);
+	connect(yearsListWidget, &QListWidget::currentRowChanged, this, &YearsForm::yearChanged);
+	connect(modifyYearPushButton, &QPushButton::clicked, this, &YearsForm::modifyYear);
 
-	connect(moveYearUpPushButton, SIGNAL(clicked()), this, SLOT(moveYearUp()));
-	connect(moveYearDownPushButton, SIGNAL(clicked()), this, SLOT(moveYearDown()));
+	connect(moveYearUpPushButton, &QPushButton::clicked, this, &YearsForm::moveYearUp);
+	connect(moveYearDownPushButton, &QPushButton::clicked, this, &YearsForm::moveYearDown);
 
-	connect(sortYearsPushButton, SIGNAL(clicked()), this, SLOT(sortYears()));
-	connect(activateStudentsPushButton, SIGNAL(clicked()), this, SLOT(activateStudents()));
-	connect(deactivateStudentsPushButton, SIGNAL(clicked()), this, SLOT(deactivateStudents()));
-	connect(divisionsPushButton, SIGNAL(clicked()), this, SLOT(divideYear()));
-	connect(yearsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyYear()));
+	connect(sortYearsPushButton, &QPushButton::clicked, this, &YearsForm::sortYears);
+	connect(activateStudentsPushButton, &QPushButton::clicked, this, &YearsForm::activateStudents);
+	connect(deactivateStudentsPushButton, &QPushButton::clicked, this, &YearsForm::deactivateStudents);
+	connect(divisionsPushButton, &QPushButton::clicked, this, &YearsForm::divideYear);
+	connect(yearsListWidget, &QListWidget::itemDoubleClicked, this, &YearsForm::modifyYear);
 
-	connect(commentsPushButton, SIGNAL(clicked()), this, SLOT(comments()));
+	connect(commentsPushButton, &QPushButton::clicked, this, &YearsForm::comments);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -123,12 +123,12 @@ void YearsForm::removeYear()
 	assert(yearIndex>=0);
 
 	/*if(QMessageBox::warning( this, tr("FET"),
-		tr("Are you sure you want to delete year %1 and all related groups, subgroups, activities and constraints?").arg(yearName),
-		tr("Yes"), tr("No"), QString(), 0, 1 ) == 1)
+	 tr("Are you sure you want to delete year %1 and all related groups, subgroups, activities and constraints?").arg(yearName),
+	 tr("Yes"), tr("No"), QString(), 0, 1 ) == 1)
 		return;*/
 	if(QMessageBox::warning( this, tr("FET"),
-		tr("Are you sure you want to delete year %1 and all related groups, subgroups, activities and constraints?").arg(yearName),
-		QMessageBox::Yes | QMessageBox::No) == QMessageBox::No)
+	 tr("Are you sure you want to delete year %1 and all related groups, subgroups, activities and constraints?").arg(yearName),
+	 QMessageBox::Yes | QMessageBox::No) == QMessageBox::No)
 		return;
 
 	bool tmp=gt.rules.removeYear(yearName);
@@ -350,8 +350,8 @@ void YearsForm::comments()
 	okPB->setDefault(true);
 	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
 	
-	connect(okPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(accept()));
-	connect(cancelPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(reject()));
+	connect(okPB, &QPushButton::clicked, &getCommentsDialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &getCommentsDialog, &QDialog::reject);
 
 	QHBoxLayout* hl=new QHBoxLayout();
 	hl->addStretch();

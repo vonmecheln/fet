@@ -35,11 +35,11 @@ ModifyConstraintTeacherRoomNotAvailableTimesForm::ModifyConstraintTeacherRoomNot
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
-	connect(notAllowedTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
-	connect(setAllAvailablePushButton, SIGNAL(clicked()), this, SLOT(setAllAvailable()));
-	connect(setAllNotAvailablePushButton, SIGNAL(clicked()), this, SLOT(setAllNotAvailable()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintTeacherRoomNotAvailableTimesForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintTeacherRoomNotAvailableTimesForm::cancel);
+	connect(notAllowedTimesTable, &QTableWidget::itemClicked, this, &ModifyConstraintTeacherRoomNotAvailableTimesForm::itemClicked);
+	connect(setAllAvailablePushButton, &QPushButton::clicked, this, &ModifyConstraintTeacherRoomNotAvailableTimesForm::setAllAvailable);
+	connect(setAllNotAvailablePushButton, &QPushButton::clicked, this, &ModifyConstraintTeacherRoomNotAvailableTimesForm::setAllNotAvailable);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -104,8 +104,8 @@ ModifyConstraintTeacherRoomNotAvailableTimesForm::ModifyConstraintTeacherRoomNot
 		
 	notAllowedTimesTable->resizeRowsToContents();
 
-	connect(notAllowedTimesTable->horizontalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(horizontalHeaderClicked(int)));
-	connect(notAllowedTimesTable->verticalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(verticalHeaderClicked(int)));
+	connect(notAllowedTimesTable->horizontalHeader(), &QHeaderView::sectionClicked, this, &ModifyConstraintTeacherRoomNotAvailableTimesForm::horizontalHeaderClicked);
+	connect(notAllowedTimesTable->verticalHeader(), &QHeaderView::sectionClicked, this, &ModifyConstraintTeacherRoomNotAvailableTimesForm::verticalHeaderClicked);
 
 	notAllowedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 

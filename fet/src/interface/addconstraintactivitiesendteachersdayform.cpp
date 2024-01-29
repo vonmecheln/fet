@@ -27,8 +27,8 @@ AddConstraintActivitiesEndTeachersDayForm::AddConstraintActivitiesEndTeachersDay
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintActivitiesEndTeachersDayForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintActivitiesEndTeachersDayForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

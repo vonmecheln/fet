@@ -36,16 +36,12 @@ AddConstraintMaxGapsBetweenActivitiesForm::AddConstraintMaxGapsBetweenActivities
 	allActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	selectedActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(allActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addActivity()));
-	connect(addAllActivitiesPushButton, SIGNAL(clicked()), this, SLOT(addAllActivities()));
-	connect(selectedActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeActivity()));
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintMaxGapsBetweenActivitiesForm::close);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintMaxGapsBetweenActivitiesForm::addConstraint);
+	connect(allActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &AddConstraintMaxGapsBetweenActivitiesForm::addActivity);
+	connect(addAllActivitiesPushButton, &QPushButton::clicked, this, &AddConstraintMaxGapsBetweenActivitiesForm::addAllActivities);
+	connect(selectedActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &AddConstraintMaxGapsBetweenActivitiesForm::removeActivity);
+	connect(clearPushButton, &QPushButton::clicked, this, &AddConstraintMaxGapsBetweenActivitiesForm::clear);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -91,6 +87,11 @@ AddConstraintMaxGapsBetweenActivitiesForm::AddConstraintMaxGapsBetweenActivities
 	this->selectedActivitiesList.clear();
 
 	filterChanged();
+
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintMaxGapsBetweenActivitiesForm::filterChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintMaxGapsBetweenActivitiesForm::filterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintMaxGapsBetweenActivitiesForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintMaxGapsBetweenActivitiesForm::filterChanged);
 }
 
 AddConstraintMaxGapsBetweenActivitiesForm::~AddConstraintMaxGapsBetweenActivitiesForm()

@@ -28,8 +28,8 @@ TimetablesToWriteOnDiskForm::TimetablesToWriteOnDiskForm(QWidget* parent): QDial
 	
 	okPushButton->setDefault(true);
 	
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(wasAccepted()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(wasCanceled()));
+	connect(okPushButton, &QPushButton::clicked, this, &TimetablesToWriteOnDiskForm::wasAccepted);
+	connect(cancelPushButton, &QPushButton::clicked, this, &TimetablesToWriteOnDiskForm::wasCanceled);
 	
 	softConflictsCheckBox->setChecked(WRITE_TIMETABLE_CONFLICTS);
 

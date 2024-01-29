@@ -27,13 +27,13 @@ AddConstraintTeachersMaxRoomChangesPerWeekForm::AddConstraintTeachersMaxRoomChan
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(addConstraintsPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraints()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintTeachersMaxRoomChangesPerWeekForm::addCurrentConstraint);
+	connect(addConstraintsPushButton, &QPushButton::clicked, this, &AddConstraintTeachersMaxRoomChangesPerWeekForm::addCurrentConstraints);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintTeachersMaxRoomChangesPerWeekForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
-		
+	
 	maxChangesSpinBox->setMinimum(0);
 	maxChangesSpinBox->setMaximum(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek);
 	maxChangesSpinBox->setValue(3);

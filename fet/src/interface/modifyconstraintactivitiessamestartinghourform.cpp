@@ -34,13 +34,13 @@ ModifyConstraintActivitiesSameStartingHourForm::ModifyConstraintActivitiesSameSt
 	allActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	selectedActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(allActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addActivity()));
-	connect(addAllActivitiesPushButton, SIGNAL(clicked()), this, SLOT(addAllActivities()));
-	connect(selectedActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeActivity()));
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintActivitiesSameStartingHourForm::cancel);
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintActivitiesSameStartingHourForm::ok);
+	connect(allActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &ModifyConstraintActivitiesSameStartingHourForm::addActivity);
+	connect(addAllActivitiesPushButton, &QPushButton::clicked, this, &ModifyConstraintActivitiesSameStartingHourForm::addAllActivities);
+	connect(selectedActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &ModifyConstraintActivitiesSameStartingHourForm::removeActivity);
 
-	connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
+	connect(clearPushButton, &QPushButton::clicked, this, &ModifyConstraintActivitiesSameStartingHourForm::clear);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -56,7 +56,6 @@ ModifyConstraintActivitiesSameStartingHourForm::ModifyConstraintActivitiesSameSt
 	QSize tmp4=activityTagsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp4);
 	
-
 	teachersComboBox->addItem("");
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
 		Teacher* tch=gt.rules.teachersList[i];
@@ -96,10 +95,10 @@ ModifyConstraintActivitiesSameStartingHourForm::ModifyConstraintActivitiesSameSt
 		this->selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
 	}
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivitiesSameStartingHourForm::filterChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivitiesSameStartingHourForm::filterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivitiesSameStartingHourForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivitiesSameStartingHourForm::filterChanged);
 }
 
 ModifyConstraintActivitiesSameStartingHourForm::~ModifyConstraintActivitiesSameStartingHourForm()

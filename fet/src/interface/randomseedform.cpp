@@ -35,9 +35,9 @@ RandomSeedForm::RandomSeedForm(QWidget* parent): QDialog(parent)
 	
 	okPushButton->setDefault(true);
 	
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(helpPushButton, &QPushButton::clicked, this, &RandomSeedForm::help);
+	connect(okPushButton, &QPushButton::clicked, this, &RandomSeedForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &RandomSeedForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

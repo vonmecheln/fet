@@ -38,12 +38,12 @@ TeacherSubjectsQualificationsForm::TeacherSubjectsQualificationsForm(QWidget* pa
 	subjectsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	selectedSubjectsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(subjectsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addSubject()));
-	connect(selectedSubjectsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeSubject()));
-	connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
-	connect(addAllSubjectsPushButton, SIGNAL(clicked()), this, SLOT(addAllSubjects()));
+	connect(cancelPushButton, &QPushButton::clicked, this, &TeacherSubjectsQualificationsForm::close);
+	connect(okPushButton, &QPushButton::clicked, this, &TeacherSubjectsQualificationsForm::ok);
+	connect(subjectsListWidget, &QListWidget::itemDoubleClicked, this, &TeacherSubjectsQualificationsForm::addSubject);
+	connect(selectedSubjectsListWidget, &QListWidget::itemDoubleClicked, this, &TeacherSubjectsQualificationsForm::removeSubject);
+	connect(clearPushButton, &QPushButton::clicked, this, &TeacherSubjectsQualificationsForm::clear);
+	connect(addAllSubjectsPushButton, &QPushButton::clicked, this, &TeacherSubjectsQualificationsForm::addAllSubjects);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

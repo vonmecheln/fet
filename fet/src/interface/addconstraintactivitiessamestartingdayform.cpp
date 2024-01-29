@@ -34,12 +34,12 @@ AddConstraintActivitiesSameStartingDayForm::AddConstraintActivitiesSameStartingD
 	allActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	selectedActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
-	connect(allActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addActivity()));
-	connect(addAllActivitiesPushButton, SIGNAL(clicked()), this, SLOT(addAllActivities()));
-	connect(selectedActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeActivity()));
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintActivitiesSameStartingDayForm::close);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintActivitiesSameStartingDayForm::addConstraint);
+	connect(clearPushButton, &QPushButton::clicked, this, &AddConstraintActivitiesSameStartingDayForm::clear);
+	connect(allActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &AddConstraintActivitiesSameStartingDayForm::addActivity);
+	connect(addAllActivitiesPushButton, &QPushButton::clicked, this, &AddConstraintActivitiesSameStartingDayForm::addAllActivities);
+	connect(selectedActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &AddConstraintActivitiesSameStartingDayForm::removeActivity);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -82,10 +82,10 @@ AddConstraintActivitiesSameStartingDayForm::AddConstraintActivitiesSameStartingD
 
 	filterChanged();
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintActivitiesSameStartingDayForm::filterChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintActivitiesSameStartingDayForm::filterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintActivitiesSameStartingDayForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintActivitiesSameStartingDayForm::filterChanged);
 }
 
 AddConstraintActivitiesSameStartingDayForm::~AddConstraintActivitiesSameStartingDayForm()

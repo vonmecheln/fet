@@ -55,9 +55,9 @@ ModifyTeacherForm::ModifyTeacherForm(QWidget* parent, Teacher* _tch): QDialog(pa
 	
 	okPushButton->setDefault(true);
 
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyTeacherForm::cancel);
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyTeacherForm::ok);
+	connect(helpPushButton, &QPushButton::clicked, this, &ModifyTeacherForm::help);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

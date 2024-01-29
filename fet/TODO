@@ -908,6 +908,7 @@ However, your spacing feature doesn't work ... not on more than five
 days.... not sure it would be possible to extend your logic or not... (what
 do you think?)
 
+Liviu: DONE
 The other thing I've noticed is a bit of an annoyance concerning
 constraints... when you are trying to get a schedule to work you push in
 constraints however, on slight modification of activities (concerning
@@ -1552,6 +1553,8 @@ VT: Num.min.gg, tra attiv.: id.718 (I:CARU, M:COS_DIS, S:GEO_3 A) / id.715 (I:CA
 
 88---------------------------------------------------------
 From Volker Dirr:
+
+Liviu, 2024-01-21: Maybe partially done a long time ago, with the setting "Show subgroups in combo boxes".
 
 students set max gaps per week
 and
@@ -2402,6 +2405,8 @@ From Anton Anthofer (see also item #275):
 
 - modify the IDs of (sub)activities.
 - possibility to remove subactivities.
+
+Liviu: DONE in FET-6.0.0?
 - multicore generation for multiple timetables generation.
 
 Also suggested by Thaneswer Patel, on forum:
@@ -2551,24 +2556,11 @@ just delete for example some years; just to check if this smaller stuff is
 solveable, but some constraints might now refer to no activity anymore,
 because the activities are deleted.)
 
-166---------------------------------------------------------
-From Yush Yuen:
-
-I made a custom version for myself with a "remove all" button
-in the "all constraints" dialog box. I found it necessary for me when I
-want to unlock the time constraint for a whole year after a timetable is
-generated. The "remove all" button in combination with the filter function
-make it very easy to remove a large set of constraints. I was trying to
-change the selection box to a multi-select and have a "remove all selected"
-button, but I couldn't figure out how to do that easily (hard to manage the
-index of array after each removal), so I did the simple remove all instead.
-It worked great for me. So, maybe you can consider something similar for
-your official release.
-
-Note Liviu: in FET 6.8.0 it is possible to deactivate all the filtered
-time/space constraints in the dialogs of all time/space constraints.
+166----------------------DONE-------------------------------
 
 167---------------------------------------------------------
+Liviu: maybe done in FET-6.9.4, constraint max hourly span between a set of activities?
+
 From karim:
 
 max gaps (hours) between a set of activities
@@ -4724,6 +4716,8 @@ From Malamojka (on forum):
 
 I was looking for a way to "hide" some of tags in the timetable (I want some to be visible, but not all). As far as I can see you can do this by changing a certain file in program data folders. I was wondering if the same could be done by, say, naming tag "not wanted tag" in form "(*not wanted tag*)" (so basically adding (* in front of a tag name and *) at the end of tag name). So a tag of that form wouldn't be seen in timetable html. If a solution like that already exists, then I apologize (it didn't exist the last time I checked). Please let me know.
 
+Liviu, 2024-01-21: Isn't it done a long time ago, not printable option of an activity tag?
+
 294---------------------------------------------------------
 From Malamojka (on forum):
 
@@ -5118,6 +5112,8 @@ Two activities are not consecutive. For example A1 and A2 are not consecutive me
 
 Vangelis suggested that this can be solved by using a trick: It can be achieved indirectly with pseudo-activities. let's say A1 real activity,
 P1 pseudo-activity, and A2 real activity. If you want A1 and A2 not to be consecutive, you can demand A1 and P1 to be consecutive and A2 not to overlap with P1.
+
+Liviu, 2024-01-21: isn't this done a long time ago, min gaps between ordered pair of activity tags?
 
 320---------------------------------------------------------
 From Volker Dirr:
@@ -6377,13 +6373,7 @@ so that we do not have to go down every time .. For example when I click on the 
 bottom .. I think it would be better to arrange  it in descending order, the last constraint appears first directly under the constraint Primary.
 I am sorry again because my English is not strong .. I hope you understand my idea .. Thank you for all your efforts .
 
-392---------------------------------------------------------
-From Zafar Allah Askar (on forum):
-
-https://lalescu.ro/liviu/fet/forum/index.php?topic=4313.0
-
-Add an option like in the custom FET for Morocco, in the Add activity dialog, a check box "Separately" for the selected students,
-so that FET will add multiple activities, one for each selected students set.
+392-------DONE----------------------------------------------
 
 393-------DONE since FET-5.41.0 - 2019-11-18----------------
 
@@ -6573,15 +6563,7 @@ From Volker Dirr:
 
 optional enable in the settings "write highest stage solution if running out of generation time".
 
-405---------------------------------------------------------
-From Liviu Lalescu and Zsolt Udvari (on forum):
-
-https://lalescu.ro/liviu/fet/forum/index.php?topic=4399.0
-
-Maybe "fet-cl --version" should not create a new directory and a log file in it in which to write the FET version, but should output this information only
-on the screen. Maybe this should also be the behavior when the generation of the timetable does not begin because of incorrect command-line arguments.
-FET command-line creates the "logs" and possibly the "timetables" directories in the output directory (which is the current working directory if none given
-as an argument) and some logs files in these directories.
+405---------------DONE--------------------------------------
 
 406---------------DONE in FET-6.4.0-------------------------
 
@@ -6641,10 +6623,7 @@ and FET-5.27.3 was released on 9 June 2015.)
 Yes, I admit, you are right. I don't remember exactly the reasons for this behavior, but I think there was a reason. I will think about
 it, but for the moment I think it should remain like it is. It is risky to change old code.
 
-412---------------------------------------------------------
-From bachiri401:
-
-The constraint type teacher room not available times - this constraint is available in the custom FET-MA version, but not in the official FET.
+412-----------------------DONE------------------------------
 
 413---------------------------------------------------------
 From math (on forum):
@@ -6945,14 +6924,7 @@ have duration 50 minutes and they would like an activity to have 5 x 10 minutes 
 
 Liviu Lalescu: This would be unfortunately a probably very seldom used facility. The user could use find+replace on the .fet XML file instead.
 
-436---------------------------------------------------------
-From Henrique Belo (on forum):
-
-https://lalescu.ro/liviu/fet/forum/index.php?topic=4938.0
-
-A lot of times we need to disable some activities, and to do that we need to enter the activity and unselect Active check box.
-
-In the list of time and space constraints there is a button that can enable and disable the constraint, I think this is very useful to us in the activities list.
+436-----------DONE------------------------------------------
 
 437---------------------------------------------------------
 From Mohamed Ait Ichou (on forum):
@@ -8666,3 +8638,21 @@ I think having the option in the dialog box to remove time/space constraints for
 so that you can now remove individual constraints for each teacher with just one click would be great. Great
 
 Allows you to delete part or all of it with one click, thus making the teacher's time/space constraints more complete.
+
+537---------------------------------------------------------
+From Volker Dirr:
+
+about:
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5813.0
+
+Maybe FET needs an "save anonymous" feature.
+So it replace for example teacher names just by "teacher 1", ...
+By that guys might ask earlier for help in the forum without fearing to
+publish too critical data. And it will also help us reading files if
+they are written Arabic or with other non Latin characters.
+
+538---------------------------------------------------------
+From Volker Dirr and Liviu Lalescu:
+
+Convert the very many nested if / else if-s in Rules::read, the part of reading the time / space constraints.
+This could be done with a switch based on hashes / maps of the strings. Complicated and critical.

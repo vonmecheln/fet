@@ -35,13 +35,13 @@ ConstraintSubjectPreferredRoomForm::ConstraintSubjectPreferredRoomForm(QWidget* 
 	
 	modifyConstraintPushButton->setDefault(true);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintSubjectPreferredRoomForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintSubjectPreferredRoomForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintSubjectPreferredRoomForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintSubjectPreferredRoomForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintSubjectPreferredRoomForm::modifyConstraint);
 
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintSubjectPreferredRoomForm::modifyConstraint);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -66,8 +66,8 @@ ConstraintSubjectPreferredRoomForm::ConstraintSubjectPreferredRoomForm(QWidget* 
 
 	this->filterChanged();
 
-	connect(roomsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(roomsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintSubjectPreferredRoomForm::filterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintSubjectPreferredRoomForm::filterChanged);
 }
 
 ConstraintSubjectPreferredRoomForm::~ConstraintSubjectPreferredRoomForm()

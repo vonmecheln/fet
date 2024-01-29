@@ -530,19 +530,19 @@ StatisticsPrintForm::StatisticsPrintForm(QWidget *parent): QDialog(parent){
 	
 	updateNamesList();
 	
-	connect(pbSelectAll, SIGNAL(clicked()), this, SLOT(selectAll()));
-	connect(pbUnselectAll, SIGNAL(clicked()), this, SLOT(unselectAll()));
-	connect(pbPrint, SIGNAL(clicked()), this, SLOT(print()));
-	connect(pbPrintPreviewSmall, SIGNAL(clicked()), this, SLOT(printPreviewSmall()));
-	connect(pbPrintPreviewFull, SIGNAL(clicked()), this, SLOT(printPreviewFull()));
-	connect(pbClose, SIGNAL(clicked()), this, SLOT(close()));
+	connect(pbSelectAll, &QPushButton::clicked, this, &StatisticsPrintForm::selectAll);
+	connect(pbUnselectAll, &QPushButton::clicked, this, &StatisticsPrintForm::unselectAll);
+	connect(pbPrint, &QPushButton::clicked, this, &StatisticsPrintForm::print);
+	connect(pbPrintPreviewSmall, &QPushButton::clicked, this, &StatisticsPrintForm::printPreviewSmall);
+	connect(pbPrintPreviewFull, &QPushButton::clicked, this, &StatisticsPrintForm::printPreviewFull);
+	connect(pbClose, &QPushButton::clicked, this, &StatisticsPrintForm::close);
 	
-	connect(studentSubjectRB, SIGNAL(toggled(bool)), this, SLOT(updateNamesList()));
-	connect(studentTeacherRB, SIGNAL(toggled(bool)), this, SLOT(updateNamesList()));
-	connect(teacherSubjectRB, SIGNAL(toggled(bool)), this, SLOT(updateNamesList()));
-	connect(teacherStudentRB, SIGNAL(toggled(bool)), this, SLOT(updateNamesList()));
-	connect(subjectStudentRB, SIGNAL(toggled(bool)), this, SLOT(updateNamesList()));
-	connect(subjectTeacherRB, SIGNAL(toggled(bool)), this, SLOT(updateNamesList()));
+	connect(studentSubjectRB, &QRadioButton::toggled, this, &StatisticsPrintForm::updateNamesList);
+	connect(studentTeacherRB, &QRadioButton::toggled, this, &StatisticsPrintForm::updateNamesList);
+	connect(teacherSubjectRB, &QRadioButton::toggled, this, &StatisticsPrintForm::updateNamesList);
+	connect(teacherStudentRB, &QRadioButton::toggled, this, &StatisticsPrintForm::updateNamesList);
+	connect(subjectStudentRB, &QRadioButton::toggled, this, &StatisticsPrintForm::updateNamesList);
+	connect(subjectTeacherRB, &QRadioButton::toggled, this, &StatisticsPrintForm::updateNamesList);
 
 	int ww=this->sizeHint().width();
 	if(ww>900)
@@ -1010,7 +1010,7 @@ void StatisticsPrintForm::printPreviewFull(){
 	printer.setPageMargins(leftPageMargin->value(), topPageMargin->value(), rightPageMargin->value(), bottomPageMargin->value(), QPrinter::Millimeter);
 #endif
 	QPrintPreviewDialog printPreviewFull(&printer, this);
-	connect(&printPreviewFull, SIGNAL(paintRequested(QPrinter*)), SLOT(updatePreviewFull(QPrinter*)));
+	connect(&printPreviewFull, &QPrintPreviewDialog::paintRequested, this, &StatisticsPrintForm::updatePreviewFull);
 
 	const QString settingsName=QString("StatisticsPrintFormPrintPreviewFullDialog");
 	restoreFETDialogGeometry(&printPreviewFull, settingsName);
@@ -1079,7 +1079,7 @@ void StatisticsPrintForm::printPreviewSmall(){
 	printer.setPageMargins(leftPageMargin->value(), topPageMargin->value(), rightPageMargin->value(), bottomPageMargin->value(), QPrinter::Millimeter);
 #endif
 	QPrintPreviewDialog printPreviewSmall(&printer, this);
-	connect(&printPreviewSmall, SIGNAL(paintRequested(QPrinter*)), SLOT(updatePreviewSmall(QPrinter*)));
+	connect(&printPreviewSmall, &QPrintPreviewDialog::paintRequested, this, &StatisticsPrintForm::updatePreviewSmall);
 
 	const QString settingsName=QString("StatisticsPrintFormPrintPreviewSmallDialog");
 	restoreFETDialogGeometry(&printPreviewSmall, settingsName);

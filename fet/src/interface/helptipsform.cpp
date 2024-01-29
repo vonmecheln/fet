@@ -27,7 +27,7 @@ HelpTipsForm::HelpTipsForm(QWidget* parent): QDialog(parent)
 	
 	plainTextEdit->setReadOnly(true);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(closePushButton, &QPushButton::clicked, this, &HelpTipsForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

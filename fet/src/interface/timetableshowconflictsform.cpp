@@ -33,7 +33,7 @@ TimetableShowConflictsForm::TimetableShowConflictsForm(QWidget* parent): QDialog
 
 	conflictsTextEdit->setReadOnly(true);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(closePushButton, &QPushButton::clicked, this, &TimetableShowConflictsForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -50,7 +50,7 @@ void TimetableShowConflictsForm::newTimetableGenerated()
 
 	conflictsTextEdit->setReadOnly(true);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(closePushButton, SIG NAL(clicked()), this, SL OT(close()));
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);*/

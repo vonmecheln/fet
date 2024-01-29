@@ -39,7 +39,7 @@ SubjectsStatisticsForm::SubjectsStatisticsForm(QWidget* parent): QDialog(parent)
 	
 	closeButton->setDefault(true);
 	
-	connect(closeButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(closeButton, &QPushButton::clicked, this, &SubjectsStatisticsForm::close);
 
 	tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
 	tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);

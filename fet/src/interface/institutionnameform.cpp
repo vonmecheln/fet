@@ -34,8 +34,8 @@ InstitutionNameForm::InstitutionNameForm(QWidget* parent): QDialog(parent)
 	
 	okPushButton->setDefault(true);
 
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(okPushButton, &QPushButton::clicked, this, &InstitutionNameForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &InstitutionNameForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

@@ -25,7 +25,7 @@ HelpAlgeriaForm::HelpAlgeriaForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(closePushButton, &QPushButton::clicked, this, &HelpAlgeriaForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

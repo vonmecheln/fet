@@ -39,9 +39,9 @@ GetModeForNewFileForm::GetModeForNewFileForm(QWidget* parent): QDialog(parent)
 	
 	okPushButton->setDefault(true);
 	
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(helpPushButton, &QPushButton::clicked, this, &GetModeForNewFileForm::help);
+	connect(okPushButton, &QPushButton::clicked, this, &GetModeForNewFileForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &GetModeForNewFileForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

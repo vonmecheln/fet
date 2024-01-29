@@ -39,13 +39,13 @@ ConstraintTeachersActivityTagMaxHoursDailyRealDaysForm::ConstraintTeachersActivi
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintTeachersActivityTagMaxHoursDailyRealDaysForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeachersActivityTagMaxHoursDailyRealDaysForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintTeachersActivityTagMaxHoursDailyRealDaysForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeachersActivityTagMaxHoursDailyRealDaysForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeachersActivityTagMaxHoursDailyRealDaysForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintTeachersActivityTagMaxHoursDailyRealDaysForm::modifyConstraint);
+	connect(helpPushButton, &QPushButton::clicked, this, &ConstraintTeachersActivityTagMaxHoursDailyRealDaysForm::help);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -60,7 +60,7 @@ ConstraintTeachersActivityTagMaxHoursDailyRealDaysForm::ConstraintTeachersActivi
 
 	this->filterChanged();
 
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintTeachersActivityTagMaxHoursDailyRealDaysForm::filterChanged);
 }
 
 ConstraintTeachersActivityTagMaxHoursDailyRealDaysForm::~ConstraintTeachersActivityTagMaxHoursDailyRealDaysForm()

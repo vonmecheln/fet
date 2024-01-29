@@ -48,11 +48,11 @@ ModifyConstraintActivitiesPreferredTimeSlotsForm::ModifyConstraintActivitiesPref
 
 	okPushButton->setDefault(true);
 
-	connect(preferredTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(setAllAllowedPushButton, SIGNAL(clicked()), this, SLOT(setAllSlotsAllowed()));
-	connect(setAllNotAllowedPushButton, SIGNAL(clicked()), this, SLOT(setAllSlotsNotAllowed()));
+	connect(preferredTimesTable, &QTableWidget::itemClicked, this, &ModifyConstraintActivitiesPreferredTimeSlotsForm::itemClicked);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintActivitiesPreferredTimeSlotsForm::cancel);
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintActivitiesPreferredTimeSlotsForm::ok);
+	connect(setAllAllowedPushButton, &QPushButton::clicked, this, &ModifyConstraintActivitiesPreferredTimeSlotsForm::setAllSlotsAllowed);
+	connect(setAllNotAllowedPushButton, &QPushButton::clicked, this, &ModifyConstraintActivitiesPreferredTimeSlotsForm::setAllSlotsNotAllowed);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -121,12 +121,16 @@ ModifyConstraintActivitiesPreferredTimeSlotsForm::ModifyConstraintActivitiesPref
 	
 	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 
-	connect(preferredTimesTable->horizontalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(horizontalHeaderClicked(int)));
-	connect(preferredTimesTable->verticalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(verticalHeaderClicked(int)));
+	connect(preferredTimesTable->horizontalHeader(), &QHeaderView::sectionClicked, this, &ModifyConstraintActivitiesPreferredTimeSlotsForm::horizontalHeaderClicked);
+	connect(preferredTimesTable->verticalHeader(), &QHeaderView::sectionClicked, this, &ModifyConstraintActivitiesPreferredTimeSlotsForm::verticalHeaderClicked);
 
 	preferredTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 
 	setStretchAvailabilityTableNicely(preferredTimesTable);
+
+	connect(durationCheckBox, &QCheckBox::toggled, this, &ModifyConstraintActivitiesPreferredTimeSlotsForm::durationCheckBox_toggled);
+	
+	durationCheckBox_toggled();
 }
 
 ModifyConstraintActivitiesPreferredTimeSlotsForm::~ModifyConstraintActivitiesPreferredTimeSlotsForm()
@@ -420,7 +424,7 @@ void ModifyConstraintActivitiesPreferredTimeSlotsForm::cancel()
 	this->close();
 }
 
-void ModifyConstraintActivitiesPreferredTimeSlotsForm::on_durationCheckBox_toggled()
+void ModifyConstraintActivitiesPreferredTimeSlotsForm::durationCheckBox_toggled()
 {
 	durationSpinBox->setEnabled(durationCheckBox->isChecked());
 }

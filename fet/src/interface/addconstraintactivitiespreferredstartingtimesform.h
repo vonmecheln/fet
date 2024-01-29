@@ -47,7 +47,7 @@ public slots:
 	void horizontalHeaderClicked(int col);
 	void verticalHeaderClicked(int row);
 
-	void on_durationCheckBox_toggled();
+	void durationCheckBox_toggled();
 };
 
 #endif

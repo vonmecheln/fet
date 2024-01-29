@@ -28,9 +28,9 @@ AddConstraintTeacherMinHoursPerAfternoonForm::AddConstraintTeacherMinHoursPerAft
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(addConstraintsPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraints()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintTeacherMinHoursPerAfternoonForm::addCurrentConstraint);
+	connect(addConstraintsPushButton, &QPushButton::clicked, this, &AddConstraintTeacherMinHoursPerAfternoonForm::addCurrentConstraints);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintTeacherMinHoursPerAfternoonForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -45,6 +45,10 @@ AddConstraintTeacherMinHoursPerAfternoonForm::AddConstraintTeacherMinHoursPerAft
 		Teacher* tch=gt.rules.teachersList[i];
 		teachersComboBox->addItem(tch->name);
 	}
+
+	connect(allowEmptyAfternoonsCheckBox, &QCheckBox::toggled, this, &AddConstraintTeacherMinHoursPerAfternoonForm::allowEmptyAfternoonsCheckBox_toggled);
+	
+	allowEmptyAfternoonsCheckBox_toggled();
 }
 
 AddConstraintTeacherMinHoursPerAfternoonForm::~AddConstraintTeacherMinHoursPerAfternoonForm()
@@ -154,7 +158,7 @@ void AddConstraintTeacherMinHoursPerAfternoonForm::addCurrentConstraints()
 						  .arg(gt.rules.teachersList.count()).arg(ctrs));
 }
 
-void AddConstraintTeacherMinHoursPerAfternoonForm::on_allowEmptyAfternoonsCheckBox_toggled()
+void AddConstraintTeacherMinHoursPerAfternoonForm::allowEmptyAfternoonsCheckBox_toggled()
 {
 	bool k=allowEmptyAfternoonsCheckBox->isChecked();
 

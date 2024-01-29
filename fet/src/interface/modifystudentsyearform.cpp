@@ -29,8 +29,8 @@ ModifyStudentsYearForm::ModifyStudentsYearForm(QWidget* parent, const QString& i
 	
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyStudentsYearForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyStudentsYearForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

@@ -37,12 +37,12 @@ ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::ConstraintTeacherM
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::modifyConstraint);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -71,9 +71,9 @@ ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::ConstraintTeacherM
 
 	this->filterChanged();
 
-	connect(teacherComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(firstActivityTagComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(secondActivityTagComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teacherComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::filterChanged);
+	connect(firstActivityTagComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::filterChanged);
+	connect(secondActivityTagComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::filterChanged);
 }
 
 ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::~ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm()

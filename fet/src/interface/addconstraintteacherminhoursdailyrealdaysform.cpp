@@ -28,9 +28,9 @@ AddConstraintTeacherMinHoursDailyRealDaysForm::AddConstraintTeacherMinHoursDaily
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(addConstraintsPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraints()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintTeacherMinHoursDailyRealDaysForm::addCurrentConstraint);
+	connect(addConstraintsPushButton, &QPushButton::clicked, this, &AddConstraintTeacherMinHoursDailyRealDaysForm::addCurrentConstraints);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintTeacherMinHoursDailyRealDaysForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -45,6 +45,10 @@ AddConstraintTeacherMinHoursDailyRealDaysForm::AddConstraintTeacherMinHoursDaily
 		Teacher* tch=gt.rules.teachersList[i];
 		teachersComboBox->addItem(tch->name);
 	}
+
+	connect(allowEmptyDaysCheckBox, &QCheckBox::toggled, this, &AddConstraintTeacherMinHoursDailyRealDaysForm::allowEmptyDaysCheckBox_toggled);
+	
+	allowEmptyDaysCheckBox_toggled();
 }
 
 AddConstraintTeacherMinHoursDailyRealDaysForm::~AddConstraintTeacherMinHoursDailyRealDaysForm()
@@ -154,7 +158,7 @@ void AddConstraintTeacherMinHoursDailyRealDaysForm::addCurrentConstraints()
 						  .arg(gt.rules.teachersList.count()).arg(ctrs));
 }
 
-void AddConstraintTeacherMinHoursDailyRealDaysForm::on_allowEmptyDaysCheckBox_toggled()
+void AddConstraintTeacherMinHoursDailyRealDaysForm::allowEmptyDaysCheckBox_toggled()
 {
 	bool k=allowEmptyDaysCheckBox->isChecked();
 

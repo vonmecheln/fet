@@ -64,27 +64,27 @@ GroupActivitiesInInitialOrderItemsForm::GroupActivitiesInInitialOrderItemsForm(Q
 
 	itemsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(itemsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(itemChanged(int)));
-	connect(addItemPushButton, SIGNAL(clicked()), this, SLOT(addItem()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeItemPushButton, SIGNAL(clicked()), this, SLOT(removeItem()));
-	connect(modifyItemPushButton, SIGNAL(clicked()), this, SLOT(modifyItem()));
-	connect(itemsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyItem()));
+	connect(itemsListWidget, &QListWidget::currentRowChanged, this, &GroupActivitiesInInitialOrderItemsForm::itemChanged);
+	connect(addItemPushButton, &QPushButton::clicked, this, &GroupActivitiesInInitialOrderItemsForm::addItem);
+	connect(closePushButton, &QPushButton::clicked, this, &GroupActivitiesInInitialOrderItemsForm::close);
+	connect(removeItemPushButton, &QPushButton::clicked, this, &GroupActivitiesInInitialOrderItemsForm::removeItem);
+	connect(modifyItemPushButton, &QPushButton::clicked, this, &GroupActivitiesInInitialOrderItemsForm::modifyItem);
+	connect(itemsListWidget, &QListWidget::itemDoubleClicked, this, &GroupActivitiesInInitialOrderItemsForm::modifyItem);
 
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(helpPushButton, &QPushButton::clicked, this, &GroupActivitiesInInitialOrderItemsForm::help);
 
-	connect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
+	connect(filterCheckBox, &QCheckBox::toggled, this, &GroupActivitiesInInitialOrderItemsForm::filter);
 
-	connect(moveItemUpPushButton, SIGNAL(clicked()), this, SLOT(moveItemUp()));
-	connect(moveItemDownPushButton, SIGNAL(clicked()), this, SLOT(moveItemDown()));
+	connect(moveItemUpPushButton, &QPushButton::clicked, this, &GroupActivitiesInInitialOrderItemsForm::moveItemUp);
+	connect(moveItemDownPushButton, &QPushButton::clicked, this, &GroupActivitiesInInitialOrderItemsForm::moveItemDown);
 
-	connect(activatePushButton, SIGNAL(clicked()), this, SLOT(activateItem()));
-	connect(deactivatePushButton, SIGNAL(clicked()), this, SLOT(deactivateItem()));
+	connect(activatePushButton, &QPushButton::clicked, this, &GroupActivitiesInInitialOrderItemsForm::activateItem);
+	connect(deactivatePushButton, &QPushButton::clicked, this, &GroupActivitiesInInitialOrderItemsForm::deactivateItem);
 
-	connect(activateAllPushButton, SIGNAL(clicked()), this, SLOT(activateAllItems()));
-	connect(deactivateAllPushButton, SIGNAL(clicked()), this, SLOT(deactivateAllItems()));
+	connect(activateAllPushButton, &QPushButton::clicked, this, &GroupActivitiesInInitialOrderItemsForm::activateAllItems);
+	connect(deactivateAllPushButton, &QPushButton::clicked, this, &GroupActivitiesInInitialOrderItemsForm::deactivateAllItems);
 
-	connect(commentsPushButton, SIGNAL(clicked()), this, SLOT(itemComments()));
+	connect(commentsPushButton, &QPushButton::clicked, this, &GroupActivitiesInInitialOrderItemsForm::itemComments);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -156,10 +156,10 @@ GroupActivitiesInInitialOrderItemsForm::GroupActivitiesInInitialOrderItemsForm(Q
 
 	filterChanged();
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &GroupActivitiesInInitialOrderItemsForm::filterChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &GroupActivitiesInInitialOrderItemsForm::filterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &GroupActivitiesInInitialOrderItemsForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &GroupActivitiesInInitialOrderItemsForm::filterChanged);
 }
 
 GroupActivitiesInInitialOrderItemsForm::~GroupActivitiesInInitialOrderItemsForm()
@@ -731,8 +731,8 @@ void GroupActivitiesInInitialOrderItemsForm::itemComments()
 	okPB->setDefault(true);
 	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
 	
-	connect(okPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(accept()));
-	connect(cancelPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(reject()));
+	connect(okPB, &QPushButton::clicked, &getCommentsDialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &getCommentsDialog, &QDialog::reject);
 
 	QHBoxLayout* hl=new QHBoxLayout();
 	hl->addStretch();
@@ -804,13 +804,13 @@ void GroupActivitiesInInitialOrderItemsForm::filter(bool active)
 			all=false;
 		else
 			assert(0);
-			
+		
 		caseSensitive=filterForm->caseSensitiveCheckBox->isChecked();
-			
+		
 		descrDetDescr.clear();
 		contains.clear();
 		text.clear();
-			
+		
 		assert(filterForm->descrDetDescrDetDescrWithConstraintsComboBoxList.count()==filterForm->contNContReNReComboBoxList.count());
 		assert(filterForm->descrDetDescrDetDescrWithConstraintsComboBoxList.count()==filterForm->textLineEditList.count());
 		for(int i=0; i<filterForm->rows; i++){
@@ -829,9 +829,9 @@ void GroupActivitiesInInitialOrderItemsForm::filter(bool active)
 		assert(useFilter==false);
 		useFilter=false;
 	
-		disconnect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
+		disconnect(filterCheckBox, &QCheckBox::toggled, this, &GroupActivitiesInInitialOrderItemsForm::filter);
 		filterCheckBox->setChecked(false);
-		connect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
+		connect(filterCheckBox, &QCheckBox::toggled, this, &GroupActivitiesInInitialOrderItemsForm::filter);
 	}
 	
 	delete filterForm;

@@ -25,8 +25,8 @@ ModifyConstraintActivityTagPreferredRoomForm::ModifyConstraintActivityTagPreferr
 
 	okPushButton->setDefault(true);
 
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintActivityTagPreferredRoomForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintActivityTagPreferredRoomForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

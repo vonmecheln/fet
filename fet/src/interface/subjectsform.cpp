@@ -52,21 +52,21 @@ SubjectsForm::SubjectsForm(QWidget* parent): QDialog(parent)
 
 	subjectsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(addSubjectPushButton, SIGNAL(clicked()), this, SLOT(addSubject()));
-	connect(removeSubjectPushButton, SIGNAL(clicked()), this, SLOT(removeSubject()));
-	connect(renameSubjectPushButton, SIGNAL(clicked()), this, SLOT(renameSubject()));
+	connect(closePushButton, &QPushButton::clicked, this, &SubjectsForm::close);
+	connect(addSubjectPushButton, &QPushButton::clicked, this, &SubjectsForm::addSubject);
+	connect(removeSubjectPushButton, &QPushButton::clicked, this, &SubjectsForm::removeSubject);
+	connect(renameSubjectPushButton, &QPushButton::clicked, this, &SubjectsForm::renameSubject);
 
-	connect(moveSubjectUpPushButton, SIGNAL(clicked()), this, SLOT(moveSubjectUp()));
-	connect(moveSubjectDownPushButton, SIGNAL(clicked()), this, SLOT(moveSubjectDown()));
+	connect(moveSubjectUpPushButton, &QPushButton::clicked, this, &SubjectsForm::moveSubjectUp);
+	connect(moveSubjectDownPushButton, &QPushButton::clicked, this, &SubjectsForm::moveSubjectDown);
 
-	connect(sortSubjectsPushButton, SIGNAL(clicked()), this, SLOT(sortSubjects()));
-	connect(subjectsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(subjectChanged(int)));
-	connect(activateSubjectPushButton, SIGNAL(clicked()), this, SLOT(activateSubject()));
-	connect(deactivateSubjectPushButton, SIGNAL(clicked()), this, SLOT(deactivateSubject()));
-	connect(subjectsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(renameSubject()));
+	connect(sortSubjectsPushButton, &QPushButton::clicked, this, &SubjectsForm::sortSubjects);
+	connect(subjectsListWidget, &QListWidget::currentRowChanged, this, &SubjectsForm::subjectChanged);
+	connect(activateSubjectPushButton, &QPushButton::clicked, this, &SubjectsForm::activateSubject);
+	connect(deactivateSubjectPushButton, &QPushButton::clicked, this, &SubjectsForm::deactivateSubject);
+	connect(subjectsListWidget, &QListWidget::itemDoubleClicked, this, &SubjectsForm::renameSubject);
 
-	connect(commentsPushButton, SIGNAL(clicked()), this, SLOT(comments()));
+	connect(commentsPushButton, &QPushButton::clicked, this, &SubjectsForm::comments);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -139,12 +139,12 @@ void SubjectsForm::removeSubject()
 	}
 
 	/*if(QMessageBox::warning( this, tr("FET"),
-		tr("Are you sure you want to delete this subject and all related activities and constraints?"),
-		tr("Yes"), tr("No"), QString(), 0, 1 ) == 1)
+	 tr("Are you sure you want to delete this subject and all related activities and constraints?"),
+	 tr("Yes"), tr("No"), QString(), 0, 1 ) == 1)
 		return;*/
 	if(QMessageBox::warning( this, tr("FET"),
-		tr("Are you sure you want to delete this subject and all related activities and constraints?"),
-		QMessageBox::Yes | QMessageBox::No) == QMessageBox::No)
+	 tr("Are you sure you want to delete this subject and all related activities and constraints?"),
+	 QMessageBox::Yes | QMessageBox::No) == QMessageBox::No)
 		return;
 
 	int tmp=gt.rules.removeSubject(text);
@@ -352,8 +352,8 @@ void SubjectsForm::comments()
 	okPB->setDefault(true);
 	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
 	
-	connect(okPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(accept()));
-	connect(cancelPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(reject()));
+	connect(okPB, &QPushButton::clicked, &getCommentsDialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &getCommentsDialog, &QDialog::reject);
 
 	QHBoxLayout* hl=new QHBoxLayout();
 	hl->addStretch();

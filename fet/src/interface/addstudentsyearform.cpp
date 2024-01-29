@@ -25,8 +25,8 @@ AddStudentsYearForm::AddStudentsYearForm(QWidget* parent): QDialog(parent)
 	
 	addStudentsYearPushButton->setDefault(true);
 
-	connect(addStudentsYearPushButton, SIGNAL(clicked()), this, SLOT(addStudentsYear()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addStudentsYearPushButton, &QPushButton::clicked, this, &AddStudentsYearForm::addStudentsYear);
+	connect(closePushButton, &QPushButton::clicked, this, &AddStudentsYearForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

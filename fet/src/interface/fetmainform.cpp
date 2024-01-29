@@ -706,13 +706,17 @@ bool FetMainForm::openHistory()
 		
 		QDataStream tos(&file);
 		
-		//tos<<QString("FET history file")<<QString("\n")<<QString("Data format version=")<<FET_DATA_FORMAT_VERSION<<QString("\n");
-		QString s1, s2, s3, s4, s5;
-		tos>>s1>>s2>>s3>>s4>>s5;
-		if(s1!=QString("FET history file") || s2!=QString("\n") || s3!=QString("Data format version=") || s5!=QString("\n")){
-			QMessageBox::information(this, tr("FET information"), tr("Invalid history file header. The history will not be loaded from the disk"
-			 " for this data file. (Starting with FET version %1 the history file header changed.)")
-			 .arg("6.15.1")
+		//tos<<QString("FET history file")<<QString("\n")
+		// <<QString("Data format version=")<<FET_DATA_FORMAT_VERSION<<QString("\n")
+		// <<QString("FET version=")<<FET_VERSION<<QString("\n");
+		QString s1, s2, s3, s4, s5, s6, s7, s8;
+		tos>>s1>>s2>>s3>>s4>>s5>>s6>>s7>>s8;
+		if(s1!=QString("FET history file") || s2!=QString("\n")
+		 || s3!=QString("Data format version=") || s5!=QString("\n")
+		 || s6!=QString("FET version=") || s8!=QString("\n")){
+			QMessageBox::information(this, tr("FET information"), tr("The history will not be loaded from the disk for this data file,"
+			 " because the history file header is invalid. (Starting with FET version %1 the history file header changed.)")
+			 .arg("6.16.0")
 			 +QString("\n\n")
 			 +tr("There should be nothing else to worry about. Your .fet data file will be safely/correctly opened and the disk history will be"
 			 " updated/corrected when you will save your data file."));
@@ -733,6 +737,7 @@ bool FetMainForm::openHistory()
 			
 			return false;
 		}
+		Q_UNUSED(s7);
 
 		int stepsToRead;
 		tos>>stepsToRead;
@@ -825,7 +830,9 @@ bool FetMainForm::saveHistory()
 
 			QDataStream tos(&file);
 
-			tos<<QString("FET history file")<<QString("\n")<<QString("Data format version=")<<FET_DATA_FORMAT_VERSION<<QString("\n");
+			tos<<QString("FET history file")<<QString("\n")
+			 <<QString("Data format version=")<<FET_DATA_FORMAT_VERSION<<QString("\n")
+			 <<QString("FET version=")<<FET_VERSION<<QString("\n");
 
 			int stepsToSave=std::min(UNDO_REDO_STEPS_SAVE, savedStateIterator);
 			tos<<stepsToSave;
@@ -964,7 +971,7 @@ FetMainForm::FetMainForm()
 	for(int i=0; i<MAX_RECENT_FILES; i++){
 		recentFileActions[i]=new QAction(this);
 		recentFileActions[i]->setVisible(false);
-		connect(recentFileActions[i], SIGNAL(triggered()), this, SLOT(openRecentFile()));
+		connect(recentFileActions[i], &QAction::triggered, this, &FetMainForm::openRecentFile);
 		
 		fileOpenRecentMenu->insertAction(recentSeparatorAction, recentFileActions[i]);
 	}
@@ -1136,7 +1143,7 @@ FetMainForm::FetMainForm()
 		}
 		else{
 			networkManager=new QNetworkAccessManager(this);
-			connect(networkManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(replyFinished(QNetworkReply*)));
+			connect(networkManager, &QNetworkAccessManager::finished, this, &FetMainForm::replyFinished);
 			QUrl url("https://lalescu.ro/liviu/fet/crtversion/crtversion.txt");
 			if(VERBOSE){
 				std::cout<<"New version checking host: "<<qPrintable(url.host())<<std::endl;
@@ -1228,34 +1235,32 @@ FetMainForm::FetMainForm()
 	enableGroupActivitiesInInitialOrderAction->setChecked(ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
 	showWarningForGroupActivitiesInInitialOrderAction->setChecked(SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
 	
-	connect(showWarningForSubgroupsWithTheSameActivitiesAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForSubgroupsWithTheSameActivitiesToggled(bool)));
-	connect(showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction, SIGNAL(toggled(bool)),
-	 this, SLOT(showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsToggled(bool)));
-	connect(showWarningForMaxHoursDailyWithUnder100WeightAction, SIGNAL(toggled(bool)),
-	 this, SLOT(showWarningForMaxHoursDailyWithUnder100WeightToggled(bool)));
+	connect(showWarningForSubgroupsWithTheSameActivitiesAction, &QAction::toggled, this, &FetMainForm::showWarningForSubgroupsWithTheSameActivitiesToggled);
+	connect(showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction, &QAction::toggled, this, &FetMainForm::showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsToggled);
+	connect(showWarningForMaxHoursDailyWithUnder100WeightAction, &QAction::toggled, this, &FetMainForm::showWarningForMaxHoursDailyWithUnder100WeightToggled);
 
-	connect(checkForUpdatesAction, SIGNAL(toggled(bool)), this, SLOT(checkForUpdatesToggled(bool)));
-	connect(settingsUseColorsAction, SIGNAL(toggled(bool)), this, SLOT(useColorsToggled(bool)));
-	connect(settingsShowSubgroupsInComboBoxesAction, SIGNAL(toggled(bool)), this, SLOT(showSubgroupsInComboBoxesToggled(bool)));
-	connect(settingsShowSubgroupsInActivityPlanningAction, SIGNAL(toggled(bool)), this, SLOT(showSubgroupsInActivityPlanningToggled(bool)));
+	connect(checkForUpdatesAction, &QAction::toggled, this, &FetMainForm::checkForUpdatesToggled);
+	connect(settingsUseColorsAction, &QAction::toggled, this, &FetMainForm::useColorsToggled);
+	connect(settingsShowSubgroupsInComboBoxesAction, &QAction::toggled, this, &FetMainForm::showSubgroupsInComboBoxesToggled);
+	connect(settingsShowSubgroupsInActivityPlanningAction, &QAction::toggled, this, &FetMainForm::showSubgroupsInActivityPlanningToggled);
 	
-	connect(enableActivityTagMaxHoursDailyAction, SIGNAL(toggled(bool)), this, SLOT(enableActivityTagMaxHoursDailyToggled(bool)));
-	connect(enableActivityTagMinHoursDailyAction, SIGNAL(toggled(bool)), this, SLOT(enableActivityTagMinHoursDailyToggled(bool)));
-	connect(enableStudentsMaxGapsPerDayAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMaxGapsPerDayToggled(bool)));
-	connect(enableMaxGapsPerRealDayAction, SIGNAL(toggled(bool)), this, SLOT(enableMaxGapsPerRealDayToggled(bool)));
-	connect(showWarningForNotPerfectConstraintsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForNotPerfectConstraintsToggled(bool)));
+	connect(enableActivityTagMaxHoursDailyAction, &QAction::toggled, this, &FetMainForm::enableActivityTagMaxHoursDailyToggled);
+	connect(enableActivityTagMinHoursDailyAction, &QAction::toggled, this, &FetMainForm::enableActivityTagMinHoursDailyToggled);
+	connect(enableStudentsMaxGapsPerDayAction, &QAction::toggled, this, &FetMainForm::enableStudentsMaxGapsPerDayToggled);
+	connect(enableMaxGapsPerRealDayAction, &QAction::toggled, this, &FetMainForm::enableMaxGapsPerRealDayToggled);
+	connect(showWarningForNotPerfectConstraintsAction, &QAction::toggled, this, &FetMainForm::showWarningForNotPerfectConstraintsToggled);
 
-	connect(enableStudentsMinHoursDailyWithAllowEmptyDaysAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool)));
-	connect(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool)));
+	connect(enableStudentsMinHoursDailyWithAllowEmptyDaysAction, &QAction::toggled, this, &FetMainForm::enableStudentsMinHoursDailyWithAllowEmptyDaysToggled);
+	connect(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction, &QAction::toggled, this, &FetMainForm::showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled);
 
-	connect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
-	connect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
+	connect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, &QAction::toggled, this, &FetMainForm::enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled);
+	connect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, &QAction::toggled, this, &FetMainForm::showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled);
 
-	connect(enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled(bool)));
-	connect(showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled(bool)));
+	connect(enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction, &QAction::toggled, this, &FetMainForm::enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled);
+	connect(showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction, &QAction::toggled, this, &FetMainForm::showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled);
 
-	connect(enableGroupActivitiesInInitialOrderAction, SIGNAL(toggled(bool)), this, SLOT(enableGroupActivitiesInInitialOrderToggled(bool)));
-	connect(showWarningForGroupActivitiesInInitialOrderAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForGroupActivitiesInInitialOrderToggled(bool)));
+	connect(enableGroupActivitiesInInitialOrderAction, &QAction::toggled, this, &FetMainForm::enableGroupActivitiesInInitialOrderToggled);
+	connect(showWarningForGroupActivitiesInInitialOrderAction, &QAction::toggled, this, &FetMainForm::showWarningForGroupActivitiesInInitialOrderToggled);
 
 	dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction->setIconVisibleInMenu(true);
 	dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction->setIconVisibleInMenu(true);
@@ -1316,6 +1321,227 @@ FetMainForm::FetMainForm()
 	setEnabledIcon(dataTimeConstraintsTeacherMaxGapsPerWeekForRealDaysAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
 
 	setEnabledIcon(groupActivitiesInInitialOrderAction, ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
+
+	//2024-01-25
+	connect(settingsAutosaveAction, &QAction::triggered, this, &FetMainForm::settingsAutosaveAction_triggered);
+
+	connect(restoreDataStateAction, &QAction::triggered, this, &FetMainForm::restoreDataStateAction_triggered);
+	connect(settingsHistoryMemoryAction, &QAction::triggered, this, &FetMainForm::settingsHistoryMemoryAction_triggered);
+	connect(settingsHistoryDiskAction, &QAction::triggered, this, &FetMainForm::settingsHistoryDiskAction_triggered);
+	
+	connect(modeOfficialAction, &QAction::triggered, this, &FetMainForm::modeOfficialAction_triggered);
+	connect(modeMorningsAfternoonsAction, &QAction::triggered, this, &FetMainForm::modeMorningsAfternoonsAction_triggered);
+	connect(modeBlockPlanningAction, &QAction::triggered, this, &FetMainForm::modeBlockPlanningAction_triggered);
+	connect(modeTermsAction, &QAction::triggered, this, &FetMainForm::modeTermsAction_triggered);
+	
+	connect(dataTermsAction, &QAction::triggered, this, &FetMainForm::dataTermsAction_triggered);
+
+	connect(fileNewAction, &QAction::triggered, this, &FetMainForm::fileNewAction_triggered);
+	connect(fileSaveAction, &QAction::triggered, this, &FetMainForm::fileSaveAction_triggered);
+	connect(fileSaveAsAction, &QAction::triggered, this, &FetMainForm::fileSaveAsAction_triggered);
+	connect(fileQuitAction, &QAction::triggered, this, &FetMainForm::fileQuitAction_triggered);
+	connect(fileOpenAction, &QAction::triggered, this, &FetMainForm::fileOpenAction_triggered);
+	connect(fileClearRecentFilesListAction, &QAction::triggered, this, &FetMainForm::fileClearRecentFilesListAction_triggered);
+
+	connect(fileImportCSVActivityTagsAction, &QAction::triggered, this, &FetMainForm::fileImportCSVActivityTagsAction_triggered);
+	connect(fileImportCSVActivitiesAction, &QAction::triggered, this, &FetMainForm::fileImportCSVActivitiesAction_triggered);
+	connect(fileImportCSVRoomsBuildingsAction, &QAction::triggered, this, &FetMainForm::fileImportCSVRoomsBuildingsAction_triggered);
+	connect(fileImportCSVSubjectsAction, &QAction::triggered, this, &FetMainForm::fileImportCSVSubjectsAction_triggered);
+	connect(fileImportCSVTeachersAction, &QAction::triggered, this, &FetMainForm::fileImportCSVTeachersAction_triggered);
+	connect(fileImportCSVYearsGroupsSubgroupsAction, &QAction::triggered, this, &FetMainForm::fileImportCSVYearsGroupsSubgroupsAction_triggered);
+	connect(fileExportCSVAction, &QAction::triggered, this, &FetMainForm::fileExportCSVAction_triggered);
+	
+	connect(dataInstitutionNameAction, &QAction::triggered, this, &FetMainForm::dataInstitutionNameAction_triggered);
+	connect(dataCommentsAction, &QAction::triggered, this, &FetMainForm::dataCommentsAction_triggered);
+	connect(dataDaysAction, &QAction::triggered, this, &FetMainForm::dataDaysAction_triggered);
+	connect(dataHoursAction, &QAction::triggered, this, &FetMainForm::dataHoursAction_triggered);
+	connect(dataTeachersAction, &QAction::triggered, this, &FetMainForm::dataTeachersAction_triggered);
+	connect(dataTeachersStatisticsAction, &QAction::triggered, this, &FetMainForm::dataTeachersStatisticsAction_triggered);
+	connect(dataSubjectsAction, &QAction::triggered, this, &FetMainForm::dataSubjectsAction_triggered);
+	connect(dataSubjectsStatisticsAction, &QAction::triggered, this, &FetMainForm::dataSubjectsStatisticsAction_triggered);
+	connect(dataActivityTagsAction, &QAction::triggered, this, &FetMainForm::dataActivityTagsAction_triggered);
+	connect(dataYearsAction, &QAction::triggered, this, &FetMainForm::dataYearsAction_triggered);
+	connect(dataGroupsAction, &QAction::triggered, this, &FetMainForm::dataGroupsAction_triggered);
+	connect(dataSubgroupsAction, &QAction::triggered, this, &FetMainForm::dataSubgroupsAction_triggered);
+	connect(dataStudentsStatisticsAction, &QAction::triggered, this, &FetMainForm::dataStudentsStatisticsAction_triggered);
+	connect(dataActivitiesRoomsStatisticsAction, &QAction::triggered, this, &FetMainForm::dataActivitiesRoomsStatisticsAction_triggered);
+	connect(dataTeachersSubjectsQualificationsStatisticsAction, &QAction::triggered, this, &FetMainForm::dataTeachersSubjectsQualificationsStatisticsAction_triggered);
+	connect(dataHelpOnStatisticsAction, &QAction::triggered, this, &FetMainForm::dataHelpOnStatisticsAction_triggered);
+	
+	connect(helpSettingsAction, &QAction::triggered, this, &FetMainForm::helpSettingsAction_triggered);
+
+	connect(settingsFontAction, &QAction::triggered, this, &FetMainForm::settingsFontAction_triggered);
+
+	connect(timetablesToWriteOnDiskAction, &QAction::triggered, this, &FetMainForm::timetablesToWriteOnDiskAction_triggered);
+	
+	connect(studentsComboBoxesStyleAction, &QAction::triggered, this, &FetMainForm::studentsComboBoxesStyleAction_triggered);
+	
+	connect(settingsCommandAfterFinishingAction, &QAction::triggered, this, &FetMainForm::settingsCommandAfterFinishingAction_triggered);
+
+	connect(groupActivitiesInInitialOrderAction, &QAction::triggered, this, &FetMainForm::groupActivitiesInInitialOrderAction_triggered);
+	
+	connect(dataActivitiesAction, &QAction::triggered, this, &FetMainForm::dataActivitiesAction_triggered);
+	connect(dataSubactivitiesAction, &QAction::triggered, this, &FetMainForm::dataSubactivitiesAction_triggered);
+	connect(dataRoomsAction, &QAction::triggered, this, &FetMainForm::dataRoomsAction_triggered);
+	connect(dataBuildingsAction, &QAction::triggered, this, &FetMainForm::dataBuildingsAction_triggered);
+	connect(dataAllTimeConstraintsAction, &QAction::triggered, this, &FetMainForm::dataAllTimeConstraintsAction_triggered);
+	connect(dataAllSpaceConstraintsAction, &QAction::triggered, this, &FetMainForm::dataAllSpaceConstraintsAction_triggered);
+
+	connect(helpMoroccoAction, &QAction::triggered, this, &FetMainForm::helpMoroccoAction_triggered);
+	connect(helpAlgeriaAction, &QAction::triggered, this, &FetMainForm::helpAlgeriaAction_triggered);
+	connect(helpBlockPlanningAction, &QAction::triggered, this, &FetMainForm::helpBlockPlanningAction_triggered);
+	connect(helpTermsAction, &QAction::triggered, this, &FetMainForm::helpTermsAction_triggered);
+
+	connect(activityPlanningAction, &QAction::triggered, this, &FetMainForm::activityPlanningAction_triggered);
+	connect(spreadActivitiesAction, &QAction::triggered, this, &FetMainForm::spreadActivitiesAction_triggered);
+	connect(removeRedundantConstraintsAction, &QAction::triggered, this, &FetMainForm::removeRedundantConstraintsAction_triggered);
+
+	//about
+	connect(helpAboutFETAction, &QAction::triggered, this, &FetMainForm::helpAboutFETAction_triggered);
+	connect(helpAboutQtAction, &QAction::triggered, this, &FetMainForm::helpAboutQtAction_triggered);
+	connect(helpAboutLibrariesAction, &QAction::triggered, this, &FetMainForm::helpAboutLibrariesAction_triggered);
+	//offline
+	connect(helpFAQAction, &QAction::triggered, this, &FetMainForm::helpFAQAction_triggered);
+	connect(helpTipsAction, &QAction::triggered, this, &FetMainForm::helpTipsAction_triggered);
+	connect(helpInstructionsAction, &QAction::triggered, this, &FetMainForm::helpInstructionsAction_triggered);
+	//online
+	connect(helpHomepageAction, &QAction::triggered, this, &FetMainForm::helpHomepageAction_triggered);
+	connect(helpContentsAction, &QAction::triggered, this, &FetMainForm::helpContentsAction_triggered);
+	connect(helpForumAction, &QAction::triggered, this, &FetMainForm::helpForumAction_triggered);
+	connect(helpAddressesAction, &QAction::triggered, this, &FetMainForm::helpAddressesAction_triggered);
+
+	connect(timetableGenerateAction, &QAction::triggered, this, &FetMainForm::timetableGenerateAction_triggered);
+	connect(timetableViewStudentsDaysHorizontalAction, &QAction::triggered, this, &FetMainForm::timetableViewStudentsDaysHorizontalAction_triggered);
+	connect(timetableViewStudentsTimeHorizontalAction, &QAction::triggered, this, &FetMainForm::timetableViewStudentsTimeHorizontalAction_triggered);
+	connect(timetableViewTeachersDaysHorizontalAction, &QAction::triggered, this, &FetMainForm::timetableViewTeachersDaysHorizontalAction_triggered);
+	connect(timetableViewTeachersTimeHorizontalAction, &QAction::triggered, this, &FetMainForm::timetableViewTeachersTimeHorizontalAction_triggered);
+	connect(timetableViewRoomsDaysHorizontalAction, &QAction::triggered, this, &FetMainForm::timetableViewRoomsDaysHorizontalAction_triggered);
+	connect(timetableViewRoomsTimeHorizontalAction, &QAction::triggered, this, &FetMainForm::timetableViewRoomsTimeHorizontalAction_triggered);
+	connect(timetableShowConflictsAction, &QAction::triggered, this, &FetMainForm::timetableShowConflictsAction_triggered);
+	connect(timetablePrintAction, &QAction::triggered, this, &FetMainForm::timetablePrintAction_triggered);
+	connect(timetableGenerateMultipleAction, &QAction::triggered, this, &FetMainForm::timetableGenerateMultipleAction_triggered);
+
+	connect(timetableLockAllActivitiesAction, &QAction::triggered, this, &FetMainForm::timetableLockAllActivitiesAction_triggered);
+	connect(timetableUnlockAllActivitiesAction, &QAction::triggered, this, &FetMainForm::timetableUnlockAllActivitiesAction_triggered);
+	connect(timetableLockActivitiesDayAction, &QAction::triggered, this, &FetMainForm::timetableLockActivitiesDayAction_triggered);
+	connect(timetableUnlockActivitiesDayAction, &QAction::triggered, this, &FetMainForm::timetableUnlockActivitiesDayAction_triggered);
+	connect(timetableLockActivitiesEndStudentsDayAction, &QAction::triggered, this, &FetMainForm::timetableLockActivitiesEndStudentsDayAction_triggered);
+	connect(timetableUnlockActivitiesEndStudentsDayAction, &QAction::triggered, this, &FetMainForm::timetableUnlockActivitiesEndStudentsDayAction_triggered);
+	connect(timetableLockActivitiesWithASpecifiedActivityTagAction, &QAction::triggered, this, &FetMainForm::timetableLockActivitiesWithASpecifiedActivityTagAction_triggered);
+	connect(timetableUnlockActivitiesWithASpecifiedActivityTagAction, &QAction::triggered, this, &FetMainForm::timetableUnlockActivitiesWithASpecifiedActivityTagAction_triggered);
+	///
+	connect(timetableLockActivitiesWithAdvancedFilterAction, &QAction::triggered, this, &FetMainForm::timetableLockActivitiesWithAdvancedFilterAction_triggered);
+	connect(timetableUnlockActivitiesWithAdvancedFilterAction, &QAction::triggered, this, &FetMainForm::timetableUnlockActivitiesWithAdvancedFilterAction_triggered);
+
+	connect(timetableSaveTimetableAsAction, &QAction::triggered, this, &FetMainForm::timetableSaveTimetableAsAction_triggered);
+
+	connect(randomSeedAction, &QAction::triggered, this, &FetMainForm::randomSeedAction_triggered);
+	
+	connect(languageAction, &QAction::triggered, this, &FetMainForm::languageAction_triggered);
+	
+	connect(settingsRestoreDefaultsAction, &QAction::triggered, this, &FetMainForm::settingsRestoreDefaultsAction_triggered);
+	
+	connect(settingsTimetableHtmlLevelAction, &QAction::triggered, this, &FetMainForm::settingsTimetableHtmlLevelAction_triggered);
+	
+	connect(settingsDataToPrintInTimetablesAction, &QAction::triggered, this, &FetMainForm::settingsDataToPrintInTimetablesAction_triggered);
+	
+	connect(selectOutputDirAction, &QAction::triggered, this, &FetMainForm::selectOutputDirAction_triggered);
+	
+	connect(statisticsExportToDiskAction, &QAction::triggered, this, &FetMainForm::statisticsExportToDiskAction_triggered);
+	connect(statisticsPrintAction, &QAction::triggered, this, &FetMainForm::statisticsPrintAction_triggered);
+	
+	connect(settingsShowShortcutsOnMainWindowAction, &QAction::toggled, this, &FetMainForm::settingsShowShortcutsOnMainWindowAction_toggled);
+	connect(settingsFontIsUserSelectableAction, &QAction::toggled, this, &FetMainForm::settingsFontIsUserSelectableAction_toggled);
+	connect(settingsShowToolTipsForConstraintsWithTablesAction, &QAction::toggled, this, &FetMainForm::settingsShowToolTipsForConstraintsWithTablesAction_toggled);
+	
+	connect(settingsShowVirtualRoomsInTimetablesAction, &QAction::toggled, this, &FetMainForm::settingsShowVirtualRoomsInTimetablesAction_toggled);
+
+	//////confirmations
+	connect(settingsConfirmActivityPlanningAction, &QAction::toggled, this, &FetMainForm::settingsConfirmActivityPlanningAction_toggled);
+	connect(settingsConfirmSpreadActivitiesAction, &QAction::toggled, this, &FetMainForm::settingsConfirmSpreadActivitiesAction_toggled);
+	connect(settingsConfirmRemoveRedundantAction, &QAction::toggled, this, &FetMainForm::settingsConfirmRemoveRedundantAction_toggled);
+	connect(settingsConfirmSaveTimetableAction, &QAction::toggled, this, &FetMainForm::settingsConfirmSaveTimetableAction_toggled);
+	connect(settingsConfirmActivateDeactivateActivitiesConstraintsAction, &QAction::toggled, this, &FetMainForm::settingsConfirmActivateDeactivateActivitiesConstraintsAction_toggled);
+	//////
+
+	connect(settingsDivideTimetablesByDaysAction, &QAction::toggled, this, &FetMainForm::settingsDivideTimetablesByDaysAction_toggled);
+	connect(settingsDuplicateVerticalNamesAction, &QAction::toggled, this, &FetMainForm::settingsDuplicateVerticalNamesAction_toggled);
+	
+	connect(settingsOrderSubgroupsInTimetablesAction, &QAction::toggled, this, &FetMainForm::settingsOrderSubgroupsInTimetablesAction_toggled);
+	connect(settingsPrintDetailedTimetablesAction, &QAction::toggled, this, &FetMainForm::settingsPrintDetailedTimetablesAction_toggled);
+	connect(settingsPrintDetailedTeachersFreePeriodsTimetablesAction, &QAction::toggled, this, &FetMainForm::settingsPrintDetailedTeachersFreePeriodsTimetablesAction_toggled);
+	connect(settingsPrintNotAvailableSlotsAction, &QAction::toggled, this, &FetMainForm::settingsPrintNotAvailableSlotsAction_toggled);
+	connect(settingsPrintBreakSlotsAction, &QAction::toggled, this, &FetMainForm::settingsPrintBreakSlotsAction_toggled);
+	
+	connect(settingsPrintActivitiesWithSameStartingTimeAction, &QAction::toggled, this, &FetMainForm::settingsPrintActivitiesWithSameStartingTimeAction_toggled);
+	
+	connect(shortcutAllTimeConstraintsPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutAllTimeConstraintsPushButton_clicked);
+	connect(shortcutBreakTimeConstraintsPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutBreakTimeConstraintsPushButton_clicked);
+	connect(shortcutTeachersTimeConstraintsPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutTeachersTimeConstraintsPushButton_clicked);
+	connect(shortcutStudentsTimeConstraintsPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutStudentsTimeConstraintsPushButton_clicked);
+	connect(shortcutActivitiesTimeConstraintsPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutActivitiesTimeConstraintsPushButton_clicked);
+	connect(shortcutAdvancedTimeConstraintsPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutAdvancedTimeConstraintsPushButton_clicked);
+	
+	connect(shortcutAllSpaceConstraintsPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutAllSpaceConstraintsPushButton_clicked);
+	connect(shortcutRoomsSpaceConstraintsPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutRoomsSpaceConstraintsPushButton_clicked);
+	connect(shortcutTeachersSpaceConstraintsPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutTeachersSpaceConstraintsPushButton_clicked);
+	connect(shortcutStudentsSpaceConstraintsPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutStudentsSpaceConstraintsPushButton_clicked);
+	connect(shortcutSubjectsSpaceConstraintsPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutSubjectsSpaceConstraintsPushButton_clicked);
+	connect(shortcutActivityTagsSpaceConstraintsPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutActivityTagsSpaceConstraintsPushButton_clicked);
+	connect(shortcutSubjectsAndActivityTagsSpaceConstraintsPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutSubjectsAndActivityTagsSpaceConstraintsPushButton_clicked);
+	connect(shortcutActivitiesSpaceConstraintsPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutActivitiesSpaceConstraintsPushButton_clicked);
+	
+	connect(shortcutGeneratePushButton, &QPushButton::clicked, this, &FetMainForm::shortcutGeneratePushButton_clicked);
+	connect(shortcutGenerateMultiplePushButton, &QPushButton::clicked, this, &FetMainForm::shortcutGenerateMultiplePushButton_clicked);
+	connect(shortcutViewTeachersPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutViewTeachersPushButton_clicked);
+	connect(shortcutViewStudentsPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutViewStudentsPushButton_clicked);
+	connect(shortcutViewRoomsPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutViewRoomsPushButton_clicked);
+	connect(shortcutShowSoftConflictsPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutShowSoftConflictsPushButton_clicked);
+	//2014-07-01
+	connect(shortcutsTimetableAdvancedPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutsTimetableAdvancedPushButton_clicked);
+	connect(shortcutsTimetablePrintPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutsTimetablePrintPushButton_clicked);
+	connect(shortcutsTimetableLockingPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutsTimetableLockingPushButton_clicked);
+	
+	connect(shortcutBasicPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutBasicPushButton_clicked);
+	connect(shortcutSubjectsPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutSubjectsPushButton_clicked);
+	connect(shortcutActivityTagsPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutActivityTagsPushButton_clicked);
+	connect(shortcutTeachersPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutTeachersPushButton_clicked);
+	connect(shortcutStudentsPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutStudentsPushButton_clicked);
+	connect(shortcutActivitiesPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutActivitiesPushButton_clicked);
+	connect(shortcutSubactivitiesPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutSubactivitiesPushButton_clicked);
+	connect(shortcutDataAdvancedPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutDataAdvancedPushButton_clicked);
+	connect(shortcutDataSpacePushButton, &QPushButton::clicked, this, &FetMainForm::shortcutDataSpacePushButton_clicked);
+
+	connect(shortcutOpenPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutOpenPushButton_clicked);
+	connect(shortcutOpenRecentPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutOpenRecentPushButton_clicked);
+	connect(shortcutNewPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutNewPushButton_clicked);
+	connect(shortcutSavePushButton, &QPushButton::clicked, this, &FetMainForm::shortcutSavePushButton_clicked);
+	connect(shortcutSaveAsPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutSaveAsPushButton_clicked);
+
+	/*settingsShowShortcutsOnMainWindowAction_toggled();
+	settingsFontIsUserSelectableAction_toggled();
+	settingsShowToolTipsForConstraintsWithTablesAction_toggled();
+	
+	settingsShowVirtualRoomsInTimetablesAction_toggled();
+
+	//////confirmations
+	settingsConfirmActivityPlanningAction_toggled();
+	settingsConfirmSpreadActivitiesAction_toggled();
+	settingsConfirmRemoveRedundantAction_toggled();
+	settingsConfirmSaveTimetableAction_toggled();
+	settingsConfirmActivateDeactivateActivitiesConstraintsAction_toggled();
+	//////
+
+	settingsDivideTimetablesByDaysAction_toggled();
+	settingsDuplicateVerticalNamesAction_toggled();
+	
+	settingsOrderSubgroupsInTimetablesAction_toggled();
+	settingsPrintDetailedTimetablesAction_toggled();
+	settingsPrintDetailedTeachersFreePeriodsTimetablesAction_toggled();
+	settingsPrintNotAvailableSlotsAction_toggled();
+	settingsPrintBreakSlotsAction_toggled();
+	
+	settingsPrintActivitiesWithSameStartingTimeAction_toggled();*/
 }
 
 void FetMainForm::retranslateMode()
@@ -1756,279 +1982,279 @@ void FetMainForm::createActionsForConstraints()
 	dataTimeConstraintsActivitiesMinInATermAction = new QAction(this);
 	dataTimeConstraintsActivitiesOccupyMaxTermsAction = new QAction(this);
 
-	connect(dataTimeConstraintsActivitiesPreferredTimeSlotsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesPreferredTimeSlotsAction_triggered()));
-	connect(dataTimeConstraintsActivitiesSameStartingTimeAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesSameStartingTimeAction_triggered()));
-	connect(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction_triggered()));
-	connect(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction_triggered()));
-	connect(dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction_triggered()));
-	connect(dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction_triggered()));
-	connect(dataTimeConstraintsTeacherNotAvailableTimesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherNotAvailableTimesAction_triggered()));
-	connect(dataTimeConstraintsTeachersNotAvailableTimesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersNotAvailableTimesAction_triggered()));
-	connect(dataTimeConstraintsBasicCompulsoryTimeAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsBasicCompulsoryTimeAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetNotAvailableTimesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetNotAvailableTimesAction_triggered()));
-	connect(dataTimeConstraintsStudentsNotAvailableTimesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsNotAvailableTimesAction_triggered()));
-	connect(dataTimeConstraintsBreakTimesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsBreakTimesAction_triggered()));
-	connect(dataTimeConstraintsTeacherMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxDaysPerWeekAction_triggered()));
-	connect(dataTimeConstraintsTeachersMaxHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxHoursDailyAction_triggered()));
-	connect(dataTimeConstraintsActivityPreferredStartingTimeAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivityPreferredStartingTimeAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetMaxGapsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxGapsPerWeekAction_triggered()));
-	connect(dataTimeConstraintsStudentsMaxGapsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxGapsPerWeekAction_triggered()));
-	connect(dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction_triggered()));
-	connect(dataTimeConstraintsActivitiesNotOverlappingAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesNotOverlappingAction_triggered()));
-	connect(dataTimeConstraintsActivityTagsNotOverlappingAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivityTagsNotOverlappingAction_triggered()));
-	connect(dataTimeConstraintsMinDaysBetweenActivitiesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsMinDaysBetweenActivitiesAction_triggered()));
-	connect(dataTimeConstraintsMinHalfDaysBetweenActivitiesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsMinHalfDaysBetweenActivitiesAction_triggered()));
-	connect(dataSpaceConstraintsBasicCompulsorySpaceAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsBasicCompulsorySpaceAction_triggered()));
-	connect(dataSpaceConstraintsRoomNotAvailableTimesAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsRoomNotAvailableTimesAction_triggered()));
-	connect(dataSpaceConstraintsTeacherRoomNotAvailableTimesAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeacherRoomNotAvailableTimesAction_triggered()));
-	connect(dataSpaceConstraintsActivityPreferredRoomAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsActivityPreferredRoomAction_triggered()));
-	connect(dataTimeConstraintsActivitiesSameStartingHourAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesSameStartingHourAction_triggered()));
-	connect(dataSpaceConstraintsActivityPreferredRoomsAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsActivityPreferredRoomsAction_triggered()));
-	connect(dataSpaceConstraintsStudentsSetHomeRoomAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsSetHomeRoomAction_triggered()));
-	connect(dataSpaceConstraintsStudentsSetHomeRoomsAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsSetHomeRoomsAction_triggered()));
-	connect(dataTimeConstraintsTeachersMaxGapsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxGapsPerWeekAction_triggered()));
-	connect(dataTimeConstraintsTeacherMaxGapsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxGapsPerWeekAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction_triggered()));
-	connect(dataTimeConstraintsTeacherMaxHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxHoursDailyAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetMaxHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxHoursDailyAction_triggered()));
-	connect(dataTimeConstraintsStudentsMaxHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxHoursDailyAction_triggered()));
-	connect(dataTimeConstraintsStudentsMinHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMinHoursDailyAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetMinHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMinHoursDailyAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()));
-	connect(dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()));
-	connect(dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()));
-	connect(dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()));
+	connect(dataTimeConstraintsActivitiesPreferredTimeSlotsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesPreferredTimeSlotsAction_triggered);
+	connect(dataTimeConstraintsActivitiesSameStartingTimeAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesSameStartingTimeAction_triggered);
+	connect(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction_triggered);
+	connect(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction_triggered);
+	connect(dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction_triggered);
+	connect(dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction_triggered);
+	connect(dataTimeConstraintsTeacherNotAvailableTimesAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherNotAvailableTimesAction_triggered);
+	connect(dataTimeConstraintsTeachersNotAvailableTimesAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersNotAvailableTimesAction_triggered);
+	connect(dataTimeConstraintsBasicCompulsoryTimeAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsBasicCompulsoryTimeAction_triggered);
+	connect(dataTimeConstraintsStudentsSetNotAvailableTimesAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetNotAvailableTimesAction_triggered);
+	connect(dataTimeConstraintsStudentsNotAvailableTimesAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsNotAvailableTimesAction_triggered);
+	connect(dataTimeConstraintsBreakTimesAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsBreakTimesAction_triggered);
+	connect(dataTimeConstraintsTeacherMaxDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxDaysPerWeekAction_triggered);
+	connect(dataTimeConstraintsTeachersMaxHoursDailyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxHoursDailyAction_triggered);
+	connect(dataTimeConstraintsActivityPreferredStartingTimeAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivityPreferredStartingTimeAction_triggered);
+	connect(dataTimeConstraintsStudentsSetMaxGapsPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerWeekAction_triggered);
+	connect(dataTimeConstraintsStudentsMaxGapsPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMaxGapsPerWeekAction_triggered);
+	connect(dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction_triggered);
+	connect(dataTimeConstraintsActivitiesNotOverlappingAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesNotOverlappingAction_triggered);
+	connect(dataTimeConstraintsActivityTagsNotOverlappingAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivityTagsNotOverlappingAction_triggered);
+	connect(dataTimeConstraintsMinDaysBetweenActivitiesAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsMinDaysBetweenActivitiesAction_triggered);
+	connect(dataTimeConstraintsMinHalfDaysBetweenActivitiesAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsMinHalfDaysBetweenActivitiesAction_triggered);
+	connect(dataSpaceConstraintsBasicCompulsorySpaceAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsBasicCompulsorySpaceAction_triggered);
+	connect(dataSpaceConstraintsRoomNotAvailableTimesAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsRoomNotAvailableTimesAction_triggered);
+	connect(dataSpaceConstraintsTeacherRoomNotAvailableTimesAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsTeacherRoomNotAvailableTimesAction_triggered);
+	connect(dataSpaceConstraintsActivityPreferredRoomAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsActivityPreferredRoomAction_triggered);
+	connect(dataTimeConstraintsActivitiesSameStartingHourAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesSameStartingHourAction_triggered);
+	connect(dataSpaceConstraintsActivityPreferredRoomsAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsActivityPreferredRoomsAction_triggered);
+	connect(dataSpaceConstraintsStudentsSetHomeRoomAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsStudentsSetHomeRoomAction_triggered);
+	connect(dataSpaceConstraintsStudentsSetHomeRoomsAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsStudentsSetHomeRoomsAction_triggered);
+	connect(dataTimeConstraintsTeachersMaxGapsPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxGapsPerWeekAction_triggered);
+	connect(dataTimeConstraintsTeacherMaxGapsPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxGapsPerWeekAction_triggered);
+	connect(dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction_triggered);
+	connect(dataTimeConstraintsTeacherMaxHoursDailyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxHoursDailyAction_triggered);
+	connect(dataTimeConstraintsStudentsSetMaxHoursDailyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMaxHoursDailyAction_triggered);
+	connect(dataTimeConstraintsStudentsMaxHoursDailyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMaxHoursDailyAction_triggered);
+	connect(dataTimeConstraintsStudentsMinHoursDailyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMinHoursDailyAction_triggered);
+	connect(dataTimeConstraintsStudentsSetMinHoursDailyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMinHoursDailyAction_triggered);
+	connect(dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsAction_triggered);
+	connect(dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction_triggered);
+	connect(dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction_triggered);
+	connect(dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction_triggered);
 	//2021-12-15
-	connect(dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagAction_triggered()));
-	connect(dataTimeConstraintsStudentsMinGapsBetweenActivityTagAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMinGapsBetweenActivityTagAction_triggered()));
-	connect(dataTimeConstraintsTeacherMinGapsBetweenActivityTagAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinGapsBetweenActivityTagAction_triggered()));
-	connect(dataTimeConstraintsTeachersMinGapsBetweenActivityTagAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinGapsBetweenActivityTagAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagAction_triggered);
+	connect(dataTimeConstraintsStudentsMinGapsBetweenActivityTagAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMinGapsBetweenActivityTagAction_triggered);
+	connect(dataTimeConstraintsTeacherMinGapsBetweenActivityTagAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMinGapsBetweenActivityTagAction_triggered);
+	connect(dataTimeConstraintsTeachersMinGapsBetweenActivityTagAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMinGapsBetweenActivityTagAction_triggered);
 	//
-	connect(dataTimeConstraintsTwoActivitiesConsecutiveAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTwoActivitiesConsecutiveAction_triggered()));
-	connect(dataTimeConstraintsActivityEndsStudentsDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivityEndsStudentsDayAction_triggered()));
-	connect(dataTimeConstraintsActivityEndsTeachersDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivityEndsTeachersDayAction_triggered()));
+	connect(dataTimeConstraintsTwoActivitiesConsecutiveAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTwoActivitiesConsecutiveAction_triggered);
+	connect(dataTimeConstraintsActivityEndsStudentsDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivityEndsStudentsDayAction_triggered);
+	connect(dataTimeConstraintsActivityEndsTeachersDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivityEndsTeachersDayAction_triggered);
 
-	connect(dataTimeConstraintsActivityBeginsStudentsDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivityBeginsStudentsDayAction_triggered()));
-	connect(dataTimeConstraintsActivityBeginsTeachersDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivityBeginsTeachersDayAction_triggered()));
+	connect(dataTimeConstraintsActivityBeginsStudentsDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivityBeginsStudentsDayAction_triggered);
+	connect(dataTimeConstraintsActivityBeginsTeachersDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivityBeginsTeachersDayAction_triggered);
 
-	connect(dataTimeConstraintsTeachersMinHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinHoursDailyAction_triggered()));
-	connect(dataTimeConstraintsTeacherMinHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinHoursDailyAction_triggered()));
-	connect(dataTimeConstraintsTeachersMaxGapsPerDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxGapsPerDayAction_triggered()));
-	connect(dataTimeConstraintsTeacherMaxGapsPerDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxGapsPerDayAction_triggered()));
-	connect(dataTimeConstraintsTeachersMaxGapsPerMorningAndAfternoonAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxGapsPerMorningAndAfternoonAction_triggered()));
-	connect(dataTimeConstraintsTeacherMaxGapsPerMorningAndAfternoonAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxGapsPerMorningAndAfternoonAction_triggered()));
-	connect(dataTimeConstraintsTeacherMaxSpanPerDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxSpanPerDayAction_triggered()));
-	connect(dataTimeConstraintsTeachersMaxSpanPerDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxSpanPerDayAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetMaxSpanPerDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxSpanPerDayAction_triggered()));
-	connect(dataTimeConstraintsStudentsMaxSpanPerDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxSpanPerDayAction_triggered()));
-	connect(dataTimeConstraintsTeacherMinRestingHoursAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinRestingHoursAction_triggered()));
-	connect(dataTimeConstraintsTeachersMinRestingHoursAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinRestingHoursAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetMinRestingHoursAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMinRestingHoursAction_triggered()));
-	connect(dataTimeConstraintsStudentsMinRestingHoursAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMinRestingHoursAction_triggered()));
-	connect(dataSpaceConstraintsSubjectPreferredRoomAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsSubjectPreferredRoomAction_triggered()));
-	connect(dataSpaceConstraintsSubjectPreferredRoomsAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsSubjectPreferredRoomsAction_triggered()));
-	connect(dataSpaceConstraintsSubjectActivityTagPreferredRoomAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsSubjectActivityTagPreferredRoomAction_triggered()));
-	connect(dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction_triggered()));
-	connect(dataSpaceConstraintsTeacherHomeRoomAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeacherHomeRoomAction_triggered()));
-	connect(dataSpaceConstraintsTeacherHomeRoomsAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeacherHomeRoomsAction_triggered()));
-	connect(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction_triggered()));
-	connect(dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction_triggered()));
-	connect(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction_triggered()));
-	connect(dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction_triggered()));
-	connect(dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction_triggered()));
-	connect(dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction_triggered()));
-	connect(dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction_triggered()));
-	connect(dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction_triggered()));
-	connect(dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction_triggered()));
-	connect(dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction_triggered()));
-	connect(dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction_triggered()));
-	connect(dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction_triggered()));
-	connect(dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction_triggered()));
-	connect(dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction_triggered()));
-	connect(dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction_triggered()));
-	connect(dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction_triggered()));
-	connect(dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction_triggered()));
-	connect(dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction_triggered()));
-	connect(dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction_triggered()));
-	connect(dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction_triggered()));
-	connect(dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction_triggered()));
-	connect(dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction_triggered()));
-	connect(dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction_triggered()));
-	connect(dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction_triggered()));
-	connect(dataTimeConstraintsActivitiesSameStartingDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesSameStartingDayAction_triggered()));
-	connect(dataTimeConstraintsTwoActivitiesOrderedAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTwoActivitiesOrderedAction_triggered()));
-	connect(dataTimeConstraintsTwoSetsOfActivitiesOrderedAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTwoSetsOfActivitiesOrderedAction_triggered()));
-	connect(dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction_triggered()));
-	connect(dataTimeConstraintsTeachersMaxHoursContinuouslyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxHoursContinuouslyAction_triggered()));
-	connect(dataTimeConstraintsTeacherMaxHoursContinuouslyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxHoursContinuouslyAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction_triggered()));
-	connect(dataTimeConstraintsStudentsMaxHoursContinuouslyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxHoursContinuouslyAction_triggered()));
-	connect(dataTimeConstraintsActivitiesPreferredStartingTimesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesPreferredStartingTimesAction_triggered()));
-	connect(dataTimeConstraintsActivityPreferredTimeSlotsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivityPreferredTimeSlotsAction_triggered()));
-	connect(dataTimeConstraintsActivityPreferredStartingTimesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivityPreferredStartingTimesAction_triggered()));
-	connect(dataTimeConstraintsMinGapsBetweenActivitiesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsMinGapsBetweenActivitiesAction_triggered()));
-	connect(dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction_triggered()));
-	connect(dataTimeConstraintsSubactivitiesPreferredStartingTimesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsSubactivitiesPreferredStartingTimesAction_triggered()));
-	connect(dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction_triggered()));
-	connect(dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction_triggered()));
-	connect(dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction_triggered()));
-	connect(dataTimeConstraintsActivitiesEndStudentsDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesEndStudentsDayAction_triggered()));
-	connect(dataTimeConstraintsActivitiesEndTeachersDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesEndTeachersDayAction_triggered()));
+	connect(dataTimeConstraintsTeachersMinHoursDailyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMinHoursDailyAction_triggered);
+	connect(dataTimeConstraintsTeacherMinHoursDailyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMinHoursDailyAction_triggered);
+	connect(dataTimeConstraintsTeachersMaxGapsPerDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxGapsPerDayAction_triggered);
+	connect(dataTimeConstraintsTeacherMaxGapsPerDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxGapsPerDayAction_triggered);
+	connect(dataTimeConstraintsTeachersMaxGapsPerMorningAndAfternoonAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxGapsPerMorningAndAfternoonAction_triggered);
+	connect(dataTimeConstraintsTeacherMaxGapsPerMorningAndAfternoonAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxGapsPerMorningAndAfternoonAction_triggered);
+	connect(dataTimeConstraintsTeacherMaxSpanPerDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxSpanPerDayAction_triggered);
+	connect(dataTimeConstraintsTeachersMaxSpanPerDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxSpanPerDayAction_triggered);
+	connect(dataTimeConstraintsStudentsSetMaxSpanPerDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMaxSpanPerDayAction_triggered);
+	connect(dataTimeConstraintsStudentsMaxSpanPerDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMaxSpanPerDayAction_triggered);
+	connect(dataTimeConstraintsTeacherMinRestingHoursAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMinRestingHoursAction_triggered);
+	connect(dataTimeConstraintsTeachersMinRestingHoursAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMinRestingHoursAction_triggered);
+	connect(dataTimeConstraintsStudentsSetMinRestingHoursAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMinRestingHoursAction_triggered);
+	connect(dataTimeConstraintsStudentsMinRestingHoursAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMinRestingHoursAction_triggered);
+	connect(dataSpaceConstraintsSubjectPreferredRoomAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsSubjectPreferredRoomAction_triggered);
+	connect(dataSpaceConstraintsSubjectPreferredRoomsAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsSubjectPreferredRoomsAction_triggered);
+	connect(dataSpaceConstraintsSubjectActivityTagPreferredRoomAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsSubjectActivityTagPreferredRoomAction_triggered);
+	connect(dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction_triggered);
+	connect(dataSpaceConstraintsTeacherHomeRoomAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsTeacherHomeRoomAction_triggered);
+	connect(dataSpaceConstraintsTeacherHomeRoomsAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsTeacherHomeRoomsAction_triggered);
+	connect(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction_triggered);
+	connect(dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction_triggered);
+	connect(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction_triggered);
+	connect(dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction_triggered);
+	connect(dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction_triggered);
+	connect(dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction_triggered);
+	connect(dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction_triggered);
+	connect(dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction_triggered);
+	connect(dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction_triggered);
+	connect(dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction_triggered);
+	connect(dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction_triggered);
+	connect(dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction_triggered);
+	connect(dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction_triggered);
+	connect(dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction_triggered);
+	connect(dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction_triggered);
+	connect(dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction_triggered);
+	connect(dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction_triggered);
+	connect(dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction_triggered);
+	connect(dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction_triggered);
+	connect(dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction_triggered);
+	connect(dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction_triggered);
+	connect(dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction_triggered);
+	connect(dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction_triggered);
+	connect(dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction_triggered);
+	connect(dataTimeConstraintsActivitiesSameStartingDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesSameStartingDayAction_triggered);
+	connect(dataTimeConstraintsTwoActivitiesOrderedAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTwoActivitiesOrderedAction_triggered);
+	connect(dataTimeConstraintsTwoSetsOfActivitiesOrderedAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTwoSetsOfActivitiesOrderedAction_triggered);
+	connect(dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction_triggered);
+	connect(dataTimeConstraintsTeachersMaxHoursContinuouslyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxHoursContinuouslyAction_triggered);
+	connect(dataTimeConstraintsTeacherMaxHoursContinuouslyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxHoursContinuouslyAction_triggered);
+	connect(dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction_triggered);
+	connect(dataTimeConstraintsStudentsMaxHoursContinuouslyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMaxHoursContinuouslyAction_triggered);
+	connect(dataTimeConstraintsActivitiesPreferredStartingTimesAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesPreferredStartingTimesAction_triggered);
+	connect(dataTimeConstraintsActivityPreferredTimeSlotsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivityPreferredTimeSlotsAction_triggered);
+	connect(dataTimeConstraintsActivityPreferredStartingTimesAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivityPreferredStartingTimesAction_triggered);
+	connect(dataTimeConstraintsMinGapsBetweenActivitiesAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsMinGapsBetweenActivitiesAction_triggered);
+	connect(dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction_triggered);
+	connect(dataTimeConstraintsSubactivitiesPreferredStartingTimesAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsSubactivitiesPreferredStartingTimesAction_triggered);
+	connect(dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction_triggered);
+	connect(dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction_triggered);
+	connect(dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction_triggered);
+	connect(dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction_triggered);
+	connect(dataTimeConstraintsActivitiesEndStudentsDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesEndStudentsDayAction_triggered);
+	connect(dataTimeConstraintsActivitiesEndTeachersDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesEndTeachersDayAction_triggered);
 
-	connect(dataTimeConstraintsActivitiesBeginStudentsDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesBeginStudentsDayAction_triggered()));
-	connect(dataTimeConstraintsActivitiesBeginTeachersDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesBeginTeachersDayAction_triggered()));
+	connect(dataTimeConstraintsActivitiesBeginStudentsDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesBeginStudentsDayAction_triggered);
+	connect(dataTimeConstraintsActivitiesBeginTeachersDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesBeginTeachersDayAction_triggered);
 
-	connect(dataTimeConstraintsTwoActivitiesGroupedAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTwoActivitiesGroupedAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction_triggered()));
-	connect(dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction_triggered()));
-	connect(dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction_triggered()));
-	connect(dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction_triggered()));
-	connect(dataSpaceConstraintsActivityTagPreferredRoomAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsActivityTagPreferredRoomAction_triggered()));
-	connect(dataSpaceConstraintsActivityTagPreferredRoomsAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsActivityTagPreferredRoomsAction_triggered()));
-	connect(dataTimeConstraintsTeachersMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxDaysPerWeekAction_triggered()));
-	connect(dataTimeConstraintsThreeActivitiesGroupedAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsThreeActivitiesGroupedAction_triggered()));
-	connect(dataTimeConstraintsMaxDaysBetweenActivitiesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsMaxDaysBetweenActivitiesAction_triggered()));
-	connect(dataTimeConstraintsActivitiesMaxHourlySpanAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesMaxHourlySpanAction_triggered()));
-	connect(dataTimeConstraintsMaxHalfDaysBetweenActivitiesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsMaxHalfDaysBetweenActivitiesAction_triggered()));
-	connect(dataTimeConstraintsMaxTermsBetweenActivitiesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsMaxTermsBetweenActivitiesAction_triggered()));
-	connect(dataTimeConstraintsTeacherMinDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinDaysPerWeekAction_triggered()));
-	connect(dataTimeConstraintsTeachersMinDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinDaysPerWeekAction_triggered()));
-	connect(dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction_triggered()));
-	connect(dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction_triggered()));
-	connect(dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction_triggered()));
-	connect(dataTimeConstraintsTeacherActivityTagMinHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherActivityTagMinHoursDailyAction_triggered()));
-	connect(dataTimeConstraintsTeachersActivityTagMinHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersActivityTagMinHoursDailyAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction_triggered()));
-	connect(dataTimeConstraintsStudentsActivityTagMinHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsActivityTagMinHoursDailyAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetMaxGapsPerDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxGapsPerDayAction_triggered()));
-	connect(dataTimeConstraintsStudentsMaxGapsPerDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxGapsPerDayAction_triggered()));
-	connect(dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction_triggered()));
-	connect(dataSpaceConstraintsActivitiesSameRoomIfConsecutiveAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsActivitiesSameRoomIfConsecutiveAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxDaysPerWeekAction_triggered()));
-	connect(dataTimeConstraintsStudentsMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxDaysPerWeekAction_triggered()));
+	connect(dataTimeConstraintsTwoActivitiesGroupedAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTwoActivitiesGroupedAction_triggered);
+	connect(dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction_triggered);
+	connect(dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction_triggered);
+	connect(dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction_triggered);
+	connect(dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction_triggered);
+	connect(dataSpaceConstraintsActivityTagPreferredRoomAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsActivityTagPreferredRoomAction_triggered);
+	connect(dataSpaceConstraintsActivityTagPreferredRoomsAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsActivityTagPreferredRoomsAction_triggered);
+	connect(dataTimeConstraintsTeachersMaxDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxDaysPerWeekAction_triggered);
+	connect(dataTimeConstraintsThreeActivitiesGroupedAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsThreeActivitiesGroupedAction_triggered);
+	connect(dataTimeConstraintsMaxDaysBetweenActivitiesAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsMaxDaysBetweenActivitiesAction_triggered);
+	connect(dataTimeConstraintsActivitiesMaxHourlySpanAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesMaxHourlySpanAction_triggered);
+	connect(dataTimeConstraintsMaxHalfDaysBetweenActivitiesAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsMaxHalfDaysBetweenActivitiesAction_triggered);
+	connect(dataTimeConstraintsMaxTermsBetweenActivitiesAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsMaxTermsBetweenActivitiesAction_triggered);
+	connect(dataTimeConstraintsTeacherMinDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMinDaysPerWeekAction_triggered);
+	connect(dataTimeConstraintsTeachersMinDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMinDaysPerWeekAction_triggered);
+	connect(dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction_triggered);
+	connect(dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction_triggered);
+	connect(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction_triggered);
+	connect(dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction_triggered);
+	connect(dataTimeConstraintsTeacherActivityTagMinHoursDailyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherActivityTagMinHoursDailyAction_triggered);
+	connect(dataTimeConstraintsTeachersActivityTagMinHoursDailyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersActivityTagMinHoursDailyAction_triggered);
+	connect(dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction_triggered);
+	connect(dataTimeConstraintsStudentsActivityTagMinHoursDailyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsActivityTagMinHoursDailyAction_triggered);
+	connect(dataTimeConstraintsStudentsSetMaxGapsPerDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerDayAction_triggered);
+	connect(dataTimeConstraintsStudentsMaxGapsPerDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMaxGapsPerDayAction_triggered);
+	connect(dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction_triggered);
+	connect(dataSpaceConstraintsActivitiesSameRoomIfConsecutiveAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsActivitiesSameRoomIfConsecutiveAction_triggered);
+	connect(dataTimeConstraintsStudentsSetMaxDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMaxDaysPerWeekAction_triggered);
+	connect(dataTimeConstraintsStudentsMaxDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMaxDaysPerWeekAction_triggered);
 
 	//mornings-afternoons
-	connect(dataTimeConstraintsTeacherMaxRealDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxRealDaysPerWeekAction_triggered()));
-	connect(dataTimeConstraintsTeacherMaxMorningsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxMorningsPerWeekAction_triggered()));
-	connect(dataTimeConstraintsTeacherMaxTwoConsecutiveMorningsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxTwoConsecutiveMorningsAction_triggered()));
-	connect(dataTimeConstraintsTeachersMaxTwoConsecutiveMorningsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxTwoConsecutiveMorningsAction_triggered()));
-	connect(dataTimeConstraintsTeacherMaxTwoConsecutiveAfternoonsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxTwoConsecutiveAfternoonsAction_triggered()));
-	connect(dataTimeConstraintsTeachersMaxTwoConsecutiveAfternoonsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxTwoConsecutiveAfternoonsAction_triggered()));
-	connect(dataTimeConstraintsTeacherMaxAfternoonsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxAfternoonsPerWeekAction_triggered()));
-	connect(dataTimeConstraintsTeachersMaxHoursDailyRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxHoursDailyRealDaysAction_triggered()));
-	connect(dataTimeConstraintsTeachersAfternoonsEarlyMaxBeginningsAtSecondHourAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersAfternoonsEarlyMaxBeginningsAtSecondHourAction_triggered()));
-	connect(dataTimeConstraintsTeacherAfternoonsEarlyMaxBeginningsAtSecondHourAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherAfternoonsEarlyMaxBeginningsAtSecondHourAction_triggered()));
-	connect(dataTimeConstraintsStudentsAfternoonsEarlyMaxBeginningsAtSecondHourAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsAfternoonsEarlyMaxBeginningsAtSecondHourAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHourAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHourAction_triggered()));
+	connect(dataTimeConstraintsTeacherMaxRealDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxRealDaysPerWeekAction_triggered);
+	connect(dataTimeConstraintsTeacherMaxMorningsPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxMorningsPerWeekAction_triggered);
+	connect(dataTimeConstraintsTeacherMaxTwoConsecutiveMorningsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxTwoConsecutiveMorningsAction_triggered);
+	connect(dataTimeConstraintsTeachersMaxTwoConsecutiveMorningsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxTwoConsecutiveMorningsAction_triggered);
+	connect(dataTimeConstraintsTeacherMaxTwoConsecutiveAfternoonsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxTwoConsecutiveAfternoonsAction_triggered);
+	connect(dataTimeConstraintsTeachersMaxTwoConsecutiveAfternoonsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxTwoConsecutiveAfternoonsAction_triggered);
+	connect(dataTimeConstraintsTeacherMaxAfternoonsPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxAfternoonsPerWeekAction_triggered);
+	connect(dataTimeConstraintsTeachersMaxHoursDailyRealDaysAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxHoursDailyRealDaysAction_triggered);
+	connect(dataTimeConstraintsTeachersAfternoonsEarlyMaxBeginningsAtSecondHourAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersAfternoonsEarlyMaxBeginningsAtSecondHourAction_triggered);
+	connect(dataTimeConstraintsTeacherAfternoonsEarlyMaxBeginningsAtSecondHourAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherAfternoonsEarlyMaxBeginningsAtSecondHourAction_triggered);
+	connect(dataTimeConstraintsStudentsAfternoonsEarlyMaxBeginningsAtSecondHourAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsAfternoonsEarlyMaxBeginningsAtSecondHourAction_triggered);
+	connect(dataTimeConstraintsStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHourAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHourAction_triggered);
 
-	connect(dataTimeConstraintsTeachersMorningsEarlyMaxBeginningsAtSecondHourAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMorningsEarlyMaxBeginningsAtSecondHourAction_triggered()));
-	connect(dataTimeConstraintsTeacherMorningsEarlyMaxBeginningsAtSecondHourAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMorningsEarlyMaxBeginningsAtSecondHourAction_triggered()));
-	connect(dataTimeConstraintsStudentsMorningsEarlyMaxBeginningsAtSecondHourAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMorningsEarlyMaxBeginningsAtSecondHourAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetMorningsEarlyMaxBeginningsAtSecondHourAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMorningsEarlyMaxBeginningsAtSecondHourAction_triggered()));
+	connect(dataTimeConstraintsTeachersMorningsEarlyMaxBeginningsAtSecondHourAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMorningsEarlyMaxBeginningsAtSecondHourAction_triggered);
+	connect(dataTimeConstraintsTeacherMorningsEarlyMaxBeginningsAtSecondHourAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMorningsEarlyMaxBeginningsAtSecondHourAction_triggered);
+	connect(dataTimeConstraintsStudentsMorningsEarlyMaxBeginningsAtSecondHourAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMorningsEarlyMaxBeginningsAtSecondHourAction_triggered);
+	connect(dataTimeConstraintsStudentsSetMorningsEarlyMaxBeginningsAtSecondHourAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMorningsEarlyMaxBeginningsAtSecondHourAction_triggered);
 
-	connect(dataTimeConstraintsTeacherMaxHoursDailyRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxHoursDailyRealDaysAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetMaxHoursDailyRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxHoursDailyRealDaysAction_triggered()));
-	connect(dataTimeConstraintsStudentsMaxHoursDailyRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxHoursDailyRealDaysAction_triggered()));
-	connect(dataTimeConstraintsStudentsMinHoursPerMorningAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMinHoursPerMorningAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetMinHoursPerMorningAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMinHoursPerMorningAction_triggered()));
-	connect(dataTimeConstraintsTeachersMinHoursPerMorningAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinHoursPerMorningAction_triggered()));
+	connect(dataTimeConstraintsTeacherMaxHoursDailyRealDaysAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxHoursDailyRealDaysAction_triggered);
+	connect(dataTimeConstraintsStudentsSetMaxHoursDailyRealDaysAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMaxHoursDailyRealDaysAction_triggered);
+	connect(dataTimeConstraintsStudentsMaxHoursDailyRealDaysAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMaxHoursDailyRealDaysAction_triggered);
+	connect(dataTimeConstraintsStudentsMinHoursPerMorningAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMinHoursPerMorningAction_triggered);
+	connect(dataTimeConstraintsStudentsSetMinHoursPerMorningAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMinHoursPerMorningAction_triggered);
+	connect(dataTimeConstraintsTeachersMinHoursPerMorningAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMinHoursPerMorningAction_triggered);
 
 	//2022-09-10
-	connect(dataTimeConstraintsStudentsMinHoursPerAfternoonAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMinHoursPerAfternoonAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetMinHoursPerAfternoonAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMinHoursPerAfternoonAction_triggered()));
-	connect(dataTimeConstraintsTeachersMinHoursPerAfternoonAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinHoursPerAfternoonAction_triggered()));
-	connect(dataTimeConstraintsTeacherMinHoursPerAfternoonAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinHoursPerAfternoonAction_triggered()));
+	connect(dataTimeConstraintsStudentsMinHoursPerAfternoonAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMinHoursPerAfternoonAction_triggered);
+	connect(dataTimeConstraintsStudentsSetMinHoursPerAfternoonAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMinHoursPerAfternoonAction_triggered);
+	connect(dataTimeConstraintsTeachersMinHoursPerAfternoonAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMinHoursPerAfternoonAction_triggered);
+	connect(dataTimeConstraintsTeacherMinHoursPerAfternoonAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMinHoursPerAfternoonAction_triggered);
 
-	connect(dataTimeConstraintsTeachersMinHoursDailyRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinHoursDailyRealDaysAction_triggered()));
-	connect(dataTimeConstraintsTeacherMaxHoursPerAllAfternoonsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxHoursPerAllAfternoonsAction_triggered()));
-	connect(dataTimeConstraintsTeachersMaxHoursPerAllAfternoonsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxHoursPerAllAfternoonsAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetMaxHoursPerAllAfternoonsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxHoursPerAllAfternoonsAction_triggered()));
-	connect(dataTimeConstraintsStudentsMaxHoursPerAllAfternoonsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxHoursPerAllAfternoonsAction_triggered()));
-	connect(dataTimeConstraintsTeacherMinHoursPerMorningAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinHoursPerMorningAction_triggered()));
-	connect(dataTimeConstraintsTeacherMinHoursDailyRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinHoursDailyRealDaysAction_triggered()));
-	connect(dataTimeConstraintsTeachersMaxZeroGapsPerAfternoonAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxZeroGapsPerAfternoonAction_triggered()));
-	connect(dataTimeConstraintsTeacherMaxZeroGapsPerAfternoonAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxZeroGapsPerAfternoonAction_triggered()));
-	connect(dataTimeConstraintsTeacherMaxSpanPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxSpanPerRealDayAction_triggered()));
-	connect(dataTimeConstraintsTeachersMaxSpanPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxSpanPerRealDayAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetMaxSpanPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxSpanPerRealDayAction_triggered()));
-	connect(dataTimeConstraintsStudentsMaxSpanPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxSpanPerRealDayAction_triggered()));
-	connect(dataTimeConstraintsTeacherMinRestingHoursBetweenMorningAndAfternoonAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinRestingHoursBetweenMorningAndAfternoonAction_triggered()));
-	connect(dataTimeConstraintsTeachersMinRestingHoursBetweenMorningAndAfternoonAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinRestingHoursBetweenMorningAndAfternoonAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetMinRestingHoursBetweenMorningAndAfternoonAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMinRestingHoursBetweenMorningAndAfternoonAction_triggered()));
-	connect(dataTimeConstraintsStudentsMinRestingHoursBetweenMorningAndAfternoonAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMinRestingHoursBetweenMorningAndAfternoonAction_triggered()));
-	connect(dataTimeConstraintsTeacherMorningIntervalMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMorningIntervalMaxDaysPerWeekAction_triggered()));
-	connect(dataTimeConstraintsTeachersMorningIntervalMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMorningIntervalMaxDaysPerWeekAction_triggered()));
-	connect(dataTimeConstraintsTeacherAfternoonIntervalMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherAfternoonIntervalMaxDaysPerWeekAction_triggered()));
-	connect(dataTimeConstraintsTeachersAfternoonIntervalMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersAfternoonIntervalMaxDaysPerWeekAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetMorningIntervalMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMorningIntervalMaxDaysPerWeekAction_triggered()));
-	connect(dataTimeConstraintsStudentsMorningIntervalMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMorningIntervalMaxDaysPerWeekAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetAfternoonIntervalMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetAfternoonIntervalMaxDaysPerWeekAction_triggered()));
-	connect(dataTimeConstraintsStudentsAfternoonIntervalMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsAfternoonIntervalMaxDaysPerWeekAction_triggered()));
-	connect(dataTimeConstraintsTeachersMaxRealDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxRealDaysPerWeekAction_triggered()));
-	connect(dataTimeConstraintsTeachersMaxMorningsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxMorningsPerWeekAction_triggered()));
-	connect(dataTimeConstraintsTeachersMaxAfternoonsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxAfternoonsPerWeekAction_triggered()));
-	connect(dataTimeConstraintsTeacherMinRealDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinRealDaysPerWeekAction_triggered()));
-	connect(dataTimeConstraintsTeachersMinRealDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinRealDaysPerWeekAction_triggered()));
-	connect(dataTimeConstraintsTeacherMinMorningsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinMorningsPerWeekAction_triggered()));
-	connect(dataTimeConstraintsTeachersMinMorningsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinMorningsPerWeekAction_triggered()));
-	connect(dataTimeConstraintsTeacherMinAfternoonsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinAfternoonsPerWeekAction_triggered()));
-	connect(dataTimeConstraintsTeachersMinAfternoonsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinAfternoonsPerWeekAction_triggered()));
-	connect(dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysAction_triggered()));
-	connect(dataTimeConstraintsTeacherMaxTwoActivityTagsPerDayFromN1N2N3Action, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxTwoActivityTagsPerDayFromN1N2N3Action_triggered()));
-	connect(dataTimeConstraintsTeachersMaxTwoActivityTagsPerDayFromN1N2N3Action, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxTwoActivityTagsPerDayFromN1N2N3Action_triggered()));
-	connect(dataTimeConstraintsStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3Action, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3Action_triggered()));
-	connect(dataTimeConstraintsStudentsMaxTwoActivityTagsPerDayFromN1N2N3Action, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxTwoActivityTagsPerDayFromN1N2N3Action_triggered()));
-	connect(dataTimeConstraintsTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3Action, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3Action_triggered()));
-	connect(dataTimeConstraintsTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3Action, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3Action_triggered()));
-	connect(dataTimeConstraintsStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3Action, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3Action_triggered()));
-	connect(dataTimeConstraintsStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3Action, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3Action_triggered()));
-	connect(dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction_triggered()));
-	connect(dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetMaxGapsPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxGapsPerRealDayAction_triggered()));
-	connect(dataTimeConstraintsStudentsMaxGapsPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxGapsPerRealDayAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetMaxRealDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxRealDaysPerWeekAction_triggered()));
-	connect(dataTimeConstraintsStudentsMaxRealDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxRealDaysPerWeekAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetMaxMorningsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxMorningsPerWeekAction_triggered()));
-	connect(dataTimeConstraintsStudentsMaxMorningsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxMorningsPerWeekAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetMaxAfternoonsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxAfternoonsPerWeekAction_triggered()));
-	connect(dataTimeConstraintsStudentsMaxAfternoonsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxAfternoonsPerWeekAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetMinMorningsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMinMorningsPerWeekAction_triggered()));
-	connect(dataTimeConstraintsStudentsMinMorningsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMinMorningsPerWeekAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetMinAfternoonsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMinAfternoonsPerWeekAction_triggered()));
-	connect(dataTimeConstraintsStudentsMinAfternoonsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMinAfternoonsPerWeekAction_triggered()));
-	connect(dataTimeConstraintsTeacherMaxGapsPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxGapsPerRealDayAction_triggered()));
-	connect(dataTimeConstraintsTeachersMaxGapsPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxGapsPerRealDayAction_triggered()));
-	connect(dataTimeConstraintsStudentsSetMaxGapsPerWeekForRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxGapsPerWeekForRealDaysAction_triggered()));
-	connect(dataTimeConstraintsStudentsMaxGapsPerWeekForRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxGapsPerWeekForRealDaysAction_triggered()));
-	connect(dataTimeConstraintsTeacherMaxGapsPerWeekForRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxGapsPerWeekForRealDaysAction_triggered()));
-	connect(dataTimeConstraintsTeachersMaxGapsPerWeekForRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxGapsPerWeekForRealDaysAction_triggered()));
-	connect(dataSpaceConstraintsStudentsSetMaxRoomChangesPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsSetMaxRoomChangesPerRealDayAction_triggered()));
-	connect(dataSpaceConstraintsStudentsMaxRoomChangesPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsMaxRoomChangesPerRealDayAction_triggered()));
-	connect(dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayAction_triggered()));
-	connect(dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayAction_triggered()));
+	connect(dataTimeConstraintsTeachersMinHoursDailyRealDaysAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMinHoursDailyRealDaysAction_triggered);
+	connect(dataTimeConstraintsTeacherMaxHoursPerAllAfternoonsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxHoursPerAllAfternoonsAction_triggered);
+	connect(dataTimeConstraintsTeachersMaxHoursPerAllAfternoonsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxHoursPerAllAfternoonsAction_triggered);
+	connect(dataTimeConstraintsStudentsSetMaxHoursPerAllAfternoonsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMaxHoursPerAllAfternoonsAction_triggered);
+	connect(dataTimeConstraintsStudentsMaxHoursPerAllAfternoonsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMaxHoursPerAllAfternoonsAction_triggered);
+	connect(dataTimeConstraintsTeacherMinHoursPerMorningAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMinHoursPerMorningAction_triggered);
+	connect(dataTimeConstraintsTeacherMinHoursDailyRealDaysAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMinHoursDailyRealDaysAction_triggered);
+	connect(dataTimeConstraintsTeachersMaxZeroGapsPerAfternoonAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxZeroGapsPerAfternoonAction_triggered);
+	connect(dataTimeConstraintsTeacherMaxZeroGapsPerAfternoonAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxZeroGapsPerAfternoonAction_triggered);
+	connect(dataTimeConstraintsTeacherMaxSpanPerRealDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxSpanPerRealDayAction_triggered);
+	connect(dataTimeConstraintsTeachersMaxSpanPerRealDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxSpanPerRealDayAction_triggered);
+	connect(dataTimeConstraintsStudentsSetMaxSpanPerRealDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMaxSpanPerRealDayAction_triggered);
+	connect(dataTimeConstraintsStudentsMaxSpanPerRealDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMaxSpanPerRealDayAction_triggered);
+	connect(dataTimeConstraintsTeacherMinRestingHoursBetweenMorningAndAfternoonAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMinRestingHoursBetweenMorningAndAfternoonAction_triggered);
+	connect(dataTimeConstraintsTeachersMinRestingHoursBetweenMorningAndAfternoonAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMinRestingHoursBetweenMorningAndAfternoonAction_triggered);
+	connect(dataTimeConstraintsStudentsSetMinRestingHoursBetweenMorningAndAfternoonAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMinRestingHoursBetweenMorningAndAfternoonAction_triggered);
+	connect(dataTimeConstraintsStudentsMinRestingHoursBetweenMorningAndAfternoonAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMinRestingHoursBetweenMorningAndAfternoonAction_triggered);
+	connect(dataTimeConstraintsTeacherMorningIntervalMaxDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMorningIntervalMaxDaysPerWeekAction_triggered);
+	connect(dataTimeConstraintsTeachersMorningIntervalMaxDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMorningIntervalMaxDaysPerWeekAction_triggered);
+	connect(dataTimeConstraintsTeacherAfternoonIntervalMaxDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherAfternoonIntervalMaxDaysPerWeekAction_triggered);
+	connect(dataTimeConstraintsTeachersAfternoonIntervalMaxDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersAfternoonIntervalMaxDaysPerWeekAction_triggered);
+	connect(dataTimeConstraintsStudentsSetMorningIntervalMaxDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMorningIntervalMaxDaysPerWeekAction_triggered);
+	connect(dataTimeConstraintsStudentsMorningIntervalMaxDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMorningIntervalMaxDaysPerWeekAction_triggered);
+	connect(dataTimeConstraintsStudentsSetAfternoonIntervalMaxDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetAfternoonIntervalMaxDaysPerWeekAction_triggered);
+	connect(dataTimeConstraintsStudentsAfternoonIntervalMaxDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsAfternoonIntervalMaxDaysPerWeekAction_triggered);
+	connect(dataTimeConstraintsTeachersMaxRealDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxRealDaysPerWeekAction_triggered);
+	connect(dataTimeConstraintsTeachersMaxMorningsPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxMorningsPerWeekAction_triggered);
+	connect(dataTimeConstraintsTeachersMaxAfternoonsPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxAfternoonsPerWeekAction_triggered);
+	connect(dataTimeConstraintsTeacherMinRealDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMinRealDaysPerWeekAction_triggered);
+	connect(dataTimeConstraintsTeachersMinRealDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMinRealDaysPerWeekAction_triggered);
+	connect(dataTimeConstraintsTeacherMinMorningsPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMinMorningsPerWeekAction_triggered);
+	connect(dataTimeConstraintsTeachersMinMorningsPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMinMorningsPerWeekAction_triggered);
+	connect(dataTimeConstraintsTeacherMinAfternoonsPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMinAfternoonsPerWeekAction_triggered);
+	connect(dataTimeConstraintsTeachersMinAfternoonsPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMinAfternoonsPerWeekAction_triggered);
+	connect(dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysAction_triggered);
+	connect(dataTimeConstraintsTeacherMaxTwoActivityTagsPerDayFromN1N2N3Action, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxTwoActivityTagsPerDayFromN1N2N3Action_triggered);
+	connect(dataTimeConstraintsTeachersMaxTwoActivityTagsPerDayFromN1N2N3Action, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxTwoActivityTagsPerDayFromN1N2N3Action_triggered);
+	connect(dataTimeConstraintsStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3Action, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3Action_triggered);
+	connect(dataTimeConstraintsStudentsMaxTwoActivityTagsPerDayFromN1N2N3Action, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMaxTwoActivityTagsPerDayFromN1N2N3Action_triggered);
+	connect(dataTimeConstraintsTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3Action, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3Action_triggered);
+	connect(dataTimeConstraintsTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3Action, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3Action_triggered);
+	connect(dataTimeConstraintsStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3Action, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3Action_triggered);
+	connect(dataTimeConstraintsStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3Action, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3Action_triggered);
+	connect(dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction_triggered);
+	connect(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction_triggered);
+	connect(dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction_triggered);
+	connect(dataTimeConstraintsStudentsSetMaxGapsPerRealDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerRealDayAction_triggered);
+	connect(dataTimeConstraintsStudentsMaxGapsPerRealDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMaxGapsPerRealDayAction_triggered);
+	connect(dataTimeConstraintsStudentsSetMaxRealDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMaxRealDaysPerWeekAction_triggered);
+	connect(dataTimeConstraintsStudentsMaxRealDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMaxRealDaysPerWeekAction_triggered);
+	connect(dataTimeConstraintsStudentsSetMaxMorningsPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMaxMorningsPerWeekAction_triggered);
+	connect(dataTimeConstraintsStudentsMaxMorningsPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMaxMorningsPerWeekAction_triggered);
+	connect(dataTimeConstraintsStudentsSetMaxAfternoonsPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMaxAfternoonsPerWeekAction_triggered);
+	connect(dataTimeConstraintsStudentsMaxAfternoonsPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMaxAfternoonsPerWeekAction_triggered);
+	connect(dataTimeConstraintsStudentsSetMinMorningsPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMinMorningsPerWeekAction_triggered);
+	connect(dataTimeConstraintsStudentsMinMorningsPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMinMorningsPerWeekAction_triggered);
+	connect(dataTimeConstraintsStudentsSetMinAfternoonsPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMinAfternoonsPerWeekAction_triggered);
+	connect(dataTimeConstraintsStudentsMinAfternoonsPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMinAfternoonsPerWeekAction_triggered);
+	connect(dataTimeConstraintsTeacherMaxGapsPerRealDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxGapsPerRealDayAction_triggered);
+	connect(dataTimeConstraintsTeachersMaxGapsPerRealDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxGapsPerRealDayAction_triggered);
+	connect(dataTimeConstraintsStudentsSetMaxGapsPerWeekForRealDaysAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerWeekForRealDaysAction_triggered);
+	connect(dataTimeConstraintsStudentsMaxGapsPerWeekForRealDaysAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMaxGapsPerWeekForRealDaysAction_triggered);
+	connect(dataTimeConstraintsTeacherMaxGapsPerWeekForRealDaysAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxGapsPerWeekForRealDaysAction_triggered);
+	connect(dataTimeConstraintsTeachersMaxGapsPerWeekForRealDaysAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxGapsPerWeekForRealDaysAction_triggered);
+	connect(dataSpaceConstraintsStudentsSetMaxRoomChangesPerRealDayAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsStudentsSetMaxRoomChangesPerRealDayAction_triggered);
+	connect(dataSpaceConstraintsStudentsMaxRoomChangesPerRealDayAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsStudentsMaxRoomChangesPerRealDayAction_triggered);
+	connect(dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayAction_triggered);
+	connect(dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayAction_triggered);
 
-	connect(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerRealDayAction_triggered()));
-	connect(dataSpaceConstraintsStudentsMaxBuildingChangesPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsMaxBuildingChangesPerRealDayAction_triggered()));
-	connect(dataSpaceConstraintsTeacherMaxBuildingChangesPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeacherMaxBuildingChangesPerRealDayAction_triggered()));
-	connect(dataSpaceConstraintsTeachersMaxBuildingChangesPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeachersMaxBuildingChangesPerRealDayAction_triggered()));
+	connect(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerRealDayAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsStudentsSetMaxBuildingChangesPerRealDayAction_triggered);
+	connect(dataSpaceConstraintsStudentsMaxBuildingChangesPerRealDayAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsStudentsMaxBuildingChangesPerRealDayAction_triggered);
+	connect(dataSpaceConstraintsTeacherMaxBuildingChangesPerRealDayAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsTeacherMaxBuildingChangesPerRealDayAction_triggered);
+	connect(dataSpaceConstraintsTeachersMaxBuildingChangesPerRealDayAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsTeachersMaxBuildingChangesPerRealDayAction_triggered);
 
-	connect(dataTimeConstraintsTeacherMaxThreeConsecutiveDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxThreeConsecutiveDaysAction_triggered()));
-	connect(dataTimeConstraintsTeachersMaxThreeConsecutiveDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxThreeConsecutiveDaysAction_triggered()));
+	connect(dataTimeConstraintsTeacherMaxThreeConsecutiveDaysAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxThreeConsecutiveDaysAction_triggered);
+	connect(dataTimeConstraintsTeachersMaxThreeConsecutiveDaysAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxThreeConsecutiveDaysAction_triggered);
 
-	connect(dataTimeConstraintsStudentsSetMaxThreeConsecutiveDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxThreeConsecutiveDaysAction_triggered()));
-	connect(dataTimeConstraintsStudentsMaxThreeConsecutiveDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxThreeConsecutiveDaysAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetMaxThreeConsecutiveDaysAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMaxThreeConsecutiveDaysAction_triggered);
+	connect(dataTimeConstraintsStudentsMaxThreeConsecutiveDaysAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMaxThreeConsecutiveDaysAction_triggered);
 
 	//block-planning
-	connect(dataTimeConstraintsMaxGapsBetweenActivitiesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsMaxGapsBetweenActivitiesAction_triggered()));
-	connect(dataTimeConstraintsMaxTotalActivitiesFromSetInSelectedTimeSlotsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsMaxTotalActivitiesFromSetInSelectedTimeSlotsAction_triggered()));
+	connect(dataTimeConstraintsMaxGapsBetweenActivitiesAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsMaxGapsBetweenActivitiesAction_triggered);
+	connect(dataTimeConstraintsMaxTotalActivitiesFromSetInSelectedTimeSlotsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsMaxTotalActivitiesFromSetInSelectedTimeSlotsAction_triggered);
 
 	//terms
-	connect(dataTimeConstraintsActivitiesMaxInATermAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesMaxInATermAction_triggered()));
-	connect(dataTimeConstraintsActivitiesMinInATermAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesMinInATermAction_triggered()));
-	connect(dataTimeConstraintsActivitiesOccupyMaxTermsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesOccupyMaxTermsAction_triggered()));
+	connect(dataTimeConstraintsActivitiesMaxInATermAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesMaxInATermAction_triggered);
+	connect(dataTimeConstraintsActivitiesMinInATermAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesMinInATermAction_triggered);
+	connect(dataTimeConstraintsActivitiesOccupyMaxTermsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesOccupyMaxTermsAction_triggered);
 
 	retranslateConstraints();
 }
@@ -3477,9 +3703,9 @@ void FetMainForm::checkForUpdatesToggled(bool checked)
 		QMessageBox::StandardButton b=QMessageBox::question(this, tr("FET question"), s, QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
 
 		if(b!=QMessageBox::Yes){
-			disconnect(checkForUpdatesAction, SIGNAL(toggled(bool)), this, SLOT(checkForUpdatesToggled(bool)));
+			disconnect(checkForUpdatesAction, &QAction::toggled, this, &FetMainForm::checkForUpdatesToggled);
 			checkForUpdatesAction->setChecked(false);
-			connect(checkForUpdatesAction, SIGNAL(toggled(bool)), this, SLOT(checkForUpdatesToggled(bool)));
+			connect(checkForUpdatesAction, &QAction::toggled, this, &FetMainForm::checkForUpdatesToggled);
 			return;
 		}
 	}
@@ -3507,9 +3733,9 @@ void FetMainForm::showSubgroupsInComboBoxesToggled(bool checked)
 		QMessageBox::StandardButton b=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Ok);
 	
 		if(b!=QMessageBox::Ok){
-			disconnect(settingsShowSubgroupsInComboBoxesAction, SIGNAL(toggled(bool)), this, SLOT(showSubgroupsInComboBoxesToggled(bool)));
+			disconnect(settingsShowSubgroupsInComboBoxesAction, &QAction::toggled, this, &FetMainForm::showSubgroupsInComboBoxesToggled);
 			settingsShowSubgroupsInComboBoxesAction->setChecked(true);
-			connect(settingsShowSubgroupsInComboBoxesAction, SIGNAL(toggled(bool)), this, SLOT(showSubgroupsInComboBoxesToggled(bool)));
+			connect(settingsShowSubgroupsInComboBoxesAction, &QAction::toggled, this, &FetMainForm::showSubgroupsInComboBoxesToggled);
 			return;
 		}
 	}
@@ -3528,9 +3754,9 @@ void FetMainForm::showSubgroupsInActivityPlanningToggled(bool checked)
 		QMessageBox::StandardButton b=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Ok);
 	
 		if(b!=QMessageBox::Ok){
-			disconnect(settingsShowSubgroupsInActivityPlanningAction, SIGNAL(toggled(bool)), this, SLOT(showSubgroupsInActivityPlanningToggled(bool)));
+			disconnect(settingsShowSubgroupsInActivityPlanningAction, &QAction::toggled, this, &FetMainForm::showSubgroupsInActivityPlanningToggled);
 			settingsShowSubgroupsInActivityPlanningAction->setChecked(true);
-			connect(settingsShowSubgroupsInActivityPlanningAction, SIGNAL(toggled(bool)), this, SLOT(showSubgroupsInActivityPlanningToggled(bool)));
+			connect(settingsShowSubgroupsInActivityPlanningAction, &QAction::toggled, this, &FetMainForm::showSubgroupsInActivityPlanningToggled);
 			return;
 		}
 	}
@@ -3538,7 +3764,7 @@ void FetMainForm::showSubgroupsInActivityPlanningToggled(bool checked)
 	SHOW_SUBGROUPS_IN_ACTIVITY_PLANNING=checked;
 }
 
-void FetMainForm::on_settingsFontIsUserSelectableAction_toggled()
+void FetMainForm::settingsFontIsUserSelectableAction_toggled()
 {
 	fontIsUserSelectable=settingsFontIsUserSelectableAction->isChecked();
 	if(!fontIsUserSelectable){
@@ -3547,7 +3773,7 @@ void FetMainForm::on_settingsFontIsUserSelectableAction_toggled()
 	}
 }
 
-void FetMainForm::on_settingsFontAction_triggered()
+void FetMainForm::settingsFontAction_triggered()
 {
 	if(!fontIsUserSelectable){
 		QMessageBox::warning(this, tr("FET warning"), tr("You are not allowed to select the font, because the check box 'The font is user selectable' is unchecked."
@@ -3563,14 +3789,14 @@ void FetMainForm::on_settingsFontAction_triggered()
 	}
 }
 
-void FetMainForm::on_settingsAutosaveAction_triggered()
+void FetMainForm::settingsAutosaveAction_triggered()
 {
 	SettingsAutosaveForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
-void FetMainForm::on_modeOfficialAction_triggered()
+void FetMainForm::modeOfficialAction_triggered()
 {
 	if(!gt.rules.initialized){
 		modeOfficialAction->setChecked(currentMode==OFFICIAL);
@@ -3624,7 +3850,7 @@ void FetMainForm::on_modeOfficialAction_triggered()
 	 " %2 space constraints.").arg(removedTime).arg(removedSpace));
 }
 
-void FetMainForm::on_modeMorningsAfternoonsAction_triggered()
+void FetMainForm::modeMorningsAfternoonsAction_triggered()
 {
 	if(!gt.rules.initialized){
 		modeOfficialAction->setChecked(currentMode==OFFICIAL);
@@ -3681,7 +3907,7 @@ void FetMainForm::on_modeMorningsAfternoonsAction_triggered()
 	 " %2 space constraints.").arg(removedTime).arg(removedSpace));
 }
 
-void FetMainForm::on_modeBlockPlanningAction_triggered()
+void FetMainForm::modeBlockPlanningAction_triggered()
 {
 	if(!gt.rules.initialized){
 		modeOfficialAction->setChecked(currentMode==OFFICIAL);
@@ -3741,7 +3967,7 @@ void FetMainForm::on_modeBlockPlanningAction_triggered()
 	 " %2 space constraints.").arg(removedTime).arg(removedSpace));
 }
 
-void FetMainForm::on_modeTermsAction_triggered()
+void FetMainForm::modeTermsAction_triggered()
 {
 	if(!gt.rules.initialized){
 		modeOfficialAction->setChecked(currentMode==OFFICIAL);
@@ -3795,7 +4021,7 @@ void FetMainForm::on_modeTermsAction_triggered()
 	 " %2 space constraints.").arg(removedTime).arg(removedSpace));
 }
 
-void FetMainForm::on_dataTermsAction_triggered()
+void FetMainForm::dataTermsAction_triggered()
 {
 	assert(gt.rules.mode==TERMS);
 	
@@ -3886,8 +4112,8 @@ bool FetMainForm::getLastConfirmation(int newMode, int &ntm, int& nsm)
 	//lastMainLayout->addStretch();
 	lastMainLayout->addLayout(lastButtons);
 
-	QObject::connect(lastpb2, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(accept()));
-	QObject::connect(lastpb1, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(reject()));
+	connect(lastpb2, &QPushButton::clicked, &lastConfirmationDialog, &QDialog::accept);
+	connect(lastpb1, &QPushButton::clicked, &lastConfirmationDialog, &QDialog::reject);
 
 	lastpb2->setDefault(true);
 	lastpb2->setFocus();
@@ -3942,55 +4168,55 @@ bool FetMainForm::getLastConfirmation(int newMode, int &ntm, int& nsm)
 }
 
 /////////confirmations
-void FetMainForm::on_settingsConfirmActivityPlanningAction_toggled()
+void FetMainForm::settingsConfirmActivityPlanningAction_toggled()
 {
 	CONFIRM_ACTIVITY_PLANNING=settingsConfirmActivityPlanningAction->isChecked();
 }
 
-void FetMainForm::on_settingsConfirmSpreadActivitiesAction_toggled()
+void FetMainForm::settingsConfirmSpreadActivitiesAction_toggled()
 {
 	CONFIRM_SPREAD_ACTIVITIES=settingsConfirmSpreadActivitiesAction->isChecked();
 }
 
-void FetMainForm::on_settingsConfirmRemoveRedundantAction_toggled()
+void FetMainForm::settingsConfirmRemoveRedundantAction_toggled()
 {
 	CONFIRM_REMOVE_REDUNDANT=settingsConfirmRemoveRedundantAction->isChecked();
 }
 
-void FetMainForm::on_settingsConfirmSaveTimetableAction_toggled()
+void FetMainForm::settingsConfirmSaveTimetableAction_toggled()
 {
 	CONFIRM_SAVE_TIMETABLE=settingsConfirmSaveTimetableAction->isChecked();
 }
 
-void FetMainForm::on_settingsConfirmActivateDeactivateActivitiesConstraintsAction_toggled()
+void FetMainForm::settingsConfirmActivateDeactivateActivitiesConstraintsAction_toggled()
 {
 	CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS=settingsConfirmActivateDeactivateActivitiesConstraintsAction->isChecked();
 }
 
 /////////
 
-void FetMainForm::on_settingsShowShortcutsOnMainWindowAction_toggled()
+void FetMainForm::settingsShowShortcutsOnMainWindowAction_toggled()
 {
 	SHOW_SHORTCUTS_ON_MAIN_WINDOW=settingsShowShortcutsOnMainWindowAction->isChecked();
 	tabWidget->setVisible(SHOW_SHORTCUTS_ON_MAIN_WINDOW);
 }
 
-void FetMainForm::on_settingsShowToolTipsForConstraintsWithTablesAction_toggled()
+void FetMainForm::settingsShowToolTipsForConstraintsWithTablesAction_toggled()
 {
 	SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES=settingsShowToolTipsForConstraintsWithTablesAction->isChecked();
 }
 
-void FetMainForm::on_settingsDivideTimetablesByDaysAction_toggled()
+void FetMainForm::settingsDivideTimetablesByDaysAction_toggled()
 {
 	DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS=settingsDivideTimetablesByDaysAction->isChecked();
 }
 
-void FetMainForm::on_settingsDuplicateVerticalNamesAction_toggled()
+void FetMainForm::settingsDuplicateVerticalNamesAction_toggled()
 {
 	TIMETABLE_HTML_REPEAT_NAMES=settingsDuplicateVerticalNamesAction->isChecked();
 }
 
-void FetMainForm::on_timetablesToWriteOnDiskAction_triggered()
+void FetMainForm::timetablesToWriteOnDiskAction_triggered()
 {
 	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
@@ -4003,7 +4229,7 @@ void FetMainForm::on_timetablesToWriteOnDiskAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_studentsComboBoxesStyleAction_triggered()
+void FetMainForm::studentsComboBoxesStyleAction_triggered()
 {
 	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
@@ -4196,7 +4422,7 @@ FetMainForm::~FetMainForm()
 	delete shortcutTimetableAdvancedMenu;
 }
 
-void FetMainForm::on_fileQuitAction_triggered()
+void FetMainForm::fileQuitAction_triggered()
 {
 	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
@@ -4257,7 +4483,7 @@ void FetMainForm::updateRecentFileActions()
 	recentSeparatorAction->setVisible(!recentFiles.isEmpty());
 }
 
-void FetMainForm::on_fileClearRecentFilesListAction_triggered()
+void FetMainForm::fileClearRecentFilesListAction_triggered()
 {
 	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
@@ -4269,7 +4495,7 @@ void FetMainForm::on_fileClearRecentFilesListAction_triggered()
 	updateRecentFileActions();
 }
 
-void FetMainForm::on_fileNewAction_triggered()
+void FetMainForm::fileNewAction_triggered()
 {
 	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
@@ -4367,7 +4593,7 @@ void FetMainForm::openRecentFile()
 		openFile(action->data().toString());
 }
 
-void FetMainForm::on_fileOpenAction_triggered()
+void FetMainForm::fileOpenAction_triggered()
 {
 	openFile(QString());
 }
@@ -4512,7 +4738,7 @@ void FetMainForm::openFile(const QString& fileName)
 				assert(!generation_running);
 				gt.rules.modified=false;
 				statusBar()->showMessage(tr("Loading file failed...", "This is a message in the status bar, that opening the chosen file failed"), STATUS_BAR_MILLISECONDS);
-				on_fileNewAction_triggered();
+				fileNewAction_triggered();
 			}
 			
 			//this->setCursor(orig);
@@ -4627,12 +4853,12 @@ bool FetMainForm::fileSaveAs()
 	}
 }
 
-void FetMainForm::on_fileSaveAsAction_triggered()
+void FetMainForm::fileSaveAsAction_triggered()
 {
 	fileSaveAs();
 }
 
-void FetMainForm::on_settingsHistoryMemoryAction_triggered()
+void FetMainForm::settingsHistoryMemoryAction_triggered()
 {
 	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
@@ -4645,7 +4871,7 @@ void FetMainForm::on_settingsHistoryMemoryAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_settingsHistoryDiskAction_triggered()
+void FetMainForm::settingsHistoryDiskAction_triggered()
 {
 	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
@@ -4665,7 +4891,7 @@ void FetMainForm::on_settingsHistoryDiskAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_restoreDataStateAction_triggered()
+void FetMainForm::restoreDataStateAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -4691,7 +4917,7 @@ void FetMainForm::on_restoreDataStateAction_triggered()
 }
 
 // Start of code contributed by Volker Dirr
-void FetMainForm::on_fileImportCSVRoomsBuildingsAction_triggered()
+void FetMainForm::fileImportCSVRoomsBuildingsAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -4707,7 +4933,7 @@ void FetMainForm::on_fileImportCSVRoomsBuildingsAction_triggered()
 	Import::importCSVRoomsAndBuildings(this);
 }
 
-void FetMainForm::on_fileImportCSVSubjectsAction_triggered()
+void FetMainForm::fileImportCSVSubjectsAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -4723,7 +4949,7 @@ void FetMainForm::on_fileImportCSVSubjectsAction_triggered()
 	Import::importCSVSubjects(this);
 }
 
-void FetMainForm::on_fileImportCSVTeachersAction_triggered()
+void FetMainForm::fileImportCSVTeachersAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -4739,7 +4965,7 @@ void FetMainForm::on_fileImportCSVTeachersAction_triggered()
 	Import::importCSVTeachers(this);
 }
 
-void FetMainForm::on_fileImportCSVActivitiesAction_triggered()
+void FetMainForm::fileImportCSVActivitiesAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -4761,7 +4987,7 @@ void FetMainForm::on_fileImportCSVActivitiesAction_triggered()
 	//after the importing
 }
 
-void FetMainForm::on_fileImportCSVActivityTagsAction_triggered()
+void FetMainForm::fileImportCSVActivityTagsAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -4777,7 +5003,7 @@ void FetMainForm::on_fileImportCSVActivityTagsAction_triggered()
 	Import::importCSVActivityTags(this);
 }
 
-void FetMainForm::on_fileImportCSVYearsGroupsSubgroupsAction_triggered()
+void FetMainForm::fileImportCSVYearsGroupsSubgroupsAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -4793,7 +5019,7 @@ void FetMainForm::on_fileImportCSVYearsGroupsSubgroupsAction_triggered()
 	Import::importCSVStudents(this);
 }
 
-void FetMainForm::on_fileExportCSVAction_triggered()
+void FetMainForm::fileExportCSVAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -4810,7 +5036,7 @@ void FetMainForm::on_fileExportCSVAction_triggered()
 }
 // End of code contributed by Volker Dirr
 
-void FetMainForm::on_timetableSaveTimetableAsAction_triggered()
+void FetMainForm::timetableSaveTimetableAsAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -5150,12 +5376,12 @@ bool FetMainForm::fileSave()
 	}
 }
 
-void FetMainForm::on_fileSaveAction_triggered()
+void FetMainForm::fileSaveAction_triggered()
 {
 	fileSave();
 }
 
-void FetMainForm::on_dataInstitutionNameAction_triggered()
+void FetMainForm::dataInstitutionNameAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -5174,7 +5400,7 @@ void FetMainForm::on_dataInstitutionNameAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataCommentsAction_triggered()
+void FetMainForm::dataCommentsAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -5193,7 +5419,7 @@ void FetMainForm::on_dataCommentsAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataDaysAction_triggered()
+void FetMainForm::dataDaysAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -5212,7 +5438,7 @@ void FetMainForm::on_dataDaysAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataHoursAction_triggered()
+void FetMainForm::dataHoursAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -5231,7 +5457,7 @@ void FetMainForm::on_dataHoursAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTeachersAction_triggered()
+void FetMainForm::dataTeachersAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -5250,7 +5476,7 @@ void FetMainForm::on_dataTeachersAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTeachersStatisticsAction_triggered()
+void FetMainForm::dataTeachersStatisticsAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -5263,7 +5489,7 @@ void FetMainForm::on_dataTeachersStatisticsAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataSubjectsAction_triggered()
+void FetMainForm::dataSubjectsAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -5282,7 +5508,7 @@ void FetMainForm::on_dataSubjectsAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataSubjectsStatisticsAction_triggered()
+void FetMainForm::dataSubjectsStatisticsAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -5295,7 +5521,7 @@ void FetMainForm::on_dataSubjectsStatisticsAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataActivityTagsAction_triggered()
+void FetMainForm::dataActivityTagsAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -5314,7 +5540,7 @@ void FetMainForm::on_dataActivityTagsAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataYearsAction_triggered()
+void FetMainForm::dataYearsAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -5333,7 +5559,7 @@ void FetMainForm::on_dataYearsAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataGroupsAction_triggered()
+void FetMainForm::dataGroupsAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -5352,7 +5578,7 @@ void FetMainForm::on_dataGroupsAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataSubgroupsAction_triggered()
+void FetMainForm::dataSubgroupsAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -5371,7 +5597,7 @@ void FetMainForm::on_dataSubgroupsAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataStudentsStatisticsAction_triggered()
+void FetMainForm::dataStudentsStatisticsAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -5384,7 +5610,7 @@ void FetMainForm::on_dataStudentsStatisticsAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataActivitiesRoomsStatisticsAction_triggered()
+void FetMainForm::dataActivitiesRoomsStatisticsAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -5397,7 +5623,7 @@ void FetMainForm::on_dataActivitiesRoomsStatisticsAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTeachersSubjectsQualificationsStatisticsAction_triggered()
+void FetMainForm::dataTeachersSubjectsQualificationsStatisticsAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -5448,7 +5674,7 @@ void FetMainForm::on_dataTeachersSubjectsQualificationsStatisticsAction_triggere
 	LongTextMessageBox::largeInformation(this, tr("FET information"), s);
 }
 
-void FetMainForm::on_helpSettingsAction_triggered()
+void FetMainForm::helpSettingsAction_triggered()
 {
 	QString s;
 	
@@ -5554,7 +5780,7 @@ void FetMainForm::on_helpSettingsAction_triggered()
 	LongTextMessageBox::largeInformation(this, tr("FET information"), s);
 }
 
-void FetMainForm::on_dataHelpOnStatisticsAction_triggered()
+void FetMainForm::dataHelpOnStatisticsAction_triggered()
 {
 	QString s;
 	
@@ -5601,7 +5827,7 @@ void FetMainForm::on_dataHelpOnStatisticsAction_triggered()
 	LongTextMessageBox::largeInformation(this, tr("FET - information about statistics"), s);
 }
 
-void FetMainForm::on_dataActivitiesAction_triggered()
+void FetMainForm::dataActivitiesAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -5620,7 +5846,7 @@ void FetMainForm::on_dataActivitiesAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataSubactivitiesAction_triggered()
+void FetMainForm::dataSubactivitiesAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -5639,7 +5865,7 @@ void FetMainForm::on_dataSubactivitiesAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataRoomsAction_triggered()
+void FetMainForm::dataRoomsAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -5658,7 +5884,7 @@ void FetMainForm::on_dataRoomsAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataBuildingsAction_triggered()
+void FetMainForm::dataBuildingsAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -5677,7 +5903,7 @@ void FetMainForm::on_dataBuildingsAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataAllTimeConstraintsAction_triggered()
+void FetMainForm::dataAllTimeConstraintsAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -5696,7 +5922,7 @@ void FetMainForm::on_dataAllTimeConstraintsAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataAllSpaceConstraintsAction_triggered()
+void FetMainForm::dataAllSpaceConstraintsAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -7618,7 +7844,7 @@ void FetMainForm::dataTimeConstraintsActivitiesOccupyMaxTermsAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_groupActivitiesInInitialOrderAction_triggered()
+void FetMainForm::groupActivitiesInInitialOrderAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -10674,7 +10900,7 @@ void FetMainForm::dataTimeConstraintsStudentsMinHoursPerAfternoonAction_triggere
 	form.exec();
 }
 
-void FetMainForm::on_helpMoroccoAction_triggered()
+void FetMainForm::helpMoroccoAction_triggered()
 {
 	HelpMoroccoForm* form=new HelpMoroccoForm(this);
 	form->setWindowFlags(Qt::Window);
@@ -10684,7 +10910,7 @@ void FetMainForm::on_helpMoroccoAction_triggered()
 	form->show();
 }
 
-void FetMainForm::on_helpAlgeriaAction_triggered()
+void FetMainForm::helpAlgeriaAction_triggered()
 {
 	HelpAlgeriaForm* form=new HelpAlgeriaForm(this);
 	form->setWindowFlags(Qt::Window);
@@ -10694,7 +10920,7 @@ void FetMainForm::on_helpAlgeriaAction_triggered()
 	form->show();
 }
 
-void FetMainForm::on_helpAboutFETAction_triggered()
+void FetMainForm::helpAboutFETAction_triggered()
 {
 	HelpAboutForm* form=new HelpAboutForm(this);
 	form->setWindowFlags(Qt::Window);
@@ -10704,12 +10930,12 @@ void FetMainForm::on_helpAboutFETAction_triggered()
 	form->show();
 }
 
-void FetMainForm::on_helpAboutQtAction_triggered()
+void FetMainForm::helpAboutQtAction_triggered()
 {
 	QMessageBox::aboutQt(this);
 }
 
-void FetMainForm::on_helpAboutLibrariesAction_triggered()
+void FetMainForm::helpAboutLibrariesAction_triggered()
 {
 	HelpAboutLibrariesForm* form=new HelpAboutLibrariesForm(this);
 	form->setWindowFlags(Qt::Window);
@@ -10719,7 +10945,7 @@ void FetMainForm::on_helpAboutLibrariesAction_triggered()
 	form->show();
 }
 
-void FetMainForm::on_helpHomepageAction_triggered()
+void FetMainForm::helpHomepageAction_triggered()
 {
 	bool tds=QDesktopServices::openUrl(QUrl("https://lalescu.ro/liviu/fet/"));
 
@@ -10729,7 +10955,7 @@ void FetMainForm::on_helpHomepageAction_triggered()
 	}
 }
 
-void FetMainForm::on_helpContentsAction_triggered()
+void FetMainForm::helpContentsAction_triggered()
 {
 	bool tds=QDesktopServices::openUrl(QUrl("https://lalescu.ro/liviu/fet/doc/"));
 
@@ -10739,7 +10965,7 @@ void FetMainForm::on_helpContentsAction_triggered()
 	}
 }
 
-void FetMainForm::on_helpForumAction_triggered()
+void FetMainForm::helpForumAction_triggered()
 {
 	bool tds=QDesktopServices::openUrl(QUrl("https://lalescu.ro/liviu/fet/forum/"));
 
@@ -10749,7 +10975,7 @@ void FetMainForm::on_helpForumAction_triggered()
 	}
 }
 
-void FetMainForm::on_helpAddressesAction_triggered()
+void FetMainForm::helpAddressesAction_triggered()
 {
 	QString s="";
 	s+=tr("In case the Help/Online menus do not function, please write down these addresses and open them in an internet browser:");
@@ -10767,7 +10993,7 @@ void FetMainForm::on_helpAddressesAction_triggered()
 	LongTextMessageBox::largeInformation(this, tr("FET web addresses"), s);
 }
 
-void FetMainForm::on_helpBlockPlanningAction_triggered()
+void FetMainForm::helpBlockPlanningAction_triggered()
 {
 	HelpBlockPlanningForm* form=new HelpBlockPlanningForm(this);
 	form->setWindowFlags(Qt::Window);
@@ -10777,7 +11003,7 @@ void FetMainForm::on_helpBlockPlanningAction_triggered()
 	form->show();
 }
 
-void FetMainForm::on_helpTermsAction_triggered()
+void FetMainForm::helpTermsAction_triggered()
 {
 	HelpTermsForm* form=new HelpTermsForm(this);
 	form->setWindowFlags(Qt::Window);
@@ -10787,7 +11013,7 @@ void FetMainForm::on_helpTermsAction_triggered()
 	form->show();
 }
 
-void FetMainForm::on_helpFAQAction_triggered()
+void FetMainForm::helpFAQAction_triggered()
 {
 	HelpFaqForm* form=new HelpFaqForm(this);
 	form->setWindowFlags(Qt::Window);
@@ -10797,7 +11023,7 @@ void FetMainForm::on_helpFAQAction_triggered()
 	form->show();
 }
 
-void FetMainForm::on_helpTipsAction_triggered()
+void FetMainForm::helpTipsAction_triggered()
 {
 	HelpTipsForm* form=new HelpTipsForm(this);
 	form->setWindowFlags(Qt::Window);
@@ -10807,7 +11033,7 @@ void FetMainForm::on_helpTipsAction_triggered()
 	form->show();
 }
 
-void FetMainForm::on_helpInstructionsAction_triggered()
+void FetMainForm::helpInstructionsAction_triggered()
 {
 	HelpInstructionsForm* form=new HelpInstructionsForm(this);
 	form->setWindowFlags(Qt::Window);
@@ -10817,7 +11043,7 @@ void FetMainForm::on_helpInstructionsAction_triggered()
 	form->show();
 }
 
-void FetMainForm::on_timetableGenerateAction_triggered()
+void FetMainForm::timetableGenerateAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -10848,7 +11074,7 @@ void FetMainForm::on_timetableGenerateAction_triggered()
 //	LockUnlock::increaseCommunicationSpinBox();
 }
 
-void FetMainForm::on_timetableGenerateMultipleAction_triggered()
+void FetMainForm::timetableGenerateMultipleAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -10885,7 +11111,7 @@ void FetMainForm::on_timetableGenerateMultipleAction_triggered()
 //	LockUnlock::increaseCommunicationSpinBox();
 }
 
-void FetMainForm::on_timetableViewStudentsDaysHorizontalAction_triggered()
+void FetMainForm::timetableViewStudentsDaysHorizontalAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -10912,7 +11138,7 @@ void FetMainForm::on_timetableViewStudentsDaysHorizontalAction_triggered()
 	form->resizeRowsAfterShow();
 }
 
-void FetMainForm::on_timetableViewStudentsTimeHorizontalAction_triggered()
+void FetMainForm::timetableViewStudentsTimeHorizontalAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -10939,7 +11165,7 @@ void FetMainForm::on_timetableViewStudentsTimeHorizontalAction_triggered()
 	form->resizeRowsAfterShow();
 }
 
-void FetMainForm::on_timetableViewTeachersDaysHorizontalAction_triggered()
+void FetMainForm::timetableViewTeachersDaysHorizontalAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -10970,7 +11196,7 @@ void FetMainForm::on_timetableViewTeachersDaysHorizontalAction_triggered()
 	form->resizeRowsAfterShow();
 }
 
-void FetMainForm::on_timetableViewTeachersTimeHorizontalAction_triggered()
+void FetMainForm::timetableViewTeachersTimeHorizontalAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -11001,7 +11227,7 @@ void FetMainForm::on_timetableViewTeachersTimeHorizontalAction_triggered()
 	form->resizeRowsAfterShow();
 }
 
-void FetMainForm::on_timetableShowConflictsAction_triggered()
+void FetMainForm::timetableShowConflictsAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -11022,7 +11248,7 @@ void FetMainForm::on_timetableShowConflictsAction_triggered()
 	form->show();
 }
 
-void FetMainForm::on_timetableViewRoomsDaysHorizontalAction_triggered()
+void FetMainForm::timetableViewRoomsDaysHorizontalAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -11049,7 +11275,7 @@ void FetMainForm::on_timetableViewRoomsDaysHorizontalAction_triggered()
 	form->resizeRowsAfterShow();
 }
 
-void FetMainForm::on_timetableViewRoomsTimeHorizontalAction_triggered()
+void FetMainForm::timetableViewRoomsTimeHorizontalAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -11076,7 +11302,7 @@ void FetMainForm::on_timetableViewRoomsTimeHorizontalAction_triggered()
 	form->resizeRowsAfterShow();
 }
 
-void FetMainForm::on_timetablePrintAction_triggered()
+void FetMainForm::timetablePrintAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -11101,7 +11327,7 @@ void FetMainForm::on_timetablePrintAction_triggered()
 	StartTimetablePrint::startTimetablePrint(this);
 }
 
-void FetMainForm::on_statisticsPrintAction_triggered()
+void FetMainForm::statisticsPrintAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -11112,7 +11338,7 @@ void FetMainForm::on_statisticsPrintAction_triggered()
 	StartStatisticsPrint::startStatisticsPrint(this);
 }
 
-void FetMainForm::on_timetableLockAllActivitiesAction_triggered()
+void FetMainForm::timetableLockAllActivitiesAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -11128,7 +11354,7 @@ void FetMainForm::on_timetableLockAllActivitiesAction_triggered()
 	AdvancedLockUnlockForm::lockAll(this);
 }
 
-void FetMainForm::on_timetableUnlockAllActivitiesAction_triggered()
+void FetMainForm::timetableUnlockAllActivitiesAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -11149,7 +11375,7 @@ void FetMainForm::on_timetableUnlockAllActivitiesAction_triggered()
 	AdvancedLockUnlockForm::unlockAllWithoutTimetable(this);
 }
 
-void FetMainForm::on_timetableLockActivitiesDayAction_triggered()
+void FetMainForm::timetableLockActivitiesDayAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -11165,7 +11391,7 @@ void FetMainForm::on_timetableLockActivitiesDayAction_triggered()
 	AdvancedLockUnlockForm::lockDay(this);
 }
 
-void FetMainForm::on_timetableUnlockActivitiesDayAction_triggered()
+void FetMainForm::timetableUnlockActivitiesDayAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -11186,7 +11412,7 @@ void FetMainForm::on_timetableUnlockActivitiesDayAction_triggered()
 	AdvancedLockUnlockForm::unlockDayWithoutTimetable(this);
 }
 
-void FetMainForm::on_timetableLockActivitiesEndStudentsDayAction_triggered()
+void FetMainForm::timetableLockActivitiesEndStudentsDayAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -11202,7 +11428,7 @@ void FetMainForm::on_timetableLockActivitiesEndStudentsDayAction_triggered()
 	AdvancedLockUnlockForm::lockEndStudentsDay(this);
 }
 
-void FetMainForm::on_timetableUnlockActivitiesEndStudentsDayAction_triggered()
+void FetMainForm::timetableUnlockActivitiesEndStudentsDayAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -11218,7 +11444,7 @@ void FetMainForm::on_timetableUnlockActivitiesEndStudentsDayAction_triggered()
 	AdvancedLockUnlockForm::unlockEndStudentsDay(this);
 }
 
-void FetMainForm::on_timetableLockActivitiesWithASpecifiedActivityTagAction_triggered()
+void FetMainForm::timetableLockActivitiesWithASpecifiedActivityTagAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -11239,7 +11465,7 @@ void FetMainForm::on_timetableLockActivitiesWithASpecifiedActivityTagAction_trig
 	AdvancedLockUnlockForm::lockActivityTag(this);
 }
 
-void FetMainForm::on_timetableUnlockActivitiesWithASpecifiedActivityTagAction_triggered()
+void FetMainForm::timetableUnlockActivitiesWithASpecifiedActivityTagAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -11265,7 +11491,7 @@ void FetMainForm::on_timetableUnlockActivitiesWithASpecifiedActivityTagAction_tr
 	AdvancedLockUnlockForm::unlockActivityTagWithoutTimetable(this);
 }
 
-void FetMainForm::on_timetableLockActivitiesWithAdvancedFilterAction_triggered()
+void FetMainForm::timetableLockActivitiesWithAdvancedFilterAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -11281,7 +11507,7 @@ void FetMainForm::on_timetableLockActivitiesWithAdvancedFilterAction_triggered()
 	AdvancedLockUnlockForm::lockAdvancedFilter(this);
 }
 
-void FetMainForm::on_timetableUnlockActivitiesWithAdvancedFilterAction_triggered()
+void FetMainForm::timetableUnlockActivitiesWithAdvancedFilterAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -11302,7 +11528,7 @@ void FetMainForm::on_timetableUnlockActivitiesWithAdvancedFilterAction_triggered
 	AdvancedLockUnlockForm::unlockAdvancedFilterWithoutTimetable(this);
 }
 
-void FetMainForm::on_languageAction_triggered()
+void FetMainForm::languageAction_triggered()
 {
 	QDialog dialog(this);
 	dialog.setWindowTitle(tr("Please select FET language"));
@@ -11365,8 +11591,8 @@ void FetMainForm::on_languageAction_triggered()
 	taMainLayout->addStretch();
 	taMainLayout->addLayout(buttons);
 
-	QObject::connect(tapb2, SIGNAL(clicked()), &dialog, SLOT(accept()));
-	QObject::connect(tapb1, SIGNAL(clicked()), &dialog, SLOT(reject()));
+	connect(tapb2, &QPushButton::clicked, &dialog, &QDialog::accept);
+	connect(tapb1, &QPushButton::clicked, &dialog, &QDialog::reject);
 	
 	tapb2->setDefault(true);
 	tapb2->setFocus();
@@ -11416,7 +11642,7 @@ void FetMainForm::on_languageAction_triggered()
 	// tr("Please exit and restart FET to activate language change"));
 }
 
-void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
+void FetMainForm::settingsRestoreDefaultsAction_triggered()
 {
 	QString default_working_directory="examples";
 	QDir d2(default_working_directory);
@@ -11750,10 +11976,10 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES=false;
 	settingsShowToolTipsForConstraintsWithTablesAction->setChecked(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES);
 	
-	disconnect(settingsUseColorsAction, SIGNAL(toggled(bool)), this, SLOT(useColorsToggled(bool)));
+	disconnect(settingsUseColorsAction, &QAction::toggled, this, &FetMainForm::useColorsToggled);
 	USE_GUI_COLORS=false;
 	settingsUseColorsAction->setChecked(USE_GUI_COLORS);
-	connect(settingsUseColorsAction, SIGNAL(toggled(bool)), this, SLOT(useColorsToggled(bool)));
+	connect(settingsUseColorsAction, &QAction::toggled, this, &FetMainForm::useColorsToggled);
 	
 	SHOW_SUBGROUPS_IN_COMBO_BOXES=true;
 	settingsShowSubgroupsInComboBoxesAction->setChecked(SHOW_SUBGROUPS_IN_COMBO_BOXES);
@@ -11824,9 +12050,9 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	enableStudentsMaxGapsPerDayAction->setChecked(ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
 	
 	ENABLE_MAX_GAPS_PER_REAL_DAY=false;
-	disconnect(enableMaxGapsPerRealDayAction, SIGNAL(toggled(bool)), this, SLOT(enableMaxGapsPerRealDayToggled(bool)));
+	disconnect(enableMaxGapsPerRealDayAction, &QAction::toggled, this, &FetMainForm::enableMaxGapsPerRealDayToggled);
 	enableMaxGapsPerRealDayAction->setChecked(ENABLE_MAX_GAPS_PER_REAL_DAY);
-	connect(enableMaxGapsPerRealDayAction, SIGNAL(toggled(bool)), this, SLOT(enableMaxGapsPerRealDayToggled(bool)));
+	connect(enableMaxGapsPerRealDayAction, &QAction::toggled, this, &FetMainForm::enableMaxGapsPerRealDayToggled);
 
 	SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=true;
 	showWarningForNotPerfectConstraintsAction->setChecked(SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS);
@@ -11867,34 +12093,34 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	setEnabledIcon(groupActivitiesInInitialOrderAction, ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
 
 	ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=false;
-	disconnect(enableStudentsMinHoursDailyWithAllowEmptyDaysAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool)));
+	disconnect(enableStudentsMinHoursDailyWithAllowEmptyDaysAction, &QAction::toggled, this, &FetMainForm::enableStudentsMinHoursDailyWithAllowEmptyDaysToggled);
 	enableStudentsMinHoursDailyWithAllowEmptyDaysAction->setChecked(ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS);
-	connect(enableStudentsMinHoursDailyWithAllowEmptyDaysAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool)));
+	connect(enableStudentsMinHoursDailyWithAllowEmptyDaysAction, &QAction::toggled, this, &FetMainForm::enableStudentsMinHoursDailyWithAllowEmptyDaysToggled);
 
 	SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=true;
-	disconnect(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool)));
+	disconnect(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction, &QAction::toggled, this, &FetMainForm::showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled);
 	showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction->setChecked(SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS);
-	connect(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool)));
+	connect(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction, &QAction::toggled, this, &FetMainForm::showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled);
 
 	ENABLE_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS=false;
-	disconnect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
+	disconnect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, &QAction::toggled, this, &FetMainForm::enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled);
 	enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(ENABLE_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS);
-	connect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
+	connect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, &QAction::toggled, this, &FetMainForm::enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled);
 
 	SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS=true;
-	disconnect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
+	disconnect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, &QAction::toggled, this, &FetMainForm::showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled);
 	showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS);
-	connect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
+	connect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, &QAction::toggled, this, &FetMainForm::showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled);
 
 	ENABLE_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS=false;
-	disconnect(enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled(bool)));
+	disconnect(enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction, &QAction::toggled, this, &FetMainForm::enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled);
 	enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction->setChecked(ENABLE_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS);
-	connect(enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled(bool)));
+	connect(enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction, &QAction::toggled, this, &FetMainForm::enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled);
 
 	SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS=true;
-	disconnect(showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled(bool)));
+	disconnect(showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction, &QAction::toggled, this, &FetMainForm::showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled);
 	showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction->setChecked(SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS);
-	connect(showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled(bool)));
+	connect(showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction, &QAction::toggled, this, &FetMainForm::showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled);
 
 	///////////
 	
@@ -12033,7 +12259,7 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 		LockUnlock::increaseCommunicationSpinBox(); //for GUI colors in timetables
 }
 
-void FetMainForm::on_settingsTimetableHtmlLevelAction_triggered()
+void FetMainForm::settingsTimetableHtmlLevelAction_triggered()
 {
 	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
@@ -12046,7 +12272,7 @@ void FetMainForm::on_settingsTimetableHtmlLevelAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_settingsDataToPrintInTimetablesAction_triggered()
+void FetMainForm::settingsDataToPrintInTimetablesAction_triggered()
 {
 	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
@@ -12059,49 +12285,49 @@ void FetMainForm::on_settingsDataToPrintInTimetablesAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_settingsShowVirtualRoomsInTimetablesAction_toggled()
+void FetMainForm::settingsShowVirtualRoomsInTimetablesAction_toggled()
 {
 	SHOW_VIRTUAL_ROOMS_IN_TIMETABLES=settingsShowVirtualRoomsInTimetablesAction->isChecked();
 }
 
-void FetMainForm::on_settingsOrderSubgroupsInTimetablesAction_toggled()
+void FetMainForm::settingsOrderSubgroupsInTimetablesAction_toggled()
 {
 	TIMETABLES_SUBGROUPS_SORTED=settingsOrderSubgroupsInTimetablesAction->isChecked();
 }
 
-void FetMainForm::on_settingsPrintDetailedTimetablesAction_toggled()
+void FetMainForm::settingsPrintDetailedTimetablesAction_toggled()
 {
 	PRINT_DETAILED_HTML_TIMETABLES=settingsPrintDetailedTimetablesAction->isChecked();
 }
 
-void FetMainForm::on_settingsPrintDetailedTeachersFreePeriodsTimetablesAction_toggled()
+void FetMainForm::settingsPrintDetailedTeachersFreePeriodsTimetablesAction_toggled()
 {
 	PRINT_DETAILED_HTML_TEACHERS_FREE_PERIODS=settingsPrintDetailedTeachersFreePeriodsTimetablesAction->isChecked();
 }
 
-void FetMainForm::on_settingsPrintNotAvailableSlotsAction_toggled()
+void FetMainForm::settingsPrintNotAvailableSlotsAction_toggled()
 {
 	PRINT_NOT_AVAILABLE_TIME_SLOTS=settingsPrintNotAvailableSlotsAction->isChecked();
 }
 
-void FetMainForm::on_settingsPrintBreakSlotsAction_toggled()
+void FetMainForm::settingsPrintBreakSlotsAction_toggled()
 {
 	PRINT_BREAK_TIME_SLOTS=settingsPrintBreakSlotsAction->isChecked();
 }
 
-void FetMainForm::on_settingsPrintActivitiesWithSameStartingTimeAction_toggled()
+void FetMainForm::settingsPrintActivitiesWithSameStartingTimeAction_toggled()
 {
 	PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME=settingsPrintActivitiesWithSameStartingTimeAction->isChecked();
 }
 
-void FetMainForm::on_settingsCommandAfterFinishingAction_triggered()
+void FetMainForm::settingsCommandAfterFinishingAction_triggered()
 {
 	NotificationCommandForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
-void FetMainForm::on_activityPlanningAction_triggered()
+void FetMainForm::activityPlanningAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -12134,7 +12360,7 @@ void FetMainForm::on_activityPlanningAction_triggered()
 	}
 }
 
-void FetMainForm::on_spreadActivitiesAction_triggered()
+void FetMainForm::spreadActivitiesAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -12265,7 +12491,7 @@ void FetMainForm::on_spreadActivitiesAction_triggered()
 	}
 }
 
-void FetMainForm::on_statisticsExportToDiskAction_triggered()
+void FetMainForm::statisticsExportToDiskAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -12282,7 +12508,7 @@ void FetMainForm::on_statisticsExportToDiskAction_triggered()
 	StatisticsExport::exportStatistics(this);
 }
 
-void FetMainForm::on_removeRedundantConstraintsAction_triggered()
+void FetMainForm::removeRedundantConstraintsAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -12319,7 +12545,7 @@ void FetMainForm::on_removeRedundantConstraintsAction_triggered()
 	}
 }
 
-void FetMainForm::on_selectOutputDirAction_triggered()
+void FetMainForm::selectOutputDirAction_triggered()
 {
 	QString od;
 	
@@ -12347,7 +12573,7 @@ void FetMainForm::on_selectOutputDirAction_triggered()
 	}
 }
 
-void FetMainForm::on_randomSeedAction_triggered()
+void FetMainForm::randomSeedAction_triggered()
 {
 	RandomSeedForm dialog(this);
 	
@@ -12390,9 +12616,9 @@ void FetMainForm::enableActivityTagMaxHoursDailyToggled(bool checked)
 		QMessageBox::StandardButton b=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Ok);
 	
 		if(b!=QMessageBox::Ok){
-			disconnect(enableActivityTagMaxHoursDailyAction, SIGNAL(toggled(bool)), this, SLOT(enableActivityTagMaxHoursDailyToggled(bool)));
+			disconnect(enableActivityTagMaxHoursDailyAction, &QAction::toggled, this, &FetMainForm::enableActivityTagMaxHoursDailyToggled);
 			enableActivityTagMaxHoursDailyAction->setChecked(false);
-			connect(enableActivityTagMaxHoursDailyAction, SIGNAL(toggled(bool)), this, SLOT(enableActivityTagMaxHoursDailyToggled(bool)));
+			connect(enableActivityTagMaxHoursDailyAction, &QAction::toggled, this, &FetMainForm::enableActivityTagMaxHoursDailyToggled);
 			return;
 		}
 	}
@@ -12425,9 +12651,9 @@ void FetMainForm::enableActivityTagMinHoursDailyToggled(bool checked)
 		QMessageBox::StandardButton b=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Ok);
 	
 		if(b!=QMessageBox::Ok){
-			disconnect(enableActivityTagMinHoursDailyAction, SIGNAL(toggled(bool)), this, SLOT(enableActivityTagMinHoursDailyToggled(bool)));
+			disconnect(enableActivityTagMinHoursDailyAction, &QAction::toggled, this, &FetMainForm::enableActivityTagMinHoursDailyToggled);
 			enableActivityTagMinHoursDailyAction->setChecked(false);
-			connect(enableActivityTagMinHoursDailyAction, SIGNAL(toggled(bool)), this, SLOT(enableActivityTagMinHoursDailyToggled(bool)));
+			connect(enableActivityTagMinHoursDailyAction, &QAction::toggled, this, &FetMainForm::enableActivityTagMinHoursDailyToggled);
 			return;
 		}
 	}
@@ -12455,9 +12681,9 @@ void FetMainForm::enableStudentsMaxGapsPerDayToggled(bool checked)
 		QMessageBox::StandardButton b=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Ok);
 	
 		if(b!=QMessageBox::Ok){
-			disconnect(enableStudentsMaxGapsPerDayAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMaxGapsPerDayToggled(bool)));
+			disconnect(enableStudentsMaxGapsPerDayAction, &QAction::toggled, this, &FetMainForm::enableStudentsMaxGapsPerDayToggled);
 			enableStudentsMaxGapsPerDayAction->setChecked(false);
-			connect(enableStudentsMaxGapsPerDayAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMaxGapsPerDayToggled(bool)));
+			connect(enableStudentsMaxGapsPerDayAction, &QAction::toggled, this, &FetMainForm::enableStudentsMaxGapsPerDayToggled);
 			return;
 		}
 	}
@@ -12484,9 +12710,9 @@ void FetMainForm::enableMaxGapsPerRealDayToggled(bool checked)
 		QMessageBox::StandardButton b=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Ok);
 
 		if(b!=QMessageBox::Ok){
-			disconnect(enableMaxGapsPerRealDayAction, SIGNAL(toggled(bool)), this, SLOT(enableMaxGapsPerRealDayToggled(bool)));
+			disconnect(enableMaxGapsPerRealDayAction, &QAction::toggled, this, &FetMainForm::enableMaxGapsPerRealDayToggled);
 			enableMaxGapsPerRealDayAction->setChecked(false);
-			connect(enableMaxGapsPerRealDayAction, SIGNAL(toggled(bool)), this, SLOT(enableMaxGapsPerRealDayToggled(bool)));
+			connect(enableMaxGapsPerRealDayAction, &QAction::toggled, this, &FetMainForm::enableMaxGapsPerRealDayToggled);
 			return;
 		}
 	}
@@ -12516,9 +12742,9 @@ void FetMainForm::showWarningForSubgroupsWithTheSameActivitiesToggled(bool check
 		QMessageBox::StandardButton b=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Yes);
 	
 		if(b!=QMessageBox::Yes){
-			disconnect(showWarningForSubgroupsWithTheSameActivitiesAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForSubgroupsWithTheSameActivitiesToggled(bool)));
+			disconnect(showWarningForSubgroupsWithTheSameActivitiesAction, &QAction::toggled, this, &FetMainForm::showWarningForSubgroupsWithTheSameActivitiesToggled);
 			showWarningForSubgroupsWithTheSameActivitiesAction->setChecked(true);
-			connect(showWarningForSubgroupsWithTheSameActivitiesAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForSubgroupsWithTheSameActivitiesToggled(bool)));
+			connect(showWarningForSubgroupsWithTheSameActivitiesAction, &QAction::toggled, this, &FetMainForm::showWarningForSubgroupsWithTheSameActivitiesToggled);
 			return;
 		}
 	}
@@ -12538,9 +12764,9 @@ void FetMainForm::showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoo
 		QMessageBox::StandardButton b=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Yes);
 	
 		if(b!=QMessageBox::Yes){
-			disconnect(showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsToggled(bool)));
+			disconnect(showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction, &QAction::toggled, this, &FetMainForm::showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsToggled);
 			showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction->setChecked(true);
-			connect(showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsToggled(bool)));
+			connect(showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction, &QAction::toggled, this, &FetMainForm::showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsToggled);
 			return;
 		}
 	}
@@ -12560,9 +12786,9 @@ void FetMainForm::showWarningForMaxHoursDailyWithUnder100WeightToggled(bool chec
 		QMessageBox::StandardButton b=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Yes);
 	
 		if(b!=QMessageBox::Yes){
-			disconnect(showWarningForMaxHoursDailyWithUnder100WeightAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForMaxHoursDailyWithUnder100WeightToggled(bool)));
+			disconnect(showWarningForMaxHoursDailyWithUnder100WeightAction, &QAction::toggled, this, &FetMainForm::showWarningForMaxHoursDailyWithUnder100WeightToggled);
 			showWarningForMaxHoursDailyWithUnder100WeightAction->setChecked(true);
-			connect(showWarningForMaxHoursDailyWithUnder100WeightAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForMaxHoursDailyWithUnder100WeightToggled(bool)));
+			connect(showWarningForMaxHoursDailyWithUnder100WeightAction, &QAction::toggled, this, &FetMainForm::showWarningForMaxHoursDailyWithUnder100WeightToggled);
 			return;
 		}
 	}
@@ -12582,9 +12808,9 @@ void FetMainForm::showWarningForNotPerfectConstraintsToggled(bool checked)
 		QMessageBox::StandardButton b=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Yes);
 	
 		if(b!=QMessageBox::Yes){
-			disconnect(showWarningForNotPerfectConstraintsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForNotPerfectConstraintsToggled(bool)));
+			disconnect(showWarningForNotPerfectConstraintsAction, &QAction::toggled, this, &FetMainForm::showWarningForNotPerfectConstraintsToggled);
 			showWarningForNotPerfectConstraintsAction->setChecked(true);
-			connect(showWarningForNotPerfectConstraintsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForNotPerfectConstraintsToggled(bool)));
+			connect(showWarningForNotPerfectConstraintsAction, &QAction::toggled, this, &FetMainForm::showWarningForNotPerfectConstraintsToggled);
 			return;
 		}
 	}
@@ -12610,9 +12836,9 @@ void FetMainForm::enableStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool chec
 		QMessageBox::StandardButton b=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Ok);
 	
 		if(b!=QMessageBox::Ok){
-			disconnect(enableStudentsMinHoursDailyWithAllowEmptyDaysAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool)));
+			disconnect(enableStudentsMinHoursDailyWithAllowEmptyDaysAction, &QAction::toggled, this, &FetMainForm::enableStudentsMinHoursDailyWithAllowEmptyDaysToggled);
 			enableStudentsMinHoursDailyWithAllowEmptyDaysAction->setChecked(false);
-			connect(enableStudentsMinHoursDailyWithAllowEmptyDaysAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool)));
+			connect(enableStudentsMinHoursDailyWithAllowEmptyDaysAction, &QAction::toggled, this, &FetMainForm::enableStudentsMinHoursDailyWithAllowEmptyDaysToggled);
 			return;
 		}
 	}
@@ -12633,9 +12859,9 @@ void FetMainForm::showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled(b
 		QMessageBox::StandardButton b=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Yes);
 	
 		if(b!=QMessageBox::Yes){
-			disconnect(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool)));
+			disconnect(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction, &QAction::toggled, this, &FetMainForm::showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled);
 			showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction->setChecked(true);
-			connect(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool)));
+			connect(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction, &QAction::toggled, this, &FetMainForm::showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled);
 			return;
 		}
 	}
@@ -12651,9 +12877,9 @@ void FetMainForm::enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(
 
 	/*QMessageBox::information(this, tr("FET information"), tr("This option must remain selected in the custom FET version MA"));
 
-	disconnect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
+	disconnect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIG NAL(toggled(bool)), this, SL OT(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
 	enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(true);
-	connect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));*/
+	connect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIG NAL(toggled(bool)), this, SL OT(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));*/
 
 	return;
 }
@@ -12666,9 +12892,9 @@ void FetMainForm::showWarningForStudentsMinHoursPerMorningWithAllowEmptyMornings
 
 	/*QMessageBox::information(this, tr("FET information"), tr("This option must remain unselected in the custom FET version MA"));
 
-	disconnect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
+	disconnect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIG NAL(toggled(bool)), this, SL OT(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
 	showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(false);
-	connect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));*/
+	connect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIG NAL(toggled(bool)), this, SL OT(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));*/
 
 	return;
 }
@@ -12681,9 +12907,9 @@ void FetMainForm::enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsTogg
 
 	/*QMessageBox::information(this, tr("FET information"), tr("This option must remain selected in the custom FET version MA"));
 
-	disconnect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
+	disconnect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIG NAL(toggled(bool)), this, SL OT(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
 	enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(true);
-	connect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));*/
+	connect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIG NAL(toggled(bool)), this, SL OT(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));*/
 
 	return;
 }
@@ -12696,9 +12922,9 @@ void FetMainForm::showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAftern
 
 	/*QMessageBox::information(this, tr("FET information"), tr("This option must remain unselected in the custom FET version MA"));
 
-	disconnect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
+	disconnect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIG NAL(toggled(bool)), this, SL OT(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
 	showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(false);
-	connect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));*/
+	connect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIG NAL(toggled(bool)), this, SL OT(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));*/
 
 	return;
 }
@@ -12714,9 +12940,9 @@ void FetMainForm::enableGroupActivitiesInInitialOrderToggled(bool checked)
 		QMessageBox::StandardButton b=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Ok);
 	
 		if(b!=QMessageBox::Ok){
-			disconnect(enableGroupActivitiesInInitialOrderAction, SIGNAL(toggled(bool)), this, SLOT(enableGroupActivitiesInInitialOrderToggled(bool)));
+			disconnect(enableGroupActivitiesInInitialOrderAction, &QAction::toggled, this, &FetMainForm::enableGroupActivitiesInInitialOrderToggled);
 			enableGroupActivitiesInInitialOrderAction->setChecked(false);
-			connect(enableGroupActivitiesInInitialOrderAction, SIGNAL(toggled(bool)), this, SLOT(enableGroupActivitiesInInitialOrderToggled(bool)));
+			connect(enableGroupActivitiesInInitialOrderAction, &QAction::toggled, this, &FetMainForm::enableGroupActivitiesInInitialOrderToggled);
 			return;
 		}
 	}
@@ -12738,9 +12964,9 @@ void FetMainForm::showWarningForGroupActivitiesInInitialOrderToggled(bool checke
 		QMessageBox::StandardButton b=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Yes);
 	
 		if(b!=QMessageBox::Yes){
-			disconnect(showWarningForGroupActivitiesInInitialOrderAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForGroupActivitiesInInitialOrderToggled(bool)));
+			disconnect(showWarningForGroupActivitiesInInitialOrderAction, &QAction::toggled, this, &FetMainForm::showWarningForGroupActivitiesInInitialOrderToggled);
 			showWarningForGroupActivitiesInInitialOrderAction->setChecked(true);
-			connect(showWarningForGroupActivitiesInInitialOrderAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForGroupActivitiesInInitialOrderToggled(bool)));
+			connect(showWarningForGroupActivitiesInInitialOrderAction, &QAction::toggled, this, &FetMainForm::showWarningForGroupActivitiesInInitialOrderToggled);
 			return;
 		}
 	}
@@ -12750,201 +12976,201 @@ void FetMainForm::showWarningForGroupActivitiesInInitialOrderToggled(bool checke
 
 
 //time constraints
-void FetMainForm::on_shortcutAllTimeConstraintsPushButton_clicked()
+void FetMainForm::shortcutAllTimeConstraintsPushButton_clicked()
 {
-	on_dataAllTimeConstraintsAction_triggered();
+	dataAllTimeConstraintsAction_triggered();
 }
 
-void FetMainForm::on_shortcutBreakTimeConstraintsPushButton_clicked()
+void FetMainForm::shortcutBreakTimeConstraintsPushButton_clicked()
 {
 	dataTimeConstraintsBreakTimesAction_triggered();
 }
 
-void FetMainForm::on_shortcutTeachersTimeConstraintsPushButton_clicked()
+void FetMainForm::shortcutTeachersTimeConstraintsPushButton_clicked()
 {
 	menuTeachers_time_constraints->popup(QCursor::pos());
 }
 
-void FetMainForm::on_shortcutStudentsTimeConstraintsPushButton_clicked()
+void FetMainForm::shortcutStudentsTimeConstraintsPushButton_clicked()
 {
 	menuStudents_time_constraints->popup(QCursor::pos());
 }
 
-void FetMainForm::on_shortcutActivitiesTimeConstraintsPushButton_clicked()
+void FetMainForm::shortcutActivitiesTimeConstraintsPushButton_clicked()
 {
 	menuActivities_time_constraints->popup(QCursor::pos());
 }
 
-void FetMainForm::on_shortcutAdvancedTimeConstraintsPushButton_clicked()
+void FetMainForm::shortcutAdvancedTimeConstraintsPushButton_clicked()
 {
 	shortcutAdvancedTimeMenu->popup(QCursor::pos());
 }
 
 
 //space constraints
-void FetMainForm::on_shortcutAllSpaceConstraintsPushButton_clicked()
+void FetMainForm::shortcutAllSpaceConstraintsPushButton_clicked()
 {
-	on_dataAllSpaceConstraintsAction_triggered();
+	dataAllSpaceConstraintsAction_triggered();
 }
 
-void FetMainForm::on_shortcutRoomsSpaceConstraintsPushButton_clicked()
+void FetMainForm::shortcutRoomsSpaceConstraintsPushButton_clicked()
 {
 	menuRooms_space_constraints->popup(QCursor::pos());
 }
 
-void FetMainForm::on_shortcutTeachersSpaceConstraintsPushButton_clicked()
+void FetMainForm::shortcutTeachersSpaceConstraintsPushButton_clicked()
 {
 	menuTeachers_space_constraints->popup(QCursor::pos());
 }
 
-void FetMainForm::on_shortcutStudentsSpaceConstraintsPushButton_clicked()
+void FetMainForm::shortcutStudentsSpaceConstraintsPushButton_clicked()
 {
 	menuStudents_space_constraints->popup(QCursor::pos());
 }
 
-void FetMainForm::on_shortcutSubjectsSpaceConstraintsPushButton_clicked()
+void FetMainForm::shortcutSubjectsSpaceConstraintsPushButton_clicked()
 {
 	menuSubjects_space_constraints->popup(QCursor::pos());
 }
 
-void FetMainForm::on_shortcutActivityTagsSpaceConstraintsPushButton_clicked()
+void FetMainForm::shortcutActivityTagsSpaceConstraintsPushButton_clicked()
 {
 	menuActivity_tags_space_constraints->popup(QCursor::pos());
 }
 
-void FetMainForm::on_shortcutSubjectsAndActivityTagsSpaceConstraintsPushButton_clicked()
+void FetMainForm::shortcutSubjectsAndActivityTagsSpaceConstraintsPushButton_clicked()
 {
 	menuSubjects_and_activity_tags_space_constraints->popup(QCursor::pos());
 }
 
-void FetMainForm::on_shortcutActivitiesSpaceConstraintsPushButton_clicked()
+void FetMainForm::shortcutActivitiesSpaceConstraintsPushButton_clicked()
 {
 	menuActivities_space_constraints->popup(QCursor::pos());
 }
 
 //timetable
-void FetMainForm::on_shortcutGeneratePushButton_clicked()
+void FetMainForm::shortcutGeneratePushButton_clicked()
 {
-	on_timetableGenerateAction_triggered();
+	timetableGenerateAction_triggered();
 }
 
-void FetMainForm::on_shortcutGenerateMultiplePushButton_clicked()
+void FetMainForm::shortcutGenerateMultiplePushButton_clicked()
 {
-	on_timetableGenerateMultipleAction_triggered();
+	timetableGenerateMultipleAction_triggered();
 }
 
-void FetMainForm::on_shortcutViewTeachersPushButton_clicked()
+void FetMainForm::shortcutViewTeachersPushButton_clicked()
 {
 	menuView_teachers->popup(QCursor::pos());
 	//old
-	//on_timetableViewTeachersAction_triggered();
+	//timetableViewTeachersAction_triggered();
 }
 
-void FetMainForm::on_shortcutViewStudentsPushButton_clicked()
+void FetMainForm::shortcutViewStudentsPushButton_clicked()
 {
 	menuView_students->popup(QCursor::pos());
 	//old
-	//on_timetableViewStudentsAction_triggered();
+	//timetableViewStudentsAction_triggered();
 }
 
-void FetMainForm::on_shortcutViewRoomsPushButton_clicked()
+void FetMainForm::shortcutViewRoomsPushButton_clicked()
 {
 	menuView_rooms->popup(QCursor::pos());
 	//old
-	//on_timetableViewRoomsAction_triggered();
+	//timetableViewRoomsAction_triggered();
 }
 
-void FetMainForm::on_shortcutShowSoftConflictsPushButton_clicked()
+void FetMainForm::shortcutShowSoftConflictsPushButton_clicked()
 {
-	on_timetableShowConflictsAction_triggered();
+	timetableShowConflictsAction_triggered();
 }
 
 //2014-07-01
-void FetMainForm::on_shortcutsTimetableAdvancedPushButton_clicked()
+void FetMainForm::shortcutsTimetableAdvancedPushButton_clicked()
 {
 	shortcutTimetableAdvancedMenu->popup(QCursor::pos());
 }
 
-void FetMainForm::on_shortcutsTimetablePrintPushButton_clicked()
+void FetMainForm::shortcutsTimetablePrintPushButton_clicked()
 {
-	on_timetablePrintAction_triggered();
+	timetablePrintAction_triggered();
 }
 
-void FetMainForm::on_shortcutsTimetableLockingPushButton_clicked()
+void FetMainForm::shortcutsTimetableLockingPushButton_clicked()
 {
 	shortcutTimetableLockingMenu->popup(QCursor::pos());
 }
 
 //data shortcut
-void FetMainForm::on_shortcutBasicPushButton_clicked()
+void FetMainForm::shortcutBasicPushButton_clicked()
 {
 	shortcutBasicMenu->popup(QCursor::pos());
 }
 
-void FetMainForm::on_shortcutSubjectsPushButton_clicked()
+void FetMainForm::shortcutSubjectsPushButton_clicked()
 {
-	on_dataSubjectsAction_triggered();
+	dataSubjectsAction_triggered();
 }
 
-void FetMainForm::on_shortcutActivityTagsPushButton_clicked()
+void FetMainForm::shortcutActivityTagsPushButton_clicked()
 {
-	on_dataActivityTagsAction_triggered();
+	dataActivityTagsAction_triggered();
 }
 
-void FetMainForm::on_shortcutTeachersPushButton_clicked()
+void FetMainForm::shortcutTeachersPushButton_clicked()
 {
-	on_dataTeachersAction_triggered();
+	dataTeachersAction_triggered();
 }
 
-void FetMainForm::on_shortcutStudentsPushButton_clicked()
+void FetMainForm::shortcutStudentsPushButton_clicked()
 {
 	menuStudents->popup(QCursor::pos());
 }
 
-void FetMainForm::on_shortcutActivitiesPushButton_clicked()
+void FetMainForm::shortcutActivitiesPushButton_clicked()
 {
-	on_dataActivitiesAction_triggered();
+	dataActivitiesAction_triggered();
 }
 
-void FetMainForm::on_shortcutSubactivitiesPushButton_clicked()
+void FetMainForm::shortcutSubactivitiesPushButton_clicked()
 {
-	on_dataSubactivitiesAction_triggered();
+	dataSubactivitiesAction_triggered();
 }
 
-void FetMainForm::on_shortcutDataSpacePushButton_clicked()
+void FetMainForm::shortcutDataSpacePushButton_clicked()
 {
 	shortcutDataSpaceMenu->popup(QCursor::pos());
 }
 
-void FetMainForm::on_shortcutDataAdvancedPushButton_clicked()
+void FetMainForm::shortcutDataAdvancedPushButton_clicked()
 {
 	shortcutDataAdvancedMenu->popup(QCursor::pos());
 }
 
 //file shortcut
-void FetMainForm::on_shortcutNewPushButton_clicked()
+void FetMainForm::shortcutNewPushButton_clicked()
 {
-	on_fileNewAction_triggered();
+	fileNewAction_triggered();
 }
 
-void FetMainForm::on_shortcutOpenPushButton_clicked()
+void FetMainForm::shortcutOpenPushButton_clicked()
 {
-	on_fileOpenAction_triggered();
+	fileOpenAction_triggered();
 }
 
-void FetMainForm::on_shortcutOpenRecentPushButton_clicked()
+void FetMainForm::shortcutOpenRecentPushButton_clicked()
 {
 	fileOpenRecentMenu->popup(QCursor::pos());
 }
 
-void FetMainForm::on_shortcutSavePushButton_clicked()
+void FetMainForm::shortcutSavePushButton_clicked()
 {
-	on_fileSaveAction_triggered();
+	fileSaveAction_triggered();
 }
 
-void FetMainForm::on_shortcutSaveAsPushButton_clicked()
+void FetMainForm::shortcutSaveAsPushButton_clicked()
 {
-	on_fileSaveAsAction_triggered();
+	fileSaveAsAction_triggered();
 }
 
 #else

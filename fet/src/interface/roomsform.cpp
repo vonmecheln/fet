@@ -53,23 +53,23 @@ RoomsForm::RoomsForm(QWidget* parent): QDialog(parent)
 	
 	roomsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(addRoomPushButton, SIGNAL(clicked()), this, SLOT(addRoom()));
-	connect(removeRoomPushButton, SIGNAL(clicked()), this, SLOT(removeRoom()));
-	connect(roomsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(roomChanged(int)));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(modifyRoomPushButton, SIGNAL(clicked()), this, SLOT(modifyRoom()));
+	connect(addRoomPushButton, &QPushButton::clicked, this, &RoomsForm::addRoom);
+	connect(removeRoomPushButton, &QPushButton::clicked, this, &RoomsForm::removeRoom);
+	connect(roomsListWidget, &QListWidget::currentRowChanged, this, &RoomsForm::roomChanged);
+	connect(closePushButton, &QPushButton::clicked, this, &RoomsForm::close);
+	connect(modifyRoomPushButton, &QPushButton::clicked, this, &RoomsForm::modifyRoom);
 
-	connect(moveRoomUpPushButton, SIGNAL(clicked()), this, SLOT(moveRoomUp()));
-	connect(moveRoomDownPushButton, SIGNAL(clicked()), this, SLOT(moveRoomDown()));
+	connect(moveRoomUpPushButton, &QPushButton::clicked, this, &RoomsForm::moveRoomUp);
+	connect(moveRoomDownPushButton, &QPushButton::clicked, this, &RoomsForm::moveRoomDown);
 
-	connect(sortRoomsPushButton, SIGNAL(clicked()), this, SLOT(sortRooms()));
-	connect(roomsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyRoom()));
+	connect(sortRoomsPushButton, &QPushButton::clicked, this, &RoomsForm::sortRooms);
+	connect(roomsListWidget, &QListWidget::itemDoubleClicked, this, &RoomsForm::modifyRoom);
 
-	connect(commentsPushButton, SIGNAL(clicked()), this, SLOT(comments()));
+	connect(commentsPushButton, &QPushButton::clicked, this, &RoomsForm::comments);
 
-	connect(makeRealPushButton, SIGNAL(clicked()), this, SLOT(makeReal()));
-	connect(makeEditVirtualPushButton, SIGNAL(clicked()), this, SLOT(makeEditVirtual()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(makeRealPushButton, &QPushButton::clicked, this, &RoomsForm::makeReal);
+	connect(makeEditVirtualPushButton, &QPushButton::clicked, this, &RoomsForm::makeEditVirtual);
+	connect(helpPushButton, &QPushButton::clicked, this, &RoomsForm::help);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -144,8 +144,8 @@ void RoomsForm::removeRoom()
 	assert(rm!=nullptr);
 
 	if(QMessageBox::warning( this, tr("FET"),
-		tr("Are you sure you want to delete this room and all related constraints?"),
-		QMessageBox::Yes | QMessageBox::No ) == QMessageBox::No)
+	 tr("Are you sure you want to delete this room and all related constraints?"),
+	 QMessageBox::Yes | QMessageBox::No ) == QMessageBox::No)
 		return;
 		
 	int nv=0;
@@ -352,8 +352,8 @@ void RoomsForm::comments()
 	okPB->setDefault(true);
 	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
 	
-	connect(okPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(accept()));
-	connect(cancelPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(reject()));
+	connect(okPB, &QPushButton::clicked, &getCommentsDialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &getCommentsDialog, &QDialog::reject);
 
 	QHBoxLayout* hl=new QHBoxLayout();
 	hl->addStretch();
@@ -444,8 +444,8 @@ void RoomsForm::makeReal()
 		}
 	
 	if(QMessageBox::warning( this, tr("FET confirmation"),
-		tr("Are you sure you want to make this room real? This will erase the list of sets of real rooms for this virtual room."),
-		QMessageBox::Yes | QMessageBox::No ) == QMessageBox::No)
+	 tr("Are you sure you want to make this room real? This will erase the list of sets of real rooms for this virtual room."),
+	 QMessageBox::Yes | QMessageBox::No ) == QMessageBox::No)
 		return;
 
 	QString od=rm->getDetailedDescription();

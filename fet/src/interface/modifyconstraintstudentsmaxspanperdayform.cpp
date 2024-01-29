@@ -26,12 +26,12 @@ ModifyConstraintStudentsMaxSpanPerDayForm::ModifyConstraintStudentsMaxSpanPerDay
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintStudentsMaxSpanPerDayForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintStudentsMaxSpanPerDayForm::cancel);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
-		
+	
 	this->_ctr=ctr;
 	
 	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));

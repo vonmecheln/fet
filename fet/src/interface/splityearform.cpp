@@ -43,11 +43,11 @@ SplitYearForm::SplitYearForm(QWidget* parent, const QString& _year): QDialog(par
 	
 	okPushButton->setDefault(true);
 	
-	connect(tabWidget, SIGNAL(currentChanged(int)), this, SLOT(tabIndexChanged(int)));
+	connect(tabWidget, &QTabWidget::currentChanged, this, &SplitYearForm::tabIndexChanged);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(categoriesSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfCategoriesChanged()));
+	connect(okPushButton, &QPushButton::clicked, this, &SplitYearForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &SplitYearForm::close);
+	connect(categoriesSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &SplitYearForm::numberOfCategoriesChanged);
 	
 	listWidgets[0]=listWidget1;
 	listWidgets[1]=listWidget2;
@@ -69,28 +69,28 @@ SplitYearForm::SplitYearForm(QWidget* parent, const QString& _year): QDialog(par
 		listWidgets[i]->setSelectionMode(QAbstractItemView::SingleSelection);
 	}
 
-	connect(listWidgets[0], SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(list0DoubleClicked()));
-	connect(listWidgets[1], SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(list1DoubleClicked()));
-	connect(listWidgets[2], SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(list2DoubleClicked()));
-	connect(listWidgets[3], SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(list3DoubleClicked()));
-	connect(listWidgets[4], SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(list4DoubleClicked()));
-	connect(listWidgets[5], SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(list5DoubleClicked()));
-	connect(listWidgets[6], SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(list6DoubleClicked()));
-	connect(listWidgets[7], SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(list7DoubleClicked()));
-	connect(listWidgets[8], SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(list8DoubleClicked()));
-	connect(listWidgets[9], SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(list9DoubleClicked()));
-	connect(listWidgets[10], SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(list10DoubleClicked()));
-	connect(listWidgets[11], SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(list11DoubleClicked()));
-	connect(listWidgets[12], SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(list12DoubleClicked()));
-	connect(listWidgets[13], SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(list13DoubleClicked()));
+	connect(listWidgets[0], &QListWidget::itemDoubleClicked, this, &SplitYearForm::list0DoubleClicked);
+	connect(listWidgets[1], &QListWidget::itemDoubleClicked, this, &SplitYearForm::list1DoubleClicked);
+	connect(listWidgets[2], &QListWidget::itemDoubleClicked, this, &SplitYearForm::list2DoubleClicked);
+	connect(listWidgets[3], &QListWidget::itemDoubleClicked, this, &SplitYearForm::list3DoubleClicked);
+	connect(listWidgets[4], &QListWidget::itemDoubleClicked, this, &SplitYearForm::list4DoubleClicked);
+	connect(listWidgets[5], &QListWidget::itemDoubleClicked, this, &SplitYearForm::list5DoubleClicked);
+	connect(listWidgets[6], &QListWidget::itemDoubleClicked, this, &SplitYearForm::list6DoubleClicked);
+	connect(listWidgets[7], &QListWidget::itemDoubleClicked, this, &SplitYearForm::list7DoubleClicked);
+	connect(listWidgets[8], &QListWidget::itemDoubleClicked, this, &SplitYearForm::list8DoubleClicked);
+	connect(listWidgets[9], &QListWidget::itemDoubleClicked, this, &SplitYearForm::list9DoubleClicked);
+	connect(listWidgets[10], &QListWidget::itemDoubleClicked, this, &SplitYearForm::list10DoubleClicked);
+	connect(listWidgets[11], &QListWidget::itemDoubleClicked, this, &SplitYearForm::list11DoubleClicked);
+	connect(listWidgets[12], &QListWidget::itemDoubleClicked, this, &SplitYearForm::list12DoubleClicked);
+	connect(listWidgets[13], &QListWidget::itemDoubleClicked, this, &SplitYearForm::list13DoubleClicked);
 	
-	connect(addPushButton,  SIGNAL(clicked()), this, SLOT(addClicked()));
-	connect(modifyPushButton,  SIGNAL(clicked()), this, SLOT(modifyClicked()));
-	connect(removePushButton,  SIGNAL(clicked()), this, SLOT(removeClicked()));
-	connect(removeAllPushButton,  SIGNAL(clicked()), this, SLOT(removeAllClicked()));
+	connect(addPushButton, &QPushButton::clicked, this, &SplitYearForm::addClicked);
+	connect(modifyPushButton, &QPushButton::clicked, this, &SplitYearForm::modifyClicked);
+	connect(removePushButton, &QPushButton::clicked, this, &SplitYearForm::removeClicked);
+	connect(removeAllPushButton, &QPushButton::clicked, this, &SplitYearForm::removeAllClicked);
 	
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
-	connect(resetPushButton, SIGNAL(clicked()), this, SLOT(reset()));
+	connect(helpPushButton, &QPushButton::clicked, this, &SplitYearForm::help);
+	connect(resetPushButton, &QPushButton::clicked, this, &SplitYearForm::reset);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -122,9 +122,9 @@ SplitYearForm::SplitYearForm(QWidget* parent, const QString& _year): QDialog(par
 	maxSubgroupsPerYearLabel->setText(tr("Max subgroups per year: %1").arg(MAX_TOTAL_SUBGROUPS));
 	maxTotalSubgroupsLabel->setText(tr("Max total subgroups: %1").arg(MAX_TOTAL_SUBGROUPS));
 	
-	disconnect(categoriesSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfCategoriesChanged()));
+	disconnect(categoriesSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &SplitYearForm::numberOfCategoriesChanged);
 	categoriesSpinBox->setValue(_nCategories);
-	connect(categoriesSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfCategoriesChanged()));
+	connect(categoriesSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &SplitYearForm::numberOfCategoriesChanged);
 	
 	numberOfCategoriesChanged();
 	
@@ -837,7 +837,7 @@ void SplitYearForm::help()
 
 	vl->addWidget(te);
 	vl->addLayout(hl);
-	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
+	connect(pb, &QPushButton::clicked, &dialog, &QDialog::close);
 
 	dialog.resize(700,500);
 	centerWidgetOnScreen(&dialog);

@@ -55,24 +55,24 @@ GroupsForm::GroupsForm(QWidget* parent): QDialog(parent)
 	yearsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	groupsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(yearsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(yearChanged(const QString&)));
-	connect(addGroupPushButton, SIGNAL(clicked()), this, SLOT(addGroup()));
-	connect(addExistingGroupsPushButton, SIGNAL(clicked()), this, SLOT(addExistingGroups()));
-	connect(removeGroupPushButton, SIGNAL(clicked()), this, SLOT(removeGroup()));
-	connect(purgeGroupPushButton, SIGNAL(clicked()), this, SLOT(purgeGroup()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(groupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(groupChanged(const QString&)));
-	connect(modifyGroupPushButton, SIGNAL(clicked()), this, SLOT(modifyGroup()));
+	connect(yearsListWidget, &QListWidget::currentTextChanged, this, &GroupsForm::yearChanged);
+	connect(addGroupPushButton, &QPushButton::clicked, this, &GroupsForm::addGroup);
+	connect(addExistingGroupsPushButton, &QPushButton::clicked, this, &GroupsForm::addExistingGroups);
+	connect(removeGroupPushButton, &QPushButton::clicked, this, &GroupsForm::removeGroup);
+	connect(purgeGroupPushButton, &QPushButton::clicked, this, &GroupsForm::purgeGroup);
+	connect(closePushButton, &QPushButton::clicked, this, &GroupsForm::close);
+	connect(groupsListWidget, &QListWidget::currentTextChanged, this, &GroupsForm::groupChanged);
+	connect(modifyGroupPushButton, &QPushButton::clicked, this, &GroupsForm::modifyGroup);
 
-	connect(moveGroupUpPushButton, SIGNAL(clicked()), this, SLOT(moveGroupUp()));
-	connect(moveGroupDownPushButton, SIGNAL(clicked()), this, SLOT(moveGroupDown()));
+	connect(moveGroupUpPushButton, &QPushButton::clicked, this, &GroupsForm::moveGroupUp);
+	connect(moveGroupDownPushButton, &QPushButton::clicked, this, &GroupsForm::moveGroupDown);
 
-	connect(sortGroupsPushButton, SIGNAL(clicked()), this, SLOT(sortGroups()));
-	connect(activateStudentsPushButton, SIGNAL(clicked()), this, SLOT(activateStudents()));
-	connect(deactivateStudentsPushButton, SIGNAL(clicked()), this, SLOT(deactivateStudents()));
-	connect(groupsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyGroup()));
+	connect(sortGroupsPushButton, &QPushButton::clicked, this, &GroupsForm::sortGroups);
+	connect(activateStudentsPushButton, &QPushButton::clicked, this, &GroupsForm::activateStudents);
+	connect(deactivateStudentsPushButton, &QPushButton::clicked, this, &GroupsForm::deactivateStudents);
+	connect(groupsListWidget, &QListWidget::itemDoubleClicked, this, &GroupsForm::modifyGroup);
 
-	connect(commentsPushButton, SIGNAL(clicked()), this, SLOT(comments()));
+	connect(commentsPushButton, &QPushButton::clicked, this, &GroupsForm::comments);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -201,8 +201,8 @@ void GroupsForm::removeGroup()
 		return;
 
 	/*if(QMessageBox::warning( this, tr("FET"),
-		tr("Are you sure you want to delete group %1 and all related subgroups, activities and constraints?").arg(groupName),
-		tr("Yes"), tr("No"), QString(), 0, 1 ) == 1)
+	 tr("Are you sure you want to delete group %1 and all related subgroups, activities and constraints?").arg(groupName),
+	 tr("Yes"), tr("No"), QString(), 0, 1 ) == 1)
 		return;*/
 		
 	bool tmp=gt.rules.removeGroup(yearsListWidget->currentItem()->text(), groupName);
@@ -274,8 +274,8 @@ void GroupsForm::purgeGroup()
 		return;
 
 	/*if(QMessageBox::warning( this, tr("FET"),
-		tr("Are you sure you want to delete group %1 and all related subgroups, activities and constraints?").arg(groupName),
-		tr("Yes"), tr("No"), QString(), 0, 1 ) == 1)
+	 tr("Are you sure you want to delete group %1 and all related subgroups, activities and constraints?").arg(groupName),
+	 tr("Yes"), tr("No"), QString(), 0, 1 ) == 1)
 		return;*/
 
 	bool tmp=gt.rules.purgeGroup(groupName);
@@ -542,8 +542,8 @@ void GroupsForm::comments()
 	okPB->setDefault(true);
 	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
 	
-	connect(okPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(accept()));
-	connect(cancelPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(reject()));
+	connect(okPB, &QPushButton::clicked, &getCommentsDialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &getCommentsDialog, &QDialog::reject);
 
 	QHBoxLayout* hl=new QHBoxLayout();
 	hl->addStretch();

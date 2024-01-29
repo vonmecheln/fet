@@ -38,11 +38,11 @@ ModifyConstraintBreakTimesForm::ModifyConstraintBreakTimesForm(QWidget* parent, 
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
-	connect(notAllowedTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
-	connect(setAllAllowedPushButton, SIGNAL(clicked()), this, SLOT(setAllAllowed()));
-	connect(setAllBreakPushButton, SIGNAL(clicked()), this, SLOT(setAllBreak()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintBreakTimesForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintBreakTimesForm::cancel);
+	connect(notAllowedTimesTable, &QTableWidget::itemClicked, this, &ModifyConstraintBreakTimesForm::itemClicked);
+	connect(setAllAllowedPushButton, &QPushButton::clicked, this, &ModifyConstraintBreakTimesForm::setAllAllowed);
+	connect(setAllBreakPushButton, &QPushButton::clicked, this, &ModifyConstraintBreakTimesForm::setAllBreak);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -98,8 +98,8 @@ ModifyConstraintBreakTimesForm::ModifyConstraintBreakTimesForm(QWidget* parent, 
 		
 	notAllowedTimesTable->resizeRowsToContents();
 
-	connect(notAllowedTimesTable->horizontalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(horizontalHeaderClicked(int)));
-	connect(notAllowedTimesTable->verticalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(verticalHeaderClicked(int)));
+	connect(notAllowedTimesTable->horizontalHeader(), &QHeaderView::sectionClicked, this, &ModifyConstraintBreakTimesForm::horizontalHeaderClicked);
+	connect(notAllowedTimesTable->verticalHeader(), &QHeaderView::sectionClicked, this, &ModifyConstraintBreakTimesForm::verticalHeaderClicked);
 
 	notAllowedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 	

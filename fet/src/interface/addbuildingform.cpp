@@ -25,8 +25,8 @@ AddBuildingForm::AddBuildingForm(QWidget* parent): QDialog(parent)
 	
 	addBuildingPushButton->setDefault(true);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(addBuildingPushButton, SIGNAL(clicked()), this, SLOT(addBuilding()));
+	connect(addBuildingPushButton, &QPushButton::clicked, this, &AddBuildingForm::addBuilding);
+	connect(closePushButton, &QPushButton::clicked, this, &AddBuildingForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

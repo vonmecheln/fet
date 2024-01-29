@@ -113,15 +113,15 @@ TimetableGenerateForm::TimetableGenerateForm(QWidget* parent): QDialog(parent)
 
 	currentResultsTextEdit->setReadOnly(true);
 	
-	connect(startPushButton, SIGNAL(clicked()), this, SLOT(start()));
-	connect(stopPushButton, SIGNAL(clicked()), this, SLOT(stop()));
-	connect(writeResultsPushButton, SIGNAL(clicked()), this, SLOT(write()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(closePressed()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
-	connect(seeImpossiblePushButton, SIGNAL(clicked()), this, SLOT(seeImpossible()));
-	connect(seeInitialOrderPushButton, SIGNAL(clicked()), this, SLOT(seeInitialOrder()));
-	connect(writeHighestStagePushButton, SIGNAL(clicked()), this, SLOT(writeHighestStage()));
-	connect(stopHighestPushButton, SIGNAL(clicked()), this, SLOT(stopHighest()));
+	connect(startPushButton, &QPushButton::clicked, this, &TimetableGenerateForm::start);
+	connect(stopPushButton, &QPushButton::clicked, this, &TimetableGenerateForm::stop);
+	connect(writeResultsPushButton, &QPushButton::clicked, this, &TimetableGenerateForm::write);
+	connect(closePushButton, &QPushButton::clicked, this, &TimetableGenerateForm::closePressed);
+	connect(helpPushButton, &QPushButton::clicked, this, &TimetableGenerateForm::help);
+	connect(seeImpossiblePushButton, &QPushButton::clicked, this, &TimetableGenerateForm::seeImpossible);
+	connect(seeInitialOrderPushButton, &QPushButton::clicked, this, &TimetableGenerateForm::seeInitialOrder);
+	connect(writeHighestStagePushButton, &QPushButton::clicked, this, &TimetableGenerateForm::writeHighestStage);
+	connect(stopHighestPushButton, &QPushButton::clicked, this, &TimetableGenerateForm::stopHighest);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -139,9 +139,9 @@ TimetableGenerateForm::TimetableGenerateForm(QWidget* parent): QDialog(parent)
 	seeImpossiblePushButton->setDisabled(true);
 	seeInitialOrderPushButton->setDisabled(true);
 
-	connect(&gen, SIGNAL(activityPlaced(int, int)), this, SLOT(activityPlaced(int, int)));
-	connect(&gen, SIGNAL(generationFinished()), this, SLOT(generationFinished()));
-	connect(&gen, SIGNAL(impossibleToSolve()), this, SLOT(impossibleToSolve()));
+	connect(&gen, &Generate::activityPlaced, this, &TimetableGenerateForm::activityPlaced);
+	connect(&gen, &Generate::generationFinished, this, &TimetableGenerateForm::generationFinished);
+	connect(&gen, &Generate::impossibleToSolve, this, &TimetableGenerateForm::impossibleToSolve);
 }
 
 TimetableGenerateForm::~TimetableGenerateForm()
@@ -356,7 +356,7 @@ void TimetableGenerateForm::stop()
 
 	vl->addWidget(te);
 	vl->addLayout(hl);
-	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
+	connect(pb, &QPushButton::clicked, &dialog, &QDialog::close);
 	
 	dialog.resize(700,500);
 	centerWidgetOnScreen(&dialog);
@@ -501,7 +501,7 @@ void TimetableGenerateForm::stopHighest()
 
 	vl->addWidget(te);
 	vl->addLayout(hl);
-	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
+	connect(pb, &QPushButton::clicked, &dialog, &QDialog::close);
 
 	dialog.resize(700,500);
 	centerWidgetOnScreen(&dialog);
@@ -635,7 +635,7 @@ void TimetableGenerateForm::impossibleToSolve()
 
 	vl->addWidget(te);
 	vl->addLayout(hl);
-	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
+	connect(pb, &QPushButton::clicked, &dialog, &QDialog::close);
 
 	dialog.resize(700,500);
 	centerWidgetOnScreen(&dialog);
@@ -659,12 +659,12 @@ void TimetableGenerateForm::impossibleToSolve()
 			/*if(DETACHED_NOTIFICATION==false){
 				QProcess* myProcess=new QProcess();
 				if(terminateCommandAfterSeconds>0)
-					QTimer::singleShot(terminateCommandAfterSeconds*1000, myProcess, SLOT(terminate()));
+					QTimer::singleShot(terminateCommandAfterSeconds*1000, myProcess, SL OT(terminate()));
 				if(killCommandAfterSeconds>0)
-					QTimer::singleShot(killCommandAfterSeconds*1000, myProcess, SLOT(kill()));
+					QTimer::singleShot(killCommandAfterSeconds*1000, myProcess, SL OT(kill()));
 				
 				//https://www.qtcentre.org/threads/43083-Freeing-a-QProcess-after-it-has-finished-using-deleteLater()
-				connect(myProcess, SIGNAL(finished(int)), myProcess, SLOT(deleteLater()));
+				connect(myProcess, SIG NAL(finished(int)), myProcess, SL OT(deleteLater()));
 				myProcess->start(command, arguments);
 			}*/
 			//else{
@@ -804,12 +804,12 @@ void TimetableGenerateForm::generationFinished()
 			/*if(DETACHED_NOTIFICATION==false){
 				QProcess* myProcess=new QProcess();
 				if(terminateCommandAfterSeconds>0)
-					QTimer::singleShot(terminateCommandAfterSeconds*1000, myProcess, SLOT(terminate()));
+					QTimer::singleShot(terminateCommandAfterSeconds*1000, myProcess, SL OT(terminate()));
 				if(killCommandAfterSeconds>0)
-					QTimer::singleShot(killCommandAfterSeconds*1000, myProcess, SLOT(kill()));
+					QTimer::singleShot(killCommandAfterSeconds*1000, myProcess, SL OT(kill()));
 				
 				//https://www.qtcentre.org/threads/43083-Freeing-a-QProcess-after-it-has-finished-using-deleteLater()
-				connect(myProcess, SIGNAL(finished(int)), myProcess, SLOT(deleteLater()));
+				connect(myProcess, SIG NAL(finished(int)), myProcess, SL OT(deleteLater()));
 				myProcess->start(command, arguments);
 			}*/
 			//else{
@@ -1104,7 +1104,7 @@ void TimetableGenerateForm::seeImpossible()
 
 	vl->addWidget(te);
 	vl->addLayout(hl);
-	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
+	connect(pb, &QPushButton::clicked, &dialog, &QDialog::close);
 
 	dialog.resize(700,500);
 	centerWidgetOnScreen(&dialog);
@@ -1136,7 +1136,7 @@ void TimetableGenerateForm::seeInitialOrder()
 
 	vl->addWidget(te);
 	vl->addLayout(hl);
-	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
+	connect(pb, &QPushButton::clicked, &dialog, &QDialog::close);
 
 	dialog.resize(700,500);
 	centerWidgetOnScreen(&dialog);

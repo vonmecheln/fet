@@ -28,8 +28,8 @@ StudentsComboBoxesStyleForm::StudentsComboBoxesStyleForm(QWidget* parent): QDial
 	
 	okPushButton->setDefault(true);
 	
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(wasAccepted()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(wasCanceled()));
+	connect(okPushButton, &QPushButton::clicked, this, &StudentsComboBoxesStyleForm::wasAccepted);
+	connect(cancelPushButton, &QPushButton::clicked, this, &StudentsComboBoxesStyleForm::wasCanceled);
 	
 	simpleRadioButton->setChecked(STUDENTS_COMBO_BOXES_STYLE==STUDENTS_COMBO_BOXES_STYLE_SIMPLE);
 	iconsRadioButton->setChecked(STUDENTS_COMBO_BOXES_STYLE==STUDENTS_COMBO_BOXES_STYLE_ICONS);

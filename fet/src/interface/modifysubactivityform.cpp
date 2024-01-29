@@ -64,21 +64,21 @@ ModifySubactivityForm::ModifySubactivityForm(QWidget* parent, int id, int activi
 	allTeachersRadioButton->setChecked(settings.value(this->metaObject()->className()+QString("/all-teachers-radio-button-state"), "true").toBool());
 	qualifiedTeachersRadioButton->setChecked(settings.value(this->metaObject()->className()+QString("/qualified-teachers-radio-button-state"), "false").toBool());
 
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(clearTeachersPushButton, SIGNAL(clicked()), this, SLOT(clearTeachers()));
-	connect(clearStudentsPushButton, SIGNAL(clicked()), this, SLOT(clearStudents()));
-	connect(allTeachersListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addTeacher()));
-	connect(selectedTeachersListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeTeacher()));
-	connect(allStudentsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addStudents()));
-	connect(selectedStudentsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeStudents()));
-	connect(clearActivityTagsPushButton, SIGNAL(clicked()), this, SLOT(clearActivityTags()));
-	connect(allActivityTagsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addActivityTag()));
-	connect(selectedActivityTagsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeActivityTag()));
-	connect(showYearsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showYearsChanged()));
-	connect(showGroupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showGroupsChanged()));
-	connect(showSubgroupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showSubgroupsChanged()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifySubactivityForm::cancel);
+	connect(okPushButton, &QPushButton::clicked, this, &ModifySubactivityForm::ok);
+	connect(clearTeachersPushButton, &QPushButton::clicked, this, &ModifySubactivityForm::clearTeachers);
+	connect(clearStudentsPushButton, &QPushButton::clicked, this, &ModifySubactivityForm::clearStudents);
+	connect(allTeachersListWidget, &QListWidget::itemDoubleClicked, this, &ModifySubactivityForm::addTeacher);
+	connect(selectedTeachersListWidget, &QListWidget::itemDoubleClicked, this, &ModifySubactivityForm::removeTeacher);
+	connect(allStudentsListWidget, &QListWidget::itemDoubleClicked, this, &ModifySubactivityForm::addStudents);
+	connect(selectedStudentsListWidget, &QListWidget::itemDoubleClicked, this, &ModifySubactivityForm::removeStudents);
+	connect(clearActivityTagsPushButton, &QPushButton::clicked, this, &ModifySubactivityForm::clearActivityTags);
+	connect(allActivityTagsListWidget, &QListWidget::itemDoubleClicked, this, &ModifySubactivityForm::addActivityTag);
+	connect(selectedActivityTagsListWidget, &QListWidget::itemDoubleClicked, this, &ModifySubactivityForm::removeActivityTag);
+	connect(showYearsCheckBox, &QCheckBox::toggled, this, &ModifySubactivityForm::showYearsChanged);
+	connect(showGroupsCheckBox, &QCheckBox::toggled, this, &ModifySubactivityForm::showGroupsChanged);
+	connect(showSubgroupsCheckBox, &QCheckBox::toggled, this, &ModifySubactivityForm::showSubgroupsChanged);
+	connect(helpPushButton, &QPushButton::clicked, this, &ModifySubactivityForm::help);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -131,9 +131,9 @@ ModifySubactivityForm::ModifySubactivityForm(QWidget* parent, int id, int activi
 	updateActivityTagsListWidget();
 
 	//after updateSubjectsComboBox
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(updateAllTeachersListWidget()));
-	connect(allTeachersRadioButton, SIGNAL(toggled(bool)), this, SLOT(allTeachersRadioButtonToggled(bool)));
-	connect(qualifiedTeachersRadioButton, SIGNAL(toggled(bool)), this, SLOT(qualifiedTeachersRadioButtonToggled(bool)));
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifySubactivityForm::updateAllTeachersListWidget);
+	connect(allTeachersRadioButton, &QRadioButton::toggled, this, &ModifySubactivityForm::allTeachersRadioButtonToggled);
+	connect(qualifiedTeachersRadioButton, &QRadioButton::toggled, this, &ModifySubactivityForm::qualifiedTeachersRadioButtonToggled);
 	updateAllTeachersListWidget();
 	
 	selectedTeachersListWidget->clear();
@@ -507,7 +507,7 @@ void ModifySubactivityForm::help()
 
 	vl->addWidget(te);
 	vl->addLayout(hl);
-	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
+	connect(pb, &QPushButton::clicked, &dialog, &QDialog::close);
 
 	dialog.resize(600,470);
 	centerWidgetOnScreen(&dialog);

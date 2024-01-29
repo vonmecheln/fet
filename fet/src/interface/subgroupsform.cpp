@@ -59,25 +59,25 @@ SubgroupsForm::SubgroupsForm(QWidget* parent): QDialog(parent)
 	groupsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	subgroupsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(yearsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(yearChanged(const QString&)));
-	connect(groupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(groupChanged(const QString&)));
-	connect(addSubgroupPushButton, SIGNAL(clicked()), this, SLOT(addSubgroup()));
-	connect(addExistingSubgroupsPushButton, SIGNAL(clicked()), this, SLOT(addExistingSubgroups()));
-	connect(removeSubgroupPushButton, SIGNAL(clicked()), this, SLOT(removeSubgroup()));
-	connect(purgeSubgroupPushButton, SIGNAL(clicked()), this, SLOT(purgeSubgroup()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(subgroupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(subgroupChanged(const QString&)));
-	connect(modifySubgroupPushButton, SIGNAL(clicked()), this, SLOT(modifySubgroup()));
+	connect(yearsListWidget, &QListWidget::currentTextChanged, this, &SubgroupsForm::yearChanged);
+	connect(groupsListWidget, &QListWidget::currentTextChanged, this, &SubgroupsForm::groupChanged);
+	connect(addSubgroupPushButton, &QPushButton::clicked, this, &SubgroupsForm::addSubgroup);
+	connect(addExistingSubgroupsPushButton, &QPushButton::clicked, this, &SubgroupsForm::addExistingSubgroups);
+	connect(removeSubgroupPushButton, &QPushButton::clicked, this, &SubgroupsForm::removeSubgroup);
+	connect(purgeSubgroupPushButton, &QPushButton::clicked, this, &SubgroupsForm::purgeSubgroup);
+	connect(closePushButton, &QPushButton::clicked, this, &SubgroupsForm::close);
+	connect(subgroupsListWidget, &QListWidget::currentTextChanged, this, &SubgroupsForm::subgroupChanged);
+	connect(modifySubgroupPushButton, &QPushButton::clicked, this, &SubgroupsForm::modifySubgroup);
 
-	connect(moveSubgroupUpPushButton, SIGNAL(clicked()), this, SLOT(moveSubgroupUp()));
-	connect(moveSubgroupDownPushButton, SIGNAL(clicked()), this, SLOT(moveSubgroupDown()));
+	connect(moveSubgroupUpPushButton, &QPushButton::clicked, this, &SubgroupsForm::moveSubgroupUp);
+	connect(moveSubgroupDownPushButton, &QPushButton::clicked, this, &SubgroupsForm::moveSubgroupDown);
 
-	connect(sortSubgroupsPushButton, SIGNAL(clicked()), this, SLOT(sortSubgroups()));
-	connect(activateStudentsPushButton, SIGNAL(clicked()), this, SLOT(activateStudents()));
-	connect(deactivateStudentsPushButton, SIGNAL(clicked()), this, SLOT(deactivateStudents()));
-	connect(subgroupsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifySubgroup()));
+	connect(sortSubgroupsPushButton, &QPushButton::clicked, this, &SubgroupsForm::sortSubgroups);
+	connect(activateStudentsPushButton, &QPushButton::clicked, this, &SubgroupsForm::activateStudents);
+	connect(deactivateStudentsPushButton, &QPushButton::clicked, this, &SubgroupsForm::deactivateStudents);
+	connect(subgroupsListWidget, &QListWidget::itemDoubleClicked, this, &SubgroupsForm::modifySubgroup);
 
-	connect(commentsPushButton, SIGNAL(clicked()), this, SLOT(comments()));
+	connect(commentsPushButton, &QPushButton::clicked, this, &SubgroupsForm::comments);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -241,8 +241,8 @@ void SubgroupsForm::removeSubgroup()
 		return;
 
 	/*if(QMessageBox::warning( this, tr("FET"),
-		tr("Are you sure you want to delete subgroup %1 and all related activities and constraints?").arg(subgroupName),
-		tr("Yes"), tr("No"), QString(), 0, 1 ) == 1)
+	 tr("Are you sure you want to delete subgroup %1 and all related activities and constraints?").arg(subgroupName),
+	 tr("Yes"), tr("No"), QString(), 0, 1 ) == 1)
 		return;*/
 
 	bool tmp=gt.rules.removeSubgroup(yearName, groupName, subgroupName);
@@ -324,8 +324,8 @@ void SubgroupsForm::purgeSubgroup()
 		return;
 
 	/*if(QMessageBox::warning( this, tr("FET"),
-		tr("Are you sure you want to delete subgroup %1 and all related activities and constraints?").arg(subgroupName),
-		tr("Yes"), tr("No"), QString(), 0, 1 ) == 1)
+	 tr("Are you sure you want to delete subgroup %1 and all related activities and constraints?").arg(subgroupName),
+	 tr("Yes"), tr("No"), QString(), 0, 1 ) == 1)
 		return;*/
 
 	bool tmp=gt.rules.purgeSubgroup(subgroupName);
@@ -663,8 +663,8 @@ void SubgroupsForm::comments()
 	okPB->setDefault(true);
 	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
 	
-	connect(okPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(accept()));
-	connect(cancelPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(reject()));
+	connect(okPB, &QPushButton::clicked, &getCommentsDialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &getCommentsDialog, &QDialog::reject);
 
 	QHBoxLayout* hl=new QHBoxLayout();
 	hl->addStretch();

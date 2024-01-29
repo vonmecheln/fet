@@ -402,77 +402,77 @@ public:
 public slots:
 	void enableNotPerfectMessage();
 	
-	void on_settingsAutosaveAction_triggered();
+	void settingsAutosaveAction_triggered();
 
-	void on_restoreDataStateAction_triggered();
-	void on_settingsHistoryMemoryAction_triggered();
-	void on_settingsHistoryDiskAction_triggered();
+	void restoreDataStateAction_triggered();
+	void settingsHistoryMemoryAction_triggered();
+	void settingsHistoryDiskAction_triggered();
 	
-	void on_modeOfficialAction_triggered();
-	void on_modeMorningsAfternoonsAction_triggered();
-	void on_modeBlockPlanningAction_triggered();
-	void on_modeTermsAction_triggered();
+	void modeOfficialAction_triggered();
+	void modeMorningsAfternoonsAction_triggered();
+	void modeBlockPlanningAction_triggered();
+	void modeTermsAction_triggered();
 	
-	void on_dataTermsAction_triggered();
+	void dataTermsAction_triggered();
 
-	void on_fileNewAction_triggered();
-	void on_fileSaveAction_triggered();
-	void on_fileSaveAsAction_triggered();
-	void on_fileQuitAction_triggered();
-	void on_fileOpenAction_triggered();
-	void on_fileClearRecentFilesListAction_triggered();
+	void fileNewAction_triggered();
+	void fileSaveAction_triggered();
+	void fileSaveAsAction_triggered();
+	void fileQuitAction_triggered();
+	void fileOpenAction_triggered();
+	void fileClearRecentFilesListAction_triggered();
 	void openRecentFile();
 
-	void on_fileImportCSVActivityTagsAction_triggered();
-	void on_fileImportCSVActivitiesAction_triggered();
-	void on_fileImportCSVRoomsBuildingsAction_triggered();
-	void on_fileImportCSVSubjectsAction_triggered();
-	void on_fileImportCSVTeachersAction_triggered();
-	void on_fileImportCSVYearsGroupsSubgroupsAction_triggered();
-	void on_fileExportCSVAction_triggered();
+	void fileImportCSVActivityTagsAction_triggered();
+	void fileImportCSVActivitiesAction_triggered();
+	void fileImportCSVRoomsBuildingsAction_triggered();
+	void fileImportCSVSubjectsAction_triggered();
+	void fileImportCSVTeachersAction_triggered();
+	void fileImportCSVYearsGroupsSubgroupsAction_triggered();
+	void fileExportCSVAction_triggered();
 	
-	void on_dataInstitutionNameAction_triggered();
-	void on_dataCommentsAction_triggered();
-	void on_dataDaysAction_triggered();
-	void on_dataHoursAction_triggered();
-	void on_dataTeachersAction_triggered();
-	void on_dataTeachersStatisticsAction_triggered();
-	void on_dataSubjectsAction_triggered();
-	void on_dataSubjectsStatisticsAction_triggered();
-	void on_dataActivityTagsAction_triggered();
-	void on_dataYearsAction_triggered();
-	void on_dataGroupsAction_triggered();
-	void on_dataSubgroupsAction_triggered();
-	void on_dataStudentsStatisticsAction_triggered();
-	void on_dataActivitiesRoomsStatisticsAction_triggered();
-	void on_dataTeachersSubjectsQualificationsStatisticsAction_triggered();
-	void on_dataHelpOnStatisticsAction_triggered();
+	void dataInstitutionNameAction_triggered();
+	void dataCommentsAction_triggered();
+	void dataDaysAction_triggered();
+	void dataHoursAction_triggered();
+	void dataTeachersAction_triggered();
+	void dataTeachersStatisticsAction_triggered();
+	void dataSubjectsAction_triggered();
+	void dataSubjectsStatisticsAction_triggered();
+	void dataActivityTagsAction_triggered();
+	void dataYearsAction_triggered();
+	void dataGroupsAction_triggered();
+	void dataSubgroupsAction_triggered();
+	void dataStudentsStatisticsAction_triggered();
+	void dataActivitiesRoomsStatisticsAction_triggered();
+	void dataTeachersSubjectsQualificationsStatisticsAction_triggered();
+	void dataHelpOnStatisticsAction_triggered();
 	
 	void checkForUpdatesToggled(bool checked);
-	void on_helpSettingsAction_triggered();
+	void helpSettingsAction_triggered();
 	void useColorsToggled(bool checked);
 	void showSubgroupsInComboBoxesToggled(bool checked);
 	void showSubgroupsInActivityPlanningToggled(bool checked);
-	void on_settingsShowShortcutsOnMainWindowAction_toggled();
-	void on_settingsFontIsUserSelectableAction_toggled();
-	void on_settingsFontAction_triggered();
-	void on_settingsShowToolTipsForConstraintsWithTablesAction_toggled();
+	void settingsShowShortcutsOnMainWindowAction_toggled();
+	void settingsFontIsUserSelectableAction_toggled();
+	void settingsFontAction_triggered();
+	void settingsShowToolTipsForConstraintsWithTablesAction_toggled();
 	
-	void on_timetablesToWriteOnDiskAction_triggered();
+	void timetablesToWriteOnDiskAction_triggered();
 	
-	void on_studentsComboBoxesStyleAction_triggered();
+	void studentsComboBoxesStyleAction_triggered();
 	
-	void on_settingsShowVirtualRoomsInTimetablesAction_toggled();
+	void settingsShowVirtualRoomsInTimetablesAction_toggled();
 
-	void on_settingsCommandAfterFinishingAction_triggered();
+	void settingsCommandAfterFinishingAction_triggered();
 	///
 
 	//////confirmations
-	void on_settingsConfirmActivityPlanningAction_toggled();
-	void on_settingsConfirmSpreadActivitiesAction_toggled();
-	void on_settingsConfirmRemoveRedundantAction_toggled();
-	void on_settingsConfirmSaveTimetableAction_toggled();
-	void on_settingsConfirmActivateDeactivateActivitiesConstraintsAction_toggled();
+	void settingsConfirmActivityPlanningAction_toggled();
+	void settingsConfirmSpreadActivitiesAction_toggled();
+	void settingsConfirmRemoveRedundantAction_toggled();
+	void settingsConfirmSaveTimetableAction_toggled();
+	void settingsConfirmActivateDeactivateActivitiesConstraintsAction_toggled();
 	//////
 
 	void showWarningForSubgroupsWithTheSameActivitiesToggled(bool checked);
@@ -500,14 +500,14 @@ public slots:
 	void enableGroupActivitiesInInitialOrderToggled(bool checked);
 	void showWarningForGroupActivitiesInInitialOrderToggled(bool checked);
 	
-	void on_groupActivitiesInInitialOrderAction_triggered();
+	void groupActivitiesInInitialOrderAction_triggered();
 	
-	void on_dataActivitiesAction_triggered();
-	void on_dataSubactivitiesAction_triggered();
-	void on_dataRoomsAction_triggered();
-	void on_dataBuildingsAction_triggered();
-	void on_dataAllTimeConstraintsAction_triggered();
-	void on_dataAllSpaceConstraintsAction_triggered();
+	void dataActivitiesAction_triggered();
+	void dataSubactivitiesAction_triggered();
+	void dataRoomsAction_triggered();
+	void dataBuildingsAction_triggered();
+	void dataAllTimeConstraintsAction_triggered();
+	void dataAllSpaceConstraintsAction_triggered();
 
 	void dataSpaceConstraintsRoomNotAvailableTimesAction_triggered();
 	void dataSpaceConstraintsTeacherRoomNotAvailableTimesAction_triggered();
@@ -844,122 +844,122 @@ public slots:
 	void dataTimeConstraintsActivitiesMinInATermAction_triggered();
 	void dataTimeConstraintsActivitiesOccupyMaxTermsAction_triggered();
 
-	void on_helpMoroccoAction_triggered();
-	void on_helpAlgeriaAction_triggered();
-	void on_helpBlockPlanningAction_triggered();
-	void on_helpTermsAction_triggered();
+	void helpMoroccoAction_triggered();
+	void helpAlgeriaAction_triggered();
+	void helpBlockPlanningAction_triggered();
+	void helpTermsAction_triggered();
 
-	void on_activityPlanningAction_triggered();
-	void on_spreadActivitiesAction_triggered();
-	void on_removeRedundantConstraintsAction_triggered();
+	void activityPlanningAction_triggered();
+	void spreadActivitiesAction_triggered();
+	void removeRedundantConstraintsAction_triggered();
 
 	//about
-	void on_helpAboutFETAction_triggered();
-	void on_helpAboutQtAction_triggered();
-	void on_helpAboutLibrariesAction_triggered();
+	void helpAboutFETAction_triggered();
+	void helpAboutQtAction_triggered();
+	void helpAboutLibrariesAction_triggered();
 	//offline
-	void on_helpFAQAction_triggered();
-	void on_helpTipsAction_triggered();
-	void on_helpInstructionsAction_triggered();
+	void helpFAQAction_triggered();
+	void helpTipsAction_triggered();
+	void helpInstructionsAction_triggered();
 	//online
-	void on_helpHomepageAction_triggered();
-	void on_helpContentsAction_triggered();
-	void on_helpForumAction_triggered();
-	void on_helpAddressesAction_triggered();
+	void helpHomepageAction_triggered();
+	void helpContentsAction_triggered();
+	void helpForumAction_triggered();
+	void helpAddressesAction_triggered();
 
-	void on_timetableGenerateAction_triggered();
-	void on_timetableViewStudentsDaysHorizontalAction_triggered();
-	void on_timetableViewStudentsTimeHorizontalAction_triggered();
-	void on_timetableViewTeachersDaysHorizontalAction_triggered();
-	void on_timetableViewTeachersTimeHorizontalAction_triggered();
-	void on_timetableViewRoomsDaysHorizontalAction_triggered();
-	void on_timetableViewRoomsTimeHorizontalAction_triggered();
-	void on_timetableShowConflictsAction_triggered();
-	void on_timetablePrintAction_triggered();
-	void on_timetableGenerateMultipleAction_triggered();
+	void timetableGenerateAction_triggered();
+	void timetableViewStudentsDaysHorizontalAction_triggered();
+	void timetableViewStudentsTimeHorizontalAction_triggered();
+	void timetableViewTeachersDaysHorizontalAction_triggered();
+	void timetableViewTeachersTimeHorizontalAction_triggered();
+	void timetableViewRoomsDaysHorizontalAction_triggered();
+	void timetableViewRoomsTimeHorizontalAction_triggered();
+	void timetableShowConflictsAction_triggered();
+	void timetablePrintAction_triggered();
+	void timetableGenerateMultipleAction_triggered();
 
-	void on_timetableLockAllActivitiesAction_triggered();
-	void on_timetableUnlockAllActivitiesAction_triggered();
-	void on_timetableLockActivitiesDayAction_triggered();
-	void on_timetableUnlockActivitiesDayAction_triggered();
-	void on_timetableLockActivitiesEndStudentsDayAction_triggered();
-	void on_timetableUnlockActivitiesEndStudentsDayAction_triggered();
-	void on_timetableLockActivitiesWithASpecifiedActivityTagAction_triggered();
-	void on_timetableUnlockActivitiesWithASpecifiedActivityTagAction_triggered();
+	void timetableLockAllActivitiesAction_triggered();
+	void timetableUnlockAllActivitiesAction_triggered();
+	void timetableLockActivitiesDayAction_triggered();
+	void timetableUnlockActivitiesDayAction_triggered();
+	void timetableLockActivitiesEndStudentsDayAction_triggered();
+	void timetableUnlockActivitiesEndStudentsDayAction_triggered();
+	void timetableLockActivitiesWithASpecifiedActivityTagAction_triggered();
+	void timetableUnlockActivitiesWithASpecifiedActivityTagAction_triggered();
 	///
-	void on_timetableLockActivitiesWithAdvancedFilterAction_triggered();
-	void on_timetableUnlockActivitiesWithAdvancedFilterAction_triggered();
+	void timetableLockActivitiesWithAdvancedFilterAction_triggered();
+	void timetableUnlockActivitiesWithAdvancedFilterAction_triggered();
 
-	void on_timetableSaveTimetableAsAction_triggered();
+	void timetableSaveTimetableAsAction_triggered();
 
-	void on_randomSeedAction_triggered();
+	void randomSeedAction_triggered();
 	
-	void on_languageAction_triggered();
+	void languageAction_triggered();
 	
-	void on_settingsDivideTimetablesByDaysAction_toggled();
-	void on_settingsDuplicateVerticalNamesAction_toggled();
+	void settingsDivideTimetablesByDaysAction_toggled();
+	void settingsDuplicateVerticalNamesAction_toggled();
 	
-	void on_settingsRestoreDefaultsAction_triggered();
+	void settingsRestoreDefaultsAction_triggered();
 	
-	void on_settingsTimetableHtmlLevelAction_triggered();
+	void settingsTimetableHtmlLevelAction_triggered();
 	
-	void on_settingsDataToPrintInTimetablesAction_triggered();
+	void settingsDataToPrintInTimetablesAction_triggered();
 	
-	void on_settingsOrderSubgroupsInTimetablesAction_toggled();
-	void on_settingsPrintDetailedTimetablesAction_toggled();
-	void on_settingsPrintDetailedTeachersFreePeriodsTimetablesAction_toggled();
-	void on_settingsPrintNotAvailableSlotsAction_toggled();
-	void on_settingsPrintBreakSlotsAction_toggled();
+	void settingsOrderSubgroupsInTimetablesAction_toggled();
+	void settingsPrintDetailedTimetablesAction_toggled();
+	void settingsPrintDetailedTeachersFreePeriodsTimetablesAction_toggled();
+	void settingsPrintNotAvailableSlotsAction_toggled();
+	void settingsPrintBreakSlotsAction_toggled();
 	
-	void on_settingsPrintActivitiesWithSameStartingTimeAction_toggled();
+	void settingsPrintActivitiesWithSameStartingTimeAction_toggled();
 	
-	void on_selectOutputDirAction_triggered();
+	void selectOutputDirAction_triggered();
 	
-	void on_statisticsExportToDiskAction_triggered();
-	void on_statisticsPrintAction_triggered();
+	void statisticsExportToDiskAction_triggered();
+	void statisticsPrintAction_triggered();
 	
-	void on_shortcutAllTimeConstraintsPushButton_clicked();
-	void on_shortcutBreakTimeConstraintsPushButton_clicked();
-	void on_shortcutTeachersTimeConstraintsPushButton_clicked();
-	void on_shortcutStudentsTimeConstraintsPushButton_clicked();
-	void on_shortcutActivitiesTimeConstraintsPushButton_clicked();
-	void on_shortcutAdvancedTimeConstraintsPushButton_clicked();
+	void shortcutAllTimeConstraintsPushButton_clicked();
+	void shortcutBreakTimeConstraintsPushButton_clicked();
+	void shortcutTeachersTimeConstraintsPushButton_clicked();
+	void shortcutStudentsTimeConstraintsPushButton_clicked();
+	void shortcutActivitiesTimeConstraintsPushButton_clicked();
+	void shortcutAdvancedTimeConstraintsPushButton_clicked();
 	
-	void on_shortcutAllSpaceConstraintsPushButton_clicked();
-	void on_shortcutRoomsSpaceConstraintsPushButton_clicked();
-	void on_shortcutTeachersSpaceConstraintsPushButton_clicked();
-	void on_shortcutStudentsSpaceConstraintsPushButton_clicked();
-	void on_shortcutSubjectsSpaceConstraintsPushButton_clicked();
-	void on_shortcutActivityTagsSpaceConstraintsPushButton_clicked();
-	void on_shortcutSubjectsAndActivityTagsSpaceConstraintsPushButton_clicked();
-	void on_shortcutActivitiesSpaceConstraintsPushButton_clicked();
+	void shortcutAllSpaceConstraintsPushButton_clicked();
+	void shortcutRoomsSpaceConstraintsPushButton_clicked();
+	void shortcutTeachersSpaceConstraintsPushButton_clicked();
+	void shortcutStudentsSpaceConstraintsPushButton_clicked();
+	void shortcutSubjectsSpaceConstraintsPushButton_clicked();
+	void shortcutActivityTagsSpaceConstraintsPushButton_clicked();
+	void shortcutSubjectsAndActivityTagsSpaceConstraintsPushButton_clicked();
+	void shortcutActivitiesSpaceConstraintsPushButton_clicked();
 	
-	void on_shortcutGeneratePushButton_clicked();
-	void on_shortcutGenerateMultiplePushButton_clicked();
-	void on_shortcutViewTeachersPushButton_clicked();
-	void on_shortcutViewStudentsPushButton_clicked();
-	void on_shortcutViewRoomsPushButton_clicked();
-	void on_shortcutShowSoftConflictsPushButton_clicked();
+	void shortcutGeneratePushButton_clicked();
+	void shortcutGenerateMultiplePushButton_clicked();
+	void shortcutViewTeachersPushButton_clicked();
+	void shortcutViewStudentsPushButton_clicked();
+	void shortcutViewRoomsPushButton_clicked();
+	void shortcutShowSoftConflictsPushButton_clicked();
 	//2014-07-01
-	void on_shortcutsTimetableAdvancedPushButton_clicked();
-	void on_shortcutsTimetablePrintPushButton_clicked();
-	void on_shortcutsTimetableLockingPushButton_clicked();
+	void shortcutsTimetableAdvancedPushButton_clicked();
+	void shortcutsTimetablePrintPushButton_clicked();
+	void shortcutsTimetableLockingPushButton_clicked();
 	
-	void on_shortcutBasicPushButton_clicked();
-	void on_shortcutSubjectsPushButton_clicked();
-	void on_shortcutActivityTagsPushButton_clicked();
-	void on_shortcutTeachersPushButton_clicked();
-	void on_shortcutStudentsPushButton_clicked();
-	void on_shortcutActivitiesPushButton_clicked();
-	void on_shortcutSubactivitiesPushButton_clicked();
-	void on_shortcutDataAdvancedPushButton_clicked();
-	void on_shortcutDataSpacePushButton_clicked();
+	void shortcutBasicPushButton_clicked();
+	void shortcutSubjectsPushButton_clicked();
+	void shortcutActivityTagsPushButton_clicked();
+	void shortcutTeachersPushButton_clicked();
+	void shortcutStudentsPushButton_clicked();
+	void shortcutActivitiesPushButton_clicked();
+	void shortcutSubactivitiesPushButton_clicked();
+	void shortcutDataAdvancedPushButton_clicked();
+	void shortcutDataSpacePushButton_clicked();
 
-	void on_shortcutOpenPushButton_clicked();
-	void on_shortcutOpenRecentPushButton_clicked();
-	void on_shortcutNewPushButton_clicked();
-	void on_shortcutSavePushButton_clicked();
-	void on_shortcutSaveAsPushButton_clicked();
+	void shortcutOpenPushButton_clicked();
+	void shortcutOpenRecentPushButton_clicked();
+	void shortcutNewPushButton_clicked();
+	void shortcutSavePushButton_clicked();
+	void shortcutSaveAsPushButton_clicked();
 	
 	void replyFinished(QNetworkReply* networkReply);
 	

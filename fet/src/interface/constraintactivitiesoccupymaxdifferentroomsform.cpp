@@ -39,16 +39,16 @@ ConstraintActivitiesOccupyMaxDifferentRoomsForm::ConstraintActivitiesOccupyMaxDi
 
 	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
-	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ConstraintActivitiesOccupyMaxDifferentRoomsForm::constraintChanged);
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &ConstraintActivitiesOccupyMaxDifferentRoomsForm::addConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &ConstraintActivitiesOccupyMaxDifferentRoomsForm::close);
+	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintActivitiesOccupyMaxDifferentRoomsForm::removeConstraint);
+	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintActivitiesOccupyMaxDifferentRoomsForm::modifyConstraint);
+	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintActivitiesOccupyMaxDifferentRoomsForm::modifyConstraint);
 
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(helpPushButton, &QPushButton::clicked, this, &ConstraintActivitiesOccupyMaxDifferentRoomsForm::help);
 
-	connect(addRemoveMultipleConstraintsPushButton, SIGNAL(clicked()), this, SLOT(addRemoveMultipleConstraints()));
+	connect(addRemoveMultipleConstraintsPushButton, &QPushButton::clicked, this, &ConstraintActivitiesOccupyMaxDifferentRoomsForm::addRemoveMultipleConstraints);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -90,10 +90,10 @@ ConstraintActivitiesOccupyMaxDifferentRoomsForm::ConstraintActivitiesOccupyMaxDi
 
 	this->filterChanged();
 
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintActivitiesOccupyMaxDifferentRoomsForm::filterChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintActivitiesOccupyMaxDifferentRoomsForm::filterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintActivitiesOccupyMaxDifferentRoomsForm::filterChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConstraintActivitiesOccupyMaxDifferentRoomsForm::filterChanged);
 }
 
 ConstraintActivitiesOccupyMaxDifferentRoomsForm::~ConstraintActivitiesOccupyMaxDifferentRoomsForm()

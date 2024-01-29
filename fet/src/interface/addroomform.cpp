@@ -27,9 +27,9 @@ AddRoomForm::AddRoomForm(QWidget* parent): QDialog(parent)
 	
 	addRoomPushButton->setDefault(true);
 
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
-	connect(addRoomPushButton, SIGNAL(clicked()), this, SLOT(addRoom()));
+	connect(closePushButton, &QPushButton::clicked, this, &AddRoomForm::close);
+	connect(helpPushButton, &QPushButton::clicked, this, &AddRoomForm::help);
+	connect(addRoomPushButton, &QPushButton::clicked, this, &AddRoomForm::addRoom);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -41,7 +41,7 @@ AddRoomForm::AddRoomForm(QWidget* parent): QDialog(parent)
 	buildingsComboBox->addItem("");
 	for(int i=0; i<gt.rules.buildingsList.size(); i++)
 		buildingsComboBox->addItem(gt.rules.buildingsList.at(i)->name);
-		
+	
 	capacitySpinBox->setMinimum(1);
 	capacitySpinBox->setMaximum(MAX_ROOM_CAPACITY);
 	capacitySpinBox->setValue(MAX_ROOM_CAPACITY);

@@ -27,8 +27,8 @@ AddConstraintStudentsSetMinGapsBetweenRoomChangesForm::AddConstraintStudentsSetM
 
 	addConstraintPushButton->setDefault(true);
 
-	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, &QPushButton::clicked, this, &AddConstraintStudentsSetMinGapsBetweenRoomChangesForm::addCurrentConstraint);
+	connect(closePushButton, &QPushButton::clicked, this, &AddConstraintStudentsSetMinGapsBetweenRoomChangesForm::close);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

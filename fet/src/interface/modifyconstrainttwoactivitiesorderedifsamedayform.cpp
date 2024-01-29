@@ -26,10 +26,10 @@ ModifyConstraintTwoActivitiesOrderedIfSameDayForm::ModifyConstraintTwoActivities
 
 	okPushButton->setDefault(true);
 
-	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, &QPushButton::clicked, this, &ModifyConstraintTwoActivitiesOrderedIfSameDayForm::ok);
+	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyConstraintTwoActivitiesOrderedIfSameDayForm::cancel);
 
-	connect(swapPushButton, SIGNAL(clicked()), this, SLOT(swap()));
+	connect(swapPushButton, &QPushButton::clicked, this, &ModifyConstraintTwoActivitiesOrderedIfSameDayForm::swap);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

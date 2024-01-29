@@ -25,9 +25,9 @@ SaveTimetableConfirmationForm::SaveTimetableConfirmationForm(QWidget* parent): Q
 	
 	continuePushButton->setDefault(true);
 	
-	connect(continuePushButton, SIGNAL(clicked()), this, SLOT(accept()));
-	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(reject()));
-	connect(dontShowAgainCheckBox, SIGNAL(toggled(bool)), this, SLOT(dontShowAgainCheckBoxToggled()));
+	connect(continuePushButton, &QPushButton::clicked, this, &SaveTimetableConfirmationForm::accept);
+	connect(cancelPushButton, &QPushButton::clicked, this, &SaveTimetableConfirmationForm::reject);
+	connect(dontShowAgainCheckBox, &QCheckBox::toggled, this, &SaveTimetableConfirmationForm::dontShowAgainCheckBoxToggled);
 
 	dontShowAgain=dontShowAgainCheckBox->isChecked();
 	
