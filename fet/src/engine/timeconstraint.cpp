@@ -22300,7 +22300,7 @@ double ConstraintActivityEndsStudentsDay::fitness(Solution& c, Rules& r, QList<d
 					nbroken=1;
 					break;
 				}
-			if(nbroken)
+			if(nbroken>0)
 				break;
 		}
 	}
@@ -24816,7 +24816,7 @@ double ConstraintActivityEndsTeachersDay::fitness(Solution& c, Rules& r, QList<d
 					nbroken=1;
 					break;
 				}
-			if(nbroken)
+			if(nbroken>0)
 				break;
 		}
 	}
@@ -57641,7 +57641,7 @@ double ConstraintActivityBeginsStudentsDay::fitness(Solution& c, Rules& r, QList
 					nbroken=1;
 					break;
 				}
-			if(nbroken)
+			if(nbroken>0)
 				break;
 		}
 	}
@@ -58182,7 +58182,7 @@ double ConstraintActivityBeginsTeachersDay::fitness(Solution& c, Rules& r, QList
 					nbroken=1;
 					break;
 				}
-			if(nbroken)
+			if(nbroken>0)
 				break;
 		}
 	}

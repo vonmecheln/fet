@@ -74,62 +74,62 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	
 	QString about=QString("");
 	about+=tr("FET is free software for automatically scheduling the timetable of a school, high-school or university.");
-	about+="<br /><br />";
+	about+=QString("<br /><br />");
 	about+=tr("Copyright (C) %1 %2.", "%1 is the copyright period (a range between two years, more years separated by commas, "
 	 "or a combination of these), %2 are the copyright holders").arg("2002-2024").arg("Liviu Lalescu, Volker Dirr");
-	about+="<br /><br />";
+	about+=QString("<br /><br />");
 	about+=tr("Version: %1 (%2 %3).", "%1 is the current FET version, %2 is the current release month, %3 is the current release year").arg(FET_VERSION)
-	 .arg(QCoreApplication::translate("MonthsNames", "January")).arg("2024");
-	about+="<br /><br />";
+	 .arg(QCoreApplication::translate("MonthsNames", "February")).arg("2024");
+	about+=QString("<br /><br />");
 	about+=tr("Licensed under the GNU Affero General Public License version 3 or later.");
-	about+="<br /><br />";
+	about+=QString("<br /><br />");
 	about+=tr("FET homepage: %1", "%1 is the FET homepage").arg("<a href=\"https://lalescu.ro/liviu/fet/\">https://lalescu.ro/liviu/fet/</a>");
-	about+="<br />";
+	about+=QString("<br />");
 	aboutTextBrowser->setHtml(about);
 	
 	QString authors=QString("");
 	authors+=tr("%1 (%2)", "%1 is the name of an author, %2 is a method to contact him or her (email or web page)")
 	 .arg("Liviu Lalescu")
 	 .arg("https://lalescu.ro/liviu/");
-	authors+="<br /><br />";
+	authors+=QString("<br /><br />");
 	authors+=tr("%1 (%2)", "%1 is the name of an author, %2 is a method to contact him or her (email or web page)")
 	 .arg("Volker Dirr")
 	 .arg("https://www.timetabling.de/");
-	authors+="<br />";
+	authors+=QString("<br />");
 	authors+=QString("&nbsp;&nbsp;&nbsp;&nbsp;- ")+tr("XHTML timetable export.");
-	authors+="<br />";
+	authors+=QString("<br />");
 	authors+=QString("&nbsp;&nbsp;&nbsp;&nbsp;- ")+tr("CSV import and export.");
-	authors+="<br />";
+	authors+=QString("<br />");
 	authors+=QString("&nbsp;&nbsp;&nbsp;&nbsp;- ")+tr("Advanced statistics print/export.");
-	authors+="<br />";
+	authors+=QString("<br />");
 	authors+=QString("&nbsp;&nbsp;&nbsp;&nbsp;- ")+tr("Speed improvements in the timetable generation.");
-	authors+="<br />";
+	authors+=QString("<br />");
 	authors+=QString("&nbsp;&nbsp;&nbsp;&nbsp;- ")+tr("Locking the activities.");
-	authors+="<br />";
+	authors+=QString("<br />");
 	authors+=QString("&nbsp;&nbsp;&nbsp;&nbsp;- ")+tr("Activity planning dialog.");
-	authors+="<br />";
+	authors+=QString("<br />");
 	authors+=QString("&nbsp;&nbsp;&nbsp;&nbsp;- ")+tr("Print timetable dialog.");
-	authors+="<br />";
+	authors+=QString("<br />");
 	authorsTextBrowser->setHtml(authors);
 	
 	QString contributors=QString("");
 	contributors+=tr("Code contributors:");
-	contributors+="<br /><br />";
+	contributors+=QString("<br /><br />");
 	contributors+=tr("%1 (%2)", "%1 is the name of a contributor, %2 is a method to contact him or her (email or web page)")
 	 .arg("Rodolfo Ribeiro Gomes")
 	 .arg("rodolforg AT gmail.com");
-	contributors+="<br />";
+	contributors+=QString("<br />");
 	contributors+=QString("&nbsp;&nbsp;&nbsp;&nbsp;- ")+tr("An initial draft code for the constraints of type teacher(s) max span per day and teacher(s) min resting hours.");
-	contributors+="<br />";
+	contributors+=QString("<br />");
 	contributors+=QString("&nbsp;&nbsp;&nbsp;&nbsp;- ")+tr("The alphabetic sorting of the items which respects the user's locale "
 	 "(the special characters are correctly ordered).");
-	contributors+="<br /><br />";
+	contributors+=QString("<br /><br />");
 	contributors+=QString("Marco Vassura");
-	contributors+="<br />";
+	contributors+=QString("<br />");
 	contributors+=QString("&nbsp;&nbsp;&nbsp;&nbsp;- ")+
 	 tr("The colors of the timetables, in the timetable view dialogs and in the XHTML results (using CRC-24 based on RFC 2440 Section 6.1).",
 	 "CRC means Cyclic Redundancy Check, RFC means Request for Comments. Please keep the fields CRC-24, RFC 2440, and 6.1 unmodified.");
-	contributors+="<br />";
+	contributors+=QString("<br />");
 	contributorsTextBrowser->setHtml(contributors);
 	
 	QString translators=QString("");
@@ -156,7 +156,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
 	translators+=tr("former translator: %1 (to contact %2 visit FET forum - %3, "
 	 "section about Catalan translation, or contact forum user %4)", "%1 is the translator's complete name, %2 is his or her shorter or complete name, %3 is the FET forum address, "
-	 "%4 is the username of the translator").arg(QString::fromUtf8("Sílvia Lag")).arg(QString::fromUtf8("Sílvia")).arg("https://lalescu.ro/liviu/fet/forum/").arg("silvia");
+	 "%4 is the username of the translator").arg(QString("Sílvia Lag")).arg(QString("Sílvia")).arg("https://lalescu.ro/liviu/fet/forum/").arg("silvia");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
 	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Innocent De Marchi").arg("tangram.peces AT gmail.com");
 	translators+=QString("<br /><br /><br />");
@@ -195,10 +195,10 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("es").arg(tr("Spanish translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
 	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address")
-	 .arg(QString::fromUtf8("José César Fernández López")).arg("cesar.fernandez.lopez AT gmail.com");
+	 .arg(QString("José César Fernández López")).arg("cesar.fernandez.lopez AT gmail.com");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
 	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address")
-	 .arg(QString::fromUtf8("Emiliano Llano Díaz")).arg("compuvtt AT hotmail.com");
+	 .arg(QString("Emiliano Llano Díaz")).arg("compuvtt AT hotmail.com");
 	translators+=QString(" - ")+tr("rewrote the translation from zero");
 	translators+=QString("<br /><br /><br />");
 
@@ -221,7 +221,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Patrick Fox").arg("patrick.fox AT laposte.net");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
 	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address")
-	 .arg(QString::fromUtf8("Régis Bouguin")).arg("regis.bouguin AT laposte.net");
+	 .arg(QString("Régis Bouguin")).arg("regis.bouguin AT laposte.net");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
 	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Pascal Cohen").arg("pacohen AT laposte.net");
 	translators+=QString(" - ")+tr("rewrote the translation from zero");
@@ -295,7 +295,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Werner Bruns").arg("werner.bruns AT gmail.com");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
 	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address")
-	 .arg(QString::fromUtf8("Frank Mártin")).arg("drfarofa AT gmail.com");
+	 .arg(QString("Frank Mártin")).arg("drfarofa AT gmail.com");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
 	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Cloves das Neves").arg("clovesneves AT gmail.com");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
@@ -369,14 +369,14 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	 "%4 is the username of the translator").arg("Nguyen Truong Thang").arg("Thang").arg("https://lalescu.ro/liviu/fet/forum/").arg("NTThang");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
 	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address")
-	 .arg(QString::fromUtf8("Nguyễn Hữu Duyệt")).arg("nguyenhuuduyet AT gmail.com");
+	 .arg(QString("Nguyễn Hữu Duyệt")).arg("nguyenhuuduyet AT gmail.com");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
 	translators+=tr("former translator: %1 (%2, or visit FET forum - %3, "
 	 "section about Vietnamese translation, or contact forum user %4)", "%1 is the current translator, %2 is his or her email or web address, %3 is the FET forum address, "
-	 "%4 is the username of the translator").arg(QString::fromUtf8("Ngọc Ngô Minh")).arg("nmngoc.c3hvt AT yenbai.edu.vn").arg("https://lalescu.ro/liviu/fet/forum/").arg("ngoctp29121982");
+	 "%4 is the username of the translator").arg(QString("Ngọc Ngô Minh")).arg("nmngoc.c3hvt AT yenbai.edu.vn").arg("https://lalescu.ro/liviu/fet/forum/").arg("ngoctp29121982");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
 	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address")
-	 .arg(QString::fromUtf8("Phạm Văn Quyền Anh")).arg("phamanhlc1992 AT gmail.com");
+	 .arg(QString("Phạm Văn Quyền Anh")).arg("phamanhlc1992 AT gmail.com");
 	translators+=QString("<br /><br /><br />");
 
 	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("zh_CN").arg(tr("Chinese Simplified translation"));
@@ -394,14 +394,14 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	QString references=QString("");
 	references+=tr("You may find references for the algorithms and techniques used in this program on the FET documentation web page, %1")
 	 .arg("<a href=\"https://lalescu.ro/liviu/fet/doc/\">https://lalescu.ro/liviu/fet/doc/</a>");
-	references+="<br />";
+	references+=QString("<br />");
 	referencesTextBrowser->setHtml(references);
 	
 	QString thanksTo=QString("");
 	thanksTo+=tr("The following people, listed chronologically, participated in this project with suggestions, example files, "
 	 "reports, and/or other kinds of contributions:");
 	thanksTo+=QString("<br /><br />");
-	thanksTo+=QString::fromUtf8("Costin Bădică");
+	thanksTo+=QString("Costin Bădică");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Carsten Niehaus");
 	thanksTo+=QString("<br />");
@@ -451,7 +451,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Scott Sweeting");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString::fromUtf8("Dragoș Petrașcu");
+	thanksTo+=QString("Dragoș Petrașcu");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Daniel S.");
 	thanksTo+=QString("<br />");
@@ -479,7 +479,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Patrick Fox");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString::fromUtf8("Andrés Chandía");
+	thanksTo+=QString("Andrés Chandía");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Zoran Zdravkovski");
 	thanksTo+=QString("<br />");
@@ -497,7 +497,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Maciej Deorowicz");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString::fromUtf8("José César Fernández López");
+	thanksTo+=QString("José César Fernández López");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Daniel Chiriac");
 	thanksTo+=QString("<br />");
@@ -513,7 +513,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Silver");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString::fromUtf8("Horațiu Hălmăjan");
+	thanksTo+=QString("Horațiu Hălmăjan");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("kdsayang");
 	thanksTo+=QString("<br />");
@@ -531,7 +531,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("George Miliotis [Ionio]");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString::fromUtf8("Sílvia");
+	thanksTo+=QString("Sílvia");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Chafik Graiguer");
 	thanksTo+=QString("<br />");
@@ -545,7 +545,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Thomas Schwartz");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString::fromUtf8("Cătălin Maican");
+	thanksTo+=QString("Cătălin Maican");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Ilya V. Paramonov");
 	thanksTo+=QString("<br />");
@@ -557,7 +557,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Regina V. Kryvakovska");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString::fromUtf8("ßingen");
+	thanksTo+=QString("ßingen");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Angela");
 	thanksTo+=QString("<br />");
@@ -593,7 +593,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Christoph Schilling");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString::fromUtf8("Frank Mártin");
+	thanksTo+=QString("Frank Mártin");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Werner Bruns");
 	thanksTo+=QString("<br />");
@@ -607,7 +607,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Ondrej Gregor");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString::fromUtf8("Karel Rodríguez Varona");
+	thanksTo+=QString("Karel Rodríguez Varona");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Remus Turea");
 	thanksTo+=QString("<br />");
@@ -631,7 +631,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("M K Lohumi");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString::fromUtf8("Régis Bouguin");
+	thanksTo+=QString("Régis Bouguin");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Ivan Starchevicy");
 	thanksTo+=QString("<br />");
@@ -717,7 +717,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("agemagician");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString::fromUtf8("Vlăduț Frățiman");
+	thanksTo+=QString("Vlăduț Frățiman");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("vlad2005");
 	thanksTo+=QString("<br />");
@@ -747,7 +747,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Thomas Klausner");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString::fromUtf8("Jörg Sonnenberger");
+	thanksTo+=QString("Jörg Sonnenberger");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Boubker");
 	thanksTo+=QString("<br />");
@@ -763,7 +763,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("orange");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString::fromUtf8("Nguyễn Hữu Duyệt");
+	thanksTo+=QString("Nguyễn Hữu Duyệt");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Vanyo Georgiev");
 	thanksTo+=QString("<br />");
@@ -843,7 +843,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("hudrea");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString::fromUtf8("Udo Schütz");
+	thanksTo+=QString("Udo Schütz");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Jijo Jose");
 	thanksTo+=QString("<br />");
@@ -859,9 +859,9 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("daltinkurt");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString::fromUtf8("Léo-Paul Roch");
+	thanksTo+=QString("Léo-Paul Roch");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString::fromUtf8("Matthias Söllner");
+	thanksTo+=QString("Matthias Söllner");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("auriolar");
 	thanksTo+=QString("<br />");
@@ -891,7 +891,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("dasa");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString::fromUtf8("Julio González Gil");
+	thanksTo+=QString("Julio González Gil");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Abou");
 	thanksTo+=QString("<br />");
@@ -921,7 +921,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Thaneswer Patel");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString::fromUtf8("Emiliano Llano Díaz");
+	thanksTo+=QString("Emiliano Llano Díaz");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("mohammed");
 	thanksTo+=QString("<br />");
@@ -959,7 +959,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Jude G");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString::fromUtf8("Madas Pál");
+	thanksTo+=QString("Madas Pál");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("fourat");
 	thanksTo+=QString("<br />");
@@ -989,7 +989,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Lysso");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString::fromUtf8("Marco Diego Aurélio Mesquita");
+	thanksTo+=QString("Marco Diego Aurélio Mesquita");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("forstera");
 	thanksTo+=QString("<br />");
@@ -1083,7 +1083,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Ahmed Moullafi");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString::fromUtf8("Phạm Văn Quyền Anh");
+	thanksTo+=QString("Phạm Văn Quyền Anh");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Asen Pashov");
 	thanksTo+=QString("<br />");
@@ -1097,7 +1097,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("wldchtgmlcm");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString::fromUtf8("Ngọc Ngô Minh");
+	thanksTo+=QString("Ngọc Ngô Minh");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Fred");
 	thanksTo+=QString("<br />");
@@ -1151,7 +1151,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("victorcapel");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString::fromUtf8("Vũ Ngọc Thành");
+	thanksTo+=QString("Vũ Ngọc Thành");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Neury Nunes Cardoso");
 	thanksTo+=QString("<br />");
@@ -1163,7 +1163,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("sebi1972");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString::fromUtf8("Rouge Rosé");
+	thanksTo+=QString("Rouge Rosé");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Daniele Rocci");
 	thanksTo+=QString("<br />");
@@ -1192,6 +1192,10 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("gerry");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Hristiyan Dimitrov");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("maxi_mus");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Gênesis");
 	thanksTo+=QString("<br />");
 	
 	thanksToTextBrowser->setHtml(thanksTo);

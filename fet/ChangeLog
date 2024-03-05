@@ -2781,3 +2781,7 @@ Versions 6.16.0 - 6.16.v
 	- Minor bug fix in the interface (reported by Volker Dirr).
 	- Minor improvement when saving the history data file (using ideas from Volker Dirr).
 	- Updated the Bulgarian translation, by Hristiyan Dimitrov, who is the new translator.
+- Version 6.16.1
+	- The constraints of type activity(ies) begin(s)/end(s) student(s)'/teacher(s)' day are now allowed to have weight <100% (suggested by maxi_mus).
+	- Minor improvements in some English fields.
+	- Minor code improvements.

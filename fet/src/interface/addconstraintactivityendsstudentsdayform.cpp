@@ -159,11 +159,11 @@ void AddConstraintActivityEndsStudentsDayForm::addCurrentConstraint()
 			tr("Invalid weight (percentage)"));
 		return;
 	}
-	if(weight!=100.0){
+	/*if(weight!=100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage) - must be 100%"));
 		return;
-	}
+	}*/
 
 	int id;
 	int tmp2=activitiesComboBox->currentIndex();

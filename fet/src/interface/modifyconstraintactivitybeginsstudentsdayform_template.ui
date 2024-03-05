@@ -152,7 +152,7 @@
        </property>
        <property name="text">
         <string>Weight percentage
-(necessary: 100%)</string>
+(recommended: 0.0%-100.0%)</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>

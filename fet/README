@@ -1,4 +1,4 @@
-This is FET version 6.16.0
+This is FET version 6.16.1
 
 
 Program description:
@@ -14,7 +14,7 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.7.1, Xfce 4.18,
+	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.7.2, Xfce 4.18,
 	Xfce Terminal Emulator 1.1.1, Midnight Commander 4.8.30, Krusader 2.8.0, Kate 23.08.4, KDiff3 0.9.98, grep 3.11, sed 4.9,
 	Thunar Bulk Rename 4.18.7, Qt 6.6.1, QMake 3.1, CMake 3.28.1, Ninja 1.10.2, Qt Creator 12.0.1, GCC 13.2.1, Clang 17.0.6,
 	GNU Make 4.4.1, GDB 13.2, Valgrind 3.22.0, Coverity Scan 2023.6, Cppcheck 2.10, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0,
@@ -535,7 +535,7 @@ Uninstalling FET:
 	GNU/Linux and Windows:
 	Remove the directory fet-v.v.v. Also, you may want to remove the directory with the fet results (default: $HOME/fet-results).
 	This will leave the settings of FET on your system. FET stores its settings in your operating system's dedicated section.
-	If you really want to get rid of everything FET created, read below.
+	If you really want to remove everything that FET created, please read below.
 
 	To completely remove stored FET settings from your operating system:
 

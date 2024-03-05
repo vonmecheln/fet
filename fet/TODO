@@ -5104,7 +5104,7 @@ not focus on post-generation optimization at all".
 
 318-------------------DONE since FET-6.0.0------------------
 
-319---------------------------------------------------------
+319--------------DONE???------------------------------------
 From Vangelis Karafillidis:
 
 Two activities are not consecutive. For example A1 and A2 are not consecutive means that FET forces the A2 activity not to be placed immediately after A1.
@@ -5115,7 +5115,7 @@ P1 pseudo-activity, and A2 real activity. If you want A1 and A2 not to be consec
 
 Liviu, 2024-01-21: isn't this done a long time ago, min gaps between ordered pair of activity tags?
 
-320---------------------------------------------------------
+320--------------PARTIALLY DONE-----------------------------
 From Volker Dirr:
 
 get rid of max_days_per_week and max_hours_per_day.
@@ -5156,7 +5156,7 @@ Teachers view:
 teacher available times, max days per week, home room etc.
 2) When right-clicking on an activity (in the timetable), a menu with two sub-menus opens. The first sub-menu has the options of modifying the specific activity.
 The second sub-menu is actually all the of the time constraints for the specific activity (for example an activity has a preferred starting time, etc).
-Students view:The corresponding options for the students, as mentioned above.
+Students view: The corresponding options for the students, as mentioned above.
 
 I think that the above are necessary. Of course ALL the existing options for the teachers, students etc might be displayed in these menus, when right-clicking.
 For example, modifying the data (teacher name, etc). THIS WOULD BE MUCH BETTER, SO ONE COULD MAKE MODIFICATIONS ON ALL FET FIELDS WITHOUT EXISTING THESE WINDOWS.
@@ -6196,15 +6196,7 @@ From Volker Dirr:
 Disable energy saving mode, because FET won't calculate anymore if
 the computer falls into save mode after x minutes.
 
-377---------------------------------------------------------
-From Nagendra (on forum):
-
-https://lalescu.ro/liviu/fet/forum/index.php?topic=4050.msg21599#msg21599
-
-I request you to enable multi-selection (using 'ctrl' key) and range selection (using 'Shift' key) in time and space constraints also. So that
-anyone can enable/disable/delete many constraints at once.
-
-Also from ChicagoPianoTuner, he suggests selecting and removing more constraints or activities at once.
+377----------------------DONE-------------------------------
 
 378---------------------------------------------------------
 From CarolStott and Volker Dirr (on forum):
@@ -7723,7 +7715,7 @@ Add a constraint on the maximum number of evenings in a week using a CSV file:
 
 Adding the maximum number of sessions or the maximum number of days in a school week is very time consuming because it cannot have a dialog box to filter.
 You say there are many dialog boxes in FET software, but I find all the dialogs you create very useful. Now we teachers from Vietnam really want you to create
-that dialog box and add the constraint of maximum number of nights or maximum number of days in a week using a CSV file. We always support your development.
+that dialog box and add the constraint of maximum number of nights or maximum number of days in a week using a CSV file.
 
 494---------------------------------------------------------
 From Volker Dirr and Liviu Lalescu:
@@ -8656,3 +8648,23 @@ From Volker Dirr and Liviu Lalescu:
 
 Convert the very many nested if / else if-s in Rules::read, the part of reading the time / space constraints.
 This could be done with a switch based on hashes / maps of the strings. Complicated and critical.
+
+539---------------------------------------------------------
+From maxi_mus (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5821.msg32156#msg32156
+
+For morning afternoon mode, it seems to me that the names of the constraints are ambiguous. For example, 'a set of activities end students day'
+is clear in original mode, but in MA mode, this means FET days (right?) and not actual days. Would it make sense to rename this stuff so
+it's not ambiguous? This is perhaps something I could help you with.
+
+540---------------------------------------------------------
+From Gênesis (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5080.msg32169#msg32169
+
+Como fazer para imprimir um horário com as disciplinas repetidas dentro da tabela, ao invés de uma disciplina mesclada em 3 ou 02 celulas. Esticamente não fica legal.
+
+Translation from Portuguese to English using Google translate:
+
+How to print a timetable with the subjects repeated within the table, instead of a subject merged into 3 or 2 cells. Aesthetically it doesn't look good.

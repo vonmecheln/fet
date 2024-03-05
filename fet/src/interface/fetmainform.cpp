@@ -3631,27 +3631,27 @@ void FetMainForm::populateLanguagesMap(QMap<QString, QString>& languagesMap)
 	languagesMap.insert("en_US", QString("US English"));
 	languagesMap.insert("en_GB", QString("British English"));
 
-	languagesMap.insert("ar", QString::fromUtf8("عربي"));
-	languagesMap.insert("ca", QString::fromUtf8("Català"));
-	languagesMap.insert("de", QString::fromUtf8("Deutsch"));
-	languagesMap.insert("el", QString::fromUtf8("Ελληνικά"));
-	languagesMap.insert("es", QString::fromUtf8("Español"));
-	languagesMap.insert("fr", QString::fromUtf8("Français"));
-	languagesMap.insert("id", QString::fromUtf8("Indonesia"));
-	languagesMap.insert("it", QString::fromUtf8("Italiano"));
-	languagesMap.insert("ro", QString::fromUtf8("Română"));
-	languagesMap.insert("uk", QString::fromUtf8("Українська"));
-	languagesMap.insert("pt_BR", QString::fromUtf8("Português Brasil"));
-	languagesMap.insert("da", QString::fromUtf8("Dansk"));
-	languagesMap.insert("sr", QString::fromUtf8("Српски"));
-	languagesMap.insert("gl", QString::fromUtf8("Galego"));
-	languagesMap.insert("vi", QString::fromUtf8("Tiếng Việt"));
-	languagesMap.insert("sq", QString::fromUtf8("Shqip"));
-	languagesMap.insert("zh_TW", QString::fromUtf8("正體字型"));
-	languagesMap.insert("cs", QString::fromUtf8("Český"));
-	languagesMap.insert("ja", QString::fromUtf8("日本語"));
-	languagesMap.insert("ru", QString::fromUtf8("Русский"));
-	languagesMap.insert("bg", QString::fromUtf8("Български"));
+	languagesMap.insert("ar", QString("عربي"));
+	languagesMap.insert("ca", QString("Català"));
+	languagesMap.insert("de", QString("Deutsch"));
+	languagesMap.insert("el", QString("Ελληνικά"));
+	languagesMap.insert("es", QString("Español"));
+	languagesMap.insert("fr", QString("Français"));
+	languagesMap.insert("id", QString("Indonesia"));
+	languagesMap.insert("it", QString("Italiano"));
+	languagesMap.insert("ro", QString("Română"));
+	languagesMap.insert("uk", QString("Українська"));
+	languagesMap.insert("pt_BR", QString("Português Brasil"));
+	languagesMap.insert("da", QString("Dansk"));
+	languagesMap.insert("sr", QString("Српски"));
+	languagesMap.insert("gl", QString("Galego"));
+	languagesMap.insert("vi", QString("Tiếng Việt"));
+	languagesMap.insert("sq", QString("Shqip"));
+	languagesMap.insert("zh_TW", QString("正體字型"));
+	languagesMap.insert("cs", QString("Český"));
+	languagesMap.insert("ja", QString("日本語"));
+	languagesMap.insert("ru", QString("Русский"));
+	languagesMap.insert("bg", QString("Български"));
 
 	//We need to write the following language names in their native language, as above:
 	languagesMap.insert("hu", QString("Hungarian"));

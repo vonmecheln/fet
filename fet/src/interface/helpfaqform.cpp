@@ -623,7 +623,7 @@ void HelpFaqForm::setText()
 	s+="\n\n";
 	s+=tr("Please note that, by enabling this option, each time you start FET it will get the file %1 from the FET homepage, so the request for "
 		"this file will be visible on the server, along with your IP address and access time.")
-		.arg("https://lalescu.ro/liviu/fet/crtversion/crtversion.txt");
+		.arg(QString("https://lalescu.ro/liviu/fet/crtversion/crtversion.txt"));
 	s+=" ";
 	s+=tr("Thus, it could be deduced if and when you use FET.");
 
@@ -658,7 +658,7 @@ void HelpFaqForm::setText()
 		"difficult to look through it). So this specific teacher (because of the restrictions on the other teachers and the loose restrictions on "
 		"himself) had to teach 6 hours with 1 gap so that he could cover a first and a last hour!\n\n"
 		"...Not that I will fall again for it but based on the difficulty to diagnose on my part it will help others that might face the same problem.",
-		"%1 is a person").arg("Anestis Vovos");
+		"%1 is a person").arg(QString("Anestis Vovos"));
 
 	s+="\n\n";
 	s+="--------------------";
@@ -682,7 +682,7 @@ void HelpFaqForm::setText()
 		"Or add a dummy activity for this teacher, split into 2 per week, min days = 2, with 100%. You just need to "
 		"take care that this teacher has place for these dummy activities (enough slots in the day) and to consider "
 		"these dummy activities as possible gaps, so if teacher has max gaps 2 then make max gaps for him 0.",
-		"%1 is a person").arg(QString::fromUtf8("Horațiu Hălmăjan"));
+		"%1 is a person").arg(QString("Horațiu Hălmăjan"));
 
 	s+="\n\n";
 	s+="--------------------";
@@ -691,7 +691,7 @@ void HelpFaqForm::setText()
 	s+=tr("Q: (by %1) The students must have max 4 gaps per week, maximum 2 per day, continuous gaps. How to solve this?\n\n"
 		"A: Add for each subgroup a dummy activity (no teachers) split into 4 per week, duration 1, min days between "
 		"activities 1, weight 0%, select consecutive if on the same day. FET will never put more than 2 of these dummy activities "
-		"on a day. Add max gaps for students = 0 per week.", "%1 is a person").arg(QString::fromUtf8("Horațiu Hălmăjan"));
+		"on a day. Add max gaps for students = 0 per week.", "%1 is a person").arg(QString("Horațiu Hălmăjan"));
 
 	s+="\n\n";
 	s+="--------------------";
@@ -850,7 +850,7 @@ void HelpFaqForm::setText()
 	s+="--------------------";
 	s+="\n\n";
 
-	s+=tr("-- This entry by %1 --", "%1 is a person").arg("Regis Bouguin");
+	s+=tr("-- This entry by %1 --", "%1 is a person").arg(QString("Regis Bouguin"));
 	s+="\n\n";
 	s+=tr("Q: A trick to deal with fortnightly activities (my institution has a lot of fortnightly activities):");
 	s+="\n\n";
@@ -968,13 +968,13 @@ void HelpFaqForm::setText()
 	 " containing the file \"%3\". If you copy this file to another computer, the FET settings will be copied. You can also make"
 	 " a backup of this file and copy it on the same computer, later, to restore the previous settings."
 	 " If you remove this file, all FET settings on this computer will be reset to defaults."
-	 ).arg("$HOME/.config").arg("fet").arg("fettimetabling.conf");
+	 ).arg(QString("$HOME/.config")).arg(QString("fet")).arg(QString("fettimetabling.conf"));
 	s+="\n\n";
-	s+=tr("macOS: It seems that the configuration file might be %1").arg("$HOME/Library/Preferences/com.fet.fettimetabling.plist");
+	s+=tr("macOS: It seems that the configuration file might be %1").arg(QString("$HOME/Library/Preferences/com.fet.fettimetabling.plist"));
 	s+="\n\n";
 	s+=tr("Windows: Run regedit.exe (Registry Editor) and search for the key \"%1\". You will find a section with this name,"
 	 " with the subsection \"%2\". You can export this section to a file, and import it from this file on the same or another computer."
-	 " If you remove this section, all FET settings will be reset to defaults.").arg("fet").arg("fettimetabling.conf");
+	 " If you remove this section, all FET settings will be reset to defaults.").arg(QString("fet")).arg(QString("fettimetabling.conf"));
 
 	s+="\n\n";
 	s+="--------------------";
@@ -1067,7 +1067,7 @@ void HelpFaqForm::setText()
 		" say SO, to all the old students' Sport activities, and add a constraint activity tags not overlapping for the activity tags SY and SO."
 		" You can even create more categories of students' age, like SO1, SO2, SO3, and SO4, and add a single constraint activity tags not"
 		" overlapping, so that at a single time slot only a single activity tag out of these four will be present in the timetable.", "%1 is a person")
-		.arg("Henrique Belo");
+		.arg(QString("Henrique Belo"));
 	s+="\n\n";
 	s+=tr("This constraint is related to the constraint of type activities not overlapping, but is much easier to use in the described example above,"
 		" because you only need to add a single constraint instead of possibly very many constraints activities not overlapping.");
@@ -1098,8 +1098,8 @@ void HelpFaqForm::setText()
 	s+=tr("Virtual rooms were suggested by the user %1 on the FET forum (%2). They can be used to make an activity occupy more rooms, or even to let FET"
 		" choose between a large room for this activity or more smaller rooms (if you set the preferred rooms for this activity the"
 		" real large room or a virtual room representing the more smaller rooms)."
-		" Please read the Help on the virtual rooms dialogs (the Rooms dialog and the Make/edit virtual room dialog).").arg("math")
-		.arg("https://lalescu.ro/liviu/fet/forum/index.php?topic=4249.0");
+		" Please read the Help on the virtual rooms dialogs (the Rooms dialog and the Make/edit virtual room dialog).").arg(QString("math"))
+		.arg(QString("https://lalescu.ro/liviu/fet/forum/index.php?topic=4249.0"));
 
 	plainTextEdit->setPlainText(s);
 }

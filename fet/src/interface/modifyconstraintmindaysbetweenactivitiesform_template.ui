@@ -214,7 +214,7 @@ make them consecutive</string>
         <enum>QFrame::Plain</enum>
        </property>
        <property name="text">
-        <string>Weight percentage (recommended: 95.0% - 100.0%)</string>
+        <string>Weight percentage (recommended: 95.0% - 100.0%, allowed: 0.0% - 100.0%)</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>

@@ -9215,11 +9215,14 @@ impossibletwoactivitiesorderedifsameday:
 			}
 
 			//2. Check the activities which have to be at the beginning, on the same day with the current activity
+			QSet<int> visitedActivities; //to avoid "skip" cumulating in case of multiple subgroups for ai2 (this would mean too difficult if weight <100.0%)
 			for(int sb : std::as_const(act->iSubgroupsList)){
 				for(int hh=h+act->duration; hh<gt.rules.nHoursPerDay; hh++){
 					int ai2=subgroupsTimetable(sb,d,hh);
-					if(ai2>=0)
-						if(activityBeginsStudentsDayPercentages[ai2]>=0){
+					assert(hh-1>=0);
+					if(ai2>=0 && ai2!=subgroupsTimetable(sb,d,hh-1)){
+						if(activityBeginsStudentsDayPercentages[ai2]>=0 && !visitedActivities.contains(ai2)){
+							visitedActivities.insert(ai2);
 							bool skip=skipRandom(activityBeginsStudentsDayPercentages[ai2]);
 							if(!skip){
 								if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
@@ -9234,6 +9237,7 @@ impossibletwoactivitiesorderedifsameday:
 								}
 							}
 						}
+					}
 				}
 			}
 		}
@@ -9279,11 +9283,14 @@ impossibleactivitybeginsstudentsday:
 			}
 
 			//2. Check the activities which have to be at the end, on the same day with the current activity
+			QSet<int> visitedActivities; //to avoid "skip" cumulating in case of multiple subgroups for ai2 (this would mean too difficult if weight <100.0%)
 			for(int sb : std::as_const(act->iSubgroupsList)){
 				for(int hh=h-1; hh>=0; hh--){
 					int ai2=subgroupsTimetable(sb,d,hh);
-					if(ai2>=0)
-						if(activityEndsStudentsDayPercentages[ai2]>=0){
+					assert(hh+1<gt.rules.nHoursPerDay);
+					if(ai2>=0 && ai2!=subgroupsTimetable(sb,d,hh+1)){
+						if(activityEndsStudentsDayPercentages[ai2]>=0 && !visitedActivities.contains(ai2)){
+							visitedActivities.insert(ai2);
 							bool skip=skipRandom(activityEndsStudentsDayPercentages[ai2]);
 							if(!skip){
 								if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
@@ -9298,6 +9305,7 @@ impossibleactivitybeginsstudentsday:
 								}
 							}
 						}
+					}
 				}
 			}
 		}
@@ -9343,11 +9351,14 @@ impossibleactivityendsstudentsday:
 			}
 
 			//2. Check the activities which have to be at the beginning, on the same day with the current activity
+			QSet<int> visitedActivities; //to avoid "skip" cumulating in case of multiple teachers for ai2 (this would mean too difficult if weight <100.0%)
 			for(int tch : std::as_const(act->iTeachersList)){
 				for(int hh=h+act->duration; hh<gt.rules.nHoursPerDay; hh++){
 					int ai2=teachersTimetable(tch,d,hh);
-					if(ai2>=0)
-						if(activityBeginsTeachersDayPercentages[ai2]>=0){
+					assert(hh-1>=0);
+					if(ai2>=0 && ai2!=teachersTimetable(tch,d,hh-1)){
+						if(activityBeginsTeachersDayPercentages[ai2]>=0 && !visitedActivities.contains(ai2)){
+							visitedActivities.insert(ai2);
 							bool skip=skipRandom(activityBeginsTeachersDayPercentages[ai2]);
 							if(!skip){
 								if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
@@ -9362,6 +9373,7 @@ impossibleactivityendsstudentsday:
 								}
 							}
 						}
+					}
 				}
 			}
 		}
@@ -9407,11 +9419,14 @@ impossibleactivitybeginsteachersday:
 			}
 
 			//2. Check the activities which have to be at the end, on the same day with the current activity
+			QSet<int> visitedActivities; //to avoid "skip" cumulating in case of multiple teachers for ai2 (this would mean too difficult if weight <100.0%)
 			for(int tch : std::as_const(act->iTeachersList)){
 				for(int hh=h-1; hh>=0; hh--){
 					int ai2=teachersTimetable(tch,d,hh);
-					if(ai2>=0)
-						if(activityEndsTeachersDayPercentages[ai2]>=0){
+					assert(hh+1<gt.rules.nHoursPerDay);
+					if(ai2>=0 && ai2!=teachersTimetable(tch,d,hh+1)){
+						if(activityEndsTeachersDayPercentages[ai2]>=0 && !visitedActivities.contains(ai2)){
+							visitedActivities.insert(ai2);
 							bool skip=skipRandom(activityEndsTeachersDayPercentages[ai2]);
 							if(!skip){
 								if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
@@ -9426,6 +9441,7 @@ impossibleactivitybeginsteachersday:
 								}
 							}
 						}
+					}
 				}
 			}
 		}

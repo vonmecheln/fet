@@ -14270,6 +14270,8 @@ void computeConstrTwoActivitiesOrderedIfSameDay()
 
 bool computeActivityEndsStudentsDayPercentages(QWidget* parent)
 {
+	Q_UNUSED(parent);
+
 	bool ok=true;
 
 	for(int ai=0; ai<gt.rules.nInternalActivities; ai++)
@@ -14283,7 +14285,7 @@ bool computeActivityEndsStudentsDayPercentages(QWidget* parent)
 		
 			ConstraintActivityEndsStudentsDay* cae=(ConstraintActivityEndsStudentsDay*)gt.rules.internalTimeConstraintsList[i];
 			
-			if(cae->weightPercentage!=100){
+			/*if(cae->weightPercentage!=100){
 				ok=false;
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
@@ -14297,7 +14299,7 @@ bool computeActivityEndsStudentsDayPercentages(QWidget* parent)
 				
 				if(t==0)
 					break;
-			}
+			}*/
 			
 			int ai=cae->activityIndex;
 			if(activityEndsStudentsDayPercentages[ai] < cae->weightPercentage)
@@ -14308,7 +14310,7 @@ bool computeActivityEndsStudentsDayPercentages(QWidget* parent)
 		
 			ConstraintActivitiesEndStudentsDay* cae=(ConstraintActivitiesEndStudentsDay*)gt.rules.internalTimeConstraintsList[i];
 			
-			if(cae->weightPercentage!=100){
+			/*if(cae->weightPercentage!=100){
 				ok=false;
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
@@ -14321,7 +14323,7 @@ bool computeActivityEndsStudentsDayPercentages(QWidget* parent)
 				
 				if(t==0)
 					break;
-			}
+			}*/
 			
 			for(int i=0; i<cae->nActivities; i++){
 				int ai=cae->activitiesIndices[i];
@@ -14336,6 +14338,8 @@ bool computeActivityEndsStudentsDayPercentages(QWidget* parent)
 
 bool computeActivityEndsTeachersDayPercentages(QWidget* parent)
 {
+	Q_UNUSED(parent);
+
 	bool ok=true;
 
 	for(int ai=0; ai<gt.rules.nInternalActivities; ai++)
@@ -14349,7 +14353,7 @@ bool computeActivityEndsTeachersDayPercentages(QWidget* parent)
 		
 			ConstraintActivityEndsTeachersDay* cae=(ConstraintActivityEndsTeachersDay*)gt.rules.internalTimeConstraintsList[i];
 			
-			if(cae->weightPercentage!=100){
+			/*if(cae->weightPercentage!=100){
 				ok=false;
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
@@ -14363,7 +14367,7 @@ bool computeActivityEndsTeachersDayPercentages(QWidget* parent)
 				
 				if(t==0)
 					break;
-			}
+			}*/
 			
 			int ai=cae->activityIndex;
 			if(activityEndsTeachersDayPercentages[ai] < cae->weightPercentage)
@@ -14374,7 +14378,7 @@ bool computeActivityEndsTeachersDayPercentages(QWidget* parent)
 		
 			ConstraintActivitiesEndTeachersDay* cae=(ConstraintActivitiesEndTeachersDay*)gt.rules.internalTimeConstraintsList[i];
 			
-			if(cae->weightPercentage!=100){
+			/*if(cae->weightPercentage!=100){
 				ok=false;
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
@@ -14387,7 +14391,7 @@ bool computeActivityEndsTeachersDayPercentages(QWidget* parent)
 				
 				if(t==0)
 					break;
-			}
+			}*/
 			
 			for(int i=0; i<cae->nActivities; i++){
 				int ai=cae->activitiesIndices[i];
@@ -14402,6 +14406,8 @@ bool computeActivityEndsTeachersDayPercentages(QWidget* parent)
 
 bool computeActivityBeginsStudentsDayPercentages(QWidget* parent)
 {
+	Q_UNUSED(parent);
+
 	bool ok=true;
 
 	for(int ai=0; ai<gt.rules.nInternalActivities; ai++)
@@ -14415,7 +14421,7 @@ bool computeActivityBeginsStudentsDayPercentages(QWidget* parent)
 		
 			ConstraintActivityBeginsStudentsDay* cae=(ConstraintActivityBeginsStudentsDay*)gt.rules.internalTimeConstraintsList[i];
 			
-			if(cae->weightPercentage!=100){
+			/*if(cae->weightPercentage!=100){
 				ok=false;
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
@@ -14429,7 +14435,7 @@ bool computeActivityBeginsStudentsDayPercentages(QWidget* parent)
 				
 				if(t==0)
 					break;
-			}
+			}*/
 			
 			int ai=cae->activityIndex;
 			if(activityBeginsStudentsDayPercentages[ai] < cae->weightPercentage)
@@ -14440,7 +14446,7 @@ bool computeActivityBeginsStudentsDayPercentages(QWidget* parent)
 		
 			ConstraintActivitiesBeginStudentsDay* cae=(ConstraintActivitiesBeginStudentsDay*)gt.rules.internalTimeConstraintsList[i];
 			
-			if(cae->weightPercentage!=100){
+			/*if(cae->weightPercentage!=100){
 				ok=false;
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
@@ -14453,7 +14459,7 @@ bool computeActivityBeginsStudentsDayPercentages(QWidget* parent)
 				
 				if(t==0)
 					break;
-			}
+			}*/
 			
 			for(int i=0; i<cae->nActivities; i++){
 				int ai=cae->activitiesIndices[i];
@@ -14468,6 +14474,8 @@ bool computeActivityBeginsStudentsDayPercentages(QWidget* parent)
 
 bool computeActivityBeginsTeachersDayPercentages(QWidget* parent)
 {
+	Q_UNUSED(parent);
+
 	bool ok=true;
 
 	for(int ai=0; ai<gt.rules.nInternalActivities; ai++)
@@ -14481,7 +14489,7 @@ bool computeActivityBeginsTeachersDayPercentages(QWidget* parent)
 		
 			ConstraintActivityBeginsTeachersDay* cae=(ConstraintActivityBeginsTeachersDay*)gt.rules.internalTimeConstraintsList[i];
 			
-			if(cae->weightPercentage!=100){
+			/*if(cae->weightPercentage!=100){
 				ok=false;
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
@@ -14495,7 +14503,7 @@ bool computeActivityBeginsTeachersDayPercentages(QWidget* parent)
 				
 				if(t==0)
 					break;
-			}
+			}*/
 			
 			int ai=cae->activityIndex;
 			if(activityBeginsTeachersDayPercentages[ai] < cae->weightPercentage)
@@ -14506,7 +14514,7 @@ bool computeActivityBeginsTeachersDayPercentages(QWidget* parent)
 		
 			ConstraintActivitiesBeginTeachersDay* cae=(ConstraintActivitiesBeginTeachersDay*)gt.rules.internalTimeConstraintsList[i];
 			
-			if(cae->weightPercentage!=100){
+			/*if(cae->weightPercentage!=100){
 				ok=false;
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
@@ -14519,7 +14527,7 @@ bool computeActivityBeginsTeachersDayPercentages(QWidget* parent)
 				
 				if(t==0)
 					break;
-			}
+			}*/
 			
 			for(int i=0; i<cae->nActivities; i++){
 				int ai=cae->activitiesIndices[i];

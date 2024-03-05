@@ -159,11 +159,11 @@ void ModifyConstraintActivityBeginsStudentsDayForm::ok()
 			tr("Invalid weight (percentage)"));
 		return;
 	}
-	if(weight!=100.0){
+	/*if(weight!=100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage) - it must be 100%"));
 		return;
-	}
+	}*/
 
 	int tmp2=activitiesComboBox->currentIndex();
 	assert(tmp2<gt.rules.activitiesList.size());
