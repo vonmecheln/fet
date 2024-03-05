@@ -374,7 +374,7 @@ void RemoveRedundantForm::wasAccepted()
 	for(TimeConstraint* ctr : std::as_const(toBeRemovedCombinedList)){
 		s+=ctr->getDetailedDescription(gt.rules);
 		s+="\n";
-		s+=tr("will be inactivated, by making its weight 0%");
+		s+=tr("will be inactivated, by making its weight 0%", "It refers to a constraint");
 		s+="\n\n";
 		s+="---------------------------------";
 		s+="\n\n";

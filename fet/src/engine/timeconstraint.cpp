@@ -34066,7 +34066,7 @@ QString ConstraintStudentsMinGapsBetweenActivityTag::getDescription(Rules& r)
 		
 	QString s;
 	
-	s+=tr("Students min gaps between ordered pair of activity tags");s+=", ";
+	s+=tr("Students min gaps between activity tag");s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("AT:%1", "Activity tag").arg(this->activityTag);s+=", ";
 	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
@@ -34597,7 +34597,7 @@ QString ConstraintTeachersMinGapsBetweenActivityTag::getDescription(Rules& r)
 		
 	QString s;
 	
-	s+=tr("Teachers min gaps between ordered pair of activity tags");s+=", ";
+	s+=tr("Teachers min gaps between activity tag");s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("AT:%1", "Activity tag").arg(this->activityTag);s+=", ";
 	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);

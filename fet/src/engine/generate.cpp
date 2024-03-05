@@ -16052,7 +16052,7 @@ impossiblestudentsmaxhoursdaily:
 				if(nOccupied > mh){
 					int target=nOccupied - mh;
 					
-					while(target>0){
+					while(target>0){ //Be careful: target may be negative! Don't assert(target>=0)!
 						bool decreased=false;
 						
 						if(candidates.count()==0){
@@ -16112,7 +16112,7 @@ impossiblestudentsmaxhoursdaily:
 								slotActivity[tt]=-1;
 								assert(candidates.contains(tt));
 								candidates.remove(tt);
-								target--;
+								target--; //Be careful: target may be negative! Don't assert(target>=0)!
 
 								decreased=true;
 							}
@@ -18941,7 +18941,7 @@ impossiblestudentsmaxtwoactivitytagsperrealdayfromn1n2n3:
 						if(nOccupied > subgroupsMaxHoursPerAllAfternoonsMaxHours[sbg]){
 							int target=nOccupied - subgroupsMaxHoursPerAllAfternoonsMaxHours[sbg];
 
-							while(target>0){
+							while(target>0){ //Be careful: target may be negative! Don't assert(target>=0)!
 								bool decreased=false;
 
 								if(candidates.count()==0){
@@ -18999,7 +18999,7 @@ impossiblestudentsmaxtwoactivitytagsperrealdayfromn1n2n3:
 									slotActivity[tt]=-1;
 									assert(candidates.contains(tt));
 									candidates.remove(tt);
-									target--;
+									target--; //Be careful: target may be negative! Don't assert(target>=0)!
 
 									decreased=true;
 								}
@@ -24569,7 +24569,7 @@ impossibleteachersmaxhoursdaily:
 				if(nOccupied > mh){
 					int target=nOccupied - mh;
 					
-					while(target>0){
+					while(target>0){ //Be careful: target may be negative! Don't assert(target>=0)!
 						bool decreased=false;
 						
 						if(candidates.count()==0){
@@ -24629,7 +24629,7 @@ impossibleteachersmaxhoursdaily:
 								slotActivity[tt]=-1;
 								assert(candidates.contains(tt));
 								candidates.remove(tt);
-								target--;
+								target--; //Be careful: target may be negative! Don't assert(target>=0)!
 
 								decreased=true;
 							}
@@ -28025,7 +28025,7 @@ impossibleteachersmaxtwoactivitytagsperrealdayfromn1n2n3:
 						if(nOccupied > teachersMaxHoursPerAllAfternoonsMaxHours[tch]){
 							int target=nOccupied - teachersMaxHoursPerAllAfternoonsMaxHours[tch];
 
-							while(target>0){
+							while(target>0){ //Be careful: target may be negative! Don't assert(target>=0)!
 								bool decreased=false;
 
 								if(candidates.count()==0){
@@ -28083,7 +28083,7 @@ impossibleteachersmaxtwoactivitytagsperrealdayfromn1n2n3:
 									slotActivity[tt]=-1;
 									assert(candidates.contains(tt));
 									candidates.remove(tt);
-									target--;
+									target--; //Be careful: target may be negative! Don't assert(target>=0)!
 
 									decreased=true;
 								}
@@ -28705,7 +28705,7 @@ impossibleactivitiesmaxsimultaneousinselectedtimeslots:
 				
 				if(nOccupied > item->maxOccupiedTimeSlots){
 					int target = nOccupied - item->maxOccupiedTimeSlots;
-					while(target>0){
+					while(target>0){ //Be careful: target may be negative! Don't assert(target>=0)!
 						bool decreased=false;
 						
 						if(candidates.count()==0){
@@ -28805,7 +28805,7 @@ impossibleactivitiesmaxsimultaneousinselectedtimeslots:
 									if(slotSetOfActivities[tt].count()==0){
 										assert(candidates.contains(tt));
 										candidates.remove(tt);
-										target--;
+										target--; //Be careful: target may be negative! Don't assert(target>=0)!
 										
 										decreased=true;
 									}

@@ -2806,3 +2806,8 @@ Versions 6.18.0 - 6.18.v
 	useless history points.
 	- Added a new type of constraint: teacher(s) / students (set) max room changes per (real) day in an hourly interval (suggested by giardiniere and
 	other users in the past).
+- Version 6.18.1
+	- Minor bug fixes in some English fields.
+	- Minor bug fixes / improvements when reading an invalid file (reported by Cyrus Ireri).
+	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares. It is again complete.
+	- Updated the Greek translation, by Vangelis Karafillidis. It is again complete.

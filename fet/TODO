@@ -8918,3 +8918,36 @@ much.
 Maybe add in the TODO and maybe also add this link, since that might be
 very useful in that function:
 https://en.cppreference.com/w/cpp/utility/source_location
+
+551---------------------------------------------------------
+From Cyrus Ireri (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5844.msg32398#msg32398
+
+In Liviu Lalescu's words:
+
+For activities 1+1+1+1+1, he would like 3 subactivities (3 hours) to be placed in the morning. This is easy with the constraint subactivities preferred time slots.
+
+But for activities 1+1+2, he would like 2 hours to be placed in the morning, either 1+1 or 2. This can be only done with the constraint activities occupy
+min time slots from selection. He suggests a more user friendly way to implement so many constraints (he has 4 year with 20 groups each with 3 such subjects each,
+so 240 constraints (!) ).
+
+Liviu Lalescu:
+
+If you have 1+1+1+1+1 and use 3 constraints subactivities preferred time slots, it is much better than using activities occupy min time slots from selection,
+in terms of generation speed.
+
+However, for the above case (1+1+2 and you want two hours in the morning), even if we developed a new constraint, I think it would be the same as speed of generation
+as activities occupy min time slots from selection.
+
+So, the only advantage of adding a new constraint would be user friendliness.
+
+552---------------------------------------------------------
+From ogursoy (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5870.0
+
+I am looking for correct implementation for centralized exam schedule where some activities share big a hall.
+
+I know that i can create representative rooms for this big room but how to also satisfy that these "dummy" rooms created for the big room will not exceed
+the total capacity of the real room ?

@@ -12610,7 +12610,17 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 			cout<<"Invalid fet 3.12.17 or above input file"<<endl;
 		}
 		file.close();
-		file2.close();
+		
+		if(canWriteLogFile){
+			xmlReadingLog+="  Incorrect/incomplete FET XML data file.\n";
+
+			reducedXmlLog+="\n";
+			reducedXmlLog+="Incorrect/incomplete FET XML data file.\n";
+			logStream<<reducedXmlLog;
+
+			file2.close();
+		}
+		
 		RulesIrreconcilableMessage::warning(parent, tr("FET warning"), tr("File is incorrect...it cannot be opened"));
 		return false;
 	}
@@ -12665,7 +12675,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 		this->clear();
 	this->init();
 	
-	int oldMode=this->mode;
+	//int oldMode=this->mode;
 	this->mode=OFFICIAL;
 	if(probably5Morocco || probably5Algeria || probably5MA)
 		this->mode=MORNINGS_AFTERNOONS;
@@ -16441,7 +16451,18 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 		 .arg(xmlReader.errorString()));
 	
 		file.close();
-		this->mode=oldMode;
+		//this->mode=oldMode;
+
+		if(canWriteLogFile){
+			xmlReadingLog+="  Incorrect/incomplete FET XML data file.\n";
+
+			reducedXmlLog+="\n";
+			reducedXmlLog+="Incorrect/incomplete FET XML data file.\n";
+			logStream<<reducedXmlLog;
+
+			file2.close();
+		}
+
 		return false;
 	}
 	file.close();

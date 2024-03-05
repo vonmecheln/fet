@@ -4660,7 +4660,7 @@ void FetMainForm::fileNewAction_triggered()
 		return;
 	}
 
-	int confirm=0;
+	bool confirm=false;
 	
 	if(gt.rules.initialized && gt.rules.modified){
 		switch( QMessageBox::question(
@@ -4670,10 +4670,10 @@ void FetMainForm::fileNewAction_triggered()
 		 QMessageBox::Yes|QMessageBox::No
 		 ) ){
 		case QMessageBox::Yes: // Yes
-			confirm=1;
+			confirm=true;
 			break;
 		case QMessageBox::No: // No
-			confirm=0;
+			confirm=false;
 			break;
 		default:
 			assert(0);
@@ -4681,7 +4681,7 @@ void FetMainForm::fileNewAction_triggered()
 		}
 	}
 	else
-		confirm=1;
+		confirm=true;
 	
 	int tm=-1;
 	if(confirm){
@@ -4692,7 +4692,7 @@ void FetMainForm::fileNewAction_triggered()
 			tm=form.mode;
 		}
 		else{
-			confirm=0;
+			confirm=false;
 		}
 	}
 
@@ -4763,7 +4763,7 @@ void FetMainForm::openFile(const QString& fileName)
 		return;
 	}
 
-	int confirm=0;
+	bool confirm=false;
 	
 	if(gt.rules.initialized && gt.rules.modified){
 		switch( QMessageBox::question(
@@ -4773,10 +4773,10 @@ void FetMainForm::openFile(const QString& fileName)
 		 QMessageBox::Yes|QMessageBox::No
 		 ) ){
 		case QMessageBox::Yes: // Yes
-			confirm=1;
+			confirm=true;
 			break;
 		case QMessageBox::No: // No
-			confirm=0;
+			confirm=false;
 			break;
 		default:
 			assert(0);
@@ -4784,7 +4784,7 @@ void FetMainForm::openFile(const QString& fileName)
 		}
 	}
 	else
-		confirm=1;
+		confirm=true;
 	
 	if(confirm){
 		QString s=fileName;
@@ -4855,6 +4855,8 @@ void FetMainForm::openFile(const QString& fileName)
 			//bool before=gt.rules.modified;
 			gt.rules.modified=true; //to avoid the flickering of the main form modified flag
 
+			int oldMode=gt.rules.mode;
+			
 			if(gt.rules.read(this, s)){
 				teachers_schedule_ready=false;
 				students_schedule_ready=false;
@@ -4882,20 +4884,84 @@ void FetMainForm::openFile(const QString& fileName)
 				setCurrentFile(INPUT_FILENAME_XML);
 			}
 			else{
-				//incorrect code - the old file may be broken - so we generate a new file.
-				/*gt.rules.modified=before;
-			
-				statusBar()->showMessage("", STATUS_BAR_MILLISECONDS);
+				QString s2=tr("Critical error: Your data file could not be opened correctly/completely. Would you like to keep the partial data that might "
+				 "have been read correctly?");
+				s2+=QString(" ");
+				s2+=tr("This might help you recover at least some of the inputted data.");
+				s2+=QString(" ");
+				s2+=tr("(In case of further errors, you can always choose to create a new file, from the FET menu.)");
+				s2+=QString("\n\n");
+				s2+=tr("Note: If you enabled autosave, you could try to open the filename_AUTOSAVE.fet file.", "Keep the words 'filename_AUTOSAVE.fet' untranslated");
+				s2+=QString("\n\n");
+				s2+=tr("Note: If you enabled save/restore history to/from disk, you might have success, after accepting this partial data, to restore your data "
+				 "to a correct and complete previous state, recorded in the history.");
 				
-				setCurrentFile(INPUT_FILENAME_XML);*/
+				QMessageBox::StandardButton b=QMessageBox::critical(this, tr("FET critical"), s2, QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+				if(b==QMessageBox::Yes){
+					teachers_schedule_ready=false;
+					students_schedule_ready=false;
+					rooms_buildings_schedule_ready=false;
+					
+					clearHistory();
+					INPUT_FILENAME_XML=s;
+					openHistory();
+					INPUT_FILENAME_XML=QString("");
+					gt.rules.addUndoPoint(tr("Opened the file %1, incorrectly/incompletely").arg(QDir::toNativeSeparators(s)), false, true);
+					savedStateIterator=cntUndoRedoStackIterator;
+					
+					LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
+					LockUnlock::increaseCommunicationSpinBox();
 
-				//not needed, because if the file cannot be read we keep the old mode
-				//updateMode();
-				
-				assert(!generation_running);
-				gt.rules.modified=false;
-				statusBar()->showMessage(tr("Loading file failed...", "This is a message in the status bar, that opening the chosen file failed"), STATUS_BAR_MILLISECONDS);
-				fileNewAction_triggered();
+					statusBar()->showMessage(tr("File opened incorrectly/incompletely"), STATUS_BAR_MILLISECONDS);
+					oldDataAvailable=dataAvailable;
+					dataAvailable=true;
+					updateMode();
+					
+					gt.rules.modified=true; //force update of the modified flag of the main window
+					setRulesUnmodifiedAndOtherThings(&gt.rules);
+					
+					setCurrentFile(INPUT_FILENAME_XML);
+				}
+				else{
+					assert(b==QMessageBox::No);
+					
+					teachers_schedule_ready=false;
+					students_schedule_ready=false;
+					rooms_buildings_schedule_ready=false;
+					
+					gt.rules.mode=oldMode;
+					
+					//incorrect code - the old file may be broken - so we generate a new file.
+					/*gt.rules.modified=before;
+					
+					statusBar()->showMessage("", STATUS_BAR_MILLISECONDS);
+					
+					setCurrentFile(INPUT_FILENAME_XML);*/
+
+					//not needed, because if the file cannot be read we keep the old mode
+					//updateMode();
+					
+					assert(!generation_running);
+					//gt.rules.modified=false;
+					statusBar()->showMessage(tr("Loading file failed...", "This is a message in the status bar, that opening the chosen file failed"), STATUS_BAR_MILLISECONDS);
+					
+					//fileNewAction_triggered();
+					
+					//new void data
+					if(gt.rules.initialized)
+						gt.rules.clear();
+					
+					dataAvailable=false;
+					updateMode(true); //true means force
+
+					INPUT_FILENAME_XML=QString("");
+					setCurrentFile(INPUT_FILENAME_XML);
+
+					gt.rules.modified=true; //force update of the modified flag of the main window
+					setRulesUnmodifiedAndOtherThings(&gt.rules);
+
+					assert(!gt.rules.initialized);
+				}
 			}
 			
 			//this->setCursor(orig);
