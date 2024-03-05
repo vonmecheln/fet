@@ -2363,6 +2363,8 @@ Thanks a lot!
 Maybe, in a future version of FET, you could add an extension of the constraint "a teacher works in a hour interval max days per week", to allow to pick which days we want to apply this constraint, and not necessarily the whole week. It could be renamed to "a teacher works in a hour interval, max days from a days set" or something similar. Do you think something like this is feasible?
 
 148---------------------------------------------------------
+(DONE? Liviu Lalescu: in FET-6.17.0 (February 2024) we added the constraint teacher(s)/students (set) max building changes per (real) day in hourly interval. Is this item solved?)
+
 From Christian Kemmer (on forum):
 
 For the next timetable at our school, I need the following:
@@ -2779,6 +2781,7 @@ a "year-group" one.) at the same time without confusing a user?
 191------------------------DONE-----------------------------
 
 192---------------------------------------------------------
+(DONE? Liviu Lalescu: in FET-6.17.0 (February 2024) we added the constraint teacher(s)/students (set) max building changes per (real) day in hourly interval. Is this item solved?)
 From mbarsan (on forum):
 
 We have a school with 8 periods per day, with a short break every 2 hours.
@@ -6116,6 +6119,8 @@ It would possibly be easier to be able to export a new FET file with only the ru
 generate schedule html from those files. Although that would require some extra steps.
 
 370---------------------------------------------------------
+(DONE? Liviu Lalescu: in FET-6.17.0 (February 2024) we added constraint students (set) / teacher(s) max hours daily in hourly interval.)
+
 From George Milliotis (Corfiot) - on forum:
 
 I would like to have activities that do not count towards time or space rules. I have breaks that have to be within a specific time range so that
@@ -6480,30 +6485,7 @@ Liviu Lalescu:
 Yes, unfortunately the colors are based on a 24-bit hash, so they are (or should be) very different for even small changes. Unfortunately I cannot
 do like you suggest. Maybe you can follow what Volker said.
 
-400---------------------------------------------------------
-From Cyrus (on forum):
-(see also entry #403)
-
-https://lalescu.ro/liviu/fet/forum/index.php?topic=4373.0
-
-Avoiding 4 sessions consecutive for teachers even when there is a break:
-
-How can one configure get to ensure teachers can never have 4 sessions consecutive with a break between (2-2) such that whenever a teacher teaches
-2 sessions followed by a break, one can only have one more and not two.
-
-Liviu Lalescu:
-
-I think of this: for each teacher, add n_days constraints activities occupy max time slots from selection, selected the 4 slots, max occupied = 3.
-A lot of constraints to add, unfortunately.
-
-Cyrus:
-
-It's quite tedious to give the constraint to all teachers on daily basis. Wish there was a way of having like max time slots from selection for
-all teachers. That would be better.
-
-Also suggested by Vangelis Karafillidis:
-
-For the max hours continuously constraints, add the possibility to except the breaks.
+400--------DONE in FET-6.17.0, February 2024----------------
 
 401---------------------------------------------------------
 From Volker Dirr:
@@ -8668,3 +8650,196 @@ Como fazer para imprimir um horário com as disciplinas repetidas dentro da tabe
 Translation from Portuguese to English using Google translate:
 
 How to print a timetable with the subjects repeated within the table, instead of a subject merged into 3 or 2 cells. Aesthetically it doesn't look good.
+
+541---------------------------------------------------------
+From ogursoy (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5848.0
+
+Is there any way to negate all tag related constraints ?
+
+If activity has "xx" tag it is easy to set a constraint.
+
+How about activity has no "xx" tag ?
+
+Is there any way to accomplish this ?
+
+Liviu:
+
+Thank you for your suggestion! I will only add it in the TODO for now, and I'll think of it, but it is unfortunately probably very complicated, since it wasn't
+considered from the start of the work.
+
+542---------------------------------------------------------
+From ogursoy (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5849.0
+
+It could be very nice feture to set preferred startting times with a hard constraint without student groups (e.g tick box for ignoring student groups for that activitiy or even that time slot chosen for the constraint.)
+
+In a university schedule, some courses "can overlap" even having the same student groups ( by the nature of required, elective courses)
+
+When we want to ignore this overlap, only way is to remove the students groups from one of the overlapping activities. Then these courses can be placed in the same time slot.
+
+However, when we want to change one of these ativities later on to another time slot actually we loose the student group information already for this new time slot where student group information is needed again.
+
+it is time consuming to update the activity with the original student groups and place it on another time slot.
+
+I hope i explained it clearly.
+
+---
+
+Extented IDEA :  :)
+
+There could be also option to ignore  :
+
+    Student Groups (even better to choose which ones to be ignored)
+    Activity Tags (even better to choose which ones to be ignored)
+    All Other Time specific constraints except this one
+    All Other Space specific constraints except this one 
+
+So basically, I am looking for a "killer" option to make preferred starting time is 100% applied.
+
+And again, if I dont need this constraint, all my tags and student groups will be there and no worries on if I place activity somewhere else.
+
+---
+
+Liviu Lalescu: I added this in the TODO, but it is a fundamental feature of FET to not allow overlappings.
+
+---
+
+ogursoy:
+
+Thanks for considering my suggestion. But please give it a higher priority  :D
+
+In a university schedule consider this scenario :
+
+Course A with StudentGroup1, StudentGroup2, StudentGroup3
+Course B with StudentGroup2
+
+however, Student Group2 for Course B is actually optional because it is an elective course for this student group. they do not have to take this course.
+Because they have other courses as well for elective group.
+
+Preferably Course A and Course B should not overlap However, when you have hundres of courses  you have other program elective courses that StudentGroup2 can take.
+So overlapping with Course A and B must be ignored in certain cases when you have time & space limitation. - what a suprise ha ? :) -
+
+It is already possible by removing StudentGroup2 from Course B. And you can place it in the same timeslot with CourseA without problem.
+
+But when you need to move it to another slot later on for some reason and if this time it should not overlap at all, you have to update the activity CourseB
+and set student group again in order to make it happen.
+
+This is time consuming and easy to miss.
+
+So, same logic for the activity tags as well. I will not repeat my example.
+
+This could be called an "exception" for the activity constraint and has a "killer switch" on all other constraints set for the activity.
+
+BTW: Please do not consider this is a real overlapping. Basically this could be achieved creating multiple schedules with correct set of constraints.
+This is actually allowing to create multiple schedules in the same schedule. So it is not violation of FET fundemantal principle.
+This is a feature allowing user to create multiple schedule in a one single time table :)  ;D
+
+---
+
+Liviu Lalescu: Maybe you could add two tags, A and B, and a constraint activity tags not overlapping, A and B, probably 100%, which can be
+activated/deactivated with a single click. Otherwise, it seems very complicated.
+
+---
+
+ogursoy:
+
+yes it is possible with 5-10 courses. Suppose you have this scenario :
+
+Student Groups :
+Study Programs x Semesters ( 8 ) x Sections .
+
+Study programs have curricula which defines the courses to be taken in which semester and courses that are electives which can be taken in any semester.
+Some courses could be elective for some student groups and at the same time required for other student groups.
+
+combination of these student groups (as activity tags) for not overlapping is unmanagable.
+We have around 400 activities , 3942 subgroups around ~120 teachers.
+
+Another workaround could be to activity level state management. Where we can revert back all changes done to an activity. (so it will revert back activity tags,
+student groups and teacher.) So we can remove freely student groups, tags and put it manually where ever we want. If we need to change it again, we could revert
+back the original student groups and tags. so this will also helpfull alot.
+
+---
+
+Liviu Lalescu:
+
+Hmm... sorry, it is difficult for me to follow your suggestion. I will add your words and read again later.
+
+Do you know that in recent FET there is a History (Undo/Redo) option?
+
+---
+
+ogursoy:
+
+Yes of course, it is perfect. But it reverts back to all states. that is, i can not selectively chose states:
+
+In this set up , when i choose a state, it is perfect for that activity. But I loose other states of other activities if I have changed one of them.
+
+so, state selection overrides all changes in other activities. All activities are revert back to state where a specific state is chosen. It is a time machine,
+and reverts back all changes to that point.
+
+I hope it is clear ?
+
+---
+
+ogursoy:
+
+State 1 : Activity X changed
+State 2 : Activity y Changed
+State 3 : Activity z changed.
+
+when you go state 1, you loose all changes done to activity y, activity z.
+
+"It is a time machine " : )
+
+543---------------------------------------------------------
+From ogursoy (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5850.0
+
+FET files are generated in Multiple Time Tables.
+
+It could be also very nice to have also csv version of the each time table. Same as when we export FET file.
+
+544---------------------------------------------------------
+From ogursoy (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5852.0
+
+When we set a space sontraint, it could be very nice to give priority to buildings. So any set of prefferred rooms (from building 1, building 2,..)
+give one of the building a higher preference so FET places activity in the room with higher preferred building.
+
+I am aware thet It can be still done with correct space constraints (multiple!)  but alot of work to set up these constraints.
+
+545---------------------------------------------------------
+From ogursoy (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5853.0
+
+It could be very nice feture to be able to use multiple activity tags in an activity tag related constraint.
+furthermore, even better if we could also specify :
+
+If all tags must match (AND) or any of the selected tags match (OR).
+
+546---------------------------------------------------------
+From Cyrus Ireri (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5854.0
+
+Is it possible to have teachers names and code be added on fet whereby the name will appear on the Teacher's timetables while codes will be on Student's timetables?
+It can be of help more so while dealing with a large number of teachers and you wish to issue printed timetables
+
+547---------------------------------------------------------
+From topposempre (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5856.0
+
+Vorrei sapere se è possibile stabilire un numero massimo di ore settimanali per ciascun docente, in modo tale che, se per errore, nella creazione delle attività
+dovessi assegnare più ore, il sistema me lo segnalerebbe.
+
+English translation by Google Translate:
+
+I would like to know if it is possible to establish a maximum number of hours per week for each teacher, so that, if by mistake, when creating activities, I were
+to assign more hours, the system would notify me.

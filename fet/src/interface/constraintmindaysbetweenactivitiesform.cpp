@@ -303,7 +303,9 @@ void ConstraintMinDaysBetweenActivitiesForm::changeSelectively()
 		double oldWeight=dialog.oldWeight;
 		double newWeight=dialog.newWeight;
 		int oldConsecutive=dialog.oldConsecutive;
+		QString oldConsecutiveString=dialog.oldConsecutiveString;
 		int newConsecutive=dialog.newConsecutive;
+		QString newConsecutiveString=dialog.newConsecutiveString;
 		int oldDays=dialog.oldDays;
 		int newDays=dialog.newDays;
 		int oldNActs=dialog.oldNActs;
@@ -455,22 +457,22 @@ void ConstraintMinDaysBetweenActivitiesForm::changeSelectively()
 		 );
 		
 		QString s=tr("Modified multiple constraints min days between activities with filter:");
-		s+=QString("\n");
+		s+=QString("\n\n");
 
 		s+=tr("Old weight percentage=%1").arg(oldWeight);
 		s+=QString("\n");
 		s+=tr("New weight percentage=%1").arg(newWeight);
-		s+=QString("\n");
+		s+=QString("\n\n");
 
-		s+=tr("Old consecutive if same day=%1").arg(oldConsecutive?tr("yes"):tr("no"));
+		s+=tr("Old consecutive if same day=%1").arg(oldConsecutiveString);
 		s+=QString("\n");
-		s+=tr("New consecutive if same day=%1").arg(newConsecutive?tr("yes"):tr("no"));
-		s+=QString("\n");
+		s+=tr("New consecutive if same day=%1").arg(newConsecutiveString);
+		s+=QString("\n\n");
 
 		s+=tr("Old min days=%1").arg(oldDays);
 		s+=QString("\n");
 		s+=tr("New min days=%1").arg(newDays);
-		s+=QString("\n");
+		s+=QString("\n\n");
 
 		s+=tr("Old number of activities=%1").arg(oldNActs);
 		s+=QString("\n");

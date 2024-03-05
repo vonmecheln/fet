@@ -429,6 +429,16 @@ Matrix1D<int> teachersMaxHoursDailyMaxHours2;
 ////////END   teacher(s) max hours daily
 
 
+//BEGIN teacher(s) max hours daily in hourly interval
+Matrix1D<QList<double>> teachersMaxHoursDailyInIntervalPercentages;
+Matrix1D<QList<int>> teachersMaxHoursDailyInIntervalMaxHours;
+Matrix1D<QList<int>> teachersMaxHoursDailyInIntervalStartHour;
+Matrix1D<QList<int>> teachersMaxHoursDailyInIntervalEndHour;
+
+//bool computeTeachersMaxHoursDailyInInterval(QWidget* parent);
+//END   teacher(s) max hours daily in hourly interval
+
+
 Matrix1D<double> teachersMaxHoursDailyRealDaysPercentages1;
 Matrix1D<int> teachersMaxHoursDailyRealDaysMaxHours1;
 
@@ -505,6 +515,16 @@ Matrix1D<int> subgroupsMaxHoursDailyMaxHours2;
 
 //bool computeSubgroupsMaxHoursDaily(QWidget* parent);
 ////////END   students (set) max hours daily
+
+
+//BEGIN students (set) max hours daily in hourly interval
+Matrix1D<QList<double>> subgroupsMaxHoursDailyInIntervalPercentages;
+Matrix1D<QList<int>> subgroupsMaxHoursDailyInIntervalMaxHours;
+Matrix1D<QList<int>> subgroupsMaxHoursDailyInIntervalStartHour;
+Matrix1D<QList<int>> subgroupsMaxHoursDailyInIntervalEndHour;
+
+//bool computeSubgroupsMaxHoursDailyInInterval(QWidget* parent);
+//END   students (set) max hours daily in hourly interval
 
 
 //2020-06-28
@@ -841,6 +861,12 @@ Matrix1D<double> maxBuildingChangesPerDayForStudentsPercentages;
 Matrix1D<int> maxBuildingChangesPerDayForStudentsMaxChanges;
 //bool computeMaxBuildingChangesPerDayForStudents(QWidget* parent);
 
+Matrix1D<QList<double>> maxBuildingChangesPerDayInIntervalForStudentsPercentages;
+Matrix1D<QList<int>> maxBuildingChangesPerDayInIntervalForStudentsMaxChanges;
+Matrix1D<QList<int>> maxBuildingChangesPerDayInIntervalForStudentsIntervalStart;
+Matrix1D<QList<int>> maxBuildingChangesPerDayInIntervalForStudentsIntervalEnd;
+//bool computeMaxBuildingChangesPerDayInIntervalForStudents(QWidget* parent);
+
 Matrix1D<double> minGapsBetweenBuildingChangesForStudentsPercentages;
 Matrix1D<int> minGapsBetweenBuildingChangesForStudentsMinGaps;
 //bool computeMinGapsBetweenBuildingChangesForStudents(QWidget* parent);
@@ -853,6 +879,12 @@ Matrix1D<double> maxBuildingChangesPerDayForTeachersPercentages;
 Matrix1D<int> maxBuildingChangesPerDayForTeachersMaxChanges;
 //bool computeMaxBuildingChangesPerDayForTeachers(QWidget* parent);
 
+Matrix1D<QList<double>> maxBuildingChangesPerDayInIntervalForTeachersPercentages;
+Matrix1D<QList<int>> maxBuildingChangesPerDayInIntervalForTeachersMaxChanges;
+Matrix1D<QList<int>> maxBuildingChangesPerDayInIntervalForTeachersIntervalStart;
+Matrix1D<QList<int>> maxBuildingChangesPerDayInIntervalForTeachersIntervalEnd;
+//bool computeMaxBuildingChangesPerDayInIntervalForTeachers(QWidget* parent);
+
 Matrix1D<double> minGapsBetweenBuildingChangesForTeachersPercentages;
 Matrix1D<int> minGapsBetweenBuildingChangesForTeachersMinGaps;
 //bool computeMinGapsBetweenBuildingChangesForTeachers(QWidget* parent);
@@ -862,10 +894,20 @@ Matrix1D<double> maxBuildingChangesPerRealDayForTeachersPercentages;
 Matrix1D<int> maxBuildingChangesPerRealDayForTeachersMaxChanges;
 //END   building changes per real day for teachers
 
+Matrix1D<QList<double>> maxBuildingChangesPerRealDayInIntervalForTeachersPercentages;
+Matrix1D<QList<int>> maxBuildingChangesPerRealDayInIntervalForTeachersMaxChanges;
+Matrix1D<QList<int>> maxBuildingChangesPerRealDayInIntervalForTeachersIntervalStart;
+Matrix1D<QList<int>> maxBuildingChangesPerRealDayInIntervalForTeachersIntervalEnd;
+
 //BEGIN building changes per real day for students
 Matrix1D<double> maxBuildingChangesPerRealDayForSubgroupsPercentages;
 Matrix1D<int> maxBuildingChangesPerRealDayForSubgroupsMaxChanges;
 //END   building changes per real day for students
+
+Matrix1D<QList<double>> maxBuildingChangesPerRealDayInIntervalForStudentsPercentages;
+Matrix1D<QList<int>> maxBuildingChangesPerRealDayInIntervalForStudentsMaxChanges;
+Matrix1D<QList<int>> maxBuildingChangesPerRealDayInIntervalForStudentsIntervalStart;
+Matrix1D<QList<int>> maxBuildingChangesPerRealDayInIntervalForStudentsIntervalEnd;
 ////////END   building changes
 
 
@@ -1283,6 +1325,16 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	teachersMaxHoursDailyPercentages2.resize(gt.rules.nInternalTeachers);
 	teachersMaxHoursDailyMaxHours2.resize(gt.rules.nInternalTeachers);
 	//
+	teachersMaxHoursDailyInIntervalPercentages.resize(gt.rules.nInternalTeachers);
+	teachersMaxHoursDailyInIntervalMaxHours.resize(gt.rules.nInternalTeachers);
+	teachersMaxHoursDailyInIntervalStartHour.resize(gt.rules.nInternalTeachers);
+	teachersMaxHoursDailyInIntervalEndHour.resize(gt.rules.nInternalTeachers);
+	//
+	subgroupsMaxHoursDailyInIntervalPercentages.resize(gt.rules.nInternalSubgroups);
+	subgroupsMaxHoursDailyInIntervalMaxHours.resize(gt.rules.nInternalSubgroups);
+	subgroupsMaxHoursDailyInIntervalStartHour.resize(gt.rules.nInternalSubgroups);
+	subgroupsMaxHoursDailyInIntervalEndHour.resize(gt.rules.nInternalSubgroups);
+	//
 	teachersMaxHoursContinuouslyPercentages1.resize(gt.rules.nInternalTeachers);
 	teachersMaxHoursContinuouslyMaxHours1.resize(gt.rules.nInternalTeachers);
 	teachersMaxHoursContinuouslyPercentages2.resize(gt.rules.nInternalTeachers);
@@ -1438,6 +1490,26 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	maxBuildingChangesPerDayForStudentsMaxChanges.resize(gt.rules.nInternalSubgroups);
 	minGapsBetweenBuildingChangesForStudentsPercentages.resize(gt.rules.nInternalSubgroups);
 	minGapsBetweenBuildingChangesForStudentsMinGaps.resize(gt.rules.nInternalSubgroups);
+	//
+	maxBuildingChangesPerDayInIntervalForStudentsPercentages.resize(gt.rules.nInternalSubgroups);
+	maxBuildingChangesPerDayInIntervalForStudentsMaxChanges.resize(gt.rules.nInternalSubgroups);
+	maxBuildingChangesPerDayInIntervalForStudentsIntervalStart.resize(gt.rules.nInternalSubgroups);
+	maxBuildingChangesPerDayInIntervalForStudentsIntervalEnd.resize(gt.rules.nInternalSubgroups);
+	//
+	maxBuildingChangesPerRealDayInIntervalForStudentsPercentages.resize(gt.rules.nInternalSubgroups);
+	maxBuildingChangesPerRealDayInIntervalForStudentsMaxChanges.resize(gt.rules.nInternalSubgroups);
+	maxBuildingChangesPerRealDayInIntervalForStudentsIntervalStart.resize(gt.rules.nInternalSubgroups);
+	maxBuildingChangesPerRealDayInIntervalForStudentsIntervalEnd.resize(gt.rules.nInternalSubgroups);
+	//
+	maxBuildingChangesPerDayInIntervalForTeachersPercentages.resize(gt.rules.nInternalTeachers);
+	maxBuildingChangesPerDayInIntervalForTeachersMaxChanges.resize(gt.rules.nInternalTeachers);
+	maxBuildingChangesPerDayInIntervalForTeachersIntervalStart.resize(gt.rules.nInternalTeachers);
+	maxBuildingChangesPerDayInIntervalForTeachersIntervalEnd.resize(gt.rules.nInternalTeachers);
+	//
+	maxBuildingChangesPerRealDayInIntervalForTeachersPercentages.resize(gt.rules.nInternalTeachers);
+	maxBuildingChangesPerRealDayInIntervalForTeachersMaxChanges.resize(gt.rules.nInternalTeachers);
+	maxBuildingChangesPerRealDayInIntervalForTeachersIntervalStart.resize(gt.rules.nInternalTeachers);
+	maxBuildingChangesPerRealDayInIntervalForTeachersIntervalEnd.resize(gt.rules.nInternalTeachers);
 	//
 	maxBuildingChangesPerWeekForTeachersPercentages.resize(gt.rules.nInternalTeachers);
 	maxBuildingChangesPerWeekForTeachersMaxChanges.resize(gt.rules.nInternalTeachers);
@@ -1913,6 +1985,9 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	t=computeTeachersMaxHoursDaily(parent);
 	if(!t)
 		return false;
+	t=computeTeachersMaxHoursDailyInInterval(parent);
+	if(!t)
+		return false;
 	t=computeTeachersMaxHoursDailyRealDays(parent);
 	if(!t)
 		return false;
@@ -1963,6 +2038,9 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	//thereAreSubgroupsWithMaxHoursDailyWithUnder100Weight=false;
 	thereAreSubgroupsWithMaxHoursDailyOrPerRealDayWithUnder100Weight=false;
 	t=computeSubgroupsMaxHoursDaily(parent);
+	if(!t)
+		return false;
+	t=computeSubgroupsMaxHoursDailyInInterval(parent);
 	if(!t)
 		return false;
 	//must be after allowed times and after n hours per subgroup
@@ -2245,6 +2323,9 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	t=computeMaxBuildingChangesPerDayForStudents(parent);
 	if(!t)
 		return false;
+	t=computeMaxBuildingChangesPerDayInIntervalForStudents(parent);
+	if(!t)
+		return false;
 	t=computeMinGapsBetweenBuildingChangesForStudents(parent);
 	if(!t)
 		return false;
@@ -2253,6 +2334,9 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	if(!t)
 		return false;
 	t=computeMaxBuildingChangesPerDayForTeachers(parent);
+	if(!t)
+		return false;
+	t=computeMaxBuildingChangesPerDayInIntervalForTeachers(parent);
 	if(!t)
 		return false;
 	t=computeMinGapsBetweenBuildingChangesForTeachers(parent);
@@ -2294,6 +2378,14 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	if(!t)
 		return false;
 	t=computeMaxBuildingChangesPerRealDayForStudents(parent);
+	if(!t)
+		return false;
+	//////////////////
+
+	t=computeMaxBuildingChangesPerRealDayInIntervalForTeachers(parent);
+	if(!t)
+		return false;
+	t=computeMaxBuildingChangesPerRealDayInIntervalForStudents(parent);
 	if(!t)
 		return false;
 	//////////////////
@@ -18129,6 +18221,361 @@ bool computeMaxBuildingChangesPerDayForStudents(QWidget* parent)
 	return ok;
 }
 
+bool computeMaxBuildingChangesPerDayInIntervalForStudents(QWidget* parent)
+{
+	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
+		maxBuildingChangesPerDayInIntervalForStudentsPercentages[i].clear();
+		maxBuildingChangesPerDayInIntervalForStudentsMaxChanges[i].clear();
+		maxBuildingChangesPerDayInIntervalForStudentsIntervalStart[i].clear();
+		maxBuildingChangesPerDayInIntervalForStudentsIntervalEnd[i].clear();
+	}
+	
+	bool ok=true;
+	
+	for(int i=0; i<gt.rules.nInternalSpaceConstraints; i++){
+		if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL){
+			ConstraintStudentsSetMaxBuildingChangesPerDayInInterval* spr=(ConstraintStudentsSetMaxBuildingChangesPerDayInInterval*)gt.rules.internalSpaceConstraintsList[i];
+			
+			if(spr->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint students set max building changes per day in hourly interval"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			for(int sbg : std::as_const(spr->iSubgroupsList)){
+				bool found=false;
+				for(int cnt=0; cnt<maxBuildingChangesPerDayInIntervalForStudentsPercentages[sbg].count(); cnt++){
+					if(maxBuildingChangesPerDayInIntervalForStudentsPercentages[sbg].at(cnt)==spr->weightPercentage
+					 && maxBuildingChangesPerDayInIntervalForStudentsMaxChanges[sbg].at(cnt)==spr->maxBuildingChangesPerDay
+					 && maxBuildingChangesPerDayInIntervalForStudentsIntervalStart[sbg].at(cnt)==spr->intervalStart
+					 && maxBuildingChangesPerDayInIntervalForStudentsIntervalEnd[sbg].at(cnt)==spr->intervalEnd){
+						found=true;
+						break;
+					}
+				}
+				
+				if(!found){
+					maxBuildingChangesPerDayInIntervalForStudentsPercentages[sbg].append(spr->weightPercentage);
+					maxBuildingChangesPerDayInIntervalForStudentsMaxChanges[sbg].append(spr->maxBuildingChangesPerDay);
+					maxBuildingChangesPerDayInIntervalForStudentsIntervalStart[sbg].append(spr->intervalStart);
+					maxBuildingChangesPerDayInIntervalForStudentsIntervalEnd[sbg].append(spr->intervalEnd);
+				}
+			}
+		}
+		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL){
+			ConstraintStudentsMaxBuildingChangesPerDayInInterval* spr=(ConstraintStudentsMaxBuildingChangesPerDayInInterval*)gt.rules.internalSpaceConstraintsList[i];
+			
+			if(spr->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint students max building changes per day in hourly interval"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				 	
+				if(t==0)
+					return false;
+			}
+			
+			for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++){
+				bool found=false;
+				for(int cnt=0; cnt<maxBuildingChangesPerDayInIntervalForStudentsPercentages[sbg].count(); cnt++){
+					if(maxBuildingChangesPerDayInIntervalForStudentsPercentages[sbg].at(cnt)==spr->weightPercentage
+					 && maxBuildingChangesPerDayInIntervalForStudentsMaxChanges[sbg].at(cnt)==spr->maxBuildingChangesPerDay
+					 && maxBuildingChangesPerDayInIntervalForStudentsIntervalStart[sbg].at(cnt)==spr->intervalStart
+					 && maxBuildingChangesPerDayInIntervalForStudentsIntervalEnd[sbg].at(cnt)==spr->intervalEnd){
+						found=true;
+						break;
+					}
+				}
+				
+				if(!found){
+					maxBuildingChangesPerDayInIntervalForStudentsPercentages[sbg].append(spr->weightPercentage);
+					maxBuildingChangesPerDayInIntervalForStudentsMaxChanges[sbg].append(spr->maxBuildingChangesPerDay);
+					maxBuildingChangesPerDayInIntervalForStudentsIntervalStart[sbg].append(spr->intervalStart);
+					maxBuildingChangesPerDayInIntervalForStudentsIntervalEnd[sbg].append(spr->intervalEnd);
+				}
+			}
+		}
+	}
+
+	return ok;
+}
+
+bool computeSubgroupsMaxHoursDailyInInterval(QWidget* parent)
+{
+	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
+		subgroupsMaxHoursDailyInIntervalPercentages[i].clear();
+		subgroupsMaxHoursDailyInIntervalMaxHours[i].clear();
+		subgroupsMaxHoursDailyInIntervalStartHour[i].clear();
+		subgroupsMaxHoursDailyInIntervalEndHour[i].clear();
+	}
+	
+	bool ok=true;
+	
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY_IN_INTERVAL){
+			ConstraintStudentsSetMaxHoursDailyInInterval* tc=(ConstraintStudentsSetMaxHoursDailyInInterval*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(tc->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a time constraint students set max hours daily in hourly interval"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			for(int sbg : std::as_const(tc->iSubgroupsList)){
+				bool found=false;
+				for(int cnt=0; cnt<subgroupsMaxHoursDailyInIntervalPercentages[sbg].count(); cnt++){
+					if(subgroupsMaxHoursDailyInIntervalPercentages[sbg].at(cnt)==tc->weightPercentage
+					 && subgroupsMaxHoursDailyInIntervalMaxHours[sbg].at(cnt)==tc->maxHoursDaily
+					 && subgroupsMaxHoursDailyInIntervalStartHour[sbg].at(cnt)==tc->startHour
+					 && subgroupsMaxHoursDailyInIntervalEndHour[sbg].at(cnt)==tc->endHour){
+						found=true;
+						break;
+					}
+				}
+				
+				if(!found){
+					subgroupsMaxHoursDailyInIntervalPercentages[sbg].append(tc->weightPercentage);
+					subgroupsMaxHoursDailyInIntervalMaxHours[sbg].append(tc->maxHoursDaily);
+					subgroupsMaxHoursDailyInIntervalStartHour[sbg].append(tc->startHour);
+					subgroupsMaxHoursDailyInIntervalEndHour[sbg].append(tc->endHour);
+				}
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_MAX_HOURS_DAILY_IN_INTERVAL){
+			ConstraintStudentsMaxHoursDailyInInterval* tc=(ConstraintStudentsMaxHoursDailyInInterval*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(tc->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a time constraint students max hours daily in hourly interval"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++){
+				bool found=false;
+				for(int cnt=0; cnt<subgroupsMaxHoursDailyInIntervalPercentages[sbg].count(); cnt++){
+					if(subgroupsMaxHoursDailyInIntervalPercentages[sbg].at(cnt)==tc->weightPercentage
+					 && subgroupsMaxHoursDailyInIntervalMaxHours[sbg].at(cnt)==tc->maxHoursDaily
+					 && subgroupsMaxHoursDailyInIntervalStartHour[sbg].at(cnt)==tc->startHour
+					 && subgroupsMaxHoursDailyInIntervalEndHour[sbg].at(cnt)==tc->endHour){
+						found=true;
+						break;
+					}
+				}
+				
+				if(!found){
+					subgroupsMaxHoursDailyInIntervalPercentages[sbg].append(tc->weightPercentage);
+					subgroupsMaxHoursDailyInIntervalMaxHours[sbg].append(tc->maxHoursDaily);
+					subgroupsMaxHoursDailyInIntervalStartHour[sbg].append(tc->startHour);
+					subgroupsMaxHoursDailyInIntervalEndHour[sbg].append(tc->endHour);
+				}
+			}
+		}
+	}
+
+	return ok;
+}
+
+bool computeTeachersMaxHoursDailyInInterval(QWidget* parent)
+{
+	for(int i=0; i<gt.rules.nInternalTeachers; i++){
+		teachersMaxHoursDailyInIntervalPercentages[i].clear();
+		teachersMaxHoursDailyInIntervalMaxHours[i].clear();
+		teachersMaxHoursDailyInIntervalStartHour[i].clear();
+		teachersMaxHoursDailyInIntervalEndHour[i].clear();
+	}
+	
+	bool ok=true;
+	
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_HOURS_DAILY_IN_INTERVAL){
+			ConstraintTeacherMaxHoursDailyInInterval* tc=(ConstraintTeacherMaxHoursDailyInInterval*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(tc->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a time constraint teacher max hours daily in hourly interval"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			int tch=tc->teacher_ID;
+			bool found=false;
+			for(int cnt=0; cnt<teachersMaxHoursDailyInIntervalPercentages[tch].count(); cnt++){
+				if(teachersMaxHoursDailyInIntervalPercentages[tch].at(cnt)==tc->weightPercentage
+				 && teachersMaxHoursDailyInIntervalMaxHours[tch].at(cnt)==tc->maxHoursDaily
+				 && teachersMaxHoursDailyInIntervalStartHour[tch].at(cnt)==tc->startHour
+				 && teachersMaxHoursDailyInIntervalEndHour[tch].at(cnt)==tc->endHour){
+					found=true;
+					break;
+				}
+			}
+			
+			if(!found){
+				teachersMaxHoursDailyInIntervalPercentages[tch].append(tc->weightPercentage);
+				teachersMaxHoursDailyInIntervalMaxHours[tch].append(tc->maxHoursDaily);
+				teachersMaxHoursDailyInIntervalStartHour[tch].append(tc->startHour);
+				teachersMaxHoursDailyInIntervalEndHour[tch].append(tc->endHour);
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_HOURS_DAILY_IN_INTERVAL){
+			ConstraintTeachersMaxHoursDailyInInterval* tc=(ConstraintTeachersMaxHoursDailyInInterval*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(tc->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a time constraint teachers max hours daily in hourly interval"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
+				bool found=false;
+				for(int cnt=0; cnt<teachersMaxHoursDailyInIntervalPercentages[tch].count(); cnt++){
+					if(teachersMaxHoursDailyInIntervalPercentages[tch].at(cnt)==tc->weightPercentage
+					 && teachersMaxHoursDailyInIntervalMaxHours[tch].at(cnt)==tc->maxHoursDaily
+					 && teachersMaxHoursDailyInIntervalStartHour[tch].at(cnt)==tc->startHour
+					 && teachersMaxHoursDailyInIntervalEndHour[tch].at(cnt)==tc->endHour){
+						found=true;
+						break;
+					}
+				}
+				
+				if(!found){
+					teachersMaxHoursDailyInIntervalPercentages[tch].append(tc->weightPercentage);
+					teachersMaxHoursDailyInIntervalMaxHours[tch].append(tc->maxHoursDaily);
+					teachersMaxHoursDailyInIntervalStartHour[tch].append(tc->startHour);
+					teachersMaxHoursDailyInIntervalEndHour[tch].append(tc->endHour);
+				}
+			}
+		}
+	}
+
+	return ok;
+}
+
+bool computeMaxBuildingChangesPerRealDayInIntervalForStudents(QWidget* parent)
+{
+	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
+		maxBuildingChangesPerRealDayInIntervalForStudentsPercentages[i].clear();
+		maxBuildingChangesPerRealDayInIntervalForStudentsMaxChanges[i].clear();
+		maxBuildingChangesPerRealDayInIntervalForStudentsIntervalStart[i].clear();
+		maxBuildingChangesPerRealDayInIntervalForStudentsIntervalEnd[i].clear();
+	}
+	
+	bool ok=true;
+	
+	for(int i=0; i<gt.rules.nInternalSpaceConstraints; i++){
+		if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL){
+			ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval* spr=(ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval*)gt.rules.internalSpaceConstraintsList[i];
+			
+			if(spr->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint students set max building changes per real day in hourly interval"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			for(int sbg : std::as_const(spr->iSubgroupsList)){
+				bool found=false;
+				for(int cnt=0; cnt<maxBuildingChangesPerRealDayInIntervalForStudentsPercentages[sbg].count(); cnt++){
+					if(maxBuildingChangesPerRealDayInIntervalForStudentsPercentages[sbg].at(cnt)==spr->weightPercentage
+					 && maxBuildingChangesPerRealDayInIntervalForStudentsMaxChanges[sbg].at(cnt)==spr->maxBuildingChangesPerDay
+					 && maxBuildingChangesPerRealDayInIntervalForStudentsIntervalStart[sbg].at(cnt)==spr->intervalStart
+					 && maxBuildingChangesPerRealDayInIntervalForStudentsIntervalEnd[sbg].at(cnt)==spr->intervalEnd){
+						found=true;
+						break;
+					}
+				}
+				
+				if(!found){
+					maxBuildingChangesPerRealDayInIntervalForStudentsPercentages[sbg].append(spr->weightPercentage);
+					maxBuildingChangesPerRealDayInIntervalForStudentsMaxChanges[sbg].append(spr->maxBuildingChangesPerDay);
+					maxBuildingChangesPerRealDayInIntervalForStudentsIntervalStart[sbg].append(spr->intervalStart);
+					maxBuildingChangesPerRealDayInIntervalForStudentsIntervalEnd[sbg].append(spr->intervalEnd);
+				}
+			}
+		}
+		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL){
+			ConstraintStudentsMaxBuildingChangesPerRealDayInInterval* spr=(ConstraintStudentsMaxBuildingChangesPerRealDayInInterval*)gt.rules.internalSpaceConstraintsList[i];
+			
+			if(spr->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint students max building changes per real day in hourly interval"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				 	
+				if(t==0)
+					return false;
+			}
+			
+			for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++){
+				bool found=false;
+				for(int cnt=0; cnt<maxBuildingChangesPerRealDayInIntervalForStudentsPercentages[sbg].count(); cnt++){
+					if(maxBuildingChangesPerRealDayInIntervalForStudentsPercentages[sbg].at(cnt)==spr->weightPercentage
+					 && maxBuildingChangesPerRealDayInIntervalForStudentsMaxChanges[sbg].at(cnt)==spr->maxBuildingChangesPerDay
+					 && maxBuildingChangesPerRealDayInIntervalForStudentsIntervalStart[sbg].at(cnt)==spr->intervalStart
+					 && maxBuildingChangesPerRealDayInIntervalForStudentsIntervalEnd[sbg].at(cnt)==spr->intervalEnd){
+						found=true;
+						break;
+					}
+				}
+				
+				if(!found){
+					maxBuildingChangesPerRealDayInIntervalForStudentsPercentages[sbg].append(spr->weightPercentage);
+					maxBuildingChangesPerRealDayInIntervalForStudentsMaxChanges[sbg].append(spr->maxBuildingChangesPerDay);
+					maxBuildingChangesPerRealDayInIntervalForStudentsIntervalStart[sbg].append(spr->intervalStart);
+					maxBuildingChangesPerRealDayInIntervalForStudentsIntervalEnd[sbg].append(spr->intervalEnd);
+				}
+			}
+		}
+	}
+
+	return ok;
+}
+
 bool computeMaxBuildingChangesPerWeekForStudents(QWidget* parent)
 {
 	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
@@ -18316,6 +18763,180 @@ bool computeMaxBuildingChangesPerDayForTeachers(QWidget* parent)
 	return ok;
 }
 
+bool computeMaxBuildingChangesPerDayInIntervalForTeachers(QWidget* parent)
+{
+	for(int i=0; i<gt.rules.nInternalTeachers; i++){
+		maxBuildingChangesPerDayInIntervalForTeachersPercentages[i].clear();
+		maxBuildingChangesPerDayInIntervalForTeachersMaxChanges[i].clear();
+		maxBuildingChangesPerDayInIntervalForTeachersIntervalStart[i].clear();
+		maxBuildingChangesPerDayInIntervalForTeachersIntervalEnd[i].clear();
+	}
+	
+	bool ok=true;
+	
+	for(int i=0; i<gt.rules.nInternalSpaceConstraints; i++){
+		if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL){
+			ConstraintTeacherMaxBuildingChangesPerDayInInterval* spr=(ConstraintTeacherMaxBuildingChangesPerDayInInterval*)gt.rules.internalSpaceConstraintsList[i];
+			
+			if(spr->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint teacher max building changes per day in hourly interval"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			bool found=false;
+			for(int cnt=0; cnt<maxBuildingChangesPerDayInIntervalForTeachersPercentages[spr->teacher_ID].count(); cnt++){
+				if(maxBuildingChangesPerDayInIntervalForTeachersPercentages[spr->teacher_ID].at(cnt)==spr->weightPercentage
+				 && maxBuildingChangesPerDayInIntervalForTeachersMaxChanges[spr->teacher_ID].at(cnt)==spr->maxBuildingChangesPerDay
+				 && maxBuildingChangesPerDayInIntervalForTeachersIntervalStart[spr->teacher_ID].at(cnt)==spr->intervalStart
+				 && maxBuildingChangesPerDayInIntervalForTeachersIntervalEnd[spr->teacher_ID].at(cnt)==spr->intervalEnd){
+					found=true;
+					break;
+				}
+			}
+			
+			if(!found){
+				maxBuildingChangesPerDayInIntervalForTeachersPercentages[spr->teacher_ID].append(spr->weightPercentage);
+				maxBuildingChangesPerDayInIntervalForTeachersMaxChanges[spr->teacher_ID].append(spr->maxBuildingChangesPerDay);
+				maxBuildingChangesPerDayInIntervalForTeachersIntervalStart[spr->teacher_ID].append(spr->intervalStart);
+				maxBuildingChangesPerDayInIntervalForTeachersIntervalEnd[spr->teacher_ID].append(spr->intervalEnd);
+			}
+		}
+		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL){
+			ConstraintTeachersMaxBuildingChangesPerDayInInterval* spr=(ConstraintTeachersMaxBuildingChangesPerDayInInterval*)gt.rules.internalSpaceConstraintsList[i];
+			
+			if(spr->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint teachers max building changes per day in hourly interval"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
+				bool found=false;
+				for(int cnt=0; cnt<maxBuildingChangesPerDayInIntervalForTeachersPercentages[tch].count(); cnt++){
+					if(maxBuildingChangesPerDayInIntervalForTeachersPercentages[tch].at(cnt)==spr->weightPercentage
+					 && maxBuildingChangesPerDayInIntervalForTeachersMaxChanges[tch].at(cnt)==spr->maxBuildingChangesPerDay
+					 && maxBuildingChangesPerDayInIntervalForTeachersIntervalStart[tch].at(cnt)==spr->intervalStart
+					 && maxBuildingChangesPerDayInIntervalForTeachersIntervalEnd[tch].at(cnt)==spr->intervalEnd){
+						found=true;
+						break;
+					}
+				}
+				
+				if(!found){
+					maxBuildingChangesPerDayInIntervalForTeachersPercentages[tch].append(spr->weightPercentage);
+					maxBuildingChangesPerDayInIntervalForTeachersMaxChanges[tch].append(spr->maxBuildingChangesPerDay);
+					maxBuildingChangesPerDayInIntervalForTeachersIntervalStart[tch].append(spr->intervalStart);
+					maxBuildingChangesPerDayInIntervalForTeachersIntervalEnd[tch].append(spr->intervalEnd);
+				}
+			}
+		}
+	}
+
+	return ok;
+}
+
+bool computeMaxBuildingChangesPerRealDayInIntervalForTeachers(QWidget* parent)
+{
+	for(int i=0; i<gt.rules.nInternalTeachers; i++){
+		maxBuildingChangesPerRealDayInIntervalForTeachersPercentages[i].clear();
+		maxBuildingChangesPerRealDayInIntervalForTeachersMaxChanges[i].clear();
+		maxBuildingChangesPerRealDayInIntervalForTeachersIntervalStart[i].clear();
+		maxBuildingChangesPerRealDayInIntervalForTeachersIntervalEnd[i].clear();
+	}
+	
+	bool ok=true;
+	
+	for(int i=0; i<gt.rules.nInternalSpaceConstraints; i++){
+		if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL){
+			ConstraintTeacherMaxBuildingChangesPerRealDayInInterval* spr=(ConstraintTeacherMaxBuildingChangesPerRealDayInInterval*)gt.rules.internalSpaceConstraintsList[i];
+			
+			if(spr->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint teacher max building changes per real day in hourly interval"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			bool found=false;
+			for(int cnt=0; cnt<maxBuildingChangesPerRealDayInIntervalForTeachersPercentages[spr->teacher_ID].count(); cnt++){
+				if(maxBuildingChangesPerRealDayInIntervalForTeachersPercentages[spr->teacher_ID].at(cnt)==spr->weightPercentage
+				 && maxBuildingChangesPerRealDayInIntervalForTeachersMaxChanges[spr->teacher_ID].at(cnt)==spr->maxBuildingChangesPerDay
+				 && maxBuildingChangesPerRealDayInIntervalForTeachersIntervalStart[spr->teacher_ID].at(cnt)==spr->intervalStart
+				 && maxBuildingChangesPerRealDayInIntervalForTeachersIntervalEnd[spr->teacher_ID].at(cnt)==spr->intervalEnd){
+					found=true;
+					break;
+				}
+			}
+			
+			if(!found){
+				maxBuildingChangesPerRealDayInIntervalForTeachersPercentages[spr->teacher_ID].append(spr->weightPercentage);
+				maxBuildingChangesPerRealDayInIntervalForTeachersMaxChanges[spr->teacher_ID].append(spr->maxBuildingChangesPerDay);
+				maxBuildingChangesPerRealDayInIntervalForTeachersIntervalStart[spr->teacher_ID].append(spr->intervalStart);
+				maxBuildingChangesPerRealDayInIntervalForTeachersIntervalEnd[spr->teacher_ID].append(spr->intervalEnd);
+			}
+		}
+		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL){
+			ConstraintTeachersMaxBuildingChangesPerRealDayInInterval* spr=(ConstraintTeachersMaxBuildingChangesPerRealDayInInterval*)gt.rules.internalSpaceConstraintsList[i];
+			
+			if(spr->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint teachers max building changes per real day in hourly interval"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
+				bool found=false;
+				for(int cnt=0; cnt<maxBuildingChangesPerRealDayInIntervalForTeachersPercentages[tch].count(); cnt++){
+					if(maxBuildingChangesPerRealDayInIntervalForTeachersPercentages[tch].at(cnt)==spr->weightPercentage
+					 && maxBuildingChangesPerRealDayInIntervalForTeachersMaxChanges[tch].at(cnt)==spr->maxBuildingChangesPerDay
+					 && maxBuildingChangesPerRealDayInIntervalForTeachersIntervalStart[tch].at(cnt)==spr->intervalStart
+					 && maxBuildingChangesPerRealDayInIntervalForTeachersIntervalEnd[tch].at(cnt)==spr->intervalEnd){
+						found=true;
+						break;
+					}
+				}
+				
+				if(!found){
+					maxBuildingChangesPerRealDayInIntervalForTeachersPercentages[tch].append(spr->weightPercentage);
+					maxBuildingChangesPerRealDayInIntervalForTeachersMaxChanges[tch].append(spr->maxBuildingChangesPerDay);
+					maxBuildingChangesPerRealDayInIntervalForTeachersIntervalStart[tch].append(spr->intervalStart);
+					maxBuildingChangesPerRealDayInIntervalForTeachersIntervalEnd[tch].append(spr->intervalEnd);
+				}
+			}
+		}
+	}
+
+	return ok;
+}
+
 bool computeMaxBuildingChangesPerWeekForTeachers(QWidget* parent)
 {
 	for(int i=0; i<gt.rules.nInternalTeachers; i++){
@@ -18364,7 +18985,7 @@ bool computeMaxBuildingChangesPerWeekForTeachers(QWidget* parent)
 					return false;
 			}
 
-			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){			
+			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
 				maxBuildingChangesPerWeekForTeachersPercentages[tch]=100;
 				if(maxBuildingChangesPerWeekForTeachersMaxChanges[tch]<0)
 					maxBuildingChangesPerWeekForTeachersMaxChanges[tch]=spr->maxBuildingChangesPerWeek;
@@ -18736,7 +19357,7 @@ bool computeMaxRoomChangesPerWeekForTeachers(QWidget* parent)
 					return false;
 			}
 
-			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){			
+			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
 				maxRoomChangesPerWeekForTeachersPercentages[tch]=100;
 				if(maxRoomChangesPerWeekForTeachersMaxChanges[tch]<0)
 					maxRoomChangesPerWeekForTeachersMaxChanges[tch]=spr->maxRoomChangesPerWeek;
@@ -19074,6 +19695,7 @@ void computeMustComputeTimetableSubgroups()
 			  subgroupsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0 ||
 			  subgroupsMaxHoursDailyPercentages1[sbg]>=0 ||
 			  subgroupsMaxHoursDailyPercentages2[sbg]>=0 ||
+			  subgroupsMaxHoursDailyInIntervalPercentages[sbg].count()>0 ||
 			  subgroupsMaxHoursContinuouslyPercentages1[sbg]>=0 ||
 			  subgroupsMaxHoursContinuouslyPercentages2[sbg]>=0 ||
 			  subgroupsMinHoursDailyPercentages[sbg][MIN_HOURS_DAILY_INDEX_IN_ARRAY]>=0 || //daily for official, afternoon for mornings-afternoons
@@ -19126,7 +19748,10 @@ void computeMustComputeTimetableSubgroups()
 			  subgroupsMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[sbg]>=0 ||
 
 			  subgroupsAfternoonsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0 ||
-			  subgroupsMorningsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0
+			  subgroupsMorningsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0 ||
+			
+			  maxBuildingChangesPerDayInIntervalForStudentsPercentages[sbg].count()>0 ||
+			  maxBuildingChangesPerRealDayInIntervalForStudentsPercentages[sbg].count()>0
 			  ){
 			
 				mustComputeTimetableSubgroups[ai].append(sbg);
@@ -19150,6 +19775,7 @@ void computeMustComputeTimetableTeachers()
 			  teachersMaxGapsPerDayPercentage[tch]>=0 ||
 			  teachersMaxHoursDailyPercentages1[tch]>=0 ||
 			  teachersMaxHoursDailyPercentages2[tch]>=0 ||
+			  teachersMaxHoursDailyInIntervalPercentages[tch].count()>0 ||
 			  teachersMaxHoursContinuouslyPercentages1[tch]>=0 ||
 			  teachersMaxHoursContinuouslyPercentages2[tch]>=0 ||
 			  teachersMinHoursDailyPercentages[tch][MIN_HOURS_DAILY_INDEX_IN_ARRAY]>=0 || //daily for official, afternoon for mornings-afternoons
@@ -19211,7 +19837,10 @@ void computeMustComputeTimetableTeachers()
 
 			  teachersMaxGapsPerMorningAndAfternoonPercentage[tch]>=0 ||
 
-			  teacherConstrainedToZeroGapsPerAfternoon[tch]==true
+			  teacherConstrainedToZeroGapsPerAfternoon[tch]==true ||
+			
+			  maxBuildingChangesPerDayInIntervalForTeachersPercentages[tch].count()>0 ||
+			  maxBuildingChangesPerRealDayInIntervalForTeachersPercentages[tch].count()>0
 			  ){
 			
 				mustComputeTimetableTeachers[ai].append(tch);

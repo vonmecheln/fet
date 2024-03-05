@@ -1052,7 +1052,46 @@ SOURCES += \
 	interface/settingsrestoredatafrommemoryform.cpp \
 	interface/settingsrestoredatafromdiskform.cpp \
 	\
-	interface/settingsautosaveform.cpp
+	interface/settingsautosaveform.cpp \
+	\
+	interface/addconstraintstudentssetmaxbuildingchangesperdayinintervalform.cpp \
+	interface/addconstraintstudentsmaxbuildingchangesperdayinintervalform.cpp \
+	interface/addconstraintteachermaxbuildingchangesperdayinintervalform.cpp \
+	interface/addconstraintteachersmaxbuildingchangesperdayinintervalform.cpp \
+	interface/addconstraintstudentssetmaxbuildingchangesperrealdayinintervalform.cpp \
+	interface/addconstraintstudentsmaxbuildingchangesperrealdayinintervalform.cpp \
+	interface/addconstraintteachermaxbuildingchangesperrealdayinintervalform.cpp \
+	interface/addconstraintteachersmaxbuildingchangesperrealdayinintervalform.cpp \
+	interface/constraintstudentssetmaxbuildingchangesperdayinintervalform.cpp \
+	interface/constraintstudentsmaxbuildingchangesperdayinintervalform.cpp \
+	interface/constraintteachermaxbuildingchangesperdayinintervalform.cpp \
+	interface/constraintteachersmaxbuildingchangesperdayinintervalform.cpp \
+	interface/constraintstudentssetmaxbuildingchangesperrealdayinintervalform.cpp \
+	interface/constraintstudentsmaxbuildingchangesperrealdayinintervalform.cpp \
+	interface/constraintteachermaxbuildingchangesperrealdayinintervalform.cpp \
+	interface/constraintteachersmaxbuildingchangesperrealdayinintervalform.cpp \
+	interface/modifyconstraintstudentssetmaxbuildingchangesperdayinintervalform.cpp \
+	interface/modifyconstraintstudentsmaxbuildingchangesperdayinintervalform.cpp \
+	interface/modifyconstraintteachermaxbuildingchangesperdayinintervalform.cpp \
+	interface/modifyconstraintteachersmaxbuildingchangesperdayinintervalform.cpp \
+	interface/modifyconstraintstudentssetmaxbuildingchangesperrealdayinintervalform.cpp \
+	interface/modifyconstraintstudentsmaxbuildingchangesperrealdayinintervalform.cpp \
+	interface/modifyconstraintteachermaxbuildingchangesperrealdayinintervalform.cpp \
+	interface/modifyconstraintteachersmaxbuildingchangesperrealdayinintervalform.cpp \
+	\
+	interface/constraintteachersmaxhoursdailyinintervalform.cpp \
+	interface/addconstraintteachersmaxhoursdailyinintervalform.cpp \
+	interface/modifyconstraintteachersmaxhoursdailyinintervalform.cpp \
+	interface/constraintteachermaxhoursdailyinintervalform.cpp \
+	interface/addconstraintteachermaxhoursdailyinintervalform.cpp \
+	interface/modifyconstraintteachermaxhoursdailyinintervalform.cpp \
+	\
+	interface/constraintstudentsmaxhoursdailyinintervalform.cpp \
+	interface/addconstraintstudentsmaxhoursdailyinintervalform.cpp \
+	interface/modifyconstraintstudentsmaxhoursdailyinintervalform.cpp \
+	interface/constraintstudentssetmaxhoursdailyinintervalform.cpp \
+	interface/addconstraintstudentssetmaxhoursdailyinintervalform.cpp \
+	interface/modifyconstraintstudentssetmaxhoursdailyinintervalform.cpp
 
 HEADERS += \
 	engine/timetableexport.h \
@@ -2101,7 +2140,46 @@ HEADERS += \
 	interface/settingsrestoredatafrommemoryform.h \
 	interface/settingsrestoredatafromdiskform.h \
 	\
-	interface/settingsautosaveform.h
+	interface/settingsautosaveform.h \
+	\
+	interface/addconstraintstudentssetmaxbuildingchangesperdayinintervalform.h \
+	interface/addconstraintstudentsmaxbuildingchangesperdayinintervalform.h \
+	interface/addconstraintteachermaxbuildingchangesperdayinintervalform.h \
+	interface/addconstraintteachersmaxbuildingchangesperdayinintervalform.h \
+	interface/addconstraintstudentssetmaxbuildingchangesperrealdayinintervalform.h \
+	interface/addconstraintstudentsmaxbuildingchangesperrealdayinintervalform.h \
+	interface/addconstraintteachermaxbuildingchangesperrealdayinintervalform.h \
+	interface/addconstraintteachersmaxbuildingchangesperrealdayinintervalform.h \
+	interface/constraintstudentssetmaxbuildingchangesperdayinintervalform.h \
+	interface/constraintstudentsmaxbuildingchangesperdayinintervalform.h \
+	interface/constraintteachermaxbuildingchangesperdayinintervalform.h \
+	interface/constraintteachersmaxbuildingchangesperdayinintervalform.h \
+	interface/constraintstudentssetmaxbuildingchangesperrealdayinintervalform.h \
+	interface/constraintstudentsmaxbuildingchangesperrealdayinintervalform.h \
+	interface/constraintteachermaxbuildingchangesperrealdayinintervalform.h \
+	interface/constraintteachersmaxbuildingchangesperrealdayinintervalform.h \
+	interface/modifyconstraintstudentssetmaxbuildingchangesperdayinintervalform.h \
+	interface/modifyconstraintstudentsmaxbuildingchangesperdayinintervalform.h \
+	interface/modifyconstraintteachermaxbuildingchangesperdayinintervalform.h \
+	interface/modifyconstraintteachersmaxbuildingchangesperdayinintervalform.h \
+	interface/modifyconstraintstudentssetmaxbuildingchangesperrealdayinintervalform.h \
+	interface/modifyconstraintstudentsmaxbuildingchangesperrealdayinintervalform.h \
+	interface/modifyconstraintteachermaxbuildingchangesperrealdayinintervalform.h \
+	interface/modifyconstraintteachersmaxbuildingchangesperrealdayinintervalform.h \
+	\
+	interface/constraintteachersmaxhoursdailyinintervalform.h \
+	interface/addconstraintteachersmaxhoursdailyinintervalform.h \
+	interface/modifyconstraintteachersmaxhoursdailyinintervalform.h \
+	interface/constraintteachermaxhoursdailyinintervalform.h \
+	interface/addconstraintteachermaxhoursdailyinintervalform.h \
+	interface/modifyconstraintteachermaxhoursdailyinintervalform.h \
+	\
+	interface/constraintstudentsmaxhoursdailyinintervalform.h \
+	interface/addconstraintstudentsmaxhoursdailyinintervalform.h \
+	interface/modifyconstraintstudentsmaxhoursdailyinintervalform.h \
+	interface/constraintstudentssetmaxhoursdailyinintervalform.h \
+	interface/addconstraintstudentssetmaxhoursdailyinintervalform.h \
+	interface/modifyconstraintstudentssetmaxhoursdailyinintervalform.h
 
 FORMS += \
 	interface/fetmainform_template.ui \
@@ -3110,7 +3188,46 @@ FORMS += \
 	interface/settingsrestoredatafrommemoryform_template.ui \
 	interface/settingsrestoredatafromdiskform_template.ui \
 	\
-	interface/settingsautosaveform_template.ui
+	interface/settingsautosaveform_template.ui \
+	\
+	interface/addconstraintstudentssetmaxbuildingchangesperdayinintervalform_template.ui \
+	interface/addconstraintstudentsmaxbuildingchangesperdayinintervalform_template.ui \
+	interface/addconstraintteachermaxbuildingchangesperdayinintervalform_template.ui \
+	interface/addconstraintteachersmaxbuildingchangesperdayinintervalform_template.ui \
+	interface/addconstraintstudentssetmaxbuildingchangesperrealdayinintervalform_template.ui \
+	interface/addconstraintstudentsmaxbuildingchangesperrealdayinintervalform_template.ui \
+	interface/addconstraintteachermaxbuildingchangesperrealdayinintervalform_template.ui \
+	interface/addconstraintteachersmaxbuildingchangesperrealdayinintervalform_template.ui \
+	interface/constraintstudentssetmaxbuildingchangesperdayinintervalform_template.ui \
+	interface/constraintstudentsmaxbuildingchangesperdayinintervalform_template.ui \
+	interface/constraintteachermaxbuildingchangesperdayinintervalform_template.ui \
+	interface/constraintteachersmaxbuildingchangesperdayinintervalform_template.ui \
+	interface/constraintstudentssetmaxbuildingchangesperrealdayinintervalform_template.ui \
+	interface/constraintstudentsmaxbuildingchangesperrealdayinintervalform_template.ui \
+	interface/constraintteachermaxbuildingchangesperrealdayinintervalform_template.ui \
+	interface/constraintteachersmaxbuildingchangesperrealdayinintervalform_template.ui \
+	interface/modifyconstraintstudentssetmaxbuildingchangesperdayinintervalform_template.ui \
+	interface/modifyconstraintstudentsmaxbuildingchangesperdayinintervalform_template.ui \
+	interface/modifyconstraintteachermaxbuildingchangesperdayinintervalform_template.ui \
+	interface/modifyconstraintteachersmaxbuildingchangesperdayinintervalform_template.ui \
+	interface/modifyconstraintstudentssetmaxbuildingchangesperrealdayinintervalform_template.ui \
+	interface/modifyconstraintstudentsmaxbuildingchangesperrealdayinintervalform_template.ui \
+	interface/modifyconstraintteachermaxbuildingchangesperrealdayinintervalform_template.ui \
+	interface/modifyconstraintteachersmaxbuildingchangesperrealdayinintervalform_template.ui \
+	\
+	interface/constraintteachersmaxhoursdailyinintervalform_template.ui \
+	interface/addconstraintteachersmaxhoursdailyinintervalform_template.ui \
+	interface/modifyconstraintteachersmaxhoursdailyinintervalform_template.ui \
+	interface/constraintteachermaxhoursdailyinintervalform_template.ui \
+	interface/addconstraintteachermaxhoursdailyinintervalform_template.ui \
+	interface/modifyconstraintteachermaxhoursdailyinintervalform_template.ui \
+	\
+	interface/constraintstudentsmaxhoursdailyinintervalform_template.ui \
+	interface/addconstraintstudentsmaxhoursdailyinintervalform_template.ui \
+	interface/modifyconstraintstudentsmaxhoursdailyinintervalform_template.ui \
+	interface/constraintstudentssetmaxhoursdailyinintervalform_template.ui \
+	interface/addconstraintstudentssetmaxhoursdailyinintervalform_template.ui \
+	interface/modifyconstraintstudentssetmaxhoursdailyinintervalform_template.ui
 
 TRANSLATIONS += \
 	../translations/fet_ar.ts \

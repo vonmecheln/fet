@@ -82,6 +82,15 @@
 #include "modifyconstraintactivitiesoccupymaxdifferentroomsform.h"
 #include "modifyconstraintactivitiessameroomifconsecutiveform.h"
 
+#include "modifyconstraintstudentssetmaxbuildingchangesperdayinintervalform.h"
+#include "modifyconstraintstudentsmaxbuildingchangesperdayinintervalform.h"
+#include "modifyconstraintteachermaxbuildingchangesperdayinintervalform.h"
+#include "modifyconstraintteachersmaxbuildingchangesperdayinintervalform.h"
+#include "modifyconstraintstudentssetmaxbuildingchangesperrealdayinintervalform.h"
+#include "modifyconstraintstudentsmaxbuildingchangesperrealdayinintervalform.h"
+#include "modifyconstraintteachermaxbuildingchangesperrealdayinintervalform.h"
+#include "modifyconstraintteachersmaxbuildingchangesperrealdayinintervalform.h"
+
 #include "lockunlock.h"
 
 #include "advancedfilterform.h"
@@ -399,7 +408,7 @@ void AllSpaceConstraintsForm::moveSpaceConstraintDown()
 		return;
 	if(i==constraintsListWidget->count()-1)
 		return;
-		
+	
 	QString s1=constraintsListWidget->item(i)->text();
 	QString s2=constraintsListWidget->item(i+1)->text();
 	
@@ -922,6 +931,72 @@ void AllSpaceConstraintsForm::modifyConstraint()
 				form.exec();
 				break;
 			}
+		////2024-02-09
+		//50
+		case CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL:
+			{
+				ModifyConstraintStudentsMaxBuildingChangesPerDayInIntervalForm form(this, (ConstraintStudentsMaxBuildingChangesPerDayInInterval*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//51
+		case CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL:
+			{
+				ModifyConstraintStudentsSetMaxBuildingChangesPerDayInIntervalForm form(this, (ConstraintStudentsSetMaxBuildingChangesPerDayInInterval*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//52
+		case CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL:
+			{
+				ModifyConstraintTeachersMaxBuildingChangesPerDayInIntervalForm form(this, (ConstraintTeachersMaxBuildingChangesPerDayInInterval*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//53
+		case CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL:
+			{
+				ModifyConstraintTeacherMaxBuildingChangesPerDayInIntervalForm form(this, (ConstraintTeacherMaxBuildingChangesPerDayInInterval*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//54
+		case CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL:
+			{
+				ModifyConstraintStudentsMaxBuildingChangesPerRealDayInIntervalForm form(this, (ConstraintStudentsMaxBuildingChangesPerRealDayInInterval*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//55
+		case CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL:
+			{
+				ModifyConstraintStudentsSetMaxBuildingChangesPerRealDayInIntervalForm form(this, (ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//56
+		case CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL:
+			{
+				ModifyConstraintTeachersMaxBuildingChangesPerRealDayInIntervalForm form(this, (ConstraintTeachersMaxBuildingChangesPerRealDayInInterval*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//57
+		case CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL:
+			{
+				ModifyConstraintTeacherMaxBuildingChangesPerRealDayInIntervalForm form(this, (ConstraintTeacherMaxBuildingChangesPerRealDayInInterval*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		////
 		default:
 			QMessageBox::critical(this, tr("FET critical"), tr("You have found a bug in FET. Please report it. This kind of constraint"
 			 " is not correctly recognized in all space constraints dialog. FET will skip this error, so that you can continue work."

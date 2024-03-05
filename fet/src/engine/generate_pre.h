@@ -467,8 +467,20 @@ extern Matrix1D<double> teachersMaxHoursDailyPercentages2;
 extern Matrix1D<int> teachersMaxHoursDailyMaxHours2;
 
 bool computeTeachersMaxHoursDaily(QWidget* parent);
+////////END   teacher(s) max hours daily
 
-//for mornings-afternoons
+
+//BEGIN teacher(s) max hours daily in hourly interval
+extern Matrix1D<QList<double>> teachersMaxHoursDailyInIntervalPercentages;
+extern Matrix1D<QList<int>> teachersMaxHoursDailyInIntervalMaxHours;
+extern Matrix1D<QList<int>> teachersMaxHoursDailyInIntervalStartHour;
+extern Matrix1D<QList<int>> teachersMaxHoursDailyInIntervalEndHour;
+
+bool computeTeachersMaxHoursDailyInInterval(QWidget* parent);
+//END   teacher(s) max hours daily in hourly interval
+
+
+////////BEGIN teacher(s) max hours daily for real days
 extern Matrix1D<double> teachersMaxHoursDailyRealDaysPercentages1;
 extern Matrix1D<int> teachersMaxHoursDailyRealDaysMaxHours1;
 
@@ -476,7 +488,7 @@ extern Matrix1D<double> teachersMaxHoursDailyRealDaysPercentages2;
 extern Matrix1D<int> teachersMaxHoursDailyRealDaysMaxHours2;
 
 bool computeTeachersMaxHoursDailyRealDays(QWidget* parent);
-////////END   teacher(s) max hours daily
+////////END   teacher(s) max hours daily for real days
 
 
 ////////BEGIN teacher(s) max hours continuously
@@ -602,6 +614,16 @@ extern Matrix1D<int> subgroupsMaxHoursDailyMaxHours2;
 
 bool computeSubgroupsMaxHoursDaily(QWidget* parent);
 ////////END   students (set) max hours daily
+
+
+//BEGIN students (set) max hours daily in hourly interval
+extern Matrix1D<QList<double>> subgroupsMaxHoursDailyInIntervalPercentages;
+extern Matrix1D<QList<int>> subgroupsMaxHoursDailyInIntervalMaxHours;
+extern Matrix1D<QList<int>> subgroupsMaxHoursDailyInIntervalStartHour;
+extern Matrix1D<QList<int>> subgroupsMaxHoursDailyInIntervalEndHour;
+
+bool computeSubgroupsMaxHoursDailyInInterval(QWidget* parent);
+//END   students (set) max hours daily in hourly interval
 
 
 ////////BEGIN students (set) max hours daily real days
@@ -913,6 +935,12 @@ extern Matrix1D<double> maxBuildingChangesPerDayForStudentsPercentages;
 extern Matrix1D<int> maxBuildingChangesPerDayForStudentsMaxChanges;
 bool computeMaxBuildingChangesPerDayForStudents(QWidget* parent);
 
+extern Matrix1D<QList<double>> maxBuildingChangesPerDayInIntervalForStudentsPercentages;
+extern Matrix1D<QList<int>> maxBuildingChangesPerDayInIntervalForStudentsMaxChanges;
+extern Matrix1D<QList<int>> maxBuildingChangesPerDayInIntervalForStudentsIntervalStart;
+extern Matrix1D<QList<int>> maxBuildingChangesPerDayInIntervalForStudentsIntervalEnd;
+bool computeMaxBuildingChangesPerDayInIntervalForStudents(QWidget* parent);
+
 extern Matrix1D<double> minGapsBetweenBuildingChangesForStudentsPercentages;
 extern Matrix1D<int> minGapsBetweenBuildingChangesForStudentsMinGaps;
 bool computeMinGapsBetweenBuildingChangesForStudents(QWidget* parent);
@@ -925,6 +953,12 @@ extern Matrix1D<double> maxBuildingChangesPerDayForTeachersPercentages;
 extern Matrix1D<int> maxBuildingChangesPerDayForTeachersMaxChanges;
 bool computeMaxBuildingChangesPerDayForTeachers(QWidget* parent);
 
+extern Matrix1D<QList<double>> maxBuildingChangesPerDayInIntervalForTeachersPercentages;
+extern Matrix1D<QList<int>> maxBuildingChangesPerDayInIntervalForTeachersMaxChanges;
+extern Matrix1D<QList<int>> maxBuildingChangesPerDayInIntervalForTeachersIntervalStart;
+extern Matrix1D<QList<int>> maxBuildingChangesPerDayInIntervalForTeachersIntervalEnd;
+bool computeMaxBuildingChangesPerDayInIntervalForTeachers(QWidget* parent);
+
 extern Matrix1D<double> minGapsBetweenBuildingChangesForTeachersPercentages;
 extern Matrix1D<int> minGapsBetweenBuildingChangesForTeachersMinGaps;
 bool computeMinGapsBetweenBuildingChangesForTeachers(QWidget* parent);
@@ -935,11 +969,23 @@ extern Matrix1D<int> maxBuildingChangesPerRealDayForTeachersMaxChanges;
 bool computeMaxBuildingChangesPerRealDayForTeachers(QWidget* parent);
 //END   building changes per real day for teachers
 
+extern Matrix1D<QList<double>> maxBuildingChangesPerRealDayInIntervalForTeachersPercentages;
+extern Matrix1D<QList<int>> maxBuildingChangesPerRealDayInIntervalForTeachersMaxChanges;
+extern Matrix1D<QList<int>> maxBuildingChangesPerRealDayInIntervalForTeachersIntervalStart;
+extern Matrix1D<QList<int>> maxBuildingChangesPerRealDayInIntervalForTeachersIntervalEnd;
+bool computeMaxBuildingChangesPerRealDayInIntervalForTeachers(QWidget* parent);
+
 //BEGIN building changes per real day for students
 extern Matrix1D<double> maxBuildingChangesPerRealDayForSubgroupsPercentages;
 extern Matrix1D<int> maxBuildingChangesPerRealDayForSubgroupsMaxChanges;
 bool computeMaxBuildingChangesPerRealDayForStudents(QWidget* parent);
 //END   building changes per real day for students
+
+extern Matrix1D<QList<double>> maxBuildingChangesPerRealDayInIntervalForStudentsPercentages;
+extern Matrix1D<QList<int>> maxBuildingChangesPerRealDayInIntervalForStudentsMaxChanges;
+extern Matrix1D<QList<int>> maxBuildingChangesPerRealDayInIntervalForStudentsIntervalStart;
+extern Matrix1D<QList<int>> maxBuildingChangesPerRealDayInIntervalForStudentsIntervalEnd;
+bool computeMaxBuildingChangesPerRealDayInIntervalForStudents(QWidget* parent);
 
 ////////END   building changes
 

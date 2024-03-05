@@ -1135,6 +1135,11 @@ private:
 	TimeConstraint* readOldMAStudentsSetMaxSpanPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readOldMAStudentsMaxSpanPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
+	TimeConstraint* readTeacherMaxHoursDailyInInterval(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMaxHoursDailyInInterval(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsSetMaxHoursDailyInInterval(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsMaxHoursDailyInInterval(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
 	//
 	SpaceConstraint* readBasicCompulsorySpace(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	SpaceConstraint* readRoomNotAvailable(QXmlStreamReader& xml, FakeString& xmlReadingLog);
@@ -1205,6 +1210,18 @@ private:
 	SpaceConstraint* readOldMATeachersMaxRoomChangesPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	SpaceConstraint* readOldMAStudentsSetMaxRoomChangesPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	SpaceConstraint* readOldMAStudentsMaxRoomChangesPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	//For all modes
+	SpaceConstraint* readTeacherMaxBuildingChangesPerDayInInterval(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readTeachersMaxBuildingChangesPerDayInInterval(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readStudentsSetMaxBuildingChangesPerDayInInterval(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readStudentsMaxBuildingChangesPerDayInInterval(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	//For mornings-afternoons
+	SpaceConstraint* readTeacherMaxBuildingChangesPerRealDayInInterval(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readTeachersMaxBuildingChangesPerRealDayInInterval(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readStudentsSetMaxBuildingChangesPerRealDayInInterval(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readStudentsMaxBuildingChangesPerRealDayInInterval(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 };
 
 #endif

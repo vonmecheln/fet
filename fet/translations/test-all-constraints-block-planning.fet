@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="6.9.4">
+<fet version="6.17.0">
 
 <Mode>Block_Planning</Mode>
 
@@ -2067,6 +2067,41 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintActivitiesMaxHourlySpan>
+<ConstraintTeacherMaxHoursDailyInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t1</Teacher_Name>
+	<Interval_Start_Hour>09:00</Interval_Start_Hour>
+	<Interval_End_Hour>11:00</Interval_End_Hour>
+	<Maximum_Hours_Daily>12</Maximum_Hours_Daily>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxHoursDailyInInterval>
+<ConstraintTeachersMaxHoursDailyInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Interval_Start_Hour>09:00</Interval_Start_Hour>
+	<Interval_End_Hour></Interval_End_Hour>
+	<!-- Interval_End_Hour void means the end of the day (which has no name) -->
+	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxHoursDailyInInterval>
+<ConstraintStudentsSetMaxHoursDailyInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1</Students>
+	<Interval_Start_Hour>08:00</Interval_Start_Hour>
+	<Interval_End_Hour>12:00</Interval_End_Hour>
+	<Maximum_Hours_Daily>3</Maximum_Hours_Daily>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxHoursDailyInInterval>
+<ConstraintStudentsMaxHoursDailyInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Interval_Start_Hour>09:00</Interval_Start_Hour>
+	<Interval_End_Hour>13:00</Interval_End_Hour>
+	<Maximum_Hours_Daily>9</Maximum_Hours_Daily>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxHoursDailyInInterval>
 </Time_Constraints_List>
 
 <Space_Constraints_List>
@@ -2385,6 +2420,41 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintTeacherRoomNotAvailableTimes>
+<ConstraintTeacherMaxBuildingChangesPerDayInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t1</Teacher>
+	<Interval_Start_Hour>08:00</Interval_Start_Hour>
+	<Interval_End_Hour>11:00</Interval_End_Hour>
+	<Max_Building_Changes_Per_Day>0</Max_Building_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxBuildingChangesPerDayInInterval>
+<ConstraintTeachersMaxBuildingChangesPerDayInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Interval_Start_Hour>10:00</Interval_Start_Hour>
+	<Interval_End_Hour></Interval_End_Hour>
+	<!-- Interval_End_Hour void means the end of the day (which has no name) -->
+	<Max_Building_Changes_Per_Day>2</Max_Building_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxBuildingChangesPerDayInInterval>
+<ConstraintStudentsSetMaxBuildingChangesPerDayInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1 a en</Students>
+	<Interval_Start_Hour>11:00</Interval_Start_Hour>
+	<Interval_End_Hour>16:00</Interval_End_Hour>
+	<Max_Building_Changes_Per_Day>1</Max_Building_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxBuildingChangesPerDayInInterval>
+<ConstraintStudentsMaxBuildingChangesPerDayInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Interval_Start_Hour>08:00</Interval_Start_Hour>
+	<Interval_End_Hour>10:00</Interval_End_Hour>
+	<Max_Building_Changes_Per_Day>1</Max_Building_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxBuildingChangesPerDayInInterval>
 </Space_Constraints_List>
 
 <Timetable_Generation_Options_List>

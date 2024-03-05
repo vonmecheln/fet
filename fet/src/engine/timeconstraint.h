@@ -349,6 +349,11 @@ const int CONSTRAINT_STUDENTS_SET_MIN_HOURS_PER_AFTERNOON							=202;
 
 const int CONSTRAINT_ACTIVITIES_MAX_HOURLY_SPAN										=203;
 
+const int CONSTRAINT_TEACHERS_MAX_HOURS_DAILY_IN_INTERVAL							=204;
+const int CONSTRAINT_TEACHER_MAX_HOURS_DAILY_IN_INTERVAL							=205;
+const int CONSTRAINT_STUDENTS_MAX_HOURS_DAILY_IN_INTERVAL							=206;
+const int CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY_IN_INTERVAL						=207;
+
 class QDataStream;
 
 QString getActivityDetailedDescription(Rules& r, int id);
@@ -1220,6 +1225,194 @@ public:
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	bool hasInactiveActivities(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintTeacherMaxHoursDailyInInterval: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeacherMaxHoursDailyInInterval)
+
+public:
+	/**
+	The maximum hours daily
+	*/
+	int maxHoursDaily;
+	
+	int startHour;
+	int endHour;
+	
+	QString teacherName;
+	
+	int teacher_ID;
+
+	ConstraintTeacherMaxHoursDailyInInterval();
+
+	ConstraintTeacherMaxHoursDailyInInterval(double wp, int maxhours, const QString& teacher, int sh, int eh);
+
+	QString getXmlDescription(Rules& r);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintTeachersMaxHoursDailyInInterval: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeachersMaxHoursDailyInInterval)
+
+public:
+	/**
+	The maximum hours daily
+	*/
+	int maxHoursDaily;
+	
+	int startHour;
+	int endHour;
+	
+	ConstraintTeachersMaxHoursDailyInInterval();
+
+	ConstraintTeachersMaxHoursDailyInInterval(double wp, int maxhours, int sh, int eh);
+
+	QString getXmlDescription(Rules& r);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintStudentsSetMaxHoursDailyInInterval: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsSetMaxHoursDailyInInterval)
+
+public:
+	int maxHoursDaily;
+
+	/**
+	The students set name
+	*/
+	QString students;
+
+	//internal variables
+
+	/**
+	The number of subgroups
+	*/
+	//int nSubgroups;
+
+	/**
+	The subgroups
+	*/
+	//int subgroups[MAX_SUBGROUPS_PER_CONSTRAINT];
+	QList<int> iSubgroupsList;
+
+	int startHour;
+	int endHour;
+
+	ConstraintStudentsSetMaxHoursDailyInInterval();
+
+	ConstraintStudentsSetMaxHoursDailyInInterval(double wp, int maxnh, const QString& s, int sh, int eh);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintStudentsMaxHoursDailyInInterval: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsMaxHoursDailyInInterval)
+
+public:
+	int maxHoursDaily;
+
+	int startHour;
+	int endHour;
+
+	ConstraintStudentsMaxHoursDailyInInterval();
+
+	ConstraintStudentsMaxHoursDailyInInterval(double wp, int maxnh, int sh, int eh);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
 
 	QString getDescription(Rules& r);
 
@@ -10799,6 +10992,14 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMinHoursPer
 QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMinHoursPerAfternoon& tc);
 //203
 QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesMaxHourlySpan& tc);
+//204
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxHoursDailyInInterval& tc);
+//205
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxHoursDailyInInterval& tc);
+//206
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxHoursDailyInInterval& tc);
+//207
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxHoursDailyInInterval& tc);
 
 //1
 QDataStream& operator>>(QDataStream& stream, ConstraintBasicCompulsoryTime& tc);
@@ -11206,5 +11407,13 @@ QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMinHoursPerAftern
 QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMinHoursPerAfternoon& tc);
 //203
 QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesMaxHourlySpan& tc);
+//204
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxHoursDailyInInterval& tc);
+//205
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxHoursDailyInInterval& tc);
+//206
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxHoursDailyInInterval& tc);
+//207
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxHoursDailyInInterval& tc);
 
 #endif

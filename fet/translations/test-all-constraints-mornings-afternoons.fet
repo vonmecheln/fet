@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="6.11.1">
+<fet version="6.17.0">
 
 <Mode>Mornings_Afternoons</Mode>
 
@@ -2575,6 +2575,42 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintActivitiesMaxHourlySpan>
+<ConstraintTeacherMaxHoursDailyInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t2</Teacher_Name>
+	<Interval_Start_Hour>08:00</Interval_Start_Hour>
+	<Interval_End_Hour>11:00</Interval_End_Hour>
+	<Maximum_Hours_Daily>3</Maximum_Hours_Daily>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxHoursDailyInInterval>
+<ConstraintTeachersMaxHoursDailyInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Interval_Start_Hour>08:00</Interval_Start_Hour>
+	<Interval_End_Hour></Interval_End_Hour>
+	<!-- Interval_End_Hour void means the end of the day (which has no name) -->
+	<Maximum_Hours_Daily>2</Maximum_Hours_Daily>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxHoursDailyInInterval>
+<ConstraintStudentsSetMaxHoursDailyInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y2</Students>
+	<Interval_Start_Hour>09:00</Interval_Start_Hour>
+	<Interval_End_Hour>11:00</Interval_End_Hour>
+	<Maximum_Hours_Daily>3</Maximum_Hours_Daily>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxHoursDailyInInterval>
+<ConstraintStudentsMaxHoursDailyInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Interval_Start_Hour>08:00</Interval_Start_Hour>
+	<Interval_End_Hour></Interval_End_Hour>
+	<!-- Interval_End_Hour void means the end of the day (which has no name) -->
+	<Maximum_Hours_Daily>2</Maximum_Hours_Daily>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxHoursDailyInInterval>
 </Time_Constraints_List>
 
 <Space_Constraints_List>
@@ -2937,6 +2973,93 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintStudentsMaxBuildingChangesPerRealDay>
+<ConstraintTeacherMaxBuildingChangesPerDayInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t2</Teacher>
+	<Interval_Start_Hour>08:00</Interval_Start_Hour>
+	<Interval_End_Hour></Interval_End_Hour>
+	<!-- Interval_End_Hour void means the end of the day (which has no name) -->
+	<Max_Building_Changes_Per_Day>1</Max_Building_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxBuildingChangesPerDayInInterval>
+<ConstraintTeacherMaxBuildingChangesPerRealDayInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t1</Teacher>
+	<Interval_Start_Day>Morning</Interval_Start_Day>
+	<!-- Morning or Afternoon -->
+	<Interval_Start_Hour>09:00</Interval_Start_Hour>
+	<Interval_End_Day>Morning</Interval_End_Day>
+	<!-- Morning or Afternoon -->
+	<Interval_End_Hour>11:00</Interval_End_Hour>
+	<Max_Building_Changes_Per_Day>0</Max_Building_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxBuildingChangesPerRealDayInInterval>
+<ConstraintTeachersMaxBuildingChangesPerDayInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Interval_Start_Hour>08:00</Interval_Start_Hour>
+	<Interval_End_Hour>10:00</Interval_End_Hour>
+	<Max_Building_Changes_Per_Day>0</Max_Building_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxBuildingChangesPerDayInInterval>
+<ConstraintTeachersMaxBuildingChangesPerRealDayInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Interval_Start_Day>Morning</Interval_Start_Day>
+	<!-- Morning or Afternoon -->
+	<Interval_Start_Hour>11:00</Interval_Start_Hour>
+	<Interval_End_Day>Afternoon</Interval_End_Day>
+	<!-- Morning or Afternoon -->
+	<Interval_End_Hour></Interval_End_Hour>
+	<!-- Interval_End_Hour void means the end of the day (which has no name) -->
+	<Max_Building_Changes_Per_Day>1</Max_Building_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxBuildingChangesPerRealDayInInterval>
+<ConstraintStudentsSetMaxBuildingChangesPerDayInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1</Students>
+	<Interval_Start_Hour>08:00</Interval_Start_Hour>
+	<Interval_End_Hour>10:00</Interval_End_Hour>
+	<Max_Building_Changes_Per_Day>0</Max_Building_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxBuildingChangesPerDayInInterval>
+<ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1</Students>
+	<Interval_Start_Day>Afternoon</Interval_Start_Day>
+	<!-- Morning or Afternoon -->
+	<Interval_Start_Hour>10:00</Interval_Start_Hour>
+	<Interval_End_Day>Afternoon</Interval_End_Day>
+	<!-- Morning or Afternoon -->
+	<Interval_End_Hour></Interval_End_Hour>
+	<!-- Interval_End_Hour void means the end of the day (which has no name) -->
+	<Max_Building_Changes_Per_Day>2</Max_Building_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval>
+<ConstraintStudentsMaxBuildingChangesPerDayInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Interval_Start_Hour>08:00</Interval_Start_Hour>
+	<Interval_End_Hour>11:00</Interval_End_Hour>
+	<Max_Building_Changes_Per_Day>4</Max_Building_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxBuildingChangesPerDayInInterval>
+<ConstraintStudentsMaxBuildingChangesPerRealDayInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Interval_Start_Day>Morning</Interval_Start_Day>
+	<!-- Morning or Afternoon -->
+	<Interval_Start_Hour>09:00</Interval_Start_Hour>
+	<Interval_End_Day>Afternoon</Interval_End_Day>
+	<!-- Morning or Afternoon -->
+	<Interval_End_Hour>09:00</Interval_End_Hour>
+	<Max_Building_Changes_Per_Day>8</Max_Building_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxBuildingChangesPerRealDayInInterval>
 </Space_Constraints_List>
 
 <Timetable_Generation_Options_List>

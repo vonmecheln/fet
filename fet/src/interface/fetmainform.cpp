@@ -154,6 +154,11 @@
 #include "constraintteachermaxhourscontinuouslyform.h"
 #include "constraintteachersmaxhourscontinuouslyform.h"
 
+#include "constraintteachersmaxhoursdailyinintervalform.h"
+#include "constraintteachermaxhoursdailyinintervalform.h"
+#include "constraintstudentsmaxhoursdailyinintervalform.h"
+#include "constraintstudentssetmaxhoursdailyinintervalform.h"
+
 #include "constraintteacheractivitytagmaxhourscontinuouslyform.h"
 #include "constraintteachersactivitytagmaxhourscontinuouslyform.h"
 
@@ -226,6 +231,16 @@
 #include "constraintstudentssethomeroomsform.h"
 #include "constraintteacherhomeroomform.h"
 #include "constraintteacherhomeroomsform.h"
+
+//2024-02-09
+#include "constraintstudentssetmaxbuildingchangesperdayinintervalform.h"
+#include "constraintstudentsmaxbuildingchangesperdayinintervalform.h"
+#include "constraintteachermaxbuildingchangesperdayinintervalform.h"
+#include "constraintteachersmaxbuildingchangesperdayinintervalform.h"
+#include "constraintstudentssetmaxbuildingchangesperrealdayinintervalform.h"
+#include "constraintstudentsmaxbuildingchangesperrealdayinintervalform.h"
+#include "constraintteachermaxbuildingchangesperrealdayinintervalform.h"
+#include "constraintteachersmaxbuildingchangesperrealdayinintervalform.h"
 
 #include "constraintstudentssetmaxbuildingchangesperdayform.h"
 #include "constraintstudentsmaxbuildingchangesperdayform.h"
@@ -1722,6 +1737,12 @@ void FetMainForm::createActionsForConstraints()
 	dataTimeConstraintsBreakTimesAction = new QAction(this);
 	dataTimeConstraintsTeacherMaxDaysPerWeekAction = new QAction(this);
 	dataTimeConstraintsTeachersMaxHoursDailyAction = new QAction(this);
+
+	dataTimeConstraintsTeachersMaxHoursDailyInIntervalAction = new QAction(this);
+	dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction = new QAction(this);
+	dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction = new QAction(this);
+	dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction = new QAction(this);
+
 	dataTimeConstraintsActivityPreferredStartingTimeAction = new QAction(this);
 	dataTimeConstraintsStudentsSetMaxGapsPerWeekAction = new QAction(this);
 	dataTimeConstraintsStudentsMaxGapsPerWeekAction = new QAction(this);
@@ -1982,6 +2003,16 @@ void FetMainForm::createActionsForConstraints()
 	dataTimeConstraintsActivitiesMinInATermAction = new QAction(this);
 	dataTimeConstraintsActivitiesOccupyMaxTermsAction = new QAction(this);
 
+	//2024-02-09
+	dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayInIntervalAction = new QAction(this);
+	dataSpaceConstraintsStudentsMaxBuildingChangesPerDayInIntervalAction = new QAction(this);
+	dataSpaceConstraintsTeacherMaxBuildingChangesPerDayInIntervalAction = new QAction(this);
+	dataSpaceConstraintsTeachersMaxBuildingChangesPerDayInIntervalAction = new QAction(this);
+	dataSpaceConstraintsStudentsSetMaxBuildingChangesPerRealDayInIntervalAction = new QAction(this);
+	dataSpaceConstraintsStudentsMaxBuildingChangesPerRealDayInIntervalAction = new QAction(this);
+	dataSpaceConstraintsTeacherMaxBuildingChangesPerRealDayInIntervalAction = new QAction(this);
+	dataSpaceConstraintsTeachersMaxBuildingChangesPerRealDayInIntervalAction = new QAction(this);
+
 	connect(dataTimeConstraintsActivitiesPreferredTimeSlotsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesPreferredTimeSlotsAction_triggered);
 	connect(dataTimeConstraintsActivitiesSameStartingTimeAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesSameStartingTimeAction_triggered);
 	connect(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction_triggered);
@@ -1996,6 +2027,12 @@ void FetMainForm::createActionsForConstraints()
 	connect(dataTimeConstraintsBreakTimesAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsBreakTimesAction_triggered);
 	connect(dataTimeConstraintsTeacherMaxDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxDaysPerWeekAction_triggered);
 	connect(dataTimeConstraintsTeachersMaxHoursDailyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxHoursDailyAction_triggered);
+
+	connect(dataTimeConstraintsTeachersMaxHoursDailyInIntervalAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxHoursDailyInIntervalAction_triggered);
+	connect(dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction_triggered);
+	connect(dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction_triggered);
+	connect(dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction_triggered);
+
 	connect(dataTimeConstraintsActivityPreferredStartingTimeAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivityPreferredStartingTimeAction_triggered);
 	connect(dataTimeConstraintsStudentsSetMaxGapsPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerWeekAction_triggered);
 	connect(dataTimeConstraintsStudentsMaxGapsPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMaxGapsPerWeekAction_triggered);
@@ -2256,6 +2293,16 @@ void FetMainForm::createActionsForConstraints()
 	connect(dataTimeConstraintsActivitiesMinInATermAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesMinInATermAction_triggered);
 	connect(dataTimeConstraintsActivitiesOccupyMaxTermsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesOccupyMaxTermsAction_triggered);
 
+	//2024-02-09
+	connect(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayInIntervalAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayInIntervalAction_triggered);
+	connect(dataSpaceConstraintsStudentsMaxBuildingChangesPerDayInIntervalAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsStudentsMaxBuildingChangesPerDayInIntervalAction_triggered);
+	connect(dataSpaceConstraintsTeacherMaxBuildingChangesPerDayInIntervalAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsTeacherMaxBuildingChangesPerDayInIntervalAction_triggered);
+	connect(dataSpaceConstraintsTeachersMaxBuildingChangesPerDayInIntervalAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsTeachersMaxBuildingChangesPerDayInIntervalAction_triggered);
+	connect(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerRealDayInIntervalAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsStudentsSetMaxBuildingChangesPerRealDayInIntervalAction_triggered);
+	connect(dataSpaceConstraintsStudentsMaxBuildingChangesPerRealDayInIntervalAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsStudentsMaxBuildingChangesPerRealDayInIntervalAction_triggered);
+	connect(dataSpaceConstraintsTeacherMaxBuildingChangesPerRealDayInIntervalAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsTeacherMaxBuildingChangesPerRealDayInIntervalAction_triggered);
+	connect(dataSpaceConstraintsTeachersMaxBuildingChangesPerRealDayInIntervalAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsTeachersMaxBuildingChangesPerRealDayInIntervalAction_triggered);
+
 	retranslateConstraints();
 }
 
@@ -2303,6 +2350,12 @@ void FetMainForm::retranslateConstraints()
 	dataTimeConstraintsBreakTimesAction->setText(QCoreApplication::translate("FetMainForm_template", "Break times", nullptr));
 	dataTimeConstraintsTeacherMaxDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max days per week for a teacher", nullptr));
 	dataTimeConstraintsTeachersMaxHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily for all teachers", nullptr));
+
+	dataTimeConstraintsTeachersMaxHoursDailyInIntervalAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily in an hourly interval for all teachers", nullptr));
+	dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily in an hourly interval for a teacher", nullptr));
+	dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily in an hourly interval for all students", nullptr));
+	dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily in an hourly interval for a students set", nullptr));
+
 	dataTimeConstraintsActivityPreferredStartingTimeAction->setText(QCoreApplication::translate("FetMainForm_template", "An activity has a preferred starting time", nullptr));
 	dataTimeConstraintsStudentsSetMaxGapsPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max gaps per week for a students set", nullptr));
 	dataTimeConstraintsStudentsMaxGapsPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max gaps per week for all students", nullptr));
@@ -2562,6 +2615,16 @@ void FetMainForm::retranslateConstraints()
 	dataTimeConstraintsActivitiesMaxInATermAction->setText(QCoreApplication::translate("FetMainForm_template", "Max activities from a set in a term", nullptr));
 	dataTimeConstraintsActivitiesMinInATermAction->setText(QCoreApplication::translate("FetMainForm_template", "Min activities from a set in a term", nullptr));
 	dataTimeConstraintsActivitiesOccupyMaxTermsAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities occupies max terms", nullptr));
+
+	//2024-02-09
+	dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayInIntervalAction->setText(QCoreApplication::translate("FetMainForm_template", "Max building changes per day in an hourly interval for a students set", nullptr));
+	dataSpaceConstraintsStudentsMaxBuildingChangesPerDayInIntervalAction->setText(QCoreApplication::translate("FetMainForm_template", "Max building changes per day in an hourly interval for all students", nullptr));
+	dataSpaceConstraintsTeacherMaxBuildingChangesPerDayInIntervalAction->setText(QCoreApplication::translate("FetMainForm_template", "Max building changes per day in an hourly interval for a teacher", nullptr));
+	dataSpaceConstraintsTeachersMaxBuildingChangesPerDayInIntervalAction->setText(QCoreApplication::translate("FetMainForm_template", "Max building changes per day in an hourly interval for all teachers", nullptr));
+	dataSpaceConstraintsStudentsSetMaxBuildingChangesPerRealDayInIntervalAction->setText(QCoreApplication::translate("FetMainForm_template", "Max building changes per real day in an hourly interval for a students set", nullptr));
+	dataSpaceConstraintsStudentsMaxBuildingChangesPerRealDayInIntervalAction->setText(QCoreApplication::translate("FetMainForm_template", "Max building changes per real day in an hourly interval for all students", nullptr));
+	dataSpaceConstraintsTeacherMaxBuildingChangesPerRealDayInIntervalAction->setText(QCoreApplication::translate("FetMainForm_template", "Max building changes per real day in an hourly interval for a teacher", nullptr));
+	dataSpaceConstraintsTeachersMaxBuildingChangesPerRealDayInIntervalAction->setText(QCoreApplication::translate("FetMainForm_template", "Max building changes per real day in an hourly interval for all teachers", nullptr));
 }
 
 void FetMainForm::createMenusOfActionsForConstraints()
@@ -2593,8 +2656,10 @@ void FetMainForm::createMenusOfActionsForConstraints()
 	menuActivities_space_constraints->clear();
 	menuSubjects_space_constraints->clear();
 	menuSubjects_and_activity_tags_space_constraints->clear();
-	menuStudents_space_constraints->clear();
-	menuTeachers_space_constraints->clear();
+	menuA_students_set_space_constraints->clear();
+	menuAll_students_space_constraints->clear();
+	menuA_teacher_space_constraints->clear();
+	menuAll_teachers_space_constraints->clear();
 	menuActivity_tags_space_constraints->clear();
 	
 	if(gt.rules.mode==OFFICIAL){
@@ -2626,6 +2691,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxGapsPerDayAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxGapsPerWeekAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursDailyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxSpanPerDayAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinHoursDailyAction);
@@ -2644,6 +2710,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxGapsPerDayAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxGapsPerWeekAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursDailyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursDailyInIntervalAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxSpanPerDayAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinHoursDailyAction);
@@ -2662,6 +2729,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxGapsPerWeekAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursDailyAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxSpanPerDayAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinHoursDailyAction);
@@ -2680,6 +2748,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxGapsPerWeekAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursDailyAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxSpanPerDayAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinHoursDailyAction);
@@ -2761,43 +2830,47 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuSubjects_and_activity_tags_space_constraints->addAction(dataSpaceConstraintsSubjectActivityTagPreferredRoomAction);
 		menuSubjects_and_activity_tags_space_constraints->addAction(dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction);
 
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetHomeRoomAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetHomeRoomsAction);
-		menuStudents_space_constraints->addSeparator();
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction);
-		menuStudents_space_constraints->addSeparator();
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction);
-		menuStudents_space_constraints->addSeparator();
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction);
-		menuStudents_space_constraints->addSeparator();
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetHomeRoomAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetHomeRoomsAction);
+		menuA_students_set_space_constraints->addSeparator();
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction);
+		menuA_students_set_space_constraints->addSeparator();
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayInIntervalAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction);
+		//menuStudents_space_constraints->addSeparator();
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction);
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction);
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction);
+		menuAll_students_space_constraints->addSeparator();
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction);
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerDayInIntervalAction);
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction);
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction);
 
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherHomeRoomAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherHomeRoomsAction);
-		menuTeachers_space_constraints->addSeparator();
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction);
-		menuTeachers_space_constraints->addSeparator();
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction);
-		menuTeachers_space_constraints->addSeparator();
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction);
-		menuTeachers_space_constraints->addSeparator();
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherHomeRoomAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherHomeRoomsAction);
+		menuA_teacher_space_constraints->addSeparator();
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction);
+		menuA_teacher_space_constraints->addSeparator();
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerDayInIntervalAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction);
+		//menuTeachers_space_constraints->addSeparator();
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction);
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction);
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction);
+		menuAll_teachers_space_constraints->addSeparator();
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction);
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerDayInIntervalAction);
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction);
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction);
 
 		menuActivity_tags_space_constraints->addAction(dataSpaceConstraintsActivityTagPreferredRoomAction);
 		menuActivity_tags_space_constraints->addAction(dataSpaceConstraintsActivityTagPreferredRoomsAction);
@@ -2867,6 +2940,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherAfternoonsEarlyMaxBeginningsAtSecondHourAction);
 
 		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursDailyAction);
+		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction);
 		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursDailyRealDaysAction);
 		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherMaxSpanPerDayAction);
 		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherMaxSpanPerRealDayAction);
@@ -2929,6 +3003,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersAfternoonsEarlyMaxBeginningsAtSecondHourAction);
 
 		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursDailyAction);
+		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursDailyInIntervalAction);
 		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursDailyRealDaysAction);
 		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersMaxSpanPerDayAction);
 		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersMaxSpanPerRealDayAction);
@@ -2983,6 +3058,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_students_set_1_time_constraints->addAction(dataTimeConstraintsStudentsSetMorningsEarlyMaxBeginningsAtSecondHourAction);
 		menuA_students_set_1_time_constraints->addAction(dataTimeConstraintsStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHourAction);
 
+		menuA_students_set_2_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction);
 		menuA_students_set_2_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursDailyRealDaysAction);
 		menuA_students_set_2_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxSpanPerRealDayAction);
 		menuA_students_set_2_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction);
@@ -3034,6 +3110,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_students_1_time_constraints->addAction(dataTimeConstraintsStudentsMorningsEarlyMaxBeginningsAtSecondHourAction);
 		menuAll_students_1_time_constraints->addAction(dataTimeConstraintsStudentsAfternoonsEarlyMaxBeginningsAtSecondHourAction);
 
+		menuAll_students_2_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction);
 		menuAll_students_2_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursDailyRealDaysAction);
 		menuAll_students_2_time_constraints->addAction(dataTimeConstraintsStudentsMaxSpanPerRealDayAction);
 		menuAll_students_2_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction);
@@ -3134,55 +3211,59 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuSubjects_and_activity_tags_space_constraints->addAction(dataSpaceConstraintsSubjectActivityTagPreferredRoomAction);
 		menuSubjects_and_activity_tags_space_constraints->addAction(dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction);
 
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetHomeRoomAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetHomeRoomsAction);
-		menuStudents_space_constraints->addSeparator();
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetHomeRoomAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetHomeRoomsAction);
+		menuA_students_set_space_constraints->addSeparator();
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerRealDayAction);
+		menuA_students_set_space_constraints->addSeparator();
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayInIntervalAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerRealDayAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerRealDayInIntervalAction);
 		//menuStudents_space_constraints->addSeparator();
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerRealDayAction);
-		menuStudents_space_constraints->addSeparator();
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerRealDayAction);
-		menuStudents_space_constraints->addSeparator();
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction);
-		//menuStudents_space_constraints->addSeparator();
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerRealDayAction);
-		menuStudents_space_constraints->addSeparator();
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerRealDayAction);
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction);
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction);
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction);
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerRealDayAction);
+		menuAll_students_space_constraints->addSeparator();
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction);
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerDayInIntervalAction);
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction);
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction);
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerRealDayAction);
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerRealDayInIntervalAction);
 
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherHomeRoomAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherHomeRoomsAction);
-		menuTeachers_space_constraints->addSeparator();
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherHomeRoomAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherHomeRoomsAction);
+		menuA_teacher_space_constraints->addSeparator();
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayAction);
+		menuA_teacher_space_constraints->addSeparator();
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerDayInIntervalAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerRealDayAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerRealDayInIntervalAction);
 		//menuTeachers_space_constraints->addSeparator();
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayAction);
-		menuTeachers_space_constraints->addSeparator();
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerRealDayAction);
-		menuTeachers_space_constraints->addSeparator();
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction);
-		//menuTeachers_space_constraints->addSeparator();
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayAction);
-		menuTeachers_space_constraints->addSeparator();
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerRealDayAction);
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction);
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction);
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction);
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayAction);
+		menuAll_teachers_space_constraints->addSeparator();
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction);
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerDayInIntervalAction);
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction);
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction);
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerRealDayAction);
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerRealDayInIntervalAction);
 
 		menuActivity_tags_space_constraints->addAction(dataSpaceConstraintsActivityTagPreferredRoomAction);
 		menuActivity_tags_space_constraints->addAction(dataSpaceConstraintsActivityTagPreferredRoomsAction);
@@ -3216,6 +3297,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxGapsPerDayAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxGapsPerWeekAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursDailyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxSpanPerDayAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinHoursDailyAction);
@@ -3234,6 +3316,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxGapsPerDayAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxGapsPerWeekAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursDailyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursDailyInIntervalAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxSpanPerDayAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinHoursDailyAction);
@@ -3252,6 +3335,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxGapsPerWeekAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursDailyAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxSpanPerDayAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinHoursDailyAction);
@@ -3270,6 +3354,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxGapsPerWeekAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursDailyAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxSpanPerDayAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinHoursDailyAction);
@@ -3354,43 +3439,47 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuSubjects_and_activity_tags_space_constraints->addAction(dataSpaceConstraintsSubjectActivityTagPreferredRoomAction);
 		menuSubjects_and_activity_tags_space_constraints->addAction(dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction);
 
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetHomeRoomAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetHomeRoomsAction);
-		menuStudents_space_constraints->addSeparator();
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction);
-		menuStudents_space_constraints->addSeparator();
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction);
-		menuStudents_space_constraints->addSeparator();
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction);
-		menuStudents_space_constraints->addSeparator();
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetHomeRoomAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetHomeRoomsAction);
+		menuA_students_set_space_constraints->addSeparator();
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction);
+		menuA_students_set_space_constraints->addSeparator();
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayInIntervalAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction);
+		//menuStudents_space_constraints->addSeparator();
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction);
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction);
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction);
+		menuAll_students_space_constraints->addSeparator();
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction);
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerDayInIntervalAction);
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction);
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction);
 
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherHomeRoomAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherHomeRoomsAction);
-		menuTeachers_space_constraints->addSeparator();
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction);
-		menuTeachers_space_constraints->addSeparator();
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction);
-		menuTeachers_space_constraints->addSeparator();
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction);
-		menuTeachers_space_constraints->addSeparator();
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherHomeRoomAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherHomeRoomsAction);
+		menuA_teacher_space_constraints->addSeparator();
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction);
+		menuA_teacher_space_constraints->addSeparator();
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerDayInIntervalAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction);
+		//menuTeachers_space_constraints->addSeparator();
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction);
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction);
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction);
+		menuAll_teachers_space_constraints->addSeparator();
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction);
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerDayInIntervalAction);
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction);
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction);
 
 		menuActivity_tags_space_constraints->addAction(dataSpaceConstraintsActivityTagPreferredRoomAction);
 		menuActivity_tags_space_constraints->addAction(dataSpaceConstraintsActivityTagPreferredRoomsAction);
@@ -3424,6 +3513,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxGapsPerDayAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxGapsPerWeekAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursDailyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxSpanPerDayAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinHoursDailyAction);
@@ -3442,6 +3532,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxGapsPerDayAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxGapsPerWeekAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursDailyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursDailyInIntervalAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxSpanPerDayAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinHoursDailyAction);
@@ -3460,6 +3551,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxGapsPerWeekAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursDailyAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxSpanPerDayAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinHoursDailyAction);
@@ -3478,6 +3570,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxGapsPerWeekAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursDailyAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxSpanPerDayAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinHoursDailyAction);
@@ -3564,43 +3657,47 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuSubjects_and_activity_tags_space_constraints->addAction(dataSpaceConstraintsSubjectActivityTagPreferredRoomAction);
 		menuSubjects_and_activity_tags_space_constraints->addAction(dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction);
 
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetHomeRoomAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetHomeRoomsAction);
-		menuStudents_space_constraints->addSeparator();
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction);
-		menuStudents_space_constraints->addSeparator();
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction);
-		menuStudents_space_constraints->addSeparator();
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction);
-		menuStudents_space_constraints->addSeparator();
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction);
-		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetHomeRoomAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetHomeRoomsAction);
+		menuA_students_set_space_constraints->addSeparator();
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction);
+		menuA_students_set_space_constraints->addSeparator();
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayInIntervalAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction);
+		menuA_students_set_space_constraints->addAction(dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction);
+		//menuStudents_space_constraints->addSeparator();
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction);
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction);
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction);
+		menuAll_students_space_constraints->addSeparator();
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction);
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerDayInIntervalAction);
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction);
+		menuAll_students_space_constraints->addAction(dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction);
 
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherHomeRoomAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherHomeRoomsAction);
-		menuTeachers_space_constraints->addSeparator();
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction);
-		menuTeachers_space_constraints->addSeparator();
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction);
-		menuTeachers_space_constraints->addSeparator();
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction);
-		menuTeachers_space_constraints->addSeparator();
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction);
-		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherHomeRoomAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherHomeRoomsAction);
+		menuA_teacher_space_constraints->addSeparator();
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction);
+		menuA_teacher_space_constraints->addSeparator();
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerDayInIntervalAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction);
+		menuA_teacher_space_constraints->addAction(dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction);
+		//menuTeachers_space_constraints->addSeparator();
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction);
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction);
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction);
+		menuAll_teachers_space_constraints->addSeparator();
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction);
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerDayInIntervalAction);
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction);
+		menuAll_teachers_space_constraints->addAction(dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction);
 
 		menuActivity_tags_space_constraints->addAction(dataSpaceConstraintsActivityTagPreferredRoomAction);
 		menuActivity_tags_space_constraints->addAction(dataSpaceConstraintsActivityTagPreferredRoomsAction);
@@ -7500,6 +7597,82 @@ void FetMainForm::dataTimeConstraintsTeachersMaxHoursDailyAction_triggered()
 	form.exec();
 }
 
+void FetMainForm::dataTimeConstraintsTeachersMaxHoursDailyInIntervalAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	ConstraintTeachersMaxHoursDailyInIntervalForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	ConstraintTeacherMaxHoursDailyInIntervalForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	ConstraintStudentsSetMaxHoursDailyInIntervalForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	ConstraintStudentsMaxHoursDailyInIntervalForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
 void FetMainForm::dataTimeConstraintsTeacherMaxHoursDailyAction_triggered()
 {
 	if(!gt.rules.initialized){
@@ -7840,6 +8013,159 @@ void FetMainForm::dataTimeConstraintsActivitiesOccupyMaxTermsAction_triggered()
 	}
 
 	ConstraintActivitiesOccupyMaxTermsForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+//2024-02-09
+void FetMainForm::dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayInIntervalAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	ConstraintStudentsSetMaxBuildingChangesPerDayInIntervalForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataSpaceConstraintsStudentsMaxBuildingChangesPerDayInIntervalAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	ConstraintStudentsMaxBuildingChangesPerDayInIntervalForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataSpaceConstraintsTeacherMaxBuildingChangesPerDayInIntervalAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	ConstraintTeacherMaxBuildingChangesPerDayInIntervalForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataSpaceConstraintsTeachersMaxBuildingChangesPerDayInIntervalAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	ConstraintTeachersMaxBuildingChangesPerDayInIntervalForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataSpaceConstraintsStudentsSetMaxBuildingChangesPerRealDayInIntervalAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	ConstraintStudentsSetMaxBuildingChangesPerRealDayInIntervalForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataSpaceConstraintsStudentsMaxBuildingChangesPerRealDayInIntervalAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	ConstraintStudentsMaxBuildingChangesPerRealDayInIntervalForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataSpaceConstraintsTeacherMaxBuildingChangesPerRealDayInIntervalAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	ConstraintTeacherMaxBuildingChangesPerRealDayInIntervalForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataSpaceConstraintsTeachersMaxBuildingChangesPerRealDayInIntervalAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	ConstraintTeachersMaxBuildingChangesPerRealDayInIntervalForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
 }

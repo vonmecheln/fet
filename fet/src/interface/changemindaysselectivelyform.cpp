@@ -119,9 +119,11 @@ void ChangeMinDaysSelectivelyForm::ok()
 	
 	oldConsecutive=oldConsecutiveComboBox->currentIndex();
 	assert(oldConsecutive>=0 && oldConsecutive<=2);
+	oldConsecutiveString=oldConsecutiveComboBox->currentText();
 
 	newConsecutive=newConsecutiveComboBox->currentIndex();
 	assert(newConsecutive>=0 && newConsecutive<=2);
+	newConsecutiveString=newConsecutiveComboBox->currentText();
 
 	oldNActs=oldNActsSpinBox->value();
 	if(!(oldNActs==-1 || oldNActs>=1)){

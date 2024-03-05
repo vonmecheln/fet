@@ -24,6 +24,7 @@
 class QLineEdit;
 class QComboBox;
 class QSpinBox;
+class QString;
 
 class ChangeMinHalfDaysSelectivelyForm : public QDialog, Ui::ChangeMinHalfDaysSelectivelyForm_template  {
 	Q_OBJECT
@@ -35,11 +36,13 @@ public:
 	double oldWeight;
 	int oldDays;
 	int oldConsecutive;
+	QString oldConsecutiveString;
 	int oldNActs;
 	
 	double newWeight;
 	int newDays;
 	int newConsecutive;
+	QString newConsecutiveString;
 
 public slots:
 	void ok();

@@ -435,10 +435,14 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 
 	assert(res==QDialog::Accepted);
 	
+	bool dataChanged=false;
+	
 	//better
 	QList<TimeConstraint*> removedList;
 	for(ConstraintMinDaysBetweenActivities* mdc : std::as_const(constraintsToBeRemoved))
 		removedList.append((TimeConstraint*)mdc);
+	if(removedList.count()>0)
+		dataChanged=true;
 	bool t=gt.rules.removeTimeConstraints(removedList);
 	assert(t);
 	removedList.clear();
@@ -449,6 +453,11 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 		if(!t){
 			QMessageBox::critical(this, tr("FET bug"), tr("You found a probable bug in FET - trying to add constraint %1, "
 			 "but it is already existing. Please report error. FET will now continue operation").arg(tc->getDetailedDescription(gt.rules)));
+		}
+		else{
+			if(!dataChanged){
+				dataChanged=true;
+			}
 		}
 	}
 	
@@ -461,42 +470,44 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 	 +" "+tr("Read Help/Important tips - tip 2) for details.");
 	QMessageBox::information(this, tr("FET information"), s2);
 	
-	QString su=tr("Spreaded the activities evenly over the week:");
-	su+=QString("\n");
-	
-	su+=tr("Consecutive if on the same day=%1.").arg(consecutiveIfSameDayCheckBox->isChecked()?tr("yes"):tr("no"));
-	su+=QString("\n");
-	
-	assert(spread2CheckBox->isChecked());
-	su+=tr("All split activities should be at least 1 day apart with weight=%1%.").arg(weight4LineEdit->text());
-	su+=QString("\n");
-
-	if(spread2CheckBox->isChecked()){
-		su+=tr("Activities split into 2 components should be at least 2 days apart with weight=%1%.").arg(weight2LineEdit->text());
+	if(dataChanged){
+		QString su=tr("Spreaded the activities evenly over the week:");
 		su+=QString("\n");
+		
+		su+=tr("Consecutive if on the same day=%1.").arg(consecutiveIfSameDayCheckBox->isChecked()?tr("yes"):tr("no"));
+		su+=QString("\n");
+		
+		assert(spread4OrMoreCheckBox->isChecked());
+		su+=tr("All split activities should be at least 1 day apart with weight=%1%.").arg(CustomFETString::number(weight4)/*LineEdit->text()*/);
+		su+=QString("\n");
+
+		if(spread2CheckBox->isChecked()){
+			su+=tr("Activities split into 2 components should be at least 2 days apart with weight=%1%.").arg(CustomFETString::number(weight2)/*LineEdit->text()*/);
+			su+=QString("\n");
+		}
+		
+		if(spread3CheckBox->isChecked()){
+			su+=tr("Activities split into 3 components should not be on 3 consecutive days with weight=%1%.").arg(CustomFETString::number(weight3)/*LineEdit->text()*/);
+			su+=QString(" ");
+			if(type123RadioButton->isChecked()){
+				su+=tr("The isolated component is number 1.");
+				su+=QString("\n");
+			}
+			else if(type213RadioButton->isChecked()){
+				su+=tr("The isolated component is number 2.");
+				su+=QString("\n");
+			}
+			else if(type312RadioButton->isChecked()){
+				su+=tr("The isolated component is number 3.");
+				su+=QString("\n");
+			}
+			else{
+				assert(0);
+			}
+		}
+		
+		gt.rules.addUndoPoint(su);
 	}
-	
-	if(spread3CheckBox->isChecked()){
-		su+=tr("Activities split into 3 components should not be on 3 consecutive days with weight=%1%.").arg(weight3LineEdit->text());
-		su+=QString(" ");
-		if(type123RadioButton->isChecked()){
-			su+=tr("The isolated component is number 1.");
-			su+=QString("\n");
-		}
-		else if(type213RadioButton->isChecked()){
-			su+=tr("The isolated component is number 2.");
-			su+=QString("\n");
-		}
-		else if(type312RadioButton->isChecked()){
-			su+=tr("The isolated component is number 3.");
-			su+=QString("\n");
-		}
-		else{
-			assert(0);
-		}
-	}
-	
-	gt.rules.addUndoPoint(su);
 	
 	this->accept();
 }

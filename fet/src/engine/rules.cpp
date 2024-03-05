@@ -1742,6 +1742,35 @@ QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 					break;
 				}
 
+			//204
+			case CONSTRAINT_TEACHERS_MAX_HOURS_DAILY_IN_INTERVAL:
+				{
+					ConstraintTeachersMaxHoursDailyInInterval* c=(ConstraintTeachersMaxHoursDailyInInterval*)ctr;
+					stream<<*c;
+					break;
+				}
+			//205
+			case CONSTRAINT_TEACHER_MAX_HOURS_DAILY_IN_INTERVAL:
+				{
+					ConstraintTeacherMaxHoursDailyInInterval* c=(ConstraintTeacherMaxHoursDailyInInterval*)ctr;
+					stream<<*c;
+					break;
+				}
+			//206
+			case CONSTRAINT_STUDENTS_MAX_HOURS_DAILY_IN_INTERVAL:
+				{
+					ConstraintStudentsMaxHoursDailyInInterval* c=(ConstraintStudentsMaxHoursDailyInInterval*)ctr;
+					stream<<*c;
+					break;
+				}
+			//207
+			case CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY_IN_INTERVAL:
+				{
+					ConstraintStudentsSetMaxHoursDailyInInterval* c=(ConstraintStudentsSetMaxHoursDailyInInterval*)ctr;
+					stream<<*c;
+					break;
+				}
+
 			default:
 				assert(0);
 				break;
@@ -2100,6 +2129,62 @@ QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 			case CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_REAL_DAY:
 				{
 					ConstraintTeachersMaxBuildingChangesPerRealDay* c=(ConstraintTeachersMaxBuildingChangesPerRealDay*)ctr;
+					stream<<*c;
+					break;
+				}
+			//50
+			case CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL:
+				{
+					ConstraintStudentsMaxBuildingChangesPerDayInInterval* c=(ConstraintStudentsMaxBuildingChangesPerDayInInterval*)ctr;
+					stream<<*c;
+					break;
+				}
+			//51
+			case CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL:
+				{
+					ConstraintStudentsSetMaxBuildingChangesPerDayInInterval* c=(ConstraintStudentsSetMaxBuildingChangesPerDayInInterval*)ctr;
+					stream<<*c;
+					break;
+				}
+			//52
+			case CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL:
+				{
+					ConstraintTeachersMaxBuildingChangesPerDayInInterval* c=(ConstraintTeachersMaxBuildingChangesPerDayInInterval*)ctr;
+					stream<<*c;
+					break;
+				}
+			//53
+			case CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL:
+				{
+					ConstraintTeacherMaxBuildingChangesPerDayInInterval* c=(ConstraintTeacherMaxBuildingChangesPerDayInInterval*)ctr;
+					stream<<*c;
+					break;
+				}
+			//54
+			case CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL:
+				{
+					ConstraintStudentsMaxBuildingChangesPerRealDayInInterval* c=(ConstraintStudentsMaxBuildingChangesPerRealDayInInterval*)ctr;
+					stream<<*c;
+					break;
+				}
+			//55
+			case CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL:
+				{
+					ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval* c=(ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval*)ctr;
+					stream<<*c;
+					break;
+				}
+			//56
+			case CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL:
+				{
+					ConstraintTeachersMaxBuildingChangesPerRealDayInInterval* c=(ConstraintTeachersMaxBuildingChangesPerRealDayInInterval*)ctr;
+					stream<<*c;
+					break;
+				}
+			//57
+			case CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL:
+				{
+					ConstraintTeacherMaxBuildingChangesPerRealDayInInterval* c=(ConstraintTeacherMaxBuildingChangesPerRealDayInInterval*)ctr;
 					stream<<*c;
 					break;
 				}
@@ -3948,6 +4033,39 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 					rules.timeConstraintsList.append(c);
 					break;
 				}
+
+			//204
+			case CONSTRAINT_TEACHERS_MAX_HOURS_DAILY_IN_INTERVAL:
+				{
+					ConstraintTeachersMaxHoursDailyInInterval* c=new ConstraintTeachersMaxHoursDailyInInterval;
+					stream>>*c;
+					rules.timeConstraintsList.append(c);
+					break;
+				}
+			//205
+			case CONSTRAINT_TEACHER_MAX_HOURS_DAILY_IN_INTERVAL:
+				{
+					ConstraintTeacherMaxHoursDailyInInterval* c=new ConstraintTeacherMaxHoursDailyInInterval;
+					stream>>*c;
+					rules.timeConstraintsList.append(c);
+					break;
+				}
+			//206
+			case CONSTRAINT_STUDENTS_MAX_HOURS_DAILY_IN_INTERVAL:
+				{
+					ConstraintStudentsMaxHoursDailyInInterval* c=new ConstraintStudentsMaxHoursDailyInInterval;
+					stream>>*c;
+					rules.timeConstraintsList.append(c);
+					break;
+				}
+			//207
+			case CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY_IN_INTERVAL:
+				{
+					ConstraintStudentsSetMaxHoursDailyInInterval* c=new ConstraintStudentsSetMaxHoursDailyInInterval;
+					stream>>*c;
+					rules.timeConstraintsList.append(c);
+					break;
+				}
 			
 			default:
 				//commented, so that the program won't crash on wrong history files.
@@ -4370,6 +4488,70 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 			case CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_REAL_DAY:
 				{
 					ConstraintTeachersMaxBuildingChangesPerRealDay* c=new ConstraintTeachersMaxBuildingChangesPerRealDay;
+					stream>>*c;
+					rules.spaceConstraintsList.append(c);
+					break;
+				}
+			//50
+			case CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL:
+				{
+					ConstraintStudentsMaxBuildingChangesPerDayInInterval* c=new ConstraintStudentsMaxBuildingChangesPerDayInInterval;
+					stream>>*c;
+					rules.spaceConstraintsList.append(c);
+					break;
+				}
+			//51
+			case CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL:
+				{
+					ConstraintStudentsSetMaxBuildingChangesPerDayInInterval* c=new ConstraintStudentsSetMaxBuildingChangesPerDayInInterval;
+					stream>>*c;
+					rules.spaceConstraintsList.append(c);
+					break;
+				}
+			//52
+			case CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL:
+				{
+					ConstraintTeachersMaxBuildingChangesPerDayInInterval* c=new ConstraintTeachersMaxBuildingChangesPerDayInInterval;
+					stream>>*c;
+					rules.spaceConstraintsList.append(c);
+					break;
+				}
+			//53
+			case CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL:
+				{
+					ConstraintTeacherMaxBuildingChangesPerDayInInterval* c=new ConstraintTeacherMaxBuildingChangesPerDayInInterval;
+					stream>>*c;
+					rules.spaceConstraintsList.append(c);
+					break;
+				}
+			//54
+			case CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL:
+				{
+					ConstraintStudentsMaxBuildingChangesPerRealDayInInterval* c=new ConstraintStudentsMaxBuildingChangesPerRealDayInInterval;
+					stream>>*c;
+					rules.spaceConstraintsList.append(c);
+					break;
+				}
+			//55
+			case CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL:
+				{
+					ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval* c=new ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval;
+					stream>>*c;
+					rules.spaceConstraintsList.append(c);
+					break;
+				}
+			//56
+			case CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL:
+				{
+					ConstraintTeachersMaxBuildingChangesPerRealDayInInterval* c=new ConstraintTeachersMaxBuildingChangesPerRealDayInInterval;
+					stream>>*c;
+					rules.spaceConstraintsList.append(c);
+					break;
+				}
+			//57
+			case CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL:
+				{
+					ConstraintTeacherMaxBuildingChangesPerRealDayInInterval* c=new ConstraintTeacherMaxBuildingChangesPerRealDayInInterval;
 					stream>>*c;
 					rules.spaceConstraintsList.append(c);
 					break;
@@ -6166,6 +6348,15 @@ bool Rules::modifyTeacher(const QString& initialTeacherName, const QString& fina
 						crt_constraint->teacherName=finalTeacherName;
 					break;
 				}
+
+			case CONSTRAINT_TEACHER_MAX_HOURS_DAILY_IN_INTERVAL:
+				{
+					ConstraintTeacherMaxHoursDailyInInterval* crt_constraint=(ConstraintTeacherMaxHoursDailyInInterval*)ctr;
+					if(initialTeacherName == crt_constraint->teacherName)
+						crt_constraint->teacherName=finalTeacherName;
+					break;
+				}
+
 			default:
 				//do nothing.
 				break;
@@ -6238,7 +6429,7 @@ bool Rules::modifyTeacher(const QString& initialTeacherName, const QString& fina
 					break;
 				}
 
-		//mornings-afternoons
+			//mornings-afternoons
 			case CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_REAL_DAY:
 				{
 					ConstraintTeacherMaxRoomChangesPerRealDay* crt_constraint=(ConstraintTeacherMaxRoomChangesPerRealDay*)ctr;
@@ -6253,6 +6444,22 @@ bool Rules::modifyTeacher(const QString& initialTeacherName, const QString& fina
 						crt_constraint->teacherName=finalTeacherName;
 					break;
 				}
+
+			case CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL:
+				{
+					ConstraintTeacherMaxBuildingChangesPerDayInInterval* crt_constraint=(ConstraintTeacherMaxBuildingChangesPerDayInInterval*)ctr;
+					if(initialTeacherName == crt_constraint->teacherName)
+						crt_constraint->teacherName=finalTeacherName;
+					break;
+				}
+			case CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL:
+				{
+					ConstraintTeacherMaxBuildingChangesPerRealDayInInterval* crt_constraint=(ConstraintTeacherMaxBuildingChangesPerRealDayInInterval*)ctr;
+					if(initialTeacherName == crt_constraint->teacherName)
+						crt_constraint->teacherName=finalTeacherName;
+					break;
+				}
+
 			default:
 				//do nothing.
 				break;
@@ -7682,6 +7889,15 @@ bool Rules::modifyStudentsSet(const QString& initialStudentsSetName, const QStri
 							crt_constraint->students=finalStudentsSetName;
 						break;
 					}
+
+				case CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY_IN_INTERVAL:
+					{
+						ConstraintStudentsSetMaxHoursDailyInInterval* crt_constraint=(ConstraintStudentsSetMaxHoursDailyInInterval*)ctr;
+						if(initialStudentsSetName == crt_constraint->students)
+							crt_constraint->students=finalStudentsSetName;
+						break;
+					}
+
 				default:
 					//do nothing.
 					break;
@@ -7762,6 +7978,22 @@ bool Rules::modifyStudentsSet(const QString& initialStudentsSetName, const QStri
 							crt_constraint->studentsName=finalStudentsSetName;
 						break;
 					}
+
+				case CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL:
+					{
+						ConstraintStudentsSetMaxBuildingChangesPerDayInInterval* crt_constraint=(ConstraintStudentsSetMaxBuildingChangesPerDayInInterval*)ctr;
+						if(initialStudentsSetName == crt_constraint->studentsName)
+							crt_constraint->studentsName=finalStudentsSetName;
+						break;
+					}
+				case CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL:
+					{
+						ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval* crt_constraint=(ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval*)ctr;
+						if(initialStudentsSetName == crt_constraint->studentsName)
+							crt_constraint->studentsName=finalStudentsSetName;
+						break;
+					}
+
 				default:
 					//do nothing.
 					break;
@@ -8138,6 +8370,15 @@ bool Rules::modifyStudentsSets(const QHash<QString, QString>& oldAndNewStudentsS
 						crt_constraint->students=oldAndNewStudentsSetNames.value(crt_constraint->students);
 					break;
 				}
+
+			case CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY_IN_INTERVAL:
+				{
+					ConstraintStudentsSetMaxHoursDailyInInterval* crt_constraint=(ConstraintStudentsSetMaxHoursDailyInInterval*)ctr;
+					if(oldAndNewStudentsSetNames.contains(crt_constraint->students))
+						crt_constraint->students=oldAndNewStudentsSetNames.value(crt_constraint->students);
+					break;
+				}
+
 			default:
 				//do nothing.
 				break;
@@ -8218,6 +8459,22 @@ bool Rules::modifyStudentsSets(const QHash<QString, QString>& oldAndNewStudentsS
 						crt_constraint->studentsName=oldAndNewStudentsSetNames.value(crt_constraint->studentsName);
 					break;
 				}
+
+			case CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL:
+				{
+					ConstraintStudentsSetMaxBuildingChangesPerDayInInterval* crt_constraint=(ConstraintStudentsSetMaxBuildingChangesPerDayInInterval*)ctr;
+					if(oldAndNewStudentsSetNames.contains(crt_constraint->studentsName))
+						crt_constraint->studentsName=oldAndNewStudentsSetNames.value(crt_constraint->studentsName);
+					break;
+				}
+			case CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL:
+				{
+					ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval* crt_constraint=(ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval*)ctr;
+					if(oldAndNewStudentsSetNames.contains(crt_constraint->studentsName))
+						crt_constraint->studentsName=oldAndNewStudentsSetNames.value(crt_constraint->studentsName);
+					break;
+				}
+
 			default:
 				//do nothing.
 				break;
@@ -11503,6 +11760,22 @@ void Rules::updateConstraintsAfterRemoval()
 						toBeRemovedTime.append(tc);
 					break;
 				}
+
+			case CONSTRAINT_TEACHER_MAX_HOURS_DAILY_IN_INTERVAL:
+				{
+					ConstraintTeacherMaxHoursDailyInInterval* c=(ConstraintTeacherMaxHoursDailyInInterval*)tc;
+					if(!existingTeachersNames.contains(c->teacherName))
+						toBeRemovedTime.append(tc);
+					break;
+				}
+			case CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY_IN_INTERVAL:
+				{
+					ConstraintStudentsSetMaxHoursDailyInInterval* c=(ConstraintStudentsSetMaxHoursDailyInInterval*)tc;
+					if(!permanentStudentsHash.contains(c->students))
+						toBeRemovedTime.append(tc);
+					break;
+				}
+
 			default:
 				//do nothing.
 				break;
@@ -11797,6 +12070,36 @@ void Rules::updateConstraintsAfterRemoval()
 						toBeRemovedSpace.append(sc);
 					break;
 				}
+
+			case CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL:
+				{
+					ConstraintStudentsSetMaxBuildingChangesPerDayInInterval* c=(ConstraintStudentsSetMaxBuildingChangesPerDayInInterval*)sc;
+					if(!permanentStudentsHash.contains(c->studentsName))
+						toBeRemovedSpace.append(sc);
+					break;
+				}
+			case CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL:
+				{
+					ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval* c=(ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval*)sc;
+					if(!permanentStudentsHash.contains(c->studentsName))
+						toBeRemovedSpace.append(sc);
+					break;
+				}
+			case CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL:
+				{
+					ConstraintTeacherMaxBuildingChangesPerDayInInterval* c=(ConstraintTeacherMaxBuildingChangesPerDayInInterval*)sc;
+					if(!existingTeachersNames.contains(c->teacherName))
+						toBeRemovedSpace.append(sc);
+					break;
+				}
+			case CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL:
+				{
+					ConstraintTeacherMaxBuildingChangesPerRealDayInInterval* c=(ConstraintTeacherMaxBuildingChangesPerRealDayInInterval*)sc;
+					if(!existingTeachersNames.contains(c->teacherName))
+						toBeRemovedSpace.append(sc);
+					break;
+				}
+
 			default:
 				//do nothing.
 				break;
@@ -15330,6 +15633,19 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 					crt_constraint=readStudentsMaxThreeConsecutiveDays(parent, xmlReader, xmlReadingLog);
 				}
 				//
+				else if(xmlReader.name()==QString("ConstraintTeacherMaxHoursDailyInInterval")){
+					crt_constraint=readTeacherMaxHoursDailyInInterval(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintTeachersMaxHoursDailyInInterval")){
+					crt_constraint=readTeachersMaxHoursDailyInInterval(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintStudentsSetMaxHoursDailyInInterval")){
+					crt_constraint=readStudentsSetMaxHoursDailyInInterval(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintStudentsMaxHoursDailyInInterval")){
+					crt_constraint=readStudentsMaxHoursDailyInInterval(xmlReader, xmlReadingLog);
+				}
+				//
 				else{
 					unrecognizedXmlTags.append(xmlReader.name().toString());
 					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
@@ -15759,6 +16075,34 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 				else if(xmlReader.name()==QString("ConstraintStudentsMaxBuildingChangesPerRealDay")){
 					crt_constraint=readStudentsMaxBuildingChangesPerRealDay(xmlReader, xmlReadingLog);
 				}
+
+				//2024-02-09
+				else if(xmlReader.name()==QString("ConstraintStudentsMaxBuildingChangesPerDayInInterval")){
+					crt_constraint=readStudentsMaxBuildingChangesPerDayInInterval(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintStudentsSetMaxBuildingChangesPerDayInInterval")){
+					crt_constraint=readStudentsSetMaxBuildingChangesPerDayInInterval(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintTeachersMaxBuildingChangesPerDayInInterval")){
+					crt_constraint=readTeachersMaxBuildingChangesPerDayInInterval(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintTeacherMaxBuildingChangesPerDayInInterval")){
+					crt_constraint=readTeacherMaxBuildingChangesPerDayInInterval(xmlReader, xmlReadingLog);
+				}
+				////////////
+				else if(xmlReader.name()==QString("ConstraintStudentsMaxBuildingChangesPerRealDayInInterval")){
+					crt_constraint=readStudentsMaxBuildingChangesPerRealDayInInterval(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval")){
+					crt_constraint=readStudentsSetMaxBuildingChangesPerRealDayInInterval(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintTeachersMaxBuildingChangesPerRealDayInInterval")){
+					crt_constraint=readTeachersMaxBuildingChangesPerRealDayInInterval(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintTeacherMaxBuildingChangesPerRealDayInInterval")){
+					crt_constraint=readTeacherMaxBuildingChangesPerRealDayInInterval(xmlReader, xmlReadingLog);
+				}
+				////////////
 
 				else{
 					unrecognizedXmlTags.append(xmlReader.name().toString());
@@ -33407,6 +33751,316 @@ TimeConstraint* Rules::readStudentsMaxThreeConsecutiveDays(QWidget* parent, QXml
 	return cn;
 }
 
+TimeConstraint* Rules::readStudentsSetMaxHoursDailyInInterval(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintStudentsSetMaxHoursDailyInInterval"));
+	ConstraintStudentsSetMaxHoursDailyInInterval* cn=new ConstraintStudentsSetMaxHoursDailyInInterval();
+	cn->maxHoursDaily=this->nHoursPerDay;
+	cn->startHour=this->nHoursPerDay;
+	cn->endHour=this->nHoursPerDay;
+	int h1, h2;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Students")){
+			QString text=xmlReader.readElementText();
+			cn->students=text;
+			xmlReadingLog+="    Read students name="+cn->students+"\n";
+		}
+		else if(xmlReader.name()==QString("Maximum_Hours_Daily")){
+			QString text=xmlReader.readElementText();
+			cn->maxHoursDaily=text.toInt();
+			xmlReadingLog+="    Max. hours daily="+CustomFETString::number(cn->maxHoursDaily)+"\n";
+		}
+		else if(xmlReader.name()==QString("Interval_Start_Hour")){
+			QString text=xmlReader.readElementText();
+			for(h1=0; h1 < this->nHoursPerDay; h1++)
+				if(this->hoursOfTheDay[h1]==text)
+					break;
+			if(h1>=this->nHoursPerDay){
+				xmlReader.raiseError(tr("Hour %1 is nonexistent").arg(text));
+				delete cn;
+				return nullptr;
+			}
+			assert(h1>=0 && h1 < this->nHoursPerDay);
+			xmlReadingLog+="    Interval start hour="+this->hoursOfTheDay[h1]+"\n";
+			cn->startHour=h1;
+		}
+		else if(xmlReader.name()==QString("Interval_End_Hour")){
+			QString text=xmlReader.readElementText();
+			if(text==""){
+				xmlReadingLog+="    Interval end hour void, meaning end of day\n";
+				cn->endHour=this->nHoursPerDay;
+			}
+			else{
+				for(h2=0; h2 < this->nHoursPerDay; h2++)
+					if(this->hoursOfTheDay[h2]==text)
+						break;
+				if(h2>=this->nHoursPerDay){
+					xmlReader.raiseError(tr("Hour %1 is nonexistent (it is also not void, to specify end of the day)").arg(text));
+					delete cn;
+					return nullptr;
+				}
+				assert(h2>=0 && h2 < this->nHoursPerDay);
+				xmlReadingLog+="    Interval end hour="+this->hoursOfTheDay[h2]+"\n";
+				cn->endHour=h2;
+			}
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
+TimeConstraint* Rules::readStudentsMaxHoursDailyInInterval(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintStudentsMaxHoursDailyInInterval"));
+	ConstraintStudentsMaxHoursDailyInInterval* cn=new ConstraintStudentsMaxHoursDailyInInterval();
+	cn->maxHoursDaily=this->nHoursPerDay;
+	cn->startHour=this->nHoursPerDay;
+	cn->endHour=this->nHoursPerDay;
+	int h1, h2;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Maximum_Hours_Daily")){
+			QString text=xmlReader.readElementText();
+			cn->maxHoursDaily=text.toInt();
+			xmlReadingLog+="    Max. hours daily="+CustomFETString::number(cn->maxHoursDaily)+"\n";
+		}
+		else if(xmlReader.name()==QString("Interval_Start_Hour")){
+			QString text=xmlReader.readElementText();
+			for(h1=0; h1 < this->nHoursPerDay; h1++)
+				if(this->hoursOfTheDay[h1]==text)
+					break;
+			if(h1>=this->nHoursPerDay){
+				xmlReader.raiseError(tr("Hour %1 is nonexistent").arg(text));
+				delete cn;
+				return nullptr;
+			}
+			assert(h1>=0 && h1 < this->nHoursPerDay);
+			xmlReadingLog+="    Interval start hour="+this->hoursOfTheDay[h1]+"\n";
+			cn->startHour=h1;
+		}
+		else if(xmlReader.name()==QString("Interval_End_Hour")){
+			QString text=xmlReader.readElementText();
+			if(text==""){
+				xmlReadingLog+="    Interval end hour void, meaning end of day\n";
+				cn->endHour=this->nHoursPerDay;
+			}
+			else{
+				for(h2=0; h2 < this->nHoursPerDay; h2++)
+					if(this->hoursOfTheDay[h2]==text)
+						break;
+				if(h2>=this->nHoursPerDay){
+					xmlReader.raiseError(tr("Hour %1 is nonexistent (it is also not void, to specify end of the day)").arg(text));
+					delete cn;
+					return nullptr;
+				}
+				assert(h2>=0 && h2 < this->nHoursPerDay);
+				xmlReadingLog+="    Interval end hour="+this->hoursOfTheDay[h2]+"\n";
+				cn->endHour=h2;
+			}
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
+TimeConstraint* Rules::readTeacherMaxHoursDailyInInterval(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeacherMaxHoursDailyInInterval"));
+	ConstraintTeacherMaxHoursDailyInInterval* cn=new ConstraintTeacherMaxHoursDailyInInterval();
+	cn->maxHoursDaily=this->nHoursPerDay;
+	cn->startHour=this->nHoursPerDay;
+	cn->endHour=this->nHoursPerDay;
+	int h1, h2;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Teacher_Name")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Maximum_Hours_Daily")){
+			QString text=xmlReader.readElementText();
+			cn->maxHoursDaily=text.toInt();
+			xmlReadingLog+="    Max. hours daily="+CustomFETString::number(cn->maxHoursDaily)+"\n";
+		}
+		else if(xmlReader.name()==QString("Interval_Start_Hour")){
+			QString text=xmlReader.readElementText();
+			for(h1=0; h1 < this->nHoursPerDay; h1++)
+				if(this->hoursOfTheDay[h1]==text)
+					break;
+			if(h1>=this->nHoursPerDay){
+				xmlReader.raiseError(tr("Hour %1 is nonexistent").arg(text));
+				delete cn;
+				return nullptr;
+			}
+			assert(h1>=0 && h1 < this->nHoursPerDay);
+			xmlReadingLog+="    Interval start hour="+this->hoursOfTheDay[h1]+"\n";
+			cn->startHour=h1;
+		}
+		else if(xmlReader.name()==QString("Interval_End_Hour")){
+			QString text=xmlReader.readElementText();
+			if(text==""){
+				xmlReadingLog+="    Interval end hour void, meaning end of day\n";
+				cn->endHour=this->nHoursPerDay;
+			}
+			else{
+				for(h2=0; h2 < this->nHoursPerDay; h2++)
+					if(this->hoursOfTheDay[h2]==text)
+						break;
+				if(h2>=this->nHoursPerDay){
+					xmlReader.raiseError(tr("Hour %1 is nonexistent (it is also not void, to specify end of the day)").arg(text));
+					delete cn;
+					return nullptr;
+				}
+				assert(h2>=0 && h2 < this->nHoursPerDay);
+				xmlReadingLog+="    Interval end hour="+this->hoursOfTheDay[h2]+"\n";
+				cn->endHour=h2;
+			}
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
+TimeConstraint* Rules::readTeachersMaxHoursDailyInInterval(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeachersMaxHoursDailyInInterval"));
+	ConstraintTeachersMaxHoursDailyInInterval* cn=new ConstraintTeachersMaxHoursDailyInInterval();
+	cn->maxHoursDaily=this->nHoursPerDay;
+	cn->startHour=this->nHoursPerDay;
+	cn->endHour=this->nHoursPerDay;
+	int h1, h2;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Maximum_Hours_Daily")){
+			QString text=xmlReader.readElementText();
+			cn->maxHoursDaily=text.toInt();
+			xmlReadingLog+="    Max. hours daily="+CustomFETString::number(cn->maxHoursDaily)+"\n";
+		}
+		else if(xmlReader.name()==QString("Interval_Start_Hour")){
+			QString text=xmlReader.readElementText();
+			for(h1=0; h1 < this->nHoursPerDay; h1++)
+				if(this->hoursOfTheDay[h1]==text)
+					break;
+			if(h1>=this->nHoursPerDay){
+				xmlReader.raiseError(tr("Hour %1 is nonexistent").arg(text));
+				delete cn;
+				return nullptr;
+			}
+			assert(h1>=0 && h1 < this->nHoursPerDay);
+			xmlReadingLog+="    Interval start hour="+this->hoursOfTheDay[h1]+"\n";
+			cn->startHour=h1;
+		}
+		else if(xmlReader.name()==QString("Interval_End_Hour")){
+			QString text=xmlReader.readElementText();
+			if(text==""){
+				xmlReadingLog+="    Interval end hour void, meaning end of day\n";
+				cn->endHour=this->nHoursPerDay;
+			}
+			else{
+				for(h2=0; h2 < this->nHoursPerDay; h2++)
+					if(this->hoursOfTheDay[h2]==text)
+						break;
+				if(h2>=this->nHoursPerDay){
+					xmlReader.raiseError(tr("Hour %1 is nonexistent (it is also not void, to specify end of the day)").arg(text));
+					delete cn;
+					return nullptr;
+				}
+				assert(h2>=0 && h2 < this->nHoursPerDay);
+				xmlReadingLog+="    Interval end hour="+this->hoursOfTheDay[h2]+"\n";
+				cn->endHour=h2;
+			}
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
 ///////////////
 
 ///space constraints reading routines
@@ -36396,6 +37050,838 @@ SpaceConstraint* Rules::readStudentsMaxBuildingChangesPerRealDay(QXmlStreamReade
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
+	}
+	return cn;
+}
+
+SpaceConstraint* Rules::readStudentsSetMaxBuildingChangesPerDayInInterval(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintStudentsSetMaxBuildingChangesPerDayInInterval"));
+	ConstraintStudentsSetMaxBuildingChangesPerDayInInterval* cn=new ConstraintStudentsSetMaxBuildingChangesPerDayInInterval();
+	cn->maxBuildingChangesPerDay=this->nHoursPerDay;
+	cn->intervalStart=this->nHoursPerDay;
+	cn->intervalEnd=this->nHoursPerDay;
+	int h1, h2;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Students")){
+			QString text=xmlReader.readElementText();
+			cn->studentsName=text;
+			xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
+		}
+		else if(xmlReader.name()==QString("Max_Building_Changes_Per_Day")){
+			QString text=xmlReader.readElementText();
+			cn->maxBuildingChangesPerDay=text.toInt();
+			xmlReadingLog+="    Max. building changes per day="+CustomFETString::number(cn->maxBuildingChangesPerDay)+"\n";
+		}
+		else if(xmlReader.name()==QString("Interval_Start_Hour")){
+			QString text=xmlReader.readElementText();
+			for(h1=0; h1 < this->nHoursPerDay; h1++)
+				if(this->hoursOfTheDay[h1]==text)
+					break;
+			if(h1>=this->nHoursPerDay){
+				xmlReader.raiseError(tr("Hour %1 is nonexistent").arg(text));
+				delete cn;
+				return nullptr;
+			}
+			assert(h1>=0 && h1 < this->nHoursPerDay);
+			xmlReadingLog+="    Interval start hour="+this->hoursOfTheDay[h1]+"\n";
+			cn->intervalStart=h1;
+		}
+		else if(xmlReader.name()==QString("Interval_End_Hour")){
+			QString text=xmlReader.readElementText();
+			if(text==""){
+				xmlReadingLog+="    Interval end hour void, meaning end of day\n";
+				cn->intervalEnd=this->nHoursPerDay;
+			}
+			else{
+				for(h2=0; h2 < this->nHoursPerDay; h2++)
+					if(this->hoursOfTheDay[h2]==text)
+						break;
+				if(h2>=this->nHoursPerDay){
+					xmlReader.raiseError(tr("Hour %1 is nonexistent (it is also not void, to specify end of the day)").arg(text));
+					delete cn;
+					return nullptr;
+				}
+				assert(h2>=0 && h2 < this->nHoursPerDay);
+				xmlReadingLog+="    Interval end hour="+this->hoursOfTheDay[h2]+"\n";
+				cn->intervalEnd=h2;
+			}
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
+SpaceConstraint* Rules::readStudentsMaxBuildingChangesPerDayInInterval(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintStudentsMaxBuildingChangesPerDayInInterval"));
+	ConstraintStudentsMaxBuildingChangesPerDayInInterval* cn=new ConstraintStudentsMaxBuildingChangesPerDayInInterval();
+	cn->maxBuildingChangesPerDay=this->nHoursPerDay;
+	cn->intervalStart=this->nHoursPerDay;
+	cn->intervalEnd=this->nHoursPerDay;
+	int h1, h2;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Max_Building_Changes_Per_Day")){
+			QString text=xmlReader.readElementText();
+			cn->maxBuildingChangesPerDay=text.toInt();
+			xmlReadingLog+="    Max. building changes per day="+CustomFETString::number(cn->maxBuildingChangesPerDay)+"\n";
+		}
+		else if(xmlReader.name()==QString("Interval_Start_Hour")){
+			QString text=xmlReader.readElementText();
+			for(h1=0; h1 < this->nHoursPerDay; h1++)
+				if(this->hoursOfTheDay[h1]==text)
+					break;
+			if(h1>=this->nHoursPerDay){
+				xmlReader.raiseError(tr("Hour %1 is nonexistent").arg(text));
+				delete cn;
+				return nullptr;
+			}
+			assert(h1>=0 && h1 < this->nHoursPerDay);
+			xmlReadingLog+="    Interval start hour="+this->hoursOfTheDay[h1]+"\n";
+			cn->intervalStart=h1;
+		}
+		else if(xmlReader.name()==QString("Interval_End_Hour")){
+			QString text=xmlReader.readElementText();
+			if(text==""){
+				xmlReadingLog+="    Interval end hour void, meaning end of day\n";
+				cn->intervalEnd=this->nHoursPerDay;
+			}
+			else{
+				for(h2=0; h2 < this->nHoursPerDay; h2++)
+					if(this->hoursOfTheDay[h2]==text)
+						break;
+				if(h2>=this->nHoursPerDay){
+					xmlReader.raiseError(tr("Hour %1 is nonexistent (it is also not void, to specify end of the day)").arg(text));
+					delete cn;
+					return nullptr;
+				}
+				assert(h2>=0 && h2 < this->nHoursPerDay);
+				xmlReadingLog+="    Interval end hour="+this->hoursOfTheDay[h2]+"\n";
+				cn->intervalEnd=h2;
+			}
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
+SpaceConstraint* Rules::readTeacherMaxBuildingChangesPerDayInInterval(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeacherMaxBuildingChangesPerDayInInterval"));
+	ConstraintTeacherMaxBuildingChangesPerDayInInterval* cn=new ConstraintTeacherMaxBuildingChangesPerDayInInterval();
+	cn->maxBuildingChangesPerDay=this->nHoursPerDay;
+	cn->intervalStart=this->nHoursPerDay;
+	cn->intervalEnd=this->nHoursPerDay;
+	int h1, h2;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Max_Building_Changes_Per_Day")){
+			QString text=xmlReader.readElementText();
+			cn->maxBuildingChangesPerDay=text.toInt();
+			xmlReadingLog+="    Max. building changes per day="+CustomFETString::number(cn->maxBuildingChangesPerDay)+"\n";
+		}
+		else if(xmlReader.name()==QString("Interval_Start_Hour")){
+			QString text=xmlReader.readElementText();
+			for(h1=0; h1 < this->nHoursPerDay; h1++)
+				if(this->hoursOfTheDay[h1]==text)
+					break;
+			if(h1>=this->nHoursPerDay){
+				xmlReader.raiseError(tr("Hour %1 is nonexistent").arg(text));
+				delete cn;
+				return nullptr;
+			}
+			assert(h1>=0 && h1 < this->nHoursPerDay);
+			xmlReadingLog+="    Interval start hour="+this->hoursOfTheDay[h1]+"\n";
+			cn->intervalStart=h1;
+		}
+		else if(xmlReader.name()==QString("Interval_End_Hour")){
+			QString text=xmlReader.readElementText();
+			if(text==""){
+				xmlReadingLog+="    Interval end hour void, meaning end of day\n";
+				cn->intervalEnd=this->nHoursPerDay;
+			}
+			else{
+				for(h2=0; h2 < this->nHoursPerDay; h2++)
+					if(this->hoursOfTheDay[h2]==text)
+						break;
+				if(h2>=this->nHoursPerDay){
+					xmlReader.raiseError(tr("Hour %1 is nonexistent (it is also not void, to specify end of the day)").arg(text));
+					delete cn;
+					return nullptr;
+				}
+				assert(h2>=0 && h2 < this->nHoursPerDay);
+				xmlReadingLog+="    Interval end hour="+this->hoursOfTheDay[h2]+"\n";
+				cn->intervalEnd=h2;
+			}
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
+SpaceConstraint* Rules::readTeachersMaxBuildingChangesPerDayInInterval(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeachersMaxBuildingChangesPerDayInInterval"));
+	ConstraintTeachersMaxBuildingChangesPerDayInInterval* cn=new ConstraintTeachersMaxBuildingChangesPerDayInInterval();
+	cn->maxBuildingChangesPerDay=this->nHoursPerDay;
+	cn->intervalStart=this->nHoursPerDay;
+	cn->intervalEnd=this->nHoursPerDay;
+	int h1, h2;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Max_Building_Changes_Per_Day")){
+			QString text=xmlReader.readElementText();
+			cn->maxBuildingChangesPerDay=text.toInt();
+			xmlReadingLog+="    Max. building changes per day="+CustomFETString::number(cn->maxBuildingChangesPerDay)+"\n";
+		}
+		else if(xmlReader.name()==QString("Interval_Start_Hour")){
+			QString text=xmlReader.readElementText();
+			for(h1=0; h1 < this->nHoursPerDay; h1++)
+				if(this->hoursOfTheDay[h1]==text)
+					break;
+			if(h1>=this->nHoursPerDay){
+				xmlReader.raiseError(tr("Hour %1 is nonexistent").arg(text));
+				delete cn;
+				return nullptr;
+			}
+			assert(h1>=0 && h1 < this->nHoursPerDay);
+			xmlReadingLog+="    Interval start hour="+this->hoursOfTheDay[h1]+"\n";
+			cn->intervalStart=h1;
+		}
+		else if(xmlReader.name()==QString("Interval_End_Hour")){
+			QString text=xmlReader.readElementText();
+			if(text==""){
+				xmlReadingLog+="    Interval end hour void, meaning end of day\n";
+				cn->intervalEnd=this->nHoursPerDay;
+			}
+			else{
+				for(h2=0; h2 < this->nHoursPerDay; h2++)
+					if(this->hoursOfTheDay[h2]==text)
+						break;
+				if(h2>=this->nHoursPerDay){
+					xmlReader.raiseError(tr("Hour %1 is nonexistent (it is also not void, to specify end of the day)").arg(text));
+					delete cn;
+					return nullptr;
+				}
+				assert(h2>=0 && h2 < this->nHoursPerDay);
+				xmlReadingLog+="    Interval end hour="+this->hoursOfTheDay[h2]+"\n";
+				cn->intervalEnd=h2;
+			}
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
+SpaceConstraint* Rules::readStudentsSetMaxBuildingChangesPerRealDayInInterval(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval"));
+	ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval* cn=new ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval();
+	cn->maxBuildingChangesPerDay=2*this->nHoursPerDay;
+	cn->intervalStart=this->nHoursPerDay;
+	cn->intervalEnd=this->nHoursPerDay;
+	int h1, h2;
+
+	int startDay=-1;
+	int endDay=-1;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Students")){
+			QString text=xmlReader.readElementText();
+			cn->studentsName=text;
+			xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
+		}
+		else if(xmlReader.name()==QString("Max_Building_Changes_Per_Day")){
+			QString text=xmlReader.readElementText();
+			cn->maxBuildingChangesPerDay=text.toInt();
+			xmlReadingLog+="    Max. building changes per day="+CustomFETString::number(cn->maxBuildingChangesPerDay)+"\n";
+		}
+		else if(xmlReader.name()==QString("Interval_Start_Day")){
+			QString text=xmlReader.readElementText();
+			if(text==QString("Morning")){
+				startDay=0;
+			}
+			else if(text==QString("Afternoon")){
+				startDay=1;
+			}
+			else{
+				startDay=-2;
+				xmlReader.raiseError(tr("'Interval_Start_Day' %1 is neither 'Morning' nor 'Afternoon'", "Keep the quoted fields untranslated").arg(text));
+				delete cn;
+				return nullptr;
+			}
+		}
+		else if(xmlReader.name()==QString("Interval_Start_Hour")){
+			QString text=xmlReader.readElementText();
+			for(h1=0; h1 < this->nHoursPerDay; h1++)
+				if(this->hoursOfTheDay[h1]==text)
+					break;
+			if(h1>=this->nHoursPerDay){
+				xmlReader.raiseError(tr("Hour %1 is nonexistent").arg(text));
+				delete cn;
+				return nullptr;
+			}
+			assert(h1>=0 && h1 < this->nHoursPerDay);
+			xmlReadingLog+="    Interval start hour="+this->hoursOfTheDay[h1]+"\n";
+			cn->intervalStart=h1;
+		}
+		else if(xmlReader.name()==QString("Interval_End_Day")){
+			QString text=xmlReader.readElementText();
+			if(text==QString("Morning")){
+				endDay=0;
+			}
+			else if(text==QString("Afternoon")){
+				endDay=1;
+			}
+			else{
+				endDay=-2;
+				xmlReader.raiseError(tr("'Interval_End_Day' %1 is neither 'Morning' nor 'Afternoon'", "Keep the quoted fields untranslated").arg(text));
+				delete cn;
+				return nullptr;
+			}
+		}
+		else if(xmlReader.name()==QString("Interval_End_Hour")){
+			QString text=xmlReader.readElementText();
+			if(text==""){
+				xmlReadingLog+="    Interval end hour void, meaning end of day\n";
+				cn->intervalEnd=this->nHoursPerDay;
+			}
+			else{
+				for(h2=0; h2 < this->nHoursPerDay; h2++)
+					if(this->hoursOfTheDay[h2]==text)
+						break;
+				if(h2>=this->nHoursPerDay){
+					xmlReader.raiseError(tr("Hour %1 is nonexistent (it is also not void, to specify end of the day)").arg(text));
+					delete cn;
+					return nullptr;
+				}
+				assert(h2>=0 && h2 < this->nHoursPerDay);
+				xmlReadingLog+="    Interval end hour="+this->hoursOfTheDay[h2]+"\n";
+				cn->intervalEnd=h2;
+			}
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+
+	if(startDay==-1){
+		xmlReader.raiseError(tr("Tag 'Interval_Start_Day' not met", "Keep the quoted field untranslated"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	else{
+		cn->intervalStart += startDay * this->nHoursPerDay;
+	}
+
+	if(endDay==-1){
+		xmlReader.raiseError(tr("Tag 'Interval_End_Day' not met", "Keep the quoted field untranslated"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	else{
+		cn->intervalEnd += endDay * this->nHoursPerDay;
+	}
+	return cn;
+}
+
+SpaceConstraint* Rules::readStudentsMaxBuildingChangesPerRealDayInInterval(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintStudentsMaxBuildingChangesPerRealDayInInterval"));
+	ConstraintStudentsMaxBuildingChangesPerRealDayInInterval* cn=new ConstraintStudentsMaxBuildingChangesPerRealDayInInterval();
+	cn->maxBuildingChangesPerDay=2*this->nHoursPerDay;
+	cn->intervalStart=this->nHoursPerDay;
+	cn->intervalEnd=this->nHoursPerDay;
+	int h1, h2;
+
+	int startDay=-1;
+	int endDay=-1;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Max_Building_Changes_Per_Day")){
+			QString text=xmlReader.readElementText();
+			cn->maxBuildingChangesPerDay=text.toInt();
+			xmlReadingLog+="    Max. building changes per day="+CustomFETString::number(cn->maxBuildingChangesPerDay)+"\n";
+		}
+		else if(xmlReader.name()==QString("Interval_Start_Day")){
+			QString text=xmlReader.readElementText();
+			if(text==QString("Morning")){
+				startDay=0;
+			}
+			else if(text==QString("Afternoon")){
+				startDay=1;
+			}
+			else{
+				startDay=-2;
+				xmlReader.raiseError(tr("'Interval_Start_Day' %1 is neither 'Morning' nor 'Afternoon'", "Keep the quoted fields untranslated").arg(text));
+				delete cn;
+				return nullptr;
+			}
+		}
+		else if(xmlReader.name()==QString("Interval_Start_Hour")){
+			QString text=xmlReader.readElementText();
+			for(h1=0; h1 < this->nHoursPerDay; h1++)
+				if(this->hoursOfTheDay[h1]==text)
+					break;
+			if(h1>=this->nHoursPerDay){
+				xmlReader.raiseError(tr("Hour %1 is nonexistent").arg(text));
+				delete cn;
+				return nullptr;
+			}
+			assert(h1>=0 && h1 < this->nHoursPerDay);
+			xmlReadingLog+="    Interval start hour="+this->hoursOfTheDay[h1]+"\n";
+			cn->intervalStart=h1;
+		}
+		else if(xmlReader.name()==QString("Interval_End_Day")){
+			QString text=xmlReader.readElementText();
+			if(text==QString("Morning")){
+				endDay=0;
+			}
+			else if(text==QString("Afternoon")){
+				endDay=1;
+			}
+			else{
+				endDay=-2;
+				xmlReader.raiseError(tr("'Interval_End_Day' %1 is neither 'Morning' nor 'Afternoon'", "Keep the quoted fields untranslated").arg(text));
+				delete cn;
+				return nullptr;
+			}
+		}
+		else if(xmlReader.name()==QString("Interval_End_Hour")){
+			QString text=xmlReader.readElementText();
+			if(text==""){
+				xmlReadingLog+="    Interval end hour void, meaning end of day\n";
+				cn->intervalEnd=this->nHoursPerDay;
+			}
+			else{
+				for(h2=0; h2 < this->nHoursPerDay; h2++)
+					if(this->hoursOfTheDay[h2]==text)
+						break;
+				if(h2>=this->nHoursPerDay){
+					xmlReader.raiseError(tr("Hour %1 is nonexistent (it is also not void, to specify end of the day)").arg(text));
+					delete cn;
+					return nullptr;
+				}
+				assert(h2>=0 && h2 < this->nHoursPerDay);
+				xmlReadingLog+="    Interval end hour="+this->hoursOfTheDay[h2]+"\n";
+				cn->intervalEnd=h2;
+			}
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+
+	if(startDay==-1){
+		xmlReader.raiseError(tr("Tag 'Interval_Start_Day' not met", "Keep the quoted field untranslated"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	else{
+		cn->intervalStart += startDay * this->nHoursPerDay;
+	}
+
+	if(endDay==-1){
+		xmlReader.raiseError(tr("Tag 'Interval_End_Day' not met", "Keep the quoted field untranslated"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	else{
+		cn->intervalEnd += endDay * this->nHoursPerDay;
+	}
+	return cn;
+}
+
+SpaceConstraint* Rules::readTeacherMaxBuildingChangesPerRealDayInInterval(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeacherMaxBuildingChangesPerRealDayInInterval"));
+	ConstraintTeacherMaxBuildingChangesPerRealDayInInterval* cn=new ConstraintTeacherMaxBuildingChangesPerRealDayInInterval();
+	cn->maxBuildingChangesPerDay=2*this->nHoursPerDay;
+	cn->intervalStart=this->nHoursPerDay;
+	cn->intervalEnd=this->nHoursPerDay;
+	int h1, h2;
+
+	int startDay=-1;
+	int endDay=-1;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Max_Building_Changes_Per_Day")){
+			QString text=xmlReader.readElementText();
+			cn->maxBuildingChangesPerDay=text.toInt();
+			xmlReadingLog+="    Max. building changes per day="+CustomFETString::number(cn->maxBuildingChangesPerDay)+"\n";
+		}
+		else if(xmlReader.name()==QString("Interval_Start_Day")){
+			QString text=xmlReader.readElementText();
+			if(text==QString("Morning")){
+				startDay=0;
+			}
+			else if(text==QString("Afternoon")){
+				startDay=1;
+			}
+			else{
+				startDay=-2;
+				xmlReader.raiseError(tr("'Interval_Start_Day' %1 is neither 'Morning' nor 'Afternoon'", "Keep the quoted fields untranslated").arg(text));
+				delete cn;
+				return nullptr;
+			}
+		}
+		else if(xmlReader.name()==QString("Interval_Start_Hour")){
+			QString text=xmlReader.readElementText();
+			for(h1=0; h1 < this->nHoursPerDay; h1++)
+				if(this->hoursOfTheDay[h1]==text)
+					break;
+			if(h1>=this->nHoursPerDay){
+				xmlReader.raiseError(tr("Hour %1 is nonexistent").arg(text));
+				delete cn;
+				return nullptr;
+			}
+			assert(h1>=0 && h1 < this->nHoursPerDay);
+			xmlReadingLog+="    Interval start hour="+this->hoursOfTheDay[h1]+"\n";
+			cn->intervalStart=h1;
+		}
+		else if(xmlReader.name()==QString("Interval_End_Day")){
+			QString text=xmlReader.readElementText();
+			if(text==QString("Morning")){
+				endDay=0;
+			}
+			else if(text==QString("Afternoon")){
+				endDay=1;
+			}
+			else{
+				endDay=-2;
+				xmlReader.raiseError(tr("'Interval_End_Day' %1 is neither 'Morning' nor 'Afternoon'", "Keep the quoted fields untranslated").arg(text));
+				delete cn;
+				return nullptr;
+			}
+		}
+		else if(xmlReader.name()==QString("Interval_End_Hour")){
+			QString text=xmlReader.readElementText();
+			if(text==""){
+				xmlReadingLog+="    Interval end hour void, meaning end of day\n";
+				cn->intervalEnd=this->nHoursPerDay;
+			}
+			else{
+				for(h2=0; h2 < this->nHoursPerDay; h2++)
+					if(this->hoursOfTheDay[h2]==text)
+						break;
+				if(h2>=this->nHoursPerDay){
+					xmlReader.raiseError(tr("Hour %1 is nonexistent (it is also not void, to specify end of the day)").arg(text));
+					delete cn;
+					return nullptr;
+				}
+				assert(h2>=0 && h2 < this->nHoursPerDay);
+				xmlReadingLog+="    Interval end hour="+this->hoursOfTheDay[h2]+"\n";
+				cn->intervalEnd=h2;
+			}
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+
+	if(startDay==-1){
+		xmlReader.raiseError(tr("Tag 'Interval_Start_Day' not met", "Keep the quoted field untranslated"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	else{
+		cn->intervalStart += startDay * this->nHoursPerDay;
+	}
+
+	if(endDay==-1){
+		xmlReader.raiseError(tr("Tag 'Interval_End_Day' not met", "Keep the quoted field untranslated"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	else{
+		cn->intervalEnd += endDay * this->nHoursPerDay;
+	}
+	return cn;
+}
+
+SpaceConstraint* Rules::readTeachersMaxBuildingChangesPerRealDayInInterval(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeachersMaxBuildingChangesPerRealDayInInterval"));
+	ConstraintTeachersMaxBuildingChangesPerRealDayInInterval* cn=new ConstraintTeachersMaxBuildingChangesPerRealDayInInterval();
+	cn->maxBuildingChangesPerDay=2*this->nHoursPerDay;
+	cn->intervalStart=this->nHoursPerDay;
+	cn->intervalEnd=this->nHoursPerDay;
+	int h1, h2;
+
+	int startDay=-1;
+	int endDay=-1;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Max_Building_Changes_Per_Day")){
+			QString text=xmlReader.readElementText();
+			cn->maxBuildingChangesPerDay=text.toInt();
+			xmlReadingLog+="    Max. building changes per day="+CustomFETString::number(cn->maxBuildingChangesPerDay)+"\n";
+		}
+		else if(xmlReader.name()==QString("Interval_Start_Day")){
+			QString text=xmlReader.readElementText();
+			if(text==QString("Morning")){
+				startDay=0;
+			}
+			else if(text==QString("Afternoon")){
+				startDay=1;
+			}
+			else{
+				startDay=-2;
+				xmlReader.raiseError(tr("'Interval_Start_Day' %1 is neither 'Morning' nor 'Afternoon'", "Keep the quoted fields untranslated").arg(text));
+				delete cn;
+				return nullptr;
+			}
+		}
+		else if(xmlReader.name()==QString("Interval_Start_Hour")){
+			QString text=xmlReader.readElementText();
+			for(h1=0; h1 < this->nHoursPerDay; h1++)
+				if(this->hoursOfTheDay[h1]==text)
+					break;
+			if(h1>=this->nHoursPerDay){
+				xmlReader.raiseError(tr("Hour %1 is nonexistent").arg(text));
+				delete cn;
+				return nullptr;
+			}
+			assert(h1>=0 && h1 < this->nHoursPerDay);
+			xmlReadingLog+="    Interval start hour="+this->hoursOfTheDay[h1]+"\n";
+			cn->intervalStart=h1;
+		}
+		else if(xmlReader.name()==QString("Interval_End_Day")){
+			QString text=xmlReader.readElementText();
+			if(text==QString("Morning")){
+				endDay=0;
+			}
+			else if(text==QString("Afternoon")){
+				endDay=1;
+			}
+			else{
+				endDay=-2;
+				xmlReader.raiseError(tr("'Interval_End_Day' %1 is neither 'Morning' nor 'Afternoon'", "Keep the quoted fields untranslated").arg(text));
+				delete cn;
+				return nullptr;
+			}
+		}
+		else if(xmlReader.name()==QString("Interval_End_Hour")){
+			QString text=xmlReader.readElementText();
+			if(text==""){
+				xmlReadingLog+="    Interval end hour void, meaning end of day\n";
+				cn->intervalEnd=this->nHoursPerDay;
+			}
+			else{
+				for(h2=0; h2 < this->nHoursPerDay; h2++)
+					if(this->hoursOfTheDay[h2]==text)
+						break;
+				if(h2>=this->nHoursPerDay){
+					xmlReader.raiseError(tr("Hour %1 is nonexistent (it is also not void, to specify end of the day)").arg(text));
+					delete cn;
+					return nullptr;
+				}
+				assert(h2>=0 && h2 < this->nHoursPerDay);
+				xmlReadingLog+="    Interval end hour="+this->hoursOfTheDay[h2]+"\n";
+				cn->intervalEnd=h2;
+			}
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+
+	if(startDay==-1){
+		xmlReader.raiseError(tr("Tag 'Interval_Start_Day' not met", "Keep the quoted field untranslated"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	else{
+		cn->intervalStart += startDay * this->nHoursPerDay;
+	}
+
+	if(endDay==-1){
+		xmlReader.raiseError(tr("Tag 'Interval_End_Day' not met", "Keep the quoted field untranslated"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	else{
+		cn->intervalEnd += endDay * this->nHoursPerDay;
 	}
 	return cn;
 }

@@ -1104,11 +1104,35 @@
       <property name="title">
        <string>Students</string>
       </property>
+      <widget class="QMenu" name="menuA_students_set_space_constraints">
+       <property name="title">
+        <string>A students set</string>
+       </property>
+      </widget>
+      <widget class="QMenu" name="menuAll_students_space_constraints">
+       <property name="title">
+        <string>All students</string>
+       </property>
+      </widget>
+      <addaction name="menuA_students_set_space_constraints"/>
+      <addaction name="menuAll_students_space_constraints"/>
      </widget>
      <widget class="QMenu" name="menuTeachers_space_constraints">
       <property name="title">
        <string>Teachers</string>
       </property>
+      <widget class="QMenu" name="menuA_teacher_space_constraints">
+       <property name="title">
+        <string>A teacher</string>
+       </property>
+      </widget>
+      <widget class="QMenu" name="menuAll_teachers_space_constraints">
+       <property name="title">
+        <string>All teachers</string>
+       </property>
+      </widget>
+      <addaction name="menuA_teacher_space_constraints"/>
+      <addaction name="menuAll_teachers_space_constraints"/>
      </widget>
      <widget class="QMenu" name="menuActivity_tags_space_constraints">
       <property name="title">

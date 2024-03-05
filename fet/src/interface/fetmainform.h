@@ -89,6 +89,12 @@ private:
 	QAction* dataTimeConstraintsBreakTimesAction;
 	QAction* dataTimeConstraintsTeacherMaxDaysPerWeekAction;
 	QAction* dataTimeConstraintsTeachersMaxHoursDailyAction;
+
+	QAction* dataTimeConstraintsTeachersMaxHoursDailyInIntervalAction;
+	QAction* dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction;
+	QAction* dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction;
+	QAction* dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction;
+
 	QAction* dataTimeConstraintsActivityPreferredStartingTimeAction;
 	QAction* dataTimeConstraintsStudentsSetMaxGapsPerWeekAction;
 	QAction* dataTimeConstraintsStudentsMaxGapsPerWeekAction;
@@ -343,6 +349,16 @@ private:
 	QAction* dataTimeConstraintsActivitiesMaxInATermAction;
 	QAction* dataTimeConstraintsActivitiesMinInATermAction;
 	QAction* dataTimeConstraintsActivitiesOccupyMaxTermsAction;
+	
+	//2024-02-09
+	QAction* dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayInIntervalAction;
+	QAction* dataSpaceConstraintsStudentsMaxBuildingChangesPerDayInIntervalAction;
+	QAction* dataSpaceConstraintsTeacherMaxBuildingChangesPerDayInIntervalAction;
+	QAction* dataSpaceConstraintsTeachersMaxBuildingChangesPerDayInIntervalAction;
+	QAction* dataSpaceConstraintsStudentsSetMaxBuildingChangesPerRealDayInIntervalAction;
+	QAction* dataSpaceConstraintsStudentsMaxBuildingChangesPerRealDayInIntervalAction;
+	QAction* dataSpaceConstraintsTeacherMaxBuildingChangesPerRealDayInIntervalAction;
+	QAction* dataSpaceConstraintsTeachersMaxBuildingChangesPerRealDayInIntervalAction;
 
 	QLabel modeLabel;
 	
@@ -618,6 +634,11 @@ public slots:
 	void dataTimeConstraintsTeachersMaxHoursContinuouslyAction_triggered();
 	void dataTimeConstraintsTeacherMaxHoursContinuouslyAction_triggered();
 
+	void dataTimeConstraintsTeachersMaxHoursDailyInIntervalAction_triggered();
+	void dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction_triggered();
+	void dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction_triggered();
+	void dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction_triggered();
+
 	void dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction_triggered();
 	void dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction_triggered();
 
@@ -843,6 +864,16 @@ public slots:
 	void dataTimeConstraintsActivitiesMaxInATermAction_triggered();
 	void dataTimeConstraintsActivitiesMinInATermAction_triggered();
 	void dataTimeConstraintsActivitiesOccupyMaxTermsAction_triggered();
+
+	//2024-02-09
+	void dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayInIntervalAction_triggered();
+	void dataSpaceConstraintsStudentsMaxBuildingChangesPerDayInIntervalAction_triggered();
+	void dataSpaceConstraintsTeacherMaxBuildingChangesPerDayInIntervalAction_triggered();
+	void dataSpaceConstraintsTeachersMaxBuildingChangesPerDayInIntervalAction_triggered();
+	void dataSpaceConstraintsStudentsSetMaxBuildingChangesPerRealDayInIntervalAction_triggered();
+	void dataSpaceConstraintsStudentsMaxBuildingChangesPerRealDayInIntervalAction_triggered();
+	void dataSpaceConstraintsTeacherMaxBuildingChangesPerRealDayInIntervalAction_triggered();
+	void dataSpaceConstraintsTeachersMaxBuildingChangesPerRealDayInIntervalAction_triggered();
 
 	void helpMoroccoAction_triggered();
 	void helpAlgeriaAction_triggered();

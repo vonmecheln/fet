@@ -79,6 +79,11 @@
 #include "modifyconstraintteachersminhoursdailyform.h"
 #include "modifyconstraintteacherminhoursdailyform.h"
 
+#include "modifyconstraintteachersmaxhoursdailyinintervalform.h"
+#include "modifyconstraintteachermaxhoursdailyinintervalform.h"
+#include "modifyconstraintstudentsmaxhoursdailyinintervalform.h"
+#include "modifyconstraintstudentssetmaxhoursdailyinintervalform.h"
+
 #include "modifyconstraintteachermindaysperweekform.h"
 #include "modifyconstraintteachersmindaysperweekform.h"
 
@@ -2379,6 +2384,39 @@ void AllTimeConstraintsForm::modifyConstraint()
 		case CONSTRAINT_ACTIVITIES_MAX_HOURLY_SPAN:
 			{
 				ModifyConstraintActivitiesMaxHourlySpanForm form(this, (ConstraintActivitiesMaxHourlySpan*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+
+		//204
+		case CONSTRAINT_TEACHERS_MAX_HOURS_DAILY_IN_INTERVAL:
+			{
+				ModifyConstraintTeachersMaxHoursDailyInIntervalForm form(this, (ConstraintTeachersMaxHoursDailyInInterval*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//205
+		case CONSTRAINT_TEACHER_MAX_HOURS_DAILY_IN_INTERVAL:
+			{
+				ModifyConstraintTeacherMaxHoursDailyInIntervalForm form(this, (ConstraintTeacherMaxHoursDailyInInterval*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//206
+		case CONSTRAINT_STUDENTS_MAX_HOURS_DAILY_IN_INTERVAL:
+			{
+				ModifyConstraintStudentsMaxHoursDailyInIntervalForm form(this, (ConstraintStudentsMaxHoursDailyInInterval*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//207
+		case CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY_IN_INTERVAL:
+			{
+				ModifyConstraintStudentsSetMaxHoursDailyInIntervalForm form(this, (ConstraintStudentsSetMaxHoursDailyInInterval*)ctr);
 				setParentAndOtherThings(&form, this);
 				form.exec();
 				break;
