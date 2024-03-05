@@ -1028,6 +1028,30 @@ extern Matrix1D<int> maxRoomChangesPerRealDayForSubgroupsMaxChanges;
 bool computeMaxRoomChangesPerRealDayForStudents(QWidget* parent);
 //END   room changes per real day for students
 
+extern Matrix1D<QList<double>> maxRoomChangesPerDayInIntervalForStudentsPercentages;
+extern Matrix1D<QList<int>> maxRoomChangesPerDayInIntervalForStudentsMaxChanges;
+extern Matrix1D<QList<int>> maxRoomChangesPerDayInIntervalForStudentsIntervalStart;
+extern Matrix1D<QList<int>> maxRoomChangesPerDayInIntervalForStudentsIntervalEnd;
+bool computeMaxRoomChangesPerDayInIntervalForStudents(QWidget* parent);
+
+extern Matrix1D<QList<double>> maxRoomChangesPerDayInIntervalForTeachersPercentages;
+extern Matrix1D<QList<int>> maxRoomChangesPerDayInIntervalForTeachersMaxChanges;
+extern Matrix1D<QList<int>> maxRoomChangesPerDayInIntervalForTeachersIntervalStart;
+extern Matrix1D<QList<int>> maxRoomChangesPerDayInIntervalForTeachersIntervalEnd;
+bool computeMaxRoomChangesPerDayInIntervalForTeachers(QWidget* parent);
+
+extern Matrix1D<QList<double>> maxRoomChangesPerRealDayInIntervalForTeachersPercentages;
+extern Matrix1D<QList<int>> maxRoomChangesPerRealDayInIntervalForTeachersMaxChanges;
+extern Matrix1D<QList<int>> maxRoomChangesPerRealDayInIntervalForTeachersIntervalStart;
+extern Matrix1D<QList<int>> maxRoomChangesPerRealDayInIntervalForTeachersIntervalEnd;
+bool computeMaxRoomChangesPerRealDayInIntervalForTeachers(QWidget* parent);
+
+extern Matrix1D<QList<double>> maxRoomChangesPerRealDayInIntervalForStudentsPercentages;
+extern Matrix1D<QList<int>> maxRoomChangesPerRealDayInIntervalForStudentsMaxChanges;
+extern Matrix1D<QList<int>> maxRoomChangesPerRealDayInIntervalForStudentsIntervalStart;
+extern Matrix1D<QList<int>> maxRoomChangesPerRealDayInIntervalForStudentsIntervalEnd;
+bool computeMaxRoomChangesPerRealDayInIntervalForStudents(QWidget* parent);
+
 ////////END   room changes
 
 

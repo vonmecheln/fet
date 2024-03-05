@@ -54,7 +54,10 @@ AddConstraintStudentsSetMaxBuildingChangesPerDayInIntervalForm::AddConstraintStu
 	for(int i=0; i<gt.rules.nHoursPerDay; i++)
 		endHourComboBox->addItem(gt.rules.hoursOfTheDay[i]);
 	endHourComboBox->addItem(tr("End of day"));
-	endHourComboBox->setCurrentIndex(2);
+	if(gt.rules.nHoursPerDay>=2)
+		endHourComboBox->setCurrentIndex(2);
+	else
+		endHourComboBox->setCurrentIndex(1);
 
 	updateStudentsSetComboBox();
 }

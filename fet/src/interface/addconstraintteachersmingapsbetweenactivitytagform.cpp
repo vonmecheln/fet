@@ -146,6 +146,7 @@ void AddConstraintTeachersMinGapsBetweenActivityTagForm::addCurrentConstraints()
 	QMessageBox::information(this, tr("FET information"), tr("Added %1 time constraints. Please note that these constraints"
 	 " will be visible as constraints for individual teachers.").arg(gt.rules.teachersList.count()));
 
-	gt.rules.addUndoPoint(tr("Added %1 constraints, one for each teacher:\n\n%2", "%1 is the number of constraints, %2 is their detailed description")
+	if(gt.rules.teachersList.count()>0)
+		gt.rules.addUndoPoint(tr("Added %1 constraints, one for each teacher:\n\n%2", "%1 is the number of constraints, %2 is their detailed description")
 						  .arg(gt.rules.teachersList.count()).arg(ctrs));
 }

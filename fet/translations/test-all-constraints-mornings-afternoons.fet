@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="6.17.0">
+<fet version="6.18.0">
 
 <Mode>Mornings_Afternoons</Mode>
 
@@ -3060,6 +3060,91 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintStudentsMaxBuildingChangesPerRealDayInInterval>
+<ConstraintTeacherMaxRoomChangesPerDayInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t1</Teacher>
+	<Interval_Start_Hour>08:00</Interval_Start_Hour>
+	<Interval_End_Hour>10:00</Interval_End_Hour>
+	<Max_Room_Changes_Per_Day>0</Max_Room_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxRoomChangesPerDayInInterval>
+<ConstraintTeacherMaxRoomChangesPerRealDayInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t1</Teacher>
+	<Interval_Start_Day>Morning</Interval_Start_Day>
+	<!-- Morning or Afternoon -->
+	<Interval_Start_Hour>08:00</Interval_Start_Hour>
+	<Interval_End_Day>Afternoon</Interval_End_Day>
+	<!-- Morning or Afternoon -->
+	<Interval_End_Hour>10:00</Interval_End_Hour>
+	<Max_Room_Changes_Per_Day>0</Max_Room_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxRoomChangesPerRealDayInInterval>
+<ConstraintTeachersMaxRoomChangesPerDayInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Interval_Start_Hour>08:00</Interval_Start_Hour>
+	<Interval_End_Hour>11:00</Interval_End_Hour>
+	<Max_Room_Changes_Per_Day>0</Max_Room_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxRoomChangesPerDayInInterval>
+<ConstraintTeachersMaxRoomChangesPerRealDayInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Interval_Start_Day>Morning</Interval_Start_Day>
+	<!-- Morning or Afternoon -->
+	<Interval_Start_Hour>08:00</Interval_Start_Hour>
+	<Interval_End_Day>Morning</Interval_End_Day>
+	<!-- Morning or Afternoon -->
+	<Interval_End_Hour>10:00</Interval_End_Hour>
+	<Max_Room_Changes_Per_Day>0</Max_Room_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxRoomChangesPerRealDayInInterval>
+<ConstraintStudentsSetMaxRoomChangesPerDayInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y2</Students>
+	<Interval_Start_Hour>08:00</Interval_Start_Hour>
+	<Interval_End_Hour></Interval_End_Hour>
+	<!-- Interval_End_Hour void means the end of the day (which has no name) -->
+	<Max_Room_Changes_Per_Day>0</Max_Room_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxRoomChangesPerDayInInterval>
+<ConstraintStudentsSetMaxRoomChangesPerRealDayInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y2</Students>
+	<Interval_Start_Day>Morning</Interval_Start_Day>
+	<!-- Morning or Afternoon -->
+	<Interval_Start_Hour>08:00</Interval_Start_Hour>
+	<Interval_End_Day>Morning</Interval_End_Day>
+	<!-- Morning or Afternoon -->
+	<Interval_End_Hour>11:00</Interval_End_Hour>
+	<Max_Room_Changes_Per_Day>0</Max_Room_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxRoomChangesPerRealDayInInterval>
+<ConstraintStudentsMaxRoomChangesPerDayInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Interval_Start_Hour>08:00</Interval_Start_Hour>
+	<Interval_End_Hour>11:00</Interval_End_Hour>
+	<Max_Room_Changes_Per_Day>0</Max_Room_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxRoomChangesPerDayInInterval>
+<ConstraintStudentsMaxRoomChangesPerRealDayInInterval>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Interval_Start_Day>Morning</Interval_Start_Day>
+	<!-- Morning or Afternoon -->
+	<Interval_Start_Hour>09:00</Interval_Start_Hour>
+	<Interval_End_Day>Afternoon</Interval_End_Day>
+	<!-- Morning or Afternoon -->
+	<Interval_End_Hour>09:00</Interval_End_Hour>
+	<Max_Room_Changes_Per_Day>0</Max_Room_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxRoomChangesPerRealDayInInterval>
 </Space_Constraints_List>
 
 <Timetable_Generation_Options_List>

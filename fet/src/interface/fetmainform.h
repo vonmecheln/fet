@@ -360,6 +360,16 @@ private:
 	QAction* dataSpaceConstraintsTeacherMaxBuildingChangesPerRealDayInIntervalAction;
 	QAction* dataSpaceConstraintsTeachersMaxBuildingChangesPerRealDayInIntervalAction;
 
+	//2024-02-19
+	QAction* dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayInIntervalAction;
+	QAction* dataSpaceConstraintsStudentsMaxRoomChangesPerDayInIntervalAction;
+	QAction* dataSpaceConstraintsTeacherMaxRoomChangesPerDayInIntervalAction;
+	QAction* dataSpaceConstraintsTeachersMaxRoomChangesPerDayInIntervalAction;
+	QAction* dataSpaceConstraintsStudentsSetMaxRoomChangesPerRealDayInIntervalAction;
+	QAction* dataSpaceConstraintsStudentsMaxRoomChangesPerRealDayInIntervalAction;
+	QAction* dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayInIntervalAction;
+	QAction* dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayInIntervalAction;
+
 	QLabel modeLabel;
 	
 //	QSpinBox communicationSpinBox;
@@ -874,6 +884,16 @@ public slots:
 	void dataSpaceConstraintsStudentsMaxBuildingChangesPerRealDayInIntervalAction_triggered();
 	void dataSpaceConstraintsTeacherMaxBuildingChangesPerRealDayInIntervalAction_triggered();
 	void dataSpaceConstraintsTeachersMaxBuildingChangesPerRealDayInIntervalAction_triggered();
+
+	//2024-02-19
+	void dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayInIntervalAction_triggered();
+	void dataSpaceConstraintsStudentsMaxRoomChangesPerDayInIntervalAction_triggered();
+	void dataSpaceConstraintsTeacherMaxRoomChangesPerDayInIntervalAction_triggered();
+	void dataSpaceConstraintsTeachersMaxRoomChangesPerDayInIntervalAction_triggered();
+	void dataSpaceConstraintsStudentsSetMaxRoomChangesPerRealDayInIntervalAction_triggered();
+	void dataSpaceConstraintsStudentsMaxRoomChangesPerRealDayInIntervalAction_triggered();
+	void dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayInIntervalAction_triggered();
+	void dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayInIntervalAction_triggered();
 
 	void helpMoroccoAction_triggered();
 	void helpAlgeriaAction_triggered();

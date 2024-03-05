@@ -2786,15 +2786,23 @@ Versions 6.16.0 - 6.16.1
 	- Minor improvements in some English fields.
 	- Minor code improvements.
 ---------------------------------------------------------------------------------
-Versions 6.17.0 - 6.17.v
+Version 6.17.0
 - Version 6.17.0
 	- Updated to Qt 6.6.2.
 	- Crash bug fixed when spreading the activities evenly over the week (this bug was introduced in FET version 6.12.0, released on 13 November 2023).
 	Reported by GUEFFAZ REDA.
 	- Minor improvement: if the spreading of the activities evenly over the week does not affect the data, there will not be registered a new history state.
 	- Other minor bug fixes and improvements.
-	- Added a new type of constraint: teacher(s) / students (set) max building changes per (real) day in hourly interval (suggested by Vũ Ngọc Thành).
-	Unfortunately, for some files using constraints referring to the building changes the timetable generation speed might decrease with about 2% - 4%.
-	For a file with many constraints referring to building changes we even noticed a 12% speed of the generation decrease, but this is hopefully very rare.
+	- Added a new type of constraint: teacher(s) / students (set) max building changes per (real) day in hourly interval (suggested by Vũ Ngọc Thành
+	and other users in the past). Unfortunately, for some files using constraints referring to the building changes the timetable generation speed might
+	decrease with about 2% - 4%. For a file with many constraints referring to building changes we even noticed a 12% speed of the generation decrease,
+	but this is hopefully very rare.
 	- Added a new type of constraint: teacher(s) / students (set) max hours daily in an hourly interval (suggested by Cyrus Ireri, and in the past by many
 	other users). This constraint type can be used, apart from its primary purpose, to set a dynamic break for the teachers / students.
+---------------------------------------------------------------------------------
+Versions 6.18.0 - 6.18.v
+- Version 6.18.0
+	- Minor bug fixes: if there were no teachers in the file and the user added multiple constraints, one for each teacher, there were recorded
+	useless history points.
+	- Added a new type of constraint: teacher(s) / students (set) max room changes per (real) day in an hourly interval (suggested by giardiniere and
+	other users in the past).

@@ -91,6 +91,15 @@
 #include "modifyconstraintteachermaxbuildingchangesperrealdayinintervalform.h"
 #include "modifyconstraintteachersmaxbuildingchangesperrealdayinintervalform.h"
 
+#include "modifyconstraintstudentssetmaxroomchangesperdayinintervalform.h"
+#include "modifyconstraintstudentsmaxroomchangesperdayinintervalform.h"
+#include "modifyconstraintteachermaxroomchangesperdayinintervalform.h"
+#include "modifyconstraintteachersmaxroomchangesperdayinintervalform.h"
+#include "modifyconstraintstudentssetmaxroomchangesperrealdayinintervalform.h"
+#include "modifyconstraintstudentsmaxroomchangesperrealdayinintervalform.h"
+#include "modifyconstraintteachermaxroomchangesperrealdayinintervalform.h"
+#include "modifyconstraintteachersmaxroomchangesperrealdayinintervalform.h"
+
 #include "lockunlock.h"
 
 #include "advancedfilterform.h"
@@ -992,6 +1001,71 @@ void AllSpaceConstraintsForm::modifyConstraint()
 		case CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL:
 			{
 				ModifyConstraintTeacherMaxBuildingChangesPerRealDayInIntervalForm form(this, (ConstraintTeacherMaxBuildingChangesPerRealDayInInterval*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		////2024-02-19
+		//58
+		case CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_DAY_IN_INTERVAL:
+			{
+				ModifyConstraintStudentsMaxRoomChangesPerDayInIntervalForm form(this, (ConstraintStudentsMaxRoomChangesPerDayInInterval*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//59
+		case CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_DAY_IN_INTERVAL:
+			{
+				ModifyConstraintStudentsSetMaxRoomChangesPerDayInIntervalForm form(this, (ConstraintStudentsSetMaxRoomChangesPerDayInInterval*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//60
+		case CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_DAY_IN_INTERVAL:
+			{
+				ModifyConstraintTeachersMaxRoomChangesPerDayInIntervalForm form(this, (ConstraintTeachersMaxRoomChangesPerDayInInterval*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//61
+		case CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_DAY_IN_INTERVAL:
+			{
+				ModifyConstraintTeacherMaxRoomChangesPerDayInIntervalForm form(this, (ConstraintTeacherMaxRoomChangesPerDayInInterval*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//62
+		case CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_REAL_DAY_IN_INTERVAL:
+			{
+				ModifyConstraintStudentsMaxRoomChangesPerRealDayInIntervalForm form(this, (ConstraintStudentsMaxRoomChangesPerRealDayInInterval*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//63
+		case CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_REAL_DAY_IN_INTERVAL:
+			{
+				ModifyConstraintStudentsSetMaxRoomChangesPerRealDayInIntervalForm form(this, (ConstraintStudentsSetMaxRoomChangesPerRealDayInInterval*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//64
+		case CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_REAL_DAY_IN_INTERVAL:
+			{
+				ModifyConstraintTeachersMaxRoomChangesPerRealDayInIntervalForm form(this, (ConstraintTeachersMaxRoomChangesPerRealDayInInterval*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//65
+		case CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_REAL_DAY_IN_INTERVAL:
+			{
+				ModifyConstraintTeacherMaxRoomChangesPerRealDayInIntervalForm form(this, (ConstraintTeacherMaxRoomChangesPerRealDayInInterval*)ctr);
 				setParentAndOtherThings(&form, this);
 				form.exec();
 				break;

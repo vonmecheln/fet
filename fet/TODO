@@ -8843,3 +8843,78 @@ English translation by Google Translate:
 
 I would like to know if it is possible to establish a maximum number of hours per week for each teacher, so that, if by mistake, when creating activities, I were
 to assign more hours, the system would notify me.
+
+548---------------------------------------------------------
+From GUEFFAZ REDA:
+
+add : pause button generation
+
+549---------------------------------------------------------
+From Cyrus Ireri (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5860.msg32368#msg32368
+
+It would be great if it was a constraint all teachers work in an hourly interval MIN day per week.
+
+550---------------------------------------------------------
+From Volker Dirr:
+
+While playing with the Microsoft compiler I noticed a critical bug:
+
+If you compile (at least in release mode, i didn't tried debug mode),
+then assert() is not executed.
+
+That might be very critical.
+
+For example if you have a function like this:
+
+bool checkFunction(int a){
+  if(a)<5 return false;
+  return true;
+}
+
+And then you call the function like this:
+assert(checkFunction(B));
+
+In that case with is working fine with gcc, but MSV will skip it.
+
+Even more bad is it, if you need the results from assert later, since it
+do/modify something.
+
+---
+
+Liviu Lalescu:
+
+I never do/modify anything in assert, because it is a bad practice.
+Also, in this case I think you get a compiler warning.
+
+We need always to be prepared that assert is not executed.
+
+---
+
+Volker Dirr:
+
+Sadly i don't get a compiler error if i use it later.
+You get only an error if the variable is only used in the assert.
+
+Is it more safe to write on own assert function that will be
+always executed?
+
+---
+
+Liviu Lalescu:
+
+I use "#undef NDEBUG" before "#include <cassert>", so this should make
+sure assert is checked. I am afraid now to make our own assert in FET.
+Maybe I'll add your suggestion in the TODO?
+
+---
+
+Volker Dirr:
+
+yes. only as a TODO. I fear an own assert in generate make slow down too
+much.
+
+Maybe add in the TODO and maybe also add this link, since that might be
+very useful in that function:
+https://en.cppreference.com/w/cpp/utility/source_location

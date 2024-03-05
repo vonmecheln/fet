@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string extracomment="This is the title of the dialog to modify a constraint of this type">Modify teachers max hours daily in hourly interval</string>
+   <string extracomment="This is the title of the dialog to modify a constraint of this type">Modify teachers max hours daily in interval</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="2" column="0">

@@ -368,7 +368,8 @@ void RemoveRedundantForm::wasAccepted()
 	
 	QPlainTextEdit* removedText=new QPlainTextEdit();
 	
-	QString s=tr("The following time constraints will be inactivated (their weight will be made 0%):");
+	QString s=tr("The following %1 time constraints will be inactivated (their weight will be made 0%):",
+	 "%1 is the count of time constraints which will have their weight made 0%").arg(toBeRemovedCombinedList.count());
 	s+="\n\n";
 	for(TimeConstraint* ctr : std::as_const(toBeRemovedCombinedList)){
 		s+=ctr->getDetailedDescription(gt.rules);
@@ -414,7 +415,8 @@ void RemoveRedundantForm::wasAccepted()
 		int cnt=toBeRemovedCombinedList.count();
 		toBeRemovedCombinedList.clear();
 
-		gt.rules.addUndoPoint(tr("Removed the redundant constraints, by making the weight of %1 time constraints equal with 0%.").arg(cnt));
+		gt.rules.addUndoPoint(tr("Removed the redundant constraints, by making the weight of %1 time constraints equal with 0%.",
+		 "%1 is the count of time constraints which had their weight made 0%").arg(cnt));
 
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);

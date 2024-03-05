@@ -55,7 +55,10 @@ AddConstraintTeacherMaxBuildingChangesPerDayInIntervalForm::AddConstraintTeacher
 	for(int i=0; i<gt.rules.nHoursPerDay; i++)
 		endHourComboBox->addItem(gt.rules.hoursOfTheDay[i]);
 	endHourComboBox->addItem(tr("End of day"));
-	endHourComboBox->setCurrentIndex(2);
+	if(gt.rules.nHoursPerDay>=2)
+		endHourComboBox->setCurrentIndex(2);
+	else
+		endHourComboBox->setCurrentIndex(1);
 
 	updateTeachersComboBox();
 }
@@ -175,6 +178,7 @@ void AddConstraintTeacherMaxBuildingChangesPerDayInIntervalForm::addCurrentConst
 
 	QMessageBox::information(this, tr("FET information"), tr("Added %1 space constraints.").arg(gt.rules.teachersList.count()));
 
-	gt.rules.addUndoPoint(tr("Added %1 constraints, one for each teacher:\n\n%2", "%1 is the number of constraints, %2 is their detailed description")
+	if(gt.rules.teachersList.count()>0)
+		gt.rules.addUndoPoint(tr("Added %1 constraints, one for each teacher:\n\n%2", "%1 is the number of constraints, %2 is their detailed description")
 						  .arg(gt.rules.teachersList.count()).arg(ctrs));
 }

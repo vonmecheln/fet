@@ -4247,7 +4247,7 @@ inline bool Generate::checkBuildingChanges(int sbg, int tch, const QList<int>& g
 	//max changes per day
 	int mc;
 	
-	for(int crtCheck=0; crtCheck < 1 + 
+	for(int crtCheck=0; crtCheck < 1 +
 	 (sbg>=0 ? maxBuildingChangesPerDayInIntervalForStudentsPercentages[sbg].count() :
 	 maxBuildingChangesPerDayInIntervalForTeachersPercentages[tch].count()); crtCheck++){
 		int intervalStart;
@@ -4530,10 +4530,10 @@ inline bool Generate::checkRoomChanges(int sbg, int tch, const QList<int>& globa
 
 	if(sbg>=0)
 		assert(minGapsBetweenRoomChangesForStudentsPercentages[sbg]>=0 || maxRoomChangesPerDayForStudentsPercentages[sbg]>=0
-		   || maxRoomChangesPerWeekForStudentsPercentages[sbg]>=0);
+		   || maxRoomChangesPerWeekForStudentsPercentages[sbg]>=0 || maxRoomChangesPerDayInIntervalForStudentsPercentages[sbg].count()>0);
 	if(tch>=0)
 		assert(minGapsBetweenRoomChangesForTeachersPercentages[tch]>=0 || maxRoomChangesPerDayForTeachersPercentages[tch]>=0
-		   || maxRoomChangesPerWeekForTeachersPercentages[tch]>=0);
+		   || maxRoomChangesPerWeekForTeachersPercentages[tch]>=0 || maxRoomChangesPerDayInIntervalForTeachersPercentages[tch].count()>0);
 	
 	//int rooms[MAX_HOURS_PER_DAY], activities[MAX_HOURS_PER_DAY];
 	for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
@@ -4610,99 +4610,127 @@ inline bool Generate::checkRoomChanges(int sbg, int tch, const QList<int>& globa
 
 	//max changes per day
 	int mc;
-	if(sbg>=0){
-		perc=maxRoomChangesPerDayForStudentsPercentages[sbg];
-		mc=maxRoomChangesPerDayForStudentsMaxChanges[sbg];
-	}
-	else{
-		perc=maxRoomChangesPerDayForTeachersPercentages[tch];
-		mc=maxRoomChangesPerDayForTeachersMaxChanges[tch];
-	}
 	
-	if(perc>=0){
-		int crt_room=-1;
-		int n_changes=0;
-		for(int h2=0; h2<gt.rules.nHoursPerDay; h2++)
-			if(rooms[h2]!=-1){
-				if(crt_room!=rooms[h2]){
-					if(crt_room!=-1)
-						n_changes++;
-					crt_room=rooms[h2];
-				}
+	for(int crtCheck=0; crtCheck < 1 +
+	 (sbg>=0 ? maxRoomChangesPerDayInIntervalForStudentsPercentages[sbg].count() :
+	 maxRoomChangesPerDayInIntervalForTeachersPercentages[tch].count()); crtCheck++){
+		int intervalStart;
+		int intervalEnd;
+		
+		if(sbg>=0){
+			if(crtCheck==0){
+				perc=maxRoomChangesPerDayForStudentsPercentages[sbg];
+				mc=maxRoomChangesPerDayForStudentsMaxChanges[sbg];
+				intervalStart=0;
+				intervalEnd=gt.rules.nHoursPerDay;
 			}
-			
-		if(n_changes>mc){ //not OK
-			if(level>=LEVEL_STOP_CONFLICTS_CALCULATION)
-				return false;
-			
-			QList<int> removableActsList;
-			for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
-				if(!(h2>=h && h2<h+act->duration))
-					if(rooms[h2]!=-1 && activities[h2]>=0 && !swappedActivities[activities[h2]] && !(fixedTimeActivity[activities[h2]] && fixedSpaceActivity[activities[h2]]))
-						if(!removableActsList.contains(activities[h2])){
-							removableActsList.append(activities[h2]);
-							assert(!globalConflActivities.contains(activities[h2]));
-							assert(!tmp_list.contains(activities[h2]));
-						}
+			else{
+				perc=maxRoomChangesPerDayInIntervalForStudentsPercentages[sbg].at(crtCheck-1);
+				mc=maxRoomChangesPerDayInIntervalForStudentsMaxChanges[sbg].at(crtCheck-1);
+				intervalStart=maxRoomChangesPerDayInIntervalForStudentsIntervalStart[sbg].at(crtCheck-1);
+				intervalEnd=maxRoomChangesPerDayInIntervalForStudentsIntervalEnd[sbg].at(crtCheck-1);
 			}
-			
-			for(;;){
-				int ai2=-1;
-				QList<int> optimalRemovableActs;
-				if(level==0){
-					int nWrong=INF;
-					for(int a : std::as_const(removableActsList))
-						if(nWrong>triedRemovals(a,c.times[a])){
-							nWrong=triedRemovals(a,c.times[a]);
-						}
-					for(int a : std::as_const(removableActsList))
-						if(nWrong==triedRemovals(a,c.times[a]))
-							optimalRemovableActs.append(a);
-				}
-				else
-					optimalRemovableActs=removableActsList;
-				
-				if(removableActsList.count()>0)
-					assert(optimalRemovableActs.count()>0);
-				
-				if(optimalRemovableActs.count()==0)
-					return false;
-				
-				ai2=optimalRemovableActs.at(rng.intMRG32k3a(optimalRemovableActs.count()));
-				
-				assert(!swappedActivities[ai2]);
-				assert(!(fixedTimeActivity[ai2] && fixedSpaceActivity[ai2]));
-				assert(!globalConflActivities.contains(ai2));
-				assert(!tmp_list.contains(ai2));
-				assert(ai2>=0);
+		}
+		else{
+			if(crtCheck==0){
+				perc=maxRoomChangesPerDayForTeachersPercentages[tch];
+				mc=maxRoomChangesPerDayForTeachersMaxChanges[tch];
+				intervalStart=0;
+				intervalEnd=gt.rules.nHoursPerDay;
+			}
+			else{
+				perc=maxRoomChangesPerDayInIntervalForTeachersPercentages[tch].at(crtCheck-1);
+				mc=maxRoomChangesPerDayInIntervalForTeachersMaxChanges[tch].at(crtCheck-1);
+				intervalStart=maxRoomChangesPerDayInIntervalForTeachersIntervalStart[tch].at(crtCheck-1);
+				intervalEnd=maxRoomChangesPerDayInIntervalForTeachersIntervalEnd[tch].at(crtCheck-1);
+			}
+		}
 
-				tmp_list.append(ai2);
-				
-				int t=removableActsList.removeAll(ai2);
-				assert(t==1);
-				
-				int ha=c.times[ai2]/gt.rules.nDaysPerWeek;
-				int da=gt.rules.internalActivitiesList[ai2].duration;
-				for(int h2=ha; h2<ha+da; h2++){
-					assert(activities[h2]==ai2);
-					assert(rooms[h2]!=-1);
-					rooms[h2]=-1;
-					activities[h2]=-1;
-				}
-				
-				int crt_room=-1;
-				int n_changes=0;
-				for(int h2=0; h2<gt.rules.nHoursPerDay; h2++)
-					if(rooms[h2]!=-1){
-						if(crt_room!=rooms[h2]){
-							if(crt_room!=-1)
-								n_changes++;
-							crt_room=rooms[h2];
-						}
+		if(perc>=0){
+			int crt_room=-1;
+			int n_changes=0;
+			for(int h2=intervalStart; h2<intervalEnd; h2++)
+				if(rooms[h2]!=-1){
+					if(crt_room!=rooms[h2]){
+						if(crt_room!=-1)
+							n_changes++;
+						crt_room=rooms[h2];
 					}
-			
-				if(n_changes<=mc){ //OK
-					break;
+				}
+
+			if(n_changes>mc){ //not OK
+				if(level>=LEVEL_STOP_CONFLICTS_CALCULATION)
+					return false;
+
+				QList<int> removableActsList;
+				for(int h2=intervalStart; h2<intervalEnd; h2++){
+					if(!(h2>=h && h2<h+act->duration))
+						if(rooms[h2]!=-1 && activities[h2]>=0 && !swappedActivities[activities[h2]] && !(fixedTimeActivity[activities[h2]] && fixedSpaceActivity[activities[h2]]))
+							if(!removableActsList.contains(activities[h2])){
+								removableActsList.append(activities[h2]);
+								assert(!globalConflActivities.contains(activities[h2]));
+								assert(!tmp_list.contains(activities[h2]));
+							}
+				}
+
+				for(;;){
+					int ai2=-1;
+					QList<int> optimalRemovableActs;
+					if(level==0){
+						int nWrong=INF;
+						for(int a : std::as_const(removableActsList))
+							if(nWrong>triedRemovals(a,c.times[a])){
+								nWrong=triedRemovals(a,c.times[a]);
+							}
+						for(int a : std::as_const(removableActsList))
+							if(nWrong==triedRemovals(a,c.times[a]))
+								optimalRemovableActs.append(a);
+					}
+					else
+						optimalRemovableActs=removableActsList;
+
+					if(removableActsList.count()>0)
+						assert(optimalRemovableActs.count()>0);
+
+					if(optimalRemovableActs.count()==0)
+						return false;
+
+					ai2=optimalRemovableActs.at(rng.intMRG32k3a(optimalRemovableActs.count()));
+
+					assert(!swappedActivities[ai2]);
+					assert(!(fixedTimeActivity[ai2] && fixedSpaceActivity[ai2]));
+					assert(!globalConflActivities.contains(ai2));
+					assert(!tmp_list.contains(ai2));
+					assert(ai2>=0);
+
+					tmp_list.append(ai2);
+
+					int t=removableActsList.removeAll(ai2);
+					assert(t==1);
+
+					int ha=c.times[ai2]/gt.rules.nDaysPerWeek;
+					int da=gt.rules.internalActivitiesList[ai2].duration;
+					for(int h2=ha; h2<ha+da; h2++){
+						assert(activities[h2]==ai2);
+						assert(rooms[h2]!=-1);
+						rooms[h2]=-1;
+						activities[h2]=-1;
+					}
+
+					int crt_room=-1;
+					int n_changes=0;
+					for(int h2=intervalStart; h2<intervalEnd; h2++)
+						if(rooms[h2]!=-1){
+							if(crt_room!=rooms[h2]){
+								if(crt_room!=-1)
+									n_changes++;
+								crt_room=rooms[h2];
+							}
+						}
+
+					if(n_changes<=mc){ //OK
+						break;
+					}
 				}
 			}
 		}
@@ -4907,7 +4935,7 @@ inline bool Generate::checkBuildingChangesPerRealDay(int sbg, int tch, const QLi
 		return true;
 	}
 
-	for(int crtCheck=0; crtCheck < 1 + 
+	for(int crtCheck=0; crtCheck < 1 +
 	 (sbg>=0 ? maxBuildingChangesPerRealDayInIntervalForStudentsPercentages[sbg].count() :
 	 maxBuildingChangesPerRealDayInIntervalForTeachersPercentages[tch].count()); crtCheck++){
 		double perc;
@@ -5046,11 +5074,11 @@ inline bool Generate::checkRoomChangesPerRealDay(int sbg, int tch, const QList<i
 	assert((sbg==-1 && tch>=0) || (sbg>=0 && tch==-1));
 	if(sbg>=0){
 		assert(sbg<gt.rules.nInternalSubgroups);
-		assert(maxRoomChangesPerRealDayForSubgroupsPercentages[sbg]>=0);
+		assert(maxRoomChangesPerRealDayForSubgroupsPercentages[sbg]>=0 || maxRoomChangesPerRealDayInIntervalForStudentsPercentages[sbg].count()>0);
 	}
 	else if(tch>=0){
 		assert(tch<gt.rules.nInternalTeachers);
-		assert(maxRoomChangesPerRealDayForTeachersPercentages[tch]>=0);
+		assert(maxRoomChangesPerRealDayForTeachersPercentages[tch]>=0 || maxRoomChangesPerRealDayInIntervalForTeachersPercentages[tch].count()>0);
 	}
 
 	//int rooms[2*MAX_HOURS_PER_DAY], activities[2*MAX_HOURS_PER_DAY];
@@ -5092,102 +5120,132 @@ inline bool Generate::checkRoomChangesPerRealDay(int sbg, int tch, const QList<i
 		return true;
 	}
 
-	double perc;
-	int mc;
-	if(tch>=0){
-		perc=maxRoomChangesPerRealDayForTeachersPercentages[tch];
-		mc=maxRoomChangesPerRealDayForTeachersMaxChanges[tch];
-	}
-	else{
-		perc=maxRoomChangesPerRealDayForSubgroupsPercentages[sbg];
-		mc=maxRoomChangesPerRealDayForSubgroupsMaxChanges[sbg];
-	}
+	for(int crtCheck=0; crtCheck < 1 +
+	 (sbg>=0 ? maxRoomChangesPerRealDayInIntervalForStudentsPercentages[sbg].count() :
+	 maxRoomChangesPerRealDayInIntervalForTeachersPercentages[tch].count()); crtCheck++){
+		double perc;
 
-	if(perc>=0){
-		int crt_room=-1;
-		int n_changes=0;
-		for(int h2=0; h2<2*gt.rules.nHoursPerDay; h2++)
-			if(roomsx2[h2]!=-1){
-				if(crt_room!=roomsx2[h2]){
-					if(crt_room!=-1)
-						n_changes++;
-					crt_room=roomsx2[h2];
-				}
+		//max changes per day
+		int mc;
+		
+		int intervalStart;
+		int intervalEnd;
+		
+		if(sbg>=0){
+			if(crtCheck==0){
+				perc=maxRoomChangesPerRealDayForSubgroupsPercentages[sbg];
+				mc=maxRoomChangesPerRealDayForSubgroupsMaxChanges[sbg];
+				intervalStart=0;
+				intervalEnd=2*gt.rules.nHoursPerDay;
 			}
-
-		if(n_changes>mc){ //not OK
-			if(level>=LEVEL_STOP_CONFLICTS_CALCULATION)
-				return false;
-
-			QList<int> removableActsList;
-			for(int h2=0; h2<2*gt.rules.nHoursPerDay; h2++){
-				if(!(h2>=h+(d%2)*gt.rules.nHoursPerDay && h2<h+act->duration+(d%2)*gt.rules.nHoursPerDay))
-					if(roomsx2[h2]!=-1 && activitiesx2[h2]>=0 && !swappedActivities[activitiesx2[h2]] && !(fixedTimeActivity[activitiesx2[h2]]&&fixedSpaceActivity[activitiesx2[h2]]))
-						if(!removableActsList.contains(activitiesx2[h2])){
-							removableActsList.append(activitiesx2[h2]);
-							assert(!globalConflActivities.contains(activitiesx2[h2]));
-							assert(!tmp_list.contains(activitiesx2[h2]));
-						}
+			else{
+				perc=maxRoomChangesPerRealDayInIntervalForStudentsPercentages[sbg].at(crtCheck-1);
+				mc=maxRoomChangesPerRealDayInIntervalForStudentsMaxChanges[sbg].at(crtCheck-1);
+				intervalStart=maxRoomChangesPerRealDayInIntervalForStudentsIntervalStart[sbg].at(crtCheck-1);
+				intervalEnd=maxRoomChangesPerRealDayInIntervalForStudentsIntervalEnd[sbg].at(crtCheck-1);
 			}
+		}
+		else{
+			if(crtCheck==0){
+				perc=maxRoomChangesPerRealDayForTeachersPercentages[tch];
+				mc=maxRoomChangesPerRealDayForTeachersMaxChanges[tch];
+				intervalStart=0;
+				intervalEnd=2*gt.rules.nHoursPerDay;
+			}
+			else{
+				perc=maxRoomChangesPerRealDayInIntervalForTeachersPercentages[tch].at(crtCheck-1);
+				mc=maxRoomChangesPerRealDayInIntervalForTeachersMaxChanges[tch].at(crtCheck-1);
+				intervalStart=maxRoomChangesPerRealDayInIntervalForTeachersIntervalStart[tch].at(crtCheck-1);
+				intervalEnd=maxRoomChangesPerRealDayInIntervalForTeachersIntervalEnd[tch].at(crtCheck-1);
+			}
+		}
 
-			for(;;){
-				int ai2=-1;
-				QList<int> optimalRemovableActs;
-				if(level==0){
-					int nWrong=INF;
-					for(int a : std::as_const(removableActsList))
-						if(nWrong>triedRemovals(a,c.times[a]) ){
-							nWrong=triedRemovals(a,c.times[a]);
-						}
-					for(int a : std::as_const(removableActsList))
-						if(nWrong==triedRemovals(a,c.times[a]))
-							optimalRemovableActs.append(a);
+		if(perc>=0){
+			int crt_room=-1;
+			int n_changes=0;
+			for(int h2=intervalStart; h2<intervalEnd; h2++)
+				if(roomsx2[h2]!=-1){
+					if(crt_room!=roomsx2[h2]){
+						if(crt_room!=-1)
+							n_changes++;
+						crt_room=roomsx2[h2];
+					}
 				}
-				else
-					optimalRemovableActs=removableActsList;
 
-				if(removableActsList.count()>0)
-					assert(optimalRemovableActs.count()>0);
-
-				if(optimalRemovableActs.count()==0)
+			if(n_changes>mc){ //not OK
+				if(level>=LEVEL_STOP_CONFLICTS_CALCULATION)
 					return false;
 
-				ai2=optimalRemovableActs.at(rng.intMRG32k3a(optimalRemovableActs.count()));
-
-				assert(!swappedActivities[ai2]);
-				assert(!(fixedTimeActivity[ai2]&&fixedSpaceActivity[ai2]));
-				assert(!globalConflActivities.contains(ai2));
-				assert(!tmp_list.contains(ai2));
-				assert(ai2>=0);
-
-				tmp_list.append(ai2);
-
-				int t=removableActsList.removeAll(ai2);
-				assert(t==1);
-
-				int ha=c.times[ai2]/gt.rules.nDaysPerWeek;
-				int da=c.times[ai2]%gt.rules.nDaysPerWeek;
-				int dura=gt.rules.internalActivitiesList[ai2].duration;
-				for(int h2=ha; h2<ha+dura; h2++){
-					assert(activitiesx2[h2+(da%2)*gt.rules.nHoursPerDay]==ai2);
-					assert(roomsx2[h2+(da%2)*gt.rules.nHoursPerDay]!=-1);
-					roomsx2[h2+(da%2)*gt.rules.nHoursPerDay]=-1;
-					activitiesx2[h2+(da%2)*gt.rules.nHoursPerDay]=-1;
+				QList<int> removableActsList;
+				for(int h2=intervalStart; h2<intervalEnd; h2++){
+					if(!(h2>=h+(d%2)*gt.rules.nHoursPerDay && h2<h+act->duration+(d%2)*gt.rules.nHoursPerDay))
+						if(roomsx2[h2]!=-1 && activitiesx2[h2]>=0 && !swappedActivities[activitiesx2[h2]] && !(fixedTimeActivity[activitiesx2[h2]]&&fixedSpaceActivity[activitiesx2[h2]]))
+							if(!removableActsList.contains(activitiesx2[h2])){
+								removableActsList.append(activitiesx2[h2]);
+								assert(!globalConflActivities.contains(activitiesx2[h2]));
+								assert(!tmp_list.contains(activitiesx2[h2]));
+							}
 				}
 
-				int crt_room=-1;
-				int n_changes=0;
-				for(int h2=0; h2<2*gt.rules.nHoursPerDay; h2++)
-					if(roomsx2[h2]!=-1){
-						if(crt_room!=roomsx2[h2]){
-							if(crt_room!=-1)
-								n_changes++;
-							crt_room=roomsx2[h2];
-						}
+				for(;;){
+					int ai2=-1;
+					QList<int> optimalRemovableActs;
+					if(level==0){
+						int nWrong=INF;
+						for(int a : std::as_const(removableActsList))
+							if(nWrong>triedRemovals(a,c.times[a]) ){
+								nWrong=triedRemovals(a,c.times[a]);
+							}
+						for(int a : std::as_const(removableActsList))
+							if(nWrong==triedRemovals(a,c.times[a]))
+								optimalRemovableActs.append(a);
+					}
+					else
+						optimalRemovableActs=removableActsList;
+
+					if(removableActsList.count()>0)
+						assert(optimalRemovableActs.count()>0);
+
+					if(optimalRemovableActs.count()==0)
+						return false;
+
+					ai2=optimalRemovableActs.at(rng.intMRG32k3a(optimalRemovableActs.count()));
+
+					assert(!swappedActivities[ai2]);
+					assert(!(fixedTimeActivity[ai2]&&fixedSpaceActivity[ai2]));
+					assert(!globalConflActivities.contains(ai2));
+					assert(!tmp_list.contains(ai2));
+					assert(ai2>=0);
+
+					tmp_list.append(ai2);
+
+					int t=removableActsList.removeAll(ai2);
+					assert(t==1);
+
+					int ha=c.times[ai2]/gt.rules.nDaysPerWeek;
+					int da=c.times[ai2]%gt.rules.nDaysPerWeek;
+					int dura=gt.rules.internalActivitiesList[ai2].duration;
+					for(int h2=ha; h2<ha+dura; h2++){
+						assert(activitiesx2[h2+(da%2)*gt.rules.nHoursPerDay]==ai2);
+						assert(roomsx2[h2+(da%2)*gt.rules.nHoursPerDay]!=-1);
+						roomsx2[h2+(da%2)*gt.rules.nHoursPerDay]=-1;
+						activitiesx2[h2+(da%2)*gt.rules.nHoursPerDay]=-1;
 					}
 
-				if(n_changes<=mc){ //OK
-					break;
+					int crt_room=-1;
+					int n_changes=0;
+					for(int h2=intervalStart; h2<intervalEnd; h2++)
+						if(roomsx2[h2]!=-1){
+							if(crt_room!=roomsx2[h2]){
+								if(crt_room!=-1)
+									n_changes++;
+								crt_room=roomsx2[h2];
+							}
+						}
+
+					if(n_changes<=mc){ //OK
+						break;
+					}
 				}
 			}
 		}
@@ -5791,7 +5849,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 					//room changes for students
 					for(int sbg : std::as_const(act->iSubgroupsList)){
 						if(minGapsBetweenRoomChangesForStudentsPercentages[sbg]>=0 || maxRoomChangesPerDayForStudentsPercentages[sbg]>=0
-						  || maxRoomChangesPerWeekForStudentsPercentages[sbg]>=0){
+						  || maxRoomChangesPerWeekForStudentsPercentages[sbg]>=0 || maxRoomChangesPerDayInIntervalForStudentsPercentages[sbg].count()>0){
 							ok=checkRoomChanges(sbg, -1, globalConflActivities, rm, level, act, ai, d, h, tmp_list);
 							if(!ok)
 								break;
@@ -5804,7 +5862,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 					//room changes for teachers
 					for(int tch : std::as_const(act->iTeachersList)){
 						if(minGapsBetweenRoomChangesForTeachersPercentages[tch]>=0 || maxRoomChangesPerDayForTeachersPercentages[tch]>=0
-						  || maxRoomChangesPerWeekForTeachersPercentages[tch]>=0){
+						  || maxRoomChangesPerWeekForTeachersPercentages[tch]>=0 || maxRoomChangesPerDayInIntervalForTeachersPercentages[tch].count()>0){
 							ok=checkRoomChanges(-1, tch, globalConflActivities, rm, level, act, ai, d, h, tmp_list);
 							if(!ok)
 								break;
@@ -5817,7 +5875,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 					if(gt.rules.mode==MORNINGS_AFTERNOONS){
 						//room changes per real day for students
 						for(int sbg : std::as_const(act->iSubgroupsList)){
-							if(maxRoomChangesPerRealDayForSubgroupsPercentages[sbg]>=0){
+							if(maxRoomChangesPerRealDayForSubgroupsPercentages[sbg]>=0 || maxRoomChangesPerRealDayInIntervalForStudentsPercentages[sbg].count()>0){
 								ok=checkRoomChangesPerRealDay(sbg, -1, globalConflActivities, rm, level, act, ai, d, h, tmp_list);
 								if(!ok)
 									break;
@@ -5829,7 +5887,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 
 						//room changes per real day for teachers
 						for(int tch : std::as_const(act->iTeachersList)){
-							if(maxRoomChangesPerRealDayForTeachersPercentages[tch]>=0){
+							if(maxRoomChangesPerRealDayForTeachersPercentages[tch]>=0 || maxRoomChangesPerRealDayInIntervalForTeachersPercentages[tch].count()>0){
 								ok=checkRoomChangesPerRealDay(-1, tch, globalConflActivities, rm, level, act, ai, d, h, tmp_list);
 								if(!ok)
 									break;
