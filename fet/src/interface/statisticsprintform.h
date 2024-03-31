@@ -95,6 +95,8 @@ private:
 	
 	//QCheckBox* printDetailedTables;	//maybe TODO: only a single number per cell if not detailed
 	QCheckBox* printActivityTags;
+
+	QCheckBox* onlyBlackFonts;
 	
 	QPushButton* pbPrintPreviewSmall;
 	QPushButton* pbPrintPreviewFull;

@@ -472,7 +472,10 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, const QStr
 		tos<<"tr.duration {\n\n}\n\n";
 		//tos<<"tr.line0 {\n  font-size: smaller;\n}\n\n";
 		tos<<"tr.line1 {\n\n}\n\n";
-		tos<<"tr.line2 {\n  font-size: smaller;\n  color: gray;\n}\n\n";
+		if(TIMETABLE_HTML_LEVEL!=7)
+			tos<<"tr.line2 {\n  font-size: smaller;\n  color: gray;\n}\n\n";
+		else
+			tos<<"tr.line2 {\n  font-size: smaller;\n}\n\n";
 		//tos<<"tr.line3, div.line3 {\n  font-size: smaller;\n  color: silver;\n}\n\n";
 	}
 	

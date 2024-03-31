@@ -354,6 +354,17 @@ const int CONSTRAINT_TEACHER_MAX_HOURS_DAILY_IN_INTERVAL							=205;
 const int CONSTRAINT_STUDENTS_MAX_HOURS_DAILY_IN_INTERVAL							=206;
 const int CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY_IN_INTERVAL						=207;
 
+//2024-03-15
+const int CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_PER_REAL_DAY	=208;
+const int CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_PER_REAL_DAY		=209;
+const int CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_PER_REAL_DAY		=210;
+const int CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_PER_REAL_DAY		=211;
+
+const int CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ACTIVITY_TAG_PER_REAL_DAY					=212;
+const int CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_PER_REAL_DAY						=213;
+const int CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ACTIVITY_TAG_PER_REAL_DAY							=214;
+const int CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_PER_REAL_DAY						=215;
+
 class QDataStream;
 
 QString getActivityDetailedDescription(Rules& r, int id);
@@ -5908,6 +5919,382 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
+class ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay)
+
+public:
+	int minGaps;
+
+	QString students;
+	
+	QString firstActivityTag;
+	QString secondActivityTag;
+
+	//internal variables
+
+	QList<int> canonicalSubgroupsList;
+	
+	int _firstActivityTagIndex;
+	int _secondActivityTagIndex;
+
+	ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay();
+
+	ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay(double wp, const QString& _students, int _minGaps, const QString& _firstActivityTag, const QString& _secondActivityTag);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay)
+
+public:
+	int minGaps;
+
+	QString firstActivityTag;
+	QString secondActivityTag;
+
+	//internal variables
+
+	QList<int> canonicalSubgroupsList;
+
+	int _firstActivityTagIndex;
+	int _secondActivityTagIndex;
+
+	ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay();
+
+	ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay(double wp, int _minGaps, const QString& _firstActivityTag, const QString& _secondActivityTag);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDay: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDay)
+
+public:
+	int minGaps;
+
+	QString teacher;
+	
+	QString firstActivityTag;
+	QString secondActivityTag;
+
+	//internal variables
+	
+	QList<int> canonicalTeachersList;
+
+	int _firstActivityTagIndex;
+	int _secondActivityTagIndex;
+
+	ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDay();
+
+	ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDay(double wp, const QString& _teacher, int _minGaps, const QString& _firstActivityTag, const QString& _secondActivityTag);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay)
+
+public:
+	int minGaps;
+
+	QString firstActivityTag;
+	QString secondActivityTag;
+
+	//internal variables
+
+	QList<int> canonicalTeachersList;
+
+	int _firstActivityTagIndex;
+	int _secondActivityTagIndex;
+
+	ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay();
+
+	ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay(double wp, int _minGaps, const QString& _firstActivityTag, const QString& _secondActivityTag);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay)
+
+public:
+	int minGaps;
+
+	QString students;
+	
+	QString activityTag;
+
+	//internal variables
+
+	QList<int> canonicalSubgroupsList;
+	
+	int _activityTagIndex;
+
+	ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay();
+
+	ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay(double wp, const QString& _students, int _minGaps, const QString& _activityTag);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintStudentsMinGapsBetweenActivityTagPerRealDay: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsMinGapsBetweenActivityTagPerRealDay)
+
+public:
+	int minGaps;
+
+	QString activityTag;
+
+	//internal variables
+
+	QList<int> canonicalSubgroupsList;
+
+	int _activityTagIndex;
+
+	ConstraintStudentsMinGapsBetweenActivityTagPerRealDay();
+
+	ConstraintStudentsMinGapsBetweenActivityTagPerRealDay(double wp, int _minGaps, const QString& _activityTag);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintTeacherMinGapsBetweenActivityTagPerRealDay: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeacherMinGapsBetweenActivityTagPerRealDay)
+
+public:
+	int minGaps;
+
+	QString teacher;
+	
+	QString activityTag;
+
+	//internal variables
+	
+	QList<int> canonicalTeachersList;
+
+	int _activityTagIndex;
+
+	ConstraintTeacherMinGapsBetweenActivityTagPerRealDay();
+
+	ConstraintTeacherMinGapsBetweenActivityTagPerRealDay(double wp, const QString& _teacher, int _minGaps, const QString& _activityTag);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintTeachersMinGapsBetweenActivityTagPerRealDay: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeachersMinGapsBetweenActivityTagPerRealDay)
+
+public:
+	int minGaps;
+
+	QString activityTag;
+
+	//internal variables
+
+	QList<int> canonicalTeachersList;
+
+	int _activityTagIndex;
+
+	ConstraintTeachersMinGapsBetweenActivityTagPerRealDay();
+
+	ConstraintTeachersMinGapsBetweenActivityTagPerRealDay(double wp, int _minGaps, const QString& _activityTag);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
 //Begin for mornings-afternoons
 class ConstraintTeachersMaxHoursDailyRealDays: public TimeConstraint{
 	Q_DECLARE_TR_FUNCTIONS(ConstraintTeachersMaxHoursDailyRealDays)
@@ -11000,6 +11387,22 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxHoursDail
 QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxHoursDailyInInterval& tc);
 //207
 QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxHoursDailyInInterval& tc);
+//208
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay& tc);
+//209
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay& tc);
+//210
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDay& tc);
+//211
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay& tc);
+//212
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay& tc);
+//213
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMinGapsBetweenActivityTagPerRealDay& tc);
+//214
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinGapsBetweenActivityTagPerRealDay& tc);
+//215
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinGapsBetweenActivityTagPerRealDay& tc);
 
 //1
 QDataStream& operator>>(QDataStream& stream, ConstraintBasicCompulsoryTime& tc);
@@ -11415,5 +11818,21 @@ QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxHoursDailyInInt
 QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxHoursDailyInInterval& tc);
 //207
 QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxHoursDailyInInterval& tc);
+//208
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay& tc);
+//209
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay& tc);
+//210
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDay& tc);
+//211
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay& tc);
+//212
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay& tc);
+//213
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMinGapsBetweenActivityTagPerRealDay& tc);
+//214
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinGapsBetweenActivityTagPerRealDay& tc);
+//215
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinGapsBetweenActivityTagPerRealDay& tc);
 
 #endif

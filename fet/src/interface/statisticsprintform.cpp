@@ -90,6 +90,8 @@ const QString CBorientationModeState="/orientation-mode-combo-box-state";
 const QString printDetailedTablesState="/print-detailed-tables-check-box-state";
 const QString printActivityTagsState="/print-activity-tags-check-box-state";
 
+const QString printOnlyBlackFontsState="/print-only-black-fonts-check-box-state";
+
 const QString activitiesPaddingState="/activity-padding-spin-box-value-state";
 const QString tablePaddingState="/table-padding-spin-box-value-state";
 const QString fontSizeTableState="/font-size-spin-box-value-state";
@@ -296,6 +298,9 @@ StatisticsPrintForm::StatisticsPrintForm(QWidget *parent): QDialog(parent){
 	
 	printActivityTags=new QCheckBox(tr("Activity tags"));
 	printActivityTags->setChecked(true);
+	
+	onlyBlackFonts=new QCheckBox(tr("Black", "Black font"));
+	onlyBlackFonts->setChecked(false);
 	
 	fontSizeTable=new QSpinBox;
 	fontSizeTable->setRange(4, 20);
@@ -506,6 +511,7 @@ StatisticsPrintForm::StatisticsPrintForm(QWidget *parent): QDialog(parent){
 	optionsBoxGrid->addWidget(CBBreak,5,1);
 //	optionsBoxGrid->addWidget(CBprinterMode,5,0);
 	optionsBoxGrid->addWidget(printActivityTags,6,0);
+	optionsBoxGrid->addWidget(onlyBlackFonts,6,1);
 //	optionsBoxGrid->addWidget(printDetailedTables,6,1);
 
 	optionsBox->setLayout(optionsBoxGrid);
@@ -590,6 +596,10 @@ StatisticsPrintForm::StatisticsPrintForm(QWidget *parent): QDialog(parent){
 	if(settings.contains(this->metaObject()->className()+printActivityTagsState))
 		printActivityTags->setChecked(settings.value(this->metaObject()->className()+printActivityTagsState).toBool());
 	//
+
+	if(settings.contains(this->metaObject()->className()+printOnlyBlackFontsState))
+		onlyBlackFonts->setChecked(settings.value(this->metaObject()->className()+printOnlyBlackFontsState).toBool());
+
 	if(settings.contains(this->metaObject()->className()+activitiesPaddingState))
 		activitiesPadding->setValue(settings.value(this->metaObject()->className()+activitiesPaddingState).toInt());
 	if(settings.contains(this->metaObject()->className()+tablePaddingState))
@@ -629,6 +639,8 @@ StatisticsPrintForm::~StatisticsPrintForm(){
 	//
 //	settings.setValue(this->metaObject()->className()+printDetailedTablesState, printDetailedTables->isChecked());
 	settings.setValue(this->metaObject()->className()+printActivityTagsState, printActivityTags->isChecked());
+
+	settings.setValue(this->metaObject()->className()+printOnlyBlackFontsState, onlyBlackFonts->isChecked());
 	//
 	settings.setValue(this->metaObject()->className()+activitiesPaddingState, activitiesPadding->value());
 	settings.setValue(this->metaObject()->className()+tablePaddingState, tablePadding->value());
@@ -762,26 +774,32 @@ QString StatisticsPrintForm::updateHTMLprintString(bool printAll){
 //	tmp+="        padding-left: 4px;\n";
 //	tmp+="        padding-right: 4px;\n";
 	tmp+="      }\n";
-	tmp+="      th.xAxis {\n";	//need level 2
+	tmp+="      th.xAxis {\n";	//needs level 2
 //	tmp+="        padding-left: 4px;\n";
 //	tmp+="        padding-right: 4px;\n";
 	tmp+="      }\n";
-	tmp+="      th.yAxis {\n";	//need level 2
+	tmp+="      th.yAxis {\n";	//needs level 2
 //	tmp+="        padding-top: 4px;\n";
 //	tmp+="        padding-bottom: 4px;\n";
 	tmp+="      }\n";
-	tmp+="      tr.line0, div.line0 {\n";	//need level 3
+	tmp+="      tr.line0, div.line0 {\n";	//needs level 3
 	tmp+="        /*font-size: 12pt;*/\n";
-	tmp+="        color: gray;\n";
+	if(onlyBlackFonts->isChecked())
+		tmp+="        /*color: gray;*/\n";
+	else
+		tmp+="        color: gray;\n";
 	tmp+="      }\n";
-	tmp+="      tr.line1, div.line1 {\n";	//need level 3
+	tmp+="      tr.line1, div.line1 {\n";	//needs level 3
 	tmp+="        /*font-size: 12pt;*/\n";
 	tmp+="      }\n";
-	tmp+="      tr.line2, div.line2 {\n";	//need level 3
+	tmp+="      tr.line2, div.line2 {\n";	//needs level 3
 	tmp+="        /*font-size: 12pt;*/\n";
-	tmp+="        color: gray;\n";
+	if(onlyBlackFonts->isChecked())
+		tmp+="        /*color: gray;*/\n";
+	else
+		tmp+="        color: gray;\n";
 	tmp+="      }\n";
-	tmp+="      tr.line3, div.line3 {\n";	//need level 3
+	tmp+="      tr.line3, div.line3 {\n";	//needs level 3
 	tmp+="        /*font-size: 12pt;*/\n";
 	tmp+="        color: silver;\n";
 	tmp+="      }\n";

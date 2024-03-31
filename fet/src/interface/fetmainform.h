@@ -67,13 +67,22 @@ private:
 	//
 	QMenu* menuA_teacher_1_time_constraints; //for Mornings-Afternoons mode
 	QMenu* menuA_teacher_2_time_constraints;
+	QMenu* menuA_teacher_3_time_constraints;
 	QMenu* menuAll_teachers_1_time_constraints;
 	QMenu* menuAll_teachers_2_time_constraints;
+	QMenu* menuAll_teachers_3_time_constraints;
 	//
 	QMenu* menuA_students_set_1_time_constraints;
 	QMenu* menuA_students_set_2_time_constraints;
+	QMenu* menuA_students_set_3_time_constraints;
 	QMenu* menuAll_students_1_time_constraints;
 	QMenu* menuAll_students_2_time_constraints;
+	QMenu* menuAll_students_3_time_constraints;
+	
+	QMenu* menuActivities_preferred_times_time_constraints;
+	QMenu* menuActivities_others_1_time_constraints;
+	QMenu* menuActivities_others_2_time_constraints;
+	QMenu* menuActivities_others_3_time_constraints;
 
 	QAction* dataTimeConstraintsActivitiesPreferredTimeSlotsAction;
 	QAction* dataTimeConstraintsActivitiesSameStartingTimeAction;
@@ -129,6 +138,16 @@ private:
 	QAction* dataTimeConstraintsStudentsMinGapsBetweenActivityTagAction;
 	QAction* dataTimeConstraintsTeacherMinGapsBetweenActivityTagAction;
 	QAction* dataTimeConstraintsTeachersMinGapsBetweenActivityTagAction;
+	//2024-03-16
+	QAction* dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDayAction;
+	QAction* dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDayAction;
+	QAction* dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDayAction;
+	QAction* dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDayAction;
+	//
+	QAction* dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagPerRealDayAction;
+	QAction* dataTimeConstraintsStudentsMinGapsBetweenActivityTagPerRealDayAction;
+	QAction* dataTimeConstraintsTeacherMinGapsBetweenActivityTagPerRealDayAction;
+	QAction* dataTimeConstraintsTeachersMinGapsBetweenActivityTagPerRealDayAction;
 	//
 	QAction* dataTimeConstraintsTwoActivitiesConsecutiveAction;
 	QAction* dataTimeConstraintsActivityEndsStudentsDayAction;
@@ -400,7 +419,7 @@ private:
 	bool dataAvailable;
 	bool oldDataAvailable;
 	
-	bool getLastConfirmation(int newMode, int &ntm, int& nsm);
+	bool getLastConfirmation(int newMode, int &ntm, int& nsm, int* nMinMaxDaysModified = nullptr);
 	
 	void createActionsForConstraints();
 	void createMenusOfActionsForConstraints();
@@ -712,6 +731,17 @@ public slots:
 	void dataTimeConstraintsStudentsMinGapsBetweenActivityTagAction_triggered();
 	void dataTimeConstraintsTeacherMinGapsBetweenActivityTagAction_triggered();
 	void dataTimeConstraintsTeachersMinGapsBetweenActivityTagAction_triggered();
+
+	//2024-03-16
+	void dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDayAction_triggered();
+	void dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDayAction_triggered();
+	void dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDayAction_triggered();
+	void dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDayAction_triggered();
+
+	void dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagPerRealDayAction_triggered();
+	void dataTimeConstraintsStudentsMinGapsBetweenActivityTagPerRealDayAction_triggered();
+	void dataTimeConstraintsTeacherMinGapsBetweenActivityTagPerRealDayAction_triggered();
+	void dataTimeConstraintsTeachersMinGapsBetweenActivityTagPerRealDayAction_triggered();
 
 	void dataTimeConstraintsTeacherMaxSpanPerDayAction_triggered();
 	void dataTimeConstraintsTeachersMaxSpanPerDayAction_triggered();

@@ -27,7 +27,7 @@ File generate.cpp
 /*Note 2018-07-28: The code for students max span per day, students early max beginnings at second hour, students/teachers max gaps per day/week,
 students/teachers min/max hours daily can and should be theoretically corrected. But it is very risky. Many examples and variants should be tested.
 See the directory doc/algorithm/2018-07-28-should-improve-theoretically for a better generate file, but which behaves much worse on at least a file,
-examples/Romania/Pedagogic-High-School-Tg-Mures/2007-2008_sem1-d-test-students-max-span-per-day.fet (because of the new code in
+examples/FET-5-official/Romania/Pedagogic-High-School-Tg-Mures/2007-2008_sem1-d-test-students-max-span-per-day.fet (because of the new code in
 students max span per day).*/
 
 /*
@@ -43,11 +43,11 @@ Note: TODO item #398
 Qt documentation recommends the use of QVector instead of QList. I tried on many files and indeed on many of them it improves the speed with even 10%.
 But for some files, among which some from the Economics Faculty of Timisoara, it is much slower, even with 20% slower.
 
-The file examples/Romania/Faculty-Econ-Timisoara-difficult/2007-2008-sem-2/Econ-Timisoara.fet :
+The file examples/FET-5-official/Romania/Faculty-Econ-Timisoara-difficult/2007-2008-sem-2/Econ-Timisoara.fet :
 	starting with random seed X=1234, Y=1234 (ending with random seed X=2061125487, Y=844641195 for FET-5.42.0 official)
 		it takes 18 minutes 51 seconds with QList
 		it takes 23 minutes 53 seconds with QVector
-The file examples/Romania/Faculty-Econ-Timisoara-difficult/2009-2010-sem-1/Econ-v0.8.fet :
+The file examples/FET-5-official/Romania/Faculty-Econ-Timisoara-difficult/2009-2010-sem-1/Econ-v0.8.fet :
 	starting with random seed X=1234, Y=1234 (ending with random seed X=48863282, Y=367996316 for FET-5.42.0 official)
 		it takes 11 minutes 52 seconds with QList
 		it takes 13 minutes 17 seconds with QVector
@@ -6034,7 +6034,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 	if(level>0){
 		for(int q=0; q<listedRooms.count(); q++){
 			//The 'mapr' custom version disables the test below and always does an .append(q). But this
-			//gives a very bad behavior for the file examples/Egypt/Dakahlia/institution-2012-2013.fet
+			//gives a very bad behavior for the file examples/FET-5-official/Egypt/Dakahlia/institution-2012-2013.fet
 			//(usually, the file seems not to solve anymore, and one time it solved very slowly).
 			//Update 2016-08-26: Also mapr for zt3's input is working much better with a code _with_ the test below
 			//(which does not always .append(q) ).
@@ -7762,6 +7762,12 @@ again_if_impossible_activity:
 		bool okteachersmingapsbetweenorderedpairofactivitytags;
 		bool okstudentsmingapsbetweenactivitytag;
 		bool okteachersmingapsbetweenactivitytag;
+
+		//2024-03-15
+		bool okstudentsmingapsbetweenorderedpairofactivitytagsperrealday;
+		bool okteachersmingapsbetweenorderedpairofactivitytagsperrealday;
+		bool okstudentsmingapsbetweenactivitytagperrealday;
+		bool okteachersmingapsbetweenactivitytagperrealday;
 
 		bool okteachersmaxtwoactivitytagsperdayfromn1n2n3;
 		bool okstudentsmaxtwoactivitytagsperdayfromn1n2n3;
@@ -11292,9 +11298,9 @@ impossible_max_two_consecutive_mornings_afternoons:
 				//with activities which were moved forward and back again
 				//being put at the end.
 				//If you do not follow this, you'll get impossible timetables
-				//for the Italian example Italy/2007/difficult/highschool-Ancona.fet or the examples from
-				//South Africa: South-Africa/difficult/Collegiate_Junior_School2.fet or
-				//South-Africa/difficult/Insight_Learning_Centre2.fet, I am not sure which of these 3
+				//for the Italian file examples/FET-5-official/Italy/2007/difficult/highschool-Ancona.fet or the examples from
+				//South Africa: examples/FET-5-official/South-Africa/difficult/Collegiate_Junior_School2.fet or
+				//examples/FET-5-official/South-Africa/difficult/Insight_Learning_Centre2.fet, I am not sure which of these 3
 				
 				if(subgroupActivitiesOfTheDay(st,d2).count()>0 || d2==d)
 					_nOc++;
@@ -11951,9 +11957,9 @@ impossiblestudentsmaxthreeconsecutivedays:
 					//with activities which were moved forward and back again
 					//being put at the end.
 					//If you do not follow this, you'll get impossible timetables
-					//for the Italian example Italy/2007/difficult/highschool-Ancona.fet or the examples from
-					//South Africa: South-Africa/difficult/Collegiate_Junior_School2.fet or
-					//South-Africa/difficult/Insight_Learning_Centre2.fet, I am not sure which of these 3
+					//for the Italian file examples/FET-5-official/Italy/2007/difficult/highschool-Ancona.fet or the examples from
+					//South Africa: examples/FET-5-official/South-Africa/difficult/Collegiate_Junior_School2.fet or
+					//examples/FET-5-official/South-Africa/difficult/Insight_Learning_Centre2.fet, I am not sure which of these 3
 
 					if(subgroupActivitiesOfTheDay(st,2*d2).count()+subgroupActivitiesOfTheDay(st,2*d2+1).count()>0 || d2==d/2)
 						_nOc++;
@@ -12657,9 +12663,9 @@ impossiblestudentsmorningsearlymaxbeginningsatsecondhour:
 					//with activities which were moved forward and back again
 					//being put at the end.
 					//If you do not follow this, you'll get impossible timetables
-					//for the Italian example Italy/2007/difficult/highschool-Ancona.fet or the examples from
-					//South Africa: South-Africa/difficult/Collegiate_Junior_School2.fet or
-					//South-Africa/difficult/Insight_Learning_Centre2.fet, I am not sure which of these 3
+					//for the Italian example file examples/FET-5-official/Italy/2007/difficult/highschool-Ancona.fet or the examples from
+					//South Africa: examples/FET-5-official/South-Africa/difficult/Collegiate_Junior_School2.fet or
+					//examples/FET-5-official/South-Africa/difficult/Insight_Learning_Centre2.fet, I am not sure which of these 3
 
 					if(subgroupActivitiesOfTheDay(sbg,d2).count()>0 || d2==d)
 						_nOc++;
@@ -12849,9 +12855,9 @@ impossiblestudentsmaxafternoonsperweek:
 					//with activities which were moved forward and back again
 					//being put at the end.
 					//If you do not follow this, you'll get impossible timetables
-					//for the Italian example Italy/2007/difficult/highschool-Ancona.fet or the examples from
-					//South Africa: South-Africa/difficult/Collegiate_Junior_School2.fet or
-					//South-Africa/difficult/Insight_Learning_Centre2.fet, I am not sure which of these 3
+					//for the Italian example file examples/FET-5-official/Italy/2007/difficult/highschool-Ancona.fet or the examples from
+					//South Africa: examples/FET-5-official/South-Africa/difficult/Collegiate_Junior_School2.fet or
+					//examples/FET-5-official/South-Africa/difficult/Insight_Learning_Centre2.fet, I am not sure which of these 3
 
 					if(subgroupActivitiesOfTheDay(sbg,d2).count()>0 || d2==d)
 						_nOc++;
@@ -13892,7 +13898,7 @@ impossiblestudentsafternoonintervalmaxdaysperweek:
 
 								//2022-05-21 - Old comment below - bug found with the new locking of activies into days.
 								//The following code is theoretically better, but practically much worse on the file
-								//examples/Romania/Pedagogic-High-School-Tg-Mures/2007-2008_sem1-d-test-students-max-span-per-day.fet
+								//examples/FET-5-official/Romania/Pedagogic-High-School-Tg-Mures/2007-2008_sem1-d-test-students-max-span-per-day.fet
 								//(it slows down with 25%-50% on average - you need to generate more timetables)
 								int firstAvailableHour=-1;
 								for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
@@ -14144,7 +14150,7 @@ impossiblestudentsmaxspanperday:
 									//2022-05-21 - Old comment below - bug found with the new locking of activies into days.
 									//This situation is similar with students max span per day.
 									//The following code is theoretically better, but practically much worse on the file
-									//examples/Romania/Pedagogic-High-School-Tg-Mures/2007-2008_sem1-d-test-students-max-span-per-day.fet
+									//examples/FET-5-official/Romania/Pedagogic-High-School-Tg-Mures/2007-2008_sem1-d-test-students-max-span-per-day.fet
 									//(it slows down with 25%-50% on average - you need to generate more timetables)
 #if 0
 									int dd=d;
@@ -15709,7 +15715,7 @@ impossiblestudentsmaxgapsperrealday:
 									if(d2!=d){
 										int g=limitHoursDaily-newSubgroupsDayNHours(sbg,d2);
 										//TODO: if g lower than 0 make g 0
-										//but with this change, speed decreases for file examples/anonymous/1/2008/anonymous-1-2008.fet
+										//but with this change, speed decreases for file examples/FET-5-official/anonymous/1/2008/anonymous-1-2008.fet
 										g=newSubgroupsDayNFirstGaps(sbg,d2)+newSubgroupsDayNGaps(sbg,d2)-g;
 										if(g>0)
 											rg-=g;
@@ -15773,7 +15779,7 @@ impossiblestudentsmaxgapsperrealday:
 									if(d2!=d){
 										int g=limitHoursDaily-newSubgroupsDayNHours(sbg,d2);
 										//TODO: if g lower than 0 make g 0
-										//but with this change, speed decreases for file examples/anonymous/1/2008/anonymous-1-2008.fet
+										//but with this change, speed decreases for file examples/FET-5-official/anonymous/1/2008/anonymous-1-2008.fet
 										g=newSubgroupsDayNGaps(sbg,d2)-g;
 										if(g>0)
 											rg-=g;
@@ -15817,7 +15823,7 @@ impossiblestudentsmaxgapsperrealday:
 					
 					//OLD COMMENT BELOW: (now things seem theoretically and practically OK)
 					//theoretically, it should be canTakeFromBegin = true all time and ctfAnywhere = true if max gaps per week is not 0.
-					//but practically, I tried these changes and it was 30% slower for a modified german sample (with max gaps per day=1,
+					//but practically, I tried these changes and it was 30% slower for a modified German example (with max gaps per day=1,
 					//12 hours per day, removed subacts. pref. times, max hours daily 6 for students).
 					bool canTakeFromBegin=(subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg]!=0); //-1 or >0
 					bool canTakeFromEnd=true;
@@ -15846,7 +15852,7 @@ impossiblestudentsmaxgapsperrealday:
 										if(d2!=d){
 											int g=limitHoursDaily-sbgDayNHours[d2];
 											//TODO: if g lower than 0 make g 0
-											//but with this change, speed decreases for file examples/anonymous/1/2008/anonymous-1-2008.fet
+											//but with this change, speed decreases for file examples/FET-5-official/anonymous/1/2008/anonymous-1-2008.fet
 											g=sbgDayNFirstGaps[d2]+sbgDayNGaps[d2]-g;
 											if(g>0)
 												rg-=g;
@@ -15910,7 +15916,7 @@ impossiblestudentsmaxgapsperrealday:
 										if(d2!=d){
 											int g=limitHoursDaily-sbgDayNHours[d2];
 											//TODO: if g lower than 0 make g 0
-											//but with this change, speed decreases for file examples/anonymous/1/2008/anonymous-1-2008.fet
+											//but with this change, speed decreases for file examples/FET-5-official/anonymous/1/2008/anonymous-1-2008.fet
 											g=sbgDayNGaps[d2]-g;
 											if(g>0)
 												rg-=g;
@@ -16245,7 +16251,7 @@ impossiblestudentsmaxhoursdailyininterval:
 											int dfet1=d2*2, dfet2=d2*2+1;
 											int g=limitHoursDaily-newSubgroupsDayNHours(sbg,dfet1)-newSubgroupsDayNHours(sbg,dfet2);
 											//TODO: if g lower than 0 make g 0
-											//but with this change, speed decreases for file examples/anonymous/1/2008/anonymous-1-2008.fet
+											//but with this change, speed decreases for file examples/FET-5-official/anonymous/1/2008/anonymous-1-2008.fet
 											g=newSubgroupsDayNFirstGaps(sbg,dfet1)+newSubgroupsDayNGaps(sbg,dfet1)+
 											  newSubgroupsDayNFirstGaps(sbg,dfet2)+newSubgroupsDayNGaps(sbg,dfet2)-g;
 											if(g>0)
@@ -16314,7 +16320,7 @@ impossiblestudentsmaxhoursdailyininterval:
 											int dfet1=d2*2, dfet2=d2*2+1;
 											int g=limitHoursDaily-newSubgroupsDayNHours(sbg,dfet1)-newSubgroupsDayNHours(sbg,dfet2);
 											//TODO: if g lower than 0 make g 0
-											//but with this change, speed decreases for file examples/anonymous/1/2008/anonymous-1-2008.fet
+											//but with this change, speed decreases for file examples-FET-5-official/anonymous/1/2008/anonymous-1-2008.fet
 											g=newSubgroupsDayNGaps(sbg,dfet1)+newSubgroupsDayNGaps(sbg,dfet2)-g;
 											if(g>0)
 												rg-=g;
@@ -16358,7 +16364,7 @@ impossiblestudentsmaxhoursdailyininterval:
 
 						//OLD COMMENT BELOW: (now things seem theoretically and practically OK)
 						//theoretically, it should be canTakeFromBegin = true all time and ctfAnywhere = true if max gaps per week is not 0.
-						//but practically, I tried these changes and it was 30% slower for a modified german sample (with max gaps per day=1,
+						//but practically, I tried these changes and it was 30% slower for a modified German example (with max gaps per day=1,
 						//12 hours per day, removed subacts. pref. times, max hours daily 6 for students).
 						bool canTakeFromBegin=(subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg]!=0); //-1 or >0
 						bool canTakeFromEnd=true;
@@ -16383,7 +16389,7 @@ impossiblestudentsmaxhoursdailyininterval:
 												int dfet1=d2*2, dfet2=d2*2+1;
 												int g=limitHoursDaily-sbgDayNHours[dfet1]-sbgDayNHours[dfet2];
 												//TODO: if g lower than 0 make g 0
-												//but with this change, speed decreases for file examples/anonymous/1/2008/anonymous-1-2008.fet
+												//but with this change, speed decreases for file examples-FET-5-official/anonymous/1/2008/anonymous-1-2008.fet
 												g=sbgDayNFirstGaps[dfet1]+sbgDayNGaps[dfet1]+sbgDayNFirstGaps[dfet2]+sbgDayNGaps[dfet2]-g;
 												if(g>0)
 													rg-=g;
@@ -16452,7 +16458,7 @@ impossiblestudentsmaxhoursdailyininterval:
 												int dfet1=2*d2, dfet2=2*d2+1;
 												int g=limitHoursDaily-sbgDayNHours[dfet1]-sbgDayNHours[dfet2];
 												//TODO: if g lower than 0 make g 0
-												//but with this change, speed decreases for file examples/anonymous/1/2008/anonymous-1-2008.fet
+												//but with this change, speed decreases for file examples/FET-5-official/anonymous/1/2008/anonymous-1-2008.fet
 												g=sbgDayNGaps[dfet1]+sbgDayNGaps[dfet2]-g;
 												if(g>0)
 													rg-=g;
@@ -19307,8 +19313,151 @@ impossiblestudentsmingapsbetweenorderedpairofactivitytags:
 			continue;
 		}
 		
-
 /////////////////////////////////////////////////////////////////////////////////////////////
+
+//2024-03-15
+		//allowed from students min gaps between ordered pair of activity tags per real day
+		
+		okstudentsmingapsbetweenorderedpairofactivitytagsperrealday=true;
+		
+		if(gt.rules.mode==MORNINGS_AFTERNOONS){
+			for(StudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay_item* item : std::as_const(smgbopoatprdListForActivity[ai])){
+				bool first, second;
+				if(act->iActivityTagsSet.contains(item->firstActivityTag))
+					first=true;
+				else
+					first=false;
+
+				if(act->iActivityTagsSet.contains(item->secondActivityTag))
+					second=true;
+				else
+					second=false;
+
+				assert((first && !second) || (!first && second));
+
+				if(first){
+					assert(!second);
+					//after the first activity tag we need to have at least minGaps until the second activity tag, on each real day.
+					for(int sbg : std::as_const(act->iSubgroupsList)){
+						if(item->canonicalSetOfSubgroups.contains(sbg)){
+							if(d%2==1){ //afternoon, use the normal approach
+								for(int startSecond=h+act->duration; startSecond<gt.rules.nHoursPerDay; startSecond++){
+									if(startSecond-h-act->duration >= item->minGaps)
+										break;
+									int ai2=subgroupsTimetable(sbg,d,startSecond);
+									if(ai2>=0){
+										if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->secondActivityTag)){
+											if(!conflActivities[newtime].contains(ai2)){
+												if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+													okstudentsmingapsbetweenorderedpairofactivitytagsperrealday=false;
+													goto impossiblestudentsmingapsbetweenorderedpairofactivitytagsperrealday;
+												}
+												else{
+													conflActivities[newtime].append(ai2);
+													nConflActivities[newtime]++;
+													assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+												}
+											}
+										}
+									}
+								}
+							}
+							else{ //morning, must check to the end of the afternoon
+								for(int startSecond=h+act->duration; startSecond<2*gt.rules.nHoursPerDay; startSecond++){
+									if(startSecond-h-act->duration >= item->minGaps)
+										break;
+									int ai2=subgroupsTimetable(sbg,d+startSecond/gt.rules.nHoursPerDay,startSecond%gt.rules.nHoursPerDay);
+									if(ai2>=0){
+										if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->secondActivityTag)){
+											if(!conflActivities[newtime].contains(ai2)){
+												if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+													okstudentsmingapsbetweenorderedpairofactivitytagsperrealday=false;
+													goto impossiblestudentsmingapsbetweenorderedpairofactivitytagsperrealday;
+												}
+												else{
+													conflActivities[newtime].append(ai2);
+													nConflActivities[newtime]++;
+													assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				else{
+					assert(second);
+					//before the second activity tag we need to have at least minGaps until the first activity tag, on each real day.
+					for(int sbg : std::as_const(act->iSubgroupsList)){
+						if(item->canonicalSetOfSubgroups.contains(sbg)){
+							if(d%2==0){ //morning, use the normal approach
+								for(int endFirst=h-1; endFirst>=0; endFirst--){
+									if(h-1-endFirst >= item->minGaps)
+										break;
+									int ai2=subgroupsTimetable(sbg,d,endFirst);
+									if(ai2>=0){
+										if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->firstActivityTag)){
+											if(!conflActivities[newtime].contains(ai2)){
+												if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+													okstudentsmingapsbetweenorderedpairofactivitytagsperrealday=false;
+													goto impossiblestudentsmingapsbetweenorderedpairofactivitytagsperrealday;
+												}
+												else{
+													conflActivities[newtime].append(ai2);
+													nConflActivities[newtime]++;
+													assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+												}
+											}
+										}
+									}
+								}
+							}
+							else{ //afternoon, must check until the beginning of the morning
+								for(int endFirst=h-1; endFirst>=-gt.rules.nHoursPerDay; endFirst--){
+									if(h-1-endFirst >= item->minGaps)
+										break;
+									int ai2;
+									if(endFirst>=0)
+										ai2=subgroupsTimetable(sbg,d,endFirst);
+									else
+										ai2=subgroupsTimetable(sbg,d-1,endFirst+gt.rules.nHoursPerDay);
+									if(ai2>=0){
+										if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->firstActivityTag)){
+											if(!conflActivities[newtime].contains(ai2)){
+												if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+													okstudentsmingapsbetweenorderedpairofactivitytagsperrealday=false;
+													goto impossiblestudentsmingapsbetweenorderedpairofactivitytagsperrealday;
+												}
+												else{
+													conflActivities[newtime].append(ai2);
+													nConflActivities[newtime]++;
+													assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+impossiblestudentsmingapsbetweenorderedpairofactivitytagsperrealday:
+		if(!okstudentsmingapsbetweenorderedpairofactivitytagsperrealday){
+			if(updateSubgroups || updateTeachers)
+				removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+		
+
+////////////////////////////////////////////////////////////////////////////////////////////
 
 		//allowed from students min gaps between activity tag
 		
@@ -19383,6 +19532,137 @@ impossiblestudentsmingapsbetweenactivitytag:
 			continue;
 		}
 		
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+//2024-03-15
+		//allowed from students min gaps between activity tag per real day
+		
+		okstudentsmingapsbetweenactivitytagperrealday=true;
+		
+		if(gt.rules.mode==MORNINGS_AFTERNOONS){
+			for(StudentsMinGapsBetweenActivityTagPerRealDay_item* item : std::as_const(smgbatprdListForActivity[ai])){
+				bool hasTag;
+				if(act->iActivityTagsSet.contains(item->activityTag))
+					hasTag=true;
+				else
+					hasTag=false;
+
+				if(hasTag){
+					//before and after the activity tag we need to have at least minGaps until the same activity tag, on each day.
+					for(int sbg : std::as_const(act->iSubgroupsList)){
+						if(item->canonicalSetOfSubgroups.contains(sbg)){
+							//after the current activity
+							if(d%2==1){ //afternoon, use the normal approach
+								for(int startSecond=h+act->duration; startSecond<gt.rules.nHoursPerDay; startSecond++){
+									if(startSecond-h-act->duration >= item->minGaps)
+										break;
+									int ai2=subgroupsTimetable(sbg,d,startSecond);
+									if(ai2>=0){
+										if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->activityTag)){
+											if(!conflActivities[newtime].contains(ai2)){
+												if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+													okstudentsmingapsbetweenactivitytagperrealday=false;
+													goto impossiblestudentsmingapsbetweenactivitytagperrealday;
+												}
+												else{
+													conflActivities[newtime].append(ai2);
+													nConflActivities[newtime]++;
+													assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+												}
+											}
+										}
+									}
+								}
+							}
+							else{ //morning, must check to the end of the afternoon
+								for(int startSecond=h+act->duration; startSecond<2*gt.rules.nHoursPerDay; startSecond++){
+									if(startSecond-h-act->duration >= item->minGaps)
+										break;
+									int ai2=subgroupsTimetable(sbg,d+startSecond/gt.rules.nHoursPerDay,startSecond%gt.rules.nHoursPerDay);
+									if(ai2>=0){
+										if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->activityTag)){
+											if(!conflActivities[newtime].contains(ai2)){
+												if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+													okstudentsmingapsbetweenactivitytagperrealday=false;
+													goto impossiblestudentsmingapsbetweenactivitytagperrealday;
+												}
+												else{
+													conflActivities[newtime].append(ai2);
+													nConflActivities[newtime]++;
+													assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+												}
+											}
+										}
+									}
+								}
+							}
+
+							//before the current activity
+							if(d%2==0){ //morning, use the normal approach
+								for(int startSecond=h-1; startSecond>=0; startSecond--){
+									if(h-startSecond > item->minGaps)
+										break;
+									int ai2=subgroupsTimetable(sbg,d,startSecond);
+									if(ai2>=0){
+										if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->activityTag)){
+											if(!conflActivities[newtime].contains(ai2)){
+												if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+													okstudentsmingapsbetweenactivitytagperrealday=false;
+													goto impossiblestudentsmingapsbetweenactivitytagperrealday;
+												}
+												else{
+													conflActivities[newtime].append(ai2);
+													nConflActivities[newtime]++;
+													assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+												}
+											}
+										}
+									}
+								}
+							}
+							else{ //afternoon, must check until the beginning of the morning
+								for(int startSecond=h-1; startSecond>=-gt.rules.nHoursPerDay; startSecond--){
+									if(h-startSecond > item->minGaps)
+										break;
+									int ai2;
+									if(startSecond>=0)
+										ai2=subgroupsTimetable(sbg,d,startSecond);
+									else
+										ai2=subgroupsTimetable(sbg,d-1,startSecond+gt.rules.nHoursPerDay);
+									if(ai2>=0){
+										if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->activityTag)){
+											if(!conflActivities[newtime].contains(ai2)){
+												if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+													okstudentsmingapsbetweenactivitytagperrealday=false;
+													goto impossiblestudentsmingapsbetweenactivitytagperrealday;
+												}
+												else{
+													conflActivities[newtime].append(ai2);
+													nConflActivities[newtime]++;
+													assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+impossiblestudentsmingapsbetweenactivitytagperrealday:
+		if(!okstudentsmingapsbetweenactivitytagperrealday){
+			if(updateSubgroups || updateTeachers)
+				removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+		
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -19410,9 +19690,9 @@ impossiblestudentsmingapsbetweenactivitytag:
 				//with activities which were moved forward and back again
 				//being put at the end.
 				//If you do not follow this, you'll get impossible timetables
-				//for the Italian example Italy/2007/difficult/highschool-Ancona.fet or the examples from
-				//South Africa: South-Africa/difficult/Collegiate_Junior_School2.fet or
-				//South-Africa/difficult/Insight_Learning_Centre2.fet, I am not sure which of these 3
+				//for the Italian example file examples/FET-5-official/Italy/2007/difficult/highschool-Ancona.fet or the examples from
+				//South Africa: examples/FET-5-official/South-Africa/difficult/Collegiate_Junior_School2.fet or
+				//examples/FET-5-official/South-Africa/difficult/Insight_Learning_Centre2.fet, I am not sure which of these 3
 				
 				if(teacherActivitiesOfTheDay(tch,d2).count()>0 || d2==d)
 					_nOc++;
@@ -20068,9 +20348,9 @@ impossibleteachersmaxthreeconsecutivedays:
 					//with activities which were moved forward and back again
 					//being put at the end.
 					//If you do not follow this, you'll get impossible timetables
-					//for the Italian example Italy/2007/difficult/highschool-Ancona.fet or the examples from
-					//South Africa: South-Africa/difficult/Collegiate_Junior_School2.fet or
-					//South-Africa/difficult/Insight_Learning_Centre2.fet, I am not sure which of these 3
+					//for the Italian example file examples/FET-5-official/Italy/2007/difficult/highschool-Ancona.fet or the examples from
+					//South Africa: examples/FET-5-official/South-Africa/difficult/Collegiate_Junior_School2.fet or
+					//examples/FET-5-official/South-Africa/difficult/Insight_Learning_Centre2.fet, I am not sure which of these 3
 
 					if(teacherActivitiesOfTheDay(tch,2*d2).count()+teacherActivitiesOfTheDay(tch,2*d2+1).count()>0 || d2==d/2)
 						_nOc++;
@@ -21093,9 +21373,9 @@ impossibleteachersmorningsafternoonsearlymaxbeginningsatsecondhour:
 					//with activities which were moved forward and back again
 					//being put at the end.
 					//If you do not follow this, you'll get impossible timetables
-					//for the Italian example Italy/2007/difficult/highschool-Ancona.fet or the examples from
-					//South Africa: South-Africa/difficult/Collegiate_Junior_School2.fet or
-					//South-Africa/difficult/Insight_Learning_Centre2.fet, I am not sure which of these 3
+					//for the Italian example file examples/FET-5-official/Italy/2007/difficult/highschool-Ancona.fet or the examples from
+					//South Africa: examples/FET-5-official/South-Africa/difficult/Collegiate_Junior_School2.fet or
+					//examples/FET-5-official/South-Africa/difficult/Insight_Learning_Centre2.fet, I am not sure which of these 3
 
 					if(teacherActivitiesOfTheDay(tch,d2).count()>0 || d2==d)
 						_nOc++;
@@ -21285,9 +21565,9 @@ impossibleteachermaxafternoonsperweek:
 					//with activities which were moved forward and back again
 					//being put at the end.
 					//If you do not follow this, you'll get impossible timetables
-					//for the Italian example Italy/2007/difficult/highschool-Ancona.fet or the examples from
-					//South Africa: South-Africa/difficult/Collegiate_Junior_School2.fet or
-					//South-Africa/difficult/Insight_Learning_Centre2.fet, I am not sure which of these 3
+					//for the Italian example file examples/FET-5-official/Italy/2007/difficult/highschool-Ancona.fet or the examples from
+					//South Africa: examples/FET-5-official/South-Africa/difficult/Collegiate_Junior_School2.fet or
+					//examples/FET-5-official/South-Africa/difficult/Insight_Learning_Centre2.fet, I am not sure which of these 3
 
 					if(teacherActivitiesOfTheDay(tch,d2).count()>0 || d2==d)
 						_nOc++;
@@ -23776,7 +24056,7 @@ impossibleteachersmaxgapsperrealday:
 										int dfet1=d2*2, dfet2=d2*2+1;
 										int g=limitHoursDaily-newTeachersDayNHours(tch,dfet1)-newTeachersDayNHours(tch,dfet2);
 										//TODO: if g lower than 0 make g 0
-										//but with this change, speed decreases for file examples/anonymous/1/2008/anonymous-1-2008.fet
+										//but with this change, speed decreases for file examples/FET-5-official/anonymous/1/2008/anonymous-1-2008.fet
 										g=newTeachersDayNGaps(tch,dfet1)+newTeachersDayNGaps(tch,dfet2)-g;
 										if(g>0)
 											rg-=g;
@@ -23865,7 +24145,7 @@ impossibleteachersmaxgapsperrealday:
 											int dfet1=d2*2, dfet2=d2*2+1;
 											int g=limitHoursDaily-tchDayNHours[dfet1]-tchDayNHours[dfet2];
 											//TODO: if g lower than 0 make g 0
-											//but with this change, speed decreases for file examples/anonymous/1/2008/anonymous-1-2008.fet
+											//but with this change, speed decreases for file examples/FET-5-official/anonymous/1/2008/anonymous-1-2008.fet
 											g=tchDayNGaps[dfet1]+tchDayNGaps[dfet2]-g;
 											if(g>0)
 												rg-=g;
@@ -24067,7 +24347,7 @@ impossibleteachersmaxhoursdailyrealdays:
 									if(d2!=d){
 										int g=limitHoursDaily-newTeachersDayNHours(tch,d2);
 										//TODO: if g lower than 0 make g 0
-										//but with this change, speed decreases for file examples/anonymous/1/2008/anonymous-1-2008.fet
+										//but with this change, speed decreases for file examples/FET-5-official/anonymous/1/2008/anonymous-1-2008.fet
 										g=newTeachersDayNGaps(tch,d2)-g;
 										if(g>0)
 											rg-=g;
@@ -24139,7 +24419,7 @@ impossibleteachersmaxhoursdailyrealdays:
 										if(d2!=d){
 											int g=limitHoursDaily-tchDayNHours[d2];
 											//TODO: if g lower than 0 make g 0
-											//but with this change, speed decreases for file examples/anonymous/1/2008/anonymous-1-2008.fet
+											//but with this change, speed decreases for file examples/FET-5-official/anonymous/1/2008/anonymous-1-2008.fet
 											g=tchDayNGaps[d2]-g;
 											if(g>0)
 												rg-=g;
@@ -24287,7 +24567,7 @@ impossibleteachersmaxhoursdailyrealdays:
 									if(d2!=d){
 										int g=limitHoursDaily-newTeachersDayNHours(tch,d2);
 										//TODO: if g lower than 0 make g 0
-										//but with this change, speed decreases for file examples/anonymous/1/2008/anonymous-1-2008.fet
+										//but with this change, speed decreases for file examples/FET-5-official/anonymous/1/2008/anonymous-1-2008.fet
 										g=newTeachersDayNGaps(tch,d2)-g;
 										if(g>0)
 											rg-=g;
@@ -24383,7 +24663,7 @@ impossibleteachersmaxhoursdailyrealdays:
 										if(d2!=d){
 											int g=limitHoursDaily-tchDayNHours[d2];
 											//TODO: if g lower than 0 make g 0
-											//but with this change, speed decreases for file examples/anonymous/1/2008/anonymous-1-2008.fet
+											//but with this change, speed decreases for file examples/FET-5-official/anonymous/1/2008/anonymous-1-2008.fet
 											g=tchDayNGaps[d2]-g;
 											if(g>0)
 												rg-=g;
@@ -28396,6 +28676,152 @@ impossibleteachersmingapsbetweenorderedpairofactivitytags:
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
+//2024-03-15
+		//allowed from teachers min gaps between ordered pair of activity tags per real day
+		
+		okteachersmingapsbetweenorderedpairofactivitytagsperrealday=true;
+
+		if(gt.rules.mode==MORNINGS_AFTERNOONS){
+			for(TeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay_item* item : std::as_const(tmgbopoatprdListForActivity[ai])){
+				bool first, second;
+				if(act->iActivityTagsSet.contains(item->firstActivityTag))
+					first=true;
+				else
+					first=false;
+
+				if(act->iActivityTagsSet.contains(item->secondActivityTag))
+					second=true;
+				else
+					second=false;
+
+				assert((first && !second) || (!first && second));
+
+				if(first){
+					assert(!second);
+					//after the first activity tag we need to have at least minGaps until the second activity tag, on each real day.
+
+					for(int tch : std::as_const(act->iTeachersList)){
+						if(item->canonicalSetOfTeachers.contains(tch)){
+							if(d%2==1){ //afternoon, use the normal approach
+								for(int startSecond=h+act->duration; startSecond<gt.rules.nHoursPerDay; startSecond++){
+									if(startSecond-h-act->duration >= item->minGaps)
+										break;
+									int ai2=teachersTimetable(tch,d,startSecond);
+									if(ai2>=0){
+										if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->secondActivityTag)){
+											if(!conflActivities[newtime].contains(ai2)){
+												if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+													okteachersmingapsbetweenorderedpairofactivitytagsperrealday=false;
+													goto impossibleteachersmingapsbetweenorderedpairofactivitytagsperrealday;
+												}
+												else{
+													conflActivities[newtime].append(ai2);
+													nConflActivities[newtime]++;
+													assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+												}
+											}
+										}
+									}
+								}
+							}
+							else{ //morning, must check to the end of the afternoon
+								for(int startSecond=h+act->duration; startSecond<2*gt.rules.nHoursPerDay; startSecond++){
+									if(startSecond-h-act->duration >= item->minGaps)
+										break;
+									int ai2=teachersTimetable(tch,d+startSecond/gt.rules.nHoursPerDay,startSecond%gt.rules.nHoursPerDay);
+									if(ai2>=0){
+										if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->secondActivityTag)){
+											if(!conflActivities[newtime].contains(ai2)){
+												if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+													okteachersmingapsbetweenorderedpairofactivitytagsperrealday=false;
+													goto impossibleteachersmingapsbetweenorderedpairofactivitytagsperrealday;
+												}
+												else{
+													conflActivities[newtime].append(ai2);
+													nConflActivities[newtime]++;
+													assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				else{
+					assert(second);
+					//before the second activity tag we need to have at least minGaps until the first activity tag, on each real day.
+
+					for(int tch : std::as_const(act->iTeachersList)){
+						if(item->canonicalSetOfTeachers.contains(tch)){
+							if(d%2==0){ //morning, use the normal approach
+								for(int endFirst=h-1; endFirst>=0; endFirst--){
+									if(h-1-endFirst >= item->minGaps)
+										break;
+									int ai2=teachersTimetable(tch,d,endFirst);
+									if(ai2>=0){
+										if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->firstActivityTag)){
+											if(!conflActivities[newtime].contains(ai2)){
+												if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+													okteachersmingapsbetweenorderedpairofactivitytagsperrealday=false;
+													goto impossibleteachersmingapsbetweenorderedpairofactivitytagsperrealday;
+												}
+												else{
+													conflActivities[newtime].append(ai2);
+													nConflActivities[newtime]++;
+													assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+												}
+											}
+										}
+									}
+								}
+							}
+							else{ //afternoon, must check until the beginning of the morning
+								for(int endFirst=h-1; endFirst>=-gt.rules.nHoursPerDay; endFirst--){
+									if(h-1-endFirst >= item->minGaps)
+										break;
+									int ai2;
+									if(endFirst>=0)
+										ai2=teachersTimetable(tch,d,endFirst);
+									else
+										ai2=teachersTimetable(tch,d-1,endFirst+gt.rules.nHoursPerDay);
+									if(ai2>=0){
+										if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->firstActivityTag)){
+											if(!conflActivities[newtime].contains(ai2)){
+												if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+													okteachersmingapsbetweenorderedpairofactivitytagsperrealday=false;
+													goto impossibleteachersmingapsbetweenorderedpairofactivitytagsperrealday;
+												}
+												else{
+													conflActivities[newtime].append(ai2);
+													nConflActivities[newtime]++;
+													assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+impossibleteachersmingapsbetweenorderedpairofactivitytagsperrealday:
+		if(!okteachersmingapsbetweenorderedpairofactivitytagsperrealday){
+			if(updateSubgroups || updateTeachers)
+				removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+		
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
 		//allowed from teachers min gaps between activity tag
 		
 		okteachersmingapsbetweenactivitytag=true;
@@ -28461,6 +28887,137 @@ impossibleteachersmingapsbetweenorderedpairofactivitytags:
 		
 impossibleteachersmingapsbetweenactivitytag:
 		if(!okteachersmingapsbetweenactivitytag){
+			if(updateSubgroups || updateTeachers)
+				removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+		
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+//2024-03-15
+		//allowed from teachers min gaps between activity tag per real day
+		
+		okteachersmingapsbetweenactivitytagperrealday=true;
+		
+		if(gt.rules.mode==MORNINGS_AFTERNOONS){
+			for(TeachersMinGapsBetweenActivityTagPerRealDay_item* item : std::as_const(tmgbatprdListForActivity[ai])){
+				bool hasTag;
+				if(act->iActivityTagsSet.contains(item->activityTag))
+					hasTag=true;
+				else
+					hasTag=false;
+
+				if(hasTag){
+					//before and after the activity tag we need to have at least minGaps until the same activity tag, on each day.
+					for(int tch : std::as_const(act->iTeachersList)){
+						if(item->canonicalSetOfTeachers.contains(tch)){
+							//after the current activity
+							if(d%2==1){ //afternoon, use the normal approach
+								for(int startSecond=h+act->duration; startSecond<gt.rules.nHoursPerDay; startSecond++){
+									if(startSecond-h-act->duration >= item->minGaps)
+										break;
+									int ai2=teachersTimetable(tch,d,startSecond);
+									if(ai2>=0){
+										if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->activityTag)){
+											if(!conflActivities[newtime].contains(ai2)){
+												if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+													okteachersmingapsbetweenactivitytagperrealday=false;
+													goto impossibleteachersmingapsbetweenactivitytagperrealday;
+												}
+												else{
+													conflActivities[newtime].append(ai2);
+													nConflActivities[newtime]++;
+													assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+												}
+											}
+										}
+									}
+								}
+							}
+							else{ //morning, must check to the end of the afternoon
+								for(int startSecond=h+act->duration; startSecond<2*gt.rules.nHoursPerDay; startSecond++){
+									if(startSecond-h-act->duration >= item->minGaps)
+										break;
+									int ai2=teachersTimetable(tch,d+startSecond/gt.rules.nHoursPerDay,startSecond%gt.rules.nHoursPerDay);
+									if(ai2>=0){
+										if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->activityTag)){
+											if(!conflActivities[newtime].contains(ai2)){
+												if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+													okteachersmingapsbetweenactivitytagperrealday=false;
+													goto impossibleteachersmingapsbetweenactivitytagperrealday;
+												}
+												else{
+													conflActivities[newtime].append(ai2);
+													nConflActivities[newtime]++;
+													assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+												}
+											}
+										}
+									}
+								}
+							}
+
+							//before the current activity
+							if(d%2==0){ //morning, use the normal approach
+								for(int startSecond=h-1; startSecond>=0; startSecond--){
+									if(h-startSecond > item->minGaps)
+										break;
+									int ai2=teachersTimetable(tch,d,startSecond);
+									if(ai2>=0){
+										if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->activityTag)){
+											if(!conflActivities[newtime].contains(ai2)){
+												if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+													okteachersmingapsbetweenactivitytagperrealday=false;
+													goto impossibleteachersmingapsbetweenactivitytagperrealday;
+												}
+												else{
+													conflActivities[newtime].append(ai2);
+													nConflActivities[newtime]++;
+													assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+												}
+											}
+										}
+									}
+								}
+							}
+							else{ //afternoon, must check until the beginning of the morning
+								for(int startSecond=h-1; startSecond>=-gt.rules.nHoursPerDay; startSecond--){
+									if(h-startSecond > item->minGaps)
+										break;
+									int ai2;
+									if(startSecond>=0)
+										ai2=teachersTimetable(tch,d,startSecond);
+									else
+										ai2=teachersTimetable(tch,d-1,startSecond+gt.rules.nHoursPerDay);
+									if(ai2>=0){
+										if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->activityTag)){
+											if(!conflActivities[newtime].contains(ai2)){
+												if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+													okteachersmingapsbetweenactivitytagperrealday=false;
+													goto impossibleteachersmingapsbetweenactivitytagperrealday;
+												}
+												else{
+													conflActivities[newtime].append(ai2);
+													nConflActivities[newtime]++;
+													assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+impossibleteachersmingapsbetweenactivitytagperrealday:
+		if(!okteachersmingapsbetweenactivitytagperrealday){
 			if(updateSubgroups || updateTeachers)
 				removeAiFromNewTimetable(ai, act, d, h);
 			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);

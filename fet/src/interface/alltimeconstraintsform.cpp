@@ -122,6 +122,16 @@
 #include "modifyconstraintteachermingapsbetweenactivitytagform.h"
 #include "modifyconstraintteachersmingapsbetweenactivitytagform.h"
 
+#include "modifyconstraintstudentssetmingapsbetweenorderedpairofactivitytagsperrealdayform.h"
+#include "modifyconstraintstudentsmingapsbetweenorderedpairofactivitytagsperrealdayform.h"
+#include "modifyconstraintteachermingapsbetweenorderedpairofactivitytagsperrealdayform.h"
+#include "modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsperrealdayform.h"
+
+#include "modifyconstraintstudentssetmingapsbetweenactivitytagperrealdayform.h"
+#include "modifyconstraintstudentsmingapsbetweenactivitytagperrealdayform.h"
+#include "modifyconstraintteachermingapsbetweenactivitytagperrealdayform.h"
+#include "modifyconstraintteachersmingapsbetweenactivitytagperrealdayform.h"
+
 #include "modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform.h"
 #include "modifyconstraintstudentsactivitytagmaxhourscontinuouslyform.h"
 
@@ -2417,6 +2427,71 @@ void AllTimeConstraintsForm::modifyConstraint()
 		case CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY_IN_INTERVAL:
 			{
 				ModifyConstraintStudentsSetMaxHoursDailyInIntervalForm form(this, (ConstraintStudentsSetMaxHoursDailyInInterval*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//2024-03-16
+		//208
+		case CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_PER_REAL_DAY:
+			{
+				ModifyConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDayForm form(this, (ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//209
+		case CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_PER_REAL_DAY:
+			{
+				ModifyConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDayForm form(this, (ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//210
+		case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_PER_REAL_DAY:
+			{
+				ModifyConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDayForm form(this, (ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDay*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//211
+		case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_PER_REAL_DAY:
+			{
+				ModifyConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDayForm form(this, (ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//212
+		case CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ACTIVITY_TAG_PER_REAL_DAY:
+			{
+				ModifyConstraintStudentsSetMinGapsBetweenActivityTagPerRealDayForm form(this, (ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//213
+		case CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_PER_REAL_DAY:
+			{
+				ModifyConstraintStudentsMinGapsBetweenActivityTagPerRealDayForm form(this, (ConstraintStudentsMinGapsBetweenActivityTagPerRealDay*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//214
+		case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ACTIVITY_TAG_PER_REAL_DAY:
+			{
+				ModifyConstraintTeacherMinGapsBetweenActivityTagPerRealDayForm form(this, (ConstraintTeacherMinGapsBetweenActivityTagPerRealDay*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//215
+		case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_PER_REAL_DAY:
+			{
+				ModifyConstraintTeachersMinGapsBetweenActivityTagPerRealDayForm form(this, (ConstraintTeachersMinGapsBetweenActivityTagPerRealDay*)ctr);
 				setParentAndOtherThings(&form, this);
 				form.exec();
 				break;

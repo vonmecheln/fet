@@ -23,6 +23,7 @@
 #include "longtextmessagebox.h"
 
 #include <tuple>
+#include <algorithm>
 
 #include <QMap>
 
@@ -62,51 +63,58 @@ void AddRemoveMultipleConstraintsActivitiesOccupyMaxDifferentRoomsForm::addAllCo
 	 QMessageBox::Yes | QMessageBox::Cancel);
 	if(ret==QMessageBox::Cancel)
 		return;
-		
+	
 	int cnt=0;
-	QMap<std::tuple<QString, QStringList, QStringList, QStringList>, QList<int>> mp;
+	QMap<std::tuple<QString, QStringList, QStringList, QStringList>, QList<int>> mp; //It could have been a QHash, but it seems there is no hash function for tuple.
 	
 	QStringList descr;
+
+	if(sameSubjectCheckBox->isChecked())
+		descr.append(tr("same subject"));
+	if(sameActivityTagsCheckBox->isChecked())
+		descr.append(tr("same activity tags"));
+	if(sameStudentsCheckBox->isChecked())
+		descr.append(tr("same students"));
+	if(sameTeachersCheckBox->isChecked())
+		descr.append(tr("same teachers"));
 	
 	for(Activity* act : std::as_const(gt.rules.activitiesList)){
 		QString sbj=QString();
-		if(sameSubjectCheckBox->isChecked()){
+		if(sameSubjectCheckBox->isChecked())
 			sbj=act->subjectName;
-			descr.append(tr("same subject"));
-		}
 
 		QStringList atl=QStringList();
-		if(sameActivityTagsCheckBox->isChecked()){
+		if(sameActivityTagsCheckBox->isChecked())
 			atl=act->activityTagsNames;
-			descr.append(tr("same activity tags"));
-		}
 	
 		QStringList stl=QStringList();
-		if(sameStudentsCheckBox->isChecked()){
+		if(sameStudentsCheckBox->isChecked())
 			stl=act->studentsNames;
-			descr.append(tr("same students"));
-		}
 	
 		QStringList tnl=QStringList();
-		if(sameTeachersCheckBox->isChecked()){
+		if(sameTeachersCheckBox->isChecked())
 			tnl=act->teachersNames;
-			descr.append(tr("same teachers"));
-		}
 	
 		QList<int> tl=mp[std::make_tuple(sbj, atl, stl, tnl)];
 		tl.append(act->id);
 		mp[std::make_tuple(sbj, atl, stl, tnl)]=tl;
 	}
 	
+	QList<QList<int>> aal;
+	
 	QMap<std::tuple<QString, QStringList, QStringList, QStringList>, QList<int>>::const_iterator it=mp.constBegin();
 	while(it!=mp.constEnd()){
 		QList<int> tl=it.value();
-		if(tl.count()>=2){
-			ConstraintActivitiesOccupyMaxDifferentRooms* tc=new ConstraintActivitiesOccupyMaxDifferentRooms(100.0, tl, maxDifferentRoomsSpinBox->value());
-			gt.rules.addSpaceConstraint(tc);
-			cnt++;
-		}
+		if(tl.count()>=2)
+			aal.append(tl);
 		it++;
+	}
+	
+	std::stable_sort(aal.begin(), aal.end());
+	for(const QList<int>& tl : std::as_const(aal)){
+		ConstraintActivitiesOccupyMaxDifferentRooms* tc=new ConstraintActivitiesOccupyMaxDifferentRooms(100.0, tl, maxDifferentRoomsSpinBox->value());
+		gt.rules.addSpaceConstraint(tc);
+		cnt++;
 	}
 
 	QMessageBox::information(this, tr("FET information"), tr("There were added %1 space constraints").arg(cnt));

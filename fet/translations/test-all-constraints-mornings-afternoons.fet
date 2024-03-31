@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="6.18.0">
+<fet version="6.19.0">
 
 <Mode>Mornings_Afternoons</Mode>
 
@@ -2611,6 +2611,70 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintStudentsMaxHoursDailyInInterval>
+<ConstraintTeacherMinGapsBetweenActivityTagPerRealDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t2</Teacher>
+	<Activity_Tag>at2</Activity_Tag>
+	<MinGaps>1</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMinGapsBetweenActivityTagPerRealDay>
+<ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t2</Teacher>
+	<First_Activity_Tag>at2</First_Activity_Tag>
+	<Second_Activity_Tag>at1</Second_Activity_Tag>
+	<MinGaps>3</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDay>
+<ConstraintTeachersMinGapsBetweenActivityTagPerRealDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>at1</Activity_Tag>
+	<MinGaps>1</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMinGapsBetweenActivityTagPerRealDay>
+<ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<First_Activity_Tag>at2</First_Activity_Tag>
+	<Second_Activity_Tag>at1</Second_Activity_Tag>
+	<MinGaps>1</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay>
+<ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y2</Students>
+	<Activity_Tag>at1</Activity_Tag>
+	<MinGaps>3</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay>
+<ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y2</Students>
+	<First_Activity_Tag>at2</First_Activity_Tag>
+	<Second_Activity_Tag>at1</Second_Activity_Tag>
+	<MinGaps>2</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay>
+<ConstraintStudentsMinGapsBetweenActivityTagPerRealDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>at1</Activity_Tag>
+	<MinGaps>1</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMinGapsBetweenActivityTagPerRealDay>
+<ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<First_Activity_Tag>at2</First_Activity_Tag>
+	<Second_Activity_Tag>at1</Second_Activity_Tag>
+	<MinGaps>3</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay>
 </Time_Constraints_List>
 
 <Space_Constraints_List>

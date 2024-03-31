@@ -1077,6 +1077,40 @@ Matrix1D<QList<TeachersMinGapsBetweenActivityTag_item*>> tmgbatListForActivity;
 
 //bool computeTeachersMinGapsBetweenActivityTag(QWidget* parent);
 
+
+//2024-03-15 - Constraint students (set) min gaps between ordered pair of activity tags per real day
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+std::list<StudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay_item> smgbopoatprdList;
+Matrix1D<QList<StudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay_item*>> smgbopoatprdListForActivity;
+
+//bool computeStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay(QWidget* parent);
+
+//2024-03-15 - Constraint teacher(s) min gaps between ordered pair of activity tags per real day
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+std::list<TeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay_item> tmgbopoatprdList;
+Matrix1D<QList<TeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay_item*>> tmgbopoatprdListForActivity;
+
+//bool computeTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay(QWidget* parent);
+
+//2024-03-15 - Constraint students (set) min gaps between activity tag per real day
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+std::list<StudentsMinGapsBetweenActivityTagPerRealDay_item> smgbatprdList;
+Matrix1D<QList<StudentsMinGapsBetweenActivityTagPerRealDay_item*>> smgbatprdListForActivity;
+
+//bool computeStudentsMinGapsBetweenActivityTagPerRealDay(QWidget* parent);
+
+//2024-03-15 - Constraint teacher(s) min gaps between activity tag per real day
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+std::list<TeachersMinGapsBetweenActivityTagPerRealDay_item> tmgbatprdList;
+Matrix1D<QList<TeachersMinGapsBetweenActivityTagPerRealDay_item*>> tmgbatprdListForActivity;
+
+//bool computeTeachersMinGapsBetweenActivityTagPerRealDay(QWidget* parent);
+
+
 //2012-04-29 - Constraint activities occupy max different rooms
 
 //We need the references to the elements to be valid, so we need this to be a std::list
@@ -1838,6 +1872,16 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	//2021-12-15
 	tmgbatListForActivity.resize(gt.rules.nInternalActivities);
 
+	//2024-03-15
+	smgbopoatprdListForActivity.resize(gt.rules.nInternalActivities);
+	//2024-03-15
+	tmgbopoatprdListForActivity.resize(gt.rules.nInternalActivities);
+
+	//2024-03-15
+	smgbatprdListForActivity.resize(gt.rules.nInternalActivities);
+	//2024-03-15
+	tmgbatprdListForActivity.resize(gt.rules.nInternalActivities);
+
 	//2012-04-29
 	aomdrListForActivity.resize(gt.rules.nInternalActivities);
 
@@ -2327,6 +2371,29 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 		return false;
 	////////////////
 
+	//2024-03-15
+	t=computeStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay(parent);
+	if(!t)
+		return false;
+	////////////////
+
+	//2024-03-15
+	t=computeTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay(parent);
+	if(!t)
+		return false;
+
+	//2024-03-15
+	t=computeStudentsMinGapsBetweenActivityTagPerRealDay(parent);
+	if(!t)
+		return false;
+	////////////////
+
+	//2024-03-15
+	t=computeTeachersMinGapsBetweenActivityTagPerRealDay(parent);
+	if(!t)
+		return false;
+	////////////////
+
 	//2012-04-29
 	t=computeActivitiesOccupyMaxDifferentRooms(parent);
 	if(!t)
@@ -2581,7 +2648,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 		 " generating on a crafted file derived from a German example (the exact file name is %2). If after an initial successful generation"
 		 " you only lock the activities in space (but not also in time), FET seems to cycle indefinitely when trying to generate again on the newly obtained file.")
 		 .arg(tl.count())
-		 .arg("fet-v.v.v/examples/Germany/secondary-school-1/test-virtual-rooms-1/German-test-virtual-rooms-1.fet");
+		 .arg("fet-v.v.v/examples/FET-5-official/Germany/secondary-school-1/test-virtual-rooms-1/German-test-virtual-rooms-1.fet");
 		s+="\n\n";
 		s+=GeneratePreTranslate::tr("Are you sure you want to continue?");
 		s+="\n\n";
@@ -16570,7 +16637,7 @@ bool computeActivitiesMaxInATerm(QWidget* parent)
 }
 
 //for terms
-//20220-05-19
+//2022-05-19
 bool computeActivitiesMinInATerm(QWidget* parent)
 {
 	bool ok=true;
@@ -17287,6 +17354,612 @@ bool computeTeachersMinGapsBetweenActivityTag(QWidget* parent)
 
 				if(hasTag){
 					tmgbatListForActivity[ai].append(p_item);
+				}
+				else{
+					//do nothing
+				}
+			}
+		}
+	}
+	
+	return ok;
+}
+
+//2024-03-15
+bool computeStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay(QWidget* parent)
+{
+	bool ok=true;
+	
+	smgbopoatprdList.clear();
+	for(int i=0; i<gt.rules.nInternalActivities; i++)
+		smgbopoatprdListForActivity[i].clear();
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_PER_REAL_DAY){
+			ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay* cn=(ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay*)gt.rules.internalTimeConstraintsList[i];
+
+			if(cn->weightPercentage!=100.0){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'students set min gaps between ordered pair of activity tags per real day'"
+				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			
+			if(cn->canonicalSubgroupsList.isEmpty())
+				continue;
+			
+			StudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay_item item;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.canonicalSetOfSubgroups=QSet<int>(cn->canonicalSubgroupsList.constBegin(), cn->canonicalSubgroupsList.constEnd());
+#else
+			item.canonicalSetOfSubgroups=cn->canonicalSubgroupsList.toSet();
+#endif
+			item.minGaps=cn->minGaps;
+			item.firstActivityTag=cn->_firstActivityTagIndex;
+			item.secondActivityTag=cn->_secondActivityTagIndex;
+			
+			smgbopoatprdList.push_back(item);
+			//StudentsMinGapsBetweenOrderedPairOfActivityTags_item* p_item=&smgbopoatList[smgbopoatList.count()-1];
+			StudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay_item* p_item=&smgbopoatprdList.back();
+			
+			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+				Activity* act=&gt.rules.internalActivitiesList[ai];
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+				QSet<int> studentsSet(act->iSubgroupsList.constBegin(), act->iSubgroupsList.constEnd());
+#else
+				QSet<int> studentsSet=act->iSubgroupsList.toSet();
+#endif
+				studentsSet.intersect(item.canonicalSetOfSubgroups);
+				if(studentsSet.isEmpty())
+					continue;
+			
+				bool first, second;
+			
+				if(act->iActivityTagsSet.contains(cn->_firstActivityTagIndex))
+					first=true;
+				else
+					first=false;
+
+				if(act->iActivityTagsSet.contains(cn->_secondActivityTagIndex))
+					second=true;
+				else
+					second=false;
+					
+				if(first && second){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize, because the activity with id %1 has both the first and the second activity tags"
+					 " of the constraint of type 'students set min %2 gaps between ordered pair of activity tags per real day %3 and %4'. Please"
+					 " correct and try again.").arg(act->id).arg(cn->minGaps).arg(cn->firstActivityTag).arg(cn->secondActivityTag)
+					 ,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+					
+					if(t==0)
+						return false;
+				}
+				else if(first || second){
+					smgbopoatprdListForActivity[ai].append(p_item);
+				}
+				else{
+					//do nothing
+				}
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_PER_REAL_DAY){
+			ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay* cn=(ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay*)gt.rules.internalTimeConstraintsList[i];
+
+			if(cn->weightPercentage!=100.0){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'students min gaps between ordered pair of activity tags per real day'"
+				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			
+			if(cn->canonicalSubgroupsList.isEmpty())
+				continue;
+
+			StudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay_item item;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.canonicalSetOfSubgroups=QSet<int>(cn->canonicalSubgroupsList.constBegin(), cn->canonicalSubgroupsList.constEnd());
+#else
+			item.canonicalSetOfSubgroups=cn->canonicalSubgroupsList.toSet();
+#endif
+			item.minGaps=cn->minGaps;
+			item.firstActivityTag=cn->_firstActivityTagIndex;
+			item.secondActivityTag=cn->_secondActivityTagIndex;
+			
+			smgbopoatprdList.push_back(item);
+			//StudentsMinGapsBetweenOrderedPairOfActivityTags_item* p_item=&smgbopoatList[smgbopoatList.count()-1];
+			StudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay_item* p_item=&smgbopoatprdList.back();
+			
+			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+				Activity* act=&gt.rules.internalActivitiesList[ai];
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+				QSet<int> studentsSet(act->iSubgroupsList.constBegin(), act->iSubgroupsList.constEnd());
+#else
+				QSet<int> studentsSet=act->iSubgroupsList.toSet();
+#endif
+				studentsSet.intersect(item.canonicalSetOfSubgroups);
+				if(studentsSet.isEmpty())
+					continue;
+
+				bool first, second;
+			
+				if(act->iActivityTagsSet.contains(cn->_firstActivityTagIndex))
+					first=true;
+				else
+					first=false;
+
+				if(act->iActivityTagsSet.contains(cn->_secondActivityTagIndex))
+					second=true;
+				else
+					second=false;
+					
+				if(first && second){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize, because the activity with id %1 has both the first and the second activity tags"
+					 " of the constraint of type 'students min %2 gaps between ordered pair of activity tags per real day %3 and %4'. Please"
+					 " correct and try again.").arg(act->id).arg(cn->minGaps).arg(cn->firstActivityTag).arg(cn->secondActivityTag)
+					 ,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+					
+					if(t==0)
+						return false;
+				}
+				else if(first || second){
+					smgbopoatprdListForActivity[ai].append(p_item);
+				}
+				else{
+					//do nothing
+				}
+			}
+		}
+	}
+	
+	return ok;
+}
+
+//2024-03-15
+bool computeStudentsMinGapsBetweenActivityTagPerRealDay(QWidget* parent)
+{
+	bool ok=true;
+	
+	smgbatprdList.clear();
+	for(int i=0; i<gt.rules.nInternalActivities; i++)
+		smgbatprdListForActivity[i].clear();
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ACTIVITY_TAG_PER_REAL_DAY){
+			ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay* cn=(ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay*)gt.rules.internalTimeConstraintsList[i];
+
+			if(cn->weightPercentage!=100.0){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'students set min gaps between activity tag per real day'"
+				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			
+			if(cn->canonicalSubgroupsList.isEmpty())
+				continue;
+			
+			StudentsMinGapsBetweenActivityTagPerRealDay_item item;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.canonicalSetOfSubgroups=QSet<int>(cn->canonicalSubgroupsList.constBegin(), cn->canonicalSubgroupsList.constEnd());
+#else
+			item.canonicalSetOfSubgroups=cn->canonicalSubgroupsList.toSet();
+#endif
+			item.minGaps=cn->minGaps;
+			item.activityTag=cn->_activityTagIndex;
+			
+			smgbatprdList.push_back(item);
+			StudentsMinGapsBetweenActivityTagPerRealDay_item* p_item=&smgbatprdList.back();
+			
+			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+				Activity* act=&gt.rules.internalActivitiesList[ai];
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+				QSet<int> studentsSet(act->iSubgroupsList.constBegin(), act->iSubgroupsList.constEnd());
+#else
+				QSet<int> studentsSet=act->iSubgroupsList.toSet();
+#endif
+				studentsSet.intersect(item.canonicalSetOfSubgroups);
+				if(studentsSet.isEmpty())
+					continue;
+			
+				bool hasTag;
+			
+				if(act->iActivityTagsSet.contains(cn->_activityTagIndex))
+					hasTag=true;
+				else
+					hasTag=false;
+
+				if(hasTag){
+					smgbatprdListForActivity[ai].append(p_item);
+				}
+				else{
+					//do nothing
+				}
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_PER_REAL_DAY){
+			ConstraintStudentsMinGapsBetweenActivityTagPerRealDay* cn=(ConstraintStudentsMinGapsBetweenActivityTagPerRealDay*)gt.rules.internalTimeConstraintsList[i];
+
+			if(cn->weightPercentage!=100.0){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'students min gaps between activity tag per real day'"
+				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			
+			if(cn->canonicalSubgroupsList.isEmpty())
+				continue;
+
+			StudentsMinGapsBetweenActivityTagPerRealDay_item item;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.canonicalSetOfSubgroups=QSet<int>(cn->canonicalSubgroupsList.constBegin(), cn->canonicalSubgroupsList.constEnd());
+#else
+			item.canonicalSetOfSubgroups=cn->canonicalSubgroupsList.toSet();
+#endif
+			item.minGaps=cn->minGaps;
+			item.activityTag=cn->_activityTagIndex;
+			
+			smgbatprdList.push_back(item);
+			StudentsMinGapsBetweenActivityTagPerRealDay_item* p_item=&smgbatprdList.back();
+			
+			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+				Activity* act=&gt.rules.internalActivitiesList[ai];
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+				QSet<int> studentsSet(act->iSubgroupsList.constBegin(), act->iSubgroupsList.constEnd());
+#else
+				QSet<int> studentsSet=act->iSubgroupsList.toSet();
+#endif
+				studentsSet.intersect(item.canonicalSetOfSubgroups);
+				if(studentsSet.isEmpty())
+					continue;
+
+				bool hasTag;
+			
+				if(act->iActivityTagsSet.contains(cn->_activityTagIndex))
+					hasTag=true;
+				else
+					hasTag=false;
+
+				if(hasTag){
+					smgbatprdListForActivity[ai].append(p_item);
+				}
+				else{
+					//do nothing
+				}
+			}
+		}
+	}
+	
+	return ok;
+}
+
+//2024-03-15
+bool computeTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay(QWidget* parent)
+{
+	bool ok=true;
+	
+	tmgbopoatprdList.clear();
+	for(int i=0; i<gt.rules.nInternalActivities; i++)
+		tmgbopoatprdListForActivity[i].clear();
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_PER_REAL_DAY){
+			ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDay* cn=(ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDay*)gt.rules.internalTimeConstraintsList[i];
+
+			if(cn->weightPercentage!=100.0){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'teacher min gaps between ordered pair of activity tags per real day'"
+				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+
+			if(cn->canonicalTeachersList.isEmpty())
+				continue;
+			assert(cn->canonicalTeachersList.count()==1);
+			
+			TeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay_item item;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.canonicalSetOfTeachers=QSet<int>(cn->canonicalTeachersList.constBegin(), cn->canonicalTeachersList.constEnd());
+#else
+			item.canonicalSetOfTeachers=cn->canonicalTeachersList.toSet();
+#endif
+			item.minGaps=cn->minGaps;
+			item.firstActivityTag=cn->_firstActivityTagIndex;
+			item.secondActivityTag=cn->_secondActivityTagIndex;
+			
+			tmgbopoatprdList.push_back(item);
+			//TeachersMinGapsBetweenOrderedPairOfActivityTags_item* p_item=&tmgbopoatList[tmgbopoatList.count()-1];
+			TeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay_item* p_item=&tmgbopoatprdList.back();
+			
+			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+				Activity* act=&gt.rules.internalActivitiesList[ai];
+
+				if(!act->iTeachersList.contains(cn->canonicalTeachersList.at(0)))
+					continue;
+			
+				bool first, second;
+			
+				if(act->iActivityTagsSet.contains(cn->_firstActivityTagIndex))
+					first=true;
+				else
+					first=false;
+
+				if(act->iActivityTagsSet.contains(cn->_secondActivityTagIndex))
+					second=true;
+				else
+					second=false;
+					
+				if(first && second){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize, because the activity with id %1 has both the first and the second activity tags"
+					 " of the constraint of type 'teacher min %2 gaps between ordered pair of activity tags per real day %3 and %4'. Please"
+					 " correct and try again.").arg(act->id).arg(cn->minGaps).arg(cn->firstActivityTag).arg(cn->secondActivityTag)
+					 ,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+					
+					if(t==0)
+						return false;
+				}
+				else if(first || second){
+					tmgbopoatprdListForActivity[ai].append(p_item);
+				}
+				else{
+					//do nothing
+				}
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_PER_REAL_DAY){
+			ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay* cn=(ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay*)gt.rules.internalTimeConstraintsList[i];
+
+			if(cn->weightPercentage!=100.0){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'teachers min gaps between ordered pair of activity tags per real day'"
+				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			
+			if(cn->canonicalTeachersList.isEmpty())
+				continue;
+
+			TeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay_item item;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.canonicalSetOfTeachers=QSet<int>(cn->canonicalTeachersList.constBegin(), cn->canonicalTeachersList.constEnd());
+#else
+			item.canonicalSetOfTeachers=cn->canonicalTeachersList.toSet();
+#endif
+			item.minGaps=cn->minGaps;
+			item.firstActivityTag=cn->_firstActivityTagIndex;
+			item.secondActivityTag=cn->_secondActivityTagIndex;
+			
+			tmgbopoatprdList.push_back(item);
+			//TeachersMinGapsBetweenOrderedPairOfActivityTags_item* p_item=&tmgbopoatList[tmgbopoatList.count()-1];
+			TeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay_item* p_item=&tmgbopoatprdList.back();
+			
+			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+				Activity* act=&gt.rules.internalActivitiesList[ai];
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+				QSet<int> teachersSet(act->iTeachersList.constBegin(), act->iTeachersList.constEnd());
+#else
+				QSet<int> teachersSet=act->iTeachersList.toSet();
+#endif
+				teachersSet.intersect(item.canonicalSetOfTeachers);
+				if(teachersSet.isEmpty())
+					continue;
+
+				bool first, second;
+			
+				if(act->iActivityTagsSet.contains(cn->_firstActivityTagIndex))
+					first=true;
+				else
+					first=false;
+
+				if(act->iActivityTagsSet.contains(cn->_secondActivityTagIndex))
+					second=true;
+				else
+					second=false;
+					
+				if(first && second){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize, because the activity with id %1 has both the first and the second activity tags"
+					 " of the constraint of type 'teachers min %2 gaps between ordered pair of activity tags per real day %3 and %4'. Please"
+					 " correct and try again.").arg(act->id).arg(cn->minGaps).arg(cn->firstActivityTag).arg(cn->secondActivityTag)
+					 ,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+					
+					if(t==0)
+						return false;
+				}
+				else if(first || second){
+					tmgbopoatprdListForActivity[ai].append(p_item);
+				}
+				else{
+					//do nothing
+				}
+			}
+		}
+	}
+	
+	return ok;
+}
+
+//2024-03-15
+bool computeTeachersMinGapsBetweenActivityTagPerRealDay(QWidget* parent)
+{
+	bool ok=true;
+	
+	tmgbatprdList.clear();
+	for(int i=0; i<gt.rules.nInternalActivities; i++)
+		tmgbatprdListForActivity[i].clear();
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ACTIVITY_TAG_PER_REAL_DAY){
+			ConstraintTeacherMinGapsBetweenActivityTagPerRealDay* cn=(ConstraintTeacherMinGapsBetweenActivityTagPerRealDay*)gt.rules.internalTimeConstraintsList[i];
+
+			if(cn->weightPercentage!=100.0){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'teacher min gaps between activity tag per real day'"
+				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+
+			if(cn->canonicalTeachersList.isEmpty())
+				continue;
+			assert(cn->canonicalTeachersList.count()==1);
+			
+			TeachersMinGapsBetweenActivityTagPerRealDay_item item;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.canonicalSetOfTeachers=QSet<int>(cn->canonicalTeachersList.constBegin(), cn->canonicalTeachersList.constEnd());
+#else
+			item.canonicalSetOfTeachers=cn->canonicalTeachersList.toSet();
+#endif
+			item.minGaps=cn->minGaps;
+			item.activityTag=cn->_activityTagIndex;
+			
+			tmgbatprdList.push_back(item);
+			TeachersMinGapsBetweenActivityTagPerRealDay_item* p_item=&tmgbatprdList.back();
+			
+			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+				Activity* act=&gt.rules.internalActivitiesList[ai];
+
+				if(!act->iTeachersList.contains(cn->canonicalTeachersList.at(0)))
+					continue;
+			
+				bool hasTag;
+			
+				if(act->iActivityTagsSet.contains(cn->_activityTagIndex))
+					hasTag=true;
+				else
+					hasTag=false;
+
+				if(hasTag){
+					tmgbatprdListForActivity[ai].append(p_item);
+				}
+				else{
+					//do nothing
+				}
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_PER_REAL_DAY){
+			ConstraintTeachersMinGapsBetweenActivityTagPerRealDay* cn=(ConstraintTeachersMinGapsBetweenActivityTagPerRealDay*)gt.rules.internalTimeConstraintsList[i];
+
+			if(cn->weightPercentage!=100.0){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'teachers min gaps between activity tag per real day'"
+				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			
+			if(cn->canonicalTeachersList.isEmpty())
+				continue;
+
+			TeachersMinGapsBetweenActivityTagPerRealDay_item item;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.canonicalSetOfTeachers=QSet<int>(cn->canonicalTeachersList.constBegin(), cn->canonicalTeachersList.constEnd());
+#else
+			item.canonicalSetOfTeachers=cn->canonicalTeachersList.toSet();
+#endif
+			item.minGaps=cn->minGaps;
+			item.activityTag=cn->_activityTagIndex;
+			
+			tmgbatprdList.push_back(item);
+			TeachersMinGapsBetweenActivityTagPerRealDay_item* p_item=&tmgbatprdList.back();
+			
+			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+				Activity* act=&gt.rules.internalActivitiesList[ai];
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+				QSet<int> teachersSet(act->iTeachersList.constBegin(), act->iTeachersList.constEnd());
+#else
+				QSet<int> teachersSet=act->iTeachersList.toSet();
+#endif
+				teachersSet.intersect(item.canonicalSetOfTeachers);
+				if(teachersSet.isEmpty())
+					continue;
+
+				bool hasTag;
+			
+				if(act->iActivityTagsSet.contains(cn->_activityTagIndex))
+					hasTag=true;
+				else
+					hasTag=false;
+
+				if(hasTag){
+					tmgbatprdListForActivity[ai].append(p_item);
 				}
 				else{
 					//do nothing
@@ -20128,6 +20801,7 @@ void computeMustComputeTimetableSubgroups()
 			  satmhdListForSubgroup[sbg].count()>0 ||
 			  //no need to consider constraints students (set) min gaps between ordered pair of activity tags
 			  //or min gaps between activity tag
+			  //2024-03-15: or these two above per real day
 
 			  //mornings-afternoons
 			  subgroupsMaxGapsPerRealDayPercentage[sbg]>=0 ||
@@ -20212,6 +20886,7 @@ void computeMustComputeTimetableTeachers()
 			  tatmhdListForTeacher[tch].count()>0 ||
 			  //no need to consider constraints teacher(s) min gaps between ordered pair of activity tags
 			  //or min gaps between activity tag
+			  //2024-03-15: or these two above per real day
 
 			  //mornings-afternoons
 			  teachersMaxGapsPerRealDayPercentage[tch]>=0 ||

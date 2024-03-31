@@ -897,6 +897,16 @@ private:
 	TimeConstraint* readTeacherMinGapsBetweenActivityTag(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readTeachersMinGapsBetweenActivityTag(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
+	TimeConstraint* readStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readStudentsSetMinGapsBetweenActivityTagPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsMinGapsBetweenActivityTagPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeacherMinGapsBetweenActivityTagPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMinGapsBetweenActivityTagPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
 	TimeConstraint* readActivityPreferredTime(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog,
 		bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPreferredStartingTime);
 	TimeConstraint* readActivityPreferredStartingTime(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog,

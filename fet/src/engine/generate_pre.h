@@ -1281,6 +1281,70 @@ extern Matrix1D<QList<TeachersMinGapsBetweenActivityTag_item*>> tmgbatListForAct
 
 bool computeTeachersMinGapsBetweenActivityTag(QWidget* parent);
 
+
+//2024-03-15 - Constraint students (set) min gaps between ordered pair of activity tags per real day
+class StudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay_item{
+public:
+	//double weight; -> must be 100.0%
+	QSet<int> canonicalSetOfSubgroups;
+	int minGaps;
+	int firstActivityTag;
+	int secondActivityTag;
+};
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+extern std::list<StudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay_item> smgbopoatprdList;
+extern Matrix1D<QList<StudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay_item*>> smgbopoatprdListForActivity;
+
+bool computeStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay(QWidget* parent);
+
+//2024-03-15 - Constraint teacher(s) min gaps between ordered pair of activity tags per real day
+class TeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay_item{
+public:
+	//double weight; -> must be 100.0%
+	QSet<int> canonicalSetOfTeachers;
+	int minGaps;
+	int firstActivityTag;
+	int secondActivityTag;
+};
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+extern std::list<TeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay_item> tmgbopoatprdList;
+extern Matrix1D<QList<TeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay_item*>> tmgbopoatprdListForActivity;
+
+bool computeTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay(QWidget* parent);
+
+//2024-03-15 - Constraint students (set) min gaps between activity tag per real day
+class StudentsMinGapsBetweenActivityTagPerRealDay_item{
+public:
+	//double weight; -> must be 100.0%
+	QSet<int> canonicalSetOfSubgroups;
+	int minGaps;
+	int activityTag;
+};
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+extern std::list<StudentsMinGapsBetweenActivityTagPerRealDay_item> smgbatprdList;
+extern Matrix1D<QList<StudentsMinGapsBetweenActivityTagPerRealDay_item*>> smgbatprdListForActivity;
+
+bool computeStudentsMinGapsBetweenActivityTagPerRealDay(QWidget* parent);
+
+//2024-03-15 - Constraint teacher(s) min gaps between activity tag per real day
+class TeachersMinGapsBetweenActivityTagPerRealDay_item{
+public:
+	//double weight; -> must be 100.0%
+	QSet<int> canonicalSetOfTeachers;
+	int minGaps;
+	int activityTag;
+};
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+extern std::list<TeachersMinGapsBetweenActivityTagPerRealDay_item> tmgbatprdList;
+extern Matrix1D<QList<TeachersMinGapsBetweenActivityTagPerRealDay_item*>> tmgbatprdListForActivity;
+
+bool computeTeachersMinGapsBetweenActivityTagPerRealDay(QWidget* parent);
+
+
 //2012-04-29 - Constraint activities occupy max different rooms
 class ActivitiesOccupyMaxDifferentRooms_item
 {

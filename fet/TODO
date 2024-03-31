@@ -7890,7 +7890,7 @@ Timetable view is better and fast.
 However, it should be a note saying that deactivating an activity could have certain limitations that might prevent the timetable from being generated correctly
 because some related constraints.
 
-499---------------------------------------------------------
+499-----DONE ordered pair, in FET-6.19.0, 15 March 2024-----
 From victorcapel (on forum):
 
 https://lalescu.ro/liviu/fet/forum/index.php?topic=5561.0
@@ -8951,3 +8951,105 @@ I am looking for correct implementation for centralized exam schedule where some
 
 I know that i can create representative rooms for this big room but how to also satisfy that these "dummy" rooms created for the big room will not exceed
 the total capacity of the real room ?
+
+553---------------------------------------------------------
+From aldo.f (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5873.0
+
+I would like to be able to open a fet file and be able to view the last timetable generated in the Timetable tab and perhaps also see the conflicts.
+For now you need to open the "....data_and_timetable.fet" file and regenerate the timetable.
+
+554---------------------------------------------------------
+From Alex Chernous (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5875.0
+
+From version 6.12.0 (adding history), when the program is run, a directory is created (auto-saving, working, importing) but in wrong encoding (see attachment).
+
+When you set the location of files in the settings again, this does not happen.
+
+I tried to change the directory name in the settings file, but it didn't work, the encoding changed again and the directories were created.
+
+---
+
+Liviu Lalescu:
+
+I found a possible fix, but I don't like it. I attach the file (fet.cpp). You can see the fixes if you search the text setIniCodec (it appears in 2 places:
+line 390 and 598, adding stuff like 'newSettings.setIniCodec("UTF-8")'). Unfortunately, in line 598, when writing the settings, I don't know why I need not
+to apply the fix (I commented this line in the file attached below). Note that this fix is only for Qt 5 (easy to correct for Qt 6 with an #if).
+
+With the fix in line 390, it works, but after saving the settings the file still looks ugly, they still have the \x... stuff.
+
+I don't like this fix, because it is not symmetrical and the saved configuration file is not looking correctly.
+
+The bug only appears if you use an INI-style file for the settings (macOS or GNU/Linux, not Windows), and use FET with Qt 5 after using FET with Qt 6 (not viceversa).
+
+---
+
+Alex Chernous:
+
+Can do the same with configuration files as with a history file. If the version is out of date or format change, create a new file?
+
+---
+
+Liviu Lalescu:
+
+It is unnecessary in my opinion. It is comparable with loading a fet file with newer FET and saving it - the old FET might not always open it correctly.
+
+The main options are there, only some characters are maybe wrong, but easily correctable.
+
+555---------------------------------------------------------
+From Volker Dirr (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5875.msg32462#msg32462
+
+How about adding an executable that does nothing else than clearing the settings (of course it should ask first).
+
+It might help in rare cases or if someone wants to uninstall.
+
+---
+
+How to call that executable "uninstall".
+
+Then it just tells you that you need to delete the working directory, the fet directory (but it shouldn't delete it. The human should do it, also because it can't
+remove itself) and it should ask if the settings should be cleared.
+
+556---------------------------------------------------------
+From Volker Dirr:
+
+I think i will make the style changeable in TiTiTo from the interface.
+It is easy.
+If you want to do it in FET also, you can code it like this:
+
+QStringList stylesStringList=QStyleFactory::keys();
+//QString currentStyle=QApplication::styleSheet();
+bool ok;
+int styleID;//=stylesStringList.contains(currentStyle);
+QString selectedStyle=QInputDialog::getItem(this, QObject::tr("Change
+Style"), QObject::tr("Change Style:"), stylesStringList, styleID, false,
+&ok);
+
+if(ok && styleID>-1){
+	QApplication::setStyle(QStyleFactory::create(selectedStyle));
+}
+
+---
+
+In TiTiTo it will be easy: I will just save the string in the
+settings and load it. then it is easy to get the index.
+
+And if you start it the first time, the string is simply empty. So Qt
+will choose index 0.
+
+557---------------------------------------------------------
+From danghoan (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5888.0
+
+How to export teachers' busy times to Excel (or CSV)?
+
+558---------------------------------------------------------
+From Vangelis Karafillidis:
+
+Constraints two sets of activities are overlapping on min/max time slots from selection.

@@ -250,7 +250,8 @@ TimetableGenerateMultipleForm::TimetableGenerateMultipleForm(QWidget* parent): Q
 {
 	setupUi(this);
 	
-	timetablesTabWidget->setUsesScrollButtons(true);
+	//Not necessary, this property is set in the ui file.
+	//timetablesTabWidget->setUsesScrollButtons(true);
 	
 	currentResultsTextEdit->setReadOnly(true);
 	

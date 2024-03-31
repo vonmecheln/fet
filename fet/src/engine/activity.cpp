@@ -417,7 +417,7 @@ void Activity::computeInternalStructure(Rules& r)
 	}
 	//this->activityTagIndex = r.searchActivityTag(this->activityTagName);
 
-	//students	
+	//students
 	//this->nSubgroups=0;
 	this->iSubgroupsList.clear();
 	QSet<int> iSubgroupsSet;
