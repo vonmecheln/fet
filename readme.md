@@ -4,4 +4,4 @@
 
 ## build binary
 
-./fet_build.sh
+./fet_docker.sh

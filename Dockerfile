@@ -14,6 +14,9 @@ RUN apt-get update && apt-get -y --no-install-recommends install \
     qmake6 \
     gdb
 
-RUN cd ${HOME}
+# RUN cd ${HOME}
+
+ADD fet_build.sh /
+
 
     
