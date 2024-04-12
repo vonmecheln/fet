@@ -102,6 +102,7 @@ extern Generate gen;
 #include <QTranslator>
 
 #include <QDir>
+#include <QFileInfo>
 
 #include <QTextStream>
 #include <QFile>
@@ -222,10 +223,10 @@ void usage(QTextStream* out, const QString& error)
 	}
 	
 	s+=QString(
-		"Usage: fet-cl --inputfile=FILE [other options]\n"
+		"Usage: fet-cl --inputfile=FILE [options]\n"
 		"\t\tFILE is the input file, for instance \"data.fet\"\n"
 		"\n"
-		"Other options are:\n"
+		"Options:\n"
 		"\n"
 		"\t--outputdir=DIR\n"
 		"\t\tDIR is the path to results directory, without trailing slash or backslash (default is current working path). "
@@ -381,12 +382,41 @@ void usage(QTextStream* out, const QString& error)
 #endif
 
 #ifndef FET_COMMAND_LINE
-void FetSettings::readGenerationParameters()
+void FetSettings::readGenerationParameters(QApplication& qapplication)
 {
 	const QString predefDir=QDir::homePath()+FILE_SEP+"fet-results";
 
 	QSettings newSettings(COMPANY, PROGRAM);
 
+#ifndef USE_SYSTEM_LOCALE
+	FET_LANGUAGE=newSettings.value("language", "en_US").toString();
+#else
+	if(newSettings.contains("language")){
+		FET_LANGUAGE=newSettings.value("language").toString();
+	}
+	else{
+		FET_LANGUAGE=QLocale::system().name();
+
+		bool ok=false;
+		for(const QString& s : std::as_const(languagesSet)){
+			if(FET_LANGUAGE.left(s.length())==s){
+				FET_LANGUAGE=s;
+				ok=true;
+				break;
+			}
+		}
+		if(!ok)
+			FET_LANGUAGE="en_US";
+	}
+#endif
+	
+	if(FET_LANGUAGE=="ar")
+		FET_LANGUAGE_WITH_LOCALE="ar_DZ";
+	else
+		FET_LANGUAGE_WITH_LOCALE=FET_LANGUAGE;
+	
+	setLanguage(qapplication, nullptr);
+	
 	QString s=newSettings.value("mode", "official").toString();
 	if(s==QString("official"))
 		gt.rules.mode=OFFICIAL;
@@ -419,33 +449,6 @@ void FetSettings::readGenerationParameters()
 	else{
 		OUTPUT_DIR=predefDir;
 	}
-	
-#ifndef USE_SYSTEM_LOCALE
-	FET_LANGUAGE=newSettings.value("language", "en_US").toString();
-#else
-	if(newSettings.contains("language")){
-		FET_LANGUAGE=newSettings.value("language").toString();
-	}
-	else{
-		FET_LANGUAGE=QLocale::system().name();
-
-		bool ok=false;
-		for(const QString& s : std::as_const(languagesSet)){
-			if(FET_LANGUAGE.left(s.length())==s){
-				FET_LANGUAGE=s;
-				ok=true;
-				break;
-			}
-		}
-		if(!ok)
-			FET_LANGUAGE="en_US";
-	}
-#endif
-	
-	if(FET_LANGUAGE=="ar")
-		FET_LANGUAGE_WITH_LOCALE="ar_DZ";
-	else
-		FET_LANGUAGE_WITH_LOCALE=FET_LANGUAGE;
 	
 	WORKING_DIRECTORY=newSettings.value("working-directory", "examples").toString();
 	IMPORT_DIRECTORY=newSettings.value("import-directory", OUTPUT_DIR).toString();
@@ -1096,11 +1099,11 @@ int main(int argc, char **argv)
 	QStringList _args=QCoreApplication::arguments();
 
 #ifndef FET_COMMAND_LINE
-	if(_args.count()==1){
-		fetSettings.readGenerationParameters();
-	
+	if(_args.count()<=2){
+		fetSettings.readGenerationParameters(qapplication);
+		
 		QDir dir;
-	
+		
 		bool t=true;
 
 		//make sure that the output directory exists
@@ -1131,36 +1134,35 @@ int main(int argc, char **argv)
 				test.remove();
 		}
 
-		setLanguage(qapplication, nullptr);
-
 		QCoreApplication::setApplicationName(FetTranslate::tr("FET"));
 		
-		/*QString s="";
-		s+=FetTranslate::tr("Dear user, this is a preview version of FET-6.0.0. Please be careful not to lose data/time with it.");
-		s+="\n\n";
-		s+=FetTranslate::tr("You should be able to open FET-5-official, FET-5-MA19, and FET-5-BP files with it. Please test intensively and report problems.");
-		s+=" ";
-		s+=FetTranslate::tr("Starting with the same random seed, the behavior should be identical for old official 5, old MA19, and old BP files versus the"
-		 " new FET-6.0.0. Please report as soon as possible any different behavior. Note that the new FET-6.0.0 might be 10% slower for some files.");
-		s+="\n\n";
-		s+=FetTranslate::tr("This is an appeal from the author Liviu Lalescu: please report success or failure on the forum or by email: find it"
-		 " on https://lalescu.ro/liviu/ . If you think you have found a problematic file, please send it along with the starting random seed.");
-		QMessageBox::information(nullptr, FetTranslate::tr("FET information"), s);*/
-
 		pqapplication=&qapplication;
 		FetMainForm fetMainForm;
 		pFetMainForm=&fetMainForm;
 		fetMainForm.show();
 		
 		QObject::connect(&qapplication, &QApplication::aboutToQuit, &fetSettings, &FetSettings::writeGenerationParameters);
+		
+		if(_args.count()==2){ //Trying to open a fet file given as argument.
+			QString fileName=QDir::fromNativeSeparators(_args.at(1));
+			QFileInfo fileinfo(fileName);
+			QString completeFileName=fileinfo.canonicalFilePath();
+			if(completeFileName.isEmpty())
+				QMessageBox::warning(&fetMainForm, FetTranslate::tr("FET warning"), FetTranslate::tr("Could not open file '%1' - not existing")
+				 .arg(_args.at(1)));
+			else
+				fetMainForm.openFile(completeFileName);
+		}
 
 		int tmp2=qapplication.exec();
-	
+		
 		return tmp2;
 	}
 	else{
-		QMessageBox::warning(nullptr, FetTranslate::tr("FET warning"), FetTranslate::tr("To start FET in interface mode, please do"
-		 " not give any command-line parameters to the FET executable"));
+		fetSettings.readGenerationParameters(qapplication); //Used only to load the language and correctly translate the strings below.
+		
+		QMessageBox::warning(nullptr, FetTranslate::tr("FET warning"), FetTranslate::tr("To start FET in the interface mode, please either do not give any"
+		 " command-line parameters, or give a single command-line parameter, which is the name of the fet data file to be loaded on startup."));
 		
 		return 1;
 	}
@@ -1586,7 +1588,7 @@ int main(int argc, char **argv)
 		QString initialDir=outputDirectory;
 		if(initialDir!="")
 			initialDir.append(FILE_SEP);
-			
+		
 		QString csvOutputDirectory=outputDirectory;
 		//cout<<"csvOutputDirectory="<<qPrintable(csvOutputDirectory)<<endl;
 		

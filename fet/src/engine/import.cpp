@@ -1344,6 +1344,8 @@ FILE_STRIPPED_NAME
 
 	QTableWidget* fieldsTable= new QTableWidget;
 	
+	tableViewSetHighlightHeader(fieldsTable);
+	
 	//fieldsTable->setUpdatesEnabled(false);
 	
 	fieldsTable->setRowCount(max);

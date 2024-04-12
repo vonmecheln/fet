@@ -97,6 +97,8 @@ TimetableViewTeachersDaysHorizontalForm::TimetableViewTeachersDaysHorizontalForm
 	horizontalSplitter->setStretchFactor(0, 3);
 	horizontalSplitter->setStretchFactor(1, 10);
 
+	tableViewSetHighlightHeader(teachersTimetableTable);
+
 	teachersTimetableTable->setSelectionMode(QAbstractItemView::ExtendedSelection);
 	
 	teachersListWidget->setSelectionMode(QAbstractItemView::SingleSelection);

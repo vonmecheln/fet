@@ -32,11 +32,11 @@
 #include <QPrinter>
 #endif
 
-class QTableWidget;
+//class QTableWidget;
 class QRadioButton;
 class QCheckBox;
 class QPushButton;
-class QTableWidgetItem;
+//class QTableWidgetItem;
 class QComboBox;
 class QGroupBox;
 class QToolButton;

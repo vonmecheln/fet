@@ -31,6 +31,8 @@
 #include "timetable.h"
 #include "timetable_defs.h"
 
+#include "studentsset.h"
+
 // BE CAREFUL: DON'T USE INTERNAL VARIABLES HERE, because maybe computeInternalStructure() is not done!
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
@@ -98,10 +100,6 @@ const QString swapAxesState="/swap-axes-check-box-state";
 const QString hideFullTeachersState="/hide-full-teachers-state";
 
 //maybe put following in timetable_defs.h? (start)
-const int IS_YEAR = 1;
-const int IS_GROUP = 2;
-const int IS_SUBGROUP = 3;
-
 const int ACTIVE_ONLY = 0;
 const int INACTIVE_ONLY = 1;
 const int ACTIVE_OR_INACTIVE = 2;
@@ -157,7 +155,7 @@ void StartActivityPlanning::startActivityPlanning(QWidget* parent){
 		}
 		statisticValues.allStudentsNames<<sty->name;
 		allStudentsNamesSet.insert(sty->name);
-		yearORgroupORsubgroup<<IS_YEAR;
+		yearORgroupORsubgroup<<STUDENTS_YEAR;
 		for(StudentsGroup* stg : std::as_const(sty->groupsList)){
 			if(allStudentsNamesSet.contains(stg->name)){
 				studentsDuplicates<<true;
@@ -166,7 +164,7 @@ void StartActivityPlanning::startActivityPlanning(QWidget* parent){
 			}
 			statisticValues.allStudentsNames<<stg->name;
 			allStudentsNamesSet.insert(stg->name);
-			yearORgroupORsubgroup<<IS_GROUP;
+			yearORgroupORsubgroup<<STUDENTS_GROUP;
 			if(SHOW_SUBGROUPS_IN_ACTIVITY_PLANNING) for(StudentsSubgroup* sts : std::as_const(stg->subgroupsList)){
 				if(allStudentsNamesSet.contains(sts->name)){
 					studentsDuplicates<<true;
@@ -175,7 +173,7 @@ void StartActivityPlanning::startActivityPlanning(QWidget* parent){
 				}
 				statisticValues.allStudentsNames<<sts->name;
 				allStudentsNamesSet.insert(sts->name);
-				yearORgroupORsubgroup<<IS_SUBGROUP;
+				yearORgroupORsubgroup<<STUDENTS_SUBGROUP;
 			}
 		}
 	}
@@ -239,8 +237,10 @@ ActivityPlanningForm::ActivityPlanningForm(QWidget *parent): QDialog(parent)
 	//leftSplitter->setChildrenCollapsible(false);
 	
 	activitiesTableView=new SparseTableView;
+	tableViewSetHighlightHeader(activitiesTableView);
 
 	teachersTableView=new SparseTableView;
+	tableViewSetHighlightHeader(teachersTableView);
 
 	leftSplitter->addWidget(activitiesTableView);
 	leftSplitter->addWidget(teachersTableView);
@@ -3967,11 +3967,11 @@ void ActivityPlanningForm::updateTablesVisual(){
 			bool show=true;
 			int tmpInt=yearORgroupORsubgroup.at(students);
 			if(!SHOW_SUBGROUPS_IN_ACTIVITY_PLANNING)
-				assert(tmpInt!=IS_SUBGROUP);
+				assert(tmpInt!=STUDENTS_SUBGROUP);
 			switch(tmpInt){
-				case IS_YEAR:     if(showYears->checkState()!=Qt::Checked) show=false; break;
-				case IS_GROUP:    if(showGroups->checkState()!=Qt::Checked) show=false; break;
-				case IS_SUBGROUP: if(showSubgroups->checkState()!=Qt::Checked) show=false; break;
+				case STUDENTS_YEAR:     if(showYears->checkState()!=Qt::Checked) show=false; break;
+				case STUDENTS_GROUP:    if(showGroups->checkState()!=Qt::Checked) show=false; break;
+				case STUDENTS_SUBGROUP: if(showSubgroups->checkState()!=Qt::Checked) show=false; break;
 				default: assert(0==1);
 			}
 			if((studentsDuplicates.at(students)) && (showDuplicates->checkState()!=Qt::Checked)){
@@ -4000,11 +4000,11 @@ void ActivityPlanningForm::updateTablesVisual(){
 			bool show=true;
 			int tmpInt=yearORgroupORsubgroup.at(students);
 			if(!SHOW_SUBGROUPS_IN_ACTIVITY_PLANNING)
-				assert(tmpInt!=IS_SUBGROUP);
+				assert(tmpInt!=STUDENTS_SUBGROUP);
 			switch(tmpInt){
-				case IS_YEAR:     if(showYears->checkState()!=Qt::Checked) show=false; break;
-				case IS_GROUP:    if(showGroups->checkState()!=Qt::Checked) show=false; break;
-				case IS_SUBGROUP: if(showSubgroups->checkState()!=Qt::Checked) show=false; break;
+				case STUDENTS_YEAR:     if(showYears->checkState()!=Qt::Checked) show=false; break;
+				case STUDENTS_GROUP:    if(showGroups->checkState()!=Qt::Checked) show=false; break;
+				case STUDENTS_SUBGROUP: if(showSubgroups->checkState()!=Qt::Checked) show=false; break;
 				default: assert(0==1);
 			}
 			if((studentsDuplicates.at(students)) && (showDuplicates->checkState()!=Qt::Checked)){

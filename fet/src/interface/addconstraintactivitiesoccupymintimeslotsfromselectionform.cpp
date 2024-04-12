@@ -34,6 +34,7 @@
 
 #include <QBrush>
 #include <QColor>
+#include <QPalette>
 
 #define YES	(QString("X"))
 #define NO	(QString(" "))
@@ -99,6 +100,9 @@ AddConstraintActivitiesOccupyMinTimeSlotsFromSelectionForm::AddConstraintActivit
 	
 	setStretchAvailabilityTableNicely(selectedTimesTable);
 	
+	connect(selectedTimesTable, &QTableWidget::cellEntered, this, &AddConstraintActivitiesOccupyMinTimeSlotsFromSelectionForm::cellEntered);
+	selectedTimesTable->setMouseTracking(true);
+
 	//activities
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
@@ -170,6 +174,8 @@ void AddConstraintActivitiesOccupyMinTimeSlotsFromSelectionForm::colorItem(QTabl
 
 void AddConstraintActivitiesOccupyMinTimeSlotsFromSelectionForm::horizontalHeaderClicked(int col)
 {
+	highlightOnHorizontalHeaderClicked(selectedTimesTable, col);
+
 	if(col>=0 && col<gt.rules.nDaysPerWeek){
 		QString s=selectedTimesTable->item(0, col)->text();
 		if(s==YES)
@@ -188,6 +194,8 @@ void AddConstraintActivitiesOccupyMinTimeSlotsFromSelectionForm::horizontalHeade
 
 void AddConstraintActivitiesOccupyMinTimeSlotsFromSelectionForm::verticalHeaderClicked(int row)
 {
+	highlightOnVerticalHeaderClicked(selectedTimesTable, row);
+
 	if(row>=0 && row<gt.rules.nHoursPerDay){
 		QString s=selectedTimesTable->item(row, 0)->text();
 		if(s==YES)
@@ -202,6 +210,11 @@ void AddConstraintActivitiesOccupyMinTimeSlotsFromSelectionForm::verticalHeaderC
 			colorItem(selectedTimesTable->item(row,col));
 		}
 	}
+}
+
+void AddConstraintActivitiesOccupyMinTimeSlotsFromSelectionForm::cellEntered(int row, int col)
+{
+	highlightOnCellEntered(selectedTimesTable, row, col);
 }
 
 void AddConstraintActivitiesOccupyMinTimeSlotsFromSelectionForm::setAllUnselected()

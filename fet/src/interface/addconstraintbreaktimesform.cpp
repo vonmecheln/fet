@@ -30,6 +30,7 @@
 
 #include <QBrush>
 #include <QColor>
+#include <QPalette>
 
 #define YES	(QString("X"))
 #define NO	(QString(" "))
@@ -81,6 +82,9 @@ AddConstraintBreakTimesForm::AddConstraintBreakTimesForm(QWidget* parent): QDial
 	notAllowedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 	
 	setStretchAvailabilityTableNicely(notAllowedTimesTable);
+
+	connect(notAllowedTimesTable, &QTableWidget::cellEntered, this, &AddConstraintBreakTimesForm::cellEntered);
+	notAllowedTimesTable->setMouseTracking(true);
 }
 
 AddConstraintBreakTimesForm::~AddConstraintBreakTimesForm()
@@ -109,6 +113,8 @@ void AddConstraintBreakTimesForm::colorItem(QTableWidgetItem* item)
 
 void AddConstraintBreakTimesForm::horizontalHeaderClicked(int col)
 {
+	highlightOnHorizontalHeaderClicked(notAllowedTimesTable, col);
+
 	if(col>=0 && col<gt.rules.nDaysPerWeek){
 		QString s=notAllowedTimesTable->item(0, col)->text();
 		if(s==YES)
@@ -127,6 +133,8 @@ void AddConstraintBreakTimesForm::horizontalHeaderClicked(int col)
 
 void AddConstraintBreakTimesForm::verticalHeaderClicked(int row)
 {
+	highlightOnVerticalHeaderClicked(notAllowedTimesTable, row);
+
 	if(row>=0 && row<gt.rules.nHoursPerDay){
 		QString s=notAllowedTimesTable->item(row, 0)->text();
 		if(s==YES)
@@ -135,12 +143,17 @@ void AddConstraintBreakTimesForm::verticalHeaderClicked(int row)
 			assert(s==NO);
 			s=YES;
 		}
-	
+		
 		for(int col=0; col<gt.rules.nDaysPerWeek; col++){
 			notAllowedTimesTable->item(row, col)->setText(s);
 			colorItem(notAllowedTimesTable->item(row,col));
 		}
 	}
+}
+
+void AddConstraintBreakTimesForm::cellEntered(int row, int col)
+{
+	highlightOnCellEntered(notAllowedTimesTable, row, col);
 }
 
 void AddConstraintBreakTimesForm::setAllAllowed()

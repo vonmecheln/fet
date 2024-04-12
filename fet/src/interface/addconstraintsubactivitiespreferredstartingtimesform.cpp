@@ -30,6 +30,7 @@
 
 #include <QBrush>
 #include <QColor>
+#include <QPalette>
 
 #define YES		(QString(" "))
 #define NO		(QString("X"))
@@ -105,6 +106,9 @@ AddConstraintSubactivitiesPreferredStartingTimesForm::AddConstraintSubactivities
 
 	setStretchAvailabilityTableNicely(preferredTimesTable);
 
+	connect(preferredTimesTable, &QTableWidget::cellEntered, this, &AddConstraintSubactivitiesPreferredStartingTimesForm::cellEntered);
+	preferredTimesTable->setMouseTracking(true);
+
 	connect(durationCheckBox, &QCheckBox::toggled, this, &AddConstraintSubactivitiesPreferredStartingTimesForm::durationCheckBox_toggled);
 	
 	durationCheckBox_toggled();
@@ -136,6 +140,8 @@ void AddConstraintSubactivitiesPreferredStartingTimesForm::colorItem(QTableWidge
 
 void AddConstraintSubactivitiesPreferredStartingTimesForm::horizontalHeaderClicked(int col)
 {
+	highlightOnHorizontalHeaderClicked(preferredTimesTable, col);
+
 	if(col>=0 && col<gt.rules.nDaysPerWeek){
 		QString s=preferredTimesTable->item(0, col)->text();
 		if(s==YES)
@@ -154,6 +160,8 @@ void AddConstraintSubactivitiesPreferredStartingTimesForm::horizontalHeaderClick
 
 void AddConstraintSubactivitiesPreferredStartingTimesForm::verticalHeaderClicked(int row)
 {
+	highlightOnVerticalHeaderClicked(preferredTimesTable, row);
+
 	if(row>=0 && row<gt.rules.nHoursPerDay){
 		QString s=preferredTimesTable->item(row, 0)->text();
 		if(s==YES)
@@ -168,6 +176,11 @@ void AddConstraintSubactivitiesPreferredStartingTimesForm::verticalHeaderClicked
 			colorItem(preferredTimesTable->item(row,col));
 		}
 	}
+}
+
+void AddConstraintSubactivitiesPreferredStartingTimesForm::cellEntered(int row, int col)
+{
+	highlightOnCellEntered(preferredTimesTable, row, col);
 }
 
 void AddConstraintSubactivitiesPreferredStartingTimesForm::setAllSlotsAllowed()

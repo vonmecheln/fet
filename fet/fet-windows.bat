@@ -1,2 +1,2 @@
 @echo off
-start %~dp0fet.exe -style windows
+start %~dp0fet.exe -style windows %*

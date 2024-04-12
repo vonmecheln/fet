@@ -6052,6 +6052,8 @@ Rules::Rules()
 	this->modified=false;
 
 	//cntUndoRedoStackIterator=0;
+	
+	this->mode=OFFICIAL;
 }
 
 Rules::~Rules()
@@ -12619,6 +12621,11 @@ void Rules::updateConstraintsAfterRemoval()
 
 bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, const QString& commandLineDirectory) //commandLineDirectory has trailing FILE_SEP
 {
+	//Clear old rules, initialize new rules
+	if(this->initialized)
+		this->clear();
+	this->init();
+	
 	QFile file(fileName);
 #if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
 	if(!file.open(QIODeviceBase::ReadOnly)){
@@ -12677,7 +12684,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 	QString shortFileName=fileName.right(fileName.length()-fileName.lastIndexOf(FILE_SEP)-1);
 	reducedXmlLog+="Reading file "+shortFileName+"\n";
 	QFileInfo fileinfo(fileName);
-	reducedXmlLog+="Complete file name, including path: "+QDir::toNativeSeparators(fileinfo.absoluteFilePath())+"\n";
+	reducedXmlLog+="Complete file name, including path: "+QDir::toNativeSeparators(fileinfo.canonicalFilePath())+"\n";
 	reducedXmlLog+="\n";
 
 	QString tmp;
@@ -12965,11 +12972,6 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 		 tr("Opening a file generated with a newer version than your current FET software ... file will be opened but it is recommended to update your FET software to the latest version")
 		 +"\n\n"+tr("Your FET version: %1, file version: %2").arg(FET_VERSION).arg(file_version));
 	}
-	
-	//Clear old rules, initialize new rules
-	if(this->initialized)
-		this->clear();
-	this->init();
 	
 	//int oldMode=this->mode;
 	this->mode=OFFICIAL;

@@ -147,6 +147,8 @@ TimetableViewRoomsTimeHorizontalForm::TimetableViewRoomsTimeHorizontalForm(QWidg
 	horizontalSplitter->setStretchFactor(0, 5);
 	horizontalSplitter->setStretchFactor(1, 1);
 
+	tableViewSetHighlightHeader(roomsTimetableTable);
+	
 	roomsTimetableTable->setSelectionMode(QAbstractItemView::ExtendedSelection);
 	
 	connect(closePushButton, &QPushButton::clicked, this, &TimetableViewRoomsTimeHorizontalForm::close);

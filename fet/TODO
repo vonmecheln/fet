@@ -701,7 +701,7 @@ I have some other suggestion.
 1. It will be GREAT if FET can be turn to tree structure. We can show/hide the structure
 2. In the tree structure, we can use the copy, cut and paste to edit the subject, activities, etc in the tree structure
 
-37---------------------------------------------------------
+37-DONE for teachers? Teachers-not available time horizontal views--
 From kdsayang:
 
 If I want to change many teacher not available time, I need to add one by one although the teacher not available time is the SAME.
@@ -852,9 +852,8 @@ Volker:
 if i am in FET->Data->Subjects
 i can't see at the right side all constraints.
 
-in my latest samplefiles for example the "a set of subactivities has a
-set
-of preferd time slots" is missing to that subject.
+in my latest sample files for example the "a set of subactivities has a
+set of preferred time slots" is missing to that subject.
 
 also in FET->Data->Activity Tags are not all constraints displayed.
 
@@ -1886,6 +1885,9 @@ Is there any way to do this?
 
 If not, another web report that details all these settings would be ideal.
 
+Liviu Lalescu, 2024-04-05: You could use this trick: select all the activities/constraints, click Remove (but don't remove), and select the text
+in the confirmation text. This is a nice formatted text.
+
 123---------------------------------------------------------
 From Zsolt Udvari:
 
@@ -2095,7 +2097,7 @@ From yasin dehghan:
 
 1- show warning message when enter 2 same activity
 2- add exam date with subject in subject form
-3- add list for teacher to show allow subject for each teacher in techer form
+3- add list for teacher to show allow subject for each teacher in teacher form
 
 Liviu Lalescu:
 
@@ -2121,7 +2123,7 @@ don't allow subject
 and other sugestion
 
 4- user able enter min and max hour of each teacher per week and show this
-min and max hour in teacher statiscal foe compare
+min and max hour in teacher statistics for compare
 
 129---------------------------------------------------------
 From Volker Dirr:
@@ -2210,7 +2212,7 @@ duration, for a real check you must tab all the subs and add: very boring.
 From Massimo Mancini:
 
 First, consider this situation...
-1. I'm working on teachers not avalaible (TNA) constraint
+1. I'm working on teachers not available (TNA) constraint
 2. I filter on MANC, fet shows a blank window: the constraint on MANC not
 exist.
 3. Good. I add it but the dialog not inherit MANC as selected teacher :-(
@@ -2344,7 +2346,7 @@ What I do now for the next term is to export the information, I am interested in
 
 I do have a problem now. If I import the activities then I must add the constraints from scratch, hundreds of them.
 
-If there are only one or two constraints and a few changes to the activities that is ot a problem.
+If there are only one or two constraints and a few changes to the activities that is not a problem.
 Is there not a way that the existing constraints can be inported withou entering them again.  I know that I can save the timetable with data, including constraints, but this is of no help to me.
 
 Is there a solution?
@@ -2372,7 +2374,7 @@ For the next timetable at our school, I need the following:
 Hours 5 and 6 at one day have the same activity.
 
 So I could decide by myself to add an activity 2+1+1 and give the subactivity with "2" hours a special activity-tag "2h" or something like that. I can do this for many activities and then only allow activities with tag "2h" to be placed in hour 5.
-But if I do this, I have to decide, which acitivity should be placed there. If I choose too much activities, there will also be activities lasting two hours during other times of the day, which is not wanted in many cases.
+But if I do this, I have to decide, which activity should be placed there. If I choose too much activities, there will also be activities lasting two hours during other times of the day, which is not wanted in many cases.
 
 I could also use constraint "consecutive if same day", but then an activity 1+1+1+1 may become 2+2. But I only want 2+1+1 or 1+1+1+1 for that kind of activities. I am also not sure, how to ensure that "consecutive if same day" is only used for hours 5 and 6.
 
@@ -3718,7 +3720,7 @@ The code in the loop does some checks that are replicated in several other loops
 
 217-----------------------DONE------------------------------
 
-218---------------------------------------------------------
+218-----------------------DONE?-----------------------------
 From Volker Dirr:
 
 since FET is able to change split year automatically without losing
@@ -4014,7 +4016,7 @@ I have some teachers that bind their worktime to an already built timetable, so 
 Often this happens when teachers are in co-presence in laboratory or when teachers have students with disabilities and need to support them when specific subject are in time.
 So, it is the best to "double click" on the subactivity, on the interface with the generated timetable, to show the dialog that modify the subactivity and add the new teacher.
 Then regenerate all the timetable to obtain the new HTML even for these teachers.
-Whitout this simple "double click" I need to write down the number of the sub-activity, go to Data->Activities then looking for that number, click "modify" then add the teacher.
+Without this simple "double click" I need to write down the number of the sub-activity, go to Data->Activities then looking for that number, click "modify" then add the teacher.
 
 Is it possible to do this and speed-up data enter?
 
@@ -4088,7 +4090,7 @@ Now I want in the gymn 2 classes of the same grade and not 2 of different grades
 
 The problem is that in my school we have 31 classes...
 
-I don't want to put toghether 2 classes of my choice as this would be a real hard constrain to be managed.
+I don't want to put together 2 classes of my choice as this would be a real hard constrain to be managed.
 
 244---------------------------------------------------------
 From Arsenio Stabile:
@@ -4266,15 +4268,7 @@ Liviu:
 Unfortunately, there is not enough space in that dialog. But you can use the
 timetable view time horizontal views.
 
-257---------------------------------------------------------
-From MING-KIAN JONATHAN CEDRIC LEE KIM GNOK and Volker Dirr:
-
-All the users to start FET by double-clicking a .fet file (so that the FET executable won't complain:
-"To start FET in interface mode, please do not give any command-line parameters to the FET executable.").
-We could open in such a case the first file given as a command-line parameter to the FET executable.
-
-Liviu:
-It is bad to mix the version accepting command-line parameters (fet-cl) with the one not accepting them (fet).
+257----------DONE in FET-6.19.1, on 1 April 2024------------
 
 258---------------------------------------------------------
 From Benahmed Abdelkrim (on forum):
@@ -4357,7 +4351,7 @@ From daltinkurt (on forum):
 
 A constraint min days between activities, with force consecutive if same day = true. Can (should) two activities if on the same day span over a break?
 
-268---------------------------------------------------------
+268--------------DONE?--------------------------------------
 From Volker Dirr:
 
 maybe we can add a check for this:
@@ -4714,7 +4708,7 @@ Notebook:
 2. I really like "comments" of each activity, but I miss a possibility to add a comment when you create an activity (you have to create it, then go to Data/Activities, find the activity and then add comment.
 3. As I said, I really like comments, so I'm also missing a shortcut to create a comment on Time/Space constraints: I would like to be able to add comment, when I add a constraint (now I have to filter/find a constraint in Time/All or Space/All and then add a comment).
 
-293---------------------------------------------------------
+293----------------DONE?------------------------------------
 From Malamojka (on forum):
 
 I was looking for a way to "hide" some of tags in the timetable (I want some to be visible, but not all). As far as I can see you can do this by changing a certain file in program data folders. I was wondering if the same could be done by, say, naming tag "not wanted tag" in form "(*not wanted tag*)" (so basically adding (* in front of a tag name and *) at the end of tag name). So a tag of that form wouldn't be seen in timetable html. If a solution like that already exists, then I apologize (it didn't exist the last time I checked). Please let me know.
@@ -5335,7 +5329,7 @@ From Zsolt Udvari (on forum):
 I try to find the impossible constraint(s) in my FET-file and I think it's uncomfortable that only on "Time/All" dialog can activate/deactivate the constraints.
 I think it would be nice when can activate/deactivate for example on "An activity has a preferred starting time" dialog (and on the others too).
 
-335---------------------------------------------------------
+335-------------PARTIALLY DONE?-----------------------------
 From Volker Dirr:
 
 There are not many variables to mutex in the generation.cpp. So it will
@@ -6070,7 +6064,7 @@ From pg788 (on forum):
 
 I understand this might be restrictive, but a teacher doesn't want to begin in 3rd or 4th, since there is traffic.
 
-364---------------------------------------------------------
+364-----MUST BEGIN STUDENTS DAY IS DONE---------------------
 From Dietmar Deuster and Volker Dirr:
 
 Constraints:
@@ -6631,14 +6625,14 @@ https://lalescu.ro/liviu/fet/forum/index.php?topic=4568.0
 
 We have to change the teaching time and make sure that the class breaks are not met.
 I divided the teaching time into 4, blocks of 15 min, and a class starts at 8:45 am and another at 9:00 am, so it is possible to find the breaks,
-but I cannot use the Breakes constraint, because it is common for all students.
+but I cannot use the Breaks constraint, because it is common for all students.
 
-I used the constraint A Student’s set not available times, for each class, where I marked the desired breakes.
+I used the constraint A Student’s set not available times, for each class, where I marked the desired breaks.
 
 This constraint does not allow me to use the other constraint that I used a lot, two activities are consecutive, so that I can have one activity
 before the break and another after the break.
 
-Is it possible to create a new condition in Breakes to choose classes?
+Is it possible to create a new condition in Breaks to choose classes?
 
 416---------------------------------------------------------
 From samantha.goddard (on forum):
@@ -6731,12 +6725,7 @@ Nel chiedere se sono normali questi tempi di elaborazione, faccio notare delle c
 2) A mio parere alcune criticità del programma dipendono dal fatto di non avere sufficienti ore disponibili da collocare in alcune classi in determinati giorni (esemio il sabato con tanti docenti col giorno libero mi sono trovato a non avere la disponibilità oraria necessaria per coprire tutte le classi. 12 classi su tre plessi necessitavano di 12x5= 60 ore mentre  i docenti disponibili me ne potevano garantire 58) in questo caso il software non segnala niente, semplicemente non porta a termine l'elaborazione. Sarebbe opportuno avere un report che indichi il num. max di ore disponibile nei vari giorni in modo da evidenziare eventuali criticità prima dell'elaborazione.
 3) La stampa per "classi", "tempo verticale per giorno"  dell'orario ha sempre la prima colonna molto stretta, c'e modo di modificarla?
 
-423---------------------------------------------------------
-From Adele and Volker Dirr (on forum):
-
-https://lalescu.ro/liviu/fet/forum/index.php?topic=4751.0
-
-Enable/Disable activities in FET->Data->Activities and FET->Data->subactivities similar to enable/disable constraints in FET->Data->Constraints
+423----------------DONE-------------------------------------
 
 424---------------------------------------------------------
 From Vangelis Karafillidis:
@@ -6859,7 +6848,7 @@ specific mode.
 
 Of course, these settings are optional, they can be edited by the user, or they can be left as they are now.
 
-432---------------------------------------------------------
+432-----------PARTIALLY DONE?-------------------------------
 From Volker Dirr:
 
 In src/engine/generate.cpp and src/interface/timetablegenerateform.cpp and src/interface/timetablegeneratemultipleform.cpp, use std::atomic instead of
@@ -7027,7 +7016,7 @@ From ncabello (on forum):
 https://lalescu.ro/liviu/fet/forum/index.php?topic=5017.0
 
 We work during the year on diferent projects with diferent groups/periods of students. We recently start managing our teachers shedule with FET.
-In our case we create a "week"  from day1 to day 100. Then on that period we add activities and diferent groups and projects as they come.
+In our case we create a "week" from day1 to day 100. Then on that period we add activities and diferent groups and projects as they come.
 Since we  configure a period from  day1 to day100, we must translate (for example) day1=5/10,  day2 =6/10 and so on. It would we great if one could
 set starting date and ending date, for example  5/oct/2021 - 12/jan/2022 and also to select wich days of the week to include that would be excelent.
 
@@ -7259,7 +7248,7 @@ is it possible to implement it?
 Liviu: It could be implemented, but also the timetables are not 1, 2, ..., n, n+1, but some numbers
 will be missing.
 
-462---------------------------------------------------------
+462-------------DONE?---------------------------------------
 From ngoctp29121982 (on forum):
 
 https://lalescu.ro/liviu/fet/forum/index.php?topic=5234.0
@@ -8121,7 +8110,7 @@ From wojgp (on forum):
 https://lalescu.ro/liviu/fet/forum/index.php?topic=5597.0
 
 I think the missing option is to set by one click that a splitted activity should take place in the same room.
-For example phisical education has rooms PE1, PE2. Group A has 2 hours of p.e., but first takes place in room PE1 and another in PE2. In this time group B has only one hour of p.e. and it is assigned to PE1 while it could take place in PE2. Thanks to this group A could have 2 consecutive hours in room PE1.
+For example physical education has rooms PE1, PE2. Group A has 2 hours of p.e., but first takes place in room PE1 and another in PE2. In this time group B has only one hour of p.e. and it is assigned to PE1 while it could take place in PE2. Thanks to this group A could have 2 consecutive hours in room PE1.
 Temporary perhaps it could be done by adding subactivities of the same type (2 x 1/2) as a one constraint. Unfortunately when there are a lot of splitted activities there has to be a lot of room constraints entered manualy.
 Perhaps there should be an option to set room constraint for a whole activity. Now I have to group all subactivities into constraint as on attached picture. All activities in my case are phisical education :) I don't want students to change room for consecutive activities.
 Is there any option to do it in easier way ?
@@ -8321,7 +8310,7 @@ English:
 
 Implement the constraint type "Teacher begins early max beginnings at second hour".
 
-514---------------------------------------------------------
+514-----------POSSIBLY DONE?--------------------------------
 From Daniele Rocci:
 
 I have a question that may involve future development: is it possible to set a constraint for all teachers except a small list?
@@ -8674,7 +8663,7 @@ From ogursoy (on forum):
 
 https://lalescu.ro/liviu/fet/forum/index.php?topic=5849.0
 
-It could be very nice feture to set preferred startting times with a hard constraint without student groups (e.g tick box for ignoring student groups for that activitiy or even that time slot chosen for the constraint.)
+It could be very nice feture to set preferred starting times with a hard constraint without student groups (e.g tick box for ignoring student groups for that activity or even that time slot chosen for the constraint.)
 
 In a university schedule, some courses "can overlap" even having the same student groups ( by the nature of required, elective courses)
 
@@ -8808,10 +8797,10 @@ From ogursoy (on forum):
 
 https://lalescu.ro/liviu/fet/forum/index.php?topic=5852.0
 
-When we set a space sontraint, it could be very nice to give priority to buildings. So any set of prefferred rooms (from building 1, building 2,..)
+When we set a space sontraint, it could be very nice to give priority to buildings. So any set of preferred rooms (from building 1, building 2,..)
 give one of the building a higher preference so FET places activity in the room with higher preferred building.
 
-I am aware thet It can be still done with correct space constraints (multiple!)  but alot of work to set up these constraints.
+I am aware that it can be still done with correct space constraints (multiple!) but a lot of work to set up these constraints.
 
 545---------------------------------------------------------
 From ogursoy (on forum):
@@ -9053,3 +9042,33 @@ How to export teachers' busy times to Excel (or CSV)?
 From Vangelis Karafillidis:
 
 Constraints two sets of activities are overlapping on min/max time slots from selection.
+
+559---------------------------------------------------------
+From Cyrus Ireri (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5904.0
+
+Is it possible to have timetable one prints in a standard size eg. A4 size so that whether the activities are many or few, they will fit in it?
+
+I have had scenario of some teachers' timetables occupying 1/2 page of A4 paper while others being more than a page hence customizing the ratio.
+
+I tend to think if that can happen, one wouldn't have to photocopy timetable so as to fit whole page of A4.
+
+Teachers tell me they struggle to see their timetables if they occupy half page of A4.
+
+560---------------------------------------------------------
+From Cyrus Ireri (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5908.0
+
+I have a scenario where when we have tution sessions for like 7 days, you get a situation where some teachers are through with their sessions 2 days
+before while others have till the last day. Is there a way of ensuring that out of the 7 days, a teacher will have at least one of the last days to
+avoid conflicts on why me and not the other teachers. If we can have a constraint like "all teachers work in days interval min/max days per week"
+it can be of great help. Is it doable?
+
+Liviu Lalescu: Cyrus Ireri has a file with 7 days per week. He needs that a teacher works in exactly 1 day out of the last 2 days of the week.
+
+561---------------------------------------------------------
+From GUEFFAZ REDA:
+
+A setting to check for snapshots on startup (similar to checking for updates/new official versions on startup).

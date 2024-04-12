@@ -42,6 +42,8 @@ public slots:
 	
 	void help();
 
+	void cellEntered(int row, int col);
+	
 	void setAllAvailable();
 	void setAllNotAvailable();
 };

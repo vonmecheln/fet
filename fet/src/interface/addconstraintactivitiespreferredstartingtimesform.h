@@ -40,6 +40,8 @@ public:
 public slots:
 	void addConstraint();
 	
+	void cellEntered(int row, int col);
+	
 	void setAllSlotsAllowed();
 	void setAllSlotsNotAllowed();
 

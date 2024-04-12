@@ -28,6 +28,7 @@
 
 #include <QBrush>
 #include <QColor>
+#include <QPalette>
 
 #define YES		(QString(" "))
 #define NO		(QString("X"))
@@ -103,7 +104,7 @@ ModifyConstraintActivityPreferredTimeSlotsForm::ModifyConstraintActivityPreferre
 		QTableWidgetItem* item=new QTableWidgetItem(gt.rules.hoursOfTheDay[i]);
 		preferredTimesTable->setVerticalHeaderItem(i, item);
 	}
-		
+	
 	Matrix2D<bool> currentMatrix;
 	currentMatrix.resize(gt.rules.nHoursPerDay, gt.rules.nDaysPerWeek);
 	for(int i=0; i<gt.rules.nHoursPerDay; i++)
@@ -144,6 +145,9 @@ ModifyConstraintActivityPreferredTimeSlotsForm::ModifyConstraintActivityPreferre
 	
 	setStretchAvailabilityTableNicely(preferredTimesTable);
 
+	connect(preferredTimesTable, &QTableWidget::cellEntered, this, &ModifyConstraintActivityPreferredTimeSlotsForm::cellEntered);
+	preferredTimesTable->setMouseTracking(true);
+
 	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivityPreferredTimeSlotsForm::filterChanged);
 	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivityPreferredTimeSlotsForm::filterChanged);
 	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ModifyConstraintActivityPreferredTimeSlotsForm::filterChanged);
@@ -176,6 +180,8 @@ void ModifyConstraintActivityPreferredTimeSlotsForm::colorItem(QTableWidgetItem*
 
 void ModifyConstraintActivityPreferredTimeSlotsForm::horizontalHeaderClicked(int col)
 {
+	highlightOnHorizontalHeaderClicked(preferredTimesTable, col);
+
 	if(col>=0 && col<gt.rules.nDaysPerWeek){
 		QString s=preferredTimesTable->item(0, col)->text();
 		if(s==YES)
@@ -194,6 +200,8 @@ void ModifyConstraintActivityPreferredTimeSlotsForm::horizontalHeaderClicked(int
 
 void ModifyConstraintActivityPreferredTimeSlotsForm::verticalHeaderClicked(int row)
 {
+	highlightOnVerticalHeaderClicked(preferredTimesTable, row);
+
 	if(row>=0 && row<gt.rules.nHoursPerDay){
 		QString s=preferredTimesTable->item(row, 0)->text();
 		if(s==YES)
@@ -208,6 +216,11 @@ void ModifyConstraintActivityPreferredTimeSlotsForm::verticalHeaderClicked(int r
 			colorItem(preferredTimesTable->item(row,col));
 		}
 	}
+}
+
+void ModifyConstraintActivityPreferredTimeSlotsForm::cellEntered(int row, int col)
+{
+	highlightOnCellEntered(preferredTimesTable, row, col);
 }
 
 void ModifyConstraintActivityPreferredTimeSlotsForm::setAllSlotsAllowed()

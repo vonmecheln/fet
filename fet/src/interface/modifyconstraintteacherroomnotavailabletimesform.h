@@ -24,7 +24,7 @@
 #include "fet.h"
 
 class ModifyConstraintTeacherRoomNotAvailableTimesForm : public QDialog, Ui::ModifyConstraintTeacherRoomNotAvailableTimesForm_template  {
-	Q_OBJECT	
+	Q_OBJECT
 
 	ConstraintTeacherRoomNotAvailableTimes* _ctr;
 public:
@@ -44,6 +44,8 @@ public slots:
 	void horizontalHeaderClicked(int col);
 	void verticalHeaderClicked(int row);
 
+	void cellEntered(int row, int col);
+	
 	void setAllAvailable();
 	void setAllNotAvailable();
 };

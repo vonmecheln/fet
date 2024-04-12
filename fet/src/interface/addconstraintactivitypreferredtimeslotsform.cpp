@@ -30,6 +30,7 @@
 
 #include <QBrush>
 #include <QColor>
+#include <QPalette>
 
 #define YES		(QString(" "))
 #define NO		(QString("X"))
@@ -48,7 +49,7 @@ AddConstraintActivityPreferredTimeSlotsForm::AddConstraintActivityPreferredTimeS
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
-		
+	
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
 	QSize tmp2=studentsComboBox->minimumSizeHint();
@@ -121,6 +122,9 @@ AddConstraintActivityPreferredTimeSlotsForm::AddConstraintActivityPreferredTimeS
 	
 	setStretchAvailabilityTableNicely(preferredTimesTable);
 
+	connect(preferredTimesTable, &QTableWidget::cellEntered, this, &AddConstraintActivityPreferredTimeSlotsForm::cellEntered);
+	preferredTimesTable->setMouseTracking(true);
+
 	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintActivityPreferredTimeSlotsForm::filterChanged);
 	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintActivityPreferredTimeSlotsForm::filterChanged);
 	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintActivityPreferredTimeSlotsForm::filterChanged);
@@ -153,6 +157,8 @@ void AddConstraintActivityPreferredTimeSlotsForm::colorItem(QTableWidgetItem* it
 
 void AddConstraintActivityPreferredTimeSlotsForm::horizontalHeaderClicked(int col)
 {
+	highlightOnHorizontalHeaderClicked(preferredTimesTable, col);
+
 	if(col>=0 && col<gt.rules.nDaysPerWeek){
 		QString s=preferredTimesTable->item(0, col)->text();
 		if(s==YES)
@@ -163,7 +169,7 @@ void AddConstraintActivityPreferredTimeSlotsForm::horizontalHeaderClicked(int co
 		}
 
 		for(int row=0; row<gt.rules.nHoursPerDay; row++){
-			/*QString s=notAllowedTimesTable->text(row, col);
+			/*QString s=preferredTimesTable->text(row, col);
 			if(s==YES)
 				s=NO;
 			else{
@@ -178,6 +184,8 @@ void AddConstraintActivityPreferredTimeSlotsForm::horizontalHeaderClicked(int co
 
 void AddConstraintActivityPreferredTimeSlotsForm::verticalHeaderClicked(int row)
 {
+	highlightOnVerticalHeaderClicked(preferredTimesTable, row);
+
 	if(row>=0 && row<gt.rules.nHoursPerDay){
 		QString s=preferredTimesTable->item(row, 0)->text();
 		if(s==YES)
@@ -188,7 +196,7 @@ void AddConstraintActivityPreferredTimeSlotsForm::verticalHeaderClicked(int row)
 		}
 	
 		for(int col=0; col<gt.rules.nDaysPerWeek; col++){
-			/*QString s=notAllowedTimesTable->text(row, col);
+			/*QString s=preferredTimesTable->text(row, col);
 			if(s==YES)
 				s=NO;
 			else{
@@ -199,6 +207,11 @@ void AddConstraintActivityPreferredTimeSlotsForm::verticalHeaderClicked(int row)
 			colorItem(preferredTimesTable->item(row,col));
 		}
 	}
+}
+
+void AddConstraintActivityPreferredTimeSlotsForm::cellEntered(int row, int col)
+{
+	highlightOnCellEntered(preferredTimesTable, row, col);
 }
 
 void AddConstraintActivityPreferredTimeSlotsForm::setAllSlotsAllowed()

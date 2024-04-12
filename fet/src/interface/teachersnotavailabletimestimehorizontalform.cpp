@@ -95,6 +95,8 @@ void TeachersNotAvailableTimesTimeHorizontalDelegate::paint(QPainter* painter, c
 TeachersNotAvailableTimesTimeHorizontalForm::TeachersNotAvailableTimesTimeHorizontalForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
+	
+	tableViewSetHighlightHeader(naTableWidget);
 
 	naTableWidget->setSelectionMode(QAbstractItemView::ExtendedSelection);
 

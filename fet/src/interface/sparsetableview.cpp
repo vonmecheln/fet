@@ -29,6 +29,10 @@
 
 #include <QSize>
 
+//#include <QString>
+//#include <QColor>
+//#include <QPalette>
+
 SparseTableView::SparseTableView() : QTableView()
 {
 	this->setModel(&model);

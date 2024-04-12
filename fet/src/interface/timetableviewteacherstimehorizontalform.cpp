@@ -146,6 +146,8 @@ TimetableViewTeachersTimeHorizontalForm::TimetableViewTeachersTimeHorizontalForm
 	horizontalSplitter->setStretchFactor(0, 5);
 	horizontalSplitter->setStretchFactor(1, 1);
 
+	tableViewSetHighlightHeader(teachersTimetableTable);
+
 	teachersTimetableTable->setSelectionMode(QAbstractItemView::ExtendedSelection);
 	
 	connect(closePushButton, &QPushButton::clicked, this, &TimetableViewTeachersTimeHorizontalForm::close);

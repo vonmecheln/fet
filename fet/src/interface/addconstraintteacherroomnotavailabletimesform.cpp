@@ -23,6 +23,7 @@
 
 #include <QBrush>
 #include <QColor>
+#include <QPalette>
 
 #include "longtextmessagebox.h"
 
@@ -86,6 +87,9 @@ AddConstraintTeacherRoomNotAvailableTimesForm::AddConstraintTeacherRoomNotAvaila
 	notAllowedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 
 	setStretchAvailabilityTableNicely(notAllowedTimesTable);
+
+	connect(notAllowedTimesTable, &QTableWidget::cellEntered, this, &AddConstraintTeacherRoomNotAvailableTimesForm::cellEntered);
+	notAllowedTimesTable->setMouseTracking(true);
 }
 
 AddConstraintTeacherRoomNotAvailableTimesForm::~AddConstraintTeacherRoomNotAvailableTimesForm()
@@ -96,16 +100,26 @@ AddConstraintTeacherRoomNotAvailableTimesForm::~AddConstraintTeacherRoomNotAvail
 void AddConstraintTeacherRoomNotAvailableTimesForm::colorItem(QTableWidgetItem* item)
 {
 	if(USE_GUI_COLORS){
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+		if(item->text()==NO)
+			item->setBackground(QBrush(QColorConstants::DarkGreen));
+		else
+			item->setBackground(QBrush(QColorConstants::DarkRed));
+		item->setForeground(QBrush(QColorConstants::LightGray));
+#else
 		if(item->text()==NO)
 			item->setBackground(QBrush(Qt::darkGreen));
 		else
 			item->setBackground(QBrush(Qt::darkRed));
 		item->setForeground(QBrush(Qt::lightGray));
+#endif
 	}
 }
 
 void AddConstraintTeacherRoomNotAvailableTimesForm::horizontalHeaderClicked(int col)
 {
+	highlightOnHorizontalHeaderClicked(notAllowedTimesTable, col);
+
 	if(col>=0 && col<gt.rules.nDaysPerWeek){
 		QString s=notAllowedTimesTable->item(0, col)->text();
 		if(s==YES)
@@ -131,6 +145,8 @@ void AddConstraintTeacherRoomNotAvailableTimesForm::horizontalHeaderClicked(int 
 
 void AddConstraintTeacherRoomNotAvailableTimesForm::verticalHeaderClicked(int row)
 {
+	highlightOnVerticalHeaderClicked(notAllowedTimesTable, row);
+
 	if(row>=0 && row<gt.rules.nHoursPerDay){
 		QString s=notAllowedTimesTable->item(row, 0)->text();
 		if(s==YES)
@@ -152,6 +168,11 @@ void AddConstraintTeacherRoomNotAvailableTimesForm::verticalHeaderClicked(int ro
 			colorItem(notAllowedTimesTable->item(row,col));
 		}
 	}
+}
+
+void AddConstraintTeacherRoomNotAvailableTimesForm::cellEntered(int row, int col)
+{
+	highlightOnCellEntered(notAllowedTimesTable, row, col);
 }
 
 void AddConstraintTeacherRoomNotAvailableTimesForm::setAllAvailable()

@@ -37,6 +37,8 @@ public slots:
 	void itemClicked(QTableWidgetItem* item);
 	void horizontalHeaderClicked(int col);
 	void verticalHeaderClicked(int row);
+
+	void cellEntered(int row, int col);
 	
 	void setAllAllowed();
 	void setAllBreak();

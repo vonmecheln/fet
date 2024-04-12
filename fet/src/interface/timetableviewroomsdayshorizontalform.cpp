@@ -97,6 +97,8 @@ TimetableViewRoomsDaysHorizontalForm::TimetableViewRoomsDaysHorizontalForm(QWidg
 	//verticalSplitter->setStretchFactor(1, 1);	//unneeded, because both have the same value
 	horizontalSplitter->setStretchFactor(0, 3);
 	horizontalSplitter->setStretchFactor(1, 10);
+
+	tableViewSetHighlightHeader(roomsTimetableTable);
 	
 	roomsTimetableTable->setSelectionMode(QAbstractItemView::ExtendedSelection);
 

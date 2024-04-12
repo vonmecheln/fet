@@ -2816,8 +2816,8 @@ Versions 6.19.0 - 6.19.v
 - Version 6.19.0
 	- Updated to Qt 6.6.3.
 	- Added two new types of constraints: teacher(s)/students (set) min gaps between activity tag/ordered pair of activity tags per real day, in the
-	Mornings-Afternoons mode (suggested by victorcapel). With this occasion there were corrected some bugs regarding the checking routine of the final
-	timetable (they did not affect the generation). Benahmed Abdelkrim contributed with a bug report on the new code.
+	Mornings-Afternoons mode (suggested by victorcapel). On this occasion some bugs in the routine used to check the final timetable were corrected
+	(they did not affect the generation). Benahmed Abdelkrim contributed with a bug report on the new code.
 	- Minor bug fix: if the user changes the mode to Mornings-Afternoons, the constraints of type min/max days between activities will be adjusted if
 	necessary (if the number of min/max days between activities is greater than the new number of real days per week).
 	- Minor bug fix in the description of the recorded history state when adding multiple constraints of type activities same starting hour / occupy
@@ -2825,10 +2825,23 @@ Versions 6.19.0 - 6.19.v
 	- Minor bug fix: when reading a wrong file containing an activity without a specified subject, FET will report an error on reading the file
 	instead of possible assertions failed when trying to edit the data or generate the timetable (reported by vlaicumihnea).
 	- Added a "Black" check box option in the statistics print from the interface, so that the fonts won't be gray, but black (suggested by Cyrus Ireri).
-	With this occasion, a minor correction was done in the exporting of the advanced statistics to the disk (if the HTML level was 7 - colors, the fonts
+	On this occasion, a minor correction was done in the exporting of the advanced statistics to the disk (if the HTML level was 7 - colors, the fonts
 	of line 2 should have been black, not gray).
 	- Minor change: The section "Timetable_Generation_Options_List" (which may contain elements of type "GroupActivitiesInInitialOrder") will be printed
 	even if it is empty.
 	- Added four new example files, by Alexey Chernous.
 	- Added three new example files, by activityum.
 	- Updated the Russian translation, by Alexey Chernous.
+- Version 6.19.1
+	- Updated to Qt 6.7.0.
+	- You can now open a file directly when starting the FET interface: "fet filename.fet" (recently suggested by Cyrus Ireri, and also suggested in
+	the past by MING-KIAN JONATHAN CEDRIC LEE KIM GNOK, Volker Dirr, and maybe other users).
+	- Better highlighting of the selected row(s)/column(s) in the tables (suggested by Cyrus Ireri, who also contributed with a bug report on the new code).
+	- Minor bug fixes, by Volker Dirr, when printing the timetables / advanced statistics from the interface.
+	- Code cleanup.
+- Version 6.19.2
+	- Bug fix: when opening a file on program startup with the command "fet filename.fet", the recent files list was not updated correctly with the file's
+	complete path, if it was not specified (this bug was introduced in the previous version).
+- Version 6.19.3
+	- Minor improvement to the highlighting of the selected row(s)/column(s) in the time horizontal view of the teachers'/students' not available times.
+ 	- Code cleanup.

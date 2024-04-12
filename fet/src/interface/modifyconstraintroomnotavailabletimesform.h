@@ -43,6 +43,8 @@ public slots:
 	void horizontalHeaderClicked(int col);
 	void verticalHeaderClicked(int row);
 
+	void cellEntered(int row, int col);
+	
 	void setAllAvailable();
 	void setAllNotAvailable();
 };

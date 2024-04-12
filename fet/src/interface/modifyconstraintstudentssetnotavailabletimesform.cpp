@@ -28,6 +28,7 @@
 
 #include <QBrush>
 #include <QColor>
+#include <QPalette>
 
 #define YES		(QString("X"))
 #define NO		(QString(" "))
@@ -109,6 +110,9 @@ ModifyConstraintStudentsSetNotAvailableTimesForm::ModifyConstraintStudentsSetNot
 	notAllowedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 	
 	setStretchAvailabilityTableNicely(notAllowedTimesTable);
+
+	connect(notAllowedTimesTable, &QTableWidget::cellEntered, this, &ModifyConstraintStudentsSetNotAvailableTimesForm::cellEntered);
+	notAllowedTimesTable->setMouseTracking(true);
 }
 
 ModifyConstraintStudentsSetNotAvailableTimesForm::~ModifyConstraintStudentsSetNotAvailableTimesForm()
@@ -137,6 +141,8 @@ void ModifyConstraintStudentsSetNotAvailableTimesForm::colorItem(QTableWidgetIte
 
 void ModifyConstraintStudentsSetNotAvailableTimesForm::horizontalHeaderClicked(int col)
 {
+	highlightOnHorizontalHeaderClicked(notAllowedTimesTable, col);
+
 	if(col>=0 && col<gt.rules.nDaysPerWeek){
 		QString s=notAllowedTimesTable->item(0, col)->text();
 		if(s==YES)
@@ -155,6 +161,8 @@ void ModifyConstraintStudentsSetNotAvailableTimesForm::horizontalHeaderClicked(i
 
 void ModifyConstraintStudentsSetNotAvailableTimesForm::verticalHeaderClicked(int row)
 {
+	highlightOnVerticalHeaderClicked(notAllowedTimesTable, row);
+
 	if(row>=0 && row<gt.rules.nHoursPerDay){
 		QString s=notAllowedTimesTable->item(row, 0)->text();
 		if(s==YES)
@@ -169,6 +177,11 @@ void ModifyConstraintStudentsSetNotAvailableTimesForm::verticalHeaderClicked(int
 			colorItem(notAllowedTimesTable->item(row,col));
 		}
 	}
+}
+
+void ModifyConstraintStudentsSetNotAvailableTimesForm::cellEntered(int row, int col)
+{
+	highlightOnCellEntered(notAllowedTimesTable, row, col);
 }
 
 void ModifyConstraintStudentsSetNotAvailableTimesForm::setAllAvailable()

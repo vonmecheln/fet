@@ -34,6 +34,7 @@
 
 #include <QBrush>
 #include <QColor>
+#include <QPalette>
 
 #define YES	(QString("X"))
 #define NO	(QString(" "))
@@ -123,6 +124,9 @@ ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::ModifyConstraintA
 	selectedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 	
 	setStretchAvailabilityTableNicely(selectedTimesTable);
+
+	connect(selectedTimesTable, &QTableWidget::cellEntered, this, &ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::cellEntered);
+	selectedTimesTable->setMouseTracking(true);
 	
 	//activities
 	QSize tmp1=teachersComboBox->minimumSizeHint();
@@ -202,6 +206,8 @@ void ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::colorItem(QT
 
 void ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::horizontalHeaderClicked(int col)
 {
+	highlightOnHorizontalHeaderClicked(selectedTimesTable, col);
+
 	if(col>=0 && col<gt.rules.nDaysPerWeek){
 		QString s=selectedTimesTable->item(0, col)->text();
 		if(s==YES)
@@ -220,6 +226,8 @@ void ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::horizontalHe
 
 void ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::verticalHeaderClicked(int row)
 {
+	highlightOnVerticalHeaderClicked(selectedTimesTable, row);
+
 	if(row>=0 && row<gt.rules.nHoursPerDay){
 		QString s=selectedTimesTable->item(row, 0)->text();
 		if(s==YES)
@@ -234,6 +242,11 @@ void ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::verticalHead
 			colorItem(selectedTimesTable->item(row,col));
 		}
 	}
+}
+
+void ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::cellEntered(int row, int col)
+{
+	highlightOnCellEntered(selectedTimesTable, row, col);
 }
 
 void ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::setAllUnselected()

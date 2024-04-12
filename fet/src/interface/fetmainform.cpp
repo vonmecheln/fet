@@ -513,6 +513,9 @@
 #include <QList>
 #include <QHash>
 
+#include <QPalette>
+#include <QColor>
+
 #include <QDesktopServices>
 #include <QUrl>
 #include <QApplication>
@@ -12642,7 +12645,7 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	s+=tr("2")+QString(". ")+tr("Show shortcut buttons in main window will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 
-	s+=tr("3")+QString(". ")+tr("In the shortcuts tab from the main window, the first section will be selected/shown", "Option refers to the main window tab widget for shortcuts, which currently contains 5 tabs: File, Data, "
+	s+=tr("3")+QString(". ")+tr("In the shortcuts tab from the main window, the first section will be selected/shown", "Section refers to the main window tab widget for shortcuts, which currently contains 5 tabs: File, Data, "
 		"Time, Space, Timetable (so it will select/show File tab).");
 	s+="\n";
 

@@ -30,6 +30,7 @@
 
 #include <QBrush>
 #include <QColor>
+#include <QPalette>
 
 #define YES		(QString(" "))
 #define NO		(QString("X"))
@@ -121,6 +122,9 @@ AddConstraintActivityPreferredStartingTimesForm::AddConstraintActivityPreferredS
 
 	setStretchAvailabilityTableNicely(preferredTimesTable);
 
+	connect(preferredTimesTable, &QTableWidget::cellEntered, this, &AddConstraintActivityPreferredStartingTimesForm::cellEntered);
+	preferredTimesTable->setMouseTracking(true);
+
 	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintActivityPreferredStartingTimesForm::filterChanged);
 	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintActivityPreferredStartingTimesForm::filterChanged);
 	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddConstraintActivityPreferredStartingTimesForm::filterChanged);
@@ -153,6 +157,8 @@ void AddConstraintActivityPreferredStartingTimesForm::colorItem(QTableWidgetItem
 
 void AddConstraintActivityPreferredStartingTimesForm::horizontalHeaderClicked(int col)
 {
+	highlightOnHorizontalHeaderClicked(preferredTimesTable, col);
+
 	if(col>=0 && col<gt.rules.nDaysPerWeek){
 		QString s=preferredTimesTable->item(0, col)->text();
 		if(s==YES)
@@ -163,7 +169,7 @@ void AddConstraintActivityPreferredStartingTimesForm::horizontalHeaderClicked(in
 		}
 
 		for(int row=0; row<gt.rules.nHoursPerDay; row++){
-			/*QString s=notAllowedTimesTable->text(row, col);
+			/*QString s=preferredTimesTable->text(row, col);
 			if(s==YES)
 				s=NO;
 			else{
@@ -178,6 +184,8 @@ void AddConstraintActivityPreferredStartingTimesForm::horizontalHeaderClicked(in
 
 void AddConstraintActivityPreferredStartingTimesForm::verticalHeaderClicked(int row)
 {
+	highlightOnVerticalHeaderClicked(preferredTimesTable, row);
+
 	if(row>=0 && row<gt.rules.nHoursPerDay){
 		QString s=preferredTimesTable->item(row, 0)->text();
 		if(s==YES)
@@ -188,7 +196,7 @@ void AddConstraintActivityPreferredStartingTimesForm::verticalHeaderClicked(int 
 		}
 	
 		for(int col=0; col<gt.rules.nDaysPerWeek; col++){
-			/*QString s=notAllowedTimesTable->text(row, col);
+			/*QString s=preferredTimesTable->text(row, col);
 			if(s==YES)
 				s=NO;
 			else{
@@ -199,6 +207,11 @@ void AddConstraintActivityPreferredStartingTimesForm::verticalHeaderClicked(int 
 			colorItem(preferredTimesTable->item(row,col));
 		}
 	}
+}
+
+void AddConstraintActivityPreferredStartingTimesForm::cellEntered(int row, int col)
+{
+	highlightOnCellEntered(preferredTimesTable, row, col);
 }
 
 void AddConstraintActivityPreferredStartingTimesForm::setAllSlotsAllowed()

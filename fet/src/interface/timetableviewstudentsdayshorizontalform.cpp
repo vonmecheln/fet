@@ -98,6 +98,8 @@ TimetableViewStudentsDaysHorizontalForm::TimetableViewStudentsDaysHorizontalForm
 	horizontalSplitter->setStretchFactor(0, 3);
 	horizontalSplitter->setStretchFactor(1, 10);
 	
+	tableViewSetHighlightHeader(studentsTimetableTable);
+	
 	studentsTimetableTable->setSelectionMode(QAbstractItemView::ExtendedSelection);
 	
 	yearsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);

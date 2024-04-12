@@ -51,6 +51,8 @@ StudentsStatisticsForm::StudentsStatisticsForm(QWidget* parent): QDialog(parent)
 
 	connect(closeButton, &QPushButton::clicked, this, &StudentsStatisticsForm::close);
 
+	tableViewSetHighlightHeader(tableWidget);
+
 	tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
 	tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
@@ -288,7 +290,7 @@ void StudentsStatisticsForm::checkBoxesModified()
 			currentStudentsSet++;
 			insertStudentsSet(year, currentStudentsSet);
 		}
-				
+		
 		for(StudentsGroup* group : std::as_const(year->groupsList)){
 			bool sg=true;
 			if(!complete){
@@ -316,7 +318,7 @@ void StudentsStatisticsForm::checkBoxesModified()
 					currentStudentsSet++;
 					insertStudentsSet(subgroup, currentStudentsSet);
 				}
-			}	
+			}
 		}
 	}
 	

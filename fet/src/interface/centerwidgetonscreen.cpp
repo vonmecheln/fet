@@ -41,6 +41,8 @@ File centerwidgetonscreen.cpp
 #include <QApplication>
 #include <QWidgetList>
 
+#include <QStyle>
+
 #if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QGuiApplication>
 #include <QScreen>
@@ -65,6 +67,7 @@ File centerwidgetonscreen.cpp
 
 #ifndef FET_COMMAND_LINE
 #include <QHeaderView>
+#include <QTableView>
 #include <QTableWidget>
 #include <QTableWidgetItem>
 #include <QAbstractItemView>
@@ -202,38 +205,38 @@ void setParentAndOtherThings(QWidget* widget, QWidget* parent)
 	}*/
 }
 
-void setStretchAvailabilityTableNicely(QTableWidget* notAllowedTimesTable)
+void setStretchAvailabilityTableNicely(QTableWidget* tableWidget)
 {
 #if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
-	notAllowedTimesTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+	tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 #else
-	notAllowedTimesTable->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
+	tableWidget->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
 #endif
 
-	int q=notAllowedTimesTable->horizontalHeader()->defaultSectionSize();
-	notAllowedTimesTable->horizontalHeader()->setMinimumSectionSize(q);
+	int q=tableWidget->horizontalHeader()->defaultSectionSize();
+	tableWidget->horizontalHeader()->setMinimumSectionSize(q);
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
-	notAllowedTimesTable->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+	tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 #else
-	notAllowedTimesTable->verticalHeader()->setResizeMode(QHeaderView::Stretch);
+	tableWidget->verticalHeader()->setResizeMode(QHeaderView::Stretch);
 #endif
 
 	q=-1;
-	for(int i=0; i<notAllowedTimesTable->verticalHeader()->count(); i++)
-		if(q<notAllowedTimesTable->verticalHeader()->sectionSizeHint(i))
-			q=notAllowedTimesTable->verticalHeader()->sectionSizeHint(i);
-	notAllowedTimesTable->verticalHeader()->setMinimumSectionSize(q);
+	for(int i=0; i<tableWidget->verticalHeader()->count(); i++)
+		if(q<tableWidget->verticalHeader()->sectionSizeHint(i))
+			q=tableWidget->verticalHeader()->sectionSizeHint(i);
+	tableWidget->verticalHeader()->setMinimumSectionSize(q);
 	
 	//2011-09-23
-	for(int i=0; i<notAllowedTimesTable->rowCount(); i++){
-		for(int j=0; j<notAllowedTimesTable->columnCount(); j++){
-			QFont font=notAllowedTimesTable->item(i,j)->font();
+	for(int i=0; i<tableWidget->rowCount(); i++){
+		for(int j=0; j<tableWidget->columnCount(); j++){
+			QFont font=tableWidget->item(i,j)->font();
 			font.setBold(true);
-			notAllowedTimesTable->item(i,j)->setFont(font);
+			tableWidget->item(i,j)->setFont(font);
 		}
 	}
-	notAllowedTimesTable->setCornerButtonEnabled(false);
+	tableWidget->setCornerButtonEnabled(false);
 }
 
 void setRulesModifiedAndOtherThings(Rules* rules)
@@ -538,6 +541,226 @@ void updateAllTimetableViewDialogs()
 		}
 }
 
+void highlightOnHorizontalHeaderClicked(QTableWidget* tableWidget, int col)
+{
+	bool respectsHeaderBackgroundColor=false;
+#ifndef Q_OS_WIN
+	respectsHeaderBackgroundColor=true;
+#else
+#if QT_VERSION >= QT_VERSION_CHECK(6,1,0)
+	QString styleName=qApp->style()->name();
+	if(QString::compare(styleName, QString("windowsvista"), Qt::CaseInsensitive)!=0
+	 && QString::compare(styleName, QString("windows11"), Qt::CaseInsensitive)!=0)
+		respectsHeaderBackgroundColor=true;
+#endif
+#endif
+
+	if(col>=0 && col<gt.rules.nDaysPerWeek){
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+			if(j!=col){
+				QTableWidgetItem* hhi=tableWidget->horizontalHeaderItem(j);
+				if(hhi!=nullptr){
+					if(respectsHeaderBackgroundColor){
+						hhi->setBackground(tableWidget->palette().base());
+						hhi->setForeground(tableWidget->palette().text());
+					}
+					else{
+						QFont font=tableWidget->font();
+						font.setBold(false);
+						font.setItalic(false);
+						hhi->setFont(font);
+					}
+				}
+			}
+		for(int i=0; i<gt.rules.nHoursPerDay; i++){
+			QTableWidgetItem* vhi=tableWidget->verticalHeaderItem(i);
+			if(vhi!=nullptr){
+				if(respectsHeaderBackgroundColor){
+					vhi->setBackground(tableWidget->palette().base());
+					vhi->setForeground(tableWidget->palette().text());
+				}
+				else{
+					QFont font=tableWidget->font();
+					font.setBold(false);
+					font.setItalic(false);
+					vhi->setFont(font);
+				}
+			}
+		}
+
+		QTableWidgetItem* hhi=tableWidget->horizontalHeaderItem(col);
+		if(hhi!=nullptr){
+			if(respectsHeaderBackgroundColor){
+				hhi->setBackground(tableWidget->palette().highlight());
+				hhi->setForeground(tableWidget->palette().highlightedText());
+			}
+			else{
+				QFont font=tableWidget->font();
+				font.setBold(true);
+				font.setItalic(true);
+				hhi->setFont(font);
+			}
+		}
+	}
+}
+
+void highlightOnVerticalHeaderClicked(QTableWidget* tableWidget, int row)
+{
+	bool respectsHeaderBackgroundColor=false;
+#ifndef Q_OS_WIN
+	respectsHeaderBackgroundColor=true;
+#else
+#if QT_VERSION >= QT_VERSION_CHECK(6,1,0)
+	QString styleName=qApp->style()->name();
+	if(QString::compare(styleName, QString("windowsvista"), Qt::CaseInsensitive)!=0
+	 && QString::compare(styleName, QString("windows11"), Qt::CaseInsensitive)!=0)
+		respectsHeaderBackgroundColor=true;
+#endif
+#endif
+
+	if(row>=0 && row<gt.rules.nHoursPerDay){
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++){
+			QTableWidgetItem* hhi=tableWidget->horizontalHeaderItem(j);
+			if(hhi!=nullptr){
+				if(respectsHeaderBackgroundColor){
+					hhi->setBackground(tableWidget->palette().base());
+					hhi->setForeground(tableWidget->palette().text());
+				}
+				else{
+					QFont font=tableWidget->font();
+					font.setBold(false);
+					font.setItalic(false);
+					hhi->setFont(font);
+				}
+			}
+		}
+		for(int i=0; i<gt.rules.nHoursPerDay; i++)
+			if(i!=row){
+				QTableWidgetItem* vhi=tableWidget->verticalHeaderItem(i);
+				if(vhi!=nullptr){
+					if(respectsHeaderBackgroundColor){
+						vhi->setBackground(tableWidget->palette().base());
+						vhi->setForeground(tableWidget->palette().text());
+					}
+					else{
+						QFont font=tableWidget->font();
+						font.setBold(false);
+						font.setItalic(false);
+						vhi->setFont(font);
+					}
+				}
+			}
+
+		QTableWidgetItem* vhi=tableWidget->verticalHeaderItem(row);
+		if(vhi!=nullptr){
+			if(respectsHeaderBackgroundColor){
+				vhi->setBackground(tableWidget->palette().highlight());
+				vhi->setForeground(tableWidget->palette().highlightedText());
+			}
+			else{
+				QFont font=tableWidget->font();
+				font.setBold(true);
+				font.setItalic(true);
+				vhi->setFont(font);
+			}
+		}
+	}
+}
+
+void highlightOnCellEntered(QTableWidget* tableWidget, int row, int col)
+{
+	bool respectsHeaderBackgroundColor=false;
+#ifndef Q_OS_WIN
+	respectsHeaderBackgroundColor=true;
+#else
+#if QT_VERSION >= QT_VERSION_CHECK(6,1,0)
+	QString styleName=qApp->style()->name();
+	if(QString::compare(styleName, QString("windowsvista"), Qt::CaseInsensitive)!=0
+	 && QString::compare(styleName, QString("windows11"), Qt::CaseInsensitive)!=0)
+		respectsHeaderBackgroundColor=true;
+#endif
+#endif
+
+	if(row>=0 && row<gt.rules.nHoursPerDay && col>=0 && col<gt.rules.nDaysPerWeek){
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+			if(j!=col){
+				QTableWidgetItem* hhi=tableWidget->horizontalHeaderItem(j);
+				if(hhi!=nullptr){
+					if(respectsHeaderBackgroundColor){
+						hhi->setBackground(tableWidget->palette().base());
+						hhi->setForeground(tableWidget->palette().text());
+					}
+					else{
+						QFont font=tableWidget->font();
+						font.setBold(false);
+						font.setItalic(false);
+						hhi->setFont(font);
+					}
+				}
+			}
+
+		for(int i=0; i<gt.rules.nHoursPerDay; i++)
+			if(i!=row){
+				QTableWidgetItem* vhi=tableWidget->verticalHeaderItem(i);
+				if(vhi!=nullptr){
+					if(respectsHeaderBackgroundColor){
+						vhi->setBackground(tableWidget->palette().base());
+						vhi->setForeground(tableWidget->palette().text());
+					}
+					else{
+						QFont font=tableWidget->font();
+						font.setBold(false);
+						font.setItalic(false);
+						vhi->setFont(font);
+					}
+				}
+			}
+
+		QTableWidgetItem* hhi=tableWidget->horizontalHeaderItem(col);
+		if(hhi!=nullptr){
+			if(respectsHeaderBackgroundColor){
+				hhi->setBackground(tableWidget->palette().highlight());
+				hhi->setForeground(tableWidget->palette().highlightedText());
+			}
+			else{
+				QFont font=tableWidget->font();
+				font.setBold(true);
+				font.setItalic(true);
+				hhi->setFont(font);
+			}
+		}
+
+		QTableWidgetItem* vhi=tableWidget->verticalHeaderItem(row);
+		if(vhi!=nullptr){
+			if(respectsHeaderBackgroundColor){
+				vhi->setBackground(tableWidget->palette().highlight());
+				vhi->setForeground(tableWidget->palette().highlightedText());
+			}
+			else{
+				QFont font=tableWidget->font();
+				font.setBold(true);
+				font.setItalic(true);
+				vhi->setFont(font);
+			}
+		}
+	}
+}
+
+void tableViewSetHighlightHeader(QTableView* tableWidget)
+{
+	//To better highlight the selected row/column, for instance if the user chose a bold interface font,
+	//the selected header section looked identical with the others (unselected).
+	//Sources of inspiration, as found on the internet,
+	//here: https://www.qtcentre.org/threads/57210-how-to-change-background-color-of-individual-QHeaderView-section ,
+	//here: https://www.qtcentre.org/threads/46841-Can-t-style-QHeaderView-section-selected-in-QSS-stylesheet ,
+	//here: https://stackoverflow.com/questions/15519749/how-to-get-widget-background-qcolor ,
+	//and in the Qt documentation.
+	QString bc=qApp->palette().highlight().color().name();
+	QString fc=qApp->palette().highlightedText().color().name();
+	tableWidget->setStyleSheet(QString("QHeaderView::section:checked { background-color: ")+bc+QString("; color: ")+fc+QString(" }"));
+	//this->setStyleSheet(QString("QHeaderView::section:hover { background-color: ")+bc+QString("; color: ")+fc+QString(" }"));
+}
+
 #else
 
 void centerWidgetOnScreen(QWidget* widget)
@@ -582,9 +805,9 @@ void setParentAndOtherThings(QWidget* widget, QWidget* parent)
 	Q_UNUSED(parent);
 }
 
-void setStretchAvailabilityTableNicely(QTableWidget* notAllowedTimesTable)
+void setStretchAvailabilityTableNicely(QTableWidget* tableWidget)
 {
-	Q_UNUSED(notAllowedTimesTable);
+	Q_UNUSED(tableWidget);
 }
 
 void setRulesModifiedAndOtherThings(Rules* rules)

@@ -429,13 +429,14 @@ private:
 	bool openHistory();
 	bool saveHistory();
 
-	void openFile(const QString& fileName);
 	bool fileSave();
 	bool fileSaveAs();
 	
 public:
 	FetMainForm();
 	~FetMainForm();
+
+	void openFile(const QString& fileName);
 	
 	void updateMode(bool forceUpdate=false);
 

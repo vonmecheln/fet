@@ -33,13 +33,15 @@ public:
 
 	void colorItem(QTableWidgetItem* item);
 
-public slots:	
+public slots:
 	void addConstraint();
 
 	void itemClicked(QTableWidgetItem* item);
 	void horizontalHeaderClicked(int col);
 	void verticalHeaderClicked(int row);
 
+	void cellEntered(int row, int col);
+	
 	void setAllAvailable();
 	void setAllNotAvailable();
 };

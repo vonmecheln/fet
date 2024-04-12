@@ -23,6 +23,7 @@
 
 #include <QBrush>
 #include <QColor>
+#include <QPalette>
 
 #include "modifyconstraintteacherroomnotavailabletimesform.h"
 
@@ -110,6 +111,9 @@ ModifyConstraintTeacherRoomNotAvailableTimesForm::ModifyConstraintTeacherRoomNot
 	notAllowedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 
 	setStretchAvailabilityTableNicely(notAllowedTimesTable);
+
+	connect(notAllowedTimesTable, &QTableWidget::cellEntered, this, &ModifyConstraintTeacherRoomNotAvailableTimesForm::cellEntered);
+	notAllowedTimesTable->setMouseTracking(true);
 }
 
 ModifyConstraintTeacherRoomNotAvailableTimesForm::~ModifyConstraintTeacherRoomNotAvailableTimesForm()
@@ -120,16 +124,26 @@ ModifyConstraintTeacherRoomNotAvailableTimesForm::~ModifyConstraintTeacherRoomNo
 void ModifyConstraintTeacherRoomNotAvailableTimesForm::colorItem(QTableWidgetItem* item)
 {
 	if(USE_GUI_COLORS){
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+		if(item->text()==NO)
+			item->setBackground(QBrush(QColorConstants::DarkGreen));
+		else
+			item->setBackground(QBrush(QColorConstants::DarkRed));
+		item->setForeground(QBrush(QColorConstants::LightGray));
+#else
 		if(item->text()==NO)
 			item->setBackground(QBrush(Qt::darkGreen));
 		else
 			item->setBackground(QBrush(Qt::darkRed));
 		item->setForeground(QBrush(Qt::lightGray));
+#endif
 	}
 }
 
 void ModifyConstraintTeacherRoomNotAvailableTimesForm::horizontalHeaderClicked(int col)
 {
+	highlightOnHorizontalHeaderClicked(notAllowedTimesTable, col);
+
 	if(col>=0 && col<gt.rules.nDaysPerWeek){
 		QString s=notAllowedTimesTable->item(0, col)->text();
 		if(s==YES)
@@ -148,6 +162,8 @@ void ModifyConstraintTeacherRoomNotAvailableTimesForm::horizontalHeaderClicked(i
 
 void ModifyConstraintTeacherRoomNotAvailableTimesForm::verticalHeaderClicked(int row)
 {
+	highlightOnVerticalHeaderClicked(notAllowedTimesTable, row);
+
 	if(row>=0 && row<gt.rules.nHoursPerDay){
 		QString s=notAllowedTimesTable->item(row, 0)->text();
 		if(s==YES)
@@ -162,6 +178,11 @@ void ModifyConstraintTeacherRoomNotAvailableTimesForm::verticalHeaderClicked(int
 			colorItem(notAllowedTimesTable->item(row,col));
 		}
 	}
+}
+
+void ModifyConstraintTeacherRoomNotAvailableTimesForm::cellEntered(int row, int col)
+{
+	highlightOnCellEntered(notAllowedTimesTable, row, col);
 }
 
 void ModifyConstraintTeacherRoomNotAvailableTimesForm::setAllAvailable()

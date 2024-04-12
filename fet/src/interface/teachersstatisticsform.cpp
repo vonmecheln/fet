@@ -43,6 +43,8 @@ TeachersStatisticsForm::TeachersStatisticsForm(QWidget* parent): QDialog(parent)
 
 	connect(closeButton, &QPushButton::clicked, this, &TeachersStatisticsForm::close);
 	
+	tableViewSetHighlightHeader(tableWidget);
+	
 	tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
 	tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 

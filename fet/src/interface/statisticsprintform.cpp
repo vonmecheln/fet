@@ -708,14 +708,16 @@ QString StatisticsPrintForm::updateHTMLprintString(bool printAll){
 	//QTBUG-2730
 	tmp+="  <head>\n";
 	tmp+="    <title>"+protect2(gt.rules.institutionName)+"</title>\n";
-	tmp+="    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
+	tmp+="    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";
 	tmp+="    <style type=\"text/css\">\n";
+
+	tmp+="      body {\n        color: black;\n        background-color: white;\n      }\n\n";
 	
 	//this variant doesn't need the "back" stuff, but there will be an empty last page!
 	//but you need to care about correct odd and even like in the groups tables
 /*	tmp+="      table.even_table {\n";
 	if(CBBreak->currentIndex()==1 || CBBreak->currentIndex()==2){
-		tmp+="        page-break-after: always;";
+		tmp+="        page-break-after: always;\n";
 	} //else {
 	//tmp+="        padding-top: "+QString::number(tablePadding->value())+"px;\n";	//not possible: qt bug. (*1*)
 	//tmp+="        padding-bottom: "+QString::number(tablePadding->value())+"px;\n";	//not possible: qt bug. (*1*)
@@ -723,7 +725,7 @@ QString StatisticsPrintForm::updateHTMLprintString(bool printAll){
 	tmp+="      }\n";
 	tmp+="      table.odd_table {\n";
 	if(CBBreak->currentIndex()==1){
-		tmp+="        page-break-after: always;";
+		tmp+="        page-break-after: always;\n";
 	} //else {
 	//tmp+="        padding-top: "+QString::number(tablePadding->value())+"px;\n";	//not possible: qt bug. (*1*)
 	//tmp+="        padding-bottom: "+QString::number(tablePadding->value())+"px;\n";	//not possible: qt bug. (*1*)
@@ -740,7 +742,7 @@ QString StatisticsPrintForm::updateHTMLprintString(bool printAll){
 //	tmp+="        padding-top: "+QString::number(tablePadding->value())+"px;\n";	//not possible: qt bug.
 //	tmp+="        padding-bottom: "+QString::number(tablePadding->value())+"px;\n";	//not possible: qt bug.
 	if(CBBreak->currentIndex()==1 || CBBreak->currentIndex()==2)
-		tmp+="        page-break-after: always;";
+		tmp+="        page-break-after: always;\n";
 	tmp+="      }\n";
 	tmp+="      p.back1 {\n";	//i can't to that with a class in table, because of a qt bug
 	if(CBBreak->currentIndex()==0 || CBBreak->currentIndex()==2)
@@ -750,7 +752,7 @@ QString StatisticsPrintForm::updateHTMLprintString(bool printAll){
 //	tmp+="        padding-top: "+QString::number(tablePadding->value())+"px;\n";	//not possible: qt bug.
 //	tmp+="        padding-bottom: "+QString::number(tablePadding->value())+"px;\n";	//not possible: qt bug.
 	if(CBBreak->currentIndex()==1)
-		tmp+="        page-break-after: always;";
+		tmp+="        page-break-after: always;\n";
 	tmp+="      }\n";
 	//end. the "back" stuff is only needed because of a qt bug (*1*). delete this as soon as bug is solved
 	

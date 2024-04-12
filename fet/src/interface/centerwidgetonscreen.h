@@ -27,6 +27,7 @@ File centerwidgetonscreen.h
 class QComboBox;
 
 class QWidget;
+class QTableView;
 class QTableWidget;
 
 class Rules;
@@ -44,7 +45,7 @@ void restoreFETDialogGeometry(QWidget* widget, const QString& alternativeName=QS
 
 void setParentAndOtherThings(QWidget* widget, QWidget* parent);
 
-void setStretchAvailabilityTableNicely(QTableWidget* notAllowedTimesTable);
+void setStretchAvailabilityTableNicely(QTableWidget* tableWidget);
 
 void setRulesModifiedAndOtherThings(Rules* rules);
 void setRulesUnmodifiedAndOtherThings(Rules* rules);
@@ -57,5 +58,11 @@ int populateStudentsComboBox(QComboBox* studentsComboBox, const QString& selecte
 
 //void closeAllTimetableViewDialogs();
 void updateAllTimetableViewDialogs();
+
+void highlightOnHorizontalHeaderClicked(QTableWidget* tableWidget, int col);
+void highlightOnVerticalHeaderClicked(QTableWidget* tableWidget, int row);
+void highlightOnCellEntered(QTableWidget* tableWidget, int row, int col);
+
+void tableViewSetHighlightHeader(QTableView* tableWidget);
 
 #endif

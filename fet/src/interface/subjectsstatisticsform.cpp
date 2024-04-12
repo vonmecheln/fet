@@ -41,12 +41,14 @@ SubjectsStatisticsForm::SubjectsStatisticsForm(QWidget* parent): QDialog(parent)
 	
 	connect(closeButton, &QPushButton::clicked, this, &SubjectsStatisticsForm::close);
 
+	tableViewSetHighlightHeader(tableWidget);
+
 	tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
 	tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
-		
+	
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
-		
+	
 	tableWidget->clear();
 	tableWidget->setColumnCount(3);
 	tableWidget->setRowCount(gt.rules.subjectsList.size());
