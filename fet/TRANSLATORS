@@ -16,8 +16,10 @@ bg - Bulgarian translation
 
 ca - Catalan translation
 
+	former translator: Miguel Gea Milvaques (debian AT miguelgea.com)
+
 	former translator: Sílvia Lag (to contact Sílvia visit FET forum - https://lalescu.ro/liviu/fet/forum/,
-	section about Catalan translation, or contact forum user silvia)
+	section about Catalan translation, or contact forum user silvia) - rewrote the translation from zero
 
 	current translator: Innocent De Marchi (tangram.peces AT gmail.com)
 
@@ -135,12 +137,14 @@ ms - Malay translation
 
 nl - Dutch translation
 
-	Niels Fikse (k.fikse AT student.utwente.nl)
+	former translator: Daan Huntjens
+
+	current translator: Niels Fikse (k.fikse AT student.utwente.nl)
 
 
 pl - Polish translation
 
-	Radoslaw Pasiok (zapala AT konto.pl)
+	Radosław Pasiok (zapala AT konto.pl)
 
 
 pt_BR - Brazilian Portuguese translation

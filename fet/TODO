@@ -9072,3 +9072,28 @@ Liviu Lalescu: Cyrus Ireri has a file with 7 days per week. He needs that a teac
 From GUEFFAZ REDA:
 
 A setting to check for snapshots on startup (similar to checking for updates/new official versions on startup).
+
+562---------------------------------------------------------
+From pnlshd (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5930.0
+
+Any idea how can I properly add days to the week in the basic data without affecting existing constraints?
+
+I have a case where I am building an exam timetable and I want ALL students to have min 7 resting hours which is the number of lessons per day
+(basically saying all students should not have two exams in consecutive days but in an easier way than manually doing min days between activities)
+but the problem is that exams take two weeks and I have not added the off days in the beginning and now this constraint considers the end and
+start of the week as having no rest. I wanted to add this day and make it not available for all students but I don't want the current
+Teacher not available constraints to get affected (aka shifted when I add it).
+
+---
+
+I managed to do this by manually adding the day and modifying the number of days in the source .FET file. If you have any general feedback about
+the problem itself you are most welcome :)
+
+563---------------------------------------------------------
+From TAHIR (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5931.0
+
+Is it possible teacher statistics appear at the end of each teacher Timetable?

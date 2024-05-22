@@ -2845,3 +2845,5 @@ Versions 6.19.0 - 6.19.v
 - Version 6.19.3
 	- Minor improvement to the highlighting of the selected row(s)/column(s) in the time horizontal view of the teachers'/students' not available times.
  	- Code cleanup.
+- Version 6.19.4
+	- Minor corrections and improvements.

@@ -12431,7 +12431,7 @@ QString TimetableExport::singleTeachersStatisticsHtml(int htmlLevel, const QStri
 		tmpString+="    </p>\n";
 	}
 	tmpString+="    <p>\n";
-	tmpString+="      "+tr("This file doesn't list limits that are set by constraints. It contains statistics about the min and max values of the currently calculated solution.")+"\n";
+	tmpString+="      "+tr("This file doesn't list limits that are set by constraints. It contains statistics about the minimum and the maximum values of the currently generated solution.")+"\n";
 	tmpString+="    </p>\n";
 	
 	QString teachersString="";
@@ -12630,7 +12630,7 @@ QString TimetableExport::singleStudentsStatisticsHtml(int htmlLevel, const QStri
 		tmpString+="    </p>\n";
 	}
 	tmpString+="    <p>\n";
-	tmpString+="      "+tr("This file doesn't list limits that are set by constraints. It contains statistics about the min and max values of the currently calculated solution.")+"\n";
+	tmpString+="      "+tr("This file doesn't list limits that are set by constraints. It contains statistics about the minimum and the maximum values of the currently generated solution.")+"\n";
 	tmpString+="    </p>\n";
 	
 	//subgroups statistics (start)
