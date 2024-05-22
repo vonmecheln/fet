@@ -2846,4 +2846,8 @@ Versions 6.19.0 - 6.19.v
 	- Minor improvement to the highlighting of the selected row(s)/column(s) in the time horizontal view of the teachers'/students' not available times.
  	- Code cleanup.
 - Version 6.19.4
-	- Minor corrections and improvements.
+	- Minor corrections.
+- Version 6.19.5
+	- Corrected the two Windows batch files which start the program in the Fusion / Windows styles, to take care of possible spaces characters in the
+	path to the FET executable (bug reported by Khafallah Oualid).
+	- Minor corrections.

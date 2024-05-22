@@ -9097,3 +9097,49 @@ From TAHIR (on forum):
 https://lalescu.ro/liviu/fet/forum/index.php?topic=5931.0
 
 Is it possible teacher statistics appear at the end of each teacher Timetable?
+
+564---------------------------------------------------------
+From Vangelis Karafillidis:
+
+For importing activities from a .csv file, this feature, for adding the attribute active/inactive.
+
+Volker Dirr:
+
+So a new field is needed. If it is empty, then it will be the same as the old (to keep old
+behaviour). And in the new field must be a string with true/false flag for each subactivity.
+Maybe also split by "+", so it looks similar to split duration?
+
+565---------------------------------------------------------
+From maxi_mus (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5927.0
+
+Cannot optimize, because you have constraint teacher min hours per morning for teacher XX but not also min hours daily for him. Please add a constraint
+teacher(s) min hours daily affecting this teacher
+
+I don't understand the problem here. The problem persists, even if I add a constraint 'minimum hours per real day'.
+
+If I add a constraint 'minimum hours per day', then this obviously also forces FET to make a minimum number of hours for each afternoon. I don't want this,
+this is the exact reason why I chose the 'minimum hours per morning' in the first place.
+
+566---------------------------------------------------------
+From Cyrus Ireri (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5938.0
+
+Is there a way of ensuring teachers can't have 2 sessions with 2 duration consecutive even if there is a break between? This affects science teachers when
+they have double lessons for practical. The method I have been using is exhaustive more so when dealing with a school with 48 classes.
+
+I don't mind a double and 2 single sessions but not double and double.
+
+Liviu Lalescu:
+
+Maybe min 2 gaps between activities?
+
+Cyrus Ireri:
+
+That's what I have been using. Wish we can have constraint like max hours with an activity tag between time intervals for all teachers. It can save the hustles.
+
+Liviu Lalescu:
+
+I think Cyrus Ireri refers to teachers max hours daily with an activity tag in an hourly interval.

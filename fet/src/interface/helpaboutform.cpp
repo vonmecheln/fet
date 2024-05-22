@@ -79,7 +79,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	 "or a combination of these), %2 are the copyright holders").arg("2002-2024").arg("Liviu Lalescu, Volker Dirr");
 	about+=QString("<br /><br />");
 	about+=tr("Version: %1 (%2 %3).", "%1 is the current FET version, %2 is the current release month, %3 is the current release year").arg(FET_VERSION)
-	 .arg(QCoreApplication::translate("MonthsNames", "April")).arg("2024");
+	 .arg(QCoreApplication::translate("MonthsNames", "May")).arg("2024");
 	about+=QString("<br /><br />");
 	about+=tr("Licensed under the GNU Affero General Public License version 3 or later.");
 	about+=QString("<br /><br />");
@@ -244,7 +244,9 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 
 	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("hu").arg(tr("Hungarian translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Ferenczi Viktor").arg("cx AT cx.hu");
+	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Ferenczi Viktor").arg("cx AT cx.hu");
+	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
+	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Zsolt Udvari").arg("uzsolt AT uzsolt.hu");
 	translators+=QString("<br /><br /><br />");
 
 	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("id").arg(tr("Indonesian translation"));
@@ -312,7 +314,9 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 
 	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("ro").arg(tr("Romanian translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Liviu Lalescu").arg("https://lalescu.ro/liviu/");
+	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Constantin Romulus").arg("daviodan AT yahoo.com");
+	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
+	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Liviu Lalescu").arg("https://lalescu.ro/liviu/");
 	translators+=QString("<br /><br /><br />");
 
 	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("ru").arg(tr("Russian translation"));
@@ -1215,6 +1219,8 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("vlaicumihnea");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("TAHIR");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Khafallah Oualid");
 	thanksTo+=QString("<br />");
 	
 	thanksToTextBrowser->setHtml(thanksTo);
