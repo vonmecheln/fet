@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="6.19.0">
+<fet version="6.20.0">
 
 <Mode>Mornings_Afternoons</Mode>
 
@@ -2675,6 +2675,70 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay>
+<ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t2</Teacher>
+	<Activity_Tag>at1</Activity_Tag>
+	<MinGaps>2</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon>
+<ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t1</Teacher>
+	<First_Activity_Tag>at1</First_Activity_Tag>
+	<Second_Activity_Tag>at2</Second_Activity_Tag>
+	<MinGaps>3</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon>
+<ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>at2</Activity_Tag>
+	<MinGaps>2</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon>
+<ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon>
+	<Weight_Percentage>100</Weight_Percentage>
+	<First_Activity_Tag>at1</First_Activity_Tag>
+	<Second_Activity_Tag>at2</Second_Activity_Tag>
+	<MinGaps>4</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon>
+<ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y2</Students>
+	<Activity_Tag>at1</Activity_Tag>
+	<MinGaps>2</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon>
+<ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1</Students>
+	<First_Activity_Tag>at1</First_Activity_Tag>
+	<Second_Activity_Tag>at2</Second_Activity_Tag>
+	<MinGaps>1</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon>
+<ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>at1</Activity_Tag>
+	<MinGaps>1</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon>
+<ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon>
+	<Weight_Percentage>100</Weight_Percentage>
+	<First_Activity_Tag>at2</First_Activity_Tag>
+	<Second_Activity_Tag>at1</Second_Activity_Tag>
+	<MinGaps>3</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon>
 </Time_Constraints_List>
 
 <Space_Constraints_List>

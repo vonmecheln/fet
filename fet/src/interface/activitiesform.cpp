@@ -1044,8 +1044,10 @@ void ActivitiesForm::activateActivities()
 			}
 		}
 	if(cnt>0){
+		PlanningChanged::increasePlanningCommunicationSpinBox();
+
 		gt.rules.addUndoPoint(tr("Activated %1 activities:", "%1 is the number of activated activities").arg(cnt)+QString("\n\n")+su);
-	
+		
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 
@@ -1105,8 +1107,10 @@ void ActivitiesForm::deactivateActivities()
 			}
 		}
 	if(cnt>0){
+		PlanningChanged::increasePlanningCommunicationSpinBox();
+
 		gt.rules.addUndoPoint(tr("Deactivated %1 activities:", "%1 is the number of deactivated activities").arg(cnt)+QString("\n\n")+su);
-	
+		
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 

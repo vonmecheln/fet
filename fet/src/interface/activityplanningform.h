@@ -142,7 +142,7 @@ private slots:
 };
 
 
-//communication box by Liviu Lalescu
+//communication spin box by Liviu Lalescu
 class PlanningCommunicationSpinBox: public QObject{
 	Q_OBJECT
 

@@ -56,9 +56,9 @@ static QString trueFalse(bool x)
 static QString yesNoTranslated(bool x)
 {
 	if(!x)
-		return QCoreApplication::translate("Room", "no", "no - meaning negation");
+		return QCoreApplication::translate("Room", "no", "negative");
 	else
-		return QCoreApplication::translate("Room", "yes", "yes - meaning affirmative");
+		return QCoreApplication::translate("Room", "yes", "affirmative");
 }
 
 Room::Room()

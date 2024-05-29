@@ -2812,7 +2812,7 @@ Versions 6.18.0 - 6.18.1
 	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares. It is again complete.
 	- Updated the Greek translation, by Vangelis Karafillidis. It is again complete.
 ---------------------------------------------------------------------------------
-Versions 6.19.0 - 6.19.v
+Versions 6.19.0 - 6.19.5
 - Version 6.19.0
 	- Updated to Qt 6.6.3.
 	- Added two new types of constraints: teacher(s)/students (set) min gaps between activity tag/ordered pair of activity tags per real day, in the
@@ -2848,6 +2848,15 @@ Versions 6.19.0 - 6.19.v
 - Version 6.19.4
 	- Minor corrections.
 - Version 6.19.5
-	- Corrected the two Windows batch files which start the program in the Fusion / Windows styles, to take care of possible spaces characters in the
+	- Corrected the two Windows batch files which start the program in the Fusion and Windows styles, to take care of possible space characters in the
 	path to the FET executable (bug reported by Khafallah Oualid).
 	- Minor corrections.
+---------------------------------------------------------------------------------
+Versions 6.20.0 - 6.20.v
+- Version 6.20.0
+	- Updated to Qt 6.7.1.
+	- Added two new types of constraints: teacher(s)/students (set) min gaps between activity tag/ordered pair of activity tags between morning and
+	afternoon, in the Mornings-Afternoons mode (suggested by victorcapel).
+	- Minor bug fixes: when using the activity planning dialog and activating/deactivating activities/subactivities using the activate/deactivate buttons
+	(as opposed to selecting/deselecting the 'active' check box from the modify activity/subactivity dialogs, which worked correctly), the activity planning
+	dialog was not updated immediately (reported by Cyrus Ireri).

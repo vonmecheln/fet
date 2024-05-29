@@ -132,6 +132,16 @@
 #include "modifyconstraintteachermingapsbetweenactivitytagperrealdayform.h"
 #include "modifyconstraintteachersmingapsbetweenactivitytagperrealdayform.h"
 
+#include "modifyconstraintstudentssetmingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoonform.h"
+#include "modifyconstraintstudentsmingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoonform.h"
+#include "modifyconstraintteachermingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoonform.h"
+#include "modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoonform.h"
+
+#include "modifyconstraintstudentssetmingapsbetweenactivitytagbetweenmorningandafternoonform.h"
+#include "modifyconstraintstudentsmingapsbetweenactivitytagbetweenmorningandafternoonform.h"
+#include "modifyconstraintteachermingapsbetweenactivitytagbetweenmorningandafternoonform.h"
+#include "modifyconstraintteachersmingapsbetweenactivitytagbetweenmorningandafternoonform.h"
+
 #include "modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform.h"
 #include "modifyconstraintstudentsactivitytagmaxhourscontinuouslyform.h"
 
@@ -2492,6 +2502,71 @@ void AllTimeConstraintsForm::modifyConstraint()
 		case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_PER_REAL_DAY:
 			{
 				ModifyConstraintTeachersMinGapsBetweenActivityTagPerRealDayForm form(this, (ConstraintTeachersMinGapsBetweenActivityTagPerRealDay*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//2024-05-20
+		//216
+		case CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON:
+			{
+				ModifyConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonForm form(this, (ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//217
+		case CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON:
+			{
+				ModifyConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonForm form(this, (ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//218
+		case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON:
+			{
+				ModifyConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonForm form(this, (ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//219
+		case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON:
+			{
+				ModifyConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonForm form(this, (ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//220
+		case CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
+			{
+				ModifyConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoonForm form(this, (ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//221
+		case CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
+			{
+				ModifyConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoonForm form(this, (ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//222
+		case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
+			{
+				ModifyConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoonForm form(this, (ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//223
+		case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
+			{
+				ModifyConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoonForm form(this, (ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon*)ctr);
 				setParentAndOtherThings(&form, this);
 				form.exec();
 				break;

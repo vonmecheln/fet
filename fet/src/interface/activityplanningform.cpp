@@ -4139,7 +4139,7 @@ void ActivityPlanningForm::pseudoActivities(){
 	LongTextMessageBox::mediumInformation(this, tr("Information about pseudo activities", "Pseudo activities means activities without teachers and/or students sets"), noTeachersAndStudents+noTeachers+noStudents);
 }
 
-//communication box by Liviu Lalescu
+//communication spin box by Liviu Lalescu
 
 PlanningCommunicationSpinBox::PlanningCommunicationSpinBox()
 {
@@ -4159,7 +4159,7 @@ void PlanningCommunicationSpinBox::increaseValue()
 	value++;
 	if(value>maxValue)
 		value=minValue;
-		
+	
 	emit valueChanged(value);
 }
 

@@ -1738,9 +1738,9 @@ static QString trueFalse(bool x)
 static QString yesNoTranslated(bool x)
 {
 	if(!x)
-		return QCoreApplication::translate("SpaceConstraint", "no", "no - meaning negation");
+		return QCoreApplication::translate("SpaceConstraint", "no", "negative");
 	else
-		return QCoreApplication::translate("SpaceConstraint", "yes", "yes - meaning affirmative");
+		return QCoreApplication::translate("SpaceConstraint", "yes", "affirmative");
 }
 
 static Matrix3D<int> roomsMatrix;

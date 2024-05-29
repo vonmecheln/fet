@@ -24,6 +24,8 @@
 #include "subactivitiesform.h"
 #include "modifysubactivityform.h"
 
+#include "activityplanningform.h"
+
 #include "advancedfilterform.h"
 
 #include "longtextmessagebox.h"
@@ -838,6 +840,8 @@ void SubactivitiesForm::activateSubactivity()
 
 		act->active=true;
 
+		PlanningChanged::increasePlanningCommunicationSpinBox();
+
 		gt.rules.addUndoPoint(tr("Activated a subactivity:\n\n%1").arg(sb));
 		
 		gt.rules.internalStructureComputed=false;
@@ -897,6 +901,8 @@ void SubactivitiesForm::deactivateSubactivity()
 		QString sb=act->getDetailedDescription(gt.rules);
 
 		act->active=false;
+
+		PlanningChanged::increasePlanningCommunicationSpinBox();
 
 		gt.rules.addUndoPoint(tr("Deactivated a subactivity:\n\n%1").arg(sb));
 
@@ -962,6 +968,8 @@ void SubactivitiesForm::activateAllSubactivities()
 		}
 	}
 	if(cnt>0){
+		PlanningChanged::increasePlanningCommunicationSpinBox();
+
 		gt.rules.addUndoPoint(tr("Activated all the filtered subactivities:\n\n%1").arg(su));
 
 		gt.rules.internalStructureComputed=false;
@@ -1000,6 +1008,8 @@ void SubactivitiesForm::deactivateAllSubactivities()
 		}
 	}
 	if(cnt>0){
+		PlanningChanged::increasePlanningCommunicationSpinBox();
+
 		gt.rules.addUndoPoint(tr("Deactivated all the filtered subactivities:\n\n%1").arg(su));
 
 		gt.rules.internalStructureComputed=false;

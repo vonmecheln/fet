@@ -68,16 +68,20 @@ private:
 	QMenu* menuA_teacher_1_time_constraints; //for Mornings-Afternoons mode
 	QMenu* menuA_teacher_2_time_constraints;
 	QMenu* menuA_teacher_3_time_constraints;
+	QMenu* menuA_teacher_4_time_constraints;
 	QMenu* menuAll_teachers_1_time_constraints;
 	QMenu* menuAll_teachers_2_time_constraints;
 	QMenu* menuAll_teachers_3_time_constraints;
+	QMenu* menuAll_teachers_4_time_constraints;
 	//
 	QMenu* menuA_students_set_1_time_constraints;
 	QMenu* menuA_students_set_2_time_constraints;
 	QMenu* menuA_students_set_3_time_constraints;
+	QMenu* menuA_students_set_4_time_constraints;
 	QMenu* menuAll_students_1_time_constraints;
 	QMenu* menuAll_students_2_time_constraints;
 	QMenu* menuAll_students_3_time_constraints;
+	QMenu* menuAll_students_4_time_constraints;
 	
 	QMenu* menuActivities_preferred_times_time_constraints;
 	QMenu* menuActivities_others_1_time_constraints;
@@ -148,6 +152,16 @@ private:
 	QAction* dataTimeConstraintsStudentsMinGapsBetweenActivityTagPerRealDayAction;
 	QAction* dataTimeConstraintsTeacherMinGapsBetweenActivityTagPerRealDayAction;
 	QAction* dataTimeConstraintsTeachersMinGapsBetweenActivityTagPerRealDayAction;
+	//2024-05-20
+	QAction* dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonAction;
+	QAction* dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonAction;
+	QAction* dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonAction;
+	QAction* dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonAction;
+	//
+	QAction* dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoonAction;
+	QAction* dataTimeConstraintsStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoonAction;
+	QAction* dataTimeConstraintsTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoonAction;
+	QAction* dataTimeConstraintsTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoonAction;
 	//
 	QAction* dataTimeConstraintsTwoActivitiesConsecutiveAction;
 	QAction* dataTimeConstraintsActivityEndsStudentsDayAction;
@@ -743,6 +757,17 @@ public slots:
 	void dataTimeConstraintsStudentsMinGapsBetweenActivityTagPerRealDayAction_triggered();
 	void dataTimeConstraintsTeacherMinGapsBetweenActivityTagPerRealDayAction_triggered();
 	void dataTimeConstraintsTeachersMinGapsBetweenActivityTagPerRealDayAction_triggered();
+
+	//2024-05-20
+	void dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonAction_triggered();
+	void dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonAction_triggered();
+	void dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonAction_triggered();
+	void dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonAction_triggered();
+
+	void dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoonAction_triggered();
+	void dataTimeConstraintsStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoonAction_triggered();
+	void dataTimeConstraintsTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoonAction_triggered();
+	void dataTimeConstraintsTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoonAction_triggered();
 
 	void dataTimeConstraintsTeacherMaxSpanPerDayAction_triggered();
 	void dataTimeConstraintsTeachersMaxSpanPerDayAction_triggered();

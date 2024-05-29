@@ -1827,6 +1827,66 @@ QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 					break;
 				}
 
+
+
+
+			//216
+			case CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon* c=(ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon*)ctr;
+					stream<<*c;
+					break;
+				}
+			//217
+			case CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon* c=(ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon*)ctr;
+					stream<<*c;
+					break;
+				}
+			//218
+			case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon* c=(ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon*)ctr;
+					stream<<*c;
+					break;
+				}
+			//219
+			case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon* c=(ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon*)ctr;
+					stream<<*c;
+					break;
+				}
+			//220
+			case CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon* c=(ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon*)ctr;
+					stream<<*c;
+					break;
+				}
+			//221
+			case CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon* c=(ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon*)ctr;
+					stream<<*c;
+					break;
+				}
+			//222
+			case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon* c=(ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon*)ctr;
+					stream<<*c;
+					break;
+				}
+			//223
+			case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon* c=(ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon*)ctr;
+					stream<<*c;
+					break;
+				}
+			
 			default:
 				assert(0);
 				break;
@@ -2300,6 +2360,7 @@ QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 					stream<<*c;
 					break;
 				}
+			
 			default:
 				assert(0);
 				break;
@@ -4242,6 +4303,70 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 					rules.timeConstraintsList.append(c);
 					break;
 				}
+			//216
+			case CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon* c=new ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon;
+					stream>>*c;
+					rules.timeConstraintsList.append(c);
+					break;
+				}
+			//217
+			case CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon* c=new ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon;
+					stream>>*c;
+					rules.timeConstraintsList.append(c);
+					break;
+				}
+			//218
+			case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon* c=new ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon;
+					stream>>*c;
+					rules.timeConstraintsList.append(c);
+					break;
+				}
+			//219
+			case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon* c=new ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon;
+					stream>>*c;
+					rules.timeConstraintsList.append(c);
+					break;
+				}
+			//220
+			case CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon* c=new ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon;
+					stream>>*c;
+					rules.timeConstraintsList.append(c);
+					break;
+				}
+			//221
+			case CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon* c=new ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon;
+					stream>>*c;
+					rules.timeConstraintsList.append(c);
+					break;
+				}
+			//222
+			case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon* c=new ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon;
+					stream>>*c;
+					rules.timeConstraintsList.append(c);
+					break;
+				}
+			//223
+			case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon* c=new ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon;
+					stream>>*c;
+					rules.timeConstraintsList.append(c);
+					break;
+				}
 			
 			default:
 				//commented, so that the program won't crash on wrong history files.
@@ -4796,6 +4921,7 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 					rules.spaceConstraintsList.append(c);
 					break;
 				}
+			
 			default:
 				//commented, so that the program won't crash on wrong history files.
 				//assert(0);
@@ -6322,6 +6448,20 @@ bool Rules::modifyTeacher(const QString& initialTeacherName, const QString& fina
 						crt_constraint->teacher=finalTeacherName;
 					break;
 				}
+			case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon* crt_constraint=(ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon*)ctr;
+					if(initialTeacherName == crt_constraint->teacher)
+						crt_constraint->teacher=finalTeacherName;
+					break;
+				}
+			case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon* crt_constraint=(ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon*)ctr;
+					if(initialTeacherName == crt_constraint->teacher)
+						crt_constraint->teacher=finalTeacherName;
+					break;
+				}
 			case CONSTRAINT_TEACHER_MAX_DAYS_PER_WEEK:
 				{
 					ConstraintTeacherMaxDaysPerWeek* crt_constraint=(ConstraintTeacherMaxDaysPerWeek*)ctr;
@@ -7259,6 +7399,70 @@ bool Rules::modifyActivityTag(const QString& initialActivityTagName, const QStri
 						crt_constraint->activityTag=finalActivityTagName;
 					break;
 				}
+			case CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon* crt_constraint=(ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon*)ctr;
+					if(initialActivityTagName == crt_constraint->firstActivityTag)
+						crt_constraint->firstActivityTag=finalActivityTagName;
+					if(initialActivityTagName == crt_constraint->secondActivityTag)
+						crt_constraint->secondActivityTag=finalActivityTagName;
+					break;
+				}
+			case CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon* crt_constraint=(ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon*)ctr;
+					if(initialActivityTagName == crt_constraint->firstActivityTag)
+						crt_constraint->firstActivityTag=finalActivityTagName;
+					if(initialActivityTagName == crt_constraint->secondActivityTag)
+						crt_constraint->secondActivityTag=finalActivityTagName;
+					break;
+				}
+			case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon* crt_constraint=(ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon*)ctr;
+					if(initialActivityTagName == crt_constraint->firstActivityTag)
+						crt_constraint->firstActivityTag=finalActivityTagName;
+					if(initialActivityTagName == crt_constraint->secondActivityTag)
+						crt_constraint->secondActivityTag=finalActivityTagName;
+					break;
+				}
+			case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon* crt_constraint=(ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon*)ctr;
+					if(initialActivityTagName == crt_constraint->firstActivityTag)
+						crt_constraint->firstActivityTag=finalActivityTagName;
+					if(initialActivityTagName == crt_constraint->secondActivityTag)
+						crt_constraint->secondActivityTag=finalActivityTagName;
+					break;
+				}
+			case CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon* crt_constraint=(ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon*)ctr;
+					if(initialActivityTagName == crt_constraint->activityTag)
+						crt_constraint->activityTag=finalActivityTagName;
+					break;
+				}
+			case CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon* crt_constraint=(ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon*)ctr;
+					if(initialActivityTagName == crt_constraint->activityTag)
+						crt_constraint->activityTag=finalActivityTagName;
+					break;
+				}
+			case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon* crt_constraint=(ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon*)ctr;
+					if(initialActivityTagName == crt_constraint->activityTag)
+						crt_constraint->activityTag=finalActivityTagName;
+					break;
+				}
+			case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon* crt_constraint=(ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon*)ctr;
+					if(initialActivityTagName == crt_constraint->activityTag)
+						crt_constraint->activityTag=finalActivityTagName;
+					break;
+				}
 			case CONSTRAINT_TEACHERS_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY:
 				{
 					ConstraintTeachersActivityTagMaxHoursContinuously* crt_constraint=(ConstraintTeachersActivityTagMaxHoursContinuously*)ctr;
@@ -7987,6 +8191,20 @@ bool Rules::modifyStudentsSet(const QString& initialStudentsSetName, const QStri
 							crt_constraint->students=finalStudentsSetName;
 						break;
 					}
+				case CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON:
+					{
+						ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon* crt_constraint=(ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon*)ctr;
+						if(initialStudentsSetName == crt_constraint->students)
+							crt_constraint->students=finalStudentsSetName;
+						break;
+					}
+				case CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
+					{
+						ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon* crt_constraint=(ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon*)ctr;
+						if(initialStudentsSetName == crt_constraint->students)
+							crt_constraint->students=finalStudentsSetName;
+						break;
+					}
 				case CONSTRAINT_STUDENTS_SET_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR:
 					{
 						ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour* crt_constraint=(ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour*)ctr;
@@ -8493,6 +8711,20 @@ bool Rules::modifyStudentsSets(const QHash<QString, QString>& oldAndNewStudentsS
 			case CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ACTIVITY_TAG_PER_REAL_DAY:
 				{
 					ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay* crt_constraint=(ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay*)ctr;
+					if(oldAndNewStudentsSetNames.contains(crt_constraint->students))
+						crt_constraint->students=oldAndNewStudentsSetNames.value(crt_constraint->students);
+					break;
+				}
+			case CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon* crt_constraint=(ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon*)ctr;
+					if(oldAndNewStudentsSetNames.contains(crt_constraint->students))
+						crt_constraint->students=oldAndNewStudentsSetNames.value(crt_constraint->students);
+					break;
+				}
+			case CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon* crt_constraint=(ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon*)ctr;
 					if(oldAndNewStudentsSetNames.contains(crt_constraint->students))
 						crt_constraint->students=oldAndNewStudentsSetNames.value(crt_constraint->students);
 					break;
@@ -11479,6 +11711,70 @@ void Rules::updateConstraintsAfterRemoval()
 			case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_PER_REAL_DAY:
 				{
 					ConstraintTeachersMinGapsBetweenActivityTagPerRealDay* c=(ConstraintTeachersMinGapsBetweenActivityTagPerRealDay*)tc;
+					if(!existingActivityTagsNames.contains(c->activityTag))
+						toBeRemovedTime.append(tc);
+					break;
+				}
+			case CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon* c=(ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon*)tc;
+					if(!permanentStudentsHash.contains(c->students) ||
+					!existingActivityTagsNames.contains(c->firstActivityTag) ||
+					!existingActivityTagsNames.contains(c->secondActivityTag))
+						toBeRemovedTime.append(tc);
+					break;
+				}
+			case CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon* c=(ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon*)tc;
+					if(!existingActivityTagsNames.contains(c->firstActivityTag) ||
+					!existingActivityTagsNames.contains(c->secondActivityTag))
+						toBeRemovedTime.append(tc);
+					break;
+				}
+			case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon* c=(ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon*)tc;
+					if(!existingTeachersNames.contains(c->teacher) ||
+					!existingActivityTagsNames.contains(c->firstActivityTag) ||
+					!existingActivityTagsNames.contains(c->secondActivityTag))
+						toBeRemovedTime.append(tc);
+					break;
+				}
+			case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon* c=(ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon*)tc;
+					if(!existingActivityTagsNames.contains(c->firstActivityTag) ||
+					!existingActivityTagsNames.contains(c->secondActivityTag))
+						toBeRemovedTime.append(tc);
+					break;
+				}
+			case CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon* c=(ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon*)tc;
+					if(!permanentStudentsHash.contains(c->students) ||
+					!existingActivityTagsNames.contains(c->activityTag))
+						toBeRemovedTime.append(tc);
+					break;
+				}
+			case CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon* c=(ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon*)tc;
+					if(!existingActivityTagsNames.contains(c->activityTag))
+						toBeRemovedTime.append(tc);
+					break;
+				}
+			case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon* c=(ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon*)tc;
+					if(!existingTeachersNames.contains(c->teacher) ||
+					!existingActivityTagsNames.contains(c->activityTag))
+						toBeRemovedTime.append(tc);
+					break;
+				}
+			case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
+				{
+					ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon* c=(ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon*)tc;
 					if(!existingActivityTagsNames.contains(c->activityTag))
 						toBeRemovedTime.append(tc);
 					break;
@@ -15218,6 +15514,32 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 				else if(xmlReader.name()==QString("ConstraintTeachersMinGapsBetweenActivityTagPerRealDay")){
 					crt_constraint=readTeachersMinGapsBetweenActivityTagPerRealDay(xmlReader, xmlReadingLog);
 				}
+				/////
+				else if(xmlReader.name()==QString("ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon")){
+					crt_constraint=readStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon")){
+					crt_constraint=readStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon")){
+					crt_constraint=readTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon")){
+					crt_constraint=readTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon")){
+					crt_constraint=readStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon")){
+					crt_constraint=readStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon")){
+					crt_constraint=readTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon")){
+					crt_constraint=readTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon(xmlReader, xmlReadingLog);
+				}
+				/////
 				else if(xmlReader.name()==QString("ConstraintActivityPreferredTime")){
 					if(reportActivityPreferredTimeChange){
 						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
@@ -22401,6 +22723,494 @@ TimeConstraint* Rules::readTeacherMinGapsBetweenActivityTagPerRealDay(QXmlStream
 TimeConstraint* Rules::readTeachersMinGapsBetweenActivityTagPerRealDay(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
 	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeachersMinGapsBetweenActivityTagPerRealDay"));
 	ConstraintTeachersMinGapsBetweenActivityTagPerRealDay* cn=new ConstraintTeachersMinGapsBetweenActivityTagPerRealDay();
+	cn->minGaps=-1;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("MinGaps")){
+			QString text=xmlReader.readElementText();
+			cn->minGaps=text.toInt();
+			if(cn->minGaps<0){
+				xmlReader.raiseError(tr("%1 is incorrect").arg("MinGaps"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Read minGaps="+CustomFETString::number(cn->minGaps)+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			cn->activityTag=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTag+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	if(cn->minGaps<0){
+		xmlReader.raiseError(tr("%1 not found").arg("MinGaps"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(cn->minGaps>=0);
+	return cn;
+}
+
+TimeConstraint* Rules::readStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon"));
+	ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon* cn=new ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon();
+	cn->minGaps=-1;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("MinGaps")){
+			QString text=xmlReader.readElementText();
+			cn->minGaps=text.toInt();
+			if(cn->minGaps<0){
+				xmlReader.raiseError(tr("%1 is incorrect").arg("MinGaps"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Read minGaps="+CustomFETString::number(cn->minGaps)+"\n";
+		}
+		else if(xmlReader.name()==QString("Students")){
+			QString text=xmlReader.readElementText();
+			cn->students=text;
+			xmlReadingLog+="    Read students name="+cn->students+"\n";
+		}
+		else if(xmlReader.name()==QString("First_Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			cn->firstActivityTag=text;
+			xmlReadingLog+="    Read first activity tag name="+cn->firstActivityTag+"\n";
+		}
+		else if(xmlReader.name()==QString("Second_Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			cn->secondActivityTag=text;
+			xmlReadingLog+="    Read second activity tag name="+cn->secondActivityTag+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	if(cn->minGaps<0){
+		xmlReader.raiseError(tr("%1 not found").arg("MinGaps"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(cn->minGaps>=0);
+	return cn;
+}
+
+TimeConstraint* Rules::readStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon"));
+	ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon* cn=new ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon();
+	cn->minGaps=-1;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("MinGaps")){
+			QString text=xmlReader.readElementText();
+			cn->minGaps=text.toInt();
+			if(cn->minGaps<0){
+				xmlReader.raiseError(tr("%1 is incorrect").arg("MinGaps"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Read minGaps="+CustomFETString::number(cn->minGaps)+"\n";
+		}
+		else if(xmlReader.name()==QString("First_Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			cn->firstActivityTag=text;
+			xmlReadingLog+="    Read first activity tag name="+cn->firstActivityTag+"\n";
+		}
+		else if(xmlReader.name()==QString("Second_Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			cn->secondActivityTag=text;
+			xmlReadingLog+="    Read second activity tag name="+cn->secondActivityTag+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	if(cn->minGaps<0){
+		xmlReader.raiseError(tr("%1 not found").arg("MinGaps"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(cn->minGaps>=0);
+	return cn;
+}
+
+TimeConstraint* Rules::readTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon"));
+	ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon* cn=new ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon();
+	cn->minGaps=-1;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("MinGaps")){
+			QString text=xmlReader.readElementText();
+			cn->minGaps=text.toInt();
+			if(cn->minGaps<0){
+				xmlReader.raiseError(tr("%1 is incorrect").arg("MinGaps"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Read minGaps="+CustomFETString::number(cn->minGaps)+"\n";
+		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacher=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacher+"\n";
+		}
+		else if(xmlReader.name()==QString("First_Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			cn->firstActivityTag=text;
+			xmlReadingLog+="    Read first activity tag name="+cn->firstActivityTag+"\n";
+		}
+		else if(xmlReader.name()==QString("Second_Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			cn->secondActivityTag=text;
+			xmlReadingLog+="    Read second activity tag name="+cn->secondActivityTag+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	if(cn->minGaps<0){
+		xmlReader.raiseError(tr("%1 not found").arg("MinGaps"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(cn->minGaps>=0);
+	return cn;
+}
+
+TimeConstraint* Rules::readTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon"));
+	ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon* cn=new ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon();
+	cn->minGaps=-1;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("MinGaps")){
+			QString text=xmlReader.readElementText();
+			cn->minGaps=text.toInt();
+			if(cn->minGaps<0){
+				xmlReader.raiseError(tr("%1 is incorrect").arg("MinGaps"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Read minGaps="+CustomFETString::number(cn->minGaps)+"\n";
+		}
+		else if(xmlReader.name()==QString("First_Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			cn->firstActivityTag=text;
+			xmlReadingLog+="    Read first activity tag name="+cn->firstActivityTag+"\n";
+		}
+		else if(xmlReader.name()==QString("Second_Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			cn->secondActivityTag=text;
+			xmlReadingLog+="    Read second activity tag name="+cn->secondActivityTag+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	if(cn->minGaps<0){
+		xmlReader.raiseError(tr("%1 not found").arg("MinGaps"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(cn->minGaps>=0);
+	return cn;
+}
+
+TimeConstraint* Rules::readStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon"));
+	ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon* cn=new ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon();
+	cn->minGaps=-1;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("MinGaps")){
+			QString text=xmlReader.readElementText();
+			cn->minGaps=text.toInt();
+			if(cn->minGaps<0){
+				xmlReader.raiseError(tr("%1 is incorrect").arg("MinGaps"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Read minGaps="+CustomFETString::number(cn->minGaps)+"\n";
+		}
+		else if(xmlReader.name()==QString("Students")){
+			QString text=xmlReader.readElementText();
+			cn->students=text;
+			xmlReadingLog+="    Read students name="+cn->students+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			cn->activityTag=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTag+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	if(cn->minGaps<0){
+		xmlReader.raiseError(tr("%1 not found").arg("MinGaps"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(cn->minGaps>=0);
+	return cn;
+}
+
+TimeConstraint* Rules::readStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon"));
+	ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon* cn=new ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon();
+	cn->minGaps=-1;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("MinGaps")){
+			QString text=xmlReader.readElementText();
+			cn->minGaps=text.toInt();
+			if(cn->minGaps<0){
+				xmlReader.raiseError(tr("%1 is incorrect").arg("MinGaps"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Read minGaps="+CustomFETString::number(cn->minGaps)+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			cn->activityTag=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTag+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	if(cn->minGaps<0){
+		xmlReader.raiseError(tr("%1 not found").arg("MinGaps"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(cn->minGaps>=0);
+	return cn;
+}
+
+TimeConstraint* Rules::readTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon"));
+	ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon* cn=new ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon();
+	cn->minGaps=-1;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("MinGaps")){
+			QString text=xmlReader.readElementText();
+			cn->minGaps=text.toInt();
+			if(cn->minGaps<0){
+				xmlReader.raiseError(tr("%1 is incorrect").arg("MinGaps"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Read minGaps="+CustomFETString::number(cn->minGaps)+"\n";
+		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacher=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacher+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			cn->activityTag=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTag+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	if(cn->minGaps<0){
+		xmlReader.raiseError(tr("%1 not found").arg("MinGaps"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(cn->minGaps>=0);
+	return cn;
+}
+
+TimeConstraint* Rules::readTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon"));
+	ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon* cn=new ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon();
 	cn->minGaps=-1;
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";

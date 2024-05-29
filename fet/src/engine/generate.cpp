@@ -7769,6 +7769,12 @@ again_if_impossible_activity:
 		bool okstudentsmingapsbetweenactivitytagperrealday;
 		bool okteachersmingapsbetweenactivitytagperrealday;
 
+		//2024-05-18
+		bool okstudentsmingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoon;
+		bool okteachersmingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoon;
+		bool okstudentsmingapsbetweenactivitytagbetweenmorningandafternoon;
+		bool okteachersmingapsbetweenactivitytagbetweenmorningandafternoon;
+
 		bool okteachersmaxtwoactivitytagsperdayfromn1n2n3;
 		bool okstudentsmaxtwoactivitytagsperdayfromn1n2n3;
 		bool okteachersmaxtwoactivitytagsperrealdayfromn1n2n3;
@@ -19457,6 +19463,113 @@ impossiblestudentsmingapsbetweenorderedpairofactivitytagsperrealday:
 		}
 		
 
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+//2024-05-18
+		//allowed from students min gaps between ordered pair of activity tags between morning and afternoon
+		
+		okstudentsmingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoon=true;
+		
+		if(gt.rules.mode==MORNINGS_AFTERNOONS){
+			for(StudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon_item* item : std::as_const(smgbopoatbmaaListForActivity[ai])){
+				bool first, second;
+				if(act->iActivityTagsSet.contains(item->firstActivityTag))
+					first=true;
+				else
+					first=false;
+
+				if(act->iActivityTagsSet.contains(item->secondActivityTag))
+					second=true;
+				else
+					second=false;
+
+				assert((first && !second) || (!first && second));
+
+				if(first){
+					assert(!second);
+					//after the first activity tag we need to have at least minGaps until the second activity tag, between the morning and the afternoon of each real day.
+					for(int sbg : std::as_const(act->iSubgroupsList)){
+						if(item->canonicalSetOfSubgroups.contains(sbg)){
+							if(d%2==1){ //afternoon, nothing to check
+							}
+							else{ //morning, must check from the beginning of the afternoon
+								for(int startSecond=gt.rules.nHoursPerDay /*h+act->duration*/; startSecond<2*gt.rules.nHoursPerDay; startSecond++){
+									if(startSecond-h-act->duration >= item->minGaps)
+										break;
+									int ai2=subgroupsTimetable(sbg,d+startSecond/gt.rules.nHoursPerDay,startSecond%gt.rules.nHoursPerDay);
+									if(ai2>=0){
+										if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->secondActivityTag)){
+											if(!conflActivities[newtime].contains(ai2)){
+												if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+													okstudentsmingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoon=false;
+													goto impossiblestudentsmingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoon;
+												}
+												else{
+													conflActivities[newtime].append(ai2);
+													nConflActivities[newtime]++;
+													assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				else{
+					assert(second);
+					//before the second activity tag we need to have at least minGaps until the first activity tag, between the morning and the afternoon.
+					for(int sbg : std::as_const(act->iSubgroupsList)){
+						if(item->canonicalSetOfSubgroups.contains(sbg)){
+							if(d%2==0){ //morning, nothing to check
+							}
+							else{ //afternoon, must check from the end of the morning
+								for(int endFirst=-1 /*h-1*/; endFirst>=-gt.rules.nHoursPerDay; endFirst--){
+									if(h-1-endFirst >= item->minGaps)
+										break;
+									int ai2;
+									if(endFirst>=0){
+										assert(0);
+										ai2=subgroupsTimetable(sbg,d,endFirst);
+									}
+									else{
+										ai2=subgroupsTimetable(sbg,d-1,endFirst+gt.rules.nHoursPerDay);
+									}
+									if(ai2>=0){
+										if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->firstActivityTag)){
+											if(!conflActivities[newtime].contains(ai2)){
+												if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+													okstudentsmingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoon=false;
+													goto impossiblestudentsmingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoon;
+												}
+												else{
+													conflActivities[newtime].append(ai2);
+													nConflActivities[newtime]++;
+													assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+impossiblestudentsmingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoon:
+		if(!okstudentsmingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoon){
+			if(updateSubgroups || updateTeachers)
+				removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+		
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 		//allowed from students min gaps between activity tag
@@ -19549,7 +19662,7 @@ impossiblestudentsmingapsbetweenactivitytag:
 					hasTag=false;
 
 				if(hasTag){
-					//before and after the activity tag we need to have at least minGaps until the same activity tag, on each day.
+					//before and after the activity tag we need to have at least minGaps until the same activity tag, on each real day.
 					for(int sbg : std::as_const(act->iSubgroupsList)){
 						if(item->canonicalSetOfSubgroups.contains(sbg)){
 							//after the current activity
@@ -19655,6 +19768,99 @@ impossiblestudentsmingapsbetweenactivitytag:
 		
 impossiblestudentsmingapsbetweenactivitytagperrealday:
 		if(!okstudentsmingapsbetweenactivitytagperrealday){
+			if(updateSubgroups || updateTeachers)
+				removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+		
+////////////////////////////////////////////////////////////////////////////////////////////
+
+//2024-05-18
+		//allowed from students min gaps between activity tag between morning and afternoon
+		
+		okstudentsmingapsbetweenactivitytagbetweenmorningandafternoon=true;
+		
+		if(gt.rules.mode==MORNINGS_AFTERNOONS){
+			for(StudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon_item* item : std::as_const(smgbatbmaaListForActivity[ai])){
+				bool hasTag;
+				if(act->iActivityTagsSet.contains(item->activityTag))
+					hasTag=true;
+				else
+					hasTag=false;
+
+				if(hasTag){
+					//before and after the activity tag we need to have at least minGaps until the same activity tag, between the morning and the afternoon of each real day
+					for(int sbg : std::as_const(act->iSubgroupsList)){
+						if(item->canonicalSetOfSubgroups.contains(sbg)){
+							//after the current activity
+							if(d%2==1){ //afternoon, nothing to check
+							}
+							else{ //morning, must check from the beginning of the afternoon
+								for(int startSecond=gt.rules.nHoursPerDay /*h+act->duration*/; startSecond<2*gt.rules.nHoursPerDay; startSecond++){
+									if(startSecond-h-act->duration >= item->minGaps)
+										break;
+									int ai2=subgroupsTimetable(sbg,d+startSecond/gt.rules.nHoursPerDay,startSecond%gt.rules.nHoursPerDay);
+									if(ai2>=0){
+										if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->activityTag)){
+											if(!conflActivities[newtime].contains(ai2)){
+												if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+													okstudentsmingapsbetweenactivitytagbetweenmorningandafternoon=false;
+													goto impossiblestudentsmingapsbetweenactivitytagbetweenmorningandafternoon;
+												}
+												else{
+													conflActivities[newtime].append(ai2);
+													nConflActivities[newtime]++;
+													assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+												}
+											}
+										}
+									}
+								}
+							}
+
+							//before the current activity
+							if(d%2==0){ //morning, nothing to check
+							}
+							else{ //afternoon, must check from the end of the morning
+								for(int startSecond=-1 /*h-1*/; startSecond>=-gt.rules.nHoursPerDay; startSecond--){
+									if(h-startSecond > item->minGaps)
+										break;
+									int ai2;
+									if(startSecond>=0){
+										assert(0);
+										ai2=subgroupsTimetable(sbg,d,startSecond);
+									}
+									else{
+										ai2=subgroupsTimetable(sbg,d-1,startSecond+gt.rules.nHoursPerDay);
+									}
+									if(ai2>=0){
+										if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->activityTag)){
+											if(!conflActivities[newtime].contains(ai2)){
+												if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+													okstudentsmingapsbetweenactivitytagbetweenmorningandafternoon=false;
+													goto impossiblestudentsmingapsbetweenactivitytagbetweenmorningandafternoon;
+												}
+												else{
+													conflActivities[newtime].append(ai2);
+													nConflActivities[newtime]++;
+													assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+impossiblestudentsmingapsbetweenactivitytagbetweenmorningandafternoon:
+		if(!okstudentsmingapsbetweenactivitytagbetweenmorningandafternoon){
 			if(updateSubgroups || updateTeachers)
 				removeAiFromNewTimetable(ai, act, d, h);
 			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
@@ -28822,6 +29028,115 @@ impossibleteachersmingapsbetweenorderedpairofactivitytagsperrealday:
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
+//2024-05-18
+		//allowed from teachers min gaps between ordered pair of activity tags between morning and afternoon
+		
+		okteachersmingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoon=true;
+
+		if(gt.rules.mode==MORNINGS_AFTERNOONS){
+			for(TeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon_item* item : std::as_const(tmgbopoatbmaaListForActivity[ai])){
+				bool first, second;
+				if(act->iActivityTagsSet.contains(item->firstActivityTag))
+					first=true;
+				else
+					first=false;
+
+				if(act->iActivityTagsSet.contains(item->secondActivityTag))
+					second=true;
+				else
+					second=false;
+
+				assert((first && !second) || (!first && second));
+
+				if(first){
+					assert(!second);
+					//after the first activity tag we need to have at least minGaps until the second activity tag, between the morning and the afternoon of each real day.
+
+					for(int tch : std::as_const(act->iTeachersList)){
+						if(item->canonicalSetOfTeachers.contains(tch)){
+							if(d%2==1){ //afternoon, nothing to check
+							}
+							else{ //morning, must check from the beginning of the afternoon
+								for(int startSecond=gt.rules.nHoursPerDay /*h+act->duration*/; startSecond<2*gt.rules.nHoursPerDay; startSecond++){
+									if(startSecond-h-act->duration >= item->minGaps)
+										break;
+									int ai2=teachersTimetable(tch,d+startSecond/gt.rules.nHoursPerDay,startSecond%gt.rules.nHoursPerDay);
+									if(ai2>=0){
+										if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->secondActivityTag)){
+											if(!conflActivities[newtime].contains(ai2)){
+												if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+													okteachersmingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoon=false;
+													goto impossibleteachersmingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoon;
+												}
+												else{
+													conflActivities[newtime].append(ai2);
+													nConflActivities[newtime]++;
+													assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				else{
+					assert(second);
+					//before the second activity tag we need to have at least minGaps until the first activity tag, between the morning and the afternoon of each real day.
+
+					for(int tch : std::as_const(act->iTeachersList)){
+						if(item->canonicalSetOfTeachers.contains(tch)){
+							if(d%2==0){ //morning, nothing to check
+							}
+							else{ //afternoon, must check from the end of the morning
+								for(int endFirst=-1 /*h-1*/; endFirst>=-gt.rules.nHoursPerDay; endFirst--){
+									if(h-1-endFirst >= item->minGaps)
+										break;
+									int ai2;
+									if(endFirst>=0){
+										assert(0);
+										ai2=teachersTimetable(tch,d,endFirst);
+									}
+									else{
+										ai2=teachersTimetable(tch,d-1,endFirst+gt.rules.nHoursPerDay);
+									}
+									if(ai2>=0){
+										if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->firstActivityTag)){
+											if(!conflActivities[newtime].contains(ai2)){
+												if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+													okteachersmingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoon=false;
+													goto impossibleteachersmingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoon;
+												}
+												else{
+													conflActivities[newtime].append(ai2);
+													nConflActivities[newtime]++;
+													assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+impossibleteachersmingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoon:
+		if(!okteachersmingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoon){
+			if(updateSubgroups || updateTeachers)
+				removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+		
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
 		//allowed from teachers min gaps between activity tag
 		
 		okteachersmingapsbetweenactivitytag=true;
@@ -28912,7 +29227,7 @@ impossibleteachersmingapsbetweenactivitytag:
 					hasTag=false;
 
 				if(hasTag){
-					//before and after the activity tag we need to have at least minGaps until the same activity tag, on each day.
+					//before and after the activity tag we need to have at least minGaps until the same activity tag, on each real day.
 					for(int tch : std::as_const(act->iTeachersList)){
 						if(item->canonicalSetOfTeachers.contains(tch)){
 							//after the current activity
@@ -29018,6 +29333,100 @@ impossibleteachersmingapsbetweenactivitytag:
 		
 impossibleteachersmingapsbetweenactivitytagperrealday:
 		if(!okteachersmingapsbetweenactivitytagperrealday){
+			if(updateSubgroups || updateTeachers)
+				removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+		
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+//2024-05-18
+		//allowed from teachers min gaps between activity tag between morning and afternoon
+		
+		okteachersmingapsbetweenactivitytagbetweenmorningandafternoon=true;
+		
+		if(gt.rules.mode==MORNINGS_AFTERNOONS){
+			for(TeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon_item* item : std::as_const(tmgbatbmaaListForActivity[ai])){
+				bool hasTag;
+				if(act->iActivityTagsSet.contains(item->activityTag))
+					hasTag=true;
+				else
+					hasTag=false;
+
+				if(hasTag){
+					//before and after the activity tag we need to have at least minGaps until the same activity tag, between the morning and the afternoon of each real day.
+					for(int tch : std::as_const(act->iTeachersList)){
+						if(item->canonicalSetOfTeachers.contains(tch)){
+							//after the current activity
+							if(d%2==1){ //afternoon, nothing to check
+							}
+							else{ //morning, must check from the beginning of the afternoon
+								for(int startSecond=gt.rules.nHoursPerDay /*h+act->duration*/; startSecond<2*gt.rules.nHoursPerDay; startSecond++){
+									if(startSecond-h-act->duration >= item->minGaps)
+										break;
+									int ai2=teachersTimetable(tch,d+startSecond/gt.rules.nHoursPerDay,startSecond%gt.rules.nHoursPerDay);
+									if(ai2>=0){
+										if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->activityTag)){
+											if(!conflActivities[newtime].contains(ai2)){
+												if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+													okteachersmingapsbetweenactivitytagbetweenmorningandafternoon=false;
+													goto impossibleteachersmingapsbetweenactivitytagbetweenmorningandafternoon;
+												}
+												else{
+													conflActivities[newtime].append(ai2);
+													nConflActivities[newtime]++;
+													assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+												}
+											}
+										}
+									}
+								}
+							}
+
+							//before the current activity
+							if(d%2==0){ //morning, nothing to do
+							}
+							else{ //afternoon, must check from the beginning of the morning
+								for(int startSecond=-1 /*h-1*/; startSecond>=-gt.rules.nHoursPerDay; startSecond--){
+									if(h-startSecond > item->minGaps)
+										break;
+									int ai2;
+									if(startSecond>=0){
+										assert(0);
+										ai2=teachersTimetable(tch,d,startSecond);
+									}
+									else{
+										ai2=teachersTimetable(tch,d-1,startSecond+gt.rules.nHoursPerDay);
+									}
+									if(ai2>=0){
+										if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->activityTag)){
+											if(!conflActivities[newtime].contains(ai2)){
+												if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+													okteachersmingapsbetweenactivitytagbetweenmorningandafternoon=false;
+													goto impossibleteachersmingapsbetweenactivitytagbetweenmorningandafternoon;
+												}
+												else{
+													conflActivities[newtime].append(ai2);
+													nConflActivities[newtime]++;
+													assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+impossibleteachersmingapsbetweenactivitytagbetweenmorningandafternoon:
+		if(!okteachersmingapsbetweenactivitytagbetweenmorningandafternoon){
 			if(updateSubgroups || updateTeachers)
 				removeAiFromNewTimetable(ai, act, d, h);
 			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
