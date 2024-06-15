@@ -85,6 +85,8 @@ extern CommunicationSpinBox communicationSpinBox;	//small hint to sync the forms
 extern const int MINIMUM_WIDTH_SPIN_BOX_VALUE;
 extern const int MINIMUM_HEIGHT_SPIN_BOX_VALUE;
 
+static bool REAL_VIEW=true;
+
 void TimetableViewTeachersTimeHorizontalDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
 {
 	QStyledItemDelegate::paint(painter, option, index);
@@ -119,6 +121,15 @@ void TimetableViewTeachersTimeHorizontalDelegate::paint(QPainter* painter, const
 	if(hour==nColumns-1){
 		painter->drawLine(option.rect.topRight(), option.rect.bottomRight());
 		painter->drawLine(option.rect.topRight().x()-1, option.rect.topRight().y(), option.rect.bottomRight().x()-1, option.rect.bottomRight().y());
+	}
+
+	if(gt.rules.mode==MORNINGS_AFTERNOONS && REAL_VIEW){
+		assert(nColumns>=2);
+		int halfHour=hour%(nColumns/2);
+		if(halfHour==0)
+			painter->drawLine(option.rect.topLeft(), option.rect.bottomLeft());
+		if(halfHour==nColumns-1)
+			painter->drawLine(option.rect.topRight(), option.rect.bottomRight());
 	}
 
 	if(index.row()==0){
@@ -228,50 +239,96 @@ TimetableViewTeachersTimeHorizontalForm::TimetableViewTeachersTimeHorizontalForm
 	teachersTimetableTable->setRowCount(gt.rules.nInternalTeachers);
 	teachersTimetableTable->setColumnCount(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
 	
+	bool realView=(gt.rules.mode==MORNINGS_AFTERNOONS && REAL_VIEW==true);
+	bool normalView=!realView;
+
 	oldItemDelegate=teachersTimetableTable->itemDelegate();
-	newItemDelegate=new TimetableViewTeachersTimeHorizontalDelegate(nullptr, teachersTimetableTable->rowCount(), gt.rules.nHoursPerDay);
+	newItemDelegate=new TimetableViewTeachersTimeHorizontalDelegate(nullptr, teachersTimetableTable->rowCount(), normalView?gt.rules.nHoursPerDay:2*gt.rules.nHoursPerDay);
 	teachersTimetableTable->setItemDelegate(newItemDelegate);
 	
-	bool min2letters=false;
-	for(int d=0; d<gt.rules.nDaysPerWeek; d++){
-		if(gt.rules.daysOfTheWeek[d].size()>gt.rules.nHoursPerDay){
-			min2letters=true;
-			break;
+	if(normalView){
+		bool min2letters=false;
+		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+			if(gt.rules.daysOfTheWeek[d].size()>gt.rules.nHoursPerDay){
+				min2letters=true;
+				break;
+			}
+		}
+		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+			QString dayName=gt.rules.daysOfTheWeek[d];
+			int t=dayName.size();
+			int q=t/gt.rules.nHoursPerDay;
+			int r=t%gt.rules.nHoursPerDay;
+			QStringList list;
+			
+			if(q==0)
+				q=1;
+			
+			for(int i=0; i<gt.rules.nHoursPerDay; i++){
+				if(!min2letters){
+					list.append(dayName.left(1));
+					dayName.remove(0, 1);
+				}
+				else if(i<r || q<=1){
+					assert(q>=1);
+					list.append(dayName.left(q+1));
+					dayName.remove(0, q+1);
+				}
+				else{
+					list.append(dayName.left(q));
+					dayName.remove(0, q);
+				}
+			}
+		
+			for(int h=0; h<gt.rules.nHoursPerDay; h++){
+				QTableWidgetItem* item=new QTableWidgetItem(list.at(h)+"\n"+gt.rules.hoursOfTheDay[h]);
+				item->setToolTip(gt.rules.daysOfTheWeek[d]+"\n"+gt.rules.hoursOfTheDay[h]);
+				teachersTimetableTable->setHorizontalHeaderItem(d*gt.rules.nHoursPerDay+h, item);
+			}
 		}
 	}
-	//QMessageBox::information(this, "", QString::number(min2letters));
-	for(int d=0; d<gt.rules.nDaysPerWeek; d++){
-		QString dayName=gt.rules.daysOfTheWeek[d];
-		int t=dayName.size();
-		int q=t/gt.rules.nHoursPerDay;
-		int r=t%gt.rules.nHoursPerDay;
-		QStringList list;
-		
-		if(q==0)
-			q=1;
-		
-		for(int i=0; i<gt.rules.nHoursPerDay; i++){
-			if(!min2letters){
-				list.append(dayName.left(1));
-				dayName.remove(0, 1);
-			}
-			else if(i<r || q<=1){
-				assert(q>=1);
-				list.append(dayName.left(q+1));
-				dayName.remove(0, q+1);
-			}
-			else{
-				list.append(dayName.left(q));
-				dayName.remove(0, q);
+	else{
+		bool min2letters=false;
+		for(int d=0; d<gt.rules.nRealDaysPerWeek; d++){
+			if(gt.rules.realDaysOfTheWeek[d].size()>gt.rules.nRealHoursPerDay){
+				min2letters=true;
+				break;
 			}
 		}
+		for(int d=0; d<gt.rules.nRealDaysPerWeek; d++){
+			QString realDayName=gt.rules.realDaysOfTheWeek[d];
+			int t=realDayName.size();
+			int q=t/gt.rules.nRealHoursPerDay;
+			int r=t%gt.rules.nRealHoursPerDay;
+			QStringList list;
+			
+			if(q==0)
+				q=1;
+			
+			for(int i=0; i<gt.rules.nRealHoursPerDay; i++){
+				if(!min2letters){
+					list.append(realDayName.left(1));
+					realDayName.remove(0, 1);
+				}
+				else if(i<r || q<=1){
+					assert(q>=1);
+					list.append(realDayName.left(q+1));
+					realDayName.remove(0, q+1);
+				}
+				else{
+					list.append(realDayName.left(q));
+					realDayName.remove(0, q);
+				}
+			}
+		
+			for(int h=0; h<gt.rules.nRealHoursPerDay; h++){
+				QTableWidgetItem* item=new QTableWidgetItem(list.at(h)+"\n"+gt.rules.realHoursOfTheDay[h]);
+				item->setToolTip(gt.rules.realDaysOfTheWeek[d]+"\n"+gt.rules.realHoursOfTheDay[h]);
+				teachersTimetableTable->setHorizontalHeaderItem(d*gt.rules.nRealHoursPerDay+h, item);
+			}
+		}
+	}
 	
-		for(int h=0; h<gt.rules.nHoursPerDay; h++){
-			QTableWidgetItem* item=new QTableWidgetItem(list.at(h)+"\n"+gt.rules.hoursOfTheDay[h]);
-			item->setToolTip(gt.rules.daysOfTheWeek[d]+"\n"+gt.rules.hoursOfTheDay[h]);
-			teachersTimetableTable->setHorizontalHeaderItem(d*gt.rules.nHoursPerDay+h, item);
-		}
-	}
 	for(int t=0; t<gt.rules.nInternalTeachers; t++){
 		QTableWidgetItem* item=new QTableWidgetItem(gt.rules.internalTeachersList[t]->name);
 		item->setToolTip(gt.rules.internalTeachersList[t]->name);
@@ -467,53 +524,101 @@ void TimetableViewTeachersTimeHorizontalForm::newTimetableGenerated()
 	teachersTimetableTable->setColumnCount(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
 	
 	newItemDelegate->nRows=teachersTimetableTable->rowCount();
-	newItemDelegate->nColumns=gt.rules.nHoursPerDay;
+	bool realView=(gt.rules.mode==MORNINGS_AFTERNOONS && REAL_VIEW==true);
+	if(!realView)
+		newItemDelegate->nColumns=gt.rules.nHoursPerDay;
+	else
+		newItemDelegate->nColumns=2*gt.rules.nHoursPerDay;
 	/*teachersTimetableTable->setItemDelegate(oldItemDelegate);
 	delete newItemDelegate;
 	//oldItemDelegate=teachersTimetableTable->itemDelegate();
 	newItemDelegate=new TimetableViewTeachersTimeHorizontalDelegate(nullptr, teachersTimetableTable->rowCount(), gt.rules.nHoursPerDay);
 	teachersTimetableTable->setItemDelegate(newItemDelegate);*/
 	
-	bool min2letters=false;
-	for(int d=0; d<gt.rules.nDaysPerWeek; d++){
-		if(gt.rules.daysOfTheWeek[d].size()>gt.rules.nHoursPerDay){
-			min2letters=true;
-			break;
+	bool normalView=!realView;
+	if(normalView){
+		bool min2letters=false;
+		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+			if(gt.rules.daysOfTheWeek[d].size()>gt.rules.nHoursPerDay){
+				min2letters=true;
+				break;
+			}
+		}
+		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+			QString dayName=gt.rules.daysOfTheWeek[d];
+			int t=dayName.size();
+			int q=t/gt.rules.nHoursPerDay;
+			int r=t%gt.rules.nHoursPerDay;
+			QStringList list;
+			
+			if(q==0)
+				q=1;
+			
+			for(int i=0; i<gt.rules.nHoursPerDay; i++){
+				if(!min2letters){
+					list.append(dayName.left(1));
+					dayName.remove(0, 1);
+				}
+				else if(i<r || q<=1){
+					assert(q>=1);
+					list.append(dayName.left(q+1));
+					dayName.remove(0, q+1);
+				}
+				else{
+					list.append(dayName.left(q));
+					dayName.remove(0, q);
+				}
+			}
+		
+			for(int h=0; h<gt.rules.nHoursPerDay; h++){
+				QTableWidgetItem* item=new QTableWidgetItem(list.at(h)+"\n"+gt.rules.hoursOfTheDay[h]);
+				item->setToolTip(gt.rules.daysOfTheWeek[d]+"\n"+gt.rules.hoursOfTheDay[h]);
+				teachersTimetableTable->setHorizontalHeaderItem(d*gt.rules.nHoursPerDay+h, item);
+			}
 		}
 	}
-	//QMessageBox::information(this, "", QString::number(min2letters));
-	for(int d=0; d<gt.rules.nDaysPerWeek; d++){
-		QString dayName=gt.rules.daysOfTheWeek[d];
-		int t=dayName.size();
-		int q=t/gt.rules.nHoursPerDay;
-		int r=t%gt.rules.nHoursPerDay;
-		QStringList list;
-		
-		if(q==0)
-			q=1;
-		
-		for(int i=0; i<gt.rules.nHoursPerDay; i++){
-			if(!min2letters){
-				list.append(dayName.left(1));
-				dayName.remove(0, 1);
-			}
-			else if(i<r || q<=1){
-				assert(q>=1);
-				list.append(dayName.left(q+1));
-				dayName.remove(0, q+1);
-			}
-			else{
-				list.append(dayName.left(q));
-				dayName.remove(0, q);
+	else{
+		bool min2letters=false;
+		for(int d=0; d<gt.rules.nRealDaysPerWeek; d++){
+			if(gt.rules.realDaysOfTheWeek[d].size()>gt.rules.nRealHoursPerDay){
+				min2letters=true;
+				break;
 			}
 		}
-	
-		for(int h=0; h<gt.rules.nHoursPerDay; h++){
-			QTableWidgetItem* item=new QTableWidgetItem(list.at(h)+"\n"+gt.rules.hoursOfTheDay[h]);
-			item->setToolTip(gt.rules.daysOfTheWeek[d]+"\n"+gt.rules.hoursOfTheDay[h]);
-			teachersTimetableTable->setHorizontalHeaderItem(d*gt.rules.nHoursPerDay+h, item);
+		for(int d=0; d<gt.rules.nRealDaysPerWeek; d++){
+			QString realDayName=gt.rules.realDaysOfTheWeek[d];
+			int t=realDayName.size();
+			int q=t/gt.rules.nRealHoursPerDay;
+			int r=t%gt.rules.nRealHoursPerDay;
+			QStringList list;
+			
+			if(q==0)
+				q=1;
+			
+			for(int i=0; i<gt.rules.nRealHoursPerDay; i++){
+				if(!min2letters){
+					list.append(realDayName.left(1));
+					realDayName.remove(0, 1);
+				}
+				else if(i<r || q<=1){
+					assert(q>=1);
+					list.append(realDayName.left(q+1));
+					realDayName.remove(0, q+1);
+				}
+				else{
+					list.append(realDayName.left(q));
+					realDayName.remove(0, q);
+				}
+			}
+		
+			for(int h=0; h<gt.rules.nRealHoursPerDay; h++){
+				QTableWidgetItem* item=new QTableWidgetItem(list.at(h)+"\n"+gt.rules.realHoursOfTheDay[h]);
+				item->setToolTip(gt.rules.realDaysOfTheWeek[d]+"\n"+gt.rules.realHoursOfTheDay[h]);
+				teachersTimetableTable->setHorizontalHeaderItem(d*gt.rules.nRealHoursPerDay+h, item);
+			}
 		}
 	}
+
 	for(int t=0; t<gt.rules.nInternalTeachers; t++){
 		QTableWidgetItem* item=new QTableWidgetItem(gt.rules.internalTeachersList[t]->name);
 		item->setToolTip(gt.rules.internalTeachersList[t]->name);
@@ -644,15 +749,15 @@ TimetableViewTeachersTimeHorizontalForm::~TimetableViewTeachersTimeHorizontalFor
 		settings.setValue(this->metaObject()->className()+QString("/vertical-header-size"), 0);
 	else
 		settings.setValue(this->metaObject()->className()+QString("/vertical-header-size"), heightSpinBox->value());
-		
+	
 	if(widthSpinBox->value()<=MINIMUM_WIDTH_SPIN_BOX_VALUE)
 		settings.setValue(this->metaObject()->className()+QString("/horizontal-header-size"), 0);
 	else
 		settings.setValue(this->metaObject()->className()+QString("/horizontal-header-size"), widthSpinBox->value());
-		
+	
 	settings.setValue(this->metaObject()->className()+QString("/subjects-check-box-state"), subjectsCheckBox->isChecked());
 	settings.setValue(this->metaObject()->className()+QString("/students-check-box-state"), studentsCheckBox->isChecked());
-		
+	
 	teachersTimetableTable->setItemDelegate(oldItemDelegate);
 	delete newItemDelegate;
 }

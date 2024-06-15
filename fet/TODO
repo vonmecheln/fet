@@ -9,12 +9,6 @@ https://lalescu.ro/liviu/fet/forum/index.php?topic=4519.0
 
 - Default 100% or saving the value of min days between activities constraints when adding a split activity (suggested by Mohamed Ait Ichou).
 
-- Another suggestion, is it possible to combine morning and evening periods during viewing. That is, it is not divided between morning and evening periods (suggested by Mohamed Ait Ichou).
-Also suggested by danghoan, here: https://lalescu.ro/liviu/fet/forum/index.php?topic=5550.0
-(Is it possible to design the teacher and class morning-afternoon timetable view in the following format for easy viewing? If possible, add the HTML output as well.
-Liviu Lalescu: "The following format" is suggested by two pictures, with each morning followed vertically by the corresponding afternoon, and the number of visual days
-per week being the number of real days per week.)
-
 - Drag and drop manual timetabling in the time horizontal view timetables (suggested by Abdeljalil Elghazoui).
 
 - Suggested by BOUHADEF (https://lalescu.ro/liviu/fet/forum/index.php?topic=4501.msg25467#msg25467):
@@ -9143,3 +9137,108 @@ That's what I have been using. Wish we can have constraint like max hours with a
 Liviu Lalescu:
 
 I think Cyrus Ireri refers to teachers max hours daily with an activity tag in an hourly interval.
+
+567---------------------------------------------------------
+From TAHIR (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5960.0
+
+Can we modify duration of all activities in single click?
+
+Volker Dirr:
+
+hmm.. I think if such a feature will be added, then it should contain a filter like in modifying multiple min days between activities constraints. So like
+modify only activities with hour x or with subject x or only sub-activity x.
+
+Liviu Lalescu:
+
+Or maybe better modify a selection of activities in the activities/subactivities dialogs?
+
+568---------------------------------------------------------
+From TAHIR (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5961.0
+
+A timetable have two frameworks. In one framework duration of lecture is 45 min and other framework duration of lecture is 40 min with break time 20 min.
+How can we adjust this timetable except 5 min fet hour trick?
+
+---
+
+In 5 min fet hour Length of timetable become too long. Then to print all fet hours in single page font size reduced too much.
+
+Volker Dirr:
+
+We might hide the hour names at all.
+or we might print the hour names only if the start and end time is used.
+So in worst case all times. In best case around 4*hours per day.
+It is a bit complicated to print only the needed start and end times, but
+I think it is possible to code it. Sadly not very easy and it must be coded for a lot of timetables. So sadly a longer coding task.
+
+569---------------------------------------------------------
+From TAHIR (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5962.0
+
+Can we import or export fet hours by using .csv file?
+
+Volker Dirr:
+
+That feature is not implemented by csv, because in normal case there are not many hours and you need to add them only a single time in your whole life.
+hmm...
+might be max useful if there is a school with a lot of hours because of a small duration like 5 minutes.
+i think we can add this into the TODO also for days.
+
+TAHIR:
+
+Actually i am trying to generate different timetables of different types. Now in current timetable 5 min fet hours are 69.
+08:00-08:05
+08:05-08:10
+So on .....
+
+570--------------------DONE-in FET-6.21.0-------------------
+
+571---------------------------------------------------------
+From Ariel Thomás Rosero Peñaherrera (in his thesis "DESARROLLO DE UNA APLICACIÓN WEB DE PLANIFICACIÓN ACADÉMICA PARA LA FACULTAD DE INGENIERÍA DE SISTEMAS"):
+
+- Write the rooms' XML timetables after generating the timetable, similar to the existing activities', teachers', and students' XML timetables.
+
+- Allow multiple users to work on the same data file.
+
+572---------------------------------------------------------
+From Volker Dirr:
+
+In the Mornings-Afternoons mode, output the real days/hours teachers free periods and teachers/students statistics.
+
+573---------------------------------------------------------
+From victorcapel (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5561.msg33053#msg33053
+
+Is it possible to add new constraint for max gaps between an ordered pair of activity tags for a teacher?
+
+Liviu Lalescu: "min" is already implemented, but this "max" is much more complicated. Do you mean in the Mornings-Afternoons mode, for a day, for a real day,
+and between morning and afternoon, like the "min"?
+
+574---------------------------------------------------------
+From youcef39 (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5966.0
+
+The suggestion or question concerns restrictions on changing buildings
+I believe that the current restriction enables us to specify the number of times buildings can be changed within a certain period of time. This is an excellent, wonderful, and useful approach for many schools, especially those that include two buildings.
+But there are schools with 5 buildings, so be it
+Building A
+Building B
+Building C
+Building D
+Building E
+Since it is acceptable and we do not need a condition not to move between Building A and Building B, for example, movement is also permitted between Building D and Building E.
+The same thing is also acceptable and we do not need a condition not to move between Building C and Building D
+But we need a restriction that prevents or reduces movement between Building A and Building E if prevention is impossible
+We need a restriction that prevents or reduces movement between Building B and Building E if prevention is impossible
+I mean, we want to develop a restriction
+The maximum number of structures in a time domain that currently exist can be changed within the constraint
+We can specify the time range...currently available
+We can specify the maximum number of building changes....currently present
+
+We can choose the intended buildings.... currently not available

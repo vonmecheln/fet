@@ -143,8 +143,14 @@ QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 	stream<<rules.nDaysPerWeek;
 	stream<<rules.daysOfTheWeek;
 
+	stream<<rules.nRealDaysPerWeek;
+	stream<<rules.realDaysOfTheWeek;
+
 	stream<<rules.nHoursPerDay;
 	stream<<rules.hoursOfTheDay;
+
+	stream<<rules.nRealHoursPerDay;
+	stream<<rules.realHoursOfTheDay;
 
 	stream<<rules.nTerms;
 	stream<<rules.nDaysPerTerm;
@@ -2389,8 +2395,14 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 	stream>>rules.nDaysPerWeek;
 	stream>>rules.daysOfTheWeek;
 
+	stream>>rules.nRealDaysPerWeek;
+	stream>>rules.realDaysOfTheWeek;
+
 	stream>>rules.nHoursPerDay;
 	stream>>rules.hoursOfTheDay;
+
+	stream>>rules.nRealHoursPerDay;
+	stream>>rules.realHoursOfTheDay;
 
 	stream>>rules.nTerms;
 	stream>>rules.nDaysPerTerm;
@@ -5231,6 +5243,11 @@ void Rules::init() //initializes the rules (empty, but with default hours and da
 	this->daysOfTheWeek.append(tr("Thursday"));
 	this->daysOfTheWeek.append(tr("Friday"));
 	
+	this->nRealDaysPerWeek=2;
+	this->realDaysOfTheWeek.clear();
+	this->realDaysOfTheWeek.append(tr("Monday"));
+	this->realDaysOfTheWeek.append(tr("Tuesday"));
+	
 	this->nHoursPerDay=12;
 	this->hoursOfTheDay.clear();
 	this->hoursOfTheDay.append(tr("08:00", "Hour name"));
@@ -5245,6 +5262,33 @@ void Rules::init() //initializes the rules (empty, but with default hours and da
 	this->hoursOfTheDay.append(tr("17:00", "Hour name"));
 	this->hoursOfTheDay.append(tr("18:00", "Hour name"));
 	this->hoursOfTheDay.append(tr("19:00", "Hour name"));
+
+	this->nRealHoursPerDay=24;
+	this->realHoursOfTheDay.clear();
+	this->realHoursOfTheDay.append(tr("08:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+	this->realHoursOfTheDay.append(tr("09:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+	this->realHoursOfTheDay.append(tr("10:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+	this->realHoursOfTheDay.append(tr("11:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+	this->realHoursOfTheDay.append(tr("12:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+	this->realHoursOfTheDay.append(tr("13:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+	this->realHoursOfTheDay.append(tr("14:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+	this->realHoursOfTheDay.append(tr("15:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+	this->realHoursOfTheDay.append(tr("16:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+	this->realHoursOfTheDay.append(tr("17:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+	this->realHoursOfTheDay.append(tr("18:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+	this->realHoursOfTheDay.append(tr("19:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+	this->realHoursOfTheDay.append(tr("08:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+	this->realHoursOfTheDay.append(tr("09:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+	this->realHoursOfTheDay.append(tr("10:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+	this->realHoursOfTheDay.append(tr("11:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+	this->realHoursOfTheDay.append(tr("12:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+	this->realHoursOfTheDay.append(tr("13:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+	this->realHoursOfTheDay.append(tr("14:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+	this->realHoursOfTheDay.append(tr("15:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+	this->realHoursOfTheDay.append(tr("16:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+	this->realHoursOfTheDay.append(tr("17:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+	this->realHoursOfTheDay.append(tr("18:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+	this->realHoursOfTheDay.append(tr("19:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
 
 	permanentStudentsHash.clear();
 	
@@ -6194,10 +6238,30 @@ void Rules::setMode(int newMode)
 		return;
 
 	if(newMode==OFFICIAL || newMode==BLOCK_PLANNING || newMode==TERMS){
+		//just to free this memory
+		this->nRealDaysPerWeek=0;
+		this->realDaysOfTheWeek.clear();
+		
+		this->nRealHoursPerDay=0;
+		this->realHoursOfTheDay.clear();
+		//
+		
 		for(Teacher* tch : std::as_const(teachersList))
 			tch->morningsAfternoonsBehavior=TEACHER_MORNINGS_AFTERNOONS_BEHAVIOR_NOT_INITIALIZED;
 	}
 	else if(newMode==MORNINGS_AFTERNOONS){
+		this->nRealDaysPerWeek=this->nDaysPerWeek/2;
+		this->realDaysOfTheWeek.clear();
+		for(int rd=0; rd<this->nRealDaysPerWeek; rd++)
+			this->realDaysOfTheWeek.append(this->daysOfTheWeek.at(2*rd));
+		
+		this->nRealHoursPerDay=2*this->nHoursPerDay;
+		this->realHoursOfTheDay.clear();
+		for(int h=0; h<this->nHoursPerDay; h++)
+			this->realHoursOfTheDay.append(this->hoursOfTheDay.at(h)+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+		for(int h=0; h<this->nHoursPerDay; h++)
+			this->realHoursOfTheDay.append(this->hoursOfTheDay.at(h)+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+		
 		for(Teacher* tch : std::as_const(teachersList))
 			if(tch->morningsAfternoonsBehavior==TEACHER_MORNINGS_AFTERNOONS_BEHAVIOR_NOT_INITIALIZED)
 				tch->morningsAfternoonsBehavior=TEACHER_UNRESTRICTED_MORNINGS_AFTERNOONS;
@@ -13293,6 +13357,9 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 	this->daysOfTheWeek.append(tr("Thursday"));
 	this->daysOfTheWeek.append(tr("Friday"));
 	
+	this->nRealDaysPerWeek=-1;
+	this->realDaysOfTheWeek.clear();
+
 	this->nHoursPerDay=12;
 	this->hoursOfTheDay.clear();
 	this->hoursOfTheDay.append(tr("08:00", "Hour name"));
@@ -13308,6 +13375,9 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 	this->hoursOfTheDay.append(tr("18:00", "Hour name"));
 	this->hoursOfTheDay.append(tr("19:00", "Hour name"));
 
+	this->nRealHoursPerDay=-1;
+	this->realHoursOfTheDay.clear();
+	
 	bool skipDeprecatedConstraints=false;
 	
 	bool skipDuplicatedStudentsSets=false;
@@ -13468,6 +13538,100 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 				}
 			}
 		}
+		else if(xmlReader.name()==QString("Real_Days_List")){
+			this->realDaysOfTheWeek.clear();
+			int tmp=0;
+			bool numberWasFound=false;
+			assert(xmlReader.isStartElement());
+			QString numberString="Number_of_Real_Days", realDayString="Name";
+			while(xmlReader.readNextStartElement()){
+				xmlReadingLog+="   Found "+xmlReader.name().toString()+" tag\n";
+				if(xmlReader.name()==QString("Number") || xmlReader.name()==QString("Number_of_Real_Days") ){
+					numberString=xmlReader.name().toString();
+					QString text=xmlReader.readElementText();
+					this->nRealDaysPerWeek=text.toInt();
+					numberWasFound=true;
+					xmlReadingLog+="   Found the number of real days per week = "+
+					 CustomFETString::number(this->nRealDaysPerWeek)+"\n";
+					reducedXmlLog+="Added "+
+					 CustomFETString::number(this->nRealDaysPerWeek)+" real days per week\n";
+					if(nRealDaysPerWeek<0){ //may be 0 if there is a single FET (half) day
+						xmlReader.raiseError(tr("%1 is incorrect").arg(numberString));
+					}
+					else if(nRealDaysPerWeek>MAX_DAYS_PER_WEEK/2){
+						xmlReader.raiseError(tr("%1 is too large. Maximum allowed is %2.").arg(numberString).arg(MAX_DAYS_PER_WEEK/2));
+					}
+					else{
+						assert(this->nRealDaysPerWeek>=0 && nRealDaysPerWeek<=MAX_DAYS_PER_WEEK/2);
+					}
+				}
+				//old .fet XML format
+				/*else if(xmlReader.name()==QString("Name")){
+					dayString=xmlReader.name().toString();
+					if(tmp>=MAX_DAYS_PER_WEEK){
+						xmlReader.raiseError(tr("Too many %1 items. Maximum allowed is %2.").arg(dayString).arg(MAX_DAYS_PER_WEEK));
+						xmlReader.skipCurrentElement();
+					}
+					else{
+						QString text=xmlReader.readElementText();
+						//this->daysOfTheWeek[tmp]=text;
+						this->daysOfTheWeek.append(text);
+						xmlReadingLog+="   Found day "+this->daysOfTheWeek[tmp]+"\n";
+						tmp++;
+					}
+				}*/
+				//end old .fet XML format
+				else if(xmlReader.name()==QString("Real_Day")){
+					assert(xmlReader.isStartElement());
+					while(xmlReader.readNextStartElement()){
+						xmlReadingLog+="   Found "+xmlReader.name().toString()+" tag\n";
+						if(xmlReader.name()==QString("Name")){
+							realDayString=xmlReader.name().toString();
+							if(tmp>=MAX_DAYS_PER_WEEK/2){
+								xmlReader.raiseError(tr("Too many %1 items. Maximum allowed is %2.").arg(realDayString).arg(MAX_DAYS_PER_WEEK/2));
+								xmlReader.skipCurrentElement();
+							}
+							else{
+								QString text=xmlReader.readElementText();
+								this->realDaysOfTheWeek.append(text);
+								//this->daysOfTheWeek[tmp]=text;
+								xmlReadingLog+="   Found real day "+this->realDaysOfTheWeek[tmp]+"\n";
+								tmp++;
+							}
+						}
+						else{
+							unrecognizedXmlTags.append(xmlReader.name().toString());
+							unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+							unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+							xmlReader.skipCurrentElement();
+							xmlReaderNumberOfUnrecognizedFields++;
+						}
+					}
+				}
+				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+					xmlReader.skipCurrentElement();
+					xmlReaderNumberOfUnrecognizedFields++;
+				}
+			}
+			if(!xmlReader.error()){
+				if(!numberWasFound){
+					xmlReader.raiseError(tr("%1 not found").arg(numberString));
+				}
+				else{
+					if(!(tmp==nRealDaysPerWeek))
+						xmlReader.raiseError(tr("%1: %2 and the number of %3 read do not correspond", "%1 is an XML string, %2 is the specified number of real days,"
+						 " %3 is the number of actually read real days.")
+						 .arg("Real_Days_List").arg(numberString).arg(realDayString));
+					else
+						assert(tmp==this->nRealDaysPerWeek);
+				}
+			}
+		}
 		else if(xmlReader.name()==QString("Hours_List")){
 			this->hoursOfTheDay.clear();
 			int tmp=0;
@@ -13571,6 +13735,125 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 						else
 							assert(tmp==nHoursPerDay);
 					}
+				}
+			}
+		}
+		else if(xmlReader.name()==QString("Real_Hours_List")){
+			this->realHoursOfTheDay.clear();
+			int tmp=0;
+			bool numberWasFound=false;
+			assert(xmlReader.isStartElement());
+			QString numberString="Number_of_Real_Hours", realHourString="Name";
+			while(xmlReader.readNextStartElement()){
+				xmlReadingLog+="   Found "+xmlReader.name().toString()+" tag\n";
+				if(xmlReader.name()==QString("Number") || xmlReader.name()==QString("Number_of_Real_Hours")){
+					numberString=xmlReader.name().toString();
+					QString text=xmlReader.readElementText();
+					this->nRealHoursPerDay=text.toInt();
+					numberWasFound=true;
+					xmlReadingLog+="   Found the number of real hours per day = "+
+					 CustomFETString::number(this->nRealHoursPerDay)+"\n";
+					reducedXmlLog+="Added "+
+					 CustomFETString::number(this->nRealHoursPerDay)+" real hours per day\n";
+					if(nRealHoursPerDay<0){
+						xmlReader.raiseError(tr("%1 is incorrect").arg(numberString));
+					}
+					else if(nRealHoursPerDay>2*MAX_HOURS_PER_DAY){
+						xmlReader.raiseError(tr("%1 is too large. Maximum allowed is %2.").arg("Number").arg(2*MAX_HOURS_PER_DAY));
+					}
+					else{
+						assert(this->nRealHoursPerDay>=0 && nRealHoursPerDay<=2*MAX_HOURS_PER_DAY);
+					}
+				}
+				//old .fet XML format
+				/*else if(xmlReader.name()==QString("Name")){
+					hourString=xmlReader.name().toString();
+					if(tmp>=MAX_HOURS_PER_DAY){
+						xmlReader.raiseError(tr("Too many %1 items. Maximum allowed is %2.").arg(hourString).arg(MAX_HOURS_PER_DAY));
+						xmlReader.skipCurrentElement();
+					}
+					else{
+						QString text=xmlReader.readElementText();
+						//this->hoursOfTheDay[tmp]=text;
+						this->hoursOfTheDay.append(text);
+						xmlReadingLog+="   Found hour "+this->hoursOfTheDay[tmp]+"\n";
+						tmp++;
+					}
+				}*/
+				//end old .fet XML format
+				else if(xmlReader.name()==QString("Real_Hour")){
+					assert(xmlReader.isStartElement());
+					while(xmlReader.readNextStartElement()){
+						xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+						if(xmlReader.name()==QString("Name")){
+							realHourString=xmlReader.name().toString();
+							if(tmp>=2*MAX_HOURS_PER_DAY){
+								xmlReader.raiseError(tr("Too many %1 items. Maximum allowed is %2.").arg(realHourString).arg(2*MAX_HOURS_PER_DAY));
+								xmlReader.skipCurrentElement();
+							}
+							else{
+								QString text=xmlReader.readElementText();
+								//this->hoursOfTheDay[tmp]=text;
+								this->realHoursOfTheDay.append(text);
+								xmlReadingLog+="    Found real hour "+this->realHoursOfTheDay[tmp]+"\n";
+								tmp++;
+							}
+						}
+						else{
+							unrecognizedXmlTags.append(xmlReader.name().toString());
+							unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+							unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+							xmlReader.skipCurrentElement();
+							xmlReaderNumberOfUnrecognizedFields++;
+						}
+					}
+				}
+				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+					xmlReader.skipCurrentElement();
+					xmlReaderNumberOfUnrecognizedFields++;
+				}
+			}
+			/*if(!xmlReader.error()){
+				if(!numberWasFound){
+					xmlReader.raiseError(tr("%1 not found").arg(numberString));
+				}
+				else{
+					if(numberString=="Number"){
+						//some older files contain also the end of day hour, so tmp==nHoursPerDay+1 in this case
+						if(!(tmp==nHoursPerDay || tmp==nHoursPerDay+1))
+							xmlReader.raiseError(tr("%1: %2 and the number of %3 read do not correspond", "%1 is an XML string, %2 is the specified number of hours,"
+							 " %3 is the number of actually read hours.")
+							 .arg("Hours_List").arg(numberString).arg(hourString));
+						else
+							assert(tmp==nHoursPerDay || tmp==nHoursPerDay+1);
+					}
+					else{
+						assert(numberString=="Number_of_Hours");
+						if(!(tmp==nHoursPerDay))
+							xmlReader.raiseError(tr("%1: %2 and the number of %3 read do not correspond", "%1 is an XML string, %2 is the specified number of hours,"
+							 " %3 is the number of actually read hours.")
+							 .arg("Hours_List").arg(numberString).arg(hourString));
+						else
+							assert(tmp==nHoursPerDay);
+					}
+				}
+			}*/
+			if(!xmlReader.error()){
+				if(!numberWasFound){
+					xmlReader.raiseError(tr("%1 not found").arg(numberString));
+				}
+				else{
+					if(!(tmp==nRealHoursPerDay))
+						xmlReader.raiseError(tr("%1: %2 and the number of %3 read do not correspond", "%1 is an XML string, %2 is the specified number of real hours,"
+						 " %3 is the number of actually read real hours.")
+						 .arg("Real_Hours_List").arg(numberString).arg(realHourString));
+					else
+						assert(tmp==this->nRealHoursPerDay);
 				}
 			}
 		}
@@ -14208,11 +14491,19 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 					bool tmp2=this->addYearFast(sty);
 					assert(tmp2==true);
 					ny++;
+					
+					int cntYearNameFound=0;
 
 					assert(xmlReader.isStartElement());
 					while(xmlReader.readNextStartElement()){
 						xmlReadingLog+="   Found "+xmlReader.name().toString()+" tag\n";
 						if(xmlReader.name()==QString("Name")){
+							cntYearNameFound++;
+							if(cntYearNameFound>=2){
+								xmlReader.raiseError(tr("The field '%1' is met more than once in the students year's description.").arg("Name"));
+								okStudents=false;
+							}
+							
 							QString text=xmlReader.readElementText();
 							if(!skipDuplicatedStudentsSets){
 								QString nn=text;
@@ -14227,7 +14518,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 										str=tr("Trying to add year %1, which is already added as another group.").arg(nn);
 									else if(ss->type==STUDENTS_SUBGROUP)
 										str=tr("Trying to add year %1, which is already added as another subgroup.").arg(nn);
-										
+									
 									xmlReader.raiseError(str);
 									okStudents=false;
 
@@ -14343,11 +14634,19 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 							/*bool tmp4=this->addGroupFast(sty, stg);
 							assert(tmp4==true);
 							ng++;*/
+							
+							int cntGroupNameFound=0;
 
 							assert(xmlReader.isStartElement());
 							while(xmlReader.readNextStartElement()){
 								xmlReadingLog+="   Found "+xmlReader.name().toString()+" tag\n";
 								if(xmlReader.name()==QString("Name")){
+									cntGroupNameFound++;
+									if(cntGroupNameFound>=2){
+										xmlReader.raiseError(tr("The field '%1' is met more than once in the students group's description.").arg("Name"));
+										okStudents=false;
+									}
+
 									QString text=xmlReader.readElementText();
 									if(!skipDuplicatedStudentsSets){
 										QString nn=text;
@@ -14454,11 +14753,19 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 									/*bool tmp6=this->addSubgroupFast(sty, stg, sts);
 									assert(tmp6==true);
 									ns++;*/
+									
+									int cntSubgroupNameFound=0;
 
 									assert(xmlReader.isStartElement());
 									while(xmlReader.readNextStartElement()){
 										xmlReadingLog+="   Found "+xmlReader.name().toString()+" tag\n";
 										if(xmlReader.name()==QString("Name")){
+											cntSubgroupNameFound++;
+											if(cntSubgroupNameFound>=2){
+												xmlReader.raiseError(tr("The field '%1' is met more than once in the students subgroup's description.").arg("Name"));
+												okStudents=false;
+											}
+
 											QString text=xmlReader.readElementText();
 											if(!skipDuplicatedStudentsSets){
 												QString nn=text;
@@ -16049,10 +16356,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 						if(t==0)
 							reportMA5OldTimeConstraintsChange=false;
 					}
-					crt_constraint=readOldMAStudentsSetMaxDaysPerWeek(parent, xmlReader, xmlReadingLog);
+					crt_constraint=readOldMAStudentsSetMaxDaysPerWeek(xmlReader, xmlReadingLog);
 				}
 				else if(xmlReader.name()==QString("ConstraintStudentsSetMaxRealDaysPerWeek")){
-					crt_constraint=readStudentsSetMaxRealDaysPerWeek(parent, xmlReader, xmlReadingLog);
+					crt_constraint=readStudentsSetMaxRealDaysPerWeek(xmlReader, xmlReadingLog);
 				}
 
 				else if((!version6AndAbove && (probably5Morocco || probably5Algeria || probably5MA))
@@ -16066,10 +16373,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 						if(t==0)
 							reportMA5OldTimeConstraintsChange=false;
 					}
-					crt_constraint=readOldMAStudentsMaxDaysPerWeek(parent, xmlReader, xmlReadingLog);
+					crt_constraint=readOldMAStudentsMaxDaysPerWeek(xmlReader, xmlReadingLog);
 				}
 				else if(xmlReader.name()==QString("ConstraintStudentsMaxRealDaysPerWeek")){
-					crt_constraint=readStudentsMaxRealDaysPerWeek(parent, xmlReader, xmlReadingLog);
+					crt_constraint=readStudentsMaxRealDaysPerWeek(xmlReader, xmlReadingLog);
 				}
 				//2020-06-25
 				else if(xmlReader.name()==QString("ConstraintStudentsSetMaxAfternoonsPerWeek")){
@@ -17137,6 +17444,24 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 		
 		RulesReconcilableMessage::warning(parent, tr("FET information"), s);
 	}
+	
+	if(this->mode==MORNINGS_AFTERNOONS){
+		if(this->nRealDaysPerWeek==-1 || this->nRealDaysPerWeek!=this->nDaysPerWeek/2){
+			this->nRealDaysPerWeek=this->nDaysPerWeek/2;
+			this->realDaysOfTheWeek.clear();
+			for(int rd=0; rd<this->nRealDaysPerWeek; rd++)
+				this->realDaysOfTheWeek.append(this->daysOfTheWeek.at(2*rd));
+		}
+		
+		if(this->nRealHoursPerDay==-1 || this->nRealHoursPerDay!=2*this->nHoursPerDay){
+			this->nRealHoursPerDay=2*this->nHoursPerDay;
+			this->realHoursOfTheDay.clear();
+			for(int h=0; h<this->nHoursPerDay; h++)
+				this->realHoursOfTheDay.append(this->hoursOfTheDay.at(h)+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+			for(int h=0; h<this->nHoursPerDay; h++)
+				this->realHoursOfTheDay.append(this->hoursOfTheDay.at(h)+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+		}
+	}
 
 	this->internalStructureComputed=false;
 	
@@ -17260,6 +17585,17 @@ bool Rules::write(QWidget* parent, const QString& filename)
 		tos<<"</Day>\n";
 	}
 	tos<<"</Days_List>\n\n";
+
+	//the real days, for the Mornings-Afternoons mode
+	if(this->mode==MORNINGS_AFTERNOONS){
+		tos<<"<Real_Days_List>\n<Number_of_Real_Days>"+CustomFETString::number(this->nRealDaysPerWeek)+"</Number_of_Real_Days>\n";
+		for(int i=0; i<this->nRealDaysPerWeek; i++){
+			tos<<"<Real_Day>\n";
+			tos<<"	<Name>"+protect(this->realDaysOfTheWeek[i])+"</Name>\n";
+			tos<<"</Real_Day>\n";
+		}
+		tos<<"</Real_Days_List>\n\n";
+	}
 	
 	tos<<"<Hours_List>\n<Number_of_Hours>"+CustomFETString::number(this->nHoursPerDay)+"</Number_of_Hours>\n";
 	for(int i=0; i<this->nHoursPerDay; i++){
@@ -17268,6 +17604,17 @@ bool Rules::write(QWidget* parent, const QString& filename)
 		tos<<"</Hour>\n";
 	}
 	tos<<"</Hours_List>\n\n";
+
+	//the real hours, for the Mornings-Afternoons mode
+	if(this->mode==MORNINGS_AFTERNOONS){
+		tos<<"<Real_Hours_List>\n<Number_of_Real_Hours>"+CustomFETString::number(this->nRealHoursPerDay)+"</Number_of_Real_Hours>\n";
+		for(int i=0; i<this->nRealHoursPerDay; i++){
+			tos<<"<Real_Hour>\n";
+			tos<<"	<Name>"+protect(this->realHoursOfTheDay[i])+"</Name>\n";
+			tos<<"</Real_Hour>\n";
+		}
+		tos<<"</Real_Hours_List>\n\n";
+	}
 
 	//subjects list - should be before teachers list, because each teacher has a list of associated qualified subjects
 	tos << "<Subjects_List>\n";
@@ -28863,7 +29210,7 @@ TimeConstraint* Rules::readOldMATeacherMaxDaysPerWeek(QXmlStreamReader& xmlReade
 		else if(xmlReader.name()==QString("Max_Days_Per_Week")){
 			QString text=xmlReader.readElementText();
 			cn->maxDaysPerWeek=text.toInt();
-			if(cn->maxDaysPerWeek<=0 || cn->maxDaysPerWeek>this->nDaysPerWeek){
+			if(cn->maxDaysPerWeek<0 || cn->maxDaysPerWeek>this->nDaysPerWeek/2){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Max_Days_Per_Week"));
 				/*RulesReconcilableMessage::information(parent, tr("FET information"),
 					tr("Constraint TeacherMaxDaysPerWeek max days corrupt for teacher %1, max days %2 <= 0 or >nDaysPerWeek, ignoring constraint")
@@ -28873,7 +29220,7 @@ TimeConstraint* Rules::readOldMATeacherMaxDaysPerWeek(QXmlStreamReader& xmlReade
 				cn=nullptr;
 				return nullptr;
 			}
-			assert(cn->maxDaysPerWeek>0 && cn->maxDaysPerWeek <= this->nDaysPerWeek);
+			assert(cn->maxDaysPerWeek>=0 && cn->maxDaysPerWeek <= this->nDaysPerWeek/2);
 			xmlReadingLog+="    Max. days per week="+CustomFETString::number(cn->maxDaysPerWeek)+"\n";
 		}
 		else{
@@ -28936,7 +29283,7 @@ TimeConstraint* Rules::readTeacherMaxRealDaysPerWeek(QXmlStreamReader& xmlReader
 		else if(xmlReader.name()==QString("Max_Days_Per_Week")){
 			QString text=xmlReader.readElementText();
 			cn->maxDaysPerWeek=text.toInt();
-			if(cn->maxDaysPerWeek<=0 || cn->maxDaysPerWeek>this->nDaysPerWeek){
+			if(cn->maxDaysPerWeek<0 || cn->maxDaysPerWeek>this->nDaysPerWeek/2){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Max_Days_Per_Week"));
 				/*RulesReconcilableMessage::information(parent, tr("FET information"),
 					tr("Constraint TeacherMaxDaysPerWeek max days corrupt for teacher %1, max days %2 <= 0 or >nDaysPerWeek, ignoring constraint")
@@ -28946,7 +29293,7 @@ TimeConstraint* Rules::readTeacherMaxRealDaysPerWeek(QXmlStreamReader& xmlReader
 				cn=nullptr;
 				return nullptr;
 			}
-			assert(cn->maxDaysPerWeek>0 && cn->maxDaysPerWeek <= this->nDaysPerWeek);
+			assert(cn->maxDaysPerWeek>=0 && cn->maxDaysPerWeek <= this->nDaysPerWeek/2);
 			xmlReadingLog+="    Max. days per week="+CustomFETString::number(cn->maxDaysPerWeek)+"\n";
 		}
 		else{
@@ -28985,7 +29332,7 @@ TimeConstraint* Rules::readOldMATeachersMaxDaysPerWeek(QXmlStreamReader& xmlRead
 		else if(xmlReader.name()==QString("Max_Days_Per_Week")){
 			QString text=xmlReader.readElementText();
 			cn->maxDaysPerWeek=text.toInt();
-			if(cn->maxDaysPerWeek<=0 || cn->maxDaysPerWeek>this->nDaysPerWeek){
+			if(cn->maxDaysPerWeek<0 || cn->maxDaysPerWeek>this->nDaysPerWeek/2){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Max_Days_Per_Week"));
 				/*RulesReconcilableMessage::information(parent, tr("FET information"),
 					tr("Constraint TeachersMaxDaysPerWeek max days corrupt, max days %1 <= 0 or >nDaysPerWeek, ignoring constraint")
@@ -28994,7 +29341,7 @@ TimeConstraint* Rules::readOldMATeachersMaxDaysPerWeek(QXmlStreamReader& xmlRead
 				cn=nullptr;
 				return nullptr;
 			}
-			assert(cn->maxDaysPerWeek>0 && cn->maxDaysPerWeek <= this->nDaysPerWeek);
+			assert(cn->maxDaysPerWeek>=0 && cn->maxDaysPerWeek <= this->nDaysPerWeek/2);
 			xmlReadingLog+="    Max. days per week="+CustomFETString::number(cn->maxDaysPerWeek)+"\n";
 		}
 		else{
@@ -29033,7 +29380,7 @@ TimeConstraint* Rules::readTeachersMaxRealDaysPerWeek(QXmlStreamReader& xmlReade
 		else if(xmlReader.name()==QString("Max_Days_Per_Week")){
 			QString text=xmlReader.readElementText();
 			cn->maxDaysPerWeek=text.toInt();
-			if(cn->maxDaysPerWeek<=0 || cn->maxDaysPerWeek>this->nDaysPerWeek){
+			if(cn->maxDaysPerWeek<0 || cn->maxDaysPerWeek>this->nDaysPerWeek/2){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Max_Days_Per_Week"));
 				/*RulesReconcilableMessage::information(parent, tr("FET information"),
 					tr("Constraint TeachersMaxDaysPerWeek max days corrupt, max days %1 <= 0 or >nDaysPerWeek, ignoring constraint")
@@ -29042,7 +29389,7 @@ TimeConstraint* Rules::readTeachersMaxRealDaysPerWeek(QXmlStreamReader& xmlReade
 				cn=nullptr;
 				return nullptr;
 			}
-			assert(cn->maxDaysPerWeek>0 && cn->maxDaysPerWeek <= this->nDaysPerWeek);
+			assert(cn->maxDaysPerWeek>=0 && cn->maxDaysPerWeek <= this->nDaysPerWeek/2);
 			xmlReadingLog+="    Max. days per week="+CustomFETString::number(cn->maxDaysPerWeek)+"\n";
 		}
 		else{
@@ -29105,7 +29452,7 @@ TimeConstraint* Rules::readTeacherMaxAfternoonsPerWeek(QXmlStreamReader& xmlRead
 		else if(xmlReader.name()==QString("Max_Afternoons_Per_Week")){
 			QString text=xmlReader.readElementText();
 			cn->maxAfternoonsPerWeek=text.toInt();
-			if(cn->maxAfternoonsPerWeek<=0 || cn->maxAfternoonsPerWeek>this->nDaysPerWeek){
+			if(cn->maxAfternoonsPerWeek<0 || cn->maxAfternoonsPerWeek>this->nDaysPerWeek/2){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Max_Afternoons_Per_Week"));
 				/*RulesReconcilableMessage::information(parent, tr("FET information"),
 					tr("Constraint TeacherMaxDaysPerWeek max days corrupt for teacher %1, max days %2 <= 0 or >nDaysPerWeek, ignoring constraint")
@@ -29115,7 +29462,7 @@ TimeConstraint* Rules::readTeacherMaxAfternoonsPerWeek(QXmlStreamReader& xmlRead
 				cn=nullptr;
 				return nullptr;
 			}
-			assert(cn->maxAfternoonsPerWeek>0 && cn->maxAfternoonsPerWeek <= this->nDaysPerWeek);
+			assert(cn->maxAfternoonsPerWeek>=0 && cn->maxAfternoonsPerWeek <= this->nDaysPerWeek/2);
 			xmlReadingLog+="    Max. afternoons per week="+CustomFETString::number(cn->maxAfternoonsPerWeek)+"\n";
 		}
 		else{
@@ -29154,7 +29501,7 @@ TimeConstraint* Rules::readTeachersMaxAfternoonsPerWeek(QXmlStreamReader& xmlRea
 		else if(xmlReader.name()==QString("Max_Afternoons_Per_Week")){
 			QString text=xmlReader.readElementText();
 			cn->maxAfternoonsPerWeek=text.toInt();
-			if(cn->maxAfternoonsPerWeek<=0 || cn->maxAfternoonsPerWeek>this->nDaysPerWeek){
+			if(cn->maxAfternoonsPerWeek<0 || cn->maxAfternoonsPerWeek>this->nDaysPerWeek/2){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Max_Afternoons_Per_Week"));
 				/*RulesReconcilableMessage::information(parent, tr("FET information"),
 					tr("Constraint TeachersMaxDaysPerWeek max days corrupt, max days %1 <= 0 or >nDaysPerWeek, ignoring constraint")
@@ -29163,7 +29510,7 @@ TimeConstraint* Rules::readTeachersMaxAfternoonsPerWeek(QXmlStreamReader& xmlRea
 				cn=nullptr;
 				return nullptr;
 			}
-			assert(cn->maxAfternoonsPerWeek>0 && cn->maxAfternoonsPerWeek <= this->nDaysPerWeek);
+			assert(cn->maxAfternoonsPerWeek>=0 && cn->maxAfternoonsPerWeek <= this->nDaysPerWeek/2);
 			xmlReadingLog+="    Max. afternoons per week="+CustomFETString::number(cn->maxAfternoonsPerWeek)+"\n";
 		}
 		else{
@@ -29586,7 +29933,7 @@ TimeConstraint* Rules::readTeacherMaxMorningsPerWeek(QXmlStreamReader& xmlReader
 		else if(xmlReader.name()==QString("Max_Mornings_Per_Week")){
 			QString text=xmlReader.readElementText();
 			cn->maxMorningsPerWeek=text.toInt();
-			if(cn->maxMorningsPerWeek<=0 || cn->maxMorningsPerWeek>this->nDaysPerWeek){
+			if(cn->maxMorningsPerWeek<0 || cn->maxMorningsPerWeek>this->nDaysPerWeek/2){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Max_Mornings_Per_Week"));
 				/*RulesReconcilableMessage::information(parent, tr("FET information"),
 					tr("Constraint TeacherMaxDaysPerWeek max days corrupt for teacher %1, max days %2 <= 0 or >nDaysPerWeek, ignoring constraint")
@@ -29596,7 +29943,7 @@ TimeConstraint* Rules::readTeacherMaxMorningsPerWeek(QXmlStreamReader& xmlReader
 				cn=nullptr;
 				return nullptr;
 			}
-			assert(cn->maxMorningsPerWeek>0 && cn->maxMorningsPerWeek <= this->nDaysPerWeek);
+			assert(cn->maxMorningsPerWeek>=0 && cn->maxMorningsPerWeek <= this->nDaysPerWeek/2);
 			xmlReadingLog+="    Max. mornings per week="+CustomFETString::number(cn->maxMorningsPerWeek)+"\n";
 		}
 		else{
@@ -29635,7 +29982,7 @@ TimeConstraint* Rules::readTeachersMaxMorningsPerWeek(QXmlStreamReader& xmlReade
 		else if(xmlReader.name()==QString("Max_Mornings_Per_Week")){
 			QString text=xmlReader.readElementText();
 			cn->maxMorningsPerWeek=text.toInt();
-			if(cn->maxMorningsPerWeek<=0 || cn->maxMorningsPerWeek>this->nDaysPerWeek){
+			if(cn->maxMorningsPerWeek<0 || cn->maxMorningsPerWeek>this->nDaysPerWeek/2){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Max_Mornings_Per_Week"));
 				/*RulesReconcilableMessage::information(parent, tr("FET information"),
 					tr("Constraint TeachersMaxDaysPerWeek max days corrupt, max days %1 <= 0 or >nDaysPerWeek, ignoring constraint")
@@ -29644,7 +29991,7 @@ TimeConstraint* Rules::readTeachersMaxMorningsPerWeek(QXmlStreamReader& xmlReade
 				cn=nullptr;
 				return nullptr;
 			}
-			assert(cn->maxMorningsPerWeek>0 && cn->maxMorningsPerWeek <= this->nDaysPerWeek);
+			assert(cn->maxMorningsPerWeek>=0 && cn->maxMorningsPerWeek <= this->nDaysPerWeek/2);
 			xmlReadingLog+="    Max. mornings per week="+CustomFETString::number(cn->maxMorningsPerWeek)+"\n";
 		}
 		else{
@@ -30034,7 +30381,7 @@ TimeConstraint* Rules::readTeacherMinMorningsPerWeek(QXmlStreamReader& xmlReader
 		else if(xmlReader.name()==QString("Minimum_Mornings_Per_Week")){
 			QString text=xmlReader.readElementText();
 			cn->minMorningsPerWeek=text.toInt();
-			if(cn->minMorningsPerWeek<=0 || cn->minMorningsPerWeek>this->nDaysPerWeek/2){
+			if(cn->minMorningsPerWeek<0 || cn->minMorningsPerWeek>this->nDaysPerWeek/2){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Minimum_Mornings_Per_Week"));
 				/*RulesReconcilableMessage::information(parent, tr("FET information"),
 					tr("Constraint TeacherMinMorningsPerWeek min days corrupt for teacher %1, min days %2 <= 0 or >nMorningsPerWeek, ignoring constraint")
@@ -30044,7 +30391,7 @@ TimeConstraint* Rules::readTeacherMinMorningsPerWeek(QXmlStreamReader& xmlReader
 				cn=nullptr;
 				return nullptr;
 			}
-			assert(cn->minMorningsPerWeek>0 && cn->minMorningsPerWeek <= this->nDaysPerWeek/2);
+			assert(cn->minMorningsPerWeek>=0 && cn->minMorningsPerWeek <= this->nDaysPerWeek/2);
 			xmlReadingLog+="    Min. days per week="+CustomFETString::number(cn->minMorningsPerWeek)+"\n";
 		}
 		else{
@@ -30083,7 +30430,7 @@ TimeConstraint* Rules::readTeachersMinMorningsPerWeek(QXmlStreamReader& xmlReade
 		else if(xmlReader.name()==QString("Minimum_Mornings_Per_Week")){
 			QString text=xmlReader.readElementText();
 			cn->minMorningsPerWeek=text.toInt();
-			if(cn->minMorningsPerWeek<=0 || cn->minMorningsPerWeek>this->nDaysPerWeek/2){
+			if(cn->minMorningsPerWeek<0 || cn->minMorningsPerWeek>this->nDaysPerWeek/2){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Minimum_Mornings_Per_Week"));
 				/*RulesReconcilableMessage::information(parent, tr("FET information"),
 					tr("Constraint TeachersMinMorningsPerWeek min days corrupt, min days %1 <= 0 or >nMorningsPerWeek, ignoring constraint")
@@ -30092,7 +30439,7 @@ TimeConstraint* Rules::readTeachersMinMorningsPerWeek(QXmlStreamReader& xmlReade
 				cn=nullptr;
 				return nullptr;
 			}
-			assert(cn->minMorningsPerWeek>0 && cn->minMorningsPerWeek <= this->nDaysPerWeek/2);
+			assert(cn->minMorningsPerWeek>=0 && cn->minMorningsPerWeek <= this->nDaysPerWeek/2);
 			xmlReadingLog+="    Min. days per week="+CustomFETString::number(cn->minMorningsPerWeek)+"\n";
 		}
 		else{
@@ -30136,7 +30483,7 @@ TimeConstraint* Rules::readTeacherMinAfternoonsPerWeek(QXmlStreamReader& xmlRead
 		else if(xmlReader.name()==QString("Minimum_Afternoons_Per_Week")){
 			QString text=xmlReader.readElementText();
 			cn->minAfternoonsPerWeek=text.toInt();
-			if(cn->minAfternoonsPerWeek<=0 || cn->minAfternoonsPerWeek>this->nDaysPerWeek/2){
+			if(cn->minAfternoonsPerWeek<0 || cn->minAfternoonsPerWeek>this->nDaysPerWeek/2){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Minimum_Afternoons_Per_Week"));
 				/*RulesReconcilableMessage::information(parent, tr("FET information"),
 					tr("Constraint TeacherMinAfternoonsPerWeek min days corrupt for teacher %1, min days %2 <= 0 or >nAfternoonsPerWeek, ignoring constraint")
@@ -30146,7 +30493,7 @@ TimeConstraint* Rules::readTeacherMinAfternoonsPerWeek(QXmlStreamReader& xmlRead
 				cn=nullptr;
 				return nullptr;
 			}
-			assert(cn->minAfternoonsPerWeek>0 && cn->minAfternoonsPerWeek <= this->nDaysPerWeek/2);
+			assert(cn->minAfternoonsPerWeek>=0 && cn->minAfternoonsPerWeek <= this->nDaysPerWeek/2);
 			xmlReadingLog+="    Min. days per week="+CustomFETString::number(cn->minAfternoonsPerWeek)+"\n";
 		}
 		else{
@@ -30185,7 +30532,7 @@ TimeConstraint* Rules::readTeachersMinAfternoonsPerWeek(QXmlStreamReader& xmlRea
 		else if(xmlReader.name()==QString("Minimum_Afternoons_Per_Week")){
 			QString text=xmlReader.readElementText();
 			cn->minAfternoonsPerWeek=text.toInt();
-			if(cn->minAfternoonsPerWeek<=0 || cn->minAfternoonsPerWeek>this->nDaysPerWeek/2){
+			if(cn->minAfternoonsPerWeek<0 || cn->minAfternoonsPerWeek>this->nDaysPerWeek/2){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Minimum_Afternoons_Per_Week"));
 				/*RulesReconcilableMessage::information(parent, tr("FET information"),
 					tr("Constraint TeachersMinAfternoonsPerWeek min days corrupt, min days %1 <= 0 or >nAfternoonsPerWeek, ignoring constraint")
@@ -30194,7 +30541,7 @@ TimeConstraint* Rules::readTeachersMinAfternoonsPerWeek(QXmlStreamReader& xmlRea
 				cn=nullptr;
 				return nullptr;
 			}
-			assert(cn->minAfternoonsPerWeek>0 && cn->minAfternoonsPerWeek <= this->nDaysPerWeek/2);
+			assert(cn->minAfternoonsPerWeek>=0 && cn->minAfternoonsPerWeek <= this->nDaysPerWeek/2);
 			xmlReadingLog+="    Min. days per week="+CustomFETString::number(cn->minAfternoonsPerWeek)+"\n";
 		}
 		else{
@@ -30693,7 +31040,7 @@ TimeConstraint* Rules::readTeachersAfternoonIntervalMaxDaysPerWeek(QWidget* pare
 	return cn;
 }
 
-TimeConstraint* Rules::readOldMAStudentsSetMaxDaysPerWeek(QWidget* parent, QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+TimeConstraint* Rules::readOldMAStudentsSetMaxDaysPerWeek(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
 	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintStudentsSetMaxDaysPerWeek"));
 	ConstraintStudentsSetMaxRealDaysPerWeek* cn=new ConstraintStudentsSetMaxRealDaysPerWeek();
 	cn->maxDaysPerWeek=this->nDaysPerWeek;
@@ -30722,11 +31069,12 @@ TimeConstraint* Rules::readOldMAStudentsSetMaxDaysPerWeek(QWidget* parent, QXmlS
 		else if(xmlReader.name()==QString("Max_Days_Per_Week")){
 			QString text=xmlReader.readElementText();
 			cn->maxDaysPerWeek=text.toInt();
-			if(cn->maxDaysPerWeek>this->nDaysPerWeek){
-				RulesReconcilableMessage::information(parent, tr("FET information"),
+			if(cn->maxDaysPerWeek<0 || cn->maxDaysPerWeek>this->nDaysPerWeek/2){
+				xmlReader.raiseError(tr("%1 is incorrect").arg("Max_Days_Per_Week"));
+				/*RulesReconcilableMessage::information(parent, tr("FET information"),
 					tr("Constraint StudentsSetMaxDaysPerWeek max days corrupt for students set %1, max days %2 >nDaysPerWeek, constraint added, please correct constraint")
 					.arg(cn->students)
-					.arg(text));
+					.arg(text));*/
 			}
 			xmlReadingLog+="    Max. days per week="+CustomFETString::number(cn->maxDaysPerWeek)+"\n";
 		}
@@ -30742,7 +31090,7 @@ TimeConstraint* Rules::readOldMAStudentsSetMaxDaysPerWeek(QWidget* parent, QXmlS
 	return cn;
 }
 
-TimeConstraint* Rules::readStudentsSetMaxRealDaysPerWeek(QWidget* parent, QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+TimeConstraint* Rules::readStudentsSetMaxRealDaysPerWeek(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
 	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintStudentsSetMaxRealDaysPerWeek"));
 	ConstraintStudentsSetMaxRealDaysPerWeek* cn=new ConstraintStudentsSetMaxRealDaysPerWeek();
 	cn->maxDaysPerWeek=this->nDaysPerWeek;
@@ -30771,11 +31119,12 @@ TimeConstraint* Rules::readStudentsSetMaxRealDaysPerWeek(QWidget* parent, QXmlSt
 		else if(xmlReader.name()==QString("Max_Days_Per_Week")){
 			QString text=xmlReader.readElementText();
 			cn->maxDaysPerWeek=text.toInt();
-			if(cn->maxDaysPerWeek>this->nDaysPerWeek){
-				RulesReconcilableMessage::information(parent, tr("FET information"),
+			if(cn->maxDaysPerWeek<0 || cn->maxDaysPerWeek>this->nDaysPerWeek/2){
+				xmlReader.raiseError(tr("%1 is incorrect").arg("Max_Days_Per_Week"));
+				/*RulesReconcilableMessage::information(parent, tr("FET information"),
 					tr("Constraint StudentsSetMaxDaysPerWeek max days corrupt for students set %1, max days %2 >nDaysPerWeek, constraint added, please correct constraint")
 					.arg(cn->students)
-					.arg(text));
+					.arg(text));*/
 			}
 			xmlReadingLog+="    Max. days per week="+CustomFETString::number(cn->maxDaysPerWeek)+"\n";
 		}
@@ -30791,7 +31140,7 @@ TimeConstraint* Rules::readStudentsSetMaxRealDaysPerWeek(QWidget* parent, QXmlSt
 	return cn;
 }
 
-TimeConstraint* Rules::readOldMAStudentsMaxDaysPerWeek(QWidget* parent, QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+TimeConstraint* Rules::readOldMAStudentsMaxDaysPerWeek(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
 	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintStudentsMaxDaysPerWeek"));
 	ConstraintStudentsMaxRealDaysPerWeek* cn=new ConstraintStudentsMaxRealDaysPerWeek();
 	cn->maxDaysPerWeek=this->nDaysPerWeek;
@@ -30815,10 +31164,11 @@ TimeConstraint* Rules::readOldMAStudentsMaxDaysPerWeek(QWidget* parent, QXmlStre
 		else if(xmlReader.name()==QString("Max_Days_Per_Week")){
 			QString text=xmlReader.readElementText();
 			cn->maxDaysPerWeek=text.toInt();
-			if(cn->maxDaysPerWeek>this->nDaysPerWeek){
-				RulesReconcilableMessage::information(parent, tr("FET information"),
+			if(cn->maxDaysPerWeek<0 || cn->maxDaysPerWeek>this->nDaysPerWeek/2){
+				xmlReader.raiseError(tr("%1 is incorrect").arg("Max_Days_Per_Week"));
+				/*RulesReconcilableMessage::information(parent, tr("FET information"),
 					tr("Constraint StudentsMaxDaysPerWeek max days corrupt, max days %1 >nDaysPerWeek, constraint added, please correct constraint")
-					.arg(text));
+					.arg(text));*/
 			}
 			xmlReadingLog+="    Max. days per week="+CustomFETString::number(cn->maxDaysPerWeek)+"\n";
 		}
@@ -30834,7 +31184,7 @@ TimeConstraint* Rules::readOldMAStudentsMaxDaysPerWeek(QWidget* parent, QXmlStre
 	return cn;
 }
 
-TimeConstraint* Rules::readStudentsMaxRealDaysPerWeek(QWidget* parent, QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+TimeConstraint* Rules::readStudentsMaxRealDaysPerWeek(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
 	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintStudentsMaxRealDaysPerWeek"));
 	ConstraintStudentsMaxRealDaysPerWeek* cn=new ConstraintStudentsMaxRealDaysPerWeek();
 	cn->maxDaysPerWeek=this->nDaysPerWeek;
@@ -30858,10 +31208,11 @@ TimeConstraint* Rules::readStudentsMaxRealDaysPerWeek(QWidget* parent, QXmlStrea
 		else if(xmlReader.name()==QString("Max_Days_Per_Week")){
 			QString text=xmlReader.readElementText();
 			cn->maxDaysPerWeek=text.toInt();
-			if(cn->maxDaysPerWeek>this->nDaysPerWeek){
-				RulesReconcilableMessage::information(parent, tr("FET information"),
+			if(cn->maxDaysPerWeek<0 || cn->maxDaysPerWeek>this->nDaysPerWeek/2){
+				xmlReader.raiseError(tr("%1 is incorrect").arg("Max_Days_Per_Week"));
+				/*RulesReconcilableMessage::information(parent, tr("FET information"),
 					tr("Constraint StudentsMaxDaysPerWeek max days corrupt, max days %1 >nDaysPerWeek, constraint added, please correct constraint")
-					.arg(text));
+					.arg(text));*/
 			}
 			xmlReadingLog+="    Max. days per week="+CustomFETString::number(cn->maxDaysPerWeek)+"\n";
 		}

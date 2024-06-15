@@ -40,6 +40,12 @@ extern bool rooms_buildings_schedule_ready;
 DaysForm::DaysForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
+	
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+		realDaysLabel->setEnabled(false);
+		realDaysListWidget->setEnabled(false);
+		modifyRealDayPushButton->setEnabled(false);
+	}
 
 	okPushButton->setDefault(true);
 
@@ -50,21 +56,36 @@ DaysForm::DaysForm(QWidget* parent): QDialog(parent)
 	connect(okPushButton, &QPushButton::clicked, this, &DaysForm::ok);
 	connect(insertDayPushButton, &QPushButton::clicked, this, &DaysForm::insertDay);
 	connect(modifyDayPushButton, &QPushButton::clicked, this, &DaysForm::modifyDay);
+	connect(modifyRealDayPushButton, &QPushButton::clicked, this, &DaysForm::modifyRealDay);
 	connect(removeDayPushButton, &QPushButton::clicked, this, &DaysForm::removeDay);
 	connect(daysListWidget, &QListWidget::itemDoubleClicked, this, &DaysForm::modifyDay);
+	connect(realDaysListWidget, &QListWidget::itemDoubleClicked, this, &DaysForm::modifyRealDay);
 
 	disconnect(nDaysSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &DaysForm::numberOfDaysChanged);
+	/*if(gt.rules.mode!=MORNINGS_AFTERNOONS)
+		nDaysSpinBox->setMinimum(1);
+	else
+		nDaysSpinBox->setMinimum(2);*/
 	nDaysSpinBox->setMinimum(1);
 	nDaysSpinBox->setMaximum(MAX_DAYS_PER_WEEK);
 	nDaysSpinBox->setValue(gt.rules.nDaysPerWeek);
-	realNames.clear();
+	realNamesForDays.clear();
 	for(int i=0; i<gt.rules.nDaysPerWeek; i++){
-		realNames.append(gt.rules.daysOfTheWeek[i]);
+		realNamesForDays.append(gt.rules.daysOfTheWeek[i]);
 		daysListWidget->addItem(tr("%1. %2", "%1 is the day index, %2 is the day name").arg(i+1).arg(gt.rules.daysOfTheWeek[i]));
 	}
 	if(daysListWidget->count()>=1)
 		daysListWidget->setCurrentRow(0);
 	connect(nDaysSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &DaysForm::numberOfDaysChanged);
+
+	if(gt.rules.mode==MORNINGS_AFTERNOONS){
+		realNamesForRealDays.clear();
+		for(int i=0; i<gt.rules.nRealDaysPerWeek; i++){
+			realNamesForRealDays.append(gt.rules.realDaysOfTheWeek[i]);
+			realDaysListWidget->addItem(tr("%1. %2", "%1 is the real day index, %2 is the real day name").arg(i+1).arg(gt.rules.realDaysOfTheWeek[i]));
+		}
+	}
+	numberOfRealDaysChanged();
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -85,15 +106,17 @@ void DaysForm::insertDay()
 	if(i<0)
 		i=daysListWidget->count();
 	
-	realNames.insert(i, tr("Day %1").arg(i+1));
+	realNamesForDays.insert(i, tr("Day %1").arg(i+1));
 	daysListWidget->insertItem(i, tr("%1. %2", "%1 is the day index, %2 is the day name").arg(i+1).arg(tr("Day %1").arg(i+1)));
 	for(int j=i+1; j<daysListWidget->count(); j++)
-		daysListWidget->item(j)->setText(tr("%1. %2", "%1 is the day index, %2 is the day name").arg(j+1).arg(realNames.at(j)));
+		daysListWidget->item(j)->setText(tr("%1. %2", "%1 is the day index, %2 is the day name").arg(j+1).arg(realNamesForDays.at(j)));
 
 	disconnect(nDaysSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &DaysForm::numberOfDaysChanged);
 	int j=nDaysSpinBox->value();
 	nDaysSpinBox->setValue(j+1);
 	connect(nDaysSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &DaysForm::numberOfDaysChanged);
+	
+	numberOfRealDaysChanged();
 }
 
 void DaysForm::modifyDay()
@@ -103,35 +126,58 @@ void DaysForm::modifyDay()
 		QMessageBox::warning(this, tr("FET information"), tr("Invalid selected day"));
 		return;
 	}
-	QString oldName=realNames.at(i);
+	QString oldName=realNamesForDays.at(i);
 	bool ok=false;
 	QString newName=QInputDialog::getText(this, tr("Rename day"), tr("Please enter the new name of this day"),
 	 QLineEdit::Normal, oldName, &ok);
 	if(ok && !newName.isEmpty()){
 		daysListWidget->item(i)->setText(tr("%1. %2", "%1 is the day index, %2 is the day name").arg(i+1).arg(newName));
-		realNames[i]=newName;
+		realNamesForDays[i]=newName;
+	}
+}
+
+void DaysForm::modifyRealDay()
+{
+	int i=realDaysListWidget->currentRow();
+	if(realDaysListWidget->count()<=0 || i<0 || i>=realDaysListWidget->count()){
+		QMessageBox::warning(this, tr("FET information"), tr("Invalid selected real day"));
+		return;
+	}
+	QString oldName=realNamesForRealDays.at(i);
+	bool ok=false;
+	QString newName=QInputDialog::getText(this, tr("Rename real day"), tr("Please enter the new name of this real day"),
+	 QLineEdit::Normal, oldName, &ok);
+	if(ok && !newName.isEmpty()){
+		realDaysListWidget->item(i)->setText(tr("%1. %2", "%1 is the real day index, %2 is the real day name").arg(i+1).arg(newName));
+		realNamesForRealDays[i]=newName;
 	}
 }
 
 void DaysForm::removeDay()
 {
 	int i=daysListWidget->currentRow();
+	/*if(gt.rules.mode==MORNINGS_AFTERNOONS && daysListWidget->count()<=2){
+		QMessageBox::warning(this, tr("FET information"), tr("The number of days must be at least 2, so that the number of real days will be at least 1"));
+		return;
+	}*/
 	if(i>=0 && i<daysListWidget->count() && daysListWidget->count()>=2){
 		daysListWidget->setCurrentRow(-1);
 		QListWidgetItem* item=daysListWidget->takeItem(i);
 		delete item;
-		realNames.removeAt(i);
+		realNamesForDays.removeAt(i);
 		if(i<daysListWidget->count())
 			daysListWidget->setCurrentRow(i);
 		else
 			daysListWidget->setCurrentRow(daysListWidget->count()-1);
 		for(int j=i; j<daysListWidget->count(); j++)
-			daysListWidget->item(j)->setText(tr("%1. %2", "%1 is the day index, %2 is the day name").arg(j+1).arg(realNames[j]));
+			daysListWidget->item(j)->setText(tr("%1. %2", "%1 is the day index, %2 is the day name").arg(j+1).arg(realNamesForDays[j]));
 
 		disconnect(nDaysSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &DaysForm::numberOfDaysChanged);
 		int j=nDaysSpinBox->value();
 		nDaysSpinBox->setValue(j-1);
 		connect(nDaysSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &DaysForm::numberOfDaysChanged);
+		
+		numberOfRealDaysChanged();
 	}
 	else if(daysListWidget->count()==1){
 		QMessageBox::warning(this, tr("FET information"), tr("The number of days must be at least 1"));
@@ -150,14 +196,42 @@ void DaysForm::numberOfDaysChanged()
 		for(int i=cnt-1; i>=nv; i--){
 			QListWidgetItem* item=daysListWidget->takeItem(i);
 			delete item;
-			realNames.removeLast();
+			realNamesForDays.removeLast();
 		}
 		daysListWidget->setCurrentRow(daysListWidget->count()-1);
 	}
 	else if(nv>cnt){
 		for(int i=cnt; i<nv; i++){
-			realNames.append(tr("Day %1").arg(i+1));
+			realNamesForDays.append(tr("Day %1").arg(i+1));
 			daysListWidget->addItem(tr("%1. %2", "%1 is the day index, %2 is the day name").arg(i+1).arg(tr("Day %1").arg(i+1)));
+		}
+	}
+	
+	numberOfRealDaysChanged();
+}
+
+void DaysForm::numberOfRealDaysChanged()
+{
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS)
+		return;
+
+	int nv=nDaysSpinBox->value();
+	int rnv=nv/2;
+	realDaysLabel->setText(tr("Real days: %1", "%1 is the number of real days per week").arg(rnv));
+	int rcnt=realDaysListWidget->count();
+	if(rnv<rcnt){
+		realDaysListWidget->setCurrentRow(-1);
+		for(int i=rcnt-1; i>=rnv; i--){
+			QListWidgetItem* item=realDaysListWidget->takeItem(i);
+			delete item;
+			realNamesForRealDays.removeLast();
+		}
+		realDaysListWidget->setCurrentRow(realDaysListWidget->count()-1);
+	}
+	else if(rnv>rcnt){
+		for(int i=rcnt; i<rnv; i++){
+			realNamesForRealDays.append(tr("Real day %1").arg(i+1));
+			realDaysListWidget->addItem(tr("%1. %2", "%1 is the real day index, %2 is the real day name").arg(i+1).arg(tr("Real day %1").arg(i+1)));
 		}
 	}
 }
@@ -168,7 +242,7 @@ void DaysForm::ok()
 
 	QHash<QString, int> hashDayIndex;
 	for(int i=0; i<nDays; i++){
-		QString s=realNames.at(i);
+		QString s=realNamesForDays.at(i);
 		
 		if(s.isEmpty()){
 			QMessageBox::warning(this, tr("FET information"), tr("Empty names not allowed (the day number %1 has an empty name).").arg(i+1));
@@ -186,6 +260,28 @@ void DaysForm::ok()
 		}
 	}
 	
+	if(gt.rules.mode==MORNINGS_AFTERNOONS){
+		QHash<QString, int> hashRealDayIndex;
+		for(int i=0; i<nDays/2; i++){
+			QString s=realNamesForRealDays.at(i);
+			
+			if(s.isEmpty()){
+				QMessageBox::warning(this, tr("FET information"), tr("Empty names not allowed (the real day number %1 has an empty name).").arg(i+1));
+				return;
+			}
+			
+			if(hashRealDayIndex.contains(s)){
+				int j=hashRealDayIndex.value(s);
+				QMessageBox::warning(this, tr("FET information"),
+				 tr("Duplicate names not allowed (the real day number %1 has the same name as the real day number %2).").arg(i+1).arg(j+1));
+				return;
+			}
+			else{
+				hashRealDayIndex.insert(s, i);
+			}
+		}
+	}
+
 	//2011-10-18
 	int cnt_mod=0;
 	int cnt_rem=0;
@@ -314,13 +410,35 @@ void DaysForm::ok()
 	gt.rules.nDaysPerWeek=nDays;
 	gt.rules.daysOfTheWeek.clear();
 	for(int i=0; i<nDays; i++)
-		gt.rules.daysOfTheWeek.append(realNames.at(i));
+		gt.rules.daysOfTheWeek.append(realNamesForDays.at(i));
+	
+	if(gt.rules.mode==MORNINGS_AFTERNOONS){
+		od+=QString("\n\n");
+		od+=tr("Old number of real days: %1").arg(gt.rules.nRealDaysPerWeek);
+		od+=QString("\n");
+		od+=tr("Old real days:\n%1").arg(gt.rules.realDaysOfTheWeek.join("\n"));
+
+		gt.rules.nRealDaysPerWeek=nDays/2;
+		gt.rules.realDaysOfTheWeek.clear();
+		for(int i=0; i<nDays/2; i++)
+			gt.rules.realDaysOfTheWeek.append(realNamesForRealDays.at(i));
+	}
 
 	QString nd=tr("New number of days: %1").arg(gt.rules.nDaysPerWeek);
 	nd+=QString("\n");
 	nd+=tr("New days:\n%1").arg(gt.rules.daysOfTheWeek.join("\n"));
+
+	if(gt.rules.mode==MORNINGS_AFTERNOONS){
+		nd+=QString("\n\n");
+		nd+=tr("New number of real days: %1").arg(gt.rules.nRealDaysPerWeek);
+		nd+=QString("\n");
+		nd+=tr("New real days:\n%1").arg(gt.rules.realDaysOfTheWeek.join("\n"));
+	}
 	
-	gt.rules.addUndoPoint(tr("The number and/or names of the days were changed from:\n\n%1\n\nto\n\n%2").arg(od).arg(nd));
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS)
+		gt.rules.addUndoPoint(tr("The number and/or the names of the days were changed from:\n\n%1\n\nto\n\n%2").arg(od).arg(nd));
+	else
+		gt.rules.addUndoPoint(tr("The number and/or the names of the days/real days were changed from:\n\n%1\n\nto\n\n%2").arg(od).arg(nd));
 	
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);

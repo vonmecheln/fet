@@ -6,97 +6,127 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>512</width>
-    <height>467</height>
+    <width>499</width>
+    <height>449</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string extracomment="The title of the dialog to set the days of the week">The days of the week</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout_2">
-   <item row="0" column="0">
-    <widget class="QGroupBox" name="numberGroupBox">
-     <property name="title">
-      <string>Number of working days per week</string>
-     </property>
-     <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="0">
-       <spacer name="horizontalSpacer_2">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>364</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="0" column="1">
-       <widget class="QSpinBox" name="nDaysSpinBox"/>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="1" column="0">
-    <widget class="QListWidget" name="daysListWidget"/>
-   </item>
-   <item row="2" column="0">
-    <layout class="QHBoxLayout" name="horizontalLayout">
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="2">
+    <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QPushButton" name="insertDayPushButton">
+      <widget class="QLabel" name="realDaysLabel">
        <property name="text">
-        <string>Insert</string>
+        <string>Real days:</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="modifyDayPushButton">
+      <widget class="QListWidget" name="realDaysListWidget"/>
+     </item>
+     <item>
+      <widget class="QPushButton" name="modifyRealDayPushButton">
        <property name="text">
-        <string>Modify</string>
+        <string comment="Modify real day">Modify</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="removeDayPushButton">
-       <property name="text">
-        <string>Remove</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer">
+      <widget class="Line" name="line">
        <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>38</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QPushButton" name="okPushButton">
-       <property name="text">
-        <string>OK</string>
+        <enum>Qt::Orientation::Horizontal</enum>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="cancelPushButton">
-       <property name="text">
-        <string>Cancel</string>
-       </property>
-      </widget>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QPushButton" name="okPushButton">
+         <property name="text">
+          <string>OK</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="cancelPushButton">
+         <property name="text">
+          <string>Cancel</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
     </layout>
+   </item>
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QLabel" name="daysLabel">
+         <property name="text">
+          <string>Days:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="nDaysSpinBox"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QListWidget" name="daysListWidget"/>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="insertDayPushButton">
+         <property name="text">
+          <string>Insert</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="modifyDayPushButton">
+         <property name="text">
+          <string comment="Modify day">Modify</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="removeDayPushButton">
+         <property name="text">
+          <string>Remove</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item row="0" column="1">
+    <widget class="Line" name="line_2">
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>nDaysSpinBox</tabstop>
+  <tabstop>daysListWidget</tabstop>
+  <tabstop>realDaysListWidget</tabstop>
+  <tabstop>insertDayPushButton</tabstop>
+  <tabstop>modifyDayPushButton</tabstop>
+  <tabstop>removeDayPushButton</tabstop>
+  <tabstop>modifyRealDayPushButton</tabstop>
+  <tabstop>okPushButton</tabstop>
+  <tabstop>cancelPushButton</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

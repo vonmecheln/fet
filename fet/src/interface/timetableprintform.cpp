@@ -1547,7 +1547,7 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 	}
 	else if(RBTimeHorizontalDay->isChecked() /*&& CBDivideTimeAxisByDay->isChecked()*/){
 		int count=0;
-		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		for(int day=0; day<(gt.rules.mode!=MORNINGS_AFTERNOONS ? gt.rules.nDaysPerWeek : gt.rules.nRealDaysPerWeek); day++){
 			QSet<int> tmpExcludedNamesIndex;
 			tmpExcludedNamesIndex=excludedNamesIndex;
 			while(tmpExcludedNamesIndex.size()<namesList->count()){
@@ -1586,7 +1586,7 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 					 tmpExcludedNamesIndex<<-1; break;
 					default: assert(0==1);
 				}
-				if(!(tmpExcludedNamesIndex.size()==namesList->count() && day==gt.rules.nDaysPerWeek-1)){
+				if(!(tmpExcludedNamesIndex.size()==namesList->count() && day==(gt.rules.mode!=MORNINGS_AFTERNOONS ? gt.rules.nDaysPerWeek : gt.rules.nRealDaysPerWeek)-1)){
 					if(count%2==0){
 						tmp+="    <p class=\"back1\"><br /></p>\n\n";
 					} else {
@@ -1601,7 +1601,7 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 	}
 	else if(RBTimeVerticalDay->isChecked() /*&& CBDivideTimeAxisByDay->isChecked()*/){
 		int count=0;
-		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		for(int day=0; day<(gt.rules.mode!=MORNINGS_AFTERNOONS ? gt.rules.nDaysPerWeek : gt.rules.nRealDaysPerWeek); day++){
 			QSet<int> tmpExcludedNamesIndex;
 			tmpExcludedNamesIndex=excludedNamesIndex;
 			while(tmpExcludedNamesIndex.size()<namesList->count()){
@@ -1640,7 +1640,7 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 					 tmpExcludedNamesIndex<<-1; break;
 					default: assert(0==1);
 				}
-				if(!(tmpExcludedNamesIndex.size()==namesList->count() && day==gt.rules.nDaysPerWeek-1)){
+				if(!(tmpExcludedNamesIndex.size()==namesList->count() && day==(gt.rules.mode!=MORNINGS_AFTERNOONS ? gt.rules.nDaysPerWeek : gt.rules.nRealDaysPerWeek)-1)){
 					if(count%2==0){
 						tmp+="    <p class=\"back1\"><br /></p>\n\n";
 					} else {

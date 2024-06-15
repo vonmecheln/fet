@@ -32,13 +32,18 @@ public:
 
 	~HoursForm();
 	
-	QStringList realNames;
+	QStringList realNamesForHours;
+	QStringList realNamesForRealHours;
 
 public slots:
 	void numberOfHoursChanged();
 	void insertHour();
 	void modifyHour();
 	void removeHour();
+	
+	void numberOfRealHoursChanged();
+	void modifyRealHour();
+	
 	void ok();
 	void cancel();
 };

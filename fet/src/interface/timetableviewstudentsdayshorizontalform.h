@@ -20,13 +20,37 @@
 
 #include <QResizeEvent>
 
-class QColor; //by Marco Vassura
+#include <QAbstractItemDelegate>
+#include <QStyledItemDelegate>
 
 #include "ui_timetableviewstudentsdayshorizontalform_template.h"
+
+class QColor; //by Marco Vassura
+
+class TimetableViewStudentsDaysHorizontalDelegate: public QStyledItemDelegate
+{
+	Q_OBJECT
+	
+public:
+	int nRows; //The number of rows after which a line is drawn
+	int nColumns;
+	
+public:
+	TimetableViewStudentsDaysHorizontalDelegate(QWidget* parent, int _nRows, int _nColumns): QStyledItemDelegate(parent){
+		nRows=_nRows;
+		nColumns=_nColumns;
+	}
+	
+	void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
+};
 
 class TimetableViewStudentsDaysHorizontalForm : public QDialog, public Ui::TimetableViewStudentsDaysHorizontalForm_template
 {
 	Q_OBJECT
+
+private:
+	QAbstractItemDelegate* oldItemDelegate;
+	TimetableViewStudentsDaysHorizontalDelegate* newItemDelegate;
 
 public:
 	TimetableViewStudentsDaysHorizontalForm(QWidget* parent);

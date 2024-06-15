@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="6.20.0">
+<fet version="6.21.1">
 
 <Mode>Mornings_Afternoons</Mode>
 
@@ -42,6 +42,25 @@
 </Day>
 </Days_List>
 
+<Real_Days_List>
+<Number_of_Real_Days>5</Number_of_Real_Days>
+<Real_Day>
+	<Name>Monday</Name>
+</Real_Day>
+<Real_Day>
+	<Name>Tuesday</Name>
+</Real_Day>
+<Real_Day>
+	<Name>Wednesday</Name>
+</Real_Day>
+<Real_Day>
+	<Name>Thursday</Name>
+</Real_Day>
+<Real_Day>
+	<Name>Friday</Name>
+</Real_Day>
+</Real_Days_List>
+
 <Hours_List>
 <Number_of_Hours>4</Number_of_Hours>
 <Hour>
@@ -57,6 +76,34 @@
 	<Name>11:00</Name>
 </Hour>
 </Hours_List>
+
+<Real_Hours_List>
+<Number_of_Real_Hours>8</Number_of_Real_Hours>
+<Real_Hour>
+	<Name>08:00</Name>
+</Real_Hour>
+<Real_Hour>
+	<Name>09:00</Name>
+</Real_Hour>
+<Real_Hour>
+	<Name>10:00</Name>
+</Real_Hour>
+<Real_Hour>
+	<Name>11:00</Name>
+</Real_Hour>
+<Real_Hour>
+	<Name>14:00</Name>
+</Real_Hour>
+<Real_Hour>
+	<Name>15:00</Name>
+</Real_Hour>
+<Real_Hour>
+	<Name>16:00</Name>
+</Real_Hour>
+<Real_Hour>
+	<Name>17:00</Name>
+</Real_Hour>
+</Real_Hours_List>
 
 <Subjects_List>
 <Subject>

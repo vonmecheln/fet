@@ -2852,7 +2852,7 @@ Versions 6.19.0 - 6.19.5
 	path to the FET executable (bug reported by Khafallah Oualid).
 	- Minor corrections.
 ---------------------------------------------------------------------------------
-Versions 6.20.0 - 6.20.v
+Version 6.20.0
 - Version 6.20.0
 	- Updated to Qt 6.7.1.
 	- Added two new types of constraints: teacher(s)/students (set) min gaps between activity tag/ordered pair of activity tags between morning and
@@ -2860,3 +2860,12 @@ Versions 6.20.0 - 6.20.v
 	- Minor bug fixes: when using the activity planning dialog and activating/deactivating activities/subactivities using the activate/deactivate buttons
 	(as opposed to selecting/deselecting the 'active' check box from the modify activity/subactivity dialogs, which worked correctly), the activity planning
 	dialog was not updated immediately (reported by Cyrus Ireri).
+---------------------------------------------------------------------------------
+Versions 6.21.0 - 6.21.v
+- Version 6.21.0
+	- In the Mornings-Afternoons mode the timetables will show/use the real days/hours (suggested by Mohamed Ait Ichou, danghoan, Hieu Nguyen Trong, and
+	maybe other users). TongThanhKieu suggested thicker lines between the morning and the afternoon in the timetable view teachers/students/rooms
+	days horizontal dialogs.
+	- Very rare crash bugs fixed when reading a corrupted input file (reported by vlaicumihnea).
+- Version 6.21.1
+	- Critical bug fix in the Mornings-Afternoons mode, when saving the locked fet file (the real days per week and the real hours per day were not saved).

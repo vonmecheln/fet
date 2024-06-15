@@ -18,16 +18,42 @@
 #ifndef TIMETABLEVIEWROOMSDAYSHORIZONTALFORM_H
 #define TIMETABLEVIEWROOMSDAYSHORIZONTALFORM_H
 
-#include "ui_timetableviewroomsdayshorizontalform_template.h"
-
 #include <QResizeEvent>
 
+#include <QAbstractItemDelegate>
+#include <QStyledItemDelegate>
+
+#include "ui_timetableviewroomsdayshorizontalform_template.h"
+
 class QColor; //by Marco Vassura
+
+class QColor; //by Marco Vassura
+
+class TimetableViewRoomsDaysHorizontalDelegate: public QStyledItemDelegate
+{
+	Q_OBJECT
+	
+public:
+	int nRows; //The number of rows after which a line is drawn
+	int nColumns;
+	
+public:
+	TimetableViewRoomsDaysHorizontalDelegate(QWidget* parent, int _nRows, int _nColumns): QStyledItemDelegate(parent){
+		nRows=_nRows;
+		nColumns=_nColumns;
+	}
+	
+	void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
+};
 
 class TimetableViewRoomsDaysHorizontalForm : public QDialog, public Ui::TimetableViewRoomsDaysHorizontalForm_template
 {
 	Q_OBJECT
 	
+private:
+	QAbstractItemDelegate* oldItemDelegate;
+	TimetableViewRoomsDaysHorizontalDelegate* newItemDelegate;
+
 public:
 	TimetableViewRoomsDaysHorizontalForm(QWidget* parent);
 	void newTimetableGenerated();

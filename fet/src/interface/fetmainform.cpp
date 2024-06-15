@@ -5709,24 +5709,26 @@ void FetMainForm::timetableSaveTimetableAsAction_triggered()
 		rules2.nTerms=gt.rules.nTerms;
 		rules2.nDaysPerTerm=gt.rules.nDaysPerTerm;
 		
-		rules2.nHoursPerDay=gt.rules.nHoursPerDay;
-		rules2.hoursOfTheDay=gt.rules.hoursOfTheDay;
-		//for(int i=0; i<gt.rules.nHoursPerDay; i++)
-		//	rules2.hoursOfTheDay[i]=gt.rules.hoursOfTheDay[i];
-
 		rules2.nDaysPerWeek=gt.rules.nDaysPerWeek;
 		rules2.daysOfTheWeek=gt.rules.daysOfTheWeek;
-		//for(int i=0; i<gt.rules.nDaysPerWeek; i++)
-		//	rules2.daysOfTheWeek[i]=gt.rules.daysOfTheWeek[i];
 
-		rules2.yearsList=gt.rules.yearsList;
-		
-		rules2.teachersList=gt.rules.teachersList;
-		
+		rules2.nRealDaysPerWeek=gt.rules.nRealDaysPerWeek;
+		rules2.realDaysOfTheWeek=gt.rules.realDaysOfTheWeek;
+
+		rules2.nHoursPerDay=gt.rules.nHoursPerDay;
+		rules2.hoursOfTheDay=gt.rules.hoursOfTheDay;
+
+		rules2.nRealHoursPerDay=gt.rules.nRealHoursPerDay;
+		rules2.realHoursOfTheDay=gt.rules.realHoursOfTheDay;
+
 		rules2.subjectsList=gt.rules.subjectsList;
 		
 		rules2.activityTagsList=gt.rules.activityTagsList;
 
+		rules2.teachersList=gt.rules.teachersList;
+		
+		rules2.yearsList=gt.rules.yearsList;
+		
 		rules2.activitiesList=gt.rules.activitiesList;
 
 		rules2.buildingsList=gt.rules.buildingsList;
@@ -5833,19 +5835,26 @@ void FetMainForm::timetableSaveTimetableAsAction_triggered()
 			delete sc;
 		lockSpaceConstraintsList.clear();
 
-		rules2.nHoursPerDay=0;
-		rules2.hoursOfTheDay.clear();
 		rules2.nDaysPerWeek=0;
 		rules2.daysOfTheWeek.clear();
 
-		rules2.yearsList.clear();
-		
-		rules2.teachersList.clear();
-		
+		rules2.nRealDaysPerWeek=0;
+		rules2.realDaysOfTheWeek.clear();
+
+		rules2.nHoursPerDay=0;
+		rules2.hoursOfTheDay.clear();
+
+		rules2.nRealHoursPerDay=0;
+		rules2.realHoursOfTheDay.clear();
+
 		rules2.subjectsList.clear();
 		
 		rules2.activityTagsList.clear();
 
+		rules2.teachersList.clear();
+		
+		rules2.yearsList.clear();
+		
 		rules2.activitiesList.clear();
 
 		rules2.buildingsList.clear();

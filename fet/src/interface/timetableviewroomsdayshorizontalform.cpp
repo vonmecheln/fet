@@ -83,6 +83,33 @@ extern QSet<int> idsOfPermanentlyLockedSpace;	//care about locked activities in 
 
 extern CommunicationSpinBox communicationSpinBox;	//small hint to sync the forms
 
+static bool REAL_VIEW=true;
+
+void TimetableViewRoomsDaysHorizontalDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
+{
+	QStyledItemDelegate::paint(painter, option, index);
+
+	int hour=index.row()%nRows;
+
+	if(hour==0){
+		painter->drawLine(option.rect.topLeft(), option.rect.topRight());
+		painter->drawLine(option.rect.topLeft().x(), option.rect.topLeft().y()+1, option.rect.topRight().x(), option.rect.topRight().y()+1);
+	}
+	if(hour==nRows-1){
+		painter->drawLine(option.rect.bottomLeft(), option.rect.bottomRight());
+		painter->drawLine(option.rect.bottomLeft().x(), option.rect.bottomLeft().y()-1, option.rect.bottomRight().x(), option.rect.bottomRight().y()-1);
+	}
+
+	if(index.column()==0){
+		painter->drawLine(option.rect.topLeft(), option.rect.bottomLeft());
+		painter->drawLine(option.rect.topLeft().x()+1, option.rect.topLeft().y(), option.rect.bottomLeft().x()+1, option.rect.bottomLeft().y());
+	}
+	if(index.column()==nColumns-1){
+		painter->drawLine(option.rect.topRight(), option.rect.bottomRight());
+		painter->drawLine(option.rect.topRight().x()-1, option.rect.topRight().y(), option.rect.bottomRight().x()-1, option.rect.bottomRight().y());
+	}
+}
+
 TimetableViewRoomsDaysHorizontalForm::TimetableViewRoomsDaysHorizontalForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
@@ -162,30 +189,65 @@ TimetableViewRoomsDaysHorizontalForm::TimetableViewRoomsDaysHorizontalForm(QWidg
 */
 //////////
 
-	roomsTimetableTable->setRowCount(gt.rules.nHoursPerDay);
-	roomsTimetableTable->setColumnCount(gt.rules.nDaysPerWeek);
-	for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-		QTableWidgetItem* item=new QTableWidgetItem(gt.rules.daysOfTheWeek[j]);
-		roomsTimetableTable->setHorizontalHeaderItem(j, item);
-	}
-	for(int i=0; i<gt.rules.nHoursPerDay; i++){
-		QTableWidgetItem* item=new QTableWidgetItem(gt.rules.hoursOfTheDay[i]);
-		roomsTimetableTable->setVerticalHeaderItem(i, item);
-	}
+	bool realView=(gt.rules.mode==MORNINGS_AFTERNOONS && REAL_VIEW==true);
 
-	for(int j=0; j<gt.rules.nHoursPerDay; j++){
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-			QTableWidgetItem* item= new QTableWidgetItem();
-			item->setTextAlignment(Qt::AlignCenter);
-			item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
-			
-			roomsTimetableTable->setItem(j, k, item);
-			
-		//	if(j==0 && k==0)
-		//		roomsTimetableTable->setCurrentItem(item);
+	if(!realView){
+		roomsTimetableTable->setRowCount(gt.rules.nHoursPerDay);
+		roomsTimetableTable->setColumnCount(gt.rules.nDaysPerWeek);
+
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++){
+			QTableWidgetItem* item=new QTableWidgetItem(gt.rules.daysOfTheWeek[j]);
+			roomsTimetableTable->setHorizontalHeaderItem(j, item);
+		}
+		for(int i=0; i<gt.rules.nHoursPerDay; i++){
+			QTableWidgetItem* item=new QTableWidgetItem(gt.rules.hoursOfTheDay[i]);
+			roomsTimetableTable->setVerticalHeaderItem(i, item);
+		}
+
+		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
+				QTableWidgetItem* item= new QTableWidgetItem();
+				item->setTextAlignment(Qt::AlignCenter);
+				item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
+				
+				roomsTimetableTable->setItem(j, k, item);
+				
+			//	if(j==0 && k==0)
+			//		roomsTimetableTable->setCurrentItem(item);
+			}
+		}
+	}
+	else{
+		roomsTimetableTable->setRowCount(gt.rules.nRealHoursPerDay);
+		roomsTimetableTable->setColumnCount(gt.rules.nRealDaysPerWeek);
+
+		for(int j=0; j<gt.rules.nRealDaysPerWeek; j++){
+			QTableWidgetItem* item=new QTableWidgetItem(gt.rules.realDaysOfTheWeek[j]);
+			roomsTimetableTable->setHorizontalHeaderItem(j, item);
+		}
+		for(int i=0; i<gt.rules.nRealHoursPerDay; i++){
+			QTableWidgetItem* item=new QTableWidgetItem(gt.rules.realHoursOfTheDay[i]);
+			roomsTimetableTable->setVerticalHeaderItem(i, item);
+		}
+
+		for(int j=0; j<gt.rules.nRealHoursPerDay; j++){
+			for(int k=0; k<gt.rules.nRealDaysPerWeek; k++){
+				QTableWidgetItem* item= new QTableWidgetItem();
+				item->setTextAlignment(Qt::AlignCenter);
+				item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
+				
+				roomsTimetableTable->setItem(j, k, item);
+				
+			//	if(j==0 && k==0)
+			//		roomsTimetableTable->setCurrentItem(item);
+			}
 		}
 	}
 	
+	oldItemDelegate=roomsTimetableTable->itemDelegate();
+	newItemDelegate=new TimetableViewRoomsDaysHorizontalDelegate(nullptr, gt.rules.nHoursPerDay, roomsTimetableTable->columnCount());
+	roomsTimetableTable->setItemDelegate(newItemDelegate);
+
 	//resize columns
 	//if(!columnResizeModeInitialized){
 	roomsTimetableTable->horizontalHeader()->setMinimumSectionSize(roomsTimetableTable->horizontalHeader()->defaultSectionSize());
@@ -293,31 +355,66 @@ void TimetableViewRoomsDaysHorizontalForm::newTimetableGenerated()
 */
 //////////
 
-	roomsTimetableTable->clear();
-	roomsTimetableTable->setRowCount(gt.rules.nHoursPerDay);
-	roomsTimetableTable->setColumnCount(gt.rules.nDaysPerWeek);
-	for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-		QTableWidgetItem* item=new QTableWidgetItem(gt.rules.daysOfTheWeek[j]);
-		roomsTimetableTable->setHorizontalHeaderItem(j, item);
-	}
-	for(int i=0; i<gt.rules.nHoursPerDay; i++){
-		QTableWidgetItem* item=new QTableWidgetItem(gt.rules.hoursOfTheDay[i]);
-		roomsTimetableTable->setVerticalHeaderItem(i, item);
-	}
+	bool realView=(gt.rules.mode==MORNINGS_AFTERNOONS && REAL_VIEW==true);
 
-	for(int j=0; j<gt.rules.nHoursPerDay; j++){
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-			QTableWidgetItem* item= new QTableWidgetItem();
-			item->setTextAlignment(Qt::AlignCenter);
-			item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
-			
-			roomsTimetableTable->setItem(j, k, item);
-			
-		//	if(j==0 && k==0)
-		//		roomsTimetableTable->setCurrentItem(item);
+	if(!realView){
+		roomsTimetableTable->clear();
+		roomsTimetableTable->setRowCount(gt.rules.nHoursPerDay);
+		roomsTimetableTable->setColumnCount(gt.rules.nDaysPerWeek);
+
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++){
+			QTableWidgetItem* item=new QTableWidgetItem(gt.rules.daysOfTheWeek[j]);
+			roomsTimetableTable->setHorizontalHeaderItem(j, item);
+		}
+		for(int i=0; i<gt.rules.nHoursPerDay; i++){
+			QTableWidgetItem* item=new QTableWidgetItem(gt.rules.hoursOfTheDay[i]);
+			roomsTimetableTable->setVerticalHeaderItem(i, item);
+		}
+
+		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
+				QTableWidgetItem* item= new QTableWidgetItem();
+				item->setTextAlignment(Qt::AlignCenter);
+				item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
+				
+				roomsTimetableTable->setItem(j, k, item);
+				
+			//	if(j==0 && k==0)
+			//		roomsTimetableTable->setCurrentItem(item);
+			}
+		}
+	}
+	else{
+		roomsTimetableTable->clear();
+		roomsTimetableTable->setRowCount(gt.rules.nRealHoursPerDay);
+		roomsTimetableTable->setColumnCount(gt.rules.nRealDaysPerWeek);
+
+		for(int j=0; j<gt.rules.nRealDaysPerWeek; j++){
+			QTableWidgetItem* item=new QTableWidgetItem(gt.rules.realDaysOfTheWeek[j]);
+			roomsTimetableTable->setHorizontalHeaderItem(j, item);
+		}
+		for(int i=0; i<gt.rules.nRealHoursPerDay; i++){
+			QTableWidgetItem* item=new QTableWidgetItem(gt.rules.realHoursOfTheDay[i]);
+			roomsTimetableTable->setVerticalHeaderItem(i, item);
+		}
+
+		for(int j=0; j<gt.rules.nRealHoursPerDay; j++){
+			for(int k=0; k<gt.rules.nRealDaysPerWeek; k++){
+				QTableWidgetItem* item= new QTableWidgetItem();
+				item->setTextAlignment(Qt::AlignCenter);
+				item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
+				
+				roomsTimetableTable->setItem(j, k, item);
+				
+			//	if(j==0 && k==0)
+			//		roomsTimetableTable->setCurrentItem(item);
+			}
 		}
 	}
 	
+	newItemDelegate->nRows=gt.rules.nHoursPerDay;
+	newItemDelegate->nColumns=roomsTimetableTable->columnCount();
+
 /*
 	//resize columns
 	//if(!columnResizeModeInitialized){
@@ -363,6 +460,9 @@ TimetableViewRoomsDaysHorizontalForm::~TimetableViewRoomsDaysHorizontalForm()
 	//save horizontal splitter state
 	//QSettings settings(COMPANY, PROGRAM);
 	settings.setValue(this->metaObject()->className()+QString("/horizontal-splitter-state"), horizontalSplitter->saveState());
+
+	roomsTimetableTable->setItemDelegate(oldItemDelegate);
+	delete newItemDelegate;
 }
 
 void TimetableViewRoomsDaysHorizontalForm::resizeRowsAfterShow()
@@ -398,12 +498,12 @@ void TimetableViewRoomsDaysHorizontalForm::roomChanged(const QString& roomName)
 void TimetableViewRoomsDaysHorizontalForm::updateRoomsTimetableTable(){
 	if(!(students_schedule_ready && teachers_schedule_ready)){
 		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view rooms timetable dialog - please generate a new timetable "
-		"or close the timetable view rooms dialog"));
+		 "or close the timetable view rooms dialog"));
 		return;
 	}
 	if(!(rooms_buildings_schedule_ready)){
 		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view rooms timetable dialog - please generate a new timetable "
-		"or close the timetable view rooms dialog"));
+		 "or close the timetable view rooms dialog"));
 		return;
 	}
 	assert(students_schedule_ready && teachers_schedule_ready);
@@ -430,8 +530,23 @@ void TimetableViewRoomsDaysHorizontalForm::updateRoomsTimetableTable(){
 
 	assert(roomIndex>=0);
 
-	for(int j=0; j<gt.rules.nHoursPerDay && j<roomsTimetableTable->rowCount(); j++){
-		for(int k=0; k<gt.rules.nDaysPerWeek && k<roomsTimetableTable->columnCount(); k++){
+	bool realView=(gt.rules.mode==MORNINGS_AFTERNOONS && REAL_VIEW==true);
+	bool normalView=!realView;
+	
+	for(int j=0; j<(normalView?gt.rules.nHoursPerDay:gt.rules.nRealHoursPerDay) && j<roomsTimetableTable->rowCount(); j++){
+		int jj;
+		if(normalView)
+			jj=j;
+		else
+			jj=j%gt.rules.nHoursPerDay;
+		
+		for(int k=0; k<(normalView?gt.rules.nDaysPerWeek:gt.rules.nRealDaysPerWeek) && k<roomsTimetableTable->columnCount(); k++){
+			int kk;
+			if(normalView)
+				kk=k;
+			else
+				kk=2*k+j/gt.rules.nHoursPerDay;
+
 			QFont font(roomsTimetableTable->item(j, k)->font());
 			font.setBold(false);
 			font.setItalic(false);
@@ -448,7 +563,7 @@ void TimetableViewRoomsDaysHorizontalForm::updateRoomsTimetableTable(){
 			//end by Marco Vassura
 			s = "";
 			QString longString="";
-			int ai=rooms_timetable_weekly[roomIndex][k][j]; //activity index
+			int ai=rooms_timetable_weekly[roomIndex][kk][jj]; //activity index
 			//Activity* act=gt.rules.activitiesList.at(ai);
 			if(ai!=UNALLOCATED_ACTIVITY){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -560,9 +675,9 @@ void TimetableViewRoomsDaysHorizontalForm::updateRoomsTimetableTable(){
 				//end by Marco Vassura
 			}
 			else{
-				if(notAllowedRoomTimePercentages[roomIndex][k+j*gt.rules.nDaysPerWeek]>=0 && PRINT_NOT_AVAILABLE_TIME_SLOTS)
+				if(notAllowedRoomTimePercentages[roomIndex][kk+jj*gt.rules.nDaysPerWeek]>=0 && PRINT_NOT_AVAILABLE_TIME_SLOTS)
 					s+="-x-";
-				else if(breakDayHour[k][j] && PRINT_BREAK_TIME_SLOTS)
+				else if(breakDayHour[kk][jj] && PRINT_BREAK_TIME_SLOTS)
 					s+="-X-";
 			}
 			roomsTimetableTable->item(j, k)->setText(s);
@@ -618,9 +733,12 @@ void TimetableViewRoomsDaysHorizontalForm::detailActivity(QTableWidgetItem* item
 		return;
 	}
 	
-	if(item->row()>=gt.rules.nHoursPerDay || item->column()>=gt.rules.nDaysPerWeek){
+	bool realView=(gt.rules.mode==MORNINGS_AFTERNOONS && REAL_VIEW==true);
+	bool normalView=!realView;
+
+	if(item->row()>=(normalView?gt.rules.nHoursPerDay:gt.rules.nRealHoursPerDay) || item->column()>=(normalView?gt.rules.nDaysPerWeek:gt.rules.nRealDaysPerWeek)){
 		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view rooms timetable dialog - please generate a new timetable "
-		"or close the timetable view rooms dialog"));
+		 "or close the timetable view rooms dialog"));
 		return;
 	}
 
@@ -657,7 +775,21 @@ void TimetableViewRoomsDaysHorizontalForm::detailActivity(QTableWidgetItem* item
 	int k=item->column();
 	s = "";
 	if(j>=0 && k>=0){
-		int ai=rooms_timetable_weekly[roomIndex][k][j]; //activity index
+		int jj;
+		if(normalView)
+			jj=j;
+		else
+			jj=j%gt.rules.nHoursPerDay;
+		assert(jj>=0);
+		
+		int kk;
+		if(normalView)
+			kk=k;
+		else
+			kk=2*k+j/gt.rules.nHoursPerDay;
+		assert(kk>=0);
+		
+		int ai=rooms_timetable_weekly[roomIndex][kk][jj]; //activity index
 		//Activity* act=gt.rules.activitiesList.at(ai);
 		if(ai!=UNALLOCATED_ACTIVITY){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -715,11 +847,11 @@ void TimetableViewRoomsDaysHorizontalForm::detailActivity(QTableWidgetItem* item
 			//added by Volker Dirr (end)
 		}
 		else{
-			if(notAllowedRoomTimePercentages[roomIndex][k+j*gt.rules.nDaysPerWeek]>=0){
+			if(notAllowedRoomTimePercentages[roomIndex][kk+jj*gt.rules.nDaysPerWeek]>=0){
 				s+=tr("Room is not available with weight %1%").arg(CustomFETString::number(notAllowedRoomTimePercentages[roomIndex][k+j*gt.rules.nDaysPerWeek]));
 				s+="\n";
 			}
-			if(breakDayHour[k][j]){
+			if(breakDayHour[kk][jj]){
 				s+=tr("Break with weight 100% in this slot");
 				s+="\n";
 			}
@@ -783,13 +915,28 @@ void TimetableViewRoomsDaysHorizontalForm::lock(bool lockTime, bool lockSpace)
 	int addedT=0, unlockedT=0;
 	int addedS=0, unlockedS=0;
 
+	bool realView=(gt.rules.mode==MORNINGS_AFTERNOONS && REAL_VIEW==true);
+	bool normalView=!realView;
+
 	//lock selected activities
 	QSet<int> careAboutIndex;		//added by Volker Dirr. Needed, because of activities with duration > 1
 	careAboutIndex.clear();
-	for(int j=0; j<gt.rules.nHoursPerDay && j<roomsTimetableTable->rowCount(); j++){
-		for(int k=0; k<gt.rules.nDaysPerWeek && k<roomsTimetableTable->columnCount(); k++){
+	for(int j=0; j<(normalView?gt.rules.nHoursPerDay:gt.rules.nRealHoursPerDay) && j<roomsTimetableTable->rowCount(); j++){
+		int jj;
+		if(normalView)
+			jj=j;
+		else
+			jj=j%gt.rules.nHoursPerDay;
+		
+		for(int k=0; k<(normalView?gt.rules.nDaysPerWeek:gt.rules.nRealDaysPerWeek) && k<roomsTimetableTable->columnCount(); k++){
+			int kk;
+			if(normalView)
+				kk=k;
+			else
+				kk=2*k+j/gt.rules.nHoursPerDay;
+			
 			if(roomsTimetableTable->item(j, k)->isSelected()){
-				int ai=rooms_timetable_weekly[i][k][j];
+				int ai=rooms_timetable_weekly[i][kk][jj];
 				if(ai!=UNALLOCATED_ACTIVITY && !careAboutIndex.contains(ai)){	//modified, because of activities with duration > 1
 					careAboutIndex.insert(ai);					//Needed, because of activities with duration > 1
 					int a_tim=c->times[ai];
