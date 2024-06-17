@@ -71,6 +71,8 @@ ActivityTagsForm::ActivityTagsForm(QWidget* parent): QDialog(parent)
 	connect(printablePushButton, &QPushButton::clicked, this, &ActivityTagsForm::printableActivityTag);
 	connect(notPrintablePushButton, &QPushButton::clicked, this, &ActivityTagsForm::notPrintableActivityTag);
 
+	connect(longNamePushButton, &QPushButton::clicked, this, &ActivityTagsForm::longName);
+	connect(codePushButton, &QPushButton::clicked, this, &ActivityTagsForm::code);
 	connect(commentsPushButton, &QPushButton::clicked, this, &ActivityTagsForm::comments);
 
 	centerWidgetOnScreen(this);
@@ -79,13 +81,13 @@ ActivityTagsForm::ActivityTagsForm(QWidget* parent): QDialog(parent)
 	QSettings settings(COMPANY, PROGRAM);
 	if(settings.contains(this->metaObject()->className()+QString("/splitter-state")))
 		splitter->restoreState(settings.value(this->metaObject()->className()+QString("/splitter-state")).toByteArray());
-		
+	
 	activityTagsListWidget->clear();
 	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
 		ActivityTag* at=gt.rules.activityTagsList[i];
 		activityTagsListWidget->addItem(at->name);
 	}
-		
+	
 	if(activityTagsListWidget->count()>0)
 		activityTagsListWidget->setCurrentRow(0);
 }
@@ -432,6 +434,130 @@ void ActivityTagsForm::comments()
 		at->comments=commentsPT->toPlainText();
 	
 		gt.rules.addUndoPoint(tr("Changed the comments for the activity tag %1 from\n%2\nto\n%3.").arg(at->name).arg(oc).arg(at->comments));
+	
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+
+		activityTagChanged(ind);
+	}
+}
+
+void ActivityTagsForm::longName()
+{
+	int ind=activityTagsListWidget->currentRow();
+	if(ind<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected activity tag"));
+		return;
+	}
+	
+	ActivityTag* at=gt.rules.activityTagsList[ind];
+	assert(at!=nullptr);
+
+	QDialog getLongNameDialog(this);
+	
+	getLongNameDialog.setWindowTitle(tr("Activity tag long name"));
+	
+	QPushButton* okPB=new QPushButton(tr("OK"));
+	okPB->setDefault(true);
+	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
+	
+	connect(okPB, &QPushButton::clicked, &getLongNameDialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &getLongNameDialog, &QDialog::reject);
+
+	QHBoxLayout* hl=new QHBoxLayout();
+	hl->addStretch();
+	hl->addWidget(okPB);
+	hl->addWidget(cancelPB);
+	
+	QVBoxLayout* vl=new QVBoxLayout();
+	
+	QLineEdit* longNameLE=new QLineEdit();
+	longNameLE->setText(at->longName);
+	longNameLE->selectAll();
+	longNameLE->setFocus();
+	
+	vl->addWidget(longNameLE);
+	vl->addLayout(hl);
+	
+	getLongNameDialog.setLayout(vl);
+	
+	const QString settingsName=QString("ActivityTagLongNameDialog");
+	
+	getLongNameDialog.resize(300, 200);
+	centerWidgetOnScreen(&getLongNameDialog);
+	restoreFETDialogGeometry(&getLongNameDialog, settingsName);
+	
+	int t=getLongNameDialog.exec();
+	saveFETDialogGeometry(&getLongNameDialog, settingsName);
+	
+	if(t==QDialog::Accepted){
+		QString oln=at->longName;
+	
+		at->longName=longNameLE->text();
+	
+		gt.rules.addUndoPoint(tr("Changed the long name for the activity tag %1 from\n%2\nto\n%3.").arg(at->name).arg(oln).arg(at->longName));
+	
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+
+		activityTagChanged(ind);
+	}
+}
+
+void ActivityTagsForm::code()
+{
+	int ind=activityTagsListWidget->currentRow();
+	if(ind<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected activity tag"));
+		return;
+	}
+	
+	ActivityTag* at=gt.rules.activityTagsList[ind];
+	assert(at!=nullptr);
+
+	QDialog getCodeDialog(this);
+	
+	getCodeDialog.setWindowTitle(tr("Activity tag code"));
+	
+	QPushButton* okPB=new QPushButton(tr("OK"));
+	okPB->setDefault(true);
+	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
+	
+	connect(okPB, &QPushButton::clicked, &getCodeDialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &getCodeDialog, &QDialog::reject);
+
+	QHBoxLayout* hl=new QHBoxLayout();
+	hl->addStretch();
+	hl->addWidget(okPB);
+	hl->addWidget(cancelPB);
+	
+	QVBoxLayout* vl=new QVBoxLayout();
+	
+	QLineEdit* codeLE=new QLineEdit();
+	codeLE->setText(at->code);
+	codeLE->selectAll();
+	codeLE->setFocus();
+	
+	vl->addWidget(codeLE);
+	vl->addLayout(hl);
+	
+	getCodeDialog.setLayout(vl);
+	
+	const QString settingsName=QString("ActivityTagCodeDialog");
+	
+	getCodeDialog.resize(300, 200);
+	centerWidgetOnScreen(&getCodeDialog);
+	restoreFETDialogGeometry(&getCodeDialog, settingsName);
+	
+	int t=getCodeDialog.exec();
+	saveFETDialogGeometry(&getCodeDialog, settingsName);
+	
+	if(t==QDialog::Accepted){
+		QString oc=at->code;
+	
+		at->code=codeLE->text();
+	
+		gt.rules.addUndoPoint(tr("Changed the code for the activity tag %1 from\n%2\nto\n%3.").arg(at->name).arg(oc).arg(at->code));
 	
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);

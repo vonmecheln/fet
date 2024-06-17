@@ -45,6 +45,8 @@ public slots:
 	void roomChanged(int index);
 	void filterChanged();
 	
+	void longName();
+	void code();
 	void comments();
 	
 	void makeReal();

@@ -2558,7 +2558,7 @@ void Import::importCSVActivities(QWidget* parent){
 			if(tmpSet.contains(s) || s=="")
 				add=false;
 			if(add){
-				dataWarning<<Import::tr("%1 %2 will be added.", "For instance 'Subject math will be added', so use singular").arg(s).arg(s);
+				dataWarning<<Import::tr("%1 %2 will be added.", "For instance 'Subject math will be added', so use singular").arg(fieldName[FIELD_SUBJECT_NAME]).arg(s);
 				tmpSet.insert(s);
 				subjectsToBeAdded.append(s);
 			}

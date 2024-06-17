@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>520</width>
+    <width>597</width>
     <height>502</height>
    </rect>
   </property>
@@ -49,6 +49,20 @@
       <widget class="QPushButton" name="removeTeacherPushButton">
        <property name="text">
         <string>Remove</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="longNamePushButton">
+       <property name="text">
+        <string>Long name</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="codePushButton">
+       <property name="text">
+        <string>Code</string>
        </property>
       </widget>
      </item>

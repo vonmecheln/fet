@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="6.18.0">
+<fet version="6.22.0">
 
 <Mode>Block_Planning</Mode>
 
@@ -12,18 +12,23 @@
 <Number_of_Days>5</Number_of_Days>
 <Day>
 	<Name>Monday</Name>
+	<Long_Name></Long_Name>
 </Day>
 <Day>
 	<Name>Tuesday</Name>
+	<Long_Name></Long_Name>
 </Day>
 <Day>
 	<Name>Wednesday</Name>
+	<Long_Name></Long_Name>
 </Day>
 <Day>
 	<Name>Thursday</Name>
+	<Long_Name></Long_Name>
 </Day>
 <Day>
 	<Name>Friday</Name>
+	<Long_Name></Long_Name>
 </Day>
 </Days_List>
 
@@ -31,45 +36,59 @@
 <Number_of_Hours>12</Number_of_Hours>
 <Hour>
 	<Name>08:00</Name>
+	<Long_Name></Long_Name>
 </Hour>
 <Hour>
 	<Name>09:00</Name>
+	<Long_Name></Long_Name>
 </Hour>
 <Hour>
 	<Name>10:00</Name>
+	<Long_Name></Long_Name>
 </Hour>
 <Hour>
 	<Name>11:00</Name>
+	<Long_Name></Long_Name>
 </Hour>
 <Hour>
 	<Name>12:00</Name>
+	<Long_Name></Long_Name>
 </Hour>
 <Hour>
 	<Name>13:00</Name>
+	<Long_Name></Long_Name>
 </Hour>
 <Hour>
 	<Name>14:00</Name>
+	<Long_Name></Long_Name>
 </Hour>
 <Hour>
 	<Name>15:00</Name>
+	<Long_Name></Long_Name>
 </Hour>
 <Hour>
 	<Name>16:00</Name>
+	<Long_Name></Long_Name>
 </Hour>
 <Hour>
 	<Name>17:00</Name>
+	<Long_Name></Long_Name>
 </Hour>
 <Hour>
 	<Name>18:00</Name>
+	<Long_Name></Long_Name>
 </Hour>
 <Hour>
 	<Name>19:00</Name>
+	<Long_Name></Long_Name>
 </Hour>
 </Hours_List>
 
 <Subjects_List>
 <Subject>
 	<Name>s1</Name>
+	<Long_Name></Long_Name>
+	<Code></Code>
 	<Comments></Comments>
 </Subject>
 </Subjects_List>
@@ -77,16 +96,22 @@
 <Activity_Tags_List>
 <Activity_Tag>
 	<Name>at1</Name>
+	<Long_Name></Long_Name>
+	<Code></Code>
 	<Printable>true</Printable>
 	<Comments></Comments>
 </Activity_Tag>
 <Activity_Tag>
 	<Name>at2</Name>
+	<Long_Name></Long_Name>
+	<Code></Code>
 	<Printable>true</Printable>
 	<Comments></Comments>
 </Activity_Tag>
 <Activity_Tag>
 	<Name>at3</Name>
+	<Long_Name></Long_Name>
+	<Code></Code>
 	<Printable>true</Printable>
 	<Comments></Comments>
 </Activity_Tag>
@@ -95,6 +120,8 @@
 <Teachers_List>
 <Teacher>
 	<Name>t1</Name>
+	<Long_Name></Long_Name>
+	<Code></Code>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 		<Qualified_Subject>s1</Qualified_Subject>
@@ -106,6 +133,8 @@
 <Students_List>
 <Year>
 	<Name>y1</Name>
+	<Long_Name></Long_Name>
+	<Code></Code>
 	<Number_of_Students>0</Number_of_Students>
 	<Comments></Comments>
 	<!-- The information regarding categories, divisions of each category, and separator is only used in the divide year automatically by categories dialog. -->
@@ -113,85 +142,119 @@
 	<Separator> </Separator>
 	<Group>
 		<Name>y1 a</Name>
+		<Long_Name></Long_Name>
+		<Code></Code>
 		<Number_of_Students>0</Number_of_Students>
 		<Comments></Comments>
 		<Subgroup>
 			<Name>y1 a en</Name>
+			<Long_Name></Long_Name>
+			<Code></Code>
 			<Number_of_Students>0</Number_of_Students>
 			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>y1 a fr</Name>
+			<Long_Name></Long_Name>
+			<Code></Code>
 			<Number_of_Students>0</Number_of_Students>
 			<Comments></Comments>
 		</Subgroup>
 	</Group>
 	<Group>
 		<Name>y1 b</Name>
+		<Long_Name></Long_Name>
+		<Code></Code>
 		<Number_of_Students>0</Number_of_Students>
 		<Comments></Comments>
 		<Subgroup>
 			<Name>y1 b en</Name>
+			<Long_Name></Long_Name>
+			<Code></Code>
 			<Number_of_Students>0</Number_of_Students>
 			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>y1 b fr</Name>
+			<Long_Name></Long_Name>
+			<Code></Code>
 			<Number_of_Students>0</Number_of_Students>
 			<Comments></Comments>
 		</Subgroup>
 	</Group>
 	<Group>
 		<Name>y1 c</Name>
+		<Long_Name></Long_Name>
+		<Code></Code>
 		<Number_of_Students>0</Number_of_Students>
 		<Comments></Comments>
 		<Subgroup>
 			<Name>y1 c en</Name>
+			<Long_Name></Long_Name>
+			<Code></Code>
 			<Number_of_Students>0</Number_of_Students>
 			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>y1 c fr</Name>
+			<Long_Name></Long_Name>
+			<Code></Code>
 			<Number_of_Students>0</Number_of_Students>
 			<Comments></Comments>
 		</Subgroup>
 	</Group>
 	<Group>
 		<Name>y1 en</Name>
+		<Long_Name></Long_Name>
+		<Code></Code>
 		<Number_of_Students>0</Number_of_Students>
 		<Comments></Comments>
 		<Subgroup>
 			<Name>y1 a en</Name>
+			<Long_Name></Long_Name>
+			<Code></Code>
 			<Number_of_Students>0</Number_of_Students>
 			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>y1 b en</Name>
+			<Long_Name></Long_Name>
+			<Code></Code>
 			<Number_of_Students>0</Number_of_Students>
 			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>y1 c en</Name>
+			<Long_Name></Long_Name>
+			<Code></Code>
 			<Number_of_Students>0</Number_of_Students>
 			<Comments></Comments>
 		</Subgroup>
 	</Group>
 	<Group>
 		<Name>y1 fr</Name>
+		<Long_Name></Long_Name>
+		<Code></Code>
 		<Number_of_Students>0</Number_of_Students>
 		<Comments></Comments>
 		<Subgroup>
 			<Name>y1 a fr</Name>
+			<Long_Name></Long_Name>
+			<Code></Code>
 			<Number_of_Students>0</Number_of_Students>
 			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>y1 b fr</Name>
+			<Long_Name></Long_Name>
+			<Code></Code>
 			<Number_of_Students>0</Number_of_Students>
 			<Comments></Comments>
 		</Subgroup>
 		<Subgroup>
 			<Name>y1 c fr</Name>
+			<Long_Name></Long_Name>
+			<Code></Code>
 			<Number_of_Students>0</Number_of_Students>
 			<Comments></Comments>
 		</Subgroup>
@@ -337,6 +400,8 @@
 <Buildings_List>
 <Building>
 	<Name>b1</Name>
+	<Long_Name></Long_Name>
+	<Code></Code>
 	<Comments></Comments>
 </Building>
 </Buildings_List>
@@ -344,6 +409,8 @@
 <Rooms_List>
 <Room>
 	<Name>r1</Name>
+	<Long_Name></Long_Name>
+	<Code></Code>
 	<Building>b1</Building>
 	<Capacity>15000</Capacity>
 	<Virtual>false</Virtual>
@@ -351,6 +418,8 @@
 </Room>
 <Room>
 	<Name>r2</Name>
+	<Long_Name></Long_Name>
+	<Code></Code>
 	<Building></Building>
 	<Capacity>15000</Capacity>
 	<Virtual>false</Virtual>
@@ -358,6 +427,8 @@
 </Room>
 <Room>
 	<Name>r3</Name>
+	<Long_Name></Long_Name>
+	<Code></Code>
 	<Building></Building>
 	<Capacity>15000</Capacity>
 	<Virtual>false</Virtual>
@@ -365,6 +436,8 @@
 </Room>
 <Room>
 	<Name>r4</Name>
+	<Long_Name></Long_Name>
+	<Code></Code>
 	<Building></Building>
 	<Capacity>30000</Capacity>
 	<Virtual>true</Virtual>
@@ -461,7 +534,7 @@
 </ConstraintStudentsSetNotAvailableTimes>
 <ConstraintTeacherMaxDaysPerWeek>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>t1</Teacher_Name>
+	<Teacher>t1</Teacher>
 	<Max_Days_Per_Week>3</Max_Days_Per_Week>
 	<Active>true</Active>
 	<Comments></Comments>
@@ -474,7 +547,7 @@
 </ConstraintTeachersMaxDaysPerWeek>
 <ConstraintTeacherMinDaysPerWeek>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>t1</Teacher_Name>
+	<Teacher>t1</Teacher>
 	<Minimum_Days_Per_Week>1</Minimum_Days_Per_Week>
 	<Active>true</Active>
 	<Comments></Comments>
@@ -487,7 +560,7 @@
 </ConstraintTeachersMinDaysPerWeek>
 <ConstraintTeacherMaxGapsPerDay>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>t1</Teacher_Name>
+	<Teacher>t1</Teacher>
 	<Max_Gaps>2</Max_Gaps>
 	<Active>true</Active>
 	<Comments></Comments>
@@ -500,7 +573,7 @@
 </ConstraintTeachersMaxGapsPerDay>
 <ConstraintTeacherMaxGapsPerWeek>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>t1</Teacher_Name>
+	<Teacher>t1</Teacher>
 	<Max_Gaps>4</Max_Gaps>
 	<Active>true</Active>
 	<Comments></Comments>
@@ -513,7 +586,7 @@
 </ConstraintTeachersMaxGapsPerWeek>
 <ConstraintTeacherMaxHoursDaily>
 	<Weight_Percentage>89.7</Weight_Percentage>
-	<Teacher_Name>t1</Teacher_Name>
+	<Teacher>t1</Teacher>
 	<Maximum_Hours_Daily>5</Maximum_Hours_Daily>
 	<Active>true</Active>
 	<Comments></Comments>
@@ -526,7 +599,7 @@
 </ConstraintTeachersMaxHoursDaily>
 <ConstraintTeacherMaxHoursContinuously>
 	<Weight_Percentage>99</Weight_Percentage>
-	<Teacher_Name>t1</Teacher_Name>
+	<Teacher>t1</Teacher>
 	<Maximum_Hours_Continuously>5</Maximum_Hours_Continuously>
 	<Active>true</Active>
 	<Comments></Comments>
@@ -539,7 +612,7 @@
 </ConstraintTeachersMaxHoursContinuously>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>t1</Teacher_Name>
+	<Teacher>t1</Teacher>
 	<Minimum_Hours_Daily>4</Minimum_Hours_Daily>
 	<Allow_Empty_Days>true</Allow_Empty_Days>
 	<Active>true</Active>
@@ -677,10 +750,10 @@
 </ConstraintActivityPreferredTimeSlots>
 <ConstraintActivitiesPreferredStartingTimes>
 	<Weight_Percentage>99</Weight_Percentage>
-	<Teacher_Name>t1</Teacher_Name>
-	<Students_Name>y1 c fr</Students_Name>
-	<Subject_Name></Subject_Name>
-	<Activity_Tag_Name></Activity_Tag_Name>
+	<Teacher>t1</Teacher>
+	<Students>y1 c fr</Students>
+	<Subject></Subject>
+	<Activity_Tag></Activity_Tag>
 	<Duration></Duration>
 	<Number_of_Preferred_Starting_Times>57</Number_of_Preferred_Starting_Times>
 	<Preferred_Starting_Time>
@@ -916,10 +989,10 @@
 </ConstraintActivitiesPreferredStartingTimes>
 <ConstraintActivitiesPreferredTimeSlots>
 	<Weight_Percentage>66</Weight_Percentage>
-	<Teacher_Name></Teacher_Name>
-	<Students_Name>y1 c</Students_Name>
-	<Subject_Name></Subject_Name>
-	<Activity_Tag_Name>at1</Activity_Tag_Name>
+	<Teacher></Teacher>
+	<Students>y1 c</Students>
+	<Subject></Subject>
+	<Activity_Tag>at1</Activity_Tag>
 	<Duration></Duration>
 	<Number_of_Preferred_Time_Slots>57</Number_of_Preferred_Time_Slots>
 	<Preferred_Time_Slot>
@@ -1156,10 +1229,10 @@
 <ConstraintSubactivitiesPreferredStartingTimes>
 	<Weight_Percentage>25</Weight_Percentage>
 	<Component_Number>3</Component_Number>
-	<Teacher_Name></Teacher_Name>
-	<Students_Name>y1 c</Students_Name>
-	<Subject_Name>s1</Subject_Name>
-	<Activity_Tag_Name></Activity_Tag_Name>
+	<Teacher></Teacher>
+	<Students>y1 c</Students>
+	<Subject>s1</Subject>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Number_of_Preferred_Starting_Times>57</Number_of_Preferred_Starting_Times>
 	<Preferred_Starting_Time>
@@ -1396,10 +1469,10 @@
 <ConstraintSubactivitiesPreferredTimeSlots>
 	<Weight_Percentage>10</Weight_Percentage>
 	<Component_Number>2</Component_Number>
-	<Teacher_Name></Teacher_Name>
-	<Students_Name></Students_Name>
-	<Subject_Name>s1</Subject_Name>
-	<Activity_Tag_Name></Activity_Tag_Name>
+	<Teacher></Teacher>
+	<Students></Students>
+	<Subject>s1</Subject>
+	<Activity_Tag></Activity_Tag>
 	<Duration></Duration>
 	<Number_of_Preferred_Time_Slots>2</Number_of_Preferred_Time_Slots>
 	<Preferred_Time_Slot>
@@ -1421,10 +1494,10 @@
 </ConstraintActivityEndsStudentsDay>
 <ConstraintActivitiesEndStudentsDay>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>t1</Teacher_Name>
-	<Students_Name></Students_Name>
-	<Subject_Name></Subject_Name>
-	<Activity_Tag_Name>at1</Activity_Tag_Name>
+	<Teacher>t1</Teacher>
+	<Students></Students>
+	<Subject></Subject>
+	<Activity_Tag>at1</Activity_Tag>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintActivitiesEndStudentsDay>
@@ -1502,7 +1575,7 @@
 </ConstraintThreeActivitiesGrouped>
 <ConstraintTeacherIntervalMaxDaysPerWeek>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>t1</Teacher_Name>
+	<Teacher>t1</Teacher>
 	<Interval_Start_Hour>19:00</Interval_Start_Hour>
 	<Interval_End_Hour></Interval_End_Hour>
 	<!-- Interval_End_Hour void means the end of the day (which has no name) -->
@@ -1538,15 +1611,15 @@
 </ConstraintStudentsIntervalMaxDaysPerWeek>
 <ConstraintTeacherActivityTagMaxHoursContinuously>
 	<Weight_Percentage>23.3</Weight_Percentage>
-	<Teacher_Name>t1</Teacher_Name>
-	<Activity_Tag_Name>at1</Activity_Tag_Name>
+	<Teacher>t1</Teacher>
+	<Activity_Tag>at1</Activity_Tag>
 	<Maximum_Hours_Continuously>6</Maximum_Hours_Continuously>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintTeacherActivityTagMaxHoursContinuously>
 <ConstraintTeachersActivityTagMaxHoursContinuously>
 	<Weight_Percentage>87</Weight_Percentage>
-	<Activity_Tag_Name>at1</Activity_Tag_Name>
+	<Activity_Tag>at1</Activity_Tag>
 	<Maximum_Hours_Continuously>4</Maximum_Hours_Continuously>
 	<Active>true</Active>
 	<Comments></Comments>
@@ -1568,15 +1641,15 @@
 </ConstraintStudentsActivityTagMaxHoursContinuously>
 <ConstraintTeacherActivityTagMaxHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>t1</Teacher_Name>
-	<Activity_Tag_Name>at1</Activity_Tag_Name>
+	<Teacher>t1</Teacher>
+	<Activity_Tag>at1</Activity_Tag>
 	<Maximum_Hours_Daily>12</Maximum_Hours_Daily>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintTeacherActivityTagMaxHoursDaily>
 <ConstraintTeachersActivityTagMaxHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Activity_Tag_Name>at1</Activity_Tag_Name>
+	<Activity_Tag>at1</Activity_Tag>
 	<Maximum_Hours_Daily>12</Maximum_Hours_Daily>
 	<Active>true</Active>
 	<Comments></Comments>
@@ -1720,7 +1793,7 @@
 </ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots>
 <ConstraintTeacherMaxSpanPerDay>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>t1</Teacher_Name>
+	<Teacher>t1</Teacher>
 	<Max_Span>8</Max_Span>
 	<Allow_One_Day_Exception_of_Plus_One>true</Allow_One_Day_Exception_of_Plus_One>
 	<Active>true</Active>
@@ -1728,7 +1801,7 @@
 </ConstraintTeacherMaxSpanPerDay>
 <ConstraintTeacherMinRestingHours>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>t1</Teacher_Name>
+	<Teacher>t1</Teacher>
 	<Minimum_Resting_Hours>2</Minimum_Resting_Hours>
 	<Circular>true</Circular>
 	<Active>true</Active>
@@ -1902,8 +1975,8 @@
 </ConstraintActivitiesMinSimultaneousInSelectedTimeSlots>
 <ConstraintTeacherActivityTagMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>t1</Teacher_Name>
-	<Activity_Tag_Name>at1</Activity_Tag_Name>
+	<Teacher>t1</Teacher>
+	<Activity_Tag>at1</Activity_Tag>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
 	<Allow_Empty_Days>true</Allow_Empty_Days>
 	<Active>true</Active>
@@ -1911,7 +1984,7 @@
 </ConstraintTeacherActivityTagMinHoursDaily>
 <ConstraintTeachersActivityTagMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Activity_Tag_Name>at1</Activity_Tag_Name>
+	<Activity_Tag>at1</Activity_Tag>
 	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
 	<Allow_Empty_Days>false</Allow_Empty_Days>
 	<Active>true</Active>
@@ -1942,10 +2015,10 @@
 </ConstraintActivityEndsTeachersDay>
 <ConstraintActivitiesEndTeachersDay>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name></Teacher_Name>
-	<Students_Name></Students_Name>
-	<Subject_Name>s1</Subject_Name>
-	<Activity_Tag_Name></Activity_Tag_Name>
+	<Teacher></Teacher>
+	<Students></Students>
+	<Subject>s1</Subject>
+	<Activity_Tag></Activity_Tag>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintActivitiesEndTeachersDay>
@@ -2035,10 +2108,10 @@
 </ConstraintActivityBeginsStudentsDay>
 <ConstraintActivitiesBeginStudentsDay>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name></Teacher_Name>
-	<Students_Name></Students_Name>
-	<Subject_Name></Subject_Name>
-	<Activity_Tag_Name>at3</Activity_Tag_Name>
+	<Teacher></Teacher>
+	<Students></Students>
+	<Subject></Subject>
+	<Activity_Tag>at3</Activity_Tag>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintActivitiesBeginStudentsDay>
@@ -2050,10 +2123,10 @@
 </ConstraintActivityBeginsTeachersDay>
 <ConstraintActivitiesBeginTeachersDay>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name></Teacher_Name>
-	<Students_Name></Students_Name>
-	<Subject_Name>s1</Subject_Name>
-	<Activity_Tag_Name>at1</Activity_Tag_Name>
+	<Teacher></Teacher>
+	<Students></Students>
+	<Subject>s1</Subject>
+	<Activity_Tag>at1</Activity_Tag>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintActivitiesBeginTeachersDay>
@@ -2069,7 +2142,7 @@
 </ConstraintActivitiesMaxHourlySpan>
 <ConstraintTeacherMaxHoursDailyInInterval>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>t1</Teacher_Name>
+	<Teacher>t1</Teacher>
 	<Interval_Start_Hour>09:00</Interval_Start_Hour>
 	<Interval_End_Hour>11:00</Interval_End_Hour>
 	<Maximum_Hours_Daily>12</Maximum_Hours_Daily>

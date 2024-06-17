@@ -10870,7 +10870,7 @@ QString ConstraintTeacherMaxHoursDaily::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintTeacherMaxHoursDaily>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Maximum_Hours_Daily>"+CustomFETString::number(this->maxHoursDaily)+"</Maximum_Hours_Daily>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -11319,7 +11319,7 @@ QString ConstraintTeacherMaxHoursContinuously::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintTeacherMaxHoursContinuously>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Maximum_Hours_Continuously>"+CustomFETString::number(this->maxHoursContinuously)+"</Maximum_Hours_Continuously>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -11568,7 +11568,7 @@ QString ConstraintTeachersActivityTagMaxHoursContinuously::getXmlDescription(Rul
 
 	QString s="<ConstraintTeachersActivityTagMaxHoursContinuously>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Activity_Tag_Name>"+protect(this->activityTagName)+"</Activity_Tag_Name>\n";
+	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
 	s+="	<Maximum_Hours_Continuously>"+CustomFETString::number(this->maxHoursContinuously)+"</Maximum_Hours_Continuously>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -11843,8 +11843,8 @@ QString ConstraintTeacherActivityTagMaxHoursContinuously::getXmlDescription(Rule
 
 	QString s="<ConstraintTeacherActivityTagMaxHoursContinuously>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
-	s+="	<Activity_Tag_Name>"+protect(this->activityTagName)+"</Activity_Tag_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
 	s+="	<Maximum_Hours_Continuously>"+CustomFETString::number(this->maxHoursContinuously)+"</Maximum_Hours_Continuously>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -12098,7 +12098,7 @@ QString ConstraintTeacherMaxDaysPerWeek::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintTeacherMaxDaysPerWeek>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Max_Days_Per_Week>"+CustomFETString::number(this->maxDaysPerWeek)+"</Max_Days_Per_Week>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -12794,7 +12794,7 @@ QString ConstraintTeacherMaxGapsPerWeek::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintTeacherMaxGapsPerWeek>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Max_Gaps>"+CustomFETString::number(this->maxGaps)+"</Max_Gaps>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -13212,7 +13212,7 @@ QString ConstraintTeacherMaxGapsPerDay::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintTeacherMaxGapsPerDay>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Max_Gaps>"+CustomFETString::number(this->maxGaps)+"</Max_Gaps>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -13648,7 +13648,7 @@ QString ConstraintTeacherMaxGapsPerMorningAndAfternoon::getXmlDescription(Rules&
 
 	QString s="<ConstraintTeacherMaxGapsPerMorningAndAfternoon>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Max_Gaps>"+CustomFETString::number(this->maxGaps)+"</Max_Gaps>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -18150,10 +18150,10 @@ QString ConstraintActivitiesPreferredTimeSlots::getXmlDescription(Rules& r)
 {
 	QString s="<ConstraintActivitiesPreferredTimeSlots>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->p_teacherName)+"</Teacher_Name>\n";
-	s+="	<Students_Name>"+protect(this->p_studentsName)+"</Students_Name>\n";
-	s+="	<Subject_Name>"+protect(this->p_subjectName)+"</Subject_Name>\n";
-	s+="	<Activity_Tag_Name>"+protect(this->p_activityTagName)+"</Activity_Tag_Name>\n";
+	s+="	<Teacher>"+protect(this->p_teacherName)+"</Teacher>\n";
+	s+="	<Students>"+protect(this->p_studentsName)+"</Students>\n";
+	s+="	<Subject>"+protect(this->p_subjectName)+"</Subject>\n";
+	s+="	<Activity_Tag>"+protect(this->p_activityTagName)+"</Activity_Tag>\n";
 	if(duration>=1)
 		s+="	<Duration>"+CustomFETString::number(duration)+"</Duration>\n";
 	else
@@ -18657,10 +18657,10 @@ QString ConstraintSubactivitiesPreferredTimeSlots::getXmlDescription(Rules& r)
 	QString s="<ConstraintSubactivitiesPreferredTimeSlots>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Component_Number>"+CustomFETString::number(this->componentNumber)+"</Component_Number>\n";
-	s+="	<Teacher_Name>"+protect(this->p_teacherName)+"</Teacher_Name>\n";
-	s+="	<Students_Name>"+protect(this->p_studentsName)+"</Students_Name>\n";
-	s+="	<Subject_Name>"+protect(this->p_subjectName)+"</Subject_Name>\n";
-	s+="	<Activity_Tag_Name>"+protect(this->p_activityTagName)+"</Activity_Tag_Name>\n";
+	s+="	<Teacher>"+protect(this->p_teacherName)+"</Teacher>\n";
+	s+="	<Students>"+protect(this->p_studentsName)+"</Students>\n";
+	s+="	<Subject>"+protect(this->p_subjectName)+"</Subject>\n";
+	s+="	<Activity_Tag>"+protect(this->p_activityTagName)+"</Activity_Tag>\n";
 	if(duration>=1)
 		s+="	<Duration>"+CustomFETString::number(duration)+"</Duration>\n";
 	else
@@ -19468,10 +19468,10 @@ QString ConstraintActivitiesPreferredStartingTimes::getXmlDescription(Rules& r)
 {
 	QString s="<ConstraintActivitiesPreferredStartingTimes>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
-	s+="	<Students_Name>"+protect(this->studentsName)+"</Students_Name>\n";
-	s+="	<Subject_Name>"+protect(this->subjectName)+"</Subject_Name>\n";
-	s+="	<Activity_Tag_Name>"+protect(this->activityTagName)+"</Activity_Tag_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
+	s+="	<Subject>"+protect(this->subjectName)+"</Subject>\n";
+	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
 	if(duration>=1)
 		s+="	<Duration>"+CustomFETString::number(duration)+"</Duration>\n";
 	else
@@ -19964,10 +19964,10 @@ QString ConstraintSubactivitiesPreferredStartingTimes::getXmlDescription(Rules& 
 	QString s="<ConstraintSubactivitiesPreferredStartingTimes>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Component_Number>"+CustomFETString::number(this->componentNumber)+"</Component_Number>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
-	s+="	<Students_Name>"+protect(this->studentsName)+"</Students_Name>\n";
-	s+="	<Subject_Name>"+protect(this->subjectName)+"</Subject_Name>\n";
-	s+="	<Activity_Tag_Name>"+protect(this->activityTagName)+"</Activity_Tag_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
+	s+="	<Subject>"+protect(this->subjectName)+"</Subject>\n";
+	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
 	if(duration>=1)
 		s+="	<Duration>"+CustomFETString::number(duration)+"</Duration>\n";
 	else
@@ -23238,7 +23238,7 @@ QString ConstraintTeacherMinHoursDaily::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintTeacherMinHoursDaily>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Minimum_Hours_Daily>"+CustomFETString::number(this->minHoursDaily)+"</Minimum_Hours_Daily>\n";
 	if(this->allowEmptyDays)
 		s+="	<Allow_Empty_Days>true</Allow_Empty_Days>\n";
@@ -23470,7 +23470,7 @@ QString ConstraintTeacherMinDaysPerWeek::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintTeacherMinDaysPerWeek>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Minimum_Days_Per_Week>"+CustomFETString::number(this->minDaysPerWeek)+"</Minimum_Days_Per_Week>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -23903,7 +23903,7 @@ QString ConstraintTeacherIntervalMaxDaysPerWeek::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintTeacherIntervalMaxDaysPerWeek>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->startHour])+"</Interval_Start_Hour>\n";
 	if(this->endHour < r.nHoursPerDay){
 		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->endHour])+"</Interval_End_Hour>\n";
@@ -25005,10 +25005,10 @@ QString ConstraintActivitiesEndStudentsDay::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintActivitiesEndStudentsDay>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
-	s+="	<Students_Name>"+protect(this->studentsName)+"</Students_Name>\n";
-	s+="	<Subject_Name>"+protect(this->subjectName)+"</Subject_Name>\n";
-	s+="	<Activity_Tag_Name>"+protect(this->activityTagName)+"</Activity_Tag_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
+	s+="	<Subject>"+protect(this->subjectName)+"</Subject>\n";
+	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
 	s+="</ConstraintActivitiesEndStudentsDay>\n";
@@ -25546,10 +25546,10 @@ QString ConstraintActivitiesEndTeachersDay::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintActivitiesEndTeachersDay>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
-	s+="	<Students_Name>"+protect(this->studentsName)+"</Students_Name>\n";
-	s+="	<Subject_Name>"+protect(this->subjectName)+"</Subject_Name>\n";
-	s+="	<Activity_Tag_Name>"+protect(this->activityTagName)+"</Activity_Tag_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
+	s+="	<Subject>"+protect(this->subjectName)+"</Subject>\n";
+	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
 	s+="</ConstraintActivitiesEndTeachersDay>\n";
@@ -25845,7 +25845,7 @@ QString ConstraintTeachersActivityTagMaxHoursDaily::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintTeachersActivityTagMaxHoursDaily>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Activity_Tag_Name>"+protect(this->activityTagName)+"</Activity_Tag_Name>\n";
+	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
 	s+="	<Maximum_Hours_Daily>"+CustomFETString::number(this->maxHoursDaily)+"</Maximum_Hours_Daily>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -26089,8 +26089,8 @@ QString ConstraintTeacherActivityTagMaxHoursDaily::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintTeacherActivityTagMaxHoursDaily>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
-	s+="	<Activity_Tag_Name>"+protect(this->activityTagName)+"</Activity_Tag_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
 	s+="	<Maximum_Hours_Daily>"+CustomFETString::number(this->maxHoursDaily)+"</Maximum_Hours_Daily>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -26873,7 +26873,7 @@ QString ConstraintTeachersActivityTagMinHoursDaily::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintTeachersActivityTagMinHoursDaily>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Activity_Tag_Name>"+protect(this->activityTagName)+"</Activity_Tag_Name>\n";
+	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
 	s+="	<Minimum_Hours_Daily>"+CustomFETString::number(this->minHoursDaily)+"</Minimum_Hours_Daily>\n";
 	if(this->allowEmptyDays)
 		s+="	<Allow_Empty_Days>true</Allow_Empty_Days>\n";
@@ -27127,8 +27127,8 @@ QString ConstraintTeacherActivityTagMinHoursDaily::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintTeacherActivityTagMinHoursDaily>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
-	s+="	<Activity_Tag_Name>"+protect(this->activityTagName)+"</Activity_Tag_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
 	s+="	<Minimum_Hours_Daily>"+CustomFETString::number(this->minHoursDaily)+"</Minimum_Hours_Daily>\n";
 	if(this->allowEmptyDays)
 		s+="	<Allow_Empty_Days>true</Allow_Empty_Days>\n";
@@ -31294,7 +31294,7 @@ QString ConstraintTeacherMaxSpanPerDay::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintTeacherMaxSpanPerDay>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Max_Span>"+CustomFETString::number(this->maxSpanPerDay)+"</Max_Span>\n";
 	s+="	<Allow_One_Day_Exception_of_Plus_One>"+trueFalse(allowOneDayExceptionPlusOne)+"</Allow_One_Day_Exception_of_Plus_One>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
@@ -32160,7 +32160,7 @@ QString ConstraintTeacherMinRestingHours::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintTeacherMinRestingHours>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Minimum_Resting_Hours>"+CustomFETString::number(this->minRestingHours)+"</Minimum_Resting_Hours>\n";
 	s+="	<Circular>"+trueFalse(circular)+"</Circular>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
@@ -40154,7 +40154,7 @@ QString ConstraintTeacherMaxHoursDailyRealDays::getXmlDescription(Rules& r){
 
 	QString s="<ConstraintTeacherMaxHoursDailyRealDays>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Maximum_Hours_Daily>"+CustomFETString::number(this->maxHoursDaily)+"</Maximum_Hours_Daily>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -40378,7 +40378,7 @@ QString ConstraintTeacherMaxRealDaysPerWeek::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintTeacherMaxRealDaysPerWeek>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Max_Days_Per_Week>"+CustomFETString::number(this->maxDaysPerWeek)+"</Max_Days_Per_Week>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -41136,7 +41136,7 @@ QString ConstraintTeacherMaxGapsPerRealDay::getXmlDescription(Rules& r){
 
 	QString s="<ConstraintTeacherMaxGapsPerRealDay>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Max_Gaps>"+CustomFETString::number(this->maxGaps)+"</Max_Gaps>\n";
 	s+="	<Allow_One_Day_Exception_of_Plus_One>"+trueFalse(allowOneDayExceptionPlusOne)+"</Allow_One_Day_Exception_of_Plus_One>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
@@ -42108,7 +42108,7 @@ QString ConstraintTeacherMinHoursPerMorning::getXmlDescription(Rules& r){
 
 	QString s="<ConstraintTeacherMinHoursPerMorning>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Minimum_Hours_Per_Morning>"+CustomFETString::number(this->minHoursPerMorning)+"</Minimum_Hours_Per_Morning>\n";
 	if(this->allowEmptyMornings)
 		s+="	<Allow_Empty_Mornings>true</Allow_Empty_Mornings>\n";
@@ -42597,7 +42597,7 @@ QString ConstraintTeacherMinHoursDailyRealDays::getXmlDescription(Rules& r){
 
 	QString s="<ConstraintTeacherMinHoursDailyRealDays>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Minimum_Hours_Daily>"+CustomFETString::number(this->minHoursDaily)+"</Minimum_Hours_Daily>\n";
 	if(this->allowEmptyDays)
 		s+="	<Allow_Empty_Days>true</Allow_Empty_Days>\n";
@@ -42832,7 +42832,7 @@ QString ConstraintTeacherMinRealDaysPerWeek::getXmlDescription(Rules& r){
 
 	QString s="<ConstraintTeacherMinRealDaysPerWeek>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Minimum_Days_Per_Week>"+CustomFETString::number(this->minDaysPerWeek)+"</Minimum_Days_Per_Week>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -43262,7 +43262,7 @@ QString ConstraintTeacherMorningIntervalMaxDaysPerWeek::getXmlDescription(Rules&
 
 	QString s="<ConstraintTeacherMorningIntervalMaxDaysPerWeek>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->startHour])+"</Interval_Start_Hour>\n";
 	if(this->endHour < r.nHoursPerDay){
 		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->endHour])+"</Interval_End_Hour>\n";
@@ -43775,7 +43775,7 @@ QString ConstraintTeacherAfternoonIntervalMaxDaysPerWeek::getXmlDescription(Rule
 
 	QString s="<ConstraintTeacherAfternoonIntervalMaxDaysPerWeek>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->startHour])+"</Interval_Start_Hour>\n";
 	if(this->endHour < r.nHoursPerDay){
 		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->endHour])+"</Interval_End_Hour>\n";
@@ -44281,7 +44281,7 @@ QString ConstraintTeachersActivityTagMaxHoursDailyRealDays::getXmlDescription(Ru
 
 	QString s="<ConstraintTeachersActivityTagMaxHoursDailyRealDays>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Activity_Tag_Name>"+protect(this->activityTagName)+"</Activity_Tag_Name>\n";
+	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
 	s+="	<Maximum_Hours_Daily>"+CustomFETString::number(this->maxHoursDaily)+"</Maximum_Hours_Daily>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -44526,8 +44526,8 @@ QString ConstraintTeacherActivityTagMaxHoursDailyRealDays::getXmlDescription(Rul
 
 	QString s="<ConstraintTeacherActivityTagMaxHoursDailyRealDays>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
-	s+="	<Activity_Tag_Name>"+protect(this->activityTagName)+"</Activity_Tag_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
 	s+="	<Maximum_Hours_Daily>"+CustomFETString::number(this->maxHoursDaily)+"</Maximum_Hours_Daily>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -46283,7 +46283,7 @@ QString ConstraintTeacherMaxSpanPerRealDay::getXmlDescription(Rules& r){
 
 	QString s="<ConstraintTeacherMaxSpanPerRealDay>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Max_Span>"+CustomFETString::number(this->maxSpanPerDay)+"</Max_Span>\n";
 	s+="	<Allow_One_Day_Exception_of_Plus_One>"+trueFalse(allowOneDayExceptionPlusOne)+"</Allow_One_Day_Exception_of_Plus_One>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
@@ -47163,7 +47163,7 @@ QString ConstraintTeacherMaxAfternoonsPerWeek::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintTeacherMaxAfternoonsPerWeek>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Max_Afternoons_Per_Week>"+CustomFETString::number(this->maxAfternoonsPerWeek)+"</Max_Afternoons_Per_Week>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -47661,7 +47661,7 @@ QString ConstraintTeacherMaxMorningsPerWeek::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintTeacherMaxMorningsPerWeek>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Max_Mornings_Per_Week>"+CustomFETString::number(this->maxMorningsPerWeek)+"</Max_Mornings_Per_Week>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -48158,7 +48158,7 @@ QString ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3::getXmlDescription(R
 
 	QString s="<ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
 	s+="</ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3>\n";
@@ -48553,7 +48553,7 @@ QString ConstraintTeacherMinMorningsPerWeek::getXmlDescription(Rules& r){
 
 	QString s="<ConstraintTeacherMinMorningsPerWeek>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Minimum_Mornings_Per_Week>"+CustomFETString::number(this->minMorningsPerWeek)+"</Minimum_Mornings_Per_Week>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -48959,7 +48959,7 @@ QString ConstraintTeacherMinAfternoonsPerWeek::getXmlDescription(Rules& r){
 
 	QString s="<ConstraintTeacherMinAfternoonsPerWeek>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Minimum_Afternoons_Per_Week>"+CustomFETString::number(this->minAfternoonsPerWeek)+"</Minimum_Afternoons_Per_Week>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -49363,7 +49363,7 @@ QString ConstraintTeacherMaxTwoConsecutiveMornings::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintTeacherMaxTwoConsecutiveMornings>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
 	s+="</ConstraintTeacherMaxTwoConsecutiveMornings>\n";
@@ -49626,7 +49626,7 @@ QString ConstraintTeachersMaxTwoConsecutiveMornings::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintTeachersMaxTwoConsecutiveMornings>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-//	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+//	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
 	s+="</ConstraintTeachersMaxTwoConsecutiveMornings>\n";
@@ -49890,7 +49890,7 @@ QString ConstraintTeacherMaxTwoConsecutiveAfternoons::getXmlDescription(Rules& r
 
 	QString s="<ConstraintTeacherMaxTwoConsecutiveAfternoons>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
 	s+="</ConstraintTeacherMaxTwoConsecutiveAfternoons>\n";
@@ -50153,7 +50153,7 @@ QString ConstraintTeachersMaxTwoConsecutiveAfternoons::getXmlDescription(Rules& 
 
 	QString s="<ConstraintTeachersMaxTwoConsecutiveAfternoons>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-//	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+//	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
 	s+="</ConstraintTeachersMaxTwoConsecutiveAfternoons>\n";
@@ -51499,7 +51499,7 @@ QString ConstraintTeacherMaxZeroGapsPerAfternoon::getXmlDescription(Rules& r){
 
 	QString s="<ConstraintTeacherMaxZeroGapsPerAfternoon>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
 	s+="</ConstraintTeacherMaxZeroGapsPerAfternoon>\n";
@@ -54889,7 +54889,7 @@ QString ConstraintTeacherMaxHoursPerAllAfternoons::getXmlDescription(Rules& r){
 
 	QString s="<ConstraintTeacherMaxHoursPerAllAfternoons>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Maximum_Hours_Per_All_Afternoons>"+CustomFETString::number(this->maxHoursPerAllAfternoons)+"</Maximum_Hours_Per_All_Afternoons>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -55671,7 +55671,7 @@ QString ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon::getXmlDescri
 
 	QString s="<ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Minimum_Resting_Hours>"+CustomFETString::number(this->minRestingHours)+"</Minimum_Resting_Hours>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -57267,7 +57267,7 @@ QString ConstraintTeacherMaxGapsPerWeekForRealDays::getXmlDescription(Rules& r){
 
 	QString s="<ConstraintTeacherMaxGapsPerWeekForRealDays>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Max_Gaps>"+CustomFETString::number(this->maxGaps)+"</Max_Gaps>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -59067,7 +59067,7 @@ QString ConstraintTeacherMaxThreeConsecutiveDays::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintTeacherMaxThreeConsecutiveDays>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Allow_Afternoon_Morning_Afternoon_Morning_Exception>"+trueFalse(this->allowAMAMException)
 	 +"</Allow_Afternoon_Morning_Afternoon_Morning_Exception>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
@@ -61602,7 +61602,7 @@ QString ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3::getXmlDescripti
 
 	QString s="<ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
 	s+="</ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3>\n";
@@ -63019,10 +63019,10 @@ QString ConstraintActivitiesBeginStudentsDay::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintActivitiesBeginStudentsDay>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
-	s+="	<Students_Name>"+protect(this->studentsName)+"</Students_Name>\n";
-	s+="	<Subject_Name>"+protect(this->subjectName)+"</Subject_Name>\n";
-	s+="	<Activity_Tag_Name>"+protect(this->activityTagName)+"</Activity_Tag_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
+	s+="	<Subject>"+protect(this->subjectName)+"</Subject>\n";
+	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
 	s+="</ConstraintActivitiesBeginStudentsDay>\n";
@@ -63560,10 +63560,10 @@ QString ConstraintActivitiesBeginTeachersDay::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintActivitiesBeginTeachersDay>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
-	s+="	<Students_Name>"+protect(this->studentsName)+"</Students_Name>\n";
-	s+="	<Subject_Name>"+protect(this->subjectName)+"</Subject_Name>\n";
-	s+="	<Activity_Tag_Name>"+protect(this->activityTagName)+"</Activity_Tag_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
+	s+="	<Subject>"+protect(this->subjectName)+"</Subject>\n";
+	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
 	s+="</ConstraintActivitiesBeginTeachersDay>\n";
@@ -64096,7 +64096,7 @@ QString ConstraintTeacherMinHoursPerAfternoon::getXmlDescription(Rules& r){
 
 	QString s="<ConstraintTeacherMinHoursPerAfternoon>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Minimum_Hours_Per_Afternoon>"+CustomFETString::number(this->minHoursPerAfternoon)+"</Minimum_Hours_Per_Afternoon>\n";
 	if(this->allowEmptyAfternoons)
 		s+="	<Allow_Empty_Afternoons>true</Allow_Empty_Afternoons>\n";
@@ -64904,7 +64904,7 @@ QString ConstraintTeacherMaxHoursDailyInInterval::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintTeacherMaxHoursDailyInInterval>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 
 	s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->startHour])+"</Interval_Start_Hour>\n";
 	if(this->endHour < r.nHoursPerDay){

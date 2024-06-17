@@ -47,6 +47,8 @@ public slots:
 	void printableActivityTag();
 	void notPrintableActivityTag();
 	
+	void longName();
+	void code();
 	void comments();
 	
 	void help();

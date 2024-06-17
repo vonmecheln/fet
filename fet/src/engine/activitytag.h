@@ -44,7 +44,10 @@ class ActivityTag{
 	Q_DECLARE_TR_FUNCTIONS(ActivityTag)
 
 public:
-	QString name;
+	QString name; //short name, unique
+	
+	QString longName;
+	QString code;
 	
 	bool printable;
 

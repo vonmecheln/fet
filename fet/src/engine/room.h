@@ -48,6 +48,8 @@ public:
 	bool isVirtual; //If it is virtual, it has a list of sets of real rooms. Suggested by math.
 
 	QString name;
+	QString longName;
+	QString code;
 	int capacity;
 	
 	/**

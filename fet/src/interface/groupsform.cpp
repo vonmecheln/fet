@@ -72,6 +72,8 @@ GroupsForm::GroupsForm(QWidget* parent): QDialog(parent)
 	connect(deactivateStudentsPushButton, &QPushButton::clicked, this, &GroupsForm::deactivateStudents);
 	connect(groupsListWidget, &QListWidget::itemDoubleClicked, this, &GroupsForm::modifyGroup);
 
+	connect(longNamePushButton, &QPushButton::clicked, this, &GroupsForm::longName);
+	connect(codePushButton, &QPushButton::clicked, this, &GroupsForm::code);
 	connect(commentsPushButton, &QPushButton::clicked, this, &GroupsForm::comments);
 
 	centerWidgetOnScreen(this);
@@ -578,6 +580,134 @@ void GroupsForm::comments()
 	
 		gt.rules.addUndoPoint(tr("Changed the comments for the group %1 from\n%2\nto\n%3.").arg(groupName).arg(ocs).arg(studentsSet->comments));
 
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+
+		groupChanged(groupName);
+	}
+}
+
+void GroupsForm::longName()
+{
+	int ind=groupsListWidget->currentRow();
+	if(ind<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected group"));
+		return;
+	}
+	
+	QString groupName=groupsListWidget->currentItem()->text();
+	
+	StudentsSet* studentsSet=gt.rules.searchStudentsSet(groupName);
+	assert(studentsSet!=nullptr);
+
+	QDialog getLongNameDialog(this);
+	
+	getLongNameDialog.setWindowTitle(tr("Group long name"));
+	
+	QPushButton* okPB=new QPushButton(tr("OK"));
+	okPB->setDefault(true);
+	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
+	
+	connect(okPB, &QPushButton::clicked, &getLongNameDialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &getLongNameDialog, &QDialog::reject);
+
+	QHBoxLayout* hl=new QHBoxLayout();
+	hl->addStretch();
+	hl->addWidget(okPB);
+	hl->addWidget(cancelPB);
+	
+	QVBoxLayout* vl=new QVBoxLayout();
+	
+	QLineEdit* longNameLE=new QLineEdit();
+	longNameLE->setText(studentsSet->longName);
+	longNameLE->selectAll();
+	longNameLE->setFocus();
+	
+	vl->addWidget(longNameLE);
+	vl->addLayout(hl);
+	
+	getLongNameDialog.setLayout(vl);
+	
+	const QString settingsName=QString("GroupLongNameDialog");
+	
+	getLongNameDialog.resize(300, 200);
+	centerWidgetOnScreen(&getLongNameDialog);
+	restoreFETDialogGeometry(&getLongNameDialog, settingsName);
+	
+	int t=getLongNameDialog.exec();
+	saveFETDialogGeometry(&getLongNameDialog, settingsName);
+	
+	if(t==QDialog::Accepted){
+		QString oln=studentsSet->longName;
+	
+		studentsSet->longName=longNameLE->text();
+	
+		gt.rules.addUndoPoint(tr("Changed the long name for the group %1 from\n%2\nto\n%3.").arg(groupName).arg(oln).arg(studentsSet->longName));
+	
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+
+		groupChanged(groupName);
+	}
+}
+
+void GroupsForm::code()
+{
+	int ind=groupsListWidget->currentRow();
+	if(ind<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected group"));
+		return;
+	}
+	
+	QString groupName=groupsListWidget->currentItem()->text();
+	
+	StudentsSet* studentsSet=gt.rules.searchStudentsSet(groupName);
+	assert(studentsSet!=nullptr);
+
+	QDialog getCodeDialog(this);
+	
+	getCodeDialog.setWindowTitle(tr("Group code"));
+	
+	QPushButton* okPB=new QPushButton(tr("OK"));
+	okPB->setDefault(true);
+	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
+	
+	connect(okPB, &QPushButton::clicked, &getCodeDialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &getCodeDialog, &QDialog::reject);
+
+	QHBoxLayout* hl=new QHBoxLayout();
+	hl->addStretch();
+	hl->addWidget(okPB);
+	hl->addWidget(cancelPB);
+	
+	QVBoxLayout* vl=new QVBoxLayout();
+	
+	QLineEdit* codeLE=new QLineEdit();
+	codeLE->setText(studentsSet->code);
+	codeLE->selectAll();
+	codeLE->setFocus();
+	
+	vl->addWidget(codeLE);
+	vl->addLayout(hl);
+	
+	getCodeDialog.setLayout(vl);
+	
+	const QString settingsName=QString("GroupCodeDialog");
+	
+	getCodeDialog.resize(300, 200);
+	centerWidgetOnScreen(&getCodeDialog);
+	restoreFETDialogGeometry(&getCodeDialog, settingsName);
+	
+	int t=getCodeDialog.exec();
+	saveFETDialogGeometry(&getCodeDialog, settingsName);
+	
+	if(t==QDialog::Accepted){
+		QString oc=studentsSet->code;
+	
+		studentsSet->code=codeLE->text();
+	
+		gt.rules.addUndoPoint(tr("Changed the code for the group %1 from\n%2\nto\n%3.").arg(groupName).arg(oc).arg(studentsSet->code));
+	
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 

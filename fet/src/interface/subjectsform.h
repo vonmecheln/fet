@@ -43,6 +43,8 @@ public slots:
 	void activateSubject();
 	void deactivateSubject();
 	
+	void longName();
+	void code();
 	void comments();
 };
 

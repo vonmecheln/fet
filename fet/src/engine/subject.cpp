@@ -23,6 +23,8 @@
 QDataStream& operator<<(QDataStream& stream, const Subject& sbj)
 {
 	stream<<sbj.name;
+	stream<<sbj.longName;
+	stream<<sbj.code;
 	stream<<sbj.comments;
 
 	return stream;
@@ -31,6 +33,8 @@ QDataStream& operator<<(QDataStream& stream, const Subject& sbj)
 QDataStream& operator>>(QDataStream& stream, Subject& sbj)
 {
 	stream>>sbj.name;
+	stream>>sbj.longName;
+	stream>>sbj.code;
 	stream>>sbj.comments;
 
 	return stream;
@@ -38,6 +42,9 @@ QDataStream& operator>>(QDataStream& stream, Subject& sbj)
 
 Subject::Subject()
 {
+	longName=QString("");
+	code=QString("");
+
 	comments=QString("");
 }
 
@@ -49,6 +56,8 @@ QString Subject::getXmlDescription()
 {
 	QString s="<Subject>\n";
 	s+="	<Name>"+protect(this->name)+"</Name>\n";
+	s+="	<Long_Name>"+protect(this->longName)+"</Long_Name>\n";
+	s+="	<Code>"+protect(this->code)+"</Code>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
 	s+="</Subject>\n";
 
@@ -57,7 +66,11 @@ QString Subject::getXmlDescription()
 
 QString Subject::getDescription()
 {
-	QString s=tr("N:%1", "The name of the subject").arg(name);
+	QString s=tr("N:%1", "The (short) name of the subject").arg(name);
+	s+=" ,";
+	s+=tr("LN:%1", "The long name of the subject").arg(longName);
+	s+=" ,";
+	s+=tr("C:%1", "The code of the subject").arg(code);
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -70,7 +83,11 @@ QString Subject::getDetailedDescription()
 {
 	QString s=tr("Subject");
 	s+="\n";
-	s+=tr("Name=%1", "The name of the subject").arg(this->name);
+	s+=tr("Name=%1", "The (short) name of the subject").arg(this->name);
+	s+="\n";
+	s+=tr("Long name=%1", "The long name of the subject").arg(this->longName);
+	s+="\n";
+	s+=tr("Code=%1", "The code of the subject").arg(this->code);
 	s+="\n";
 
 	//Has comments?

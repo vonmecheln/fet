@@ -22,8 +22,6 @@
 
 #include <QStringList>
 
-class QWidget;
-
 class HoursForm : public QDialog, Ui::HoursForm_template
 {
 	Q_OBJECT
@@ -33,7 +31,9 @@ public:
 	~HoursForm();
 	
 	QStringList realNamesForHours;
+	QStringList realLongNamesForHours;
 	QStringList realNamesForRealHours;
+	QStringList realLongNamesForRealHours;
 
 public slots:
 	void numberOfHoursChanged();

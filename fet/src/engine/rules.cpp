@@ -140,20 +140,24 @@ QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 	stream<<rules.institutionName;
 	stream<<rules.comments;
 
+	stream<<rules.nTerms;
+	stream<<rules.nDaysPerTerm;
+
 	stream<<rules.nDaysPerWeek;
 	stream<<rules.daysOfTheWeek;
+	stream<<rules.daysOfTheWeek_longNames;
 
 	stream<<rules.nRealDaysPerWeek;
 	stream<<rules.realDaysOfTheWeek;
+	stream<<rules.realDaysOfTheWeek_longNames;
 
 	stream<<rules.nHoursPerDay;
 	stream<<rules.hoursOfTheDay;
+	stream<<rules.hoursOfTheDay_longNames;
 
 	stream<<rules.nRealHoursPerDay;
 	stream<<rules.realHoursOfTheDay;
-
-	stream<<rules.nTerms;
-	stream<<rules.nDaysPerTerm;
+	stream<<rules.realHoursOfTheDay_longNames;
 
 	//Important note: below, need to convert teachersList.count() to an int to push it into the stream. Same for the rest of count()-s.
 	
@@ -241,6 +245,8 @@ QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 		if(ss->type==STUDENTS_YEAR){
 			StudentsYear* year=(StudentsYear*)ss;
 			stream<<year->name;
+			stream<<year->longName;
+			stream<<year->code;
 			stream<<year->numberOfStudents;
 			//stream<<year->type;
 
@@ -255,6 +261,8 @@ QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 		else if(ss->type==STUDENTS_GROUP){
 			StudentsGroup* group=(StudentsGroup*)ss;
 			stream<<group->name;
+			stream<<group->longName;
+			stream<<group->code;
 			stream<<group->numberOfStudents;
 			//stream<<group->type;
 
@@ -266,6 +274,8 @@ QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 		else if(ss->type==STUDENTS_SUBGROUP){
 			StudentsSubgroup* subgroup=(StudentsSubgroup*)ss;
 			stream<<subgroup->name;
+			stream<<subgroup->longName;
+			stream<<subgroup->code;
 			stream<<subgroup->numberOfStudents;
 			//stream<<subgroup->type;
 
@@ -2392,20 +2402,24 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 	stream>>rules.institutionName;
 	stream>>rules.comments;
 
+	stream>>rules.nTerms;
+	stream>>rules.nDaysPerTerm;
+
 	stream>>rules.nDaysPerWeek;
 	stream>>rules.daysOfTheWeek;
+	stream>>rules.daysOfTheWeek_longNames;
 
 	stream>>rules.nRealDaysPerWeek;
 	stream>>rules.realDaysOfTheWeek;
+	stream>>rules.realDaysOfTheWeek_longNames;
 
 	stream>>rules.nHoursPerDay;
 	stream>>rules.hoursOfTheDay;
+	stream>>rules.hoursOfTheDay_longNames;
 
 	stream>>rules.nRealHoursPerDay;
 	stream>>rules.realHoursOfTheDay;
-
-	stream>>rules.nTerms;
-	stream>>rules.nDaysPerTerm;
+	stream>>rules.realHoursOfTheDay_longNames;
 
 	int ntch;
 	stream>>ntch;
@@ -2453,6 +2467,8 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 			rules.yearsList.append(year);
 			readStudentsSetsList.append(year);
 			stream>>year->name;
+			stream>>year->longName;
+			stream>>year->code;
 			stream>>year->numberOfStudents;
 			//stream>>year->type;
 			
@@ -2470,6 +2486,8 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 			StudentsGroup* group=new StudentsGroup;
 			readStudentsSetsList.append(group);
 			stream>>group->name;
+			stream>>group->longName;
+			stream>>group->code;
 			stream>>group->numberOfStudents;
 			//stream>>group->type;
 			
@@ -2484,6 +2502,8 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 			StudentsSubgroup* subgroup=new StudentsSubgroup;
 			readStudentsSetsList.append(subgroup);
 			stream>>subgroup->name;
+			stream>>subgroup->longName;
+			stream>>subgroup->code;
 			stream>>subgroup->numberOfStudents;
 			//stream>>subgroup->type;
 			
@@ -5237,58 +5257,109 @@ void Rules::init() //initializes the rules (empty, but with default hours and da
 
 	this->nDaysPerWeek=5;
 	this->daysOfTheWeek.clear();
-	this->daysOfTheWeek.append(tr("Monday"));
-	this->daysOfTheWeek.append(tr("Tuesday"));
-	this->daysOfTheWeek.append(tr("Wednesday"));
-	this->daysOfTheWeek.append(tr("Thursday"));
-	this->daysOfTheWeek.append(tr("Friday"));
+	this->daysOfTheWeek.append(tr("Mo", "Abbreviation for Monday"));
+	this->daysOfTheWeek.append(tr("Tu", "Abbreviation for Tuesday"));
+	this->daysOfTheWeek.append(tr("We", "Abbreviation for Wednesday"));
+	this->daysOfTheWeek.append(tr("Th", "Abbreviation for Thursday"));
+	this->daysOfTheWeek.append(tr("Fr", "Abbreviation for Friday"));
 	
 	this->nRealDaysPerWeek=2;
 	this->realDaysOfTheWeek.clear();
-	this->realDaysOfTheWeek.append(tr("Monday"));
-	this->realDaysOfTheWeek.append(tr("Tuesday"));
+	this->realDaysOfTheWeek.append(tr("Mo", "Abbreviation for Monday"));
+	this->realDaysOfTheWeek.append(tr("Tu", "Abbreviation for Tuesday"));
 	
 	this->nHoursPerDay=12;
 	this->hoursOfTheDay.clear();
-	this->hoursOfTheDay.append(tr("08:00", "Hour name"));
-	this->hoursOfTheDay.append(tr("09:00", "Hour name"));
-	this->hoursOfTheDay.append(tr("10:00", "Hour name"));
-	this->hoursOfTheDay.append(tr("11:00", "Hour name"));
-	this->hoursOfTheDay.append(tr("12:00", "Hour name"));
-	this->hoursOfTheDay.append(tr("13:00", "Hour name"));
-	this->hoursOfTheDay.append(tr("14:00", "Hour name"));
-	this->hoursOfTheDay.append(tr("15:00", "Hour name"));
-	this->hoursOfTheDay.append(tr("16:00", "Hour name"));
-	this->hoursOfTheDay.append(tr("17:00", "Hour name"));
-	this->hoursOfTheDay.append(tr("18:00", "Hour name"));
-	this->hoursOfTheDay.append(tr("19:00", "Hour name"));
+	this->hoursOfTheDay.append(QString::number(1));
+	this->hoursOfTheDay.append(QString::number(2));
+	this->hoursOfTheDay.append(QString::number(3));
+	this->hoursOfTheDay.append(QString::number(4));
+	this->hoursOfTheDay.append(QString::number(5));
+	this->hoursOfTheDay.append(QString::number(6));
+	this->hoursOfTheDay.append(QString::number(7));
+	this->hoursOfTheDay.append(QString::number(8));
+	this->hoursOfTheDay.append(QString::number(9));
+	this->hoursOfTheDay.append(QString::number(10));
+	this->hoursOfTheDay.append(QString::number(11));
+	this->hoursOfTheDay.append(QString::number(12));
 
 	this->nRealHoursPerDay=24;
 	this->realHoursOfTheDay.clear();
-	this->realHoursOfTheDay.append(tr("08:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
-	this->realHoursOfTheDay.append(tr("09:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
-	this->realHoursOfTheDay.append(tr("10:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
-	this->realHoursOfTheDay.append(tr("11:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
-	this->realHoursOfTheDay.append(tr("12:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
-	this->realHoursOfTheDay.append(tr("13:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
-	this->realHoursOfTheDay.append(tr("14:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
-	this->realHoursOfTheDay.append(tr("15:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
-	this->realHoursOfTheDay.append(tr("16:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
-	this->realHoursOfTheDay.append(tr("17:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
-	this->realHoursOfTheDay.append(tr("18:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
-	this->realHoursOfTheDay.append(tr("19:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
-	this->realHoursOfTheDay.append(tr("08:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
-	this->realHoursOfTheDay.append(tr("09:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
-	this->realHoursOfTheDay.append(tr("10:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
-	this->realHoursOfTheDay.append(tr("11:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
-	this->realHoursOfTheDay.append(tr("12:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
-	this->realHoursOfTheDay.append(tr("13:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
-	this->realHoursOfTheDay.append(tr("14:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
-	this->realHoursOfTheDay.append(tr("15:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
-	this->realHoursOfTheDay.append(tr("16:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
-	this->realHoursOfTheDay.append(tr("17:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
-	this->realHoursOfTheDay.append(tr("18:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
-	this->realHoursOfTheDay.append(tr("19:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+	this->realHoursOfTheDay.append(QString::number(1));
+	this->realHoursOfTheDay.append(QString::number(2));
+	this->realHoursOfTheDay.append(QString::number(3));
+	this->realHoursOfTheDay.append(QString::number(4));
+	this->realHoursOfTheDay.append(QString::number(5));
+	this->realHoursOfTheDay.append(QString::number(6));
+	this->realHoursOfTheDay.append(QString::number(7));
+	this->realHoursOfTheDay.append(QString::number(8));
+	this->realHoursOfTheDay.append(QString::number(9));
+	this->realHoursOfTheDay.append(QString::number(10));
+	this->realHoursOfTheDay.append(QString::number(11));
+	this->realHoursOfTheDay.append(QString::number(12));
+	this->realHoursOfTheDay.append(QString::number(13));
+	this->realHoursOfTheDay.append(QString::number(14));
+	this->realHoursOfTheDay.append(QString::number(15));
+	this->realHoursOfTheDay.append(QString::number(16));
+	this->realHoursOfTheDay.append(QString::number(17));
+	this->realHoursOfTheDay.append(QString::number(18));
+	this->realHoursOfTheDay.append(QString::number(19));
+	this->realHoursOfTheDay.append(QString::number(20));
+	this->realHoursOfTheDay.append(QString::number(21));
+	this->realHoursOfTheDay.append(QString::number(22));
+	this->realHoursOfTheDay.append(QString::number(23));
+	this->realHoursOfTheDay.append(QString::number(24));
+
+	this->daysOfTheWeek_longNames.clear();
+	this->daysOfTheWeek_longNames.append(tr("Monday"));
+	this->daysOfTheWeek_longNames.append(tr("Tuesday"));
+	this->daysOfTheWeek_longNames.append(tr("Wednesday"));
+	this->daysOfTheWeek_longNames.append(tr("Thursday"));
+	this->daysOfTheWeek_longNames.append(tr("Friday"));
+	
+	this->realDaysOfTheWeek_longNames.clear();
+	this->realDaysOfTheWeek_longNames.append(tr("Monday"));
+	this->realDaysOfTheWeek_longNames.append(tr("Tuesday"));
+	
+	this->hoursOfTheDay_longNames.clear();
+	this->hoursOfTheDay_longNames.append(tr("08:00", "Hour name"));
+	this->hoursOfTheDay_longNames.append(tr("09:00", "Hour name"));
+	this->hoursOfTheDay_longNames.append(tr("10:00", "Hour name"));
+	this->hoursOfTheDay_longNames.append(tr("11:00", "Hour name"));
+	this->hoursOfTheDay_longNames.append(tr("12:00", "Hour name"));
+	this->hoursOfTheDay_longNames.append(tr("13:00", "Hour name"));
+	this->hoursOfTheDay_longNames.append(tr("14:00", "Hour name"));
+	this->hoursOfTheDay_longNames.append(tr("15:00", "Hour name"));
+	this->hoursOfTheDay_longNames.append(tr("16:00", "Hour name"));
+	this->hoursOfTheDay_longNames.append(tr("17:00", "Hour name"));
+	this->hoursOfTheDay_longNames.append(tr("18:00", "Hour name"));
+	this->hoursOfTheDay_longNames.append(tr("19:00", "Hour name"));
+
+	this->realHoursOfTheDay_longNames.clear();
+	this->realHoursOfTheDay_longNames.append(tr("08:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+	this->realHoursOfTheDay_longNames.append(tr("09:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+	this->realHoursOfTheDay_longNames.append(tr("10:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+	this->realHoursOfTheDay_longNames.append(tr("11:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+	this->realHoursOfTheDay_longNames.append(tr("12:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+	this->realHoursOfTheDay_longNames.append(tr("13:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+	this->realHoursOfTheDay_longNames.append(tr("14:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+	this->realHoursOfTheDay_longNames.append(tr("15:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+	this->realHoursOfTheDay_longNames.append(tr("16:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+	this->realHoursOfTheDay_longNames.append(tr("17:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+	this->realHoursOfTheDay_longNames.append(tr("18:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+	this->realHoursOfTheDay_longNames.append(tr("19:00", "Hour name")+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+	this->realHoursOfTheDay_longNames.append(tr("08:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+	this->realHoursOfTheDay_longNames.append(tr("09:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+	this->realHoursOfTheDay_longNames.append(tr("10:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+	this->realHoursOfTheDay_longNames.append(tr("11:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+	this->realHoursOfTheDay_longNames.append(tr("12:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+	this->realHoursOfTheDay_longNames.append(tr("13:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+	this->realHoursOfTheDay_longNames.append(tr("14:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+	this->realHoursOfTheDay_longNames.append(tr("15:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+	this->realHoursOfTheDay_longNames.append(tr("16:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+	this->realHoursOfTheDay_longNames.append(tr("17:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+	this->realHoursOfTheDay_longNames.append(tr("18:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+	this->realHoursOfTheDay_longNames.append(tr("19:00", "Hour name")+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
 
 	permanentStudentsHash.clear();
 	
@@ -5362,11 +5433,15 @@ bool Rules::computeInternalStructure(QWidget* parent)
 	for(StudentsYear* y : std::as_const(yearsList)){
 		StudentsYear* ay=new StudentsYear();
 		ay->name=y->name;
+		ay->longName=y->longName;
+		ay->code=y->code;
 		ay->numberOfStudents=y->numberOfStudents;
 		
 		//2020-09-04 - this is not really important
 		ay->divisions=y->divisions;
 		ay->separator=y->separator;
+		
+		ay->comments=y->comments;
 		
 		ay->groupsList.clear();
 		augmentedYearsList << ay;
@@ -5383,7 +5458,12 @@ bool Rules::computeInternalStructure(QWidget* parent)
 			else{
 				StudentsGroup* ag=new StudentsGroup();
 				ag->name=g->name;
+				ag->longName=g->longName;
+				ag->code=g->code;
 				ag->numberOfStudents=g->numberOfStudents;
+				
+				ag->comments=g->comments;
+				
 				ag->subgroupsList.clear();
 				ay->groupsList << ag;
 				
@@ -5399,7 +5479,12 @@ bool Rules::computeInternalStructure(QWidget* parent)
 					else{
 						StudentsSubgroup* as=new StudentsSubgroup();
 						as->name=s->name;
+						as->longName=s->longName;
+						as->code=s->code;
 						as->numberOfStudents=s->numberOfStudents;
+						
+						as->comments=s->comments;
+						
 						ag->subgroupsList << as;
 						
 						assert(!augmentedHash.contains(as->name));
@@ -5420,6 +5505,12 @@ bool Rules::computeInternalStructure(QWidget* parent)
 			tmpGroup->name = sty->name+" "+tr("Automatic Group", "Please keep the translation short. It is used when a year contains no groups and an automatic group "
 			 "is added in the year, in the timetable (when viewing the students timetable from FET and also in the HTML timetables for students groups or subgroups)"
 			 ". In the empty year there will be added a group with name = yearName+a space character+your translation of 'Automatic Group'.");
+			tmpGroup->longName = sty->longName+" "+tr("Automatic Group", "Please keep the translation short. It is used when a year contains no groups and an automatic group "
+			 "is added in the year, in the timetable (when viewing the students timetable from FET and also in the HTML timetables for students groups or subgroups)"
+			 ". In the empty year there will be added a group with name = yearName+a space character+your translation of 'Automatic Group'.");
+			tmpGroup->code = sty->code+" "+tr("Automatic Group", "Please keep the translation short. It is used when a year contains no groups and an automatic group "
+			 "is added in the year, in the timetable (when viewing the students timetable from FET and also in the HTML timetables for students groups or subgroups)"
+			 ". In the empty year there will be added a group with name = yearName+a space character+your translation of 'Automatic Group'.");
 			tmpGroup->numberOfStudents = sty->numberOfStudents;
 			sty->groupsList << tmpGroup;
 		}
@@ -5431,6 +5522,12 @@ bool Rules::computeInternalStructure(QWidget* parent)
 			if(stg->subgroupsList.size()==0){
 				StudentsSubgroup* tmpSubgroup = new StudentsSubgroup();
 				tmpSubgroup->name = stg->name+" "+tr("Automatic Subgroup", "Please keep the translation short. It is used when a group contains no subgroups and an automatic subgroup "
+				 "is added in the group, in the timetable (when viewing the students timetable from FET and also in the HTML timetables for students subgroups)"
+				 ". In the empty group there will be added a subgroup with name = groupName+a space character+your translation of 'Automatic Subgroup'.");
+				tmpSubgroup->longName = stg->longName+" "+tr("Automatic Subgroup", "Please keep the translation short. It is used when a group contains no subgroups and an automatic subgroup "
+				 "is added in the group, in the timetable (when viewing the students timetable from FET and also in the HTML timetables for students subgroups)"
+				 ". In the empty group there will be added a subgroup with name = groupName+a space character+your translation of 'Automatic Subgroup'.");
+				tmpSubgroup->code = stg->code+" "+tr("Automatic Subgroup", "Please keep the translation short. It is used when a group contains no subgroups and an automatic subgroup "
 				 "is added in the group, in the timetable (when viewing the students timetable from FET and also in the HTML timetables for students subgroups)"
 				 ". In the empty group there will be added a subgroup with name = groupName+a space character+your translation of 'Automatic Subgroup'.");
 				tmpSubgroup->numberOfStudents=stg->numberOfStudents;
@@ -6241,9 +6338,11 @@ void Rules::setMode(int newMode)
 		//just to free this memory
 		this->nRealDaysPerWeek=0;
 		this->realDaysOfTheWeek.clear();
+		this->realDaysOfTheWeek_longNames.clear();
 		
 		this->nRealHoursPerDay=0;
 		this->realHoursOfTheDay.clear();
+		this->realHoursOfTheDay_longNames.clear();
 		//
 		
 		for(Teacher* tch : std::as_const(teachersList))
@@ -6252,15 +6351,23 @@ void Rules::setMode(int newMode)
 	else if(newMode==MORNINGS_AFTERNOONS){
 		this->nRealDaysPerWeek=this->nDaysPerWeek/2;
 		this->realDaysOfTheWeek.clear();
-		for(int rd=0; rd<this->nRealDaysPerWeek; rd++)
+		this->realDaysOfTheWeek_longNames.clear();
+		for(int rd=0; rd<this->nRealDaysPerWeek; rd++){
 			this->realDaysOfTheWeek.append(this->daysOfTheWeek.at(2*rd));
+			this->realDaysOfTheWeek_longNames.append(this->daysOfTheWeek_longNames.at(2*rd));
+		}
 		
 		this->nRealHoursPerDay=2*this->nHoursPerDay;
 		this->realHoursOfTheDay.clear();
-		for(int h=0; h<this->nHoursPerDay; h++)
-			this->realHoursOfTheDay.append(this->hoursOfTheDay.at(h)+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
-		for(int h=0; h<this->nHoursPerDay; h++)
-			this->realHoursOfTheDay.append(this->hoursOfTheDay.at(h)+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+		this->realHoursOfTheDay_longNames.clear();
+		for(int h=0; h<this->nHoursPerDay; h++){
+			this->realHoursOfTheDay.append(QString::number(h+1));
+			this->realHoursOfTheDay_longNames.append(this->hoursOfTheDay_longNames.at(h)+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
+		}
+		for(int h=0; h<this->nHoursPerDay; h++){
+			this->realHoursOfTheDay.append(QString::number(this->nHoursPerDay+h+1));
+			this->realHoursOfTheDay_longNames.append(this->hoursOfTheDay_longNames.at(h)+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+		}
 		
 		for(Teacher* tch : std::as_const(teachersList))
 			if(tch->morningsAfternoonsBehavior==TEACHER_MORNINGS_AFTERNOONS_BEHAVIOR_NOT_INITIALIZED)
@@ -13351,31 +13458,56 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 
 	this->nDaysPerWeek=5;
 	this->daysOfTheWeek.clear();
-	this->daysOfTheWeek.append(tr("Monday"));
-	this->daysOfTheWeek.append(tr("Tuesday"));
-	this->daysOfTheWeek.append(tr("Wednesday"));
-	this->daysOfTheWeek.append(tr("Thursday"));
-	this->daysOfTheWeek.append(tr("Friday"));
+	this->daysOfTheWeek.append(tr("Mo", "Abbreviation for Monday"));
+	this->daysOfTheWeek.append(tr("Tu", "Abbreviation for Tuesday"));
+	this->daysOfTheWeek.append(tr("We", "Abbreviation for Wednesday"));
+	this->daysOfTheWeek.append(tr("Th", "Abbreviation for Thursday"));
+	this->daysOfTheWeek.append(tr("Fr", "Abbreviation for Friday"));
 	
 	this->nRealDaysPerWeek=-1;
 	this->realDaysOfTheWeek.clear();
 
 	this->nHoursPerDay=12;
 	this->hoursOfTheDay.clear();
-	this->hoursOfTheDay.append(tr("08:00", "Hour name"));
-	this->hoursOfTheDay.append(tr("09:00", "Hour name"));
-	this->hoursOfTheDay.append(tr("10:00", "Hour name"));
-	this->hoursOfTheDay.append(tr("11:00", "Hour name"));
-	this->hoursOfTheDay.append(tr("12:00", "Hour name"));
-	this->hoursOfTheDay.append(tr("13:00", "Hour name"));
-	this->hoursOfTheDay.append(tr("14:00", "Hour name"));
-	this->hoursOfTheDay.append(tr("15:00", "Hour name"));
-	this->hoursOfTheDay.append(tr("16:00", "Hour name"));
-	this->hoursOfTheDay.append(tr("17:00", "Hour name"));
-	this->hoursOfTheDay.append(tr("18:00", "Hour name"));
-	this->hoursOfTheDay.append(tr("19:00", "Hour name"));
+	this->hoursOfTheDay.append(QString::number(1));
+	this->hoursOfTheDay.append(QString::number(2));
+	this->hoursOfTheDay.append(QString::number(3));
+	this->hoursOfTheDay.append(QString::number(4));
+	this->hoursOfTheDay.append(QString::number(5));
+	this->hoursOfTheDay.append(QString::number(6));
+	this->hoursOfTheDay.append(QString::number(7));
+	this->hoursOfTheDay.append(QString::number(8));
+	this->hoursOfTheDay.append(QString::number(9));
+	this->hoursOfTheDay.append(QString::number(10));
+	this->hoursOfTheDay.append(QString::number(11));
+	this->hoursOfTheDay.append(QString::number(12));
 
 	this->nRealHoursPerDay=-1;
+	this->realHoursOfTheDay.clear();
+
+	this->daysOfTheWeek_longNames.clear();
+	this->daysOfTheWeek_longNames.append(tr("Monday"));
+	this->daysOfTheWeek_longNames.append(tr("Tuesday"));
+	this->daysOfTheWeek_longNames.append(tr("Wednesday"));
+	this->daysOfTheWeek_longNames.append(tr("Thursday"));
+	this->daysOfTheWeek_longNames.append(tr("Friday"));
+	
+	this->realDaysOfTheWeek_longNames.clear();
+	
+	this->hoursOfTheDay_longNames.clear();
+	this->hoursOfTheDay_longNames.append(tr("08:00", "Hour name"));
+	this->hoursOfTheDay_longNames.append(tr("09:00", "Hour name"));
+	this->hoursOfTheDay_longNames.append(tr("10:00", "Hour name"));
+	this->hoursOfTheDay_longNames.append(tr("11:00", "Hour name"));
+	this->hoursOfTheDay_longNames.append(tr("12:00", "Hour name"));
+	this->hoursOfTheDay_longNames.append(tr("13:00", "Hour name"));
+	this->hoursOfTheDay_longNames.append(tr("14:00", "Hour name"));
+	this->hoursOfTheDay_longNames.append(tr("15:00", "Hour name"));
+	this->hoursOfTheDay_longNames.append(tr("16:00", "Hour name"));
+	this->hoursOfTheDay_longNames.append(tr("17:00", "Hour name"));
+	this->hoursOfTheDay_longNames.append(tr("18:00", "Hour name"));
+	this->hoursOfTheDay_longNames.append(tr("19:00", "Hour name"));
+
 	this->realHoursOfTheDay.clear();
 	
 	bool skipDeprecatedConstraints=false;
@@ -13446,10 +13578,14 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 		}
 		else if(xmlReader.name()==QString("Days_List")){
 			this->daysOfTheWeek.clear();
+			this->daysOfTheWeek_longNames.clear();
 			int tmp=0;
+			int tmp_longNames=0;
 			bool numberWasFound=false;
 			assert(xmlReader.isStartElement());
-			QString numberString="Number_of_Days", dayString="Name";
+			QString numberString="Number_of_Days";
+			QString dayString="Name";
+			QString dayString_longNames="Long_Name";
 			while(xmlReader.readNextStartElement()){
 				xmlReadingLog+="   Found "+xmlReader.name().toString()+" tag\n";
 				if(xmlReader.name()==QString("Number") || xmlReader.name()==QString("Number_of_Days") ){
@@ -13505,6 +13641,20 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 								tmp++;
 							}
 						}
+						else if(xmlReader.name()==QString("Long_Name")){
+							dayString_longNames=xmlReader.name().toString();
+							if(tmp_longNames>=MAX_DAYS_PER_WEEK){
+								xmlReader.raiseError(tr("Too many %1 items. Maximum allowed is %2.").arg(dayString_longNames).arg(MAX_DAYS_PER_WEEK));
+								xmlReader.skipCurrentElement();
+							}
+							else{
+								QString text=xmlReader.readElementText();
+								this->daysOfTheWeek_longNames.append(text);
+								//this->daysOfTheWeek[tmp]=text;
+								xmlReadingLog+="   Found day long name "+this->daysOfTheWeek_longNames[tmp_longNames]+"\n";
+								tmp_longNames++;
+							}
+						}
 						else{
 							unrecognizedXmlTags.append(xmlReader.name().toString());
 							unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
@@ -13529,21 +13679,39 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 					xmlReader.raiseError(tr("%1 not found").arg(numberString));
 				}
 				else{
-					if(!(tmp==nDaysPerWeek))
+					if(!(tmp==nDaysPerWeek)){
 						xmlReader.raiseError(tr("%1: %2 and the number of %3 read do not correspond", "%1 is an XML string, %2 is the specified number of days,"
 						 " %3 is the number of actually read days.")
 						 .arg("Days_List").arg(numberString).arg(dayString));
-					else
+					}
+					else if(tmp_longNames>0 && !(tmp_longNames==nDaysPerWeek)){
+						xmlReader.raiseError(tr("%1: %2 and the number of %3 read do not correspond", "%1 is an XML string, %2 is the specified number of days,"
+						 " %3 is the number of actually read days long names.")
+						 .arg("Days_List").arg(numberString).arg(dayString_longNames));
+					}
+					else{
+						if(tmp_longNames==0){
+							tmp_longNames=nDaysPerWeek;
+							for(int i=0; i<tmp_longNames; i++)
+								this->daysOfTheWeek_longNames.append(QString(""));
+						}
+						
 						assert(tmp==this->nDaysPerWeek);
+						assert(tmp_longNames==this->nDaysPerWeek);
+					}
 				}
 			}
 		}
 		else if(xmlReader.name()==QString("Real_Days_List")){
 			this->realDaysOfTheWeek.clear();
+			this->realDaysOfTheWeek_longNames.clear();
 			int tmp=0;
+			int tmp_longNames=0;
 			bool numberWasFound=false;
 			assert(xmlReader.isStartElement());
-			QString numberString="Number_of_Real_Days", realDayString="Name";
+			QString numberString="Number_of_Real_Days";
+			QString realDayString="Name";
+			QString realDayString_longNames="Long_Name";
 			while(xmlReader.readNextStartElement()){
 				xmlReadingLog+="   Found "+xmlReader.name().toString()+" tag\n";
 				if(xmlReader.name()==QString("Number") || xmlReader.name()==QString("Number_of_Real_Days") ){
@@ -13599,6 +13767,20 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 								tmp++;
 							}
 						}
+						else if(xmlReader.name()==QString("Long_Name")){
+							realDayString_longNames=xmlReader.name().toString();
+							if(tmp>=MAX_DAYS_PER_WEEK/2){
+								xmlReader.raiseError(tr("Too many %1 items. Maximum allowed is %2.").arg(realDayString_longNames).arg(MAX_DAYS_PER_WEEK/2));
+								xmlReader.skipCurrentElement();
+							}
+							else{
+								QString text=xmlReader.readElementText();
+								this->realDaysOfTheWeek_longNames.append(text);
+								//this->daysOfTheWeek[tmp]=text;
+								xmlReadingLog+="   Found real day long name"+this->realDaysOfTheWeek_longNames[tmp_longNames]+"\n";
+								tmp_longNames++;
+							}
+						}
 						else{
 							unrecognizedXmlTags.append(xmlReader.name().toString());
 							unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
@@ -13623,21 +13805,39 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 					xmlReader.raiseError(tr("%1 not found").arg(numberString));
 				}
 				else{
-					if(!(tmp==nRealDaysPerWeek))
+					if(!(tmp==nRealDaysPerWeek)){
 						xmlReader.raiseError(tr("%1: %2 and the number of %3 read do not correspond", "%1 is an XML string, %2 is the specified number of real days,"
 						 " %3 is the number of actually read real days.")
 						 .arg("Real_Days_List").arg(numberString).arg(realDayString));
-					else
+					}
+					else if(tmp_longNames>0 && !(tmp_longNames==nRealDaysPerWeek)){
+						xmlReader.raiseError(tr("%1: %2 and the number of %3 read do not correspond", "%1 is an XML string, %2 is the specified number of real days,"
+						 " %3 is the number of actually read real days long names.")
+						 .arg("Real_Days_List").arg(numberString).arg(realDayString_longNames));
+					}
+					else{
+						if(tmp_longNames==0){
+							tmp_longNames=nRealDaysPerWeek;
+							for(int i=0; i<tmp_longNames; i++)
+								this->realDaysOfTheWeek_longNames.append(QString(""));
+						}
+
 						assert(tmp==this->nRealDaysPerWeek);
+						assert(tmp_longNames==this->nRealDaysPerWeek);
+					}
 				}
 			}
 		}
 		else if(xmlReader.name()==QString("Hours_List")){
 			this->hoursOfTheDay.clear();
+			this->hoursOfTheDay_longNames.clear();
 			int tmp=0;
+			int tmp_longNames=0;
 			bool numberWasFound=false;
 			assert(xmlReader.isStartElement());
-			QString numberString="Number_of_Hours", hourString="Name";
+			QString numberString="Number_of_Hours";
+			QString hourString="Name";
+			QString hourString_longNames="Long_Name";
 			while(xmlReader.readNextStartElement()){
 				xmlReadingLog+="   Found "+xmlReader.name().toString()+" tag\n";
 				if(xmlReader.name()==QString("Number") || xmlReader.name()==QString("Number_of_Hours")){
@@ -13693,6 +13893,20 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 								tmp++;
 							}
 						}
+						else if(xmlReader.name()==QString("Long_Name")){
+							hourString_longNames=xmlReader.name().toString();
+							if(tmp_longNames>=MAX_HOURS_PER_DAY){
+								xmlReader.raiseError(tr("Too many %1 items. Maximum allowed is %2.").arg(hourString_longNames).arg(MAX_HOURS_PER_DAY));
+								xmlReader.skipCurrentElement();
+							}
+							else{
+								QString text=xmlReader.readElementText();
+								//this->hoursOfTheDay[tmp]=text;
+								this->hoursOfTheDay_longNames.append(text);
+								xmlReadingLog+="    Found hour long name "+this->hoursOfTheDay_longNames[tmp_longNames]+"\n";
+								tmp_longNames++;
+							}
+						}
 						else{
 							unrecognizedXmlTags.append(xmlReader.name().toString());
 							unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
@@ -13723,27 +13937,49 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 							xmlReader.raiseError(tr("%1: %2 and the number of %3 read do not correspond", "%1 is an XML string, %2 is the specified number of hours,"
 							 " %3 is the number of actually read hours.")
 							 .arg("Hours_List").arg(numberString).arg(hourString));
-						else
+						else{
 							assert(tmp==nHoursPerDay || tmp==nHoursPerDay+1);
+
+							for(int i=0; i<nHoursPerDay; i++)
+								this->hoursOfTheDay_longNames.append(QString(""));
+						}
 					}
 					else{
 						assert(numberString=="Number_of_Hours");
-						if(!(tmp==nHoursPerDay))
+						if(!(tmp==nHoursPerDay)){
 							xmlReader.raiseError(tr("%1: %2 and the number of %3 read do not correspond", "%1 is an XML string, %2 is the specified number of hours,"
 							 " %3 is the number of actually read hours.")
 							 .arg("Hours_List").arg(numberString).arg(hourString));
-						else
+						}
+						else if(tmp_longNames>0 && !(tmp_longNames==nHoursPerDay)){
+							xmlReader.raiseError(tr("%1: %2 and the number of %3 read do not correspond", "%1 is an XML string, %2 is the specified number of hours,"
+							 " %3 is the number of actually read hours long names.")
+							 .arg("Hours_List").arg(numberString).arg(hourString_longNames));
+						}
+						else{
+							if(tmp_longNames==0){
+								tmp_longNames=nHoursPerDay;
+								for(int i=0; i<tmp_longNames; i++)
+									this->hoursOfTheDay_longNames.append(QString(""));
+							}
+
 							assert(tmp==nHoursPerDay);
+							assert(tmp_longNames==nHoursPerDay);
+						}
 					}
 				}
 			}
 		}
 		else if(xmlReader.name()==QString("Real_Hours_List")){
 			this->realHoursOfTheDay.clear();
+			this->realHoursOfTheDay_longNames.clear();
 			int tmp=0;
+			int tmp_longNames=0;
 			bool numberWasFound=false;
 			assert(xmlReader.isStartElement());
-			QString numberString="Number_of_Real_Hours", realHourString="Name";
+			QString numberString="Number_of_Real_Hours";
+			QString realHourString="Name";
+			QString realHourString_longNames="Long_Name";
 			while(xmlReader.readNextStartElement()){
 				xmlReadingLog+="   Found "+xmlReader.name().toString()+" tag\n";
 				if(xmlReader.name()==QString("Number") || xmlReader.name()==QString("Number_of_Real_Hours")){
@@ -13799,6 +14035,20 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 								tmp++;
 							}
 						}
+						else if(xmlReader.name()==QString("Long_Name")){
+							realHourString_longNames=xmlReader.name().toString();
+							if(tmp>=2*MAX_HOURS_PER_DAY){
+								xmlReader.raiseError(tr("Too many %1 items. Maximum allowed is %2.").arg(realHourString_longNames).arg(2*MAX_HOURS_PER_DAY));
+								xmlReader.skipCurrentElement();
+							}
+							else{
+								QString text=xmlReader.readElementText();
+								//this->hoursOfTheDay[tmp]=text;
+								this->realHoursOfTheDay_longNames.append(text);
+								xmlReadingLog+="    Found real hour long name"+this->realHoursOfTheDay_longNames[tmp_longNames]+"\n";
+								tmp_longNames++;
+							}
+						}
 						else{
 							unrecognizedXmlTags.append(xmlReader.name().toString());
 							unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
@@ -13848,13 +14098,247 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 					xmlReader.raiseError(tr("%1 not found").arg(numberString));
 				}
 				else{
-					if(!(tmp==nRealHoursPerDay))
+					if(!(tmp==nRealHoursPerDay)){
 						xmlReader.raiseError(tr("%1: %2 and the number of %3 read do not correspond", "%1 is an XML string, %2 is the specified number of real hours,"
 						 " %3 is the number of actually read real hours.")
 						 .arg("Real_Hours_List").arg(numberString).arg(realHourString));
-					else
+					}
+					else if(tmp_longNames>0 && !(tmp_longNames==nRealHoursPerDay)){
+						xmlReader.raiseError(tr("%1: %2 and the number of %3 read do not correspond", "%1 is an XML string, %2 is the specified number of real hours,"
+						 " %3 is the number of actually read real hours long names.")
+						 .arg("Real_Hours_List").arg(numberString).arg(realHourString_longNames));
+					}
+					else{
+						if(tmp_longNames==0){
+							tmp_longNames=nRealHoursPerDay;
+							for(int i=0; i<tmp_longNames; i++)
+								this->realHoursOfTheDay_longNames.append(QString(""));
+						}
+
 						assert(tmp==this->nRealHoursPerDay);
+						assert(tmp_longNames==this->nRealHoursPerDay);
+					}
 				}
+			}
+		}
+		else if(xmlReader.name()==QString("Subjects_List")){
+			QSet<QString> subjectsRead;
+		
+			int tmp=0;
+			assert(xmlReader.isStartElement());
+			while(xmlReader.readNextStartElement()){
+				xmlReadingLog+="   Found "+xmlReader.name().toString()+" tag\n";
+				if(xmlReader.name()==QString("Subject")){
+					Subject* subject=new Subject();
+					assert(xmlReader.isStartElement());
+					while(xmlReader.readNextStartElement()){
+						xmlReadingLog+="   Found "+xmlReader.name().toString()+" tag\n";
+						if(xmlReader.name()==QString("Name")){
+							QString text=xmlReader.readElementText();
+							subject->name=text;
+							xmlReadingLog+="    Read subject name: "+subject->name+"\n";
+						}
+						else if(xmlReader.name()==QString("Long_Name")){
+							QString text=xmlReader.readElementText();
+							subject->longName=text;
+							xmlReadingLog+="    Read subject long name: "+subject->longName+"\n";
+						}
+						else if(xmlReader.name()==QString("Code")){
+							QString text=xmlReader.readElementText();
+							subject->code=text;
+							xmlReadingLog+="    Read subject code: "+subject->code+"\n";
+						}
+						else if(xmlReader.name()==QString("Comments")){
+							QString text=xmlReader.readElementText();
+							subject->comments=text;
+							xmlReadingLog+="    Crt. subject comments="+subject->comments+"\n";
+						}
+						else{
+							unrecognizedXmlTags.append(xmlReader.name().toString());
+							unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+							unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+							xmlReader.skipCurrentElement();
+							xmlReaderNumberOfUnrecognizedFields++;
+						}
+					}
+					bool tmp2=subjectsRead.contains(subject->name);
+					if(tmp2){
+						RulesReconcilableMessage::warning(parent, tr("FET warning"),
+						 tr("Duplicate subject %1 found - ignoring").arg(subject->name));
+						xmlReadingLog+="   Subject not added - duplicate\n";
+						
+						delete subject;
+					}
+					else{
+						subjectsRead.insert(subject->name);
+						this->addSubjectFast(subject);
+						tmp++;
+						xmlReadingLog+="   Subject inserted\n";
+					}
+				}
+				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+					xmlReader.skipCurrentElement();
+					xmlReaderNumberOfUnrecognizedFields++;
+				}
+			}
+			if(!(tmp==this->subjectsList.size()))
+				xmlReader.raiseError(tr("%1 is incorrect").arg("Subjects_List"));
+			else{
+				assert(tmp==this->subjectsList.size());
+				xmlReadingLog+="  Added "+CustomFETString::number(tmp)+" subjects\n";
+				reducedXmlLog+="Added "+CustomFETString::number(tmp)+" subjects\n";
+			}
+		}
+		else if(xmlReader.name()==QString("Subject_Tags_List")){
+			QSet<QString> activityTagsRead;
+		
+			RulesReconcilableMessage::information(parent, tr("FET information"), tr("Your file contains subject tags list"
+			  ", which is named in versions>=5.5.0 activity tags list"));
+		
+			int tmp=0;
+			assert(xmlReader.isStartElement());
+			while(xmlReader.readNextStartElement()){
+				xmlReadingLog+="   Found "+xmlReader.name().toString()+" tag\n";
+				if(xmlReader.name()==QString("Subject_Tag")){
+					ActivityTag* activityTag=new ActivityTag();
+					assert(xmlReader.isStartElement());
+					while(xmlReader.readNextStartElement()){
+						xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+						if(xmlReader.name()==QString("Name")){
+							QString text=xmlReader.readElementText();
+							activityTag->name=text;
+							xmlReadingLog+="    Read activity tag name: "+activityTag->name+"\n";
+						}
+						else if(xmlReader.name()==QString("Comments")){
+							QString text=xmlReader.readElementText();
+							activityTag->comments=text;
+							xmlReadingLog+="    Crt. activity tag comments="+activityTag->comments+"\n";
+						}
+						else{
+							unrecognizedXmlTags.append(xmlReader.name().toString());
+							unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+							unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+							xmlReader.skipCurrentElement();
+							xmlReaderNumberOfUnrecognizedFields++;
+						}
+					}
+					bool tmp2=activityTagsRead.contains(activityTag->name);
+					if(tmp2){
+						RulesReconcilableMessage::warning(parent, tr("FET warning"),
+						 tr("Duplicate activity tag %1 found - ignoring").arg(activityTag->name));
+						xmlReadingLog+="   Activity tag not added - duplicate\n";
+						
+						delete activityTag;
+					}
+					else{
+						activityTagsRead.insert(activityTag->name);
+						addActivityTagFast(activityTag);
+						tmp++;
+						xmlReadingLog+="   Activity tag inserted\n";
+					}
+				}
+				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+					xmlReader.skipCurrentElement();
+					xmlReaderNumberOfUnrecognizedFields++;
+				}
+			}
+			if(!(tmp==this->activityTagsList.size()))
+				xmlReader.raiseError(tr("%1 is incorrect").arg("Subject_Tags_List"));
+			else{
+				assert(tmp==this->activityTagsList.size());
+				xmlReadingLog+="  Added "+CustomFETString::number(tmp)+" activity tags\n";
+				reducedXmlLog+="Added "+CustomFETString::number(tmp)+" activity tags\n";
+			}
+		}
+		else if(xmlReader.name()==QString("Activity_Tags_List")){
+			QSet<QString> activityTagsRead;
+		
+			int tmp=0;
+			assert(xmlReader.isStartElement());
+			while(xmlReader.readNextStartElement()){
+				xmlReadingLog+="   Found "+xmlReader.name().toString()+" tag\n";
+				if(xmlReader.name()==QString("Activity_Tag")){
+					ActivityTag* activityTag=new ActivityTag();
+					assert(xmlReader.isStartElement());
+					while(xmlReader.readNextStartElement()){
+						xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+						if(xmlReader.name()==QString("Name")){
+							QString text=xmlReader.readElementText();
+							activityTag->name=text;
+							xmlReadingLog+="    Read activity tag name: "+activityTag->name+"\n";
+						}
+						else if(xmlReader.name()==QString("Long_Name")){
+							QString text=xmlReader.readElementText();
+							activityTag->longName=text;
+							xmlReadingLog+="    Read activity tag long name: "+activityTag->longName+"\n";
+						}
+						else if(xmlReader.name()==QString("Code")){
+							QString text=xmlReader.readElementText();
+							activityTag->code=text;
+							xmlReadingLog+="    Read activity tag code: "+activityTag->code+"\n";
+						}
+						else if(xmlReader.name()==QString("Printable")){
+							QString text=xmlReader.readElementText();
+							if(text=="true")
+								activityTag->printable=true;
+							else
+								activityTag->printable=false;
+							xmlReadingLog+="    Read activity tag printable="+text+"\n";
+						}
+						else if(xmlReader.name()==QString("Comments")){
+							QString text=xmlReader.readElementText();
+							activityTag->comments=text;
+							xmlReadingLog+="    Crt. activity tag comments="+activityTag->comments+"\n";
+						}
+						else{
+							unrecognizedXmlTags.append(xmlReader.name().toString());
+							unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+							unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+							xmlReader.skipCurrentElement();
+							xmlReaderNumberOfUnrecognizedFields++;
+						}
+					}
+					bool tmp2=activityTagsRead.contains(activityTag->name);
+					if(tmp2){
+						RulesReconcilableMessage::warning(parent, tr("FET warning"),
+						 tr("Duplicate activity tag %1 found - ignoring").arg(activityTag->name));
+						xmlReadingLog+="   Activity tag not added - duplicate\n";
+						
+						delete activityTag;
+					}
+					else{
+						activityTagsRead.insert(activityTag->name);
+						addActivityTagFast(activityTag);
+						tmp++;
+						xmlReadingLog+="   Activity tag inserted\n";
+					}
+				}
+				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+					xmlReader.skipCurrentElement();
+					xmlReaderNumberOfUnrecognizedFields++;
+				}
+			}
+			if(!(tmp==this->activityTagsList.size()))
+				xmlReader.raiseError(tr("%1 is incorrect").arg("Activity_Tags_List"));
+			else{
+				assert(tmp==this->activityTagsList.size());
+				xmlReadingLog+="  Added "+CustomFETString::number(tmp)+" activity tags\n";
+				reducedXmlLog+="Added "+CustomFETString::number(tmp)+" activity tags\n";
 			}
 		}
 		else if(xmlReader.name()==QString("Teachers_List")){
@@ -13883,6 +14367,16 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 							QString text=xmlReader.readElementText();
 							teacher->name=text;
 							xmlReadingLog+="    Read teacher name: "+teacher->name+"\n";
+						}
+						else if(xmlReader.name()==QString("Long_Name")){
+							QString text=xmlReader.readElementText();
+							teacher->longName=text;
+							xmlReadingLog+="    Read teacher long name: "+teacher->longName+"\n";
+						}
+						else if(xmlReader.name()==QString("Code")){
+							QString text=xmlReader.readElementText();
+							teacher->code=text;
+							xmlReadingLog+="    Read teacher code: "+teacher->code+"\n";
 						}
 						else if(xmlReader.name()==QString("Mornings_Afternoons_Behavior")){
 							//it is best to allow to read the teacher mornings-afternoons behavior even if the mode is not Mornings-Afternoons
@@ -14260,206 +14754,6 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 			reducedXmlLog+="Added "+QString::number(tmp)+" exception 5 teachers\n";
 		}
 		//end 2021-03-20
-		else if(xmlReader.name()==QString("Subjects_List")){
-			QSet<QString> subjectsRead;
-		
-			int tmp=0;
-			assert(xmlReader.isStartElement());
-			while(xmlReader.readNextStartElement()){
-				xmlReadingLog+="   Found "+xmlReader.name().toString()+" tag\n";
-				if(xmlReader.name()==QString("Subject")){
-					Subject* subject=new Subject();
-					assert(xmlReader.isStartElement());
-					while(xmlReader.readNextStartElement()){
-						xmlReadingLog+="   Found "+xmlReader.name().toString()+" tag\n";
-						if(xmlReader.name()==QString("Name")){
-							QString text=xmlReader.readElementText();
-							subject->name=text;
-							xmlReadingLog+="    Read subject name: "+subject->name+"\n";
-						}
-						else if(xmlReader.name()==QString("Comments")){
-							QString text=xmlReader.readElementText();
-							subject->comments=text;
-							xmlReadingLog+="    Crt. subject comments="+subject->comments+"\n";
-						}
-						else{
-							unrecognizedXmlTags.append(xmlReader.name().toString());
-							unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
-							unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
-
-							xmlReader.skipCurrentElement();
-							xmlReaderNumberOfUnrecognizedFields++;
-						}
-					}
-					bool tmp2=subjectsRead.contains(subject->name);
-					if(tmp2){
-						RulesReconcilableMessage::warning(parent, tr("FET warning"),
-						 tr("Duplicate subject %1 found - ignoring").arg(subject->name));
-						xmlReadingLog+="   Subject not added - duplicate\n";
-						
-						delete subject;
-					}
-					else{
-						subjectsRead.insert(subject->name);
-						this->addSubjectFast(subject);
-						tmp++;
-						xmlReadingLog+="   Subject inserted\n";
-					}
-				}
-				else{
-					unrecognizedXmlTags.append(xmlReader.name().toString());
-					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
-					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
-
-					xmlReader.skipCurrentElement();
-					xmlReaderNumberOfUnrecognizedFields++;
-				}
-			}
-			if(!(tmp==this->subjectsList.size()))
-				xmlReader.raiseError(tr("%1 is incorrect").arg("Subjects_List"));
-			else{
-				assert(tmp==this->subjectsList.size());
-				xmlReadingLog+="  Added "+CustomFETString::number(tmp)+" subjects\n";
-				reducedXmlLog+="Added "+CustomFETString::number(tmp)+" subjects\n";
-			}
-		}
-		else if(xmlReader.name()==QString("Subject_Tags_List")){
-			QSet<QString> activityTagsRead;
-		
-			RulesReconcilableMessage::information(parent, tr("FET information"), tr("Your file contains subject tags list"
-			  ", which is named in versions>=5.5.0 activity tags list"));
-		
-			int tmp=0;
-			assert(xmlReader.isStartElement());
-			while(xmlReader.readNextStartElement()){
-				xmlReadingLog+="   Found "+xmlReader.name().toString()+" tag\n";
-				if(xmlReader.name()==QString("Subject_Tag")){
-					ActivityTag* activityTag=new ActivityTag();
-					assert(xmlReader.isStartElement());
-					while(xmlReader.readNextStartElement()){
-						xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
-						if(xmlReader.name()==QString("Name")){
-							QString text=xmlReader.readElementText();
-							activityTag->name=text;
-							xmlReadingLog+="    Read activity tag name: "+activityTag->name+"\n";
-						}
-						else if(xmlReader.name()==QString("Comments")){
-							QString text=xmlReader.readElementText();
-							activityTag->comments=text;
-							xmlReadingLog+="    Crt. activity tag comments="+activityTag->comments+"\n";
-						}
-						else{
-							unrecognizedXmlTags.append(xmlReader.name().toString());
-							unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
-							unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
-
-							xmlReader.skipCurrentElement();
-							xmlReaderNumberOfUnrecognizedFields++;
-						}
-					}
-					bool tmp2=activityTagsRead.contains(activityTag->name);
-					if(tmp2){
-						RulesReconcilableMessage::warning(parent, tr("FET warning"),
-						 tr("Duplicate activity tag %1 found - ignoring").arg(activityTag->name));
-						xmlReadingLog+="   Activity tag not added - duplicate\n";
-						
-						delete activityTag;
-					}
-					else{
-						activityTagsRead.insert(activityTag->name);
-						addActivityTagFast(activityTag);
-						tmp++;
-						xmlReadingLog+="   Activity tag inserted\n";
-					}
-				}
-				else{
-					unrecognizedXmlTags.append(xmlReader.name().toString());
-					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
-					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
-
-					xmlReader.skipCurrentElement();
-					xmlReaderNumberOfUnrecognizedFields++;
-				}
-			}
-			if(!(tmp==this->activityTagsList.size()))
-				xmlReader.raiseError(tr("%1 is incorrect").arg("Subject_Tags_List"));
-			else{
-				assert(tmp==this->activityTagsList.size());
-				xmlReadingLog+="  Added "+CustomFETString::number(tmp)+" activity tags\n";
-				reducedXmlLog+="Added "+CustomFETString::number(tmp)+" activity tags\n";
-			}
-		}
-		else if(xmlReader.name()==QString("Activity_Tags_List")){
-			QSet<QString> activityTagsRead;
-		
-			int tmp=0;
-			assert(xmlReader.isStartElement());
-			while(xmlReader.readNextStartElement()){
-				xmlReadingLog+="   Found "+xmlReader.name().toString()+" tag\n";
-				if(xmlReader.name()==QString("Activity_Tag")){
-					ActivityTag* activityTag=new ActivityTag();
-					assert(xmlReader.isStartElement());
-					while(xmlReader.readNextStartElement()){
-						xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
-						if(xmlReader.name()==QString("Name")){
-							QString text=xmlReader.readElementText();
-							activityTag->name=text;
-							xmlReadingLog+="    Read activity tag name: "+activityTag->name+"\n";
-						}
-						else if(xmlReader.name()==QString("Printable")){
-							QString text=xmlReader.readElementText();
-							if(text=="true")
-								activityTag->printable=true;
-							else
-								activityTag->printable=false;
-							xmlReadingLog+="    Read activity tag printable="+text+"\n";
-						}
-						else if(xmlReader.name()==QString("Comments")){
-							QString text=xmlReader.readElementText();
-							activityTag->comments=text;
-							xmlReadingLog+="    Crt. activity tag comments="+activityTag->comments+"\n";
-						}
-						else{
-							unrecognizedXmlTags.append(xmlReader.name().toString());
-							unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
-							unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
-
-							xmlReader.skipCurrentElement();
-							xmlReaderNumberOfUnrecognizedFields++;
-						}
-					}
-					bool tmp2=activityTagsRead.contains(activityTag->name);
-					if(tmp2){
-						RulesReconcilableMessage::warning(parent, tr("FET warning"),
-						 tr("Duplicate activity tag %1 found - ignoring").arg(activityTag->name));
-						xmlReadingLog+="   Activity tag not added - duplicate\n";
-						
-						delete activityTag;
-					}
-					else{
-						activityTagsRead.insert(activityTag->name);
-						addActivityTagFast(activityTag);
-						tmp++;
-						xmlReadingLog+="   Activity tag inserted\n";
-					}
-				}
-				else{
-					unrecognizedXmlTags.append(xmlReader.name().toString());
-					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
-					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
-
-					xmlReader.skipCurrentElement();
-					xmlReaderNumberOfUnrecognizedFields++;
-				}
-			}
-			if(!(tmp==this->activityTagsList.size()))
-				xmlReader.raiseError(tr("%1 is incorrect").arg("Activity_Tags_List"));
-			else{
-				assert(tmp==this->activityTagsList.size());
-				xmlReadingLog+="  Added "+CustomFETString::number(tmp)+" activity tags\n";
-				reducedXmlLog+="Added "+CustomFETString::number(tmp)+" activity tags\n";
-			}
-		}
 		else if(xmlReader.name()==QString("Students_List")){
 			QSet<StudentsSet*> allAllocatedStudentsSets;
 		
@@ -14545,6 +14839,16 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 							if(!currentStudentsHash.contains(sty->name))
 								currentStudentsHash.insert(sty->name, sty);
 							xmlReadingLog+="    Read year name: "+sty->name+"\n";
+						}
+						else if(xmlReader.name()==QString("Long_Name")){
+							QString text=xmlReader.readElementText();
+							sty->longName=text;
+							xmlReadingLog+="    Read year long name: "+sty->longName+"\n";
+						}
+						else if(xmlReader.name()==QString("Code")){
+							QString text=xmlReader.readElementText();
+							sty->code=text;
+							xmlReadingLog+="    Read year code: "+sty->code+"\n";
 						}
 						else if(xmlReader.name()==QString("Number_of_Students")){
 							QString text=xmlReader.readElementText();
@@ -14736,6 +15040,16 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 										currentStudentsHash.insert(stg->name, stg);
 									xmlReadingLog+="     Read group name: "+stg->name+"\n";
 								}
+								else if(xmlReader.name()==QString("Long_Name")){
+									QString text=xmlReader.readElementText();
+									stg->longName=text;
+									xmlReadingLog+="     Read group long name: "+stg->longName+"\n";
+								}
+								else if(xmlReader.name()==QString("Code")){
+									QString text=xmlReader.readElementText();
+									stg->code=text;
+									xmlReadingLog+="     Read group code: "+stg->code+"\n";
+								}
 								else if(xmlReader.name()==QString("Number_of_Students")){
 									QString text=xmlReader.readElementText();
 									stg->numberOfStudents=text.toInt();
@@ -14847,6 +15161,16 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 											if(!currentStudentsHash.contains(sts->name))
 												currentStudentsHash.insert(sts->name, sts);
 											xmlReadingLog+="     Read subgroup name: "+sts->name+"\n";
+										}
+										else if(xmlReader.name()==QString("Long_Name")){
+											QString text=xmlReader.readElementText();
+											sts->longName=text;
+											xmlReadingLog+="     Read subgroup long name: "+sts->longName+"\n";
+										}
+										else if(xmlReader.name()==QString("Code")){
+											QString text=xmlReader.readElementText();
+											sts->code=text;
+											xmlReadingLog+="     Read subgroup code: "+sts->code+"\n";
 										}
 										else if(xmlReader.name()==QString("Number_of_Students")){
 											QString text=xmlReader.readElementText();
@@ -15293,6 +15617,16 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 							bu->name=text;
 							xmlReadingLog+="    Read building name: "+bu->name+"\n";
 						}
+						else if(xmlReader.name()==QString("Long_Name")){
+							QString text=xmlReader.readElementText();
+							bu->longName=text;
+							xmlReadingLog+="    Read building long name: "+bu->longName+"\n";
+						}
+						else if(xmlReader.name()==QString("Code")){
+							QString text=xmlReader.readElementText();
+							bu->code=text;
+							xmlReadingLog+="    Read building code: "+bu->code+"\n";
+						}
 						else if(xmlReader.name()==QString("Comments")){
 							QString text=xmlReader.readElementText();
 							bu->comments=text;
@@ -15364,6 +15698,16 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 							QString text=xmlReader.readElementText();
 							rm->name=text;
 							xmlReadingLog+="    Read room name: "+rm->name+"\n";
+						}
+						else if(xmlReader.name()==QString("Long_Name")){
+							QString text=xmlReader.readElementText();
+							rm->longName=text;
+							xmlReadingLog+="    Read room long name: "+rm->longName+"\n";
+						}
+						else if(xmlReader.name()==QString("Code")){
+							QString text=xmlReader.readElementText();
+							rm->code=text;
+							xmlReadingLog+="    Read room code: "+rm->code+"\n";
 						}
 						else if(xmlReader.name()==QString("Type")){
 							//rm->type=text;
@@ -17449,17 +17793,25 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 		if(this->nRealDaysPerWeek==-1 || this->nRealDaysPerWeek!=this->nDaysPerWeek/2){
 			this->nRealDaysPerWeek=this->nDaysPerWeek/2;
 			this->realDaysOfTheWeek.clear();
-			for(int rd=0; rd<this->nRealDaysPerWeek; rd++)
+			this->realDaysOfTheWeek_longNames.clear();
+			for(int rd=0; rd<this->nRealDaysPerWeek; rd++){
 				this->realDaysOfTheWeek.append(this->daysOfTheWeek.at(2*rd));
+				this->realDaysOfTheWeek_longNames.append(QString(""));
+			}
 		}
 		
 		if(this->nRealHoursPerDay==-1 || this->nRealHoursPerDay!=2*this->nHoursPerDay){
 			this->nRealHoursPerDay=2*this->nHoursPerDay;
 			this->realHoursOfTheDay.clear();
-			for(int h=0; h<this->nHoursPerDay; h++)
+			this->realHoursOfTheDay_longNames.clear();
+			for(int h=0; h<this->nHoursPerDay; h++){
 				this->realHoursOfTheDay.append(this->hoursOfTheDay.at(h)+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
-			for(int h=0; h<this->nHoursPerDay; h++)
+				this->realHoursOfTheDay_longNames.append(QString(""));
+			}
+			for(int h=0; h<this->nHoursPerDay; h++){
 				this->realHoursOfTheDay.append(this->hoursOfTheDay.at(h)+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
+				this->realHoursOfTheDay_longNames.append(QString(""));
+			}
 		}
 	}
 
@@ -17582,6 +17934,7 @@ bool Rules::write(QWidget* parent, const QString& filename)
 	for(int i=0; i<this->nDaysPerWeek; i++){
 		tos<<"<Day>\n";
 		tos<<"	<Name>"+protect(this->daysOfTheWeek[i])+"</Name>\n";
+		tos<<"	<Long_Name>"+protect(this->daysOfTheWeek_longNames[i])+"</Long_Name>\n";
 		tos<<"</Day>\n";
 	}
 	tos<<"</Days_List>\n\n";
@@ -17592,6 +17945,7 @@ bool Rules::write(QWidget* parent, const QString& filename)
 		for(int i=0; i<this->nRealDaysPerWeek; i++){
 			tos<<"<Real_Day>\n";
 			tos<<"	<Name>"+protect(this->realDaysOfTheWeek[i])+"</Name>\n";
+			tos<<"	<Long_Name>"+protect(this->realDaysOfTheWeek_longNames[i])+"</Long_Name>\n";
 			tos<<"</Real_Day>\n";
 		}
 		tos<<"</Real_Days_List>\n\n";
@@ -17601,6 +17955,7 @@ bool Rules::write(QWidget* parent, const QString& filename)
 	for(int i=0; i<this->nHoursPerDay; i++){
 		tos<<"<Hour>\n";
 		tos<<"	<Name>"+protect(this->hoursOfTheDay[i])+"</Name>\n";
+		tos<<"	<Long_Name>"+protect(this->hoursOfTheDay_longNames[i])+"</Long_Name>\n";
 		tos<<"</Hour>\n";
 	}
 	tos<<"</Hours_List>\n\n";
@@ -17611,6 +17966,7 @@ bool Rules::write(QWidget* parent, const QString& filename)
 		for(int i=0; i<this->nRealHoursPerDay; i++){
 			tos<<"<Real_Hour>\n";
 			tos<<"	<Name>"+protect(this->realHoursOfTheDay[i])+"</Name>\n";
+			tos<<"	<Long_Name>"+protect(this->realHoursOfTheDay_longNames[i])+"</Long_Name>\n";
 			tos<<"</Real_Hour>\n";
 		}
 		tos<<"</Real_Hours_List>\n\n";
@@ -18158,6 +18514,11 @@ TimeConstraint* Rules::readTeacherNotAvailable(QXmlStreamReader& xmlReader, Fake
 			teacher=text;
 			xmlReadingLog+="    Read teacher name="+teacher+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			teacher=text;
+			xmlReadingLog+="    Read teacher name="+teacher+"\n";
+		}
 		else{
 			unrecognizedXmlTags.append(xmlReader.name().toString());
 			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
@@ -18397,6 +18758,11 @@ TimeConstraint* Rules::readTeacherMaxDaysPerWeek(QXmlStreamReader& xmlReader, Fa
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Max_Days_Per_Week")){
 			QString text=xmlReader.readElementText();
 			cn->maxDaysPerWeek=text.toInt();
@@ -18495,6 +18861,11 @@ TimeConstraint* Rules::readTeacherMinDaysPerWeek(QXmlStreamReader& xmlReader, Fa
 			cn->comments=text;
 		}
 		else if(xmlReader.name()==QString("Teacher_Name")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Teacher")){
 			QString text=xmlReader.readElementText();
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
@@ -18619,6 +18990,11 @@ TimeConstraint* Rules::readTeacherIntervalMaxDaysPerWeek(QWidget* parent, QXmlSt
 			}
 		}
 		else if(xmlReader.name()==QString("Teacher_Name")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Teacher")){
 			QString text=xmlReader.readElementText();
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
@@ -20740,6 +21116,11 @@ TimeConstraint* Rules::readTeacherMaxHoursDaily(QXmlStreamReader& xmlReader, Fak
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else{
 			unrecognizedXmlTags.append(xmlReader.name().toString());
 			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
@@ -20857,6 +21238,11 @@ TimeConstraint* Rules::readTeacherMaxHoursContinuously(QXmlStreamReader& xmlRead
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else{
 			unrecognizedXmlTags.append(xmlReader.name().toString());
 			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
@@ -20899,7 +21285,17 @@ TimeConstraint* Rules::readTeacherActivityTagMaxHoursContinuously(QXmlStreamRead
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Activity_Tag_Name")){
+			QString text=xmlReader.readElementText();
+			cn->activityTagName=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
 			QString text=xmlReader.readElementText();
 			cn->activityTagName=text;
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
@@ -20946,6 +21342,11 @@ TimeConstraint* Rules::readTeachersActivityTagMaxHoursContinuously(QXmlStreamRea
 			cn->activityTagName=text;
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			cn->activityTagName=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+		}
 		else{
 			unrecognizedXmlTags.append(xmlReader.name().toString());
 			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
@@ -20988,7 +21389,17 @@ TimeConstraint* Rules::readTeacherActivityTagMaxHoursDaily(QXmlStreamReader& xml
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Activity_Tag_Name")){
+			QString text=xmlReader.readElementText();
+			cn->activityTagName=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
 			QString text=xmlReader.readElementText();
 			cn->activityTagName=text;
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
@@ -21035,6 +21446,11 @@ TimeConstraint* Rules::readTeachersActivityTagMaxHoursDaily(QXmlStreamReader& xm
 			cn->activityTagName=text;
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			cn->activityTagName=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+		}
 		else{
 			unrecognizedXmlTags.append(xmlReader.name().toString());
 			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
@@ -21077,7 +21493,17 @@ TimeConstraint* Rules::readTeacherActivityTagMinHoursDaily(QXmlStreamReader& xml
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Activity_Tag_Name")){
+			QString text=xmlReader.readElementText();
+			cn->activityTagName=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
 			QString text=xmlReader.readElementText();
 			cn->activityTagName=text;
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
@@ -21127,6 +21553,11 @@ TimeConstraint* Rules::readTeachersActivityTagMinHoursDaily(QXmlStreamReader& xm
 			xmlReadingLog+="    Read minHoursDaily="+CustomFETString::number(cn->minHoursDaily)+"\n";
 		}
 		else if(xmlReader.name()==QString("Activity_Tag_Name")){
+			QString text=xmlReader.readElementText();
+			cn->activityTagName=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
 			QString text=xmlReader.readElementText();
 			cn->activityTagName=text;
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
@@ -21272,6 +21703,11 @@ TimeConstraint* Rules::readTeacherMinHoursDaily(QWidget* parent, QXmlStreamReade
 			xmlReadingLog+="    Read minHoursDaily="+CustomFETString::number(cn->minHoursDaily)+"\n";
 		}
 		else if(xmlReader.name()==QString("Teacher_Name")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Teacher")){
 			QString text=xmlReader.readElementText();
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
@@ -24210,12 +24646,27 @@ TimeConstraint* Rules::readActivitiesEndStudentsDay(QXmlStreamReader& xmlReader,
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Students_Name")){
 			QString text=xmlReader.readElementText();
 			cn->studentsName=text;
 			xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
 		}
+		else if(xmlReader.name()==QString("Students")){
+			QString text=xmlReader.readElementText();
+			cn->studentsName=text;
+			xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
+		}
 		else if(xmlReader.name()==QString("Subject_Name")){
+			QString text=xmlReader.readElementText();
+			cn->subjectName=text;
+			xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
+		}
+		else if(xmlReader.name()==QString("Subject")){
 			QString text=xmlReader.readElementText();
 			cn->subjectName=text;
 			xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
@@ -24226,6 +24677,11 @@ TimeConstraint* Rules::readActivitiesEndStudentsDay(QXmlStreamReader& xmlReader,
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 		}
 		else if(xmlReader.name()==QString("Activity_Tag_Name")){
+			QString text=xmlReader.readElementText();
+			cn->activityTagName=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
 			QString text=xmlReader.readElementText();
 			cn->activityTagName=text;
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
@@ -24310,12 +24766,27 @@ TimeConstraint* Rules::readActivitiesEndTeachersDay(QXmlStreamReader& xmlReader,
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Students_Name")){
 			QString text=xmlReader.readElementText();
 			cn->studentsName=text;
 			xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
 		}
+		else if(xmlReader.name()==QString("Students")){
+			QString text=xmlReader.readElementText();
+			cn->studentsName=text;
+			xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
+		}
 		else if(xmlReader.name()==QString("Subject_Name")){
+			QString text=xmlReader.readElementText();
+			cn->subjectName=text;
+			xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
+		}
+		else if(xmlReader.name()==QString("Subject")){
 			QString text=xmlReader.readElementText();
 			cn->subjectName=text;
 			xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
@@ -24326,6 +24797,11 @@ TimeConstraint* Rules::readActivitiesEndTeachersDay(QXmlStreamReader& xmlReader,
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 		}
 		else if(xmlReader.name()==QString("Activity_Tag_Name")){
+			QString text=xmlReader.readElementText();
+			cn->activityTagName=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
 			QString text=xmlReader.readElementText();
 			cn->activityTagName=text;
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
@@ -24410,12 +24886,27 @@ TimeConstraint* Rules::readActivitiesBeginStudentsDay(QXmlStreamReader& xmlReade
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Students_Name")){
 			QString text=xmlReader.readElementText();
 			cn->studentsName=text;
 			xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
 		}
+		else if(xmlReader.name()==QString("Students")){
+			QString text=xmlReader.readElementText();
+			cn->studentsName=text;
+			xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
+		}
 		else if(xmlReader.name()==QString("Subject_Name")){
+			QString text=xmlReader.readElementText();
+			cn->subjectName=text;
+			xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
+		}
+		else if(xmlReader.name()==QString("Subject")){
 			QString text=xmlReader.readElementText();
 			cn->subjectName=text;
 			xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
@@ -24426,6 +24917,11 @@ TimeConstraint* Rules::readActivitiesBeginStudentsDay(QXmlStreamReader& xmlReade
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 		}
 		else if(xmlReader.name()==QString("Activity_Tag_Name")){
+			QString text=xmlReader.readElementText();
+			cn->activityTagName=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
 			QString text=xmlReader.readElementText();
 			cn->activityTagName=text;
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
@@ -24510,12 +25006,27 @@ TimeConstraint* Rules::readActivitiesBeginTeachersDay(QXmlStreamReader& xmlReade
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Students_Name")){
 			QString text=xmlReader.readElementText();
 			cn->studentsName=text;
 			xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
 		}
+		else if(xmlReader.name()==QString("Students")){
+			QString text=xmlReader.readElementText();
+			cn->studentsName=text;
+			xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
+		}
 		else if(xmlReader.name()==QString("Subject_Name")){
+			QString text=xmlReader.readElementText();
+			cn->subjectName=text;
+			xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
+		}
+		else if(xmlReader.name()==QString("Subject")){
 			QString text=xmlReader.readElementText();
 			cn->subjectName=text;
 			xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
@@ -24526,6 +25037,11 @@ TimeConstraint* Rules::readActivitiesBeginTeachersDay(QXmlStreamReader& xmlReade
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 		}
 		else if(xmlReader.name()==QString("Activity_Tag_Name")){
+			QString text=xmlReader.readElementText();
+			cn->activityTagName=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
 			QString text=xmlReader.readElementText();
 			cn->activityTagName=text;
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
@@ -26012,6 +26528,11 @@ TimeConstraint* Rules::readTeacherMaxGapsPerWeek(QXmlStreamReader& xmlReader, Fa
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Weight_Percentage")){
 			QString text=xmlReader.readElementText();
 			cn->weightPercentage=customFETStrToDouble(text);
@@ -26129,6 +26650,11 @@ TimeConstraint* Rules::readTeacherMaxGapsPerDay(QXmlStreamReader& xmlReader, Fak
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Weight_Percentage")){
 			QString text=xmlReader.readElementText();
 			cn->weightPercentage=customFETStrToDouble(text);
@@ -26242,6 +26768,11 @@ TimeConstraint* Rules::readTeacherMaxGapsPerMorningAndAfternoon(QXmlStreamReader
 			cn->weightPercentage=100;
 		}
 		else if(xmlReader.name()==QString("Teacher_Name")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Teacher")){
 			QString text=xmlReader.readElementText();
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
@@ -26971,12 +27502,27 @@ TimeConstraint* Rules::readActivitiesPreferredTimes(QXmlStreamReader& xmlReader,
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Students_Name")){
 			QString text=xmlReader.readElementText();
 			cn->studentsName=text;
 			xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
 		}
+		else if(xmlReader.name()==QString("Students")){
+			QString text=xmlReader.readElementText();
+			cn->studentsName=text;
+			xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
+		}
 		else if(xmlReader.name()==QString("Subject_Name")){
+			QString text=xmlReader.readElementText();
+			cn->subjectName=text;
+			xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
+		}
+		else if(xmlReader.name()==QString("Subject")){
 			QString text=xmlReader.readElementText();
 			cn->subjectName=text;
 			xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
@@ -26987,6 +27533,11 @@ TimeConstraint* Rules::readActivitiesPreferredTimes(QXmlStreamReader& xmlReader,
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 		}
 		else if(xmlReader.name()==QString("Activity_Tag_Name")){
+			QString text=xmlReader.readElementText();
+			cn->activityTagName=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
 			QString text=xmlReader.readElementText();
 			cn->activityTagName=text;
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
@@ -27150,12 +27701,27 @@ TimeConstraint* Rules::readActivitiesPreferredTimeSlots(QXmlStreamReader& xmlRea
 			cn->p_teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->p_teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->p_teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->p_teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Students_Name")){
 			QString text=xmlReader.readElementText();
 			cn->p_studentsName=text;
 			xmlReadingLog+="    Read students name="+cn->p_studentsName+"\n";
 		}
+		else if(xmlReader.name()==QString("Students")){
+			QString text=xmlReader.readElementText();
+			cn->p_studentsName=text;
+			xmlReadingLog+="    Read students name="+cn->p_studentsName+"\n";
+		}
 		else if(xmlReader.name()==QString("Subject_Name")){
+			QString text=xmlReader.readElementText();
+			cn->p_subjectName=text;
+			xmlReadingLog+="    Read subject name="+cn->p_subjectName+"\n";
+		}
+		else if(xmlReader.name()==QString("Subject")){
 			QString text=xmlReader.readElementText();
 			cn->p_subjectName=text;
 			xmlReadingLog+="    Read subject name="+cn->p_subjectName+"\n";
@@ -27166,6 +27732,11 @@ TimeConstraint* Rules::readActivitiesPreferredTimeSlots(QXmlStreamReader& xmlRea
 			xmlReadingLog+="    Read activity tag name="+cn->p_activityTagName+"\n";
 		}
 		else if(xmlReader.name()==QString("Activity_Tag_Name")){
+			QString text=xmlReader.readElementText();
+			cn->p_activityTagName=text;
+			xmlReadingLog+="    Read activity tag name="+cn->p_activityTagName+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
 			QString text=xmlReader.readElementText();
 			cn->p_activityTagName=text;
 			xmlReadingLog+="    Read activity tag name="+cn->p_activityTagName+"\n";
@@ -27339,12 +27910,27 @@ TimeConstraint* Rules::readActivitiesPreferredStartingTimes(QXmlStreamReader& xm
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Students_Name")){
 			QString text=xmlReader.readElementText();
 			cn->studentsName=text;
 			xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
 		}
+		else if(xmlReader.name()==QString("Students")){
+			QString text=xmlReader.readElementText();
+			cn->studentsName=text;
+			xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
+		}
 		else if(xmlReader.name()==QString("Subject_Name")){
+			QString text=xmlReader.readElementText();
+			cn->subjectName=text;
+			xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
+		}
+		else if(xmlReader.name()==QString("Subject")){
 			QString text=xmlReader.readElementText();
 			cn->subjectName=text;
 			xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
@@ -27355,6 +27941,11 @@ TimeConstraint* Rules::readActivitiesPreferredStartingTimes(QXmlStreamReader& xm
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 		}
 		else if(xmlReader.name()==QString("Activity_Tag_Name")){
+			QString text=xmlReader.readElementText();
+			cn->activityTagName=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
 			QString text=xmlReader.readElementText();
 			cn->activityTagName=text;
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
@@ -27535,12 +28126,27 @@ TimeConstraint* Rules::readSubactivitiesPreferredTimeSlots(QXmlStreamReader& xml
 			cn->p_teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->p_teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->p_teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->p_teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Students_Name")){
 			QString text=xmlReader.readElementText();
 			cn->p_studentsName=text;
 			xmlReadingLog+="    Read students name="+cn->p_studentsName+"\n";
 		}
+		else if(xmlReader.name()==QString("Students")){
+			QString text=xmlReader.readElementText();
+			cn->p_studentsName=text;
+			xmlReadingLog+="    Read students name="+cn->p_studentsName+"\n";
+		}
 		else if(xmlReader.name()==QString("Subject_Name")){
+			QString text=xmlReader.readElementText();
+			cn->p_subjectName=text;
+			xmlReadingLog+="    Read subject name="+cn->p_subjectName+"\n";
+		}
+		else if(xmlReader.name()==QString("Subject")){
 			QString text=xmlReader.readElementText();
 			cn->p_subjectName=text;
 			xmlReadingLog+="    Read subject name="+cn->p_subjectName+"\n";
@@ -27551,6 +28157,11 @@ TimeConstraint* Rules::readSubactivitiesPreferredTimeSlots(QXmlStreamReader& xml
 			xmlReadingLog+="    Read activity tag name="+cn->p_activityTagName+"\n";
 		}
 		else if(xmlReader.name()==QString("Activity_Tag_Name")){
+			QString text=xmlReader.readElementText();
+			cn->p_activityTagName=text;
+			xmlReadingLog+="    Read activity tag name="+cn->p_activityTagName+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
 			QString text=xmlReader.readElementText();
 			cn->p_activityTagName=text;
 			xmlReadingLog+="    Read activity tag name="+cn->p_activityTagName+"\n";
@@ -27730,12 +28341,27 @@ TimeConstraint* Rules::readSubactivitiesPreferredStartingTimes(QXmlStreamReader&
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Students_Name")){
 			QString text=xmlReader.readElementText();
 			cn->studentsName=text;
 			xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
 		}
+		else if(xmlReader.name()==QString("Students")){
+			QString text=xmlReader.readElementText();
+			cn->studentsName=text;
+			xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
+		}
 		else if(xmlReader.name()==QString("Subject_Name")){
+			QString text=xmlReader.readElementText();
+			cn->subjectName=text;
+			xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
+		}
+		else if(xmlReader.name()==QString("Subject")){
 			QString text=xmlReader.readElementText();
 			cn->subjectName=text;
 			xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
@@ -27746,6 +28372,11 @@ TimeConstraint* Rules::readSubactivitiesPreferredStartingTimes(QXmlStreamReader&
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 		}
 		else if(xmlReader.name()==QString("Activity_Tag_Name")){
+			QString text=xmlReader.readElementText();
+			cn->activityTagName=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
 			QString text=xmlReader.readElementText();
 			cn->activityTagName=text;
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
@@ -28835,6 +29466,11 @@ TimeConstraint* Rules::readTeacherMaxSpanPerDay(QXmlStreamReader& xmlReader, Fak
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Max_Span")){
 			QString text=xmlReader.readElementText();
 			cn->maxSpanPerDay=text.toInt();
@@ -29003,6 +29639,11 @@ TimeConstraint* Rules::readTeacherMinRestingHours(QXmlStreamReader& xmlReader, F
 			cn->comments=text;
 		}
 		else if(xmlReader.name()==QString("Teacher_Name")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Teacher")){
 			QString text=xmlReader.readElementText();
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
@@ -29207,6 +29848,11 @@ TimeConstraint* Rules::readOldMATeacherMaxDaysPerWeek(QXmlStreamReader& xmlReade
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Max_Days_Per_Week")){
 			QString text=xmlReader.readElementText();
 			cn->maxDaysPerWeek=text.toInt();
@@ -29276,6 +29922,11 @@ TimeConstraint* Rules::readTeacherMaxRealDaysPerWeek(QXmlStreamReader& xmlReader
 			}
 		}
 		else if(xmlReader.name()==QString("Teacher_Name")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Teacher")){
 			QString text=xmlReader.readElementText();
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
@@ -29449,6 +30100,11 @@ TimeConstraint* Rules::readTeacherMaxAfternoonsPerWeek(QXmlStreamReader& xmlRead
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Max_Afternoons_Per_Week")){
 			QString text=xmlReader.readElementText();
 			cn->maxAfternoonsPerWeek=text.toInt();
@@ -29566,6 +30222,11 @@ TimeConstraint* Rules::readTeacherMaxTwoActivityTagsPerDayFromN1N2N3(QXmlStreamR
 			}
 		}
 		else if(xmlReader.name()==QString("Teacher_Name")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Teacher")){
 			QString text=xmlReader.readElementText();
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
@@ -29769,6 +30430,11 @@ TimeConstraint* Rules::readTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3(QXmlStr
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else{
 			unrecognizedXmlTags.append(xmlReader.name().toString());
 			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
@@ -29930,6 +30596,11 @@ TimeConstraint* Rules::readTeacherMaxMorningsPerWeek(QXmlStreamReader& xmlReader
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Max_Mornings_Per_Week")){
 			QString text=xmlReader.readElementText();
 			cn->maxMorningsPerWeek=text.toInt();
@@ -30055,6 +30726,11 @@ TimeConstraint* Rules::readTeacherMaxTwoConsecutiveMornings(QXmlStreamReader& xm
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Active")){
 			QString text=xmlReader.readElementText();
 			if(text=="false"){
@@ -30126,6 +30802,11 @@ TimeConstraint* Rules::readTeacherMaxTwoConsecutiveAfternoons(QXmlStreamReader& 
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Active")){
 			QString text=xmlReader.readElementText();
 			if(text=="false"){
@@ -30170,6 +30851,11 @@ TimeConstraint* Rules::readOldMATeacherMinDaysPerWeek(QXmlStreamReader& xmlReade
 			cn->comments=text;
 		}
 		else if(xmlReader.name()==QString("Teacher_Name")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Teacher")){
 			QString text=xmlReader.readElementText();
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
@@ -30224,6 +30910,11 @@ TimeConstraint* Rules::readTeacherMinRealDaysPerWeek(QXmlStreamReader& xmlReader
 			cn->comments=text;
 		}
 		else if(xmlReader.name()==QString("Teacher_Name")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Teacher")){
 			QString text=xmlReader.readElementText();
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
@@ -30378,6 +31069,11 @@ TimeConstraint* Rules::readTeacherMinMorningsPerWeek(QXmlStreamReader& xmlReader
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Minimum_Mornings_Per_Week")){
 			QString text=xmlReader.readElementText();
 			cn->minMorningsPerWeek=text.toInt();
@@ -30476,6 +31172,11 @@ TimeConstraint* Rules::readTeacherMinAfternoonsPerWeek(QXmlStreamReader& xmlRead
 			cn->comments=text;
 		}
 		else if(xmlReader.name()==QString("Teacher_Name")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Teacher")){
 			QString text=xmlReader.readElementText();
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
@@ -30601,6 +31302,11 @@ TimeConstraint* Rules::readTeacherMorningIntervalMaxDaysPerWeek(QWidget* parent,
 			}
 		}
 		else if(xmlReader.name()==QString("Teacher_Name")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Teacher")){
 			QString text=xmlReader.readElementText();
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
@@ -30843,6 +31549,11 @@ TimeConstraint* Rules::readTeacherAfternoonIntervalMaxDaysPerWeek(QWidget* paren
 			}
 		}
 		else if(xmlReader.name()==QString("Teacher_Name")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Teacher")){
 			QString text=xmlReader.readElementText();
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
@@ -32241,6 +32952,11 @@ TimeConstraint* Rules::readOldMATeacherMaxHoursDaily(QXmlStreamReader& xmlReader
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else{
 			unrecognizedXmlTags.append(xmlReader.name().toString());
 			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
@@ -32298,6 +33014,11 @@ TimeConstraint* Rules::readTeacherMaxHoursDailyRealDays(QXmlStreamReader& xmlRea
 			xmlReadingLog+="    Read maxHoursDaily="+CustomFETString::number(cn->maxHoursDaily)+"\n";
 		}
 		else if(xmlReader.name()==QString("Teacher_Name")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Teacher")){
 			QString text=xmlReader.readElementText();
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
@@ -32419,6 +33140,11 @@ TimeConstraint* Rules::readOldMATeacherMaxHoursDailyHalfDays(QXmlStreamReader& x
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else{
 			unrecognizedXmlTags.append(xmlReader.name().toString());
 			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
@@ -32461,7 +33187,17 @@ TimeConstraint* Rules::readOldMATeacherActivityTagMaxHoursDaily(QXmlStreamReader
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Activity_Tag_Name")){
+			QString text=xmlReader.readElementText();
+			cn->activityTagName=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
 			QString text=xmlReader.readElementText();
 			cn->activityTagName=text;
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
@@ -32508,7 +33244,17 @@ TimeConstraint* Rules::readTeacherActivityTagMaxHoursDailyRealDays(QXmlStreamRea
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Activity_Tag_Name")){
+			QString text=xmlReader.readElementText();
+			cn->activityTagName=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
 			QString text=xmlReader.readElementText();
 			cn->activityTagName=text;
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
@@ -32555,6 +33301,11 @@ TimeConstraint* Rules::readOldMATeachersActivityTagMaxHoursDaily(QXmlStreamReade
 			cn->activityTagName=text;
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			cn->activityTagName=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+		}
 		else{
 			unrecognizedXmlTags.append(xmlReader.name().toString());
 			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
@@ -32593,6 +33344,11 @@ TimeConstraint* Rules::readTeachersActivityTagMaxHoursDailyRealDays(QXmlStreamRe
 			xmlReadingLog+="    Read maxHoursDaily="+CustomFETString::number(cn->maxHoursDaily)+"\n";
 		}
 		else if(xmlReader.name()==QString("Activity_Tag_Name")){
+			QString text=xmlReader.readElementText();
+			cn->activityTagName=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
 			QString text=xmlReader.readElementText();
 			cn->activityTagName=text;
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
@@ -32636,6 +33392,11 @@ TimeConstraint* Rules::readTeacherMaxHoursPerAllAfternoons(QXmlStreamReader& xml
 			xmlReadingLog+="    Read maxHoursPerAllAfternoons="+CustomFETString::number(cn->maxHoursPerAllAfternoons)+"\n";
 		}
 		else if(xmlReader.name()==QString("Teacher_Name")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Teacher")){
 			QString text=xmlReader.readElementText();
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
@@ -32916,6 +33677,11 @@ TimeConstraint* Rules::readTeacherMinHoursPerMorning(QWidget* parent, QXmlStream
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		//obsolete
 		else if(xmlReader.name()==QString("Allow_Empty_Days")){
 			QString text=xmlReader.readElementText();
@@ -33051,6 +33817,11 @@ TimeConstraint* Rules::readTeacherMinHoursPerAfternoon(QWidget* parent, QXmlStre
 			xmlReadingLog+="    Read minHoursPerAfternoon="+CustomFETString::number(cn->minHoursPerAfternoon)+"\n";
 		}
 		else if(xmlReader.name()==QString("Teacher_Name")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Teacher")){
 			QString text=xmlReader.readElementText();
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
@@ -33208,6 +33979,11 @@ TimeConstraint* Rules::readTeacherMinHoursDailyRealDays(QWidget* parent, QXmlStr
 			xmlReadingLog+="    Read minHoursDaily="+CustomFETString::number(cn->minHoursDaily)+"\n";
 		}
 		else if(xmlReader.name()==QString("Teacher_Name")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Teacher")){
 			QString text=xmlReader.readElementText();
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
@@ -34179,6 +34955,11 @@ TimeConstraint* Rules::readTeacherMaxGapsPerRealDay(QXmlStreamReader& xmlReader,
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Weight_Percentage")){
 			QString text=xmlReader.readElementText();
 			cn->weightPercentage=customFETStrToDouble(text);
@@ -34242,6 +35023,11 @@ TimeConstraint* Rules::readTeacherMaxZeroGapsPerAfternoon(QXmlStreamReader& xmlR
 			cn->weightPercentage=100;
 		}
 		else if(xmlReader.name()==QString("Teacher_Name")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Teacher")){
 			QString text=xmlReader.readElementText();
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
@@ -35076,6 +35862,11 @@ TimeConstraint* Rules::readOldMATeacherMaxSpanPerDay(QXmlStreamReader& xmlReader
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Max_Span")){
 			QString text=xmlReader.readElementText();
 			cn->maxSpanPerDay=text.toInt();
@@ -35121,6 +35912,11 @@ TimeConstraint* Rules::readTeacherMaxSpanPerRealDay(QXmlStreamReader& xmlReader,
 			cn->comments=text;
 		}
 		else if(xmlReader.name()==QString("Teacher_Name")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Teacher")){
 			QString text=xmlReader.readElementText();
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
@@ -35415,6 +36211,11 @@ TimeConstraint* Rules::readTeacherMinRestingHoursBetweenMorningAndAfternoon(QXml
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Minimum_Resting_Hours")){
 			QString text=xmlReader.readElementText();
 			cn->minRestingHours=text.toInt();
@@ -35597,6 +36398,11 @@ TimeConstraint* Rules::readTeacherMaxGapsPerWeekForRealDays(QXmlStreamReader& xm
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Weight_Percentage")){
 			QString text=xmlReader.readElementText();
 			cn->weightPercentage=customFETStrToDouble(text);
@@ -35736,6 +36542,11 @@ TimeConstraint* Rules::readTeacherMaxThreeConsecutiveDays(QWidget* parent, QXmlS
 			cn->comments=text;
 		}
 		else if(xmlReader.name()==QString("Teacher_Name")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Teacher")){
 			QString text=xmlReader.readElementText();
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
@@ -36151,6 +36962,11 @@ TimeConstraint* Rules::readTeacherMaxHoursDailyInInterval(QXmlStreamReader& xmlR
 			cn->teacherName=text;
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
 		else if(xmlReader.name()==QString("Maximum_Hours_Daily")){
 			QString text=xmlReader.readElementText();
 			cn->maxHoursDaily=text.toInt();
@@ -36435,6 +37251,11 @@ SpaceConstraint* Rules::readRoomNotAvailable(QXmlStreamReader& xmlReader, FakeSt
 			xmlReadingLog+="    End hour="+this->hoursOfTheDay[h2]+"\n";
 		}
 		else if(xmlReader.name()==QString("Room_Name")){
+			QString text=xmlReader.readElementText();
+			room=text;
+			xmlReadingLog+="    Read room name="+room+"\n";
+		}
+		else if(xmlReader.name()==QString("Room")){
 			QString text=xmlReader.readElementText();
 			room=text;
 			xmlReadingLog+="    Read room name="+room+"\n";

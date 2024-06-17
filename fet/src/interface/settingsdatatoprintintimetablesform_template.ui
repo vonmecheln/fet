@@ -6,94 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>392</width>
-    <height>269</height>
+    <width>600</width>
+    <height>517</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Select the data to print in the timetables</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout_5">
-   <item row="0" column="0">
-    <layout class="QGridLayout" name="gridLayout_4">
-     <item row="0" column="0" rowspan="2">
-      <widget class="QFrame" name="frame_3">
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
-       </property>
-       <layout class="QGridLayout" name="gridLayout_3">
-        <item row="0" column="0">
-         <widget class="QCheckBox" name="subjectsCheckBox">
-          <property name="text">
-           <string>Subjects</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="0">
-         <widget class="QCheckBox" name="roomsCheckBox">
-          <property name="text">
-           <string>Rooms</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QCheckBox" name="activityTagsCheckBox">
-          <property name="text">
-           <string>Activity tags</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0">
-         <widget class="QCheckBox" name="studentsCheckBox">
-          <property name="text">
-           <string>Students</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QCheckBox" name="teachersCheckBox">
-          <property name="text">
-           <string>Teachers</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </item>
-    </layout>
-   </item>
+  <layout class="QGridLayout" name="gridLayout_2">
    <item row="1" column="0">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>154</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="2" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <spacer name="horizontalSpacer">
@@ -124,8 +45,4657 @@
      </item>
     </layout>
    </item>
+   <item row="0" column="0">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="tabWidgetPage1">
+      <attribute name="title">
+       <string>1</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="2" column="0">
+        <widget class="QCheckBox" name="activityTagsCheckBox">
+         <property name="text">
+          <string>Activity tags</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="0">
+        <widget class="QCheckBox" name="subjectsCheckBox">
+         <property name="text">
+          <string>Subjects</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QCheckBox" name="teachersCheckBox">
+         <property name="text">
+          <string>Teachers</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QCheckBox" name="studentsCheckBox">
+         <property name="text">
+          <string>Students</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QCheckBox" name="roomsCheckBox">
+         <property name="text">
+          <string>Rooms</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Main categories</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabWidgetPage2">
+      <attribute name="title">
+       <string>2</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="4" column="0">
+        <widget class="QCheckBox" name="separateActivityTagsNameLongNameCodeByBreakCheckBox">
+         <property name="text">
+          <string>Separate activity tags' names, long names, and codes by a new line</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QCheckBox" name="separateDaysNameLongNameByBreakCheckBox">
+         <property name="text">
+          <string>Separate days' names and long names by a new line (as opposed to a space)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QCheckBox" name="separateSubjectsNameLongNameCodeByBreakCheckBox">
+         <property name="text">
+          <string>Separate subjects' names, long names, and codes by a new line</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QCheckBox" name="separateStudentsNameLongNameCodeByBreakCheckBox">
+         <property name="text">
+          <string>Separate students sets' names, long names, and codes by a new line</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QCheckBox" name="separateHoursNameLongNameByBreakCheckBox">
+         <property name="text">
+          <string>Separate hours' names and long names by a new line</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Space versus new line</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QCheckBox" name="separateRoomsNameLongNameCodeByBreakCheckBox">
+         <property name="text">
+          <string>Separate rooms' names, long names, and codes by a new line</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QCheckBox" name="separateTeachersNameLongNameCodeByBreakCheckBox">
+         <property name="text">
+          <string>Separate teachers' names, long names, and codes by a new line</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QCheckBox" name="separateBuildingsNameLongNameCodeByBreakCheckBox">
+         <property name="text">
+          <string>Separate buildings' names, long names, and codes by a new line</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>65</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabWidgetPage3">
+      <attribute name="title">
+       <string>3</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="7" column="0">
+        <widget class="QCheckBox" name="writeBuildingsCommentsInDaysHVCheckBox">
+         <property name="text">
+          <string>Buildings</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QCheckBox" name="writeRoomsCommentsInDaysHVCheckBox">
+         <property name="text">
+          <string>Rooms</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QCheckBox" name="writeYearsCommentsInDaysHVCheckBox">
+         <property name="text">
+          <string>Years</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QCheckBox" name="writeSubgroupsCommentsInDaysHVCheckBox">
+         <property name="text">
+          <string>Subgroups</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QCheckBox" name="writeSubjectsCommentsInDaysHVCheckBox">
+         <property name="text">
+          <string>Subjects</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QCheckBox" name="writeTeachersCommentsInDaysHVCheckBox">
+         <property name="text">
+          <string>Teachers</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>131</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="5" column="0">
+        <widget class="QCheckBox" name="writeGroupsCommentsInDaysHVCheckBox">
+         <property name="text">
+          <string>Groups</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QCheckBox" name="writeActivityTagsCommentsInDaysHVCheckBox">
+         <property name="text">
+          <string>Activity tags</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Write comments in days horizontal/vertical</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabWidgetPage4">
+      <attribute name="title">
+       <string>4</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_6">
+       <item row="1" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QCheckBox" name="subgroupsDaysHVDaysNamesCheckBox">
+             <property name="text">
+              <string>Days names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsDaysHVDaysLongNamesCheckBox">
+             <property name="text">
+              <string>Days long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsDaysHVHoursNamesCheckBox">
+             <property name="text">
+              <string>Hours names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsDaysHVHoursLongNamesCheckBox">
+             <property name="text">
+              <string>Hours long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsDaysHVSubjectsNamesCheckBox">
+             <property name="text">
+              <string>Subjects names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsDaysHVSubjectsLongNamesCheckBox">
+             <property name="text">
+              <string>Subjects long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsDaysHVSubjectsCodesCheckBox">
+             <property name="text">
+              <string>Subjects codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_6">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsDaysHVActivityTagsNamesCheckBox">
+             <property name="text">
+              <string>Activity tags names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsDaysHVActivityTagsLongNamesCheckBox">
+             <property name="text">
+              <string>Activity tags long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsDaysHVActivityTagsCodesCheckBox">
+             <property name="text">
+              <string>Activity tags codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QCheckBox" name="subgroupsDaysHVTeachersNamesCheckBox">
+             <property name="text">
+              <string>Teachers names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsDaysHVTeachersLongNamesCheckBox">
+             <property name="text">
+              <string>Teachers long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsDaysHVTeachersCodesCheckBox">
+             <property name="text">
+              <string>Teachers codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_7">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsDaysHVStudentsNamesCheckBox">
+             <property name="text">
+              <string>Students names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsDaysHVStudentsLongNamesCheckBox">
+             <property name="text">
+              <string>Students long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsDaysHVStudentsCodesCheckBox">
+             <property name="text">
+              <string>Students codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_8">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsDaysHVRoomsNamesCheckBox">
+             <property name="text">
+              <string>Rooms names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsDaysHVRoomsLongNamesCheckBox">
+             <property name="text">
+              <string>Rooms long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsDaysHVRoomsCodesCheckBox">
+             <property name="text">
+              <string>Rooms codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>Subgroups timetables days horizontal/vertical</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabWidgetPage5">
+      <attribute name="title">
+       <string>5</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="1" column="0" rowspan="2" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QCheckBox" name="subgroupsTimeHVDaysNamesCheckBox">
+             <property name="text">
+              <string>Days names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsTimeHVDaysLongNamesCheckBox">
+             <property name="text">
+              <string>Days long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_9">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsTimeHVHoursNamesCheckBox">
+             <property name="text">
+              <string>Hours names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsTimeHVHoursLongNamesCheckBox">
+             <property name="text">
+              <string>Hours long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_10">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsTimeHVSubjectsNamesCheckBox">
+             <property name="text">
+              <string>Subjects names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsTimeHVSubjectsLongNamesCheckBox">
+             <property name="text">
+              <string>Subjects long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsTimeHVSubjectsCodesCheckBox">
+             <property name="text">
+              <string>Subjects codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_11">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsTimeHVActivityTagsNamesCheckBox">
+             <property name="text">
+              <string>Activity tags names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsTimeHVActivityTagsLongNamesCheckBox">
+             <property name="text">
+              <string>Activity tags long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsTimeHVActivityTagsCodesCheckBox">
+             <property name="text">
+              <string>Activity tags codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QCheckBox" name="subgroupsTimeHVTeachersNamesCheckBox">
+             <property name="text">
+              <string>Teachers names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsTimeHVTeachersLongNamesCheckBox">
+             <property name="text">
+              <string>Teachers long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsTimeHVTeachersCodesCheckBox">
+             <property name="text">
+              <string>Teachers codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_12">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsTimeHVStudentsNamesCheckBox">
+             <property name="text">
+              <string>Students names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsTimeHVStudentsLongNamesCheckBox">
+             <property name="text">
+              <string>Students long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsTimeHVStudentsCodesCheckBox">
+             <property name="text">
+              <string>Students codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_13">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsTimeHVRoomsNamesCheckBox">
+             <property name="text">
+              <string>Rooms names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsTimeHVRoomsLongNamesCheckBox">
+             <property name="text">
+              <string>Rooms long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subgroupsTimeHVRoomsCodesCheckBox">
+             <property name="text">
+              <string>Rooms codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>Subgroups timetables time horizontal/vertical</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabWidgetPage6">
+      <attribute name="title">
+       <string>6</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_7">
+       <item row="1" column="0" rowspan="2" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QCheckBox" name="groupsDaysHVDaysNamesCheckBox">
+             <property name="text">
+              <string>Days names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsDaysHVDaysLongNamesCheckBox">
+             <property name="text">
+              <string>Days long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_14">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsDaysHVHoursNamesCheckBox">
+             <property name="text">
+              <string>Hours names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsDaysHVHoursLongNamesCheckBox">
+             <property name="text">
+              <string>Hours long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_15">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsDaysHVSubjectsNamesCheckBox">
+             <property name="text">
+              <string>Subjects names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsDaysHVSubjectsLongNamesCheckBox">
+             <property name="text">
+              <string>Subjects long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsDaysHVSubjectsCodesCheckBox">
+             <property name="text">
+              <string>Subjects codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_16">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsDaysHVActivityTagsNamesCheckBox">
+             <property name="text">
+              <string>Activity tags names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsDaysHVActivityTagsLongNamesCheckBox">
+             <property name="text">
+              <string>Activity tags long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsDaysHVActivityTagsCodesCheckBox">
+             <property name="text">
+              <string>Activity tags codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <widget class="QCheckBox" name="groupsDaysHVTeachersNamesCheckBox">
+             <property name="text">
+              <string>Teachers names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsDaysHVTeachersLongNamesCheckBox">
+             <property name="text">
+              <string>Teachers long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsDaysHVTeachersCodesCheckBox">
+             <property name="text">
+              <string>Teachers codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_17">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsDaysHVStudentsNamesCheckBox">
+             <property name="text">
+              <string>Students names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsDaysHVStudentsLongNamesCheckBox">
+             <property name="text">
+              <string>Students long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsDaysHVStudentsCodesCheckBox">
+             <property name="text">
+              <string>Students codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_18">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsDaysHVRoomsNamesCheckBox">
+             <property name="text">
+              <string>Rooms names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsDaysHVRoomsLongNamesCheckBox">
+             <property name="text">
+              <string>Rooms long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsDaysHVRoomsCodesCheckBox">
+             <property name="text">
+              <string>Rooms codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="0" colspan="2">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>Groups timetables days horizontal/vertical</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabWidgetPage7">
+      <attribute name="title">
+       <string>7</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_8">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>Groups timetables time horizontal/vertical</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <item>
+            <widget class="QCheckBox" name="groupsTimeHVDaysNamesCheckBox">
+             <property name="text">
+              <string>Days names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsTimeHVDaysLongNamesCheckBox">
+             <property name="text">
+              <string>Days long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_19">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsTimeHVHoursNamesCheckBox">
+             <property name="text">
+              <string>Hours names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsTimeHVHoursLongNamesCheckBox">
+             <property name="text">
+              <string>Hours long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_20">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsTimeHVSubjectsNamesCheckBox">
+             <property name="text">
+              <string>Subjects names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsTimeHVSubjectsLongNamesCheckBox">
+             <property name="text">
+              <string>Subjects long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsTimeHVSubjectsCodesCheckBox">
+             <property name="text">
+              <string>Subjects codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_21">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsTimeHVActivityTagsNamesCheckBox">
+             <property name="text">
+              <string>Activity tags names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsTimeHVActivityTagsLongNamesCheckBox">
+             <property name="text">
+              <string>Activity tags long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsTimeHVActivityTagsCodesCheckBox">
+             <property name="text">
+              <string>Activity tags codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_8">
+           <item>
+            <widget class="QCheckBox" name="groupsTimeHVTeachersNamesCheckBox">
+             <property name="text">
+              <string>Teachers names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsTimeHVTeachersLongNamesCheckBox">
+             <property name="text">
+              <string>Teachers long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsTimeHVTeachersCodesCheckBox">
+             <property name="text">
+              <string>Teachers codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_22">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsTimeHVStudentsNamesCheckBox">
+             <property name="text">
+              <string>Students names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsTimeHVStudentsLongNamesCheckBox">
+             <property name="text">
+              <string>Students long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsTimeHVStudentsCodesCheckBox">
+             <property name="text">
+              <string>Students codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_23">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsTimeHVRoomsNamesCheckBox">
+             <property name="text">
+              <string>Rooms names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsTimeHVRoomsLongNamesCheckBox">
+             <property name="text">
+              <string>Rooms long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="groupsTimeHVRoomsCodesCheckBox">
+             <property name="text">
+              <string>Rooms codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabWidgetPage8">
+      <attribute name="title">
+       <string>8</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_9">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>Years timetables days horizontal/vertical</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_9">
+           <item>
+            <widget class="QCheckBox" name="yearsDaysHVDaysNamesCheckBox">
+             <property name="text">
+              <string>Days names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsDaysHVDaysLongNamesCheckBox">
+             <property name="text">
+              <string>Days long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_24">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsDaysHVHoursNamesCheckBox">
+             <property name="text">
+              <string>Hours names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsDaysHVHoursLongNamesCheckBox">
+             <property name="text">
+              <string>Hours long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_25">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsDaysHVSubjectsNamesCheckBox">
+             <property name="text">
+              <string>Subjects names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsDaysHVSubjectsLongNamesCheckBox">
+             <property name="text">
+              <string>Subjects long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsDaysHVSubjectsCodesCheckBox">
+             <property name="text">
+              <string>Subjects codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_26">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsDaysHVActivityTagsNamesCheckBox">
+             <property name="text">
+              <string>Activity tags names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsDaysHVActivityTagsLongNamesCheckBox">
+             <property name="text">
+              <string>Activity tags long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsDaysHVActivityTagsCodesCheckBox">
+             <property name="text">
+              <string>Activity tags codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_10">
+           <item>
+            <widget class="QCheckBox" name="yearsDaysHVTeachersNamesCheckBox">
+             <property name="text">
+              <string>Teachers names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsDaysHVTeachersLongNamesCheckBox">
+             <property name="text">
+              <string>Teachers long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsDaysHVTeachersCodesCheckBox">
+             <property name="text">
+              <string>Teachers codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_27">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsDaysHVStudentsNamesCheckBox">
+             <property name="text">
+              <string>Students names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsDaysHVStudentsLongNamesCheckBox">
+             <property name="text">
+              <string>Students long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsDaysHVStudentsCodesCheckBox">
+             <property name="text">
+              <string>Students codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_28">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsDaysHVRoomsNamesCheckBox">
+             <property name="text">
+              <string>Rooms names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsDaysHVRoomsLongNamesCheckBox">
+             <property name="text">
+              <string>Rooms long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsDaysHVRoomsCodesCheckBox">
+             <property name="text">
+              <string>Rooms codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabWidgetPage9">
+      <attribute name="title">
+       <string>9</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_10">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_9">
+         <property name="text">
+          <string>Years timetables time horizontal/vertical</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_11">
+           <item>
+            <widget class="QCheckBox" name="yearsTimeHVDaysNamesCheckBox">
+             <property name="text">
+              <string>Days names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsTimeHVDaysLongNamesCheckBox">
+             <property name="text">
+              <string>Days long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_29">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsTimeHVHoursNamesCheckBox">
+             <property name="text">
+              <string>Hours names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsTimeHVHoursLongNamesCheckBox">
+             <property name="text">
+              <string>Hours long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_30">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsTimeHVSubjectsNamesCheckBox">
+             <property name="text">
+              <string>Subjects names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsTimeHVSubjectsLongNamesCheckBox">
+             <property name="text">
+              <string>Subjects long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsTimeHVSubjectsCodesCheckBox">
+             <property name="text">
+              <string>Subjects codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_31">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsTimeHVActivityTagsNamesCheckBox">
+             <property name="text">
+              <string>Activity tags names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsTimeHVActivityTagsLongNamesCheckBox">
+             <property name="text">
+              <string>Activity tags long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsTimeHVActivityTagsCodesCheckBox">
+             <property name="text">
+              <string>Activity tags codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_12">
+           <item>
+            <widget class="QCheckBox" name="yearsTimeHVTeachersNamesCheckBox">
+             <property name="text">
+              <string>Teachers names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsTimeHVTeachersLongNamesCheckBox">
+             <property name="text">
+              <string>Teachers long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsTimeHVTeachersCodesCheckBox">
+             <property name="text">
+              <string>Teachers codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_32">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsTimeHVStudentsNamesCheckBox">
+             <property name="text">
+              <string>Students names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsTimeHVStudentsLongNamesCheckBox">
+             <property name="text">
+              <string>Students long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsTimeHVStudentsCodesCheckBox">
+             <property name="text">
+              <string>Students codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_33">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsTimeHVRoomsNamesCheckBox">
+             <property name="text">
+              <string>Rooms names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsTimeHVRoomsLongNamesCheckBox">
+             <property name="text">
+              <string>Rooms long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="yearsTimeHVRoomsCodesCheckBox">
+             <property name="text">
+              <string>Rooms codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabWidgetPage10">
+      <attribute name="title">
+       <string>10</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_11">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_10">
+         <property name="text">
+          <string>Teachers timetables days horizontal/vertical</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_13">
+           <item>
+            <widget class="QCheckBox" name="teachersDaysHVDaysNamesCheckBox">
+             <property name="text">
+              <string>Days names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersDaysHVDaysLongNamesCheckBox">
+             <property name="text">
+              <string>Days long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_34">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersDaysHVHoursNamesCheckBox">
+             <property name="text">
+              <string>Hours names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersDaysHVHoursLongNamesCheckBox">
+             <property name="text">
+              <string>Hours long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_35">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersDaysHVSubjectsNamesCheckBox">
+             <property name="text">
+              <string>Subjects names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersDaysHVSubjectsLongNamesCheckBox">
+             <property name="text">
+              <string>Subjects long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersDaysHVSubjectsCodesCheckBox">
+             <property name="text">
+              <string>Subjects codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_36">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersDaysHVActivityTagsNamesCheckBox">
+             <property name="text">
+              <string>Activity tags names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersDaysHVActivityTagsLongNamesCheckBox">
+             <property name="text">
+              <string>Activity tags long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersDaysHVActivityTagsCodesCheckBox">
+             <property name="text">
+              <string>Activity tags codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_14">
+           <item>
+            <widget class="QCheckBox" name="teachersDaysHVTeachersNamesCheckBox">
+             <property name="text">
+              <string>Teachers names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersDaysHVTeachersLongNamesCheckBox">
+             <property name="text">
+              <string>Teachers long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersDaysHVTeachersCodesCheckBox">
+             <property name="text">
+              <string>Teachers codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_37">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersDaysHVStudentsNamesCheckBox">
+             <property name="text">
+              <string>Students names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersDaysHVStudentsLongNamesCheckBox">
+             <property name="text">
+              <string>Students long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersDaysHVStudentsCodesCheckBox">
+             <property name="text">
+              <string>Students codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_38">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersDaysHVRoomsNamesCheckBox">
+             <property name="text">
+              <string>Rooms names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersDaysHVRoomsLongNamesCheckBox">
+             <property name="text">
+              <string>Rooms long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersDaysHVRoomsCodesCheckBox">
+             <property name="text">
+              <string>Rooms codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabWidgetPage11">
+      <attribute name="title">
+       <string>11</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_12">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_11">
+         <property name="text">
+          <string>Teachers timetables time horizontal/vertical</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_9">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_15">
+           <item>
+            <widget class="QCheckBox" name="teachersTimeHVDaysNamesCheckBox">
+             <property name="text">
+              <string>Days names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersTimeHVDaysLongNamesCheckBox">
+             <property name="text">
+              <string>Days long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_39">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersTimeHVHoursNamesCheckBox">
+             <property name="text">
+              <string>Hours names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersTimeHVHoursLongNamesCheckBox">
+             <property name="text">
+              <string>Hours long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_40">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersTimeHVSubjectsNamesCheckBox">
+             <property name="text">
+              <string>Subjects names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersTimeHVSubjectsLongNamesCheckBox">
+             <property name="text">
+              <string>Subjects long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersTimeHVSubjectsCodesCheckBox">
+             <property name="text">
+              <string>Subjects codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_41">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersTimeHVActivityTagsNamesCheckBox">
+             <property name="text">
+              <string>Activity tags names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersTimeHVActivityTagsLongNamesCheckBox">
+             <property name="text">
+              <string>Activity tags long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersTimeHVActivityTagsCodesCheckBox">
+             <property name="text">
+              <string>Activity tags codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_16">
+           <item>
+            <widget class="QCheckBox" name="teachersTimeHVTeachersNamesCheckBox">
+             <property name="text">
+              <string>Teachers names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersTimeHVTeachersLongNamesCheckBox">
+             <property name="text">
+              <string>Teachers long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersTimeHVTeachersCodesCheckBox">
+             <property name="text">
+              <string>Teachers codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_42">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersTimeHVStudentsNamesCheckBox">
+             <property name="text">
+              <string>Students names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersTimeHVStudentsLongNamesCheckBox">
+             <property name="text">
+              <string>Students long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersTimeHVStudentsCodesCheckBox">
+             <property name="text">
+              <string>Students codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_43">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersTimeHVRoomsNamesCheckBox">
+             <property name="text">
+              <string>Rooms names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersTimeHVRoomsLongNamesCheckBox">
+             <property name="text">
+              <string>Rooms long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="teachersTimeHVRoomsCodesCheckBox">
+             <property name="text">
+              <string>Rooms codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabWidgetPage12">
+      <attribute name="title">
+       <string>12</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_13">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_12">
+         <property name="text">
+          <string>Rooms timetables days horizontal/vertical</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_17">
+           <item>
+            <widget class="QCheckBox" name="roomsDaysHVDaysNamesCheckBox">
+             <property name="text">
+              <string>Days names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsDaysHVDaysLongNamesCheckBox">
+             <property name="text">
+              <string>Days long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_44">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsDaysHVHoursNamesCheckBox">
+             <property name="text">
+              <string>Hours names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsDaysHVHoursLongNamesCheckBox">
+             <property name="text">
+              <string>Hours long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_45">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsDaysHVSubjectsNamesCheckBox">
+             <property name="text">
+              <string>Subjects names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsDaysHVSubjectsLongNamesCheckBox">
+             <property name="text">
+              <string>Subjects long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsDaysHVSubjectsCodesCheckBox">
+             <property name="text">
+              <string>Subjects codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_46">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsDaysHVActivityTagsNamesCheckBox">
+             <property name="text">
+              <string>Activity tags names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsDaysHVActivityTagsLongNamesCheckBox">
+             <property name="text">
+              <string>Activity tags long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsDaysHVActivityTagsCodesCheckBox">
+             <property name="text">
+              <string>Activity tags codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_18">
+           <item>
+            <widget class="QCheckBox" name="roomsDaysHVTeachersNamesCheckBox">
+             <property name="text">
+              <string>Teachers names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsDaysHVTeachersLongNamesCheckBox">
+             <property name="text">
+              <string>Teachers long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsDaysHVTeachersCodesCheckBox">
+             <property name="text">
+              <string>Teachers codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_47">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsDaysHVStudentsNamesCheckBox">
+             <property name="text">
+              <string>Students names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsDaysHVStudentsLongNamesCheckBox">
+             <property name="text">
+              <string>Students long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsDaysHVStudentsCodesCheckBox">
+             <property name="text">
+              <string>Students codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_48">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsDaysHVRoomsNamesCheckBox">
+             <property name="text">
+              <string>Rooms names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsDaysHVRoomsLongNamesCheckBox">
+             <property name="text">
+              <string>Rooms long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsDaysHVRoomsCodesCheckBox">
+             <property name="text">
+              <string>Rooms codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabWidgetPage13">
+      <attribute name="title">
+       <string>13</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_14">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_13">
+         <property name="text">
+          <string>Rooms timetables time horizontal/vertical</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_11">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_19">
+           <item>
+            <widget class="QCheckBox" name="roomsTimeHVDaysNamesCheckBox">
+             <property name="text">
+              <string>Days names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsTimeHVDaysLongNamesCheckBox">
+             <property name="text">
+              <string>Days long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_49">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsTimeHVHoursNamesCheckBox">
+             <property name="text">
+              <string>Hours names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsTimeHVHoursLongNamesCheckBox">
+             <property name="text">
+              <string>Hours long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_50">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsTimeHVSubjectsNamesCheckBox">
+             <property name="text">
+              <string>Subjects names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsTimeHVSubjectsLongNamesCheckBox">
+             <property name="text">
+              <string>Subjects long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsTimeHVSubjectsCodesCheckBox">
+             <property name="text">
+              <string>Subjects codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_51">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsTimeHVActivityTagsNamesCheckBox">
+             <property name="text">
+              <string>Activity tags names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsTimeHVActivityTagsLongNamesCheckBox">
+             <property name="text">
+              <string>Activity tags long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsTimeHVActivityTagsCodesCheckBox">
+             <property name="text">
+              <string>Activity tags codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_20">
+           <item>
+            <widget class="QCheckBox" name="roomsTimeHVTeachersNamesCheckBox">
+             <property name="text">
+              <string>Teachers names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsTimeHVTeachersLongNamesCheckBox">
+             <property name="text">
+              <string>Teachers long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsTimeHVTeachersCodesCheckBox">
+             <property name="text">
+              <string>Teachers codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_52">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsTimeHVStudentsNamesCheckBox">
+             <property name="text">
+              <string>Students names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsTimeHVStudentsLongNamesCheckBox">
+             <property name="text">
+              <string>Students long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsTimeHVStudentsCodesCheckBox">
+             <property name="text">
+              <string>Students codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_53">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsTimeHVRoomsNamesCheckBox">
+             <property name="text">
+              <string>Rooms names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsTimeHVRoomsLongNamesCheckBox">
+             <property name="text">
+              <string>Rooms long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="roomsTimeHVRoomsCodesCheckBox">
+             <property name="text">
+              <string>Rooms codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabWidgetPage14">
+      <attribute name="title">
+       <string>14</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_15">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_14">
+         <property name="text">
+          <string>Buildings timetables days horizontal/vertical</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_12">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_21">
+           <item>
+            <widget class="QCheckBox" name="buildingsDaysHVDaysNamesCheckBox">
+             <property name="text">
+              <string>Days names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsDaysHVDaysLongNamesCheckBox">
+             <property name="text">
+              <string>Days long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_54">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsDaysHVHoursNamesCheckBox">
+             <property name="text">
+              <string>Hours names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsDaysHVHoursLongNamesCheckBox">
+             <property name="text">
+              <string>Hours long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_55">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsDaysHVSubjectsNamesCheckBox">
+             <property name="text">
+              <string>Subjects names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsDaysHVSubjectsLongNamesCheckBox">
+             <property name="text">
+              <string>Subjects long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsDaysHVSubjectsCodesCheckBox">
+             <property name="text">
+              <string>Subjects codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_56">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsDaysHVActivityTagsNamesCheckBox">
+             <property name="text">
+              <string>Activity tags names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsDaysHVActivityTagsLongNamesCheckBox">
+             <property name="text">
+              <string>Activity tags long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsDaysHVActivityTagsCodesCheckBox">
+             <property name="text">
+              <string>Activity tags codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_22">
+           <item>
+            <widget class="QCheckBox" name="buildingsDaysHVTeachersNamesCheckBox">
+             <property name="text">
+              <string>Teachers names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsDaysHVTeachersLongNamesCheckBox">
+             <property name="text">
+              <string>Teachers long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsDaysHVTeachersCodesCheckBox">
+             <property name="text">
+              <string>Teachers codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_57">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsDaysHVStudentsNamesCheckBox">
+             <property name="text">
+              <string>Students names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsDaysHVStudentsLongNamesCheckBox">
+             <property name="text">
+              <string>Students long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsDaysHVStudentsCodesCheckBox">
+             <property name="text">
+              <string>Students codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_58">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsDaysHVRoomsNamesCheckBox">
+             <property name="text">
+              <string>Rooms names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsDaysHVRoomsLongNamesCheckBox">
+             <property name="text">
+              <string>Rooms long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsDaysHVRoomsCodesCheckBox">
+             <property name="text">
+              <string>Rooms codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabWidgetPage15">
+      <attribute name="title">
+       <string>15</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_16">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_15">
+         <property name="text">
+          <string>Buildings timetables time horizontal/vertical</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_13">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_23">
+           <item>
+            <widget class="QCheckBox" name="buildingsTimeHVDaysNamesCheckBox">
+             <property name="text">
+              <string>Days names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsTimeHVDaysLongNamesCheckBox">
+             <property name="text">
+              <string>Days long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_59">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsTimeHVHoursNamesCheckBox">
+             <property name="text">
+              <string>Hours names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsTimeHVHoursLongNamesCheckBox">
+             <property name="text">
+              <string>Hours long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_60">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsTimeHVSubjectsNamesCheckBox">
+             <property name="text">
+              <string>Subjects names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsTimeHVSubjectsLongNamesCheckBox">
+             <property name="text">
+              <string>Subjects long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsTimeHVSubjectsCodesCheckBox">
+             <property name="text">
+              <string>Subjects codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_61">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsTimeHVActivityTagsNamesCheckBox">
+             <property name="text">
+              <string>Activity tags names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsTimeHVActivityTagsLongNamesCheckBox">
+             <property name="text">
+              <string>Activity tags long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsTimeHVActivityTagsCodesCheckBox">
+             <property name="text">
+              <string>Activity tags codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_24">
+           <item>
+            <widget class="QCheckBox" name="buildingsTimeHVTeachersNamesCheckBox">
+             <property name="text">
+              <string>Teachers names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsTimeHVTeachersLongNamesCheckBox">
+             <property name="text">
+              <string>Teachers long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsTimeHVTeachersCodesCheckBox">
+             <property name="text">
+              <string>Teachers codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_62">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsTimeHVStudentsNamesCheckBox">
+             <property name="text">
+              <string>Students names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsTimeHVStudentsLongNamesCheckBox">
+             <property name="text">
+              <string>Students long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsTimeHVStudentsCodesCheckBox">
+             <property name="text">
+              <string>Students codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_63">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsTimeHVRoomsNamesCheckBox">
+             <property name="text">
+              <string>Rooms names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsTimeHVRoomsLongNamesCheckBox">
+             <property name="text">
+              <string>Rooms long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="buildingsTimeHVRoomsCodesCheckBox">
+             <property name="text">
+              <string>Rooms codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabWidgetPage16">
+      <attribute name="title">
+       <string>16</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_17">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_16">
+         <property name="text">
+          <string>Subjects timetables days horizontal/vertical</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_14">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_25">
+           <item>
+            <widget class="QCheckBox" name="subjectsDaysHVDaysNamesCheckBox">
+             <property name="text">
+              <string>Days names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsDaysHVDaysLongNamesCheckBox">
+             <property name="text">
+              <string>Days long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_64">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsDaysHVHoursNamesCheckBox">
+             <property name="text">
+              <string>Hours names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsDaysHVHoursLongNamesCheckBox">
+             <property name="text">
+              <string>Hours long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_65">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsDaysHVSubjectsNamesCheckBox">
+             <property name="text">
+              <string>Subjects names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsDaysHVSubjectsLongNamesCheckBox">
+             <property name="text">
+              <string>Subjects long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsDaysHVSubjectsCodesCheckBox">
+             <property name="text">
+              <string>Subjects codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_66">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsDaysHVActivityTagsNamesCheckBox">
+             <property name="text">
+              <string>Activity tags names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsDaysHVActivityTagsLongNamesCheckBox">
+             <property name="text">
+              <string>Activity tags long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsDaysHVActivityTagsCodesCheckBox">
+             <property name="text">
+              <string>Activity tags codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_26">
+           <item>
+            <widget class="QCheckBox" name="subjectsDaysHVTeachersNamesCheckBox">
+             <property name="text">
+              <string>Teachers names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsDaysHVTeachersLongNamesCheckBox">
+             <property name="text">
+              <string>Teachers long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsDaysHVTeachersCodesCheckBox">
+             <property name="text">
+              <string>Teachers codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_67">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsDaysHVStudentsNamesCheckBox">
+             <property name="text">
+              <string>Students names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsDaysHVStudentsLongNamesCheckBox">
+             <property name="text">
+              <string>Students long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsDaysHVStudentsCodesCheckBox">
+             <property name="text">
+              <string>Students codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_68">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsDaysHVRoomsNamesCheckBox">
+             <property name="text">
+              <string>Rooms names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsDaysHVRoomsLongNamesCheckBox">
+             <property name="text">
+              <string>Rooms long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsDaysHVRoomsCodesCheckBox">
+             <property name="text">
+              <string>Rooms codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabWidgetPage17">
+      <attribute name="title">
+       <string>17</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_18">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_17">
+         <property name="text">
+          <string>Subjects timetables time horizontal/vertical</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_15">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_27">
+           <item>
+            <widget class="QCheckBox" name="subjectsTimeHVDaysNamesCheckBox">
+             <property name="text">
+              <string>Days names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsTimeHVDaysLongNamesCheckBox">
+             <property name="text">
+              <string>Days long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_69">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsTimeHVHoursNamesCheckBox">
+             <property name="text">
+              <string>Hours names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsTimeHVHoursLongNamesCheckBox">
+             <property name="text">
+              <string>Hours long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_70">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsTimeHVSubjectsNamesCheckBox">
+             <property name="text">
+              <string>Subjects names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsTimeHVSubjectsLongNamesCheckBox">
+             <property name="text">
+              <string>Subjects long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsTimeHVSubjectsCodesCheckBox">
+             <property name="text">
+              <string>Subjects codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_71">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsTimeHVActivityTagsNamesCheckBox">
+             <property name="text">
+              <string>Activity tags names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsTimeHVActivityTagsLongNamesCheckBox">
+             <property name="text">
+              <string>Activity tags long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsTimeHVActivityTagsCodesCheckBox">
+             <property name="text">
+              <string>Activity tags codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_28">
+           <item>
+            <widget class="QCheckBox" name="subjectsTimeHVTeachersNamesCheckBox">
+             <property name="text">
+              <string>Teachers names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsTimeHVTeachersLongNamesCheckBox">
+             <property name="text">
+              <string>Teachers long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsTimeHVTeachersCodesCheckBox">
+             <property name="text">
+              <string>Teachers codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_72">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsTimeHVStudentsNamesCheckBox">
+             <property name="text">
+              <string>Students names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsTimeHVStudentsLongNamesCheckBox">
+             <property name="text">
+              <string>Students long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsTimeHVStudentsCodesCheckBox">
+             <property name="text">
+              <string>Students codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_73">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsTimeHVRoomsNamesCheckBox">
+             <property name="text">
+              <string>Rooms names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsTimeHVRoomsLongNamesCheckBox">
+             <property name="text">
+              <string>Rooms long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="subjectsTimeHVRoomsCodesCheckBox">
+             <property name="text">
+              <string>Rooms codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabWidgetPage18">
+      <attribute name="title">
+       <string>18</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_19">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_18">
+         <property name="text">
+          <string>Activity tags timetables days horizontal/vertical</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_16">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_29">
+           <item>
+            <widget class="QCheckBox" name="activityTagsDaysHVDaysNamesCheckBox">
+             <property name="text">
+              <string>Days names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsDaysHVDaysLongNamesCheckBox">
+             <property name="text">
+              <string>Days long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_74">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsDaysHVHoursNamesCheckBox">
+             <property name="text">
+              <string>Hours names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsDaysHVHoursLongNamesCheckBox">
+             <property name="text">
+              <string>Hours long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_75">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsDaysHVSubjectsNamesCheckBox">
+             <property name="text">
+              <string>Subjects names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsDaysHVSubjectsLongNamesCheckBox">
+             <property name="text">
+              <string>Subjects long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsDaysHVSubjectsCodesCheckBox">
+             <property name="text">
+              <string>Subjects codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_76">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsDaysHVActivityTagsNamesCheckBox">
+             <property name="text">
+              <string>Activity tags names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsDaysHVActivityTagsLongNamesCheckBox">
+             <property name="text">
+              <string>Activity tags long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsDaysHVActivityTagsCodesCheckBox">
+             <property name="text">
+              <string>Activity tags codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_30">
+           <item>
+            <widget class="QCheckBox" name="activityTagsDaysHVTeachersNamesCheckBox">
+             <property name="text">
+              <string>Teachers names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsDaysHVTeachersLongNamesCheckBox">
+             <property name="text">
+              <string>Teachers long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsDaysHVTeachersCodesCheckBox">
+             <property name="text">
+              <string>Teachers codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_77">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsDaysHVStudentsNamesCheckBox">
+             <property name="text">
+              <string>Students names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsDaysHVStudentsLongNamesCheckBox">
+             <property name="text">
+              <string>Students long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsDaysHVStudentsCodesCheckBox">
+             <property name="text">
+              <string>Students codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_78">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsDaysHVRoomsNamesCheckBox">
+             <property name="text">
+              <string>Rooms names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsDaysHVRoomsLongNamesCheckBox">
+             <property name="text">
+              <string>Rooms long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsDaysHVRoomsCodesCheckBox">
+             <property name="text">
+              <string>Rooms codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabWidgetPage19">
+      <attribute name="title">
+       <string>19</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_20">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_19">
+         <property name="text">
+          <string>Activity tags timetables time horizontal/vertical</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_17">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_31">
+           <item>
+            <widget class="QCheckBox" name="activityTagsTimeHVDaysNamesCheckBox">
+             <property name="text">
+              <string>Days names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsTimeHVDaysLongNamesCheckBox">
+             <property name="text">
+              <string>Days long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_79">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsTimeHVHoursNamesCheckBox">
+             <property name="text">
+              <string>Hours names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsTimeHVHoursLongNamesCheckBox">
+             <property name="text">
+              <string>Hours long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_80">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsTimeHVSubjectsNamesCheckBox">
+             <property name="text">
+              <string>Subjects names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsTimeHVSubjectsLongNamesCheckBox">
+             <property name="text">
+              <string>Subjects long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsTimeHVSubjectsCodesCheckBox">
+             <property name="text">
+              <string>Subjects codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_81">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsTimeHVActivityTagsNamesCheckBox">
+             <property name="text">
+              <string>Activity tags names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsTimeHVActivityTagsLongNamesCheckBox">
+             <property name="text">
+              <string>Activity tags long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsTimeHVActivityTagsCodesCheckBox">
+             <property name="text">
+              <string>Activity tags codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_32">
+           <item>
+            <widget class="QCheckBox" name="activityTagsTimeHVTeachersNamesCheckBox">
+             <property name="text">
+              <string>Teachers names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsTimeHVTeachersLongNamesCheckBox">
+             <property name="text">
+              <string>Teachers long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsTimeHVTeachersCodesCheckBox">
+             <property name="text">
+              <string>Teachers codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_82">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsTimeHVStudentsNamesCheckBox">
+             <property name="text">
+              <string>Students names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsTimeHVStudentsLongNamesCheckBox">
+             <property name="text">
+              <string>Students long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsTimeHVStudentsCodesCheckBox">
+             <property name="text">
+              <string>Students codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_83">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsTimeHVRoomsNamesCheckBox">
+             <property name="text">
+              <string>Rooms names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsTimeHVRoomsLongNamesCheckBox">
+             <property name="text">
+              <string>Rooms long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activityTagsTimeHVRoomsCodesCheckBox">
+             <property name="text">
+              <string>Rooms codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabWidgetPage20">
+      <attribute name="title">
+       <string>20</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_21">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_20">
+         <property name="text">
+          <string>Activities timetables days horizontal/vertical</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_18">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_33">
+           <item>
+            <widget class="QCheckBox" name="activitiesDaysHVDaysNamesCheckBox">
+             <property name="text">
+              <string>Days names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesDaysHVDaysLongNamesCheckBox">
+             <property name="text">
+              <string>Days long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_84">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesDaysHVHoursNamesCheckBox">
+             <property name="text">
+              <string>Hours names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesDaysHVHoursLongNamesCheckBox">
+             <property name="text">
+              <string>Hours long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_85">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesDaysHVSubjectsNamesCheckBox">
+             <property name="text">
+              <string>Subjects names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesDaysHVSubjectsLongNamesCheckBox">
+             <property name="text">
+              <string>Subjects long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesDaysHVSubjectsCodesCheckBox">
+             <property name="text">
+              <string>Subjects codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_86">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesDaysHVActivityTagsNamesCheckBox">
+             <property name="text">
+              <string>Activity tags names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesDaysHVActivityTagsLongNamesCheckBox">
+             <property name="text">
+              <string>Activity tags long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesDaysHVActivityTagsCodesCheckBox">
+             <property name="text">
+              <string>Activity tags codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_34">
+           <item>
+            <widget class="QCheckBox" name="activitiesDaysHVTeachersNamesCheckBox">
+             <property name="text">
+              <string>Teachers names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesDaysHVTeachersLongNamesCheckBox">
+             <property name="text">
+              <string>Teachers long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesDaysHVTeachersCodesCheckBox">
+             <property name="text">
+              <string>Teachers codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_87">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesDaysHVStudentsNamesCheckBox">
+             <property name="text">
+              <string>Students names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesDaysHVStudentsLongNamesCheckBox">
+             <property name="text">
+              <string>Students long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesDaysHVStudentsCodesCheckBox">
+             <property name="text">
+              <string>Students codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_88">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesDaysHVRoomsNamesCheckBox">
+             <property name="text">
+              <string>Rooms names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesDaysHVRoomsLongNamesCheckBox">
+             <property name="text">
+              <string>Rooms long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesDaysHVRoomsCodesCheckBox">
+             <property name="text">
+              <string>Rooms codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabWidgetPage21">
+      <attribute name="title">
+       <string>21</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_22">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_21">
+         <property name="text">
+          <string>Activities timetables time horizontal/vertical</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_19">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_35">
+           <item>
+            <widget class="QCheckBox" name="activitiesTimeHVDaysNamesCheckBox">
+             <property name="text">
+              <string>Days names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesTimeHVDaysLongNamesCheckBox">
+             <property name="text">
+              <string>Days long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_89">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesTimeHVHoursNamesCheckBox">
+             <property name="text">
+              <string>Hours names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesTimeHVHoursLongNamesCheckBox">
+             <property name="text">
+              <string>Hours long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_90">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesTimeHVSubjectsNamesCheckBox">
+             <property name="text">
+              <string>Subjects names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesTimeHVSubjectsLongNamesCheckBox">
+             <property name="text">
+              <string>Subjects long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesTimeHVSubjectsCodesCheckBox">
+             <property name="text">
+              <string>Subjects codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_91">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesTimeHVActivityTagsNamesCheckBox">
+             <property name="text">
+              <string>Activity tags names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesTimeHVActivityTagsLongNamesCheckBox">
+             <property name="text">
+              <string>Activity tags long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesTimeHVActivityTagsCodesCheckBox">
+             <property name="text">
+              <string>Activity tags codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_36">
+           <item>
+            <widget class="QCheckBox" name="activitiesTimeHVTeachersNamesCheckBox">
+             <property name="text">
+              <string>Teachers names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesTimeHVTeachersLongNamesCheckBox">
+             <property name="text">
+              <string>Teachers long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesTimeHVTeachersCodesCheckBox">
+             <property name="text">
+              <string>Teachers codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_92">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesTimeHVStudentsNamesCheckBox">
+             <property name="text">
+              <string>Students names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesTimeHVStudentsLongNamesCheckBox">
+             <property name="text">
+              <string>Students long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesTimeHVStudentsCodesCheckBox">
+             <property name="text">
+              <string>Students codes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_93">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesTimeHVRoomsNamesCheckBox">
+             <property name="text">
+              <string>Rooms names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesTimeHVRoomsLongNamesCheckBox">
+             <property name="text">
+              <string>Rooms long names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="activitiesTimeHVRoomsCodesCheckBox">
+             <property name="text">
+              <string>Rooms codes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>subjectsCheckBox</tabstop>
+  <tabstop>activityTagsCheckBox</tabstop>
+  <tabstop>teachersCheckBox</tabstop>
+  <tabstop>studentsCheckBox</tabstop>
+  <tabstop>roomsCheckBox</tabstop>
+  <tabstop>cancelPushButton</tabstop>
+  <tabstop>okPushButton</tabstop>
+  <tabstop>separateSubjectsNameLongNameCodeByBreakCheckBox</tabstop>
+  <tabstop>separateBuildingsNameLongNameCodeByBreakCheckBox</tabstop>
+  <tabstop>separateTeachersNameLongNameCodeByBreakCheckBox</tabstop>
+  <tabstop>separateRoomsNameLongNameCodeByBreakCheckBox</tabstop>
+  <tabstop>separateHoursNameLongNameByBreakCheckBox</tabstop>
+  <tabstop>separateDaysNameLongNameByBreakCheckBox</tabstop>
+  <tabstop>separateStudentsNameLongNameCodeByBreakCheckBox</tabstop>
+  <tabstop>separateActivityTagsNameLongNameCodeByBreakCheckBox</tabstop>
+  <tabstop>writeBuildingsCommentsInDaysHVCheckBox</tabstop>
+  <tabstop>writeRoomsCommentsInDaysHVCheckBox</tabstop>
+  <tabstop>writeYearsCommentsInDaysHVCheckBox</tabstop>
+  <tabstop>writeSubgroupsCommentsInDaysHVCheckBox</tabstop>
+  <tabstop>writeSubjectsCommentsInDaysHVCheckBox</tabstop>
+  <tabstop>writeTeachersCommentsInDaysHVCheckBox</tabstop>
+  <tabstop>writeGroupsCommentsInDaysHVCheckBox</tabstop>
+  <tabstop>writeActivityTagsCommentsInDaysHVCheckBox</tabstop>
+  <tabstop>subgroupsDaysHVDaysNamesCheckBox</tabstop>
+  <tabstop>subgroupsDaysHVDaysLongNamesCheckBox</tabstop>
+  <tabstop>subgroupsDaysHVHoursNamesCheckBox</tabstop>
+  <tabstop>subgroupsDaysHVHoursLongNamesCheckBox</tabstop>
+  <tabstop>subgroupsDaysHVSubjectsNamesCheckBox</tabstop>
+  <tabstop>subgroupsDaysHVSubjectsLongNamesCheckBox</tabstop>
+  <tabstop>subgroupsDaysHVSubjectsCodesCheckBox</tabstop>
+  <tabstop>subgroupsDaysHVActivityTagsNamesCheckBox</tabstop>
+  <tabstop>subgroupsDaysHVActivityTagsLongNamesCheckBox</tabstop>
+  <tabstop>subgroupsDaysHVActivityTagsCodesCheckBox</tabstop>
+  <tabstop>subgroupsDaysHVTeachersNamesCheckBox</tabstop>
+  <tabstop>subgroupsDaysHVTeachersLongNamesCheckBox</tabstop>
+  <tabstop>subgroupsDaysHVTeachersCodesCheckBox</tabstop>
+  <tabstop>subgroupsDaysHVStudentsNamesCheckBox</tabstop>
+  <tabstop>subgroupsDaysHVStudentsLongNamesCheckBox</tabstop>
+  <tabstop>subgroupsDaysHVStudentsCodesCheckBox</tabstop>
+  <tabstop>subgroupsDaysHVRoomsNamesCheckBox</tabstop>
+  <tabstop>subgroupsDaysHVRoomsLongNamesCheckBox</tabstop>
+  <tabstop>subgroupsDaysHVRoomsCodesCheckBox</tabstop>
+  <tabstop>subgroupsTimeHVDaysNamesCheckBox</tabstop>
+  <tabstop>subgroupsTimeHVDaysLongNamesCheckBox</tabstop>
+  <tabstop>subgroupsTimeHVHoursNamesCheckBox</tabstop>
+  <tabstop>subgroupsTimeHVHoursLongNamesCheckBox</tabstop>
+  <tabstop>subgroupsTimeHVSubjectsNamesCheckBox</tabstop>
+  <tabstop>subgroupsTimeHVSubjectsLongNamesCheckBox</tabstop>
+  <tabstop>subgroupsTimeHVSubjectsCodesCheckBox</tabstop>
+  <tabstop>subgroupsTimeHVActivityTagsNamesCheckBox</tabstop>
+  <tabstop>subgroupsTimeHVActivityTagsLongNamesCheckBox</tabstop>
+  <tabstop>subgroupsTimeHVActivityTagsCodesCheckBox</tabstop>
+  <tabstop>subgroupsTimeHVTeachersNamesCheckBox</tabstop>
+  <tabstop>subgroupsTimeHVTeachersLongNamesCheckBox</tabstop>
+  <tabstop>subgroupsTimeHVTeachersCodesCheckBox</tabstop>
+  <tabstop>subgroupsTimeHVStudentsNamesCheckBox</tabstop>
+  <tabstop>subgroupsTimeHVStudentsLongNamesCheckBox</tabstop>
+  <tabstop>subgroupsTimeHVStudentsCodesCheckBox</tabstop>
+  <tabstop>subgroupsTimeHVRoomsNamesCheckBox</tabstop>
+  <tabstop>subgroupsTimeHVRoomsLongNamesCheckBox</tabstop>
+  <tabstop>subgroupsTimeHVRoomsCodesCheckBox</tabstop>
+  <tabstop>groupsDaysHVDaysNamesCheckBox</tabstop>
+  <tabstop>groupsDaysHVDaysLongNamesCheckBox</tabstop>
+  <tabstop>groupsDaysHVHoursNamesCheckBox</tabstop>
+  <tabstop>groupsDaysHVHoursLongNamesCheckBox</tabstop>
+  <tabstop>groupsDaysHVSubjectsNamesCheckBox</tabstop>
+  <tabstop>groupsDaysHVSubjectsLongNamesCheckBox</tabstop>
+  <tabstop>groupsDaysHVSubjectsCodesCheckBox</tabstop>
+  <tabstop>groupsDaysHVActivityTagsNamesCheckBox</tabstop>
+  <tabstop>groupsDaysHVActivityTagsLongNamesCheckBox</tabstop>
+  <tabstop>groupsDaysHVActivityTagsCodesCheckBox</tabstop>
+  <tabstop>groupsDaysHVTeachersNamesCheckBox</tabstop>
+  <tabstop>groupsDaysHVTeachersLongNamesCheckBox</tabstop>
+  <tabstop>groupsDaysHVTeachersCodesCheckBox</tabstop>
+  <tabstop>groupsDaysHVStudentsNamesCheckBox</tabstop>
+  <tabstop>groupsDaysHVStudentsLongNamesCheckBox</tabstop>
+  <tabstop>groupsDaysHVStudentsCodesCheckBox</tabstop>
+  <tabstop>groupsDaysHVRoomsNamesCheckBox</tabstop>
+  <tabstop>groupsDaysHVRoomsLongNamesCheckBox</tabstop>
+  <tabstop>groupsDaysHVRoomsCodesCheckBox</tabstop>
+  <tabstop>groupsTimeHVDaysNamesCheckBox</tabstop>
+  <tabstop>groupsTimeHVDaysLongNamesCheckBox</tabstop>
+  <tabstop>groupsTimeHVHoursNamesCheckBox</tabstop>
+  <tabstop>groupsTimeHVHoursLongNamesCheckBox</tabstop>
+  <tabstop>groupsTimeHVSubjectsNamesCheckBox</tabstop>
+  <tabstop>groupsTimeHVSubjectsLongNamesCheckBox</tabstop>
+  <tabstop>groupsTimeHVSubjectsCodesCheckBox</tabstop>
+  <tabstop>groupsTimeHVActivityTagsNamesCheckBox</tabstop>
+  <tabstop>groupsTimeHVActivityTagsLongNamesCheckBox</tabstop>
+  <tabstop>groupsTimeHVActivityTagsCodesCheckBox</tabstop>
+  <tabstop>groupsTimeHVTeachersNamesCheckBox</tabstop>
+  <tabstop>groupsTimeHVTeachersLongNamesCheckBox</tabstop>
+  <tabstop>groupsTimeHVTeachersCodesCheckBox</tabstop>
+  <tabstop>groupsTimeHVStudentsNamesCheckBox</tabstop>
+  <tabstop>groupsTimeHVStudentsLongNamesCheckBox</tabstop>
+  <tabstop>groupsTimeHVStudentsCodesCheckBox</tabstop>
+  <tabstop>groupsTimeHVRoomsNamesCheckBox</tabstop>
+  <tabstop>groupsTimeHVRoomsLongNamesCheckBox</tabstop>
+  <tabstop>groupsTimeHVRoomsCodesCheckBox</tabstop>
+  <tabstop>yearsDaysHVDaysNamesCheckBox</tabstop>
+  <tabstop>yearsDaysHVDaysLongNamesCheckBox</tabstop>
+  <tabstop>yearsDaysHVHoursNamesCheckBox</tabstop>
+  <tabstop>yearsDaysHVHoursLongNamesCheckBox</tabstop>
+  <tabstop>yearsDaysHVSubjectsNamesCheckBox</tabstop>
+  <tabstop>yearsDaysHVSubjectsLongNamesCheckBox</tabstop>
+  <tabstop>yearsDaysHVSubjectsCodesCheckBox</tabstop>
+  <tabstop>yearsDaysHVActivityTagsNamesCheckBox</tabstop>
+  <tabstop>yearsDaysHVActivityTagsLongNamesCheckBox</tabstop>
+  <tabstop>yearsDaysHVActivityTagsCodesCheckBox</tabstop>
+  <tabstop>yearsDaysHVTeachersNamesCheckBox</tabstop>
+  <tabstop>yearsDaysHVTeachersLongNamesCheckBox</tabstop>
+  <tabstop>yearsDaysHVTeachersCodesCheckBox</tabstop>
+  <tabstop>yearsDaysHVStudentsNamesCheckBox</tabstop>
+  <tabstop>yearsDaysHVStudentsLongNamesCheckBox</tabstop>
+  <tabstop>yearsDaysHVStudentsCodesCheckBox</tabstop>
+  <tabstop>yearsDaysHVRoomsNamesCheckBox</tabstop>
+  <tabstop>yearsDaysHVRoomsLongNamesCheckBox</tabstop>
+  <tabstop>yearsDaysHVRoomsCodesCheckBox</tabstop>
+  <tabstop>yearsTimeHVDaysNamesCheckBox</tabstop>
+  <tabstop>yearsTimeHVDaysLongNamesCheckBox</tabstop>
+  <tabstop>yearsTimeHVHoursNamesCheckBox</tabstop>
+  <tabstop>yearsTimeHVHoursLongNamesCheckBox</tabstop>
+  <tabstop>yearsTimeHVSubjectsNamesCheckBox</tabstop>
+  <tabstop>yearsTimeHVSubjectsLongNamesCheckBox</tabstop>
+  <tabstop>yearsTimeHVSubjectsCodesCheckBox</tabstop>
+  <tabstop>yearsTimeHVActivityTagsNamesCheckBox</tabstop>
+  <tabstop>yearsTimeHVActivityTagsLongNamesCheckBox</tabstop>
+  <tabstop>yearsTimeHVActivityTagsCodesCheckBox</tabstop>
+  <tabstop>yearsTimeHVTeachersNamesCheckBox</tabstop>
+  <tabstop>yearsTimeHVTeachersLongNamesCheckBox</tabstop>
+  <tabstop>yearsTimeHVTeachersCodesCheckBox</tabstop>
+  <tabstop>yearsTimeHVStudentsNamesCheckBox</tabstop>
+  <tabstop>yearsTimeHVStudentsLongNamesCheckBox</tabstop>
+  <tabstop>yearsTimeHVStudentsCodesCheckBox</tabstop>
+  <tabstop>yearsTimeHVRoomsNamesCheckBox</tabstop>
+  <tabstop>yearsTimeHVRoomsLongNamesCheckBox</tabstop>
+  <tabstop>yearsTimeHVRoomsCodesCheckBox</tabstop>
+  <tabstop>teachersDaysHVDaysNamesCheckBox</tabstop>
+  <tabstop>teachersDaysHVDaysLongNamesCheckBox</tabstop>
+  <tabstop>teachersDaysHVHoursNamesCheckBox</tabstop>
+  <tabstop>teachersDaysHVHoursLongNamesCheckBox</tabstop>
+  <tabstop>teachersDaysHVSubjectsNamesCheckBox</tabstop>
+  <tabstop>teachersDaysHVSubjectsLongNamesCheckBox</tabstop>
+  <tabstop>teachersDaysHVSubjectsCodesCheckBox</tabstop>
+  <tabstop>teachersDaysHVActivityTagsNamesCheckBox</tabstop>
+  <tabstop>teachersDaysHVActivityTagsLongNamesCheckBox</tabstop>
+  <tabstop>teachersDaysHVActivityTagsCodesCheckBox</tabstop>
+  <tabstop>teachersDaysHVTeachersNamesCheckBox</tabstop>
+  <tabstop>teachersDaysHVTeachersLongNamesCheckBox</tabstop>
+  <tabstop>teachersDaysHVTeachersCodesCheckBox</tabstop>
+  <tabstop>teachersDaysHVStudentsNamesCheckBox</tabstop>
+  <tabstop>teachersDaysHVStudentsLongNamesCheckBox</tabstop>
+  <tabstop>teachersDaysHVStudentsCodesCheckBox</tabstop>
+  <tabstop>teachersDaysHVRoomsNamesCheckBox</tabstop>
+  <tabstop>teachersDaysHVRoomsLongNamesCheckBox</tabstop>
+  <tabstop>teachersDaysHVRoomsCodesCheckBox</tabstop>
+  <tabstop>teachersTimeHVDaysNamesCheckBox</tabstop>
+  <tabstop>teachersTimeHVDaysLongNamesCheckBox</tabstop>
+  <tabstop>teachersTimeHVHoursNamesCheckBox</tabstop>
+  <tabstop>teachersTimeHVHoursLongNamesCheckBox</tabstop>
+  <tabstop>teachersTimeHVSubjectsNamesCheckBox</tabstop>
+  <tabstop>teachersTimeHVSubjectsLongNamesCheckBox</tabstop>
+  <tabstop>teachersTimeHVSubjectsCodesCheckBox</tabstop>
+  <tabstop>teachersTimeHVActivityTagsNamesCheckBox</tabstop>
+  <tabstop>teachersTimeHVActivityTagsLongNamesCheckBox</tabstop>
+  <tabstop>teachersTimeHVActivityTagsCodesCheckBox</tabstop>
+  <tabstop>teachersTimeHVTeachersNamesCheckBox</tabstop>
+  <tabstop>teachersTimeHVTeachersLongNamesCheckBox</tabstop>
+  <tabstop>teachersTimeHVTeachersCodesCheckBox</tabstop>
+  <tabstop>teachersTimeHVStudentsNamesCheckBox</tabstop>
+  <tabstop>teachersTimeHVStudentsLongNamesCheckBox</tabstop>
+  <tabstop>teachersTimeHVStudentsCodesCheckBox</tabstop>
+  <tabstop>teachersTimeHVRoomsNamesCheckBox</tabstop>
+  <tabstop>teachersTimeHVRoomsLongNamesCheckBox</tabstop>
+  <tabstop>teachersTimeHVRoomsCodesCheckBox</tabstop>
+  <tabstop>roomsDaysHVDaysNamesCheckBox</tabstop>
+  <tabstop>roomsDaysHVDaysLongNamesCheckBox</tabstop>
+  <tabstop>roomsDaysHVHoursNamesCheckBox</tabstop>
+  <tabstop>roomsDaysHVHoursLongNamesCheckBox</tabstop>
+  <tabstop>roomsDaysHVSubjectsNamesCheckBox</tabstop>
+  <tabstop>roomsDaysHVSubjectsLongNamesCheckBox</tabstop>
+  <tabstop>roomsDaysHVSubjectsCodesCheckBox</tabstop>
+  <tabstop>roomsDaysHVActivityTagsNamesCheckBox</tabstop>
+  <tabstop>roomsDaysHVActivityTagsLongNamesCheckBox</tabstop>
+  <tabstop>roomsDaysHVActivityTagsCodesCheckBox</tabstop>
+  <tabstop>roomsDaysHVTeachersNamesCheckBox</tabstop>
+  <tabstop>roomsDaysHVTeachersLongNamesCheckBox</tabstop>
+  <tabstop>roomsDaysHVTeachersCodesCheckBox</tabstop>
+  <tabstop>roomsDaysHVStudentsNamesCheckBox</tabstop>
+  <tabstop>roomsDaysHVStudentsLongNamesCheckBox</tabstop>
+  <tabstop>roomsDaysHVStudentsCodesCheckBox</tabstop>
+  <tabstop>roomsDaysHVRoomsNamesCheckBox</tabstop>
+  <tabstop>roomsDaysHVRoomsLongNamesCheckBox</tabstop>
+  <tabstop>roomsDaysHVRoomsCodesCheckBox</tabstop>
+  <tabstop>roomsTimeHVDaysNamesCheckBox</tabstop>
+  <tabstop>roomsTimeHVDaysLongNamesCheckBox</tabstop>
+  <tabstop>roomsTimeHVHoursNamesCheckBox</tabstop>
+  <tabstop>roomsTimeHVHoursLongNamesCheckBox</tabstop>
+  <tabstop>roomsTimeHVSubjectsNamesCheckBox</tabstop>
+  <tabstop>roomsTimeHVSubjectsLongNamesCheckBox</tabstop>
+  <tabstop>roomsTimeHVSubjectsCodesCheckBox</tabstop>
+  <tabstop>roomsTimeHVActivityTagsNamesCheckBox</tabstop>
+  <tabstop>roomsTimeHVActivityTagsLongNamesCheckBox</tabstop>
+  <tabstop>roomsTimeHVActivityTagsCodesCheckBox</tabstop>
+  <tabstop>roomsTimeHVTeachersNamesCheckBox</tabstop>
+  <tabstop>roomsTimeHVTeachersLongNamesCheckBox</tabstop>
+  <tabstop>roomsTimeHVTeachersCodesCheckBox</tabstop>
+  <tabstop>roomsTimeHVStudentsNamesCheckBox</tabstop>
+  <tabstop>roomsTimeHVStudentsLongNamesCheckBox</tabstop>
+  <tabstop>roomsTimeHVStudentsCodesCheckBox</tabstop>
+  <tabstop>roomsTimeHVRoomsNamesCheckBox</tabstop>
+  <tabstop>roomsTimeHVRoomsLongNamesCheckBox</tabstop>
+  <tabstop>roomsTimeHVRoomsCodesCheckBox</tabstop>
+  <tabstop>buildingsDaysHVDaysNamesCheckBox</tabstop>
+  <tabstop>buildingsDaysHVDaysLongNamesCheckBox</tabstop>
+  <tabstop>buildingsDaysHVHoursNamesCheckBox</tabstop>
+  <tabstop>buildingsDaysHVHoursLongNamesCheckBox</tabstop>
+  <tabstop>buildingsDaysHVSubjectsNamesCheckBox</tabstop>
+  <tabstop>buildingsDaysHVSubjectsLongNamesCheckBox</tabstop>
+  <tabstop>buildingsDaysHVSubjectsCodesCheckBox</tabstop>
+  <tabstop>buildingsDaysHVActivityTagsNamesCheckBox</tabstop>
+  <tabstop>buildingsDaysHVActivityTagsLongNamesCheckBox</tabstop>
+  <tabstop>buildingsDaysHVActivityTagsCodesCheckBox</tabstop>
+  <tabstop>buildingsDaysHVTeachersNamesCheckBox</tabstop>
+  <tabstop>buildingsDaysHVTeachersLongNamesCheckBox</tabstop>
+  <tabstop>buildingsDaysHVTeachersCodesCheckBox</tabstop>
+  <tabstop>buildingsDaysHVStudentsNamesCheckBox</tabstop>
+  <tabstop>buildingsDaysHVStudentsLongNamesCheckBox</tabstop>
+  <tabstop>buildingsDaysHVStudentsCodesCheckBox</tabstop>
+  <tabstop>buildingsDaysHVRoomsNamesCheckBox</tabstop>
+  <tabstop>buildingsDaysHVRoomsLongNamesCheckBox</tabstop>
+  <tabstop>buildingsDaysHVRoomsCodesCheckBox</tabstop>
+  <tabstop>buildingsTimeHVDaysNamesCheckBox</tabstop>
+  <tabstop>buildingsTimeHVDaysLongNamesCheckBox</tabstop>
+  <tabstop>buildingsTimeHVHoursNamesCheckBox</tabstop>
+  <tabstop>buildingsTimeHVHoursLongNamesCheckBox</tabstop>
+  <tabstop>buildingsTimeHVSubjectsNamesCheckBox</tabstop>
+  <tabstop>buildingsTimeHVSubjectsLongNamesCheckBox</tabstop>
+  <tabstop>buildingsTimeHVSubjectsCodesCheckBox</tabstop>
+  <tabstop>buildingsTimeHVActivityTagsNamesCheckBox</tabstop>
+  <tabstop>buildingsTimeHVActivityTagsLongNamesCheckBox</tabstop>
+  <tabstop>buildingsTimeHVActivityTagsCodesCheckBox</tabstop>
+  <tabstop>buildingsTimeHVTeachersNamesCheckBox</tabstop>
+  <tabstop>buildingsTimeHVTeachersLongNamesCheckBox</tabstop>
+  <tabstop>buildingsTimeHVTeachersCodesCheckBox</tabstop>
+  <tabstop>buildingsTimeHVStudentsNamesCheckBox</tabstop>
+  <tabstop>buildingsTimeHVStudentsLongNamesCheckBox</tabstop>
+  <tabstop>buildingsTimeHVStudentsCodesCheckBox</tabstop>
+  <tabstop>buildingsTimeHVRoomsNamesCheckBox</tabstop>
+  <tabstop>buildingsTimeHVRoomsLongNamesCheckBox</tabstop>
+  <tabstop>buildingsTimeHVRoomsCodesCheckBox</tabstop>
+  <tabstop>subjectsDaysHVDaysNamesCheckBox</tabstop>
+  <tabstop>subjectsDaysHVDaysLongNamesCheckBox</tabstop>
+  <tabstop>subjectsDaysHVHoursNamesCheckBox</tabstop>
+  <tabstop>subjectsDaysHVHoursLongNamesCheckBox</tabstop>
+  <tabstop>subjectsDaysHVSubjectsNamesCheckBox</tabstop>
+  <tabstop>subjectsDaysHVSubjectsLongNamesCheckBox</tabstop>
+  <tabstop>subjectsDaysHVSubjectsCodesCheckBox</tabstop>
+  <tabstop>subjectsDaysHVActivityTagsNamesCheckBox</tabstop>
+  <tabstop>subjectsDaysHVActivityTagsLongNamesCheckBox</tabstop>
+  <tabstop>subjectsDaysHVActivityTagsCodesCheckBox</tabstop>
+  <tabstop>subjectsDaysHVTeachersNamesCheckBox</tabstop>
+  <tabstop>subjectsDaysHVTeachersLongNamesCheckBox</tabstop>
+  <tabstop>subjectsDaysHVTeachersCodesCheckBox</tabstop>
+  <tabstop>subjectsDaysHVStudentsNamesCheckBox</tabstop>
+  <tabstop>subjectsDaysHVStudentsLongNamesCheckBox</tabstop>
+  <tabstop>subjectsDaysHVStudentsCodesCheckBox</tabstop>
+  <tabstop>subjectsDaysHVRoomsNamesCheckBox</tabstop>
+  <tabstop>subjectsDaysHVRoomsLongNamesCheckBox</tabstop>
+  <tabstop>subjectsDaysHVRoomsCodesCheckBox</tabstop>
+  <tabstop>subjectsTimeHVDaysNamesCheckBox</tabstop>
+  <tabstop>subjectsTimeHVDaysLongNamesCheckBox</tabstop>
+  <tabstop>subjectsTimeHVHoursNamesCheckBox</tabstop>
+  <tabstop>subjectsTimeHVHoursLongNamesCheckBox</tabstop>
+  <tabstop>subjectsTimeHVSubjectsNamesCheckBox</tabstop>
+  <tabstop>subjectsTimeHVSubjectsLongNamesCheckBox</tabstop>
+  <tabstop>subjectsTimeHVSubjectsCodesCheckBox</tabstop>
+  <tabstop>subjectsTimeHVActivityTagsNamesCheckBox</tabstop>
+  <tabstop>subjectsTimeHVActivityTagsLongNamesCheckBox</tabstop>
+  <tabstop>subjectsTimeHVActivityTagsCodesCheckBox</tabstop>
+  <tabstop>subjectsTimeHVTeachersNamesCheckBox</tabstop>
+  <tabstop>subjectsTimeHVTeachersLongNamesCheckBox</tabstop>
+  <tabstop>subjectsTimeHVTeachersCodesCheckBox</tabstop>
+  <tabstop>subjectsTimeHVStudentsNamesCheckBox</tabstop>
+  <tabstop>subjectsTimeHVStudentsLongNamesCheckBox</tabstop>
+  <tabstop>subjectsTimeHVStudentsCodesCheckBox</tabstop>
+  <tabstop>subjectsTimeHVRoomsNamesCheckBox</tabstop>
+  <tabstop>subjectsTimeHVRoomsLongNamesCheckBox</tabstop>
+  <tabstop>subjectsTimeHVRoomsCodesCheckBox</tabstop>
+  <tabstop>activityTagsDaysHVDaysNamesCheckBox</tabstop>
+  <tabstop>activityTagsDaysHVDaysLongNamesCheckBox</tabstop>
+  <tabstop>activityTagsDaysHVHoursNamesCheckBox</tabstop>
+  <tabstop>activityTagsDaysHVHoursLongNamesCheckBox</tabstop>
+  <tabstop>activityTagsDaysHVSubjectsNamesCheckBox</tabstop>
+  <tabstop>activityTagsDaysHVSubjectsLongNamesCheckBox</tabstop>
+  <tabstop>activityTagsDaysHVSubjectsCodesCheckBox</tabstop>
+  <tabstop>activityTagsDaysHVActivityTagsNamesCheckBox</tabstop>
+  <tabstop>activityTagsDaysHVActivityTagsLongNamesCheckBox</tabstop>
+  <tabstop>activityTagsDaysHVActivityTagsCodesCheckBox</tabstop>
+  <tabstop>activityTagsDaysHVTeachersNamesCheckBox</tabstop>
+  <tabstop>activityTagsDaysHVTeachersLongNamesCheckBox</tabstop>
+  <tabstop>activityTagsDaysHVTeachersCodesCheckBox</tabstop>
+  <tabstop>activityTagsDaysHVStudentsNamesCheckBox</tabstop>
+  <tabstop>activityTagsDaysHVStudentsLongNamesCheckBox</tabstop>
+  <tabstop>activityTagsDaysHVStudentsCodesCheckBox</tabstop>
+  <tabstop>activityTagsDaysHVRoomsNamesCheckBox</tabstop>
+  <tabstop>activityTagsDaysHVRoomsLongNamesCheckBox</tabstop>
+  <tabstop>activityTagsDaysHVRoomsCodesCheckBox</tabstop>
+  <tabstop>activityTagsTimeHVDaysNamesCheckBox</tabstop>
+  <tabstop>activityTagsTimeHVDaysLongNamesCheckBox</tabstop>
+  <tabstop>activityTagsTimeHVHoursNamesCheckBox</tabstop>
+  <tabstop>activityTagsTimeHVHoursLongNamesCheckBox</tabstop>
+  <tabstop>activityTagsTimeHVSubjectsNamesCheckBox</tabstop>
+  <tabstop>activityTagsTimeHVSubjectsLongNamesCheckBox</tabstop>
+  <tabstop>activityTagsTimeHVSubjectsCodesCheckBox</tabstop>
+  <tabstop>activityTagsTimeHVActivityTagsNamesCheckBox</tabstop>
+  <tabstop>activityTagsTimeHVActivityTagsLongNamesCheckBox</tabstop>
+  <tabstop>activityTagsTimeHVActivityTagsCodesCheckBox</tabstop>
+  <tabstop>activityTagsTimeHVTeachersNamesCheckBox</tabstop>
+  <tabstop>activityTagsTimeHVTeachersLongNamesCheckBox</tabstop>
+  <tabstop>activityTagsTimeHVTeachersCodesCheckBox</tabstop>
+  <tabstop>activityTagsTimeHVStudentsNamesCheckBox</tabstop>
+  <tabstop>activityTagsTimeHVStudentsLongNamesCheckBox</tabstop>
+  <tabstop>activityTagsTimeHVStudentsCodesCheckBox</tabstop>
+  <tabstop>activityTagsTimeHVRoomsNamesCheckBox</tabstop>
+  <tabstop>activityTagsTimeHVRoomsLongNamesCheckBox</tabstop>
+  <tabstop>activityTagsTimeHVRoomsCodesCheckBox</tabstop>
+  <tabstop>activitiesDaysHVDaysNamesCheckBox</tabstop>
+  <tabstop>activitiesDaysHVDaysLongNamesCheckBox</tabstop>
+  <tabstop>activitiesDaysHVHoursNamesCheckBox</tabstop>
+  <tabstop>activitiesDaysHVHoursLongNamesCheckBox</tabstop>
+  <tabstop>activitiesDaysHVSubjectsNamesCheckBox</tabstop>
+  <tabstop>activitiesDaysHVSubjectsLongNamesCheckBox</tabstop>
+  <tabstop>activitiesDaysHVSubjectsCodesCheckBox</tabstop>
+  <tabstop>activitiesDaysHVActivityTagsNamesCheckBox</tabstop>
+  <tabstop>activitiesDaysHVActivityTagsLongNamesCheckBox</tabstop>
+  <tabstop>activitiesDaysHVActivityTagsCodesCheckBox</tabstop>
+  <tabstop>activitiesDaysHVTeachersNamesCheckBox</tabstop>
+  <tabstop>activitiesDaysHVTeachersLongNamesCheckBox</tabstop>
+  <tabstop>activitiesDaysHVTeachersCodesCheckBox</tabstop>
+  <tabstop>activitiesDaysHVStudentsNamesCheckBox</tabstop>
+  <tabstop>activitiesDaysHVStudentsLongNamesCheckBox</tabstop>
+  <tabstop>activitiesDaysHVStudentsCodesCheckBox</tabstop>
+  <tabstop>activitiesDaysHVRoomsNamesCheckBox</tabstop>
+  <tabstop>activitiesDaysHVRoomsLongNamesCheckBox</tabstop>
+  <tabstop>activitiesDaysHVRoomsCodesCheckBox</tabstop>
+  <tabstop>activitiesTimeHVDaysNamesCheckBox</tabstop>
+  <tabstop>activitiesTimeHVDaysLongNamesCheckBox</tabstop>
+  <tabstop>activitiesTimeHVHoursNamesCheckBox</tabstop>
+  <tabstop>activitiesTimeHVHoursLongNamesCheckBox</tabstop>
+  <tabstop>activitiesTimeHVSubjectsNamesCheckBox</tabstop>
+  <tabstop>activitiesTimeHVSubjectsLongNamesCheckBox</tabstop>
+  <tabstop>activitiesTimeHVSubjectsCodesCheckBox</tabstop>
+  <tabstop>activitiesTimeHVActivityTagsNamesCheckBox</tabstop>
+  <tabstop>activitiesTimeHVActivityTagsLongNamesCheckBox</tabstop>
+  <tabstop>activitiesTimeHVActivityTagsCodesCheckBox</tabstop>
+  <tabstop>activitiesTimeHVTeachersNamesCheckBox</tabstop>
+  <tabstop>activitiesTimeHVTeachersLongNamesCheckBox</tabstop>
+  <tabstop>activitiesTimeHVTeachersCodesCheckBox</tabstop>
+  <tabstop>activitiesTimeHVStudentsNamesCheckBox</tabstop>
+  <tabstop>activitiesTimeHVStudentsLongNamesCheckBox</tabstop>
+  <tabstop>activitiesTimeHVStudentsCodesCheckBox</tabstop>
+  <tabstop>activitiesTimeHVRoomsNamesCheckBox</tabstop>
+  <tabstop>activitiesTimeHVRoomsLongNamesCheckBox</tabstop>
+  <tabstop>activitiesTimeHVRoomsCodesCheckBox</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

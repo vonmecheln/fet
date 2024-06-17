@@ -43,6 +43,8 @@ public slots:
 	
 	void divideYear();
 	
+	void longName();
+	void code();
 	void comments();
 };
 

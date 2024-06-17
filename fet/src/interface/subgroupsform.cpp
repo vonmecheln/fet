@@ -77,6 +77,8 @@ SubgroupsForm::SubgroupsForm(QWidget* parent): QDialog(parent)
 	connect(deactivateStudentsPushButton, &QPushButton::clicked, this, &SubgroupsForm::deactivateStudents);
 	connect(subgroupsListWidget, &QListWidget::itemDoubleClicked, this, &SubgroupsForm::modifySubgroup);
 
+	connect(longNamePushButton, &QPushButton::clicked, this, &SubgroupsForm::longName);
+	connect(codePushButton, &QPushButton::clicked, this, &SubgroupsForm::code);
 	connect(commentsPushButton, &QPushButton::clicked, this, &SubgroupsForm::comments);
 
 	centerWidgetOnScreen(this);
@@ -699,6 +701,134 @@ void SubgroupsForm::comments()
 	
 		gt.rules.addUndoPoint(tr("Changed the comments for the subgroup %1 from\n%2\nto\n%3.").arg(subgroupName).arg(ocs).arg(studentsSet->comments));
 
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+
+		subgroupChanged(subgroupName);
+	}
+}
+
+void SubgroupsForm::longName()
+{
+	int ind=subgroupsListWidget->currentRow();
+	if(ind<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected subgroup"));
+		return;
+	}
+	
+	QString subgroupName=subgroupsListWidget->currentItem()->text();
+	
+	StudentsSet* studentsSet=gt.rules.searchStudentsSet(subgroupName);
+	assert(studentsSet!=nullptr);
+
+	QDialog getLongNameDialog(this);
+	
+	getLongNameDialog.setWindowTitle(tr("Subgroup long name"));
+	
+	QPushButton* okPB=new QPushButton(tr("OK"));
+	okPB->setDefault(true);
+	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
+	
+	connect(okPB, &QPushButton::clicked, &getLongNameDialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &getLongNameDialog, &QDialog::reject);
+
+	QHBoxLayout* hl=new QHBoxLayout();
+	hl->addStretch();
+	hl->addWidget(okPB);
+	hl->addWidget(cancelPB);
+	
+	QVBoxLayout* vl=new QVBoxLayout();
+	
+	QLineEdit* longNameLE=new QLineEdit();
+	longNameLE->setText(studentsSet->longName);
+	longNameLE->selectAll();
+	longNameLE->setFocus();
+	
+	vl->addWidget(longNameLE);
+	vl->addLayout(hl);
+	
+	getLongNameDialog.setLayout(vl);
+	
+	const QString settingsName=QString("SubgroupLongNameDialog");
+	
+	getLongNameDialog.resize(300, 200);
+	centerWidgetOnScreen(&getLongNameDialog);
+	restoreFETDialogGeometry(&getLongNameDialog, settingsName);
+	
+	int t=getLongNameDialog.exec();
+	saveFETDialogGeometry(&getLongNameDialog, settingsName);
+	
+	if(t==QDialog::Accepted){
+		QString oln=studentsSet->longName;
+	
+		studentsSet->longName=longNameLE->text();
+	
+		gt.rules.addUndoPoint(tr("Changed the long name for the subgroup %1 from\n%2\nto\n%3.").arg(subgroupName).arg(oln).arg(studentsSet->longName));
+	
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+
+		subgroupChanged(subgroupName);
+	}
+}
+
+void SubgroupsForm::code()
+{
+	int ind=subgroupsListWidget->currentRow();
+	if(ind<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected subgroup"));
+		return;
+	}
+	
+	QString subgroupName=subgroupsListWidget->currentItem()->text();
+	
+	StudentsSet* studentsSet=gt.rules.searchStudentsSet(subgroupName);
+	assert(studentsSet!=nullptr);
+
+	QDialog getCodeDialog(this);
+	
+	getCodeDialog.setWindowTitle(tr("Subgroup code"));
+	
+	QPushButton* okPB=new QPushButton(tr("OK"));
+	okPB->setDefault(true);
+	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
+	
+	connect(okPB, &QPushButton::clicked, &getCodeDialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &getCodeDialog, &QDialog::reject);
+
+	QHBoxLayout* hl=new QHBoxLayout();
+	hl->addStretch();
+	hl->addWidget(okPB);
+	hl->addWidget(cancelPB);
+	
+	QVBoxLayout* vl=new QVBoxLayout();
+	
+	QLineEdit* codeLE=new QLineEdit();
+	codeLE->setText(studentsSet->code);
+	codeLE->selectAll();
+	codeLE->setFocus();
+	
+	vl->addWidget(codeLE);
+	vl->addLayout(hl);
+	
+	getCodeDialog.setLayout(vl);
+	
+	const QString settingsName=QString("SubgroupCodeDialog");
+	
+	getCodeDialog.resize(300, 200);
+	centerWidgetOnScreen(&getCodeDialog);
+	restoreFETDialogGeometry(&getCodeDialog, settingsName);
+	
+	int t=getCodeDialog.exec();
+	saveFETDialogGeometry(&getCodeDialog, settingsName);
+	
+	if(t==QDialog::Accepted){
+		QString oc=studentsSet->code;
+	
+		studentsSet->code=codeLE->text();
+	
+		gt.rules.addUndoPoint(tr("Changed the code for the subgroup %1 from\n%2\nto\n%3.").arg(subgroupName).arg(oc).arg(studentsSet->code));
+	
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 

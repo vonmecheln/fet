@@ -323,43 +323,119 @@ private:
 	//the following functions return QStrings, because they are 'only' subfunctions to the writeXyzHtml functions
 	static QString writeActivityStudents(int htmlLevel, int ai, int day, int hour, bool notAvailable, bool colspan, bool rowspan,
 		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool printSubjectsNames, bool printSubjectsLongNames, bool printSubjectsCodes,
+		bool printActivityTagsNames, bool printActivityTagsLongNames, bool printActivityTagsCodes,
+		bool printTeachersNames, bool printTeachersLongNames, bool printTeachersCodes,
+		bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes,
+		bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes,
 		const QString& skipStudentsSet);
 	static QString writeActivitiesStudents(int htmlLevel, const QList<int>& allActivities,
-		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms);
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool printSubjectsNames, bool printSubjectsLongNames, bool printSubjectsCodes,
+		bool printActivityTagsNames, bool printActivityTagsLongNames, bool printActivityTagsCodes,
+		bool printTeachersNames, bool printTeachersLongNames, bool printTeachersCodes,
+		bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes,
+		bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes);
 	static QString writeActivityTeacher(int htmlLevel, int teacher, int day, int hour, bool colspan, bool rowspan,
 		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool printSubjectsNames, bool printSubjectsLongNames, bool printSubjectsCodes,
+		bool printActivityTagsNames, bool printActivityTagsLongNames, bool printActivityTagsCodes,
+		bool printTeachersNames, bool printTeachersLongNames, bool printTeachersCodes,
+		bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes,
+		bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes,
 		const QString& skipTeacher);
 	static QString writeActivitiesTeachers(int htmlLevel, const QList<int>& allActivities,
-		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms);
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool printSubjectsNames, bool printSubjectsLongNames, bool printSubjectsCodes,
+		bool printActivityTagsNames, bool printActivityTagsLongNames, bool printActivityTagsCodes,
+		bool printTeachersNames, bool printTeachersLongNames, bool printTeachersCodes,
+		bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes,
+		bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes);
 
 	static QString writeActivityBuilding(int htmlLevel, int building, int day, int hour, bool colspan, bool rowspan,
-		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool printSubjectsNames, bool printSubjectsLongNames, bool printSubjectsCodes,
+		bool printActivityTagsNames, bool printActivityTagsLongNames, bool printActivityTagsCodes,
+		bool printTeachersNames, bool printTeachersLongNames, bool printTeachersCodes,
+		bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes,
+		bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes
 		/*, const QString& skipBuilding*/); //currently unneeded, because FET supports only one building per activity
 	static QString writeActivitiesBuildings(int htmlLevel, const QList<int>& allActivities,
-		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms);
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool printSubjectsNames, bool printSubjectsLongNames, bool printSubjectsCodes,
+		bool printActivityTagsNames, bool printActivityTagsLongNames, bool printActivityTagsCodes,
+		bool printTeachersNames, bool printTeachersLongNames, bool printTeachersCodes,
+		bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes,
+		bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes);
 
 	static QString writeActivityRoom(int htmlLevel, int room, int day, int hour, bool colspan, bool rowspan,
-		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool printSubjectsNames, bool printSubjectsLongNames, bool printSubjectsCodes,
+		bool printActivityTagsNames, bool printActivityTagsLongNames, bool printActivityTagsCodes,
+		bool printTeachersNames, bool printTeachersLongNames, bool printTeachersCodes,
+		bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes,
+		bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes
 		/*, const QString& skipRoom*/); //currently unneeded, because FET supports only one room per activity
 	static QString writeActivitiesRooms(int htmlLevel, const QList<int>& allActivities,
-		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms);
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool printSubjectsNames, bool printSubjectsLongNames, bool printSubjectsCodes,
+		bool printActivityTagsNames, bool printActivityTagsLongNames, bool printActivityTagsCodes,
+		bool printTeachersNames, bool printTeachersLongNames, bool printTeachersCodes,
+		bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes,
+		bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes);
 	static QString writeActivitiesSubjects(int htmlLevel, const QList<int>& allActivities,
-		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms);
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool printSubjectsNames, bool printSubjectsLongNames, bool printSubjectsCodes,
+		bool printActivityTagsNames, bool printActivityTagsLongNames, bool printActivityTagsCodes,
+		bool printTeachersNames, bool printTeachersLongNames, bool printTeachersCodes,
+		bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes,
+		bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes);
 	static QString writeActivitiesActivityTags(int htmlLevel, const QList<int>& allActivities,
-		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms);
-	
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool printSubjectsNames, bool printSubjectsLongNames, bool printSubjectsCodes,
+		bool printActivityTagsNames, bool printActivityTagsLongNames, bool printActivityTagsCodes,
+		bool printTeachersNames, bool printTeachersLongNames, bool printTeachersCodes,
+		bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes,
+		bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes);
+
 	//the following functions return QStrings, because they are 'only' subfunctions to the writeActivity-iesXyz functions
 	static QString writeHead(bool java, int placedActivities, bool printInstitution);
-	static QString writeTOCDays();
+	static QString writeTOCDays(bool writeNames, bool writeLongNames);
 	static QString writeStartTagTDofActivities(int htmlLevel, const Activity* act, bool detailed, bool colspan, bool rowspan, int colorBy,
-		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms);
-	static QString writeSubjectAndActivityTags(int htmlLevel, const Activity* act, const QString& startTag, const QString& startTagAttribute, bool activityTagsOnly, bool printActivityTags);
-	static QString writeStudents(int htmlLevel, const Activity* act, const QString& startTag, const QString& startTagAttribute);
-	static QString writeTeachers(int htmlLevel, const Activity* act, const QString& startTag, const QString& startTagAttribute);
-	static QString writeRoom(int htmlLevel, int ai, const QString& startTag, const QString& startTagAttribute);
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool printSubjectsNames, bool printSubjectsLongNames, bool printSubjectsCodes,
+		bool printActivityTagsNames, bool printActivityTagsLongNames, bool printActivityTagsCodes,
+		bool printTeachersNames, bool printTeachersLongNames, bool printTeachersCodes,
+		bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes,
+		bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes);
+	static QString writeSubjectAndActivityTags(int htmlLevel, const Activity* act, const QString& startTag, const QString& startTagAttribute, bool activityTagsOnly, bool printActivityTags,
+		bool printSubjectsNames, bool printSubjectsLongNames, bool printSubjectsCodes, bool printActivityTagsNames, bool printActivityTagsLongNames, bool printActivityTagsCodes);
+	static QString writeStudents(int htmlLevel, const Activity* act, const QString& startTag, const QString& startTagAttribute,
+		bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes);
+	static QString writeTeachers(int htmlLevel, const Activity* act, const QString& startTag, const QString& startTagAttribute,
+		bool printTeachersNames, bool printTeachersLongNames, bool printTeachersCodes);
+	static QString writeRoom(int htmlLevel, int ai, const QString& startTag, const QString& startTagAttribute,
+		bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes);
 	static QString writeNotAvailableSlot(int htmlLevel, const QString& weight);
 	static QString writeBreakSlot(int htmlLevel, const QString& weight);
 	static QString writeEmpty(int htmlLevel);
+	
+	static QString getSubjectString(Subject* sbj, bool printSubjectsNames, bool printSubjectsLongNames, bool printSubjectsCodes);
+	static QString getActivityTagString(ActivityTag* at, bool printActivityTagsNames, bool printActivityTagsLongNames, bool printActivityTagsCodes);
+	static QString getTeacherString(Teacher* tch, bool printTeachersNames, bool printTeachersLongNames, bool printTeachersCodes);
+	static QString getStudentsSetString(StudentsSet* ss, bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes);
+	static QString getRoomString(Room* rm, bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes);
+
+	static QString getDayOrRealDayString(int d, bool printDaysNames, bool printDaysLongNames);
+	static QString getDayString(int d, bool printDaysNames, bool printDaysLongNames);
+	static QString getRealDayString(int d, bool printDaysNames, bool printDaysLongNames);
+
+	static QString getHourOrRealHourString(int h, bool printHoursNames, bool printHoursLongNames);
+	static QString getHourString(int h, bool printHoursNames, bool printHoursLongNames);
+	static QString getRealHourString(int h, bool printHoursNames, bool printHoursLongNames);
+
+	static QString getVerticalDayString(int d, bool printDaysNames, bool printDaysLongNames);
+	static QString getVerticalRealDayString(int d, bool printDaysNames, bool printDaysLongNames);
 };
 
 #endif

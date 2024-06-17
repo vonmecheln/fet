@@ -33,7 +33,9 @@ public:
 	~DaysForm();
 	
 	QStringList realNamesForDays;
+	QStringList realLongNamesForDays;
 	QStringList realNamesForRealDays;
+	QStringList realLongNamesForRealDays;
 
 public slots:
 	void numberOfDaysChanged();

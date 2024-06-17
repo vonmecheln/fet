@@ -603,7 +603,12 @@ again_here_1:
 	
 	StudentsYear* newYear=new StudentsYear;
 	newYear->name=yearPointer->name;
+	newYear->longName=yearPointer->longName;
+	newYear->code=yearPointer->code;
 	newYear->numberOfStudents=yearPointer->numberOfStudents;
+	
+	newYear->comments=yearPointer->comments;
+	
 	newYear->indexInAugmentedYearsList=yearPointer->indexInAugmentedYearsList;
 	
 	QHash<QString, int> numberOfStudents;
@@ -637,11 +642,11 @@ again_here_1:
 			QStringList groups;
 			for(int i=0; i<categoriesSpinBox->value(); i++)
 				groups.append(year+separator+listWidgets[i]->item(b[i])->text());
-	
+			
 			QString sbn=year;
 			for(int i=0; i<categoriesSpinBox->value(); i++)
 				sbn+=separator+listWidgets[i]->item(b[i])->text();
-				
+			
 			StudentsSubgroup* sb=new StudentsSubgroup;
 			sb->name=sbn;
 			if(numberOfStudents.contains(sb->name))

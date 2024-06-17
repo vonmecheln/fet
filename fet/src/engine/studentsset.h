@@ -67,6 +67,8 @@ class StudentsSet
 
 public:
 	QString name;
+	QString longName;
+	QString code;
 	int numberOfStudents;
 	int type;
 	

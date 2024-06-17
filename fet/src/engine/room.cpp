@@ -25,6 +25,8 @@ QDataStream& operator<<(QDataStream& stream, const Room& rm)
 {
 	stream<<rm.isVirtual;
 	stream<<rm.name;
+	stream<<rm.longName;
+	stream<<rm.code;
 	stream<<rm.capacity;
 	stream<<rm.building;
 	stream<<rm.comments;
@@ -37,6 +39,8 @@ QDataStream& operator>>(QDataStream& stream, Room& rm)
 {
 	stream>>rm.isVirtual;
 	stream>>rm.name;
+	stream>>rm.longName;
+	stream>>rm.code;
 	stream>>rm.capacity;
 	stream>>rm.building;
 	stream>>rm.comments;
@@ -63,6 +67,9 @@ static QString yesNoTranslated(bool x)
 
 Room::Room()
 {
+	longName=QString("");
+	code=QString("");
+
 	isVirtual=false;
 	realRoomsSetsList.clear();
 	this->capacity=MAX_ROOM_CAPACITY;
@@ -118,7 +125,13 @@ void Room::computeInternalStructureRealRoomsSetsList(Rules& r)
 
 QString Room::getDescription()
 {
-	QString s=tr("N:%1", "Name of room").arg(this->name);
+	QString s=tr("N:%1", "The (short) name of room").arg(this->name);
+	s+=", ";
+	
+	s+=tr("LN:%1", "The long name of room").arg(this->longName);
+	s+=", ";
+	
+	s+=tr("C:%1", "The code of room").arg(this->code);
 	s+=", ";
 	
 	if(this->building!=""){
@@ -157,7 +170,14 @@ QString Room::getDetailedDescription()
 {
 	QString s=tr("Room");
 	s+="\n";
-	s+=tr("Name=%1", "The name of the room").arg(this->name);
+
+	s+=tr("Name=%1", "The (short) name of the room").arg(this->name);
+	s+="\n";
+
+	s+=tr("Long name=%1", "The long name of the room").arg(this->longName);
+	s+="\n";
+
+	s+=tr("Code=%1", "The code of the room").arg(this->code);
 	s+="\n";
 
 	if(this->building!=""){
@@ -192,6 +212,8 @@ QString Room::getXmlDescription()
 {
 	QString s="<Room>\n";
 	s+="	<Name>"+protect(this->name)+"</Name>\n";
+	s+="	<Long_Name>"+protect(this->longName)+"</Long_Name>\n";
+	s+="	<Code>"+protect(this->code)+"</Code>\n";
 	s+="	<Building>"+protect(this->building)+"</Building>\n";
 	//s+="	<Type>"+protect(this->type)+"</Type>\n";
 	s+="	<Capacity>"+CustomFETString::number(this->capacity)+"</Capacity>\n";

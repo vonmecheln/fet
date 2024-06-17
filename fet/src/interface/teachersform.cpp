@@ -72,6 +72,8 @@ TeachersForm::TeachersForm(QWidget* parent): QDialog(parent)
 	connect(deactivateTeacherPushButton, &QPushButton::clicked, this, &TeachersForm::deactivateTeacher);
 	connect(teachersListWidget, &QListWidget::itemDoubleClicked, this, &TeachersForm::modifyTeacher);
 
+	connect(longNamePushButton, &QPushButton::clicked, this, &TeachersForm::longName);
+	connect(codePushButton, &QPushButton::clicked, this, &TeachersForm::code);
 	connect(commentsPushButton, &QPushButton::clicked, this, &TeachersForm::comments);
 
 	centerWidgetOnScreen(this);
@@ -483,6 +485,130 @@ void TeachersForm::comments()
 
 		gt.rules.addUndoPoint(tr("Changed the comments for the teacher %1 from\n%2\nto\n%3.").arg(tch->name).arg(oc).arg(tch->comments));
 
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+
+		teacherChanged(ind);
+	}
+}
+
+void TeachersForm::longName()
+{
+	int ind=teachersListWidget->currentRow();
+	if(ind<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected teacher"));
+		return;
+	}
+	
+	Teacher* tch=gt.rules.teachersList[ind];
+	assert(tch!=nullptr);
+
+	QDialog getLongNameDialog(this);
+	
+	getLongNameDialog.setWindowTitle(tr("Teacher long name"));
+	
+	QPushButton* okPB=new QPushButton(tr("OK"));
+	okPB->setDefault(true);
+	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
+	
+	connect(okPB, &QPushButton::clicked, &getLongNameDialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &getLongNameDialog, &QDialog::reject);
+
+	QHBoxLayout* hl=new QHBoxLayout();
+	hl->addStretch();
+	hl->addWidget(okPB);
+	hl->addWidget(cancelPB);
+	
+	QVBoxLayout* vl=new QVBoxLayout();
+	
+	QLineEdit* longNameLE=new QLineEdit();
+	longNameLE->setText(tch->longName);
+	longNameLE->selectAll();
+	longNameLE->setFocus();
+	
+	vl->addWidget(longNameLE);
+	vl->addLayout(hl);
+	
+	getLongNameDialog.setLayout(vl);
+	
+	const QString settingsName=QString("TeacherLongNameDialog");
+	
+	getLongNameDialog.resize(300, 200);
+	centerWidgetOnScreen(&getLongNameDialog);
+	restoreFETDialogGeometry(&getLongNameDialog, settingsName);
+	
+	int t=getLongNameDialog.exec();
+	saveFETDialogGeometry(&getLongNameDialog, settingsName);
+	
+	if(t==QDialog::Accepted){
+		QString oln=tch->longName;
+	
+		tch->longName=longNameLE->text();
+	
+		gt.rules.addUndoPoint(tr("Changed the long name for the teacher %1 from\n%2\nto\n%3.").arg(tch->name).arg(oln).arg(tch->longName));
+	
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+
+		teacherChanged(ind);
+	}
+}
+
+void TeachersForm::code()
+{
+	int ind=teachersListWidget->currentRow();
+	if(ind<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected teacher"));
+		return;
+	}
+	
+	Teacher* tch=gt.rules.teachersList[ind];
+	assert(tch!=nullptr);
+
+	QDialog getCodeDialog(this);
+	
+	getCodeDialog.setWindowTitle(tr("Teacher code"));
+	
+	QPushButton* okPB=new QPushButton(tr("OK"));
+	okPB->setDefault(true);
+	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
+	
+	connect(okPB, &QPushButton::clicked, &getCodeDialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &getCodeDialog, &QDialog::reject);
+
+	QHBoxLayout* hl=new QHBoxLayout();
+	hl->addStretch();
+	hl->addWidget(okPB);
+	hl->addWidget(cancelPB);
+	
+	QVBoxLayout* vl=new QVBoxLayout();
+	
+	QLineEdit* codeLE=new QLineEdit();
+	codeLE->setText(tch->code);
+	codeLE->selectAll();
+	codeLE->setFocus();
+	
+	vl->addWidget(codeLE);
+	vl->addLayout(hl);
+	
+	getCodeDialog.setLayout(vl);
+	
+	const QString settingsName=QString("TeacherCodeDialog");
+	
+	getCodeDialog.resize(300, 200);
+	centerWidgetOnScreen(&getCodeDialog);
+	restoreFETDialogGeometry(&getCodeDialog, settingsName);
+	
+	int t=getCodeDialog.exec();
+	saveFETDialogGeometry(&getCodeDialog, settingsName);
+	
+	if(t==QDialog::Accepted){
+		QString oc=tch->code;
+	
+		tch->code=codeLE->text();
+	
+		gt.rules.addUndoPoint(tr("Changed the code for the teacher %1 from\n%2\nto\n%3.").arg(tch->name).arg(oc).arg(tch->code));
+	
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 

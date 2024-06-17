@@ -65,6 +65,8 @@ RoomsForm::RoomsForm(QWidget* parent): QDialog(parent)
 	connect(sortRoomsPushButton, &QPushButton::clicked, this, &RoomsForm::sortRooms);
 	connect(roomsListWidget, &QListWidget::itemDoubleClicked, this, &RoomsForm::modifyRoom);
 
+	connect(longNamePushButton, &QPushButton::clicked, this, &RoomsForm::longName);
+	connect(codePushButton, &QPushButton::clicked, this, &RoomsForm::code);
 	connect(commentsPushButton, &QPushButton::clicked, this, &RoomsForm::comments);
 
 	connect(makeRealPushButton, &QPushButton::clicked, this, &RoomsForm::makeReal);
@@ -534,4 +536,128 @@ void RoomsForm::makeEditVirtual()
 
 	if(ci>=0)
 		roomsListWidget->setCurrentRow(ci);
+}
+
+void RoomsForm::longName()
+{
+	int ind=roomsListWidget->currentRow();
+	if(ind<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected room"));
+		return;
+	}
+	
+	Room* rm=gt.rules.roomsList[ind];
+	assert(rm!=nullptr);
+
+	QDialog getLongNameDialog(this);
+	
+	getLongNameDialog.setWindowTitle(tr("Room long name"));
+	
+	QPushButton* okPB=new QPushButton(tr("OK"));
+	okPB->setDefault(true);
+	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
+	
+	connect(okPB, &QPushButton::clicked, &getLongNameDialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &getLongNameDialog, &QDialog::reject);
+
+	QHBoxLayout* hl=new QHBoxLayout();
+	hl->addStretch();
+	hl->addWidget(okPB);
+	hl->addWidget(cancelPB);
+	
+	QVBoxLayout* vl=new QVBoxLayout();
+	
+	QLineEdit* longNameLE=new QLineEdit();
+	longNameLE->setText(rm->longName);
+	longNameLE->selectAll();
+	longNameLE->setFocus();
+	
+	vl->addWidget(longNameLE);
+	vl->addLayout(hl);
+	
+	getLongNameDialog.setLayout(vl);
+	
+	const QString settingsName=QString("RoomLongNameDialog");
+	
+	getLongNameDialog.resize(300, 200);
+	centerWidgetOnScreen(&getLongNameDialog);
+	restoreFETDialogGeometry(&getLongNameDialog, settingsName);
+	
+	int t=getLongNameDialog.exec();
+	saveFETDialogGeometry(&getLongNameDialog, settingsName);
+	
+	if(t==QDialog::Accepted){
+		QString oln=rm->longName;
+	
+		rm->longName=longNameLE->text();
+	
+		gt.rules.addUndoPoint(tr("Changed the long name for the room %1 from\n%2\nto\n%3.").arg(rm->name).arg(oln).arg(rm->longName));
+	
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+
+		roomChanged(ind);
+	}
+}
+
+void RoomsForm::code()
+{
+	int ind=roomsListWidget->currentRow();
+	if(ind<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected room"));
+		return;
+	}
+	
+	Room* rm=gt.rules.roomsList[ind];
+	assert(rm!=nullptr);
+
+	QDialog getCodeDialog(this);
+	
+	getCodeDialog.setWindowTitle(tr("Room code"));
+	
+	QPushButton* okPB=new QPushButton(tr("OK"));
+	okPB->setDefault(true);
+	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
+	
+	connect(okPB, &QPushButton::clicked, &getCodeDialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &getCodeDialog, &QDialog::reject);
+
+	QHBoxLayout* hl=new QHBoxLayout();
+	hl->addStretch();
+	hl->addWidget(okPB);
+	hl->addWidget(cancelPB);
+	
+	QVBoxLayout* vl=new QVBoxLayout();
+	
+	QLineEdit* codeLE=new QLineEdit();
+	codeLE->setText(rm->code);
+	codeLE->selectAll();
+	codeLE->setFocus();
+	
+	vl->addWidget(codeLE);
+	vl->addLayout(hl);
+	
+	getCodeDialog.setLayout(vl);
+	
+	const QString settingsName=QString("RoomCodeDialog");
+	
+	getCodeDialog.resize(300, 200);
+	centerWidgetOnScreen(&getCodeDialog);
+	restoreFETDialogGeometry(&getCodeDialog, settingsName);
+	
+	int t=getCodeDialog.exec();
+	saveFETDialogGeometry(&getCodeDialog, settingsName);
+	
+	if(t==QDialog::Accepted){
+		QString oc=rm->code;
+	
+		rm->code=codeLE->text();
+	
+		gt.rules.addUndoPoint(tr("Changed the code for the room %1 from\n%2\nto\n%3.").arg(rm->name).arg(oc).arg(rm->code));
+	
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+
+		roomChanged(ind);
+	}
 }

@@ -122,6 +122,9 @@ QDataStream& operator>>(QDataStream& stream, StudentsSubgroup& subgroup)
 
 StudentsSet::StudentsSet()
 {
+	longName=QString("");
+	code=QString("");
+
 	this->type=STUDENTS_SET;
 	this->numberOfStudents=0;
 	comments=QString("");
@@ -151,6 +154,8 @@ QString StudentsYear::getXmlDescription()
 	QString s="";
 	s+="<Year>\n";
 	s+="	<Name>"+protect(this->name)+"</Name>\n";
+	s+="	<Long_Name>"+protect(this->longName)+"</Long_Name>\n";
+	s+="	<Code>"+protect(this->code)+"</Code>\n";
 	s+="	<Number_of_Students>"+CustomFETString::number(this->numberOfStudents)+"</Number_of_Students>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
 	
@@ -177,7 +182,11 @@ QString StudentsYear::getXmlDescription()
 QString StudentsYear::getDescription()
 {
 	QString s;
-	s+=tr("YN:%1", "Year name").arg(this->name);
+	s+=tr("YN:%1", "Year (short) name").arg(this->name);
+	s+=", ";
+	s+=tr("YLN:%1", "Year long name").arg(this->longName);
+	s+=", ";
+	s+=tr("YC:%1", "Year code").arg(this->code);
 	s+=", ";
 	s+=tr("NoS:%1", "Number of students").arg(this->numberOfStudents);
 	
@@ -194,6 +203,10 @@ QString StudentsYear::getDetailedDescription()
 	s+=tr("Students set - year");
 	s+="\n";
 	s+=tr("Year name=%1").arg(this->name);
+	s+="\n";
+	s+=tr("Year long name=%1").arg(this->longName);
+	s+="\n";
+	s+=tr("Year code=%1").arg(this->code);
 	s+="\n";
 	s+=tr("Number of students=%1").arg(this->numberOfStudents);
 	s+="\n";
@@ -255,6 +268,8 @@ QString StudentsGroup::getXmlDescription()
 	QString s="";
 	s+="	<Group>\n";
 	s+="		<Name>"+protect(this->name)+"</Name>\n";
+	s+="		<Long_Name>"+protect(this->longName)+"</Long_Name>\n";
+	s+="		<Code>"+protect(this->code)+"</Code>\n";
 	s+="		<Number_of_Students>"+CustomFETString::number(this->numberOfStudents)+"</Number_of_Students>\n";
 	s+="		<Comments>"+protect(comments)+"</Comments>\n";
 	for(int i=0; i<this->subgroupsList.size(); i++){
@@ -269,7 +284,11 @@ QString StudentsGroup::getXmlDescription()
 QString StudentsGroup::getDescription()
 {
 	QString s="";
-	s+=tr("GN:%1", "Group name").arg(this->name);
+	s+=tr("GN:%1", "Group (short) name").arg(this->name);
+	s+=", ";
+	s+=tr("GLN:%1", "Group long name").arg(this->longName);
+	s+=", ";
+	s+=tr("GC:%1", "Group code").arg(this->code);
 	s+=", ";
 	s+=tr("NoS:%1", "Number of students").arg(this->numberOfStudents);
 
@@ -286,6 +305,10 @@ QString StudentsGroup::getDetailedDescription()
 	s+=tr("Students set - group");
 	s+="\n";
 	s+=tr("Group name=%1").arg(this->name);
+	s+="\n";
+	s+=tr("Group long name=%1").arg(this->longName);
+	s+="\n";
+	s+=tr("Group code=%1").arg(this->code);
 	s+="\n";
 	s+=tr("Number of students=%1").arg(this->numberOfStudents);
 	s+="\n";
@@ -347,6 +370,8 @@ QString StudentsSubgroup::getXmlDescription()
 	QString s="";
 	s+="		<Subgroup>\n";
 	s+="			<Name>"+protect(this->name)+"</Name>\n";
+	s+="			<Long_Name>"+protect(this->longName)+"</Long_Name>\n";
+	s+="			<Code>"+protect(this->code)+"</Code>\n";
 	s+="			<Number_of_Students>"+CustomFETString::number(this->numberOfStudents)+"</Number_of_Students>\n";
 	s+="			<Comments>"+protect(comments)+"</Comments>\n";
 	s+="		</Subgroup>\n";
@@ -357,7 +382,11 @@ QString StudentsSubgroup::getXmlDescription()
 QString StudentsSubgroup::getDescription()
 {
 	QString s="";
-	s+=tr("SgN:%1", "Subgroup name").arg(this->name);
+	s+=tr("SgN:%1", "Subgroup (short) name").arg(this->name);
+	s+=", ";
+	s+=tr("SgLN:%1", "Subgroup long name").arg(this->longName);
+	s+=", ";
+	s+=tr("SgC:%1", "Subgroup code").arg(this->code);
 	s+=", ";
 	s+=tr("NoS:%1", "Number of students").arg(this->numberOfStudents);
 
@@ -374,6 +403,10 @@ QString StudentsSubgroup::getDetailedDescription()
 	s+=tr("Students set - subgroup");
 	s+="\n";
 	s+=tr("Subgroup name=%1").arg(this->name);
+	s+="\n";
+	s+=tr("Subgroup long name=%1").arg(this->longName);
+	s+="\n";
+	s+=tr("Subgroup code=%1").arg(this->code);
 	s+="\n";
 	s+=tr("Number of students=%1").arg(this->numberOfStudents);
 	s+="\n";

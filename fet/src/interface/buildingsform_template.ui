@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>488</width>
+    <width>509</width>
     <height>440</height>
    </rect>
   </property>
@@ -67,6 +67,20 @@
       <widget class="QPushButton" name="moveBuildingDownPushButton">
        <property name="text">
         <string comment="It means move the item down in the list">Down</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="longNamePushButton">
+       <property name="text">
+        <string>Long name</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="codePushButton">
+       <property name="text">
+        <string>Code</string>
        </property>
       </widget>
      </item>

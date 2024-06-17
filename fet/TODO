@@ -6162,9 +6162,9 @@ Liviu and satellite2: maybe add each building in its own campus.
 373---------------------------------------------------------
 From Jude G:
 
+(the second part was done in FET-6.22.0)
+
   *   Importing comments to activities / students / teachers.
-  *   Option for having full names and codes.
-(so teachers, students, ..., will have two names: a long name and a short name).
 
 374---------------------------------------------------------
 From bharatstank (on forum): (https://lalescu.ro/liviu/fet/forum/index.php?topic=3989.0)
@@ -7242,28 +7242,7 @@ is it possible to implement it?
 Liviu: It could be implemented, but also the timetables are not 1, 2, ..., n, n+1, but some numbers
 will be missing.
 
-462-------------DONE?---------------------------------------
-From ngoctp29121982 (on forum):
-
-https://lalescu.ro/liviu/fet/forum/index.php?topic=5234.0
-
-ngoctp29121982:
-The FET already has a minimum teaching hours per teacher in the morning and a minimum number of hours per day actually per teacher as well as all teachers,
-but I don't see the FET having a constraint on the minimum number of hours per afternoon per teacher. teachers and all teachers. For example: I want the
-minimum number of teaching hours in the morning to be 2 and in the afternoon to be 3, then the FET only has mornings?
-
-Liviu:
-Unfortunately, it is very difficult now, since FET-MA was designed from the start assuming min hours per morning >= min hours per afternoon.
-
-ngoctp29121982:
-So I want the minimum number of teaching hours in the morning to be 2 and in the afternoon to be 3, can the FET do it?
-
-Liviu:
-A code change is needed, but it is very complicated and I cannot do it.
-
-ngoctp29121982:
-I see that RB has the minimum number of teaching hours in the morning, why is it not in the afternoon. This is necessary for every school, every country.
-Please consider changing.
+462-------------DONE----------------------------------------
 
 463---------------------------------------------------------
 From Mohamed Ait Ichou (on forum):
@@ -8806,13 +8785,7 @@ furthermore, even better if we could also specify :
 
 If all tags must match (AND) or any of the selected tags match (OR).
 
-546---------------------------------------------------------
-From Cyrus Ireri (on forum):
-
-https://lalescu.ro/liviu/fet/forum/index.php?topic=5854.0
-
-Is it possible to have teachers names and code be added on fet whereby the name will appear on the Teacher's timetables while codes will be on Student's timetables?
-It can be of help more so while dealing with a large number of teachers and you wish to issue printed timetables
+546----------------DONE-------------------------------------
 
 547---------------------------------------------------------
 From topposempre (on forum):
@@ -9219,6 +9192,20 @@ Is it possible to add new constraint for max gaps between an ordered pair of act
 Liviu Lalescu: "min" is already implemented, but this "max" is much more complicated. Do you mean in the Mornings-Afternoons mode, for a day, for a real day,
 and between morning and afternoon, like the "min"?
 
+victorcapel:
+
+I just need for a day the constraint max gaps between an ordered pair of activity tags for a teacher.
+
+Liviu Lalescu:
+
+So for the Mornings-Afternoons mode, for a FET (half) day?
+
+Also, can on a single day be a single tag present, or there must be both tags present?
+
+victorcapel:
+
+Could have both or just one, if have both tags it needs to have a max in a half day.
+
 574---------------------------------------------------------
 From youcef39 (on forum):
 
@@ -9242,3 +9229,96 @@ We can specify the time range...currently available
 We can specify the maximum number of building changes....currently present
 
 We can choose the intended buildings.... currently not available
+
+575---------------------------------------------------------
+From Volker Dirr (on forum):
+
+About FET in MA Mode:
+What do you think about adding a warning already in the days per week
+dialog if the number of days is odd?
+So maybe add a red label there that the number of days must be even
+and/or print a warning if you close the dialog.
+
+---
+
+Liviu Lalescu:
+
+I think I thought of this, but:
+
+1) He might open an old file, before FET-6.21.1.
+
+2) He might convert the mode from Official to MA and back.
+
+3) The label is visible (even if disabled) in the Official mode, and
+the users might get a wrong impression that they need even days.
+
+4) He must anyway read the instructions to double the FET (half) days.
+
+---
+
+Volker Dirr:
+
+hmm... I can't see why 1) to 4) should be a problem.
+
+yes 1) won't help old users, but it will help all new users. I think
+this is minor.
+
+about 2): hmm... So maybe a warning function that is use 3 times. So you
+need to code it only once (loading, changing mode and changing days)
+
+about 3) You can hide the warning if not MA mode.
+
+about 4) seeing this warning early is maybe very good, since you can
+write "... see the instructions".
+At the moment you (maybe) warn about that too late.
+Isn't it more user friendly to warn earlier about it.
+
+576---------------------------------------------------------
+From TongThanhKieu (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5973.0
+
+I would like an additional constraint: Each morning/afternoon has a maximum of x subjects.
+For example: One morning there are only a maximum of 3 subjects: 2*Math, Computer Science, 2*English.
+
+Liviu Lalescu:
+
+Thank you for the suggestion! It is possible to do, I think. But I am a bit reluctant about it, how is this useful?
+
+TongThanhKieu:
+
+There are 3 reasons as follows:
+1. Students do not feel happy when studying too many subjects.
+2. Teachers do not want to move too much between classrooms.
+3. In specialized schools, teachers and students want to spend more time studying a subject in depth.
+
+Liviu Lalescu:
+
+Is it a general constraint, for all the teachers and students sets? Or you want to add it separately, for a teacher/all the teachers/a students set/all students?
+
+TongThanhKieu:
+
+Add this constraint to a student set, a teacher, all teachers or all students.
+
+Liviu Lalescu:
+
+I added this in the TODO.
+
+But there are also other modalities to impose this requirement with the existing FET constraints:
+
+- Teacher(s) max room changes per day.
+- Increase the duration of some activities to 2 hours and impose a min 1 day between the same subject, with 100% (or teacher(s)/students (set) activity tag
+max 2 hours daily).
+- Min 2 hours daily with an activity tag for students/teachers, and allow empty days. Not all subactivities of a larger split activity should have this tag
+(you can edit the subactivities for this).
+
+TongThanhKieu:
+
+Yes, i already know what you have listed and used it. Thank You!
+Just more a good option for new user.
+
+Liviu Lalescu:
+
+You are welcome!
+
+Unfortunately, this constraint might be very strong and timetables impossible, and the user might not know the reason.

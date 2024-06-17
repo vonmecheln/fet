@@ -62,6 +62,8 @@ BuildingsForm::BuildingsForm(QWidget* parent): QDialog(parent)
 	connect(sortBuildingsPushButton, &QPushButton::clicked, this, &BuildingsForm::sortBuildings);
 	connect(buildingsListWidget, &QListWidget::itemDoubleClicked, this, &BuildingsForm::modifyBuilding);
 
+	connect(longNamePushButton, &QPushButton::clicked, this, &BuildingsForm::longName);
+	connect(codePushButton, &QPushButton::clicked, this, &BuildingsForm::code);
 	connect(commentsPushButton, &QPushButton::clicked, this, &BuildingsForm::comments);
 
 	centerWidgetOnScreen(this);
@@ -348,6 +350,130 @@ void BuildingsForm::comments()
 		bu->comments=commentsPT->toPlainText();
 		
 		gt.rules.addUndoPoint(tr("Changed the comments for the building %1 from\n%2\nto\n%3.").arg(bu->name).arg(oc).arg(bu->comments));
+	
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+
+		buildingChanged(ind);
+	}
+}
+
+void BuildingsForm::longName()
+{
+	int ind=buildingsListWidget->currentRow();
+	if(ind<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected building"));
+		return;
+	}
+	
+	Building* bu=gt.rules.buildingsList[ind];
+	assert(bu!=nullptr);
+
+	QDialog getLongNameDialog(this);
+	
+	getLongNameDialog.setWindowTitle(tr("Building long name"));
+	
+	QPushButton* okPB=new QPushButton(tr("OK"));
+	okPB->setDefault(true);
+	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
+	
+	connect(okPB, &QPushButton::clicked, &getLongNameDialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &getLongNameDialog, &QDialog::reject);
+
+	QHBoxLayout* hl=new QHBoxLayout();
+	hl->addStretch();
+	hl->addWidget(okPB);
+	hl->addWidget(cancelPB);
+	
+	QVBoxLayout* vl=new QVBoxLayout();
+	
+	QLineEdit* longNameLE=new QLineEdit();
+	longNameLE->setText(bu->longName);
+	longNameLE->selectAll();
+	longNameLE->setFocus();
+	
+	vl->addWidget(longNameLE);
+	vl->addLayout(hl);
+	
+	getLongNameDialog.setLayout(vl);
+	
+	const QString settingsName=QString("BuildingLongNameDialog");
+	
+	getLongNameDialog.resize(300, 200);
+	centerWidgetOnScreen(&getLongNameDialog);
+	restoreFETDialogGeometry(&getLongNameDialog, settingsName);
+	
+	int t=getLongNameDialog.exec();
+	saveFETDialogGeometry(&getLongNameDialog, settingsName);
+	
+	if(t==QDialog::Accepted){
+		QString oln=bu->longName;
+	
+		bu->longName=longNameLE->text();
+	
+		gt.rules.addUndoPoint(tr("Changed the long name for the building %1 from\n%2\nto\n%3.").arg(bu->name).arg(oln).arg(bu->longName));
+	
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+
+		buildingChanged(ind);
+	}
+}
+
+void BuildingsForm::code()
+{
+	int ind=buildingsListWidget->currentRow();
+	if(ind<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected building"));
+		return;
+	}
+	
+	Building* bu=gt.rules.buildingsList[ind];
+	assert(bu!=nullptr);
+
+	QDialog getCodeDialog(this);
+	
+	getCodeDialog.setWindowTitle(tr("Building code"));
+	
+	QPushButton* okPB=new QPushButton(tr("OK"));
+	okPB->setDefault(true);
+	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
+	
+	connect(okPB, &QPushButton::clicked, &getCodeDialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &getCodeDialog, &QDialog::reject);
+
+	QHBoxLayout* hl=new QHBoxLayout();
+	hl->addStretch();
+	hl->addWidget(okPB);
+	hl->addWidget(cancelPB);
+	
+	QVBoxLayout* vl=new QVBoxLayout();
+	
+	QLineEdit* codeLE=new QLineEdit();
+	codeLE->setText(bu->code);
+	codeLE->selectAll();
+	codeLE->setFocus();
+	
+	vl->addWidget(codeLE);
+	vl->addLayout(hl);
+	
+	getCodeDialog.setLayout(vl);
+	
+	const QString settingsName=QString("BuildingCodeDialog");
+	
+	getCodeDialog.resize(300, 200);
+	centerWidgetOnScreen(&getCodeDialog);
+	restoreFETDialogGeometry(&getCodeDialog, settingsName);
+	
+	int t=getCodeDialog.exec();
+	saveFETDialogGeometry(&getCodeDialog, settingsName);
+	
+	if(t==QDialog::Accepted){
+		QString oc=bu->code;
+	
+		bu->code=codeLE->text();
+	
+		gt.rules.addUndoPoint(tr("Changed the code for the building %1 from\n%2\nto\n%3.").arg(bu->name).arg(oc).arg(bu->code));
 	
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);

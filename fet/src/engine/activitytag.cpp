@@ -23,6 +23,8 @@
 QDataStream& operator<<(QDataStream& stream, const ActivityTag& at)
 {
 	stream<<at.name;
+	stream<<at.longName;
+	stream<<at.code;
 	stream<<at.printable;
 	stream<<at.comments;
 
@@ -32,6 +34,8 @@ QDataStream& operator<<(QDataStream& stream, const ActivityTag& at)
 QDataStream& operator>>(QDataStream& stream, ActivityTag& at)
 {
 	stream>>at.name;
+	stream>>at.longName;
+	stream>>at.code;
 	stream>>at.printable;
 	stream>>at.comments;
 
@@ -40,6 +44,9 @@ QDataStream& operator>>(QDataStream& stream, ActivityTag& at)
 
 ActivityTag::ActivityTag()
 {
+	longName=QString("");
+	code=QString("");
+
 	printable=true;
 	comments=QString("");
 }
@@ -51,7 +58,10 @@ ActivityTag::~ActivityTag()
 QString ActivityTag::getXmlDescription()
 {
 	QString s="<Activity_Tag>\n";
+
 	s+="	<Name>"+protect(this->name)+"</Name>\n";
+	s+="	<Long_Name>"+protect(this->longName)+"</Long_Name>\n";
+	s+="	<Code>"+protect(this->code)+"</Code>\n";
 	
 	s+="	<Printable>";
 	if(this->printable)
@@ -68,9 +78,15 @@ QString ActivityTag::getXmlDescription()
 
 QString ActivityTag::getDescription()
 {
-	QString s=tr("N:%1", "The name of the activity tag").arg(name);
-	
+	QString s=tr("N:%1", "The (short) name of the activity tag").arg(name);
 	s+=", ";
+
+	s+=tr("LN:%1", "The long name of the activity tag").arg(longName);
+	s+=", ";
+
+	s+=tr("C:%1", "The code of the activity tag").arg(code);
+	s+=", ";
+
 	QString printableYesNo;
 	if(this->printable)
 		printableYesNo=tr("yes");
@@ -89,7 +105,13 @@ QString ActivityTag::getDetailedDescription()
 {
 	QString s=tr("Activity tag");
 	s+="\n";
-	s+=tr("Name=%1", "The name of the activity tag").arg(this->name);
+	s+=tr("Name=%1", "The (short) name of the activity tag").arg(this->name);
+	s+="\n";
+
+	s+=tr("Long name=%1", "The long name of the activity tag").arg(this->longName);
+	s+="\n";
+
+	s+=tr("Code=%1", "The code of the activity tag").arg(this->code);
 	s+="\n";
 
 	QString printableYesNo;

@@ -23,6 +23,8 @@
 QDataStream& operator<<(QDataStream& stream, const Building& bd)
 {
 	stream<<bd.name;
+	stream<<bd.longName;
+	stream<<bd.code;
 	stream<<bd.comments;
 
 	return stream;
@@ -31,6 +33,8 @@ QDataStream& operator<<(QDataStream& stream, const Building& bd)
 QDataStream& operator>>(QDataStream& stream, Building& bd)
 {
 	stream>>bd.name;
+	stream>>bd.longName;
+	stream>>bd.code;
 	stream>>bd.comments;
 
 	return stream;
@@ -38,6 +42,9 @@ QDataStream& operator>>(QDataStream& stream, Building& bd)
 
 Building::Building()
 {
+	longName=QString("");
+	code=QString("");
+
 	comments=QString("");
 }
 
@@ -52,7 +59,13 @@ void Building::computeInternalStructure(Rules& r)
 
 QString Building::getDescription()
 {
-	QString s=tr("N:%1", "The name of the building").arg(name);
+	QString s=tr("N:%1", "The (short) name of the building").arg(name);
+	
+	s+=", ";
+	s+=tr("LN:%1", "The long name of the building").arg(longName);
+
+	s+=", ";
+	s+=tr("C:%1", "The code of the building").arg(code);
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -68,6 +81,12 @@ QString Building::getDetailedDescription()
 	s+=tr("Name=%1", "The name of the building").arg(this->name);
 	s+="\n";
 
+	s+=tr("Long name=%1", "The long name of the building").arg(this->longName);
+	s+="\n";
+
+	s+=tr("Code=%1", "The code of the building").arg(this->code);
+	s+="\n";
+
 	//Has comments?
 	if(!comments.isEmpty()){
 		s+=tr("Comments=%1").arg(comments);
@@ -81,6 +100,8 @@ QString Building::getXmlDescription()
 {
 	QString s="<Building>\n";
 	s+="	<Name>"+protect(this->name)+"</Name>\n";
+	s+="	<Long_Name>"+protect(this->longName)+"</Long_Name>\n";
+	s+="	<Code>"+protect(this->code)+"</Code>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
 	s+="</Building>\n";
 

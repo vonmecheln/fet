@@ -2861,7 +2861,7 @@ Version 6.20.0
 	(as opposed to selecting/deselecting the 'active' check box from the modify activity/subactivity dialogs, which worked correctly), the activity planning
 	dialog was not updated immediately (reported by Cyrus Ireri).
 ---------------------------------------------------------------------------------
-Versions 6.21.0 - 6.21.v
+Versions 6.21.0 - 6.21.1
 - Version 6.21.0
 	- In the Mornings-Afternoons mode the timetables will show/use the real days/hours (suggested by Mohamed Ait Ichou, danghoan, Hieu Nguyen Trong, and
 	maybe other users). TongThanhKieu suggested thicker lines between the morning and the afternoon in the timetable view teachers/students/rooms
@@ -2869,3 +2869,11 @@ Versions 6.21.0 - 6.21.v
 	- Very rare crash bugs fixed when reading a corrupted input file (reported by vlaicumihnea).
 - Version 6.21.1
 	- Critical bug fix in the Mornings-Afternoons mode, when saving the locked fet file (the real days per week and the real hours per day were not saved).
+---------------------------------------------------------------------------------
+Versions 6.22.0 - 6.22.v
+- Version 6.22.0
+	- Added long names for the days, real days (in the Mornings-Afternoons mode), hours, and real hours (in the Mornings-Afternoons mode), and
+	long names and codes for the subjects, activity tags, teachers, students, buildings, and rooms. Also, it is now possible to choose from the Settings menu
+	which of this information to print in the timetables (suggested by Jude G, Cyrus Ireri, and other users). Cyrus Ireri helped with testing and reports,
+	and Benahmed Abdelkrim found and reported a critical bug for the Mornings-Afternoons mode (which was fixed in the final version).
+	- Minor bug fix in the import from CSV files (reported by Darren McDonald).

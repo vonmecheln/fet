@@ -46,6 +46,8 @@ class Building{
 
 public:
 	QString name;
+	QString longName;
+	QString code;
 	
 	QString comments;
 

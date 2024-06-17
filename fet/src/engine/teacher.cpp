@@ -23,6 +23,8 @@
 QDataStream& operator<<(QDataStream& stream, const Teacher& tch)
 {
 	stream<<tch.name;
+	stream<<tch.longName;
+	stream<<tch.code;
 	stream<<tch.morningsAfternoonsBehavior;
 	stream<<tch.targetNumberOfHours;
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
@@ -38,6 +40,8 @@ QDataStream& operator<<(QDataStream& stream, const Teacher& tch)
 QDataStream& operator>>(QDataStream& stream, Teacher& tch)
 {
 	stream>>tch.name;
+	stream>>tch.longName;
+	stream>>tch.code;
 	stream>>tch.morningsAfternoonsBehavior;
 	stream>>tch.targetNumberOfHours;
 
@@ -56,6 +60,9 @@ QDataStream& operator>>(QDataStream& stream, Teacher& tch)
 
 Teacher::Teacher()
 {
+	longName=QString("");
+	code=QString("");
+
 	targetNumberOfHours=0;
 	comments=QString("");
 	qualifiedSubjectsList.clear();
@@ -72,6 +79,8 @@ QString Teacher::getXmlDescription(const Rules& r)
 {
 	QString s="<Teacher>\n";
 	s+="	<Name>"+protect(this->name)+"</Name>\n";
+	s+="	<Long_Name>"+protect(this->longName)+"</Long_Name>\n";
+	s+="	<Code>"+protect(this->code)+"</Code>\n";
 
 	if(r.mode==MORNINGS_AFTERNOONS){
 		s+="	<Mornings_Afternoons_Behavior>";
@@ -107,7 +116,11 @@ QString Teacher::getXmlDescription(const Rules& r)
 
 QString Teacher::getDescription(const Rules& r)
 {
-	QString s=tr("N:%1", "The name of the teacher").arg(name);
+	QString s=tr("N:%1", "The (short) name of the teacher").arg(name);
+	s+=", ";
+	s+=tr("LN:%1", "The long name of the teacher").arg(longName);
+	s+=", ";
+	s+=tr("C:%1", "The code of the teacher").arg(code);
 
 	if(r.mode==MORNINGS_AFTERNOONS){
 		QString mab;
@@ -142,7 +155,11 @@ QString Teacher::getDetailedDescription(const Rules& r)
 {
 	QString s=tr("Teacher");
 	s+="\n";
-	s+=tr("Name=%1", "The name of the teacher").arg(this->name);
+	s+=tr("Name=%1", "The (short) name of the teacher").arg(this->name);
+	s+="\n";
+	s+=tr("Long name=%1", "The long name of the teacher").arg(this->longName);
+	s+="\n";
+	s+=tr("Code=%1", "The code of the teacher").arg(this->code);
 	s+="\n";
 
 	if(r.mode==MORNINGS_AFTERNOONS){

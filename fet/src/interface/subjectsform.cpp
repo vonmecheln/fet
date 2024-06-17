@@ -66,6 +66,8 @@ SubjectsForm::SubjectsForm(QWidget* parent): QDialog(parent)
 	connect(deactivateSubjectPushButton, &QPushButton::clicked, this, &SubjectsForm::deactivateSubject);
 	connect(subjectsListWidget, &QListWidget::itemDoubleClicked, this, &SubjectsForm::renameSubject);
 
+	connect(longNamePushButton, &QPushButton::clicked, this, &SubjectsForm::longName);
+	connect(codePushButton, &QPushButton::clicked, this, &SubjectsForm::code);
 	connect(commentsPushButton, &QPushButton::clicked, this, &SubjectsForm::comments);
 
 	centerWidgetOnScreen(this);
@@ -388,6 +390,130 @@ void SubjectsForm::comments()
 	
 		gt.rules.addUndoPoint(tr("Changed the comments for the subject %1 from\n%2\nto\n%3.").arg(sbj->name).arg(oc).arg(sbj->comments));
 
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+
+		subjectChanged(ind);
+	}
+}
+
+void SubjectsForm::longName()
+{
+	int ind=subjectsListWidget->currentRow();
+	if(ind<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected subject"));
+		return;
+	}
+	
+	Subject* sbj=gt.rules.subjectsList[ind];
+	assert(sbj!=nullptr);
+
+	QDialog getLongNameDialog(this);
+	
+	getLongNameDialog.setWindowTitle(tr("Subject long name"));
+	
+	QPushButton* okPB=new QPushButton(tr("OK"));
+	okPB->setDefault(true);
+	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
+	
+	connect(okPB, &QPushButton::clicked, &getLongNameDialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &getLongNameDialog, &QDialog::reject);
+
+	QHBoxLayout* hl=new QHBoxLayout();
+	hl->addStretch();
+	hl->addWidget(okPB);
+	hl->addWidget(cancelPB);
+	
+	QVBoxLayout* vl=new QVBoxLayout();
+	
+	QLineEdit* longNameLE=new QLineEdit();
+	longNameLE->setText(sbj->longName);
+	longNameLE->selectAll();
+	longNameLE->setFocus();
+	
+	vl->addWidget(longNameLE);
+	vl->addLayout(hl);
+	
+	getLongNameDialog.setLayout(vl);
+	
+	const QString settingsName=QString("SubjectLongNameDialog");
+	
+	getLongNameDialog.resize(300, 200);
+	centerWidgetOnScreen(&getLongNameDialog);
+	restoreFETDialogGeometry(&getLongNameDialog, settingsName);
+	
+	int t=getLongNameDialog.exec();
+	saveFETDialogGeometry(&getLongNameDialog, settingsName);
+	
+	if(t==QDialog::Accepted){
+		QString oln=sbj->longName;
+	
+		sbj->longName=longNameLE->text();
+	
+		gt.rules.addUndoPoint(tr("Changed the long name for the subject %1 from\n%2\nto\n%3.").arg(sbj->name).arg(oln).arg(sbj->longName));
+	
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+
+		subjectChanged(ind);
+	}
+}
+
+void SubjectsForm::code()
+{
+	int ind=subjectsListWidget->currentRow();
+	if(ind<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected subject"));
+		return;
+	}
+	
+	Subject* sbj=gt.rules.subjectsList[ind];
+	assert(sbj!=nullptr);
+
+	QDialog getCodeDialog(this);
+	
+	getCodeDialog.setWindowTitle(tr("Subject code"));
+	
+	QPushButton* okPB=new QPushButton(tr("OK"));
+	okPB->setDefault(true);
+	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
+	
+	connect(okPB, &QPushButton::clicked, &getCodeDialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &getCodeDialog, &QDialog::reject);
+
+	QHBoxLayout* hl=new QHBoxLayout();
+	hl->addStretch();
+	hl->addWidget(okPB);
+	hl->addWidget(cancelPB);
+	
+	QVBoxLayout* vl=new QVBoxLayout();
+	
+	QLineEdit* codeLE=new QLineEdit();
+	codeLE->setText(sbj->code);
+	codeLE->selectAll();
+	codeLE->setFocus();
+	
+	vl->addWidget(codeLE);
+	vl->addLayout(hl);
+	
+	getCodeDialog.setLayout(vl);
+	
+	const QString settingsName=QString("SubjectCodeDialog");
+	
+	getCodeDialog.resize(300, 200);
+	centerWidgetOnScreen(&getCodeDialog);
+	restoreFETDialogGeometry(&getCodeDialog, settingsName);
+	
+	int t=getCodeDialog.exec();
+	saveFETDialogGeometry(&getCodeDialog, settingsName);
+	
+	if(t==QDialog::Accepted){
+		QString oc=sbj->code;
+	
+		sbj->code=codeLE->text();
+	
+		gt.rules.addUndoPoint(tr("Changed the code for the subject %1 from\n%2\nto\n%3.").arg(sbj->name).arg(oc).arg(sbj->code));
+	
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>493</width>
-    <height>501</height>
+    <width>600</width>
+    <height>516</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -49,6 +49,20 @@
       <widget class="QPushButton" name="removeActivityTagPushButton">
        <property name="text">
         <string>Remove</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="longNamePushButton">
+       <property name="text">
+        <string>Long name</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="codePushButton">
+       <property name="text">
+        <string>Code</string>
        </property>
       </widget>
      </item>

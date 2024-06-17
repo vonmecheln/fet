@@ -130,18 +130,22 @@ public:
 	*/
 	//QString daysOfTheWeek[MAX_DAYS_PER_WEEK];
 	QStringList daysOfTheWeek;
+	QStringList daysOfTheWeek_longNames;
 
 	/**
 	The hours of the day (names).
 	*/
 	//QString hoursOfTheDay[MAX_HOURS_PER_DAY];
 	QStringList hoursOfTheDay;
+	QStringList hoursOfTheDay_longNames;
 
 	//For the Mornings-Afternoons mode
 	int nRealDaysPerWeek;
 	int nRealHoursPerDay;
 	QStringList realDaysOfTheWeek;
 	QStringList realHoursOfTheDay;
+	QStringList realDaysOfTheWeek_longNames;
+	QStringList realHoursOfTheDay_longNames;
 
 	/**
 	The number of hours per week

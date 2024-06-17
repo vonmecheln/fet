@@ -60,6 +60,8 @@ public:
 	QList<int> activitiesForTeacher;
 
 	QString name;
+	QString longName;
+	QString code;
 
 	int morningsAfternoonsBehavior;
 	

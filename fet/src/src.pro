@@ -209,6 +209,12 @@ SOURCES += \
 	interface/timetableviewteacherstimehorizontalform.cpp \
 	interface/hoursform.cpp \
 	interface/daysform.cpp \
+	\
+	interface/modifydayform.cpp \
+	interface/modifyrealdayform.cpp \
+	interface/modifyhourform.cpp \
+	interface/modifyrealhourform.cpp \
+	\
 	interface/roomsform.cpp \
 	interface/randomseedform.cpp \
 	interface/getmodefornewfileform.cpp \
@@ -1374,6 +1380,12 @@ HEADERS += \
 	interface/timetableviewteacherstimehorizontalform.h \
 	interface/hoursform.h \
 	interface/daysform.h \
+	\
+	interface/modifydayform.h \
+	interface/modifyrealdayform.h \
+	interface/modifyhourform.h \
+	interface/modifyrealhourform.h \
+	\
 	interface/roomsform.h \
 	interface/randomseedform.h \
 	interface/getmodefornewfileform.h \
@@ -2528,6 +2540,12 @@ FORMS += \
 	interface/timetableviewteacherstimehorizontalform_template.ui \
 	interface/daysform_template.ui \
 	interface/hoursform_template.ui \
+	\
+	interface/modifydayform_template.ui \
+	interface/modifyrealdayform_template.ui \
+	interface/modifyhourform_template.ui \
+	interface/modifyrealhourform_template.ui \
+	\
 	interface/roomsform_template.ui \
 	interface/randomseedform_template.ui \
 	interface/getmodefornewfileform_template.ui \

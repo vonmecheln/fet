@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>499</width>
+    <width>501</width>
     <height>449</height>
    </rect>
   </property>
@@ -36,7 +36,7 @@
      <item>
       <widget class="Line" name="line">
        <property name="orientation">
-        <enum>Qt::Orientation::Horizontal</enum>
+        <enum>Qt::Horizontal</enum>
        </property>
       </widget>
      </item>
@@ -109,7 +109,7 @@
    <item row="0" column="1">
     <widget class="Line" name="line_2">
      <property name="orientation">
-      <enum>Qt::Orientation::Vertical</enum>
+      <enum>Qt::Vertical</enum>
      </property>
     </widget>
    </item>
