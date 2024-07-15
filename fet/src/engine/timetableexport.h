@@ -28,6 +28,7 @@ File timetableexport.h
 #include <QString>
 #include <QHash>
 #include <QList>
+#include <QSet>
 
 class QWidget;
 
@@ -247,8 +248,8 @@ private:
 	
 	//this function must be called before export HTML files, because it is needed to add activities with same starting time (simultaneous activities)
 	static void computeActivitiesWithSameStartingTime();
-	//this function add activities with same starting time into the allActivities list
-	static bool addActivitiesWithSameStartingTime(QList<int>& allActivities, int hour);
+	//this function add activities with same starting time into the allActivitiesList list and into the allActivitiesSet set
+	static bool addActivitiesWithSameStartingTime(QList<int>& allActivitiesList, QSet<int>& allActivitiesSet, int hour);
 	
 	//the following functions write the conflicts as text and the XML files
 	static void writeSubgroupsTimetableXml(QWidget* parent, const QString& xmlfilename, const QList<int>& subgroupsSortedOrder=QList<int>());
@@ -424,6 +425,7 @@ private:
 	static QString getActivityTagString(ActivityTag* at, bool printActivityTagsNames, bool printActivityTagsLongNames, bool printActivityTagsCodes);
 	static QString getTeacherString(Teacher* tch, bool printTeachersNames, bool printTeachersLongNames, bool printTeachersCodes);
 	static QString getStudentsSetString(StudentsSet* ss, bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes);
+	static QString getBuildingString(Building* bu, bool printBuildingsNames, bool printBuildingsLongNames, bool printBuildingsCodes);
 	static QString getRoomString(Room* rm, bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes);
 
 	static QString getDayOrRealDayString(int d, bool printDaysNames, bool printDaysLongNames);

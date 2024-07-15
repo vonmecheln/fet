@@ -200,12 +200,15 @@ SOURCES += \
 	interface/helponstudentsminhoursdaily.cpp \
 	interface/settingstimetablehtmllevelform.cpp \
 	interface/timetableviewstudentsdayshorizontalform.cpp \
+	interface/timetableviewstudentsdaysverticalform.cpp \
 	interface/timetableviewstudentstimehorizontalform.cpp \
 	interface/timetableviewroomsdayshorizontalform.cpp \
+	interface/timetableviewroomsdaysverticalform.cpp \
 	interface/timetableviewroomstimehorizontalform.cpp \
 	interface/yearsform.cpp \
 	interface/timetableshowconflictsform.cpp \
 	interface/timetableviewteachersdayshorizontalform.cpp \
+	interface/timetableviewteachersdaysverticalform.cpp \
 	interface/timetableviewteacherstimehorizontalform.cpp \
 	interface/hoursform.cpp \
 	interface/daysform.cpp \
@@ -1371,12 +1374,15 @@ HEADERS += \
 	interface/helponstudentsminhoursdaily.h \
 	interface/settingstimetablehtmllevelform.h \
 	interface/timetableviewstudentsdayshorizontalform.h \
+	interface/timetableviewstudentsdaysverticalform.h \
 	interface/timetableviewstudentstimehorizontalform.h \
 	interface/timetableviewroomsdayshorizontalform.h \
+	interface/timetableviewroomsdaysverticalform.h \
 	interface/timetableviewroomstimehorizontalform.h \
 	interface/yearsform.h \
 	interface/timetableshowconflictsform.h \
 	interface/timetableviewteachersdayshorizontalform.h \
+	interface/timetableviewteachersdaysverticalform.h \
 	interface/timetableviewteacherstimehorizontalform.h \
 	interface/hoursform.h \
 	interface/daysform.h \
@@ -2531,12 +2537,15 @@ FORMS += \
 	interface/timetablegenerateform_template.ui \
 	interface/timetablegeneratemultipleform_template.ui \
 	interface/timetableviewstudentsdayshorizontalform_template.ui \
+	interface/timetableviewstudentsdaysverticalform_template.ui \
 	interface/timetableviewstudentstimehorizontalform_template.ui \
 	interface/timetableviewroomsdayshorizontalform_template.ui \
+	interface/timetableviewroomsdaysverticalform_template.ui \
 	interface/timetableviewroomstimehorizontalform_template.ui \
 	interface/yearsform_template.ui \
 	interface/timetableshowconflictsform_template.ui \
 	interface/timetableviewteachersdayshorizontalform_template.ui \
+	interface/timetableviewteachersdaysverticalform_template.ui \
 	interface/timetableviewteacherstimehorizontalform_template.ui \
 	interface/daysform_template.ui \
 	interface/hoursform_template.ui \

@@ -2877,3 +2877,12 @@ Versions 6.22.0 - 6.22.v
 	which of this information to print in the timetables (suggested by Jude G, Cyrus Ireri, and other users). Cyrus Ireri helped with testing and reports,
 	and Benahmed Abdelkrim found and reported a critical bug for the Mornings-Afternoons mode (which was fixed in the final version).
 	- Minor bug fix in the import from CSV files (reported by Darren McDonald).
+- Version 6.22.1
+	- Updated to Qt 6.7.2.
+	- Corrected and improved the output of the HTML timetables (reported/suggested by Cyrus Ireri).
+	- Added the teachers/students/rooms days vertical options when viewing the timetable from the interface (suggested by Mohamed Ait Ichou,
+	YOUSSEF HOUIET, and maybe other users in the past).
+	- Corrected the timetable view dialogs when using a right-to-left writing system (previously, the separation lines were drawn incorrectly).
+	Reported by Benahmed Abdelkrim.
+	- Minor improvement: removed the brackets in the menu entries for viewing the timetables (suggested by Volker Dirr).
+	- Updated the Italian translation, by Andrea Primiani.

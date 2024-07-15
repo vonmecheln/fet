@@ -80,10 +80,13 @@ extern Generate gen;
 
 #include "timetableshowconflictsform.h"
 #include "timetableviewstudentsdayshorizontalform.h"
+#include "timetableviewstudentsdaysverticalform.h"
 #include "timetableviewstudentstimehorizontalform.h"
 #include "timetableviewteachersdayshorizontalform.h"
+#include "timetableviewteachersdaysverticalform.h"
 #include "timetableviewteacherstimehorizontalform.h"
 #include "timetableviewroomsdayshorizontalform.h"
+#include "timetableviewroomsdaysverticalform.h"
 #include "timetableviewroomstimehorizontalform.h"
 #endif
 
@@ -1973,45 +1976,66 @@ void setLanguage(QCoreApplication& qapplication, QWidget* parent)
 			//////
 			
 			//timetable
-			TimetableViewStudentsDaysHorizontalForm* vsdf=qobject_cast<TimetableViewStudentsDaysHorizontalForm*>(wi);
-			if(vsdf!=nullptr){
-				vsdf->retranslateUi(vsdf);
-				vsdf->updateStudentsTimetableTable();
+			TimetableViewStudentsDaysHorizontalForm* vsdhf=qobject_cast<TimetableViewStudentsDaysHorizontalForm*>(wi);
+			if(vsdhf!=nullptr){
+				vsdhf->retranslateUi(vsdhf);
+				vsdhf->updateStudentsTimetableTable();
 				continue;
 			}
 
-			TimetableViewStudentsTimeHorizontalForm* vstf=qobject_cast<TimetableViewStudentsTimeHorizontalForm*>(wi);
-			if(vstf!=nullptr){
-				vstf->retranslateUi(vstf);
-				vstf->updateStudentsTimetableTable();
+			TimetableViewStudentsDaysVerticalForm* vsdvf=qobject_cast<TimetableViewStudentsDaysVerticalForm*>(wi);
+			if(vsdvf!=nullptr){
+				vsdvf->retranslateUi(vsdvf);
+				vsdvf->updateStudentsTimetableTable();
 				continue;
 			}
 
-			TimetableViewTeachersDaysHorizontalForm* vtchdf=qobject_cast<TimetableViewTeachersDaysHorizontalForm*>(wi);
-			if(vtchdf!=nullptr){
-				vtchdf->retranslateUi(vtchdf);
-				vtchdf->updateTeachersTimetableTable();
+			TimetableViewStudentsTimeHorizontalForm* vsthf=qobject_cast<TimetableViewStudentsTimeHorizontalForm*>(wi);
+			if(vsthf!=nullptr){
+				vsthf->retranslateUi(vsthf);
+				vsthf->updateStudentsTimetableTable();
 				continue;
 			}
 
-			TimetableViewTeachersTimeHorizontalForm* vtchtf=qobject_cast<TimetableViewTeachersTimeHorizontalForm*>(wi);
-			if(vtchtf!=nullptr){
-				vtchtf->retranslateUi(vtchtf);
-				vtchtf->updateTeachersTimetableTable();
+			TimetableViewTeachersDaysHorizontalForm* vtchdhf=qobject_cast<TimetableViewTeachersDaysHorizontalForm*>(wi);
+			if(vtchdhf!=nullptr){
+				vtchdhf->retranslateUi(vtchdhf);
+				vtchdhf->updateTeachersTimetableTable();
 				continue;
 			}
 
-			TimetableViewRoomsDaysHorizontalForm* vrdf=qobject_cast<TimetableViewRoomsDaysHorizontalForm*>(wi);
-			if(vrdf!=nullptr){
-				vrdf->retranslateUi(vrdf);
-				vrdf->updateRoomsTimetableTable();
+			TimetableViewTeachersDaysVerticalForm* vtchdvf=qobject_cast<TimetableViewTeachersDaysVerticalForm*>(wi);
+			if(vtchdvf!=nullptr){
+				vtchdvf->retranslateUi(vtchdvf);
+				vtchdvf->updateTeachersTimetableTable();
 				continue;
 			}
 
-			TimetableViewRoomsTimeHorizontalForm* vrtf=qobject_cast<TimetableViewRoomsTimeHorizontalForm*>(wi);
-			if(vrtf!=nullptr){
-				vrtf->retranslateUi(vrtf);
-				vrtf->updateRoomsTimetableTable();
+			TimetableViewTeachersTimeHorizontalForm* vtchthf=qobject_cast<TimetableViewTeachersTimeHorizontalForm*>(wi);
+			if(vtchthf!=nullptr){
+				vtchthf->retranslateUi(vtchthf);
+				vtchthf->updateTeachersTimetableTable();
+				continue;
+			}
+
+			TimetableViewRoomsDaysHorizontalForm* vrdhf=qobject_cast<TimetableViewRoomsDaysHorizontalForm*>(wi);
+			if(vrdhf!=nullptr){
+				vrdhf->retranslateUi(vrdhf);
+				vrdhf->updateRoomsTimetableTable();
+				continue;
+			}
+
+			TimetableViewRoomsDaysVerticalForm* vrdvf=qobject_cast<TimetableViewRoomsDaysVerticalForm*>(wi);
+			if(vrdvf!=nullptr){
+				vrdvf->retranslateUi(vrdvf);
+				vrdvf->updateRoomsTimetableTable();
+				continue;
+			}
+
+			TimetableViewRoomsTimeHorizontalForm* vrthf=qobject_cast<TimetableViewRoomsTimeHorizontalForm*>(wi);
+			if(vrthf!=nullptr){
+				vrthf->retranslateUi(vrthf);
+				vrthf->updateRoomsTimetableTable();
 				continue;
 			}
 

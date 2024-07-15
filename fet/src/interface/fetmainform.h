@@ -976,10 +976,13 @@ public slots:
 
 	void timetableGenerateAction_triggered();
 	void timetableViewStudentsDaysHorizontalAction_triggered();
+	void timetableViewStudentsDaysVerticalAction_triggered();
 	void timetableViewStudentsTimeHorizontalAction_triggered();
 	void timetableViewTeachersDaysHorizontalAction_triggered();
+	void timetableViewTeachersDaysVerticalAction_triggered();
 	void timetableViewTeachersTimeHorizontalAction_triggered();
 	void timetableViewRoomsDaysHorizontalAction_triggered();
+	void timetableViewRoomsDaysVerticalAction_triggered();
 	void timetableViewRoomsTimeHorizontalAction_triggered();
 	void timetableShowConflictsAction_triggered();
 	void timetablePrintAction_triggered();

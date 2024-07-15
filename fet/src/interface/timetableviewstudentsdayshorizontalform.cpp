@@ -48,6 +48,7 @@
 
 #include <QCoreApplication>
 #include <QApplication>
+#include <QGuiApplication>
 
 #include <QString>
 #include <QStringList>
@@ -91,23 +92,45 @@ void TimetableViewStudentsDaysHorizontalDelegate::paint(QPainter* painter, const
 
 	int hour=index.row()%nRows;
 
-	if(hour==0){
-		painter->drawLine(option.rect.topLeft(), option.rect.topRight());
-		painter->drawLine(option.rect.topLeft().x(), option.rect.topLeft().y()+1, option.rect.topRight().x(), option.rect.topRight().y()+1);
-	}
-	if(hour==nRows-1){
-		painter->drawLine(option.rect.bottomLeft(), option.rect.bottomRight());
-		painter->drawLine(option.rect.bottomLeft().x(), option.rect.bottomLeft().y()-1, option.rect.bottomRight().x(), option.rect.bottomRight().y()-1);
-	}
+	if(QGuiApplication::isLeftToRight()){
+		if(hour==0){
+			painter->drawLine(option.rect.topLeft(), option.rect.topRight());
+			painter->drawLine(option.rect.topLeft().x(), option.rect.topLeft().y()+1, option.rect.topRight().x(), option.rect.topRight().y()+1);
+		}
+		if(hour==nRows-1){
+			painter->drawLine(option.rect.bottomLeft(), option.rect.bottomRight());
+			painter->drawLine(option.rect.bottomLeft().x(), option.rect.bottomLeft().y()-1, option.rect.bottomRight().x(), option.rect.bottomRight().y()-1);
+		}
 
-	if(index.column()==0){
-		painter->drawLine(option.rect.topLeft(), option.rect.bottomLeft());
-		painter->drawLine(option.rect.topLeft().x()+1, option.rect.topLeft().y(), option.rect.bottomLeft().x()+1, option.rect.bottomLeft().y());
+		if(index.column()==0){
+			painter->drawLine(option.rect.topLeft(), option.rect.bottomLeft());
+			painter->drawLine(option.rect.topLeft().x()+1, option.rect.topLeft().y(), option.rect.bottomLeft().x()+1, option.rect.bottomLeft().y());
+		}
+		if(index.column()==nColumns-1){
+			painter->drawLine(option.rect.topRight(), option.rect.bottomRight());
+			painter->drawLine(option.rect.topRight().x()-1, option.rect.topRight().y(), option.rect.bottomRight().x()-1, option.rect.bottomRight().y());
+		}
 	}
-	if(index.column()==nColumns-1){
-		painter->drawLine(option.rect.topRight(), option.rect.bottomRight());
-		painter->drawLine(option.rect.topRight().x()-1, option.rect.topRight().y(), option.rect.bottomRight().x()-1, option.rect.bottomRight().y());
+	else if(QGuiApplication::isRightToLeft()){
+		if(hour==0){
+			painter->drawLine(option.rect.topRight(), option.rect.topLeft());
+			painter->drawLine(option.rect.topRight().x(), option.rect.topRight().y()+1, option.rect.topLeft().x(), option.rect.topLeft().y()+1);
+		}
+		if(hour==nRows-1){
+			painter->drawLine(option.rect.bottomRight(), option.rect.bottomLeft());
+			painter->drawLine(option.rect.bottomRight().x(), option.rect.bottomRight().y()-1, option.rect.bottomLeft().x(), option.rect.bottomLeft().y()-1);
+		}
+
+		if(index.column()==0){
+			painter->drawLine(option.rect.topRight(), option.rect.bottomRight());
+			painter->drawLine(option.rect.topRight().x()-1, option.rect.topRight().y(), option.rect.bottomRight().x()-1, option.rect.bottomRight().y());
+		}
+		if(index.column()==nColumns-1){
+			painter->drawLine(option.rect.topLeft(), option.rect.bottomLeft());
+			painter->drawLine(option.rect.topLeft().x()+1, option.rect.topLeft().y(), option.rect.bottomLeft().x()+1, option.rect.bottomLeft().y());
+		}
 	}
+	//I think we should not do an 'else {assert(0);}' here, because the layout might be unspecified, according to Qt documentation.
 }
 
 TimetableViewStudentsDaysHorizontalForm::TimetableViewStudentsDaysHorizontalForm(QWidget* parent): QDialog(parent)

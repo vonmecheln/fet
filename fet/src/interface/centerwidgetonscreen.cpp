@@ -31,10 +31,13 @@ File centerwidgetonscreen.cpp
 
 #include "timetableshowconflictsform.h"
 #include "timetableviewstudentsdayshorizontalform.h"
+#include "timetableviewstudentsdaysverticalform.h"
 #include "timetableviewstudentstimehorizontalform.h"
 #include "timetableviewteachersdayshorizontalform.h"
+#include "timetableviewteachersdaysverticalform.h"
 #include "timetableviewteacherstimehorizontalform.h"
 #include "timetableviewroomsdayshorizontalform.h"
+#include "timetableviewroomsdaysverticalform.h"
 #include "timetableviewroomstimehorizontalform.h"
 
 #include <QWidget>
@@ -497,39 +500,57 @@ void updateAllTimetableViewDialogs()
 	for(QWidget* wi : std::as_const(tlwl))
 		if(1 /*wi->isVisible()*/){
 			//timetable
-			TimetableViewStudentsDaysHorizontalForm* vsdf=qobject_cast<TimetableViewStudentsDaysHorizontalForm*>(wi);
-			if(vsdf!=nullptr){
-				vsdf->newTimetableGenerated();
+			TimetableViewStudentsDaysHorizontalForm* vsdhf=qobject_cast<TimetableViewStudentsDaysHorizontalForm*>(wi);
+			if(vsdhf!=nullptr){
+				vsdhf->newTimetableGenerated();
 				continue;
 			}
 
-			TimetableViewStudentsTimeHorizontalForm* vstf=qobject_cast<TimetableViewStudentsTimeHorizontalForm*>(wi);
-			if(vstf!=nullptr){
-				vstf->newTimetableGenerated();
+			TimetableViewStudentsDaysVerticalForm* vsdvf=qobject_cast<TimetableViewStudentsDaysVerticalForm*>(wi);
+			if(vsdvf!=nullptr){
+				vsdvf->newTimetableGenerated();
 				continue;
 			}
 
-			TimetableViewTeachersDaysHorizontalForm* vtchdf=qobject_cast<TimetableViewTeachersDaysHorizontalForm*>(wi);
-			if(vtchdf!=nullptr){
-				vtchdf->newTimetableGenerated();
+			TimetableViewStudentsTimeHorizontalForm* vsthf=qobject_cast<TimetableViewStudentsTimeHorizontalForm*>(wi);
+			if(vsthf!=nullptr){
+				vsthf->newTimetableGenerated();
 				continue;
 			}
 
-			TimetableViewTeachersTimeHorizontalForm* vtchtf=qobject_cast<TimetableViewTeachersTimeHorizontalForm*>(wi);
-			if(vtchtf!=nullptr){
-				vtchtf->newTimetableGenerated();
+			TimetableViewTeachersDaysHorizontalForm* vtchdhf=qobject_cast<TimetableViewTeachersDaysHorizontalForm*>(wi);
+			if(vtchdhf!=nullptr){
+				vtchdhf->newTimetableGenerated();
 				continue;
 			}
 
-			TimetableViewRoomsDaysHorizontalForm* vrdf=qobject_cast<TimetableViewRoomsDaysHorizontalForm*>(wi);
-			if(vrdf!=nullptr){
-				vrdf->newTimetableGenerated();
+			TimetableViewTeachersDaysVerticalForm* vtchdvf=qobject_cast<TimetableViewTeachersDaysVerticalForm*>(wi);
+			if(vtchdvf!=nullptr){
+				vtchdvf->newTimetableGenerated();
 				continue;
 			}
 
-			TimetableViewRoomsTimeHorizontalForm* vrtf=qobject_cast<TimetableViewRoomsTimeHorizontalForm*>(wi);
-			if(vrtf!=nullptr){
-				vrtf->newTimetableGenerated();
+			TimetableViewTeachersTimeHorizontalForm* vtchthf=qobject_cast<TimetableViewTeachersTimeHorizontalForm*>(wi);
+			if(vtchthf!=nullptr){
+				vtchthf->newTimetableGenerated();
+				continue;
+			}
+
+			TimetableViewRoomsDaysHorizontalForm* vrdhf=qobject_cast<TimetableViewRoomsDaysHorizontalForm*>(wi);
+			if(vrdhf!=nullptr){
+				vrdhf->newTimetableGenerated();
+				continue;
+			}
+
+			TimetableViewRoomsDaysVerticalForm* vrdvf=qobject_cast<TimetableViewRoomsDaysVerticalForm*>(wi);
+			if(vrdvf!=nullptr){
+				vrdvf->newTimetableGenerated();
+				continue;
+			}
+
+			TimetableViewRoomsTimeHorizontalForm* vrthf=qobject_cast<TimetableViewRoomsTimeHorizontalForm*>(wi);
+			if(vrthf!=nullptr){
+				vrthf->newTimetableGenerated();
 				continue;
 			}
 

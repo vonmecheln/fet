@@ -363,7 +363,7 @@ From my80s:
 
 export as odt (OpenOffice.org) table (spreadsheet)
 
-See also TODO item #310
+See also item #310
 
 19---------------------------------------------------------
 From Danail Traichev:
@@ -469,8 +469,7 @@ hour, duration, periode, lesson, activity
 this will help if we add new or modify old english phrases and it will
 also help translators.
 
-6. maybe: no brackets in "view (students)", "view (teachers)", and "view
-(rooms)".
+6. - DONE in FET-6.22.1.
 
 7. and it looks like we shouldn't use the word "lesson".
 in the most phases it's better to replace "lessons" by "subactivities"
@@ -488,7 +487,7 @@ shorten version:
 
 9. and a maybe other thing. example:
 view in fet-mainform.
-there is "Time contraints (techers)".
+there is "Time contraints (teachers)".
 and in this folder is for example "Teachers max gaps per Week".
 i recommend to write just "Max gaps per Week".
 Reason:
@@ -4970,7 +4969,7 @@ From Matsumoto (on forum):
 Is LibreOffice exportation planned? Quite a lot of people I present FET to have little to no knowledge about HTML / CSS editing, so being able
 to export the timetables in LibreOffice would really help spread FET around my area.
 
-See also TODO item #18
+See also item #18
 
 311---------------------------------------------------------
 From Matsumoto (on forum):
@@ -9322,3 +9321,218 @@ Liviu Lalescu:
 You are welcome!
 
 Unfortunately, this constraint might be very strong and timetables impossible, and the user might not know the reason.
+
+577---------------------------------------------------------
+From Andrea Maleci:
+
+With Liviu Lalescu's words: Andrea had a file containing many locking time and space constraints. He saw them, but thought that not permanently locked
+meant that FET will neglect them when generating a new timetable. His file was unsolvable, until I unlocked all the activities in time and space, after
+which his file was solvable fast. So, Volker made the following suggestion:
+
+Volker Dirr:
+
+maybe if we start generating we can print a small "warning". if more
+than 10% of the activities are locked in time or room, then print it on
+the screen and write that it might a bit much to lock so many
+activities. And if 100% are locked then writing something like "probably
+an old generated file. trying to place the activities again. Be careful
+if you modify manually this dataset, because it might happen very easy
+that the data set will become impossible by that."
+
+Andrea Maleci:
+
+I think that the simplest way to fix this OSX issue is to document it, because you can't choose any options from the menu, but it's not so immediate
+to understand that it's a workaround for a modal window in Windows.
+
+578---------------------------------------------------------
+From Andrea Primiani:
+
+He asked me (Liviu) if he could translate "Add constraints" (in the teacher(s) add constraint dialogs) as "Aggiungi per tutti" or "Aggiungi a ciascuno".
+So I thought that maybe even the English original might be "Add for all" or "Add for each/everyone". Consider that this push button is available
+in the teacher add constraint dialog, so "Add for all" is appropriate, but also in the teachers add constraint dialog, so "Add for each/everyone" might
+be better.
+
+579---------------------------------------------------------
+From paolo_d and Vangelis Karafillidis (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5978.msg33171#msg33171
+
+paolo_d has an impossible file, which is logically impossible, but FET does not warn this.
+
+Vangelis:
+
+The problem seems to be the teacher Romeo. His activities have duration = 2. Is it possible to change it? Otherwise, I think he should have max hours 6
+at least for one day... since he has 22 hours per week.
+
+Note by Liviu:
+
+paolo_d has 5 days per week and 6 hours per day, and a constraint teachers max 5 hours daily 100%. So if the teacher Romeo has only activities with duration 2,
+it means that he is allowed only 4 hours per day. 5 x 4 = 20, which is less than 22.
+
+So, Vangelis suggested an additional test before starting the generation. But I (Liviu) consider that there are too many similar situations to take care
+of them all.
+
+580---------------------------------------------------------
+From Diego Froner (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5983.0
+
+A very common complaint about students' set schedules is the start time in the last hours on Fridays. So, considering this, is it possible to implement
+a constraint to prevent a student set (or all students' set) from beginning at a specific set of time slots?
+
+...
+
+A suitable name for this constraint could be 'A students set has a preferred set of starting times.'
+
+581---------------------------------------------------------
+From Nelson Gomes (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5987.0
+
+Is it possible to make mornings/afternoons mode with a different number of periods in each one? In my school (and I believe in many schools in Portugal)
+the number of hours in the mornings is greater than the ones in the afternoons (in our institution, 6 in the morning and 2 to 4 in the afternoons,
+depending of the school year). Of course the program works as is, but when trying to print the timetables, they become nearly unreadables, as they
+end up using more than one page...
+
+Liviu Lalescu:
+
+Maybe we could add a Boolean value to each day/real day/hour/real hour, Hide_If_Empty; if it is true and the line/column contains no activities,
+it will be hidden.
+
+Volker Dirr:
+
+See also item #568.
+
+582---------------------------------------------------------
+From AHMED LAOUAR (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5992.0
+
+In Arabic:
+
+إذا ممكن في الطباعة إضافة خيار لتكون الطباعة من اليمين لليسار في النسخة الأخيرة مع اتاحة امكانية كتابة معلومات تحت اسم المنشأة و فوقها كعنوان الجدول و اسم البلد
+
+In English by Google Translate:
+
+If it is possible in printing, add an option to print from right to left in the final version, with the possibility of writing information under and
+above the establishment name, such as the table title and the name of the country.
+
+Liviu Lalescu:
+
+Printing from the FET interface is wrong in right-to-left languages because of a Qt bug, we cannot correct this ourselves.
+
+About the additional information to write, it is only possible after the institution name and teacher/students set name, if you add the teacher's/students
+set's comment in FET and choose to print comments for the teachers/students sets from the Settings -> Timetables -> Data to print in timetables.
+
+583---------------------------------------------------------
+From Henrique Belo (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5993.0
+
+Suggestion: Implementing Teacher Group Parameterization in FET Timetable
+
+I would like to suggest a new feature for FET Timetable that I believe would bring great benefits to everyone's organization and time management.
+Currently, we have the ability to parameterize students by year and class for example
+5th Grade
+
+    5A
+    5B
+    5C
+
+6th Grade
+
+    6A
+    6B
+    6C
+
+...
+
+My suggestion is to implement a similar feature for teachers.
+
+The idea would be to allow the creation of groups and subgroups of teachers. For example:
+
+English Teachers Group
+
+    English 1
+    English 2
+    English 3
+
+Philosophy Teachers Group
+
+    Philosophy 1
+    Philosophy 2
+
+Mathematics Teachers Group
+
+    Mathematics 1
+    Mathematics 2
+    Mathematics 3
+
+
+This parameterization would make it easier to organize meetings that involve many teachers.
+Instead of selecting each teacher individually for the activities, we could simply select the desired group, ensuring that all teachers in that group
+are considered for the activities.
+
+I hope this suggestion is considered and that it can be useful for many FET Timetable users.
+
+Liviu Lalescu:
+
+Yes, like Volker said, more users suggested a similar feature, for instance to add a set of teachers to a constraint.
+
+584---------------------------------------------------------
+From YOUSSEF HOUIET (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5994.0
+
+Time horizontal view of Rooms not available times constraints in FET-NSRT
+
+it is possible to add Time horizontal view of Rooms not available times constraints in FET-NSRT, for allow users to specify times when the room is
+unavailable during exams, Instead of entering it room by room
+
+Liviu Lalescu:
+
+Unfortunately, a file can have more constraints of this type for a certain room, and also the weights are allowed to be less than 100%.
+
+585---------------------------------------------------------
+From Darren McDonald (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5996.0
+
+CSV Import/Export of Code and Long name
+
+Currently my school uses the Comments field to enter student codes (students are Subgroups in our setup). With the new fields, it would make sense
+to instead use the new Code field for this data. Would it be possible to have these new fields included in csv file import/export?
+
+586---------------------------------------------------------
+From Alessio (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6000.0
+
+In Italian:
+
+Come fissare un tetto max in ore per l'utilizzo di aule preferenziali
+
+Ho il seguente problema: utilizzo 3 aule preferenziali per svolgere attività di laboratorio. In questo modo l'orario dovrebbe chiudersi più
+facilmente perché non assegno una specifica attività a uno specifico laboratorio dando all'orario la possibilità di svolgere fino a 3 attività
+contemporaneamente in laboratori diversi. Il problema è che così facendo non posso controllare quante ore saranno svolte in un laboratorio
+e quante in un altro. Il punto è che ciascun laboratorio è affidato a un tecnico che da contratto non può superare un certo numero di ore settimanali
+dovendosi occupare anche della manutenzione.
+
+A questo punto mi chiedo è possibile porre un limite max in ore settimanali di utilizzo di un'aula laboratorio?
+
+English translation by Google translate:
+
+How to set a maximum ceiling in hours for the use of preferential classrooms
+
+I have the following problem: I use 3 preferential classrooms to carry out laboratory activities. In this way the timetable should close more easily
+because I do not assign a specific activity to a specific laboratory giving the timetable the possibility of carrying out up to 3 activities
+simultaneously in different laboratories. The problem is that by doing this I cannot control how many hours will be spent in one laboratory
+and how many in another. The point is that each laboratory is entrusted to a technician who, by contract, cannot exceed a certain number of hours
+per week, also having to take care of maintenance.
+
+At this point I ask myself, is it possible to set a maximum limit on the number of hours per week of use of a laboratory room?
+
+587---------------------------------------------------------
+From GUEFFAZ REDA:
+
+Add the option to add a shortcut to the desktop.

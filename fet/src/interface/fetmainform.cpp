@@ -43,10 +43,13 @@
 #include "timetablegeneratemultipleform.h"
 
 #include "timetableviewstudentsdayshorizontalform.h"
+#include "timetableviewstudentsdaysverticalform.h"
 #include "timetableviewstudentstimehorizontalform.h"
 #include "timetableviewteachersdayshorizontalform.h"
+#include "timetableviewteachersdaysverticalform.h"
 #include "timetableviewteacherstimehorizontalform.h"
 #include "timetableviewroomsdayshorizontalform.h"
+#include "timetableviewroomsdaysverticalform.h"
 #include "timetableviewroomstimehorizontalform.h"
 #include "timetableshowconflictsform.h"
 #include "timetableprintform.h"
@@ -2002,10 +2005,13 @@ FetMainForm::FetMainForm()
 
 	connect(timetableGenerateAction, &QAction::triggered, this, &FetMainForm::timetableGenerateAction_triggered);
 	connect(timetableViewStudentsDaysHorizontalAction, &QAction::triggered, this, &FetMainForm::timetableViewStudentsDaysHorizontalAction_triggered);
+	connect(timetableViewStudentsDaysVerticalAction, &QAction::triggered, this, &FetMainForm::timetableViewStudentsDaysVerticalAction_triggered);
 	connect(timetableViewStudentsTimeHorizontalAction, &QAction::triggered, this, &FetMainForm::timetableViewStudentsTimeHorizontalAction_triggered);
 	connect(timetableViewTeachersDaysHorizontalAction, &QAction::triggered, this, &FetMainForm::timetableViewTeachersDaysHorizontalAction_triggered);
+	connect(timetableViewTeachersDaysVerticalAction, &QAction::triggered, this, &FetMainForm::timetableViewTeachersDaysVerticalAction_triggered);
 	connect(timetableViewTeachersTimeHorizontalAction, &QAction::triggered, this, &FetMainForm::timetableViewTeachersTimeHorizontalAction_triggered);
 	connect(timetableViewRoomsDaysHorizontalAction, &QAction::triggered, this, &FetMainForm::timetableViewRoomsDaysHorizontalAction_triggered);
+	connect(timetableViewRoomsDaysVerticalAction, &QAction::triggered, this, &FetMainForm::timetableViewRoomsDaysVerticalAction_triggered);
 	connect(timetableViewRoomsTimeHorizontalAction, &QAction::triggered, this, &FetMainForm::timetableViewRoomsTimeHorizontalAction_triggered);
 	connect(timetableShowConflictsAction, &QAction::triggered, this, &FetMainForm::timetableShowConflictsAction_triggered);
 	connect(timetablePrintAction, &QAction::triggered, this, &FetMainForm::timetablePrintAction_triggered);
@@ -12895,6 +12901,33 @@ void FetMainForm::timetableViewStudentsDaysHorizontalAction_triggered()
 	form->resizeRowsAfterShow();
 }
 
+void FetMainForm::timetableViewStudentsDaysVerticalAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready)){
+		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
+		return;
+	}
+
+	if(gt.rules.nInternalRooms!=gt.rules.roomsList.count()){
+		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it"));
+		return;
+	}
+
+	TimetableViewStudentsDaysVerticalForm *form=new TimetableViewStudentsDaysVerticalForm(this);
+	form->setWindowFlags(Qt::Window);
+	form->setAttribute(Qt::WA_DeleteOnClose);
+	forceCenterWidgetOnScreen(form);
+	restoreFETDialogGeometry(form);
+	form->show();
+	form->resizeRowsAfterShow();
+}
+
 void FetMainForm::timetableViewStudentsTimeHorizontalAction_triggered()
 {
 	if(!gt.rules.initialized){
@@ -12945,6 +12978,37 @@ void FetMainForm::timetableViewTeachersDaysHorizontalAction_triggered()
 	}
 	
 	TimetableViewTeachersDaysHorizontalForm *form=new TimetableViewTeachersDaysHorizontalForm(this);
+	form->setWindowFlags(Qt::Window);
+	form->setAttribute(Qt::WA_DeleteOnClose);
+	forceCenterWidgetOnScreen(form);
+	restoreFETDialogGeometry(form);
+	form->show();
+	form->resizeRowsAfterShow();
+}
+
+void FetMainForm::timetableViewTeachersDaysVerticalAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready)){
+		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
+		return;
+	}
+
+	if(gt.rules.nInternalRooms!=gt.rules.roomsList.count()){
+		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it"));
+		return;
+	}
+	if(gt.rules.nInternalTeachers!=gt.rules.teachersList.count()){
+		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some teachers. Please regenerate the timetable and then view it"));
+		return;
+	}
+	
+	TimetableViewTeachersDaysVerticalForm *form=new TimetableViewTeachersDaysVerticalForm(this);
 	form->setWindowFlags(Qt::Window);
 	form->setAttribute(Qt::WA_DeleteOnClose);
 	forceCenterWidgetOnScreen(form);
@@ -13024,6 +13088,33 @@ void FetMainForm::timetableViewRoomsDaysHorizontalAction_triggered()
 	}
 
 	TimetableViewRoomsDaysHorizontalForm* form=new TimetableViewRoomsDaysHorizontalForm(this);
+	form->setWindowFlags(Qt::Window);
+	form->setAttribute(Qt::WA_DeleteOnClose);
+	forceCenterWidgetOnScreen(form);
+	restoreFETDialogGeometry(form);
+	form->show();
+	form->resizeRowsAfterShow();
+}
+
+void FetMainForm::timetableViewRoomsDaysVerticalAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready)){
+		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
+		return;
+	}
+
+	if(gt.rules.nInternalRooms!=gt.rules.roomsList.count()){
+		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it"));
+		return;
+	}
+
+	TimetableViewRoomsDaysVerticalForm* form=new TimetableViewRoomsDaysVerticalForm(this);
 	form->setWindowFlags(Qt::Window);
 	form->setAttribute(Qt::WA_DeleteOnClose);
 	forceCenterWidgetOnScreen(form);
