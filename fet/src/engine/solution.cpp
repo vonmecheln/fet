@@ -579,4 +579,10 @@ void Solution::getBuildingsTimetable(
 			}
 		}
 	}
+
+	for(i=0; i<r.nInternalBuildings; i++)
+		for(j=0; j<r.nDaysPerWeek; j++)
+			for(k=0; k<r.nHoursPerDay; k++)
+				if(a[i][j][k].isEmpty())
+					a[i][j][k].append(UNALLOCATED_ACTIVITY);
 }

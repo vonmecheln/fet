@@ -75,6 +75,10 @@ extern QString FET_LANGUAGE_WITH_LOCALE; //trick to have the Arabic translation 
 
 extern bool LANGUAGE_STYLE_RIGHT_TO_LEFT;
 
+extern bool PRINT_RTL;
+
+extern bool PRINT_FROM_INTERFACE;
+
 extern QString LANGUAGE_FOR_HTML;
 
 /**

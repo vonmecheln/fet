@@ -9773,3 +9773,46 @@ https://lalescu.ro/liviu/fet/forum/index.php?topic=6042.msg33580#msg33580
 
 Let's say a teacher teaches a common subject to two groups at the same time in the same room. Then, in the time table's final HTML output, both groups are printed
 in the vertical time slots, which makes it appear a little crowded. Printing just one group in each vertical time slots would be feasible, in my opinion.
+
+601---------------------------------------------------------
+From potrempe (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6045.0
+
+The school I'm generating a timetable with has 5 school hours (P1 to P5) for each day of the week (D1 to D5), so that's 25 hours a week. All students have 25 hours
+of courses, so no gaps in the schedule.
+
+For certain subjects that are taught twice a week or more, I need to make sure that a subject is not taught on the last hour of a day and on the first hour of
+the next day. So for example, if students of group G1 have Music on P5 of D2, they should not have Music on P1 of D3, the earliest would be P3 of D3.
+
+So what I'm trying to implement is some kind of "Min hours between activities". In the case above, I would add a constraint for two "Music" activities for a group G1
+with a minimum of 3 hours between them. So:
+
+    How could I manage to do this?
+    Are the last hour of a day and the first hour of the next day considered "consecutive" in FET?
+
+Liviu Lalescu:
+
+Maybe some new official FET constraints are needed, maybe adding some additional features to the "min gaps (hours) between activities" or "students min gaps between
+activity tag", to consider the days of the week to be continuous.
+
+602---------------------------------------------------------
+From GUEFFAZ REDA (on Facebook):
+
+On Windows, add a button to minimize the FET dialogs while generating.
+
+Liviu Lalescu: on my GNU/Linux I can do that. It is more like a platform feature/problem and I am not sure it is good to use a programming trick to fix this.
+
+603---------------------------------------------------------
+From Muhammad Ratrout (on Facebook):
+
+Suggestions for improvement:
+
+1) Add an option to center tables on the page when printing. --> DONE only horizontally, not vertically.
+
+2) Solve the problem of days appearing in Arabic as broken letters in some HTML outputs.
+
+Liviu Lalescu: more specifically, the second suggestion/problem appears in the time vertical views, where the names of the days appear divided letter-by-letter.
+I consider this to be a feature, not a bug, saving space for the rest of the table.
+
+Volker Dirr also disagrees. He says that the correct way would be to rotate the font by 90°, but that is sadly not possible in Qt with HTML.

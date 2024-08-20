@@ -332,7 +332,7 @@ private:
 		bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes,
 		bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes,
 		const QString& skipStudentsSet);
-	static QString writeActivitiesStudents(int htmlLevel, const QList<int>& allActivities,
+	static QString writeActivitiesStudents(int htmlLevel, const QList<int>& allActivitiesOriginal,
 		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
 		bool printSubjectsNames, bool printSubjectsLongNames, bool printSubjectsCodes,
 		bool printActivityTagsNames, bool printActivityTagsLongNames, bool printActivityTagsCodes,
@@ -347,7 +347,7 @@ private:
 		bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes,
 		bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes,
 		const QString& skipTeacher);
-	static QString writeActivitiesTeachers(int htmlLevel, const QList<int>& allActivities,
+	static QString writeActivitiesTeachers(int htmlLevel, const QList<int>& allActivitiesOriginal,
 		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
 		bool printSubjectsNames, bool printSubjectsLongNames, bool printSubjectsCodes,
 		bool printActivityTagsNames, bool printActivityTagsLongNames, bool printActivityTagsCodes,
@@ -363,7 +363,7 @@ private:
 		bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes,
 		bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes
 		/*, const QString& skipBuilding*/); //currently unneeded, because FET supports only one building per activity
-	static QString writeActivitiesBuildings(int htmlLevel, const QList<int>& allActivities,
+	static QString writeActivitiesBuildings(int htmlLevel, const QList<int>& allActivitiesOriginal,
 		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
 		bool printSubjectsNames, bool printSubjectsLongNames, bool printSubjectsCodes,
 		bool printActivityTagsNames, bool printActivityTagsLongNames, bool printActivityTagsCodes,
@@ -379,21 +379,21 @@ private:
 		bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes,
 		bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes
 		/*, const QString& skipRoom*/); //currently unneeded, because FET supports only one room per activity
-	static QString writeActivitiesRooms(int htmlLevel, const QList<int>& allActivities,
+	static QString writeActivitiesRooms(int htmlLevel, const QList<int>& allActivitiesOriginal,
 		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
 		bool printSubjectsNames, bool printSubjectsLongNames, bool printSubjectsCodes,
 		bool printActivityTagsNames, bool printActivityTagsLongNames, bool printActivityTagsCodes,
 		bool printTeachersNames, bool printTeachersLongNames, bool printTeachersCodes,
 		bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes,
 		bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes);
-	static QString writeActivitiesSubjects(int htmlLevel, const QList<int>& allActivities,
+	static QString writeActivitiesSubjects(int htmlLevel, const QList<int>& allActivitiesOriginal,
 		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
 		bool printSubjectsNames, bool printSubjectsLongNames, bool printSubjectsCodes,
 		bool printActivityTagsNames, bool printActivityTagsLongNames, bool printActivityTagsCodes,
 		bool printTeachersNames, bool printTeachersLongNames, bool printTeachersCodes,
 		bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes,
 		bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes);
-	static QString writeActivitiesActivityTags(int htmlLevel, const QList<int>& allActivities,
+	static QString writeActivitiesActivityTags(int htmlLevel, const QList<int>& allActivitiesOriginal,
 		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
 		bool printSubjectsNames, bool printSubjectsLongNames, bool printSubjectsCodes,
 		bool printActivityTagsNames, bool printActivityTagsLongNames, bool printActivityTagsCodes,

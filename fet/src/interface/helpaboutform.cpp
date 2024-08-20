@@ -1248,6 +1248,14 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("mskalsi");
 	thanksTo+=QString("<br />");
+	thanksTo+=QString("potrempe");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Anonymous participant");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Redha Rahmane");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Muhammad Ratrout");
+	thanksTo+=QString("<br />");
 	
 	thanksToTextBrowser->setHtml(thanksTo);
 }

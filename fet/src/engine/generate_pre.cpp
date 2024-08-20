@@ -4969,7 +4969,6 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 		subgroupsMinHoursDailyPercentages[i][0]=subgroupsMinHoursDailyPercentages[i][1];
 	}
 
-
 	//2020-06-14
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_PER_MORNING){
@@ -5155,6 +5154,10 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 				if(subgroupsMinHoursPerAfternoonMinHours[sbg]==-1 || subgroupsMinHoursPerAfternoonMinHours[sbg]<smd->minHoursPerAfternoon){
 					subgroupsMinHoursPerAfternoonMinHours[sbg]=smd->minHoursPerAfternoon;
 					subgroupsMinHoursPerAfternoonPercentages[sbg]=100;
+
+					//crash bug fixed on 2024-08-14, reported by Anonymous participant on Facebook.
+					if(subgroupsMinHoursPerAfternoonMinHours[sbg]<subgroupsMinHoursDailyMinHours[sbg][1])
+						subgroupsMinHoursPerAfternoonMinHours[sbg]=subgroupsMinHoursDailyMinHours[sbg][1];
 				}
 
 				if(subgroupsMinHoursPerAfternoonAllowEmptyAfternoons[sbg]==true && smd->allowEmptyAfternoons==false)
@@ -5215,6 +5218,10 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 				if(subgroupsMinHoursPerAfternoonMinHours[sbg]==-1 || subgroupsMinHoursPerAfternoonMinHours[sbg]<smd->minHoursPerAfternoon){
 					subgroupsMinHoursPerAfternoonMinHours[sbg]=smd->minHoursPerAfternoon;
 					subgroupsMinHoursPerAfternoonPercentages[sbg]=100;
+
+					//crash bug fixed on 2024-08-14, reported by Anonymous participant on Facebook.
+					if(subgroupsMinHoursPerAfternoonMinHours[sbg]<subgroupsMinHoursDailyMinHours[sbg][1])
+						subgroupsMinHoursPerAfternoonMinHours[sbg]=subgroupsMinHoursDailyMinHours[sbg][1];
 				}
 
 				if(subgroupsMinHoursPerAfternoonAllowEmptyAfternoons[sbg]==true && smd->allowEmptyAfternoons==false)
@@ -7871,6 +7878,10 @@ bool computeTeachersMinHoursDaily(QWidget* parent)
 				if(teachersMinHoursPerAfternoonMinHours[tmd->teacher_ID]==-1 || teachersMinHoursPerAfternoonMinHours[tmd->teacher_ID]<tmd->minHoursPerAfternoon){
 					teachersMinHoursPerAfternoonMinHours[tmd->teacher_ID]=tmd->minHoursPerAfternoon;
 					teachersMinHoursPerAfternoonPercentages[tmd->teacher_ID]=100;
+					
+					//crash bug fixed on 2024-08-14, reported by Anonymous participant on Facebook.
+					if(teachersMinHoursPerAfternoonMinHours[tmd->teacher_ID]<teachersMinHoursDailyMinHours[tmd->teacher_ID][1])
+						teachersMinHoursPerAfternoonMinHours[tmd->teacher_ID]=teachersMinHoursDailyMinHours[tmd->teacher_ID][1];
 				}
 			}
 			else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MIN_HOURS_PER_AFTERNOON){
@@ -7929,6 +7940,10 @@ bool computeTeachersMinHoursDaily(QWidget* parent)
 					if(teachersMinHoursPerAfternoonMinHours[tch]==-1 || teachersMinHoursPerAfternoonMinHours[tch]<tmd->minHoursPerAfternoon){
 						teachersMinHoursPerAfternoonMinHours[tch]=tmd->minHoursPerAfternoon;
 						teachersMinHoursPerAfternoonPercentages[tch]=100;
+
+						//crash bug fixed on 2024-08-14, reported by Anonymous participant on Facebook.
+						if(teachersMinHoursPerAfternoonMinHours[tch]<teachersMinHoursDailyMinHours[tch][1])
+							teachersMinHoursPerAfternoonMinHours[tch]=teachersMinHoursDailyMinHours[tch][1];
 					}
 				}
 			}

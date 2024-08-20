@@ -1104,8 +1104,7 @@ void TimetablePrintForm::updateNamesList(){
 		
 		printDetailedTables->setDisabled(false);
 		
-		if(!RBDaysVertical->isChecked())
-			RBDaysHorizontal->setChecked(true);
+		RBDaysHorizontal->setChecked(true);
 	
 		RBDaysHorizontal->setDisabled(true);
 		RBDaysVertical->setDisabled(true);
@@ -1129,8 +1128,7 @@ void TimetablePrintForm::updateNamesList(){
 		
 		printDetailedTables->setDisabled(false);
 		
-		if(!RBDaysVertical->isChecked())
-			RBDaysHorizontal->setChecked(true);
+		RBDaysHorizontal->setChecked(true);
 	
 		RBDaysHorizontal->setDisabled(true);
 		RBDaysVertical->setDisabled(true);
@@ -1143,15 +1141,25 @@ void TimetablePrintForm::updateNamesList(){
 }
 
 QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
+	assert(PRINT_RTL==false);
+	if(LANGUAGE_STYLE_RIGHT_TO_LEFT)
+		PRINT_RTL=true;
+		
+	assert(PRINT_FROM_INTERFACE==false);
+	PRINT_FROM_INTERFACE=true;
+	
 	QString saveTime=generationLocalizedTime;
 	QString tmp;
 	tmp+="<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
-	tmp+="  \"https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
+	tmp+="  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 	
 	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
-		tmp+="<html xmlns=\"https://www.w3.org/1999/xhtml/\" lang=\""+LANGUAGE_FOR_HTML+"\" xml:lang=\""+LANGUAGE_FOR_HTML+"\">\n";
+		tmp+="<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""+LANGUAGE_FOR_HTML+"\" xml:lang=\""+LANGUAGE_FOR_HTML+"\">\n";
 	else
-		tmp+="<html xmlns=\"https://www.w3.org/1999/xhtml/\" lang=\""+LANGUAGE_FOR_HTML+"\" xml:lang=\""+LANGUAGE_FOR_HTML+"\" dir=\"rtl\">\n";
+		tmp+="<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""+LANGUAGE_FOR_HTML+"\" xml:lang=\""+LANGUAGE_FOR_HTML+"\" dir=\"rtl\">\n";
+		//I thought that 'rtl' was not needed anymore, but it seems it is, by trial-and-error. Bug reported by Redha Rahmane on Facebook.
+		//If you remove the 'rtl', the text might look bad.
+		//tmp+="<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""+LANGUAGE_FOR_HTML+"\" xml:lang=\""+LANGUAGE_FOR_HTML+"\">\n";
 
 	//QTBUG-9438
 	//QTBUG-2730
@@ -1160,7 +1168,10 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 	tmp+="    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";
 	tmp+="    <style type=\"text/css\">\n";
 
-	tmp+="      body {\n        color: black;\n        background-color: white;\n      }\n\n";
+	if(1 || !PRINT_RTL) //'text-align: right' is bringing bad behavior for RTL writing systems, as reported by Redha Rahmane on Facebook.
+		tmp+="      body {\n        color: black;\n        background-color: white;\n      }\n\n";
+	else
+		tmp+="      body {\n        text-align: right;\n        color: black;\n        background-color: white;\n      }\n\n";
 	
 	//this variant doesn't need the "back" stuff, but there will be an empty last page!
 	//but you need to care about correct odd and even like in the groups tables
@@ -1282,10 +1293,28 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 	tmp+="        font-size: "+QString::number(fontSizeTable->value())+"pt;\n";
 	tmp+="      }\n";
 	tmp+="      table {\n";
+
+	if(0 && PRINT_RTL){ //Not working.
+		tmp+="        margin-left: auto;\n";
+		tmp+="        margin-right: 0;\n";
+	}
+	/*if(PRINT_RTL){ //https://www.w3schools.com/cssref/pr_class_float.php
+		tmp+="        float: right;\n";
+	}*/
+
 	tmp+="        font-size: "+QString::number(fontSizeTable->value())+"pt;\n";
 	tmp+="        padding-top: "+QString::number(tablePadding->value())+"px;\n";
 	tmp+="        page-break-inside: avoid;\n";
 	tmp+="      }\n";
+	
+	/*if(PRINT_RTL){ //https://www.w3schools.com/cssref/pr_class_float.php, unfortunately clearfix seems not to work in QTextDocument
+		tmp+="      .clearfix::after {\n";
+		tmp+="        content: \"\";\n";
+		tmp+="        clear: both;\n";
+		tmp+="        display: table;\n";
+		tmp+="      }\n";
+	}*/
+	
 	tmp+="      th {\n";
 	tmp+="        text-align: center;\n"; //currently no effect because of a Qt bug (compare https://bugreports.qt.io/browse/QTBUG-2730)
 	tmp+="        vertical-align: middle;\n";
@@ -1726,6 +1755,10 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 	
 	tmp+="  </body>\n";
 	tmp+="</html>\n\n";
+	
+	PRINT_RTL=false;
+	
+	PRINT_FROM_INTERFACE=false;
 	
 	return tmp;
 }

@@ -2870,7 +2870,7 @@ Versions 6.21.0 - 6.21.1
 - Version 6.21.1
 	- Critical bug fix in the Mornings-Afternoons mode, when saving the locked fet file (the real days per week and the real hours per day were not saved).
 ---------------------------------------------------------------------------------
-Versions 6.22.0 - 6.22.v
+Versions 6.22.0 - 6.22.3
 - Version 6.22.0
 	- Added long names for the days, real days (in the Mornings-Afternoons mode), hours, and real hours (in the Mornings-Afternoons mode), and
 	long names and codes for the subjects, activity tags, teachers, students, buildings, and rooms. Also, it is now possible to choose from the Settings menu
@@ -2900,3 +2900,15 @@ Versions 6.22.0 - 6.22.v
 	- Minor corrections and improvements in the output of the timetables (mskalsi suggested a larger font for the institution name. While we did not implement
 	exactly this, we set a bold font for the institution name. Also, this is done through the CSS file, so the user can change this behavior if needed).
 	- Improved the Italian translation, by Andrea Primiani.
+---------------------------------------------------------------------------------
+Versions 6.23.0 - 6.23.v
+- Version 6.23.0
+	- Very rare but critical crash bugs fixed, in the Mornings-Afternoons mode (reported by Anonymous participant on a Facebook group about scheduling).
+	- Very rare crash bugs fixed (if when printing the teachers'/students' statistics the radio button 'Days vertical' was selected, the program crashed).
+	- Minor bug fixes and improvements in the output of the timetables.
+	- The printing of the timetables from the interface now works also when using a right-to-left writing system (suggested by Benahmed Abdelkrim,
+	Mohamed Ait Ichou, and maybe other users in the past). The exception is when printing the statistics. Redha Rahmane reported on a Facebook group
+	about scheduling an important bug found in the first test version, which was fixed in the final version.
+	- Printing the timetables from the interface will now center the tables (only horizontally). Suggested by Muhammad Ratrout on Facebook, and by
+	Benahmed Abdelkrim.
+	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares.
