@@ -1,10 +1,10 @@
 lessThan(QT_MAJOR_VERSION, 5) {
-	error(Qt version $$QT_VERSION is not supported. The minimum supported Qt version is 5.7.0.)
+	error(Qt version $$QT_VERSION is not supported. The minimum supported Qt version is 5.15.0.)
 }
 
 equals(QT_MAJOR_VERSION, 5) {
-	lessThan(QT_MINOR_VERSION, 7){
-		error(Qt version $$QT_VERSION is not supported. The minimum supported Qt version is 5.7.0.)
+	lessThan(QT_MINOR_VERSION, 15){
+		error(Qt version $$QT_VERSION is not supported. The minimum supported Qt version is 5.15.0.)
 	}
 }
 
@@ -69,34 +69,7 @@ DEFINES += \
 	QT_NO_LINKED_LIST \
 	QT_STRICT_ITERATORS
 
-CONFIG += release warn_on c++17
-
-# The "cmdline" value was introduced in Qt 5.12.2.
-greaterThan(QT_MAJOR_VERSION, 5) {
-	CONFIG += cmdline
-}
-else {
-	greaterThan(QT_MINOR_VERSION, 12) {
-		CONFIG += cmdline
-	}
-	else {
-		equals(QT_MINOR_VERSION, 12) {
-			greaterThan(QT_PATCH_VERSION, 1) {
-				CONFIG += cmdline
-			}
-			else {
-				win32 {
-					CONFIG += console
-				}
-			}
-		}
-		else {
-			win32 {
-				CONFIG += console
-			}
-		}
-	}
-}
+CONFIG += release warn_on c++17 cmdline
 
 QT -= gui
 

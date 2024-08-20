@@ -9733,3 +9733,43 @@ From GUEFFAZ REDA:
 
 Alert before production if hibernation mode is activated so that production does not stop.
 Hibernation mode is typically three hours, and production is sometimes for long hours.
+
+599---------------------------------------------------------
+From Devrim Altınkurt (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6023.0
+
+I would like to report an error regarding the time period when classrooms are not available.
+I added the sample file.
+
+    1. First I created a new file.
+    2. I added an activity (act1, duration:6, no teacher, no students).
+    3. I added a class (room1).
+    4. I added the "An activity has a preferred room" rule. (act1 -> room1)
+    5. I added the "A room's not available time" rule. I turned off all hours and turned on only 5 hours.
+    6. When I click "Generate" button, the program goes into an infinite loop because there is no control.
+
+Liviu Lalescu:
+
+Do you mean FET should warn that it is impossible and not begin the generation? It is too complicated to take care of all situations, unfortunately.
+
+Devrim Altınkurt:
+
+You are doing this control for teachers and studentsets.
+
+Liviu Lalescu:
+
+Indeed, but each activity has an exact assigned teacher and students set (or none, or more), and also teacher/students set not available is only with 100% weight
+percentage.
+
+But each activity may have zero, one or more related space constraints with variable weight percentage, and also room not available can have any weight percentage.
+
+So in general many cases may appear.
+
+600---------------------------------------------------------
+From mskalsi (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6042.msg33580#msg33580
+
+Let's say a teacher teaches a common subject to two groups at the same time in the same room. Then, in the time table's final HTML output, both groups are printed
+in the vertical time slots, which makes it appear a little crowded. Printing just one group in each vertical time slots would be feasible, in my opinion.

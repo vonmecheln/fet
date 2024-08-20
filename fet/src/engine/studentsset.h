@@ -135,6 +135,8 @@ public:
 	QString getDetailedDescriptionWithConstraints(Rules& r);
 };
 
+int studentsSetsAscending(const StudentsSet* st1, const StudentsSet* st2);
+
 int yearsAscending(const StudentsYear* y1, const StudentsYear* y2);
 
 int groupsAscending(const StudentsGroup* g1, const StudentsGroup* g2);

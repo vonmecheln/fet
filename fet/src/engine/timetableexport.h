@@ -238,6 +238,8 @@ public:
 	
 	static void computeHashActivityColorBySubject();
 	static void computeHashActivityColorBySubjectAndStudents();
+
+	static QString printCompleteLegend(bool printSubjectsLegend, bool printActivityTagsLegend, bool printTeachersLegend, bool printStudentsLegend, bool printRoomsLegend);
 	
 private:
 	//this function must be called before export HTML files, because it compute the IDs
@@ -438,6 +440,11 @@ private:
 
 	static QString getVerticalDayString(int d, bool printDaysNames, bool printDaysLongNames);
 	static QString getVerticalRealDayString(int d, bool printDaysNames, bool printDaysLongNames);
+	
+	static void addActivitiesLegend(const QList<int>& allActivitiesList, QSet<Subject*>& usedSubjectsSet, QSet<ActivityTag*>& usedActivityTagsSet, QSet<Teacher*>& usedTeachersSet, QSet<StudentsSet*>& usedStudentsSet, QSet<Room*>& usedRoomsSet,
+		bool printSubjectsLegend, bool printActivityTagsLegend, bool printTeachersLegend, bool printStudentsLegend, bool printRoomsLegend);
+	static void printLegend(QString& tmpString, QSet<Subject*>& usedSubjectsSet, QSet<ActivityTag*>& usedActivityTagsSet, QSet<Teacher*>& usedTeachersSet, QSet<StudentsSet*>& usedStudentsSet, QSet<Room*>& usedRoomsSet,
+		bool printSubjectsLegend, bool printActivityTagsLegend, bool printTeachersLegend, bool printStudentsLegend, bool printRoomsLegend);
 };
 
 #endif

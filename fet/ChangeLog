@@ -2767,7 +2767,7 @@ Versions 6.14.0 - 6.14.2
 Versions 6.15.0 - 6.15.1
 - Version 6.15.0
 	- Added the possibility of saving the history to the hard disk, next to the saved .fet data file (suggested by uni_instructor and ngoctp29121982).
-	This option is by default disabled and must be enabled from the settings.
+	This option is by default disabled and can be enabled from the settings.
 	- Minor improvements in the memory consumption (the details of the history operations are now stored archived).
 	- Code cleanup.
 - Version 6.15.1
@@ -2893,3 +2893,10 @@ Versions 6.22.0 - 6.22.v
 	- Updated the Italian translation, by Andrea Primiani. It is now complete.
 	- Improved the Brazilian Portuguese translation, by Alexandre R. Soares.
 	- Corrected the Romanian translation, by Liviu Lalescu (the typos/small errors were found using Ispell / Aspell).
+- Version 6.22.3
+	- Added the option to print the legend (summary of names, long names, codes, and comments) of the used subjects, activity tags, teachers, students,
+	and rooms in the timetables (suggested by mskalsi and maybe other users in the past). The feature is disabled by default and can be enabled from
+	the 'Settings -> Timetables -> Data to print in timetables' menu.
+	- Minor corrections and improvements in the output of the timetables (mskalsi suggested a larger font for the institution name. While we did not implement
+	exactly this, we set a bold font for the institution name. Also, this is done through the CSS file, so the user can change this behavior if needed).
+	- Improved the Italian translation, by Andrea Primiani.

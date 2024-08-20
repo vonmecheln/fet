@@ -2654,6 +2654,10 @@ void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& cssfile
 	tos<<"table.even_table {\n  page-break-before: always;\n}\n\n";
 	tos<<"table.detailed {\n  margin-left: auto; margin-right: auto;\n  text-align: center;\n  border: 0px;\n  border-spacing: 0;\n  border-collapse: collapse;\n}\n\n";
 	tos<<"caption {\n\n}\n\n";
+	tos<<"span.institution {\n  font-weight: bold;\n}\n\n";
+	tos<<"span.name {\n\n}\n\n";
+	tos<<"span.comment {\n  font-style: italic;\n}\n\n";
+	tos<<"span.legend_title {\n  font-weight: bold;\n}\n\n";
 	tos<<"thead {\n\n}\n\n";
 	
 	//workaround begin.
@@ -2967,7 +2971,7 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(QWidget* parent, c
 		}
 		tos<<"        </ul>\n      </li>\n";
 	}
-	tos<<"    </ul>\n    <p>&nbsp;</p>\n";
+	tos<<"    </ul>\n    <p>&nbsp;</p>\n\n";
 
 	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
 		tos<<singleSubgroupsTimetableDaysVerticalHtml(TIMETABLE_HTML_LEVEL, subgroup, saveTime,
@@ -3024,6 +3028,12 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(QWidget* parent, c
 		 TIMETABLE_HTML_PRINT_SUBJECTS, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_PRINT_TEACHERS, TIMETABLE_HTML_PRINT_STUDENTS, TIMETABLE_HTML_PRINT_ROOMS,
 		 TIMETABLE_HTML_REPEAT_NAMES, subgroupsSortedOrder);
 
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+		 SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+		 SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_TEACHERS_LEGEND,
+		 SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_LEGEND,
+		 SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -3071,6 +3081,12 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(QWidget* parent,
 	tos << singleSubgroupsTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalSubgroups, tmp, saveTime,
 		 TIMETABLE_HTML_PRINT_SUBJECTS, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_PRINT_TEACHERS, TIMETABLE_HTML_PRINT_STUDENTS, TIMETABLE_HTML_PRINT_ROOMS,
 		 TIMETABLE_HTML_REPEAT_NAMES, subgroupsSortedOrder);
+
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+		 SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+		 SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_TEACHERS_LEGEND,
+		 SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_LEGEND,
+		 SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ROOMS_LEGEND);
 
 	tos << "  </body>\n</html>\n";
 
@@ -3124,6 +3140,12 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(QWidget* pare
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+		 SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+		 SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_TEACHERS_LEGEND,
+		 SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_LEGEND,
+		 SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -3175,6 +3197,13 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(QWidget* pa
 		 TIMETABLE_HTML_REPEAT_NAMES, subgroupsSortedOrder);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
+
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+		 SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+		 SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_TEACHERS_LEGEND,
+		 SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_LEGEND,
+		 SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -3297,7 +3326,7 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(QWidget* parent, cons
 		}
 		tos<<"        </ul>\n      </li>\n";
 	}
-	tos<<"    </ul>\n    <p>&nbsp;</p>\n";
+	tos<<"    </ul>\n    <p>&nbsp;</p>\n\n";
 
 	for(int group=0; group<gt.rules.internalGroupsList.size(); group++){
 		tos<<singleGroupsTimetableDaysVerticalHtml(TIMETABLE_HTML_LEVEL, group, saveTime,
@@ -3355,6 +3384,12 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(QWidget* parent, cons
 		 PRINT_DETAILED_HTML_TIMETABLES, TIMETABLE_HTML_REPEAT_NAMES);
 
 	tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
+
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ROOMS_LEGEND);
 	
 	tos << "  </body>\n</html>\n";
 
@@ -3405,6 +3440,12 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(QWidget* parent, co
 		 PRINT_DETAILED_HTML_TIMETABLES, TIMETABLE_HTML_REPEAT_NAMES);
 	tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -3457,6 +3498,12 @@ void TimetableExport::writeGroupsTimetableTimeVerticalDailyHtml(QWidget* parent,
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 	
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -3508,6 +3555,12 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalDailyHtml(QWidget* paren
 		 PRINT_DETAILED_HTML_TIMETABLES, TIMETABLE_HTML_REPEAT_NAMES);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
+
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ROOMS_LEGEND);
 
 	tos << "  </body>\n</html>\n";
 
@@ -3680,6 +3733,12 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(QWidget* parent, const
 		 PRINT_DETAILED_HTML_TIMETABLES, TIMETABLE_HTML_REPEAT_NAMES);
 
 	tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
+
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ROOMS_LEGEND);
 	
 	tos << "  </body>\n</html>\n";
 
@@ -3731,6 +3790,12 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(QWidget* parent, con
 
 	tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -3783,6 +3848,12 @@ void TimetableExport::writeYearsTimetableTimeVerticalDailyHtml(QWidget* parent, 
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 	
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -3835,6 +3906,12 @@ void TimetableExport::writeYearsTimetableTimeHorizontalDailyHtml(QWidget* parent
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 	
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -3974,6 +4051,12 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalHtml(QWidget* paren
 		 TIMETABLE_HTML_PRINT_SUBJECTS, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_PRINT_TEACHERS, TIMETABLE_HTML_PRINT_STUDENTS, TIMETABLE_HTML_PRINT_ROOMS,
 		 TIMETABLE_HTML_REPEAT_NAMES);
 
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -4020,6 +4103,12 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalHtml(QWidget* par
 	tos<<singleAllActivitiesTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, saveTime,
 		 TIMETABLE_HTML_PRINT_SUBJECTS, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_PRINT_TEACHERS, TIMETABLE_HTML_PRINT_STUDENTS, TIMETABLE_HTML_PRINT_ROOMS,
 		 TIMETABLE_HTML_REPEAT_NAMES);
+
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ROOMS_LEGEND);
 
 	tos<<"  </body>\n</html>\n";
 
@@ -4071,6 +4160,13 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalDailyHtml(QWidget* 
 		 TIMETABLE_HTML_REPEAT_NAMES);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
+
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -4122,6 +4218,12 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalDailyHtml(QWidget
 
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
+
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ROOMS_LEGEND);
 
 	tos<<"  </body>\n</html>\n";
 
@@ -4286,6 +4388,13 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(QWidget* parent, co
 	tos<<singleTeachersTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalTeachers, tmp, saveTime,
 		 TIMETABLE_HTML_PRINT_SUBJECTS, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_PRINT_TEACHERS, TIMETABLE_HTML_PRINT_STUDENTS, TIMETABLE_HTML_PRINT_ROOMS,
 		 TIMETABLE_HTML_REPEAT_NAMES);
+
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -4332,6 +4441,13 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(QWidget* parent, 
 	tos<<singleTeachersTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalTeachers, tmp, saveTime,
 		 TIMETABLE_HTML_PRINT_SUBJECTS, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_PRINT_TEACHERS, TIMETABLE_HTML_PRINT_STUDENTS, TIMETABLE_HTML_PRINT_ROOMS,
 		 TIMETABLE_HTML_REPEAT_NAMES);
+
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -4383,6 +4499,13 @@ void TimetableExport::writeTeachersTimetableTimeVerticalDailyHtml(QWidget* paren
 		 TIMETABLE_HTML_REPEAT_NAMES);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
+
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -4434,6 +4557,12 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalDailyHtml(QWidget* par
 		 TIMETABLE_HTML_REPEAT_NAMES);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
+
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ROOMS_LEGEND);
 
 	tos << "  </body>\n</html>\n";
 
@@ -4610,6 +4739,13 @@ void TimetableExport::writeBuildingsTimetableTimeVerticalHtml(QWidget* parent, c
 		 TIMETABLE_HTML_PRINT_SUBJECTS, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_PRINT_TEACHERS, TIMETABLE_HTML_PRINT_STUDENTS, TIMETABLE_HTML_PRINT_ROOMS,
 		 TIMETABLE_HTML_REPEAT_NAMES);
 	}
+
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -4660,8 +4796,14 @@ void TimetableExport::writeBuildingsTimetableTimeHorizontalHtml(QWidget* parent,
 		tos<<singleBuildingsTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalBuildings, tmp, saveTime,
 		 TIMETABLE_HTML_PRINT_SUBJECTS, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_PRINT_TEACHERS, TIMETABLE_HTML_PRINT_STUDENTS, TIMETABLE_HTML_PRINT_ROOMS,
 		 TIMETABLE_HTML_REPEAT_NAMES);
-
 	}
+
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -4712,12 +4854,19 @@ void TimetableExport::writeBuildingsTimetableTimeVerticalDailyHtml(QWidget* pare
 		for(int day=0; day<(gt.rules.mode!=MORNINGS_AFTERNOONS ? gt.rules.nDaysPerWeek : gt.rules.nRealDaysPerWeek); day++){
 			QSet<int> tmp;
 			tos<<singleBuildingsTimetableTimeVerticalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalBuildings, tmp, saveTime,
-		 TIMETABLE_HTML_PRINT_SUBJECTS, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_PRINT_TEACHERS, TIMETABLE_HTML_PRINT_STUDENTS, TIMETABLE_HTML_PRINT_ROOMS,
-		 TIMETABLE_HTML_REPEAT_NAMES);
-
+				 TIMETABLE_HTML_PRINT_SUBJECTS, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_PRINT_TEACHERS, TIMETABLE_HTML_PRINT_STUDENTS, TIMETABLE_HTML_PRINT_ROOMS,
+				 TIMETABLE_HTML_REPEAT_NAMES);
+			
 			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
 	}
+
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -4773,8 +4922,14 @@ void TimetableExport::writeBuildingsTimetableTimeHorizontalDailyHtml(QWidget* pa
 
 			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
-
 	}
+
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -4950,6 +5105,13 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(QWidget* parent, const
 		 TIMETABLE_HTML_PRINT_SUBJECTS, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_PRINT_TEACHERS, TIMETABLE_HTML_PRINT_STUDENTS, TIMETABLE_HTML_PRINT_ROOMS,
 		 TIMETABLE_HTML_REPEAT_NAMES);
 	}
+
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -5002,6 +5164,13 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(QWidget* parent, con
 		 TIMETABLE_HTML_REPEAT_NAMES);
 
 	}
+
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -5058,6 +5227,13 @@ void TimetableExport::writeRoomsTimetableTimeVerticalDailyHtml(QWidget* parent, 
 			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
 	}
+
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -5115,6 +5291,13 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalDailyHtml(QWidget* parent
 		}
 
 	}
+
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -5281,6 +5464,13 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalHtml(QWidget* parent, co
 	tos<<singleSubjectsTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalSubjects, tmp, saveTime,
 		 TIMETABLE_HTML_PRINT_SUBJECTS, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_PRINT_TEACHERS, TIMETABLE_HTML_PRINT_STUDENTS, TIMETABLE_HTML_PRINT_ROOMS,
 		 TIMETABLE_HTML_REPEAT_NAMES);
+
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -5328,6 +5518,12 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalHtml(QWidget* parent, 
 	tos<<singleSubjectsTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalSubjects, tmp, saveTime,
 		 TIMETABLE_HTML_PRINT_SUBJECTS, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_PRINT_TEACHERS, TIMETABLE_HTML_PRINT_STUDENTS, TIMETABLE_HTML_PRINT_ROOMS,
 		 TIMETABLE_HTML_REPEAT_NAMES);
+
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ROOMS_LEGEND);
 
 	tos << "  </body>\n</html>\n";
 
@@ -5382,6 +5578,12 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalDailyHtml(QWidget* paren
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -5434,6 +5636,13 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalDailyHtml(QWidget* par
 
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
+
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -5607,6 +5816,13 @@ void TimetableExport::writeActivityTagsTimetableTimeVerticalHtml(QWidget* parent
 	tos<<singleActivityTagsTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalActivityTags, tmp, saveTime,
 		 TIMETABLE_HTML_PRINT_SUBJECTS, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_PRINT_TEACHERS, TIMETABLE_HTML_PRINT_STUDENTS, TIMETABLE_HTML_PRINT_ROOMS,
 		 TIMETABLE_HTML_REPEAT_NAMES);
+
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -5654,6 +5870,12 @@ void TimetableExport::writeActivityTagsTimetableTimeHorizontalHtml(QWidget* pare
 	tos<<singleActivityTagsTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalActivityTags, tmp, saveTime,
 		 TIMETABLE_HTML_PRINT_SUBJECTS, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_PRINT_TEACHERS, TIMETABLE_HTML_PRINT_STUDENTS, TIMETABLE_HTML_PRINT_ROOMS,
 		 TIMETABLE_HTML_REPEAT_NAMES);
+
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ROOMS_LEGEND);
 
 	tos << "  </body>\n</html>\n";
 
@@ -5708,6 +5930,12 @@ void TimetableExport::writeActivityTagsTimetableTimeVerticalDailyHtml(QWidget* p
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -5760,6 +5988,13 @@ void TimetableExport::writeActivityTagsTimetableTimeHorizontalDailyHtml(QWidget*
 
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
+
+	tos << printCompleteLegend(SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ROOMS_LEGEND);
+
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -7897,18 +8132,25 @@ QString TimetableExport::singleSubgroupsTimetableDaysHorizontalHtml(int htmlLeve
 	
 	QStringList tl;
 	if(!gt.rules.institutionName.isEmpty())
-		tl.append(protect2(gt.rules.institutionName));
+		tl.append("<span class=\"institution\">"+protect2(gt.rules.institutionName)+"</span>");
 	QString nm=getStudentsSetString(gt.rules.internalSubgroupsList[realSubgroup], SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_CODES);
 	if(!nm.isEmpty())
-		tl.append(nm);
+		tl.append("<span class=\"name\">"+nm+"</span>");
 	QString c1=gt.rules.internalSubgroupsList[realSubgroup]->comments;
 	if(SETTINGS_TIMETABLES_PRINT_SUBGROUPS_COMMENTS && !c1.isEmpty()){
 		QString c2=protect2(c1);
 		c2.replace("\n", "<br />\n");
-		tl.append(c2);
+		tl.append("<span class=\"comment\">"+c2+"</span>");
 	}
 	
+	QSet<Subject*> usedSubjectsSet;
+	QSet<ActivityTag*> usedActivityTagsSet;
+	QSet<Teacher*> usedTeachersSet;
+	QSet<StudentsSet*> usedStudentsSet;
+	QSet<Room*> usedRoomsSet;
+	
 	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <thead>\n";
 	
 	tmpString+="        <tr>\n          <td></td>\n";
 
@@ -7972,6 +8214,13 @@ QString TimetableExport::singleSubgroupsTimetableDaysHorizontalHtml(int htmlLeve
 				 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_LONG_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_CODES
 				 );
 			}
+			
+			addActivitiesLegend(allActivitiesList, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+			 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+			 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+			 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+			 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+			 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_LEGEND);
 		}
 		if(repeatNames){
 			if(htmlLevel>=2)
@@ -7991,6 +8240,14 @@ QString TimetableExport::singleSubgroupsTimetableDaysHorizontalHtml(int htmlLeve
 	//workaround end.
 	tmpString+="      </tbody>\n";
 	tmpString+="    </table>\n\n";
+	
+	printLegend(tmpString, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+	 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_LEGEND);
+	
 	return tmpString;
 }
 
@@ -8016,18 +8273,25 @@ QString TimetableExport::singleSubgroupsTimetableDaysVerticalHtml(int htmlLevel,
 
 	QStringList tl;
 	if(!gt.rules.institutionName.isEmpty())
-		tl.append(protect2(gt.rules.institutionName));
+		tl.append("<span class=\"institution\">"+protect2(gt.rules.institutionName)+"</span>");
 	QString nm=getStudentsSetString(gt.rules.internalSubgroupsList[realSubgroup], SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_CODES);
 	if(!nm.isEmpty())
-		tl.append(nm);
+		tl.append("<span class=\"name\">"+nm+"</span>");
 	QString c1=gt.rules.internalSubgroupsList[realSubgroup]->comments;
 	if(SETTINGS_TIMETABLES_PRINT_SUBGROUPS_COMMENTS && !c1.isEmpty()){
 		QString c2=protect2(c1);
 		c2.replace("\n", "<br />\n");
-		tl.append(c2);
+		tl.append("<span class=\"comment\">"+c2+"</span>");
 	}
+
+	QSet<Subject*> usedSubjectsSet;
+	QSet<ActivityTag*> usedActivityTagsSet;
+	QSet<Teacher*> usedTeachersSet;
+	QSet<StudentsSet*> usedStudentsSet;
+	QSet<Room*> usedRoomsSet;
 	
 	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <thead>\n";
 	
 	tmpString+="        <tr>\n          <td></td>\n";
 
@@ -8091,6 +8355,13 @@ QString TimetableExport::singleSubgroupsTimetableDaysVerticalHtml(int htmlLevel,
 				 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_LONG_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_CODES
 				 );
 			}
+
+			addActivitiesLegend(allActivitiesList, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+			 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+			 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+			 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+			 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+			 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_LEGEND);
 		}
 		if(repeatNames){
 			if(htmlLevel>=2)
@@ -8110,6 +8381,14 @@ QString TimetableExport::singleSubgroupsTimetableDaysVerticalHtml(int htmlLevel,
 	//workaround end.
 	tmpString+="      </tbody>\n";
 	tmpString+="    </table>\n\n";
+
+	printLegend(tmpString, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+	 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_LEGEND);
+
 	return tmpString;
 }
 
@@ -8637,18 +8916,25 @@ QString TimetableExport::singleGroupsTimetableDaysHorizontalHtml(int htmlLevel, 
 	
 	QStringList tl;
 	if(!gt.rules.institutionName.isEmpty())
-		tl.append(protect2(gt.rules.institutionName));
+		tl.append("<span class=\"institution\">"+protect2(gt.rules.institutionName)+"</span>");
 	QString nm=getStudentsSetString(gt.rules.internalGroupsList.at(group), SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_CODES);
 	if(!nm.isEmpty())
-		tl.append(nm);
+		tl.append("<span class=\"name\">"+nm+"</span>");
 	QString c1=gt.rules.internalGroupsList.at(group)->comments;
 	if(SETTINGS_TIMETABLES_PRINT_GROUPS_COMMENTS && !c1.isEmpty()){
 		QString c2=protect2(c1);
 		c2.replace("\n", "<br />\n");
-		tl.append(c2);
+		tl.append("<span class=\"comment\">"+c2+"</span>");
 	}
 	
+	QSet<Subject*> usedSubjectsSet;
+	QSet<ActivityTag*> usedActivityTagsSet;
+	QSet<Teacher*> usedTeachersSet;
+	QSet<StudentsSet*> usedStudentsSet;
+	QSet<Room*> usedRoomsSet;
+
 	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <thead>\n";
 	
 	tmpString+="        <tr>\n          <td></td>\n";
 	
@@ -8725,6 +9011,13 @@ QString TimetableExport::singleGroupsTimetableDaysHorizontalHtml(int htmlLevel, 
 					);
 				}
 			}
+
+			addActivitiesLegend(allActivitiesList, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+			 SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+			 SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+			 SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+			 SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+			 SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ROOMS_LEGEND);
 		}
 		if(repeatNames){
 			if(htmlLevel>=2)
@@ -8744,6 +9037,14 @@ QString TimetableExport::singleGroupsTimetableDaysHorizontalHtml(int htmlLevel, 
 	//workaround end.
 	tmpString+="      </tbody>\n";
 	tmpString+="    </table>\n\n";
+
+	printLegend(tmpString, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+	 SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ROOMS_LEGEND);
+
 	return tmpString;
 }
 
@@ -8763,18 +9064,25 @@ QString TimetableExport::singleGroupsTimetableDaysVerticalHtml(int htmlLevel, in
 
 	QStringList tl;
 	if(!gt.rules.institutionName.isEmpty())
-		tl.append(protect2(gt.rules.institutionName));
+		tl.append("<span class=\"institution\">"+protect2(gt.rules.institutionName)+"</span>");
 	QString nm=getStudentsSetString(gt.rules.internalGroupsList.at(group), SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_CODES);
 	if(!nm.isEmpty())
-		tl.append(nm);
+		tl.append("<span class=\"name\">"+nm+"</span>");
 	QString c1=gt.rules.internalGroupsList.at(group)->comments;
 	if(SETTINGS_TIMETABLES_PRINT_GROUPS_COMMENTS && !c1.isEmpty()){
 		QString c2=protect2(c1);
 		c2.replace("\n", "<br />\n");
-		tl.append(c2);
+		tl.append("<span class=\"comment\">"+c2+"</span>");
 	}
+
+	QSet<Subject*> usedSubjectsSet;
+	QSet<ActivityTag*> usedActivityTagsSet;
+	QSet<Teacher*> usedTeachersSet;
+	QSet<StudentsSet*> usedStudentsSet;
+	QSet<Room*> usedRoomsSet;
 	
 	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <thead>\n";
 	
 	tmpString+="        <tr>\n          <td></td>\n";
 
@@ -8851,6 +9159,13 @@ QString TimetableExport::singleGroupsTimetableDaysVerticalHtml(int htmlLevel, in
 					 );
 				}
 			}
+
+			addActivitiesLegend(allActivitiesList, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+			 SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+			 SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+			 SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+			 SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+			 SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ROOMS_LEGEND);
 		}
 		if(repeatNames){
 			if(htmlLevel>=2)
@@ -8870,6 +9185,14 @@ QString TimetableExport::singleGroupsTimetableDaysVerticalHtml(int htmlLevel, in
 	//workaround end.
 	tmpString+="      </tbody>\n";
 	tmpString+="    </table>\n\n";
+
+	printLegend(tmpString, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+	 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_LEGEND);
+
 	return tmpString;
 }
 
@@ -9416,18 +9739,25 @@ QString TimetableExport::singleYearsTimetableDaysHorizontalHtml(int htmlLevel, i
 
 	QStringList tl;
 	if(!gt.rules.institutionName.isEmpty())
-		tl.append(protect2(gt.rules.institutionName));
+		tl.append("<span class=\"institution\">"+protect2(gt.rules.institutionName)+"</span>");
 	QString nm=getStudentsSetString(gt.rules.augmentedYearsList.at(year), SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_CODES);
 	if(!nm.isEmpty())
-		tl.append(nm);
+		tl.append("<span class=\"name\">"+nm+"</span>");
 	QString c1=gt.rules.augmentedYearsList.at(year)->comments;
 	if(SETTINGS_TIMETABLES_PRINT_YEARS_COMMENTS && !c1.isEmpty()){
 		QString c2=protect2(c1);
 		c2.replace("\n", "<br />\n");
-		tl.append(c2);
+		tl.append("<span class=\"comment\">"+c2+"</span>");
 	}
 	
+	QSet<Subject*> usedSubjectsSet;
+	QSet<ActivityTag*> usedActivityTagsSet;
+	QSet<Teacher*> usedTeachersSet;
+	QSet<StudentsSet*> usedStudentsSet;
+	QSet<Room*> usedRoomsSet;
+
 	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <thead>\n";
 	
 	tmpString+="        <tr>\n          <td></td>\n";
 
@@ -9507,6 +9837,13 @@ QString TimetableExport::singleYearsTimetableDaysHorizontalHtml(int htmlLevel, i
 					 );
 				}
 			}
+
+			addActivitiesLegend(allActivitiesList, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+			 SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+			 SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+			 SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+			 SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+			 SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ROOMS_LEGEND);
 		}
 		if(repeatNames){
 			if(htmlLevel>=2)
@@ -9526,6 +9863,14 @@ QString TimetableExport::singleYearsTimetableDaysHorizontalHtml(int htmlLevel, i
 	//workaround end.
 	tmpString+="      </tbody>\n";
 	tmpString+="    </table>\n\n";
+
+	printLegend(tmpString, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+	 SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ROOMS_LEGEND);
+
 	return tmpString;
 }
 
@@ -9545,18 +9890,25 @@ QString TimetableExport::singleYearsTimetableDaysVerticalHtml(int htmlLevel, int
 
 	QStringList tl;
 	if(!gt.rules.institutionName.isEmpty())
-		tl.append(protect2(gt.rules.institutionName));
+		tl.append("<span class=\"institution\">"+protect2(gt.rules.institutionName)+"</span>");
 	QString nm=getStudentsSetString(gt.rules.augmentedYearsList.at(year), SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_CODES);
 	if(!nm.isEmpty())
-		tl.append(nm);
+		tl.append("<span class=\"name\">"+nm+"</span>");
 	QString c1=gt.rules.augmentedYearsList.at(year)->comments;
 	if(SETTINGS_TIMETABLES_PRINT_YEARS_COMMENTS && !c1.isEmpty()){
 		QString c2=protect2(c1);
 		c2.replace("\n", "<br />\n");
-		tl.append(c2);
+		tl.append("<span class=\"comment\">"+c2+"</span>");
 	}
+
+	QSet<Subject*> usedSubjectsSet;
+	QSet<ActivityTag*> usedActivityTagsSet;
+	QSet<Teacher*> usedTeachersSet;
+	QSet<StudentsSet*> usedStudentsSet;
+	QSet<Room*> usedRoomsSet;
 	
 	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <thead>\n";
 	
 	tmpString+="        <tr>\n          <td></td>\n";
 
@@ -9636,6 +9988,13 @@ QString TimetableExport::singleYearsTimetableDaysVerticalHtml(int htmlLevel, int
 					 );
 				}
 			}
+
+			addActivitiesLegend(allActivitiesList, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+			 SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+			 SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+			 SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+			 SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+			 SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ROOMS_LEGEND);
 		}
 		if(repeatNames){
 			if(htmlLevel>=2)
@@ -9655,6 +10014,14 @@ QString TimetableExport::singleYearsTimetableDaysVerticalHtml(int htmlLevel, int
 	//workaround end.
 	tmpString+="      </tbody>\n";
 	tmpString+="    </table>\n\n";
+
+	printLegend(tmpString, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+	 SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ROOMS_LEGEND);
+
 	return tmpString;
 }
 
@@ -10209,9 +10576,16 @@ QString TimetableExport::singleYearsTimetableTimeHorizontalDailyHtml(int htmlLev
 QString TimetableExport::singleAllActivitiesTimetableDaysHorizontalHtml(int htmlLevel, const QString& saveTime,
  bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
  bool repeatNames){
+	QSet<Subject*> usedSubjectsSet;
+	QSet<ActivityTag*> usedActivityTagsSet;
+	QSet<Teacher*> usedTeachersSet;
+	QSet<StudentsSet*> usedStudentsSet;
+	QSet<Room*> usedRoomsSet;
+
 	QString tmpString;
 	tmpString+="    <table border=\"1\">\n";
 	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"<br />\n"+tr("All Activities")+"</caption>\n";
+	tmpString+="      <thead>\n";
 	/*tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(gt.rules.mode!=MORNINGS_AFTERNOONS ? gt.rules.nDaysPerWeek : gt.rules.nRealDaysPerWeek)+"\">"+tr("All Activities")+"</th>";
 	if(repeatNames){
 		tmpString+="<td rowspan=\"2\"></td>";
@@ -10270,6 +10644,13 @@ QString TimetableExport::singleAllActivitiesTimetableDaysHorizontalHtml(int html
 				 SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_CODES,
 				 SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_CODES
 				 );
+
+				addActivitiesLegend(activitiesAtTimeList[day][hour], usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+				 SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+				 SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+				 SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_TEACHERS_LEGEND,
+				 SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_LEGEND,
+				 SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_LEGEND);
 			}
 		}
 		if(repeatNames){
@@ -10290,6 +10671,14 @@ QString TimetableExport::singleAllActivitiesTimetableDaysHorizontalHtml(int html
 	//workaround end.
 	tmpString+="      </tbody>\n";
 	tmpString+="    </table>\n";
+
+	printLegend(tmpString, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+	 SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_LEGEND);
+
 	return tmpString;
 }
 
@@ -10297,9 +10686,16 @@ QString TimetableExport::singleAllActivitiesTimetableDaysHorizontalHtml(int html
 QString TimetableExport::singleAllActivitiesTimetableDaysVerticalHtml(int htmlLevel, const QString& saveTime,
  bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
  bool repeatNames){
+	QSet<Subject*> usedSubjectsSet;
+	QSet<ActivityTag*> usedActivityTagsSet;
+	QSet<Teacher*> usedTeachersSet;
+	QSet<StudentsSet*> usedStudentsSet;
+	QSet<Room*> usedRoomsSet;
+
 	QString tmpString;
 	tmpString+="    <table border=\"1\">\n";
 	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"<br />\n"+tr("All Activities")+"</caption>\n";
+	tmpString+="      <thead>\n";
 	/*tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(gt.rules.mode!=MORNINGS_AFTERNOONS ? gt.rules.nHoursPerDay : gt.rules.nRealHoursPerDay)+"\">"+tr("All Activities")+"</th>";
 	if(repeatNames){
 		tmpString+="<td rowspan=\"2\"></td>";
@@ -10358,6 +10754,13 @@ QString TimetableExport::singleAllActivitiesTimetableDaysVerticalHtml(int htmlLe
 				 SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_CODES,
 				 SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_CODES
 				 );
+
+				addActivitiesLegend(activitiesAtTimeList[day][hour], usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+				 SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+				 SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+				 SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_TEACHERS_LEGEND,
+				 SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_LEGEND,
+				 SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_LEGEND);
 			}
 		}
 		if(repeatNames){
@@ -10378,6 +10781,14 @@ QString TimetableExport::singleAllActivitiesTimetableDaysVerticalHtml(int htmlLe
 	//workaround end.
 	tmpString+="      </tbody>\n";
 	tmpString+="    </table>\n";
+
+	printLegend(tmpString, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+	 SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_LEGEND);
+
 	return tmpString;
 }
 
@@ -10796,18 +11207,25 @@ QString TimetableExport::singleTeachersTimetableDaysHorizontalHtml(int htmlLevel
 	
 	QStringList tl;
 	if(!gt.rules.institutionName.isEmpty())
-		tl.append(protect2(gt.rules.institutionName));
+		tl.append("<span class=\"institution\">"+protect2(gt.rules.institutionName)+"</span>");
 	QString nm=getTeacherString(gt.rules.internalTeachersList[teacher], SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_NAMES, SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_LONG_NAMES, SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_CODES);
 	if(!nm.isEmpty())
-		tl.append(nm);
+		tl.append("<span class=\"name\">"+nm+"</span>");
 	QString c1=gt.rules.internalTeachersList[teacher]->comments;
 	if(SETTINGS_TIMETABLES_PRINT_TEACHERS_COMMENTS && !c1.isEmpty()){
 		QString c2=protect2(c1);
 		c2.replace("\n", "<br />\n");
-		tl.append(c2);
+		tl.append("<span class=\"comment\">"+c2+"</span>");
 	}
 	
+	QSet<Subject*> usedSubjectsSet;
+	QSet<ActivityTag*> usedActivityTagsSet;
+	QSet<Teacher*> usedTeachersSet;
+	QSet<StudentsSet*> usedStudentsSet;
+	QSet<Room*> usedRoomsSet;
+
 	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <thead>\n";
 	
 	tmpString+="        <tr>\n          <td></td>\n";
 
@@ -10870,6 +11288,13 @@ QString TimetableExport::singleTeachersTimetableDaysHorizontalHtml(int htmlLevel
 				 SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_NAMES, SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_LONG_NAMES, SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_CODES
 				 );
 			}
+
+			addActivitiesLegend(allActivitiesList, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+			 SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+			 SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+			 SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+			 SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+			 SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_LEGEND);
 		}
 		if(repeatNames){
 			if(htmlLevel>=2)
@@ -10889,6 +11314,14 @@ QString TimetableExport::singleTeachersTimetableDaysHorizontalHtml(int htmlLevel
 	//workaround end.
 	tmpString+="      </tbody>\n";
 	tmpString+="    </table>\n\n";
+
+	printLegend(tmpString, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+	 SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_LEGEND);
+
 	return tmpString;
 }
 
@@ -10908,18 +11341,25 @@ QString TimetableExport::singleTeachersTimetableDaysVerticalHtml(int htmlLevel, 
 	
 	QStringList tl;
 	if(!gt.rules.institutionName.isEmpty())
-		tl.append(protect2(gt.rules.institutionName));
+		tl.append("<span class=\"institution\">"+protect2(gt.rules.institutionName)+"</span>");
 	QString nm=getTeacherString(gt.rules.internalTeachersList[teacher], SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_NAMES, SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_LONG_NAMES, SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_CODES);
 	if(!nm.isEmpty())
-		tl.append(nm);
+		tl.append("<span class=\"name\">"+nm+"</span>");
 	QString c1=gt.rules.internalTeachersList[teacher]->comments;
 	if(SETTINGS_TIMETABLES_PRINT_TEACHERS_COMMENTS && !c1.isEmpty()){
 		QString c2=protect2(c1);
 		c2.replace("\n", "<br />\n");
-		tl.append(c2);
+		tl.append("<span class=\"comment\">"+c2+"</span>");
 	}
 	
+	QSet<Subject*> usedSubjectsSet;
+	QSet<ActivityTag*> usedActivityTagsSet;
+	QSet<Teacher*> usedTeachersSet;
+	QSet<StudentsSet*> usedStudentsSet;
+	QSet<Room*> usedRoomsSet;
+
 	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <thead>\n";
 	
 	tmpString+="        <tr>\n          <td></td>\n";
 
@@ -10982,6 +11422,13 @@ QString TimetableExport::singleTeachersTimetableDaysVerticalHtml(int htmlLevel, 
 				 SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_NAMES, SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_LONG_NAMES, SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_CODES
 				 );
 			}
+
+			addActivitiesLegend(allActivitiesList, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+			 SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+			 SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+			 SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+			 SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+			 SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_LEGEND);
 		}
 		if(repeatNames){
 			if(htmlLevel>=2)
@@ -11001,6 +11448,14 @@ QString TimetableExport::singleTeachersTimetableDaysVerticalHtml(int htmlLevel, 
 	//workaround end.
 	tmpString+="      </tbody>\n";
 	tmpString+="    </table>\n\n";
+
+	printLegend(tmpString, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+	 SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_LEGEND);
+
 	return tmpString;
 }
 
@@ -11489,18 +11944,25 @@ QString TimetableExport::singleBuildingsTimetableDaysHorizontalHtml(int htmlLeve
 
 	QStringList tl;
 	if(!gt.rules.institutionName.isEmpty())
-		tl.append(protect2(gt.rules.institutionName));
+		tl.append("<span class=\"institution\">"+protect2(gt.rules.institutionName)+"</span>");
 	QString nm=getBuildingString(gt.rules.internalBuildingsList[building], true, true, true);
 	if(!nm.isEmpty())
-		tl.append(nm);
+		tl.append("<span class=\"name\">"+nm+"</span>");
 	QString c1=gt.rules.internalBuildingsList[building]->comments;
 	if(SETTINGS_TIMETABLES_PRINT_BUILDINGS_COMMENTS && !c1.isEmpty()){
 		QString c2=protect2(c1);
 		c2.replace("\n", "<br />\n");
-		tl.append(c2);
+		tl.append("<span class=\"comment\">"+c2+"</span>");
 	}
 	
+	QSet<Subject*> usedSubjectsSet;
+	QSet<ActivityTag*> usedActivityTagsSet;
+	QSet<Teacher*> usedTeachersSet;
+	QSet<StudentsSet*> usedStudentsSet;
+	QSet<Room*> usedRoomsSet;
+
 	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <thead>\n";
 	
 	tmpString+="        <tr>\n          <td></td>\n";
 
@@ -11565,6 +12027,13 @@ QString TimetableExport::singleBuildingsTimetableDaysHorizontalHtml(int htmlLeve
 				 SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_LONG_NAMES, SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_CODES
 				 );
 			}
+
+			addActivitiesLegend(allActivitiesList, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+			 SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+			 SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+			 SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+			 SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+			 SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_LEGEND);
 		}
 		if(repeatNames){
 			if(htmlLevel>=2)
@@ -11584,6 +12053,14 @@ QString TimetableExport::singleBuildingsTimetableDaysHorizontalHtml(int htmlLeve
 	//workaround end.
 	tmpString+="      </tbody>\n";
 	tmpString+="    </table>\n\n";
+
+	printLegend(tmpString, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+	 SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_LEGEND);
+
 	return tmpString;
 }
 
@@ -11603,18 +12080,25 @@ QString TimetableExport::singleBuildingsTimetableDaysVerticalHtml(int htmlLevel,
 
 	QStringList tl;
 	if(!gt.rules.institutionName.isEmpty())
-		tl.append(protect2(gt.rules.institutionName));
+		tl.append("<span class=\"institution\">"+protect2(gt.rules.institutionName)+"</span>");
 	QString nm=getBuildingString(gt.rules.internalBuildingsList[building], true, true, true);
 	if(!nm.isEmpty())
-		tl.append(nm);
+		tl.append("<span class=\"name\">"+nm+"</span>");
 	QString c1=gt.rules.internalBuildingsList[building]->comments;
 	if(SETTINGS_TIMETABLES_PRINT_BUILDINGS_COMMENTS && !c1.isEmpty()){
 		QString c2=protect2(c1);
 		c2.replace("\n", "<br />\n");
-		tl.append(c2);
+		tl.append("<span class=\"comment\">"+c2+"</span>");
 	}
 	
+	QSet<Subject*> usedSubjectsSet;
+	QSet<ActivityTag*> usedActivityTagsSet;
+	QSet<Teacher*> usedTeachersSet;
+	QSet<StudentsSet*> usedStudentsSet;
+	QSet<Room*> usedRoomsSet;
+
 	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <thead>\n";
 	
 	tmpString+="        <tr>\n          <td></td>\n";
 
@@ -11679,6 +12163,13 @@ QString TimetableExport::singleBuildingsTimetableDaysVerticalHtml(int htmlLevel,
 				 SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_LONG_NAMES, SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_CODES
 				 );
 			}
+
+			addActivitiesLegend(allActivitiesList, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+			 SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+			 SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+			 SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+			 SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+			 SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_LEGEND);
 		}
 		if(repeatNames){
 			if(htmlLevel>=2)
@@ -11698,6 +12189,14 @@ QString TimetableExport::singleBuildingsTimetableDaysVerticalHtml(int htmlLevel,
 	//workaround end.
 	tmpString+="      </tbody>\n";
 	tmpString+="    </table>\n\n";
+
+	printLegend(tmpString, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+	 SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_LEGEND);
+
 	return tmpString;
 }
 
@@ -12196,18 +12695,25 @@ QString TimetableExport::singleRoomsTimetableDaysHorizontalHtml(int htmlLevel, i
 
 	QStringList tl;
 	if(!gt.rules.institutionName.isEmpty())
-		tl.append(protect2(gt.rules.institutionName));
+		tl.append("<span class=\"institution\">"+protect2(gt.rules.institutionName)+"</span>");
 	QString nm=getRoomString(gt.rules.internalRoomsList[room], SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_NAMES, SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_LONG_NAMES, SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_CODES);
 	if(!nm.isEmpty())
-		tl.append(nm);
+		tl.append("<span class=\"name\">"+nm+"</span>");
 	QString c1=gt.rules.internalRoomsList[room]->comments;
 	if(SETTINGS_TIMETABLES_PRINT_ROOMS_COMMENTS && !c1.isEmpty()){
 		QString c2=protect2(c1);
 		c2.replace("\n", "<br />\n");
-		tl.append(c2);
+		tl.append("<span class=\"comment\">"+c2+"</span>");
 	}
 	
+	QSet<Subject*> usedSubjectsSet;
+	QSet<ActivityTag*> usedActivityTagsSet;
+	QSet<Teacher*> usedTeachersSet;
+	QSet<StudentsSet*> usedStudentsSet;
+	QSet<Room*> usedRoomsSet;
+
 	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <thead>\n";
 	
 	tmpString+="        <tr>\n          <td></td>\n";
 
@@ -12282,6 +12788,13 @@ QString TimetableExport::singleRoomsTimetableDaysHorizontalHtml(int htmlLevel, i
 				 SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_NAMES, SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_LONG_NAMES, SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_CODES
 				 );
 			}
+
+			addActivitiesLegend(allActivitiesList, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+			 SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+			 SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+			 SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+			 SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+			 SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_LEGEND);
 		}
 		if(repeatNames){
 			if(htmlLevel>=2)
@@ -12301,6 +12814,14 @@ QString TimetableExport::singleRoomsTimetableDaysHorizontalHtml(int htmlLevel, i
 	//workaround end.
 	tmpString+="      </tbody>\n";
 	tmpString+="    </table>\n\n";
+
+	printLegend(tmpString, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+	 SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_LEGEND);
+
 	return tmpString;
 }
 
@@ -12320,18 +12841,25 @@ QString TimetableExport::singleRoomsTimetableDaysVerticalHtml(int htmlLevel, int
 
 	QStringList tl;
 	if(!gt.rules.institutionName.isEmpty())
-		tl.append(protect2(gt.rules.institutionName));
+		tl.append("<span class=\"institution\">"+protect2(gt.rules.institutionName)+"</span>");
 	QString nm=getRoomString(gt.rules.internalRoomsList[room], SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_NAMES, SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_LONG_NAMES, SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_CODES);
 	if(!nm.isEmpty())
-		tl.append(nm);
+		tl.append("<span class=\"name\">"+nm+"</span>");
 	QString c1=gt.rules.internalRoomsList[room]->comments;
 	if(SETTINGS_TIMETABLES_PRINT_ROOMS_COMMENTS && !c1.isEmpty()){
 		QString c2=protect2(c1);
 		c2.replace("\n", "<br />\n");
-		tl.append(c2);
+		tl.append("<span class=\"comment\">"+c2+"</span>");
 	}
 	
+	QSet<Subject*> usedSubjectsSet;
+	QSet<ActivityTag*> usedActivityTagsSet;
+	QSet<Teacher*> usedTeachersSet;
+	QSet<StudentsSet*> usedStudentsSet;
+	QSet<Room*> usedRoomsSet;
+
 	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <thead>\n";
 	
 	tmpString+="        <tr>\n          <td></td>\n";
 
@@ -12406,6 +12934,13 @@ QString TimetableExport::singleRoomsTimetableDaysVerticalHtml(int htmlLevel, int
 				 SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_NAMES, SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_LONG_NAMES, SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_CODES
 				 );
 			}
+
+			addActivitiesLegend(allActivitiesList, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+			 SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+			 SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+			 SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+			 SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+			 SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_LEGEND);
 		}
 		if(repeatNames){
 			if(htmlLevel>=2)
@@ -12425,6 +12960,14 @@ QString TimetableExport::singleRoomsTimetableDaysVerticalHtml(int htmlLevel, int
 	//workaround end.
 	tmpString+="      </tbody>\n";
 	tmpString+="    </table>\n\n";
+
+	printLegend(tmpString, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+	 SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_LEGEND);
+
 	return tmpString;
 }
 
@@ -12977,18 +13520,25 @@ QString TimetableExport::singleSubjectsTimetableDaysHorizontalHtml(int htmlLevel
 
 	QStringList tl;
 	if(!gt.rules.institutionName.isEmpty())
-		tl.append(protect2(gt.rules.institutionName));
+		tl.append("<span class=\"institution\">"+protect2(gt.rules.institutionName)+"</span>");
 	QString nm=getSubjectString(gt.rules.internalSubjectsList[subject], SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_SUBJECTS_CODES);
 	if(!nm.isEmpty())
-		tl.append(nm);
+		tl.append("<span class=\"name\">"+nm+"</span>");
 	QString c1=gt.rules.internalSubjectsList[subject]->comments;
 	if(SETTINGS_TIMETABLES_PRINT_SUBJECTS_COMMENTS && !c1.isEmpty()){
 		QString c2=protect2(c1);
 		c2.replace("\n", "<br />\n");
-		tl.append(c2);
+		tl.append("<span class=\"comment\">"+c2+"</span>");
 	}
 	
+	QSet<Subject*> usedSubjectsSet;
+	QSet<ActivityTag*> usedActivityTagsSet;
+	QSet<Teacher*> usedTeachersSet;
+	QSet<StudentsSet*> usedStudentsSet;
+	QSet<Room*> usedRoomsSet;
+
 	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <thead>\n";
 	
 	tmpString+="        <tr>\n          <td></td>\n";
 
@@ -13042,6 +13592,13 @@ QString TimetableExport::singleSubjectsTimetableDaysHorizontalHtml(int htmlLevel
 			 SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_CODES,
 			 SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_CODES
 			);
+
+			addActivitiesLegend(allActivitiesList, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+			 SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+			 SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+			 SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+			 SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+			 SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_LEGEND);
 		}
 		if(repeatNames){
 			if(htmlLevel>=2)
@@ -13061,6 +13618,14 @@ QString TimetableExport::singleSubjectsTimetableDaysHorizontalHtml(int htmlLevel
 	//workaround end.
 	tmpString+="      </tbody>\n";
 	tmpString+="    </table>\n\n";
+
+	printLegend(tmpString, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+	 SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_LEGEND);
+
 	return tmpString;
 }
 
@@ -13094,18 +13659,25 @@ QString TimetableExport::singleSubjectsTimetableDaysVerticalHtml(int htmlLevel, 
 
 	QStringList tl;
 	if(!gt.rules.institutionName.isEmpty())
-		tl.append(protect2(gt.rules.institutionName));
+		tl.append("<span class=\"institution\">"+protect2(gt.rules.institutionName)+"</span>");
 	QString nm=getSubjectString(gt.rules.internalSubjectsList[subject], SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_SUBJECTS_CODES);
 	if(!nm.isEmpty())
-		tl.append(nm);
+		tl.append("<span class=\"name\">"+nm+"</span>");
 	QString c1=gt.rules.internalSubjectsList[subject]->comments;
 	if(SETTINGS_TIMETABLES_PRINT_SUBJECTS_COMMENTS && !c1.isEmpty()){
 		QString c2=protect2(c1);
 		c2.replace("\n", "<br />\n");
-		tl.append(c2);
+		tl.append("<span class=\"comment\">"+c2+"</span>");
 	}
 	
+	QSet<Subject*> usedSubjectsSet;
+	QSet<ActivityTag*> usedActivityTagsSet;
+	QSet<Teacher*> usedTeachersSet;
+	QSet<StudentsSet*> usedStudentsSet;
+	QSet<Room*> usedRoomsSet;
+
 	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <thead>\n";
 	
 	tmpString+="        <tr>\n          <td></td>\n";
 
@@ -13160,6 +13732,13 @@ QString TimetableExport::singleSubjectsTimetableDaysVerticalHtml(int htmlLevel, 
 			 SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_CODES,
 			 SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_CODES
 			 );
+
+			addActivitiesLegend(allActivitiesList, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+			 SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+			 SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+			 SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+			 SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+			 SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_LEGEND);
 		}
 		if(repeatNames){
 			if(htmlLevel>=2)
@@ -13179,6 +13758,14 @@ QString TimetableExport::singleSubjectsTimetableDaysVerticalHtml(int htmlLevel, 
 	//workaround end.
 	tmpString+="      </tbody>\n";
 	tmpString+="    </table>\n\n";
+
+	printLegend(tmpString, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+	 SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_LEGEND);
+
 	return tmpString;
 }
 
@@ -13771,18 +14358,25 @@ QString TimetableExport::singleActivityTagsTimetableDaysHorizontalHtml(int htmlL
 
 	QStringList tl;
 	if(!gt.rules.institutionName.isEmpty())
-		tl.append(protect2(gt.rules.institutionName));
+		tl.append("<span class=\"institution\">"+protect2(gt.rules.institutionName)+"</span>");
 	QString nm=getActivityTagString(gt.rules.internalActivityTagsList[activityTag], SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES);
 	if(!nm.isEmpty())
-		tl.append(nm);
+		tl.append("<span class=\"name\">"+nm+"</span>");
 	QString c1=gt.rules.internalActivityTagsList[activityTag]->comments;
 	if(SETTINGS_TIMETABLES_PRINT_ACTIVITY_TAGS_COMMENTS && !c1.isEmpty()){
 		QString c2=protect2(c1);
 		c2.replace("\n", "<br />\n");
-		tl.append(c2);
+		tl.append("<span class=\"comment\">"+c2+"</span>");
 	}
 	
+	QSet<Subject*> usedSubjectsSet;
+	QSet<ActivityTag*> usedActivityTagsSet;
+	QSet<Teacher*> usedTeachersSet;
+	QSet<StudentsSet*> usedStudentsSet;
+	QSet<Room*> usedRoomsSet;
+
 	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <thead>\n";
 	
 	tmpString+="        <tr>\n          <td></td>\n";
 
@@ -13837,6 +14431,13 @@ QString TimetableExport::singleActivityTagsTimetableDaysHorizontalHtml(int htmlL
 			 SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_CODES,
 			 SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_CODES
 			 );
+
+			addActivitiesLegend(allActivitiesList, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+			 SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+			 SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+			 SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+			 SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+			 SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_LEGEND);
 		}
 		if(repeatNames){
 			if(htmlLevel>=2)
@@ -13856,6 +14457,14 @@ QString TimetableExport::singleActivityTagsTimetableDaysHorizontalHtml(int htmlL
 	//workaround end.
 	tmpString+="      </tbody>\n";
 	tmpString+="    </table>\n\n";
+
+	printLegend(tmpString, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+	 SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_LEGEND);
+
 	return tmpString;
 }
 
@@ -13889,17 +14498,23 @@ QString TimetableExport::singleActivityTagsTimetableDaysVerticalHtml(int htmlLev
 
 	QStringList tl;
 	if(!gt.rules.institutionName.isEmpty())
-		tl.append(protect2(gt.rules.institutionName));
+		tl.append("<span class=\"institution\">"+protect2(gt.rules.institutionName)+"</span>");
 	QString nm=getActivityTagString(gt.rules.internalActivityTagsList[activityTag], SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES);
 	if(!nm.isEmpty())
-		tl.append(nm);
+		tl.append("<span class=\"name\">"+nm+"</span>");
 	QString c1=gt.rules.internalActivityTagsList[activityTag]->comments;
 	if(SETTINGS_TIMETABLES_PRINT_ACTIVITY_TAGS_COMMENTS && !c1.isEmpty()){
 		QString c2=protect2(c1);
 		c2.replace("\n", "<br />\n");
-		tl.append(c2);
+		tl.append("<span class=\"comment\">"+c2+"</span>");
 	}
 	
+	QSet<Subject*> usedSubjectsSet;
+	QSet<ActivityTag*> usedActivityTagsSet;
+	QSet<Teacher*> usedTeachersSet;
+	QSet<StudentsSet*> usedStudentsSet;
+	QSet<Room*> usedRoomsSet;
+
 	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
 	
 	tmpString+="        <tr>\n          <td></td>\n";
@@ -13955,6 +14570,13 @@ QString TimetableExport::singleActivityTagsTimetableDaysVerticalHtml(int htmlLev
 			 SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_CODES,
 			 SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_CODES
 			 );
+
+			addActivitiesLegend(allActivitiesList, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+			 SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+			 SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+			 SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+			 SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+			 SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_LEGEND);
 		}
 		if(repeatNames){
 			if(htmlLevel>=2)
@@ -13974,6 +14596,14 @@ QString TimetableExport::singleActivityTagsTimetableDaysVerticalHtml(int htmlLev
 	//workaround end.
 	tmpString+="      </tbody>\n";
 	tmpString+="    </table>\n\n";
+
+	printLegend(tmpString, usedSubjectsSet, usedActivityTagsSet, usedTeachersSet, usedStudentsSet, usedRoomsSet,
+	 SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_SUBJECTS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_TEACHERS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_LEGEND,
+	 SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_LEGEND);
+
 	return tmpString;
 }
 
@@ -15507,4 +16137,226 @@ QString TimetableExport::getVerticalRealDayString(int d, bool printDaysNames, bo
 		tl.append(dln);
 
 	return protect2vert(tl.join(QString(" ")));
+}
+
+void TimetableExport::addActivitiesLegend(const QList<int>& allActivitiesList, QSet<Subject*>& usedSubjectsSet, QSet<ActivityTag*>& usedActivityTagsSet, QSet<Teacher*>& usedTeachersSet, QSet<StudentsSet*>& usedStudentsSet, QSet<Room*>& usedRoomsSet,
+ bool printSubjectsLegend, bool printActivityTagsLegend, bool printTeachersLegend, bool printStudentsLegend, bool printRoomsLegend)
+{
+	if(printSubjectsLegend){
+		for(int ai : std::as_const(allActivitiesList)){
+			if(ai!=UNALLOCATED_ACTIVITY){
+				Activity* act=&gt.rules.internalActivitiesList[ai];
+				int sbji=gt.rules.subjectsHash.value(act->subjectName, -1);
+				assert(sbji>=0);
+				usedSubjectsSet.insert(gt.rules.internalSubjectsList[sbji]);
+			}
+		}
+	}
+
+	if(printActivityTagsLegend){
+		for(int ai : std::as_const(allActivitiesList)){
+			if(ai!=UNALLOCATED_ACTIVITY){
+				Activity* act=&gt.rules.internalActivitiesList[ai];
+				for(const QString& at : act->activityTagsNames){
+					int ati=gt.rules.activityTagsHash.value(at, -1);
+					assert(ati>=0);
+					usedActivityTagsSet.insert(gt.rules.internalActivityTagsList[ati]);
+				}
+			}
+		}
+	}
+
+	if(printTeachersLegend){
+		for(int ai : std::as_const(allActivitiesList)){
+			if(ai!=UNALLOCATED_ACTIVITY){
+				Activity* act=&gt.rules.internalActivitiesList[ai];
+				for(const QString& tch : act->teachersNames){
+					int tchi=gt.rules.teachersHash.value(tch, -1);
+					assert(tchi>=0);
+					usedTeachersSet.insert(gt.rules.internalTeachersList[tchi]);
+				}
+			}
+		}
+	}
+
+	if(printStudentsLegend){
+		for(int ai : std::as_const(allActivitiesList)){
+			if(ai!=UNALLOCATED_ACTIVITY){
+				Activity* act=&gt.rules.internalActivitiesList[ai];
+				for(const QString& st : act->studentsNames){
+					StudentsSet* stp=gt.rules.studentsHash.value(st, nullptr);
+					assert(stp!=nullptr);
+					usedStudentsSet.insert(stp);
+				}
+			}
+		}
+	}
+
+	if(printRoomsLegend){
+		for(int ai : std::as_const(allActivitiesList)){
+			if(ai!=UNALLOCATED_ACTIVITY){
+				int r=best_solution.rooms[ai];
+				if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
+					usedRoomsSet.insert(gt.rules.internalRoomsList[r]);
+					if(gt.rules.internalRoomsList[r]->isVirtual==true)
+						for(int rr : std::as_const(best_solution.realRoomsList[ai]))
+							usedRoomsSet.insert(gt.rules.internalRoomsList[rr]);
+				}
+			}
+		}
+	}
+}
+
+void TimetableExport::printLegend(QString& tmpString, QSet<Subject*>& usedSubjectsSet, QSet<ActivityTag*>& usedActivityTagsSet, QSet<Teacher*>& usedTeachersSet, QSet<StudentsSet*>& usedStudentsSet, QSet<Room*>& usedRoomsSet,
+ bool printSubjectsLegend, bool printActivityTagsLegend, bool printTeachersLegend, bool printStudentsLegend, bool printRoomsLegend)
+{
+	QString indent=QString(4, ' ');
+	
+	if(printSubjectsLegend && !usedSubjectsSet.isEmpty()){
+		QList<Subject*> usedSubjectsList=QList<Subject*>(usedSubjectsSet.constBegin(), usedSubjectsSet.constEnd());
+		std::stable_sort(usedSubjectsList.begin(), usedSubjectsList.end(), subjectsAscending);
+		tmpString+=indent+"<p>\n";
+		tmpString+=indent+"  <span class=\"legend_title\">"+tr("Subjects legend:", "It means the list of the complete information for the subjects: name, long name, code, and comments")+"</span><br />\n";
+		
+		bool first=true;
+		for(Subject* sbj : std::as_const(usedSubjectsList)){
+			if(!first)
+				tmpString+="<br />\n";
+			else
+				first=false;
+			
+			tmpString+=indent+"  &nbsp;&nbsp;&nbsp;&nbsp; "+protect2(sbj->name);
+			if(!sbj->longName.isEmpty())
+				tmpString+=QString(" - ")+protect2(sbj->longName);
+			if(!sbj->code.isEmpty())
+				tmpString+=QString(" - ")+protect2(sbj->code);
+			if(!sbj->comments.isEmpty())
+				tmpString+=QString(" - ")+protect2(sbj->comments).replace("\n", "<br />\n");
+		}
+		
+		tmpString+="\n"+indent+"</p>\n";
+	}
+
+	if(printActivityTagsLegend && !usedActivityTagsSet.isEmpty()){
+		QList<ActivityTag*> usedActivityTagsList=QList<ActivityTag*>(usedActivityTagsSet.constBegin(), usedActivityTagsSet.constEnd());
+		std::stable_sort(usedActivityTagsList.begin(), usedActivityTagsList.end(), activityTagsAscending);
+		tmpString+=indent+"<p>\n";
+		tmpString+=indent+"  <span class=\"legend_title\">"+tr("Activity tags legend:", "It means the list of the complete information for the activity tag: name, long name, code, and comments")+"</span><br />\n";
+		
+		bool first=true;
+		for(ActivityTag* at : std::as_const(usedActivityTagsList)){
+			if(!first)
+				tmpString+="<br />\n";
+			else
+				first=false;
+			
+			tmpString+=indent+"  &nbsp;&nbsp;&nbsp;&nbsp; "+protect2(at->name);
+			if(!at->longName.isEmpty())
+				tmpString+=QString(" - ")+protect2(at->longName);
+			if(!at->code.isEmpty())
+				tmpString+=QString(" - ")+protect2(at->code);
+			if(!at->comments.isEmpty())
+				tmpString+=QString(" - ")+protect2(at->comments).replace("\n", "<br />\n");
+		}
+		
+		tmpString+="\n"+indent+"</p>\n";
+	}
+
+	if(printTeachersLegend && !usedTeachersSet.isEmpty()){
+		QList<Teacher*> usedTeachersList=QList<Teacher*>(usedTeachersSet.constBegin(), usedTeachersSet.constEnd());
+		std::stable_sort(usedTeachersList.begin(), usedTeachersList.end(), teachersAscending);
+		tmpString+=indent+"<p>\n";
+		tmpString+=indent+"  <span class=\"legend_title\">"+tr("Teachers legend:", "It means the list of the complete information for the teachers: name, long name, code, and comments")+"</span><br />\n";
+		
+		bool first=true;
+		for(Teacher* tch : std::as_const(usedTeachersList)){
+			if(!first)
+				tmpString+="<br />\n";
+			else
+				first=false;
+			
+			tmpString+=indent+"  &nbsp;&nbsp;&nbsp;&nbsp; "+protect2(tch->name);
+			if(!tch->longName.isEmpty())
+				tmpString+=QString(" - ")+protect2(tch->longName);
+			if(!tch->code.isEmpty())
+				tmpString+=QString(" - ")+protect2(tch->code);
+			if(!tch->comments.isEmpty())
+				tmpString+=QString(" - ")+protect2(tch->comments).replace("\n", "<br />\n");
+		}
+		
+		tmpString+="\n"+indent+"</p>\n";
+	}
+
+	if(printStudentsLegend && !usedStudentsSet.isEmpty()){
+		QList<StudentsSet*> usedStudentsList=QList<StudentsSet*>(usedStudentsSet.constBegin(), usedStudentsSet.constEnd());
+		std::stable_sort(usedStudentsList.begin(), usedStudentsList.end(), studentsSetsAscending);
+		tmpString+=indent+"<p>\n";
+		tmpString+=indent+"  <span class=\"legend_title\">"+tr("Students legend:", "It means the list of the complete information for the students: name, long name, code, and comments")+"</span><br />\n";
+		
+		bool first=true;
+		for(StudentsSet* st : std::as_const(usedStudentsList)){
+			if(!first)
+				tmpString+="<br />\n";
+			else
+				first=false;
+			
+			tmpString+=indent+"  &nbsp;&nbsp;&nbsp;&nbsp; "+protect2(st->name);
+			if(!st->longName.isEmpty())
+				tmpString+=QString(" - ")+protect2(st->longName);
+			if(!st->code.isEmpty())
+				tmpString+=QString(" - ")+protect2(st->code);
+			if(!st->comments.isEmpty())
+				tmpString+=QString(" - ")+protect2(st->comments).replace("\n", "<br />\n");
+		}
+		
+		tmpString+="\n"+indent+"</p>\n";
+	}
+
+	if(printRoomsLegend && !usedRoomsSet.isEmpty()){
+		QList<Room*> usedRoomsList=QList<Room*>(usedRoomsSet.constBegin(), usedRoomsSet.constEnd());
+		std::stable_sort(usedRoomsList.begin(), usedRoomsList.end(), roomsAscending);
+		tmpString+=indent+"<p>\n";
+		tmpString+=indent+"  <span class=\"legend_title\">"+tr("Rooms legend:", "It means the list of the complete information for the rooms: name, long name, code, and comments")+"</span><br />\n";
+		
+		bool first=true;
+		for(Room* rm : std::as_const(usedRoomsList)){
+			if(!first)
+				tmpString+="<br />\n";
+			else
+				first=false;
+			
+			tmpString+=indent+"  &nbsp;&nbsp;&nbsp;&nbsp; "+protect2(rm->name);
+			if(!rm->longName.isEmpty())
+				tmpString+=QString(" - ")+protect2(rm->longName);
+			if(!rm->code.isEmpty())
+				tmpString+=QString(" - ")+protect2(rm->code);
+			if(!rm->comments.isEmpty())
+				tmpString+=QString(" - ")+protect2(rm->comments).replace("\n", "<br />\n");
+		}
+		
+		tmpString+="\n"+indent+"</p>\n";
+	}
+}
+
+QString TimetableExport::printCompleteLegend(bool printSubjectsLegend, bool printActivityTagsLegend, bool printTeachersLegend, bool printStudentsLegend, bool printRoomsLegend)
+{
+	QSet<Subject*> allSubjects;
+	QSet<ActivityTag*> allActivityTags;
+	QSet<Teacher*> allTeachers;
+	QSet<StudentsSet*> allStudents;
+	QSet<Room*> allRooms;
+	
+	QList<int> allActivitiesList;
+
+	for(int ai=0; ai<gt.rules.nInternalActivities; ai++)
+		allActivitiesList.append(ai);
+	
+	QString str;
+	
+	addActivitiesLegend(allActivitiesList, allSubjects, allActivityTags, allTeachers, allStudents, allRooms,
+	 printSubjectsLegend, printActivityTagsLegend, printTeachersLegend, printStudentsLegend, printRoomsLegend);
+	printLegend(str, allSubjects, allActivityTags, allTeachers, allStudents, allRooms,
+	 printSubjectsLegend, printActivityTagsLegend, printTeachersLegend, printStudentsLegend, printRoomsLegend);
+	
+	return str;
 }

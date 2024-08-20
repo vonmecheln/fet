@@ -1,10 +1,10 @@
 lessThan(QT_MAJOR_VERSION, 5) {
-	error(Qt version $$QT_VERSION is not supported. The minimum supported Qt version is 5.7.0.)
+	error(Qt version $$QT_VERSION is not supported. The minimum supported Qt version is 5.15.0.)
 }
 
 equals(QT_MAJOR_VERSION, 5) {
-	lessThan(QT_MINOR_VERSION, 7){
-		error(Qt version $$QT_VERSION is not supported. The minimum supported Qt version is 5.7.0.)
+	lessThan(QT_MINOR_VERSION, 15){
+		error(Qt version $$QT_VERSION is not supported. The minimum supported Qt version is 5.15.0.)
 	}
 }
 
