@@ -2300,7 +2300,7 @@ void TimetableExport::writeIndexHtml(QWidget* parent, const QString& htmlfilenam
 			tmp3="<a href=\""+s2+bar+ACTIVITIES_TIMETABLE_FILENAME_XML+"\">"+tr("activities")+"</a>";
 		else
 			tmp3=tr("activities - disabled", "It means the activities XML timetables are disabled");
-		QString tmp4=TimetableExport::tr("View XML: %1, %2, %3.", "%1, %2 and %3 are three files in XML format, subgroups, teachers and activities timetables. The user can click on one file to view it").arg(tmp1).arg(tmp2).arg(tmp3);
+		QString tmp4=TimetableExport::tr("View XML: %1, %2, %3.", "%1, %2, and %3 are three files in XML format, subgroups, teachers and activities timetables. The user can click on one file to view it").arg(tmp1).arg(tmp2).arg(tmp3);
 		tos<<"      "<<tmp4<<"\n";
 
 		tos<<"    </p>\n\n";

@@ -346,7 +346,7 @@ void HelpFaqForm::setText()
 		"A: A bit difficult. You have to choose a day for this 0 hour. Then add breaks or not available to "
 		"prevent other activities in other days at hour 0, then add students set not available to prevent other "
 		"students sets from having hours at this hour 0. Or variants of this.\n\n"
-		"Zsolt Udvari used another trick: considered the last hour to be hour 0. But this is not always applicable.");
+		"%1 used another trick: considered the last hour to be hour 0. But this is not always applicable.", "%1 is a person").arg("Zsolt Udvari");
 
 	s+="\n\n";
 	s+="--------------------";
@@ -355,7 +355,7 @@ void HelpFaqForm::setText()
 	s+=tr("Q: How does FET care about weights? What do they mean?\n\n"
 		"A: The weights under 100% are subjective, because FET can skip them if "
 		"necessary.\n\n"
-		"Volker Dirr tried to express how FET considers under 100% weights:\n\n"
+		"%1 tried to express how FET considers under 100% weights:\n\n"
 		"weight = 50% means: In average FET retries two times to place an "
 		"activity without a conflict. If it isn't able to place the activity "
 		"without a conflict after average 2 times it keeps the conflict and tries "
@@ -372,7 +372,7 @@ void HelpFaqForm::setText()
 		"activity without a conflict. If it isn't able to place the activity "
 		"without a conflict after average 10000 times it keeps the conflict and "
 		"tries to place the next activity.\n\n"
-		"Also, activities might get unallocated, and the cycle would be opened.");
+		"Also, activities might get unallocated, and the cycle would be opened.", "%1 is a person").arg("Volker Dirr");
 
 	/*s+=tr("Q: How does FET care about weights. What do they mean?\n\n"
 		"A: The weights under 100% are subjective, because FET can skip them if necessary.\n\n"

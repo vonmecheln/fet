@@ -2886,3 +2886,10 @@ Versions 6.22.0 - 6.22.v
 	Reported by Benahmed Abdelkrim.
 	- Minor improvement: removed the brackets in the menu entries for viewing the timetables (suggested by Volker Dirr).
 	- Updated the Italian translation, by Andrea Primiani.
+- Version 6.22.2
+	- Corrected the main form appearance under older Qt versions.
+	- Minor improvement: added an explanation about how the constraints of type students (set)/teacher(s) max room/building changes per week work
+	(suggested by Vũ Ngọc Thành and Volker Dirr).
+	- Updated the Italian translation, by Andrea Primiani. It is now complete.
+	- Improved the Brazilian Portuguese translation, by Alexandre R. Soares.
+	- Corrected the Romanian translation, by Liviu Lalescu (the typos/small errors were found using Ispell / Aspell).

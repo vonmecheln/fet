@@ -6724,7 +6724,7 @@ Nel chiedere se sono normali questi tempi di elaborazione, faccio notare delle c
 From Vangelis Karafillidis:
 
 Import not available constraints for teachers and students from CSV files.
-Overall matrix view of not available times in the FET interface.
+Overall matrix view of not available times in the FET interface (DONE).
 
 Also from Fritzlang, on the forum (https://lalescu.ro/liviu/fet/forum/index.php?topic=5010.0):
 
@@ -6736,7 +6736,7 @@ From Vangelis Karafillidis:
 
 1) Define custom sets of teachers and students, and apply constraints for them.
 
-2) Output an HTML-like view of all the constraints. Vangelis also suggests the teachers not available to be displayed in a time horizontal view.
+2) Output an HTML-like view of all the constraints. Vangelis also suggests the teachers not available to be displayed in a time horizontal view (DONE).
 
 3) it might be useful.. to add a "locked" button.. in the generated timetables view...
 for... "unlocking" advanced manipulations...
@@ -6776,7 +6776,7 @@ From Volker Dirr:
 
 Add the possibility of generating multiple with multi-threading for fet-cl (FET command-line).
 
-428---------------------------------------------------------
+428-------5) and 6) are partiallly done---------------------
 From Vangelis Karafillidis (on forum):
 
 https://lalescu.ro/liviu/fet/forum/index.php?topic=4795.msg26561#msg26561
@@ -7028,12 +7028,11 @@ https://lalescu.ro/liviu/fet/forum/index.php?topic=5056.0
 
 Can we give an option while generating a timetable not to print virtual rooms and other empty rooms where no class is assigned?
 
-448---------------------------------------------------------
+448----------DONE part 2.-----------------------------------
 From Arvind Kumar Agarwal (on guestbook):
 
 1. In set of activities we should be able to add or replace a teacher for a particular class. Presently it changes for whole set. It will help to
 assign two teacher for particular class like practical. Also when teacher is on leave, we can assign another teacher for that particular class.
-2. In the activity screen, we should be able to hide inactive activities.
 
 449---------------------------------------------------------
 From Bachir Sayah (on guestbook):
@@ -8304,8 +8303,8 @@ ggscuola:
 
 Liviu Lalescu:
 
-(2) can probably be solved with min days between activities or students activity tag max hours daily.
-(3) can probably be solved with activities occupy min time slots from selection.
+(2) can probably be solved with constraints of type min days between activities or students activity tag max hours daily.
+(3) can probably be solved with constraints of type activities occupy min time slots from selection.
 
 ggscuola:
 
@@ -8884,7 +8883,7 @@ In Liviu Lalescu's words:
 For activities 1+1+1+1+1, he would like 3 subactivities (3 hours) to be placed in the morning. This is easy with the constraint subactivities preferred time slots.
 
 But for activities 1+1+2, he would like 2 hours to be placed in the morning, either 1+1 or 2. This can be only done with the constraint activities occupy
-min time slots from selection. He suggests a more user friendly way to implement so many constraints (he has 4 year with 20 groups each with 3 such subjects each,
+min time slots from selection. He suggests a more user friendly way to implement so many constraints (he has 4 years with 20 groups each with 3 such subjects each,
 so 240 constraints (!) ).
 
 Liviu Lalescu:
@@ -9008,6 +9007,21 @@ How to export teachers' busy times to Excel (or CSV)?
 From Vangelis Karafillidis:
 
 Constraints two sets of activities are overlapping on min/max time slots from selection.
+
+Suggested again on the forum, by choko and Vangelis Karafillidis:
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6021.0
+
+choko:
+
+Other than "a set of activities that are not overlapping with any other", is it possible to develop a new set of constraints that an activity must be overlapping
+with at least one activity from a set of activities"?
+
+Vangelis Karafillidis:
+
+Liviu, I think we have already discussed this issue. Sometimes, constraints of the type "a set of activities share min common time slots with any of another set
+of activities" (and maybe in selected time slots). As you told me, this type of constraint is extremely difficult to be implemented. But it seems this type of
+constraint is quite useful...
 
 559---------------------------------------------------------
 From Cyrus Ireri (on forum):
@@ -9536,3 +9550,186 @@ At this point I ask myself, is it possible to set a maximum limit on the number 
 From GUEFFAZ REDA:
 
 Add the option to add a shortcut to the desktop.
+
+588---------------------------------------------------------
+From GUEFFAZ REDA:
+
+The user can select more activities in the activities dialog and press a button there, "Duplicate", to duplicate the selected activities to another teacher
+or to another students set. This is to avoid repetition and error insertion.
+
+589---------------------------------------------------------
+From Alpha Peace (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6004.0
+
+If only Fet enables us to split activities after clicking on modify option, it would be great since we are deleting all the in order to split them.
+
+Enable separately option for teachers too.
+
+Liviu Lalescu:
+
+I think Alpha Peace refers to making a check box "Separately" for teachers, in the same way as for the students, when adding an activity.
+
+Alpha Peace:
+
+That's exactly what I mean for activities split especially when using modify option.
+
+---
+
+Also Ai suggests in this forum topic to modify the split of the activities, but says that the "Separately" check box for the teachers might be impossible to realize.
+
+590---------------------------------------------------------
+From AmerAsiri (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6011.0
+
+All teachers work in an hourly interval min days per week.
+
+Further suggestions of AmerAsiri on this topic:
+
+تكملة لما بدأته
+لاحظت قيود بالقيمة (MAX) تحتاج إلى قيود مقابلة بالقيمة (MIN)،
+مثل:
+1- أقصى فجوات يومية للمعلم لا يوجد مقابله (أدنى فجوات يومية للمعلم).
+2- أقصى امتداد في اليوم لا يوجد مقابله أدنى امتداد في اليوم.
+3- أقصى تكرار لمجال من الحصص في الأسبوع لا يوجد مقابله أدنى تكرار لمجال من الحصص في الأسبوع.
+
+لأن تحديد القيمة القصوى لا يضمن الالتزام بحد أدنى من التوزيع على أفراد المجموعة.
+
+Translation with Google Translate:
+
+As a continuation of what I started,
+I noticed restrictions with a value (MAX) that require corresponding restrictions with a value (MIN),
+such as:
+1- The maximum daily gaps for the teacher have no equivalent (minimum daily gaps for the teacher).
+2- The maximum extension per day, with no corresponding minimum extension per day.
+3- The maximum frequency of a range of classes per week. There is no corresponding minimum frequency of a range of classes per week.
+
+Because setting the maximum value does not guarantee commitment to a minimum distribution among group members.
+
+Clarification by AmerAsiri, at the request of Liviu Lalescu:
+
+1- MIN gaps per day for a teacher
+2- Teacher (MIN) span per day
+3- all teacher work in an hourly interval [[min]] days per week
+
+591---------------------------------------------------------
+From Vangelis Karafillidis:
+
+I was thinking of "standarizing" a spreadsheet prototype for importing activities so, instead of importing from CSV
+the user could download this spreadsheet and work on it.
+for example an .ods file for Libre Office Calc
+
+so, some kind of standarized syntax should be discussed
+
+for schools such as Music Schools (with many private-like lessons) adding activities manually is a titanic task
+I tried to "standardize" a prototype by myself around a year ago.
+actually, what I did is to work on a spreadsheet, export the data into a csv file, and then import the csv file.
+the major issues I encountered had to do with
+1) activities with multiple teachers/students sets,
+2) activities with multiple activity tags,
+3) min days constraints.
+
+592---------------------------------------------------------
+From math (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6016.0
+
+Getting information about schedule generation interna (Liviu: the rest of the title was truncated?)
+
+When generating a new schedule, FET tries to add all activities to the schedule such that all constraints are fulfilled. When adding an activity
+results in a violation of contraints, a different placement of activities gets evaluated until (hopefully) finally a valid solution is found.
+
+Is it possible to enable some kind of logging of this placement process? Is it perhaps possible to get an information which constraint has been
+violated during the scheduling process?
+
+Liviu Lalescu:
+
+When you hit Generate, FET sorts the activities, 1, ..., n, where 1 is the most difficult and n the easiest, according to some objective but not
+perfect estimations.
+
+FET places 1, 2, ..., i. There might be constraints broken, but FET will swap the activities recursively to make place for say 4th. But if it cannot
+place directly or by level>=1 swap to place i+1, FET chooses a slot and displaces all activities of that slot and places i+1. This is a level 0 swap.
+It is possible to show, for each time slots of the week, the first constraint which makes i+1 impossible to place at level 0.
+
+Am I clear to this point?
+
+So, it is possible to show at each step say 5*6 slots (5 days per week, 6 hours per day) and activity id and the first broken constraint.
+Some work is needed to add in each constraint type this logging. Not too difficult work. Hmm... I was just going to say "not too useful", but might
+be useful to log this information when FET reaches a new highest stage.
+
+593---------------------------------------------------------
+From Vangelis Karafillidis, as a solution to a potential problem reported by Vũ Ngọc Thành (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6018.msg33453#msg33453
+
+Vũ Ngọc Thành reported that the constraints of type teacher(s)/students (set) max room (and building) changes per week consider the changes as being
+the sum of changes on each day, as opposed to maintaining a constant overall room (building) for the whole week if the maximum allowed changes are zero.
+This was fixed by adding an explanatory text in the corresponding dialogs.
+
+Vangelis Karafillidis further suggested this:
+
+I think it depends how one interprets the constraint "max room changes per week". The constraint itself might mean either "max DAILY room changes
+per week" or "max WEEKLY room changes per week". It seems that most people tend to interpret the constraint as "max WEEKLY room changes per week".
+
+594---------------------------------------------------------
+From AnSam and Volker Dirr (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6019.0
+
+Volker's email to Liviu Lalescu:
+
+she added one activity with duration 7, even she has only 6 hours per
+day.
+
+so maybe TODO:
+
+- write a better warning in the generate pre and explain/complain a bit
+more detailed
+
+- limit the spin box in the add activities dialog to max hours per day.
+(or don't limit, but write a warning if it is too high)
+
+595---------------------------------------------------------
+From Vangelis Karafillidis:
+
+1) for the current implementation of importing from CSV file, we need some improvements.
+2) for preparing the data (and maybe some constrains) on a spreadsheet, we need to "standardize" a "form" for this spreadsheet.
+
+596---------------------------------------------------------
+From Vangelis Karafillidis:
+
+sometimes I wished there was a way to combine/merge .fet files.
+for example the timetable of a Music School has a huge amount of data/constraints that need to be added to FET
+most of the time there are two timetablers (or two groups of timetablers) which work nearly independently
+in order to prepare the two parts (sub-timetables) of the timetable
+these sub-timetables "intersect" on the hours that the students groups are available for these private-like instruments lessons
+so
+IF
+there was a way to prepare (at first) two .fet files and then combine/merge them this would be very useful
+OR
+if you could add a option so the user could choose the first (initial) number of the activities
+for example, the first activity to have id=3000 this might be possible to merge succesfully the one file with the first id=1
+and the other file with the first id=3000 without conflicts.
+
+597---------------------------------------------------------
+From math (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6017.msg33458#msg33458
+
+    Time -> Tags -> Min days between activities with an activity tag
+    Time -> Tags -> Activities with an activity tag have same starting time
+    Time -> Tags -> Activities with an activity tag occupy min slots
+    Time -> Tags -> Activities with an activity tag occupy max slots
+    Time -> Tags -> Activities with activity tag A and activity tag B are ordered
+    Time -> Tags -> Max hourly span for Activities with an activity tag
+
+Liviu Lalescu:
+
+They might be too strong. Maybe they would be useful for students (set)/teacher(s).
+
+598---------------------------------------------------------
+From GUEFFAZ REDA:
+
+Alert before production if hibernation mode is activated so that production does not stop.
+Hibernation mode is typically three hours, and production is sometimes for long hours.

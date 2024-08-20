@@ -15104,11 +15104,11 @@ impossiblestudentsmaxgapsperweek:
 				//preliminary test
 				int _total=0;
 				int _remnf=subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg];
-				bool _haveMaxBegs=(subgroupsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0);
+				bool _haveMaxBeginnings=(subgroupsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0);
 				for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 					_total+=newSubgroupsDayNHours(sbg,d2);
 					int _g=newSubgroupsDayNGaps(sbg,d2);
-					if(_haveMaxBegs){
+					if(_haveMaxBeginnings){
 						int _fg=newSubgroupsDayNFirstGaps(sbg,d2);
 						if(_fg==0){
 							if(_g>subgroupsMaxGapsPerDayMaxGaps[sbg])
@@ -15158,11 +15158,11 @@ impossiblestudentsmaxgapsperweek:
 				for(;;){
 					int total=0;
 					int remnf=subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg];
-					bool haveMaxBegs=(subgroupsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0);
+					bool haveMaxBeginnings=(subgroupsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0);
 					for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 						total+=sbgDayNHours[d2];
 						int g=sbgDayNGaps[d2];
-						if(haveMaxBegs){
+						if(haveMaxBeginnings){
 							int fg=sbgDayNFirstGaps[d2];
 							if(fg==0){
 								if(g>subgroupsMaxGapsPerDayMaxGaps[sbg])
@@ -15291,10 +15291,10 @@ impossiblestudentsmaxgapsperday:
 						//preliminary test
 						int _total=0;
 						int _remnf=subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg];
-						bool _haveMaxBegs=(subgroupsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0);
+						bool _haveMaxBeginnings=(subgroupsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0);
 						for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++){
 							_total+=newSubgroupsRealDayNHours(sbg,d2)+newSubgroupsRealDayNGaps(sbg,d2);
-							if(_haveMaxBegs){
+							if(_haveMaxBeginnings){
 								int _fg=newSubgroupsRealDayNFirstGaps(sbg,d2);
 								if(_fg==0){
 									//nothing
@@ -15337,10 +15337,10 @@ impossiblestudentsmaxgapsperday:
 						for(;;){
 							int total=0;
 							int remnf=subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg];
-							bool haveMaxBegs=(subgroupsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0);
+							bool haveMaxBeginnings=(subgroupsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0);
 							for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++){
 								total+=sbgRealDayNHours[d2]+sbgRealDayNGaps[d2];
-								if(haveMaxBegs){
+								if(haveMaxBeginnings){
 									int fg=sbgRealDayNFirstGaps[d2];
 									if(fg==0){
 										//nothing
@@ -15457,11 +15457,11 @@ impossiblestudentsmaxgapsperweekforrealdays:
 						//preliminary test
 						int _total=0;
 						int _remnf=subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg];
-						bool _haveMaxBegs=(subgroupsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0);
+						bool _haveMaxBeginnings=(subgroupsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0);
 						for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++){
 							_total+=newSubgroupsRealDayNHours(sbg,d2);
 							int _g=newSubgroupsRealDayNGaps(sbg,d2);
-							if(_haveMaxBegs){
+							if(_haveMaxBeginnings){
 								int _fg=newSubgroupsRealDayNFirstGaps(sbg,d2);
 								if(_fg==0){
 									if(_g>subgroupsMaxGapsPerRealDayMaxGaps[sbg])
@@ -15512,11 +15512,11 @@ impossiblestudentsmaxgapsperweekforrealdays:
 						for(;;){
 							int total=0;
 							int remnf=subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg];
-							bool haveMaxBegs=(subgroupsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0);
+							bool haveMaxBeginnings=(subgroupsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0);
 							for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++){
 								total+=sbgRealDayNHours[d2];
 								int g=sbgRealDayNGaps[d2];
-								if(haveMaxBegs){
+								if(haveMaxBeginnings){
 									int fg=sbgRealDayNFirstGaps[d2];
 									if(fg==0){
 										if(g>subgroupsMaxGapsPerRealDayMaxGaps[sbg])

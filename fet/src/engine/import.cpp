@@ -1302,7 +1302,8 @@ int Import::showFieldsAndWarnings(QWidget* parent, QDialog* &newParent){
 	// Start Dialog
 	newParent=new QDialog(parent);
 	QDialog& addItemsDialog=(*newParent);
-	addItemsDialog.setWindowTitle(Import::tr("FET import %1 question").arg(importThing));
+	addItemsDialog.setWindowTitle(Import::tr("FET import %1 question",
+	 "A question regarding the import of '%1'. '%1' is a category of data, for instance 'years, groups and subgroups'").arg(importThing));
 	QVBoxLayout* addItemsMainLayout=new QVBoxLayout(&addItemsDialog);
 
 	//Start Warnings
@@ -2287,8 +2288,8 @@ ifUserCanceledProgress3:
 	IMPORT_DIRECTORY=fileName.left(tmp);
 	//gt.rules.internalStructureComputed=false;
 	//setRulesModifiedAndOtherThings(&gt.rules);
-	if(addedSubgroups>0 || addedGroups>0 || addedYears>0)
-		gt.rules.addUndoPoint(tr("%1 subgroups, %2 groups and %3 years imported from the CSV file %4.").arg(addedSubgroups).arg(addedGroups).arg(addedYears).arg(fileName));
+	if(addedYears>0 || addedGroups>0 || addedSubgroups>0)
+		gt.rules.addUndoPoint(tr("%1 years, %2 groups, and %3 subgroups imported from the CSV file %4.").arg(addedYears).arg(addedGroups).arg(addedSubgroups).arg(fileName));
 }
 
 void Import::importCSVActivities(QWidget* parent){
