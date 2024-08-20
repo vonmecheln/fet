@@ -312,14 +312,6 @@ void usage(QTextStream* out, const QString& error)
 		"(you can get the same timetable if the input file is identical, if the FET version is the same (or if the generation algorithm did not change),"
 		" and if all the 6 random seed components are respectively equal).\n"
 		"\n"
-		"\t--warnifusingnotperfectconstraints=WNP\n"
-		"\t\tWNP is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains not perfect constraints "
-		"(activity tag max / min hours daily or students max gaps per day / real day) (default true).\n"
-		"\n"
-		"\t--warnifusingstudentsminhoursdailywithallowemptydays=WSMHDAED\n"
-		"\t\tSMHDAEDP is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains nonstandard constraints "
-		"students min hours daily with allow empty days (default true).\n"
-		"\n"
 		"\t--warnifusinggroupactivitiesininitialorder=WGA\n"
 		"\t\tWGA is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains nonstandard timetable "
 		"generation options to group activities in the initial order (default true).\n"
@@ -532,22 +524,9 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 	CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS=newSettings.value("confirm-activate-deactivate-activities-constraints", "true").toBool();
 /////////
 
-	ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY=newSettings.value("enable-activity-tag-max-hours-daily", "false").toBool();
-	ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY=newSettings.value("enable-activity-tag-min-hours-daily", "false").toBool();
-	ENABLE_STUDENTS_MAX_GAPS_PER_DAY=newSettings.value("enable-students-max-gaps-per-day", "false").toBool();
-	ENABLE_MAX_GAPS_PER_REAL_DAY=newSettings.value("enable-max-gaps-per-real-day", "false").toBool();
-	SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=newSettings.value("warn-if-using-not-perfect-constraints", "true").toBool();
 	SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES=newSettings.value("warn-subgroups-with-the-same-activities", "true").toBool();
 	SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME=newSettings.value("warn-activities-not-fixed-time-fixed-space-virtual-real", "true").toBool();
 	SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT=newSettings.value("warn-max-hours-daily-with-under-100-weight", "true").toBool();
-	ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=newSettings.value("enable-students-min-hours-daily-with-allow-empty-days", "false").toBool();
-	SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=newSettings.value("warn-if-using-students-min-hours-daily-with-allow-empty-days", "true").toBool();
-
-	ENABLE_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS=newSettings.value("enable-students-min-hours-per-morning-with-allow-empty-mornings", "false").toBool();
-	SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS=newSettings.value("warn-if-using-students-min-hours-per-morning-with-allow-empty-mornings", "true").toBool();
-
-	ENABLE_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS=newSettings.value("enable-students-min-hours-per-afternoon-with-allow-empty-afternoons", "false").toBool();
-	SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS=newSettings.value("warn-if-using-students-min-hours-per-afternoon-with-allow-empty-afternoons", "true").toBool();
 
 	ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER=newSettings.value("enable-group-activities-in-initial-order", "false").toBool();
 	SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER=newSettings.value("warn-if-using-group-activities-in-initial-order", "true").toBool();
@@ -1302,22 +1281,9 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("confirm-activate-deactivate-activities-constraints", CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS);
 ///////////
 
-	settings.setValue("enable-activity-tag-max-hours-daily", ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-	settings.setValue("enable-activity-tag-min-hours-daily", ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY);
-	settings.setValue("enable-students-max-gaps-per-day", ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
-	settings.setValue("enable-max-gaps-per-real-day", ENABLE_MAX_GAPS_PER_REAL_DAY);
-	settings.setValue("warn-if-using-not-perfect-constraints", SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS);
 	settings.setValue("warn-subgroups-with-the-same-activities", SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES);
 	settings.setValue("warn-activities-not-fixed-time-fixed-space-virtual-real", SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME);
 	settings.setValue("warn-max-hours-daily-with-under-100-weight", SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT);
-	settings.setValue("enable-students-min-hours-daily-with-allow-empty-days", ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS);
-	settings.setValue("warn-if-using-students-min-hours-daily-with-allow-empty-days", SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS);
-
-	settings.setValue("enable-students-min-hours-per-morning-with-allow-empty-mornings", ENABLE_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS);
-	settings.setValue("warn-if-using-students-min-hours-per-morning-with-allow-empty-mornings", SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS);
-
-	settings.setValue("enable-students-min-hours-per-afternoon-with-allow-empty-afternoon", ENABLE_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS);
-	settings.setValue("warn-if-using-students-min-hours-per-afternoon-with-allow-empty-afternoon", SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS);
 
 	settings.setValue("enable-group-activities-in-initial-order", ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
 	settings.setValue("warn-if-using-group-activities-in-initial-order", SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
@@ -2543,16 +2509,12 @@ int main(int argc, char **argv)
 		
 		QStringList unrecognizedOptions;
 		
-		SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=true;
-		
 		SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES=true;
 		
 		SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME=true;
 
 		SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT=true;
 		
-		SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=true;
-
 		SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER=true;
 		
 		SHOW_VIRTUAL_ROOMS_IN_TIMETABLES=false;
@@ -2696,10 +2658,6 @@ int main(int argc, char **argv)
 					randomSeedS22=-1;
 			}
 
-			else if(s.left(35)=="--warnifusingnotperfectconstraints="){
-				if(s.right(5)=="false")
-					SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=false;
-			}
 			else if(s.left(37)=="--warnsubgroupswiththesameactivities="){
 				if(s.right(5)=="false")
 					SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES=false;
@@ -2715,10 +2673,6 @@ int main(int argc, char **argv)
 			else if(s.left(43)=="--warnifusinggroupactivitiesininitialorder="){
 				if(s.right(5)=="false")
 					SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER=false;
-			}
-			else if(s.left(53)=="--warnifusingstudentsminhoursdailywithallowemptydays="){
-				if(s.right(4)=="true")
-					SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=true;
 			}
 			else if(s.left(19)=="--showvirtualrooms="){
 				if(s.right(4)=="true")

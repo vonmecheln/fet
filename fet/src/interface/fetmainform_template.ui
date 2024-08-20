@@ -1191,21 +1191,6 @@
      <addaction name="separator"/>
      <addaction name="showWarningForMaxHoursDailyWithUnder100WeightAction"/>
      <addaction name="separator"/>
-     <addaction name="enableActivityTagMaxHoursDailyAction"/>
-     <addaction name="enableActivityTagMinHoursDailyAction"/>
-     <addaction name="enableStudentsMaxGapsPerDayAction"/>
-     <addaction name="enableMaxGapsPerRealDayAction"/>
-     <addaction name="showWarningForNotPerfectConstraintsAction"/>
-     <addaction name="separator"/>
-     <addaction name="enableStudentsMinHoursDailyWithAllowEmptyDaysAction"/>
-     <addaction name="showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction"/>
-     <addaction name="separator"/>
-     <addaction name="enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction"/>
-     <addaction name="showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction"/>
-     <addaction name="separator"/>
-     <addaction name="enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction"/>
-     <addaction name="showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction"/>
-     <addaction name="separator"/>
      <addaction name="enableGroupActivitiesInInitialOrderAction"/>
      <addaction name="showWarningForGroupActivitiesInInitialOrderAction"/>
      <addaction name="separator"/>
@@ -1680,53 +1665,6 @@
     <string>Use colors in interface</string>
    </property>
   </action>
-  <action name="enableStudentsMaxGapsPerDayAction">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Enable students max gaps per day</string>
-   </property>
-  </action>
-  <action name="enableActivityTagMaxHoursDailyAction">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Enable activity tag max hours daily</string>
-   </property>
-  </action>
-  <action name="enableActivityTagMinHoursDailyAction">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Enable activity tag min hours daily</string>
-   </property>
-  </action>
-  <action name="showWarningForNotPerfectConstraintsAction">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string extracomment="This is an option, which can be selected or deselected. It means warn before generating, if user uses not perfect constraints">Warn if using not perfect constraints</string>
-   </property>
-   <property name="shortcut">
-    <string/>
-   </property>
-  </action>
   <action name="helpContentsAction">
    <property name="text">
     <string extracomment="menu Help-&gt;Online-&gt;Help contents, opens the web page of FET documentation">Help contents</string>
@@ -1767,28 +1705,6 @@
    </property>
    <property name="text">
     <string comment="It means to show or not the slots which are break slots, in the timetable, with an -X-. Uppercase -X-">Mark break slots with -X- in timetables</string>
-   </property>
-  </action>
-  <action name="enableStudentsMinHoursDailyWithAllowEmptyDaysAction">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Enable students min hours daily with empty days</string>
-   </property>
-  </action>
-  <action name="showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Warn if using students min hours daily with empty days</string>
    </property>
   </action>
   <action name="activityPlanningAction">
@@ -2109,61 +2025,6 @@
    </property>
    <property name="text">
     <string>Mornings-Afternoons</string>
-   </property>
-  </action>
-  <action name="enableMaxGapsPerRealDayAction">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Enable max gaps per real day / per week for real days</string>
-   </property>
-  </action>
-  <action name="enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Enable students min hours per morning with empty mornings</string>
-   </property>
-  </action>
-  <action name="showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Warn if using students min hours per morning with empty mornings</string>
-   </property>
-  </action>
-  <action name="enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Enable students min hours per afternoon with empty afternoons</string>
-   </property>
-  </action>
-  <action name="showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Warn if using students min hours per afternoon with empty afternoons</string>
    </property>
   </action>
   <action name="helpMoroccoAction">

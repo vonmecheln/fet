@@ -294,10 +294,6 @@ void ConstraintActivitiesOccupyMaxDifferentRoomsForm::help()
 {
 	QString s=QString("");
 	
-	s+=tr("IMPORTANT NOTE: Please be careful with this constraint, as its overuse may lead to a slowdown of generation or even to an impossible timetable.");
-	s+=QString("\n\n");
-	s+=tr("This constraint type was added on 29 April 2012.");
-	s+=QString("\n\n");
 	s+=tr("To use this constraint, you need to specify a set of activities and the maximum number of different rooms which can be occupied by these "
 	 "activities. Note that each activity can take place in a single room, and a single room can hold a single activity at a certain moment. "
 	 "This constraint may be used for instance to constrain all activities of type Physics of a certain students set to be in the same room "

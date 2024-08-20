@@ -460,8 +460,6 @@ public:
 	void retranslateConstraints();
 
 public slots:
-	void enableNotPerfectMessage();
-	
 	void settingsAutosaveAction_triggered();
 
 	void restoreDataStateAction_triggered();
@@ -541,22 +539,6 @@ public slots:
 	
 	void showWarningForMaxHoursDailyWithUnder100WeightToggled(bool checked);
 	
-	void enableActivityTagMaxHoursDailyToggled(bool checked);
-	void enableActivityTagMinHoursDailyToggled(bool checked);
-	void enableStudentsMaxGapsPerDayToggled(bool checked);
-	void showWarningForNotPerfectConstraintsToggled(bool checked);
-
-	void enableMaxGapsPerRealDayToggled(bool checked);
-
-	void enableStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool checked);
-	void showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool checked);
-
-	void enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool checked);
-	void showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool checked);
-
-	void enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled(bool checked);
-	void showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled(bool checked);
-
 	void enableGroupActivitiesInInitialOrderToggled(bool checked);
 	void showWarningForGroupActivitiesInInitialOrderToggled(bool checked);
 	

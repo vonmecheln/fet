@@ -16772,8 +16772,6 @@ QString ConstraintStudentsMinHoursDaily::getDescription(Rules& r)
 		
 	QString s;
 
-	if(this->allowEmptyDays)
-		s+="! ";
 	s+=tr("Students min hours daily");s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("mH:%1", "Min hours (daily)").arg(this->minHoursDaily);s+=", ";
@@ -16787,10 +16785,6 @@ QString ConstraintStudentsMinHoursDaily::getDetailedDescription(Rules& r)
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	if(this->allowEmptyDays==true){
-		s+=tr("(nonstandard, students may have empty days)");
-		s+="\n";
-	}
 	s+=tr("All students must respect the minimum number of hours daily");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Minimum hours daily=%1").arg(this->minHoursDaily);s+="\n";
@@ -17075,8 +17069,6 @@ QString ConstraintStudentsSetMinHoursDaily::getDescription(Rules& r)
 		
 	QString s;
 	
-	if(this->allowEmptyDays)
-		s+="! ";
 	s+=tr("Students set min hours daily");s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("St:%1", "Students (set)").arg(this->students);s+=", ";
@@ -17091,10 +17083,6 @@ QString ConstraintStudentsSetMinHoursDaily::getDetailedDescription(Rules& r)
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	if(this->allowEmptyDays==true){
-		s+=tr("(nonstandard, students may have empty days)");
-		s+="\n";
-	}
 	s+=tr("A students set must respect the minimum number of hours daily");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Students set=%1").arg(this->students);s+="\n";
@@ -25866,7 +25854,6 @@ QString ConstraintTeachersActivityTagMaxHoursDaily::getDescription(Rules& r)
 		end=", "+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+="! ";
 	s+=tr("Teachers for activity tag %1 have max %2 hours daily").arg(this->activityTagName).arg(this->maxHoursDaily);s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -25878,7 +25865,6 @@ QString ConstraintTeachersActivityTagMaxHoursDaily::getDetailedDescription(Rules
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("All teachers, for an activity tag, must respect the maximum number of hours daily");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Activity tag=%1").arg(this->activityTagName); s+="\n";
@@ -26111,7 +26097,6 @@ QString ConstraintTeacherActivityTagMaxHoursDaily::getDescription(Rules& r)
 		end=", "+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+="! ";
 	s+=tr("Teacher %1 for activity tag %2 has max %3 hours daily").arg(this->teacherName).arg(this->activityTagName).arg(this->maxHoursDaily);s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -26123,7 +26108,6 @@ QString ConstraintTeacherActivityTagMaxHoursDaily::getDetailedDescription(Rules&
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("A teacher for an activity tag must respect the maximum number of hours daily");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
@@ -26356,7 +26340,6 @@ QString ConstraintStudentsActivityTagMaxHoursDaily::getDescription(Rules& r)
 		end=", "+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+="! ";
 	s+=tr("Students for activity tag %1 have max %2 hours daily")
 		.arg(this->activityTagName).arg(this->maxHoursDaily); s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
@@ -26369,7 +26352,6 @@ QString ConstraintStudentsActivityTagMaxHoursDaily::getDetailedDescription(Rules
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("All students, for an activity tag, must respect the maximum number of hours daily"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
@@ -26572,7 +26554,6 @@ QString ConstraintStudentsSetActivityTagMaxHoursDaily::getDescription(Rules& r)
 		end=", "+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+="! ";
 	s+=tr("Students set %1 for activity tag %2 has max %3 hours daily").arg(this->students).arg(this->activityTagName).arg(this->maxHoursDaily);
 	s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
@@ -26585,7 +26566,6 @@ QString ConstraintStudentsSetActivityTagMaxHoursDaily::getDetailedDescription(Ru
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("A students set, for an activity tag, must respect the maximum number of hours daily"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Students set=%1").arg(this->students);s+="\n";
@@ -26898,7 +26878,6 @@ QString ConstraintTeachersActivityTagMinHoursDaily::getDescription(Rules& r)
 		end=", "+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+="! ";
 	s+=tr("Teachers for activity tag %1 have min %2 hours daily").arg(this->activityTagName).arg(this->minHoursDaily);s+=", ";
 	s+=tr("AED:%1", "Allow empty days").arg(yesNoTranslated(this->allowEmptyDays));s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
@@ -26911,7 +26890,6 @@ QString ConstraintTeachersActivityTagMinHoursDaily::getDetailedDescription(Rules
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("All teachers, for an activity tag, must respect the minimum number of hours daily");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Activity tag=%1").arg(this->activityTagName); s+="\n";
@@ -27153,7 +27131,6 @@ QString ConstraintTeacherActivityTagMinHoursDaily::getDescription(Rules& r)
 		end=", "+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+="! ";
 	s+=tr("Teacher %1 for activity tag %2 has min %3 hours daily").arg(this->teacherName).arg(this->activityTagName).arg(this->minHoursDaily);s+=", ";
 	s+=tr("AED:%1", "Allow empty days").arg(yesNoTranslated(this->allowEmptyDays));s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
@@ -27166,7 +27143,6 @@ QString ConstraintTeacherActivityTagMinHoursDaily::getDetailedDescription(Rules&
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("A teacher for an activity tag must respect the minimum number of hours daily");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
@@ -27408,7 +27384,6 @@ QString ConstraintStudentsActivityTagMinHoursDaily::getDescription(Rules& r)
 		end=", "+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+="! ";
 	s+=tr("Students for activity tag %1 have min %2 hours daily")
 		.arg(this->activityTagName).arg(this->minHoursDaily); s+=", ";
 	s+=tr("AED:%1", "Allow empty days").arg(yesNoTranslated(this->allowEmptyDays));s+=", ";
@@ -27422,7 +27397,6 @@ QString ConstraintStudentsActivityTagMinHoursDaily::getDetailedDescription(Rules
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("All students, for an activity tag, must respect the minimum number of hours daily"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
@@ -27634,7 +27608,6 @@ QString ConstraintStudentsSetActivityTagMinHoursDaily::getDescription(Rules& r)
 		end=", "+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+="! ";
 	s+=tr("Students set %1 for activity tag %2 has min %3 hours daily").arg(this->students).arg(this->activityTagName).arg(this->minHoursDaily);
 	s+=", ";
 	s+=tr("AED:%1", "Allow empty days").arg(yesNoTranslated(this->allowEmptyDays));
@@ -27649,7 +27622,6 @@ QString ConstraintStudentsSetActivityTagMinHoursDaily::getDetailedDescription(Ru
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("A students set, for an activity tag, must respect the minimum number of hours daily"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Students set=%1").arg(this->students);s+="\n";
@@ -27938,7 +27910,6 @@ QString ConstraintStudentsMaxGapsPerDay::getDescription(Rules& r)
 		end=", "+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+="! ";
 	s+=tr("Students max gaps per day");s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("MG:%1", "Max gaps (per day)").arg(this->maxGaps);
@@ -27951,7 +27922,6 @@ QString ConstraintStudentsMaxGapsPerDay::getDetailedDescription(Rules& r)
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("All students must respect the maximum number of gaps per day");s+="\n";
 	s+=tr("(breaks and students set not available not counted)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -28205,7 +28175,6 @@ QString ConstraintStudentsSetMaxGapsPerDay::getDescription(Rules& r)
 		end=", "+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+="! ";
 	s+=tr("Students set max gaps per day"); s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage)); s+=", ";
 	s+=tr("MG:%1", "Max gaps (per day)").arg(this->maxGaps);s+=", ";
@@ -28219,7 +28188,6 @@ QString ConstraintStudentsSetMaxGapsPerDay::getDetailedDescription(Rules& r)
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("A students set must respect the maximum number of gaps per day");s+="\n";
 	s+=tr("(breaks and students set not available not counted)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -40899,7 +40867,6 @@ QString ConstraintTeachersMaxGapsPerRealDay::getDescription(Rules& r){
 		end=", "+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+="! ";
 	s+=tr("Teachers max gaps per real day");s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("MG:%1", "Max gaps (per real day)").arg(this->maxGaps);s+=", ";
@@ -40912,7 +40879,6 @@ QString ConstraintTeachersMaxGapsPerRealDay::getDetailedDescription(Rules& r){
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("All teachers must respect the maximum gaps per real day");s+="\n";
 	s+=tr("(breaks and teacher not available not counted)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -41157,7 +41123,6 @@ QString ConstraintTeacherMaxGapsPerRealDay::getDescription(Rules& r){
 		end=", "+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+="! ";
 	s+=tr("Teacher max gaps per real day");s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("T:%1", "Teacher").arg(this->teacherName); s+=", ";
@@ -41171,7 +41136,6 @@ QString ConstraintTeacherMaxGapsPerRealDay::getDetailedDescription(Rules& r){
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint"); s+="\n";
-	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("A teacher must respect the maximum number of gaps per real day"); s+="\n";
 	s+=tr("(breaks and teacher not available not counted)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
@@ -44301,7 +44265,6 @@ QString ConstraintTeachersActivityTagMaxHoursDailyRealDays::getDescription(Rules
 		end=", "+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+="! ";
 	s+=tr("Teachers for activity tag %1 have max %2 hours daily per real day").arg(this->activityTagName).arg(this->maxHoursDaily);s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -44312,7 +44275,6 @@ QString ConstraintTeachersActivityTagMaxHoursDailyRealDays::getDetailedDescripti
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("All teachers, for an activity tag, must respect the maximum number of hours daily per real day");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Activity tag=%1").arg(this->activityTagName); s+="\n";
@@ -44547,7 +44509,6 @@ QString ConstraintTeacherActivityTagMaxHoursDailyRealDays::getDescription(Rules&
 		end=", "+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+="! ";
 	s+=tr("Teacher %1 for activity tag %2 has max %3 hours daily per real day").arg(this->teacherName).arg(this->activityTagName).arg(this->maxHoursDaily);s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -44558,7 +44519,6 @@ QString ConstraintTeacherActivityTagMaxHoursDailyRealDays::getDetailedDescriptio
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("A teacher for an activity tag must respect the maximum number of hours daily per real day");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
@@ -44795,7 +44755,6 @@ QString ConstraintStudentsActivityTagMaxHoursDailyRealDays::getDescription(Rules
 		end=", "+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+="! ";
 	s+=tr("Students for activity tag %1 have max %2 hours daily per real day")
 		.arg(this->activityTagName).arg(this->maxHoursDaily); s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
@@ -44808,7 +44767,6 @@ QString ConstraintStudentsActivityTagMaxHoursDailyRealDays::getDetailedDescripti
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("All students, for an activity tag, must respect the maximum number of hours daily per real day"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
@@ -45015,7 +44973,6 @@ QString ConstraintStudentsSetActivityTagMaxHoursDailyRealDays::getDescription(Ru
 		end=", "+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+="! ";
 	s+=tr("Students set %1 for activity tag %2 has max %3 hours daily per real day").arg(this->students).arg(this->activityTagName).arg(this->maxHoursDaily);
 	s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
@@ -45028,7 +44985,6 @@ QString ConstraintStudentsSetActivityTagMaxHoursDailyRealDays::getDetailedDescri
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("A students set, for an activity tag, must respect the maximum number of hours daily per real day"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Students set=%1").arg(this->students);s+="\n";
@@ -45318,7 +45274,6 @@ QString ConstraintStudentsMaxGapsPerRealDay::getDescription(Rules& r)
 		end=", "+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+="! ";
 	s+=tr("Students max gaps per real day");s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("MG:%1", "Max gaps (per real day)").arg(this->maxGaps);
@@ -45331,7 +45286,6 @@ QString ConstraintStudentsMaxGapsPerRealDay::getDetailedDescription(Rules& r)
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("All students must respect the maximum number of gaps per real day");s+="\n";
 	s+=tr("(breaks and students set not available not counted)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -45600,7 +45554,6 @@ QString ConstraintStudentsSetMaxGapsPerRealDay::getDescription(Rules& r){
 		end=", "+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+="! ";
 	s+=tr("Students set max gaps per real day"); s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage)); s+=", ";
 	s+=tr("MG:%1", "Max gaps (per real day)").arg(this->maxGaps);s+=", ";
@@ -45613,7 +45566,6 @@ QString ConstraintStudentsSetMaxGapsPerRealDay::getDetailedDescription(Rules& r)
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("A students set must respect the maximum number of gaps per real day");s+="\n";
 	s+=tr("(breaks and students set not available not counted)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -50959,8 +50911,6 @@ QString ConstraintStudentsMinHoursPerMorning::getDescription(Rules& r)
 
 	QString s;
 
-	if(this->allowEmptyMornings)
-		s+="! ";
 	s+=tr("Students min hours per morning");s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("mH:%1", "Min hours (per morning)").arg(this->minHoursPerMorning);s+=", ";
@@ -50974,10 +50924,6 @@ QString ConstraintStudentsMinHoursPerMorning::getDetailedDescription(Rules& r)
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	if(this->allowEmptyMornings==true){
-		s+=tr("(nonstandard, students may have empty mornings)");
-		s+="\n";
-	}
 	s+=tr("All students must respect the minimum number of hours per morning");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Minimum hours per morning=%1").arg(this->minHoursPerMorning);s+="\n";
@@ -51211,8 +51157,6 @@ QString ConstraintStudentsSetMinHoursPerMorning::getDescription(Rules& r)
 
 	QString s;
 
-	if(this->allowEmptyMornings)
-		s+="! ";
 	s+=tr("Students set min hours per morning");s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("St:%1", "Students (set)").arg(this->students);s+=", ";
@@ -51227,10 +51171,6 @@ QString ConstraintStudentsSetMinHoursPerMorning::getDetailedDescription(Rules& r
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	if(this->allowEmptyMornings==true){
-		s+=tr("(nonstandard, students may have empty mornings)");
-		s+="\n";
-	}
 	s+=tr("A students set must respect the minimum number of hours per morning");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Students set=%1").arg(this->students);s+="\n";
@@ -57060,7 +57000,6 @@ QString ConstraintTeachersMaxGapsPerWeekForRealDays::getDescription(Rules& r){
 		end=", "+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+="! ";
 	s+=tr("Teachers max gaps per week for real days");s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("MG:%1", "Max gaps (per week for real days)").arg(this->maxGaps);
@@ -57072,7 +57011,6 @@ QString ConstraintTeachersMaxGapsPerWeekForRealDays::getDetailedDescription(Rule
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("All teachers must respect the maximum gaps per week for real days");s+="\n";
 	s+=tr("(breaks and teacher not available not counted)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -57287,7 +57225,6 @@ QString ConstraintTeacherMaxGapsPerWeekForRealDays::getDescription(Rules& r){
 		end=", "+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+="! ";
 	s+=tr("Teacher max gaps per week for real days");s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("T:%1", "Teacher").arg(this->teacherName); s+=", ";
@@ -57300,7 +57237,6 @@ QString ConstraintTeacherMaxGapsPerWeekForRealDays::getDetailedDescription(Rules
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint"); s+="\n";
-	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("A teacher must respect the maximum number of gaps per week for real days"); s+="\n";
 	s+=tr("(breaks and teacher not available not counted)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
@@ -57511,7 +57447,6 @@ QString ConstraintStudentsMaxGapsPerWeekForRealDays::getDescription(Rules& r)
 		end=", "+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+="! ";
 	s+=tr("Students max gaps per week for real days");s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("MG:%1", "Max gaps (per week for real days)").arg(this->maxGaps);
@@ -57524,7 +57459,6 @@ QString ConstraintStudentsMaxGapsPerWeekForRealDays::getDetailedDescription(Rule
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("All students must respect the maximum number of gaps per week for real days");s+="\n";
 	s+=tr("(breaks and students set not available not counted)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -57791,7 +57725,6 @@ QString ConstraintStudentsSetMaxGapsPerWeekForRealDays::getDescription(Rules& r)
 		end=", "+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+="! ";
 	s+=tr("Students set max gaps per week for real days"); s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage)); s+=", ";
 	s+=tr("MG:%1", "Max gaps (per week for real days)").arg(this->maxGaps);s+=", ";
@@ -57804,7 +57737,6 @@ QString ConstraintStudentsSetMaxGapsPerWeekForRealDays::getDetailedDescription(R
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("A students set must respect the maximum number of gaps per week for real days");s+="\n";
 	s+=tr("(breaks and students set not available not counted)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -64358,8 +64290,6 @@ QString ConstraintStudentsMinHoursPerAfternoon::getDescription(Rules& r)
 
 	QString s;
 
-	if(this->allowEmptyAfternoons)
-		s+="! ";
 	s+=tr("Students min hours per afternoon");s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("mH:%1", "Min hours (per afternoon)").arg(this->minHoursPerAfternoon);s+=", ";
@@ -64373,10 +64303,6 @@ QString ConstraintStudentsMinHoursPerAfternoon::getDetailedDescription(Rules& r)
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	if(this->allowEmptyAfternoons==true){
-		s+=tr("(nonstandard, students may have empty afternoons)");
-		s+="\n";
-	}
 	s+=tr("All students must respect the minimum number of hours per afternoon");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Minimum hours per afternoon=%1").arg(this->minHoursPerAfternoon);s+="\n";
@@ -64610,8 +64536,6 @@ QString ConstraintStudentsSetMinHoursPerAfternoon::getDescription(Rules& r)
 
 	QString s;
 
-	if(this->allowEmptyAfternoons)
-		s+="! ";
 	s+=tr("Students set min hours per afternoon");s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("St:%1", "Students (set)").arg(this->students);s+=", ";
@@ -64626,10 +64550,6 @@ QString ConstraintStudentsSetMinHoursPerAfternoon::getDetailedDescription(Rules&
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	if(this->allowEmptyAfternoons==true){
-		s+=tr("(nonstandard, students may have empty afternoons)");
-		s+="\n";
-	}
 	s+=tr("A students set must respect the minimum number of hours per afternoon");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Students set=%1").arg(this->students);s+="\n";

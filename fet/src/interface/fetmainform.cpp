@@ -1281,28 +1281,11 @@ bool SHOW_SHORTCUTS_ON_MAIN_WINDOW=true;
 
 bool SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES=false;
 
-bool ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY=false;
-bool ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY=false;
-bool ENABLE_STUDENTS_MAX_GAPS_PER_DAY=false;
-
-bool ENABLE_MAX_GAPS_PER_REAL_DAY=false;
-
-bool SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=true;
-
 bool SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES=true;
 
 bool SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME=true;
 
 bool SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT=true;
-
-bool ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=false;
-bool SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=true;
-
-bool ENABLE_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS=false;
-bool SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS=true;
-
-bool ENABLE_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS=false;
-bool SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS=true;
 
 bool ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER=false;
 bool SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER=true;
@@ -1894,21 +1877,6 @@ FetMainForm::FetMainForm()
 	showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction->setCheckable(true);
 	showWarningForMaxHoursDailyWithUnder100WeightAction->setCheckable(true);
 	
-	enableActivityTagMaxHoursDailyAction->setCheckable(true);
-	enableActivityTagMinHoursDailyAction->setCheckable(true);
-	enableStudentsMaxGapsPerDayAction->setCheckable(true);
-	enableMaxGapsPerRealDayAction->setCheckable(true);
-	showWarningForNotPerfectConstraintsAction->setCheckable(true);
-
-	enableStudentsMinHoursDailyWithAllowEmptyDaysAction->setCheckable(true);
-	showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction->setCheckable(true);
-
-	enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setCheckable(true);
-	showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setCheckable(true);
-
-	enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction->setCheckable(true);
-	showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction->setCheckable(true);
-
 	enableGroupActivitiesInInitialOrderAction->setCheckable(true);
 	showWarningForGroupActivitiesInInitialOrderAction->setCheckable(true);
 	
@@ -1917,21 +1885,6 @@ FetMainForm::FetMainForm()
 	showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction->setChecked(SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME);
 
 	showWarningForMaxHoursDailyWithUnder100WeightAction->setChecked(SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT);
-
-	enableActivityTagMaxHoursDailyAction->setChecked(ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-	enableActivityTagMinHoursDailyAction->setChecked(ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY);
-	enableStudentsMaxGapsPerDayAction->setChecked(ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
-	enableMaxGapsPerRealDayAction->setChecked(ENABLE_MAX_GAPS_PER_REAL_DAY);
-	showWarningForNotPerfectConstraintsAction->setChecked(SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS);
-
-	enableStudentsMinHoursDailyWithAllowEmptyDaysAction->setChecked(ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS);
-	showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction->setChecked(SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS);
-
-	enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(ENABLE_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS);
-	showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS);
-
-	enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction->setChecked(ENABLE_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS);
-	showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction->setChecked(SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS);
 
 	enableGroupActivitiesInInitialOrderAction->setChecked(ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
 	showWarningForGroupActivitiesInInitialOrderAction->setChecked(SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
@@ -1945,21 +1898,6 @@ FetMainForm::FetMainForm()
 	connect(settingsShowSubgroupsInComboBoxesAction, &QAction::toggled, this, &FetMainForm::showSubgroupsInComboBoxesToggled);
 	connect(settingsShowSubgroupsInActivityPlanningAction, &QAction::toggled, this, &FetMainForm::showSubgroupsInActivityPlanningToggled);
 	
-	connect(enableActivityTagMaxHoursDailyAction, &QAction::toggled, this, &FetMainForm::enableActivityTagMaxHoursDailyToggled);
-	connect(enableActivityTagMinHoursDailyAction, &QAction::toggled, this, &FetMainForm::enableActivityTagMinHoursDailyToggled);
-	connect(enableStudentsMaxGapsPerDayAction, &QAction::toggled, this, &FetMainForm::enableStudentsMaxGapsPerDayToggled);
-	connect(enableMaxGapsPerRealDayAction, &QAction::toggled, this, &FetMainForm::enableMaxGapsPerRealDayToggled);
-	connect(showWarningForNotPerfectConstraintsAction, &QAction::toggled, this, &FetMainForm::showWarningForNotPerfectConstraintsToggled);
-
-	connect(enableStudentsMinHoursDailyWithAllowEmptyDaysAction, &QAction::toggled, this, &FetMainForm::enableStudentsMinHoursDailyWithAllowEmptyDaysToggled);
-	connect(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction, &QAction::toggled, this, &FetMainForm::showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled);
-
-	connect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, &QAction::toggled, this, &FetMainForm::enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled);
-	connect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, &QAction::toggled, this, &FetMainForm::showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled);
-
-	connect(enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction, &QAction::toggled, this, &FetMainForm::enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled);
-	connect(showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction, &QAction::toggled, this, &FetMainForm::showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled);
-
 	connect(enableGroupActivitiesInInitialOrderAction, &QAction::toggled, this, &FetMainForm::enableGroupActivitiesInInitialOrderToggled);
 	connect(showWarningForGroupActivitiesInInitialOrderAction, &QAction::toggled, this, &FetMainForm::showWarningForGroupActivitiesInInitialOrderToggled);
 
@@ -1992,34 +1930,6 @@ FetMainForm::FetMainForm()
 	dataTimeConstraintsTeacherMaxGapsPerWeekForRealDaysAction->setIconVisibleInMenu(true);
 
 	groupActivitiesInInitialOrderAction->setIconVisibleInMenu(true);
-
-	setEnabledIcon(dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-
-	setEnabledIcon(dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-
-	setEnabledIcon(dataTimeConstraintsTeacherActivityTagMinHoursDailyAction, ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsTeachersActivityTagMinHoursDailyAction, ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsStudentsActivityTagMinHoursDailyAction, ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction, ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY);
-
-	setEnabledIcon(dataTimeConstraintsStudentsSetMaxGapsPerDayAction, ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
-	setEnabledIcon(dataTimeConstraintsStudentsMaxGapsPerDayAction, ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
-
-	setEnabledIcon(dataTimeConstraintsStudentsSetMaxGapsPerRealDayAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
-	setEnabledIcon(dataTimeConstraintsStudentsMaxGapsPerRealDayAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
-	setEnabledIcon(dataTimeConstraintsTeachersMaxGapsPerRealDayAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
-	setEnabledIcon(dataTimeConstraintsTeacherMaxGapsPerRealDayAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
-
-	setEnabledIcon(dataTimeConstraintsStudentsSetMaxGapsPerWeekForRealDaysAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
-	setEnabledIcon(dataTimeConstraintsStudentsMaxGapsPerWeekForRealDaysAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
-	setEnabledIcon(dataTimeConstraintsTeachersMaxGapsPerWeekForRealDaysAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
-	setEnabledIcon(dataTimeConstraintsTeacherMaxGapsPerWeekForRealDaysAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
 
 	setEnabledIcon(groupActivitiesInInitialOrderAction, ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
 
@@ -2372,40 +2282,6 @@ void FetMainForm::updateMode(bool forceUpdate)
 		dataTermsAction->setEnabled(true);
 	else
 		dataTermsAction->setEnabled(false);
-
-	//(Yes, the enable and warning for min hours per morning with allow empty mornings are always disabled.)
-	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
-		enableActivityTagMaxHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Enable activity tag max hours daily", nullptr));
-	
-		enableActivityTagMinHoursDailyAction->setEnabled(true);
-
-		enableMaxGapsPerRealDayAction->setEnabled(false);
-
-		enableStudentsMinHoursDailyWithAllowEmptyDaysAction->setEnabled(true);
-		showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction->setEnabled(true);
-
-		enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setEnabled(false);
-		showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setEnabled(false);
-
-		enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction->setEnabled(false);
-		showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction->setEnabled(false);
-	}
-	else{
-		enableActivityTagMaxHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Enable activity tag max hours daily / per real day", nullptr));
-
-		enableActivityTagMinHoursDailyAction->setEnabled(true);
-
-		enableMaxGapsPerRealDayAction->setEnabled(true);
-
-		enableStudentsMinHoursDailyWithAllowEmptyDaysAction->setEnabled(false);
-		showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction->setEnabled(false);
-
-		enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setEnabled(false);
-		showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setEnabled(false);
-
-		enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction->setEnabled(false);
-		showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction->setEnabled(false);
-	}
 
 	createMenusOfActionsForConstraints();
 }
@@ -4696,21 +4572,6 @@ void FetMainForm::populateLanguagesMap(QMap<QString, QString>& languagesMap)
 	languagesMap.insert("eu", QString("Basque"));
 }
 
-void FetMainForm::enableNotPerfectMessage()
-{
-	QString s=tr("Constraint is not enabled. To use this type of constraint you must enable it from the Settings->Advanced menu.");
-	s+="\n\n";
-	s+=tr("Explanation:");
-	s+=" ";
-	s+=tr("Constraints of this type are good, working, but they are not perfectly optimized.");
-	s+=" ";
-	s+=tr("For some situations, the generation of the timetable may take too long or be impossible.");
-	s+="\n\n";
-	s+=tr("Use with caution.");
-
-	QMessageBox::information(this, tr("FET information"), s);
-}
-
 void FetMainForm::checkForUpdatesToggled(bool checked)
 {
 	if(checked==true){
@@ -6895,36 +6756,6 @@ void FetMainForm::helpSettingsAction_triggered()
 	s+=tr("the timetable view dialogs");
 	
 	s+="\n\n";
-	s+=tr("Enable activity tag max hours daily:");
-	s+="\n";
-	s+=tr("This will enable the menu for the constraints: teacher(s) or students (set) activity tag max hours daily / per real day (where applicable)."
-		" These constraints are good, but not perfect and may bring slow down of generation or impossible timetables if improperly used. Select only"
-		" if you know what you're doing.");
-	s+="\n\n";
-	s+=tr("Enable students max gaps per day:");
-	s+="\n";
-	s+=tr("This will enable the menu for 2 constraints: students (set) max gaps per day. These 2 constraints are good, but not perfect and"
-		" may bring slow down of generation or impossible timetables if improperly used. Select only if you know what you're doing.");
-		
-	s+="\n\n";
-	s+=tr("Warn if using not perfect constraints:", "this is a warning if user uses not perfect constraints");
-	s+="\n";
-	s+=tr("If you use a not perfect constraint (activity tag max hours daily / per real day or students max gaps per day / per real day / per week for real days - where applicable),"
-		" you'll get a warning before generating. Uncheck this option to get rid of that warning (it is recommended to keep the warning).");
-	
-	s+="\n\n";
-	s+=tr("Enable students min hours daily with empty days:");
-	s+="\n";
-	s+=tr("This will enable you to modify the students min hours daily constraints, to allow empty days. It is IMPERATIVE (for performance reasons) to allow empty days for students min hours daily only"
-		" if your institution allows empty days for students and if a solution with empty days is possible. Select only if you know what you're doing.");
-		
-	s+="\n\n";
-	s+=tr("Warn if using students min hours daily with empty days:", "this is a warning if user has constraints min hours daily for students with allowed empty days");
-	s+="\n";
-	s+=tr("If you use constraints students min hours daily with allowed empty days, you'll get a warning before generating"
-		". Uncheck this option to get rid of that warning (it is recommended to keep the warning).");
-		
-	s+="\n\n";
 	
 	s+=tr("Confirmations: unselect the corresponding check boxes if you want to skip introduction and confirmation to various advanced dialogs.");
 	
@@ -8866,11 +8697,6 @@ void FetMainForm::dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction_trig
 		return;
 	}
 	
-	if(!ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY){
-		enableNotPerfectMessage();
-		return;
-	}
-
 	ConstraintTeachersActivityTagMaxHoursDailyForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
@@ -8887,11 +8713,6 @@ void FetMainForm::dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction_trigg
 	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Generation in progress. Please stop the generation before this."));
-		return;
-	}
-
-	if(!ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY){
-		enableNotPerfectMessage();
 		return;
 	}
 
@@ -8914,11 +8735,6 @@ void FetMainForm::dataTimeConstraintsTeachersActivityTagMinHoursDailyAction_trig
 		return;
 	}
 	
-	if(!ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY){
-		enableNotPerfectMessage();
-		return;
-	}
-
 	ConstraintTeachersActivityTagMinHoursDailyForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
@@ -8935,11 +8751,6 @@ void FetMainForm::dataTimeConstraintsTeacherActivityTagMinHoursDailyAction_trigg
 	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Generation in progress. Please stop the generation before this."));
-		return;
-	}
-
-	if(!ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY){
-		enableNotPerfectMessage();
 		return;
 	}
 
@@ -9452,11 +9263,6 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerDayAction_triggered()
 		return;
 	}
 
-	if(!ENABLE_STUDENTS_MAX_GAPS_PER_DAY){
-		enableNotPerfectMessage();
-		return;
-	}
-
 	ConstraintStudentsSetMaxGapsPerDayForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
@@ -9476,11 +9282,6 @@ void FetMainForm::dataTimeConstraintsStudentsMaxGapsPerDayAction_triggered()
 		return;
 	}
 	
-	if(!ENABLE_STUDENTS_MAX_GAPS_PER_DAY){
-		enableNotPerfectMessage();
-		return;
-	}
-
 	ConstraintStudentsMaxGapsPerDayForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
@@ -9766,11 +9567,6 @@ void FetMainForm::dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction_t
 		return;
 	}
 
-	if(!ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY){
-		enableNotPerfectMessage();
-		return;
-	}
-
 	ConstraintStudentsSetActivityTagMaxHoursDailyForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
@@ -9787,11 +9583,6 @@ void FetMainForm::dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction_trig
 	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Generation in progress. Please stop the generation before this."));
-		return;
-	}
-
-	if(!ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY){
-		enableNotPerfectMessage();
 		return;
 	}
 
@@ -9814,11 +9605,6 @@ void FetMainForm::dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction_t
 		return;
 	}
 
-	if(!ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY){
-		enableNotPerfectMessage();
-		return;
-	}
-
 	ConstraintStudentsSetActivityTagMinHoursDailyForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
@@ -9835,11 +9621,6 @@ void FetMainForm::dataTimeConstraintsStudentsActivityTagMinHoursDailyAction_trig
 	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Generation in progress. Please stop the generation before this."));
-		return;
-	}
-
-	if(!ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY){
-		enableNotPerfectMessage();
 		return;
 	}
 
@@ -11851,11 +11632,6 @@ void FetMainForm::dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAct
 		return;
 	}
 
-	if(!ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY){
-		enableNotPerfectMessage();
-		return;
-	}
-
 	ConstraintTeachersActivityTagMaxHoursDailyRealDaysForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
@@ -11872,11 +11648,6 @@ void FetMainForm::dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysActi
 	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Generation in progress. Please stop the generation before this."));
-		return;
-	}
-
-	if(!ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY){
-		enableNotPerfectMessage();
 		return;
 	}
 
@@ -12241,11 +12012,6 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerRealDayAction_triggere
 		return;
 	}
 
-	if(!ENABLE_MAX_GAPS_PER_REAL_DAY){
-		enableNotPerfectMessage();
-		return;
-	}
-
 	ConstraintStudentsSetMaxGapsPerRealDayForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
@@ -12262,11 +12028,6 @@ void FetMainForm::dataTimeConstraintsStudentsMaxGapsPerRealDayAction_triggered()
 	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Generation in progress. Please stop the generation before this."));
-		return;
-	}
-
-	if(!ENABLE_MAX_GAPS_PER_REAL_DAY){
-		enableNotPerfectMessage();
 		return;
 	}
 
@@ -12289,11 +12050,6 @@ void FetMainForm::dataTimeConstraintsTeachersMaxGapsPerRealDayAction_triggered()
 		return;
 	}
 
-	if(!ENABLE_MAX_GAPS_PER_REAL_DAY){
-		enableNotPerfectMessage();
-		return;
-	}
-
 	ConstraintTeachersMaxGapsPerRealDayForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
@@ -12310,11 +12066,6 @@ void FetMainForm::dataTimeConstraintsTeacherMaxGapsPerRealDayAction_triggered()
 	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Generation in progress. Please stop the generation before this."));
-		return;
-	}
-
-	if(!ENABLE_MAX_GAPS_PER_REAL_DAY){
-		enableNotPerfectMessage();
 		return;
 	}
 
@@ -12337,11 +12088,6 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerWeekForRealDaysAction_
 		return;
 	}
 
-	if(!ENABLE_MAX_GAPS_PER_REAL_DAY){
-		enableNotPerfectMessage();
-		return;
-	}
-
 	ConstraintStudentsSetMaxGapsPerWeekForRealDaysForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
@@ -12358,11 +12104,6 @@ void FetMainForm::dataTimeConstraintsStudentsMaxGapsPerWeekForRealDaysAction_tri
 	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Generation in progress. Please stop the generation before this."));
-		return;
-	}
-
-	if(!ENABLE_MAX_GAPS_PER_REAL_DAY){
-		enableNotPerfectMessage();
 		return;
 	}
 
@@ -12385,11 +12126,6 @@ void FetMainForm::dataTimeConstraintsTeachersMaxGapsPerWeekForRealDaysAction_tri
 		return;
 	}
 
-	if(!ENABLE_MAX_GAPS_PER_REAL_DAY){
-		enableNotPerfectMessage();
-		return;
-	}
-
 	ConstraintTeachersMaxGapsPerWeekForRealDaysForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
@@ -12406,11 +12142,6 @@ void FetMainForm::dataTimeConstraintsTeacherMaxGapsPerWeekForRealDaysAction_trig
 	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Generation in progress. Please stop the generation before this."));
-		return;
-	}
-
-	if(!ENABLE_MAX_GAPS_PER_REAL_DAY){
-		enableNotPerfectMessage();
 		return;
 	}
 
@@ -12661,11 +12392,6 @@ void FetMainForm::dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDays
 		return;
 	}
 
-	if(!ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY){
-		enableNotPerfectMessage();
-		return;
-	}
-
 	ConstraintStudentsSetActivityTagMaxHoursDailyRealDaysForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
@@ -12682,11 +12408,6 @@ void FetMainForm::dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAct
 	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Generation in progress. Please stop the generation before this."));
-		return;
-	}
-
-	if(!ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY){
-		enableNotPerfectMessage();
 		return;
 	}
 
@@ -13700,108 +13421,89 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	s+=tr("21")+QString(". ")+tr("Print rooms in timetables will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 
-	s+=tr("22")+QString(". ")+tr("Enable activity tag max hours daily will be %1", "%1 is true or false").arg(tr("false"));
-	s+="\n";
-
-	s+=tr("23")+QString(". ")+tr("Enable activity tag min hours daily will be %1", "%1 is true or false").arg(tr("false"));
-	s+="\n";
-
-	s+=tr("24")+QString(". ")+tr("Enable students max gaps per day will be %1", "%1 is true or false").arg(tr("false"));
-	s+="\n";
-
-	s+=tr("25")+QString(". ")+tr("Warn if using not perfect constraints will be %1", "%1 is true or false. This is a warning if user uses not perfect constraints").arg(tr("true"));
-	s+="\n";
-
-	s+=tr("26")+QString(". ")+tr("Enable constraints students min hours daily with empty days will be %1", "%1 is true or false").arg(tr("false"));
-	s+="\n";
-
-	s+=tr("27")+QString(". ")+tr("Warn if using constraints students min hours daily with empty days will be %1", "%1 is true or false. This is a warning if user uses a nonstandard constraint"
-		" students min hours daily with allowed empty days").arg(tr("true"));
-	s+="\n";
-
 	///////////////confirmations
-	s+=tr("28")+QString(". ")+tr("Confirm activity planning will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("22")+QString(". ")+tr("Confirm activity planning will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
-	s+=tr("29")+QString(". ")+tr("Confirm spread activities over the week will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("23")+QString(". ")+tr("Confirm spread activities over the week will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
-	s+=tr("30")+QString(". ")+tr("Confirm remove redundant constraints will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("24")+QString(". ")+tr("Confirm remove redundant constraints will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
-	s+=tr("31")+QString(". ")+tr("Confirm save data and timetable as will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("25")+QString(". ")+tr("Confirm save data and timetable as will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 	///////////////
 	
-	s+=tr("32")+QString(". ")+tr("Enable group activities in the initial order of generation will be %1", "%1 is true or false").arg(tr("false"));
+	s+=tr("26")+QString(". ")+tr("Enable group activities in the initial order of generation will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
-	s+=tr("33")+QString(". ")+tr("Warn if using group activities in the initial order of generation will be %1", "%1 is true or false").arg(tr("true"));
-	s+="\n";
-	///////////////
-
-	s+=tr("34")+QString(". ")+tr("Show subgroups in combo boxes will be %1", "%1 is true or false").arg(tr("true"));
-	s+="\n";
-	s+=tr("35")+QString(". ")+tr("Show subgroups in activity planning will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("27")+QString(". ")+tr("Warn if using group activities in the initial order of generation will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 	///////////////
 
-	s+=tr("36")+QString(". ")+tr("Write on disk the %1 timetable will be %2", "%1 is a category of timetables, like conflicts, %2 is true or false")
+	s+=tr("28")+QString(". ")+tr("Show subgroups in combo boxes will be %1", "%1 is true or false").arg(tr("true"));
+	s+="\n";
+	s+=tr("29")+QString(". ")+tr("Show subgroups in activity planning will be %1", "%1 is true or false").arg(tr("true"));
+	s+="\n";
+	///////////////
+
+	s+=tr("30")+QString(". ")+tr("Write on disk the %1 timetable will be %2", "%1 is a category of timetables, like conflicts, %2 is true or false")
 	 .arg(tr("conflicts")).arg(tr("true"));
 	s+="\n";
 
-	s+=tr("37")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("31")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("statistics")).arg(tr("true"));
 	s+="\n";
-	s+=tr("38")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("32")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("XML")).arg(tr("true"));
 	s+="\n";
-	s+=tr("39")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("33")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("days horizontal")).arg(tr("true"));
 	s+="\n";
-	s+=tr("40")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("34")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("days vertical")).arg(tr("true"));
 	s+="\n";
-	s+=tr("41")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("35")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("time horizontal")).arg(tr("true"));
 	s+="\n";
-	s+=tr("42")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("36")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("time vertical")).arg(tr("true"));
 	s+="\n";
 
-	s+=tr("43")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("37")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("subgroups")).arg(tr("true"));
 	s+="\n";
-	s+=tr("44")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("38")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("groups")).arg(tr("true"));
 	s+="\n";
-	s+=tr("45")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("38")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("years")).arg(tr("true"));
 	s+="\n";
-	s+=tr("46")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("40")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("teachers")).arg(tr("true"));
 	s+="\n";
-	s+=tr("47")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("41")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("teachers free periods")).arg(tr("true"));
 	s+="\n";
-	s+=tr("48")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("42")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("buildings")).arg(tr("true"));
 	s+="\n";
-	s+=tr("49")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("43")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("rooms")).arg(tr("true"));
 	s+="\n";
-	s+=tr("50")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("44")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("subjects")).arg(tr("true"));
 	s+="\n";
-	s+=tr("51")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("45")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("activity tags")).arg(tr("true"));
 	s+="\n";
-	s+=tr("52")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("46")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("activities")).arg(tr("true"));
 	s+="\n";
-	s+=tr("53")+QString(". ")+tr("Show tool tips for constraints with tables will be %1", "%1 is true or false").arg(tr("false"));
+	s+=tr("47")+QString(". ")+tr("Show tool tips for constraints with tables will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
-	s+=tr("54")+QString(". ")+tr("Show warning for subgroups with the same activities will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("48")+QString(". ")+tr("Show warning for subgroups with the same activities will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
-	s+=tr("55")+QString(". ")+tr("Print detailed timetables will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("49")+QString(". ")+tr("Print detailed timetables will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
-	s+=tr("56")+QString(". ")+tr("Print detailed teachers' free periods timetables will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("50")+QString(". ")+tr("Print detailed teachers' free periods timetables will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 	
 	//Just to have them translated, in case I need them.
@@ -13812,83 +13514,66 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	QString t3=tr("categorized", "It is a style for students' combo boxes");
 	Q_UNUSED(t3);
 	
-	s+=tr("57")+QString(". ")+tr("Students' combo boxes style will be %1").arg(tr("simple", "It is a style for students' combo boxes"));
+	s+=tr("51")+QString(". ")+tr("Students' combo boxes style will be %1").arg(tr("simple", "It is a style for students' combo boxes"));
 	s+="\n";
 	
-	s+=tr("58")+QString(". ")+tr("Print virtual rooms in the timetables will be %1", "%1 is true or false").arg(tr("false"));
+	s+=tr("52")+QString(". ")+tr("Print virtual rooms in the timetables will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=tr("59")+QString(". ")+tr("Show warning for activities not locked in time but locked in space in virtual rooms specifying the"
+	s+=tr("53")+QString(". ")+tr("Show warning for activities not locked in time but locked in space in virtual rooms specifying the"
 	 " real rooms will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 
-	s+=tr("60")+QString(". ")+tr("Beep at the end of the generation will be %1, run external command at the end of generation will be %2,"
+	s+=tr("54")+QString(". ")+tr("Beep at the end of the generation will be %1, run external command at the end of generation will be %2,"
 	 " and the external command will be empty",
 	 "%1 and %2 are true or false").arg(tr("true")).arg(tr("false"));
 	s+="\n";
 
-	s+=tr("61")+QString(". ")+tr("Show warning if using constraints of type max hours daily with a weight less than 100%"
+	s+=tr("55")+QString(". ")+tr("Show warning if using constraints of type max hours daily with a weight less than 100%"
 	 " will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
-
-	s+=tr("62")+QString(". ")+tr("Enable max gaps per real day / per week for real days will be %1", "%1 is true or false").arg(tr("false"));
-	s+="\n";
-
-	s+=tr("63")+QString(". ")+tr("Enable constraints students min hours per morning with empty mornings will be %1", "%1 is true or false").arg(tr("false"));
-	s+="\n";
-
-	s+=tr("64")+QString(". ")+tr("Warn if using constraints students min hours per morning with empty mornings will be %1", "%1 is true or false. This is a warning if user uses a nonstandard constraint"
-		" students min hours per morning with allowed empty mornings").arg(tr("true"));
-	s+="\n";
-
-	s+=tr("65")+QString(". ")+tr("Write HTML timetables for subgroups in sorted order will be %1", "%1 is true or false").arg(tr("false"));
+	
+	s+=tr("56")+QString(". ")+tr("Write HTML timetables for subgroups in sorted order will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 	
-	s+=tr("66")+QString(". ")+tr("The Boolean value 'The font is user selectable' will be %1", "%1 is true or false").arg(tr("false"));
+	s+=tr("57")+QString(". ")+tr("The Boolean value 'The font is user selectable' will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=tr("67")+QString(". ")+tr("The font will be reset to default");
+	s+=tr("58")+QString(". ")+tr("The font will be reset to default");
+	s+="\n";
+	
+	s+=tr("59")+QString(". ")+tr("Enable save and restore history to/from the memory will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 
-	s+=tr("68")+QString(". ")+tr("Enable constraints students min hours per afternoon with empty afternoons will be %1", "%1 is true or false").arg(tr("false"));
-	s+="\n";
-
-	s+=tr("69")+QString(". ")+tr("Warn if using constraints students min hours per afternoon with empty afternoons will be %1", "%1 is true or false. This is a warning if user uses a nonstandard constraint"
-		" students min hours per morning with allowed empty mornings").arg(tr("true"));
-	s+="\n";
-
-	s+=tr("70")+QString(". ")+tr("Enable save and restore history to/from the memory will be %1", "%1 is true or false").arg(tr("true"));
-	s+="\n";
-
-	s+=tr("71")+QString(". ")+tr("The number of states to record in history to the memory will be %1", "%1 is a number").arg(100);
+	s+=tr("60")+QString(". ")+tr("The number of states to record in history to the memory will be %1", "%1 is a number").arg(100);
 	s+="\n";
 
 	s+="(";
 	s+=tr("If the history settings will change, the history will be cleared.");
 	s+=")\n";
 
-	s+=tr("72")+QString(". ")+tr("Confirm activating/deactivating activities/constraints will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("61")+QString(". ")+tr("Confirm activating/deactivating activities/constraints will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 
-	s+=tr("73")+QString(". ")+tr("Enable file autosave will be %1", "%1 is true or false").arg(tr("false"));
+	s+=tr("62")+QString(". ")+tr("Enable file autosave will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
-	s+=tr("74")+QString(". ")+tr("The number of minutes before autosave will be %1", "%1 is an integer").arg(3);
+	s+=tr("63")+QString(". ")+tr("The number of minutes before autosave will be %1", "%1 is an integer").arg(3);
 	s+="\n";
-	s+=tr("75")+QString(". ")+tr("The number of operations before autosave will be %1", "%1 is an integer").arg(1);
+	s+=tr("64")+QString(". ")+tr("The number of operations before autosave will be %1", "%1 is an integer").arg(1);
 	s+="\n";
-	s+=tr("76")+QString(". ")+tr("The directory for autosave will be '%1'", "%1 is a directory name").arg(QString(""));
+	s+=tr("65")+QString(". ")+tr("The directory for autosave will be '%1'", "%1 is a directory name").arg(QString(""));
 	s+="\n";
-	s+=tr("77")+QString(". ")+tr("The file name suffix for autosave will be '%1'", "%1 is a suffix to be added to the file name").arg(QString("_AUTOSAVE"));
-	s+="\n";
-
-	s+=tr("78")+QString(". ")+tr("Enable save and restore history to/from the disk will be %1", "%1 is true or false").arg(tr("false"));
-	s+="\n";
-	s+=tr("79")+QString(". ")+tr("The number of states to record in history to the disk will be %1", "%1 is a number").arg(20);
-	s+="\n";
-	s+=tr("80")+QString(". ")+tr("The file name suffix for saving the history to the disk will be '%1'", "%1 is a suffix to be added to the file name").arg(QString(".his"));
+	s+=tr("66")+QString(". ")+tr("The file name suffix for autosave will be '%1'", "%1 is a suffix to be added to the file name").arg(QString("_AUTOSAVE"));
 	s+="\n";
 
-	s+=tr("81")+QString(". ")+tr("The timetable options about which information to be printed in which table will be reset to defaults.");
+	s+=tr("67")+QString(". ")+tr("Enable save and restore history to/from the disk will be %1", "%1 is true or false").arg(tr("false"));
+	s+="\n";
+	s+=tr("68")+QString(". ")+tr("The number of states to record in history to the disk will be %1", "%1 is a number").arg(20);
+	s+="\n";
+	s+=tr("69")+QString(". ")+tr("The file name suffix for saving the history to the disk will be '%1'", "%1 is a suffix to be added to the file name").arg(QString(".his"));
+	s+="\n";
+
+	s+=tr("70")+QString(". ")+tr("The timetable options about which information to be printed in which table will be reset to defaults.");
 	s+="\n";
 
 	//s+=tr("71")+QString(". ")+tr("The compression level for the states in history will be %1 (the default compression level for zlib)").arg(-1);
@@ -13999,87 +13684,12 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT=true;
 	showWarningForMaxHoursDailyWithUnder100WeightAction->setChecked(SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT);
 	
-	ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY=false;
-	enableActivityTagMaxHoursDailyAction->setChecked(ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-
-	ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY=false;
-	enableActivityTagMinHoursDailyAction->setChecked(ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY);
-
-	ENABLE_STUDENTS_MAX_GAPS_PER_DAY=false;
-	enableStudentsMaxGapsPerDayAction->setChecked(ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
-	
-	ENABLE_MAX_GAPS_PER_REAL_DAY=false;
-	disconnect(enableMaxGapsPerRealDayAction, &QAction::toggled, this, &FetMainForm::enableMaxGapsPerRealDayToggled);
-	enableMaxGapsPerRealDayAction->setChecked(ENABLE_MAX_GAPS_PER_REAL_DAY);
-	connect(enableMaxGapsPerRealDayAction, &QAction::toggled, this, &FetMainForm::enableMaxGapsPerRealDayToggled);
-
-	SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=true;
-	showWarningForNotPerfectConstraintsAction->setChecked(SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS);
-	
 	ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER=false;
 	SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER=true;
 	enableGroupActivitiesInInitialOrderAction->setChecked(ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
 	showWarningForGroupActivitiesInInitialOrderAction->setChecked(SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
 	
-	setEnabledIcon(dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-
-	setEnabledIcon(dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-
-	setEnabledIcon(dataTimeConstraintsTeacherActivityTagMinHoursDailyAction, ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsTeachersActivityTagMinHoursDailyAction, ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsStudentsActivityTagMinHoursDailyAction, ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction, ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY);
-
-	setEnabledIcon(dataTimeConstraintsStudentsSetMaxGapsPerDayAction, ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
-	setEnabledIcon(dataTimeConstraintsStudentsMaxGapsPerDayAction, ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
-
-	setEnabledIcon(dataTimeConstraintsStudentsSetMaxGapsPerRealDayAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
-	setEnabledIcon(dataTimeConstraintsStudentsMaxGapsPerRealDayAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
-	setEnabledIcon(dataTimeConstraintsTeachersMaxGapsPerRealDayAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
-	setEnabledIcon(dataTimeConstraintsTeacherMaxGapsPerRealDayAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
-
-	setEnabledIcon(dataTimeConstraintsStudentsSetMaxGapsPerWeekForRealDaysAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
-	setEnabledIcon(dataTimeConstraintsStudentsMaxGapsPerWeekForRealDaysAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
-	setEnabledIcon(dataTimeConstraintsTeachersMaxGapsPerWeekForRealDaysAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
-	setEnabledIcon(dataTimeConstraintsTeacherMaxGapsPerWeekForRealDaysAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
-
 	setEnabledIcon(groupActivitiesInInitialOrderAction, ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
-
-	ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=false;
-	disconnect(enableStudentsMinHoursDailyWithAllowEmptyDaysAction, &QAction::toggled, this, &FetMainForm::enableStudentsMinHoursDailyWithAllowEmptyDaysToggled);
-	enableStudentsMinHoursDailyWithAllowEmptyDaysAction->setChecked(ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS);
-	connect(enableStudentsMinHoursDailyWithAllowEmptyDaysAction, &QAction::toggled, this, &FetMainForm::enableStudentsMinHoursDailyWithAllowEmptyDaysToggled);
-
-	SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=true;
-	disconnect(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction, &QAction::toggled, this, &FetMainForm::showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled);
-	showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction->setChecked(SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS);
-	connect(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction, &QAction::toggled, this, &FetMainForm::showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled);
-
-	ENABLE_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS=false;
-	disconnect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, &QAction::toggled, this, &FetMainForm::enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled);
-	enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(ENABLE_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS);
-	connect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, &QAction::toggled, this, &FetMainForm::enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled);
-
-	SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS=true;
-	disconnect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, &QAction::toggled, this, &FetMainForm::showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled);
-	showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS);
-	connect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, &QAction::toggled, this, &FetMainForm::showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled);
-
-	ENABLE_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS=false;
-	disconnect(enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction, &QAction::toggled, this, &FetMainForm::enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled);
-	enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction->setChecked(ENABLE_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS);
-	connect(enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction, &QAction::toggled, this, &FetMainForm::enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled);
-
-	SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS=true;
-	disconnect(showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction, &QAction::toggled, this, &FetMainForm::showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled);
-	showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction->setChecked(SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS);
-	connect(showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction, &QAction::toggled, this, &FetMainForm::showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled);
 
 	///////////
 	
@@ -15195,135 +14805,6 @@ void FetMainForm::randomSeedAction_triggered()
 	}*/
 }
 
-void FetMainForm::enableActivityTagMaxHoursDailyToggled(bool checked)
-{
-	if(checked==true){
-		QString s=tr("These kinds of constraints are good, but not perfectly optimized. Adding such constraints may make your"
-		 " timetable solve too slow or even impossible.");
-		s+=" ";
-		s+=tr("It is recommended to use such constraints only at the end, after you generated successfully with all the other constraints.");
-		s+="\n\n";
-		s+=tr("If your timetable is too difficult, it may be from these kinds of constraints, so you may need to remove them and retry.");
-		s+="\n\n";
-		s+=tr("Continue only if you know what you are doing.");
-	
-		QMessageBox::StandardButton b=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Ok);
-	
-		if(b!=QMessageBox::Ok){
-			disconnect(enableActivityTagMaxHoursDailyAction, &QAction::toggled, this, &FetMainForm::enableActivityTagMaxHoursDailyToggled);
-			enableActivityTagMaxHoursDailyAction->setChecked(false);
-			connect(enableActivityTagMaxHoursDailyAction, &QAction::toggled, this, &FetMainForm::enableActivityTagMaxHoursDailyToggled);
-			return;
-		}
-	}
-	
-	ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY=checked;
-
-	setEnabledIcon(dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-
-	setEnabledIcon(dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
-}
-
-void FetMainForm::enableActivityTagMinHoursDailyToggled(bool checked)
-{
-	if(checked==true){
-		QString s=tr("These kinds of constraints are good, but not perfectly optimized. Adding such constraints may make your"
-		 " timetable solve too slow or even impossible.");
-		s+=" ";
-		s+=tr("It is recommended to use such constraints only at the end, after you generated successfully with all the other constraints.");
-		s+="\n\n";
-		s+=tr("If your timetable is too difficult, it may be from these kinds of constraints, so you may need to remove them and retry.");
-		s+="\n\n";
-		s+=tr("Continue only if you know what you are doing.");
-	
-		QMessageBox::StandardButton b=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Ok);
-	
-		if(b!=QMessageBox::Ok){
-			disconnect(enableActivityTagMinHoursDailyAction, &QAction::toggled, this, &FetMainForm::enableActivityTagMinHoursDailyToggled);
-			enableActivityTagMinHoursDailyAction->setChecked(false);
-			connect(enableActivityTagMinHoursDailyAction, &QAction::toggled, this, &FetMainForm::enableActivityTagMinHoursDailyToggled);
-			return;
-		}
-	}
-	
-	ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY=checked;
-
-	setEnabledIcon(dataTimeConstraintsTeacherActivityTagMinHoursDailyAction, ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsTeachersActivityTagMinHoursDailyAction, ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsStudentsActivityTagMinHoursDailyAction, ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY);
-	setEnabledIcon(dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction, ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY);
-}
-
-void FetMainForm::enableStudentsMaxGapsPerDayToggled(bool checked)
-{
-	if(checked==true){
-		QString s=tr("These kinds of constraints are good, but not perfectly optimized. Adding such constraints may make your"
-		 " timetable solve too slow or even impossible.");
-		s+=" ";
-		s+=tr("It is recommended to use such constraints only at the end, after you generated successfully with all the other constraints.");
-		s+="\n\n";
-		s+=tr("If your timetable is too difficult, it may be from these kinds of constraints, so you may need to remove them and retry.");
-		s+="\n\n";
-		s+=tr("Continue only if you know what you are doing.");
-	
-		QMessageBox::StandardButton b=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Ok);
-	
-		if(b!=QMessageBox::Ok){
-			disconnect(enableStudentsMaxGapsPerDayAction, &QAction::toggled, this, &FetMainForm::enableStudentsMaxGapsPerDayToggled);
-			enableStudentsMaxGapsPerDayAction->setChecked(false);
-			connect(enableStudentsMaxGapsPerDayAction, &QAction::toggled, this, &FetMainForm::enableStudentsMaxGapsPerDayToggled);
-			return;
-		}
-	}
-	
-	ENABLE_STUDENTS_MAX_GAPS_PER_DAY=checked;
-	
-	setEnabledIcon(dataTimeConstraintsStudentsSetMaxGapsPerDayAction, ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
-	setEnabledIcon(dataTimeConstraintsStudentsMaxGapsPerDayAction, ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
-}
-
-void FetMainForm::enableMaxGapsPerRealDayToggled(bool checked)
-{
-	assert(gt.rules.mode==MORNINGS_AFTERNOONS);
-	if(checked==true){
-		QString s=tr("These kinds of constraints are good, but not perfectly optimized. Adding such constraints may make your"
-		 " timetable solve too slow or even impossible.");
-		s+=" ";
-		s+=tr("It is recommended to use such constraints only at the end, after you generated successfully with all the other constraints.");
-		s+="\n\n";
-		s+=tr("If your timetable is too difficult, it may be from these kinds of constraints, so you may need to remove them and retry.");
-		s+="\n\n";
-		s+=tr("Continue only if you know what you are doing.");
-
-		QMessageBox::StandardButton b=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Ok);
-
-		if(b!=QMessageBox::Ok){
-			disconnect(enableMaxGapsPerRealDayAction, &QAction::toggled, this, &FetMainForm::enableMaxGapsPerRealDayToggled);
-			enableMaxGapsPerRealDayAction->setChecked(false);
-			connect(enableMaxGapsPerRealDayAction, &QAction::toggled, this, &FetMainForm::enableMaxGapsPerRealDayToggled);
-			return;
-		}
-	}
-
-	ENABLE_MAX_GAPS_PER_REAL_DAY=checked;
-
-	setEnabledIcon(dataTimeConstraintsStudentsSetMaxGapsPerRealDayAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
-	setEnabledIcon(dataTimeConstraintsStudentsMaxGapsPerRealDayAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
-	setEnabledIcon(dataTimeConstraintsTeachersMaxGapsPerRealDayAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
-	setEnabledIcon(dataTimeConstraintsTeacherMaxGapsPerRealDayAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
-
-	setEnabledIcon(dataTimeConstraintsStudentsSetMaxGapsPerWeekForRealDaysAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
-	setEnabledIcon(dataTimeConstraintsStudentsMaxGapsPerWeekForRealDaysAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
-	setEnabledIcon(dataTimeConstraintsTeachersMaxGapsPerWeekForRealDaysAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
-	setEnabledIcon(dataTimeConstraintsTeacherMaxGapsPerWeekForRealDaysAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
-}
-
 void FetMainForm::showWarningForSubgroupsWithTheSameActivitiesToggled(bool checked)
 {
 	if(checked==false){
@@ -15388,139 +14869,6 @@ void FetMainForm::showWarningForMaxHoursDailyWithUnder100WeightToggled(bool chec
 	}
 	
 	SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT=checked;
-}
-
-void FetMainForm::showWarningForNotPerfectConstraintsToggled(bool checked)
-{
-	if(checked==false){
-		QString s=tr("It is recommended to keep this warning active, but if you really want, you can disable it.");
-		s+="\n\n";
-		s+=tr("Disable it only if you know what you are doing.");
-		s+="\n\n";
-		s+=tr("Are you sure you want to disable it?");
-	
-		QMessageBox::StandardButton b=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Yes);
-	
-		if(b!=QMessageBox::Yes){
-			disconnect(showWarningForNotPerfectConstraintsAction, &QAction::toggled, this, &FetMainForm::showWarningForNotPerfectConstraintsToggled);
-			showWarningForNotPerfectConstraintsAction->setChecked(true);
-			connect(showWarningForNotPerfectConstraintsAction, &QAction::toggled, this, &FetMainForm::showWarningForNotPerfectConstraintsToggled);
-			return;
-		}
-	}
-	
-	SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=checked;
-}
-
-
-void FetMainForm::enableStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool checked)
-{
-	assert(gt.rules.mode!=MORNINGS_AFTERNOONS);
-	if(checked==true){
-		QString s=tr("This kind of constraint is good, but only in the right case. Adding such constraints in the wrong circumstance may make your"
-		 " timetable solve too slow or even impossible.");
-		s+="\n\n";
-		s+=tr("Please use such constraints only if you are sure that there exists a timetable with empty days for students. If your institution requires"
-			" each day for the students to be not empty, or if there does not exist a solution with empty days for students, "
-			"it is IMPERATIVE (for performance reasons) that you use the standard constraint which does not allow empty days."
-			" Otherwise, the timetable may be impossible to find.");
-		s+="\n\n";
-		s+=tr("Continue only if you know what you are doing.");
-	
-		QMessageBox::StandardButton b=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Ok);
-	
-		if(b!=QMessageBox::Ok){
-			disconnect(enableStudentsMinHoursDailyWithAllowEmptyDaysAction, &QAction::toggled, this, &FetMainForm::enableStudentsMinHoursDailyWithAllowEmptyDaysToggled);
-			enableStudentsMinHoursDailyWithAllowEmptyDaysAction->setChecked(false);
-			connect(enableStudentsMinHoursDailyWithAllowEmptyDaysAction, &QAction::toggled, this, &FetMainForm::enableStudentsMinHoursDailyWithAllowEmptyDaysToggled);
-			return;
-		}
-	}
-	
-	ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=checked;
-}
-
-void FetMainForm::showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool checked)
-{
-	assert(gt.rules.mode!=MORNINGS_AFTERNOONS);
-	if(checked==false){
-		QString s=tr("It is recommended to keep this warning active, but if you really want, you can disable it.");
-		s+="\n\n";
-		s+=tr("Disable it only if you know what you are doing.");
-		s+="\n\n";
-		s+=tr("Are you sure you want to disable it?");
-	
-		QMessageBox::StandardButton b=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Yes);
-	
-		if(b!=QMessageBox::Yes){
-			disconnect(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction, &QAction::toggled, this, &FetMainForm::showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled);
-			showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction->setChecked(true);
-			connect(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction, &QAction::toggled, this, &FetMainForm::showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled);
-			return;
-		}
-	}
-	
-	SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=checked;
-}
-
-void FetMainForm::enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool checked)
-{
-	Q_UNUSED(checked);
-
-	assert(0); //Yes, this option is always disabled
-
-	/*QMessageBox::information(this, tr("FET information"), tr("This option must remain selected in the custom FET version MA"));
-
-	disconnect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIG NAL(toggled(bool)), this, SL OT(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
-	enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(true);
-	connect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIG NAL(toggled(bool)), this, SL OT(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));*/
-
-	return;
-}
-
-void FetMainForm::showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool checked)
-{
-	Q_UNUSED(checked);
-
-	assert(0); //Yes, this option is always disabled
-
-	/*QMessageBox::information(this, tr("FET information"), tr("This option must remain unselected in the custom FET version MA"));
-
-	disconnect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIG NAL(toggled(bool)), this, SL OT(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
-	showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(false);
-	connect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIG NAL(toggled(bool)), this, SL OT(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));*/
-
-	return;
-}
-
-void FetMainForm::enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled(bool checked)
-{
-	Q_UNUSED(checked);
-
-	assert(0); //Yes, this option is always disabled
-
-	/*QMessageBox::information(this, tr("FET information"), tr("This option must remain selected in the custom FET version MA"));
-
-	disconnect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIG NAL(toggled(bool)), this, SL OT(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
-	enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(true);
-	connect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIG NAL(toggled(bool)), this, SL OT(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));*/
-
-	return;
-}
-
-void FetMainForm::showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled(bool checked)
-{
-	Q_UNUSED(checked);
-
-	assert(0); //Yes, this option is always disabled
-
-	/*QMessageBox::information(this, tr("FET information"), tr("This option must remain unselected in the custom FET version MA"));
-
-	disconnect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIG NAL(toggled(bool)), this, SL OT(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
-	showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(false);
-	connect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIG NAL(toggled(bool)), this, SL OT(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));*/
-
-	return;
 }
 
 void FetMainForm::enableGroupActivitiesInInitialOrderToggled(bool checked)

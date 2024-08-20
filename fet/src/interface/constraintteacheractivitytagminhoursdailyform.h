@@ -39,8 +39,6 @@ public slots:
 	void modifyConstraint();
 	void removeConstraint();
 	
-	void help();
-
 	void filterChanged();
 };
 

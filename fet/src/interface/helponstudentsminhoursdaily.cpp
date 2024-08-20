@@ -33,10 +33,6 @@ void HelpOnStudentsMinHoursDaily::help(QWidget* parent)
 	
 		s+="\n\n";
 	
-		s+=tr("Normally, these constraints do not allow empty days for students (and the check boxes in the dialogs are not selectable).");
-		s+=" ";
-		s+=tr("If you really need this constraint to allow empty days for students, you must enable the option from Settings->Advanced menu and select the check box.");
-		s+="\n\n";
 		s+=tr("Be very careful: if your school does not allow empty days for students or if a timetable does not exist with empty days for students, you MUST"
 			" keep the constraints the usual way, without allowing empty days.");
 		s+=" ";
@@ -55,8 +51,6 @@ void HelpOnStudentsMinHoursDaily::help(QWidget* parent)
 	
 		s+="\n\n";
 		
-		s+=tr("You are working in the mornings-afternoons mode, in which the option to allow empty days should be available.");
-		s+="\n\n";
 		s+=tr("If you select not allowed empty days, it means not allowed empty real days. Empty days (half days,"
 		 " FET days) are allowed. Each day (half day, FET day) will have either zero hours, or the minimum selected hours daily.");
 	

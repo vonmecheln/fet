@@ -9816,3 +9816,25 @@ Liviu Lalescu: more specifically, the second suggestion/problem appears in the t
 I consider this to be a feature, not a bug, saving space for the rest of the table.
 
 Volker Dirr also disagrees. He says that the correct way would be to rotate the font by 90°, but that is sadly not possible in Qt with HTML.
+
+604---------------------------------------------------------
+From Muhammad Ratrout (on Facebook):
+
+Suggested improvement to the typography of the interface: Make the width and height equal for each teacher and class table.
+
+Liviu Lalescu: do you mean timetable view from the interface?
+
+Muhammad Ratrout: for printing.
+
+605---------------------------------------------------------
+From Muhammad Ratrout (on Facebook):
+
+In FET is there Print double lessons as single lessons in interface and html output?
+
+606---------------------------------------------------------
+From Bachir Nacer Elhak Sayah (on Facebook):
+
+When you choose this option you only get one table per page, and that will waste a lot of paper. When you choose always:double, you get 2 per page.
+Is it possible to make it 3 per page?
+
+Especially if you rotate the page like this (portrait), a lot of space is wasted.

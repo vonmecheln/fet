@@ -290,22 +290,8 @@ void ConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::help()
 {
 	QString s=QString("");
 	
-	s+=tr("IMPORTANT NOTE: Please use this constraint ONLY when strictly necessary, when it is really useful, when it has effect, "
-	 "when it is not implied by the other constraints, and in a non-redundant way. Otherwise it may slow down very much the generation.");
-	s+=QString("\n\n");
-	s+=tr("This constraint type was added on 25 September 2011.");
-	s+=QString("\n\n");
 	s+=tr("To use this constraint, you need to specify a set of activities, a set of time slots, and a maximum number "
 	 "of time slots from those selected which can be occupied by the specified activities.");
-	s+=QString("\n\n");
-	s+=tr("Uses of this constraint are probably very wide. The main reason it was added was to enable users to specify that a teacher "
-	 "should have activities in certain time slots. Example: we have a week with 30 hours. Teacher T has 20 hours of activities, and "
-	 "we would like him to have activities Monday and Tuesday on the first two hours. Add a constraint of this type, with the set of activities "
-	 "being all the activities of teacher T, selected time slots being the remaining 30-2*2=26 slots of the week, and the maximum number of "
-	 "selected time slots which can be occupied by these activities being 20-2*2=16.");
-	s+=QString(" ");
-	s+=tr("Please note that more recently it was added the constraint of type activities occupy min time slots from selection. This permits to specify "
-	 "easier/directly the times when a teacher should have activities.");
 	
 	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
 }

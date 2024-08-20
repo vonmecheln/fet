@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>610</width>
+    <width>543</width>
     <height>323</height>
    </rect>
   </property>
@@ -30,9 +30,7 @@
      </property>
      <property name="text">
       <string>You have to use weight percentage 100%
-Note: students set not available and break are not counted as gaps.
-
-IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this constraint, but instead use the safer/better max gaps per week.</string>
+Note: students set not available and break are not counted as gaps.</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>

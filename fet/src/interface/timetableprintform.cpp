@@ -1287,7 +1287,7 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 
 	tmp+="      span.institution {\n        font-weight: bold;\n      }\n\n";
 	tmp+="      span.name {\n        \n      }\n\n";
-	tmp+="      span.comment {\n        font-style: italic;\n      }\n\n";
+	tmp+="      span.comment {\n        /*font-style: italic;*/\n      }\n\n";
 	tmp+="      span.legend_title {\n        font-weight: bold;\n      }\n\n";
 	tmp+="      p {\n";
 	tmp+="        font-size: "+QString::number(fontSizeTable->value())+"pt;\n";

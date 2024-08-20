@@ -196,7 +196,6 @@ SOURCES += \
 	interface/timetablegeneratemultipleform.cpp \
 	interface/fetmainform.cpp \
 	interface/centerwidgetonscreen.cpp \
-	interface/helponimperfectconstraints.cpp \
 	interface/helponstudentsminhoursdaily.cpp \
 	interface/settingstimetablehtmllevelform.cpp \
 	interface/timetableviewstudentsdayshorizontalform.cpp \
@@ -1370,7 +1369,6 @@ HEADERS += \
 	interface/timetablegeneratemultipleform.h \
 	interface/fetmainform.h \
 	interface/centerwidgetonscreen.h \
-	interface/helponimperfectconstraints.h \
 	interface/helponstudentsminhoursdaily.h \
 	interface/settingstimetablehtmllevelform.h \
 	interface/timetableviewstudentsdayshorizontalform.h \

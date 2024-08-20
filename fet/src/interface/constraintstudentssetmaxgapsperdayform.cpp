@@ -17,8 +17,6 @@
 
 #include <QMessageBox>
 
-#include "helponimperfectconstraints.h"
-
 #include "longtextmessagebox.h"
 
 #include "constraintstudentssetmaxgapsperdayform.h"
@@ -46,7 +44,6 @@ ConstraintStudentsSetMaxGapsPerDayForm::ConstraintStudentsSetMaxGapsPerDayForm(Q
 	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxGapsPerDayForm::modifyConstraint);
 
 	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintStudentsSetMaxGapsPerDayForm::modifyConstraint);
-	connect(helpPushButton, &QPushButton::clicked, this, &ConstraintStudentsSetMaxGapsPerDayForm::help);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -189,9 +186,4 @@ void ConstraintStudentsSetMaxGapsPerDayForm::removeConstraint()
 		constraintsListWidget->setCurrentRow(i);
 	else
 		this->constraintChanged(-1);
-}
-
-void ConstraintStudentsSetMaxGapsPerDayForm::help()
-{
-	HelpOnImperfectConstraints::help(this);
 }

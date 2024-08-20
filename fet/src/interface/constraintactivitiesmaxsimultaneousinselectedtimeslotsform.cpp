@@ -290,23 +290,8 @@ void ConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::help()
 {
 	QString s=QString("");
 
-	s+=tr("IMPORTANT NOTE: Please use this constraint ONLY when strictly necessary, when it is really useful, when it has effect, "
-	 "when it is not implied by the other constraints, and in a non-redundant way. Otherwise it may slow down very much the generation.");
-	s+=QString("\n\n");
-	s+=tr("Important note: if you want the maximum number of simultaneous activities to be 1, then it is more efficient to use "
-	 "constraint activities not overlapping and the result is the same. (The underlying data structures make FET compute better the initial order "
-	 "of placing the activities and also the generation speed is faster, if using constraints of type activities not overlapping.)");
-	s+=QString("\n\n");
-	s+=tr("This constraint type was added on 30 September 2011.");
-	s+=QString("\n\n");
 	s+=tr("To use this constraint, you need to specify a set of activities, a set of time slots, and a maximum number "
 	 "of activities from those selected which can be simultaneous in each of the selected time slots.");
-	s+=QString("\n\n");
-	s+=tr("Uses of this constraint are probably wide. The main reason it was added was to enable users to specify that each time slot needs to have "
-	 "a specified number of free teachers, for supervision of students.");
-	s+=QString(" ");
-	s+=tr("Note that if you have activities with two or more teachers, you might need to use a trick for that: add one (or more) dummy activities, "
-	 "no teachers/no students, same starting time with the initial activity.");
 	
 	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
 }

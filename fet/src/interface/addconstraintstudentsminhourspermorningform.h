@@ -31,8 +31,6 @@ public:
 
 public slots:
 	void addCurrentConstraint();
-	
-	void allowEmptyMorningsCheckBox_toggled();
 };
 
 #endif

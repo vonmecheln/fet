@@ -33,13 +33,10 @@ ConstraintStudentsMinHoursDailyForm::ConstraintStudentsMinHoursDailyForm(QWidget
 {
 	setupUi(this);
 	
-	if(gt.rules.mode!=MORNINGS_AFTERNOONS)
-		label->setText(tr("IMPORTANT: allow empty days for students is a nonstandard option. Only select it if your institution permits that"
-		 " and if a timetable with empty days for students exists. Otherwise do not select it, for a good performance of generation."
-		 " Press Help button for more information."));
-	else
-		label->setText(tr("If the user selects not allowed empty days, it is for real days (for the mornings-afternoons mode), also respecting minimum"
-		 " hours daily for FET days (half days) with allow empty FET days"));
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+		label->setEnabled(false);
+		label->hide();
+	}
 
 	currentConstraintTextEdit->setReadOnly(true);
 	

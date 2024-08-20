@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>533</width>
-    <height>500</height>
+    <width>495</width>
+    <height>498</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,7 +23,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>IMPORTANT: allow empty days for students is a nonstandard option. Only select it if your institution permits that and if a timetable with empty days for students exists. Otherwise do not select it, for a good performance of generation. Press Help button for more information.</string>
+      <string>If the user selects not allowed empty days, it is for real days (for the mornings-afternoons mode), also respecting minimum hours daily for FET days (half days) with allow empty FET days</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>

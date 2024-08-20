@@ -33,8 +33,6 @@ public:
 
 public slots:
 	void addCurrentConstraint();
-	
-	void allowEmptyDaysCheckBox_toggled();
 };
 
 #endif

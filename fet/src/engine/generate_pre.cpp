@@ -2613,57 +2613,6 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 			return false;
 	}
 
-	if(SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS){
-		if(haveStudentsMaxGapsPerDay || haveTeachersActivityTagMaxHoursDailyRealDays || haveStudentsActivityTagMaxHoursDailyRealDays
-		 || haveStudentsMaxGapsPerRealDay || haveTeachersMaxGapsPerRealDay /* || haveStudentsMaxGapsPerWeekForRealDays || haveTeachersMaxGapsPerWeekForRealDays */
-		 || haveTeachersActivityTagMinHoursDaily || haveStudentsActivityTagMinHoursDaily
-		 || haveTeachersActivityTagMaxHoursDaily || haveStudentsActivityTagMaxHoursDaily){
-			QString s=GeneratePreTranslate::tr("Your data contains constraints students max gaps per day"
-			 " and/or students max gaps per real day and/or teachers max gaps per real day"
-			 " and/or students max gaps per week for real days and/or teachers max gaps per week for real days"
-			 " and/or activity tag max/min hours daily/per real day (where applicable).");
-			s+="\n\n";
-			s+=GeneratePreTranslate::tr("These constraints are good, but they are not perfectly optimized for speed. You may obtain a long generation time or even impossible timetables.");
-			s+=" ";
-			s+=GeneratePreTranslate::tr("It is recommended to use such constraints with caution.");
-			s+="\n\n";
-			s+=GeneratePreTranslate::tr("Are you sure you want to continue?");
-
-#ifdef FET_COMMAND_LINE
-			int b=GeneratePreReconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s, GeneratePreTranslate::tr("Yes"), GeneratePreTranslate::tr("No"), QString(), 0, 1);
-			if(b!=0)
-				return false;
-#else
-			QMessageBox::StandardButton b=QMessageBox::warning(parent, GeneratePreTranslate::tr("FET warning"), s, QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
-			if(b!=QMessageBox::Yes)
-				return false;
-#endif
-		}
-	}
-
-	if(gt.rules.mode!=MORNINGS_AFTERNOONS && SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS){
-		if(haveStudentsMinHoursDailyAllowEmptyDays || haveStudentsMinHoursDailyMorningsAfternoonsAllowEmptyDays){
-			QString s=GeneratePreTranslate::tr("Your data contains constraints students min hours daily/per morning/per afternoon which allow empty days/mornings/afternoons.");
-			s+="\n\n";
-			s+=GeneratePreTranslate::tr("These constraints are nonstandard. They are recommended only if the students can have free days and a solution with free days for students exists."
-			 " Otherwise the solution might be impossible for FET to find.");
-			s+=" ";
-			s+=GeneratePreTranslate::tr("It is recommended to use such constraints with caution.");
-			s+="\n\n";
-			s+=GeneratePreTranslate::tr("Are you sure you want to continue?");
-
-#ifdef FET_COMMAND_LINE
-			int b=GeneratePreReconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s, GeneratePreTranslate::tr("Yes"), GeneratePreTranslate::tr("No"), QString(), 0, 1);
-			if(b!=0)
-				return false;
-#else
-			QMessageBox::StandardButton b=QMessageBox::warning(parent, GeneratePreTranslate::tr("FET warning"), s, QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
-			if(b!=QMessageBox::Yes)
-				return false;
-#endif
-		}
-	}
-
 	if(SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER){
 		bool hasActiveGroupActivitiesInInitialOrder=false;
 		for(GroupActivitiesInInitialOrderItem* item : std::as_const(gt.rules.groupActivitiesInInitialOrderList)){

@@ -17,8 +17,6 @@
 
 #include <QMessageBox>
 
-#include "helponimperfectconstraints.h"
-
 #include "longtextmessagebox.h"
 
 #include "constraintstudentsactivitytagminhoursdailyform.h"
@@ -45,8 +43,6 @@ ConstraintStudentsActivityTagMinHoursDailyForm::ConstraintStudentsActivityTagMin
 	connect(removeConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsActivityTagMinHoursDailyForm::removeConstraint);
 	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ConstraintStudentsActivityTagMinHoursDailyForm::modifyConstraint);
 	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ConstraintStudentsActivityTagMinHoursDailyForm::modifyConstraint);
-
-	connect(helpPushButton, &QPushButton::clicked, this, &ConstraintStudentsActivityTagMinHoursDailyForm::help);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -192,9 +188,4 @@ void ConstraintStudentsActivityTagMinHoursDailyForm::removeConstraint()
 		constraintsListWidget->setCurrentRow(i);
 	else
 		this->constraintChanged(-1);
-}
-
-void ConstraintStudentsActivityTagMinHoursDailyForm::help()
-{
-	HelpOnImperfectConstraints::help(this, true);
 }

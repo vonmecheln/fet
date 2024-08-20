@@ -290,13 +290,6 @@ void ConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::help()
 {
 	QString s=QString("");
 
-	s+=tr("IMPORTANT NOTE: This constraint is new and not thoroughly tested. Please report any possible bugs.");
-	s+=QString("\n\n");
-	s+=tr("IMPORTANT NOTE: Please use this constraint ONLY when strictly necessary, when it is really useful, when it has effect, "
-	 "when it is not implied by the other constraints, and in a non-redundant way. Otherwise it may slow down very much the generation.");
-	s+=QString("\n\n");
-	s+=tr("This constraint type was added on 16 November 2019.");
-	s+=QString("\n\n");
 	s+=tr("To use this constraint, you need to specify a set of activities, a set of time slots, and a minimum number "
 	 "of activities from those selected which must be simultaneous in each of the selected time slots.");
 	s+=QString("\n\n");

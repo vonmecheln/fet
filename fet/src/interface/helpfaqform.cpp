@@ -717,42 +717,6 @@ void HelpFaqForm::setText()
 	s+="--------------------";
 	s+="\n\n";
 
-	s+=tr("(This FAQ entry applies also to the constraints of type activity tag min hours daily:)");
-	s+=" ";
-	s+=tr("Question 1/25 September 2009: An observation for constraint teacher(s) or students (set) activity tag max hours daily:\n\n"
-		"This constraint is implemented correctly and is working good, but it is not perfect, which means that in unusual, extreme cases the "
-		"time needed to generate a timetable might be longer or much longer than really necessary. You should give FET a hand in these extreme "
-		"situations.\n\n"
-		"Notation: ATS=affected teacher or students set, means teachers or students sets affected by (included in) this constraint activity tag max hours daily "
-		"(the problem does not appear for teachers or students sets which are not affected, which have no constraint activity tag max hours daily for them).\n\n"
-		"For extreme cases, the timetable generation might be longer or much longer than it should be. These cases refer to "
-		"situations in which the total duration of the activities with the specified activity tag of the ATS is high compared to the "
-		"total number of hours of all activities of the ATS, combined with other conditions you have in the data."
-		" If the ratio of duration of activities with this activity tag of the ATS over the total duration of activities of the ATS"
-		" is over 0.50 - 0.75 or a normal (reasonable low) value, and you use constraints to control gaps or early for ATS, and the number"
-		" of hours per day is higher than the possible hours for the ATS,"
-		" the speed of generation might be slower or much slower than it should be.\n\n"
-		"In these cases, you are advised to use constraints teacher(s) or students (set) max hours daily for the ATS"
-		" (without activity tag), or not available constraints for them in slots which are clearly impossible.\n\n"
-		"For example, if students S have 20 hours of activities with activity tag AT and another 4 hours "
-		"of activities without activity tag (they have 24 hours in total, the ratio is 20/24"
-		"=0.80), and you constrain them to 0 gaps per week and 0 beginnings at second hour and also the number "
-		"of hours per day is large, say 12. Then adding a constraint students activity tag AT max 4 hours per day "
-		"- alone - will not be good enough (the time to generate a timetable might be longer or much longer than necessary)."
-		" A better solution will need you to add also a constraint students max 5 "
-		"hours daily (if possible) and/or to make the late slots not available for the students (it is a way to "
-		"guide FET to the solution), or find other good ways to compensate the situation.\n\n"
-		"Conclusion: if, for the ATS, the ratio 'tag duration'/'total duration' is over 0.50 - 0.75 AND you use, for the ATS,"
-		" constraints for gaps or early AND for the ATS the number of available slots per week is much higher than ATS's total working number of hours per week,"
-		" then you may need to address this problem (add constraints ATS max hours daily or ATS not available or find some other way to guide FET).\n\n"
-		"So, it is a very bad idea to make all activities (of a teacher or students set) have an activity tag and add constraint teacher(s) or students (set)"
-		" activity tag max hours daily. You should use in this case constraint teacher(s) or students (set) max hours daily.\n\n"
-		"Probably, in practice this problem will not appear and you need not to worry. But theoretically it exists.");
-		
-	s+="\n\n";
-	s+="--------------------";
-	s+="\n\n";
-	
 	s+=tr("Three hints from an anonymous Polish user, who uses FET for very large data sets:");
 	s+="\n\n";
 	s+=tr("The first hint for other users is to start with a minimum number of constraints and see if FET can generate a timetable "
@@ -766,35 +730,6 @@ void HelpFaqForm::setText()
 		"but not on optimizing timetables. Sometimes simply changing the two activities is better both for the students and the teachers. I think that manually "
 		"improving a generated timetable is faster than creating many more constraints and repeating the generation. And this is the third hint.");
 	
-	s+="\n\n";
-	s+="--------------------";
-	s+="\n\n";
-	
-	s+=tr("(This FAQ entry applies also to the constraints of type activity tag min hours daily:)");
-	s+=" ";
-	s+=tr("Q: Why the constraints activity tag max hours daily and students max gaps per day are disabled in the FET menu?");
-	s+="\n\n";
-	s+=tr("A: These 6 constraints (4 for activity tag and 2 for students max gaps per day) are the only ones which are not perfectly optimized"
-		" in FET. For some combinations of constraints, they may slow down the generation or even make the timetable impossible. That is why"
-		" they are not enabled by default. You need to activate them from the advanced settings menu. It is recommended to add such constraints"
-		" at the end of your work, after you added all the other constraints and verified that your timetable is possible.");
-	s+="\n\n";
-	s+=tr("If these constraints are disabled, they have an icon attached in the menu to signify that. If they are enabled, they have another icon attached to them"
-		", to signify that they are enabled, but must be used with caution.");
-	s+="\n\n";
-	s+=tr("Use these constraints with caution, not to obtain impossible timetables.");
-	
-	s+="\n\n";
-	s+="--------------------";
-	s+="\n\n";
-	
-	s+=tr("Q: Why don't you implement the not perfect constraints (activity tag max hours daily and students max gaps per day) in a perfect way?");
-	s+="\n\n";
-	s+=tr("A: Activity tag max hours daily cannot be implemented perfectly, generation would take too much (because of complexity of checks)."
-		" Students max gaps per day can be implemented perfectly, but it would change the algorithm for students a lot and I am afraid to change"
-		" something that is working well. Very much testing would be needed, and I have not enough sample files. While changing the algorithm, it would be"
-		" easy to make critical bugs and some files may not solve anymore.");
-
 	s+="\n\n";
 	s+="--------------------";
 	s+="\n\n";
@@ -893,9 +828,7 @@ void HelpFaqForm::setText()
 	s+=tr("Q: I would like to specify that a teacher should have activities in certain time slots, no matter which activities.");
 	s+="\n\n";
 	s+=tr("A: You can use a constraint of type activities occupy min time slots from selection or use in an inverted way a constraint of type activities"
-	 " occupy max time slots from selection (the exact menu entries are 'A set of activities occupies min/max time slots from selection')."
-	 " It is not known exactly if the inverted constraint with 'max' is more efficient than the direct constraint with 'min'."
-	 " Press these constraints' Help buttons for more details.");
+	 " occupy max time slots from selection (the exact menu entries are 'A set of activities occupies min/max time slots from selection').");
 
 	s+="\n\n";
 	s+="--------------------";

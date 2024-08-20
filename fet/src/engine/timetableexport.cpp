@@ -2656,7 +2656,7 @@ void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& cssfile
 	tos<<"caption {\n\n}\n\n";
 	tos<<"span.institution {\n  font-weight: bold;\n}\n\n";
 	tos<<"span.name {\n\n}\n\n";
-	tos<<"span.comment {\n  font-style: italic;\n}\n\n";
+	tos<<"span.comment {\n  /*font-style: italic;*/\n}\n\n";
 	tos<<"span.legend_title {\n  font-weight: bold;\n}\n\n";
 	tos<<"thead {\n\n}\n\n";
 	

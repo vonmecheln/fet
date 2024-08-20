@@ -36,8 +36,6 @@ public:
 public slots:
 	void ok();
 	void cancel();
-
-	void allowEmptyMorningsCheckBoxToggled();
 };
 
 #endif

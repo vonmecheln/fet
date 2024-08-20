@@ -2901,7 +2901,7 @@ Versions 6.22.0 - 6.22.3
 	exactly this, we set a bold font for the institution name. Also, this is done through the CSS file, so the user can change this behavior if needed).
 	- Improved the Italian translation, by Andrea Primiani.
 ---------------------------------------------------------------------------------
-Versions 6.23.0 - 6.23.v
+Version 6.23.0
 - Version 6.23.0
 	- Very rare but critical crash bugs fixed, in the Mornings-Afternoons mode (reported by Anonymous participant on a Facebook group about scheduling).
 	- Very rare crash bugs fixed (if when printing the teachers'/students' statistics the radio button 'Days vertical' was selected, the program crashed).
@@ -2912,3 +2912,13 @@ Versions 6.23.0 - 6.23.v
 	- Printing the timetables from the interface will now center the tables (only horizontally). Suggested by Muhammad Ratrout on Facebook, and by
 	Benahmed Abdelkrim.
 	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares.
+---------------------------------------------------------------------------------
+Versions 6.24.0 - 6.24.v
+- Version 6.24.0
+	- Unlocked the imperfect constraints and the advanced features and removed their usage warnings (suggested by more users in the past).
+	They are working very well in practice and the menu locks and warnings are not needed. The exception is the advanced 'Group activities
+	in the initial order of generation' option.
+	- Removed the warnings referring to the constraints of type activities occupy min/max time slots from selection and activities min/max simultaneous
+	in selected time slots (suggested by potrempe, fourat, and YOUSSEF HOUIET). The constraints are highly optimized and work very well in practice.
+	- The comments in the timetables will no longer have an italic font (suggested by Cyrus Ireri).
+	- Other minor interface improvements.

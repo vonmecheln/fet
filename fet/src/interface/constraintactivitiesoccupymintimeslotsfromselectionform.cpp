@@ -290,22 +290,8 @@ void ConstraintActivitiesOccupyMinTimeSlotsFromSelectionForm::help()
 {
 	QString s=QString("");
 	
-	s+=tr("IMPORTANT NOTE: This constraint is new and not thoroughly tested. Please report any possible bugs.");
-	s+=QString("\n\n");
-	s+=tr("IMPORTANT NOTE: Please use this constraint ONLY when strictly necessary, when it is really useful, when it has effect, "
-	 "when it is not implied by the other constraints, and in a non-redundant way. Otherwise it may slow down very much the generation.");
-	s+=QString("\n\n");
-	s+=tr("If the activities in the constraint cannot overlap (like when specifying a teacher to have mandatory activities in certain "
-	 "time slots), it might be more efficient to use the opposite constraint activities occupy max time slots from selection in an inverted "
-	 "way (real-life comparisons are still needed).");
-	s+=QString("\n\n");
-	s+=tr("This constraint type was added on 16 November 2019.");
-	s+=QString("\n\n");
 	s+=tr("To use this constraint, you need to specify a set of activities, a set of time slots, and a minimum number "
 	 "of time slots from those selected which must be occupied by the specified activities.");
-	s+=QString("\n\n");
-	s+=tr("Uses of this constraint are probably very wide. The main reason it was added was to enable users to specify that a teacher "
-	 "should have activities in certain time slots.");
 	
 	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
 }

@@ -42,13 +42,6 @@ ModifyConstraintStudentsSetMinHoursPerAfternoonForm::ModifyConstraintStudentsSet
 	//assert(ctr->allowEmptyDays==true);
 	allowEmptyAfternoonsCheckBox->setChecked(ctr->allowEmptyAfternoons);
 	
-	connect(allowEmptyAfternoonsCheckBox, &QCheckBox::toggled, this, &ModifyConstraintStudentsSetMinHoursPerAfternoonForm::allowEmptyAfternoonsCheckBoxToggled); //after set checked!
-	
-	if(gt.rules.mode==MORNINGS_AFTERNOONS || ENABLE_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS)
-		allowLabel->setText(tr("Advanced usage: enabled"));
-	else
-		allowLabel->setText(tr("Advanced usage: not enabled"));
-	
 	updateStudentsComboBox(parent);
 
 	minHoursSpinBox->setMinimum(1);
@@ -92,11 +85,6 @@ void ModifyConstraintStudentsSetMinHoursPerAfternoonForm::ok()
 	}
 
 	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
-		if(!ENABLE_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS && allowEmptyAfternoonsCheckBox->isChecked()){
-			QMessageBox::warning(this, tr("FET warning"), tr("Empty afternoons for students min hours per afternoon constraints are not enabled. You must enable them from the Settings->Advanced menu."));
-			return;
-		}
-
 		//2021-03-26 - I think I commented out this check because the user might combine this constraint with a min hours daily constraint.
 		/*if(allowEmptyAfternoonsCheckBox->isChecked() && minHoursSpinBox->value()<2){
 			QMessageBox::warning(this, tr("FET warning"), tr("If you allow empty afternoons, the min hours must be at least 2 (to make it a non-trivial constraint)"));
@@ -132,23 +120,4 @@ void ModifyConstraintStudentsSetMinHoursPerAfternoonForm::ok()
 void ModifyConstraintStudentsSetMinHoursPerAfternoonForm::cancel()
 {
 	this->close();
-}
-
-void ModifyConstraintStudentsSetMinHoursPerAfternoonForm::allowEmptyAfternoonsCheckBoxToggled()
-{
-	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
-		bool k=allowEmptyAfternoonsCheckBox->isChecked();
-			
-		if(k && !ENABLE_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS){
-			allowEmptyAfternoonsCheckBox->setChecked(false);
-			QString s=tr("Advanced usage is not enabled. To be able to select 'Allow empty afternoons' for the constraints of type min hours per afternoon for students, you must enable the option from the Settings->Advanced menu.",
-				"'Allow empty afternoons' is an option which the user can enable and then he can select it.");
-			s+="\n\n";
-			s+=tr("Explanation: only select this option if your institution allows empty afternoons for students and a timetable is possible with empty afternoons for students."
-				" Otherwise, it is IMPERATIVE (for performance reasons) to not select this option (or FET may not be able to find a timetable).");
-			s+="\n\n";
-			s+=tr("Use with caution.");
-			QMessageBox::information(this, tr("FET information"), s);
-		}
-	}
 }
