@@ -9918,9 +9918,46 @@ Liviu Lalescu:
 
 2. Maybe teachers/students max gaps per real day.
 
-614---------------------------------------------------------
-From Khelifi Fouad Mohssen (on forum):
+614-----------DONE in FET-6.24.2----------------------------
 
-https://lalescu.ro/liviu/fet/forum/index.php?topic=6109.0
+615-----------DONE in FET-6.24.2----------------------------
 
-Program in FET official form: I have a teacher who works two days, and I want these two days to not be consecutive.
+616---------------------------------------------------------
+From gt (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6119.0
+
+I'd suggest to add the option to "Bring to front" the Menu Window (i.e. the one opening at Fet start) when it's superimposed by other windows.
+It could be done by clicking the Menu Windows to activate it, if possible.
+In my experience it should be very comfortable when working with small screens (laptops) and having the need to check the generated timetable
+taking several windows opened at the same time (teachers, rooms, students etc.).
+At moment it seems that I have to close or move off screen the other windows just to access the option in the Menu Window.
+
+617---------------------------------------------------------
+From henozzo (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6122.0
+
+Ho lavorato su un orario per la scuola secondaria e vorrei trovare un modo di esportare i dati in un altro orario che integra anche l'orario della
+scuola primaria. Posso esportare su quel file .fet questi dati magari incollandoli? Come?
+
+Google translate:
+
+I worked on a timetable for secondary school and I would like to find a way to export the data to another timetable that also integrates the primary
+school timetable. Can I export this data to that .fet file, perhaps by pasting it? How?
+
+Vangelis Karafillidis:
+
+@Liviu Lalescu, I think we have discussed about implementing some kind of feature for merging two (or more) different .fet files. It seems that
+sometimes this feature would be really useful. Moreover, a multi-user preparation of the same (single) .fet file would be highly useful in some cases.
+The above have to do with enhancing the usability and speeding-up the preparation of data (+constraints) for FET. At least, maybe an expert mode
+for re-numbering the activities (ids) seems to be a solution, according to your post. The user could easily 'prepare' the two .fet sub-files,
+so that would be compatible to each other for being merged. What do you think?
+
+618---------------------------------------------------------
+From Thai Chi Phuong (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6112.msg34042#msg34042
+
+One more small detail but I think it will be useful for all of us: In the "Data" tab, information related to "Class", "Teacher", "Student"; "Tags".
+If it is not too difficult, can you help us remove many redundant elements with just 1 click?

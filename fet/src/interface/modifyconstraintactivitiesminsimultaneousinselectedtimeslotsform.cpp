@@ -301,6 +301,12 @@ void ModifyConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::ok()
 		return;
 	}
 	
+	if(minSimultaneous==1 && allowEmptySlotsCheckBox->isChecked()){
+		QMessageBox::warning(this, tr("FET information"), tr("You specified min simultaneous activities to be 1 and you allow empty slots. "
+		 "This results in a useless constraint. Please correct."));
+		return;
+	}
+	
 	if(this->selectedActivitiesList.count()==0){
 		QMessageBox::warning(this, tr("FET information"),
 		 tr("Empty list of activities"));

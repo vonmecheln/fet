@@ -962,16 +962,16 @@ QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 					break;
 				}
 			//93
-			case CONSTRAINT_TEACHER_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3:
+			case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
 				{
-					ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3* c=(ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3*)ctr;
+					ConstraintTeacherMaxActivityTagsPerDayFromSet* c=(ConstraintTeacherMaxActivityTagsPerDayFromSet*)ctr;
 					stream<<*c;
 					break;
 				}
 			//94
-			case CONSTRAINT_TEACHERS_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3:
+			case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
 				{
-					ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3* c=(ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3*)ctr;
+					ConstraintTeachersMaxActivityTagsPerDayFromSet* c=(ConstraintTeachersMaxActivityTagsPerDayFromSet*)ctr;
 					stream<<*c;
 					break;
 				}
@@ -1644,44 +1644,44 @@ QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 					break;
 				}
 			//188
-			case CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3:
+			case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
 				{
-					ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3* c=(ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3*)ctr;
+					ConstraintStudentsSetMaxActivityTagsPerDayFromSet* c=(ConstraintStudentsSetMaxActivityTagsPerDayFromSet*)ctr;
 					stream<<*c;
 					break;
 				}
 			//189
-			case CONSTRAINT_STUDENTS_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3:
+			case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
 				{
-					ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3* c=(ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3*)ctr;
+					ConstraintStudentsMaxActivityTagsPerDayFromSet* c=(ConstraintStudentsMaxActivityTagsPerDayFromSet*)ctr;
 					stream<<*c;
 					break;
 				}
 			//190
-			case CONSTRAINT_TEACHER_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3:
+			case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
 				{
-					ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3* c=(ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3*)ctr;
+					ConstraintTeacherMaxActivityTagsPerRealDayFromSet* c=(ConstraintTeacherMaxActivityTagsPerRealDayFromSet*)ctr;
 					stream<<*c;
 					break;
 				}
 			//191
-			case CONSTRAINT_TEACHERS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3:
+			case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
 				{
-					ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3* c=(ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3*)ctr;
+					ConstraintTeachersMaxActivityTagsPerRealDayFromSet* c=(ConstraintTeachersMaxActivityTagsPerRealDayFromSet*)ctr;
 					stream<<*c;
 					break;
 				}
 			//192
-			case CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3:
+			case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
 				{
-					ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3* c=(ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3*)ctr;
+					ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet* c=(ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet*)ctr;
 					stream<<*c;
 					break;
 				}
 			//193
-			case CONSTRAINT_STUDENTS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3:
+			case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
 				{
-					ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3* c=(ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3*)ctr;
+					ConstraintStudentsMaxActivityTagsPerRealDayFromSet* c=(ConstraintStudentsMaxActivityTagsPerRealDayFromSet*)ctr;
 					stream<<*c;
 					break;
 				}
@@ -1842,10 +1842,6 @@ QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 					stream<<*c;
 					break;
 				}
-
-
-
-
 			//216
 			case CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON:
 				{
@@ -1899,6 +1895,20 @@ QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 			case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
 				{
 					ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon* c=(ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon*)ctr;
+					stream<<*c;
+					break;
+				}
+			//224
+			case CONSTRAINT_TEACHER_NO_TWO_CONSECUTIVE_DAYS:
+				{
+					ConstraintTeacherNoTwoConsecutiveDays* c=(ConstraintTeacherNoTwoConsecutiveDays*)ctr;
+					stream<<*c;
+					break;
+				}
+			//2225
+			case CONSTRAINT_TEACHERS_NO_TWO_CONSECUTIVE_DAYS:
+				{
+					ConstraintTeachersNoTwoConsecutiveDays* c=(ConstraintTeachersNoTwoConsecutiveDays*)ctr;
 					stream<<*c;
 					break;
 				}
@@ -3332,17 +3342,17 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 					break;
 				}
 			//93
-			case CONSTRAINT_TEACHER_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3:
+			case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
 				{
-					ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3* c=new ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3;
+					ConstraintTeacherMaxActivityTagsPerDayFromSet* c=new ConstraintTeacherMaxActivityTagsPerDayFromSet;
 					stream>>*c;
 					rules.timeConstraintsList.append(c);
 					break;
 				}
 			//94
-			case CONSTRAINT_TEACHERS_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3:
+			case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
 				{
-					ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3* c=new ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3;
+					ConstraintTeachersMaxActivityTagsPerDayFromSet* c=new ConstraintTeachersMaxActivityTagsPerDayFromSet;
 					stream>>*c;
 					rules.timeConstraintsList.append(c);
 					break;
@@ -4109,49 +4119,49 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 					break;
 				}
 			//188
-			case CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3:
+			case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
 				{
-					ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3* c=new ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3;
+					ConstraintStudentsSetMaxActivityTagsPerDayFromSet* c=new ConstraintStudentsSetMaxActivityTagsPerDayFromSet;
 					stream>>*c;
 					rules.timeConstraintsList.append(c);
 					break;
 				}
 			//189
-			case CONSTRAINT_STUDENTS_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3:
+			case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
 				{
-					ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3* c=new ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3;
+					ConstraintStudentsMaxActivityTagsPerDayFromSet* c=new ConstraintStudentsMaxActivityTagsPerDayFromSet;
 					stream>>*c;
 					rules.timeConstraintsList.append(c);
 					break;
 				}
 			//190
-			case CONSTRAINT_TEACHER_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3:
+			case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
 				{
-					ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3* c=new ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3;
+					ConstraintTeacherMaxActivityTagsPerRealDayFromSet* c=new ConstraintTeacherMaxActivityTagsPerRealDayFromSet;
 					stream>>*c;
 					rules.timeConstraintsList.append(c);
 					break;
 				}
 			//191
-			case CONSTRAINT_TEACHERS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3:
+			case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
 				{
-					ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3* c=new ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3;
+					ConstraintTeachersMaxActivityTagsPerRealDayFromSet* c=new ConstraintTeachersMaxActivityTagsPerRealDayFromSet;
 					stream>>*c;
 					rules.timeConstraintsList.append(c);
 					break;
 				}
 			//192
-			case CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3:
+			case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
 				{
-					ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3* c=new ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3;
+					ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet* c=new ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet;
 					stream>>*c;
 					rules.timeConstraintsList.append(c);
 					break;
 				}
 			//193
-			case CONSTRAINT_STUDENTS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3:
+			case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
 				{
-					ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3* c=new ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3;
+					ConstraintStudentsMaxActivityTagsPerRealDayFromSet* c=new ConstraintStudentsMaxActivityTagsPerRealDayFromSet;
 					stream>>*c;
 					rules.timeConstraintsList.append(c);
 					break;
@@ -4395,6 +4405,22 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 			case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
 				{
 					ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon* c=new ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon;
+					stream>>*c;
+					rules.timeConstraintsList.append(c);
+					break;
+				}
+			//224
+			case CONSTRAINT_TEACHER_NO_TWO_CONSECUTIVE_DAYS:
+				{
+					ConstraintTeacherNoTwoConsecutiveDays* c=new ConstraintTeacherNoTwoConsecutiveDays;
+					stream>>*c;
+					rules.timeConstraintsList.append(c);
+					break;
+				}
+			//225
+			case CONSTRAINT_TEACHERS_NO_TWO_CONSECUTIVE_DAYS:
+				{
+					ConstraintTeachersNoTwoConsecutiveDays* c=new ConstraintTeachersNoTwoConsecutiveDays;
 					stream>>*c;
 					rules.timeConstraintsList.append(c);
 					break;
@@ -6640,6 +6666,13 @@ bool Rules::modifyTeacher(const QString& initialTeacherName, const QString& fina
 						crt_constraint->teacherName=finalTeacherName;
 					break;
 				}
+			case CONSTRAINT_TEACHER_NO_TWO_CONSECUTIVE_DAYS:
+				{
+					ConstraintTeacherNoTwoConsecutiveDays* crt_constraint=(ConstraintTeacherNoTwoConsecutiveDays*)ctr;
+					if(initialTeacherName == crt_constraint->teacherName)
+						crt_constraint->teacherName=finalTeacherName;
+					break;
+				}
 			case CONSTRAINT_TEACHER_MAX_THREE_CONSECUTIVE_DAYS:
 				{
 					ConstraintTeacherMaxThreeConsecutiveDays* crt_constraint=(ConstraintTeacherMaxThreeConsecutiveDays*)ctr;
@@ -6829,20 +6862,21 @@ bool Rules::modifyTeacher(const QString& initialTeacherName, const QString& fina
 						crt_constraint->teacherName=finalTeacherName;
 					break;
 				}
-			case CONSTRAINT_TEACHER_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3:
+			case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
 				{
-					ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3* crt_constraint=(ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3*)ctr;
+					ConstraintTeacherMaxActivityTagsPerDayFromSet* crt_constraint=(ConstraintTeacherMaxActivityTagsPerDayFromSet*)ctr;
 					if(initialTeacherName == crt_constraint->teacherName)
 						crt_constraint->teacherName=finalTeacherName;
 					break;
 				}
-			case CONSTRAINT_TEACHER_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3:
+			case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
 				{
-					ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3* crt_constraint=(ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3*)ctr;
+					ConstraintTeacherMaxActivityTagsPerRealDayFromSet* crt_constraint=(ConstraintTeacherMaxActivityTagsPerRealDayFromSet*)ctr;
 					if(initialTeacherName == crt_constraint->teacherName)
 						crt_constraint->teacherName=finalTeacherName;
 					break;
 				}
+
 			case CONSTRAINT_TEACHER_MAX_MORNINGS_PER_WEEK:
 				{
 					ConstraintTeacherMaxMorningsPerWeek* crt_constraint=(ConstraintTeacherMaxMorningsPerWeek*)ctr;
@@ -7768,7 +7802,110 @@ bool Rules::modifyActivityTag(const QString& initialActivityTagName, const QStri
 					assert(cnt<=1);
 					break;
 				}
-
+			case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
+				{
+					ConstraintTeacherMaxActivityTagsPerDayFromSet* crt_constraint=(ConstraintTeacherMaxActivityTagsPerDayFromSet*)ctr;
+					int cnt=0;
+					for(int i=0; i<crt_constraint->tagsList.count(); i++){
+						if(crt_constraint->tagsList.at(i)==initialActivityTagName){
+							crt_constraint->tagsList[i]=finalActivityTagName;
+							cnt++;
+						}
+					}
+					assert(cnt<=1);
+					break;
+				}
+			case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
+				{
+					ConstraintTeachersMaxActivityTagsPerDayFromSet* crt_constraint=(ConstraintTeachersMaxActivityTagsPerDayFromSet*)ctr;
+					int cnt=0;
+					for(int i=0; i<crt_constraint->tagsList.count(); i++){
+						if(crt_constraint->tagsList.at(i)==initialActivityTagName){
+							crt_constraint->tagsList[i]=finalActivityTagName;
+							cnt++;
+						}
+					}
+					assert(cnt<=1);
+					break;
+				}
+			case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
+				{
+					ConstraintStudentsSetMaxActivityTagsPerDayFromSet* crt_constraint=(ConstraintStudentsSetMaxActivityTagsPerDayFromSet*)ctr;
+					int cnt=0;
+					for(int i=0; i<crt_constraint->tagsList.count(); i++){
+						if(crt_constraint->tagsList.at(i)==initialActivityTagName){
+							crt_constraint->tagsList[i]=finalActivityTagName;
+							cnt++;
+						}
+					}
+					assert(cnt<=1);
+					break;
+				}
+			case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
+				{
+					ConstraintStudentsMaxActivityTagsPerDayFromSet* crt_constraint=(ConstraintStudentsMaxActivityTagsPerDayFromSet*)ctr;
+					int cnt=0;
+					for(int i=0; i<crt_constraint->tagsList.count(); i++){
+						if(crt_constraint->tagsList.at(i)==initialActivityTagName){
+							crt_constraint->tagsList[i]=finalActivityTagName;
+							cnt++;
+						}
+					}
+					assert(cnt<=1);
+					break;
+				}
+			case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
+				{
+					ConstraintTeacherMaxActivityTagsPerRealDayFromSet* crt_constraint=(ConstraintTeacherMaxActivityTagsPerRealDayFromSet*)ctr;
+					int cnt=0;
+					for(int i=0; i<crt_constraint->tagsList.count(); i++){
+						if(crt_constraint->tagsList.at(i)==initialActivityTagName){
+							crt_constraint->tagsList[i]=finalActivityTagName;
+							cnt++;
+						}
+					}
+					assert(cnt<=1);
+					break;
+				}
+			case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
+				{
+					ConstraintTeachersMaxActivityTagsPerRealDayFromSet* crt_constraint=(ConstraintTeachersMaxActivityTagsPerRealDayFromSet*)ctr;
+					int cnt=0;
+					for(int i=0; i<crt_constraint->tagsList.count(); i++){
+						if(crt_constraint->tagsList.at(i)==initialActivityTagName){
+							crt_constraint->tagsList[i]=finalActivityTagName;
+							cnt++;
+						}
+					}
+					assert(cnt<=1);
+					break;
+				}
+			case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
+				{
+					ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet* crt_constraint=(ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet*)ctr;
+					int cnt=0;
+					for(int i=0; i<crt_constraint->tagsList.count(); i++){
+						if(crt_constraint->tagsList.at(i)==initialActivityTagName){
+							crt_constraint->tagsList[i]=finalActivityTagName;
+							cnt++;
+						}
+					}
+					assert(cnt<=1);
+					break;
+				}
+			case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
+				{
+					ConstraintStudentsMaxActivityTagsPerRealDayFromSet* crt_constraint=(ConstraintStudentsMaxActivityTagsPerRealDayFromSet*)ctr;
+					int cnt=0;
+					for(int i=0; i<crt_constraint->tagsList.count(); i++){
+						if(crt_constraint->tagsList.at(i)==initialActivityTagName){
+							crt_constraint->tagsList[i]=finalActivityTagName;
+							cnt++;
+						}
+					}
+					assert(cnt<=1);
+					break;
+				}
 			//mornings-afternoons
 			case CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_DAILY_REAL_DAYS:
 				{
@@ -8397,16 +8534,16 @@ bool Rules::modifyStudentsSet(const QString& initialStudentsSetName, const QStri
 							crt_constraint->students=finalStudentsSetName;
 						break;
 					}
-				case CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3:
+				case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
 					{
-						ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3* crt_constraint=(ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3*)ctr;
+						ConstraintStudentsSetMaxActivityTagsPerDayFromSet* crt_constraint=(ConstraintStudentsSetMaxActivityTagsPerDayFromSet*)ctr;
 						if(initialStudentsSetName == crt_constraint->students)
 							crt_constraint->students=finalStudentsSetName;
 						break;
 					}
-				case CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3:
+				case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
 					{
-						ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3* crt_constraint=(ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3*)ctr;
+						ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet* crt_constraint=(ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet*)ctr;
 						if(initialStudentsSetName == crt_constraint->students)
 							crt_constraint->students=finalStudentsSetName;
 						break;
@@ -8921,16 +9058,16 @@ bool Rules::modifyStudentsSets(const QHash<QString, QString>& oldAndNewStudentsS
 						crt_constraint->students=oldAndNewStudentsSetNames.value(crt_constraint->students);
 					break;
 				}
-			case CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3:
+			case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
 				{
-					ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3* crt_constraint=(ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3*)ctr;
+					ConstraintStudentsSetMaxActivityTagsPerDayFromSet* crt_constraint=(ConstraintStudentsSetMaxActivityTagsPerDayFromSet*)ctr;
 					if(oldAndNewStudentsSetNames.contains(crt_constraint->students))
 						crt_constraint->students=oldAndNewStudentsSetNames.value(crt_constraint->students);
 					break;
 				}
-			case CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3:
+			case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
 				{
-					ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3* crt_constraint=(ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3*)ctr;
+					ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet* crt_constraint=(ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet*)ctr;
 					if(oldAndNewStudentsSetNames.contains(crt_constraint->students))
 						crt_constraint->students=oldAndNewStudentsSetNames.value(crt_constraint->students);
 					break;
@@ -11674,6 +11811,13 @@ void Rules::updateConstraintsAfterRemoval()
 						toBeRemovedTime.append(tc);
 					break;
 				}
+			case CONSTRAINT_TEACHER_NO_TWO_CONSECUTIVE_DAYS:
+				{
+					ConstraintTeacherNoTwoConsecutiveDays* c=(ConstraintTeacherNoTwoConsecutiveDays*)tc;
+					if(!existingTeachersNames.contains(c->teacherName))
+						toBeRemovedTime.append(tc);
+					break;
+				}
 			case CONSTRAINT_TEACHER_MAX_THREE_CONSECUTIVE_DAYS:
 				{
 					ConstraintTeacherMaxThreeConsecutiveDays* c=(ConstraintTeacherMaxThreeConsecutiveDays*)tc;
@@ -12239,18 +12383,40 @@ void Rules::updateConstraintsAfterRemoval()
 						toBeRemovedTime.append(tc);
 					break;
 				}
-			case CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3:
+			case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
 				{
-					ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3* c=(ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3*)tc;
+					ConstraintStudentsSetMaxActivityTagsPerDayFromSet* c=(ConstraintStudentsSetMaxActivityTagsPerDayFromSet*)tc;
 					if(!permanentStudentsHash.contains(c->students))
 						toBeRemovedTime.append(tc);
+					else{
+						QStringList atl;
+						for(const QString& at : std::as_const(c->tagsList))
+							if(existingActivityTagsNames.contains(at))
+								atl.append(at);
+						c->tagsList=atl;
+
+						if(c->tagsList.count()<2)
+							toBeRemovedTime.append(tc);
+					}
+					
 					break;
 				}
-			case CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3:
+			case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
 				{
-					ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3* c=(ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3*)tc;
+					ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet* c=(ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet*)tc;
 					if(!permanentStudentsHash.contains(c->students))
 						toBeRemovedTime.append(tc);
+					else{
+						QStringList atl;
+						for(const QString& at : std::as_const(c->tagsList))
+							if(existingActivityTagsNames.contains(at))
+								atl.append(at);
+						c->tagsList=atl;
+
+						if(c->tagsList.count()<2)
+							toBeRemovedTime.append(tc);
+					}
+					
 					break;
 				}
 			case CONSTRAINT_ACTIVITIES_OCCUPY_MAX_TIME_SLOTS_FROM_SELECTION:
@@ -12377,18 +12543,40 @@ void Rules::updateConstraintsAfterRemoval()
 						toBeRemovedTime.append(tc);
 					break;
 				}
-			case CONSTRAINT_TEACHER_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3:
+			case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
 				{
-					ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3* c=(ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3*)tc;
+					ConstraintTeacherMaxActivityTagsPerDayFromSet* c=(ConstraintTeacherMaxActivityTagsPerDayFromSet*)tc;
 					if(!existingTeachersNames.contains(c->teacherName))
 						toBeRemovedTime.append(tc);
+					else{
+						QStringList atl;
+						for(const QString& at : std::as_const(c->tagsList))
+							if(existingActivityTagsNames.contains(at))
+								atl.append(at);
+						c->tagsList=atl;
+
+						if(c->tagsList.count()<2)
+							toBeRemovedTime.append(tc);
+					}
+					
 					break;
 				}
-			case CONSTRAINT_TEACHER_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3:
+			case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
 				{
-					ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3* c=(ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3*)tc;
+					ConstraintTeacherMaxActivityTagsPerRealDayFromSet* c=(ConstraintTeacherMaxActivityTagsPerRealDayFromSet*)tc;
 					if(!existingTeachersNames.contains(c->teacherName))
 						toBeRemovedTime.append(tc);
+					else{
+						QStringList atl;
+						for(const QString& at : std::as_const(c->tagsList))
+							if(existingActivityTagsNames.contains(at))
+								atl.append(at);
+						c->tagsList=atl;
+
+						if(c->tagsList.count()<2)
+							toBeRemovedTime.append(tc);
+					}
+					
 					break;
 				}
 			case CONSTRAINT_TEACHER_MAX_MORNINGS_PER_WEEK:
@@ -15864,6 +16052,8 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 			bool reportActivityPreferredTimesChange=true;
 			bool reportActivitiesPreferredTimesChange=true;
 			
+			bool reportN1N2N3Change=true;
+			
 			bool reportUnspecifiedPermanentlyLockedTime=true;
 			
 			bool reportUnspecifiedDayOrHourPreferredStartingTime=true;
@@ -16581,31 +16771,139 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 				}
 
 				else if(xmlReader.name()==QString("ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3")){
+					if(reportN1N2N3Change){
+						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
+						 tr("Your file contains a constraint of type teacher(s)/students (set) max two activity tags"
+						 " per day/real day from N1, N2, N3, which will be converted to the newer constraint,"
+						 " teacher(s)/students (set) max activity tags per day/real day from a set"),
+						  tr("Skip rest"), tr("See next"), QString(), 1, 0 );
+						if(t==0)
+							reportN1N2N3Change=false;
+					}
+
 					crt_constraint=readTeacherMaxTwoActivityTagsPerDayFromN1N2N3(xmlReader, xmlReadingLog);
 				}
 				else if(xmlReader.name()==QString("ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3")){
+					if(reportN1N2N3Change){
+						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
+						 tr("Your file contains a constraint of type teacher(s)/students (set) max two activity tags"
+						 " per day/real day from N1, N2, N3, which will be converted to the newer constraint,"
+						 " teacher(s)/students (set) max activity tags per day/real day from a set"),
+						  tr("Skip rest"), tr("See next"), QString(), 1, 0 );
+						if(t==0)
+							reportN1N2N3Change=false;
+					}
+
 					crt_constraint=readTeachersMaxTwoActivityTagsPerDayFromN1N2N3(xmlReader, xmlReadingLog);
 				}
 
 				else if(xmlReader.name()==QString("ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3")){
+					if(reportN1N2N3Change){
+						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
+						 tr("Your file contains a constraint of type teacher(s)/students (set) max two activity tags"
+						 " per day/real day from N1, N2, N3, which will be converted to the newer constraint,"
+						 " teacher(s)/students (set) max activity tags per day/real day from a set"),
+						  tr("Skip rest"), tr("See next"), QString(), 1, 0 );
+						if(t==0)
+							reportN1N2N3Change=false;
+					}
+
 					crt_constraint=readStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3(xmlReader, xmlReadingLog);
 				}
 				else if(xmlReader.name()==QString("ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3")){
+					if(reportN1N2N3Change){
+						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
+						 tr("Your file contains a constraint of type teacher(s)/students (set) max two activity tags"
+						 " per day/real day from N1, N2, N3, which will be converted to the newer constraint,"
+						 " teacher(s)/students (set) max activity tags per day/real day from a set"),
+						  tr("Skip rest"), tr("See next"), QString(), 1, 0 );
+						if(t==0)
+							reportN1N2N3Change=false;
+					}
+
 					crt_constraint=readStudentsMaxTwoActivityTagsPerDayFromN1N2N3(xmlReader, xmlReadingLog);
 				}
 
 				else if(xmlReader.name()==QString("ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3")){
+					if(reportN1N2N3Change){
+						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
+						 tr("Your file contains a constraint of type teacher(s)/students (set) max two activity tags"
+						 " per day/real day from N1, N2, N3, which will be converted to the newer constraint,"
+						 " teacher(s)/students (set) max activity tags per day/real day from a set"),
+						  tr("Skip rest"), tr("See next"), QString(), 1, 0 );
+						if(t==0)
+							reportN1N2N3Change=false;
+					}
+
 					crt_constraint=readTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3(xmlReader, xmlReadingLog);
 				}
 				else if(xmlReader.name()==QString("ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3")){
+					if(reportN1N2N3Change){
+						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
+						 tr("Your file contains a constraint of type teacher(s)/students (set) max two activity tags"
+						 " per day/real day from N1, N2, N3, which will be converted to the newer constraint,"
+						 " teacher(s)/students (set) max activity tags per day/real day from a set"),
+						  tr("Skip rest"), tr("See next"), QString(), 1, 0 );
+						if(t==0)
+							reportN1N2N3Change=false;
+					}
+
 					crt_constraint=readTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3(xmlReader, xmlReadingLog);
 				}
 
 				else if(xmlReader.name()==QString("ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3")){
+					if(reportN1N2N3Change){
+						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
+						 tr("Your file contains a constraint of type teacher(s)/students (set) max two activity tags"
+						 " per day/real day from N1, N2, N3, which will be converted to the newer constraint,"
+						 " teacher(s)/students (set) max activity tags per day/real day from a set"),
+						  tr("Skip rest"), tr("See next"), QString(), 1, 0 );
+						if(t==0)
+							reportN1N2N3Change=false;
+					}
+
 					crt_constraint=readStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3(xmlReader, xmlReadingLog);
 				}
 				else if(xmlReader.name()==QString("ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3")){
+					if(reportN1N2N3Change){
+						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
+						 tr("Your file contains a constraint of type teacher(s)/students (set) max two activity tags"
+						 " per day/real day from N1, N2, N3, which will be converted to the newer constraint,"
+						 " teacher(s)/students (set) max activity tags per day/real day from a set"),
+						  tr("Skip rest"), tr("See next"), QString(), 1, 0 );
+						if(t==0)
+							reportN1N2N3Change=false;
+					}
+
 					crt_constraint=readStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3(xmlReader, xmlReadingLog);
+				}
+
+				else if(xmlReader.name()==QString("ConstraintTeacherMaxActivityTagsPerDayFromSet")){
+					crt_constraint=readTeacherMaxActivityTagsPerDayFromSet(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintTeachersMaxActivityTagsPerDayFromSet")){
+					crt_constraint=readTeachersMaxActivityTagsPerDayFromSet(xmlReader, xmlReadingLog);
+				}
+
+				else if(xmlReader.name()==QString("ConstraintStudentsSetMaxActivityTagsPerDayFromSet")){
+					crt_constraint=readStudentsSetMaxActivityTagsPerDayFromSet(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintStudentsMaxActivityTagsPerDayFromSet")){
+					crt_constraint=readStudentsMaxActivityTagsPerDayFromSet(xmlReader, xmlReadingLog);
+				}
+
+				else if(xmlReader.name()==QString("ConstraintTeacherMaxActivityTagsPerRealDayFromSet")){
+					crt_constraint=readTeacherMaxActivityTagsPerRealDayFromSet(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintTeachersMaxActivityTagsPerRealDayFromSet")){
+					crt_constraint=readTeachersMaxActivityTagsPerRealDayFromSet(xmlReader, xmlReadingLog);
+				}
+
+				else if(xmlReader.name()==QString("ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet")){
+					crt_constraint=readStudentsSetMaxActivityTagsPerRealDayFromSet(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintStudentsMaxActivityTagsPerRealDayFromSet")){
+					crt_constraint=readStudentsMaxActivityTagsPerRealDayFromSet(xmlReader, xmlReadingLog);
 				}
 
 				else if(xmlReader.name()==QString("ConstraintTeacherMaxMorningsPerWeek")){
@@ -17119,6 +17417,13 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 				}
 				else if(xmlReader.name()==QString("ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon")){
 					crt_constraint=readStudentsMinRestingHoursBetweenMorningAndAfternoon(xmlReader, xmlReadingLog);
+				}
+				//
+				else if(xmlReader.name()==QString("ConstraintTeacherNoTwoConsecutiveDays")){
+					crt_constraint=readTeacherNoTwoConsecutiveDays(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintTeachersNoTwoConsecutiveDays")){
+					crt_constraint=readTeachersNoTwoConsecutiveDays(xmlReader, xmlReadingLog);
 				}
 				//
 				else if(xmlReader.name()==QString("ConstraintTeacherMaxThreeConsecutiveDays")){
@@ -30184,7 +30489,12 @@ TimeConstraint* Rules::readTeachersMaxAfternoonsPerWeek(QXmlStreamReader& xmlRea
 TimeConstraint* Rules::readTeacherMaxTwoActivityTagsPerDayFromN1N2N3(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
 	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3"));
 
-	ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3* cn=new ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3();
+	ConstraintTeacherMaxActivityTagsPerDayFromSet* cn=new ConstraintTeacherMaxActivityTagsPerDayFromSet();
+	cn->maxTags=2;
+	cn->tagsList.clear();
+	cn->tagsList.append("N1");
+	cn->tagsList.append("N2");
+	cn->tagsList.append("N3");
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()==QString("Weight")){
@@ -30246,7 +30556,12 @@ TimeConstraint* Rules::readTeacherMaxTwoActivityTagsPerDayFromN1N2N3(QXmlStreamR
 TimeConstraint* Rules::readTeachersMaxTwoActivityTagsPerDayFromN1N2N3(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
 	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3"));
 
-	ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3* cn=new ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3();
+	ConstraintTeachersMaxActivityTagsPerDayFromSet* cn=new ConstraintTeachersMaxActivityTagsPerDayFromSet();
+	cn->maxTags=2;
+	cn->tagsList.clear();
+	cn->tagsList.append("N1");
+	cn->tagsList.append("N2");
+	cn->tagsList.append("N3");
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()==QString("Weight")){
@@ -30298,7 +30613,12 @@ TimeConstraint* Rules::readTeachersMaxTwoActivityTagsPerDayFromN1N2N3(QXmlStream
 TimeConstraint* Rules::readStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
 	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3"));
 
-	ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3* cn=new ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3();
+	ConstraintStudentsSetMaxActivityTagsPerDayFromSet* cn=new ConstraintStudentsSetMaxActivityTagsPerDayFromSet();
+	cn->maxTags=2;
+	cn->tagsList.clear();
+	cn->tagsList.append("N1");
+	cn->tagsList.append("N2");
+	cn->tagsList.append("N3");
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()==QString("Weight")){
@@ -30355,7 +30675,12 @@ TimeConstraint* Rules::readStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3(QXmlStr
 TimeConstraint* Rules::readStudentsMaxTwoActivityTagsPerDayFromN1N2N3(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
 	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3"));
 
-	ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3* cn=new ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3();
+	ConstraintStudentsMaxActivityTagsPerDayFromSet* cn=new ConstraintStudentsMaxActivityTagsPerDayFromSet();
+	cn->maxTags=2;
+	cn->tagsList.clear();
+	cn->tagsList.append("N1");
+	cn->tagsList.append("N2");
+	cn->tagsList.append("N3");
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()==QString("Weight")){
@@ -30407,7 +30732,12 @@ TimeConstraint* Rules::readStudentsMaxTwoActivityTagsPerDayFromN1N2N3(QXmlStream
 TimeConstraint* Rules::readTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
 	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3"));
 
-	ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3* cn=new ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3();
+	ConstraintTeacherMaxActivityTagsPerRealDayFromSet* cn=new ConstraintTeacherMaxActivityTagsPerRealDayFromSet();
+	cn->maxTags=2;
+	cn->tagsList.clear();
+	cn->tagsList.append("N1");
+	cn->tagsList.append("N2");
+	cn->tagsList.append("N3");
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()==QString("Weight_Percentage")){
@@ -30450,7 +30780,12 @@ TimeConstraint* Rules::readTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3(QXmlStr
 TimeConstraint* Rules::readTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
 	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3"));
 
-	ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3* cn=new ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3();
+	ConstraintTeachersMaxActivityTagsPerRealDayFromSet* cn=new ConstraintTeachersMaxActivityTagsPerRealDayFromSet();
+	cn->maxTags=2;
+	cn->tagsList.clear();
+	cn->tagsList.append("N1");
+	cn->tagsList.append("N2");
+	cn->tagsList.append("N3");
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()==QString("Weight_Percentage")){
@@ -30483,7 +30818,12 @@ TimeConstraint* Rules::readTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3(QXmlSt
 TimeConstraint* Rules::readStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
 	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3"));
 
-	ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3* cn=new ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3();
+	ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet* cn=new ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet();
+	cn->maxTags=2;
+	cn->tagsList.clear();
+	cn->tagsList.append("N1");
+	cn->tagsList.append("N2");
+	cn->tagsList.append("N3");
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()==QString("Weight_Percentage")){
@@ -30521,7 +30861,12 @@ TimeConstraint* Rules::readStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3(QXm
 TimeConstraint* Rules::readStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
 	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3"));
 
-	ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3* cn=new ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3();
+	ConstraintStudentsMaxActivityTagsPerRealDayFromSet* cn=new ConstraintStudentsMaxActivityTagsPerRealDayFromSet();
+	cn->maxTags=2;
+	cn->tagsList.clear();
+	cn->tagsList.append("N1");
+	cn->tagsList.append("N2");
+	cn->tagsList.append("N3");
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()==QString("Weight_Percentage")){
@@ -30548,6 +30893,698 @@ TimeConstraint* Rules::readStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3(QXmlSt
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
 	}
+	return cn;
+}
+
+TimeConstraint* Rules::readTeacherMaxActivityTagsPerDayFromSet(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeacherMaxActivityTagsPerDayFromSet"));
+
+	ConstraintTeacherMaxActivityTagsPerDayFromSet* cn=new ConstraintTeacherMaxActivityTagsPerDayFromSet();
+	cn->tagsList.clear();
+
+	int nActivityTags=-1;
+	QSet<QString> readTags;
+
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Maximum_Allowed_Activity_Tags")){
+			QString text=xmlReader.readElementText();
+			int mat=text.toInt();
+			if(mat!=1 && mat!=2){
+				xmlReader.raiseError(tr("The number of maximum allowed activity tags in a constraint teacher max activity tags per day from set should be 1 or 2"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			cn->maxTags=mat;
+			xmlReadingLog+="    Read maximum allowed activity tags="+CustomFETString::number(mat)+"\n";
+		}
+		else if(xmlReader.name()==QString("Number_of_Activity_Tags")){
+			QString text=xmlReader.readElementText();
+			nActivityTags=text.toInt();
+			if(nActivityTags<2){
+				xmlReader.raiseError(tr("The number of activity tags in the constraint teacher max activity tags per day from set is lower than two"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Read n activity tags="+CustomFETString::number(nActivityTags)+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			if(readTags.contains(text)){
+				xmlReader.raiseError(tr("Duplicate activity tag %1 found in the constraint teacher max activity tags per day from set").arg(text));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			else{
+				readTags.insert(text);
+			}
+			cn->tagsList.append(text);
+			xmlReadingLog+="    Read activity tag="+cn->tagsList.at(cn->tagsList.count()-1)+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+
+	if(!(nActivityTags==cn->tagsList.count())){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(nActivityTags==cn->tagsList.count());
+
+	return cn;
+}
+
+TimeConstraint* Rules::readTeachersMaxActivityTagsPerDayFromSet(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeachersMaxActivityTagsPerDayFromSet"));
+
+	ConstraintTeachersMaxActivityTagsPerDayFromSet* cn=new ConstraintTeachersMaxActivityTagsPerDayFromSet();
+	cn->tagsList.clear();
+
+	int nActivityTags=-1;
+	QSet<QString> readTags;
+
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Maximum_Allowed_Activity_Tags")){
+			QString text=xmlReader.readElementText();
+			int mat=text.toInt();
+			if(mat!=1 && mat!=2){
+				xmlReader.raiseError(tr("The number of maximum allowed activity tags in a constraint teachers max activity tags per day from set should be 1 or 2"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			cn->maxTags=mat;
+			xmlReadingLog+="    Read maximum allowed activity tags="+CustomFETString::number(mat)+"\n";
+		}
+		else if(xmlReader.name()==QString("Number_of_Activity_Tags")){
+			QString text=xmlReader.readElementText();
+			nActivityTags=text.toInt();
+			if(nActivityTags<2){
+				xmlReader.raiseError(tr("The number of activity tags in the constraint teachers max activity tags per day from set is lower than two"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Read n activity tags="+CustomFETString::number(nActivityTags)+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			if(readTags.contains(text)){
+				xmlReader.raiseError(tr("Duplicate activity tag %1 found in the constraint teachers max activity tags per day from set").arg(text));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			else{
+				readTags.insert(text);
+			}
+			cn->tagsList.append(text);
+			xmlReadingLog+="    Read activity tag="+cn->tagsList.at(cn->tagsList.count()-1)+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+
+	if(!(nActivityTags==cn->tagsList.count())){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(nActivityTags==cn->tagsList.count());
+
+	return cn;
+}
+
+TimeConstraint* Rules::readStudentsSetMaxActivityTagsPerDayFromSet(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintStudentsSetMaxActivityTagsPerDayFromSet"));
+
+	ConstraintStudentsSetMaxActivityTagsPerDayFromSet* cn=new ConstraintStudentsSetMaxActivityTagsPerDayFromSet();
+	cn->tagsList.clear();
+
+	int nActivityTags=-1;
+	QSet<QString> readTags;
+
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Students")){
+			QString text=xmlReader.readElementText();
+			cn->students=text;
+			xmlReadingLog+="    Read students name="+cn->students+"\n";
+		}
+		else if(xmlReader.name()==QString("Maximum_Allowed_Activity_Tags")){
+			QString text=xmlReader.readElementText();
+			int mat=text.toInt();
+			if(mat!=1 && mat!=2){
+				xmlReader.raiseError(tr("The number of maximum allowed activity tags in a constraint students set max activity tags per day from set should be 1 or 2"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			cn->maxTags=mat;
+			xmlReadingLog+="    Read maximum allowed activity tags="+CustomFETString::number(mat)+"\n";
+		}
+		else if(xmlReader.name()==QString("Number_of_Activity_Tags")){
+			QString text=xmlReader.readElementText();
+			nActivityTags=text.toInt();
+			if(nActivityTags<2){
+				xmlReader.raiseError(tr("The number of activity tags in the constraint students set max activity tags per day from set is lower than two"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Read n activity tags="+CustomFETString::number(nActivityTags)+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			if(readTags.contains(text)){
+				xmlReader.raiseError(tr("Duplicate activity tag %1 found in the constraint students set max activity tags per day from set").arg(text));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			else{
+				readTags.insert(text);
+			}
+			cn->tagsList.append(text);
+			xmlReadingLog+="    Read activity tag="+cn->tagsList.at(cn->tagsList.count()-1)+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+
+	if(!(nActivityTags==cn->tagsList.count())){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(nActivityTags==cn->tagsList.count());
+
+	return cn;
+}
+
+TimeConstraint* Rules::readStudentsMaxActivityTagsPerDayFromSet(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintStudentsMaxActivityTagsPerDayFromSet"));
+
+	ConstraintStudentsMaxActivityTagsPerDayFromSet* cn=new ConstraintStudentsMaxActivityTagsPerDayFromSet();
+	cn->tagsList.clear();
+
+	int nActivityTags=-1;
+	QSet<QString> readTags;
+
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Maximum_Allowed_Activity_Tags")){
+			QString text=xmlReader.readElementText();
+			int mat=text.toInt();
+			if(mat!=1 && mat!=2){
+				xmlReader.raiseError(tr("The number of maximum allowed activity tags in a constraint students max activity tags per day from set should be 1 or 2"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			cn->maxTags=mat;
+			xmlReadingLog+="    Read maximum allowed activity tags="+CustomFETString::number(mat)+"\n";
+		}
+		else if(xmlReader.name()==QString("Number_of_Activity_Tags")){
+			QString text=xmlReader.readElementText();
+			nActivityTags=text.toInt();
+			if(nActivityTags<2){
+				xmlReader.raiseError(tr("The number of activity tags in the constraint students max activity tags per day from set is lower than two"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Read n activity tags="+CustomFETString::number(nActivityTags)+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			if(readTags.contains(text)){
+				xmlReader.raiseError(tr("Duplicate activity tag %1 found in the constraint students max activity tags per day from set").arg(text));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			else{
+				readTags.insert(text);
+			}
+			cn->tagsList.append(text);
+			xmlReadingLog+="    Read activity tag="+cn->tagsList.at(cn->tagsList.count()-1)+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+
+	if(!(nActivityTags==cn->tagsList.count())){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(nActivityTags==cn->tagsList.count());
+
+	return cn;
+}
+
+TimeConstraint* Rules::readTeacherMaxActivityTagsPerRealDayFromSet(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeacherMaxActivityTagsPerRealDayFromSet"));
+
+	ConstraintTeacherMaxActivityTagsPerRealDayFromSet* cn=new ConstraintTeacherMaxActivityTagsPerRealDayFromSet();
+	cn->tagsList.clear();
+
+	int nActivityTags=-1;
+	QSet<QString> readTags;
+
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Maximum_Allowed_Activity_Tags")){
+			QString text=xmlReader.readElementText();
+			int mat=text.toInt();
+			if(mat!=1 && mat!=2){
+				xmlReader.raiseError(tr("The number of maximum allowed activity tags in a constraint teacher max activity tags per real day from set should be 1 or 2"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			cn->maxTags=mat;
+			xmlReadingLog+="    Read maximum allowed activity tags="+CustomFETString::number(mat)+"\n";
+		}
+		else if(xmlReader.name()==QString("Number_of_Activity_Tags")){
+			QString text=xmlReader.readElementText();
+			nActivityTags=text.toInt();
+			if(nActivityTags<2){
+				xmlReader.raiseError(tr("The number of activity tags in the constraint teacher max activity tags per real day from set is lower than two"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Read n activity tags="+CustomFETString::number(nActivityTags)+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			if(readTags.contains(text)){
+				xmlReader.raiseError(tr("Duplicate activity tag %1 found in the constraint teacher max activity tags per real day from set").arg(text));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			else{
+				readTags.insert(text);
+			}
+			cn->tagsList.append(text);
+			xmlReadingLog+="    Read activity tag="+cn->tagsList.at(cn->tagsList.count()-1)+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+
+	if(!(nActivityTags==cn->tagsList.count())){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(nActivityTags==cn->tagsList.count());
+
+	return cn;
+}
+
+TimeConstraint* Rules::readTeachersMaxActivityTagsPerRealDayFromSet(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeachersMaxActivityTagsPerRealDayFromSet"));
+
+	ConstraintTeachersMaxActivityTagsPerRealDayFromSet* cn=new ConstraintTeachersMaxActivityTagsPerRealDayFromSet();
+	cn->tagsList.clear();
+
+	int nActivityTags=-1;
+	QSet<QString> readTags;
+
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Maximum_Allowed_Activity_Tags")){
+			QString text=xmlReader.readElementText();
+			int mat=text.toInt();
+			if(mat!=1 && mat!=2){
+				xmlReader.raiseError(tr("The number of maximum allowed activity tags in a constraint teachers max activity tags per real day from set should be 1 or 2"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			cn->maxTags=mat;
+			xmlReadingLog+="    Read maximum allowed activity tags="+CustomFETString::number(mat)+"\n";
+		}
+		else if(xmlReader.name()==QString("Number_of_Activity_Tags")){
+			QString text=xmlReader.readElementText();
+			nActivityTags=text.toInt();
+			if(nActivityTags<2){
+				xmlReader.raiseError(tr("The number of activity tags in the constraint teachers max activity tags per real day from set is lower than two"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Read n activity tags="+CustomFETString::number(nActivityTags)+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			if(readTags.contains(text)){
+				xmlReader.raiseError(tr("Duplicate activity tag %1 found in the constraint teachers max activity tags per real day from set").arg(text));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			else{
+				readTags.insert(text);
+			}
+			cn->tagsList.append(text);
+			xmlReadingLog+="    Read activity tag="+cn->tagsList.at(cn->tagsList.count()-1)+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+
+	if(!(nActivityTags==cn->tagsList.count())){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(nActivityTags==cn->tagsList.count());
+
+	return cn;
+}
+
+TimeConstraint* Rules::readStudentsSetMaxActivityTagsPerRealDayFromSet(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet"));
+
+	ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet* cn=new ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet();
+	cn->tagsList.clear();
+
+	int nActivityTags=-1;
+	QSet<QString> readTags;
+
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Students")){
+			QString text=xmlReader.readElementText();
+			cn->students=text;
+			xmlReadingLog+="    Read students name="+cn->students+"\n";
+		}
+		else if(xmlReader.name()==QString("Maximum_Allowed_Activity_Tags")){
+			QString text=xmlReader.readElementText();
+			int mat=text.toInt();
+			if(mat!=1 && mat!=2){
+				xmlReader.raiseError(tr("The number of maximum allowed activity tags in a constraint students set max activity tags per real day from set should be 1 or 2"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			cn->maxTags=mat;
+			xmlReadingLog+="    Read maximum allowed activity tags="+CustomFETString::number(mat)+"\n";
+		}
+		else if(xmlReader.name()==QString("Number_of_Activity_Tags")){
+			QString text=xmlReader.readElementText();
+			nActivityTags=text.toInt();
+			if(nActivityTags<2){
+				xmlReader.raiseError(tr("The number of activity tags in the constraint students set max activity tags per real day from set is lower than two"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Read n activity tags="+CustomFETString::number(nActivityTags)+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			if(readTags.contains(text)){
+				xmlReader.raiseError(tr("Duplicate activity tag %1 found in the constraint students set max activity tags per real day from set").arg(text));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			else{
+				readTags.insert(text);
+			}
+			cn->tagsList.append(text);
+			xmlReadingLog+="    Read activity tag="+cn->tagsList.at(cn->tagsList.count()-1)+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+
+	if(!(nActivityTags==cn->tagsList.count())){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(nActivityTags==cn->tagsList.count());
+
+	return cn;
+}
+
+TimeConstraint* Rules::readStudentsMaxActivityTagsPerRealDayFromSet(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintStudentsMaxActivityTagsPerRealDayFromSet"));
+
+	ConstraintStudentsMaxActivityTagsPerRealDayFromSet* cn=new ConstraintStudentsMaxActivityTagsPerRealDayFromSet();
+	cn->tagsList.clear();
+
+	int nActivityTags=-1;
+	QSet<QString> readTags;
+
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Maximum_Allowed_Activity_Tags")){
+			QString text=xmlReader.readElementText();
+			int mat=text.toInt();
+			if(mat!=1 && mat!=2){
+				xmlReader.raiseError(tr("The number of maximum allowed activity tags in a constraint students max activity tags per real day from set should be 1 or 2"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			cn->maxTags=mat;
+			xmlReadingLog+="    Read maximum allowed activity tags="+CustomFETString::number(mat)+"\n";
+		}
+		else if(xmlReader.name()==QString("Number_of_Activity_Tags")){
+			QString text=xmlReader.readElementText();
+			nActivityTags=text.toInt();
+			if(nActivityTags<2){
+				xmlReader.raiseError(tr("The number of activity tags in the constraint students max activity tags per real day from set is lower than two"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Read n activity tags="+CustomFETString::number(nActivityTags)+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			if(readTags.contains(text)){
+				xmlReader.raiseError(tr("Duplicate activity tag %1 found in the constraint students max activity tags per real day from set").arg(text));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			else{
+				readTags.insert(text);
+			}
+			cn->tagsList.append(text);
+			xmlReadingLog+="    Read activity tag="+cn->tagsList.at(cn->tagsList.count()-1)+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+
+	if(!(nActivityTags==cn->tagsList.count())){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(nActivityTags==cn->tagsList.count());
+
 	return cn;
 }
 
@@ -36505,6 +37542,77 @@ TimeConstraint* Rules::readStudentsSetMaxGapsPerWeekForRealDays(QXmlStreamReader
 			QString text=xmlReader.readElementText();
 			cn->students=text;
 			xmlReadingLog+="    Read students name="+cn->students+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
+TimeConstraint* Rules::readTeacherNoTwoConsecutiveDays(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeacherNoTwoConsecutiveDays"));
+	
+	ConstraintTeacherNoTwoConsecutiveDays* cn=new ConstraintTeacherNoTwoConsecutiveDays();
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
+TimeConstraint* Rules::readTeachersNoTwoConsecutiveDays(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeachersNoTwoConsecutiveDays"));
+	
+	ConstraintTeachersNoTwoConsecutiveDays* cn=new ConstraintTeachersNoTwoConsecutiveDays();
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
 		}
 		else{
 			unrecognizedXmlTags.append(xmlReader.name().toString());

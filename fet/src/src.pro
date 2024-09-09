@@ -266,6 +266,13 @@ SOURCES += \
 	interface/addconstraintteachermaxdaysperweekform.cpp \
 	interface/modifyconstraintteachermaxdaysperweekform.cpp \
 	\
+	interface/constraintteachernotwoconsecutivedaysform.cpp \
+	interface/addconstraintteachernotwoconsecutivedaysform.cpp \
+	interface/modifyconstraintteachernotwoconsecutivedaysform.cpp \
+	interface/constraintteachersnotwoconsecutivedaysform.cpp \
+	interface/addconstraintteachersnotwoconsecutivedaysform.cpp \
+	interface/modifyconstraintteachersnotwoconsecutivedaysform.cpp \
+	\
 	interface/constraintteachermaxthreeconsecutivedaysform.cpp \
 	interface/addconstraintteachermaxthreeconsecutivedaysform.cpp \
 	interface/modifyconstraintteachermaxthreeconsecutivedaysform.cpp \
@@ -967,33 +974,33 @@ SOURCES += \
 	interface/addconstraintstudentsminhoursperafternoonform.cpp \
 	interface/modifyconstraintstudentsminhoursperafternoonform.cpp \
 	\
-	interface/constraintteachermaxtwoactivitytagsperdayfromn1n2n3form.cpp \
-	interface/addconstraintteachermaxtwoactivitytagsperdayfromn1n2n3form.cpp \
-	interface/modifyconstraintteachermaxtwoactivitytagsperdayfromn1n2n3form.cpp \
-	interface/constraintteachersmaxtwoactivitytagsperdayfromn1n2n3form.cpp \
-	interface/addconstraintteachersmaxtwoactivitytagsperdayfromn1n2n3form.cpp \
-	interface/modifyconstraintteachersmaxtwoactivitytagsperdayfromn1n2n3form.cpp \
+	interface/constraintteachermaxactivitytagsperdayfromsetform.cpp \
+	interface/addconstraintteachermaxactivitytagsperdayfromsetform.cpp \
+	interface/modifyconstraintteachermaxactivitytagsperdayfromsetform.cpp \
+	interface/constraintteachersmaxactivitytagsperdayfromsetform.cpp \
+	interface/addconstraintteachersmaxactivitytagsperdayfromsetform.cpp \
+	interface/modifyconstraintteachersmaxactivitytagsperdayfromsetform.cpp \
 	\
-	interface/constraintstudentssetmaxtwoactivitytagsperdayfromn1n2n3form.cpp \
-	interface/addconstraintstudentssetmaxtwoactivitytagsperdayfromn1n2n3form.cpp \
-	interface/modifyconstraintstudentssetmaxtwoactivitytagsperdayfromn1n2n3form.cpp \
-	interface/constraintstudentsmaxtwoactivitytagsperdayfromn1n2n3form.cpp \
-	interface/addconstraintstudentsmaxtwoactivitytagsperdayfromn1n2n3form.cpp \
-	interface/modifyconstraintstudentsmaxtwoactivitytagsperdayfromn1n2n3form.cpp \
+	interface/constraintstudentssetmaxactivitytagsperdayfromsetform.cpp \
+	interface/addconstraintstudentssetmaxactivitytagsperdayfromsetform.cpp \
+	interface/modifyconstraintstudentssetmaxactivitytagsperdayfromsetform.cpp \
+	interface/constraintstudentsmaxactivitytagsperdayfromsetform.cpp \
+	interface/addconstraintstudentsmaxactivitytagsperdayfromsetform.cpp \
+	interface/modifyconstraintstudentsmaxactivitytagsperdayfromsetform.cpp \
 	\
-	interface/constraintteachermaxtwoactivitytagsperrealdayfromn1n2n3form.cpp \
-	interface/addconstraintteachermaxtwoactivitytagsperrealdayfromn1n2n3form.cpp \
-	interface/modifyconstraintteachermaxtwoactivitytagsperrealdayfromn1n2n3form.cpp \
-	interface/constraintteachersmaxtwoactivitytagsperrealdayfromn1n2n3form.cpp \
-	interface/addconstraintteachersmaxtwoactivitytagsperrealdayfromn1n2n3form.cpp \
-	interface/modifyconstraintteachersmaxtwoactivitytagsperrealdayfromn1n2n3form.cpp \
+	interface/constraintteachermaxactivitytagsperrealdayfromsetform.cpp \
+	interface/addconstraintteachermaxactivitytagsperrealdayfromsetform.cpp \
+	interface/modifyconstraintteachermaxactivitytagsperrealdayfromsetform.cpp \
+	interface/constraintteachersmaxactivitytagsperrealdayfromsetform.cpp \
+	interface/addconstraintteachersmaxactivitytagsperrealdayfromsetform.cpp \
+	interface/modifyconstraintteachersmaxactivitytagsperrealdayfromsetform.cpp \
 	\
-	interface/constraintstudentssetmaxtwoactivitytagsperrealdayfromn1n2n3form.cpp \
-	interface/addconstraintstudentssetmaxtwoactivitytagsperrealdayfromn1n2n3form.cpp \
-	interface/modifyconstraintstudentssetmaxtwoactivitytagsperrealdayfromn1n2n3form.cpp \
-	interface/constraintstudentsmaxtwoactivitytagsperrealdayfromn1n2n3form.cpp \
-	interface/addconstraintstudentsmaxtwoactivitytagsperrealdayfromn1n2n3form.cpp \
-	interface/modifyconstraintstudentsmaxtwoactivitytagsperrealdayfromn1n2n3form.cpp \
+	interface/constraintstudentssetmaxactivitytagsperrealdayfromsetform.cpp \
+	interface/addconstraintstudentssetmaxactivitytagsperrealdayfromsetform.cpp \
+	interface/modifyconstraintstudentssetmaxactivitytagsperrealdayfromsetform.cpp \
+	interface/constraintstudentsmaxactivitytagsperrealdayfromsetform.cpp \
+	interface/addconstraintstudentsmaxactivitytagsperrealdayfromsetform.cpp \
+	interface/modifyconstraintstudentsmaxactivitytagsperrealdayfromsetform.cpp \
 	\
 	interface/constraintteacherminrestinghoursbetweenmorningandafternoonform.cpp \
 	interface/addconstraintteacherminrestinghoursbetweenmorningandafternoonform.cpp \
@@ -1008,8 +1015,6 @@ SOURCES += \
 	interface/constraintstudentsminrestinghoursbetweenmorningandafternoonform.cpp \
 	interface/addconstraintstudentsminrestinghoursbetweenmorningandafternoonform.cpp \
 	interface/modifyconstraintstudentsminrestinghoursbetweenmorningandafternoonform.cpp \
-	\
-	interface/helponn1n2n3.cpp \
 	\
 	interface/constraintteachersmaxhoursdailyrealdaysform.cpp \
 	interface/addconstraintteachersmaxhoursdailyrealdaysform.cpp \
@@ -1435,6 +1440,13 @@ HEADERS += \
 	interface/constraintteachermaxdaysperweekform.h \
 	interface/addconstraintteachermaxdaysperweekform.h \
 	interface/modifyconstraintteachermaxdaysperweekform.h \
+	\
+	interface/constraintteachernotwoconsecutivedaysform.h \
+	interface/addconstraintteachernotwoconsecutivedaysform.h \
+	interface/modifyconstraintteachernotwoconsecutivedaysform.h \
+	interface/constraintteachersnotwoconsecutivedaysform.h \
+	interface/addconstraintteachersnotwoconsecutivedaysform.h \
+	interface/modifyconstraintteachersnotwoconsecutivedaysform.h \
 	\
 	interface/constraintteachermaxthreeconsecutivedaysform.h \
 	interface/addconstraintteachermaxthreeconsecutivedaysform.h \
@@ -2140,33 +2152,33 @@ HEADERS += \
 	interface/addconstraintstudentsminhoursperafternoonform.h \
 	interface/modifyconstraintstudentsminhoursperafternoonform.h \
 	\
-	interface/constraintteachermaxtwoactivitytagsperdayfromn1n2n3form.h \
-	interface/addconstraintteachermaxtwoactivitytagsperdayfromn1n2n3form.h \
-	interface/modifyconstraintteachermaxtwoactivitytagsperdayfromn1n2n3form.h \
-	interface/constraintteachersmaxtwoactivitytagsperdayfromn1n2n3form.h \
-	interface/addconstraintteachersmaxtwoactivitytagsperdayfromn1n2n3form.h \
-	interface/modifyconstraintteachersmaxtwoactivitytagsperdayfromn1n2n3form.h \
+	interface/constraintteachermaxactivitytagsperdayfromsetform.h \
+	interface/addconstraintteachermaxactivitytagsperdayfromsetform.h \
+	interface/modifyconstraintteachermaxactivitytagsperdayfromsetform.h \
+	interface/constraintteachersmaxactivitytagsperdayfromsetform.h \
+	interface/addconstraintteachersmaxactivitytagsperdayfromsetform.h \
+	interface/modifyconstraintteachersmaxactivitytagsperdayfromsetform.h \
 	\
-	interface/constraintstudentssetmaxtwoactivitytagsperdayfromn1n2n3form.h \
-	interface/addconstraintstudentssetmaxtwoactivitytagsperdayfromn1n2n3form.h \
-	interface/modifyconstraintstudentssetmaxtwoactivitytagsperdayfromn1n2n3form.h \
-	interface/constraintstudentsmaxtwoactivitytagsperdayfromn1n2n3form.h \
-	interface/addconstraintstudentsmaxtwoactivitytagsperdayfromn1n2n3form.h \
-	interface/modifyconstraintstudentsmaxtwoactivitytagsperdayfromn1n2n3form.h \
+	interface/constraintstudentssetmaxactivitytagsperdayfromsetform.h \
+	interface/addconstraintstudentssetmaxactivitytagsperdayfromsetform.h \
+	interface/modifyconstraintstudentssetmaxactivitytagsperdayfromsetform.h \
+	interface/constraintstudentsmaxactivitytagsperdayfromsetform.h \
+	interface/addconstraintstudentsmaxactivitytagsperdayfromsetform.h \
+	interface/modifyconstraintstudentsmaxactivitytagsperdayfromsetform.h \
 	\
-	interface/constraintteachermaxtwoactivitytagsperrealdayfromn1n2n3form.h \
-	interface/addconstraintteachermaxtwoactivitytagsperrealdayfromn1n2n3form.h \
-	interface/modifyconstraintteachermaxtwoactivitytagsperrealdayfromn1n2n3form.h \
-	interface/constraintteachersmaxtwoactivitytagsperrealdayfromn1n2n3form.h \
-	interface/addconstraintteachersmaxtwoactivitytagsperrealdayfromn1n2n3form.h \
-	interface/modifyconstraintteachersmaxtwoactivitytagsperrealdayfromn1n2n3form.h \
+	interface/constraintteachermaxactivitytagsperrealdayfromsetform.h \
+	interface/addconstraintteachermaxactivitytagsperrealdayfromsetform.h \
+	interface/modifyconstraintteachermaxactivitytagsperrealdayfromsetform.h \
+	interface/constraintteachersmaxactivitytagsperrealdayfromsetform.h \
+	interface/addconstraintteachersmaxactivitytagsperrealdayfromsetform.h \
+	interface/modifyconstraintteachersmaxactivitytagsperrealdayfromsetform.h \
 	\
-	interface/constraintstudentssetmaxtwoactivitytagsperrealdayfromn1n2n3form.h \
-	interface/addconstraintstudentssetmaxtwoactivitytagsperrealdayfromn1n2n3form.h \
-	interface/modifyconstraintstudentssetmaxtwoactivitytagsperrealdayfromn1n2n3form.h \
-	interface/constraintstudentsmaxtwoactivitytagsperrealdayfromn1n2n3form.h \
-	interface/addconstraintstudentsmaxtwoactivitytagsperrealdayfromn1n2n3form.h \
-	interface/modifyconstraintstudentsmaxtwoactivitytagsperrealdayfromn1n2n3form.h \
+	interface/constraintstudentssetmaxactivitytagsperrealdayfromsetform.h \
+	interface/addconstraintstudentssetmaxactivitytagsperrealdayfromsetform.h \
+	interface/modifyconstraintstudentssetmaxactivitytagsperrealdayfromsetform.h \
+	interface/constraintstudentsmaxactivitytagsperrealdayfromsetform.h \
+	interface/addconstraintstudentsmaxactivitytagsperrealdayfromsetform.h \
+	interface/modifyconstraintstudentsmaxactivitytagsperrealdayfromsetform.h \
 	\
 	interface/constraintteacherminrestinghoursbetweenmorningandafternoonform.h \
 	interface/addconstraintteacherminrestinghoursbetweenmorningandafternoonform.h \
@@ -2181,8 +2193,6 @@ HEADERS += \
 	interface/constraintstudentsminrestinghoursbetweenmorningandafternoonform.h \
 	interface/addconstraintstudentsminrestinghoursbetweenmorningandafternoonform.h \
 	interface/modifyconstraintstudentsminrestinghoursbetweenmorningandafternoonform.h \
-	\
-	interface/helponn1n2n3.h \
 	\
 	interface/constraintteachersmaxhoursdailyrealdaysform.h \
 	interface/addconstraintteachersmaxhoursdailyrealdaysform.h \
@@ -2599,6 +2609,13 @@ FORMS += \
 	interface/constraintteachermaxdaysperweekform_template.ui \
 	interface/addconstraintteachermaxdaysperweekform_template.ui \
 	interface/modifyconstraintteachermaxdaysperweekform_template.ui \
+	\
+	interface/constraintteachernotwoconsecutivedaysform_template.ui \
+	interface/addconstraintteachernotwoconsecutivedaysform_template.ui \
+	interface/modifyconstraintteachernotwoconsecutivedaysform_template.ui \
+	interface/constraintteachersnotwoconsecutivedaysform_template.ui \
+	interface/addconstraintteachersnotwoconsecutivedaysform_template.ui \
+	interface/modifyconstraintteachersnotwoconsecutivedaysform_template.ui \
 	\
 	interface/constraintteachermaxthreeconsecutivedaysform_template.ui \
 	interface/addconstraintteachermaxthreeconsecutivedaysform_template.ui \
@@ -3276,33 +3293,33 @@ FORMS += \
 	interface/addconstraintstudentsminhoursperafternoonform_template.ui \
 	interface/modifyconstraintstudentsminhoursperafternoonform_template.ui \
 	\
-	interface/constraintteachermaxtwoactivitytagsperdayfromn1n2n3form_template.ui \
-	interface/addconstraintteachermaxtwoactivitytagsperdayfromn1n2n3form_template.ui \
-	interface/modifyconstraintteachermaxtwoactivitytagsperdayfromn1n2n3form_template.ui \
-	interface/constraintteachersmaxtwoactivitytagsperdayfromn1n2n3form_template.ui \
-	interface/addconstraintteachersmaxtwoactivitytagsperdayfromn1n2n3form_template.ui \
-	interface/modifyconstraintteachersmaxtwoactivitytagsperdayfromn1n2n3form_template.ui \
+	interface/constraintteachermaxactivitytagsperdayfromsetform_template.ui \
+	interface/addconstraintteachermaxactivitytagsperdayfromsetform_template.ui \
+	interface/modifyconstraintteachermaxactivitytagsperdayfromsetform_template.ui \
+	interface/constraintteachersmaxactivitytagsperdayfromsetform_template.ui \
+	interface/addconstraintteachersmaxactivitytagsperdayfromsetform_template.ui \
+	interface/modifyconstraintteachersmaxactivitytagsperdayfromsetform_template.ui \
 	\
-	interface/constraintstudentssetmaxtwoactivitytagsperdayfromn1n2n3form_template.ui \
-	interface/addconstraintstudentssetmaxtwoactivitytagsperdayfromn1n2n3form_template.ui \
-	interface/modifyconstraintstudentssetmaxtwoactivitytagsperdayfromn1n2n3form_template.ui \
-	interface/constraintstudentsmaxtwoactivitytagsperdayfromn1n2n3form_template.ui \
-	interface/addconstraintstudentsmaxtwoactivitytagsperdayfromn1n2n3form_template.ui \
-	interface/modifyconstraintstudentsmaxtwoactivitytagsperdayfromn1n2n3form_template.ui \
+	interface/constraintstudentssetmaxactivitytagsperdayfromsetform_template.ui \
+	interface/addconstraintstudentssetmaxactivitytagsperdayfromsetform_template.ui \
+	interface/modifyconstraintstudentssetmaxactivitytagsperdayfromsetform_template.ui \
+	interface/constraintstudentsmaxactivitytagsperdayfromsetform_template.ui \
+	interface/addconstraintstudentsmaxactivitytagsperdayfromsetform_template.ui \
+	interface/modifyconstraintstudentsmaxactivitytagsperdayfromsetform_template.ui \
 	\
-	interface/constraintteachermaxtwoactivitytagsperrealdayfromn1n2n3form_template.ui \
-	interface/addconstraintteachermaxtwoactivitytagsperrealdayfromn1n2n3form_template.ui \
-	interface/modifyconstraintteachermaxtwoactivitytagsperrealdayfromn1n2n3form_template.ui \
-	interface/constraintteachersmaxtwoactivitytagsperrealdayfromn1n2n3form_template.ui \
-	interface/addconstraintteachersmaxtwoactivitytagsperrealdayfromn1n2n3form_template.ui \
-	interface/modifyconstraintteachersmaxtwoactivitytagsperrealdayfromn1n2n3form_template.ui \
+	interface/constraintteachermaxactivitytagsperrealdayfromsetform_template.ui \
+	interface/addconstraintteachermaxactivitytagsperrealdayfromsetform_template.ui \
+	interface/modifyconstraintteachermaxactivitytagsperrealdayfromsetform_template.ui \
+	interface/constraintteachersmaxactivitytagsperrealdayfromsetform_template.ui \
+	interface/addconstraintteachersmaxactivitytagsperrealdayfromsetform_template.ui \
+	interface/modifyconstraintteachersmaxactivitytagsperrealdayfromsetform_template.ui \
 	\
-	interface/constraintstudentssetmaxtwoactivitytagsperrealdayfromn1n2n3form_template.ui \
-	interface/addconstraintstudentssetmaxtwoactivitytagsperrealdayfromn1n2n3form_template.ui \
-	interface/modifyconstraintstudentssetmaxtwoactivitytagsperrealdayfromn1n2n3form_template.ui \
-	interface/constraintstudentsmaxtwoactivitytagsperrealdayfromn1n2n3form_template.ui \
-	interface/addconstraintstudentsmaxtwoactivitytagsperrealdayfromn1n2n3form_template.ui \
-	interface/modifyconstraintstudentsmaxtwoactivitytagsperrealdayfromn1n2n3form_template.ui \
+	interface/constraintstudentssetmaxactivitytagsperrealdayfromsetform_template.ui \
+	interface/addconstraintstudentssetmaxactivitytagsperrealdayfromsetform_template.ui \
+	interface/modifyconstraintstudentssetmaxactivitytagsperrealdayfromsetform_template.ui \
+	interface/constraintstudentsmaxactivitytagsperrealdayfromsetform_template.ui \
+	interface/addconstraintstudentsmaxactivitytagsperrealdayfromsetform_template.ui \
+	interface/modifyconstraintstudentsmaxactivitytagsperrealdayfromsetform_template.ui \
 	\
 	interface/constraintteacherminrestinghoursbetweenmorningandafternoonform_template.ui \
 	interface/addconstraintteacherminrestinghoursbetweenmorningandafternoonform_template.ui \

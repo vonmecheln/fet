@@ -831,6 +831,9 @@ private:
 	TimeConstraint* readTeacherNotAvailableTimes(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readTeacherMaxDaysPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
+	TimeConstraint* readTeacherNoTwoConsecutiveDays(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersNoTwoConsecutiveDays(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
 	TimeConstraint* readTeacherMaxThreeConsecutiveDays(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readTeachersMaxThreeConsecutiveDays(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
@@ -1042,6 +1045,18 @@ private:
 
 	TimeConstraint* readStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readTeacherMaxActivityTagsPerDayFromSet(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMaxActivityTagsPerDayFromSet(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readStudentsSetMaxActivityTagsPerDayFromSet(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsMaxActivityTagsPerDayFromSet(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readTeacherMaxActivityTagsPerRealDayFromSet(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMaxActivityTagsPerRealDayFromSet(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readStudentsSetMaxActivityTagsPerRealDayFromSet(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsMaxActivityTagsPerRealDayFromSet(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
 	TimeConstraint* readTeacherMinRealDaysPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readTeachersMinRealDaysPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);

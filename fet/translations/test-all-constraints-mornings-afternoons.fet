@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="6.22.0">
+<fet version="6.25.0">
 
 <Mode>Mornings_Afternoons</Mode>
 
@@ -157,6 +157,27 @@
 </Activity_Tag>
 <Activity_Tag>
 	<Name>at2</Name>
+	<Long_Name></Long_Name>
+	<Code></Code>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>at3</Name>
+	<Long_Name></Long_Name>
+	<Code></Code>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>at4</Name>
+	<Long_Name></Long_Name>
+	<Code></Code>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>at5</Name>
 	<Long_Name></Long_Name>
 	<Code></Code>
 	<Printable>true</Printable>
@@ -505,12 +526,17 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintTeacherMaxHoursDailyRealDays>
-<ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3>
+<ConstraintTeacherMaxActivityTagsPerDayFromSet>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher>t1</Teacher>
+	<Maximum_Allowed_Activity_Tags>2</Maximum_Allowed_Activity_Tags>
+	<Number_of_Activity_Tags>3</Number_of_Activity_Tags>
+	<Activity_Tag>at3</Activity_Tag>
+	<Activity_Tag>at4</Activity_Tag>
+	<Activity_Tag>at5</Activity_Tag>
 	<Active>true</Active>
 	<Comments></Comments>
-</ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3>
+</ConstraintTeacherMaxActivityTagsPerDayFromSet>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher>t1</Teacher>
@@ -725,11 +751,16 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintTeachersActivityTagMaxHoursDailyRealDays>
-<ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3>
+<ConstraintTeachersMaxActivityTagsPerDayFromSet>
 	<Weight_Percentage>100</Weight_Percentage>
+	<Maximum_Allowed_Activity_Tags>2</Maximum_Allowed_Activity_Tags>
+	<Number_of_Activity_Tags>3</Number_of_Activity_Tags>
+	<Activity_Tag>at3</Activity_Tag>
+	<Activity_Tag>at4</Activity_Tag>
+	<Activity_Tag>at5</Activity_Tag>
 	<Active>true</Active>
 	<Comments></Comments>
-</ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3>
+</ConstraintTeachersMaxActivityTagsPerDayFromSet>
 <ConstraintTeachersMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
@@ -2528,39 +2559,69 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintMinHalfDaysBetweenActivities>
-<ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3>
+<ConstraintStudentsSetMaxActivityTagsPerDayFromSet>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>y1</Students>
+	<Maximum_Allowed_Activity_Tags>2</Maximum_Allowed_Activity_Tags>
+	<Number_of_Activity_Tags>3</Number_of_Activity_Tags>
+	<Activity_Tag>at3</Activity_Tag>
+	<Activity_Tag>at4</Activity_Tag>
+	<Activity_Tag>at5</Activity_Tag>
 	<Active>true</Active>
 	<Comments></Comments>
-</ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3>
-<ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3>
+</ConstraintStudentsSetMaxActivityTagsPerDayFromSet>
+<ConstraintStudentsMaxActivityTagsPerDayFromSet>
 	<Weight_Percentage>100</Weight_Percentage>
+	<Maximum_Allowed_Activity_Tags>2</Maximum_Allowed_Activity_Tags>
+	<Number_of_Activity_Tags>3</Number_of_Activity_Tags>
+	<Activity_Tag>at3</Activity_Tag>
+	<Activity_Tag>at4</Activity_Tag>
+	<Activity_Tag>at5</Activity_Tag>
 	<Active>true</Active>
 	<Comments></Comments>
-</ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3>
-<ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3>
+</ConstraintStudentsMaxActivityTagsPerDayFromSet>
+<ConstraintTeacherMaxActivityTagsPerRealDayFromSet>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher>t2</Teacher>
+	<Maximum_Allowed_Activity_Tags>2</Maximum_Allowed_Activity_Tags>
+	<Number_of_Activity_Tags>3</Number_of_Activity_Tags>
+	<Activity_Tag>at3</Activity_Tag>
+	<Activity_Tag>at4</Activity_Tag>
+	<Activity_Tag>at5</Activity_Tag>
 	<Active>true</Active>
 	<Comments></Comments>
-</ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3>
-<ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3>
+</ConstraintTeacherMaxActivityTagsPerRealDayFromSet>
+<ConstraintTeachersMaxActivityTagsPerRealDayFromSet>
 	<Weight_Percentage>100</Weight_Percentage>
+	<Maximum_Allowed_Activity_Tags>2</Maximum_Allowed_Activity_Tags>
+	<Number_of_Activity_Tags>3</Number_of_Activity_Tags>
+	<Activity_Tag>at3</Activity_Tag>
+	<Activity_Tag>at4</Activity_Tag>
+	<Activity_Tag>at5</Activity_Tag>
 	<Active>true</Active>
 	<Comments></Comments>
-</ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3>
-<ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3>
+</ConstraintTeachersMaxActivityTagsPerRealDayFromSet>
+<ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>y1</Students>
+	<Maximum_Allowed_Activity_Tags>2</Maximum_Allowed_Activity_Tags>
+	<Number_of_Activity_Tags>3</Number_of_Activity_Tags>
+	<Activity_Tag>at3</Activity_Tag>
+	<Activity_Tag>at4</Activity_Tag>
+	<Activity_Tag>at5</Activity_Tag>
 	<Active>true</Active>
 	<Comments></Comments>
-</ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3>
-<ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3>
+</ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet>
+<ConstraintStudentsMaxActivityTagsPerRealDayFromSet>
 	<Weight_Percentage>100</Weight_Percentage>
+	<Maximum_Allowed_Activity_Tags>2</Maximum_Allowed_Activity_Tags>
+	<Number_of_Activity_Tags>3</Number_of_Activity_Tags>
+	<Activity_Tag>at3</Activity_Tag>
+	<Activity_Tag>at4</Activity_Tag>
+	<Activity_Tag>at5</Activity_Tag>
 	<Active>true</Active>
 	<Comments></Comments>
-</ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3>
+</ConstraintStudentsMaxActivityTagsPerRealDayFromSet>
 <ConstraintTeacherMinDaysPerWeek>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher>t1</Teacher>
@@ -2833,6 +2894,17 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon>
+<ConstraintTeacherNoTwoConsecutiveDays>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t1</Teacher>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNoTwoConsecutiveDays>
+<ConstraintTeachersNoTwoConsecutiveDays>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersNoTwoConsecutiveDays>
 </Time_Constraints_List>
 
 <Space_Constraints_List>

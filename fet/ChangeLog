@@ -2913,7 +2913,7 @@ Version 6.23.0
 	Benahmed Abdelkrim.
 	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares.
 ---------------------------------------------------------------------------------
-Versions 6.24.0 - 6.24.v
+Versions 6.24.0 - 6.24.1
 - Version 6.24.0
 	- Unlocked the imperfect constraints and the advanced features and removed their usage warnings (suggested by more users in the past).
 	They are working very well in practice and the menu locks and warnings are not needed. The exception is the advanced 'Group activities
@@ -2928,3 +2928,10 @@ Versions 6.24.0 - 6.24.v
 	- After generating a new timetable, if some timetable view days horizontal/vertical dialogs were already opened, they will remember their selected
 	teacher/students set/room (suggested by Kamel Ben on Facebook). Also, in all the timetable view dialogs, the current cell will be remembered
 	(but not the whole selection of cells, if there are more cell selected).
+---------------------------------------------------------------------------------
+Versions 6.25.0 - 6.25.v
+- Version 6.25.0
+	- Added the constraints teacher(s)/students (set) max activity tags from a set per day/real day (suggested by Thai Chi Phuong and Vũ Ngọc Thành).
+	This constraint accepts as the maximum number of tags 1 or 2, and incorporates the old-style constraints teacher(s)/students (set) max two
+	activity tags per day/real day from N1, N2, N3.
+	- Added the constraints teacher(s) no two consecutive days (suggested by Khelifi Fouad Mohssen).

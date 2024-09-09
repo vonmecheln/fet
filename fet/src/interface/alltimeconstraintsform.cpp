@@ -220,17 +220,17 @@
 #include "modifyconstraintteacherminafternoonsperweekform.h"
 #include "modifyconstraintteachersminafternoonsperweekform.h"
 
-#include "modifyconstraintteachermaxtwoactivitytagsperdayfromn1n2n3form.h"
-#include "modifyconstraintteachersmaxtwoactivitytagsperdayfromn1n2n3form.h"
+#include "modifyconstraintteachermaxactivitytagsperdayfromsetform.h"
+#include "modifyconstraintteachersmaxactivitytagsperdayfromsetform.h"
 
-#include "modifyconstraintstudentssetmaxtwoactivitytagsperdayfromn1n2n3form.h"
-#include "modifyconstraintstudentsmaxtwoactivitytagsperdayfromn1n2n3form.h"
+#include "modifyconstraintstudentssetmaxactivitytagsperdayfromsetform.h"
+#include "modifyconstraintstudentsmaxactivitytagsperdayfromsetform.h"
 
-#include "modifyconstraintteachermaxtwoactivitytagsperrealdayfromn1n2n3form.h"
-#include "modifyconstraintteachersmaxtwoactivitytagsperrealdayfromn1n2n3form.h"
+#include "modifyconstraintteachermaxactivitytagsperrealdayfromsetform.h"
+#include "modifyconstraintteachersmaxactivitytagsperrealdayfromsetform.h"
 
-#include "modifyconstraintstudentssetmaxtwoactivitytagsperrealdayfromn1n2n3form.h"
-#include "modifyconstraintstudentsmaxtwoactivitytagsperrealdayfromn1n2n3form.h"
+#include "modifyconstraintstudentssetmaxactivitytagsperrealdayfromsetform.h"
+#include "modifyconstraintstudentsmaxactivitytagsperrealdayfromsetform.h"
 
 #include "modifyconstraintteachersactivitytagmaxhoursdailyrealdaysform.h"
 #include "modifyconstraintteacheractivitytagmaxhoursdailyrealdaysform.h"
@@ -300,6 +300,9 @@
 #include "modifyconstraintteachersminrestinghoursbetweenmorningandafternoonform.h"
 #include "modifyconstraintstudentssetminrestinghoursbetweenmorningandafternoonform.h"
 #include "modifyconstraintstudentsminrestinghoursbetweenmorningandafternoonform.h"
+
+#include "modifyconstraintteachernotwoconsecutivedaysform.h"
+#include "modifyconstraintteachersnotwoconsecutivedaysform.h"
 
 #include "modifyconstraintteachermaxthreeconsecutivedaysform.h"
 #include "modifyconstraintteachersmaxthreeconsecutivedaysform.h"
@@ -1509,17 +1512,17 @@ void AllTimeConstraintsForm::modifyConstraint()
 				break;
 			}
 		//93
-		case CONSTRAINT_TEACHER_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3:
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
 			{
-				ModifyConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3Form form(this, (ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3*)ctr);
+				ModifyConstraintTeacherMaxActivityTagsPerDayFromSetForm form(this, (ConstraintTeacherMaxActivityTagsPerDayFromSet*)ctr);
 				setParentAndOtherThings(&form, this);
 				form.exec();
 				break;
 			}
 		//94
-		case CONSTRAINT_TEACHERS_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3:
+		case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
 			{
-				ModifyConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3Form form(this, (ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3*)ctr);
+				ModifyConstraintTeachersMaxActivityTagsPerDayFromSetForm form(this, (ConstraintTeachersMaxActivityTagsPerDayFromSet*)ctr);
 				setParentAndOtherThings(&form, this);
 				form.exec();
 				break;
@@ -2283,49 +2286,49 @@ void AllTimeConstraintsForm::modifyConstraint()
 				break;
 			}
 		//188
-		case CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3:
+		case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
 			{
-				ModifyConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3Form form(this, (ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3*)ctr);
+				ModifyConstraintStudentsSetMaxActivityTagsPerDayFromSetForm form(this, (ConstraintStudentsSetMaxActivityTagsPerDayFromSet*)ctr);
 				setParentAndOtherThings(&form, this);
 				form.exec();
 				break;
 			}
 		//189
-		case CONSTRAINT_STUDENTS_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3:
+		case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
 			{
-				ModifyConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3Form form(this, (ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3*)ctr);
+				ModifyConstraintStudentsMaxActivityTagsPerDayFromSetForm form(this, (ConstraintStudentsMaxActivityTagsPerDayFromSet*)ctr);
 				setParentAndOtherThings(&form, this);
 				form.exec();
 				break;
 			}
 		//190
-		case CONSTRAINT_TEACHER_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3:
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
 			{
-				ModifyConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3Form form(this, (ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3*)ctr);
+				ModifyConstraintTeacherMaxActivityTagsPerRealDayFromSetForm form(this, (ConstraintTeacherMaxActivityTagsPerRealDayFromSet*)ctr);
 				setParentAndOtherThings(&form, this);
 				form.exec();
 				break;
 			}
 		//191
-		case CONSTRAINT_TEACHERS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3:
+		case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
 			{
-				ModifyConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3Form form(this, (ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3*)ctr);
+				ModifyConstraintTeachersMaxActivityTagsPerRealDayFromSetForm form(this, (ConstraintTeachersMaxActivityTagsPerRealDayFromSet*)ctr);
 				setParentAndOtherThings(&form, this);
 				form.exec();
 				break;
 			}
 		//192
-		case CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3:
+		case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
 			{
-				ModifyConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3Form form(this, (ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3*)ctr);
+				ModifyConstraintStudentsSetMaxActivityTagsPerRealDayFromSetForm form(this, (ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet*)ctr);
 				setParentAndOtherThings(&form, this);
 				form.exec();
 				break;
 			}
 		//193
-		case CONSTRAINT_STUDENTS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3:
+		case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
 			{
-				ModifyConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3Form form(this, (ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3*)ctr);
+				ModifyConstraintStudentsMaxActivityTagsPerRealDayFromSetForm form(this, (ConstraintStudentsMaxActivityTagsPerRealDayFromSet*)ctr);
 				setParentAndOtherThings(&form, this);
 				form.exec();
 				break;
@@ -2571,6 +2574,22 @@ void AllTimeConstraintsForm::modifyConstraint()
 		case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
 			{
 				ModifyConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoonForm form(this, (ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//224
+		case CONSTRAINT_TEACHER_NO_TWO_CONSECUTIVE_DAYS:
+			{
+				ModifyConstraintTeacherNoTwoConsecutiveDaysForm form(this, (ConstraintTeacherNoTwoConsecutiveDays*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//225
+		case CONSTRAINT_TEACHERS_NO_TWO_CONSECUTIVE_DAYS:
+			{
+				ModifyConstraintTeachersNoTwoConsecutiveDaysForm form(this, (ConstraintTeachersNoTwoConsecutiveDays*)ctr);
 				setParentAndOtherThings(&form, this);
 				form.exec();
 				break;

@@ -34,6 +34,8 @@ File generate_pre.h
 
 #include <list>
 
+#include <tuple>
+
 #include <QTextStream>
 
 #include <QtGlobal>
@@ -284,6 +286,17 @@ bool computeMaxDaysPerWeekForTeachers(QWidget* parent);
 
 bool computeMaxDaysPerWeekForStudents(QWidget* parent);
 ////////END   teachers max days per week
+
+
+////////BEGIN teachers no two consecutive days
+//activities indices (in 0..gt.rules.nInternalActivities-1) for each teacher
+extern Matrix1D<double> teachersNoTwoConsecutiveDaysPercentages; //-1 for not existing
+//it is practically better to use the variable below and to put it exactly like in generate.cpp,
+//the order of activities changes
+extern Matrix1D<QList<int>> teachersWithNoTwoConsecutiveDaysForActivities;
+
+bool computeNoTwoConsecutiveDaysForTeachers(QWidget* parent);
+////////END   teachers no two consecutive days
 
 
 ////////BEGIN teachers max three consecutive days
@@ -893,19 +906,36 @@ bool computeTeachersMinRestingHoursBetweenMorningAndAfternoon(QWidget* parent);
 bool computeSubgroupsMinRestingHoursBetweenMorningAndAfternoon(QWidget* parent);
 ///////////////
 
+/////////
+extern Matrix1D<QList<double>> subgroupsMaxActivityTagsPerDayFromSetPercentages;
+extern Matrix1D<QList<int>> subgroupsMaxActivityTagsPerDayFromSetMaxTags;
+extern Matrix1D<QList<QSet<int>>> subgroupsMaxActivityTagsPerDayFromSetTagsSet;
+extern bool haveStudentsMaxActivityTagsPerDayFromSet;
+extern Matrix1D<QList<std::tuple<int, int, int>>> subgroupsMaxActivityTagsPerDayForActivity;
 
-extern Matrix1D<double> teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages;
-extern Matrix1D<int> activityTagN1N2N3;
-extern Matrix1D<QList<int>> teachersWithN1N2N3ForActivities;
+extern Matrix1D<QList<double>> subgroupsMaxActivityTagsPerRealDayFromSetPercentages;
+extern Matrix1D<QList<int>> subgroupsMaxActivityTagsPerRealDayFromSetMaxTags;
+extern Matrix1D<QList<QSet<int>>> subgroupsMaxActivityTagsPerRealDayFromSetTagsSet;
+extern bool haveStudentsMaxActivityTagsPerRealDayFromSet;
+extern Matrix1D<QList<std::tuple<int, int, int>>> subgroupsMaxActivityTagsPerRealDayForActivity;
+/////////
+extern Matrix1D<QList<double>> teachersMaxActivityTagsPerDayFromSetPercentages;
+extern Matrix1D<QList<int>> teachersMaxActivityTagsPerDayFromSetMaxTags;
+extern Matrix1D<QList<QSet<int>>> teachersMaxActivityTagsPerDayFromSetTagsSet;
+extern bool haveTeachersMaxActivityTagsPerDayFromSet;
+extern Matrix1D<QList<std::tuple<int, int, int>>> teachersMaxActivityTagsPerDayForActivity;
 
-extern Matrix1D<double> subgroupsMaxTwoActivityTagsPerDayFromN1N2N3Percentages;
-extern Matrix1D<QList<int>> subgroupsWithN1N2N3ForActivities;
+extern Matrix1D<QList<double>> teachersMaxActivityTagsPerRealDayFromSetPercentages;
+extern Matrix1D<QList<int>> teachersMaxActivityTagsPerRealDayFromSetMaxTags;
+extern Matrix1D<QList<QSet<int>>> teachersMaxActivityTagsPerRealDayFromSetTagsSet;
+extern bool haveTeachersMaxActivityTagsPerRealDayFromSet;
+extern Matrix1D<QList<std::tuple<int, int, int>>> teachersMaxActivityTagsPerRealDayForActivity;
 
-bool computeN1N2N3(QWidget* parent);
+extern Matrix1D<QList<int>> teachersWithTagsForActivities;
+extern Matrix1D<QList<int>> subgroupsWithTagsForActivities;
 
-extern Matrix1D<double> teachersMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages;
-extern Matrix1D<double> subgroupsMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages;
-
+bool computeMaxActivityTagsFromSet(QWidget* parent);
+/////////
 
 ////////BEGIN rooms
 bool computeBasicSpace(QWidget* parent);
@@ -1476,9 +1506,11 @@ extern bool haveTeachersActivityTagMinHoursDaily;
 bool computeTeachersActivityTagMinHoursDaily(QWidget* parent);
 
 //2022-02-16 - speed improvements in the Mornings-Afternoons mode
+extern Matrix1D<QList<int>> subgroupsForActivitiesOfTheDay;
 extern Matrix1D<QList<int>> subgroupsForActivitiesOfTheDayMornings;
 extern Matrix1D<QList<int>> subgroupsForActivitiesOfTheDayAfternoons;
 ////
+extern Matrix1D<QList<int>> teachersForActivitiesOfTheDay;
 extern Matrix1D<QList<int>> teachersForActivitiesOfTheDayMornings;
 extern Matrix1D<QList<int>> teachersForActivitiesOfTheDayAfternoons;
 ////

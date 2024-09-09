@@ -315,6 +315,14 @@ Matrix1D<QList<int>> teachersWithMaxDaysPerWeekForActivities;
 ////////END   teachers max days per week
 
 
+////////BEGIN teachers no two consecutive days
+//activities indices (in 0..gt.rules.nInternalActivities-1) for each teacher
+Matrix1D<double> teachersNoTwoConsecutiveDaysPercentages; //-1 for not existing
+//it is practically better to use the variable below and to put it exactly like in generate.cpp,
+//the order of activities changes
+Matrix1D<QList<int>> teachersWithNoTwoConsecutiveDaysForActivities;
+
+
 ////////BEGIN teachers max three consecutive days
 //activities indices (in 0..gt.rules.nInternalActivities-1) for each teacher
 Matrix1D<bool> teachersMaxThreeConsecutiveDaysAllowAMAMException;
@@ -817,15 +825,32 @@ Matrix1D<double> teachersMaxTwoConsecutiveMorningsPercentage;
 Matrix1D<double> teachersMaxTwoConsecutiveAfternoonsPercentage;
 
 
-Matrix1D<double> teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages;
-Matrix1D<int> activityTagN1N2N3;
-Matrix1D<QList<int>> teachersWithN1N2N3ForActivities;
+Matrix1D<QList<double>> subgroupsMaxActivityTagsPerDayFromSetPercentages;
+Matrix1D<QList<int>> subgroupsMaxActivityTagsPerDayFromSetMaxTags;
+Matrix1D<QList<QSet<int>>> subgroupsMaxActivityTagsPerDayFromSetTagsSet;
+bool haveStudentsMaxActivityTagsPerDayFromSet;
+Matrix1D<QList<std::tuple<int, int, int>>> subgroupsMaxActivityTagsPerDayForActivity;
 
-Matrix1D<double> subgroupsMaxTwoActivityTagsPerDayFromN1N2N3Percentages;
-Matrix1D<QList<int>> subgroupsWithN1N2N3ForActivities;
+Matrix1D<QList<double>> subgroupsMaxActivityTagsPerRealDayFromSetPercentages;
+Matrix1D<QList<int>> subgroupsMaxActivityTagsPerRealDayFromSetMaxTags;
+Matrix1D<QList<QSet<int>>> subgroupsMaxActivityTagsPerRealDayFromSetTagsSet;
+bool haveStudentsMaxActivityTagsPerRealDayFromSet;
+Matrix1D<QList<std::tuple<int, int, int>>> subgroupsMaxActivityTagsPerRealDayForActivity;
 
-Matrix1D<double> teachersMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages;
-Matrix1D<double> subgroupsMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages;
+Matrix1D<QList<double>> teachersMaxActivityTagsPerDayFromSetPercentages;
+Matrix1D<QList<int>> teachersMaxActivityTagsPerDayFromSetMaxTags;
+Matrix1D<QList<QSet<int>>> teachersMaxActivityTagsPerDayFromSetTagsSet;
+bool haveTeachersMaxActivityTagsPerDayFromSet;
+Matrix1D<QList<std::tuple<int, int, int>>> teachersMaxActivityTagsPerDayForActivity;
+
+Matrix1D<QList<double>> teachersMaxActivityTagsPerRealDayFromSetPercentages;
+Matrix1D<QList<int>> teachersMaxActivityTagsPerRealDayFromSetMaxTags;
+Matrix1D<QList<QSet<int>>> teachersMaxActivityTagsPerRealDayFromSetTagsSet;
+bool haveTeachersMaxActivityTagsPerRealDayFromSet;
+Matrix1D<QList<std::tuple<int, int, int>>> teachersMaxActivityTagsPerRealDayForActivity;
+
+Matrix1D<QList<int>> teachersWithTagsForActivities;
+Matrix1D<QList<int>> subgroupsWithTagsForActivities;
 
 
 ////////BEGIN rooms
@@ -1180,9 +1205,11 @@ bool haveTeachersActivityTagMinHoursDaily;
 //bool computeTeachersActivityTagMinHoursDaily(QWidget* parent);
 
 //2022-02-16 - speed improvement in the Mornings-Afternoons mode
+Matrix1D<QList<int>> subgroupsForActivitiesOfTheDay;
 Matrix1D<QList<int>> subgroupsForActivitiesOfTheDayMornings;
 Matrix1D<QList<int>> subgroupsForActivitiesOfTheDayAfternoons;
 ////
+Matrix1D<QList<int>> teachersForActivitiesOfTheDay;
 Matrix1D<QList<int>> teachersForActivitiesOfTheDayMornings;
 Matrix1D<QList<int>> teachersForActivitiesOfTheDayAfternoons;
 ////
@@ -1397,6 +1424,8 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	teachersMaxDaysPerWeekMaxDays.resize(gt.rules.nInternalTeachers);
 	teachersMaxDaysPerWeekWeightPercentages.resize(gt.rules.nInternalTeachers);
 	//
+	teachersNoTwoConsecutiveDaysPercentages.resize(gt.rules.nInternalTeachers); //-1 for not existing
+	//
 	teachersMaxThreeConsecutiveDaysAllowAMAMException.resize(gt.rules.nInternalTeachers);
 	teachersMaxThreeConsecutiveDaysPercentages.resize(gt.rules.nInternalTeachers); //-1 for not existing
 	//
@@ -1552,12 +1581,6 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	teachersMinRestingHoursBetweenMorningAndAfternoonMinHours.resize(gt.rules.nInternalTeachers);
 	teachersMinRestingHoursBetweenMorningAndAfternoonPercentages.resize(gt.rules.nInternalTeachers);
 	//
-	teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages.resize(gt.rules.nInternalTeachers);
-	subgroupsMaxTwoActivityTagsPerDayFromN1N2N3Percentages.resize(gt.rules.nInternalSubgroups);
-	//
-	teachersMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages.resize(gt.rules.nInternalTeachers);
-	subgroupsMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages.resize(gt.rules.nInternalSubgroups);
-	//
 	subgroupsMinRestingHoursBetweenMorningAndAfternoonMinHours.resize(gt.rules.nInternalSubgroups);
 	subgroupsMinRestingHoursBetweenMorningAndAfternoonPercentages.resize(gt.rules.nInternalSubgroups);
 	//
@@ -1658,8 +1681,6 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	mustComputeTimetableSubgroup.resize(gt.rules.nInternalSubgroups);
 	mustComputeTimetableTeacher.resize(gt.rules.nInternalTeachers);
 	//
-	activityTagN1N2N3.resize(gt.rules.nInternalActivities);
-	//
 	activityHasOccupyMaxConstraints.resize(gt.rules.nInternalActivities);
 	activityHasMaxSimultaneousConstraints.resize(gt.rules.nInternalActivities);
 	//
@@ -1734,6 +1755,8 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 
 	teachersWithMaxDaysPerWeekForActivities.resize(gt.rules.nInternalActivities);
 	subgroupsWithMaxDaysPerWeekForActivities.resize(gt.rules.nInternalActivities);
+
+	teachersWithNoTwoConsecutiveDaysForActivities.resize(gt.rules.nInternalActivities);
 
 	teachersWithMaxThreeConsecutiveDaysForActivities.resize(gt.rules.nInternalActivities);
 	subgroupsWithMaxThreeConsecutiveDaysForActivities.resize(gt.rules.nInternalActivities);
@@ -1857,8 +1880,8 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	teachersActivityTagMaxHoursContinuouslyActivityTag.resize(gt.rules.nInternalTeachers);
 	teachersActivityTagMaxHoursContinuouslyPercentage.resize(gt.rules.nInternalTeachers);
 
-	teachersWithN1N2N3ForActivities.resize(gt.rules.nInternalActivities);
-	subgroupsWithN1N2N3ForActivities.resize(gt.rules.nInternalActivities);
+	teachersWithTagsForActivities.resize(gt.rules.nInternalActivities);
+	subgroupsWithTagsForActivities.resize(gt.rules.nInternalActivities);
 
 	subgroupsActivityTagMaxHoursDailyMaxHours.resize(gt.rules.nInternalSubgroups);
 	subgroupsActivityTagMaxHoursDailyActivityTag.resize(gt.rules.nInternalSubgroups);
@@ -1932,12 +1955,35 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	asricListForActivity.resize(gt.rules.nInternalActivities);
 	
 	//2022-02-16
+	subgroupsForActivitiesOfTheDay.resize(gt.rules.nInternalActivities);
 	subgroupsForActivitiesOfTheDayMornings.resize(gt.rules.nInternalActivities);
 	subgroupsForActivitiesOfTheDayAfternoons.resize(gt.rules.nInternalActivities);
 	////
+	teachersForActivitiesOfTheDay.resize(gt.rules.nInternalActivities);
 	teachersForActivitiesOfTheDayMornings.resize(gt.rules.nInternalActivities);
 	teachersForActivitiesOfTheDayAfternoons.resize(gt.rules.nInternalActivities);
+	
+	subgroupsMaxActivityTagsPerDayFromSetPercentages.resize(gt.rules.nInternalSubgroups);
+	subgroupsMaxActivityTagsPerDayFromSetMaxTags.resize(gt.rules.nInternalSubgroups);
+	subgroupsMaxActivityTagsPerDayFromSetTagsSet.resize(gt.rules.nInternalSubgroups);
+	
+	subgroupsMaxActivityTagsPerRealDayFromSetPercentages.resize(gt.rules.nInternalSubgroups);
+	subgroupsMaxActivityTagsPerRealDayFromSetMaxTags.resize(gt.rules.nInternalSubgroups);
+	subgroupsMaxActivityTagsPerRealDayFromSetTagsSet.resize(gt.rules.nInternalSubgroups);
+	
+	teachersMaxActivityTagsPerDayFromSetPercentages.resize(gt.rules.nInternalTeachers);
+	teachersMaxActivityTagsPerDayFromSetMaxTags.resize(gt.rules.nInternalTeachers);
+	teachersMaxActivityTagsPerDayFromSetTagsSet.resize(gt.rules.nInternalTeachers);
+	
+	teachersMaxActivityTagsPerRealDayFromSetPercentages.resize(gt.rules.nInternalTeachers);
+	teachersMaxActivityTagsPerRealDayFromSetMaxTags.resize(gt.rules.nInternalTeachers);
+	teachersMaxActivityTagsPerRealDayFromSetTagsSet.resize(gt.rules.nInternalTeachers);
 
+	subgroupsMaxActivityTagsPerDayForActivity.resize(gt.rules.nInternalActivities);
+	subgroupsMaxActivityTagsPerRealDayForActivity.resize(gt.rules.nInternalActivities);
+	teachersMaxActivityTagsPerDayForActivity.resize(gt.rules.nInternalActivities);
+	teachersMaxActivityTagsPerRealDayForActivity.resize(gt.rules.nInternalActivities);
+	
 	//////////////////end resizing - new feature
 	
 	QHash<int, int> reprSameStartingTime;
@@ -2055,6 +2101,11 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	t=computeMaxDaysPerWeekForTeachers(parent);
 	if(!t)
 		return false;
+
+	t=computeNoTwoConsecutiveDaysForTeachers(parent);
+	if(!t)
+		return false;
+
 	t=computeMaxThreeConsecutiveDaysForTeachers(parent);
 	if(!t)
 		return false;
@@ -2339,7 +2390,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	if(!t)
 		return false;
 
-	t=computeN1N2N3(parent);
+	t=computeMaxActivityTagsFromSet(parent);
 	if(!t)
 		return false;
 
@@ -3088,7 +3139,7 @@ bool computeSubgroupsMaxHoursDailyRealDays(QWidget* parent)
 			for(int d=0; d<gt.rules.nDaysPerWeek/2; d++)
 				dayAvailable[d]=1;
 			if(subgroupsMaxRealDaysPerWeekMaxDays[sb]>=0){
-				//max days per week has 100% weight
+				//max real days per week has 100% weight
 				for(int d=0; d<gt.rules.nDaysPerWeek/2; d++)
 					dayAvailable[d]=0;
 				assert(subgroupsMaxRealDaysPerWeekMaxDays[sb]<=gt.rules.nDaysPerWeek/2);
@@ -3152,7 +3203,7 @@ bool computeSubgroupsMaxHoursDailyRealDays(QWidget* parent)
 			for(int d=0; d<gt.rules.nDaysPerWeek/2; d++)
 				dayAvailable[d]=1;
 			if(subgroupsMaxRealDaysPerWeekMaxDays[sb]>=0){
-				//max days per week has 100% weight
+				//max real days per week has 100% weight
 				for(int d=0; d<gt.rules.nDaysPerWeek/2; d++)
 					dayAvailable[d]=0;
 				assert(subgroupsMaxRealDaysPerWeekMaxDays[sb]<=gt.rules.nDaysPerWeek/2);
@@ -3614,7 +3665,7 @@ bool computeSubgroupsMaxSpanPerRealDay(QWidget* parent)
 			for(int d=0; d<gt.rules.nDaysPerWeek/2; d++)
 				dayAvailable[d]=1;
 			if(subgroupsMaxRealDaysPerWeekMaxDays[sb]>=0){
-				//max days per week has 100% weight
+				//max real days per week has 100% weight
 				for(int d=0; d<gt.rules.nDaysPerWeek/2; d++)
 					dayAvailable[d]=0;
 				assert(subgroupsMaxRealDaysPerWeekMaxDays[sb]<=gt.rules.nDaysPerWeek/2);
@@ -5811,7 +5862,7 @@ bool computeTeachersMaxHoursDaily(QWidget* parent)
 				for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 					dayAvailable[d]=1;
 				if(teachersMaxRealDaysPerWeekMaxDays[tc]>=0){
-					//max days per week has 100% weight
+					//max real days per week has 100% weight
 					for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 						dayAvailable[d]=0;
 					assert(teachersMaxRealDaysPerWeekMaxDays[tc]<=gt.rules.nDaysPerWeek/2);
@@ -5877,7 +5928,7 @@ bool computeTeachersMaxHoursDaily(QWidget* parent)
 				for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 					dayAvailable[d]=1;
 				if(teachersMaxRealDaysPerWeekMaxDays[tc]>=0){
-					//max days per week has 100% weight
+					//max real days per week has 100% weight
 					for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 						dayAvailable[d]=0;
 					assert(teachersMaxRealDaysPerWeekMaxDays[tc]<=gt.rules.nDaysPerWeek/2);
@@ -6102,7 +6153,7 @@ bool computeTeachersMaxHoursDailyRealDays(QWidget* parent)
 			for(int d=0; d<gt.rules.nDaysPerWeek/2; d++)
 				dayAvailable[d]=1;
 			if(teachersMaxRealDaysPerWeekMaxDays[tc]>=0){
-				//max days per week has 100% weight
+				//max real days per week has 100% weight
 				for(int d=0; d<gt.rules.nDaysPerWeek/2; d++)
 					dayAvailable[d]=0;
 				assert(teachersMaxRealDaysPerWeekMaxDays[tc]<=gt.rules.nDaysPerWeek/2);
@@ -6166,7 +6217,7 @@ bool computeTeachersMaxHoursDailyRealDays(QWidget* parent)
 			for(int d=0; d<gt.rules.nDaysPerWeek/2; d++)
 				dayAvailable[d]=1;
 			if(teachersMaxRealDaysPerWeekMaxDays[tc]>=0){
-				//max days per week has 100% weight
+				//max real days per week has 100% weight
 				for(int d=0; d<gt.rules.nDaysPerWeek/2; d++)
 					dayAvailable[d]=0;
 				assert(teachersMaxRealDaysPerWeekMaxDays[tc]<=gt.rules.nDaysPerWeek/2);
@@ -6517,7 +6568,7 @@ bool computeTeachersMaxSpanPerRealDay(QWidget* parent)
 			for(int d=0; d<gt.rules.nDaysPerWeek/2; d++)
 				dayAvailable[d]=1;
 			if(teachersMaxRealDaysPerWeekMaxDays[tc]>=0){
-				//max days per week has 100% weight
+				//max real days per week has 100% weight
 				for(int d=0; d<gt.rules.nDaysPerWeek/2; d++)
 					dayAvailable[d]=0;
 				assert(teachersMaxRealDaysPerWeekMaxDays[tc]<=gt.rules.nDaysPerWeek/2);
@@ -10754,7 +10805,7 @@ bool computeNHoursPerTeacher(QWidget* parent)
 			}
 		}
 
-	//max days per week has 100% weight
+	//max real days per week has 100% weight
 	if(gt.rules.mode==MORNINGS_AFTERNOONS){
 		for(int i=0; i<gt.rules.nInternalTeachers; i++)
 			if(teachersMaxRealDaysPerWeekMaxDays[i]>=0){
@@ -10816,7 +10867,7 @@ bool computeNHoursPerTeacher(QWidget* parent)
 				dayAvailable[maxPos]=1;
 			}
 		}
-			
+		
 		int total=0;
 		for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 			if(dayAvailable[d]==1)
@@ -10841,6 +10892,28 @@ bool computeNHoursPerTeacher(QWidget* parent)
 			
 			if(t==0)
 				return false;
+		}
+	}
+	
+	for(int tc=0; tc<gt.rules.nInternalTeachers; tc++){
+		if(teachersNoTwoConsecutiveDaysPercentages[tc]==100){
+			if(nHoursPerTeacher[tc] > ((gt.rules.nDaysPerWeek+1)/2)*gt.rules.nHoursPerDay){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because the number of assigned hours for this teacher is %2"
+				  " and you have constrained this teacher not to work in two consecutive days. The maximum possible number of working"
+				  " hours for this teacher is the integer part of ((n_days_per_week+1)/2) multiplied with n_hours_per_day, which is %3.",
+				  "Translators: you can translate the expressions n_days_per_week and n_hours_per_day in your language.")
+				 .arg(gt.rules.internalTeachersList[tc]->name)
+				 .arg(nHoursPerTeacher[tc])
+				 .arg((gt.rules.nDaysPerWeek+1)/2*gt.rules.nHoursPerDay),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return ok;
+			}
 		}
 	}
 	
@@ -11908,7 +11981,7 @@ bool computeNHoursPerSubgroup(QWidget* parent)
 			}
 		}
 
-	//max days per week has 100% weight
+	//max real days per week has 100% weight
 	if(gt.rules.mode==MORNINGS_AFTERNOONS){
 		for(int i=0; i<gt.rules.nInternalSubgroups; i++)
 			if(subgroupsMaxRealDaysPerWeekMaxDays[i]>=0){
@@ -12098,6 +12171,76 @@ bool computeMaxDaysPerWeekForTeachers(QWidget* parent)
 				if(teachersMaxDaysPerWeekMaxDays[tch]>=0){
 					assert(teachersWithMaxDaysPerWeekForActivities[i].indexOf(tch)==-1);
 					teachersWithMaxDaysPerWeekForActivities[i].append(tch);
+				}
+			}
+		}
+	}
+	
+	return ok;
+}
+
+bool computeNoTwoConsecutiveDaysForTeachers(QWidget* parent)
+{
+	for(int j=0; j<gt.rules.nInternalTeachers; j++){
+		teachersNoTwoConsecutiveDaysPercentages[j]=-1;
+	}
+
+	bool ok=true;
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_NO_TWO_CONSECUTIVE_DAYS){
+			ConstraintTeacherNoTwoConsecutiveDays* tn=(ConstraintTeacherNoTwoConsecutiveDays*)gt.rules.internalTimeConstraintsList[i];
+
+			if(tn->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teacher no two consecutive days with"
+				 " weight (percentage) below 100% for teacher %1. It is only possible to use 100% weight for such constraints."
+				 " Please make weight 100% and try again.")
+				 .arg(tn->teacherName),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+
+			if(teachersNoTwoConsecutiveDaysPercentages[tn->teacher_ID]==-1)
+				teachersNoTwoConsecutiveDaysPercentages[tn->teacher_ID]=tn->weightPercentage;
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_NO_TWO_CONSECUTIVE_DAYS){
+			ConstraintTeachersNoTwoConsecutiveDays* tn=(ConstraintTeachersNoTwoConsecutiveDays*)gt.rules.internalTimeConstraintsList[i];
+
+			if(tn->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teachers no two consecutive days with"
+				 " weight (percentage) below 100%. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again."),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+
+			for(int t=0; t<gt.rules.nInternalTeachers; t++)
+				if(teachersNoTwoConsecutiveDaysPercentages[t]==-1)
+					teachersNoTwoConsecutiveDaysPercentages[t]=tn->weightPercentage;
+		}
+	}
+	
+	if(ok){
+		for(int i=0; i<gt.rules.nInternalActivities; i++){
+			teachersWithNoTwoConsecutiveDaysForActivities[i].clear();
+		
+			Activity* act=&gt.rules.internalActivitiesList[i];
+			for(int j=0; j<act->iTeachersList.count(); j++){
+				int tch=act->iTeachersList.at(j);
+				
+				if(teachersNoTwoConsecutiveDaysPercentages[tch]>=0){
+					assert(teachersWithNoTwoConsecutiveDaysForActivities[i].indexOf(tch)==-1);
+					teachersWithNoTwoConsecutiveDaysForActivities[i].append(tch);
 				}
 			}
 		}
@@ -21464,8 +21607,8 @@ void computeMustComputeTimetableSubgroups()
 
 			  subgroupsActivityTagMaxHoursDailyRealDaysPercentage[sbg].count()>0 ||
 
-			  subgroupsMaxTwoActivityTagsPerDayFromN1N2N3Percentages[sbg]>=0 ||
-			  subgroupsMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[sbg]>=0 ||
+			  subgroupsMaxActivityTagsPerDayFromSetPercentages[sbg].count()>0 ||
+			  subgroupsMaxActivityTagsPerRealDayFromSetPercentages[sbg].count()>0 ||
 
 			  subgroupsAfternoonsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0 ||
 			  subgroupsMorningsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0 ||
@@ -21553,8 +21696,8 @@ void computeMustComputeTimetableTeachers()
 
 			  teachersActivityTagMaxHoursDailyRealDaysPercentage[tch].count()>0 ||
 
-			  teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages[tch]>=0 ||
-			  teachersMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[tch]>=0 ||
+			  teachersMaxActivityTagsPerDayFromSetPercentages[tch].count()>0 ||
+			  teachersMaxActivityTagsPerRealDayFromSetPercentages[tch].count()>0 ||
 
 			  teachersAfternoonsEarlyMaxBeginningsAtSecondHourPercentage[tch]>=0 ||
 			  teachersMorningsEarlyMaxBeginningsAtSecondHourPercentage[tch]>=0 ||
@@ -21580,189 +21723,401 @@ void computeSubgroupsTeachersForActivitiesOfTheDay()
 {
 	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
 		//students
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 		QSet<int> st_smhd=QSet<int>(subgroupsWithMaxDaysPerWeekForActivities[ai].constBegin(), subgroupsWithMaxDaysPerWeekForActivities[ai].constEnd());
 		QSet<int> st_smtd=QSet<int>(subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].constBegin(), subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].constEnd());
 		QSet<int> st_smd=QSet<int>(subgroupsWithMaxRealDaysPerWeekForActivities[ai].constBegin(), subgroupsWithMaxRealDaysPerWeekForActivities[ai].constEnd());
 		QSet<int> st_sma=QSet<int>(subgroupsWithMaxAfternoonsPerWeekForActivities[ai].constBegin(), subgroupsWithMaxAfternoonsPerWeekForActivities[ai].constEnd());
-		QSet<int> st_smn1n2n3=QSet<int>(subgroupsWithN1N2N3ForActivities[ai].constBegin(), subgroupsWithN1N2N3ForActivities[ai].constEnd());
+		QSet<int> st_smntags=QSet<int>(subgroupsWithTagsForActivities[ai].constBegin(), subgroupsWithTagsForActivities[ai].constEnd());
 		QSet<int> st_smm=QSet<int>(subgroupsWithMaxMorningsPerWeekForActivities[ai].constBegin(), subgroupsWithMaxMorningsPerWeekForActivities[ai].constEnd());
-#else
-		QSet<int> st_smhd=subgroupsWithMaxDaysPerWeekForActivities[ai].toSet();
-		QSet<int> st_smtd=subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].toSet();
-		QSet<int> st_smd=subgroupsWithMaxRealDaysPerWeekForActivities[ai].toSet();
-		QSet<int> st_smn1n2n3=subgroupsWithN1N2N3ForActivities[ai].toSet();
-		QSet<int> st_sma=subgroupsWithMaxAfternoonsPerWeekForActivities[ai].toSet();
-		QSet<int> st_smm=subgroupsWithMaxMorningsPerWeekForActivities[ai].toSet();
-#endif
-		QSet<int> st_smda=st_smhd+st_smtd+st_smd+st_sma+st_smn1n2n3;
-		QSet<int> st_smdm=st_smhd+st_smtd+st_smd+st_smm+st_smn1n2n3;
+
+		QSet<int> st_smda=st_smhd+st_smtd+st_smd+st_sma+st_smntags;
+		QSet<int> st_smdm=st_smhd+st_smtd+st_smd+st_smm+st_smntags;
 		
 		QList<int> st_lmda;
 		QList<int> st_lmdm;
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+
 		st_lmda=QList<int>(st_smda.constBegin(), st_smda.constEnd());
 		st_lmdm=QList<int>(st_smdm.constBegin(), st_smdm.constEnd());
-#else
-		st_lmda=st_smda.toList();
-		st_lmdm=st_smdm.toList();
-#endif
+
 		std::stable_sort(st_lmda.begin(), st_lmda.end()); //not needed, the generation behavior (random seed) stays the same with any order of st_lmda - see the corresponding code in generate.cpp
 		std::stable_sort(st_lmdm.begin(), st_lmdm.end()); //not needed, the generation behavior (random seed) stays the same with any order of st_lmdm - see the corresponding code in generate.cpp
 
 		subgroupsForActivitiesOfTheDayAfternoons[ai]=st_lmda;
 		subgroupsForActivitiesOfTheDayMornings[ai]=st_lmdm;
+
+		QSet<int> st_stchl=st_smhd+st_smntags;
+		QList<int> st_ltchl=QList<int>(st_stchl.constBegin(), st_stchl.constEnd());
+		std::stable_sort(st_ltchl.begin(), st_ltchl.end());
+		subgroupsForActivitiesOfTheDay[ai]=st_ltchl;
 	}
 	
 	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
 		//teachers
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 		QSet<int> smhd=QSet<int>(teachersWithMaxDaysPerWeekForActivities[ai].constBegin(), teachersWithMaxDaysPerWeekForActivities[ai].constEnd());
+		QSet<int> sntd=QSet<int>(teachersWithNoTwoConsecutiveDaysForActivities[ai].constBegin(), teachersWithNoTwoConsecutiveDaysForActivities[ai].constEnd());
 		QSet<int> smtd=QSet<int>(teachersWithMaxThreeConsecutiveDaysForActivities[ai].constBegin(), teachersWithMaxThreeConsecutiveDaysForActivities[ai].constEnd());
 		QSet<int> smd=QSet<int>(teachersWithMaxRealDaysPerWeekForActivities[ai].constBegin(), teachersWithMaxRealDaysPerWeekForActivities[ai].constEnd());
-		QSet<int> smn1n2n3=QSet<int>(teachersWithN1N2N3ForActivities[ai].constBegin(), teachersWithN1N2N3ForActivities[ai].constEnd());
+		QSet<int> smntags=QSet<int>(teachersWithTagsForActivities[ai].constBegin(), teachersWithTagsForActivities[ai].constEnd());
 		QSet<int> sma=QSet<int>(teachersWithMaxAfternoonsPerWeekForActivities[ai].constBegin(), teachersWithMaxAfternoonsPerWeekForActivities[ai].constEnd());
 		QSet<int> smm=QSet<int>(teachersWithMaxMorningsPerWeekForActivities[ai].constBegin(), teachersWithMaxMorningsPerWeekForActivities[ai].constEnd());
-#else
-		QSet<int> smhd=teachersWithMaxDaysPerWeekForActivities[ai].toSet();
-		QSet<int> smtd=teachersWithMaxThreeConsecutiveDaysForActivities[ai].toSet();
-		QSet<int> smd=teachersWithMaxRealDaysPerWeekForActivities[ai].toSet();
-		QSet<int> smn1n2n3=teachersWithN1N2N3ForActivities[ai].toSet();
-		QSet<int> sma=teachersWithMaxAfternoonsPerWeekForActivities[ai].toSet();
-		QSet<int> smm=teachersWithMaxMorningsPerWeekForActivities[ai].toSet();
-#endif
-		QSet<int> smda=smhd+smtd+smd+sma+smn1n2n3;
-		QSet<int> smdm=smhd+smtd+smd+smm+smn1n2n3;
+
+		QSet<int> smda=smhd+sntd+smtd+smd+sma+smntags;
+		QSet<int> smdm=smhd+sntd+smtd+smd+smm+smntags;
 		
 		QList<int> lmda;
 		QList<int> lmdm;
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 		lmda=QList<int>(smda.constBegin(), smda.constEnd());
 		lmdm=QList<int>(smdm.constBegin(), smdm.constEnd());
-#else
-		lmda=smda.toList();
-		lmdm=smdm.toList();
-#endif
+
 		std::stable_sort(lmda.begin(), lmda.end()); //not needed, the generation behavior (random seed) stays the same with any order of lmda - see the corresponding code in generate.cpp
 		std::stable_sort(lmdm.begin(), lmdm.end()); //not needed, the generation behavior (random seed) stays the same with any order of lmdm - see the corresponding code in generate.cpp
 
 		teachersForActivitiesOfTheDayAfternoons[ai]=lmda;
 		teachersForActivitiesOfTheDayMornings[ai]=lmdm;
+
+		QSet<int> stchl=smhd+sntd+smntags;
+		QList<int> ltchl=QList<int>(stchl.constBegin(), stchl.constEnd());
+		std::stable_sort(ltchl.begin(), ltchl.end());
+		teachersForActivitiesOfTheDay[ai]=ltchl;
 	}
 }
 
-bool computeN1N2N3(QWidget* parent)
+bool computeMaxActivityTagsFromSet(QWidget* parent)
 {
+	haveStudentsMaxActivityTagsPerDayFromSet=false;
+	haveStudentsMaxActivityTagsPerRealDayFromSet=false;
+	haveTeachersMaxActivityTagsPerDayFromSet=false;
+	haveTeachersMaxActivityTagsPerRealDayFromSet=false;
+
 	for(int i=0; i<gt.rules.nInternalTeachers; i++){
-		teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages[i]=-1.0;
-		teachersMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[i]=-1.0;
+		teachersMaxActivityTagsPerDayFromSetPercentages[i].clear();
+		teachersMaxActivityTagsPerRealDayFromSetPercentages[i].clear();
+
+		teachersMaxActivityTagsPerDayFromSetMaxTags[i].clear();
+		teachersMaxActivityTagsPerRealDayFromSetMaxTags[i].clear();
+
+		teachersMaxActivityTagsPerDayFromSetTagsSet[i].clear();
+		teachersMaxActivityTagsPerRealDayFromSetTagsSet[i].clear();
 	}
 	
 	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
-		subgroupsMaxTwoActivityTagsPerDayFromN1N2N3Percentages[i]=-1.0;
-		subgroupsMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[i]=-1.0;
+		subgroupsMaxActivityTagsPerDayFromSetPercentages[i].clear();
+		subgroupsMaxActivityTagsPerRealDayFromSetPercentages[i].clear();
+
+		subgroupsMaxActivityTagsPerDayFromSetMaxTags[i].clear();
+		subgroupsMaxActivityTagsPerRealDayFromSetMaxTags[i].clear();
+
+		subgroupsMaxActivityTagsPerDayFromSetTagsSet[i].clear();
+		subgroupsMaxActivityTagsPerRealDayFromSetTagsSet[i].clear();
 	}
 	
 	bool ok=true;
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
-		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3){
-			ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3* tn=(ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3*)gt.rules.internalTimeConstraintsList[i];
-			teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages[tn->teacher_ID]=100.0;
-		}
-		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3){
-			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++)
-				teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages[tch]=100.0;
-		}
-		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3){
-			ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3* sn=(ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3*)gt.rules.internalTimeConstraintsList[i];
-			for(int sbg : std::as_const(sn->iSubgroupsList))
-				subgroupsMaxTwoActivityTagsPerDayFromN1N2N3Percentages[sbg]=100.0;
-		}
-		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3){
-			for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++)
-				subgroupsMaxTwoActivityTagsPerDayFromN1N2N3Percentages[sbg]=100.0;
-		}
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET){
+			haveTeachersMaxActivityTagsPerDayFromSet=true;
 
-		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3){
-			ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3* tn=(ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3*)gt.rules.internalTimeConstraintsList[i];
-			teachersMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[tn->teacher_ID]=100.0;
+			ConstraintTeacherMaxActivityTagsPerDayFromSet* tn=(ConstraintTeacherMaxActivityTagsPerDayFromSet*)gt.rules.internalTimeConstraintsList[i];
+			teachersMaxActivityTagsPerDayFromSetPercentages[tn->teacher_ID].append(100.0);
+			teachersMaxActivityTagsPerDayFromSetMaxTags[tn->teacher_ID].append(tn->maxTags);
+			teachersMaxActivityTagsPerDayFromSetTagsSet[tn->teacher_ID].append(tn->internalTagsSet);
+
+			for(int ai : std::as_const(gt.rules.internalTeachersList[tn->teacher_ID]->activitiesForTeacher)){
+				QSet<int> tset=tn->internalTagsSet;
+				if(tset.intersect(gt.rules.internalActivitiesList[ai].iActivityTagsSet).count()>=2){
+					ok=false;
+					
+					QString s=GeneratePreTranslate::tr("Activity with id=%1 has more than one activity tag from the set of activity tags of your constraint"
+					 " of type teacher %2 max activity tags per day from set - please correct this.", "%2 is the teacher")
+					 .arg(gt.rules.internalActivitiesList[ai].id)
+					 .arg(tn->teacherName);
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+					
+					if(t==0)
+						return false;
+				}
+			}
 		}
-		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3){
-			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++)
-				teachersMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[tch]=100.0;
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET){
+			haveTeachersMaxActivityTagsPerDayFromSet=true;
+
+			ConstraintTeachersMaxActivityTagsPerDayFromSet* tn=(ConstraintTeachersMaxActivityTagsPerDayFromSet*)gt.rules.internalTimeConstraintsList[i];
+			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
+				teachersMaxActivityTagsPerDayFromSetPercentages[tch].append(100.0);
+				teachersMaxActivityTagsPerDayFromSetMaxTags[tch].append(tn->maxTags);
+				teachersMaxActivityTagsPerDayFromSetTagsSet[tch].append(tn->internalTagsSet);
+			}
+
+			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+				if(gt.rules.internalActivitiesList[ai].iTeachersList.count()>0){
+					QSet<int> tset=tn->internalTagsSet;
+					if(tset.intersect(gt.rules.internalActivitiesList[ai].iActivityTagsSet).count()>=2){
+						ok=false;
+						
+						QString s=GeneratePreTranslate::tr("Activity with id=%1 has more than one activity tag from the set of activity tags of your constraint"
+						 " of type teachers max activity tags per day from set - please correct this.")
+						 .arg(gt.rules.internalActivitiesList[ai].id);
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+						 1, 0 );
+						
+						if(t==0)
+							return false;
+					}
+				}
+			}
 		}
-		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3){
-			ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3* sn=(ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3*)gt.rules.internalTimeConstraintsList[i];
-			for(int sbg : std::as_const(sn->iSubgroupsList))
-				subgroupsMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[sbg]=100.0;
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET){
+			haveStudentsMaxActivityTagsPerDayFromSet=true;
+
+			ConstraintStudentsSetMaxActivityTagsPerDayFromSet* sn=(ConstraintStudentsSetMaxActivityTagsPerDayFromSet*)gt.rules.internalTimeConstraintsList[i];
+			for(int sbg : std::as_const(sn->iSubgroupsList)){
+				subgroupsMaxActivityTagsPerDayFromSetPercentages[sbg].append(100.0);
+				subgroupsMaxActivityTagsPerDayFromSetMaxTags[sbg].append(sn->maxTags);
+				subgroupsMaxActivityTagsPerDayFromSetTagsSet[sbg].append(sn->internalTagsSet);
+
+				for(int ai : std::as_const(gt.rules.internalSubgroupsList[sbg]->activitiesForSubgroup)){
+					QSet<int> tset=sn->internalTagsSet;
+					if(tset.intersect(gt.rules.internalActivitiesList[ai].iActivityTagsSet).count()>=2){
+						ok=false;
+						
+						QString s=GeneratePreTranslate::tr("Activity with id=%1 has more than one activity tag from the set of activity tags of your constraint"
+						 " of type students set %2 max activity tags per day from set - please correct this.", "%2 is the students set")
+						 .arg(gt.rules.internalActivitiesList[ai].id)
+						 .arg(sn->students);
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+						 1, 0 );
+						
+						if(t==0)
+							return false;
+					}
+				}
+			}
 		}
-		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3){
-			for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++)
-				subgroupsMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[sbg]=100.0;
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET){
+			haveStudentsMaxActivityTagsPerDayFromSet=true;
+
+			ConstraintStudentsMaxActivityTagsPerDayFromSet* sn=(ConstraintStudentsMaxActivityTagsPerDayFromSet*)gt.rules.internalTimeConstraintsList[i];
+			for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++){
+				subgroupsMaxActivityTagsPerDayFromSetPercentages[sbg].append(100.0);
+				subgroupsMaxActivityTagsPerDayFromSetMaxTags[sbg].append(sn->maxTags);
+				subgroupsMaxActivityTagsPerDayFromSetTagsSet[sbg].append(sn->internalTagsSet);
+			}
+
+			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+				if(gt.rules.internalActivitiesList[ai].iSubgroupsList.count()>0){
+					QSet<int> tset=sn->internalTagsSet;
+					if(tset.intersect(gt.rules.internalActivitiesList[ai].iActivityTagsSet).count()>=2){
+						ok=false;
+						
+						QString s=GeneratePreTranslate::tr("Activity with id=%1 has more than one activity tag from the set of activity tags of your constraint"
+						 " of type students max activity tags per day from set - please correct this.")
+						 .arg(gt.rules.internalActivitiesList[ai].id);
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+						 1, 0 );
+						
+						if(t==0)
+							return false;
+					}
+				}
+			}
+		}
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET){
+			haveTeachersMaxActivityTagsPerRealDayFromSet=true;
+
+			ConstraintTeacherMaxActivityTagsPerRealDayFromSet* tn=(ConstraintTeacherMaxActivityTagsPerRealDayFromSet*)gt.rules.internalTimeConstraintsList[i];
+			teachersMaxActivityTagsPerRealDayFromSetPercentages[tn->teacher_ID].append(100.0);
+			teachersMaxActivityTagsPerRealDayFromSetMaxTags[tn->teacher_ID].append(tn->maxTags);
+			teachersMaxActivityTagsPerRealDayFromSetTagsSet[tn->teacher_ID].append(tn->internalTagsSet);
+
+			for(int ai : std::as_const(gt.rules.internalTeachersList[tn->teacher_ID]->activitiesForTeacher)){
+				QSet<int> tset=tn->internalTagsSet;
+				if(tset.intersect(gt.rules.internalActivitiesList[ai].iActivityTagsSet).count()>=2){
+					ok=false;
+					
+					QString s=GeneratePreTranslate::tr("Activity with id=%1 has more than one activity tag from the set of activity tags of your constraint"
+					 " of type teacher %2 max activity tags per real day from set - please correct this.", "%2 is the teacher")
+					 .arg(gt.rules.internalActivitiesList[ai].id)
+					 .arg(tn->teacherName);
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+					
+					if(t==0)
+						return false;
+				}
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET){
+			haveTeachersMaxActivityTagsPerRealDayFromSet=true;
+
+			ConstraintTeachersMaxActivityTagsPerRealDayFromSet* tn=(ConstraintTeachersMaxActivityTagsPerRealDayFromSet*)gt.rules.internalTimeConstraintsList[i];
+			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
+				teachersMaxActivityTagsPerRealDayFromSetPercentages[tch].append(100.0);
+				teachersMaxActivityTagsPerRealDayFromSetMaxTags[tch].append(tn->maxTags);
+				teachersMaxActivityTagsPerRealDayFromSetTagsSet[tch].append(tn->internalTagsSet);
+			}
+
+			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+				if(gt.rules.internalActivitiesList[ai].iTeachersList.count()>0){
+					QSet<int> tset=tn->internalTagsSet;
+					if(tset.intersect(gt.rules.internalActivitiesList[ai].iActivityTagsSet).count()>=2){
+						ok=false;
+						
+						QString s=GeneratePreTranslate::tr("Activity with id=%1 has more than one activity tag from the set of activity tags of your constraint"
+						 " of type teachers max activity tags per real day from set - please correct this.")
+						 .arg(gt.rules.internalActivitiesList[ai].id);
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+						 1, 0 );
+						
+						if(t==0)
+							return false;
+					}
+				}
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET){
+			haveStudentsMaxActivityTagsPerRealDayFromSet=true;
+
+			ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet* sn=(ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet*)gt.rules.internalTimeConstraintsList[i];
+			for(int sbg : std::as_const(sn->iSubgroupsList)){
+				subgroupsMaxActivityTagsPerRealDayFromSetPercentages[sbg].append(100.0);
+				subgroupsMaxActivityTagsPerRealDayFromSetMaxTags[sbg].append(sn->maxTags);
+				subgroupsMaxActivityTagsPerRealDayFromSetTagsSet[sbg].append(sn->internalTagsSet);
+
+				for(int ai : std::as_const(gt.rules.internalSubgroupsList[sbg]->activitiesForSubgroup)){
+					QSet<int> tset=sn->internalTagsSet;
+					if(tset.intersect(gt.rules.internalActivitiesList[ai].iActivityTagsSet).count()>=2){
+						ok=false;
+						
+						QString s=GeneratePreTranslate::tr("Activity with id=%1 has more than one activity tag from the set of activity tags of your constraint"
+						 " of type students set %2 max activity tags per real day from set - please correct this.", "%2 is the students set")
+						 .arg(gt.rules.internalActivitiesList[ai].id)
+						 .arg(sn->students);
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+						 1, 0 );
+						
+						if(t==0)
+							return false;
+					}
+				}
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET){
+			haveStudentsMaxActivityTagsPerRealDayFromSet=true;
+
+			ConstraintStudentsMaxActivityTagsPerRealDayFromSet* sn=(ConstraintStudentsMaxActivityTagsPerRealDayFromSet*)gt.rules.internalTimeConstraintsList[i];
+			for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++){
+				subgroupsMaxActivityTagsPerRealDayFromSetPercentages[sbg].append(100.0);
+				subgroupsMaxActivityTagsPerRealDayFromSetMaxTags[sbg].append(sn->maxTags);
+				subgroupsMaxActivityTagsPerRealDayFromSetTagsSet[sbg].append(sn->internalTagsSet);
+			}
+
+			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+				if(gt.rules.internalActivitiesList[ai].iSubgroupsList.count()>0){
+					QSet<int> tset=sn->internalTagsSet;
+					if(tset.intersect(gt.rules.internalActivitiesList[ai].iActivityTagsSet).count()>=2){
+						ok=false;
+						
+						QString s=GeneratePreTranslate::tr("Activity with id=%1 has more than one activity tag from the set of activity tags of your constraint"
+						 " of type students max activity tags per real day from set - please correct this.")
+						 .arg(gt.rules.internalActivitiesList[ai].id);
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+						 1, 0 );
+						
+						if(t==0)
+							return false;
+					}
+				}
+			}
 		}
 	}
 
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
-		teachersWithN1N2N3ForActivities[i].clear();
+		teachersWithTagsForActivities[i].clear();
 
 		Activity* act=&gt.rules.internalActivitiesList[i];
 		for(int j=0; j<act->iTeachersList.count(); j++){
 			int tch=act->iTeachersList.at(j);
 
-			if(teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages[tch]>=0 || teachersMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[tch]>=0){
-				assert(teachersWithN1N2N3ForActivities[i].indexOf(tch)==-1);
-				teachersWithN1N2N3ForActivities[i].append(tch);
+			if(teachersMaxActivityTagsPerDayFromSetPercentages[tch].count()>0 || teachersMaxActivityTagsPerRealDayFromSetPercentages[tch].count()>0){
+				assert(teachersWithTagsForActivities[i].indexOf(tch)==-1);
+				teachersWithTagsForActivities[i].append(tch);
 			}
 		}
 	}
 
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
-		subgroupsWithN1N2N3ForActivities[i].clear();
+		subgroupsWithTagsForActivities[i].clear();
 
 		Activity* act=&gt.rules.internalActivitiesList[i];
 		for(int j=0; j<act->iSubgroupsList.count(); j++){
 			int sbg=act->iSubgroupsList.at(j);
 
-			if(subgroupsMaxTwoActivityTagsPerDayFromN1N2N3Percentages[sbg]>=0 || subgroupsMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[sbg]>=0){
-				assert(subgroupsWithN1N2N3ForActivities[i].indexOf(sbg)==-1);
-				subgroupsWithN1N2N3ForActivities[i].append(sbg);
+			if(subgroupsMaxActivityTagsPerDayFromSetPercentages[sbg].count()>0 || subgroupsMaxActivityTagsPerRealDayFromSetPercentages[sbg].count()>0){
+				assert(subgroupsWithTagsForActivities[i].indexOf(sbg)==-1);
+				subgroupsWithTagsForActivities[i].append(sbg);
 			}
 		}
 	}
-
+	
 	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
 		Activity* act=&gt.rules.internalActivitiesList[ai];
-		int cnt=0;
-		for(const QString& tag : std::as_const(act->activityTagsNames)){
-			if(tag=="N1"){
-				activityTagN1N2N3[ai]=0;
-				cnt++;
-			}
-			else if(tag=="N2"){
-				activityTagN1N2N3[ai]=1;
-				cnt++;
-			}
-			else if(tag=="N3"){
-				activityTagN1N2N3[ai]=2;
-				cnt++;
-			}
-		}
-		if(cnt==0){
-			activityTagN1N2N3[ai]=3; //none
-		}
-		else if((teachersWithN1N2N3ForActivities[ai].count()>=1 || subgroupsWithN1N2N3ForActivities[ai].count()>=1) && cnt>=2){
-			ok=false;
 		
-			QString s=GeneratePreTranslate::tr("Activity with id=%1 has more than one activity tag from N1, N2, and N3, and you have"
-			 " at least a constraint of type teacher(s)/students (set) max two activity tags from N1, N2, and N3 per (real) day for the teacher(s)/students of this activity - please correct that.")
-			 .arg(gt.rules.internalActivitiesList[ai].id);
-			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
-			 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
-			 1, 0 );
-			
-			if(t==0)
-				return false;
+		subgroupsMaxActivityTagsPerDayForActivity[ai].clear();
+		subgroupsMaxActivityTagsPerRealDayForActivity[ai].clear();
+		teachersMaxActivityTagsPerDayForActivity[ai].clear();
+		teachersMaxActivityTagsPerRealDayForActivity[ai].clear();
+
+		for(int tch : std::as_const(act->iTeachersList)){
+			for(int i=0; i<teachersMaxActivityTagsPerDayFromSetPercentages[tch].count(); i++){
+				const QSet<int>& ts=teachersMaxActivityTagsPerDayFromSetTagsSet[tch].at(i);
+				if(ts.intersects(act->iActivityTagsSet)){
+					QSet<int> ts2=ts;
+					ts2.intersect(act->iActivityTagsSet);
+					assert(ts2.count()==1);
+					teachersMaxActivityTagsPerDayForActivity[ai].append(std::make_tuple(tch, i, *ts2.constBegin()));
+				}
+			}
+
+			for(int i=0; i<teachersMaxActivityTagsPerRealDayFromSetPercentages[tch].count(); i++){
+				const QSet<int>& ts=teachersMaxActivityTagsPerRealDayFromSetTagsSet[tch].at(i);
+				if(ts.intersects(act->iActivityTagsSet)){
+					QSet<int> ts2=ts;
+					ts2.intersect(act->iActivityTagsSet);
+					assert(ts2.count()==1);
+					teachersMaxActivityTagsPerRealDayForActivity[ai].append(std::make_tuple(tch, i, *ts2.constBegin()));
+				}
+			}
+		}
+
+		for(int sbg : std::as_const(act->iSubgroupsList)){
+			for(int i=0; i<subgroupsMaxActivityTagsPerDayFromSetPercentages[sbg].count(); i++){
+				const QSet<int>& ts=subgroupsMaxActivityTagsPerDayFromSetTagsSet[sbg].at(i);
+				if(ts.intersects(act->iActivityTagsSet)){
+					QSet<int> ts2=ts;
+					ts2.intersect(act->iActivityTagsSet);
+					assert(ts2.count()==1);
+					subgroupsMaxActivityTagsPerDayForActivity[ai].append(std::make_tuple(sbg, i, *ts2.constBegin()));
+				}
+			}
+
+			for(int i=0; i<subgroupsMaxActivityTagsPerRealDayFromSetPercentages[sbg].count(); i++){
+				const QSet<int>& ts=subgroupsMaxActivityTagsPerRealDayFromSetTagsSet[sbg].at(i);
+				if(ts.intersects(act->iActivityTagsSet)){
+					QSet<int> ts2=ts;
+					ts2.intersect(act->iActivityTagsSet);
+					assert(ts2.count()==1);
+					subgroupsMaxActivityTagsPerRealDayForActivity[ai].append(std::make_tuple(sbg, i, *ts2.constBegin()));
+				}
+			}
 		}
 	}
 
@@ -21788,7 +22143,7 @@ bool computeFixedActivities(QWidget* parent)
 			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 			 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 			 1, 0 );
-					
+			
 			if(t==0)
 				return false;
 		}

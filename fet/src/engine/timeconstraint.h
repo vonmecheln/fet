@@ -190,8 +190,8 @@ const int CONSTRAINT_TEACHERS_MAX_AFTERNOONS_PER_WEEK					=102;
 const int CONSTRAINT_TEACHER_MAX_MORNINGS_PER_WEEK						=103;
 const int CONSTRAINT_TEACHERS_MAX_MORNINGS_PER_WEEK						=104;
 
-const int CONSTRAINT_TEACHER_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3	=105;
-const int CONSTRAINT_TEACHERS_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3	=106;
+const int CONSTRAINT_TEACHER_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET			=105;
+const int CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET		=106;
 
 const int CONSTRAINT_TEACHERS_MIN_MORNINGS_PER_WEEK						=107;
 const int CONSTRAINT_TEACHER_MIN_MORNINGS_PER_WEEK						=108;
@@ -325,13 +325,13 @@ const int CONSTRAINT_ACTIVITIES_MIN_IN_A_TERM										=186;
 const int CONSTRAINT_MAX_TERMS_BETWEEN_ACTIVITIES									=187;
 //End   for terms - 2022-05-20
 
-const int CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3			=188;
-const int CONSTRAINT_STUDENTS_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3				=189;
+const int CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET				=188;
+const int CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET					=189;
 
-const int CONSTRAINT_TEACHER_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3			=190;
-const int CONSTRAINT_TEACHERS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3		=191;
-const int CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3	=192;
-const int CONSTRAINT_STUDENTS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3		=193;
+const int CONSTRAINT_TEACHER_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET				=190;
+const int CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET				=191;
+const int CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET			=192;
+const int CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET				=193;
 
 //Begin for mornings-afternoons - 2022-07-31
 const int CONSTRAINT_MAX_HALF_DAYS_BETWEEN_ACTIVITIES								=194;
@@ -375,6 +375,10 @@ const int CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_
 const int CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON						=221;
 const int CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON						=222;
 const int CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON						=223;
+
+//2024-09-03
+const int CONSTRAINT_TEACHERS_NO_TWO_CONSECUTIVE_DAYS															=224;
+const int CONSTRAINT_TEACHER_NO_TWO_CONSECUTIVE_DAYS															=225;
 
 class QDataStream;
 
@@ -8244,8 +8248,8 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
-class ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3: public TimeConstraint{
-	Q_DECLARE_TR_FUNCTIONS(ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3)
+class ConstraintTeacherMaxActivityTagsPerDayFromSet: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeacherMaxActivityTagsPerDayFromSet)
 
 public:
 
@@ -8258,10 +8262,16 @@ public:
 	The teacher's id, or index in the rules
 	*/
 	int teacher_ID;
+	
+	int maxTags;
+	
+	QList<QString> tagsList;
+	
+	QSet<int> internalTagsSet;
 
-	ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3();
+	ConstraintTeacherMaxActivityTagsPerDayFromSet();
 
-	ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3(double wp, const QString& tn);
+	ConstraintTeacherMaxActivityTagsPerDayFromSet(double wp, const QString& tn, int mtg, const QList<QString>& tgl);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -8290,14 +8300,20 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
-class ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3: public TimeConstraint{
-	Q_DECLARE_TR_FUNCTIONS(ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3)
+class ConstraintTeachersMaxActivityTagsPerDayFromSet: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeachersMaxActivityTagsPerDayFromSet)
 
 public:
 
-	ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3();
+	int maxTags;
+	
+	QList<QString> tagsList;
+	
+	QSet<int> internalTagsSet;
 
-	ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3(double wp);
+	ConstraintTeachersMaxActivityTagsPerDayFromSet();
+
+	ConstraintTeachersMaxActivityTagsPerDayFromSet(double wp, int mtg, const QList<QString>& tgl);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -10628,8 +10644,8 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
-class ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3: public TimeConstraint{
-	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3)
+class ConstraintStudentsSetMaxActivityTagsPerDayFromSet: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsSetMaxActivityTagsPerDayFromSet)
 
 public:
 
@@ -10643,9 +10659,15 @@ public:
 	*/
 	QList<int> iSubgroupsList;
 
-	ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3();
+	int maxTags;
+	
+	QList<QString> tagsList;
+	
+	QSet<int> internalTagsSet;
 
-	ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3(double wp, const QString& sn);
+	ConstraintStudentsSetMaxActivityTagsPerDayFromSet();
+
+	ConstraintStudentsSetMaxActivityTagsPerDayFromSet(double wp, const QString& sn, int mtg, const QList<QString>& tgl);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -10674,14 +10696,20 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
-class ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3: public TimeConstraint{
-	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3)
+class ConstraintStudentsMaxActivityTagsPerDayFromSet: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsMaxActivityTagsPerDayFromSet)
 
 public:
 
-	ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3();
+	int maxTags;
+	
+	QList<QString> tagsList;
+	
+	QSet<int> internalTagsSet;
 
-	ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3(double wp);
+	ConstraintStudentsMaxActivityTagsPerDayFromSet();
+
+	ConstraintStudentsMaxActivityTagsPerDayFromSet(double wp, int mtg, const QList<QString>& tgl);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -10710,8 +10738,8 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
-class ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3: public TimeConstraint{
-	Q_DECLARE_TR_FUNCTIONS(ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3)
+class ConstraintTeacherMaxActivityTagsPerRealDayFromSet: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeacherMaxActivityTagsPerRealDayFromSet)
 
 public:
 
@@ -10725,9 +10753,15 @@ public:
 	*/
 	int teacher_ID;
 
-	ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3();
+	int maxTags;
+	
+	QList<QString> tagsList;
+	
+	QSet<int> internalTagsSet;
 
-	ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3(double wp, const QString& tn);
+	ConstraintTeacherMaxActivityTagsPerRealDayFromSet();
+
+	ConstraintTeacherMaxActivityTagsPerRealDayFromSet(double wp, const QString& tn, int mtg, const QList<QString>& tgl);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -10756,14 +10790,20 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
-class ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3: public TimeConstraint{
-	Q_DECLARE_TR_FUNCTIONS(ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3)
+class ConstraintTeachersMaxActivityTagsPerRealDayFromSet: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeachersMaxActivityTagsPerRealDayFromSet)
 
 public:
 
-	ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3();
+	int maxTags;
+	
+	QList<QString> tagsList;
+	
+	QSet<int> internalTagsSet;
 
-	ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3(double wp);
+	ConstraintTeachersMaxActivityTagsPerRealDayFromSet();
+
+	ConstraintTeachersMaxActivityTagsPerRealDayFromSet(double wp, int mtg, const QList<QString>& tgl);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -10792,8 +10832,8 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
-class ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3: public TimeConstraint{
-	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3)
+class ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet)
 
 public:
 
@@ -10807,9 +10847,15 @@ public:
 	*/
 	QList<int> iSubgroupsList;
 
-	ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3();
+	int maxTags;
+	
+	QList<QString> tagsList;
+	
+	QSet<int> internalTagsSet;
 
-	ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3(double wp, const QString& sn);
+	ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet();
+
+	ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet(double wp, const QString& sn, int mtg, const QList<QString>& tgl);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -10838,14 +10884,20 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
-class ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3: public TimeConstraint{
-	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3)
+class ConstraintStudentsMaxActivityTagsPerRealDayFromSet: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsMaxActivityTagsPerRealDayFromSet)
 
 public:
 
-	ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3();
+	int maxTags;
+	
+	QList<QString> tagsList;
+	
+	QSet<int> internalTagsSet;
 
-	ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3(double wp);
+	ConstraintStudentsMaxActivityTagsPerRealDayFromSet();
+
+	ConstraintStudentsMaxActivityTagsPerRealDayFromSet(double wp, int mtg, const QList<QString>& tgl);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -11362,6 +11414,87 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
+//2024-09-04
+class ConstraintTeacherNoTwoConsecutiveDays: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeacherNoTwoConsecutiveDays)
+
+public:
+	/**
+	The teacher's name
+	*/
+	QString teacherName;
+
+	/**
+	The teacher's id, or index in the rules
+	*/
+	int teacher_ID;
+
+	ConstraintTeacherNoTwoConsecutiveDays();
+
+	ConstraintTeacherNoTwoConsecutiveDays(double wp, const QString& tn);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintTeachersNoTwoConsecutiveDays: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeachersNoTwoConsecutiveDays)
+
+public:
+	ConstraintTeachersNoTwoConsecutiveDays();
+
+	ConstraintTeachersNoTwoConsecutiveDays(double wp);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
 //1
 QDataStream& operator<<(QDataStream& stream, const ConstraintBasicCompulsoryTime& tc);
 //2
@@ -11571,9 +11704,9 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxMorningsP
 //104
 QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxMorningsPerWeek& tc);
 //105
-QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3& tc);
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxActivityTagsPerDayFromSet& tc);
 //106
-QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3& tc);
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxActivityTagsPerDayFromSet& tc);
 //107
 QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinMorningsPerWeek& tc);
 //108
@@ -11737,17 +11870,17 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesMinInATer
 //187
 QDataStream& operator<<(QDataStream& stream, const ConstraintMaxTermsBetweenActivities& tc);
 //188
-QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3& tc);
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxActivityTagsPerDayFromSet& tc);
 //189
-QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3& tc);
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxActivityTagsPerDayFromSet& tc);
 //190
-QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3& tc);
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxActivityTagsPerRealDayFromSet& tc);
 //191
-QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3& tc);
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxActivityTagsPerRealDayFromSet& tc);
 //192
-QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3& tc);
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet& tc);
 //193
-QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3& tc);
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxActivityTagsPerRealDayFromSet& tc);
 //194
 QDataStream& operator<<(QDataStream& stream, const ConstraintMaxHalfDaysBetweenActivities& tc);
 //195
@@ -11808,6 +11941,10 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMinGapsBetw
 QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon& tc);
 //223
 QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon& tc);
+//224
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersNoTwoConsecutiveDays& tc);
+//225
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherNoTwoConsecutiveDays& tc);
 
 //1
 QDataStream& operator>>(QDataStream& stream, ConstraintBasicCompulsoryTime& tc);
@@ -12018,9 +12155,9 @@ QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxMorningsPerWeek
 //104
 QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxMorningsPerWeek& tc);
 //105
-QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3& tc);
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxActivityTagsPerDayFromSet& tc);
 //106
-QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3& tc);
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxActivityTagsPerDayFromSet& tc);
 //107
 QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinMorningsPerWeek& tc);
 //108
@@ -12184,17 +12321,17 @@ QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesMinInATerm& tc)
 //187
 QDataStream& operator>>(QDataStream& stream, ConstraintMaxTermsBetweenActivities& tc);
 //188
-QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3& tc);
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxActivityTagsPerDayFromSet& tc);
 //189
-QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3& tc);
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxActivityTagsPerDayFromSet& tc);
 //190
-QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3& tc);
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxActivityTagsPerRealDayFromSet& tc);
 //191
-QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3& tc);
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxActivityTagsPerRealDayFromSet& tc);
 //192
-QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3& tc);
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet& tc);
 //193
-QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3& tc);
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxActivityTagsPerRealDayFromSet& tc);
 //194
 QDataStream& operator>>(QDataStream& stream, ConstraintMaxHalfDaysBetweenActivities& tc);
 //195
@@ -12255,5 +12392,9 @@ QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMinGapsBetweenAct
 QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon& tc);
 //223
 QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon& tc);
+//224
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersNoTwoConsecutiveDays& tc);
+//225
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherNoTwoConsecutiveDays& tc);
 
 #endif

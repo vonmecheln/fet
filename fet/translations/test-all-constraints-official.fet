@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="6.22.0">
+<fet version="6.25.0">
 
 <Mode>Official</Mode>
 
@@ -2141,6 +2141,57 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintStudentsMaxHoursDailyInInterval>
+<ConstraintTeacherNoTwoConsecutiveDays>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t1</Teacher>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNoTwoConsecutiveDays>
+<ConstraintTeachersNoTwoConsecutiveDays>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersNoTwoConsecutiveDays>
+<ConstraintTeacherMaxActivityTagsPerDayFromSet>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t1</Teacher>
+	<Maximum_Allowed_Activity_Tags>1</Maximum_Allowed_Activity_Tags>
+	<Number_of_Activity_Tags>2</Number_of_Activity_Tags>
+	<Activity_Tag>at1</Activity_Tag>
+	<Activity_Tag>at2</Activity_Tag>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxActivityTagsPerDayFromSet>
+<ConstraintTeachersMaxActivityTagsPerDayFromSet>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Maximum_Allowed_Activity_Tags>2</Maximum_Allowed_Activity_Tags>
+	<Number_of_Activity_Tags>3</Number_of_Activity_Tags>
+	<Activity_Tag>at2</Activity_Tag>
+	<Activity_Tag>at1</Activity_Tag>
+	<Activity_Tag>at3</Activity_Tag>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxActivityTagsPerDayFromSet>
+<ConstraintStudentsSetMaxActivityTagsPerDayFromSet>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1</Students>
+	<Maximum_Allowed_Activity_Tags>2</Maximum_Allowed_Activity_Tags>
+	<Number_of_Activity_Tags>3</Number_of_Activity_Tags>
+	<Activity_Tag>at3</Activity_Tag>
+	<Activity_Tag>at2</Activity_Tag>
+	<Activity_Tag>at1</Activity_Tag>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxActivityTagsPerDayFromSet>
+<ConstraintStudentsMaxActivityTagsPerDayFromSet>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Maximum_Allowed_Activity_Tags>1</Maximum_Allowed_Activity_Tags>
+	<Number_of_Activity_Tags>2</Number_of_Activity_Tags>
+	<Activity_Tag>at1</Activity_Tag>
+	<Activity_Tag>at2</Activity_Tag>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxActivityTagsPerDayFromSet>
 </Time_Constraints_List>
 
 <Space_Constraints_List>

@@ -225,6 +225,12 @@ private:
 	Matrix1D<int> nConflictingActivitiesBipartiteMatching;
 	Matrix1D<QSet<int>> conflictingActivitiesBipartiteMatching; //only used at level 0
 
+	Matrix1D<int> cntTagsMatrix; //for constraints students (set)/teacher(s) max activity tags per day/real day from set.
+	Matrix1D<int> _tags_minWrong;
+	Matrix1D<int> _tags_nWrong;
+	Matrix1D<int> _tags_nConflActivities;
+	Matrix1D<int> _tags_minIndexAct;
+
 	Solution* tmpGlobalSolutionCompareLevel0;
 
 	bool compareConflictsIncreasing(int a, int b);

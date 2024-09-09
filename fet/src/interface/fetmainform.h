@@ -59,13 +59,7 @@ class FetMainForm: public QMainWindow, public Ui::FetMainForm_template
 	
 private:
 	//
-	QMenu* menuA_teacher_time_constraints;
-	QMenu* menuAll_teachers_time_constraints;
-	//
-	QMenu* menuA_students_set_time_constraints;
-	QMenu* menuAll_students_time_constraints;
-	//
-	QMenu* menuA_teacher_1_time_constraints; //for Mornings-Afternoons mode
+	QMenu* menuA_teacher_1_time_constraints;
 	QMenu* menuA_teacher_2_time_constraints;
 	QMenu* menuA_teacher_3_time_constraints;
 	QMenu* menuA_teacher_4_time_constraints;
@@ -329,14 +323,15 @@ private:
 	QAction* dataTimeConstraintsTeacherMinAfternoonsPerWeekAction;
 	QAction* dataTimeConstraintsTeachersMinAfternoonsPerWeekAction;
 	QAction* dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysAction;
-	QAction* dataTimeConstraintsTeacherMaxTwoActivityTagsPerDayFromN1N2N3Action;
-	QAction* dataTimeConstraintsTeachersMaxTwoActivityTagsPerDayFromN1N2N3Action;
-	QAction* dataTimeConstraintsStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3Action;
-	QAction* dataTimeConstraintsStudentsMaxTwoActivityTagsPerDayFromN1N2N3Action;
-	QAction* dataTimeConstraintsTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3Action;
-	QAction* dataTimeConstraintsTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3Action;
-	QAction* dataTimeConstraintsStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3Action;
-	QAction* dataTimeConstraintsStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3Action;
+	QAction* dataTimeConstraintsTeacherMaxActivityTagsPerDayFromSetAction;
+	QAction* dataTimeConstraintsTeachersMaxActivityTagsPerDayFromSetAction;
+	QAction* dataTimeConstraintsStudentsSetMaxActivityTagsPerDayFromSetAction;
+	QAction* dataTimeConstraintsStudentsMaxActivityTagsPerDayFromSetAction;
+	QAction* dataTimeConstraintsTeacherMaxActivityTagsPerRealDayFromSetAction;
+	QAction* dataTimeConstraintsTeachersMaxActivityTagsPerRealDayFromSetAction;
+	QAction* dataTimeConstraintsStudentsSetMaxActivityTagsPerRealDayFromSetAction;
+	QAction* dataTimeConstraintsStudentsMaxActivityTagsPerRealDayFromSetAction;
+
 	QAction* dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction;
 	QAction* dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction;
 	QAction* dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction;
@@ -367,6 +362,9 @@ private:
 	QAction* dataSpaceConstraintsStudentsMaxBuildingChangesPerRealDayAction;
 	QAction* dataSpaceConstraintsTeacherMaxBuildingChangesPerRealDayAction;
 	QAction* dataSpaceConstraintsTeachersMaxBuildingChangesPerRealDayAction;
+
+	QAction* dataTimeConstraintsTeacherNoTwoConsecutiveDaysAction;
+	QAction* dataTimeConstraintsTeachersNoTwoConsecutiveDaysAction;
 
 	QAction* dataTimeConstraintsTeacherMaxThreeConsecutiveDaysAction;
 	QAction* dataTimeConstraintsTeachersMaxThreeConsecutiveDaysAction;
@@ -796,17 +794,17 @@ public slots:
 	void dataTimeConstraintsTeachersMaxHoursDailyRealDaysAction_triggered();
 	void dataTimeConstraintsTeacherMaxHoursDailyRealDaysAction_triggered();
 
-	void dataTimeConstraintsTeacherMaxTwoActivityTagsPerDayFromN1N2N3Action_triggered();
-	void dataTimeConstraintsTeachersMaxTwoActivityTagsPerDayFromN1N2N3Action_triggered();
+	void dataTimeConstraintsTeacherMaxActivityTagsPerDayFromSetAction_triggered();
+	void dataTimeConstraintsTeachersMaxActivityTagsPerDayFromSetAction_triggered();
 
-	void dataTimeConstraintsStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3Action_triggered();
-	void dataTimeConstraintsStudentsMaxTwoActivityTagsPerDayFromN1N2N3Action_triggered();
+	void dataTimeConstraintsStudentsSetMaxActivityTagsPerDayFromSetAction_triggered();
+	void dataTimeConstraintsStudentsMaxActivityTagsPerDayFromSetAction_triggered();
 
-	void dataTimeConstraintsTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3Action_triggered();
-	void dataTimeConstraintsTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3Action_triggered();
+	void dataTimeConstraintsTeacherMaxActivityTagsPerRealDayFromSetAction_triggered();
+	void dataTimeConstraintsTeachersMaxActivityTagsPerRealDayFromSetAction_triggered();
 
-	void dataTimeConstraintsStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3Action_triggered();
-	void dataTimeConstraintsStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3Action_triggered();
+	void dataTimeConstraintsStudentsSetMaxActivityTagsPerRealDayFromSetAction_triggered();
+	void dataTimeConstraintsStudentsMaxActivityTagsPerRealDayFromSetAction_triggered();
 
 	void dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction_triggered();
 	void dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysAction_triggered();
@@ -897,6 +895,9 @@ public slots:
 	void dataTimeConstraintsTeachersMinRestingHoursBetweenMorningAndAfternoonAction_triggered();
 	void dataTimeConstraintsStudentsSetMinRestingHoursBetweenMorningAndAfternoonAction_triggered();
 	void dataTimeConstraintsStudentsMinRestingHoursBetweenMorningAndAfternoonAction_triggered();
+
+	void dataTimeConstraintsTeacherNoTwoConsecutiveDaysAction_triggered();
+	void dataTimeConstraintsTeachersNoTwoConsecutiveDaysAction_triggered();
 
 	void dataTimeConstraintsTeacherMaxThreeConsecutiveDaysAction_triggered();
 	void dataTimeConstraintsTeachersMaxThreeConsecutiveDaysAction_triggered();
