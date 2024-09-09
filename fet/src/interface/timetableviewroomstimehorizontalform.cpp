@@ -529,6 +529,9 @@ void TimetableViewRoomsTimeHorizontalForm::newTimetableGenerated()
 		assert(0); //should be taken care of by Rules - rooms_buildings_schedule_ready is false in the Rules if adding or removing rooms.
 	}
 
+	int r=roomsTimetableTable->currentRow();
+	int c=roomsTimetableTable->currentColumn();
+
 	//DON'T UNCOMMENT THIS CODE -> LEADS TO CRASH IF THERE ARE MORE VIEWS OPENED.
 	//LockUnlock::increaseCommunicationSpinBox();
 	
@@ -746,6 +749,9 @@ void TimetableViewRoomsTimeHorizontalForm::newTimetableGenerated()
 	//connect(&communicationSpinBox, SIG NAL(valueChanged(int)), this, SL OT(updateRoomsTimetableTable()));
 	
 	updateRoomsTimetableTable();
+
+	if(r>=0 && r<roomsTimetableTable->rowCount() && c>=0 && c<roomsTimetableTable->columnCount())
+		roomsTimetableTable->setCurrentCell(r, c);
 }
 
 TimetableViewRoomsTimeHorizontalForm::~TimetableViewRoomsTimeHorizontalForm()

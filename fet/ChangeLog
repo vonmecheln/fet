@@ -2922,3 +2922,9 @@ Versions 6.24.0 - 6.24.v
 	in selected time slots (suggested by potrempe, fourat, and YOUSSEF HOUIET). The constraints are highly optimized and work very well in practice.
 	- The comments in the timetables will no longer have an italic font (suggested by Cyrus Ireri).
 	- Other minor interface improvements.
+- Version 6.24.1
+	- Added the option to change with a single click the weights of a whole selection of time/space constraints (in the all time/space constraints dialogs)
+	(suggested by Bahri Abderezak on Facebook, and maybe other users in the past).
+	- After generating a new timetable, if some timetable view days horizontal/vertical dialogs were already opened, they will remember their selected
+	teacher/students set/room (suggested by Kamel Ben on Facebook). Also, in all the timetable view dialogs, the current cell will be remembered
+	(but not the whole selection of cells, if there are more cell selected).

@@ -179,6 +179,8 @@ public:
 	*/
 	SpaceConstraint(double wp);
 
+	bool canHaveAnyWeight(); //false if it can have the weight only 100%.
+
 	bool canBeUsedInOfficialMode();
 	bool canBeUsedInMorningsAfternoonsMode();
 	bool canBeUsedInBlockPlanningMode();

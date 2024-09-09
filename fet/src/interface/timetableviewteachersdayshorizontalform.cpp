@@ -350,6 +350,9 @@ void TimetableViewTeachersDaysHorizontalForm::newTimetableGenerated()
 	assert(backupPermanentlyLockedSpace==idsOfPermanentlyLockedSpace);
 ///////////
 
+	int r=teachersTimetableTable->currentRow();
+	int c=teachersTimetableTable->currentColumn();
+
 	//DON'T UNCOMMENT THIS CODE -> LEADS TO CRASH IF THERE ARE MORE VIEWS OPENED.
 	//LockUnlock::increaseCommunicationSpinBox();
 	
@@ -427,16 +430,27 @@ void TimetableViewTeachersDaysHorizontalForm::newTimetableGenerated()
 	////////////////
 	
 */
+
+	int t=teachersListWidget->currentRow();
+
 	disconnect(teachersListWidget, &QListWidget::currentTextChanged, this, &TimetableViewTeachersDaysHorizontalForm::teacherChanged);
 	teachersListWidget->clear();
-	connect(teachersListWidget, &QListWidget::currentTextChanged, this, &TimetableViewTeachersDaysHorizontalForm::teacherChanged);
 
 	assert(gt.rules.nInternalTeachers==gt.rules.teachersList.count());
 	for(int i=0; i<gt.rules.nInternalTeachers; i++)
 		teachersListWidget->addItem(gt.rules.internalTeachersList[i]->name);
 
-	if(teachersListWidget->count()>0)
-		teachersListWidget->setCurrentRow(0);
+	connect(teachersListWidget, &QListWidget::currentTextChanged, this, &TimetableViewTeachersDaysHorizontalForm::teacherChanged);
+
+	if(teachersListWidget->count()>0){
+		if(t>=0 && t<teachersListWidget->count())
+			teachersListWidget->setCurrentRow(t);
+		else
+			teachersListWidget->setCurrentRow(0);
+	}
+
+	if(r>=0 && r<teachersTimetableTable->rowCount() && c>=0 && c<teachersTimetableTable->columnCount())
+		teachersTimetableTable->setCurrentCell(r, c);
 
 	//added by Volker Dirr
 	//connect(&communicationSpinBox, SIG NAL(valueChanged(int)), this, SL OT(updateTeachersTimetableTable()));

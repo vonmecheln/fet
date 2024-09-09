@@ -9838,3 +9838,89 @@ When you choose this option you only get one table per page, and that will waste
 Is it possible to make it 3 per page?
 
 Especially if you rotate the page like this (portrait), a lot of space is wasted.
+
+607------------DONE in FET-6.24.1---------------------------
+
+608---------------------------------------------------------
+From Liviu Lalescu (who observed Redha Rahmane's problem):
+
+Actually, it was his message that made me (Liviu Lalescu) to think about this problem: in the Mornings-Afternoons mode, Redha Rahmane had set some
+teachers in the exclusive (Morocco) mode, and this was making the program not being able to solve the file, without him to remember this fact. A good
+idea might be to mention in the list of all time constraints each teacher's Mornings-afternoons behavior, to avoid this problem.
+
+Note: On a Facebook vote about moving the teachers' Mornings-afternoons behavior to the constraints, the vast majority of users voted to keep the
+current style (in the teachers' list).
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6085.0
+
+YOUSSEF HOUIET: I think that users are confused about the teacher's behavior feature due to old YouTube videos that explain how to use the program
+when there were the Moroccan and Algerian versions, as well as the FET MA version. We always try to guide new users to understand that the behavior
+has been moved from the constraints interface to the teachers' data.
+
+Anyway, I have opened a poll on the subject in a Facebook group and will wait for the results.
+
+As for my opinion, I think moving the teacher's behavior back to constraints would be a step backward in the development of the program. 
+
+MOHAMED AIT ICHOU: You can leave it as it is now, it is clear to those who use the program normally.
+
+---
+
+YOUSSEF HOUIET: I suggest adding a feature in the Mornings-Afternoons mode like a msgbox or a warning when user click on Data -> Teachers, and when
+starting the generation process, alerting the user to pay attention to the teachers' behavior.
+
+Liviu Lalescu: I think maybe we need to add in the list of all time constraints a list of the Mornings-afternoons behavior of the teachers (but also
+keeping the current teachers' dialog, in which you choose the Mornings-afternoon behavior of the teacher)s. What do you say?
+
+Benahmed Abdelkrim: I admit I didn't read your post very well. I think this idea is very good and will help users to detect any possible errors.
+Let's summarize what can be done: Keep the morning - afternoon behavior as it is now,and add this behavior to the list of all time constraints.
+In this way the user would be able to detect his errors and correct them.
+
+Quote from @Liviu Lalescu
+Or maybe move the teachers' Mornings-afternoons behavior from a teacher to a time constraint for each teacher?
+
+Benahmed Abdelkrim: Yes, this is also a good idea with a little correction: the morning-afternoon behaviors are kept in the teacher as they are now.
+This way the user has two options, not one, such as constraint min days between activities.
+
+609---------------------------------------------------------
+From pekuon (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6084.0
+
+I am currently scheduling with many constraints; however, the school frequently changes the teaching assignments, which leads to frequent changes
+in the class periods. When class periods are changed, some constraints are lost compared to the old schedule. Therefore, I would like to have
+a button to export all constraints to CSV or Excel for easier tracking of any missing constraints later.
+
+610---------------------------------------------------------
+From Bahri Abderezak (on Facebook):
+
+Say FET can place 495 out of 500 activities. We suggest to place these 495 activities and allow manual positioning of the remaining 5,
+by displaying them on the right and allowing to drag-and-drop them in the timetable.
+
+611---------------------------------------------------------
+From Michael Chourdakis (on Facebook):
+
+Implement a group of constraints, and from that group you can let FET do an AND, OR, or XOR of the constraints.
+
+612------------DONE in FET-6.24.1---------------------------
+
+613---------------------------------------------------------
+From danghoan (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6102.0
+
+I have 2 activities Tags, Tags A (morning), Tags B (afternoon).
+
+1. I want to set a condition so that 2 activities Tags A and B do not appear on the same day.
+
+2. Let me ask another question: If I want to set a condition of maximum space between morning and afternoon, how do I do it?
+
+Liviu Lalescu:
+
+2. Maybe teachers/students max gaps per real day.
+
+614---------------------------------------------------------
+From Khelifi Fouad Mohssen (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6109.0
+
+Program in FET official form: I have a teacher who works two days, and I want these two days to not be consecutive.

@@ -368,6 +368,9 @@ void TimetableViewRoomsDaysHorizontalForm::newTimetableGenerated()
 	assert(backupPermanentlyLockedSpace==idsOfPermanentlyLockedSpace);
 //////////
 
+	int r=roomsTimetableTable->currentRow();
+	int c=roomsTimetableTable->currentColumn();
+
 	//DON'T UNCOMMENT THIS CODE -> LEADS TO CRASH IF THERE ARE MORE VIEWS OPENED.
 	//LockUnlock::increaseCommunicationSpinBox();
 
@@ -452,9 +455,10 @@ void TimetableViewRoomsDaysHorizontalForm::newTimetableGenerated()
 	///////////////
 */
 
+	int rm=roomsListWidget->currentRow();
+
 	disconnect(roomsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewRoomsDaysHorizontalForm::roomChanged);
 	roomsListWidget->clear();
-	connect(roomsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewRoomsDaysHorizontalForm::roomChanged);
 	
 	if(gt.rules.nInternalRooms!=gt.rules.roomsList.count()){
 		assert(0);
@@ -464,9 +468,18 @@ void TimetableViewRoomsDaysHorizontalForm::newTimetableGenerated()
 		for(int i=0; i<gt.rules.nInternalRooms; i++)
 			roomsListWidget->addItem(gt.rules.internalRoomsList[i]->name);
 	}
+
+	connect(roomsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewRoomsDaysHorizontalForm::roomChanged);
 	
-	if(roomsListWidget->count()>0)
-		roomsListWidget->setCurrentRow(0);
+	if(roomsListWidget->count()>0){
+		if(rm>=0 && rm<roomsListWidget->count())
+			roomsListWidget->setCurrentRow(rm);
+		else
+			roomsListWidget->setCurrentRow(0);
+	}
+
+	if(r>=0 && r<roomsTimetableTable->rowCount() && c>=0 && c<roomsTimetableTable->columnCount())
+		roomsTimetableTable->setCurrentCell(r, c);
 
 	//added by Volker Dirr
 	//connect(&communicationSpinBox, SIG NAL(valueChanged(int)), this, SL OT(updateRoomsTimetableTable()));

@@ -422,6 +422,8 @@ public:
 	so that the timetable can evolve when starting with uninitialized activities.
 	*/
 	TimeConstraint(double wp);
+	
+	bool canHaveAnyWeight(); //false if it can have the weight only 100%.
 
 	bool canBeUsedInOfficialMode();
 	bool canBeUsedInMorningsAfternoonsMode();

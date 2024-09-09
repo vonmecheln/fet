@@ -157,7 +157,7 @@
     </layout>
    </item>
    <item row="1" column="4">
-    <layout class="QVBoxLayout" name="verticalLayout_8">
+    <layout class="QVBoxLayout" name="verticalLayout_7">
      <item>
       <widget class="QPushButton" name="commentsPushButton">
        <property name="text">
@@ -166,11 +166,22 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="closePushButton">
-       <property name="text">
-        <string>Close</string>
-       </property>
-      </widget>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QPushButton" name="weightsPushButton">
+         <property name="text">
+          <string comment="With this button we can change the weights of all the selected space constraints">Weights</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="closePushButton">
+         <property name="text">
+          <string>Close</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
     </layout>
    </item>

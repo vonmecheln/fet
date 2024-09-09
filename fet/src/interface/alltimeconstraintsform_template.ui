@@ -166,11 +166,22 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="closePushButton">
-       <property name="text">
-        <string>Close</string>
-       </property>
-      </widget>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QPushButton" name="weightsPushButton">
+         <property name="text">
+          <string comment="With this button we can change the weights of all the selected time constraints">Weights</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="closePushButton">
+         <property name="text">
+          <string>Close</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
     </layout>
    </item>

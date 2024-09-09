@@ -347,12 +347,14 @@ void TimetableViewStudentsDaysVerticalForm::newTimetableGenerated()
 	groupsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	subgroupsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);*/
 
+	/* commented out on 2024-08-31
 	disconnect(groupsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysVerticalForm::groupChanged);
 	disconnect(subgroupsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysVerticalForm::subgroupChanged);
 	groupsListWidget->clear();
 	subgroupsListWidget->clear();
 	connect(groupsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysVerticalForm::groupChanged);
 	connect(subgroupsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysVerticalForm::subgroupChanged);
+	*/
 	
 	//This connect should be lower in the code
 	//connect(yearsListWidget, SIG NAL(currentTextChanged(const QString&)), this, SL OT(yearChanged(const QString&)));
@@ -403,6 +405,9 @@ void TimetableViewStudentsDaysVerticalForm::newTimetableGenerated()
 	assert(backupLockedSpace==idsOfLockedSpace);
 	assert(backupPermanentlyLockedSpace==idsOfPermanentlyLockedSpace);
 //////////
+
+	int r=studentsTimetableTable->currentRow();
+	int c=studentsTimetableTable->currentColumn();
 
 	//DON'T UNCOMMENT THIS CODE -> LEADS TO CRASH IF THERE ARE MORE VIEWS OPENED.
 	//LockUnlock::increaseCommunicationSpinBox();
@@ -478,6 +483,7 @@ void TimetableViewStudentsDaysVerticalForm::newTimetableGenerated()
 	///////////////
 */
 	
+	/* commented out on 2024-08-31
 	disconnect(yearsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysVerticalForm::yearChanged);
 	yearsListWidget->clear();
 	for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
@@ -487,6 +493,7 @@ void TimetableViewStudentsDaysVerticalForm::newTimetableGenerated()
 	if(yearsListWidget->count()>0)
 		yearsListWidget->setCurrentRow(0);
 	connect(yearsListWidget, &QListWidget::currentTextChanged, this, &TimetableViewStudentsDaysVerticalForm::yearChanged);
+	*/
 	
 /*	shownComboBox->addItem(tr("Years"));
 	shownComboBox->addItem(tr("Groups"));
@@ -505,7 +512,24 @@ void TimetableViewStudentsDaysVerticalForm::newTimetableGenerated()
 	//added by Volker Dirr
 	//connect(&communicationSpinBox, SIG NAL(valueChanged(int)), this, SL OT(updateStudentsTimetableTable()));
 
+	int y=yearsListWidget->currentRow();
+	int g=groupsListWidget->currentRow();
+	int s=subgroupsListWidget->currentRow();
+	
 	shownComboBoxChanged();
+	
+	if(yearsListWidget->isVisible())
+		if(y>=0 && y<yearsListWidget->count())
+			yearsListWidget->setCurrentRow(y);
+	if(groupsListWidget->isVisible())
+		if(g>=0 && g<groupsListWidget->count())
+			groupsListWidget->setCurrentRow(g);
+	if(subgroupsListWidget->isVisible())
+		if(s>=0 && s<subgroupsListWidget->count())
+			subgroupsListWidget->setCurrentRow(s);
+	
+	if(r>=0 && r<studentsTimetableTable->rowCount() && c>=0 && c<studentsTimetableTable->columnCount())
+		studentsTimetableTable->setCurrentCell(r, c);
 }
 
 TimetableViewStudentsDaysVerticalForm::~TimetableViewStudentsDaysVerticalForm()

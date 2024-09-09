@@ -527,6 +527,9 @@ void TimetableViewTeachersTimeHorizontalForm::newTimetableGenerated()
 		assert(0); //should be taken care of by Rules - teachers_schedule_ready is false in the Rules if adding or removing teachers.
 	}
 
+	int r=teachersTimetableTable->currentRow();
+	int c=teachersTimetableTable->currentColumn();
+
 	//DON'T UNCOMMENT THIS CODE -> LEADS TO CRASH IF THERE ARE MORE VIEWS OPENED.
 	//LockUnlock::increaseCommunicationSpinBox();
 	
@@ -738,6 +741,9 @@ void TimetableViewTeachersTimeHorizontalForm::newTimetableGenerated()
 	//connect(&communicationSpinBox, SIG NAL(valueChanged(int)), this, SL OT(updateTeachersTimetableTable()));
 	
 	updateTeachersTimetableTable();
+
+	if(r>=0 && r<teachersTimetableTable->rowCount() && c>=0 && c<teachersTimetableTable->columnCount())
+		teachersTimetableTable->setCurrentCell(r, c);
 }
 
 TimetableViewTeachersTimeHorizontalForm::~TimetableViewTeachersTimeHorizontalForm()

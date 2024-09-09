@@ -108,6 +108,8 @@
 
 #include <QMessageBox>
 
+#include <QInputDialog>
+
 #include <QPlainTextEdit>
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
@@ -181,6 +183,8 @@ AllSpaceConstraintsForm::AllSpaceConstraintsForm(QWidget* parent): QDialog(paren
 
 	//connect(sortByCommentsPushButton, SIG NAL(clicked()), this, SL OT(sortConstraintsByComments()));
 	connect(commentsPushButton, &QPushButton::clicked, this, &AllSpaceConstraintsForm::constraintComments);
+
+	connect(weightsPushButton, &QPushButton::clicked, this, &AllSpaceConstraintsForm::changeWeights);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -1480,4 +1484,108 @@ void AllSpaceConstraintsForm::selectionChanged()
 		}
 	mSLabel->setText(tr("Multiple selection: %1 / %2", "It refers to the list of selected space constraints, %1 is the number of active"
 	 " selected space constraints, %2 is the total number of selected space constraints").arg(nActive).arg(nTotal));
+}
+
+void AllSpaceConstraintsForm::changeWeights()
+{
+	int cnt_pre=0;
+	int cnt_unchanged=0;
+	double nw=100.0;
+	for(int i=0; i<constraintsListWidget->count(); i++)
+		if(constraintsListWidget->item(i)->isSelected()){
+			assert(i<visibleSpaceConstraintsList.count());
+			SpaceConstraint* ctr=visibleSpaceConstraintsList.at(i);
+			if(ctr->canHaveAnyWeight())
+				cnt_pre++;
+			else
+				cnt_unchanged++;
+		}
+	if(cnt_pre==0){
+		QMessageBox::information(this, tr("FET information"), tr("No constraints from your selection can change their weight"
+		 " (remember that some types of constraints are allowed to have only 100% weight)."));
+		
+		return;
+	}
+	else{
+		bool ok;
+		if(cnt_unchanged==0)
+			nw=QInputDialog::getDouble(this, tr("Modify the weights of the selected space constraints",
+			 "The title of a dialog to modify the weights of the selected constraints with a single click"),
+			 tr("You will modify %1 selected space constraints.\n"
+			 "Please enter the new weight percentage:",
+			 "Translators: please split this field with new line characters, similarly to the original field, so that it is not too wide."
+			 " You can use more lines (3 or even 4), if needed. %1 is the number of constraints which will change.")
+			 .arg(cnt_pre),
+			 nw, 0.0, 100.0, CUSTOM_DOUBLE_PRECISION, &ok, Qt::WindowFlags(), 1);
+		else
+			nw=QInputDialog::getDouble(this, tr("Modify the weights of the selected space constraints",
+			 "The title of a dialog to modify the weights of the selected constraints with a single click"),
+			 tr("You will modify %1 space constraints from your\n"
+			 "selection (remember that some types of constraints\n"
+			 "are only allowed to have 100% weight, so %2\n"
+			 "constraints out of the %3 selected will not change).\n"
+			 "Please enter the new weight percentage:",
+			 "Translators: please split this field with new line characters, similarly to the original field, so that it is not too wide."
+			 " You can use more lines (6 or even 7), if needed. %1 is the number of constraints which will change, %2 is the number of constraints"
+			 " which will not change, and %3 is the number of all selected constraints.")
+			 .arg(cnt_pre).arg(cnt_unchanged).arg(cnt_pre+cnt_unchanged),
+			 nw, 0.0, 100.0, CUSTOM_DOUBLE_PRECISION, &ok, Qt::WindowFlags(), 1);
+		
+		if(!ok)
+			return;
+	}
+
+	QString su;
+
+	int cnt=0;
+	bool recomputeSpace=false;
+
+	for(int i=0; i<constraintsListWidget->count(); i++)
+		if(constraintsListWidget->item(i)->isSelected()){
+			assert(i<visibleSpaceConstraintsList.count());
+			SpaceConstraint* ctr=visibleSpaceConstraintsList.at(i);
+			if(ctr->canHaveAnyWeight()){
+				su+=ctr->getDetailedDescription(gt.rules)+QString("\n");
+
+				cnt++;
+				ctr->weightPercentage=nw;
+				if(ctr->active && ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM)
+					recomputeSpace=true;
+			}
+		}
+		
+	assert(cnt>0);
+	assert(cnt==cnt_pre);
+
+	if(cnt>0){
+		gt.rules.addUndoPoint(tr("Changed the weights of the following %1 selected space constraints to %2%:",
+		 "%1 is the number of space constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints")
+		 .arg(cnt).arg(CustomFETString::number(nw))+QString("\n\n")+su);
+
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+		
+		int valv=constraintsListWidget->verticalScrollBar()->value();
+		int valh=constraintsListWidget->horizontalScrollBar()->value();
+
+		int cr=constraintsListWidget->currentRow();
+
+		filterChanged();
+
+		if(cr>=0){
+			if(cr<constraintsListWidget->count())
+				constraintsListWidget->setCurrentRow(cr);
+			else if(constraintsListWidget->count()>0)
+				constraintsListWidget->setCurrentRow(constraintsListWidget->count()-1);
+		}
+
+		constraintsListWidget->verticalScrollBar()->setValue(valv);
+		constraintsListWidget->horizontalScrollBar()->setValue(valh);
+	}
+	if(recomputeSpace){
+		LockUnlock::computeLockedUnlockedActivitiesOnlySpace();
+		LockUnlock::increaseCommunicationSpinBox();
+	}
+	
+	constraintsListWidget->setFocus();
 }

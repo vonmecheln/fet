@@ -565,6 +565,9 @@ void TimetableViewStudentsTimeHorizontalForm::newTimetableGenerated()
 		return;
 	}*/
 
+	int r=studentsTimetableTable->currentRow();
+	int c=studentsTimetableTable->currentColumn();
+
 	//DON'T UNCOMMENT THIS CODE -> LEADS TO CRASH IF THERE ARE MORE VIEWS OPENED.
 	//LockUnlock::increaseCommunicationSpinBox();
 	
@@ -814,6 +817,9 @@ void TimetableViewStudentsTimeHorizontalForm::newTimetableGenerated()
 	//connect(&communicationSpinBox, SIG NAL(valueChanged(int)), this, SL OT(updateStudentsTimetableTable()));
 	
 	updateStudentsTimetableTable();
+
+	if(r>=0 && r<studentsTimetableTable->rowCount() && c>=0 && c<studentsTimetableTable->columnCount())
+		studentsTimetableTable->setCurrentCell(r, c);
 }
 
 TimetableViewStudentsTimeHorizontalForm::~TimetableViewStudentsTimeHorizontalForm()
