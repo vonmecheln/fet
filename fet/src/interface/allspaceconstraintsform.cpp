@@ -100,6 +100,9 @@
 #include "modifyconstraintteachermaxroomchangesperrealdayinintervalform.h"
 #include "modifyconstraintteachersmaxroomchangesperrealdayinintervalform.h"
 
+#include "modifyconstraintroommaxactivitytagsperdayfromsetform.h"
+#include "modifyconstraintroommaxactivitytagsperrealdayfromsetform.h"
+
 #include "lockunlock.h"
 
 #include "advancedfilterform.h"
@@ -1070,6 +1073,22 @@ void AllSpaceConstraintsForm::modifyConstraint()
 		case CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_REAL_DAY_IN_INTERVAL:
 			{
 				ModifyConstraintTeacherMaxRoomChangesPerRealDayInIntervalForm form(this, (ConstraintTeacherMaxRoomChangesPerRealDayInInterval*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//66
+		case CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
+			{
+				ModifyConstraintRoomMaxActivityTagsPerDayFromSetForm form(this, (ConstraintRoomMaxActivityTagsPerDayFromSet*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//67
+		case CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
+			{
+				ModifyConstraintRoomMaxActivityTagsPerRealDayFromSetForm form(this, (ConstraintRoomMaxActivityTagsPerRealDayFromSet*)ctr);
 				setParentAndOtherThings(&form, this);
 				form.exec();
 				break;

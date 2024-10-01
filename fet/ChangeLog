@@ -2935,3 +2935,8 @@ Versions 6.25.0 - 6.25.v
 	This constraint accepts as the maximum number of tags 1 or 2, and incorporates the old-style constraints teacher(s)/students (set) max two
 	activity tags per day/real day from N1, N2, N3.
 	- Added the constraints teacher(s) no two consecutive days (suggested by Khelifi Fouad Mohssen).
+- Version 6.25.1
+	- Added the constraints room max activity tags from a set per day/real day (suggested by Thai Chi Phuong). This constraint accepts as the maximum
+	number of tags 1 or 2, and must be assigned to a real room (not virtual), room which also does not appear in any set of real rooms of any virtual room.
+	- Minor improvements.
+	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares.

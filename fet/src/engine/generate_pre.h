@@ -934,7 +934,7 @@ extern Matrix1D<QList<std::tuple<int, int, int>>> teachersMaxActivityTagsPerReal
 extern Matrix1D<QList<int>> teachersWithTagsForActivities;
 extern Matrix1D<QList<int>> subgroupsWithTagsForActivities;
 
-bool computeMaxActivityTagsFromSet(QWidget* parent);
+bool computeTeachersStudentsMaxActivityTagsFromSet(QWidget* parent);
 /////////
 
 ////////BEGIN rooms
@@ -953,6 +953,19 @@ extern Matrix1D<bool> unspecifiedHomeRoom;
 extern Matrix1D<QSet<int>> preferredRealRooms;
 
 bool computeActivitiesRoomsPreferences(QWidget* parent);
+
+//2024-09-15
+extern Matrix1D<QList<double>> roomsMaxActivityTagsPerDayFromSetPercentages;
+extern Matrix1D<QList<int>> roomsMaxActivityTagsPerDayFromSetMaxTags;
+extern Matrix1D<QList<QSet<int>>> roomsMaxActivityTagsPerDayFromSetTagsSet;
+extern bool haveRoomsMaxActivityTagsPerDayFromSet;
+
+extern Matrix1D<QList<double>> roomsMaxActivityTagsPerRealDayFromSetPercentages;
+extern Matrix1D<QList<int>> roomsMaxActivityTagsPerRealDayFromSetMaxTags;
+extern Matrix1D<QList<QSet<int>>> roomsMaxActivityTagsPerRealDayFromSetTagsSet;
+extern bool haveRoomsMaxActivityTagsPerRealDayFromSet;
+
+bool computeRoomsMaxActivityTagsFromSet(QWidget* parent);
 ////////END   rooms
 
 

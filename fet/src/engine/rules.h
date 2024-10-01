@@ -1279,6 +1279,9 @@ private:
 	SpaceConstraint* readTeachersMaxRoomChangesPerRealDayInInterval(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	SpaceConstraint* readStudentsSetMaxRoomChangesPerRealDayInInterval(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	SpaceConstraint* readStudentsMaxRoomChangesPerRealDayInInterval(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	SpaceConstraint* readRoomMaxActivityTagsPerDayFromSet(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readRoomMaxActivityTagsPerRealDayFromSet(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 };
 
 #endif

@@ -65,6 +65,14 @@ SOURCES += \
 	interface/addconstraintroomnotavailabletimesform.cpp \
 	interface/constraintroomnotavailabletimesform.cpp \
 	interface/modifyconstraintroomnotavailabletimesform.cpp \
+	\
+	interface/addconstraintroommaxactivitytagsperdayfromsetform.cpp \
+	interface/constraintroommaxactivitytagsperdayfromsetform.cpp \
+	interface/modifyconstraintroommaxactivitytagsperdayfromsetform.cpp \
+	interface/addconstraintroommaxactivitytagsperrealdayfromsetform.cpp \
+	interface/constraintroommaxactivitytagsperrealdayfromsetform.cpp \
+	interface/modifyconstraintroommaxactivitytagsperrealdayfromsetform.cpp \
+	\
 	interface/addconstraintteacherroomnotavailabletimesform.cpp \
 	interface/constraintteacherroomnotavailabletimesform.cpp \
 	interface/modifyconstraintteacherroomnotavailabletimesform.cpp \
@@ -1241,6 +1249,14 @@ HEADERS += \
 	interface/addconstraintroomnotavailabletimesform.h \
 	interface/constraintroomnotavailabletimesform.h \
 	interface/modifyconstraintroomnotavailabletimesform.h \
+	\
+	interface/addconstraintroommaxactivitytagsperdayfromsetform.h \
+	interface/constraintroommaxactivitytagsperdayfromsetform.h \
+	interface/modifyconstraintroommaxactivitytagsperdayfromsetform.h \
+	interface/addconstraintroommaxactivitytagsperrealdayfromsetform.h \
+	interface/constraintroommaxactivitytagsperrealdayfromsetform.h \
+	interface/modifyconstraintroommaxactivitytagsperrealdayfromsetform.h \
+	\
 	interface/addconstraintteacherroomnotavailabletimesform.h \
 	interface/constraintteacherroomnotavailabletimesform.h \
 	interface/modifyconstraintteacherroomnotavailabletimesform.h \
@@ -2414,6 +2430,14 @@ FORMS += \
 	interface/addconstraintroomnotavailabletimesform_template.ui \
 	interface/constraintroomnotavailabletimesform_template.ui \
 	interface/modifyconstraintroomnotavailabletimesform_template.ui \
+	\
+	interface/addconstraintroommaxactivitytagsperdayfromsetform_template.ui \
+	interface/constraintroommaxactivitytagsperdayfromsetform_template.ui \
+	interface/modifyconstraintroommaxactivitytagsperdayfromsetform_template.ui \
+	interface/addconstraintroommaxactivitytagsperrealdayfromsetform_template.ui \
+	interface/constraintroommaxactivitytagsperrealdayfromsetform_template.ui \
+	interface/modifyconstraintroommaxactivitytagsperrealdayfromsetform_template.ui \
+	\
 	interface/addconstraintteacherroomnotavailabletimesform_template.ui \
 	interface/constraintteacherroomnotavailabletimesform_template.ui \
 	interface/modifyconstraintteacherroomnotavailabletimesform_template.ui \

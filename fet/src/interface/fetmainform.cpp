@@ -402,6 +402,9 @@
 #include "constraintteachersactivitytagmaxhoursdailyrealdaysform.h"
 #include "constraintteacheractivitytagmaxhoursdailyrealdaysform.h"
 
+#include "constraintroommaxactivitytagsperdayfromsetform.h"
+#include "constraintroommaxactivitytagsperrealdayfromsetform.h"
+
 #include "constraintstudentssetmaxgapsperrealdayform.h"
 #include "constraintstudentsmaxgapsperrealdayform.h"
 
@@ -2540,6 +2543,9 @@ void FetMainForm::createActionsForConstraints()
 	dataTimeConstraintsStudentsSetMaxActivityTagsPerRealDayFromSetAction = new QAction(this);
 	dataTimeConstraintsStudentsMaxActivityTagsPerRealDayFromSetAction = new QAction(this);
 
+	dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction = new QAction(this);
+	dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction = new QAction(this);
+
 	dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction = new QAction(this);
 	dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction = new QAction(this);
 	dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction = new QAction(this);
@@ -2863,6 +2869,9 @@ void FetMainForm::createActionsForConstraints()
 	connect(dataTimeConstraintsTeachersMaxActivityTagsPerRealDayFromSetAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxActivityTagsPerRealDayFromSetAction_triggered);
 	connect(dataTimeConstraintsStudentsSetMaxActivityTagsPerRealDayFromSetAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMaxActivityTagsPerRealDayFromSetAction_triggered);
 	connect(dataTimeConstraintsStudentsMaxActivityTagsPerRealDayFromSetAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMaxActivityTagsPerRealDayFromSetAction_triggered);
+
+	connect(dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction_triggered);
+	connect(dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction_triggered);
 
 	connect(dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction_triggered);
 	connect(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction_triggered);
@@ -3237,6 +3246,9 @@ void FetMainForm::retranslateConstraints()
 	dataTimeConstraintsStudentsSetMaxActivityTagsPerRealDayFromSetAction->setText(QCoreApplication::translate("FetMainForm_template", "Max activity tags from a set per real day for a students set", nullptr));
 	dataTimeConstraintsStudentsMaxActivityTagsPerRealDayFromSetAction->setText(QCoreApplication::translate("FetMainForm_template", "Max activity tags from a set per real day for all students", nullptr));
 
+	dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction->setText(QCoreApplication::translate("FetMainForm_template", "Max activity tags from a set per day for a room", nullptr));
+	dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction->setText(QCoreApplication::translate("FetMainForm_template", "Max activity tags from a set per real day for a room", nullptr));
+
 	dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily per real day with an activity tag for all teachers", nullptr));
 	dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily per real day with an activity tag for a students set", nullptr));
 	dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily per real day with an activity tag for all students", nullptr));
@@ -3541,6 +3553,9 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomNotAvailableTimesAction);
 		menuRooms_space_constraints->addAction(dataSpaceConstraintsTeacherRoomNotAvailableTimesAction);
+
+		menuRooms_space_constraints->addSeparator();
+		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction);
 
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomAction);
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomsAction);
@@ -3983,6 +3998,10 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomNotAvailableTimesAction);
 		menuRooms_space_constraints->addAction(dataSpaceConstraintsTeacherRoomNotAvailableTimesAction);
 
+		menuRooms_space_constraints->addSeparator();
+		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction);
+		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction);
+
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomAction);
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomsAction);
 		menuActivities_space_constraints->addSeparator();
@@ -4257,6 +4276,9 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomNotAvailableTimesAction);
 		menuRooms_space_constraints->addAction(dataSpaceConstraintsTeacherRoomNotAvailableTimesAction);
 
+		menuRooms_space_constraints->addSeparator();
+		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction);
+
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomAction);
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomsAction);
 		menuActivities_space_constraints->addSeparator();
@@ -4521,6 +4543,9 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomNotAvailableTimesAction);
 		menuRooms_space_constraints->addAction(dataSpaceConstraintsTeacherRoomNotAvailableTimesAction);
+
+		menuRooms_space_constraints->addSeparator();
+		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction);
 
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomAction);
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomsAction);
@@ -11729,6 +11754,44 @@ void FetMainForm::dataTimeConstraintsStudentsMaxActivityTagsPerRealDayFromSetAct
 	}
 
 	ConstraintStudentsMaxActivityTagsPerRealDayFromSetForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	ConstraintRoomMaxActivityTagsPerDayFromSetForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	ConstraintRoomMaxActivityTagsPerRealDayFromSetForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
 }

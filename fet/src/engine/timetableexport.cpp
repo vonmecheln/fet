@@ -8176,7 +8176,7 @@ QString TimetableExport::singleSubgroupsTimetableDaysHorizontalHtml(int htmlLeve
 	QSet<StudentsSet*> usedStudentsSet;
 	QSet<Room*> usedRoomsSet;
 	
-	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <caption>"+tl.join("<br />")+"</caption>\n";
 	tmpString+="      <thead>\n";
 	
 	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
@@ -8344,7 +8344,7 @@ QString TimetableExport::singleSubgroupsTimetableDaysVerticalHtml(int htmlLevel,
 	QSet<StudentsSet*> usedStudentsSet;
 	QSet<Room*> usedRoomsSet;
 	
-	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <caption>"+tl.join("<br />")+"</caption>\n";
 	tmpString+="      <thead>\n";
 	
 	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
@@ -9152,7 +9152,7 @@ QString TimetableExport::singleGroupsTimetableDaysHorizontalHtml(int htmlLevel, 
 	QSet<StudentsSet*> usedStudentsSet;
 	QSet<Room*> usedRoomsSet;
 
-	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <caption>"+tl.join("<br />")+"</caption>\n";
 	tmpString+="      <thead>\n";
 	
 	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
@@ -9327,7 +9327,7 @@ QString TimetableExport::singleGroupsTimetableDaysVerticalHtml(int htmlLevel, in
 	QSet<StudentsSet*> usedStudentsSet;
 	QSet<Room*> usedRoomsSet;
 	
-	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <caption>"+tl.join("<br />")+"</caption>\n";
 	tmpString+="      <thead>\n";
 	
 	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
@@ -10181,7 +10181,7 @@ QString TimetableExport::singleYearsTimetableDaysHorizontalHtml(int htmlLevel, i
 	QSet<StudentsSet*> usedStudentsSet;
 	QSet<Room*> usedRoomsSet;
 
-	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <caption>"+tl.join("<br />")+"</caption>\n";
 	tmpString+="      <thead>\n";
 	
 	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
@@ -10359,7 +10359,7 @@ QString TimetableExport::singleYearsTimetableDaysVerticalHtml(int htmlLevel, int
 	QSet<StudentsSet*> usedStudentsSet;
 	QSet<Room*> usedRoomsSet;
 	
-	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <caption>"+tl.join("<br />")+"</caption>\n";
 	tmpString+="      <thead>\n";
 	
 	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
@@ -12048,7 +12048,7 @@ QString TimetableExport::singleTeachersTimetableDaysHorizontalHtml(int htmlLevel
 	QSet<StudentsSet*> usedStudentsSet;
 	QSet<Room*> usedRoomsSet;
 
-	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <caption>"+tl.join("<br />")+"</caption>\n";
 	tmpString+="      <thead>\n";
 	
 	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
@@ -12209,7 +12209,7 @@ QString TimetableExport::singleTeachersTimetableDaysVerticalHtml(int htmlLevel, 
 	QSet<StudentsSet*> usedStudentsSet;
 	QSet<Room*> usedRoomsSet;
 
-	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <caption>"+tl.join("<br />")+"</caption>\n";
 	tmpString+="      <thead>\n";
 	
 	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
@@ -12991,7 +12991,7 @@ QString TimetableExport::singleBuildingsTimetableDaysHorizontalHtml(int htmlLeve
 	QSet<StudentsSet*> usedStudentsSet;
 	QSet<Room*> usedRoomsSet;
 
-	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <caption>"+tl.join("<br />")+"</caption>\n";
 	tmpString+="      <thead>\n";
 	
 	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
@@ -13156,7 +13156,7 @@ QString TimetableExport::singleBuildingsTimetableDaysVerticalHtml(int htmlLevel,
 	QSet<StudentsSet*> usedStudentsSet;
 	QSet<Room*> usedRoomsSet;
 
-	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <caption>"+tl.join("<br />")+"</caption>\n";
 	tmpString+="      <thead>\n";
 	
 	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
@@ -13959,7 +13959,7 @@ QString TimetableExport::singleRoomsTimetableDaysHorizontalHtml(int htmlLevel, i
 	QSet<StudentsSet*> usedStudentsSet;
 	QSet<Room*> usedRoomsSet;
 
-	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <caption>"+tl.join("<br />")+"</caption>\n";
 	tmpString+="      <thead>\n";
 	
 	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
@@ -14132,7 +14132,7 @@ QString TimetableExport::singleRoomsTimetableDaysVerticalHtml(int htmlLevel, int
 	QSet<StudentsSet*> usedStudentsSet;
 	QSet<Room*> usedRoomsSet;
 
-	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <caption>"+tl.join("<br />")+"</caption>\n";
 	tmpString+="      <thead>\n";
 	
 	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
@@ -14990,7 +14990,7 @@ QString TimetableExport::singleSubjectsTimetableDaysHorizontalHtml(int htmlLevel
 	QSet<StudentsSet*> usedStudentsSet;
 	QSet<Room*> usedRoomsSet;
 
-	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <caption>"+tl.join("<br />")+"</caption>\n";
 	tmpString+="      <thead>\n";
 	
 	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
@@ -15156,7 +15156,7 @@ QString TimetableExport::singleSubjectsTimetableDaysVerticalHtml(int htmlLevel, 
 	QSet<StudentsSet*> usedStudentsSet;
 	QSet<Room*> usedRoomsSet;
 
-	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <caption>"+tl.join("<br />")+"</caption>\n";
 	tmpString+="      <thead>\n";
 	
 	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
@@ -16035,7 +16035,7 @@ QString TimetableExport::singleActivityTagsTimetableDaysHorizontalHtml(int htmlL
 	QSet<StudentsSet*> usedStudentsSet;
 	QSet<Room*> usedRoomsSet;
 
-	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <caption>"+tl.join("<br />")+"</caption>\n";
 	tmpString+="      <thead>\n";
 	
 	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
@@ -16202,7 +16202,7 @@ QString TimetableExport::singleActivityTagsTimetableDaysVerticalHtml(int htmlLev
 	QSet<StudentsSet*> usedStudentsSet;
 	QSet<Room*> usedRoomsSet;
 
-	tmpString+="      <caption>"+tl.join("<br />\n")+"</caption>\n";
+	tmpString+="      <caption>"+tl.join("<br />")+"</caption>\n";
 	tmpString+="      <thead>\n";
 	
 	if(!PRINT_RTL || (PRINT_RTL && repeatNames))

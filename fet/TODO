@@ -9933,6 +9933,18 @@ In my experience it should be very comfortable when working with small screens (
 taking several windows opened at the same time (teachers, rooms, students etc.).
 At moment it seems that I have to close or move off screen the other windows just to access the option in the Menu Window.
 
+Liviu Lalescu:
+
+This behavior is dictated by the operating system / windowing system. On my GNU/Linux XFCE, I can click on the main window and it shows, even if
+I have other timetable view dialogs. If I remember correctly, on Windows the timetable views are in front of the main window. I think I cannot
+modify this behavior, but I will look a bit at the options.
+
+gt:
+
+Yes it is a Windows "feature".
+I think that a simple turnaround could be adding menu shortcuts for some options such as: Data->"All time constraints", "All space constraints" etc.
+Maybe these shortcuts could be set by user?
+
 617---------------------------------------------------------
 From henozzo (on forum):
 
@@ -9961,3 +9973,221 @@ https://lalescu.ro/liviu/fet/forum/index.php?topic=6112.msg34042#msg34042
 
 One more small detail but I think it will be useful for all of us: In the "Data" tab, information related to "Class", "Teacher", "Student"; "Tags".
 If it is not too difficult, can you help us remove many redundant elements with just 1 click?
+
+619---------------------------------------------------------
+From Hieu Nguyen Trong:
+
+> In the morning - afternoon mode, the interface in the bindings is not
+> yet convenient for use.  [...] Adjust the periods of
+> the day to be straight from top to bottom similar to the schedule
+> results view.
+
+620---------------------------------------------------------
+From Abu Iyad (on Facebook):
+
+I hope you can enable the automatic lock feature for the schedules immediately after they are created.
+
+621---------------------------------------------------------
+From topposempre (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6146.0
+
+I would like to point out a series of changes that could be useful (at least for me):
+
+- in the activities together with the option to indicate the minimum days between the activities, there below also insert the maximum days between
+the activities (useful when I have two hours of a subject in the 1+1 formulation to say that at least a certain amount must pass between the two hours
+and avoid having one on Monday and one on Saturday for example)
+
+- insert the maximum number of teachers and/or subjects possible per day (to avoid having 5 different subjects in one day)
+
+- in the management of the hours not available for a teacher, if I have to allow an early exit to a teacher 3 days out of 5, allow the random choice
+of these 3 days without punctually binding them - insert the possibility for each teacher for a late and an early entry, always chosen randomly by the
+system without punctually binding them.
+
+- I add to the function hours not available for a teacher, not only to be able to select the free day, but also the possibility to tell the system
+to be able to choose a random free day except, for example, the one we will indicate. "Ex. Choose a free day except Saturday"
+
+Liviu Lalescu:
+
+Some of them might already be solved:
+
+1) I consider max days between activities constraints as not used too often, and I prefer to leave the user add these constraints after adding the activity(ies).
+
+2) Maybe you could use the new just released constraint students max activity tags from a set per day. Unfortunately, you can restrict only to 1 or 2 tags,
+not 4, but you might be able to use it in a certain way.
+
+3) Add two constraints teachers interval max days per week.
+
+4) Teacher max days per week, and constrain this teacher to have activities on Saturday with a constraint activities occupy min time slots from selection.
+
+622---------------------------------------------------------
+From Muhammad Ratrout (on Facebook):
+
+Is it possible to add an option to the program so that the teacher calculates the minimum and maximum daily classes and the best number of consecutive classes
+to obtain a balanced schedule of classes?
+
+Button to calculate minimum, maximum and number of consecutive shares
+
+is possible
+
+By the total quota of the teacher's classes and the nature of the teacher's activities
+
+623---------------------------------------------------------
+From Muhammad Ratrout (on Facebook):
+
+A proposal to improve the program is to add the ability to delete more than one item at once using ctrl and shift in the program tabs data, time and space.
+I noticed that it is only enabled in all in the time tab.
+
+Liviu Lalescu:
+
+I think Muhammad Ratrout suggests multiple selection in the dialogs from the data entry (teachers, subjects, etc.) and maybe in the separate dialogs
+of the time/space constraints.
+
+624---------------------------------------------------------
+From Muhammad Ratrout (on Facebook):
+
+Suggestion for development: In statistics menu, print advanced statistics, add for print for Arabic right to left direction and center page.
+
+625---------------------------------------------------------
+From Muhammad Ratrout (on Facebook):
+
+Make the program accept deleting the item using the delete button on the keyboard, in program screens.
+
+626-------------------------DONE----------------------------
+
+627---------------------------------------------------------
+From Muhammad Ratrout (on Facebook):
+
+are there any suggestions for developing the program screens in the future:
+button : Copy to
+button : Apply on
+
+Copying restrictions to more than one teacher or class
+Applying unavailability to more than one teacher or class
+For the purpose of acceleration
+
+628---------------------------------------------------------
+From Muhammad Ratrout (on Facebook):
+
+Show teacher statistics number of activities and duration when adding restrictions to the teacher
+
+Customize header and footer for table outputs
+
+Add if possible multiline of data such as institution name
+
+What you see fit for that
+
+Show maximum number of hours continuously for a teacher in teacher statistics in table outputs
+
+New suggestion to display statistics in table outputs for teachers, students, etc. and whatever you see fit.
+Example : display number of activities for teacher and duration for every teacher table and other.
+
+629---------------------------------------------------------
+From Mohcene Ben Mohammed KH (on Facebook):
+
+can you release the android or ios version of Fet? that will be very interesting for us .... we can work every where any time .... thank you ....
+
+630---------------------------------------------------------
+From Muhammad Ratrout (on Facebook):
+
+Please add in future button to open output folder after finishing generate.
+
+631--------------------------------------------------------
+From Muhammad Ratrout (on Facebook):
+
+Show or hide "---" in the timetable outputs.
+
+632--------------------------------------------------------
+From Muhammad Ratrout (on Facebook):
+
+Improve the display of information about subjects, students and teachers in the HTML table outputs so that the display is through another table horizontally
+instead of being vertically displayed.
+
+Liviu Lalescu: Muhammad Ratrout refers to the printing of the legend of subjects, students, and teachers - it should be done subjects legend, then on the right
+the students legend, then on the right the teachers legend.
+
+633--------------------------------------------------------
+From Muhammad Ratrout (on Facebook):
+
+You make Activities padding in print table option : Horizontal expansion only
+Is it possible to add vertical expansion in the future?
+
+634--------------------------------------------------------
+From Muhammad Ratrout (on Facebook):
+
+Please enhance program with shift key to select more elements in print screen.
+
+Liviu Lalescu:
+
+Muhammad Ratrout refers to selecting for instance multiple students sets with the Shift key in the Print timetable dialogs.
+
+635--------------------------------------------------------
+From Muhammad Ratrout (on Facebook):
+
+I am showing you the problem of the broken letters of the days in the Arabic language in the vertical mode.
+Letters must be connected.
+
+(Liviu Lalescu: Muhammad Ratrout refers to time vertical print, where the names of the days are written one letter below the other,
+and seems to break the correct meaning of the letters, in Arabic.)
+
+Is it possible in the future for teachers' and students' tables to have the same dimensions (height and width) on the page through the print screen?
+To make the tables look better
+
+We want more options in the print screen to control the appearance of the tables, such as making the texts bold and other options related to the borders
+in terms of appearance and bold border.
+
+We ask you to improve the program so that the Shift button works with all program screens for ease and speed of work.
+
+We want options for table borders and cell borders.
+
+636--------------------------------------------------------
+From thaaanos (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6042.msg34220;topicseen#msg34220
+
+"Data to print" is a bit misleading as a menu item I had to hunt it down to find it :)
+maybe "Output settings".
+Also since the dialog is huge and extensive, please consider a "restore defaults" or even maybe a "custom settings" menu.
+Also a setting that uses the full names in column and row headers and short names in the cells would probably what people would need most, my 2¢
+
+Liviu Lalescu:
+
+You can restore all the Settings to defaults. I know this is not what you suggest, but it is something.
+
+637--------------------------------------------------------
+From thaaanos (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6163.0
+
+Since
+* teachers may have websites / videoconferance room / or simply a mailto: link
+* Rooms may have websites / an associated videoconferance room
+* Activities or students may have an associated e-learning platform link
+etc
+
+I would find it useful if I could add this info in a url field that was easily accessible from the html timetable output
+also please consider making all fields importable from cvs, so we can export them from our systems and feed fet
+
+YOUSSEF HOUIET:
+
+You can use comment fields 
+
+Liviu Lalescu:
+
+Indeed, as Youssef said, you could use the comments field. You can use also the long name field or the code, which are custom strings.
+Activities have only comments, for which these is no option to be printed, but all the the other information can be printed in the HTML results.
+
+CSV should indeed be updated.
+
+Did you see the fet files XML structure? Maybe you could replicate that.
+
+638---------------------------------------------------------
+From Mohcene Ben Mohammed KH (on Facebook):
+
+I wanted to suggest an option
+for example we want to introduce the teacher parameter... maximum afternoons
+Could you introduce a selection of teachers in groups instead of introducing them one by one?
+select a group of teachers and choose the maximum after option for the selected teachers
+
+in a real day..That's why we need a restriction through which we can select only some teachers and not all of them to apply the same restriction
+to them instead of entering them one by one... It takes a lot of time.

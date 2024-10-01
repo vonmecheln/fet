@@ -401,6 +401,9 @@ private:
 	QAction* dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayInIntervalAction;
 	QAction* dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayInIntervalAction;
 
+	QAction* dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction;
+	QAction* dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction;
+
 	QLabel modeLabel;
 	
 //	QSpinBox communicationSpinBox;
@@ -933,6 +936,9 @@ public slots:
 	void dataSpaceConstraintsStudentsMaxRoomChangesPerRealDayInIntervalAction_triggered();
 	void dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayInIntervalAction_triggered();
 	void dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayInIntervalAction_triggered();
+
+	void dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction_triggered();
+	void dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction_triggered();
 
 	void helpMoroccoAction_triggered();
 	void helpAlgeriaAction_triggered();

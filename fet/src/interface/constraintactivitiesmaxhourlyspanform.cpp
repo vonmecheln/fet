@@ -296,6 +296,12 @@ void ConstraintActivitiesMaxHourlySpanForm::help()
 	s+=tr("This constraint was suggested by %1.", "%1 is a user").arg("pnlshd");
 	s+=" ";
 	s+=tr("The activities can be on any days, but their hourly span must be limited by the specified maximum value.");
+	s+="\n\n";
+	s+=tr("More details and an example: the hourly span of the a set of activities is the number of hours between the start of the earliest activity"
+	 " and the end of the latest activity, neglecting their days. So, if for instance the constraint addresses A1, A2, A3, and A4, each of them having duration 1,"
+	 " and say: A1 is on day 1 hour 2, A2 is on day 1 hour 3, A3 is on day 3 hour 5, and A4 is on day 5 hour 2, then the earliest activities"
+	 " (neglecting their days) are A1 and A4 (starting at hour 2), and the latest activity (neglecting its day) is A3 (ending after hour 5)."
+	 " The hourly span of A1, A2, A3, and A4 is thus (5 + 1) - 2 = 4.");
 
 	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
 }

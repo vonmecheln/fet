@@ -141,6 +141,9 @@ const int CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_REAL_DAY_IN_INTERVAL		=10
 const int CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_REAL_DAY_IN_INTERVAL			=1064;
 const int CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_REAL_DAY_IN_INTERVAL			=1065;
 
+const int CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET					=1066;
+const int CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET				=1067;
+
 /**
 This class represents a space constraint
 */
@@ -3168,6 +3171,114 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
+class ConstraintRoomMaxActivityTagsPerDayFromSet: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintRoomMaxActivityTagsPerDayFromSet)
+	
+public:
+
+	/**
+	The room's name
+	*/
+	QString room;
+
+	/**
+	The room's id, or index in the rules
+	*/
+	int room_ID;
+	
+	int maxTags;
+	
+	QList<QString> tagsList;
+	
+	QSet<int> internalTagsSet;
+
+	ConstraintRoomMaxActivityTagsPerDayFromSet();
+
+	ConstraintRoomMaxActivityTagsPerDayFromSet(double wp, const QString& rn, int mtg, const QList<QString>& tgl);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+	
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+	
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintRoomMaxActivityTagsPerRealDayFromSet: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintRoomMaxActivityTagsPerRealDayFromSet)
+	
+public:
+
+	/**
+	The room's name
+	*/
+	QString room;
+
+	/**
+	The room's id, or index in the rules
+	*/
+	int room_ID;
+	
+	int maxTags;
+	
+	QList<QString> tagsList;
+	
+	QSet<int> internalTagsSet;
+
+	ConstraintRoomMaxActivityTagsPerRealDayFromSet();
+
+	ConstraintRoomMaxActivityTagsPerRealDayFromSet(double wp, const QString& rn, int mtg, const QList<QString>& tgl);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+	
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+	
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
 //1
 QDataStream& operator<<(QDataStream& stream, const ConstraintBasicCompulsorySpace& sc);
 //2
@@ -3298,6 +3409,10 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxRoomC
 QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxRoomChangesPerRealDayInInterval& sc);
 //65
 QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxRoomChangesPerRealDayInInterval& sc);
+//66
+QDataStream& operator<<(QDataStream& stream, const ConstraintRoomMaxActivityTagsPerDayFromSet& sc);
+//67
+QDataStream& operator<<(QDataStream& stream, const ConstraintRoomMaxActivityTagsPerRealDayFromSet& sc);
 
 //1
 QDataStream& operator>>(QDataStream& stream, ConstraintBasicCompulsorySpace& sc);
@@ -3429,5 +3544,9 @@ QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxRoomChanges
 QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxRoomChangesPerRealDayInInterval& sc);
 //65
 QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxRoomChangesPerRealDayInInterval& sc);
+//66
+QDataStream& operator>>(QDataStream& stream, ConstraintRoomMaxActivityTagsPerDayFromSet& sc);
+//67
+QDataStream& operator>>(QDataStream& stream, ConstraintRoomMaxActivityTagsPerRealDayFromSet& sc);
 
 #endif
