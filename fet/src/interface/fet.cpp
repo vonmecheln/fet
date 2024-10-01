@@ -586,6 +586,7 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_TEACHERS_LEGEND=newSettings.value("settings-timetables-subgroups-days-hv-print-teachers-legend", "false").toBool();
 	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_LEGEND=newSettings.value("settings-timetables-subgroups-days-hv-print-students-legend", "false").toBool();
 	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_LEGEND=newSettings.value("settings-timetables-subgroups-days-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=newSettings.value("settings-timetables-subgroups-days-hv-print-legend-codes-first", "false").toBool();
 	/////
 
 	/////subgroups time horizontal and time vertical.
@@ -620,6 +621,7 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_TEACHERS_LEGEND=newSettings.value("settings-timetables-subgroups-time-hv-print-teachers-legend", "false").toBool();
 	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_LEGEND=newSettings.value("settings-timetables-subgroups-time-hv-print-students-legend", "false").toBool();
 	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ROOMS_LEGEND=newSettings.value("settings-timetables-subgroups-time-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_LEGEND_CODES_FIRST=newSettings.value("settings-timetables-subgroups-time-hv-print-legend-codes-first", "false").toBool();
 	/////
 
 	/////groups days horizontal and days vertical.
@@ -654,6 +656,7 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_TEACHERS_LEGEND=newSettings.value("settings-timetables-groups-days-hv-print-teachers-legend", "false").toBool();
 	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_LEGEND=newSettings.value("settings-timetables-groups-days-hv-print-students-legend", "false").toBool();
 	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ROOMS_LEGEND=newSettings.value("settings-timetables-groups-days-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=newSettings.value("settings-timetables-groups-days-hv-print-legend-codes-first", "false").toBool();
 	/////
 
 	/////groups time horizontal and time vertical.
@@ -688,6 +691,7 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_TEACHERS_LEGEND=newSettings.value("settings-timetables-groups-time-hv-print-teachers-legend", "false").toBool();
 	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_LEGEND=newSettings.value("settings-timetables-groups-time-hv-print-students-legend", "false").toBool();
 	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ROOMS_LEGEND=newSettings.value("settings-timetables-groups-time-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_LEGEND_CODES_FIRST=newSettings.value("settings-timetables-groups-time-hv-print-legend-codes-first", "false").toBool();
 	/////
 
 	/////years days horizontal and days vertical.
@@ -722,6 +726,7 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_TEACHERS_LEGEND=newSettings.value("settings-timetables-years-days-hv-print-teachers-legend", "false").toBool();
 	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_LEGEND=newSettings.value("settings-timetables-years-days-hv-print-students-legend", "false").toBool();
 	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ROOMS_LEGEND=newSettings.value("settings-timetables-years-days-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=newSettings.value("settings-timetables-years-days-hv-print-legend-codes-first", "false").toBool();
 	/////
 
 	/////years time horizontal and time vertical.
@@ -756,6 +761,7 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_TEACHERS_LEGEND=newSettings.value("settings-timetables-years-time-hv-print-teachers-legend", "false").toBool();
 	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_LEGEND=newSettings.value("settings-timetables-years-time-hv-print-students-legend", "false").toBool();
 	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ROOMS_LEGEND=newSettings.value("settings-timetables-years-time-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_LEGEND_CODES_FIRST=newSettings.value("settings-timetables-years-time-hv-print-legend-codes-first", "false").toBool();
 	/////
 
 	/////teachers days horizontal and days vertical.
@@ -790,6 +796,7 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_LEGEND=newSettings.value("settings-timetables-teachers-days-hv-print-teachers-legend", "false").toBool();
 	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_STUDENTS_LEGEND=newSettings.value("settings-timetables-teachers-days-hv-print-students-legend", "false").toBool();
 	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_LEGEND=newSettings.value("settings-timetables-teachers-days-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=newSettings.value("settings-timetables-teachers-days-hv-print-legend-codes-first", "false").toBool();
 	/////
 
 	/////teachers time horizontal and time vertical.
@@ -824,6 +831,7 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_LEGEND=newSettings.value("settings-timetables-teachers-time-hv-print-teachers-legend", "false").toBool();
 	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_STUDENTS_LEGEND=newSettings.value("settings-timetables-teachers-time-hv-print-students-legend", "false").toBool();
 	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ROOMS_LEGEND=newSettings.value("settings-timetables-teachers-time-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_LEGEND_CODES_FIRST=newSettings.value("settings-timetables-teachers-time-hv-print-legend-codes-first", "false").toBool();
 	/////
 
 	/////rooms days horizontal and days vertical.
@@ -858,6 +866,7 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_TEACHERS_LEGEND=newSettings.value("settings-timetables-rooms-days-hv-print-teachers-legend", "false").toBool();
 	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_STUDENTS_LEGEND=newSettings.value("settings-timetables-rooms-days-hv-print-students-legend", "false").toBool();
 	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_LEGEND=newSettings.value("settings-timetables-rooms-days-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=newSettings.value("settings-timetables-rooms-days-hv-print-legend-codes-first", "false").toBool();
 	/////
 
 	/////rooms time horizontal and time vertical.
@@ -892,6 +901,7 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_TEACHERS_LEGEND=newSettings.value("settings-timetables-rooms-time-hv-print-teachers-legend", "false").toBool();
 	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_STUDENTS_LEGEND=newSettings.value("settings-timetables-rooms-time-hv-print-students-legend", "false").toBool();
 	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_LEGEND=newSettings.value("settings-timetables-rooms-time-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_LEGEND_CODES_FIRST=newSettings.value("settings-timetables-rooms-time-hv-print-legend-codes-first", "false").toBool();
 	/////
 
 	/////buildings days horizontal and days vertical.
@@ -926,6 +936,7 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_TEACHERS_LEGEND=newSettings.value("settings-timetables-buildings-days-hv-print-teachers-legend", "false").toBool();
 	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_STUDENTS_LEGEND=newSettings.value("settings-timetables-buildings-days-hv-print-students-legend", "false").toBool();
 	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_LEGEND=newSettings.value("settings-timetables-buildings-days-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=newSettings.value("settings-timetables-buildings-days-hv-print-legend-codes-first", "false").toBool();
 	/////
 
 	/////buildings time horizontal and time vertical.
@@ -960,6 +971,7 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_TEACHERS_LEGEND=newSettings.value("settings-timetables-buildings-time-hv-print-teachers-legend", "false").toBool();
 	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_STUDENTS_LEGEND=newSettings.value("settings-timetables-buildings-time-hv-print-students-legend", "false").toBool();
 	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ROOMS_LEGEND=newSettings.value("settings-timetables-buildings-time-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_LEGEND_CODES_FIRST=newSettings.value("settings-timetables-buildings-time-hv-print-legend-codes-first", "false").toBool();
 	/////
 
 	/////subjects days horizontal and days vertical.
@@ -994,6 +1006,7 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_TEACHERS_LEGEND=newSettings.value("settings-timetables-subjects-days-hv-print-teachers-legend", "false").toBool();
 	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_LEGEND=newSettings.value("settings-timetables-subjects-days-hv-print-students-legend", "false").toBool();
 	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_LEGEND=newSettings.value("settings-timetables-subjects-days-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=newSettings.value("settings-timetables-subjects-days-hv-print-legend-codes-first", "false").toBool();
 	/////
 
 	/////subjects time horizontal and time vertical.
@@ -1028,6 +1041,7 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_TEACHERS_LEGEND=newSettings.value("settings-timetables-subjects-time-hv-print-teachers-legend", "false").toBool();
 	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_STUDENTS_LEGEND=newSettings.value("settings-timetables-subjects-time-hv-print-students-legend", "false").toBool();
 	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ROOMS_LEGEND=newSettings.value("settings-timetables-subjects-time-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_LEGEND_CODES_FIRST=newSettings.value("settings-timetables-subjects-time-hv-print-legend-codes-first", "false").toBool();
 	/////
 
 	/////activity tags days horizontal and days vertical.
@@ -1062,6 +1076,7 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_TEACHERS_LEGEND=newSettings.value("settings-timetables-activity-tags-days-hv-print-teachers-legend", "false").toBool();
 	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_LEGEND=newSettings.value("settings-timetables-activity-tags-days-hv-print-students-legend", "false").toBool();
 	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_LEGEND=newSettings.value("settings-timetables-activity-tags-days-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=newSettings.value("settings-timetables-activity-tags-days-hv-print-legend-codes-first", "false").toBool();
 	/////
 
 	/////activity tags time horizontal and time vertical.
@@ -1096,6 +1111,7 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_TEACHERS_LEGEND=newSettings.value("settings-timetables-activity-tags-time-hv-print-teachers-legend", "false").toBool();
 	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_STUDENTS_LEGEND=newSettings.value("settings-timetables-activity-tags-time-hv-print-students-legend", "false").toBool();
 	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ROOMS_LEGEND=newSettings.value("settings-timetables-activity-tags-time-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_LEGEND_CODES_FIRST=newSettings.value("settings-timetables-activity-tags-time-hv-print-legend-codes-first", "false").toBool();
 	/////
 
 	/////activities days horizontal and days vertical.
@@ -1130,6 +1146,7 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_TEACHERS_LEGEND=newSettings.value("settings-timetables-activities-days-hv-print-teachers-legend", "false").toBool();
 	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_LEGEND=newSettings.value("settings-timetables-activities-days-hv-print-students-legend", "false").toBool();
 	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_LEGEND=newSettings.value("settings-timetables-activities-days-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_LEGEND_CODES_FIRST=newSettings.value("settings-timetables-activities-days-hv-print-legend-codes-first", "false").toBool();
 	/////
 
 	/////activities time horizontal and time vertical.
@@ -1164,6 +1181,7 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_TEACHERS_LEGEND=newSettings.value("settings-timetables-activities-time-hv-print-teachers-legend", "false").toBool();
 	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_STUDENTS_LEGEND=newSettings.value("settings-timetables-activities-time-hv-print-students-legend", "false").toBool();
 	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ROOMS_LEGEND=newSettings.value("settings-timetables-activities-time-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_LEGEND_CODES_FIRST=newSettings.value("settings-timetables-activities-time-hv-print-legend-codes-first", "false").toBool();
 	/////
 	//
 	//2024-06-12 end
@@ -1343,6 +1361,7 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("settings-timetables-subgroups-days-hv-print-teachers-legend", SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_TEACHERS_LEGEND);
 	settings.setValue("settings-timetables-subgroups-days-hv-print-students-legend", SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_LEGEND);
 	settings.setValue("settings-timetables-subgroups-days-hv-print-rooms-legend", SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_LEGEND);
+	settings.setValue("settings-timetables-subgroups-days-hv-print-legend-codes-first", SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_LEGEND_CODES_FIRST);
 	/////
 
 	/////subgroups time horizontal and time vertical.
@@ -1377,6 +1396,7 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("settings-timetables-subgroups-time-hv-print-teachers-legend", SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_TEACHERS_LEGEND);
 	settings.setValue("settings-timetables-subgroups-time-hv-print-students-legend", SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_LEGEND);
 	settings.setValue("settings-timetables-subgroups-time-hv-print-rooms-legend", SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ROOMS_LEGEND);
+	settings.setValue("settings-timetables-subgroups-time-hv-print-legend-codes-first", SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_LEGEND_CODES_FIRST);
 	/////
 
 	/////groups days horizontal and days vertical.
@@ -1411,6 +1431,7 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("settings-timetables-groups-days-hv-print-teachers-legend", SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_TEACHERS_LEGEND);
 	settings.setValue("settings-timetables-groups-days-hv-print-students-legend", SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_LEGEND);
 	settings.setValue("settings-timetables-groups-days-hv-print-rooms-legend", SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ROOMS_LEGEND);
+	settings.setValue("settings-timetables-groups-days-hv-print-legend-codes-first", SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_LEGEND_CODES_FIRST);
 	/////
 
 	/////groups time horizontal and time vertical.
@@ -1445,6 +1466,7 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("settings-timetables-groups-time-hv-print-teachers-legend", SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_TEACHERS_LEGEND);
 	settings.setValue("settings-timetables-groups-time-hv-print-students-legend", SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_LEGEND);
 	settings.setValue("settings-timetables-groups-time-hv-print-rooms-legend", SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ROOMS_LEGEND);
+	settings.setValue("settings-timetables-groups-time-hv-print-legend-codes-first", SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_LEGEND_CODES_FIRST);
 	/////
 
 	/////years days horizontal and days vertical.
@@ -1479,6 +1501,7 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("settings-timetables-years-days-hv-print-teachers-legend", SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_TEACHERS_LEGEND);
 	settings.setValue("settings-timetables-years-days-hv-print-students-legend", SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_LEGEND);
 	settings.setValue("settings-timetables-years-days-hv-print-rooms-legend", SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ROOMS_LEGEND);
+	settings.setValue("settings-timetables-years-days-hv-print-legend-codes-first", SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_LEGEND_CODES_FIRST);
 	/////
 
 	/////years time horizontal and time vertical.
@@ -1513,6 +1536,7 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("settings-timetables-years-time-hv-print-teachers-legend", SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_TEACHERS_LEGEND);
 	settings.setValue("settings-timetables-years-time-hv-print-students-legend", SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_LEGEND);
 	settings.setValue("settings-timetables-years-time-hv-print-rooms-legend", SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ROOMS_LEGEND);
+	settings.setValue("settings-timetables-years-time-hv-print-legend-codes-first", SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_LEGEND_CODES_FIRST);
 	/////
 
 	/////teachers days horizontal and days vertical.
@@ -1547,6 +1571,7 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("settings-timetables-teachers-days-hv-print-teachers-legend", SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_LEGEND);
 	settings.setValue("settings-timetables-teachers-days-hv-print-students-legend", SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_STUDENTS_LEGEND);
 	settings.setValue("settings-timetables-teachers-days-hv-print-rooms-legend", SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_LEGEND);
+	settings.setValue("settings-timetables-teachers-days-hv-print-legend-codes-first", SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_LEGEND_CODES_FIRST);
 	/////
 
 	/////teachers time horizontal and time vertical.
@@ -1581,6 +1606,7 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("settings-timetables-teachers-time-hv-print-teachers-legend", SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_LEGEND);
 	settings.setValue("settings-timetables-teachers-time-hv-print-students-legend", SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_STUDENTS_LEGEND);
 	settings.setValue("settings-timetables-teachers-time-hv-print-rooms-legend", SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ROOMS_LEGEND);
+	settings.setValue("settings-timetables-teachers-time-hv-print-legend-codes-first", SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_LEGEND_CODES_FIRST);
 	/////
 
 	/////rooms days horizontal and days vertical.
@@ -1615,6 +1641,7 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("settings-timetables-rooms-days-hv-print-teachers-legend", SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_TEACHERS_LEGEND);
 	settings.setValue("settings-timetables-rooms-days-hv-print-students-legend", SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_STUDENTS_LEGEND);
 	settings.setValue("settings-timetables-rooms-days-hv-print-rooms-legend", SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_LEGEND);
+	settings.setValue("settings-timetables-rooms-days-hv-print-legend-codes-first", SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_LEGEND_CODES_FIRST);
 	/////
 
 	/////rooms time horizontal and time vertical.
@@ -1649,6 +1676,7 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("settings-timetables-rooms-time-hv-print-teachers-legend", SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_TEACHERS_LEGEND);
 	settings.setValue("settings-timetables-rooms-time-hv-print-students-legend", SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_STUDENTS_LEGEND);
 	settings.setValue("settings-timetables-rooms-time-hv-print-rooms-legend", SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_LEGEND);
+	settings.setValue("settings-timetables-rooms-time-hv-print-legend-codes-first", SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_LEGEND_CODES_FIRST);
 	/////
 
 	/////buildings days horizontal and days vertical.
@@ -1683,6 +1711,7 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("settings-timetables-buildings-days-hv-print-teachers-legend", SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_TEACHERS_LEGEND);
 	settings.setValue("settings-timetables-buildings-days-hv-print-students-legend", SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_STUDENTS_LEGEND);
 	settings.setValue("settings-timetables-buildings-days-hv-print-rooms-legend", SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_LEGEND);
+	settings.setValue("settings-timetables-buildings-days-hv-print-legend-codes-first", SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_LEGEND_CODES_FIRST);
 	/////
 
 	/////buildings time horizontal and time vertical.
@@ -1717,6 +1746,7 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("settings-timetables-buildings-time-hv-print-teachers-legend", SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_TEACHERS_LEGEND);
 	settings.setValue("settings-timetables-buildings-time-hv-print-students-legend", SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_STUDENTS_LEGEND);
 	settings.setValue("settings-timetables-buildings-time-hv-print-rooms-legend", SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ROOMS_LEGEND);
+	settings.setValue("settings-timetables-buildings-time-hv-print-legend-codes-first", SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_LEGEND_CODES_FIRST);
 	/////
 
 	/////subjects days horizontal and days vertical.
@@ -1751,6 +1781,7 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("settings-timetables-subjects-days-hv-print-teachers-legend", SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_TEACHERS_LEGEND);
 	settings.setValue("settings-timetables-subjects-days-hv-print-students-legend", SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_LEGEND);
 	settings.setValue("settings-timetables-subjects-days-hv-print-rooms-legend", SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_LEGEND);
+	settings.setValue("settings-timetables-subjects-days-hv-print-legend-codes-first", SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_LEGEND_CODES_FIRST);
 	/////
 
 	/////subjects time horizontal and time vertical.
@@ -1785,6 +1816,7 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("settings-timetables-subjects-time-hv-print-teachers-legend", SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_TEACHERS_LEGEND);
 	settings.setValue("settings-timetables-subjects-time-hv-print-students-legend", SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_STUDENTS_LEGEND);
 	settings.setValue("settings-timetables-subjects-time-hv-print-rooms-legend", SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ROOMS_LEGEND);
+	settings.setValue("settings-timetables-subjects-time-hv-print-legend-codes-first", SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_LEGEND_CODES_FIRST);
 	/////
 
 	/////activity tags days horizontal and days vertical.
@@ -1819,6 +1851,7 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("settings-timetables-activity-tags-days-hv-print-teachers-legend", SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_TEACHERS_LEGEND);
 	settings.setValue("settings-timetables-activity-tags-days-hv-print-students-legend", SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_LEGEND);
 	settings.setValue("settings-timetables-activity-tags-days-hv-print-rooms-legend", SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_LEGEND);
+	settings.setValue("settings-timetables-activity-tags-days-hv-print-legend-codes-first", SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_LEGEND_CODES_FIRST);
 	/////
 
 	/////activity tags time horizontal and time vertical.
@@ -1853,6 +1886,7 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("settings-timetables-activity-tags-time-hv-print-teachers-legend", SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_TEACHERS_LEGEND);
 	settings.setValue("settings-timetables-activity-tags-time-hv-print-students-legend", SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_STUDENTS_LEGEND);
 	settings.setValue("settings-timetables-activity-tags-time-hv-print-rooms-legend", SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ROOMS_LEGEND);
+	settings.setValue("settings-timetables-activity-tags-time-hv-print-legend-codes-first", SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_LEGEND_CODES_FIRST);
 	/////
 
 	/////activities days horizontal and days vertical.
@@ -1887,6 +1921,7 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("settings-timetables-activities-days-hv-print-teachers-legend", SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_TEACHERS_LEGEND);
 	settings.setValue("settings-timetables-activities-days-hv-print-students-legend", SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_LEGEND);
 	settings.setValue("settings-timetables-activities-days-hv-print-rooms-legend", SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_LEGEND);
+	settings.setValue("settings-timetables-activities-days-hv-print-legend-codes-first", SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_LEGEND_CODES_FIRST);
 	/////
 
 	/////activities time horizontal and time vertical.
@@ -1921,6 +1956,7 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("settings-timetables-activities-time-hv-print-teachers-legend", SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_TEACHERS_LEGEND);
 	settings.setValue("settings-timetables-activities-time-hv-print-students-legend", SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_STUDENTS_LEGEND);
 	settings.setValue("settings-timetables-activities-time-hv-print-rooms-legend", SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ROOMS_LEGEND);
+	settings.setValue("settings-timetables-activities-time-hv-print-legend-codes-first", SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_LEGEND_CODES_FIRST);
 	/////
 	//2024-06-12 end
 

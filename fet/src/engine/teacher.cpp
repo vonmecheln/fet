@@ -241,6 +241,14 @@ int teachersAscending(const Teacher* t1, const Teacher* t2)
 	return t1->name.localeAwareCompare(t2->name)<0;
 }
 
+int teachersCodesAscending(const Teacher* t1, const Teacher* t2)
+{
+	//return t1->name < t2->name;
+	
+	//by Rodolfo Ribeiro Gomes
+	return t1->code.localeAwareCompare(t2->code)<0;
+}
+
 void Teacher::recomputeQualifiedSubjectsHash()
 {
 	qualifiedSubjectsHash.clear();

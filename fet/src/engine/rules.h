@@ -1282,6 +1282,7 @@ private:
 
 	SpaceConstraint* readRoomMaxActivityTagsPerDayFromSet(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	SpaceConstraint* readRoomMaxActivityTagsPerRealDayFromSet(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readRoomMaxActivityTagsPerWeekFromSet(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 };
 
 #endif

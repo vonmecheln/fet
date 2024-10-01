@@ -10170,7 +10170,7 @@ also please consider making all fields importable from cvs, so we can export the
 
 YOUSSEF HOUIET:
 
-You can use comment fields 
+You can use comment fields
 
 Liviu Lalescu:
 
@@ -10191,3 +10191,10 @@ select a group of teachers and choose the maximum after option for the selected 
 
 in a real day..That's why we need a restriction through which we can select only some teachers and not all of them to apply the same restriction
 to them instead of entering them one by one... It takes a lot of time.
+
+639--------------------------------------------------------
+From danghoan (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6176.0
+
+Is there a way to edit and split Activities of Teacher without having to delete and re-add them.

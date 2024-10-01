@@ -64,4 +64,6 @@ public:
 
 int activityTagsAscending(const ActivityTag* st1, const ActivityTag* st2);
 
+int activityTagsCodesAscending(const ActivityTag* st1, const ActivityTag* st2);
+
 #endif

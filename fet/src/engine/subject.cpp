@@ -136,3 +136,11 @@ int subjectsAscending(const Subject* s1, const Subject* s2)
 	//by Rodolfo Ribeiro Gomes
 	return s1->name.localeAwareCompare(s2->name)<0;
 }
+
+int subjectsCodesAscending(const Subject* s1, const Subject* s2)
+{
+	//return s1->name < s2->name;
+	
+	//by Rodolfo Ribeiro Gomes
+	return s1->code.localeAwareCompare(s2->code)<0;
+}

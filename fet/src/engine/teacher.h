@@ -85,4 +85,6 @@ public:
 
 int teachersAscending(const Teacher* t1, const Teacher* t2);
 
+int teachersCodesAscending(const Teacher* t1, const Teacher* t2);
+
 #endif

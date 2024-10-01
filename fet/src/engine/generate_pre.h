@@ -965,6 +965,12 @@ extern Matrix1D<QList<int>> roomsMaxActivityTagsPerRealDayFromSetMaxTags;
 extern Matrix1D<QList<QSet<int>>> roomsMaxActivityTagsPerRealDayFromSetTagsSet;
 extern bool haveRoomsMaxActivityTagsPerRealDayFromSet;
 
+//2024-09-23
+extern Matrix1D<QList<double>> roomsMaxActivityTagsPerWeekFromSetPercentages;
+extern Matrix1D<QList<int>> roomsMaxActivityTagsPerWeekFromSetMaxTags;
+extern Matrix1D<QList<QSet<int>>> roomsMaxActivityTagsPerWeekFromSetTagsSet;
+extern bool haveRoomsMaxActivityTagsPerWeekFromSet;
+
 bool computeRoomsMaxActivityTagsFromSet(QWidget* parent);
 ////////END   rooms
 

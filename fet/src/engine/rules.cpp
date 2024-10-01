@@ -2400,6 +2400,13 @@ QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 					stream<<*c;
 					break;
 				}
+			//68
+			case CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET:
+				{
+					ConstraintRoomMaxActivityTagsPerWeekFromSet* c=(ConstraintRoomMaxActivityTagsPerWeekFromSet*)ctr;
+					stream<<*c;
+					break;
+				}
 			
 			default:
 				assert(0);
@@ -5005,6 +5012,14 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 			case CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
 				{
 					ConstraintRoomMaxActivityTagsPerRealDayFromSet* c=new ConstraintRoomMaxActivityTagsPerRealDayFromSet;
+					stream>>*c;
+					rules.spaceConstraintsList.append(c);
+					break;
+				}
+			//68
+			case CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET:
+				{
+					ConstraintRoomMaxActivityTagsPerWeekFromSet* c=new ConstraintRoomMaxActivityTagsPerWeekFromSet;
 					stream>>*c;
 					rules.spaceConstraintsList.append(c);
 					break;
@@ -10638,6 +10653,14 @@ bool Rules::modifyRoom(const QString& initialRoomName, const QString& finalRoomN
 						crna->room=finalRoomName;
 					break;
 				}
+			case CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET:
+				{
+					ConstraintRoomMaxActivityTagsPerWeekFromSet* crna=(ConstraintRoomMaxActivityTagsPerWeekFromSet*)ctr;
+					if(crna->room==initialRoomName)
+						crna->room=finalRoomName;
+					break;
+				}
+
 			default:
 				//do nothing.
 				break;
@@ -13300,6 +13323,13 @@ void Rules::updateConstraintsAfterRemoval()
 			case CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
 				{
 					ConstraintRoomMaxActivityTagsPerRealDayFromSet* c=(ConstraintRoomMaxActivityTagsPerRealDayFromSet*)sc;
+					if(!existingRoomsNames.contains(c->room))
+						toBeRemovedSpace.append(sc);
+					break;
+				}
+			case CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET:
+				{
+					ConstraintRoomMaxActivityTagsPerWeekFromSet* c=(ConstraintRoomMaxActivityTagsPerWeekFromSet*)sc;
 					if(!existingRoomsNames.contains(c->room))
 						toBeRemovedSpace.append(sc);
 					break;
@@ -18000,6 +18030,9 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 				}
 				else if(xmlReader.name()==QString("ConstraintRoomMaxActivityTagsPerRealDayFromSet")){
 					crt_constraint=readRoomMaxActivityTagsPerRealDayFromSet(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintRoomMaxActivityTagsPerWeekFromSet")){
+					crt_constraint=readRoomMaxActivityTagsPerWeekFromSet(xmlReader, xmlReadingLog);
 				}
 
 				else{
@@ -43069,6 +43102,95 @@ SpaceConstraint* Rules::readRoomMaxActivityTagsPerRealDayFromSet(QXmlStreamReade
 			QString text=xmlReader.readElementText();
 			if(readTags.contains(text)){
 				xmlReader.raiseError(tr("Duplicate activity tag %1 found in the constraint room max activity tags per real day from set").arg(text));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			else{
+				readTags.insert(text);
+			}
+			cn->tagsList.append(text);
+			xmlReadingLog+="    Read activity tag="+cn->tagsList.at(cn->tagsList.count()-1)+"\n";
+		}
+		else if(xmlReader.name()==QString("Room")){
+			QString text=xmlReader.readElementText();
+			cn->room=text;
+			xmlReadingLog+="    Read room name="+cn->room+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+
+	if(!(nActivityTags==cn->tagsList.count())){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(nActivityTags==cn->tagsList.count());
+
+	return cn;
+}
+
+SpaceConstraint* Rules::readRoomMaxActivityTagsPerWeekFromSet(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintRoomMaxActivityTagsPerWeekFromSet"));
+
+	ConstraintRoomMaxActivityTagsPerWeekFromSet* cn=new ConstraintRoomMaxActivityTagsPerWeekFromSet();
+	cn->tagsList.clear();
+
+	int nActivityTags=-1;
+	QSet<QString> readTags;
+
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Read weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Maximum_Allowed_Activity_Tags")){
+			QString text=xmlReader.readElementText();
+			int mat=text.toInt();
+			if(mat!=1 && mat!=2){
+				xmlReader.raiseError(tr("The number of maximum allowed activity tags in a constraint room max activity tags per week from set should be 1 or 2"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			cn->maxTags=mat;
+			xmlReadingLog+="    Read maximum allowed activity tags="+CustomFETString::number(mat)+"\n";
+		}
+		else if(xmlReader.name()==QString("Number_of_Activity_Tags")){
+			QString text=xmlReader.readElementText();
+			nActivityTags=text.toInt();
+			if(nActivityTags<2){
+				xmlReader.raiseError(tr("The number of activity tags in the constraint room max activity tags per week from set is lower than two"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Read n activity tags="+CustomFETString::number(nActivityTags)+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			if(readTags.contains(text)){
+				xmlReader.raiseError(tr("Duplicate activity tag %1 found in the constraint room max activity tags per week from set").arg(text));
 				delete cn;
 				cn=nullptr;
 				return nullptr;

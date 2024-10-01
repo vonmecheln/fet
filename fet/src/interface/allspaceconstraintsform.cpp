@@ -102,6 +102,7 @@
 
 #include "modifyconstraintroommaxactivitytagsperdayfromsetform.h"
 #include "modifyconstraintroommaxactivitytagsperrealdayfromsetform.h"
+#include "modifyconstraintroommaxactivitytagsperweekfromsetform.h"
 
 #include "lockunlock.h"
 
@@ -1089,6 +1090,14 @@ void AllSpaceConstraintsForm::modifyConstraint()
 		case CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
 			{
 				ModifyConstraintRoomMaxActivityTagsPerRealDayFromSetForm form(this, (ConstraintRoomMaxActivityTagsPerRealDayFromSet*)ctr);
+				setParentAndOtherThings(&form, this);
+				form.exec();
+				break;
+			}
+		//68
+		case CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET:
+			{
+				ModifyConstraintRoomMaxActivityTagsPerWeekFromSetForm form(this, (ConstraintRoomMaxActivityTagsPerWeekFromSet*)ctr);
 				setParentAndOtherThings(&form, this);
 				form.exec();
 				break;

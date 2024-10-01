@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="6.25.1">
+<fet version="6.25.2">
 
 <Mode>Mornings_Afternoons</Mode>
 
@@ -2905,6 +2905,36 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintTeachersNoTwoConsecutiveDays>
+<ConstraintTeacherActivityTagMaxHoursDaily>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t1</Teacher>
+	<Activity_Tag>at1</Activity_Tag>
+	<Maximum_Hours_Daily>4</Maximum_Hours_Daily>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherActivityTagMaxHoursDaily>
+<ConstraintTeachersActivityTagMaxHoursDaily>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>at1</Activity_Tag>
+	<Maximum_Hours_Daily>4</Maximum_Hours_Daily>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersActivityTagMaxHoursDaily>
+<ConstraintStudentsSetActivityTagMaxHoursDaily>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Maximum_Hours_Daily>4</Maximum_Hours_Daily>
+	<Students>y1</Students>
+	<Activity_Tag>at1</Activity_Tag>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetActivityTagMaxHoursDaily>
+<ConstraintStudentsActivityTagMaxHoursDaily>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>at1</Activity_Tag>
+	<Maximum_Hours_Daily>4</Maximum_Hours_Daily>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsActivityTagMaxHoursDaily>
 </Time_Constraints_List>
 
 <Space_Constraints_List>
@@ -3462,6 +3492,17 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintRoomMaxActivityTagsPerRealDayFromSet>
+<ConstraintRoomMaxActivityTagsPerWeekFromSet>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Room>r1</Room>
+	<Maximum_Allowed_Activity_Tags>2</Maximum_Allowed_Activity_Tags>
+	<Number_of_Activity_Tags>3</Number_of_Activity_Tags>
+	<Activity_Tag>at5</Activity_Tag>
+	<Activity_Tag>at4</Activity_Tag>
+	<Activity_Tag>at1</Activity_Tag>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintRoomMaxActivityTagsPerWeekFromSet>
 </Space_Constraints_List>
 
 <Timetable_Generation_Options_List>

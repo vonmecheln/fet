@@ -404,6 +404,7 @@
 
 #include "constraintroommaxactivitytagsperdayfromsetform.h"
 #include "constraintroommaxactivitytagsperrealdayfromsetform.h"
+#include "constraintroommaxactivitytagsperweekfromsetform.h"
 
 #include "constraintstudentssetmaxgapsperrealdayform.h"
 #include "constraintstudentsmaxgapsperrealdayform.h"
@@ -677,6 +678,7 @@ bool SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
 bool SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
 bool SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
 bool SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+bool SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
 /////
 
 /////subgroups time horizontal and time vertical.
@@ -711,6 +713,7 @@ bool SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
 bool SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_TEACHERS_LEGEND=false;
 bool SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_LEGEND=false;
 bool SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ROOMS_LEGEND=false;
+bool SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
 /////
 
 /////groups days horizontal and days vertical.
@@ -745,6 +748,7 @@ bool SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
 bool SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
 bool SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
 bool SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+bool SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
 /////
 
 /////groups time horizontal and time vertical.
@@ -779,6 +783,7 @@ bool SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
 bool SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_TEACHERS_LEGEND=false;
 bool SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_LEGEND=false;
 bool SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ROOMS_LEGEND=false;
+bool SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
 /////
 
 /////years days horizontal and days vertical.
@@ -813,6 +818,7 @@ bool SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
 bool SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
 bool SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
 bool SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+bool SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
 /////
 
 /////years time horizontal and time vertical.
@@ -847,6 +853,7 @@ bool SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
 bool SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_TEACHERS_LEGEND=false;
 bool SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_LEGEND=false;
 bool SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ROOMS_LEGEND=false;
+bool SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
 /////
 
 /////teachers days horizontal and days vertical.
@@ -881,6 +888,7 @@ bool SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
 bool SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
 bool SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
 bool SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+bool SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
 /////
 
 /////teachers time horizontal and time vertical.
@@ -915,6 +923,7 @@ bool SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
 bool SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_LEGEND=false;
 bool SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_STUDENTS_LEGEND=false;
 bool SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ROOMS_LEGEND=false;
+bool SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
 /////
 
 /////rooms days horizontal and days vertical.
@@ -949,6 +958,7 @@ bool SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
 bool SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
 bool SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
 bool SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+bool SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
 /////
 
 /////rooms time horizontal and time vertical.
@@ -983,6 +993,7 @@ bool SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
 bool SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_TEACHERS_LEGEND=false;
 bool SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_STUDENTS_LEGEND=false;
 bool SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_LEGEND=false;
+bool SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
 /////
 
 /////buildings days horizontal and days vertical.
@@ -1017,6 +1028,7 @@ bool SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
 bool SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
 bool SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
 bool SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+bool SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
 /////
 
 /////buildings time horizontal and time vertical.
@@ -1051,6 +1063,7 @@ bool SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
 bool SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_TEACHERS_LEGEND=false;
 bool SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_STUDENTS_LEGEND=false;
 bool SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ROOMS_LEGEND=false;
+bool SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
 /////
 
 /////subjects days horizontal and days vertical.
@@ -1085,6 +1098,7 @@ bool SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
 bool SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
 bool SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
 bool SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+bool SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
 /////
 
 /////subjects time horizontal and time vertical.
@@ -1119,6 +1133,7 @@ bool SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
 bool SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_TEACHERS_LEGEND=false;
 bool SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_STUDENTS_LEGEND=false;
 bool SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ROOMS_LEGEND=false;
+bool SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
 /////
 
 /////activity tags days horizontal and days vertical.
@@ -1153,6 +1168,7 @@ bool SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
 bool SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
 bool SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
 bool SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+bool SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
 /////
 
 /////activity tags time horizontal and time vertical.
@@ -1187,6 +1203,7 @@ bool SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
 bool SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_TEACHERS_LEGEND=false;
 bool SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_STUDENTS_LEGEND=false;
 bool SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ROOMS_LEGEND=false;
+bool SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
 /////
 
 /////activities days horizontal and days vertical.
@@ -1221,6 +1238,7 @@ bool SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
 bool SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
 bool SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
 bool SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+bool SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
 /////
 
 /////activities time horizontal and time vertical.
@@ -1255,6 +1273,7 @@ bool SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
 bool SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_TEACHERS_LEGEND=false;
 bool SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_STUDENTS_LEGEND=false;
 bool SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ROOMS_LEGEND=false;
+bool SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
 /////
 //
 //2024-06-12 end
@@ -2545,6 +2564,7 @@ void FetMainForm::createActionsForConstraints()
 
 	dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction = new QAction(this);
 	dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction = new QAction(this);
+	dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction = new QAction(this);
 
 	dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction = new QAction(this);
 	dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction = new QAction(this);
@@ -2872,6 +2892,7 @@ void FetMainForm::createActionsForConstraints()
 
 	connect(dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction_triggered);
 	connect(dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction_triggered);
+	connect(dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction_triggered);
 
 	connect(dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction_triggered);
 	connect(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction_triggered);
@@ -3248,6 +3269,7 @@ void FetMainForm::retranslateConstraints()
 
 	dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction->setText(QCoreApplication::translate("FetMainForm_template", "Max activity tags from a set per day for a room", nullptr));
 	dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction->setText(QCoreApplication::translate("FetMainForm_template", "Max activity tags from a set per real day for a room", nullptr));
+	dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction->setText(QCoreApplication::translate("FetMainForm_template", "Max activity tags from a set per week for a room", nullptr));
 
 	dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily per real day with an activity tag for all teachers", nullptr));
 	dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily per real day with an activity tag for a students set", nullptr));
@@ -3556,6 +3578,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuRooms_space_constraints->addSeparator();
 		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction);
+		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction);
 
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomAction);
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomsAction);
@@ -3726,7 +3749,8 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherMaxSpanPerDayAction);
 		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherMaxSpanPerRealDayAction);
 		
-		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysAction);
+		menuA_teacher_3_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction);
+		menuA_teacher_3_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysAction);
 
 		menuA_teacher_3_time_constraints->addAction(dataTimeConstraintsTeacherMaxActivityTagsPerDayFromSetAction);
 		menuA_teacher_3_time_constraints->addAction(dataTimeConstraintsTeacherMaxActivityTagsPerRealDayFromSetAction);
@@ -3795,7 +3819,8 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersMaxSpanPerDayAction);
 		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersMaxSpanPerRealDayAction);
 		
-		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction);
+		menuAll_teachers_3_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction);
+		menuAll_teachers_3_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction);
 
 		menuAll_teachers_3_time_constraints->addAction(dataTimeConstraintsTeachersMaxActivityTagsPerDayFromSetAction);
 		menuAll_teachers_3_time_constraints->addAction(dataTimeConstraintsTeachersMaxActivityTagsPerRealDayFromSetAction);
@@ -3852,7 +3877,9 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_students_set_2_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction);
 		menuA_students_set_2_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursDailyRealDaysAction);
 		menuA_students_set_2_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxSpanPerRealDayAction);
-		menuA_students_set_2_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction);
+
+		menuA_students_set_3_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction);
+		menuA_students_set_3_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction);
 
 		menuA_students_set_3_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxActivityTagsPerDayFromSetAction);
 		menuA_students_set_3_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxActivityTagsPerRealDayFromSetAction);
@@ -3908,7 +3935,9 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_students_2_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction);
 		menuAll_students_2_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursDailyRealDaysAction);
 		menuAll_students_2_time_constraints->addAction(dataTimeConstraintsStudentsMaxSpanPerRealDayAction);
-		menuAll_students_2_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction);
+
+		menuAll_students_3_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction);
+		menuAll_students_3_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction);
 
 		menuAll_students_3_time_constraints->addAction(dataTimeConstraintsStudentsMaxActivityTagsPerDayFromSetAction);
 		menuAll_students_3_time_constraints->addAction(dataTimeConstraintsStudentsMaxActivityTagsPerRealDayFromSetAction);
@@ -4001,6 +4030,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuRooms_space_constraints->addSeparator();
 		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction);
 		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction);
+		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction);
 
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomAction);
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomsAction);
@@ -4278,6 +4308,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuRooms_space_constraints->addSeparator();
 		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction);
+		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction);
 
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomAction);
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomsAction);
@@ -4546,6 +4577,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuRooms_space_constraints->addSeparator();
 		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction);
+		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction);
 
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomAction);
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomsAction);
@@ -11796,6 +11828,25 @@ void FetMainForm::dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction
 	form.exec();
 }
 
+void FetMainForm::dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	ConstraintRoomMaxActivityTagsPerWeekFromSetForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
 void FetMainForm::dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction_triggered()
 {
 	if(!gt.rules.initialized){
@@ -13966,6 +14017,7 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
 	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
 	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
 	/////
 
 	/////subgroups time horizontal and time vertical.
@@ -14000,6 +14052,7 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_TEACHERS_LEGEND=false;
 	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_LEGEND=false;
 	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ROOMS_LEGEND=false;
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
 	/////
 
 	/////groups days horizontal and days vertical.
@@ -14034,6 +14087,7 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
 	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
 	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
 	/////
 
 	/////groups time horizontal and time vertical.
@@ -14068,6 +14122,7 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_TEACHERS_LEGEND=false;
 	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_LEGEND=false;
 	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ROOMS_LEGEND=false;
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
 	/////
 
 	/////years days horizontal and days vertical.
@@ -14102,6 +14157,7 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
 	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
 	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
 	/////
 
 	/////years time horizontal and time vertical.
@@ -14136,6 +14192,7 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_TEACHERS_LEGEND=false;
 	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_LEGEND=false;
 	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ROOMS_LEGEND=false;
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
 	/////
 
 	/////teachers days horizontal and days vertical.
@@ -14170,6 +14227,7 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
 	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
 	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
 	/////
 
 	/////teachers time horizontal and time vertical.
@@ -14204,6 +14262,7 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_LEGEND=false;
 	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_STUDENTS_LEGEND=false;
 	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ROOMS_LEGEND=false;
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
 	/////
 
 	/////rooms days horizontal and days vertical.
@@ -14238,6 +14297,7 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
 	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
 	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
 	/////
 
 	/////rooms time horizontal and time vertical.
@@ -14272,6 +14332,7 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_TEACHERS_LEGEND=false;
 	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_STUDENTS_LEGEND=false;
 	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_LEGEND=false;
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
 	/////
 
 	/////buildings days horizontal and days vertical.
@@ -14306,6 +14367,7 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
 	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
 	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
 	/////
 
 	/////buildings time horizontal and time vertical.
@@ -14340,6 +14402,7 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_TEACHERS_LEGEND=false;
 	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_STUDENTS_LEGEND=false;
 	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ROOMS_LEGEND=false;
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
 	/////
 
 	/////subjects days horizontal and days vertical.
@@ -14374,6 +14437,7 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
 	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
 	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
 	/////
 
 	/////subjects time horizontal and time vertical.
@@ -14408,6 +14472,7 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_TEACHERS_LEGEND=false;
 	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_STUDENTS_LEGEND=false;
 	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ROOMS_LEGEND=false;
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
 	/////
 
 	/////activity tags days horizontal and days vertical.
@@ -14442,6 +14507,7 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
 	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
 	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
 	/////
 
 	/////activity tags time horizontal and time vertical.
@@ -14476,6 +14542,7 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_TEACHERS_LEGEND=false;
 	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_STUDENTS_LEGEND=false;
 	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ROOMS_LEGEND=false;
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
 	/////
 
 	/////activities days horizontal and days vertical.
@@ -14510,6 +14577,7 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
 	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
 	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
 	/////
 
 	/////activities time horizontal and time vertical.
@@ -14544,6 +14612,7 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_TEACHERS_LEGEND=false;
 	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_STUDENTS_LEGEND=false;
 	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ROOMS_LEGEND=false;
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
 	/////
 	//
 	//2024-06-12 end

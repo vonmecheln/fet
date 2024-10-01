@@ -92,6 +92,7 @@ SettingsDataToPrintInTimetablesForm::SettingsDataToPrintInTimetablesForm(QWidget
 	subgroupsDaysHVTeachersLegendCheckBox->setChecked(SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_TEACHERS_LEGEND);
 	subgroupsDaysHVStudentsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_LEGEND);
 	subgroupsDaysHVRoomsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_LEGEND);
+	subgroupsDaysHVLegendCodesFirstCheckBox->setChecked(SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_LEGEND_CODES_FIRST);
 	
 	/////subgroups time horizontal and time vertical.
 	subgroupsTimeHVDaysNamesCheckBox->setChecked(SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_NAMES);
@@ -125,6 +126,7 @@ SettingsDataToPrintInTimetablesForm::SettingsDataToPrintInTimetablesForm(QWidget
 	subgroupsTimeHVTeachersLegendCheckBox->setChecked(SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_TEACHERS_LEGEND);
 	subgroupsTimeHVStudentsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_LEGEND);
 	subgroupsTimeHVRoomsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ROOMS_LEGEND);
+	subgroupsTimeHVLegendCodesFirstCheckBox->setChecked(SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_LEGEND_CODES_FIRST);
 
 	/////groups days horizontal and days vertical.
 	groupsDaysHVDaysNamesCheckBox->setChecked(SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_DAYS_NAMES);
@@ -158,6 +160,7 @@ SettingsDataToPrintInTimetablesForm::SettingsDataToPrintInTimetablesForm(QWidget
 	groupsDaysHVTeachersLegendCheckBox->setChecked(SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_TEACHERS_LEGEND);
 	groupsDaysHVStudentsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_LEGEND);
 	groupsDaysHVRoomsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ROOMS_LEGEND);
+	groupsDaysHVLegendCodesFirstCheckBox->setChecked(SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_LEGEND_CODES_FIRST);
 	
 	/////groups time horizontal and time vertical.
 	groupsTimeHVDaysNamesCheckBox->setChecked(SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_NAMES);
@@ -191,6 +194,7 @@ SettingsDataToPrintInTimetablesForm::SettingsDataToPrintInTimetablesForm(QWidget
 	groupsTimeHVTeachersLegendCheckBox->setChecked(SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_TEACHERS_LEGEND);
 	groupsTimeHVStudentsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_LEGEND);
 	groupsTimeHVRoomsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ROOMS_LEGEND);
+	groupsTimeHVLegendCodesFirstCheckBox->setChecked(SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_LEGEND_CODES_FIRST);
 
 	/////years days horizontal and days vertical.
 	yearsDaysHVDaysNamesCheckBox->setChecked(SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_DAYS_NAMES);
@@ -224,6 +228,7 @@ SettingsDataToPrintInTimetablesForm::SettingsDataToPrintInTimetablesForm(QWidget
 	yearsDaysHVTeachersLegendCheckBox->setChecked(SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_TEACHERS_LEGEND);
 	yearsDaysHVStudentsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_LEGEND);
 	yearsDaysHVRoomsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ROOMS_LEGEND);
+	yearsDaysHVLegendCodesFirstCheckBox->setChecked(SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_LEGEND_CODES_FIRST);
 	
 	/////years time horizontal and time vertical.
 	yearsTimeHVDaysNamesCheckBox->setChecked(SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_NAMES);
@@ -257,6 +262,7 @@ SettingsDataToPrintInTimetablesForm::SettingsDataToPrintInTimetablesForm(QWidget
 	yearsTimeHVTeachersLegendCheckBox->setChecked(SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_TEACHERS_LEGEND);
 	yearsTimeHVStudentsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_LEGEND);
 	yearsTimeHVRoomsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ROOMS_LEGEND);
+	yearsTimeHVLegendCodesFirstCheckBox->setChecked(SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_LEGEND_CODES_FIRST);
 
 	/////teachers days horizontal and days vertical.
 	teachersDaysHVDaysNamesCheckBox->setChecked(SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_DAYS_NAMES);
@@ -290,6 +296,7 @@ SettingsDataToPrintInTimetablesForm::SettingsDataToPrintInTimetablesForm(QWidget
 	teachersDaysHVTeachersLegendCheckBox->setChecked(SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_LEGEND);
 	teachersDaysHVStudentsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_STUDENTS_LEGEND);
 	teachersDaysHVRoomsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_LEGEND);
+	teachersDaysHVLegendCodesFirstCheckBox->setChecked(SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_LEGEND_CODES_FIRST);
 	
 	/////teachers time horizontal and time vertical.
 	teachersTimeHVDaysNamesCheckBox->setChecked(SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_NAMES);
@@ -323,6 +330,7 @@ SettingsDataToPrintInTimetablesForm::SettingsDataToPrintInTimetablesForm(QWidget
 	teachersTimeHVTeachersLegendCheckBox->setChecked(SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_LEGEND);
 	teachersTimeHVStudentsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_STUDENTS_LEGEND);
 	teachersTimeHVRoomsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ROOMS_LEGEND);
+	teachersTimeHVLegendCodesFirstCheckBox->setChecked(SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_LEGEND_CODES_FIRST);
 
 	/////rooms days horizontal and days vertical.
 	roomsDaysHVDaysNamesCheckBox->setChecked(SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_DAYS_NAMES);
@@ -356,6 +364,7 @@ SettingsDataToPrintInTimetablesForm::SettingsDataToPrintInTimetablesForm(QWidget
 	roomsDaysHVTeachersLegendCheckBox->setChecked(SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_TEACHERS_LEGEND);
 	roomsDaysHVStudentsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_STUDENTS_LEGEND);
 	roomsDaysHVRoomsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_LEGEND);
+	roomsDaysHVLegendCodesFirstCheckBox->setChecked(SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_LEGEND_CODES_FIRST);
 	
 	/////rooms time horizontal and time vertical.
 	roomsTimeHVDaysNamesCheckBox->setChecked(SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_NAMES);
@@ -389,6 +398,7 @@ SettingsDataToPrintInTimetablesForm::SettingsDataToPrintInTimetablesForm(QWidget
 	roomsTimeHVTeachersLegendCheckBox->setChecked(SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_TEACHERS_LEGEND);
 	roomsTimeHVStudentsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_STUDENTS_LEGEND);
 	roomsTimeHVRoomsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_LEGEND);
+	roomsTimeHVLegendCodesFirstCheckBox->setChecked(SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_LEGEND_CODES_FIRST);
 
 	/////buildings days horizontal and days vertical.
 	buildingsDaysHVDaysNamesCheckBox->setChecked(SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_DAYS_NAMES);
@@ -422,6 +432,7 @@ SettingsDataToPrintInTimetablesForm::SettingsDataToPrintInTimetablesForm(QWidget
 	buildingsDaysHVTeachersLegendCheckBox->setChecked(SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_TEACHERS_LEGEND);
 	buildingsDaysHVStudentsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_STUDENTS_LEGEND);
 	buildingsDaysHVRoomsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_LEGEND);
+	buildingsDaysHVLegendCodesFirstCheckBox->setChecked(SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_LEGEND_CODES_FIRST);
 	
 	/////buildings time horizontal and time vertical.
 	buildingsTimeHVDaysNamesCheckBox->setChecked(SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_NAMES);
@@ -455,6 +466,7 @@ SettingsDataToPrintInTimetablesForm::SettingsDataToPrintInTimetablesForm(QWidget
 	buildingsTimeHVTeachersLegendCheckBox->setChecked(SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_TEACHERS_LEGEND);
 	buildingsTimeHVStudentsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_STUDENTS_LEGEND);
 	buildingsTimeHVRoomsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ROOMS_LEGEND);
+	buildingsTimeHVLegendCodesFirstCheckBox->setChecked(SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_LEGEND_CODES_FIRST);
 
 	/////subjects days horizontal and days vertical.
 	subjectsDaysHVDaysNamesCheckBox->setChecked(SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_DAYS_NAMES);
@@ -488,6 +500,7 @@ SettingsDataToPrintInTimetablesForm::SettingsDataToPrintInTimetablesForm(QWidget
 	subjectsDaysHVTeachersLegendCheckBox->setChecked(SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_TEACHERS_LEGEND);
 	subjectsDaysHVStudentsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_LEGEND);
 	subjectsDaysHVRoomsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_LEGEND);
+	subjectsDaysHVLegendCodesFirstCheckBox->setChecked(SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_LEGEND_CODES_FIRST);
 	
 	/////subjects time horizontal and time vertical.
 	subjectsTimeHVDaysNamesCheckBox->setChecked(SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_NAMES);
@@ -521,6 +534,7 @@ SettingsDataToPrintInTimetablesForm::SettingsDataToPrintInTimetablesForm(QWidget
 	subjectsTimeHVTeachersLegendCheckBox->setChecked(SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_TEACHERS_LEGEND);
 	subjectsTimeHVStudentsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_STUDENTS_LEGEND);
 	subjectsTimeHVRoomsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ROOMS_LEGEND);
+	subjectsTimeHVLegendCodesFirstCheckBox->setChecked(SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_LEGEND_CODES_FIRST);
 
 	/////activity tags days horizontal and days vertical.
 	activityTagsDaysHVDaysNamesCheckBox->setChecked(SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_DAYS_NAMES);
@@ -554,6 +568,7 @@ SettingsDataToPrintInTimetablesForm::SettingsDataToPrintInTimetablesForm(QWidget
 	activityTagsDaysHVTeachersLegendCheckBox->setChecked(SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_TEACHERS_LEGEND);
 	activityTagsDaysHVStudentsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_LEGEND);
 	activityTagsDaysHVRoomsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_LEGEND);
+	activityTagsDaysHVLegendCodesFirstCheckBox->setChecked(SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_LEGEND_CODES_FIRST);
 	
 	/////activity tags time horizontal and time vertical.
 	activityTagsTimeHVDaysNamesCheckBox->setChecked(SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_NAMES);
@@ -587,6 +602,7 @@ SettingsDataToPrintInTimetablesForm::SettingsDataToPrintInTimetablesForm(QWidget
 	activityTagsTimeHVTeachersLegendCheckBox->setChecked(SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_TEACHERS_LEGEND);
 	activityTagsTimeHVStudentsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_STUDENTS_LEGEND);
 	activityTagsTimeHVRoomsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ROOMS_LEGEND);
+	activityTagsTimeHVLegendCodesFirstCheckBox->setChecked(SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_LEGEND_CODES_FIRST);
 
 	/////activities days horizontal and days vertical.
 	activitiesDaysHVDaysNamesCheckBox->setChecked(SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_DAYS_NAMES);
@@ -620,6 +636,7 @@ SettingsDataToPrintInTimetablesForm::SettingsDataToPrintInTimetablesForm(QWidget
 	activitiesDaysHVTeachersLegendCheckBox->setChecked(SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_TEACHERS_LEGEND);
 	activitiesDaysHVStudentsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_LEGEND);
 	activitiesDaysHVRoomsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_LEGEND);
+	activitiesDaysHVLegendCodesFirstCheckBox->setChecked(SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_LEGEND_CODES_FIRST);
 	
 	/////activities time horizontal and time vertical.
 	activitiesTimeHVDaysNamesCheckBox->setChecked(SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_NAMES);
@@ -653,6 +670,7 @@ SettingsDataToPrintInTimetablesForm::SettingsDataToPrintInTimetablesForm(QWidget
 	activitiesTimeHVTeachersLegendCheckBox->setChecked(SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_TEACHERS_LEGEND);
 	activitiesTimeHVStudentsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_STUDENTS_LEGEND);
 	activitiesTimeHVRoomsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ROOMS_LEGEND);
+	activitiesTimeHVLegendCodesFirstCheckBox->setChecked(SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_LEGEND_CODES_FIRST);
 }
 
 SettingsDataToPrintInTimetablesForm::~SettingsDataToPrintInTimetablesForm()
@@ -720,6 +738,7 @@ void SettingsDataToPrintInTimetablesForm::wasAccepted()
 	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_TEACHERS_LEGEND=subgroupsDaysHVTeachersLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_LEGEND=subgroupsDaysHVStudentsLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_LEGEND=subgroupsDaysHVRoomsLegendCheckBox->isChecked();
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=subgroupsDaysHVLegendCodesFirstCheckBox->isChecked();
 	
 	/////subgroups time horizontal and time vertical.
 	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_NAMES=subgroupsTimeHVDaysNamesCheckBox->isChecked();
@@ -753,6 +772,7 @@ void SettingsDataToPrintInTimetablesForm::wasAccepted()
 	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_TEACHERS_LEGEND=subgroupsTimeHVTeachersLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_LEGEND=subgroupsTimeHVStudentsLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ROOMS_LEGEND=subgroupsTimeHVRoomsLegendCheckBox->isChecked();
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_LEGEND_CODES_FIRST=subgroupsTimeHVLegendCodesFirstCheckBox->isChecked();
 
 	/////groups days horizontal and days vertical.
 	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_DAYS_NAMES=groupsDaysHVDaysNamesCheckBox->isChecked();
@@ -786,6 +806,7 @@ void SettingsDataToPrintInTimetablesForm::wasAccepted()
 	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_TEACHERS_LEGEND=groupsDaysHVTeachersLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_LEGEND=groupsDaysHVStudentsLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ROOMS_LEGEND=groupsDaysHVRoomsLegendCheckBox->isChecked();
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=groupsDaysHVLegendCodesFirstCheckBox->isChecked();
 	
 	/////groups time horizontal and time vertical.
 	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_NAMES=groupsTimeHVDaysNamesCheckBox->isChecked();
@@ -819,6 +840,7 @@ void SettingsDataToPrintInTimetablesForm::wasAccepted()
 	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_TEACHERS_LEGEND=groupsTimeHVTeachersLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_LEGEND=groupsTimeHVStudentsLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ROOMS_LEGEND=groupsTimeHVRoomsLegendCheckBox->isChecked();
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_LEGEND_CODES_FIRST=groupsTimeHVLegendCodesFirstCheckBox->isChecked();
 
 	/////years days horizontal and days vertical.
 	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_DAYS_NAMES=yearsDaysHVDaysNamesCheckBox->isChecked();
@@ -852,6 +874,7 @@ void SettingsDataToPrintInTimetablesForm::wasAccepted()
 	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_TEACHERS_LEGEND=yearsDaysHVTeachersLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_LEGEND=yearsDaysHVStudentsLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ROOMS_LEGEND=yearsDaysHVRoomsLegendCheckBox->isChecked();
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=yearsDaysHVLegendCodesFirstCheckBox->isChecked();
 	
 	/////years time horizontal and time vertical.
 	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_NAMES=yearsTimeHVDaysNamesCheckBox->isChecked();
@@ -885,6 +908,7 @@ void SettingsDataToPrintInTimetablesForm::wasAccepted()
 	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_TEACHERS_LEGEND=yearsTimeHVTeachersLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_LEGEND=yearsTimeHVStudentsLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ROOMS_LEGEND=yearsTimeHVRoomsLegendCheckBox->isChecked();
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_LEGEND_CODES_FIRST=yearsTimeHVLegendCodesFirstCheckBox->isChecked();
 
 	/////teachers days horizontal and days vertical.
 	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_DAYS_NAMES=teachersDaysHVDaysNamesCheckBox->isChecked();
@@ -918,6 +942,7 @@ void SettingsDataToPrintInTimetablesForm::wasAccepted()
 	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_LEGEND=teachersDaysHVTeachersLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_STUDENTS_LEGEND=teachersDaysHVStudentsLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_LEGEND=teachersDaysHVRoomsLegendCheckBox->isChecked();
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=teachersDaysHVLegendCodesFirstCheckBox->isChecked();
 	
 	/////teachers time horizontal and time vertical.
 	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_NAMES=teachersTimeHVDaysNamesCheckBox->isChecked();
@@ -951,6 +976,7 @@ void SettingsDataToPrintInTimetablesForm::wasAccepted()
 	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_LEGEND=teachersTimeHVTeachersLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_STUDENTS_LEGEND=teachersTimeHVStudentsLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ROOMS_LEGEND=teachersTimeHVRoomsLegendCheckBox->isChecked();
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_LEGEND_CODES_FIRST=teachersTimeHVLegendCodesFirstCheckBox->isChecked();
 
 	/////rooms days horizontal and days vertical.
 	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_DAYS_NAMES=roomsDaysHVDaysNamesCheckBox->isChecked();
@@ -984,6 +1010,7 @@ void SettingsDataToPrintInTimetablesForm::wasAccepted()
 	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_TEACHERS_LEGEND=roomsDaysHVTeachersLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_STUDENTS_LEGEND=roomsDaysHVStudentsLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_LEGEND=roomsDaysHVRoomsLegendCheckBox->isChecked();
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=roomsDaysHVLegendCodesFirstCheckBox->isChecked();
 	
 	/////rooms time horizontal and time vertical.
 	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_NAMES=roomsTimeHVDaysNamesCheckBox->isChecked();
@@ -1017,6 +1044,7 @@ void SettingsDataToPrintInTimetablesForm::wasAccepted()
 	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_TEACHERS_LEGEND=roomsTimeHVTeachersLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_STUDENTS_LEGEND=roomsTimeHVStudentsLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_LEGEND=roomsTimeHVRoomsLegendCheckBox->isChecked();
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_LEGEND_CODES_FIRST=roomsTimeHVLegendCodesFirstCheckBox->isChecked();
 
 	/////buildings days horizontal and days vertical.
 	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_DAYS_NAMES=buildingsDaysHVDaysNamesCheckBox->isChecked();
@@ -1050,6 +1078,7 @@ void SettingsDataToPrintInTimetablesForm::wasAccepted()
 	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_TEACHERS_LEGEND=buildingsDaysHVTeachersLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_STUDENTS_LEGEND=buildingsDaysHVStudentsLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_LEGEND=buildingsDaysHVRoomsLegendCheckBox->isChecked();
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=buildingsDaysHVLegendCodesFirstCheckBox->isChecked();
 	
 	/////buildings time horizontal and time vertical.
 	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_NAMES=buildingsTimeHVDaysNamesCheckBox->isChecked();
@@ -1083,6 +1112,7 @@ void SettingsDataToPrintInTimetablesForm::wasAccepted()
 	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_TEACHERS_LEGEND=buildingsTimeHVTeachersLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_STUDENTS_LEGEND=buildingsTimeHVStudentsLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ROOMS_LEGEND=buildingsTimeHVRoomsLegendCheckBox->isChecked();
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_LEGEND_CODES_FIRST=buildingsTimeHVLegendCodesFirstCheckBox->isChecked();
 
 	/////subjects days horizontal and days vertical.
 	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_DAYS_NAMES=subjectsDaysHVDaysNamesCheckBox->isChecked();
@@ -1116,6 +1146,7 @@ void SettingsDataToPrintInTimetablesForm::wasAccepted()
 	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_TEACHERS_LEGEND=subjectsDaysHVTeachersLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_LEGEND=subjectsDaysHVStudentsLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_LEGEND=subjectsDaysHVRoomsLegendCheckBox->isChecked();
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=subjectsDaysHVLegendCodesFirstCheckBox->isChecked();
 	
 	/////subjects time horizontal and time vertical.
 	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_NAMES=subjectsTimeHVDaysNamesCheckBox->isChecked();
@@ -1149,6 +1180,7 @@ void SettingsDataToPrintInTimetablesForm::wasAccepted()
 	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_TEACHERS_LEGEND=subjectsTimeHVTeachersLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_STUDENTS_LEGEND=subjectsTimeHVStudentsLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ROOMS_LEGEND=subjectsTimeHVRoomsLegendCheckBox->isChecked();
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_LEGEND_CODES_FIRST=subjectsTimeHVLegendCodesFirstCheckBox->isChecked();
 
 	/////activity tags days horizontal and days vertical.
 	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_DAYS_NAMES=activityTagsDaysHVDaysNamesCheckBox->isChecked();
@@ -1182,6 +1214,7 @@ void SettingsDataToPrintInTimetablesForm::wasAccepted()
 	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_TEACHERS_LEGEND=activityTagsDaysHVTeachersLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_LEGEND=activityTagsDaysHVStudentsLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_LEGEND=activityTagsDaysHVRoomsLegendCheckBox->isChecked();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=activityTagsDaysHVLegendCodesFirstCheckBox->isChecked();
 	
 	/////activity tags time horizontal and time vertical.
 	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_NAMES=activityTagsTimeHVDaysNamesCheckBox->isChecked();
@@ -1215,6 +1248,7 @@ void SettingsDataToPrintInTimetablesForm::wasAccepted()
 	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_TEACHERS_LEGEND=activityTagsTimeHVTeachersLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_STUDENTS_LEGEND=activityTagsTimeHVStudentsLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ROOMS_LEGEND=activityTagsTimeHVRoomsLegendCheckBox->isChecked();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_LEGEND_CODES_FIRST=activityTagsTimeHVLegendCodesFirstCheckBox->isChecked();
 
 	/////activities days horizontal and days vertical.
 	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_DAYS_NAMES=activitiesDaysHVDaysNamesCheckBox->isChecked();
@@ -1248,6 +1282,7 @@ void SettingsDataToPrintInTimetablesForm::wasAccepted()
 	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_TEACHERS_LEGEND=activitiesDaysHVTeachersLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_LEGEND=activitiesDaysHVStudentsLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_LEGEND=activitiesDaysHVRoomsLegendCheckBox->isChecked();
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_LEGEND_CODES_FIRST=activitiesDaysHVLegendCodesFirstCheckBox->isChecked();
 	
 	/////activities time horizontal and time vertical.
 	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_NAMES=activitiesTimeHVDaysNamesCheckBox->isChecked();
@@ -1281,6 +1316,7 @@ void SettingsDataToPrintInTimetablesForm::wasAccepted()
 	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_TEACHERS_LEGEND=activitiesTimeHVTeachersLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_STUDENTS_LEGEND=activitiesTimeHVStudentsLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ROOMS_LEGEND=activitiesTimeHVRoomsLegendCheckBox->isChecked();
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_LEGEND_CODES_FIRST=activitiesTimeHVLegendCodesFirstCheckBox->isChecked();
 
 	this->accept();
 }

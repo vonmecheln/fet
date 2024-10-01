@@ -542,6 +542,26 @@
           </widget>
          </item>
          <item>
+          <spacer name="verticalSpacer_112">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="subgroupsDaysHVLegendCodesFirstCheckBox">
+           <property name="text">
+            <string extracomment="It is an option. If selected, when printing the legend, the codes will appear at the beginning (as opposed to the names appearing at the beginning).">Codes first in legend</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <spacer name="verticalSpacer_94">
            <property name="orientation">
             <enum>Qt::Vertical</enum>
@@ -810,6 +830,26 @@
           <widget class="QCheckBox" name="subgroupsTimeHVRoomsLegendCheckBox">
            <property name="text">
             <string>Rooms legend</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_113">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="subgroupsTimeHVLegendCodesFirstCheckBox">
+           <property name="text">
+            <string extracomment="It is an option. If selected, when printing the legend, the codes will appear at the beginning (as opposed to the names appearing at the beginning).">Codes first in legend</string>
            </property>
           </widget>
          </item>
@@ -1093,6 +1133,26 @@
           </widget>
          </item>
          <item>
+          <spacer name="verticalSpacer_114">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="groupsDaysHVLegendCodesFirstCheckBox">
+           <property name="text">
+            <string extracomment="It is an option. If selected, when printing the legend, the codes will appear at the beginning (as opposed to the names appearing at the beginning).">Codes first in legend</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <spacer name="verticalSpacer_98">
            <property name="orientation">
             <enum>Qt::Vertical</enum>
@@ -1361,6 +1421,26 @@
           <widget class="QCheckBox" name="groupsTimeHVRoomsLegendCheckBox">
            <property name="text">
             <string>Rooms legend</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_115">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="groupsTimeHVLegendCodesFirstCheckBox">
+           <property name="text">
+            <string extracomment="It is an option. If selected, when printing the legend, the codes will appear at the beginning (as opposed to the names appearing at the beginning).">Codes first in legend</string>
            </property>
           </widget>
          </item>
@@ -1637,6 +1717,26 @@
           </widget>
          </item>
          <item>
+          <spacer name="verticalSpacer_116">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="yearsDaysHVLegendCodesFirstCheckBox">
+           <property name="text">
+            <string extracomment="It is an option. If selected, when printing the legend, the codes will appear at the beginning (as opposed to the names appearing at the beginning).">Codes first in legend</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <spacer name="verticalSpacer_95">
            <property name="orientation">
             <enum>Qt::Vertical</enum>
@@ -1898,6 +1998,26 @@
           <widget class="QCheckBox" name="yearsTimeHVRoomsLegendCheckBox">
            <property name="text">
             <string>Rooms legend</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_117">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="yearsTimeHVLegendCodesFirstCheckBox">
+           <property name="text">
+            <string extracomment="It is an option. If selected, when printing the legend, the codes will appear at the beginning (as opposed to the names appearing at the beginning).">Codes first in legend</string>
            </property>
           </widget>
          </item>
@@ -2170,6 +2290,26 @@
           <widget class="QCheckBox" name="teachersDaysHVRoomsLegendCheckBox">
            <property name="text">
             <string>Rooms legend</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_118">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="teachersDaysHVLegendCodesFirstCheckBox">
+           <property name="text">
+            <string extracomment="It is an option. If selected, when printing the legend, the codes will appear at the beginning (as opposed to the names appearing at the beginning).">Codes first in legend</string>
            </property>
           </widget>
          </item>
@@ -2453,6 +2593,26 @@
           </widget>
          </item>
          <item>
+          <spacer name="verticalSpacer_119">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="teachersTimeHVLegendCodesFirstCheckBox">
+           <property name="text">
+            <string extracomment="It is an option. If selected, when printing the legend, the codes will appear at the beginning (as opposed to the names appearing at the beginning).">Codes first in legend</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <spacer name="verticalSpacer_101">
            <property name="orientation">
             <enum>Qt::Vertical</enum>
@@ -2721,6 +2881,26 @@
           <widget class="QCheckBox" name="roomsDaysHVRoomsLegendCheckBox">
            <property name="text">
             <string>Rooms legend</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_120">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="roomsDaysHVLegendCodesFirstCheckBox">
+           <property name="text">
+            <string extracomment="It is an option. If selected, when printing the legend, the codes will appear at the beginning (as opposed to the names appearing at the beginning).">Codes first in legend</string>
            </property>
           </widget>
          </item>
@@ -2997,6 +3177,26 @@
           </widget>
          </item>
          <item>
+          <spacer name="verticalSpacer_121">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="roomsTimeHVLegendCodesFirstCheckBox">
+           <property name="text">
+            <string extracomment="It is an option. If selected, when printing the legend, the codes will appear at the beginning (as opposed to the names appearing at the beginning).">Codes first in legend</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <spacer name="verticalSpacer_103">
            <property name="orientation">
             <enum>Qt::Vertical</enum>
@@ -3265,6 +3465,26 @@
           <widget class="QCheckBox" name="buildingsDaysHVRoomsLegendCheckBox">
            <property name="text">
             <string>Rooms legend</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_122">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="buildingsDaysHVLegendCodesFirstCheckBox">
+           <property name="text">
+            <string extracomment="It is an option. If selected, when printing the legend, the codes will appear at the beginning (as opposed to the names appearing at the beginning).">Codes first in legend</string>
            </property>
           </widget>
          </item>
@@ -3541,6 +3761,26 @@
           </widget>
          </item>
          <item>
+          <spacer name="verticalSpacer_123">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="buildingsTimeHVLegendCodesFirstCheckBox">
+           <property name="text">
+            <string extracomment="It is an option. If selected, when printing the legend, the codes will appear at the beginning (as opposed to the names appearing at the beginning).">Codes first in legend</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <spacer name="verticalSpacer_105">
            <property name="orientation">
             <enum>Qt::Vertical</enum>
@@ -3809,6 +4049,26 @@
           <widget class="QCheckBox" name="subjectsDaysHVRoomsLegendCheckBox">
            <property name="text">
             <string>Rooms legend</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_124">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="subjectsDaysHVLegendCodesFirstCheckBox">
+           <property name="text">
+            <string extracomment="It is an option. If selected, when printing the legend, the codes will appear at the beginning (as opposed to the names appearing at the beginning).">Codes first in legend</string>
            </property>
           </widget>
          </item>
@@ -4085,6 +4345,26 @@
           </widget>
          </item>
          <item>
+          <spacer name="verticalSpacer_125">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="subjectsTimeHVLegendCodesFirstCheckBox">
+           <property name="text">
+            <string extracomment="It is an option. If selected, when printing the legend, the codes will appear at the beginning (as opposed to the names appearing at the beginning).">Codes first in legend</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <spacer name="verticalSpacer_107">
            <property name="orientation">
             <enum>Qt::Vertical</enum>
@@ -4346,6 +4626,26 @@
           <widget class="QCheckBox" name="activityTagsDaysHVRoomsLegendCheckBox">
            <property name="text">
             <string>Rooms legend</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_126">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="activityTagsDaysHVLegendCodesFirstCheckBox">
+           <property name="text">
+            <string extracomment="It is an option. If selected, when printing the legend, the codes will appear at the beginning (as opposed to the names appearing at the beginning).">Codes first in legend</string>
            </property>
           </widget>
          </item>
@@ -4629,6 +4929,26 @@
           </widget>
          </item>
          <item>
+          <spacer name="verticalSpacer_127">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="activityTagsTimeHVLegendCodesFirstCheckBox">
+           <property name="text">
+            <string extracomment="It is an option. If selected, when printing the legend, the codes will appear at the beginning (as opposed to the names appearing at the beginning).">Codes first in legend</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <spacer name="verticalSpacer_109">
            <property name="orientation">
             <enum>Qt::Vertical</enum>
@@ -4901,6 +5221,26 @@
           </widget>
          </item>
          <item>
+          <spacer name="verticalSpacer_128">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="activitiesDaysHVLegendCodesFirstCheckBox">
+           <property name="text">
+            <string extracomment="It is an option. If selected, when printing the legend, the codes will appear at the beginning (as opposed to the names appearing at the beginning).">Codes first in legend</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <spacer name="verticalSpacer_110">
            <property name="orientation">
             <enum>Qt::Vertical</enum>
@@ -5169,6 +5509,26 @@
           <widget class="QCheckBox" name="activitiesTimeHVRoomsLegendCheckBox">
            <property name="text">
             <string>Rooms legend</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_129">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="activitiesTimeHVLegendCodesFirstCheckBox">
+           <property name="text">
+            <string extracomment="It is an option. If selected, when printing the legend, the codes will appear at the beginning (as opposed to the names appearing at the beginning).">Codes first in legend</string>
            </property>
           </widget>
          </item>

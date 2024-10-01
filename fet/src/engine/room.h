@@ -82,4 +82,6 @@ public:
 
 int roomsAscending(const Room* r1, const Room* r2);
 
+int roomsCodesAscending(const Room* r1, const Room* r2);
+
 #endif

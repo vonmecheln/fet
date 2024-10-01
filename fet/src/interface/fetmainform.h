@@ -403,6 +403,7 @@ private:
 
 	QAction* dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction;
 	QAction* dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction;
+	QAction* dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction;
 
 	QLabel modeLabel;
 	
@@ -939,6 +940,7 @@ public slots:
 
 	void dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction_triggered();
 	void dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction_triggered();
+	void dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction_triggered();
 
 	void helpMoroccoAction_triggered();
 	void helpAlgeriaAction_triggered();

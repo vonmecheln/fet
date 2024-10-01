@@ -143,6 +143,7 @@ const int CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_REAL_DAY_IN_INTERVAL			=1065;
 
 const int CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET					=1066;
 const int CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET				=1067;
+const int CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET					=1068;
 
 /**
 This class represents a space constraint
@@ -3279,6 +3280,60 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
+class ConstraintRoomMaxActivityTagsPerWeekFromSet: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintRoomMaxActivityTagsPerWeekFromSet)
+	
+public:
+
+	/**
+	The room's name
+	*/
+	QString room;
+
+	/**
+	The room's id, or index in the rules
+	*/
+	int room_ID;
+	
+	int maxTags;
+	
+	QList<QString> tagsList;
+	
+	QSet<int> internalTagsSet;
+
+	ConstraintRoomMaxActivityTagsPerWeekFromSet();
+
+	ConstraintRoomMaxActivityTagsPerWeekFromSet(double wp, const QString& rn, int mtg, const QList<QString>& tgl);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+	
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+	
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
 //1
 QDataStream& operator<<(QDataStream& stream, const ConstraintBasicCompulsorySpace& sc);
 //2
@@ -3413,6 +3468,8 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxRoomChang
 QDataStream& operator<<(QDataStream& stream, const ConstraintRoomMaxActivityTagsPerDayFromSet& sc);
 //67
 QDataStream& operator<<(QDataStream& stream, const ConstraintRoomMaxActivityTagsPerRealDayFromSet& sc);
+//68
+QDataStream& operator<<(QDataStream& stream, const ConstraintRoomMaxActivityTagsPerWeekFromSet& sc);
 
 //1
 QDataStream& operator>>(QDataStream& stream, ConstraintBasicCompulsorySpace& sc);
@@ -3548,5 +3605,7 @@ QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxRoomChangesPerR
 QDataStream& operator>>(QDataStream& stream, ConstraintRoomMaxActivityTagsPerDayFromSet& sc);
 //67
 QDataStream& operator>>(QDataStream& stream, ConstraintRoomMaxActivityTagsPerRealDayFromSet& sc);
+//68
+QDataStream& operator>>(QDataStream& stream, ConstraintRoomMaxActivityTagsPerWeekFromSet& sc);
 
 #endif

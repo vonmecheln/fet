@@ -458,6 +458,14 @@ int studentsSetsAscending(const StudentsSet* st1, const StudentsSet* st2)
 	return st1->name.localeAwareCompare(st2->name)<0;
 }
 
+int studentsSetsCodesAscending(const StudentsSet* st1, const StudentsSet* st2)
+{
+	//return y1->name < y2->name;
+	
+	//by Rodolfo Ribeiro Gomes
+	return st1->code.localeAwareCompare(st2->code)<0;
+}
+
 int yearsAscending(const StudentsYear* y1, const StudentsYear* y2)
 {
 	//return y1->name < y2->name;

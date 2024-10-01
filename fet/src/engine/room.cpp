@@ -264,3 +264,11 @@ int roomsAscending(const Room* r1, const Room* r2)
 	//by Rodolfo Ribeiro Gomes
 	return r1->name.localeAwareCompare(r2->name)<0;
 }
+
+int roomsCodesAscending(const Room* r1, const Room* r2)
+{
+	//return r1->name < r2->name;
+	
+	//by Rodolfo Ribeiro Gomes
+	return r1->code.localeAwareCompare(r2->code)<0;
+}

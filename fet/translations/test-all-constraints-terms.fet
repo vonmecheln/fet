@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="6.25.1">
+<fet version="6.25.2">
 
 <Mode>Terms</Mode>
 
@@ -2638,6 +2638,16 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintRoomMaxActivityTagsPerDayFromSet>
+<ConstraintRoomMaxActivityTagsPerWeekFromSet>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Room>r1</Room>
+	<Maximum_Allowed_Activity_Tags>1</Maximum_Allowed_Activity_Tags>
+	<Number_of_Activity_Tags>2</Number_of_Activity_Tags>
+	<Activity_Tag>at3</Activity_Tag>
+	<Activity_Tag>at2</Activity_Tag>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintRoomMaxActivityTagsPerWeekFromSet>
 </Space_Constraints_List>
 
 <Timetable_Generation_Options_List>

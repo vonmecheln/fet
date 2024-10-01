@@ -239,7 +239,8 @@ public:
 	static void computeHashActivityColorBySubject();
 	static void computeHashActivityColorBySubjectAndStudents();
 
-	static QString printCompleteLegend(bool printSubjectsLegend, bool printActivityTagsLegend, bool printTeachersLegend, bool printStudentsLegend, bool printRoomsLegend);
+	static QString printCompleteLegend(bool printSubjectsLegend, bool printActivityTagsLegend, bool printTeachersLegend, bool printStudentsLegend, bool printRoomsLegend,
+		bool printCodesFirst);
 	
 private:
 	//this function must be called before export HTML files, because it compute the IDs
@@ -444,7 +445,8 @@ private:
 	static void addActivitiesLegend(const QList<int>& allActivitiesList, QSet<Subject*>& usedSubjectsSet, QSet<ActivityTag*>& usedActivityTagsSet, QSet<Teacher*>& usedTeachersSet, QSet<StudentsSet*>& usedStudentsSet, QSet<Room*>& usedRoomsSet,
 		bool printSubjectsLegend, bool printActivityTagsLegend, bool printTeachersLegend, bool printStudentsLegend, bool printRoomsLegend);
 	static void printLegend(QString& tmpString, QSet<Subject*>& usedSubjectsSet, QSet<ActivityTag*>& usedActivityTagsSet, QSet<Teacher*>& usedTeachersSet, QSet<StudentsSet*>& usedStudentsSet, QSet<Room*>& usedRoomsSet,
-		bool printSubjectsLegend, bool printActivityTagsLegend, bool printTeachersLegend, bool printStudentsLegend, bool printRoomsLegend);
+		bool printSubjectsLegend, bool printActivityTagsLegend, bool printTeachersLegend, bool printStudentsLegend, bool printRoomsLegend,
+		bool printCodesFirst);
 };
 
 #endif
