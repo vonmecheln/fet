@@ -10257,3 +10257,52 @@ max campus changes per day/week.
 for Greece.. this problem occurs only for teachers.
 the real problem is the changes per day.
 the other problem is not so significant (per week).
+
+After a Facebook discussion between Vangelis Karafillidis and Liviu Lalescu, we arrived at this conclusion:
+
+Teacher(s)/students (set) max activity tag changes per day/week... this can solve the problem in a much simpler way.
+
+Unfortunately, an activity can have more tags, so we might also need to add a set of tags to be checked.
+
+Vangelis Karafillidis:
+
+so... max activity tags pair switches per day/week
+input = a pair of activity tags
+number of switches
+so the user could select which activity tags the constraint is going to be applied on
+
+645--------------------------------------------------------
+From vietphamvan0705 (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6192.0
+
+Is there a way to use constraints 2.8a and 2.8b independently without having to use constraint 2.6?
+
+You want to be able to use teacher(s) max hours per morning/afternoon without adding teacher(s) max hours per day, in the Mornings-Afternoons mode?
+I will add your suggestion in the TODO list, but it is unfortunately risky to change the currently working code.
+
+But can't you simply use min hours daily with allow empty days? The only bad situation is you cannot force at least 1 hour on each day without
+allowing empty days, but this is an improbable situation.
+
+646--------------------------------------------------------
+From pnlshd (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6195.0
+
+I wanted to ask if there is a way to bulk apply (add) an activity tag to a set of activities or also remove a tag from them (if they have it)
+instead of doing it one by one from the UI.
+
+647--------------------------------------------------------
+From Vangelis Karafillidis (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6196.0
+
+I think that the implementation of an option for not displaying specific activities would be useful in some situations. For example an option for
+not displaying activities with a specific activity tag would solve this problem.
+
+648---------------------------------------------------------
+From Thai Chi Phuong (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6112.msg34390#msg34390
+
+I have a suggestion: Can you add a constraint so that in a set of n teachers there are 1, 2 or 3 teachers busy in a day/actual day.

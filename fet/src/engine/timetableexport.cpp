@@ -322,9 +322,18 @@ void TimetableExport::writeGenerationResults(QWidget* parent){
 	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++)
 		subgroupsSortedOrder.append(lst.at(subgroup)->indexInInternalSubgroupsList);
 
+	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
+	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
+	assert(TIMETABLE_HTML_LEVEL>=0);
+	assert(TIMETABLE_HTML_LEVEL<=7);
+
+	computeHashForIDsTimetable();
+	computeActivitiesAtTime();
+	computeActivitiesWithSameStartingTime();
+
 	QDir dir;
 	
-	QString OUTPUT_DIR_TIMETABLES=OUTPUT_DIR+FILE_SEP+"timetables";
+	/*QString OUTPUT_DIR_TIMETABLES=OUTPUT_DIR+FILE_SEP+"timetables";
 	
 	OUTPUT_DIR_TIMETABLES.append(FILE_SEP);
 	if(INPUT_FILENAME_XML=="")
@@ -336,20 +345,13 @@ void TimetableExport::writeGenerationResults(QWidget* parent){
 		//else if(INPUT_FILENAME_XML!="")
 		//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
 	}
-	OUTPUT_DIR_TIMETABLES.append("-single");
+	OUTPUT_DIR_TIMETABLES.append("-single");*/
+	
+	QString OUTPUT_DIR_TIMETABLES=CURRENT_SINGLE_OUTPUT_DIRECTORY;
 	
 	//make sure that the output directory exists
 	if(!dir.exists(OUTPUT_DIR_TIMETABLES))
 		dir.mkpath(OUTPUT_DIR_TIMETABLES);
-
-	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
-	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
-	assert(TIMETABLE_HTML_LEVEL>=0);
-	assert(TIMETABLE_HTML_LEVEL<=7);
-
-	computeHashForIDsTimetable();
-	computeActivitiesAtTime();
-	computeActivitiesWithSameStartingTime();
 
 	QString s;
 	QString bar;
@@ -592,7 +594,7 @@ void TimetableExport::writeHighestStageResults(QWidget* parent){
 		subgroupsSortedOrder.append(lst.at(subgroup)->indexInInternalSubgroupsList);
 	QDir dir;
 	
-	QString OUTPUT_DIR_TIMETABLES=OUTPUT_DIR+FILE_SEP+"timetables";
+	/*QString OUTPUT_DIR_TIMETABLES=OUTPUT_DIR+FILE_SEP+"timetables";
 	
 	OUTPUT_DIR_TIMETABLES.append(FILE_SEP);
 	if(INPUT_FILENAME_XML=="")
@@ -604,7 +606,9 @@ void TimetableExport::writeHighestStageResults(QWidget* parent){
 		//else if(INPUT_FILENAME_XML!="")
 		//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
 	}
-	OUTPUT_DIR_TIMETABLES.append("-highest");
+	OUTPUT_DIR_TIMETABLES.append("-highest");*/
+	
+	QString OUTPUT_DIR_TIMETABLES=CURRENT_HIGHEST_OUTPUT_DIRECTORY;
 	
 	//make sure that the output directory exists
 	if(!dir.exists(OUTPUT_DIR_TIMETABLES))
@@ -858,7 +862,7 @@ void TimetableExport::writeRandomSeed(QWidget* parent, const MRG32k3a& rng, bool
 
 	QDir dir;
 	
-	QString OUTPUT_DIR_TIMETABLES=OUTPUT_DIR+FILE_SEP+"timetables";
+	/*QString OUTPUT_DIR_TIMETABLES=OUTPUT_DIR+FILE_SEP+"timetables";
 	
 	OUTPUT_DIR_TIMETABLES.append(FILE_SEP);
 	if(INPUT_FILENAME_XML=="")
@@ -870,7 +874,9 @@ void TimetableExport::writeRandomSeed(QWidget* parent, const MRG32k3a& rng, bool
 		//else if(INPUT_FILENAME_XML!="")
 		//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
 	}
-	OUTPUT_DIR_TIMETABLES.append("-single");
+	OUTPUT_DIR_TIMETABLES.append("-single");*/
+	
+	QString OUTPUT_DIR_TIMETABLES=CURRENT_SINGLE_OUTPUT_DIRECTORY;
 	
 	//make sure that the output directory exists
 	if(!dir.exists(OUTPUT_DIR_TIMETABLES))
@@ -1215,13 +1221,6 @@ void TimetableExport::writeGenerationResults(QWidget* parent, int n, bool highes
 		std::stable_sort(lst.begin(), lst.end(), subgroupsAscending);
 	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++)
 		subgroupsSortedOrder.append(lst.at(subgroup)->indexInInternalSubgroupsList);
-	QDir dir;
-	
-	QString OUTPUT_DIR_TIMETABLES=OUTPUT_DIR+FILE_SEP+"timetables";
-
-	//make sure that the output directory exists
-	if(!dir.exists(OUTPUT_DIR_TIMETABLES))
-		dir.mkpath(OUTPUT_DIR_TIMETABLES);
 
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
@@ -1232,6 +1231,14 @@ void TimetableExport::writeGenerationResults(QWidget* parent, int n, bool highes
 	computeActivitiesAtTime();
 	computeActivitiesWithSameStartingTime();
 
+	QDir dir;
+	
+	/*QString OUTPUT_DIR_TIMETABLES=OUTPUT_DIR+FILE_SEP+"timetables";
+
+	//make sure that the output directory exists
+	if(!dir.exists(OUTPUT_DIR_TIMETABLES))
+		dir.mkpath(OUTPUT_DIR_TIMETABLES);
+
 	QString s;
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
 	if(s2.right(4)==".fet")
@@ -1239,7 +1246,9 @@ void TimetableExport::writeGenerationResults(QWidget* parent, int n, bool highes
 	//else if(INPUT_FILENAME_XML!="")
 	//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
 	
-	QString destDir=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+"-multi";
+	QString destDir=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+"-multi";*/
+	
+	QString destDir=CURRENT_MULTIPLE_OUTPUT_DIRECTORY;
 	
 	if(!dir.exists(destDir))
 		dir.mkpath(destDir);
@@ -1269,7 +1278,7 @@ void TimetableExport::writeGenerationResults(QWidget* parent, int n, bool highes
 
 	//now write the solution in XML files
 	//subgroups
-	s=finalDestDir+SUBGROUPS_TIMETABLE_FILENAME_XML;
+	QString s=finalDestDir+SUBGROUPS_TIMETABLE_FILENAME_XML;
 	writeSubgroupsTimetableXml(parent, s, subgroupsSortedOrder);
 	//teachers
 	s=finalDestDir+TEACHERS_TIMETABLE_FILENAME_XML;
@@ -1483,7 +1492,7 @@ void TimetableExport::writeRandomSeed(QWidget* parent, const MRG32k3a& rng, int 
 
 	QDir dir;
 	
-	QString OUTPUT_DIR_TIMETABLES=OUTPUT_DIR+FILE_SEP+"timetables";
+	/*QString OUTPUT_DIR_TIMETABLES=OUTPUT_DIR+FILE_SEP+"timetables";
 
 	//make sure that the output directory exists
 	if(!dir.exists(OUTPUT_DIR_TIMETABLES))
@@ -1496,7 +1505,9 @@ void TimetableExport::writeRandomSeed(QWidget* parent, const MRG32k3a& rng, int 
 	//else if(INPUT_FILENAME_XML!="")
 	//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
 	
-	QString destDir=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+"-multi";
+	QString destDir=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+"-multi";*/
+	
+	QString destDir=CURRENT_MULTIPLE_OUTPUT_DIRECTORY;
 	
 	if(!dir.exists(destDir))
 		dir.mkpath(destDir);
@@ -1517,7 +1528,7 @@ void TimetableExport::writeRandomSeed(QWidget* parent, const MRG32k3a& rng, int 
 
 	finalDestDir+=s3+"_";
 	
-	s=finalDestDir+RANDOM_SEED_FILENAME;
+	QString s=finalDestDir+RANDOM_SEED_FILENAME;
 
 	writeRandomSeedFile(parent, rng, s, before);
 }
@@ -1526,7 +1537,7 @@ void TimetableExport::writeReportForMultiple(QWidget* parent, const QString& des
 {
 	QDir dir;
 	
-	QString OUTPUT_DIR_TIMETABLES=OUTPUT_DIR+FILE_SEP+"timetables";
+	/*QString OUTPUT_DIR_TIMETABLES=OUTPUT_DIR+FILE_SEP+"timetables";
 
 	//make sure that the output directory exists
 	if(!dir.exists(OUTPUT_DIR_TIMETABLES))
@@ -1539,7 +1550,9 @@ void TimetableExport::writeReportForMultiple(QWidget* parent, const QString& des
 	//else if(INPUT_FILENAME_XML!="")
 	//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
 	
-	QString destDir=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+"-multi";
+	QString destDir=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+"-multi";*/
+	
+	QString destDir=CURRENT_MULTIPLE_OUTPUT_DIRECTORY;
 	
 	if(!dir.exists(destDir))
 		dir.mkpath(destDir);

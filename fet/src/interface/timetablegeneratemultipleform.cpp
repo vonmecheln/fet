@@ -57,6 +57,8 @@
 
 #include <QSettings>
 
+#include <QFileInfo>
+
 #include <QThread> //only for QThread::idealThreadCount()
 
 #include <mutex>
@@ -350,16 +352,36 @@ void TimetableGenerateMultipleForm::nThreadsChanged(int nt)
 
 void TimetableGenerateMultipleForm::help()
 {
-	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
+	//2024-10-07
+	QString destDir;
 	
-	if(s2.right(4)==".fet")
-		s2=s2.left(s2.length()-4);
-	
-	QString destDir=OUTPUT_DIR+FILE_SEP+"timetables"+FILE_SEP+s2+"-multi";
+	if(!generation_running_multi){
+		QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
+
+		if(s2.right(4)==".fet")
+			s2=s2.left(s2.length()-4);
+		
+		destDir=OUTPUT_DIR+FILE_SEP+"timetables"+FILE_SEP+s2+"-multi";
+
+		if(QFileInfo::exists(destDir)){
+			int i=2;
+			for(;;){
+				QString CODN=destDir+"-"+QString::number(i);
+				if(!QFileInfo::exists(CODN)){
+					destDir=CODN;
+					break;
+				}
+				i++;
+			}
+		}
+	}
+	else{
+		destDir=CURRENT_MULTIPLE_OUTPUT_DIRECTORY;
+	}
+	////////////
 
 	QString s=tr("You can see the generated timetables on the hard disk, in HTML and XML formats and the soft conflicts in text format,"
-	 " or the latest timetable (or the latest highest-stage timetable, if no timetable was completed) in the Timetable/View menu."
-	 " The directory %1 must be emptied and deleted before proceeding.").arg(QDir::toNativeSeparators(destDir))
+	 " or the latest timetable (or the latest highest-stage timetable, if no timetable was completed) in the Timetable/View menu.")
 	 +"\n\n"
 	 +tr("Note that, for large data, each timetable might occupy more megabytes of hard disk space, so make sure you have enough space"
 	 " (you can check the dimension of a single timetable as a precaution). Each attempted timetable will correspond to a folder in %1"
@@ -473,21 +495,26 @@ void TimetableGenerateMultipleForm::start(){
 	timeLimit=60*minutesSpinBox->value(); //seconds
 	assert(timeLimit>0);
 
-	QDir dir;
+	//2024-10-07
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
 
 	if(s2.right(4)==".fet")
 		s2=s2.left(s2.length()-4);
 	
-	QString destDir=OUTPUT_DIR+FILE_SEP+"timetables"+FILE_SEP+s2+"-multi";
-	if(dir.exists(destDir)){
-		QMessageBox::warning(this, tr("FET information"), tr("The directory %1 exists and might not be empty"
-		 " (it might contain old files). You need to manually remove all contents of this directory AND the directory itself (or rename it)"
-		 " and then you can generate multiple timetables.")
-		 .arg(QDir::toNativeSeparators(destDir)));
-		
-		return;
+	CURRENT_MULTIPLE_OUTPUT_DIRECTORY=OUTPUT_DIR+FILE_SEP+"timetables"+FILE_SEP+s2+"-multi";
+
+	if(QFileInfo::exists(CURRENT_MULTIPLE_OUTPUT_DIRECTORY)){
+		int i=2;
+		for(;;){
+			QString CODN=CURRENT_MULTIPLE_OUTPUT_DIRECTORY+"-"+QString::number(i);
+			if(!QFileInfo::exists(CODN)){
+				CURRENT_MULTIPLE_OUTPUT_DIRECTORY=CODN;
+				break;
+			}
+			i++;
+		}
 	}
+	////////////
 
 	if(!gt.rules.internalStructureComputed){
 		if(!gt.rules.computeInternalStructure(this)){
@@ -896,12 +923,12 @@ void TimetableGenerateMultipleForm::stop()
 
 	QString s=TimetableGenerateMultipleForm::tr("Generation interrupted!");
 
-	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
+	/*QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
 
 	if(s2.right(4)==".fet")
 		s2=s2.left(s2.length()-4);
 	
-	QString destDir=OUTPUT_DIR+FILE_SEP+"timetables"+FILE_SEP+s2+"-multi";
+	QString destDir=OUTPUT_DIR+FILE_SEP+"timetables"+FILE_SEP+s2+"-multi";*/
 
 	time_t final_time;
 	time(&final_time);
@@ -1023,12 +1050,12 @@ void TimetableGenerateMultipleForm::stop()
 		ms3+=QString("\n");
 
 	s+="\n\n";
-	s+=TimetableGenerateMultipleForm::tr("The results were saved in the directory %1.").arg(QDir::toNativeSeparators(destDir));
+	s+=TimetableGenerateMultipleForm::tr("The results were saved in the directory %1.").arg(QDir::toNativeSeparators(CURRENT_MULTIPLE_OUTPUT_DIRECTORY));
 	s+="\n\n";
 	s+=tr("Total searching time was: %1h %2m %3s.").arg(h).arg(m).arg(sec);
 
 	stringForDisk+="\n\n";
-	stringForDisk+=TimetableGenerateMultipleForm::tr("The results were saved in the directory %1.").arg(QDir::toNativeSeparators(destDir));
+	stringForDisk+=TimetableGenerateMultipleForm::tr("The results were saved in the directory %1.").arg(QDir::toNativeSeparators(CURRENT_MULTIPLE_OUTPUT_DIRECTORY));
 	stringForDisk+="\n\n";
 	stringForDisk+=tr("Total searching time was: %1h %2m %3s.").arg(h).arg(m).arg(sec);
 
@@ -1075,12 +1102,12 @@ void TimetableGenerateMultipleForm::generationFinished()
 
 	generation_running_multi=false;
 
-	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
+	/*QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
 
 	if(s2.right(4)==".fet")
 		s2=s2.left(s2.length()-4);
 	
-	QString destDir=OUTPUT_DIR+FILE_SEP+"timetables"+FILE_SEP+s2+"-multi";
+	QString destDir=OUTPUT_DIR+FILE_SEP+"timetables"+FILE_SEP+s2+"-multi";*/
 	
 	time_t final_time;
 	time(&final_time);
@@ -1200,12 +1227,12 @@ void TimetableGenerateMultipleForm::generationFinished()
 		ms3+=QString("\n");
 
 	ms+=QString("\n\n");
-	ms+=TimetableGenerateMultipleForm::tr("The results were saved in the directory %1.").arg(QDir::toNativeSeparators(destDir));
+	ms+=TimetableGenerateMultipleForm::tr("The results were saved in the directory %1.").arg(QDir::toNativeSeparators(CURRENT_MULTIPLE_OUTPUT_DIRECTORY));
 	ms+=QString("\n\n");
 	ms+=TimetableGenerateMultipleForm::tr("Total searching time was %1h %2m %3s.").arg(h).arg(m).arg(s);
 	
 	stringForDisk+=QString("\n\n");
-	stringForDisk+=TimetableGenerateMultipleForm::tr("The results were saved in the directory %1.").arg(QDir::toNativeSeparators(destDir));
+	stringForDisk+=TimetableGenerateMultipleForm::tr("The results were saved in the directory %1.").arg(QDir::toNativeSeparators(CURRENT_MULTIPLE_OUTPUT_DIRECTORY));
 	stringForDisk+=QString("\n\n");
 	stringForDisk+=TimetableGenerateMultipleForm::tr("Total searching time was %1h %2m %3s.").arg(h).arg(m).arg(s);
 

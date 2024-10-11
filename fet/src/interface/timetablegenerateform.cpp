@@ -47,6 +47,8 @@
 #include <QProcess>
 //#include <QTimer>
 
+#include <QFileInfo>
+
 #include "longtextmessagebox.h"
 
 #include <thread>
@@ -202,6 +204,61 @@ void TimetableGenerateForm::start(){
 
 	generation_running=true;
 	
+	//2024-10-07
+	QString kk;
+	kk=FILE_SEP;
+	if(INPUT_FILENAME_XML=="")
+		kk.append("unnamed");
+	else{
+		kk.append(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1));
+
+		if(kk.right(4)==".fet")
+			kk=kk.left(kk.length()-4);
+	}
+	kk.append("-single");
+
+	CURRENT_SINGLE_OUTPUT_DIRECTORY=OUTPUT_DIR+FILE_SEP+"timetables"+kk;
+	
+	if(QFileInfo::exists(CURRENT_SINGLE_OUTPUT_DIRECTORY)){
+		int i=2;
+		for(;;){
+			QString CODN=CURRENT_SINGLE_OUTPUT_DIRECTORY+"-"+QString::number(i);
+			if(!QFileInfo::exists(CODN)){
+				CURRENT_SINGLE_OUTPUT_DIRECTORY=CODN;
+				break;
+			}
+			i++;
+		}
+	}
+
+	/////
+
+	kk=FILE_SEP;
+	if(INPUT_FILENAME_XML=="")
+		kk.append("unnamed");
+	else{
+		kk.append(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1));
+
+		if(kk.right(4)==".fet")
+			kk=kk.left(kk.length()-4);
+	}
+	kk.append("-highest");
+
+	CURRENT_HIGHEST_OUTPUT_DIRECTORY=OUTPUT_DIR+FILE_SEP+"timetables"+kk;
+	
+	if(QFileInfo::exists(CURRENT_HIGHEST_OUTPUT_DIRECTORY)){
+		int i=2;
+		for(;;){
+			QString CODN=CURRENT_HIGHEST_OUTPUT_DIRECTORY+"-"+QString::number(i);
+			if(!QFileInfo::exists(CODN)){
+				CURRENT_HIGHEST_OUTPUT_DIRECTORY=CODN;
+				break;
+			}
+			i++;
+		}
+	}
+	///////////
+
 	gen.c.makeUnallocated(gt.rules);
 	
 	TimetableExport::writeRandomSeed(this, gen.rng, true); //true represents 'before' state
@@ -268,7 +325,7 @@ void TimetableGenerateForm::stop()
 
 	s+=" ";
 	
-	QString kk;
+	/*QString kk;
 	kk=FILE_SEP;
 	if(INPUT_FILENAME_XML=="")
 		kk.append("unnamed");
@@ -278,10 +335,10 @@ void TimetableGenerateForm::stop()
 		if(kk.right(4)==".fet")
 			kk=kk.left(kk.length()-4);
 	}
-	kk.append("-single");
+	kk.append("-single");*/
 
 	s+=TimetableGenerateForm::tr("The partial results were saved in the directory %1")
-	 .arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk));
+	 .arg(QDir::toNativeSeparators(CURRENT_SINGLE_OUTPUT_DIRECTORY));
 
 	s+="\n\n";
 
@@ -436,7 +493,7 @@ void TimetableGenerateForm::stopHighest()
 
 	s+=" ";
 	
-	QString kk;
+	/*QString kk;
 	kk=FILE_SEP;
 	if(INPUT_FILENAME_XML=="")
 		kk.append("unnamed");
@@ -446,10 +503,11 @@ void TimetableGenerateForm::stopHighest()
 		if(kk.right(4)==".fet")
 			kk=kk.left(kk.length()-4);
 	}
-	kk.append("-highest");
+	kk.append("-highest");*/
 
-	s+=TimetableGenerateForm::tr("The partial highest-stage results were saved in the directory %1")
-	 .arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk));
+	s+=TimetableGenerateForm::tr("The partial highest-stage results were saved in the directory %1 (and %2).",
+	 "%1 and %2 are the partial results directories, the first one containing the timetables and the second one only the random seed at the start of the generation.")
+	 .arg(QDir::toNativeSeparators(CURRENT_HIGHEST_OUTPUT_DIRECTORY)).arg(QDir::toNativeSeparators(CURRENT_SINGLE_OUTPUT_DIRECTORY));
 
 	s+="\n\n";
 
@@ -580,7 +638,7 @@ void TimetableGenerateForm::impossibleToSolve()
 
 	s+=" ";
 
-	QString kk;
+	/*QString kk;
 	kk=FILE_SEP;
 	if(INPUT_FILENAME_XML=="")
 		kk.append("unnamed");
@@ -590,10 +648,10 @@ void TimetableGenerateForm::impossibleToSolve()
 		if(kk.right(4)==".fet")
 			kk=kk.left(kk.length()-4);
 	}
-	kk.append("-single");
+	kk.append("-single");*/
 
 	s+=TimetableGenerateForm::tr("The partial results were saved in the directory %1")
-	 .arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk));
+	 .arg(QDir::toNativeSeparators(CURRENT_SINGLE_OUTPUT_DIRECTORY));
 
 	s+="\n\n";
 
@@ -744,7 +802,7 @@ void TimetableGenerateForm::generationFinished()
 
 	TimetableExport::writeGenerationResults(this);
 
-	QString kk;
+	/*QString kk;
 	kk=FILE_SEP;
 	if(INPUT_FILENAME_XML=="")
 		kk.append("unnamed");
@@ -754,19 +812,7 @@ void TimetableGenerateForm::generationFinished()
 		if(kk.right(4)==".fet")
 			kk=kk.left(kk.length()-4);
 	}
-	kk.append("-single");
-
-/*	QMessageBox::information(this, TimetableGenerateForm::tr("FET information"),
-		TimetableGenerateForm::tr("Generation finished successfully, remaining %1 weighted"
-		" soft conflicts from constraints with weight percentage lower than 100%"
-		" (see menu Timetable/Show soft conflicts or the text file in"
-		" the output directory for details)."
-		"\n\nGeneration results should be now written. You may check now Timetable/View."
-		" The results are also saved in the directory %2 in"
-		" HTML and XML mode and the soft conflicts in txt mode").arg(c.conflictsTotal).arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk))
-		+". "+tr("Data+timetable is saved as a .fet data file (with activities locked by constraints)"
-		", so that you can open/modify/regenerate the current timetable later"));
-*/
+	kk.append("-single");*/
 
 	QString s=QString("");
 	s+=tr("Generation successful!");
@@ -775,7 +821,7 @@ void TimetableGenerateForm::generationFinished()
 	s+=QString("\n");
 	s+=tr("Weighted soft conflicts: %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(c.conflictsTotal));
 	s+=QString("\n\n");
-	s+=tr("The results were saved in the directory %1.").arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk));
+	s+=tr("The results were saved in the directory %1.").arg(QDir::toNativeSeparators(CURRENT_SINGLE_OUTPUT_DIRECTORY));
 
 	//gen.myMutex.unlock();
 
@@ -976,7 +1022,7 @@ void TimetableGenerateForm::write(){
 
 	gen.myMutex.unlock();
 
-	QString kk;
+	/*QString kk;
 	kk=FILE_SEP;
 	if(INPUT_FILENAME_XML=="")
 		kk.append("unnamed");
@@ -986,11 +1032,11 @@ void TimetableGenerateForm::write(){
 		if(kk.right(4)==".fet")
 			kk=kk.left(kk.length()-4);
 	}
-	kk.append("-single");
+	kk.append("-single");*/
 
 	QMessageBox::information(this, TimetableGenerateForm::tr("FET information"),
 		TimetableGenerateForm::tr("The generation results should now be written in the directory %1 in HTML and XML mode"
-		" and the conflicts in txt mode").arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk)));
+		" and the conflicts in txt mode").arg(QDir::toNativeSeparators(CURRENT_SINGLE_OUTPUT_DIRECTORY)));
 }
 
 void TimetableGenerateForm::writeHighestStage(){
@@ -1028,7 +1074,7 @@ void TimetableGenerateForm::writeHighestStage(){
 
 	gen.myMutex.unlock();
 
-	QString kk;
+	/*QString kk;
 	kk=FILE_SEP;
 	if(INPUT_FILENAME_XML=="")
 		kk.append("unnamed");
@@ -1038,11 +1084,11 @@ void TimetableGenerateForm::writeHighestStage(){
 		if(kk.right(4)==".fet")
 			kk=kk.left(kk.length()-4);
 	}
-	kk.append("-highest");
+	kk.append("-highest");*/
 
 	QMessageBox::information(this, TimetableGenerateForm::tr("FET information"),
 		TimetableGenerateForm::tr("Highest stage results should now be written in the directory %1 in HTML and XML mode"
-		" and the conflicts in txt mode").arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk)));
+		" and the conflicts in txt mode").arg(QDir::toNativeSeparators(CURRENT_HIGHEST_OUTPUT_DIRECTORY)));
 }
 
 void TimetableGenerateForm::closePressed()

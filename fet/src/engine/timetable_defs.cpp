@@ -51,7 +51,7 @@ int STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
 /**
 The FET version
 */
-const QString FET_VERSION="6.25.3";
+const QString FET_VERSION="6.26.0";
 
 /**
 The version number of the data format, useful when saving/restoring history from the disk.
@@ -74,6 +74,10 @@ and then the name of a file. If you make OUTPUT_DIR="",
 there will be problems.
 */
 QString OUTPUT_DIR;
+
+QString CURRENT_SINGLE_OUTPUT_DIRECTORY;
+QString CURRENT_HIGHEST_OUTPUT_DIRECTORY;
+QString CURRENT_MULTIPLE_OUTPUT_DIRECTORY;
 
 bool LANGUAGE_STYLE_RIGHT_TO_LEFT;
 

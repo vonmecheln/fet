@@ -2929,7 +2929,7 @@ Versions 6.24.0 - 6.24.1
 	teacher/students set/room (suggested by Kamel Ben on Facebook). Also, in all the timetable view dialogs, the current cell will be remembered
 	(but not the whole selection of cells, if there are more cells selected).
 ---------------------------------------------------------------------------------
-Versions 6.25.0 - 6.25.v
+Versions 6.25.0 - 6.25.3
 - Version 6.25.0
 	- Added the constraints teacher(s)/students (set) max activity tags from a set per day/real day (suggested by Thai Chi Phuong and Vũ Ngọc Thành).
 	This constraint accepts as the maximum number of tags 1 or 2, and incorporates the old-style constraints teacher(s)/students (set) max two
@@ -2949,3 +2949,10 @@ Versions 6.25.0 - 6.25.v
 - Version 6.25.3
 	- Updated to Qt 6.7.3.
 	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares.
+---------------------------------------------------------------------------------
+Versions 6.26.0 - 6.26.v
+- Version 6.26.0
+	- Updated to Qt 6.8.0.
+	- The newly generated timetables will be put in a new directory each time. In the single generation, the old timetables will not be overwritten and
+	in the multiple generation the user will not be forced to remove the old timetables before generating. Suggested by pnlshd, and other users in the past.
+	- Updated the Arabic translation, by Benahmed Abdelkrim.
