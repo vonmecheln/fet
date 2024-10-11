@@ -2927,7 +2927,7 @@ Versions 6.24.0 - 6.24.1
 	(suggested by Bahri Abderezak on Facebook, and maybe other users in the past).
 	- After generating a new timetable, if some timetable view days horizontal/vertical dialogs were already opened, they will remember their selected
 	teacher/students set/room (suggested by Kamel Ben on Facebook). Also, in all the timetable view dialogs, the current cell will be remembered
-	(but not the whole selection of cells, if there are more cell selected).
+	(but not the whole selection of cells, if there are more cells selected).
 ---------------------------------------------------------------------------------
 Versions 6.25.0 - 6.25.v
 - Version 6.25.0
@@ -2946,3 +2946,6 @@ Versions 6.25.0 - 6.25.v
 	- Enabled the use of constraints teacher(s)/students (set) activity tag max hours daily in the Mornings-Afternoons mode (suggested by hoangnv231).
 	- Added the option to print the legend starting with and ordered by the codes in the timetables (suggested by M.zais).
 	- Improved the Italian translation, by Andrea Primiani.
+- Version 6.25.3
+	- Updated to Qt 6.7.3.
+	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares.
