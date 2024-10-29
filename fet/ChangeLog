@@ -2956,3 +2956,5 @@ Versions 6.26.0 - 6.26.v
 	- The newly generated timetables will be put in a new directory each time. In the single generation, the old timetables will not be overwritten and
 	in the multiple generation the user will not be forced to remove the old timetables before generating. Suggested by pnlshd, and other users in the past.
 	- Updated the Arabic translation, by Benahmed Abdelkrim.
+- Version 6.26.1
+	- In the command-line version, the newly generated timetables will be put in a new directory each time. The old timetables won't be overwritten.

@@ -2862,7 +2862,7 @@ int main(int argc, char **argv)
 				cout<<endl;
 			}
 
-			cout<<"Error: the specified input file "<<qPrintable(filename)<<" is not existing"<<endl;
+			cout<<"Error: the specified input file "<<qPrintable(QDir::toNativeSeparators(filename))<<" is not existing"<<endl;
 			return 1;
 		}
 		
@@ -2911,7 +2911,7 @@ int main(int argc, char **argv)
 		bool tttt=logFile.open(QIODevice::WriteOnly);
 #endif
 		if(!tttt){
-			cout<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(logsDir)<<"result.txt)."
+			cout<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"result.txt)."
 			 " If this is a bug - please report it."<<endl;
 			return 1;
 		}
@@ -2941,11 +2941,11 @@ int main(int argc, char **argv)
 			bool t=oldDifficultActivitiesFile.remove();
 			if(!t){
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-				out<<"Cannot remove the old existing file "<<qPrintable(logsDir)<<"difficult_activities.txt"<<Qt::endl;
+				out<<"Cannot remove the old existing file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"difficult_activities.txt"<<Qt::endl;
 #else
-				out<<"Cannot remove the old existing file "<<qPrintable(logsDir)<<"difficult_activities.txt"<<endl;
+				out<<"Cannot remove the old existing file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"difficult_activities.txt"<<endl;
 #endif
-				cout<<"Cannot remove the old existing file "<<qPrintable(logsDir)<<"difficult_activities.txt"<<endl;
+				cout<<"Cannot remove the old existing file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"difficult_activities.txt"<<endl;
 			}
 		}
 		
@@ -3004,6 +3004,20 @@ int main(int argc, char **argv)
 		out<<"FET command line generation started on "<<qPrintable(sTime)<<endl<<endl;
 #endif
 		
+		QString tempOutputDirectory=outputDirectory;
+		
+		if(QFileInfo::exists(outputDirectory)){
+			int i=2;
+			for(;;){
+				QString CODN=outputDirectory+"-"+QString::number(i);
+				if(!QFileInfo::exists(CODN)){
+					outputDirectory=CODN;
+					break;
+				}
+				i++;
+			}
+		}
+		
 		if(outputDirectory!="")
 			if(!dir.exists(outputDirectory))
 				dir.mkpath(outputDirectory);
@@ -3019,13 +3033,13 @@ int main(int argc, char **argv)
 		bool t_t=test.open(QIODevice::ReadWrite);
 #endif
 		if(!t_t){
-			cout<<"fet: critical error - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(outputDirectory)<<"test_write_permissions_2.tmp)."
+			cout<<"fet: critical error - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(outputDirectory))<<"test_write_permissions_2.tmp)."
 			 " If this is a bug - please report it."<<endl;
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-			out<<"fet: critical error - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(outputDirectory)<<"test_write_permissions_2.tmp)."
+			out<<"fet: critical error - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(outputDirectory))<<"test_write_permissions_2.tmp)."
 			 " If this is a bug - please report it."<<Qt::endl;
 #else
-			out<<"fet: critical error - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(outputDirectory)<<"test_write_permissions_2.tmp)."
+			out<<"fet: critical error - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(outputDirectory))<<"test_write_permissions_2.tmp)."
 			 " If this is a bug - please report it."<<endl;
 #endif
 			return 1;
@@ -3290,18 +3304,29 @@ int main(int argc, char **argv)
 			TimetableExport::getRoomsTimetable(cc);*/
 			TimetableExport::getStudentsTeachersRoomsBuildingsTimetable(cc);
 
-			QString toc=outputDirectory;
-			if(toc!="" && toc.length()>=1 && toc.endsWith(FILE_SEP)){
-				toc.chop(1);
-				toc+=QString("-current"+FILE_SEP);
-			}
-			else if(toc==""){
-				toc=QString("current"+FILE_SEP);
+			QString toc=tempOutputDirectory;
+			if(toc!="")
+				toc+=QString("-current");
+			else
+				toc=QString("current");
+			
+			if(QFileInfo::exists(toc)){
+				int i=2;
+				for(;;){
+					QString CODN=toc+"-"+QString::number(i);
+					if(!QFileInfo::exists(CODN)){
+						toc=CODN;
+						break;
+					}
+					i++;
+				}
 			}
 			
 			if(toc!="")
 				if(!dir.exists(toc))
 					dir.mkpath(toc);
+			
+			toc+=FILE_SEP;
 
 			TimetableExport::writeGenerationResultsCommandLine(nullptr, toc);
 			
@@ -3331,7 +3356,7 @@ int main(int argc, char **argv)
 			bool t=difficultActivitiesFile.open(QIODevice::WriteOnly);
 #endif
 			if(!t){
-				cout<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(logsDir)<<"difficult_activities.txt)."
+				cout<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"difficult_activities.txt)."
 				 " If this is a bug - please report it."<<endl;
 				return 1;
 			}
@@ -3362,18 +3387,30 @@ int main(int argc, char **argv)
 			TimetableExport::getRoomsTimetable(ch);*/
 			TimetableExport::getStudentsTeachersRoomsBuildingsTimetable(ch);
 
-			QString toh=outputDirectory;
-			if(toh!="" && toh.length()>=1 && toh.endsWith(FILE_SEP)){
-				toh.chop(1);
-				toh+=QString("-highest"+FILE_SEP);
-			}
-			else if(toh==""){
-				toh=QString("highest"+FILE_SEP);
+			QString toh=tempOutputDirectory;
+			
+			if(toh!="")
+				toh+=QString("-highest");
+			else if(toh=="")
+				toh=QString("highest");
+			
+			if(QFileInfo::exists(toh)){
+				int i=2;
+				for(;;){
+					QString CODN=toh+"-"+QString::number(i);
+					if(!QFileInfo::exists(CODN)){
+						toh=CODN;
+						break;
+					}
+					i++;
+				}
 			}
 			
 			if(toh!="")
 				if(!dir.exists(toh))
 					dir.mkpath(toh);
+			
+			toh+=FILE_SEP;
 
 			TimetableExport::writeGenerationResultsCommandLine(nullptr, toh);
 
@@ -3417,18 +3454,30 @@ int main(int argc, char **argv)
 			TimetableExport::getRoomsTimetable(cc);*/
 			TimetableExport::getStudentsTeachersRoomsBuildingsTimetable(cc);
 
-			QString toc=outputDirectory;
-			if(toc!="" && toc.length()>=1 && toc.endsWith(FILE_SEP)){
-				toc.chop(1);
-				toc+=QString("-current"+FILE_SEP);
-			}
-			else if(toc==""){
-				toc=QString("current"+FILE_SEP);
-			}
+			QString toc=tempOutputDirectory;
+
+			if(toc!="")
+				toc+=QString("-current");
+			else if(toc=="")
+				toc=QString("current");
 			
+			if(QFileInfo::exists(toc)){
+				int i=2;
+				for(;;){
+					QString CODN=toc+"-"+QString::number(i);
+					if(!QFileInfo::exists(CODN)){
+						toc=CODN;
+						break;
+					}
+					i++;
+				}
+			}
+
 			if(toc!="")
 				if(!dir.exists(toc))
 					dir.mkpath(toc);
+			
+			toc+=FILE_SEP;
 
 			TimetableExport::writeGenerationResultsCommandLine(nullptr, toc);
 			
@@ -3477,7 +3526,7 @@ int main(int argc, char **argv)
 			bool t=difficultActivitiesFile.open(QIODevice::WriteOnly);
 #endif
 			if(!t){
-				cout<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(logsDir)<<"difficult_activities.txt)."
+				cout<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"difficult_activities.txt)."
 				 " If this is a bug - please report it."<<endl;
 				return 1;
 			}
@@ -3508,18 +3557,30 @@ int main(int argc, char **argv)
 			TimetableExport::getRoomsTimetable(ch);*/
 			TimetableExport::getStudentsTeachersRoomsBuildingsTimetable(ch);
 
-			QString toh=outputDirectory;
-			if(toh!="" && toh.length()>=1 && toh.endsWith(FILE_SEP)){
-				toh.chop(1);
-				toh+=QString("-highest"+FILE_SEP);
-			}
-			else if(toh==""){
-				toh=QString("highest"+FILE_SEP);
+			QString toh=tempOutputDirectory;
+
+			if(toh!="")
+				toh+=QString("-highest");
+			else if(toh=="")
+				toh=QString("highest");
+
+			if(QFileInfo::exists(toh)){
+				int i=2;
+				for(;;){
+					QString CODN=toh+"-"+QString::number(i);
+					if(!QFileInfo::exists(CODN)){
+						toh=CODN;
+						break;
+					}
+					i++;
+				}
 			}
 			
 			if(toh!="")
 				if(!dir.exists(toh))
 					dir.mkpath(toh);
+			
+			toh+=FILE_SEP;
 
 			TimetableExport::writeGenerationResultsCommandLine(nullptr, toh);
 

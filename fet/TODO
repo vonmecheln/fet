@@ -10300,9 +10300,27 @@ https://lalescu.ro/liviu/fet/forum/index.php?topic=6196.0
 I think that the implementation of an option for not displaying specific activities would be useful in some situations. For example an option for
 not displaying activities with a specific activity tag would solve this problem.
 
+I am referring to the generated timetables. Especially the html ones. I am not referring to the way the activities are displayed in the FET UI.
+
 648---------------------------------------------------------
 From Thai Chi Phuong (on forum):
 
 https://lalescu.ro/liviu/fet/forum/index.php?topic=6112.msg34390#msg34390
 
 I have a suggestion: Can you add a constraint so that in a set of n teachers there are 1, 2 or 3 teachers busy in a day/actual day.
+
+649---------------------------------------------------------
+From Volker Dirr:
+
+Enable by default the colors in FET?
+Or maybe if someone starts FET the first time it should ask him for some of his preferred default values?
+
+Liviu Lalescu:
+
+There are more places where there are colors: in the interface (constraints and view timetable dialogs, print from the interface,
+and the HTML level 7).
+
+650---------------------------------------------------------
+From Michael Chourdakis (on Facebook):
+
+If an activity has home room (example: R1) and preferred rooms (example: R1, R2, R3), prefer the home room (R1) over the other rooms.
