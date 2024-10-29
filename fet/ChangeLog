@@ -2958,3 +2958,6 @@ Versions 6.26.0 - 6.26.v
 	- Updated the Arabic translation, by Benahmed Abdelkrim.
 - Version 6.26.1
 	- In the command-line version, the newly generated timetables will be put in a new directory each time. The old timetables won't be overwritten.
+- Version 6.26.2
+	- Corrected some rare cases of old timetable files possibly being overwritten when generating single timetables.
+	- Minor improvements.

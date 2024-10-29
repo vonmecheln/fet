@@ -940,9 +940,10 @@ A log file explaining how the XML input file was parsed
 */
 extern const QString XML_PARSING_LOG_FILENAME;
 
-extern QString CURRENT_SINGLE_OUTPUT_DIRECTORY;
-extern QString CURRENT_HIGHEST_OUTPUT_DIRECTORY;
-extern QString CURRENT_MULTIPLE_OUTPUT_DIRECTORY;
+extern QString CURRENT_OUTPUT_DIRECTORY;
+extern QString HIGHEST_OUTPUT_DIRECTORY;
+
+extern QString MULTIPLE_OUTPUT_DIRECTORY;
 
 /**
 A function used in XML saving

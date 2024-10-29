@@ -347,7 +347,7 @@ void TimetableExport::writeGenerationResults(QWidget* parent){
 	}
 	OUTPUT_DIR_TIMETABLES.append("-single");*/
 	
-	QString OUTPUT_DIR_TIMETABLES=CURRENT_SINGLE_OUTPUT_DIRECTORY;
+	QString OUTPUT_DIR_TIMETABLES=CURRENT_OUTPUT_DIRECTORY;
 	
 	//make sure that the output directory exists
 	if(!dir.exists(OUTPUT_DIR_TIMETABLES))
@@ -608,7 +608,7 @@ void TimetableExport::writeHighestStageResults(QWidget* parent){
 	}
 	OUTPUT_DIR_TIMETABLES.append("-highest");*/
 	
-	QString OUTPUT_DIR_TIMETABLES=CURRENT_HIGHEST_OUTPUT_DIRECTORY;
+	QString OUTPUT_DIR_TIMETABLES=HIGHEST_OUTPUT_DIRECTORY;
 	
 	//make sure that the output directory exists
 	if(!dir.exists(OUTPUT_DIR_TIMETABLES))
@@ -876,7 +876,7 @@ void TimetableExport::writeRandomSeed(QWidget* parent, const MRG32k3a& rng, bool
 	}
 	OUTPUT_DIR_TIMETABLES.append("-single");*/
 	
-	QString OUTPUT_DIR_TIMETABLES=CURRENT_SINGLE_OUTPUT_DIRECTORY;
+	QString OUTPUT_DIR_TIMETABLES=CURRENT_OUTPUT_DIRECTORY;
 	
 	//make sure that the output directory exists
 	if(!dir.exists(OUTPUT_DIR_TIMETABLES))
@@ -1248,7 +1248,7 @@ void TimetableExport::writeGenerationResults(QWidget* parent, int n, bool highes
 	
 	QString destDir=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+"-multi";*/
 	
-	QString destDir=CURRENT_MULTIPLE_OUTPUT_DIRECTORY;
+	QString destDir=MULTIPLE_OUTPUT_DIRECTORY;
 	
 	if(!dir.exists(destDir))
 		dir.mkpath(destDir);
@@ -1507,7 +1507,7 @@ void TimetableExport::writeRandomSeed(QWidget* parent, const MRG32k3a& rng, int 
 	
 	QString destDir=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+"-multi";*/
 	
-	QString destDir=CURRENT_MULTIPLE_OUTPUT_DIRECTORY;
+	QString destDir=MULTIPLE_OUTPUT_DIRECTORY;
 	
 	if(!dir.exists(destDir))
 		dir.mkpath(destDir);
@@ -1552,7 +1552,7 @@ void TimetableExport::writeReportForMultiple(QWidget* parent, const QString& des
 	
 	QString destDir=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+"-multi";*/
 	
-	QString destDir=CURRENT_MULTIPLE_OUTPUT_DIRECTORY;
+	QString destDir=MULTIPLE_OUTPUT_DIRECTORY;
 	
 	if(!dir.exists(destDir))
 		dir.mkpath(destDir);

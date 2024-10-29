@@ -361,7 +361,7 @@ void TimetableGenerateMultipleForm::help()
 		if(s2.right(4)==".fet")
 			s2=s2.left(s2.length()-4);
 		
-		destDir=OUTPUT_DIR+FILE_SEP+"timetables"+FILE_SEP+s2+"-multi";
+		destDir=OUTPUT_DIR+FILE_SEP+"timetables"+FILE_SEP+s2+"-multiple";
 
 		if(QFileInfo::exists(destDir)){
 			int i=2;
@@ -376,7 +376,7 @@ void TimetableGenerateMultipleForm::help()
 		}
 	}
 	else{
-		destDir=CURRENT_MULTIPLE_OUTPUT_DIRECTORY;
+		destDir=MULTIPLE_OUTPUT_DIRECTORY;
 	}
 	////////////
 
@@ -501,14 +501,14 @@ void TimetableGenerateMultipleForm::start(){
 	if(s2.right(4)==".fet")
 		s2=s2.left(s2.length()-4);
 	
-	CURRENT_MULTIPLE_OUTPUT_DIRECTORY=OUTPUT_DIR+FILE_SEP+"timetables"+FILE_SEP+s2+"-multi";
+	MULTIPLE_OUTPUT_DIRECTORY=OUTPUT_DIR+FILE_SEP+"timetables"+FILE_SEP+s2+"-multiple";
 
-	if(QFileInfo::exists(CURRENT_MULTIPLE_OUTPUT_DIRECTORY)){
+	if(QFileInfo::exists(MULTIPLE_OUTPUT_DIRECTORY)){
 		int i=2;
 		for(;;){
-			QString CODN=CURRENT_MULTIPLE_OUTPUT_DIRECTORY+"-"+QString::number(i);
+			QString CODN=MULTIPLE_OUTPUT_DIRECTORY+"-"+QString::number(i);
 			if(!QFileInfo::exists(CODN)){
-				CURRENT_MULTIPLE_OUTPUT_DIRECTORY=CODN;
+				MULTIPLE_OUTPUT_DIRECTORY=CODN;
 				break;
 			}
 			i++;
@@ -1050,12 +1050,12 @@ void TimetableGenerateMultipleForm::stop()
 		ms3+=QString("\n");
 
 	s+="\n\n";
-	s+=TimetableGenerateMultipleForm::tr("The results were saved in the directory %1.").arg(QDir::toNativeSeparators(CURRENT_MULTIPLE_OUTPUT_DIRECTORY));
+	s+=TimetableGenerateMultipleForm::tr("The results were saved in the directory %1.").arg(QDir::toNativeSeparators(MULTIPLE_OUTPUT_DIRECTORY));
 	s+="\n\n";
 	s+=tr("Total searching time was: %1h %2m %3s.").arg(h).arg(m).arg(sec);
 
 	stringForDisk+="\n\n";
-	stringForDisk+=TimetableGenerateMultipleForm::tr("The results were saved in the directory %1.").arg(QDir::toNativeSeparators(CURRENT_MULTIPLE_OUTPUT_DIRECTORY));
+	stringForDisk+=TimetableGenerateMultipleForm::tr("The results were saved in the directory %1.").arg(QDir::toNativeSeparators(MULTIPLE_OUTPUT_DIRECTORY));
 	stringForDisk+="\n\n";
 	stringForDisk+=tr("Total searching time was: %1h %2m %3s.").arg(h).arg(m).arg(sec);
 
@@ -1227,12 +1227,12 @@ void TimetableGenerateMultipleForm::generationFinished()
 		ms3+=QString("\n");
 
 	ms+=QString("\n\n");
-	ms+=TimetableGenerateMultipleForm::tr("The results were saved in the directory %1.").arg(QDir::toNativeSeparators(CURRENT_MULTIPLE_OUTPUT_DIRECTORY));
+	ms+=TimetableGenerateMultipleForm::tr("The results were saved in the directory %1.").arg(QDir::toNativeSeparators(MULTIPLE_OUTPUT_DIRECTORY));
 	ms+=QString("\n\n");
 	ms+=TimetableGenerateMultipleForm::tr("Total searching time was %1h %2m %3s.").arg(h).arg(m).arg(s);
 	
 	stringForDisk+=QString("\n\n");
-	stringForDisk+=TimetableGenerateMultipleForm::tr("The results were saved in the directory %1.").arg(QDir::toNativeSeparators(CURRENT_MULTIPLE_OUTPUT_DIRECTORY));
+	stringForDisk+=TimetableGenerateMultipleForm::tr("The results were saved in the directory %1.").arg(QDir::toNativeSeparators(MULTIPLE_OUTPUT_DIRECTORY));
 	stringForDisk+=QString("\n\n");
 	stringForDisk+=TimetableGenerateMultipleForm::tr("Total searching time was %1h %2m %3s.").arg(h).arg(m).arg(s);
 

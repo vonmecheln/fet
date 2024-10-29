@@ -44,6 +44,9 @@ class TimetableGenerateForm : public QDialog, Ui::TimetableGenerateForm_template
 //private:
 //	QList<QProcess*> commandProcesses;
 
+private:
+	QString initialOutputDirectory;
+
 public:
 	TimetableGenerateForm(QWidget* parent);
 	~TimetableGenerateForm();
