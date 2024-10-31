@@ -70,7 +70,7 @@
         <enum>QFrame::Plain</enum>
        </property>
        <property name="text">
-        <string>Interval start hour</string>
+        <string extracomment="This field refers to a constraint operating on a given hourly interval. The selected start hour of the interval is included (is counted) in the constraint, while the selected end hour of the interval is not included (is not counted) in the constraint.">Interval start hour (included)</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>
@@ -103,7 +103,7 @@
         <enum>QFrame::Plain</enum>
        </property>
        <property name="text">
-        <string>Interval end hour</string>
+        <string extracomment="This field refers to a constraint operating on a given hourly interval. The selected start hour of the interval is included (is counted) in the constraint, while the selected end hour of the interval is not included (is not counted) in the constraint.">Interval end hour (not included)</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>

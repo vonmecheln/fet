@@ -517,6 +517,10 @@ public slots:
 	void settingsFontIsUserSelectableAction_toggled();
 	void settingsFontAction_triggered();
 	void settingsShowToolTipsForConstraintsWithTablesAction_toggled();
+
+	void settingsStyleAndColorSchemeAction_triggered();
+	void setCurrentStyle();
+	void setCurrentColorScheme();
 	
 	void timetablesToWriteOnDiskAction_triggered();
 	

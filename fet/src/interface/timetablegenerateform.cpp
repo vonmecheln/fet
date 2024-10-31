@@ -337,9 +337,9 @@ void TimetableGenerateForm::stop()
 	}
 	kk.append("-single");*/
 	
-	s+=TimetableGenerateForm::tr("The partial results were saved in the directory %1 (and %2).",
-	 "%1 and %2 are the partial results directories, the first one containing the timetables and the second one only the random seed at the start of the generation.")
-	 .arg(QDir::toNativeSeparators(CURRENT_OUTPUT_DIRECTORY)).arg(QDir::toNativeSeparators(initialOutputDirectory));
+	s+=TimetableGenerateForm::tr("The starting random seed was saved in the directory %1.").arg(QDir::toNativeSeparators(initialOutputDirectory));
+	s+=" ";
+	s+=TimetableGenerateForm::tr("The partial results were saved in the directory %1.").arg(QDir::toNativeSeparators(CURRENT_OUTPUT_DIRECTORY));
 
 	s+="\n\n";
 
@@ -531,9 +531,9 @@ void TimetableGenerateForm::stopHighest()
 	}
 	kk.append("-highest");*/
 
-	s+=TimetableGenerateForm::tr("The partial highest-stage results were saved in the directory %1 (and %2).",
-	 "%1 and %2 are the partial results directories, the first one containing the timetables and the second one only the random seed at the start of the generation.")
-	 .arg(QDir::toNativeSeparators(HIGHEST_OUTPUT_DIRECTORY)).arg(QDir::toNativeSeparators(initialOutputDirectory));
+	s+=TimetableGenerateForm::tr("The starting random seed was saved in the directory %1.").arg(QDir::toNativeSeparators(initialOutputDirectory));
+	s+=" ";
+	s+=TimetableGenerateForm::tr("The partial highest-stage results were saved in the directory %1.").arg(QDir::toNativeSeparators(HIGHEST_OUTPUT_DIRECTORY));
 
 	s+="\n\n";
 
@@ -701,9 +701,9 @@ void TimetableGenerateForm::impossibleToSolve()
 	}
 	kk.append("-single");*/
 
-	s+=TimetableGenerateForm::tr("The partial results were saved in the directory %1 (and %2).",
-	 "%1 and %2 are the partial results directories, the first one containing the timetables and the second one only the random seed at the start of the generation.")
-	 .arg(QDir::toNativeSeparators(CURRENT_OUTPUT_DIRECTORY)).arg(QDir::toNativeSeparators(initialOutputDirectory));
+	s+=TimetableGenerateForm::tr("The starting random seed was saved in the directory %1.").arg(QDir::toNativeSeparators(initialOutputDirectory));
+	s+=" ";
+	s+=TimetableGenerateForm::tr("The partial results were saved in the directory %1.").arg(QDir::toNativeSeparators(CURRENT_OUTPUT_DIRECTORY));
 
 	s+="\n\n";
 

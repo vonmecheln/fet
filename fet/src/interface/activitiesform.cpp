@@ -25,6 +25,8 @@
 #include "addactivityform.h"
 #include "modifyactivityform.h"
 
+#include "activitiestagsform.h"
+
 #include "activityplanningform.h"
 
 #include "advancedfilterform.h"
@@ -123,6 +125,8 @@ ActivitiesForm::ActivitiesForm(QWidget* parent, const QString& teacherName, cons
 	//connect(deactivateAllPushButton, SIG NAL(clicked()), this, SL OT(deactivateAllActivities()));
 
 	connect(commentsPushButton, &QPushButton::clicked, this, &ActivitiesForm::activityComments);
+
+	connect(activityTagsPushButton, &QPushButton::clicked, this, &ActivitiesForm::changeActivityTags);
 
 	//////////////////
 	QString settingsName="ActivitiesAdvancedFilterForm";
@@ -1155,4 +1159,46 @@ void ActivitiesForm::selectionChanged()
 		}
 	mSLabel->setText(tr("Multiple selection: %1 / %2", "It refers to the list of selected activities, %1 is the number of active"
 	 " selected activities, %2 is the total number of selected activities").arg(nActive).arg(nTotal));
+}
+
+void ActivitiesForm::changeActivityTags()
+{
+	QList<Activity*> tl;
+	for(int i=0; i<activitiesListWidget->count(); i++)
+		if(activitiesListWidget->item(i)->isSelected()){
+			assert(i<visibleActivitiesList.count());
+			Activity* act=visibleActivitiesList.at(i);
+			assert(act!=nullptr);
+			tl.append(act);
+		}
+
+	if(tl.isEmpty()){
+		QMessageBox::warning(this, tr("FET warning"), tr("No activities selected."));
+		
+		return;
+	}
+
+	ActivitiesTagsForm activitiesTagsForm(this, tl);
+	setParentAndOtherThings(&activitiesTagsForm, this);
+	activitiesTagsForm.exec();
+
+	//////
+	int valv=activitiesListWidget->verticalScrollBar()->value();
+	int valh=activitiesListWidget->horizontalScrollBar()->value();
+
+	int cr=activitiesListWidget->currentRow();
+
+	filterChanged();
+	
+	if(cr>=0){
+		if(cr<activitiesListWidget->count())
+			activitiesListWidget->setCurrentRow(cr);
+		else if(activitiesListWidget->count()>0)
+			activitiesListWidget->setCurrentRow(activitiesListWidget->count()-1);
+	}
+
+	activitiesListWidget->verticalScrollBar()->setValue(valv);
+	activitiesListWidget->horizontalScrollBar()->setValue(valh);
+
+	activitiesListWidget->setFocus();
 }

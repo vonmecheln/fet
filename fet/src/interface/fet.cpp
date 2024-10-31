@@ -486,6 +486,12 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 	DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS=newSettings.value("divide-html-timetables-with-time-axis-by-days", "false").toBool();
 	TIMETABLE_HTML_REPEAT_NAMES=newSettings.value("timetables-repeat-vertical-names", "false").toBool();
 	
+	INTERFACE_STYLE=newSettings.value("interface-style", "").toString();
+	INTERFACE_COLOR_SCHEME=newSettings.value("interface-color-scheme", "auto").toString();
+	//To avoid assert(0) in fetmainform.cpp if the setting is corrupt.
+	if(INTERFACE_COLOR_SCHEME!="auto" && INTERFACE_COLOR_SCHEME!="light" && INTERFACE_COLOR_SCHEME!="dark")
+		INTERFACE_COLOR_SCHEME="auto";
+	
 	USE_GUI_COLORS=newSettings.value("use-gui-colors", "false").toBool();
 
 	SHOW_SUBGROUPS_IN_COMBO_BOXES=newSettings.value("show-subgroups-in-combo-boxes", "true").toBool();
@@ -1263,6 +1269,9 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("timetables-repeat-vertical-names", TIMETABLE_HTML_REPEAT_NAMES);
 	settings.setValue("print-not-available", PRINT_NOT_AVAILABLE_TIME_SLOTS);
 	settings.setValue("print-break", PRINT_BREAK_TIME_SLOTS);
+
+	settings.setValue("interface-style", INTERFACE_STYLE);
+	settings.setValue("interface-color-scheme", INTERFACE_COLOR_SCHEME);
 	
 	settings.setValue("use-gui-colors", USE_GUI_COLORS);
 

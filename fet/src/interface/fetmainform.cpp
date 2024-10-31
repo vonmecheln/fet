@@ -37,6 +37,8 @@
 
 #include "settingsautosaveform.h"
 
+#include "settingsstyleandcolorschemeform.h"
+
 #include "getmodefornewfileform.h"
 
 #include "timetablegenerateform.h"
@@ -550,6 +552,11 @@
 #else
 #include <QDesktopWidget>
 #endif
+
+#include <QStyleFactory>
+#include <QStyleHints>
+
+#include <QStringList>
 
 #include <QCursor>
 #include <QSettings>
@@ -1289,6 +1296,8 @@ static bool fontIsUserSelectable=false;
 static bool userChoseAFont=false;
 static QFont originalFont;
 
+static QString ORIGINAL_STYLE;
+
 static int ORIGINAL_WIDTH;
 static int ORIGINAL_HEIGHT;
 //static int ORIGINAL_X;
@@ -1296,6 +1305,9 @@ static int ORIGINAL_HEIGHT;
 
 const QString COMPANY=QString("fet");
 const QString PROGRAM=QString("fettimetabling");
+
+QString INTERFACE_STYLE=QString("");
+QString INTERFACE_COLOR_SCHEME=QString("auto");
 
 bool USE_GUI_COLORS=false;
 
@@ -1564,6 +1576,14 @@ bool FetMainForm::saveHistory()
 FetMainForm::FetMainForm()
 {
 	setupUi(this);
+
+	//As seen on https://stackoverflow.com/questions/48093102/how-does-qt-select-a-default-style
+	ORIGINAL_STYLE=QApplication::style()->objectName();
+	
+	if(INTERFACE_STYLE!="")
+		setCurrentStyle();
+	if(INTERFACE_COLOR_SCHEME!="auto")
+		setCurrentColorScheme();
 
 	generation_running=false;
 	generation_running_multi=false;
@@ -2001,6 +2021,8 @@ FetMainForm::FetMainForm()
 	connect(helpSettingsAction, &QAction::triggered, this, &FetMainForm::helpSettingsAction_triggered);
 
 	connect(settingsFontAction, &QAction::triggered, this, &FetMainForm::settingsFontAction_triggered);
+
+	connect(settingsStyleAndColorSchemeAction, &QAction::triggered, this, &FetMainForm::settingsStyleAndColorSchemeAction_triggered);
 
 	connect(timetablesToWriteOnDiskAction, &QAction::triggered, this, &FetMainForm::timetablesToWriteOnDiskAction_triggered);
 	
@@ -4807,6 +4829,52 @@ void FetMainForm::settingsFontAction_triggered()
 		qApp->setFont(newFont);
 		userChoseAFont=true;
 	}
+}
+
+void FetMainForm::setCurrentStyle()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(6,8,0)
+	if(INTERFACE_STYLE!="")
+		QApplication::setStyle(QStyleFactory::create(INTERFACE_STYLE));
+	else
+		QApplication::setStyle(QStyleFactory::create(ORIGINAL_STYLE));
+#endif
+}
+
+void FetMainForm::setCurrentColorScheme()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(6,8,0)
+	if(INTERFACE_COLOR_SCHEME=="auto"){
+		QGuiApplication::styleHints()->setColorScheme(Qt::ColorScheme::Unknown);
+	}
+	else if(INTERFACE_COLOR_SCHEME=="light"){
+		QGuiApplication::styleHints()->setColorScheme(Qt::ColorScheme::Light);
+	}
+	else if(INTERFACE_COLOR_SCHEME=="dark"){
+		QGuiApplication::styleHints()->setColorScheme(Qt::ColorScheme::Dark);
+	}
+	else{
+		QGuiApplication::styleHints()->setColorScheme(Qt::ColorScheme::Unknown);
+		//assert(0);
+	}
+#endif
+}
+
+void FetMainForm::settingsStyleAndColorSchemeAction_triggered()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(6,8,0)
+	SettingsStyleAndColorSchemeForm form(this);
+	setParentAndOtherThings(&form, this);
+	int result=form.exec();
+	if(result==QDialog::Accepted){
+		setCurrentStyle();
+		setCurrentColorScheme();
+	}
+#else
+	QMessageBox::information(this, tr("FET information"), tr("This option works only with Qt version %1 or later.").arg("6.8.0"));
+	
+	return;
+#endif
 }
 
 void FetMainForm::settingsAutosaveAction_triggered()
@@ -13805,6 +13873,9 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	s+=tr("70")+QString(". ")+tr("The timetable options about which information to be printed in which table will be reset to defaults.");
 	s+="\n";
 
+	s+=tr("71")+QString(". ")+tr("The interface style and color scheme will be reset to defaults (useful only if the used Qt version is at least %1).").arg("6.8.0");
+	s+="\n";
+
 	//s+=tr("71")+QString(". ")+tr("The compression level for the states in history will be %1 (the default compression level for zlib)").arg(-1);
 	//s+="\n";
 
@@ -13848,6 +13919,11 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	
 	SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES=false;
 	settingsShowToolTipsForConstraintsWithTablesAction->setChecked(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES);
+	
+	INTERFACE_STYLE="";
+	INTERFACE_COLOR_SCHEME="auto";
+	setCurrentStyle();
+	setCurrentColorScheme();
 	
 	disconnect(settingsUseColorsAction, &QAction::toggled, this, &FetMainForm::useColorsToggled);
 	USE_GUI_COLORS=false;

@@ -1200,6 +1200,8 @@
      <property name="title">
       <string>Interface</string>
      </property>
+     <addaction name="settingsStyleAndColorSchemeAction"/>
+     <addaction name="separator"/>
      <addaction name="settingsFontIsUserSelectableAction"/>
      <addaction name="settingsFontAction"/>
      <addaction name="separator"/>
@@ -1256,8 +1258,8 @@
     <addaction name="separator"/>
     <addaction name="languageAction"/>
     <addaction name="separator"/>
-    <addaction name="menuTimetables"/>
     <addaction name="menuFET_interface"/>
+    <addaction name="menuTimetables"/>
     <addaction name="menuConfirmations"/>
     <addaction name="selectOutputDirAction"/>
     <addaction name="settingsCommandAfterFinishingAction"/>
@@ -2150,6 +2152,11 @@
   <action name="timetableViewRoomsDaysVerticalAction">
    <property name="text">
     <string>Days vertical</string>
+   </property>
+  </action>
+  <action name="settingsStyleAndColorSchemeAction">
+   <property name="text">
+    <string>Style and color scheme</string>
    </property>
   </action>
  </widget>

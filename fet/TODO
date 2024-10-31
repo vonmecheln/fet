@@ -4191,25 +4191,7 @@ names of all the teachers who are not working in that period.
 
 252--------------------------DONE---------------------------
 
-253---------------------------------------------------------
-From Benahmed Abdelkrim (on forum):
-
-Par fois quand on entre les activité, en se rend compte ensuite qu'on a oublié d'utiliser les étiquettes. Et on se trouve dans obligation de mentioné les activités une par une, ce qui fait perdre un temps précieux . Peut on donc actuellement montioné d'un seul coup un ensemble d'activités choisi?
-Sometimes when you enter the activity, then realizes we forgot to use the tags (labels). And we are in obligation to mentione the activities one by one, which wastes valuable time. Can we therefore now Montione suddenly a selected set of activities?
-
-Liviu:
-
-I am not sure I understand. You mean you want to modify more activities at once? I can add this in the TODO list, if you want, just let me know. But I don't think I will implement soon.
-
-Benahmed Abdelkrim:
-
-oui, absolument, vous pouvez l'ajouter dans le fichier TODO, car cette fonction à mon avis est très utile, vue le temps quelle permet de gagner.
-   a maintes reprises et après production d'un tableau par FET, et après vérification de celui-ci, on se rends compte qu'on est obligé de faire appel a une étiquettes(tags) pour réaliser une séparation dans le temps d'un ensemble d'activités.
-  donc cette nouvelle fonction si elle voit le jour, permet de modifier les étiquettes(tags) d'un seul coup, et non pas comme elle actuellement une par une.
-
-   yes, absolutely, you can add it to the TODO file because this feature in my opinion is very useful for any time saves.
-    has repeatedly and on production of a table by FET, and after checking it, we realize that we are obliged to call a labels (tags) to make a separation in time of a set activities.
-   So this new feature if it is created, we can change the labels (tags) at one time, and not as it is currently one by one.
+253----------------DONE in FET-6.27.0-----------------------
 
 254---------------------------------------------------------
 From Benahmed Abdelkrim (on forum):
@@ -9418,6 +9400,8 @@ Volker Dirr:
 See also item #568.
 
 582---------------------------------------------------------
+2024-10-16: The right-to-left part is DONE.
+
 From AHMED LAOUAR (on forum):
 
 https://lalescu.ro/liviu/fet/forum/index.php?topic=5992.0
@@ -10284,13 +10268,7 @@ I will add your suggestion in the TODO list, but it is unfortunately risky to ch
 But can't you simply use min hours daily with allow empty days? The only bad situation is you cannot force at least 1 hour on each day without
 allowing empty days, but this is an improbable situation.
 
-646--------------------------------------------------------
-From pnlshd (on forum):
-
-https://lalescu.ro/liviu/fet/forum/index.php?topic=6195.0
-
-I wanted to ask if there is a way to bulk apply (add) an activity tag to a set of activities or also remove a tag from them (if they have it)
-instead of doing it one by one from the UI.
+646------------------DONE in FET-6.27.0--------------------
 
 647--------------------------------------------------------
 From Vangelis Karafillidis (on forum):
@@ -10324,3 +10302,45 @@ and the HTML level 7).
 From Michael Chourdakis (on Facebook):
 
 If an activity has home room (example: R1) and preferred rooms (example: R1, R2, R3), prefer the home room (R1) over the other rooms.
+
+651---------------------------------------------------------
+From Thai Chi Phuong (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6112.msg34454#msg34454
+
+In recent fet releases, including test version 6.27.0, when I re-run a "locked" schedule, fet always creates a new folder containing the files in it,
+and I find this unnecessary (since I locked the schedule, the constraints don't change anymore). Why don't you overwrite the previous folder?
+
+Liviu Lalescu:
+
+Starting from FET-6.26.0, suggested here: https://lalescu.ro/liviu/fet/forum/index.php?topic=6195.msg34372#msg34372 , I/we considered it is better
+to start a new folder (directory) for each new generation, rather than overwriting the old folder (for single generations) or asking to remove
+the old folder (for multiple generations).
+
+FET cannot decide which is an unlocked and which is a locked file. It needs a similar treatment of all input files.
+
+In the forum post in the first paragraph, we also agreed that it is easy for the user to just remove the old directories when they are too many.
+Another solution to avoid having too many files would be to choose from the FET settings not to output XML, conflicts, students, teachers, etc. timetables
+(this if you want to see the timetables from the FET interface only).
+
+It is safer if FET will not overwrite the old files. In the past some users reported that they lost the random seed or the partial timetables and
+could not retrieve them.
+
+Thai Chi Phuong:
+
+It is a big mistake that a software like fet cannot distinguish between a "locked" file and an "unlocked" file. Is there no way for you to, for example,
+add a command so that before creating a schedule, fet will look for it first and if it is "locked" then "overwrite" and if it is "unlocked" then "create new" Liviu?!
+
+Benahmed Abdelkrim:
+
+Another suggestion that could solve this problem is to give the user a choice. A message before each new generation that allows the user to choose between
+2 options: overwrite the old folder, or open another folder.
+
+Thai Chi Phuong:
+
+Benahmed Abdelkrim, what a great idea!
+
+Liviu Lalescu:
+
+I am sorry to disagree, Thai Chi and Benahmed, but it is always safer to create a new directory. The problem is that the user might generate overwriting by accident.
+The user can easily remove the directories after some time. But I will think about it, and add an entry in the TODO.

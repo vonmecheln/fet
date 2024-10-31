@@ -77,6 +77,8 @@ public slots:
 	void activityComments();
 	
 	void selectionChanged();
+	
+	void changeActivityTags();
 };
 
 #endif

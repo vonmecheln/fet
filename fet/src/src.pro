@@ -40,6 +40,7 @@ SOURCES += \
 	interface/helptipsform.cpp \
 	interface/helpinstructionsform.cpp \
 	interface/activitiesform.cpp \
+	interface/activitiestagsform.cpp \
 	interface/addactivityform.cpp \
 	interface/modifyactivityform.cpp \
 	\
@@ -1130,6 +1131,8 @@ SOURCES += \
 	\
 	interface/settingsautosaveform.cpp \
 	\
+	interface/settingsstyleandcolorschemeform.cpp \
+	\
 	interface/addconstraintstudentssetmaxbuildingchangesperdayinintervalform.cpp \
 	interface/addconstraintstudentsmaxbuildingchangesperdayinintervalform.cpp \
 	interface/addconstraintteachermaxbuildingchangesperdayinintervalform.cpp \
@@ -1227,6 +1230,7 @@ HEADERS += \
 	interface/helptipsform.h \
 	interface/helpinstructionsform.h \
 	interface/activitiesform.h \
+	interface/activitiestagsform.h \
 	interface/addactivityform.h \
 	interface/modifyactivityform.h \
 	\
@@ -2319,6 +2323,8 @@ HEADERS += \
 	\
 	interface/settingsautosaveform.h \
 	\
+	interface/settingsstyleandcolorschemeform.h \
+	\
 	interface/addconstraintstudentssetmaxbuildingchangesperdayinintervalform.h \
 	interface/addconstraintstudentsmaxbuildingchangesperdayinintervalform.h \
 	interface/addconstraintteachermaxbuildingchangesperdayinintervalform.h \
@@ -2404,6 +2410,7 @@ FORMS += \
 	interface/savetimetableconfirmationform_template.ui \
 	\
 	interface/activitiesform_template.ui \
+	interface/activitiestagsform_template.ui \
 	interface/activitytagsform_template.ui \
 	interface/addactivityform_template.ui \
 	interface/addbuildingform_template.ui \
@@ -3470,6 +3477,8 @@ FORMS += \
 	interface/settingsrestoredatafromdiskform_template.ui \
 	\
 	interface/settingsautosaveform_template.ui \
+	\
+	interface/settingsstyleandcolorschemeform_template.ui \
 	\
 	interface/addconstraintstudentssetmaxbuildingchangesperdayinintervalform_template.ui \
 	interface/addconstraintstudentsmaxbuildingchangesperdayinintervalform_template.ui \

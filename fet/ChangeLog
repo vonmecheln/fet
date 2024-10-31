@@ -2950,7 +2950,7 @@ Versions 6.25.0 - 6.25.3
 	- Updated to Qt 6.7.3.
 	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares.
 ---------------------------------------------------------------------------------
-Versions 6.26.0 - 6.26.v
+Versions 6.26.0 - 6.26.2
 - Version 6.26.0
 	- Updated to Qt 6.8.0.
 	- The newly generated timetables will be put in a new directory each time. In the single generation, the old timetables will not be overwritten and
@@ -2960,4 +2960,12 @@ Versions 6.26.0 - 6.26.v
 	- In the command-line version, the newly generated timetables will be put in a new directory each time. The old timetables won't be overwritten.
 - Version 6.26.2
 	- Corrected some rare cases of old timetable files possibly being overwritten when generating single timetables.
+	- Minor improvements.
+---------------------------------------------------------------------------------
+Versions 6.27.0 - 6.27.v
+- Version 6.27.0
+	- It is now possible to change the interface style and color scheme (but only when using Qt version 6.8.0 or later).
+	- Added the option to add/remove an activity tag to a selection of (sub)activities with a single click (suggested by Benahmed Abdelkrim and pnlshd).
+	- Added a note to the constraints referring to an interval, that the start hour is included and the end hour is not included (suggested by Pier,
+	and other users in the past).
 	- Minor improvements.

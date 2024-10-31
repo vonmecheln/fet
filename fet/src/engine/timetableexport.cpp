@@ -75,6 +75,8 @@ using namespace std;
 //std::stable_sort and std::reverse
 #include <algorithm>
 
+static const bool removeOldFiles=false;
+
 //Represents the current status of the generation - running or stopped.
 //extern bool generation_running;
 
@@ -1915,8 +1917,9 @@ void TimetableExport::writeConflictsTxt(QWidget* parent, const QString& filename
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLE_CONFLICTS){
-		if(QFile::exists(filename))
-			QFile::remove(filename);
+		if(removeOldFiles)
+			if(QFile::exists(filename))
+				QFile::remove(filename);
 	
 		return;
 	}
@@ -1984,8 +1987,9 @@ void TimetableExport::writeSubgroupsTimetableXml(QWidget* parent, const QString&
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_XML || !WRITE_TIMETABLES_SUBGROUPS){
-		if(QFile::exists(xmlfilename))
-			QFile::remove(xmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(xmlfilename))
+				QFile::remove(xmlfilename);
 	
 		return;
 	}
@@ -2069,8 +2073,9 @@ void TimetableExport::writeTeachersTimetableXml(QWidget* parent, const QString& 
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_XML || !WRITE_TIMETABLES_TEACHERS){
-		if(QFile::exists(xmlfilename))
-			QFile::remove(xmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(xmlfilename))
+				QFile::remove(xmlfilename);
 	
 		return;
 	}
@@ -2146,8 +2151,9 @@ void TimetableExport::writeActivitiesTimetableXml(QWidget* parent, const QString
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_XML || !WRITE_TIMETABLES_ACTIVITIES){
-		if(QFile::exists(xmlfilename))
-			QFile::remove(xmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(xmlfilename))
+				QFile::remove(xmlfilename);
 
 		return;
 	}
@@ -2610,8 +2616,9 @@ void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& cssfile
 	bool _writeAtLeastATimetable = writeAtLeastATimetable();
 
 	if(!_writeAtLeastATimetable){
-		if(QFile::exists(cssfilename))
-			QFile::remove(cssfilename);
+		if(removeOldFiles)
+			if(QFile::exists(cssfilename))
+				QFile::remove(cssfilename);
 
 		return;
 	}
@@ -2874,8 +2881,9 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(QWidget* parent,
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_DAYS_HORIZONTAL || !WRITE_TIMETABLES_SUBGROUPS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -2941,8 +2949,9 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(QWidget* parent, c
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_DAYS_VERTICAL || !WRITE_TIMETABLES_SUBGROUPS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -3009,8 +3018,9 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(QWidget* parent, c
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_VERTICAL || !WRITE_TIMETABLES_SUBGROUPS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -3064,8 +3074,9 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(QWidget* parent,
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_HORIZONTAL || !WRITE_TIMETABLES_SUBGROUPS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -3119,8 +3130,9 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(QWidget* pare
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_VERTICAL || !WRITE_TIMETABLES_SUBGROUPS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -3178,8 +3190,9 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(QWidget* pa
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_HORIZONTAL || !WRITE_TIMETABLES_SUBGROUPS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -3238,8 +3251,9 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(QWidget* parent, co
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_DAYS_HORIZONTAL || !WRITE_TIMETABLES_GROUPS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -3303,8 +3317,9 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(QWidget* parent, cons
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_DAYS_VERTICAL || !WRITE_TIMETABLES_GROUPS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -3368,8 +3383,9 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(QWidget* parent, cons
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_VERTICAL || !WRITE_TIMETABLES_GROUPS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -3425,8 +3441,9 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(QWidget* parent, co
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_HORIZONTAL || !WRITE_TIMETABLES_GROUPS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -3481,8 +3498,9 @@ void TimetableExport::writeGroupsTimetableTimeVerticalDailyHtml(QWidget* parent,
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_VERTICAL || !WRITE_TIMETABLES_GROUPS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -3540,8 +3558,9 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalDailyHtml(QWidget* paren
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_HORIZONTAL || !WRITE_TIMETABLES_GROUPS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -3601,8 +3620,9 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(QWidget* parent, con
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_DAYS_HORIZONTAL || !WRITE_TIMETABLES_YEARS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -3661,8 +3681,9 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(QWidget* parent, const
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_DAYS_VERTICAL || !WRITE_TIMETABLES_YEARS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -3721,8 +3742,9 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(QWidget* parent, const
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_VERTICAL || !WRITE_TIMETABLES_YEARS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -3778,8 +3800,9 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(QWidget* parent, con
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_HORIZONTAL || !WRITE_TIMETABLES_YEARS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -3835,8 +3858,9 @@ void TimetableExport::writeYearsTimetableTimeVerticalDailyHtml(QWidget* parent, 
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_VERTICAL || !WRITE_TIMETABLES_YEARS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -3894,8 +3918,9 @@ void TimetableExport::writeYearsTimetableTimeHorizontalDailyHtml(QWidget* parent
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_HORIZONTAL || !WRITE_TIMETABLES_YEARS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -3955,8 +3980,9 @@ void TimetableExport::writeAllActivitiesTimetableDaysHorizontalHtml(QWidget* par
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_DAYS_HORIZONTAL || !WRITE_TIMETABLES_ACTIVITIES){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -4000,8 +4026,9 @@ void TimetableExport::writeAllActivitiesTimetableDaysVerticalHtml(QWidget* paren
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_DAYS_VERTICAL || !WRITE_TIMETABLES_ACTIVITIES){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -4045,8 +4072,9 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalHtml(QWidget* paren
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_VERTICAL || !WRITE_TIMETABLES_ACTIVITIES){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -4099,8 +4127,9 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalHtml(QWidget* par
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_HORIZONTAL || !WRITE_TIMETABLES_ACTIVITIES){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -4153,8 +4182,9 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalDailyHtml(QWidget* 
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_VERTICAL || !WRITE_TIMETABLES_ACTIVITIES){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -4211,8 +4241,9 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalDailyHtml(QWidget
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_HORIZONTAL || !WRITE_TIMETABLES_ACTIVITIES){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -4272,8 +4303,9 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(QWidget* parent, 
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_DAYS_HORIZONTAL || !WRITE_TIMETABLES_TEACHERS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -4330,8 +4362,9 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(QWidget* parent, co
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_DAYS_VERTICAL || !WRITE_TIMETABLES_TEACHERS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -4387,8 +4420,9 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(QWidget* parent, co
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_VERTICAL || !WRITE_TIMETABLES_TEACHERS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -4441,8 +4475,9 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(QWidget* parent, 
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_HORIZONTAL || !WRITE_TIMETABLES_TEACHERS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -4495,8 +4530,9 @@ void TimetableExport::writeTeachersTimetableTimeVerticalDailyHtml(QWidget* paren
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_VERTICAL || !WRITE_TIMETABLES_TEACHERS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -4554,8 +4590,9 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalDailyHtml(QWidget* par
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_HORIZONTAL || !WRITE_TIMETABLES_TEACHERS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -4613,8 +4650,9 @@ void TimetableExport::writeBuildingsTimetableDaysHorizontalHtml(QWidget* parent,
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_DAYS_HORIZONTAL || !WRITE_TIMETABLES_BUILDINGS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -4674,8 +4712,9 @@ void TimetableExport::writeBuildingsTimetableDaysVerticalHtml(QWidget* parent, c
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_DAYS_VERTICAL || !WRITE_TIMETABLES_BUILDINGS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -4737,8 +4776,9 @@ void TimetableExport::writeBuildingsTimetableTimeVerticalHtml(QWidget* parent, c
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_VERTICAL || !WRITE_TIMETABLES_BUILDINGS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -4796,8 +4836,9 @@ void TimetableExport::writeBuildingsTimetableTimeHorizontalHtml(QWidget* parent,
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_HORIZONTAL || !WRITE_TIMETABLES_BUILDINGS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -4855,8 +4896,9 @@ void TimetableExport::writeBuildingsTimetableTimeVerticalDailyHtml(QWidget* pare
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_VERTICAL || !WRITE_TIMETABLES_BUILDINGS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -4919,8 +4961,9 @@ void TimetableExport::writeBuildingsTimetableTimeHorizontalDailyHtml(QWidget* pa
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_HORIZONTAL || !WRITE_TIMETABLES_BUILDINGS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -4983,8 +5026,9 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(QWidget* parent, con
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_DAYS_HORIZONTAL || !WRITE_TIMETABLES_ROOMS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -5044,8 +5088,9 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(QWidget* parent, const
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_DAYS_VERTICAL || !WRITE_TIMETABLES_ROOMS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -5107,8 +5152,9 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(QWidget* parent, const
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_VERTICAL || !WRITE_TIMETABLES_ROOMS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -5166,8 +5212,9 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(QWidget* parent, con
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_HORIZONTAL || !WRITE_TIMETABLES_ROOMS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -5226,8 +5273,9 @@ void TimetableExport::writeRoomsTimetableTimeVerticalDailyHtml(QWidget* parent, 
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_VERTICAL || !WRITE_TIMETABLES_ROOMS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -5290,8 +5338,9 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalDailyHtml(QWidget* parent
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_HORIZONTAL || !WRITE_TIMETABLES_ROOMS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -5357,8 +5406,9 @@ void TimetableExport::writeSubjectsTimetableDaysHorizontalHtml(QWidget* parent, 
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_DAYS_HORIZONTAL || !WRITE_TIMETABLES_SUBJECTS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -5416,8 +5466,9 @@ void TimetableExport::writeSubjectsTimetableDaysVerticalHtml(QWidget* parent, co
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_DAYS_VERTICAL || !WRITE_TIMETABLES_SUBJECTS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -5474,8 +5525,9 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalHtml(QWidget* parent, co
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_VERTICAL || !WRITE_TIMETABLES_SUBJECTS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -5529,8 +5581,9 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalHtml(QWidget* parent, 
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_HORIZONTAL || !WRITE_TIMETABLES_SUBJECTS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -5584,8 +5637,9 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalDailyHtml(QWidget* paren
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_VERTICAL || !WRITE_TIMETABLES_SUBJECTS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -5644,8 +5698,9 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalDailyHtml(QWidget* par
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_HORIZONTAL || !WRITE_TIMETABLES_SUBJECTS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -5706,8 +5761,9 @@ void TimetableExport::writeActivityTagsTimetableDaysHorizontalHtml(QWidget* pare
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_DAYS_HORIZONTAL || !WRITE_TIMETABLES_ACTIVITY_TAGS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -5768,8 +5824,9 @@ void TimetableExport::writeActivityTagsTimetableDaysVerticalHtml(QWidget* parent
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_DAYS_VERTICAL || !WRITE_TIMETABLES_ACTIVITY_TAGS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -5830,8 +5887,9 @@ void TimetableExport::writeActivityTagsTimetableTimeVerticalHtml(QWidget* parent
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_VERTICAL || !WRITE_TIMETABLES_ACTIVITY_TAGS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -5885,8 +5943,9 @@ void TimetableExport::writeActivityTagsTimetableTimeHorizontalHtml(QWidget* pare
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_HORIZONTAL || !WRITE_TIMETABLES_ACTIVITY_TAGS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -5940,8 +5999,9 @@ void TimetableExport::writeActivityTagsTimetableTimeVerticalDailyHtml(QWidget* p
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_VERTICAL || !WRITE_TIMETABLES_ACTIVITY_TAGS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -6000,8 +6060,9 @@ void TimetableExport::writeActivityTagsTimetableTimeHorizontalDailyHtml(QWidget*
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_TIME_HORIZONTAL || !WRITE_TIMETABLES_ACTIVITY_TAGS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -6060,8 +6121,9 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysHorizontalHtml(QWidge
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_DAYS_HORIZONTAL || !WRITE_TIMETABLES_TEACHERS_FREE_PERIODS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -6117,8 +6179,9 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysVerticalHtml(QWidget*
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_DAYS_VERTICAL || !WRITE_TIMETABLES_TEACHERS_FREE_PERIODS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -6174,8 +6237,9 @@ void TimetableExport::writeTeachersStatisticsHtml(QWidget* parent, const QString
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 	
 	if(!WRITE_TIMETABLES_STATISTICS || !WRITE_TIMETABLES_TEACHERS){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
@@ -6219,8 +6283,9 @@ void TimetableExport::writeStudentsStatisticsHtml(QWidget* parent, const QString
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
 
 	if(!WRITE_TIMETABLES_STATISTICS || !(WRITE_TIMETABLES_YEARS || WRITE_TIMETABLES_GROUPS || WRITE_TIMETABLES_SUBGROUPS) ){
-		if(QFile::exists(htmlfilename))
-			QFile::remove(htmlfilename);
+		if(removeOldFiles)
+			if(QFile::exists(htmlfilename))
+				QFile::remove(htmlfilename);
 
 		return;
 	}
