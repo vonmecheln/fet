@@ -21194,7 +21194,7 @@ QString ConstraintTwoActivitiesConsecutive::getDetailedDescription(Rules& r)
 {
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Two activities consecutive (second activity must be placed immediately after the first"
-	 " activity, on the same day, possibly separated by breaks)"); s+="\n";
+	 " activity, on the same day; no gaps are allowed between them, except for break constraints)"); s+="\n";
 	
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
@@ -21468,7 +21468,7 @@ QString ConstraintTwoActivitiesGrouped::getDetailedDescription(Rules& r)
 {
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Two activities grouped (the activities must be placed on the same day, "
-	 "one immediately following the other, in any order, possibly separated by breaks)"); s+="\n";
+	 "one immediately following the other, in any order; no gaps are allowed between them, except for break constraints)"); s+="\n";
 	
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
@@ -21779,7 +21779,7 @@ QString ConstraintThreeActivitiesGrouped::getDetailedDescription(Rules& r)
 {
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Three activities grouped (the activities must be placed on the same day, "
-	 "one immediately following the other, as a block of three activities, in any order, possibly separated by breaks)"); s+="\n";
+	 "one immediately following the other, as a block of three activities, in any order; no gaps are allowed between them, except for break constraints)"); s+="\n";
 	
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 

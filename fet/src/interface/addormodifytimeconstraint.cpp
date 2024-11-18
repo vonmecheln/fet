@@ -70,6 +70,28 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 	type=_type;
 	oldtc=_oldtc;
 
+	filterIsOnSingleRow=false;
+
+	first_filterGroupBox=nullptr;
+	second_filterGroupBox=nullptr;
+	third_filterGroupBox=nullptr;
+
+	first_filterTeachersComboBox=nullptr;
+	second_filterTeachersComboBox=nullptr;
+	third_filterTeachersComboBox=nullptr;
+
+	first_filterStudentsComboBox=nullptr;
+	second_filterStudentsComboBox=nullptr;
+	third_filterStudentsComboBox=nullptr;
+
+	first_filterSubjectsComboBox=nullptr;
+	second_filterSubjectsComboBox=nullptr;
+	third_filterSubjectsComboBox=nullptr;
+
+	first_filterActivityTagsComboBox=nullptr;
+	second_filterActivityTagsComboBox=nullptr;
+	third_filterActivityTagsComboBox=nullptr;
+
 	addEmpty=false;
 
 	allowEmptySlotsCheckBox=nullptr;
@@ -1373,7 +1395,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogName=QString("ModifyConstraintTwoActivitiesConsecutive");
 				}
 
-				addEmpty=true;
+				/*addEmpty=true; -> does not affect us
 				filterGroupBox=new QGroupBox(tr("Filter"));
 
 				//teacherLabel=new QLabel(tr("Teacher"));
@@ -1386,10 +1408,22 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				subjectsComboBox=new QComboBox;
 
 				//activityTagLabel=new QLabel(tr("Activity tag"));
-				activityTagsComboBox=new QComboBox;
+				activityTagsComboBox=new QComboBox;*/
 
 				/*activityLabel=new QLabel(tr("Activity"));
 				activitiesComboBox=new QComboBox;*/
+
+				first_filterGroupBox=new QGroupBox(tr("First filter"));
+				first_filterTeachersComboBox=new QComboBox;
+				first_filterStudentsComboBox=new QComboBox;
+				first_filterSubjectsComboBox=new QComboBox;
+				first_filterActivityTagsComboBox=new QComboBox;
+
+				second_filterGroupBox=new QGroupBox(tr("Second filter"));
+				second_filterTeachersComboBox=new QComboBox;
+				second_filterStudentsComboBox=new QComboBox;
+				second_filterSubjectsComboBox=new QComboBox;
+				second_filterActivityTagsComboBox=new QComboBox;
 
 				first_activityLabel=new QLabel(tr("First activity"));
 				first_activitiesComboBox=new QComboBox;
@@ -1413,7 +1447,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogName=QString("ModifyConstraintTwoActivitiesOrdered");
 				}
 
-				addEmpty=true;
+				/*addEmpty=true; -> does not affect us
 				filterGroupBox=new QGroupBox(tr("Filter"));
 
 				//teacherLabel=new QLabel(tr("Teacher"));
@@ -1426,10 +1460,22 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				subjectsComboBox=new QComboBox;
 
 				//activityTagLabel=new QLabel(tr("Activity tag"));
-				activityTagsComboBox=new QComboBox;
+				activityTagsComboBox=new QComboBox;*/
 
 				/*activityLabel=new QLabel(tr("Activity"));
 				activitiesComboBox=new QComboBox;*/
+
+				first_filterGroupBox=new QGroupBox(tr("First filter"));
+				first_filterTeachersComboBox=new QComboBox;
+				first_filterStudentsComboBox=new QComboBox;
+				first_filterSubjectsComboBox=new QComboBox;
+				first_filterActivityTagsComboBox=new QComboBox;
+
+				second_filterGroupBox=new QGroupBox(tr("Second filter"));
+				second_filterTeachersComboBox=new QComboBox;
+				second_filterStudentsComboBox=new QComboBox;
+				second_filterSubjectsComboBox=new QComboBox;
+				second_filterActivityTagsComboBox=new QComboBox;
 
 				first_activityLabel=new QLabel(tr("First activity"));
 				first_activitiesComboBox=new QComboBox;
@@ -1741,7 +1787,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogName=QString("ModifyConstraintTwoActivitiesGrouped");
 				}
 
-				addEmpty=true;
+				/*addEmpty=true; -> does not affect us
 				filterGroupBox=new QGroupBox(tr("Filter"));
 
 				//teacherLabel=new QLabel(tr("Teacher"));
@@ -1754,10 +1800,22 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				subjectsComboBox=new QComboBox;
 
 				//activityTagLabel=new QLabel(tr("Activity tag"));
-				activityTagsComboBox=new QComboBox;
+				activityTagsComboBox=new QComboBox;*/
 
 				/*activityLabel=new QLabel(tr("Activity"));
 				activitiesComboBox=new QComboBox;*/
+
+				first_filterGroupBox=new QGroupBox(tr("First filter"));
+				first_filterTeachersComboBox=new QComboBox;
+				first_filterStudentsComboBox=new QComboBox;
+				first_filterSubjectsComboBox=new QComboBox;
+				first_filterActivityTagsComboBox=new QComboBox;
+
+				second_filterGroupBox=new QGroupBox(tr("Second filter"));
+				second_filterTeachersComboBox=new QComboBox;
+				second_filterStudentsComboBox=new QComboBox;
+				second_filterSubjectsComboBox=new QComboBox;
+				second_filterActivityTagsComboBox=new QComboBox;
 
 				first_activityLabel=new QLabel(tr("First activity"));
 				first_activitiesComboBox=new QComboBox;
@@ -1895,7 +1953,9 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogName=QString("ModifyConstraintThreeActivitiesGrouped");
 				}
 
-				addEmpty=true;
+				filterIsOnSingleRow=true;
+
+				/*addEmpty=true; -> does not affect us
 				filterGroupBox=new QGroupBox(tr("Filter"));
 
 				//teacherLabel=new QLabel(tr("Teacher"));
@@ -1908,10 +1968,28 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				subjectsComboBox=new QComboBox;
 
 				//activityTagLabel=new QLabel(tr("Activity tag"));
-				activityTagsComboBox=new QComboBox;
+				activityTagsComboBox=new QComboBox;*/
 
 				/*activityLabel=new QLabel(tr("Activity"));
 				activitiesComboBox=new QComboBox;*/
+
+				first_filterGroupBox=new QGroupBox(tr("First filter"));
+				first_filterTeachersComboBox=new QComboBox;
+				first_filterStudentsComboBox=new QComboBox;
+				first_filterSubjectsComboBox=new QComboBox;
+				first_filterActivityTagsComboBox=new QComboBox;
+
+				second_filterGroupBox=new QGroupBox(tr("Second filter"));
+				second_filterTeachersComboBox=new QComboBox;
+				second_filterStudentsComboBox=new QComboBox;
+				second_filterSubjectsComboBox=new QComboBox;
+				second_filterActivityTagsComboBox=new QComboBox;
+
+				third_filterGroupBox=new QGroupBox(tr("Third filter"));
+				third_filterTeachersComboBox=new QComboBox;
+				third_filterStudentsComboBox=new QComboBox;
+				third_filterSubjectsComboBox=new QComboBox;
+				third_filterActivityTagsComboBox=new QComboBox;
 
 				first_activityLabel=new QLabel(tr("First activity"));
 				first_activitiesComboBox=new QComboBox;
@@ -2528,7 +2606,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogName=QString("ModifyConstraintTwoActivitiesOrderedIfSameDay");
 				}
 
-				addEmpty=true;
+				/*addEmpty=true; -> does not affect us
 				filterGroupBox=new QGroupBox(tr("Filter"));
 
 				//teacherLabel=new QLabel(tr("Teacher"));
@@ -2541,10 +2619,22 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				subjectsComboBox=new QComboBox;
 
 				//activityTagLabel=new QLabel(tr("Activity tag"));
-				activityTagsComboBox=new QComboBox;
+				activityTagsComboBox=new QComboBox;*/
 
 				/*activityLabel=new QLabel(tr("Activity"));
 				activitiesComboBox=new QComboBox;*/
+
+				first_filterGroupBox=new QGroupBox(tr("First filter"));
+				first_filterTeachersComboBox=new QComboBox;
+				first_filterStudentsComboBox=new QComboBox;
+				first_filterSubjectsComboBox=new QComboBox;
+				first_filterActivityTagsComboBox=new QComboBox;
+
+				second_filterGroupBox=new QGroupBox(tr("Second filter"));
+				second_filterTeachersComboBox=new QComboBox;
+				second_filterStudentsComboBox=new QComboBox;
+				second_filterSubjectsComboBox=new QComboBox;
+				second_filterActivityTagsComboBox=new QComboBox;
 
 				first_activityLabel=new QLabel(tr("First activity"));
 				first_activitiesComboBox=new QComboBox;
@@ -6534,6 +6624,88 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 		//secondModifyInstructionsLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	}
 
+	if(first_filterTeachersComboBox!=nullptr){
+		first_filterTeachersComboBox->addItem(QString(""));
+		for(Teacher* tch : std::as_const(gt.rules.teachersList))
+			first_filterTeachersComboBox->addItem(tch->name);
+
+		first_filterTeachersComboBox->setCurrentIndex(0);
+	}
+	if(second_filterTeachersComboBox!=nullptr){
+		second_filterTeachersComboBox->addItem(QString(""));
+		for(Teacher* tch : std::as_const(gt.rules.teachersList))
+			second_filterTeachersComboBox->addItem(tch->name);
+
+		second_filterTeachersComboBox->setCurrentIndex(0);
+	}
+	if(third_filterTeachersComboBox!=nullptr){
+		third_filterTeachersComboBox->addItem(QString(""));
+		for(Teacher* tch : std::as_const(gt.rules.teachersList))
+			third_filterTeachersComboBox->addItem(tch->name);
+
+		third_filterTeachersComboBox->setCurrentIndex(0);
+	}
+
+	if(first_filterStudentsComboBox!=nullptr){
+		populateStudentsComboBox(first_filterStudentsComboBox, QString(""), true);
+
+		first_filterStudentsComboBox->setCurrentIndex(0);
+	}
+	if(second_filterStudentsComboBox!=nullptr){
+		populateStudentsComboBox(second_filterStudentsComboBox, QString(""), true);
+
+		second_filterStudentsComboBox->setCurrentIndex(0);
+	}
+	if(third_filterStudentsComboBox!=nullptr){
+		populateStudentsComboBox(third_filterStudentsComboBox, QString(""), true);
+
+		third_filterStudentsComboBox->setCurrentIndex(0);
+	}
+
+	if(first_filterSubjectsComboBox!=nullptr){
+		first_filterSubjectsComboBox->addItem(QString(""));
+		for(Subject *sbj : std::as_const(gt.rules.subjectsList))
+			first_filterSubjectsComboBox->addItem(sbj->name);
+
+		first_filterSubjectsComboBox->setCurrentIndex(0);
+	}
+	if(second_filterSubjectsComboBox!=nullptr){
+		second_filterSubjectsComboBox->addItem(QString(""));
+		for(Subject *sbj : std::as_const(gt.rules.subjectsList))
+			second_filterSubjectsComboBox->addItem(sbj->name);
+
+		second_filterSubjectsComboBox->setCurrentIndex(0);
+	}
+	if(third_filterSubjectsComboBox!=nullptr){
+		third_filterSubjectsComboBox->addItem(QString(""));
+		for(Subject *sbj : std::as_const(gt.rules.subjectsList))
+			third_filterSubjectsComboBox->addItem(sbj->name);
+
+		third_filterSubjectsComboBox->setCurrentIndex(0);
+	}
+
+	if(first_filterActivityTagsComboBox!=nullptr){
+		first_filterActivityTagsComboBox->addItem(QString(""));
+		for(ActivityTag* at : std::as_const(gt.rules.activityTagsList))
+			first_filterActivityTagsComboBox->addItem(at->name);
+
+		first_filterActivityTagsComboBox->setCurrentIndex(0);
+	}
+	if(second_filterActivityTagsComboBox!=nullptr){
+		second_filterActivityTagsComboBox->addItem(QString(""));
+		for(ActivityTag* at : std::as_const(gt.rules.activityTagsList))
+			second_filterActivityTagsComboBox->addItem(at->name);
+
+		second_filterActivityTagsComboBox->setCurrentIndex(0);
+	}
+	if(third_filterActivityTagsComboBox!=nullptr){
+		third_filterActivityTagsComboBox->addItem(QString(""));
+		for(ActivityTag* at : std::as_const(gt.rules.activityTagsList))
+			third_filterActivityTagsComboBox->addItem(at->name);
+
+		third_filterActivityTagsComboBox->setCurrentIndex(0);
+	}
+
 	QVBoxLayout* teacherLayout=nullptr;
 	if(teachersComboBox!=nullptr){
 		teacherLayout=new QVBoxLayout;
@@ -6621,7 +6793,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 		for(ActivityTag* at : std::as_const(gt.rules.activityTagsList))
 			second_activityTagsComboBox->addItem(at->name);
 
-		second_activityTagsComboBox->setCurrentIndex(1); //1, not 0 - the second activity tag
+		second_activityTagsComboBox->setCurrentIndex(0);
 	}
 
 	if(activityTagsListWidget!=nullptr){
@@ -6630,6 +6802,31 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 		activityTagsListWidget->setCurrentRow(0);
 	}
+
+	if(first_filterTeachersComboBox!=nullptr)
+		connect(first_filterTeachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::first_activitiesComboBoxFilter);
+	if(second_filterTeachersComboBox!=nullptr)
+		connect(second_filterTeachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::second_activitiesComboBoxFilter);
+	if(third_filterTeachersComboBox!=nullptr)
+		connect(third_filterTeachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::third_activitiesComboBoxFilter);
+	if(first_filterStudentsComboBox!=nullptr)
+		connect(first_filterStudentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::first_activitiesComboBoxFilter);
+	if(second_filterStudentsComboBox!=nullptr)
+		connect(second_filterStudentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::second_activitiesComboBoxFilter);
+	if(third_filterStudentsComboBox!=nullptr)
+		connect(third_filterStudentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::third_activitiesComboBoxFilter);
+	if(first_filterSubjectsComboBox!=nullptr)
+		connect(first_filterSubjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::first_activitiesComboBoxFilter);
+	if(second_filterSubjectsComboBox!=nullptr)
+		connect(second_filterSubjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::second_activitiesComboBoxFilter);
+	if(third_filterSubjectsComboBox!=nullptr)
+		connect(third_filterSubjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::third_activitiesComboBoxFilter);
+	if(first_filterActivityTagsComboBox!=nullptr)
+		connect(first_filterActivityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::first_activitiesComboBoxFilter);
+	if(second_filterActivityTagsComboBox!=nullptr)
+		connect(second_filterActivityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::second_activitiesComboBoxFilter);
+	if(third_filterActivityTagsComboBox!=nullptr)
+		connect(third_filterActivityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::third_activitiesComboBoxFilter);
 
 	assert(activitiesComboBox==nullptr || activitiesListWidget==nullptr);
 	if(teachersComboBox!=nullptr){
@@ -6641,13 +6838,6 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			assert(activitiesListWidget_TwoSetsOfActivities_2!=nullptr);
 			connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::filterActivitiesListWidgets1And2);
 		}
-
-		if(first_activitiesComboBox!=nullptr)
-			connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::first_activitiesComboBoxFilter);
-		if(second_activitiesComboBox!=nullptr)
-			connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::second_activitiesComboBoxFilter);
-		if(third_activitiesComboBox!=nullptr)
-			connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::third_activitiesComboBoxFilter);
 	}
 	if(studentsComboBox!=nullptr){
 		if(activitiesComboBox!=nullptr)
@@ -6658,13 +6848,6 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			assert(activitiesListWidget_TwoSetsOfActivities_2!=nullptr);
 			connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::filterActivitiesListWidgets1And2);
 		}
-
-		if(first_activitiesComboBox!=nullptr)
-			connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::first_activitiesComboBoxFilter);
-		if(second_activitiesComboBox!=nullptr)
-			connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::second_activitiesComboBoxFilter);
-		if(third_activitiesComboBox!=nullptr)
-			connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::third_activitiesComboBoxFilter);
 	}
 	if(subjectsComboBox!=nullptr){
 		if(activitiesComboBox!=nullptr)
@@ -6675,13 +6858,6 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			assert(activitiesListWidget_TwoSetsOfActivities_2!=nullptr);
 			connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::filterActivitiesListWidgets1And2);
 		}
-
-		if(first_activitiesComboBox!=nullptr)
-			connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::first_activitiesComboBoxFilter);
-		if(second_activitiesComboBox!=nullptr)
-			connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::second_activitiesComboBoxFilter);
-		if(third_activitiesComboBox!=nullptr)
-			connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::third_activitiesComboBoxFilter);
 	}
 	if(activityTagsComboBox!=nullptr){
 		if(activitiesComboBox!=nullptr)
@@ -6692,13 +6868,6 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			assert(activitiesListWidget_TwoSetsOfActivities_2!=nullptr);
 			connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::filterActivitiesListWidgets1And2);
 		}
-
-		if(first_activitiesComboBox!=nullptr)
-			connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::first_activitiesComboBoxFilter);
-		if(second_activitiesComboBox!=nullptr)
-			connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::second_activitiesComboBoxFilter);
-		if(third_activitiesComboBox!=nullptr)
-			connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::third_activitiesComboBoxFilter);
 	}
 
 	if(periodGroupBox!=nullptr && dayLabel!=nullptr && daysComboBox!=nullptr && hourLabel!=nullptr && hoursComboBox!=nullptr){
@@ -6844,6 +7013,115 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 	
 	//centerWidgetOnScreen(dialog);
 	//restoreFETDialogGeometry(dialog, dialogName);
+
+	if(first_filterTeachersComboBox!=nullptr){
+		QSize tmp=first_filterTeachersComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(second_filterTeachersComboBox!=nullptr){
+		QSize tmp=second_filterTeachersComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(third_filterTeachersComboBox!=nullptr){
+		QSize tmp=third_filterTeachersComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+
+	if(first_filterStudentsComboBox!=nullptr){
+		QSize tmp=first_filterStudentsComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(second_filterStudentsComboBox!=nullptr){
+		QSize tmp=second_filterStudentsComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(third_filterStudentsComboBox!=nullptr){
+		QSize tmp=third_filterStudentsComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+
+	if(first_filterSubjectsComboBox!=nullptr){
+		QSize tmp=first_filterSubjectsComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(second_filterSubjectsComboBox!=nullptr){
+		QSize tmp=second_filterSubjectsComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(third_filterSubjectsComboBox!=nullptr){
+		QSize tmp=third_filterSubjectsComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+
+	if(first_filterActivityTagsComboBox!=nullptr){
+		QSize tmp=first_filterActivityTagsComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(second_filterActivityTagsComboBox!=nullptr){
+		QSize tmp=second_filterActivityTagsComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(third_filterActivityTagsComboBox!=nullptr){
+		QSize tmp=third_filterActivityTagsComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	
+	if(teachersComboBox!=nullptr){
+		QSize tmp=teachersComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(studentsComboBox!=nullptr){
+		QSize tmp=studentsComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(subjectsComboBox!=nullptr){
+		QSize tmp=subjectsComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(activityTagsComboBox!=nullptr){
+		QSize tmp=activityTagsComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(first_activityTagsComboBox!=nullptr){
+		QSize tmp=first_activityTagsComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(second_activityTagsComboBox!=nullptr){
+		QSize tmp=second_activityTagsComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(activitiesComboBox!=nullptr){
+		QSize tmp=activitiesComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(daysComboBox!=nullptr){
+		QSize tmp=daysComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(hoursComboBox!=nullptr){
+		QSize tmp=hoursComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(first_activitiesComboBox!=nullptr){
+		QSize tmp=first_activitiesComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(second_activitiesComboBox!=nullptr){
+		QSize tmp=second_activitiesComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(third_activitiesComboBox!=nullptr){
+		QSize tmp=third_activitiesComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(intervalStartHourComboBox!=nullptr){
+		QSize tmp=intervalStartHourComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(intervalEndHourComboBox!=nullptr){
+		QSize tmp=intervalEndHourComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
 
 	if(activitiesComboBox!=nullptr)
 		activitiesComboBox->setMaximumWidth(maxRecommendedWidth(dialog));
@@ -7132,14 +7410,113 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 		}
 
 		if(first_activitiesComboBox!=nullptr && first_activityLabel!=nullptr){
+			assert(first_filterGroupBox!=nullptr);
+			assert(first_filterTeachersComboBox!=nullptr);
+			assert(first_filterStudentsComboBox!=nullptr);
+			assert(first_filterSubjectsComboBox!=nullptr);
+			assert(first_filterActivityTagsComboBox!=nullptr);
+
+			if(!filterIsOnSingleRow){
+				QVBoxLayout* layoutLeft=new QVBoxLayout;
+				layoutLeft->addWidget(first_filterTeachersComboBox);
+				layoutLeft->addWidget(first_filterStudentsComboBox);
+
+				QVBoxLayout* layoutRight=new QVBoxLayout;
+				layoutRight->addWidget(first_filterSubjectsComboBox);
+				layoutRight->addWidget(first_filterActivityTagsComboBox);
+
+				QHBoxLayout* layout=new QHBoxLayout;
+				layout->addLayout(layoutLeft);
+				layout->addLayout(layoutRight);
+
+				first_filterGroupBox->setLayout(layout);
+			}
+			else{
+				QHBoxLayout* layout=new QHBoxLayout;
+				layout->addWidget(first_filterTeachersComboBox);
+				layout->addWidget(first_filterStudentsComboBox);
+				layout->addWidget(first_filterSubjectsComboBox);
+				layout->addWidget(first_filterActivityTagsComboBox);
+
+				first_filterGroupBox->setLayout(layout);
+			}
+
+			wholeDialog->addWidget(first_filterGroupBox);
+
 			wholeDialog->addWidget(first_activityLabel);
 			wholeDialog->addWidget(first_activitiesComboBox);
 		}
 		if(second_activitiesComboBox!=nullptr && second_activityLabel!=nullptr){
+			assert(second_filterGroupBox!=nullptr);
+			assert(second_filterTeachersComboBox!=nullptr);
+			assert(second_filterStudentsComboBox!=nullptr);
+			assert(second_filterSubjectsComboBox!=nullptr);
+			assert(second_filterActivityTagsComboBox!=nullptr);
+
+			if(!filterIsOnSingleRow){
+				QVBoxLayout* layoutLeft=new QVBoxLayout;
+				layoutLeft->addWidget(second_filterTeachersComboBox);
+				layoutLeft->addWidget(second_filterStudentsComboBox);
+
+				QVBoxLayout* layoutRight=new QVBoxLayout;
+				layoutRight->addWidget(second_filterSubjectsComboBox);
+				layoutRight->addWidget(second_filterActivityTagsComboBox);
+
+				QHBoxLayout* layout=new QHBoxLayout;
+				layout->addLayout(layoutLeft);
+				layout->addLayout(layoutRight);
+
+				second_filterGroupBox->setLayout(layout);
+			}
+			else{
+				QHBoxLayout* layout=new QHBoxLayout;
+				layout->addWidget(second_filterTeachersComboBox);
+				layout->addWidget(second_filterStudentsComboBox);
+				layout->addWidget(second_filterSubjectsComboBox);
+				layout->addWidget(second_filterActivityTagsComboBox);
+
+				second_filterGroupBox->setLayout(layout);
+			}
+
+			wholeDialog->addWidget(second_filterGroupBox);
+
 			wholeDialog->addWidget(second_activityLabel);
 			wholeDialog->addWidget(second_activitiesComboBox);
 		}
 		if(third_activitiesComboBox!=nullptr && third_activityLabel!=nullptr){
+			assert(third_filterGroupBox!=nullptr);
+			assert(third_filterTeachersComboBox!=nullptr);
+			assert(third_filterStudentsComboBox!=nullptr);
+			assert(third_filterSubjectsComboBox!=nullptr);
+			assert(third_filterActivityTagsComboBox!=nullptr);
+
+			if(!filterIsOnSingleRow){
+				QVBoxLayout* layoutLeft=new QVBoxLayout;
+				layoutLeft->addWidget(third_filterTeachersComboBox);
+				layoutLeft->addWidget(third_filterStudentsComboBox);
+
+				QVBoxLayout* layoutRight=new QVBoxLayout;
+				layoutRight->addWidget(third_filterSubjectsComboBox);
+				layoutRight->addWidget(third_filterActivityTagsComboBox);
+
+				QHBoxLayout* layout=new QHBoxLayout;
+				layout->addLayout(layoutLeft);
+				layout->addLayout(layoutRight);
+
+				third_filterGroupBox->setLayout(layout);
+			}
+			else{
+				QHBoxLayout* layout=new QHBoxLayout;
+				layout->addWidget(third_filterTeachersComboBox);
+				layout->addWidget(third_filterStudentsComboBox);
+				layout->addWidget(third_filterSubjectsComboBox);
+				layout->addWidget(third_filterActivityTagsComboBox);
+
+				third_filterGroupBox->setLayout(layout);
+			}
+
+			wholeDialog->addWidget(third_filterGroupBox);
+
 			wholeDialog->addWidget(third_activityLabel);
 			wholeDialog->addWidget(third_activitiesComboBox);
 		}
@@ -10765,7 +11142,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 		}
 	}
 
-	if(filterGroupBox!=nullptr && first_activitiesComboBox!=nullptr){
+	if(first_filterGroupBox!=nullptr && first_activitiesComboBox!=nullptr){
 		int i=first_activitiesComboBoxFilter();
 		if(i>=0){
 			assert(first_activitiesComboBox!=nullptr);
@@ -10774,7 +11151,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			first_activitiesComboBox->setCurrentIndex(i);
 		}
 	}
-	if(filterGroupBox!=nullptr && second_activitiesComboBox!=nullptr){
+	if(second_filterGroupBox!=nullptr && second_activitiesComboBox!=nullptr){
 		int i=second_activitiesComboBoxFilter();
 		if(i>=0){
 			assert(second_activitiesComboBox!=nullptr);
@@ -10783,7 +11160,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			second_activitiesComboBox->setCurrentIndex(i);
 		}
 	}
-	if(filterGroupBox!=nullptr && third_activitiesComboBox!=nullptr){
+	if(third_filterGroupBox!=nullptr && third_activitiesComboBox!=nullptr){
 		int i=third_activitiesComboBoxFilter();
 		if(i>=0){
 			assert(third_activitiesComboBox!=nullptr);
@@ -21106,6 +21483,54 @@ bool AddOrModifyTimeConstraint::filterOk(Activity* act)
 	return true;
 }
 
+bool AddOrModifyTimeConstraint::first_filterOk(Activity* act)
+{
+	assert(act!=nullptr);
+
+	if(first_filterTeachersComboBox->currentText()!=QString("") && !act->teachersNames.contains(first_filterTeachersComboBox->currentText()))
+		return false;
+	if(first_filterSubjectsComboBox->currentText()!=QString("") && first_filterSubjectsComboBox->currentText()!=act->subjectName)
+		return false;
+	if(first_filterActivityTagsComboBox->currentText()!=QString("") && !act->activityTagsNames.contains(first_filterActivityTagsComboBox->currentText()))
+		return false;
+	if(first_filterStudentsComboBox->currentText()!=QString("") && !act->studentsNames.contains(first_filterStudentsComboBox->currentText()))
+		return false;
+
+	return true;
+}
+
+bool AddOrModifyTimeConstraint::second_filterOk(Activity* act)
+{
+	assert(act!=nullptr);
+
+	if(second_filterTeachersComboBox->currentText()!=QString("") && !act->teachersNames.contains(second_filterTeachersComboBox->currentText()))
+		return false;
+	if(second_filterSubjectsComboBox->currentText()!=QString("") && second_filterSubjectsComboBox->currentText()!=act->subjectName)
+		return false;
+	if(second_filterActivityTagsComboBox->currentText()!=QString("") && !act->activityTagsNames.contains(second_filterActivityTagsComboBox->currentText()))
+		return false;
+	if(second_filterStudentsComboBox->currentText()!=QString("") && !act->studentsNames.contains(second_filterStudentsComboBox->currentText()))
+		return false;
+
+	return true;
+}
+
+bool AddOrModifyTimeConstraint::third_filterOk(Activity* act)
+{
+	assert(act!=nullptr);
+
+	if(third_filterTeachersComboBox->currentText()!=QString("") && !act->teachersNames.contains(third_filterTeachersComboBox->currentText()))
+		return false;
+	if(third_filterSubjectsComboBox->currentText()!=QString("") && third_filterSubjectsComboBox->currentText()!=act->subjectName)
+		return false;
+	if(third_filterActivityTagsComboBox->currentText()!=QString("") && !act->activityTagsNames.contains(third_filterActivityTagsComboBox->currentText()))
+		return false;
+	if(third_filterStudentsComboBox->currentText()!=QString("") && !act->studentsNames.contains(third_filterStudentsComboBox->currentText()))
+		return false;
+
+	return true;
+}
+
 int AddOrModifyTimeConstraint::filterActivitiesComboBox()
 {
 	assert(activitiesComboBox!=nullptr);
@@ -21210,7 +21635,7 @@ int AddOrModifyTimeConstraint::first_activitiesComboBoxFilter()
 
 	int i=-1;
 	for(Activity* act : std::as_const(gt.rules.activitiesList)){
-		if(filterOk(act)){
+		if(first_filterOk(act)){
 			first_activitiesComboBox->addItem(act->getDescription(gt.rules));
 			first_activitiesList.append(act->id);
 			if(first_initialActivityId>=0 && first_initialActivityId==act->id)
@@ -21234,7 +21659,7 @@ int AddOrModifyTimeConstraint::second_activitiesComboBoxFilter()
 
 	int i=-1;
 	for(Activity* act : std::as_const(gt.rules.activitiesList)){
-		if(filterOk(act)){
+		if(second_filterOk(act)){
 			second_activitiesComboBox->addItem(act->getDescription(gt.rules));
 			second_activitiesList.append(act->id);
 			if(second_initialActivityId>=0 && second_initialActivityId==act->id)
@@ -21242,7 +21667,7 @@ int AddOrModifyTimeConstraint::second_activitiesComboBoxFilter()
 		}
 	}
 
-	second_activitiesComboBox->setCurrentIndex(1); //1, not 0 - the second activity.
+	second_activitiesComboBox->setCurrentIndex(0);
 
 	return i;
 }
@@ -21258,7 +21683,7 @@ int AddOrModifyTimeConstraint::third_activitiesComboBoxFilter()
 
 	int i=-1;
 	for(Activity* act : std::as_const(gt.rules.activitiesList)){
-		if(filterOk(act)){
+		if(third_filterOk(act)){
 			third_activitiesComboBox->addItem(act->getDescription(gt.rules));
 			third_activitiesList.append(act->id);
 			if(third_initialActivityId>=0 && third_initialActivityId==act->id)
@@ -21266,7 +21691,7 @@ int AddOrModifyTimeConstraint::third_activitiesComboBoxFilter()
 		}
 	}
 
-	third_activitiesComboBox->setCurrentIndex(2); //2, not 0 or 1 - the third activity.
+	third_activitiesComboBox->setCurrentIndex(0);
 
 	return i;
 }
@@ -21346,10 +21771,67 @@ void AddOrModifyTimeConstraint::durationCheckBoxToggled()
 
 void AddOrModifyTimeConstraint::swapActivitiesPushButtonClicked()
 {
-	int t1=first_activitiesComboBox->currentIndex();
-	int t2=second_activitiesComboBox->currentIndex();
-	first_activitiesComboBox->setCurrentIndex(t2);
-	second_activitiesComboBox->setCurrentIndex(t1);
+	assert(first_filterTeachersComboBox!=nullptr);
+	disconnect(first_filterTeachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::first_activitiesComboBoxFilter);
+
+	assert(second_filterTeachersComboBox!=nullptr);
+	disconnect(second_filterTeachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::second_activitiesComboBoxFilter);
+
+	assert(first_filterStudentsComboBox!=nullptr);
+	disconnect(first_filterStudentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::first_activitiesComboBoxFilter);
+
+	assert(second_filterStudentsComboBox!=nullptr);
+	disconnect(second_filterStudentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::second_activitiesComboBoxFilter);
+
+	assert(first_filterSubjectsComboBox!=nullptr);
+	disconnect(first_filterSubjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::first_activitiesComboBoxFilter);
+
+	assert(second_filterSubjectsComboBox!=nullptr);
+	disconnect(second_filterSubjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::second_activitiesComboBoxFilter);
+
+	assert(first_filterActivityTagsComboBox!=nullptr);
+	disconnect(first_filterActivityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::first_activitiesComboBoxFilter);
+
+	assert(second_filterActivityTagsComboBox!=nullptr);
+	disconnect(second_filterActivityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::second_activitiesComboBoxFilter);
+
+	int v1=first_activitiesComboBox->currentIndex();
+	int v2=second_activitiesComboBox->currentIndex();
+
+	int t1=first_filterTeachersComboBox->currentIndex();
+	int t2=second_filterTeachersComboBox->currentIndex();
+	first_filterTeachersComboBox->setCurrentIndex(t2);
+	second_filterTeachersComboBox->setCurrentIndex(t1);
+
+	t1=first_filterStudentsComboBox->currentIndex();
+	t2=second_filterStudentsComboBox->currentIndex();
+	first_filterStudentsComboBox->setCurrentIndex(t2);
+	second_filterStudentsComboBox->setCurrentIndex(t1);
+
+	t1=first_filterSubjectsComboBox->currentIndex();
+	t2=second_filterSubjectsComboBox->currentIndex();
+	first_filterSubjectsComboBox->setCurrentIndex(t2);
+	second_filterSubjectsComboBox->setCurrentIndex(t1);
+
+	t1=first_filterActivityTagsComboBox->currentIndex();
+	t2=second_filterActivityTagsComboBox->currentIndex();
+	first_filterActivityTagsComboBox->setCurrentIndex(t2);
+	second_filterActivityTagsComboBox->setCurrentIndex(t1);
+
+	first_activitiesComboBoxFilter();
+	second_activitiesComboBoxFilter();
+
+	first_activitiesComboBox->setCurrentIndex(v2);
+	second_activitiesComboBox->setCurrentIndex(v1);
+
+	connect(first_filterTeachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::first_activitiesComboBoxFilter);
+	connect(second_filterTeachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::second_activitiesComboBoxFilter);
+	connect(first_filterStudentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::first_activitiesComboBoxFilter);
+	connect(second_filterStudentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::second_activitiesComboBoxFilter);
+	connect(first_filterSubjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::first_activitiesComboBoxFilter);
+	connect(second_filterSubjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::second_activitiesComboBoxFilter);
+	connect(first_filterActivityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::first_activitiesComboBoxFilter);
+	connect(second_filterActivityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::second_activitiesComboBoxFilter);
 }
 
 void AddOrModifyTimeConstraint::swapActivityTagsPushButtonClicked()

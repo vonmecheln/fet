@@ -2977,3 +2977,8 @@ Versions 6.28.0 - 6.28.v
 	Also, the dialogs listing the constraints of a certain type allow multiple selection, and have buttons for activating/deactivating the constraints,
 	change the constraints' weights in bulk, and set the comments for a constraint. Qt Creator and Valgrind were invaluable tools for this work.
 	- Improved the activity planning dialog when swapping the teachers, if one cell was empty (suggested by uni_instructor).
+- Version 6.28.1
+	- Interface bug fixed: the combo boxes could be too large in the constraints' dialogs (reported by uni_instructor).
+	- Improved the dialogs for adding/modifying the constraints of type two activities ordered, two activities ordered if same day, two activities
+	consecutive, two activities grouped, and three activities grouped (suggested by uni_instructor).
+	- Improved the instructions/help for some constraints (suggested by uni_instructor).

@@ -1,4 +1,4 @@
-This is FET version 6.28.0
+This is FET version 6.28.1
 
 
 Program description:
@@ -163,6 +163,7 @@ Compiling FET:
 		get immediate return from it)
 	See also notes NUseSystemLocale and Note4 above.
 	- type "make" (this takes some time). See also note NMkJobs above ("make -j 16" for instance will be much faster on a 16 threads processor).
+	The exact measured time to compile FET-6.28.0: 3 minutes 20 seconds on 16 threads (make -j 16) on a Ryzen 7 2700X.
 	To remove the compiled objects/executable: "make clean" and/or "make distclean".
 
 
@@ -177,6 +178,7 @@ Compiling FET:
 	does not produce a correct makefile.
 	See also notes NUseSystemLocale and Note4 above.
 	- type "make" (this takes some time). See also note NMkJobs above ("make -j 16" for instance will be much faster on a 16 threads processor).
+	The compilation might take 3-5 minutes on multiple threads on a modern computer.
 	To remove the compiled objects/executable: "make clean" and/or "make distclean".
 
 	2. Another variant:
@@ -192,6 +194,7 @@ Compiling FET:
 	/Users/YOURUSERNAME/Qt/6.8.0/macos/bin/qmake -r -spec /Users/YOURUSERNAME/Qt/6.8.0/macos/mkspecs/macx-clang QMAKE_APPLE_DEVICE_ARCHS="x86_64 arm64"
 
 	Then "make" (this takes some time). See also note NMkJobs above ("make -j 16" for instance will be much faster on a 16 threads processor).
+	The compilation might take 3-5 minutes on multiple threads on a modern computer.
 	To remove the compiled objects/executable: "make clean" and/or "make distclean".
 	Please see: https://lalescu.ro/liviu/fet/forum/index.php?topic=2488.msg13425#msg13425 (and also see the whole topic there.)
 
@@ -200,11 +203,12 @@ Compiling FET:
 	You might use other C++ compilers if you want, please see the Qt documentation.
 	for other variants. Any C++ compiler that supports Qt should be good.
 	You need to run "qmake fet.pro" or "qmake" (this command is executed very fast, so don't worry if you get
-	immediate return from it) and then, if you are using MinGW, "mingw32-make" (this takes a long time, maybe even 1 hour)
+	immediate return from it) and then, if you are using MinGW, "mingw32-make" (this takes some time)
 	in a command line in the FET directory.
 	See also note NUseSystemLocale above.
 	See also Note GL above.
 	See also note NMkJobs above ("mingw32-make -j 16" for instance will be much faster on a 16 threads processor).
+	The exact measured time to compile FET-6.28.0: 4 minutes 30 seconds on 16 threads (mingw-make -j 16) on a Ryzen 7 2700X.
 	(You can use the command line prompt of Windows or the Qt command line prompt shortcut in the Qt shortcuts menu.)
 	Then, you can remove the directories "src" and "tmp", to save up space, if you want.
 	You will need to copy the dll-s in the same directories as in the official FET archive for Windows.

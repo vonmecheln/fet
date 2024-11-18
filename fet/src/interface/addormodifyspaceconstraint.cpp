@@ -2094,6 +2094,39 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 
 	//centerWidgetOnScreen(dialog);
 	//restoreFETDialogGeometry(dialog, dialogName);
+	
+	if(teachersComboBox!=nullptr){
+		QSize tmp=teachersComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(studentsComboBox!=nullptr){
+		QSize tmp=studentsComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(subjectsComboBox!=nullptr){
+		QSize tmp=subjectsComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(activityTagsComboBox!=nullptr){
+		QSize tmp=activityTagsComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(roomsComboBox!=nullptr){
+		QSize tmp=roomsComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(activitiesComboBox!=nullptr){
+		QSize tmp=activitiesComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(intervalStartHourComboBox!=nullptr){
+		QSize tmp=intervalStartHourComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(intervalEndHourComboBox!=nullptr){
+		QSize tmp=intervalEndHourComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
 
 	if(activitiesComboBox!=nullptr)
 		activitiesComboBox->setMaximumWidth(maxRecommendedWidth(dialog));

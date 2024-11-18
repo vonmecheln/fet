@@ -532,7 +532,7 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 				activityTagsComboBox=new QComboBox;
 
 				firstInstructionsLabel=new QLabel(tr("This constraint forces two activities A1 and A2: A2 to be immediately after A1, "
-													 "same day, possibly separated by breaks"));
+													 "same day; no gaps are allowed between them, except for break constraints."));
 				secondInstructionsLabel=new QLabel(tr("It is a good practice NOT to add this type of constraint to activities which are "
 													  "constrained to be in different days by min days between activities constraints. "
 													  "Please read Help/Important tips, tip number 3)."));
@@ -656,7 +656,7 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 				activityTagsComboBox=new QComboBox;
 
 				firstInstructionsLabel=new QLabel(tr("This constraint forces two activities to be on the same day, one immediately "
-													 "following the other, in any order, possibly separated by breaks"));
+													 "following the other, in any order; no gaps are allowed between them, except for break constraints."));
 				secondInstructionsLabel=new QLabel(tr("It is a good practice NOT to add this type of constraint to activities which "
 													  "are constrained to be in different days by min days between activities "
 													  "constraints. Please read Help/Important tips, tip number 3)."));
@@ -737,8 +737,7 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 				activityTagsComboBox=new QComboBox;
 
 				firstInstructionsLabel=new QLabel(tr("This constraint forces 3 activities to be on the same day, one immediately "
-													 "following the other, as a block of 3 activities, in any order, possibly "
-													 "separated by breaks"));
+													 "following the other, as a block of 3 activities, in any order; no gaps are allowed between them, except for break constraints."));
 				secondInstructionsLabel=new QLabel(tr("It is a good practice NOT to add this type of constraint to activities which "
 													  "are constrained to be in different days by min days between activities "
 													  "constraints. Please read Help/Important tips, tip number 3)."));

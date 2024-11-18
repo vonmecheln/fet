@@ -199,6 +199,28 @@ class AddOrModifyTimeConstraint: public QObject
 	//
 	QPushButton* swapTwoSetsOfActivitiesPushButton;
 
+	QGroupBox* first_filterGroupBox;
+	QGroupBox* second_filterGroupBox;
+	QGroupBox* third_filterGroupBox;
+
+	QComboBox* first_filterTeachersComboBox;
+	QComboBox* second_filterTeachersComboBox;
+	QComboBox* third_filterTeachersComboBox;
+
+	QComboBox* first_filterStudentsComboBox;
+	QComboBox* second_filterStudentsComboBox;
+	QComboBox* third_filterStudentsComboBox;
+
+	QComboBox* first_filterSubjectsComboBox;
+	QComboBox* second_filterSubjectsComboBox;
+	QComboBox* third_filterSubjectsComboBox;
+
+	QComboBox* first_filterActivityTagsComboBox;
+	QComboBox* second_filterActivityTagsComboBox;
+	QComboBox* third_filterActivityTagsComboBox;
+
+	bool filterIsOnSingleRow;
+
 public:
 	AddOrModifyTimeConstraint(QWidget* parent, int _type, TimeConstraint* _oldtc=nullptr);
 	~AddOrModifyTimeConstraint();
@@ -227,6 +249,9 @@ private:
 	void filterActivitiesListWidget();
 	void filterActivitiesListWidgets1And2();
 
+	bool first_filterOk(Activity* act);
+	bool second_filterOk(Activity* act);
+	bool third_filterOk(Activity* act);
 	int first_activitiesComboBoxFilter(); //returns the index of the current constraint's activity in modify dialog
 	int second_activitiesComboBoxFilter();
 	int third_activitiesComboBoxFilter();

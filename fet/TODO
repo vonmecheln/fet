@@ -10449,10 +10449,8 @@ b) add a second field separator. So similar to the "+" for adding several teache
 653---------------------------------------------------------
 From uni_instructor:
 
-In my planning today, I came across a few apparent inconsistencies. The
-constraint <ConstraintTwoActivitiesConsecutive> does not fully align
-with my understanding of this constraint, based on the brief
-explanations available in the program. It should be made clearer to the
-user that this constraint does not allow time gaps between activities.
-This could lead to misunderstandings, especially when break times are
-mentioned.
+The 'all-time-constraints' menu allows you to adjust the selection with
+filters, which is a useful feature.
+Has there ever been any consideration of introducing a history for the
+filter terms, so that you can select previously used search terms from a
+pre-selection?
