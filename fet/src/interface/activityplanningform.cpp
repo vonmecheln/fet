@@ -910,6 +910,14 @@ void ActivityPlanningForm::swapTeachers(int studentsActivity1, int subjectActivi
 			return;
 		}
 	}
+
+	if(tmpIdentifySet.isEmpty() || tmpIdentifySet2.isEmpty()){
+		int ret=QMessageBox::question(this, tr("Swap teachers"), tr("One cell is without activities, so swapping the teachers will remove the teachers from the existing activities. Should the teachers be removed?"), QMessageBox::Yes | QMessageBox::No);
+
+		if(ret==QMessageBox::No){
+			return;
+		}
+	}
 	
 	if(!tmpIdentifySet.isEmpty() || !tmpIdentifySet2.isEmpty()){
 		//activities1
@@ -1165,6 +1173,19 @@ void ActivityPlanningForm::swapStudents(int studentsActivity1, int subjectActivi
 		}
 	}
 	
+	//This will change the students instead of removing them if one cell is empty (start)
+	if(tmpIdentifySet.isEmpty() || tmpIdentifySet2.isEmpty()){
+		if(tmpIdentifySet.isEmpty()){
+			assert(studentsList1.isEmpty());
+			studentsList1<<statisticValues.allStudentsNames[studentsActivity1];
+		}
+
+		if(tmpIdentifySet2.isEmpty()){
+			assert(studentsList2.isEmpty());
+			studentsList2<<statisticValues.allStudentsNames[studentsActivity2];
+		}
+	}
+	//(end)
 	
 	if(!tmpIdentifySet.isEmpty() || !tmpIdentifySet2.isEmpty()){
 		//activities1

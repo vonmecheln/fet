@@ -19,90 +19,7 @@
 
 #include "allspaceconstraintsform.h"
 
-#include "modifyconstraintbasiccompulsoryspaceform.h"
-#include "modifyconstraintroomnotavailabletimesform.h"
-#include "modifyconstraintteacherroomnotavailabletimesform.h"
-#include "modifyconstraintactivitypreferredroomform.h"
-#include "modifyconstraintactivitypreferredroomsform.h"
-
-#include "modifyconstraintstudentssethomeroomform.h"
-#include "modifyconstraintstudentssethomeroomsform.h"
-
-#include "modifyconstraintteacherhomeroomform.h"
-#include "modifyconstraintteacherhomeroomsform.h"
-
-#include "modifyconstraintstudentssetmaxbuildingchangesperdayform.h"
-#include "modifyconstraintstudentsmaxbuildingchangesperdayform.h"
-#include "modifyconstraintstudentssetmaxbuildingchangesperweekform.h"
-#include "modifyconstraintstudentsmaxbuildingchangesperweekform.h"
-#include "modifyconstraintstudentssetmingapsbetweenbuildingchangesform.h"
-#include "modifyconstraintstudentsmingapsbetweenbuildingchangesform.h"
-
-#include "modifyconstraintteachermaxbuildingchangesperdayform.h"
-#include "modifyconstraintteachersmaxbuildingchangesperdayform.h"
-#include "modifyconstraintteachermaxbuildingchangesperweekform.h"
-#include "modifyconstraintteachersmaxbuildingchangesperweekform.h"
-#include "modifyconstraintteachermingapsbetweenbuildingchangesform.h"
-#include "modifyconstraintteachersmingapsbetweenbuildingchangesform.h"
-
-#include "modifyconstraintstudentssetmaxroomchangesperrealdayform.h"
-#include "modifyconstraintstudentsmaxroomchangesperrealdayform.h"
-
-#include "modifyconstraintstudentssetmaxbuildingchangesperrealdayform.h"
-#include "modifyconstraintstudentsmaxbuildingchangesperrealdayform.h"
-
-#include "modifyconstraintstudentssetmaxroomchangesperdayform.h"
-#include "modifyconstraintstudentsmaxroomchangesperdayform.h"
-#include "modifyconstraintstudentssetmaxroomchangesperweekform.h"
-#include "modifyconstraintstudentsmaxroomchangesperweekform.h"
-#include "modifyconstraintstudentssetmingapsbetweenroomchangesform.h"
-#include "modifyconstraintstudentsmingapsbetweenroomchangesform.h"
-
-#include "modifyconstraintteachermaxroomchangesperrealdayform.h"
-#include "modifyconstraintteachersmaxroomchangesperrealdayform.h"
-
-#include "modifyconstraintteachermaxbuildingchangesperrealdayform.h"
-#include "modifyconstraintteachersmaxbuildingchangesperrealdayform.h"
-
-#include "modifyconstraintteachermaxroomchangesperdayform.h"
-#include "modifyconstraintteachersmaxroomchangesperdayform.h"
-#include "modifyconstraintteachermaxroomchangesperweekform.h"
-#include "modifyconstraintteachersmaxroomchangesperweekform.h"
-#include "modifyconstraintteachermingapsbetweenroomchangesform.h"
-#include "modifyconstraintteachersmingapsbetweenroomchangesform.h"
-
-#include "modifyconstraintsubjectpreferredroomform.h"
-#include "modifyconstraintsubjectpreferredroomsform.h"
-#include "modifyconstraintsubjectactivitytagpreferredroomform.h"
-#include "modifyconstraintsubjectactivitytagpreferredroomsform.h"
-
-#include "modifyconstraintactivitytagpreferredroomform.h"
-#include "modifyconstraintactivitytagpreferredroomsform.h"
-
-#include "modifyconstraintactivitiesoccupymaxdifferentroomsform.h"
-#include "modifyconstraintactivitiessameroomifconsecutiveform.h"
-
-#include "modifyconstraintstudentssetmaxbuildingchangesperdayinintervalform.h"
-#include "modifyconstraintstudentsmaxbuildingchangesperdayinintervalform.h"
-#include "modifyconstraintteachermaxbuildingchangesperdayinintervalform.h"
-#include "modifyconstraintteachersmaxbuildingchangesperdayinintervalform.h"
-#include "modifyconstraintstudentssetmaxbuildingchangesperrealdayinintervalform.h"
-#include "modifyconstraintstudentsmaxbuildingchangesperrealdayinintervalform.h"
-#include "modifyconstraintteachermaxbuildingchangesperrealdayinintervalform.h"
-#include "modifyconstraintteachersmaxbuildingchangesperrealdayinintervalform.h"
-
-#include "modifyconstraintstudentssetmaxroomchangesperdayinintervalform.h"
-#include "modifyconstraintstudentsmaxroomchangesperdayinintervalform.h"
-#include "modifyconstraintteachermaxroomchangesperdayinintervalform.h"
-#include "modifyconstraintteachersmaxroomchangesperdayinintervalform.h"
-#include "modifyconstraintstudentssetmaxroomchangesperrealdayinintervalform.h"
-#include "modifyconstraintstudentsmaxroomchangesperrealdayinintervalform.h"
-#include "modifyconstraintteachermaxroomchangesperrealdayinintervalform.h"
-#include "modifyconstraintteachersmaxroomchangesperrealdayinintervalform.h"
-
-#include "modifyconstraintroommaxactivitytagsperdayfromsetform.h"
-#include "modifyconstraintroommaxactivitytagsperrealdayfromsetform.h"
-#include "modifyconstraintroommaxactivitytagsperweekfromsetform.h"
+#include "addormodifyspaceconstraint.h"
 
 #include "lockunlock.h"
 
@@ -551,7 +468,9 @@ void AllSpaceConstraintsForm::modifyConstraint()
 	assert(i<visibleSpaceConstraintsList.count());
 	SpaceConstraint* ctr=visibleSpaceConstraintsList.at(i);
 	
-	switch(ctr->type){
+	AddOrModifySpaceConstraint(this, ctr->type, ctr);
+
+	/*switch(ctr->type){
 		//1
 		case CONSTRAINT_BASIC_COMPULSORY_SPACE:
 			{
@@ -1110,7 +1029,7 @@ void AllSpaceConstraintsForm::modifyConstraint()
 			//assert(0);
 			//exit(1);
 			break;
-	}
+	}*/
 
 	filterChanged();
 	
@@ -1431,8 +1350,8 @@ void AllSpaceConstraintsForm::constraintComments()
 	okPB->setDefault(true);
 	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
 	
-	connect(okPB, &QPushButton::clicked, &getCommentsDialog, &AllSpaceConstraintsForm::accept);
-	connect(cancelPB, &QPushButton::clicked, &getCommentsDialog, &AllSpaceConstraintsForm::reject);
+	connect(okPB, &QPushButton::clicked, &getCommentsDialog, &QDialog::accept);
+	connect(cancelPB, &QPushButton::clicked, &getCommentsDialog, &QDialog::reject);
 
 	QHBoxLayout* hl=new QHBoxLayout();
 	hl->addStretch();

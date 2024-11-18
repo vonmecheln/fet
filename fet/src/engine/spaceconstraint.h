@@ -145,6 +145,8 @@ const int CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET					=1066;
 const int CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET				=1067;
 const int CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET					=1068;
 
+bool spaceConstraintCanHaveAnyWeight(int type);
+
 /**
 This class represents a space constraint
 */

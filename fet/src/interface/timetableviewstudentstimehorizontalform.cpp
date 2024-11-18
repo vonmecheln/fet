@@ -434,7 +434,7 @@ TimetableViewStudentsTimeHorizontalForm::TimetableViewStudentsTimeHorizontalForm
 	widthSpinBox->setMaximum(maxScreenWidth(this));
 #endif
 	widthSpinBox->setValue(w);
-	widthSpinBox->setSpecialValueText(tr("Automatic"));
+	widthSpinBox->setSpecialValueText(tr("Automatic", "Automatic mode of selection of the width"));
 	
 	heightSpinBox->setSuffix(QString(" ")+tr("px", "Abbreviation for pixels"));
 	heightSpinBox->setMinimum(MINIMUM_HEIGHT_SPIN_BOX_VALUE);
@@ -444,7 +444,7 @@ TimetableViewStudentsTimeHorizontalForm::TimetableViewStudentsTimeHorizontalForm
 	heightSpinBox->setMaximum(maxScreenWidth(this));
 #endif
 	heightSpinBox->setValue(h);
-	heightSpinBox->setSpecialValueText(tr("Automatic"));
+	heightSpinBox->setSpecialValueText(tr("Automatic", "Automatic mode of selection of the height"));
 	
 	studentsTimetableTable->horizontalHeader()->setMinimumSectionSize(MINIMUM_WIDTH_SPIN_BOX_VALUE);
 	studentsTimetableTable->verticalHeader()->setMinimumSectionSize(MINIMUM_HEIGHT_SPIN_BOX_VALUE);

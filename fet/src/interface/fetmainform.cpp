@@ -70,7 +70,6 @@
 #include "teachersform.h"
 #include "teachersstatisticsform.h"
 #include "yearsform.h"
-#include "splityearform.h"
 #include "groupsform.h"
 #include "subgroupsform.h"
 #include "studentsstatisticsform.h"
@@ -97,401 +96,11 @@
 
 #include "groupactivitiesininitialorderitemsform.h"
 
-#include "constraintactivityendsstudentsdayform.h"
-#include "constraintactivitiesendstudentsdayform.h"
+#include "listtimeconstraints.h"
+#include "listspaceconstraints.h"
 
-#include "constraintactivityendsteachersdayform.h"
-#include "constraintactivitiesendteachersdayform.h"
-
-#include "constraintactivitybeginsstudentsdayform.h"
-#include "constraintactivitiesbeginstudentsdayform.h"
-
-#include "constraintactivitybeginsteachersdayform.h"
-#include "constraintactivitiesbeginteachersdayform.h"
-
-#include "constrainttwoactivitiesconsecutiveform.h"
-#include "constrainttwoactivitiesgroupedform.h"
-#include "constraintthreeactivitiesgroupedform.h"
-#include "constrainttwoactivitiesorderedform.h"
-#include "constrainttwosetsofactivitiesorderedform.h"
-#include "constrainttwoactivitiesorderedifsamedayform.h"
-#include "constraintactivitiespreferredtimeslotsform.h"
-#include "constraintactivitiespreferredstartingtimesform.h"
-
-#include "constraintsubactivitiespreferredtimeslotsform.h"
-#include "constraintsubactivitiespreferredstartingtimesform.h"
-
-#include "constraintactivitiessamestartingtimeform.h"
-#include "constraintactivitiessamestartinghourform.h"
-#include "constraintactivitiessamestartingdayform.h"
-
-#include "constraintactivitiesoccupymaxtimeslotsfromselectionform.h"
-#include "constraintactivitiesoccupymintimeslotsfromselectionform.h"
-#include "constraintactivitiesmaxsimultaneousinselectedtimeslotsform.h"
-#include "constraintactivitiesminsimultaneousinselectedtimeslotsform.h"
-
-#include "constraintteachernotavailabletimesform.h"
 #include "teachersnotavailabletimestimehorizontalform.h"
-#include "constraintbasiccompulsorytimeform.h"
-#include "constraintbasiccompulsoryspaceform.h"
-#include "constraintroomnotavailabletimesform.h"
-#include "constraintteacherroomnotavailabletimesform.h"
-#include "constraintactivitypreferredroomform.h"
-#include "constraintstudentssetnotavailabletimesform.h"
 #include "studentsnotavailabletimestimehorizontalform.h"
-#include "constraintbreaktimesform.h"
-#include "constraintteachermaxdaysperweekform.h"
-#include "constraintteachersmaxdaysperweekform.h"
-
-#include "constraintteachermindaysperweekform.h"
-#include "constraintteachersmindaysperweekform.h"
-
-#include "constraintteacherintervalmaxdaysperweekform.h"
-#include "constraintteachersintervalmaxdaysperweekform.h"
-#include "constraintstudentssetintervalmaxdaysperweekform.h"
-#include "constraintstudentsintervalmaxdaysperweekform.h"
-
-#include "constraintstudentssetmaxdaysperweekform.h"
-#include "constraintstudentsmaxdaysperweekform.h"
-
-#include "constraintteachermaxhoursdailyform.h"
-#include "constraintteachersmaxhoursdailyform.h"
-#include "constraintteachermaxhourscontinuouslyform.h"
-#include "constraintteachersmaxhourscontinuouslyform.h"
-
-#include "constraintteachersmaxhoursdailyinintervalform.h"
-#include "constraintteachermaxhoursdailyinintervalform.h"
-#include "constraintstudentsmaxhoursdailyinintervalform.h"
-#include "constraintstudentssetmaxhoursdailyinintervalform.h"
-
-#include "constraintteacheractivitytagmaxhourscontinuouslyform.h"
-#include "constraintteachersactivitytagmaxhourscontinuouslyform.h"
-
-#include "constraintteacheractivitytagmaxhoursdailyform.h"
-#include "constraintteachersactivitytagmaxhoursdailyform.h"
-
-#include "constraintteacheractivitytagminhoursdailyform.h"
-#include "constraintteachersactivitytagminhoursdailyform.h"
-
-#include "constraintteacherminhoursdailyform.h"
-#include "constraintteachersminhoursdailyform.h"
-#include "constraintactivitypreferredstartingtimeform.h"
-#include "constraintstudentssetmaxgapsperweekform.h"
-#include "constraintstudentsmaxgapsperweekform.h"
-
-#include "constraintstudentssetmaxgapsperdayform.h"
-#include "constraintstudentsmaxgapsperdayform.h"
-
-#include "constraintteachersmaxgapsperweekform.h"
-#include "constraintteachermaxgapsperweekform.h"
-#include "constraintteachersmaxgapsperdayform.h"
-#include "constraintteachermaxgapsperdayform.h"
-
-#include "constraintteachersmaxgapspermorningandafternoonform.h"
-#include "constraintteachermaxgapspermorningandafternoonform.h"
-
-#include "constraintstudentsearlymaxbeginningsatsecondhourform.h"
-#include "constraintstudentssetearlymaxbeginningsatsecondhourform.h"
-#include "constraintstudentssetmaxhoursdailyform.h"
-#include "constraintstudentsmaxhoursdailyform.h"
-#include "constraintstudentssetmaxhourscontinuouslyform.h"
-#include "constraintstudentsmaxhourscontinuouslyform.h"
-
-#include "constraintstudentssetactivitytagmaxhourscontinuouslyform.h"
-#include "constraintstudentsactivitytagmaxhourscontinuouslyform.h"
-
-#include "constraintstudentssetactivitytagmaxhoursdailyform.h"
-#include "constraintstudentsactivitytagmaxhoursdailyform.h"
-
-#include "constraintstudentssetactivitytagminhoursdailyform.h"
-#include "constraintstudentsactivitytagminhoursdailyform.h"
-
-#include "constraintstudentssetminhoursdailyform.h"
-#include "constraintstudentsminhoursdailyform.h"
-#include "constraintactivitiesnotoverlappingform.h"
-#include "constraintactivitytagsnotoverlappingform.h"
-#include "constraintmindaysbetweenactivitiesform.h"
-#include "constraintminhalfdaysbetweenactivitiesform.h"
-#include "constraintmaxdaysbetweenactivitiesform.h"
-#include "constraintactivitiesmaxhourlyspanform.h"
-#include "constraintmaxhalfdaysbetweenactivitiesform.h"
-#include "constraintmaxtermsbetweenactivitiesform.h"
-#include "constraintmingapsbetweenactivitiesform.h"
-#include "constraintactivitypreferredtimeslotsform.h"
-#include "constraintactivitypreferredstartingtimesform.h"
-
-#include "constraintteachermaxspanperdayform.h"
-#include "constraintteachersmaxspanperdayform.h"
-#include "constraintstudentssetmaxspanperdayform.h"
-#include "constraintstudentsmaxspanperdayform.h"
-
-#include "constraintteacherminrestinghoursform.h"
-#include "constraintteachersminrestinghoursform.h"
-#include "constraintstudentssetminrestinghoursform.h"
-#include "constraintstudentsminrestinghoursform.h"
-
-#include "constraintactivitypreferredroomsform.h"
-
-#include "constraintstudentssethomeroomform.h"
-#include "constraintstudentssethomeroomsform.h"
-#include "constraintteacherhomeroomform.h"
-#include "constraintteacherhomeroomsform.h"
-
-//2024-02-09
-#include "constraintstudentssetmaxbuildingchangesperdayinintervalform.h"
-#include "constraintstudentsmaxbuildingchangesperdayinintervalform.h"
-#include "constraintteachermaxbuildingchangesperdayinintervalform.h"
-#include "constraintteachersmaxbuildingchangesperdayinintervalform.h"
-#include "constraintstudentssetmaxbuildingchangesperrealdayinintervalform.h"
-#include "constraintstudentsmaxbuildingchangesperrealdayinintervalform.h"
-#include "constraintteachermaxbuildingchangesperrealdayinintervalform.h"
-#include "constraintteachersmaxbuildingchangesperrealdayinintervalform.h"
-
-//2024-02-19
-#include "constraintstudentssetmaxroomchangesperdayinintervalform.h"
-#include "constraintstudentsmaxroomchangesperdayinintervalform.h"
-#include "constraintteachermaxroomchangesperdayinintervalform.h"
-#include "constraintteachersmaxroomchangesperdayinintervalform.h"
-#include "constraintstudentssetmaxroomchangesperrealdayinintervalform.h"
-#include "constraintstudentsmaxroomchangesperrealdayinintervalform.h"
-#include "constraintteachermaxroomchangesperrealdayinintervalform.h"
-#include "constraintteachersmaxroomchangesperrealdayinintervalform.h"
-
-#include "constraintstudentssetmaxbuildingchangesperdayform.h"
-#include "constraintstudentsmaxbuildingchangesperdayform.h"
-#include "constraintstudentssetmaxbuildingchangesperweekform.h"
-#include "constraintstudentsmaxbuildingchangesperweekform.h"
-#include "constraintstudentssetmingapsbetweenbuildingchangesform.h"
-#include "constraintstudentsmingapsbetweenbuildingchangesform.h"
-
-#include "constraintteachermaxbuildingchangesperdayform.h"
-#include "constraintteachersmaxbuildingchangesperdayform.h"
-#include "constraintteachermaxbuildingchangesperweekform.h"
-#include "constraintteachersmaxbuildingchangesperweekform.h"
-#include "constraintteachermingapsbetweenbuildingchangesform.h"
-#include "constraintteachersmingapsbetweenbuildingchangesform.h"
-
-#include "constraintstudentssetmaxroomchangesperrealdayform.h"
-#include "constraintstudentsmaxroomchangesperrealdayform.h"
-
-#include "constraintstudentssetmaxbuildingchangesperrealdayform.h"
-#include "constraintstudentsmaxbuildingchangesperrealdayform.h"
-
-#include "constraintstudentssetmaxroomchangesperdayform.h"
-#include "constraintstudentsmaxroomchangesperdayform.h"
-#include "constraintstudentssetmaxroomchangesperweekform.h"
-#include "constraintstudentsmaxroomchangesperweekform.h"
-#include "constraintstudentssetmingapsbetweenroomchangesform.h"
-#include "constraintstudentsmingapsbetweenroomchangesform.h"
-
-#include "constraintteachermaxroomchangesperrealdayform.h"
-#include "constraintteachersmaxroomchangesperrealdayform.h"
-
-#include "constraintteachermaxbuildingchangesperrealdayform.h"
-#include "constraintteachersmaxbuildingchangesperrealdayform.h"
-
-#include "constraintteachermaxroomchangesperdayform.h"
-#include "constraintteachersmaxroomchangesperdayform.h"
-#include "constraintteachermaxroomchangesperweekform.h"
-#include "constraintteachersmaxroomchangesperweekform.h"
-#include "constraintteachermingapsbetweenroomchangesform.h"
-#include "constraintteachersmingapsbetweenroomchangesform.h"
-
-#include "constraintsubjectpreferredroomform.h"
-#include "constraintsubjectpreferredroomsform.h"
-#include "constraintsubjectactivitytagpreferredroomform.h"
-#include "constraintsubjectactivitytagpreferredroomsform.h"
-
-#include "constraintactivitytagpreferredroomform.h"
-#include "constraintactivitytagpreferredroomsform.h"
-
-#include "constraintactivitiesoccupymaxdifferentroomsform.h"
-#include "constraintactivitiessameroomifconsecutiveform.h"
-
-#include "constraintstudentssetmingapsbetweenorderedpairofactivitytagsform.h"
-#include "constraintstudentsmingapsbetweenorderedpairofactivitytagsform.h"
-#include "constraintteachermingapsbetweenorderedpairofactivitytagsform.h"
-#include "constraintteachersmingapsbetweenorderedpairofactivitytagsform.h"
-
-//2021-12-15
-#include "constraintstudentssetmingapsbetweenactivitytagform.h"
-#include "constraintstudentsmingapsbetweenactivitytagform.h"
-#include "constraintteachermingapsbetweenactivitytagform.h"
-#include "constraintteachersmingapsbetweenactivitytagform.h"
-
-//2024-03-16
-#include "constraintstudentssetmingapsbetweenorderedpairofactivitytagsperrealdayform.h"
-#include "constraintstudentsmingapsbetweenorderedpairofactivitytagsperrealdayform.h"
-#include "constraintteachermingapsbetweenorderedpairofactivitytagsperrealdayform.h"
-#include "constraintteachersmingapsbetweenorderedpairofactivitytagsperrealdayform.h"
-
-#include "constraintstudentssetmingapsbetweenactivitytagperrealdayform.h"
-#include "constraintstudentsmingapsbetweenactivitytagperrealdayform.h"
-#include "constraintteachermingapsbetweenactivitytagperrealdayform.h"
-#include "constraintteachersmingapsbetweenactivitytagperrealdayform.h"
-
-//2024-05-20
-#include "constraintstudentssetmingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoonform.h"
-#include "constraintstudentsmingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoonform.h"
-#include "constraintteachermingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoonform.h"
-#include "constraintteachersmingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoonform.h"
-
-#include "constraintstudentssetmingapsbetweenactivitytagbetweenmorningandafternoonform.h"
-#include "constraintstudentsmingapsbetweenactivitytagbetweenmorningandafternoonform.h"
-#include "constraintteachermingapsbetweenactivitytagbetweenmorningandafternoonform.h"
-#include "constraintteachersmingapsbetweenactivitytagbetweenmorningandafternoonform.h"
-
-//mornings-afternoons
-#include "constraintteachersmaxzerogapsperafternoonform.h"
-#include "constraintteachermaxzerogapsperafternoonform.h"
-
-#include "constraintteachersmaxgapsperrealdayform.h"
-#include "constraintteachermaxgapsperrealdayform.h"
-
-#include "constraintteachermaxrealdaysperweekform.h"
-#include "constraintteachersmaxrealdaysperweekform.h"
-#include "constraintteachermaxafternoonsperweekform.h"
-#include "constraintteachersmaxafternoonsperweekform.h"
-#include "constraintteachermaxmorningsperweekform.h"
-#include "constraintteachersmaxmorningsperweekform.h"
-
-#include "constraintteachermaxtwoconsecutivemorningsform.h"
-#include "constraintteachersmaxtwoconsecutivemorningsform.h"
-#include "constraintteachermaxtwoconsecutiveafternoonsform.h"
-#include "constraintteachersmaxtwoconsecutiveafternoonsform.h"
-
-#include "constraintteachersmaxhoursdailyrealdaysform.h"
-#include "constraintteachermaxhoursdailyrealdaysform.h"
-
-#include "constraintteachersminhoursdailyrealdaysform.h"
-#include "constraintteacherminhoursdailyrealdaysform.h"
-
-#include "constraintteachermaxhoursperallafternoonsform.h"
-#include "constraintteachersmaxhoursperallafternoonsform.h"
-
-#include "constraintstudentssetmaxhoursperallafternoonsform.h"
-#include "constraintstudentsmaxhoursperallafternoonsform.h"
-
-#include "constraintteachersminhourspermorningform.h"
-#include "constraintteacherminhourspermorningform.h"
-
-#include "constraintteachersminhoursperafternoonform.h"
-#include "constraintteacherminhoursperafternoonform.h"
-
-#include "constraintteachersminhoursdailyrealdaysform.h"
-#include "constraintteacherminhoursdailyrealdaysform.h"
-
-#include "constraintteacherminrealdaysperweekform.h"
-#include "constraintteachersminrealdaysperweekform.h"
-
-#include "constraintteacherminmorningsperweekform.h"
-#include "constraintteachersminmorningsperweekform.h"
-#include "constraintteacherminafternoonsperweekform.h"
-#include "constraintteachersminafternoonsperweekform.h"
-
-#include "constraintteachermaxactivitytagsperdayfromsetform.h"
-#include "constraintteachersmaxactivitytagsperdayfromsetform.h"
-
-#include "constraintstudentssetmaxactivitytagsperdayfromsetform.h"
-#include "constraintstudentsmaxactivitytagsperdayfromsetform.h"
-
-#include "constraintteachermaxactivitytagsperrealdayfromsetform.h"
-#include "constraintteachersmaxactivitytagsperrealdayfromsetform.h"
-
-#include "constraintstudentssetmaxactivitytagsperrealdayfromsetform.h"
-#include "constraintstudentsmaxactivitytagsperrealdayfromsetform.h"
-
-#include "constraintteachersactivitytagmaxhoursdailyrealdaysform.h"
-#include "constraintteacheractivitytagmaxhoursdailyrealdaysform.h"
-
-#include "constraintroommaxactivitytagsperdayfromsetform.h"
-#include "constraintroommaxactivitytagsperrealdayfromsetform.h"
-#include "constraintroommaxactivitytagsperweekfromsetform.h"
-
-#include "constraintstudentssetmaxgapsperrealdayform.h"
-#include "constraintstudentsmaxgapsperrealdayform.h"
-
-#include "constraintteachersmaxgapsperweekforrealdaysform.h"
-#include "constraintteachermaxgapsperweekforrealdaysform.h"
-#include "constraintstudentssetmaxgapsperweekforrealdaysform.h"
-#include "constraintstudentsmaxgapsperweekforrealdaysform.h"
-
-#include "constraintstudentsafternoonsearlymaxbeginningsatsecondhourform.h"
-#include "constraintstudentssetafternoonsearlymaxbeginningsatsecondhourform.h"
-
-#include "constraintteachersafternoonsearlymaxbeginningsatsecondhourform.h"
-#include "constraintteacherafternoonsearlymaxbeginningsatsecondhourform.h"
-
-#include "constraintstudentsmorningsearlymaxbeginningsatsecondhourform.h"
-#include "constraintstudentssetmorningsearlymaxbeginningsatsecondhourform.h"
-
-#include "constraintteachersmorningsearlymaxbeginningsatsecondhourform.h"
-#include "constraintteachermorningsearlymaxbeginningsatsecondhourform.h"
-
-#include "constraintstudentssetmaxhoursdailyrealdaysform.h"
-#include "constraintstudentsmaxhoursdailyrealdaysform.h"
-
-#include "constraintstudentsminhourspermorningform.h"
-#include "constraintstudentssetminhourspermorningform.h"
-
-#include "constraintstudentsminhoursperafternoonform.h"
-#include "constraintstudentssetminhoursperafternoonform.h"
-
-#include "constraintstudentssetactivitytagmaxhoursdailyrealdaysform.h"
-#include "constraintstudentsactivitytagmaxhoursdailyrealdaysform.h"
-
-#include "constraintteachermorningintervalmaxdaysperweekform.h"
-#include "constraintteachersmorningintervalmaxdaysperweekform.h"
-
-#include "constraintteacherafternoonintervalmaxdaysperweekform.h"
-#include "constraintteachersafternoonintervalmaxdaysperweekform.h"
-
-#include "constraintstudentssetmorningintervalmaxdaysperweekform.h"
-#include "constraintstudentsmorningintervalmaxdaysperweekform.h"
-#include "constraintstudentssetafternoonintervalmaxdaysperweekform.h"
-#include "constraintstudentsafternoonintervalmaxdaysperweekform.h"
-
-#include "constraintstudentssetmaxrealdaysperweekform.h"
-#include "constraintstudentsmaxrealdaysperweekform.h"
-
-#include "constraintstudentssetmaxafternoonsperweekform.h"
-#include "constraintstudentsmaxafternoonsperweekform.h"
-#include "constraintstudentssetmaxmorningsperweekform.h"
-#include "constraintstudentsmaxmorningsperweekform.h"
-
-#include "constraintstudentssetminafternoonsperweekform.h"
-#include "constraintstudentsminafternoonsperweekform.h"
-#include "constraintstudentssetminmorningsperweekform.h"
-#include "constraintstudentsminmorningsperweekform.h"
-
-#include "constraintteachermaxspanperrealdayform.h"
-#include "constraintteachersmaxspanperrealdayform.h"
-#include "constraintstudentssetmaxspanperrealdayform.h"
-#include "constraintstudentsmaxspanperrealdayform.h"
-
-#include "constraintteacherminrestinghoursbetweenmorningandafternoonform.h"
-#include "constraintteachersminrestinghoursbetweenmorningandafternoonform.h"
-#include "constraintstudentssetminrestinghoursbetweenmorningandafternoonform.h"
-#include "constraintstudentsminrestinghoursbetweenmorningandafternoonform.h"
-
-#include "constraintteachernotwoconsecutivedaysform.h"
-#include "constraintteachersnotwoconsecutivedaysform.h"
-
-#include "constraintteachermaxthreeconsecutivedaysform.h"
-#include "constraintteachersmaxthreeconsecutivedaysform.h"
-
-#include "constraintstudentssetmaxthreeconsecutivedaysform.h"
-#include "constraintstudentsmaxthreeconsecutivedaysform.h"
-
-//block-planning
-#include "constraintmaxtotalactivitiesfromsetinselectedtimeslotsform.h"
-
-#include "constraintmaxgapsbetweenactivitiesform.h"
-
-//terms
-#include "constraintactivitiesmaxinatermform.h"
-#include "constraintactivitiesmininatermform.h"
-#include "constraintactivitiesoccupymaxtermsform.h"
 
 #include "termsform.h"
 
@@ -1307,7 +916,7 @@ const QString COMPANY=QString("fet");
 const QString PROGRAM=QString("fettimetabling");
 
 QString INTERFACE_STYLE=QString("");
-QString INTERFACE_COLOR_SCHEME=QString("auto");
+QString INTERFACE_COLOR_SCHEME=QString("automatic");
 
 bool USE_GUI_COLORS=false;
 
@@ -1582,7 +1191,7 @@ FetMainForm::FetMainForm()
 	
 	if(INTERFACE_STYLE!="")
 		setCurrentStyle();
-	if(INTERFACE_COLOR_SCHEME!="auto")
+	if(INTERFACE_COLOR_SCHEME!="automatic")
 		setCurrentColorScheme();
 
 	generation_running=false;
@@ -4844,7 +4453,7 @@ void FetMainForm::setCurrentStyle()
 void FetMainForm::setCurrentColorScheme()
 {
 #if QT_VERSION >= QT_VERSION_CHECK(6,8,0)
-	if(INTERFACE_COLOR_SCHEME=="auto"){
+	if(INTERFACE_COLOR_SCHEME=="automatic"){
 		QGuiApplication::styleHints()->setColorScheme(Qt::ColorScheme::Unknown);
 	}
 	else if(INTERFACE_COLOR_SCHEME=="light"){
@@ -7168,9 +6777,10 @@ void FetMainForm::dataTimeConstraintsTwoActivitiesConsecutiveAction_triggered()
 		return;
 	}
 
-	ConstraintTwoActivitiesConsecutiveForm form(this);
+	/*ConstraintTwoActivitiesConsecutiveForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TWO_ACTIVITIES_CONSECUTIVE);
 }
 
 void FetMainForm::dataTimeConstraintsTwoActivitiesGroupedAction_triggered()
@@ -7187,9 +6797,10 @@ void FetMainForm::dataTimeConstraintsTwoActivitiesGroupedAction_triggered()
 		return;
 	}
 
-	ConstraintTwoActivitiesGroupedForm form(this);
+	/*ConstraintTwoActivitiesGroupedForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TWO_ACTIVITIES_GROUPED);
 }
 
 void FetMainForm::dataTimeConstraintsThreeActivitiesGroupedAction_triggered()
@@ -7206,9 +6817,10 @@ void FetMainForm::dataTimeConstraintsThreeActivitiesGroupedAction_triggered()
 		return;
 	}
 
-	ConstraintThreeActivitiesGroupedForm form(this);
+	/*ConstraintThreeActivitiesGroupedForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_THREE_ACTIVITIES_GROUPED);
 }
 
 void FetMainForm::dataTimeConstraintsTwoActivitiesOrderedAction_triggered()
@@ -7225,9 +6837,10 @@ void FetMainForm::dataTimeConstraintsTwoActivitiesOrderedAction_triggered()
 		return;
 	}
 
-	ConstraintTwoActivitiesOrderedForm form(this);
+	/*ConstraintTwoActivitiesOrderedForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TWO_ACTIVITIES_ORDERED);
 }
 
 void FetMainForm::dataTimeConstraintsTwoSetsOfActivitiesOrderedAction_triggered()
@@ -7244,9 +6857,10 @@ void FetMainForm::dataTimeConstraintsTwoSetsOfActivitiesOrderedAction_triggered(
 		return;
 	}
 
-	ConstraintTwoSetsOfActivitiesOrderedForm form(this);
+	/*ConstraintTwoSetsOfActivitiesOrderedForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED);
 }
 
 void FetMainForm::dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction_triggered()
@@ -7263,9 +6877,10 @@ void FetMainForm::dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction_trigger
 		return;
 	}
 
-	ConstraintTwoActivitiesOrderedIfSameDayForm form(this);
+	/*ConstraintTwoActivitiesOrderedIfSameDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TWO_ACTIVITIES_ORDERED_IF_SAME_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsActivitiesPreferredTimeSlotsAction_triggered()
@@ -7282,9 +6897,10 @@ void FetMainForm::dataTimeConstraintsActivitiesPreferredTimeSlotsAction_triggere
 		return;
 	}
 
-	ConstraintActivitiesPreferredTimeSlotsForm form(this);
+	/*ConstraintActivitiesPreferredTimeSlotsForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS);
 }
 
 void FetMainForm::dataTimeConstraintsActivitiesPreferredStartingTimesAction_triggered()
@@ -7301,9 +6917,10 @@ void FetMainForm::dataTimeConstraintsActivitiesPreferredStartingTimesAction_trig
 		return;
 	}
 
-	ConstraintActivitiesPreferredStartingTimesForm form(this);
+	/*ConstraintActivitiesPreferredStartingTimesForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES);
 }
 
 void FetMainForm::dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction_triggered()
@@ -7320,9 +6937,10 @@ void FetMainForm::dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction_trigg
 		return;
 	}
 
-	ConstraintSubactivitiesPreferredTimeSlotsForm form(this);
+	/*ConstraintSubactivitiesPreferredTimeSlotsForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS);
 }
 
 void FetMainForm::dataTimeConstraintsSubactivitiesPreferredStartingTimesAction_triggered()
@@ -7339,9 +6957,10 @@ void FetMainForm::dataTimeConstraintsSubactivitiesPreferredStartingTimesAction_t
 		return;
 	}
 
-	ConstraintSubactivitiesPreferredStartingTimesForm form(this);
+	/*ConstraintSubactivitiesPreferredStartingTimesForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES);
 }
 
 void FetMainForm::dataTimeConstraintsActivityEndsStudentsDayAction_triggered()
@@ -7358,9 +6977,10 @@ void FetMainForm::dataTimeConstraintsActivityEndsStudentsDayAction_triggered()
 		return;
 	}
 
-	ConstraintActivityEndsStudentsDayForm form(this);
+	/*ConstraintActivityEndsStudentsDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITY_ENDS_STUDENTS_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsActivitiesEndStudentsDayAction_triggered()
@@ -7377,9 +6997,10 @@ void FetMainForm::dataTimeConstraintsActivitiesEndStudentsDayAction_triggered()
 		return;
 	}
 
-	ConstraintActivitiesEndStudentsDayForm form(this);
+	/*ConstraintActivitiesEndStudentsDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_END_STUDENTS_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsActivityEndsTeachersDayAction_triggered()
@@ -7396,9 +7017,10 @@ void FetMainForm::dataTimeConstraintsActivityEndsTeachersDayAction_triggered()
 		return;
 	}
 
-	ConstraintActivityEndsTeachersDayForm form(this);
+	/*ConstraintActivityEndsTeachersDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITY_ENDS_TEACHERS_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsActivitiesEndTeachersDayAction_triggered()
@@ -7415,9 +7037,10 @@ void FetMainForm::dataTimeConstraintsActivitiesEndTeachersDayAction_triggered()
 		return;
 	}
 
-	ConstraintActivitiesEndTeachersDayForm form(this);
+	/*ConstraintActivitiesEndTeachersDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_END_TEACHERS_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsActivityBeginsStudentsDayAction_triggered()
@@ -7434,9 +7057,10 @@ void FetMainForm::dataTimeConstraintsActivityBeginsStudentsDayAction_triggered()
 		return;
 	}
 
-	ConstraintActivityBeginsStudentsDayForm form(this);
+	/*ConstraintActivityBeginsStudentsDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITY_BEGINS_STUDENTS_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsActivitiesBeginStudentsDayAction_triggered()
@@ -7453,9 +7077,10 @@ void FetMainForm::dataTimeConstraintsActivitiesBeginStudentsDayAction_triggered(
 		return;
 	}
 
-	ConstraintActivitiesBeginStudentsDayForm form(this);
+	/*ConstraintActivitiesBeginStudentsDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_BEGIN_STUDENTS_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsActivityBeginsTeachersDayAction_triggered()
@@ -7472,9 +7097,10 @@ void FetMainForm::dataTimeConstraintsActivityBeginsTeachersDayAction_triggered()
 		return;
 	}
 
-	ConstraintActivityBeginsTeachersDayForm form(this);
+	/*ConstraintActivityBeginsTeachersDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITY_BEGINS_TEACHERS_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsActivitiesBeginTeachersDayAction_triggered()
@@ -7491,9 +7117,10 @@ void FetMainForm::dataTimeConstraintsActivitiesBeginTeachersDayAction_triggered(
 		return;
 	}
 
-	ConstraintActivitiesBeginTeachersDayForm form(this);
+	/*ConstraintActivitiesBeginTeachersDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsActivitiesSameStartingTimeAction_triggered()
@@ -7510,9 +7137,10 @@ void FetMainForm::dataTimeConstraintsActivitiesSameStartingTimeAction_triggered(
 		return;
 	}
 
-	ConstraintActivitiesSameStartingTimeForm form(this);
+	/*ConstraintActivitiesSameStartingTimeForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME);
 }
 
 void FetMainForm::dataTimeConstraintsActivitiesSameStartingHourAction_triggered()
@@ -7529,9 +7157,10 @@ void FetMainForm::dataTimeConstraintsActivitiesSameStartingHourAction_triggered(
 		return;
 	}
 
-	ConstraintActivitiesSameStartingHourForm form(this);
+	/*ConstraintActivitiesSameStartingHourForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR);
 }
 
 void FetMainForm::dataTimeConstraintsActivitiesSameStartingDayAction_triggered()
@@ -7548,9 +7177,10 @@ void FetMainForm::dataTimeConstraintsActivitiesSameStartingDayAction_triggered()
 		return;
 	}
 
-	ConstraintActivitiesSameStartingDayForm form(this);
+	/*ConstraintActivitiesSameStartingDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction_triggered()
@@ -7567,9 +7197,10 @@ void FetMainForm::dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAc
 		return;
 	}
 
-	ConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm form(this);
+	/*ConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_OCCUPY_MAX_TIME_SLOTS_FROM_SELECTION);
 }
 
 void FetMainForm::dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction_triggered()
@@ -7586,9 +7217,10 @@ void FetMainForm::dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAc
 		return;
 	}
 
-	ConstraintActivitiesOccupyMinTimeSlotsFromSelectionForm form(this);
+	/*ConstraintActivitiesOccupyMinTimeSlotsFromSelectionForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_OCCUPY_MIN_TIME_SLOTS_FROM_SELECTION);
 }
 
 void FetMainForm::dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction_triggered()
@@ -7605,9 +7237,10 @@ void FetMainForm::dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlot
 		return;
 	}
 
-	ConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm form(this);
+	/*ConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_MAX_SIMULTANEOUS_IN_SELECTED_TIME_SLOTS);
 }
 
 void FetMainForm::dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction_triggered()
@@ -7624,9 +7257,10 @@ void FetMainForm::dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlot
 		return;
 	}
 
-	ConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm form(this);
+	/*ConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_MIN_SIMULTANEOUS_IN_SELECTED_TIME_SLOTS);
 }
 
 void FetMainForm::dataTimeConstraintsMaxTotalActivitiesFromSetInSelectedTimeSlotsAction_triggered()
@@ -7643,9 +7277,10 @@ void FetMainForm::dataTimeConstraintsMaxTotalActivitiesFromSetInSelectedTimeSlot
 		return;
 	}
 
-	ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlotsForm form(this);
+	/*ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlotsForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_MAX_TOTAL_ACTIVITIES_FROM_SET_IN_SELECTED_TIME_SLOTS);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherNotAvailableTimesAction_triggered()
@@ -7662,9 +7297,10 @@ void FetMainForm::dataTimeConstraintsTeacherNotAvailableTimesAction_triggered()
 		return;
 	}
 
-	ConstraintTeacherNotAvailableTimesForm form(this);
+	/*ConstraintTeacherNotAvailableTimesForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_NOT_AVAILABLE_TIMES);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersNotAvailableTimesAction_triggered()
@@ -7719,9 +7355,10 @@ void FetMainForm::dataTimeConstraintsBasicCompulsoryTimeAction_triggered()
 		return;
 	}
 
-	ConstraintBasicCompulsoryTimeForm form(this);
+	/*ConstraintBasicCompulsoryTimeForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_BASIC_COMPULSORY_TIME);
 }
 
 void FetMainForm::dataSpaceConstraintsBasicCompulsorySpaceAction_triggered()
@@ -7738,9 +7375,10 @@ void FetMainForm::dataSpaceConstraintsBasicCompulsorySpaceAction_triggered()
 		return;
 	}
 
-	ConstraintBasicCompulsorySpaceForm form(this);
+	/*ConstraintBasicCompulsorySpaceForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_BASIC_COMPULSORY_SPACE);
 }
 
 void FetMainForm::dataSpaceConstraintsRoomNotAvailableTimesAction_triggered()
@@ -7757,9 +7395,10 @@ void FetMainForm::dataSpaceConstraintsRoomNotAvailableTimesAction_triggered()
 		return;
 	}
 
-	ConstraintRoomNotAvailableTimesForm form(this);
+	/*ConstraintRoomNotAvailableTimesForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_ROOM_NOT_AVAILABLE_TIMES);
 }
 
 void FetMainForm::dataSpaceConstraintsTeacherRoomNotAvailableTimesAction_triggered()
@@ -7776,9 +7415,10 @@ void FetMainForm::dataSpaceConstraintsTeacherRoomNotAvailableTimesAction_trigger
 		return;
 	}
 	
-	ConstraintTeacherRoomNotAvailableTimesForm form(this);
+	/*ConstraintTeacherRoomNotAvailableTimesForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHER_ROOM_NOT_AVAILABLE_TIMES);
 }
 
 void FetMainForm::dataSpaceConstraintsActivityPreferredRoomAction_triggered()
@@ -7795,9 +7435,10 @@ void FetMainForm::dataSpaceConstraintsActivityPreferredRoomAction_triggered()
 		return;
 	}
 
-	ConstraintActivityPreferredRoomForm form(this);
+	/*ConstraintActivityPreferredRoomForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_ACTIVITY_PREFERRED_ROOM);
 }
 
 void FetMainForm::dataSpaceConstraintsActivityPreferredRoomsAction_triggered()
@@ -7814,9 +7455,10 @@ void FetMainForm::dataSpaceConstraintsActivityPreferredRoomsAction_triggered()
 		return;
 	}
 
-	ConstraintActivityPreferredRoomsForm form(this);
+	/*ConstraintActivityPreferredRoomsForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_ACTIVITY_PREFERRED_ROOMS);
 }
 
 void FetMainForm::dataSpaceConstraintsSubjectPreferredRoomAction_triggered()
@@ -7833,9 +7475,10 @@ void FetMainForm::dataSpaceConstraintsSubjectPreferredRoomAction_triggered()
 		return;
 	}
 
-	ConstraintSubjectPreferredRoomForm form(this);
+	/*ConstraintSubjectPreferredRoomForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_SUBJECT_PREFERRED_ROOM);
 }
 
 void FetMainForm::dataSpaceConstraintsSubjectPreferredRoomsAction_triggered()
@@ -7852,9 +7495,10 @@ void FetMainForm::dataSpaceConstraintsSubjectPreferredRoomsAction_triggered()
 		return;
 	}
 
-	ConstraintSubjectPreferredRoomsForm form(this);
+	/*ConstraintSubjectPreferredRoomsForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_SUBJECT_PREFERRED_ROOMS);
 }
 
 void FetMainForm::dataSpaceConstraintsSubjectActivityTagPreferredRoomAction_triggered()
@@ -7871,9 +7515,10 @@ void FetMainForm::dataSpaceConstraintsSubjectActivityTagPreferredRoomAction_trig
 		return;
 	}
 
-	ConstraintSubjectActivityTagPreferredRoomForm form(this);
+	/*ConstraintSubjectActivityTagPreferredRoomForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOM);
 }
 
 void FetMainForm::dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction_triggered()
@@ -7890,9 +7535,10 @@ void FetMainForm::dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction_tri
 		return;
 	}
 
-	ConstraintSubjectActivityTagPreferredRoomsForm form(this);
+	/*ConstraintSubjectActivityTagPreferredRoomsForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOMS);
 }
 
 ///added 6 apr 2009
@@ -7910,9 +7556,10 @@ void FetMainForm::dataSpaceConstraintsActivityTagPreferredRoomAction_triggered()
 		return;
 	}
 
-	ConstraintActivityTagPreferredRoomForm form(this);
+	/*ConstraintActivityTagPreferredRoomForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOM);
 }
 
 void FetMainForm::dataSpaceConstraintsActivityTagPreferredRoomsAction_triggered()
@@ -7929,9 +7576,10 @@ void FetMainForm::dataSpaceConstraintsActivityTagPreferredRoomsAction_triggered(
 		return;
 	}
 
-	ConstraintActivityTagPreferredRoomsForm form(this);
+	/*ConstraintActivityTagPreferredRoomsForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOMS);
 }
 ///
 
@@ -7949,9 +7597,10 @@ void FetMainForm::dataSpaceConstraintsStudentsSetHomeRoomAction_triggered()
 		return;
 	}
 
-	ConstraintStudentsSetHomeRoomForm form(this);
+	/*ConstraintStudentsSetHomeRoomForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_STUDENTS_SET_HOME_ROOM);
 }
 
 void FetMainForm::dataSpaceConstraintsStudentsSetHomeRoomsAction_triggered()
@@ -7968,11 +7617,11 @@ void FetMainForm::dataSpaceConstraintsStudentsSetHomeRoomsAction_triggered()
 		return;
 	}
 
-	ConstraintStudentsSetHomeRoomsForm form(this);
+	/*ConstraintStudentsSetHomeRoomsForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_STUDENTS_SET_HOME_ROOMS);
 }
-
 
 void FetMainForm::dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction_triggered()
 {
@@ -7988,9 +7637,10 @@ void FetMainForm::dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction_
 		return;
 	}
 
-	ConstraintStudentsSetMaxBuildingChangesPerDayForm form(this);
+	/*ConstraintStudentsSetMaxBuildingChangesPerDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_DAY);
 }
 
 void FetMainForm::dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction_triggered()
@@ -8007,9 +7657,10 @@ void FetMainForm::dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction_tri
 		return;
 	}
 
-	ConstraintStudentsMaxBuildingChangesPerDayForm form(this);
+	/*ConstraintStudentsMaxBuildingChangesPerDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_DAY);
 }
 
 void FetMainForm::dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction_triggered()
@@ -8026,9 +7677,10 @@ void FetMainForm::dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction
 		return;
 	}
 
-	ConstraintStudentsSetMaxBuildingChangesPerWeekForm form(this);
+	/*ConstraintStudentsSetMaxBuildingChangesPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_WEEK);
 }
 
 void FetMainForm::dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction_triggered()
@@ -8045,9 +7697,10 @@ void FetMainForm::dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction_tr
 		return;
 	}
 
-	ConstraintStudentsMaxBuildingChangesPerWeekForm form(this);
+	/*ConstraintStudentsMaxBuildingChangesPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_WEEK);
 }
 
 void FetMainForm::dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction_triggered()
@@ -8064,9 +7717,10 @@ void FetMainForm::dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAc
 		return;
 	}
 
-	ConstraintStudentsSetMinGapsBetweenBuildingChangesForm form(this);
+	/*ConstraintStudentsSetMinGapsBetweenBuildingChangesForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_BUILDING_CHANGES);
 }
 
 void FetMainForm::dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction_triggered()
@@ -8083,9 +7737,10 @@ void FetMainForm::dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesActio
 		return;
 	}
 
-	ConstraintStudentsMinGapsBetweenBuildingChangesForm form(this);
+	/*ConstraintStudentsMinGapsBetweenBuildingChangesForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_BUILDING_CHANGES);
 }
 
 void FetMainForm::dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction_triggered()
@@ -8102,10 +7757,12 @@ void FetMainForm::dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction_trig
 		return;
 	}
 
-	ConstraintTeacherMaxBuildingChangesPerDayForm form(this);
+	/*ConstraintTeacherMaxBuildingChangesPerDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_DAY);
 }
+
 void FetMainForm::dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction_triggered()
 {
 	if(!gt.rules.initialized){
@@ -8120,9 +7777,10 @@ void FetMainForm::dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction_tri
 		return;
 	}
 
-	ConstraintTeachersMaxBuildingChangesPerDayForm form(this);
+	/*ConstraintTeachersMaxBuildingChangesPerDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_DAY);
 }
 
 void FetMainForm::dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction_triggered()
@@ -8139,9 +7797,10 @@ void FetMainForm::dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction_tri
 		return;
 	}
 
-	ConstraintTeacherMaxBuildingChangesPerWeekForm form(this);
+	/*ConstraintTeacherMaxBuildingChangesPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_WEEK);
 }
 
 void FetMainForm::dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction_triggered()
@@ -8158,9 +7817,10 @@ void FetMainForm::dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction_tr
 		return;
 	}
 
-	ConstraintTeachersMaxBuildingChangesPerWeekForm form(this);
+	/*ConstraintTeachersMaxBuildingChangesPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_WEEK);
 }
 
 void FetMainForm::dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction_triggered()
@@ -8177,9 +7837,10 @@ void FetMainForm::dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction
 		return;
 	}
 
-	ConstraintTeacherMinGapsBetweenBuildingChangesForm form(this);
+	/*ConstraintTeacherMinGapsBetweenBuildingChangesForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_BUILDING_CHANGES);
 }
 
 void FetMainForm::dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction_triggered()
@@ -8196,9 +7857,10 @@ void FetMainForm::dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesActio
 		return;
 	}
 
-	ConstraintTeachersMinGapsBetweenBuildingChangesForm form(this);
+	/*ConstraintTeachersMinGapsBetweenBuildingChangesForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_BUILDING_CHANGES);
 }
 
 void FetMainForm::dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction_triggered()
@@ -8215,9 +7877,10 @@ void FetMainForm::dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction_trig
 		return;
 	}
 
-	ConstraintStudentsSetMaxRoomChangesPerDayForm form(this);
+	/*ConstraintStudentsSetMaxRoomChangesPerDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_DAY);
 }
 
 void FetMainForm::dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction_triggered()
@@ -8234,9 +7897,10 @@ void FetMainForm::dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction_trigger
 		return;
 	}
 
-	ConstraintStudentsMaxRoomChangesPerDayForm form(this);
+	/*ConstraintStudentsMaxRoomChangesPerDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_DAY);
 }
 
 void FetMainForm::dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction_triggered()
@@ -8253,9 +7917,10 @@ void FetMainForm::dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction_tri
 		return;
 	}
 
-	ConstraintStudentsSetMaxRoomChangesPerWeekForm form(this);
+	/*ConstraintStudentsSetMaxRoomChangesPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_WEEK);
 }
 
 void FetMainForm::dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction_triggered()
@@ -8272,9 +7937,10 @@ void FetMainForm::dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction_trigge
 		return;
 	}
 
-	ConstraintStudentsMaxRoomChangesPerWeekForm form(this);
+	/*ConstraintStudentsMaxRoomChangesPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_WEEK);
 }
 
 void FetMainForm::dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction_triggered()
@@ -8291,9 +7957,10 @@ void FetMainForm::dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction
 		return;
 	}
 
-	ConstraintStudentsSetMinGapsBetweenRoomChangesForm form(this);
+	/*ConstraintStudentsSetMinGapsBetweenRoomChangesForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ROOM_CHANGES);
 }
 
 void FetMainForm::dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction_triggered()
@@ -8310,9 +7977,10 @@ void FetMainForm::dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction_tr
 		return;
 	}
 
-	ConstraintStudentsMinGapsBetweenRoomChangesForm form(this);
+	/*ConstraintStudentsMinGapsBetweenRoomChangesForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ROOM_CHANGES);
 }
 
 void FetMainForm::dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction_triggered()
@@ -8329,9 +7997,10 @@ void FetMainForm::dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction_triggere
 		return;
 	}
 
-	ConstraintTeacherMaxRoomChangesPerDayForm form(this);
+	/*ConstraintTeacherMaxRoomChangesPerDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_DAY);
 }
 void FetMainForm::dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction_triggered()
 {
@@ -8347,9 +8016,10 @@ void FetMainForm::dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction_trigger
 		return;
 	}
 
-	ConstraintTeachersMaxRoomChangesPerDayForm form(this);
+	/*ConstraintTeachersMaxRoomChangesPerDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_DAY);
 }
 
 void FetMainForm::dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction_triggered()
@@ -8366,9 +8036,10 @@ void FetMainForm::dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction_trigger
 		return;
 	}
 
-	ConstraintTeacherMaxRoomChangesPerWeekForm form(this);
+	/*ConstraintTeacherMaxRoomChangesPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_WEEK);
 }
 
 void FetMainForm::dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction_triggered()
@@ -8385,9 +8056,10 @@ void FetMainForm::dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction_trigge
 		return;
 	}
 
-	ConstraintTeachersMaxRoomChangesPerWeekForm form(this);
+	/*ConstraintTeachersMaxRoomChangesPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_WEEK);
 }
 
 void FetMainForm::dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction_triggered()
@@ -8404,9 +8076,10 @@ void FetMainForm::dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction_tri
 		return;
 	}
 
-	ConstraintTeacherMinGapsBetweenRoomChangesForm form(this);
+	/*ConstraintTeacherMinGapsBetweenRoomChangesForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ROOM_CHANGES);
 }
 
 void FetMainForm::dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction_triggered()
@@ -8423,9 +8096,10 @@ void FetMainForm::dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction_tr
 		return;
 	}
 
-	ConstraintTeachersMinGapsBetweenRoomChangesForm form(this);
+	/*ConstraintTeachersMinGapsBetweenRoomChangesForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ROOM_CHANGES);
 }
 
 void FetMainForm::dataSpaceConstraintsTeacherHomeRoomAction_triggered()
@@ -8442,9 +8116,10 @@ void FetMainForm::dataSpaceConstraintsTeacherHomeRoomAction_triggered()
 		return;
 	}
 
-	ConstraintTeacherHomeRoomForm form(this);
+	/*ConstraintTeacherHomeRoomForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHER_HOME_ROOM);
 }
 
 void FetMainForm::dataSpaceConstraintsTeacherHomeRoomsAction_triggered()
@@ -8461,9 +8136,10 @@ void FetMainForm::dataSpaceConstraintsTeacherHomeRoomsAction_triggered()
 		return;
 	}
 
-	ConstraintTeacherHomeRoomsForm form(this);
+	/*ConstraintTeacherHomeRoomsForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHER_HOME_ROOMS);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetNotAvailableTimesAction_triggered()
@@ -8480,9 +8156,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetNotAvailableTimesAction_triggere
 		return;
 	}
 
-	ConstraintStudentsSetNotAvailableTimesForm form(this);
+	/*ConstraintStudentsSetNotAvailableTimesForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_NOT_AVAILABLE_TIMES);
 }
 
 void FetMainForm::dataTimeConstraintsBreakTimesAction_triggered()
@@ -8499,9 +8176,10 @@ void FetMainForm::dataTimeConstraintsBreakTimesAction_triggered()
 		return;
 	}
 
-	ConstraintBreakTimesForm form(this);
+	/*ConstraintBreakTimesForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_BREAK_TIMES);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMaxDaysPerWeekAction_triggered()
@@ -8518,9 +8196,10 @@ void FetMainForm::dataTimeConstraintsTeacherMaxDaysPerWeekAction_triggered()
 		return;
 	}
 
-	ConstraintTeacherMaxDaysPerWeekForm form(this);
+	/*ConstraintTeacherMaxDaysPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MAX_DAYS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMaxDaysPerWeekAction_triggered()
@@ -8537,9 +8216,10 @@ void FetMainForm::dataTimeConstraintsTeachersMaxDaysPerWeekAction_triggered()
 		return;
 	}
 
-	ConstraintTeachersMaxDaysPerWeekForm form(this);
+	/*ConstraintTeachersMaxDaysPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MAX_DAYS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMinDaysPerWeekAction_triggered()
@@ -8556,9 +8236,10 @@ void FetMainForm::dataTimeConstraintsTeacherMinDaysPerWeekAction_triggered()
 		return;
 	}
 
-	ConstraintTeacherMinDaysPerWeekForm form(this);
+	/*ConstraintTeacherMinDaysPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MIN_DAYS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMinDaysPerWeekAction_triggered()
@@ -8575,9 +8256,10 @@ void FetMainForm::dataTimeConstraintsTeachersMinDaysPerWeekAction_triggered()
 		return;
 	}
 
-	ConstraintTeachersMinDaysPerWeekForm form(this);
+	/*ConstraintTeachersMinDaysPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MIN_DAYS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction_triggered()
@@ -8594,9 +8276,10 @@ void FetMainForm::dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction_trigger
 		return;
 	}
 
-	ConstraintTeacherIntervalMaxDaysPerWeekForm form(this);
+	/*ConstraintTeacherIntervalMaxDaysPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_INTERVAL_MAX_DAYS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction_triggered()
@@ -8613,9 +8296,10 @@ void FetMainForm::dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction_trigge
 		return;
 	}
 
-	ConstraintTeachersIntervalMaxDaysPerWeekForm form(this);
+	/*ConstraintTeachersIntervalMaxDaysPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_INTERVAL_MAX_DAYS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMaxDaysPerWeekAction_triggered()
@@ -8632,9 +8316,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxDaysPerWeekAction_triggered()
 		return;
 	}
 
-	ConstraintStudentsSetMaxDaysPerWeekForm form(this);
+	/*ConstraintStudentsSetMaxDaysPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MAX_DAYS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMaxDaysPerWeekAction_triggered()
@@ -8651,9 +8336,10 @@ void FetMainForm::dataTimeConstraintsStudentsMaxDaysPerWeekAction_triggered()
 		return;
 	}
 
-	ConstraintStudentsMaxDaysPerWeekForm form(this);
+	/*ConstraintStudentsMaxDaysPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MAX_DAYS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction_triggered()
@@ -8670,9 +8356,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction_tri
 		return;
 	}
 
-	ConstraintStudentsSetIntervalMaxDaysPerWeekForm form(this);
+	/*ConstraintStudentsSetIntervalMaxDaysPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_INTERVAL_MAX_DAYS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction_triggered()
@@ -8689,9 +8376,10 @@ void FetMainForm::dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction_trigge
 		return;
 	}
 
-	ConstraintStudentsIntervalMaxDaysPerWeekForm form(this);
+	/*ConstraintStudentsIntervalMaxDaysPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_INTERVAL_MAX_DAYS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMaxHoursDailyAction_triggered()
@@ -8708,9 +8396,10 @@ void FetMainForm::dataTimeConstraintsTeachersMaxHoursDailyAction_triggered()
 		return;
 	}
 
-	ConstraintTeachersMaxHoursDailyForm form(this);
+	/*ConstraintTeachersMaxHoursDailyForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MAX_HOURS_DAILY);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMaxHoursDailyInIntervalAction_triggered()
@@ -8727,9 +8416,10 @@ void FetMainForm::dataTimeConstraintsTeachersMaxHoursDailyInIntervalAction_trigg
 		return;
 	}
 
-	ConstraintTeachersMaxHoursDailyInIntervalForm form(this);
+	/*ConstraintTeachersMaxHoursDailyInIntervalForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MAX_HOURS_DAILY_IN_INTERVAL);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction_triggered()
@@ -8746,9 +8436,10 @@ void FetMainForm::dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction_trigge
 		return;
 	}
 
-	ConstraintTeacherMaxHoursDailyInIntervalForm form(this);
+	/*ConstraintTeacherMaxHoursDailyInIntervalForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MAX_HOURS_DAILY_IN_INTERVAL);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction_triggered()
@@ -8765,9 +8456,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction_tr
 		return;
 	}
 
-	ConstraintStudentsSetMaxHoursDailyInIntervalForm form(this);
+	/*ConstraintStudentsSetMaxHoursDailyInIntervalForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY_IN_INTERVAL);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction_triggered()
@@ -8784,9 +8476,10 @@ void FetMainForm::dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction_trigg
 		return;
 	}
 
-	ConstraintStudentsMaxHoursDailyInIntervalForm form(this);
+	/*ConstraintStudentsMaxHoursDailyInIntervalForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MAX_HOURS_DAILY_IN_INTERVAL);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMaxHoursDailyAction_triggered()
@@ -8803,9 +8496,10 @@ void FetMainForm::dataTimeConstraintsTeacherMaxHoursDailyAction_triggered()
 		return;
 	}
 
-	ConstraintTeacherMaxHoursDailyForm form(this);
+	/*ConstraintTeacherMaxHoursDailyForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MAX_HOURS_DAILY);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMaxHoursContinuouslyAction_triggered()
@@ -8822,9 +8516,10 @@ void FetMainForm::dataTimeConstraintsTeachersMaxHoursContinuouslyAction_triggere
 		return;
 	}
 
-	ConstraintTeachersMaxHoursContinuouslyForm form(this);
+	/*ConstraintTeachersMaxHoursContinuouslyForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MAX_HOURS_CONTINUOUSLY);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMaxHoursContinuouslyAction_triggered()
@@ -8841,9 +8536,10 @@ void FetMainForm::dataTimeConstraintsTeacherMaxHoursContinuouslyAction_triggered
 		return;
 	}
 
-	ConstraintTeacherMaxHoursContinuouslyForm form(this);
+	/*ConstraintTeacherMaxHoursContinuouslyForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MAX_HOURS_CONTINUOUSLY);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction_triggered()
@@ -8860,9 +8556,10 @@ void FetMainForm::dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyActi
 		return;
 	}
 
-	ConstraintTeachersActivityTagMaxHoursContinuouslyForm form(this);
+	/*ConstraintTeachersActivityTagMaxHoursContinuouslyForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction_triggered()
@@ -8879,9 +8576,10 @@ void FetMainForm::dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyActio
 		return;
 	}
 
-	ConstraintTeacherActivityTagMaxHoursContinuouslyForm form(this);
+	/*ConstraintTeacherActivityTagMaxHoursContinuouslyForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction_triggered()
@@ -8898,9 +8596,10 @@ void FetMainForm::dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction_trig
 		return;
 	}
 	
-	ConstraintTeachersActivityTagMaxHoursDailyForm form(this);
+	/*ConstraintTeachersActivityTagMaxHoursDailyForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_ACTIVITY_TAG_MAX_HOURS_DAILY);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction_triggered()
@@ -8917,9 +8616,10 @@ void FetMainForm::dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction_trigg
 		return;
 	}
 
-	ConstraintTeacherActivityTagMaxHoursDailyForm form(this);
+	/*ConstraintTeacherActivityTagMaxHoursDailyForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_DAILY);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersActivityTagMinHoursDailyAction_triggered()
@@ -8936,9 +8636,10 @@ void FetMainForm::dataTimeConstraintsTeachersActivityTagMinHoursDailyAction_trig
 		return;
 	}
 	
-	ConstraintTeachersActivityTagMinHoursDailyForm form(this);
+	/*ConstraintTeachersActivityTagMinHoursDailyForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_ACTIVITY_TAG_MIN_HOURS_DAILY);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherActivityTagMinHoursDailyAction_triggered()
@@ -8955,9 +8656,10 @@ void FetMainForm::dataTimeConstraintsTeacherActivityTagMinHoursDailyAction_trigg
 		return;
 	}
 
-	ConstraintTeacherActivityTagMinHoursDailyForm form(this);
+	/*ConstraintTeacherActivityTagMinHoursDailyForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_ACTIVITY_TAG_MIN_HOURS_DAILY);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMinHoursDailyAction_triggered()
@@ -8974,9 +8676,10 @@ void FetMainForm::dataTimeConstraintsTeachersMinHoursDailyAction_triggered()
 		return;
 	}
 
-	ConstraintTeachersMinHoursDailyForm form(this);
+	/*ConstraintTeachersMinHoursDailyForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MIN_HOURS_DAILY);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMinHoursDailyAction_triggered()
@@ -8993,9 +8696,10 @@ void FetMainForm::dataTimeConstraintsTeacherMinHoursDailyAction_triggered()
 		return;
 	}
 
-	ConstraintTeacherMinHoursDailyForm form(this);
+	/*ConstraintTeacherMinHoursDailyForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MIN_HOURS_DAILY);
 }
 
 void FetMainForm::dataTimeConstraintsActivityPreferredStartingTimeAction_triggered()
@@ -9012,9 +8716,10 @@ void FetMainForm::dataTimeConstraintsActivityPreferredStartingTimeAction_trigger
 		return;
 	}
 
-	ConstraintActivityPreferredStartingTimeForm form(this);
+	/*ConstraintActivityPreferredStartingTimeForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerWeekAction_triggered()
@@ -9031,9 +8736,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerWeekAction_triggered()
 		return;
 	}
 
-	ConstraintStudentsSetMaxGapsPerWeekForm form(this);
+	/*ConstraintStudentsSetMaxGapsPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMaxGapsPerWeekAction_triggered()
@@ -9050,9 +8756,10 @@ void FetMainForm::dataTimeConstraintsStudentsMaxGapsPerWeekAction_triggered()
 		return;
 	}
 
-	ConstraintStudentsMaxGapsPerWeekForm form(this);
+	/*ConstraintStudentsMaxGapsPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MAX_GAPS_PER_WEEK);
 }
 
 //terms
@@ -9070,9 +8777,10 @@ void FetMainForm::dataTimeConstraintsActivitiesMaxInATermAction_triggered()
 		return;
 	}
 
-	ConstraintActivitiesMaxInATermForm form(this);
+	/*ConstraintActivitiesMaxInATermForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_MAX_IN_A_TERM);
 }
 
 void FetMainForm::dataTimeConstraintsActivitiesMinInATermAction_triggered()
@@ -9089,9 +8797,10 @@ void FetMainForm::dataTimeConstraintsActivitiesMinInATermAction_triggered()
 		return;
 	}
 
-	ConstraintActivitiesMinInATermForm form(this);
+	/*ConstraintActivitiesMinInATermForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_MIN_IN_A_TERM);
 }
 
 void FetMainForm::dataTimeConstraintsActivitiesOccupyMaxTermsAction_triggered()
@@ -9108,9 +8817,10 @@ void FetMainForm::dataTimeConstraintsActivitiesOccupyMaxTermsAction_triggered()
 		return;
 	}
 
-	ConstraintActivitiesOccupyMaxTermsForm form(this);
+	/*ConstraintActivitiesOccupyMaxTermsForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_OCCUPY_MAX_TERMS);
 }
 
 //2024-02-09
@@ -9128,9 +8838,10 @@ void FetMainForm::dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayInInter
 		return;
 	}
 
-	ConstraintStudentsSetMaxBuildingChangesPerDayInIntervalForm form(this);
+	/*ConstraintStudentsSetMaxBuildingChangesPerDayInIntervalForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL);
 }
 
 void FetMainForm::dataSpaceConstraintsStudentsMaxBuildingChangesPerDayInIntervalAction_triggered()
@@ -9147,9 +8858,10 @@ void FetMainForm::dataSpaceConstraintsStudentsMaxBuildingChangesPerDayInInterval
 		return;
 	}
 
-	ConstraintStudentsMaxBuildingChangesPerDayInIntervalForm form(this);
+	/*ConstraintStudentsMaxBuildingChangesPerDayInIntervalForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL);
 }
 
 void FetMainForm::dataSpaceConstraintsTeacherMaxBuildingChangesPerDayInIntervalAction_triggered()
@@ -9166,9 +8878,10 @@ void FetMainForm::dataSpaceConstraintsTeacherMaxBuildingChangesPerDayInIntervalA
 		return;
 	}
 
-	ConstraintTeacherMaxBuildingChangesPerDayInIntervalForm form(this);
+	/*ConstraintTeacherMaxBuildingChangesPerDayInIntervalForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL);
 }
 
 void FetMainForm::dataSpaceConstraintsTeachersMaxBuildingChangesPerDayInIntervalAction_triggered()
@@ -9185,9 +8898,10 @@ void FetMainForm::dataSpaceConstraintsTeachersMaxBuildingChangesPerDayInInterval
 		return;
 	}
 
-	ConstraintTeachersMaxBuildingChangesPerDayInIntervalForm form(this);
+	/*ConstraintTeachersMaxBuildingChangesPerDayInIntervalForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL);
 }
 
 void FetMainForm::dataSpaceConstraintsStudentsSetMaxBuildingChangesPerRealDayInIntervalAction_triggered()
@@ -9204,9 +8918,10 @@ void FetMainForm::dataSpaceConstraintsStudentsSetMaxBuildingChangesPerRealDayInI
 		return;
 	}
 
-	ConstraintStudentsSetMaxBuildingChangesPerRealDayInIntervalForm form(this);
+	/*ConstraintStudentsSetMaxBuildingChangesPerRealDayInIntervalForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL);
 }
 
 void FetMainForm::dataSpaceConstraintsStudentsMaxBuildingChangesPerRealDayInIntervalAction_triggered()
@@ -9223,9 +8938,10 @@ void FetMainForm::dataSpaceConstraintsStudentsMaxBuildingChangesPerRealDayInInte
 		return;
 	}
 
-	ConstraintStudentsMaxBuildingChangesPerRealDayInIntervalForm form(this);
+	/*ConstraintStudentsMaxBuildingChangesPerRealDayInIntervalForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL);
 }
 
 void FetMainForm::dataSpaceConstraintsTeacherMaxBuildingChangesPerRealDayInIntervalAction_triggered()
@@ -9242,9 +8958,10 @@ void FetMainForm::dataSpaceConstraintsTeacherMaxBuildingChangesPerRealDayInInter
 		return;
 	}
 
-	ConstraintTeacherMaxBuildingChangesPerRealDayInIntervalForm form(this);
+	/*ConstraintTeacherMaxBuildingChangesPerRealDayInIntervalForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL);
 }
 
 void FetMainForm::dataSpaceConstraintsTeachersMaxBuildingChangesPerRealDayInIntervalAction_triggered()
@@ -9261,9 +8978,10 @@ void FetMainForm::dataSpaceConstraintsTeachersMaxBuildingChangesPerRealDayInInte
 		return;
 	}
 
-	ConstraintTeachersMaxBuildingChangesPerRealDayInIntervalForm form(this);
+	/*ConstraintTeachersMaxBuildingChangesPerRealDayInIntervalForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL);
 }
 
 //2024-02-19
@@ -9281,9 +8999,10 @@ void FetMainForm::dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayInIntervalA
 		return;
 	}
 
-	ConstraintStudentsSetMaxRoomChangesPerDayInIntervalForm form(this);
+	/*ConstraintStudentsSetMaxRoomChangesPerDayInIntervalForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_DAY_IN_INTERVAL);
 }
 
 void FetMainForm::dataSpaceConstraintsStudentsMaxRoomChangesPerDayInIntervalAction_triggered()
@@ -9300,9 +9019,10 @@ void FetMainForm::dataSpaceConstraintsStudentsMaxRoomChangesPerDayInIntervalActi
 		return;
 	}
 
-	ConstraintStudentsMaxRoomChangesPerDayInIntervalForm form(this);
+	/*ConstraintStudentsMaxRoomChangesPerDayInIntervalForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_DAY_IN_INTERVAL);
 }
 
 void FetMainForm::dataSpaceConstraintsTeacherMaxRoomChangesPerDayInIntervalAction_triggered()
@@ -9319,9 +9039,10 @@ void FetMainForm::dataSpaceConstraintsTeacherMaxRoomChangesPerDayInIntervalActio
 		return;
 	}
 
-	ConstraintTeacherMaxRoomChangesPerDayInIntervalForm form(this);
+	/*ConstraintTeacherMaxRoomChangesPerDayInIntervalForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_DAY_IN_INTERVAL);
 }
 
 void FetMainForm::dataSpaceConstraintsTeachersMaxRoomChangesPerDayInIntervalAction_triggered()
@@ -9338,9 +9059,10 @@ void FetMainForm::dataSpaceConstraintsTeachersMaxRoomChangesPerDayInIntervalActi
 		return;
 	}
 
-	ConstraintTeachersMaxRoomChangesPerDayInIntervalForm form(this);
+	/*ConstraintTeachersMaxRoomChangesPerDayInIntervalForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_DAY_IN_INTERVAL);
 }
 
 void FetMainForm::dataSpaceConstraintsStudentsSetMaxRoomChangesPerRealDayInIntervalAction_triggered()
@@ -9357,9 +9079,10 @@ void FetMainForm::dataSpaceConstraintsStudentsSetMaxRoomChangesPerRealDayInInter
 		return;
 	}
 
-	ConstraintStudentsSetMaxRoomChangesPerRealDayInIntervalForm form(this);
+	/*ConstraintStudentsSetMaxRoomChangesPerRealDayInIntervalForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_REAL_DAY_IN_INTERVAL);
 }
 
 void FetMainForm::dataSpaceConstraintsStudentsMaxRoomChangesPerRealDayInIntervalAction_triggered()
@@ -9376,9 +9099,10 @@ void FetMainForm::dataSpaceConstraintsStudentsMaxRoomChangesPerRealDayInInterval
 		return;
 	}
 
-	ConstraintStudentsMaxRoomChangesPerRealDayInIntervalForm form(this);
+	/*ConstraintStudentsMaxRoomChangesPerRealDayInIntervalForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_REAL_DAY_IN_INTERVAL);
 }
 
 void FetMainForm::dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayInIntervalAction_triggered()
@@ -9395,9 +9119,10 @@ void FetMainForm::dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayInIntervalA
 		return;
 	}
 
-	ConstraintTeacherMaxRoomChangesPerRealDayInIntervalForm form(this);
+	/*ConstraintTeacherMaxRoomChangesPerRealDayInIntervalForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_REAL_DAY_IN_INTERVAL);
 }
 
 void FetMainForm::dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayInIntervalAction_triggered()
@@ -9414,9 +9139,10 @@ void FetMainForm::dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayInInterval
 		return;
 	}
 
-	ConstraintTeachersMaxRoomChangesPerRealDayInIntervalForm form(this);
+	/*ConstraintTeachersMaxRoomChangesPerRealDayInIntervalForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_REAL_DAY_IN_INTERVAL);
 }
 
 void FetMainForm::groupActivitiesInInitialOrderAction_triggered()
@@ -9464,9 +9190,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerDayAction_triggered()
 		return;
 	}
 
-	ConstraintStudentsSetMaxGapsPerDayForm form(this);
+	/*ConstraintStudentsSetMaxGapsPerDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMaxGapsPerDayAction_triggered()
@@ -9483,9 +9210,10 @@ void FetMainForm::dataTimeConstraintsStudentsMaxGapsPerDayAction_triggered()
 		return;
 	}
 	
-	ConstraintStudentsMaxGapsPerDayForm form(this);
+	/*ConstraintStudentsMaxGapsPerDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MAX_GAPS_PER_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMaxGapsPerWeekAction_triggered()
@@ -9502,9 +9230,10 @@ void FetMainForm::dataTimeConstraintsTeachersMaxGapsPerWeekAction_triggered()
 		return;
 	}
 
-	ConstraintTeachersMaxGapsPerWeekForm form(this);
+	/*ConstraintTeachersMaxGapsPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MAX_GAPS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMaxGapsPerWeekAction_triggered()
@@ -9521,9 +9250,10 @@ void FetMainForm::dataTimeConstraintsTeacherMaxGapsPerWeekAction_triggered()
 		return;
 	}
 
-	ConstraintTeacherMaxGapsPerWeekForm form(this);
+	/*ConstraintTeacherMaxGapsPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMaxGapsPerDayAction_triggered()
@@ -9540,9 +9270,10 @@ void FetMainForm::dataTimeConstraintsTeachersMaxGapsPerDayAction_triggered()
 		return;
 	}
 
-	ConstraintTeachersMaxGapsPerDayForm form(this);
+	/*ConstraintTeachersMaxGapsPerDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MAX_GAPS_PER_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMaxGapsPerDayAction_triggered()
@@ -9559,9 +9290,10 @@ void FetMainForm::dataTimeConstraintsTeacherMaxGapsPerDayAction_triggered()
 		return;
 	}
 
-	ConstraintTeacherMaxGapsPerDayForm form(this);
+	/*ConstraintTeacherMaxGapsPerDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MAX_GAPS_PER_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMaxGapsPerMorningAndAfternoonAction_triggered()
@@ -9578,9 +9310,10 @@ void FetMainForm::dataTimeConstraintsTeachersMaxGapsPerMorningAndAfternoonAction
 		return;
 	}
 
-	ConstraintTeachersMaxGapsPerMorningAndAfternoonForm form(this);
+	/*ConstraintTeachersMaxGapsPerMorningAndAfternoonForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MAX_GAPS_PER_MORNING_AND_AFTERNOON);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMaxGapsPerMorningAndAfternoonAction_triggered()
@@ -9597,9 +9330,10 @@ void FetMainForm::dataTimeConstraintsTeacherMaxGapsPerMorningAndAfternoonAction_
 		return;
 	}
 
-	ConstraintTeacherMaxGapsPerMorningAndAfternoonForm form(this);
+	/*ConstraintTeacherMaxGapsPerMorningAndAfternoonForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MAX_GAPS_PER_MORNING_AND_AFTERNOON);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction_triggered()
@@ -9616,9 +9350,10 @@ void FetMainForm::dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourActio
 		return;
 	}
 
-	ConstraintStudentsEarlyMaxBeginningsAtSecondHourForm form(this);
+	/*ConstraintStudentsEarlyMaxBeginningsAtSecondHourForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction_triggered()
@@ -9635,9 +9370,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAc
 		return;
 	}
 
-	ConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm form(this);
+	/*ConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMaxHoursDailyAction_triggered()
@@ -9654,9 +9390,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxHoursDailyAction_triggered()
 		return;
 	}
 
-	ConstraintStudentsSetMaxHoursDailyForm form(this);
+	/*ConstraintStudentsSetMaxHoursDailyForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMaxHoursDailyAction_triggered()
@@ -9673,9 +9410,10 @@ void FetMainForm::dataTimeConstraintsStudentsMaxHoursDailyAction_triggered()
 		return;
 	}
 
-	ConstraintStudentsMaxHoursDailyForm form(this);
+	/*ConstraintStudentsMaxHoursDailyForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MAX_HOURS_DAILY);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction_triggered()
@@ -9692,9 +9430,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction_trigg
 		return;
 	}
 
-	ConstraintStudentsSetMaxHoursContinuouslyForm form(this);
+	/*ConstraintStudentsSetMaxHoursContinuouslyForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MAX_HOURS_CONTINUOUSLY);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMaxHoursContinuouslyAction_triggered()
@@ -9711,9 +9450,10 @@ void FetMainForm::dataTimeConstraintsStudentsMaxHoursContinuouslyAction_triggere
 		return;
 	}
 
-	ConstraintStudentsMaxHoursContinuouslyForm form(this);
+	/*ConstraintStudentsMaxHoursContinuouslyForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MAX_HOURS_CONTINUOUSLY);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction_triggered()
@@ -9730,9 +9470,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyA
 		return;
 	}
 
-	ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm form(this);
+	/*ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction_triggered()
@@ -9749,9 +9490,10 @@ void FetMainForm::dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyActi
 		return;
 	}
 
-	ConstraintStudentsActivityTagMaxHoursContinuouslyForm form(this);
+	/*ConstraintStudentsActivityTagMaxHoursContinuouslyForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction_triggered()
@@ -9768,9 +9510,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction_t
 		return;
 	}
 
-	ConstraintStudentsSetActivityTagMaxHoursDailyForm form(this);
+	/*ConstraintStudentsSetActivityTagMaxHoursDailyForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MAX_HOURS_DAILY);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction_triggered()
@@ -9787,9 +9530,10 @@ void FetMainForm::dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction_trig
 		return;
 	}
 
-	ConstraintStudentsActivityTagMaxHoursDailyForm form(this);
+	/*ConstraintStudentsActivityTagMaxHoursDailyForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_ACTIVITY_TAG_MAX_HOURS_DAILY);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction_triggered()
@@ -9806,9 +9550,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction_t
 		return;
 	}
 
-	ConstraintStudentsSetActivityTagMinHoursDailyForm form(this);
+	/*ConstraintStudentsSetActivityTagMinHoursDailyForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MIN_HOURS_DAILY);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsActivityTagMinHoursDailyAction_triggered()
@@ -9825,9 +9570,10 @@ void FetMainForm::dataTimeConstraintsStudentsActivityTagMinHoursDailyAction_trig
 		return;
 	}
 
-	ConstraintStudentsActivityTagMinHoursDailyForm form(this);
+	/*ConstraintStudentsActivityTagMinHoursDailyForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_ACTIVITY_TAG_MIN_HOURS_DAILY);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMinHoursDailyAction_triggered()
@@ -9844,9 +9590,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMinHoursDailyAction_triggered()
 		return;
 	}
 
-	ConstraintStudentsSetMinHoursDailyForm form(this);
+	/*ConstraintStudentsSetMinHoursDailyForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMinHoursDailyAction_triggered()
@@ -9863,9 +9610,10 @@ void FetMainForm::dataTimeConstraintsStudentsMinHoursDailyAction_triggered()
 		return;
 	}
 
-	ConstraintStudentsMinHoursDailyForm form(this);
+	/*ConstraintStudentsMinHoursDailyForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MIN_HOURS_DAILY);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()
@@ -9882,9 +9630,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActiv
 		return;
 	}
 
-	ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsForm form(this);
+	/*ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()
@@ -9901,9 +9650,10 @@ void FetMainForm::dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivity
 		return;
 	}
 
-	ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsForm form(this);
+	/*ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()
@@ -9920,9 +9670,10 @@ void FetMainForm::dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityT
 		return;
 	}
 
-	ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm form(this);
+	/*ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()
@@ -9939,9 +9690,10 @@ void FetMainForm::dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivity
 		return;
 	}
 
-	ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm form(this);
+	/*ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS);
 }
 
 //begin 2021-12-15
@@ -9959,9 +9711,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagAction_
 		return;
 	}
 
-	ConstraintStudentsSetMinGapsBetweenActivityTagForm form(this);
+	/*ConstraintStudentsSetMinGapsBetweenActivityTagForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ACTIVITY_TAG);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMinGapsBetweenActivityTagAction_triggered()
@@ -9978,9 +9731,10 @@ void FetMainForm::dataTimeConstraintsStudentsMinGapsBetweenActivityTagAction_tri
 		return;
 	}
 
-	ConstraintStudentsMinGapsBetweenActivityTagForm form(this);
+	/*ConstraintStudentsMinGapsBetweenActivityTagForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ACTIVITY_TAG);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMinGapsBetweenActivityTagAction_triggered()
@@ -9997,9 +9751,10 @@ void FetMainForm::dataTimeConstraintsTeacherMinGapsBetweenActivityTagAction_trig
 		return;
 	}
 
-	ConstraintTeacherMinGapsBetweenActivityTagForm form(this);
+	/*ConstraintTeacherMinGapsBetweenActivityTagForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ACTIVITY_TAG);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMinGapsBetweenActivityTagAction_triggered()
@@ -10016,9 +9771,10 @@ void FetMainForm::dataTimeConstraintsTeachersMinGapsBetweenActivityTagAction_tri
 		return;
 	}
 
-	ConstraintTeachersMinGapsBetweenActivityTagForm form(this);
+	/*ConstraintTeachersMinGapsBetweenActivityTagForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG);
 }
 //end 2021-12-15
 
@@ -10037,9 +9793,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActiv
 		return;
 	}
 
-	ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDayForm form(this);
+	/*ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_PER_REAL_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDayAction_triggered()
@@ -10056,9 +9813,10 @@ void FetMainForm::dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivity
 		return;
 	}
 
-	ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDayForm form(this);
+	/*ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_PER_REAL_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDayAction_triggered()
@@ -10075,9 +9833,10 @@ void FetMainForm::dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityT
 		return;
 	}
 
-	ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDayForm form(this);
+	/*ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_PER_REAL_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDayAction_triggered()
@@ -10094,9 +9853,10 @@ void FetMainForm::dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivity
 		return;
 	}
 
-	ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDayForm form(this);
+	/*ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_PER_REAL_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagPerRealDayAction_triggered()
@@ -10113,9 +9873,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagPerReal
 		return;
 	}
 
-	ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDayForm form(this);
+	/*ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ACTIVITY_TAG_PER_REAL_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMinGapsBetweenActivityTagPerRealDayAction_triggered()
@@ -10132,9 +9893,10 @@ void FetMainForm::dataTimeConstraintsStudentsMinGapsBetweenActivityTagPerRealDay
 		return;
 	}
 
-	ConstraintStudentsMinGapsBetweenActivityTagPerRealDayForm form(this);
+	/*ConstraintStudentsMinGapsBetweenActivityTagPerRealDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_PER_REAL_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMinGapsBetweenActivityTagPerRealDayAction_triggered()
@@ -10151,9 +9913,10 @@ void FetMainForm::dataTimeConstraintsTeacherMinGapsBetweenActivityTagPerRealDayA
 		return;
 	}
 
-	ConstraintTeacherMinGapsBetweenActivityTagPerRealDayForm form(this);
+	/*ConstraintTeacherMinGapsBetweenActivityTagPerRealDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ACTIVITY_TAG_PER_REAL_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMinGapsBetweenActivityTagPerRealDayAction_triggered()
@@ -10170,9 +9933,10 @@ void FetMainForm::dataTimeConstraintsTeachersMinGapsBetweenActivityTagPerRealDay
 		return;
 	}
 
-	ConstraintTeachersMinGapsBetweenActivityTagPerRealDayForm form(this);
+	/*ConstraintTeachersMinGapsBetweenActivityTagPerRealDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_PER_REAL_DAY);
 }
 //end 2024-03-16
 
@@ -10191,9 +9955,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActiv
 		return;
 	}
 
-	ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonForm form(this);
+	/*ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonAction_triggered()
@@ -10210,9 +9975,10 @@ void FetMainForm::dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivity
 		return;
 	}
 
-	ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonForm form(this);
+	/*ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonAction_triggered()
@@ -10229,9 +9995,10 @@ void FetMainForm::dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityT
 		return;
 	}
 
-	ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonForm form(this);
+	/*ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonAction_triggered()
@@ -10248,9 +10015,10 @@ void FetMainForm::dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivity
 		return;
 	}
 
-	ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonForm form(this);
+	/*ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoonAction_triggered()
@@ -10267,9 +10035,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagBetween
 		return;
 	}
 
-	ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoonForm form(this);
+	/*ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoonForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoonAction_triggered()
@@ -10286,9 +10055,10 @@ void FetMainForm::dataTimeConstraintsStudentsMinGapsBetweenActivityTagBetweenMor
 		return;
 	}
 
-	ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoonForm form(this);
+	/*ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoonForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoonAction_triggered()
@@ -10305,9 +10075,10 @@ void FetMainForm::dataTimeConstraintsTeacherMinGapsBetweenActivityTagBetweenMorn
 		return;
 	}
 
-	ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoonForm form(this);
+	/*ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoonForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoonAction_triggered()
@@ -10324,9 +10095,10 @@ void FetMainForm::dataTimeConstraintsTeachersMinGapsBetweenActivityTagBetweenMor
 		return;
 	}
 
-	ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoonForm form(this);
+	/*ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoonForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON);
 }
 //end 2024-03-16
 
@@ -10344,9 +10116,10 @@ void FetMainForm::dataTimeConstraintsActivitiesNotOverlappingAction_triggered()
 		return;
 	}
 
-	ConstraintActivitiesNotOverlappingForm form(this);
+	/*ConstraintActivitiesNotOverlappingForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING);
 }
 
 void FetMainForm::dataTimeConstraintsActivityTagsNotOverlappingAction_triggered()
@@ -10363,9 +10136,10 @@ void FetMainForm::dataTimeConstraintsActivityTagsNotOverlappingAction_triggered(
 		return;
 	}
 
-	ConstraintActivityTagsNotOverlappingForm form(this);
+	/*ConstraintActivityTagsNotOverlappingForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITY_TAGS_NOT_OVERLAPPING);
 }
 
 void FetMainForm::dataTimeConstraintsMinDaysBetweenActivitiesAction_triggered()
@@ -10382,9 +10156,10 @@ void FetMainForm::dataTimeConstraintsMinDaysBetweenActivitiesAction_triggered()
 		return;
 	}
 
-	ConstraintMinDaysBetweenActivitiesForm form(this);
+	/*ConstraintMinDaysBetweenActivitiesForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES);
 }
 
 void FetMainForm::dataTimeConstraintsMinHalfDaysBetweenActivitiesAction_triggered()
@@ -10401,9 +10176,10 @@ void FetMainForm::dataTimeConstraintsMinHalfDaysBetweenActivitiesAction_triggere
 		return;
 	}
 
-	ConstraintMinHalfDaysBetweenActivitiesForm form(this);
+	/*ConstraintMinHalfDaysBetweenActivitiesForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES);
 }
 
 void FetMainForm::dataTimeConstraintsMaxDaysBetweenActivitiesAction_triggered()
@@ -10420,9 +10196,10 @@ void FetMainForm::dataTimeConstraintsMaxDaysBetweenActivitiesAction_triggered()
 		return;
 	}
 
-	ConstraintMaxDaysBetweenActivitiesForm form(this);
+	/*ConstraintMaxDaysBetweenActivitiesForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES);
 }
 
 void FetMainForm::dataTimeConstraintsActivitiesMaxHourlySpanAction_triggered()
@@ -10439,9 +10216,10 @@ void FetMainForm::dataTimeConstraintsActivitiesMaxHourlySpanAction_triggered()
 		return;
 	}
 
-	ConstraintActivitiesMaxHourlySpanForm form(this);
+	/*ConstraintActivitiesMaxHourlySpanForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_MAX_HOURLY_SPAN);
 }
 
 void FetMainForm::dataTimeConstraintsMaxHalfDaysBetweenActivitiesAction_triggered()
@@ -10458,9 +10236,10 @@ void FetMainForm::dataTimeConstraintsMaxHalfDaysBetweenActivitiesAction_triggere
 		return;
 	}
 
-	ConstraintMaxHalfDaysBetweenActivitiesForm form(this);
+	/*ConstraintMaxHalfDaysBetweenActivitiesForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_MAX_HALF_DAYS_BETWEEN_ACTIVITIES);
 }
 
 void FetMainForm::dataTimeConstraintsMaxTermsBetweenActivitiesAction_triggered()
@@ -10477,9 +10256,10 @@ void FetMainForm::dataTimeConstraintsMaxTermsBetweenActivitiesAction_triggered()
 		return;
 	}
 
-	ConstraintMaxTermsBetweenActivitiesForm form(this);
+	/*ConstraintMaxTermsBetweenActivitiesForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_MAX_TERMS_BETWEEN_ACTIVITIES);
 }
 
 void FetMainForm::dataTimeConstraintsMinGapsBetweenActivitiesAction_triggered()
@@ -10496,9 +10276,10 @@ void FetMainForm::dataTimeConstraintsMinGapsBetweenActivitiesAction_triggered()
 		return;
 	}
 
-	ConstraintMinGapsBetweenActivitiesForm form(this);
+	/*ConstraintMinGapsBetweenActivitiesForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_MIN_GAPS_BETWEEN_ACTIVITIES);
 }
 
 void FetMainForm::dataTimeConstraintsMaxGapsBetweenActivitiesAction_triggered()
@@ -10515,9 +10296,10 @@ void FetMainForm::dataTimeConstraintsMaxGapsBetweenActivitiesAction_triggered()
 		return;
 	}
 
-	ConstraintMaxGapsBetweenActivitiesForm form(this);
+	/*ConstraintMaxGapsBetweenActivitiesForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_MAX_GAPS_BETWEEN_ACTIVITIES);
 }
 
 void FetMainForm::dataTimeConstraintsActivityPreferredTimeSlotsAction_triggered()
@@ -10534,9 +10316,10 @@ void FetMainForm::dataTimeConstraintsActivityPreferredTimeSlotsAction_triggered(
 		return;
 	}
 
-	ConstraintActivityPreferredTimeSlotsForm form(this);
+	/*ConstraintActivityPreferredTimeSlotsForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS);
 }
 
 void FetMainForm::dataTimeConstraintsActivityPreferredStartingTimesAction_triggered()
@@ -10553,9 +10336,10 @@ void FetMainForm::dataTimeConstraintsActivityPreferredStartingTimesAction_trigge
 		return;
 	}
 
-	ConstraintActivityPreferredStartingTimesForm form(this);
+	/*ConstraintActivityPreferredStartingTimesForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMaxSpanPerDayAction_triggered()
@@ -10572,9 +10356,10 @@ void FetMainForm::dataTimeConstraintsTeacherMaxSpanPerDayAction_triggered()
 		return;
 	}
 
-	ConstraintTeacherMaxSpanPerDayForm form(this);
+	/*ConstraintTeacherMaxSpanPerDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MAX_SPAN_PER_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMaxSpanPerDayAction_triggered()
@@ -10591,9 +10376,10 @@ void FetMainForm::dataTimeConstraintsTeachersMaxSpanPerDayAction_triggered()
 		return;
 	}
 
-	ConstraintTeachersMaxSpanPerDayForm form(this);
+	/*ConstraintTeachersMaxSpanPerDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MAX_SPAN_PER_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMaxSpanPerDayAction_triggered()
@@ -10610,9 +10396,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxSpanPerDayAction_triggered()
 		return;
 	}
 
-	ConstraintStudentsSetMaxSpanPerDayForm form(this);
+	/*ConstraintStudentsSetMaxSpanPerDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MAX_SPAN_PER_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMaxSpanPerDayAction_triggered()
@@ -10629,9 +10416,10 @@ void FetMainForm::dataTimeConstraintsStudentsMaxSpanPerDayAction_triggered()
 		return;
 	}
 
-	ConstraintStudentsMaxSpanPerDayForm form(this);
+	/*ConstraintStudentsMaxSpanPerDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MAX_SPAN_PER_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMinRestingHoursAction_triggered()
@@ -10648,9 +10436,10 @@ void FetMainForm::dataTimeConstraintsTeacherMinRestingHoursAction_triggered()
 		return;
 	}
 
-	ConstraintTeacherMinRestingHoursForm form(this);
+	/*ConstraintTeacherMinRestingHoursForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MIN_RESTING_HOURS);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMinRestingHoursAction_triggered()
@@ -10667,9 +10456,10 @@ void FetMainForm::dataTimeConstraintsTeachersMinRestingHoursAction_triggered()
 		return;
 	}
 
-	ConstraintTeachersMinRestingHoursForm form(this);
+	/*ConstraintTeachersMinRestingHoursForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MIN_RESTING_HOURS);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMinRestingHoursAction_triggered()
@@ -10686,9 +10476,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMinRestingHoursAction_triggered(
 		return;
 	}
 
-	ConstraintStudentsSetMinRestingHoursForm form(this);
+	/*ConstraintStudentsSetMinRestingHoursForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MIN_RESTING_HOURS);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMinRestingHoursAction_triggered()
@@ -10705,9 +10496,10 @@ void FetMainForm::dataTimeConstraintsStudentsMinRestingHoursAction_triggered()
 		return;
 	}
 
-	ConstraintStudentsMinRestingHoursForm form(this);
+	/*ConstraintStudentsMinRestingHoursForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MIN_RESTING_HOURS);
 }
 
 //2012-04-29
@@ -10725,9 +10517,10 @@ void FetMainForm::dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction_tr
 		return;
 	}
 
-	ConstraintActivitiesOccupyMaxDifferentRoomsForm form(this);
+	/*ConstraintActivitiesOccupyMaxDifferentRoomsForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_ACTIVITIES_OCCUPY_MAX_DIFFERENT_ROOMS);
 }
 
 //2013-09-14
@@ -10745,9 +10538,10 @@ void FetMainForm::dataSpaceConstraintsActivitiesSameRoomIfConsecutiveAction_trig
 		return;
 	}
 
-	ConstraintActivitiesSameRoomIfConsecutiveForm form(this);
+	/*ConstraintActivitiesSameRoomIfConsecutiveForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_ACTIVITIES_SAME_ROOM_IF_CONSECUTIVE);
 }
 
 //mornings-afternoons space
@@ -10765,9 +10559,10 @@ void FetMainForm::dataSpaceConstraintsStudentsSetMaxRoomChangesPerRealDayAction_
 		return;
 	}
 
-	ConstraintStudentsSetMaxRoomChangesPerRealDayForm form(this);
+	/*ConstraintStudentsSetMaxRoomChangesPerRealDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_REAL_DAY);
 }
 
 void FetMainForm::dataSpaceConstraintsStudentsMaxRoomChangesPerRealDayAction_triggered()
@@ -10784,9 +10579,10 @@ void FetMainForm::dataSpaceConstraintsStudentsMaxRoomChangesPerRealDayAction_tri
 		return;
 	}
 
-	ConstraintStudentsMaxRoomChangesPerRealDayForm form(this);
+	/*ConstraintStudentsMaxRoomChangesPerRealDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_REAL_DAY);
 }
 
 void FetMainForm::dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayAction_triggered()
@@ -10803,9 +10599,10 @@ void FetMainForm::dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayAction_trig
 		return;
 	}
 
-	ConstraintTeacherMaxRoomChangesPerRealDayForm form(this);
+	/*ConstraintTeacherMaxRoomChangesPerRealDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_REAL_DAY);
 }
 
 void FetMainForm::dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayAction_triggered()
@@ -10822,9 +10619,10 @@ void FetMainForm::dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayAction_tri
 		return;
 	}
 
-	ConstraintTeachersMaxRoomChangesPerRealDayForm form(this);
+	/*ConstraintTeachersMaxRoomChangesPerRealDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_REAL_DAY);
 }
 
 void FetMainForm::dataSpaceConstraintsStudentsSetMaxBuildingChangesPerRealDayAction_triggered()
@@ -10841,9 +10639,10 @@ void FetMainForm::dataSpaceConstraintsStudentsSetMaxBuildingChangesPerRealDayAct
 		return;
 	}
 
-	ConstraintStudentsSetMaxBuildingChangesPerRealDayForm form(this);
+	/*ConstraintStudentsSetMaxBuildingChangesPerRealDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_REAL_DAY);
 }
 
 void FetMainForm::dataSpaceConstraintsStudentsMaxBuildingChangesPerRealDayAction_triggered()
@@ -10860,9 +10659,10 @@ void FetMainForm::dataSpaceConstraintsStudentsMaxBuildingChangesPerRealDayAction
 		return;
 	}
 
-	ConstraintStudentsMaxBuildingChangesPerRealDayForm form(this);
+	/*ConstraintStudentsMaxBuildingChangesPerRealDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_REAL_DAY);
 }
 
 void FetMainForm::dataSpaceConstraintsTeacherMaxBuildingChangesPerRealDayAction_triggered()
@@ -10879,9 +10679,10 @@ void FetMainForm::dataSpaceConstraintsTeacherMaxBuildingChangesPerRealDayAction_
 		return;
 	}
 
-	ConstraintTeacherMaxBuildingChangesPerRealDayForm form(this);
+	/*ConstraintTeacherMaxBuildingChangesPerRealDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_REAL_DAY);
 }
 
 void FetMainForm::dataSpaceConstraintsTeachersMaxBuildingChangesPerRealDayAction_triggered()
@@ -10898,9 +10699,10 @@ void FetMainForm::dataSpaceConstraintsTeachersMaxBuildingChangesPerRealDayAction
 		return;
 	}
 
-	ConstraintTeachersMaxBuildingChangesPerRealDayForm form(this);
+	/*ConstraintTeachersMaxBuildingChangesPerRealDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_REAL_DAY);
 }
 
 //mornings-afternoons time
@@ -10918,9 +10720,10 @@ void FetMainForm::dataTimeConstraintsTeacherMaxRealDaysPerWeekAction_triggered()
 		return;
 	}
 
-	ConstraintTeacherMaxRealDaysPerWeekForm form(this);
+	/*ConstraintTeacherMaxRealDaysPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MAX_REAL_DAYS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMaxRealDaysPerWeekAction_triggered()
@@ -10937,9 +10740,10 @@ void FetMainForm::dataTimeConstraintsTeachersMaxRealDaysPerWeekAction_triggered(
 		return;
 	}
 
-	ConstraintTeachersMaxRealDaysPerWeekForm form(this);
+	/*ConstraintTeachersMaxRealDaysPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MAX_REAL_DAYS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMaxAfternoonsPerWeekAction_triggered()
@@ -10956,9 +10760,10 @@ void FetMainForm::dataTimeConstraintsTeacherMaxAfternoonsPerWeekAction_triggered
 		return;
 	}
 
-	ConstraintTeacherMaxAfternoonsPerWeekForm form(this);
+	/*ConstraintTeacherMaxAfternoonsPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MAX_AFTERNOONS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMaxAfternoonsPerWeekAction_triggered()
@@ -10975,9 +10780,10 @@ void FetMainForm::dataTimeConstraintsTeachersMaxAfternoonsPerWeekAction_triggere
 		return;
 	}
 
-	ConstraintTeachersMaxAfternoonsPerWeekForm form(this);
+	/*ConstraintTeachersMaxAfternoonsPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MAX_AFTERNOONS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMaxMorningsPerWeekAction_triggered()
@@ -10994,9 +10800,10 @@ void FetMainForm::dataTimeConstraintsTeacherMaxMorningsPerWeekAction_triggered()
 		return;
 	}
 
-	ConstraintTeacherMaxMorningsPerWeekForm form(this);
+	/*ConstraintTeacherMaxMorningsPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MAX_MORNINGS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMaxMorningsPerWeekAction_triggered()
@@ -11013,9 +10820,10 @@ void FetMainForm::dataTimeConstraintsTeachersMaxMorningsPerWeekAction_triggered(
 		return;
 	}
 
-	ConstraintTeachersMaxMorningsPerWeekForm form(this);
+	/*ConstraintTeachersMaxMorningsPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MAX_MORNINGS_PER_WEEK);
 }
 
 //2024-09-04
@@ -11033,9 +10841,10 @@ void FetMainForm::dataTimeConstraintsTeacherNoTwoConsecutiveDaysAction_triggered
 		return;
 	}
 
-	ConstraintTeacherNoTwoConsecutiveDaysForm form(this);
+	/*ConstraintTeacherNoTwoConsecutiveDaysForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_NO_TWO_CONSECUTIVE_DAYS);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersNoTwoConsecutiveDaysAction_triggered()
@@ -11052,9 +10861,10 @@ void FetMainForm::dataTimeConstraintsTeachersNoTwoConsecutiveDaysAction_triggere
 		return;
 	}
 
-	ConstraintTeachersNoTwoConsecutiveDaysForm form(this);
+	/*ConstraintTeachersNoTwoConsecutiveDaysForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_NO_TWO_CONSECUTIVE_DAYS);
 }
 
 ////////2021-09-26
@@ -11072,9 +10882,10 @@ void FetMainForm::dataTimeConstraintsTeacherMaxThreeConsecutiveDaysAction_trigge
 		return;
 	}
 
-	ConstraintTeacherMaxThreeConsecutiveDaysForm form(this);
+	/*ConstraintTeacherMaxThreeConsecutiveDaysForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MAX_THREE_CONSECUTIVE_DAYS);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMaxThreeConsecutiveDaysAction_triggered()
@@ -11091,9 +10902,10 @@ void FetMainForm::dataTimeConstraintsTeachersMaxThreeConsecutiveDaysAction_trigg
 		return;
 	}
 
-	ConstraintTeachersMaxThreeConsecutiveDaysForm form(this);
+	/*ConstraintTeachersMaxThreeConsecutiveDaysForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MAX_THREE_CONSECUTIVE_DAYS);
 }
 
 ////////2022-02-15
@@ -11111,9 +10923,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxThreeConsecutiveDaysAction_tr
 		return;
 	}
 
-	ConstraintStudentsSetMaxThreeConsecutiveDaysForm form(this);
+	/*ConstraintStudentsSetMaxThreeConsecutiveDaysForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MAX_THREE_CONSECUTIVE_DAYS);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMaxThreeConsecutiveDaysAction_triggered()
@@ -11130,9 +10943,10 @@ void FetMainForm::dataTimeConstraintsStudentsMaxThreeConsecutiveDaysAction_trigg
 		return;
 	}
 
-	ConstraintStudentsMaxThreeConsecutiveDaysForm form(this);
+	/*ConstraintStudentsMaxThreeConsecutiveDaysForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MAX_THREE_CONSECUTIVE_DAYS);
 }
 //////////
 
@@ -11150,9 +10964,10 @@ void FetMainForm::dataTimeConstraintsTeacherMaxTwoConsecutiveMorningsAction_trig
 		return;
 	}
 
-	ConstraintTeacherMaxTwoConsecutiveMorningsForm form(this);
+	/*ConstraintTeacherMaxTwoConsecutiveMorningsForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MAX_TWO_CONSECUTIVE_MORNINGS);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMaxTwoConsecutiveMorningsAction_triggered()
@@ -11169,9 +10984,10 @@ void FetMainForm::dataTimeConstraintsTeachersMaxTwoConsecutiveMorningsAction_tri
 		return;
 	}
 
-	ConstraintTeachersMaxTwoConsecutiveMorningsForm form(this);
+	/*ConstraintTeachersMaxTwoConsecutiveMorningsForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MAX_TWO_CONSECUTIVE_MORNINGS);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMaxTwoConsecutiveAfternoonsAction_triggered()
@@ -11188,9 +11004,10 @@ void FetMainForm::dataTimeConstraintsTeacherMaxTwoConsecutiveAfternoonsAction_tr
 		return;
 	}
 
-	ConstraintTeacherMaxTwoConsecutiveAfternoonsForm form(this);
+	/*ConstraintTeacherMaxTwoConsecutiveAfternoonsForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MAX_TWO_CONSECUTIVE_AFTERNOONS);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMaxTwoConsecutiveAfternoonsAction_triggered()
@@ -11207,9 +11024,10 @@ void FetMainForm::dataTimeConstraintsTeachersMaxTwoConsecutiveAfternoonsAction_t
 		return;
 	}
 
-	ConstraintTeachersMaxTwoConsecutiveAfternoonsForm form(this);
+	/*ConstraintTeachersMaxTwoConsecutiveAfternoonsForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MAX_TWO_CONSECUTIVE_AFTERNOONS);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMinRealDaysPerWeekAction_triggered()
@@ -11226,9 +11044,10 @@ void FetMainForm::dataTimeConstraintsTeacherMinRealDaysPerWeekAction_triggered()
 		return;
 	}
 
-	ConstraintTeacherMinRealDaysPerWeekForm form(this);
+	/*ConstraintTeacherMinRealDaysPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MIN_REAL_DAYS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMinMorningsPerWeekAction_triggered()
@@ -11245,9 +11064,10 @@ void FetMainForm::dataTimeConstraintsTeacherMinMorningsPerWeekAction_triggered()
 		return;
 	}
 
-	ConstraintTeacherMinMorningsPerWeekForm form(this);
+	/*ConstraintTeacherMinMorningsPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MIN_MORNINGS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMinMorningsPerWeekAction_triggered()
@@ -11264,9 +11084,10 @@ void FetMainForm::dataTimeConstraintsTeachersMinMorningsPerWeekAction_triggered(
 		return;
 	}
 
-	ConstraintTeachersMinMorningsPerWeekForm form(this);
+	/*ConstraintTeachersMinMorningsPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MIN_MORNINGS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMinAfternoonsPerWeekAction_triggered()
@@ -11283,9 +11104,10 @@ void FetMainForm::dataTimeConstraintsTeacherMinAfternoonsPerWeekAction_triggered
 		return;
 	}
 
-	ConstraintTeacherMinAfternoonsPerWeekForm form(this);
+	/*ConstraintTeacherMinAfternoonsPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MIN_AFTERNOONS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMinAfternoonsPerWeekAction_triggered()
@@ -11302,9 +11124,10 @@ void FetMainForm::dataTimeConstraintsTeachersMinAfternoonsPerWeekAction_triggere
 		return;
 	}
 
-	ConstraintTeachersMinAfternoonsPerWeekForm form(this);
+	/*ConstraintTeachersMinAfternoonsPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MIN_AFTERNOONS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMinRealDaysPerWeekAction_triggered()
@@ -11321,9 +11144,10 @@ void FetMainForm::dataTimeConstraintsTeachersMinRealDaysPerWeekAction_triggered(
 		return;
 	}
 
-	ConstraintTeachersMinRealDaysPerWeekForm form(this);
+	/*ConstraintTeachersMinRealDaysPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MIN_REAL_DAYS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMorningIntervalMaxDaysPerWeekAction_triggered()
@@ -11340,9 +11164,10 @@ void FetMainForm::dataTimeConstraintsTeacherMorningIntervalMaxDaysPerWeekAction_
 		return;
 	}
 
-	ConstraintTeacherMorningIntervalMaxDaysPerWeekForm form(this);
+	/*ConstraintTeacherMorningIntervalMaxDaysPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MORNING_INTERVAL_MAX_DAYS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMorningIntervalMaxDaysPerWeekAction_triggered()
@@ -11359,9 +11184,10 @@ void FetMainForm::dataTimeConstraintsTeachersMorningIntervalMaxDaysPerWeekAction
 		return;
 	}
 
-	ConstraintTeachersMorningIntervalMaxDaysPerWeekForm form(this);
+	/*ConstraintTeachersMorningIntervalMaxDaysPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MORNING_INTERVAL_MAX_DAYS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherAfternoonIntervalMaxDaysPerWeekAction_triggered()
@@ -11378,9 +11204,10 @@ void FetMainForm::dataTimeConstraintsTeacherAfternoonIntervalMaxDaysPerWeekActio
 		return;
 	}
 
-	ConstraintTeacherAfternoonIntervalMaxDaysPerWeekForm form(this);
+	/*ConstraintTeacherAfternoonIntervalMaxDaysPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_AFTERNOON_INTERVAL_MAX_DAYS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersAfternoonIntervalMaxDaysPerWeekAction_triggered()
@@ -11397,9 +11224,10 @@ void FetMainForm::dataTimeConstraintsTeachersAfternoonIntervalMaxDaysPerWeekActi
 		return;
 	}
 
-	ConstraintTeachersAfternoonIntervalMaxDaysPerWeekForm form(this);
+	/*ConstraintTeachersAfternoonIntervalMaxDaysPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_AFTERNOON_INTERVAL_MAX_DAYS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMaxRealDaysPerWeekAction_triggered()
@@ -11416,9 +11244,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxRealDaysPerWeekAction_trigger
 		return;
 	}
 
-	ConstraintStudentsSetMaxRealDaysPerWeekForm form(this);
+	/*ConstraintStudentsSetMaxRealDaysPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MAX_REAL_DAYS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMaxRealDaysPerWeekAction_triggered()
@@ -11435,9 +11264,10 @@ void FetMainForm::dataTimeConstraintsStudentsMaxRealDaysPerWeekAction_triggered(
 		return;
 	}
 
-	ConstraintStudentsMaxRealDaysPerWeekForm form(this);
+	/*ConstraintStudentsMaxRealDaysPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MAX_REAL_DAYS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMaxMorningsPerWeekAction_triggered()
@@ -11454,9 +11284,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxMorningsPerWeekAction_trigger
 		return;
 	}
 
-	ConstraintStudentsSetMaxMorningsPerWeekForm form(this);
+	/*ConstraintStudentsSetMaxMorningsPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MAX_MORNINGS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMaxMorningsPerWeekAction_triggered()
@@ -11473,9 +11304,10 @@ void FetMainForm::dataTimeConstraintsStudentsMaxMorningsPerWeekAction_triggered(
 		return;
 	}
 
-	ConstraintStudentsMaxMorningsPerWeekForm form(this);
+	/*ConstraintStudentsMaxMorningsPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MAX_MORNINGS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMaxAfternoonsPerWeekAction_triggered()
@@ -11492,9 +11324,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxAfternoonsPerWeekAction_trigg
 		return;
 	}
 
-	ConstraintStudentsSetMaxAfternoonsPerWeekForm form(this);
+	/*ConstraintStudentsSetMaxAfternoonsPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MAX_AFTERNOONS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMaxAfternoonsPerWeekAction_triggered()
@@ -11511,9 +11344,10 @@ void FetMainForm::dataTimeConstraintsStudentsMaxAfternoonsPerWeekAction_triggere
 		return;
 	}
 
-	ConstraintStudentsMaxAfternoonsPerWeekForm form(this);
+	/*ConstraintStudentsMaxAfternoonsPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MAX_AFTERNOONS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMinMorningsPerWeekAction_triggered()
@@ -11530,9 +11364,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMinMorningsPerWeekAction_trigger
 		return;
 	}
 
-	ConstraintStudentsSetMinMorningsPerWeekForm form(this);
+	/*ConstraintStudentsSetMinMorningsPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MIN_MORNINGS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMinMorningsPerWeekAction_triggered()
@@ -11549,9 +11384,10 @@ void FetMainForm::dataTimeConstraintsStudentsMinMorningsPerWeekAction_triggered(
 		return;
 	}
 
-	ConstraintStudentsMinMorningsPerWeekForm form(this);
+	/*ConstraintStudentsMinMorningsPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MIN_MORNINGS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMinAfternoonsPerWeekAction_triggered()
@@ -11568,9 +11404,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMinAfternoonsPerWeekAction_trigg
 		return;
 	}
 
-	ConstraintStudentsSetMinAfternoonsPerWeekForm form(this);
+	/*ConstraintStudentsSetMinAfternoonsPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MIN_AFTERNOONS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMinAfternoonsPerWeekAction_triggered()
@@ -11587,9 +11424,10 @@ void FetMainForm::dataTimeConstraintsStudentsMinAfternoonsPerWeekAction_triggere
 		return;
 	}
 
-	ConstraintStudentsMinAfternoonsPerWeekForm form(this);
+	/*ConstraintStudentsMinAfternoonsPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MIN_AFTERNOONS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMorningIntervalMaxDaysPerWeekAction_triggered()
@@ -11606,9 +11444,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMorningIntervalMaxDaysPerWeekAct
 		return;
 	}
 
-	ConstraintStudentsSetMorningIntervalMaxDaysPerWeekForm form(this);
+	/*ConstraintStudentsSetMorningIntervalMaxDaysPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MORNING_INTERVAL_MAX_DAYS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMorningIntervalMaxDaysPerWeekAction_triggered()
@@ -11625,9 +11464,10 @@ void FetMainForm::dataTimeConstraintsStudentsMorningIntervalMaxDaysPerWeekAction
 		return;
 	}
 
-	ConstraintStudentsMorningIntervalMaxDaysPerWeekForm form(this);
+	/*ConstraintStudentsMorningIntervalMaxDaysPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MORNING_INTERVAL_MAX_DAYS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetAfternoonIntervalMaxDaysPerWeekAction_triggered()
@@ -11644,9 +11484,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetAfternoonIntervalMaxDaysPerWeekA
 		return;
 	}
 
-	ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeekForm form(this);
+	/*ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_AFTERNOON_INTERVAL_MAX_DAYS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsAfternoonIntervalMaxDaysPerWeekAction_triggered()
@@ -11663,9 +11504,10 @@ void FetMainForm::dataTimeConstraintsStudentsAfternoonIntervalMaxDaysPerWeekActi
 		return;
 	}
 
-	ConstraintStudentsAfternoonIntervalMaxDaysPerWeekForm form(this);
+	/*ConstraintStudentsAfternoonIntervalMaxDaysPerWeekForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_AFTERNOON_INTERVAL_MAX_DAYS_PER_WEEK);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMaxHoursDailyRealDaysAction_triggered()
@@ -11682,9 +11524,10 @@ void FetMainForm::dataTimeConstraintsTeachersMaxHoursDailyRealDaysAction_trigger
 		return;
 	}
 
-	ConstraintTeachersMaxHoursDailyRealDaysForm form(this);
+	/*ConstraintTeachersMaxHoursDailyRealDaysForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MAX_HOURS_DAILY_REAL_DAYS);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMaxHoursDailyRealDaysAction_triggered()
@@ -11701,9 +11544,10 @@ void FetMainForm::dataTimeConstraintsTeacherMaxHoursDailyRealDaysAction_triggere
 		return;
 	}
 
-	ConstraintTeacherMaxHoursDailyRealDaysForm form(this);
+	/*ConstraintTeacherMaxHoursDailyRealDaysForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MAX_HOURS_DAILY_REAL_DAYS);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMaxActivityTagsPerDayFromSetAction_triggered()
@@ -11720,9 +11564,10 @@ void FetMainForm::dataTimeConstraintsTeacherMaxActivityTagsPerDayFromSetAction_t
 		return;
 	}
 
-	ConstraintTeacherMaxActivityTagsPerDayFromSetForm form(this);
+	/*ConstraintTeacherMaxActivityTagsPerDayFromSetForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMaxActivityTagsPerDayFromSetAction_triggered()
@@ -11739,9 +11584,10 @@ void FetMainForm::dataTimeConstraintsTeachersMaxActivityTagsPerDayFromSetAction_
 		return;
 	}
 
-	ConstraintTeachersMaxActivityTagsPerDayFromSetForm form(this);
+	/*ConstraintTeachersMaxActivityTagsPerDayFromSetForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMaxActivityTagsPerDayFromSetAction_triggered()
@@ -11758,9 +11604,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxActivityTagsPerDayFromSetActi
 		return;
 	}
 
-	ConstraintStudentsSetMaxActivityTagsPerDayFromSetForm form(this);
+	/*ConstraintStudentsSetMaxActivityTagsPerDayFromSetForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMaxActivityTagsPerDayFromSetAction_triggered()
@@ -11777,9 +11624,10 @@ void FetMainForm::dataTimeConstraintsStudentsMaxActivityTagsPerDayFromSetAction_
 		return;
 	}
 
-	ConstraintStudentsMaxActivityTagsPerDayFromSetForm form(this);
+	/*ConstraintStudentsMaxActivityTagsPerDayFromSetForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMaxActivityTagsPerRealDayFromSetAction_triggered()
@@ -11796,9 +11644,10 @@ void FetMainForm::dataTimeConstraintsTeacherMaxActivityTagsPerRealDayFromSetActi
 		return;
 	}
 
-	ConstraintTeacherMaxActivityTagsPerRealDayFromSetForm form(this);
+	/*ConstraintTeacherMaxActivityTagsPerRealDayFromSetForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMaxActivityTagsPerRealDayFromSetAction_triggered()
@@ -11815,9 +11664,10 @@ void FetMainForm::dataTimeConstraintsTeachersMaxActivityTagsPerRealDayFromSetAct
 		return;
 	}
 
-	ConstraintTeachersMaxActivityTagsPerRealDayFromSetForm form(this);
+	/*ConstraintTeachersMaxActivityTagsPerRealDayFromSetForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMaxActivityTagsPerRealDayFromSetAction_triggered()
@@ -11834,9 +11684,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxActivityTagsPerRealDayFromSet
 		return;
 	}
 
-	ConstraintStudentsSetMaxActivityTagsPerRealDayFromSetForm form(this);
+	/*ConstraintStudentsSetMaxActivityTagsPerRealDayFromSetForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMaxActivityTagsPerRealDayFromSetAction_triggered()
@@ -11853,9 +11704,10 @@ void FetMainForm::dataTimeConstraintsStudentsMaxActivityTagsPerRealDayFromSetAct
 		return;
 	}
 
-	ConstraintStudentsMaxActivityTagsPerRealDayFromSetForm form(this);
+	/*ConstraintStudentsMaxActivityTagsPerRealDayFromSetForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET);
 }
 
 void FetMainForm::dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction_triggered()
@@ -11872,9 +11724,10 @@ void FetMainForm::dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction_tri
 		return;
 	}
 
-	ConstraintRoomMaxActivityTagsPerDayFromSetForm form(this);
+	/*ConstraintRoomMaxActivityTagsPerDayFromSetForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET);
 }
 
 void FetMainForm::dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction_triggered()
@@ -11891,9 +11744,10 @@ void FetMainForm::dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction
 		return;
 	}
 
-	ConstraintRoomMaxActivityTagsPerRealDayFromSetForm form(this);
+	/*ConstraintRoomMaxActivityTagsPerRealDayFromSetForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET);
 }
 
 void FetMainForm::dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction_triggered()
@@ -11910,9 +11764,10 @@ void FetMainForm::dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction_tr
 		return;
 	}
 
-	ConstraintRoomMaxActivityTagsPerWeekFromSetForm form(this);
+	/*ConstraintRoomMaxActivityTagsPerWeekFromSetForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction_triggered()
@@ -11929,9 +11784,10 @@ void FetMainForm::dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAct
 		return;
 	}
 
-	ConstraintTeachersActivityTagMaxHoursDailyRealDaysForm form(this);
+	/*ConstraintTeachersActivityTagMaxHoursDailyRealDaysForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_ACTIVITY_TAG_MAX_HOURS_DAILY_REAL_DAYS);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysAction_triggered()
@@ -11948,9 +11804,10 @@ void FetMainForm::dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysActi
 		return;
 	}
 
-	ConstraintTeacherActivityTagMaxHoursDailyRealDaysForm form(this);
+	/*ConstraintTeacherActivityTagMaxHoursDailyRealDaysForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_DAILY_REAL_DAYS);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMaxHoursPerAllAfternoonsAction_triggered()
@@ -11967,9 +11824,10 @@ void FetMainForm::dataTimeConstraintsTeacherMaxHoursPerAllAfternoonsAction_trigg
 		return;
 	}
 
-	ConstraintTeacherMaxHoursPerAllAfternoonsForm form(this);
+	/*ConstraintTeacherMaxHoursPerAllAfternoonsForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MAX_HOURS_PER_ALL_AFTERNOONS);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMaxHoursPerAllAfternoonsAction_triggered()
@@ -11986,9 +11844,10 @@ void FetMainForm::dataTimeConstraintsTeachersMaxHoursPerAllAfternoonsAction_trig
 		return;
 	}
 
-	ConstraintTeachersMaxHoursPerAllAfternoonsForm form(this);
+	/*ConstraintTeachersMaxHoursPerAllAfternoonsForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MAX_HOURS_PER_ALL_AFTERNOONS);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMaxHoursPerAllAfternoonsAction_triggered()
@@ -12005,9 +11864,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxHoursPerAllAfternoonsAction_t
 		return;
 	}
 
-	ConstraintStudentsSetMaxHoursPerAllAfternoonsForm form(this);
+	/*ConstraintStudentsSetMaxHoursPerAllAfternoonsForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MAX_HOURS_PER_ALL_AFTERNOONS);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMaxHoursPerAllAfternoonsAction_triggered()
@@ -12024,9 +11884,10 @@ void FetMainForm::dataTimeConstraintsStudentsMaxHoursPerAllAfternoonsAction_trig
 		return;
 	}
 
-	ConstraintStudentsMaxHoursPerAllAfternoonsForm form(this);
+	/*ConstraintStudentsMaxHoursPerAllAfternoonsForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MAX_HOURS_PER_ALL_AFTERNOONS);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMinHoursPerMorningAction_triggered()
@@ -12043,9 +11904,10 @@ void FetMainForm::dataTimeConstraintsTeachersMinHoursPerMorningAction_triggered(
 		return;
 	}
 
-	ConstraintTeachersMinHoursPerMorningForm form(this);
+	/*ConstraintTeachersMinHoursPerMorningForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MIN_HOURS_PER_MORNING);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMinHoursPerMorningAction_triggered()
@@ -12062,9 +11924,10 @@ void FetMainForm::dataTimeConstraintsTeacherMinHoursPerMorningAction_triggered()
 		return;
 	}
 
-	ConstraintTeacherMinHoursPerMorningForm form(this);
+	/*ConstraintTeacherMinHoursPerMorningForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MIN_HOURS_PER_MORNING);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMinHoursPerAfternoonAction_triggered()
@@ -12081,9 +11944,10 @@ void FetMainForm::dataTimeConstraintsTeachersMinHoursPerAfternoonAction_triggere
 		return;
 	}
 
-	ConstraintTeachersMinHoursPerAfternoonForm form(this);
+	/*ConstraintTeachersMinHoursPerAfternoonForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MIN_HOURS_PER_AFTERNOON);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMinHoursPerAfternoonAction_triggered()
@@ -12100,9 +11964,10 @@ void FetMainForm::dataTimeConstraintsTeacherMinHoursPerAfternoonAction_triggered
 		return;
 	}
 
-	ConstraintTeacherMinHoursPerAfternoonForm form(this);
+	/*ConstraintTeacherMinHoursPerAfternoonForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MIN_HOURS_PER_AFTERNOON);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMinHoursDailyRealDaysAction_triggered()
@@ -12119,9 +11984,10 @@ void FetMainForm::dataTimeConstraintsTeachersMinHoursDailyRealDaysAction_trigger
 		return;
 	}
 
-	ConstraintTeachersMinHoursDailyRealDaysForm form(this);
+	/*ConstraintTeachersMinHoursDailyRealDaysForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MIN_HOURS_DAILY_REAL_DAYS);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMinHoursDailyRealDaysAction_triggered()
@@ -12138,9 +12004,10 @@ void FetMainForm::dataTimeConstraintsTeacherMinHoursDailyRealDaysAction_triggere
 		return;
 	}
 
-	ConstraintTeacherMinHoursDailyRealDaysForm form(this);
+	/*ConstraintTeacherMinHoursDailyRealDaysForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MIN_HOURS_DAILY_REAL_DAYS);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMaxSpanPerRealDayAction_triggered()
@@ -12157,9 +12024,10 @@ void FetMainForm::dataTimeConstraintsTeacherMaxSpanPerRealDayAction_triggered()
 		return;
 	}
 
-	ConstraintTeacherMaxSpanPerRealDayForm form(this);
+	/*ConstraintTeacherMaxSpanPerRealDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MAX_SPAN_PER_REAL_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMaxSpanPerRealDayAction_triggered()
@@ -12176,9 +12044,10 @@ void FetMainForm::dataTimeConstraintsTeachersMaxSpanPerRealDayAction_triggered()
 		return;
 	}
 
-	ConstraintTeachersMaxSpanPerRealDayForm form(this);
+	/*ConstraintTeachersMaxSpanPerRealDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MAX_SPAN_PER_REAL_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMaxSpanPerRealDayAction_triggered()
@@ -12195,9 +12064,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxSpanPerRealDayAction_triggere
 		return;
 	}
 
-	ConstraintStudentsSetMaxSpanPerRealDayForm form(this);
+	/*ConstraintStudentsSetMaxSpanPerRealDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MAX_SPAN_PER_REAL_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMaxSpanPerRealDayAction_triggered()
@@ -12214,9 +12084,10 @@ void FetMainForm::dataTimeConstraintsStudentsMaxSpanPerRealDayAction_triggered()
 		return;
 	}
 
-	ConstraintStudentsMaxSpanPerRealDayForm form(this);
+	/*ConstraintStudentsMaxSpanPerRealDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MAX_SPAN_PER_REAL_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMinRestingHoursBetweenMorningAndAfternoonAction_triggered()
@@ -12233,9 +12104,10 @@ void FetMainForm::dataTimeConstraintsTeacherMinRestingHoursBetweenMorningAndAfte
 		return;
 	}
 
-	ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoonForm form(this);
+	/*ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoonForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MIN_RESTING_HOURS_BETWEEN_MORNING_AND_AFTERNOON);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMinRestingHoursBetweenMorningAndAfternoonAction_triggered()
@@ -12252,9 +12124,10 @@ void FetMainForm::dataTimeConstraintsTeachersMinRestingHoursBetweenMorningAndAft
 		return;
 	}
 
-	ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoonForm form(this);
+	/*ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoonForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MIN_RESTING_HOURS_BETWEEN_MORNING_AND_AFTERNOON);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMinRestingHoursBetweenMorningAndAfternoonAction_triggered()
@@ -12271,9 +12144,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMinRestingHoursBetweenMorningAnd
 		return;
 	}
 
-	ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoonForm form(this);
+	/*ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoonForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MIN_RESTING_HOURS_BETWEEN_MORNING_AND_AFTERNOON);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMinRestingHoursBetweenMorningAndAfternoonAction_triggered()
@@ -12290,9 +12164,10 @@ void FetMainForm::dataTimeConstraintsStudentsMinRestingHoursBetweenMorningAndAft
 		return;
 	}
 
-	ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoonForm form(this);
+	/*ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoonForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MIN_RESTING_HOURS_BETWEEN_MORNING_AND_AFTERNOON);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerRealDayAction_triggered()
@@ -12309,9 +12184,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerRealDayAction_triggere
 		return;
 	}
 
-	ConstraintStudentsSetMaxGapsPerRealDayForm form(this);
+	/*ConstraintStudentsSetMaxGapsPerRealDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_REAL_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMaxGapsPerRealDayAction_triggered()
@@ -12328,9 +12204,10 @@ void FetMainForm::dataTimeConstraintsStudentsMaxGapsPerRealDayAction_triggered()
 		return;
 	}
 
-	ConstraintStudentsMaxGapsPerRealDayForm form(this);
+	/*ConstraintStudentsMaxGapsPerRealDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MAX_GAPS_PER_REAL_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMaxGapsPerRealDayAction_triggered()
@@ -12347,9 +12224,10 @@ void FetMainForm::dataTimeConstraintsTeachersMaxGapsPerRealDayAction_triggered()
 		return;
 	}
 
-	ConstraintTeachersMaxGapsPerRealDayForm form(this);
+	/*ConstraintTeachersMaxGapsPerRealDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MAX_GAPS_PER_REAL_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMaxGapsPerRealDayAction_triggered()
@@ -12366,9 +12244,10 @@ void FetMainForm::dataTimeConstraintsTeacherMaxGapsPerRealDayAction_triggered()
 		return;
 	}
 
-	ConstraintTeacherMaxGapsPerRealDayForm form(this);
+	/*ConstraintTeacherMaxGapsPerRealDayForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MAX_GAPS_PER_REAL_DAY);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerWeekForRealDaysAction_triggered()
@@ -12385,9 +12264,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerWeekForRealDaysAction_
 		return;
 	}
 
-	ConstraintStudentsSetMaxGapsPerWeekForRealDaysForm form(this);
+	/*ConstraintStudentsSetMaxGapsPerWeekForRealDaysForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_WEEK_FOR_REAL_DAYS);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMaxGapsPerWeekForRealDaysAction_triggered()
@@ -12404,9 +12284,10 @@ void FetMainForm::dataTimeConstraintsStudentsMaxGapsPerWeekForRealDaysAction_tri
 		return;
 	}
 
-	ConstraintStudentsMaxGapsPerWeekForRealDaysForm form(this);
+	/*ConstraintStudentsMaxGapsPerWeekForRealDaysForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MAX_GAPS_PER_WEEK_FOR_REAL_DAYS);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMaxGapsPerWeekForRealDaysAction_triggered()
@@ -12423,9 +12304,10 @@ void FetMainForm::dataTimeConstraintsTeachersMaxGapsPerWeekForRealDaysAction_tri
 		return;
 	}
 
-	ConstraintTeachersMaxGapsPerWeekForRealDaysForm form(this);
+	/*ConstraintTeachersMaxGapsPerWeekForRealDaysForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MAX_GAPS_PER_WEEK_FOR_REAL_DAYS);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMaxGapsPerWeekForRealDaysAction_triggered()
@@ -12442,9 +12324,10 @@ void FetMainForm::dataTimeConstraintsTeacherMaxGapsPerWeekForRealDaysAction_trig
 		return;
 	}
 
-	ConstraintTeacherMaxGapsPerWeekForRealDaysForm form(this);
+	/*ConstraintTeacherMaxGapsPerWeekForRealDaysForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK_FOR_REAL_DAYS);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMaxZeroGapsPerAfternoonAction_triggered()
@@ -12461,9 +12344,10 @@ void FetMainForm::dataTimeConstraintsTeachersMaxZeroGapsPerAfternoonAction_trigg
 		return;
 	}
 
-	ConstraintTeachersMaxZeroGapsPerAfternoonForm form(this);
+	/*ConstraintTeachersMaxZeroGapsPerAfternoonForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MAX_ZERO_GAPS_PER_AFTERNOON);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMaxZeroGapsPerAfternoonAction_triggered()
@@ -12480,9 +12364,10 @@ void FetMainForm::dataTimeConstraintsTeacherMaxZeroGapsPerAfternoonAction_trigge
 		return;
 	}
 
-	ConstraintTeacherMaxZeroGapsPerAfternoonForm form(this);
+	/*ConstraintTeacherMaxZeroGapsPerAfternoonForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MAX_ZERO_GAPS_PER_AFTERNOON);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersAfternoonsEarlyMaxBeginningsAtSecondHourAction_triggered()
@@ -12499,9 +12384,10 @@ void FetMainForm::dataTimeConstraintsTeachersAfternoonsEarlyMaxBeginningsAtSecon
 		return;
 	}
 
-	ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHourForm form(this);
+	/*ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHourForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_AFTERNOONS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherAfternoonsEarlyMaxBeginningsAtSecondHourAction_triggered()
@@ -12518,9 +12404,10 @@ void FetMainForm::dataTimeConstraintsTeacherAfternoonsEarlyMaxBeginningsAtSecond
 		return;
 	}
 
-	ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHourForm form(this);
+	/*ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHourForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_AFTERNOONS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsAfternoonsEarlyMaxBeginningsAtSecondHourAction_triggered()
@@ -12537,9 +12424,10 @@ void FetMainForm::dataTimeConstraintsStudentsAfternoonsEarlyMaxBeginningsAtSecon
 		return;
 	}
 
-	ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHourForm form(this);
+	/*ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHourForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_AFTERNOONS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHourAction_triggered()
@@ -12556,9 +12444,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetAfternoonsEarlyMaxBeginningsAtSe
 		return;
 	}
 
-	ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHourForm form(this);
+	/*ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHourForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_AFTERNOONS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersMorningsEarlyMaxBeginningsAtSecondHourAction_triggered()
@@ -12575,9 +12464,10 @@ void FetMainForm::dataTimeConstraintsTeachersMorningsEarlyMaxBeginningsAtSecondH
 		return;
 	}
 
-	ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHourForm form(this);
+	/*ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHourForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMorningsEarlyMaxBeginningsAtSecondHourAction_triggered()
@@ -12594,9 +12484,10 @@ void FetMainForm::dataTimeConstraintsTeacherMorningsEarlyMaxBeginningsAtSecondHo
 		return;
 	}
 
-	ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHourForm form(this);
+	/*ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHourForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMorningsEarlyMaxBeginningsAtSecondHourAction_triggered()
@@ -12613,9 +12504,10 @@ void FetMainForm::dataTimeConstraintsStudentsMorningsEarlyMaxBeginningsAtSecondH
 		return;
 	}
 
-	ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHourForm form(this);
+	/*ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHourForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMorningsEarlyMaxBeginningsAtSecondHourAction_triggered()
@@ -12632,9 +12524,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMorningsEarlyMaxBeginningsAtSeco
 		return;
 	}
 
-	ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHourForm form(this);
+	/*ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHourForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMaxHoursDailyRealDaysAction_triggered()
@@ -12651,9 +12544,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxHoursDailyRealDaysAction_trig
 		return;
 	}
 
-	ConstraintStudentsSetMaxHoursDailyRealDaysForm form(this);
+	/*ConstraintStudentsSetMaxHoursDailyRealDaysForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY_REAL_DAYS);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMaxHoursDailyRealDaysAction_triggered()
@@ -12670,9 +12564,10 @@ void FetMainForm::dataTimeConstraintsStudentsMaxHoursDailyRealDaysAction_trigger
 		return;
 	}
 
-	ConstraintStudentsMaxHoursDailyRealDaysForm form(this);
+	/*ConstraintStudentsMaxHoursDailyRealDaysForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MAX_HOURS_DAILY_REAL_DAYS);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction_triggered()
@@ -12689,9 +12584,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDays
 		return;
 	}
 
-	ConstraintStudentsSetActivityTagMaxHoursDailyRealDaysForm form(this);
+	/*ConstraintStudentsSetActivityTagMaxHoursDailyRealDaysForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MAX_HOURS_DAILY_REAL_DAYS);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction_triggered()
@@ -12708,9 +12604,10 @@ void FetMainForm::dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAct
 		return;
 	}
 
-	ConstraintStudentsActivityTagMaxHoursDailyRealDaysForm form(this);
+	/*ConstraintStudentsActivityTagMaxHoursDailyRealDaysForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_ACTIVITY_TAG_MAX_HOURS_DAILY_REAL_DAYS);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMinHoursPerMorningAction_triggered()
@@ -12727,9 +12624,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMinHoursPerMorningAction_trigger
 		return;
 	}
 
-	ConstraintStudentsSetMinHoursPerMorningForm form(this);
+	/*ConstraintStudentsSetMinHoursPerMorningForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MIN_HOURS_PER_MORNING);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMinHoursPerMorningAction_triggered()
@@ -12746,9 +12644,10 @@ void FetMainForm::dataTimeConstraintsStudentsMinHoursPerMorningAction_triggered(
 		return;
 	}
 
-	ConstraintStudentsMinHoursPerMorningForm form(this);
+	/*ConstraintStudentsMinHoursPerMorningForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MIN_HOURS_PER_MORNING);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsSetMinHoursPerAfternoonAction_triggered()
@@ -12765,9 +12664,10 @@ void FetMainForm::dataTimeConstraintsStudentsSetMinHoursPerAfternoonAction_trigg
 		return;
 	}
 
-	ConstraintStudentsSetMinHoursPerAfternoonForm form(this);
+	/*ConstraintStudentsSetMinHoursPerAfternoonForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_MIN_HOURS_PER_AFTERNOON);
 }
 
 void FetMainForm::dataTimeConstraintsStudentsMinHoursPerAfternoonAction_triggered()
@@ -12784,9 +12684,10 @@ void FetMainForm::dataTimeConstraintsStudentsMinHoursPerAfternoonAction_triggere
 		return;
 	}
 
-	ConstraintStudentsMinHoursPerAfternoonForm form(this);
+	/*ConstraintStudentsMinHoursPerAfternoonForm form(this);
 	setParentAndOtherThings(&form, this);
-	form.exec();
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MIN_HOURS_PER_AFTERNOON);
 }
 
 void FetMainForm::helpMoroccoAction_triggered()
@@ -13921,7 +13822,7 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	settingsShowToolTipsForConstraintsWithTablesAction->setChecked(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES);
 	
 	INTERFACE_STYLE="";
-	INTERFACE_COLOR_SCHEME="auto";
+	INTERFACE_COLOR_SCHEME="automatic";
 	setCurrentStyle();
 	setCurrentColorScheme();
 	

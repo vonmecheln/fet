@@ -64,16 +64,9 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QRadioButton" name="autoRadioButton">
+      <widget class="QRadioButton" name="automaticRadioButton">
        <property name="text">
-        <string extracomment="Automatically chosen style">Auto</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QRadioButton" name="darkRadioButton">
-       <property name="text">
-        <string>Dark mode</string>
+        <string comment="Automatic mode of selection of the color scheme">Automatic</string>
        </property>
       </widget>
      </item>
@@ -81,6 +74,13 @@
       <widget class="QRadioButton" name="lightRadioButton">
        <property name="text">
         <string>Light mode</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="darkRadioButton">
+       <property name="text">
+        <string>Dark mode</string>
        </property>
       </widget>
      </item>

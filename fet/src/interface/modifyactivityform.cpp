@@ -227,7 +227,7 @@ void ModifyActivityForm::populateSubactivitiesTabWidget(int n)
 			cb->setChecked(true);
 			QSpinBox* sb=new QSpinBox(wd);
 			sb->setMinimum(1);
-			sb->setMaximum(MAX_HOURS_PER_DAY);
+			sb->setMaximum(gt.rules.nHoursPerDay);
 			sb->setValue(1);
 			QLabel* ld=new QLabel(tr("Duration"), wd);
 

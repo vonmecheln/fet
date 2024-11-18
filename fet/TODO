@@ -89,7 +89,8 @@ These are some rather technical problems, for developers, referring to some poss
 - Make students max gaps per day perfect. This is very difficult/complicated. Any bug/mistake would be critical.
 
 - Instead of if-else, use switch in rules.cpp when there are many alternatives (like in modify teacher or read time/space constraints).
-Also in the all time/space constraints dialogs in the interface.
+Also in the all time/space constraints dialogs in the interface. -> PARTIALLY DONE, only remaining is reading constraints, where
+we compare strings.
 
 2----------------------------------------------------------
 From Volker Dirr:
@@ -10344,3 +10345,114 @@ Liviu Lalescu:
 
 I am sorry to disagree, Thai Chi and Benahmed, but it is always safer to create a new directory. The problem is that the user might generate overwriting by accident.
 The user can easily remove the directories after some time. But I will think about it, and add an entry in the TODO.
+
+652---------------------------------------------------------
+From Edinson-MAT (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6209.0
+
+As an administrative staff member at the District University, I am responsible for creating schedules for the Faculty of Mathematical and Natural Sciences,
+encompassing various academic programs. In our pursuit of streamlining the process of uploading required data to our system, complicated by the unique needs
+of each program, we have identified a straightforward solution. We have discovered that the most effective approach would be for the system to allow
+the export and import of sub-activity data.
+
+Upon examining the relevant information within CSV files, we have highlighted the importance of including basic sub-activity details such as:
+
+    Professor
+    Tag
+    Student
+    Subject
+    Duration
+    ID
+    Others
+
+Incorporating these fundamental elements would significantly enhance our workflow. I strongly believe that this minor adjustment would resolve numerous
+challenges and substantially expedite our information upload process.
+
+Volker Dirr:
+
+I am currently not sure about the best variant:
+a) an activities.csv file that can import activities and subactivities.
+or
+b) a subactivities.csv file that can only import subactivities, but not activities.
+
+Both variants have different advantages and disadvantages.
+
+What do you prefer (and why)?
+
+You can also suggest how the file (header) should look like. Since there are several variants how to do that. So maybe it is a nice idea to talk about
+that here, so we can already see disadvantages and advantages of different variants.
+
+Edinson-MAT:
+
+Thank you for your prompt response, and I'm delighted to know that our suggestion was already on your to-do list. We understand that prioritization is crucial, and we appreciate your willingness to consider our specific needs.
+
+We want to express our sincere gratitude for considering our request. FET has been an invaluable tool for us since we discovered it, and this small modification would represent a significant advancement in the efficiency of our scheduling process. Your dedication to improving the software is truly appreciated, and we look forward to any developments in this regard.
+
+After analyzing the variants you proposed, our team prefers option b) a `subactivities.csv` file that allows importing only subactivities, but not activities. This choice is based on our optimized workflow, which consists of the following steps:
+
+    Initial Activity Import: First, we will import the main activities into the system.
+    Subactivity Generation: The system will generate the corresponding subactivities for these activities.
+    Subactivity Export: We will export these subactivities to the `subactivities.csv` file.
+    Subactivity Modification in Excel: We will modify the subactivities as needed from an online Excel file, enabling real-time collaboration among the team. This is particularly useful for us, as it facilitates coordination and updating of changes.
+    Import of Updated Subactivities: Finally, we will import the modified and "tagged" subactivities back into the system.
+
+
+Our choice stems from having activities with sessions (subactivities) that are not conducted in the same type of space. For instance, a class may have one subactivity in a regular classroom and another in a laboratory. To manage this efficiently, we plan to add specific tags for each room configuration and apply tag-based restrictions. The ability to modify subactivities in detail is crucial for us.
+
+For this functionality to be effective for us, it would be ideal if the `subactivities.csv` file includes the following fields per subactivity:
+
+    ID
+    Subject
+    Duration
+    Total Duration
+    Activity Group ID
+    Active
+    Activity Tag (for our room management and restrictions)
+    Teacher
+    Students
+    Comments
+
+
+Thank you in advance for your time and consideration.
+
+Volker Dirr:
+
+hmm... I must think about that.
+There are a few points that will be problematic with your suggestion and I must avoid those problems (by making a better csv file):
+a) (Minor problem): What to do for example if the ID was already added in the activity.csv? Adding them separately or try to merge them to the activity?
+b) (Very big problem): I can't use the "Activity Group ID" from fet (xml) in csv file. Impossible, because in fet there is a special rule that if the ID is equal to 0 then it will be connected to the main ID. In xml I can see that "connectivity" by the braces. Since there are no braces in a csv file it will be impossible to see it! A solution might be to add an ID that is connected with the sub activity. Sadly there are many variants possible to do that and it will also be a big pain for the user that he must care about that in the excel file manually. I bet users will make a lot of bugs there. So we should think about a better/other variant.
+c) (Very big problem): Impossible to see the min n day constraint. It will be a pain to add them all manually later.
+d) (Minor problem): I think i should also add a few optional other constraints that are requested by other guys, like a fixed/locked day, time and room.
+
+Edinson-MAT:
+
+I've been thinking, and I'm starting to lean towards a simpler solution to avoid all the potential headaches you mentioned. Honestly, what we're really after is an efficient way to tag sub-activities with the csv-excel format. So, here's a reworked proposal: what if we use a single, combined CSV file for both activities and sub-activities? This would sidestep the ID conflicts and connectivity issues you brought up.
+
+Let's just include the essential fields: Subject, Duration, Total Duration, Active, Activity Tag, Teacher, Students, and Comments. Maybe with a structure similar to the csv to import years, groups and subgroups.  Does this simplified approach sound like it could work? Looking forward to hearing your thoughts on this streamlined proposal. 
+
+Volker Dirr:
+
+Yes, I also prefer to use just a single file.
+
+Let me think more. Sadly your suggestion is not an easy one.
+There is still the question how to do it, since all the fields that you mention are already available.
+
+In my opinion 2 possible approaches are:
+
+a) adding something like an ID. I is not the same ID as in FET (can be, but must not be) and that ID is only used to "connect" 2 lines to an activity. Disadvantage of this variant is, that the min day constraint between 2 lines is not clear.
+
+or
+
+b) add a second field separator. So similar to the "+" for adding several teachers. So maybe adding a "|" to separate sub-activities. The disadvantage of that variant will be, that it is not a very nice solution in Excel, since in Excel it will be in a single cell. So the value in cells might be very long and confusing. And it also mean that using "|" in names is critical and might produce problems.
+
+653---------------------------------------------------------
+From uni_instructor:
+
+In my planning today, I came across a few apparent inconsistencies. The
+constraint <ConstraintTwoActivitiesConsecutive> does not fully align
+with my understanding of this constraint, based on the brief
+explanations available in the program. It should be made clearer to the
+user that this constraint does not allow time gaps between activities.
+This could lead to misunderstandings, especially when break times are
+mentioned.

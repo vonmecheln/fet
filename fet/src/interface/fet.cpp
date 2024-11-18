@@ -487,10 +487,12 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 	TIMETABLE_HTML_REPEAT_NAMES=newSettings.value("timetables-repeat-vertical-names", "false").toBool();
 	
 	INTERFACE_STYLE=newSettings.value("interface-style", "").toString();
-	INTERFACE_COLOR_SCHEME=newSettings.value("interface-color-scheme", "auto").toString();
-	//To avoid assert(0) in fetmainform.cpp if the setting is corrupt.
-	if(INTERFACE_COLOR_SCHEME!="auto" && INTERFACE_COLOR_SCHEME!="light" && INTERFACE_COLOR_SCHEME!="dark")
-		INTERFACE_COLOR_SCHEME="auto";
+	INTERFACE_COLOR_SCHEME=newSettings.value("interface-color-scheme", "automatic").toString();
+	if(INTERFACE_COLOR_SCHEME=="auto") //old name, in FET-6.27.0
+		INTERFACE_COLOR_SCHEME="automatic";
+	//To avoid assert(0) in fetmainform.cpp if the setting is corrupt (I am not sure I kept the assert, but does not hurt).
+	if(INTERFACE_COLOR_SCHEME!="automatic" && INTERFACE_COLOR_SCHEME!="light" && INTERFACE_COLOR_SCHEME!="dark")
+		INTERFACE_COLOR_SCHEME="automatic";
 	
 	USE_GUI_COLORS=newSettings.value("use-gui-colors", "false").toBool();
 

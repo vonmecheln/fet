@@ -10,6 +10,9 @@
     <height>411</height>
    </rect>
   </property>
+  <property name="windowTitle">
+   <string notr="true">filename.fet - FET</string>
+  </property>
   <widget class="QWidget" name="mainwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="1">

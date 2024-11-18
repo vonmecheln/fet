@@ -19,306 +19,7 @@
 
 #include "alltimeconstraintsform.h"
 
-#include "modifyconstraintbreaktimesform.h"
-#include "modifyconstraintbasiccompulsorytimeform.h"
-
-#include "modifyconstraintactivitypreferredtimeslotsform.h"
-#include "modifyconstraintactivitypreferredstartingtimesform.h"
-#include "modifyconstrainttwoactivitiesconsecutiveform.h"
-#include "modifyconstrainttwoactivitiesgroupedform.h"
-#include "modifyconstraintthreeactivitiesgroupedform.h"
-#include "modifyconstrainttwoactivitiesorderedform.h"
-#include "modifyconstrainttwosetsofactivitiesorderedform.h"
-#include "modifyconstrainttwoactivitiesorderedifsamedayform.h"
-
-#include "modifyconstraintactivitiespreferredtimeslotsform.h"
-#include "modifyconstraintactivitiespreferredstartingtimesform.h"
-
-#include "modifyconstraintsubactivitiespreferredtimeslotsform.h"
-#include "modifyconstraintsubactivitiespreferredstartingtimesform.h"
-
-#include "modifyconstraintactivitiessamestartingtimeform.h"
-#include "modifyconstraintactivitiessamestartinghourform.h"
-#include "modifyconstraintactivitiessamestartingdayform.h"
-#include "modifyconstraintactivitypreferredstartingtimeform.h"
-#include "modifyconstraintactivitiesnotoverlappingform.h"
-#include "modifyconstraintactivitytagsnotoverlappingform.h"
-#include "modifyconstraintmindaysbetweenactivitiesform.h"
-#include "modifyconstraintminhalfdaysbetweenactivitiesform.h"
-#include "modifyconstraintmaxdaysbetweenactivitiesform.h"
-
-#include "modifyconstraintactivitiesmaxhourlyspanform.h"
-
-#include "modifyconstraintmaxhalfdaysbetweenactivitiesform.h"
-#include "modifyconstraintmaxtermsbetweenactivitiesform.h"
-#include "modifyconstraintmingapsbetweenactivitiesform.h"
-
-#include "modifyconstraintactivityendsstudentsdayform.h"
-#include "modifyconstraintactivitiesendstudentsdayform.h"
-#include "modifyconstraintactivityendsteachersdayform.h"
-#include "modifyconstraintactivitiesendteachersdayform.h"
-
-#include "modifyconstraintactivitybeginsstudentsdayform.h"
-#include "modifyconstraintactivitiesbeginstudentsdayform.h"
-#include "modifyconstraintactivitybeginsteachersdayform.h"
-#include "modifyconstraintactivitiesbeginteachersdayform.h"
-
-#include "modifyconstraintteachernotavailabletimesform.h"
-#include "modifyconstraintteachersmaxgapsperweekform.h"
-#include "modifyconstraintteachermaxgapsperweekform.h"
-#include "modifyconstraintteachersmaxgapsperdayform.h"
-#include "modifyconstraintteachermaxgapsperdayform.h"
-#include "modifyconstraintteachersmaxgapspermorningandafternoonform.h"
-#include "modifyconstraintteachermaxgapspermorningandafternoonform.h"
-#include "modifyconstraintteachermaxdaysperweekform.h"
-#include "modifyconstraintteachersmaxdaysperweekform.h"
-#include "modifyconstraintteachersmaxhoursdailyform.h"
-#include "modifyconstraintteachermaxhoursdailyform.h"
-#include "modifyconstraintteachersmaxhourscontinuouslyform.h"
-#include "modifyconstraintteachermaxhourscontinuouslyform.h"
-#include "modifyconstraintteachersminhoursdailyform.h"
-#include "modifyconstraintteacherminhoursdailyform.h"
-
-#include "modifyconstraintteachersmaxhoursdailyinintervalform.h"
-#include "modifyconstraintteachermaxhoursdailyinintervalform.h"
-#include "modifyconstraintstudentsmaxhoursdailyinintervalform.h"
-#include "modifyconstraintstudentssetmaxhoursdailyinintervalform.h"
-
-#include "modifyconstraintteachermindaysperweekform.h"
-#include "modifyconstraintteachersmindaysperweekform.h"
-
-#include "modifyconstraintteachersactivitytagmaxhourscontinuouslyform.h"
-#include "modifyconstraintteacheractivitytagmaxhourscontinuouslyform.h"
-
-#include "modifyconstraintteachersactivitytagmaxhoursdailyform.h"
-#include "modifyconstraintteacheractivitytagmaxhoursdailyform.h"
-
-#include "modifyconstraintteachersactivitytagminhoursdailyform.h"
-#include "modifyconstraintteacheractivitytagminhoursdailyform.h"
-
-#include "modifyconstraintstudentssetnotavailabletimesform.h"
-#include "modifyconstraintstudentssetmaxgapsperweekform.h"
-#include "modifyconstraintstudentsmaxgapsperweekform.h"
-
-#include "modifyconstraintstudentssetmaxgapsperdayform.h"
-#include "modifyconstraintstudentsmaxgapsperdayform.h"
-
-#include "modifyconstraintstudentsearlymaxbeginningsatsecondhourform.h"
-#include "modifyconstraintstudentssetearlymaxbeginningsatsecondhourform.h"
-#include "modifyconstraintstudentssetmaxhoursdailyform.h"
-#include "modifyconstraintstudentsmaxhoursdailyform.h"
-#include "modifyconstraintstudentssetmaxhourscontinuouslyform.h"
-#include "modifyconstraintstudentsmaxhourscontinuouslyform.h"
-#include "modifyconstraintstudentssetminhoursdailyform.h"
-#include "modifyconstraintstudentsminhoursdailyform.h"
-
-#include "modifyconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform.h"
-#include "modifyconstraintstudentsmingapsbetweenorderedpairofactivitytagsform.h"
-#include "modifyconstraintteachermingapsbetweenorderedpairofactivitytagsform.h"
-#include "modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform.h"
-
-#include "modifyconstraintstudentssetmingapsbetweenactivitytagform.h"
-#include "modifyconstraintstudentsmingapsbetweenactivitytagform.h"
-#include "modifyconstraintteachermingapsbetweenactivitytagform.h"
-#include "modifyconstraintteachersmingapsbetweenactivitytagform.h"
-
-#include "modifyconstraintstudentssetmingapsbetweenorderedpairofactivitytagsperrealdayform.h"
-#include "modifyconstraintstudentsmingapsbetweenorderedpairofactivitytagsperrealdayform.h"
-#include "modifyconstraintteachermingapsbetweenorderedpairofactivitytagsperrealdayform.h"
-#include "modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsperrealdayform.h"
-
-#include "modifyconstraintstudentssetmingapsbetweenactivitytagperrealdayform.h"
-#include "modifyconstraintstudentsmingapsbetweenactivitytagperrealdayform.h"
-#include "modifyconstraintteachermingapsbetweenactivitytagperrealdayform.h"
-#include "modifyconstraintteachersmingapsbetweenactivitytagperrealdayform.h"
-
-#include "modifyconstraintstudentssetmingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoonform.h"
-#include "modifyconstraintstudentsmingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoonform.h"
-#include "modifyconstraintteachermingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoonform.h"
-#include "modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsbetweenmorningandafternoonform.h"
-
-#include "modifyconstraintstudentssetmingapsbetweenactivitytagbetweenmorningandafternoonform.h"
-#include "modifyconstraintstudentsmingapsbetweenactivitytagbetweenmorningandafternoonform.h"
-#include "modifyconstraintteachermingapsbetweenactivitytagbetweenmorningandafternoonform.h"
-#include "modifyconstraintteachersmingapsbetweenactivitytagbetweenmorningandafternoonform.h"
-
-#include "modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform.h"
-#include "modifyconstraintstudentsactivitytagmaxhourscontinuouslyform.h"
-
-#include "modifyconstraintstudentssetactivitytagmaxhoursdailyform.h"
-#include "modifyconstraintstudentsactivitytagmaxhoursdailyform.h"
-
-#include "modifyconstraintstudentssetactivitytagminhoursdailyform.h"
-#include "modifyconstraintstudentsactivitytagminhoursdailyform.h"
-
-#include "modifyconstraintteacherintervalmaxdaysperweekform.h"
-#include "modifyconstraintteachersintervalmaxdaysperweekform.h"
-
-#include "modifyconstraintstudentssetintervalmaxdaysperweekform.h"
-#include "modifyconstraintstudentsintervalmaxdaysperweekform.h"
-
-#include "modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform.h"
-#include "modifyconstraintactivitiesoccupymintimeslotsfromselectionform.h"
-#include "modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.h"
-#include "modifyconstraintactivitiesminsimultaneousinselectedtimeslotsform.h"
-
-#include "modifyconstraintstudentssetmaxdaysperweekform.h"
-#include "modifyconstraintstudentsmaxdaysperweekform.h"
-
-//2017-02-07
-#include "modifyconstraintteachermaxspanperdayform.h"
-#include "modifyconstraintteachersmaxspanperdayform.h"
-#include "modifyconstraintstudentssetmaxspanperdayform.h"
-#include "modifyconstraintstudentsmaxspanperdayform.h"
-#include "modifyconstraintteacherminrestinghoursform.h"
-#include "modifyconstraintteachersminrestinghoursform.h"
-#include "modifyconstraintstudentssetminrestinghoursform.h"
-#include "modifyconstraintstudentsminrestinghoursform.h"
-
-//mornings-afternoons
-#include "modifyconstraintteachersmaxzerogapsperafternoonform.h"
-#include "modifyconstraintteachermaxzerogapsperafternoonform.h"
-
-#include "modifyconstraintteachersmaxgapsperrealdayform.h"
-#include "modifyconstraintteachermaxgapsperrealdayform.h"
-
-#include "modifyconstraintteachermaxrealdaysperweekform.h"
-#include "modifyconstraintteachersmaxrealdaysperweekform.h"
-#include "modifyconstraintteachermaxafternoonsperweekform.h"
-#include "modifyconstraintteachersmaxafternoonsperweekform.h"
-#include "modifyconstraintteachermaxmorningsperweekform.h"
-#include "modifyconstraintteachersmaxmorningsperweekform.h"
-
-#include "modifyconstraintteachermaxtwoconsecutivemorningsform.h"
-#include "modifyconstraintteachersmaxtwoconsecutivemorningsform.h"
-#include "modifyconstraintteachermaxtwoconsecutiveafternoonsform.h"
-#include "modifyconstraintteachersmaxtwoconsecutiveafternoonsform.h"
-
-#include "modifyconstraintteachersmaxhoursdailyrealdaysform.h"
-#include "modifyconstraintteachermaxhoursdailyrealdaysform.h"
-
-#include "modifyconstraintteachersminhoursdailyrealdaysform.h"
-#include "modifyconstraintteacherminhoursdailyrealdaysform.h"
-
-#include "modifyconstraintteachermaxhoursperallafternoonsform.h"
-#include "modifyconstraintteachersmaxhoursperallafternoonsform.h"
-
-#include "modifyconstraintstudentssetmaxhoursperallafternoonsform.h"
-#include "modifyconstraintstudentsmaxhoursperallafternoonsform.h"
-
-#include "modifyconstraintteachersminhourspermorningform.h"
-#include "modifyconstraintteacherminhourspermorningform.h"
-
-#include "modifyconstraintteachersminhoursperafternoonform.h"
-#include "modifyconstraintteacherminhoursperafternoonform.h"
-
-#include "modifyconstraintteacherminrealdaysperweekform.h"
-#include "modifyconstraintteachersminrealdaysperweekform.h"
-
-#include "modifyconstraintteacherminmorningsperweekform.h"
-#include "modifyconstraintteachersminmorningsperweekform.h"
-#include "modifyconstraintteacherminafternoonsperweekform.h"
-#include "modifyconstraintteachersminafternoonsperweekform.h"
-
-#include "modifyconstraintteachermaxactivitytagsperdayfromsetform.h"
-#include "modifyconstraintteachersmaxactivitytagsperdayfromsetform.h"
-
-#include "modifyconstraintstudentssetmaxactivitytagsperdayfromsetform.h"
-#include "modifyconstraintstudentsmaxactivitytagsperdayfromsetform.h"
-
-#include "modifyconstraintteachermaxactivitytagsperrealdayfromsetform.h"
-#include "modifyconstraintteachersmaxactivitytagsperrealdayfromsetform.h"
-
-#include "modifyconstraintstudentssetmaxactivitytagsperrealdayfromsetform.h"
-#include "modifyconstraintstudentsmaxactivitytagsperrealdayfromsetform.h"
-
-#include "modifyconstraintteachersactivitytagmaxhoursdailyrealdaysform.h"
-#include "modifyconstraintteacheractivitytagmaxhoursdailyrealdaysform.h"
-
-#include "modifyconstraintstudentssetmaxgapsperrealdayform.h"
-#include "modifyconstraintstudentsmaxgapsperrealdayform.h"
-
-#include "modifyconstraintteachersmaxgapsperweekforrealdaysform.h"
-#include "modifyconstraintteachermaxgapsperweekforrealdaysform.h"
-#include "modifyconstraintstudentssetmaxgapsperweekforrealdaysform.h"
-#include "modifyconstraintstudentsmaxgapsperweekforrealdaysform.h"
-
-#include "modifyconstraintstudentsafternoonsearlymaxbeginningsatsecondhourform.h"
-#include "modifyconstraintstudentssetafternoonsearlymaxbeginningsatsecondhourform.h"
-
-#include "modifyconstraintteachersafternoonsearlymaxbeginningsatsecondhourform.h"
-#include "modifyconstraintteacherafternoonsearlymaxbeginningsatsecondhourform.h"
-
-#include "modifyconstraintstudentsmorningsearlymaxbeginningsatsecondhourform.h"
-#include "modifyconstraintstudentssetmorningsearlymaxbeginningsatsecondhourform.h"
-
-#include "modifyconstraintteachersmorningsearlymaxbeginningsatsecondhourform.h"
-#include "modifyconstraintteachermorningsearlymaxbeginningsatsecondhourform.h"
-
-#include "modifyconstraintstudentssetmaxhoursdailyrealdaysform.h"
-#include "modifyconstraintstudentsmaxhoursdailyrealdaysform.h"
-
-#include "modifyconstraintstudentsminhourspermorningform.h"
-#include "modifyconstraintstudentssetminhourspermorningform.h"
-
-#include "modifyconstraintstudentsminhoursperafternoonform.h"
-#include "modifyconstraintstudentssetminhoursperafternoonform.h"
-
-#include "modifyconstraintstudentssetactivitytagmaxhoursdailyrealdaysform.h"
-#include "modifyconstraintstudentsactivitytagmaxhoursdailyrealdaysform.h"
-
-#include "modifyconstraintteachermorningintervalmaxdaysperweekform.h"
-#include "modifyconstraintteachersmorningintervalmaxdaysperweekform.h"
-
-#include "modifyconstraintteacherafternoonintervalmaxdaysperweekform.h"
-#include "modifyconstraintteachersafternoonintervalmaxdaysperweekform.h"
-
-#include "modifyconstraintstudentssetmorningintervalmaxdaysperweekform.h"
-#include "modifyconstraintstudentsmorningintervalmaxdaysperweekform.h"
-#include "modifyconstraintstudentssetafternoonintervalmaxdaysperweekform.h"
-#include "modifyconstraintstudentsafternoonintervalmaxdaysperweekform.h"
-
-#include "modifyconstraintstudentssetmaxrealdaysperweekform.h"
-#include "modifyconstraintstudentsmaxrealdaysperweekform.h"
-
-#include "modifyconstraintstudentssetmaxafternoonsperweekform.h"
-#include "modifyconstraintstudentsmaxafternoonsperweekform.h"
-#include "modifyconstraintstudentssetmaxmorningsperweekform.h"
-#include "modifyconstraintstudentsmaxmorningsperweekform.h"
-
-#include "modifyconstraintstudentssetminafternoonsperweekform.h"
-#include "modifyconstraintstudentsminafternoonsperweekform.h"
-#include "modifyconstraintstudentssetminmorningsperweekform.h"
-#include "modifyconstraintstudentsminmorningsperweekform.h"
-
-#include "modifyconstraintteachermaxspanperrealdayform.h"
-#include "modifyconstraintteachersmaxspanperrealdayform.h"
-#include "modifyconstraintstudentssetmaxspanperrealdayform.h"
-#include "modifyconstraintstudentsmaxspanperrealdayform.h"
-
-#include "modifyconstraintteacherminrestinghoursbetweenmorningandafternoonform.h"
-#include "modifyconstraintteachersminrestinghoursbetweenmorningandafternoonform.h"
-#include "modifyconstraintstudentssetminrestinghoursbetweenmorningandafternoonform.h"
-#include "modifyconstraintstudentsminrestinghoursbetweenmorningandafternoonform.h"
-
-#include "modifyconstraintteachernotwoconsecutivedaysform.h"
-#include "modifyconstraintteachersnotwoconsecutivedaysform.h"
-
-#include "modifyconstraintteachermaxthreeconsecutivedaysform.h"
-#include "modifyconstraintteachersmaxthreeconsecutivedaysform.h"
-
-#include "modifyconstraintstudentssetmaxthreeconsecutivedaysform.h"
-#include "modifyconstraintstudentsmaxthreeconsecutivedaysform.h"
-
-//block planning
-#include "modifyconstraintmaxgapsbetweenactivitiesform.h"
-
-#include "modifyconstraintmaxtotalactivitiesfromsetinselectedtimeslotsform.h"
-
-//terms
-#include "modifyconstraintactivitiesmaxinatermform.h"
-#include "modifyconstraintactivitiesmininatermform.h"
-#include "modifyconstraintactivitiesoccupymaxtermsform.h"
+#include "addormodifytimeconstraint.h"
 
 #include "lockunlock.h"
 
@@ -766,8 +467,17 @@ void AllTimeConstraintsForm::modifyConstraint()
 	
 	assert(i<visibleTimeConstraintsList.count());
 	TimeConstraint* ctr=visibleTimeConstraintsList.at(i);
-	
-	switch(ctr->type){
+
+	//185
+	if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_DAY){
+		QMessageBox::warning(this, tr("FET warning"), tr("The constraints of type activity preferred day cannot be edited. They can only be added/removed"
+		 " from the students/teachers timetable view time horizontal dialog or they can be removed from this dialog."));
+		return;
+	}
+
+	AddOrModifyTimeConstraint(this, ctr->type, ctr);
+
+	/*switch(ctr->type){
 		//1
 		case CONSTRAINT_BASIC_COMPULSORY_TIME:
 			{
@@ -2602,7 +2312,7 @@ void AllTimeConstraintsForm::modifyConstraint()
 			//assert(0);
 			//exit(1);
 			break;
-	}
+	}*/
 	
 	filterChanged();
 	

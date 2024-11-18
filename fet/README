@@ -1,4 +1,4 @@
-This is FET version 6.27.0
+This is FET version 6.28.0
 
 
 Program description:
@@ -14,10 +14,10 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.11.3, Xfce 4.18,
+	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.11.7, Xfce 4.18,
 	Xfce Terminal Emulator 1.1.3, Midnight Commander 4.8.32, Krusader 2.8.1, Kate 24.08.1, KDiff3 0.9.98, grep 3.11, sed 4.9,
-	Thunar Bulk Rename 4.18.11, Qt 6.8.0, QMake 3.1, CMake 3.30.4, Ninja 1.12.1, Qt Creator 14.0.2, GCC 14.2.1, Clang 18.1.8,
-	GNU Make 4.4.1, GDB 14.2, Valgrind 3.23.0, Coverity Scan 2023.6, Cppcheck 2.15, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0,
+	Thunar Bulk Rename 4.18.11, Qt 6.8.0, QMake 3.1, CMake 3.30.4, Ninja 1.12.1, Qt Creator 14.0.2, GCC 14.2.1, Clang 19.1.3,
+	GNU Make 4.4.1, GDB 14.2, Valgrind 3.23.0, Coverity Scan 2023.6.2, Cppcheck 2.15, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0,
 	Inkscape 1.3.1, GIMP 2.10.38, ImageMagick 7.1.1-37, International Ispell 3.1.20 / Aspell 0.60.8.1, tar 1.35, Gzip 1.13, bzip2 1.0.8,
 	other great software (most of them are free software, in the sense defined by The Free Software Foundation).
 
@@ -128,32 +128,6 @@ Compiling FET:
 		5. $ cd to the directory where the .tar.bz2 file is
 		6. $ tar -jxvf fet-v.v.v.bz2
 
-	Note2: compilation takes long (maybe even 1 hour, if you are using an older computer). The file
-	rules.cpp takes the longest time to compile, maybe even 1 minute or more.
-
-	Note3 (old, probably deprecated): the following situation may appear under GNU/Linux, but it could be met also on other platforms.
-	Depending on your Qt installation, it may happen that the FET intermediary files and executables are very large (~100 MB for the fet executable
-	instead of ~10 MB). It is not sure if this affects the FET speed and performance, but anyway it is unpleasant. In this case, you may want to
-	modify some files in your system (Qt files) to improve this. You need to change some Qt configuration files and recompile FET from the beginning
-	(remove any temporary files with make distclean or unpack FET sources again, in an empty location).
-	Notations: mkspecs is a directory and QMAKE_CFLAGS_RELEASE and QMAKE_CXXFLAGS_RELEASE are two sections (text on two lines) contained in a file
-	in a subdirectory of mkspecs (some possible location for these are given in this paragraph, shortly below).
-	If mkspecs files for your platform contain the -g flag (text) in the QMAKE_CFLAGS_RELEASE or QMAKE_CXXFLAGS_RELEASE sections, you need to remove
-	this flag. If they do not contain -g flag in these sections, then you don't need to remove anything (and most probably the intermediary files and fet
-	executable will have normal size).
-	More details about where can you find the mkspecs files: under openSUSE GNU/Linux, it seems that for newer versions of Qt (>=4.7.1), the problem
-	is no longer present. In the past, the location of this minor problem was in the file /usr/share/qt5/mkspecs/common/g++.conf, at lines 10 and 25,
-	you needed to remove the "-g" flag from the QMAKE_CFLAGS_RELEASE and QMAKE_CXXFLAGS_RELEASE sections (root access needed to make this change).
-	Under Fedora GNU/Linux for the same problem, a user reported that you need to modify /usr/lib/qt4/mkspecs/common/g++.conf
-	and /usr/lib/qt4/mkspecs/linux-g++/qmake.conf (remove the -g flag from QMAKE_CFLAGS_RELEASE and QMAKE_CXXFLAGS_RELEASE sections).
-	(The mkspecs directory contains more subdirectories, in the form platform-compiler, you need to search for your corresponding directories/files.
-	For instance, GNU/Linux with GCC compiler is named "linux-g++", and you may also need to modify the "common" section).
-	Another solution, by another user: the addition of the lines
-	 "linux-g++*: QMAKE_CXXFLAGS_RELEASE -= -g"
-	 and
-	 "linux-g++*: QMAKE_CFLAGS_RELEASE -= -g"
-	 (without quotes) in the files src/src.pro and src/src-cl.pro (you can add them at the end of these files, or in another proper location).
-	
 	Note NMkJobs: advice from a user: if you have a multiple core computer, you may be able to split the compilation into more threads, with the -j option for the
 	make command, so that the compilation is faster. This option creates a number of compilation threads equal with the number specified along with the -j option.
 	Under GNU/Linux or macOS, just write "make -j 16" if you have a 16 threads computer. This is proven to work under GNU/Linux and macOS. Under Windows it depends
@@ -166,7 +140,7 @@ Compiling FET:
 	all the intermediary files and recompile), and also if you did not use FET on this machine or if you remove the settings file/registry entry for FET
 	(otherwise FET will retain the language which was already saved in its settings).
 	
-	Note4: If you get an error like this:
+	Note GL: If you get an error like this:
 	In file included from ../../Qt5.3.2/5.3/gcc_64/include/QtGui/qopenglcontext.h:62:0,
 		from ../../Qt5.3.2/5.3/gcc_64/include/QtGui/QtGui:32,
 		from ../../Qt5.3.2/5.3/gcc_64/include/QtWidgets/QtWidgetsDepends:3,
@@ -179,7 +153,7 @@ Compiling FET:
 	you may need to install additional packages before compiling FET. For instance, under openSUSE GNU/Linux you may need to install Mesa-devel
 	(or maybe only Mesa-libGL-devel). As reported by a user, on Mint GNU/Linux he needed to install mesa-common-dev and libgl1-mesa-dev.
 
-	Note 5: If you only want to compile the command-line version, open the file fet.pro with a text editor and from the second line remove the
+	Note: If you want to compile only the command-line version, open the file fet.pro with a text editor and from the second line remove the
 	text "src/src.pro ".
 
 
@@ -188,7 +162,7 @@ Compiling FET:
 	- type "qmake fet.pro" or simply "qmake". You have to use QMake from Qt 6 series (this command is executed very fast, so don't worry if you
 		get immediate return from it)
 	See also notes NUseSystemLocale and Note4 above.
-	- type "make" (this takes a long time, maybe even 1 hour). See also note NMkJobs above ("make -j 16" for instance will be much faster on a 16 threads processor).
+	- type "make" (this takes some time). See also note NMkJobs above ("make -j 16" for instance will be much faster on a 16 threads processor).
 	To remove the compiled objects/executable: "make clean" and/or "make distclean".
 
 
@@ -202,7 +176,7 @@ Compiling FET:
 	- IMPORTANT: you might need to write: "qmake -spec macx-g++ fet.pro", if "qmake fet.pro"
 	does not produce a correct makefile.
 	See also notes NUseSystemLocale and Note4 above.
-	- type "make" (this takes a long time, maybe even 1 hour). See also note NMkJobs above ("make -j 16" for instance will be much faster on a 16 threads processor).
+	- type "make" (this takes some time). See also note NMkJobs above ("make -j 16" for instance will be much faster on a 16 threads processor).
 	To remove the compiled objects/executable: "make clean" and/or "make distclean".
 
 	2. Another variant:
@@ -217,7 +191,7 @@ Compiling FET:
 	instead of the command above, use
 	/Users/YOURUSERNAME/Qt/6.8.0/macos/bin/qmake -r -spec /Users/YOURUSERNAME/Qt/6.8.0/macos/mkspecs/macx-clang QMAKE_APPLE_DEVICE_ARCHS="x86_64 arm64"
 
-	Then "make" (this takes a long time, maybe even 1 hour). See also note NMkJobs above ("make -j 16" for instance will be much faster on a 16 threads processor).
+	Then "make" (this takes some time). See also note NMkJobs above ("make -j 16" for instance will be much faster on a 16 threads processor).
 	To remove the compiled objects/executable: "make clean" and/or "make distclean".
 	Please see: https://lalescu.ro/liviu/fet/forum/index.php?topic=2488.msg13425#msg13425 (and also see the whole topic there.)
 
@@ -229,7 +203,7 @@ Compiling FET:
 	immediate return from it) and then, if you are using MinGW, "mingw32-make" (this takes a long time, maybe even 1 hour)
 	in a command line in the FET directory.
 	See also note NUseSystemLocale above.
-	See also Note4 above.
+	See also Note GL above.
 	See also note NMkJobs above ("mingw32-make -j 16" for instance will be much faster on a 16 threads processor).
 	(You can use the command line prompt of Windows or the Qt command line prompt shortcut in the Qt shortcuts menu.)
 	Then, you can remove the directories "src" and "tmp", to save up space, if you want.
@@ -278,7 +252,7 @@ Installing FET:
 
 
 Running FET:
-	Note: The FET main window contains a menu with the items: File, Data, Statistics, Advanced,
+	Note: The FET main window contains a menu with the items: File, Data, History, Statistics, Advanced,
 	Timetable, Settings, Help. Everything is right if you have that. Optionally, on the main window there may be a toolbox
 	containing shortcuts (if selected by the user in the settings. By default it is selected).
 	
@@ -311,8 +285,6 @@ Running FET:
 	Windows:
 	Run the fet.exe executable (its location is inside the fet-v.v.v directory, you can find it there if you have FET precompiled for Windows or after you compiled it).
 	You can give this executable a data file to be loaded on startup: "fet.exe filename.fet".
-	Alternatively, you can run fet-fusion.bat or fet-windows.bat, to use the specified style in the interface (these two alternatives also allow you to specify the
-	data file to be loaded on startup, for instance "fet-fusion.bat filename.fet").
 
 	Command line version usage: fet-cl --inputfile=FILE [options]
 		FILE is the input file, for instance "data.fet"
@@ -556,4 +528,4 @@ Feed-back / help:
 	for inclusion into examples, and also to report possible bugs and suggestions. See the FET homepage for contact information.
 
 
-Copyright (C) 2002-2023 Liviu Lalescu, Volker Dirr.
+Copyright (C) 2002-2024 Liviu Lalescu, Volker Dirr.

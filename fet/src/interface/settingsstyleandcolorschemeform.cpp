@@ -53,8 +53,8 @@ SettingsStyleAndColorSchemeForm::SettingsStyleAndColorSchemeForm(QWidget* parent
 	}
 	stylesComboBox->setCurrentIndex(j);
 	
-	if(INTERFACE_COLOR_SCHEME=="auto")
-		autoRadioButton->setChecked(true);
+	if(INTERFACE_COLOR_SCHEME=="automatic")
+		automaticRadioButton->setChecked(true);
 	else if(INTERFACE_COLOR_SCHEME=="light")
 		lightRadioButton->setChecked(true);
 	else if(INTERFACE_COLOR_SCHEME=="dark")
@@ -75,7 +75,7 @@ void SettingsStyleAndColorSchemeForm::ok()
 		return;
 	}
 
-	if(!autoRadioButton->isChecked() && !lightRadioButton->isChecked() && !darkRadioButton->isChecked()){
+	if(!automaticRadioButton->isChecked() && !lightRadioButton->isChecked() && !darkRadioButton->isChecked()){
 		QMessageBox::warning(this, tr("FET warning"), tr("Please select a color scheme."));
 		return;
 	}
@@ -85,8 +85,8 @@ void SettingsStyleAndColorSchemeForm::ok()
 	else
 		INTERFACE_STYLE=stylesComboBox->currentText();
 	
-	if(autoRadioButton->isChecked())
-		INTERFACE_COLOR_SCHEME="auto";
+	if(automaticRadioButton->isChecked())
+		INTERFACE_COLOR_SCHEME="automatic";
 	else if(lightRadioButton->isChecked())
 		INTERFACE_COLOR_SCHEME="light";
 	else if(darkRadioButton->isChecked())

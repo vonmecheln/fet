@@ -2962,10 +2962,18 @@ Versions 6.26.0 - 6.26.2
 	- Corrected some rare cases of old timetable files possibly being overwritten when generating single timetables.
 	- Minor improvements.
 ---------------------------------------------------------------------------------
-Versions 6.27.0 - 6.27.v
+Version 6.27.0
 - Version 6.27.0
 	- It is now possible to change the interface style and color scheme (but only when using Qt version 6.8.0 or later).
 	- Added the option to add/remove an activity tag to a selection of (sub)activities with a single click (suggested by Benahmed Abdelkrim and pnlshd).
 	- Added a note to the constraints referring to an interval, that the start hour is included and the end hour is not included (suggested by Pier,
 	and other users in the past).
 	- Minor improvements.
+---------------------------------------------------------------------------------
+Versions 6.28.0 - 6.28.v
+- Version 6.28.0
+	- Converted the interface files for the time and space constraints. There are much less source files now. This implies more things:
+	shorter compilation time, smaller package sizes, less fields to translate and smaller translation files, nicer looking constraints' dialogs.
+	Also, the dialogs listing the constraints of a certain type allow multiple selection, and have buttons for activating/deactivating the constraints,
+	change the constraints' weights in bulk, and set the comments for a constraint. Qt Creator and Valgrind were invaluable tools for this work.
+	- Improved the activity planning dialog when swapping the teachers, if one cell was empty (suggested by uni_instructor).

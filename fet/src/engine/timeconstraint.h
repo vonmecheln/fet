@@ -384,6 +384,8 @@ class QDataStream;
 
 QString getActivityDetailedDescription(Rules& r, int id);
 
+bool timeConstraintCanHaveAnyWeight(int type);
+
 /**
 This class represents a time constraint
 */

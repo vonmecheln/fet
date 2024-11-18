@@ -1829,6 +1829,36 @@ QString getActivityDetailedDescription(Rules& r, int id); //implemented in timec
 
 void populateInternalSubgroupsList(const Rules& r, const StudentsSet* ss, QList<int>& iSubgroupsList); //implemented in timeconstraint.cpp
 
+bool spaceConstraintCanHaveAnyWeight(int type)
+{
+	assert(type!=CONSTRAINT_GENERIC_SPACE);
+
+	assert(type!=CONSTRAINT_ACTIVITY_PREFERRED_ROOM);
+	/*if(type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
+		if(((ConstraintActivityPreferredRoom*)this)->preferredRealRoomsNames.isEmpty())
+			return true;
+		else
+			return false;
+	}*/
+
+	if(type==CONSTRAINT_ROOM_NOT_AVAILABLE_TIMES ||
+	 type==CONSTRAINT_ACTIVITY_PREFERRED_ROOMS ||
+	 type==CONSTRAINT_STUDENTS_SET_HOME_ROOM ||
+	 type==CONSTRAINT_STUDENTS_SET_HOME_ROOMS ||
+	 type==CONSTRAINT_TEACHER_HOME_ROOM ||
+	 type==CONSTRAINT_TEACHER_HOME_ROOMS ||
+	 type==CONSTRAINT_SUBJECT_PREFERRED_ROOM ||
+	 type==CONSTRAINT_SUBJECT_PREFERRED_ROOMS ||
+	 type==CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOM ||
+	 type==CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOMS ||
+	 type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOM ||
+	 type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOMS ||
+	 type==CONSTRAINT_TEACHER_ROOM_NOT_AVAILABLE_TIMES)
+		return true;
+
+	return false;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
 
@@ -1857,31 +1887,14 @@ SpaceConstraint::SpaceConstraint(double wp)
 
 bool SpaceConstraint::canHaveAnyWeight()
 {
-	assert(type!=CONSTRAINT_GENERIC_SPACE);
-
 	if(type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
 		if(((ConstraintActivityPreferredRoom*)this)->preferredRealRoomsNames.isEmpty())
 			return true;
 		else
 			return false;
 	}
-	
-	if(type==CONSTRAINT_ROOM_NOT_AVAILABLE_TIMES ||
-	 type==CONSTRAINT_ACTIVITY_PREFERRED_ROOMS ||
-	 type==CONSTRAINT_STUDENTS_SET_HOME_ROOM ||
-	 type==CONSTRAINT_STUDENTS_SET_HOME_ROOMS ||
-	 type==CONSTRAINT_TEACHER_HOME_ROOM ||
-	 type==CONSTRAINT_TEACHER_HOME_ROOMS ||
-	 type==CONSTRAINT_SUBJECT_PREFERRED_ROOM ||
-	 type==CONSTRAINT_SUBJECT_PREFERRED_ROOMS ||
-	 type==CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOM ||
-	 type==CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOMS ||
-	 type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOM ||
-	 type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOMS ||
-	 type==CONSTRAINT_TEACHER_ROOM_NOT_AVAILABLE_TIMES)
-		return true;
 
-	return false;
+	return spaceConstraintCanHaveAnyWeight(type);
 }
 
 bool SpaceConstraint::canBeUsedInOfficialMode()
