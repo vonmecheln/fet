@@ -39917,11 +39917,6 @@ Tendo un subgrupo con moi poucas horas por semana siginifica que se inseriron ac
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4348"/>
-        <source>Please note that, on each new single generation, the previously generated timetable files will be overwritten (the new results will be saved in the same fixed directory, derived from your data file name). Are you sure?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform.cpp" line="4372"/>
         <source>Also, there will be visible on the server your current FET version, your current Qt version (the C++ toolkit used by FET), your operating system name and version, and your processor architecture type.</source>
         <translation type="unfinished"></translation>
@@ -41184,6 +41179,11 @@ Tendo un subgrupo con moi poucas horas por semana siginifica que se inseriron ac
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="1050"/>
         <source>This was explained in the disk history settings dialog, and there should be nothing else to worry about. Your .fet data file will be safely/correctly opened and the disk history will be updated/corrected when you will save your data file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="4348"/>
+        <source>Please note that, on each new single generation, the previously generated timetable files will be overwritten (the new results will be saved in the same fixed directory, whose name is derived from your data file name). Are you sure?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -44853,6 +44853,7 @@ Tendo un subgrupo con moi poucas horas por semana siginifica que se inseriron ac
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1262"/>
         <source>Output directory and files</source>
+        <extracomment>The options for the output directory and for the output files resulted from the timetable generations</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -45069,6 +45070,7 @@ Tendo un subgrupo con moi poucas horas por semana siginifica que se inseriron ac
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2180"/>
         <source>Overwrite single generation files</source>
+        <extracomment>The user can select this check box, so that single timetable generation files will be written over the old ones, in the same directory, instead of the program creating a new directory each time</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -45126,6 +45128,7 @@ Tendo un subgrupo con moi poucas horas por semana siginifica que se inseriron ac
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1650"/>
         <source>Select output directory</source>
+        <extracomment>The user can select here the location of the output directory</extracomment>
         <translation>Seleccionar directorio de saída</translation>
     </message>
     <message>
@@ -58066,12 +58069,12 @@ into
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="70"/>
-        <location filename="../src/interface/helpaboutform.cpp" line="82"/>
         <source>November</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="72"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="82"/>
         <source>December</source>
         <translation type="unfinished"></translation>
     </message>

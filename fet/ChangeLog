@@ -2987,6 +2987,8 @@ Versions 6.28.0 - 6.28.v
 	- Bug fix for the constraint activity preferred room: the 'permanently locked' check box was always initialized as selected when editing this kind
 	of constraint.
 	- The constraints with times tables will show the real days and the real hours in the Mornings-Afternoons mode (suggested by more users in the past).
-	- The user can choose to overwrite the files of the previous single generation (suggested by Benahmed Abdelkrim, pnlshd, bharatstank, and maybe
-	other users).
+	- The user can choose to overwrite the files of the previous single generation (suggested by Thai Chi Phuong, Benahmed Abdelkrim, pnlshd, bharatstank,
+	and maybe other users).
 	- Code improvements.
+- Version 6.28.3
+	- Updated to Qt 6.8.1.

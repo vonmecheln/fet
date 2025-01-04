@@ -1259,7 +1259,7 @@
     </widget>
     <widget class="QMenu" name="menuSettingsOutput">
      <property name="title">
-      <string>Output directory and files</string>
+      <string extracomment="The options for the output directory and for the output files resulted from the timetable generations">Output directory and files</string>
      </property>
      <addaction name="selectOutputDirAction"/>
      <addaction name="overwriteSingleGenerationFilesAction"/>
@@ -1647,7 +1647,7 @@
   </action>
   <action name="selectOutputDirAction">
    <property name="text">
-    <string>Select output directory</string>
+    <string extracomment="The user can select here the location of the output directory">Select output directory</string>
    </property>
   </action>
   <action name="settingsPrintActivitiesWithSameStartingTimeAction">
@@ -2177,7 +2177,7 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>Overwrite single generation files</string>
+    <string extracomment="The user can select this check box, so that single timetable generation files will be written over the old ones, in the same directory, instead of the program creating a new directory each time">Overwrite single generation files</string>
    </property>
   </action>
  </widget>

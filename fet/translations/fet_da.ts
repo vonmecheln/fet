@@ -40299,11 +40299,6 @@ Import of data will be easier with these settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4348"/>
-        <source>Please note that, on each new single generation, the previously generated timetable files will be overwritten (the new results will be saved in the same fixed directory, derived from your data file name). Are you sure?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform.cpp" line="5047"/>
         <source>Possible actions: check your network connection, try again later, try to visit FET homepage: %1, or try to search for the new FET page on the internet (maybe it has changed).</source>
         <translation type="unfinished"></translation>
@@ -41162,6 +41157,11 @@ Har du en undergruppe med for få timer pr uge, betyder det at du har angivet ak
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="1475"/>
         <source>SSL is not available (this might be caused by missing SSL libraries). Because of this, FET cannot check for updates on startup (it cannot get the file %1).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="4348"/>
+        <source>Please note that, on each new single generation, the previously generated timetable files will be overwritten (the new results will be saved in the same fixed directory, whose name is derived from your data file name). Are you sure?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -44617,6 +44617,7 @@ Har du en undergruppe med for få timer pr uge, betyder det at du har angivet ak
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1262"/>
         <source>Output directory and files</source>
+        <extracomment>The options for the output directory and for the output files resulted from the timetable generations</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -44834,6 +44835,7 @@ Har du en undergruppe med for få timer pr uge, betyder det at du har angivet ak
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2180"/>
         <source>Overwrite single generation files</source>
+        <extracomment>The user can select this check box, so that single timetable generation files will be written over the old ones, in the same directory, instead of the program creating a new directory each time</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -44891,6 +44893,7 @@ Har du en undergruppe med for få timer pr uge, betyder det at du har angivet ak
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1650"/>
         <source>Select output directory</source>
+        <extracomment>The user can select here the location of the output directory</extracomment>
         <translation>Vælg output mappe</translation>
     </message>
     <message>
@@ -57937,12 +57940,12 @@ into
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="70"/>
-        <location filename="../src/interface/helpaboutform.cpp" line="82"/>
         <source>November</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="72"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="82"/>
         <source>December</source>
         <translation type="unfinished"></translation>
     </message>

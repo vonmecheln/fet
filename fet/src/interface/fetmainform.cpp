@@ -4346,7 +4346,7 @@ void FetMainForm::overwriteSingleGenerationFilesToggled(bool checked)
 	if(checked==true){
 		QString s;
 		s+=tr("Please note that, on each new single generation, the previously generated timetable files will be overwritten"
-			  " (the new results will be saved in the same fixed directory, derived from your data file name). Are you sure?");
+			  " (the new results will be saved in the same fixed directory, whose name is derived from your data file name). Are you sure?");
 
 		QMessageBox::StandardButton b=QMessageBox::question(this, tr("FET question"), s, QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
 

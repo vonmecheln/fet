@@ -40471,11 +40471,6 @@ Import of data will be easier with these settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4348"/>
-        <source>Please note that, on each new single generation, the previously generated timetable files will be overwritten (the new results will be saved in the same fixed directory, derived from your data file name). Are you sure?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform.cpp" line="5252"/>
         <source>%1[*] - FET</source>
         <comment>The title of the main window, %1 is the name of the current file. Please keep the string [*] unmodified (three characters) - it is used to make the difference between modified files and unmodified files.</comment>
@@ -41278,6 +41273,11 @@ Having a subgroup with too little working hours per week means that you inputted
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="1475"/>
         <source>SSL is not available (this might be caused by missing SSL libraries). Because of this, FET cannot check for updates on startup (it cannot get the file %1).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="4348"/>
+        <source>Please note that, on each new single generation, the previously generated timetable files will be overwritten (the new results will be saved in the same fixed directory, whose name is derived from your data file name). Are you sure?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -44791,6 +44791,7 @@ Having a subgroup with too little working hours per week means that you inputted
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1262"/>
         <source>Output directory and files</source>
+        <extracomment>The options for the output directory and for the output files resulted from the timetable generations</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -45007,6 +45008,7 @@ Having a subgroup with too little working hours per week means that you inputted
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2180"/>
         <source>Overwrite single generation files</source>
+        <extracomment>The user can select this check box, so that single timetable generation files will be written over the old ones, in the same directory, instead of the program creating a new directory each time</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -45064,6 +45066,7 @@ Having a subgroup with too little working hours per week means that you inputted
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1650"/>
         <source>Select output directory</source>
+        <extracomment>The user can select here the location of the output directory</extracomment>
         <translation>選擇輸出目錄</translation>
     </message>
     <message>
@@ -58123,12 +58126,12 @@ into
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="70"/>
-        <location filename="../src/interface/helpaboutform.cpp" line="82"/>
         <source>November</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="72"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="82"/>
         <source>December</source>
         <translation type="unfinished"></translation>
     </message>
