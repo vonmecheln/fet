@@ -53,7 +53,7 @@
 
 #include <thread>
 #include <mutex>
-#include <condition_variable>
+//#include <condition_variable>
 
 //#include <QSemaphore>
 
@@ -219,7 +219,7 @@ void TimetableGenerateForm::start(){
 
 	initialOutputDirectory=OUTPUT_DIR+FILE_SEP+"timetables"+kk;
 
-	if(QFileInfo::exists(initialOutputDirectory)){
+	if(!OVERWRITE_SINGLE_GENERATION_FILES && QFileInfo::exists(initialOutputDirectory)){
 		int i=2;
 		for(;;){
 			QString CODN=initialOutputDirectory+"-"+QString::number(i);
@@ -306,7 +306,7 @@ void TimetableGenerateForm::stop()
 
 	CURRENT_OUTPUT_DIRECTORY=OUTPUT_DIR+FILE_SEP+"timetables"+kk;
 	
-	if(QFileInfo::exists(CURRENT_OUTPUT_DIRECTORY)){
+	if(!OVERWRITE_SINGLE_GENERATION_FILES && QFileInfo::exists(CURRENT_OUTPUT_DIRECTORY)){
 		int i=2;
 		for(;;){
 			QString CODN=CURRENT_OUTPUT_DIRECTORY+"-"+QString::number(i);
@@ -500,7 +500,7 @@ void TimetableGenerateForm::stopHighest()
 
 	HIGHEST_OUTPUT_DIRECTORY=OUTPUT_DIR+FILE_SEP+"timetables"+kk;
 	
-	if(QFileInfo::exists(HIGHEST_OUTPUT_DIRECTORY)){
+	if(!OVERWRITE_SINGLE_GENERATION_FILES && QFileInfo::exists(HIGHEST_OUTPUT_DIRECTORY)){
 		int i=2;
 		for(;;){
 			QString CODN=HIGHEST_OUTPUT_DIRECTORY+"-"+QString::number(i);
@@ -671,7 +671,7 @@ void TimetableGenerateForm::impossibleToSolve()
 
 	CURRENT_OUTPUT_DIRECTORY=OUTPUT_DIR+FILE_SEP+"timetables"+kk;
 	
-	if(QFileInfo::exists(CURRENT_OUTPUT_DIRECTORY)){
+	if(!OVERWRITE_SINGLE_GENERATION_FILES && QFileInfo::exists(CURRENT_OUTPUT_DIRECTORY)){
 		int i=2;
 		for(;;){
 			QString CODN=CURRENT_OUTPUT_DIRECTORY+"-"+QString::number(i);
@@ -1085,7 +1085,7 @@ void TimetableGenerateForm::write(){
 
 	CURRENT_OUTPUT_DIRECTORY=OUTPUT_DIR+FILE_SEP+"timetables"+kk;
 	
-	if(QFileInfo::exists(CURRENT_OUTPUT_DIRECTORY)){
+	if(!OVERWRITE_SINGLE_GENERATION_FILES && QFileInfo::exists(CURRENT_OUTPUT_DIRECTORY)){
 		int i=2;
 		for(;;){
 			QString CODN=CURRENT_OUTPUT_DIRECTORY+"-"+QString::number(i);
@@ -1162,7 +1162,7 @@ void TimetableGenerateForm::writeHighestStage(){
 
 	HIGHEST_OUTPUT_DIRECTORY=OUTPUT_DIR+FILE_SEP+"timetables"+kk;
 	
-	if(QFileInfo::exists(HIGHEST_OUTPUT_DIRECTORY)){
+	if(!OVERWRITE_SINGLE_GENERATION_FILES && QFileInfo::exists(HIGHEST_OUTPUT_DIRECTORY)){
 		int i=2;
 		for(;;){
 			QString CODN=HIGHEST_OUTPUT_DIRECTORY+"-"+QString::number(i);

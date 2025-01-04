@@ -81,6 +81,11 @@ File centerwidgetonscreen.cpp
 
 #include <QSet>
 
+#include <QBrush>
+
+#define YES	(QString("X"))
+#define NO	(QString(" "))
+
 extern const QString COMPANY;
 extern const QString PROGRAM;
 
@@ -576,8 +581,18 @@ void highlightOnHorizontalHeaderClicked(QTableWidget* tableWidget, int col)
 #endif
 #endif
 
-	if(col>=0 && col<gt.rules.nDaysPerWeek){
-		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+	int nD, nH;
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+		nD=gt.rules.nDaysPerWeek;
+		nH=gt.rules.nHoursPerDay;
+	}
+	else{
+		nD=gt.rules.nDaysPerWeek/2;
+		nH=2*gt.rules.nHoursPerDay;
+	}
+
+	if(col>=0 && col<nD){
+		for(int j=0; j<nD; j++)
 			if(j!=col){
 				QTableWidgetItem* hhi=tableWidget->horizontalHeaderItem(j);
 				if(hhi!=nullptr){
@@ -593,7 +608,7 @@ void highlightOnHorizontalHeaderClicked(QTableWidget* tableWidget, int col)
 					}
 				}
 			}
-		for(int i=0; i<gt.rules.nHoursPerDay; i++){
+		for(int i=0; i<nH; i++){
 			QTableWidgetItem* vhi=tableWidget->verticalHeaderItem(i);
 			if(vhi!=nullptr){
 				if(respectsHeaderBackgroundColor){
@@ -639,8 +654,18 @@ void highlightOnVerticalHeaderClicked(QTableWidget* tableWidget, int row)
 #endif
 #endif
 
-	if(row>=0 && row<gt.rules.nHoursPerDay){
-		for(int j=0; j<gt.rules.nDaysPerWeek; j++){
+	int nD, nH;
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+		nD=gt.rules.nDaysPerWeek;
+		nH=gt.rules.nHoursPerDay;
+	}
+	else{
+		nD=gt.rules.nDaysPerWeek/2;
+		nH=2*gt.rules.nHoursPerDay;
+	}
+
+	if(row>=0 && row<nH){
+		for(int j=0; j<nD; j++){
 			QTableWidgetItem* hhi=tableWidget->horizontalHeaderItem(j);
 			if(hhi!=nullptr){
 				if(respectsHeaderBackgroundColor){
@@ -655,7 +680,7 @@ void highlightOnVerticalHeaderClicked(QTableWidget* tableWidget, int row)
 				}
 			}
 		}
-		for(int i=0; i<gt.rules.nHoursPerDay; i++)
+		for(int i=0; i<nH; i++)
 			if(i!=row){
 				QTableWidgetItem* vhi=tableWidget->verticalHeaderItem(i);
 				if(vhi!=nullptr){
@@ -702,8 +727,18 @@ void highlightOnCellEntered(QTableWidget* tableWidget, int row, int col)
 #endif
 #endif
 
-	if(row>=0 && row<gt.rules.nHoursPerDay && col>=0 && col<gt.rules.nDaysPerWeek){
-		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+	int nD, nH;
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+		nD=gt.rules.nDaysPerWeek;
+		nH=gt.rules.nHoursPerDay;
+	}
+	else{
+		nD=gt.rules.nDaysPerWeek/2;
+		nH=2*gt.rules.nHoursPerDay;
+	}
+
+	if(row>=0 && row<nH && col>=0 && col<nD){
+		for(int j=0; j<nD; j++)
 			if(j!=col){
 				QTableWidgetItem* hhi=tableWidget->horizontalHeaderItem(j);
 				if(hhi!=nullptr){
@@ -720,7 +755,7 @@ void highlightOnCellEntered(QTableWidget* tableWidget, int row, int col)
 				}
 			}
 
-		for(int i=0; i<gt.rules.nHoursPerDay; i++)
+		for(int i=0; i<nH; i++)
 			if(i!=row){
 				QTableWidgetItem* vhi=tableWidget->verticalHeaderItem(i);
 				if(vhi!=nullptr){
@@ -780,6 +815,279 @@ void tableViewSetHighlightHeader(QTableView* tableWidget)
 	QString fc=qApp->palette().highlightedText().color().name();
 	tableWidget->setStyleSheet(QString("QHeaderView::section:checked { background-color: ")+bc+QString("; color: ")+fc+QString(" }"));
 	//this->setStyleSheet(QString("QHeaderView::section:hover { background-color: ")+bc+QString("; color: ")+fc+QString(" }"));
+}
+
+void colorItem(QTableWidgetItem* item)
+{
+	if(USE_GUI_COLORS){
+		if(item->text()==NO)
+			item->setBackground(QBrush(QColorConstants::DarkGreen));
+		else
+			item->setBackground(QBrush(QColorConstants::DarkRed));
+		item->setForeground(QBrush(QColorConstants::LightGray));
+	}
+}
+
+void initTimesTable(QTableWidget* timesTable)
+{
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+		timesTable->setRowCount(gt.rules.nHoursPerDay);
+		timesTable->setColumnCount(gt.rules.nDaysPerWeek);
+
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++){
+			QTableWidgetItem* item=new QTableWidgetItem(gt.rules.daysOfTheWeek[j]);
+			timesTable->setHorizontalHeaderItem(j, item);
+		}
+		for(int i=0; i<gt.rules.nHoursPerDay; i++){
+			QTableWidgetItem* item=new QTableWidgetItem(gt.rules.hoursOfTheDay[i]);
+			timesTable->setVerticalHeaderItem(i, item);
+		}
+
+		for(int i=0; i<gt.rules.nHoursPerDay; i++)
+			for(int j=0; j<gt.rules.nDaysPerWeek; j++){
+				QTableWidgetItem* item=new QTableWidgetItem(NO);
+				item->setTextAlignment(Qt::AlignCenter);
+				item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+				colorItem(item);
+				if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
+					item->setToolTip(gt.rules.daysOfTheWeek[j]+QString("\n")+gt.rules.hoursOfTheDay[i]);
+				timesTable->setItem(i, j, item);
+			}
+	}
+	else{
+		timesTable->setRowCount(2*gt.rules.nHoursPerDay);
+		timesTable->setColumnCount(gt.rules.nDaysPerWeek/2);
+
+		for(int j=0; j<gt.rules.nDaysPerWeek/2; j++){
+			QTableWidgetItem* item=new QTableWidgetItem(gt.rules.realDaysOfTheWeek[j]);
+			timesTable->setHorizontalHeaderItem(j, item);
+		}
+		for(int i=0; i<2*gt.rules.nHoursPerDay; i++){
+			QTableWidgetItem* item=new QTableWidgetItem(gt.rules.realHoursOfTheDay[i]);
+			timesTable->setVerticalHeaderItem(i, item);
+		}
+
+		for(int i=0; i<2*gt.rules.nHoursPerDay; i++)
+			for(int j=0; j<gt.rules.nDaysPerWeek/2; j++){
+				QTableWidgetItem* item=new QTableWidgetItem(NO);
+				item->setTextAlignment(Qt::AlignCenter);
+				item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+				colorItem(item);
+				if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
+					item->setToolTip(gt.rules.realDaysOfTheWeek[j]+QString("\n")+gt.rules.realHoursOfTheDay[i]);
+				timesTable->setItem(i, j, item);
+			}
+	}
+}
+
+void fillTimesTable(QTableWidget* timesTable, const QList<int>& days, const QList<int>& hours, bool direct)
+{
+	Matrix2D<bool> currentMatrix;
+	currentMatrix.resize(gt.rules.nHoursPerDay, gt.rules.nDaysPerWeek);
+
+	for(int i=0; i<gt.rules.nHoursPerDay; i++)
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+			currentMatrix[i][j]=false;
+	assert(days.count()==hours.count());
+	for(int k=0; k<days.count(); k++){
+		int i=hours.at(k);
+		int j=days.at(k);
+		if(i>=0 && i<gt.rules.nHoursPerDay && j>=0 && j<gt.rules.nDaysPerWeek)
+			currentMatrix[i][j]=true;
+	}
+
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+		for(int i=0; i<gt.rules.nHoursPerDay; i++)
+			for(int j=0; j<gt.rules.nDaysPerWeek; j++){
+				QTableWidgetItem* item= new QTableWidgetItem;
+				item->setTextAlignment(Qt::AlignCenter);
+				item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
+				if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
+					item->setToolTip(gt.rules.daysOfTheWeek[j]+QString("\n")+gt.rules.hoursOfTheDay[i]);
+				timesTable->setItem(i, j, item);
+
+				if(direct){
+					if(currentMatrix[i][j])
+						item->setText(YES);
+					else
+						item->setText(NO);
+				}
+				else{
+					if(currentMatrix[i][j])
+						item->setText(NO);
+					else
+						item->setText(YES);
+				}
+
+				colorItem(item);
+			}
+	}
+	else{
+		for(int i=0; i<2*gt.rules.nHoursPerDay; i++)
+			for(int j=0; j<gt.rules.nDaysPerWeek/2; j++){
+				QTableWidgetItem* item= new QTableWidgetItem;
+				item->setTextAlignment(Qt::AlignCenter);
+				item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
+				if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
+					item->setToolTip(gt.rules.realDaysOfTheWeek[j]+QString("\n")+gt.rules.realHoursOfTheDay[i]);
+				timesTable->setItem(i, j, item);
+
+				if(direct){
+					if(currentMatrix[i%gt.rules.nHoursPerDay][2*j+i/gt.rules.nHoursPerDay])
+						item->setText(YES);
+					else
+						item->setText(NO);
+				}
+				else{
+					if(currentMatrix[i%gt.rules.nHoursPerDay][2*j+i/gt.rules.nHoursPerDay])
+						item->setText(NO);
+					else
+						item->setText(YES);
+				}
+
+				colorItem(item);
+			}
+	}
+}
+
+void getTimesTable(QTableWidget* timesTable, QList<int>& days, QList<int>& hours, bool direct)
+{
+	days.clear();
+	hours.clear();
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+			for(int i=0; i<gt.rules.nHoursPerDay; i++)
+				if(direct){
+					if(timesTable->item(i, j)->text()==YES){
+						days.append(j);
+						hours.append(i);
+					}
+				}
+				else{
+					if(timesTable->item(i, j)->text()==NO){
+						days.append(j);
+						hours.append(i);
+					}
+				}
+	}
+	else{
+		for(int j=0; j<gt.rules.nDaysPerWeek/2; j++)
+			for(int i=0; i<2*gt.rules.nHoursPerDay; i++)
+				if(direct){
+					if(timesTable->item(i, j)->text()==YES){
+						days.append(2*j+i/gt.rules.nHoursPerDay);
+						hours.append(i%gt.rules.nHoursPerDay);
+					}
+				}
+				else{
+					if(timesTable->item(i, j)->text()==NO){
+						days.append(2*j+i/gt.rules.nHoursPerDay);
+						hours.append(i%gt.rules.nHoursPerDay);
+					}
+				}
+	}
+}
+
+void horizontalHeaderClickedTimesTable(QTableWidget* timesTable, int col)
+{
+	highlightOnHorizontalHeaderClicked(timesTable, col);
+
+	int nD, nH;
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+		nD=gt.rules.nDaysPerWeek;
+		nH=gt.rules.nHoursPerDay;
+	}
+	else{
+		nD=gt.rules.nDaysPerWeek/2;
+		nH=2*gt.rules.nHoursPerDay;
+	}
+
+	if(col>=0 && col<nD){
+		QString s=timesTable->item(0, col)->text();
+		if(s==YES)
+			s=NO;
+		else{
+			assert(s==NO);
+			s=YES;
+		}
+
+		for(int row=0; row<nH; row++){
+			timesTable->item(row, col)->setText(s);
+			colorItem(timesTable->item(row,col));
+		}
+	}
+}
+
+void verticalHeaderClickedTimesTable(QTableWidget* timesTable, int row)
+{
+	highlightOnVerticalHeaderClicked(timesTable, row);
+
+	int nD, nH;
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+		nD=gt.rules.nDaysPerWeek;
+		nH=gt.rules.nHoursPerDay;
+	}
+	else{
+		nD=gt.rules.nDaysPerWeek/2;
+		nH=2*gt.rules.nHoursPerDay;
+	}
+
+	if(row>=0 && row<nH){
+		QString s=timesTable->item(row, 0)->text();
+		if(s==YES)
+			s=NO;
+		else{
+			assert(s==NO);
+			s=YES;
+		}
+
+		for(int col=0; col<nD; col++){
+			timesTable->item(row, col)->setText(s);
+			colorItem(timesTable->item(row,col));
+		}
+	}
+}
+
+void cellEnteredTimesTable(QTableWidget* timesTable, int row, int col)
+{
+	highlightOnCellEntered(timesTable, row, col);
+}
+
+void toggleAllClickedTimesTable(QTableWidget* timesTable)
+{
+	int nD, nH;
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+		nD=gt.rules.nDaysPerWeek;
+		nH=gt.rules.nHoursPerDay;
+	}
+	else{
+		nD=gt.rules.nDaysPerWeek/2;
+		nH=2*gt.rules.nHoursPerDay;
+	}
+
+	QString newText;
+	if(timesTable->item(0, 0)->text()==NO)
+		newText=YES;
+	else
+		newText=NO;
+	for(int i=0; i<nH; i++)
+		for(int j=0; j<nD; j++){
+			timesTable->item(i, j)->setText(newText);
+			colorItem(timesTable->item(i,j));
+		}
+}
+
+void itemClickedTimesTable(QTableWidgetItem* item)
+{
+	QString s=item->text();
+	if(s==YES)
+		s=NO;
+	else{
+		assert(s==NO);
+		s=YES;
+	}
+	item->setText(s);
+	colorItem(item);
 }
 
 #else

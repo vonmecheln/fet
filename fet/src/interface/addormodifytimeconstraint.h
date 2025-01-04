@@ -20,6 +20,9 @@
 
 #include "timeconstraint.h"
 
+#include <QAbstractItemDelegate>
+#include <QStyledItemDelegate>
+
 #include <QWidget>
 #include <QDialog>
 
@@ -42,14 +45,38 @@
 
 #include <QEventLoop>
 
+class AddOrModifyTimeConstraintTimesTableDelegate: public QStyledItemDelegate
+{
+	Q_OBJECT
+
+public:
+	int nRows; //The number of rows after which a line is drawn
+	int nColumns;
+
+public:
+	AddOrModifyTimeConstraintTimesTableDelegate(QWidget* parent, int _nRows, int _nColumns): QStyledItemDelegate(parent){
+		nRows=_nRows;
+		nColumns=_nColumns;
+	}
+
+	void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
+};
+
 class AddOrModifyTimeConstraintDialog: public QDialog
 {
 	QString dialogName;
 	QString dialogTitle;
 	QEventLoop* eventLoop;
 
+	QTableWidget* timesTable;
+	QAbstractItemDelegate* oldItemDelegate;
+	AddOrModifyTimeConstraintTimesTableDelegate* newItemDelegate;
+
 public:
-	AddOrModifyTimeConstraintDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop);
+	AddOrModifyTimeConstraintDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop,
+									QTableWidget* _timesTable,
+									QAbstractItemDelegate* _oldItemDelegate,
+									AddOrModifyTimeConstraintTimesTableDelegate* _newItemDelegate);
 	~AddOrModifyTimeConstraintDialog();
 };
 
@@ -85,6 +112,8 @@ class AddOrModifyTimeConstraint: public QObject
 	QPushButton* toggleAllPushButton;
 	
 	QTableWidget* timesTable;
+	QAbstractItemDelegate* oldItemDelegate;
+	AddOrModifyTimeConstraintTimesTableDelegate* newItemDelegate;
 
 	QGroupBox* filterGroupBox;
 
@@ -256,7 +285,7 @@ private:
 	int second_activitiesComboBoxFilter();
 	int third_activitiesComboBoxFilter();
 
-	void colorItem(QTableWidgetItem* item);
+	//void colorItem(QTableWidgetItem* item);
 	void itemClicked(QTableWidgetItem* item);
 	void horizontalHeaderClicked(int col);
 	void verticalHeaderClicked(int row);

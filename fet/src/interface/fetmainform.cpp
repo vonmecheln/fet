@@ -1431,7 +1431,10 @@ FetMainForm::FetMainForm()
 	
 	settingsShowToolTipsForConstraintsWithTablesAction->setCheckable(true);
 	settingsShowToolTipsForConstraintsWithTablesAction->setChecked(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES);
-	
+
+	overwriteSingleGenerationFilesAction->setCheckable(true);
+	overwriteSingleGenerationFilesAction->setChecked(OVERWRITE_SINGLE_GENERATION_FILES);
+
 	checkForUpdatesAction->setCheckable(true);
 	checkForUpdatesAction->setChecked(checkForUpdates);
 	
@@ -1540,6 +1543,8 @@ FetMainForm::FetMainForm()
 	connect(showWarningForSubgroupsWithTheSameActivitiesAction, &QAction::toggled, this, &FetMainForm::showWarningForSubgroupsWithTheSameActivitiesToggled);
 	connect(showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction, &QAction::toggled, this, &FetMainForm::showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsToggled);
 	connect(showWarningForMaxHoursDailyWithUnder100WeightAction, &QAction::toggled, this, &FetMainForm::showWarningForMaxHoursDailyWithUnder100WeightToggled);
+
+	connect(overwriteSingleGenerationFilesAction, &QAction::toggled, this, &FetMainForm::overwriteSingleGenerationFilesToggled);
 
 	connect(checkForUpdatesAction, &QAction::toggled, this, &FetMainForm::checkForUpdatesToggled);
 	connect(settingsUseColorsAction, &QAction::toggled, this, &FetMainForm::useColorsToggled);
@@ -4334,6 +4339,26 @@ void FetMainForm::populateLanguagesMap(QMap<QString, QString>& languagesMap)
 	languagesMap.insert("uz", QString("Uzbek"));
 	languagesMap.insert("zh_CN", QString("Chinese Simplified"));
 	languagesMap.insert("eu", QString("Basque"));
+}
+
+void FetMainForm::overwriteSingleGenerationFilesToggled(bool checked)
+{
+	if(checked==true){
+		QString s;
+		s+=tr("Please note that, on each new single generation, the previously generated timetable files will be overwritten"
+			  " (the new results will be saved in the same fixed directory, derived from your data file name). Are you sure?");
+
+		QMessageBox::StandardButton b=QMessageBox::question(this, tr("FET question"), s, QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+
+		if(b!=QMessageBox::Yes){
+			disconnect(overwriteSingleGenerationFilesAction, &QAction::toggled, this, &FetMainForm::overwriteSingleGenerationFilesToggled);
+			overwriteSingleGenerationFilesAction->setChecked(false);
+			connect(overwriteSingleGenerationFilesAction, &QAction::toggled, this, &FetMainForm::overwriteSingleGenerationFilesToggled);
+			return;
+		}
+	}
+
+	OVERWRITE_SINGLE_GENERATION_FILES=checked;
 }
 
 void FetMainForm::checkForUpdatesToggled(bool checked)
@@ -13780,6 +13805,9 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	//s+=tr("71")+QString(". ")+tr("The compression level for the states in history will be %1 (the default compression level for zlib)").arg(-1);
 	//s+="\n";
 
+	s+=tr("72")+QString(". ")+tr("Overwrite single generation files will be %1", "%1 is true or false").arg(tr("false"));
+	s+="\n";
+
 	switch( LongTextMessageBox::largeConfirmation( this, tr("FET confirmation"), s,
 	 tr("&Yes"), tr("&No"), QString(), 0 , 1 ) ) {
 	case 0: // Yes
@@ -13809,6 +13837,9 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	FET_LANGUAGE=NEW_FET_LANGUAGE;
 #endif
 	
+	overwriteSingleGenerationFilesAction->setChecked(false);
+	OVERWRITE_SINGLE_GENERATION_FILES=false;
+
 	checkForUpdatesAction->setChecked(false);
 	checkForUpdates=false;
 	

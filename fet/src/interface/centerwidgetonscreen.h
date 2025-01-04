@@ -24,11 +24,14 @@ File centerwidgetonscreen.h
 
 #include <QString>
 
+#include <QList>
+
 class QComboBox;
 
 class QWidget;
 class QTableView;
 class QTableWidget;
+class QTableWidgetItem;
 
 class Rules;
 
@@ -64,5 +67,16 @@ void highlightOnVerticalHeaderClicked(QTableWidget* tableWidget, int row);
 void highlightOnCellEntered(QTableWidget* tableWidget, int row, int col);
 
 void tableViewSetHighlightHeader(QTableView* tableWidget);
+
+void initTimesTable(QTableWidget* timesTable);
+void fillTimesTable(QTableWidget* timesTable, const QList<int>& days, const QList<int>& hours, bool direct);
+void getTimesTable(QTableWidget* timesTable, QList<int>& days, QList<int>& hours, bool direct);
+
+void colorItemTimesTable(QTableWidgetItem* item);
+void itemClickedTimesTable(QTableWidgetItem* item);
+void horizontalHeaderClickedTimesTable(QTableWidget* timesTable, int col);
+void verticalHeaderClickedTimesTable(QTableWidget* timesTable, int row);
+void cellEnteredTimesTable(QTableWidget* timesTable, int row, int col);
+void toggleAllClickedTimesTable(QTableWidget* timesTable);
 
 #endif

@@ -1257,6 +1257,13 @@
      <addaction name="separator"/>
      <addaction name="settingsConfirmActivateDeactivateActivitiesConstraintsAction"/>
     </widget>
+    <widget class="QMenu" name="menuSettingsOutput">
+     <property name="title">
+      <string>Output directory and files</string>
+     </property>
+     <addaction name="selectOutputDirAction"/>
+     <addaction name="overwriteSingleGenerationFilesAction"/>
+    </widget>
     <addaction name="checkForUpdatesAction"/>
     <addaction name="separator"/>
     <addaction name="languageAction"/>
@@ -1264,7 +1271,7 @@
     <addaction name="menuFET_interface"/>
     <addaction name="menuTimetables"/>
     <addaction name="menuConfirmations"/>
-    <addaction name="selectOutputDirAction"/>
+    <addaction name="menuSettingsOutput"/>
     <addaction name="settingsCommandAfterFinishingAction"/>
     <addaction name="separator"/>
     <addaction name="menuSettingsAdvanced"/>
@@ -2160,6 +2167,17 @@
   <action name="settingsStyleAndColorSchemeAction">
    <property name="text">
     <string>Style and color scheme</string>
+   </property>
+  </action>
+  <action name="overwriteSingleGenerationFilesAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Overwrite single generation files</string>
    </property>
   </action>
  </widget>

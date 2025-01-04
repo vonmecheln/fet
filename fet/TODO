@@ -10454,3 +10454,13 @@ filters, which is a useful feature.
 Has there ever been any consideration of introducing a history for the
 filter terms, so that you can select previously used search terms from a
 pre-selection?
+
+654---------------------------------------------------------
+From Darren McDonald:
+
+(Liviu Lalescu: Darren talks about the Filter group boxes in the time/space constraints. In the FET versions 6.28.0 and later we don't have a label to explain
+that it filters by the teacher, students set, subject, activity tag, or room).
+
+For me it’s fine, but I think a new user might find it a bit confusing (what is the filter in the first dropdown list? Where do I filter by teacher?, etc.).
+A nice option (if possible) would be to have the default selection (when no filter item is chosen) appear instead as text (“Teacher” “Student” “Subject”, etc.).
+Is that a possible?

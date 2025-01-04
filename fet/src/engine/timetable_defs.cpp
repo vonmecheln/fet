@@ -51,7 +51,7 @@ int STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
 /**
 The FET version
 */
-const QString FET_VERSION="6.28.1";
+const QString FET_VERSION="6.28.2";
 
 /**
 The version number of the data format, useful when saving/restoring history from the disk.
@@ -87,6 +87,8 @@ bool PRINT_RTL=false;
 bool PRINT_FROM_INTERFACE=false;
 
 QString LANGUAGE_FOR_HTML;
+
+bool OVERWRITE_SINGLE_GENERATION_FILES=false;
 
 /**
 Timetable HTML CSS JavaScript level, by Volker Dirr

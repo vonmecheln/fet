@@ -8988,7 +8988,7 @@ ConstraintMinDaysBetweenActivities::ConstraintMinDaysBetweenActivities()
 	type=CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES;
 }
 
-ConstraintMinDaysBetweenActivities::ConstraintMinDaysBetweenActivities(double wp, bool cisd, int nact, const QList<int>& act, int n)
+ConstraintMinDaysBetweenActivities::ConstraintMinDaysBetweenActivities(double wp, bool cisd, int nact, const QList<int>& act, int _minDays)
  : TimeConstraint(wp)
  {
 	this->consecutiveIfSameDay=cisd;
@@ -9000,8 +9000,8 @@ ConstraintMinDaysBetweenActivities::ConstraintMinDaysBetweenActivities(double wp
 	for(int i=0; i<nact; i++)
 		this->activitiesIds.append(act.at(i));
 
-	assert(n>0);
-	this->minDays=n;
+	assert(_minDays>0);
+	this->minDays=_minDays;
 
 	this->type=CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES;
 }
@@ -9429,18 +9429,18 @@ ConstraintMaxDaysBetweenActivities::ConstraintMaxDaysBetweenActivities()
 	type=CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES;
 }
 
-ConstraintMaxDaysBetweenActivities::ConstraintMaxDaysBetweenActivities(double wp, int nact, const QList<int>& act, int n)
+ConstraintMaxDaysBetweenActivities::ConstraintMaxDaysBetweenActivities(double wp, int nact, const QList<int>& act, int _maxDays)
  : TimeConstraint(wp)
  {
-  	assert(nact>=2);
-  	assert(act.count()==nact);
+	assert(nact>=2);
+	assert(act.count()==nact);
 	this->n_activities=nact;
 	this->activitiesIds.clear();
 	for(int i=0; i<nact; i++)
 		this->activitiesIds.append(act.at(i));
 
-	assert(n>=0);
-	this->maxDays=n;
+	assert(_maxDays>=0);
+	this->maxDays=_maxDays;
 
 	this->type=CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES;
 }
@@ -9789,18 +9789,18 @@ ConstraintActivitiesMaxHourlySpan::ConstraintActivitiesMaxHourlySpan()
 	type=CONSTRAINT_ACTIVITIES_MAX_HOURLY_SPAN;
 }
 
-ConstraintActivitiesMaxHourlySpan::ConstraintActivitiesMaxHourlySpan(double wp, int nact, const QList<int>& act, int n)
+ConstraintActivitiesMaxHourlySpan::ConstraintActivitiesMaxHourlySpan(double wp, int nact, const QList<int>& act, int _maxHourlySpan)
  : TimeConstraint(wp)
  {
-  	assert(nact>=2);
-  	assert(act.count()==nact);
+	assert(nact>=2);
+	assert(act.count()==nact);
 	this->n_activities=nact;
 	this->activitiesIds.clear();
 	for(int i=0; i<nact; i++)
 		this->activitiesIds.append(act.at(i));
 
-	assert(n>=0);
-	this->maxHourlySpan=n;
+	assert(_maxHourlySpan>=0);
+	this->maxHourlySpan=_maxHourlySpan;
 
 	this->type=CONSTRAINT_ACTIVITIES_MAX_HOURLY_SPAN;
 }
@@ -60054,9 +60054,9 @@ ConstraintMinHalfDaysBetweenActivities::ConstraintMinHalfDaysBetweenActivities()
 	type=CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES;
 }
 
-ConstraintMinHalfDaysBetweenActivities::ConstraintMinHalfDaysBetweenActivities(double wp, bool cisd, int nact, const QList<int>& act, int n)
+ConstraintMinHalfDaysBetweenActivities::ConstraintMinHalfDaysBetweenActivities(double wp, bool cisd, int nact, const QList<int>& act, int _minHalfDays)
  : TimeConstraint(wp)
- {
+{
 	this->consecutiveIfSameDay=cisd;
 
 	assert(nact>=2);
@@ -60066,8 +60066,8 @@ ConstraintMinHalfDaysBetweenActivities::ConstraintMinHalfDaysBetweenActivities(d
 	for(int i=0; i<nact; i++)
 		this->activitiesIds.append(act.at(i));
 
-	assert(n>0);
-	this->minDays=n;
+	assert(_minHalfDays>0);
+	this->minDays=_minHalfDays;
 
 	this->type=CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES;
 }
@@ -60995,7 +60995,7 @@ ConstraintMaxTermsBetweenActivities::ConstraintMaxTermsBetweenActivities()
 	type=CONSTRAINT_MAX_TERMS_BETWEEN_ACTIVITIES;
 }
 
-ConstraintMaxTermsBetweenActivities::ConstraintMaxTermsBetweenActivities(double wp, int nact, const QList<int>& act, int n)
+ConstraintMaxTermsBetweenActivities::ConstraintMaxTermsBetweenActivities(double wp, int nact, const QList<int>& act, int _maxTerms)
  : TimeConstraint(wp)
  {
   	assert(nact>=2);
@@ -61005,8 +61005,8 @@ ConstraintMaxTermsBetweenActivities::ConstraintMaxTermsBetweenActivities(double 
 	for(int i=0; i<nact; i++)
 		this->activitiesIds.append(act.at(i));
 
-	assert(n>=0);
-	this->maxTerms=n;
+	assert(_maxTerms>=0);
+	this->maxTerms=_maxTerms;
 
 	this->type=CONSTRAINT_MAX_TERMS_BETWEEN_ACTIVITIES;
 }
@@ -62706,7 +62706,7 @@ ConstraintMaxHalfDaysBetweenActivities::ConstraintMaxHalfDaysBetweenActivities()
 	type=CONSTRAINT_MAX_HALF_DAYS_BETWEEN_ACTIVITIES;
 }
 
-ConstraintMaxHalfDaysBetweenActivities::ConstraintMaxHalfDaysBetweenActivities(double wp, int nact, const QList<int>& act, int n)
+ConstraintMaxHalfDaysBetweenActivities::ConstraintMaxHalfDaysBetweenActivities(double wp, int nact, const QList<int>& act, int _maxHalfDays)
  : TimeConstraint(wp)
  {
   	assert(nact>=2);
@@ -62716,8 +62716,8 @@ ConstraintMaxHalfDaysBetweenActivities::ConstraintMaxHalfDaysBetweenActivities(d
 	for(int i=0; i<nact; i++)
 		this->activitiesIds.append(act.at(i));
 
-	assert(n>=0);
-	this->maxDays=n;
+	assert(_maxHalfDays>=0);
+	this->maxDays=_maxHalfDays;
 
 	this->type=CONSTRAINT_MAX_HALF_DAYS_BETWEEN_ACTIVITIES;
 }

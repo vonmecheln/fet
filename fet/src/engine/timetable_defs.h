@@ -81,6 +81,8 @@ extern bool PRINT_FROM_INTERFACE;
 
 extern QString LANGUAGE_FOR_HTML;
 
+extern bool OVERWRITE_SINGLE_GENERATION_FILES;
+
 /**
 Timetable HTML and CSS JavaScript level, added by Volker Dirr
 */

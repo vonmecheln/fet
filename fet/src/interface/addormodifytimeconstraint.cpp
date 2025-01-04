@@ -38,16 +38,72 @@
 
 #include <QSet>
 
-#define YES	(QString("X"))
-#define NO	(QString(" "))
+#include <QBrush>
+
+#include <QGuiApplication>
+#include <QPainter>
 
 extern Timetable gt;
 
-AddOrModifyTimeConstraintDialog::AddOrModifyTimeConstraintDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop): QDialog(parent)
+void AddOrModifyTimeConstraintTimesTableDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
+{
+	QStyledItemDelegate::paint(painter, option, index);
+
+	int hour=index.row()%nRows;
+
+	if(QGuiApplication::isLeftToRight()){
+		if(hour==0){
+			painter->drawLine(option.rect.topLeft(), option.rect.topRight());
+			painter->drawLine(option.rect.topLeft().x(), option.rect.topLeft().y()+1, option.rect.topRight().x(), option.rect.topRight().y()+1);
+		}
+		if(hour==nRows-1){
+			painter->drawLine(option.rect.bottomLeft(), option.rect.bottomRight());
+			painter->drawLine(option.rect.bottomLeft().x(), option.rect.bottomLeft().y()-1, option.rect.bottomRight().x(), option.rect.bottomRight().y()-1);
+		}
+
+		if(index.column()==0){
+			painter->drawLine(option.rect.topLeft(), option.rect.bottomLeft());
+			painter->drawLine(option.rect.topLeft().x()+1, option.rect.topLeft().y(), option.rect.bottomLeft().x()+1, option.rect.bottomLeft().y());
+		}
+		if(index.column()==nColumns-1){
+			painter->drawLine(option.rect.topRight(), option.rect.bottomRight());
+			painter->drawLine(option.rect.topRight().x()-1, option.rect.topRight().y(), option.rect.bottomRight().x()-1, option.rect.bottomRight().y());
+		}
+	}
+	else if(QGuiApplication::isRightToLeft()){
+		if(hour==0){
+			painter->drawLine(option.rect.topRight(), option.rect.topLeft());
+			painter->drawLine(option.rect.topRight().x(), option.rect.topRight().y()+1, option.rect.topLeft().x(), option.rect.topLeft().y()+1);
+		}
+		if(hour==nRows-1){
+			painter->drawLine(option.rect.bottomRight(), option.rect.bottomLeft());
+			painter->drawLine(option.rect.bottomRight().x(), option.rect.bottomRight().y()-1, option.rect.bottomLeft().x(), option.rect.bottomLeft().y()-1);
+		}
+
+		if(index.column()==0){
+			painter->drawLine(option.rect.topRight(), option.rect.bottomRight());
+			painter->drawLine(option.rect.topRight().x()-1, option.rect.topRight().y(), option.rect.bottomRight().x()-1, option.rect.bottomRight().y());
+		}
+		if(index.column()==nColumns-1){
+			painter->drawLine(option.rect.topLeft(), option.rect.bottomLeft());
+			painter->drawLine(option.rect.topLeft().x()+1, option.rect.topLeft().y(), option.rect.bottomLeft().x()+1, option.rect.bottomLeft().y());
+		}
+	}
+	//I think we should not do an 'else {assert(0);}' here, because the layout might be unspecified, according to Qt documentation.
+}
+
+AddOrModifyTimeConstraintDialog::AddOrModifyTimeConstraintDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop,
+																 QTableWidget* _timesTable,
+																 QAbstractItemDelegate* _oldItemDelegate,
+																 AddOrModifyTimeConstraintTimesTableDelegate* _newItemDelegate): QDialog(parent)
 {
 	dialogName=_dialogName;
 	dialogTitle=_dialogTitle;
 	eventLoop=_eventLoop;
+
+	timesTable=_timesTable;
+	oldItemDelegate=_oldItemDelegate;
+	newItemDelegate=_newItemDelegate;
 
 	setWindowTitle(dialogTitle);
 
@@ -61,6 +117,14 @@ AddOrModifyTimeConstraintDialog::AddOrModifyTimeConstraintDialog(QWidget* parent
 
 AddOrModifyTimeConstraintDialog::~AddOrModifyTimeConstraintDialog()
 {
+	if(timesTable!=nullptr){
+		//assert(oldItemDelegate!=nullptr); don't assert this!!! It might be nullptr.
+		assert(newItemDelegate!=nullptr);
+
+		timesTable->setItemDelegate(oldItemDelegate);
+		delete newItemDelegate;
+	}
+
 	saveFETDialogGeometry(this, dialogName);
 	eventLoop->quit();
 }
@@ -169,6 +233,8 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 	toggleAllPushButton=nullptr;
 	
 	timesTable=nullptr;
+	oldItemDelegate=nullptr;
+	newItemDelegate=nullptr;
 
 	filterGroupBox=nullptr;
 
@@ -6898,28 +6964,11 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 		assert(toggleAllPushButton!=nullptr);
 		connect(toggleAllPushButton, &QPushButton::clicked, this, &AddOrModifyTimeConstraint::toggleAllClicked);
 		
-		timesTable->setRowCount(gt.rules.nHoursPerDay);
-		timesTable->setColumnCount(gt.rules.nDaysPerWeek);
+		initTimesTable(timesTable);
 
-		for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-			QTableWidgetItem* item=new QTableWidgetItem(gt.rules.daysOfTheWeek[j]);
-			timesTable->setHorizontalHeaderItem(j, item);
-		}
-		for(int i=0; i<gt.rules.nHoursPerDay; i++){
-			QTableWidgetItem* item=new QTableWidgetItem(gt.rules.hoursOfTheDay[i]);
-			timesTable->setVerticalHeaderItem(i, item);
-		}
-
-		for(int i=0; i<gt.rules.nHoursPerDay; i++)
-			for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-				QTableWidgetItem* item=new QTableWidgetItem(NO);
-				item->setTextAlignment(Qt::AlignCenter);
-				item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
-				colorItem(item);
-				if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
-					item->setToolTip(gt.rules.daysOfTheWeek[j]+QString("\n")+gt.rules.hoursOfTheDay[i]);
-				timesTable->setItem(i, j, item);
-			}
+		oldItemDelegate=timesTable->itemDelegate();
+		newItemDelegate=new AddOrModifyTimeConstraintTimesTableDelegate(nullptr, gt.rules.nHoursPerDay, timesTable->columnCount());
+		timesTable->setItemDelegate(newItemDelegate);
 
 		timesTable->resizeRowsToContents();
 		//timesTable->resizeColumnsToContents();
@@ -6934,9 +6983,6 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 		connect(timesTable, &QTableWidget::cellEntered, this, &AddOrModifyTimeConstraint::cellEntered);
 		timesTable->setMouseTracking(true);
 	}
-
-	if(checkBox!=nullptr)
-		connect(checkBox, &QCheckBox::toggled, this, &AddOrModifyTimeConstraint::checkBoxToggled);
 
 	if(activitiesListWidget_TwoSetsOfActivities_1!=nullptr){
 		assert(activitiesLabel_TwoSetsOfActivities_1!=nullptr);
@@ -7001,12 +7047,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 		selectedActivityTagsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	}
 
-	if(durationCheckBox!=nullptr)
-		connect(durationCheckBox, &QCheckBox::toggled, this, &AddOrModifyTimeConstraint::durationCheckBoxToggled);
-	
 	eventLoop=new QEventLoop;
 
-	dialog=new AddOrModifyTimeConstraintDialog(parent, dialogName, dialogTitle, eventLoop);
+	dialog=new AddOrModifyTimeConstraintDialog(parent, dialogName, dialogTitle, eventLoop,
+											   timesTable, oldItemDelegate, newItemDelegate);
 	//dialog->setAttribute(Qt::WA_DeleteOnClose);
 	
 	//dialog->setWindowTitle(dialogTitle);
@@ -7803,36 +7847,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				{
 					ConstraintBreakTimes* ctr=(ConstraintBreakTimes*)oldtc;
 
-					Matrix2D<bool> currentMatrix;
-					currentMatrix.resize(gt.rules.nHoursPerDay, gt.rules.nDaysPerWeek);
-
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-							currentMatrix[i][j]=false;
-					assert(ctr->days.count()==ctr->hours.count());
-					for(int k=0; k<ctr->days.count(); k++){
-						int i=ctr->hours.at(k);
-						int j=ctr->days.at(k);
-						if(i>=0 && i<gt.rules.nHoursPerDay && j>=0 && j<gt.rules.nDaysPerWeek)
-							currentMatrix[i][j]=true;
-					}
-
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-							QTableWidgetItem* item= new QTableWidgetItem;
-							item->setTextAlignment(Qt::AlignCenter);
-							item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
-							if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
-								item->setToolTip(gt.rules.daysOfTheWeek[j]+QString("\n")+gt.rules.hoursOfTheDay[i]);
-							timesTable->setItem(i, j, item);
-
-							if(!currentMatrix[i][j])
-								item->setText(NO);
-							else
-								item->setText(YES);
-
-							colorItem(item);
-						}
+					fillTimesTable(timesTable, ctr->days, ctr->hours, true);
 
 					break;
 				}
@@ -7841,36 +7856,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				{
 					ConstraintTeacherNotAvailableTimes* ctr=(ConstraintTeacherNotAvailableTimes*)oldtc;
 
-					Matrix2D<bool> currentMatrix;
-					currentMatrix.resize(gt.rules.nHoursPerDay, gt.rules.nDaysPerWeek);
-
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-							currentMatrix[i][j]=false;
-					assert(ctr->days.count()==ctr->hours.count());
-					for(int k=0; k<ctr->days.count(); k++){
-						int i=ctr->hours.at(k);
-						int j=ctr->days.at(k);
-						if(i>=0 && i<gt.rules.nHoursPerDay && j>=0 && j<gt.rules.nDaysPerWeek)
-							currentMatrix[i][j]=true;
-					}
-
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-							QTableWidgetItem* item= new QTableWidgetItem;
-							item->setTextAlignment(Qt::AlignCenter);
-							item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
-							if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
-								item->setToolTip(gt.rules.daysOfTheWeek[j]+QString("\n")+gt.rules.hoursOfTheDay[i]);
-							timesTable->setItem(i, j, item);
-
-							if(!currentMatrix[i][j])
-								item->setText(NO);
-							else
-								item->setText(YES);
-
-							colorItem(item);
-						}
+					fillTimesTable(timesTable, ctr->days, ctr->hours, true);
 
 					teachersComboBox->setCurrentIndex(teachersComboBox->findText(ctr->teacher));
 
@@ -8013,36 +7999,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				{
 					ConstraintStudentsSetNotAvailableTimes* ctr=(ConstraintStudentsSetNotAvailableTimes*)oldtc;
 
-					Matrix2D<bool> currentMatrix;
-					currentMatrix.resize(gt.rules.nHoursPerDay, gt.rules.nDaysPerWeek);
-
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-							currentMatrix[i][j]=false;
-					assert(ctr->days.count()==ctr->hours.count());
-					for(int k=0; k<ctr->days.count(); k++){
-						int i=ctr->hours.at(k);
-						int j=ctr->days.at(k);
-						if(i>=0 && i<gt.rules.nHoursPerDay && j>=0 && j<gt.rules.nDaysPerWeek)
-							currentMatrix[i][j]=true;
-					}
-
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-							QTableWidgetItem* item= new QTableWidgetItem;
-							item->setTextAlignment(Qt::AlignCenter);
-							item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
-							if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
-								item->setToolTip(gt.rules.daysOfTheWeek[j]+QString("\n")+gt.rules.hoursOfTheDay[i]);
-							timesTable->setItem(i, j, item);
-
-							if(!currentMatrix[i][j])
-								item->setText(NO);
-							else
-								item->setText(YES);
-
-							colorItem(item);
-						}
+					fillTimesTable(timesTable, ctr->days, ctr->hours, true);
 
 					int j=studentsComboBox->findText(ctr->students);
 					if(j<0)
@@ -8240,36 +8197,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				initialActivityId=ctr->p_activityId;
 
-				Matrix2D<bool> currentMatrix;
-				currentMatrix.resize(gt.rules.nHoursPerDay, gt.rules.nDaysPerWeek);
-
-				for(int i=0; i<gt.rules.nHoursPerDay; i++)
-					for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-						currentMatrix[i][j]=false;
-				assert(ctr->p_days_L.count()==ctr->p_hours_L.count());
-				for(int k=0; k<ctr->p_days_L.count(); k++){
-					int i=ctr->p_hours_L.at(k);
-					int j=ctr->p_days_L.at(k);
-					if(i>=0 && i<gt.rules.nHoursPerDay && j>=0 && j<gt.rules.nDaysPerWeek)
-						currentMatrix[i][j]=true;
-				}
-
-				for(int i=0; i<gt.rules.nHoursPerDay; i++)
-					for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-						QTableWidgetItem* item= new QTableWidgetItem;
-						item->setTextAlignment(Qt::AlignCenter);
-						item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
-						if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
-							item->setToolTip(gt.rules.daysOfTheWeek[j]+QString("\n")+gt.rules.hoursOfTheDay[i]);
-						timesTable->setItem(i, j, item);
-
-						if(!currentMatrix[i][j])
-							item->setText(YES);
-						else
-							item->setText(NO);
-
-						colorItem(item);
-					}
+				fillTimesTable(timesTable, ctr->p_days_L, ctr->p_hours_L, false);
 
 				break;
 			}
@@ -8288,36 +8216,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				subjectsComboBox->setCurrentIndex(subjectsComboBox->findText(ctr->p_subjectName));
 				activityTagsComboBox->setCurrentIndex(activityTagsComboBox->findText(ctr->p_activityTagName));
 
-				Matrix2D<bool> currentMatrix;
-				currentMatrix.resize(gt.rules.nHoursPerDay, gt.rules.nDaysPerWeek);
-
-				for(int i=0; i<gt.rules.nHoursPerDay; i++)
-					for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-						currentMatrix[i][j]=false;
-				assert(ctr->p_days_L.count()==ctr->p_hours_L.count());
-				for(int k=0; k<ctr->p_days_L.count(); k++){
-					int i=ctr->p_hours_L.at(k);
-					int j=ctr->p_days_L.at(k);
-					if(i>=0 && i<gt.rules.nHoursPerDay && j>=0 && j<gt.rules.nDaysPerWeek)
-						currentMatrix[i][j]=true;
-				}
-
-				for(int i=0; i<gt.rules.nHoursPerDay; i++)
-					for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-						QTableWidgetItem* item= new QTableWidgetItem;
-						item->setTextAlignment(Qt::AlignCenter);
-						item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
-						if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
-							item->setToolTip(gt.rules.daysOfTheWeek[j]+QString("\n")+gt.rules.hoursOfTheDay[i]);
-						timesTable->setItem(i, j, item);
-
-						if(!currentMatrix[i][j])
-							item->setText(YES);
-						else
-							item->setText(NO);
-
-						colorItem(item);
-					}
+				fillTimesTable(timesTable, ctr->p_days_L, ctr->p_hours_L, false);
 
 				durationCheckBox->setChecked(ctr->duration>=1);
 				durationSpinBox->setEnabled(ctr->duration>=1);
@@ -8335,36 +8234,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				initialActivityId=ctr->activityId;
 
-				Matrix2D<bool> currentMatrix;
-				currentMatrix.resize(gt.rules.nHoursPerDay, gt.rules.nDaysPerWeek);
-
-				for(int i=0; i<gt.rules.nHoursPerDay; i++)
-					for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-						currentMatrix[i][j]=false;
-				assert(ctr->days_L.count()==ctr->hours_L.count());
-				for(int k=0; k<ctr->days_L.count(); k++){
-					int i=ctr->hours_L.at(k);
-					int j=ctr->days_L.at(k);
-					if(i>=0 && i<gt.rules.nHoursPerDay && j>=0 && j<gt.rules.nDaysPerWeek)
-						currentMatrix[i][j]=true;
-				}
-
-				for(int i=0; i<gt.rules.nHoursPerDay; i++)
-					for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-						QTableWidgetItem* item= new QTableWidgetItem;
-						item->setTextAlignment(Qt::AlignCenter);
-						item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
-						if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
-							item->setToolTip(gt.rules.daysOfTheWeek[j]+QString("\n")+gt.rules.hoursOfTheDay[i]);
-						timesTable->setItem(i, j, item);
-
-						if(!currentMatrix[i][j])
-							item->setText(YES);
-						else
-							item->setText(NO);
-
-						colorItem(item);
-					}
+				fillTimesTable(timesTable, ctr->days_L, ctr->hours_L, false);
 
 				break;
 			}
@@ -8383,36 +8253,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				subjectsComboBox->setCurrentIndex(subjectsComboBox->findText(ctr->subjectName));
 				activityTagsComboBox->setCurrentIndex(activityTagsComboBox->findText(ctr->activityTagName));
 
-				Matrix2D<bool> currentMatrix;
-				currentMatrix.resize(gt.rules.nHoursPerDay, gt.rules.nDaysPerWeek);
-
-				for(int i=0; i<gt.rules.nHoursPerDay; i++)
-					for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-						currentMatrix[i][j]=false;
-				assert(ctr->days_L.count()==ctr->hours_L.count());
-				for(int k=0; k<ctr->days_L.count(); k++){
-					int i=ctr->hours_L.at(k);
-					int j=ctr->days_L.at(k);
-					if(i>=0 && i<gt.rules.nHoursPerDay && j>=0 && j<gt.rules.nDaysPerWeek)
-						currentMatrix[i][j]=true;
-				}
-
-				for(int i=0; i<gt.rules.nHoursPerDay; i++)
-					for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-						QTableWidgetItem* item= new QTableWidgetItem;
-						item->setTextAlignment(Qt::AlignCenter);
-						item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
-						if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
-							item->setToolTip(gt.rules.daysOfTheWeek[j]+QString("\n")+gt.rules.hoursOfTheDay[i]);
-						timesTable->setItem(i, j, item);
-
-						if(!currentMatrix[i][j])
-							item->setText(YES);
-						else
-							item->setText(NO);
-
-						colorItem(item);
-					}
+				fillTimesTable(timesTable, ctr->days_L, ctr->hours_L, false);
 
 				durationCheckBox->setChecked(ctr->duration>=1);
 				durationSpinBox->setEnabled(ctr->duration>=1);
@@ -8514,36 +8355,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				subjectsComboBox->setCurrentIndex(subjectsComboBox->findText(ctr->p_subjectName));
 				activityTagsComboBox->setCurrentIndex(activityTagsComboBox->findText(ctr->p_activityTagName));
 
-				Matrix2D<bool> currentMatrix;
-				currentMatrix.resize(gt.rules.nHoursPerDay, gt.rules.nDaysPerWeek);
-
-				for(int i=0; i<gt.rules.nHoursPerDay; i++)
-					for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-						currentMatrix[i][j]=false;
-				assert(ctr->p_days_L.count()==ctr->p_hours_L.count());
-				for(int k=0; k<ctr->p_days_L.count(); k++){
-					int i=ctr->p_hours_L.at(k);
-					int j=ctr->p_days_L.at(k);
-					if(i>=0 && i<gt.rules.nHoursPerDay && j>=0 && j<gt.rules.nDaysPerWeek)
-						currentMatrix[i][j]=true;
-				}
-
-				for(int i=0; i<gt.rules.nHoursPerDay; i++)
-					for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-						QTableWidgetItem* item= new QTableWidgetItem;
-						item->setTextAlignment(Qt::AlignCenter);
-						item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
-						if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
-							item->setToolTip(gt.rules.daysOfTheWeek[j]+QString("\n")+gt.rules.hoursOfTheDay[i]);
-						timesTable->setItem(i, j, item);
-
-						if(!currentMatrix[i][j])
-							item->setText(YES);
-						else
-							item->setText(NO);
-
-						colorItem(item);
-					}
+				fillTimesTable(timesTable, ctr->p_days_L, ctr->p_hours_L, false);
 
 				durationCheckBox->setChecked(ctr->duration>=1);
 				durationSpinBox->setEnabled(ctr->duration>=1);
@@ -8571,36 +8383,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				subjectsComboBox->setCurrentIndex(subjectsComboBox->findText(ctr->subjectName));
 				activityTagsComboBox->setCurrentIndex(activityTagsComboBox->findText(ctr->activityTagName));
 
-				Matrix2D<bool> currentMatrix;
-				currentMatrix.resize(gt.rules.nHoursPerDay, gt.rules.nDaysPerWeek);
-
-				for(int i=0; i<gt.rules.nHoursPerDay; i++)
-					for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-						currentMatrix[i][j]=false;
-				assert(ctr->days_L.count()==ctr->hours_L.count());
-				for(int k=0; k<ctr->days_L.count(); k++){
-					int i=ctr->hours_L.at(k);
-					int j=ctr->days_L.at(k);
-					if(i>=0 && i<gt.rules.nHoursPerDay && j>=0 && j<gt.rules.nDaysPerWeek)
-						currentMatrix[i][j]=true;
-				}
-
-				for(int i=0; i<gt.rules.nHoursPerDay; i++)
-					for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-						QTableWidgetItem* item= new QTableWidgetItem;
-						item->setTextAlignment(Qt::AlignCenter);
-						item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
-						if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
-							item->setToolTip(gt.rules.daysOfTheWeek[j]+QString("\n")+gt.rules.hoursOfTheDay[i]);
-						timesTable->setItem(i, j, item);
-
-						if(!currentMatrix[i][j])
-							item->setText(YES);
-						else
-							item->setText(NO);
-
-						colorItem(item);
-					}
+				fillTimesTable(timesTable, ctr->days_L, ctr->hours_L, false);
 
 				durationCheckBox->setChecked(ctr->duration>=1);
 				durationSpinBox->setEnabled(ctr->duration>=1);
@@ -8887,36 +8670,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
 				}
 
-				Matrix2D<bool> currentMatrix;
-				currentMatrix.resize(gt.rules.nHoursPerDay, gt.rules.nDaysPerWeek);
-
-				for(int i=0; i<gt.rules.nHoursPerDay; i++)
-					for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-						currentMatrix[i][j]=false;
-				assert(ctr->selectedDays.count()==ctr->selectedHours.count());
-				for(int k=0; k<ctr->selectedDays.count(); k++){
-					int i=ctr->selectedHours.at(k);
-					int j=ctr->selectedDays.at(k);
-					if(i>=0 && i<gt.rules.nHoursPerDay && j>=0 && j<gt.rules.nDaysPerWeek)
-						currentMatrix[i][j]=true;
-				}
-
-				for(int i=0; i<gt.rules.nHoursPerDay; i++)
-					for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-						QTableWidgetItem* item= new QTableWidgetItem;
-						item->setTextAlignment(Qt::AlignCenter);
-						item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
-						if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
-							item->setToolTip(gt.rules.daysOfTheWeek[j]+QString("\n")+gt.rules.hoursOfTheDay[i]);
-						timesTable->setItem(i, j, item);
-
-						if(!currentMatrix[i][j])
-							item->setText(NO);
-						else
-							item->setText(YES);
-
-						colorItem(item);
-					}
+				fillTimesTable(timesTable, ctr->selectedDays, ctr->selectedHours, true);
 
 				spinBox->setValue(ctr->maxOccupiedTimeSlots);
 
@@ -8937,36 +8691,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
 				}
 
-				Matrix2D<bool> currentMatrix;
-				currentMatrix.resize(gt.rules.nHoursPerDay, gt.rules.nDaysPerWeek);
-
-				for(int i=0; i<gt.rules.nHoursPerDay; i++)
-					for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-						currentMatrix[i][j]=false;
-				assert(ctr->selectedDays.count()==ctr->selectedHours.count());
-				for(int k=0; k<ctr->selectedDays.count(); k++){
-					int i=ctr->selectedHours.at(k);
-					int j=ctr->selectedDays.at(k);
-					if(i>=0 && i<gt.rules.nHoursPerDay && j>=0 && j<gt.rules.nDaysPerWeek)
-						currentMatrix[i][j]=true;
-				}
-
-				for(int i=0; i<gt.rules.nHoursPerDay; i++)
-					for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-						QTableWidgetItem* item= new QTableWidgetItem;
-						item->setTextAlignment(Qt::AlignCenter);
-						item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
-						if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
-							item->setToolTip(gt.rules.daysOfTheWeek[j]+QString("\n")+gt.rules.hoursOfTheDay[i]);
-						timesTable->setItem(i, j, item);
-
-						if(!currentMatrix[i][j])
-							item->setText(NO);
-						else
-							item->setText(YES);
-
-						colorItem(item);
-					}
+				fillTimesTable(timesTable, ctr->selectedDays, ctr->selectedHours, true);
 
 				spinBox->setValue(ctr->maxSimultaneous);
 
@@ -9184,36 +8909,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
 				}
 
-				Matrix2D<bool> currentMatrix;
-				currentMatrix.resize(gt.rules.nHoursPerDay, gt.rules.nDaysPerWeek);
-
-				for(int i=0; i<gt.rules.nHoursPerDay; i++)
-					for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-						currentMatrix[i][j]=false;
-				assert(ctr->selectedDays.count()==ctr->selectedHours.count());
-				for(int k=0; k<ctr->selectedDays.count(); k++){
-					int i=ctr->selectedHours.at(k);
-					int j=ctr->selectedDays.at(k);
-					if(i>=0 && i<gt.rules.nHoursPerDay && j>=0 && j<gt.rules.nDaysPerWeek)
-						currentMatrix[i][j]=true;
-				}
-
-				for(int i=0; i<gt.rules.nHoursPerDay; i++)
-					for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-						QTableWidgetItem* item= new QTableWidgetItem;
-						item->setTextAlignment(Qt::AlignCenter);
-						item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
-						if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
-							item->setToolTip(gt.rules.daysOfTheWeek[j]+QString("\n")+gt.rules.hoursOfTheDay[i]);
-						timesTable->setItem(i, j, item);
-
-						if(!currentMatrix[i][j])
-							item->setText(NO);
-						else
-							item->setText(YES);
-
-						colorItem(item);
-					}
+				fillTimesTable(timesTable, ctr->selectedDays, ctr->selectedHours, true);
 
 				spinBox->setValue(ctr->minOccupiedTimeSlots);
 
@@ -9234,36 +8930,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
 				}
 
-				Matrix2D<bool> currentMatrix;
-				currentMatrix.resize(gt.rules.nHoursPerDay, gt.rules.nDaysPerWeek);
-
-				for(int i=0; i<gt.rules.nHoursPerDay; i++)
-					for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-						currentMatrix[i][j]=false;
-				assert(ctr->selectedDays.count()==ctr->selectedHours.count());
-				for(int k=0; k<ctr->selectedDays.count(); k++){
-					int i=ctr->selectedHours.at(k);
-					int j=ctr->selectedDays.at(k);
-					if(i>=0 && i<gt.rules.nHoursPerDay && j>=0 && j<gt.rules.nDaysPerWeek)
-						currentMatrix[i][j]=true;
-				}
-
-				for(int i=0; i<gt.rules.nHoursPerDay; i++)
-					for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-						QTableWidgetItem* item= new QTableWidgetItem;
-						item->setTextAlignment(Qt::AlignCenter);
-						item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
-						if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
-							item->setToolTip(gt.rules.daysOfTheWeek[j]+QString("\n")+gt.rules.hoursOfTheDay[i]);
-						timesTable->setItem(i, j, item);
-
-						if(!currentMatrix[i][j])
-							item->setText(NO);
-						else
-							item->setText(YES);
-
-						colorItem(item);
-					}
+				fillTimesTable(timesTable, ctr->selectedDays, ctr->selectedHours, true);
 
 				spinBox->setValue(ctr->minSimultaneous);
 				allowEmptySlotsCheckBox->setChecked(ctr->allowEmptySlots);
@@ -10230,36 +9897,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
 				}
 
-				Matrix2D<bool> currentMatrix;
-				currentMatrix.resize(gt.rules.nHoursPerDay, gt.rules.nDaysPerWeek);
-
-				for(int i=0; i<gt.rules.nHoursPerDay; i++)
-					for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-						currentMatrix[i][j]=false;
-				assert(ctr->selectedDays.count()==ctr->selectedHours.count());
-				for(int k=0; k<ctr->selectedDays.count(); k++){
-					int i=ctr->selectedHours.at(k);
-					int j=ctr->selectedDays.at(k);
-					if(i>=0 && i<gt.rules.nHoursPerDay && j>=0 && j<gt.rules.nDaysPerWeek)
-						currentMatrix[i][j]=true;
-				}
-
-				for(int i=0; i<gt.rules.nHoursPerDay; i++)
-					for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-						QTableWidgetItem* item= new QTableWidgetItem;
-						item->setTextAlignment(Qt::AlignCenter);
-						item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
-						if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
-							item->setToolTip(gt.rules.daysOfTheWeek[j]+QString("\n")+gt.rules.hoursOfTheDay[i]);
-						timesTable->setItem(i, j, item);
-
-						if(!currentMatrix[i][j])
-							item->setText(NO);
-						else
-							item->setText(YES);
-
-						colorItem(item);
-					}
+				fillTimesTable(timesTable, ctr->selectedDays, ctr->selectedHours, true);
 
 				spinBox->setValue(ctr->maxActivities);
 
@@ -11170,6 +10808,12 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 		}
 	}
 
+	if(checkBox!=nullptr)
+		connect(checkBox, &QCheckBox::toggled, this, &AddOrModifyTimeConstraint::checkBoxToggled);
+
+	if(durationCheckBox!=nullptr)
+		connect(durationCheckBox, &QCheckBox::toggled, this, &AddOrModifyTimeConstraint::durationCheckBoxToggled);
+
 	dialog->setModal(true);
 	dialog->setWindowModality(Qt::ApplicationModal);
 	dialog->show();
@@ -11257,12 +10901,7 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 			{
 				QList<int> days;
 				QList<int> hours;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==YES){
-							days.append(j);
-							hours.append(i);
-						}
+				getTimesTable(timesTable, days, hours, true);
 
 				tc=new ConstraintBreakTimes(weight, days, hours);
 				
@@ -11273,12 +10912,7 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 			{
 				QList<int> days;
 				QList<int> hours;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==YES){
-							days.append(j);
-							hours.append(i);
-						}
+				getTimesTable(timesTable, days, hours, true);
 
 				tc=new ConstraintTeacherNotAvailableTimes(weight, teachersComboBox->currentText(), days, hours);
 
@@ -11343,9 +10977,9 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 						return;
 					}
 					else{
-						QMessageBox::warning(dialog, tr("FET information"), tr("Allow empty days check box must be checked. If you need to not allow empty days for a teacher, "
-							"please use the constraint teacher min days per week (but the min days per week constraint is for real days. You can also use the "
-							"constraints teacher min mornings/afternoons per week.)"));
+						QMessageBox::warning(dialog, tr("FET information"), tr("Allow empty days check box must be checked. If you need to not allow empty days for the teachers, "
+							"please use the constraint teachers min days per week (but the min days per week constraint is for real days. You can also use the "
+							"constraint teachers min mornings/afternoons per week.)"));
 						return;
 					}
 				}
@@ -11408,12 +11042,7 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 			{
 				QList<int> days;
 				QList<int> hours;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==YES){
-							days.append(j);
-							hours.append(i);
-						}
+				getTimesTable(timesTable, days, hours, true);
 
 				tc=new ConstraintStudentsSetNotAvailableTimes(weight, studentsComboBox->currentText(), days, hours);
 
@@ -11719,14 +11348,9 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 
 				QList<int> days_L;
 				QList<int> hours_L;
-				int n=0;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==NO){
-							days_L.append(j);
-							hours_L.append(i);
-							n++;
-						}
+				getTimesTable(timesTable, days_L, hours_L, false);
+				int n=days_L.count();
+				assert(n==hours_L.count());
 
 				if(n<=0){
 					int t=QMessageBox::question(dialog, tr("FET question"),
@@ -11821,14 +11445,9 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 
 				QList<int> days_L;
 				QList<int> hours_L;
-				int n=0;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==NO){
-							days_L.append(j);
-							hours_L.append(i);
-							n++;
-						}
+				getTimesTable(timesTable, days_L, hours_L, false);
+				int n=days_L.count();
+				assert(n==hours_L.count());
 
 				if(n<=0){
 					int t=QMessageBox::question(dialog, tr("FET question"),
@@ -11857,14 +11476,9 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 
 				QList<int> days_L;
 				QList<int> hours_L;
-				int n=0;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==NO){
-							days_L.append(j);
-							hours_L.append(i);
-							n++;
-						}
+				getTimesTable(timesTable, days_L, hours_L, false);
+				int n=days_L.count();
+				assert(n==hours_L.count());
 
 				if(n<=0){
 					int t=QMessageBox::question(dialog, tr("FET question"),
@@ -11959,14 +11573,9 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 
 				QList<int> days_L;
 				QList<int> hours_L;
-				int n=0;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==NO){
-							days_L.append(j);
-							hours_L.append(i);
-							n++;
-						}
+				getTimesTable(timesTable, days_L, hours_L, false);
+				int n=days_L.count();
+				assert(n==hours_L.count());
 
 				if(n<=0){
 					int t=QMessageBox::question(dialog, tr("FET question"),
@@ -12122,14 +11731,9 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 
 				QList<int> days_L;
 				QList<int> hours_L;
-				int n=0;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==NO){
-							days_L.append(j);
-							hours_L.append(i);
-							n++;
-						}
+				getTimesTable(timesTable, days_L, hours_L, false);
+				int n=days_L.count();
+				assert(n==hours_L.count());
 
 				if(n<=0){
 					int t=QMessageBox::question(dialog, tr("FET question"),
@@ -12171,14 +11775,9 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 
 				QList<int> days_L;
 				QList<int> hours_L;
-				int n=0;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==NO){
-							days_L.append(j);
-							hours_L.append(i);
-							n++;
-						}
+				getTimesTable(timesTable, days_L, hours_L, false);
+				int n=days_L.count();
+				assert(n==hours_L.count());
 
 				if(n<=0){
 					int t=QMessageBox::question(dialog, tr("FET question"),
@@ -12412,7 +12011,7 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 				int tid=third_activitiesList.at(i);
 
 				if(sid==fid || sid==tid || fid==tid){
-					QMessageBox::warning(dialog, tr("FET information"),	tr("Same activities"));
+					QMessageBox::warning(dialog, tr("FET information"), tr("Same activities"));
 					return;
 				}
 
@@ -12512,12 +12111,7 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 
 				QList<int> days;
 				QList<int> hours;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==YES){
-							days.append(j);
-							hours.append(i);
-						}
+				getTimesTable(timesTable, days, hours, true);
 
 				tc=new ConstraintActivitiesOccupyMaxTimeSlotsFromSelection(weight, selectedActivitiesList, days, hours, spinBox->value());
 
@@ -12541,12 +12135,7 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 
 				QList<int> days;
 				QList<int> hours;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==YES){
-							days.append(j);
-							hours.append(i);
-						}
+				getTimesTable(timesTable, days, hours, true);
 
 				tc=new ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots(weight, selectedActivitiesList, days, hours, spinBox->value());
 
@@ -12793,12 +12382,7 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 
 				QList<int> days;
 				QList<int> hours;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==YES){
-							days.append(j);
-							hours.append(i);
-						}
+				getTimesTable(timesTable, days, hours, true);
 
 				tc=new ConstraintActivitiesOccupyMinTimeSlotsFromSelection(weight, selectedActivitiesList, days, hours, spinBox->value());
 
@@ -12827,12 +12411,7 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 
 				QList<int> days;
 				QList<int> hours;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==YES){
-							days.append(j);
-							hours.append(i);
-						}
+				getTimesTable(timesTable, days, hours, true);
 
 				tc=new ConstraintActivitiesMinSimultaneousInSelectedTimeSlots(weight, selectedActivitiesList, days, hours, spinBox->value(), allowEmptySlotsCheckBox->isChecked());
 
@@ -13683,12 +13262,7 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 
 				QList<int> days;
 				QList<int> hours;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==YES){
-							days.append(j);
-							hours.append(i);
-						}
+				getTimesTable(timesTable, days, hours, true);
 
 				tc=new ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots(weight, selectedActivitiesList, days, hours, spinBox->value());
 
@@ -14758,60 +14332,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 	switch(type){
 		//4
 		case CONSTRAINT_TEACHERS_MAX_HOURS_DAILY:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMaxHoursDaily(weight, spinBox->value(), tch->name);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
-		//5
-		case CONSTRAINT_TEACHER_MAX_DAYS_PER_WEEK:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMaxDaysPerWeek(weight, spinBox->value(), tch->name);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
-		//6
-		case CONSTRAINT_TEACHERS_MAX_GAPS_PER_WEEK:
-		{
-			for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMaxGapsPerWeek(weight, tch->name, spinBox->value());
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-		}
-		//7
-		case CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK:
-		{
-			for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMaxGapsPerWeek(weight, tch->name, spinBox->value());
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-		}
+			[[fallthrough]];
 		//8
 		case CONSTRAINT_TEACHER_MAX_HOURS_DAILY:
 			{
@@ -14826,11 +14347,15 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 
 				break;
 			}
-		//9
-		case CONSTRAINT_TEACHERS_MAX_HOURS_CONTINUOUSLY:
+
+		//5
+		case CONSTRAINT_TEACHER_MAX_DAYS_PER_WEEK:
+			[[fallthrough]];
+		//52
+		case CONSTRAINT_TEACHERS_MAX_DAYS_PER_WEEK:
 			{
 				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMaxHoursContinuously(weight, spinBox->value(), tch->name);
+					TimeConstraint *ctr=new ConstraintTeacherMaxDaysPerWeek(weight, spinBox->value(), tch->name);
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
@@ -14840,6 +14365,26 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 
 				break;
 			}
+		//6
+		case CONSTRAINT_TEACHERS_MAX_GAPS_PER_WEEK:
+			[[fallthrough]];
+		//7
+		case CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK:
+		{
+			for(Teacher* tch : std::as_const(gt.rules.teachersList)){
+					TimeConstraint *ctr=new ConstraintTeacherMaxGapsPerWeek(weight, tch->name, spinBox->value());
+					bool tmp2=gt.rules.addTimeConstraint(ctr);
+					assert(tmp2);
+
+					ctrs+=ctr->getDetailedDescription(gt.rules);
+					ctrs+=QString("\n");
+				}
+
+				break;
+		}
+		//9
+		case CONSTRAINT_TEACHERS_MAX_HOURS_CONTINUOUSLY:
+			[[fallthrough]];
 		//10
 		case CONSTRAINT_TEACHER_MAX_HOURS_CONTINUOUSLY:
 			{
@@ -14854,6 +14399,9 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 
 				break;
 			}
+		//12
+		case CONSTRAINT_TEACHER_MIN_HOURS_DAILY:
+			[[fallthrough]];
 		//11
 		case CONSTRAINT_TEACHERS_MIN_HOURS_DAILY:
 			{
@@ -14864,37 +14412,9 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 						return;
 					}
 					else{
-						QMessageBox::warning(dialog, tr("FET information"), tr("Allow empty days check box must be checked. If you need to not allow empty days for a teacher, "
-							"please use the constraint teacher min days per week (but the min days per week constraint is for real days. You can also use the "
-							"constraints teacher min mornings/afternoons per week.)"));
-						return;
-					}
-				}
-
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMinHoursDaily(weight, spinBox->value(), tch->name, checkBox->isChecked());
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
-		//12
-		case CONSTRAINT_TEACHER_MIN_HOURS_DAILY:
-			{
-				if(!checkBox->isChecked()){
-					if(gt.rules.mode!=MORNINGS_AFTERNOONS){
-						QMessageBox::warning(dialog, tr("FET information"), tr("Allow empty days check box must be checked. If you need to not allow empty days for a teacher, "
-							"please use the constraint teacher min days per week"));
-						return;
-					}
-					else{
-						QMessageBox::warning(dialog, tr("FET information"), tr("Allow empty days check box must be checked. If you need to not allow empty days for a teacher, "
-							"please use the constraint teacher min days per week (but the min days per week constraint is for real days. You can also use the "
-							"constraints teacher min mornings/afternoons per week.)"));
+						QMessageBox::warning(dialog, tr("FET information"), tr("Allow empty days check box must be checked. If you need to not allow empty days for the teachers, "
+							"please use the constraint teachers min days per week (but the min days per week constraint is for real days. You can also use the "
+							"constraint teachers min mornings/afternoons per week.)"));
 						return;
 					}
 				}
@@ -14912,18 +14432,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//13
 		case CONSTRAINT_TEACHERS_MAX_GAPS_PER_DAY:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-						TimeConstraint *ctr=new ConstraintTeacherMaxGapsPerDay(weight, tch->name, spinBox->value());
-						bool tmp2=gt.rules.addTimeConstraint(ctr);
-						assert(tmp2);
-
-						ctrs+=ctr->getDetailedDescription(gt.rules);
-						ctrs+=QString("\n");
-					}
-
-					break;
-			}
+			[[fallthrough]];
 		//14
 		case CONSTRAINT_TEACHER_MAX_GAPS_PER_DAY:
 			{
@@ -14940,36 +14449,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//42
 		case CONSTRAINT_TEACHER_INTERVAL_MAX_DAYS_PER_WEEK:
-			{
-				int startHour=intervalStartHourComboBox->currentIndex();
-				int endHour=intervalEndHourComboBox->currentIndex();
-				if(startHour<0 || startHour>=gt.rules.nHoursPerDay){
-					QMessageBox::warning(dialog, tr("FET information"),
-						tr("Start hour invalid"));
-					return;
-				}
-				if(endHour<0 || endHour>gt.rules.nHoursPerDay){
-					QMessageBox::warning(dialog, tr("FET information"),
-						tr("End hour invalid"));
-					return;
-				}
-				if(endHour<=startHour){
-					QMessageBox::warning(dialog, tr("FET information"),
-						tr("Start hour cannot be greater or equal than end hour"));
-					return;
-				}
-
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherIntervalMaxDaysPerWeek(weight, spinBox->value(), tch->name, startHour, endHour);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//43
 		case CONSTRAINT_TEACHERS_INTERVAL_MAX_DAYS_PER_WEEK:
 			{
@@ -15004,18 +14484,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//48
 		case CONSTRAINT_TEACHERS_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherActivityTagMaxHoursContinuously(weight, spinBox->value(), tch->name, activityTagsComboBox->currentText());
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//49
 		case CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY:
 			{
@@ -15030,34 +14499,9 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 
 				break;
 			}
-		//52
-		case CONSTRAINT_TEACHERS_MAX_DAYS_PER_WEEK:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMaxDaysPerWeek(weight, spinBox->value(), tch->name);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
 		//55
 		case CONSTRAINT_TEACHERS_MIN_DAYS_PER_WEEK:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMinDaysPerWeek(weight, spinBox->value(), tch->name);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//56
 		case CONSTRAINT_TEACHER_MIN_DAYS_PER_WEEK:
 			{
@@ -15074,18 +14518,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//57
 		case CONSTRAINT_TEACHERS_ACTIVITY_TAG_MAX_HOURS_DAILY:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherActivityTagMaxHoursDaily(weight, spinBox->value(), tch->name, activityTagsComboBox->currentText());
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//58
 		case CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_DAILY:
 			{
@@ -15102,18 +14535,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//67
 		case CONSTRAINT_TEACHER_MAX_SPAN_PER_DAY:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMaxSpanPerDay(weight, spinBox->value(), checkBox->isChecked(), tch->name);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//68
 		case CONSTRAINT_TEACHERS_MAX_SPAN_PER_DAY:
 			{
@@ -15130,18 +14552,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//69
 		case CONSTRAINT_TEACHER_MIN_RESTING_HOURS:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMinRestingHours(weight, spinBox->value(), checkBox->isChecked(), tch->name);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//70
 		case CONSTRAINT_TEACHERS_MIN_RESTING_HOURS:
 			{
@@ -15158,37 +14569,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//78
 		case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS:
-			{
-				QString firstActivityTagName=first_activityTagsComboBox->currentText();
-				int facttagindex=gt.rules.searchActivityTag(firstActivityTagName);
-				if(facttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid first activity tag"));
-					return;
-				}
-
-				QString secondActivityTagName=second_activityTagsComboBox->currentText();
-				int sacttagindex=gt.rules.searchActivityTag(secondActivityTagName);
-				if(sacttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid second activity tag"));
-					return;
-				}
-
-				if(firstActivityTagName==secondActivityTagName){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("The two activity tags cannot be the same"));
-					return;
-				}
-
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags(weight, tch->name, spinBox->value(), firstActivityTagName, secondActivityTagName);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//79
 		case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS:
 			{
@@ -15224,24 +14605,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//83
 		case CONSTRAINT_TEACHERS_ACTIVITY_TAG_MIN_HOURS_DAILY:
-			{
-				if(checkBox->isChecked() && spinBox->value()==1){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Allow empty days is selected and min hours daily is 1, so "
-																	   "this would be a useless constraint."));
-					return;
-				}
-
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherActivityTagMinHoursDaily(weight, spinBox->value(), checkBox->isChecked(), tch->name, activityTagsComboBox->currentText());
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//84
 		case CONSTRAINT_TEACHER_ACTIVITY_TAG_MIN_HOURS_DAILY:
 			{
@@ -15264,32 +14628,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//89
 		case CONSTRAINT_TEACHERS_MAX_HOURS_DAILY_REAL_DAYS:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMaxHoursDailyRealDays(weight, spinBox->value(), tch->name);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
-		//90
-		case CONSTRAINT_TEACHER_MAX_REAL_DAYS_PER_WEEK:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMaxRealDaysPerWeek(weight, spinBox->value(), tch->name);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//91
 		case CONSTRAINT_TEACHER_MAX_HOURS_DAILY_REAL_DAYS:
 			{
@@ -15304,6 +14643,9 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 
 				break;
 			}
+		//90
+		case CONSTRAINT_TEACHER_MAX_REAL_DAYS_PER_WEEK:
+			[[fallthrough]];
 		//94
 		case CONSTRAINT_TEACHERS_MAX_REAL_DAYS_PER_WEEK:
 			{
@@ -15320,18 +14662,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//95
 		case CONSTRAINT_TEACHERS_MIN_REAL_DAYS_PER_WEEK:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMinRealDaysPerWeek(weight, spinBox->value(), tch->name);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//96
 		case CONSTRAINT_TEACHER_MIN_REAL_DAYS_PER_WEEK:
 			{
@@ -15348,18 +14679,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//97
 		case CONSTRAINT_TEACHERS_ACTIVITY_TAG_MAX_HOURS_DAILY_REAL_DAYS:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherActivityTagMaxHoursDailyRealDays(weight, spinBox->value(), tch->name, activityTagsComboBox->currentText());
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//98
 		case CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_DAILY_REAL_DAYS:
 			{
@@ -15376,18 +14696,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//101
 		case CONSTRAINT_TEACHER_MAX_AFTERNOONS_PER_WEEK:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMaxAfternoonsPerWeek(weight, spinBox->value(), tch->name);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//102
 		case CONSTRAINT_TEACHERS_MAX_AFTERNOONS_PER_WEEK:
 			{
@@ -15404,18 +14713,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//103
 		case CONSTRAINT_TEACHER_MAX_MORNINGS_PER_WEEK:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMaxMorningsPerWeek(weight, spinBox->value(), tch->name);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//104
 		case CONSTRAINT_TEACHERS_MAX_MORNINGS_PER_WEEK:
 			{
@@ -15432,28 +14730,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//105
 		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
-			{
-				if(selectedActivityTagsListWidget->count()<2){
-					QMessageBox::warning(dialog, tr("FET information"),
-						tr("Please select at least two activity tags"));
-					return;
-				}
-
-				QStringList atl;
-				for(int i=0; i<selectedActivityTagsListWidget->count(); i++)
-					atl.append(selectedActivityTagsListWidget->item(i)->text());
-
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMaxActivityTagsPerDayFromSet(weight, tch->name, spinBox->value(), atl);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//106
 		case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
 			{
@@ -15480,18 +14757,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//107
 		case CONSTRAINT_TEACHERS_MIN_MORNINGS_PER_WEEK:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMinMorningsPerWeek(weight, spinBox->value(), tch->name);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//108
 		case CONSTRAINT_TEACHER_MIN_MORNINGS_PER_WEEK:
 			{
@@ -15508,18 +14774,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//109
 		case CONSTRAINT_TEACHERS_MIN_AFTERNOONS_PER_WEEK:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMinAfternoonsPerWeek(weight, spinBox->value(), tch->name);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//110
 		case CONSTRAINT_TEACHER_MIN_AFTERNOONS_PER_WEEK:
 			{
@@ -15536,18 +14791,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//111
 		case CONSTRAINT_TEACHER_MAX_TWO_CONSECUTIVE_MORNINGS:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMaxTwoConsecutiveMornings(weight, tch->name);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//112
 		case CONSTRAINT_TEACHERS_MAX_TWO_CONSECUTIVE_MORNINGS:
 		{
@@ -15564,18 +14808,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 		}
 		//113
 		case CONSTRAINT_TEACHER_MAX_TWO_CONSECUTIVE_AFTERNOONS:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMaxTwoConsecutiveAfternoons(weight, tch->name);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//114
 		case CONSTRAINT_TEACHERS_MAX_TWO_CONSECUTIVE_AFTERNOONS:
 		{
@@ -15592,18 +14825,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 		}
 		//115
 		case CONSTRAINT_TEACHERS_MAX_GAPS_PER_REAL_DAY:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-						TimeConstraint *ctr=new ConstraintTeacherMaxGapsPerRealDay(weight, tch->name, spinBox->value(), checkBox->isChecked());
-						bool tmp2=gt.rules.addTimeConstraint(ctr);
-						assert(tmp2);
-
-						ctrs+=ctr->getDetailedDescription(gt.rules);
-						ctrs+=QString("\n");
-					}
-
-					break;
-			}
+			[[fallthrough]];
 		//116
 		case CONSTRAINT_TEACHER_MAX_GAPS_PER_REAL_DAY:
 			{
@@ -15620,24 +14842,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//119
 		case CONSTRAINT_TEACHERS_MIN_HOURS_DAILY_REAL_DAYS:
-			{
-				if(!checkBox->isChecked()){
-					QMessageBox::warning(dialog, tr("FET information"), tr("Allow empty days check box must be checked. If you need to not allow empty days for the teachers, "
-						"please use the constraint teachers min days per week"));
-					return;
-				}
-
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMinHoursDailyRealDays(weight, spinBox->value(), tch->name, checkBox->isChecked());
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//120
 		case CONSTRAINT_TEACHER_MIN_HOURS_DAILY_REAL_DAYS:
 			{
@@ -15660,18 +14865,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//121
 		case CONSTRAINT_TEACHERS_AFTERNOONS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour(weight, spinBox->value(), tch->name);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//122
 		case CONSTRAINT_TEACHER_AFTERNOONS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR:
 			{
@@ -15686,6 +14880,9 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 
 				break;
 			}
+		//124
+		case CONSTRAINT_TEACHER_MIN_HOURS_PER_MORNING:
+			[[fallthrough]];
 		//123
 		case CONSTRAINT_TEACHERS_MIN_HOURS_PER_MORNING:
 			{
@@ -15706,40 +14903,9 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 
 				break;
 			}
-		//124
-		case CONSTRAINT_TEACHER_MIN_HOURS_PER_MORNING:
-			{
-				if(!checkBox->isChecked()){
-					QMessageBox::warning(dialog, tr("FET information"), tr("Allow empty mornings check box must be checked. If you need to not allow empty mornings for a teacher, "
-						"please use the constraint teacher min mornings per week."));
-					return;
-				}
-
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMinHoursPerMorning(weight, spinBox->value(), tch->name, checkBox->isChecked());
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
 		//125
 		case CONSTRAINT_TEACHER_MAX_SPAN_PER_REAL_DAY:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMaxSpanPerRealDay(weight, spinBox->value(), checkBox->isChecked(), tch->name);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//126
 		case CONSTRAINT_TEACHERS_MAX_SPAN_PER_REAL_DAY:
 			{
@@ -15756,36 +14922,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//129
 		case CONSTRAINT_TEACHER_MORNING_INTERVAL_MAX_DAYS_PER_WEEK:
-			{
-				int startHour=intervalStartHourComboBox->currentIndex();
-				int endHour=intervalEndHourComboBox->currentIndex();
-				if(startHour<0 || startHour>=gt.rules.nHoursPerDay){
-					QMessageBox::warning(dialog, tr("FET information"),
-						tr("Start hour invalid"));
-					return;
-				}
-				if(endHour<0 || endHour>gt.rules.nHoursPerDay){
-					QMessageBox::warning(dialog, tr("FET information"),
-						tr("End hour invalid"));
-					return;
-				}
-				if(endHour<=startHour){
-					QMessageBox::warning(dialog, tr("FET information"),
-						tr("Start hour cannot be greater or equal than end hour"));
-					return;
-				}
-
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMorningIntervalMaxDaysPerWeek(weight, spinBox->value(), tch->name, startHour, endHour);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//130
 		case CONSTRAINT_TEACHERS_MORNING_INTERVAL_MAX_DAYS_PER_WEEK:
 			{
@@ -15820,36 +14957,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//131
 		case CONSTRAINT_TEACHER_AFTERNOON_INTERVAL_MAX_DAYS_PER_WEEK:
-			{
-				int startHour=intervalStartHourComboBox->currentIndex();
-				int endHour=intervalEndHourComboBox->currentIndex();
-				if(startHour<0 || startHour>=gt.rules.nHoursPerDay){
-					QMessageBox::warning(dialog, tr("FET information"),
-						tr("Start hour invalid"));
-					return;
-				}
-				if(endHour<0 || endHour>gt.rules.nHoursPerDay){
-					QMessageBox::warning(dialog, tr("FET information"),
-						tr("End hour invalid"));
-					return;
-				}
-				if(endHour<=startHour){
-					QMessageBox::warning(dialog, tr("FET information"),
-						tr("Start hour cannot be greater or equal than end hour"));
-					return;
-				}
-
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherAfternoonIntervalMaxDaysPerWeek(weight, spinBox->value(), tch->name, startHour, endHour);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//132
 		case CONSTRAINT_TEACHERS_AFTERNOON_INTERVAL_MAX_DAYS_PER_WEEK:
 			{
@@ -15884,18 +14992,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//135
 		case CONSTRAINT_TEACHER_MAX_ZERO_GAPS_PER_AFTERNOON:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMaxZeroGapsPerAfternoon(weight, tch->name);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//136
 		case CONSTRAINT_TEACHERS_MAX_ZERO_GAPS_PER_AFTERNOON:
 		{
@@ -15912,18 +15009,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 		}
 		//149
 		case CONSTRAINT_TEACHER_MAX_HOURS_PER_ALL_AFTERNOONS:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMaxHoursPerAllAfternoons(weight, spinBox->value(), tch->name);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//150
 		case CONSTRAINT_TEACHERS_MAX_HOURS_PER_ALL_AFTERNOONS:
 			{
@@ -15940,18 +15026,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//153
 		case CONSTRAINT_TEACHER_MIN_RESTING_HOURS_BETWEEN_MORNING_AND_AFTERNOON:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon(weight, spinBox->value(), tch->name);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//154
 		case CONSTRAINT_TEACHERS_MIN_RESTING_HOURS_BETWEEN_MORNING_AND_AFTERNOON:
 			{
@@ -15968,18 +15043,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//159
 		case CONSTRAINT_TEACHERS_MAX_GAPS_PER_WEEK_FOR_REAL_DAYS:
-		{
-			for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMaxGapsPerWeekForRealDays(weight, tch->name, spinBox->value());
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-		}
+			[[fallthrough]];
 		//160
 		case CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK_FOR_REAL_DAYS:
 		{
@@ -15996,18 +15060,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 		}
 		//169
 		case CONSTRAINT_TEACHERS_MAX_GAPS_PER_MORNING_AND_AFTERNOON:
-		{
-			for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMaxGapsPerMorningAndAfternoon(weight, tch->name, spinBox->value());
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-		}
+			[[fallthrough]];
 		//170
 		case CONSTRAINT_TEACHER_MAX_GAPS_PER_MORNING_AND_AFTERNOON:
 		{
@@ -16024,18 +15077,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 		}
 		//171
 		case CONSTRAINT_TEACHERS_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour(weight, spinBox->value(), tch->name);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//172
 		case CONSTRAINT_TEACHER_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR:
 			{
@@ -16052,18 +15094,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//176
 		case CONSTRAINT_TEACHERS_MAX_THREE_CONSECUTIVE_DAYS:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMaxThreeConsecutiveDays(weight, checkBox->isChecked(), tch->name);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//177
 		case CONSTRAINT_TEACHER_MAX_THREE_CONSECUTIVE_DAYS:
 			{
@@ -16080,25 +15111,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//180
 		case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ACTIVITY_TAG:
-			{
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMinGapsBetweenActivityTag(weight, tch->name, spinBox->value(), activityTagName);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//181
 		case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG:
 			{
@@ -16122,28 +15135,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//190
 		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
-			{
-				if(selectedActivityTagsListWidget->count()<2){
-					QMessageBox::warning(dialog, tr("FET information"),
-						tr("Please select at least two activity tags"));
-					return;
-				}
-
-				QStringList atl;
-				for(int i=0; i<selectedActivityTagsListWidget->count(); i++)
-					atl.append(selectedActivityTagsListWidget->item(i)->text());
-
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMaxActivityTagsPerRealDayFromSet(weight, tch->name, spinBox->value(), atl);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//191
 		case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
 			{
@@ -16168,6 +15160,9 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 
 				break;
 			}
+		//200
+		case CONSTRAINT_TEACHER_MIN_HOURS_PER_AFTERNOON:
+			[[fallthrough]];
 		//199
 		case CONSTRAINT_TEACHERS_MIN_HOURS_PER_AFTERNOON:
 			{
@@ -16188,58 +15183,9 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 
 				break;
 			}
-		//200
-		case CONSTRAINT_TEACHER_MIN_HOURS_PER_AFTERNOON:
-			{
-				if(!checkBox->isChecked()){
-					QMessageBox::warning(dialog, tr("FET information"), tr("Allow empty afternoons check box must be checked. If you need to not allow empty afternoons for a teacher, "
-						"please use the constraint teacher min afternoons per week."));
-					return;
-				}
-
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMinHoursPerAfternoon(weight, spinBox->value(), tch->name, checkBox->isChecked());
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
 		//204
 		case CONSTRAINT_TEACHERS_MAX_HOURS_DAILY_IN_INTERVAL:
-			{
-				int startHour=intervalStartHourComboBox->currentIndex();
-				int endHour=intervalEndHourComboBox->currentIndex();
-				if(startHour<0 || startHour>=gt.rules.nHoursPerDay){
-					QMessageBox::warning(dialog, tr("FET information"),
-						tr("Start hour invalid"));
-					return;
-				}
-				if(endHour<0 || endHour>gt.rules.nHoursPerDay){
-					QMessageBox::warning(dialog, tr("FET information"),
-						tr("End hour invalid"));
-					return;
-				}
-				if(endHour<=startHour){
-					QMessageBox::warning(dialog, tr("FET information"),
-						tr("Start hour cannot be greater or equal than end hour"));
-					return;
-				}
-
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMaxHoursDailyInInterval(weight, spinBox->value(), tch->name, startHour, endHour);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//205
 		case CONSTRAINT_TEACHER_MAX_HOURS_DAILY_IN_INTERVAL:
 			{
@@ -16274,37 +15220,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//210
 		case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_PER_REAL_DAY:
-			{
-				QString firstActivityTagName=first_activityTagsComboBox->currentText();
-				int facttagindex=gt.rules.searchActivityTag(firstActivityTagName);
-				if(facttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid first activity tag"));
-					return;
-				}
-
-				QString secondActivityTagName=second_activityTagsComboBox->currentText();
-				int sacttagindex=gt.rules.searchActivityTag(secondActivityTagName);
-				if(sacttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid second activity tag"));
-					return;
-				}
-
-				if(firstActivityTagName==secondActivityTagName){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("The two activity tags cannot be the same"));
-					return;
-				}
-
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDay(weight, tch->name, spinBox->value(), firstActivityTagName, secondActivityTagName);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//211
 		case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_PER_REAL_DAY:
 			{
@@ -16340,25 +15256,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//214
 		case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ACTIVITY_TAG_PER_REAL_DAY:
-			{
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMinGapsBetweenActivityTagPerRealDay(weight, tch->name, spinBox->value(), activityTagName);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//215
 		case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_PER_REAL_DAY:
 			{
@@ -16382,37 +15280,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//218
 		case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON:
-			{
-				QString firstActivityTagName=first_activityTagsComboBox->currentText();
-				int facttagindex=gt.rules.searchActivityTag(firstActivityTagName);
-				if(facttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid first activity tag"));
-					return;
-				}
-
-				QString secondActivityTagName=second_activityTagsComboBox->currentText();
-				int sacttagindex=gt.rules.searchActivityTag(secondActivityTagName);
-				if(sacttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid second activity tag"));
-					return;
-				}
-
-				if(firstActivityTagName==secondActivityTagName){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("The two activity tags cannot be the same"));
-					return;
-				}
-
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon(weight, tch->name, spinBox->value(), firstActivityTagName, secondActivityTagName);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//219
 		case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS_BETWEEN_MORNING_AND_AFTERNOON:
 			{
@@ -16448,25 +15316,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//222
 		case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
-			{
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon(weight, tch->name, spinBox->value(), activityTagName);
-					bool tmp2=gt.rules.addTimeConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//223
 		case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
 			{
@@ -16490,18 +15340,7 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			}
 		//224
 		case CONSTRAINT_TEACHERS_NO_TWO_CONSECUTIVE_DAYS:
-		{
-			for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-				TimeConstraint *ctr=new ConstraintTeacherNoTwoConsecutiveDays(weight, tch->name);
-				bool tmp2=gt.rules.addTimeConstraint(ctr);
-				assert(tmp2);
-
-				ctrs+=ctr->getDetailedDescription(gt.rules);
-				ctrs+=QString("\n");
-			}
-
-			break;
-		}
+			[[fallthrough]];
 		//225
 		case CONSTRAINT_TEACHER_NO_TWO_CONSECUTIVE_DAYS:
 		{
@@ -16604,12 +15443,7 @@ void AddOrModifyTimeConstraint::okClicked()
 			{
 				QList<int> days;
 				QList<int> hours;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==YES){
-							days.append(j);
-							hours.append(i);
-						}
+				getTimesTable(timesTable, days, hours, true);
 
 				ConstraintBreakTimes* ctr=(ConstraintBreakTimes*)oldtc;
 				ctr->days=days;
@@ -16652,12 +15486,7 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				QList<int> days;
 				QList<int> hours;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==YES){
-							days.append(j);
-							hours.append(i);
-						}
+				getTimesTable(timesTable, days, hours, true);
 				ctr->days=days;
 				ctr->hours=hours;
 
@@ -16852,12 +15681,7 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				QList<int> days;
 				QList<int> hours;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==YES){
-							days.append(j);
-							hours.append(i);
-						}
+				getTimesTable(timesTable, days, hours, true);
 				ctr->days=days;
 				ctr->hours=hours;
 
@@ -17166,14 +15990,9 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				QList<int> days_L;
 				QList<int> hours_L;
-				int n=0;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==NO){
-							days_L.append(j);
-							hours_L.append(i);
-							n++;
-						}
+				getTimesTable(timesTable, days_L, hours_L, false);
+				int n=days_L.count();
+				assert(n==hours_L.count());
 
 				if(n<=0){
 					int t=QMessageBox::question(dialog, tr("FET question"),
@@ -17278,14 +16097,9 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				QList<int> days_L;
 				QList<int> hours_L;
-				int n=0;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==NO){
-							days_L.append(j);
-							hours_L.append(i);
-							n++;
-						}
+				getTimesTable(timesTable, days_L, hours_L, false);
+				int n=days_L.count();
+				assert(n==hours_L.count());
 
 				if(n<=0){
 					int t=QMessageBox::question(dialog, tr("FET question"),
@@ -17324,14 +16138,9 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				QList<int> days_L;
 				QList<int> hours_L;
-				int n=0;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==NO){
-							days_L.append(j);
-							hours_L.append(i);
-							n++;
-						}
+				getTimesTable(timesTable, days_L, hours_L, false);
+				int n=days_L.count();
+				assert(n==hours_L.count());
 
 				if(n<=0){
 					int t=QMessageBox::question(dialog, tr("FET question"),
@@ -17436,14 +16245,9 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				QList<int> days_L;
 				QList<int> hours_L;
-				int n=0;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==NO){
-							days_L.append(j);
-							hours_L.append(i);
-							n++;
-						}
+				getTimesTable(timesTable, days_L, hours_L, false);
+				int n=days_L.count();
+				assert(n==hours_L.count());
 
 				if(n<=0){
 					int t=QMessageBox::question(dialog, tr("FET question"),
@@ -17624,14 +16428,9 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				QList<int> days_L;
 				QList<int> hours_L;
-				int n=0;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==NO){
-							days_L.append(j);
-							hours_L.append(i);
-							n++;
-						}
+				getTimesTable(timesTable, days_L, hours_L, false);
+				int n=days_L.count();
+				assert(n==hours_L.count());
 
 				if(n<=0){
 					int t=QMessageBox::question(dialog, tr("FET question"),
@@ -17690,14 +16489,9 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				QList<int> days_L;
 				QList<int> hours_L;
-				int n=0;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==NO){
-							days_L.append(j);
-							hours_L.append(i);
-							n++;
-						}
+				getTimesTable(timesTable, days_L, hours_L, false);
+				int n=days_L.count();
+				assert(n==hours_L.count());
 
 				if(n<=0){
 					int t=QMessageBox::question(dialog, tr("FET question"),
@@ -18139,12 +16933,7 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				QList<int> days;
 				QList<int> hours;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==YES){
-							days.append(j);
-							hours.append(i);
-						}
+				getTimesTable(timesTable, days, hours, true);
 
 				ConstraintActivitiesOccupyMaxTimeSlotsFromSelection* ctr=(ConstraintActivitiesOccupyMaxTimeSlotsFromSelection*)oldtc;
 				ctr->activitiesIds=selectedActivitiesList;
@@ -18174,12 +16963,7 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				QList<int> days;
 				QList<int> hours;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==YES){
-							days.append(j);
-							hours.append(i);
-						}
+				getTimesTable(timesTable, days, hours, true);
 
 				ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots* ctr=(ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots*)oldtc;
 				ctr->activitiesIds=selectedActivitiesList;
@@ -18490,12 +17274,7 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				QList<int> days;
 				QList<int> hours;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==YES){
-							days.append(j);
-							hours.append(i);
-						}
+				getTimesTable(timesTable, days, hours, true);
 
 				ConstraintActivitiesOccupyMinTimeSlotsFromSelection* ctr=(ConstraintActivitiesOccupyMinTimeSlotsFromSelection*)oldtc;
 				ctr->activitiesIds=selectedActivitiesList;
@@ -18530,12 +17309,7 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				QList<int> days;
 				QList<int> hours;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==YES){
-							days.append(j);
-							hours.append(i);
-						}
+				getTimesTable(timesTable, days, hours, true);
 
 				ConstraintActivitiesMinSimultaneousInSelectedTimeSlots* ctr=(ConstraintActivitiesMinSimultaneousInSelectedTimeSlots*)oldtc;
 				ctr->activitiesIds=selectedActivitiesList;
@@ -19674,12 +18448,7 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				QList<int> days;
 				QList<int> hours;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==YES){
-							days.append(j);
-							hours.append(i);
-						}
+				getTimesTable(timesTable, days, hours, true);
 
 				ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots* ctr=(ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots*)oldtc;
 				ctr->activitiesIds=selectedActivitiesList;
@@ -20214,11 +18983,11 @@ void AddOrModifyTimeConstraint::okClicked()
 					return;
 				}
 				if(selectedActivitiesList.size()==1){
-					QMessageBox::warning(dialog, tr("FET information"),	tr("Only one selected activity"));
+					QMessageBox::warning(dialog, tr("FET information"), tr("Only one selected activity"));
 					return;
 				}
 
-				ConstraintMaxDaysBetweenActivities* ctr=(ConstraintMaxDaysBetweenActivities*)oldtc;
+				ConstraintMaxHalfDaysBetweenActivities* ctr=(ConstraintMaxHalfDaysBetweenActivities*)oldtc;
 
 				ctr->activitiesIds=selectedActivitiesList;
 				ctr->n_activities=ctr->activitiesIds.count();
@@ -21001,7 +19770,7 @@ void AddOrModifyTimeConstraint::cancelClicked()
 	dialog->close();
 }
 
-void AddOrModifyTimeConstraint::colorItem(QTableWidgetItem* item)
+/*void AddOrModifyTimeConstraint::colorItem(QTableWidgetItem* item)
 {
 	if(USE_GUI_COLORS){
 		if(item->text()==NO)
@@ -21010,11 +19779,12 @@ void AddOrModifyTimeConstraint::colorItem(QTableWidgetItem* item)
 			item->setBackground(QBrush(QColorConstants::DarkRed));
 		item->setForeground(QBrush(QColorConstants::LightGray));
 	}
-}
+}*/
 
 void AddOrModifyTimeConstraint::horizontalHeaderClicked(int col)
 {
-	highlightOnHorizontalHeaderClicked(timesTable, col);
+	horizontalHeaderClickedTimesTable(timesTable, col);
+	/*highlightOnHorizontalHeaderClicked(timesTable, col);
 
 	if(col>=0 && col<gt.rules.nDaysPerWeek){
 		QString s=timesTable->item(0, col)->text();
@@ -21029,12 +19799,13 @@ void AddOrModifyTimeConstraint::horizontalHeaderClicked(int col)
 			timesTable->item(row, col)->setText(s);
 			colorItem(timesTable->item(row,col));
 		}
-	}
+	}*/
 }
 
 void AddOrModifyTimeConstraint::verticalHeaderClicked(int row)
 {
-	highlightOnVerticalHeaderClicked(timesTable, row);
+	verticalHeaderClickedTimesTable(timesTable, row);
+	/*highlightOnVerticalHeaderClicked(timesTable, row);
 
 	if(row>=0 && row<gt.rules.nHoursPerDay){
 		QString s=timesTable->item(row, 0)->text();
@@ -21049,17 +19820,19 @@ void AddOrModifyTimeConstraint::verticalHeaderClicked(int row)
 			timesTable->item(row, col)->setText(s);
 			colorItem(timesTable->item(row,col));
 		}
-	}
+	}*/
 }
 
 void AddOrModifyTimeConstraint::cellEntered(int row, int col)
 {
-	highlightOnCellEntered(timesTable, row, col);
+	cellEnteredTimesTable(timesTable, row, col);
+	/*highlightOnCellEntered(timesTable, row, col);*/
 }
 
 void AddOrModifyTimeConstraint::toggleAllClicked()
 {
-	QString newText;
+	toggleAllClickedTimesTable(timesTable);
+	/*QString newText;
 	if(timesTable->item(0, 0)->text()==NO)
 		newText=YES;
 	else
@@ -21068,12 +19841,13 @@ void AddOrModifyTimeConstraint::toggleAllClicked()
 		for(int j=0; j<gt.rules.nDaysPerWeek; j++){
 			timesTable->item(i, j)->setText(newText);
 			colorItem(timesTable->item(i,j));
-		}
+		}*/
 }
 
 void AddOrModifyTimeConstraint::itemClicked(QTableWidgetItem* item)
 {
-	QString s=item->text();
+	itemClickedTimesTable(item);
+	/*QString s=item->text();
 	if(s==YES)
 		s=NO;
 	else{
@@ -21081,7 +19855,7 @@ void AddOrModifyTimeConstraint::itemClicked(QTableWidgetItem* item)
 		s=YES;
 	}
 	item->setText(s);
-	colorItem(item);
+	colorItem(item);*/
 }
 
 void AddOrModifyTimeConstraint::helpClicked()
@@ -22047,6 +20821,3 @@ void AddOrModifyTimeConstraint::swapTwoSetsOfActivitiesPushButtonClicked()
 		selectedActivitiesListWidget_TwoSetsOfActivities_2->addItem(act->getDescription(gt.rules));
 	}
 }
-
-#undef YES
-#undef NO

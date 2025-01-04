@@ -507,7 +507,9 @@ public slots:
 	void dataActivitiesRoomsStatisticsAction_triggered();
 	void dataTeachersSubjectsQualificationsStatisticsAction_triggered();
 	void dataHelpOnStatisticsAction_triggered();
-	
+
+	void overwriteSingleGenerationFilesToggled(bool checked);
+
 	void checkForUpdatesToggled(bool checked);
 	void helpSettingsAction_triggered();
 	void useColorsToggled(bool checked);

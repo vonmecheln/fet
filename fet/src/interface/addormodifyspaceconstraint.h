@@ -20,6 +20,9 @@
 
 #include "spaceconstraint.h"
 
+#include <QAbstractItemDelegate>
+#include <QStyledItemDelegate>
+
 #include <QWidget>
 #include <QDialog>
 
@@ -41,14 +44,38 @@
 
 #include <QEventLoop>
 
+class AddOrModifySpaceConstraintTimesTableDelegate: public QStyledItemDelegate
+{
+	Q_OBJECT
+
+public:
+	int nRows; //The number of rows after which a line is drawn
+	int nColumns;
+
+public:
+	AddOrModifySpaceConstraintTimesTableDelegate(QWidget* parent, int _nRows, int _nColumns): QStyledItemDelegate(parent){
+		nRows=_nRows;
+		nColumns=_nColumns;
+	}
+
+	void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
+};
+
 class AddOrModifySpaceConstraintDialog: public QDialog
 {
 	QString dialogName;
 	QString dialogTitle;
 	QEventLoop* eventLoop;
 
+	QTableWidget* timesTable;
+	QAbstractItemDelegate* oldItemDelegate;
+	AddOrModifySpaceConstraintTimesTableDelegate* newItemDelegate;
+
 public:
-	AddOrModifySpaceConstraintDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop);
+	AddOrModifySpaceConstraintDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop,
+									 QTableWidget* _timesTable,
+									 QAbstractItemDelegate* _oldItemDelegate,
+									 AddOrModifySpaceConstraintTimesTableDelegate* _newItemDelegate);
 	~AddOrModifySpaceConstraintDialog();
 };
 
@@ -84,6 +111,8 @@ class AddOrModifySpaceConstraint: public QObject
 	QPushButton* toggleAllPushButton;
 
 	QTableWidget* timesTable;
+	QAbstractItemDelegate* oldItemDelegate;
+	AddOrModifySpaceConstraintTimesTableDelegate* newItemDelegate;
 
 	QGroupBox* filterGroupBox;
 
@@ -184,7 +213,7 @@ private:
 	int filterActivitiesComboBox(); //returns the index of the current constraint's activity in modify dialog
 	void filterActivitiesListWidget();
 
-	void colorItem(QTableWidgetItem* item);
+	//void colorItem(QTableWidgetItem* item);
 	void itemClicked(QTableWidgetItem* item);
 	void horizontalHeaderClicked(int col);
 	void verticalHeaderClicked(int row);

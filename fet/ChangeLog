@@ -2982,3 +2982,11 @@ Versions 6.28.0 - 6.28.v
 	- Improved the dialogs for adding/modifying the constraints of type two activities ordered, two activities ordered if same day, two activities
 	consecutive, two activities grouped, and three activities grouped (suggested by uni_instructor).
 	- Improved the instructions/help for some constraints (suggested by uni_instructor).
+- Version 6.28.2
+	- Bug fix when modifying a constraint of type max half days between activities (hopefully not met in practice).
+	- Bug fix for the constraint activity preferred room: the 'permanently locked' check box was always initialized as selected when editing this kind
+	of constraint.
+	- The constraints with times tables will show the real days and the real hours in the Mornings-Afternoons mode (suggested by more users in the past).
+	- The user can choose to overwrite the files of the previous single generation (suggested by Benahmed Abdelkrim, pnlshd, bharatstank, and maybe
+	other users).
+	- Code improvements.

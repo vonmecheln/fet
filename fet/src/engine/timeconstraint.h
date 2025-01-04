@@ -865,7 +865,7 @@ public:
 	Constructor, using:
 	the weight, consecutive if on the same day, the number of activities, the list of activities, and the min number of days.
 	*/
-	ConstraintMinDaysBetweenActivities(double wp, bool cisd, int n_act, const QList<int>& act, int n);
+	ConstraintMinDaysBetweenActivities(double wp, bool cisd, int n_act, const QList<int>& act, int _minDays);
 
 	/**
 	Comparison operator - to be sure that we do not introduce duplicates
@@ -942,7 +942,7 @@ public:
 	Constructor, using:
 	the weight, the number of activities, the list of activities, and the max number of days.
 	*/
-	ConstraintMaxDaysBetweenActivities(double wp, int n_act, const QList<int>& act, int n);
+	ConstraintMaxDaysBetweenActivities(double wp, int n_act, const QList<int>& act, int _maxDays);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -1014,7 +1014,7 @@ public:
 	Constructor, using:
 	the weight, the number of activities, the list of activities, and the max hourly span.
 	*/
-	ConstraintActivitiesMaxHourlySpan(double wp, int n_act, const QList<int>& act, int n);
+	ConstraintActivitiesMaxHourlySpan(double wp, int n_act, const QList<int>& act, int _maxHourlySpan);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -10427,7 +10427,7 @@ public:
 	Constructor, using:
 	the weight, the number of activities and the list of activities.
 	*/
-	ConstraintMinHalfDaysBetweenActivities(double wp, bool cisd, int n_act, const QList<int>& act, int n);
+	ConstraintMinHalfDaysBetweenActivities(double wp, bool cisd, int n_act, const QList<int>& act, int _minHalfDays);
 
 	/**
 	Comparison operator - to be sure that we do not introduce duplicates
@@ -10613,7 +10613,7 @@ public:
 	Constructor, using:
 	the weight, the number of activities, the list of activities, and the max number of terms.
 	*/
-	ConstraintMaxTermsBetweenActivities(double wp, int n_act, const QList<int>& act, int n);
+	ConstraintMaxTermsBetweenActivities(double wp, int n_act, const QList<int>& act, int _maxTerms);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -10967,7 +10967,7 @@ public:
 	Constructor, using:
 	the weight, the number of activities, the list of activities, and the max number of days.
 	*/
-	ConstraintMaxHalfDaysBetweenActivities(double wp, int n_act, const QList<int>& act, int n);
+	ConstraintMaxHalfDaysBetweenActivities(double wp, int n_act, const QList<int>& act, int _maxHalfDays);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 

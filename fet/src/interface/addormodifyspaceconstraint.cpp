@@ -36,16 +36,72 @@
 
 #include <QStringList>
 
-#define YES	(QString("X"))
-#define NO	(QString(" "))
+#include <QBrush>
+
+#include <QGuiApplication>
+#include <QPainter>
 
 extern Timetable gt;
 
-AddOrModifySpaceConstraintDialog::AddOrModifySpaceConstraintDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop): QDialog(parent)
+void AddOrModifySpaceConstraintTimesTableDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
+{
+	QStyledItemDelegate::paint(painter, option, index);
+
+	int hour=index.row()%nRows;
+
+	if(QGuiApplication::isLeftToRight()){
+		if(hour==0){
+			painter->drawLine(option.rect.topLeft(), option.rect.topRight());
+			painter->drawLine(option.rect.topLeft().x(), option.rect.topLeft().y()+1, option.rect.topRight().x(), option.rect.topRight().y()+1);
+		}
+		if(hour==nRows-1){
+			painter->drawLine(option.rect.bottomLeft(), option.rect.bottomRight());
+			painter->drawLine(option.rect.bottomLeft().x(), option.rect.bottomLeft().y()-1, option.rect.bottomRight().x(), option.rect.bottomRight().y()-1);
+		}
+
+		if(index.column()==0){
+			painter->drawLine(option.rect.topLeft(), option.rect.bottomLeft());
+			painter->drawLine(option.rect.topLeft().x()+1, option.rect.topLeft().y(), option.rect.bottomLeft().x()+1, option.rect.bottomLeft().y());
+		}
+		if(index.column()==nColumns-1){
+			painter->drawLine(option.rect.topRight(), option.rect.bottomRight());
+			painter->drawLine(option.rect.topRight().x()-1, option.rect.topRight().y(), option.rect.bottomRight().x()-1, option.rect.bottomRight().y());
+		}
+	}
+	else if(QGuiApplication::isRightToLeft()){
+		if(hour==0){
+			painter->drawLine(option.rect.topRight(), option.rect.topLeft());
+			painter->drawLine(option.rect.topRight().x(), option.rect.topRight().y()+1, option.rect.topLeft().x(), option.rect.topLeft().y()+1);
+		}
+		if(hour==nRows-1){
+			painter->drawLine(option.rect.bottomRight(), option.rect.bottomLeft());
+			painter->drawLine(option.rect.bottomRight().x(), option.rect.bottomRight().y()-1, option.rect.bottomLeft().x(), option.rect.bottomLeft().y()-1);
+		}
+
+		if(index.column()==0){
+			painter->drawLine(option.rect.topRight(), option.rect.bottomRight());
+			painter->drawLine(option.rect.topRight().x()-1, option.rect.topRight().y(), option.rect.bottomRight().x()-1, option.rect.bottomRight().y());
+		}
+		if(index.column()==nColumns-1){
+			painter->drawLine(option.rect.topLeft(), option.rect.bottomLeft());
+			painter->drawLine(option.rect.topLeft().x()+1, option.rect.topLeft().y(), option.rect.bottomLeft().x()+1, option.rect.bottomLeft().y());
+		}
+	}
+	//I think we should not do an 'else {assert(0);}' here, because the layout might be unspecified, according to Qt documentation.
+}
+
+AddOrModifySpaceConstraintDialog::AddOrModifySpaceConstraintDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop,
+																   QTableWidget* _timesTable,
+																   QAbstractItemDelegate* _oldItemDelegate,
+																   AddOrModifySpaceConstraintTimesTableDelegate* _newItemDelegate): QDialog(parent)
 {
 	dialogName=_dialogName;
 	dialogTitle=_dialogTitle;
 	eventLoop=_eventLoop;
+
+	timesTable=_timesTable;
+	oldItemDelegate=_oldItemDelegate;
+	newItemDelegate=_newItemDelegate;
 
 	setWindowTitle(dialogTitle);
 
@@ -59,6 +115,14 @@ AddOrModifySpaceConstraintDialog::AddOrModifySpaceConstraintDialog(QWidget* pare
 
 AddOrModifySpaceConstraintDialog::~AddOrModifySpaceConstraintDialog()
 {
+	if(timesTable!=nullptr){
+		//assert(oldItemDelegate!=nullptr); don't assert this!!! It might be nullptr.
+		assert(newItemDelegate!=nullptr);
+
+		timesTable->setItemDelegate(oldItemDelegate);
+		delete newItemDelegate;
+	}
+
 	saveFETDialogGeometry(this, dialogName);
 	eventLoop->quit();
 }
@@ -106,6 +170,8 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 	toggleAllPushButton=nullptr;
 
 	timesTable=nullptr;
+	oldItemDelegate=nullptr;
+	newItemDelegate=nullptr;
 
 	filterGroupBox=nullptr;
 
@@ -2007,28 +2073,11 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 		assert(toggleAllPushButton!=nullptr);
 		connect(toggleAllPushButton, &QPushButton::clicked, this, &AddOrModifySpaceConstraint::toggleAllClicked);
 
-		timesTable->setRowCount(gt.rules.nHoursPerDay);
-		timesTable->setColumnCount(gt.rules.nDaysPerWeek);
+		initTimesTable(timesTable);
 
-		for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-			QTableWidgetItem* item=new QTableWidgetItem(gt.rules.daysOfTheWeek[j]);
-			timesTable->setHorizontalHeaderItem(j, item);
-		}
-		for(int i=0; i<gt.rules.nHoursPerDay; i++){
-			QTableWidgetItem* item=new QTableWidgetItem(gt.rules.hoursOfTheDay[i]);
-			timesTable->setVerticalHeaderItem(i, item);
-		}
-
-		for(int i=0; i<gt.rules.nHoursPerDay; i++)
-			for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-				QTableWidgetItem* item=new QTableWidgetItem(NO);
-				item->setTextAlignment(Qt::AlignCenter);
-				item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
-				colorItem(item);
-				if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
-					item->setToolTip(gt.rules.daysOfTheWeek[j]+QString("\n")+gt.rules.hoursOfTheDay[i]);
-				timesTable->setItem(i, j, item);
-			}
+		oldItemDelegate=timesTable->itemDelegate();
+		newItemDelegate=new AddOrModifySpaceConstraintTimesTableDelegate(nullptr, gt.rules.nHoursPerDay, timesTable->columnCount());
+		timesTable->setItemDelegate(newItemDelegate);
 
 		timesTable->resizeRowsToContents();
 		//timesTable->resizeColumnsToContents();
@@ -2043,9 +2092,6 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 		connect(timesTable, &QTableWidget::cellEntered, this, &AddOrModifySpaceConstraint::cellEntered);
 		timesTable->setMouseTracking(true);
 	}
-
-	if(checkBox!=nullptr)
-		connect(checkBox, &QCheckBox::toggled, this, &AddOrModifySpaceConstraint::checkBoxToggled);
 
 	if(activitiesListWidget!=nullptr){
 		assert(activitiesLabel!=nullptr);
@@ -2079,15 +2125,12 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 
 		activityTagsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 		selectedActivityTagsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
-
-		connect(roomsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifySpaceConstraint::filterActivityTagsCheckBoxToggled);
-		connect(filterActivityTagsCheckBox, &QCheckBox::toggled, this, &AddOrModifySpaceConstraint::filterActivityTagsCheckBoxToggled);
-		filterActivityTagsCheckBoxToggled();
 	}
 
 	eventLoop=new QEventLoop;
 
-	dialog=new AddOrModifySpaceConstraintDialog(parent, dialogName, dialogTitle, eventLoop);
+	dialog=new AddOrModifySpaceConstraintDialog(parent, dialogName, dialogTitle, eventLoop,
+												timesTable, oldItemDelegate, newItemDelegate);
 	//dialog->setAttribute(Qt::WA_DeleteOnClose);
 
 	//dialog->setWindowTitle(dialogTitle);
@@ -2482,36 +2525,7 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 				{
 					ConstraintRoomNotAvailableTimes* ctr=(ConstraintRoomNotAvailableTimes*)oldsc;
 
-					Matrix2D<bool> currentMatrix;
-					currentMatrix.resize(gt.rules.nHoursPerDay, gt.rules.nDaysPerWeek);
-
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-							currentMatrix[i][j]=false;
-					assert(ctr->days.count()==ctr->hours.count());
-					for(int k=0; k<ctr->days.count(); k++){
-						int i=ctr->hours.at(k);
-						int j=ctr->days.at(k);
-						if(i>=0 && i<gt.rules.nHoursPerDay && j>=0 && j<gt.rules.nDaysPerWeek)
-							currentMatrix[i][j]=true;
-					}
-
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-							QTableWidgetItem* item= new QTableWidgetItem;
-							item->setTextAlignment(Qt::AlignCenter);
-							item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
-							if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
-								item->setToolTip(gt.rules.daysOfTheWeek[j]+QString("\n")+gt.rules.hoursOfTheDay[i]);
-							timesTable->setItem(i, j, item);
-
-							if(!currentMatrix[i][j])
-								item->setText(NO);
-							else
-								item->setText(YES);
-
-							colorItem(item);
-						}
+					fillTimesTable(timesTable, ctr->days, ctr->hours, true);
 
 					roomsComboBox->setCurrentIndex(roomsComboBox->findText(ctr->room));
 
@@ -2535,6 +2549,8 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 					for(const QString& rrn : std::as_const(ctr->preferredRealRoomsNames))
 						selectedRealRoomsListWidget->addItem(rrn);
 					selectedRealRoomsListWidget->setCurrentRow(0);
+
+					permanentlyLockedCheckBox->setChecked(ctr->permanentlyLocked);
 
 					break;
 				}
@@ -2988,36 +3004,7 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 				{
 					ConstraintTeacherRoomNotAvailableTimes* ctr=(ConstraintTeacherRoomNotAvailableTimes*)oldsc;
 
-					Matrix2D<bool> currentMatrix;
-					currentMatrix.resize(gt.rules.nHoursPerDay, gt.rules.nDaysPerWeek);
-
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-							currentMatrix[i][j]=false;
-					assert(ctr->days.count()==ctr->hours.count());
-					for(int k=0; k<ctr->days.count(); k++){
-						int i=ctr->hours.at(k);
-						int j=ctr->days.at(k);
-						if(i>=0 && i<gt.rules.nHoursPerDay && j>=0 && j<gt.rules.nDaysPerWeek)
-							currentMatrix[i][j]=true;
-					}
-
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-							QTableWidgetItem* item= new QTableWidgetItem;
-							item->setTextAlignment(Qt::AlignCenter);
-							item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
-							if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
-								item->setToolTip(gt.rules.daysOfTheWeek[j]+QString("\n")+gt.rules.hoursOfTheDay[i]);
-							timesTable->setItem(i, j, item);
-
-							if(!currentMatrix[i][j])
-								item->setText(NO);
-							else
-								item->setText(YES);
-
-							colorItem(item);
-						}
+					fillTimesTable(timesTable, ctr->days, ctr->hours, true);
 
 					teachersComboBox->setCurrentIndex(teachersComboBox->findText(ctr->teacherName));
 
@@ -3410,6 +3397,25 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 		}
 	}
 
+	if(checkBox!=nullptr)
+		connect(checkBox, &QCheckBox::toggled, this, &AddOrModifySpaceConstraint::checkBoxToggled);
+
+	if(activityTagsListWidget!=nullptr){
+		assert(activityTagsLabel!=nullptr);
+		assert(selectedActivityTagsLabel!=nullptr);
+		assert(selectedActivityTagsListWidget!=nullptr);
+		//assert(addAllActivityTagsPushButton!=nullptr);
+		assert(clearActivityTagsPushButton!=nullptr);
+
+		assert(filterActivityTagsCheckBox!=nullptr);
+
+		assert(roomsComboBox!=nullptr);
+
+		connect(roomsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifySpaceConstraint::filterActivityTagsCheckBoxToggled);
+		connect(filterActivityTagsCheckBox, &QCheckBox::toggled, this, &AddOrModifySpaceConstraint::filterActivityTagsCheckBoxToggled);
+		filterActivityTagsCheckBoxToggled();
+	}
+
 	dialog->setModal(true);
 	dialog->setWindowModality(Qt::ApplicationModal);
 	dialog->show();
@@ -3520,12 +3526,7 @@ void AddOrModifySpaceConstraint::addConstraintClicked()
 			{
 				QList<int> days;
 				QList<int> hours;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==YES){
-							days.append(j);
-							hours.append(i);
-						}
+				getTimesTable(timesTable, days, hours, true);
 
 				sc=new ConstraintRoomNotAvailableTimes(weight, roomsComboBox->currentText(), days, hours);
 
@@ -4049,12 +4050,7 @@ void AddOrModifySpaceConstraint::addConstraintClicked()
 			{
 				QList<int> days;
 				QList<int> hours;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==YES){
-							days.append(j);
-							hours.append(i);
-						}
+				getTimesTable(timesTable, days, hours, true);
 
 				sc=new ConstraintTeacherRoomNotAvailableTimes(weight, teachersComboBox->currentText(), roomsComboBox->currentText(), days, hours);
 
@@ -4637,18 +4633,7 @@ void AddOrModifySpaceConstraint::addConstraintsClicked()
 	switch(type){
 		//19
 		case CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_DAY:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					SpaceConstraint* ctr=new ConstraintTeacherMaxBuildingChangesPerDay(weight, tch->name, spinBox->value());
-					bool tmp2=gt.rules.addSpaceConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//20
 		case CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_DAY:
 			{
@@ -4665,18 +4650,7 @@ void AddOrModifySpaceConstraint::addConstraintsClicked()
 			}
 		//21
 		case CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_WEEK:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					SpaceConstraint* ctr=new ConstraintTeacherMaxBuildingChangesPerWeek(weight, tch->name, spinBox->value());
-					bool tmp2=gt.rules.addSpaceConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//22
 		case CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_WEEK:
 			{
@@ -4693,18 +4667,7 @@ void AddOrModifySpaceConstraint::addConstraintsClicked()
 			}
 		//23
 		case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_BUILDING_CHANGES:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					SpaceConstraint* ctr=new ConstraintTeacherMinGapsBetweenBuildingChanges(weight, tch->name, spinBox->value());
-					bool tmp2=gt.rules.addSpaceConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//24
 		case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_BUILDING_CHANGES:
 			{
@@ -4721,18 +4684,7 @@ void AddOrModifySpaceConstraint::addConstraintsClicked()
 			}
 		//35
 		case CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_DAY:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					SpaceConstraint* ctr=new ConstraintTeacherMaxRoomChangesPerDay(weight, tch->name, spinBox->value());
-					bool tmp2=gt.rules.addSpaceConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//36
 		case CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_DAY:
 			{
@@ -4749,18 +4701,7 @@ void AddOrModifySpaceConstraint::addConstraintsClicked()
 			}
 		//37
 		case CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_WEEK:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					SpaceConstraint* ctr=new ConstraintTeacherMaxRoomChangesPerWeek(weight, tch->name, spinBox->value());
-					bool tmp2=gt.rules.addSpaceConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//38
 		case CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_WEEK:
 			{
@@ -4777,18 +4718,7 @@ void AddOrModifySpaceConstraint::addConstraintsClicked()
 			}
 		//39
 		case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ROOM_CHANGES:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					SpaceConstraint* ctr=new ConstraintTeacherMinGapsBetweenRoomChanges(weight, tch->name, spinBox->value());
-					bool tmp2=gt.rules.addSpaceConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//40
 		case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ROOM_CHANGES:
 			{
@@ -4805,18 +4735,7 @@ void AddOrModifySpaceConstraint::addConstraintsClicked()
 			}
 		//44
 		case CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_REAL_DAY:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					SpaceConstraint* ctr=new ConstraintTeacherMaxRoomChangesPerRealDay(weight, tch->name, spinBox->value());
-					bool tmp2=gt.rules.addSpaceConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//45
 		case CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_REAL_DAY:
 			{
@@ -4833,18 +4752,7 @@ void AddOrModifySpaceConstraint::addConstraintsClicked()
 			}
 		//48
 		case CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_REAL_DAY:
-			{
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					SpaceConstraint* ctr=new ConstraintTeacherMaxBuildingChangesPerRealDay(weight, tch->name, spinBox->value());
-					bool tmp2=gt.rules.addSpaceConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//49
 		case CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_REAL_DAY:
 			{
@@ -4861,34 +4769,7 @@ void AddOrModifySpaceConstraint::addConstraintsClicked()
 			}
 		//52
 		case CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL:
-			{
-				int startHour=intervalStartHourComboBox->currentIndex();
-				int endHour=intervalEndHourComboBox->currentIndex();
-				if(startHour<0 || startHour>=gt.rules.nHoursPerDay){
-					QMessageBox::warning(dialog, tr("FET information"), tr("Start hour invalid"));
-					return;
-				}
-				if(endHour<0 || endHour>gt.rules.nHoursPerDay){
-					QMessageBox::warning(dialog, tr("FET information"), tr("End hour invalid"));
-					return;
-				}
-				if(endHour-startHour<2){
-					QMessageBox::warning(dialog, tr("FET information"),
-						tr("End hour - start hour should be >= 2, so that this constraint is a nontrivial one."));
-					return;
-				}
-
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					SpaceConstraint* ctr=new ConstraintTeacherMaxBuildingChangesPerDayInInterval(weight, tch->name, spinBox->value(), startHour, endHour);
-					bool tmp2=gt.rules.addSpaceConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//53
 		case CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_DAY_IN_INTERVAL:
 			{
@@ -4921,34 +4802,7 @@ void AddOrModifySpaceConstraint::addConstraintsClicked()
 			}
 		//56
 		case CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL:
-			{
-				int startHour=intervalStartHourComboBox->currentIndex();
-				int endHour=intervalEndHourComboBox->currentIndex();
-				if(startHour<0 || startHour>=2*gt.rules.nHoursPerDay){
-					QMessageBox::warning(dialog, tr("FET information"), tr("Start hour invalid"));
-					return;
-				}
-				if(endHour<0 || endHour>2*gt.rules.nHoursPerDay){
-					QMessageBox::warning(dialog, tr("FET information"), tr("End hour invalid"));
-					return;
-				}
-				if(endHour-startHour<2){
-					QMessageBox::warning(dialog, tr("FET information"),
-						tr("End hour - start hour should be >= 2, so that this constraint is a nontrivial one."));
-					return;
-				}
-
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					SpaceConstraint* ctr=new ConstraintTeacherMaxBuildingChangesPerRealDayInInterval(weight, tch->name, spinBox->value(), startHour, endHour);
-					bool tmp2=gt.rules.addSpaceConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//57
 		case CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_REAL_DAY_IN_INTERVAL:
 			{
@@ -4981,34 +4835,7 @@ void AddOrModifySpaceConstraint::addConstraintsClicked()
 			}
 		//60
 		case CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_DAY_IN_INTERVAL:
-			{
-				int startHour=intervalStartHourComboBox->currentIndex();
-				int endHour=intervalEndHourComboBox->currentIndex();
-				if(startHour<0 || startHour>=gt.rules.nHoursPerDay){
-					QMessageBox::warning(dialog, tr("FET information"), tr("Start hour invalid"));
-					return;
-				}
-				if(endHour<0 || endHour>gt.rules.nHoursPerDay){
-					QMessageBox::warning(dialog, tr("FET information"), tr("End hour invalid"));
-					return;
-				}
-				if(endHour-startHour<2){
-					QMessageBox::warning(dialog, tr("FET information"),
-						tr("End hour - start hour should be >= 2, so that this constraint is a nontrivial one."));
-					return;
-				}
-
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					SpaceConstraint* ctr=new ConstraintTeacherMaxRoomChangesPerDayInInterval(weight, tch->name, spinBox->value(), startHour, endHour);
-					bool tmp2=gt.rules.addSpaceConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//61
 		case CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_DAY_IN_INTERVAL:
 			{
@@ -5041,34 +4868,7 @@ void AddOrModifySpaceConstraint::addConstraintsClicked()
 			}
 		//64
 		case CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_REAL_DAY_IN_INTERVAL:
-			{
-				int startHour=intervalStartHourComboBox->currentIndex();
-				int endHour=intervalEndHourComboBox->currentIndex();
-				if(startHour<0 || startHour>=2*gt.rules.nHoursPerDay){
-					QMessageBox::warning(dialog, tr("FET information"), tr("Start hour invalid"));
-					return;
-				}
-				if(endHour<0 || endHour>2*gt.rules.nHoursPerDay){
-					QMessageBox::warning(dialog, tr("FET information"), tr("End hour invalid"));
-					return;
-				}
-				if(endHour-startHour<2){
-					QMessageBox::warning(dialog, tr("FET information"),
-						tr("End hour - start hour should be >= 2, so that this constraint is a nontrivial one."));
-					return;
-				}
-
-				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					SpaceConstraint* ctr=new ConstraintTeacherMaxRoomChangesPerRealDayInInterval(weight, tch->name, spinBox->value(), startHour, endHour);
-					bool tmp2=gt.rules.addSpaceConstraint(ctr);
-					assert(tmp2);
-
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
-				}
-
-				break;
-			}
+			[[fallthrough]];
 		//65
 		case CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_REAL_DAY_IN_INTERVAL:
 			{
@@ -5210,12 +5010,7 @@ void AddOrModifySpaceConstraint::okClicked()
 			{
 				QList<int> days;
 				QList<int> hours;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==YES){
-							days.append(j);
-							hours.append(i);
-						}
+				getTimesTable(timesTable, days, hours, true);
 
 				ConstraintRoomNotAvailableTimes* ctr=(ConstraintRoomNotAvailableTimes*)oldsc;
 
@@ -5861,12 +5656,7 @@ void AddOrModifySpaceConstraint::okClicked()
 			{
 				QList<int> days;
 				QList<int> hours;
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-					for(int i=0; i<gt.rules.nHoursPerDay; i++)
-						if(timesTable->item(i, j)->text()==YES){
-							days.append(j);
-							hours.append(i);
-						}
+				getTimesTable(timesTable, days, hours, true);
 
 				ConstraintTeacherRoomNotAvailableTimes* ctr=(ConstraintTeacherRoomNotAvailableTimes*)oldsc;
 
@@ -6537,7 +6327,7 @@ void AddOrModifySpaceConstraint::cancelClicked()
 	dialog->close();
 }
 
-void AddOrModifySpaceConstraint::colorItem(QTableWidgetItem* item)
+/*void AddOrModifySpaceConstraint::colorItem(QTableWidgetItem* item)
 {
 	if(USE_GUI_COLORS){
 		if(item->text()==NO)
@@ -6546,11 +6336,12 @@ void AddOrModifySpaceConstraint::colorItem(QTableWidgetItem* item)
 			item->setBackground(QBrush(QColorConstants::DarkRed));
 		item->setForeground(QBrush(QColorConstants::LightGray));
 	}
-}
+}*/
 
 void AddOrModifySpaceConstraint::horizontalHeaderClicked(int col)
 {
-	highlightOnHorizontalHeaderClicked(timesTable, col);
+	horizontalHeaderClickedTimesTable(timesTable, col);
+	/*highlightOnHorizontalHeaderClicked(timesTable, col);
 
 	if(col>=0 && col<gt.rules.nDaysPerWeek){
 		QString s=timesTable->item(0, col)->text();
@@ -6565,12 +6356,13 @@ void AddOrModifySpaceConstraint::horizontalHeaderClicked(int col)
 			timesTable->item(row, col)->setText(s);
 			colorItem(timesTable->item(row,col));
 		}
-	}
+	}*/
 }
 
 void AddOrModifySpaceConstraint::verticalHeaderClicked(int row)
 {
-	highlightOnVerticalHeaderClicked(timesTable, row);
+	verticalHeaderClickedTimesTable(timesTable, row);
+	/*highlightOnVerticalHeaderClicked(timesTable, row);
 
 	if(row>=0 && row<gt.rules.nHoursPerDay){
 		QString s=timesTable->item(row, 0)->text();
@@ -6585,17 +6377,19 @@ void AddOrModifySpaceConstraint::verticalHeaderClicked(int row)
 			timesTable->item(row, col)->setText(s);
 			colorItem(timesTable->item(row,col));
 		}
-	}
+	}*/
 }
 
 void AddOrModifySpaceConstraint::cellEntered(int row, int col)
 {
-	highlightOnCellEntered(timesTable, row, col);
+	cellEnteredTimesTable(timesTable, row, col);
+	/*highlightOnCellEntered(timesTable, row, col);*/
 }
 
 void AddOrModifySpaceConstraint::toggleAllClicked()
 {
-	QString newText;
+	toggleAllClickedTimesTable(timesTable);
+	/*QString newText;
 	if(timesTable->item(0, 0)->text()==NO)
 		newText=YES;
 	else
@@ -6604,12 +6398,13 @@ void AddOrModifySpaceConstraint::toggleAllClicked()
 		for(int j=0; j<gt.rules.nDaysPerWeek; j++){
 			timesTable->item(i, j)->setText(newText);
 			colorItem(timesTable->item(i,j));
-		}
+		}*/
 }
 
 void AddOrModifySpaceConstraint::itemClicked(QTableWidgetItem* item)
 {
-	QString s=item->text();
+	itemClickedTimesTable(item);
+	/*QString s=item->text();
 	if(s==YES)
 		s=NO;
 	else{
@@ -6617,7 +6412,7 @@ void AddOrModifySpaceConstraint::itemClicked(QTableWidgetItem* item)
 		s=YES;
 	}
 	item->setText(s);
-	colorItem(item);
+	colorItem(item);*/
 }
 
 void AddOrModifySpaceConstraint::helpClicked()
@@ -7094,6 +6889,3 @@ void AddOrModifySpaceConstraint::filterActivityTagsCheckBoxToggled()
 		}
 	}
 }
-
-#undef YES
-#undef NO

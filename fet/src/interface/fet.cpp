@@ -465,6 +465,8 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 
 	QString ver=newSettings.value("version", "-1").toString();
 	
+	OVERWRITE_SINGLE_GENERATION_FILES=newSettings.value("overwrite-single-generation-files", "false").toBool();
+
 	TIMETABLE_HTML_LEVEL=newSettings.value("html-level", "2").toInt();
 	if(TIMETABLE_HTML_LEVEL<0 || TIMETABLE_HTML_LEVEL>7){
 		QMessageBox::warning(nullptr, FetTranslate::tr("FET warning"), FetTranslate::tr("Incorrect HTML level read from the settings - making it %1.").arg(2));
@@ -1255,6 +1257,9 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("import-directory", IMPORT_DIRECTORY);
 	settings.setValue("version", FET_VERSION);
 	settings.setValue("check-for-updates", checkForUpdates);
+
+	settings.setValue("overwrite-single-generation-files", OVERWRITE_SINGLE_GENERATION_FILES);
+
 	settings.setValue("html-level", TIMETABLE_HTML_LEVEL);
 	settings.setValue("print-activity-tags", TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 	
