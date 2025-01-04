@@ -35,6 +35,9 @@
 #include <QSet>
 #include <QHash>
 
+#include <QDialogButtonBox>
+#include <QVBoxLayout>
+
 #include "longtextmessagebox.h"
 
 SplitYearForm::SplitYearForm(QWidget* parent, const QString& _year): QDialog(parent)
@@ -42,6 +45,8 @@ SplitYearForm::SplitYearForm(QWidget* parent, const QString& _year): QDialog(par
 	setupUi(this);
 	
 	okPushButton->setDefault(true);
+	
+	connect(copyFromAnotherYearPushButton, &QPushButton::clicked, this, &SplitYearForm::copyFromAnotherYear);
 	
 	connect(tabWidget, &QTabWidget::currentChanged, this, &SplitYearForm::tabIndexChanged);
 
@@ -100,6 +105,9 @@ SplitYearForm::SplitYearForm(QWidget* parent, const QString& _year): QDialog(par
 	assert(ss!=nullptr);
 	assert(ss->type==STUDENTS_YEAR);
 	StudentsYear* sy=(StudentsYear*)ss;
+
+	_firstCategoryIsPermanent=sy->firstCategoryIsPermanent;
+
 	_sep=sy->separator;
 	_nCategories=sy->divisions.count();
 	for(int i=0; i<_nCategories; i++){
@@ -113,6 +121,8 @@ SplitYearForm::SplitYearForm(QWidget* parent, const QString& _year): QDialog(par
 	splitYearTextLabel->setText(s);
 	
 	//restore saved values
+	firstCategoryPermanentCheckBox->setChecked(_firstCategoryIsPermanent);
+
 	separatorLineEdit->setText(_sep);
 	
 	for(int i=0; i<_nCategories; i++)
@@ -451,7 +461,33 @@ void SplitYearForm::ok()
 	}
 
 	QSet<QString> newStudentsSets;
-	for(int i=0; i<categoriesSpinBox->value(); i++)
+	for(int j=0; j<listWidgets[0]->count(); j++){
+		QString ts=year+separator+listWidgets[0]->item(j)->text();
+		if(existingNames.contains(ts)){
+			QMessageBox::information(this, tr("FET information"), tr("Cannot add group %1, because a set with the same name exists."
+			 " Please choose another name or remove the old set").arg(ts));
+			return;
+		}
+		newStudentsSets.insert(ts);
+	}
+
+	if(firstCategoryPermanentCheckBox->isChecked() && categoriesSpinBox->value()>=3){
+		for(int fc=0; fc<listWidgets[0]->count(); fc++){
+			for(int i=1; i<categoriesSpinBox->value(); i++){
+				for(int j=0; j<listWidgets[i]->count(); j++){
+					QString ts=year+separator+listWidgets[0]->item(fc)->text()+separator+listWidgets[i]->item(j)->text();
+					if(existingNames.contains(ts)){
+						QMessageBox::information(this, tr("FET information"), tr("Cannot add group %1, because a set with the same name exists."
+						 " Please choose another name or remove the old set").arg(ts));
+						return;
+					}
+					newStudentsSets.insert(ts);
+				}
+			}
+		}
+	}
+
+	for(int i=1; i<categoriesSpinBox->value(); i++){
 		for(int j=0; j<listWidgets[i]->count(); j++){
 			QString ts=year+separator+listWidgets[i]->item(j)->text();
 			if(existingNames.contains(ts)){
@@ -461,7 +497,8 @@ void SplitYearForm::ok()
 			}
 			newStudentsSets.insert(ts);
 		}
-		
+	}
+
 	//As in Knuth TAOCP vol 4A section 7.2.1.1, generate all n-tuples
 	int b[MAX_CATEGORIES];
 	int ii;
@@ -495,7 +532,85 @@ again_here_1:
 			}
 		}
 	}
+
+	//check for new conflicts
+	QSet<QString> alreadyExistingNewSets;
+	for(int fc=0; fc<listWidgets[0]->count(); fc++){
+		QString ts=year+separator+listWidgets[0]->item(fc)->text();
+		
+		if(alreadyExistingNewSets.contains(ts)){
+			QMessageBox::information(this, tr("FET information"), tr("Cannot add the group %1, because it would have the same name as another set in this same year."
+			 " Please review your divisions' names and consider that each final group and subgroup must have different names.").arg(ts));
+			return;
+		}
+		
+		alreadyExistingNewSets.insert(ts);
+		
+		if(firstCategoryPermanentCheckBox->isChecked() && categoriesSpinBox->value()>=3){
+			for(int i=1; i<categoriesSpinBox->value(); i++){
+				for(int j=0; j<listWidgets[i]->count(); j++){
+					QString ts2=year+separator+listWidgets[0]->item(fc)->text()+separator+listWidgets[i]->item(j)->text();
+
+					if(alreadyExistingNewSets.contains(ts2)){
+						QMessageBox::information(this, tr("FET information"), tr("Cannot add the group %1, because it would have the same name as another set in this same year."
+						 " Please review your divisions' names and consider that each final group and subgroup must have different names.").arg(ts2));
+						return;
+					}
+
+					alreadyExistingNewSets.insert(ts2);
+				}
+			}
+		}
+	}
+	if(categoriesSpinBox->value()>=2){
+		for(int i=1; i<categoriesSpinBox->value(); i++){
+			for(int j=0; j<listWidgets[i]->count(); j++){
+				QString ts=year+separator+listWidgets[i]->item(j)->text();
+
+			if(alreadyExistingNewSets.contains(ts)){
+				QMessageBox::information(this, tr("FET information"), tr("Cannot add the group %1, because it would have the same name as another set in this same year."
+				 " Please review your divisions' names and consider that each final group and subgroup must have different names.").arg(ts));
+				return;
+			}
+
+				alreadyExistingNewSets.insert(ts);
+			}
+		}
+	}
 	
+	if(categoriesSpinBox->value()>=2){
+		for(int i=0; i<categoriesSpinBox->value(); i++)
+			b[i]=0;
+		
+		for(;;){
+			QString sbn=year;
+			for(int i=0; i<categoriesSpinBox->value(); i++)
+				sbn+=separator+listWidgets[i]->item(b[i])->text();
+
+			if(alreadyExistingNewSets.contains(sbn)){
+				QMessageBox::information(this, tr("FET information"), tr("Cannot add the subgroup %1, because it would have the same name as another set in this same year."
+				 " Please review your divisions' names and consider that each final group and subgroup must have different names.").arg(sbn));
+				return;
+			}
+
+			alreadyExistingNewSets.insert(sbn);
+
+			ii=categoriesSpinBox->value()-1;
+again_here_2:
+			if(b[ii]>=listWidgets[ii]->count()-1){
+				ii--;
+				if(ii<0)
+					break;
+				goto again_here_2;
+			}
+			else{
+				b[ii]++;
+				for(int i=ii+1; i<categoriesSpinBox->value(); i++)
+					b[i]=0;
+			}
+		}
+	}
+
 	QHash<QString, StudentsGroup*> groupsHash;
 	
 	StudentsYear* yearPointer=nullptr;
@@ -590,7 +705,19 @@ again_here_1:
 			return;
 	}
 	
-	QString sb=tr("Number of categories: %1").arg(yearPointer->divisions.count());
+	QString sb;
+
+	sb+=tr("Separator: %1", "The separator character").arg(yearPointer->separator);
+	sb+=QString("\n");
+	QString tsb;
+	if(yearPointer->firstCategoryIsPermanent)
+		tsb=tr("yes");
+	else
+		tsb=tr("no");
+	sb+=tr("First category is permanent: %1", "%1 is yes or no").arg(tsb);
+	sb+=QString("\n");
+
+	sb+=tr("Number of categories: %1").arg(yearPointer->divisions.count());
 	sb+=QString("\n");
 	for(int i=0; i<yearPointer->divisions.count(); i++){
 		sb+=tr("Category %1: %2").arg(i+1).arg(yearPointer->divisions.at(i).join(", "));
@@ -619,21 +746,57 @@ again_here_1:
 	}
 	
 	//add groups and subgroups
-	for(int i=0; i<categoriesSpinBox->value(); i++)
-		for(int j=0; j<listWidgets[i]->count(); j++){
-			QString ts=year+separator+listWidgets[i]->item(j)->text();
-			StudentsGroup* gr=new StudentsGroup;
-			gr->name=ts;
-			if(numberOfStudents.contains(gr->name))
-				gr->numberOfStudents=numberOfStudents.value(gr->name);
-			bool t=gt.rules.addGroupFast(newYear, gr);
-			
-			assert(t);
-			
-			assert(!groupsHash.contains(gr->name));
-			groupsHash.insert(gr->name, gr);
+	for(int fc=0; fc<listWidgets[0]->count(); fc++){
+		QString ts=year+separator+listWidgets[0]->item(fc)->text();
+		StudentsGroup* gr=new StudentsGroup;
+		gr->name=ts;
+		if(numberOfStudents.contains(gr->name))
+			gr->numberOfStudents=numberOfStudents.value(gr->name);
+		bool t=gt.rules.addGroupFast(newYear, gr);
+		
+		assert(t);
+		
+		assert(!groupsHash.contains(gr->name));
+		groupsHash.insert(gr->name, gr);
+		
+		if(firstCategoryPermanentCheckBox->isChecked() && categoriesSpinBox->value()>=3){
+			for(int i=1; i<categoriesSpinBox->value(); i++){
+				for(int j=0; j<listWidgets[i]->count(); j++){
+					QString ts2=year+separator+listWidgets[0]->item(fc)->text()+separator+listWidgets[i]->item(j)->text();
+					StudentsGroup* gr=new StudentsGroup;
+					gr->name=ts2;
+					if(numberOfStudents.contains(gr->name))
+						gr->numberOfStudents=numberOfStudents.value(gr->name);
+					bool t=gt.rules.addGroupFast(newYear, gr);
+					
+					assert(t);
+					
+					assert(!groupsHash.contains(gr->name));
+					groupsHash.insert(gr->name, gr);
+				}
+			}
 		}
+	}
+	if(categoriesSpinBox->value()>=2){
+		for(int i=1; i<categoriesSpinBox->value(); i++){
+			for(int j=0; j<listWidgets[i]->count(); j++){
+				QString ts=year+separator+listWidgets[i]->item(j)->text();
+				StudentsGroup* gr=new StudentsGroup;
+				gr->name=ts;
+				if(numberOfStudents.contains(gr->name))
+					gr->numberOfStudents=numberOfStudents.value(gr->name);
+				bool t=gt.rules.addGroupFast(newYear, gr);
+				
+				assert(t);
+				
+				assert(!groupsHash.contains(gr->name));
+				groupsHash.insert(gr->name, gr);
+			}
+		}
+	}
 	
+	QHash<QString, StudentsSubgroup*> newSubgroupsHash;
+
 	if(categoriesSpinBox->value()>=2){
 		for(int i=0; i<categoriesSpinBox->value(); i++)
 			b[i]=0;
@@ -651,6 +814,11 @@ again_here_1:
 			sb->name=sbn;
 			if(numberOfStudents.contains(sb->name))
 				sb->numberOfStudents=numberOfStudents.value(sb->name);
+			
+			if(firstCategoryPermanentCheckBox->isChecked()){
+				assert(!newSubgroupsHash.contains(sbn));
+				newSubgroupsHash.insert(sbn, sb);
+			}
 
 			for(int i=0; i<categoriesSpinBox->value(); i++){
 				assert(groupsHash.contains(groups.at(i)));
@@ -659,12 +827,12 @@ again_here_1:
 			}
 
 			ii=categoriesSpinBox->value()-1;
-again_here_2:
+again_here_3:
 			if(b[ii]>=listWidgets[ii]->count()-1){
 				ii--;
 				if(ii<0)
 					break;
-				goto again_here_2;
+				goto again_here_3;
 			}
 			else{
 				b[ii]++;
@@ -673,7 +841,49 @@ again_here_2:
 			}
 		}
 	}
-	
+
+	if(firstCategoryPermanentCheckBox->isChecked() && categoriesSpinBox->value()>=3){
+		for(int i=0; i<categoriesSpinBox->value(); i++)
+			b[i]=0;
+		
+		for(;;){
+			QStringList groups;
+			for(int i=1; i<categoriesSpinBox->value(); i++)
+				groups.append(year+separator+listWidgets[0]->item(b[0])->text()+separator+listWidgets[i]->item(b[i])->text());
+			
+			QString sbn=year;
+			for(int i=0; i<categoriesSpinBox->value(); i++)
+				sbn+=separator+listWidgets[i]->item(b[i])->text();
+			
+			assert(newSubgroupsHash.contains(sbn));
+			StudentsSubgroup* sb=newSubgroupsHash.value(sbn);
+			/*StudentsSubgroup* sb=new StudentsSubgroup;
+			sb->name=sbn;
+			if(numberOfStudents.contains(sb->name))
+				sb->numberOfStudents=numberOfStudents.value(sb->name);*/
+
+			for(int i=1; i<categoriesSpinBox->value(); i++){
+				assert(groupsHash.contains(groups.at(i-1)));
+				bool t=gt.rules.addSubgroupFast(newYear, groupsHash.value(groups.at(i-1)), sb);
+				assert(t);
+			}
+
+			ii=categoriesSpinBox->value()-1;
+again_here_4:
+			if(b[ii]>=listWidgets[ii]->count()-1){
+				ii--;
+				if(ii<0)
+					break;
+				goto again_here_4;
+			}
+			else{
+				b[ii]++;
+				for(int i=ii+1; i<categoriesSpinBox->value(); i++)
+					b[i]=0;
+			}
+		}
+	}
+
 	assert(yearIndex>=0 && yearIndex<gt.rules.yearsList.count());
 	assert(gt.rules.yearsList[yearIndex]==yearPointer);
 	gt.rules.yearsList[yearIndex]=newYear;
@@ -715,6 +925,8 @@ again_here_2:
 	 " of the year to make sure that everything is OK.")+s);
 	
 	//saving page
+	_firstCategoryIsPermanent=firstCategoryPermanentCheckBox->isChecked();
+	
 	if(categoriesSpinBox->value()>0)
 		_sep=separatorLineEdit->text();
 	else
@@ -731,8 +943,22 @@ again_here_2:
 	}
 
 	//2020-09-03
+	newYear->firstCategoryIsPermanent=_firstCategoryIsPermanent;
 	newYear->separator=_sep;
-	QString sa=tr("Number of categories: %1").arg(_nCategories);
+
+	QString sa;
+
+	sa+=tr("Separator: %1").arg(_sep);
+	sa+=QString("\n");
+	QString tsa;
+	if(_firstCategoryIsPermanent)
+		tsa=tr("yes");
+	else
+		tsa=tr("no");
+	sa+=tr("First category is permanent: %1", "%1 is yes or no").arg(tsa);
+	sa+=QString("\n");
+
+	sa+=tr("Number of categories: %1").arg(_nCategories);
 	sa+=QString("\n");
 	for(int i=0; i<_nCategories; i++){
 		newYear->divisions.append(_divisions[i]);
@@ -825,6 +1051,10 @@ void SplitYearForm::help()
 	s+=tr("In such cases (individual students as FET subgroups), remember that a smaller number of total subgroups means faster generation time, so"
 		" you might want to consider a single subgroup for two or more students who have the exact same activities and constraints.");
 	
+	s+="\n\n";
+	s+=tr("The option 'Consider the first category/divisions as permanent': it has effect only if the number of categories is greater or equal to 3,"
+		" and will generate additional groups, considering the first category and each of the other categories.");
+	
 	//show the message in a dialog
 	QDialog dialog(this);
 	
@@ -865,6 +1095,8 @@ void SplitYearForm::reset() //reset to defaults
 		listWidgets[i]->clear();
 	
 	categoriesSpinBox->setValue(0);
+
+	firstCategoryPermanentCheckBox->setChecked(false);
 }
 
 void SplitYearForm::updateNumberOfSubgroups()
@@ -889,4 +1121,62 @@ void SplitYearForm::updateDivisionsLabel()
 	}
 
 	divisionsLabel->setText(ts);
+}
+
+void SplitYearForm::copyFromAnotherYear()
+{
+	QDialog dialog(this);
+	
+	dialog.setWindowTitle(tr("Copy categories and divisions from another year"));
+	
+	QComboBox* yearsComboBox=new QComboBox;
+	for(StudentsYear* sy : std::as_const(gt.rules.yearsList))
+		if(sy->name!=year)
+			yearsComboBox->addItem(sy->name);
+	if(yearsComboBox->count()>=1)
+		yearsComboBox->setCurrentIndex(0);
+	
+	QLabel* label=new QLabel(tr("Please select another year to copy categories and divisions from:"));
+	
+	QDialogButtonBox* buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+
+	connect(buttonBox, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
+	connect(buttonBox, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
+	
+	QVBoxLayout* layout=new QVBoxLayout;
+	
+	layout->addWidget(label);
+	layout->addWidget(yearsComboBox);
+	layout->addWidget(buttonBox);
+	
+	dialog.setLayout(layout);
+
+	centerWidgetOnScreen(&dialog);
+	restoreFETDialogGeometry(&dialog, "CopyCategoriesAndDivisionsFromAnotherYearForm");
+
+	int res=dialog.exec();
+	if(res==QDialog::Accepted){
+		int i=gt.rules.searchYear(yearsComboBox->currentText());
+		if(i>=0){
+			StudentsYear* y=gt.rules.yearsList.at(i);
+			
+			separatorLineEdit->setText(y->separator);
+			
+			categoriesSpinBox->setValue(y->divisions.count());
+
+			for(int i=0; i<MAX_CATEGORIES; i++)
+				listWidgets[i]->clear();
+			
+			for(int i=0; i < y->divisions.count(); i++)
+				for(int j=0; j < y->divisions.at(i).count(); j++)
+					listWidgets[i]->addItem(y->divisions.at(i).at(j));
+
+			updateNumberOfSubgroups();
+			updateDivisionsLabel();
+
+			firstCategoryPermanentCheckBox->setChecked(y->firstCategoryIsPermanent);
+		}
+	}
+
+	saveFETDialogGeometry(&dialog, "CopyCategoriesAndDivisionsFromAnotherYearForm");
 }

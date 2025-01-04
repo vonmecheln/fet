@@ -2996,3 +2996,6 @@ Versions 6.28.0 - 6.28.v
 	- Crash bugs fixed, if trying to add constraints teacher/teachers max hours daily in an hourly interval with max hours daily = 0. Reported by math.
 	- The timetable views days horizontal/vertical now contain check boxes to show/hide the teachers, the students, the subjects, the activity tags,
 	and the rooms (sugested by GUEFFAZ REDA).
+- Version 6.28.5
+	- Improved the divide year by categories dialog, as suggested by Vangelis Karafillidis: added the option to copy the categories and divisions from another
+	students year, and added the option to make the first category permanent. On this occasion there was corrected a possible crash bug in this dialog.

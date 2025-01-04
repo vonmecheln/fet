@@ -4682,7 +4682,7 @@ Notebook:
 
 1. Could you add something like "Notepad" where you could write down various comments for yourself for current version of a timetable. It could be opened all the time and saved when you save the timetable.
 2. I really like "comments" of each activity, but I miss a possibility to add a comment when you create an activity (you have to create it, then go to Data/Activities, find the activity and then add comment.
-3. As I said, I really like comments, so I'm also missing a shortcut to create a comment on Time/Space constraints: I would like to be able to add comment, when I add a constraint (now I have to filter/find a constraint in Time/All or Space/All and then add a comment).
+3. DONE? As I said, I really like comments, so I'm also missing a shortcut to create a comment on Time/Space constraints: I would like to be able to add comment, when I add a constraint (now I have to filter/find a constraint in Time/All or Space/All and then add a comment).
 
 293----------------DONE?------------------------------------
 From Malamojka (on forum):
@@ -9006,6 +9006,13 @@ Liviu, I think we have already discussed this issue. Sometimes, constraints of t
 of activities" (and maybe in selected time slots). As you told me, this type of constraint is extremely difficult to be implemented. But it seems this type of
 constraint is quite useful...
 
+Again from Vangelis Karafillidis, on the forum:
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6255.msg34719#msg34719
+
+The crucial point is that the necessity for this type of constraint "a set of activities shares min common time slots with another set of activities"
+(and maybe in selected time slots) seems to appear more other than I expected...
+
 559---------------------------------------------------------
 From Cyrus Ireri (on forum):
 
@@ -10427,3 +10434,42 @@ And a push button with follow the dividing pattern of another year?
 From Nahum Lipkunsky:
 
 Groups' timetables in the FET GUI (now we have only the subgroups' timetables).
+
+661---------------------------------------------------------
+From Malamojka (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6252.0
+
+I was just sorting out my timetable and was trying to find the fastest way to make my tags printable/not printable. I couldn't find a way to do it in bulks,
+for instance to use ctrl+mouse click to chose more tags and then set printable/not printable for them but I had to click at every one of them and then set
+printable/not printable for each of them. The same thing happens if you want to delete teachers for instance or delete subjects.
+
+I noticed you can now activate more than one activity by using ctrl+mouse click or even shift+mouse click. Could you do that for tags/teachers/subjects also?
+
+662---------------------------------------------------------
+From Malamojka (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6254.0
+
+Is there a possibility to include the number of students at seperate activities? The reason I need this and add it manually is that while I know the number
+of students for each year/group/subgroup the number at an activity can vary (be higher or lower than what you would guess from the number of students in
+year/group/subgroup), because we can always have last years students attending if they didn't pass or have students passing an exam one year in advance.
+So for me it would be great if I could also import the number of students at an activity when importing activities.
+
+663--------------------------------------------------------
+From Nahum Lipkunsky:
+
+Add pause/resume on the timetable generation screen, or even hibernation option.
+
+664---------------------------------------------------------
+From GUEFFAZ REDA:
+
+Add a menu item to remove all the fet-results directory (he sent to Liviu Lalescu a picture in which this option is added in the menu to select the output
+directory and whether to overwrite the single generation results).
+
+665--------------------------------------------------------
+From Nahum Lipkunsky:
+
+2 activities - mutually exclusive (same group).
+Both are constrained with the same preferred time (preset)
+FET loops (forever?) - this is very easy to identify pre-run validation.

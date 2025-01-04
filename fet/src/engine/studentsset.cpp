@@ -142,6 +142,8 @@ StudentsYear::StudentsYear()
 	divisions.clear();
 	separator=QString(" ");
 
+	firstCategoryIsPermanent=false;
+
 	indexInAugmentedYearsList=-1;
 }
 
@@ -168,6 +170,14 @@ QString StudentsYear::getXmlDescription()
 			s+="		<Division>"+protect(dn)+"</Division>\n";
 		s+="	</Category>\n";
 	}
+	
+	s+="	<First_Category_Is_Permanent>";
+	if(firstCategoryIsPermanent)
+		s+="true";
+	else
+		s+="false";
+	s+="</First_Category_Is_Permanent>\n";
+	
 	s+="	<Separator>"+protect(separator)+"</Separator>\n";
 	
 	for(int i=0; i<this->groupsList.size(); i++){

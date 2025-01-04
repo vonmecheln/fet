@@ -6378,7 +6378,7 @@ void ListTimeConstraints::helpClicked()
 				s+=tr("To use this constraint, you need to specify a set of activities, a set of time slots, and a maximum total number "
 				 "of activities from those selected which can be placed (even partially) in any of the selected time slots.");
 				s+=QString("\n\n");
-				s+=tr("This constraint is useful in the block planning mode, to limit the number of activities in the overflow (or fake) blocks.");
+				s+=tr("This constraint is useful to limit the number of activities in the overflow (or fake) blocks.");
 
 				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
 

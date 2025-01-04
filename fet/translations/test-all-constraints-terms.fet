@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="6.25.2">
+<fet version="6.28.5">
 
 <Mode>Terms</Mode>
 
@@ -143,6 +143,7 @@
 	<Comments></Comments>
 	<!-- The information regarding categories, divisions of each category, and separator is only used in the divide year automatically by categories dialog. -->
 	<Number_of_Categories>0</Number_of_Categories>
+	<First_Category_Is_Permanent>false</First_Category_Is_Permanent>
 	<Separator> </Separator>
 	<Group>
 		<Name>y1 a</Name>

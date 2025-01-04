@@ -257,6 +257,8 @@ QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 
 			stream<<year->divisions;
 			stream<<year->separator; //The separator when dividing a year by categories.
+
+			stream<<year->firstCategoryIsPermanent;
 		}
 		else if(ss->type==STUDENTS_GROUP){
 			StudentsGroup* group=(StudentsGroup*)ss;
@@ -2512,6 +2514,8 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 			
 			stream>>year->divisions;
 			stream>>year->separator;
+
+			stream>>year->firstCategoryIsPermanent;
 		}
 		else if(type==STUDENTS_GROUP){
 			StudentsGroup* group=new StudentsGroup;
@@ -5511,6 +5515,9 @@ bool Rules::computeInternalStructure(QWidget* parent)
 		//2020-09-04 - this is not really important
 		ay->divisions=y->divisions;
 		ay->separator=y->separator;
+		
+		//2024-12-24 - this is not really important
+		ay->firstCategoryIsPermanent=y->firstCategoryIsPermanent;
 		
 		ay->comments=y->comments;
 		
@@ -15053,6 +15060,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 					
 					//sty->divisions.clear();
 					//sty->separator="";
+					sty->firstCategoryIsPermanent=false;
 					int readCategories=-1;
 					int metCategories=0;
 					
@@ -15200,6 +15208,14 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 							QString text=xmlReader.readElementText();
 							sty->separator=text;
 							xmlReadingLog+="    Read year separator="+sty->separator+"\n";
+						}
+						else if(xmlReader.name()==QString("First_Category_Is_Permanent")){
+							QString text=xmlReader.readElementText();
+							if(text=="true")
+								sty->firstCategoryIsPermanent=true;
+							else
+								sty->firstCategoryIsPermanent=false;
+							xmlReadingLog+="    Read first category is permanent="+text+"\n";
 						}
 						
 						else if(xmlReader.name()==QString("Group")){

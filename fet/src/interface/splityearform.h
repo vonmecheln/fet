@@ -33,6 +33,8 @@ class SplitYearForm : public QDialog, Ui::SplitYearForm_template  {
 	Q_OBJECT
 
 private:
+	bool _firstCategoryIsPermanent;
+
 	QString _sep;
 	int _nCategories;
 	int _nDivisions[MAX_CATEGORIES];
@@ -78,6 +80,8 @@ public slots:
 	
 	void help();
 	void reset();
+	
+	void copyFromAnotherYear();
 };
 
 #endif

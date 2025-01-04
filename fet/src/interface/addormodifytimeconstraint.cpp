@@ -6113,7 +6113,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				labelForSpinBox=new QLabel(tr("Max hours daily"));
 				spinBox=new QSpinBox;
-				spinBox->setMinimum(1);
+				spinBox->setMinimum(0);
 				spinBox->setMaximum(gt.rules.nHoursPerDay);
 				spinBox->setValue(1);
 
@@ -6141,7 +6141,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				labelForSpinBox=new QLabel(tr("Max hours daily"));
 				spinBox=new QSpinBox;
-				spinBox->setMinimum(1);
+				spinBox->setMinimum(0);
 				spinBox->setMaximum(gt.rules.nHoursPerDay);
 				spinBox->setValue(1);
 
@@ -6166,7 +6166,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				labelForSpinBox=new QLabel(tr("Max hours daily"));
 				spinBox=new QSpinBox;
-				spinBox->setMinimum(1);
+				spinBox->setMinimum(0);
 				spinBox->setMaximum(gt.rules.nHoursPerDay);
 				spinBox->setValue(1);
 
@@ -6194,7 +6194,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				labelForSpinBox=new QLabel(tr("Max hours daily"));
 				spinBox=new QSpinBox;
-				spinBox->setMinimum(1);
+				spinBox->setMinimum(0);
 				spinBox->setMaximum(gt.rules.nHoursPerDay);
 				spinBox->setValue(1);
 
@@ -13829,6 +13829,13 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 					return;
 				}
 
+				if(spinBox->value()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("If you need the maximum hours daily in the interval to be 0, please use"
+						 " the constraints of type teacher not available times or activities preferred time slots."));
+					return;
+				}
+
 				tc=new ConstraintTeachersMaxHoursDailyInInterval(weight, spinBox->value(), startHour, endHour);
 
 				break;
@@ -13851,6 +13858,13 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 				if(endHour<=startHour){
 					QMessageBox::warning(dialog, tr("FET information"),
 						tr("Start hour cannot be greater or equal than end hour"));
+					return;
+				}
+
+				if(spinBox->value()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("If you need the maximum hours daily in the interval to be 0, please use"
+						 " the constraints of type teacher not available times or activities preferred time slots."));
 					return;
 				}
 
@@ -13879,6 +13893,13 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 					return;
 				}
 
+				if(spinBox->value()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("If you need the maximum hours daily in the interval to be 0, please use"
+						 " the constraints of type students set not available times or activities preferred time slots."));
+					return;
+				}
+
 				tc=new ConstraintStudentsMaxHoursDailyInInterval(weight, spinBox->value(), startHour, endHour);
 
 				break;
@@ -13901,6 +13922,13 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 				if(endHour<=startHour){
 					QMessageBox::warning(dialog, tr("FET information"),
 						tr("Start hour cannot be greater or equal than end hour"));
+					return;
+				}
+
+				if(spinBox->value()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("If you need the maximum hours daily in the interval to be 0, please use"
+						 " the constraints of type students set not available times or activities preferred time slots."));
 					return;
 				}
 
@@ -15204,6 +15232,13 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 				if(endHour<=startHour){
 					QMessageBox::warning(dialog, tr("FET information"),
 						tr("Start hour cannot be greater or equal than end hour"));
+					return;
+				}
+
+				if(spinBox->value()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("If you need the maximum hours daily in the interval to be 0, please use"
+						 " the constraints of type teacher not available times or activities preferred time slots."));
 					return;
 				}
 
@@ -19214,6 +19249,13 @@ void AddOrModifyTimeConstraint::okClicked()
 					return;
 				}
 
+				if(spinBox->value()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("If you need the maximum hours daily in the interval to be 0, please use"
+						 " the constraints of type teacher not available times or activities preferred time slots."));
+					return;
+				}
+
 				ConstraintTeachersMaxHoursDailyInInterval* ctr=(ConstraintTeachersMaxHoursDailyInInterval*)oldtc;
 
 				ctr->maxHoursDaily=spinBox->value();
@@ -19241,6 +19283,13 @@ void AddOrModifyTimeConstraint::okClicked()
 				if(endHour<=startHour){
 					QMessageBox::warning(dialog, tr("FET information"),
 						tr("Start hour cannot be greater or equal than end hour"));
+					return;
+				}
+
+				if(spinBox->value()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("If you need the maximum hours daily in the interval to be 0, please use"
+						 " the constraints of type teacher not available times or activities preferred time slots."));
 					return;
 				}
 
@@ -19276,6 +19325,13 @@ void AddOrModifyTimeConstraint::okClicked()
 					return;
 				}
 
+				if(spinBox->value()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("If you need the maximum hours daily in the interval to be 0, please use"
+						 " the constraints of type students set not available times or activities preferred time slots."));
+					return;
+				}
+
 				ConstraintStudentsMaxHoursDailyInInterval* ctr=(ConstraintStudentsMaxHoursDailyInInterval*)oldtc;
 
 				ctr->maxHoursDaily=spinBox->value();
@@ -19303,6 +19359,13 @@ void AddOrModifyTimeConstraint::okClicked()
 				if(endHour<=startHour){
 					QMessageBox::warning(dialog, tr("FET information"),
 						tr("Start hour cannot be greater or equal than end hour"));
+					return;
+				}
+
+				if(spinBox->value()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("If you need the maximum hours daily in the interval to be 0, please use"
+						 " the constraints of type students set not available times or activities preferred time slots."));
 					return;
 				}
 

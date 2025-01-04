@@ -85,6 +85,8 @@ class StudentsYear: public StudentsSet
 public:
 	StudentsGroupsList groupsList;
 
+	bool firstCategoryIsPermanent;
+
 	QList<QStringList> divisions;
 	QString separator; //The separator when dividing a year by categories.
 

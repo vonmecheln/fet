@@ -7993,201 +7993,210 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13817"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13822"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13827"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13842"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13847"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13852"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13867"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13872"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13877"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13892"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13833"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13849"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13854"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13859"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13865"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13881"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13886"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13891"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13897"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13902"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14253"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14265"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14267"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14270"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14273"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14277"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14280"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13913"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13918"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13923"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13929"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14281"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14293"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14295"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14298"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14303"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14325"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14410"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14415"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14459"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14464"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14469"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14738"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14850"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14890"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14932"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14937"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14942"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14967"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14972"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14977"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15143"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15170"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15195"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15200"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15205"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15365"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15368"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15386"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15391"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15418"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15428"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15462"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15567"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15572"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15591"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15596"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15657"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15790"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15808"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15815"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15819"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15842"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15875"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15879"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15894"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15898"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15913"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15917"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15922"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15945"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15985"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16133"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16277"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16281"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16296"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16300"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16317"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16326"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16333"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16349"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16358"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16365"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16379"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16383"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16525"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16530"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16535"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16556"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16561"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16566"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16586"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14301"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14305"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14308"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14326"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14331"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14353"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14438"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14443"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14487"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14492"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14497"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14766"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14878"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14918"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14960"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14965"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14970"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14995"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15000"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15005"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15171"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15198"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15223"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15228"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15233"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15239"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15400"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15403"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15421"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15426"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15453"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15463"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15497"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15602"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15607"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15626"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15631"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15692"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15825"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15843"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15850"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15854"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15877"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15910"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15914"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15929"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15933"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15948"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15952"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15957"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15980"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16020"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16168"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16312"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16316"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16331"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16335"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16352"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16361"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16368"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16384"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16393"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16400"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16414"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16418"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16560"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16565"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16570"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16591"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16596"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16617"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16622"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16627"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16680"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16689"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16696"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16772"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16781"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16790"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16797"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16812"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16601"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16621"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16626"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16631"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16652"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16657"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16662"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16715"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16724"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16731"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16807"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16816"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16923"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16928"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16953"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16825"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16832"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16847"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16851"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16958"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17086"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17095"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17102"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17244"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17248"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17265"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17270"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17294"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17299"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16963"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16988"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16993"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17121"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17130"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17137"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17279"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17283"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17300"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17305"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17413"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17625"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17646"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17782"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17798"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17836"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17852"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17912"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17917"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17922"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17943"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17948"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17953"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17973"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17329"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17334"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17340"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17448"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17660"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17681"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17817"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17833"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17871"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17887"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17947"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17952"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17957"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17978"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17983"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18004"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18009"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18014"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18166"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18171"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18176"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18197"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18202"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18207"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18227"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17988"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18008"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18013"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18018"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18039"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18044"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18049"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18201"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18206"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18211"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18232"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18237"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18258"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18263"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18268"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18438"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18443"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18468"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18472"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18490"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18514"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18598"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18603"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18735"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18740"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18746"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18769"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18806"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18818"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18837"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18242"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18262"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18267"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18272"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18293"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18298"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18303"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18473"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18478"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18503"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18507"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18525"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18549"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18633"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18638"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18770"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18775"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18781"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18804"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18841"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18859"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18880"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18900"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18921"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18941"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18962"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18982"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18986"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19008"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19059"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19106"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19122"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19178"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19182"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19202"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19207"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19212"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19232"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18853"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18872"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18876"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18894"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18915"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18935"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18956"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18976"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18997"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19017"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19021"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19043"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19094"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19141"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19157"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19213"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19217"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19237"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19242"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19264"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19269"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19247"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19253"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19274"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19294"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19299"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19304"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19932"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19935"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19950"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19953"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20082"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20095"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20108"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20121"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20204"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20217"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19279"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19284"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19290"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19313"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19318"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19323"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19329"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19350"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19355"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19360"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19366"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19995"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19998"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20013"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20016"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20145"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20158"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20171"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20184"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20267"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20280"/>
         <source>FET information</source>
         <translation type="unfinished">Informace FET</translation>
     </message>
@@ -8792,15 +8801,15 @@ allowed: 0.0%-100.0%)</source>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="10844"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14298"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15386"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14326"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15421"/>
         <source>Invalid weight (percentage)</source>
         <translation type="unfinished">Neplatná váha (procento)</translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="10849"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14303"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15391"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14331"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15426"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
         <translation type="unfinished">Neplatná váha (procento) - musí být 100%</translation>
     </message>
@@ -8828,164 +8837,164 @@ allowed: 0.0%-100.0%)</source>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13421"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13435"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13449"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13917"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13924"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13929"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13943"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13950"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13955"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13969"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13976"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13981"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13995"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14002"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14007"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14021"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13945"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13952"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13957"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13971"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13978"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13983"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13997"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14004"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14009"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14023"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14030"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14035"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14049"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14063"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14077"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14084"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14089"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14103"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14110"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14115"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14129"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14136"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14141"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14155"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14162"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14167"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14181"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14091"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14105"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14112"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14117"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14131"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14138"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14143"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14157"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14164"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14169"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14183"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14190"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14195"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14209"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14223"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14312"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14579"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14586"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14591"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14613"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15121"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15230"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15237"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15242"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15266"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15290"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15297"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15302"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15326"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15404"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15754"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15771"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17122"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17129"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17134"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17153"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17160"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17165"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17186"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17193"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17198"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17217"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17224"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17229"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17330"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17350"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17368"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17388"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18645"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18663"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18683"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18701"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19330"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19337"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19342"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19361"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19368"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19373"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19394"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19401"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19406"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19425"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19432"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19437"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19458"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19476"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19496"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19514"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19534"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19541"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19546"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19565"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19572"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14237"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14251"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14340"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14607"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14614"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14619"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14641"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15149"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15265"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15272"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15277"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15301"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15325"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15332"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15337"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15361"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15439"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15789"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15806"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17157"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17164"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17169"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17188"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17195"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17200"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17221"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17228"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17233"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17252"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17259"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17264"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17365"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17385"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17403"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17423"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18680"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18698"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18718"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18736"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19393"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19400"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19405"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19424"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19431"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19436"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19457"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19464"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19469"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19488"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19495"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19500"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19521"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19539"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19559"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19577"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19598"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19605"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19610"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19629"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19636"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19641"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19662"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19680"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19700"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19718"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19597"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19604"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19609"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19628"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19635"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19640"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19661"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19668"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19673"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19692"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19699"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19704"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19725"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19743"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19763"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19781"/>
         <source>FET warning</source>
         <translation type="unfinished">Varování FET</translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="10863"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14313"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15405"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14341"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15440"/>
         <source>You selected a weight less than 100%. The generation algorithm is not perfectly optimized to work with such weights (even if in practice it might work well). It is recommended to work only with 100% weights for these constraints. Are you sure you want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="10876"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14325"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15418"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14353"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15453"/>
         <source>Invalid teacher</source>
         <translation type="unfinished">Neplatný učitel</translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="10886"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15428"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15463"/>
         <source>Invalid students set</source>
         <translation type="unfinished">Neplatná skupina žáků</translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="10975"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12745"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14410"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14850"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15567"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17782"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14438"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14878"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15602"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17817"/>
         <source>Allow empty days check box must be checked. If you need to not allow empty days for the teachers, please use the constraint teachers min days per week</source>
         <translation type="unfinished">Povolit, že zaškrtávací políčko prázdných dní musí být označeno. Pokud potřebujete zakázat prázdné dny pro učitele, prosím, použite omezení &quot;minimum dní za týden pro učitele&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="10980"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14415"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14443"/>
         <source>Allow empty days check box must be checked. If you need to not allow empty days for the teachers, please use the constraint teachers min days per week (but the min days per week constraint is for real days. You can also use the constraint teachers min mornings/afternoons per week.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11001"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15572"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15596"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15607"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15631"/>
         <source>Allow empty days check box must be checked. If you need to not allow empty days for a teacher, please use the constraint teacher min days per week (but the min days per week constraint is for real days. You can also use the constraints teacher min mornings/afternoons per week.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="10996"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15591"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15626"/>
         <source>Allow empty days check box must be checked. If you need to not allow empty days for a teacher, please use the constraint teacher min days per week</source>
         <translation type="unfinished">Povolit, že zaškrtávací políčko prázdných dní musí být označeno. Pokud potřebujete zakázat prázdné dny pro učitele, prosím použite omezení &quot;minimum dní za týden pro učitele&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11098"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11112"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15754"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15771"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15789"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15806"/>
         <source>If you allow empty days, the min hours must be at least 2 (to make it a non-trivial constraint)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8997,25 +9006,25 @@ allowed: 0.0%-100.0%)</source>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12478"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13665"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13704"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15790"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15808"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15985"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16133"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17413"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19008"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19059"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15825"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15843"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16020"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16168"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17448"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19043"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19094"/>
         <source>Invalid activity</source>
         <translation type="unfinished">Neplatná činnost</translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11150"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15815"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15850"/>
         <source>Invalid day</source>
         <translation type="unfinished">Neplatný den</translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11154"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15819"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15854"/>
         <source>Invalid hour</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9037,18 +9046,18 @@ allowed: 0.0%-100.0%)</source>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13526"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13646"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13798"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15875"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15894"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15913"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16277"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16296"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16379"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16812"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18468"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18736"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18837"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18982"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19178"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15910"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15929"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15948"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16312"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16331"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16414"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16847"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18503"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18771"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18872"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19017"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19213"/>
         <source>Empty list of selected activities</source>
         <translation type="unfinished">Prázdný seznam vybraných činností</translation>
     </message>
@@ -9065,18 +9074,18 @@ allowed: 0.0%-100.0%)</source>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13531"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13651"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13803"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15879"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15898"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15917"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16281"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16300"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16383"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16816"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18472"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18741"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18841"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18986"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19182"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15914"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15933"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15952"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16316"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16335"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16418"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16851"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18507"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18776"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18876"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19021"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19217"/>
         <source>Only one selected activity</source>
         <translation type="unfinished">Vybrána jen jedna činnost</translation>
     </message>
@@ -9097,13 +9106,13 @@ allowed: 0.0%-100.0%)</source>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11272"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14253"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14281"/>
         <source>Constraint added:</source>
         <translation type="unfinished">Omezení bylo přidáno:</translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11281"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14280"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14308"/>
         <source>Constraint NOT added - please report error</source>
         <translation type="unfinished">Omezení NEBYLO přidáno - Oznamte, prosím, chybu</translation>
     </message>
@@ -9117,7 +9126,7 @@ allowed: 0.0%-100.0%)</source>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11329"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15923"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15958"/>
         <source>Invalid number of min days between activities - it must be greater than 0.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9134,18 +9143,18 @@ allowed: 0.0%-100.0%)</source>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11581"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11739"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11783"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15998"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16046"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16064"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16033"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16081"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16105"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16146"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16194"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16212"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16099"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16116"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16140"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16181"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16229"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16253"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16436"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16497"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16247"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16264"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16288"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16471"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16532"/>
         <source>FET question</source>
         <translation type="unfinished">Otázka FET</translation>
     </message>
@@ -9156,20 +9165,20 @@ allowed: 0.0%-100.0%)</source>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11582"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11740"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11784"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15999"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16106"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16147"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16254"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16437"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16498"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16034"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16141"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16182"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16289"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16472"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16533"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
         <translation type="unfinished">Varování: Nebyla vybrána žádná poloha. Jste si jistý?</translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11395"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11523"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16047"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16195"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16082"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16230"/>
         <source>You specified all the activities. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teachers&apos; and students&apos; timetable.
 
  The best practice would be to use constraint break times.
@@ -9184,20 +9193,20 @@ allowed: 0.0%-100.0%)</source>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11532"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11549"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11567"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16056"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16073"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16091"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16204"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16221"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16108"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16126"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16239"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16256"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16274"/>
         <source>Do you want to add current constraint?</source>
         <translation type="unfinished">Chcete přidat toto omezení?</translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11413"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11541"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16065"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16213"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16100"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16248"/>
         <source>You specified only the teacher. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teacher&apos;s timetable.
 
  The best practice would be to use constraint teacher not available times.
@@ -9208,8 +9217,8 @@ allowed: 0.0%-100.0%)</source>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11430"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11558"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16082"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16230"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16117"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16265"/>
         <source>You specified only the students set. This might be a small problem: if you specify a not allowed slot between two allowed slots (or a not allowed slot before allowed slots), this not allowed slot will be counted as a gap (or early gap) in the students&apos; timetable.
 
  The best practice would be to use constraint students set not available times.
@@ -9223,11 +9232,11 @@ allowed: 0.0%-100.0%)</source>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11924"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11989"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12220"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16317"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16349"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16680"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16772"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17086"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16352"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16384"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16715"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16807"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17121"/>
         <source>Invalid first activity</source>
         <translation type="unfinished">Neplatná prvá činnost</translation>
     </message>
@@ -9237,11 +9246,11 @@ allowed: 0.0%-100.0%)</source>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11933"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11998"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12229"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16326"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16358"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16689"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16781"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17095"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16361"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16393"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16724"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16816"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17130"/>
         <source>Invalid second activity</source>
         <translation type="unfinished">Neplatná druhá činnost</translation>
     </message>
@@ -9251,11 +9260,11 @@ allowed: 0.0%-100.0%)</source>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11940"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12014"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12236"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16333"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16365"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16696"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16797"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17102"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16368"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16400"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16731"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16832"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17137"/>
         <source>Same activities</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9273,29 +9282,29 @@ allowed: 0.0%-100.0%)</source>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13092"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13117"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13818"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13843"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13868"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13893"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14460"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14933"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14968"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15196"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16526"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16557"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16587"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16618"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17913"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17944"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17974"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18005"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18167"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18198"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18228"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18259"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19203"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19233"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19265"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19295"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13850"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13882"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13914"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14488"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14961"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14996"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15224"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16561"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16592"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16622"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16653"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17948"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17979"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18009"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18040"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18202"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18233"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18263"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18294"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19238"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19275"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19314"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19351"/>
         <source>Start hour invalid</source>
         <translation type="unfinished">Neplatná začáteční hodina</translation>
     </message>
@@ -9313,29 +9322,29 @@ allowed: 0.0%-100.0%)</source>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13097"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13122"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13823"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13848"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13873"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13898"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14465"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14938"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14973"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15201"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16531"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16562"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16592"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16623"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17918"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17949"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17979"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18010"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18172"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18203"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18233"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18264"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19208"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19238"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19270"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19300"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13855"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13887"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13919"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14493"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14966"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15001"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15229"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16566"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16597"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16627"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16658"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17953"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17984"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18014"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18045"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18207"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18238"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18268"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18299"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19243"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19280"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19319"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19356"/>
         <source>End hour invalid</source>
         <translation type="unfinished">Neplatná konečná hodina</translation>
     </message>
@@ -9353,47 +9362,47 @@ allowed: 0.0%-100.0%)</source>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13102"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13127"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13828"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13853"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13878"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13903"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14470"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14943"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14978"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15206"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16536"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16567"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16597"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16628"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17923"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17954"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17984"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18015"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18177"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18208"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18238"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18269"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19213"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19243"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19275"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19305"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13860"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13892"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13924"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14498"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14971"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15006"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15234"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16571"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16602"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16632"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16663"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17958"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17989"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18019"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18050"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18212"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18243"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18273"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18304"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19248"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19285"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19324"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19361"/>
         <source>Start hour cannot be greater or equal than end hour</source>
         <translation type="unfinished">Začáteční hodina nemůže být větší nebo rovná konečné hodině</translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12007"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16790"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16825"/>
         <source>Invalid third activity</source>
         <translation type="unfinished">Neplatná tretia činnost</translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12106"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16928"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16963"/>
         <source>You specified max occupied time slots to be 0. This is not perfect from efficiency point of view, because you can use instead constraint activity(ies) preferred time slots, and help FET to find a timetable easier and faster, with an equivalent result. Please correct.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12130"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16958"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16993"/>
         <source>You specified max simultaneous activities to be 0. This is not perfect from efficiency point of view, because you can use instead constraint activity(ies) preferred time slots, and help FET to find a timetable easier and faster, with an equivalent result. Please correct.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9402,29 +9411,29 @@ allowed: 0.0%-100.0%)</source>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12276"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12302"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12328"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13917"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13943"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13969"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13995"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14077"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14103"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14129"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14155"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14579"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15230"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15290"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17122"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17153"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17186"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17217"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19330"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19361"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19394"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19425"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19534"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19565"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19598"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19629"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13945"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13971"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13997"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14023"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14105"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14131"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14157"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14183"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14607"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15265"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15325"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17157"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17188"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17221"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17252"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19393"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19424"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19457"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19488"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19597"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19628"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19661"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19692"/>
         <source>Invalid first activity tag</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9433,29 +9442,29 @@ allowed: 0.0%-100.0%)</source>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12283"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12309"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12335"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13924"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13950"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13976"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14002"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14084"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14110"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14136"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14162"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14586"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15237"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15297"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17129"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17160"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17193"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17224"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19337"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19368"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19401"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19432"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19541"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19572"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19605"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19636"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13952"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13978"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14004"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14030"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14112"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14138"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14164"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14190"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14614"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15272"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15332"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17164"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17195"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17228"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17259"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19400"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19431"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19464"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19495"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19604"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19635"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19668"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19699"/>
         <source>Invalid second activity tag</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9464,59 +9473,59 @@ allowed: 0.0%-100.0%)</source>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12288"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12314"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12340"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13929"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13955"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13981"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14007"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14089"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14115"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14141"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14167"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14591"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15242"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15302"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17134"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17165"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17198"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17229"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19342"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19373"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19406"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19437"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19546"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19577"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19610"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19641"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13957"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13983"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14009"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14035"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14117"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14143"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14169"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14195"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14619"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15277"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15337"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17169"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17200"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17233"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17264"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19405"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19436"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19469"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19500"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19609"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19640"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19673"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19704"/>
         <source>The two activity tags cannot be the same</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12352"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17244"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17279"/>
         <source>Empty list of not overlapping activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12356"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17248"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17283"/>
         <source>Only one selected activity tag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12378"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17270"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17305"/>
         <source>You specified min occupied time slots to be 0. This results in a useless constraint. Please correct.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12401"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17299"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17334"/>
         <source>You specified min simultaneous activities to be 0. This results in a useless constraint. Please correct.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12407"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17305"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17340"/>
         <source>You specified min simultaneous activities to be 1 and you allow empty slots. This results in a useless constraint. Please correct.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9525,11 +9534,11 @@ allowed: 0.0%-100.0%)</source>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12437"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12450"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12463"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14613"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17330"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17350"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17368"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17388"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14641"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17365"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17385"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17403"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17423"/>
         <source>Allow empty days is selected and min hours daily is 1, so this would be a useless constraint.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9542,41 +9551,41 @@ allowed: 0.0%-100.0%)</source>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13595"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13612"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13629"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14739"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15144"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17626"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17647"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18860"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18881"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18901"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18922"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18942"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18963"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14767"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15172"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17661"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17682"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18895"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18916"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18936"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18957"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18977"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18998"/>
         <source>Please select at least two activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12758"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17798"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17833"/>
         <source>Allow empty days check box must be checked. If you need to not allow empty days for this teacher, please use the constraint teacher min days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12785"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14890"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17836"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14918"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17871"/>
         <source>Allow empty mornings check box must be checked. If you need to not allow empty mornings for the teachers, please use the constraint teachers min mornings per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12798"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17852"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17887"/>
         <source>Allow empty mornings check box must be checked. If you need to not allow empty mornings for a teacher, please use the constraint teacher min mornings per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13257"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18443"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18478"/>
         <source>You specified max total activities to be 0. This is not perfect from efficiency point of view, because you can use instead constraint activity(ies) preferred time slots, and help FET to find a timetable easier and faster, with an equivalent result. Please correct.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9584,26 +9593,26 @@ allowed: 0.0%-100.0%)</source>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13294"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13313"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13501"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16923"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16953"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17265"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17294"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18438"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18491"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18515"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18807"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16958"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16988"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17300"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17329"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18473"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18526"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18550"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18842"/>
         <source>Empty list of activities</source>
         <translation type="unfinished">Prázdný seznam činností</translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13374"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18599"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18634"/>
         <source>Empty list of selected activities in the first set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13379"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18604"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18639"/>
         <source>Empty list of selected activities in the second set</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9612,113 +9621,130 @@ allowed: 0.0%-100.0%)</source>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13421"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13435"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13449"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14021"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14035"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14049"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14063"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14181"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14195"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14077"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14091"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14209"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14223"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15121"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15266"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15326"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18645"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18663"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18683"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18701"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19458"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19476"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19496"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19514"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19662"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19680"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19700"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19718"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14237"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14251"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15149"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15301"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15361"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18680"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18698"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18718"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18736"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19521"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19539"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19559"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19577"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19725"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19743"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19763"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19781"/>
         <source>Invalid activity tag</source>
         <translation type="unfinished">Neplatný druh činnosti</translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13487"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18747"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18782"/>
         <source>Invalid number of min half days between activities - it must be greater than 0.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13513"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18819"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18854"/>
         <source>Min activities in a term is 1, and you allow empty terms, so this constraint would be useless.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13741"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15170"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19106"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15198"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19141"/>
         <source>Allow empty afternoons check box must be checked. If you need to not allow empty afternoons for the teachers, please use the constraint teachers min afternoons per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13754"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19122"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19157"/>
         <source>Allow empty afternoons check box must be checked. If you need to not allow empty afternoons for a teacher, please use the constraint teacher min afternoons per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14255"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13834"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13866"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15240"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19254"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19291"/>
+        <source>If you need the maximum hours daily in the interval to be 0, please use the constraints of type teacher not available times or activities preferred time slots.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13898"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13930"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19330"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19367"/>
+        <source>If you need the maximum hours daily in the interval to be 0, please use the constraints of type students set not available times or activities preferred time slots.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14283"/>
         <source>Added the constraint:
 
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14265"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14293"/>
         <source>Constraint NOT added - there must be another constraint of this type. Please edit that one</source>
         <translation type="unfinished">Omezení NEBYLO přidáno - určite je tu jiné omezení tohoto typu. Prosím vyberte si ho</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14267"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14295"/>
         <source>Constraint NOT added - there must be another constraint of this type referring to the same teacher. Please edit that one</source>
         <translation type="unfinished">Omezení NEBYLO přidáno - určite je tu jiné omezení tohoto typu odkazující na stejnýho učitele. Prosím vyberte si ho</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14270"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14298"/>
         <source>Constraint NOT added - there must be another constraint of this type referring to the same students set. Please edit that one</source>
         <translation type="unfinished">Omezení NEBYLO přidáno - určite je tu jiné omezení tohoto typu odkazující na stejnou skupinu žáků. Prosím vyberte si ho</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14273"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14301"/>
         <source>Constraint NOT added - duplicate</source>
         <comment>&apos;Duplicate&apos; means that the constraint is identical to an already existing constraint and cannot be added.</comment>
         <translation type="unfinished">Omezení NEBYLO přidáno - duplicita</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14277"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14305"/>
         <source>Constraint NOT added - it must be a duplicate</source>
         <comment>&apos;Duplicate&apos; means that the constraint is identical to an already existing constraint and cannot be added.</comment>
         <translation type="unfinished">Omezení NEBYLO přidáno - musí jít o duplicitu</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14288"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14316"/>
         <source>FET confirmation</source>
         <translation type="unfinished">Potvrzení FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14289"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14317"/>
         <source>This operation will add multiple constraints, one for each teacher. Do you want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15365"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15400"/>
         <source>Added %1 time constraints. Please note that these constraints will be visible as constraints for individual teachers.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15368"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15403"/>
         <source>Added %1 time constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15371"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15406"/>
         <source>Added %1 constraints, one for each teacher:
 
 %2</source>
@@ -9726,24 +9752,24 @@ allowed: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15462"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15497"/>
         <source>A constraint of this type exists for the same teacher - cannot proceed</source>
         <translation type="unfinished">Omezení tohoto typu už existuje pro stejnýho učitele - nelze pokračovat</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15657"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15692"/>
         <source>A constraint of this type exists for the same students set - cannot proceed</source>
         <translation type="unfinished">Omezení tohoto typu už existuje pro stejnou skupinu žáků - nelze pokračovat</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15842"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15945"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18769"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15877"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15980"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18804"/>
         <source>Cannot proceed, current constraint is equal to another one (it is duplicated)</source>
         <translation type="unfinished">Nepodařilo se pokračovat, toto omezení se shoduje s jiným (je duplicitní)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19755"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19818"/>
         <source>Modified the constraint:
 
 %1
@@ -9753,72 +9779,72 @@ into
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19869"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19932"/>
         <source>This constraint does not induce gaps for teachers. If a teacher has activities before and after a not available period, gaps will not be counted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19874"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19937"/>
         <source>If you really need to use weight under 100%, you can use activities preferred times with only the teacher specified, but this might generate problems, as possible gaps will be counted and you may obtain an impossible timetable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19878"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19896"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19910"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19941"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19959"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19973"/>
         <source>FET help</source>
         <translation type="unfinished">Nápověda FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19887"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19950"/>
         <source>This constraint does not induce gaps (or early gaps) for students. If a student set has activities before and after a not available period, gaps will not be counted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19892"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19955"/>
         <source>If you really need to use weight under 100%, you can use activities preferred times with only the students set specified, but this might generate problems, as possible gaps will be counted and you may obtain an impossible timetable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19905"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19968"/>
         <source>Add multiple constraints: this is a check box. Select this if you want to input only the representatives of subactivities and FET to add multiple constraints, for all subactivities from the same larger split activity, in turn, respectively. There will be added more constraints activities same starting time, one for each corresponding tuple. The number of subactivities must match for the representatives and be careful to the order, to be what you need</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19932"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20082"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19995"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20145"/>
         <source>This check box must remain checked. If you really need to not allow empty days for the teachers, please use constraint teachers min days per week</source>
         <translation type="unfinished">Toto zaškrtávací políčko musí zůstat označeno. Pokud opravdu potřebujete zakázat prázdné dny pro učitele, prosím, použijte omezení &quot;minimum dní za týden pro učitele&quot;</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19935"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19953"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19998"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20016"/>
         <source>This check box must remain checked. If you really need to not allow empty days for this teacher, please use constraint teacher min days per week (but the min days per week constraint is for real days. You can also use the constraints teacher min mornings/afternoons per week.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19950"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20095"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20013"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20158"/>
         <source>This check box must remain checked. If you really need to not allow empty days for this teacher, please use constraint teacher min days per week</source>
         <translation type="unfinished">Toto zaškrtávací políčko musí zůstat označeno. Pokud opravdu potřebujete zakázat prázdné dny pro učitele, prosím použijte omezení &quot;minimum dní za týden pro učitele&quot;</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20108"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20171"/>
         <source>This check box must remain checked. If you really need to not allow empty mornings for the teachers, please use constraint teachers min mornings per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20121"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20184"/>
         <source>This check box must remain checked. If you really need to not allow empty mornings for this teacher, please use constraint teacher min mornings per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20204"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20267"/>
         <source>This check box must remain checked. If you really need to not allow empty afternoons for the teachers, please use constraint teachers min afternoons per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20217"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20280"/>
         <source>This check box must remain checked. If you really need to not allow empty afternoons for this teacher, please use constraint teacher min afternoons per week.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -56309,7 +56335,7 @@ Please enter the new weight percentage:</source>
     </message>
     <message>
         <location filename="../src/interface/listtimeconstraints.cpp" line="6381"/>
-        <source>This constraint is useful in the block planning mode, to limit the number of activities in the overflow (or fake) blocks.</source>
+        <source>This constraint is useful to limit the number of activities in the overflow (or fake) blocks.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -57942,6 +57968,7 @@ into
     <name>MonthsNames</name>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="50"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="82"/>
         <source>January</source>
         <translation type="unfinished"></translation>
     </message>
@@ -57997,7 +58024,6 @@ into
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="72"/>
-        <location filename="../src/interface/helpaboutform.cpp" line="82"/>
         <source>December</source>
         <translation type="unfinished"></translation>
     </message>
@@ -59382,555 +59408,555 @@ to
 <context>
     <name>Rules</name>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5385"/>
-        <location filename="../src/engine/rules.cpp" line="5392"/>
-        <location filename="../src/engine/rules.cpp" line="13765"/>
+        <location filename="../src/engine/rules.cpp" line="5389"/>
+        <location filename="../src/engine/rules.cpp" line="5396"/>
+        <location filename="../src/engine/rules.cpp" line="13772"/>
         <source>Monday</source>
         <translation>Pondělí</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5386"/>
-        <location filename="../src/engine/rules.cpp" line="5393"/>
-        <location filename="../src/engine/rules.cpp" line="13766"/>
+        <location filename="../src/engine/rules.cpp" line="5390"/>
+        <location filename="../src/engine/rules.cpp" line="5397"/>
+        <location filename="../src/engine/rules.cpp" line="13773"/>
         <source>Tuesday</source>
         <translation>Úterý</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5387"/>
-        <location filename="../src/engine/rules.cpp" line="13767"/>
+        <location filename="../src/engine/rules.cpp" line="5391"/>
+        <location filename="../src/engine/rules.cpp" line="13774"/>
         <source>Wednesday</source>
         <translation>Středa</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5388"/>
-        <location filename="../src/engine/rules.cpp" line="13768"/>
+        <location filename="../src/engine/rules.cpp" line="5392"/>
+        <location filename="../src/engine/rules.cpp" line="13775"/>
         <source>Thursday</source>
         <translation>Čtvrtek</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5389"/>
-        <location filename="../src/engine/rules.cpp" line="13769"/>
+        <location filename="../src/engine/rules.cpp" line="5393"/>
+        <location filename="../src/engine/rules.cpp" line="13776"/>
         <source>Friday</source>
         <translation>Pátek</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5322"/>
-        <location filename="../src/engine/rules.cpp" line="13728"/>
+        <location filename="../src/engine/rules.cpp" line="5326"/>
+        <location filename="../src/engine/rules.cpp" line="13735"/>
         <source>Default institution</source>
         <translation>Výchozí ústav</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5323"/>
-        <location filename="../src/engine/rules.cpp" line="13729"/>
+        <location filename="../src/engine/rules.cpp" line="5327"/>
+        <location filename="../src/engine/rules.cpp" line="13736"/>
         <source>Default comments</source>
         <translation>Výchozí poznámky</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5576"/>
-        <location filename="../src/engine/rules.cpp" line="5579"/>
-        <location filename="../src/engine/rules.cpp" line="5582"/>
+        <location filename="../src/engine/rules.cpp" line="5583"/>
+        <location filename="../src/engine/rules.cpp" line="5586"/>
+        <location filename="../src/engine/rules.cpp" line="5589"/>
         <source>Automatic Group</source>
         <comment>Please keep the translation short. It is used when a year contains no groups and an automatic group is added in the year, in the timetable (when viewing the students timetable from FET and also in the HTML timetables for students groups or subgroups). In the empty year there will be added a group with name = yearName+a space character+your translation of &apos;Automatic Group&apos;.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5595"/>
-        <location filename="../src/engine/rules.cpp" line="5598"/>
-        <location filename="../src/engine/rules.cpp" line="5601"/>
+        <location filename="../src/engine/rules.cpp" line="5602"/>
+        <location filename="../src/engine/rules.cpp" line="5605"/>
+        <location filename="../src/engine/rules.cpp" line="5608"/>
         <source>Automatic Subgroup</source>
         <comment>Please keep the translation short. It is used when a group contains no subgroups and an automatic subgroup is added in the group, in the timetable (when viewing the students timetable from FET and also in the HTML timetables for students subgroups). In the empty group there will be added a subgroup with name = groupName+a space character+your translation of &apos;Automatic Subgroup&apos;.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5638"/>
-        <location filename="../src/engine/rules.cpp" line="5652"/>
+        <location filename="../src/engine/rules.cpp" line="5645"/>
         <location filename="../src/engine/rules.cpp" line="5659"/>
         <location filename="../src/engine/rules.cpp" line="5666"/>
-        <location filename="../src/engine/rules.cpp" line="5791"/>
-        <location filename="../src/engine/rules.cpp" line="5796"/>
-        <location filename="../src/engine/rules.cpp" line="5804"/>
-        <location filename="../src/engine/rules.cpp" line="5817"/>
-        <location filename="../src/engine/rules.cpp" line="5826"/>
-        <location filename="../src/engine/rules.cpp" line="5834"/>
-        <location filename="../src/engine/rules.cpp" line="5871"/>
-        <location filename="../src/engine/rules.cpp" line="6042"/>
-        <location filename="../src/engine/rules.cpp" line="6070"/>
-        <location filename="../src/engine/rules.cpp" line="6124"/>
-        <location filename="../src/engine/rules.cpp" line="6152"/>
-        <location filename="../src/engine/rules.cpp" line="6212"/>
-        <location filename="../src/engine/rules.cpp" line="13675"/>
-        <location filename="../src/engine/rules.cpp" line="13710"/>
-        <location filename="../src/engine/rules.cpp" line="13714"/>
-        <location filename="../src/engine/rules.cpp" line="14476"/>
-        <location filename="../src/engine/rules.cpp" line="14782"/>
-        <location filename="../src/engine/rules.cpp" line="16169"/>
-        <location filename="../src/engine/rules.cpp" line="16222"/>
-        <location filename="../src/engine/rules.cpp" line="16474"/>
-        <location filename="../src/engine/rules.cpp" line="16565"/>
-        <location filename="../src/engine/rules.cpp" line="16586"/>
-        <location filename="../src/engine/rules.cpp" line="16622"/>
-        <location filename="../src/engine/rules.cpp" line="16636"/>
-        <location filename="../src/engine/rules.cpp" line="16664"/>
-        <location filename="../src/engine/rules.cpp" line="16681"/>
-        <location filename="../src/engine/rules.cpp" line="16698"/>
-        <location filename="../src/engine/rules.cpp" line="16823"/>
-        <location filename="../src/engine/rules.cpp" line="16840"/>
-        <location filename="../src/engine/rules.cpp" line="16863"/>
-        <location filename="../src/engine/rules.cpp" line="16876"/>
-        <location filename="../src/engine/rules.cpp" line="16890"/>
-        <location filename="../src/engine/rules.cpp" line="16903"/>
-        <location filename="../src/engine/rules.cpp" line="16917"/>
-        <location filename="../src/engine/rules.cpp" line="16930"/>
-        <location filename="../src/engine/rules.cpp" line="16944"/>
-        <location filename="../src/engine/rules.cpp" line="16957"/>
-        <location filename="../src/engine/rules.cpp" line="17020"/>
-        <location filename="../src/engine/rules.cpp" line="17037"/>
-        <location filename="../src/engine/rules.cpp" line="17081"/>
-        <location filename="../src/engine/rules.cpp" line="17098"/>
-        <location filename="../src/engine/rules.cpp" line="17157"/>
-        <location filename="../src/engine/rules.cpp" line="17174"/>
-        <location filename="../src/engine/rules.cpp" line="17191"/>
-        <location filename="../src/engine/rules.cpp" line="17204"/>
-        <location filename="../src/engine/rules.cpp" line="17218"/>
-        <location filename="../src/engine/rules.cpp" line="17235"/>
-        <location filename="../src/engine/rules.cpp" line="17288"/>
-        <location filename="../src/engine/rules.cpp" line="17305"/>
-        <location filename="../src/engine/rules.cpp" line="17322"/>
-        <location filename="../src/engine/rules.cpp" line="17339"/>
-        <location filename="../src/engine/rules.cpp" line="17431"/>
-        <location filename="../src/engine/rules.cpp" line="17448"/>
-        <location filename="../src/engine/rules.cpp" line="17465"/>
-        <location filename="../src/engine/rules.cpp" line="17482"/>
-        <location filename="../src/engine/rules.cpp" line="17560"/>
-        <location filename="../src/engine/rules.cpp" line="17596"/>
-        <location filename="../src/engine/rules.cpp" line="17893"/>
-        <location filename="../src/engine/rules.cpp" line="17914"/>
-        <location filename="../src/engine/rules.cpp" line="17935"/>
-        <location filename="../src/engine/rules.cpp" line="17956"/>
-        <location filename="../src/engine/rules.cpp" line="18055"/>
-        <location filename="../src/engine/rules.cpp" line="18191"/>
-        <location filename="../src/engine/rules.cpp" line="19408"/>
-        <location filename="../src/engine/rules.cpp" line="19528"/>
-        <location filename="../src/engine/rules.cpp" line="19627"/>
-        <location filename="../src/engine/rules.cpp" line="19671"/>
-        <location filename="../src/engine/rules.cpp" line="19741"/>
-        <location filename="../src/engine/rules.cpp" line="19861"/>
-        <location filename="../src/engine/rules.cpp" line="24571"/>
-        <location filename="../src/engine/rules.cpp" line="24593"/>
-        <location filename="../src/engine/rules.cpp" line="24753"/>
-        <location filename="../src/engine/rules.cpp" line="24775"/>
-        <location filename="../src/engine/rules.cpp" line="32452"/>
-        <location filename="../src/engine/rules.cpp" line="32572"/>
-        <location filename="../src/engine/rules.cpp" line="32699"/>
-        <location filename="../src/engine/rules.cpp" line="32819"/>
-        <location filename="../src/engine/rules.cpp" line="33107"/>
-        <location filename="../src/engine/rules.cpp" line="33151"/>
-        <location filename="../src/engine/rules.cpp" line="33199"/>
-        <location filename="../src/engine/rules.cpp" line="33243"/>
-        <location filename="../src/engine/rules.cpp" line="33292"/>
-        <location filename="../src/engine/rules.cpp" line="33336"/>
-        <location filename="../src/engine/rules.cpp" line="33384"/>
-        <location filename="../src/engine/rules.cpp" line="33428"/>
-        <location filename="../src/engine/rules.cpp" line="33500"/>
-        <location filename="../src/engine/rules.cpp" line="33620"/>
-        <location filename="../src/engine/rules.cpp" line="33740"/>
-        <location filename="../src/engine/rules.cpp" line="33860"/>
-        <location filename="../src/engine/rules.cpp" line="38921"/>
+        <location filename="../src/engine/rules.cpp" line="5673"/>
+        <location filename="../src/engine/rules.cpp" line="5798"/>
+        <location filename="../src/engine/rules.cpp" line="5803"/>
+        <location filename="../src/engine/rules.cpp" line="5811"/>
+        <location filename="../src/engine/rules.cpp" line="5824"/>
+        <location filename="../src/engine/rules.cpp" line="5833"/>
+        <location filename="../src/engine/rules.cpp" line="5841"/>
+        <location filename="../src/engine/rules.cpp" line="5878"/>
+        <location filename="../src/engine/rules.cpp" line="6049"/>
+        <location filename="../src/engine/rules.cpp" line="6077"/>
+        <location filename="../src/engine/rules.cpp" line="6131"/>
+        <location filename="../src/engine/rules.cpp" line="6159"/>
+        <location filename="../src/engine/rules.cpp" line="6219"/>
+        <location filename="../src/engine/rules.cpp" line="13682"/>
+        <location filename="../src/engine/rules.cpp" line="13717"/>
+        <location filename="../src/engine/rules.cpp" line="13721"/>
+        <location filename="../src/engine/rules.cpp" line="14483"/>
+        <location filename="../src/engine/rules.cpp" line="14789"/>
+        <location filename="../src/engine/rules.cpp" line="16185"/>
+        <location filename="../src/engine/rules.cpp" line="16238"/>
+        <location filename="../src/engine/rules.cpp" line="16490"/>
+        <location filename="../src/engine/rules.cpp" line="16581"/>
+        <location filename="../src/engine/rules.cpp" line="16602"/>
+        <location filename="../src/engine/rules.cpp" line="16638"/>
+        <location filename="../src/engine/rules.cpp" line="16652"/>
+        <location filename="../src/engine/rules.cpp" line="16680"/>
+        <location filename="../src/engine/rules.cpp" line="16697"/>
+        <location filename="../src/engine/rules.cpp" line="16714"/>
+        <location filename="../src/engine/rules.cpp" line="16839"/>
+        <location filename="../src/engine/rules.cpp" line="16856"/>
+        <location filename="../src/engine/rules.cpp" line="16879"/>
+        <location filename="../src/engine/rules.cpp" line="16892"/>
+        <location filename="../src/engine/rules.cpp" line="16906"/>
+        <location filename="../src/engine/rules.cpp" line="16919"/>
+        <location filename="../src/engine/rules.cpp" line="16933"/>
+        <location filename="../src/engine/rules.cpp" line="16946"/>
+        <location filename="../src/engine/rules.cpp" line="16960"/>
+        <location filename="../src/engine/rules.cpp" line="16973"/>
+        <location filename="../src/engine/rules.cpp" line="17036"/>
+        <location filename="../src/engine/rules.cpp" line="17053"/>
+        <location filename="../src/engine/rules.cpp" line="17097"/>
+        <location filename="../src/engine/rules.cpp" line="17114"/>
+        <location filename="../src/engine/rules.cpp" line="17173"/>
+        <location filename="../src/engine/rules.cpp" line="17190"/>
+        <location filename="../src/engine/rules.cpp" line="17207"/>
+        <location filename="../src/engine/rules.cpp" line="17220"/>
+        <location filename="../src/engine/rules.cpp" line="17234"/>
+        <location filename="../src/engine/rules.cpp" line="17251"/>
+        <location filename="../src/engine/rules.cpp" line="17304"/>
+        <location filename="../src/engine/rules.cpp" line="17321"/>
+        <location filename="../src/engine/rules.cpp" line="17338"/>
+        <location filename="../src/engine/rules.cpp" line="17355"/>
+        <location filename="../src/engine/rules.cpp" line="17447"/>
+        <location filename="../src/engine/rules.cpp" line="17464"/>
+        <location filename="../src/engine/rules.cpp" line="17481"/>
+        <location filename="../src/engine/rules.cpp" line="17498"/>
+        <location filename="../src/engine/rules.cpp" line="17576"/>
+        <location filename="../src/engine/rules.cpp" line="17612"/>
+        <location filename="../src/engine/rules.cpp" line="17909"/>
+        <location filename="../src/engine/rules.cpp" line="17930"/>
+        <location filename="../src/engine/rules.cpp" line="17951"/>
+        <location filename="../src/engine/rules.cpp" line="17972"/>
+        <location filename="../src/engine/rules.cpp" line="18071"/>
+        <location filename="../src/engine/rules.cpp" line="18207"/>
+        <location filename="../src/engine/rules.cpp" line="19424"/>
+        <location filename="../src/engine/rules.cpp" line="19544"/>
+        <location filename="../src/engine/rules.cpp" line="19643"/>
+        <location filename="../src/engine/rules.cpp" line="19687"/>
+        <location filename="../src/engine/rules.cpp" line="19757"/>
+        <location filename="../src/engine/rules.cpp" line="19877"/>
+        <location filename="../src/engine/rules.cpp" line="24587"/>
+        <location filename="../src/engine/rules.cpp" line="24609"/>
+        <location filename="../src/engine/rules.cpp" line="24769"/>
+        <location filename="../src/engine/rules.cpp" line="24791"/>
+        <location filename="../src/engine/rules.cpp" line="32468"/>
+        <location filename="../src/engine/rules.cpp" line="32588"/>
+        <location filename="../src/engine/rules.cpp" line="32715"/>
+        <location filename="../src/engine/rules.cpp" line="32835"/>
+        <location filename="../src/engine/rules.cpp" line="33123"/>
+        <location filename="../src/engine/rules.cpp" line="33167"/>
+        <location filename="../src/engine/rules.cpp" line="33215"/>
+        <location filename="../src/engine/rules.cpp" line="33259"/>
+        <location filename="../src/engine/rules.cpp" line="33308"/>
+        <location filename="../src/engine/rules.cpp" line="33352"/>
+        <location filename="../src/engine/rules.cpp" line="33400"/>
+        <location filename="../src/engine/rules.cpp" line="33444"/>
+        <location filename="../src/engine/rules.cpp" line="33516"/>
+        <location filename="../src/engine/rules.cpp" line="33636"/>
+        <location filename="../src/engine/rules.cpp" line="33756"/>
+        <location filename="../src/engine/rules.cpp" line="33876"/>
+        <location filename="../src/engine/rules.cpp" line="38937"/>
         <source>FET information</source>
         <translation>Informace FET</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5854"/>
+        <location filename="../src/engine/rules.cpp" line="5861"/>
         <source>Processing internally the activities ... please wait</source>
         <translation>Zpracovávají se vnitřně činnosti ... prosím, počkejte</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5871"/>
-        <location filename="../src/engine/rules.cpp" line="6070"/>
-        <location filename="../src/engine/rules.cpp" line="6152"/>
+        <location filename="../src/engine/rules.cpp" line="5878"/>
+        <location filename="../src/engine/rules.cpp" line="6077"/>
+        <location filename="../src/engine/rules.cpp" line="6159"/>
         <source>Canceled</source>
         <translation>Zrušeno</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6038"/>
+        <location filename="../src/engine/rules.cpp" line="6045"/>
         <source>The following time constraint is ignored, because it refers to inactive activities:</source>
         <translation>Následující časové omezení se přehlíží, protože odkazuje na neaktivní činnosti:</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6043"/>
-        <location filename="../src/engine/rules.cpp" line="6125"/>
-        <location filename="../src/engine/rules.cpp" line="16172"/>
-        <location filename="../src/engine/rules.cpp" line="16225"/>
-        <location filename="../src/engine/rules.cpp" line="16325"/>
-        <location filename="../src/engine/rules.cpp" line="16336"/>
-        <location filename="../src/engine/rules.cpp" line="16347"/>
-        <location filename="../src/engine/rules.cpp" line="16478"/>
-        <location filename="../src/engine/rules.cpp" line="16555"/>
+        <location filename="../src/engine/rules.cpp" line="6050"/>
+        <location filename="../src/engine/rules.cpp" line="6132"/>
+        <location filename="../src/engine/rules.cpp" line="16188"/>
+        <location filename="../src/engine/rules.cpp" line="16241"/>
+        <location filename="../src/engine/rules.cpp" line="16341"/>
+        <location filename="../src/engine/rules.cpp" line="16352"/>
+        <location filename="../src/engine/rules.cpp" line="16363"/>
+        <location filename="../src/engine/rules.cpp" line="16494"/>
         <location filename="../src/engine/rules.cpp" line="16571"/>
-        <location filename="../src/engine/rules.cpp" line="16589"/>
-        <location filename="../src/engine/rules.cpp" line="16627"/>
-        <location filename="../src/engine/rules.cpp" line="16641"/>
-        <location filename="../src/engine/rules.cpp" line="16669"/>
-        <location filename="../src/engine/rules.cpp" line="16686"/>
-        <location filename="../src/engine/rules.cpp" line="16704"/>
-        <location filename="../src/engine/rules.cpp" line="16768"/>
-        <location filename="../src/engine/rules.cpp" line="16779"/>
-        <location filename="../src/engine/rules.cpp" line="16827"/>
-        <location filename="../src/engine/rules.cpp" line="16844"/>
-        <location filename="../src/engine/rules.cpp" line="16867"/>
-        <location filename="../src/engine/rules.cpp" line="16880"/>
-        <location filename="../src/engine/rules.cpp" line="16894"/>
-        <location filename="../src/engine/rules.cpp" line="16907"/>
-        <location filename="../src/engine/rules.cpp" line="16921"/>
-        <location filename="../src/engine/rules.cpp" line="16934"/>
-        <location filename="../src/engine/rules.cpp" line="16948"/>
-        <location filename="../src/engine/rules.cpp" line="16961"/>
-        <location filename="../src/engine/rules.cpp" line="17024"/>
-        <location filename="../src/engine/rules.cpp" line="17041"/>
-        <location filename="../src/engine/rules.cpp" line="17085"/>
-        <location filename="../src/engine/rules.cpp" line="17102"/>
-        <location filename="../src/engine/rules.cpp" line="17161"/>
-        <location filename="../src/engine/rules.cpp" line="17178"/>
-        <location filename="../src/engine/rules.cpp" line="17195"/>
-        <location filename="../src/engine/rules.cpp" line="17208"/>
-        <location filename="../src/engine/rules.cpp" line="17222"/>
-        <location filename="../src/engine/rules.cpp" line="17239"/>
-        <location filename="../src/engine/rules.cpp" line="17292"/>
-        <location filename="../src/engine/rules.cpp" line="17309"/>
-        <location filename="../src/engine/rules.cpp" line="17326"/>
-        <location filename="../src/engine/rules.cpp" line="17343"/>
-        <location filename="../src/engine/rules.cpp" line="17435"/>
-        <location filename="../src/engine/rules.cpp" line="17452"/>
-        <location filename="../src/engine/rules.cpp" line="17469"/>
-        <location filename="../src/engine/rules.cpp" line="17486"/>
-        <location filename="../src/engine/rules.cpp" line="17562"/>
-        <location filename="../src/engine/rules.cpp" line="17599"/>
-        <location filename="../src/engine/rules.cpp" line="17616"/>
-        <location filename="../src/engine/rules.cpp" line="17628"/>
-        <location filename="../src/engine/rules.cpp" line="17641"/>
-        <location filename="../src/engine/rules.cpp" line="17653"/>
-        <location filename="../src/engine/rules.cpp" line="17665"/>
-        <location filename="../src/engine/rules.cpp" line="17677"/>
-        <location filename="../src/engine/rules.cpp" line="17689"/>
-        <location filename="../src/engine/rules.cpp" line="17707"/>
-        <location filename="../src/engine/rules.cpp" line="17756"/>
-        <location filename="../src/engine/rules.cpp" line="17768"/>
-        <location filename="../src/engine/rules.cpp" line="17780"/>
-        <location filename="../src/engine/rules.cpp" line="17792"/>
-        <location filename="../src/engine/rules.cpp" line="17897"/>
-        <location filename="../src/engine/rules.cpp" line="17918"/>
-        <location filename="../src/engine/rules.cpp" line="17939"/>
-        <location filename="../src/engine/rules.cpp" line="17960"/>
-        <location filename="../src/engine/rules.cpp" line="18057"/>
-        <location filename="../src/engine/rules.cpp" line="24586"/>
-        <location filename="../src/engine/rules.cpp" line="24598"/>
-        <location filename="../src/engine/rules.cpp" line="24768"/>
-        <location filename="../src/engine/rules.cpp" line="24780"/>
-        <location filename="../src/engine/rules.cpp" line="38936"/>
+        <location filename="../src/engine/rules.cpp" line="16587"/>
+        <location filename="../src/engine/rules.cpp" line="16605"/>
+        <location filename="../src/engine/rules.cpp" line="16643"/>
+        <location filename="../src/engine/rules.cpp" line="16657"/>
+        <location filename="../src/engine/rules.cpp" line="16685"/>
+        <location filename="../src/engine/rules.cpp" line="16702"/>
+        <location filename="../src/engine/rules.cpp" line="16720"/>
+        <location filename="../src/engine/rules.cpp" line="16784"/>
+        <location filename="../src/engine/rules.cpp" line="16795"/>
+        <location filename="../src/engine/rules.cpp" line="16843"/>
+        <location filename="../src/engine/rules.cpp" line="16860"/>
+        <location filename="../src/engine/rules.cpp" line="16883"/>
+        <location filename="../src/engine/rules.cpp" line="16896"/>
+        <location filename="../src/engine/rules.cpp" line="16910"/>
+        <location filename="../src/engine/rules.cpp" line="16923"/>
+        <location filename="../src/engine/rules.cpp" line="16937"/>
+        <location filename="../src/engine/rules.cpp" line="16950"/>
+        <location filename="../src/engine/rules.cpp" line="16964"/>
+        <location filename="../src/engine/rules.cpp" line="16977"/>
+        <location filename="../src/engine/rules.cpp" line="17040"/>
+        <location filename="../src/engine/rules.cpp" line="17057"/>
+        <location filename="../src/engine/rules.cpp" line="17101"/>
+        <location filename="../src/engine/rules.cpp" line="17118"/>
+        <location filename="../src/engine/rules.cpp" line="17177"/>
+        <location filename="../src/engine/rules.cpp" line="17194"/>
+        <location filename="../src/engine/rules.cpp" line="17211"/>
+        <location filename="../src/engine/rules.cpp" line="17224"/>
+        <location filename="../src/engine/rules.cpp" line="17238"/>
+        <location filename="../src/engine/rules.cpp" line="17255"/>
+        <location filename="../src/engine/rules.cpp" line="17308"/>
+        <location filename="../src/engine/rules.cpp" line="17325"/>
+        <location filename="../src/engine/rules.cpp" line="17342"/>
+        <location filename="../src/engine/rules.cpp" line="17359"/>
+        <location filename="../src/engine/rules.cpp" line="17451"/>
+        <location filename="../src/engine/rules.cpp" line="17468"/>
+        <location filename="../src/engine/rules.cpp" line="17485"/>
+        <location filename="../src/engine/rules.cpp" line="17502"/>
+        <location filename="../src/engine/rules.cpp" line="17578"/>
+        <location filename="../src/engine/rules.cpp" line="17615"/>
+        <location filename="../src/engine/rules.cpp" line="17632"/>
+        <location filename="../src/engine/rules.cpp" line="17644"/>
+        <location filename="../src/engine/rules.cpp" line="17657"/>
+        <location filename="../src/engine/rules.cpp" line="17669"/>
+        <location filename="../src/engine/rules.cpp" line="17681"/>
+        <location filename="../src/engine/rules.cpp" line="17693"/>
+        <location filename="../src/engine/rules.cpp" line="17705"/>
+        <location filename="../src/engine/rules.cpp" line="17723"/>
+        <location filename="../src/engine/rules.cpp" line="17772"/>
+        <location filename="../src/engine/rules.cpp" line="17784"/>
+        <location filename="../src/engine/rules.cpp" line="17796"/>
+        <location filename="../src/engine/rules.cpp" line="17808"/>
+        <location filename="../src/engine/rules.cpp" line="17913"/>
+        <location filename="../src/engine/rules.cpp" line="17934"/>
+        <location filename="../src/engine/rules.cpp" line="17955"/>
+        <location filename="../src/engine/rules.cpp" line="17976"/>
+        <location filename="../src/engine/rules.cpp" line="18073"/>
+        <location filename="../src/engine/rules.cpp" line="24602"/>
+        <location filename="../src/engine/rules.cpp" line="24614"/>
+        <location filename="../src/engine/rules.cpp" line="24784"/>
+        <location filename="../src/engine/rules.cpp" line="24796"/>
+        <location filename="../src/engine/rules.cpp" line="38952"/>
         <source>Skip rest</source>
         <translation>Přeskočit ostatní</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6043"/>
-        <location filename="../src/engine/rules.cpp" line="6125"/>
-        <location filename="../src/engine/rules.cpp" line="16172"/>
-        <location filename="../src/engine/rules.cpp" line="16225"/>
-        <location filename="../src/engine/rules.cpp" line="16325"/>
-        <location filename="../src/engine/rules.cpp" line="16336"/>
-        <location filename="../src/engine/rules.cpp" line="16347"/>
-        <location filename="../src/engine/rules.cpp" line="16478"/>
-        <location filename="../src/engine/rules.cpp" line="16555"/>
+        <location filename="../src/engine/rules.cpp" line="6050"/>
+        <location filename="../src/engine/rules.cpp" line="6132"/>
+        <location filename="../src/engine/rules.cpp" line="16188"/>
+        <location filename="../src/engine/rules.cpp" line="16241"/>
+        <location filename="../src/engine/rules.cpp" line="16341"/>
+        <location filename="../src/engine/rules.cpp" line="16352"/>
+        <location filename="../src/engine/rules.cpp" line="16363"/>
+        <location filename="../src/engine/rules.cpp" line="16494"/>
         <location filename="../src/engine/rules.cpp" line="16571"/>
-        <location filename="../src/engine/rules.cpp" line="16589"/>
-        <location filename="../src/engine/rules.cpp" line="16627"/>
-        <location filename="../src/engine/rules.cpp" line="16641"/>
-        <location filename="../src/engine/rules.cpp" line="16669"/>
-        <location filename="../src/engine/rules.cpp" line="16686"/>
-        <location filename="../src/engine/rules.cpp" line="16704"/>
-        <location filename="../src/engine/rules.cpp" line="16768"/>
-        <location filename="../src/engine/rules.cpp" line="16779"/>
-        <location filename="../src/engine/rules.cpp" line="16827"/>
-        <location filename="../src/engine/rules.cpp" line="16844"/>
-        <location filename="../src/engine/rules.cpp" line="16867"/>
-        <location filename="../src/engine/rules.cpp" line="16880"/>
-        <location filename="../src/engine/rules.cpp" line="16894"/>
-        <location filename="../src/engine/rules.cpp" line="16907"/>
-        <location filename="../src/engine/rules.cpp" line="16921"/>
-        <location filename="../src/engine/rules.cpp" line="16934"/>
-        <location filename="../src/engine/rules.cpp" line="16948"/>
-        <location filename="../src/engine/rules.cpp" line="16961"/>
-        <location filename="../src/engine/rules.cpp" line="17024"/>
-        <location filename="../src/engine/rules.cpp" line="17041"/>
-        <location filename="../src/engine/rules.cpp" line="17085"/>
-        <location filename="../src/engine/rules.cpp" line="17102"/>
-        <location filename="../src/engine/rules.cpp" line="17161"/>
-        <location filename="../src/engine/rules.cpp" line="17178"/>
-        <location filename="../src/engine/rules.cpp" line="17195"/>
-        <location filename="../src/engine/rules.cpp" line="17208"/>
-        <location filename="../src/engine/rules.cpp" line="17222"/>
-        <location filename="../src/engine/rules.cpp" line="17239"/>
-        <location filename="../src/engine/rules.cpp" line="17292"/>
-        <location filename="../src/engine/rules.cpp" line="17309"/>
-        <location filename="../src/engine/rules.cpp" line="17326"/>
-        <location filename="../src/engine/rules.cpp" line="17343"/>
-        <location filename="../src/engine/rules.cpp" line="17435"/>
-        <location filename="../src/engine/rules.cpp" line="17452"/>
-        <location filename="../src/engine/rules.cpp" line="17469"/>
-        <location filename="../src/engine/rules.cpp" line="17486"/>
-        <location filename="../src/engine/rules.cpp" line="17562"/>
-        <location filename="../src/engine/rules.cpp" line="17599"/>
-        <location filename="../src/engine/rules.cpp" line="17616"/>
-        <location filename="../src/engine/rules.cpp" line="17628"/>
-        <location filename="../src/engine/rules.cpp" line="17641"/>
-        <location filename="../src/engine/rules.cpp" line="17653"/>
-        <location filename="../src/engine/rules.cpp" line="17665"/>
-        <location filename="../src/engine/rules.cpp" line="17677"/>
-        <location filename="../src/engine/rules.cpp" line="17689"/>
-        <location filename="../src/engine/rules.cpp" line="17707"/>
-        <location filename="../src/engine/rules.cpp" line="17756"/>
-        <location filename="../src/engine/rules.cpp" line="17768"/>
-        <location filename="../src/engine/rules.cpp" line="17780"/>
-        <location filename="../src/engine/rules.cpp" line="17792"/>
-        <location filename="../src/engine/rules.cpp" line="17897"/>
-        <location filename="../src/engine/rules.cpp" line="17918"/>
-        <location filename="../src/engine/rules.cpp" line="17939"/>
-        <location filename="../src/engine/rules.cpp" line="17960"/>
-        <location filename="../src/engine/rules.cpp" line="18057"/>
-        <location filename="../src/engine/rules.cpp" line="24586"/>
-        <location filename="../src/engine/rules.cpp" line="24598"/>
-        <location filename="../src/engine/rules.cpp" line="24768"/>
-        <location filename="../src/engine/rules.cpp" line="24780"/>
-        <location filename="../src/engine/rules.cpp" line="38936"/>
+        <location filename="../src/engine/rules.cpp" line="16587"/>
+        <location filename="../src/engine/rules.cpp" line="16605"/>
+        <location filename="../src/engine/rules.cpp" line="16643"/>
+        <location filename="../src/engine/rules.cpp" line="16657"/>
+        <location filename="../src/engine/rules.cpp" line="16685"/>
+        <location filename="../src/engine/rules.cpp" line="16702"/>
+        <location filename="../src/engine/rules.cpp" line="16720"/>
+        <location filename="../src/engine/rules.cpp" line="16784"/>
+        <location filename="../src/engine/rules.cpp" line="16795"/>
+        <location filename="../src/engine/rules.cpp" line="16843"/>
+        <location filename="../src/engine/rules.cpp" line="16860"/>
+        <location filename="../src/engine/rules.cpp" line="16883"/>
+        <location filename="../src/engine/rules.cpp" line="16896"/>
+        <location filename="../src/engine/rules.cpp" line="16910"/>
+        <location filename="../src/engine/rules.cpp" line="16923"/>
+        <location filename="../src/engine/rules.cpp" line="16937"/>
+        <location filename="../src/engine/rules.cpp" line="16950"/>
+        <location filename="../src/engine/rules.cpp" line="16964"/>
+        <location filename="../src/engine/rules.cpp" line="16977"/>
+        <location filename="../src/engine/rules.cpp" line="17040"/>
+        <location filename="../src/engine/rules.cpp" line="17057"/>
+        <location filename="../src/engine/rules.cpp" line="17101"/>
+        <location filename="../src/engine/rules.cpp" line="17118"/>
+        <location filename="../src/engine/rules.cpp" line="17177"/>
+        <location filename="../src/engine/rules.cpp" line="17194"/>
+        <location filename="../src/engine/rules.cpp" line="17211"/>
+        <location filename="../src/engine/rules.cpp" line="17224"/>
+        <location filename="../src/engine/rules.cpp" line="17238"/>
+        <location filename="../src/engine/rules.cpp" line="17255"/>
+        <location filename="../src/engine/rules.cpp" line="17308"/>
+        <location filename="../src/engine/rules.cpp" line="17325"/>
+        <location filename="../src/engine/rules.cpp" line="17342"/>
+        <location filename="../src/engine/rules.cpp" line="17359"/>
+        <location filename="../src/engine/rules.cpp" line="17451"/>
+        <location filename="../src/engine/rules.cpp" line="17468"/>
+        <location filename="../src/engine/rules.cpp" line="17485"/>
+        <location filename="../src/engine/rules.cpp" line="17502"/>
+        <location filename="../src/engine/rules.cpp" line="17578"/>
+        <location filename="../src/engine/rules.cpp" line="17615"/>
+        <location filename="../src/engine/rules.cpp" line="17632"/>
+        <location filename="../src/engine/rules.cpp" line="17644"/>
+        <location filename="../src/engine/rules.cpp" line="17657"/>
+        <location filename="../src/engine/rules.cpp" line="17669"/>
+        <location filename="../src/engine/rules.cpp" line="17681"/>
+        <location filename="../src/engine/rules.cpp" line="17693"/>
+        <location filename="../src/engine/rules.cpp" line="17705"/>
+        <location filename="../src/engine/rules.cpp" line="17723"/>
+        <location filename="../src/engine/rules.cpp" line="17772"/>
+        <location filename="../src/engine/rules.cpp" line="17784"/>
+        <location filename="../src/engine/rules.cpp" line="17796"/>
+        <location filename="../src/engine/rules.cpp" line="17808"/>
+        <location filename="../src/engine/rules.cpp" line="17913"/>
+        <location filename="../src/engine/rules.cpp" line="17934"/>
+        <location filename="../src/engine/rules.cpp" line="17955"/>
+        <location filename="../src/engine/rules.cpp" line="17976"/>
+        <location filename="../src/engine/rules.cpp" line="18073"/>
+        <location filename="../src/engine/rules.cpp" line="24602"/>
+        <location filename="../src/engine/rules.cpp" line="24614"/>
+        <location filename="../src/engine/rules.cpp" line="24784"/>
+        <location filename="../src/engine/rules.cpp" line="24796"/>
+        <location filename="../src/engine/rules.cpp" line="38952"/>
         <source>See next</source>
         <translation>Ukázat další</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6058"/>
+        <location filename="../src/engine/rules.cpp" line="6065"/>
         <source>Processing internally the time constraints ... please wait</source>
         <translation>Zpracovávají se vnitřně časová omezení ... prosím, počkejte</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6120"/>
+        <location filename="../src/engine/rules.cpp" line="6127"/>
         <source>The following space constraint is ignored, because it refers to inactive activities:</source>
         <translation>Následující prostorové omezení se přehlíží, protože odkazuje na neaktivní činnosti:</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6140"/>
+        <location filename="../src/engine/rules.cpp" line="6147"/>
         <source>Processing internally the space constraints ... please wait</source>
         <translation>Zpracovávají se vnitřně prostorová omezení ... prosím, počkejte</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5113"/>
-        <location filename="../src/engine/rules.cpp" line="9987"/>
-        <location filename="../src/engine/rules.cpp" line="9992"/>
-        <location filename="../src/engine/rules.cpp" line="9997"/>
-        <location filename="../src/engine/rules.cpp" line="10041"/>
-        <location filename="../src/engine/rules.cpp" line="10046"/>
-        <location filename="../src/engine/rules.cpp" line="10051"/>
-        <location filename="../src/engine/rules.cpp" line="10152"/>
-        <location filename="../src/engine/rules.cpp" line="10158"/>
-        <location filename="../src/engine/rules.cpp" line="10164"/>
-        <location filename="../src/engine/rules.cpp" line="13379"/>
-        <location filename="../src/engine/rules.cpp" line="13400"/>
-        <location filename="../src/engine/rules.cpp" line="13411"/>
-        <location filename="../src/engine/rules.cpp" line="13514"/>
-        <location filename="../src/engine/rules.cpp" line="13542"/>
-        <location filename="../src/engine/rules.cpp" line="13566"/>
-        <location filename="../src/engine/rules.cpp" line="13593"/>
-        <location filename="../src/engine/rules.cpp" line="13670"/>
-        <location filename="../src/engine/rules.cpp" line="14443"/>
-        <location filename="../src/engine/rules.cpp" line="14509"/>
-        <location filename="../src/engine/rules.cpp" line="14590"/>
-        <location filename="../src/engine/rules.cpp" line="14739"/>
-        <location filename="../src/engine/rules.cpp" line="15668"/>
-        <location filename="../src/engine/rules.cpp" line="15872"/>
-        <location filename="../src/engine/rules.cpp" line="15923"/>
-        <location filename="../src/engine/rules.cpp" line="16100"/>
-        <location filename="../src/engine/rules.cpp" line="16323"/>
-        <location filename="../src/engine/rules.cpp" line="16334"/>
-        <location filename="../src/engine/rules.cpp" line="16345"/>
-        <location filename="../src/engine/rules.cpp" line="16553"/>
-        <location filename="../src/engine/rules.cpp" line="16766"/>
-        <location filename="../src/engine/rules.cpp" line="16777"/>
-        <location filename="../src/engine/rules.cpp" line="17614"/>
-        <location filename="../src/engine/rules.cpp" line="17626"/>
-        <location filename="../src/engine/rules.cpp" line="17639"/>
-        <location filename="../src/engine/rules.cpp" line="17651"/>
-        <location filename="../src/engine/rules.cpp" line="17663"/>
-        <location filename="../src/engine/rules.cpp" line="17675"/>
-        <location filename="../src/engine/rules.cpp" line="17687"/>
-        <location filename="../src/engine/rules.cpp" line="17705"/>
-        <location filename="../src/engine/rules.cpp" line="17754"/>
-        <location filename="../src/engine/rules.cpp" line="17766"/>
-        <location filename="../src/engine/rules.cpp" line="17778"/>
-        <location filename="../src/engine/rules.cpp" line="17790"/>
-        <location filename="../src/engine/rules.cpp" line="18147"/>
-        <location filename="../src/engine/rules.cpp" line="20266"/>
-        <location filename="../src/engine/rules.cpp" line="20421"/>
-        <location filename="../src/engine/rules.cpp" line="20576"/>
-        <location filename="../src/engine/rules.cpp" line="22039"/>
-        <location filename="../src/engine/rules.cpp" line="22125"/>
-        <location filename="../src/engine/rules.cpp" line="22863"/>
-        <location filename="../src/engine/rules.cpp" line="22958"/>
-        <location filename="../src/engine/rules.cpp" line="24504"/>
-        <location filename="../src/engine/rules.cpp" line="24686"/>
-        <location filename="../src/engine/rules.cpp" line="34722"/>
-        <location filename="../src/engine/rules.cpp" line="34741"/>
-        <location filename="../src/engine/rules.cpp" line="34828"/>
-        <location filename="../src/engine/rules.cpp" line="34847"/>
-        <location filename="../src/engine/rules.cpp" line="34904"/>
-        <location filename="../src/engine/rules.cpp" line="34971"/>
-        <location filename="../src/engine/rules.cpp" line="35047"/>
-        <location filename="../src/engine/rules.cpp" line="35133"/>
-        <location filename="../src/engine/rules.cpp" line="35740"/>
-        <location filename="../src/engine/rules.cpp" line="35835"/>
-        <location filename="../src/engine/rules.cpp" line="35906"/>
-        <location filename="../src/engine/rules.cpp" line="35982"/>
-        <location filename="../src/engine/rules.cpp" line="37768"/>
-        <location filename="../src/engine/rules.cpp" line="37829"/>
-        <location filename="../src/engine/rules.cpp" line="37896"/>
-        <location filename="../src/engine/rules.cpp" line="37957"/>
-        <location filename="../src/engine/rules.cpp" line="38842"/>
+        <location filename="../src/engine/rules.cpp" line="5117"/>
+        <location filename="../src/engine/rules.cpp" line="9994"/>
+        <location filename="../src/engine/rules.cpp" line="9999"/>
+        <location filename="../src/engine/rules.cpp" line="10004"/>
+        <location filename="../src/engine/rules.cpp" line="10048"/>
+        <location filename="../src/engine/rules.cpp" line="10053"/>
+        <location filename="../src/engine/rules.cpp" line="10058"/>
+        <location filename="../src/engine/rules.cpp" line="10159"/>
+        <location filename="../src/engine/rules.cpp" line="10165"/>
+        <location filename="../src/engine/rules.cpp" line="10171"/>
+        <location filename="../src/engine/rules.cpp" line="13386"/>
+        <location filename="../src/engine/rules.cpp" line="13407"/>
+        <location filename="../src/engine/rules.cpp" line="13418"/>
+        <location filename="../src/engine/rules.cpp" line="13521"/>
+        <location filename="../src/engine/rules.cpp" line="13549"/>
+        <location filename="../src/engine/rules.cpp" line="13573"/>
+        <location filename="../src/engine/rules.cpp" line="13600"/>
+        <location filename="../src/engine/rules.cpp" line="13677"/>
+        <location filename="../src/engine/rules.cpp" line="14450"/>
+        <location filename="../src/engine/rules.cpp" line="14516"/>
+        <location filename="../src/engine/rules.cpp" line="14597"/>
+        <location filename="../src/engine/rules.cpp" line="14746"/>
+        <location filename="../src/engine/rules.cpp" line="15684"/>
+        <location filename="../src/engine/rules.cpp" line="15888"/>
+        <location filename="../src/engine/rules.cpp" line="15939"/>
+        <location filename="../src/engine/rules.cpp" line="16116"/>
+        <location filename="../src/engine/rules.cpp" line="16339"/>
+        <location filename="../src/engine/rules.cpp" line="16350"/>
+        <location filename="../src/engine/rules.cpp" line="16361"/>
+        <location filename="../src/engine/rules.cpp" line="16569"/>
+        <location filename="../src/engine/rules.cpp" line="16782"/>
+        <location filename="../src/engine/rules.cpp" line="16793"/>
+        <location filename="../src/engine/rules.cpp" line="17630"/>
+        <location filename="../src/engine/rules.cpp" line="17642"/>
+        <location filename="../src/engine/rules.cpp" line="17655"/>
+        <location filename="../src/engine/rules.cpp" line="17667"/>
+        <location filename="../src/engine/rules.cpp" line="17679"/>
+        <location filename="../src/engine/rules.cpp" line="17691"/>
+        <location filename="../src/engine/rules.cpp" line="17703"/>
+        <location filename="../src/engine/rules.cpp" line="17721"/>
+        <location filename="../src/engine/rules.cpp" line="17770"/>
+        <location filename="../src/engine/rules.cpp" line="17782"/>
+        <location filename="../src/engine/rules.cpp" line="17794"/>
+        <location filename="../src/engine/rules.cpp" line="17806"/>
+        <location filename="../src/engine/rules.cpp" line="18163"/>
+        <location filename="../src/engine/rules.cpp" line="20282"/>
+        <location filename="../src/engine/rules.cpp" line="20437"/>
+        <location filename="../src/engine/rules.cpp" line="20592"/>
+        <location filename="../src/engine/rules.cpp" line="22055"/>
+        <location filename="../src/engine/rules.cpp" line="22141"/>
+        <location filename="../src/engine/rules.cpp" line="22879"/>
+        <location filename="../src/engine/rules.cpp" line="22974"/>
+        <location filename="../src/engine/rules.cpp" line="24520"/>
+        <location filename="../src/engine/rules.cpp" line="24702"/>
+        <location filename="../src/engine/rules.cpp" line="34738"/>
+        <location filename="../src/engine/rules.cpp" line="34757"/>
+        <location filename="../src/engine/rules.cpp" line="34844"/>
+        <location filename="../src/engine/rules.cpp" line="34863"/>
+        <location filename="../src/engine/rules.cpp" line="34920"/>
+        <location filename="../src/engine/rules.cpp" line="34987"/>
+        <location filename="../src/engine/rules.cpp" line="35063"/>
+        <location filename="../src/engine/rules.cpp" line="35149"/>
+        <location filename="../src/engine/rules.cpp" line="35756"/>
+        <location filename="../src/engine/rules.cpp" line="35851"/>
+        <location filename="../src/engine/rules.cpp" line="35922"/>
+        <location filename="../src/engine/rules.cpp" line="35998"/>
+        <location filename="../src/engine/rules.cpp" line="37784"/>
+        <location filename="../src/engine/rules.cpp" line="37845"/>
+        <location filename="../src/engine/rules.cpp" line="37912"/>
+        <location filename="../src/engine/rules.cpp" line="37973"/>
+        <location filename="../src/engine/rules.cpp" line="38858"/>
         <source>FET warning</source>
         <translation>Varování FET</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13379"/>
+        <location filename="../src/engine/rules.cpp" line="13386"/>
         <source>Could not open file - not existing or in use</source>
         <translation>Nepodařilo se otevřít soubor - neexistuje nebo se právě používá</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13807"/>
+        <location filename="../src/engine/rules.cpp" line="13814"/>
         <source>Incorrect mode - it has to be %1, %2, %3, or %4.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16042"/>
+        <location filename="../src/engine/rules.cpp" line="16058"/>
         <source>The specified number of real rooms is not equal with the met number of real rooms for the virtual room %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16081"/>
+        <location filename="../src/engine/rules.cpp" line="16097"/>
         <source>The specified number of sets of real rooms was not found in the input file for the virtual room %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16088"/>
+        <location filename="../src/engine/rules.cpp" line="16104"/>
         <source>The specified number of sets of real rooms is not equal with the met number of sets of real rooms for the virtual room %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16324"/>
+        <location filename="../src/engine/rules.cpp" line="16340"/>
         <source>File contains deprecated constraint teachers subgroups max hours daily - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16335"/>
+        <location filename="../src/engine/rules.cpp" line="16351"/>
         <source>File contains deprecated constraint students n hours daily - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16346"/>
+        <location filename="../src/engine/rules.cpp" line="16362"/>
         <source>File contains deprecated constraint students set n hours daily - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16554"/>
+        <location filename="../src/engine/rules.cpp" line="16570"/>
         <source>File contains deprecated constraint activity ends day - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16767"/>
+        <location filename="../src/engine/rules.cpp" line="16783"/>
         <source>File contains deprecated constraint teachers subject tags max hours continuously - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16778"/>
+        <location filename="../src/engine/rules.cpp" line="16794"/>
         <source>File contains deprecated constraint teachers subject tag max hours continuously - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17289"/>
+        <location filename="../src/engine/rules.cpp" line="17305"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type students max hours daily, which will be converted to a constraint of type students max hours daily real days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17306"/>
+        <location filename="../src/engine/rules.cpp" line="17322"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type student set max hours daily, which will be converted to a constraint of type students set max hours daily real days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17340"/>
+        <location filename="../src/engine/rules.cpp" line="17356"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type students activity tag max hours daily, which will be converted to a constraint of type students activity tag max hours daily real days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17615"/>
+        <location filename="../src/engine/rules.cpp" line="17631"/>
         <source>File contains deprecated constraint room type not allowed subjects - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17627"/>
+        <location filename="../src/engine/rules.cpp" line="17643"/>
         <source>File contains deprecated constraint subject requires equipments - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17640"/>
+        <location filename="../src/engine/rules.cpp" line="17656"/>
         <source>File contains deprecated constraint subject tag requires equipments - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17652"/>
+        <location filename="../src/engine/rules.cpp" line="17668"/>
         <source>File contains deprecated constraint teacher requires room - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17664"/>
+        <location filename="../src/engine/rules.cpp" line="17680"/>
         <source>File contains deprecated constraint teacher subject require room - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17676"/>
+        <location filename="../src/engine/rules.cpp" line="17692"/>
         <source>File contains deprecated constraint minimize number of rooms for students - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17688"/>
+        <location filename="../src/engine/rules.cpp" line="17704"/>
         <source>File contains deprecated constraint minimize number of rooms for teachers - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17706"/>
+        <location filename="../src/engine/rules.cpp" line="17722"/>
         <source>File contains deprecated constraint activities same room - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17755"/>
+        <location filename="../src/engine/rules.cpp" line="17771"/>
         <source>File contains deprecated constraint max building changes per day for teachers - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17767"/>
+        <location filename="../src/engine/rules.cpp" line="17783"/>
         <source>File contains deprecated constraint max building changes per day for students - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17779"/>
+        <location filename="../src/engine/rules.cpp" line="17795"/>
         <source>File contains deprecated constraint max room changes per day for teachers - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17791"/>
+        <location filename="../src/engine/rules.cpp" line="17807"/>
         <source>File contains deprecated constraint max room changes per day for students - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17957"/>
+        <location filename="../src/engine/rules.cpp" line="17973"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type students max room changes per day, which will be converted to a constraint of type students max room changes per real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18148"/>
+        <location filename="../src/engine/rules.cpp" line="18164"/>
         <source>Could not read file - XML parse error at line %1, column %2:
 %3</source>
         <comment>The error description is %3</comment>
@@ -59938,283 +59964,247 @@ to
 %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13400"/>
-        <location filename="../src/engine/rules.cpp" line="13411"/>
+        <location filename="../src/engine/rules.cpp" line="13407"/>
+        <location filename="../src/engine/rules.cpp" line="13418"/>
         <source>Cannot create or use directory %1 - cannot continue</source>
         <translation>Nepodařilo se vytvořit nebo použít adresář %1 - nelze pokračovat</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13448"/>
+        <location filename="../src/engine/rules.cpp" line="13455"/>
         <source>A solution is to remove that file (if it exists already) or set its permissions to allow writing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13449"/>
+        <location filename="../src/engine/rules.cpp" line="13456"/>
         <source>Please report possible bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5292"/>
-        <location filename="../src/engine/rules.cpp" line="13450"/>
-        <location filename="../src/engine/rules.cpp" line="18239"/>
-        <location filename="../src/engine/rules.cpp" line="18290"/>
-        <location filename="../src/engine/rules.cpp" line="18465"/>
+        <location filename="../src/engine/rules.cpp" line="5296"/>
+        <location filename="../src/engine/rules.cpp" line="13457"/>
+        <location filename="../src/engine/rules.cpp" line="18255"/>
+        <location filename="../src/engine/rules.cpp" line="18306"/>
+        <location filename="../src/engine/rules.cpp" line="18481"/>
         <source>FET critical</source>
         <translation>FET kritické</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13514"/>
-        <location filename="../src/engine/rules.cpp" line="13566"/>
+        <location filename="../src/engine/rules.cpp" line="13521"/>
+        <location filename="../src/engine/rules.cpp" line="13573"/>
         <source>File contains a version numbering scheme which is not matched by v.v.va (3 numbers separated by points, followed by any string a, which may be empty). File will be opened, but you are advised to check the version of the .fet file (in the beginning of the file). If this is a FET bug, please report it</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13517"/>
-        <location filename="../src/engine/rules.cpp" line="13569"/>
+        <location filename="../src/engine/rules.cpp" line="13524"/>
+        <location filename="../src/engine/rules.cpp" line="13576"/>
         <source>If you are opening a file older than FET format version 5, it will be converted to latest FET data format</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13542"/>
-        <location filename="../src/engine/rules.cpp" line="13593"/>
+        <location filename="../src/engine/rules.cpp" line="13549"/>
+        <location filename="../src/engine/rules.cpp" line="13600"/>
         <source>FET version does not respect the format v.v.va (3 numbers separated by points, followed by any string a, which may be empty). This is probably a bug in FET - please report it</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13715"/>
+        <location filename="../src/engine/rules.cpp" line="13722"/>
         <source>Opening a file generated with a newer version than your current FET software ... file will be opened but it is recommended to update your FET software to the latest version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13716"/>
+        <location filename="../src/engine/rules.cpp" line="13723"/>
         <source>Your FET version: %1, file version: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13830"/>
-        <location filename="../src/engine/rules.cpp" line="13846"/>
-        <location filename="../src/engine/rules.cpp" line="13877"/>
-        <location filename="../src/engine/rules.cpp" line="14003"/>
-        <location filename="../src/engine/rules.cpp" line="14129"/>
-        <location filename="../src/engine/rules.cpp" line="14271"/>
-        <location filename="../src/engine/rules.cpp" line="14466"/>
-        <location filename="../src/engine/rules.cpp" line="14532"/>
-        <location filename="../src/engine/rules.cpp" line="14613"/>
-        <location filename="../src/engine/rules.cpp" line="14762"/>
-        <location filename="../src/engine/rules.cpp" line="15805"/>
-        <location filename="../src/engine/rules.cpp" line="15809"/>
-        <location filename="../src/engine/rules.cpp" line="15811"/>
-        <location filename="../src/engine/rules.cpp" line="15946"/>
-        <location filename="../src/engine/rules.cpp" line="16124"/>
-        <location filename="../src/engine/rules.cpp" line="19086"/>
-        <location filename="../src/engine/rules.cpp" line="19172"/>
-        <location filename="../src/engine/rules.cpp" line="19221"/>
-        <location filename="../src/engine/rules.cpp" line="19279"/>
-        <location filename="../src/engine/rules.cpp" line="19328"/>
-        <location filename="../src/engine/rules.cpp" line="20194"/>
-        <location filename="../src/engine/rules.cpp" line="22192"/>
-        <location filename="../src/engine/rules.cpp" line="22262"/>
-        <location filename="../src/engine/rules.cpp" line="22337"/>
-        <location filename="../src/engine/rules.cpp" line="22407"/>
-        <location filename="../src/engine/rules.cpp" line="22463"/>
-        <location filename="../src/engine/rules.cpp" line="22524"/>
-        <location filename="../src/engine/rules.cpp" line="22580"/>
-        <location filename="../src/engine/rules.cpp" line="22641"/>
-        <location filename="../src/engine/rules.cpp" line="22697"/>
-        <location filename="../src/engine/rules.cpp" line="22765"/>
-        <location filename="../src/engine/rules.cpp" line="22848"/>
-        <location filename="../src/engine/rules.cpp" line="22938"/>
-        <location filename="../src/engine/rules.cpp" line="23013"/>
-        <location filename="../src/engine/rules.cpp" line="23079"/>
-        <location filename="../src/engine/rules.cpp" line="23140"/>
-        <location filename="../src/engine/rules.cpp" line="23206"/>
-        <location filename="../src/engine/rules.cpp" line="23267"/>
-        <location filename="../src/engine/rules.cpp" line="23328"/>
-        <location filename="../src/engine/rules.cpp" line="23384"/>
-        <location filename="../src/engine/rules.cpp" line="23445"/>
-        <location filename="../src/engine/rules.cpp" line="23501"/>
-        <location filename="../src/engine/rules.cpp" line="23567"/>
-        <location filename="../src/engine/rules.cpp" line="23628"/>
-        <location filename="../src/engine/rules.cpp" line="23694"/>
-        <location filename="../src/engine/rules.cpp" line="23755"/>
-        <location filename="../src/engine/rules.cpp" line="23816"/>
-        <location filename="../src/engine/rules.cpp" line="23872"/>
-        <location filename="../src/engine/rules.cpp" line="23933"/>
-        <location filename="../src/engine/rules.cpp" line="23989"/>
-        <location filename="../src/engine/rules.cpp" line="24055"/>
-        <location filename="../src/engine/rules.cpp" line="24116"/>
-        <location filename="../src/engine/rules.cpp" line="24182"/>
-        <location filename="../src/engine/rules.cpp" line="24243"/>
-        <location filename="../src/engine/rules.cpp" line="24304"/>
-        <location filename="../src/engine/rules.cpp" line="24360"/>
-        <location filename="../src/engine/rules.cpp" line="24421"/>
-        <location filename="../src/engine/rules.cpp" line="26211"/>
-        <location filename="../src/engine/rules.cpp" line="26358"/>
-        <location filename="../src/engine/rules.cpp" line="26505"/>
-        <location filename="../src/engine/rules.cpp" line="26783"/>
-        <location filename="../src/engine/rules.cpp" line="27677"/>
-        <location filename="../src/engine/rules.cpp" line="27806"/>
-        <location filename="../src/engine/rules.cpp" line="28023"/>
-        <location filename="../src/engine/rules.cpp" line="28232"/>
-        <location filename="../src/engine/rules.cpp" line="28441"/>
-        <location filename="../src/engine/rules.cpp" line="28657"/>
-        <location filename="../src/engine/rules.cpp" line="28872"/>
-        <location filename="../src/engine/rules.cpp" line="29004"/>
-        <location filename="../src/engine/rules.cpp" line="29152"/>
-        <location filename="../src/engine/rules.cpp" line="29300"/>
-        <location filename="../src/engine/rules.cpp" line="29450"/>
-        <location filename="../src/engine/rules.cpp" line="29605"/>
-        <location filename="../src/engine/rules.cpp" line="30262"/>
-        <location filename="../src/engine/rules.cpp" line="30340"/>
-        <location filename="../src/engine/rules.cpp" line="30389"/>
-        <location filename="../src/engine/rules.cpp" line="30437"/>
-        <location filename="../src/engine/rules.cpp" line="30514"/>
-        <location filename="../src/engine/rules.cpp" line="30563"/>
-        <location filename="../src/engine/rules.cpp" line="31742"/>
-        <location filename="../src/engine/rules.cpp" line="31791"/>
-        <location filename="../src/engine/rules.cpp" line="32001"/>
-        <location filename="../src/engine/rules.cpp" line="32060"/>
-        <location filename="../src/engine/rules.cpp" line="32109"/>
-        <location filename="../src/engine/rules.cpp" line="32157"/>
-        <location filename="../src/engine/rules.cpp" line="32215"/>
-        <location filename="../src/engine/rules.cpp" line="32264"/>
-        <location filename="../src/engine/rules.cpp" line="32322"/>
-        <location filename="../src/engine/rules.cpp" line="32371"/>
-        <location filename="../src/engine/rules.cpp" line="32918"/>
-        <location filename="../src/engine/rules.cpp" line="32968"/>
-        <location filename="../src/engine/rules.cpp" line="33013"/>
-        <location filename="../src/engine/rules.cpp" line="33057"/>
-        <location filename="../src/engine/rules.cpp" line="35200"/>
-        <location filename="../src/engine/rules.cpp" line="35270"/>
-        <location filename="../src/engine/rules.cpp" line="35340"/>
-        <location filename="../src/engine/rules.cpp" line="35415"/>
-        <location filename="../src/engine/rules.cpp" line="35471"/>
-        <location filename="../src/engine/rules.cpp" line="35532"/>
-        <location filename="../src/engine/rules.cpp" line="35593"/>
-        <location filename="../src/engine/rules.cpp" line="35649"/>
-        <location filename="../src/engine/rules.cpp" line="35725"/>
-        <location filename="../src/engine/rules.cpp" line="35815"/>
-        <location filename="../src/engine/rules.cpp" line="35891"/>
-        <location filename="../src/engine/rules.cpp" line="35962"/>
-        <location filename="../src/engine/rules.cpp" line="36415"/>
-        <location filename="../src/engine/rules.cpp" line="36485"/>
-        <location filename="../src/engine/rules.cpp" line="36561"/>
-        <location filename="../src/engine/rules.cpp" line="36631"/>
-        <location filename="../src/engine/rules.cpp" line="36707"/>
-        <location filename="../src/engine/rules.cpp" line="36777"/>
-        <location filename="../src/engine/rules.cpp" line="36853"/>
-        <location filename="../src/engine/rules.cpp" line="36923"/>
-        <location filename="../src/engine/rules.cpp" line="38629"/>
-        <location filename="../src/engine/rules.cpp" line="38755"/>
+        <location filename="../src/engine/rules.cpp" line="13837"/>
+        <location filename="../src/engine/rules.cpp" line="13853"/>
+        <location filename="../src/engine/rules.cpp" line="13884"/>
+        <location filename="../src/engine/rules.cpp" line="14010"/>
+        <location filename="../src/engine/rules.cpp" line="14136"/>
+        <location filename="../src/engine/rules.cpp" line="14278"/>
+        <location filename="../src/engine/rules.cpp" line="14473"/>
+        <location filename="../src/engine/rules.cpp" line="14539"/>
+        <location filename="../src/engine/rules.cpp" line="14620"/>
+        <location filename="../src/engine/rules.cpp" line="14769"/>
+        <location filename="../src/engine/rules.cpp" line="15821"/>
+        <location filename="../src/engine/rules.cpp" line="15825"/>
+        <location filename="../src/engine/rules.cpp" line="15827"/>
+        <location filename="../src/engine/rules.cpp" line="15962"/>
+        <location filename="../src/engine/rules.cpp" line="16140"/>
+        <location filename="../src/engine/rules.cpp" line="19102"/>
+        <location filename="../src/engine/rules.cpp" line="19188"/>
+        <location filename="../src/engine/rules.cpp" line="19237"/>
+        <location filename="../src/engine/rules.cpp" line="19295"/>
+        <location filename="../src/engine/rules.cpp" line="19344"/>
+        <location filename="../src/engine/rules.cpp" line="20210"/>
+        <location filename="../src/engine/rules.cpp" line="22208"/>
+        <location filename="../src/engine/rules.cpp" line="22278"/>
+        <location filename="../src/engine/rules.cpp" line="22353"/>
+        <location filename="../src/engine/rules.cpp" line="22423"/>
+        <location filename="../src/engine/rules.cpp" line="22479"/>
+        <location filename="../src/engine/rules.cpp" line="22540"/>
+        <location filename="../src/engine/rules.cpp" line="22596"/>
+        <location filename="../src/engine/rules.cpp" line="22657"/>
+        <location filename="../src/engine/rules.cpp" line="22713"/>
+        <location filename="../src/engine/rules.cpp" line="22781"/>
+        <location filename="../src/engine/rules.cpp" line="22864"/>
+        <location filename="../src/engine/rules.cpp" line="22954"/>
+        <location filename="../src/engine/rules.cpp" line="23029"/>
+        <location filename="../src/engine/rules.cpp" line="23095"/>
+        <location filename="../src/engine/rules.cpp" line="23156"/>
+        <location filename="../src/engine/rules.cpp" line="23222"/>
+        <location filename="../src/engine/rules.cpp" line="23283"/>
+        <location filename="../src/engine/rules.cpp" line="23344"/>
+        <location filename="../src/engine/rules.cpp" line="23400"/>
+        <location filename="../src/engine/rules.cpp" line="23461"/>
+        <location filename="../src/engine/rules.cpp" line="23517"/>
+        <location filename="../src/engine/rules.cpp" line="23583"/>
+        <location filename="../src/engine/rules.cpp" line="23644"/>
+        <location filename="../src/engine/rules.cpp" line="23710"/>
+        <location filename="../src/engine/rules.cpp" line="23771"/>
+        <location filename="../src/engine/rules.cpp" line="23832"/>
+        <location filename="../src/engine/rules.cpp" line="23888"/>
+        <location filename="../src/engine/rules.cpp" line="23949"/>
+        <location filename="../src/engine/rules.cpp" line="24005"/>
+        <location filename="../src/engine/rules.cpp" line="24071"/>
+        <location filename="../src/engine/rules.cpp" line="24132"/>
+        <location filename="../src/engine/rules.cpp" line="24198"/>
+        <location filename="../src/engine/rules.cpp" line="24259"/>
+        <location filename="../src/engine/rules.cpp" line="24320"/>
+        <location filename="../src/engine/rules.cpp" line="24376"/>
+        <location filename="../src/engine/rules.cpp" line="24437"/>
+        <location filename="../src/engine/rules.cpp" line="26227"/>
+        <location filename="../src/engine/rules.cpp" line="26374"/>
+        <location filename="../src/engine/rules.cpp" line="26521"/>
+        <location filename="../src/engine/rules.cpp" line="26799"/>
+        <location filename="../src/engine/rules.cpp" line="27693"/>
+        <location filename="../src/engine/rules.cpp" line="27822"/>
+        <location filename="../src/engine/rules.cpp" line="28039"/>
+        <location filename="../src/engine/rules.cpp" line="28248"/>
+        <location filename="../src/engine/rules.cpp" line="28457"/>
+        <location filename="../src/engine/rules.cpp" line="28673"/>
+        <location filename="../src/engine/rules.cpp" line="28888"/>
+        <location filename="../src/engine/rules.cpp" line="29020"/>
+        <location filename="../src/engine/rules.cpp" line="29168"/>
+        <location filename="../src/engine/rules.cpp" line="29316"/>
+        <location filename="../src/engine/rules.cpp" line="29466"/>
+        <location filename="../src/engine/rules.cpp" line="29621"/>
+        <location filename="../src/engine/rules.cpp" line="30278"/>
+        <location filename="../src/engine/rules.cpp" line="30356"/>
+        <location filename="../src/engine/rules.cpp" line="30405"/>
+        <location filename="../src/engine/rules.cpp" line="30453"/>
+        <location filename="../src/engine/rules.cpp" line="30530"/>
+        <location filename="../src/engine/rules.cpp" line="30579"/>
+        <location filename="../src/engine/rules.cpp" line="31758"/>
+        <location filename="../src/engine/rules.cpp" line="31807"/>
+        <location filename="../src/engine/rules.cpp" line="32017"/>
+        <location filename="../src/engine/rules.cpp" line="32076"/>
+        <location filename="../src/engine/rules.cpp" line="32125"/>
+        <location filename="../src/engine/rules.cpp" line="32173"/>
+        <location filename="../src/engine/rules.cpp" line="32231"/>
+        <location filename="../src/engine/rules.cpp" line="32280"/>
+        <location filename="../src/engine/rules.cpp" line="32338"/>
+        <location filename="../src/engine/rules.cpp" line="32387"/>
+        <location filename="../src/engine/rules.cpp" line="32934"/>
+        <location filename="../src/engine/rules.cpp" line="32984"/>
+        <location filename="../src/engine/rules.cpp" line="33029"/>
+        <location filename="../src/engine/rules.cpp" line="33073"/>
+        <location filename="../src/engine/rules.cpp" line="35216"/>
+        <location filename="../src/engine/rules.cpp" line="35286"/>
+        <location filename="../src/engine/rules.cpp" line="35356"/>
+        <location filename="../src/engine/rules.cpp" line="35431"/>
+        <location filename="../src/engine/rules.cpp" line="35487"/>
+        <location filename="../src/engine/rules.cpp" line="35548"/>
+        <location filename="../src/engine/rules.cpp" line="35609"/>
+        <location filename="../src/engine/rules.cpp" line="35665"/>
+        <location filename="../src/engine/rules.cpp" line="35741"/>
+        <location filename="../src/engine/rules.cpp" line="35831"/>
+        <location filename="../src/engine/rules.cpp" line="35907"/>
+        <location filename="../src/engine/rules.cpp" line="35978"/>
+        <location filename="../src/engine/rules.cpp" line="36431"/>
+        <location filename="../src/engine/rules.cpp" line="36501"/>
+        <location filename="../src/engine/rules.cpp" line="36577"/>
+        <location filename="../src/engine/rules.cpp" line="36647"/>
+        <location filename="../src/engine/rules.cpp" line="36723"/>
+        <location filename="../src/engine/rules.cpp" line="36793"/>
+        <location filename="../src/engine/rules.cpp" line="36869"/>
+        <location filename="../src/engine/rules.cpp" line="36939"/>
+        <location filename="../src/engine/rules.cpp" line="38645"/>
+        <location filename="../src/engine/rules.cpp" line="38771"/>
         <source>%1 is incorrect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13833"/>
-        <location filename="../src/engine/rules.cpp" line="13849"/>
-        <location filename="../src/engine/rules.cpp" line="13880"/>
-        <location filename="../src/engine/rules.cpp" line="14006"/>
-        <location filename="../src/engine/rules.cpp" line="14132"/>
-        <location filename="../src/engine/rules.cpp" line="14274"/>
+        <location filename="../src/engine/rules.cpp" line="13840"/>
+        <location filename="../src/engine/rules.cpp" line="13856"/>
+        <location filename="../src/engine/rules.cpp" line="13887"/>
+        <location filename="../src/engine/rules.cpp" line="14013"/>
+        <location filename="../src/engine/rules.cpp" line="14139"/>
+        <location filename="../src/engine/rules.cpp" line="14281"/>
         <source>%1 is too large. Maximum allowed is %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13890"/>
-        <location filename="../src/engine/rules.cpp" line="13909"/>
-        <location filename="../src/engine/rules.cpp" line="13923"/>
-        <location filename="../src/engine/rules.cpp" line="14035"/>
-        <location filename="../src/engine/rules.cpp" line="14049"/>
-        <location filename="../src/engine/rules.cpp" line="14142"/>
-        <location filename="../src/engine/rules.cpp" line="14161"/>
-        <location filename="../src/engine/rules.cpp" line="14175"/>
-        <location filename="../src/engine/rules.cpp" line="14303"/>
-        <location filename="../src/engine/rules.cpp" line="14317"/>
+        <location filename="../src/engine/rules.cpp" line="13897"/>
+        <location filename="../src/engine/rules.cpp" line="13916"/>
+        <location filename="../src/engine/rules.cpp" line="13930"/>
+        <location filename="../src/engine/rules.cpp" line="14042"/>
+        <location filename="../src/engine/rules.cpp" line="14056"/>
+        <location filename="../src/engine/rules.cpp" line="14149"/>
+        <location filename="../src/engine/rules.cpp" line="14168"/>
+        <location filename="../src/engine/rules.cpp" line="14182"/>
+        <location filename="../src/engine/rules.cpp" line="14310"/>
+        <location filename="../src/engine/rules.cpp" line="14324"/>
         <source>Too many %1 items. Maximum allowed is %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14740"/>
+        <location filename="../src/engine/rules.cpp" line="14747"/>
         <source>Duplicate teacher %1 found - ignoring</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14444"/>
+        <location filename="../src/engine/rules.cpp" line="14451"/>
         <source>Duplicate subject %1 found - ignoring</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14476"/>
+        <location filename="../src/engine/rules.cpp" line="14483"/>
         <source>Your file contains subject tags list, which is named in versions&gt;=5.5.0 activity tags list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14510"/>
-        <location filename="../src/engine/rules.cpp" line="14591"/>
+        <location filename="../src/engine/rules.cpp" line="14517"/>
+        <location filename="../src/engine/rules.cpp" line="14598"/>
         <source>Duplicate activity tag %1 found - ignoring</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="5396"/>
-        <location filename="../src/engine/rules.cpp" line="5410"/>
-        <location filename="../src/engine/rules.cpp" line="5422"/>
-        <location filename="../src/engine/rules.cpp" line="13774"/>
-        <source>08:00</source>
-        <comment>Hour name</comment>
-        <translation>08:00</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="5113"/>
-        <source>Cannot create or use directory %1 - cannot autosave your data file - please change the chosen autosave directory or disable the autosave.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="5292"/>
-        <source>Corrupted state read from the memory or from the hard disk ... returning to the previous state.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="5397"/>
-        <location filename="../src/engine/rules.cpp" line="5411"/>
-        <location filename="../src/engine/rules.cpp" line="5423"/>
-        <location filename="../src/engine/rules.cpp" line="13775"/>
-        <source>09:00</source>
-        <comment>Hour name</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="5398"/>
-        <location filename="../src/engine/rules.cpp" line="5412"/>
-        <location filename="../src/engine/rules.cpp" line="5424"/>
-        <location filename="../src/engine/rules.cpp" line="13776"/>
-        <source>10:00</source>
-        <comment>Hour name</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="5399"/>
-        <location filename="../src/engine/rules.cpp" line="5413"/>
-        <location filename="../src/engine/rules.cpp" line="5425"/>
-        <location filename="../src/engine/rules.cpp" line="13777"/>
-        <source>11:00</source>
-        <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5400"/>
         <location filename="../src/engine/rules.cpp" line="5414"/>
         <location filename="../src/engine/rules.cpp" line="5426"/>
-        <location filename="../src/engine/rules.cpp" line="13778"/>
-        <source>12:00</source>
+        <location filename="../src/engine/rules.cpp" line="13781"/>
+        <source>08:00</source>
         <comment>Hour name</comment>
+        <translation>08:00</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="5117"/>
+        <source>Cannot create or use directory %1 - cannot autosave your data file - please change the chosen autosave directory or disable the autosave.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="5296"/>
+        <source>Corrupted state read from the memory or from the hard disk ... returning to the previous state.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5401"/>
         <location filename="../src/engine/rules.cpp" line="5415"/>
         <location filename="../src/engine/rules.cpp" line="5427"/>
-        <location filename="../src/engine/rules.cpp" line="13779"/>
-        <source>13:00</source>
+        <location filename="../src/engine/rules.cpp" line="13782"/>
+        <source>09:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
@@ -60222,8 +60212,8 @@ to
         <location filename="../src/engine/rules.cpp" line="5402"/>
         <location filename="../src/engine/rules.cpp" line="5416"/>
         <location filename="../src/engine/rules.cpp" line="5428"/>
-        <location filename="../src/engine/rules.cpp" line="13780"/>
-        <source>14:00</source>
+        <location filename="../src/engine/rules.cpp" line="13783"/>
+        <source>10:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
@@ -60231,8 +60221,8 @@ to
         <location filename="../src/engine/rules.cpp" line="5403"/>
         <location filename="../src/engine/rules.cpp" line="5417"/>
         <location filename="../src/engine/rules.cpp" line="5429"/>
-        <location filename="../src/engine/rules.cpp" line="13781"/>
-        <source>15:00</source>
+        <location filename="../src/engine/rules.cpp" line="13784"/>
+        <source>11:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
@@ -60240,8 +60230,8 @@ to
         <location filename="../src/engine/rules.cpp" line="5404"/>
         <location filename="../src/engine/rules.cpp" line="5418"/>
         <location filename="../src/engine/rules.cpp" line="5430"/>
-        <location filename="../src/engine/rules.cpp" line="13782"/>
-        <source>16:00</source>
+        <location filename="../src/engine/rules.cpp" line="13785"/>
+        <source>12:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
@@ -60249,8 +60239,8 @@ to
         <location filename="../src/engine/rules.cpp" line="5405"/>
         <location filename="../src/engine/rules.cpp" line="5419"/>
         <location filename="../src/engine/rules.cpp" line="5431"/>
-        <location filename="../src/engine/rules.cpp" line="13783"/>
-        <source>17:00</source>
+        <location filename="../src/engine/rules.cpp" line="13786"/>
+        <source>13:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
@@ -60258,8 +60248,8 @@ to
         <location filename="../src/engine/rules.cpp" line="5406"/>
         <location filename="../src/engine/rules.cpp" line="5420"/>
         <location filename="../src/engine/rules.cpp" line="5432"/>
-        <location filename="../src/engine/rules.cpp" line="13784"/>
-        <source>18:00</source>
+        <location filename="../src/engine/rules.cpp" line="13787"/>
+        <source>14:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
@@ -60267,16 +60257,48 @@ to
         <location filename="../src/engine/rules.cpp" line="5407"/>
         <location filename="../src/engine/rules.cpp" line="5421"/>
         <location filename="../src/engine/rules.cpp" line="5433"/>
-        <location filename="../src/engine/rules.cpp" line="13785"/>
-        <source>19:00</source>
+        <location filename="../src/engine/rules.cpp" line="13788"/>
+        <source>15:00</source>
+        <comment>Hour name</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="5408"/>
+        <location filename="../src/engine/rules.cpp" line="5422"/>
+        <location filename="../src/engine/rules.cpp" line="5434"/>
+        <location filename="../src/engine/rules.cpp" line="13789"/>
+        <source>16:00</source>
+        <comment>Hour name</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="5409"/>
+        <location filename="../src/engine/rules.cpp" line="5423"/>
+        <location filename="../src/engine/rules.cpp" line="5435"/>
+        <location filename="../src/engine/rules.cpp" line="13790"/>
+        <source>17:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5410"/>
+        <location filename="../src/engine/rules.cpp" line="5424"/>
+        <location filename="../src/engine/rules.cpp" line="5436"/>
+        <location filename="../src/engine/rules.cpp" line="13791"/>
+        <source>18:00</source>
+        <comment>Hour name</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/engine/rules.cpp" line="5411"/>
-        <location filename="../src/engine/rules.cpp" line="5412"/>
-        <location filename="../src/engine/rules.cpp" line="5413"/>
+        <location filename="../src/engine/rules.cpp" line="5425"/>
+        <location filename="../src/engine/rules.cpp" line="5437"/>
+        <location filename="../src/engine/rules.cpp" line="13792"/>
+        <source>19:00</source>
+        <comment>Hour name</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/engine/rules.cpp" line="5414"/>
         <location filename="../src/engine/rules.cpp" line="5415"/>
         <location filename="../src/engine/rules.cpp" line="5416"/>
@@ -60285,17 +60307,17 @@ to
         <location filename="../src/engine/rules.cpp" line="5419"/>
         <location filename="../src/engine/rules.cpp" line="5420"/>
         <location filename="../src/engine/rules.cpp" line="5421"/>
-        <location filename="../src/engine/rules.cpp" line="6436"/>
-        <location filename="../src/engine/rules.cpp" line="18210"/>
+        <location filename="../src/engine/rules.cpp" line="5422"/>
+        <location filename="../src/engine/rules.cpp" line="5423"/>
+        <location filename="../src/engine/rules.cpp" line="5424"/>
+        <location filename="../src/engine/rules.cpp" line="5425"/>
+        <location filename="../src/engine/rules.cpp" line="6443"/>
+        <location filename="../src/engine/rules.cpp" line="18226"/>
         <source>AM</source>
         <comment>Ante Meridiem, before noon</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5422"/>
-        <location filename="../src/engine/rules.cpp" line="5423"/>
-        <location filename="../src/engine/rules.cpp" line="5424"/>
-        <location filename="../src/engine/rules.cpp" line="5425"/>
         <location filename="../src/engine/rules.cpp" line="5426"/>
         <location filename="../src/engine/rules.cpp" line="5427"/>
         <location filename="../src/engine/rules.cpp" line="5428"/>
@@ -60304,1476 +60326,1480 @@ to
         <location filename="../src/engine/rules.cpp" line="5431"/>
         <location filename="../src/engine/rules.cpp" line="5432"/>
         <location filename="../src/engine/rules.cpp" line="5433"/>
-        <location filename="../src/engine/rules.cpp" line="6440"/>
-        <location filename="../src/engine/rules.cpp" line="18214"/>
+        <location filename="../src/engine/rules.cpp" line="5434"/>
+        <location filename="../src/engine/rules.cpp" line="5435"/>
+        <location filename="../src/engine/rules.cpp" line="5436"/>
+        <location filename="../src/engine/rules.cpp" line="5437"/>
+        <location filename="../src/engine/rules.cpp" line="6447"/>
+        <location filename="../src/engine/rules.cpp" line="18230"/>
         <source>PM</source>
         <comment>Post Meridiem, afternoon</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5639"/>
+        <location filename="../src/engine/rules.cpp" line="5646"/>
         <source>You have too many total subgroups. You need to increase the variable MAX_TOTAL_SUBGROUPS (which is currently %1).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5653"/>
+        <location filename="../src/engine/rules.cpp" line="5660"/>
         <source>You have too many active activities. You need to increase the variable MAX_ACTIVITIES (which is currently %1).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5660"/>
+        <location filename="../src/engine/rules.cpp" line="5667"/>
         <source>You have too many buildings. You need to increase the variable MAX_BUILDINGS (which is currently %1).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5667"/>
+        <location filename="../src/engine/rules.cpp" line="5674"/>
         <source>You have too many rooms. You need to increase the variable MAX_ROOMS (which is currently %1).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5791"/>
+        <location filename="../src/engine/rules.cpp" line="5798"/>
         <source>Virtual room %1 has 0 sets of real rooms to choose from. The number of sets of real rooms must be at least 2. Please correct this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5796"/>
+        <location filename="../src/engine/rules.cpp" line="5803"/>
         <source>Virtual room %1 has only 1 set of real rooms to choose from. The number of sets of real rooms must be at least 2. Please correct this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5804"/>
+        <location filename="../src/engine/rules.cpp" line="5811"/>
         <source>Virtual room %1, in set number %2, has 0 real rooms to choose from. The number of real rooms from each set must be at least 1. Please correct this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5817"/>
+        <location filename="../src/engine/rules.cpp" line="5824"/>
         <source>Virtual room %1, in set number %2, has these duplicate real rooms names: %3. Please correct this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5827"/>
+        <location filename="../src/engine/rules.cpp" line="5834"/>
         <source>The virtual room %1 contains the unrecognized real room %2 in the sets of real rooms - please correct this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5834"/>
+        <location filename="../src/engine/rules.cpp" line="5841"/>
         <source>Virtual room %1, in set number %2, contains the virtual room %3 - please correct this (a virtual room can only contain sets with real rooms).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5853"/>
+        <location filename="../src/engine/rules.cpp" line="5860"/>
         <source>Computing internal structure</source>
         <comment>Title of a progress dialog</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6193"/>
+        <location filename="../src/engine/rules.cpp" line="6200"/>
         <source>All &apos;group activities in the initial order for timetable generation&apos; items should contain at least two activities ids. This is not true for item number %1. Please report potential bug.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9987"/>
-        <location filename="../src/engine/rules.cpp" line="15815"/>
+        <location filename="../src/engine/rules.cpp" line="9994"/>
+        <location filename="../src/engine/rules.cpp" line="15831"/>
         <source>Activity with Id=%1 contains %2 duplicate teachers - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9992"/>
-        <location filename="../src/engine/rules.cpp" line="15817"/>
+        <location filename="../src/engine/rules.cpp" line="9999"/>
+        <location filename="../src/engine/rules.cpp" line="15833"/>
         <source>Activity with Id=%1 contains %2 duplicate students sets - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9997"/>
-        <location filename="../src/engine/rules.cpp" line="15819"/>
+        <location filename="../src/engine/rules.cpp" line="10004"/>
+        <location filename="../src/engine/rules.cpp" line="15835"/>
         <source>Activity with Id=%1 contains %2 duplicate activity tags - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10041"/>
+        <location filename="../src/engine/rules.cpp" line="10048"/>
         <source>Activities with group_Id=%1 contain %2 duplicate teachers - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10046"/>
+        <location filename="../src/engine/rules.cpp" line="10053"/>
         <source>Activities with group_Id=%1 contain %2 duplicate students sets - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10051"/>
+        <location filename="../src/engine/rules.cpp" line="10058"/>
         <source>Activities with group_Id=%1 contain %2 duplicate activity tags - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10152"/>
+        <location filename="../src/engine/rules.cpp" line="10159"/>
         <source>The activity with id=%1 contains %2 duplicate teachers - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10158"/>
+        <location filename="../src/engine/rules.cpp" line="10165"/>
         <source>The activity with id=%1 contains %2 duplicate students sets - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10164"/>
+        <location filename="../src/engine/rules.cpp" line="10171"/>
         <source>The activity with id=%1 contains %2 duplicate activity tags - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13445"/>
+        <location filename="../src/engine/rules.cpp" line="13452"/>
         <source>FET cannot open the log file %1 for writing. This might mean that you don&apos;t have write permissions in this location. You can continue operation, but you might not be able to save the generated timetables as HTML files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13670"/>
+        <location filename="../src/engine/rules.cpp" line="13677"/>
         <source>File is incorrect...it cannot be opened</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13676"/>
+        <location filename="../src/engine/rules.cpp" line="13683"/>
         <source>Opening older file - it will be converted to latest format, automatically assigning weight percentages to constraints and dropping parity (weekly/fortnightly) for activities. You are advised to make a backup of your old file before saving in new format.
 
 Please note that the default weight percentage of constraints min days between activities will be 95% (mainly satisfied, not always) and &apos;consecutive if on the same day&apos; will be set to true (meaning that if the activities are on the same day, they will be placed continuously, in a bigger duration activity). If you want, you can modify this percent to be 100%, manually in the fet input file or from the interface</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13688"/>
+        <location filename="../src/engine/rules.cpp" line="13695"/>
         <source>Opening an older file - it will be converted to the latest format. FET detected that this file was generated with a custom FET-5-MA version for mornings-afternoons, because the file version contains the string &apos;-ma&apos;. Some constraints will be renamed. The new style will refer to half days as &apos;days&apos; and to real days as &apos;real days&apos;. Please be very careful and check once more the list of your constraints. If this is not true, please report the bug.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13692"/>
+        <location filename="../src/engine/rules.cpp" line="13699"/>
         <source>Opening an older file - it will be converted to the latest format. FET detected that this file was generated with a custom FET-5-Morocco version for mornings-afternoons, because the file version contains the string &apos;-morocco&apos;. Some constraints will be renamed. The new style will refer to half days as &apos;days&apos; and to real days as &apos;real days&apos;. Please be very careful and check once more the list of your constraints. If this is not true, please report the bug.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13696"/>
+        <location filename="../src/engine/rules.cpp" line="13703"/>
         <source>Opening an older file - it will be converted to the latest format. FET detected that this file was generated with a custom FET-5-Algeria version for mornings-afternoons, because the file version contains the string &apos;-algeria&apos;. Some constraints will be renamed. The new style will refer to half days as &apos;days&apos; and to real days as &apos;real days&apos;. Please be very careful and check once more the list of your constraints. If this is not true, please report the bug.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13700"/>
+        <location filename="../src/engine/rules.cpp" line="13707"/>
         <source>Opening an older file - it will be converted to the latest format. FET detected that this file was generated with a custom FET-5-BP (block-planning) version, because the file version contains the string &apos;-bp&apos;. Please be very careful and check once more the list of your constraints. If this is not true, please report the bug.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13703"/>
+        <location filename="../src/engine/rules.cpp" line="13710"/>
         <source>Opening an older file - it will be converted to the latest format. FET detected that this file was generated with a custom FET-5-mathmake (terms) version, because the file version contains the string &apos;-mathmake&apos;. Please be very careful and check once more the list of your constraints. If this is not true, please report the bug.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13706"/>
+        <location filename="../src/engine/rules.cpp" line="13713"/>
         <source>Opening an older file - it will be converted to the latest format. FET detected that this file was generated with a FET-5 version. After opening, please check your constraints. If this is not true, please report the bug.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13709"/>
+        <location filename="../src/engine/rules.cpp" line="13716"/>
         <source>It is advisable to keep a backup copy of your old file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13959"/>
+        <location filename="../src/engine/rules.cpp" line="13966"/>
         <source>%1: %2 and the number of %3 read do not correspond</source>
         <comment>%1 is an XML string, %2 is the specified number of days, %3 is the number of actually read days.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14213"/>
-        <location filename="../src/engine/rules.cpp" line="14226"/>
+        <location filename="../src/engine/rules.cpp" line="14220"/>
+        <location filename="../src/engine/rules.cpp" line="14233"/>
         <source>%1: %2 and the number of %3 read do not correspond</source>
         <comment>%1 is an XML string, %2 is the specified number of hours, %3 is the number of actually read hours.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14085"/>
+        <location filename="../src/engine/rules.cpp" line="14092"/>
         <source>%1: %2 and the number of %3 read do not correspond</source>
         <comment>%1 is an XML string, %2 is the specified number of real days, %3 is the number of actually read real days.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5331"/>
-        <location filename="../src/engine/rules.cpp" line="5339"/>
-        <location filename="../src/engine/rules.cpp" line="13737"/>
+        <location filename="../src/engine/rules.cpp" line="5335"/>
+        <location filename="../src/engine/rules.cpp" line="5343"/>
+        <location filename="../src/engine/rules.cpp" line="13744"/>
         <source>Mo</source>
         <comment>Abbreviation for Monday</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5332"/>
-        <location filename="../src/engine/rules.cpp" line="5340"/>
-        <location filename="../src/engine/rules.cpp" line="13738"/>
+        <location filename="../src/engine/rules.cpp" line="5336"/>
+        <location filename="../src/engine/rules.cpp" line="5344"/>
+        <location filename="../src/engine/rules.cpp" line="13745"/>
         <source>Tu</source>
         <comment>Abbreviation for Tuesday</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5333"/>
-        <location filename="../src/engine/rules.cpp" line="13739"/>
+        <location filename="../src/engine/rules.cpp" line="5337"/>
+        <location filename="../src/engine/rules.cpp" line="13746"/>
         <source>We</source>
         <comment>Abbreviation for Wednesday</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5334"/>
-        <location filename="../src/engine/rules.cpp" line="13740"/>
+        <location filename="../src/engine/rules.cpp" line="5338"/>
+        <location filename="../src/engine/rules.cpp" line="13747"/>
         <source>Th</source>
         <comment>Abbreviation for Thursday</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5335"/>
-        <location filename="../src/engine/rules.cpp" line="13741"/>
+        <location filename="../src/engine/rules.cpp" line="5339"/>
+        <location filename="../src/engine/rules.cpp" line="13748"/>
         <source>Fr</source>
         <comment>Abbreviation for Friday</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13964"/>
+        <location filename="../src/engine/rules.cpp" line="13971"/>
         <source>%1: %2 and the number of %3 read do not correspond</source>
         <comment>%1 is an XML string, %2 is the specified number of days, %3 is the number of actually read days long names.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14090"/>
+        <location filename="../src/engine/rules.cpp" line="14097"/>
         <source>%1: %2 and the number of %3 read do not correspond</source>
         <comment>%1 is an XML string, %2 is the specified number of real days, %3 is the number of actually read real days long names.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14231"/>
+        <location filename="../src/engine/rules.cpp" line="14238"/>
         <source>%1: %2 and the number of %3 read do not correspond</source>
         <comment>%1 is an XML string, %2 is the specified number of hours, %3 is the number of actually read hours long names.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14378"/>
+        <location filename="../src/engine/rules.cpp" line="14385"/>
         <source>%1: %2 and the number of %3 read do not correspond</source>
         <comment>%1 is an XML string, %2 is the specified number of real hours, %3 is the number of actually read real hours.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14383"/>
+        <location filename="../src/engine/rules.cpp" line="14390"/>
         <source>%1: %2 and the number of %3 read do not correspond</source>
         <comment>%1 is an XML string, %2 is the specified number of real hours, %3 is the number of actually read real hours long names.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14698"/>
+        <location filename="../src/engine/rules.cpp" line="14705"/>
         <source>The teacher %1 has duplicate qualified subject %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14786"/>
+        <location filename="../src/engine/rules.cpp" line="14793"/>
         <source>(The program detected this because your file contains the section %1.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14788"/>
+        <location filename="../src/engine/rules.cpp" line="14795"/>
         <source>Please note that if you save now your file, you won&apos;t be able to open it correctly again later using the old version of FET Morocco.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15086"/>
+        <location filename="../src/engine/rules.cpp" line="15094"/>
         <source>Trying to add year %1, which is already added as another year.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15088"/>
+        <location filename="../src/engine/rules.cpp" line="15096"/>
         <source>Trying to add year %1, which is already added as another group.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15090"/>
+        <location filename="../src/engine/rules.cpp" line="15098"/>
         <source>Trying to add year %1, which is already added as another subgroup.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15187"/>
+        <location filename="../src/engine/rules.cpp" line="15195"/>
         <source>The specified number of divisions was not found, but there were found specified the divisions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15192"/>
+        <location filename="../src/engine/rules.cpp" line="15200"/>
         <source>The specified number of divisions is not equal with the met number of divisions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15239"/>
+        <location filename="../src/engine/rules.cpp" line="15255"/>
         <source>Trying to add group %1, which is already added as another year.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15244"/>
+        <location filename="../src/engine/rules.cpp" line="15260"/>
         <source>Trying to add group %1 in year %2 but it is already added.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15253"/>
+        <location filename="../src/engine/rules.cpp" line="15269"/>
         <source>Trying to add group %1, which is already added as another subgroup.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15368"/>
+        <location filename="../src/engine/rules.cpp" line="15384"/>
         <source>Trying to add subgroup %1, which is already added as another year.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15372"/>
+        <location filename="../src/engine/rules.cpp" line="15388"/>
         <source>Trying to add subgroup %1, which is already added as another group.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15377"/>
+        <location filename="../src/engine/rules.cpp" line="15393"/>
         <source>Trying to add subgroup %1 in year %2, group %3 but it is already added.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15506"/>
+        <location filename="../src/engine/rules.cpp" line="15522"/>
         <source>The specified number of categories was not found, but there were found specified the categories.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15511"/>
+        <location filename="../src/engine/rules.cpp" line="15527"/>
         <source>The specified number of categories is not equal with the met number of categories.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15669"/>
+        <location filename="../src/engine/rules.cpp" line="15685"/>
         <source>Found activity active tag which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The activity will be considered not active</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15697"/>
+        <location filename="../src/engine/rules.cpp" line="15713"/>
         <source>Line %1, column %2: Teacher %3 was not found in the teachers list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15709"/>
+        <location filename="../src/engine/rules.cpp" line="15725"/>
         <source>Line %1, column %2: Subject %3 was not found in the subjects list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15728"/>
-        <location filename="../src/engine/rules.cpp" line="15747"/>
+        <location filename="../src/engine/rules.cpp" line="15744"/>
+        <location filename="../src/engine/rules.cpp" line="15763"/>
         <source>Line %1, column %2: Activity tag %3 was not found in the activity tags list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15765"/>
+        <location filename="../src/engine/rules.cpp" line="15781"/>
         <source>Line %1, column %2: Students set %3 was not found in the students sets list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15807"/>
+        <location filename="../src/engine/rules.cpp" line="15823"/>
         <source>%1 is incorrect (already existing)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15847"/>
+        <location filename="../src/engine/rules.cpp" line="15863"/>
         <source>The activity with id=%1 contains incorrect data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15849"/>
+        <location filename="../src/engine/rules.cpp" line="15865"/>
         <source>Additional details:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15924"/>
+        <location filename="../src/engine/rules.cpp" line="15940"/>
         <source>Duplicate building %1 found - ignoring</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16037"/>
+        <location filename="../src/engine/rules.cpp" line="16053"/>
         <source>The specified number of real rooms was not found in the input file for the virtual room %1, for the set of real rooms number %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16101"/>
+        <location filename="../src/engine/rules.cpp" line="16117"/>
         <source>Duplicate room %1 found - ignoring</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16170"/>
+        <location filename="../src/engine/rules.cpp" line="16186"/>
         <source>File contains constraint teacher not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint teacher not available times (a matrix).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16223"/>
+        <location filename="../src/engine/rules.cpp" line="16239"/>
         <source>File contains constraint students set not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set not available times (a matrix).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16475"/>
+        <location filename="../src/engine/rules.cpp" line="16491"/>
         <source>File contains old constraint type activity preferred time, which will be converted to the newer similar constraint of this type, constraint activity preferred STARTING time. This improvement is done in versions 5.5.9 and above</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16566"/>
+        <location filename="../src/engine/rules.cpp" line="16582"/>
         <source>Your file contains old constraint activity preferred times, which will be converted to new equivalent constraint activity preferred starting times. Beginning with FET-5.5.9 it is possible to specify: 1. the starting times of an activity (constraint activity preferred starting times) or: 2. the accepted time slots (constraint activity preferred time slots). If what you need is type 2 of this constraint, you will have to add it by yourself from the interface.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16587"/>
+        <location filename="../src/engine/rules.cpp" line="16603"/>
         <source>File contains constraint break, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint break times (a matrix).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16623"/>
+        <location filename="../src/engine/rules.cpp" line="16639"/>
         <source>File contains constraint students no gaps, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students max gaps per week, with max gaps=0. If you like, you can modify this constraint to allow more gaps per week (normally not accepted in schools)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16637"/>
+        <location filename="../src/engine/rules.cpp" line="16653"/>
         <source>File contains constraint students set no gaps, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set max gaps per week, with max gaps=0. If you like, you can modify this constraint to allow more gaps per week (normally not accepted in schools)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16665"/>
+        <location filename="../src/engine/rules.cpp" line="16681"/>
         <source>File contains constraint students early, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students early max beginnings at second hour, with max beginnings=0. If you like, you can modify this constraint to allow more beginnings at second available hour (above 0 - this will make the timetable easier)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16682"/>
+        <location filename="../src/engine/rules.cpp" line="16698"/>
         <source>File contains constraint students set early, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set early max beginnings at second hour, with max beginnings=0. If you like, you can modify this constraint to allow more beginnings at second available hour (above 0 - this will make the timetable easier)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16699"/>
+        <location filename="../src/engine/rules.cpp" line="16715"/>
         <source>Your file contains old constraint activities preferred times, which will be converted to new equivalent constraint activities preferred starting times. Beginning with FET-5.5.9 it is possible to specify: 1. the starting times of several activities (constraint activities preferred starting times) or: 2. the accepted time slots (constraint activities preferred time slots). If what you need is type 2 of this constraint, you will have to add it by yourself from the interface.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16824"/>
+        <location filename="../src/engine/rules.cpp" line="16840"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teacher max days per week, which will be converted to a constraint of type teacher max real days per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16841"/>
+        <location filename="../src/engine/rules.cpp" line="16857"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teachers max days per week, which will be converted to a constraint of type teachers max real days per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16864"/>
-        <location filename="../src/engine/rules.cpp" line="16877"/>
-        <location filename="../src/engine/rules.cpp" line="16891"/>
-        <location filename="../src/engine/rules.cpp" line="16904"/>
-        <location filename="../src/engine/rules.cpp" line="16918"/>
-        <location filename="../src/engine/rules.cpp" line="16931"/>
-        <location filename="../src/engine/rules.cpp" line="16945"/>
-        <location filename="../src/engine/rules.cpp" line="16958"/>
+        <location filename="../src/engine/rules.cpp" line="16880"/>
+        <location filename="../src/engine/rules.cpp" line="16893"/>
+        <location filename="../src/engine/rules.cpp" line="16907"/>
+        <location filename="../src/engine/rules.cpp" line="16920"/>
+        <location filename="../src/engine/rules.cpp" line="16934"/>
+        <location filename="../src/engine/rules.cpp" line="16947"/>
+        <location filename="../src/engine/rules.cpp" line="16961"/>
+        <location filename="../src/engine/rules.cpp" line="16974"/>
         <source>Your file contains a constraint of type teacher(s)/students (set) max two activity tags per day/real day from N1, N2, N3, which will be converted to the newer constraint, teacher(s)/students (set) max activity tags per day/real day from a set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17021"/>
+        <location filename="../src/engine/rules.cpp" line="17037"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teacher min days per week, which will be converted to a constraint of type teacher min real days per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17038"/>
+        <location filename="../src/engine/rules.cpp" line="17054"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teachers min days per week, which will be converted to a constraint of type teachers min real days per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17082"/>
+        <location filename="../src/engine/rules.cpp" line="17098"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type students set max days per week, which will be converted to a constraint of type students set max real days per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17099"/>
+        <location filename="../src/engine/rules.cpp" line="17115"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type students max days per week, which will be converted to a constraint of type students max real days per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17158"/>
+        <location filename="../src/engine/rules.cpp" line="17174"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teachers max hours daily, which will be converted to a constraint of type teachers max hours daily real days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17175"/>
+        <location filename="../src/engine/rules.cpp" line="17191"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teacher max hours daily, which will be converted to a constraint of type teacher max hours daily real days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17192"/>
+        <location filename="../src/engine/rules.cpp" line="17208"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teachers max hours daily for half days, which will be converted to a constraint of type teachers max hours daily.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17205"/>
+        <location filename="../src/engine/rules.cpp" line="17221"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teacher max hours daily for half days, which will be converted to a constraint of type teacher max hours daily.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17219"/>
+        <location filename="../src/engine/rules.cpp" line="17235"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teacher activity tag max hours daily, which will be converted to a constraint of type teacher activity tag max hours daily real days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17236"/>
+        <location filename="../src/engine/rules.cpp" line="17252"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teachers activity tag max hours daily, which will be converted to a constraint of type teachers activity tag max hours daily real days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17323"/>
+        <location filename="../src/engine/rules.cpp" line="17339"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type student set activity tag max hours daily, which will be converted to a constraint of type students set activity tag max hours daily real days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17432"/>
+        <location filename="../src/engine/rules.cpp" line="17448"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teacher max span per day, which will be converted to a constraint of type teacher max span per real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17449"/>
+        <location filename="../src/engine/rules.cpp" line="17465"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teachers max span per day, which will be converted to a constraint of type teachers max span per real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17466"/>
+        <location filename="../src/engine/rules.cpp" line="17482"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type students set max span per day, which will be converted to a constraint of type students set max span per real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17483"/>
+        <location filename="../src/engine/rules.cpp" line="17499"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type students max span per day, which will be converted to a constraint of type students max span per real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17561"/>
-        <location filename="../src/engine/rules.cpp" line="18056"/>
+        <location filename="../src/engine/rules.cpp" line="17577"/>
+        <location filename="../src/engine/rules.cpp" line="18072"/>
         <source>Constraint
 %1
 not added - must be a duplicate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17597"/>
+        <location filename="../src/engine/rules.cpp" line="17613"/>
         <source>File contains constraint room not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint room not available times (a matrix).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17894"/>
+        <location filename="../src/engine/rules.cpp" line="17910"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teacher max room changes per day, which will be converted to a constraint of type teacher max room changes per real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17915"/>
+        <location filename="../src/engine/rules.cpp" line="17931"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teachers max room changes per day, which will be converted to a constraint of type teachers max room changes per real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17936"/>
+        <location filename="../src/engine/rules.cpp" line="17952"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type students set max room changes per day, which will be converted to a constraint of type students set max room changes per real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18115"/>
-        <location filename="../src/engine/rules.cpp" line="19108"/>
-        <location filename="../src/engine/rules.cpp" line="20216"/>
-        <location filename="../src/engine/rules.cpp" line="20336"/>
-        <location filename="../src/engine/rules.cpp" line="20491"/>
-        <location filename="../src/engine/rules.cpp" line="20646"/>
-        <location filename="../src/engine/rules.cpp" line="20743"/>
-        <location filename="../src/engine/rules.cpp" line="20804"/>
-        <location filename="../src/engine/rules.cpp" line="20865"/>
-        <location filename="../src/engine/rules.cpp" line="20926"/>
-        <location filename="../src/engine/rules.cpp" line="20985"/>
-        <location filename="../src/engine/rules.cpp" line="21044"/>
-        <location filename="../src/engine/rules.cpp" line="21118"/>
-        <location filename="../src/engine/rules.cpp" line="21204"/>
-        <location filename="../src/engine/rules.cpp" line="21278"/>
-        <location filename="../src/engine/rules.cpp" line="21352"/>
-        <location filename="../src/engine/rules.cpp" line="21407"/>
-        <location filename="../src/engine/rules.cpp" line="26229"/>
-        <location filename="../src/engine/rules.cpp" line="26376"/>
-        <location filename="../src/engine/rules.cpp" line="26523"/>
-        <location filename="../src/engine/rules.cpp" line="26799"/>
-        <location filename="../src/engine/rules.cpp" line="28041"/>
-        <location filename="../src/engine/rules.cpp" line="28250"/>
-        <location filename="../src/engine/rules.cpp" line="28459"/>
-        <location filename="../src/engine/rules.cpp" line="28675"/>
-        <location filename="../src/engine/rules.cpp" line="28890"/>
-        <location filename="../src/engine/rules.cpp" line="29028"/>
-        <location filename="../src/engine/rules.cpp" line="29035"/>
-        <location filename="../src/engine/rules.cpp" line="29176"/>
-        <location filename="../src/engine/rules.cpp" line="29183"/>
-        <location filename="../src/engine/rules.cpp" line="29324"/>
-        <location filename="../src/engine/rules.cpp" line="29331"/>
-        <location filename="../src/engine/rules.cpp" line="29481"/>
-        <location filename="../src/engine/rules.cpp" line="29488"/>
-        <location filename="../src/engine/rules.cpp" line="29629"/>
-        <location filename="../src/engine/rules.cpp" line="29636"/>
-        <location filename="../src/engine/rules.cpp" line="29699"/>
-        <location filename="../src/engine/rules.cpp" line="29767"/>
-        <location filename="../src/engine/rules.cpp" line="29828"/>
-        <location filename="../src/engine/rules.cpp" line="31075"/>
-        <location filename="../src/engine/rules.cpp" line="31159"/>
-        <location filename="../src/engine/rules.cpp" line="31248"/>
-        <location filename="../src/engine/rules.cpp" line="31332"/>
-        <location filename="../src/engine/rules.cpp" line="31421"/>
-        <location filename="../src/engine/rules.cpp" line="31505"/>
-        <location filename="../src/engine/rules.cpp" line="31594"/>
-        <location filename="../src/engine/rules.cpp" line="31678"/>
-        <location filename="../src/engine/rules.cpp" line="38651"/>
-        <location filename="../src/engine/rules.cpp" line="38782"/>
-        <location filename="../src/engine/rules.cpp" line="39024"/>
-        <location filename="../src/engine/rules.cpp" line="39160"/>
-        <location filename="../src/engine/rules.cpp" line="39306"/>
-        <location filename="../src/engine/rules.cpp" line="39452"/>
-        <location filename="../src/engine/rules.cpp" line="39551"/>
-        <location filename="../src/engine/rules.cpp" line="39649"/>
-        <location filename="../src/engine/rules.cpp" line="39747"/>
-        <location filename="../src/engine/rules.cpp" line="40756"/>
-        <location filename="../src/engine/rules.cpp" line="40814"/>
-        <location filename="../src/engine/rules.cpp" line="43042"/>
-        <location filename="../src/engine/rules.cpp" line="43131"/>
-        <location filename="../src/engine/rules.cpp" line="43220"/>
+        <location filename="../src/engine/rules.cpp" line="18131"/>
+        <location filename="../src/engine/rules.cpp" line="19124"/>
+        <location filename="../src/engine/rules.cpp" line="20232"/>
+        <location filename="../src/engine/rules.cpp" line="20352"/>
+        <location filename="../src/engine/rules.cpp" line="20507"/>
+        <location filename="../src/engine/rules.cpp" line="20662"/>
+        <location filename="../src/engine/rules.cpp" line="20759"/>
+        <location filename="../src/engine/rules.cpp" line="20820"/>
+        <location filename="../src/engine/rules.cpp" line="20881"/>
+        <location filename="../src/engine/rules.cpp" line="20942"/>
+        <location filename="../src/engine/rules.cpp" line="21001"/>
+        <location filename="../src/engine/rules.cpp" line="21060"/>
+        <location filename="../src/engine/rules.cpp" line="21134"/>
+        <location filename="../src/engine/rules.cpp" line="21220"/>
+        <location filename="../src/engine/rules.cpp" line="21294"/>
+        <location filename="../src/engine/rules.cpp" line="21368"/>
+        <location filename="../src/engine/rules.cpp" line="21423"/>
+        <location filename="../src/engine/rules.cpp" line="26245"/>
+        <location filename="../src/engine/rules.cpp" line="26392"/>
+        <location filename="../src/engine/rules.cpp" line="26539"/>
+        <location filename="../src/engine/rules.cpp" line="26815"/>
+        <location filename="../src/engine/rules.cpp" line="28057"/>
+        <location filename="../src/engine/rules.cpp" line="28266"/>
+        <location filename="../src/engine/rules.cpp" line="28475"/>
+        <location filename="../src/engine/rules.cpp" line="28691"/>
+        <location filename="../src/engine/rules.cpp" line="28906"/>
+        <location filename="../src/engine/rules.cpp" line="29044"/>
+        <location filename="../src/engine/rules.cpp" line="29051"/>
+        <location filename="../src/engine/rules.cpp" line="29192"/>
+        <location filename="../src/engine/rules.cpp" line="29199"/>
+        <location filename="../src/engine/rules.cpp" line="29340"/>
+        <location filename="../src/engine/rules.cpp" line="29347"/>
+        <location filename="../src/engine/rules.cpp" line="29497"/>
+        <location filename="../src/engine/rules.cpp" line="29504"/>
+        <location filename="../src/engine/rules.cpp" line="29645"/>
+        <location filename="../src/engine/rules.cpp" line="29652"/>
+        <location filename="../src/engine/rules.cpp" line="29715"/>
+        <location filename="../src/engine/rules.cpp" line="29783"/>
+        <location filename="../src/engine/rules.cpp" line="29844"/>
+        <location filename="../src/engine/rules.cpp" line="31091"/>
+        <location filename="../src/engine/rules.cpp" line="31175"/>
+        <location filename="../src/engine/rules.cpp" line="31264"/>
+        <location filename="../src/engine/rules.cpp" line="31348"/>
+        <location filename="../src/engine/rules.cpp" line="31437"/>
+        <location filename="../src/engine/rules.cpp" line="31521"/>
+        <location filename="../src/engine/rules.cpp" line="31610"/>
+        <location filename="../src/engine/rules.cpp" line="31694"/>
+        <location filename="../src/engine/rules.cpp" line="38667"/>
+        <location filename="../src/engine/rules.cpp" line="38798"/>
+        <location filename="../src/engine/rules.cpp" line="39040"/>
+        <location filename="../src/engine/rules.cpp" line="39176"/>
+        <location filename="../src/engine/rules.cpp" line="39322"/>
+        <location filename="../src/engine/rules.cpp" line="39468"/>
+        <location filename="../src/engine/rules.cpp" line="39567"/>
+        <location filename="../src/engine/rules.cpp" line="39665"/>
+        <location filename="../src/engine/rules.cpp" line="39763"/>
+        <location filename="../src/engine/rules.cpp" line="40772"/>
+        <location filename="../src/engine/rules.cpp" line="40830"/>
+        <location filename="../src/engine/rules.cpp" line="43058"/>
+        <location filename="../src/engine/rules.cpp" line="43147"/>
+        <location filename="../src/engine/rules.cpp" line="43236"/>
         <source>%1 does not coincide with the number of read %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18185"/>
+        <location filename="../src/engine/rules.cpp" line="18201"/>
         <source>Line %1, column %2: %3</source>
         <comment>%3 is the unrecognized XML tag which is met in the .fet input file in line %1, column %2</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18240"/>
+        <location filename="../src/engine/rules.cpp" line="18256"/>
         <source>Saving the logging file gave the error message &apos;%1&apos;, which means you cannot see the data file reading log. Please check your disk&apos;s free space.</source>
         <comment>It means you cannot see the log of the operation of reading the data file.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18291"/>
+        <location filename="../src/engine/rules.cpp" line="18307"/>
         <source>Cannot open %1 for writing ... please check the write permissions of the selected directory and your disk&apos;s free space. Saving of the data file aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18831"/>
-        <location filename="../src/engine/rules.cpp" line="19946"/>
-        <location filename="../src/engine/rules.cpp" line="26547"/>
+        <location filename="../src/engine/rules.cpp" line="18847"/>
+        <location filename="../src/engine/rules.cpp" line="19962"/>
+        <location filename="../src/engine/rules.cpp" line="26563"/>
         <source>Weight percentage incorrect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18872"/>
-        <location filename="../src/engine/rules.cpp" line="19986"/>
-        <location filename="../src/engine/rules.cpp" line="26586"/>
-        <location filename="../src/engine/rules.cpp" line="38421"/>
+        <location filename="../src/engine/rules.cpp" line="18888"/>
+        <location filename="../src/engine/rules.cpp" line="20002"/>
+        <location filename="../src/engine/rules.cpp" line="26602"/>
+        <location filename="../src/engine/rules.cpp" line="38437"/>
         <source>Hour %1 is the last hour - impossible</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18895"/>
-        <location filename="../src/engine/rules.cpp" line="20008"/>
-        <location filename="../src/engine/rules.cpp" line="26607"/>
-        <location filename="../src/engine/rules.cpp" line="38443"/>
+        <location filename="../src/engine/rules.cpp" line="18911"/>
+        <location filename="../src/engine/rules.cpp" line="20024"/>
+        <location filename="../src/engine/rules.cpp" line="26623"/>
+        <location filename="../src/engine/rules.cpp" line="38459"/>
         <source>Hour %1 is the first hour - impossible</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18936"/>
-        <location filename="../src/engine/rules.cpp" line="18940"/>
-        <location filename="../src/engine/rules.cpp" line="18944"/>
-        <location filename="../src/engine/rules.cpp" line="20043"/>
-        <location filename="../src/engine/rules.cpp" line="20047"/>
-        <location filename="../src/engine/rules.cpp" line="20051"/>
-        <location filename="../src/engine/rules.cpp" line="26636"/>
-        <location filename="../src/engine/rules.cpp" line="26640"/>
-        <location filename="../src/engine/rules.cpp" line="26644"/>
-        <location filename="../src/engine/rules.cpp" line="38479"/>
-        <location filename="../src/engine/rules.cpp" line="38483"/>
-        <location filename="../src/engine/rules.cpp" line="38487"/>
+        <location filename="../src/engine/rules.cpp" line="18952"/>
+        <location filename="../src/engine/rules.cpp" line="18956"/>
+        <location filename="../src/engine/rules.cpp" line="18960"/>
+        <location filename="../src/engine/rules.cpp" line="20059"/>
+        <location filename="../src/engine/rules.cpp" line="20063"/>
+        <location filename="../src/engine/rules.cpp" line="20067"/>
+        <location filename="../src/engine/rules.cpp" line="26652"/>
+        <location filename="../src/engine/rules.cpp" line="26656"/>
+        <location filename="../src/engine/rules.cpp" line="26660"/>
+        <location filename="../src/engine/rules.cpp" line="38495"/>
+        <location filename="../src/engine/rules.cpp" line="38499"/>
+        <location filename="../src/engine/rules.cpp" line="38503"/>
         <source>Field missing: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="19409"/>
+        <location filename="../src/engine/rules.cpp" line="19425"/>
         <source>Constraint TeacherIntervalMaxDaysPerWeek max days corrupt for teacher %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="19529"/>
+        <location filename="../src/engine/rules.cpp" line="19545"/>
         <source>Constraint TeachersIntervalMaxDaysPerWeek max days corrupt, max days %1 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="19628"/>
+        <location filename="../src/engine/rules.cpp" line="19644"/>
         <source>Constraint StudentsSetMaxDaysPerWeek max days corrupt for students set %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="19672"/>
+        <location filename="../src/engine/rules.cpp" line="19688"/>
         <source>Constraint StudentsMaxDaysPerWeek max days corrupt, max days %1 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="19862"/>
+        <location filename="../src/engine/rules.cpp" line="19878"/>
         <source>Constraint StudentsIntervalMaxDaysPerWeek max days corrupt: max days %1 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="20267"/>
-        <location filename="../src/engine/rules.cpp" line="20422"/>
+        <location filename="../src/engine/rules.cpp" line="20283"/>
+        <location filename="../src/engine/rules.cpp" line="20438"/>
         <source>Found constraint min days between activities with tag consecutive if on the same day which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="20305"/>
-        <location filename="../src/engine/rules.cpp" line="20460"/>
-        <location filename="../src/engine/rules.cpp" line="20616"/>
+        <location filename="../src/engine/rules.cpp" line="20321"/>
+        <location filename="../src/engine/rules.cpp" line="20476"/>
+        <location filename="../src/engine/rules.cpp" line="20632"/>
         <source>Activity id %1 is a duplicate in this constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="20577"/>
+        <location filename="../src/engine/rules.cpp" line="20593"/>
         <source>Found constraint min half days between activities with tag consecutive if on the same day which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31031"/>
+        <location filename="../src/engine/rules.cpp" line="31047"/>
         <source>The number of maximum allowed activity tags in a constraint teacher max activity tags per day from set should be 1 or 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31043"/>
+        <location filename="../src/engine/rules.cpp" line="31059"/>
         <source>The number of activity tags in the constraint teacher max activity tags per day from set is lower than two</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31115"/>
+        <location filename="../src/engine/rules.cpp" line="31131"/>
         <source>The number of maximum allowed activity tags in a constraint teachers max activity tags per day from set should be 1 or 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31127"/>
+        <location filename="../src/engine/rules.cpp" line="31143"/>
         <source>The number of activity tags in the constraint teachers max activity tags per day from set is lower than two</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31204"/>
+        <location filename="../src/engine/rules.cpp" line="31220"/>
         <source>The number of maximum allowed activity tags in a constraint students set max activity tags per day from set should be 1 or 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31216"/>
+        <location filename="../src/engine/rules.cpp" line="31232"/>
         <source>The number of activity tags in the constraint students set max activity tags per day from set is lower than two</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31288"/>
+        <location filename="../src/engine/rules.cpp" line="31304"/>
         <source>The number of maximum allowed activity tags in a constraint students max activity tags per day from set should be 1 or 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31300"/>
+        <location filename="../src/engine/rules.cpp" line="31316"/>
         <source>The number of activity tags in the constraint students max activity tags per day from set is lower than two</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31377"/>
+        <location filename="../src/engine/rules.cpp" line="31393"/>
         <source>The number of maximum allowed activity tags in a constraint teacher max activity tags per real day from set should be 1 or 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31389"/>
+        <location filename="../src/engine/rules.cpp" line="31405"/>
         <source>The number of activity tags in the constraint teacher max activity tags per real day from set is lower than two</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31461"/>
+        <location filename="../src/engine/rules.cpp" line="31477"/>
         <source>The number of maximum allowed activity tags in a constraint teachers max activity tags per real day from set should be 1 or 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31473"/>
+        <location filename="../src/engine/rules.cpp" line="31489"/>
         <source>The number of activity tags in the constraint teachers max activity tags per real day from set is lower than two</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31550"/>
+        <location filename="../src/engine/rules.cpp" line="31566"/>
         <source>The number of maximum allowed activity tags in a constraint students set max activity tags per real day from set should be 1 or 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31562"/>
+        <location filename="../src/engine/rules.cpp" line="31578"/>
         <source>The number of activity tags in the constraint students set max activity tags per real day from set is lower than two</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31634"/>
+        <location filename="../src/engine/rules.cpp" line="31650"/>
         <source>The number of maximum allowed activity tags in a constraint students max activity tags per real day from set should be 1 or 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31646"/>
+        <location filename="../src/engine/rules.cpp" line="31662"/>
         <source>The number of activity tags in the constraint students max activity tags per real day from set is lower than two</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="41656"/>
-        <location filename="../src/engine/rules.cpp" line="41784"/>
-        <location filename="../src/engine/rules.cpp" line="41917"/>
-        <location filename="../src/engine/rules.cpp" line="42045"/>
-        <location filename="../src/engine/rules.cpp" line="42488"/>
-        <location filename="../src/engine/rules.cpp" line="42616"/>
-        <location filename="../src/engine/rules.cpp" line="42749"/>
-        <location filename="../src/engine/rules.cpp" line="42877"/>
+        <location filename="../src/engine/rules.cpp" line="41672"/>
+        <location filename="../src/engine/rules.cpp" line="41800"/>
+        <location filename="../src/engine/rules.cpp" line="41933"/>
+        <location filename="../src/engine/rules.cpp" line="42061"/>
+        <location filename="../src/engine/rules.cpp" line="42504"/>
+        <location filename="../src/engine/rules.cpp" line="42632"/>
+        <location filename="../src/engine/rules.cpp" line="42765"/>
+        <location filename="../src/engine/rules.cpp" line="42893"/>
         <source>&apos;Interval_Start_Day&apos; %1 is neither &apos;Morning&apos; nor &apos;Afternoon&apos;</source>
         <comment>Keep the quoted fields untranslated</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="41685"/>
-        <location filename="../src/engine/rules.cpp" line="41813"/>
-        <location filename="../src/engine/rules.cpp" line="41946"/>
-        <location filename="../src/engine/rules.cpp" line="42074"/>
-        <location filename="../src/engine/rules.cpp" line="42517"/>
-        <location filename="../src/engine/rules.cpp" line="42645"/>
-        <location filename="../src/engine/rules.cpp" line="42778"/>
-        <location filename="../src/engine/rules.cpp" line="42906"/>
+        <location filename="../src/engine/rules.cpp" line="41701"/>
+        <location filename="../src/engine/rules.cpp" line="41829"/>
+        <location filename="../src/engine/rules.cpp" line="41962"/>
+        <location filename="../src/engine/rules.cpp" line="42090"/>
+        <location filename="../src/engine/rules.cpp" line="42533"/>
+        <location filename="../src/engine/rules.cpp" line="42661"/>
+        <location filename="../src/engine/rules.cpp" line="42794"/>
+        <location filename="../src/engine/rules.cpp" line="42922"/>
         <source>&apos;Interval_End_Day&apos; %1 is neither &apos;Morning&apos; nor &apos;Afternoon&apos;</source>
         <comment>Keep the quoted fields untranslated</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="41721"/>
-        <location filename="../src/engine/rules.cpp" line="41849"/>
-        <location filename="../src/engine/rules.cpp" line="41982"/>
-        <location filename="../src/engine/rules.cpp" line="42110"/>
-        <location filename="../src/engine/rules.cpp" line="42553"/>
-        <location filename="../src/engine/rules.cpp" line="42681"/>
-        <location filename="../src/engine/rules.cpp" line="42814"/>
-        <location filename="../src/engine/rules.cpp" line="42942"/>
+        <location filename="../src/engine/rules.cpp" line="41737"/>
+        <location filename="../src/engine/rules.cpp" line="41865"/>
+        <location filename="../src/engine/rules.cpp" line="41998"/>
+        <location filename="../src/engine/rules.cpp" line="42126"/>
+        <location filename="../src/engine/rules.cpp" line="42569"/>
+        <location filename="../src/engine/rules.cpp" line="42697"/>
+        <location filename="../src/engine/rules.cpp" line="42830"/>
+        <location filename="../src/engine/rules.cpp" line="42958"/>
         <source>Tag &apos;Interval_Start_Day&apos; not met</source>
         <comment>Keep the quoted field untranslated</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="41731"/>
-        <location filename="../src/engine/rules.cpp" line="41859"/>
-        <location filename="../src/engine/rules.cpp" line="41992"/>
-        <location filename="../src/engine/rules.cpp" line="42120"/>
-        <location filename="../src/engine/rules.cpp" line="42563"/>
-        <location filename="../src/engine/rules.cpp" line="42691"/>
-        <location filename="../src/engine/rules.cpp" line="42824"/>
-        <location filename="../src/engine/rules.cpp" line="42952"/>
+        <location filename="../src/engine/rules.cpp" line="41747"/>
+        <location filename="../src/engine/rules.cpp" line="41875"/>
+        <location filename="../src/engine/rules.cpp" line="42008"/>
+        <location filename="../src/engine/rules.cpp" line="42136"/>
+        <location filename="../src/engine/rules.cpp" line="42579"/>
+        <location filename="../src/engine/rules.cpp" line="42707"/>
+        <location filename="../src/engine/rules.cpp" line="42840"/>
+        <location filename="../src/engine/rules.cpp" line="42968"/>
         <source>Tag &apos;Interval_End_Day&apos; not met</source>
         <comment>Keep the quoted field untranslated</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="42993"/>
+        <location filename="../src/engine/rules.cpp" line="43009"/>
         <source>The number of maximum allowed activity tags in a constraint room max activity tags per day from set should be 1 or 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="43082"/>
+        <location filename="../src/engine/rules.cpp" line="43098"/>
         <source>The number of maximum allowed activity tags in a constraint room max activity tags per real day from set should be 1 or 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="43171"/>
+        <location filename="../src/engine/rules.cpp" line="43187"/>
         <source>The number of maximum allowed activity tags in a constraint room max activity tags per week from set should be 1 or 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="43183"/>
+        <location filename="../src/engine/rules.cpp" line="43199"/>
         <source>The number of activity tags in the constraint room max activity tags per week from set is lower than two</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="43193"/>
+        <location filename="../src/engine/rules.cpp" line="43209"/>
         <source>Duplicate activity tag %1 found in the constraint room max activity tags per week from set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="43005"/>
+        <location filename="../src/engine/rules.cpp" line="43021"/>
         <source>The number of activity tags in the constraint room max activity tags per day from set is lower than two</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="43015"/>
+        <location filename="../src/engine/rules.cpp" line="43031"/>
         <source>Duplicate activity tag %1 found in the constraint room max activity tags per day from set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="43094"/>
+        <location filename="../src/engine/rules.cpp" line="43110"/>
         <source>The number of activity tags in the constraint room max activity tags per real day from set is lower than two</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="43104"/>
+        <location filename="../src/engine/rules.cpp" line="43120"/>
         <source>Duplicate activity tag %1 found in the constraint room max activity tags per real day from set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="19742"/>
+        <location filename="../src/engine/rules.cpp" line="19758"/>
         <source>Constraint StudentsSetIntervalMaxDaysPerWeek max days corrupt for students set %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6200"/>
+        <location filename="../src/engine/rules.cpp" line="6207"/>
         <source>All &apos;group activities in the initial order for timetable generation&apos; items should have different activities ids. (Each activity id must appear at most once in all the items.) This is not true for item number %1 and activity id %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15873"/>
+        <location filename="../src/engine/rules.cpp" line="15889"/>
         <source>File contains deprecated equipments list - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="21173"/>
+        <location filename="../src/engine/rules.cpp" line="21189"/>
         <source>The number of activity tags in the constraint activity tags not overlapping is lower than two</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="21183"/>
+        <location filename="../src/engine/rules.cpp" line="21199"/>
         <source>Duplicate activity tag %1 found in constraint activity tags not overlapping</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="22040"/>
-        <location filename="../src/engine/rules.cpp" line="35048"/>
+        <location filename="../src/engine/rules.cpp" line="22056"/>
+        <location filename="../src/engine/rules.cpp" line="35064"/>
         <source>Found constraint teachers min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="22126"/>
-        <location filename="../src/engine/rules.cpp" line="35134"/>
+        <location filename="../src/engine/rules.cpp" line="22142"/>
+        <location filename="../src/engine/rules.cpp" line="35150"/>
         <source>Found constraint teacher min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13955"/>
-        <location filename="../src/engine/rules.cpp" line="14081"/>
-        <location filename="../src/engine/rules.cpp" line="14207"/>
-        <location filename="../src/engine/rules.cpp" line="14374"/>
-        <location filename="../src/engine/rules.cpp" line="22209"/>
-        <location filename="../src/engine/rules.cpp" line="22284"/>
-        <location filename="../src/engine/rules.cpp" line="22354"/>
-        <location filename="../src/engine/rules.cpp" line="22429"/>
-        <location filename="../src/engine/rules.cpp" line="22490"/>
-        <location filename="../src/engine/rules.cpp" line="22546"/>
-        <location filename="../src/engine/rules.cpp" line="22607"/>
-        <location filename="../src/engine/rules.cpp" line="22663"/>
-        <location filename="../src/engine/rules.cpp" line="22731"/>
-        <location filename="../src/engine/rules.cpp" line="22794"/>
-        <location filename="../src/engine/rules.cpp" line="22884"/>
-        <location filename="../src/engine/rules.cpp" line="22979"/>
-        <location filename="../src/engine/rules.cpp" line="23045"/>
-        <location filename="../src/engine/rules.cpp" line="23106"/>
-        <location filename="../src/engine/rules.cpp" line="23172"/>
-        <location filename="../src/engine/rules.cpp" line="23233"/>
-        <location filename="../src/engine/rules.cpp" line="23294"/>
-        <location filename="../src/engine/rules.cpp" line="23350"/>
-        <location filename="../src/engine/rules.cpp" line="23411"/>
-        <location filename="../src/engine/rules.cpp" line="23467"/>
-        <location filename="../src/engine/rules.cpp" line="23533"/>
-        <location filename="../src/engine/rules.cpp" line="23594"/>
-        <location filename="../src/engine/rules.cpp" line="23660"/>
-        <location filename="../src/engine/rules.cpp" line="23721"/>
-        <location filename="../src/engine/rules.cpp" line="23782"/>
-        <location filename="../src/engine/rules.cpp" line="23838"/>
-        <location filename="../src/engine/rules.cpp" line="23899"/>
-        <location filename="../src/engine/rules.cpp" line="23955"/>
-        <location filename="../src/engine/rules.cpp" line="24021"/>
-        <location filename="../src/engine/rules.cpp" line="24082"/>
-        <location filename="../src/engine/rules.cpp" line="24148"/>
-        <location filename="../src/engine/rules.cpp" line="24209"/>
-        <location filename="../src/engine/rules.cpp" line="24270"/>
-        <location filename="../src/engine/rules.cpp" line="24326"/>
-        <location filename="../src/engine/rules.cpp" line="24387"/>
-        <location filename="../src/engine/rules.cpp" line="24443"/>
-        <location filename="../src/engine/rules.cpp" line="27707"/>
-        <location filename="../src/engine/rules.cpp" line="27841"/>
-        <location filename="../src/engine/rules.cpp" line="35217"/>
-        <location filename="../src/engine/rules.cpp" line="35287"/>
-        <location filename="../src/engine/rules.cpp" line="35362"/>
-        <location filename="../src/engine/rules.cpp" line="35437"/>
-        <location filename="../src/engine/rules.cpp" line="35498"/>
-        <location filename="../src/engine/rules.cpp" line="35559"/>
-        <location filename="../src/engine/rules.cpp" line="35615"/>
-        <location filename="../src/engine/rules.cpp" line="35671"/>
-        <location filename="../src/engine/rules.cpp" line="35761"/>
-        <location filename="../src/engine/rules.cpp" line="35856"/>
-        <location filename="../src/engine/rules.cpp" line="35927"/>
-        <location filename="../src/engine/rules.cpp" line="36003"/>
-        <location filename="../src/engine/rules.cpp" line="36445"/>
-        <location filename="../src/engine/rules.cpp" line="36520"/>
-        <location filename="../src/engine/rules.cpp" line="36591"/>
-        <location filename="../src/engine/rules.cpp" line="36666"/>
-        <location filename="../src/engine/rules.cpp" line="36737"/>
-        <location filename="../src/engine/rules.cpp" line="36812"/>
-        <location filename="../src/engine/rules.cpp" line="36883"/>
-        <location filename="../src/engine/rules.cpp" line="36958"/>
-        <location filename="../src/engine/rules.cpp" line="37789"/>
-        <location filename="../src/engine/rules.cpp" line="37850"/>
-        <location filename="../src/engine/rules.cpp" line="37917"/>
-        <location filename="../src/engine/rules.cpp" line="37978"/>
+        <location filename="../src/engine/rules.cpp" line="13962"/>
+        <location filename="../src/engine/rules.cpp" line="14088"/>
+        <location filename="../src/engine/rules.cpp" line="14214"/>
+        <location filename="../src/engine/rules.cpp" line="14381"/>
+        <location filename="../src/engine/rules.cpp" line="22225"/>
+        <location filename="../src/engine/rules.cpp" line="22300"/>
+        <location filename="../src/engine/rules.cpp" line="22370"/>
+        <location filename="../src/engine/rules.cpp" line="22445"/>
+        <location filename="../src/engine/rules.cpp" line="22506"/>
+        <location filename="../src/engine/rules.cpp" line="22562"/>
+        <location filename="../src/engine/rules.cpp" line="22623"/>
+        <location filename="../src/engine/rules.cpp" line="22679"/>
+        <location filename="../src/engine/rules.cpp" line="22747"/>
+        <location filename="../src/engine/rules.cpp" line="22810"/>
+        <location filename="../src/engine/rules.cpp" line="22900"/>
+        <location filename="../src/engine/rules.cpp" line="22995"/>
+        <location filename="../src/engine/rules.cpp" line="23061"/>
+        <location filename="../src/engine/rules.cpp" line="23122"/>
+        <location filename="../src/engine/rules.cpp" line="23188"/>
+        <location filename="../src/engine/rules.cpp" line="23249"/>
+        <location filename="../src/engine/rules.cpp" line="23310"/>
+        <location filename="../src/engine/rules.cpp" line="23366"/>
+        <location filename="../src/engine/rules.cpp" line="23427"/>
+        <location filename="../src/engine/rules.cpp" line="23483"/>
+        <location filename="../src/engine/rules.cpp" line="23549"/>
+        <location filename="../src/engine/rules.cpp" line="23610"/>
+        <location filename="../src/engine/rules.cpp" line="23676"/>
+        <location filename="../src/engine/rules.cpp" line="23737"/>
+        <location filename="../src/engine/rules.cpp" line="23798"/>
+        <location filename="../src/engine/rules.cpp" line="23854"/>
+        <location filename="../src/engine/rules.cpp" line="23915"/>
+        <location filename="../src/engine/rules.cpp" line="23971"/>
+        <location filename="../src/engine/rules.cpp" line="24037"/>
+        <location filename="../src/engine/rules.cpp" line="24098"/>
+        <location filename="../src/engine/rules.cpp" line="24164"/>
+        <location filename="../src/engine/rules.cpp" line="24225"/>
+        <location filename="../src/engine/rules.cpp" line="24286"/>
+        <location filename="../src/engine/rules.cpp" line="24342"/>
+        <location filename="../src/engine/rules.cpp" line="24403"/>
+        <location filename="../src/engine/rules.cpp" line="24459"/>
+        <location filename="../src/engine/rules.cpp" line="27723"/>
+        <location filename="../src/engine/rules.cpp" line="27857"/>
+        <location filename="../src/engine/rules.cpp" line="35233"/>
+        <location filename="../src/engine/rules.cpp" line="35303"/>
+        <location filename="../src/engine/rules.cpp" line="35378"/>
+        <location filename="../src/engine/rules.cpp" line="35453"/>
+        <location filename="../src/engine/rules.cpp" line="35514"/>
+        <location filename="../src/engine/rules.cpp" line="35575"/>
+        <location filename="../src/engine/rules.cpp" line="35631"/>
+        <location filename="../src/engine/rules.cpp" line="35687"/>
+        <location filename="../src/engine/rules.cpp" line="35777"/>
+        <location filename="../src/engine/rules.cpp" line="35872"/>
+        <location filename="../src/engine/rules.cpp" line="35943"/>
+        <location filename="../src/engine/rules.cpp" line="36019"/>
+        <location filename="../src/engine/rules.cpp" line="36461"/>
+        <location filename="../src/engine/rules.cpp" line="36536"/>
+        <location filename="../src/engine/rules.cpp" line="36607"/>
+        <location filename="../src/engine/rules.cpp" line="36682"/>
+        <location filename="../src/engine/rules.cpp" line="36753"/>
+        <location filename="../src/engine/rules.cpp" line="36828"/>
+        <location filename="../src/engine/rules.cpp" line="36899"/>
+        <location filename="../src/engine/rules.cpp" line="36974"/>
+        <location filename="../src/engine/rules.cpp" line="37805"/>
+        <location filename="../src/engine/rules.cpp" line="37866"/>
+        <location filename="../src/engine/rules.cpp" line="37933"/>
+        <location filename="../src/engine/rules.cpp" line="37994"/>
         <source>%1 not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5293"/>
+        <location filename="../src/engine/rules.cpp" line="5297"/>
         <source>If the problem is caused by the history file saved on the disk, you might want to exit FET, remove the corresponding history file ending in &apos;%1&apos;, open FET again, and open your .fet data file again. Or just ignore the problem, until the history will be replaced with new, valid entries.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14701"/>
+        <location filename="../src/engine/rules.cpp" line="14708"/>
         <source>The teacher %1 has attached an nonexistent qualified subject %2. Please note that starting with FET version %3 the list of subjects (tag &lt;Subjects_List&gt; in the .fet XML file) must appear before the list of teachers (tag &lt;Teachers_List&gt; in the .fet XML file)</source>
         <comment>%3 is the FET version number. Please keep &lt;Subjects_List&gt; and &lt;Teachers_List&gt; untranslated, as in the original English string</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14783"/>
+        <location filename="../src/engine/rules.cpp" line="14790"/>
         <source>You are opening an old Morocco file. All the teachers will have mornings-afternoons behavior &apos;Exclusive mornings/afternoons&apos; by default, and the exceptions will be recognized correctly. If this is a mistake and your file is not an old Morocco file, please report the bug.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18173"/>
+        <location filename="../src/engine/rules.cpp" line="18189"/>
         <source>There are %1 unrecognized XML tags in your input file. They are written below. Your file will be opened, but these tags will be ignored and they probably represent mistakes in your input file:</source>
         <comment>You can assume that %1 is at least 2</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18179"/>
+        <location filename="../src/engine/rules.cpp" line="18195"/>
         <source>There is an unrecognized XML tag in your input file. It is written below. Your file will be opened, but this tag will be ignored and it probably represents a mistake in your input file:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18466"/>
+        <location filename="../src/engine/rules.cpp" line="18482"/>
         <source>Saving the data file gave the error message &apos;%1&apos;, which means the saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18853"/>
-        <location filename="../src/engine/rules.cpp" line="19036"/>
-        <location filename="../src/engine/rules.cpp" line="19968"/>
-        <location filename="../src/engine/rules.cpp" line="20144"/>
-        <location filename="../src/engine/rules.cpp" line="24527"/>
-        <location filename="../src/engine/rules.cpp" line="24709"/>
-        <location filename="../src/engine/rules.cpp" line="24898"/>
-        <location filename="../src/engine/rules.cpp" line="26162"/>
-        <location filename="../src/engine/rules.cpp" line="26308"/>
-        <location filename="../src/engine/rules.cpp" line="26455"/>
-        <location filename="../src/engine/rules.cpp" line="26569"/>
-        <location filename="../src/engine/rules.cpp" line="26735"/>
-        <location filename="../src/engine/rules.cpp" line="27967"/>
-        <location filename="../src/engine/rules.cpp" line="28176"/>
-        <location filename="../src/engine/rules.cpp" line="28385"/>
-        <location filename="../src/engine/rules.cpp" line="28601"/>
-        <location filename="../src/engine/rules.cpp" line="28816"/>
-        <location filename="../src/engine/rules.cpp" line="28956"/>
-        <location filename="../src/engine/rules.cpp" line="29104"/>
-        <location filename="../src/engine/rules.cpp" line="29252"/>
-        <location filename="../src/engine/rules.cpp" line="29274"/>
-        <location filename="../src/engine/rules.cpp" line="29402"/>
-        <location filename="../src/engine/rules.cpp" line="29424"/>
-        <location filename="../src/engine/rules.cpp" line="29557"/>
-        <location filename="../src/engine/rules.cpp" line="29579"/>
-        <location filename="../src/engine/rules.cpp" line="38403"/>
-        <location filename="../src/engine/rules.cpp" line="38579"/>
-        <location filename="../src/engine/rules.cpp" line="38705"/>
+        <location filename="../src/engine/rules.cpp" line="18869"/>
+        <location filename="../src/engine/rules.cpp" line="19052"/>
+        <location filename="../src/engine/rules.cpp" line="19984"/>
+        <location filename="../src/engine/rules.cpp" line="20160"/>
+        <location filename="../src/engine/rules.cpp" line="24543"/>
+        <location filename="../src/engine/rules.cpp" line="24725"/>
+        <location filename="../src/engine/rules.cpp" line="24914"/>
+        <location filename="../src/engine/rules.cpp" line="26178"/>
+        <location filename="../src/engine/rules.cpp" line="26324"/>
+        <location filename="../src/engine/rules.cpp" line="26471"/>
+        <location filename="../src/engine/rules.cpp" line="26585"/>
+        <location filename="../src/engine/rules.cpp" line="26751"/>
+        <location filename="../src/engine/rules.cpp" line="27983"/>
+        <location filename="../src/engine/rules.cpp" line="28192"/>
+        <location filename="../src/engine/rules.cpp" line="28401"/>
+        <location filename="../src/engine/rules.cpp" line="28617"/>
+        <location filename="../src/engine/rules.cpp" line="28832"/>
+        <location filename="../src/engine/rules.cpp" line="28972"/>
+        <location filename="../src/engine/rules.cpp" line="29120"/>
+        <location filename="../src/engine/rules.cpp" line="29268"/>
+        <location filename="../src/engine/rules.cpp" line="29290"/>
+        <location filename="../src/engine/rules.cpp" line="29418"/>
+        <location filename="../src/engine/rules.cpp" line="29440"/>
+        <location filename="../src/engine/rules.cpp" line="29573"/>
+        <location filename="../src/engine/rules.cpp" line="29595"/>
+        <location filename="../src/engine/rules.cpp" line="38419"/>
+        <location filename="../src/engine/rules.cpp" line="38595"/>
+        <location filename="../src/engine/rules.cpp" line="38721"/>
         <source>Day %1 is nonexistent</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18876"/>
-        <location filename="../src/engine/rules.cpp" line="18899"/>
-        <location filename="../src/engine/rules.cpp" line="19057"/>
-        <location filename="../src/engine/rules.cpp" line="19425"/>
-        <location filename="../src/engine/rules.cpp" line="19545"/>
-        <location filename="../src/engine/rules.cpp" line="19758"/>
-        <location filename="../src/engine/rules.cpp" line="19877"/>
-        <location filename="../src/engine/rules.cpp" line="19990"/>
-        <location filename="../src/engine/rules.cpp" line="20012"/>
-        <location filename="../src/engine/rules.cpp" line="20165"/>
-        <location filename="../src/engine/rules.cpp" line="24546"/>
-        <location filename="../src/engine/rules.cpp" line="24728"/>
-        <location filename="../src/engine/rules.cpp" line="26185"/>
-        <location filename="../src/engine/rules.cpp" line="26331"/>
-        <location filename="../src/engine/rules.cpp" line="26478"/>
-        <location filename="../src/engine/rules.cpp" line="26590"/>
-        <location filename="../src/engine/rules.cpp" line="26611"/>
-        <location filename="../src/engine/rules.cpp" line="26755"/>
-        <location filename="../src/engine/rules.cpp" line="27993"/>
-        <location filename="../src/engine/rules.cpp" line="28202"/>
-        <location filename="../src/engine/rules.cpp" line="28411"/>
-        <location filename="../src/engine/rules.cpp" line="28627"/>
-        <location filename="../src/engine/rules.cpp" line="28842"/>
-        <location filename="../src/engine/rules.cpp" line="28978"/>
-        <location filename="../src/engine/rules.cpp" line="29126"/>
-        <location filename="../src/engine/rules.cpp" line="32469"/>
-        <location filename="../src/engine/rules.cpp" line="32589"/>
-        <location filename="../src/engine/rules.cpp" line="32716"/>
-        <location filename="../src/engine/rules.cpp" line="32836"/>
-        <location filename="../src/engine/rules.cpp" line="33517"/>
-        <location filename="../src/engine/rules.cpp" line="33636"/>
-        <location filename="../src/engine/rules.cpp" line="33757"/>
-        <location filename="../src/engine/rules.cpp" line="33876"/>
-        <location filename="../src/engine/rules.cpp" line="38026"/>
-        <location filename="../src/engine/rules.cpp" line="38101"/>
-        <location filename="../src/engine/rules.cpp" line="38186"/>
-        <location filename="../src/engine/rules.cpp" line="38261"/>
-        <location filename="../src/engine/rules.cpp" line="38425"/>
-        <location filename="../src/engine/rules.cpp" line="38447"/>
-        <location filename="../src/engine/rules.cpp" line="38600"/>
-        <location filename="../src/engine/rules.cpp" line="38726"/>
-        <location filename="../src/engine/rules.cpp" line="41339"/>
-        <location filename="../src/engine/rules.cpp" line="41414"/>
-        <location filename="../src/engine/rules.cpp" line="41494"/>
-        <location filename="../src/engine/rules.cpp" line="41569"/>
-        <location filename="../src/engine/rules.cpp" line="41667"/>
-        <location filename="../src/engine/rules.cpp" line="41795"/>
-        <location filename="../src/engine/rules.cpp" line="41928"/>
-        <location filename="../src/engine/rules.cpp" line="42056"/>
-        <location filename="../src/engine/rules.cpp" line="42171"/>
-        <location filename="../src/engine/rules.cpp" line="42246"/>
-        <location filename="../src/engine/rules.cpp" line="42326"/>
-        <location filename="../src/engine/rules.cpp" line="42401"/>
-        <location filename="../src/engine/rules.cpp" line="42499"/>
-        <location filename="../src/engine/rules.cpp" line="42627"/>
-        <location filename="../src/engine/rules.cpp" line="42760"/>
-        <location filename="../src/engine/rules.cpp" line="42888"/>
+        <location filename="../src/engine/rules.cpp" line="18892"/>
+        <location filename="../src/engine/rules.cpp" line="18915"/>
+        <location filename="../src/engine/rules.cpp" line="19073"/>
+        <location filename="../src/engine/rules.cpp" line="19441"/>
+        <location filename="../src/engine/rules.cpp" line="19561"/>
+        <location filename="../src/engine/rules.cpp" line="19774"/>
+        <location filename="../src/engine/rules.cpp" line="19893"/>
+        <location filename="../src/engine/rules.cpp" line="20006"/>
+        <location filename="../src/engine/rules.cpp" line="20028"/>
+        <location filename="../src/engine/rules.cpp" line="20181"/>
+        <location filename="../src/engine/rules.cpp" line="24562"/>
+        <location filename="../src/engine/rules.cpp" line="24744"/>
+        <location filename="../src/engine/rules.cpp" line="26201"/>
+        <location filename="../src/engine/rules.cpp" line="26347"/>
+        <location filename="../src/engine/rules.cpp" line="26494"/>
+        <location filename="../src/engine/rules.cpp" line="26606"/>
+        <location filename="../src/engine/rules.cpp" line="26627"/>
+        <location filename="../src/engine/rules.cpp" line="26771"/>
+        <location filename="../src/engine/rules.cpp" line="28009"/>
+        <location filename="../src/engine/rules.cpp" line="28218"/>
+        <location filename="../src/engine/rules.cpp" line="28427"/>
+        <location filename="../src/engine/rules.cpp" line="28643"/>
+        <location filename="../src/engine/rules.cpp" line="28858"/>
+        <location filename="../src/engine/rules.cpp" line="28994"/>
+        <location filename="../src/engine/rules.cpp" line="29142"/>
+        <location filename="../src/engine/rules.cpp" line="32485"/>
+        <location filename="../src/engine/rules.cpp" line="32605"/>
+        <location filename="../src/engine/rules.cpp" line="32732"/>
+        <location filename="../src/engine/rules.cpp" line="32852"/>
+        <location filename="../src/engine/rules.cpp" line="33533"/>
+        <location filename="../src/engine/rules.cpp" line="33652"/>
+        <location filename="../src/engine/rules.cpp" line="33773"/>
+        <location filename="../src/engine/rules.cpp" line="33892"/>
+        <location filename="../src/engine/rules.cpp" line="38042"/>
+        <location filename="../src/engine/rules.cpp" line="38117"/>
+        <location filename="../src/engine/rules.cpp" line="38202"/>
+        <location filename="../src/engine/rules.cpp" line="38277"/>
+        <location filename="../src/engine/rules.cpp" line="38441"/>
+        <location filename="../src/engine/rules.cpp" line="38463"/>
+        <location filename="../src/engine/rules.cpp" line="38616"/>
+        <location filename="../src/engine/rules.cpp" line="38742"/>
+        <location filename="../src/engine/rules.cpp" line="41355"/>
+        <location filename="../src/engine/rules.cpp" line="41430"/>
+        <location filename="../src/engine/rules.cpp" line="41510"/>
+        <location filename="../src/engine/rules.cpp" line="41585"/>
+        <location filename="../src/engine/rules.cpp" line="41683"/>
+        <location filename="../src/engine/rules.cpp" line="41811"/>
+        <location filename="../src/engine/rules.cpp" line="41944"/>
+        <location filename="../src/engine/rules.cpp" line="42072"/>
+        <location filename="../src/engine/rules.cpp" line="42187"/>
+        <location filename="../src/engine/rules.cpp" line="42262"/>
+        <location filename="../src/engine/rules.cpp" line="42342"/>
+        <location filename="../src/engine/rules.cpp" line="42417"/>
+        <location filename="../src/engine/rules.cpp" line="42515"/>
+        <location filename="../src/engine/rules.cpp" line="42643"/>
+        <location filename="../src/engine/rules.cpp" line="42776"/>
+        <location filename="../src/engine/rules.cpp" line="42904"/>
         <source>Hour %1 is nonexistent</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="19450"/>
-        <location filename="../src/engine/rules.cpp" line="19570"/>
-        <location filename="../src/engine/rules.cpp" line="19783"/>
-        <location filename="../src/engine/rules.cpp" line="19902"/>
-        <location filename="../src/engine/rules.cpp" line="32494"/>
-        <location filename="../src/engine/rules.cpp" line="32614"/>
-        <location filename="../src/engine/rules.cpp" line="32741"/>
-        <location filename="../src/engine/rules.cpp" line="32861"/>
-        <location filename="../src/engine/rules.cpp" line="33542"/>
-        <location filename="../src/engine/rules.cpp" line="33661"/>
-        <location filename="../src/engine/rules.cpp" line="33782"/>
-        <location filename="../src/engine/rules.cpp" line="33901"/>
-        <location filename="../src/engine/rules.cpp" line="38045"/>
-        <location filename="../src/engine/rules.cpp" line="38120"/>
-        <location filename="../src/engine/rules.cpp" line="38205"/>
-        <location filename="../src/engine/rules.cpp" line="38280"/>
-        <location filename="../src/engine/rules.cpp" line="41358"/>
-        <location filename="../src/engine/rules.cpp" line="41433"/>
-        <location filename="../src/engine/rules.cpp" line="41513"/>
-        <location filename="../src/engine/rules.cpp" line="41588"/>
-        <location filename="../src/engine/rules.cpp" line="41701"/>
-        <location filename="../src/engine/rules.cpp" line="41829"/>
-        <location filename="../src/engine/rules.cpp" line="41962"/>
-        <location filename="../src/engine/rules.cpp" line="42090"/>
-        <location filename="../src/engine/rules.cpp" line="42190"/>
-        <location filename="../src/engine/rules.cpp" line="42265"/>
-        <location filename="../src/engine/rules.cpp" line="42345"/>
-        <location filename="../src/engine/rules.cpp" line="42420"/>
-        <location filename="../src/engine/rules.cpp" line="42533"/>
-        <location filename="../src/engine/rules.cpp" line="42661"/>
-        <location filename="../src/engine/rules.cpp" line="42794"/>
-        <location filename="../src/engine/rules.cpp" line="42922"/>
+        <location filename="../src/engine/rules.cpp" line="19466"/>
+        <location filename="../src/engine/rules.cpp" line="19586"/>
+        <location filename="../src/engine/rules.cpp" line="19799"/>
+        <location filename="../src/engine/rules.cpp" line="19918"/>
+        <location filename="../src/engine/rules.cpp" line="32510"/>
+        <location filename="../src/engine/rules.cpp" line="32630"/>
+        <location filename="../src/engine/rules.cpp" line="32757"/>
+        <location filename="../src/engine/rules.cpp" line="32877"/>
+        <location filename="../src/engine/rules.cpp" line="33558"/>
+        <location filename="../src/engine/rules.cpp" line="33677"/>
+        <location filename="../src/engine/rules.cpp" line="33798"/>
+        <location filename="../src/engine/rules.cpp" line="33917"/>
+        <location filename="../src/engine/rules.cpp" line="38061"/>
+        <location filename="../src/engine/rules.cpp" line="38136"/>
+        <location filename="../src/engine/rules.cpp" line="38221"/>
+        <location filename="../src/engine/rules.cpp" line="38296"/>
+        <location filename="../src/engine/rules.cpp" line="41374"/>
+        <location filename="../src/engine/rules.cpp" line="41449"/>
+        <location filename="../src/engine/rules.cpp" line="41529"/>
+        <location filename="../src/engine/rules.cpp" line="41604"/>
+        <location filename="../src/engine/rules.cpp" line="41717"/>
+        <location filename="../src/engine/rules.cpp" line="41845"/>
+        <location filename="../src/engine/rules.cpp" line="41978"/>
+        <location filename="../src/engine/rules.cpp" line="42106"/>
+        <location filename="../src/engine/rules.cpp" line="42206"/>
+        <location filename="../src/engine/rules.cpp" line="42281"/>
+        <location filename="../src/engine/rules.cpp" line="42361"/>
+        <location filename="../src/engine/rules.cpp" line="42436"/>
+        <location filename="../src/engine/rules.cpp" line="42549"/>
+        <location filename="../src/engine/rules.cpp" line="42677"/>
+        <location filename="../src/engine/rules.cpp" line="42810"/>
+        <location filename="../src/engine/rules.cpp" line="42938"/>
         <source>Hour %1 is nonexistent (it is also not void, to specify end of the day)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="22864"/>
+        <location filename="../src/engine/rules.cpp" line="22880"/>
         <source>Found constraint students min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="22959"/>
+        <location filename="../src/engine/rules.cpp" line="22975"/>
         <source>Found constraint students set min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="24505"/>
-        <location filename="../src/engine/rules.cpp" line="24687"/>
+        <location filename="../src/engine/rules.cpp" line="24521"/>
+        <location filename="../src/engine/rules.cpp" line="24703"/>
         <source>Found constraint activity preferred starting time with tag permanently locked which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="24572"/>
-        <location filename="../src/engine/rules.cpp" line="24754"/>
+        <location filename="../src/engine/rules.cpp" line="24588"/>
+        <location filename="../src/engine/rules.cpp" line="24770"/>
         <source>Found constraint activity preferred starting time, with unspecified tag &apos;permanently locked&apos; - this tag will be set to &apos;false&apos; by default. You can always modify it by editing the constraint in the &apos;Data&apos; menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="24575"/>
-        <location filename="../src/engine/rules.cpp" line="24757"/>
+        <location filename="../src/engine/rules.cpp" line="24591"/>
+        <location filename="../src/engine/rules.cpp" line="24773"/>
         <source>Explanation: starting with version 5.8.0 (January 2009), the constraint activity preferred starting time has a new tag, &apos;permanently locked&apos; (true or false). It is recommended to make the tag &apos;permanently locked&apos; true for the constraints you need to be not modifiable from the &apos;Timetable&apos; menu and leave this tag false for the constraints you need to be modifiable from the &apos;Timetable&apos; menu (the &apos;permanently locked&apos; tag can be modified by editing the constraint from the &apos;Data&apos; menu). This way, when viewing the timetable and locking/unlocking some activities, you will not unlock the constraints which need to be locked all the time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="24594"/>
-        <location filename="../src/engine/rules.cpp" line="24776"/>
+        <location filename="../src/engine/rules.cpp" line="24610"/>
+        <location filename="../src/engine/rules.cpp" line="24792"/>
         <source>Found constraint activity preferred starting time, with unspecified day or hour. This constraint will be transformed into constraint activity preferred starting times (a set of times, not only one). This change is done in FET versions 5.8.1 and higher.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="24885"/>
+        <location filename="../src/engine/rules.cpp" line="24901"/>
         <source>It is not allowed to have more than one constraint of type activity preferred day for an activity; this condition is not respected for the activity id %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15813"/>
-        <location filename="../src/engine/rules.cpp" line="25969"/>
-        <location filename="../src/engine/rules.cpp" line="26006"/>
+        <location filename="../src/engine/rules.cpp" line="15829"/>
+        <location filename="../src/engine/rules.cpp" line="25985"/>
+        <location filename="../src/engine/rules.cpp" line="26022"/>
         <source>Field %1 not met</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15073"/>
+        <location filename="../src/engine/rules.cpp" line="15081"/>
         <source>The field &apos;%1&apos; is met more than once in the students year&apos;s description.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15226"/>
+        <location filename="../src/engine/rules.cpp" line="15242"/>
         <source>The field &apos;%1&apos; is met more than once in the students group&apos;s description.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15355"/>
+        <location filename="../src/engine/rules.cpp" line="15371"/>
         <source>The field &apos;%1&apos; is met more than once in the students subgroup&apos;s description.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="25975"/>
-        <location filename="../src/engine/rules.cpp" line="26012"/>
+        <location filename="../src/engine/rules.cpp" line="25991"/>
+        <location filename="../src/engine/rules.cpp" line="26028"/>
         <source>The value in field %1 is not equal with the number of read %2 fields</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31053"/>
+        <location filename="../src/engine/rules.cpp" line="31069"/>
         <source>Duplicate activity tag %1 found in the constraint teacher max activity tags per day from set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31137"/>
+        <location filename="../src/engine/rules.cpp" line="31153"/>
         <source>Duplicate activity tag %1 found in the constraint teachers max activity tags per day from set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31226"/>
+        <location filename="../src/engine/rules.cpp" line="31242"/>
         <source>Duplicate activity tag %1 found in the constraint students set max activity tags per day from set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31310"/>
+        <location filename="../src/engine/rules.cpp" line="31326"/>
         <source>Duplicate activity tag %1 found in the constraint students max activity tags per day from set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31399"/>
+        <location filename="../src/engine/rules.cpp" line="31415"/>
         <source>Duplicate activity tag %1 found in the constraint teacher max activity tags per real day from set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31483"/>
+        <location filename="../src/engine/rules.cpp" line="31499"/>
         <source>Duplicate activity tag %1 found in the constraint teachers max activity tags per real day from set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31572"/>
+        <location filename="../src/engine/rules.cpp" line="31588"/>
         <source>Duplicate activity tag %1 found in the constraint students set max activity tags per real day from set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31656"/>
+        <location filename="../src/engine/rules.cpp" line="31672"/>
         <source>Duplicate activity tag %1 found in the constraint students max activity tags per real day from set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="32453"/>
+        <location filename="../src/engine/rules.cpp" line="32469"/>
         <source>Constraint TeacherMorningIntervalMaxDaysPerWeek max days corrupt for teacher %1, max days %2 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="32573"/>
+        <location filename="../src/engine/rules.cpp" line="32589"/>
         <source>Constraint TeachersMorningIntervalMaxDaysPerWeek max days corrupt, max days %1 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="32700"/>
+        <location filename="../src/engine/rules.cpp" line="32716"/>
         <source>Constraint TeacherAfternoonIntervalMaxDaysPerWeek max days corrupt for teacher %1, max days %2 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="32820"/>
+        <location filename="../src/engine/rules.cpp" line="32836"/>
         <source>Constraint TeachersAfternoonIntervalMaxDaysPerWeek max days corrupt, max days %1 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="33108"/>
+        <location filename="../src/engine/rules.cpp" line="33124"/>
         <source>Constraint StudentsSetMaxAfternoonsPerWeek max afternoons corrupt for students set %1, max afternoons %2 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="33152"/>
+        <location filename="../src/engine/rules.cpp" line="33168"/>
         <source>Constraint StudentsMaxAfternoonsPerWeek max afternoons corrupt, max afternoons %1 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="33200"/>
+        <location filename="../src/engine/rules.cpp" line="33216"/>
         <source>Constraint StudentsSetMaxMorningsPerWeek max mornings corrupt for students set %1, max mornings %2 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="33244"/>
+        <location filename="../src/engine/rules.cpp" line="33260"/>
         <source>Constraint StudentsMaxMorningsPerWeek max mornings corrupt, max mornings %1 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="33293"/>
+        <location filename="../src/engine/rules.cpp" line="33309"/>
         <source>Constraint StudentsSetMinAfternoonsPerWeek min afternoons corrupt for students set %1, min afternoons %2 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="33337"/>
+        <location filename="../src/engine/rules.cpp" line="33353"/>
         <source>Constraint StudentsMinAfternoonsPerWeek min afternoons corrupt, min afternoons %1 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="33385"/>
+        <location filename="../src/engine/rules.cpp" line="33401"/>
         <source>Constraint StudentsSetMinMorningsPerWeek min mornings corrupt for students set %1, min mornings %2 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="33429"/>
+        <location filename="../src/engine/rules.cpp" line="33445"/>
         <source>Constraint StudentsMinMorningsPerWeek min mornings corrupt, min mornings %1 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="33501"/>
+        <location filename="../src/engine/rules.cpp" line="33517"/>
         <source>Constraint StudentsSetMorningIntervalMaxDaysPerWeek max days corrupt for students set %1, max days %2 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="33621"/>
+        <location filename="../src/engine/rules.cpp" line="33637"/>
         <source>Constraint StudentsMorningIntervalMaxDaysPerWeek max days corrupt: max days %1 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="33741"/>
+        <location filename="../src/engine/rules.cpp" line="33757"/>
         <source>Constraint StudentsSetAfternoonIntervalMaxDaysPerWeek max days corrupt for students set %1, max days %2 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="33861"/>
+        <location filename="../src/engine/rules.cpp" line="33877"/>
         <source>Constraint StudentsAfternoonIntervalMaxDaysPerWeek max days corrupt: max days %1 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="34723"/>
+        <location filename="../src/engine/rules.cpp" line="34739"/>
         <source>Found constraint teachers min hours per morning with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="34742"/>
+        <location filename="../src/engine/rules.cpp" line="34758"/>
         <source>Found constraint teachers min hours per morning with tag allow empty mornings which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="34829"/>
+        <location filename="../src/engine/rules.cpp" line="34845"/>
         <source>Found constraint teacher min hours per morning with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="34848"/>
+        <location filename="../src/engine/rules.cpp" line="34864"/>
         <source>Found constraint teacher min hours per morning with tag allow empty mornings which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="34905"/>
+        <location filename="../src/engine/rules.cpp" line="34921"/>
         <source>Found constraint teachers min hours per afternoon with tag allow empty afternoons which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="34972"/>
+        <location filename="../src/engine/rules.cpp" line="34988"/>
         <source>Found constraint teacher min hours per afternoon with tag allow empty afternoons which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="35741"/>
+        <location filename="../src/engine/rules.cpp" line="35757"/>
         <source>Found constraint students min hours per morning with tag allow empty mornings which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="35836"/>
+        <location filename="../src/engine/rules.cpp" line="35852"/>
         <source>Found constraint students set min hours per morning with tag allow empty mornings which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="35907"/>
+        <location filename="../src/engine/rules.cpp" line="35923"/>
         <source>Found constraint students min hours per afternoon with tag allow empty afternoons which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="35983"/>
+        <location filename="../src/engine/rules.cpp" line="35999"/>
         <source>Found constraint students set min hours per afternoon with tag allow empty afternoons which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="37769"/>
+        <location filename="../src/engine/rules.cpp" line="37785"/>
         <source>Found constraint teacher max three consecutive days with tag %1 which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="37830"/>
+        <location filename="../src/engine/rules.cpp" line="37846"/>
         <source>Found constraint teachers max three consecutive days with tag %1 which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="37897"/>
+        <location filename="../src/engine/rules.cpp" line="37913"/>
         <source>Found constraint students set max three consecutive days with tag %1 which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="37958"/>
+        <location filename="../src/engine/rules.cpp" line="37974"/>
         <source>Found constraint students max three consecutive days with tag %1 which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="38843"/>
+        <location filename="../src/engine/rules.cpp" line="38859"/>
         <source>Found constraint activity preferred room with tag permanently locked which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="38914"/>
+        <location filename="../src/engine/rules.cpp" line="38930"/>
         <source>The specified number of real rooms is not equal to the read number of real rooms in constraint.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="38922"/>
+        <location filename="../src/engine/rules.cpp" line="38938"/>
         <source>Found constraint activity preferred room, with unspecified tag &apos;permanently locked&apos; - this tag will be set to &apos;false&apos; by default. You can always modify it by editing the constraint in the &apos;Data&apos; menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="38925"/>
+        <location filename="../src/engine/rules.cpp" line="38941"/>
         <source>Explanation: starting with version 5.8.0 (January 2009), the constraint activity preferred room has a new tag, &apos;permanently locked&apos; (true or false). It is recommended to make the tag &apos;permanently locked&apos; true for the constraints you need to be not modifiable from the &apos;Timetable&apos; menu and leave this tag false for the constraints you need to be modifiable from the &apos;Timetable&apos; menu (the &apos;permanently locked&apos; tag can be modified by editing the constraint from the &apos;Data&apos; menu). This way, when viewing the timetable and locking/unlocking some activities, you will not unlock the constraints which need to be locked all the time.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -63160,143 +63186,191 @@ not added - must be a duplicate</source>
 <context>
     <name>SplitYearForm</name>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="112"/>
+        <location filename="../src/interface/splityearform.cpp" line="120"/>
         <source>Splitting year: %1</source>
         <translation>Rozděluje se ročník: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="193"/>
-        <location filename="../src/interface/splityearform.cpp" line="228"/>
-        <location filename="../src/interface/splityearform.cpp" line="374"/>
-        <location filename="../src/interface/splityearform.cpp" line="382"/>
-        <location filename="../src/interface/splityearform.cpp" line="425"/>
-        <location filename="../src/interface/splityearform.cpp" line="431"/>
-        <location filename="../src/interface/splityearform.cpp" line="458"/>
-        <location filename="../src/interface/splityearform.cpp" line="478"/>
-        <location filename="../src/interface/splityearform.cpp" line="714"/>
+        <location filename="../src/interface/splityearform.cpp" line="203"/>
+        <location filename="../src/interface/splityearform.cpp" line="238"/>
+        <location filename="../src/interface/splityearform.cpp" line="384"/>
+        <location filename="../src/interface/splityearform.cpp" line="392"/>
+        <location filename="../src/interface/splityearform.cpp" line="435"/>
+        <location filename="../src/interface/splityearform.cpp" line="441"/>
+        <location filename="../src/interface/splityearform.cpp" line="467"/>
+        <location filename="../src/interface/splityearform.cpp" line="480"/>
+        <location filename="../src/interface/splityearform.cpp" line="494"/>
+        <location filename="../src/interface/splityearform.cpp" line="515"/>
+        <location filename="../src/interface/splityearform.cpp" line="542"/>
+        <location filename="../src/interface/splityearform.cpp" line="555"/>
+        <location filename="../src/interface/splityearform.cpp" line="571"/>
+        <location filename="../src/interface/splityearform.cpp" line="591"/>
+        <location filename="../src/interface/splityearform.cpp" line="924"/>
         <source>FET information</source>
         <translation>Informace FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="359"/>
-        <location filename="../src/interface/splityearform.cpp" line="408"/>
-        <location filename="../src/interface/splityearform.cpp" line="585"/>
+        <location filename="../src/interface/splityearform.cpp" line="369"/>
+        <location filename="../src/interface/splityearform.cpp" line="418"/>
+        <location filename="../src/interface/splityearform.cpp" line="700"/>
         <source>FET warning</source>
         <translation>Varování FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="122"/>
+        <location filename="../src/interface/splityearform.cpp" line="132"/>
         <source>Max subgroups per year: %1</source>
         <translation>Nejvíce podskupin za rok: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="123"/>
+        <location filename="../src/interface/splityearform.cpp" line="133"/>
         <source>Max total subgroups: %1</source>
         <translation>Nejvíce podskupin celkem: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="187"/>
+        <location filename="../src/interface/splityearform.cpp" line="197"/>
         <source>FET - Add division to category %1</source>
         <translation>FET - Přidání rozdělení ke skupině %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="188"/>
+        <location filename="../src/interface/splityearform.cpp" line="198"/>
         <source>Please input division name:</source>
         <translation>Zadejte, prosím, název rozdělení:</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="193"/>
-        <location filename="../src/interface/splityearform.cpp" line="228"/>
+        <location filename="../src/interface/splityearform.cpp" line="203"/>
+        <location filename="../src/interface/splityearform.cpp" line="238"/>
         <source>Duplicate names are not allowed (the current string is found in category number %1, division number %2).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="221"/>
+        <location filename="../src/interface/splityearform.cpp" line="231"/>
         <source>FET - Modify division to category %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="222"/>
+        <location filename="../src/interface/splityearform.cpp" line="232"/>
         <source>Please input the new division name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="316"/>
-        <location filename="../src/interface/splityearform.cpp" line="344"/>
-        <location filename="../src/interface/splityearform.cpp" line="579"/>
-        <location filename="../src/interface/splityearform.cpp" line="856"/>
+        <location filename="../src/interface/splityearform.cpp" line="326"/>
+        <location filename="../src/interface/splityearform.cpp" line="354"/>
+        <location filename="../src/interface/splityearform.cpp" line="694"/>
+        <location filename="../src/interface/splityearform.cpp" line="1086"/>
         <source>FET confirmation</source>
         <translation>Potvrzení FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="317"/>
+        <location filename="../src/interface/splityearform.cpp" line="327"/>
         <source>Do you want to remove division %1 from category %2?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="345"/>
+        <location filename="../src/interface/splityearform.cpp" line="355"/>
         <source>Do you really want to remove all divisions from category %1?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="374"/>
+        <location filename="../src/interface/splityearform.cpp" line="384"/>
         <source>The current number of subgroups for this year is too large (the maximum allowed value is %1, but computing up to category %2 gives %3 subgroups)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="382"/>
+        <location filename="../src/interface/splityearform.cpp" line="392"/>
         <source>Each category must contain at least one division</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="412"/>
+        <location filename="../src/interface/splityearform.cpp" line="422"/>
         <source>Are you sure you want to continue?</source>
         <translation>Opravdu chcete pokračovat?</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="545"/>
+        <location filename="../src/interface/splityearform.cpp" line="542"/>
+        <location filename="../src/interface/splityearform.cpp" line="555"/>
+        <location filename="../src/interface/splityearform.cpp" line="571"/>
+        <source>Cannot add the group %1, because it would have the same name as another set in this same year. Please review your divisions&apos; names and consider that each final group and subgroup must have different names.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="591"/>
+        <source>Cannot add the subgroup %1, because it would have the same name as another set in this same year. Please review your divisions&apos; names and consider that each final group and subgroup must have different names.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="660"/>
         <source>Notes:</source>
         <translation type="unfinished">Poznámky:</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="547"/>
+        <location filename="../src/interface/splityearform.cpp" line="662"/>
         <source>Note:</source>
         <translation>Poznámka:</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="550"/>
+        <location filename="../src/interface/splityearform.cpp" line="665"/>
         <source>To keep a group, you need to keep the corresponding division name and use the same separator(s) character(s).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="557"/>
+        <location filename="../src/interface/splityearform.cpp" line="672"/>
         <source>Read the divide year dialog Help for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="573"/>
+        <location filename="../src/interface/splityearform.cpp" line="688"/>
         <source>The following subgroups will no longer be available:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="593"/>
-        <location filename="../src/interface/splityearform.cpp" line="735"/>
+        <location filename="../src/interface/splityearform.cpp" line="710"/>
+        <source>Separator: %1</source>
+        <comment>The separator character</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="951"/>
+        <source>Separator: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="714"/>
+        <location filename="../src/interface/splityearform.cpp" line="955"/>
+        <source>yes</source>
+        <translation type="unfinished">ano</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="716"/>
+        <location filename="../src/interface/splityearform.cpp" line="957"/>
+        <source>no</source>
+        <translation type="unfinished">ne</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="717"/>
+        <location filename="../src/interface/splityearform.cpp" line="958"/>
+        <source>First category is permanent: %1</source>
+        <comment>%1 is yes or no</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="720"/>
+        <location filename="../src/interface/splityearform.cpp" line="961"/>
         <source>Number of categories: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="596"/>
-        <location filename="../src/interface/splityearform.cpp" line="740"/>
+        <location filename="../src/interface/splityearform.cpp" line="723"/>
+        <location filename="../src/interface/splityearform.cpp" line="966"/>
         <source>Category %1: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="704"/>
+        <location filename="../src/interface/splityearform.cpp" line="914"/>
         <source>There were removed %1 &apos;group activities in the initial order&apos; items.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="748"/>
+        <location filename="../src/interface/splityearform.cpp" line="974"/>
         <source>Modified the categories and the divisions of the year %1 from
 
 %2
@@ -63306,189 +63380,206 @@ into
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="768"/>
+        <location filename="../src/interface/splityearform.cpp" line="994"/>
         <source>Please choose a number of categories and in each category the number of divisions. You can choose for instance 3 categories, 5 divisions for the first category: a, b, c, d and e, 2 divisions for the second category: boys and girls, and 3 divisions for the third: English, German and French.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="774"/>
+        <location filename="../src/interface/splityearform.cpp" line="1000"/>
         <source>If your number of subgroups is reasonable, probably you need not worry about empty subgroups (regarding speed of generation). But more tests need to be done. You just need to know that for the moment the maximum total number of subgroups is %1 (which can be changed, but nobody needed larger values)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="780"/>
+        <location filename="../src/interface/splityearform.cpp" line="1006"/>
         <source>If you intend to divide again a year by categories and you want to keep (the majority of) the existing groups in this year, you will need to use the exact same separator character(s) for dividing this year as you used when previously dividing this year, and the same division names (any old division which is no longer entered means a group which will be removed from this year).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="786"/>
+        <location filename="../src/interface/splityearform.cpp" line="1012"/>
         <source>When dividing again a year, you might get a warning about subgroups which will be removed. If you didn&apos;t explicitly use (these) subgroups in your activities or constraints, probably you can safely ignore this warning. Generally, if you use years&apos; division by categories, it is groups that matter.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="796"/>
+        <location filename="../src/interface/splityearform.cpp" line="1022"/>
         <source>If you have many subgroups and you don&apos;t explicitly use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="808"/>
+        <location filename="../src/interface/splityearform.cpp" line="1034"/>
         <source>About using a large number of categories, divisions per category and subgroups: it is highly recommended to keep these to a minimum, especially the number of categories, by using any kind of tricks. Otherwise the timetable might become impossible (taking too much time to generate).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="815"/>
+        <location filename="../src/interface/splityearform.cpp" line="1041"/>
         <source>The generation time of the timetable is directly proportional with the total number of subgroups!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="817"/>
+        <location filename="../src/interface/splityearform.cpp" line="1043"/>
         <source>For instance, by reducing the total number of subgroups from 10000 to 100 the generation time might decrease 100 times!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="819"/>
+        <location filename="../src/interface/splityearform.cpp" line="1045"/>
         <source>Maybe an alternative to dividing a year into many categories/subgroups would be to enter individual students as FET subgroups and add into each group the corresponding subgroups. But this is hard to do from the FET interface - maybe a solution would be to use an automatic tool to convert your institution data into a file in .fet format.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="823"/>
+        <location filename="../src/interface/splityearform.cpp" line="1049"/>
         <source>Or you might use the FET feature to import students sets from comma separated values (CSV) files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="825"/>
+        <location filename="../src/interface/splityearform.cpp" line="1051"/>
         <source>In such cases (individual students as FET subgroups), remember that a smaller number of total subgroups means faster generation time, so you might want to consider a single subgroup for two or more students who have the exact same activities and constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="857"/>
+        <location filename="../src/interface/splityearform.cpp" line="1087"/>
         <source>Do you really want to reset the form values to defaults (empty)?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="533"/>
+        <location filename="../src/interface/splityearform.cpp" line="1130"/>
+        <source>Copy categories and divisions from another year</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="1139"/>
+        <source>Please select another year to copy categories and divisions from:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="648"/>
         <source>WARNING: There are groups and subgroups which will no longer be available and which will be removed, along with the associated activities and constraints. Are you sure? See the list below.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="536"/>
+        <location filename="../src/interface/splityearform.cpp" line="651"/>
         <source>WARNING: There are groups which will no longer be available and which will be removed, along with the associated activities and constraints. Are you sure? See the list below.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="539"/>
+        <location filename="../src/interface/splityearform.cpp" line="654"/>
         <source>WARNING: There are subgroups which will no longer be available and which will be removed, along with the associated activities and constraints. Are you sure? See the list below.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="565"/>
+        <location filename="../src/interface/splityearform.cpp" line="680"/>
         <source>The following groups will no longer be available:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="875"/>
+        <location filename="../src/interface/splityearform.cpp" line="1107"/>
         <source>Subgroups: %1</source>
         <comment>%1 is the number of subgroups</comment>
         <translation>Podskupiny: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="409"/>
+        <location filename="../src/interface/splityearform.cpp" line="419"/>
         <source>Please note that the current configuration will lead you to %1 total number of subgroups. The file format supports any number of students sets, but for the timetable generation to be possible the maximum allowed total number of subgroups is %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="360"/>
+        <location filename="../src/interface/splityearform.cpp" line="370"/>
         <source>You want to divide the year by %1 categories. The recommended number of categories is 2, 3 or maximum 4 (to ensure the timetable generation speed and feasibility). Are you sure?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="425"/>
+        <location filename="../src/interface/splityearform.cpp" line="435"/>
         <source>Duplicate names not allowed (%1 appears a second time in category number %2, division number %3).</source>
         <comment>%1 is the name of a division (of a year).</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="431"/>
+        <location filename="../src/interface/splityearform.cpp" line="441"/>
         <source>Empty names not allowed (the entry in category number %1, division number %2 has an empty name).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="458"/>
+        <location filename="../src/interface/splityearform.cpp" line="467"/>
+        <location filename="../src/interface/splityearform.cpp" line="480"/>
+        <location filename="../src/interface/splityearform.cpp" line="494"/>
         <source>Cannot add group %1, because a set with the same name exists. Please choose another name or remove the old set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="478"/>
+        <location filename="../src/interface/splityearform.cpp" line="515"/>
         <source>Cannot add subgroup %1, because a set with the same name exists. Please choose another name or remove the old set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="554"/>
+        <location filename="../src/interface/splityearform.cpp" line="669"/>
         <source>Probably you can safely ignore the warning about the removal of the subgroups.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="580"/>
+        <location filename="../src/interface/splityearform.cpp" line="695"/>
         <source>Yes</source>
         <translation>Ano</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="580"/>
+        <location filename="../src/interface/splityearform.cpp" line="695"/>
         <source>No</source>
         <translation>Ne</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="585"/>
+        <location filename="../src/interface/splityearform.cpp" line="700"/>
         <source>Year %1 will be split again. All groups and subgroups of this year which will no longer exist (listed before) and the associated activities and constraints will be removed. Are you absolutely sure?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="698"/>
+        <location filename="../src/interface/splityearform.cpp" line="908"/>
         <source>There were removed %1 activities, %2 time constraints and %3 space constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="714"/>
+        <location filename="../src/interface/splityearform.cpp" line="924"/>
         <source>Split of the year complete, please check the groups and subgroups of the year to make sure that everything is OK.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="761"/>
+        <location filename="../src/interface/splityearform.cpp" line="987"/>
         <source>You might first want to consider if dividing a year is necessary and on what options. Please remember that FET can handle activities with multiple teachers/students sets. If you have say students set 9a, which is split into 2 parts: English (teacher TE) and French (teacher TF), and language activities must be simultaneous, then you might not want to divide according to this category, but add more larger activities, with students set 9a and teachers TE+TF.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="792"/>
+        <location filename="../src/interface/splityearform.cpp" line="1018"/>
         <source>Separator character(s) is of your choice (default is space)</source>
         <translation>Znak(y) oddělovača není vami voliteľný (výchozí je medzera)</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="799"/>
+        <location filename="../src/interface/splityearform.cpp" line="1025"/>
         <source>Note that if you are only working to get a feasible timetable, without the need to obtain the students timetable (XML or HTML) on the disk at all, and if you have many total subgroups, a good idea is to disable writing the subgroups, groups AND years timetables to the hard disk, as these take a long time to compute (not only subgroups, but also groups and years!).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="803"/>
+        <location filename="../src/interface/splityearform.cpp" line="1029"/>
         <source>(Also the conflicts timetable might take long to write, if the file is large.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="805"/>
+        <location filename="../src/interface/splityearform.cpp" line="1031"/>
         <source>After that, you can enable the writing of the students timetables on the disk, and regenerate.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="812"/>
+        <location filename="../src/interface/splityearform.cpp" line="1038"/>
         <source>Maybe a reasonable number of categories could be 2, 3 or maximum 4. The divide year dialog allows much higher values, but these are not at all recommended.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="831"/>
+        <location filename="../src/interface/splityearform.cpp" line="1055"/>
+        <source>The option &apos;Consider the first category/divisions as permanent&apos;: it has effect only if the number of categories is greater or equal to 3, and will generate additional groups, considering the first category and each of the other categories.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="1061"/>
         <source>FET - help on dividing a year</source>
         <translation>FET - Nápověda k rozdělení ročníku</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="837"/>
+        <location filename="../src/interface/splityearform.cpp" line="1067"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
@@ -63617,17 +63708,23 @@ into
         <translation>Omezení:</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform_template.ui" line="445"/>
+        <location filename="../src/interface/splityearform_template.ui" line="458"/>
+        <source>Copy from another year</source>
+        <extracomment>It means to copy the categories and the divisions from another year.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform_template.ui" line="472"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform_template.ui" line="452"/>
+        <location filename="../src/interface/splityearform_template.ui" line="479"/>
         <source>Cancel</source>
         <translation>Zrušit</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform_template.ui" line="438"/>
+        <location filename="../src/interface/splityearform_template.ui" line="465"/>
         <source>Help</source>
         <translation>Nápověda</translation>
     </message>
@@ -63647,7 +63744,12 @@ into
         <translation>0</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform_template.ui" line="431"/>
+        <location filename="../src/interface/splityearform_template.ui" line="425"/>
+        <source>Consider the first category/divisions as permanent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform_template.ui" line="451"/>
         <source>Reset</source>
         <translation>Nastavit znovu</translation>
     </message>
@@ -64809,72 +64911,72 @@ Bottom: %4</source>
 <context>
     <name>StudentsGroup</name>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="287"/>
+        <location filename="../src/engine/studentsset.cpp" line="297"/>
         <source>GN:%1</source>
         <comment>Group (short) name</comment>
         <translation type="unfinished">Název skupiny: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="289"/>
+        <location filename="../src/engine/studentsset.cpp" line="299"/>
         <source>GLN:%1</source>
         <comment>Group long name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="291"/>
+        <location filename="../src/engine/studentsset.cpp" line="301"/>
         <source>GC:%1</source>
         <comment>Group code</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="293"/>
+        <location filename="../src/engine/studentsset.cpp" line="303"/>
         <source>NoS:%1</source>
         <comment>Number of students</comment>
         <translation>Počet žáků: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="297"/>
+        <location filename="../src/engine/studentsset.cpp" line="307"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>P: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="305"/>
+        <location filename="../src/engine/studentsset.cpp" line="315"/>
         <source>Students set - group</source>
         <translation>Skupinu žáků - skupina</translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="307"/>
+        <location filename="../src/engine/studentsset.cpp" line="317"/>
         <source>Group name=%1</source>
         <translation>Název skupiny=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="309"/>
+        <location filename="../src/engine/studentsset.cpp" line="319"/>
         <source>Group long name=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="311"/>
+        <location filename="../src/engine/studentsset.cpp" line="321"/>
         <source>Group code=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="313"/>
+        <location filename="../src/engine/studentsset.cpp" line="323"/>
         <source>Number of students=%1</source>
         <translation>Počet žáků=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="318"/>
+        <location filename="../src/engine/studentsset.cpp" line="328"/>
         <source>Comments=%1</source>
         <translation>Poznámky=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="330"/>
+        <location filename="../src/engine/studentsset.cpp" line="340"/>
         <source>Time constraints directly related to this students group:</source>
         <translation>Časová omezení přímo spojená s touto skupinou žáků:</translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="341"/>
+        <location filename="../src/engine/studentsset.cpp" line="351"/>
         <source>Space constraints directly related to this students group:</source>
         <translation>Prostorová omezení přímo spojená s touto skupinou žáků:</translation>
     </message>
@@ -65177,72 +65279,72 @@ Bottom: %4</source>
 <context>
     <name>StudentsSubgroup</name>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="385"/>
+        <location filename="../src/engine/studentsset.cpp" line="395"/>
         <source>SgN:%1</source>
         <comment>Subgroup (short) name</comment>
         <translation type="unfinished">Název dílčí skupiny: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="387"/>
+        <location filename="../src/engine/studentsset.cpp" line="397"/>
         <source>SgLN:%1</source>
         <comment>Subgroup long name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="389"/>
+        <location filename="../src/engine/studentsset.cpp" line="399"/>
         <source>SgC:%1</source>
         <comment>Subgroup code</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="391"/>
+        <location filename="../src/engine/studentsset.cpp" line="401"/>
         <source>NoS:%1</source>
         <comment>Number of students</comment>
         <translation>Počet žáků: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="395"/>
+        <location filename="../src/engine/studentsset.cpp" line="405"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>P: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="403"/>
+        <location filename="../src/engine/studentsset.cpp" line="413"/>
         <source>Students set - subgroup</source>
         <translation>Skupina žáků - dílčí skupina</translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="405"/>
+        <location filename="../src/engine/studentsset.cpp" line="415"/>
         <source>Subgroup name=%1</source>
         <translation>Název dílčí skupiny=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="407"/>
+        <location filename="../src/engine/studentsset.cpp" line="417"/>
         <source>Subgroup long name=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="409"/>
+        <location filename="../src/engine/studentsset.cpp" line="419"/>
         <source>Subgroup code=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="411"/>
+        <location filename="../src/engine/studentsset.cpp" line="421"/>
         <source>Number of students=%1</source>
         <translation>Počet žáků=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="416"/>
+        <location filename="../src/engine/studentsset.cpp" line="426"/>
         <source>Comments=%1</source>
         <translation>Poznámky=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="428"/>
+        <location filename="../src/engine/studentsset.cpp" line="438"/>
         <source>Time constraints directly related to this students subgroup:</source>
         <translation>Časová omezení přímo spojená s touto dílčí skupinou žáků:</translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="439"/>
+        <location filename="../src/engine/studentsset.cpp" line="449"/>
         <source>Space constraints directly related to this students subgroup:</source>
         <translation>Prostorová omezení přímo spojená s touto dílčí skupinou žáků:</translation>
     </message>
@@ -65250,72 +65352,72 @@ Bottom: %4</source>
 <context>
     <name>StudentsYear</name>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="185"/>
+        <location filename="../src/engine/studentsset.cpp" line="195"/>
         <source>YN:%1</source>
         <comment>Year (short) name</comment>
         <translation type="unfinished">Název roku: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="187"/>
+        <location filename="../src/engine/studentsset.cpp" line="197"/>
         <source>YLN:%1</source>
         <comment>Year long name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="189"/>
+        <location filename="../src/engine/studentsset.cpp" line="199"/>
         <source>YC:%1</source>
         <comment>Year code</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="191"/>
+        <location filename="../src/engine/studentsset.cpp" line="201"/>
         <source>NoS:%1</source>
         <comment>Number of students</comment>
         <translation>Počet žáků: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="195"/>
+        <location filename="../src/engine/studentsset.cpp" line="205"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>P: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="203"/>
+        <location filename="../src/engine/studentsset.cpp" line="213"/>
         <source>Students set - year</source>
         <translation>Skupinu žáků - ročník</translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="205"/>
+        <location filename="../src/engine/studentsset.cpp" line="215"/>
         <source>Year name=%1</source>
         <translation>Název ročníku=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="207"/>
+        <location filename="../src/engine/studentsset.cpp" line="217"/>
         <source>Year long name=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="209"/>
+        <location filename="../src/engine/studentsset.cpp" line="219"/>
         <source>Year code=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="211"/>
+        <location filename="../src/engine/studentsset.cpp" line="221"/>
         <source>Number of students=%1</source>
         <translation>Počet žáků=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="216"/>
+        <location filename="../src/engine/studentsset.cpp" line="226"/>
         <source>Comments=%1</source>
         <translation>Poznámky=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="228"/>
+        <location filename="../src/engine/studentsset.cpp" line="238"/>
         <source>Time constraints directly related to this students year:</source>
         <translation>Časová omezení přímo spojená s tímto žákovským rokem:</translation>
     </message>
     <message>
-        <location filename="../src/engine/studentsset.cpp" line="239"/>
+        <location filename="../src/engine/studentsset.cpp" line="249"/>
         <source>Space constraints directly related to this students year:</source>
         <translation>Prostorová omezení přímo spojená s tímto žákovským rokem:</translation>
     </message>
