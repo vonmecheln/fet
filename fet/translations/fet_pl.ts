@@ -18900,91 +18900,91 @@ to
 <context>
     <name>ConstraintStudentsMaxHoursDailyInInterval</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66040"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66042"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66043"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66045"/>
         <source>Students max hours daily in hourly interval</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66044"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66046"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66046"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66048"/>
         <source>ISH:%1</source>
         <comment>Abbreviation for interval start hour. Please use different abbreviations for interval start hour and interval end hour.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66048"/>
         <location filename="../src/engine/timeconstraint.cpp" line="66050"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66052"/>
         <source>IEH:%1</source>
         <comment>Abbreviation for interval end hour. Please use different abbreviations for interval start hour and interval end hour.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66050"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="66070"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66052"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66072"/>
         <source>End of the day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66053"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66055"/>
         <source>MH:%1</source>
         <comment>Max hours (daily)</comment>
         <translation type="unfinished">MG:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66062"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66064"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66063"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66065"/>
         <source>All students must respect the maximum number of hours daily in an hourly interval</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66064"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66066"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66066"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66068"/>
         <source>Interval start hour=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66068"/>
         <location filename="../src/engine/timeconstraint.cpp" line="66070"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66072"/>
         <source>Interval end hour=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66073"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66075"/>
         <source>Maximum hours daily=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66076"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66078"/>
         <source>Active time constraint=%1</source>
         <comment>Represents a yes/no value, if a time constraint is active or not, %1 is yes or no</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66080"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66082"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66127"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66129"/>
         <source>Time constraint students max hours daily in hourly interval broken for subgroup: %1, day: %2, length=%3, conflicts increase=%4</source>
         <translation type="unfinished"></translation>
     </message>
@@ -23543,113 +23543,113 @@ to
 <context>
     <name>ConstraintStudentsSetMaxHoursDailyInInterval</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="65752"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="65753"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="65755"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="65756"/>
         <source>Students set max hours daily in hourly interval</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="65756"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="65757"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="65757"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="65758"/>
         <source>St:%1</source>
         <comment>Students (set)</comment>
         <translation type="unfinished">St:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="65759"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="65760"/>
         <source>ISH:%1</source>
         <comment>Abbreviation for interval start hour. Please use different abbreviations for interval start hour and interval end hour.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="65761"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="65763"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="65762"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="65764"/>
         <source>IEH:%1</source>
         <comment>Abbreviation for interval end hour. Please use different abbreviations for interval start hour and interval end hour.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="65763"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="65784"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="65764"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="65785"/>
         <source>End of the day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="65766"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="65767"/>
         <source>MH:%1</source>
         <comment>Max hours (daily)</comment>
         <translation type="unfinished">MG:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="65775"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="65776"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="65776"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="65777"/>
         <source>A students set must respect the maximum number of hours daily in an hourly interval</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="65777"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="65778"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="65778"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="65779"/>
         <source>Students set=%1</source>
         <translation type="unfinished">Grupa studentów=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="65780"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="65781"/>
         <source>Interval start hour=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="65782"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="65784"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="65783"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="65785"/>
         <source>Interval end hour=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="65787"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="65788"/>
         <source>Maximum hours daily=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="65790"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="65791"/>
         <source>Active time constraint=%1</source>
         <comment>Represents a yes/no value, if a time constraint is active or not, %1 is yes or no</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="65794"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="65795"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="65807"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="65808"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="65808"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="65809"/>
         <source>Constraint students set max hours daily in hourly interval is wrong because it refers to nonexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="65892"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="65893"/>
         <source>Time constraint students set max hours daily in hourly interval broken for subgroup: %1, day: %2, length=%3, conflicts increase=%4</source>
         <translation type="unfinished"></translation>
     </message>
@@ -32806,66 +32806,66 @@ to
 <context>
     <name>ConstraintTeacherNoTwoConsecutiveDays</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66275"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66277"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66277"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66279"/>
         <source>Teacher no two consecutive days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66278"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66280"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66279"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66281"/>
         <source>T:%1</source>
         <comment>Teacher</comment>
         <translation type="unfinished">N:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66288"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66290"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66289"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66291"/>
         <source>A teacher must not work two consecutive days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66290"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66292"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66291"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66293"/>
         <source>Teacher=%1</source>
         <translation type="unfinished">Nauczyciel=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66294"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66296"/>
         <source>Active time constraint=%1</source>
         <comment>Represents a yes/no value, if a time constraint is active or not, %1 is yes or no</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66298"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66300"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66339"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66341"/>
         <source>Time constraint teacher no two consecutive days broken for teacher: %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66341"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66343"/>
         <source>This increases the conflicts total by %1</source>
         <translation type="unfinished">To podwyższa całkowitą ilość konfliktów o %1</translation>
     </message>
@@ -37576,55 +37576,55 @@ to
 <context>
     <name>ConstraintTeachersNoTwoConsecutiveDays</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66466"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66468"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66468"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66470"/>
         <source>Teachers no two consecutive days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66469"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66471"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66478"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66480"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66479"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66481"/>
         <source>All teachers must not work two consecutive days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66480"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66482"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66483"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66485"/>
         <source>Active time constraint=%1</source>
         <comment>Represents a yes/no value, if a time constraint is active or not, %1 is yes or no</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66487"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66489"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66532"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66534"/>
         <source>Time constraint teachers no two consecutive days broken for teacher: %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="66534"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="66536"/>
         <source>This increases the conflicts total by %1</source>
         <translation type="unfinished">To podwyższa całkowitą ilość konfliktów o %1</translation>
     </message>
@@ -69733,162 +69733,162 @@ Bottom: %4</source>
 <context>
     <name>TimetableViewForm</name>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="639"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="639"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="676"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="676"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="897"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="910"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="910"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="947"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="947"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1000"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="634"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="634"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="671"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="671"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="880"/>
         <source>PLT</source>
         <comment>Abbreviation for permanently locked time. There are 5 strings: permanently locked time, permanently locked space, locked time, locked space, preferred day. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="645"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="645"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="682"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="682"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="903"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="916"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="916"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="953"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="953"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1006"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="640"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="640"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="677"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="677"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="886"/>
         <source>LT</source>
         <comment>Abbreviation for locked time. There are 5 strings: permanently locked time, permanently locked space, locked time, locked space, preferred day. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="651"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="651"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="688"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="688"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="909"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="922"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="922"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="959"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="959"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1012"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="646"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="646"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="683"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="683"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="892"/>
         <source>PLS</source>
         <comment>Abbreviation for permanently locked space. There are 5 strings: permanently locked time, permanently locked space, locked time, locked space, preferred day. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="657"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="657"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="694"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="694"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="915"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="928"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="928"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="965"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="965"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1018"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="652"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="652"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="689"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="689"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="898"/>
         <source>LS</source>
         <comment>Abbreviation for locked space. There are 5 strings: permanently locked time, permanently locked space, locked time, locked space, preferred day. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="663"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="663"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="700"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="700"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="921"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="934"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="934"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="971"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="971"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1024"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="658"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="658"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="695"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="695"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="904"/>
         <source>PD</source>
         <comment>Abbreviation for preferred day. There are 5 strings: permanently locked time, permanently locked space, locked time, locked space, preferred day. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="860"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="860"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="897"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="897"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1130"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1161"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1161"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1198"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1198"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1288"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="853"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="853"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="890"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="890"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1100"/>
         <source>permanently locked time</source>
         <comment>refers to activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="864"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="864"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="901"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="901"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1134"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1165"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1165"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1202"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1202"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1292"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="857"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="857"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="894"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="894"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1104"/>
         <source>locked time</source>
         <comment>refers to activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="868"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="868"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="905"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="905"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1138"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1169"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1169"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1206"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1206"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1296"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="861"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="861"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="898"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="898"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1108"/>
         <source>permanently locked space</source>
         <comment>refers to activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="872"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="872"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="909"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="909"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1142"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1173"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1173"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1210"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1210"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1300"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="865"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="865"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="902"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="902"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1112"/>
         <source>locked space</source>
         <comment>refers to activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="876"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="876"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="913"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="913"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1146"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1177"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1177"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1214"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1214"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1304"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="869"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="869"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="906"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="906"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1116"/>
         <source>preferred day</source>
         <comment>refers to activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1180"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1213"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1180"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1213"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1217"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1250"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1217"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1250"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1492"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1525"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1522"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1555"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1522"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1555"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1559"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1592"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1559"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1592"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1687"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1720"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1177"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1210"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1177"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1210"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1214"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1247"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1214"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1247"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1456"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1489"/>
         <source>Added %n locking time constraint(s).</source>
@@ -69900,22 +69900,22 @@ Bottom: %4</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1188"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1221"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1188"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1221"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1225"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1258"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1225"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1258"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1500"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1533"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1530"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1563"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1530"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1563"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1567"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1600"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1567"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1600"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1695"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1728"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1185"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1218"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1185"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1218"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1222"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1255"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1222"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1255"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1464"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1497"/>
         <source>Added %n locking space constraint(s).</source>
@@ -69927,22 +69927,22 @@ Bottom: %4</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1196"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1229"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1196"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1229"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1233"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1266"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1233"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1266"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1508"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1541"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1538"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1571"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1538"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1571"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1575"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1608"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1575"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1608"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1703"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1736"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1193"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1226"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1193"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1226"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1230"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1263"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1230"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1263"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1472"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1505"/>
         <source>Removed %n locking time constraint(s).</source>
@@ -69954,22 +69954,22 @@ Bottom: %4</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1204"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1237"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1204"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1237"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1241"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1274"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1241"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1274"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1516"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1549"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1546"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1579"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1546"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1579"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1583"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1616"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1583"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1616"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1711"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1744"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1201"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1234"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1201"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1234"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1238"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1271"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1238"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1271"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1480"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1513"/>
         <source>Removed %n locking space constraint(s).</source>
@@ -69981,106 +69981,106 @@ Bottom: %4</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1255"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1255"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1292"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1292"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1567"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1597"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1597"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1634"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1634"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1762"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1252"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1252"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1289"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1289"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1531"/>
         <source>No locking constraints added or removed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1287"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1287"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1324"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1324"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1615"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1629"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1629"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1666"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1666"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2190"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1284"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1284"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1321"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1321"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1873"/>
         <source>Lock/unlock: you can select one or more activities in the table and toggle lock/unlock in time, space or both.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1289"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1289"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1326"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1326"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1617"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1631"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1631"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1668"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1668"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2192"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1286"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1286"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1323"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1323"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1875"/>
         <source>There will be added or removed locking constraints for the selected activities (they can be unlocked only if they are not permanently locked).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1291"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1291"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1328"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1328"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1619"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1633"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1633"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1670"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1670"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2194"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1288"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1288"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1325"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1325"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1877"/>
         <source>Locking time constraints are constraints of type activity preferred starting time. Locking space constraints are constraints of type activity preferred room. You can see these constraints in the corresponding constraints dialogs. New locking constraints are added at the end of the list of constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1294"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1294"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1331"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1331"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1630"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1636"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1636"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1673"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1673"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2205"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1291"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1291"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1328"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1328"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1888"/>
         <source>A bold font cell means that the activity is locked in time, either permanently or not.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1296"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1296"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1333"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1333"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1632"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1638"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1638"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1675"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1675"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2207"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1293"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1293"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1330"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1330"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1890"/>
         <source>An italic font cell means that the activity is locked in space, either permanently or not.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1298"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1298"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1335"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1335"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1634"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1640"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1640"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1677"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1677"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2209"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1295"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1295"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1332"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1332"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1892"/>
         <source>An underlined font cell means that the activity has a preferred day constraint (with any weight).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1301"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1301"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1338"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1338"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1637"/>
         <source>Note: In this dialog, the virtual rooms&apos; timetable will be empty.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1643"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1643"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1680"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1680"/>
         <source>There is a combo box in this dialog. You can choose each year, group, and subgroup if you select &apos;Years&apos;, each group and subgroup if you select &apos;Groups&apos;, or each subgroup if you select &apos;Subgroups&apos;.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -70128,180 +70128,180 @@ Bottom: %4</source>
 <context>
     <name>TimetableViewRoomsDaysHorizontalForm</name>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="289"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="512"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="516"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="527"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="536"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="541"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="561"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="776"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="782"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="786"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="805"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="923"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="927"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="943"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1005"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1017"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1030"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1092"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1104"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1117"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="320"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="549"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="553"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="564"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="573"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="578"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="598"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="813"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="819"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="823"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="842"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="960"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="964"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="980"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1042"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1054"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1067"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1129"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1141"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1154"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="289"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="320"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="512"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="516"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="782"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="786"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="923"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="927"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="549"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="553"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="819"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="823"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="960"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="964"/>
         <source>Timetable not available in view rooms timetable dialog - please generate a new timetable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="527"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="943"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="564"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="980"/>
         <source>Invalid room - please close this dialog and open a new view rooms timetable dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="536"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="541"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="776"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="573"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="578"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="813"/>
         <source>Timetable not available in view rooms timetable dialog - please generate a new timetable or close the timetable view rooms dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="561"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="598"/>
         <source>You have an old timetable view rooms dialog opened - please close it</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="805"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="842"/>
         <source>Invalid room - please close this dialog and open a new view rooms dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="839"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="876"/>
         <source>Room: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="850"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="887"/>
         <source>Building=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="853"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="890"/>
         <source>Capacity=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="887"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="924"/>
         <source>Room is not available with weight %1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="891"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="928"/>
         <source>Break with weight 100% in this slot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="917"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="936"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1051"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1138"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1256"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="954"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="973"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1088"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1175"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1293"/>
         <source>FET information</source>
         <translation type="unfinished">FET informacje</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="918"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="955"/>
         <source>Generation in progress. Please stop the generation before this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1259"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1296"/>
         <source>Toggled lock/unlock a selection of activities in the timetable view rooms days horizontal dialog. The summary of the added/removed locking constraints is:
 
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="936"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="973"/>
         <source>Please select a room</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="990"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1075"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1027"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1112"/>
         <source>Added the following constraint:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1005"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1017"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1092"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1104"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1042"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1054"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1129"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1141"/>
         <source>Small problem detected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1006"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1018"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1043"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1055"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1007"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1019"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1094"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1106"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1044"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1056"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1131"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1143"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1008"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1020"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1095"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1107"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1045"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1057"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1132"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1144"/>
         <source>Please report possible bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1012"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1099"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1049"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1136"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1030"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1117"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1067"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1154"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1033"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1120"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1070"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1157"/>
         <source>The following constraint will be deleted:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1093"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1105"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1130"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1142"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1303"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1340"/>
         <source>FET help</source>
         <translation type="unfinished"></translation>
     </message>
@@ -70353,184 +70353,209 @@ Bottom: %4</source>
         <source>Room&apos;s name</source>
         <translation type="unfinished">Nazwa sali</translation>
     </message>
+    <message>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform_template.ui" line="144"/>
+        <source>Teachers</source>
+        <translation type="unfinished">Nauczyciele</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform_template.ui" line="151"/>
+        <source>Students</source>
+        <translation type="unfinished">Studenci</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform_template.ui" line="158"/>
+        <source>Subjects</source>
+        <translation type="unfinished">Przedmioty</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform_template.ui" line="165"/>
+        <source>Activity tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform_template.ui" line="172"/>
+        <source>Rooms</source>
+        <translation type="unfinished">Sale</translation>
+    </message>
 </context>
 <context>
     <name>TimetableViewRoomsDaysVerticalForm</name>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="289"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="512"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="516"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="527"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="536"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="541"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="561"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="776"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="782"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="786"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="805"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="923"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="927"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="943"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1005"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1017"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1030"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1092"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1104"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1117"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="320"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="549"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="553"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="564"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="573"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="578"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="598"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="813"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="819"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="823"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="842"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="960"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="964"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="980"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1042"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1054"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1067"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1129"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1141"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1154"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="289"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="320"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="512"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="516"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="782"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="786"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="923"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="927"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="549"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="553"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="819"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="823"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="960"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="964"/>
         <source>Timetable not available in view rooms timetable dialog - please generate a new timetable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="527"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="943"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="564"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="980"/>
         <source>Invalid room - please close this dialog and open a new view rooms timetable dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="536"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="541"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="776"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="573"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="578"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="813"/>
         <source>Timetable not available in view rooms timetable dialog - please generate a new timetable or close the timetable view rooms dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="561"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="598"/>
         <source>You have an old timetable view rooms dialog opened - please close it</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="805"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="842"/>
         <source>Invalid room - please close this dialog and open a new view rooms dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="839"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="876"/>
         <source>Room: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="850"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="887"/>
         <source>Building=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="853"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="890"/>
         <source>Capacity=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="887"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="924"/>
         <source>Room is not available with weight %1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="891"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="928"/>
         <source>Break with weight 100% in this slot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="917"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="936"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1051"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1138"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1256"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="954"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="973"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1088"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1175"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1293"/>
         <source>FET information</source>
         <translation type="unfinished">FET informacje</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="918"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="955"/>
         <source>Generation in progress. Please stop the generation before this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="936"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="973"/>
         <source>Please select a room</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="990"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1075"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1027"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1112"/>
         <source>Added the following constraint:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1005"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1017"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1092"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1104"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1042"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1054"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1129"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1141"/>
         <source>Small problem detected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1006"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1018"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1043"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1055"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1007"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1019"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1094"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1106"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1044"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1056"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1131"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1143"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1008"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1020"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1095"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1107"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1045"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1057"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1132"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1144"/>
         <source>Please report possible bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1012"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1099"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1049"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1136"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1030"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1117"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1067"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1154"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1033"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1120"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1070"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1157"/>
         <source>The following constraint will be deleted:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1093"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1105"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1130"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1142"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1259"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1296"/>
         <source>Toggled lock/unlock a selection of activities in the timetable view rooms days vertical dialog. The summary of the added/removed locking constraints is:
 
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1303"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1340"/>
         <source>FET help</source>
         <translation type="unfinished"></translation>
     </message>
@@ -70581,6 +70606,31 @@ Bottom: %4</source>
         <location filename="../src/interface/timetableviewroomsdaysverticalform_template.ui" line="112"/>
         <source>Room&apos;s name</source>
         <translation type="unfinished">Nazwa sali</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform_template.ui" line="144"/>
+        <source>Teachers</source>
+        <translation type="unfinished">Nauczyciele</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform_template.ui" line="151"/>
+        <source>Students</source>
+        <translation type="unfinished">Studenci</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform_template.ui" line="158"/>
+        <source>Subjects</source>
+        <translation type="unfinished">Przedmioty</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform_template.ui" line="165"/>
+        <source>Activity tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform_template.ui" line="172"/>
+        <source>Rooms</source>
+        <translation type="unfinished">Sale</translation>
     </message>
 </context>
 <context>
@@ -70859,216 +70909,216 @@ Bottom: %4</source>
 <context>
     <name>TimetableViewStudentsDaysHorizontalForm</name>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="667"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="676"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="698"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="709"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="704"/>
         <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="713"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="762"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="769"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="792"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="796"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1045"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1051"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1057"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1084"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="735"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="746"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="750"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="799"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="806"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="829"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="833"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1082"/>
         <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1088"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1225"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1231"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1265"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1269"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1347"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1359"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1372"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1434"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1446"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1459"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1094"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1121"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1125"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1262"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1268"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1302"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1306"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1384"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1396"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1409"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1471"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1483"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1496"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="667"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="698"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1051"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1225"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="704"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="735"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1088"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1262"/>
         <source>Timetable not available in view students timetable dialog - please generate a new timetable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="676"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="713"/>
         <source>Invalid year - please close this dialog and open a new students view timetable dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="709"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="746"/>
         <source>Nonexistent group - please reload this dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="762"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1045"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="799"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1082"/>
         <source>Timetable not available in view students timetable dialog - please generate a new timetable or close the timetable view students dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="769"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1057"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1231"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="806"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1094"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1268"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="309"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="340"/>
         <source>Years</source>
         <translation type="unfinished">Lata</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="310"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="341"/>
         <source>Groups</source>
         <translation type="unfinished">Grupy</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="311"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="342"/>
         <source>Subgroups</source>
         <translation type="unfinished">Podgrupy</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="312"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="343"/>
         <source>Subgroups (sorted)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="713"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="750"/>
         <source>Incorrect group settings - please reload this dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="792"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1084"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1265"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="829"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1121"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1302"/>
         <source>Nonexistent subgroup - please reload this dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="796"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1088"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1269"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="833"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1125"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1306"/>
         <source>Incorrect subgroup settings - please reload this dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1141"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1178"/>
         <source>Room: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1152"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1189"/>
         <source>Building=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1155"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1192"/>
         <source>Capacity=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1188"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1225"/>
         <source>Students subgroup is not available 100% in this slot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1192"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1229"/>
         <source>Break with weight 100% in this slot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1218"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1252"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1393"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1480"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1598"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1255"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1289"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1430"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1517"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1635"/>
         <source>FET information</source>
         <translation type="unfinished">FET informacje</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1219"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1256"/>
         <source>Generation in progress. Please stop the generation before this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1601"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1638"/>
         <source>Toggled lock/unlock a selection of activities in the timetable view students days horizontal dialog. The summary of the added/removed locking constraints is:
 
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1252"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1289"/>
         <source>Please select a subgroup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1332"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1417"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1369"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1454"/>
         <source>Added the following constraint:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1347"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1359"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1434"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1446"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1384"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1396"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1471"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1483"/>
         <source>Small problem detected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1348"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1360"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1385"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1397"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1349"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1361"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1436"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1448"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1386"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1398"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1473"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1485"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1350"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1362"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1437"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1449"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1387"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1399"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1474"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1486"/>
         <source>Please report possible bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1354"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1441"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1391"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1478"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1372"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1459"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1409"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1496"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1375"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1462"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1412"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1499"/>
         <source>The following constraint will be deleted:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1435"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1447"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1472"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1484"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1647"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1684"/>
         <source>FET help</source>
         <translation type="unfinished"></translation>
     </message>
@@ -71125,220 +71175,245 @@ Bottom: %4</source>
         <source>Details</source>
         <translation type="unfinished">Szczegóły</translation>
     </message>
+    <message>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform_template.ui" line="183"/>
+        <source>Teachers</source>
+        <translation type="unfinished">Nauczyciele</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform_template.ui" line="190"/>
+        <source>Students</source>
+        <translation type="unfinished">Studenci</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform_template.ui" line="197"/>
+        <source>Subjects</source>
+        <translation type="unfinished">Przedmioty</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform_template.ui" line="204"/>
+        <source>Activity tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform_template.ui" line="211"/>
+        <source>Rooms</source>
+        <translation type="unfinished">Sale</translation>
+    </message>
 </context>
 <context>
     <name>TimetableViewStudentsDaysVerticalForm</name>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="309"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="340"/>
         <source>Years</source>
         <translation type="unfinished">Lata</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="310"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="341"/>
         <source>Groups</source>
         <translation type="unfinished">Grupy</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="311"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="342"/>
         <source>Subgroups</source>
         <translation type="unfinished">Podgrupy</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="312"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="343"/>
         <source>Subgroups (sorted)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="667"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="676"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="698"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="709"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="704"/>
         <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="713"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="762"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="769"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="792"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="796"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1045"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1051"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1057"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1084"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="735"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="746"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="750"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="799"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="806"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="829"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="833"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1082"/>
         <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1088"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1225"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1231"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1265"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1269"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1347"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1359"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1372"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1434"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1446"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1459"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1094"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1121"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1125"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1262"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1268"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1302"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1306"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1384"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1396"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1409"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1471"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1483"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1496"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="667"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="698"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1051"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1225"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="704"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="735"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1088"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1262"/>
         <source>Timetable not available in view students timetable dialog - please generate a new timetable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="676"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="713"/>
         <source>Invalid year - please close this dialog and open a new students view timetable dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="709"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="746"/>
         <source>Nonexistent group - please reload this dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="713"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="750"/>
         <source>Incorrect group settings - please reload this dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="762"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1045"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="799"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1082"/>
         <source>Timetable not available in view students timetable dialog - please generate a new timetable or close the timetable view students dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="769"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1057"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1231"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="806"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1094"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1268"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="792"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1084"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1265"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="829"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1121"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1302"/>
         <source>Nonexistent subgroup - please reload this dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="796"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1088"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1269"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="833"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1125"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1306"/>
         <source>Incorrect subgroup settings - please reload this dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1141"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1178"/>
         <source>Room: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1152"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1189"/>
         <source>Building=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1155"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1192"/>
         <source>Capacity=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1188"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1225"/>
         <source>Students subgroup is not available 100% in this slot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1192"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1229"/>
         <source>Break with weight 100% in this slot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1218"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1252"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1393"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1480"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1598"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1255"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1289"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1430"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1517"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1635"/>
         <source>FET information</source>
         <translation type="unfinished">FET informacje</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1219"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1256"/>
         <source>Generation in progress. Please stop the generation before this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1252"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1289"/>
         <source>Please select a subgroup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1332"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1417"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1369"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1454"/>
         <source>Added the following constraint:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1347"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1359"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1434"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1446"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1384"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1396"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1471"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1483"/>
         <source>Small problem detected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1348"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1360"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1385"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1397"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1349"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1361"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1436"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1448"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1386"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1398"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1473"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1485"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1350"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1362"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1437"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1449"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1387"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1399"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1474"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1486"/>
         <source>Please report possible bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1354"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1441"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1391"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1478"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1372"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1459"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1409"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1496"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1375"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1462"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1412"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1499"/>
         <source>The following constraint will be deleted:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1435"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1447"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1472"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1484"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1601"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1638"/>
         <source>Toggled lock/unlock a selection of activities in the timetable view students days vertical dialog. The summary of the added/removed locking constraints is:
 
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1647"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1684"/>
         <source>FET help</source>
         <translation type="unfinished"></translation>
     </message>
@@ -71394,6 +71469,31 @@ Bottom: %4</source>
         <location filename="../src/interface/timetableviewstudentsdaysverticalform_template.ui" line="150"/>
         <source>Details</source>
         <translation type="unfinished">Szczegóły</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform_template.ui" line="183"/>
+        <source>Teachers</source>
+        <translation type="unfinished">Nauczyciele</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform_template.ui" line="190"/>
+        <source>Students</source>
+        <translation type="unfinished">Studenci</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform_template.ui" line="197"/>
+        <source>Subjects</source>
+        <translation type="unfinished">Przedmioty</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform_template.ui" line="204"/>
+        <source>Activity tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform_template.ui" line="211"/>
+        <source>Rooms</source>
+        <translation type="unfinished">Sale</translation>
     </message>
 </context>
 <context>
@@ -71728,182 +71828,182 @@ Bottom: %4</source>
 <context>
     <name>TimetableViewTeachersDaysHorizontalForm</name>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="276"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="483"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="493"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="502"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="509"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="523"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="770"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="776"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="782"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="800"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="917"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="923"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="939"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1001"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1013"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1026"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1089"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1101"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1114"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="307"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="520"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="530"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="539"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="546"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="560"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="807"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="813"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="819"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="837"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="954"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="960"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="976"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1038"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1050"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1063"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1126"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1138"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1151"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="276"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="307"/>
         <source>Cannot display the timetable, because you added or removed some teachers. Please regenerate the timetable and then view it</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="483"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="776"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="917"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="520"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="813"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="954"/>
         <source>Timetable not available in view teachers timetable dialog - please generate a new timetable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="493"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="939"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="530"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="976"/>
         <source>Invalid teacher - please close this dialog and open a new view teachers dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="502"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="770"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="539"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="807"/>
         <source>Timetable not available in view teachers timetable dialog - please generate a new timetable or close the timetable view teachers dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="509"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="782"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="923"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="546"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="819"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="960"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="523"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="560"/>
         <source>You have an old timetable view teachers dialog opened - please close it</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="800"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="837"/>
         <source>The teacher is invalid - please close this dialog and open a new view teachers timetable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="833"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="870"/>
         <source>Room: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="844"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="881"/>
         <source>Building=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="847"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="884"/>
         <source>Capacity=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="880"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="917"/>
         <source>Teacher is not available 100% in this slot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="884"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="921"/>
         <source>Break with weight 100% in this slot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="911"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="931"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1047"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1135"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1253"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="948"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="968"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1084"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1172"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1290"/>
         <source>FET information</source>
         <translation type="unfinished">FET informacje</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="912"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="949"/>
         <source>Generation in progress. Please stop the generation before this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1256"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1293"/>
         <source>Toggled lock/unlock a selection of activities in the timetable view teachers days horizontal dialog. The summary of the added/removed locking constraints is:
 
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="931"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="968"/>
         <source>Please select a teacher</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="987"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1071"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1024"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1108"/>
         <source>Added the following constraint:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1001"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1013"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1089"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1101"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1038"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1050"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1126"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1138"/>
         <source>Small problem detected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1002"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1014"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1039"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1051"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1003"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1015"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1091"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1103"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1040"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1052"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1128"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1140"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1004"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1016"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1092"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1104"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1041"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1053"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1129"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1141"/>
         <source>Please report possible bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1008"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1096"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1045"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1133"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1026"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1114"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1063"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1151"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1029"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1117"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1066"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1154"/>
         <source>The following constraint will be deleted:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1090"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1102"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1127"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1139"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1297"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1334"/>
         <source>FET help</source>
         <translation type="unfinished"></translation>
     </message>
@@ -71955,186 +72055,211 @@ Bottom: %4</source>
         <source>Teacher&apos;s name</source>
         <translation type="unfinished">Nazwa nauczyciela</translation>
     </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform_template.ui" line="144"/>
+        <source>Teachers</source>
+        <translation type="unfinished">Nauczyciele</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform_template.ui" line="151"/>
+        <source>Students</source>
+        <translation type="unfinished">Studenci</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform_template.ui" line="158"/>
+        <source>Subjects</source>
+        <translation type="unfinished">Przedmioty</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform_template.ui" line="165"/>
+        <source>Activity tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform_template.ui" line="172"/>
+        <source>Rooms</source>
+        <translation type="unfinished">Sale</translation>
+    </message>
 </context>
 <context>
     <name>TimetableViewTeachersDaysVerticalForm</name>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="276"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="483"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="493"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="502"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="509"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="523"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="770"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="776"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="782"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="800"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="917"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="923"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="939"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1001"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1013"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1026"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1089"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1101"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1114"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="307"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="520"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="530"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="539"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="546"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="560"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="807"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="813"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="819"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="837"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="954"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="960"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="976"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1038"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1050"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1063"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1126"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1138"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1151"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="276"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="307"/>
         <source>Cannot display the timetable, because you added or removed some teachers. Please regenerate the timetable and then view it</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="483"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="776"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="917"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="520"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="813"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="954"/>
         <source>Timetable not available in view teachers timetable dialog - please generate a new timetable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="493"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="939"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="530"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="976"/>
         <source>Invalid teacher - please close this dialog and open a new view teachers dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="502"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="770"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="539"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="807"/>
         <source>Timetable not available in view teachers timetable dialog - please generate a new timetable or close the timetable view teachers dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="509"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="782"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="923"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="546"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="819"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="960"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="523"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="560"/>
         <source>You have an old timetable view teachers dialog opened - please close it</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="800"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="837"/>
         <source>The teacher is invalid - please close this dialog and open a new view teachers timetable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="833"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="870"/>
         <source>Room: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="844"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="881"/>
         <source>Building=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="847"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="884"/>
         <source>Capacity=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="880"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="917"/>
         <source>Teacher is not available 100% in this slot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="884"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="921"/>
         <source>Break with weight 100% in this slot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="911"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="931"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1047"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1135"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1253"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="948"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="968"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1084"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1172"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1290"/>
         <source>FET information</source>
         <translation type="unfinished">FET informacje</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="912"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="949"/>
         <source>Generation in progress. Please stop the generation before this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="931"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="968"/>
         <source>Please select a teacher</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="987"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1071"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1024"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1108"/>
         <source>Added the following constraint:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1001"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1013"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1089"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1101"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1038"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1050"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1126"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1138"/>
         <source>Small problem detected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1002"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1014"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1039"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1051"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1003"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1015"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1091"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1103"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1040"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1052"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1128"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1140"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1004"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1016"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1092"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1104"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1041"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1053"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1129"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1141"/>
         <source>Please report possible bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1008"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1096"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1045"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1133"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1026"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1114"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1063"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1151"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1029"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1117"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1066"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1154"/>
         <source>The following constraint will be deleted:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1090"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1102"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1127"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1139"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1256"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1293"/>
         <source>Toggled lock/unlock a selection of activities in the timetable view teachers days vertical dialog. The summary of the added/removed locking constraints is:
 
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1297"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1334"/>
         <source>FET help</source>
         <translation type="unfinished"></translation>
     </message>
@@ -72185,6 +72310,31 @@ Bottom: %4</source>
         <location filename="../src/interface/timetableviewteachersdaysverticalform_template.ui" line="112"/>
         <source>Teacher&apos;s name</source>
         <translation type="unfinished">Nazwa nauczyciela</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform_template.ui" line="144"/>
+        <source>Teachers</source>
+        <translation type="unfinished">Nauczyciele</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform_template.ui" line="151"/>
+        <source>Students</source>
+        <translation type="unfinished">Studenci</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform_template.ui" line="158"/>
+        <source>Subjects</source>
+        <translation type="unfinished">Przedmioty</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform_template.ui" line="165"/>
+        <source>Activity tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform_template.ui" line="172"/>
+        <source>Rooms</source>
+        <translation type="unfinished">Sale</translation>
     </message>
 </context>
 <context>

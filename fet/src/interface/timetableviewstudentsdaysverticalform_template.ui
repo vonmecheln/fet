@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>835</width>
-    <height>530</height>
+    <height>540</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -106,7 +106,7 @@
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget2">
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
          <widget class="QLabel" name="classNameTextLabel">
@@ -161,6 +161,58 @@
       </widget>
      </widget>
     </widget>
+   </item>
+   <item row="1" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="teachersCheckBox">
+       <property name="text">
+        <string>Teachers</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="studentsCheckBox">
+       <property name="text">
+        <string>Students</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="subjectsCheckBox">
+       <property name="text">
+        <string>Subjects</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="activityTagsCheckBox">
+       <property name="text">
+        <string>Activity tags</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="roomsCheckBox">
+       <property name="text">
+        <string>Rooms</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>

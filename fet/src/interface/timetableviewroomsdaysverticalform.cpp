@@ -176,6 +176,37 @@ TimetableViewRoomsDaysVerticalForm::TimetableViewRoomsDaysVerticalForm(QWidget* 
 	if(settings.contains(this->metaObject()->className()+QString("/horizontal-splitter-state")))
 		horizontalSplitter->restoreState(settings.value(this->metaObject()->className()+QString("/horizontal-splitter-state")).toByteArray());
 
+	if(settings.contains(this->metaObject()->className()+QString("/show-teachers")))
+		teachersCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/show-teachers")).toBool());
+	else
+		teachersCheckBox->setChecked(true);
+
+	if(settings.contains(this->metaObject()->className()+QString("/show-students")))
+		studentsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/show-students")).toBool());
+	else
+		studentsCheckBox->setChecked(true);
+
+	if(settings.contains(this->metaObject()->className()+QString("/show-subjects")))
+		subjectsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/show-subjects")).toBool());
+	else
+		subjectsCheckBox->setChecked(true);
+
+	if(settings.contains(this->metaObject()->className()+QString("/show-activity-tags")))
+		activityTagsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/show-activity-tags")).toBool());
+	else
+		activityTagsCheckBox->setChecked(true);
+
+	if(settings.contains(this->metaObject()->className()+QString("/show-rooms")))
+		roomsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/show-rooms")).toBool());
+	else
+		roomsCheckBox->setChecked(true);
+
+	connect(teachersCheckBox, &QCheckBox::toggled, this, &TimetableViewRoomsDaysVerticalForm::updateRoomsTimetableTable);
+	connect(studentsCheckBox, &QCheckBox::toggled, this, &TimetableViewRoomsDaysVerticalForm::updateRoomsTimetableTable);
+	connect(subjectsCheckBox, &QCheckBox::toggled, this, &TimetableViewRoomsDaysVerticalForm::updateRoomsTimetableTable);
+	connect(activityTagsCheckBox, &QCheckBox::toggled, this, &TimetableViewRoomsDaysVerticalForm::updateRoomsTimetableTable);
+	connect(roomsCheckBox, &QCheckBox::toggled, this, &TimetableViewRoomsDaysVerticalForm::updateRoomsTimetableTable);
+
 //////////TODO
 /*    double time_start = get_time();
 */
@@ -497,6 +528,12 @@ TimetableViewRoomsDaysVerticalForm::~TimetableViewRoomsDaysVerticalForm()
 	//QSettings settings(COMPANY, PROGRAM);
 	settings.setValue(this->metaObject()->className()+QString("/horizontal-splitter-state"), horizontalSplitter->saveState());
 
+	settings.setValue(this->metaObject()->className()+QString("/show-teachers"), teachersCheckBox->isChecked());
+	settings.setValue(this->metaObject()->className()+QString("/show-students"), studentsCheckBox->isChecked());
+	settings.setValue(this->metaObject()->className()+QString("/show-subjects"), subjectsCheckBox->isChecked());
+	settings.setValue(this->metaObject()->className()+QString("/show-activity-tags"), activityTagsCheckBox->isChecked());
+	settings.setValue(this->metaObject()->className()+QString("/show-rooms"), roomsCheckBox->isChecked());
+
 	roomsTimetableTable->setItemDelegate(oldItemDelegate);
 	delete newItemDelegate;
 }
@@ -605,8 +642,8 @@ void TimetableViewRoomsDaysVerticalForm::updateRoomsTimetableTable(){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
 				assert(act!=nullptr);
 				
-				if(TIMETABLE_HTML_PRINT_SUBJECTS){
-					if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
+				if(subjectsCheckBox->isChecked()){
+					if(activityTagsCheckBox->isChecked() && act->activityTagsNames.count()>0){
 						QString ats=act->activityTagsNames.join(", ");
 						s += act->subjectName + " " + ats;
 					}
@@ -615,17 +652,17 @@ void TimetableViewRoomsDaysVerticalForm::updateRoomsTimetableTable(){
 					}
 					s+="\n";
 				}
-				else if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
+				else if(activityTagsCheckBox->isChecked()){
 					s+=act->activityTagsNames.join(", ");
 					s+="\n";
 				}
 				
-				if(TIMETABLE_HTML_PRINT_TEACHERS && act->teachersNames.count()>0){
+				if(teachersCheckBox->isChecked() && act->teachersNames.count()>0){
 					s+=act->teachersNames.join(", ");
 					s+="\n";
 				}
 				
-				if(TIMETABLE_HTML_PRINT_STUDENTS && act->studentsNames.count()>0){
+				if(studentsCheckBox->isChecked() && act->studentsNames.count()>0){
 					s+=act->studentsNames.join(", ");
 					s+="\n";
 				}

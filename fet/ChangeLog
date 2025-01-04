@@ -2992,3 +2992,7 @@ Versions 6.28.0 - 6.28.v
 	- Code improvements.
 - Version 6.28.3
 	- Updated to Qt 6.8.1.
+- Version 6.28.4
+	- Crash bugs fixed, if trying to add constraints teacher/teachers max hours daily in an hourly interval with max hours daily = 0. Reported by math.
+	- The timetable views days horizontal/vertical now contain check boxes to show/hide the teachers, the students, the subjects, the activity tags,
+	and the rooms (sugested by GUEFFAZ REDA).

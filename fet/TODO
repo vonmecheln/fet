@@ -10327,6 +10327,11 @@ For me it’s fine, but I think a new user might find it a bit confusing (what i
 A nice option (if possible) would be to have the default selection (when no filter item is chosen) appear instead as text (“Teacher” “Student” “Subject”, etc.).
 Is that a possible?
 
+Also gradgrind suggested on the forum to add (restore as in FET-6.27.0) labels for the filters:
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6242.0
+
+Also Vangelis Karafillidis reported that the filter labels are missing.
+
 655--------------------------------------------------------
 From pnlshd (on forum):
 
@@ -10376,3 +10381,49 @@ writes the new files in the old highest folder (I enabled single overwrite), but
 I am not sure if fet should do it. Still, it definitely helps to have that last modified time of the folder the same as the files inside it, because many times
 there may be newer folders that show on top when I sort using last modified. I will have to look for the highest folder, double-check the last modified date of
 the files inside, and so on.
+
+657--------------------------------------------------------
+From Vangelis Karafillidis:
+
+Add a constraint of type subjects preferred rooms (to add a single constraint for multiple subjects, instead of one for each separate subject).
+
+658---------------------------------------------------------
+From GUEFFAZ REDA:
+
+1) DONE
+
+2) He sent to Liviu on Facebook a screenshot in the teachers / modify teacher dialogs, with texts: "Add button to change mode type of teachers with multi selection" and
+"Qualified subjects and target hours with multi selection".
+
+About (2), from Volker Dirr:
+
+About the multi selection: In my opinion it can be used only very rarely,
+at least in Germany, since nearly every combination is allowed and it is
+very unlikly that you hire 2 teachers with the same subjects at the same
+time. It is max "useful" if you use FET the first time. In normal case
+you will never hire 2 teacher with the same subjects at the same time.
+In my opinion a matrix with teachers - subjects where you can just
+select/deselect a cell will be much better. Especialy if you can always
+sort them by teacher name, subject and/or hide rows and columns.
+
+659--------------------------------------------------------
+From Vangelis Karafillidis:
+
+Divide a year A by (1,2,3,4), (English Advanced, English Beginners), (French, German), (Technology 1, Technology 2), such that we have the groups:
+A1 EA, A1 EB, A1 F, A1 G, A1 T1, A1 T2, ..., A4 T2.
+
+Also, apply the same divisions from year A to year B (easier to input, to save time).
+
+Liviu Lalescu:
+
+I think adding a check box "First category divides permanently" and a push button "Copy categories/divisions from another year".
+
+Vangelis Karafillidis:
+
+Maybe a check box with the message generate additional groups accordingly to the first category?
+And a push button with follow the dividing pattern of another year?
+
+660--------------------------------------------------------
+From Nahum Lipkunsky:
+
+Groups' timetables in the FET GUI (now we have only the subgroups' timetables).

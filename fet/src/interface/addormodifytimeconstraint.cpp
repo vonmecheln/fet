@@ -6113,7 +6113,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				labelForSpinBox=new QLabel(tr("Max hours daily"));
 				spinBox=new QSpinBox;
-				spinBox->setMinimum(0);
+				spinBox->setMinimum(1);
 				spinBox->setMaximum(gt.rules.nHoursPerDay);
 				spinBox->setValue(1);
 
@@ -6141,7 +6141,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				labelForSpinBox=new QLabel(tr("Max hours daily"));
 				spinBox=new QSpinBox;
-				spinBox->setMinimum(0);
+				spinBox->setMinimum(1);
 				spinBox->setMaximum(gt.rules.nHoursPerDay);
 				spinBox->setValue(1);
 
@@ -6166,7 +6166,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				labelForSpinBox=new QLabel(tr("Max hours daily"));
 				spinBox=new QSpinBox;
-				spinBox->setMinimum(0);
+				spinBox->setMinimum(1);
 				spinBox->setMaximum(gt.rules.nHoursPerDay);
 				spinBox->setValue(1);
 
@@ -6194,7 +6194,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				labelForSpinBox=new QLabel(tr("Max hours daily"));
 				spinBox=new QSpinBox;
-				spinBox->setMinimum(0);
+				spinBox->setMinimum(1);
 				spinBox->setMaximum(gt.rules.nHoursPerDay);
 				spinBox->setValue(1);
 

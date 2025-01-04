@@ -65701,6 +65701,7 @@ ConstraintStudentsSetMaxHoursDailyInInterval::ConstraintStudentsSetMaxHoursDaily
 ConstraintStudentsSetMaxHoursDailyInInterval::ConstraintStudentsSetMaxHoursDailyInInterval(double wp, int maxnh, const QString& s, int sh, int eh)
 	: TimeConstraint(wp)
 {
+	assert(maxnh>0);
 	this->maxHoursDaily = maxnh;
 	this->students = s;
 	this->startHour = sh;
@@ -65992,6 +65993,7 @@ ConstraintStudentsMaxHoursDailyInInterval::ConstraintStudentsMaxHoursDailyInInte
 ConstraintStudentsMaxHoursDailyInInterval::ConstraintStudentsMaxHoursDailyInInterval(double wp, int maxnh, int sh, int eh)
 	: TimeConstraint(wp)
 {
+	assert(maxnh>0);
 	this->maxHoursDaily = maxnh;
 	this->startHour = sh;
 	this->endHour = eh;
