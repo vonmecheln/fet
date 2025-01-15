@@ -31,12 +31,15 @@ class TimetableViewTeachersTimeHorizontalDelegate: public QStyledItemDelegate
 {
 	Q_OBJECT
 	
+	QTableView* tableView;
+	
 public:
 	int nRows;
 	int nColumns; //The number of columns after which a line is drawn.
 	
 public:
-	TimetableViewTeachersTimeHorizontalDelegate(QWidget* parent, int _nRows, int _nColumns): QStyledItemDelegate(parent){
+	TimetableViewTeachersTimeHorizontalDelegate(QWidget* parent, QTableView* _tableView, int _nRows, int _nColumns): QStyledItemDelegate(parent){
+		tableView=_tableView;
 		nRows=_nRows;
 		nColumns=_nColumns;
 	}

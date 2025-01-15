@@ -2999,3 +2999,11 @@ Versions 6.28.0 - 6.28.v
 - Version 6.28.5
 	- Improved the divide year by categories dialog, as suggested by Vangelis Karafillidis: added the option to copy the categories and divisions from another
 	students year, and added the option to make the first category permanent. On this occasion there was corrected a possible crash bug in this dialog.
+- Version 6.28.6
+	- Added the option to sort alphabetically the constraints in their specialized dialogs (suggested by Vangelis Karafillidis).
+	- Improved the timetable view dialogs, as suggested by GUEFFAZ REDA: you can choose whether to merge the table cells which correspond to the same activity
+	(by default selected) and whether to use colors (by default not selected), and the timetable views by days horizontal/vertical will show the number and
+	the duration of the displayed activities.
+- Version 6.28.7
+	- Minor interface improvements.
+	- Source code typos corrected (reported by Nahum Lipkunsky).

@@ -17,12 +17,12 @@
    <item row="0" column="0">
     <widget class="QSplitter" name="horizontalSplitter">
      <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+      <enum>Qt::Orientation::Horizontal</enum>
      </property>
      <widget class="QTableWidget" name="teachersTimetableTable"/>
      <widget class="QSplitter" name="verticalSplitter">
       <property name="orientation">
-       <enum>Qt::Vertical</enum>
+       <enum>Qt::Orientation::Vertical</enum>
       </property>
       <widget class="QPlainTextEdit" name="detailsTextEdit"/>
       <widget class="QWidget" name="layoutWidget">
@@ -90,6 +90,20 @@
                 </property>
                </widget>
               </item>
+              <item row="1" column="0">
+               <widget class="QCheckBox" name="spanCheckBox">
+                <property name="text">
+                 <string extracomment="It means that the cells for the same activity will be merged.">Merge</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QCheckBox" name="colorsCheckBox">
+                <property name="text">
+                 <string extracomment="It means to use colors in the timetable view.">Colors</string>
+                </property>
+               </widget>
+              </item>
              </layout>
             </widget>
            </item>
@@ -135,7 +149,7 @@
            <item row="2" column="0" colspan="4">
             <widget class="Line" name="line_4">
              <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
             </widget>
            </item>
@@ -190,7 +204,7 @@
               <item row="1" column="1">
                <widget class="Line" name="line">
                 <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
+                 <enum>Qt::Orientation::Horizontal</enum>
                 </property>
                </widget>
               </item>
@@ -207,7 +221,7 @@
               <item row="3" column="1">
                <widget class="Line" name="line_2">
                 <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
+                 <enum>Qt::Orientation::Horizontal</enum>
                 </property>
                </widget>
               </item>

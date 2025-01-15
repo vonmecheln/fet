@@ -1138,7 +1138,7 @@ void SplitYearForm::copyFromAnotherYear()
 	
 	QLabel* label=new QLabel(tr("Please select another year to copy categories and divisions from:"));
 	
-	QDialogButtonBox* buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+	QDialogButtonBox* buttonBox=new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 
 	connect(buttonBox, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
 	connect(buttonBox, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);

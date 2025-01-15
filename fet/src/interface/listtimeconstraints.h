@@ -29,6 +29,7 @@
 #include <QLabel>
 #include <QComboBox>
 #include <QGroupBox>
+#include <QCheckBox>
 
 #include <QEventLoop>
 
@@ -90,6 +91,9 @@ class ListTimeConstraints: public QObject
 
 	QLabel* countOfConstraintsLabel;
 	QLabel* mSLabel;
+
+	QCheckBox* sortedCheckBox;
+
 	QPushButton* activatePushButton;
 	QPushButton* deactivatePushButton;
 	QPushButton* weightsPushButton;
@@ -113,6 +117,8 @@ private:
 	void filter();
 	
 	void constraintChanged();
+
+	void sortedChanged(bool checked);
 
 	void activateConstraints();
 	void deactivateConstraints();

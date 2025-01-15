@@ -6572,11 +6572,8 @@ void FetMainForm::helpSettingsAction_triggered()
 	s+=tr("Seed of random number generator: please read the help in the dialog of this option");
 	
 	s+="\n\n";
-	s+=tr("Interface - use colors: the places with colors in FET interface are in:");
-	s+="\n";
-	s+=" -";
-	s+=tr("add/modify constraints break, not available, preferred starting times or time slots, occupy max time slots from selection or"
-		" max simultaneous in selected time slots (the table cells will have green or red colors).");
+	s+=tr("Interface - use colors: the places where this setting is used are the add/modify dialogs of the constraints which use tables, like not available times"
+		" or preferred times (the table cells will have a green or a red color).");
 	s+="\n";
 	/*s+=" -";
 	s+=tr("activities and subactivities dialogs, the inactive activities will have a distinctive background color");
@@ -6587,8 +6584,8 @@ void FetMainForm::helpSettingsAction_triggered()
 	s+=" -";
 	s+=tr("group activities in the initial order items, the inactive items will have a distinctive background color");
 	s+="\n";*/
-	s+=" -";
-	s+=tr("the timetable view dialogs");
+	//s+=" -";
+	//s+=tr("the timetable view dialogs");
 	
 	s+="\n\n";
 	

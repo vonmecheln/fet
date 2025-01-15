@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>909</width>
-    <height>639</height>
+    <width>922</width>
+    <height>604</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,12 +17,12 @@
    <item row="0" column="0">
     <widget class="QSplitter" name="horizontalSplitter">
      <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+      <enum>Qt::Orientation::Horizontal</enum>
      </property>
      <widget class="QTableWidget" name="roomsTimetableTable"/>
      <widget class="QSplitter" name="verticalSplitter">
       <property name="orientation">
-       <enum>Qt::Vertical</enum>
+       <enum>Qt::Orientation::Vertical</enum>
       </property>
       <widget class="QPlainTextEdit" name="detailsTextEdit"/>
       <widget class="QWidget" name="layoutWidget">
@@ -94,14 +94,7 @@
              <string/>
             </property>
             <layout class="QGridLayout" name="gridLayout_2">
-             <item row="1" column="0">
-              <widget class="QCheckBox" name="studentsCheckBox">
-               <property name="text">
-                <string>Students</string>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="0">
+             <item row="4" column="0">
               <widget class="QCheckBox" name="subjectsCheckBox">
                <property name="text">
                 <string>Subjects</string>
@@ -112,6 +105,27 @@
               <widget class="QCheckBox" name="teachersCheckBox">
                <property name="text">
                 <string>Teachers</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QCheckBox" name="spanCheckBox">
+               <property name="text">
+                <string extracomment="It means that the cells for the same activity will be merged.">Merge</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QCheckBox" name="colorsCheckBox">
+               <property name="text">
+                <string extracomment="It means to use colors in the timetable view.">Colors</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QCheckBox" name="studentsCheckBox">
+               <property name="text">
+                <string>Students</string>
                </property>
               </widget>
              </item>
@@ -136,7 +150,7 @@
            <item>
             <widget class="Line" name="line_2">
              <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
             </widget>
            </item>
@@ -150,7 +164,7 @@
            <item>
             <widget class="Line" name="line">
              <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
             </widget>
            </item>

@@ -39012,31 +39012,31 @@ Import of data will be easier with these settings.</source>
         <location filename="../src/interface/fetmainform.cpp" line="5085"/>
         <location filename="../src/interface/fetmainform.cpp" line="5112"/>
         <location filename="../src/interface/fetmainform.cpp" line="6033"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12768"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12778"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12788"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12943"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12970"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12997"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13024"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13028"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13055"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13059"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13086"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13090"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13138"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13165"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13192"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13219"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13223"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13475"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13534"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15024"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15072"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15094"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15116"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15137"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15161"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12765"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12775"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12785"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12940"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12967"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12994"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13021"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13025"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13052"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13056"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13083"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13087"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13135"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13162"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13189"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13216"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13220"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13472"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13531"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15021"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15069"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15091"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15113"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15134"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15158"/>
         <source>FET warning</source>
         <translation>FET advarsel</translation>
     </message>
@@ -39126,699 +39126,699 @@ Import of data will be easier with these settings.</source>
         <location filename="../src/interface/fetmainform.cpp" line="6493"/>
         <location filename="../src/interface/fetmainform.cpp" line="6506"/>
         <location filename="../src/interface/fetmainform.cpp" line="6551"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6627"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6680"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6686"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6699"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6705"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6718"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6724"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6737"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6743"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6756"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6762"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6775"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6781"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6794"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6800"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6814"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6820"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6834"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6840"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6854"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6860"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6874"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6880"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6894"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6900"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6914"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6920"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6934"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6940"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6954"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6960"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6974"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6980"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6994"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7000"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7014"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7020"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7034"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7040"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7054"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7060"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7074"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7080"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7094"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7100"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7114"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7120"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7134"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7140"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7154"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7160"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7174"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7180"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7194"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7200"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7214"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7220"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7234"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7240"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7254"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7260"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7274"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7280"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7294"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7300"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7314"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7320"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7334"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7340"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7353"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7359"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7372"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7378"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7392"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7398"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7412"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7418"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7432"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7438"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7452"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7458"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7472"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7478"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7492"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7498"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7512"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7518"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7532"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7538"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7552"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7558"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7573"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7579"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7593"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7599"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7614"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7620"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7634"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7640"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7654"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7660"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7674"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7680"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7695"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7700"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7714"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7720"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7734"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7740"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7754"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7760"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7774"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7780"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7794"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7800"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7814"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7820"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7834"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7840"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7854"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7860"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7874"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7880"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7894"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7900"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7914"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7920"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7934"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7940"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7954"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7960"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7974"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7980"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7994"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8000"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8014"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8020"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8033"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8039"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8053"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8059"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8073"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8079"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8093"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8099"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8113"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8119"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8133"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8139"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8153"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8159"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8173"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8179"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8193"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8199"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8213"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8219"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8233"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8239"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8253"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8259"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8273"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8279"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8293"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8299"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8313"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8319"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8333"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8339"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8353"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8359"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8373"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8379"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8393"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8399"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8413"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8419"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8433"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8439"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8453"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8459"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8473"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8479"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8493"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8499"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8513"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8519"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8533"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8539"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8553"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8559"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8573"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8579"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8593"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8599"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8613"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8619"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8633"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8639"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8653"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8659"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8673"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8679"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8693"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8699"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8713"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8719"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8733"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8739"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8753"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8759"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8773"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8779"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8794"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8800"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8814"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8820"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8834"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8840"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8855"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8861"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8875"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8881"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8895"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8901"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8915"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8921"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8935"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8941"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8955"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8961"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8975"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8981"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8995"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9001"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9016"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9022"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9036"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9042"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9056"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9062"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9076"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9082"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9096"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9102"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9116"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9122"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9136"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9142"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9156"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9162"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9176"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9182"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9194"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9207"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9213"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9227"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9233"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9247"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9253"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9267"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9273"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9287"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9293"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9307"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9313"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9327"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9333"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9347"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9353"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9367"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9373"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9387"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9393"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9407"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9413"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9427"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9433"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9447"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9453"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9467"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9473"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9487"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9493"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9507"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9513"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9527"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9533"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9547"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9553"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9567"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9573"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9587"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9593"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9607"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9613"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9627"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9633"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9647"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9653"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9667"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9673"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9687"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9693"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9707"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9713"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9728"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9734"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9748"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9754"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9768"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9774"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9788"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9794"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9810"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9816"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9830"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9836"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9850"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9856"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9870"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9876"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9890"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9896"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9910"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9916"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9930"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9936"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9950"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9956"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9972"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9978"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9992"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9998"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10012"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10018"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10032"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10038"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10052"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10058"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10072"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10078"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10092"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10098"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10112"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10118"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10133"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10139"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10153"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10159"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10173"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10179"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10193"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10199"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10213"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10219"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10233"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10239"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10253"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10259"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10273"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10279"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10293"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10299"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10313"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10319"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10333"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10339"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10353"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10359"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10373"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10379"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10393"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10399"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10413"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10419"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10433"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10439"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10453"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10459"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10473"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10479"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10493"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10499"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10513"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10519"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10534"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10540"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10555"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10561"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10576"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10582"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10596"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10602"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10616"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10622"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10636"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10642"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10656"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10662"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10676"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10682"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10696"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10702"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10716"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10722"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10737"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10743"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10757"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10763"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10777"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10783"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10797"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10803"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10817"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10823"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10837"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10843"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10858"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10864"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10878"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10884"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10899"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10905"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10919"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10925"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10940"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10946"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10960"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10966"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10981"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10987"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11001"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11007"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11021"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11027"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11041"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11047"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11061"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11067"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11081"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11087"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11101"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11107"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11121"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11127"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11141"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11147"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11161"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11167"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11181"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11187"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11201"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11207"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11221"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11227"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11241"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11247"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11261"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11267"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11281"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11287"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11301"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11307"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11321"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11327"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11341"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11347"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11361"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11367"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11381"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11387"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11401"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11407"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11421"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11427"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11441"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11447"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11461"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11467"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11481"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11487"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11501"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11507"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11521"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11527"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11541"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11547"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11561"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11567"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11581"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11587"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11601"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11607"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11621"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11627"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11641"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11647"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11661"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11667"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11681"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11687"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11701"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11707"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11721"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11727"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11741"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11747"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11761"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11767"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11781"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11787"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11801"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11807"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11821"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11827"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11841"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11847"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11861"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11867"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11881"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11887"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11901"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11907"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11921"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11927"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11941"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11947"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11961"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11967"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11981"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11987"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12001"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12007"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12021"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12027"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12041"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12047"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12061"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12067"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12081"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12087"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12101"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12107"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12121"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12127"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12141"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12147"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12161"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12167"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12181"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12187"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12201"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12207"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12221"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12227"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12241"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12247"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12261"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12267"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12281"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12287"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12301"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12307"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12321"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12327"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12341"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12347"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12361"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12367"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12381"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12387"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12401"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12407"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12421"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12427"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12441"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12447"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12461"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12467"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12481"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12487"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12501"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12507"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12521"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12527"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12541"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12547"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12561"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12567"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12581"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12587"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12601"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12607"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12621"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12627"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12641"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12647"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12661"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12667"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12681"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12687"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12701"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12707"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12864"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12870"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12882"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12895"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12901"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12907"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12919"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12932"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12938"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12959"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12965"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12986"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12992"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13013"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13019"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13044"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13050"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13075"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13081"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13106"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13112"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13127"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13133"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13154"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13160"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13181"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13187"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13208"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13214"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13233"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13244"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13250"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13260"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13267"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13281"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13287"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13297"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13304"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13318"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13324"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13334"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13340"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13350"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13356"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13361"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13371"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13377"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13383"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13397"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13403"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13413"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13420"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14724"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14737"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14792"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14798"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14825"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14831"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14956"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14962"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14973"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14979"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6624"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6677"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6683"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6696"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6702"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6715"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6721"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6734"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6740"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6753"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6759"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6772"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6778"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6791"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6797"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6811"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6817"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6831"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6837"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6851"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6857"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6871"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6877"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6891"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6897"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6911"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6917"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6931"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6937"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6951"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6957"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6971"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6977"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6991"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6997"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7011"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7017"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7031"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7037"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7051"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7057"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7071"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7077"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7091"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7097"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7111"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7117"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7131"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7137"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7151"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7157"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7171"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7177"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7191"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7197"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7211"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7217"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7231"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7237"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7251"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7257"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7271"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7277"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7291"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7297"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7311"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7317"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7331"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7337"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7350"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7356"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7369"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7375"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7389"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7395"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7409"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7415"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7429"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7435"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7449"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7455"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7469"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7475"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7489"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7495"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7509"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7515"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7529"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7535"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7549"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7555"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7570"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7576"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7590"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7596"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7611"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7617"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7631"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7637"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7651"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7657"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7671"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7677"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7692"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7697"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7711"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7717"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7731"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7737"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7751"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7757"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7771"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7777"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7791"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7797"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7811"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7817"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7831"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7837"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7851"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7857"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7871"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7877"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7891"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7897"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7911"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7917"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7931"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7937"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7951"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7957"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7971"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7977"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7991"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7997"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8011"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8017"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8030"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8036"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8050"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8056"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8070"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8076"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8090"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8096"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8110"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8116"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8130"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8136"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8150"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8156"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8170"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8176"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8190"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8196"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8210"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8216"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8230"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8236"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8250"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8256"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8270"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8276"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8290"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8296"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8310"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8316"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8330"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8336"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8350"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8356"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8370"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8376"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8390"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8396"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8410"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8416"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8430"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8436"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8450"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8456"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8470"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8476"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8490"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8496"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8510"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8516"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8530"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8536"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8550"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8556"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8570"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8576"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8590"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8596"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8610"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8616"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8630"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8636"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8650"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8656"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8670"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8676"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8690"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8696"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8710"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8716"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8730"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8736"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8750"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8756"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8770"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8776"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8791"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8797"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8811"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8817"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8831"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8837"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8852"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8858"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8872"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8878"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8892"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8898"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8912"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8918"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8932"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8938"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8952"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8958"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8972"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8978"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8992"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8998"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9013"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9019"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9033"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9039"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9053"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9059"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9073"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9079"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9093"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9099"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9113"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9119"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9133"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9139"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9153"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9159"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9173"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9179"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9191"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9204"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9210"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9224"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9230"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9244"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9250"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9264"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9270"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9284"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9290"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9304"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9310"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9324"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9330"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9344"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9350"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9364"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9370"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9384"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9390"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9404"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9410"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9424"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9430"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9444"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9450"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9464"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9470"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9484"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9490"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9504"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9510"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9524"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9530"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9544"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9550"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9564"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9570"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9584"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9590"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9604"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9610"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9624"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9630"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9644"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9650"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9664"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9670"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9684"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9690"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9704"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9710"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9725"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9731"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9745"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9751"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9765"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9771"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9785"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9791"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9807"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9813"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9827"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9833"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9847"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9853"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9867"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9873"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9887"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9893"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9907"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9913"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9927"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9933"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9947"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9953"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9969"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9975"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9989"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9995"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10009"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10015"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10029"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10035"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10049"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10055"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10069"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10075"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10089"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10095"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10109"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10115"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10130"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10136"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10150"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10156"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10170"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10176"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10190"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10196"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10210"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10216"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10230"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10236"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10250"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10256"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10270"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10276"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10290"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10296"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10310"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10316"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10330"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10336"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10350"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10356"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10370"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10376"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10390"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10396"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10410"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10416"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10430"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10436"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10450"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10456"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10470"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10476"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10490"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10496"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10510"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10516"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10531"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10537"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10552"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10558"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10573"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10579"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10593"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10599"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10613"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10619"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10633"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10639"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10653"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10659"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10673"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10679"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10693"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10699"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10713"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10719"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10734"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10740"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10754"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10760"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10774"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10780"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10794"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10800"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10814"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10820"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10834"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10840"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10855"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10861"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10875"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10881"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10896"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10902"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10916"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10922"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10937"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10943"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10957"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10963"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10978"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10984"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10998"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11004"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11018"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11024"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11038"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11044"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11058"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11064"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11078"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11084"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11098"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11104"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11118"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11124"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11138"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11144"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11158"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11164"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11178"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11184"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11198"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11204"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11218"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11224"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11238"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11244"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11258"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11264"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11278"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11284"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11298"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11304"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11318"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11324"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11338"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11344"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11358"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11364"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11378"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11384"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11398"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11404"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11418"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11424"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11438"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11444"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11458"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11464"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11478"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11484"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11498"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11504"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11518"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11524"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11538"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11544"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11558"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11564"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11578"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11584"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11598"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11604"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11618"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11624"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11638"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11644"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11658"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11664"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11678"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11684"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11698"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11704"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11718"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11724"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11738"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11744"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11758"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11764"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11778"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11784"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11798"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11804"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11818"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11824"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11838"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11844"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11858"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11864"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11878"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11884"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11898"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11904"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11918"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11924"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11938"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11944"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11958"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11964"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11978"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11984"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11998"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12004"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12018"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12024"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12038"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12044"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12058"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12064"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12078"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12084"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12098"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12104"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12118"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12124"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12138"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12144"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12158"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12164"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12178"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12184"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12198"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12204"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12218"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12224"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12238"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12244"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12258"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12264"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12278"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12284"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12298"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12304"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12318"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12324"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12338"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12344"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12358"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12364"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12378"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12384"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12398"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12404"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12418"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12424"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12438"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12444"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12458"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12464"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12478"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12484"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12498"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12504"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12518"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12524"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12538"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12544"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12558"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12564"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12578"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12584"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12598"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12604"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12618"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12624"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12638"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12644"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12658"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12664"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12678"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12684"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12698"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12704"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12861"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12867"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12879"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12892"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12898"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12904"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12916"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12929"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12935"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12956"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12962"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12983"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12989"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13010"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13016"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13041"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13047"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13072"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13078"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13103"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13109"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13124"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13130"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13151"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13157"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13178"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13184"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13205"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13211"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13230"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13241"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13247"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13257"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13264"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13278"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13284"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13294"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13301"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13315"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13321"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13331"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13337"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13347"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13353"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13358"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13368"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13374"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13380"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13394"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13400"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13410"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13417"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14721"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14734"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14789"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14795"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14822"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14828"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14953"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14959"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14970"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14976"/>
         <source>FET information</source>
         <translation>FET information</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="9190"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9187"/>
         <source>Explanation:</source>
         <translation>Forklaring:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13740"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13737"/>
         <source>Students&apos; combo boxes style will be %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13733"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13740"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13730"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13737"/>
         <source>simple</source>
         <comment>It is a style for students&apos; combo boxes</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13812"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13809"/>
         <source>&amp;Yes</source>
         <translation>&amp;Ja</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13812"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13809"/>
         <source>&amp;No</source>
         <translation>&amp;Nej</translation>
     </message>
@@ -39924,335 +39924,335 @@ Import of data will be easier with these settings.</source>
         <location filename="../src/interface/fetmainform.cpp" line="6481"/>
         <location filename="../src/interface/fetmainform.cpp" line="6494"/>
         <location filename="../src/interface/fetmainform.cpp" line="6507"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6681"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6700"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6719"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6738"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6757"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6776"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6795"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6815"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6835"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6855"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6875"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6895"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6915"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6935"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6955"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6975"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6995"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7015"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7035"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7055"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7075"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7095"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7115"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7135"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7155"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7175"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7195"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7215"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7235"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7255"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7275"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7295"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7315"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7335"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7354"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7373"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7393"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7413"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7433"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7453"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7473"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7493"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7513"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7533"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7553"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7574"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7594"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7615"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7635"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7655"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7675"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7696"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7715"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7735"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7755"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7775"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7795"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7815"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7835"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7855"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7875"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7895"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7915"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7935"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7955"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7975"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7995"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8015"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8034"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8054"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8074"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8094"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8114"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8134"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8154"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8174"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8194"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8214"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8234"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8254"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8274"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8294"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8314"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8334"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8354"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8374"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8394"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8414"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8434"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8454"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8474"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8494"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8514"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8534"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8554"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8574"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8594"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8614"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8634"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8654"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8674"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8694"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8714"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8734"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8754"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8774"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8795"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8815"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8835"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8856"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8876"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8896"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8916"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8936"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8956"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8976"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8996"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9017"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9037"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9057"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9077"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9097"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9117"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9137"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9157"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9177"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9208"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9228"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9248"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9268"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9288"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9308"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9328"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9348"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9368"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9388"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9408"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9428"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9448"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9468"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9488"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9508"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9528"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9548"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9568"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9588"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9608"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9628"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9648"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9668"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9688"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9708"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9729"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9749"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9769"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9789"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9811"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9831"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9851"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9871"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9891"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9911"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9931"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9951"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9973"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9993"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10013"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10033"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10053"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10073"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10093"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10113"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10134"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10154"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10174"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10194"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10214"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10234"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10254"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10274"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10294"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10314"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10334"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10354"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10374"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10394"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10414"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10434"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10454"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10474"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10494"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10514"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10535"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10556"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10577"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10597"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10617"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10637"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10657"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10677"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10697"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10717"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10738"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10758"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10778"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10798"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10818"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10838"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10859"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10879"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10900"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10920"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10941"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10961"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10982"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11002"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11022"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11042"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11062"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11082"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11102"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11122"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11142"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11162"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11182"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11202"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11222"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11242"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11262"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11282"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11302"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11322"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11342"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11362"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11382"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11402"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11422"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11442"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11462"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11482"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11502"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11522"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11542"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11562"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11582"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11602"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11622"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11642"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11662"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11682"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11702"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11722"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11742"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11762"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11782"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11802"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11822"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11842"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11862"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11882"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11902"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11922"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11942"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11962"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11982"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12002"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12022"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12042"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12062"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12082"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12102"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12122"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12142"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12162"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12182"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12202"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12222"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12242"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12262"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12282"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12302"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12322"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12342"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12362"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12382"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12402"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12422"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12442"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12462"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12482"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12502"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12522"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12542"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12562"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12582"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12602"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12622"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12642"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12662"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12682"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12702"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12865"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12896"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12933"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12960"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12987"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13014"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13045"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13076"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13107"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13128"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13155"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13182"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13209"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13234"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13245"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13261"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13282"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13298"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13319"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13335"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13351"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13372"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13398"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13414"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14793"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14826"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14957"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14974"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6678"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6697"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6716"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6735"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6754"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6773"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6792"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6812"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6832"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6852"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6872"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6892"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6912"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6932"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6952"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6972"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6992"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7012"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7032"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7052"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7072"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7092"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7112"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7132"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7152"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7172"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7192"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7212"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7232"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7252"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7272"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7292"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7312"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7332"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7351"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7370"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7390"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7410"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7430"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7450"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7470"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7490"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7510"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7530"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7550"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7571"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7591"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7612"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7632"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7652"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7672"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7693"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7712"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7732"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7752"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7772"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7792"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7812"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7832"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7852"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7872"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7892"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7912"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7932"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7952"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7972"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7992"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8012"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8031"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8051"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8071"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8091"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8111"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8131"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8151"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8171"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8191"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8211"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8231"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8251"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8271"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8291"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8311"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8331"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8351"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8371"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8391"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8411"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8431"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8451"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8471"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8491"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8511"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8531"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8551"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8571"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8591"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8611"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8631"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8651"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8671"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8691"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8711"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8731"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8751"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8771"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8792"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8812"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8832"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8853"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8873"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8893"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8913"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8933"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8953"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8973"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8993"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9014"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9034"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9054"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9074"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9094"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9114"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9134"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9154"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9174"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9205"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9225"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9245"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9265"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9285"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9305"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9325"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9345"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9365"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9385"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9405"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9425"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9445"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9465"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9485"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9505"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9525"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9545"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9565"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9585"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9605"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9625"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9645"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9665"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9685"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9705"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9726"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9746"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9766"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9786"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9808"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9828"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9848"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9868"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9888"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9908"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9928"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9948"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9970"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9990"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10010"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10030"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10050"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10070"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10090"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10110"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10131"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10151"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10171"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10191"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10211"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10231"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10251"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10271"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10291"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10311"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10331"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10351"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10371"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10391"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10411"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10431"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10451"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10471"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10491"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10511"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10532"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10553"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10574"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10594"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10614"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10634"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10654"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10674"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10694"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10714"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10735"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10755"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10775"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10795"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10815"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10835"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10856"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10876"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10897"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10917"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10938"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10958"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10979"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10999"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11019"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11039"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11059"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11079"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11099"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11119"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11139"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11159"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11179"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11199"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11219"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11239"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11259"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11279"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11299"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11319"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11339"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11359"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11379"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11399"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11419"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11439"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11459"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11479"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11499"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11519"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11539"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11559"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11579"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11599"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11619"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11639"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11659"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11679"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11699"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11719"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11739"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11759"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11779"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11799"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11819"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11839"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11859"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11879"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11899"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11919"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11939"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11959"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11979"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11999"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12019"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12039"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12059"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12079"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12099"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12119"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12139"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12159"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12179"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12199"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12219"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12239"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12259"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12279"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12299"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12319"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12339"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12359"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12379"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12399"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12419"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12439"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12459"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12479"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12499"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12519"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12539"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12559"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12579"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12599"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12619"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12639"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12659"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12679"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12699"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12862"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12893"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12930"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12957"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12984"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13011"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13042"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13073"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13104"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13125"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13152"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13179"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13206"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13231"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13242"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13258"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13279"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13295"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13316"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13332"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13348"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13369"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13395"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13411"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14790"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14823"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14954"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14971"/>
         <source>Please start a new file or open an existing one before accessing/modifying/saving/exporting the data.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -40337,9 +40337,9 @@ Import of data will be easier with these settings.</source>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="5112"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12768"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12778"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12788"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12765"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12775"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12785"/>
         <source>Could not start the default internet browser (trying to open the link %1). Maybe you can try to manually start your browser and open this link.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -40453,32 +40453,27 @@ Import of data will be easier with these settings.</source>
         <translation>Seed fra Random nummer generator: læs om hjælp i denne options dialog</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="6575"/>
-        <source>Interface - use colors: the places with colors in FET interface are in:</source>
-        <translation>Interface - brug farver: steder med farver i FET interface er i:</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="6595"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6592"/>
         <source>Confirmations: unselect the corresponding check boxes if you want to skip introduction and confirmation to various advanced dialogs.</source>
         <translation>Godkendelser: fravælg den korresponderende check box hvis du vil springe introduktion og godkendelse af forskellige avancerede dialoger over.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="6599"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6596"/>
         <source>Duplicate vertical headers to the right (in timetable settings) - select this if you want the timetables to duplicate the table left vertical headers to the right part of the tables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="6621"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6618"/>
         <source>After that, you can enable the writing of the timetables and regenerate.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="6634"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6631"/>
         <source>You will find in the statistics only active activities count. The inactive ones are not counted.</source>
         <translation>Statistikken tæller kun aktive aktiviteter. De inaktive tælles ikke med.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="6638"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6635"/>
         <source>Statistics for students might be the most difficult to understand. If you are using divisions of years: probably the most relevant statistics are the ones for each subgroup (so you may check only subgroups check box). You may see more hours for the years or groups, but these are not significant, please ignore them, because each year or group will count also activities of all contained subgroups.
 
 Each subgroup should have a number of hours per week close to the average of all subgroups and close to the normal number of working hours of each students set. If a subgroup has a much lower value, maybe you used incorrectly the years/groups/subgroups for activities.
@@ -40495,41 +40490,41 @@ Læs venligst vores FAQ for en detaljeret beskrivelse af hvordan opdelinger virk
 Har du en undergruppe med for få timer pr uge, betyder det at du har angivet aktiviteterne forkert, og at nogle bindinger som ingen mellemtimer, tidlig eller min timer pr dag for denne undergruppe bliver opfattet forkert (hvis en undergruppe kun har to aktiviteter, må disse placeres på de første timer, og det er svært og forkert).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="6667"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6664"/>
         <source>Activities rooms statistics: this menu will show the activities which may be scheduled in an unspecified room, if they are referred to by space constraints with weight under 100.0%, and the activities which will certainly be scheduled in an unspecified room, if they are not referred to by any space constraints. Remember that home rooms constraints are effective only on activities which have only the exact specified teacher or students set (activities with more teachers or students sets are not affected by home rooms constraints, you need to have preferred rooms constraints for such activities to ensure they will not end up in an unspecified room).</source>
         <translation>Aktivitet-rum statistik: Denne menu vil vise aktiviteter der finder sted i et ikke specificeret rum, hvis de henvises fra en sted binding på mindre end 100.0%, og aktiviteterne vil blive planlagt til et uspecificeret sted, hvis de ikke henvises af nogen sted-binding. Husk at rum-bindinger kun er effektive på aktiviteter som har en eksakt lærer- eller elev sæt (aktiviteter med flere lærer- eller elev sæt er ikke påvirket af hjemme rum bindinger. Du er nødt til at have foretrukne rum bindinger for disse aktiviteter, for at sikre at de ikke vil ende i et ikke-specificeret rum).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="6674"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6671"/>
         <source>FET - information about statistics</source>
         <translation>FET - information om statistik</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="9188"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9185"/>
         <source>Feature is not enabled. To use this type of feature you must enable it from the Settings-&gt;Advanced menu.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="9192"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9189"/>
         <source>The feature must be used with caution, by experienced users.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="12804"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12801"/>
         <source>Additionally, you may find on the FET homepage other contact information.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13267"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13304"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13383"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13420"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13264"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13301"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13380"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13417"/>
         <source>The timetable is not generated, but anyway FET will proceed now</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="4822"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13439"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13436"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
@@ -40539,106 +40534,106 @@ Har du en undergruppe med for få timer pr uge, betyder det at du har angivet ak
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13560"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13557"/>
         <source>The geometry and any other saved settings of all the windows and dialogs will be reset to default</source>
         <translation>Geometrien og alle andre indstillinger på alle vinduer og dialoger vil blive nulstillet</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13602"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13599"/>
         <source>The list of recently used files will be cleared</source>
         <translation>Listen med for nylig brugte filer bliver tømt</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13648"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13645"/>
         <source>Confirm activity planning will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Bekræft at aktivitets planlægning er %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13650"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13647"/>
         <source>Confirm spread activities over the week will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Bekræft at aktiviteter spredt over ugen er %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13652"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13649"/>
         <source>Confirm remove redundant constraints will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Bekræft at fjernelse af overflødige bindinger er %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13658"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13655"/>
         <source>Enable group activities in the initial order of generation will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13660"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13657"/>
         <source>Warn if using group activities in the initial order of generation will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13714"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13711"/>
         <source>44</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13717"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13714"/>
         <source>45</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13718"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13715"/>
         <source>activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13723"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13720"/>
         <source>Show tool tips for constraints with tables will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13720"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13717"/>
         <source>46</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13725"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13722"/>
         <source>Show warning for subgroups with the same activities will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13723"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13720"/>
         <source>47</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13725"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13722"/>
         <source>48</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13727"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13724"/>
         <source>Print detailed timetables will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13727"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13724"/>
         <source>49</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13729"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13726"/>
         <source>Print detailed teachers&apos; free periods timetables will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="15132"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15129"/>
         <source>This kind of option is good, but only in the right case. Adding such an option in the wrong circumstance may make your timetable solve too slow or even impossible.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -40659,55 +40654,55 @@ Har du en undergruppe med for få timer pr uge, betyder det at du har angivet ak
         <translation>Yderligere kommentarer: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="12938"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12965"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12992"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13019"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13050"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13081"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13112"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13133"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13160"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13187"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13214"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13250"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13287"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13324"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13340"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13361"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13403"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12935"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12962"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12989"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13016"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13047"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13078"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13109"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13130"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13157"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13184"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13211"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13247"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13284"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13321"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13337"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13358"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13400"/>
         <source>Please generate, firstly</source>
         <translation>Du skal generere, først</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="12943"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12970"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12997"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13024"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13055"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13086"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13138"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13165"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13192"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13219"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12940"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12967"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12994"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13021"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13052"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13083"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13135"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13162"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13189"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13216"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation>Kan ikke vise skema, fordi du har tilføjet eller fjernet lokaler. Regenerer venligst skemaet for at se det</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13028"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13059"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13090"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13223"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13025"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13056"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13087"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13220"/>
         <source>Cannot display the timetable, because you added or removed some teachers. Please regenerate the timetable and then view it</source>
         <translation>Kan ikke vise skema, fordi du har tilføjet eller fjernet lærere. Regenerer venligst skemaet for at se det</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13577"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13574"/>
         <source>US English</source>
         <translation>US Engelsk</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13475"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13472"/>
         <source>Invalid current language - making it en_US (US English)</source>
         <translation>Ugyldigt nuværende sprog - ændrer det til en_US (US Engelsk)</translation>
     </message>
@@ -40717,43 +40712,49 @@ Har du en undergruppe med for få timer pr uge, betyder det at du har angivet ak
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="12806"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6575"/>
+        <source>Interface - use colors: the places where this setting is used are the add/modify dialogs of the constraints which use tables, like not available times or preferred times (the table cells will have a green or a red color).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="12803"/>
         <source>In case these addresses do not function, maybe the FET web page has temporary problems, so try again later. Or maybe the FET web page has changed, so search for the new page on the internet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13534"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13531"/>
         <source>Invalid language selected - making it en_US (US English)</source>
         <translation>Ugyldigt valgt sprog - ændrer det til en_US (US Engelsk)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13557"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13554"/>
         <source>That means:</source>
         <translation>Det betyder:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13563"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13560"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13614"/>
         <location filename="../src/interface/fetmainform.cpp" line="13617"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13620"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13629"/>
         <location filename="../src/interface/fetmainform.cpp" line="13632"/>
         <location filename="../src/interface/fetmainform.cpp" line="13635"/>
         <location filename="../src/interface/fetmainform.cpp" line="13638"/>
         <location filename="../src/interface/fetmainform.cpp" line="13641"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13644"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13648"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13650"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13652"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13654"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13660"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13664"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13666"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13671"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13645"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13647"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13649"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13651"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13657"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13661"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13663"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13668"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13672"/>
         <location filename="../src/interface/fetmainform.cpp" line="13675"/>
         <location filename="../src/interface/fetmainform.cpp" line="13678"/>
         <location filename="../src/interface/fetmainform.cpp" line="13681"/>
         <location filename="../src/interface/fetmainform.cpp" line="13684"/>
         <location filename="../src/interface/fetmainform.cpp" line="13687"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13690"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13691"/>
         <location filename="../src/interface/fetmainform.cpp" line="13694"/>
         <location filename="../src/interface/fetmainform.cpp" line="13697"/>
         <location filename="../src/interface/fetmainform.cpp" line="13700"/>
@@ -40763,211 +40764,210 @@ Har du en undergruppe med for få timer pr uge, betyder det at du har angivet ak
         <location filename="../src/interface/fetmainform.cpp" line="13712"/>
         <location filename="../src/interface/fetmainform.cpp" line="13715"/>
         <location filename="../src/interface/fetmainform.cpp" line="13718"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13721"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13725"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13727"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13729"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13747"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13752"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13756"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13768"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13778"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13722"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13724"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13726"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13744"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13749"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13753"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13765"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13775"/>
         <source>true</source>
         <translation>sand</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13573"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13570"/>
         <source>Use colors in FET graphical user interface will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Brug farver i FET grafisk bruger interface vil være %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13577"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13598"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13574"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13595"/>
         <source>Language will be %1</source>
         <comment>%1 is the default language</comment>
         <translation>Sprog vil være %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13614"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13611"/>
         <source>HTML level of the timetables will be %1</source>
         <comment>%1 is default HTML level</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13623"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13620"/>
         <source>Divide HTML timetables with time axis by days will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13626"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13623"/>
         <source>Duplicate vertical headers to the right will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13632"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13629"/>
         <source>Print subjects in timetables will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13635"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13632"/>
         <source>Print activity tags in timetables will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13638"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13635"/>
         <source>Print teachers in timetables will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13641"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13638"/>
         <source>Print students in timetables will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13644"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13641"/>
         <source>Print rooms in timetables will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13654"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13651"/>
         <source>Confirm save data and timetable as will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Bekræft gem data og skema som vil blive %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13709"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13706"/>
         <source>buildings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13729"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13726"/>
         <source>50</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13750"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13747"/>
         <source>54</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13755"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13752"/>
         <source>55</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13750"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13747"/>
         <source>Beep at the end of the generation will be %1, run external command at the end of generation will be %2, and the external command will be empty</source>
         <comment>%1 and %2 are true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13759"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13756"/>
         <source>56</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13762"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13759"/>
         <source>57</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13765"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13762"/>
         <source>58</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13768"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13765"/>
         <source>59</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13771"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13768"/>
         <source>60</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13759"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13756"/>
         <source>Write HTML timetables for subgroups in sorted order will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13778"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13775"/>
         <source>61</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13762"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13759"/>
         <source>The Boolean value &apos;The font is user selectable&apos; will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13781"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13778"/>
         <source>62</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13765"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13762"/>
         <source>The font will be reset to default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13783"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13780"/>
         <source>63</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13785"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13782"/>
         <source>64</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13787"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13784"/>
         <source>65</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13789"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13786"/>
         <source>66</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13792"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13789"/>
         <source>67</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13794"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13791"/>
         <source>68</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13796"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13793"/>
         <source>69</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13799"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13796"/>
         <source>70</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13768"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13765"/>
         <source>Enable save and restore history to/from the memory will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13775"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13772"/>
         <source>If the history settings will change, the history will be cleared.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -40982,115 +40982,115 @@ Har du en undergruppe med for få timer pr uge, betyder det at du har angivet ak
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13566"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13563"/>
         <source>In the shortcuts tab from the main window, the first section will be selected/shown</source>
         <comment>Section refers to the main window tab widget for shortcuts, which currently contains 5 tabs: File, Data, Time, Space, Timetable (so it will select/show File tab).</comment>
         <translation type="unfinished">I genvejs- fanen fra hovedvinduet, vil den første sektion være valgt / vist</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13771"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13768"/>
         <source>The number of states to record in history to the memory will be %1</source>
         <comment>%1 is a number</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13781"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13778"/>
         <source>Enable file autosave will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13783"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13780"/>
         <source>The number of minutes before autosave will be %1</source>
         <comment>%1 is an integer</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13785"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13782"/>
         <source>The number of operations before autosave will be %1</source>
         <comment>%1 is an integer</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13787"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13784"/>
         <source>The directory for autosave will be &apos;%1&apos;</source>
         <comment>%1 is a directory name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13792"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13789"/>
         <source>Enable save and restore history to/from the disk will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13794"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13791"/>
         <source>The number of states to record in history to the disk will be %1</source>
         <comment>%1 is a number</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13796"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13793"/>
         <source>The file name suffix for saving the history to the disk will be &apos;%1&apos;</source>
         <comment>%1 is a suffix to be added to the file name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13799"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13796"/>
         <source>The timetable options about which information to be printed in which table will be reset to defaults.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13802"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13799"/>
         <source>71</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13802"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13799"/>
         <source>The interface style and color scheme will be reset to defaults (useful only if the used Qt version is at least %1).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13808"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13805"/>
         <source>72</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="14861"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14858"/>
         <source>You have more than 6 real days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="14908"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14905"/>
         <source>You have less than 5 real days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="15135"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15132"/>
         <source>Continue only if you know what you are doing.</source>
         <translation>Fortsæt kun hvis du ved hvad du laver.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="15066"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15088"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15110"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15155"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15063"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15085"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15107"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15152"/>
         <source>It is recommended to keep this warning active, but if you really want, you can disable it.</source>
         <translation>Det anbefales at have denne advarsel aktiveret, men du kan fjerne den hvis du virkelig vil.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="15068"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15090"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15112"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15157"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15065"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15087"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15109"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15154"/>
         <source>Disable it only if you know what you are doing.</source>
         <translation>Deaktiver den kun hvis du ved hvad du laver.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="15070"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15092"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15114"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15159"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15067"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15089"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15111"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15156"/>
         <source>Are you sure you want to disable it?</source>
         <translation>Er du sikker på at du vil deaktivere den?</translation>
     </message>
@@ -41128,7 +41128,7 @@ Har du en undergruppe med for få timer pr uge, betyder det at du har angivet ak
         <translation>Vælg venligst et ikke-eksisterende navn</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13554"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13551"/>
         <source>Are you sure you want to reset all settings to defaults?</source>
         <translation>Er du sikker på at du vil nulstille alle indstillinger til det oprindelige?</translation>
     </message>
@@ -41297,315 +41297,315 @@ Har du en undergruppe med for få timer pr uge, betyder det at du har angivet ak
         <location filename="../src/interface/fetmainform.cpp" line="6430"/>
         <location filename="../src/interface/fetmainform.cpp" line="6449"/>
         <location filename="../src/interface/fetmainform.cpp" line="6468"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6687"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6706"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6725"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6744"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6763"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6782"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6801"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6821"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6841"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6861"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6881"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6901"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6921"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6941"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6961"/>
-        <location filename="../src/interface/fetmainform.cpp" line="6981"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7001"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7021"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7041"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7061"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7081"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7101"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7121"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7141"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7161"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7181"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7201"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7221"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7241"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7261"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7281"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7301"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7321"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7341"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7360"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7379"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7399"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7419"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7439"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7459"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7479"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7499"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7519"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7539"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7559"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7580"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7600"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7621"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7641"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7661"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7681"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7701"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7721"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7741"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7761"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7781"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7801"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7821"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7841"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7861"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7881"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7901"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7921"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7941"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7961"/>
-        <location filename="../src/interface/fetmainform.cpp" line="7981"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8001"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8021"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8040"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8060"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8080"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8100"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8120"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8140"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8160"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8180"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8200"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8220"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8240"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8260"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8280"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8300"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8320"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8340"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8360"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8380"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8400"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8420"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8440"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8460"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8480"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8500"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8520"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8540"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8560"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8580"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8600"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8620"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8640"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8660"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8680"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8700"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8720"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8740"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8760"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8780"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8801"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8821"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8841"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8862"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8882"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8902"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8922"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8942"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8962"/>
-        <location filename="../src/interface/fetmainform.cpp" line="8982"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9002"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9023"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9043"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9063"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9083"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9103"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9123"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9143"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9163"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9183"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9214"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9234"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9254"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9274"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9294"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9314"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9334"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9354"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9374"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9394"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9414"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9434"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9454"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9474"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9494"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9514"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9534"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9554"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9574"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9594"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9614"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9634"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9654"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9674"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9694"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9714"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9735"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9755"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9775"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9795"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9817"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9837"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9857"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9877"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9897"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9917"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9937"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9957"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9979"/>
-        <location filename="../src/interface/fetmainform.cpp" line="9999"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10019"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10039"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10059"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10079"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10099"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10119"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10140"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10160"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10180"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10200"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10220"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10240"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10260"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10280"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10300"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10320"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10340"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10360"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10380"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10400"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10420"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10440"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10460"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10480"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10500"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10520"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10541"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10562"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10583"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10603"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10623"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10643"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10663"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10683"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10703"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10723"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10744"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10764"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10784"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10804"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10824"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10844"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10865"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10885"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10906"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10926"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10947"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10967"/>
-        <location filename="../src/interface/fetmainform.cpp" line="10988"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11008"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11028"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11048"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11068"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11088"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11108"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11128"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11148"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11168"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11188"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11208"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11228"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11248"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11268"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11288"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11308"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11328"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11348"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11368"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11388"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11408"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11428"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11448"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11468"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11488"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11508"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11528"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11548"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11568"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11588"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11608"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11628"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11648"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11668"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11688"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11708"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11728"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11748"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11768"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11788"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11808"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11828"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11848"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11868"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11888"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11908"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11928"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11948"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11968"/>
-        <location filename="../src/interface/fetmainform.cpp" line="11988"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12008"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12028"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12048"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12068"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12088"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12108"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12128"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12148"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12168"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12188"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12208"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12228"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12248"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12268"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12288"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12308"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12328"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12348"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12368"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12388"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12408"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12428"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12448"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12468"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12488"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12508"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12528"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12548"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12568"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12588"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12608"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12628"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12648"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12668"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12688"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12708"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12871"/>
-        <location filename="../src/interface/fetmainform.cpp" line="12902"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14725"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14738"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14799"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14832"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14963"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14980"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6684"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6703"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6722"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6741"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6760"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6779"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6798"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6818"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6838"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6858"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6878"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6898"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6918"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6938"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6958"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6978"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6998"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7018"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7038"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7058"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7078"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7098"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7118"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7138"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7158"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7178"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7198"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7218"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7238"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7258"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7278"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7298"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7318"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7338"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7357"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7376"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7396"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7416"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7436"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7456"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7476"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7496"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7516"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7536"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7556"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7577"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7597"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7618"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7638"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7658"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7678"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7698"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7718"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7738"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7758"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7778"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7798"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7818"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7838"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7858"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7878"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7898"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7918"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7938"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7958"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7978"/>
+        <location filename="../src/interface/fetmainform.cpp" line="7998"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8018"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8037"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8057"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8077"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8097"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8117"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8137"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8157"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8177"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8197"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8217"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8237"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8257"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8277"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8297"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8317"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8337"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8357"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8377"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8397"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8417"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8437"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8457"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8477"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8497"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8517"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8537"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8557"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8577"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8597"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8617"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8637"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8657"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8677"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8697"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8717"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8737"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8757"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8777"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8798"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8818"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8838"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8859"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8879"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8899"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8919"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8939"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8959"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8979"/>
+        <location filename="../src/interface/fetmainform.cpp" line="8999"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9020"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9040"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9060"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9080"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9100"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9120"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9140"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9160"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9180"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9211"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9231"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9251"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9271"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9291"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9311"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9331"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9351"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9371"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9391"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9411"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9431"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9451"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9471"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9491"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9511"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9531"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9551"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9571"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9591"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9611"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9631"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9651"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9671"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9691"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9711"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9732"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9752"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9772"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9792"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9814"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9834"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9854"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9874"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9894"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9914"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9934"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9954"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9976"/>
+        <location filename="../src/interface/fetmainform.cpp" line="9996"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10016"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10036"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10056"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10076"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10096"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10116"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10137"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10157"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10177"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10197"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10217"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10237"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10257"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10277"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10297"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10317"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10337"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10357"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10377"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10397"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10417"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10437"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10457"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10477"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10497"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10517"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10538"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10559"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10580"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10600"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10620"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10640"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10660"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10680"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10700"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10720"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10741"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10761"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10781"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10801"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10821"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10841"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10862"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10882"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10903"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10923"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10944"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10964"/>
+        <location filename="../src/interface/fetmainform.cpp" line="10985"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11005"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11025"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11045"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11065"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11085"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11105"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11125"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11145"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11165"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11185"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11205"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11225"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11245"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11265"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11285"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11305"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11325"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11345"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11365"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11385"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11405"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11425"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11445"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11465"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11485"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11505"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11525"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11545"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11565"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11585"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11605"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11625"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11645"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11665"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11685"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11705"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11725"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11745"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11765"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11785"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11805"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11825"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11845"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11865"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11885"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11905"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11925"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11945"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11965"/>
+        <location filename="../src/interface/fetmainform.cpp" line="11985"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12005"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12025"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12045"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12065"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12085"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12105"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12125"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12145"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12165"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12185"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12205"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12225"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12245"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12265"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12285"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12305"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12325"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12345"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12365"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12385"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12405"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12425"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12445"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12465"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12485"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12505"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12525"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12545"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12565"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12585"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12605"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12625"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12645"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12665"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12685"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12705"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12868"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12899"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14722"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14735"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14796"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14829"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14960"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14977"/>
         <source>Generation in progress. Please stop the generation before this.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -41768,319 +41768,315 @@ Har du en undergruppe med for få timer pr uge, betyder det at du har angivet ak
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="6591"/>
-        <source>the timetable view dialogs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="6604"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6601"/>
         <source>If you have many subgroups and you don&apos;t explicitly use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="6607"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6604"/>
         <source>Note that using the global menu setting to hide subgroups in activity planning is a different thing from the check box in the activity planning dialog, and the global setting works better and faster.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="6610"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6607"/>
         <source>If you hide subgroups in combo boxes, the affected dialogs (like the activities dialog or the add constraint students set not available times dialog) will load much faster if you have many subgroups.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="6615"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6612"/>
         <source>If you are only working on a timetable, and you do not need to publish it, you may want to disable writing some categories of timetables on the hard disk, for efficiency (the generation speed is not affected, only the overhead to write the partial/complete timetables when stopping/finishing the generation). The timetables taking the longest time are the subgroups, groups AND years ones.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="6619"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6616"/>
         <source>(Also the conflicts timetable might take long to write, if the file is large.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="6624"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6621"/>
         <source>Show tool tips for constraints with tables: in the add/modify constraint dialogs which use tables, like the &apos;not available times&apos; ones, each table cell will have a tool tip to show the current day/hour (column/row name).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="12798"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12795"/>
         <source>FET homepage: %1</source>
         <comment>%1 is FET homepage, begins with https://...</comment>
         <translation type="unfinished">FET hjemmeside: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="12800"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12797"/>
         <source>Documentation (online help contents): %1</source>
         <comment>%1 is web page of FET Doc(umentation), which is the contents of the online help, it begins with https://...</comment>
         <translation type="unfinished">Dokumentation (online hjælp indhold): %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="12802"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12799"/>
         <source>Forum: %1</source>
         <comment>%1 is web page of FET forum, begins with https://...</comment>
         <translation type="unfinished">Forum: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="12882"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12879"/>
         <source>Please input at least one active activity before generating.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="12908"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12905"/>
         <source>Your current data file is unnamed. Please save it under a chosen name before continuing.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="12919"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12916"/>
         <source>Please input at least one active activity before generating multiple.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13356"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13377"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13353"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13374"/>
         <source>You have no activity tags defined in your data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13462"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13459"/>
         <source>%1 (%2)</source>
         <comment>%1 is the international abbreviation of the language, %2 is the name of the language, untranslated</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13560"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13557"/>
         <source>1</source>
         <translation type="unfinished">1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13563"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13560"/>
         <source>Show shortcut buttons in main window will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Vis genvejstaster i hoved-vindue vil være %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13563"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13560"/>
         <source>2</source>
         <translation type="unfinished">2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13566"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13563"/>
         <source>3</source>
         <translation type="unfinished">3</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13570"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13567"/>
         <source>Check for updates at startup will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Check for updateringer ved opstart vil være %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13570"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13567"/>
         <source>4</source>
         <translation type="unfinished">4</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13573"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13570"/>
         <source>5</source>
         <translation type="unfinished">5</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13577"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13598"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13574"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13595"/>
         <source>6</source>
         <translation type="unfinished">6</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13602"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13599"/>
         <source>7</source>
         <translation type="unfinished">7</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13605"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13602"/>
         <source>Working directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation>Arbejdsmappe vil være %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13605"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13602"/>
         <source>8</source>
         <translation type="unfinished">8</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13608"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13605"/>
         <source>Output directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation>Output mappe vil være %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13608"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13605"/>
         <source>9</source>
         <translation type="unfinished">9</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13611"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13608"/>
         <source>Import directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation>Import mappe vil være %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13611"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13608"/>
         <source>10</source>
         <translation type="unfinished">10</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13614"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13611"/>
         <source>11</source>
         <translation type="unfinished">11</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13617"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13614"/>
         <source>Mark not available slots with -x- in timetables will be %1</source>
         <comment>%1 is true or false. Lowercase -x-</comment>
         <translation>Marker ikke tilgængelige tider med -x- i skemaet vil være %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13617"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13614"/>
         <source>12</source>
         <translation type="unfinished">12</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13620"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13617"/>
         <source>Mark break slots with -X- in timetables will be %1</source>
         <comment>%1 is true or false. Uppercase -X-</comment>
         <translation>Marker pause tider med -X- i skemaet vil være %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13620"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13617"/>
         <source>13</source>
         <translation type="unfinished">13</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13623"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13620"/>
         <source>14</source>
         <translation type="unfinished">14</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13626"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13623"/>
         <source>15</source>
         <translation type="unfinished">15</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13629"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13626"/>
         <source>Print activities with same starting time will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Udskriv aktiviteter med samme starttid vil være %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13629"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13626"/>
         <source>16</source>
         <translation type="unfinished">16</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13632"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13629"/>
         <source>17</source>
         <translation type="unfinished">17</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13635"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13632"/>
         <source>18</source>
         <translation type="unfinished">18</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13638"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13635"/>
         <source>19</source>
         <translation type="unfinished">19</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13641"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13638"/>
         <source>20</source>
         <translation type="unfinished">20</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13644"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13641"/>
         <source>21</source>
         <translation type="unfinished">21</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13648"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13645"/>
         <source>22</source>
         <translation type="unfinished">22</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13650"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13647"/>
         <source>23</source>
         <translation type="unfinished">23</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13652"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13649"/>
         <source>24</source>
         <translation type="unfinished">24</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13654"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13651"/>
         <source>25</source>
         <translation type="unfinished">25</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13658"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13655"/>
         <source>26</source>
         <translation type="unfinished">26</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13660"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13657"/>
         <source>27</source>
         <translation type="unfinished">27</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13664"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13661"/>
         <source>28</source>
         <translation type="unfinished">28</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13666"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13663"/>
         <source>29</source>
         <translation type="unfinished">29</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13664"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13661"/>
         <source>Show subgroups in combo boxes will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13670"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13667"/>
         <source>30</source>
         <translation type="unfinished">30</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13666"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13663"/>
         <source>Show subgroups in activity planning will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13674"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13671"/>
         <source>31</source>
         <translation type="unfinished">31</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13670"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13667"/>
         <source>Write on disk the %1 timetable will be %2</source>
         <comment>%1 is a category of timetables, like conflicts, %2 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13671"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13668"/>
         <source>conflicts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/fetmainform.cpp" line="13671"/>
         <location filename="../src/interface/fetmainform.cpp" line="13674"/>
         <location filename="../src/interface/fetmainform.cpp" line="13677"/>
         <location filename="../src/interface/fetmainform.cpp" line="13680"/>
         <location filename="../src/interface/fetmainform.cpp" line="13683"/>
         <location filename="../src/interface/fetmainform.cpp" line="13686"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13689"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13690"/>
         <location filename="../src/interface/fetmainform.cpp" line="13693"/>
         <location filename="../src/interface/fetmainform.cpp" line="13696"/>
         <location filename="../src/interface/fetmainform.cpp" line="13699"/>
@@ -42090,139 +42086,138 @@ Har du en undergruppe med for få timer pr uge, betyder det at du har angivet ak
         <location filename="../src/interface/fetmainform.cpp" line="13711"/>
         <location filename="../src/interface/fetmainform.cpp" line="13714"/>
         <location filename="../src/interface/fetmainform.cpp" line="13717"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13720"/>
         <source>Write on disk the %1 timetables will be %2</source>
         <comment>%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13675"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13672"/>
         <source>statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13678"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13675"/>
         <source>XML</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13677"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13674"/>
         <source>32</source>
         <translation type="unfinished">32</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13681"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13678"/>
         <source>days horizontal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13680"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13677"/>
         <source>33</source>
         <translation type="unfinished">33</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13684"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13681"/>
         <source>days vertical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13683"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13680"/>
         <source>34</source>
         <translation type="unfinished">34</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13687"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13684"/>
         <source>time horizontal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13686"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13683"/>
         <source>35</source>
         <translation type="unfinished">35</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13690"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13687"/>
         <source>time vertical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13689"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13686"/>
         <source>36</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13694"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13691"/>
         <source>subgroups</source>
         <translation type="unfinished">undergrupper</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13693"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13690"/>
         <source>37</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13697"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13694"/>
         <source>groups</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/fetmainform.cpp" line="13693"/>
         <location filename="../src/interface/fetmainform.cpp" line="13696"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13699"/>
         <source>38</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13700"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13697"/>
         <source>years</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13703"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13700"/>
         <source>teachers</source>
         <translation type="unfinished">lærere</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13702"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13699"/>
         <source>40</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13706"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13703"/>
         <source>teachers free periods</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13705"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13702"/>
         <source>41</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13712"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13709"/>
         <source>rooms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13708"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13705"/>
         <source>42</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13715"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13712"/>
         <source>subjects</source>
         <translation type="unfinished">Emner</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13711"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13708"/>
         <source>43</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13721"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13718"/>
         <source>activities</source>
         <translation type="unfinished">aktiviteter</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="14838"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14835"/>
         <source>You have more than 6 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation>Du har mere end 6 dage pr uge, så du har formentlig ikke brug for denne feature. Ønsker du stadig at fortsætte?</translation>
     </message>
@@ -42230,15 +42225,15 @@ Har du en undergruppe med for få timer pr uge, betyder det at du har angivet ak
         <location filename="../src/interface/fetmainform.cpp" line="4351"/>
         <location filename="../src/interface/fetmainform.cpp" line="4379"/>
         <location filename="../src/interface/fetmainform.cpp" line="5141"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14855"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14878"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14902"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14925"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14852"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14875"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14899"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14922"/>
         <source>FET question</source>
         <translation>FET spørgsmål</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="14885"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14882"/>
         <source>You have less than 5 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation>Du har mindre end 5 dage pr uge, så du har formentlig ikke brug for denne feature. Ønsker du stadig at fortsætte?</translation>
     </message>
@@ -42300,135 +42295,130 @@ Har du en undergruppe med for få timer pr uge, betyder det at du har angivet ak
         <translation>FET XML filer</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="6578"/>
-        <source>add/modify constraints break, not available, preferred starting times or time slots, occupy max time slots from selection or max simultaneous in selected time slots (the table cells will have green or red colors).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="12796"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12793"/>
         <source>In case the Help/Online menus do not function, please write down these addresses and open them in an internet browser:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="12808"/>
+        <location filename="../src/interface/fetmainform.cpp" line="12805"/>
         <source>FET web addresses</source>
         <translation>FET web adresser</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13434"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13481"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13431"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13478"/>
         <source>Please select FET language</source>
         <translation>Vælg venligst FET sprog</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="4821"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13438"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13435"/>
         <source>Cancel</source>
         <translation>Annuler</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13735"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13732"/>
         <source>icons</source>
         <comment>It is a style for students&apos; combo boxes</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13737"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13734"/>
         <source>categorized</source>
         <comment>It is a style for students&apos; combo boxes</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13740"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13737"/>
         <source>51</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13743"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13740"/>
         <source>52</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13743"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13740"/>
         <source>Print virtual rooms in the timetables will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13746"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13743"/>
         <source>53</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13746"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13743"/>
         <source>Show warning for activities not locked in time but locked in space in virtual rooms specifying the real rooms will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13755"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13752"/>
         <source>Show warning if using constraints of type max hours daily with a weight less than 100% will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13778"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13775"/>
         <source>Confirm activating/deactivating activities/constraints will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13789"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13786"/>
         <source>The file name suffix for autosave will be &apos;%1&apos;</source>
         <comment>%1 is a suffix to be added to the file name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13808"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13805"/>
         <source>Overwrite single generation files will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="14697"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14694"/>
         <source>Cleared the history, because the history settings were modified when resetting all the settings to default.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="15011"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15008"/>
         <source>Choose results (output) directory</source>
         <translation>Vælg resultat (output) mappe</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="15024"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15021"/>
         <source>You don&apos;t have write permissions in this directory</source>
         <translation>Du har ikke skriverettigheder til denne mappe</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="6660"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6657"/>
         <source>Students&apos; statistics form contains a check box named &apos;%1&apos;. This has effect only if you have overlapping groups/years, and means that FET will show the complete tree structure, even if that means that some subgroups/groups will appear twice or more in the table, with the same information. For instance, if you have year Y1, groups G1 and G2, subgroups S1, S2, S3, with structure: Y1 (G1 (S1, S2), G2 (S1, S3)), S1 will appear twice in the table</source>
         <translation>Elev statistikker formen indeholder et afkrydsningsfelt med navnet &apos;%1&apos;. Dette har kun virkning, hvis du har overlappende grupper/årgange, og betyder, at FET vil vise hele træstrukturen, selv hvis det betyder, at nogle undergrupper / grupper vil blive vist to gange eller mere i tabellen, med de samme oplysninger. For eksempel, hvis du har årgang Y1, grupper G1 og G2, undergrupper S1, S2, S3, med struktur: Y1 (G1 (S1, S2), G2 (S1, S3)) vil S1 vises to gange i tabellen</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="6664"/>
+        <location filename="../src/interface/fetmainform.cpp" line="6661"/>
         <source>Show duplicates</source>
         <translation>Vis dubletter</translation>
     </message>
     <message>
+        <location filename="../src/interface/fetmainform.cpp" line="13567"/>
         <location filename="../src/interface/fetmainform.cpp" line="13570"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13573"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13620"/>
         <location filename="../src/interface/fetmainform.cpp" line="13623"/>
         <location filename="../src/interface/fetmainform.cpp" line="13626"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13629"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13658"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13723"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13743"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13752"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13655"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13720"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13740"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13749"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13756"/>
         <location filename="../src/interface/fetmainform.cpp" line="13759"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13762"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13781"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13792"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13808"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13778"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13789"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13805"/>
         <source>false</source>
         <translation>forkert</translation>
     </message>
@@ -42437,7 +42427,7 @@ Har du en undergruppe med for få timer pr uge, betyder det at du har angivet ak
         <location filename="../src/interface/fetmainform.cpp" line="4611"/>
         <location filename="../src/interface/fetmainform.cpp" line="4673"/>
         <location filename="../src/interface/fetmainform.cpp" line="4727"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13811"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13808"/>
         <source>FET confirmation</source>
         <translation>FET bekræftelse</translation>
     </message>
@@ -53494,648 +53484,654 @@ is:</source>
 <context>
     <name>ListSpaceConstraints</name>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="105"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="109"/>
         <source>Constraints basic compulsory space</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished">Bindinger grundlæggende obligatorisk sted</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="113"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="117"/>
         <source>Constraints room not available times</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="123"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="127"/>
         <source>Constraints activity preferred room</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="138"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="142"/>
         <source>Constraints activity preferred rooms</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="153"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="157"/>
         <source>Constraints students set home room</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="156"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="160"/>
         <source>Note: a home room for a students set means that every activity which has this and ONLY this students set will have this as home room (not other superior or inferior set). You can add home rooms for a group, for a year or for a subgroup, careful not to make impossible timetables. Preferred rooms override the home rooms.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="171"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="175"/>
         <source>Constraints students set home rooms</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="174"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="178"/>
         <source>Note: home rooms for a students set means that every activity which has this and ONLY this students set will have these home rooms (not other superior or inferior set). You can add home rooms for a group, for a year or for a subgroup, careful not to make impossible timetables. Preferred rooms override the home rooms.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="188"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="192"/>
         <source>Constraints teacher home room</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="191"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="195"/>
         <source>Note: a home room for a teacher means that every activity which has this and ONLY this teacher will have this as home room. Preferred rooms override the home rooms.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="204"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="208"/>
         <source>Constraints teacher home rooms</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="207"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="211"/>
         <source>Note: home rooms for a teacher means that every activity which has this and ONLY this teacher will have these home rooms. Preferred rooms override the home rooms.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="220"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="224"/>
         <source>Constraints subject preferred room</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="232"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="236"/>
         <source>Constraints subject preferred rooms</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="244"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="248"/>
         <source>Constraints subject activity tag preferred room</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="257"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="261"/>
         <source>Constraints subject activity tag preferred rooms</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="270"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="274"/>
         <source>Constraints students max building changes per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="278"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="282"/>
         <source>Constraints students set max building changes per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="288"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="292"/>
         <source>Constraints students max building changes per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="291"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="302"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="351"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="362"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="295"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="306"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="355"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="366"/>
         <source>Note: The number of building changes per week is considered to be the sum of the building changes on each day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="299"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="303"/>
         <source>Constraints students set max building changes per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="312"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="316"/>
         <source>Constraints students min gaps between building changes</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="320"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="324"/>
         <source>Constraints students set min gaps between building changes</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="330"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="334"/>
         <source>Constraints teachers max building changes per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="338"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="342"/>
         <source>Constraints teacher max building changes per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="348"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="352"/>
         <source>Constraints teachers max building changes per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="359"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="363"/>
         <source>Constraints teacher max building changes per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="372"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="376"/>
         <source>Constraints teachers min gaps between building changes</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="380"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="384"/>
         <source>Constraints teacher min gaps between building changes</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="390"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="394"/>
         <source>Constraints activity tag preferred room</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="402"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="406"/>
         <source>Constraints activity tag preferred rooms</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="414"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="418"/>
         <source>Constraints activities occupy max different rooms</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="422"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="426"/>
         <source>Help</source>
         <translation type="unfinished">Hjælp</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="424"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="428"/>
         <source>Add/remove multiple constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="431"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="435"/>
         <source>Constraints activities same room if consecutive</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="444"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="448"/>
         <source>Constraints students max room changes per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="452"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="456"/>
         <source>Constraints students set max room changes per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="462"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="466"/>
         <source>Constraints students max room changes per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="465"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="477"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="527"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="539"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="469"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="481"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="531"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="543"/>
         <source>Note: The number of room changes per week is considered to be the sum of the room changes on each day. If you want the same room throughout the week, please use one or more constraints activities occupy max 1 different rooms.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="474"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="478"/>
         <source>Constraints students set max room changes per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="488"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="492"/>
         <source>Constraints students min gaps between room changes</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="496"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="500"/>
         <source>Constraints students set min gaps between room changes</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="506"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="510"/>
         <source>Constraints teachers max room changes per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="514"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="518"/>
         <source>Constraints teacher max room changes per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="524"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="528"/>
         <source>Constraints teachers max room changes per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="536"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="540"/>
         <source>Constraints teacher max room changes per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="550"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="554"/>
         <source>Constraints teachers min gaps between room changes</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="558"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="562"/>
         <source>Constraints teacher min gaps between room changes</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="568"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="572"/>
         <source>Constraints teacher room not available times</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="580"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="584"/>
         <source>Constraints students max room changes per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="588"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="592"/>
         <source>Constraints students set max room changes per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="598"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="602"/>
         <source>Constraints teachers max room changes per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="606"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="610"/>
         <source>Constraints teacher max room changes per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="616"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="620"/>
         <source>Constraints students max building changes per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="624"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="628"/>
         <source>Constraints students set max building changes per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="634"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="638"/>
         <source>Constraints teachers max building changes per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="642"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="646"/>
         <source>Constraints teacher max building changes per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="652"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="656"/>
         <source>Constraints students max building changes per day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="660"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="664"/>
         <source>Constraints students set max building changes per day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="670"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="674"/>
         <source>Constraints teachers max building changes per day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="678"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="682"/>
         <source>Constraints teacher max building changes per day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="688"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="692"/>
         <source>Constraints students max building changes per real day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="696"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="700"/>
         <source>Constraints students set max building changes per real day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="706"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="710"/>
         <source>Constraints teachers max building changes per real day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="714"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="718"/>
         <source>Constraints teacher max building changes per real day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="724"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="728"/>
         <source>Constraints students max room changes per day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="732"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="736"/>
         <source>Constraints students set max room changes per day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="742"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="746"/>
         <source>Constraints teachers max room changes per day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="750"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="754"/>
         <source>Constraints teacher max room changes per day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="760"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="764"/>
         <source>Constraints students max room changes per real day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="768"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="772"/>
         <source>Constraints students set max room changes per real day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="778"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="782"/>
         <source>Constraints teachers max room changes per real day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="786"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="790"/>
         <source>Constraints teacher max room changes per real day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="796"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="800"/>
         <source>Constraints room max activity tags per day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="799"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="803"/>
         <source>This constraint ensures that the specified room does not have more than the specified number of activity tags (one or two) from those selected, on any day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="801"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="818"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="835"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="805"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="822"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="839"/>
         <source>Note: For FET to be able to start the generation, the specified room must be real (not virtual), and should not be found in any set of real rooms of any virtual room.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="813"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="817"/>
         <source>Constraints room max activity tags per real day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="816"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="820"/>
         <source>This constraint ensures that the specified room does not have more than the specified number of activity tags (one or two) from those selected, on any real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="830"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="834"/>
         <source>Constraints room max activity tags per week from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="833"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="837"/>
         <source>This constraint ensures that the specified room does not have more than the specified number of activity tags (one or two) from those selected, throughout the week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="922"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="926"/>
         <source>Filter</source>
         <translation type="unfinished">Filter</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="958"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="960"/>
+        <source>Sorted</source>
+        <comment>It refers to space constraints</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="965"/>
         <source>Activate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="959"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="966"/>
         <source>Deactivate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="960"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="967"/>
         <source>Weights</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="961"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="968"/>
         <source>Comments</source>
         <translation type="unfinished">Kommentarer</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="963"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="970"/>
         <source>Add</source>
         <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="964"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="971"/>
         <source>Modify</source>
         <translation type="unfinished">Ændre</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="966"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="973"/>
         <source>Remove</source>
         <translation type="unfinished">Fjern</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="967"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="974"/>
         <source>Close</source>
         <translation type="unfinished">Luk</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1877"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2146"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2213"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2227"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2340"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1918"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2199"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2266"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2280"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2398"/>
         <source>FET information</source>
         <translation type="unfinished">FET information</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1877"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2227"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1918"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2280"/>
         <source>Invalid selected constraint</source>
         <translation type="unfinished">Ugyldigt valgt binding</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1927"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1968"/>
         <source>Your selection contains the basic compulsory space constraint(s). Do you really want to remove all the selected constraints, including this (these) one(s)? You cannot generate a timetable without this (these) constraint(s).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1930"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1971"/>
         <source>Note: you can add again a constraint of this type from the menu Data -&gt; Space constraints -&gt; Miscellaneous -&gt; Basic compulsory space constraints.</source>
         <translation type="unfinished">Bemærk: Du kan genskabe en binding af denne type fra menuen: Data -&gt; Sted bindinger -&gt; Diverse -&gt; Grundlæggende obligatorisk sted binding.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1933"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1974"/>
         <source>FET warning</source>
         <translation type="unfinished">FET advarsel</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1947"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1988"/>
         <source>Remove these selected space constraints?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1951"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2096"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2162"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1992"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2149"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2215"/>
         <source>FET confirmation</source>
         <translation type="unfinished">FET bekræftelse</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1952"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1993"/>
         <source>Yes</source>
         <translation type="unfinished">Ja</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1952"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1993"/>
         <source>No</source>
         <translation type="unfinished">Nej</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1961"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2002"/>
         <source>Removed %1 space constraints:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2014"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2055"/>
         <source>To use this constraint, you need to specify a set of activities and the maximum number of different rooms which can be occupied by these activities. Note that each activity can take place in a single room, and a single room can hold a single activity at a certain moment. This constraint may be used for instance to constrain all activities of type Physics of a certain students set to be in the same room throughout the week, by adding all Physics activities for this students set and making max different rooms = 1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2019"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2060"/>
         <source>FET help</source>
         <translation type="unfinished">FET hjælp</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2068"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2112"/>
         <source>No: %1 / %2</source>
         <comment>%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints</comment>
         <translation type="unfinished">Nr: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2095"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2148"/>
         <source>Activate the selected space constraints?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2123"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2176"/>
         <source>Activated %1 space constraints:</source>
         <comment>%1 is the number of activated space constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2146"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2199"/>
         <source>Activated %1 space constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2160"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2213"/>
         <source>Deactivate the selected space constraints? (Note that the basic compulsory space constraints will not be deactivated, even if they are selected.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2190"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2243"/>
         <source>Deactivated %1 space constraints:</source>
         <comment>%1 is the number of deactivated space constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2213"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2266"/>
         <source>Deactivated %1 space constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2236"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2292"/>
         <source>Constraint comments</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2238"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2294"/>
         <source>OK</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2240"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2296"/>
         <source>Cancel</source>
         <translation type="unfinished">Annuler</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2276"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2332"/>
         <source>Changed a constraint&apos;s comments. Constraint before:
 
 %1
@@ -54145,38 +54141,38 @@ Comments after:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2299"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2355"/>
         <source>%1 / %2 space constraints</source>
         <comment>%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2321"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2379"/>
         <source>Multiple selection: %1 / %2</source>
         <comment>It refers to the list of selected space constraints, %1 is the number of active selected space constraints, %2 is the total number of selected space constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2340"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2398"/>
         <source>No constraints from your selection can change their weight (remember that some types of constraints are allowed to have only 100% weight).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2348"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2357"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2408"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2417"/>
         <source>Modify the weights of the selected space constraints</source>
         <comment>The title of a dialog to modify the weights of the selected constraints with a single click</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2350"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2410"/>
         <source>You will modify %1 selected space constraints.
 Please enter the new weight percentage:</source>
         <comment>Translators: please split this field with new line characters, similarly to the original field, so that it is not too wide. You can use more lines (3 or even 4), if needed. %1 is the number of constraints which will change.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2359"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2419"/>
         <source>You will modify %1 space constraints from your
 selection (remember that some types of constraints
 are only allowed to have 100% weight, so %2
@@ -54186,7 +54182,7 @@ Please enter the new weight percentage:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2397"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2457"/>
         <source>Changed the weights of the following %1 selected space constraints to %2%:</source>
         <comment>%1 is the number of space constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints</comment>
         <translation type="unfinished"></translation>
@@ -54195,2382 +54191,2388 @@ Please enter the new weight percentage:</source>
 <context>
     <name>ListTimeConstraints</name>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="114"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="118"/>
         <source>Constraints basic compulsory time</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished">Bindinger grundlæggende obligatorisk tid</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="122"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="126"/>
         <source>Constraints break times</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished">Bindinger pauser</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="125"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="129"/>
         <source>Note: An activity with duration greater than 1 cannot be split over a break. Also, the activities constrained by min days between activities constraints with &apos;consecutive if on the same day&apos; = true cannot spread over a break.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="134"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="138"/>
         <source>Constraints teacher not available times</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="144"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="148"/>
         <source>Constraints teachers max hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="147"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="185"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="297"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="307"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1205"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1229"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1243"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1255"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="151"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="189"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="301"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="311"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1209"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1233"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1247"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1259"/>
         <source>It is recommended to use only a 100% weight for these constraints (otherwise the algorithm is not perfect).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="154"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="158"/>
         <source>Constraints teacher max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="164"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="168"/>
         <source>Constraints teachers max gaps per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="172"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="176"/>
         <source>Constraints teacher max gaps per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="182"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="186"/>
         <source>Constraints teacher max hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="194"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="198"/>
         <source>Constraints teachers max hours continuously</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="202"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="206"/>
         <source>Constraints teacher max hours continuously</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="212"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="216"/>
         <source>Constraints teachers min hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="220"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="224"/>
         <source>Constraints teacher min hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="230"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="234"/>
         <source>Constraints teachers max gaps per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="238"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="242"/>
         <source>Constraints teacher max gaps per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="248"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="252"/>
         <source>Constraints students early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="256"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="260"/>
         <source>Constraints students set early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="266"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="270"/>
         <source>Constraints students set not available times</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="276"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="280"/>
         <source>Constraints students max gaps per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="284"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="288"/>
         <source>Constraints students set max gaps per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="294"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="298"/>
         <source>Constraints students max hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="304"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="308"/>
         <source>Constraints students set max hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="316"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="320"/>
         <source>Constraints students max hours continuously</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="324"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="328"/>
         <source>Constraints students set max hours continuously</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="334"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="338"/>
         <source>Constraints students min hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="338"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="353"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="342"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="357"/>
         <source>If the user selects not allowed empty days, it is for real days (for the mornings-afternoons mode), also respecting minimum hours daily for FET days (half days) with allow empty FET days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="342"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="359"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="405"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="519"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="573"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="586"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="599"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="761"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="866"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="881"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1104"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1119"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1689"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1703"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2012"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2135"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2147"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2211"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2223"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2279"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2378"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2454"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2468"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2483"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="346"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="363"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="409"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="523"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="577"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="590"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="603"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="765"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="870"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="885"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1108"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1123"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1693"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1707"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2016"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2139"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2151"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2215"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2227"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2283"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2382"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2458"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2472"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2487"/>
         <source>Help</source>
         <translation type="unfinished">Hjælp</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="349"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="353"/>
         <source>Constraints students set min hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="366"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="370"/>
         <source>Constraints activity ends students day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="379"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="383"/>
         <source>Constraints activity preferred starting time</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="392"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="396"/>
         <source>Constraints activities same starting time</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="400"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="404"/>
         <source>Please read Help/Important tips, advice 2). It is IMPORTANT to remove redundant min days constraints after adding constraints same starting time. Click the Help button!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="403"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="407"/>
         <source>Note: You might not need this constraint. Click Help!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="412"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="416"/>
         <source>Constraints activities not overlapping</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="425"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="429"/>
         <source>Constraints min days between activities</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="433"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="437"/>
         <source>Min days is for real days. If the activities are on the same real day and consecutive if on the same day is checked, they must be consecutive and on the same half day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="437"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2240"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="441"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2244"/>
         <source>Modify multiple constraints at once</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="444"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="448"/>
         <source>Constraints activity preferred time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="452"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="463"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="456"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="467"/>
         <source>Each hour slot of each considered activity must be allowed by this constraint (more restrictive than preferred starting times for activities with duration greater than 1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="460"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="464"/>
         <source>Constraints activities preferred time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="471"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="475"/>
         <source>Constraints activity preferred starting times</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="484"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="488"/>
         <source>Constraints activities preferred starting times</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="492"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="496"/>
         <source>Constraints activities same starting hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="500"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="504"/>
         <source>Add/remove multiple constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="507"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="511"/>
         <source>Constraints activities same starting day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="515"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="519"/>
         <source>Please try to read Help/Important tips, advice 2). It is IMPORTANT to remove redundant min days constraints after adding constraints same starting day. Please also click Help button here for information.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="526"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="530"/>
         <source>Constraints two activities consecutive</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="536"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="660"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="741"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="540"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="664"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="745"/>
         <source>It is a good practice NOT to add this type of constraint to activities which are constrained to be in different days by min days between activities constraints. Please read Help/Important tips, tip number 3).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="545"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="549"/>
         <source>Constraints two activities ordered</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="553"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="557"/>
         <source>This constraint forces two activities A1 and A2: A2 to begin later than A1 has finished, separated by any time interval in the week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="561"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="565"/>
         <source>Constraints min gaps between activities</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="569"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="573"/>
         <source>This constraint ensures, for a set of activities: if any pair of activities are on the same day, they must be separated by at least min gaps (hours).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="571"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="575"/>
         <source>Note: please click Help for important advice</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="580"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="584"/>
         <source>Constraints subactivities preferred time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="583"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="596"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="587"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="600"/>
         <source>This constraint is useful to constrain only the n-th component of the activities. Please click Help button for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="593"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="597"/>
         <source>Constraints subactivities preferred starting times</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="606"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="610"/>
         <source>Constraints teacher interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="616"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="620"/>
         <source>Constraints teachers interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="624"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="628"/>
         <source>Constraints students set interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="634"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="638"/>
         <source>Constraints students interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="642"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="646"/>
         <source>Constraints activities end students day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished">Bindinger aktiviteter afslutter elevens dag</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="650"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="654"/>
         <source>Constraints two activities grouped</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="669"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="673"/>
         <source>Constraints teachers activity tag max hours continuously</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="674"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="678"/>
         <source>This constraint ensures that all teachers do not have more than max hours continuously of activities with the specified activity tag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="682"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="686"/>
         <source>Constraints teacher activity tag max hours continuously</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="688"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="692"/>
         <source>This constraint ensures that the specified teacher does not have more than max hours continuously of activities with the specified activity tag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="696"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="700"/>
         <source>Constraints students activity tag max hours continuously</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="701"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="705"/>
         <source>This constraint ensures that all students do not have more than max hours continuously of activities with the specified activity tag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="709"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="713"/>
         <source>Constraints students set activity tag max hours continuously</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="715"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="719"/>
         <source>This constraint ensures that the specified students do not have more than max hours continuously of activities with the specified activity tag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="723"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="727"/>
         <source>Constraints teachers max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="731"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="735"/>
         <source>Constraints three activities grouped</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="534"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="538"/>
         <source>This constraint forces two activities A1 and A2: A2 to be immediately after A1, same day; no gaps are allowed between them, except for break constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="658"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="662"/>
         <source>This constraint forces two activities to be on the same day, one immediately following the other, in any order; no gaps are allowed between them, except for break constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="739"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="743"/>
         <source>This constraint forces 3 activities to be on the same day, one immediately following the other, as a block of 3 activities, in any order; no gaps are allowed between them, except for break constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="750"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="754"/>
         <source>Constraints max days between activities</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="758"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="762"/>
         <source>Max days is for real days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="768"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="772"/>
         <source>Constraints teachers min days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="776"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="780"/>
         <source>Constraints teacher min days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="786"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="790"/>
         <source>Constraints teachers activity tag max hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="791"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="795"/>
         <source>This constraint ensures that all teachers do not have more than max hours daily of activities with the specified activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="799"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="803"/>
         <source>Constraints teacher activity tag max hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="805"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="809"/>
         <source>This constraint ensures that the specified teacher does not have more than max hours daily of activities with the specified activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="813"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="817"/>
         <source>Constraints students activity tag max hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="818"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="822"/>
         <source>This constraint ensures that all students do not have more than max hours daily of activities with the specified activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="826"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="830"/>
         <source>Constraints students set activity tag max hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="832"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="836"/>
         <source>This constraint ensures that the specified students do not have more than max hours daily of activities with the specified activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="840"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="844"/>
         <source>Constraints students max gaps per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished">Bindinger elever max mellemtimer pr dag</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="848"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="852"/>
         <source>Constraints students set max gaps per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="858"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="862"/>
         <source>Constraints activities occupy max time slots from selection</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="873"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="877"/>
         <source>Constraints activities max simultaneous in selected time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="888"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="892"/>
         <source>Constraints students set max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="898"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="902"/>
         <source>Constraints students max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="906"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="910"/>
         <source>Constraints teacher max span per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="909"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="923"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="963"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="977"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1595"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1610"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1623"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1638"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="913"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="927"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="967"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="981"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1599"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1614"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1627"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1642"/>
         <source>This constraint ensures a maximum span of activities on each day. Span means the count of slots (free or occupied) starting with the first occupied slot of the day and ending with the last occupied slot of the day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="920"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="924"/>
         <source>Constraints teachers max span per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="932"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="936"/>
         <source>Constraints teacher min resting hours</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="935"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="950"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="989"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1003"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="939"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="954"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="993"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1007"/>
         <source>This constraint ensures a minimum number of resting hours between the end of a day and the beginning of the next day. Circular means that the time between the end of the last day of the week and the beginning of the first day of the week is also considered.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="947"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="951"/>
         <source>Constraints teachers min resting hours</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="960"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="964"/>
         <source>Constraints students set max span per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="974"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="978"/>
         <source>Constraints students max span per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="986"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="990"/>
         <source>Constraints students set min resting hours</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1000"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1004"/>
         <source>Constraints students min resting hours</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1012"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1016"/>
         <source>Constraints two activities ordered if same day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1020"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1024"/>
         <source>This constraint forces two activities A1 and A2: if they are on the same day, A2 needs to begin later than A1 has finished.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1028"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1032"/>
         <source>Constraints students set min gaps between ordered pair of activity tags</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1031"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1035"/>
         <source>This constraint ensures that for the specified students, on each day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if they appear in this order.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1043"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1047"/>
         <source>Constraints students min gaps between ordered pair of activity tags</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1046"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1050"/>
         <source>This constraint ensures that for all the students, on each day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if they appear in this order.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1057"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1061"/>
         <source>Constraints teacher min gaps between ordered pair of activity tags</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1060"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1064"/>
         <source>This constraint ensures that for the specified teacher, on each day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if they appear in this order.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1072"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1076"/>
         <source>Constraints teachers min gaps between ordered pair of activity tags</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1075"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1079"/>
         <source>This constraint ensures that for all the teachers, on each day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if they appear in this order.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1086"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1090"/>
         <source>Constraints activity tags not overlapping</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1096"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1100"/>
         <source>Constraints activities occupy min time slots from selection</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1111"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1115"/>
         <source>Constraints activities min simultaneous in selected time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1126"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1130"/>
         <source>Constraints teachers activity tag min hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1131"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1135"/>
         <source>This constraint ensures that all teachers do not have less than min hours daily of activities with the specified activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1139"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1143"/>
         <source>Constraints teacher activity tag min hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1145"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1149"/>
         <source>This constraint ensures that the specified teacher does not have less than min hours daily of activities with the specified activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1153"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1157"/>
         <source>Constraints students activity tag min hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1158"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1162"/>
         <source>This constraint ensures that all students do not have less than min hours daily of activities with the specified activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1166"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1170"/>
         <source>Constraints students set activity tag min hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1172"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1176"/>
         <source>This constraint ensures that the specified students do not have less than min hours daily of activities with the specified activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1180"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1184"/>
         <source>Constraints activity ends teachers day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1193"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1197"/>
         <source>Constraints activities end teachers day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1201"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1205"/>
         <source>Constraints teachers max hours daily real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1204"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1216"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1228"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1242"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1254"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1268"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1278"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1288"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1533"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1543"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1598"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1613"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1626"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1641"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1985"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1997"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1208"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1220"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1232"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1246"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1258"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1272"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1282"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1292"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1537"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1547"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1602"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1617"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1630"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1645"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1989"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2001"/>
         <source>This constraint is for a real day
 (a real day = a morning + an afternoon)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1213"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1217"/>
         <source>Constraints teacher max real days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1225"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1229"/>
         <source>Constraints teacher max hours daily real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1239"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1243"/>
         <source>Constraints students max hours daily real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1251"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1255"/>
         <source>Constraints students set max hours daily real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1265"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1269"/>
         <source>Constraints teachers max real days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1275"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1279"/>
         <source>Constraints teachers min real days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1285"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1289"/>
         <source>Constraints teacher min real days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1297"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1301"/>
         <source>Constraints teachers activity tag max hours daily real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1302"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1306"/>
         <source>This constraint ensures that all teachers do not have more than max hours daily of activities with the specified activity tag, for a real day (two half-days).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1310"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1314"/>
         <source>Constraints teacher activity tag max hours daily real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1316"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1320"/>
         <source>This constraint ensures that the specified teacher does not have more than max hours daily of activities with the specified activity tag, for a real day (two half-days).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1324"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1328"/>
         <source>Constraints students activity tag max hours daily real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1329"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1333"/>
         <source>This constraint ensures that all students do not have more than max hours daily of activities with the specified activity tag, for a real day (two half-days).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1337"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1341"/>
         <source>Constraints students set activity tag max hours daily real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1343"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1347"/>
         <source>This constraint ensures that the specified students do not have more than max hours daily of activities with the specified activity tag, for a real day (two half-days).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1351"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1355"/>
         <source>Constraints teacher max afternoons per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1361"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1365"/>
         <source>Constraints teachers max afternoons per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1369"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1373"/>
         <source>Constraints teacher max mornings per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1379"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1383"/>
         <source>Constraints teachers max mornings per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1387"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1391"/>
         <source>Constraints teacher max activity tags per day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1393"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1397"/>
         <source>This constraint ensures that the specified teacher does not have more than the specified number of activity tags (one or two) from those selected, on any day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1401"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1405"/>
         <source>Constraints teachers max activity tags per day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1406"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1410"/>
         <source>This constraint ensures that all the teachers do not have more than the specified number of activity tags (one or two) from those selected, on any day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1414"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1418"/>
         <source>Constraints teachers min mornings per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1422"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1426"/>
         <source>Constraints teacher min mornings per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1432"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1436"/>
         <source>Constraints teachers min afternoons per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1440"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1444"/>
         <source>Constraints teacher min afternoons per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1450"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1454"/>
         <source>Constraints teacher max two consecutive mornings</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1460"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1464"/>
         <source>Constraints teachers max two consecutive mornings</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1468"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1472"/>
         <source>Constraints teacher max two consecutive afternoons</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1478"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1482"/>
         <source>Constraints teachers max two consecutive afternoons</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1486"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1490"/>
         <source>Constraints teachers max gaps per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1489"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1499"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1511"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1521"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1493"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1503"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1515"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1525"/>
         <source>This constraint is for a real day (2 FET days, morning and afternoon).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1496"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1500"/>
         <source>Constraints teacher max gaps per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1508"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1512"/>
         <source>Constraints students max gaps per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1518"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1522"/>
         <source>Constraints students set max gaps per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1530"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1534"/>
         <source>Constraints teachers min hours daily for real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1540"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1544"/>
         <source>Constraints teacher min hours daily for real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1552"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1556"/>
         <source>Constraints teachers afternoons early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1560"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1564"/>
         <source>Constraints teacher afternoons early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1570"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1574"/>
         <source>Constraints teachers min hours per morning</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1573"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2430"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1577"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2434"/>
         <source>To use this constraint, the teachers must have a min hours daily constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1580"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1584"/>
         <source>Constraints teacher min hours per morning</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1583"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2440"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1587"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2444"/>
         <source>To use this constraint, the teacher must have a min hours daily constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1592"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1596"/>
         <source>Constraints teacher max span per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1607"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1611"/>
         <source>Constraints teachers max span per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1620"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1624"/>
         <source>Constraints students set max span per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1635"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1639"/>
         <source>Constraints students max span per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1648"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1652"/>
         <source>Constraints teacher morning interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1658"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1662"/>
         <source>Constraints teachers morning interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1666"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1670"/>
         <source>Constraints teacher afternoon interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1676"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1680"/>
         <source>Constraints teachers afternoon interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1684"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1688"/>
         <source>Constraints students min hours per morning</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1687"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2452"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1691"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2456"/>
         <source>To use this constraint, the students must have a min hours daily constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1696"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1700"/>
         <source>Constraints students set min hours per morning</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1699"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2464"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1703"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2468"/>
         <source>To use this constraint, the students set must have a min hours daily constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1710"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1714"/>
         <source>Constraints teacher max zero gaps per afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1720"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1724"/>
         <source>Constraints teachers max zero gaps per afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1728"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1732"/>
         <source>Constraints students set max afternoons per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1738"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1742"/>
         <source>Constraints students max afternoons per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1746"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1750"/>
         <source>Constraints students set max mornings per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1756"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1760"/>
         <source>Constraints students max mornings per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1764"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1768"/>
         <source>Constraints students min mornings per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1772"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1776"/>
         <source>Constraints students set min mornings per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1782"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1786"/>
         <source>Constraints students min afternoons per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1790"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1794"/>
         <source>Constraints students set min afternoons per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1800"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1804"/>
         <source>Constraints students set morning interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1810"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1814"/>
         <source>Constraints students morning interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1818"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1822"/>
         <source>Constraints students set afternoon interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1828"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1832"/>
         <source>Constraints students afternoon interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1836"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1840"/>
         <source>Constraints teacher max hours per all afternoons</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1846"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1850"/>
         <source>Constraints teachers max hours per all afternoons</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1854"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1858"/>
         <source>Constraints students set max hours per all afternoons</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1864"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1868"/>
         <source>Constraints students max hours per all afternoons</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1872"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1876"/>
         <source>Constraints teacher min resting hours between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1875"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1888"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1899"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1912"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1879"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1892"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1903"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1916"/>
         <source>This constraint ensures a minimum number of resting hours between the end of each morning and the beginning of the next afternoon (of the same real day).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1885"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1889"/>
         <source>Constraints teachers min resting hours between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1896"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1900"/>
         <source>Constraints students set min resting hours between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1909"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1913"/>
         <source>Constraints students min resting hours between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1920"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1924"/>
         <source>Constraints students set afternoons early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1930"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1934"/>
         <source>Constraints students afternoons early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1938"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1942"/>
         <source>Constraints teachers max gaps per week for real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1941"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1951"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1963"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1973"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1945"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1955"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1967"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1977"/>
         <source>This constraint is for real days (a real day = 2 FET days, morning and afternoon).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1948"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1952"/>
         <source>Constraints teacher max gaps per week for real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1960"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1964"/>
         <source>Constraints students max gaps per week for real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1970"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1974"/>
         <source>Constraints students set max gaps per week for real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1982"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1986"/>
         <source>Constraints students set max real days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1994"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1998"/>
         <source>Constraints students max real days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2004"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2008"/>
         <source>Constraints max total activities from set in selected time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2019"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2023"/>
         <source>Constraints max gaps between activities</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2027"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2031"/>
         <source>This constraint ensures, for a set of activities: if any pair of activities are on the same day, they must be separated by at most max gaps (hours).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2035"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2039"/>
         <source>Constraints activities max in a term</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2048"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2052"/>
         <source>Constraints activities occupy max terms</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2061"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2065"/>
         <source>Constraints teachers max gaps per morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2069"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2073"/>
         <source>Constraints teacher max gaps per morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2079"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2083"/>
         <source>Constraints teachers mornings early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2087"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2091"/>
         <source>Constraints teacher mornings early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2097"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2101"/>
         <source>Constraints students set mornings early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2107"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2111"/>
         <source>Constraints students mornings early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2115"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2119"/>
         <source>Constraints two sets of activities ordered</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2123"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2127"/>
         <source>This constraint forces two sets of activities SA1 and SA2: each activity A2 from SA2 to begin later than the moment each activity A1 from SA1 has finished, separated by any time interval in the week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2132"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2136"/>
         <source>Constraints teachers max three consecutive days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2142"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2146"/>
         <source>Constraints teacher max three consecutive days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2154"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2158"/>
         <source>Constraints students set min gaps between activity tag</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2157"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2161"/>
         <source>This constraint ensures that for the specified students, on each day, there are at least min gaps (hours) between the activities which have this activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2168"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2172"/>
         <source>Constraints students min gaps between activity tag</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2171"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2175"/>
         <source>This constraint ensures that for all the students, on each day, there are at least min gaps (hours) between the activities which have this activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2181"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2185"/>
         <source>Constraints teacher min gaps between activity tag</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2184"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2188"/>
         <source>This constraint ensures that for the specified teacher, on each day, there are at least min gaps (hours) between the activities which have this activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2195"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2199"/>
         <source>Constraints teachers min gaps between activity tag</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2198"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2202"/>
         <source>This constraint ensures that for all the teachers, on each day, there are at least min gaps (hours) between the activities which have this activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2208"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2212"/>
         <source>Constraints students max three consecutive days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2218"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2222"/>
         <source>Constraints students set max three consecutive days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2230"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2234"/>
         <source>Constraints min half days between activities</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2238"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2242"/>
         <source>Min days is for half days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2247"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6053"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6549"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6559"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6568"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6574"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6585"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6595"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6606"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6616"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6627"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6684"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6741"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6751"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6760"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6766"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6777"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6787"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6798"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6855"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7014"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7081"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7095"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7208"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2251"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6094"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6590"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6600"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6609"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6615"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6626"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6636"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6647"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6657"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6668"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6725"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6782"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6792"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6801"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6807"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6818"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6828"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6839"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6896"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7067"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7134"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7148"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7266"/>
         <source>FET information</source>
         <translation type="unfinished">FET information</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2248"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2252"/>
         <source>You have met a FET bug. The constraint activity preferred day should not be editable in a separate dialog. The request will be ignored.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2258"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2262"/>
         <source>Constraints activities min in a term</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2271"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2275"/>
         <source>Constraints max terms between activities</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2286"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2290"/>
         <source>Constraints students set max activity tags per day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2292"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2296"/>
         <source>This constraint ensures that the specified students set does not have more than the specified number of activity tags (one or two) from those selected, on any day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2301"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2305"/>
         <source>Constraints students max activity tags per day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2306"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2310"/>
         <source>This constraint ensures that all the students do not have more than the specified number of activity tags (one or two) from those selected, on any day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2314"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2318"/>
         <source>Constraints teacher max activity tags per real day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2320"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2324"/>
         <source>This constraint ensures that the specified teacher does not have more than the specified number of activity tags (one or two) from those selected, on any real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2328"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2332"/>
         <source>Constraints teachers max activity tags per real day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2333"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2337"/>
         <source>This constraint ensures that all the teachers do not have more than the specified number of activity tags (one or two) from those selected, on any real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2341"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2345"/>
         <source>Constraints students set max activity tags per real day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2347"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2351"/>
         <source>This constraint ensures that the specified students set does not have more than the specified number of activity tags (one or two) from those selected, on any real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2355"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2359"/>
         <source>Constraints students max activity tags per real day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2360"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2364"/>
         <source>This constraint ensures that all the students do not have more than the specified number of activity tags (one or two) from those selected, on any real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2368"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2372"/>
         <source>Constraints max half days between activities</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2376"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2380"/>
         <source>Max days is for half days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2385"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2389"/>
         <source>Constraints activity begins students day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2398"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2402"/>
         <source>Constraints activities begin students day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2406"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2410"/>
         <source>Constraints activity begins teachers day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2419"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2423"/>
         <source>Constraints activities begin teachers day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2427"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2431"/>
         <source>Constraints teachers min hours per afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2437"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2441"/>
         <source>Constraints teacher min hours per afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2449"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2453"/>
         <source>Constraints students min hours per afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2461"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2465"/>
         <source>Constraints students set min hours per afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2475"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2479"/>
         <source>Constraints activities max hourly span</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2490"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2494"/>
         <source>Constraints teachers max hours daily in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2498"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2502"/>
         <source>Constraints teacher max hours daily in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2508"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2512"/>
         <source>Constraints students max hours daily in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2516"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2520"/>
         <source>Constraints students set max hours daily in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2526"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2530"/>
         <source>Constraints students set min gaps between ordered pair of activity tags per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2529"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2533"/>
         <source>This constraint ensures that for the specified students, on each real day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if they appear in this order.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2542"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2546"/>
         <source>Constraints students min gaps between ordered pair of activity tags per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2545"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2549"/>
         <source>This constraint ensures that for all the students, on each real day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if they appear in this order.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2557"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2561"/>
         <source>Constraints teacher min gaps between ordered pair of activity tags per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2560"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2564"/>
         <source>This constraint ensures that for the specified teacher, on each real day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if they appear in this order.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2573"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2577"/>
         <source>Constraints teachers min gaps between ordered pair of activity tags per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2576"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2580"/>
         <source>This constraint ensures that for all the teachers, on each real day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if they appear in this order.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2588"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2592"/>
         <source>Constraints students set min gaps between activity tag per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2591"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2595"/>
         <source>This constraint ensures that for the specified students, on each real day, there are at least min gaps (hours) between the activities which have this activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2602"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2606"/>
         <source>Constraints students min gaps between activity tag per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2605"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2609"/>
         <source>This constraint ensures that for all the students, on each real day, there are at least min gaps (hours) between the activities which have this activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2615"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2619"/>
         <source>Constraints teacher min gaps between activity tag per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2618"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2622"/>
         <source>This constraint ensures that for the specified teacher, on each real day, there are at least min gaps (hours) between the activities which have this activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2629"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2633"/>
         <source>Constraints teachers min gaps between activity tag per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2632"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2636"/>
         <source>This constraint ensures that for all the teachers, on each real day, there are at least min gaps (hours) between the activities which have this activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2642"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2646"/>
         <source>Constraints students set min gaps between ordered pair of activity tags between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2645"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2649"/>
         <source>This constraint ensures that for the specified students, on each real day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if the first activity tag appears in the morning and the second activity tag appears in the afternoon.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2657"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2661"/>
         <source>Constraints students min gaps between ordered pair of activity tags between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2660"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2664"/>
         <source>This constraint ensures that for all the students, on each real day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if the first activity tag appears in the morning and the second activity tag appears in the afternoon.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2671"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2675"/>
         <source>Constraints teacher min gaps between ordered pair of activity tags between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2674"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2678"/>
         <source>This constraint ensures that for the specified teacher, on each real day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if the first activity tag appears in the morning and the second activity tag appears in the afternoon.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2686"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2690"/>
         <source>Constraints teachers min gaps between ordered pair of activity tags between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2689"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2693"/>
         <source>This constraint ensures that for all the teachers, on each real day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if the first activity tag appears in the morning and the second activity tag appears in the afternoon.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2700"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2704"/>
         <source>Constraints students set min gaps between activity tag between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2703"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2707"/>
         <source>This constraint ensures that for the specified students, on each real day, there are at least min gaps (hours) between the last activity from the morning which has this activity tag and the first activity from the afternoon which has this activity tag (the constraint is considered respected if the activity tag is not met both in the morning and in the afternoon).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2713"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2717"/>
         <source>Constraints students min gaps between activity tag between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2716"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2720"/>
         <source>This constraint ensures that for all the students, on each real day, there are at least min gaps (hours) between the last activity from the morning which has this activity tag and the first activity from the afternoon which has this activity tag (the constraint is considered respected if the activity tag is not met both in the morning and in the afternoon).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2725"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2729"/>
         <source>Constraints teacher min gaps between activity tag between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2728"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2732"/>
         <source>This constraint ensures that for the specified teacher, on each real day, there are at least min gaps (hours) between the last activity from the morning which has this activity tag and the first activity from the afternoon which has this activity tag (the constraint is considered respected if the activity tag is not met both in the morning and in the afternoon).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2738"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2742"/>
         <source>Constraints teachers min gaps between activity tag between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2741"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2745"/>
         <source>This constraint ensures that for all the teachers, on each real day, there are at least min gaps (hours) between the last activity from the morning which has this activity tag and the first activity from the afternoon which has this activity tag (the constraint is considered respected if the activity tag is not met both in the morning and in the afternoon).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2750"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2754"/>
         <source>Constraints teachers no two consecutive days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2758"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2762"/>
         <source>Constraints teacher no two consecutive days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2856"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2860"/>
         <source>Filter</source>
         <translation type="unfinished">Filter</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2894"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2896"/>
+        <source>Sorted</source>
+        <comment>It refers to time constraints</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2901"/>
         <source>Activate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2895"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2902"/>
         <source>Deactivate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2896"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2903"/>
         <source>Weights</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2897"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2904"/>
         <source>Comments</source>
         <translation type="unfinished">Kommentarer</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2899"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2906"/>
         <source>Add</source>
         <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2900"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2907"/>
         <source>Modify</source>
         <translation type="unfinished">Ændre</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2902"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2909"/>
         <source>Remove</source>
         <translation type="unfinished">Fjern</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2903"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2910"/>
         <source>Close</source>
         <translation type="unfinished">Luk</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6053"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7095"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6094"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7148"/>
         <source>Invalid selected constraint</source>
         <translation type="unfinished">Ugyldigt valgt binding</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6103"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6144"/>
         <source>Your selection contains the basic compulsory time constraint(s). Do you really want to remove all the selected constraints, including this (these) one(s)? You cannot generate a timetable without this (these) constraint(s).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6106"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6147"/>
         <source>Note: you can add again a constraint of this type from the menu Data -&gt; Time constraints -&gt; Miscellaneous -&gt; Basic compulsory time constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6109"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6150"/>
         <source>FET warning</source>
         <translation type="unfinished">FET advarsel</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6123"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6164"/>
         <source>Remove these selected time constraints?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6127"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6964"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7030"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6168"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7017"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7083"/>
         <source>FET confirmation</source>
         <translation type="unfinished">FET bekræftelse</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6128"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6169"/>
         <source>Yes</source>
         <translation type="unfinished">Ja</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6128"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6169"/>
         <source>No</source>
         <translation type="unfinished">Nej</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6137"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6178"/>
         <source>Removed %1 time constraints:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6197"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6216"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6238"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6257"/>
         <source>IMPORTANT: after adding such constraints, it is necessary (otherwise generation might be impossible) to remove redundant constraints min days between activities. If you are sure that you don&apos;t have redundant constraints, you can skip this step, but it doesn&apos;t hurt to do it as a precaution. Also, you don&apos;t have to do that after each added constraint, but only once after adding more constraints of this type. Please read Help/Important tips - tip number 2 for details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6202"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6243"/>
         <source>If you divide the years by categories (the students have optional courses), you may not need this kind of constraint. If the year is for instance divided by language, English/French/German, sometimes people think that it is needed that these optional activities to have the same starting time. But solutions exist without adding same starting time constraints. Some people try to avoid students gaps by using this constraint, because they need to do it this way in other timetabling software. But it is not the best practice to do it with such a constraint. The correct way is to add a max 0 gaps per week constraint for students and maybe also an early max 0 beginnings at second hour constraint for students.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6209"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6221"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6235"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6242"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6266"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6250"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6262"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6276"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6283"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="6307"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6317"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6327"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6337"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6355"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6383"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6397"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6412"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6426"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6440"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6455"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6482"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6517"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6348"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6358"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6368"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6378"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6396"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6424"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6438"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6453"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6467"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6481"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6496"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6523"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6558"/>
         <source>FET help</source>
         <translation type="unfinished">FET hjælp</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6228"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6269"/>
         <source>Please make sure that the selected activities are not forced to be consecutive by some other constraint &apos;min days between activities&apos; (with &apos;consecutive if on the same day&apos; true), by a constraint &apos;two activities consecutive&apos;, or by a constraint &apos;two activities grouped&apos; (also, if you have a constraint &apos;three activities grouped&apos; related to the selected activities, make sure that the constraints do not contradict).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6242"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6283"/>
         <source>This constraint is used to specify that for some components of a type of activities, for instance for math activities, you need that from say 4-5 per week, at least the first 2 to be early (say in the first 4 hours).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6247"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6271"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6288"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6312"/>
         <source>This is simple: just add 2 constraints of this type, with the component number 1, (then 2) and the corresponding subject (you can also define teacher, students set and activity tag, of course).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6251"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6276"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6292"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6317"/>
         <source>Note: if you have math with 4 and 5 splits and want to constrain 2 subactivities for those with 4 per week and 3 subactivities for those with 5 per week, you can add constraints only for math with components 3, 4 and 5 (nice trick)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6254"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6279"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6295"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6320"/>
         <source>Note: if an activity does not belong to a larger group (is a single activity), it is considered to have component number 1. As an advice, if you have activities of say biology split into 1 or 2 per week and want to constrain only one component if there are 2 per week, add a constraint for biology with component number=2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6258"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6283"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6299"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6324"/>
         <source>Note: if a teacher or a students set cannot have activities in some slots because of this constraint, gaps will be counted (if you have max gaps constraints). So be careful if you add this constraint for all subactivities, for only a teacher or for only a students set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6266"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6307"/>
         <source>This constraint is used to specify that for some components of a type of activities, for instance for math activities, you need that from say 4-5 per week, at least the first 2 to start early (say in the first 4 hours).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6293"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6334"/>
         <source>Help about the constraint max days between activities:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6295"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6336"/>
         <source>This constraint was suggested for the following situation: a user needed that activities A1, A2 and A3 to be in consecutive days (like: A1 on Tuesday, A2 on Wednesday and A3 on Thursday. So, they must be in 3 consecutive days). This is simple: add a constraint max days between activities for A1, A2 and A3, with max 2 days between them. It is supposed that these activities are constrained not to be on the same day by a constraint min days between activities.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6300"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6341"/>
         <source>So, the general situation: this constraint ensures that between each pair from the selected activities, the distance in days is at most the selected value. Distance = 1 day between a pair A1 and A2 means that A1 and A2 are in consecutive days (like Thursday and Friday). Distance = 3 days means that A1 and A2 are 3 days apart, for instance Monday and Thursday.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6304"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6345"/>
         <source>Another example: teacher T wants to ensure that his activities take place in at most 4 consecutive days (so, from Monday to Thursday or from Tuesday to Friday). Then, add all his activities and max days between them = 3.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6314"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6355"/>
         <source>To use this constraint, you need to specify a set of activities, a set of time slots, and a maximum number of time slots from those selected which can be occupied by the specified activities.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6324"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6365"/>
         <source>To use this constraint, you need to specify a set of activities, a set of time slots, and a maximum number of activities from those selected which can be simultaneous in each of the selected time slots.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6334"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6375"/>
         <source>To use this constraint, you need to specify a set of activities, a set of time slots, and a minimum number of time slots from those selected which must be occupied by the specified activities.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6346"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6387"/>
         <source>To use this constraint, you need to specify a set of activities, a set of time slots, and a minimum number of activities from those selected which must be simultaneous in each of the selected time slots.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6349"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6390"/>
         <source>You can select the option &apos;Allow empty slots&apos;. This means that each selected slot may either have the minimum number of simultaneous activities out of the selected ones, or no activities out of the selected ones.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6352"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6393"/>
         <source>IMPORTANT NOTE: If you need a solution without empty slots or if a solution with empty slots does not exist, please leave the option &apos;Allow empty slots&apos; unselected, because the generation is more efficient this way.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6378"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6419"/>
         <source>To use this constraint, you need to specify a set of activities, a set of time slots, and a maximum total number of activities from those selected which can be placed (even partially) in any of the selected time slots.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6381"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6422"/>
         <source>This constraint is useful to limit the number of activities in the overflow (or fake) blocks.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6390"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6404"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6431"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6445"/>
         <source>This constraint was suggested by %1, %2, and other users on this FET forum topic: %3.</source>
         <comment>%1 and %2 are two persons, %3 is an internet link</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6393"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6434"/>
         <source>It was designed to disallow the teachers to have activities in two consecutive real days, morning and afternoon on both, which can be tiring. If you can allow the teachers to have activities only on the afternoon of a real day (half day 1), then the whole next real day (both morning and afternoon, half days 2 and 3), then only on the next morning (half day 4), you can select the exception option. In this case only a succession of these four half-days: morning-afternoon-morning-afternoon is NOT allowed by the algorithm.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6408"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6449"/>
         <source>It was designed to disallow a teacher to have activities in two consecutive real days, morning and afternoon on both, which can be tiring. If you can allow the teacher to have activities only on the afternoon of a real day (half day 1), then the whole next real day (both morning and afternoon, half days 2 and 3), then only on the next morning (half day 4), you can select the exception option. In this case only a succession of these four half-days: morning-afternoon-morning-afternoon is NOT allowed by the algorithm.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6419"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6433"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6460"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6474"/>
         <source>This constraint was suggested by the user %1 on this FET forum topic: %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6422"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6463"/>
         <source>It was designed to disallow the students to have activities in two consecutive real days, morning and afternoon on both, which can be tiring. If you can allow the students to have activities only on the afternoon of a real day (half day 1), then the whole next real day (both morning and afternoon, half days 2 and 3), then only on the next morning (half day 4), you can select the exception option. In this case only a succession of these four half-days: morning-afternoon-morning-afternoon is NOT allowed by the algorithm.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6436"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6477"/>
         <source>It was designed to disallow a students set to have activities in two consecutive real days, morning and afternoon on both, which can be tiring. If you can allow the students set to have activities only on the afternoon of a real day (half day 1), then the whole next real day (both morning and afternoon, half days 2 and 3), then only on the next morning (half day 4), you can select the exception option. In this case only a succession of these four half-days: morning-afternoon-morning-afternoon is NOT allowed by the algorithm.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6449"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6490"/>
         <source>Help about the constraint max terms between activities:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6451"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6492"/>
         <source>This constraint was suggested for the following situation: a user needed that a set of activities to be in three consecutive terms. In this case add a constraint of type max terms between activities for these activities with max terms between activities = 2 (it is supposed that there are also other constraints that ensure that these activities occupy at least three terms).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6464"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6505"/>
         <source>Help about the constraint max half days between activities:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6466"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6507"/>
         <source>This constraint was suggested by two users, for two different situations in the Mornings-Afternoons mode:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6468"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6509"/>
         <source>1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6469"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6510"/>
         <source>This constraint was suggested by %1, so that a teacher does not work both on the afternoon of the last day of the week and the morning of the first day of the week. The user needs to add all the activities of the teacher, max half days between them = n_half_days_per_week-2. See the forum topic %2 for more details.</source>
         <comment>%1 is a person</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6473"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6514"/>
         <source>2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6474"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6515"/>
         <source>Also, this constraint was suggested by %1, to do the timetable for two weeks using tricks. Here are this user&apos;s words: &apos;For the Tunisian high schools I opted for the morning evening mode with two weeks A and B for the weekly activities with the constraints min days between activities 6, max days between activities 6 and the same starting hour with max different rooms 1. I added a trick so that the two activities are in the same half of the day: for each real room I created two rooms, one valid in the morning and the other valid in the evening; to avoid this bypass, is it possible to add a max half days between activities constraint?&apos; (Note: The constraint type min half days between activities was existing at the time of this post.) See the forum topic %2 for more details.</source>
         <comment>%1 is a person</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6505"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6546"/>
         <source>Help about the constraint activities max hourly span:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6507"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6548"/>
         <source>This constraint was suggested by %1.</source>
         <comment>%1 is a user</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6509"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6550"/>
         <source>The activities can be on any days, but their hourly span must be limited by the specified maximum value.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6511"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6552"/>
         <source>More details and an example: the hourly span of the a set of activities is the number of hours between the start of the earliest activity and the end of the latest activity, neglecting their days. So, if for instance the constraint addresses A1, A2, A3, and A4, each of them having duration 1, and say: A1 is on day 1 hour 2, A2 is on day 1 hour 3, A3 is on day 3 hour 5, and A4 is on day 5 hour 2, then the earliest activities (neglecting their days) are A1 and A4 (starting at hour 2), and the latest activity (neglecting its day) is A3 (ending after hour 5). The hourly span of A1, A2, A3, and A4 is thus (5 + 1) - 2 = 4.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6550"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6742"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6591"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6783"/>
         <source>FET has met a critical error - aborting current operation, please report bug (old weight is not -1 and not (&gt;=0.0 and &lt;=100.0))</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6560"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6752"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6601"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6793"/>
         <source>FET has met a critical error - aborting current operation, please report bug (new weight is not -1 and not (&gt;=0.0 and &lt;=100.0))</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6569"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6761"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6610"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6802"/>
         <source>FET has met a critical error - aborting current operation, please report bug (old consecutive is not any, yes or no)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6575"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6767"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6616"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6808"/>
         <source>FET has met a critical error - aborting current operation, please report bug (new consecutive is not no_change, yes or no)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6586"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6778"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6627"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6819"/>
         <source>FET has met a critical error - aborting current operation, please report bug (old min days is not -1 or 1..ndaysperweek)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6596"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6788"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6637"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6829"/>
         <source>FET has met a critical error - aborting current operation, please report bug (new min days is not -1 or 1..ndaysperweek)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6607"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6648"/>
         <source>FET has met a critical error - aborting current operation, please report bug (old min days is not -1 or 1..nrealdaysperweek)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6617"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6658"/>
         <source>FET has met a critical error - aborting current operation, please report bug (new min days is not -1 or 1..nrealdaysperweek)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6628"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6799"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6669"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6840"/>
         <source>FET has met a critical error - aborting current operation, please report bug (old nActivities is not -1 or &gt;=1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6684"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6725"/>
         <source>There were inspected (and possibly modified) %1 constraints min days between activities matching your criteria</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6686"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6857"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6727"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6898"/>
         <source>NOTE: If you are using constraints of type activities same starting time or activities same starting day, it is important (after current operation) to apply the operation of removing redundant constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6688"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6859"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6729"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6900"/>
         <source>Read Help/Important tips - tip 2) for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6691"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6732"/>
         <source>Modified multiple constraints min days between activities with filter:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6694"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6865"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6735"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6906"/>
         <source>Old weight percentage=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6696"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6867"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6737"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6908"/>
         <source>New weight percentage=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6699"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6870"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6740"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6911"/>
         <source>Old consecutive if same day=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6701"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6872"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6742"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6913"/>
         <source>New consecutive if same day=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6704"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6745"/>
         <source>Old min days=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6706"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6747"/>
         <source>New min days=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6709"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6880"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6750"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6921"/>
         <source>Old number of activities=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6855"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6896"/>
         <source>There were inspected (and possibly modified) %1 constraints min half days between activities matching your criteria</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6862"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6903"/>
         <source>Modified multiple constraints min half days between activities with filter:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6875"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6916"/>
         <source>Old min half days=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6877"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6918"/>
         <source>New min half days=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6936"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6980"/>
         <source>No: %1 / %2</source>
         <comment>%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints</comment>
         <translation type="unfinished">Nr: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6963"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7016"/>
         <source>Activate the selected time constraints?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6991"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7044"/>
         <source>Activated %1 time constraints:</source>
         <comment>%1 is the number of activated time constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7014"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7067"/>
         <source>Activated %1 time constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7028"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7081"/>
         <source>Deactivate the selected time constraints? (Note that the basic compulsory time constraints will not be deactivated, even if they are selected.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7058"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7111"/>
         <source>Deactivated %1 time constraints:</source>
         <comment>%1 is the number of deactivated time constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7081"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7134"/>
         <source>Deactivated %1 time constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7104"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7160"/>
         <source>Constraint comments</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7106"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7162"/>
         <source>OK</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7108"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7164"/>
         <source>Cancel</source>
         <translation type="unfinished">Annuler</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7144"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7200"/>
         <source>Changed a constraint&apos;s comments. Constraint before:
 
 %1
@@ -56580,38 +56582,38 @@ Comments after:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7167"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7223"/>
         <source>%1 / %2 time constraints</source>
         <comment>%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7189"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7247"/>
         <source>Multiple selection: %1 / %2</source>
         <comment>It refers to the list of selected time constraints, %1 is the number of active selected time constraints, %2 is the total number of selected time constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7208"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7266"/>
         <source>No constraints from your selection can change their weight (remember that some types of constraints are allowed to have only 100% weight).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7216"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7225"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7276"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7285"/>
         <source>Modify the weights of the selected time constraints</source>
         <comment>The title of a dialog to modify the weights of the selected constraints with a single click</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7218"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7278"/>
         <source>You will modify %1 selected time constraints.
 Please enter the new weight percentage:</source>
         <comment>Translators: please split this field with new line characters, similarly to the original field, so that it is not too wide. You can use more lines (3 or even 4), if needed. %1 is the number of constraints which will change.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7227"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7287"/>
         <source>You will modify %1 time constraints from your
 selection (remember that some types of constraints
 are only allowed to have 100% weight, so %2
@@ -56621,7 +56623,7 @@ Please enter the new weight percentage:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7265"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7325"/>
         <source>Changed the weights of the following %1 selected time constraints to %2%:</source>
         <comment>%1 is the number of time constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints</comment>
         <translation type="unfinished"></translation>
@@ -69832,164 +69834,164 @@ Bottom: %4</source>
 <context>
     <name>TimetableViewForm</name>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="676"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="676"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="897"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="947"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="947"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1000"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="671"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="671"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="880"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="711"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="711"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="932"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="982"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="982"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1035"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="706"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="706"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="915"/>
         <source>PLT</source>
         <comment>Abbreviation for permanently locked time. There are 5 strings: permanently locked time, permanently locked space, locked time, locked space, preferred day. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation type="unfinished">PLT</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="682"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="682"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="903"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="953"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="953"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1006"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="677"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="677"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="886"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="717"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="717"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="938"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="988"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="988"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1041"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="712"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="712"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="921"/>
         <source>LT</source>
         <comment>Abbreviation for locked time. There are 5 strings: permanently locked time, permanently locked space, locked time, locked space, preferred day. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation type="unfinished">LT</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="688"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="688"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="909"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="959"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="959"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1012"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="683"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="683"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="892"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="723"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="723"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="944"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="994"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="994"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1047"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="718"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="718"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="927"/>
         <source>PLS</source>
         <comment>Abbreviation for permanently locked space. There are 5 strings: permanently locked time, permanently locked space, locked time, locked space, preferred day. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation type="unfinished">PLS</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="694"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="694"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="915"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="965"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="965"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1018"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="689"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="689"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="898"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="729"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="729"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="950"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1000"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1000"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1053"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="724"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="724"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="933"/>
         <source>LS</source>
         <comment>Abbreviation for locked space. There are 5 strings: permanently locked time, permanently locked space, locked time, locked space, preferred day. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation type="unfinished">LS</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="700"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="700"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="921"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="971"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="971"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1024"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="695"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="695"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="904"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="735"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="735"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="956"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1006"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1006"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1059"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="730"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="730"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="939"/>
         <source>PD</source>
         <comment>Abbreviation for preferred day. There are 5 strings: permanently locked time, permanently locked space, locked time, locked space, preferred day. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="897"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="897"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1130"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1198"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1198"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1288"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="890"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="890"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1100"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="935"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="935"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1165"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1236"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1236"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1323"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="928"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="928"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1135"/>
         <source>permanently locked time</source>
         <comment>refers to activity</comment>
         <translation>permanent låst tid</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="901"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="901"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1134"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1202"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1202"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1292"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="894"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="894"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1104"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="939"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="939"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1169"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1240"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1240"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1327"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="932"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="932"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1139"/>
         <source>locked time</source>
         <comment>refers to activity</comment>
         <translation>Låst tid</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="905"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="905"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1138"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1206"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1206"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1296"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="898"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="898"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1108"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="943"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="943"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1173"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1244"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1244"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1331"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="936"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="936"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1143"/>
         <source>permanently locked space</source>
         <comment>refers to activity</comment>
         <translation>permanent låst sted</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="909"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="909"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1142"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1210"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1210"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1300"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="902"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="902"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1112"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="947"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="947"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1177"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1248"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1248"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1335"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="940"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="940"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1147"/>
         <source>locked space</source>
         <comment>refers to activity</comment>
         <translation>Låst sted</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="913"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="913"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1146"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1214"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1214"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1304"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="906"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="906"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1116"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="951"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="951"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1181"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1252"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1252"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1339"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="944"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="944"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1151"/>
         <source>preferred day</source>
         <comment>refers to activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1217"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1250"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1217"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1250"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1492"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1525"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1559"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1592"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1559"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1592"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1687"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1720"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1214"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1247"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1214"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1247"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1456"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1489"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1255"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1288"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1255"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1288"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1527"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1560"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1597"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1630"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1597"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1630"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1722"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1755"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1252"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1285"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1252"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1285"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1491"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1524"/>
         <source>Added %n locking time constraint(s).</source>
         <comment>See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field. Also, see https://doc.qt.io/qt-6/i18n-source-translation.html, section &apos;Handle Plural Forms&apos;. You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts (open these files with Qt Linguist and see the translation of this field).</comment>
         <translation type="unfinished">
@@ -69998,24 +70000,24 @@ Bottom: %4</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1225"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1258"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1225"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1258"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1500"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1533"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1567"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1600"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1567"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1600"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1695"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1728"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1222"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1255"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1222"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1255"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1464"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1497"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1263"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1296"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1263"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1296"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1535"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1568"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1605"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1638"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1605"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1638"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1730"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1763"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1260"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1293"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1260"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1293"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1499"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1532"/>
         <source>Added %n locking space constraint(s).</source>
         <comment>See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field. Also, see https://doc.qt.io/qt-6/i18n-source-translation.html, section &apos;Handle Plural Forms&apos;. You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts (open these files with Qt Linguist and see the translation of this field).</comment>
         <translation type="unfinished">
@@ -70024,24 +70026,24 @@ Bottom: %4</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1233"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1266"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1233"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1266"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1508"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1541"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1575"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1608"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1575"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1608"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1703"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1736"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1230"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1263"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1230"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1263"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1472"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1505"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1271"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1304"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1271"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1304"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1543"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1576"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1613"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1646"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1613"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1646"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1738"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1771"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1268"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1301"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1268"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1301"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1507"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1540"/>
         <source>Removed %n locking time constraint(s).</source>
         <comment>See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field. Also, see https://doc.qt.io/qt-6/i18n-source-translation.html, section &apos;Handle Plural Forms&apos;. You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts (open these files with Qt Linguist and see the translation of this field).</comment>
         <translation type="unfinished">
@@ -70050,24 +70052,24 @@ Bottom: %4</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1241"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1274"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1241"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1274"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1516"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1549"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1583"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1616"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1583"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1616"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1711"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1744"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1238"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1271"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1238"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1271"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1480"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1513"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1279"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1312"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1279"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1312"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1551"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1584"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1621"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1654"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1621"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1654"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1746"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1779"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1276"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1309"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1276"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1309"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1515"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1548"/>
         <source>Removed %n locking space constraint(s).</source>
         <comment>See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field. Also, see https://doc.qt.io/qt-6/i18n-source-translation.html, section &apos;Handle Plural Forms&apos;. You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts (open these files with Qt Linguist and see the translation of this field).</comment>
         <translation type="unfinished">
@@ -70076,146 +70078,146 @@ Bottom: %4</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1292"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1292"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1567"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1634"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1634"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1762"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1289"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1289"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1531"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1330"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1330"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1602"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1672"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1672"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1797"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1327"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1327"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1566"/>
         <source>No locking constraints added or removed.</source>
         <translation>Ingen låsende binding tilføjet eller fjernet.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1324"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1324"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1615"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1666"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1666"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2190"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1321"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1321"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1873"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1362"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1362"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1650"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1704"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1704"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2225"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1359"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1359"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1908"/>
         <source>Lock/unlock: you can select one or more activities in the table and toggle lock/unlock in time, space or both.</source>
         <translation>Lås/løs: Du kan vælge en eller flere aktiviteter i tabellen, og låse/løse i tid, sted eller begge.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1326"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1326"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1617"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1668"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1668"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2192"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1323"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1323"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1875"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1364"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1364"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1652"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1706"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1706"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2227"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1361"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1361"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1910"/>
         <source>There will be added or removed locking constraints for the selected activities (they can be unlocked only if they are not permanently locked).</source>
         <translation>Der vil blive tilføjet eller fjernet låsende bindinger for de valgte aktiviteter (de kan løses hvis de ikke er permanent låst).</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1328"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1328"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1619"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1670"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1670"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2194"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1325"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1325"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1877"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1366"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1366"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1654"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1708"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1708"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2229"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1363"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1363"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1912"/>
         <source>Locking time constraints are constraints of type activity preferred starting time. Locking space constraints are constraints of type activity preferred room. You can see these constraints in the corresponding constraints dialogs. New locking constraints are added at the end of the list of constraints.</source>
         <translation>Låsende tid bindinger, er bindinger af typen aktivitet foretrukket starttid. Låsende sted bindinger, er bindinger af typen aktivitet foretrukket lokale. Du kan se disse bindinger i de tilhørende bindings-dialoger. Nye låsnings bindinger er tilføjet i slutningen af bindings-listen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1331"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1331"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1630"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1673"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1673"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2205"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1328"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1328"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1888"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1369"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1369"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1665"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1711"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1711"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2240"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1366"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1366"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1923"/>
         <source>A bold font cell means that the activity is locked in time, either permanently or not.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1333"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1333"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1632"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1675"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1675"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2207"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1330"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1330"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1890"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1371"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1371"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1667"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1713"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1713"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2242"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1368"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1368"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1925"/>
         <source>An italic font cell means that the activity is locked in space, either permanently or not.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1335"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1335"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1634"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1677"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1677"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2209"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1332"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1332"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1892"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1373"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1373"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1669"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1715"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1715"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2244"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1370"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1370"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1927"/>
         <source>An underlined font cell means that the activity has a preferred day constraint (with any weight).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1338"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1338"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1637"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1376"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1376"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1672"/>
         <source>Note: In this dialog, the virtual rooms&apos; timetable will be empty.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1680"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1680"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1718"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1718"/>
         <source>There is a combo box in this dialog. You can choose each year, group, and subgroup if you select &apos;Years&apos;, each group and subgroup if you select &apos;Groups&apos;, or each subgroup if you select &apos;Subgroups&apos;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1622"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2197"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1880"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1657"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2232"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1915"/>
         <source>If the activity displayed in a cell is (permanently) locked in time or space or has a preferred day, it contains abbreviations to show that: PLT (permanently locked time), LT (locked time), PLS (permanently locked space), LS (locked space), or PD (preferred day), as a tooltip.</source>
         <comment>Translate the abbreviations also. Make sure the abbreviations in your language are different between themselves and the user can differentiate easily between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1627"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1662"/>
         <source>If a whole column (day+hour) is selected, the activities with no room from that column will NOT be locked/unlocked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2202"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2237"/>
         <source>If a whole column (day+hour) is selected, there will be locked/unlocked also the dummy activities (activities with no students sets) from that column.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2212"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2247"/>
         <source>The button &apos;Lock to days&apos; will add a constraint of type &apos;Activity preferred day&apos; to each selected activity, with the selected weight, to the day in which that activity is scheduled. The button &apos;Unlock from days&apos; does the opposite, and the button &apos;All&apos; on its right will unlock the day from all the activities, even if they are present or not in this timetable view dialog (they may be dummy activities - without any student set, or not scheduled yet).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2221"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1904"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2256"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1939"/>
         <source>This feature was suggested by %1 and %2 and may be useful in countries or regions where teachers are not all hired from the beginning of the school year, but are hired gradually, as well as teacher turnover (changes in their placement in schools by the competent authority) during the first months of the school year. In cases where a new teacher is hired, or another teacher&apos;s placement changes, the timetable needs to be updated, but in such a way that as many activities as possible remain on the same day on which they were scheduled (placed), so that - for example - the scheduled tests do not need to change their initially scheduled day.</source>
         <comment>%1 and %2 are two users</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1885"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1920"/>
         <source>If a whole column (day+hour) is selected, there will be locked/unlocked also the dummy activities (activities with no teacher) from that column.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1895"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1930"/>
         <source>The button &apos;Lock to days&apos; will add a constraint of type &apos;Activity preferred day&apos; to each selected activity, with the selected weight, to the day in which that activity is scheduled. The button &apos;Unlock from days&apos; does the opposite, and the button &apos;All&apos; on its right will unlock the day from all the activities, even if they are present or not in this timetable view dialog (they may be dummy activities - without any teacher, or not scheduled yet).</source>
         <translation type="unfinished"></translation>
     </message>
@@ -70223,180 +70225,186 @@ Bottom: %4</source>
 <context>
     <name>TimetableViewRoomsDaysHorizontalForm</name>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="320"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="549"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="553"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="564"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="337"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="569"/>
         <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="573"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="578"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="584"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="593"/>
         <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="598"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="813"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="819"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="823"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="842"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="960"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="964"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="980"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1042"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1054"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1067"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1129"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1141"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1154"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="618"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="851"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="857"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="861"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="880"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="998"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1002"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1018"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1080"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1092"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1105"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1167"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1179"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1192"/>
         <source>FET warning</source>
         <translation type="unfinished">FET advarsel</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="320"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="337"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation type="unfinished">Kan ikke vise skema, fordi du har tilføjet eller fjernet lokaler. Regenerer venligst skemaet for at se det</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="549"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="553"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="819"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="823"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="960"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="964"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="569"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="573"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="857"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="861"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="998"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1002"/>
         <source>Timetable not available in view rooms timetable dialog - please generate a new timetable</source>
         <translation type="unfinished">Skema ikke tilgængeligt i se lokaler skema dialog - generer venligst et nyt skema</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="564"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="980"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="584"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1018"/>
         <source>Invalid room - please close this dialog and open a new view rooms timetable dialog</source>
         <translation type="unfinished">Ugyldigt lokale - luk venligst denne dialog og åbn en ny se lokale skema dialog</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="573"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="578"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="813"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="593"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="598"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="851"/>
         <source>Timetable not available in view rooms timetable dialog - please generate a new timetable or close the timetable view rooms dialog</source>
         <translation type="unfinished">Skema ikke tilgængeligt i se lokaler skema dialog - generer venligst et nyt skema eller luk skema se lokaler dialogen</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="598"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="618"/>
         <source>You have an old timetable view rooms dialog opened - please close it</source>
         <translation type="unfinished">Du har en gammel skema se-lokaler dialog åbnet - luk den venligst</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="842"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="798"/>
+        <source>No: %1    Dur: %2</source>
+        <comment>No means number, %1 is the number of the placed activities, Dur means duration, %2 is the duration of the placed activities. Note that there are four spaces between them.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="880"/>
         <source>Invalid room - please close this dialog and open a new view rooms dialog</source>
         <translation type="unfinished">Ugyldigt lokale - luk venligst denne dialog og åbn en ny se lokale dialog</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="876"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="914"/>
         <source>Room: %1</source>
         <translation type="unfinished">Lokale: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="887"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="925"/>
         <source>Building=%1</source>
         <translation type="unfinished">Bygning=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="890"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="928"/>
         <source>Capacity=%1</source>
         <translation type="unfinished">Kapacitet=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="924"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="962"/>
         <source>Room is not available with weight %1%</source>
         <translation type="unfinished">Lokale er ikke til rådighed med vægt %1%</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="928"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="966"/>
         <source>Break with weight 100% in this slot</source>
         <translation type="unfinished">Pause med vægt 100% i denne tid</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="954"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="973"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1088"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1175"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1293"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="992"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1011"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1126"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1213"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1331"/>
         <source>FET information</source>
         <translation type="unfinished">FET information</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="955"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="993"/>
         <source>Generation in progress. Please stop the generation before this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1296"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1334"/>
         <source>Toggled lock/unlock a selection of activities in the timetable view rooms days horizontal dialog. The summary of the added/removed locking constraints is:
 
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="973"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1011"/>
         <source>Please select a room</source>
         <translation type="unfinished">Vælg venligst et lokale</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1027"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1112"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1065"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1150"/>
         <source>Added the following constraint:</source>
         <translation type="unfinished">Tilføjet følgende binding:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1042"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1054"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1129"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1141"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1080"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1092"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1167"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1179"/>
         <source>Small problem detected</source>
         <translation type="unfinished">Lille problem opdaget</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1043"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1055"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1081"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1093"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Et muligt problem kan være at du har to eller flere bindinger af typen aktivitet foretrukket starttid med vægt 100% forbundet til aktivitet-id %1, vælg venligt den ene af dem</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1044"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1056"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1131"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1143"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1082"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1094"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1169"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1181"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation type="unfinished">Et muligt problem kan være synkronisering - så prøv evt at lukket se-skema dialogen og åbn den igen</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1045"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1057"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1132"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1144"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1083"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1095"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1170"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1182"/>
         <source>Please report possible bug</source>
         <translation type="unfinished">Rapporter venligst eventuel programfejl</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1049"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1136"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1087"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1174"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation type="unfinished">Binding %1 vil ikke blive fjernet, fordi den er permanent låst. Ønsker du at løsne den må du gå til bindings-menuen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1067"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1154"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1105"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1192"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1070"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1157"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1108"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1195"/>
         <source>The following constraint will be deleted:</source>
         <translation type="unfinished">Følgende binding vil blive slettet:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1130"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1142"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1168"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1180"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Et muligt problem kan være at du har to eller flere bindinger af typen aktivitet foretrukket lokale med vægt 100% forbundet til aktivitet-id %1, vælg venligt den ene af dem</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1340"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1378"/>
         <source>FET help</source>
         <translation type="unfinished">FET hjælp</translation>
     </message>
@@ -70449,208 +70457,226 @@ Bottom: %4</source>
         <translation type="unfinished">Lokales navn</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform_template.ui" line="144"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform_template.ui" line="157"/>
         <source>Teachers</source>
         <translation type="unfinished">Lærere</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform_template.ui" line="151"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform_template.ui" line="164"/>
         <source>Students</source>
         <translation type="unfinished">Elever</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform_template.ui" line="158"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform_template.ui" line="171"/>
         <source>Subjects</source>
         <translation type="unfinished">Emner</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform_template.ui" line="165"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform_template.ui" line="178"/>
         <source>Activity tags</source>
         <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform_template.ui" line="172"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform_template.ui" line="185"/>
         <source>Rooms</source>
         <translation type="unfinished">Lokaler</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform_template.ui" line="192"/>
+        <source>Merge</source>
+        <extracomment>It means that the cells for the same activity will be merged.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform_template.ui" line="199"/>
+        <source>Colors</source>
+        <extracomment>It means to use colors in the timetable view.</extracomment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>TimetableViewRoomsDaysVerticalForm</name>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="320"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="549"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="553"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="564"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="337"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="569"/>
         <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="573"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="578"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="584"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="593"/>
         <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="598"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="813"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="819"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="823"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="842"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="960"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="964"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="980"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1042"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1054"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1067"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1129"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1141"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1154"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="618"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="851"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="857"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="861"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="880"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="998"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1002"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1018"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1080"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1092"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1105"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1167"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1179"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1192"/>
         <source>FET warning</source>
         <translation type="unfinished">FET advarsel</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="320"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="337"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation type="unfinished">Kan ikke vise skema, fordi du har tilføjet eller fjernet lokaler. Regenerer venligst skemaet for at se det</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="549"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="553"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="819"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="823"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="960"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="964"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="569"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="573"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="857"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="861"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="998"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1002"/>
         <source>Timetable not available in view rooms timetable dialog - please generate a new timetable</source>
         <translation type="unfinished">Skema ikke tilgængeligt i se lokaler skema dialog - generer venligst et nyt skema</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="564"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="980"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="584"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1018"/>
         <source>Invalid room - please close this dialog and open a new view rooms timetable dialog</source>
         <translation type="unfinished">Ugyldigt lokale - luk venligst denne dialog og åbn en ny se lokale skema dialog</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="573"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="578"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="813"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="593"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="598"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="851"/>
         <source>Timetable not available in view rooms timetable dialog - please generate a new timetable or close the timetable view rooms dialog</source>
         <translation type="unfinished">Skema ikke tilgængeligt i se lokaler skema dialog - generer venligst et nyt skema eller luk skema se lokaler dialogen</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="598"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="618"/>
         <source>You have an old timetable view rooms dialog opened - please close it</source>
         <translation type="unfinished">Du har en gammel skema se-lokaler dialog åbnet - luk den venligst</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="842"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="798"/>
+        <source>No: %1    Dur: %2</source>
+        <comment>No means number, %1 is the number of the placed activities, Dur means duration, %2 is the duration of the placed activities. Note that there are four spaces between them.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="880"/>
         <source>Invalid room - please close this dialog and open a new view rooms dialog</source>
         <translation type="unfinished">Ugyldigt lokale - luk venligst denne dialog og åbn en ny se lokale dialog</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="876"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="914"/>
         <source>Room: %1</source>
         <translation type="unfinished">Lokale: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="887"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="925"/>
         <source>Building=%1</source>
         <translation type="unfinished">Bygning=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="890"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="928"/>
         <source>Capacity=%1</source>
         <translation type="unfinished">Kapacitet=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="924"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="962"/>
         <source>Room is not available with weight %1%</source>
         <translation type="unfinished">Lokale er ikke til rådighed med vægt %1%</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="928"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="966"/>
         <source>Break with weight 100% in this slot</source>
         <translation type="unfinished">Pause med vægt 100% i denne tid</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="954"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="973"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1088"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1175"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1293"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="992"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1011"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1126"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1213"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1331"/>
         <source>FET information</source>
         <translation type="unfinished">FET information</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="955"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="993"/>
         <source>Generation in progress. Please stop the generation before this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="973"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1011"/>
         <source>Please select a room</source>
         <translation type="unfinished">Vælg venligst et lokale</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1027"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1112"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1065"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1150"/>
         <source>Added the following constraint:</source>
         <translation type="unfinished">Tilføjet følgende binding:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1042"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1054"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1129"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1141"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1080"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1092"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1167"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1179"/>
         <source>Small problem detected</source>
         <translation type="unfinished">Lille problem opdaget</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1043"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1055"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1081"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1093"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Et muligt problem kan være at du har to eller flere bindinger af typen aktivitet foretrukket starttid med vægt 100% forbundet til aktivitet-id %1, vælg venligt den ene af dem</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1044"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1056"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1131"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1143"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1082"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1094"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1169"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1181"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation type="unfinished">Et muligt problem kan være synkronisering - så prøv evt at lukket se-skema dialogen og åbn den igen</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1045"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1057"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1132"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1144"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1083"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1095"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1170"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1182"/>
         <source>Please report possible bug</source>
         <translation type="unfinished">Rapporter venligst eventuel programfejl</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1049"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1136"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1087"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1174"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation type="unfinished">Binding %1 vil ikke blive fjernet, fordi den er permanent låst. Ønsker du at løsne den må du gå til bindings-menuen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1067"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1154"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1105"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1192"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1070"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1157"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1108"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1195"/>
         <source>The following constraint will be deleted:</source>
         <translation type="unfinished">Følgende binding vil blive slettet:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1130"/>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1142"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1168"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1180"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Et muligt problem kan være at du har to eller flere bindinger af typen aktivitet foretrukket lokale med vægt 100% forbundet til aktivitet-id %1, vælg venligt den ene af dem</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1296"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1334"/>
         <source>Toggled lock/unlock a selection of activities in the timetable view rooms days vertical dialog. The summary of the added/removed locking constraints is:
 
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1340"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform.cpp" line="1378"/>
         <source>FET help</source>
         <translation type="unfinished">FET hjælp</translation>
     </message>
@@ -70703,223 +70729,235 @@ Bottom: %4</source>
         <translation type="unfinished">Lokales navn</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform_template.ui" line="144"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform_template.ui" line="157"/>
         <source>Teachers</source>
         <translation type="unfinished">Lærere</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform_template.ui" line="151"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform_template.ui" line="164"/>
         <source>Students</source>
         <translation type="unfinished">Elever</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform_template.ui" line="158"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform_template.ui" line="171"/>
         <source>Subjects</source>
         <translation type="unfinished">Emner</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform_template.ui" line="165"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform_template.ui" line="178"/>
         <source>Activity tags</source>
         <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdaysverticalform_template.ui" line="172"/>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform_template.ui" line="185"/>
         <source>Rooms</source>
         <translation type="unfinished">Lokaler</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform_template.ui" line="192"/>
+        <source>Merge</source>
+        <extracomment>It means that the cells for the same activity will be merged.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewroomsdaysverticalform_template.ui" line="199"/>
+        <source>Colors</source>
+        <extracomment>It means to use colors in the timetable view.</extracomment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>TimetableViewRoomsTimeHorizontalForm</name>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="238"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="798"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="805"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="812"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1049"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1055"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1061"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1067"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1077"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1086"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1194"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1200"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1206"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1286"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1300"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1326"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1332"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1376"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1390"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="247"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="824"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="831"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="838"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1084"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1090"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1096"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1102"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1112"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1121"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1229"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1235"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1241"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1321"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1335"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1361"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1367"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1411"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1425"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1431"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1460"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1466"/>
         <source>FET warning</source>
         <translation type="unfinished">FET advarsel</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="238"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="812"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1067"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1206"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="247"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="838"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1102"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1241"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation type="unfinished">Kan ikke vise skema, fordi du har tilføjet eller fjernet lokaler. Regenerer venligst skemaet for at se det</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="388"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="398"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="397"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="407"/>
         <source>px</source>
         <comment>Abbreviation for pixels</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="798"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="805"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1061"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="824"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="831"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1096"/>
         <source>Timetable not available in view rooms timetable dialog - please generate a new timetable or close the timetable view rooms dialog</source>
         <translation type="unfinished">Skema ikke tilgængeligt i se lokaler skema dialog - generer venligst et nyt skema eller luk skema se lokaler dialogen</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1049"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1055"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1194"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1200"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1084"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1090"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1229"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1235"/>
         <source>Timetable not available in view rooms timetable dialog - please generate a new timetable</source>
         <translation type="unfinished">Skema ikke tilgængeligt i se lokaler skema dialog - generer venligst et nyt skema</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1077"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1112"/>
         <source>Cannot display the timetable, because you added or removed some teachers. Please regenerate the timetable and then view it</source>
         <translation type="unfinished">Kan ikke vise skema, fordi du har tilføjet eller fjernet lærere. Regenerer venligst skemaet for at se det</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1086"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1121"/>
         <source>The room is invalid - please close this dialog and open a new view rooms timetable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1103"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1138"/>
         <source>Room: %1</source>
         <translation type="unfinished">Lokale: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1114"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1149"/>
         <source>Building=%1</source>
         <translation type="unfinished">Bygning=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1117"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1152"/>
         <source>Capacity=%1</source>
         <translation type="unfinished">Kapacitet=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1157"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1192"/>
         <source>Room is not available with weight %1%</source>
         <translation type="unfinished">Lokale er ikke til rådighed med vægt %1%</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1161"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1196"/>
         <source>Break with weight 100% in this slot</source>
         <translation type="unfinished">Pause med vægt 100% i denne tid</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1188"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1353"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1452"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1568"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1223"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1388"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1487"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1603"/>
         <source>FET information</source>
         <translation type="unfinished">FET information</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1189"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1224"/>
         <source>Generation in progress. Please stop the generation before this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1571"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1606"/>
         <source>Locked/unlocked/toggled a selection of activities in the timetable view rooms time horizontal dialog. The summary of the added/removed locking constraints is:
 
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1286"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1300"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1376"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1390"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1321"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1335"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1411"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1425"/>
         <source>Small problem detected</source>
         <translation type="unfinished">Lille problem opdaget</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="396"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="405"/>
         <source>Automatic</source>
         <comment>Automatic mode of selection of the width</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="406"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="415"/>
         <source>Automatic</source>
         <comment>Automatic mode of selection of the height</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1287"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1301"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1322"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1336"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Et muligt problem kan være at du har to eller flere bindinger af typen aktivitet foretrukket starttid med vægt 100% forbundet til aktivitet-id %1, vælg venligt den ene af dem</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1288"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1302"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1378"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1392"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1323"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1337"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1413"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1427"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation type="unfinished">Et muligt problem kan være synkronisering - så prøv evt at lukket se-skema dialogen og åbn den igen</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1289"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1303"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1379"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1393"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1324"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1338"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1414"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1428"/>
         <source>Please report possible bug</source>
         <translation type="unfinished">Rapporter venligst eventuel programfejl</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1294"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1384"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1329"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1419"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation type="unfinished">Binding %1 vil ikke blive fjernet, fordi den er permanent låst. Ønsker du at løsne den må du gå til bindings-menuen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1321"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1420"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1356"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1455"/>
         <source>Added the following constraint:</source>
         <translation type="unfinished">Tilføjet følgende binding:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1326"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1425"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1361"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1460"/>
         <source>You may have a problem, because FET expected to add 1 constraint, but this is not possible. Please report possible bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1332"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1431"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1367"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1466"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1335"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1434"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1370"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1469"/>
         <source>The following constraint will be deleted:</source>
         <translation type="unfinished">Følgende binding vil blive slettet:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1377"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1391"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1412"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1426"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Et muligt problem kan være at du har to eller flere bindinger af typen aktivitet foretrukket lokale med vægt 100% forbundet til aktivitet-id %1, vælg venligt den ene af dem</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1639"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1674"/>
         <source>FET help</source>
         <translation type="unfinished">FET hjælp</translation>
     </message>
@@ -70958,45 +70996,57 @@ Bottom: %4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform_template.ui" line="100"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform_template.ui" line="121"/>
+        <source>Colors</source>
+        <extracomment>It means to use colors in the timetable view.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform_template.ui" line="128"/>
         <source>Students</source>
         <translation type="unfinished">Elever</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform_template.ui" line="107"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform_template.ui" line="100"/>
         <source>Subjects</source>
         <translation type="unfinished">Emner</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform_template.ui" line="114"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform_template.ui" line="107"/>
         <source>Teachers</source>
         <translation type="unfinished">Lærere</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform_template.ui" line="132"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform_template.ui" line="114"/>
+        <source>Merge</source>
+        <extracomment>It means that the cells for the same activity will be merged.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform_template.ui" line="146"/>
         <source>Time</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
         <translation type="unfinished">Tid</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform_template.ui" line="146"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform_template.ui" line="160"/>
         <source>Space</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
         <translation type="unfinished">Sted</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform_template.ui" line="160"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform_template.ui" line="174"/>
         <source>Both</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
         <translation type="unfinished">Begge</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform_template.ui" line="175"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform_template.ui" line="189"/>
         <source>Help</source>
         <translation type="unfinished">Hjælp</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform_template.ui" line="182"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform_template.ui" line="196"/>
         <source>Close</source>
         <translation type="unfinished">Luk</translation>
     </message>
@@ -71004,216 +71054,222 @@ Bottom: %4</source>
 <context>
     <name>TimetableViewStudentsDaysHorizontalForm</name>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="704"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="713"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="735"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="746"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="750"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="799"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="806"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="829"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="833"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1082"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1088"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1094"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1121"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1125"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1262"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1268"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1302"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="724"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="733"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="755"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="766"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="770"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="819"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="826"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="849"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="853"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1120"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1126"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1132"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1159"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1163"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1300"/>
         <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1306"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1384"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1396"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1409"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1471"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1483"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1496"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1340"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1344"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1422"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1434"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1447"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1509"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1521"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1534"/>
         <source>FET warning</source>
         <translation type="unfinished">FET advarsel</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="704"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="735"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1088"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1262"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="724"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="755"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1126"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1300"/>
         <source>Timetable not available in view students timetable dialog - please generate a new timetable</source>
         <translation type="unfinished">Skema ikke tilgængeligt i se elever skema dialog - generer venligst et nyt skema</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="713"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="733"/>
         <source>Invalid year - please close this dialog and open a new students view timetable dialog</source>
         <translation type="unfinished">Ugyldig årgang - luk venligst denne dialog og åbn en ny se elever skema dialog</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="746"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="766"/>
         <source>Nonexistent group - please reload this dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="799"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1082"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="819"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1120"/>
         <source>Timetable not available in view students timetable dialog - please generate a new timetable or close the timetable view students dialog</source>
         <translation type="unfinished">Skema ikke tilgængeligt i se elever skema dialog - generer venligst et nyt skema eller luk skema se elever dialogen</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="806"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1094"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1268"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="826"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1132"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1306"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation type="unfinished">Kan ikke vise skema, fordi du har tilføjet eller fjernet lokaler. Regenerer venligst skemaet for at se det</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="340"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="357"/>
         <source>Years</source>
         <translation type="unfinished">Årgange</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="341"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="358"/>
         <source>Groups</source>
         <translation type="unfinished">Grupper</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="342"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="359"/>
         <source>Subgroups</source>
         <translation type="unfinished">Undergrupper</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="343"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="360"/>
         <source>Subgroups (sorted)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="750"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="770"/>
         <source>Incorrect group settings - please reload this dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="829"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1121"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1302"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="849"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1159"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1340"/>
         <source>Nonexistent subgroup - please reload this dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="833"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1125"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1306"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="853"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1163"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1344"/>
         <source>Incorrect subgroup settings - please reload this dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1178"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1067"/>
+        <source>No: %1    Dur: %2</source>
+        <comment>No means number, %1 is the number of the placed activities, Dur means duration, %2 is the duration of the placed activities. Note that there are four spaces between them.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1216"/>
         <source>Room: %1</source>
         <translation type="unfinished">Lokale: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1189"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1227"/>
         <source>Building=%1</source>
         <translation type="unfinished">Bygning=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1192"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1230"/>
         <source>Capacity=%1</source>
         <translation type="unfinished">Kapacitet=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1225"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1263"/>
         <source>Students subgroup is not available 100% in this slot</source>
         <translation type="unfinished">Elev undergruppe er ikke til rådighed 100% på denne tid</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1229"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1267"/>
         <source>Break with weight 100% in this slot</source>
         <translation type="unfinished">Pause med vægt 100% i denne tid</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1255"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1289"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1430"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1517"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1635"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1293"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1327"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1468"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1555"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1673"/>
         <source>FET information</source>
         <translation type="unfinished">FET information</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1256"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1294"/>
         <source>Generation in progress. Please stop the generation before this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1638"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1676"/>
         <source>Toggled lock/unlock a selection of activities in the timetable view students days horizontal dialog. The summary of the added/removed locking constraints is:
 
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1289"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1327"/>
         <source>Please select a subgroup</source>
         <translation type="unfinished">Vælg venligst en undergruppe</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1369"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1454"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1407"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1492"/>
         <source>Added the following constraint:</source>
         <translation type="unfinished">Tilføjet følgende binding:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1384"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1396"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1471"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1483"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1422"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1434"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1509"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1521"/>
         <source>Small problem detected</source>
         <translation type="unfinished">Lille problem opdaget</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1385"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1397"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1423"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1435"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Et muligt problem kan være at du har to eller flere bindinger af typen aktivitet foretrukket starttid med vægt 100% forbundet til aktivitet-id %1, vælg venligt den ene af dem</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1386"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1398"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1473"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1485"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1424"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1436"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1511"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1523"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation type="unfinished">Et muligt problem kan være synkronisering - så prøv evt at lukket se-skema dialogen og åbn den igen</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1387"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1399"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1474"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1486"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1425"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1437"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1512"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1524"/>
         <source>Please report possible bug</source>
         <translation type="unfinished">Rapporter venligst eventuel programfejl</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1391"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1478"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1429"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1516"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation type="unfinished">Binding %1 vil ikke blive fjernet, fordi den er permanent låst. Ønsker du at løsne den må du gå til bindings-menuen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1409"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1496"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1447"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1534"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1412"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1499"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1450"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1537"/>
         <source>The following constraint will be deleted:</source>
         <translation type="unfinished">Følgende binding vil blive slettet:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1472"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1484"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1510"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1522"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Et muligt problem kan være at du har to eller flere bindinger af typen aktivitet foretrukket lokale med vægt 100% forbundet til aktivitet-id %1, vælg venligt den ene af dem</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1684"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1722"/>
         <source>FET help</source>
         <translation type="unfinished">FET hjælp</translation>
     </message>
@@ -71271,244 +71327,262 @@ Bottom: %4</source>
         <translation type="unfinished">Detaljer</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform_template.ui" line="183"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform_template.ui" line="196"/>
         <source>Teachers</source>
         <translation type="unfinished">Lærere</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform_template.ui" line="190"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform_template.ui" line="203"/>
         <source>Students</source>
         <translation type="unfinished">Elever</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform_template.ui" line="197"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform_template.ui" line="210"/>
         <source>Subjects</source>
         <translation type="unfinished">Emner</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform_template.ui" line="204"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform_template.ui" line="217"/>
         <source>Activity tags</source>
         <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform_template.ui" line="211"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform_template.ui" line="224"/>
         <source>Rooms</source>
         <translation type="unfinished">Lokaler</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform_template.ui" line="231"/>
+        <source>Merge</source>
+        <extracomment>It means that the cells for the same activity will be merged.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform_template.ui" line="238"/>
+        <source>Colors</source>
+        <extracomment>It means to use colors in the timetable view.</extracomment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>TimetableViewStudentsDaysVerticalForm</name>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="340"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="357"/>
         <source>Years</source>
         <translation type="unfinished">Årgange</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="341"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="358"/>
         <source>Groups</source>
         <translation type="unfinished">Grupper</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="342"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="359"/>
         <source>Subgroups</source>
         <translation type="unfinished">Undergrupper</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="343"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="360"/>
         <source>Subgroups (sorted)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="704"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="713"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="735"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="746"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="750"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="799"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="806"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="829"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="833"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1082"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1088"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1094"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1121"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1125"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1262"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1268"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1302"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="724"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="733"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="755"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="766"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="770"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="819"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="826"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="849"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="853"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1120"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1126"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1132"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1159"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1163"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1300"/>
         <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1306"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1384"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1396"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1409"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1471"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1483"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1496"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1340"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1344"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1422"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1434"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1447"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1509"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1521"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1534"/>
         <source>FET warning</source>
         <translation type="unfinished">FET advarsel</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="704"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="735"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1088"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1262"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="724"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="755"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1126"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1300"/>
         <source>Timetable not available in view students timetable dialog - please generate a new timetable</source>
         <translation type="unfinished">Skema ikke tilgængeligt i se elever skema dialog - generer venligst et nyt skema</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="713"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="733"/>
         <source>Invalid year - please close this dialog and open a new students view timetable dialog</source>
         <translation type="unfinished">Ugyldig årgang - luk venligst denne dialog og åbn en ny se elever skema dialog</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="746"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="766"/>
         <source>Nonexistent group - please reload this dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="750"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="770"/>
         <source>Incorrect group settings - please reload this dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="799"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1082"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="819"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1120"/>
         <source>Timetable not available in view students timetable dialog - please generate a new timetable or close the timetable view students dialog</source>
         <translation type="unfinished">Skema ikke tilgængeligt i se elever skema dialog - generer venligst et nyt skema eller luk skema se elever dialogen</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="806"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1094"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1268"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="826"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1132"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1306"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation type="unfinished">Kan ikke vise skema, fordi du har tilføjet eller fjernet lokaler. Regenerer venligst skemaet for at se det</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="829"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1121"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1302"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="849"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1159"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1340"/>
         <source>Nonexistent subgroup - please reload this dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="833"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1125"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1306"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="853"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1163"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1344"/>
         <source>Incorrect subgroup settings - please reload this dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1178"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1067"/>
+        <source>No: %1    Dur: %2</source>
+        <comment>No means number, %1 is the number of the placed activities, Dur means duration, %2 is the duration of the placed activities. Note that there are four spaces between them.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1216"/>
         <source>Room: %1</source>
         <translation type="unfinished">Lokale: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1189"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1227"/>
         <source>Building=%1</source>
         <translation type="unfinished">Bygning=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1192"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1230"/>
         <source>Capacity=%1</source>
         <translation type="unfinished">Kapacitet=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1225"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1263"/>
         <source>Students subgroup is not available 100% in this slot</source>
         <translation type="unfinished">Elev undergruppe er ikke til rådighed 100% på denne tid</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1229"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1267"/>
         <source>Break with weight 100% in this slot</source>
         <translation type="unfinished">Pause med vægt 100% i denne tid</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1255"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1289"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1430"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1517"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1635"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1293"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1327"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1468"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1555"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1673"/>
         <source>FET information</source>
         <translation type="unfinished">FET information</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1256"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1294"/>
         <source>Generation in progress. Please stop the generation before this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1289"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1327"/>
         <source>Please select a subgroup</source>
         <translation type="unfinished">Vælg venligst en undergruppe</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1369"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1454"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1407"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1492"/>
         <source>Added the following constraint:</source>
         <translation type="unfinished">Tilføjet følgende binding:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1384"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1396"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1471"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1483"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1422"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1434"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1509"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1521"/>
         <source>Small problem detected</source>
         <translation type="unfinished">Lille problem opdaget</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1385"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1397"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1423"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1435"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Et muligt problem kan være at du har to eller flere bindinger af typen aktivitet foretrukket starttid med vægt 100% forbundet til aktivitet-id %1, vælg venligt den ene af dem</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1386"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1398"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1473"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1485"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1424"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1436"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1511"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1523"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation type="unfinished">Et muligt problem kan være synkronisering - så prøv evt at lukket se-skema dialogen og åbn den igen</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1387"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1399"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1474"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1486"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1425"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1437"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1512"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1524"/>
         <source>Please report possible bug</source>
         <translation type="unfinished">Rapporter venligst eventuel programfejl</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1391"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1478"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1429"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1516"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation type="unfinished">Binding %1 vil ikke blive fjernet, fordi den er permanent låst. Ønsker du at løsne den må du gå til bindings-menuen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1409"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1496"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1447"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1534"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1412"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1499"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1450"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1537"/>
         <source>The following constraint will be deleted:</source>
         <translation type="unfinished">Følgende binding vil blive slettet:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1472"/>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1484"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1510"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1522"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Et muligt problem kan være at du har to eller flere bindinger af typen aktivitet foretrukket lokale med vægt 100% forbundet til aktivitet-id %1, vælg venligt den ene af dem</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1638"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1676"/>
         <source>Toggled lock/unlock a selection of activities in the timetable view students days vertical dialog. The summary of the added/removed locking constraints is:
 
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1684"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform.cpp" line="1722"/>
         <source>FET help</source>
         <translation type="unfinished">FET hjælp</translation>
     </message>
@@ -71566,262 +71640,274 @@ Bottom: %4</source>
         <translation type="unfinished">Detaljer</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform_template.ui" line="183"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform_template.ui" line="196"/>
         <source>Teachers</source>
         <translation type="unfinished">Lærere</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform_template.ui" line="190"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform_template.ui" line="203"/>
         <source>Students</source>
         <translation type="unfinished">Elever</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform_template.ui" line="197"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform_template.ui" line="210"/>
         <source>Subjects</source>
         <translation type="unfinished">Emner</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform_template.ui" line="204"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform_template.ui" line="217"/>
         <source>Activity tags</source>
         <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdaysverticalform_template.ui" line="211"/>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform_template.ui" line="224"/>
         <source>Rooms</source>
         <translation type="unfinished">Lokaler</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform_template.ui" line="231"/>
+        <source>Merge</source>
+        <extracomment>It means that the cells for the same activity will be merged.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewstudentsdaysverticalform_template.ui" line="238"/>
+        <source>Colors</source>
+        <extracomment>It means to use colors in the timetable view.</extracomment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>TimetableViewStudentsTimeHorizontalForm</name>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="429"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="439"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="438"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="448"/>
         <source>px</source>
         <comment>Abbreviation for pixels</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="871"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="878"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1168"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1174"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1180"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1200"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1352"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1358"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1481"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1495"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1521"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1527"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1571"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1585"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="897"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="904"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1203"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1209"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1215"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1235"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1387"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1393"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1516"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1530"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1556"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1562"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1606"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1620"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1626"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1800"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1806"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1941"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1947"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1655"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1661"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1835"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1841"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1976"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1982"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1988"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2017"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2023"/>
         <source>FET warning</source>
         <translation type="unfinished">FET advarsel</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="871"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1174"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="897"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1209"/>
         <source>Timetable not available in view students timetable dialog - please generate a new timetable or close the timetable view students dialog</source>
         <translation type="unfinished">Skema ikke tilgængeligt i se elever skema dialog - generer venligst et nyt skema eller luk skema se elever dialogen</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="878"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1180"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1358"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1806"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1947"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1988"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="904"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1215"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1393"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1841"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1982"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2023"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation type="unfinished">Kan ikke vise skema, fordi du har tilføjet eller fjernet lokaler. Regenerer venligst skemaet for at se det</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1168"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1352"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1800"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1941"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1982"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1203"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1387"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1835"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1976"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2017"/>
         <source>Timetable not available in view students timetable dialog - please generate a new timetable</source>
         <translation type="unfinished">Skema ikke tilgængeligt i se elever skema dialog - generer venligst et nyt skema</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1200"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1235"/>
         <source>The students set is invalid - please close this dialog and open a new view students timetable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1268"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1303"/>
         <source>Room: %1</source>
         <translation type="unfinished">Lokale: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1279"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1314"/>
         <source>Building=%1</source>
         <translation type="unfinished">Bygning=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1282"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1317"/>
         <source>Capacity=%1</source>
         <translation type="unfinished">Kapacitet=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1316"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1351"/>
         <source>Students set is not available 100% in this slot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1320"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1355"/>
         <source>Break with weight 100% in this slot</source>
         <translation type="unfinished">Pause med vægt 100% i denne tid</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1346"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1548"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1647"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1763"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1794"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1923"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1935"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1964"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1976"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1996"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2162"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1381"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1583"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1682"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1798"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1829"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1958"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1970"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1999"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2011"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2031"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2197"/>
         <source>FET information</source>
         <translation type="unfinished">FET information</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1766"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1801"/>
         <source>Locked/unlocked/toggled a selection of activities in the timetable view students time horizontal dialog. The summary of the added/removed locking constraints is:
 
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1926"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1961"/>
         <source>Unlocked from days a selection of activities in the timetable view students time horizontal dialog. There were removed %1 locking constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1967"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2002"/>
         <source>Unlocked from days all the activities in the timetable view students time horizontal dialog. There were removed %1 locking constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2165"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2200"/>
         <source>Locked to days a selection of activities in the timetable view students time horizontal dialog. There were added %1 locking constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1347"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1795"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1936"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1977"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1382"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1830"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1971"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2012"/>
         <source>Generation in progress. Please stop the generation before this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="437"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="446"/>
         <source>Automatic</source>
         <comment>Automatic mode of selection of the width</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="447"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="456"/>
         <source>Automatic</source>
         <comment>Automatic mode of selection of the height</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1481"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1495"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1571"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1585"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1516"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1530"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1606"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1620"/>
         <source>Small problem detected</source>
         <translation type="unfinished">Lille problem opdaget</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1482"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1496"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1517"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1531"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Et muligt problem kan være at du har to eller flere bindinger af typen aktivitet foretrukket starttid med vægt 100% forbundet til aktivitet-id %1, vælg venligt den ene af dem</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1483"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1497"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1573"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1587"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1518"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1532"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1608"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1622"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation type="unfinished">Et muligt problem kan være synkronisering - så prøv evt at lukket se-skema dialogen og åbn den igen</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1484"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1498"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1574"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1588"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1519"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1533"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1609"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1623"/>
         <source>Please report possible bug</source>
         <translation type="unfinished">Rapporter venligst eventuel programfejl</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1489"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1579"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1524"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1614"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation type="unfinished">Binding %1 vil ikke blive fjernet, fordi den er permanent låst. Ønsker du at løsne den må du gå til bindings-menuen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1516"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1615"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1551"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1650"/>
         <source>Added the following constraint:</source>
         <translation type="unfinished">Tilføjet følgende binding:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1521"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1620"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1556"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1655"/>
         <source>You may have a problem, because FET expected to add 1 constraint, but this is not possible. Please report possible bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1527"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1626"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1562"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1661"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1530"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1629"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1565"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1664"/>
         <source>The following constraint will be deleted:</source>
         <translation type="unfinished">Følgende binding vil blive slettet:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1572"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1586"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1607"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1621"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Et muligt problem kan være at du har to eller flere bindinger af typen aktivitet foretrukket lokale med vægt 100% forbundet til aktivitet-id %1, vælg venligt den ene af dem</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1923"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1964"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1958"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1999"/>
         <source>There were removed %1 constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1997"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2032"/>
         <source>Invalid weight (percentage)</source>
         <translation type="unfinished">Ugyldig vægt (procent)</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2162"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2197"/>
         <source>There were added %1 constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2228"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="2263"/>
         <source>FET help</source>
         <translation type="unfinished">FET hjælp</translation>
     </message>
@@ -71845,17 +71931,23 @@ Bottom: %4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform_template.ui" line="101"/>
-        <source>Lock</source>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform_template.ui" line="90"/>
+        <source>Merge</source>
+        <extracomment>It means that the cells for the same activity will be merged.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform_template.ui" line="115"/>
-        <source>Unlock</source>
+        <source>Lock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform_template.ui" line="129"/>
+        <source>Unlock</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform_template.ui" line="143"/>
         <source>Toggle</source>
         <translation type="unfinished"></translation>
     </message>
@@ -71870,52 +71962,58 @@ Bottom: %4</source>
         <translation type="unfinished">Emner</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform_template.ui" line="122"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform_template.ui" line="136"/>
         <source>Time</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
         <translation type="unfinished">Tid</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform_template.ui" line="108"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform_template.ui" line="122"/>
         <source>Space</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
         <translation type="unfinished">Sted</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform_template.ui" line="143"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform_template.ui" line="97"/>
+        <source>Colors</source>
+        <extracomment>It means to use colors in the timetable view.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform_template.ui" line="157"/>
         <source>Both</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
         <translation type="unfinished">Begge</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform_template.ui" line="174"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform_template.ui" line="188"/>
         <source>Lock to days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform_template.ui" line="181"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform_template.ui" line="195"/>
         <source>Unlock from days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform_template.ui" line="195"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform_template.ui" line="209"/>
         <source>All</source>
         <comment>It refers to activities</comment>
         <translation type="unfinished">Alle</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform_template.ui" line="208"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform_template.ui" line="222"/>
         <source>%</source>
         <comment>The percentage symbol</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform_template.ui" line="220"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform_template.ui" line="234"/>
         <source>Help</source>
         <translation type="unfinished">Hjælp</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform_template.ui" line="227"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform_template.ui" line="241"/>
         <source>Close</source>
         <translation type="unfinished">Luk</translation>
     </message>
@@ -71923,182 +72021,188 @@ Bottom: %4</source>
 <context>
     <name>TimetableViewTeachersDaysHorizontalForm</name>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="307"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="520"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="530"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="539"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="546"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="560"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="807"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="813"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="819"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="837"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="954"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="960"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="976"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1038"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1050"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1063"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1126"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1138"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1151"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="324"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="540"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="550"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="559"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="566"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="580"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="845"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="851"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="857"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="875"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="992"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="998"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1014"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1076"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1088"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1101"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1164"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1176"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1189"/>
         <source>FET warning</source>
         <translation type="unfinished">FET advarsel</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="307"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="324"/>
         <source>Cannot display the timetable, because you added or removed some teachers. Please regenerate the timetable and then view it</source>
         <translation type="unfinished">Kan ikke vise skema, fordi du har tilføjet eller fjernet lærere. Regenerer venligst skemaet for at se det</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="520"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="813"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="954"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="540"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="851"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="992"/>
         <source>Timetable not available in view teachers timetable dialog - please generate a new timetable</source>
         <translation type="unfinished">Skema ikke tilgængeligt i se læreres skema dialog - generer venligst et nyt skema</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="530"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="976"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="550"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1014"/>
         <source>Invalid teacher - please close this dialog and open a new view teachers dialog</source>
         <translation type="unfinished">Læreren er ikke gyldig - luk venligst denne dialog og åbn en ny se lærere dialog</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="539"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="807"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="559"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="845"/>
         <source>Timetable not available in view teachers timetable dialog - please generate a new timetable or close the timetable view teachers dialog</source>
         <translation type="unfinished">Skema ikke tilgængeligt i se læreres skema dialog - generer venligst et nyt skema eller luk skema se lærere dialogen</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="546"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="819"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="960"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="566"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="857"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="998"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation type="unfinished">Kan ikke vise skema, fordi du har tilføjet eller fjernet lokaler. Regenerer venligst skemaet for at se det</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="560"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="580"/>
         <source>You have an old timetable view teachers dialog opened - please close it</source>
         <translation type="unfinished">Du har en gammel skema se-lærere dialog åbnet - luk den venligst</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="837"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="793"/>
+        <source>No: %1    Dur: %2</source>
+        <comment>No means number, %1 is the number of the placed activities, Dur means duration, %2 is the duration of the placed activities. Note that there are four spaces between them.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="875"/>
         <source>The teacher is invalid - please close this dialog and open a new view teachers timetable</source>
         <translation type="unfinished">Læreren er ikke gyldig - luk venligst denne dialog og åbn en ny se lærere skema dialog</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="870"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="908"/>
         <source>Room: %1</source>
         <translation type="unfinished">Lokale: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="881"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="919"/>
         <source>Building=%1</source>
         <translation type="unfinished">Bygning=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="884"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="922"/>
         <source>Capacity=%1</source>
         <translation type="unfinished">Kapacitet=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="917"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="955"/>
         <source>Teacher is not available 100% in this slot</source>
         <translation type="unfinished">Lærer er ikke til rådighed 100% på denne tid</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="921"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="959"/>
         <source>Break with weight 100% in this slot</source>
         <translation type="unfinished">Pause med vægt 100% i denne tid</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="948"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="968"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1084"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1172"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1290"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="986"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1006"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1122"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1210"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1328"/>
         <source>FET information</source>
         <translation type="unfinished">FET information</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="949"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="987"/>
         <source>Generation in progress. Please stop the generation before this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1293"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1331"/>
         <source>Toggled lock/unlock a selection of activities in the timetable view teachers days horizontal dialog. The summary of the added/removed locking constraints is:
 
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="968"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1006"/>
         <source>Please select a teacher</source>
         <translation type="unfinished">Vælg venligst en lærer</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1024"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1108"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1062"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1146"/>
         <source>Added the following constraint:</source>
         <translation type="unfinished">Tilføjet følgende binding:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1038"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1050"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1126"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1138"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1076"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1088"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1164"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1176"/>
         <source>Small problem detected</source>
         <translation type="unfinished">Lille problem opdaget</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1039"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1051"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1077"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1089"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Et muligt problem kan være at du har to eller flere bindinger af typen aktivitet foretrukket starttid med vægt 100% forbundet til aktivitet-id %1, vælg venligt den ene af dem</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1040"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1052"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1128"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1140"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1078"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1090"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1166"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1178"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation type="unfinished">Et muligt problem kan være synkronisering - så prøv evt at lukket se-skema dialogen og åbn den igen</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1041"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1053"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1129"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1141"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1079"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1091"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1167"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1179"/>
         <source>Please report possible bug</source>
         <translation type="unfinished">Rapporter venligst eventuel programfejl</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1045"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1133"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1083"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1171"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation type="unfinished">Binding %1 vil ikke blive fjernet, fordi den er permanent låst. Ønsker du at løsne den må du gå til bindings-menuen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1063"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1151"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1101"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1189"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1066"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1154"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1104"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1192"/>
         <source>The following constraint will be deleted:</source>
         <translation type="unfinished">Følgende binding vil blive slettet:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1127"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1139"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1165"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1177"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Et muligt problem kan være at du har to eller flere bindinger af typen aktivitet foretrukket lokale med vægt 100% forbundet til aktivitet-id %1, vælg venligt den ene af dem</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1334"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1372"/>
         <source>FET help</source>
         <translation type="unfinished">FET hjælp</translation>
     </message>
@@ -72151,210 +72255,228 @@ Bottom: %4</source>
         <translation type="unfinished">Lærers navn</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform_template.ui" line="144"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform_template.ui" line="157"/>
         <source>Teachers</source>
         <translation type="unfinished">Lærere</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform_template.ui" line="151"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform_template.ui" line="164"/>
         <source>Students</source>
         <translation type="unfinished">Elever</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform_template.ui" line="158"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform_template.ui" line="171"/>
         <source>Subjects</source>
         <translation type="unfinished">Emner</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform_template.ui" line="165"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform_template.ui" line="178"/>
         <source>Activity tags</source>
         <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform_template.ui" line="172"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform_template.ui" line="185"/>
         <source>Rooms</source>
         <translation type="unfinished">Lokaler</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform_template.ui" line="192"/>
+        <source>Merge</source>
+        <extracomment>It means that the cells for the same activity will be merged.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform_template.ui" line="199"/>
+        <source>Colors</source>
+        <extracomment>It means to use colors in the timetable view.</extracomment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>TimetableViewTeachersDaysVerticalForm</name>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="307"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="520"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="530"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="539"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="546"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="560"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="807"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="813"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="819"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="837"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="954"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="960"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="976"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1038"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1050"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1063"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1126"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1138"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1151"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="324"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="540"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="550"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="559"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="566"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="580"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="845"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="851"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="857"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="875"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="992"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="998"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1014"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1076"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1088"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1101"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1164"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1176"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1189"/>
         <source>FET warning</source>
         <translation type="unfinished">FET advarsel</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="307"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="324"/>
         <source>Cannot display the timetable, because you added or removed some teachers. Please regenerate the timetable and then view it</source>
         <translation type="unfinished">Kan ikke vise skema, fordi du har tilføjet eller fjernet lærere. Regenerer venligst skemaet for at se det</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="520"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="813"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="954"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="540"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="851"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="992"/>
         <source>Timetable not available in view teachers timetable dialog - please generate a new timetable</source>
         <translation type="unfinished">Skema ikke tilgængeligt i se læreres skema dialog - generer venligst et nyt skema</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="530"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="976"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="550"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1014"/>
         <source>Invalid teacher - please close this dialog and open a new view teachers dialog</source>
         <translation type="unfinished">Læreren er ikke gyldig - luk venligst denne dialog og åbn en ny se lærere dialog</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="539"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="807"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="559"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="845"/>
         <source>Timetable not available in view teachers timetable dialog - please generate a new timetable or close the timetable view teachers dialog</source>
         <translation type="unfinished">Skema ikke tilgængeligt i se læreres skema dialog - generer venligst et nyt skema eller luk skema se lærere dialogen</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="546"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="819"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="960"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="566"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="857"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="998"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation type="unfinished">Kan ikke vise skema, fordi du har tilføjet eller fjernet lokaler. Regenerer venligst skemaet for at se det</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="560"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="580"/>
         <source>You have an old timetable view teachers dialog opened - please close it</source>
         <translation type="unfinished">Du har en gammel skema se-lærere dialog åbnet - luk den venligst</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="837"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="793"/>
+        <source>No: %1    Dur: %2</source>
+        <comment>No means number, %1 is the number of the placed activities, Dur means duration, %2 is the duration of the placed activities. Note that there are four spaces between them.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="875"/>
         <source>The teacher is invalid - please close this dialog and open a new view teachers timetable</source>
         <translation type="unfinished">Læreren er ikke gyldig - luk venligst denne dialog og åbn en ny se lærere skema dialog</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="870"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="908"/>
         <source>Room: %1</source>
         <translation type="unfinished">Lokale: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="881"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="919"/>
         <source>Building=%1</source>
         <translation type="unfinished">Bygning=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="884"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="922"/>
         <source>Capacity=%1</source>
         <translation type="unfinished">Kapacitet=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="917"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="955"/>
         <source>Teacher is not available 100% in this slot</source>
         <translation type="unfinished">Lærer er ikke til rådighed 100% på denne tid</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="921"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="959"/>
         <source>Break with weight 100% in this slot</source>
         <translation type="unfinished">Pause med vægt 100% i denne tid</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="948"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="968"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1084"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1172"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1290"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="986"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1006"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1122"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1210"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1328"/>
         <source>FET information</source>
         <translation type="unfinished">FET information</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="949"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="987"/>
         <source>Generation in progress. Please stop the generation before this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="968"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1006"/>
         <source>Please select a teacher</source>
         <translation type="unfinished">Vælg venligst en lærer</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1024"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1108"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1062"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1146"/>
         <source>Added the following constraint:</source>
         <translation type="unfinished">Tilføjet følgende binding:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1038"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1050"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1126"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1138"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1076"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1088"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1164"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1176"/>
         <source>Small problem detected</source>
         <translation type="unfinished">Lille problem opdaget</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1039"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1051"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1077"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1089"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Et muligt problem kan være at du har to eller flere bindinger af typen aktivitet foretrukket starttid med vægt 100% forbundet til aktivitet-id %1, vælg venligt den ene af dem</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1040"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1052"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1128"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1140"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1078"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1090"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1166"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1178"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation type="unfinished">Et muligt problem kan være synkronisering - så prøv evt at lukket se-skema dialogen og åbn den igen</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1041"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1053"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1129"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1141"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1079"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1091"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1167"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1179"/>
         <source>Please report possible bug</source>
         <translation type="unfinished">Rapporter venligst eventuel programfejl</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1045"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1133"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1083"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1171"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation type="unfinished">Binding %1 vil ikke blive fjernet, fordi den er permanent låst. Ønsker du at løsne den må du gå til bindings-menuen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1063"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1151"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1101"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1189"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1066"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1154"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1104"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1192"/>
         <source>The following constraint will be deleted:</source>
         <translation type="unfinished">Følgende binding vil blive slettet:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1127"/>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1139"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1165"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1177"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Et muligt problem kan være at du har to eller flere bindinger af typen aktivitet foretrukket lokale med vægt 100% forbundet til aktivitet-id %1, vælg venligt den ene af dem</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1293"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1331"/>
         <source>Toggled lock/unlock a selection of activities in the timetable view teachers days vertical dialog. The summary of the added/removed locking constraints is:
 
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1334"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform.cpp" line="1372"/>
         <source>FET help</source>
         <translation type="unfinished">FET hjælp</translation>
     </message>
@@ -72407,270 +72529,282 @@ Bottom: %4</source>
         <translation type="unfinished">Lærers navn</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform_template.ui" line="144"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform_template.ui" line="157"/>
         <source>Teachers</source>
         <translation type="unfinished">Lærere</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform_template.ui" line="151"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform_template.ui" line="164"/>
         <source>Students</source>
         <translation type="unfinished">Elever</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform_template.ui" line="158"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform_template.ui" line="171"/>
         <source>Subjects</source>
         <translation type="unfinished">Emner</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform_template.ui" line="165"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform_template.ui" line="178"/>
         <source>Activity tags</source>
         <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdaysverticalform_template.ui" line="172"/>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform_template.ui" line="185"/>
         <source>Rooms</source>
         <translation type="unfinished">Lokaler</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform_template.ui" line="192"/>
+        <source>Merge</source>
+        <extracomment>It means that the cells for the same activity will be merged.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersdaysverticalform_template.ui" line="199"/>
+        <source>Colors</source>
+        <extracomment>It means to use colors in the timetable view.</extracomment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>TimetableViewTeachersTimeHorizontalForm</name>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="243"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="789"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="796"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1032"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1038"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1044"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1054"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1063"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1164"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1170"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1250"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1264"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1290"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1296"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1340"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1354"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="252"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="815"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="822"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1067"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1073"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1079"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1089"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1098"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1199"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1205"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1285"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1299"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1325"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1331"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1375"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1389"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1395"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1569"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1575"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1667"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1673"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1424"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1430"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1604"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1610"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1702"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1708"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1714"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1743"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1749"/>
         <source>FET warning</source>
         <translation type="unfinished">FET advarsel</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="243"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1054"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="252"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1089"/>
         <source>Cannot display the timetable, because you added or removed some teachers. Please regenerate the timetable and then view it</source>
         <translation type="unfinished">Kan ikke vise skema, fordi du har tilføjet eller fjernet lærere. Regenerer venligst skemaet for at se det</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="393"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="403"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="402"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="412"/>
         <source>px</source>
         <comment>Abbreviation for pixels</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="789"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1038"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="815"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1073"/>
         <source>Timetable not available in view teachers timetable dialog - please generate a new timetable or close the timetable view teachers dialog</source>
         <translation type="unfinished">Skema ikke tilgængeligt i se læreres skema dialog - generer venligst et nyt skema eller luk skema se lærere dialogen</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="796"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1044"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1170"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1575"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1673"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1714"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="822"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1079"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1205"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1610"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1708"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1749"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation type="unfinished">Kan ikke vise skema, fordi du har tilføjet eller fjernet lokaler. Regenerer venligst skemaet for at se det</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1032"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1164"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1569"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1667"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1708"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1067"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1199"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1604"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1702"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1743"/>
         <source>Timetable not available in view teachers timetable dialog - please generate a new timetable</source>
         <translation type="unfinished">Skema ikke tilgængeligt i se læreres skema dialog - generer venligst et nyt skema</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1063"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1098"/>
         <source>The teacher is invalid - please close this dialog and open a new view teachers timetable</source>
         <translation type="unfinished">Læreren er ikke gyldig - luk venligst denne dialog og åbn en ny se lærere skema dialog</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1080"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1115"/>
         <source>Room: %1</source>
         <translation type="unfinished">Lokale: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1091"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1126"/>
         <source>Building=%1</source>
         <translation type="unfinished">Bygning=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1094"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1129"/>
         <source>Capacity=%1</source>
         <translation type="unfinished">Kapacitet=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1127"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1162"/>
         <source>Teacher is not available 100% in this slot</source>
         <translation type="unfinished">Lærer er ikke til rådighed 100% på denne tid</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1131"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1166"/>
         <source>Break with weight 100% in this slot</source>
         <translation type="unfinished">Pause med vægt 100% i denne tid</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1158"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1317"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1416"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1532"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1563"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1649"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1661"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1690"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1702"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1722"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1845"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1193"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1352"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1451"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1567"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1598"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1684"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1696"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1725"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1737"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1757"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1880"/>
         <source>FET information</source>
         <translation type="unfinished">FET information</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1535"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1570"/>
         <source>Locked/unlocked/toggled a selection of activities in the timetable view teachers time horizontal dialog. The summary of the added/removed locking constraints is:
 
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1652"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1687"/>
         <source>Unlocked from days a selection of activities in the timetable view teachers time horizontal dialog. There were removed %1 locking constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1693"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1728"/>
         <source>Unlocked from days all the activities in the timetable view teachers time horizontal dialog. There were removed %1 locking constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1159"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1564"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1662"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1703"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1194"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1599"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1697"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1738"/>
         <source>Generation in progress. Please stop the generation before this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="401"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="410"/>
         <source>Automatic</source>
         <comment>Automatic mode of selection of the width</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="411"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="420"/>
         <source>Automatic</source>
         <comment>Automatic mode of selection of the height</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1250"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1264"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1340"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1354"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1285"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1299"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1375"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1389"/>
         <source>Small problem detected</source>
         <translation type="unfinished">Lille problem opdaget</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1251"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1265"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1286"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1300"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Et muligt problem kan være at du har to eller flere bindinger af typen aktivitet foretrukket starttid med vægt 100% forbundet til aktivitet-id %1, vælg venligt den ene af dem</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1252"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1266"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1342"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1356"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1287"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1301"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1377"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1391"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation type="unfinished">Et muligt problem kan være synkronisering - så prøv evt at lukket se-skema dialogen og åbn den igen</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1253"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1267"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1343"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1357"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1288"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1302"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1378"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1392"/>
         <source>Please report possible bug</source>
         <translation type="unfinished">Rapporter venligst eventuel programfejl</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1258"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1348"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1293"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1383"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation type="unfinished">Binding %1 vil ikke blive fjernet, fordi den er permanent låst. Ønsker du at løsne den må du gå til bindings-menuen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1285"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1384"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1320"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1419"/>
         <source>Added the following constraint:</source>
         <translation type="unfinished">Tilføjet følgende binding:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1290"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1389"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1325"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1424"/>
         <source>You may have a problem, because FET expected to add 1 constraint, but this is not possible. Please report possible bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1296"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1395"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1331"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1430"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1299"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1398"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1334"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1433"/>
         <source>The following constraint will be deleted:</source>
         <translation type="unfinished">Følgende binding vil blive slettet:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1341"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1355"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1376"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1390"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Et muligt problem kan være at du har to eller flere bindinger af typen aktivitet foretrukket lokale med vægt 100% forbundet til aktivitet-id %1, vælg venligt den ene af dem</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1649"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1690"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1684"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1725"/>
         <source>There were removed %1 constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1723"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1758"/>
         <source>Invalid weight (percentage)</source>
         <translation type="unfinished">Ugyldig vægt (procent)</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1845"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1880"/>
         <source>There were added %1 constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1848"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1883"/>
         <source>Locked to days a selection of activities in the timetable view teachers time horizontal dialog. There were added %1 locking constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1911"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1946"/>
         <source>FET help</source>
         <translation type="unfinished">FET hjælp</translation>
     </message>
@@ -72694,39 +72828,45 @@ Bottom: %4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform_template.ui" line="114"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform_template.ui" line="103"/>
+        <source>Colors</source>
+        <extracomment>It means to use colors in the timetable view.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform_template.ui" line="128"/>
         <source>%</source>
         <comment>The percentage symbol</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform_template.ui" line="124"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform_template.ui" line="138"/>
         <source>Lock to days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform_template.ui" line="131"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform_template.ui" line="145"/>
         <source>Unlock from days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform_template.ui" line="145"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform_template.ui" line="159"/>
         <source>All</source>
         <comment>It refers to activities</comment>
         <translation type="unfinished">Alle</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform_template.ui" line="158"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform_template.ui" line="172"/>
         <source>Lock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform_template.ui" line="172"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform_template.ui" line="186"/>
         <source>Unlock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform_template.ui" line="186"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform_template.ui" line="200"/>
         <source>Toggle</source>
         <translation type="unfinished"></translation>
     </message>
@@ -72741,30 +72881,36 @@ Bottom: %4</source>
         <translation type="unfinished">Emner</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform_template.ui" line="179"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform_template.ui" line="193"/>
         <source>Time</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
         <translation type="unfinished">Tid</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform_template.ui" line="165"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform_template.ui" line="179"/>
         <source>Space</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
         <translation type="unfinished">Sted</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform_template.ui" line="200"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform_template.ui" line="96"/>
+        <source>Merge</source>
+        <extracomment>It means that the cells for the same activity will be merged.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform_template.ui" line="214"/>
         <source>Both</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
         <translation type="unfinished">Begge</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform_template.ui" line="225"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform_template.ui" line="239"/>
         <source>Help</source>
         <translation type="unfinished">Hjælp</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform_template.ui" line="232"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform_template.ui" line="246"/>
         <source>Close</source>
         <translation type="unfinished">Luk</translation>
     </message>

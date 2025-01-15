@@ -45,6 +45,8 @@ extern Timetable gt;
 extern const QString COMPANY;
 extern const QString PROGRAM;
 
+int spaceConstraintsAscendingByDescription(SpaceConstraint* t1, SpaceConstraint* t2); //defined in allspaceconstraints.cpp
+
 ListSpaceConstraintsDialog::ListSpaceConstraintsDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop, QSplitter* _splitter): QDialog(parent)
 {
 	dialogName=_dialogName;
@@ -76,6 +78,8 @@ ListSpaceConstraintsDialog::~ListSpaceConstraintsDialog()
 ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 {
 	type=_type;
+
+	sortedCheckBox=nullptr;
 
 	countOfConstraintsLabel=nullptr;
 	mSLabel=nullptr;
@@ -953,6 +957,9 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 	constraintDescriptionTextEdit=new QTextEdit;
 	constraintDescriptionTextEdit->setReadOnly(true);
 
+	sortedCheckBox=new QCheckBox(tr("Sorted", "It refers to space constraints"));
+	sortedCheckBox->setChecked(false);
+
 	countOfConstraintsLabel=new QLabel;
 	mSLabel=new QLabel;
 	activatePushButton=new QPushButton(tr("Activate"));
@@ -1003,6 +1010,7 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 
 	QHBoxLayout* buttons2Layout=new QHBoxLayout;
 	buttons2Layout->addStretch();
+	buttons2Layout->addWidget(sortedCheckBox);
 	buttons2Layout->addWidget(activatePushButton);
 	buttons2Layout->addWidget(deactivatePushButton);
 	buttons2Layout->addWidget(weightsPushButton);
@@ -1040,12 +1048,17 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ListSpaceConstraints::constraintChanged);
 
 	connect(constraintsListWidget, &QListWidget::itemSelectionChanged, this, &ListSpaceConstraints::selectionChanged);
+
+	connect(sortedCheckBox, &QCheckBox::toggled, this, &ListSpaceConstraints::sortedChanged);
+
 	connect(activatePushButton, &QPushButton::clicked, this, &ListSpaceConstraints::activateConstraints);
 	connect(deactivatePushButton, &QPushButton::clicked, this, &ListSpaceConstraints::deactivateConstraints);
 	connect(commentsPushButton, &QPushButton::clicked, this, &ListSpaceConstraints::constraintComments);
 	connect(weightsPushButton, &QPushButton::clicked, this, &ListSpaceConstraints::changeWeights);
 
 	filter();
+
+	constraintsListWidget->setFocus();
 
 	dialog->setModal(true);
 	dialog->setWindowModality(Qt::ApplicationModal);
@@ -1862,12 +1875,40 @@ void ListSpaceConstraints::constraintChanged()
 
 void ListSpaceConstraints::addClicked()
 {
-	AddOrModifySpaceConstraint aomtc(dialog, type);
+	int oldRow=constraintsListWidget->currentRow();
+
+	int valv=constraintsListWidget->verticalScrollBar()->value();
+	int valh=constraintsListWidget->horizontalScrollBar()->value();
+
+	int initialNumberOfSpaceConstraints=gt.rules.spaceConstraintsList.count();
+
+	AddOrModifySpaceConstraint aomsc(dialog, type);
+
+	int finalNumberOfSpaceConstraints=gt.rules.spaceConstraintsList.count();
 
 	filter();
 
-	constraintsListWidget->setCurrentRow(constraintsListWidget->count()-1);
+	constraintsListWidget->verticalScrollBar()->setValue(valv);
+	constraintsListWidget->horizontalScrollBar()->setValue(valh);
+	
+	int newRow=oldRow;
+	if(initialNumberOfSpaceConstraints!=finalNumberOfSpaceConstraints){
+		newRow=constraintsListWidget->count()-1;
+		
+		if(sortedCheckBox->isChecked()){
+			assert(finalNumberOfSpaceConstraints>=1);
+			for(int i=0; i<visibleSpaceConstraintsList.count(); i++)
+				if(visibleSpaceConstraintsList.at(i)==gt.rules.spaceConstraintsList.constLast()){
+					newRow=i;
+					break;
+				}
+		}
+	}
+	
+	constraintsListWidget->setCurrentRow(newRow);
 	constraintChanged();
+
+	constraintsListWidget->setFocus();
 }
 
 void ListSpaceConstraints::modifyClicked()
@@ -2050,6 +2091,9 @@ void ListSpaceConstraints::filter()
 		if(filterOk(ctr))
 			visibleSpaceConstraintsList.append(ctr);
 
+	if(sortedCheckBox->isChecked())
+		std::stable_sort(visibleSpaceConstraintsList.begin(), visibleSpaceConstraintsList.end(), spaceConstraintsAscendingByDescription);
+
 	for(SpaceConstraint* ctr : std::as_const(visibleSpaceConstraintsList)){
 		assert(filterOk(ctr));
 		constraintsListWidget->addItem(ctr->getDescription(gt.rules));
@@ -2086,6 +2130,15 @@ void ListSpaceConstraints::constraintChanged()
 	assert(ctr!=nullptr);
 	QString s=ctr->getDetailedDescription(gt.rules);
 	constraintDescriptionTextEdit->setPlainText(s);
+}
+
+void ListSpaceConstraints::sortedChanged(bool checked)
+{
+	Q_UNUSED(checked);
+
+	filter();
+
+	constraintsListWidget->setFocus();
 }
 
 void ListSpaceConstraints::activateConstraints()
@@ -2225,6 +2278,9 @@ void ListSpaceConstraints::constraintComments()
 	int i=constraintsListWidget->currentRow();
 	if(i<0){
 		QMessageBox::information(dialog, tr("FET information"), tr("Invalid selected constraint"));
+
+		constraintsListWidget->setFocus();
+
 		return;
 	}
 
@@ -2305,6 +2361,8 @@ void ListSpaceConstraints::constraintComments()
 			constraintChanged();
 		}
 	}
+
+	constraintsListWidget->setFocus();
 }
 
 void ListSpaceConstraints::selectionChanged()
@@ -2339,6 +2397,8 @@ void ListSpaceConstraints::changeWeights()
 	if(cnt_pre==0){
 		QMessageBox::information(dialog, tr("FET information"), tr("No constraints from your selection can change their weight"
 		 " (remember that some types of constraints are allowed to have only 100% weight)."));
+
+		constraintsListWidget->setFocus();
 
 		return;
 	}

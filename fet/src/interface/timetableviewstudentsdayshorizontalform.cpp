@@ -91,13 +91,16 @@ void TimetableViewStudentsDaysHorizontalDelegate::paint(QPainter* painter, const
 	QStyledItemDelegate::paint(painter, option, index);
 
 	int hour=index.row()%nRows;
+	int hourPlusSpan=hour;
+	if(tableView!=nullptr)
+		hourPlusSpan+=tableView->rowSpan(index.row(), index.column())-1;
 
 	if(QGuiApplication::isLeftToRight()){
 		if(hour==0){
 			painter->drawLine(option.rect.topLeft(), option.rect.topRight());
 			painter->drawLine(option.rect.topLeft().x(), option.rect.topLeft().y()+1, option.rect.topRight().x(), option.rect.topRight().y()+1);
 		}
-		if(hour==nRows-1){
+		if(hourPlusSpan==nRows-1){
 			painter->drawLine(option.rect.bottomLeft(), option.rect.bottomRight());
 			painter->drawLine(option.rect.bottomLeft().x(), option.rect.bottomLeft().y()-1, option.rect.bottomRight().x(), option.rect.bottomRight().y()-1);
 		}
@@ -116,7 +119,7 @@ void TimetableViewStudentsDaysHorizontalDelegate::paint(QPainter* painter, const
 			painter->drawLine(option.rect.topRight(), option.rect.topLeft());
 			painter->drawLine(option.rect.topRight().x(), option.rect.topRight().y()+1, option.rect.topLeft().x(), option.rect.topLeft().y()+1);
 		}
-		if(hour==nRows-1){
+		if(hourPlusSpan==nRows-1){
 			painter->drawLine(option.rect.bottomRight(), option.rect.bottomLeft());
 			painter->drawLine(option.rect.bottomRight().x(), option.rect.bottomRight().y()-1, option.rect.bottomLeft().x(), option.rect.bottomLeft().y()-1);
 		}
@@ -213,11 +216,25 @@ TimetableViewStudentsDaysHorizontalForm::TimetableViewStudentsDaysHorizontalForm
 	else
 		roomsCheckBox->setChecked(true);
 
+	if(settings.contains(this->metaObject()->className()+QString("/use-colors")))
+		colorsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/use-colors")).toBool());
+	else
+		colorsCheckBox->setChecked(false);
+
+	if(settings.contains(this->metaObject()->className()+QString("/use-span")))
+		spanCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/use-span")).toBool());
+	else
+		spanCheckBox->setChecked(true);
+
 	connect(teachersCheckBox, &QCheckBox::toggled, this, &TimetableViewStudentsDaysHorizontalForm::updateStudentsTimetableTable);
 	connect(studentsCheckBox, &QCheckBox::toggled, this, &TimetableViewStudentsDaysHorizontalForm::updateStudentsTimetableTable);
 	connect(subjectsCheckBox, &QCheckBox::toggled, this, &TimetableViewStudentsDaysHorizontalForm::updateStudentsTimetableTable);
 	connect(activityTagsCheckBox, &QCheckBox::toggled, this, &TimetableViewStudentsDaysHorizontalForm::updateStudentsTimetableTable);
 	connect(roomsCheckBox, &QCheckBox::toggled, this, &TimetableViewStudentsDaysHorizontalForm::updateStudentsTimetableTable);
+
+	connect(colorsCheckBox, &QCheckBox::toggled, this, &TimetableViewStudentsDaysHorizontalForm::updateStudentsTimetableTable);
+
+	connect(spanCheckBox, &QCheckBox::toggled, this, &TimetableViewStudentsDaysHorizontalForm::updateStudentsTimetableTable);
 
 //////////just for testing
 	QSet<int> backupLockedTime;
@@ -258,7 +275,7 @@ TimetableViewStudentsDaysHorizontalForm::TimetableViewStudentsDaysHorizontalForm
 		}
 		for(int j=0; j<gt.rules.nHoursPerDay; j++){
 			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-				QTableWidgetItem* item= new QTableWidgetItem();
+				QTableWidgetItem* item=new QTableWidgetItem();
 				item->setTextAlignment(Qt::AlignCenter);
 				item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
 
@@ -283,7 +300,7 @@ TimetableViewStudentsDaysHorizontalForm::TimetableViewStudentsDaysHorizontalForm
 		}
 		for(int j=0; j<gt.rules.nRealHoursPerDay; j++){
 			for(int k=0; k<gt.rules.nRealDaysPerWeek; k++){
-				QTableWidgetItem* item= new QTableWidgetItem();
+				QTableWidgetItem* item=new QTableWidgetItem();
 				item->setTextAlignment(Qt::AlignCenter);
 				item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
 
@@ -296,7 +313,7 @@ TimetableViewStudentsDaysHorizontalForm::TimetableViewStudentsDaysHorizontalForm
 	}
 	
 	oldItemDelegate=studentsTimetableTable->itemDelegate();
-	newItemDelegate=new TimetableViewStudentsDaysHorizontalDelegate(nullptr, gt.rules.nHoursPerDay, studentsTimetableTable->columnCount());
+	newItemDelegate=new TimetableViewStudentsDaysHorizontalDelegate(nullptr, studentsTimetableTable, gt.rules.nHoursPerDay, studentsTimetableTable->columnCount());
 	studentsTimetableTable->setItemDelegate(newItemDelegate);
 
 	//resize columns
@@ -460,7 +477,7 @@ void TimetableViewStudentsDaysHorizontalForm::newTimetableGenerated()
 		}
 		for(int j=0; j<gt.rules.nHoursPerDay; j++){
 			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-				QTableWidgetItem* item= new QTableWidgetItem();
+				QTableWidgetItem* item=new QTableWidgetItem();
 				item->setTextAlignment(Qt::AlignCenter);
 				item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
 
@@ -486,7 +503,7 @@ void TimetableViewStudentsDaysHorizontalForm::newTimetableGenerated()
 		}
 		for(int j=0; j<gt.rules.nRealHoursPerDay; j++){
 			for(int k=0; k<gt.rules.nRealDaysPerWeek; k++){
-				QTableWidgetItem* item= new QTableWidgetItem();
+				QTableWidgetItem* item=new QTableWidgetItem();
 				item->setTextAlignment(Qt::AlignCenter);
 				item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
 
@@ -584,6 +601,9 @@ TimetableViewStudentsDaysHorizontalForm::~TimetableViewStudentsDaysHorizontalFor
 	settings.setValue(this->metaObject()->className()+QString("/show-subjects"), subjectsCheckBox->isChecked());
 	settings.setValue(this->metaObject()->className()+QString("/show-activity-tags"), activityTagsCheckBox->isChecked());
 	settings.setValue(this->metaObject()->className()+QString("/show-rooms"), roomsCheckBox->isChecked());
+
+	settings.setValue(this->metaObject()->className()+QString("/use-colors"), colorsCheckBox->isChecked());
+	settings.setValue(this->metaObject()->className()+QString("/use-span"), spanCheckBox->isChecked());
 
 	settings.setValue(this->metaObject()->className()+QString("/shown-categories"), shownComboBox->currentIndex());
 
@@ -854,6 +874,11 @@ void TimetableViewStudentsDaysHorizontalForm::updateStudentsTimetableTable(){
 	
 	bool realView=(gt.rules.mode==MORNINGS_AFTERNOONS && REAL_VIEW==true);
 	bool normalView=!realView;
+
+	int numberOfActivities=0;
+	int durationOfActivities=0;
+
+	studentsTimetableTable->clearSpans();
 	
 	for(int j=0; j<(normalView?gt.rules.nHoursPerDay:gt.rules.nRealHoursPerDay) && j<studentsTimetableTable->rowCount(); j++){
 		int jj;
@@ -889,7 +914,17 @@ void TimetableViewStudentsDaysHorizontalForm::updateStudentsTimetableTable(){
 			if(ai!=UNALLOCATED_ACTIVITY){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
 				assert(act!=nullptr);
-				
+
+				if(best_solution.times[ai]/gt.rules.nDaysPerWeek==jj){
+					assert(best_solution.times[ai]%gt.rules.nDaysPerWeek==kk);
+
+					numberOfActivities++;
+					durationOfActivities+=act->duration;
+
+					if(spanCheckBox->isChecked() && act->duration>=2)
+						studentsTimetableTable->setSpan(j, k, act->duration, 1);
+				}
+
 				if(studentsCheckBox->isChecked()){
 					assert(act->studentsNames.count()>=1);
 					if((act->studentsNames.count()==1 && act->studentsNames.at(0)!=subgroupname) || act->studentsNames.count()>=2){
@@ -999,7 +1034,7 @@ void TimetableViewStudentsDaysHorizontalForm::updateStudentsTimetableTable(){
 
 				//begin by Marco Vassura
 				// add colors (start)
-				if(USE_GUI_COLORS){
+				if(colorsCheckBox->isChecked() /*USE_GUI_COLORS*/){
 					QBrush bg(stringToColor(act->subjectName));
 					studentsTimetableTable->item(j, k)->setBackground(bg);
 					double brightness = bg.color().redF()*0.299 + bg.color().greenF()*0.587 + bg.color().blueF()*0.114;
@@ -1028,6 +1063,9 @@ void TimetableViewStudentsDaysHorizontalForm::updateStudentsTimetableTable(){
 			studentsTimetableTable->item(j, k)->setToolTip(longString);
 		}
 	}
+
+	numberAndDurationTextLabel->setText(tr("No: %1    Dur: %2", "No means number, %1 is the number of the placed activities,"
+	 " Dur means duration, %2 is the duration of the placed activities. Note that there are four spaces between them.").arg(numberOfActivities).arg(durationOfActivities));
 
 	studentsTimetableTable->resizeRowsToContents();
 	

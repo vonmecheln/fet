@@ -391,7 +391,7 @@ void AllSpaceConstraintsForm::sortedChanged(bool checked)
 	constraintsListWidget->setFocus();
 }
 
-static int spaceConstraintsAscendingByDescription(SpaceConstraint* s1, SpaceConstraint* s2)
+int spaceConstraintsAscendingByDescription(SpaceConstraint* s1, SpaceConstraint* s2)
 {
 	//return s1->getDescription(gt.rules) < s2->getDescription(gt.rules);
 	

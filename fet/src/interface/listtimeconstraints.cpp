@@ -50,6 +50,8 @@ extern Timetable gt;
 extern const QString COMPANY;
 extern const QString PROGRAM;
 
+int timeConstraintsAscendingByDescription(TimeConstraint* t1, TimeConstraint* t2); //defined in alltimeconstraints.cpp
+
 ListTimeConstraintsDialog::ListTimeConstraintsDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop, QSplitter* _splitter): QDialog(parent)
 {
 	dialogName=_dialogName;
@@ -81,6 +83,8 @@ ListTimeConstraintsDialog::~ListTimeConstraintsDialog()
 ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 {
 	type=_type;
+
+	sortedCheckBox=nullptr;
 
 	countOfConstraintsLabel=nullptr;
 	mSLabel=nullptr;
@@ -2889,6 +2893,9 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 	constraintDescriptionTextEdit=new QTextEdit;
 	constraintDescriptionTextEdit->setReadOnly(true);
 
+	sortedCheckBox=new QCheckBox(tr("Sorted", "It refers to time constraints"));
+	sortedCheckBox->setChecked(false);
+
 	countOfConstraintsLabel=new QLabel;
 	mSLabel=new QLabel;
 	activatePushButton=new QPushButton(tr("Activate"));
@@ -2939,6 +2946,7 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 	QHBoxLayout* buttons2Layout=new QHBoxLayout;
 	buttons2Layout->addStretch();
+	buttons2Layout->addWidget(sortedCheckBox);
 	buttons2Layout->addWidget(activatePushButton);
 	buttons2Layout->addWidget(deactivatePushButton);
 	buttons2Layout->addWidget(weightsPushButton);
@@ -2984,17 +2992,22 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ListTimeConstraints::constraintChanged);
 
 	connect(constraintsListWidget, &QListWidget::itemSelectionChanged, this, &ListTimeConstraints::selectionChanged);
+
+	connect(sortedCheckBox, &QCheckBox::toggled, this, &ListTimeConstraints::sortedChanged);
+
 	connect(activatePushButton, &QPushButton::clicked, this, &ListTimeConstraints::activateConstraints);
 	connect(deactivatePushButton, &QPushButton::clicked, this, &ListTimeConstraints::deactivateConstraints);
 	connect(commentsPushButton, &QPushButton::clicked, this, &ListTimeConstraints::constraintComments);
 	connect(weightsPushButton, &QPushButton::clicked, this, &ListTimeConstraints::changeWeights);
 
 	filter();
-	
+
+	constraintsListWidget->setFocus();
+
 	dialog->setModal(true);
 	dialog->setWindowModality(Qt::ApplicationModal);
 	dialog->show();
-	
+
 	eventLoop->exec();
 }
 
@@ -6038,12 +6051,40 @@ void ListTimeConstraints::constraintChanged()
 
 void ListTimeConstraints::addClicked()
 {
+	int oldRow=constraintsListWidget->currentRow();
+
+	int valv=constraintsListWidget->verticalScrollBar()->value();
+	int valh=constraintsListWidget->horizontalScrollBar()->value();
+
+	int initialNumberOfTimeConstraints=gt.rules.timeConstraintsList.count();
+
 	AddOrModifyTimeConstraint aomtc(dialog, type);
 
+	int finalNumberOfTimeConstraints=gt.rules.timeConstraintsList.count();
+
 	filter();
+
+	constraintsListWidget->verticalScrollBar()->setValue(valv);
+	constraintsListWidget->horizontalScrollBar()->setValue(valh);
 	
-	constraintsListWidget->setCurrentRow(constraintsListWidget->count()-1);
+	int newRow=oldRow;
+	if(initialNumberOfTimeConstraints!=finalNumberOfTimeConstraints){
+		newRow=constraintsListWidget->count()-1;
+		
+		if(sortedCheckBox->isChecked()){
+			assert(finalNumberOfTimeConstraints>=1);
+			for(int i=0; i<visibleTimeConstraintsList.count(); i++)
+				if(visibleTimeConstraintsList.at(i)==gt.rules.timeConstraintsList.constLast()){
+					newRow=i;
+					break;
+				}
+		}
+	}
+	
+	constraintsListWidget->setCurrentRow(newRow);
 	constraintChanged();
+
+	constraintsListWidget->setFocus();
 }
 
 void ListTimeConstraints::modifyClicked()
@@ -6918,6 +6959,9 @@ void ListTimeConstraints::filter()
 		if(filterOk(ctr))
 			visibleTimeConstraintsList.append(ctr);
 
+	if(sortedCheckBox->isChecked())
+		std::stable_sort(visibleTimeConstraintsList.begin(), visibleTimeConstraintsList.end(), timeConstraintsAscendingByDescription);
+
 	for(TimeConstraint* ctr : std::as_const(visibleTimeConstraintsList)){
 		assert(filterOk(ctr));
 		constraintsListWidget->addItem(ctr->getDescription(gt.rules));
@@ -6954,6 +6998,15 @@ void ListTimeConstraints::constraintChanged()
 	assert(ctr!=nullptr);
 	QString s=ctr->getDetailedDescription(gt.rules);
 	constraintDescriptionTextEdit->setPlainText(s);
+}
+
+void ListTimeConstraints::sortedChanged(bool checked)
+{
+	Q_UNUSED(checked);
+
+	filter();
+
+	constraintsListWidget->setFocus();
 }
 
 void ListTimeConstraints::activateConstraints()
@@ -7093,6 +7146,9 @@ void ListTimeConstraints::constraintComments()
 	int i=constraintsListWidget->currentRow();
 	if(i<0){
 		QMessageBox::information(dialog, tr("FET information"), tr("Invalid selected constraint"));
+
+		constraintsListWidget->setFocus();
+
 		return;
 	}
 
@@ -7173,6 +7229,8 @@ void ListTimeConstraints::constraintComments()
 			constraintChanged();
 		}
 	}
+
+	constraintsListWidget->setFocus();
 }
 
 void ListTimeConstraints::selectionChanged()
@@ -7207,6 +7265,8 @@ void ListTimeConstraints::changeWeights()
 	if(cnt_pre==0){
 		QMessageBox::information(dialog, tr("FET information"), tr("No constraints from your selection can change their weight"
 		 " (remember that some types of constraints are allowed to have only 100% weight)."));
+
+		constraintsListWidget->setFocus();
 
 		return;
 	}

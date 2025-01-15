@@ -10473,3 +10473,50 @@ From Nahum Lipkunsky:
 2 activities - mutually exclusive (same group).
 Both are constrained with the same preferred time (preset)
 FET loops (forever?) - this is very easy to identify pre-run validation.
+
+666--------------------------------------------------------
+From Vangelis Karafillidis:
+
+Implement the possibility to modify the whole selection of constraints in the specialized dialogs. The teachers/students/activities will remain constant,
+and the rest of data will be set in all selected constraints.
+
+Another suggestion from Vangelis: implement some check boxes for the information that should remain fixed and that which should be altered.
+
+667--------------------------------------------------------
+From GUEFFAZ REDA:
+
+He sent Liviu Lalescu on Facebook a screenshot with suggestions to add the long name and the code of the teacher to show/hide; other suggestion
+in this screenshot: A 'Hide' button in the timetable view days horizontal. Also, Lock/Unlock 'All time', 'All Space', 'All both'.
+
+668--------------------------------------------------------
+From GUEFFAZ REDA:
+
+Stretch the timetables to occupy a whole page when printing them.
+
+669---------------------------------------------------------
+From cracker_vic (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6260.0
+
+It would be really nice if tables in print (preview) dialog could be all the same width.
+
+670--------------------------------------------------------
+From GUEFFAZ REDA:
+
+He sent Liviu Lalescu on Facebook two screenshots with suggestions:
+
+1) Teachers:
+ Subject: Math, etc., combo box
+ Number of teachers to add: 6
+ Qualified subjects: Math
+ Target hours: ...
+ Mornings-Afternoons behavior: Unrestricted (Algeria), combo box.
+
+ Generate 6 teachers.
+
+2) Add teacher:
+ Mornings-Afternoons: Unrestricted (Algeria), list box (Liviu Lalescu: I think this is a mistake, should be list box for qualified subjects).
+ Code: ...
+ Long name: ...
+ Qualified subjects: ... (Liviu Lalescu: I think list box).
+ Target hours: ...

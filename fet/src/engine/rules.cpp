@@ -1907,7 +1907,7 @@ QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 					stream<<*c;
 					break;
 				}
-			//2225
+			//225
 			case CONSTRAINT_TEACHERS_NO_TWO_CONSECUTIVE_DAYS:
 				{
 					ConstraintTeachersNoTwoConsecutiveDays* c=(ConstraintTeachersNoTwoConsecutiveDays*)ctr;

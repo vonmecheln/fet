@@ -195,11 +195,11 @@ Matrix1D<QList<double>> minGapsBetweenActivitiesListOfWeightPercentages;
 ////////END	 MIN GAPS between activities TIME CONSTRAINTS
 
 //MAX GAPS BETWEEN ACTIVITIES
-Matrix1D<QList<int> > maxGapsBetweenActivitiesListOfActivities;
-Matrix1D<QList<int> > maxGapsBetweenActivitiesListOfMaxGaps;
-Matrix1D<QList<double> > maxGapsBetweenActivitiesListOfWeightPercentages;
+Matrix1D<QList<int>> maxGapsBetweenActivitiesListOfActivities;
+Matrix1D<QList<int>> maxGapsBetweenActivitiesListOfMaxGaps;
+Matrix1D<QList<double>> maxGapsBetweenActivitiesListOfWeightPercentages;
 
-////////BEGIN st. not available, tch not avail., break, activity preferred time,
+////////BEGIN students set not available, teacher not available, break, activity preferred time,
 ////////activity preferred times, activities preferred times
 //percentage of allowed time, -1 if no restriction
 Matrix2D<double> notAllowedTimesPercentages;
@@ -220,7 +220,7 @@ QHash<QString, QSet<QPair<int, int>>> studentsSetNotAvailableDayHour;
 Matrix3D<bool> teacherNotAvailableDayHour;
 
 //bool computeNotAllowedTimesPercentages(QWidget* parent);
-////////END   st. not available, tch not avail., break, activity preferred time,
+////////END   students set not available, teacher not available, break, activity preferred time,
 ////////activity preferred time, activities preferred times
 
 
@@ -2076,7 +2076,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 		return false;
 	/////////////////////////////////////
 
-	/////3. students not available, teachers not available, break, activity preferred time,
+	/////3. students set not available, teacher not available, break, activity preferred time,
 	/////   activity preferred times, activities preferred times
 	t=computeNotAllowedTimesPercentages(parent);
 	if(!t)

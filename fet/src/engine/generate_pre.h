@@ -193,15 +193,15 @@ bool computeMinGapsBetweenActivities(QWidget* parent);
 ////////END	 MIN GAPS between activities TIME CONSTRAINTS
 
 ////////BEGIN MAX GAPS between activities TIME CONSTRAINTS
-extern Matrix1D<QList<int> > maxGapsBetweenActivitiesListOfActivities;
-extern Matrix1D<QList<int> > maxGapsBetweenActivitiesListOfMaxGaps;
-extern Matrix1D<QList<double> > maxGapsBetweenActivitiesListOfWeightPercentages;
+extern Matrix1D<QList<int>> maxGapsBetweenActivitiesListOfActivities;
+extern Matrix1D<QList<int>> maxGapsBetweenActivitiesListOfMaxGaps;
+extern Matrix1D<QList<double>> maxGapsBetweenActivitiesListOfWeightPercentages;
 
 bool computeMaxGapsBetweenActivities(QWidget* parent);
 ////////END	 MAX GAPS between activities TIME CONSTRAINTS
 
 
-////////BEGIN st. not available, tch not avail., break, activity preferred time,
+////////BEGIN students set not available, teacher not available, break, activity preferred time,
 ////////activity preferred times, activities preferred times
 //percentage of allowed time, -1 if no restriction
 extern Matrix2D<double> notAllowedTimesPercentages;
@@ -222,7 +222,7 @@ extern QHash<QString, QSet<QPair<int, int>>> studentsSetNotAvailableDayHour;
 extern Matrix3D<bool> teacherNotAvailableDayHour;
 
 bool computeNotAllowedTimesPercentages(QWidget* parent);
-////////END   st. not available, tch not avail., break, activity preferred time,
+////////END   students set not available, teacher not available, break, activity preferred time,
 ////////activity preferred time, activities preferred times
 
 

@@ -899,7 +899,7 @@ void fillTimesTable(QTableWidget* timesTable, const QList<int>& days, const QLis
 	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
 		for(int i=0; i<gt.rules.nHoursPerDay; i++)
 			for(int j=0; j<gt.rules.nDaysPerWeek; j++){
-				QTableWidgetItem* item= new QTableWidgetItem;
+				QTableWidgetItem* item=new QTableWidgetItem;
 				item->setTextAlignment(Qt::AlignCenter);
 				item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
 				if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
@@ -925,7 +925,7 @@ void fillTimesTable(QTableWidget* timesTable, const QList<int>& days, const QLis
 	else{
 		for(int i=0; i<2*gt.rules.nHoursPerDay; i++)
 			for(int j=0; j<gt.rules.nDaysPerWeek/2; j++){
-				QTableWidgetItem* item= new QTableWidgetItem;
+				QTableWidgetItem* item=new QTableWidgetItem;
 				item->setTextAlignment(Qt::AlignCenter);
 				item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
 				if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)

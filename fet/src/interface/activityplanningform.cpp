@@ -253,14 +253,14 @@ ActivityPlanningForm::ActivityPlanningForm(QWidget *parent): QDialog(parent)
 	
 	QGroupBox* actionsBox=new QGroupBox();
 	QVBoxLayout* actionsBoxVertical=new QVBoxLayout();
-	RBActivity= new QRadioButton(tr("Activities", "Please keep translation short"));
-	RBSubactivity= new QRadioButton(tr("Subactivities", "Please keep translation short"));
-	RBAdd= new QRadioButton(tr("Add activity", "Please keep translation short"));
-	RBModify= new QRadioButton(tr("Modify activity", "Please keep translation short"));
-	RBDelete= new QRadioButton(tr("Delete activities", "Please keep translation short"));
-	RBChangeTeacher= new QRadioButton(tr("Change teacher", "Please keep translation short"));
-	RBSwapTeachers= new QRadioButton(tr("Swap teachers", "Please keep translation short"));
-	RBSwapStudents= new QRadioButton(tr("Swap students", "Please keep translation short"));
+	RBActivity=new QRadioButton(tr("Activities", "Please keep translation short"));
+	RBSubactivity=new QRadioButton(tr("Subactivities", "Please keep translation short"));
+	RBAdd=new QRadioButton(tr("Add activity", "Please keep translation short"));
+	RBModify=new QRadioButton(tr("Modify activity", "Please keep translation short"));
+	RBDelete=new QRadioButton(tr("Delete activities", "Please keep translation short"));
+	RBChangeTeacher=new QRadioButton(tr("Change teacher", "Please keep translation short"));
+	RBSwapTeachers=new QRadioButton(tr("Swap teachers", "Please keep translation short"));
+	RBSwapStudents=new QRadioButton(tr("Swap students", "Please keep translation short"));
 
 	actionsBoxVertical->addWidget(RBActivity);
 	actionsBoxVertical->addWidget(RBSubactivity);
@@ -335,7 +335,7 @@ ActivityPlanningForm::ActivityPlanningForm(QWidget *parent): QDialog(parent)
 	//optionsBoxVertical->addWidget(pbPseudoActivities);
 	optionsBox->setLayout(optionsBoxVertical);
 	
-	actionsOptionsTabWidget = new QTabWidget;
+	actionsOptionsTabWidget=new QTabWidget;
 	actionsOptionsTabWidget->addTab(actionsBox, tr("Actions"));
 	actionsOptionsTabWidget->addTab(optionsBox, tr("Options"));
 	actionsOptionsTabWidget->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);

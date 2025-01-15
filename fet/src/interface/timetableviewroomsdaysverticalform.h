@@ -33,12 +33,15 @@ class TimetableViewRoomsDaysVerticalDelegate: public QStyledItemDelegate
 {
 	Q_OBJECT
 	
+	QTableView* tableView;
+	
 public:
 	int nRows; //The number of rows after which a line is drawn
 	int nColumns;
 	
 public:
-	TimetableViewRoomsDaysVerticalDelegate(QWidget* parent, int _nRows, int _nColumns): QStyledItemDelegate(parent){
+	TimetableViewRoomsDaysVerticalDelegate(QWidget* parent, QTableView* _tableView, int _nRows, int _nColumns): QStyledItemDelegate(parent){
+		tableView=_tableView;
 		nRows=_nRows;
 		nColumns=_nColumns;
 	}
