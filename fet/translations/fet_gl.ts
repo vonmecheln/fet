@@ -45292,7 +45292,7 @@ Tendo un subgrupo con moi poucas horas por semana siginifica que se inseriron ac
 <context>
     <name>Generate</name>
     <message>
-        <location filename="../src/engine/generate.cpp" line="7913"/>
+        <location filename="../src/engine/generate.cpp" line="7892"/>
         <source>At time %1 h %2 m %3 s, FET reached %4 activities placed</source>
         <comment>h=hours, m=minutes, s=seconds. Please leave spaces between &apos;time&apos;, %1, h, %2, m, %3, s, so they are visible</comment>
         <translation>Á hora %1 h %2 m %3 s, FET acadou %4 actividades emprazadas</translation>

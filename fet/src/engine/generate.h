@@ -110,7 +110,7 @@ private:
 	Matrix1D<QList<int>> restoreRealRoomsList;
 	Matrix1D<int> invPermutation;
 	//
-	Matrix2D<double> nMinDaysBrokenL;
+	//Matrix2D<double> nMinDaysBrokenL;
 	Matrix2D<int> selectedRoomL;
 	Matrix2D<int> permL;
 	Matrix2D<QList<int>> conflActivitiesL;

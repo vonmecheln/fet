@@ -2970,7 +2970,7 @@ Version 6.27.0
 	and other users in the past).
 	- Minor improvements.
 ---------------------------------------------------------------------------------
-Versions 6.28.0 - 6.28.v
+Versions 6.28.0 - 6.28.7
 - Version 6.28.0
 	- Converted the interface files for the time and space constraints. There are much less source files now. This implies more things:
 	shorter compilation time, smaller package sizes, less fields to translate and smaller translation files, nicer looking constraints' dialogs.
@@ -3006,4 +3006,13 @@ Versions 6.28.0 - 6.28.v
 	the duration of the displayed activities.
 - Version 6.28.7
 	- Minor interface improvements.
-	- Source code typos corrected (reported by Nahum Lipkunsky).
+	- Source code typos corrected (found with the help of Nahum Lipkunsky).
+---------------------------------------------------------------------------------
+Versions 7.0.0 - 7.0.v
+- Version 7.0.0
+	- Improved the algorithm: the constraints of type min days between activities with the weight < 100% were previously treated a little differently than the
+	other constraints with the weight < 100% (the min days between activities constraints were privileged: the algorithm tried a bit harder to respect them).
+	Now, all the constraints with the weight < 100% will be treated similarly. This implies that the files containing constraints of type min days between activities
+	with the weight < 100% will be solved possibly faster, but with possibly more broken constraints of this type. So, you might need to increase the weights of the
+	constraints of type min days between activities with the weight < 100%.
+	- Updated the Russian translation, by Alexey Chernous.

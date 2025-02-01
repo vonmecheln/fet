@@ -1727,15 +1727,6 @@ inline bool Generate::teacherRemoveAnActivityFromBeginOrEndCertainTwoDays(int d2
 				ai2=actIndexBegin4;
 			else if(ii==3)
 				ai2=actIndexEnd4;
-
-			/*
-			if(actIndexBegin>=0 && actIndexEnd>=0 && optMinWrong==triedRemovals[actIndexEnd][c.times[actIndexEnd]] &&
-			  optMinWrong==triedRemovals[actIndexBegin][c.times[actIndexBegin]]){
-				if(rng.intMRG32k3a()%2==0)
-					ai2=actIndexBegin;
-				else
-					ai2=actIndexEnd;
-			}*/
 		}
 		else{
 			QList<int> tl;
@@ -1759,18 +1750,6 @@ inline bool Generate::teacherRemoveAnActivityFromBeginOrEndCertainTwoDays(int d2
 				ai2=actIndexBegin4;
 			else if(ii==3)
 				ai2=actIndexEnd4;
-/*
-
-			if(actIndexBegin>=0 && actIndexEnd<0)
-				ai2=actIndexBegin;
-			else if(actIndexEnd>=0 && actIndexBegin<0)
-				ai2=actIndexEnd;
-			else{
-				if(rng.intMRG32k3a()%2==0)
-					ai2=actIndexBegin;
-				else
-					ai2=actIndexEnd;
-			}*/
 		}
 		assert(ai2>=0);
 
@@ -7198,7 +7177,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 	restoreRealRoomsList.resize(2*gt.rules.nInternalActivities);
 	invPermutation.resize(gt.rules.nInternalActivities);
 	//
-	nMinDaysBrokenL.resize(MAX_LEVEL, gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
+	//nMinDaysBrokenL.resize(MAX_LEVEL, gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
 	selectedRoomL.resize(MAX_LEVEL, gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
 	permL.resize(MAX_LEVEL, gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
 	conflActivitiesL.resize(MAX_LEVEL, gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
@@ -8442,16 +8421,16 @@ static QSet<int> conflActivitiesSet;*/
 
 inline bool Generate::compareFunctionGenerate(int i, int j)
 {
-	if(nConflActivitiesL[currentLevel][i] < nConflActivitiesL[currentLevel][j] ||
+	if(nConflActivitiesL[currentLevel][i] < nConflActivitiesL[currentLevel][j])
+	/* ||
 	 (nConflActivitiesL[currentLevel][i] == nConflActivitiesL[currentLevel][j] &&
-	 nMinDaysBrokenL[currentLevel][i] < nMinDaysBrokenL[currentLevel][j]))
+	 nMinDaysBrokenL[currentLevel][i] < nMinDaysBrokenL[currentLevel][j]))*/
 		return true;
 	
 	return false;
 }
 
-
-#define nMinDaysBroken			(nMinDaysBrokenL[level])
+//#define nMinDaysBroken			(nMinDaysBrokenL[level])
 #define selectedRoom			(selectedRoomL[level])
 #define perm					(permL[level])
 #define conflActivities			(conflActivitiesL[level])
@@ -8498,13 +8477,14 @@ again_if_impossible_activity:
 	for(int n=0; n<gt.rules.nHoursPerWeek; n++){
 		int newtime=perm[n];
 		
+		 //old comment below (as of 2025-01-19 in FET-7.0.0):
 		 //bug corrected on 2021-04-13, this instruction must be executed before the if-s/continue below, because otherwise nMinDaysBroken[newtime] might remain uninitialized
 		 //and give a crash lower in the code. For instance, for a Hungary/Bethlen locked timetable, it crashes after the std::stable_sort near the end of generate.cpp
 		 //( std::stable_sort(perm+0, perm+gt.rules.nHoursPerWeek, [this](int i, int j){return compareFunctionGenerate(i, j);}); )
 		 //when asserting that if nConflActivities[perm[i-1]] == nConflActivities[perm[i]] then it must be nMinDaysBroken[perm[i-1]] <= nMinDaysBroken[perm[i]],
 		 //which sometimes seems to result in comparing -nan <= -nan, which seems not to be true. This bug appeared only
 		 //with Qt 6.0.3 (not with Qt 5) and only in the fet-cl (command-line) version.
-		nMinDaysBroken[newtime]=0.0;
+		//nMinDaysBroken[newtime]=0.0;
 
 		if(c.times[ai]!=UNALLOCATED_TIME){
 			if(c.times[ai]!=newtime){
@@ -8836,8 +8816,7 @@ impossiblebasictime:
 						 ||
 						 (gt.rules.mode==MORNINGS_AFTERNOONS && ( (d==d2 && (h+act->duration==h2 || h2+gt.rules.internalActivitiesList[ai2].duration==h)) || d/2!=d2/2 ))
 						 )){
-							//nMinDaysBroken[newtime]++;
-							nMinDaysBroken[newtime]+=minDaysListOfWeightPercentages[ai].at(i)/100.0;
+							//nMinDaysBroken[newtime]+=0.0*minDaysListOfWeightPercentages[ai].at(i)/100.0;
 						}
 						else{
 							if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
@@ -8879,8 +8858,7 @@ impossiblebasictime:
 								}
 							}
 						
-						 	//nMinDaysBroken[newtime]++;
-						 	nMinDaysBroken[newtime]+=minDaysListOfWeightPercentages[ai].at(i)/100.0;
+							//nMinDaysBroken[newtime]+=0.0*minDaysListOfWeightPercentages[ai].at(i)/100.0;
 						}
 						else{
 							if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
@@ -8929,8 +8907,7 @@ impossiblemindays:
 						if(minHalfDaysListOfConsecutiveIfSameDay[ai].at(i)==true){ //must place them consecutive (in any order) if on the same day
 							if(okrand &&
 							((d==d2 && (h+act->duration==h2 || h2+gt.rules.internalActivitiesList[ai2].duration==h)) || d!=d2 )){
-								//nMinDaysBroken[newtime]++;
-								nMinDaysBroken[newtime]+=minHalfDaysListOfWeightPercentages[ai].at(i)/100.0;
+								//nMinDaysBroken[newtime]+=0.0*minHalfDaysListOfWeightPercentages[ai].at(i)/100.0;
 							}
 							else{
 								if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
@@ -8971,9 +8948,8 @@ impossiblemindays:
 										}
 									}
 								}
-						
-								//nMinDaysBroken[newtime]++;
-								nMinDaysBroken[newtime]+=minHalfDaysListOfWeightPercentages[ai].at(i)/100.0;
+								
+								//nMinDaysBroken[newtime]+=0.0*minHalfDaysListOfWeightPercentages[ai].at(i)/100.0;
 							}
 							else{
 								if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
@@ -32030,7 +32006,7 @@ skip_here_if_already_allocated_in_time:
 		///////////////////////////////
 		//5.0.0-preview28
 		//no conflicting activities for this timeslot - place the activity and return
-		if(nConflActivities[newtime]==0 && nMinDaysBroken[newtime]==0.0){
+		if(nConflActivities[newtime]==0 /*&& nMinDaysBroken[newtime]==0.0*/){
 			assert(c.times[ai]==UNALLOCATED_TIME || (fixedTimeActivity[ai] && !fixedSpaceActivity[ai]));
 			
 			if(c.times[ai]!=UNALLOCATED_TIME && fixedTimeActivity[ai] && !fixedSpaceActivity[ai])
@@ -32062,9 +32038,11 @@ skip_here_if_already_allocated_in_time:
 	std::stable_sort(perm+0, perm+gt.rules.nHoursPerWeek, [this](int i, int j){return compareFunctionGenerate(i, j);});
 	
 	for(int i=1; i<gt.rules.nHoursPerWeek; i++){
-		assert( (nConflActivities[perm[i-1]]<nConflActivities[perm[i]])
+		assert(nConflActivities[perm[i-1]]<=nConflActivities[perm[i]]);
+
+		/*assert( (nConflActivities[perm[i-1]]<nConflActivities[perm[i]])
 		 || ( (nConflActivities[perm[i-1]]==nConflActivities[perm[i]]) &&
-		 (nMinDaysBroken[perm[i-1]]<=nMinDaysBroken[perm[i]]) ) );
+		 (nMinDaysBroken[perm[i-1]]<=nMinDaysBroken[perm[i]]) ) );*/
 	}
 
 	if(level==0 && (nConflActivities[perm[0]]==MAX_ACTIVITIES)){

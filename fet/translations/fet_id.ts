@@ -45352,7 +45352,7 @@ Mempunyai kelas paralel dengan jam belajr terlalu kecil per minggu artinya anda 
 <context>
     <name>Generate</name>
     <message>
-        <location filename="../src/engine/generate.cpp" line="7913"/>
+        <location filename="../src/engine/generate.cpp" line="7892"/>
         <source>At time %1 h %2 m %3 s, FET reached %4 activities placed</source>
         <comment>h=hours, m=minutes, s=seconds. Please leave spaces between &apos;time&apos;, %1, h, %2, m, %3, s, so they are visible</comment>
         <translation>Pada waktu j %1 m%2 d %3, FET telah meletahkan %4 kegiatan</translation>
