@@ -42452,7 +42452,7 @@ Having a subgroup with too little working hours per week means that you inputted
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="867"/>
         <source>Online</source>
-        <extracomment>menu Help-&gt;Online (means on the internet)</extracomment>
+        <extracomment>menu Help-&gt;Online (it means help on the internet)</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>

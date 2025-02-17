@@ -864,7 +864,7 @@
     </property>
     <widget class="QMenu" name="menu_help_On_line">
      <property name="title">
-      <string extracomment="menu Help-&gt;Online (means on the internet)">Online</string>
+      <string extracomment="menu Help-&gt;Online (it means help on the internet)">Online</string>
      </property>
      <addaction name="helpHomepageAction"/>
      <addaction name="helpContentsAction"/>

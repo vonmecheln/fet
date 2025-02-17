@@ -1,4 +1,4 @@
-This is FET version 7.0.2
+This is FET version 7.0.3
 
 
 Program description:
@@ -15,10 +15,10 @@ Program description:
 Requirements:
 
 	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.13.1, Xfce 4.20,
-	Xfce Terminal Emulator 1.1.4, Midnight Commander 4.8.32, Krusader 2.9.0, Kate 24.12.1, KDiff3 0.9.98, grep 3.11, sed 4.9,
-	Thunar Bulk Rename 4.20.1, Qt 6.8.2, QMake 3.1, CMake 3.31.3, Ninja 1.12.1, Qt Creator 15.0.1, GCC 14.2.1, Clang 19.1.7,
-	GNU Make 4.4.1, GDB 14.2, Valgrind 3.23.0, Coverity Scan 2023.6.2, Cppcheck 2.15, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0,
-	Inkscape 1.4, GIMP 3.0.0-RC2, ImageMagick 7.1.1-43, International Ispell 3.1.20 / Aspell 0.60.8.1, tar 1.35, Gzip 1.13, bzip2 1.0.8,
+	Xfce Terminal Emulator 1.1.4, Midnight Commander 4.8.32, Krusader 2.9.0, Kate 24.12.2, KDiff3 0.9.98, grep 3.11, sed 4.9,
+	Thunar Bulk Rename 4.20.1, Qt 6.8.2, QMake 3.1, CMake 3.31.5, Ninja 1.12.0, Qt Creator 15.0.1, GCC 14.2.1, Clang 19.1.7,
+	GNU Make 4.4.1, GDB 14.2, Valgrind 3.24.0, Coverity Scan 2024.6.1, Cppcheck 2.15, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0,
+	Inkscape 1.4, GIMP 3.0.0-RC3, ImageMagick 7.1.1-43, International Ispell 3.1.20 / Aspell 0.60.8.1, tar 1.35, Gzip 1.13, bzip2 1.0.8,
 	other great software (most of them are free software, in the sense defined by The Free Software Foundation).
 
 	The executable version of FET for Windows is obtained in the following environment: Windows 10 operating system,

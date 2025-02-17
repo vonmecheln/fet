@@ -3022,3 +3022,6 @@ Versions 7.0.0 - 7.0.v
 	generation will be written in their respective file, instead of being written on the console. The special UTF-8 characters will be correct in this case.
 - Version 7.0.2
 	- Minor improvements.
+- Version 7.0.3
+	- Minor improvements.
+	- Corrected and improved the German translation, by Volker Dirr (following a bug report by uni_instructor).

@@ -42458,7 +42458,7 @@ Har du en undergruppe med for få timer pr uge, betyder det at du har angivet ak
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="867"/>
         <source>Online</source>
-        <extracomment>menu Help-&gt;Online (means on the internet)</extracomment>
+        <extracomment>menu Help-&gt;Online (it means help on the internet)</extracomment>
         <translation>Online</translation>
     </message>
     <message>
