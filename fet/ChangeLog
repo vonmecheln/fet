@@ -3016,3 +3016,7 @@ Versions 7.0.0 - 7.0.v
 	with the weight < 100% will be solved possibly faster, but with possibly more broken constraints of this type. So, you might need to increase the weights of the
 	constraints of type min days between activities with the weight < 100%.
 	- Updated the Russian translation, by Alexey Chernous.
+- Version 7.0.1
+	- Updated to Qt 6.8.2.
+	- Improved the reporting of warnings/errors in the command-line version (suggested by Nahum Lipkunsky). The potential warnings/errors issued before the
+	generation will be written in their respective file, instead of being written on the console. The special UTF-8 characters will be correct in this case.

@@ -35,40 +35,49 @@ public:
 	static int confirmation
 	 (QWidget* parent, const QString& title, const QString& text,
 	 const QString& button0Text, const QString& button1Text, const QString& button2Text,
-	 int defaultButton, int escapeButton );
+	 int defaultButton, int escapeButton,
+	 bool isWarning=false, bool isError=false);
 
 	static int largeConfirmation
 	 (QWidget* parent, const QString& title, const QString& text,
 	 const QString& button0Text, const QString& button1Text, const QString& button2Text,
-	 int defaultButton, int escapeButton );
+	 int defaultButton, int escapeButton,
+	 bool isWarning=false, bool isError=false);
 
 	static int mediumConfirmation
 	 (QWidget* parent, const QString& title, const QString& text,
 	 const QString& button0Text, const QString& button1Text, const QString& button2Text,
-	 int defaultButton, int escapeButton );
+	 int defaultButton, int escapeButton,
+	 bool isWarning=false, bool isError=false);
 
 	static void information
-	 (QWidget* parent, const QString& title, const QString& text);
+	 (QWidget* parent, const QString& title, const QString& text,
+	 bool isWarning=false, bool isError=false);
 
 	static void largeInformation
-	 (QWidget* parent, const QString& title, const QString& text);
+	 (QWidget* parent, const QString& title, const QString& text,
+	 bool isWarning=false, bool isError=false);
 
 	static void mediumInformation
-	 (QWidget* parent, const QString& title, const QString& text);
+	 (QWidget* parent, const QString& title, const QString& text,
+	 bool isWarning=false, bool isError=false);
 
 	static int confirmationWithDimensions
 	 (QWidget* parent, const QString& title, const QString& text,
 	 const QString& button0Text, const QString& button1Text, const QString& button2Text,
-	 int defaultButton, int escapeButton, int MINW, int MAXW, int MINH, int MAXH );
+	 int defaultButton, int escapeButton, int MINW, int MAXW, int MINH, int MAXH,
+	 bool isWarning=false, bool isError=false);
 
 	static void informationWithDimensions
-	 (QWidget* parent, const QString& title, const QString& text, int MINW, int MAXW, int MINH, int MAXH);
+	 (QWidget* parent, const QString& title, const QString& text, int MINW, int MAXW, int MINH, int MAXH,
+	 bool isWarning=false, bool isError=false);
 
 	//Used only in modifystudentsyearform.cpp
 	static int largeConfirmationWithDimensionsThreeButtonsYesNoCancel
 	 (QWidget* parent, const QString& title, const QString& text,
 	 const QString& button0Text, const QString& button1Text, const QString& button2Text,
-	 int defaultButton, int escapeButton );
+	 int defaultButton, int escapeButton,
+	 bool isWarning=false, bool isError=false);
 	 //Yes, No, Cancel, in this order
 };
 

@@ -10520,3 +10520,46 @@ He sent Liviu Lalescu on Facebook two screenshots with suggestions:
  Long name: ...
  Qualified subjects: ... (Liviu Lalescu: I think list box).
  Target hours: ...
+
+671--------------------------------------------------------
+From GUEFFAZ REDA:
+
+He sent Liviu Lalescu on Facebook a screenshot with suggestions:
+
+In the view teachers days horizontal timetable, he added four circles: "Name", "Long Name", "Code", "Qualified Subjects", with arrows from "Filtered List of Teacher".
+I (Liviu Lalescu) am not sure what the suggestion means exactly.
+
+Further clarification by GUEFFAZ REDA:
+
+Les profs seront filtrer par matiere.(qualified subjects)
+
+672--------------------------------------------------------
+From GUEFFAZ REDA:
+
+He sent Liviu Lalescu on Facebook three screenshots in which the option "Merge" cells in the timetable view dialogs seemed not to work. The problem is that these
+were two separate activities from the same larger split activity, which were placed consecutively. This is a feature, not a bug.
+
+673--------------------------------------------------------
+From Nahum Lipkunsky:
+
+Do you remember I have mentioned the need to provide a partial
+solution by eliminating the "hard to schedule activities"  as incremental
+process ? Well, it proves to be very effective in the process of
+identifying issues in the data.  I.e before we start the process of
+relieving constraints, we
+would like to keep the quality of the solution in a partial  solution and
+check for data "modification" which can fix it.
+
+Anyways it would be very helpful to enable activity deactivation from
+the view of initial order evaluation.... it will save the need to close the
+list,
+look tor the activity by Id in the Activities list, and deactivate it
+there, then re-generate.... or even better : a one click, deactivate and
+re-generate would be very nice....
+
+674--------------------------------------------------------
+From Volker Dirr:
+
+Why not adding the terms constraints always? So remove the terms mode,
+add the constraint and then you can use terms mode constraint in
+Official, MA and BP Mode.

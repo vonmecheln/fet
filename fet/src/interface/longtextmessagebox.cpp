@@ -61,9 +61,13 @@ const int MEDIUM_MAX_HEIGHT=650;
 int LongTextMessageBox::confirmationWithDimensions
  (QWidget* parent, const QString& title, const QString& text,
  const QString& button0Text, const QString& button1Text, const QString& button2Text,
- int defaultButton, int escapeButton, int MINW, int MAXW, int MINH, int MAXH )
+ int defaultButton, int escapeButton, int MINW, int MAXW, int MINH, int MAXH,
+ bool isWarning, bool isError )
 {
 #ifndef FET_COMMAND_LINE
+	Q_UNUSED(isWarning);
+	Q_UNUSED(isError);
+
 	if(button0Text==QString() || button1Text==QString() || button2Text!=QString()){
 		QMessageBox::critical(parent, tr("FET critical"), tr("You have met a FET bug. The problem is in file"
 		 " %1 line %2, the reason is that a confirmation dialog box does not get exactly 2 arguments. Please report bug. FET will now continue."
@@ -156,7 +160,8 @@ int LongTextMessageBox::confirmationWithDimensions
 	Q_UNUSED(MINH);
 	Q_UNUSED(MAXH);
 	
-	commandLineMessage(parent, title, text, button0Text, button1Text, button2Text, defaultButton, escapeButton);
+	commandLineMessage(parent, title, text, button0Text, button1Text, button2Text, defaultButton, escapeButton,
+	 isWarning, isError);
 	return defaultButton;
 #endif
 }
@@ -164,40 +169,50 @@ int LongTextMessageBox::confirmationWithDimensions
 int LongTextMessageBox::confirmation
  (QWidget* parent, const QString& title, const QString& text,
  const QString& button0Text, const QString& button1Text, const QString& button2Text,
- int defaultButton, int escapeButton)
+ int defaultButton, int escapeButton,
+ bool isWarning, bool isError)
 {
 	return LongTextMessageBox::confirmationWithDimensions(parent, title, text,
 		button0Text, button1Text, button2Text,
 		defaultButton, escapeButton,
-		MIN_WIDTH, MAX_WIDTH, MIN_HEIGHT, MAX_HEIGHT);
+		MIN_WIDTH, MAX_WIDTH, MIN_HEIGHT, MAX_HEIGHT,
+		isWarning, isError);
 }
 
 int LongTextMessageBox::largeConfirmation
  (QWidget* parent, const QString& title, const QString& text,
  const QString& button0Text, const QString& button1Text, const QString& button2Text,
- int defaultButton, int escapeButton)
+ int defaultButton, int escapeButton,
+ bool isWarning, bool isError)
 {
 	return LongTextMessageBox::confirmationWithDimensions(parent, title, text,
 		button0Text, button1Text, button2Text,
 		defaultButton, escapeButton,
-		LARGE_MIN_WIDTH, LARGE_MAX_WIDTH, LARGE_MIN_HEIGHT, LARGE_MAX_HEIGHT);
+		LARGE_MIN_WIDTH, LARGE_MAX_WIDTH, LARGE_MIN_HEIGHT, LARGE_MAX_HEIGHT,
+		isWarning, isError);
 }
 
 int LongTextMessageBox::mediumConfirmation
  (QWidget* parent, const QString& title, const QString& text,
  const QString& button0Text, const QString& button1Text, const QString& button2Text,
- int defaultButton, int escapeButton)
+ int defaultButton, int escapeButton,
+ bool isWarning, bool isError)
 {
 	return LongTextMessageBox::confirmationWithDimensions(parent, title, text,
 		button0Text, button1Text, button2Text,
 		defaultButton, escapeButton,
-		MEDIUM_MIN_WIDTH, MEDIUM_MAX_WIDTH, MEDIUM_MIN_HEIGHT, MEDIUM_MAX_HEIGHT);
+		MEDIUM_MIN_WIDTH, MEDIUM_MAX_WIDTH, MEDIUM_MIN_HEIGHT, MEDIUM_MAX_HEIGHT,
+		isWarning, isError);
 }
 
 void LongTextMessageBox::informationWithDimensions
- (QWidget* parent, const QString& title, const QString& text, int MINW, int MAXW, int MINH, int MAXH)
+ (QWidget* parent, const QString& title, const QString& text, int MINW, int MAXW, int MINH, int MAXH,
+ bool isWarning, bool isError)
 {
 #ifndef FET_COMMAND_LINE
+	Q_UNUSED(isWarning);
+	Q_UNUSED(isError);
+
 	QDialog dialog(parent);
 	dialog.setWindowTitle(title);
 	
@@ -236,26 +251,33 @@ void LongTextMessageBox::informationWithDimensions
 	Q_UNUSED(MINH);
 	Q_UNUSED(MAXH);
 	
-	commandLineMessage(parent, title, text);
+	commandLineMessage(parent, title, text,
+	 isWarning, isError);
 #endif
 }
 
 void LongTextMessageBox::information
- (QWidget* parent, const QString& title, const QString& text)
+ (QWidget* parent, const QString& title, const QString& text,
+ bool isWarning, bool isError)
 {
-	LongTextMessageBox::informationWithDimensions(parent, title, text, MIN_WIDTH, MAX_WIDTH, MIN_HEIGHT, MAX_HEIGHT);
+	LongTextMessageBox::informationWithDimensions(parent, title, text, MIN_WIDTH, MAX_WIDTH, MIN_HEIGHT, MAX_HEIGHT,
+	 isWarning, isError);
 }
 
 void LongTextMessageBox::largeInformation
- (QWidget* parent, const QString& title, const QString& text)
+ (QWidget* parent, const QString& title, const QString& text,
+ bool isWarning, bool isError)
 {
-	LongTextMessageBox::informationWithDimensions(parent, title, text, LARGE_MIN_WIDTH, LARGE_MAX_WIDTH, LARGE_MIN_HEIGHT, LARGE_MAX_HEIGHT);
+	LongTextMessageBox::informationWithDimensions(parent, title, text, LARGE_MIN_WIDTH, LARGE_MAX_WIDTH, LARGE_MIN_HEIGHT, LARGE_MAX_HEIGHT,
+	 isWarning, isError);
 }
 
 void LongTextMessageBox::mediumInformation
- (QWidget* parent, const QString& title, const QString& text)
+ (QWidget* parent, const QString& title, const QString& text,
+ bool isWarning, bool isError)
 {
-	LongTextMessageBox::informationWithDimensions(parent, title, text, MEDIUM_MIN_WIDTH, MEDIUM_MAX_WIDTH, MEDIUM_MIN_HEIGHT, MEDIUM_MAX_HEIGHT);
+	LongTextMessageBox::informationWithDimensions(parent, title, text, MEDIUM_MIN_WIDTH, MEDIUM_MAX_WIDTH, MEDIUM_MIN_HEIGHT, MEDIUM_MAX_HEIGHT,
+	 isWarning, isError);
 }
 
 #ifndef FET_COMMAND_LINE
@@ -288,9 +310,13 @@ void MyDialogWithThreeButtons::setCancel()
 int LongTextMessageBox::largeConfirmationWithDimensionsThreeButtonsYesNoCancel
  (QWidget* parent, const QString& title, const QString& text,
  const QString& button0Text, const QString& button1Text, const QString& button2Text,
- int defaultButton, int escapeButton )
+ int defaultButton, int escapeButton,
+ bool isWarning, bool isError)
  //Yes, No, Cancel, in this order.
 {
+	Q_UNUSED(isWarning);
+	Q_UNUSED(isError);
+
 	int MINW=LARGE_MIN_WIDTH;
 	int MAXW=LARGE_MAX_WIDTH;
 	int MINH=LARGE_MIN_HEIGHT;

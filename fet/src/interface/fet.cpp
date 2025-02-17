@@ -64,6 +64,10 @@ Generate gen;
 extern Generate gen;
 #endif
 
+#ifdef FET_COMMAND_LINE
+QString logsDir;
+#endif
+
 #ifndef FET_COMMAND_LINE
 #include "fetmainform.h"
 
@@ -2914,7 +2918,7 @@ int main(int argc, char **argv)
 		//////////
 		
 		QDir dir;
-		QString logsDir=initialDir+"logs";
+		logsDir=initialDir+"logs";
 		if(!dir.exists(logsDir))
 			dir.mkpath(logsDir);
 		logsDir.append(FILE_SEP);
@@ -2962,6 +2966,24 @@ int main(int argc, char **argv)
 				out<<"Cannot remove the old existing file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"difficult_activities.txt"<<endl;
 #endif
 				cout<<"Cannot remove the old existing file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"difficult_activities.txt"<<endl;
+			}
+		}
+		
+		QFile oldWarningsFile(logsDir+"warnings.txt");
+		if(oldWarningsFile.exists()){
+			bool t=oldWarningsFile.remove();
+			if(!t){
+				out<<"Cannot remove the old warnings file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"warnings.txt"<<Qt::endl;
+				cout<<"Cannot remove the old warnings file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"warnings.txt"<<endl;
+			}
+		}
+		
+		QFile oldErrorsFile(logsDir+"errors.txt");
+		if(oldErrorsFile.exists()){
+			bool t=oldErrorsFile.remove();
+			if(!t){
+				out<<"Cannot remove the old errors file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"errors.txt"<<Qt::endl;
+				cout<<"Cannot remove the old errors file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"errors.txt"<<endl;
 			}
 		}
 		
