@@ -38961,45 +38961,70 @@ Import of data will be easier with these settings.</source>
 <context>
     <name>FetCommandLine</name>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="75"/>
-        <location filename="../src/engine/messageboxes.cpp" line="127"/>
+        <location filename="../src/engine/messageboxes.cpp" line="76"/>
+        <location filename="../src/engine/messageboxes.cpp" line="128"/>
         <source>Title: %1</source>
         <translation>Izenburua: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="76"/>
-        <location filename="../src/engine/messageboxes.cpp" line="128"/>
+        <location filename="../src/engine/messageboxes.cpp" line="77"/>
+        <location filename="../src/engine/messageboxes.cpp" line="129"/>
         <source>Message: %1</source>
         <translation>Mezua: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="131"/>
+        <location filename="../src/engine/messageboxes.cpp" line="132"/>
         <source>Button 0 text: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="133"/>
+        <location filename="../src/engine/messageboxes.cpp" line="134"/>
         <source>Button 1 text: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="135"/>
+        <location filename="../src/engine/messageboxes.cpp" line="136"/>
         <source>Button 2 text: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="137"/>
+        <location filename="../src/engine/messageboxes.cpp" line="138"/>
         <source>Default button: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="138"/>
+        <location filename="../src/engine/messageboxes.cpp" line="139"/>
         <source>Escape button: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="140"/>
+        <location filename="../src/engine/messageboxes.cpp" line="141"/>
         <source>Pressing default button %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/messageboxes.cpp" line="361"/>
+        <source>Progress title: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/messageboxes.cpp" line="368"/>
+        <source>Progress label: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/messageboxes.cpp" line="375"/>
+        <source>Progress range: %1..%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/messageboxes.cpp" line="383"/>
+        <source>Progress setModal(true)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/messageboxes.cpp" line="385"/>
+        <source>Progress setModal(false)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

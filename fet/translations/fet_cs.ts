@@ -38990,46 +38990,71 @@ Import of data will be easier with these settings.</source>
 <context>
     <name>FetCommandLine</name>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="75"/>
-        <location filename="../src/engine/messageboxes.cpp" line="127"/>
+        <location filename="../src/engine/messageboxes.cpp" line="76"/>
+        <location filename="../src/engine/messageboxes.cpp" line="128"/>
         <source>Title: %1</source>
         <translation>Název: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="76"/>
-        <location filename="../src/engine/messageboxes.cpp" line="128"/>
+        <location filename="../src/engine/messageboxes.cpp" line="77"/>
+        <location filename="../src/engine/messageboxes.cpp" line="129"/>
         <source>Message: %1</source>
         <translation>Zpráva: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="131"/>
+        <location filename="../src/engine/messageboxes.cpp" line="132"/>
         <source>Button 0 text: %1</source>
         <translation>Text tlačítka 0: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="133"/>
+        <location filename="../src/engine/messageboxes.cpp" line="134"/>
         <source>Button 1 text: %1</source>
         <translation>Text tlačítka 1: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="135"/>
+        <location filename="../src/engine/messageboxes.cpp" line="136"/>
         <source>Button 2 text: %1</source>
         <translation>Text tlačítka 2: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="137"/>
+        <location filename="../src/engine/messageboxes.cpp" line="138"/>
         <source>Default button: %1</source>
         <translation>Výchozí tlačítko: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="138"/>
+        <location filename="../src/engine/messageboxes.cpp" line="139"/>
         <source>Escape button: %1</source>
         <translation>Únikové tlačítko: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="140"/>
+        <location filename="../src/engine/messageboxes.cpp" line="141"/>
         <source>Pressing default button %1</source>
         <translation>Stisknutí výchozího tlačítka: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/messageboxes.cpp" line="361"/>
+        <source>Progress title: %1</source>
+        <translation>Název postupu: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/messageboxes.cpp" line="368"/>
+        <source>Progress label: %1</source>
+        <translation>Štítek postupu: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/messageboxes.cpp" line="375"/>
+        <source>Progress range: %1..%2</source>
+        <translation>Rozsah postupu: %1..%2</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/messageboxes.cpp" line="383"/>
+        <source>Progress setModal(true)</source>
+        <translation>Postup  setModal(true)</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/messageboxes.cpp" line="385"/>
+        <source>Progress setModal(false)</source>
+        <translation>Postup  setModal(false)</translation>
     </message>
 </context>
 <context>
