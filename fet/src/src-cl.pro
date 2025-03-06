@@ -26,10 +26,10 @@ SOURCES += \
 	engine/timetable_defs.cpp \
 	engine/generate.cpp \
 	engine/lockunlock.cpp \
-	engine/messageboxes.cpp \
 	engine/export.cpp \
 	\
-	interface/centerwidgetonscreen.cpp \
+	interface/messageboxes.cpp \
+	interface/utilities.cpp \
 	interface/fet.cpp \
 	interface/fetmainform.cpp \
 	interface/longtextmessagebox.cpp
@@ -53,10 +53,10 @@ HEADERS += \
 	engine/generate.h \
 	engine/lockunlock.h \
 	engine/matrix.h \
-	engine/messageboxes.h \
 	engine/export.h \
 	\
-	interface/centerwidgetonscreen.h \
+	interface/messageboxes.h \
+	interface/utilities.h \
 	interface/fet.h \
 	interface/longtextmessagebox.h
 

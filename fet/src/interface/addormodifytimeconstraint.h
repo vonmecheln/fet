@@ -110,6 +110,7 @@ class AddOrModifyTimeConstraint: public QObject
 	QLabel* secondModifyInstructionsLabel;
 
 	QPushButton* toggleAllPushButton;
+	QPushButton* swapPushButton;
 	
 	QTableWidget* timesTable;
 	QAbstractItemDelegate* oldItemDelegate;
@@ -291,6 +292,7 @@ private:
 	void verticalHeaderClicked(int row);
 	void cellEntered(int row, int col);
 	void toggleAllClicked();
+	void swapClicked();
 
 	void durationCheckBoxToggled();
 

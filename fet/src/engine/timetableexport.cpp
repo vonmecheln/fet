@@ -212,11 +212,30 @@ const QString ROOMS_TIMETABLE_TAG="Rooms_Timetable";
 const QString RANDOM_SEED_FILENAME_BEFORE="random_seed_before.txt";
 const QString RANDOM_SEED_FILENAME_AFTER="random_seed_after.txt";
 
+const bool USE_DUMMY_TH_TR_TD=true;
+
 //extern int XX;
 //extern int YY;
 //extern MRG32k3a rng;
 
 QString generationLocalizedTime=QString(""); //to be used in timetableprintform.cpp
+
+QString TimetableExport::dummyTh(int nSpacesBefore)
+{
+	return QString(nSpacesBefore, ' ')+QString("<th></th>")+QString("\n");
+}
+
+QString TimetableExport::dummyTr(int nSpacesBeforeTr, int nSpacesBeforeTd, int colspan)
+{
+	return QString(nSpacesBeforeTr, ' ')+QString("<tr>\n")+
+	 QString(nSpacesBeforeTd, ' ')+QString("<td colspan=\"")+CustomFETString::number(colspan)+QString("\"></td>\n")+
+	 QString(nSpacesBeforeTr, ' ')+QString("</tr>\n");
+}
+
+QString TimetableExport::dummyTd(int nSpacesBefore)
+{
+	return QString(nSpacesBefore, ' ')+QString("<td></td>")+QString("\n");
+}
 
 //similar with the code from Marco Vassura, modified by Volker Dirr to avoid usage of QColor and QBrush, since these need QtGui.
 //(the command-line version does not have access to QtGui.)
@@ -8712,6 +8731,17 @@ QString TimetableExport::singleSubgroupsTimetableTimeVerticalHtml(int htmlLevel,
 			}
 			tmpString+="        </tr>\n";
 		}
+
+		if(USE_DUMMY_TH_TR_TD){
+			if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+				if(day!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTr(8, 10, currentCount+2+(repeatNames?2:0));
+			}
+			else{
+				if(day%2==1 && day/2!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTr(8, 10, currentCount+2+(repeatNames?2:0));
+			}
+		}
 	}
 	//workaround begin.
 	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
@@ -8767,6 +8797,10 @@ QString TimetableExport::singleSubgroupsTimetableTimeHorizontalHtml(int htmlLeve
 			else
 				day=gt.rules.nDaysPerWeek-1-rday;
 			tmpString+="          <th colspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getDayString(day, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+			
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	else{
@@ -8777,6 +8811,10 @@ QString TimetableExport::singleSubgroupsTimetableTimeHorizontalHtml(int htmlLeve
 			else
 				day=gt.rules.nRealDaysPerWeek-1-rday;
 			tmpString+="          <th colspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getRealDayString(day, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+			
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	if(PRINT_RTL || (!PRINT_RTL && repeatNames)){
@@ -8811,6 +8849,10 @@ QString TimetableExport::singleSubgroupsTimetableTimeHorizontalHtml(int htmlLeve
 
 				tmpString+=getHourString(hour, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 			}
+
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	else{
@@ -8835,6 +8877,10 @@ QString TimetableExport::singleSubgroupsTimetableTimeHorizontalHtml(int htmlLeve
 
 				tmpString+=getRealHourString(hour, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 			}
+
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 
@@ -8898,6 +8944,17 @@ QString TimetableExport::singleSubgroupsTimetableTimeHorizontalHtml(int htmlLeve
 					);
 				}
 			}
+
+			if(USE_DUMMY_TH_TR_TD){
+				if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+					if(rday!=gt.rules.nDaysPerWeek-1)
+						tmpString+=dummyTd(10);
+				}
+				else{
+					if(rday%2==1 && rday/2!=gt.rules.nRealDaysPerWeek-1)
+						tmpString+=dummyTd(10);
+				}
+			}
 		}
 		if((!PRINT_RTL && repeatNames) || PRINT_RTL){
 			if(htmlLevel>=2)
@@ -8909,10 +8966,16 @@ QString TimetableExport::singleSubgroupsTimetableTimeHorizontalHtml(int htmlLeve
 		tmpString+="        </tr>\n";
 	}
 	//workaround begin.
-	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
-		tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+	int additionalSpan;
+	if(USE_DUMMY_TH_TR_TD)
+		additionalSpan = (gt.rules.mode!=MORNINGS_AFTERNOONS ? gt.rules.nDaysPerWeek-1 : gt.rules.nRealDaysPerWeek-1);
 	else
-		tmpString+="        <tr class=\"foot\"><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+		additionalSpan = 0;
+
+	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
+		tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek+additionalSpan)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+	else
+		tmpString+="        <tr class=\"foot\"><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek+additionalSpan)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
 	if((!PRINT_RTL && repeatNames) || PRINT_RTL){
 		tmpString+="<td></td>";
 	}
@@ -9720,6 +9783,17 @@ QString TimetableExport::singleGroupsTimetableTimeVerticalHtml(int htmlLevel, in
 			}
 			tmpString+="        </tr>\n";
 		}
+
+		if(USE_DUMMY_TH_TR_TD){
+			if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+				if(day!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTr(8, 10, currentCount+2+(repeatNames?2:0));
+			}
+			else{
+				if(day%2==1 && day/2!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTr(8, 10, currentCount+2+(repeatNames?2:0));
+			}
+		}
 	}
 	//workaround begin.
 	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
@@ -9771,6 +9845,10 @@ QString TimetableExport::singleGroupsTimetableTimeHorizontalHtml(int htmlLevel, 
 			else
 				day=gt.rules.nDaysPerWeek-1-rday;
 			tmpString+="          <th colspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getDayString(day, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+			
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	else{
@@ -9781,6 +9859,10 @@ QString TimetableExport::singleGroupsTimetableTimeHorizontalHtml(int htmlLevel, 
 			else
 				day=gt.rules.nRealDaysPerWeek-1-rday;
 			tmpString+="          <th colspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getRealDayString(day, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+			
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	if(PRINT_RTL || (!PRINT_RTL && repeatNames)){
@@ -9815,6 +9897,10 @@ QString TimetableExport::singleGroupsTimetableTimeHorizontalHtml(int htmlLevel, 
 
 				tmpString+=getHourString(hour, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 			}
+
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	else{
@@ -9839,6 +9925,10 @@ QString TimetableExport::singleGroupsTimetableTimeHorizontalHtml(int htmlLevel, 
 
 				tmpString+=getRealHourString(hour, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 			}
+
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 
@@ -9915,6 +10005,17 @@ QString TimetableExport::singleGroupsTimetableTimeHorizontalHtml(int htmlLevel, 
 					}
 				}
 			}
+
+			if(USE_DUMMY_TH_TR_TD){
+				if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+					if(rday!=gt.rules.nDaysPerWeek-1)
+						tmpString+=dummyTd(10);
+				}
+				else{
+					if(rday%2==1 && rday/2!=gt.rules.nRealDaysPerWeek-1)
+						tmpString+=dummyTd(10);
+				}
+			}
 		}
 		if((!PRINT_RTL && repeatNames) || PRINT_RTL){
 			if(htmlLevel>=2)
@@ -9926,10 +10027,16 @@ QString TimetableExport::singleGroupsTimetableTimeHorizontalHtml(int htmlLevel, 
 		tmpString+="        </tr>\n";
 	}
 	//workaround begin.
-	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
-		tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+	int additionalSpan;
+	if(USE_DUMMY_TH_TR_TD)
+		additionalSpan = (gt.rules.mode!=MORNINGS_AFTERNOONS ? gt.rules.nDaysPerWeek-1 : gt.rules.nRealDaysPerWeek-1);
 	else
-		tmpString+="        <tr class=\"foot\"><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+		additionalSpan = 0;
+
+	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
+		tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek+additionalSpan)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+	else
+		tmpString+="        <tr class=\"foot\"><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek+additionalSpan)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
 	if((!PRINT_RTL && repeatNames) || PRINT_RTL){
 		tmpString+="<td></td>";
 	}
@@ -10762,6 +10869,17 @@ QString TimetableExport::singleYearsTimetableTimeVerticalHtml(int htmlLevel, int
 			}
 			tmpString+="        </tr>\n";
 		}
+
+		if(USE_DUMMY_TH_TR_TD){
+			if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+				if(day!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTr(8, 10, currentCount+2+(repeatNames?2:0));
+			}
+			else{
+				if(day%2==1 && day/2!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTr(8, 10, currentCount+2+(repeatNames?2:0));
+			}
+		}
 	}
 	//workaround begin.
 	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
@@ -10813,6 +10931,10 @@ QString TimetableExport::singleYearsTimetableTimeHorizontalHtml(int htmlLevel, i
 			else
 				day=gt.rules.nDaysPerWeek-1-rday;
 			tmpString+="          <th colspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getDayString(day, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+			
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	else{
@@ -10823,6 +10945,10 @@ QString TimetableExport::singleYearsTimetableTimeHorizontalHtml(int htmlLevel, i
 			else
 				day=gt.rules.nRealDaysPerWeek-1-rday;
 			tmpString+="          <th colspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getRealDayString(day, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+			
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	if(PRINT_RTL || (!PRINT_RTL && repeatNames)){
@@ -10857,6 +10983,10 @@ QString TimetableExport::singleYearsTimetableTimeHorizontalHtml(int htmlLevel, i
 
 				tmpString+=getHourString(hour, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 			}
+
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	else{
@@ -10881,6 +11011,10 @@ QString TimetableExport::singleYearsTimetableTimeHorizontalHtml(int htmlLevel, i
 
 				tmpString+=getRealHourString(hour, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 			}
+
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 
@@ -10961,6 +11095,17 @@ QString TimetableExport::singleYearsTimetableTimeHorizontalHtml(int htmlLevel, i
 					}
 				}
 			}
+
+			if(USE_DUMMY_TH_TR_TD){
+				if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+					if(rday!=gt.rules.nDaysPerWeek-1)
+						tmpString+=dummyTd(10);
+				}
+				else{
+					if(rday%2==1 && rday/2!=gt.rules.nRealDaysPerWeek-1)
+						tmpString+=dummyTd(10);
+				}
+			}
 		}
 		if((!PRINT_RTL && repeatNames) || PRINT_RTL){
 			if(htmlLevel>=2)
@@ -10972,10 +11117,16 @@ QString TimetableExport::singleYearsTimetableTimeHorizontalHtml(int htmlLevel, i
 		tmpString+="        </tr>\n";
 	}
 	//workaround begin.
-	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
-		tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+	int additionalSpan;
+	if(USE_DUMMY_TH_TR_TD)
+		additionalSpan = (gt.rules.mode!=MORNINGS_AFTERNOONS ? gt.rules.nDaysPerWeek-1 : gt.rules.nRealDaysPerWeek-1);
 	else
-		tmpString+="        <tr class=\"foot\"><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+		additionalSpan = 0;
+
+	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
+		tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek+additionalSpan)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+	else
+		tmpString+="        <tr class=\"foot\"><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek+additionalSpan)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
 	if((!PRINT_RTL && repeatNames) || PRINT_RTL){
 		tmpString+="<td></td>";
 	}
@@ -11693,6 +11844,17 @@ QString TimetableExport::singleAllActivitiesTimetableTimeVerticalHtml(int htmlLe
 			}
 			tmpString+="        </tr>\n";
 		}
+
+		if(USE_DUMMY_TH_TR_TD){
+			if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+				if(day!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTr(8, 10, 1+2+(repeatNames?2:0));
+			}
+			else{
+				if(day%2==1 && day/2!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTr(8, 10, 1+2+(repeatNames?2:0));
+			}
+		}
 	}
 	//workaround begin.
 	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
@@ -11733,6 +11895,10 @@ QString TimetableExport::singleAllActivitiesTimetableTimeHorizontalHtml(int html
 			else
 				day=gt.rules.nDaysPerWeek-1-rday;
 			tmpString+="          <th colspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getDayString(day, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+			
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	else{
@@ -11743,6 +11909,10 @@ QString TimetableExport::singleAllActivitiesTimetableTimeHorizontalHtml(int html
 			else
 				day=gt.rules.nRealDaysPerWeek-1-rday;
 			tmpString+="          <th colspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getRealDayString(day, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+			
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	if(PRINT_RTL || (!PRINT_RTL && repeatNames)){
@@ -11777,6 +11947,10 @@ QString TimetableExport::singleAllActivitiesTimetableTimeHorizontalHtml(int html
 
 				tmpString+=getHourString(hour, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 			}
+
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	else{
@@ -11801,6 +11975,10 @@ QString TimetableExport::singleAllActivitiesTimetableTimeHorizontalHtml(int html
 
 				tmpString+=getRealHourString(hour, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 			}
+
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 
@@ -11854,6 +12032,17 @@ QString TimetableExport::singleAllActivitiesTimetableTimeHorizontalHtml(int html
 				 );
 			}
 		}
+
+		if(USE_DUMMY_TH_TR_TD){
+			if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+				if(rday!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTd(10);
+			}
+			else{
+				if(rday%2==1 && rday/2!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTd(10);
+			}
+		}
 	}
 	if((!PRINT_RTL && repeatNames) || PRINT_RTL){
 		if(htmlLevel>=2)
@@ -11864,10 +12053,16 @@ QString TimetableExport::singleAllActivitiesTimetableTimeHorizontalHtml(int html
 	}
 	tmpString+="        </tr>\n";
 	//workaround begin.
-	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
-		tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+	int additionalSpan;
+	if(USE_DUMMY_TH_TR_TD)
+		additionalSpan = (gt.rules.mode!=MORNINGS_AFTERNOONS ? gt.rules.nDaysPerWeek-1 : gt.rules.nRealDaysPerWeek-1);
 	else
-		tmpString+="        <tr class=\"foot\"><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+		additionalSpan = 0;
+
+	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
+		tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek+additionalSpan)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+	else
+		tmpString+="        <tr class=\"foot\"><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek+additionalSpan)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
 	if((!PRINT_RTL && repeatNames) || PRINT_RTL){
 		tmpString+="<td></td>";
 	}
@@ -12578,6 +12773,17 @@ QString TimetableExport::singleTeachersTimetableTimeVerticalHtml(int htmlLevel, 
 			}
 			tmpString+="        </tr>\n";
 		}
+
+		if(USE_DUMMY_TH_TR_TD){
+			if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+				if(day!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTr(8, 10, currentCount+2+(repeatNames?2:0));
+			}
+			else{
+				if(day%2==1 && day/2!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTr(8, 10, currentCount+2+(repeatNames?2:0));
+			}
+		}
 	}
 	//workaround begin.
 	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
@@ -12627,6 +12833,10 @@ QString TimetableExport::singleTeachersTimetableTimeHorizontalHtml(int htmlLevel
 			else
 				day=gt.rules.nDaysPerWeek-1-rday;
 			tmpString+="          <th colspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getDayString(day, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+			
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	else{
@@ -12637,6 +12847,10 @@ QString TimetableExport::singleTeachersTimetableTimeHorizontalHtml(int htmlLevel
 			else
 				day=gt.rules.nRealDaysPerWeek-1-rday;
 			tmpString+="          <th colspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getRealDayString(day, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+			
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	if(PRINT_RTL || (!PRINT_RTL && repeatNames)){
@@ -12671,6 +12885,10 @@ QString TimetableExport::singleTeachersTimetableTimeHorizontalHtml(int htmlLevel
 
 				tmpString+=getHourString(hour, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 			}
+
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	else{
@@ -12695,6 +12913,10 @@ QString TimetableExport::singleTeachersTimetableTimeHorizontalHtml(int htmlLevel
 
 				tmpString+=getRealHourString(hour, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 			}
+
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 
@@ -12757,6 +12979,17 @@ QString TimetableExport::singleTeachersTimetableTimeHorizontalHtml(int htmlLevel
 					 );
 				}
 			}
+
+			if(USE_DUMMY_TH_TR_TD){
+				if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+					if(rday!=gt.rules.nDaysPerWeek-1)
+						tmpString+=dummyTd(10);
+				}
+				else{
+					if(rday%2==1 && rday/2!=gt.rules.nRealDaysPerWeek-1)
+						tmpString+=dummyTd(10);
+				}
+			}
 		}
 		if((!PRINT_RTL && repeatNames) || PRINT_RTL){
 			if(htmlLevel>=2)
@@ -12768,10 +13001,16 @@ QString TimetableExport::singleTeachersTimetableTimeHorizontalHtml(int htmlLevel
 		tmpString+="        </tr>\n";
 	}
 	//workaround begin.
-	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
-		tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+	int additionalSpan;
+	if(USE_DUMMY_TH_TR_TD)
+		additionalSpan = (gt.rules.mode!=MORNINGS_AFTERNOONS ? gt.rules.nDaysPerWeek-1 : gt.rules.nRealDaysPerWeek-1);
 	else
-		tmpString+="        <tr class=\"foot\"><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+		additionalSpan = 0;
+
+	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
+		tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek+additionalSpan)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+	else
+		tmpString+="        <tr class=\"foot\"><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek+additionalSpan)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
 	if((!PRINT_RTL && repeatNames) || PRINT_RTL){
 		tmpString+="<td></td>";
 	}
@@ -13535,6 +13774,17 @@ QString TimetableExport::singleBuildingsTimetableTimeVerticalHtml(int htmlLevel,
 			}
 			tmpString+="        </tr>\n";
 		}
+
+		if(USE_DUMMY_TH_TR_TD){
+			if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+				if(day!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTr(8, 10, currentCount+2+(repeatNames?2:0));
+			}
+			else{
+				if(day%2==1 && day/2!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTr(8, 10, currentCount+2+(repeatNames?2:0));
+			}
+		}
 	}
 	//workaround begin.
 	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
@@ -13584,6 +13834,10 @@ QString TimetableExport::singleBuildingsTimetableTimeHorizontalHtml(int htmlLeve
 			else
 				day=gt.rules.nDaysPerWeek-1-rday;
 			tmpString+="          <th colspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getDayString(day, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+			
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	else{
@@ -13594,6 +13848,10 @@ QString TimetableExport::singleBuildingsTimetableTimeHorizontalHtml(int htmlLeve
 			else
 				day=gt.rules.nRealDaysPerWeek-1-rday;
 			tmpString+="          <th colspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getRealDayString(day, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+			
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	if(PRINT_RTL || (!PRINT_RTL && repeatNames)){
@@ -13628,6 +13886,10 @@ QString TimetableExport::singleBuildingsTimetableTimeHorizontalHtml(int htmlLeve
 
 				tmpString+=getHourString(hour, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 			}
+
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	else{
@@ -13652,6 +13914,10 @@ QString TimetableExport::singleBuildingsTimetableTimeHorizontalHtml(int htmlLeve
 
 				tmpString+=getRealHourString(hour, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 			}
+
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 
@@ -13718,6 +13984,17 @@ QString TimetableExport::singleBuildingsTimetableTimeHorizontalHtml(int htmlLeve
 					 );
 				}
 			}
+
+			if(USE_DUMMY_TH_TR_TD){
+				if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+					if(rday!=gt.rules.nDaysPerWeek-1)
+						tmpString+=dummyTd(10);
+				}
+				else{
+					if(rday%2==1 && rday/2!=gt.rules.nRealDaysPerWeek-1)
+						tmpString+=dummyTd(10);
+				}
+			}
 		}
 		if((!PRINT_RTL && repeatNames) || PRINT_RTL){
 			if(htmlLevel>=2)
@@ -13729,10 +14006,16 @@ QString TimetableExport::singleBuildingsTimetableTimeHorizontalHtml(int htmlLeve
 		tmpString+="        </tr>\n";
 	}
 	//workaround begin.
-	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
-		tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+	int additionalSpan;
+	if(USE_DUMMY_TH_TR_TD)
+		additionalSpan = (gt.rules.mode!=MORNINGS_AFTERNOONS ? gt.rules.nDaysPerWeek-1 : gt.rules.nRealDaysPerWeek-1);
 	else
-		tmpString+="        <tr class=\"foot\"><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+		additionalSpan = 0;
+
+	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
+		tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek+additionalSpan)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+	else
+		tmpString+="        <tr class=\"foot\"><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek+additionalSpan)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
 	if((!PRINT_RTL && repeatNames) || PRINT_RTL){
 		tmpString+="<td></td>";
 	}
@@ -14529,6 +14812,17 @@ QString TimetableExport::singleRoomsTimetableTimeVerticalHtml(int htmlLevel, int
 			}
 			tmpString+="        </tr>\n";
 		}
+
+		if(USE_DUMMY_TH_TR_TD){
+			if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+				if(day!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTr(8, 10, currentCount+2+(repeatNames?2:0));
+			}
+			else{
+				if(day%2==1 && day/2!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTr(8, 10, currentCount+2+(repeatNames?2:0));
+			}
+		}
 	}
 	//workaround begin.
 	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
@@ -14579,6 +14873,10 @@ QString TimetableExport::singleRoomsTimetableTimeHorizontalHtml(int htmlLevel, i
 			else
 				day=gt.rules.nDaysPerWeek-1-rday;
 			tmpString+="          <th colspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getDayString(day, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+			
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	else{
@@ -14589,6 +14887,10 @@ QString TimetableExport::singleRoomsTimetableTimeHorizontalHtml(int htmlLevel, i
 			else
 				day=gt.rules.nRealDaysPerWeek-1-rday;
 			tmpString+="          <th colspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getRealDayString(day, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+			
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	if(PRINT_RTL || (!PRINT_RTL && repeatNames)){
@@ -14623,6 +14925,10 @@ QString TimetableExport::singleRoomsTimetableTimeHorizontalHtml(int htmlLevel, i
 
 				tmpString+=getHourString(hour, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 			}
+
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	else{
@@ -14647,6 +14953,10 @@ QString TimetableExport::singleRoomsTimetableTimeHorizontalHtml(int htmlLevel, i
 
 				tmpString+=getRealHourString(hour, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 			}
+
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 
@@ -14721,6 +15031,17 @@ QString TimetableExport::singleRoomsTimetableTimeHorizontalHtml(int htmlLevel, i
 					);
 				}
 			}
+
+			if(USE_DUMMY_TH_TR_TD){
+				if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+					if(rday!=gt.rules.nDaysPerWeek-1)
+						tmpString+=dummyTd(10);
+				}
+				else{
+					if(rday%2==1 && rday/2!=gt.rules.nRealDaysPerWeek-1)
+						tmpString+=dummyTd(10);
+				}
+			}
 		}
 		if((!PRINT_RTL && repeatNames) || PRINT_RTL){
 			if(htmlLevel>=2)
@@ -14732,10 +15053,16 @@ QString TimetableExport::singleRoomsTimetableTimeHorizontalHtml(int htmlLevel, i
 		tmpString+="        </tr>\n";
 	}
 	//workaround begin.
-	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
-		tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+	int additionalSpan;
+	if(USE_DUMMY_TH_TR_TD)
+		additionalSpan = (gt.rules.mode!=MORNINGS_AFTERNOONS ? gt.rules.nDaysPerWeek-1 : gt.rules.nRealDaysPerWeek-1);
 	else
-		tmpString+="        <tr class=\"foot\"><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+		additionalSpan = 0;
+
+	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
+		tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek+additionalSpan)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+	else
+		tmpString+="        <tr class=\"foot\"><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek+additionalSpan)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
 	if((!PRINT_RTL && repeatNames) || PRINT_RTL){
 		tmpString+="<td></td>";
 	}
@@ -15541,6 +15868,17 @@ QString TimetableExport::singleSubjectsTimetableTimeVerticalHtml(int htmlLevel, 
 			}
 			tmpString+="        </tr>\n";
 		}
+
+		if(USE_DUMMY_TH_TR_TD){
+			if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+				if(day!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTr(8, 10, currentCount+2+(repeatNames?2:0));
+			}
+			else{
+				if(day%2==1 && day/2!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTr(8, 10, currentCount+2+(repeatNames?2:0));
+			}
+		}
 	}
 	//workaround begin.
 	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
@@ -15590,6 +15928,10 @@ QString TimetableExport::singleSubjectsTimetableTimeHorizontalHtml(int htmlLevel
 			else
 				day=gt.rules.nDaysPerWeek-1-rday;
 			tmpString+="          <th colspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getDayString(day, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+			
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	else{
@@ -15600,6 +15942,10 @@ QString TimetableExport::singleSubjectsTimetableTimeHorizontalHtml(int htmlLevel
 			else
 				day=gt.rules.nRealDaysPerWeek-1-rday;
 			tmpString+="          <th colspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getRealDayString(day, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+			
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	if(PRINT_RTL || (!PRINT_RTL && repeatNames)){
@@ -15634,6 +15980,10 @@ QString TimetableExport::singleSubjectsTimetableTimeHorizontalHtml(int htmlLevel
 
 				tmpString+=getHourString(hour, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 			}
+
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	else{
@@ -15658,6 +16008,10 @@ QString TimetableExport::singleSubjectsTimetableTimeHorizontalHtml(int htmlLevel
 
 				tmpString+=getRealHourString(hour, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 			}
+
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 
@@ -15749,6 +16103,17 @@ QString TimetableExport::singleSubjectsTimetableTimeHorizontalHtml(int htmlLevel
 				 SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ROOMS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ROOMS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ROOMS_CODES
 				 );
 			}
+
+			if(USE_DUMMY_TH_TR_TD){
+				if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+					if(rday!=gt.rules.nDaysPerWeek-1)
+						tmpString+=dummyTd(10);
+				}
+				else{
+					if(rday%2==1 && rday/2!=gt.rules.nRealDaysPerWeek-1)
+						tmpString+=dummyTd(10);
+				}
+			}
 		}
 		if((!PRINT_RTL && repeatNames) || PRINT_RTL){
 			if(htmlLevel>=2)
@@ -15759,10 +16124,16 @@ QString TimetableExport::singleSubjectsTimetableTimeHorizontalHtml(int htmlLevel
 		tmpString+="        </tr>\n";
 	}
 	//workaround begin.
-	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
-		tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+	int additionalSpan;
+	if(USE_DUMMY_TH_TR_TD)
+		additionalSpan = (gt.rules.mode!=MORNINGS_AFTERNOONS ? gt.rules.nDaysPerWeek-1 : gt.rules.nRealDaysPerWeek-1);
 	else
-		tmpString+="        <tr class=\"foot\"><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+		additionalSpan = 0;
+
+	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
+		tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek+additionalSpan)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+	else
+		tmpString+="        <tr class=\"foot\"><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek+additionalSpan)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
 	if((!PRINT_RTL && repeatNames) || PRINT_RTL){
 		tmpString+="<td></td>";
 	}
@@ -16571,6 +16942,17 @@ QString TimetableExport::singleActivityTagsTimetableTimeVerticalHtml(int htmlLev
 			}
 			tmpString+="        </tr>\n";
 		}
+
+		if(USE_DUMMY_TH_TR_TD){
+			if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+				if(day!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTr(8, 10, currentCount+2+(repeatNames?2:0));
+			}
+			else{
+				if(day%2==1 && day/2!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTr(8, 10, currentCount+2+(repeatNames?2:0));
+			}
+		}
 	}
 	//workaround begin.
 	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
@@ -16622,6 +17004,10 @@ QString TimetableExport::singleActivityTagsTimetableTimeHorizontalHtml(int htmlL
 			else
 				day=gt.rules.nDaysPerWeek-1-rday;
 			tmpString+="          <th colspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getDayString(day, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+			
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	else{
@@ -16632,6 +17018,10 @@ QString TimetableExport::singleActivityTagsTimetableTimeHorizontalHtml(int htmlL
 			else
 				day=gt.rules.nRealDaysPerWeek-1-rday;
 			tmpString+="          <th colspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getRealDayString(day, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+			
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	if(PRINT_RTL || (!PRINT_RTL && repeatNames)){
@@ -16666,6 +17056,10 @@ QString TimetableExport::singleActivityTagsTimetableTimeHorizontalHtml(int htmlL
 
 				tmpString+=getHourString(hour, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 			}
+
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 	else{
@@ -16690,6 +17084,10 @@ QString TimetableExport::singleActivityTagsTimetableTimeHorizontalHtml(int htmlL
 
 				tmpString+=getRealHourString(hour, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 			}
+
+			if(USE_DUMMY_TH_TR_TD)
+				if(rday!=gt.rules.nRealDaysPerWeek-1)
+					tmpString+=dummyTh(10);
 		}
 	}
 
@@ -16759,6 +17157,17 @@ QString TimetableExport::singleActivityTagsTimetableTimeHorizontalHtml(int htmlL
 				 SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ROOMS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ROOMS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ROOMS_CODES
 				 );
 			}
+
+			if(USE_DUMMY_TH_TR_TD){
+				if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+					if(rday!=gt.rules.nDaysPerWeek-1)
+						tmpString+=dummyTd(10);
+				}
+				else{
+					if(rday%2==1 && rday/2!=gt.rules.nRealDaysPerWeek-1)
+						tmpString+=dummyTd(10);
+				}
+			}
 		}
 		if((!PRINT_RTL && repeatNames) || PRINT_RTL){
 			if(htmlLevel>=2)
@@ -16769,10 +17178,16 @@ QString TimetableExport::singleActivityTagsTimetableTimeHorizontalHtml(int htmlL
 		tmpString+="        </tr>\n";
 	}
 	//workaround begin.
-	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
-		tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+	int additionalSpan;
+	if(USE_DUMMY_TH_TR_TD)
+		additionalSpan = (gt.rules.mode!=MORNINGS_AFTERNOONS ? gt.rules.nDaysPerWeek-1 : gt.rules.nRealDaysPerWeek-1);
 	else
-		tmpString+="        <tr class=\"foot\"><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+		additionalSpan = 0;
+
+	if(!PRINT_RTL || (PRINT_RTL && repeatNames))
+		tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek+additionalSpan)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
+	else
+		tmpString+="        <tr class=\"foot\"><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek+additionalSpan)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td>";
 	if((!PRINT_RTL && repeatNames) || PRINT_RTL){
 		tmpString+="<td></td>";
 	}

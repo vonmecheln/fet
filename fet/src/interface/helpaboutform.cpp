@@ -119,7 +119,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	 .arg("Rodolfo Ribeiro Gomes")
 	 .arg("rodolforg AT gmail.com");
 	contributors+=QString("<br />");
-	contributors+=QString("&nbsp;&nbsp;&nbsp;&nbsp;- ")+tr("An initial draft code for the constraints of type teacher(s) max span per day and teacher(s) min resting hours.");
+	contributors+=QString("&nbsp;&nbsp;&nbsp;&nbsp;- ")+tr("An initial code for the constraints of type teacher(s) max span per day and teacher(s) min resting hours.");
 	contributors+=QString("<br />");
 	contributors+=QString("&nbsp;&nbsp;&nbsp;&nbsp;- ")+tr("The alphabetic sorting of the items which respects the user's locale "
 	 "(the special characters are correctly ordered).");
@@ -401,11 +401,93 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	translatorsTextBrowser->setHtml(translators);
 	
 	QString references=QString("");
-	references+=tr("You may find references for the algorithms and techniques used in this program on the FET documentation web page, %1")
+	references+=tr("References for the idea of the timetable generation algorithm:");
+	references+=QString("<br /><br />");
+	references+=QString("1. ")+tr("%1 - 5 July 2002 (free, on the internet, one possible link is: %2) - Section %3 - Manual Timetabling - pages %4.",
+	 "%1 is a referenced paper (author and title), %2 is an internet link for the referenced paper, %3 is the number of the used section, %4 are the numbers of the used pages.")
+	 .arg("Michael Marte - Models And Algorithms For School Timetabling - A Constraint Programming Approach")
+	 .arg("https://www.en.pms.ifi.lmu.de/publications/dissertationen/PMS-DISS-2003-1/PMS-DISS-2003-1.pdf")
+	 .arg("2.2.5")
+	 .arg("23-24");
+	references+=QString("<br /><br />");
+	references+=QString("2. ")+tr("%1 - March 2007 (free, on the internet, one possible link is: %2) - Section %3 - page %4.",
+	 "%1 is a referenced paper (author and title), %2 is an internet link for the referenced paper, %3 is the number of the used section, %4 is the number of the used page.")
+	 .arg("Jantien Hartog - Timetabling on Dutch High-Schools - Satisfiability versus gp-Untis")
+	 .arg("https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=98a8bd5acac1757e3637f070ec039aa6c27a1009")
+	 .arg("5.2")
+	 .arg("27");
+
+	references+=QString("<br /><br /><br />");
+
+	references+=tr("References for other algorithms and techniques used in FET:");
+	references+=QString("<br /><br />");
+	references+=QString("1. ")+tr("Generating a random permutation of a vector in linear time (used to shuffle the time slots at which an activity "
+	 "can be placed, and in other places in FET): %1 -  First Edition (in Romanian), Section %2, Exercise %3.", "%1 is a book referenced by FET, "
+	 "%2 is a section of this book, %3 is an exercise in this book.")
+	 .arg("Thomas H. Cormen, Charles E. Leiserson and Ronald R. Rivest - Introduction to Algorithms")
+	 .arg("8.3")
+	 .arg("8.3-4");
+	references+=QString("<br /><br />");
+	references+=QString("2. ")+tr("Obsolete - it was replaced in FET version %1: 32 bit random number generator: %2 - Third Edition (in Romanian), Section %3.",
+	 "'Obsolete' refers to this random number generator, it was used in previous FET versions, but it was replaced by another random number generator, "
+	 "%1 is a FET version number, %2 is a book referenced by FET, %3 is a section in this book.")
+	 .arg("5.44.0")
+	 .arg("Donald E. Knuth - The Art of Computer Programming - Volume 2 - Seminumerical Algorithms")
+	 .arg("3.6");
+	references+=QString("<br /><br />");
+	references+=QString("3. ")+tr("The 32 bit random number generator named %1: %2 - %3. Includes ideas and code from the files: %4, %5, and/or %6. "
+	 "Used with permission from the author, %7 (9 March 2020).", "%1 is the name of a random number generator, %2 is a paper referenced in FET, "
+	 "%3 is its link, %4, %5, and %6 are three internet links of some C++ files, %7 is the author of this random number generator who gave us the permission "
+	 "to use his work, on 9 March 2020.")
+	 .arg("MRG32k3a")
+	 .arg("P. L'Ecuyer, ``Good Parameter Sets for Combined Multiple Recursive Random Number Generators'', Shorter version in Operations Research, 47, 1 (1999), 159--164.")
+	 .arg("http://pubsonline.informs.org/doi/abs/10.1287/opre.47.1.159")
+	 .arg("http://simul.iro.umontreal.ca/rng/MRG32k3a.h")
+	 .arg("http://simul.iro.umontreal.ca/rng/MRG32k3a.c")
+	 .arg("https://www.iro.umontreal.ca/~lecuyer/myftp/papers/combmrg2.c")
+	 .arg("Pierre L'Ecuyer");
+	references+=QString("<br /><br />");
+	references+=QString("4. ")+tr("For the virtual rooms allocation function we used an algorithm for a randomized maximum bipartite matching of minimum cost, "
+	 "inspired and modified from the %1 algorithm, which was described and implemented in pseudocode on the Wikipedia internet page: %2.",
+	 "%1 is the name of the algoritm, %2 is an internet page.")
+	 .arg("Hopcroft-Karp")
+	 .arg("https://en.wikipedia.org/wiki/Hopcroft%E2%80%93Karp_algorithm");
+
+	references+=QString("<br /><br /><br />");
+
+	references+=tr("C++ code references for FET:");
+	references+=QString("<br /><br />");
+	references+=QString("1. ")+tr("Qt Documentation: %1.", "%1 is the internet address for the Qt documentation.").arg("https://doc.qt.io/");
+	references+=QString("<br /><br />");
+	references+=QString("2. ")+tr("%1: %2. We used the idea of contiguous memory allocation into a dynamic array. We used the idea in the file %3.",
+	 "%1 is a tutorial referenced by FET, %2 is its internet address, %3 is a FET file.")
+	 .arg("A tutorial on pointers and arrays in C, by Ted Jensen, Chapter 9: Pointers and Dynamic Allocation of Memory")
+	 .arg("https://pdos.csail.mit.edu/6.828/2014/readings/pointers.pdf")
+	 .arg("src/engine/matrix.h");
+	references+=QString("<br /><br />");
+	references+=QString("3. ")+tr("%1: %2. We used the recommendation to add the () operator for a dynamically allocated matrix, which is not necessarily slower. "
+	 "We used the idea in the file %3.", "%1 is a paper referenced by FET, %2 is its internet address, %3 is a FET file.")
+	 .arg("C++ FAQ LITE, by Marshall Cline, Section [13] - Operator overloading, Article [13.12]")
+	 .arg("http://parashift.com/c++-faq-lite/")
+	 .arg("src/engine/matrix.h");
+	references+=QString("<br /><br />");
+	references+=QString("4. ")+tr("References for the Javascript code to highlight similar entries in the HTML timetables (FET code by %1) can be found in "
+	 "%2: %3, authored by %4.", "%1 is a FET author, %2 is the name of this software referenced by FET, %3 is its internet address, "
+	 "%4 is the author of the software referenced by FET.")
+	 .arg("Volker Dirr")
+	 .arg("Open Admin for Schools")
+	 .arg("http://www.openadmin.ca/")
+	 .arg("Les Richardson");
+
+	references+=QString("<br /><br /><br />");
+
+	references+=tr("You may find updated or additional references for the algorithms and techniques used in this program on the FET documentation web page, %1",
+	 "%1 is the FET documentation web page.")
 	 .arg("<a href=\"https://lalescu.ro/liviu/fet/doc/\">https://lalescu.ro/liviu/fet/doc/</a>");
 	references+=QString("<br />");
+
 	referencesTextBrowser->setHtml(references);
-	
+
 	QString thanksTo=QString("");
 	thanksTo+=tr("The following people, listed chronologically, participated in this project with suggestions, example files, "
 	 "reports, and/or other kinds of contributions:");
@@ -1152,7 +1234,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("giardiniere");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString("darkwindow");
+	thanksTo+=QString("infoo_");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("castonepatha");
 	thanksTo+=QString("<br />");

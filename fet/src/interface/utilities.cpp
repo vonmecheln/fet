@@ -1,9 +1,9 @@
 /*
-File centerwidgetonscreen.cpp
+File utilities.cpp
 */
 
 /***************************************************************************
-                          centerwidgetonscreen.cpp  -  description
+                          utilities.cpp  -  description
                              -------------------
     begin                : 13 July 2008
     copyright            : (C) 2008 by Liviu Lalescu
@@ -21,6 +21,8 @@ File centerwidgetonscreen.cpp
 
 #include <Qt>
 #include <QtGlobal>
+
+#include "utilities.h"
 
 #include "rules.h"
 #include "timetable.h"
@@ -237,13 +239,13 @@ void setStretchAvailabilityTableNicely(QTableWidget* tableWidget)
 	tableWidget->verticalHeader()->setMinimumSectionSize(q);
 	
 	//2011-09-23
-	for(int i=0; i<tableWidget->rowCount(); i++){
+	/*for(int i=0; i<tableWidget->rowCount(); i++){
 		for(int j=0; j<tableWidget->columnCount(); j++){
 			QFont font=tableWidget->item(i,j)->font();
 			font.setBold(true);
 			tableWidget->item(i,j)->setFont(font);
 		}
-	}
+	}*/
 	tableWidget->setCornerButtonEnabled(false);
 }
 
@@ -592,7 +594,7 @@ void highlightOnHorizontalHeaderClicked(QTableWidget* tableWidget, int col)
 	}
 
 	if(col>=0 && col<nD){
-		for(int j=0; j<nD; j++)
+		for(int j=0; j<nD; j++){
 			if(j!=col){
 				QTableWidgetItem* hhi=tableWidget->horizontalHeaderItem(j);
 				if(hhi!=nullptr){
@@ -608,6 +610,7 @@ void highlightOnHorizontalHeaderClicked(QTableWidget* tableWidget, int col)
 					}
 				}
 			}
+		}
 		for(int i=0; i<nH; i++){
 			QTableWidgetItem* vhi=tableWidget->verticalHeaderItem(i);
 			if(vhi!=nullptr){
@@ -680,7 +683,7 @@ void highlightOnVerticalHeaderClicked(QTableWidget* tableWidget, int row)
 				}
 			}
 		}
-		for(int i=0; i<nH; i++)
+		for(int i=0; i<nH; i++){
 			if(i!=row){
 				QTableWidgetItem* vhi=tableWidget->verticalHeaderItem(i);
 				if(vhi!=nullptr){
@@ -696,6 +699,7 @@ void highlightOnVerticalHeaderClicked(QTableWidget* tableWidget, int row)
 					}
 				}
 			}
+		}
 
 		QTableWidgetItem* vhi=tableWidget->verticalHeaderItem(row);
 		if(vhi!=nullptr){
@@ -738,7 +742,7 @@ void highlightOnCellEntered(QTableWidget* tableWidget, int row, int col)
 	}
 
 	if(row>=0 && row<nH && col>=0 && col<nD){
-		for(int j=0; j<nD; j++)
+		for(int j=0; j<nD; j++){
 			if(j!=col){
 				QTableWidgetItem* hhi=tableWidget->horizontalHeaderItem(j);
 				if(hhi!=nullptr){
@@ -754,8 +758,9 @@ void highlightOnCellEntered(QTableWidget* tableWidget, int row, int col)
 					}
 				}
 			}
+		}
 
-		for(int i=0; i<nH; i++)
+		for(int i=0; i<nH; i++){
 			if(i!=row){
 				QTableWidgetItem* vhi=tableWidget->verticalHeaderItem(i);
 				if(vhi!=nullptr){
@@ -771,6 +776,7 @@ void highlightOnCellEntered(QTableWidget* tableWidget, int row, int col)
 					}
 				}
 			}
+		}
 
 		QTableWidgetItem* hhi=tableWidget->horizontalHeaderItem(col);
 		if(hhi!=nullptr){
@@ -830,6 +836,8 @@ void colorItem(QTableWidgetItem* item)
 
 void initTimesTable(QTableWidget* timesTable)
 {
+	timesTable->clear();
+
 	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
 		timesTable->setRowCount(gt.rules.nHoursPerDay);
 		timesTable->setColumnCount(gt.rules.nDaysPerWeek);
@@ -846,6 +854,11 @@ void initTimesTable(QTableWidget* timesTable)
 		for(int i=0; i<gt.rules.nHoursPerDay; i++)
 			for(int j=0; j<gt.rules.nDaysPerWeek; j++){
 				QTableWidgetItem* item=new QTableWidgetItem(NO);
+
+				QFont font=item->font();
+				font.setBold(true);
+				item->setFont(font);
+
 				item->setTextAlignment(Qt::AlignCenter);
 				item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 				colorItem(item);
@@ -870,6 +883,11 @@ void initTimesTable(QTableWidget* timesTable)
 		for(int i=0; i<2*gt.rules.nHoursPerDay; i++)
 			for(int j=0; j<gt.rules.nDaysPerWeek/2; j++){
 				QTableWidgetItem* item=new QTableWidgetItem(NO);
+
+				QFont font=item->font();
+				font.setBold(true);
+				item->setFont(font);
+
 				item->setTextAlignment(Qt::AlignCenter);
 				item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 				colorItem(item);
@@ -882,6 +900,8 @@ void initTimesTable(QTableWidget* timesTable)
 
 void fillTimesTable(QTableWidget* timesTable, const QList<int>& days, const QList<int>& hours, bool direct)
 {
+	timesTable->clearContents();
+
 	Matrix2D<bool> currentMatrix;
 	currentMatrix.resize(gt.rules.nHoursPerDay, gt.rules.nDaysPerWeek);
 
@@ -900,6 +920,11 @@ void fillTimesTable(QTableWidget* timesTable, const QList<int>& days, const QLis
 		for(int i=0; i<gt.rules.nHoursPerDay; i++)
 			for(int j=0; j<gt.rules.nDaysPerWeek; j++){
 				QTableWidgetItem* item=new QTableWidgetItem;
+
+				QFont font=item->font();
+				font.setBold(true);
+				item->setFont(font);
+
 				item->setTextAlignment(Qt::AlignCenter);
 				item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
 				if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
@@ -926,6 +951,11 @@ void fillTimesTable(QTableWidget* timesTable, const QList<int>& days, const QLis
 		for(int i=0; i<2*gt.rules.nHoursPerDay; i++)
 			for(int j=0; j<gt.rules.nDaysPerWeek/2; j++){
 				QTableWidgetItem* item=new QTableWidgetItem;
+
+				QFont font=item->font();
+				font.setBold(true);
+				item->setFont(font);
+
 				item->setTextAlignment(Qt::AlignCenter);
 				item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
 				if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
@@ -1072,6 +1102,31 @@ void toggleAllClickedTimesTable(QTableWidget* timesTable)
 		newText=NO;
 	for(int i=0; i<nH; i++)
 		for(int j=0; j<nD; j++){
+			timesTable->item(i, j)->setText(newText);
+			colorItem(timesTable->item(i,j));
+		}
+}
+
+void swapClickedTimesTable(QTableWidget* timesTable)
+{
+	int nD, nH;
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+		nD=gt.rules.nDaysPerWeek;
+		nH=gt.rules.nHoursPerDay;
+	}
+	else{
+		nD=gt.rules.nDaysPerWeek/2;
+		nH=2*gt.rules.nHoursPerDay;
+	}
+
+	for(int i=0; i<nH; i++)
+		for(int j=0; j<nD; j++){
+			QString newText;
+			if(timesTable->item(i, j)->text()==NO)
+				newText=YES;
+			else
+				newText=NO;
+
 			timesTable->item(i, j)->setText(newText);
 			colorItem(timesTable->item(i,j));
 		}

@@ -2668,20 +2668,7 @@ but a better one should be: 5 + 5 + 4 + 4 + 3
 So, I recommend a new constraint like "frequency of max hours per day"
 For my example this new parameter would be 2 (5+5)
 
-180---------------------------------------------------------
-From Pietro (on forum), also by Matsumoto (on forum):
-
---> A part suggested by Pietro is DONE <--
-
-The second part, suggested by Pietro (on forum):
-
-It would be very nice if the border between different days was thicker.
-
-Or, as suggested by Matsumoto (on forum): A common point my colleagues present is that there's very little emphasis between different days
-(like on Teacher's Time table), and it'd be good to have a way to maybe add a thicker line between the different days to separate them better, is it achievable?
-
-Or, as suggested by liquid (on forum): I suggest (please) to divide days with bolder or thicker lines. For me, it would enhance clarity when viewing or
-printing a schedule, both in printable and viewable versions.
+180------DONE since FET-7.0.4 - 19 February 2025------------
 
 181------DONE since FET-5.21.0 - 3 December 2013------------
 
@@ -7549,7 +7536,7 @@ Liviu Lalescu:
 It is possible, but it is bad to mix the data with the timetable.
 
 488---------------------------------------------------------
-From darkwindow (on forum):
+From infoo_ (on forum):
 
 https://lalescu.ro/liviu/fet/forum/index.php?topic=5461.0
 
@@ -10580,3 +10567,11 @@ https://lalescu.ro/liviu/fet/forum/index.php?topic=6290.0
 Probably also for days.
 
 2) Add an option to hide empty rows in the timetables.
+
+677--------------------------------------------------------
+From GUEFFAZ REDA (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6292.0
+
+He suggests a virtual break in the timetable view dialogs, just so that the timetable appears clearer
+(for instance between the 2nd and the 3rd FET hours - for the Mornings-Afternoons mode).

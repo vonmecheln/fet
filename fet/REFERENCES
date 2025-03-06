@@ -1,1 +1,47 @@
-You may find references for the algorithms and techniques used in this program on the FET documentation web page, https://lalescu.ro/liviu/fet/doc/
+References for the idea of the timetable generation algorithm:
+
+1. Michael Marte - Models And Algorithms For School Timetabling - A Constraint Programming Approach - 5 July 2002
+(free, on the internet, one possible link is: https://www.en.pms.ifi.lmu.de/publications/dissertationen/PMS-DISS-2003-1/PMS-DISS-2003-1.pdf)
+- Section 2.2.5 - Manual Timetabling - pages 23-24.
+
+2. Jantien Hartog - Timetabling on Dutch High-Schools - Satisfiability versus gp-Untis - March 2007
+(free, on the internet, one possible link is: https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=98a8bd5acac1757e3637f070ec039aa6c27a1009)
+- Section 5.2 - page 27.
+
+
+References for other algorithms and techniques used in FET:
+
+1. Generating a random permutation of a vector in linear time (used to shuffle the time slots at which an activity can be placed,
+and in other places in FET): Thomas H. Cormen, Charles E. Leiserson and Ronald R. Rivest - Introduction to Algorithms - First Edition (in Romanian),
+Section 8.3, Exercise 8.3-4.
+
+2. Obsolete - it was replaced in FET version 5.44.0: 32 bit random number generator: Donald E. Knuth - The Art of Computer Programming - Volume 2 -
+Seminumerical Algorithms - Third Edition (in Romanian), Section 3.6.
+
+3. The 32 bit random number generator named MRG32k3a: P. L'Ecuyer, ``Good Parameter Sets for Combined Multiple Recursive Random Number Generators'',
+Shorter version in Operations Research, 47, 1 (1999), 159--164. - http://pubsonline.informs.org/doi/abs/10.1287/opre.47.1.159. Includes ideas and code
+from the files: http://simul.iro.umontreal.ca/rng/MRG32k3a.h, http://simul.iro.umontreal.ca/rng/MRG32k3a.c, and/or
+https://www.iro.umontreal.ca/~lecuyer/myftp/papers/combmrg2.c. Used with permission from the author, Pierre L'Ecuyer (9 March 2020).
+
+4. For the virtual rooms allocation function we used an algorithm for a randomized maximum bipartite matching of minimum cost, inspired and modified from the
+Hopcroft-Karp algorithm, which was described and implemented in pseudocode on the Wikipedia internet page:
+https://en.wikipedia.org/wiki/Hopcroft%E2%80%93Karp_algorithm.
+
+
+C++ code references for FET:
+
+1. Qt Documentation: https://doc.qt.io/.
+
+2. A tutorial on pointers and arrays in C, by Ted Jensen, Chapter 9: Pointers and Dynamic Allocation of Memory:
+https://pdos.csail.mit.edu/6.828/2014/readings/pointers.pdf. We used the idea of contiguous memory allocation into a dynamic array.
+We used the idea in the file src/engine/matrix.h.
+
+3. C++ FAQ LITE, by Marshall Cline, Section [13] - Operator overloading, Article [13.12]: http://parashift.com/c++-faq-lite/.
+We used the recommendation to add the () operator for a dynamically allocated matrix, which is not necessarily slower. We used the
+idea in the file src/engine/matrix.h.
+
+4. References for the Javascript code to highlight similar entries in the HTML timetables (FET code by Volker Dirr) can be found in
+Open Admin for Schools: http://www.openadmin.ca/, authored by Les Richardson.
+
+
+You may find updated or additional references for the algorithms and techniques used in this program on the FET documentation web page, https://lalescu.ro/liviu/fet/doc/

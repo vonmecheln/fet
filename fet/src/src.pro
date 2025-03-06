@@ -29,7 +29,8 @@ SOURCES += \
 	engine/generate.cpp \
 	engine/statisticsexport.cpp \
 	engine/lockunlock.cpp \
-	engine/messageboxes.cpp \
+	\
+	interface/messageboxes.cpp \
 	\
 	interface/addormodifytimeconstraint.cpp \
 	interface/listtimeconstraints.cpp \
@@ -78,7 +79,7 @@ SOURCES += \
 	interface/timetablegenerateform.cpp \
 	interface/timetablegeneratemultipleform.cpp \
 	interface/fetmainform.cpp \
-	interface/centerwidgetonscreen.cpp \
+	interface/utilities.cpp \
 	interface/helponstudentsminhoursdaily.cpp \
 	interface/settingstimetablehtmllevelform.cpp \
 	interface/timetableviewstudentsdayshorizontalform.cpp \
@@ -195,7 +196,8 @@ HEADERS += \
 	engine/statisticsexport.h \
 	engine/lockunlock.h \
 	engine/matrix.h \
-	engine/messageboxes.h \
+	\
+	interface/messageboxes.h \
 	\
 	interface/addormodifytimeconstraint.h \
 	interface/listtimeconstraints.h \
@@ -244,7 +246,7 @@ HEADERS += \
 	interface/timetablegenerateform.h \
 	interface/timetablegeneratemultipleform.h \
 	interface/fetmainform.h \
-	interface/centerwidgetonscreen.h \
+	interface/utilities.h \
 	interface/helponstudentsminhoursdaily.h \
 	interface/settingstimetablehtmllevelform.h \
 	interface/timetableviewstudentsdayshorizontalform.h \

@@ -1,9 +1,9 @@
 /*
-File centerwidgetonscreen.h
+File utilities.h
 */
 
 /***************************************************************************
-                          centerwidgetonscreen.h  -  description
+                          utilities.h  -  description
                              -------------------
     begin                : 13 July 2008
     copyright            : (C) 2008 by Liviu Lalescu
@@ -19,8 +19,8 @@ File centerwidgetonscreen.h
  *                                                                         *
  ***************************************************************************/
 
-#ifndef CENTERWIDGETONSCREEN_H
-#define CENTERWIDGETONSCREEN_H
+#ifndef UTILITIES_H
+#define UTILITIES_H
 
 #include <QString>
 
@@ -78,5 +78,6 @@ void horizontalHeaderClickedTimesTable(QTableWidget* timesTable, int col);
 void verticalHeaderClickedTimesTable(QTableWidget* timesTable, int row);
 void cellEnteredTimesTable(QTableWidget* timesTable, int row, int col);
 void toggleAllClickedTimesTable(QTableWidget* timesTable);
+void swapClickedTimesTable(QTableWidget* timesTable);
 
 #endif

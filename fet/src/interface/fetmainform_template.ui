@@ -1802,7 +1802,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Duplicate vertical headers to the right</string>
+    <string extracomment="It means to write the vertical headers also on the right of the tables (for LTR writing systems) or to the left of the tables (for RTL writing systems)">Duplicate vertical headers at the end</string>
    </property>
   </action>
   <action name="groupActivitiesInInitialOrderAction">

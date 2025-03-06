@@ -21,7 +21,7 @@
 
 #include "longtextmessagebox.h"
 
-#include "centerwidgetonscreen.h"
+#include "utilities.h"
 
 #include "lockunlock.h"
 
@@ -231,6 +231,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 	secondModifyInstructionsLabel=nullptr;
 
 	toggleAllPushButton=nullptr;
+	swapPushButton=nullptr;
 	
 	timesTable=nullptr;
 	oldItemDelegate=nullptr;
@@ -323,6 +324,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				}
 				
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+				swapPushButton=new QPushButton(tr("Swap"));
 				
 				timesTable=new QTableWidget;
 				
@@ -351,6 +353,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				}
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+				swapPushButton=new QPushButton(tr("Swap"));
 
 				timesTable=new QTableWidget;
 
@@ -760,6 +763,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				}
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+				swapPushButton=new QPushButton(tr("Swap"));
 
 				timesTable=new QTableWidget;
 
@@ -1232,6 +1236,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				activitiesComboBox=new QComboBox;
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+				swapPushButton=new QPushButton(tr("Swap"));
 
 				timesTable=new QTableWidget;
 
@@ -1280,6 +1285,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				durationSpinBox->setValue(1);
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+				swapPushButton=new QPushButton(tr("Swap"));
 
 				timesTable=new QTableWidget;
 
@@ -1324,6 +1330,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				activitiesComboBox=new QComboBox;
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+				swapPushButton=new QPushButton(tr("Swap"));
 
 				timesTable=new QTableWidget;
 
@@ -1372,6 +1379,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				durationSpinBox->setValue(1);
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+				swapPushButton=new QPushButton(tr("Swap"));
 
 				timesTable=new QTableWidget;
 
@@ -1640,6 +1648,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				durationSpinBox->setValue(1);
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+				swapPushButton=new QPushButton(tr("Swap"));
 
 				timesTable=new QTableWidget;
 
@@ -1693,6 +1702,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				durationSpinBox->setValue(1);
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+				swapPushButton=new QPushButton(tr("Swap"));
 
 				timesTable=new QTableWidget;
 
@@ -2354,6 +2364,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				clearActivitiesPushButton=new QPushButton(tr("Clear", "Clear the list of selected activities"));
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+				swapPushButton=new QPushButton(tr("Swap"));
 
 				timesTable=new QTableWidget;
 
@@ -2410,6 +2421,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				clearActivitiesPushButton=new QPushButton(tr("Clear", "Clear the list of selected activities"));
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+				swapPushButton=new QPushButton(tr("Swap"));
 
 				timesTable=new QTableWidget;
 
@@ -2890,6 +2902,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				clearActivitiesPushButton=new QPushButton(tr("Clear", "Clear the list of selected activities"));
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+				swapPushButton=new QPushButton(tr("Swap"));
 
 				timesTable=new QTableWidget;
 
@@ -2946,6 +2959,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				clearActivitiesPushButton=new QPushButton(tr("Clear", "Clear the list of selected activities"));
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+				swapPushButton=new QPushButton(tr("Swap"));
 
 				timesTable=new QTableWidget;
 
@@ -4953,6 +4967,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				clearActivitiesPushButton=new QPushButton(tr("Clear", "Clear the list of selected activities"));
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+				swapPushButton=new QPushButton(tr("Swap"));
 
 				timesTable=new QTableWidget;
 
@@ -6962,7 +6977,9 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 		connect(timesTable, &QTableWidget::itemClicked, this, &AddOrModifyTimeConstraint::itemClicked);
 		
 		assert(toggleAllPushButton!=nullptr);
+		assert(swapPushButton!=nullptr);
 		connect(toggleAllPushButton, &QPushButton::clicked, this, &AddOrModifyTimeConstraint::toggleAllClicked);
+		connect(swapPushButton, &QPushButton::clicked, this, &AddOrModifyTimeConstraint::swapClicked);
 		
 		initTimesTable(timesTable);
 
@@ -7300,6 +7317,9 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 	if(toggleAllPushButton!=nullptr)
 		if(tabWidget==nullptr)
 			buttons->addWidget(toggleAllPushButton);
+	if(swapPushButton!=nullptr)
+		if(tabWidget==nullptr)
+			buttons->addWidget(swapPushButton);
 	if(addConstraintPushButton!=nullptr)
 		buttons->addWidget(addConstraintPushButton);
 	if(addConstraintsPushButton!=nullptr)
@@ -7351,6 +7371,11 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 		if(tabWidget!=nullptr){
 			assert(toggleAllPushButton!=nullptr);
 			spinBoxLayout->addWidget(toggleAllPushButton);
+		}
+
+		if(tabWidget!=nullptr){
+			assert(swapPushButton!=nullptr);
+			spinBoxLayout->addWidget(swapPushButton);
 		}
 
 		spinBoxLayout->addWidget(labelForSpinBox);
@@ -19905,6 +19930,11 @@ void AddOrModifyTimeConstraint::toggleAllClicked()
 			timesTable->item(i, j)->setText(newText);
 			colorItem(timesTable->item(i,j));
 		}*/
+}
+
+void AddOrModifyTimeConstraint::swapClicked()
+{
+	swapClickedTimesTable(timesTable);
 }
 
 void AddOrModifyTimeConstraint::itemClicked(QTableWidgetItem* item)

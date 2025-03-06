@@ -46,6 +46,10 @@ public:
 	TimetableExport();
 	~TimetableExport();
 	
+	static QString dummyTh(int nSpacesBefore); //to differentiate the days in time horizontal/vertical views
+	static QString dummyTr(int nSpacesBeforeTr, int nSpacesBeforeTd, int colspan);
+	static QString dummyTd(int nSpacesBefore);
+	
 	static void stringToColor(const QString& s, int& r, int& g, int& b);
 	
 	static void getStudentsTeachersRoomsBuildingsTimetable(Solution& c);

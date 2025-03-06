@@ -17,7 +17,7 @@
 
 #include "modifyrealhourform.h"
 
-#include "centerwidgetonscreen.h"
+#include "utilities.h"
 
 ModifyRealHourForm::ModifyRealHourForm(QWidget* parent, const QString& name, const QString& longName): QDialog(parent)
 {

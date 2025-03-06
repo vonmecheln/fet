@@ -34,7 +34,7 @@ File timetable_defs.h
 
 #include <QtGlobal>
 
-#include "centerwidgetonscreen.h"
+#include "utilities.h"
 
 class QWidget;
 

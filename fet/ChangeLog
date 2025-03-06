@@ -3025,3 +3025,9 @@ Versions 7.0.0 - 7.0.v
 - Version 7.0.3
 	- Minor improvements.
 	- Corrected and improved the German translation, by Volker Dirr (following a bug report by uni_instructor).
+- Version 7.0.4
+	- Implemented additional table cells/lines to better separate the different days in the time horizontal/vertical timetables (suggested by Pietro, Matsumoto,
+	liquid, and maybe other users in the past).
+	- When modifying the constraints which include times tables, the slots marked with X will be bold (it was an inconsistent behavior, compared to adding such
+	constraints, and it was reported by infoo_).
+	- Added a swap button in the constraints which include times tables, to swap the empty (green) cells with the cells marked with X (red). Suggested by infoo_.

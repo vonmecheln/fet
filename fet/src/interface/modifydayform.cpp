@@ -17,7 +17,7 @@
 
 #include "modifydayform.h"
 
-#include "centerwidgetonscreen.h"
+#include "utilities.h"
 
 ModifyDayForm::ModifyDayForm(QWidget* parent, const QString& name, const QString& longName): QDialog(parent)
 {

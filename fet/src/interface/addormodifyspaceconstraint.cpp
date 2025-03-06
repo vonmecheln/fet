@@ -21,7 +21,7 @@
 
 #include "longtextmessagebox.h"
 
-#include "centerwidgetonscreen.h"
+#include "utilities.h"
 
 #include "lockunlock.h"
 
@@ -168,6 +168,7 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 	secondModifyInstructionsLabel=nullptr;
 
 	toggleAllPushButton=nullptr;
+	swapPushButton=nullptr;
 
 	timesTable=nullptr;
 	oldItemDelegate=nullptr;
@@ -253,6 +254,7 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 				}
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+				swapPushButton=new QPushButton(tr("Swap"));
 
 				timesTable=new QTableWidget;
 
@@ -1183,6 +1185,7 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 				}
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+				swapPushButton=new QPushButton(tr("Swap"));
 
 				timesTable=new QTableWidget;
 
@@ -2071,7 +2074,9 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 		connect(timesTable, &QTableWidget::itemClicked, this, &AddOrModifySpaceConstraint::itemClicked);
 
 		assert(toggleAllPushButton!=nullptr);
+		assert(swapPushButton!=nullptr);
 		connect(toggleAllPushButton, &QPushButton::clicked, this, &AddOrModifySpaceConstraint::toggleAllClicked);
+		connect(swapPushButton, &QPushButton::clicked, this, &AddOrModifySpaceConstraint::swapClicked);
 
 		initTimesTable(timesTable);
 
@@ -2218,6 +2223,8 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 	buttons->addStretch();
 	if(toggleAllPushButton!=nullptr)
 		buttons->addWidget(toggleAllPushButton);
+	if(swapPushButton!=nullptr)
+		buttons->addWidget(swapPushButton);
 	if(addConstraintPushButton!=nullptr)
 		buttons->addWidget(addConstraintPushButton);
 	if(addConstraintsPushButton!=nullptr)
@@ -6399,6 +6406,11 @@ void AddOrModifySpaceConstraint::toggleAllClicked()
 			timesTable->item(i, j)->setText(newText);
 			colorItem(timesTable->item(i,j));
 		}*/
+}
+
+void AddOrModifySpaceConstraint::swapClicked()
+{
+	swapClickedTimesTable(timesTable);
 }
 
 void AddOrModifySpaceConstraint::itemClicked(QTableWidgetItem* item)
