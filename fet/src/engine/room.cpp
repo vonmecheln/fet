@@ -210,30 +210,30 @@ QString Room::getDetailedDescription()
 
 QString Room::getXmlDescription()
 {
-	QString s="<Room>\n";
-	s+="	<Name>"+protect(this->name)+"</Name>\n";
-	s+="	<Long_Name>"+protect(this->longName)+"</Long_Name>\n";
-	s+="	<Code>"+protect(this->code)+"</Code>\n";
-	s+="	<Building>"+protect(this->building)+"</Building>\n";
+	QString s=IL2+"<Room>\n";
+	s+=IL3+"<Name>"+protect(this->name)+"</Name>\n";
+	s+=IL3+"<Long_Name>"+protect(this->longName)+"</Long_Name>\n";
+	s+=IL3+"<Code>"+protect(this->code)+"</Code>\n";
+	s+=IL3+"<Building>"+protect(this->building)+"</Building>\n";
 	//s+="	<Type>"+protect(this->type)+"</Type>\n";
-	s+="	<Capacity>"+CustomFETString::number(this->capacity)+"</Capacity>\n";
-	s+="	<Virtual>"+trueFalse(this->isVirtual)+"</Virtual>\n";
+	s+=IL3+"<Capacity>"+CustomFETString::number(this->capacity)+"</Capacity>\n";
+	s+=IL3+"<Virtual>"+trueFalse(this->isVirtual)+"</Virtual>\n";
 	if(this->isVirtual){
-		s+="	<Number_of_Sets_of_Real_Rooms>"+QString::number(this->realRoomsSetsList.count())+"</Number_of_Sets_of_Real_Rooms>\n";
+		s+=IL3+"<Number_of_Sets_of_Real_Rooms>"+QString::number(this->realRoomsSetsList.count())+"</Number_of_Sets_of_Real_Rooms>\n";
 		for(const QStringList& sl : std::as_const(this->realRoomsSetsList)){
-			s+="	<Set_of_Real_Rooms>\n";
-			s+="		<Number_of_Real_Rooms>"+QString::number(sl.count())+"</Number_of_Real_Rooms>\n";
+			s+=IL3+"<Set_of_Real_Rooms>\n";
+			s+=IL4+"<Number_of_Real_Rooms>"+QString::number(sl.count())+"</Number_of_Real_Rooms>\n";
 			for(const QString& rn : std::as_const(sl))
-				s+="		<Real_Room>"+protect(rn)+"</Real_Room>\n";
-			s+="	</Set_of_Real_Rooms>\n";
+				s+=IL4+"<Real_Room>"+protect(rn)+"</Real_Room>\n";
+			s+=IL3+"</Set_of_Real_Rooms>\n";
 		}
 	}
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
 	
 	/*for(QStringList::Iterator it=this->equipments.begin(); it!=this->equipments.end(); it++)
 		s+="	<Equipment>"+protect(*it)+"</Equipment>\n";*/
 	
-	s+="</Room>\n";
+	s+=IL2+"</Room>\n";
 
 	return s;
 }

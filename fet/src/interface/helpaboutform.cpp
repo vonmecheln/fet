@@ -79,7 +79,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	 "or a combination of these), %2 are the copyright holders").arg("2002-2025").arg("Liviu Lalescu, Volker Dirr");
 	about+=QString("<br /><br />");
 	about+=tr("Version: %1 (%2 %3).", "%1 is the current FET version, %2 is the current release month, %3 is the current release year").arg(FET_VERSION)
-	 .arg(QCoreApplication::translate("MonthsNames", "February")).arg("2025");
+	 .arg(QCoreApplication::translate("MonthsNames", "March")).arg("2025");
 	about+=QString("<br /><br />");
 	about+=tr("Licensed under the GNU Affero General Public License version 3 or later.");
 	about+=QString("<br /><br />");
@@ -441,9 +441,9 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	 "to use his work, on 9 March 2020.")
 	 .arg("MRG32k3a")
 	 .arg("P. L'Ecuyer, ``Good Parameter Sets for Combined Multiple Recursive Random Number Generators'', Shorter version in Operations Research, 47, 1 (1999), 159--164.")
-	 .arg("http://pubsonline.informs.org/doi/abs/10.1287/opre.47.1.159")
-	 .arg("http://simul.iro.umontreal.ca/rng/MRG32k3a.h")
-	 .arg("http://simul.iro.umontreal.ca/rng/MRG32k3a.c")
+	 .arg("https://pubsonline.informs.org/doi/abs/10.1287/opre.47.1.159")
+	 .arg("https://simul.iro.umontreal.ca/rng/MRG32k3a.h")
+	 .arg("https://simul.iro.umontreal.ca/rng/MRG32k3a.c")
 	 .arg("https://www.iro.umontreal.ca/~lecuyer/myftp/papers/combmrg2.c")
 	 .arg("Pierre L'Ecuyer");
 	references+=QString("<br /><br />");
@@ -478,6 +478,30 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	 .arg("Open Admin for Schools")
 	 .arg("http://www.openadmin.ca/")
 	 .arg("Les Richardson");
+	references+=QString("<br /><br />");
+	references+=QString("5. https://www.qtcentre.org/threads/53066-QMap-sorting-according-to-QLocale");
+	references+=QString("<br /><br />");
+	references+=QString("6. https://www.qtcentre.org/threads/57210-how-to-change-background-color-of-individual-QHeaderView-section");
+	references+=QString("<br /><br />");
+	references+=QString("7. https://www.qtcentre.org/threads/46841-Can-t-style-QHeaderView-section-selected-in-QSS-stylesheet");
+	references+=QString("<br /><br />");
+	references+=QString("8. https://stackoverflow.com/questions/15519749/how-to-get-widget-background-qcolor");
+	references+=QString("<br /><br />");
+	references+=QString("9. https://stackoverflow.com/questions/22635867/is-it-possible-to-set-the-text-of-the-qtableview-corner-button");
+	references+=QString("<br /><br />");
+	references+=QString("10. https://stackoverflow.com/questions/19555121/how-to-get-current-timestamp-in-milliseconds-since-1970-just-the-way-java-gets");
+	references+=QString("<br /><br />");
+	references+=QString("11. https://stackoverflow.com/questions/31255486/c-how-do-i-convert-a-stdchronotime-point-to-long-and-back");
+	references+=QString("<br /><br />");
+	references+=QString("12. https://stackoverflow.com/questions/18022927/convert-high-resolution-clock-time-into-an-integer-chrono/18023064");
+	references+=QString("<br /><br />");
+	references+=QString("13. https://stackoverflow.com/questions/37767847/stdsort-function-with-custom-compare-function-results-error-reference-to-non");
+	references+=QString("<br /><br />");
+	references+=QString("14. https://stackoverflow.com/questions/14416786/webpage-returning-http-406-error-only-when-connecting-from-qt");
+	references+=QString("<br /><br />");
+	references+=QString("15. http://amin-ahmadi.com/2016/06/13/fix-modsecurity-issues-in-qt-network-module-download-functionality/");
+	references+=QString("<br /><br />");
+	references+=QString("16. https://stackoverflow.com/questions/48093102/how-does-qt-select-a-default-style");
 
 	references+=QString("<br /><br /><br />");
 
@@ -1376,7 +1400,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Nahum Lipkunsky");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString("cracker_vic");
+	thanksTo+=QString("Željko Vrabec");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("JOYAL ISAC S");
 	thanksTo+=QString("<br />");
@@ -1385,6 +1409,10 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("g.theodoroy");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Mario");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Bouredha Youcef");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("ismailbsrn");
 	thanksTo+=QString("<br />");
 	
 	thanksToTextBrowser->setHtml(thanksTo);

@@ -77,13 +77,13 @@ Teacher::~Teacher()
 
 QString Teacher::getXmlDescription(const Rules& r)
 {
-	QString s="<Teacher>\n";
-	s+="	<Name>"+protect(this->name)+"</Name>\n";
-	s+="	<Long_Name>"+protect(this->longName)+"</Long_Name>\n";
-	s+="	<Code>"+protect(this->code)+"</Code>\n";
+	QString s=IL2+"<Teacher>\n";
+	s+=IL3+"<Name>"+protect(this->name)+"</Name>\n";
+	s+=IL3+"<Long_Name>"+protect(this->longName)+"</Long_Name>\n";
+	s+=IL3+"<Code>"+protect(this->code)+"</Code>\n";
 
 	if(r.mode==MORNINGS_AFTERNOONS){
-		s+="	<Mornings_Afternoons_Behavior>";
+		s+=IL3+"<Mornings_Afternoons_Behavior>";
 		if(morningsAfternoonsBehavior==TEACHER_UNRESTRICTED_MORNINGS_AFTERNOONS)
 			s+="Unrestricted";
 		else if(morningsAfternoonsBehavior==TEACHER_MORNING_OR_EXCLUSIVELY_AFTERNOON)
@@ -103,13 +103,13 @@ QString Teacher::getXmlDescription(const Rules& r)
 		s+="</Mornings_Afternoons_Behavior>\n";
 	}
 
-	s+="	<Target_Number_of_Hours>"+CustomFETString::number(targetNumberOfHours)+"</Target_Number_of_Hours>\n";
-	s+="	<Qualified_Subjects>\n";
+	s+=IL3+"<Target_Number_of_Hours>"+CustomFETString::number(targetNumberOfHours)+"</Target_Number_of_Hours>\n";
+	s+=IL3+"<Qualified_Subjects>\n";
 	for(const QString& sbj : std::as_const(qualifiedSubjectsList))
-		s+="		<Qualified_Subject>"+protect(sbj)+"</Qualified_Subject>\n";
-	s+="	</Qualified_Subjects>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</Teacher>\n";
+		s+=IL4+"<Qualified_Subject>"+protect(sbj)+"</Qualified_Subject>\n";
+	s+=IL3+"</Qualified_Subjects>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</Teacher>\n";
 
 	return s;
 }

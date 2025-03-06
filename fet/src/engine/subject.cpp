@@ -54,12 +54,12 @@ Subject::~Subject()
 
 QString Subject::getXmlDescription()
 {
-	QString s="<Subject>\n";
-	s+="	<Name>"+protect(this->name)+"</Name>\n";
-	s+="	<Long_Name>"+protect(this->longName)+"</Long_Name>\n";
-	s+="	<Code>"+protect(this->code)+"</Code>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</Subject>\n";
+	QString s=IL2+"<Subject>\n";
+	s+=IL3+"<Name>"+protect(this->name)+"</Name>\n";
+	s+=IL3+"<Long_Name>"+protect(this->longName)+"</Long_Name>\n";
+	s+=IL3+"<Code>"+protect(this->code)+"</Code>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</Subject>\n";
 
 	return s;
 }

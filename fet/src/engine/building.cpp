@@ -98,12 +98,12 @@ QString Building::getDetailedDescription()
 
 QString Building::getXmlDescription()
 {
-	QString s="<Building>\n";
-	s+="	<Name>"+protect(this->name)+"</Name>\n";
-	s+="	<Long_Name>"+protect(this->longName)+"</Long_Name>\n";
-	s+="	<Code>"+protect(this->code)+"</Code>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</Building>\n";
+	QString s=IL2+"<Building>\n";
+	s+=IL3+"<Name>"+protect(this->name)+"</Name>\n";
+	s+=IL3+"<Long_Name>"+protect(this->longName)+"</Long_Name>\n";
+	s+=IL3+"<Code>"+protect(this->code)+"</Code>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</Building>\n";
 
 	return s;
 }

@@ -28,6 +28,12 @@ File timetable_defs.cpp
 
 #include <QLocale>
 
+const QString IL1=QString(2, ' '); //indentation levels
+const QString IL2=QString(4, ' ');
+const QString IL3=QString(6, ' ');
+const QString IL4=QString(8, ' ');
+const QString IL5=QString(10, ' ');
+
 bool USE_UNDO_REDO=true;
 int UNDO_REDO_STEPS=100;
 //int UNDO_REDO_COMPRESSION_LEVEL=-1;
@@ -51,7 +57,7 @@ int STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
 /**
 The FET version
 */
-const QString FET_VERSION="7.0.6";
+const QString FET_VERSION="7.0.7";
 
 /**
 The version number of the data format, useful when saving/restoring history from the disk.

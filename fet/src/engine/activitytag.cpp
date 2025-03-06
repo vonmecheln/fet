@@ -57,21 +57,21 @@ ActivityTag::~ActivityTag()
 
 QString ActivityTag::getXmlDescription()
 {
-	QString s="<Activity_Tag>\n";
+	QString s=IL2+"<Activity_Tag>\n";
 
-	s+="	<Name>"+protect(this->name)+"</Name>\n";
-	s+="	<Long_Name>"+protect(this->longName)+"</Long_Name>\n";
-	s+="	<Code>"+protect(this->code)+"</Code>\n";
+	s+=IL3+"<Name>"+protect(this->name)+"</Name>\n";
+	s+=IL3+"<Long_Name>"+protect(this->longName)+"</Long_Name>\n";
+	s+=IL3+"<Code>"+protect(this->code)+"</Code>\n";
 	
-	s+="	<Printable>";
+	s+=IL3+"<Printable>";
 	if(this->printable)
 		s+="true";
 	else
 		s+="false";
 	s+="</Printable>\n";
 	
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</Activity_Tag>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</Activity_Tag>\n";
 
 	return s;
 }

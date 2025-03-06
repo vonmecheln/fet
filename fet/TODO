@@ -1,11 +1,20 @@
 0.5--------------------------------------------------------
-From different old custom FET-MA users, for the new Mornings-Afternoons mode, on the forum:
+From different old custom FET-MA users, for the Mornings-Afternoons mode, on the forum:
 
 https://lalescu.ro/liviu/fet/forum/index.php?topic=4519.0
 
-- Max days per week for a room,
+- Max days per week for a room (Thai Chi Phoung also suggested, see below, max real days per week for a room, but (in Liviu's opinion), other tricks should work,
+since relying on rooms' constraints might be higly inefficient),
 - Max hours daily (half day) for a room,
 - Max hours daily (real day) for a room (suggested by bachiri401).
+
+Also suggested by Thai Chi Phuong (https://lalescu.ro/liviu/fet/forum/index.php?topic=6112.msg35039#msg35039):
+- Can you add a constraint for a certain classroom to only study n days/(actual days)/1 actual week?
+Liviu Lalescu:
+Could you please tell me the reason for adding the constraints room max days/real days per week?
+Thai Chi Phuong:
+I have two teachers A and B, and I want teacher A to teach teacher B's hours as well or vice versa, and they also have holidays together, so I want to create
+a classroom for these two teachers and have a constraint on the maximum number of days/actual days of the classroom.
 
 - Default 100% or saving the value of min days between activities constraints when adding a split activity (suggested by Mohamed Ait Ichou).
 
@@ -56,10 +65,6 @@ From bachiri401:
 -> In general every constraint referring to days should have a corresponding constraint for real days,
 and every constraint referring to mornings should have a corresponding one referring to afternoons.
 
-From Mohamed Ait Ichou: He suggests good printing and output.
-Liviu Lalescu: In case of mornings-afternoons, to print and output the same real day continuously?
-Mohamed Ait Ichou: Yes, morning and evening combined in one day in case of printing.
-
 From Ziani Ben Alia: Please add the following condition: Maximum rest periods between morning and evening for teachers.
 Liviu Lalescu: I am sorry, but this is too difficult. But maybe you could use max gaps per real day and max span per real day.
 Also suggested by saidmechri: Max resting hours between morning and afternoon for teacher (https://lalescu.ro/liviu/fet/forum/index.php?topic=4951.0).
@@ -108,43 +113,7 @@ Max gaps constraints with weight under 100%
 
 Liviu: This is very difficult.
 
-4----------------------------------------------------------
-From Horatiu Halmajan:
-
-Horatiu:
-I met a situation: a teacher asks for maximum 2 working days, but these
-days should not be consecutive.
-
-Is there a way to implement it in FET?
-
-The only (manual) way I could think of, is to set the teacher as
-unavailable on Tuesdays and Thursdays, thus leaving him available on
-Monday, Wednesday and Friday (any two of these are unconsecutive).
-
-Any other ideas...?
-
-Liviu:
-I have another idea: add a dummy activity for this teacher, split into 2
-per
-week, min n days = 2, with 100%. You just need to take care that this
-teacher
-has place for these dummy activities (enough slots in the day) and to
-consider
-these dummy activities as possible gaps, so if teacher has max gaps 2 then
-make max gaps for him 0.
-
-Horatiu:
-For my case, the second idea worked perfectly, as my teacher does not accept
-gaps.
-
-I have also "played" with the first with the first idea, as it seems to be
-the most un-restrictive one. It also worked. I tried it three times, and in
-all three situations at least one of the dummy activities was the first or
-the last activity for the teacher's day. So, there is a chance that the
-teacher would end up with only one gap.
-
-Which leads me to a suggestion: An activity ends (or starts) a teacher's day.
-Similar to "an activity ends students's day".
+4---------------------DONE---------------------------------
 
 5----------------------------------------------------------
 From daviodan:
@@ -296,7 +265,7 @@ that is like high school do it.
 	- vertical must be the student names
 	- every cell is a bool checkbox
 
-no the timetablemaker can check every single student. of yourse by
+no the timetablemaker can check every single student. of course by
 checking the studentsname must be added as subgroup into that group.
 
 13-------------------------DONE----------------------------
@@ -336,14 +305,14 @@ to put in activities, and show these same in final html output.
 This is my opinion of user in trouble :-)
 
 Second set:
-1. Ability to select more than one constraint and delete it, or set its 
+1. DONE - Ability to select more than one constraint and delete it, or set its 
 weight
 2. Ability to disable all informative and warning messages, or to display 
 them in status bar or in another log window.
 3. Option to remember last focused control in dialogs - very useful if 
 you want by keyboard to open many constraints and change their weight
 4. Constraint "longest gap is n hours"
-5. A way to save last generated timetable and reopen it again (for example 
+5. DONE? - A way to save last generated timetable and reopen it again (for example 
 for printing it with different html level, or for viewing it.
 6. Ability to show free teachers for every position in students and 
 teachers timetable - very useful if you want to find somebody to replace you
@@ -405,7 +374,7 @@ but maybe it´s better to use also the word periode, because by this
 schools with 60 minutes activities (2 periods) and 90 minutes activities
 (3 periods) don´t get trouble with the word hour (because it entrap /
 ensnare /
-inveigle so write 1 hour and 1,5 hour. but "hour" is an integer values!
+inveigle so write 1 hour and 1,5 hour. but "hour" is an integer value!
 
 but on the other hand people (maybe) will not understand immediately the
 word period.
@@ -832,7 +801,7 @@ then I can not define the surveillance activities.
 - We try that all the teachers work maximum 2 afternoons per week. This has been easy to define with "All teachers work in an hourly interval max days per week".
 But we try also that teachers who work two days per week in the afternoon to have a free morning. I don't know how to define this situation.
 
-47------------PARTIALLY DONE IN FET-6.11.0 on 23 October 2023 (done for activities and all time/space constraints)
+47------------PARTIALLY DONE IN FET-6.11.0 on 23 October 2023 (done for activities and time/space constraints)
 From T. Renganathan:
 
 You can include a provision for multiple selection of subjects, teachers,
@@ -900,22 +869,6 @@ separate, with specific rules of placement of w1 in Week1 and w2 in week
 However, your spacing feature doesn't work ... not on more than five
 days.... not sure it would be possible to extend your logic or not... (what
 do you think?)
-
-Liviu: DONE
-The other thing I've noticed is a bit of an annoyance concerning
-constraints... when you are trying to get a schedule to work you push in
-constraints however, on slight modification of activities (concerning
-resources etc.) sometimes, what was once soluble becomes insoluble.
-
-Usually this means you have to relax constraints in order to get the
-schedule soluble... some (most) can be set to a 0% weight which means they
-are ineffective.. then later you can turn them on again... however, some
-rules are only acceptable at 100%... which means you need to drop them from
-the constraint set...
-
-but the constraint may be important and be forgotten to reimplement...
-could you set an active/inactive flag for constraints like you have for
-activities... so it can later be reimplemented?
 
 51---------------------------------------------------------
 From Chafik Graiguer:
@@ -10475,7 +10428,7 @@ From GUEFFAZ REDA:
 Stretch the timetables to occupy a whole page when printing them.
 
 669---------------------------------------------------------
-From cracker_vic (on forum):
+From Željko Vrabec (on forum):
 
 https://lalescu.ro/liviu/fet/forum/index.php?topic=6260.0
 
@@ -10581,3 +10534,203 @@ The possibility of dragging the mouse for multiple selection instead of single c
 (and possibly other tables with X and empty):
 
 It should also work in every direction (not only vertically).
+
+679--------------------------------------------------------
+From GUEFFAZ REDA (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6311.0
+
+Fixed Random Seed with checkbox
+
+And show a warning that it is fixed
+
+(GUEFFAZ REDA showed us a screenshot in the selection of the random seed, in which he added a check box, Fixed Random Seed.)
+
+Volker Dirr:
+
+I have got a similar feature in StElTo, but I have a single checkbox only. I can't see an advantage of 2 (or more) checkboxes. I can only see disadvantages
+if you fix only some numbers.
+But I must also admit, that I added this feature only while developing and checking my source to save a bit time as a developer in some rare cases. I can't see
+advantages for normal users.
+Also, StElTo is single core only. But FET is multi core. So be aware that core 2 and higher do other things than you expect and it is probably because of that
+much more difficult to see that you fixed the seed.
+
+So in my opinion: For developers this is sometimes useful. For normal FET users this is critical. I can't see advantages for normal FET users, I can see only
+disadvantages for normal users.
+
+Liviu Lalescu:
+
+Yes, this is also my opinion. It is very risky for users, they might generate the same timetable over and over again. Yes, for multiple generation the random
+seed is not the same, but will be constant for the same number of threads.
+
+Volker Dirr:
+
+I think/suggest:
+If you add this feature, then always add a warning if you start generating, that the seed is fixed and that it is a normally bad idea to have a fixed seed.
+Recommend to unfix it again.
+
+680---------------------------------------------------------
+From infoo_ (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6313.0
+
+I would like to make a very small suggestion for tabs:
+
+In multi generation menu:
+
+Suppose 6 threads, it would be nice that we can do the following using wheel mouse and arrows keys when focus on tabs of threads:
+
+1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 1 -> ...
+
+6 -> 5 -> 4 -> 3 -> 2 -> 1 -> 6 -> ...
+
+Actually we have:
+
+1 -> 2 -> 3 -> 4 -> 5 -> 6 -> we can't return to 1
+
+6 -> 5 -> 4 -> 3 -> 2 -> 1 -> we can't return to 6
+
+Also it can be implemented in Activity menu, subactivities tabs
+
+This is for the solely purpose of checking more quickly max placed activities etc. For 2 or 3 threads (or subactivity tabs) it does not impact, but for
+larger threads like 6 or 7 yes
+
+681---------------------------------------------------------
+From Bouredha Youcef (on Facebook):
+
+Suggestion:
+When, for example, the mathematics subject for a specific department consists of 5 sub-activities assigned to a specific professor
+Subactivity 1 or Subactivity 2 is tagged with a specific tag
+If we want to change the professor, the program removes the tag from the subactivity
+We want the tag to remain for the subactivity if we change the professor
+
+Liviu Lalescu:
+
+I think you need to edit the subactivities, not the activities.
+Change the teacher from the subactivities.
+
+Bouredha Youcef:
+
+When promoting more individuals or making it easier through agency
+But if the number required to be changed is large, it will require more time
+
+682---------------------------------------------------------
+From Thai Chi Phuong (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6112.msg35051#msg35051
+
+Can you help me add a constraint: "I have n teachers, in a real day/day only n-i teachers come to school."
+
+The second post of Thai Chi Phuong:
+
+Maybe my wording is not good, but my problem is: "I have a small group of teachers-teaching the same subject, and I want in 1 day/actual day only 1 (2) teachers
+not to come to school". I used the maximum number of days constraint but encountered a case where there were days/actual days with many (2,3,4,..) teachers not
+to come to school.
+
+Liviu Lalescu:
+
+I think you are suggesting the constraint for the minimum number of teachers from a set of teachers to be present on each day/real day. Unfortunately, it looks
+complicated and also I am not sure it is possible to implement efficiently/feasible.
+
+683---------------------------------------------------------
+From Vangelis Karafillidis:
+
+He suggested an option Merged/Not merged for the HTML timetables (for activities with duration >=2); the Not merged selection would help the import in a
+spreadsheet program.
+
+684---------------------------------------------------------
+From infoo_ (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6319.0
+
+I would like to suggest two buttons for activities dialog (maybe also Modify subactivities):
+
+- One button for moving an activity up;
+- One button for moving an activity down;
+
+This is present in Time constraints dialog and it is nice, but not in activities.
+
+Liviu Lalescu:
+
+I think other users suggested this (or Sort activities). However:
+
+1) Most important reason is that FET relies on increasing and adjacent ids for the activities.
+
+2) I prefer to have the ids ordered, and also the first component is not indented, while the next are indented.
+
+infoo_:
+
+In that case, moving the entire split activity would be ok. I think users don't want to change subactivities order, but between activities
+
+Liviu Lalescu:
+
+It might be working this way.
+
+Also, all the filters should be deactivated (Teacher, Students, Subject, Activity tag, and Filter).
+
+685--------------------------------------------------------
+From GUEFFAZ REDA (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6320.0
+
+GUEFFAZ REDA suggests a complex heading for printing the timetables, including a title, and information on the left and on the right above each
+teacher's table. He also suggests to write the number of working hours for the teacher.
+
+688--------------------------------------------------------
+From Željko Vrabec (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6323.0
+
+Is there a possibility to add an option to show long names of hours in timetables views?
+(I know it's possible to switch long names and names in my case, but then I can't to get them to be unique.)
+
+687--------------------------------------------------------
+From GUEFFAZ REDA (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6325.0
+
+Sometimes we have to use the program with multiple databases to generate schedules or help some colleagues. Can you program the software to open, say,
+four different databases and let it generate the tables all at once?
+
+688--------------------------------------------------------
+From GUEFFAZ REDA (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6326.0
+
+Shutown - sleep  - save and locking  or  other option After end Generate.
+
+689--------------------------------------------------------
+From GUEFFAZ REDA (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6329.0
+
+Repeat Activities - with copy paste
+select all ===> copy ====> paste To ...
+
+GUEFFAZ REDA posted a picture of this suggestion, a modified activities dialog: "Copy all activities of
+4M1 to other students: 4M2, 4M3, ..., without teachers, because the process is repeated with all in each level.
+
+690--------------------------------------------------------
+From GUEFFAZ REDA (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6331.0
+
+1- Display a message indicating that the database is locking on opening and show an image or color to reflect that.
+note :
+This usually appears before generating the tables by default.
+
+These notes should be displayed, if possible, at the bottom of the program interface:
+1- Display the size of the fet-results folder.
+2- Display the size of the autosave folder.
+3- Display the size of the Restore files.
+4- Indicate whether the program is connected to the internet or not.
+
+GUEFFAZ REDA also showed us a screenshot with a fet file in Windows explorer with added text:
+"Autodetect icon of Database".
+
+691--------------------------------------------------------
+From GUEFFAZ REDA (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6334.0
+
+GUEFFAZ REDA showed a dialog listing the time constraints of type teacher not available times with an added Subject filter.

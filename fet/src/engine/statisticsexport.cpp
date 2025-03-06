@@ -526,7 +526,7 @@ bool StatisticsExport::exportStatisticsIndex(QWidget* parent, const QString& sav
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
-	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
+	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n";
 
 	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
 		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
@@ -561,7 +561,7 @@ bool StatisticsExport::exportStatisticsIndex(QWidget* parent, const QString& sav
 		tos<<"      }\n";
 		tos<<"    </script>\n";
 	}
-	tos<<"  </head>\n\n";
+	tos<<"  </head>\n";
 
 	tos<<"  <body>\n";
 
@@ -648,7 +648,7 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QWidget* parent, const Q
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
-	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
+	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n";
 
 	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
 		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
@@ -682,7 +682,7 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QWidget* parent, const Q
 		tos<<"      }\n";
 		tos<<"    </script>\n";
 	}
-	tos<<"  </head>\n\n";
+	tos<<"  </head>\n";
 
 	tos<<"  <body>\n";
 	QSet<int> tmpSet;
@@ -959,7 +959,7 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QWidget* parent, const Q
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
-	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
+	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n";
 
 	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
 		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
@@ -993,7 +993,7 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QWidget* parent, const Q
 		tos<<"      }\n";
 		tos<<"    </script>\n";
 	}
-	tos<<"  </head>\n\n";
+	tos<<"  </head>\n";
 
 	tos<<"  <body>\n";
 	QSet<int> tmpSet;
@@ -1268,7 +1268,7 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QWidget* parent, const Q
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
-	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
+	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n";
 
 	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
 		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
@@ -1302,7 +1302,7 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QWidget* parent, const Q
 		tos<<"      }\n";
 		tos<<"    </script>\n";
 	}
-	tos<<"  </head>\n\n";
+	tos<<"  </head>\n";
 
 	tos<<"  <body>\n";
 	QSet<int> tmpSet;
@@ -1578,7 +1578,7 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QWidget* parent, const Q
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
-	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
+	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n";
 
 	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
 		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
@@ -1612,7 +1612,7 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QWidget* parent, const Q
 		tos<<"      }\n";
 		tos<<"    </script>\n";
 	}
-	tos<<"  </head>\n\n";
+	tos<<"  </head>\n";
 
 	tos<<"  <body>\n";
 	QSet<int> tmpSet;
@@ -1888,7 +1888,7 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QWidget* parent, const Q
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
-	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
+	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n";
 
 	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
 		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
@@ -1922,7 +1922,7 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QWidget* parent, const Q
 		tos<<"      }\n";
 		tos<<"    </script>\n";
 	}
-	tos<<"  </head>\n\n";
+	tos<<"  </head>\n";
 
 	tos<<"  <body>\n";
 	QSet<int> tmpSet;
@@ -2197,7 +2197,7 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QWidget* parent, const Q
 #endif
 	tos.setGenerateByteOrderMark(true);
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
-	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
+	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n";
 
 	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
 		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
@@ -2231,7 +2231,7 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QWidget* parent, const Q
 		tos<<"      }\n";
 		tos<<"    </script>\n";
 	}
-	tos<<"  </head>\n\n";
+	tos<<"  </head>\n";
 
 	tos<<"  <body>\n";
 	QSet<int> tmpSet;

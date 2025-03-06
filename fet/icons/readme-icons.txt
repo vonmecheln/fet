@@ -10,7 +10,7 @@ The file fet-text.svg: This file was recreated in Inkscape 0.92.4 by using copy/
 the old Inkscape 0.48.4.
 
 To open fet-text.svg: If you do not have it available, you need to download and install the "TeX Gyre Chorus" font. Some possible download
-links are: https://ctan.org/tex-archive/fonts/tex-gyre or http://www.gust.org.pl/projects/e-foundry/tex-gyre/chorus. I used the OpenType
+links are: https://ctan.org/tex-archive/fonts/tex-gyre or https://www.gust.org.pl/projects/e-foundry/tex-gyre/chorus. I used the OpenType
 format, which works with Inkscape. The font is licensed under the GUST Font License (an instance of the LaTeX Project Public License),
 which seems to be a permissive/free to use/modify/redistribute license.
 

@@ -85,7 +85,7 @@ void RandomSeedForm::help()
 	 "1 (1999), 159--164.\n<https://pubsonline.informs.org/doi/abs/10.1287/opre.47.1.159>");
 	s+="\n\n";
 	s+=tr("Includes ideas and code from the files: %1, %2, and/or %3.", "%1, %2, and %3 are files from the internet")
-	 .arg("http://simul.iro.umontreal.ca/rng/MRG32k3a.h").arg("http://simul.iro.umontreal.ca/rng/MRG32k3a.c")
+	 .arg("https://simul.iro.umontreal.ca/rng/MRG32k3a.h").arg("https://simul.iro.umontreal.ca/rng/MRG32k3a.c")
 	 .arg("https://www.iro.umontreal.ca/~lecuyer/myftp/papers/combmrg2.c");
 	s+="\n\n";
 	s+=tr("Used with permission from the author, %1 (%2).", "%1 is the author of the used random number generator, %2 is the date of email "

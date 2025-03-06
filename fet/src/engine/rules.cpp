@@ -18319,10 +18319,10 @@ bool Rules::write(QWidget* parent, const QString& filename)
 	tos.setGenerateByteOrderMark(true);
 	//tos.setEncoding(QTextStream::UnicodeUTF8);
 	
-	tos<<"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n";
+	tos<<"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 
 //	tos<<"<!DOCTYPE FET><FET version=\""+FET_VERSION+"\">\n\n";
-	tos<<"<fet version=\""+FET_VERSION+"\">\n\n";
+	tos<<"<fet version=\""+FET_VERSION+"\">\n";
 	
 	QString ms;
 	if(this->mode==OFFICIAL)
@@ -18335,141 +18335,141 @@ bool Rules::write(QWidget* parent, const QString& filename)
 		ms="Terms";
 	else
 		assert(0);
-	tos<<"<Mode>"+ms+"</Mode>\n\n";
+	tos<<IL1+"<Mode>"+ms+"</Mode>\n";
 	
 	//the institution name and the comments
-	tos<<"<Institution_Name>"+protect(this->institutionName)+"</Institution_Name>\n\n";
-	tos<<"<Comments>"+protect(this->comments)+"</Comments>\n\n";
+	tos<<IL1+"<Institution_Name>"+protect(this->institutionName)+"</Institution_Name>\n";
+	tos<<IL1+"<Comments>"+protect(this->comments)+"</Comments>\n";
 
 	//for terms (Finland)
 	if(this->mode==TERMS){
-		tos<<"<Number_of_Terms>"+CustomFETString::number(this->nTerms)+"</Number_of_Terms>\n\n";
-		tos<<"<Number_of_Days_Per_Term>"+CustomFETString::number(this->nDaysPerTerm)+"</Number_of_Days_Per_Term>\n\n";
+		tos<<IL1+"<Number_of_Terms>"+CustomFETString::number(this->nTerms)+"</Number_of_Terms>\n";
+		tos<<IL1+"<Number_of_Days_Per_Term>"+CustomFETString::number(this->nDaysPerTerm)+"</Number_of_Days_Per_Term>\n";
 	}
 
 	//the days and the hours
-	tos<<"<Days_List>\n<Number_of_Days>"+CustomFETString::number(this->nDaysPerWeek)+"</Number_of_Days>\n";
+	tos<<IL1+"<Days_List>\n"+IL2+"<Number_of_Days>"+CustomFETString::number(this->nDaysPerWeek)+"</Number_of_Days>\n";
 	for(int i=0; i<this->nDaysPerWeek; i++){
-		tos<<"<Day>\n";
-		tos<<"	<Name>"+protect(this->daysOfTheWeek[i])+"</Name>\n";
-		tos<<"	<Long_Name>"+protect(this->daysOfTheWeek_longNames[i])+"</Long_Name>\n";
-		tos<<"</Day>\n";
+		tos<<IL2+"<Day>\n";
+		tos<<IL3+"<Name>"+protect(this->daysOfTheWeek[i])+"</Name>\n";
+		tos<<IL3+"<Long_Name>"+protect(this->daysOfTheWeek_longNames[i])+"</Long_Name>\n";
+		tos<<IL2+"</Day>\n";
 	}
-	tos<<"</Days_List>\n\n";
+	tos<<IL1+"</Days_List>\n";
 
 	//the real days, for the Mornings-Afternoons mode
 	if(this->mode==MORNINGS_AFTERNOONS){
-		tos<<"<Real_Days_List>\n<Number_of_Real_Days>"+CustomFETString::number(this->nRealDaysPerWeek)+"</Number_of_Real_Days>\n";
+		tos<<IL1+"<Real_Days_List>\n"+IL2+"<Number_of_Real_Days>"+CustomFETString::number(this->nRealDaysPerWeek)+"</Number_of_Real_Days>\n";
 		for(int i=0; i<this->nRealDaysPerWeek; i++){
-			tos<<"<Real_Day>\n";
-			tos<<"	<Name>"+protect(this->realDaysOfTheWeek[i])+"</Name>\n";
-			tos<<"	<Long_Name>"+protect(this->realDaysOfTheWeek_longNames[i])+"</Long_Name>\n";
-			tos<<"</Real_Day>\n";
+			tos<<IL2+"<Real_Day>\n";
+			tos<<IL3+"<Name>"+protect(this->realDaysOfTheWeek[i])+"</Name>\n";
+			tos<<IL3+"<Long_Name>"+protect(this->realDaysOfTheWeek_longNames[i])+"</Long_Name>\n";
+			tos<<IL2+"</Real_Day>\n";
 		}
-		tos<<"</Real_Days_List>\n\n";
+		tos<<IL1+"</Real_Days_List>\n";
 	}
 	
-	tos<<"<Hours_List>\n<Number_of_Hours>"+CustomFETString::number(this->nHoursPerDay)+"</Number_of_Hours>\n";
+	tos<<IL1+"<Hours_List>\n"+IL2+"<Number_of_Hours>"+CustomFETString::number(this->nHoursPerDay)+"</Number_of_Hours>\n";
 	for(int i=0; i<this->nHoursPerDay; i++){
-		tos<<"<Hour>\n";
-		tos<<"	<Name>"+protect(this->hoursOfTheDay[i])+"</Name>\n";
-		tos<<"	<Long_Name>"+protect(this->hoursOfTheDay_longNames[i])+"</Long_Name>\n";
-		tos<<"</Hour>\n";
+		tos<<IL2+"<Hour>\n";
+		tos<<IL3+"<Name>"+protect(this->hoursOfTheDay[i])+"</Name>\n";
+		tos<<IL3+"<Long_Name>"+protect(this->hoursOfTheDay_longNames[i])+"</Long_Name>\n";
+		tos<<IL2+"</Hour>\n";
 	}
-	tos<<"</Hours_List>\n\n";
+	tos<<IL1+"</Hours_List>\n";
 
 	//the real hours, for the Mornings-Afternoons mode
 	if(this->mode==MORNINGS_AFTERNOONS){
-		tos<<"<Real_Hours_List>\n<Number_of_Real_Hours>"+CustomFETString::number(this->nRealHoursPerDay)+"</Number_of_Real_Hours>\n";
+		tos<<IL1+"<Real_Hours_List>\n"+IL2+"<Number_of_Real_Hours>"+CustomFETString::number(this->nRealHoursPerDay)+"</Number_of_Real_Hours>\n";
 		for(int i=0; i<this->nRealHoursPerDay; i++){
-			tos<<"<Real_Hour>\n";
-			tos<<"	<Name>"+protect(this->realHoursOfTheDay[i])+"</Name>\n";
-			tos<<"	<Long_Name>"+protect(this->realHoursOfTheDay_longNames[i])+"</Long_Name>\n";
-			tos<<"</Real_Hour>\n";
+			tos<<IL2+"<Real_Hour>\n";
+			tos<<IL3+"<Name>"+protect(this->realHoursOfTheDay[i])+"</Name>\n";
+			tos<<IL3+"<Long_Name>"+protect(this->realHoursOfTheDay_longNames[i])+"</Long_Name>\n";
+			tos<<IL2+"</Real_Hour>\n";
 		}
-		tos<<"</Real_Hours_List>\n\n";
+		tos<<IL1+"</Real_Hours_List>\n";
 	}
 
 	//subjects list - should be before teachers list, because each teacher has a list of associated qualified subjects
-	tos << "<Subjects_List>\n";
+	tos << IL1+"<Subjects_List>\n";
 	for(int i=0; i<this->subjectsList.size(); i++){
 		Subject* sbj=this->subjectsList[i];
 		tos << sbj->getXmlDescription();
 	}
-	tos << "</Subjects_List>\n\n";
+	tos << IL1+"</Subjects_List>\n";
 
 	//activity tags list
-	tos << "<Activity_Tags_List>\n";
+	tos << IL1+"<Activity_Tags_List>\n";
 	for(int i=0; i<this->activityTagsList.size(); i++){
 		ActivityTag* stg=this->activityTagsList[i];
 		tos << stg->getXmlDescription();
 	}
-	tos << "</Activity_Tags_List>\n\n";
+	tos << IL1+"</Activity_Tags_List>\n";
 
 	//teachers list
-	tos << "<Teachers_List>\n";
+	tos << IL1+"<Teachers_List>\n";
 	for(int i=0; i<this->teachersList.size(); i++){
 		Teacher* tch=this->teachersList[i];
 		tos << tch->getXmlDescription(*this);
 	}
-	tos << "</Teachers_List>\n\n";
+	tos << IL1+"</Teachers_List>\n";
 
 	//students list
-	tos<<"<Students_List>\n";
+	tos<<IL1+"<Students_List>\n";
 	for(int i=0; i<this->yearsList.size(); i++){
 		StudentsYear* sty=this->yearsList[i];
 		tos << sty->getXmlDescription();
 	}
-	tos<<"</Students_List>\n\n";
+	tos<<IL1+"</Students_List>\n";
 
 	//activities list
-	tos << "<Activities_List>\n";
+	tos << IL1+"<Activities_List>\n";
 	for(int i=0; i<this->activitiesList.size(); i++){
 		Activity* act=this->activitiesList[i];
 		tos << act->getXmlDescription(*this);
 		tos << "\n";
 	}
-	tos << "</Activities_List>\n\n";
+	tos << IL1+"</Activities_List>\n";
 
 	//buildings list
-	tos << "<Buildings_List>\n";
+	tos << IL1+"<Buildings_List>\n";
 	for(int i=0; i<this->buildingsList.size(); i++){
 		Building* bu=this->buildingsList[i];
 		tos << bu->getXmlDescription();
 	}
-	tos << "</Buildings_List>\n\n";
+	tos << IL1+"</Buildings_List>\n";
 
 	//rooms list
-	tos << "<Rooms_List>\n";
+	tos << IL1+"<Rooms_List>\n";
 	for(int i=0; i<this->roomsList.size(); i++){
 		Room* rm=this->roomsList[i];
 		tos << rm->getXmlDescription();
 	}
-	tos << "</Rooms_List>\n\n";
+	tos << IL1+"</Rooms_List>\n";
 
 	//time constraints list
-	tos << "<Time_Constraints_List>\n";
+	tos << IL1+"<Time_Constraints_List>\n";
 	for(int i=0; i<this->timeConstraintsList.size(); i++){
 		TimeConstraint* ctr=this->timeConstraintsList[i];
 		tos << ctr->getXmlDescription(*this);
 	}
-	tos << "</Time_Constraints_List>\n\n";
+	tos << IL1+"</Time_Constraints_List>\n";
 
 	//constraints list
-	tos << "<Space_Constraints_List>\n";
+	tos << IL1+"<Space_Constraints_List>\n";
 	for(int i=0; i<this->spaceConstraintsList.size(); i++){
 		SpaceConstraint* ctr=this->spaceConstraintsList[i];
 		tos << ctr->getXmlDescription(*this);
 	}
-	tos << "</Space_Constraints_List>\n\n";
+	tos << IL1+"</Space_Constraints_List>\n";
 	
 	if(true || groupActivitiesInInitialOrderList.count()>0){
-		tos << "<Timetable_Generation_Options_List>\n";
+		tos << IL1+"<Timetable_Generation_Options_List>\n";
 		for(int i=0; i<groupActivitiesInInitialOrderList.count(); i++){
 			GroupActivitiesInInitialOrderItem* item=groupActivitiesInInitialOrderList[i];
 			tos << item->getXmlDescription(*this);
 		}
-		tos << "</Timetable_Generation_Options_List>\n\n";
+		tos << IL1+"</Timetable_Generation_Options_List>\n";
 	}
 
 //	tos<<"</FET>\n";

@@ -122,21 +122,21 @@ QString GroupActivitiesInInitialOrderItem::getXmlDescription(Rules& r)
 
 	QString s;
 
-	s+="<GroupActivitiesInInitialOrder>\n";
-	s+="	<Number_of_Activities>"+QString::number(ids.count())+"</Number_of_Activities>\n";
+	s+=IL2+"<GroupActivitiesInInitialOrder>\n";
+	s+=IL3+"<Number_of_Activities>"+QString::number(ids.count())+"</Number_of_Activities>\n";
 	for(int id : std::as_const(ids))
-		s+=QString("	<Activity_Id>")+CustomFETString::number(id)+QString("</Activity_Id>\n");
+		s+=IL3+QString("<Activity_Id>")+CustomFETString::number(id)+QString("</Activity_Id>\n");
 
-	s+="	<Active>";
+	s+=IL3+"<Active>";
 	if(this->active==true)
 		s+="true";
 	else
 		s+="false";
 	s+="</Active>\n";
 
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
 
-	s+="</GroupActivitiesInInitialOrder>\n";
+	s+=IL2+"</GroupActivitiesInInitialOrder>\n";
 	
 	return s;
 }
@@ -525,37 +525,37 @@ QString Activity::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<Activity>\n";
+	QString s=IL2+"<Activity>\n";
 
 	for(QStringList::const_iterator it=this->teachersNames.constBegin(); it!=this->teachersNames.constEnd(); it++)
-		s+="	<Teacher>" + protect(*it) + "</Teacher>\n";
+		s+=IL3+"<Teacher>" + protect(*it) + "</Teacher>\n";
 
-	s+="	<Subject>" + protect(this->subjectName) + "</Subject>\n";
+	s+=IL3+"<Subject>" + protect(this->subjectName) + "</Subject>\n";
 
 	for(const QString& tag : std::as_const(this->activityTagsNames))
-		s+="	<Activity_Tag>" + protect(tag) + "</Activity_Tag>\n";
+		s+=IL3+"<Activity_Tag>" + protect(tag) + "</Activity_Tag>\n";
 
 	for(QStringList::const_iterator it=this->studentsNames.constBegin(); it!=this->studentsNames.constEnd(); it++)
-		s+="	<Students>" + protect(*it) + "</Students>\n";
+		s+=IL3+"<Students>" + protect(*it) + "</Students>\n";
 
-	s+="	<Duration>"+CustomFETString::number(this->duration)+"</Duration>\n";
-	s+="	<Total_Duration>"+CustomFETString::number(this->totalDuration)+"</Total_Duration>\n";
-	s+="	<Id>"+CustomFETString::number(this->id)+"</Id>\n";
-	s+="	<Activity_Group_Id>"+CustomFETString::number(this->activityGroupId)+"</Activity_Group_Id>\n";
+	s+=IL3+"<Duration>"+CustomFETString::number(this->duration)+"</Duration>\n";
+	s+=IL3+"<Total_Duration>"+CustomFETString::number(this->totalDuration)+"</Total_Duration>\n";
+	s+=IL3+"<Id>"+CustomFETString::number(this->id)+"</Id>\n";
+	s+=IL3+"<Activity_Group_Id>"+CustomFETString::number(this->activityGroupId)+"</Activity_Group_Id>\n";
 
 	if(this->computeNTotalStudents==false)
-		s+="	<Number_Of_Students>"+CustomFETString::number(this->nTotalStudents)+"</Number_Of_Students>\n";
+		s+=IL3+"<Number_Of_Students>"+CustomFETString::number(this->nTotalStudents)+"</Number_Of_Students>\n";
 
-	s+="	<Active>";
+	s+=IL3+"<Active>";
 	if(this->active==true)
 		s+="true";
 	else
 		s+="false";
 	s+="</Active>\n";
 
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
 
-	s+="</Activity>";
+	s+=IL2+"</Activity>";
 
 	return s;
 }

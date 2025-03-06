@@ -3044,3 +3044,5 @@ Versions 7.0.0 - 7.0.v
 	- Bug fix in the constraints teachers not available time horizontal: the hidden rows might have been incorrectly modified (reported by GUEFFAZ REDA).
 	This bug was introduced in the previous version.
 	- The list/add/modify group activities in initial order items dialogs will have a 'Show related' check box for the students filter.
+- Version 7.0.7
+	- Improved the fet XML file formatting (only the spacing was changed - the text should remain the same). This was suggested by ismailbsrn's file formatting.

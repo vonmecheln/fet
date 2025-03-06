@@ -154,37 +154,37 @@ StudentsYear::~StudentsYear()
 QString StudentsYear::getXmlDescription()
 {
 	QString s="";
-	s+="<Year>\n";
-	s+="	<Name>"+protect(this->name)+"</Name>\n";
-	s+="	<Long_Name>"+protect(this->longName)+"</Long_Name>\n";
-	s+="	<Code>"+protect(this->code)+"</Code>\n";
-	s+="	<Number_of_Students>"+CustomFETString::number(this->numberOfStudents)+"</Number_of_Students>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"<Year>\n";
+	s+=IL3+"<Name>"+protect(this->name)+"</Name>\n";
+	s+=IL3+"<Long_Name>"+protect(this->longName)+"</Long_Name>\n";
+	s+=IL3+"<Code>"+protect(this->code)+"</Code>\n";
+	s+=IL3+"<Number_of_Students>"+CustomFETString::number(this->numberOfStudents)+"</Number_of_Students>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
 	
-	s+="	<!-- The information regarding categories, divisions of each category, and separator is only used in the divide year automatically by categories dialog. -->\n";
-	s+="	<Number_of_Categories>"+QString::number(divisions.count())+"</Number_of_Categories>\n";
+	s+=IL3+"<!-- The information regarding categories, divisions of each category, and separator is only used in the divide year automatically by categories dialog. -->\n";
+	s+=IL3+"<Number_of_Categories>"+QString::number(divisions.count())+"</Number_of_Categories>\n";
 	for(const QStringList& tl : std::as_const(divisions)){
-		s+="	<Category>\n";
-		s+="		<Number_of_Divisions>"+QString::number(tl.count())+"</Number_of_Divisions>\n";
+		s+=IL3+"<Category>\n";
+		s+=IL4+"<Number_of_Divisions>"+QString::number(tl.count())+"</Number_of_Divisions>\n";
 		for(const QString& dn : std::as_const(tl))
-			s+="		<Division>"+protect(dn)+"</Division>\n";
-		s+="	</Category>\n";
+			s+=IL4+"<Division>"+protect(dn)+"</Division>\n";
+		s+=IL3+"</Category>\n";
 	}
 	
-	s+="	<First_Category_Is_Permanent>";
+	s+=IL3+"<First_Category_Is_Permanent>";
 	if(firstCategoryIsPermanent)
 		s+="true";
 	else
 		s+="false";
 	s+="</First_Category_Is_Permanent>\n";
 	
-	s+="	<Separator>"+protect(separator)+"</Separator>\n";
+	s+=IL3+"<Separator>"+protect(separator)+"</Separator>\n";
 	
 	for(int i=0; i<this->groupsList.size(); i++){
 		StudentsGroup* stg=this->groupsList[i];
 		s+=stg->getXmlDescription();
 	}
-	s+="</Year>\n";
+	s+=IL2+"</Year>\n";
 
 	return s;
 }
@@ -276,17 +276,17 @@ StudentsGroup::~StudentsGroup()
 QString StudentsGroup::getXmlDescription()
 {
 	QString s="";
-	s+="	<Group>\n";
-	s+="		<Name>"+protect(this->name)+"</Name>\n";
-	s+="		<Long_Name>"+protect(this->longName)+"</Long_Name>\n";
-	s+="		<Code>"+protect(this->code)+"</Code>\n";
-	s+="		<Number_of_Students>"+CustomFETString::number(this->numberOfStudents)+"</Number_of_Students>\n";
-	s+="		<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL3+"<Group>\n";
+	s+=IL4+"<Name>"+protect(this->name)+"</Name>\n";
+	s+=IL4+"<Long_Name>"+protect(this->longName)+"</Long_Name>\n";
+	s+=IL4+"<Code>"+protect(this->code)+"</Code>\n";
+	s+=IL4+"<Number_of_Students>"+CustomFETString::number(this->numberOfStudents)+"</Number_of_Students>\n";
+	s+=IL4+"<Comments>"+protect(comments)+"</Comments>\n";
 	for(int i=0; i<this->subgroupsList.size(); i++){
 		StudentsSubgroup* sts=this->subgroupsList[i];
 		s+=sts->getXmlDescription();
 	}
-	s+="	</Group>\n";
+	s+=IL3+"</Group>\n";
 
 	return s;
 }
@@ -378,13 +378,13 @@ StudentsSubgroup::~StudentsSubgroup()
 QString StudentsSubgroup::getXmlDescription()
 {
 	QString s="";
-	s+="		<Subgroup>\n";
-	s+="			<Name>"+protect(this->name)+"</Name>\n";
-	s+="			<Long_Name>"+protect(this->longName)+"</Long_Name>\n";
-	s+="			<Code>"+protect(this->code)+"</Code>\n";
-	s+="			<Number_of_Students>"+CustomFETString::number(this->numberOfStudents)+"</Number_of_Students>\n";
-	s+="			<Comments>"+protect(comments)+"</Comments>\n";
-	s+="		</Subgroup>\n";
+	s+=IL4+"<Subgroup>\n";
+	s+=IL5+"<Name>"+protect(this->name)+"</Name>\n";
+	s+=IL5+"<Long_Name>"+protect(this->longName)+"</Long_Name>\n";
+	s+=IL5+"<Code>"+protect(this->code)+"</Code>\n";
+	s+=IL5+"<Number_of_Students>"+CustomFETString::number(this->numberOfStudents)+"</Number_of_Students>\n";
+	s+=IL5+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL4+"</Subgroup>\n";
 
 	return s;
 }

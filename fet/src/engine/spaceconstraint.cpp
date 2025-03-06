@@ -2254,12 +2254,12 @@ QString ConstraintBasicCompulsorySpace::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s = "<ConstraintBasicCompulsorySpace>\n";
+	QString s = IL2+"<ConstraintBasicCompulsorySpace>\n";
 	assert(this->weightPercentage==100.0);
-	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintBasicCompulsorySpace>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintBasicCompulsorySpace>\n";
 	return s;
 }
 
@@ -2580,24 +2580,24 @@ bool ConstraintRoomNotAvailableTimes::hasInactiveActivities(Rules& r)
 
 QString ConstraintRoomNotAvailableTimes::getXmlDescription(Rules& r)
 {
-	QString s="<ConstraintRoomNotAvailableTimes>\n";
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Room>"+protect(this->room)+"</Room>\n";
+	QString s=IL2+"<ConstraintRoomNotAvailableTimes>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Room>"+protect(this->room)+"</Room>\n";
 
-	s+="	<Number_of_Not_Available_Times>"+QString::number(this->days.count())+"</Number_of_Not_Available_Times>\n";
+	s+=IL3+"<Number_of_Not_Available_Times>"+QString::number(this->days.count())+"</Number_of_Not_Available_Times>\n";
 	assert(days.count()==hours.count());
 	for(int i=0; i<days.count(); i++){
-		s+="	<Not_Available_Time>\n";
+		s+=IL3+"<Not_Available_Time>\n";
 		if(this->days.at(i)>=0)
-			s+="		<Day>"+protect(r.daysOfTheWeek[this->days.at(i)])+"</Day>\n";
+			s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->days.at(i)])+"</Day>\n";
 		if(this->hours.at(i)>=0)
-			s+="		<Hour>"+protect(r.hoursOfTheDay[this->hours.at(i)])+"</Hour>\n";
-		s+="	</Not_Available_Time>\n";
+			s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->hours.at(i)])+"</Hour>\n";
+		s+=IL3+"</Not_Available_Time>\n";
 	}
 
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintRoomNotAvailableTimes>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintRoomNotAvailableTimes>\n";
 	return s;
 }
 
@@ -2875,25 +2875,25 @@ bool ConstraintTeacherRoomNotAvailableTimes::hasInactiveActivities(Rules& r)
 }
 
 QString ConstraintTeacherRoomNotAvailableTimes::getXmlDescription(Rules& r){
-	QString s="<ConstraintTeacherRoomNotAvailableTimes>\n";
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
-	s+="	<Room>"+protect(this->room)+"</Room>\n";
+	QString s=IL2+"<ConstraintTeacherRoomNotAvailableTimes>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+=IL3+"<Room>"+protect(this->room)+"</Room>\n";
 
-	s+="	<Number_of_Not_Available_Times>"+QString::number(this->days.count())+"</Number_of_Not_Available_Times>\n";
+	s+=IL3+"<Number_of_Not_Available_Times>"+QString::number(this->days.count())+"</Number_of_Not_Available_Times>\n";
 	assert(days.count()==hours.count());
 	for(int i=0; i<days.count(); i++){
-		s+="	<Not_Available_Time>\n";
+		s+=IL3+"<Not_Available_Time>\n";
 		if(this->days.at(i)>=0)
-			s+="		<Day>"+protect(r.daysOfTheWeek[this->days.at(i)])+"</Day>\n";
+			s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->days.at(i)])+"</Day>\n";
 		if(this->hours.at(i)>=0)
-			s+="		<Hour>"+protect(r.hoursOfTheDay[this->hours.at(i)])+"</Hour>\n";
-		s+="	</Not_Available_Time>\n";
+			s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->hours.at(i)])+"</Hour>\n";
+		s+=IL3+"</Not_Available_Time>\n";
 	}
 
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeacherRoomNotAvailableTimes>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeacherRoomNotAvailableTimes>\n";
 	return s;
 }
 
@@ -3279,22 +3279,22 @@ QString ConstraintActivityPreferredRoom::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintActivityPreferredRoom>\n";
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Activity_Id>"+CustomFETString::number(this->activityId)+"</Activity_Id>\n";
-	s+="	<Room>"+protect(this->roomName)+"</Room>\n";
+	QString s=IL2+"<ConstraintActivityPreferredRoom>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Activity_Id>"+CustomFETString::number(this->activityId)+"</Activity_Id>\n";
+	s+=IL3+"<Room>"+protect(this->roomName)+"</Room>\n";
 
 	if(!preferredRealRoomsNames.isEmpty()){
-		s+="	<Number_of_Real_Rooms>"+QString::number(preferredRealRoomsNames.count())+"</Number_of_Real_Rooms>\n";
+		s+=IL3+"<Number_of_Real_Rooms>"+QString::number(preferredRealRoomsNames.count())+"</Number_of_Real_Rooms>\n";
 		for(const QString& rrn : std::as_const(preferredRealRoomsNames))
-			s+="	<Real_Room>"+protect(rrn)+"</Real_Room>\n";
+			s+=IL3+"<Real_Room>"+protect(rrn)+"</Real_Room>\n";
 	}
 	
-	s+="	<Permanently_Locked>";s+=trueFalse(this->permanentlyLocked);s+="</Permanently_Locked>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintActivityPreferredRoom>\n";
+	s+=IL3+"<Permanently_Locked>";s+=trueFalse(this->permanentlyLocked);s+="</Permanently_Locked>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintActivityPreferredRoom>\n";
 
 	return s;
 }
@@ -3596,16 +3596,16 @@ QString ConstraintActivityPreferredRooms::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintActivityPreferredRooms>\n";
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Activity_Id>"+CustomFETString::number(this->activityId)+"</Activity_Id>\n";
-	s+="	<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
+	QString s=IL2+"<ConstraintActivityPreferredRooms>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Activity_Id>"+CustomFETString::number(this->activityId)+"</Activity_Id>\n";
+	s+=IL3+"<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
 	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++)
-		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
+		s+=IL3+"<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
 		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintActivityPreferredRooms>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintActivityPreferredRooms>\n";
 
 	return s;
 }
@@ -3850,14 +3850,14 @@ QString ConstraintStudentsSetHomeRoom::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintStudentsSetHomeRoom>\n";
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
-	s+="	<Room>"+protect(this->roomName)+"</Room>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintStudentsSetHomeRoom>\n";
+	QString s=IL2+"<ConstraintStudentsSetHomeRoom>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Students>"+protect(this->studentsName)+"</Students>\n";
+	s+=IL3+"<Room>"+protect(this->roomName)+"</Room>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsSetHomeRoom>\n";
 
 	return s;
 }
@@ -4122,16 +4122,16 @@ QString ConstraintStudentsSetHomeRooms::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintStudentsSetHomeRooms>\n";
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
-	s+="	<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
+	QString s=IL2+"<ConstraintStudentsSetHomeRooms>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Students>"+protect(this->studentsName)+"</Students>\n";
+	s+=IL3+"<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
 	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++)
-		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
+		s+=IL3+"<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
 		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintStudentsSetHomeRooms>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsSetHomeRooms>\n";
 
 	return s;
 }
@@ -4395,14 +4395,14 @@ QString ConstraintTeacherHomeRoom::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintTeacherHomeRoom>\n";
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
-	s+="	<Room>"+protect(this->roomName)+"</Room>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeacherHomeRoom>\n";
+	QString s=IL2+"<ConstraintTeacherHomeRoom>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+=IL3+"<Room>"+protect(this->roomName)+"</Room>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeacherHomeRoom>\n";
 
 	return s;
 }
@@ -4665,16 +4665,16 @@ QString ConstraintTeacherHomeRooms::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintTeacherHomeRooms>\n";
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
-	s+="	<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
+	QString s=IL2+"<ConstraintTeacherHomeRooms>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+=IL3+"<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
 	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++)
-		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
+		s+=IL3+"<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
 		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeacherHomeRooms>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeacherHomeRooms>\n";
 
 	return s;
 }
@@ -4922,14 +4922,14 @@ QString ConstraintSubjectPreferredRoom::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintSubjectPreferredRoom>\n";
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Subject>"+protect(this->subjectName)+"</Subject>\n";
-	s+="	<Room>"+protect(this->roomName)+"</Room>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintSubjectPreferredRoom>\n";
+	QString s=IL2+"<ConstraintSubjectPreferredRoom>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Subject>"+protect(this->subjectName)+"</Subject>\n";
+	s+=IL3+"<Room>"+protect(this->roomName)+"</Room>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintSubjectPreferredRoom>\n";
 
 	return s;
 }
@@ -5157,16 +5157,16 @@ QString ConstraintSubjectPreferredRooms::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintSubjectPreferredRooms>\n";
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Subject>"+protect(this->subjectName)+"</Subject>\n";
-	s+="	<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
+	QString s=IL2+"<ConstraintSubjectPreferredRooms>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Subject>"+protect(this->subjectName)+"</Subject>\n";
+	s+=IL3+"<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
 	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++)
-		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintSubjectPreferredRooms>\n";
+		s+=IL3+"<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintSubjectPreferredRooms>\n";
 
 	return s;
 }
@@ -5401,15 +5401,15 @@ QString ConstraintSubjectActivityTagPreferredRoom::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintSubjectActivityTagPreferredRoom>\n";
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Subject>"+protect(this->subjectName)+"</Subject>\n";
-	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
-	s+="	<Room>"+protect(this->roomName)+"</Room>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintSubjectActivityTagPreferredRoom>\n";
+	QString s=IL2+"<ConstraintSubjectActivityTagPreferredRoom>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Subject>"+protect(this->subjectName)+"</Subject>\n";
+	s+=IL3+"<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
+	s+=IL3+"<Room>"+protect(this->roomName)+"</Room>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintSubjectActivityTagPreferredRoom>\n";
 
 	return s;
 }
@@ -5642,17 +5642,17 @@ QString ConstraintSubjectActivityTagPreferredRooms::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintSubjectActivityTagPreferredRooms>\n";
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Subject>"+protect(this->subjectName)+"</Subject>\n";
-	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
-	s+="	<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
+	QString s=IL2+"<ConstraintSubjectActivityTagPreferredRooms>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Subject>"+protect(this->subjectName)+"</Subject>\n";
+	s+=IL3+"<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
+	s+=IL3+"<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
 	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++)
-		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintSubjectActivityTagPreferredRooms>\n";
+		s+=IL3+"<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintSubjectActivityTagPreferredRooms>\n";
 
 	return s;
 }
@@ -5888,14 +5888,14 @@ QString ConstraintActivityTagPreferredRoom::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintActivityTagPreferredRoom>\n";
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
-	s+="	<Room>"+protect(this->roomName)+"</Room>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintActivityTagPreferredRoom>\n";
+	QString s=IL2+"<ConstraintActivityTagPreferredRoom>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
+	s+=IL3+"<Room>"+protect(this->roomName)+"</Room>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintActivityTagPreferredRoom>\n";
 
 	return s;
 }
@@ -6124,16 +6124,16 @@ QString ConstraintActivityTagPreferredRooms::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintActivityTagPreferredRooms>\n";
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
-	s+="	<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
+	QString s=IL2+"<ConstraintActivityTagPreferredRooms>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
+	s+=IL3+"<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
 	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++)
-		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintActivityTagPreferredRooms>\n";
+		s+=IL3+"<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintActivityTagPreferredRooms>\n";
 
 	return s;
 }
@@ -6395,15 +6395,15 @@ QString ConstraintStudentsSetMaxBuildingChangesPerDay::getXmlDescription(Rules& 
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintStudentsSetMaxBuildingChangesPerDay>\n";
+	QString s=IL2+"<ConstraintStudentsSetMaxBuildingChangesPerDay>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
-	s+="	<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintStudentsSetMaxBuildingChangesPerDay>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Students>"+protect(this->studentsName)+"</Students>\n";
+	s+=IL3+"<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsSetMaxBuildingChangesPerDay>\n";
 
 	return s;
 }
@@ -6638,14 +6638,14 @@ QString ConstraintStudentsMaxBuildingChangesPerDay::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintStudentsMaxBuildingChangesPerDay>\n";
+	QString s=IL2+"<ConstraintStudentsMaxBuildingChangesPerDay>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintStudentsMaxBuildingChangesPerDay>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsMaxBuildingChangesPerDay>\n";
 
 	return s;
 }
@@ -6925,15 +6925,15 @@ QString ConstraintStudentsSetMaxBuildingChangesPerWeek::getXmlDescription(Rules&
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintStudentsSetMaxBuildingChangesPerWeek>\n";
+	QString s=IL2+"<ConstraintStudentsSetMaxBuildingChangesPerWeek>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
-	s+="	<Max_Building_Changes_Per_Week>"+CustomFETString::number(this->maxBuildingChangesPerWeek)+"</Max_Building_Changes_Per_Week>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintStudentsSetMaxBuildingChangesPerWeek>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Students>"+protect(this->studentsName)+"</Students>\n";
+	s+=IL3+"<Max_Building_Changes_Per_Week>"+CustomFETString::number(this->maxBuildingChangesPerWeek)+"</Max_Building_Changes_Per_Week>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsSetMaxBuildingChangesPerWeek>\n";
 
 	return s;
 }
@@ -7168,14 +7168,14 @@ QString ConstraintStudentsMaxBuildingChangesPerWeek::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintStudentsMaxBuildingChangesPerWeek>\n";
+	QString s=IL2+"<ConstraintStudentsMaxBuildingChangesPerWeek>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Max_Building_Changes_Per_Week>"+CustomFETString::number(this->maxBuildingChangesPerWeek)+"</Max_Building_Changes_Per_Week>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintStudentsMaxBuildingChangesPerWeek>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Max_Building_Changes_Per_Week>"+CustomFETString::number(this->maxBuildingChangesPerWeek)+"</Max_Building_Changes_Per_Week>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsMaxBuildingChangesPerWeek>\n";
 
 	return s;
 }
@@ -7454,15 +7454,15 @@ QString ConstraintStudentsSetMinGapsBetweenBuildingChanges::getXmlDescription(Ru
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintStudentsSetMinGapsBetweenBuildingChanges>\n";
+	QString s=IL2+"<ConstraintStudentsSetMinGapsBetweenBuildingChanges>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
-	s+="	<Min_Gaps_Between_Building_Changes>"+CustomFETString::number(this->minGapsBetweenBuildingChanges)+"</Min_Gaps_Between_Building_Changes>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintStudentsSetMinGapsBetweenBuildingChanges>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Students>"+protect(this->studentsName)+"</Students>\n";
+	s+=IL3+"<Min_Gaps_Between_Building_Changes>"+CustomFETString::number(this->minGapsBetweenBuildingChanges)+"</Min_Gaps_Between_Building_Changes>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsSetMinGapsBetweenBuildingChanges>\n";
 
 	return s;
 }
@@ -7709,14 +7709,14 @@ QString ConstraintStudentsMinGapsBetweenBuildingChanges::getXmlDescription(Rules
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintStudentsMinGapsBetweenBuildingChanges>\n";
+	QString s=IL2+"<ConstraintStudentsMinGapsBetweenBuildingChanges>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Min_Gaps_Between_Building_Changes>"+CustomFETString::number(this->minGapsBetweenBuildingChanges)+"</Min_Gaps_Between_Building_Changes>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintStudentsMinGapsBetweenBuildingChanges>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Min_Gaps_Between_Building_Changes>"+CustomFETString::number(this->minGapsBetweenBuildingChanges)+"</Min_Gaps_Between_Building_Changes>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsMinGapsBetweenBuildingChanges>\n";
 
 	return s;
 }
@@ -7971,15 +7971,15 @@ QString ConstraintTeacherMaxBuildingChangesPerDay::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintTeacherMaxBuildingChangesPerDay>\n";
+	QString s=IL2+"<ConstraintTeacherMaxBuildingChangesPerDay>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
-	s+="	<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeacherMaxBuildingChangesPerDay>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+=IL3+"<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeacherMaxBuildingChangesPerDay>\n";
 
 	return s;
 }
@@ -8215,14 +8215,14 @@ QString ConstraintTeachersMaxBuildingChangesPerDay::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintTeachersMaxBuildingChangesPerDay>\n";
+	QString s=IL2+"<ConstraintTeachersMaxBuildingChangesPerDay>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeachersMaxBuildingChangesPerDay>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeachersMaxBuildingChangesPerDay>\n";
 
 	return s;
 }
@@ -8465,15 +8465,15 @@ QString ConstraintTeacherMaxBuildingChangesPerWeek::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintTeacherMaxBuildingChangesPerWeek>\n";
+	QString s=IL2+"<ConstraintTeacherMaxBuildingChangesPerWeek>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
-	s+="	<Max_Building_Changes_Per_Week>"+CustomFETString::number(this->maxBuildingChangesPerWeek)+"</Max_Building_Changes_Per_Week>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeacherMaxBuildingChangesPerWeek>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+=IL3+"<Max_Building_Changes_Per_Week>"+CustomFETString::number(this->maxBuildingChangesPerWeek)+"</Max_Building_Changes_Per_Week>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeacherMaxBuildingChangesPerWeek>\n";
 
 	return s;
 }
@@ -8709,14 +8709,14 @@ QString ConstraintTeachersMaxBuildingChangesPerWeek::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintTeachersMaxBuildingChangesPerWeek>\n";
+	QString s=IL2+"<ConstraintTeachersMaxBuildingChangesPerWeek>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Max_Building_Changes_Per_Week>"+CustomFETString::number(this->maxBuildingChangesPerWeek)+"</Max_Building_Changes_Per_Week>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeachersMaxBuildingChangesPerWeek>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Max_Building_Changes_Per_Week>"+CustomFETString::number(this->maxBuildingChangesPerWeek)+"</Max_Building_Changes_Per_Week>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeachersMaxBuildingChangesPerWeek>\n";
 
 	return s;
 }
@@ -8959,15 +8959,15 @@ QString ConstraintTeacherMinGapsBetweenBuildingChanges::getXmlDescription(Rules&
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintTeacherMinGapsBetweenBuildingChanges>\n";
+	QString s=IL2+"<ConstraintTeacherMinGapsBetweenBuildingChanges>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
-	s+="	<Min_Gaps_Between_Building_Changes>"+CustomFETString::number(this->minGapsBetweenBuildingChanges)+"</Min_Gaps_Between_Building_Changes>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeacherMinGapsBetweenBuildingChanges>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+=IL3+"<Min_Gaps_Between_Building_Changes>"+CustomFETString::number(this->minGapsBetweenBuildingChanges)+"</Min_Gaps_Between_Building_Changes>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeacherMinGapsBetweenBuildingChanges>\n";
 
 	return s;
 }
@@ -9215,14 +9215,14 @@ QString ConstraintTeachersMinGapsBetweenBuildingChanges::getXmlDescription(Rules
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintTeachersMinGapsBetweenBuildingChanges>\n";
+	QString s=IL2+"<ConstraintTeachersMinGapsBetweenBuildingChanges>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Min_Gaps_Between_Building_Changes>"+CustomFETString::number(this->minGapsBetweenBuildingChanges)+"</Min_Gaps_Between_Building_Changes>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeachersMinGapsBetweenBuildingChanges>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Min_Gaps_Between_Building_Changes>"+CustomFETString::number(this->minGapsBetweenBuildingChanges)+"</Min_Gaps_Between_Building_Changes>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeachersMinGapsBetweenBuildingChanges>\n";
 
 	return s;
 }
@@ -9515,15 +9515,15 @@ QString ConstraintStudentsSetMaxRoomChangesPerDay::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintStudentsSetMaxRoomChangesPerDay>\n";
+	QString s=IL2+"<ConstraintStudentsSetMaxRoomChangesPerDay>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
-	s+="	<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintStudentsSetMaxRoomChangesPerDay>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Students>"+protect(this->studentsName)+"</Students>\n";
+	s+=IL3+"<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsSetMaxRoomChangesPerDay>\n";
 
 	return s;
 }
@@ -9758,14 +9758,14 @@ QString ConstraintStudentsMaxRoomChangesPerDay::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintStudentsMaxRoomChangesPerDay>\n";
+	QString s=IL2+"<ConstraintStudentsMaxRoomChangesPerDay>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintStudentsMaxRoomChangesPerDay>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsMaxRoomChangesPerDay>\n";
 
 	return s;
 }
@@ -10045,15 +10045,15 @@ QString ConstraintStudentsSetMaxRoomChangesPerWeek::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintStudentsSetMaxRoomChangesPerWeek>\n";
+	QString s=IL2+"<ConstraintStudentsSetMaxRoomChangesPerWeek>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
-	s+="	<Max_Room_Changes_Per_Week>"+CustomFETString::number(this->maxRoomChangesPerWeek)+"</Max_Room_Changes_Per_Week>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintStudentsSetMaxRoomChangesPerWeek>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Students>"+protect(this->studentsName)+"</Students>\n";
+	s+=IL3+"<Max_Room_Changes_Per_Week>"+CustomFETString::number(this->maxRoomChangesPerWeek)+"</Max_Room_Changes_Per_Week>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsSetMaxRoomChangesPerWeek>\n";
 
 	return s;
 }
@@ -10288,14 +10288,14 @@ QString ConstraintStudentsMaxRoomChangesPerWeek::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintStudentsMaxRoomChangesPerWeek>\n";
+	QString s=IL2+"<ConstraintStudentsMaxRoomChangesPerWeek>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Max_Room_Changes_Per_Week>"+CustomFETString::number(this->maxRoomChangesPerWeek)+"</Max_Room_Changes_Per_Week>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintStudentsMaxRoomChangesPerWeek>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Max_Room_Changes_Per_Week>"+CustomFETString::number(this->maxRoomChangesPerWeek)+"</Max_Room_Changes_Per_Week>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsMaxRoomChangesPerWeek>\n";
 
 	return s;
 }
@@ -10574,15 +10574,15 @@ QString ConstraintStudentsSetMinGapsBetweenRoomChanges::getXmlDescription(Rules&
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintStudentsSetMinGapsBetweenRoomChanges>\n";
+	QString s=IL2+"<ConstraintStudentsSetMinGapsBetweenRoomChanges>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
-	s+="	<Min_Gaps_Between_Room_Changes>"+CustomFETString::number(this->minGapsBetweenRoomChanges)+"</Min_Gaps_Between_Room_Changes>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintStudentsSetMinGapsBetweenRoomChanges>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Students>"+protect(this->studentsName)+"</Students>\n";
+	s+=IL3+"<Min_Gaps_Between_Room_Changes>"+CustomFETString::number(this->minGapsBetweenRoomChanges)+"</Min_Gaps_Between_Room_Changes>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsSetMinGapsBetweenRoomChanges>\n";
 
 	return s;
 }
@@ -10829,14 +10829,14 @@ QString ConstraintStudentsMinGapsBetweenRoomChanges::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintStudentsMinGapsBetweenRoomChanges>\n";
+	QString s=IL2+"<ConstraintStudentsMinGapsBetweenRoomChanges>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Min_Gaps_Between_Room_Changes>"+CustomFETString::number(this->minGapsBetweenRoomChanges)+"</Min_Gaps_Between_Room_Changes>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintStudentsMinGapsBetweenRoomChanges>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Min_Gaps_Between_Room_Changes>"+CustomFETString::number(this->minGapsBetweenRoomChanges)+"</Min_Gaps_Between_Room_Changes>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsMinGapsBetweenRoomChanges>\n";
 
 	return s;
 }
@@ -11091,15 +11091,15 @@ QString ConstraintTeacherMaxRoomChangesPerDay::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintTeacherMaxRoomChangesPerDay>\n";
+	QString s=IL2+"<ConstraintTeacherMaxRoomChangesPerDay>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
-	s+="	<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeacherMaxRoomChangesPerDay>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+=IL3+"<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeacherMaxRoomChangesPerDay>\n";
 
 	return s;
 }
@@ -11335,14 +11335,14 @@ QString ConstraintTeachersMaxRoomChangesPerDay::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintTeachersMaxRoomChangesPerDay>\n";
+	QString s=IL2+"<ConstraintTeachersMaxRoomChangesPerDay>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeachersMaxRoomChangesPerDay>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeachersMaxRoomChangesPerDay>\n";
 
 	return s;
 }
@@ -11585,15 +11585,15 @@ QString ConstraintTeacherMaxRoomChangesPerWeek::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintTeacherMaxRoomChangesPerWeek>\n";
+	QString s=IL2+"<ConstraintTeacherMaxRoomChangesPerWeek>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
-	s+="	<Max_Room_Changes_Per_Week>"+CustomFETString::number(this->maxRoomChangesPerWeek)+"</Max_Room_Changes_Per_Week>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeacherMaxRoomChangesPerWeek>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+=IL3+"<Max_Room_Changes_Per_Week>"+CustomFETString::number(this->maxRoomChangesPerWeek)+"</Max_Room_Changes_Per_Week>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeacherMaxRoomChangesPerWeek>\n";
 
 	return s;
 }
@@ -11829,14 +11829,14 @@ QString ConstraintTeachersMaxRoomChangesPerWeek::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintTeachersMaxRoomChangesPerWeek>\n";
+	QString s=IL2+"<ConstraintTeachersMaxRoomChangesPerWeek>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Max_Room_Changes_Per_Week>"+CustomFETString::number(this->maxRoomChangesPerWeek)+"</Max_Room_Changes_Per_Week>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeachersMaxRoomChangesPerWeek>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Max_Room_Changes_Per_Week>"+CustomFETString::number(this->maxRoomChangesPerWeek)+"</Max_Room_Changes_Per_Week>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeachersMaxRoomChangesPerWeek>\n";
 
 	return s;
 }
@@ -12079,15 +12079,15 @@ QString ConstraintTeacherMinGapsBetweenRoomChanges::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintTeacherMinGapsBetweenRoomChanges>\n";
+	QString s=IL2+"<ConstraintTeacherMinGapsBetweenRoomChanges>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
-	s+="	<Min_Gaps_Between_Room_Changes>"+CustomFETString::number(this->minGapsBetweenRoomChanges)+"</Min_Gaps_Between_Room_Changes>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeacherMinGapsBetweenRoomChanges>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+=IL3+"<Min_Gaps_Between_Room_Changes>"+CustomFETString::number(this->minGapsBetweenRoomChanges)+"</Min_Gaps_Between_Room_Changes>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeacherMinGapsBetweenRoomChanges>\n";
 
 	return s;
 }
@@ -12335,14 +12335,14 @@ QString ConstraintTeachersMinGapsBetweenRoomChanges::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintTeachersMinGapsBetweenRoomChanges>\n";
+	QString s=IL2+"<ConstraintTeachersMinGapsBetweenRoomChanges>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Min_Gaps_Between_Room_Changes>"+CustomFETString::number(this->minGapsBetweenRoomChanges)+"</Min_Gaps_Between_Room_Changes>\n";
-		
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeachersMinGapsBetweenRoomChanges>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Min_Gaps_Between_Room_Changes>"+CustomFETString::number(this->minGapsBetweenRoomChanges)+"</Min_Gaps_Between_Room_Changes>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeachersMinGapsBetweenRoomChanges>\n";
 
 	return s;
 }
@@ -12615,19 +12615,19 @@ QString ConstraintActivitiesOccupyMaxDifferentRooms::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintActivitiesOccupyMaxDifferentRooms>\n";
+	QString s=IL2+"<ConstraintActivitiesOccupyMaxDifferentRooms>\n";
 	
-	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	
-	s+="	<Number_of_Activities>"+QString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
+	s+=IL3+"<Number_of_Activities>"+QString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
 	for(int aid : std::as_const(this->activitiesIds))
-		s+="	<Activity_Id>"+CustomFETString::number(aid)+"</Activity_Id>\n";
+		s+=IL3+"<Activity_Id>"+CustomFETString::number(aid)+"</Activity_Id>\n";
 	
-	s+="	<Max_Number_of_Different_Rooms>"+CustomFETString::number(this->maxDifferentRooms)+"</Max_Number_of_Different_Rooms>\n";
+	s+=IL3+"<Max_Number_of_Different_Rooms>"+CustomFETString::number(this->maxDifferentRooms)+"</Max_Number_of_Different_Rooms>\n";
 	
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintActivitiesOccupyMaxDifferentRooms>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintActivitiesOccupyMaxDifferentRooms>\n";
 	return s;
 }
 
@@ -12887,17 +12887,17 @@ QString ConstraintActivitiesSameRoomIfConsecutive::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintActivitiesSameRoomIfConsecutive>\n";
+	QString s=IL2+"<ConstraintActivitiesSameRoomIfConsecutive>\n";
 	
-	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	
-	s+="	<Number_of_Activities>"+QString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
+	s+=IL3+"<Number_of_Activities>"+QString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
 	for(int aid : std::as_const(this->activitiesIds))
-		s+="	<Activity_Id>"+CustomFETString::number(aid)+"</Activity_Id>\n";
+		s+=IL3+"<Activity_Id>"+CustomFETString::number(aid)+"</Activity_Id>\n";
 	
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintActivitiesSameRoomIfConsecutive>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintActivitiesSameRoomIfConsecutive>\n";
 	return s;
 }
 
@@ -13138,14 +13138,14 @@ bool ConstraintStudentsMaxRoomChangesPerRealDay::hasInactiveActivities(Rules& r)
 QString ConstraintStudentsMaxRoomChangesPerRealDay::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 
-	QString s="<ConstraintStudentsMaxRoomChangesPerRealDay>\n";
+	QString s=IL2+"<ConstraintStudentsMaxRoomChangesPerRealDay>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
 
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintStudentsMaxRoomChangesPerRealDay>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsMaxRoomChangesPerRealDay>\n";
 
 	return s;
 }
@@ -13434,15 +13434,15 @@ bool ConstraintStudentsSetMaxRoomChangesPerRealDay::hasInactiveActivities(Rules&
 QString ConstraintStudentsSetMaxRoomChangesPerRealDay::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 
-	QString s="<ConstraintStudentsSetMaxRoomChangesPerRealDay>\n";
+	QString s=IL2+"<ConstraintStudentsSetMaxRoomChangesPerRealDay>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
-	s+="	<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Students>"+protect(this->studentsName)+"</Students>\n";
+	s+=IL3+"<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
 
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintStudentsSetMaxRoomChangesPerRealDay>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsSetMaxRoomChangesPerRealDay>\n";
 
 	return s;
 }
@@ -13695,15 +13695,15 @@ bool ConstraintTeacherMaxRoomChangesPerRealDay::hasInactiveActivities(Rules& r)
 QString ConstraintTeacherMaxRoomChangesPerRealDay::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 
-	QString s="<ConstraintTeacherMaxRoomChangesPerRealDay>\n";
+	QString s=IL2+"<ConstraintTeacherMaxRoomChangesPerRealDay>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
-	s+="	<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+=IL3+"<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
 
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeacherMaxRoomChangesPerRealDay>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeacherMaxRoomChangesPerRealDay>\n";
 
 	return s;
 }
@@ -13948,14 +13948,14 @@ bool ConstraintTeachersMaxRoomChangesPerRealDay::hasInactiveActivities(Rules& r)
 QString ConstraintTeachersMaxRoomChangesPerRealDay::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 
-	QString s="<ConstraintTeachersMaxRoomChangesPerRealDay>\n";
+	QString s=IL2+"<ConstraintTeachersMaxRoomChangesPerRealDay>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
 
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeachersMaxRoomChangesPerRealDay>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeachersMaxRoomChangesPerRealDay>\n";
 
 	return s;
 }
@@ -14197,14 +14197,14 @@ bool ConstraintStudentsMaxBuildingChangesPerRealDay::hasInactiveActivities(Rules
 QString ConstraintStudentsMaxBuildingChangesPerRealDay::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 
-	QString s="<ConstraintStudentsMaxBuildingChangesPerRealDay>\n";
+	QString s=IL2+"<ConstraintStudentsMaxBuildingChangesPerRealDay>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
 
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintStudentsMaxBuildingChangesPerRealDay>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsMaxBuildingChangesPerRealDay>\n";
 
 	return s;
 }
@@ -14493,15 +14493,15 @@ bool ConstraintStudentsSetMaxBuildingChangesPerRealDay::hasInactiveActivities(Ru
 QString ConstraintStudentsSetMaxBuildingChangesPerRealDay::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 
-	QString s="<ConstraintStudentsSetMaxBuildingChangesPerRealDay>\n";
+	QString s=IL2+"<ConstraintStudentsSetMaxBuildingChangesPerRealDay>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
-	s+="	<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Students>"+protect(this->studentsName)+"</Students>\n";
+	s+=IL3+"<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
 
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintStudentsSetMaxBuildingChangesPerRealDay>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsSetMaxBuildingChangesPerRealDay>\n";
 
 	return s;
 }
@@ -14754,15 +14754,15 @@ bool ConstraintTeacherMaxBuildingChangesPerRealDay::hasInactiveActivities(Rules&
 QString ConstraintTeacherMaxBuildingChangesPerRealDay::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 
-	QString s="<ConstraintTeacherMaxBuildingChangesPerRealDay>\n";
+	QString s=IL2+"<ConstraintTeacherMaxBuildingChangesPerRealDay>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
-	s+="	<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+=IL3+"<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
 
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeacherMaxBuildingChangesPerRealDay>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeacherMaxBuildingChangesPerRealDay>\n";
 
 	return s;
 }
@@ -15007,14 +15007,14 @@ bool ConstraintTeachersMaxBuildingChangesPerRealDay::hasInactiveActivities(Rules
 QString ConstraintTeachersMaxBuildingChangesPerRealDay::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 
-	QString s="<ConstraintTeachersMaxBuildingChangesPerRealDay>\n";
+	QString s=IL2+"<ConstraintTeachersMaxBuildingChangesPerRealDay>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
 
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeachersMaxBuildingChangesPerRealDay>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeachersMaxBuildingChangesPerRealDay>\n";
 
 	return s;
 }
@@ -15306,25 +15306,25 @@ QString ConstraintStudentsSetMaxBuildingChangesPerDayInInterval::getXmlDescripti
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintStudentsSetMaxBuildingChangesPerDayInInterval>\n";
+	QString s=IL2+"<ConstraintStudentsSetMaxBuildingChangesPerDayInInterval>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Students>"+protect(this->studentsName)+"</Students>\n";
 	
-	s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
+	s+=IL3+"<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
 	if(this->intervalEnd < r.nHoursPerDay){
-		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
+		s+=IL3+"<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
 	}
 	else{
-		s+="	<Interval_End_Hour></Interval_End_Hour>\n";
-		s+="	<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
+		s+=IL3+"<Interval_End_Hour></Interval_End_Hour>\n";
+		s+=IL3+"<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
 	}
 
-	s+="	<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
+	s+=IL3+"<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
 	
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintStudentsSetMaxBuildingChangesPerDayInInterval>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsSetMaxBuildingChangesPerDayInInterval>\n";
 
 	return s;
 }
@@ -15585,24 +15585,24 @@ QString ConstraintStudentsMaxBuildingChangesPerDayInInterval::getXmlDescription(
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintStudentsMaxBuildingChangesPerDayInInterval>\n";
+	QString s=IL2+"<ConstraintStudentsMaxBuildingChangesPerDayInInterval>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	
-	s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
+	s+=IL3+"<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
 	if(this->intervalEnd < r.nHoursPerDay){
-		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
+		s+=IL3+"<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
 	}
 	else{
-		s+="	<Interval_End_Hour></Interval_End_Hour>\n";
-		s+="	<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
+		s+=IL3+"<Interval_End_Hour></Interval_End_Hour>\n";
+		s+=IL3+"<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
 	}
 
-	s+="	<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
+	s+=IL3+"<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
 	
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintStudentsMaxBuildingChangesPerDayInInterval>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsMaxBuildingChangesPerDayInInterval>\n";
 
 	return s;
 }
@@ -15871,25 +15871,25 @@ QString ConstraintTeacherMaxBuildingChangesPerDayInInterval::getXmlDescription(R
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintTeacherMaxBuildingChangesPerDayInInterval>\n";
+	QString s=IL2+"<ConstraintTeacherMaxBuildingChangesPerDayInInterval>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	
-	s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
+	s+=IL3+"<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
 	if(this->intervalEnd < r.nHoursPerDay){
-		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
+		s+=IL3+"<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
 	}
 	else{
-		s+="	<Interval_End_Hour></Interval_End_Hour>\n";
-		s+="	<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
+		s+=IL3+"<Interval_End_Hour></Interval_End_Hour>\n";
+		s+=IL3+"<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
 	}
 
-	s+="	<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
+	s+=IL3+"<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
 	
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeacherMaxBuildingChangesPerDayInInterval>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeacherMaxBuildingChangesPerDayInInterval>\n";
 
 	return s;
 }
@@ -16151,24 +16151,24 @@ QString ConstraintTeachersMaxBuildingChangesPerDayInInterval::getXmlDescription(
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintTeachersMaxBuildingChangesPerDayInInterval>\n";
+	QString s=IL2+"<ConstraintTeachersMaxBuildingChangesPerDayInInterval>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	
-	s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
+	s+=IL3+"<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
 	if(this->intervalEnd < r.nHoursPerDay){
-		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
+		s+=IL3+"<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
 	}
 	else{
-		s+="	<Interval_End_Hour></Interval_End_Hour>\n";
-		s+="	<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
+		s+=IL3+"<Interval_End_Hour></Interval_End_Hour>\n";
+		s+=IL3+"<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
 	}
 
-	s+="	<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
+	s+=IL3+"<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
 	
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeachersMaxBuildingChangesPerDayInInterval>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeachersMaxBuildingChangesPerDayInInterval>\n";
 
 	return s;
 }
@@ -16474,44 +16474,44 @@ QString ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval::getXmlDescr
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval>\n";
+	QString s=IL2+"<ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Students>"+protect(this->studentsName)+"</Students>\n";
 	
 	if(this->intervalStart<r.nHoursPerDay){
-		s+="	<Interval_Start_Day>Morning</Interval_Start_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
+		s+=IL3+"<Interval_Start_Day>Morning</Interval_Start_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
 	}
 	else{
-		s+="	<Interval_Start_Day>Afternoon</Interval_Start_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart-r.nHoursPerDay])+"</Interval_Start_Hour>\n";
+		s+=IL3+"<Interval_Start_Day>Afternoon</Interval_Start_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart-r.nHoursPerDay])+"</Interval_Start_Hour>\n";
 	}
 
 	if(this->intervalEnd<r.nHoursPerDay){
-		s+="	<Interval_End_Day>Morning</Interval_End_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
+		s+=IL3+"<Interval_End_Day>Morning</Interval_End_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
 	}
 	else if(this->intervalEnd<2*r.nHoursPerDay){
-		s+="	<Interval_End_Day>Afternoon</Interval_End_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd-r.nHoursPerDay])+"</Interval_End_Hour>\n";
+		s+=IL3+"<Interval_End_Day>Afternoon</Interval_End_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd-r.nHoursPerDay])+"</Interval_End_Hour>\n";
 	}
 	else{
-		s+="	<Interval_End_Day>Afternoon</Interval_End_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_End_Hour></Interval_End_Hour>\n";
-		s+="	<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
+		s+=IL3+"<Interval_End_Day>Afternoon</Interval_End_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_End_Hour></Interval_End_Hour>\n";
+		s+=IL3+"<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
 	}
 
-	s+="	<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
+	s+=IL3+"<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
 	
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval>\n";
 
 	return s;
 }
@@ -16793,43 +16793,43 @@ QString ConstraintStudentsMaxBuildingChangesPerRealDayInInterval::getXmlDescript
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintStudentsMaxBuildingChangesPerRealDayInInterval>\n";
+	QString s=IL2+"<ConstraintStudentsMaxBuildingChangesPerRealDayInInterval>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	
 	if(this->intervalStart<r.nHoursPerDay){
-		s+="	<Interval_Start_Day>Morning</Interval_Start_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
+		s+=IL3+"<Interval_Start_Day>Morning</Interval_Start_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
 	}
 	else{
-		s+="	<Interval_Start_Day>Afternoon</Interval_Start_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart-r.nHoursPerDay])+"</Interval_Start_Hour>\n";
+		s+=IL3+"<Interval_Start_Day>Afternoon</Interval_Start_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart-r.nHoursPerDay])+"</Interval_Start_Hour>\n";
 	}
 
 	if(this->intervalEnd<r.nHoursPerDay){
-		s+="	<Interval_End_Day>Morning</Interval_End_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
+		s+=IL3+"<Interval_End_Day>Morning</Interval_End_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
 	}
 	else if(this->intervalEnd<2*r.nHoursPerDay){
-		s+="	<Interval_End_Day>Afternoon</Interval_End_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd-r.nHoursPerDay])+"</Interval_End_Hour>\n";
+		s+=IL3+"<Interval_End_Day>Afternoon</Interval_End_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd-r.nHoursPerDay])+"</Interval_End_Hour>\n";
 	}
 	else{
-		s+="	<Interval_End_Day>Afternoon</Interval_End_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_End_Hour></Interval_End_Hour>\n";
-		s+="	<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
+		s+=IL3+"<Interval_End_Day>Afternoon</Interval_End_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_End_Hour></Interval_End_Hour>\n";
+		s+=IL3+"<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
 	}
 
-	s+="	<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
+	s+=IL3+"<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
 	
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintStudentsMaxBuildingChangesPerRealDayInInterval>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsMaxBuildingChangesPerRealDayInInterval>\n";
 
 	return s;
 }
@@ -17119,44 +17119,44 @@ QString ConstraintTeacherMaxBuildingChangesPerRealDayInInterval::getXmlDescripti
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintTeacherMaxBuildingChangesPerRealDayInInterval>\n";
+	QString s=IL2+"<ConstraintTeacherMaxBuildingChangesPerRealDayInInterval>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	
 	if(this->intervalStart<r.nHoursPerDay){
-		s+="	<Interval_Start_Day>Morning</Interval_Start_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
+		s+=IL3+"<Interval_Start_Day>Morning</Interval_Start_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
 	}
 	else{
-		s+="	<Interval_Start_Day>Afternoon</Interval_Start_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart-r.nHoursPerDay])+"</Interval_Start_Hour>\n";
+		s+=IL3+"<Interval_Start_Day>Afternoon</Interval_Start_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart-r.nHoursPerDay])+"</Interval_Start_Hour>\n";
 	}
 
 	if(this->intervalEnd<r.nHoursPerDay){
-		s+="	<Interval_End_Day>Morning</Interval_End_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
+		s+=IL3+"<Interval_End_Day>Morning</Interval_End_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
 	}
 	else if(this->intervalEnd<2*r.nHoursPerDay){
-		s+="	<Interval_End_Day>Afternoon</Interval_End_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd-r.nHoursPerDay])+"</Interval_End_Hour>\n";
+		s+=IL3+"<Interval_End_Day>Afternoon</Interval_End_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd-r.nHoursPerDay])+"</Interval_End_Hour>\n";
 	}
 	else{
-		s+="	<Interval_End_Day>Afternoon</Interval_End_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_End_Hour></Interval_End_Hour>\n";
-		s+="	<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
+		s+=IL3+"<Interval_End_Day>Afternoon</Interval_End_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_End_Hour></Interval_End_Hour>\n";
+		s+=IL3+"<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
 	}
 
-	s+="	<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
+	s+=IL3+"<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
 	
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeacherMaxBuildingChangesPerRealDayInInterval>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeacherMaxBuildingChangesPerRealDayInInterval>\n";
 
 	return s;
 }
@@ -17440,43 +17440,43 @@ QString ConstraintTeachersMaxBuildingChangesPerRealDayInInterval::getXmlDescript
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintTeachersMaxBuildingChangesPerRealDayInInterval>\n";
+	QString s=IL2+"<ConstraintTeachersMaxBuildingChangesPerRealDayInInterval>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	
 	if(this->intervalStart<r.nHoursPerDay){
-		s+="	<Interval_Start_Day>Morning</Interval_Start_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
+		s+=IL3+"<Interval_Start_Day>Morning</Interval_Start_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
 	}
 	else{
-		s+="	<Interval_Start_Day>Afternoon</Interval_Start_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart-r.nHoursPerDay])+"</Interval_Start_Hour>\n";
+		s+=IL3+"<Interval_Start_Day>Afternoon</Interval_Start_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart-r.nHoursPerDay])+"</Interval_Start_Hour>\n";
 	}
 
 	if(this->intervalEnd<r.nHoursPerDay){
-		s+="	<Interval_End_Day>Morning</Interval_End_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
+		s+=IL3+"<Interval_End_Day>Morning</Interval_End_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
 	}
 	else if(this->intervalEnd<2*r.nHoursPerDay){
-		s+="	<Interval_End_Day>Afternoon</Interval_End_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd-r.nHoursPerDay])+"</Interval_End_Hour>\n";
+		s+=IL3+"<Interval_End_Day>Afternoon</Interval_End_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd-r.nHoursPerDay])+"</Interval_End_Hour>\n";
 	}
 	else{
-		s+="	<Interval_End_Day>Afternoon</Interval_End_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_End_Hour></Interval_End_Hour>\n";
-		s+="	<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
+		s+=IL3+"<Interval_End_Day>Afternoon</Interval_End_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_End_Hour></Interval_End_Hour>\n";
+		s+=IL3+"<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
 	}
 
-	s+="	<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
+	s+=IL3+"<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
 	
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeachersMaxBuildingChangesPerRealDayInInterval>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeachersMaxBuildingChangesPerRealDayInInterval>\n";
 
 	return s;
 }
@@ -17803,25 +17803,25 @@ QString ConstraintStudentsSetMaxRoomChangesPerDayInInterval::getXmlDescription(R
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintStudentsSetMaxRoomChangesPerDayInInterval>\n";
+	QString s=IL2+"<ConstraintStudentsSetMaxRoomChangesPerDayInInterval>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Students>"+protect(this->studentsName)+"</Students>\n";
 	
-	s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
+	s+=IL3+"<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
 	if(this->intervalEnd < r.nHoursPerDay){
-		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
+		s+=IL3+"<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
 	}
 	else{
-		s+="	<Interval_End_Hour></Interval_End_Hour>\n";
-		s+="	<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
+		s+=IL3+"<Interval_End_Hour></Interval_End_Hour>\n";
+		s+=IL3+"<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
 	}
 
-	s+="	<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
+	s+=IL3+"<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
 	
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintStudentsSetMaxRoomChangesPerDayInInterval>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsSetMaxRoomChangesPerDayInInterval>\n";
 
 	return s;
 }
@@ -18082,24 +18082,24 @@ QString ConstraintStudentsMaxRoomChangesPerDayInInterval::getXmlDescription(Rule
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintStudentsMaxRoomChangesPerDayInInterval>\n";
+	QString s=IL2+"<ConstraintStudentsMaxRoomChangesPerDayInInterval>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	
-	s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
+	s+=IL3+"<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
 	if(this->intervalEnd < r.nHoursPerDay){
-		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
+		s+=IL3+"<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
 	}
 	else{
-		s+="	<Interval_End_Hour></Interval_End_Hour>\n";
-		s+="	<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
+		s+=IL3+"<Interval_End_Hour></Interval_End_Hour>\n";
+		s+=IL3+"<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
 	}
 
-	s+="	<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
+	s+=IL3+"<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
 	
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintStudentsMaxRoomChangesPerDayInInterval>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsMaxRoomChangesPerDayInInterval>\n";
 
 	return s;
 }
@@ -18368,25 +18368,25 @@ QString ConstraintTeacherMaxRoomChangesPerDayInInterval::getXmlDescription(Rules
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintTeacherMaxRoomChangesPerDayInInterval>\n";
+	QString s=IL2+"<ConstraintTeacherMaxRoomChangesPerDayInInterval>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	
-	s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
+	s+=IL3+"<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
 	if(this->intervalEnd < r.nHoursPerDay){
-		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
+		s+=IL3+"<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
 	}
 	else{
-		s+="	<Interval_End_Hour></Interval_End_Hour>\n";
-		s+="	<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
+		s+=IL3+"<Interval_End_Hour></Interval_End_Hour>\n";
+		s+=IL3+"<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
 	}
 
-	s+="	<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
+	s+=IL3+"<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
 	
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeacherMaxRoomChangesPerDayInInterval>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeacherMaxRoomChangesPerDayInInterval>\n";
 
 	return s;
 }
@@ -18648,24 +18648,24 @@ QString ConstraintTeachersMaxRoomChangesPerDayInInterval::getXmlDescription(Rule
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintTeachersMaxRoomChangesPerDayInInterval>\n";
+	QString s=IL2+"<ConstraintTeachersMaxRoomChangesPerDayInInterval>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	
-	s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
+	s+=IL3+"<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
 	if(this->intervalEnd < r.nHoursPerDay){
-		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
+		s+=IL3+"<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
 	}
 	else{
-		s+="	<Interval_End_Hour></Interval_End_Hour>\n";
-		s+="	<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
+		s+=IL3+"<Interval_End_Hour></Interval_End_Hour>\n";
+		s+=IL3+"<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
 	}
 
-	s+="	<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
+	s+=IL3+"<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
 	
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeachersMaxRoomChangesPerDayInInterval>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeachersMaxRoomChangesPerDayInInterval>\n";
 
 	return s;
 }
@@ -18971,44 +18971,44 @@ QString ConstraintStudentsSetMaxRoomChangesPerRealDayInInterval::getXmlDescripti
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintStudentsSetMaxRoomChangesPerRealDayInInterval>\n";
+	QString s=IL2+"<ConstraintStudentsSetMaxRoomChangesPerRealDayInInterval>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Students>"+protect(this->studentsName)+"</Students>\n";
 	
 	if(this->intervalStart<r.nHoursPerDay){
-		s+="	<Interval_Start_Day>Morning</Interval_Start_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
+		s+=IL3+"<Interval_Start_Day>Morning</Interval_Start_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
 	}
 	else{
-		s+="	<Interval_Start_Day>Afternoon</Interval_Start_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart-r.nHoursPerDay])+"</Interval_Start_Hour>\n";
+		s+=IL3+"<Interval_Start_Day>Afternoon</Interval_Start_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart-r.nHoursPerDay])+"</Interval_Start_Hour>\n";
 	}
 
 	if(this->intervalEnd<r.nHoursPerDay){
-		s+="	<Interval_End_Day>Morning</Interval_End_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
+		s+=IL3+"<Interval_End_Day>Morning</Interval_End_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
 	}
 	else if(this->intervalEnd<2*r.nHoursPerDay){
-		s+="	<Interval_End_Day>Afternoon</Interval_End_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd-r.nHoursPerDay])+"</Interval_End_Hour>\n";
+		s+=IL3+"<Interval_End_Day>Afternoon</Interval_End_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd-r.nHoursPerDay])+"</Interval_End_Hour>\n";
 	}
 	else{
-		s+="	<Interval_End_Day>Afternoon</Interval_End_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_End_Hour></Interval_End_Hour>\n";
-		s+="	<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
+		s+=IL3+"<Interval_End_Day>Afternoon</Interval_End_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_End_Hour></Interval_End_Hour>\n";
+		s+=IL3+"<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
 	}
 
-	s+="	<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
+	s+=IL3+"<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
 	
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintStudentsSetMaxRoomChangesPerRealDayInInterval>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsSetMaxRoomChangesPerRealDayInInterval>\n";
 
 	return s;
 }
@@ -19290,43 +19290,43 @@ QString ConstraintStudentsMaxRoomChangesPerRealDayInInterval::getXmlDescription(
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintStudentsMaxRoomChangesPerRealDayInInterval>\n";
+	QString s=IL2+"<ConstraintStudentsMaxRoomChangesPerRealDayInInterval>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	
 	if(this->intervalStart<r.nHoursPerDay){
-		s+="	<Interval_Start_Day>Morning</Interval_Start_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
+		s+=IL3+"<Interval_Start_Day>Morning</Interval_Start_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
 	}
 	else{
-		s+="	<Interval_Start_Day>Afternoon</Interval_Start_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart-r.nHoursPerDay])+"</Interval_Start_Hour>\n";
+		s+=IL3+"<Interval_Start_Day>Afternoon</Interval_Start_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart-r.nHoursPerDay])+"</Interval_Start_Hour>\n";
 	}
 
 	if(this->intervalEnd<r.nHoursPerDay){
-		s+="	<Interval_End_Day>Morning</Interval_End_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
+		s+=IL3+"<Interval_End_Day>Morning</Interval_End_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
 	}
 	else if(this->intervalEnd<2*r.nHoursPerDay){
-		s+="	<Interval_End_Day>Afternoon</Interval_End_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd-r.nHoursPerDay])+"</Interval_End_Hour>\n";
+		s+=IL3+"<Interval_End_Day>Afternoon</Interval_End_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd-r.nHoursPerDay])+"</Interval_End_Hour>\n";
 	}
 	else{
-		s+="	<Interval_End_Day>Afternoon</Interval_End_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_End_Hour></Interval_End_Hour>\n";
-		s+="	<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
+		s+=IL3+"<Interval_End_Day>Afternoon</Interval_End_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_End_Hour></Interval_End_Hour>\n";
+		s+=IL3+"<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
 	}
 
-	s+="	<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
+	s+=IL3+"<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
 	
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintStudentsMaxRoomChangesPerRealDayInInterval>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsMaxRoomChangesPerRealDayInInterval>\n";
 
 	return s;
 }
@@ -19616,44 +19616,44 @@ QString ConstraintTeacherMaxRoomChangesPerRealDayInInterval::getXmlDescription(R
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintTeacherMaxRoomChangesPerRealDayInInterval>\n";
+	QString s=IL2+"<ConstraintTeacherMaxRoomChangesPerRealDayInInterval>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	
 	if(this->intervalStart<r.nHoursPerDay){
-		s+="	<Interval_Start_Day>Morning</Interval_Start_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
+		s+=IL3+"<Interval_Start_Day>Morning</Interval_Start_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
 	}
 	else{
-		s+="	<Interval_Start_Day>Afternoon</Interval_Start_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart-r.nHoursPerDay])+"</Interval_Start_Hour>\n";
+		s+=IL3+"<Interval_Start_Day>Afternoon</Interval_Start_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart-r.nHoursPerDay])+"</Interval_Start_Hour>\n";
 	}
 
 	if(this->intervalEnd<r.nHoursPerDay){
-		s+="	<Interval_End_Day>Morning</Interval_End_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
+		s+=IL3+"<Interval_End_Day>Morning</Interval_End_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
 	}
 	else if(this->intervalEnd<2*r.nHoursPerDay){
-		s+="	<Interval_End_Day>Afternoon</Interval_End_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd-r.nHoursPerDay])+"</Interval_End_Hour>\n";
+		s+=IL3+"<Interval_End_Day>Afternoon</Interval_End_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd-r.nHoursPerDay])+"</Interval_End_Hour>\n";
 	}
 	else{
-		s+="	<Interval_End_Day>Afternoon</Interval_End_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_End_Hour></Interval_End_Hour>\n";
-		s+="	<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
+		s+=IL3+"<Interval_End_Day>Afternoon</Interval_End_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_End_Hour></Interval_End_Hour>\n";
+		s+=IL3+"<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
 	}
 
-	s+="	<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
+	s+=IL3+"<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
 	
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeacherMaxRoomChangesPerRealDayInInterval>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeacherMaxRoomChangesPerRealDayInInterval>\n";
 
 	return s;
 }
@@ -19937,43 +19937,43 @@ QString ConstraintTeachersMaxRoomChangesPerRealDayInInterval::getXmlDescription(
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintTeachersMaxRoomChangesPerRealDayInInterval>\n";
+	QString s=IL2+"<ConstraintTeachersMaxRoomChangesPerRealDayInInterval>\n";
 
-	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	
 	if(this->intervalStart<r.nHoursPerDay){
-		s+="	<Interval_Start_Day>Morning</Interval_Start_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
+		s+=IL3+"<Interval_Start_Day>Morning</Interval_Start_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart])+"</Interval_Start_Hour>\n";
 	}
 	else{
-		s+="	<Interval_Start_Day>Afternoon</Interval_Start_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart-r.nHoursPerDay])+"</Interval_Start_Hour>\n";
+		s+=IL3+"<Interval_Start_Day>Afternoon</Interval_Start_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_Start_Hour>"+protect(r.hoursOfTheDay[this->intervalStart-r.nHoursPerDay])+"</Interval_Start_Hour>\n";
 	}
 
 	if(this->intervalEnd<r.nHoursPerDay){
-		s+="	<Interval_End_Day>Morning</Interval_End_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
+		s+=IL3+"<Interval_End_Day>Morning</Interval_End_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd])+"</Interval_End_Hour>\n";
 	}
 	else if(this->intervalEnd<2*r.nHoursPerDay){
-		s+="	<Interval_End_Day>Afternoon</Interval_End_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd-r.nHoursPerDay])+"</Interval_End_Hour>\n";
+		s+=IL3+"<Interval_End_Day>Afternoon</Interval_End_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_End_Hour>"+protect(r.hoursOfTheDay[this->intervalEnd-r.nHoursPerDay])+"</Interval_End_Hour>\n";
 	}
 	else{
-		s+="	<Interval_End_Day>Afternoon</Interval_End_Day>\n";
-		s+="	<!-- Morning or Afternoon -->\n";
-		s+="	<Interval_End_Hour></Interval_End_Hour>\n";
-		s+="	<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
+		s+=IL3+"<Interval_End_Day>Afternoon</Interval_End_Day>\n";
+		s+=IL3+"<!-- Morning or Afternoon -->\n";
+		s+=IL3+"<Interval_End_Hour></Interval_End_Hour>\n";
+		s+=IL3+"<!-- Interval_End_Hour void means the end of the day (which has no name) -->\n";
 	}
 
-	s+="	<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
+	s+=IL3+"<Max_Room_Changes_Per_Day>"+CustomFETString::number(this->maxRoomChangesPerDay)+"</Max_Room_Changes_Per_Day>\n";
 	
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintTeachersMaxRoomChangesPerRealDayInInterval>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeachersMaxRoomChangesPerRealDayInInterval>\n";
 
 	return s;
 }
@@ -20276,18 +20276,18 @@ QString ConstraintRoomMaxActivityTagsPerDayFromSet::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintRoomMaxActivityTagsPerDayFromSet>\n";
-	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Room>"+protect(this->room)+"</Room>\n";
+	QString s=IL2+"<ConstraintRoomMaxActivityTagsPerDayFromSet>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Room>"+protect(this->room)+"</Room>\n";
 
-	s+="	<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
-	s+="	<Number_of_Activity_Tags>"+QString::number(tagsList.count())+"</Number_of_Activity_Tags>\n";
+	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
+	s+=IL3+"<Number_of_Activity_Tags>"+QString::number(tagsList.count())+"</Number_of_Activity_Tags>\n";
 	for(const QString& atn : std::as_const(tagsList))
-		s+="	<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
+		s+=IL3+"<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
 
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintRoomMaxActivityTagsPerDayFromSet>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintRoomMaxActivityTagsPerDayFromSet>\n";
 	return s;
 }
 
@@ -20523,18 +20523,18 @@ QString ConstraintRoomMaxActivityTagsPerRealDayFromSet::getXmlDescription(Rules&
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintRoomMaxActivityTagsPerRealDayFromSet>\n";
-	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Room>"+protect(this->room)+"</Room>\n";
+	QString s=IL2+"<ConstraintRoomMaxActivityTagsPerRealDayFromSet>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Room>"+protect(this->room)+"</Room>\n";
 
-	s+="	<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
-	s+="	<Number_of_Activity_Tags>"+QString::number(tagsList.count())+"</Number_of_Activity_Tags>\n";
+	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
+	s+=IL3+"<Number_of_Activity_Tags>"+QString::number(tagsList.count())+"</Number_of_Activity_Tags>\n";
 	for(const QString& atn : std::as_const(tagsList))
-		s+="	<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
+		s+=IL3+"<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
 
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintRoomMaxActivityTagsPerRealDayFromSet>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintRoomMaxActivityTagsPerRealDayFromSet>\n";
 	return s;
 }
 
@@ -20773,18 +20773,18 @@ QString ConstraintRoomMaxActivityTagsPerWeekFromSet::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="<ConstraintRoomMaxActivityTagsPerWeekFromSet>\n";
-	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Room>"+protect(this->room)+"</Room>\n";
+	QString s=IL2+"<ConstraintRoomMaxActivityTagsPerWeekFromSet>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Room>"+protect(this->room)+"</Room>\n";
 
-	s+="	<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
-	s+="	<Number_of_Activity_Tags>"+QString::number(tagsList.count())+"</Number_of_Activity_Tags>\n";
+	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
+	s+=IL3+"<Number_of_Activity_Tags>"+QString::number(tagsList.count())+"</Number_of_Activity_Tags>\n";
 	for(const QString& atn : std::as_const(tagsList))
-		s+="	<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
+		s+=IL3+"<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
 
-	s+="	<Active>"+trueFalse(active)+"</Active>\n";
-	s+="	<Comments>"+protect(comments)+"</Comments>\n";
-	s+="</ConstraintRoomMaxActivityTagsPerWeekFromSet>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintRoomMaxActivityTagsPerWeekFromSet>\n";
 	return s;
 }
 

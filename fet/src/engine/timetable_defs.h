@@ -38,6 +38,12 @@ File timetable_defs.h
 
 class QWidget;
 
+extern const QString IL1; //indentation levels
+extern const QString IL2;
+extern const QString IL3;
+extern const QString IL4;
+extern const QString IL5;
+
 extern bool USE_UNDO_REDO;
 extern int UNDO_REDO_STEPS;
 //extern int UNDO_REDO_COMPRESSION_LEVEL;
@@ -1077,7 +1083,7 @@ int randomKnuth(int k); //a random between 0 and k-1
 //1 (1999), 159--164.
 //<https://pubsonline.informs.org/doi/abs/10.1287/opre.47.1.159>
 
-//Includes ideas and code from the files: http://simul.iro.umontreal.ca/rng/MRG32k3a.h, http://simul.iro.umontreal.ca/rng/MRG32k3a.c,
+//Includes ideas and code from the files: https://simul.iro.umontreal.ca/rng/MRG32k3a.h, https://simul.iro.umontreal.ca/rng/MRG32k3a.c,
 //and/or https://www.iro.umontreal.ca/~lecuyer/myftp/papers/combmrg2.c
 
 //Used with permission from the author, Pierre L'Ecuyer (9 March 2020)
