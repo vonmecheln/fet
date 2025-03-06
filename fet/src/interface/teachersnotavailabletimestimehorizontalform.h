@@ -23,6 +23,9 @@
 #include <QAbstractItemDelegate>
 #include <QStyledItemDelegate>
 
+#include <QSet>
+#include <QString>
+
 #include "ui_teachersnotavailabletimestimehorizontalform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
@@ -50,6 +53,8 @@ class TeachersNotAvailableTimesTimeHorizontalForm : public QDialog, public Ui::T
 	Q_OBJECT
 	
 private:
+	QSet<QString> showedStudents;
+
 	int initialRecommendedHeight;
 
 	QAbstractItemDelegate* oldItemDelegate;
@@ -61,6 +66,8 @@ private:
 public:
 	TeachersNotAvailableTimesTimeHorizontalForm(QWidget* parent);
 	~TeachersNotAvailableTimesTimeHorizontalForm();
+
+	bool filterOk(const QString& tchName);
 
 	void colorItem(QTableWidgetItem* item);
 
@@ -74,6 +81,14 @@ public slots:
 	void heightSpinBoxValueChanged();
 
 	void selectedClicked();
+
+	void studentsFilterChanged();
+
+	void updateShownTeachers();
+
+	void filterCheckBoxToggled();
+
+	void colorsCheckBoxToggled();
 };
 
 #endif

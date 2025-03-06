@@ -1210,8 +1210,6 @@
      <addaction name="separator"/>
      <addaction name="settingsShowShortcutsOnMainWindowAction"/>
      <addaction name="separator"/>
-     <addaction name="settingsUseColorsAction"/>
-     <addaction name="separator"/>
      <addaction name="settingsShowToolTipsForConstraintsWithTablesAction"/>
      <addaction name="separator"/>
      <addaction name="settingsShowSubgroupsInComboBoxesAction"/>
@@ -1664,17 +1662,6 @@
   <action name="randomSeedAction">
    <property name="text">
     <string>Seed of random number generator</string>
-   </property>
-  </action>
-  <action name="settingsUseColorsAction">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Use colors in interface</string>
    </property>
   </action>
   <action name="helpContentsAction">

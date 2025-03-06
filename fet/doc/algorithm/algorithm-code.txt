@@ -1,3 +1,6 @@
+References for the idea of the algorithm used in FET: please see the REFERENCES file from the main directory or
+the interface menu FET > Help > About > References.
+
 Please see the file src/engine/generate.cpp from the sources package of FET for the allocation (generation algorithm).
 Also, see the file src/engine/generate_pre.cpp for the algorithm of initial ordering of the activities, before the generation
 algorithm.

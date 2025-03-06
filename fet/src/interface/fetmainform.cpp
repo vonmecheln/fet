@@ -918,8 +918,6 @@ const QString PROGRAM=QString("fettimetabling");
 QString INTERFACE_STYLE=QString("");
 QString INTERFACE_COLOR_SCHEME=QString("automatic");
 
-bool USE_GUI_COLORS=false;
-
 bool SHOW_SUBGROUPS_IN_COMBO_BOXES=true;
 bool SHOW_SUBGROUPS_IN_ACTIVITY_PLANNING=true;
 
@@ -1438,9 +1436,6 @@ FetMainForm::FetMainForm()
 	checkForUpdatesAction->setCheckable(true);
 	checkForUpdatesAction->setChecked(checkForUpdates);
 	
-	settingsUseColorsAction->setCheckable(true);
-	settingsUseColorsAction->setChecked(USE_GUI_COLORS);
-	
 	settingsShowSubgroupsInComboBoxesAction->setCheckable(true);
 	settingsShowSubgroupsInComboBoxesAction->setChecked(SHOW_SUBGROUPS_IN_COMBO_BOXES);
 	settingsShowSubgroupsInActivityPlanningAction->setCheckable(true);
@@ -1547,7 +1542,6 @@ FetMainForm::FetMainForm()
 	connect(overwriteSingleGenerationFilesAction, &QAction::toggled, this, &FetMainForm::overwriteSingleGenerationFilesToggled);
 
 	connect(checkForUpdatesAction, &QAction::toggled, this, &FetMainForm::checkForUpdatesToggled);
-	connect(settingsUseColorsAction, &QAction::toggled, this, &FetMainForm::useColorsToggled);
 	connect(settingsShowSubgroupsInComboBoxesAction, &QAction::toggled, this, &FetMainForm::showSubgroupsInComboBoxesToggled);
 	connect(settingsShowSubgroupsInActivityPlanningAction, &QAction::toggled, this, &FetMainForm::showSubgroupsInActivityPlanningToggled);
 	
@@ -4389,15 +4383,6 @@ void FetMainForm::checkForUpdatesToggled(bool checked)
 	checkForUpdates=checked;
 }
 
-void FetMainForm::useColorsToggled(bool checked)
-{
-	Q_UNUSED(checked);
-	
-	USE_GUI_COLORS=settingsUseColorsAction->isChecked();
-	
-	LockUnlock::increaseCommunicationSpinBox();
-}
-
 void FetMainForm::showSubgroupsInComboBoxesToggled(bool checked)
 {
 	if(checked==false){
@@ -6556,7 +6541,9 @@ void FetMainForm::helpSettingsAction_triggered()
 	QString s;
 	
 	s+=tr("Probably some settings which are more difficult to understand are these ones:");
+	
 	s+="\n\n";
+	
 	s+=tr("Option 'Divide HTML timetables with time axis by days':"
 	" This means simply that the HTML timetables of type 'time horizontal' or 'time vertical' (see the generated HTML timetables)"
 	" should be or not divided according to the days.");
@@ -6564,38 +6551,23 @@ void FetMainForm::helpSettingsAction_triggered()
 	s+=tr("If the 'time horizontal' or 'time vertical' HTML timetables are too large for you, then you might need to select this option");
 	
 	s+="\n\n";
+	
 	s+=tr("Option 'Print activities with same starting time in timetables': selecting it means that the HTML timetables will contain for"
 	 " each slot all the activities which have the same starting time (fact specified by your constraints) as the activity(ies) which are normally shown in this slot."
 	 " If you don't use constraints activities same starting time, this option has no effect for you.");
 	
 	s+="\n\n";
-	s+=tr("Seed of random number generator: please read the help in the dialog of this option");
 	
-	s+="\n\n";
-	s+=tr("Interface - use colors: the places where this setting is used are the add/modify dialogs of the constraints which use tables, like not available times"
-		" or preferred times (the table cells will have a green or a red color).");
-	s+="\n";
-	/*s+=" -";
-	s+=tr("activities and subactivities dialogs, the inactive activities will have a distinctive background color");
-	s+="\n";
-	s+=" -";
-	s+=tr("all time constraints and all space constraints dialogs, the inactive constraints will have a distinctive background color");
-	s+="\n";
-	s+=" -";
-	s+=tr("group activities in the initial order items, the inactive items will have a distinctive background color");
-	s+="\n";*/
-	//s+=" -";
-	//s+=tr("the timetable view dialogs");
+	s+=tr("Seed of random number generator: please read the help in the dialog of this option");
 	
 	s+="\n\n";
 	
 	s+=tr("Confirmations: unselect the corresponding check boxes if you want to skip introduction and confirmation to various advanced dialogs.");
 	
 	s+="\n\n";
-	
 	s+=tr("Duplicate vertical headers to the right (in timetable settings) - select this if you want the timetables to duplicate the table left vertical headers to the right"
 		" part of the tables");
-		
+	
 	s+="\n\n";
 	
 	s+=tr("If you have many subgroups and you don't explicitly use them, it is recommended to use the three global settings: hide subgroups"
@@ -13567,11 +13539,8 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	s+=tr("4")+QString(". ")+tr("Check for updates at startup will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=tr("5")+QString(". ")+tr("Use colors in FET graphical user interface will be %1", "%1 is true or false").arg(tr("false"));
-	s+="\n";
-
 #ifndef USE_SYSTEM_LOCALE
-	s+=tr("6")+QString(". ")+tr("Language will be %1", "%1 is the default language").arg(QString("en_US")+QString(" (")+tr("US English")+QString(")"));
+	s+=tr("5")+QString(". ")+tr("Language will be %1", "%1 is the default language").arg(QString("en_US")+QString(" (")+tr("US English")+QString(")"));
 #else
 	QMap<QString, QString> languagesMap;
 	populateLanguagesMap(languagesMap);
@@ -13592,138 +13561,138 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 		NEW_FET_LANGUAGE="en_US";
 		
 	assert(languagesMap.contains(NEW_FET_LANGUAGE));
-	s+=tr("6")+QString(". ")+tr("Language will be %1", "%1 is the default language").arg(NEW_FET_LANGUAGE+QString(" (")+languagesMap.value(NEW_FET_LANGUAGE)+QString(")"));
+	s+=tr("5")+QString(". ")+tr("Language will be %1", "%1 is the default language").arg(NEW_FET_LANGUAGE+QString(" (")+languagesMap.value(NEW_FET_LANGUAGE)+QString(")"));
 #endif
 	s+="\n";
 
-	s+=tr("7")+QString(". ")+tr("The list of recently used files will be cleared");
+	s+=tr("6")+QString(". ")+tr("The list of recently used files will be cleared");
 	s+="\n";
 	
-	s+=tr("8")+QString(". ")+tr("Working directory will be %1", "%1 is the directory").arg(QDir::toNativeSeparators(default_working_directory));
+	s+=tr("7")+QString(". ")+tr("Working directory will be %1", "%1 is the directory").arg(QDir::toNativeSeparators(default_working_directory));
 	s+="\n";
 
-	s+=tr("9")+QString(". ")+tr("Output directory will be %1", "%1 is the directory").arg(QDir::toNativeSeparators(QDir::homePath()+FILE_SEP+"fet-results"));
+	s+=tr("8")+QString(". ")+tr("Output directory will be %1", "%1 is the directory").arg(QDir::toNativeSeparators(QDir::homePath()+FILE_SEP+"fet-results"));
 	s+="\n";
 
-	s+=tr("10")+QString(". ")+tr("Import directory will be %1", "%1 is the directory").arg(QDir::toNativeSeparators(QDir::homePath()+FILE_SEP+"fet-results"));
+	s+=tr("9")+QString(". ")+tr("Import directory will be %1", "%1 is the directory").arg(QDir::toNativeSeparators(QDir::homePath()+FILE_SEP+"fet-results"));
 	s+="\n";
 
-	s+=tr("11")+QString(". ")+tr("HTML level of the timetables will be %1", "%1 is default HTML level").arg(2);
+	s+=tr("10")+QString(". ")+tr("HTML level of the timetables will be %1", "%1 is default HTML level").arg(2);
 	s+="\n";
 
-	s+=tr("12")+QString(". ")+tr("Mark not available slots with -x- in timetables will be %1", "%1 is true or false. Lowercase -x-").arg(tr("true"));
+	s+=tr("11")+QString(". ")+tr("Mark not available slots with -x- in timetables will be %1", "%1 is true or false. Lowercase -x-").arg(tr("true"));
 	s+="\n";
 
-	s+=tr("13")+QString(". ")+tr("Mark break slots with -X- in timetables will be %1", "%1 is true or false. Uppercase -X-").arg(tr("true"));
+	s+=tr("12")+QString(". ")+tr("Mark break slots with -X- in timetables will be %1", "%1 is true or false. Uppercase -X-").arg(tr("true"));
 	s+="\n";
 
-	s+=tr("14")+QString(". ")+tr("Divide HTML timetables with time axis by days will be %1", "%1 is true or false").arg(tr("false"));
+	s+=tr("13")+QString(". ")+tr("Divide HTML timetables with time axis by days will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=tr("15")+QString(". ")+tr("Duplicate vertical headers to the right will be %1", "%1 is true or false").arg(tr("false"));
+	s+=tr("14")+QString(". ")+tr("Duplicate vertical headers to the right will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=tr("16")+QString(". ")+tr("Print activities with same starting time will be %1", "%1 is true or false").arg(tr("false"));
+	s+=tr("15")+QString(". ")+tr("Print activities with same starting time will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=tr("17")+QString(". ")+tr("Print subjects in timetables will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("16")+QString(". ")+tr("Print subjects in timetables will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 
-	s+=tr("18")+QString(". ")+tr("Print activity tags in timetables will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("17")+QString(". ")+tr("Print activity tags in timetables will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 
-	s+=tr("19")+QString(". ")+tr("Print teachers in timetables will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("18")+QString(". ")+tr("Print teachers in timetables will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 
-	s+=tr("20")+QString(". ")+tr("Print students in timetables will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("19")+QString(". ")+tr("Print students in timetables will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 
-	s+=tr("21")+QString(". ")+tr("Print rooms in timetables will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("20")+QString(". ")+tr("Print rooms in timetables will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 
 	///////////////confirmations
-	s+=tr("22")+QString(". ")+tr("Confirm activity planning will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("21")+QString(". ")+tr("Confirm activity planning will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
-	s+=tr("23")+QString(". ")+tr("Confirm spread activities over the week will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("22")+QString(". ")+tr("Confirm spread activities over the week will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
-	s+=tr("24")+QString(". ")+tr("Confirm remove redundant constraints will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("23")+QString(". ")+tr("Confirm remove redundant constraints will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
-	s+=tr("25")+QString(". ")+tr("Confirm save data and timetable as will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("24")+QString(". ")+tr("Confirm save data and timetable as will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 	///////////////
 	
-	s+=tr("26")+QString(". ")+tr("Enable group activities in the initial order of generation will be %1", "%1 is true or false").arg(tr("false"));
+	s+=tr("25")+QString(". ")+tr("Enable group activities in the initial order of generation will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
-	s+=tr("27")+QString(". ")+tr("Warn if using group activities in the initial order of generation will be %1", "%1 is true or false").arg(tr("true"));
-	s+="\n";
-	///////////////
-
-	s+=tr("28")+QString(". ")+tr("Show subgroups in combo boxes will be %1", "%1 is true or false").arg(tr("true"));
-	s+="\n";
-	s+=tr("29")+QString(". ")+tr("Show subgroups in activity planning will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("26")+QString(". ")+tr("Warn if using group activities in the initial order of generation will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 	///////////////
 
-	s+=tr("30")+QString(". ")+tr("Write on disk the %1 timetable will be %2", "%1 is a category of timetables, like conflicts, %2 is true or false")
+	s+=tr("27")+QString(". ")+tr("Show subgroups in combo boxes will be %1", "%1 is true or false").arg(tr("true"));
+	s+="\n";
+	s+=tr("28")+QString(". ")+tr("Show subgroups in activity planning will be %1", "%1 is true or false").arg(tr("true"));
+	s+="\n";
+	///////////////
+
+	s+=tr("29")+QString(". ")+tr("Write on disk the %1 timetable will be %2", "%1 is a category of timetables, like conflicts, %2 is true or false")
 	 .arg(tr("conflicts")).arg(tr("true"));
 	s+="\n";
 
-	s+=tr("31")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("30")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("statistics")).arg(tr("true"));
 	s+="\n";
-	s+=tr("32")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("31")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("XML")).arg(tr("true"));
 	s+="\n";
-	s+=tr("33")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("32")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("days horizontal")).arg(tr("true"));
 	s+="\n";
-	s+=tr("34")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("33")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("days vertical")).arg(tr("true"));
 	s+="\n";
-	s+=tr("35")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("34")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("time horizontal")).arg(tr("true"));
 	s+="\n";
-	s+=tr("36")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("35")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("time vertical")).arg(tr("true"));
 	s+="\n";
 
-	s+=tr("37")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("36")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("subgroups")).arg(tr("true"));
 	s+="\n";
-	s+=tr("38")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("37")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("groups")).arg(tr("true"));
 	s+="\n";
 	s+=tr("38")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("years")).arg(tr("true"));
 	s+="\n";
-	s+=tr("40")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("39")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("teachers")).arg(tr("true"));
 	s+="\n";
-	s+=tr("41")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("40")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("teachers free periods")).arg(tr("true"));
 	s+="\n";
-	s+=tr("42")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("41")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("buildings")).arg(tr("true"));
 	s+="\n";
-	s+=tr("43")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("42")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("rooms")).arg(tr("true"));
 	s+="\n";
-	s+=tr("44")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("43")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("subjects")).arg(tr("true"));
 	s+="\n";
-	s+=tr("45")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("44")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("activity tags")).arg(tr("true"));
 	s+="\n";
-	s+=tr("46")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
+	s+=tr("45")+QString(". ")+tr("Write on disk the %1 timetables will be %2", "%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false")
 	 .arg(tr("activities")).arg(tr("true"));
 	s+="\n";
-	s+=tr("47")+QString(". ")+tr("Show tool tips for constraints with tables will be %1", "%1 is true or false").arg(tr("false"));
+	s+=tr("46")+QString(". ")+tr("Show tool tips for constraints with tables will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
-	s+=tr("48")+QString(". ")+tr("Show warning for subgroups with the same activities will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("47")+QString(". ")+tr("Show warning for subgroups with the same activities will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
-	s+=tr("49")+QString(". ")+tr("Print detailed timetables will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("48")+QString(". ")+tr("Print detailed timetables will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
-	s+=tr("50")+QString(". ")+tr("Print detailed teachers' free periods timetables will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("49")+QString(". ")+tr("Print detailed teachers' free periods timetables will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 	
 	//Just to have them translated, in case I need them.
@@ -13734,75 +13703,75 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	QString t3=tr("categorized", "It is a style for students' combo boxes");
 	Q_UNUSED(t3);
 	
-	s+=tr("51")+QString(". ")+tr("Students' combo boxes style will be %1").arg(tr("simple", "It is a style for students' combo boxes"));
+	s+=tr("50")+QString(". ")+tr("Students' combo boxes style will be %1").arg(tr("simple", "It is a style for students' combo boxes"));
 	s+="\n";
 	
-	s+=tr("52")+QString(". ")+tr("Print virtual rooms in the timetables will be %1", "%1 is true or false").arg(tr("false"));
+	s+=tr("51")+QString(". ")+tr("Print virtual rooms in the timetables will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=tr("53")+QString(". ")+tr("Show warning for activities not locked in time but locked in space in virtual rooms specifying the"
+	s+=tr("52")+QString(". ")+tr("Show warning for activities not locked in time but locked in space in virtual rooms specifying the"
 	 " real rooms will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 
-	s+=tr("54")+QString(". ")+tr("Beep at the end of the generation will be %1, run external command at the end of generation will be %2,"
+	s+=tr("53")+QString(". ")+tr("Beep at the end of the generation will be %1, run external command at the end of generation will be %2,"
 	 " and the external command will be empty",
 	 "%1 and %2 are true or false").arg(tr("true")).arg(tr("false"));
 	s+="\n";
 
-	s+=tr("55")+QString(". ")+tr("Show warning if using constraints of type max hours daily with a weight less than 100%"
+	s+=tr("54")+QString(". ")+tr("Show warning if using constraints of type max hours daily with a weight less than 100%"
 	 " will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 	
-	s+=tr("56")+QString(". ")+tr("Write HTML timetables for subgroups in sorted order will be %1", "%1 is true or false").arg(tr("false"));
+	s+=tr("55")+QString(". ")+tr("Write HTML timetables for subgroups in sorted order will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 	
-	s+=tr("57")+QString(". ")+tr("The Boolean value 'The font is user selectable' will be %1", "%1 is true or false").arg(tr("false"));
+	s+=tr("56")+QString(". ")+tr("The Boolean value 'The font is user selectable' will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=tr("58")+QString(". ")+tr("The font will be reset to default");
+	s+=tr("57")+QString(". ")+tr("The font will be reset to default");
 	s+="\n";
 	
-	s+=tr("59")+QString(". ")+tr("Enable save and restore history to/from the memory will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("58")+QString(". ")+tr("Enable save and restore history to/from the memory will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 
-	s+=tr("60")+QString(". ")+tr("The number of states to record in history to the memory will be %1", "%1 is a number").arg(100);
+	s+=tr("59")+QString(". ")+tr("The number of states to record in history to the memory will be %1", "%1 is a number").arg(100);
 	s+="\n";
 
 	s+="(";
 	s+=tr("If the history settings will change, the history will be cleared.");
 	s+=")\n";
 
-	s+=tr("61")+QString(". ")+tr("Confirm activating/deactivating activities/constraints will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("60")+QString(". ")+tr("Confirm activating/deactivating activities/constraints will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 
-	s+=tr("62")+QString(". ")+tr("Enable file autosave will be %1", "%1 is true or false").arg(tr("false"));
+	s+=tr("61")+QString(". ")+tr("Enable file autosave will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
-	s+=tr("63")+QString(". ")+tr("The number of minutes before autosave will be %1", "%1 is an integer").arg(3);
+	s+=tr("62")+QString(". ")+tr("The number of minutes before autosave will be %1", "%1 is an integer").arg(3);
 	s+="\n";
-	s+=tr("64")+QString(". ")+tr("The number of operations before autosave will be %1", "%1 is an integer").arg(1);
+	s+=tr("63")+QString(". ")+tr("The number of operations before autosave will be %1", "%1 is an integer").arg(1);
 	s+="\n";
-	s+=tr("65")+QString(". ")+tr("The directory for autosave will be '%1'", "%1 is a directory name").arg(QString(""));
+	s+=tr("64")+QString(". ")+tr("The directory for autosave will be '%1'", "%1 is a directory name").arg(QString(""));
 	s+="\n";
-	s+=tr("66")+QString(". ")+tr("The file name suffix for autosave will be '%1'", "%1 is a suffix to be added to the file name").arg(QString("_AUTOSAVE"));
-	s+="\n";
-
-	s+=tr("67")+QString(". ")+tr("Enable save and restore history to/from the disk will be %1", "%1 is true or false").arg(tr("false"));
-	s+="\n";
-	s+=tr("68")+QString(". ")+tr("The number of states to record in history to the disk will be %1", "%1 is a number").arg(20);
-	s+="\n";
-	s+=tr("69")+QString(". ")+tr("The file name suffix for saving the history to the disk will be '%1'", "%1 is a suffix to be added to the file name").arg(QString(".his"));
+	s+=tr("65")+QString(". ")+tr("The file name suffix for autosave will be '%1'", "%1 is a suffix to be added to the file name").arg(QString("_AUTOSAVE"));
 	s+="\n";
 
-	s+=tr("70")+QString(". ")+tr("The timetable options about which information to be printed in which table will be reset to defaults.");
+	s+=tr("66")+QString(". ")+tr("Enable save and restore history to/from the disk will be %1", "%1 is true or false").arg(tr("false"));
+	s+="\n";
+	s+=tr("67")+QString(". ")+tr("The number of states to record in history to the disk will be %1", "%1 is a number").arg(20);
+	s+="\n";
+	s+=tr("68")+QString(". ")+tr("The file name suffix for saving the history to the disk will be '%1'", "%1 is a suffix to be added to the file name").arg(QString(".his"));
 	s+="\n";
 
-	s+=tr("71")+QString(". ")+tr("The interface style and color scheme will be reset to defaults (useful only if the used Qt version is at least %1).").arg("6.8.0");
+	s+=tr("69")+QString(". ")+tr("The timetable options about which information to be printed in which table will be reset to defaults.");
+	s+="\n";
+
+	s+=tr("70")+QString(". ")+tr("The interface style and color scheme will be reset to defaults (useful only if the used Qt version is at least %1).").arg("6.8.0");
 	s+="\n";
 
 	//s+=tr("71")+QString(". ")+tr("The compression level for the states in history will be %1 (the default compression level for zlib)").arg(-1);
 	//s+="\n";
 
-	s+=tr("72")+QString(". ")+tr("Overwrite single generation files will be %1", "%1 is true or false").arg(tr("false"));
+	s+=tr("71")+QString(". ")+tr("Overwrite single generation files will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
 	switch( LongTextMessageBox::largeConfirmation( this, tr("FET confirmation"), s,
@@ -13853,11 +13822,6 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	INTERFACE_COLOR_SCHEME="automatic";
 	setCurrentStyle();
 	setCurrentColorScheme();
-	
-	disconnect(settingsUseColorsAction, &QAction::toggled, this, &FetMainForm::useColorsToggled);
-	USE_GUI_COLORS=false;
-	settingsUseColorsAction->setChecked(USE_GUI_COLORS);
-	connect(settingsUseColorsAction, &QAction::toggled, this, &FetMainForm::useColorsToggled);
 	
 	SHOW_SUBGROUPS_IN_COMBO_BOXES=true;
 	settingsShowSubgroupsInComboBoxesAction->setChecked(SHOW_SUBGROUPS_IN_COMBO_BOXES);
@@ -14710,9 +14674,6 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 
 	setLanguage(*pqapplication, this);
 	setCurrentFile(INPUT_FILENAME_XML);
-
-	if(teachers_schedule_ready && students_schedule_ready && rooms_buildings_schedule_ready)
-		LockUnlock::increaseCommunicationSpinBox(); //for GUI colors in timetables
 }
 
 void FetMainForm::settingsTimetableHtmlLevelAction_triggered()

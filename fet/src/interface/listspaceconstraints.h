@@ -35,6 +35,10 @@
 
 #include <QSplitter>
 
+#include <QString>
+
+#include <QSet>
+
 class ListSpaceConstraintsDialog: public QDialog
 {
 	QString dialogName;
@@ -43,8 +47,11 @@ class ListSpaceConstraintsDialog: public QDialog
 
 	QSplitter* splitter;
 
+	QCheckBox* showRelatedCheckBox;
+
 public:
-	ListSpaceConstraintsDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop, QSplitter* _splitter);
+	ListSpaceConstraintsDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop, QSplitter* _splitter,
+							   QCheckBox* showRelatedCheckBox);
 	~ListSpaceConstraintsDialog();
 };
 
@@ -59,6 +66,8 @@ class ListSpaceConstraints: public QObject
 	QString dialogTitle;
 
 	int type;
+
+	QCheckBox* showRelatedCheckBox;
 
 	QSplitter* splitter;
 
@@ -95,6 +104,8 @@ class ListSpaceConstraints: public QObject
 	QPushButton* weightsPushButton;
 	QPushButton* commentsPushButton;
 
+	QSet<QString> showedStudents;
+
 public:
 	ListSpaceConstraints(QWidget* parent, int _type);
 	~ListSpaceConstraints();
@@ -120,6 +131,8 @@ private:
 	void constraintComments();
 	void changeWeights();
 	void selectionChanged();
+
+	void showRelatedCheckBoxToggled();
 };
 
 #endif

@@ -559,7 +559,7 @@ void ActivitiesForm::filterChanged()
 			activitiesListWidget->addItem(s);
 			k++;
 			
-			if((true || USE_GUI_COLORS) && !act->active)
+			if(!act->active)
 				activitiesListWidget->item(k-1)->setBackground(activitiesListWidget->palette().alternateBase());
 			
 			//if(act->id==act->activityGroupId || act->activityGroupId==0)

@@ -617,8 +617,8 @@ void TimetableViewTeachersDaysVerticalForm::updateTeachersTimetableTable(){
 			//begin by Marco Vassura
 			// add colors (start)
 			//if(USE_GUI_COLORS) {
-			teachersTimetableTable->item(k, j)->setBackground(teachersTimetableTable->palette().color(QPalette::Base));
-			teachersTimetableTable->item(k, j)->setForeground(teachersTimetableTable->palette().color(QPalette::Text));
+			teachersTimetableTable->item(k, j)->setBackground(teachersTimetableTable->palette().base());
+			teachersTimetableTable->item(k, j)->setForeground(teachersTimetableTable->palette().text());
 			//}
 			// add colors (end)
 			//end by Marco Vassura

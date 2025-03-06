@@ -955,8 +955,8 @@ void TimetableViewStudentsTimeHorizontalForm::updateStudentsTimetableTable(){
 				//begin by Marco Vassura
 				// add colors (start)
 				//if(USE_GUI_COLORS) {
-				studentsTimetableTable->item(t, d*gt.rules.nHoursPerDay+h)->setBackground(studentsTimetableTable->palette().color(QPalette::Base));
-				studentsTimetableTable->item(t, d*gt.rules.nHoursPerDay+h)->setForeground(studentsTimetableTable->palette().color(QPalette::Text));
+				studentsTimetableTable->item(t, d*gt.rules.nHoursPerDay+h)->setBackground(studentsTimetableTable->palette().base());
+				studentsTimetableTable->item(t, d*gt.rules.nHoursPerDay+h)->setForeground(studentsTimetableTable->palette().text());
 				//}
 				// add colors (end)
 				//end by Marco Vassura

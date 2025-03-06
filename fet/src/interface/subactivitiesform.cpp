@@ -547,7 +547,7 @@ void SubactivitiesForm::filterChanged()
 			subactivitiesListWidget->addItem(s);
 			k++;
 			
-			if((true || USE_GUI_COLORS) && !act->active)
+			if(!act->active)
 				subactivitiesListWidget->item(k-1)->setBackground(subactivitiesListWidget->palette().alternateBase());
 			
 			//if(act->id==act->activityGroupId || act->activityGroupId==0)
@@ -866,8 +866,7 @@ void SubactivitiesForm::activateSubactivity()
 		}
 		else{
 			subactivitiesListWidget->currentItem()->setText(act->getDescription(gt.rules));
-			if(USE_GUI_COLORS)
-				subactivitiesListWidget->currentItem()->setBackground(subactivitiesListWidget->palette().base());
+			subactivitiesListWidget->currentItem()->setBackground(subactivitiesListWidget->palette().base());
 			subactivityChanged();
 		}
 
@@ -928,8 +927,7 @@ void SubactivitiesForm::deactivateSubactivity()
 		}
 		else{
 			subactivitiesListWidget->currentItem()->setText(act->getDescription(gt.rules));
-			if(true || USE_GUI_COLORS)
-				subactivitiesListWidget->currentItem()->setBackground(subactivitiesListWidget->palette().alternateBase());
+			subactivitiesListWidget->currentItem()->setBackground(subactivitiesListWidget->palette().alternateBase());
 			subactivityChanged();
 		}
 		

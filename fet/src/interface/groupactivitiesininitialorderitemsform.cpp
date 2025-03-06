@@ -388,17 +388,15 @@ void GroupActivitiesInInitialOrderItemsForm::moveItemUp()
 	
 	gt.rules.addUndoPoint(tr("Moved a 'group activities in the initial order' item up:\n\n%1", "%1 is the detailed description of the item").arg(it1->getDetailedDescription(gt.rules)));
 
-	if(true || USE_GUI_COLORS){
-		if(it2->active)
-			itemsListWidget->item(i)->setBackground(itemsListWidget->palette().base());
-		else
-			itemsListWidget->item(i)->setBackground(itemsListWidget->palette().alternateBase());
+	if(it2->active)
+		itemsListWidget->item(i)->setBackground(itemsListWidget->palette().base());
+	else
+		itemsListWidget->item(i)->setBackground(itemsListWidget->palette().alternateBase());
 
-		if(it1->active)
-			itemsListWidget->item(i-1)->setBackground(itemsListWidget->palette().base());
-		else
-			itemsListWidget->item(i-1)->setBackground(itemsListWidget->palette().alternateBase());
-	}
+	if(it1->active)
+		itemsListWidget->item(i-1)->setBackground(itemsListWidget->palette().base());
+	else
+		itemsListWidget->item(i-1)->setBackground(itemsListWidget->palette().alternateBase());
 
 	itemsListWidget->setCurrentRow(i-1);
 	itemChanged(i-1);
@@ -442,17 +440,15 @@ void GroupActivitiesInInitialOrderItemsForm::moveItemDown()
 	
 	gt.rules.addUndoPoint(tr("Moved a 'group activities in the initial order' item down:\n\n%1", "%1 is the detailed description of the item").arg(it1->getDetailedDescription(gt.rules)));
 
-	if(true || USE_GUI_COLORS){
-		if(it2->active)
-			itemsListWidget->item(i)->setBackground(itemsListWidget->palette().base());
-		else
-			itemsListWidget->item(i)->setBackground(itemsListWidget->palette().alternateBase());
+	if(it2->active)
+		itemsListWidget->item(i)->setBackground(itemsListWidget->palette().base());
+	else
+		itemsListWidget->item(i)->setBackground(itemsListWidget->palette().alternateBase());
 
-		if(it1->active)
-			itemsListWidget->item(i+1)->setBackground(itemsListWidget->palette().base());
-		else
-			itemsListWidget->item(i+1)->setBackground(itemsListWidget->palette().alternateBase());
-	}
+	if(it1->active)
+		itemsListWidget->item(i+1)->setBackground(itemsListWidget->palette().base());
+	else
+		itemsListWidget->item(i+1)->setBackground(itemsListWidget->palette().alternateBase());
 
 	itemsListWidget->setCurrentRow(i+1);
 	itemChanged(i+1);
@@ -473,7 +469,7 @@ void GroupActivitiesInInitialOrderItemsForm::filterChanged()
 
 		if(item->active)
 			n_active++;
-		else if(true || USE_GUI_COLORS)
+		else
 			itemsListWidget->item(itemsListWidget->count()-1)->setBackground(itemsListWidget->palette().alternateBase());
 	}
 	
@@ -630,8 +626,7 @@ void GroupActivitiesInInitialOrderItemsForm::activateItem()
 		setRulesModifiedAndOtherThings(&gt.rules);
 
 		itemsListWidget->currentItem()->setText(item->getDescription(gt.rules));
-		if(USE_GUI_COLORS)
-			itemsListWidget->currentItem()->setBackground(itemsListWidget->palette().base());
+		itemsListWidget->currentItem()->setBackground(itemsListWidget->palette().base());
 		itemChanged(itemsListWidget->currentRow());
 	
 		int n_active=0;
@@ -669,8 +664,7 @@ void GroupActivitiesInInitialOrderItemsForm::deactivateItem()
 		setRulesModifiedAndOtherThings(&gt.rules);
 
 		itemsListWidget->currentItem()->setText(item->getDescription(gt.rules));
-		if(true || USE_GUI_COLORS)
-			itemsListWidget->currentItem()->setBackground(itemsListWidget->palette().alternateBase());
+		itemsListWidget->currentItem()->setBackground(itemsListWidget->palette().alternateBase());
 		itemChanged(itemsListWidget->currentRow());
 
 		int n_active=0;

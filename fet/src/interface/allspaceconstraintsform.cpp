@@ -308,17 +308,15 @@ void AllSpaceConstraintsForm::moveSpaceConstraintUp()
 	
 	gt.rules.addUndoPoint(tr("A constraint was moved up:\n\n%1", "%1 is the detailed description of the constraint").arg(sc1->getDetailedDescription(gt.rules)));
 	
-	if(true || USE_GUI_COLORS){
-		if(sc2->active)
-			constraintsListWidget->item(i)->setBackground(constraintsListWidget->palette().base());
-		else
-			constraintsListWidget->item(i)->setBackground(constraintsListWidget->palette().alternateBase());
+	if(sc2->active)
+		constraintsListWidget->item(i)->setBackground(constraintsListWidget->palette().base());
+	else
+		constraintsListWidget->item(i)->setBackground(constraintsListWidget->palette().alternateBase());
 
-		if(sc1->active)
-			constraintsListWidget->item(i-1)->setBackground(constraintsListWidget->palette().base());
-		else
-			constraintsListWidget->item(i-1)->setBackground(constraintsListWidget->palette().alternateBase());
-	}
+	if(sc1->active)
+		constraintsListWidget->item(i-1)->setBackground(constraintsListWidget->palette().base());
+	else
+		constraintsListWidget->item(i-1)->setBackground(constraintsListWidget->palette().alternateBase());
 
 	constraintsListWidget->setCurrentRow(i-1);
 	constraintChanged(/*i-1*/);
@@ -366,17 +364,15 @@ void AllSpaceConstraintsForm::moveSpaceConstraintDown()
 	
 	gt.rules.addUndoPoint(tr("A constraint was moved down:\n\n%1", "%1 is the detailed description of the constraint").arg(sc1->getDetailedDescription(gt.rules)));
 	
-	if(true || USE_GUI_COLORS){
-		if(sc2->active)
-			constraintsListWidget->item(i)->setBackground(constraintsListWidget->palette().base());
-		else
-			constraintsListWidget->item(i)->setBackground(constraintsListWidget->palette().alternateBase());
+	if(sc2->active)
+		constraintsListWidget->item(i)->setBackground(constraintsListWidget->palette().base());
+	else
+		constraintsListWidget->item(i)->setBackground(constraintsListWidget->palette().alternateBase());
 
-		if(sc1->active)
-			constraintsListWidget->item(i+1)->setBackground(constraintsListWidget->palette().base());
-		else
-			constraintsListWidget->item(i+1)->setBackground(constraintsListWidget->palette().alternateBase());
-	}
+	if(sc1->active)
+		constraintsListWidget->item(i+1)->setBackground(constraintsListWidget->palette().base());
+	else
+		constraintsListWidget->item(i+1)->setBackground(constraintsListWidget->palette().alternateBase());
 
 	constraintsListWidget->setCurrentRow(i+1);
 	constraintChanged(/*i+1*/);
@@ -419,7 +415,7 @@ void AllSpaceConstraintsForm::filterChanged()
 
 		if(ctr->active)
 			n_active++;
-		else if(true || USE_GUI_COLORS)
+		else
 			constraintsListWidget->item(constraintsListWidget->count()-1)->setBackground(constraintsListWidget->palette().alternateBase());
 	}
 

@@ -44,6 +44,17 @@
 
 #include <QEventLoop>
 
+class CornerEnabledTableWidget: public QTableWidget
+{
+public:
+	bool useColors;
+
+	CornerEnabledTableWidget(bool _useColors);
+
+private:
+	void selectAll();
+};
+
 class AddOrModifySpaceConstraintTimesTableDelegate: public QStyledItemDelegate
 {
 	Q_OBJECT
@@ -67,15 +78,21 @@ class AddOrModifySpaceConstraintDialog: public QDialog
 	QString dialogTitle;
 	QEventLoop* eventLoop;
 
-	QTableWidget* timesTable;
+	CornerEnabledTableWidget* timesTable;
 	QAbstractItemDelegate* oldItemDelegate;
 	AddOrModifySpaceConstraintTimesTableDelegate* newItemDelegate;
 
+	QCheckBox* colorsCheckBox;
+
+	QCheckBox* showRelatedCheckBox;
+
 public:
 	AddOrModifySpaceConstraintDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop,
-									 QTableWidget* _timesTable,
+									 CornerEnabledTableWidget* _timesTable,
 									 QAbstractItemDelegate* _oldItemDelegate,
-									 AddOrModifySpaceConstraintTimesTableDelegate* _newItemDelegate);
+									 AddOrModifySpaceConstraintTimesTableDelegate* _newItemDelegate,
+									 QCheckBox* _colorsCheckBox,
+									 QCheckBox* _showRelatedCheckBox);
 	~AddOrModifySpaceConstraintDialog();
 };
 
@@ -91,6 +108,8 @@ class AddOrModifySpaceConstraint: public QObject
 
 	int type;
 	SpaceConstraint* oldsc;
+
+	QCheckBox* showRelatedCheckBox;
 
 	QPushButton* addConstraintPushButton;
 	QPushButton* addConstraintsPushButton;
@@ -108,10 +127,10 @@ class AddOrModifySpaceConstraint: public QObject
 	QLabel* firstModifyInstructionsLabel;
 	QLabel* secondModifyInstructionsLabel;
 
+	QCheckBox* colorsCheckBox;
 	QPushButton* toggleAllPushButton;
-	QPushButton* swapPushButton;
 
-	QTableWidget* timesTable;
+	CornerEnabledTableWidget* timesTable;
 	QAbstractItemDelegate* oldItemDelegate;
 	AddOrModifySpaceConstraintTimesTableDelegate* newItemDelegate;
 
@@ -185,6 +204,8 @@ class AddOrModifySpaceConstraint: public QObject
 
 	QCheckBox* filterActivityTagsCheckBox;
 
+	QSet<QString> showedStudents;
+
 public:
 	AddOrModifySpaceConstraint(QWidget* parent, int _type, SpaceConstraint* _oldsc=nullptr);
 	~AddOrModifySpaceConstraint();
@@ -219,8 +240,8 @@ private:
 	void horizontalHeaderClicked(int col);
 	void verticalHeaderClicked(int row);
 	void cellEntered(int row, int col);
+	void colorsCheckBoxToggled();
 	void toggleAllClicked();
-	void swapClicked();
 
 	void clearSelectedRealRooms();
 	void addRealRoom();
@@ -229,6 +250,8 @@ private:
 	void clearSelectedRooms();
 	void addRoom();
 	void removeRoom();
+
+	void showRelatedCheckBoxToggled();
 };
 
 #endif

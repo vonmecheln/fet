@@ -43,7 +43,12 @@
 #include <QGuiApplication>
 #include <QPainter>
 
+#include <QSettings>
+
 extern Timetable gt;
+
+extern const QString COMPANY;
+extern const QString PROGRAM;
 
 void AddOrModifyTimeConstraintTimesTableDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
 {
@@ -93,9 +98,14 @@ void AddOrModifyTimeConstraintTimesTableDelegate::paint(QPainter* painter, const
 }
 
 AddOrModifyTimeConstraintDialog::AddOrModifyTimeConstraintDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop,
-																 QTableWidget* _timesTable,
+																 CornerEnabledTableWidget* _timesTable,
 																 QAbstractItemDelegate* _oldItemDelegate,
-																 AddOrModifyTimeConstraintTimesTableDelegate* _newItemDelegate): QDialog(parent)
+																 AddOrModifyTimeConstraintTimesTableDelegate* _newItemDelegate,
+																 QCheckBox* _colorsCheckBox,
+																 QCheckBox* _showRelatedCheckBox,
+																 QCheckBox* _firstFilter_showRelatedCheckBox,
+																 QCheckBox* _secondFilter_showRelatedCheckBox,
+																 QCheckBox* _thirdFilter_showRelatedCheckBox): QDialog(parent)
 {
 	dialogName=_dialogName;
 	dialogTitle=_dialogTitle;
@@ -104,6 +114,14 @@ AddOrModifyTimeConstraintDialog::AddOrModifyTimeConstraintDialog(QWidget* parent
 	timesTable=_timesTable;
 	oldItemDelegate=_oldItemDelegate;
 	newItemDelegate=_newItemDelegate;
+
+	colorsCheckBox=_colorsCheckBox;
+
+	showRelatedCheckBox=_showRelatedCheckBox;
+
+	firstFilter_showRelatedCheckBox=_firstFilter_showRelatedCheckBox;
+	secondFilter_showRelatedCheckBox=_secondFilter_showRelatedCheckBox;
+	thirdFilter_showRelatedCheckBox=_thirdFilter_showRelatedCheckBox;
 
 	setWindowTitle(dialogTitle);
 
@@ -126,6 +144,25 @@ AddOrModifyTimeConstraintDialog::~AddOrModifyTimeConstraintDialog()
 	}
 
 	saveFETDialogGeometry(this, dialogName);
+
+	if(colorsCheckBox!=nullptr || showRelatedCheckBox!=nullptr || firstFilter_showRelatedCheckBox!=nullptr
+	 || secondFilter_showRelatedCheckBox!=nullptr || thirdFilter_showRelatedCheckBox!=nullptr){
+		QSettings settings(COMPANY, PROGRAM);
+
+		if(colorsCheckBox!=nullptr)
+			settings.setValue(dialogName+QString("/use-colors"), colorsCheckBox->isChecked());
+
+		if(showRelatedCheckBox!=nullptr)
+			settings.setValue(dialogName+QString("/show-related"), showRelatedCheckBox->isChecked());
+
+		if(firstFilter_showRelatedCheckBox!=nullptr)
+			settings.setValue(dialogName+QString("/first-filter-show-related"), firstFilter_showRelatedCheckBox->isChecked());
+		if(secondFilter_showRelatedCheckBox!=nullptr)
+			settings.setValue(dialogName+QString("/second-filter-show-related"), secondFilter_showRelatedCheckBox->isChecked());
+		if(thirdFilter_showRelatedCheckBox!=nullptr)
+			settings.setValue(dialogName+QString("/third-filter-show-related"), thirdFilter_showRelatedCheckBox->isChecked());
+	}
+
 	eventLoop->quit();
 }
 
@@ -133,6 +170,12 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 {
 	type=_type;
 	oldtc=_oldtc;
+
+	showRelatedCheckBox=nullptr;
+
+	firstFilter_showRelatedCheckBox=nullptr;
+	secondFilter_showRelatedCheckBox=nullptr;
+	thirdFilter_showRelatedCheckBox=nullptr;
 
 	filterIsOnSingleRow=false;
 
@@ -230,8 +273,8 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 	firstModifyInstructionsLabel=nullptr;
 	secondModifyInstructionsLabel=nullptr;
 
+	colorsCheckBox=nullptr;
 	toggleAllPushButton=nullptr;
-	swapPushButton=nullptr;
 	
 	timesTable=nullptr;
 	oldItemDelegate=nullptr;
@@ -323,10 +366,16 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					 "and an empty cell (or green) means that the slot is allowed"));
 				}
 				
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors")))
+					colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors")).toBool());
+				else
+					colorsCheckBox->setChecked(false);
+
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
-				swapPushButton=new QPushButton(tr("Swap"));
 				
-				timesTable=new QTableWidget;
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
 				
 				break;
 			}
@@ -352,10 +401,16 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					 "and an empty cell (or green) means that the slot is allowed"));
 				}
 
-				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
-				swapPushButton=new QPushButton(tr("Swap"));
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors")))
+					colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors")).toBool());
+				else
+					colorsCheckBox->setChecked(false);
 
-				timesTable=new QTableWidget;
+				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
 
 				teacherLabel=new QLabel(tr("Teacher"));
 				teachersComboBox=new QComboBox;
@@ -762,10 +817,16 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					 "and an empty cell (or green) means that the slot is allowed"));
 				}
 
-				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
-				swapPushButton=new QPushButton(tr("Swap"));
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors")))
+					colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors")).toBool());
+				else
+					colorsCheckBox->setChecked(false);
 
-				timesTable=new QTableWidget;
+				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
 
 				studentsLabel=new QLabel(tr("Students set"));
 				studentsComboBox=new QComboBox;
@@ -1235,10 +1296,16 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				activityLabel=new QLabel(tr("Activity"));
 				activitiesComboBox=new QComboBox;
 
-				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
-				swapPushButton=new QPushButton(tr("Swap"));
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors")))
+					colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors")).toBool());
+				else
+					colorsCheckBox->setChecked(false);
 
-				timesTable=new QTableWidget;
+				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
 
 				break;
 			}
@@ -1284,10 +1351,16 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				durationSpinBox->setMaximum(gt.rules.nHoursPerDay);
 				durationSpinBox->setValue(1);
 
-				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
-				swapPushButton=new QPushButton(tr("Swap"));
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors")))
+					colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors")).toBool());
+				else
+					colorsCheckBox->setChecked(false);
 
-				timesTable=new QTableWidget;
+				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
 
 				break;
 			}
@@ -1329,10 +1402,16 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				activityLabel=new QLabel(tr("Activity"));
 				activitiesComboBox=new QComboBox;
 
-				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
-				swapPushButton=new QPushButton(tr("Swap"));
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors")))
+					colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors")).toBool());
+				else
+					colorsCheckBox->setChecked(false);
 
-				timesTable=new QTableWidget;
+				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
 
 				break;
 			}
@@ -1378,10 +1457,16 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				durationSpinBox->setMaximum(gt.rules.nHoursPerDay);
 				durationSpinBox->setValue(1);
 
-				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
-				swapPushButton=new QPushButton(tr("Swap"));
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors")))
+					colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors")).toBool());
+				else
+					colorsCheckBox->setChecked(false);
 
-				timesTable=new QTableWidget;
+				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
 
 				break;
 			}
@@ -1647,10 +1732,16 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				durationSpinBox->setMaximum(gt.rules.nHoursPerDay);
 				durationSpinBox->setValue(1);
 
-				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
-				swapPushButton=new QPushButton(tr("Swap"));
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors")))
+					colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors")).toBool());
+				else
+					colorsCheckBox->setChecked(false);
 
-				timesTable=new QTableWidget;
+				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
 
 				splitIndexLabel=new QLabel(tr("Component number (split index)"));
 				splitIndexSpinBox=new QSpinBox;
@@ -1701,10 +1792,16 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				durationSpinBox->setMaximum(gt.rules.nHoursPerDay);
 				durationSpinBox->setValue(1);
 
-				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
-				swapPushButton=new QPushButton(tr("Swap"));
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors")))
+					colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors")).toBool());
+				else
+					colorsCheckBox->setChecked(false);
 
-				timesTable=new QTableWidget;
+				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
 
 				splitIndexLabel=new QLabel(tr("Component number (split index)"));
 				splitIndexSpinBox=new QSpinBox;
@@ -2363,10 +2460,16 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				addAllActivitiesPushButton=new QPushButton(tr("All", "Add all filtered activities to the list of selected activities"));
 				clearActivitiesPushButton=new QPushButton(tr("Clear", "Clear the list of selected activities"));
 
-				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
-				swapPushButton=new QPushButton(tr("Swap"));
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors")))
+					colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors")).toBool());
+				else
+					colorsCheckBox->setChecked(false);
 
-				timesTable=new QTableWidget;
+				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
 
 				labelForSpinBox=new QLabel(tr("Max occupied"));
 				spinBox=new QSpinBox;
@@ -2420,10 +2523,16 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				addAllActivitiesPushButton=new QPushButton(tr("All", "Add all filtered activities to the list of selected activities"));
 				clearActivitiesPushButton=new QPushButton(tr("Clear", "Clear the list of selected activities"));
 
-				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
-				swapPushButton=new QPushButton(tr("Swap"));
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors")))
+					colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors")).toBool());
+				else
+					colorsCheckBox->setChecked(false);
 
-				timesTable=new QTableWidget;
+				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
 
 				labelForSpinBox=new QLabel(tr("Max simultaneous"));
 				spinBox=new QSpinBox;
@@ -2901,10 +3010,16 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				addAllActivitiesPushButton=new QPushButton(tr("All", "Add all filtered activities to the list of selected activities"));
 				clearActivitiesPushButton=new QPushButton(tr("Clear", "Clear the list of selected activities"));
 
-				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
-				swapPushButton=new QPushButton(tr("Swap"));
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors")))
+					colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors")).toBool());
+				else
+					colorsCheckBox->setChecked(false);
 
-				timesTable=new QTableWidget;
+				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
 
 				labelForSpinBox=new QLabel(tr("Min occupied"));
 				spinBox=new QSpinBox;
@@ -2958,10 +3073,16 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				addAllActivitiesPushButton=new QPushButton(tr("All", "Add all filtered activities to the list of selected activities"));
 				clearActivitiesPushButton=new QPushButton(tr("Clear", "Clear the list of selected activities"));
 
-				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
-				swapPushButton=new QPushButton(tr("Swap"));
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors")))
+					colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors")).toBool());
+				else
+					colorsCheckBox->setChecked(false);
 
-				timesTable=new QTableWidget;
+				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
 
 				labelForSpinBox=new QLabel(tr("Min simultaneous"));
 				spinBox=new QSpinBox;
@@ -4966,10 +5087,16 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				addAllActivitiesPushButton=new QPushButton(tr("All", "Add all filtered activities to the list of selected activities"));
 				clearActivitiesPushButton=new QPushButton(tr("Clear", "Clear the list of selected activities"));
 
-				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
-				swapPushButton=new QPushButton(tr("Swap"));
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors")))
+					colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors")).toBool());
+				else
+					colorsCheckBox->setChecked(false);
 
-				timesTable=new QTableWidget;
+				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
 
 				labelForSpinBox=new QLabel(tr("Max total activities"));
 				spinBox=new QSpinBox;
@@ -6801,13 +6928,31 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 		teachersComboBox->setCurrentIndex(0);
 	}
-	
+
 	QVBoxLayout* studentsLayout=nullptr;
 	if(studentsComboBox!=nullptr){
 		studentsLayout=new QVBoxLayout;
 		if(studentsLabel!=nullptr)
 			studentsLayout->addWidget(studentsLabel);
-		studentsLayout->addWidget(studentsComboBox);
+
+		if(filterGroupBox==nullptr){
+			studentsLayout->addWidget(studentsComboBox);
+		}
+		else{
+			showRelatedCheckBox=new QCheckBox(tr("Show related"));
+
+			QSettings settings(COMPANY, PROGRAM);
+			showRelatedCheckBox->setChecked(settings.value(dialogName+QString("/show-related"), "false").toBool());
+
+			connect(showRelatedCheckBox, &QCheckBox::toggled, this, &AddOrModifyTimeConstraint::showRelatedCheckBoxToggled);
+
+			QHBoxLayout* ssrl=new QHBoxLayout;
+
+			ssrl->addWidget(studentsComboBox);
+			ssrl->addWidget(showRelatedCheckBox);
+
+			studentsLayout->addLayout(ssrl);
+		}
 
 		if(addEmpty)
 			populateStudentsComboBox(studentsComboBox, QString(""), true);
@@ -6890,18 +7035,21 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 		connect(second_filterTeachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::second_activitiesComboBoxFilter);
 	if(third_filterTeachersComboBox!=nullptr)
 		connect(third_filterTeachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::third_activitiesComboBoxFilter);
+
 	if(first_filterStudentsComboBox!=nullptr)
-		connect(first_filterStudentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::first_activitiesComboBoxFilter);
+		connect(first_filterStudentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::firstFilter_showRelatedCheckBoxToggled);
 	if(second_filterStudentsComboBox!=nullptr)
-		connect(second_filterStudentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::second_activitiesComboBoxFilter);
+		connect(second_filterStudentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::secondFilter_showRelatedCheckBoxToggled);
 	if(third_filterStudentsComboBox!=nullptr)
-		connect(third_filterStudentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::third_activitiesComboBoxFilter);
+		connect(third_filterStudentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::thirdFilter_showRelatedCheckBoxToggled);
+
 	if(first_filterSubjectsComboBox!=nullptr)
 		connect(first_filterSubjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::first_activitiesComboBoxFilter);
 	if(second_filterSubjectsComboBox!=nullptr)
 		connect(second_filterSubjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::second_activitiesComboBoxFilter);
 	if(third_filterSubjectsComboBox!=nullptr)
 		connect(third_filterSubjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::third_activitiesComboBoxFilter);
+
 	if(first_filterActivityTagsComboBox!=nullptr)
 		connect(first_filterActivityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::first_activitiesComboBoxFilter);
 	if(second_filterActivityTagsComboBox!=nullptr)
@@ -6922,12 +7070,12 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 	}
 	if(studentsComboBox!=nullptr){
 		if(activitiesComboBox!=nullptr)
-			connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::filterActivitiesComboBox);
+			connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::showRelatedCheckBoxToggled);
 		if(activitiesListWidget!=nullptr)
-			connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::filterActivitiesListWidget);
+			connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::showRelatedCheckBoxToggled);
 		if(activitiesListWidget_TwoSetsOfActivities_1!=nullptr){
 			assert(activitiesListWidget_TwoSetsOfActivities_2!=nullptr);
-			connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::filterActivitiesListWidgets1And2);
+			connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::showRelatedCheckBoxToggled);
 		}
 	}
 	if(subjectsComboBox!=nullptr){
@@ -6974,12 +7122,13 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 	}
 
 	if(timesTable!=nullptr){
-		connect(timesTable, &QTableWidget::itemClicked, this, &AddOrModifyTimeConstraint::itemClicked);
+		connect(timesTable, &CornerEnabledTableWidget::itemClicked, this, &AddOrModifyTimeConstraint::itemClicked);
 		
+		assert(colorsCheckBox!=nullptr);
+		connect(colorsCheckBox, &QCheckBox::toggled, this, &AddOrModifyTimeConstraint::colorsCheckBoxToggled);
+
 		assert(toggleAllPushButton!=nullptr);
-		assert(swapPushButton!=nullptr);
 		connect(toggleAllPushButton, &QPushButton::clicked, this, &AddOrModifyTimeConstraint::toggleAllClicked);
-		connect(swapPushButton, &QPushButton::clicked, this, &AddOrModifyTimeConstraint::swapClicked);
 		
 		initTimesTable(timesTable);
 
@@ -6997,7 +7146,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 		setStretchAvailabilityTableNicely(timesTable);
 
-		connect(timesTable, &QTableWidget::cellEntered, this, &AddOrModifyTimeConstraint::cellEntered);
+		connect(timesTable, &CornerEnabledTableWidget::cellEntered, this, &AddOrModifyTimeConstraint::cellEntered);
 		timesTable->setMouseTracking(true);
 	}
 
@@ -7064,10 +7213,22 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 		selectedActivityTagsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	}
 
+	if(first_activitiesComboBox!=nullptr && first_activityLabel!=nullptr)
+		firstFilter_showRelatedCheckBox=new QCheckBox(tr("Show related"));
+	if(second_activitiesComboBox!=nullptr && second_activityLabel!=nullptr)
+		secondFilter_showRelatedCheckBox=new QCheckBox(tr("Show related"));
+	if(third_activitiesComboBox!=nullptr && third_activityLabel!=nullptr)
+		thirdFilter_showRelatedCheckBox=new QCheckBox(tr("Show related"));
+
 	eventLoop=new QEventLoop;
 
 	dialog=new AddOrModifyTimeConstraintDialog(parent, dialogName, dialogTitle, eventLoop,
-											   timesTable, oldItemDelegate, newItemDelegate);
+											   timesTable, oldItemDelegate, newItemDelegate,
+											   colorsCheckBox,
+											   showRelatedCheckBox,
+											   firstFilter_showRelatedCheckBox,
+											   secondFilter_showRelatedCheckBox,
+											   thirdFilter_showRelatedCheckBox);
 	//dialog->setAttribute(Qt::WA_DeleteOnClose);
 	
 	//dialog->setWindowTitle(dialogTitle);
@@ -7314,12 +7475,12 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 		buttons->addWidget(swapActivitiesPushButton);
 	if(swapActivityTagsPushButton!=nullptr)
 		buttons->addWidget(swapActivityTagsPushButton);
+	if(colorsCheckBox!=nullptr)
+		if(tabWidget==nullptr)
+			buttons->addWidget(colorsCheckBox);
 	if(toggleAllPushButton!=nullptr)
 		if(tabWidget==nullptr)
 			buttons->addWidget(toggleAllPushButton);
-	if(swapPushButton!=nullptr)
-		if(tabWidget==nullptr)
-			buttons->addWidget(swapPushButton);
 	if(addConstraintPushButton!=nullptr)
 		buttons->addWidget(addConstraintPushButton);
 	if(addConstraintsPushButton!=nullptr)
@@ -7369,13 +7530,11 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 		spinBoxLayout=new QHBoxLayout;
 
 		if(tabWidget!=nullptr){
+			assert(colorsCheckBox!=nullptr);
+			spinBoxLayout->addWidget(colorsCheckBox);
+
 			assert(toggleAllPushButton!=nullptr);
 			spinBoxLayout->addWidget(toggleAllPushButton);
-		}
-
-		if(tabWidget!=nullptr){
-			assert(swapPushButton!=nullptr);
-			spinBoxLayout->addWidget(swapPushButton);
 		}
 
 		spinBoxLayout->addWidget(labelForSpinBox);
@@ -7488,7 +7647,22 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			if(!filterIsOnSingleRow){
 				QVBoxLayout* layoutLeft=new QVBoxLayout;
 				layoutLeft->addWidget(first_filterTeachersComboBox);
-				layoutLeft->addWidget(first_filterStudentsComboBox);
+				
+				///////
+				//firstFilter_showRelatedCheckBox=new QCheckBox(tr("Show related"));
+
+				QSettings settings(COMPANY, PROGRAM);
+				firstFilter_showRelatedCheckBox->setChecked(settings.value(dialogName+QString("/first-filter-show-related"), "false").toBool());
+
+				connect(firstFilter_showRelatedCheckBox, &QCheckBox::toggled, this, &AddOrModifyTimeConstraint::firstFilter_showRelatedCheckBoxToggled);
+
+				QHBoxLayout* ssrl=new QHBoxLayout;
+
+				ssrl->addWidget(first_filterStudentsComboBox);
+				ssrl->addWidget(firstFilter_showRelatedCheckBox);
+
+				layoutLeft->addLayout(ssrl);
+				///////
 
 				QVBoxLayout* layoutRight=new QVBoxLayout;
 				layoutRight->addWidget(first_filterSubjectsComboBox);
@@ -7503,7 +7677,19 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			else{
 				QHBoxLayout* layout=new QHBoxLayout;
 				layout->addWidget(first_filterTeachersComboBox);
+
+				///////
+				//firstFilter_showRelatedCheckBox=new QCheckBox(tr("Show related"));
+
+				QSettings settings(COMPANY, PROGRAM);
+				firstFilter_showRelatedCheckBox->setChecked(settings.value(dialogName+QString("/first-filter-show-related"), "false").toBool());
+
+				connect(firstFilter_showRelatedCheckBox, &QCheckBox::toggled, this, &AddOrModifyTimeConstraint::firstFilter_showRelatedCheckBoxToggled);
+
 				layout->addWidget(first_filterStudentsComboBox);
+				layout->addWidget(firstFilter_showRelatedCheckBox);
+				///////
+
 				layout->addWidget(first_filterSubjectsComboBox);
 				layout->addWidget(first_filterActivityTagsComboBox);
 
@@ -7525,7 +7711,22 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			if(!filterIsOnSingleRow){
 				QVBoxLayout* layoutLeft=new QVBoxLayout;
 				layoutLeft->addWidget(second_filterTeachersComboBox);
-				layoutLeft->addWidget(second_filterStudentsComboBox);
+
+				///////
+				//secondFilter_showRelatedCheckBox=new QCheckBox(tr("Show related"));
+
+				QSettings settings(COMPANY, PROGRAM);
+				secondFilter_showRelatedCheckBox->setChecked(settings.value(dialogName+QString("/second-filter-show-related"), "false").toBool());
+
+				connect(secondFilter_showRelatedCheckBox, &QCheckBox::toggled, this, &AddOrModifyTimeConstraint::secondFilter_showRelatedCheckBoxToggled);
+
+				QHBoxLayout* ssrl=new QHBoxLayout;
+
+				ssrl->addWidget(second_filterStudentsComboBox);
+				ssrl->addWidget(secondFilter_showRelatedCheckBox);
+
+				layoutLeft->addLayout(ssrl);
+				///////
 
 				QVBoxLayout* layoutRight=new QVBoxLayout;
 				layoutRight->addWidget(second_filterSubjectsComboBox);
@@ -7540,7 +7741,19 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			else{
 				QHBoxLayout* layout=new QHBoxLayout;
 				layout->addWidget(second_filterTeachersComboBox);
+
+				///////
+				//secondFilter_showRelatedCheckBox=new QCheckBox(tr("Show related"));
+
+				QSettings settings(COMPANY, PROGRAM);
+				secondFilter_showRelatedCheckBox->setChecked(settings.value(dialogName+QString("/second-filter-show-related"), "false").toBool());
+
+				connect(secondFilter_showRelatedCheckBox, &QCheckBox::toggled, this, &AddOrModifyTimeConstraint::secondFilter_showRelatedCheckBoxToggled);
+
 				layout->addWidget(second_filterStudentsComboBox);
+				layout->addWidget(secondFilter_showRelatedCheckBox);
+				///////
+
 				layout->addWidget(second_filterSubjectsComboBox);
 				layout->addWidget(second_filterActivityTagsComboBox);
 
@@ -7562,7 +7775,22 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			if(!filterIsOnSingleRow){
 				QVBoxLayout* layoutLeft=new QVBoxLayout;
 				layoutLeft->addWidget(third_filterTeachersComboBox);
-				layoutLeft->addWidget(third_filterStudentsComboBox);
+
+				///////
+				//thirdFilter_showRelatedCheckBox=new QCheckBox(tr("Show related"));
+
+				QSettings settings(COMPANY, PROGRAM);
+				thirdFilter_showRelatedCheckBox->setChecked(settings.value(dialogName+QString("/third-filter-show-related"), "false").toBool());
+
+				connect(thirdFilter_showRelatedCheckBox, &QCheckBox::toggled, this, &AddOrModifyTimeConstraint::thirdFilter_showRelatedCheckBoxToggled);
+
+				QHBoxLayout* ssrl=new QHBoxLayout;
+
+				ssrl->addWidget(third_filterStudentsComboBox);
+				ssrl->addWidget(thirdFilter_showRelatedCheckBox);
+
+				layoutLeft->addLayout(ssrl);
+				///////
 
 				QVBoxLayout* layoutRight=new QVBoxLayout;
 				layoutRight->addWidget(third_filterSubjectsComboBox);
@@ -7577,7 +7805,19 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			else{
 				QHBoxLayout* layout=new QHBoxLayout;
 				layout->addWidget(third_filterTeachersComboBox);
+
+				///////
+				//thirdFilter_showRelatedCheckBox=new QCheckBox(tr("Show related"));
+
+				QSettings settings(COMPANY, PROGRAM);
+				thirdFilter_showRelatedCheckBox->setChecked(settings.value(dialogName+QString("/third-filter-show-related"), "false").toBool());
+
+				connect(thirdFilter_showRelatedCheckBox, &QCheckBox::toggled, this, &AddOrModifyTimeConstraint::thirdFilter_showRelatedCheckBoxToggled);
+
 				layout->addWidget(third_filterStudentsComboBox);
+				layout->addWidget(thirdFilter_showRelatedCheckBox);
+				///////
+
 				layout->addWidget(third_filterSubjectsComboBox);
 				layout->addWidget(third_filterActivityTagsComboBox);
 
@@ -19917,6 +20157,13 @@ void AddOrModifyTimeConstraint::cellEntered(int row, int col)
 	/*highlightOnCellEntered(timesTable, row, col);*/
 }
 
+void AddOrModifyTimeConstraint::colorsCheckBoxToggled()
+{
+	timesTable->useColors=colorsCheckBox->isChecked();
+	
+	colorsCheckBoxToggledTimesTable(timesTable);
+}
+
 void AddOrModifyTimeConstraint::toggleAllClicked()
 {
 	toggleAllClickedTimesTable(timesTable);
@@ -19932,14 +20179,9 @@ void AddOrModifyTimeConstraint::toggleAllClicked()
 		}*/
 }
 
-void AddOrModifyTimeConstraint::swapClicked()
-{
-	swapClickedTimesTable(timesTable);
-}
-
 void AddOrModifyTimeConstraint::itemClicked(QTableWidgetItem* item)
 {
-	itemClickedTimesTable(item);
+	itemClickedTimesTable(timesTable, item);
 	/*QString s=item->text();
 	if(s==YES)
 		s=NO;
@@ -20344,9 +20586,12 @@ bool AddOrModifyTimeConstraint::filterOk(Activity* act)
 		return false;
 	if(activityTagsComboBox->currentText()!=QString("") && !act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 		return false;
-	if(studentsComboBox->currentText()!=QString("") && !act->studentsNames.contains(studentsComboBox->currentText()))
-		return false;
-
+	//if(studentsComboBox->currentText()!=QString("") && !act->studentsNames.contains(studentsComboBox->currentText()))
+	//	return false;
+	if(studentsComboBox->currentText()!=QString(""))
+		if(!showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
+			return false;
+	
 	return true;
 }
 
@@ -20360,8 +20605,12 @@ bool AddOrModifyTimeConstraint::first_filterOk(Activity* act)
 		return false;
 	if(first_filterActivityTagsComboBox->currentText()!=QString("") && !act->activityTagsNames.contains(first_filterActivityTagsComboBox->currentText()))
 		return false;
-	if(first_filterStudentsComboBox->currentText()!=QString("") && !act->studentsNames.contains(first_filterStudentsComboBox->currentText()))
-		return false;
+	//if(first_filterStudentsComboBox->currentText()!=QString("") && !act->studentsNames.contains(first_filterStudentsComboBox->currentText()))
+	//	return false;
+	if(first_filterStudentsComboBox->currentText()!=QString("")){
+		if(!firstFilter_showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
+			return false;
+	}
 
 	return true;
 }
@@ -20376,8 +20625,11 @@ bool AddOrModifyTimeConstraint::second_filterOk(Activity* act)
 		return false;
 	if(second_filterActivityTagsComboBox->currentText()!=QString("") && !act->activityTagsNames.contains(second_filterActivityTagsComboBox->currentText()))
 		return false;
-	if(second_filterStudentsComboBox->currentText()!=QString("") && !act->studentsNames.contains(second_filterStudentsComboBox->currentText()))
-		return false;
+	//if(second_filterStudentsComboBox->currentText()!=QString("") && !act->studentsNames.contains(second_filterStudentsComboBox->currentText()))
+	//	return false;
+	if(second_filterStudentsComboBox->currentText()!=QString(""))
+		if(!secondFilter_showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
+			return false;
 
 	return true;
 }
@@ -20392,8 +20644,11 @@ bool AddOrModifyTimeConstraint::third_filterOk(Activity* act)
 		return false;
 	if(third_filterActivityTagsComboBox->currentText()!=QString("") && !act->activityTagsNames.contains(third_filterActivityTagsComboBox->currentText()))
 		return false;
-	if(third_filterStudentsComboBox->currentText()!=QString("") && !act->studentsNames.contains(third_filterStudentsComboBox->currentText()))
-		return false;
+	//if(third_filterStudentsComboBox->currentText()!=QString("") && !act->studentsNames.contains(third_filterStudentsComboBox->currentText()))
+	//	return false;
+	if(third_filterStudentsComboBox->currentText()!=QString(""))
+		if(!thirdFilter_showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
+			return false;
 
 	return true;
 }
@@ -20645,10 +20900,10 @@ void AddOrModifyTimeConstraint::swapActivitiesPushButtonClicked()
 	disconnect(second_filterTeachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::second_activitiesComboBoxFilter);
 
 	assert(first_filterStudentsComboBox!=nullptr);
-	disconnect(first_filterStudentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::first_activitiesComboBoxFilter);
+	disconnect(first_filterStudentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::firstFilter_showRelatedCheckBoxToggled);
 
 	assert(second_filterStudentsComboBox!=nullptr);
-	disconnect(second_filterStudentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::second_activitiesComboBoxFilter);
+	disconnect(second_filterStudentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::secondFilter_showRelatedCheckBoxToggled);
 
 	assert(first_filterSubjectsComboBox!=nullptr);
 	disconnect(first_filterSubjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::first_activitiesComboBoxFilter);
@@ -20685,18 +20940,28 @@ void AddOrModifyTimeConstraint::swapActivitiesPushButtonClicked()
 	first_filterActivityTagsComboBox->setCurrentIndex(t2);
 	second_filterActivityTagsComboBox->setCurrentIndex(t1);
 
-	first_activitiesComboBoxFilter();
-	second_activitiesComboBoxFilter();
+	bool b1=firstFilter_showRelatedCheckBox->isChecked();
+	bool b2=secondFilter_showRelatedCheckBox->isChecked();
+	firstFilter_showRelatedCheckBox->setChecked(b2);
+	secondFilter_showRelatedCheckBox->setChecked(b1);
+
+	/*first_activitiesComboBoxFilter();
+	second_activitiesComboBoxFilter();*/
+	firstFilter_showRelatedCheckBoxToggled();
+	secondFilter_showRelatedCheckBoxToggled();
 
 	first_activitiesComboBox->setCurrentIndex(v2);
 	second_activitiesComboBox->setCurrentIndex(v1);
 
 	connect(first_filterTeachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::first_activitiesComboBoxFilter);
 	connect(second_filterTeachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::second_activitiesComboBoxFilter);
-	connect(first_filterStudentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::first_activitiesComboBoxFilter);
-	connect(second_filterStudentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::second_activitiesComboBoxFilter);
+
+	connect(first_filterStudentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::firstFilter_showRelatedCheckBoxToggled);
+	connect(second_filterStudentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::secondFilter_showRelatedCheckBoxToggled);
+
 	connect(first_filterSubjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::first_activitiesComboBoxFilter);
 	connect(second_filterSubjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::second_activitiesComboBoxFilter);
+
 	connect(first_filterActivityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::first_activitiesComboBoxFilter);
 	connect(second_filterActivityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &AddOrModifyTimeConstraint::second_activitiesComboBoxFilter);
 }
@@ -20912,5 +21177,315 @@ void AddOrModifyTimeConstraint::swapTwoSetsOfActivitiesPushButtonClicked()
 		Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 		assert(act!=nullptr);
 		selectedActivitiesListWidget_TwoSetsOfActivities_2->addItem(act->getDescription(gt.rules));
+	}
+}
+
+void AddOrModifyTimeConstraint::showRelatedCheckBoxToggled()
+{
+	assert(studentsComboBox!=nullptr);
+	
+	bool showRelated=showRelatedCheckBox->isChecked();
+	
+	showedStudents.clear();
+	
+	if(!showRelated){
+		showedStudents.insert(studentsComboBox->currentText());
+	}
+	else{
+		if(studentsComboBox->currentText()=="")
+			showedStudents.insert("");
+		else{
+			//down
+			StudentsSet* studentsSet=gt.rules.searchStudentsSet(studentsComboBox->currentText());
+			assert(studentsSet!=nullptr);
+			if(studentsSet->type==STUDENTS_YEAR){
+				StudentsYear* year=(StudentsYear*)studentsSet;
+				showedStudents.insert(year->name);
+				for(StudentsGroup* group : std::as_const(year->groupsList)){
+					showedStudents.insert(group->name);
+					for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList))
+						showedStudents.insert(subgroup->name);
+				}
+			}
+			else if(studentsSet->type==STUDENTS_GROUP){
+				StudentsGroup* group=(StudentsGroup*)studentsSet;
+				showedStudents.insert(group->name);
+				for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList))
+					showedStudents.insert(subgroup->name);
+			}
+			else if(studentsSet->type==STUDENTS_SUBGROUP){
+				StudentsSubgroup* subgroup=(StudentsSubgroup*)studentsSet;
+				showedStudents.insert(subgroup->name);
+			}
+			else
+				assert(0);
+				
+			//up
+			QString crt=studentsComboBox->currentText();
+			for(StudentsYear* year : std::as_const(gt.rules.yearsList)){
+				for(StudentsGroup* group : std::as_const(year->groupsList)){
+					if(group->name==crt){
+						showedStudents.insert(year->name);
+					}
+					for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList)){
+						if(subgroup->name==crt){
+							showedStudents.insert(year->name);
+							showedStudents.insert(group->name);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if(filterGroupBox!=nullptr
+			&& activitiesListWidget_TwoSetsOfActivities_1!=nullptr
+			&& activitiesListWidget_TwoSetsOfActivities_2!=nullptr){
+
+		assert(activitiesComboBox==nullptr);
+		assert(activitiesListWidget==nullptr);
+
+		filterActivitiesListWidgets1And2();
+	}
+
+	if(filterGroupBox!=nullptr && activitiesListWidget!=nullptr){
+		assert(activitiesComboBox==nullptr);
+		assert(activitiesListWidget_TwoSetsOfActivities_1==nullptr);
+		assert(activitiesListWidget_TwoSetsOfActivities_2==nullptr);
+
+		filterActivitiesListWidget();
+	}
+
+	if(filterGroupBox!=nullptr && activitiesComboBox!=nullptr){
+		assert(activitiesListWidget==nullptr);
+		assert(activitiesListWidget_TwoSetsOfActivities_1==nullptr);
+		assert(activitiesListWidget_TwoSetsOfActivities_2==nullptr);
+
+		int i=filterActivitiesComboBox();
+		if(i>=0){
+			assert(activitiesComboBox!=nullptr);
+			assert(i<activitiesList.count());
+			assert(i<activitiesComboBox->count());
+			activitiesComboBox->setCurrentIndex(i);
+		}
+	}
+}
+
+void AddOrModifyTimeConstraint::firstFilter_showRelatedCheckBoxToggled()
+{
+	assert(first_filterStudentsComboBox!=nullptr);
+	
+	bool firstFilter_showRelated=firstFilter_showRelatedCheckBox->isChecked();
+	
+	firstFilter_showedStudents.clear();
+	
+	if(!firstFilter_showRelated){
+		firstFilter_showedStudents.insert(first_filterStudentsComboBox->currentText());
+	}
+	else{
+		if(first_filterStudentsComboBox->currentText()=="")
+			firstFilter_showedStudents.insert("");
+		else{
+			//down
+			StudentsSet* studentsSet=gt.rules.searchStudentsSet(first_filterStudentsComboBox->currentText());
+			assert(studentsSet!=nullptr);
+			if(studentsSet->type==STUDENTS_YEAR){
+				StudentsYear* year=(StudentsYear*)studentsSet;
+				firstFilter_showedStudents.insert(year->name);
+				for(StudentsGroup* group : std::as_const(year->groupsList)){
+					firstFilter_showedStudents.insert(group->name);
+					for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList))
+						firstFilter_showedStudents.insert(subgroup->name);
+				}
+			}
+			else if(studentsSet->type==STUDENTS_GROUP){
+				StudentsGroup* group=(StudentsGroup*)studentsSet;
+				firstFilter_showedStudents.insert(group->name);
+				for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList))
+					firstFilter_showedStudents.insert(subgroup->name);
+			}
+			else if(studentsSet->type==STUDENTS_SUBGROUP){
+				StudentsSubgroup* subgroup=(StudentsSubgroup*)studentsSet;
+				firstFilter_showedStudents.insert(subgroup->name);
+			}
+			else
+				assert(0);
+				
+			//up
+			QString crt=first_filterStudentsComboBox->currentText();
+			for(StudentsYear* year : std::as_const(gt.rules.yearsList)){
+				for(StudentsGroup* group : std::as_const(year->groupsList)){
+					if(group->name==crt){
+						firstFilter_showedStudents.insert(year->name);
+					}
+					for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList)){
+						if(subgroup->name==crt){
+							firstFilter_showedStudents.insert(year->name);
+							firstFilter_showedStudents.insert(group->name);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if(first_filterGroupBox!=nullptr && first_activitiesComboBox!=nullptr){
+		assert(activitiesListWidget==nullptr);
+		assert(activitiesListWidget_TwoSetsOfActivities_1==nullptr);
+		assert(activitiesListWidget_TwoSetsOfActivities_2==nullptr);
+
+		int i=first_activitiesComboBoxFilter();
+		if(i>=0){
+			assert(first_activitiesComboBox!=nullptr);
+			assert(i<first_activitiesList.count());
+			assert(i<first_activitiesComboBox->count());
+			first_activitiesComboBox->setCurrentIndex(i);
+		}
+	}
+}
+
+void AddOrModifyTimeConstraint::secondFilter_showRelatedCheckBoxToggled()
+{
+	assert(second_filterStudentsComboBox!=nullptr);
+	
+	bool secondFilter_showRelated=secondFilter_showRelatedCheckBox->isChecked();
+	
+	secondFilter_showedStudents.clear();
+	
+	if(!secondFilter_showRelated){
+		secondFilter_showedStudents.insert(second_filterStudentsComboBox->currentText());
+	}
+	else{
+		if(second_filterStudentsComboBox->currentText()=="")
+			secondFilter_showedStudents.insert("");
+		else{
+			//down
+			StudentsSet* studentsSet=gt.rules.searchStudentsSet(second_filterStudentsComboBox->currentText());
+			assert(studentsSet!=nullptr);
+			if(studentsSet->type==STUDENTS_YEAR){
+				StudentsYear* year=(StudentsYear*)studentsSet;
+				secondFilter_showedStudents.insert(year->name);
+				for(StudentsGroup* group : std::as_const(year->groupsList)){
+					secondFilter_showedStudents.insert(group->name);
+					for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList))
+						secondFilter_showedStudents.insert(subgroup->name);
+				}
+			}
+			else if(studentsSet->type==STUDENTS_GROUP){
+				StudentsGroup* group=(StudentsGroup*)studentsSet;
+				secondFilter_showedStudents.insert(group->name);
+				for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList))
+					secondFilter_showedStudents.insert(subgroup->name);
+			}
+			else if(studentsSet->type==STUDENTS_SUBGROUP){
+				StudentsSubgroup* subgroup=(StudentsSubgroup*)studentsSet;
+				secondFilter_showedStudents.insert(subgroup->name);
+			}
+			else
+				assert(0);
+				
+			//up
+			QString crt=second_filterStudentsComboBox->currentText();
+			for(StudentsYear* year : std::as_const(gt.rules.yearsList)){
+				for(StudentsGroup* group : std::as_const(year->groupsList)){
+					if(group->name==crt){
+						secondFilter_showedStudents.insert(year->name);
+					}
+					for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList)){
+						if(subgroup->name==crt){
+							secondFilter_showedStudents.insert(year->name);
+							secondFilter_showedStudents.insert(group->name);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if(second_filterGroupBox!=nullptr && second_activitiesComboBox!=nullptr){
+		assert(activitiesListWidget==nullptr);
+		assert(activitiesListWidget_TwoSetsOfActivities_1==nullptr);
+		assert(activitiesListWidget_TwoSetsOfActivities_2==nullptr);
+
+		int i=second_activitiesComboBoxFilter();
+		if(i>=0){
+			assert(second_activitiesComboBox!=nullptr);
+			assert(i<second_activitiesList.count());
+			assert(i<second_activitiesComboBox->count());
+			second_activitiesComboBox->setCurrentIndex(i);
+		}
+	}
+}
+
+void AddOrModifyTimeConstraint::thirdFilter_showRelatedCheckBoxToggled()
+{
+	assert(third_filterStudentsComboBox!=nullptr);
+	
+	bool thirdFilter_showRelated=thirdFilter_showRelatedCheckBox->isChecked();
+	
+	thirdFilter_showedStudents.clear();
+	
+	if(!thirdFilter_showRelated){
+		thirdFilter_showedStudents.insert(third_filterStudentsComboBox->currentText());
+	}
+	else{
+		if(third_filterStudentsComboBox->currentText()=="")
+			thirdFilter_showedStudents.insert("");
+		else{
+			//down
+			StudentsSet* studentsSet=gt.rules.searchStudentsSet(third_filterStudentsComboBox->currentText());
+			assert(studentsSet!=nullptr);
+			if(studentsSet->type==STUDENTS_YEAR){
+				StudentsYear* year=(StudentsYear*)studentsSet;
+				thirdFilter_showedStudents.insert(year->name);
+				for(StudentsGroup* group : std::as_const(year->groupsList)){
+					thirdFilter_showedStudents.insert(group->name);
+					for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList))
+						thirdFilter_showedStudents.insert(subgroup->name);
+				}
+			}
+			else if(studentsSet->type==STUDENTS_GROUP){
+				StudentsGroup* group=(StudentsGroup*)studentsSet;
+				thirdFilter_showedStudents.insert(group->name);
+				for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList))
+					thirdFilter_showedStudents.insert(subgroup->name);
+			}
+			else if(studentsSet->type==STUDENTS_SUBGROUP){
+				StudentsSubgroup* subgroup=(StudentsSubgroup*)studentsSet;
+				thirdFilter_showedStudents.insert(subgroup->name);
+			}
+			else
+				assert(0);
+				
+			//up
+			QString crt=third_filterStudentsComboBox->currentText();
+			for(StudentsYear* year : std::as_const(gt.rules.yearsList)){
+				for(StudentsGroup* group : std::as_const(year->groupsList)){
+					if(group->name==crt){
+						thirdFilter_showedStudents.insert(year->name);
+					}
+					for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList)){
+						if(subgroup->name==crt){
+							thirdFilter_showedStudents.insert(year->name);
+							thirdFilter_showedStudents.insert(group->name);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if(third_filterGroupBox!=nullptr && third_activitiesComboBox!=nullptr){
+		assert(activitiesListWidget==nullptr);
+		assert(activitiesListWidget_TwoSetsOfActivities_1==nullptr);
+		assert(activitiesListWidget_TwoSetsOfActivities_2==nullptr);
+
+		int i=third_activitiesComboBoxFilter();
+		if(i>=0){
+			assert(third_activitiesComboBox!=nullptr);
+			assert(i<third_activitiesList.count());
+			assert(i<third_activitiesComboBox->count());
+			third_activitiesComboBox->setCurrentIndex(i);
+		}
 	}
 }

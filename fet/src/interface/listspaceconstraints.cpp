@@ -47,11 +47,14 @@ extern const QString PROGRAM;
 
 int spaceConstraintsAscendingByDescription(SpaceConstraint* t1, SpaceConstraint* t2); //defined in allspaceconstraints.cpp
 
-ListSpaceConstraintsDialog::ListSpaceConstraintsDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop, QSplitter* _splitter): QDialog(parent)
+ListSpaceConstraintsDialog::ListSpaceConstraintsDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop, QSplitter* _splitter,
+													   QCheckBox* _showRelatedCheckBox): QDialog(parent)
 {
 	dialogName=_dialogName;
 	dialogTitle=_dialogTitle;
 	eventLoop=_eventLoop;
+
+	showRelatedCheckBox=_showRelatedCheckBox;
 
 	setWindowTitle(dialogTitle);
 
@@ -72,12 +75,17 @@ ListSpaceConstraintsDialog::~ListSpaceConstraintsDialog()
 	QSettings settings(COMPANY, PROGRAM);
 	settings.setValue(dialogName+QString("/splitter-state"), splitter->saveState());
 
+	if(showRelatedCheckBox!=nullptr)
+		settings.setValue(dialogName+QString("/show-related"), showRelatedCheckBox->isChecked());
+
 	eventLoop->quit();
 }
 
 ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 {
 	type=_type;
+
+	showRelatedCheckBox=nullptr;
 
 	sortedCheckBox=nullptr;
 
@@ -879,7 +887,7 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 		populateStudentsComboBox(studentsComboBox, QString(""), true);
 		studentsComboBox->setCurrentIndex(0);
 
-		connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ListSpaceConstraints::filter);
+		connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ListSpaceConstraints::showRelatedCheckBoxToggled);
 	}
 
 	if(subjectsComboBox!=nullptr){
@@ -929,8 +937,21 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 
 		if(teachersComboBox!=nullptr)
 			layout->addWidget(teachersComboBox);
-		if(studentsComboBox!=nullptr)
-			layout->addWidget(studentsComboBox);
+		if(studentsComboBox!=nullptr){
+			showRelatedCheckBox=new QCheckBox(tr("Show related"));
+
+			QSettings settings(COMPANY, PROGRAM);
+			showRelatedCheckBox->setChecked(settings.value(dialogName+QString("/show-related"), "false").toBool());
+
+			connect(showRelatedCheckBox, &QCheckBox::toggled, this, &ListSpaceConstraints::showRelatedCheckBoxToggled);
+
+			QHBoxLayout* ssrl=new QHBoxLayout;
+
+			ssrl->addWidget(studentsComboBox);
+			ssrl->addWidget(showRelatedCheckBox);
+
+			layout->addLayout(ssrl);
+		}
 		if(subjectsComboBox!=nullptr)
 			layout->addWidget(subjectsComboBox);
 		if(activityTagsComboBox!=nullptr)
@@ -945,7 +966,8 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 
 	splitter=new QSplitter;
 
-	dialog=new ListSpaceConstraintsDialog(parent, dialogName, dialogTitle, eventLoop, splitter);
+	dialog=new ListSpaceConstraintsDialog(parent, dialogName, dialogTitle, eventLoop, splitter,
+										  showRelatedCheckBox);
 
 	//dialog->setWindowTitle(dialogTitle);
 
@@ -1098,7 +1120,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 				assert(roomsComboBox!=nullptr);
 
 				ConstraintRoomNotAvailableTimes* ctr=(ConstraintRoomNotAvailableTimes*)sc;
-				return ctr->room==roomsComboBox->currentText() || roomsComboBox->currentText()=="";
+				return roomsComboBox->currentText()=="" || ctr->room==roomsComboBox->currentText();
 
 				break;
 			}
@@ -1124,7 +1146,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 						return false;
 					if(activityTagsComboBox->currentText()!=QString("") && !act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 						return false;
-					if(studentsComboBox->currentText()!=QString("") && !act->studentsNames.contains(studentsComboBox->currentText()))
+					if(studentsComboBox->currentText()!=QString("") && !showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 						return false;
 				}
 
@@ -1156,7 +1178,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 						return false;
 					if(activityTagsComboBox->currentText()!=QString("") && !act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 						return false;
-					if(studentsComboBox->currentText()!=QString("") && !act->studentsNames.contains(studentsComboBox->currentText()))
+					if(studentsComboBox->currentText()!=QString("") && !showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 						return false;
 				}
 
@@ -1173,8 +1195,8 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 
 				ConstraintStudentsSetHomeRoom* ctr=(ConstraintStudentsSetHomeRoom*)sc;
 
-				return (ctr->roomName==roomsComboBox->currentText() || roomsComboBox->currentText()=="")
-				 && (ctr->studentsName==studentsComboBox->currentText() || studentsComboBox->currentText()=="");
+				return (roomsComboBox->currentText()=="" || ctr->roomName==roomsComboBox->currentText())
+				 && (studentsComboBox->currentText()=="" || showedStudents.contains(ctr->studentsName));
 
 				break;
 			}
@@ -1187,8 +1209,8 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 
 				ConstraintStudentsSetHomeRooms* ctr=(ConstraintStudentsSetHomeRooms*)sc;
 
-				return (ctr->roomsNames.contains(roomsComboBox->currentText()) || roomsComboBox->currentText()=="")
-				 && (ctr->studentsName==studentsComboBox->currentText() || studentsComboBox->currentText()=="");
+				return (roomsComboBox->currentText()=="" || ctr->roomsNames.contains(roomsComboBox->currentText()))
+				 && (studentsComboBox->currentText()=="" || showedStudents.contains(ctr->studentsName));
 
 				break;
 			}
@@ -1201,8 +1223,8 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 
 				ConstraintTeacherHomeRoom* ctr=(ConstraintTeacherHomeRoom*)sc;
 
-				return (ctr->roomName==roomsComboBox->currentText() || roomsComboBox->currentText()=="")
-				 && (ctr->teacherName==teachersComboBox->currentText() || teachersComboBox->currentText()=="");
+				return (roomsComboBox->currentText()=="" || ctr->roomName==roomsComboBox->currentText())
+				 && (teachersComboBox->currentText()=="" || ctr->teacherName==teachersComboBox->currentText());
 
 				break;
 			}
@@ -1215,8 +1237,8 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 
 				ConstraintTeacherHomeRooms* ctr=(ConstraintTeacherHomeRooms*)sc;
 
-				return (ctr->roomsNames.contains(roomsComboBox->currentText()) || roomsComboBox->currentText()=="")
-				 && (ctr->teacherName==teachersComboBox->currentText() || teachersComboBox->currentText()=="");
+				return (roomsComboBox->currentText()=="" || ctr->roomsNames.contains(roomsComboBox->currentText()))
+				 && (teachersComboBox->currentText()=="" || ctr->teacherName==teachersComboBox->currentText());
 
 				break;
 			}
@@ -1229,8 +1251,8 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 
 				ConstraintSubjectPreferredRoom* ctr=(ConstraintSubjectPreferredRoom*)sc;
 
-				return (ctr->roomName==roomsComboBox->currentText() || roomsComboBox->currentText()=="")
-				 && (ctr->subjectName==subjectsComboBox->currentText() || subjectsComboBox->currentText()=="");
+				return (roomsComboBox->currentText()=="" || ctr->roomName==roomsComboBox->currentText())
+				 && (subjectsComboBox->currentText()=="" || ctr->subjectName==subjectsComboBox->currentText());
 
 				break;
 			}
@@ -1243,8 +1265,8 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 
 				ConstraintSubjectPreferredRooms* ctr=(ConstraintSubjectPreferredRooms*)sc;
 
-				return (ctr->roomsNames.contains(roomsComboBox->currentText()) || roomsComboBox->currentText()=="")
-				 && (ctr->subjectName==subjectsComboBox->currentText() || subjectsComboBox->currentText()=="");
+				return (roomsComboBox->currentText()=="" || ctr->roomsNames.contains(roomsComboBox->currentText()))
+				 && (subjectsComboBox->currentText()=="" || ctr->subjectName==subjectsComboBox->currentText());
 
 				break;
 			}
@@ -1258,9 +1280,9 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 
 				ConstraintSubjectActivityTagPreferredRoom* ctr=(ConstraintSubjectActivityTagPreferredRoom*)sc;
 
-				return (ctr->roomName==roomsComboBox->currentText() || roomsComboBox->currentText()=="")
-				 && (ctr->subjectName==subjectsComboBox->currentText() || subjectsComboBox->currentText()=="")
-				 && (ctr->activityTagName==activityTagsComboBox->currentText() || activityTagsComboBox->currentText()=="");
+				return (roomsComboBox->currentText()=="" || ctr->roomName==roomsComboBox->currentText())
+				 && (subjectsComboBox->currentText()=="" || ctr->subjectName==subjectsComboBox->currentText())
+				 && (activityTagsComboBox->currentText()=="" || ctr->activityTagName==activityTagsComboBox->currentText());
 
 				break;
 			}
@@ -1274,9 +1296,9 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 
 				ConstraintSubjectActivityTagPreferredRooms* ctr=(ConstraintSubjectActivityTagPreferredRooms*)sc;
 
-				return (ctr->roomsNames.contains(roomsComboBox->currentText()) || roomsComboBox->currentText()=="")
-				 && (ctr->subjectName==subjectsComboBox->currentText() || subjectsComboBox->currentText()=="")
-				 && (ctr->activityTagName==activityTagsComboBox->currentText() || activityTagsComboBox->currentText()=="");
+				return (roomsComboBox->currentText()=="" || ctr->roomsNames.contains(roomsComboBox->currentText()))
+				 && (subjectsComboBox->currentText()=="" || ctr->subjectName==subjectsComboBox->currentText())
+				 && (activityTagsComboBox->currentText()=="" || ctr->activityTagName==activityTagsComboBox->currentText());
 
 				break;
 			}
@@ -1292,7 +1314,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 			{
 				ConstraintStudentsSetMaxBuildingChangesPerDay* ctr=(ConstraintStudentsSetMaxBuildingChangesPerDay*)sc;
 
-				return ctr->studentsName==studentsComboBox->currentText() || studentsComboBox->currentText()=="";
+				return studentsComboBox->currentText()=="" || showedStudents.contains(ctr->studentsName);
 
 				break;
 			}
@@ -1308,7 +1330,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 			{
 				ConstraintStudentsSetMaxBuildingChangesPerWeek* ctr=(ConstraintStudentsSetMaxBuildingChangesPerWeek*)sc;
 
-				return ctr->studentsName==studentsComboBox->currentText() || studentsComboBox->currentText()=="";
+				return studentsComboBox->currentText()=="" || showedStudents.contains(ctr->studentsName);
 
 				break;
 			}
@@ -1324,7 +1346,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 			{
 				ConstraintStudentsSetMinGapsBetweenBuildingChanges* ctr=(ConstraintStudentsSetMinGapsBetweenBuildingChanges*)sc;
 
-				return ctr->studentsName==studentsComboBox->currentText() || studentsComboBox->currentText()=="";
+				return studentsComboBox->currentText()=="" || showedStudents.contains(ctr->studentsName);
 
 				break;
 			}
@@ -1340,7 +1362,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 			{
 				ConstraintTeacherMaxBuildingChangesPerDay* ctr=(ConstraintTeacherMaxBuildingChangesPerDay*)sc;
 
-				return ctr->teacherName==teachersComboBox->currentText() || teachersComboBox->currentText()=="";
+				return teachersComboBox->currentText()=="" || ctr->teacherName==teachersComboBox->currentText();
 
 				break;
 			}
@@ -1356,7 +1378,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 			{
 				ConstraintTeacherMaxBuildingChangesPerWeek* ctr=(ConstraintTeacherMaxBuildingChangesPerWeek*)sc;
 
-				return ctr->teacherName==teachersComboBox->currentText() || teachersComboBox->currentText()=="";
+				return teachersComboBox->currentText()=="" || ctr->teacherName==teachersComboBox->currentText();
 
 				break;
 			}
@@ -1372,7 +1394,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 			{
 				ConstraintTeacherMinGapsBetweenBuildingChanges* ctr=(ConstraintTeacherMinGapsBetweenBuildingChanges*)sc;
 
-				return ctr->teacherName==teachersComboBox->currentText() || teachersComboBox->currentText()=="";
+				return teachersComboBox->currentText()=="" || ctr->teacherName==teachersComboBox->currentText();
 
 				break;
 			}
@@ -1385,8 +1407,8 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 
 				ConstraintActivityTagPreferredRoom* ctr=(ConstraintActivityTagPreferredRoom*)sc;
 
-				return (ctr->roomName==roomsComboBox->currentText() || roomsComboBox->currentText()=="")
-				 && (ctr->activityTagName==activityTagsComboBox->currentText() || activityTagsComboBox->currentText()=="");
+				return (roomsComboBox->currentText()=="" || ctr->roomName==roomsComboBox->currentText())
+				 && (activityTagsComboBox->currentText()=="" || ctr->activityTagName==activityTagsComboBox->currentText());
 
 				break;
 			}
@@ -1399,8 +1421,8 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 
 				ConstraintActivityTagPreferredRooms* ctr=(ConstraintActivityTagPreferredRooms*)sc;
 
-				return (ctr->roomsNames.contains(roomsComboBox->currentText()) || roomsComboBox->currentText()=="")
-				 && (ctr->activityTagName==activityTagsComboBox->currentText() || activityTagsComboBox->currentText()=="");
+				return (roomsComboBox->currentText()=="" || ctr->roomsNames.contains(roomsComboBox->currentText()))
+				 && (activityTagsComboBox->currentText()=="" || ctr->activityTagName==activityTagsComboBox->currentText());
 
 				break;
 			}
@@ -1435,7 +1457,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -1478,7 +1500,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -1502,7 +1524,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 			{
 				ConstraintStudentsSetMaxRoomChangesPerDay* ctr=(ConstraintStudentsSetMaxRoomChangesPerDay*)sc;
 
-				return ctr->studentsName==studentsComboBox->currentText() || studentsComboBox->currentText()=="";
+				return studentsComboBox->currentText()=="" || showedStudents.contains(ctr->studentsName);
 
 				break;
 			}
@@ -1518,7 +1540,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 			{
 				ConstraintStudentsSetMaxRoomChangesPerWeek* ctr=(ConstraintStudentsSetMaxRoomChangesPerWeek*)sc;
 
-				return ctr->studentsName==studentsComboBox->currentText() || studentsComboBox->currentText()=="";
+				return studentsComboBox->currentText()=="" || showedStudents.contains(ctr->studentsName);
 
 				break;
 			}
@@ -1534,7 +1556,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 			{
 				ConstraintStudentsSetMinGapsBetweenRoomChanges* ctr=(ConstraintStudentsSetMinGapsBetweenRoomChanges*)sc;
 
-				return ctr->studentsName==studentsComboBox->currentText() || studentsComboBox->currentText()=="";
+				return studentsComboBox->currentText()=="" || showedStudents.contains(ctr->studentsName);
 
 				break;
 			}
@@ -1550,7 +1572,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 			{
 				ConstraintTeacherMaxRoomChangesPerDay* ctr=(ConstraintTeacherMaxRoomChangesPerDay*)sc;
 
-				return ctr->teacherName==teachersComboBox->currentText() || teachersComboBox->currentText()=="";
+				return teachersComboBox->currentText()=="" || ctr->teacherName==teachersComboBox->currentText();
 
 				break;
 			}
@@ -1566,7 +1588,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 			{
 				ConstraintTeacherMaxRoomChangesPerWeek* ctr=(ConstraintTeacherMaxRoomChangesPerWeek*)sc;
 
-				return ctr->teacherName==teachersComboBox->currentText() || teachersComboBox->currentText()=="";
+				return teachersComboBox->currentText()=="" || ctr->teacherName==teachersComboBox->currentText();
 
 				break;
 			}
@@ -1582,7 +1604,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 			{
 				ConstraintTeacherMinGapsBetweenRoomChanges* ctr=(ConstraintTeacherMinGapsBetweenRoomChanges*)sc;
 
-				return ctr->teacherName==teachersComboBox->currentText() || teachersComboBox->currentText()=="";
+				return teachersComboBox->currentText()=="" || ctr->teacherName==teachersComboBox->currentText();
 
 				break;
 			}
@@ -1592,8 +1614,8 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 				assert(roomsComboBox!=nullptr);
 
 				ConstraintTeacherRoomNotAvailableTimes* ctr=(ConstraintTeacherRoomNotAvailableTimes*)sc;
-				return (ctr->room==roomsComboBox->currentText() || roomsComboBox->currentText()=="")
-						&& (ctr->teacherName==teachersComboBox->currentText() || teachersComboBox->currentText()=="");
+				return (roomsComboBox->currentText()=="" || ctr->room==roomsComboBox->currentText())
+						&& (teachersComboBox->currentText()=="" || ctr->teacherName==teachersComboBox->currentText());
 
 				break;
 			}
@@ -1609,7 +1631,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 			{
 				ConstraintStudentsSetMaxRoomChangesPerRealDay* ctr=(ConstraintStudentsSetMaxRoomChangesPerRealDay*)sc;
 
-				return ctr->studentsName==studentsComboBox->currentText() || studentsComboBox->currentText()=="";
+				return studentsComboBox->currentText()=="" || showedStudents.contains(ctr->studentsName);
 
 				break;
 			}
@@ -1625,7 +1647,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 			{
 				ConstraintTeacherMaxRoomChangesPerRealDay* ctr=(ConstraintTeacherMaxRoomChangesPerRealDay*)sc;
 
-				return ctr->teacherName==teachersComboBox->currentText() || teachersComboBox->currentText()=="";
+				return teachersComboBox->currentText()=="" || ctr->teacherName==teachersComboBox->currentText();
 
 				break;
 			}
@@ -1641,7 +1663,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 			{
 				ConstraintStudentsSetMaxBuildingChangesPerRealDay* ctr=(ConstraintStudentsSetMaxBuildingChangesPerRealDay*)sc;
 
-				return ctr->studentsName==studentsComboBox->currentText() || studentsComboBox->currentText()=="";
+				return studentsComboBox->currentText()=="" || showedStudents.contains(ctr->studentsName);
 
 				break;
 			}
@@ -1657,7 +1679,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 			{
 				ConstraintTeacherMaxBuildingChangesPerRealDay* ctr=(ConstraintTeacherMaxBuildingChangesPerRealDay*)sc;
 
-				return ctr->teacherName==teachersComboBox->currentText() || teachersComboBox->currentText()=="";
+				return teachersComboBox->currentText()=="" || ctr->teacherName==teachersComboBox->currentText();
 
 				break;
 			}
@@ -1673,7 +1695,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 			{
 				ConstraintStudentsSetMaxBuildingChangesPerDayInInterval* ctr=(ConstraintStudentsSetMaxBuildingChangesPerDayInInterval*)sc;
 
-				return ctr->studentsName==studentsComboBox->currentText() || studentsComboBox->currentText()=="";
+				return studentsComboBox->currentText()=="" || showedStudents.contains(ctr->studentsName);
 
 				break;
 			}
@@ -1689,7 +1711,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 			{
 				ConstraintTeacherMaxBuildingChangesPerDayInInterval* ctr=(ConstraintTeacherMaxBuildingChangesPerDayInInterval*)sc;
 
-				return ctr->teacherName==teachersComboBox->currentText() || teachersComboBox->currentText()=="";
+				return teachersComboBox->currentText()=="" || ctr->teacherName==teachersComboBox->currentText();
 
 				break;
 			}
@@ -1705,7 +1727,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 			{
 				ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval* ctr=(ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval*)sc;
 
-				return ctr->studentsName==studentsComboBox->currentText() || studentsComboBox->currentText()=="";
+				return studentsComboBox->currentText()=="" || showedStudents.contains(ctr->studentsName);
 
 				break;
 			}
@@ -1721,7 +1743,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 			{
 				ConstraintTeacherMaxBuildingChangesPerRealDayInInterval* ctr=(ConstraintTeacherMaxBuildingChangesPerRealDayInInterval*)sc;
 
-				return ctr->teacherName==teachersComboBox->currentText() || teachersComboBox->currentText()=="";
+				return teachersComboBox->currentText()=="" || ctr->teacherName==teachersComboBox->currentText();
 
 				break;
 			}
@@ -1737,7 +1759,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 			{
 				ConstraintStudentsSetMaxRoomChangesPerDayInInterval* ctr=(ConstraintStudentsSetMaxRoomChangesPerDayInInterval*)sc;
 
-				return ctr->studentsName==studentsComboBox->currentText() || studentsComboBox->currentText()=="";
+				return studentsComboBox->currentText()=="" || showedStudents.contains(ctr->studentsName);
 
 				break;
 			}
@@ -1753,7 +1775,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 			{
 				ConstraintTeacherMaxRoomChangesPerDayInInterval* ctr=(ConstraintTeacherMaxRoomChangesPerDayInInterval*)sc;
 
-				return ctr->teacherName==teachersComboBox->currentText() || teachersComboBox->currentText()=="";
+				return teachersComboBox->currentText()=="" || ctr->teacherName==teachersComboBox->currentText();
 
 				break;
 			}
@@ -1769,7 +1791,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 			{
 				ConstraintStudentsSetMaxRoomChangesPerRealDayInInterval* ctr=(ConstraintStudentsSetMaxRoomChangesPerRealDayInInterval*)sc;
 
-				return ctr->studentsName==studentsComboBox->currentText() || studentsComboBox->currentText()=="";
+				return studentsComboBox->currentText()=="" || showedStudents.contains(ctr->studentsName);
 
 				break;
 			}
@@ -1785,7 +1807,7 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 			{
 				ConstraintTeacherMaxRoomChangesPerRealDayInInterval* ctr=(ConstraintTeacherMaxRoomChangesPerRealDayInInterval*)sc;
 
-				return ctr->teacherName==teachersComboBox->currentText() || teachersComboBox->currentText()=="";
+				return teachersComboBox->currentText()=="" || ctr->teacherName==teachersComboBox->currentText();
 
 				break;
 			}
@@ -1798,8 +1820,8 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 
 				ConstraintRoomMaxActivityTagsPerDayFromSet* ctr=(ConstraintRoomMaxActivityTagsPerDayFromSet*)sc;
 
-				return (ctr->room==roomsComboBox->currentText() || roomsComboBox->currentText()=="")
-				 && (ctr->tagsList.contains(activityTagsComboBox->currentText()) || activityTagsComboBox->currentText()=="");
+				return (roomsComboBox->currentText()=="" || ctr->room==roomsComboBox->currentText())
+				 && (activityTagsComboBox->currentText()=="" || ctr->tagsList.contains(activityTagsComboBox->currentText()));
 
 				break;
 			}
@@ -1812,8 +1834,8 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 
 				ConstraintRoomMaxActivityTagsPerRealDayFromSet* ctr=(ConstraintRoomMaxActivityTagsPerRealDayFromSet*)sc;
 
-				return (ctr->room==roomsComboBox->currentText() || roomsComboBox->currentText()=="")
-				 && (ctr->tagsList.contains(activityTagsComboBox->currentText()) || activityTagsComboBox->currentText()=="");
+				return (roomsComboBox->currentText()=="" || ctr->room==roomsComboBox->currentText())
+				 && (activityTagsComboBox->currentText()=="" || ctr->tagsList.contains(activityTagsComboBox->currentText()));
 
 				break;
 			}
@@ -1826,8 +1848,8 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 
 				ConstraintRoomMaxActivityTagsPerWeekFromSet* ctr=(ConstraintRoomMaxActivityTagsPerWeekFromSet*)sc;
 
-				return (ctr->room==roomsComboBox->currentText() || roomsComboBox->currentText()=="")
-				 && (ctr->tagsList.contains(activityTagsComboBox->currentText()) || activityTagsComboBox->currentText()=="");
+				return (roomsComboBox->currentText()=="" || ctr->room==roomsComboBox->currentText())
+				 && (activityTagsComboBox->currentText()=="" || ctr->tagsList.contains(activityTagsComboBox->currentText()));
 
 				break;
 			}
@@ -2100,7 +2122,7 @@ void ListSpaceConstraints::filter()
 
 		if(ctr->active)
 			n_active++;
-		else if(true || USE_GUI_COLORS)
+		else
 			constraintsListWidget->item(constraintsListWidget->count()-1)->setBackground(constraintsListWidget->palette().alternateBase());
 	}
 
@@ -2484,4 +2506,65 @@ void ListSpaceConstraints::changeWeights()
 	}
 
 	constraintsListWidget->setFocus();
+}
+
+void ListSpaceConstraints::showRelatedCheckBoxToggled()
+{
+	assert(studentsComboBox!=nullptr);
+	
+	bool showRelated=showRelatedCheckBox->isChecked();
+	
+	showedStudents.clear();
+	
+	if(!showRelated){
+		showedStudents.insert(studentsComboBox->currentText());
+	}
+	else{
+		if(studentsComboBox->currentText()=="")
+			showedStudents.insert("");
+		else{
+			//down
+			StudentsSet* studentsSet=gt.rules.searchStudentsSet(studentsComboBox->currentText());
+			assert(studentsSet!=nullptr);
+			if(studentsSet->type==STUDENTS_YEAR){
+				StudentsYear* year=(StudentsYear*)studentsSet;
+				showedStudents.insert(year->name);
+				for(StudentsGroup* group : std::as_const(year->groupsList)){
+					showedStudents.insert(group->name);
+					for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList))
+						showedStudents.insert(subgroup->name);
+				}
+			}
+			else if(studentsSet->type==STUDENTS_GROUP){
+				StudentsGroup* group=(StudentsGroup*)studentsSet;
+				showedStudents.insert(group->name);
+				for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList))
+					showedStudents.insert(subgroup->name);
+			}
+			else if(studentsSet->type==STUDENTS_SUBGROUP){
+				StudentsSubgroup* subgroup=(StudentsSubgroup*)studentsSet;
+				showedStudents.insert(subgroup->name);
+			}
+			else
+				assert(0);
+				
+			//up
+			QString crt=studentsComboBox->currentText();
+			for(StudentsYear* year : std::as_const(gt.rules.yearsList)){
+				for(StudentsGroup* group : std::as_const(year->groupsList)){
+					if(group->name==crt){
+						showedStudents.insert(year->name);
+					}
+					for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList)){
+						if(subgroup->name==crt){
+							showedStudents.insert(year->name);
+							showedStudents.insert(group->name);
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	filter();
 }

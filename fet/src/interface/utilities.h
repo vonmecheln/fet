@@ -22,6 +22,9 @@ File utilities.h
 #ifndef UTILITIES_H
 #define UTILITIES_H
 
+class Rules;
+
+#ifndef FET_COMMAND_LINE
 #include <QString>
 
 #include <QList>
@@ -30,10 +33,8 @@ class QComboBox;
 
 class QWidget;
 class QTableView;
-class QTableWidget;
+class CornerEnabledTableWidget;
 class QTableWidgetItem;
-
-class Rules;
 
 void centerWidgetOnScreen(QWidget* widget);
 void forceCenterWidgetOnScreen(QWidget* widget);
@@ -48,7 +49,7 @@ void restoreFETDialogGeometry(QWidget* widget, const QString& alternativeName=QS
 
 void setParentAndOtherThings(QWidget* widget, QWidget* parent);
 
-void setStretchAvailabilityTableNicely(QTableWidget* tableWidget);
+void setStretchAvailabilityTableNicely(CornerEnabledTableWidget* tableWidget);
 
 void setRulesModifiedAndOtherThings(Rules* rules);
 void setRulesUnmodifiedAndOtherThings(Rules* rules);
@@ -62,22 +63,26 @@ int populateStudentsComboBox(QComboBox* studentsComboBox, const QString& selecte
 //void closeAllTimetableViewDialogs();
 void updateAllTimetableViewDialogs();
 
-void highlightOnHorizontalHeaderClicked(QTableWidget* tableWidget, int col);
-void highlightOnVerticalHeaderClicked(QTableWidget* tableWidget, int row);
-void highlightOnCellEntered(QTableWidget* tableWidget, int row, int col);
+void highlightOnHorizontalHeaderClicked(CornerEnabledTableWidget* tableWidget, int col);
+void highlightOnVerticalHeaderClicked(CornerEnabledTableWidget* tableWidget, int row);
+void highlightOnCellEntered(CornerEnabledTableWidget* tableWidget, int row, int col);
 
 void tableViewSetHighlightHeader(QTableView* tableWidget);
 
-void initTimesTable(QTableWidget* timesTable);
-void fillTimesTable(QTableWidget* timesTable, const QList<int>& days, const QList<int>& hours, bool direct);
-void getTimesTable(QTableWidget* timesTable, QList<int>& days, QList<int>& hours, bool direct);
+void initTimesTable(CornerEnabledTableWidget* timesTable);
+void fillTimesTable(CornerEnabledTableWidget* timesTable, const QList<int>& days, const QList<int>& hours, bool direct);
+void getTimesTable(CornerEnabledTableWidget* timesTable, QList<int>& days, QList<int>& hours, bool direct);
 
-void colorItemTimesTable(QTableWidgetItem* item);
-void itemClickedTimesTable(QTableWidgetItem* item);
-void horizontalHeaderClickedTimesTable(QTableWidget* timesTable, int col);
-void verticalHeaderClickedTimesTable(QTableWidget* timesTable, int row);
-void cellEnteredTimesTable(QTableWidget* timesTable, int row, int col);
-void toggleAllClickedTimesTable(QTableWidget* timesTable);
-void swapClickedTimesTable(QTableWidget* timesTable);
+void colorItemTimesTable(CornerEnabledTableWidget* timesTable, QTableWidgetItem* item);
+void itemClickedTimesTable(CornerEnabledTableWidget* timesTable, QTableWidgetItem* item);
+void horizontalHeaderClickedTimesTable(CornerEnabledTableWidget* timesTable, int col);
+void verticalHeaderClickedTimesTable(CornerEnabledTableWidget* timesTable, int row);
+void cellEnteredTimesTable(CornerEnabledTableWidget* timesTable, int row, int col);
+void colorsCheckBoxToggledTimesTable(CornerEnabledTableWidget* timesTable);
+void toggleAllClickedTimesTable(CornerEnabledTableWidget* timesTable);
+
+#else
+void setRulesModifiedAndOtherThings(Rules* rules);
+#endif
 
 #endif

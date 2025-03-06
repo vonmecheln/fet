@@ -903,8 +903,8 @@ void TimetableViewStudentsDaysHorizontalForm::updateStudentsTimetableTable(){
 			//begin by Marco Vassura
 			// add colors (start)
 			//if(USE_GUI_COLORS) {
-			studentsTimetableTable->item(j, k)->setBackground(studentsTimetableTable->palette().color(QPalette::Base));
-			studentsTimetableTable->item(j, k)->setForeground(studentsTimetableTable->palette().color(QPalette::Text));
+			studentsTimetableTable->item(j, k)->setBackground(studentsTimetableTable->palette().base());
+			studentsTimetableTable->item(j, k)->setForeground(studentsTimetableTable->palette().text());
 			//}
 			// add colors (end)
 			//end by Marco Vassura

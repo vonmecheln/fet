@@ -52,12 +52,15 @@ extern const QString PROGRAM;
 
 int timeConstraintsAscendingByDescription(TimeConstraint* t1, TimeConstraint* t2); //defined in alltimeconstraints.cpp
 
-ListTimeConstraintsDialog::ListTimeConstraintsDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop, QSplitter* _splitter): QDialog(parent)
+ListTimeConstraintsDialog::ListTimeConstraintsDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop, QSplitter* _splitter,
+													 QCheckBox* _showRelatedCheckBox): QDialog(parent)
 {
 	dialogName=_dialogName;
 	dialogTitle=_dialogTitle;
 	eventLoop=_eventLoop;
 	
+	showRelatedCheckBox=_showRelatedCheckBox;
+
 	setWindowTitle(dialogTitle);
 	
 	setAttribute(Qt::WA_DeleteOnClose);
@@ -77,12 +80,17 @@ ListTimeConstraintsDialog::~ListTimeConstraintsDialog()
 	QSettings settings(COMPANY, PROGRAM);
 	settings.setValue(dialogName+QString("/splitter-state"), splitter->saveState());
 
+	if(showRelatedCheckBox!=nullptr)
+		settings.setValue(dialogName+QString("/show-related"), showRelatedCheckBox->isChecked());
+
 	eventLoop->quit();
 }
 
 ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 {
 	type=_type;
+
+	showRelatedCheckBox=nullptr;
 
 	sortedCheckBox=nullptr;
 
@@ -2800,7 +2808,7 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 		populateStudentsComboBox(studentsComboBox, QString(""), true);
 		studentsComboBox->setCurrentIndex(0);
 
-		connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ListTimeConstraints::filter);
+		connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ListTimeConstraints::showRelatedCheckBoxToggled);
 	}
 
 	if(subjectsComboBox!=nullptr){
@@ -2863,8 +2871,21 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 		if(teachersComboBox!=nullptr)
 			layout->addWidget(teachersComboBox);
-		if(studentsComboBox!=nullptr)
-			layout->addWidget(studentsComboBox);
+		if(studentsComboBox!=nullptr){
+			showRelatedCheckBox=new QCheckBox(tr("Show related"));
+
+			QSettings settings(COMPANY, PROGRAM);
+			showRelatedCheckBox->setChecked(settings.value(dialogName+QString("/show-related"), "false").toBool());
+
+			connect(showRelatedCheckBox, &QCheckBox::toggled, this, &ListTimeConstraints::showRelatedCheckBoxToggled);
+
+			QHBoxLayout* ssrl=new QHBoxLayout;
+
+			ssrl->addWidget(studentsComboBox);
+			ssrl->addWidget(showRelatedCheckBox);
+
+			layout->addLayout(ssrl);
+		}
 		if(subjectsComboBox!=nullptr)
 			layout->addWidget(subjectsComboBox);
 		if(activityTagsComboBox!=nullptr)
@@ -2881,7 +2902,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 	splitter=new QSplitter;
 
-	dialog=new ListTimeConstraintsDialog(parent, dialogName, dialogTitle, eventLoop, splitter);
+	dialog=new ListTimeConstraintsDialog(parent, dialogName, dialogTitle, eventLoop, splitter,
+										 showRelatedCheckBox);
 
 	//dialog->setWindowTitle(dialogTitle);
 	
@@ -3153,7 +3175,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour* ctr=(ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -3162,7 +3184,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetNotAvailableTimes* ctr=(ConstraintStudentsSetNotAvailableTimes*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -3178,7 +3200,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMaxGapsPerWeek* ctr=(ConstraintStudentsSetMaxGapsPerWeek*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -3194,7 +3216,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMaxHoursDaily* ctr=(ConstraintStudentsSetMaxHoursDaily*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -3210,7 +3232,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMaxHoursContinuously* ctr=(ConstraintStudentsSetMaxHoursContinuously*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -3226,7 +3248,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMinHoursDaily* ctr=(ConstraintStudentsSetMinHoursDaily*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -3250,7 +3272,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 						return false;
 					if(activityTagsComboBox->currentText()!=QString("") && !act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 						return false;
-					if(studentsComboBox->currentText()!=QString("") && !act->studentsNames.contains(studentsComboBox->currentText()))
+					if(studentsComboBox->currentText()!=QString("") && !showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 						return false;
 				}
 
@@ -3278,7 +3300,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 						return false;
 					if(activityTagsComboBox->currentText()!=QString("") && !act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 						return false;
-					if(studentsComboBox->currentText()!=QString("") && !act->studentsNames.contains(studentsComboBox->currentText()))
+					if(studentsComboBox->currentText()!=QString("") && !showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 						return false;
 				}
 
@@ -3317,7 +3339,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -3360,7 +3382,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -3403,7 +3425,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -3435,7 +3457,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 						return false;
 					if(activityTagsComboBox->currentText()!=QString("") && !act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 						return false;
-					if(studentsComboBox->currentText()!=QString("") && !act->studentsNames.contains(studentsComboBox->currentText()))
+					if(studentsComboBox->currentText()!=QString("") && !showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 						return false;
 				}
 
@@ -3470,7 +3492,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 						return false;
 					if(activityTagsComboBox->currentText()!=QString("") && !act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 						return false;
-					if(studentsComboBox->currentText()!=QString("") && !act->studentsNames.contains(studentsComboBox->currentText()))
+					if(studentsComboBox->currentText()!=QString("") && !showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 						return false;
 				}
 
@@ -3516,7 +3538,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -3559,7 +3581,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -3613,7 +3635,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -3667,7 +3689,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -3710,7 +3732,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -3757,7 +3779,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetIntervalMaxDaysPerWeek* ctr=(ConstraintStudentsSetIntervalMaxDaysPerWeek*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -3817,7 +3839,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -3920,7 +3942,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -3963,7 +3985,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -4026,7 +4048,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 				assert(studentsComboBox!=nullptr);
 				assert(activityTagsComboBox!=nullptr);
 				ConstraintStudentsSetActivityTagMaxHoursDaily* ctr=(ConstraintStudentsSetActivityTagMaxHoursDaily*)tc;
-				return (studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students)
+				return (studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students))
 						&& (activityTagsComboBox->currentText()==QString("") || activityTagsComboBox->currentText()==ctr->activityTagName);
 
 				break;
@@ -4043,7 +4065,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMaxGapsPerDay* ctr=(ConstraintStudentsSetMaxGapsPerDay*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -4078,7 +4100,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -4121,7 +4143,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -4138,7 +4160,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMaxDaysPerWeek* ctr=(ConstraintStudentsSetMaxDaysPerWeek*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -4186,7 +4208,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMaxSpanPerDay* ctr=(ConstraintStudentsSetMaxSpanPerDay*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -4202,7 +4224,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMinRestingHours* ctr=(ConstraintStudentsSetMinRestingHours*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -4255,7 +4277,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -4272,7 +4294,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags* ctr=(ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags*)tc;
-				return (studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students)
+				return (studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students))
 						&& (first_activityTagsComboBox->currentText()==QString("") || first_activityTagsComboBox->currentText()==ctr->firstActivityTag)
 						&& (second_activityTagsComboBox->currentText()==QString("") || second_activityTagsComboBox->currentText()==ctr->secondActivityTag);
 
@@ -4346,7 +4368,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -4389,7 +4411,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -4436,7 +4458,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 				assert(studentsComboBox!=nullptr);
 				assert(activityTagsComboBox!=nullptr);
 				ConstraintStudentsSetActivityTagMinHoursDaily* ctr=(ConstraintStudentsSetActivityTagMinHoursDaily*)tc;
-				return (studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students)
+				return (studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students))
 						&& (activityTagsComboBox->currentText()==QString("") || activityTagsComboBox->currentText()==ctr->activityTagName);
 
 				break;
@@ -4461,7 +4483,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 						return false;
 					if(activityTagsComboBox->currentText()!=QString("") && !act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 						return false;
-					if(studentsComboBox->currentText()!=QString("") && !act->studentsNames.contains(studentsComboBox->currentText()))
+					if(studentsComboBox->currentText()!=QString("") && !showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 						return false;
 				}
 
@@ -4513,7 +4535,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMaxHoursDailyRealDays* ctr=(ConstraintStudentsSetMaxHoursDailyRealDays*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -4575,7 +4597,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 				assert(studentsComboBox!=nullptr);
 				assert(activityTagsComboBox!=nullptr);
 				ConstraintStudentsSetActivityTagMaxHoursDailyRealDays* ctr=(ConstraintStudentsSetActivityTagMaxHoursDailyRealDays*)tc;
-				return (studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students)
+				return (studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students))
 						&& (activityTagsComboBox->currentText()==QString("") || activityTagsComboBox->currentText()==ctr->activityTagName);
 
 				break;
@@ -4724,7 +4746,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMaxGapsPerRealDay* ctr=(ConstraintStudentsSetMaxGapsPerRealDay*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -4797,7 +4819,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMaxSpanPerRealDay* ctr=(ConstraintStudentsSetMaxSpanPerRealDay*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -4852,7 +4874,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMinHoursPerMorning* ctr=(ConstraintStudentsSetMinHoursPerMorning*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -4877,7 +4899,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMaxAfternoonsPerWeek* ctr=(ConstraintStudentsSetMaxAfternoonsPerWeek*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -4893,7 +4915,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMaxMorningsPerWeek* ctr=(ConstraintStudentsSetMaxMorningsPerWeek*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -4916,7 +4938,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMinMorningsPerWeek* ctr=(ConstraintStudentsSetMinMorningsPerWeek*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -4932,7 +4954,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMinAfternoonsPerWeek* ctr=(ConstraintStudentsSetMinAfternoonsPerWeek*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -4941,7 +4963,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMorningIntervalMaxDaysPerWeek* ctr=(ConstraintStudentsSetMorningIntervalMaxDaysPerWeek*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -4957,7 +4979,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek* ctr=(ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -4989,7 +5011,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMaxHoursPerAllAfternoons* ctr=(ConstraintStudentsSetMaxHoursPerAllAfternoons*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -5021,7 +5043,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon* ctr=(ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -5037,7 +5059,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour* ctr=(ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -5076,7 +5098,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMaxGapsPerWeekForRealDays* ctr=(ConstraintStudentsSetMaxGapsPerWeekForRealDays*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -5085,7 +5107,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMaxRealDaysPerWeek* ctr=(ConstraintStudentsSetMaxRealDaysPerWeek*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -5127,7 +5149,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -5170,7 +5192,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -5213,7 +5235,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -5256,7 +5278,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -5305,7 +5327,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour* ctr=(ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -5349,7 +5371,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -5382,7 +5404,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMinGapsBetweenActivityTag* ctr=(ConstraintStudentsSetMinGapsBetweenActivityTag*)tc;
-				return (studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students)
+				return (studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students))
 						&& (activityTagsComboBox->currentText()==QString("") || activityTagsComboBox->currentText()==ctr->activityTag);
 
 				break;
@@ -5425,7 +5447,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMaxThreeConsecutiveDays* ctr=(ConstraintStudentsSetMaxThreeConsecutiveDays*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -5460,7 +5482,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -5504,7 +5526,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -5547,7 +5569,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -5565,7 +5587,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 				assert(studentsComboBox!=nullptr);
 				assert(activityTagsComboBox!=nullptr);
 				ConstraintStudentsSetMaxActivityTagsPerDayFromSet* ctr=(ConstraintStudentsSetMaxActivityTagsPerDayFromSet*)tc;
-				return (studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students)
+				return (studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students))
 						&& (activityTagsComboBox->currentText()==QString("") || ctr->tagsList.contains(activityTagsComboBox->currentText()));
 
 				break;
@@ -5605,7 +5627,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 				assert(studentsComboBox!=nullptr);
 				assert(activityTagsComboBox!=nullptr);
 				ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet* ctr=(ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet*)tc;
-				return (studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students)
+				return (studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students))
 						&& (activityTagsComboBox->currentText()==QString("") || ctr->tagsList.contains(activityTagsComboBox->currentText()));
 
 				break;
@@ -5650,7 +5672,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -5682,7 +5704,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 						return false;
 					if(activityTagsComboBox->currentText()!=QString("") && !act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 						return false;
-					if(studentsComboBox->currentText()!=QString("") && !act->studentsNames.contains(studentsComboBox->currentText()))
+					if(studentsComboBox->currentText()!=QString("") && !showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 						return false;
 				}
 
@@ -5717,7 +5739,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 						return false;
 					if(activityTagsComboBox->currentText()!=QString("") && !act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 						return false;
-					if(studentsComboBox->currentText()!=QString("") && !act->studentsNames.contains(studentsComboBox->currentText()))
+					if(studentsComboBox->currentText()!=QString("") && !showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 						return false;
 				}
 
@@ -5760,7 +5782,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMinHoursPerAfternoon* ctr=(ConstraintStudentsSetMinHoursPerAfternoon*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -5795,7 +5817,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 							foundSubject=true;
 						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
 							foundActivityTag=true;
-						if(studentsComboBox->currentText()==QString("") || act->studentsNames.contains(studentsComboBox->currentText()))
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
 							foundStudents=true;
 					}
 
@@ -5835,7 +5857,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMaxHoursDailyInInterval* ctr=(ConstraintStudentsSetMaxHoursDailyInInterval*)tc;
-				return studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
 
 				break;
 			}
@@ -5844,7 +5866,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay* ctr=(ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay*)tc;
-				return (studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students)
+				return (studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students))
 						&& (first_activityTagsComboBox->currentText()==QString("") || first_activityTagsComboBox->currentText()==ctr->firstActivityTag)
 						&& (second_activityTagsComboBox->currentText()==QString("") || second_activityTagsComboBox->currentText()==ctr->secondActivityTag);
 
@@ -5884,7 +5906,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay* ctr=(ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay*)tc;
-				return (studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students)
+				return (studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students))
 						&& (activityTagsComboBox->currentText()==QString("") || activityTagsComboBox->currentText()==ctr->activityTag);
 
 				break;
@@ -5920,7 +5942,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon* ctr=(ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon*)tc;
-				return (studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students)
+				return (studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students))
 						&& (first_activityTagsComboBox->currentText()==QString("") || first_activityTagsComboBox->currentText()==ctr->firstActivityTag)
 						&& (second_activityTagsComboBox->currentText()==QString("") || second_activityTagsComboBox->currentText()==ctr->secondActivityTag);
 
@@ -5960,7 +5982,7 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 			{
 				assert(studentsComboBox!=nullptr);
 				ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon* ctr=(ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon*)tc;
-				return (studentsComboBox->currentText()==QString("") || studentsComboBox->currentText()==ctr->students)
+				return (studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students))
 						&& (activityTagsComboBox->currentText()==QString("") || activityTagsComboBox->currentText()==ctr->activityTag);
 
 				break;
@@ -6968,7 +6990,7 @@ void ListTimeConstraints::filter()
 
 		if(ctr->active)
 			n_active++;
-		else if(true || USE_GUI_COLORS)
+		else
 			constraintsListWidget->item(constraintsListWidget->count()-1)->setBackground(constraintsListWidget->palette().alternateBase());
 	}
 
@@ -7352,4 +7374,65 @@ void ListTimeConstraints::changeWeights()
 	}
 
 	constraintsListWidget->setFocus();
+}
+
+void ListTimeConstraints::showRelatedCheckBoxToggled()
+{
+	assert(studentsComboBox!=nullptr);
+	
+	bool showRelated=showRelatedCheckBox->isChecked();
+	
+	showedStudents.clear();
+	
+	if(!showRelated){
+		showedStudents.insert(studentsComboBox->currentText());
+	}
+	else{
+		if(studentsComboBox->currentText()=="")
+			showedStudents.insert("");
+		else{
+			//down
+			StudentsSet* studentsSet=gt.rules.searchStudentsSet(studentsComboBox->currentText());
+			assert(studentsSet!=nullptr);
+			if(studentsSet->type==STUDENTS_YEAR){
+				StudentsYear* year=(StudentsYear*)studentsSet;
+				showedStudents.insert(year->name);
+				for(StudentsGroup* group : std::as_const(year->groupsList)){
+					showedStudents.insert(group->name);
+					for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList))
+						showedStudents.insert(subgroup->name);
+				}
+			}
+			else if(studentsSet->type==STUDENTS_GROUP){
+				StudentsGroup* group=(StudentsGroup*)studentsSet;
+				showedStudents.insert(group->name);
+				for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList))
+					showedStudents.insert(subgroup->name);
+			}
+			else if(studentsSet->type==STUDENTS_SUBGROUP){
+				StudentsSubgroup* subgroup=(StudentsSubgroup*)studentsSet;
+				showedStudents.insert(subgroup->name);
+			}
+			else
+				assert(0);
+				
+			//up
+			QString crt=studentsComboBox->currentText();
+			for(StudentsYear* year : std::as_const(gt.rules.yearsList)){
+				for(StudentsGroup* group : std::as_const(year->groupsList)){
+					if(group->name==crt){
+						showedStudents.insert(year->name);
+					}
+					for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList)){
+						if(subgroup->name==crt){
+							showedStudents.insert(year->name);
+							showedStudents.insert(group->name);
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	filter();
 }

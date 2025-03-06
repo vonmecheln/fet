@@ -499,8 +499,6 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 	//To avoid assert(0) in fetmainform.cpp if the setting is corrupt (I am not sure I kept the assert, but does not hurt).
 	if(INTERFACE_COLOR_SCHEME!="automatic" && INTERFACE_COLOR_SCHEME!="light" && INTERFACE_COLOR_SCHEME!="dark")
 		INTERFACE_COLOR_SCHEME="automatic";
-	
-	USE_GUI_COLORS=newSettings.value("use-gui-colors", "false").toBool();
 
 	SHOW_SUBGROUPS_IN_COMBO_BOXES=newSettings.value("show-subgroups-in-combo-boxes", "true").toBool();
 	SHOW_SUBGROUPS_IN_ACTIVITY_PLANNING=newSettings.value("show-subgroups-in-activity-planning", "true").toBool();
@@ -1283,8 +1281,6 @@ void FetSettings::writeGenerationParameters()
 
 	settings.setValue("interface-style", INTERFACE_STYLE);
 	settings.setValue("interface-color-scheme", INTERFACE_COLOR_SCHEME);
-	
-	settings.setValue("use-gui-colors", USE_GUI_COLORS);
 
 	settings.setValue("show-subgroups-in-combo-boxes", SHOW_SUBGROUPS_IN_COMBO_BOXES);
 	settings.setValue("show-subgroups-in-activity-planning", SHOW_SUBGROUPS_IN_ACTIVITY_PLANNING);

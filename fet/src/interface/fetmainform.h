@@ -512,7 +512,6 @@ public slots:
 
 	void checkForUpdatesToggled(bool checked);
 	void helpSettingsAction_triggered();
-	void useColorsToggled(bool checked);
 	void showSubgroupsInComboBoxesToggled(bool checked);
 	void showSubgroupsInActivityPlanningToggled(bool checked);
 	void settingsShowShortcutsOnMainWindowAction_toggled();

@@ -35,6 +35,10 @@
 
 #include <QSplitter>
 
+#include <QString>
+
+#include <QSet>
+
 class ListTimeConstraintsDialog: public QDialog
 {
 	QString dialogName;
@@ -43,8 +47,11 @@ class ListTimeConstraintsDialog: public QDialog
 
 	QSplitter* splitter;
 
+	QCheckBox* showRelatedCheckBox;
+
 public:
-	ListTimeConstraintsDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop, QSplitter* _splitter);
+	ListTimeConstraintsDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop, QSplitter* _splitter,
+							  QCheckBox* showRelatedCheckBox);
 	~ListTimeConstraintsDialog();
 };
 
@@ -59,6 +66,8 @@ class ListTimeConstraints: public QObject
 	QString dialogTitle;
 
 	int type;
+
+	QCheckBox* showRelatedCheckBox;
 
 	QSplitter* splitter;
 	
@@ -99,6 +108,8 @@ class ListTimeConstraints: public QObject
 	QPushButton* weightsPushButton;
 	QPushButton* commentsPushButton;
 
+	QSet<QString> showedStudents;
+
 public:
 	ListTimeConstraints(QWidget* parent, int _type);
 	~ListTimeConstraints();
@@ -125,6 +136,8 @@ private:
 	void constraintComments();
 	void changeWeights();
 	void selectionChanged();
+
+	void showRelatedCheckBoxToggled();
 };
 
 #endif

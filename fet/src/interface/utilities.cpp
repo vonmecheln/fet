@@ -19,16 +19,18 @@ File utilities.cpp
  *                                                                         *
  ***************************************************************************/
 
-#include <Qt>
+#include "utilities.h"
+
 #include <QtGlobal>
 
-#include "utilities.h"
+#ifndef FET_COMMAND_LINE
+
+#include <Qt>
 
 #include "rules.h"
 #include "timetable.h"
 #include "studentsset.h"
 
-#ifndef FET_COMMAND_LINE
 #include "fetmainform.h"
 
 #include "timetableshowconflictsform.h"
@@ -63,19 +65,19 @@ File utilities.cpp
 #include <QMessageBox>
 
 #include <QSettings>
-#endif
 
 #include <QObject>
 #include <QMetaObject>
 
 #include <QString>
 
-#ifndef FET_COMMAND_LINE
 #include <QHeaderView>
 #include <QTableView>
 #include <QTableWidget>
 #include <QTableWidgetItem>
 #include <QAbstractItemView>
+
+#include <QAbstractButton>
 
 #include <QComboBox>
 
@@ -96,6 +98,46 @@ extern FetMainForm* pFetMainForm;
 //extern QApplication* pqapplication;
 
 extern Timetable gt;
+
+class CornerEnabledTableWidget: public QTableWidget
+{
+public:
+	bool useColors;
+
+	CornerEnabledTableWidget(bool _useColors);
+
+private:
+	void selectAll();
+};
+
+CornerEnabledTableWidget::CornerEnabledTableWidget(bool _useColors): QTableWidget()
+{
+	useColors=_useColors;
+}
+
+void CornerEnabledTableWidget::selectAll()
+{
+	int nD, nH;
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+		nD=gt.rules.nDaysPerWeek;
+		nH=gt.rules.nHoursPerDay;
+	}
+	else{
+		nD=gt.rules.nDaysPerWeek/2;
+		nH=2*gt.rules.nHoursPerDay;
+	}
+
+	QString newText;
+	if(item(0, 0)->text()==NO)
+		newText=YES;
+	else
+		newText=NO;
+	for(int i=0; i<nH; i++)
+		for(int j=0; j<nD; j++){
+			item(i, j)->setText(newText);
+			colorItemTimesTable(this, item(i,j));
+		}
+}
 
 void centerWidgetOnScreen(QWidget* widget)
 {
@@ -215,7 +257,7 @@ void setParentAndOtherThings(QWidget* widget, QWidget* parent)
 	}*/
 }
 
-void setStretchAvailabilityTableNicely(QTableWidget* tableWidget)
+void setStretchAvailabilityTableNicely(CornerEnabledTableWidget* tableWidget)
 {
 #if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 	tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
@@ -246,7 +288,20 @@ void setStretchAvailabilityTableNicely(QTableWidget* tableWidget)
 			tableWidget->item(i,j)->setFont(font);
 		}
 	}*/
-	tableWidget->setCornerButtonEnabled(false);
+	tableWidget->setCornerButtonEnabled(true);
+
+	//As in the second answer on https://stackoverflow.com/questions/22635867/is-it-possible-to-set-the-text-of-the-qtableview-corner-button (2025-02-23)
+	QAbstractButton* button=tableWidget->findChild<QAbstractButton*>();
+	if(button!=nullptr){
+		QVBoxLayout* layout=new QVBoxLayout(button);
+		layout->setContentsMargins(0, 0, 0, 0);
+		QLabel* label=new QLabel(QString("∀"));
+		//label->setStyleSheet("QLabel {font-face: ArialMT; font-size: 10px; color: #FFFFFF; font-weight: bold; }""QToolTip { color: #ffffff; background-color: #000000; border: 1px #000000; }");
+		label->setAlignment(Qt::AlignCenter);
+		//label->setToolTip("Text");
+		label->setContentsMargins(2, 2, 2, 2);
+		layout->addWidget(label);
+	}
 }
 
 void setRulesModifiedAndOtherThings(Rules* rules)
@@ -569,7 +624,7 @@ void updateAllTimetableViewDialogs()
 		}
 }
 
-void highlightOnHorizontalHeaderClicked(QTableWidget* tableWidget, int col)
+void highlightOnHorizontalHeaderClicked(CornerEnabledTableWidget* tableWidget, int col)
 {
 	bool respectsHeaderBackgroundColor=false;
 #ifndef Q_OS_WIN
@@ -643,7 +698,7 @@ void highlightOnHorizontalHeaderClicked(QTableWidget* tableWidget, int col)
 	}
 }
 
-void highlightOnVerticalHeaderClicked(QTableWidget* tableWidget, int row)
+void highlightOnVerticalHeaderClicked(CornerEnabledTableWidget* tableWidget, int row)
 {
 	bool respectsHeaderBackgroundColor=false;
 #ifndef Q_OS_WIN
@@ -717,7 +772,7 @@ void highlightOnVerticalHeaderClicked(QTableWidget* tableWidget, int row)
 	}
 }
 
-void highlightOnCellEntered(QTableWidget* tableWidget, int row, int col)
+void highlightOnCellEntered(CornerEnabledTableWidget* tableWidget, int row, int col)
 {
 	bool respectsHeaderBackgroundColor=false;
 #ifndef Q_OS_WIN
@@ -823,18 +878,22 @@ void tableViewSetHighlightHeader(QTableView* tableWidget)
 	//this->setStyleSheet(QString("QHeaderView::section:hover { background-color: ")+bc+QString("; color: ")+fc+QString(" }"));
 }
 
-void colorItem(QTableWidgetItem* item)
+void colorItemTimesTable(CornerEnabledTableWidget* timesTable, QTableWidgetItem* item)
 {
-	if(USE_GUI_COLORS){
+	if(timesTable->useColors){
 		if(item->text()==NO)
 			item->setBackground(QBrush(QColorConstants::DarkGreen));
 		else
 			item->setBackground(QBrush(QColorConstants::DarkRed));
 		item->setForeground(QBrush(QColorConstants::LightGray));
 	}
+	else{
+		item->setBackground(timesTable->palette().base());
+		item->setForeground(timesTable->palette().text());
+	}
 }
 
-void initTimesTable(QTableWidget* timesTable)
+void initTimesTable(CornerEnabledTableWidget* timesTable)
 {
 	timesTable->clear();
 
@@ -861,7 +920,7 @@ void initTimesTable(QTableWidget* timesTable)
 
 				item->setTextAlignment(Qt::AlignCenter);
 				item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
-				colorItem(item);
+				colorItemTimesTable(timesTable, item);
 				if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
 					item->setToolTip(gt.rules.daysOfTheWeek[j]+QString("\n")+gt.rules.hoursOfTheDay[i]);
 				timesTable->setItem(i, j, item);
@@ -890,7 +949,7 @@ void initTimesTable(QTableWidget* timesTable)
 
 				item->setTextAlignment(Qt::AlignCenter);
 				item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
-				colorItem(item);
+				colorItemTimesTable(timesTable, item);
 				if(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES)
 					item->setToolTip(gt.rules.realDaysOfTheWeek[j]+QString("\n")+gt.rules.realHoursOfTheDay[i]);
 				timesTable->setItem(i, j, item);
@@ -898,7 +957,7 @@ void initTimesTable(QTableWidget* timesTable)
 	}
 }
 
-void fillTimesTable(QTableWidget* timesTable, const QList<int>& days, const QList<int>& hours, bool direct)
+void fillTimesTable(CornerEnabledTableWidget* timesTable, const QList<int>& days, const QList<int>& hours, bool direct)
 {
 	timesTable->clearContents();
 
@@ -944,7 +1003,7 @@ void fillTimesTable(QTableWidget* timesTable, const QList<int>& days, const QLis
 						item->setText(YES);
 				}
 
-				colorItem(item);
+				colorItemTimesTable(timesTable, item);
 			}
 	}
 	else{
@@ -975,12 +1034,12 @@ void fillTimesTable(QTableWidget* timesTable, const QList<int>& days, const QLis
 						item->setText(YES);
 				}
 
-				colorItem(item);
+				colorItemTimesTable(timesTable, item);
 			}
 	}
 }
 
-void getTimesTable(QTableWidget* timesTable, QList<int>& days, QList<int>& hours, bool direct)
+void getTimesTable(CornerEnabledTableWidget* timesTable, QList<int>& days, QList<int>& hours, bool direct)
 {
 	days.clear();
 	hours.clear();
@@ -1018,7 +1077,7 @@ void getTimesTable(QTableWidget* timesTable, QList<int>& days, QList<int>& hours
 	}
 }
 
-void horizontalHeaderClickedTimesTable(QTableWidget* timesTable, int col)
+void horizontalHeaderClickedTimesTable(CornerEnabledTableWidget* timesTable, int col)
 {
 	highlightOnHorizontalHeaderClicked(timesTable, col);
 
@@ -1043,12 +1102,12 @@ void horizontalHeaderClickedTimesTable(QTableWidget* timesTable, int col)
 
 		for(int row=0; row<nH; row++){
 			timesTable->item(row, col)->setText(s);
-			colorItem(timesTable->item(row,col));
+			colorItemTimesTable(timesTable, timesTable->item(row,col));
 		}
 	}
 }
 
-void verticalHeaderClickedTimesTable(QTableWidget* timesTable, int row)
+void verticalHeaderClickedTimesTable(CornerEnabledTableWidget* timesTable, int row)
 {
 	highlightOnVerticalHeaderClicked(timesTable, row);
 
@@ -1073,17 +1132,17 @@ void verticalHeaderClickedTimesTable(QTableWidget* timesTable, int row)
 
 		for(int col=0; col<nD; col++){
 			timesTable->item(row, col)->setText(s);
-			colorItem(timesTable->item(row,col));
+			colorItemTimesTable(timesTable, timesTable->item(row,col));
 		}
 	}
 }
 
-void cellEnteredTimesTable(QTableWidget* timesTable, int row, int col)
+void cellEnteredTimesTable(CornerEnabledTableWidget* timesTable, int row, int col)
 {
 	highlightOnCellEntered(timesTable, row, col);
 }
 
-void toggleAllClickedTimesTable(QTableWidget* timesTable)
+void colorsCheckBoxToggledTimesTable(CornerEnabledTableWidget* timesTable)
 {
 	int nD, nH;
 	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
@@ -1095,19 +1154,12 @@ void toggleAllClickedTimesTable(QTableWidget* timesTable)
 		nH=2*gt.rules.nHoursPerDay;
 	}
 
-	QString newText;
-	if(timesTable->item(0, 0)->text()==NO)
-		newText=YES;
-	else
-		newText=NO;
 	for(int i=0; i<nH; i++)
-		for(int j=0; j<nD; j++){
-			timesTable->item(i, j)->setText(newText);
-			colorItem(timesTable->item(i,j));
-		}
+		for(int j=0; j<nD; j++)
+			colorItemTimesTable(timesTable, timesTable->item(i,j));
 }
 
-void swapClickedTimesTable(QTableWidget* timesTable)
+void toggleAllClickedTimesTable(CornerEnabledTableWidget* timesTable)
 {
 	int nD, nH;
 	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
@@ -1128,11 +1180,11 @@ void swapClickedTimesTable(QTableWidget* timesTable)
 				newText=NO;
 
 			timesTable->item(i, j)->setText(newText);
-			colorItem(timesTable->item(i,j));
+			colorItemTimesTable(timesTable, timesTable->item(i,j));
 		}
 }
 
-void itemClickedTimesTable(QTableWidgetItem* item)
+void itemClickedTimesTable(CornerEnabledTableWidget* timesTable, QTableWidgetItem* item)
 {
 	QString s=item->text();
 	if(s==YES)
@@ -1142,12 +1194,12 @@ void itemClickedTimesTable(QTableWidgetItem* item)
 		s=YES;
 	}
 	item->setText(s);
-	colorItem(item);
+	colorItemTimesTable(timesTable, item);
 }
 
 #else
 
-void centerWidgetOnScreen(QWidget* widget)
+/*void centerWidgetOnScreen(QWidget* widget)
 {
 	Q_UNUSED(widget);
 }
@@ -1192,14 +1244,14 @@ void setParentAndOtherThings(QWidget* widget, QWidget* parent)
 void setStretchAvailabilityTableNicely(QTableWidget* tableWidget)
 {
 	Q_UNUSED(tableWidget);
-}
+}*/
 
 void setRulesModifiedAndOtherThings(Rules* rules)
 {
 	Q_UNUSED(rules);
 }
 
-void setRulesUnmodifiedAndOtherThings(Rules* rules)
+/*void setRulesUnmodifiedAndOtherThings(Rules* rules)
 {
 	Q_UNUSED(rules);
 }
@@ -1225,14 +1277,14 @@ void showWarningForInvisibleSubgroupActivity(QWidget* parent, const QString& ini
 void populateStudentsComboBox(QComboBox* studentsComboBox)
 {
 	Q_UNUSED(studentsComboBox);
-}
+}*/
 
 /*void closeAllTimetableViewDialogs()
 {
 }*/
 
-void updateAllTimetableViewDialogs()
+/*void updateAllTimetableViewDialogs()
 {
-}
+}*/
 
 #endif

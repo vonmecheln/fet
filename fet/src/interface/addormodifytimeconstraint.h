@@ -45,6 +45,17 @@
 
 #include <QEventLoop>
 
+class CornerEnabledTableWidget: public QTableWidget
+{
+public:
+	bool useColors;
+
+	CornerEnabledTableWidget(bool _useColors);
+
+private:
+	void selectAll();
+};
+
 class AddOrModifyTimeConstraintTimesTableDelegate: public QStyledItemDelegate
 {
 	Q_OBJECT
@@ -68,15 +79,28 @@ class AddOrModifyTimeConstraintDialog: public QDialog
 	QString dialogTitle;
 	QEventLoop* eventLoop;
 
-	QTableWidget* timesTable;
+	CornerEnabledTableWidget* timesTable;
 	QAbstractItemDelegate* oldItemDelegate;
 	AddOrModifyTimeConstraintTimesTableDelegate* newItemDelegate;
 
+	QCheckBox* colorsCheckBox;
+
+	QCheckBox* showRelatedCheckBox;
+
+	QCheckBox* firstFilter_showRelatedCheckBox;
+	QCheckBox* secondFilter_showRelatedCheckBox;
+	QCheckBox* thirdFilter_showRelatedCheckBox;
+
 public:
 	AddOrModifyTimeConstraintDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop,
-									QTableWidget* _timesTable,
+									CornerEnabledTableWidget* _timesTable,
 									QAbstractItemDelegate* _oldItemDelegate,
-									AddOrModifyTimeConstraintTimesTableDelegate* _newItemDelegate);
+									AddOrModifyTimeConstraintTimesTableDelegate* _newItemDelegate,
+									QCheckBox* _colorsCheckBox,
+									QCheckBox* _showRelatedCheckBox,
+									QCheckBox* _firstFilter_showRelatedCheckBox,
+									QCheckBox* _secondFilter_showRelatedCheckBox,
+									QCheckBox* _thirdFilter_showRelatedCheckBox);
 	~AddOrModifyTimeConstraintDialog();
 };
 
@@ -92,6 +116,12 @@ class AddOrModifyTimeConstraint: public QObject
 	
 	int type;
 	TimeConstraint* oldtc;
+
+	QCheckBox* showRelatedCheckBox;
+
+	QCheckBox* firstFilter_showRelatedCheckBox;
+	QCheckBox* secondFilter_showRelatedCheckBox;
+	QCheckBox* thirdFilter_showRelatedCheckBox;
 
 	QPushButton* addConstraintPushButton;
 	QPushButton* addConstraintsPushButton;
@@ -109,10 +139,10 @@ class AddOrModifyTimeConstraint: public QObject
 	QLabel* firstModifyInstructionsLabel;
 	QLabel* secondModifyInstructionsLabel;
 
+	QCheckBox* colorsCheckBox;
 	QPushButton* toggleAllPushButton;
-	QPushButton* swapPushButton;
 	
-	QTableWidget* timesTable;
+	CornerEnabledTableWidget* timesTable;
 	QAbstractItemDelegate* oldItemDelegate;
 	AddOrModifyTimeConstraintTimesTableDelegate* newItemDelegate;
 
@@ -251,6 +281,12 @@ class AddOrModifyTimeConstraint: public QObject
 
 	bool filterIsOnSingleRow;
 
+	QSet<QString> showedStudents;
+
+	QSet<QString> firstFilter_showedStudents;
+	QSet<QString> secondFilter_showedStudents;
+	QSet<QString> thirdFilter_showedStudents;
+
 public:
 	AddOrModifyTimeConstraint(QWidget* parent, int _type, TimeConstraint* _oldtc=nullptr);
 	~AddOrModifyTimeConstraint();
@@ -291,8 +327,8 @@ private:
 	void horizontalHeaderClicked(int col);
 	void verticalHeaderClicked(int row);
 	void cellEntered(int row, int col);
+	void colorsCheckBoxToggled();
 	void toggleAllClicked();
-	void swapClicked();
 
 	void durationCheckBoxToggled();
 
@@ -310,6 +346,12 @@ private:
 	void clearActivitiesClicked2();
 	void addActivity2();
 	void removeActivity2();
+
+	void showRelatedCheckBoxToggled();
+
+	void firstFilter_showRelatedCheckBoxToggled();
+	void secondFilter_showRelatedCheckBoxToggled();
+	void thirdFilter_showRelatedCheckBoxToggled();
 };
 
 #endif

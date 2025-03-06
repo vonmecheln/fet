@@ -654,8 +654,8 @@ void TimetableViewRoomsDaysVerticalForm::updateRoomsTimetableTable(){
 			//begin by Marco Vassura
 			// add colors (start)
 			//if(USE_GUI_COLORS) {
-			roomsTimetableTable->item(k, j)->setBackground(roomsTimetableTable->palette().color(QPalette::Base));
-			roomsTimetableTable->item(k, j)->setForeground(roomsTimetableTable->palette().color(QPalette::Text));
+			roomsTimetableTable->item(k, j)->setBackground(roomsTimetableTable->palette().base());
+			roomsTimetableTable->item(k, j)->setForeground(roomsTimetableTable->palette().text());
 			//}
 			// add colors (end)
 			//end by Marco Vassura

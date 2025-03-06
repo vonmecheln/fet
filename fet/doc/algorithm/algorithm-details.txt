@@ -1,7 +1,11 @@
 This document was written by Liviu Lalescu. Fair use of this document is allowed/encouraged/expected.
 
 Begin: 2007.
-Last modified on: 26 December 2019.
+Last modified on: 23 February 2025.
+
+
+References for the idea of the algorithm used in FET: please see the REFERENCES file from the main directory or
+the interface menu FET > Help > About > References.
 
 
 Added on 19 January 2009: the implementation of the algorithm is good now, I changed it in 2008.

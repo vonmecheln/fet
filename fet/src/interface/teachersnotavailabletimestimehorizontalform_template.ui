@@ -6,18 +6,57 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>811</width>
-    <height>588</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string comment="The title of the dialog to show/modify the teachers' not available times constraints in a unified time horizontal overview">Teachers' not available times time horizontal</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0" colspan="4">
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="2" column="1">
+    <widget class="QCheckBox" name="filterCheckBox">
+     <property name="text">
+      <string>Filter</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="7">
+    <widget class="QGroupBox" name="filterGroupBox">
+     <property name="title">
+      <string>Filter</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QComboBox" name="teachersComboBox"/>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="subjectsComboBox"/>
+      </item>
+      <item row="1" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QComboBox" name="studentsComboBox"/>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="showRelatedCheckBox">
+          <property name="text">
+           <string>Show related</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="activityTagsComboBox"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="7">
     <widget class="QTableWidget" name="naTableWidget"/>
    </item>
-   <item row="1" column="0">
+   <item row="2" column="3">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QLabel" name="label">
@@ -31,7 +70,7 @@
      </item>
     </layout>
    </item>
-   <item row="1" column="1">
+   <item row="2" column="4">
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="QLabel" name="heightTextLabel">
@@ -45,20 +84,27 @@
      </item>
     </layout>
    </item>
-   <item row="1" column="2">
+   <item row="2" column="5">
     <widget class="QPushButton" name="selectedPushButton">
      <property name="text">
       <string comment="It means to toggle on/off the availability of the teachers in the selected cells of the table">Selected</string>
      </property>
     </widget>
    </item>
-   <item row="1" column="3">
+   <item row="2" column="6">
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
      <property name="standardButtons">
       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QCheckBox" name="colorsCheckBox">
+     <property name="text">
+      <string>Colors</string>
      </property>
     </widget>
    </item>

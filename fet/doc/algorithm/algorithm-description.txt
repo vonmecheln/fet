@@ -1,7 +1,11 @@
 This document was written by Liviu Lalescu. Fair use of this document is allowed/encouraged/expected.
 
 Begin: 2011.
-Last modified on: 29 December 2019.
+Last modified on: 23 February 2025.
+
+
+References for the idea of the algorithm used in FET: please see the REFERENCES file from the main directory or
+the interface menu FET > Help > About > References.
 
 
 This is the description of the timetable generation algorithm used by FET.
@@ -23,7 +27,7 @@ C2) Lots of other constraints (excluded here, for simplicity).
 
 
 The timetabling algorithm (which I named "recursive swapping", although it might be related to the algorithm known
-as "ejection chain" or the more generalized "ejection tree"):
+as "ejection chain" or the more generalized "ejection tree"; it might also be related to the manual timetabling method):
 
 1) Sort the activities, most difficult first. Not critical step, but speeds up the algorithm maybe 10 times or more.
 

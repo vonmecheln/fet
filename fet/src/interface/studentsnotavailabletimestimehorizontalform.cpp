@@ -95,6 +95,52 @@ void StudentsNotAvailableTimesTimeHorizontalDelegate::paint(QPainter* painter, c
 StudentsNotAvailableTimesTimeHorizontalForm::StudentsNotAvailableTimesTimeHorizontalForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
+
+	QSize tmp1=teachersComboBox->minimumSizeHint();
+	Q_UNUSED(tmp1);
+
+	QSize tmp2=studentsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp2);
+
+	QSize tmp3=subjectsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp3);
+
+	QSize tmp4=activityTagsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp4);
+
+	teachersComboBox->addItem(QString(""));
+	for(Teacher* tch : std::as_const(gt.rules.teachersList))
+		teachersComboBox->addItem(tch->name);
+
+	teachersComboBox->setCurrentIndex(0);
+	
+	populateStudentsComboBox(studentsComboBox, QString(""), true);
+
+	studentsComboBox->setCurrentIndex(0);
+
+	subjectsComboBox->addItem(QString(""));
+	for(Subject* sbj : std::as_const(gt.rules.subjectsList))
+		subjectsComboBox->addItem(sbj->name);
+
+	subjectsComboBox->setCurrentIndex(0);
+
+	activityTagsComboBox->addItem(QString(""));
+	for(ActivityTag* at : std::as_const(gt.rules.activityTagsList))
+		activityTagsComboBox->addItem(at->name);
+
+	activityTagsComboBox->setCurrentIndex(0);
+
+	QSettings settings(COMPANY, PROGRAM);
+
+	if(settings.contains(this->metaObject()->className()+QString("/use-filter")))
+		filterCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/use-filter")).toBool());
+	else
+		filterCheckBox->setChecked(false);
+
+	if(settings.contains(this->metaObject()->className()+QString("/show-related")))
+		showRelatedCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/show-related")).toBool());
+	else
+		showRelatedCheckBox->setChecked(false);
 	
 	tableViewSetHighlightHeader(naTableWidget);
 
@@ -215,6 +261,11 @@ StudentsNotAvailableTimesTimeHorizontalForm::StudentsNotAvailableTimesTimeHorizo
 		naTableWidget->setVerticalHeaderItem(s, item);
 	}
 
+	if(settings.contains(this->metaObject()->className()+QString("/use-colors")))
+		colorsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/use-colors")).toBool());
+	else
+		colorsCheckBox->setChecked(false);
+
 	for(int s=0; s<allStudentsNames.count(); s++){
 		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
 			for(int h=0; h<gt.rules.nHoursPerDay; h++){
@@ -245,7 +296,6 @@ StudentsNotAvailableTimesTimeHorizontalForm::StudentsNotAvailableTimesTimeHorizo
 	int h;
 	int w;
 
-	QSettings settings(COMPANY, PROGRAM);
 	if(settings.contains(this->metaObject()->className()+QString("/vertical-header-size"))){
 		h=settings.value(this->metaObject()->className()+QString("/vertical-header-size")).toInt();
 		if(h==0)
@@ -321,9 +371,22 @@ StudentsNotAvailableTimesTimeHorizontalForm::StudentsNotAvailableTimesTimeHorizo
 
 	checkBoxesChanged();
 
-	connect(yearsCheckBox, &QCheckBox::toggled, this, &StudentsNotAvailableTimesTimeHorizontalForm::checkBoxesChanged);
-	connect(groupsCheckBox, &QCheckBox::toggled, this, &StudentsNotAvailableTimesTimeHorizontalForm::checkBoxesChanged);
-	connect(subgroupsCheckBox, &QCheckBox::toggled, this, &StudentsNotAvailableTimesTimeHorizontalForm::checkBoxesChanged);
+	connect(yearsCheckBox, &QCheckBox::toggled, this, &StudentsNotAvailableTimesTimeHorizontalForm::studentsFilterChanged);
+	connect(groupsCheckBox, &QCheckBox::toggled, this, &StudentsNotAvailableTimesTimeHorizontalForm::studentsFilterChanged);
+	connect(subgroupsCheckBox, &QCheckBox::toggled, this, &StudentsNotAvailableTimesTimeHorizontalForm::studentsFilterChanged);
+
+	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &StudentsNotAvailableTimesTimeHorizontalForm::checkBoxesChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &StudentsNotAvailableTimesTimeHorizontalForm::studentsFilterChanged);
+	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &StudentsNotAvailableTimesTimeHorizontalForm::checkBoxesChanged);
+	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &StudentsNotAvailableTimesTimeHorizontalForm::checkBoxesChanged);
+
+	connect(filterCheckBox, &QCheckBox::toggled, this, &StudentsNotAvailableTimesTimeHorizontalForm::filterCheckBoxToggled);
+
+	connect(showRelatedCheckBox, &QCheckBox::toggled, this, &StudentsNotAvailableTimesTimeHorizontalForm::studentsFilterChanged);
+
+	connect(colorsCheckBox, &QCheckBox::toggled, this, &StudentsNotAvailableTimesTimeHorizontalForm::colorsCheckBoxToggled);
+
+	filterCheckBoxToggled();
 }
 
 StudentsNotAvailableTimesTimeHorizontalForm::~StudentsNotAvailableTimesTimeHorizontalForm()
@@ -331,6 +394,12 @@ StudentsNotAvailableTimesTimeHorizontalForm::~StudentsNotAvailableTimesTimeHoriz
 	saveFETDialogGeometry(this);
 
 	QSettings settings(COMPANY, PROGRAM);
+
+	settings.setValue(this->metaObject()->className()+QString("/use-filter"), filterCheckBox->isChecked());
+
+	settings.setValue(this->metaObject()->className()+QString("/show-related"), showRelatedCheckBox->isChecked());
+
+	settings.setValue(this->metaObject()->className()+QString("/use-colors"), colorsCheckBox->isChecked());
 
 	if(heightSpinBox->value()<=MINIMUM_HEIGHT_SPIN_BOX_VALUE)
 		settings.setValue(this->metaObject()->className()+QString("/vertical-header-size"), 0);
@@ -350,10 +419,93 @@ StudentsNotAvailableTimesTimeHorizontalForm::~StudentsNotAvailableTimesTimeHoriz
 	delete newItemDelegate;
 }
 
+void StudentsNotAvailableTimesTimeHorizontalForm::studentsFilterChanged()
+{
+	bool showRelated=showRelatedCheckBox->isChecked();
+	
+	showedStudents.clear();
+	
+	if(!showRelated){
+		showedStudents.insert(studentsComboBox->currentText());
+	}
+	else{
+		if(studentsComboBox->currentText()=="")
+			showedStudents.insert("");
+		else{
+			//down
+			StudentsSet* studentsSet=gt.rules.searchStudentsSet(studentsComboBox->currentText());
+			assert(studentsSet!=nullptr);
+			if(studentsSet->type==STUDENTS_YEAR){
+				StudentsYear* year=(StudentsYear*)studentsSet;
+				showedStudents.insert(year->name);
+				for(StudentsGroup* group : std::as_const(year->groupsList)){
+					showedStudents.insert(group->name);
+					for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList))
+						showedStudents.insert(subgroup->name);
+				}
+			}
+			else if(studentsSet->type==STUDENTS_GROUP){
+				StudentsGroup* group=(StudentsGroup*)studentsSet;
+				showedStudents.insert(group->name);
+				for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList))
+					showedStudents.insert(subgroup->name);
+			}
+			else if(studentsSet->type==STUDENTS_SUBGROUP){
+				StudentsSubgroup* subgroup=(StudentsSubgroup*)studentsSet;
+				showedStudents.insert(subgroup->name);
+			}
+			else
+				assert(0);
+			
+			//up
+			QString crt=studentsComboBox->currentText();
+			for(StudentsYear* year : std::as_const(gt.rules.yearsList)){
+				for(StudentsGroup* group : std::as_const(year->groupsList)){
+					if(group->name==crt){
+						showedStudents.insert(year->name);
+					}
+					for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList)){
+						if(subgroup->name==crt){
+							showedStudents.insert(year->name);
+							showedStudents.insert(group->name);
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	checkBoxesChanged();
+}
+
+bool StudentsNotAvailableTimesTimeHorizontalForm::filterOk(const QString& stName)
+{
+	for(Activity* act : std::as_const(gt.rules.activitiesList)){
+		if(act->studentsNames.contains(stName)){
+			bool t=true;
+			
+			if(t && teachersComboBox->currentText()!=QString("") && !act->teachersNames.contains(teachersComboBox->currentText()))
+				t=false;
+			if(t && subjectsComboBox->currentText()!=QString("") && subjectsComboBox->currentText()!=act->subjectName)
+				t=false;
+			if(t && activityTagsComboBox->currentText()!=QString("") && !act->activityTagsNames.contains(activityTagsComboBox->currentText()))
+				t=false;
+			if(t && studentsComboBox->currentText()!=QString(""))
+				if(!showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
+					t=false;
+			
+			if(t)
+				return true;
+		}
+	}
+	
+	return false;
+}
+
 void StudentsNotAvailableTimesTimeHorizontalForm::colorItem(QTableWidgetItem* item)
 {
 	assert(item->row()>=0 && item->row()<allStudentsNames.count());
-	if(USE_GUI_COLORS){
+	if(colorsCheckBox->isChecked()){
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 		if(!inactiveConstraint[item->row()]){
 			if(item->text()==NO)
@@ -387,7 +539,11 @@ void StudentsNotAvailableTimesTimeHorizontalForm::colorItem(QTableWidgetItem* it
 #endif
 	}
 	else{
-		if(inactiveConstraint[item->row()]){
+		if(!inactiveConstraint[item->row()]){
+			item->setBackground(this->palette().base());
+			item->setForeground(this->palette().text());
+		}
+		else{
 			item->setBackground(this->palette().shadow());
 			item->setForeground(this->palette().light());
 		}
@@ -426,13 +582,43 @@ void StudentsNotAvailableTimesTimeHorizontalForm::heightSpinBoxValueChanged()
 void StudentsNotAvailableTimesTimeHorizontalForm::checkBoxesChanged()
 {
 	assert(allStudentsNames.count()==allStudentsType.count());
-	for(int s=0; s<allStudentsNames.count(); s++){
-		if(allStudentsType.at(s)==STUDENTS_YEAR)
-			naTableWidget->setRowHidden(s, !yearsCheckBox->isChecked());
-		else if(allStudentsType.at(s)==STUDENTS_GROUP)
-			naTableWidget->setRowHidden(s, !groupsCheckBox->isChecked());
-		else if(allStudentsType.at(s)==STUDENTS_SUBGROUP)
-			naTableWidget->setRowHidden(s, !subgroupsCheckBox->isChecked());
+	if(filterCheckBox->isChecked()==false){
+		for(int s=0; s<allStudentsNames.count(); s++){
+			if(allStudentsType.at(s)==STUDENTS_YEAR)
+				naTableWidget->setRowHidden(s, !yearsCheckBox->isChecked());
+			else if(allStudentsType.at(s)==STUDENTS_GROUP)
+				naTableWidget->setRowHidden(s, !groupsCheckBox->isChecked());
+			else if(allStudentsType.at(s)==STUDENTS_SUBGROUP)
+				naTableWidget->setRowHidden(s, !subgroupsCheckBox->isChecked());
+		}
+	}
+	else{
+		for(int s=0; s<allStudentsNames.count(); s++){
+			QString stName=allStudentsNames.at(s);
+			int stType=allStudentsType.at(s);
+			
+			if(stType==STUDENTS_YEAR && yearsCheckBox->isChecked()){
+				if(filterOk(stName))
+					naTableWidget->setRowHidden(s, false);
+				else
+					naTableWidget->setRowHidden(s, true);
+			}
+			else if(stType==STUDENTS_GROUP && groupsCheckBox->isChecked()){
+				if(filterOk(stName))
+					naTableWidget->setRowHidden(s, false);
+				else
+					naTableWidget->setRowHidden(s, true);
+			}
+			else if(stType==STUDENTS_SUBGROUP && subgroupsCheckBox->isChecked()){
+				if(filterOk(stName))
+					naTableWidget->setRowHidden(s, false);
+				else
+					naTableWidget->setRowHidden(s, true);
+			}
+			else{
+				naTableWidget->setRowHidden(s, true);
+			}
+		}
 	}
 }
 
@@ -460,6 +646,21 @@ void StudentsNotAvailableTimesTimeHorizontalForm::selectedClicked()
 			}
 		}
 	}
+}
+
+void StudentsNotAvailableTimesTimeHorizontalForm::filterCheckBoxToggled()
+{
+	filterGroupBox->setVisible(filterCheckBox->isChecked());
+
+	checkBoxesChanged();
+}
+
+void StudentsNotAvailableTimesTimeHorizontalForm::colorsCheckBoxToggled()
+{
+	for(int s=0; s<allStudentsNames.count(); s++)
+		for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+			for(int h=0; h<gt.rules.nHoursPerDay; h++)
+				colorItem(naTableWidget->item(s, d*gt.rules.nHoursPerDay+h));
 }
 
 void StudentsNotAvailableTimesTimeHorizontalForm::ok()
