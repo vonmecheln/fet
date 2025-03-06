@@ -5165,7 +5165,7 @@ lessons the latest on the 4th hour on Monday, the user could easily select these
 are not available (for example) for the last hour of Monday (this happens at the beginning of the school year at Greek schools, because many teachers are "missing",
 and therefore schools don't "expand" their timetables until the last hour of each day), the user could easily select the entire column at once and make all teachers
 not available for this specific hour.
-Student's not available times:For similar reasons the time horizontal view is by far more flexible.
+Student's not available times: For similar reasons the time horizontal view is by far more flexible.
 Please bear in mind that with the existing FET GUI the user needs severely more time in order to complete these tasks. Also, it's really hard for the user to monitor
 his/her data efficiently (with the existing GUI).
 
@@ -8455,13 +8455,7 @@ This is to ensure fairness in the room distribution among teachers.
 
 I can put a tag that only gets placed in these rooms but I don't want to choose the activity to be placed or be forced to count them myself.
 
-530---------------------------------------------------------
-From geokom (on forum):
-
-https://lalescu.ro/liviu/fet/forum/index.php?topic=5761.msg31697#msg31697
-
-If you could put a different vertical line in the pdf of the timetable that shows data in time horizontal format when the day changes so that
-the days can be distinguished from each other.
+530--------------DONE-in FET-7.0.4-22 February 2025---------
 
 531---------------------------------------------------------
 From Vangelis Karafillidis:
@@ -10575,3 +10569,15 @@ https://lalescu.ro/liviu/fet/forum/index.php?topic=6292.0
 
 He suggests a virtual break in the timetable view dialogs, just so that the timetable appears clearer
 (for instance between the 2nd and the 3rd FET hours - for the Mornings-Afternoons mode).
+
+678---------------------------------------------------------
+From infoo_ (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6298.msg35006#msg35006
+
+About constraints with times tables:
+
+The possibility of dragging the mouse for multiple selection instead of single clicking on every adjacent slot of teacher not available times table
+(and possibly other tables with X and empty):
+
+It should also work in every direction (not only vertically).

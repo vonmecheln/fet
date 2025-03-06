@@ -2578,31 +2578,31 @@ Number of subactivities in each larger split activity=%6</source>
 <context>
     <name>AddGroupActivitiesInInitialOrderItemForm</name>
     <message>
-        <location filename="../src/interface/addgroupactivitiesininitialorderitemform.cpp" line="160"/>
-        <location filename="../src/interface/addgroupactivitiesininitialorderitemform.cpp" line="165"/>
-        <location filename="../src/interface/addgroupactivitiesininitialorderitemform.cpp" line="191"/>
+        <location filename="../src/interface/addgroupactivitiesininitialorderitemform.cpp" line="234"/>
+        <location filename="../src/interface/addgroupactivitiesininitialorderitemform.cpp" line="239"/>
+        <location filename="../src/interface/addgroupactivitiesininitialorderitemform.cpp" line="265"/>
         <source>FET information</source>
         <translation>Bilgi</translation>
     </message>
     <message>
-        <location filename="../src/interface/addgroupactivitiesininitialorderitemform.cpp" line="161"/>
+        <location filename="../src/interface/addgroupactivitiesininitialorderitemform.cpp" line="235"/>
         <source>Empty list of selected activities</source>
         <translation>Seçilen ders listesi boş</translation>
     </message>
     <message>
-        <location filename="../src/interface/addgroupactivitiesininitialorderitemform.cpp" line="166"/>
+        <location filename="../src/interface/addgroupactivitiesininitialorderitemform.cpp" line="240"/>
         <source>Only one selected activity</source>
         <translation>Sadece bir ders seçili</translation>
     </message>
     <message>
-        <location filename="../src/interface/addgroupactivitiesininitialorderitemform.cpp" line="183"/>
+        <location filename="../src/interface/addgroupactivitiesininitialorderitemform.cpp" line="257"/>
         <source>Added the &apos;group activities in the initial order&apos; item:
 
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addgroupactivitiesininitialorderitemform.cpp" line="188"/>
+        <location filename="../src/interface/addgroupactivitiesininitialorderitemform.cpp" line="262"/>
         <source>Added &apos;group activities in the initial order&apos; item</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2621,54 +2621,59 @@ Number of subactivities in each larger split activity=%6</source>
         <translation>Filtrele</translation>
     </message>
     <message>
-        <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="26"/>
+        <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="28"/>
         <source>Teacher</source>
         <translation>Öğretmen</translation>
     </message>
     <message>
-        <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="36"/>
-        <source>Students set</source>
-        <translation>Sınıflar</translation>
+        <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="47"/>
+        <source>Students</source>
+        <translation type="unfinished">Öğrenciler</translation>
     </message>
     <message>
-        <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="46"/>
+        <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="57"/>
+        <source>Show related</source>
+        <translation type="unfinished">İlgilileri göster</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="73"/>
         <source>Subject</source>
         <translation>Ders Adı</translation>
     </message>
     <message>
-        <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="56"/>
+        <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="90"/>
         <source>Activity tag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="91"/>
+        <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="118"/>
         <source>Activities</source>
         <translation>Dersler</translation>
     </message>
     <message>
-        <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="104"/>
+        <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="131"/>
         <source>All</source>
         <comment>Text on a button. It refers to adding all activities from the list above this button into the current constraint</comment>
         <translation>Tümü</translation>
     </message>
     <message>
-        <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="121"/>
+        <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="148"/>
         <source>Selected</source>
         <comment>It refers to a list of selected activities</comment>
         <translation>Seçili</translation>
     </message>
     <message>
-        <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="134"/>
+        <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="161"/>
         <source>Clear</source>
         <translation>Temizle</translation>
     </message>
     <message>
-        <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="154"/>
+        <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="181"/>
         <source>Add item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="161"/>
+        <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="188"/>
         <source>Close</source>
         <translation>Kapat</translation>
     </message>
@@ -49292,116 +49297,116 @@ Please correct and try again.</source>
 <context>
     <name>GroupActivitiesInInitialOrderItemsForm</name>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="356"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="408"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="517"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="544"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="364"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="416"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="584"/>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="611"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="649"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="713"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="863"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="898"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="678"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="716"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="780"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="930"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="965"/>
         <source>FET information</source>
         <translation>Bilgi</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="356"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="364"/>
         <source>To move a &apos;group activities in the initial order&apos; item up, the &apos;Filter&apos; check box must not be checked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="408"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="416"/>
         <source>To move a &apos;group activities in the initial order&apos; item down, the &apos;Filter&apos; check box must not be checked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="481"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="639"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="677"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="548"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="706"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="744"/>
         <source>%1 / %2 items</source>
         <comment>%1 represents the number of visible active &apos;group activities in the initial order&apos; items, %2 represents the total number of visible items</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="517"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="544"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="584"/>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="611"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="649"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="713"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="678"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="716"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="780"/>
         <source>Invalid selected item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="549"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="616"/>
         <source>Remove item?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="553"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="620"/>
         <source>FET confirmation</source>
         <translation>Doğrulama</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="554"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="621"/>
         <source>Yes</source>
         <translation>Evet</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="554"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="621"/>
         <source>No</source>
         <translation>Hayır</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="590"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="657"/>
         <source>This option is an advanced one. It is intended for experienced users. It is useful in cases of peculiar uses of constraints. In most cases, FET will care automatically about a good initial order of the activities before the generation will begin, but in some very rare cases you can help FET. An example is: if you use constraints activities occupy max time slots from selection in such a way that some activities are clearly meant to be near each other when the generation starts, but FET is not clever enough to deduce that. Other usage might be that you want to leave some activities at the end and, in case the timetable cannot be found, you can use a partial one. In this case, you need to begin to generate once (you can interrupt generation after only a few activities were placed), see the initial order of the activities, and use the option to group the first activities with the ones you wish to bring forward. The group of activities will be put near the earliest one in the group.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="602"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="669"/>
         <source>Note: Each activity id must appear at most once in all the active &apos;group activities in the initial order&apos; items.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="722"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="789"/>
         <source>Group activities in the initial order item comments</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="787"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="854"/>
         <source>Advanced filter for group activities in the initial order items</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="837"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="904"/>
         <source>Are you sure you want to activate all the listed items?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="838"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="873"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="905"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="940"/>
         <source>FET warning</source>
         <translation type="unfinished">Uyarı</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="848"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="883"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="915"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="950"/>
         <source>Item:
 
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="863"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="930"/>
         <source>Activated %1 group activities in the initial order items</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="872"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="939"/>
         <source>Are you sure you want to deactivate all the listed items?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="890"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="957"/>
         <source>Deactivated all the filtered &apos;group activities in the initial order&apos; items:
 
 %1</source>
@@ -49409,17 +49414,17 @@ Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="898"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="965"/>
         <source>Deactivated %1 group activities in the initial order items</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="604"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="671"/>
         <source>FET help</source>
         <translation>Yardım</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="389"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="397"/>
         <source>Moved a &apos;group activities in the initial order&apos; item up:
 
 %1</source>
@@ -49427,7 +49432,7 @@ Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="441"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="449"/>
         <source>Moved a &apos;group activities in the initial order&apos; item down:
 
 %1</source>
@@ -49435,7 +49440,7 @@ Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="562"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="629"/>
         <source>Removed a &apos;group activities in the initial order&apos; item:
 
 %1</source>
@@ -49443,7 +49448,7 @@ Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="623"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="690"/>
         <source>Activated a &apos;group activities in the initial order&apos; item:
 
 %1</source>
@@ -49451,7 +49456,7 @@ Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="661"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="728"/>
         <source>Deactivated a &apos;group activities in the initial order&apos; item:
 
 %1</source>
@@ -49459,17 +49464,17 @@ Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="724"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="791"/>
         <source>OK</source>
         <translation>Tamam</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="726"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="793"/>
         <source>Cancel</source>
         <translation>İptal</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="762"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="829"/>
         <source>Changed a &apos;group activities in the initial order&apos; item&apos;s comments:
 
 %1
@@ -49480,7 +49485,7 @@ now has the comments:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="855"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="922"/>
         <source>Activated all the filtered &apos;group activities in the initial order&apos; items:
 
 %1</source>
@@ -49508,7 +49513,7 @@ now has the comments:
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="63"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="139"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="150"/>
         <source>Filter</source>
         <translation>Filtrele</translation>
     </message>
@@ -49518,83 +49523,88 @@ now has the comments:
         <translation>Öğretmen</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="82"/>
-        <source>Students set</source>
-        <translation>Sınıflar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="95"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="106"/>
         <source>Subject</source>
         <translation>Ders Adı</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="108"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="119"/>
         <source>Activity tag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="132"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="143"/>
         <source>Add</source>
         <translation>Ekle</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="150"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="161"/>
         <source>Modify</source>
         <translation>Düzenle</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="157"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="168"/>
         <source>Remove</source>
         <translation>Kaldır</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="222"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="233"/>
         <source>Comments</source>
         <translation>Açıklamalar</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="168"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="179"/>
         <source>Up</source>
         <comment>It means move the item up in the list</comment>
         <translation type="unfinished">Yukarı</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="175"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="84"/>
+        <source>Students</source>
+        <translation type="unfinished">Öğrenciler</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="94"/>
+        <source>Show related</source>
+        <translation type="unfinished">İlgilileri göster</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="186"/>
         <source>Down</source>
         <comment>It means move the item down in the list</comment>
         <translation type="unfinished">Aşağı</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="186"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="197"/>
         <source>Activate</source>
         <comment>Refers to activating a group activities in the initial order item</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="193"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="204"/>
         <source>Activate all</source>
         <comment>Refers to activating all the listed group activities in the initial order item</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="204"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="215"/>
         <source>Deactivate</source>
         <comment>Refers to deactivating a group activities in the initial order item</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="211"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="222"/>
         <source>Deactivate all</source>
         <comment>Refers to deactivating all the group activities in the initial order item</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="231"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="242"/>
         <source>Help</source>
         <translation>Yardım</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="238"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="249"/>
         <source>Close</source>
         <translation>Kapat</translation>
     </message>
@@ -57152,23 +57162,23 @@ Please enter the new weight percentage:</source>
 <context>
     <name>ModifyGroupActivitiesInInitialOrderItemForm</name>
     <message>
-        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform.cpp" line="170"/>
-        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform.cpp" line="175"/>
+        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform.cpp" line="244"/>
+        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform.cpp" line="249"/>
         <source>FET information</source>
         <translation>Bilgi</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform.cpp" line="171"/>
+        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform.cpp" line="245"/>
         <source>Empty list of selected activities</source>
         <translation>Seçilen ders listesi boş</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform.cpp" line="176"/>
+        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform.cpp" line="250"/>
         <source>Only one selected activity</source>
         <translation>Sadece bir ders seçili</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform.cpp" line="189"/>
+        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform.cpp" line="263"/>
         <source>Modified the &apos;group activities in the initial order&apos; item from
 
 %1
@@ -57192,54 +57202,59 @@ into
         <translation>Filtrele</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="26"/>
+        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="28"/>
         <source>Teacher</source>
         <translation>Öğretmen</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="36"/>
-        <source>Students set</source>
-        <translation>Sınıflar</translation>
+        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="47"/>
+        <source>Students</source>
+        <translation type="unfinished">Öğrenciler</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="46"/>
+        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="57"/>
+        <source>Show related</source>
+        <translation type="unfinished">İlgilileri göster</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="73"/>
         <source>Subject</source>
         <translation>Ders Adı</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="56"/>
+        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="90"/>
         <source>Activity tag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="91"/>
+        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="118"/>
         <source>Activities</source>
         <translation>Dersler</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="104"/>
+        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="131"/>
         <source>All</source>
         <comment>Text on a button. It refers to adding all activities from the list above this button into the current constraint</comment>
         <translation>Tümü</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="121"/>
+        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="148"/>
         <source>Selected</source>
         <comment>It refers to a list of selected activities</comment>
         <translation>Seçili</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="134"/>
+        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="161"/>
         <source>Clear</source>
         <translation>Temizle</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="154"/>
+        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="181"/>
         <source>OK</source>
         <translation type="unfinished">Tamam</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="161"/>
+        <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="188"/>
         <source>Cancel</source>
         <translation>İptal</translation>
     </message>
@@ -66977,7 +66992,7 @@ to
         <translation type="unfinished">Otomatik</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="799"/>
+        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="801"/>
         <source>%n new constraint(s) were added</source>
         <comment>See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field. Also, see https://doc.qt.io/qt-6/i18n-source-translation.html, section &apos;Handle Plural Forms&apos;. You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts (open these files with Qt Linguist and see the translation of this field).</comment>
         <translation type="unfinished">
@@ -66985,7 +67000,7 @@ to
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="809"/>
+        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="811"/>
         <source>%n constraint(s) were modified</source>
         <comment>See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field. Also, see https://doc.qt.io/qt-6/i18n-source-translation.html, section &apos;Handle Plural Forms&apos;. You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts (open these files with Qt Linguist and see the translation of this field).</comment>
         <translation type="unfinished">
@@ -66993,15 +67008,15 @@ to
         </translation>
     </message>
     <message>
-        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="819"/>
-        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="854"/>
+        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="821"/>
+        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="856"/>
         <source>it is inactive</source>
         <comment>It refers to a constraint.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="823"/>
-        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="858"/>
+        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="825"/>
+        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="860"/>
         <source>%n of them are inactive</source>
         <comment>It refers to constraints. See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field. Also, see https://doc.qt.io/qt-6/i18n-source-translation.html, section &apos;Handle Plural Forms&apos;. You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts (open these files with Qt Linguist and see the translation of this field).</comment>
         <translation type="unfinished">
@@ -67009,14 +67024,14 @@ to
         </translation>
     </message>
     <message>
-        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="835"/>
-        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="870"/>
+        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="837"/>
+        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="872"/>
         <source>they are inactive</source>
         <comment>It refers to constraints.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="844"/>
+        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="846"/>
         <source>%n constraint(s) were left with the same set of selected not available time slots, but the program reordered the list of these slots</source>
         <comment>See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field. Also, see https://doc.qt.io/qt-6/i18n-source-translation.html, section &apos;Handle Plural Forms&apos;. You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts (open these files with Qt Linguist and see the translation of this field).</comment>
         <translation type="unfinished">
@@ -67024,7 +67039,7 @@ to
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="879"/>
+        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="881"/>
         <source>%n constraint(s) were removed, because they had zero selected not available time slots</source>
         <comment>See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field. Also, see https://doc.qt.io/qt-6/i18n-source-translation.html, section &apos;Handle Plural Forms&apos;. You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts (open these files with Qt Linguist and see the translation of this field).</comment>
         <translation type="unfinished">
@@ -67032,13 +67047,13 @@ to
         </translation>
     </message>
     <message>
-        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="889"/>
+        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="891"/>
         <source>it was inactive</source>
         <comment>It refers to a constraint.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="893"/>
+        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="895"/>
         <source>%n of them were inactive</source>
         <comment>It refers to constraints. See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field. Also, see https://doc.qt.io/qt-6/i18n-source-translation.html, section &apos;Handle Plural Forms&apos;. You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts (open these files with Qt Linguist and see the translation of this field).</comment>
         <translation type="unfinished">
@@ -67046,47 +67061,47 @@ to
         </translation>
     </message>
     <message>
-        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="905"/>
+        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="907"/>
         <source>they were inactive</source>
         <comment>It refers to constraints.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="914"/>
+        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="916"/>
         <source>Details about the operations which were done on the list of constraints of type &apos;teacher not available time slots&apos;:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="925"/>
+        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="927"/>
         <source>FET information</source>
         <translation type="unfinished">Bilgi</translation>
     </message>
     <message>
-        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="929"/>
+        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="931"/>
         <source>Added constraints for these %1 teachers: %2.</source>
         <comment>%1 is the number of affected teachers, %2 is their list of names</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="934"/>
+        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="936"/>
         <source>Modified constraints for these %1 teachers: %2.</source>
         <comment>%1 is the number of affected teachers, %2 is their list of names</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="939"/>
+        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="941"/>
         <source>Modified order of the slots in the constraints for these %1 teachers: %2.</source>
         <comment>%1 is the number of affected teachers, %2 is their list of names</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="944"/>
+        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="946"/>
         <source>Removed constraints for these %1 teachers: %2.</source>
         <comment>%1 is the number of affected teachers, %2 is their list of names</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="949"/>
+        <location filename="../src/interface/teachersnotavailabletimestimehorizontalform.cpp" line="951"/>
         <source>Modified the teachers&apos; not available times constraints in the time horizontal view.</source>
         <translation type="unfinished"></translation>
     </message>

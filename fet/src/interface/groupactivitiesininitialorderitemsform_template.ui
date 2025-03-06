@@ -77,14 +77,25 @@
            <widget class="QComboBox" name="teachersComboBox"/>
           </item>
           <item row="2" column="0">
-           <widget class="QLabel" name="studentsTextLabel">
-            <property name="text">
-             <string>Students set</string>
-            </property>
-            <property name="wordWrap">
-             <bool>false</bool>
-            </property>
-           </widget>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLabel" name="studentsTextLabel">
+              <property name="text">
+               <string>Students</string>
+              </property>
+              <property name="wordWrap">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="showRelatedCheckBox">
+              <property name="text">
+               <string>Show related</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
           <item row="3" column="0">
            <widget class="QComboBox" name="studentsComboBox"/>

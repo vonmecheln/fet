@@ -36,6 +36,8 @@
 
 #include <QPalette>
 
+#include <QSettings>
+
 #include <algorithm>
 //using namespace std;
 
@@ -93,6 +95,9 @@ GroupActivitiesInInitialOrderItemsForm::GroupActivitiesInInitialOrderItemsForm(Q
 	QSettings settings(COMPANY, PROGRAM);
 	if(settings.contains(this->metaObject()->className()+QString("/splitter-state")))
 		splitter->restoreState(settings.value(this->metaObject()->className()+QString("/splitter-state")).toByteArray());
+	showRelatedCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/show-related"), "false").toBool());
+
+	connect(showRelatedCheckBox, &QCheckBox::toggled, this, &GroupActivitiesInInitialOrderItemsForm::studentsFilterChanged);
 
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
@@ -157,7 +162,7 @@ GroupActivitiesInInitialOrderItemsForm::GroupActivitiesInInitialOrderItemsForm(Q
 	filterChanged();
 
 	connect(teachersComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &GroupActivitiesInInitialOrderItemsForm::filterChanged);
-	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &GroupActivitiesInInitialOrderItemsForm::filterChanged);
+	connect(studentsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &GroupActivitiesInInitialOrderItemsForm::studentsFilterChanged);
 	connect(subjectsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &GroupActivitiesInInitialOrderItemsForm::filterChanged);
 	connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &GroupActivitiesInInitialOrderItemsForm::filterChanged);
 }
@@ -169,6 +174,8 @@ GroupActivitiesInInitialOrderItemsForm::~GroupActivitiesInInitialOrderItemsForm(
 	//save splitter state
 	QSettings settings(COMPANY, PROGRAM);
 	settings.setValue(this->metaObject()->className()+QString("/splitter-state"), splitter->saveState());
+
+	settings.setValue(this->metaObject()->className()+QString("/show-related"), showRelatedCheckBox->isChecked());
 
 	QString settingsName="GroupActivitiesInInitialOrderItemsAdvancedFilterForm";
 	
@@ -243,10 +250,11 @@ bool GroupActivitiesInInitialOrderItemsForm::filterOk(GroupActivitiesInInitialOr
 			if(stn!=""){
 				bool ok2=false;
 				for(QStringList::const_iterator it=act->studentsNames.constBegin(); it!=act->studentsNames.constEnd(); it++)
-					if(*it == stn){
+					//if(*it == stn){
+					if(showedStudents.contains(*it)){
 						ok2=true;
 						break;
-				}
+					}
 				if(ok2)
 					foundStudents=true;
 			}
@@ -452,6 +460,65 @@ void GroupActivitiesInInitialOrderItemsForm::moveItemDown()
 
 	itemsListWidget->setCurrentRow(i+1);
 	itemChanged(i+1);
+}
+
+void GroupActivitiesInInitialOrderItemsForm::studentsFilterChanged()
+{
+	bool showRelated=showRelatedCheckBox->isChecked();
+	
+	showedStudents.clear();
+	
+	if(!showRelated){
+		showedStudents.insert(studentsComboBox->currentText());
+	}
+	else{
+		if(studentsComboBox->currentText()=="")
+			showedStudents.insert("");
+		else{
+			//down
+			StudentsSet* studentsSet=gt.rules.searchStudentsSet(studentsComboBox->currentText());
+			assert(studentsSet!=nullptr);
+			if(studentsSet->type==STUDENTS_YEAR){
+				StudentsYear* year=(StudentsYear*)studentsSet;
+				showedStudents.insert(year->name);
+				for(StudentsGroup* group : std::as_const(year->groupsList)){
+					showedStudents.insert(group->name);
+					for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList))
+						showedStudents.insert(subgroup->name);
+				}
+			}
+			else if(studentsSet->type==STUDENTS_GROUP){
+				StudentsGroup* group=(StudentsGroup*)studentsSet;
+				showedStudents.insert(group->name);
+				for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList))
+					showedStudents.insert(subgroup->name);
+			}
+			else if(studentsSet->type==STUDENTS_SUBGROUP){
+				StudentsSubgroup* subgroup=(StudentsSubgroup*)studentsSet;
+				showedStudents.insert(subgroup->name);
+			}
+			else
+				assert(0);
+				
+			//up
+			QString crt=studentsComboBox->currentText();
+			for(StudentsYear* year : std::as_const(gt.rules.yearsList)){
+				for(StudentsGroup* group : std::as_const(year->groupsList)){
+					if(group->name==crt){
+						showedStudents.insert(year->name);
+					}
+					for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList)){
+						if(subgroup->name==crt){
+							showedStudents.insert(year->name);
+							showedStudents.insert(group->name);
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	filterChanged();
 }
 
 void GroupActivitiesInInitialOrderItemsForm::filterChanged()

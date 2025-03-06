@@ -25,10 +25,15 @@
 
 #include "advancedfilterform.h"
 
+#include <QSet>
+#include <QString>
+
 class GroupActivitiesInInitialOrderItemsForm : public QDialog, Ui::GroupActivitiesInInitialOrderItemsForm_template  {
 	Q_OBJECT
 
 private:
+	QSet<QString> showedStudents;
+
 	AdvancedFilterForm* filterForm;
 
 	QList<GroupActivitiesInInitialOrderItem*> visibleItemsList;
@@ -53,6 +58,8 @@ public slots:
 	void modifyItem();
 	void removeItem();
 	void filterChanged();
+	
+	void studentsFilterChanged();
 	
 	void filter(bool active);
 	

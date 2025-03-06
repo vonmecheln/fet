@@ -547,19 +547,21 @@ void TeachersNotAvailableTimesTimeHorizontalForm::selectedClicked()
 	bool firstFound=false;
 	bool firstIsNO;
 	for(int t=0; t<gt.rules.teachersList.count(); t++){
-		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
-			for(int h=0; h<gt.rules.nHoursPerDay; h++){
-				QTableWidgetItem* it=naTableWidget->item(t, d*gt.rules.nHoursPerDay+h);
-				if(it->isSelected()){
-					if(!firstFound){
-						firstFound=true;
-						firstIsNO=(it->text()==NO);
+		if(!naTableWidget->isRowHidden(t)){
+			for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+				for(int h=0; h<gt.rules.nHoursPerDay; h++){
+					QTableWidgetItem* it=naTableWidget->item(t, d*gt.rules.nHoursPerDay+h);
+					if(it->isSelected()){
+						if(!firstFound){
+							firstFound=true;
+							firstIsNO=(it->text()==NO);
+						}
+						if(firstIsNO)
+							it->setText(YES);
+						else
+							it->setText(NO);
+						colorItem(it);
 					}
-					if(firstIsNO)
-						it->setText(YES);
-					else
-						it->setText(NO);
-					colorItem(it);
 				}
 			}
 		}

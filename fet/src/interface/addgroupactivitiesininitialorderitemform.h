@@ -25,7 +25,10 @@
 
 #include <QList>
 
-class AddGroupActivitiesInInitialOrderItemForm : public QDialog, Ui::AddGroupActivitiesInInitialOrderItemForm_template  {
+#include <QSet>
+#include <QString>
+
+class AddGroupActivitiesInInitialOrderItemForm : public QDialog, Ui::AddGroupActivitiesInInitialOrderItemForm_template {
 	Q_OBJECT
 
 public:
@@ -43,9 +46,13 @@ public slots:
 
 	void filterChanged();
 	
+	void studentsFilterChanged();
+	
 	void clear();
 	
 private:
+	QSet<QString> showedStudents;
+
 	//the id's of the activities listed in the activities list
 	QList<int> activitiesList;
 	//the id-s of the activities listed in the list of selected activities

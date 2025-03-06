@@ -3027,7 +3027,7 @@ Versions 7.0.0 - 7.0.v
 	- Corrected and improved the German translation, by Volker Dirr (following a bug report by uni_instructor).
 - Version 7.0.4
 	- Implemented additional table cells/lines to better separate the different days in the time horizontal/vertical timetables (suggested by Pietro, Matsumoto,
-	liquid, and maybe other users in the past).
+	liquid, Mario, geokom, and maybe other users in the past).
 	- When modifying the constraints which include times tables, the slots marked with X will be bold (it was an inconsistent behavior, compared to adding such
 	constraints, and it was reported by infoo_).
 	- Added a swap button in the constraints which include times tables, to swap the empty (green) cells with the cells marked with X (red). Suggested by infoo_.
@@ -3040,3 +3040,7 @@ Versions 7.0.0 - 7.0.v
 	- Added filters in the constraints teachers/students not available time horizontal views (sugested by GUEFFAZ REDA).
 	- The students filters in the dialogs for listing the constraints and in the dialogs for adding/modifying the constraints will have a 'Show related'
 	check box (suggested by more users in the past).
+- Version 7.0.6
+	- Bug fix in the constraints teachers not available time horizontal: the hidden rows might have been incorrectly modified (reported by GUEFFAZ REDA).
+	This bug was introduced in the previous version.
+	- The list/add/modify group activities in initial order items dialogs will have a 'Show related' check box for the students filter.

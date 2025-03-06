@@ -25,8 +25,11 @@
 
 #include <QList>
 
+#include <QSet>
+#include <QString>
+
 class ModifyGroupActivitiesInInitialOrderItemForm : public QDialog, Ui::ModifyGroupActivitiesInInitialOrderItemForm_template  {
-	Q_OBJECT	
+	Q_OBJECT
 
 public:
 	ModifyGroupActivitiesInInitialOrderItemForm(QWidget* parent, GroupActivitiesInInitialOrderItem* item);
@@ -45,8 +48,12 @@ public slots:
 	void clear();
 
 	void filterChanged();
+	
+	void studentsFilterChanged();
 
 private:
+	QSet<QString> showedStudents;
+
 	GroupActivitiesInInitialOrderItem* _item;
 	//the id's of the activities listed in the activities list
 	QList<int> activitiesList;

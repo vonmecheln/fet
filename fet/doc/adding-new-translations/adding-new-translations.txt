@@ -1,7 +1,7 @@
 This document was written by Liviu Lalescu. Fair use of this document is allowed/encouraged/expected.
 
 Begin: 2003.
-Last modified on: 24 October 2024.
+Last modified on: 25 February 2025.
 
 
 FET - How to add new translations (languages):
@@ -159,11 +159,11 @@ These names must remain unchanged.
 
 Tips and tricks:
 
-New trick: to translate many identical fields, you could use the Edit -> Search And Translate function of Qt Linguist.
+New trick: to translate more identical fields, you could use the Edit -> Search And Translate function of Qt Linguist.
 
 Old trick (might be obsolete by the new functions of Qt Linguist above).
 
-There are many small fields which are repeated many times, in different contexts (sections). If you translated such a field at least once,
+There are some small fields which are repeated more times, in different contexts (sections). If you translated such a field at least once,
 running lupdate will automatically fill the other identical fields (using the 'same text' heuristic), so you will only need to check these
 fields and mark them as finished (if the field has a specific disambiguation/comment, check that it corresponds). These fields will be marked
 as translated, but unfinished (probably with a yellow question mark).
