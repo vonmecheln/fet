@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<fet version="7.0.7">
+<fet version="7.1.0">
   <Mode>Mornings_Afternoons</Mode>
   <Institution_Name>Default institution</Institution_Name>
   <Comments>Default comments</Comments>
@@ -2921,6 +2921,60 @@
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintStudentsActivityTagMaxHoursDaily>
+    <ConstraintTeacherPairOfMutuallyExclusiveTimeSlots>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Teacher>t1</Teacher>
+      <First_Time_Slot>
+        <Day>Monday m</Day>
+        <Hour>09:00</Hour>
+      </First_Time_Slot>
+      <Second_Time_Slot>
+        <Day>Monday m</Day>
+        <Hour>10:00</Hour>
+      </Second_Time_Slot>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintTeacherPairOfMutuallyExclusiveTimeSlots>
+    <ConstraintTeachersPairOfMutuallyExclusiveTimeSlots>
+      <Weight_Percentage>100</Weight_Percentage>
+      <First_Time_Slot>
+        <Day>Monday a</Day>
+        <Hour>08:00</Hour>
+      </First_Time_Slot>
+      <Second_Time_Slot>
+        <Day>Monday m</Day>
+        <Hour>08:00</Hour>
+      </Second_Time_Slot>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintTeachersPairOfMutuallyExclusiveTimeSlots>
+    <ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Students>y1</Students>
+      <First_Time_Slot>
+        <Day>Monday m</Day>
+        <Hour>08:00</Hour>
+      </First_Time_Slot>
+      <Second_Time_Slot>
+        <Day>Monday a</Day>
+        <Hour>08:00</Hour>
+      </Second_Time_Slot>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots>
+    <ConstraintStudentsPairOfMutuallyExclusiveTimeSlots>
+      <Weight_Percentage>100</Weight_Percentage>
+      <First_Time_Slot>
+        <Day>Monday m</Day>
+        <Hour>08:00</Hour>
+      </First_Time_Slot>
+      <Second_Time_Slot>
+        <Day>Monday m</Day>
+        <Hour>10:00</Hour>
+      </Second_Time_Slot>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintStudentsPairOfMutuallyExclusiveTimeSlots>
   </Time_Constraints_List>
   <Space_Constraints_List>
     <ConstraintBasicCompulsorySpace>

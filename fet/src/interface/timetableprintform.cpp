@@ -1168,7 +1168,7 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 	tmp+="    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";
 	tmp+="    <style type=\"text/css\">\n";
 
-	if(1 || !PRINT_RTL) //'text-align: right' is bringing bad behavior for RTL writing systems, as reported by Redha Rahmane on Facebook.
+	if(true || !PRINT_RTL) //'text-align: right' is bringing bad behavior for RTL writing systems, as reported by Redha Rahmane on Facebook.
 		tmp+="      body {\n        color: black;\n        background-color: white;\n      }\n\n";
 	else
 		tmp+="      body {\n        text-align: right;\n        color: black;\n        background-color: white;\n      }\n\n";
@@ -1294,7 +1294,7 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 	tmp+="      }\n";
 	tmp+="      table {\n";
 
-	if(0 && PRINT_RTL){ //Not working.
+	if(false && PRINT_RTL){ //Not working.
 		tmp+="        margin-left: auto;\n";
 		tmp+="        margin-right: 0;\n";
 	}

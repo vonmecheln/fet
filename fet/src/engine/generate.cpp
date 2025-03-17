@@ -8531,6 +8531,9 @@ again_if_impossible_activity:
 		bool okactivitybeginsstudentsday;
 		bool okactivitybeginsteachersday;
 
+		bool okteacherspairofmutuallyexclusivetimeslots;
+		bool okstudentspairofmutuallyexclusivetimeslots;
+
 		bool okstudentsmaxdaysperweek;
 		bool okstudentsmaxthreeconsecutivedays;
 		bool okstudentsmaxrealdaysperweek;
@@ -10446,7 +10449,151 @@ impossibleactivityendsteachersday:
 		
 /////////////////////////////////////////////////////////////////////////////////////////////
 
-/////////////////////////////////////////////////////////
+		//allowed from constraints teachers pair of mutually exclusive time slots
+		okteacherspairofmutuallyexclusivetimeslots=true;
+
+		if(haveTeachersPairOfMutualExclusiveTimeSlots){
+			for(int tch : std::as_const(act->iTeachersList)){
+				for(int i=0; i<teachersPairOfMutuallyExclusiveTimeSlotsPercentages[tch].count(); i++){
+					double perc=teachersPairOfMutuallyExclusiveTimeSlotsPercentages[tch].at(i);
+					int day1=teachersPairOfMutuallyExclusiveTimeSlotsDay1[tch].at(i);
+					int hour1=teachersPairOfMutuallyExclusiveTimeSlotsHour1[tch].at(i);
+					int day2=teachersPairOfMutuallyExclusiveTimeSlotsDay2[tch].at(i);
+					int hour2=teachersPairOfMutuallyExclusiveTimeSlotsHour2[tch].at(i);
+
+					assert(perc==100.0);
+
+					if(day1==d && hour1>=h && hour1<h+act->duration){
+						if(day2==d && hour2>=h && hour2<h+act->duration){
+							okteacherspairofmutuallyexclusivetimeslots=false;
+							goto impossibleteacherspairofmutuallyexclusivetimeslots;
+						}
+						if(teachersTimetable(tch,day2,hour2)>=0){
+							int ai2=teachersTimetable(tch,day2,hour2);
+							assert(ai2!=ai);
+
+							if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+								okteacherspairofmutuallyexclusivetimeslots=false;
+								goto impossibleteacherspairofmutuallyexclusivetimeslots;
+							}
+
+							if(!conflActivities[newtime].contains(ai2)){
+								conflActivities[newtime].append(ai2);
+								nConflActivities[newtime]++;
+								assert(nConflActivities[newtime]==conflActivities[newtime].count());
+							}
+						}
+					}
+
+					if(day2==d && hour2>=h && hour2<h+act->duration){
+						if(day1==d && hour1>=h && hour1<h+act->duration){
+							okteacherspairofmutuallyexclusivetimeslots=false;
+							goto impossibleteacherspairofmutuallyexclusivetimeslots;
+						}
+						if(teachersTimetable(tch,day1,hour1)>=0){
+							int ai2=teachersTimetable(tch,day1,hour1);
+							assert(ai2!=ai);
+
+							if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+								okteacherspairofmutuallyexclusivetimeslots=false;
+								goto impossibleteacherspairofmutuallyexclusivetimeslots;
+							}
+
+							if(!conflActivities[newtime].contains(ai2)){
+								conflActivities[newtime].append(ai2);
+								nConflActivities[newtime]++;
+								assert(nConflActivities[newtime]==conflActivities[newtime].count());
+							}
+						}
+					}
+				}
+			}
+		}
+
+impossibleteacherspairofmutuallyexclusivetimeslots:
+		if(!okteacherspairofmutuallyexclusivetimeslots){
+			//if(updateSubgroups || updateTeachers)
+			//	removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+		//allowed from constraints students pair of mutually exclusive time slots
+		okstudentspairofmutuallyexclusivetimeslots=true;
+
+		if(haveStudentsPairOfMutualExclusiveTimeSlots){
+			for(int sbg : std::as_const(act->iSubgroupsList)){
+				for(int i=0; i<subgroupsPairOfMutuallyExclusiveTimeSlotsPercentages[sbg].count(); i++){
+					double perc=subgroupsPairOfMutuallyExclusiveTimeSlotsPercentages[sbg].at(i);
+					int day1=subgroupsPairOfMutuallyExclusiveTimeSlotsDay1[sbg].at(i);
+					int hour1=subgroupsPairOfMutuallyExclusiveTimeSlotsHour1[sbg].at(i);
+					int day2=subgroupsPairOfMutuallyExclusiveTimeSlotsDay2[sbg].at(i);
+					int hour2=subgroupsPairOfMutuallyExclusiveTimeSlotsHour2[sbg].at(i);
+
+					assert(perc==100.0);
+
+					if(day1==d && hour1>=h && hour1<h+act->duration){
+						if(day2==d && hour2>=h && hour2<h+act->duration){
+							okstudentspairofmutuallyexclusivetimeslots=false;
+							goto impossiblestudentspairofmutuallyexclusivetimeslots;
+						}
+						if(subgroupsTimetable(sbg,day2,hour2)>=0){
+							int ai2=subgroupsTimetable(sbg,day2,hour2);
+							assert(ai2!=ai);
+
+							if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+								okstudentspairofmutuallyexclusivetimeslots=false;
+								goto impossiblestudentspairofmutuallyexclusivetimeslots;
+							}
+
+							if(!conflActivities[newtime].contains(ai2)){
+								conflActivities[newtime].append(ai2);
+								nConflActivities[newtime]++;
+								assert(nConflActivities[newtime]==conflActivities[newtime].count());
+							}
+						}
+					}
+
+					if(day2==d && hour2>=h && hour2<h+act->duration){
+						if(day1==d && hour1>=h && hour1<h+act->duration){
+							okstudentspairofmutuallyexclusivetimeslots=false;
+							goto impossiblestudentspairofmutuallyexclusivetimeslots;
+						}
+						if(subgroupsTimetable(sbg,day1,hour1)>=0){
+							int ai2=subgroupsTimetable(sbg,day1,hour1);
+							assert(ai2!=ai);
+
+							if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+								okstudentspairofmutuallyexclusivetimeslots=false;
+								goto impossiblestudentspairofmutuallyexclusivetimeslots;
+							}
+
+							if(!conflActivities[newtime].contains(ai2)){
+								conflActivities[newtime].append(ai2);
+								nConflActivities[newtime]++;
+								assert(nConflActivities[newtime]==conflActivities[newtime].count());
+							}
+						}
+					}
+				}
+			}
+		}
+
+impossiblestudentspairofmutuallyexclusivetimeslots:
+		if(!okstudentspairofmutuallyexclusivetimeslots){
+			//if(updateSubgroups || updateTeachers)
+			//	removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
 		
 		int dpair;
 		
@@ -11628,6 +11775,8 @@ impossibleteachersmorningsafternoonsbehavior:
 			nConflActivities[newtime]=MAX_ACTIVITIES;
 			continue;
 		}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
 
 		//////////////////
 		//Teachers must work max 2 consecutive mornings/afternoons
@@ -13011,7 +13160,7 @@ impossiblestudentsmaxrealdaysperweek:
 		okstudentsafternoonsearlymaxbeginningsatsecondhour=true;
 
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
-			//for lakhdarbe - 2020-07-24
+			//for lakhdar bezzit - 2020-07-24
 			if(haveStudentsAfternoonsEarly){
 				for(int sbg : std::as_const(act->iSubgroupsList))
 					if(!skipRandom(subgroupsAfternoonsEarlyMaxBeginningsAtSecondHourPercentage[sbg])){
@@ -18436,7 +18585,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 							if(subgroupsMaxGapsPerWeekPercentage[sbg]>=0){
 								//both limitations
 								//if(allowEmptyDays){
-								if(1){
+								if(true){
 									int remG=0, totalH=0;
 
 									int nUsedMornings=0;
@@ -18513,7 +18662,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 							else{
 								//only first gaps limitation
 								//if(allowEmptyDays){
-								if(1){
+								if(true){
 									int remG=0, totalH=0;
 
 									int nUsedMornings=0;
@@ -18615,7 +18764,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 							if(subgroupsMaxGapsPerWeekPercentage[sbg]>=0){
 								//only max gaps per week limitation
 								//if(allowEmptyDays){
-								if(1){
+								if(true){
 									int remG=0, totalH=0;
 
 									int nUsedMornings=0;
@@ -18687,7 +18836,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 							else{
 								//no limitation
 								//if(allowEmptyDays){
-								if(1){
+								if(true){
 									int totalH=0;
 
 									int nUsedMornings=0;
@@ -18768,7 +18917,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 								if(subgroupsMaxGapsPerWeekPercentage[sbg]>=0){
 									//both limitations
 									//if(allowEmptyDays){
-									if(1){
+									if(true){
 										int remG=0, totalH=0;
 
 										int nUsedMornings=0;
@@ -18843,7 +18992,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 								else{
 									//only first gaps limitation
 									//if(allowEmptyDays){
-									if(1){
+									if(true){
 										int remG=0, totalH=0;
 
 										int nUsedMornings=0;
@@ -18946,7 +19095,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 								if(subgroupsMaxGapsPerWeekPercentage[sbg]>=0){
 									//only max gaps per week limitation
 									//if(allowEmptyDays){
-									if(1){
+									if(true){
 										int remG=0, totalH=0;
 
 										int nUsedMornings=0;
@@ -19019,7 +19168,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 								else{
 									//no limitation
 									//if(allowEmptyDays){
-									if(1){
+									if(true){
 										int totalH=0;
 
 										int nUsedMornings=0;
@@ -27837,7 +27986,7 @@ impossibleteachersminhoursdaily:
 									if(remGDay2>0)
 										remG2+=remGDay2;
 								}*/
-								if(1){
+								if(true){
 									int remGDay=remGDay1+remGDay2;
 									int h=h1+h2;
 									if(h>0){
@@ -28085,7 +28234,7 @@ impossibleteachersminhoursdaily:
 										if(remGDay2>0)
 											remG2+=remGDay2;
 									}*/
-									if(1){
+									if(true){
 										int remGDay=remGDay1+remGDay2;
 										int h=h1+h2;
 										if(h>0){

@@ -2139,7 +2139,7 @@ void setLanguage(QCoreApplication& qapplication, QWidget* parent)
 	QWidgetList tlwl=QApplication::topLevelWidgets();
 
 	for(QWidget* wi : std::as_const(tlwl))
-		if(1){
+		if(true){
 		//if(wi->isVisible()){
 			FetMainForm* mainform=qobject_cast<FetMainForm*>(wi);
 			if(mainform!=nullptr){

@@ -1185,6 +1185,11 @@ private:
 	TimeConstraint* readStudentsSetMaxHoursDailyInInterval(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readStudentsMaxHoursDailyInInterval(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
+	TimeConstraint* readTeacherPairOfMutuallyExclusiveTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersPairOfMutuallyExclusiveTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsSetPairOfMutuallyExclusiveTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsPairOfMutuallyExclusiveTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
 	//
 	SpaceConstraint* readBasicCompulsorySpace(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	SpaceConstraint* readRoomNotAvailable(QXmlStreamReader& xml, FakeString& xmlReadingLog);

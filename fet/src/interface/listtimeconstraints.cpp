@@ -2774,6 +2774,42 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				break;
 			}
+		//226
+		case CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				dialogTitle=tr("Constraints teacher pair of mutually exclusive time slots", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsTeacherPairOfMutuallyExclusiveTimeSlots");
+
+				teachersComboBox=new QComboBox;
+
+				break;
+			}
+		//227
+		case CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				dialogTitle=tr("Constraints teachers pair of mutually exclusive time slots", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsTeachersPairOfMutuallyExclusiveTimeSlots");
+
+				break;
+			}
+		//228
+		case CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				dialogTitle=tr("Constraints students set pair of mutually exclusive time slots", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsStudentsSetPairOfMutuallyExclusiveTimeSlots");
+
+				studentsComboBox=new QComboBox;
+
+				break;
+			}
+		//229
+		case CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				dialogTitle=tr("Constraints students pair of mutually exclusive time slots", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsStudentsPairOfMutuallyExclusiveTimeSlots");
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -6029,6 +6065,38 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 
 				break;
 			}
+		//226
+		case CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				assert(teachersComboBox!=nullptr);
+				ConstraintTeacherPairOfMutuallyExclusiveTimeSlots* ctr=(ConstraintTeacherPairOfMutuallyExclusiveTimeSlots*)tc;
+				return teachersComboBox->currentText()==QString("") || teachersComboBox->currentText()==ctr->teacherName;
+
+				break;
+			}
+		//227
+		case CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				return true;
+
+				break;
+			}
+		//228
+		case CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				assert(studentsComboBox!=nullptr);
+				ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots* ctr=(ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots*)tc;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
+
+				break;
+			}
+		//229
+		case CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				return true;
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -6831,7 +6899,7 @@ void ListTimeConstraints::modifyMultipleMinDaysBetweenActivitiesConstraintsClick
 				return;
 			}
 
-			if(1){
+			if(true){
 				if(oldDays==-1){
 				}
 				else if(oldDays>=1 && oldDays<=gt.rules.nDaysPerWeek){

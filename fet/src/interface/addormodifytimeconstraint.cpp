@@ -171,6 +171,13 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 	type=_type;
 	oldtc=_oldtc;
 
+	firstTimeSlotGroupBox=nullptr;
+	secondTimeSlotGroupBox=nullptr;
+	firstDayComboBox=nullptr;
+	firstHourComboBox=nullptr;
+	secondDayComboBox=nullptr;
+	secondHourComboBox=nullptr;
+
 	showRelatedCheckBox=nullptr;
 
 	firstFilter_showRelatedCheckBox=nullptr;
@@ -6802,6 +6809,96 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				break;
 			}
+		//226
+		case CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add teacher pair of mutually exclusive time slots", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintTeacherPairOfMutuallyExclusiveTimeSlots");
+				}
+				else{
+					dialogTitle=tr("Modify teacher pair of mutually exclusive time slots", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintTeacherPairOfMutuallyExclusiveTimeSlots");
+				}
+
+				teacherLabel=new QLabel(tr("Teacher"));
+				teachersComboBox=new QComboBox;
+
+				firstTimeSlotGroupBox=new QGroupBox(tr("First time slot"));
+				firstDayComboBox=new QComboBox;
+				firstHourComboBox=new QComboBox;
+				secondTimeSlotGroupBox=new QGroupBox(tr("Second time slot"));
+				secondDayComboBox=new QComboBox;
+				secondHourComboBox=new QComboBox;
+
+				break;
+			}
+		//227
+		case CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add teachers pair of mutually exclusive time slots", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintTeachersPairOfMutuallyExclusiveTimeSlots");
+				}
+				else{
+					dialogTitle=tr("Modify teachers pair of mutually exclusive time slots", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintTeachersPairOfMutuallyExclusiveTimeSlots");
+				}
+
+				firstTimeSlotGroupBox=new QGroupBox(tr("First time slot"));
+				firstDayComboBox=new QComboBox;
+				firstHourComboBox=new QComboBox;
+				secondTimeSlotGroupBox=new QGroupBox(tr("Second time slot"));
+				secondDayComboBox=new QComboBox;
+				secondHourComboBox=new QComboBox;
+
+				break;
+			}
+		//228
+		case CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add students set pair of mutually exclusive time slots", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots");
+				}
+				else{
+					dialogTitle=tr("Modify students set pair of mutually exclusive time slots", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots");
+				}
+
+				studentsLabel=new QLabel(tr("Students set"));
+				studentsComboBox=new QComboBox;
+
+				firstTimeSlotGroupBox=new QGroupBox(tr("First time slot"));
+				firstDayComboBox=new QComboBox;
+				firstHourComboBox=new QComboBox;
+				secondTimeSlotGroupBox=new QGroupBox(tr("Second time slot"));
+				secondDayComboBox=new QComboBox;
+				secondHourComboBox=new QComboBox;
+
+				break;
+			}
+		//229
+		case CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add students pair of mutually exclusive time slots", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintStudentsPairOfMutuallyExclusiveTimeSlots");
+				}
+				else{
+					dialogTitle=tr("Modify students pair of mutually exclusive time slots", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintStudentsPairOfMutuallyExclusiveTimeSlots");
+				}
+
+				firstTimeSlotGroupBox=new QGroupBox(tr("First time slot"));
+				firstDayComboBox=new QComboBox;
+				firstHourComboBox=new QComboBox;
+				secondTimeSlotGroupBox=new QGroupBox(tr("Second time slot"));
+				secondDayComboBox=new QComboBox;
+				secondHourComboBox=new QComboBox;
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -7345,6 +7442,23 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 		Q_UNUSED(tmp);
 	}
 
+	if(firstDayComboBox!=nullptr){
+		QSize tmp=firstDayComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(firstHourComboBox!=nullptr){
+		QSize tmp=firstHourComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(secondDayComboBox!=nullptr){
+		QSize tmp=secondDayComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+	if(secondHourComboBox!=nullptr){
+		QSize tmp=secondHourComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
+
 	if(activitiesComboBox!=nullptr)
 		activitiesComboBox->setMaximumWidth(maxRecommendedWidth(dialog));
 
@@ -7457,7 +7571,9 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				|| type==CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON
 				|| type==CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON
 				|| type==CONSTRAINT_TEACHERS_NO_TWO_CONSECUTIVE_DAYS
-				|| type==CONSTRAINT_TEACHER_NO_TWO_CONSECUTIVE_DAYS)
+				|| type==CONSTRAINT_TEACHER_NO_TWO_CONSECUTIVE_DAYS
+				|| type==CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS
+				|| type==CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS)
 			addConstraintsPushButton=new QPushButton(tr("Add constraints"));
 		closePushButton=new QPushButton(tr("Close"));
 	}
@@ -7565,6 +7681,42 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			wholeDialog->addLayout(layout);
 		}
 
+		if(firstTimeSlotGroupBox!=nullptr){
+			assert(firstDayComboBox!=nullptr);
+			assert(firstHourComboBox!=nullptr);
+
+			for(int i=0; i<gt.rules.nDaysPerWeek; i++)
+				firstDayComboBox->addItem(gt.rules.daysOfTheWeek[i]);
+			firstDayComboBox->setCurrentIndex(0);
+
+			for(int i=0; i<gt.rules.nHoursPerDay; i++)
+				firstHourComboBox->addItem(gt.rules.hoursOfTheDay[i]);
+			firstHourComboBox->setCurrentIndex(0);
+
+			QHBoxLayout* layout=new QHBoxLayout;
+			layout->addWidget(firstDayComboBox);
+			layout->addWidget(firstHourComboBox);
+			firstTimeSlotGroupBox->setLayout(layout);
+		}
+
+		if(secondTimeSlotGroupBox!=nullptr){
+			assert(secondDayComboBox!=nullptr);
+			assert(secondHourComboBox!=nullptr);
+
+			for(int i=0; i<gt.rules.nDaysPerWeek; i++)
+				secondDayComboBox->addItem(gt.rules.daysOfTheWeek[i]);
+			secondDayComboBox->setCurrentIndex(0);
+
+			for(int i=0; i<gt.rules.nHoursPerDay; i++)
+				secondHourComboBox->addItem(gt.rules.hoursOfTheDay[i]);
+			secondHourComboBox->setCurrentIndex(0);
+
+			QHBoxLayout* layout=new QHBoxLayout;
+			layout->addWidget(secondDayComboBox);
+			layout->addWidget(secondHourComboBox);
+			secondTimeSlotGroupBox->setLayout(layout);
+		}
+
 		if(filterGroupBox!=nullptr){
 			assert(teacherLayout!=nullptr);
 			assert(studentsLayout!=nullptr);
@@ -7614,6 +7766,11 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				wholeDialog->addLayout(first_activityTagLayout);
 			if(second_activityTagLayout!=nullptr)
 				wholeDialog->addLayout(second_activityTagLayout);
+
+			if(firstTimeSlotGroupBox!=nullptr)
+				wholeDialog->addWidget(firstTimeSlotGroupBox);
+			if(secondTimeSlotGroupBox!=nullptr)
+				wholeDialog->addWidget(secondTimeSlotGroupBox);
 		}
 
 		if(intervalStartHourLabel!=nullptr && intervalStartHourComboBox!=nullptr && intervalEndHourLabel!=nullptr && intervalEndHourComboBox!=nullptr){
@@ -11003,6 +11160,67 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					ConstraintTeacherNoTwoConsecutiveDays* ctr=(ConstraintTeacherNoTwoConsecutiveDays*)oldtc;
 
 					teachersComboBox->setCurrentIndex(teachersComboBox->findText(ctr->teacherName));
+
+					break;
+				}
+			//226
+			case CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+				{
+					ConstraintTeacherPairOfMutuallyExclusiveTimeSlots* ctr=(ConstraintTeacherPairOfMutuallyExclusiveTimeSlots*)oldtc;
+
+					teachersComboBox->setCurrentIndex(teachersComboBox->findText(ctr->teacherName));
+
+					firstDayComboBox->setCurrentIndex(ctr->day1);
+					firstHourComboBox->setCurrentIndex(ctr->hour1);
+
+					secondDayComboBox->setCurrentIndex(ctr->day2);
+					secondHourComboBox->setCurrentIndex(ctr->hour2);
+
+					break;
+				}
+			//227
+			case CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+				{
+					ConstraintTeachersPairOfMutuallyExclusiveTimeSlots* ctr=(ConstraintTeachersPairOfMutuallyExclusiveTimeSlots*)oldtc;
+
+					firstDayComboBox->setCurrentIndex(ctr->day1);
+					firstHourComboBox->setCurrentIndex(ctr->hour1);
+
+					secondDayComboBox->setCurrentIndex(ctr->day2);
+					secondHourComboBox->setCurrentIndex(ctr->hour2);
+
+					break;
+				}
+			//228
+			case CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+				{
+					ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots* ctr=(ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots*)oldtc;
+
+					int j=studentsComboBox->findText(ctr->students);
+					if(j<0)
+						showWarningForInvisibleSubgroupConstraint(parent, ctr->students);
+					else
+						assert(j>=0);
+					studentsComboBox->setCurrentIndex(j);
+
+					firstDayComboBox->setCurrentIndex(ctr->day1);
+					firstHourComboBox->setCurrentIndex(ctr->hour1);
+
+					secondDayComboBox->setCurrentIndex(ctr->day2);
+					secondHourComboBox->setCurrentIndex(ctr->hour2);
+
+					break;
+				}
+			//229
+			case CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+				{
+					ConstraintStudentsPairOfMutuallyExclusiveTimeSlots* ctr=(ConstraintStudentsPairOfMutuallyExclusiveTimeSlots*)oldtc;
+
+					firstDayComboBox->setCurrentIndex(ctr->day1);
+					firstHourComboBox->setCurrentIndex(ctr->hour1);
+
+					secondDayComboBox->setCurrentIndex(ctr->day2);
+					secondHourComboBox->setCurrentIndex(ctr->hour2);
 
 					break;
 				}
@@ -14535,6 +14753,170 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 
 				break;
 			}
+		//226
+		case CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				int day1=firstDayComboBox->currentIndex();
+				int hour1=firstHourComboBox->currentIndex();
+
+				int day2=secondDayComboBox->currentIndex();
+				int hour2=secondHourComboBox->currentIndex();
+
+				if(day1<0 || day1>=gt.rules.nDaysPerWeek){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("First time slot's day invalid"));
+					return;
+				}
+				if(hour1<0 || hour1>=gt.rules.nHoursPerDay){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("First time slot's hour invalid"));
+					return;
+				}
+
+				if(day2<0 || day2>=gt.rules.nDaysPerWeek){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Second time slot's day invalid"));
+					return;
+				}
+				if(hour2<0 || hour2>=gt.rules.nHoursPerDay){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Second time slot's hour invalid"));
+					return;
+				}
+
+				if(day1==day2 && hour1==hour2){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("The two time slots are the same", "It is a user error, the two time slots should not be equal"));
+					return;
+				}
+
+				tc=new ConstraintTeacherPairOfMutuallyExclusiveTimeSlots(weight, teachersComboBox->currentText(), day1, hour1, day2, hour2);
+
+				break;
+			}
+		//227
+		case CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				int day1=firstDayComboBox->currentIndex();
+				int hour1=firstHourComboBox->currentIndex();
+
+				int day2=secondDayComboBox->currentIndex();
+				int hour2=secondHourComboBox->currentIndex();
+
+				if(day1<0 || day1>=gt.rules.nDaysPerWeek){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("First time slot's day invalid"));
+					return;
+				}
+				if(hour1<0 || hour1>=gt.rules.nHoursPerDay){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("First time slot's hour invalid"));
+					return;
+				}
+
+				if(day2<0 || day2>=gt.rules.nDaysPerWeek){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Second time slot's day invalid"));
+					return;
+				}
+				if(hour2<0 || hour2>=gt.rules.nHoursPerDay){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Second time slot's hour invalid"));
+					return;
+				}
+
+				if(day1==day2 && hour1==hour2){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("The two time slots are the same", "It is a user error, the two time slots should not be equal"));
+					return;
+				}
+
+				tc=new ConstraintTeachersPairOfMutuallyExclusiveTimeSlots(weight, day1, hour1, day2, hour2);
+
+				break;
+			}
+		//228
+		case CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				int day1=firstDayComboBox->currentIndex();
+				int hour1=firstHourComboBox->currentIndex();
+
+				int day2=secondDayComboBox->currentIndex();
+				int hour2=secondHourComboBox->currentIndex();
+
+				if(day1<0 || day1>=gt.rules.nDaysPerWeek){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("First time slot's day invalid"));
+					return;
+				}
+				if(hour1<0 || hour1>=gt.rules.nHoursPerDay){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("First time slot's hour invalid"));
+					return;
+				}
+
+				if(day2<0 || day2>=gt.rules.nDaysPerWeek){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Second time slot's day invalid"));
+					return;
+				}
+				if(hour2<0 || hour2>=gt.rules.nHoursPerDay){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Second time slot's hour invalid"));
+					return;
+				}
+
+				if(day1==day2 && hour1==hour2){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("The two time slots are the same", "It is a user error, the two time slots should not be equal"));
+					return;
+				}
+
+				tc=new ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots(weight, studentsComboBox->currentText(), day1, hour1, day2, hour2);
+
+				break;
+			}
+		//229
+		case CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				int day1=firstDayComboBox->currentIndex();
+				int hour1=firstHourComboBox->currentIndex();
+
+				int day2=secondDayComboBox->currentIndex();
+				int hour2=secondHourComboBox->currentIndex();
+
+				if(day1<0 || day1>=gt.rules.nDaysPerWeek){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("First time slot's day invalid"));
+					return;
+				}
+				if(hour1<0 || hour1>=gt.rules.nHoursPerDay){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("First time slot's hour invalid"));
+					return;
+				}
+
+				if(day2<0 || day2>=gt.rules.nDaysPerWeek){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Second time slot's day invalid"));
+					return;
+				}
+				if(hour2<0 || hour2>=gt.rules.nHoursPerDay){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Second time slot's hour invalid"));
+					return;
+				}
+
+				if(day1==day2 && hour1==hour2){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("The two time slots are the same", "It is a user error, the two time slots should not be equal"));
+					return;
+				}
+
+				tc=new ConstraintStudentsPairOfMutuallyExclusiveTimeSlots(weight, day1, hour1, day2, hour2);
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -15655,6 +16037,57 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 
 			break;
 		}
+		//226
+		case CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			[[fallthrough]];
+		//227
+		case CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				int day1=firstDayComboBox->currentIndex();
+				int hour1=firstHourComboBox->currentIndex();
+
+				int day2=secondDayComboBox->currentIndex();
+				int hour2=secondHourComboBox->currentIndex();
+
+				if(day1<0 || day1>=gt.rules.nDaysPerWeek){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("First time slot's day invalid"));
+					return;
+				}
+				if(hour1<0 || hour1>=gt.rules.nHoursPerDay){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("First time slot's hour invalid"));
+					return;
+				}
+
+				if(day2<0 || day2>=gt.rules.nDaysPerWeek){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Second time slot's day invalid"));
+					return;
+				}
+				if(hour2<0 || hour2>=gt.rules.nHoursPerDay){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Second time slot's hour invalid"));
+					return;
+				}
+
+				if(day1==day2 && hour1==hour2){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("The two time slots are the same", "It is a user error, the two time slots should not be equal"));
+					return;
+				}
+
+				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
+					TimeConstraint *ctr=new ConstraintTeacherPairOfMutuallyExclusiveTimeSlots(weight, tch->name, day1, hour1, day2, hour2);
+					bool tmp2=gt.rules.addTimeConstraint(ctr);
+					assert(tmp2);
+
+					ctrs+=ctr->getDetailedDescription(gt.rules);
+					ctrs+=QString("\n");
+				}
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -16224,7 +16657,7 @@ void AddOrModifyTimeConstraint::okClicked()
 					return;
 				}
 
-				if(1){
+				if(true){
 					ConstraintMinDaysBetweenActivities adc;
 					adc.activitiesIds=selectedActivitiesList;
 					adc.n_activities=selectedActivitiesList.count();
@@ -19048,7 +19481,7 @@ void AddOrModifyTimeConstraint::okClicked()
 					return;
 				}
 
-				if(1){
+				if(true){
 					ConstraintMinHalfDaysBetweenActivities adc;
 					adc.activitiesIds=selectedActivitiesList;
 					adc.n_activities=selectedActivitiesList.count();
@@ -20068,6 +20501,198 @@ void AddOrModifyTimeConstraint::okClicked()
 				ConstraintTeacherNoTwoConsecutiveDays* ctr=(ConstraintTeacherNoTwoConsecutiveDays*)oldtc;
 
 				ctr->teacherName=teachersComboBox->currentText();
+
+				break;
+			}
+		//226
+		case CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				ConstraintTeacherPairOfMutuallyExclusiveTimeSlots* ctr=(ConstraintTeacherPairOfMutuallyExclusiveTimeSlots*)oldtc;
+
+				int day1=firstDayComboBox->currentIndex();
+				int hour1=firstHourComboBox->currentIndex();
+
+				int day2=secondDayComboBox->currentIndex();
+				int hour2=secondHourComboBox->currentIndex();
+
+				if(day1<0 || day1>=gt.rules.nDaysPerWeek){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("First time slot's day invalid"));
+					return;
+				}
+				if(hour1<0 || hour1>=gt.rules.nHoursPerDay){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("First time slot's hour invalid"));
+					return;
+				}
+
+				if(day2<0 || day2>=gt.rules.nDaysPerWeek){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Second time slot's day invalid"));
+					return;
+				}
+				if(hour2<0 || hour2>=gt.rules.nHoursPerDay){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Second time slot's hour invalid"));
+					return;
+				}
+
+				if(day1==day2 && hour1==hour2){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("The two time slots are the same", "It is a user error, the two time slots should not be equal"));
+					return;
+				}
+
+				ctr->teacherName=teachersComboBox->currentText();
+
+				ctr->day1=day1;
+				ctr->hour1=hour1;
+
+				ctr->day2=day2;
+				ctr->hour2=hour2;
+
+				break;
+			}
+		//227
+		case CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				ConstraintTeachersPairOfMutuallyExclusiveTimeSlots* ctr=(ConstraintTeachersPairOfMutuallyExclusiveTimeSlots*)oldtc;
+
+				int day1=firstDayComboBox->currentIndex();
+				int hour1=firstHourComboBox->currentIndex();
+
+				int day2=secondDayComboBox->currentIndex();
+				int hour2=secondHourComboBox->currentIndex();
+
+				if(day1<0 || day1>=gt.rules.nDaysPerWeek){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("First time slot's day invalid"));
+					return;
+				}
+				if(hour1<0 || hour1>=gt.rules.nHoursPerDay){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("First time slot's hour invalid"));
+					return;
+				}
+
+				if(day2<0 || day2>=gt.rules.nDaysPerWeek){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Second time slot's day invalid"));
+					return;
+				}
+				if(hour2<0 || hour2>=gt.rules.nHoursPerDay){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Second time slot's hour invalid"));
+					return;
+				}
+
+				if(day1==day2 && hour1==hour2){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("The two time slots are the same", "It is a user error, the two time slots should not be equal"));
+					return;
+				}
+
+				ctr->day1=day1;
+				ctr->hour1=hour1;
+
+				ctr->day2=day2;
+				ctr->hour2=hour2;
+
+				break;
+			}
+		//228
+		case CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots* ctr=(ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots*)oldtc;
+
+				int day1=firstDayComboBox->currentIndex();
+				int hour1=firstHourComboBox->currentIndex();
+
+				int day2=secondDayComboBox->currentIndex();
+				int hour2=secondHourComboBox->currentIndex();
+
+				if(day1<0 || day1>=gt.rules.nDaysPerWeek){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("First time slot's day invalid"));
+					return;
+				}
+				if(hour1<0 || hour1>=gt.rules.nHoursPerDay){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("First time slot's hour invalid"));
+					return;
+				}
+
+				if(day2<0 || day2>=gt.rules.nDaysPerWeek){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Second time slot's day invalid"));
+					return;
+				}
+				if(hour2<0 || hour2>=gt.rules.nHoursPerDay){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Second time slot's hour invalid"));
+					return;
+				}
+
+				if(day1==day2 && hour1==hour2){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("The two time slots are the same", "It is a user error, the two time slots should not be equal"));
+					return;
+				}
+
+				ctr->students=studentsComboBox->currentText();
+
+				ctr->day1=day1;
+				ctr->hour1=hour1;
+
+				ctr->day2=day2;
+				ctr->hour2=hour2;
+
+				break;
+			}
+		//229
+		case CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				ConstraintStudentsPairOfMutuallyExclusiveTimeSlots* ctr=(ConstraintStudentsPairOfMutuallyExclusiveTimeSlots*)oldtc;
+
+				int day1=firstDayComboBox->currentIndex();
+				int hour1=firstHourComboBox->currentIndex();
+
+				int day2=secondDayComboBox->currentIndex();
+				int hour2=secondHourComboBox->currentIndex();
+
+				if(day1<0 || day1>=gt.rules.nDaysPerWeek){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("First time slot's day invalid"));
+					return;
+				}
+				if(hour1<0 || hour1>=gt.rules.nHoursPerDay){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("First time slot's hour invalid"));
+					return;
+				}
+
+				if(day2<0 || day2>=gt.rules.nDaysPerWeek){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Second time slot's day invalid"));
+					return;
+				}
+				if(hour2<0 || hour2>=gt.rules.nHoursPerDay){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Second time slot's hour invalid"));
+					return;
+				}
+
+				if(day1==day2 && hour1==hour2){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("The two time slots are the same", "It is a user error, the two time slots should not be equal"));
+					return;
+				}
+
+				ctr->day1=day1;
+				ctr->hour1=hour1;
+
+				ctr->day2=day2;
+				ctr->hour2=hour2;
 
 				break;
 			}

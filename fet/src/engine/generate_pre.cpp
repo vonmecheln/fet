@@ -64,8 +64,6 @@ QString initialOrderOfActivities;
 #endif
 
 
-bool haveStudentsMinHoursDailyAllowEmptyDays;
-
 Matrix1D<QSet<int>> tmpPreferredRealRooms;
 Matrix1D<bool> tmpFoundNonEmpty;
 
@@ -426,6 +424,31 @@ Matrix1D<QList<int>> activitiesNotOverlappingActivities;
 Matrix1D<QList<double>> activitiesNotOverlappingPercentages;
 //void computeActivitiesNotOverlapping();
 ////////END   activities not overlapping
+
+
+//BEGIN teacher(s) pair of mutually exclusive time slots
+bool haveTeachersPairOfMutualExclusiveTimeSlots;
+
+Matrix1D<QList<double>> teachersPairOfMutuallyExclusiveTimeSlotsPercentages;
+Matrix1D<QList<int>> teachersPairOfMutuallyExclusiveTimeSlotsDay1;
+Matrix1D<QList<int>> teachersPairOfMutuallyExclusiveTimeSlotsHour1;
+Matrix1D<QList<int>> teachersPairOfMutuallyExclusiveTimeSlotsDay2;
+Matrix1D<QList<int>> teachersPairOfMutuallyExclusiveTimeSlotsHour2;
+
+bool computeTeachersPairOfMutuallyExclusiveTimeSlots(QWidget* parent);
+//END   teacher(s) pair of mutually exclusive time slots
+
+//BEGIN students(s) pair of mutually exclusive time slots
+bool haveStudentsPairOfMutualExclusiveTimeSlots;
+
+Matrix1D<QList<double>> subgroupsPairOfMutuallyExclusiveTimeSlotsPercentages;
+Matrix1D<QList<int>> subgroupsPairOfMutuallyExclusiveTimeSlotsDay1;
+Matrix1D<QList<int>> subgroupsPairOfMutuallyExclusiveTimeSlotsHour1;
+Matrix1D<QList<int>> subgroupsPairOfMutuallyExclusiveTimeSlotsDay2;
+Matrix1D<QList<int>> subgroupsPairOfMutuallyExclusiveTimeSlotsHour2;
+
+bool computeSubgroupsPairOfMutuallyExclusiveTimeSlots(QWidget* parent);
+//END   students(s) pair of mutually exclusive time slots
 
 
 ////////BEGIN teacher(s) max hours daily
@@ -1459,6 +1482,18 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	teachersMaxGapsPerMorningAndAfternoonMaxGaps.resize(gt.rules.nInternalTeachers);
 	nHoursPerTeacher.resize(gt.rules.nInternalTeachers);
 	//
+	teachersPairOfMutuallyExclusiveTimeSlotsPercentages.resize(gt.rules.nInternalTeachers);
+	teachersPairOfMutuallyExclusiveTimeSlotsDay1.resize(gt.rules.nInternalTeachers);
+	teachersPairOfMutuallyExclusiveTimeSlotsHour1.resize(gt.rules.nInternalTeachers);
+	teachersPairOfMutuallyExclusiveTimeSlotsDay2.resize(gt.rules.nInternalTeachers);
+	teachersPairOfMutuallyExclusiveTimeSlotsHour2.resize(gt.rules.nInternalTeachers);
+
+	subgroupsPairOfMutuallyExclusiveTimeSlotsPercentages.resize(gt.rules.nInternalSubgroups);
+	subgroupsPairOfMutuallyExclusiveTimeSlotsDay1.resize(gt.rules.nInternalSubgroups);
+	subgroupsPairOfMutuallyExclusiveTimeSlotsHour1.resize(gt.rules.nInternalSubgroups);
+	subgroupsPairOfMutuallyExclusiveTimeSlotsDay2.resize(gt.rules.nInternalSubgroups);
+	subgroupsPairOfMutuallyExclusiveTimeSlotsHour2.resize(gt.rules.nInternalSubgroups);
+	//
 	teachersMaxHoursDailyPercentages1.resize(gt.rules.nInternalTeachers);
 	teachersMaxHoursDailyMaxHours1.resize(gt.rules.nInternalTeachers);
 	teachersMaxHoursDailyPercentages2.resize(gt.rules.nInternalTeachers);
@@ -2310,7 +2345,14 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	t=computeTeachersActivityTagMinHoursDaily(parent);
 	if(!t)
 		return false;
-		
+
+	t=computeTeachersPairOfMutuallyExclusiveTimeSlots(parent);
+	if(!t)
+		return false;
+	t=computeSubgroupsPairOfMutuallyExclusiveTimeSlots(parent);
+	if(!t)
+		return false;
+
 	computeConstrTwoActivitiesConsecutive();
 	
 	computeConstrTwoActivitiesGrouped();
@@ -3284,6 +3326,205 @@ bool computeSubgroupsMaxHoursDailyRealDays(QWidget* parent)
 
 				if(t==0)
 					return false;
+			}
+		}
+	}
+
+	return ok;
+}
+
+bool computeSubgroupsPairOfMutuallyExclusiveTimeSlots(QWidget* parent)
+{
+	haveStudentsPairOfMutualExclusiveTimeSlots=false;
+
+	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
+		subgroupsPairOfMutuallyExclusiveTimeSlotsPercentages[i].clear();
+		subgroupsPairOfMutuallyExclusiveTimeSlotsDay1[i].clear();
+		subgroupsPairOfMutuallyExclusiveTimeSlotsHour1[i].clear();
+		subgroupsPairOfMutuallyExclusiveTimeSlotsDay2[i].clear();
+		subgroupsPairOfMutuallyExclusiveTimeSlotsHour2[i].clear();
+	}
+	
+	bool ok=true;
+	
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS){
+			haveStudentsPairOfMutualExclusiveTimeSlots=true;
+
+			ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots* tc=(ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(tc->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a time constraint students set pair of mutually exclusive time slots"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			for(int sbg : std::as_const(tc->iSubgroupsList)){
+				bool found=false;
+				for(int cnt=0; cnt<subgroupsPairOfMutuallyExclusiveTimeSlotsPercentages[sbg].count(); cnt++){
+					if(subgroupsPairOfMutuallyExclusiveTimeSlotsPercentages[sbg].at(cnt)==tc->weightPercentage
+					 && subgroupsPairOfMutuallyExclusiveTimeSlotsDay1[sbg].at(cnt)==tc->day1
+					 && subgroupsPairOfMutuallyExclusiveTimeSlotsHour1[sbg].at(cnt)==tc->hour1
+					 && subgroupsPairOfMutuallyExclusiveTimeSlotsDay2[sbg].at(cnt)==tc->day2
+					 && subgroupsPairOfMutuallyExclusiveTimeSlotsHour2[sbg].at(cnt)==tc->hour2){
+						found=true;
+						break;
+					}
+				}
+				
+				if(!found){
+					subgroupsPairOfMutuallyExclusiveTimeSlotsPercentages[sbg].append(tc->weightPercentage);
+					subgroupsPairOfMutuallyExclusiveTimeSlotsDay1[sbg].append(tc->day1);
+					subgroupsPairOfMutuallyExclusiveTimeSlotsHour1[sbg].append(tc->hour1);
+					subgroupsPairOfMutuallyExclusiveTimeSlotsDay2[sbg].append(tc->day2);
+					subgroupsPairOfMutuallyExclusiveTimeSlotsHour2[sbg].append(tc->hour2);
+				}
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS){
+			haveStudentsPairOfMutualExclusiveTimeSlots=true;
+
+			ConstraintStudentsPairOfMutuallyExclusiveTimeSlots* tc=(ConstraintStudentsPairOfMutuallyExclusiveTimeSlots*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(tc->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a time constraint students pair of mutually exclusive time slots"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++){
+				bool found=false;
+				for(int cnt=0; cnt<subgroupsPairOfMutuallyExclusiveTimeSlotsPercentages[sbg].count(); cnt++){
+					if(subgroupsPairOfMutuallyExclusiveTimeSlotsPercentages[sbg].at(cnt)==tc->weightPercentage
+					 && subgroupsPairOfMutuallyExclusiveTimeSlotsDay1[sbg].at(cnt)==tc->day1
+					 && subgroupsPairOfMutuallyExclusiveTimeSlotsHour1[sbg].at(cnt)==tc->hour1
+					 && subgroupsPairOfMutuallyExclusiveTimeSlotsDay2[sbg].at(cnt)==tc->day2
+					 && subgroupsPairOfMutuallyExclusiveTimeSlotsHour2[sbg].at(cnt)==tc->hour2){
+						found=true;
+						break;
+					}
+				}
+				
+				if(!found){
+					subgroupsPairOfMutuallyExclusiveTimeSlotsPercentages[sbg].append(tc->weightPercentage);
+					subgroupsPairOfMutuallyExclusiveTimeSlotsDay1[sbg].append(tc->day1);
+					subgroupsPairOfMutuallyExclusiveTimeSlotsHour1[sbg].append(tc->hour1);
+					subgroupsPairOfMutuallyExclusiveTimeSlotsDay2[sbg].append(tc->day2);
+					subgroupsPairOfMutuallyExclusiveTimeSlotsHour2[sbg].append(tc->hour2);
+				}
+			}
+		}
+	}
+
+	return ok;
+}
+
+bool computeTeachersPairOfMutuallyExclusiveTimeSlots(QWidget* parent)
+{
+	haveTeachersPairOfMutualExclusiveTimeSlots=false;
+
+	for(int i=0; i<gt.rules.nInternalTeachers; i++){
+		teachersPairOfMutuallyExclusiveTimeSlotsPercentages[i].clear();
+		teachersPairOfMutuallyExclusiveTimeSlotsDay1[i].clear();
+		teachersPairOfMutuallyExclusiveTimeSlotsHour1[i].clear();
+		teachersPairOfMutuallyExclusiveTimeSlotsDay2[i].clear();
+		teachersPairOfMutuallyExclusiveTimeSlotsHour2[i].clear();
+	}
+	
+	bool ok=true;
+	
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS){
+			haveTeachersPairOfMutualExclusiveTimeSlots=true;
+			
+			ConstraintTeacherPairOfMutuallyExclusiveTimeSlots* tc=(ConstraintTeacherPairOfMutuallyExclusiveTimeSlots*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(tc->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a time constraint teacher pair of mutually exclusive time slots"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			int tch=tc->teacher_ID;
+			bool found=false;
+			for(int cnt=0; cnt<teachersPairOfMutuallyExclusiveTimeSlotsPercentages[tch].count(); cnt++){
+				if(teachersPairOfMutuallyExclusiveTimeSlotsPercentages[tch].at(cnt)==tc->weightPercentage
+				 && teachersPairOfMutuallyExclusiveTimeSlotsDay1[tch].at(cnt)==tc->day1
+				 && teachersPairOfMutuallyExclusiveTimeSlotsHour1[tch].at(cnt)==tc->hour1
+				 && teachersPairOfMutuallyExclusiveTimeSlotsDay2[tch].at(cnt)==tc->day2
+				 && teachersPairOfMutuallyExclusiveTimeSlotsHour2[tch].at(cnt)==tc->hour2){
+					found=true;
+					break;
+				}
+			}
+			
+			if(!found){
+				teachersPairOfMutuallyExclusiveTimeSlotsPercentages[tch].append(tc->weightPercentage);
+				teachersPairOfMutuallyExclusiveTimeSlotsDay1[tch].append(tc->day1);
+				teachersPairOfMutuallyExclusiveTimeSlotsHour1[tch].append(tc->hour1);
+				teachersPairOfMutuallyExclusiveTimeSlotsDay2[tch].append(tc->day2);
+				teachersPairOfMutuallyExclusiveTimeSlotsHour2[tch].append(tc->hour2);
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS){
+			haveTeachersPairOfMutualExclusiveTimeSlots=true;
+			
+			ConstraintTeachersPairOfMutuallyExclusiveTimeSlots* tc=(ConstraintTeachersPairOfMutuallyExclusiveTimeSlots*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(tc->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a time constraint teachers pair of mutually exclusive time slots"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
+				bool found=false;
+				for(int cnt=0; cnt<teachersPairOfMutuallyExclusiveTimeSlotsPercentages[tch].count(); cnt++){
+					if(teachersPairOfMutuallyExclusiveTimeSlotsPercentages[tch].at(cnt)==tc->weightPercentage
+					 && teachersPairOfMutuallyExclusiveTimeSlotsDay1[tch].at(cnt)==tc->day1
+					 && teachersPairOfMutuallyExclusiveTimeSlotsHour1[tch].at(cnt)==tc->hour1
+					 && teachersPairOfMutuallyExclusiveTimeSlotsDay2[tch].at(cnt)==tc->day2
+					 && teachersPairOfMutuallyExclusiveTimeSlotsHour2[tch].at(cnt)==tc->hour2){
+						found=true;
+						break;
+					}
+				}
+				
+				if(!found){
+					teachersPairOfMutuallyExclusiveTimeSlotsPercentages[tch].append(tc->weightPercentage);
+					teachersPairOfMutuallyExclusiveTimeSlotsDay1[tch].append(tc->day1);
+					teachersPairOfMutuallyExclusiveTimeSlotsHour1[tch].append(tc->hour1);
+					teachersPairOfMutuallyExclusiveTimeSlotsDay2[tch].append(tc->day2);
+					teachersPairOfMutuallyExclusiveTimeSlotsHour2[tch].append(tc->hour2);
+				}
 			}
 		}
 	}
@@ -15397,7 +15638,7 @@ bool checkMinDaysMaxTwoOnSameDay(QWidget* parent)
 		for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
 			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
 				ConstraintMinDaysBetweenActivities* md=(ConstraintMinDaysBetweenActivities*)gt.rules.internalTimeConstraintsList[i];
-				if(1/*md->consecutiveIfSameDay*/){
+				if(true /*md->consecutiveIfSameDay*/){
 					for(int tc=0; tc<gt.rules.nInternalTeachers; tc++)
 						nReqForTeacher[tc]=0;
 					for(int j=0; j<md->_n_activities; j++){
@@ -15533,7 +15774,7 @@ bool checkMinDaysMaxTwoOnSameDay(QWidget* parent)
 		for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
 			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
 				ConstraintMinDaysBetweenActivities* md=(ConstraintMinDaysBetweenActivities*)gt.rules.internalTimeConstraintsList[i];
-				if(1/*md->consecutiveIfSameDay*/){
+				if(true /*md->consecutiveIfSameDay*/){
 					for(int tc=0; tc<gt.rules.nInternalTeachers; tc++)
 						nReqForTeacher[tc]=0;
 					for(int j=0; j<md->_n_activities; j++){
@@ -15835,7 +16076,7 @@ bool checkMinHalfDaysMaxTwoOnSameDay(QWidget* parent)
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
 			ConstraintMinHalfDaysBetweenActivities* md=(ConstraintMinHalfDaysBetweenActivities*)gt.rules.internalTimeConstraintsList[i];
-			if(1/*md->consecutiveIfSameDay*/){
+			if(true /*md->consecutiveIfSameDay*/){
 				for(int tc=0; tc<gt.rules.nInternalTeachers; tc++)
 					nReqForTeacher[tc]=0;
 				for(int j=0; j<md->_n_activities; j++){

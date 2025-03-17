@@ -3008,7 +3008,7 @@ Versions 6.28.0 - 6.28.7
 	- Minor interface improvements.
 	- Source code typos corrected (found with the help of Nahum Lipkunsky).
 ---------------------------------------------------------------------------------
-Versions 7.0.0 - 7.0.v
+Versions 7.0.0 - 7.0.8
 - Version 7.0.0
 	- Improved the algorithm: the constraints of type min days between activities with the weight < 100% were previously treated a little differently than the
 	other constraints with the weight < 100% (the min days between activities constraints were privileged: the algorithm tried a bit harder to respect them).
@@ -3048,3 +3048,8 @@ Versions 7.0.0 - 7.0.v
 	- Improved the fet XML file formatting (only the spacing was changed - the text should remain the same). This was suggested by ismailbsrn's file formatting.
 - Version 7.0.8
 	- Minor corrections in the resulted HTML timetables.
+---------------------------------------------------------------------------------
+Versions 7.1.0 - 7.1.v
+- Version 7.1.0
+	- Added the constraints of type teacher(s)/students (set) pair of mutually exclusive time slots (suggested by NYC FET, igorsch, and maybe other users
+	in the past).

@@ -502,6 +502,8 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	references+=QString("15. http://amin-ahmadi.com/2016/06/13/fix-modsecurity-issues-in-qt-network-module-download-functionality/");
 	references+=QString("<br /><br />");
 	references+=QString("16. https://stackoverflow.com/questions/48093102/how-does-qt-select-a-default-style");
+	references+=QString("<br /><br />");
+	references+=QString("17. https://stackoverflow.com/questions/3065438/switch-statement-with-returns-code-correctness");
 
 	references+=QString("<br /><br /><br />");
 
@@ -1413,6 +1415,10 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("Bouredha Youcef");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("ismailbsrn");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("NYC FET");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("igorsch");
 	thanksTo+=QString("<br />");
 	
 	thanksToTextBrowser->setHtml(thanksTo);

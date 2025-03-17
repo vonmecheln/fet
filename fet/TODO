@@ -10734,3 +10734,11 @@ From GUEFFAZ REDA (on forum):
 https://lalescu.ro/liviu/fet/forum/index.php?topic=6334.0
 
 GUEFFAZ REDA showed a dialog listing the time constraints of type teacher not available times with an added Subject filter.
+
+692--------------------------------------------------------
+From Željko Vrabec (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6340.0
+
+Is there a chance to store settings like output directory and stuff about html output into fet file rather than into fet config directory?
+So when you open file you have all settings for that timetable. When you open some other file it contains settings for its timetable.

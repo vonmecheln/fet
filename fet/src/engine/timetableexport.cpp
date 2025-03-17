@@ -13424,7 +13424,7 @@ QString TimetableExport::singleBuildingsTimetableDaysHorizontalHtml(int htmlLeve
 			bool haveActivitiesWithSameStartingTime=addActivitiesWithSameStartingTime(allActivitiesList, allActivitiesSet, hour);
 			//2024-08-16: 0 && ..., because otherwise we get a bug with the span if in the building there are two activities,
 			//starting at the same time, with different durations.
-			if(0 && allActivitiesList.size()==1 && !haveActivitiesWithSameStartingTime){  // because I am using colspan or rowspan!!!
+			if(false && allActivitiesList.size()==1 && !haveActivitiesWithSameStartingTime){  // because I am using colspan or rowspan!!!
 				tmpString+=writeActivityBuilding(htmlLevel, building, day, hour, false, true,
 				 printSubjects, printActivityTags, printTeachers, printStudents, printRooms,
 				 SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_SUBJECTS_CODES,
@@ -13590,7 +13590,7 @@ QString TimetableExport::singleBuildingsTimetableDaysVerticalHtml(int htmlLevel,
 			bool haveActivitiesWithSameStartingTime=addActivitiesWithSameStartingTime(allActivitiesList, allActivitiesSet, hour);
 			//2024-08-16: 0 && ..., because otherwise we get a bug with the span if in the building there are two activities,
 			//starting at the same time, with different durations.
-			if(0 && allActivitiesList.size()==1 && !haveActivitiesWithSameStartingTime){  // because I am using colspan or rowspan!!!
+			if(false && allActivitiesList.size()==1 && !haveActivitiesWithSameStartingTime){  // because I am using colspan or rowspan!!!
 				tmpString+=writeActivityBuilding(htmlLevel, building, day, hour, true, false,
 				 printSubjects, printActivityTags, printTeachers, printStudents, printRooms,
 				 SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_SUBJECTS_CODES,
@@ -13731,7 +13731,7 @@ QString TimetableExport::singleBuildingsTimetableTimeVerticalHtml(int htmlLevel,
 				bool haveActivitiesWithSameStartingTime=addActivitiesWithSameStartingTime(allActivitiesList, allActivitiesSet, hour);
 				//2024-08-16: 0 && ..., because otherwise we get a bug with the span if in the building there are two activities,
 				//starting at the same time, with different durations.
-				if(0 && allActivitiesList.size()==1 && !haveActivitiesWithSameStartingTime){  // because I am using colspan or rowspan!!!
+				if(false && allActivitiesList.size()==1 && !haveActivitiesWithSameStartingTime){  // because I am using colspan or rowspan!!!
 					tmpString+=writeActivityBuilding(htmlLevel, building, day, hour, false, true,
 					 printSubjects, printActivityTags, printTeachers, printStudents, printRooms,
 					 SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_CODES,
@@ -13964,7 +13964,7 @@ QString TimetableExport::singleBuildingsTimetableTimeHorizontalHtml(int htmlLeve
 				bool haveActivitiesWithSameStartingTime=addActivitiesWithSameStartingTime(allActivitiesList, allActivitiesSet, hour);
 				//2024-08-16: 0 && ..., because otherwise we get a bug with the span if in the building there are two activities,
 				//starting at the same time, with different durations.
-				if(0 && allActivitiesList.size()==1 && !haveActivitiesWithSameStartingTime){  // because I am using colspan or rowspan!!!
+				if(false && allActivitiesList.size()==1 && !haveActivitiesWithSameStartingTime){  // because I am using colspan or rowspan!!!
 					tmpString+=writeActivityBuilding(htmlLevel, building, day, hour, true, false,
 					 printSubjects, printActivityTags, printTeachers, printStudents, printRooms,
 					 SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_CODES,
@@ -14123,7 +14123,7 @@ QString TimetableExport::singleBuildingsTimetableTimeVerticalDailyHtml(int htmlL
 			bool haveActivitiesWithSameStartingTime=addActivitiesWithSameStartingTime(allActivitiesList, allActivitiesSet, hour);
 			//2024-08-16: 0 && ..., because otherwise we get a bug with the span if in the building there are two activities,
 			//starting at the same time, with different durations.
-			if(0 && allActivitiesList.size()==1 && !haveActivitiesWithSameStartingTime){  // because I am using colspan or rowspan!!!
+			if(false && allActivitiesList.size()==1 && !haveActivitiesWithSameStartingTime){  // because I am using colspan or rowspan!!!
 				tmpString+=writeActivityBuilding(htmlLevel, building, day, hour, false, true,
 				 printSubjects, printActivityTags, printTeachers, printStudents, printRooms,
 				 SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_CODES,
@@ -14288,7 +14288,7 @@ QString TimetableExport::singleBuildingsTimetableTimeHorizontalDailyHtml(int htm
 			bool haveActivitiesWithSameStartingTime=addActivitiesWithSameStartingTime(allActivitiesList, allActivitiesSet, hour);
 			//2024-08-16: 0 && ..., because otherwise we get a bug with the span if in the building there are two activities,
 			//starting at the same time, with different durations.
-			if(0 && allActivitiesList.size()==1 && !haveActivitiesWithSameStartingTime){  // because I am using colspan or rowspan!!!
+			if(false && allActivitiesList.size()==1 && !haveActivitiesWithSameStartingTime){  // because I am using colspan or rowspan!!!
 				tmpString+=writeActivityBuilding(htmlLevel, building, day, hour, true, false,
 				 printSubjects, printActivityTags, printTeachers, printStudents, printRooms,
 				 SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_CODES,

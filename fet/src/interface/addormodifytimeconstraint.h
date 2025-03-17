@@ -117,6 +117,14 @@ class AddOrModifyTimeConstraint: public QObject
 	int type;
 	TimeConstraint* oldtc;
 
+	//for teacher(s)/students (set) pair of mutually exclusive time slots
+	QGroupBox* firstTimeSlotGroupBox;
+	QGroupBox* secondTimeSlotGroupBox;
+	QComboBox* firstDayComboBox;
+	QComboBox* firstHourComboBox;
+	QComboBox* secondDayComboBox;
+	QComboBox* secondHourComboBox;
+
 	QCheckBox* showRelatedCheckBox;
 
 	QCheckBox* firstFilter_showRelatedCheckBox;

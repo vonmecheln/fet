@@ -560,7 +560,7 @@ void updateAllTimetableViewDialogs()
 	QWidgetList tlwl=QApplication::topLevelWidgets();
 
 	for(QWidget* wi : std::as_const(tlwl))
-		if(1 /*wi->isVisible()*/){
+		if(true /*wi->isVisible()*/){
 			//timetable
 			TimetableViewStudentsDaysHorizontalForm* vsdhf=qobject_cast<TimetableViewStudentsDaysHorizontalForm*>(wi);
 			if(vsdhf!=nullptr){

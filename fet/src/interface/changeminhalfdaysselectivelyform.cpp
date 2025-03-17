@@ -90,7 +90,7 @@ void ChangeMinHalfDaysSelectivelyForm::ok()
 		return;
 	}
 	
-	if(1){
+	if(true){
 		oldDays=oldDaysSpinBox->value();
 		if(!(oldDays==-1 || (oldDays>=1 && oldDays<=gt.rules.nDaysPerWeek))){
 			QMessageBox::warning(this, tr("FET warning"), tr("Old min half days must be -1 or both >=1 and <=n_days_per_week"));

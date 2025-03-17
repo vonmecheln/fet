@@ -102,6 +102,11 @@ private:
 	QAction* dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction;
 	QAction* dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction;
 
+	QAction* dataTimeConstraintsTeacherPairOfMutuallyExclusiveTimeSlotsAction;
+	QAction* dataTimeConstraintsTeachersPairOfMutuallyExclusiveTimeSlotsAction;
+	QAction* dataTimeConstraintsStudentsSetPairOfMutuallyExclusiveTimeSlotsAction;
+	QAction* dataTimeConstraintsStudentsPairOfMutuallyExclusiveTimeSlotsAction;
+
 	QAction* dataTimeConstraintsActivityPreferredStartingTimeAction;
 	QAction* dataTimeConstraintsStudentsSetMaxGapsPerWeekAction;
 	QAction* dataTimeConstraintsStudentsMaxGapsPerWeekAction;
@@ -671,6 +676,11 @@ public slots:
 	void dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction_triggered();
 	void dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction_triggered();
 	void dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction_triggered();
+
+	void dataTimeConstraintsTeacherPairOfMutuallyExclusiveTimeSlotsAction_triggered();
+	void dataTimeConstraintsTeachersPairOfMutuallyExclusiveTimeSlotsAction_triggered();
+	void dataTimeConstraintsStudentsSetPairOfMutuallyExclusiveTimeSlotsAction_triggered();
+	void dataTimeConstraintsStudentsPairOfMutuallyExclusiveTimeSlotsAction_triggered();
 
 	void dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction_triggered();
 	void dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction_triggered();

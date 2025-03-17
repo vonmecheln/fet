@@ -1957,6 +1957,11 @@ void FetMainForm::createActionsForConstraints()
 	dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction = new QAction(this);
 	dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction = new QAction(this);
 
+	dataTimeConstraintsTeacherPairOfMutuallyExclusiveTimeSlotsAction = new QAction(this);
+	dataTimeConstraintsTeachersPairOfMutuallyExclusiveTimeSlotsAction = new QAction(this);
+	dataTimeConstraintsStudentsSetPairOfMutuallyExclusiveTimeSlotsAction = new QAction(this);
+	dataTimeConstraintsStudentsPairOfMutuallyExclusiveTimeSlotsAction = new QAction(this);
+
 	dataTimeConstraintsActivityPreferredStartingTimeAction = new QAction(this);
 	dataTimeConstraintsStudentsSetMaxGapsPerWeekAction = new QAction(this);
 	dataTimeConstraintsStudentsMaxGapsPerWeekAction = new QAction(this);
@@ -2284,6 +2289,11 @@ void FetMainForm::createActionsForConstraints()
 	connect(dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction_triggered);
 	connect(dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction_triggered);
 	connect(dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction_triggered);
+
+	connect(dataTimeConstraintsTeacherPairOfMutuallyExclusiveTimeSlotsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherPairOfMutuallyExclusiveTimeSlotsAction_triggered);
+	connect(dataTimeConstraintsTeachersPairOfMutuallyExclusiveTimeSlotsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersPairOfMutuallyExclusiveTimeSlotsAction_triggered);
+	connect(dataTimeConstraintsStudentsSetPairOfMutuallyExclusiveTimeSlotsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetPairOfMutuallyExclusiveTimeSlotsAction_triggered);
+	connect(dataTimeConstraintsStudentsPairOfMutuallyExclusiveTimeSlotsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsPairOfMutuallyExclusiveTimeSlotsAction_triggered);
 
 	connect(dataTimeConstraintsActivityPreferredStartingTimeAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivityPreferredStartingTimeAction_triggered);
 	connect(dataTimeConstraintsStudentsSetMaxGapsPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerWeekAction_triggered);
@@ -2660,6 +2670,11 @@ void FetMainForm::retranslateConstraints()
 	dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily in an hourly interval for a teacher", nullptr));
 	dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily in an hourly interval for all students", nullptr));
 	dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily in an hourly interval for a students set", nullptr));
+
+	dataTimeConstraintsTeacherPairOfMutuallyExclusiveTimeSlotsAction->setText(QCoreApplication::translate("FetMainForm_template", "A teacher has a pair of mutually exclusive time slots", nullptr));
+	dataTimeConstraintsTeachersPairOfMutuallyExclusiveTimeSlotsAction->setText(QCoreApplication::translate("FetMainForm_template", "All teachers have a pair of mutually exclusive time slots", nullptr));
+	dataTimeConstraintsStudentsSetPairOfMutuallyExclusiveTimeSlotsAction->setText(QCoreApplication::translate("FetMainForm_template", "A students set has a pair of mutually exclusive time slots", nullptr));
+	dataTimeConstraintsStudentsPairOfMutuallyExclusiveTimeSlotsAction->setText(QCoreApplication::translate("FetMainForm_template", "All students have a pair of mutually exclusive time slots", nullptr));
 
 	dataTimeConstraintsActivityPreferredStartingTimeAction->setText(QCoreApplication::translate("FetMainForm_template", "An activity has a preferred starting time", nullptr));
 	dataTimeConstraintsStudentsSetMaxGapsPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max gaps per week for a students set", nullptr));
@@ -3067,6 +3082,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherMaxGapsPerWeekAction);
 		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursDailyAction);
 		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction);
+		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherPairOfMutuallyExclusiveTimeSlotsAction);
 		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherMaxSpanPerDayAction);
 		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction);
 
@@ -3090,6 +3106,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersMaxGapsPerWeekAction);
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursDailyAction);
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursDailyInIntervalAction);
+		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersPairOfMutuallyExclusiveTimeSlotsAction);
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersMaxSpanPerDayAction);
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction);
 
@@ -3112,6 +3129,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_students_set_1_time_constraints->addAction(dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction);
 		menuA_students_set_1_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursDailyAction);
 		menuA_students_set_1_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction);
+		menuA_students_set_1_time_constraints->addAction(dataTimeConstraintsStudentsSetPairOfMutuallyExclusiveTimeSlotsAction);
 		menuA_students_set_1_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxSpanPerDayAction);
 		menuA_students_set_1_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction);
 
@@ -3134,6 +3152,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_students_1_time_constraints->addAction(dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction);
 		menuAll_students_1_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursDailyAction);
 		menuAll_students_1_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction);
+		menuAll_students_1_time_constraints->addAction(dataTimeConstraintsStudentsPairOfMutuallyExclusiveTimeSlotsAction);
 		menuAll_students_1_time_constraints->addAction(dataTimeConstraintsStudentsMaxSpanPerDayAction);
 		menuAll_students_1_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction);
 
@@ -3375,6 +3394,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursDailyAction);
 		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction);
+		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherPairOfMutuallyExclusiveTimeSlotsAction);
 		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursDailyRealDaysAction);
 		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherMaxSpanPerDayAction);
 		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherMaxSpanPerRealDayAction);
@@ -3445,6 +3465,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursDailyAction);
 		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursDailyInIntervalAction);
+		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersPairOfMutuallyExclusiveTimeSlotsAction);
 		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursDailyRealDaysAction);
 		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersMaxSpanPerDayAction);
 		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersMaxSpanPerRealDayAction);
@@ -3505,6 +3526,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_students_set_2_time_constraints->addAction(dataTimeConstraintsStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHourAction);
 
 		menuA_students_set_2_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction);
+		menuA_students_set_2_time_constraints->addAction(dataTimeConstraintsStudentsSetPairOfMutuallyExclusiveTimeSlotsAction);
 		menuA_students_set_2_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursDailyRealDaysAction);
 		menuA_students_set_2_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxSpanPerRealDayAction);
 
@@ -3563,6 +3585,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_students_2_time_constraints->addAction(dataTimeConstraintsStudentsAfternoonsEarlyMaxBeginningsAtSecondHourAction);
 
 		menuAll_students_2_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction);
+		menuAll_students_2_time_constraints->addAction(dataTimeConstraintsStudentsPairOfMutuallyExclusiveTimeSlotsAction);
 		menuAll_students_2_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursDailyRealDaysAction);
 		menuAll_students_2_time_constraints->addAction(dataTimeConstraintsStudentsMaxSpanPerRealDayAction);
 
@@ -3794,6 +3817,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherMaxGapsPerWeekAction);
 		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursDailyAction);
 		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction);
+		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherPairOfMutuallyExclusiveTimeSlotsAction);
 		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherMaxSpanPerDayAction);
 		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction);
 
@@ -3817,6 +3841,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersMaxGapsPerWeekAction);
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursDailyAction);
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursDailyInIntervalAction);
+		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersPairOfMutuallyExclusiveTimeSlotsAction);
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersMaxSpanPerDayAction);
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction);
 
@@ -3839,6 +3864,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_students_set_1_time_constraints->addAction(dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction);
 		menuA_students_set_1_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursDailyAction);
 		menuA_students_set_1_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction);
+		menuA_students_set_1_time_constraints->addAction(dataTimeConstraintsStudentsSetPairOfMutuallyExclusiveTimeSlotsAction);
 		menuA_students_set_1_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxSpanPerDayAction);
 		menuA_students_set_1_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction);
 
@@ -3861,6 +3887,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_students_1_time_constraints->addAction(dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction);
 		menuAll_students_1_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursDailyAction);
 		menuAll_students_1_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction);
+		menuAll_students_1_time_constraints->addAction(dataTimeConstraintsStudentsPairOfMutuallyExclusiveTimeSlotsAction);
 		menuAll_students_1_time_constraints->addAction(dataTimeConstraintsStudentsMaxSpanPerDayAction);
 		menuAll_students_1_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction);
 
@@ -4059,6 +4086,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherMaxGapsPerWeekAction);
 		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursDailyAction);
 		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction);
+		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherPairOfMutuallyExclusiveTimeSlotsAction);
 		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherMaxSpanPerDayAction);
 		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction);
 
@@ -4082,6 +4110,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersMaxGapsPerWeekAction);
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursDailyAction);
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursDailyInIntervalAction);
+		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersPairOfMutuallyExclusiveTimeSlotsAction);
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersMaxSpanPerDayAction);
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction);
 
@@ -4104,6 +4133,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_students_set_1_time_constraints->addAction(dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction);
 		menuA_students_set_1_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursDailyAction);
 		menuA_students_set_1_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction);
+		menuA_students_set_1_time_constraints->addAction(dataTimeConstraintsStudentsSetPairOfMutuallyExclusiveTimeSlotsAction);
 		menuA_students_set_1_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxSpanPerDayAction);
 		menuA_students_set_1_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction);
 
@@ -4126,6 +4156,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_students_1_time_constraints->addAction(dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction);
 		menuAll_students_1_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursDailyAction);
 		menuAll_students_1_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction);
+		menuAll_students_1_time_constraints->addAction(dataTimeConstraintsStudentsPairOfMutuallyExclusiveTimeSlotsAction);
 		menuAll_students_1_time_constraints->addAction(dataTimeConstraintsStudentsMaxSpanPerDayAction);
 		menuAll_students_1_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction);
 
@@ -8474,6 +8505,74 @@ void FetMainForm::dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction_trigg
 	setParentAndOtherThings(&form, this);
 	form.exec();*/
 	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_MAX_HOURS_DAILY_IN_INTERVAL);
+}
+
+void FetMainForm::dataTimeConstraintsTeacherPairOfMutuallyExclusiveTimeSlotsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS);
+}
+
+void FetMainForm::dataTimeConstraintsTeachersPairOfMutuallyExclusiveTimeSlotsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS);
+}
+
+void FetMainForm::dataTimeConstraintsStudentsSetPairOfMutuallyExclusiveTimeSlotsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS);
+}
+
+void FetMainForm::dataTimeConstraintsStudentsPairOfMutuallyExclusiveTimeSlotsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMaxHoursDailyAction_triggered()

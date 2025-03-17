@@ -404,7 +404,7 @@ void ChooseFieldsDialog::chooseFieldsDialogUpdateLine3Text(){
 			textOK=false;
 	}
 	//by Liviu - always enabled
-	if(1 || textOK)
+	if(true || textOK)
 		pb->setDisabled(false);
 	else
 		pb->setDisabled(true);

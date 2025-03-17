@@ -44,8 +44,6 @@ class QWidget;
 
 const int MIN_HOURS_DAILY_INDEX_IN_ARRAY=1;
 
-extern bool haveStudentsMinHoursDailyRealDaysAllowEmptyDays;
-
 extern Matrix1D<QSet<int>> tmpPreferredRealRooms;
 extern Matrix1D<bool> tmpFoundNonEmpty;
 
@@ -470,6 +468,31 @@ extern Matrix1D<QList<int>> activitiesNotOverlappingActivities;
 extern Matrix1D<QList<double>> activitiesNotOverlappingPercentages;
 void computeActivitiesNotOverlapping();
 ////////END   activities not overlapping
+
+
+//BEGIN teacher(s) pair of mutually exclusive time slots
+extern bool haveTeachersPairOfMutualExclusiveTimeSlots;
+
+extern Matrix1D<QList<double>> teachersPairOfMutuallyExclusiveTimeSlotsPercentages;
+extern Matrix1D<QList<int>> teachersPairOfMutuallyExclusiveTimeSlotsDay1;
+extern Matrix1D<QList<int>> teachersPairOfMutuallyExclusiveTimeSlotsHour1;
+extern Matrix1D<QList<int>> teachersPairOfMutuallyExclusiveTimeSlotsDay2;
+extern Matrix1D<QList<int>> teachersPairOfMutuallyExclusiveTimeSlotsHour2;
+
+bool computeTeachersPairOfMutuallyExclusiveTimeSlots(QWidget* parent);
+//END   teacher(s) pair of mutually exclusive time slots
+
+//BEGIN students(s) pair of mutually exclusive time slots
+extern bool haveStudentsPairOfMutualExclusiveTimeSlots;
+
+extern Matrix1D<QList<double>> subgroupsPairOfMutuallyExclusiveTimeSlotsPercentages;
+extern Matrix1D<QList<int>> subgroupsPairOfMutuallyExclusiveTimeSlotsDay1;
+extern Matrix1D<QList<int>> subgroupsPairOfMutuallyExclusiveTimeSlotsHour1;
+extern Matrix1D<QList<int>> subgroupsPairOfMutuallyExclusiveTimeSlotsDay2;
+extern Matrix1D<QList<int>> subgroupsPairOfMutuallyExclusiveTimeSlotsHour2;
+
+bool computeSubgroupsPairOfMutuallyExclusiveTimeSlots(QWidget* parent);
+//END   students(s) pair of mutually exclusive time slots
 
 
 ////////BEGIN teacher(s) max hours daily

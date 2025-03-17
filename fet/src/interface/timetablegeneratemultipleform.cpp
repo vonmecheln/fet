@@ -954,12 +954,12 @@ void TimetableGenerateMultipleForm::stop()
 	else{
 		s+=QString("\n\n");
 		s+=TimetableGenerateMultipleForm::tr("From the interface you can access the last highest-stage timetable and on the disk"
-		 " there were saved all the highest-stage timetables (the highest number of activities reached is %1, reached in %2 timetables).")
+		 " there were saved all the highest-stage timetables (the highest number of scheduled activities is %1, reached in %2 timetables).")
 		 .arg(highestPlacedActivities).arg(highestStageSolutions.count());
 		
 		stringForDisk+=QString("\n\n");
 		stringForDisk+=TimetableGenerateMultipleForm::tr("On the disk there were saved all the highest-stage timetables (the highest number"
-		 " of activities reached is %1, reached in %2 timetables).").arg(highestPlacedActivities).arg(highestStageSolutions.count());
+		 " of scheduled activities is %1, reached in %2 timetables).").arg(highestPlacedActivities).arg(highestStageSolutions.count());
 
 		for(int i=0; i<highestStageSolutions.count(); i++){
 			Solution* sol=highestStageSolutions.at(i);
@@ -1131,12 +1131,12 @@ void TimetableGenerateMultipleForm::generationFinished()
 	else{
 		ms+=QString("\n\n");
 		ms+=TimetableGenerateMultipleForm::tr("From the interface you can access the last highest-stage timetable and on the disk"
-		 " there were saved all the highest-stage timetables (the highest number of activities reached is %1, reached in %2 timetables).")
+		 " there were saved all the highest-stage timetables (the highest number of scheduled activities is %1, reached in %2 timetables).")
 		 .arg(highestPlacedActivities).arg(highestStageSolutions.count());
 
 		stringForDisk+=QString("\n\n");
 		stringForDisk+=TimetableGenerateMultipleForm::tr("On the disk there were saved all the highest-stage timetables (the highest number"
-		 " of activities reached is %1, reached in %2 timetables).").arg(highestPlacedActivities).arg(highestStageSolutions.count());
+		 " of scheduled activities is %1, reached in %2 timetables).").arg(highestPlacedActivities).arg(highestStageSolutions.count());
 
 		for(int i=0; i<highestStageSolutions.count(); i++){
 			Solution* sol=highestStageSolutions.at(i);
