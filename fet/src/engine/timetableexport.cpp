@@ -8661,12 +8661,12 @@ QString TimetableExport::singleSubgroupsTimetableTimeVerticalHtml(int htmlLevel,
 			if(!PRINT_RTL || (PRINT_RTL && repeatNames)){
 				if(gt.rules.mode!=MORNINGS_AFTERNOONS){
 					if(hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 				else{
 					if(day%2==0 && hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 
@@ -8717,14 +8717,14 @@ QString TimetableExport::singleSubgroupsTimetableTimeVerticalHtml(int htmlLevel,
 					tmpString+=getHourString(hour, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 
 					if(hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 				else{
 					tmpString+=getRealHourString((day%2)*gt.rules.nHoursPerDay+hour, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 
 					if(day%2==0 && hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 			}
@@ -9034,7 +9034,7 @@ QString TimetableExport::singleSubgroupsTimetableTimeVerticalDailyHtml(int htmlL
 			tmpString+="          <th class=\"xAxis\">";
 		else
 			tmpString+="          <th>";
-		tmpString+=getStudentsSetString(gt.rules.internalSubgroupsList[realSubgroup], SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_CODES)+"</th>";
+		tmpString+=getStudentsSetString(gt.rules.internalSubgroupsList[realSubgroup], SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_CODES)+"</th>\n";
 	}
 
 	if(PRINT_RTL || (!PRINT_RTL && repeatNames)){
@@ -9054,13 +9054,13 @@ QString TimetableExport::singleSubgroupsTimetableTimeVerticalDailyHtml(int htmlL
 		if(!PRINT_RTL || (PRINT_RTL && repeatNames)){
 			if(gt.rules.mode!=MORNINGS_AFTERNOONS){
 				if(hour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else
 					tmpString+="          <!-- span -->\n";
 			}
 			else{
 				if(realHour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else
 					tmpString+="          <!-- span -->\n";
 			}
@@ -9112,14 +9112,14 @@ QString TimetableExport::singleSubgroupsTimetableTimeVerticalDailyHtml(int htmlL
 				tmpString+=getHourString(hour, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 				
 				if(hour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else tmpString+="          <!-- span -->\n";
 			}
 			else{
 				tmpString+=getRealHourString(realHour, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 				
 				if(realHour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else tmpString+="          <!-- span -->\n";
 			}
 		}
@@ -9681,7 +9681,7 @@ QString TimetableExport::singleGroupsTimetableTimeVerticalHtml(int htmlLevel, in
 			tmpString+="          <th class=\"xAxis\">";
 		else
 			tmpString+="          <th>";
-		tmpString+=getStudentsSetString(gt.rules.internalGroupsList.at(group), SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_CODES)+"</th>";
+		tmpString+=getStudentsSetString(gt.rules.internalGroupsList.at(group), SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_CODES)+"</th>\n";
 	}
 
 	if(PRINT_RTL || (!PRINT_RTL && repeatNames)){
@@ -9700,12 +9700,12 @@ QString TimetableExport::singleGroupsTimetableTimeVerticalHtml(int htmlLevel, in
 			if(!PRINT_RTL || (PRINT_RTL && repeatNames)){
 				if(gt.rules.mode!=MORNINGS_AFTERNOONS){
 					if(hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 				else{
 					if(day%2==0 && hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 
@@ -9769,14 +9769,14 @@ QString TimetableExport::singleGroupsTimetableTimeVerticalHtml(int htmlLevel, in
 					tmpString+=getHourString(hour, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 
 					if(hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 				else{
 					tmpString+=getRealHourString((day%2)*gt.rules.nHoursPerDay+hour, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 
 					if(day%2==0 && hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 			}
@@ -10090,7 +10090,7 @@ QString TimetableExport::singleGroupsTimetableTimeVerticalDailyHtml(int htmlLeve
 			tmpString+="          <th class=\"xAxis\">";
 		else
 			tmpString+="          <th>";
-		tmpString+=getStudentsSetString(gt.rules.internalGroupsList.at(group), SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_CODES)+"</th>";
+		tmpString+=getStudentsSetString(gt.rules.internalGroupsList.at(group), SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_CODES)+"</th>\n";
 	}
 	if(PRINT_RTL || (!PRINT_RTL && repeatNames)){
 		tmpString+="          <td colspan=\"2\"></td>\n";
@@ -10109,13 +10109,13 @@ QString TimetableExport::singleGroupsTimetableTimeVerticalDailyHtml(int htmlLeve
 		if(!PRINT_RTL || (PRINT_RTL && repeatNames)){
 			if(gt.rules.mode!=MORNINGS_AFTERNOONS){
 				if(hour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else
 					tmpString+="          <!-- span -->\n";
 			}
 			else{
 				if(realHour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else
 					tmpString+="          <!-- span -->\n";
 			}
@@ -10181,14 +10181,14 @@ QString TimetableExport::singleGroupsTimetableTimeVerticalDailyHtml(int htmlLeve
 				tmpString+=getHourString(hour, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 				
 				if(hour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else tmpString+="          <!-- span -->\n";
 			}
 			else{
 				tmpString+=getRealHourString(realHour, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 				
 				if(realHour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else tmpString+="          <!-- span -->\n";
 			}
 		}
@@ -10763,7 +10763,7 @@ QString TimetableExport::singleYearsTimetableTimeVerticalHtml(int htmlLevel, int
 			tmpString+="          <th class=\"xAxis\">";
 		else
 			tmpString+="          <th>";
-		tmpString+=getStudentsSetString(gt.rules.augmentedYearsList.at(year), SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_CODES)+"</th>";
+		tmpString+=getStudentsSetString(gt.rules.augmentedYearsList.at(year), SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_CODES)+"</th>\n";
 	}
 	
 	if(PRINT_RTL || (!PRINT_RTL && repeatNames)){
@@ -10782,12 +10782,12 @@ QString TimetableExport::singleYearsTimetableTimeVerticalHtml(int htmlLevel, int
 			if(!PRINT_RTL || (PRINT_RTL && repeatNames)){
 				if(gt.rules.mode!=MORNINGS_AFTERNOONS){
 					if(hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 				else{
 					if(day%2==0 && hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 
@@ -10855,14 +10855,14 @@ QString TimetableExport::singleYearsTimetableTimeVerticalHtml(int htmlLevel, int
 					tmpString+=getHourString(hour, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 
 					if(hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 				else{
 					tmpString+=getRealHourString((day%2)*gt.rules.nHoursPerDay+hour, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 
 					if(day%2==0 && hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 			}
@@ -11180,7 +11180,7 @@ QString TimetableExport::singleYearsTimetableTimeVerticalDailyHtml(int htmlLevel
 			tmpString+="          <th class=\"xAxis\">";
 		else
 			tmpString+="          <th>";
-		tmpString+=getStudentsSetString(gt.rules.augmentedYearsList.at(year), SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_CODES)+"</th>";
+		tmpString+=getStudentsSetString(gt.rules.augmentedYearsList.at(year), SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_CODES)+"</th>\n";
 	}
 	if(PRINT_RTL || (!PRINT_RTL && repeatNames)){
 		tmpString+="          <td colspan=\"2\"></td>\n";
@@ -11201,13 +11201,13 @@ QString TimetableExport::singleYearsTimetableTimeVerticalDailyHtml(int htmlLevel
 		if(!PRINT_RTL || (PRINT_RTL && repeatNames)){
 			if(gt.rules.mode!=MORNINGS_AFTERNOONS){
 				if(hour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else
 					tmpString+="          <!-- span -->\n";
 			}
 			else{
 				if(realHour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else
 					tmpString+="          <!-- span -->\n";
 			}
@@ -11277,14 +11277,14 @@ QString TimetableExport::singleYearsTimetableTimeVerticalDailyHtml(int htmlLevel
 				tmpString+=getHourString(hour, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 				
 				if(hour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else tmpString+="          <!-- span -->\n";
 			}
 			else{
 				tmpString+=getRealHourString(realHour, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 				
 				if(realHour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else tmpString+="          <!-- span -->\n";
 			}
 		}
@@ -11487,7 +11487,7 @@ QString TimetableExport::singleAllActivitiesTimetableDaysHorizontalHtml(int html
 		tmpString+="    <table align=\"center\" border=\"1\">\n";
 	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"<br />\n"+tr("All Activities")+"</caption>\n";
 	tmpString+="      <thead>\n";
-	/*tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(gt.rules.mode!=MORNINGS_AFTERNOONS ? gt.rules.nDaysPerWeek : gt.rules.nRealDaysPerWeek)+"\">"+tr("All Activities")+"</th>";
+	/*tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(gt.rules.mode!=MORNINGS_AFTERNOONS ? gt.rules.nDaysPerWeek : gt.rules.nRealDaysPerWeek)+"\">"+tr("All Activities")+"</th>\n";
 	if(repeatNames){
 		tmpString+="<td rowspan=\"2\"></td>";
 	}
@@ -11625,7 +11625,7 @@ QString TimetableExport::singleAllActivitiesTimetableDaysVerticalHtml(int htmlLe
 		tmpString+="    <table align=\"center\" border=\"1\">\n";
 	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"<br />\n"+tr("All Activities")+"</caption>\n";
 	tmpString+="      <thead>\n";
-	/*tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(gt.rules.mode!=MORNINGS_AFTERNOONS ? gt.rules.nHoursPerDay : gt.rules.nRealHoursPerDay)+"\">"+tr("All Activities")+"</th>";
+	/*tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(gt.rules.mode!=MORNINGS_AFTERNOONS ? gt.rules.nHoursPerDay : gt.rules.nRealHoursPerDay)+"\">"+tr("All Activities")+"</th>\n";
 	if(repeatNames){
 		tmpString+="<td rowspan=\"2\"></td>";
 	}
@@ -11767,7 +11767,7 @@ QString TimetableExport::singleAllActivitiesTimetableTimeVerticalHtml(int htmlLe
 	else
 		tmpString+="          <th>";
 	tmpString+=tr("All Activities");
-	tmpString+="</th>";
+	tmpString+="</th>\n";
 
 	if(PRINT_RTL || (!PRINT_RTL && repeatNames)){
 		tmpString+="          <td colspan=\"2\"></td>\n";
@@ -11785,12 +11785,12 @@ QString TimetableExport::singleAllActivitiesTimetableTimeVerticalHtml(int htmlLe
 			if(!PRINT_RTL || (PRINT_RTL && repeatNames)){
 				if(gt.rules.mode!=MORNINGS_AFTERNOONS){
 					if(hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 				else{
 					if(day%2==0 && hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 
@@ -11830,14 +11830,14 @@ QString TimetableExport::singleAllActivitiesTimetableTimeVerticalHtml(int htmlLe
 					tmpString+=getHourString(hour, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 
 					if(hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 				else{
 					tmpString+=getRealHourString((day%2)*gt.rules.nHoursPerDay+hour, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 
 					if(day%2==0 && hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 			}
@@ -12104,7 +12104,7 @@ QString TimetableExport::singleAllActivitiesTimetableTimeVerticalDailyHtml(int h
 	else
 		tmpString+="          <th>";
 	tmpString+=tr("All Activities");
-	tmpString+="</th>";
+	tmpString+="</th>\n";
 
 	if(PRINT_RTL || (!PRINT_RTL && repeatNames)){
 		tmpString+="          <td colspan=\"2\"></td>\n";
@@ -12125,13 +12125,13 @@ QString TimetableExport::singleAllActivitiesTimetableTimeVerticalDailyHtml(int h
 		if(!PRINT_RTL || (PRINT_RTL && repeatNames)){
 			if(gt.rules.mode!=MORNINGS_AFTERNOONS){
 				if(hour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else
 					tmpString+="          <!-- span -->\n";
 			}
 			else{
 				if(realHour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else
 					tmpString+="          <!-- span -->\n";
 			}
@@ -12173,14 +12173,14 @@ QString TimetableExport::singleAllActivitiesTimetableTimeVerticalDailyHtml(int h
 				tmpString+=getHourString(hour, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 				
 				if(hour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else tmpString+="          <!-- span -->\n";
 			}
 			else{
 				tmpString+=getRealHourString(realHour, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 				
 				if(realHour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else tmpString+="          <!-- span -->\n";
 			}
 		}
@@ -12685,7 +12685,7 @@ QString TimetableExport::singleTeachersTimetableTimeVerticalHtml(int htmlLevel, 
 			tmpString+="          <th class=\"xAxis\">";
 		else
 			tmpString+="          <th>";
-		tmpString+=getTeacherString(gt.rules.internalTeachersList[teacher], SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_LONG_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_CODES)+"</th>";
+		tmpString+=getTeacherString(gt.rules.internalTeachersList[teacher], SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_LONG_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_CODES)+"</th>\n";
 	}
 
 	if(PRINT_RTL || (!PRINT_RTL && repeatNames)){
@@ -12704,12 +12704,12 @@ QString TimetableExport::singleTeachersTimetableTimeVerticalHtml(int htmlLevel, 
 			if(!PRINT_RTL || (PRINT_RTL && repeatNames)){
 				if(gt.rules.mode!=MORNINGS_AFTERNOONS){
 					if(hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 				else{
 					if(day%2==0 && hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 
@@ -12759,14 +12759,14 @@ QString TimetableExport::singleTeachersTimetableTimeVerticalHtml(int htmlLevel, 
 					tmpString+=getHourString(hour, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 
 					if(hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 				else{
 					tmpString+=getRealHourString((day%2)*gt.rules.nHoursPerDay+hour, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 
 					if(day%2==0 && hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 			}
@@ -13063,7 +13063,7 @@ QString TimetableExport::singleTeachersTimetableTimeVerticalDailyHtml(int htmlLe
 			tmpString+="          <th class=\"xAxis\">";
 		else
 			tmpString+="          <th>";
-		tmpString+=getTeacherString(gt.rules.internalTeachersList[teacher], SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_LONG_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_CODES)+"</th>";
+		tmpString+=getTeacherString(gt.rules.internalTeachersList[teacher], SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_LONG_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_CODES)+"</th>\n";
 	}
 	if(PRINT_RTL || (!PRINT_RTL && repeatNames)){
 		tmpString+="          <td colspan=\"2\"></td>\n";
@@ -13083,13 +13083,13 @@ QString TimetableExport::singleTeachersTimetableTimeVerticalDailyHtml(int htmlLe
 		if(!PRINT_RTL || (PRINT_RTL && repeatNames)){
 			if(gt.rules.mode!=MORNINGS_AFTERNOONS){
 				if(hour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else
 					tmpString+="          <!-- span -->\n";
 			}
 			else{
 				if(realHour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else
 					tmpString+="          <!-- span -->\n";
 			}
@@ -13141,14 +13141,14 @@ QString TimetableExport::singleTeachersTimetableTimeVerticalDailyHtml(int htmlLe
 				tmpString+=getHourString(hour, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 				
 				if(hour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else tmpString+="          <!-- span -->\n";
 			}
 			else{
 				tmpString+=getRealHourString(realHour, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 				
 				if(realHour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else tmpString+="          <!-- span -->\n";
 			}
 		}
@@ -13682,7 +13682,7 @@ QString TimetableExport::singleBuildingsTimetableTimeVerticalHtml(int htmlLevel,
 			tmpString+="          <th class=\"xAxis\">";
 		else
 			tmpString+="          <th>";
-		tmpString+=protect2(gt.rules.internalBuildingsList[building]->name)+"</th>";
+		tmpString+=protect2(gt.rules.internalBuildingsList[building]->name)+"</th>\n";
 	}
 
 	if(PRINT_RTL || (!PRINT_RTL && repeatNames)){
@@ -13701,12 +13701,12 @@ QString TimetableExport::singleBuildingsTimetableTimeVerticalHtml(int htmlLevel,
 			if(!PRINT_RTL || (PRINT_RTL && repeatNames)){
 				if(gt.rules.mode!=MORNINGS_AFTERNOONS){
 					if(hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 				else{
 					if(day%2==0 && hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 
@@ -13760,14 +13760,14 @@ QString TimetableExport::singleBuildingsTimetableTimeVerticalHtml(int htmlLevel,
 					tmpString+=getHourString(hour, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 
 					if(hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 				else{
 					tmpString+=getRealHourString((day%2)*gt.rules.nHoursPerDay+hour, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 
 					if(day%2==0 && hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 			}
@@ -14068,7 +14068,7 @@ QString TimetableExport::singleBuildingsTimetableTimeVerticalDailyHtml(int htmlL
 			tmpString+="          <th class=\"xAxis\">";
 		else
 			tmpString+="          <th>";
-		tmpString+=protect2(gt.rules.internalBuildingsList[building]->name)+"</th>";
+		tmpString+=protect2(gt.rules.internalBuildingsList[building]->name)+"</th>\n";
 	}
 
 	if(PRINT_RTL || (!PRINT_RTL && repeatNames)){
@@ -14090,13 +14090,13 @@ QString TimetableExport::singleBuildingsTimetableTimeVerticalDailyHtml(int htmlL
 		if(!PRINT_RTL || (PRINT_RTL && repeatNames)){
 			if(gt.rules.mode!=MORNINGS_AFTERNOONS){
 				if(hour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else
 					tmpString+="          <!-- span -->\n";
 			}
 			else{
 				if(realHour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else
 					tmpString+="          <!-- span -->\n";
 			}
@@ -14152,14 +14152,14 @@ QString TimetableExport::singleBuildingsTimetableTimeVerticalDailyHtml(int htmlL
 				tmpString+=getHourString(hour, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 				
 				if(hour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else tmpString+="          <!-- span -->\n";
 			}
 			else{
 				tmpString+=getRealHourString(realHour, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 				
 				if(realHour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else tmpString+="          <!-- span -->\n";
 			}
 		}
@@ -14712,7 +14712,7 @@ QString TimetableExport::singleRoomsTimetableTimeVerticalHtml(int htmlLevel, int
 			tmpString+="          <th class=\"xAxis\">";
 		else
 			tmpString+="          <th>";
-		tmpString+=getRoomString(gt.rules.internalRoomsList[room], SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_LONG_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_CODES)+"</th>";
+		tmpString+=getRoomString(gt.rules.internalRoomsList[room], SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_LONG_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_CODES)+"</th>\n";
 	}
 
 	if(PRINT_RTL || (!PRINT_RTL && repeatNames)){
@@ -14731,12 +14731,12 @@ QString TimetableExport::singleRoomsTimetableTimeVerticalHtml(int htmlLevel, int
 			if(!PRINT_RTL || (PRINT_RTL && repeatNames)){
 				if(gt.rules.mode!=MORNINGS_AFTERNOONS){
 					if(hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 				else{
 					if(day%2==0 && hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 
@@ -14798,14 +14798,14 @@ QString TimetableExport::singleRoomsTimetableTimeVerticalHtml(int htmlLevel, int
 					tmpString+=getHourString(hour, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 
 					if(hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 				else{
 					tmpString+=getRealHourString((day%2)*gt.rules.nHoursPerDay+hour, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 
 					if(day%2==0 && hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 			}
@@ -15115,7 +15115,7 @@ QString TimetableExport::singleRoomsTimetableTimeVerticalDailyHtml(int htmlLevel
 			tmpString+="          <th class=\"xAxis\">";
 		else
 			tmpString+="          <th>";
-		tmpString+=getRoomString(gt.rules.internalRoomsList[room], SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_LONG_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_CODES)+"</th>";
+		tmpString+=getRoomString(gt.rules.internalRoomsList[room], SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_LONG_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_CODES)+"</th>\n";
 	}
 
 	if(PRINT_RTL || (!PRINT_RTL && repeatNames)){
@@ -15137,13 +15137,13 @@ QString TimetableExport::singleRoomsTimetableTimeVerticalDailyHtml(int htmlLevel
 		if(!PRINT_RTL || (PRINT_RTL && repeatNames)){
 			if(gt.rules.mode!=MORNINGS_AFTERNOONS){
 				if(hour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else
 					tmpString+="          <!-- span -->\n";
 			}
 			else{
 				if(realHour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else
 					tmpString+="          <!-- span -->\n";
 			}
@@ -15207,14 +15207,14 @@ QString TimetableExport::singleRoomsTimetableTimeVerticalDailyHtml(int htmlLevel
 				tmpString+=getHourString(hour, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 				
 				if(hour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else tmpString+="          <!-- span -->\n";
 			}
 			else{
 				tmpString+=getRealHourString(realHour, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 				
 				if(realHour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else tmpString+="          <!-- span -->\n";
 			}
 		}
@@ -15762,7 +15762,7 @@ QString TimetableExport::singleSubjectsTimetableTimeVerticalHtml(int htmlLevel, 
 			tmpString+="          <th class=\"xAxis\">";
 		else
 			tmpString+="          <th>";
-		tmpString+=getSubjectString(gt.rules.internalSubjectsList[subject], SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_CODES)+"</th>";
+		tmpString+=getSubjectString(gt.rules.internalSubjectsList[subject], SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_CODES)+"</th>\n";
 	}
 
 	if(PRINT_RTL || (!PRINT_RTL && repeatNames)){
@@ -15782,12 +15782,12 @@ QString TimetableExport::singleSubjectsTimetableTimeVerticalHtml(int htmlLevel, 
 			if(!PRINT_RTL || (PRINT_RTL && repeatNames)){
 				if(gt.rules.mode!=MORNINGS_AFTERNOONS){
 					if(hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 				else{
 					if(day%2==0 && hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 
@@ -15854,14 +15854,14 @@ QString TimetableExport::singleSubjectsTimetableTimeVerticalHtml(int htmlLevel, 
 					tmpString+=getHourString(hour, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 
 					if(hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 				else{
 					tmpString+=getRealHourString((day%2)*gt.rules.nHoursPerDay+hour, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 
 					if(day%2==0 && hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 			}
@@ -16029,9 +16029,9 @@ QString TimetableExport::singleSubjectsTimetableTimeHorizontalHtml(int htmlLevel
 		tmpString+="        <tr>\n";
 		if(!PRINT_RTL || (PRINT_RTL && repeatNames)){
 			if(htmlLevel>=2)
-				tmpString+="        <th class=\"yAxis\">"+getSubjectString(gt.rules.internalSubjectsList[subject], SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_CODES)+"</th>\n";
+				tmpString+="          <th class=\"yAxis\">"+getSubjectString(gt.rules.internalSubjectsList[subject], SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_CODES)+"</th>\n";
 			else
-				tmpString+="        <th>"+getSubjectString(gt.rules.internalSubjectsList[subject], SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_CODES)+"</th>\n";
+				tmpString+="          <th>"+getSubjectString(gt.rules.internalSubjectsList[subject], SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_CODES)+"</th>\n";
 		}
 
 		///////by Liviu Lalescu
@@ -16116,9 +16116,9 @@ QString TimetableExport::singleSubjectsTimetableTimeHorizontalHtml(int htmlLevel
 		}
 		if((!PRINT_RTL && repeatNames) || PRINT_RTL){
 			if(htmlLevel>=2)
-				tmpString+="        <th class=\"yAxis\">"+getSubjectString(gt.rules.internalSubjectsList[subject], SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_CODES)+"</th>\n";
+				tmpString+="          <th class=\"yAxis\">"+getSubjectString(gt.rules.internalSubjectsList[subject], SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_CODES)+"</th>\n";
 			else
-				tmpString+="        <th>"+getSubjectString(gt.rules.internalSubjectsList[subject], SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_CODES)+"</th>\n";
+				tmpString+="          <th>"+getSubjectString(gt.rules.internalSubjectsList[subject], SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_CODES)+"</th>\n";
 		}
 		tmpString+="        </tr>\n";
 	}
@@ -16186,7 +16186,7 @@ QString TimetableExport::singleSubjectsTimetableTimeVerticalDailyHtml(int htmlLe
 			tmpString+="          <th class=\"xAxis\">";
 		else
 			tmpString+="          <th>";
-		tmpString+=getSubjectString(gt.rules.internalSubjectsList[subject], SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_CODES)+"</th>";
+		tmpString+=getSubjectString(gt.rules.internalSubjectsList[subject], SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_CODES)+"</th>\n";
 	}
 
 	if(PRINT_RTL || (!PRINT_RTL && repeatNames)){
@@ -16207,13 +16207,13 @@ QString TimetableExport::singleSubjectsTimetableTimeVerticalDailyHtml(int htmlLe
 		if(!PRINT_RTL || (PRINT_RTL && repeatNames)){
 			if(gt.rules.mode!=MORNINGS_AFTERNOONS){
 				if(hour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else
 					tmpString+="          <!-- span -->\n";
 			}
 			else{
 				if(realHour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else
 					tmpString+="          <!-- span -->\n";
 			}
@@ -16282,14 +16282,14 @@ QString TimetableExport::singleSubjectsTimetableTimeVerticalDailyHtml(int htmlLe
 				tmpString+=getHourString(hour, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 				
 				if(hour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else tmpString+="          <!-- span -->\n";
 			}
 			else{
 				tmpString+=getRealHourString(realHour, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 				
 				if(realHour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else tmpString+="          <!-- span -->\n";
 			}
 		}
@@ -16393,9 +16393,9 @@ QString TimetableExport::singleSubjectsTimetableTimeHorizontalDailyHtml(int html
 		tmpString+="        <tr>\n";
 		if(!PRINT_RTL || (PRINT_RTL && repeatNames)){
 			if(htmlLevel>=2)
-				tmpString+="        <th class=\"yAxis\">"+getSubjectString(gt.rules.internalSubjectsList[subject], SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_CODES)+"</th>\n";
+				tmpString+="          <th class=\"yAxis\">"+getSubjectString(gt.rules.internalSubjectsList[subject], SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_CODES)+"</th>\n";
 			else
-				tmpString+="        <th>"+getSubjectString(gt.rules.internalSubjectsList[subject], SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_CODES)+"</th>\n";
+				tmpString+="          <th>"+getSubjectString(gt.rules.internalSubjectsList[subject], SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_CODES)+"</th>\n";
 		}
 		
 		///////by Liviu Lalescu
@@ -16464,9 +16464,9 @@ QString TimetableExport::singleSubjectsTimetableTimeHorizontalDailyHtml(int html
 		}
 		if((!PRINT_RTL && repeatNames) || PRINT_RTL){
 			if(htmlLevel>=2)
-				tmpString+="        <th class=\"yAxis\">"+getSubjectString(gt.rules.internalSubjectsList[subject], SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_CODES)+"</th>\n";
+				tmpString+="          <th class=\"yAxis\">"+getSubjectString(gt.rules.internalSubjectsList[subject], SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_CODES)+"</th>\n";
 			else
-				tmpString+="        <th>"+getSubjectString(gt.rules.internalSubjectsList[subject], SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_CODES)+"</th>\n";
+				tmpString+="          <th>"+getSubjectString(gt.rules.internalSubjectsList[subject], SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_CODES)+"</th>\n";
 		}
 		tmpString+="        </tr>\n";
 	}
@@ -16857,7 +16857,7 @@ QString TimetableExport::singleActivityTagsTimetableTimeVerticalHtml(int htmlLev
 			tmpString+="          <th class=\"xAxis\">";
 		else
 			tmpString+="          <th>";
-		tmpString+=getActivityTagString(gt.rules.internalActivityTagsList[activityTag], SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES)+"</th>";
+		tmpString+=getActivityTagString(gt.rules.internalActivityTagsList[activityTag], SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES)+"</th>\n";
 	}
 
 	if(PRINT_RTL || (!PRINT_RTL && repeatNames)){
@@ -16877,12 +16877,12 @@ QString TimetableExport::singleActivityTagsTimetableTimeVerticalHtml(int htmlLev
 			if(!PRINT_RTL || (PRINT_RTL && repeatNames)){
 				if(gt.rules.mode!=MORNINGS_AFTERNOONS){
 					if(hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 				else{
 					if(day%2==0 && hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 
@@ -16928,14 +16928,14 @@ QString TimetableExport::singleActivityTagsTimetableTimeVerticalHtml(int htmlLev
 					tmpString+=getHourString(hour, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 
 					if(hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 				else{
 					tmpString+=getRealHourString((day%2)*gt.rules.nHoursPerDay+hour, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 
 					if(day%2==0 && hour==0)
-						tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+						tmpString+="          <th rowspan=\"" +QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(day/2, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 					else tmpString+="          <!-- span -->\n";
 				}
 			}
@@ -17105,9 +17105,9 @@ QString TimetableExport::singleActivityTagsTimetableTimeHorizontalHtml(int htmlL
 		tmpString+="        <tr>\n";
 		if(!PRINT_RTL || (PRINT_RTL && repeatNames)){
 			if(htmlLevel>=2)
-				tmpString+="        <th class=\"yAxis\">"+getActivityTagString(gt.rules.internalActivityTagsList[activityTag], SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES)+"</th>\n";
+				tmpString+="          <th class=\"yAxis\">"+getActivityTagString(gt.rules.internalActivityTagsList[activityTag], SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES)+"</th>\n";
 			else
-				tmpString+="        <th>"+getActivityTagString(gt.rules.internalActivityTagsList[activityTag], SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES)+"</th>\n";
+				tmpString+="          <th>"+getActivityTagString(gt.rules.internalActivityTagsList[activityTag], SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES)+"</th>\n";
 		}
 
 		///////by Liviu Lalescu
@@ -17170,9 +17170,9 @@ QString TimetableExport::singleActivityTagsTimetableTimeHorizontalHtml(int htmlL
 		}
 		if((!PRINT_RTL && repeatNames) || PRINT_RTL){
 			if(htmlLevel>=2)
-				tmpString+="        <th class=\"yAxis\">"+getActivityTagString(gt.rules.internalActivityTagsList[activityTag], SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES)+"</th>\n";
+				tmpString+="          <th class=\"yAxis\">"+getActivityTagString(gt.rules.internalActivityTagsList[activityTag], SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES)+"</th>\n";
 			else
-				tmpString+="        <th>"+getActivityTagString(gt.rules.internalActivityTagsList[activityTag], SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES)+"</th>\n";
+				tmpString+="          <th>"+getActivityTagString(gt.rules.internalActivityTagsList[activityTag], SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES)+"</th>\n";
 		}
 		tmpString+="        </tr>\n";
 	}
@@ -17242,7 +17242,7 @@ QString TimetableExport::singleActivityTagsTimetableTimeVerticalDailyHtml(int ht
 			tmpString+="          <th class=\"xAxis\">";
 		else
 			tmpString+="          <th>";
-		tmpString+=getActivityTagString(gt.rules.internalActivityTagsList[activityTag], SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES)+"</th>";
+		tmpString+=getActivityTagString(gt.rules.internalActivityTagsList[activityTag], SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES)+"</th>\n";
 	}
 
 	if(PRINT_RTL || (!PRINT_RTL && repeatNames)){
@@ -17262,13 +17262,13 @@ QString TimetableExport::singleActivityTagsTimetableTimeVerticalDailyHtml(int ht
 		if(!PRINT_RTL || (PRINT_RTL && repeatNames)){
 			if(gt.rules.mode!=MORNINGS_AFTERNOONS){
 				if(hour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else
 					tmpString+="          <!-- span -->\n";
 			}
 			else{
 				if(realHour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else
 					tmpString+="          <!-- span -->\n";
 			}
@@ -17316,14 +17316,14 @@ QString TimetableExport::singleActivityTagsTimetableTimeVerticalDailyHtml(int ht
 				tmpString+=getHourString(hour, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 				
 				if(hour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+getVerticalDayString(day, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else tmpString+="          <!-- span -->\n";
 			}
 			else{
 				tmpString+=getRealHourString(realHour, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_HOURS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_HOURS_LONG_NAMES)+"</th>\n";
 				
 				if(realHour==0)
-					tmpString+="        <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
+					tmpString+="          <th rowspan=\""+QString::number(gt.rules.nRealHoursPerDay)+"\">"+getVerticalRealDayString(realDay, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_LONG_NAMES)+"</th>\n";
 				else tmpString+="          <!-- span -->\n";
 			}
 		}
@@ -17428,9 +17428,9 @@ QString TimetableExport::singleActivityTagsTimetableTimeHorizontalDailyHtml(int 
 		tmpString+="        <tr>\n";
 		if(!PRINT_RTL || (PRINT_RTL && repeatNames)){
 			if(htmlLevel>=2)
-				tmpString+="        <th class=\"yAxis\">"+getActivityTagString(gt.rules.internalActivityTagsList[activityTag], SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES)+"</th>\n";
+				tmpString+="          <th class=\"yAxis\">"+getActivityTagString(gt.rules.internalActivityTagsList[activityTag], SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES)+"</th>\n";
 			else
-				tmpString+="        <th>"+getActivityTagString(gt.rules.internalActivityTagsList[activityTag], SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES)+"</th>\n";
+				tmpString+="          <th>"+getActivityTagString(gt.rules.internalActivityTagsList[activityTag], SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES)+"</th>\n";
 		}
 
 		///////by Liviu Lalescu
@@ -17477,9 +17477,9 @@ QString TimetableExport::singleActivityTagsTimetableTimeHorizontalDailyHtml(int 
 		}
 		if((!PRINT_RTL && repeatNames) || PRINT_RTL){
 			if(htmlLevel>=2)
-				tmpString+="        <th class=\"yAxis\">"+getActivityTagString(gt.rules.internalActivityTagsList[activityTag], SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES)+"</th>\n";
+				tmpString+="          <th class=\"yAxis\">"+getActivityTagString(gt.rules.internalActivityTagsList[activityTag], SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES)+"</th>\n";
 			else
-				tmpString+="        <th>"+getActivityTagString(gt.rules.internalActivityTagsList[activityTag], SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES)+"</th>\n";
+				tmpString+="          <th>"+getActivityTagString(gt.rules.internalActivityTagsList[activityTag], SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES)+"</th>\n";
 		}
 		tmpString+="        </tr>\n";
 	}
