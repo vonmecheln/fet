@@ -1041,6 +1041,11 @@ inline bool operator<(const LocaleString& lhs, const LocaleString& rhs)
 extern bool BEEP_AT_END_OF_GENERATION;
 extern bool ENABLE_COMMAND_AT_END_OF_GENERATION;
 extern QString commandAtEndOfGeneration;
+
+extern bool BEEP_AT_END_OF_GENERATION_EACH_TIMETABLE;
+extern bool ENABLE_COMMAND_AT_END_OF_GENERATION_EACH_TIMETABLE;
+extern QString commandAtEndOfGenerationEachTimetable;
+
 //extern bool DETACHED_NOTIFICATION;
 //extern int terminateCommandAfterSeconds;
 //extern int killCommandAfterSeconds;

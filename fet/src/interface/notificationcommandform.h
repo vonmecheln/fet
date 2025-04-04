@@ -34,8 +34,10 @@ public slots:
 	void help();
 	
 	void browse();
+	void browseEachTimetable();
 	
 	void externalCommandCheckBoxToggled();
+	void externalCommandEachTimetableCheckBoxToggled();
 	//void detachedCheckBoxToggled();
 };
 

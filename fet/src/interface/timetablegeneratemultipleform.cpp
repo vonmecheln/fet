@@ -720,6 +720,23 @@ void TimetableGenerateMultipleForm::timetableGenerated(int nThread, int timetabl
 				conflictsString+=t+"\n";
 			
 			updateAllTimetableViewDialogs();
+
+			if(BEEP_AT_END_OF_GENERATION_EACH_TIMETABLE)
+				QApplication::beep();
+
+			if(ENABLE_COMMAND_AT_END_OF_GENERATION_EACH_TIMETABLE){
+				QString s=commandAtEndOfGenerationEachTimetable.simplified();
+				if(!s.isEmpty()){
+					QStringList sl=s.split(" ");
+					assert(sl.count()>=1);
+					QString command=sl.at(0);
+					QStringList arguments;
+					for(int i=1; i<sl.count(); i++)
+						arguments.append(sl.at(i));
+					
+					QProcess::startDetached(command, arguments);
+				}
+			}
 		}
 	}
 

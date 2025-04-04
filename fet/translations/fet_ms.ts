@@ -3856,542 +3856,542 @@ Number of subactivities in each larger split activity=%6</source>
         <translation type="unfinished">Tambah kekangan</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2270"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2295"/>
         <source>Add constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2271"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2303"/>
         <source>Close</source>
         <translation type="unfinished">Tutup</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2274"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2306"/>
         <source>OK</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2276"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2308"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2304"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2336"/>
         <source>Weight percentage (allowed: 0.0%-100.0%, necessary 100% if list nonempty)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2307"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2339"/>
         <source>Weight percentage (allowed: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2310"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2342"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2419"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2451"/>
         <source>End of day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2424"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2431"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2456"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2463"/>
         <source>Morning %1</source>
         <comment>Hour %1 of the morning</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2426"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2433"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2458"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2465"/>
         <source>Afternoon %1</source>
         <comment>Hour %1 of the afternoon</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2434"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2466"/>
         <source>End of real day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3510"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3520"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3526"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3535"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3545"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3555"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3565"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3575"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3605"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3619"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3633"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3656"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3681"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3689"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3722"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3755"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3788"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3827"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3962"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3978"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3983"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3996"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4001"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4197"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4201"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4205"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4220"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4224"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4228"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4246"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4250"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4254"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4272"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4276"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4280"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4295"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4299"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4303"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4318"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4322"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4326"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4344"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4348"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4352"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4370"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4374"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4378"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4393"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4397"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4401"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4416"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4420"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4424"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4442"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4446"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4450"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4468"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4472"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4476"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4491"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4495"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4499"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4514"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4518"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4522"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4540"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4544"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4548"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4566"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4570"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4574"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4587"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4604"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4621"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4642"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3542"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3552"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3558"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3567"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3577"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3587"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3597"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3607"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3637"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3651"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3665"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3688"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3713"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3721"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3754"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3787"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3820"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3859"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3994"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4010"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4015"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4028"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4033"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4229"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4233"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4237"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4252"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4256"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4260"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4278"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4282"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4286"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4304"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4308"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4312"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4327"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4331"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4335"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4350"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4354"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4358"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4376"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4380"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4384"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4402"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4406"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4410"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4425"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4429"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4433"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4448"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4452"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4456"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4474"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4478"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4482"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4500"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4504"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4508"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4523"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4527"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4531"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4546"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4550"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4554"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4572"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4576"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4580"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4598"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4602"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4606"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4619"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4636"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4653"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4655"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4658"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4676"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4682"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4674"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4685"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4687"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4690"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4843"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4847"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4851"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4876"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4880"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4884"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4909"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4913"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4917"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4942"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4946"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4950"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4973"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4976"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4994"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5004"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5010"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5019"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5029"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5039"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5049"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5059"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5094"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5108"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5122"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5145"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5191"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5199"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5237"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5276"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5315"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5361"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5533"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5552"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5556"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5572"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5576"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5830"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5834"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5838"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5858"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4708"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4714"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4722"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4875"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4879"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4883"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4908"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4912"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4916"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4941"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4945"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4949"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4974"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4978"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4982"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5005"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5008"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5026"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5036"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5042"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5051"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5061"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5071"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5081"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5091"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5126"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5140"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5154"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5177"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5223"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5231"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5269"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5308"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5347"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5393"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5565"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5584"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5588"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5604"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5608"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5862"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5866"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5870"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5890"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5894"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5898"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5918"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5922"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5926"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5930"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5950"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5954"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5958"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5978"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5982"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5986"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5990"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6010"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6014"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6018"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6038"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6042"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6046"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6050"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6070"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6074"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6078"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6098"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6102"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6106"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6110"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6130"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6134"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6138"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6158"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6162"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6166"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6170"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6190"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6194"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6198"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6218"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6222"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6226"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6230"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6250"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6254"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6258"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6278"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6282"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6286"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6308"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6329"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6350"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6666"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6687"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6708"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6729"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6290"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6310"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6314"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6318"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6340"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6361"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6382"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6698"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6719"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6740"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6761"/>
         <source>FET information</source>
         <translation type="unfinished">Maklumat FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3510"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4676"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4994"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3542"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4708"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5026"/>
         <source>Invalid weight (percentage)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3520"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5004"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3552"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5036"/>
         <source>If the preferred room is virtual and the list of real rooms is not empty, the weight percentage must be exactly 100%.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3526"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4682"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5010"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3558"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4714"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5042"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3535"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4690"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5019"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3567"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4722"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5051"/>
         <source>Invalid teacher</source>
         <translation type="unfinished">Pengajar tidak sah</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3545"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5029"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3577"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5061"/>
         <source>Invalid students set</source>
         <translation type="unfinished">Kump pelajar tidak sah</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3555"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5039"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3587"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5071"/>
         <source>Invalid subject</source>
         <translation type="unfinished">Subjek tidak sah</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3565"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5049"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3597"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5081"/>
         <source>Invalid activity tag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3575"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5059"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3607"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5091"/>
         <source>Invalid room</source>
         <translation type="unfinished">Bilik tidak sah</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3605"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3681"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5094"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5191"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3637"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3713"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5126"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5223"/>
         <source>Invalid activity</source>
         <translation type="unfinished">Aktiviti tidak sah</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3619"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5108"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3651"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5140"/>
         <source>The preferred room of the activity is a real room, not a virtual one. This implies that the selected real rooms list should be empty.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3633"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5122"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3665"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5154"/>
         <source>The preferred room of the activity is a virtual room. This implies that the number of selected real rooms in the list should either be zero or equal to the number of sets of real rooms of the preferred virtual room, which is %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3656"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5145"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3688"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5177"/>
         <source>The selected real rooms: %1 are not found in the sets of sets of real rooms of the selected preferred virtual room. This is probably wrong. Are you sure you want to add this constraint?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3658"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5147"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3690"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5179"/>
         <source>Yes</source>
         <translation type="unfinished">Ya</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3658"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5147"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3690"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5179"/>
         <source>No</source>
         <translation type="unfinished">Tidak</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3689"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3722"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3755"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3788"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3827"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3962"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5199"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5237"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5276"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5315"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5361"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5533"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3721"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3754"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3787"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3820"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3859"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3994"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5231"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5269"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5308"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5347"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5393"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5565"/>
         <source>Empty list of selected rooms</source>
         <translation type="unfinished">Tiada langsung bilik yg dipilih</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3979"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3997"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5552"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5572"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4011"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4029"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5584"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5604"/>
         <source>Empty list of selected activities</source>
         <translation type="unfinished">Tiada langsung aktiviti telah dipilih</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="3984"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4002"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5556"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5576"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4016"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4034"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5588"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5608"/>
         <source>Only one selected activity</source>
         <translation type="unfinished">Hanya satu aktiviti yg dipilih</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4197"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4220"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4246"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4272"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4295"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4318"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4344"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4370"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4393"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4416"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4442"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4468"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4491"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4514"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4540"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4566"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4843"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4876"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4909"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4942"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5830"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5858"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4229"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4252"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4278"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4304"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4327"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4350"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4376"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4402"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4425"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4448"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4474"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4500"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4523"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4546"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4572"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4598"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4875"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4908"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4941"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4974"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5862"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5890"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5918"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5922"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5950"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5978"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5982"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6010"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6038"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6042"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6070"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6098"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6102"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6130"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6158"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6162"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6190"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6218"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6222"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6250"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6278"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6282"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6310"/>
         <source>Start hour invalid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4201"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4224"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4250"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4276"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4299"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4322"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4348"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4374"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4397"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4420"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4446"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4472"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4495"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4518"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4544"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4570"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4847"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4880"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4913"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4946"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5834"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5862"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4233"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4256"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4282"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4308"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4331"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4354"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4380"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4406"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4429"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4452"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4478"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4504"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4527"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4550"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4576"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4602"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4879"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4912"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4945"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4978"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5866"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5894"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5922"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5926"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5954"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5982"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5986"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6014"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6042"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6046"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6074"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6102"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6106"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6134"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6162"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6166"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6194"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6222"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6226"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6254"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6282"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6286"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6314"/>
         <source>End hour invalid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4206"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4229"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4255"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4281"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4304"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4327"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4353"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4379"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4402"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4425"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4451"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4477"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4500"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4523"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4549"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4575"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4852"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4885"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4918"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4951"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5839"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5867"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4238"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4261"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4287"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4313"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4336"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4359"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4385"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4411"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4434"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4457"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4483"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4509"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4532"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4555"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4581"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4607"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4884"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4917"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4950"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4983"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5871"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5899"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5927"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5931"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5959"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5987"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5991"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6019"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6047"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6051"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6079"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6107"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6111"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6139"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6167"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6171"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6199"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6227"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6231"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6259"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6287"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6291"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6319"/>
         <source>End hour - start hour should be &gt;= 2, so that this constraint is a nontrivial one.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4588"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4605"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4622"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6309"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6330"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6351"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4620"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4637"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4654"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6341"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6362"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6383"/>
         <source>Please select at least two activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4642"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4674"/>
         <source>Constraint added:</source>
         <translation type="unfinished">Kekangan telah ditambah:</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4644"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4676"/>
         <source>Added the constraint:
 
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4653"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4685"/>
         <source>Constraint NOT added - there must be another constraint of this type. Please edit that one</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4655"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4687"/>
         <source>Constraint NOT added - duplicate</source>
         <comment>&apos;Duplicate&apos; means that the constraint is identical to an already existing constraint and cannot be added.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4658"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4690"/>
         <source>Constraint NOT added - please report error</source>
         <translation type="unfinished">Kekangan TIDAK ditambah - sila lapur ralat</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4666"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4698"/>
         <source>FET confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4667"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4699"/>
         <source>This operation will add multiple constraints, one for each teacher. Do you want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4973"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5005"/>
         <source>Added %1 space constraints. Please note that these constraints will be visible as constraints for individual teachers.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4976"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5008"/>
         <source>Added %1 space constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="4979"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="5011"/>
         <source>Added %1 constraints, one for each teacher:
 
 %2</source>
@@ -4399,7 +4399,7 @@ Number of subactivities in each larger split activity=%6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6376"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6408"/>
         <source>Modified the constraint:
 
 %1
@@ -4409,34 +4409,34 @@ into
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6497"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6529"/>
         <source>A room can be real (the simplest and the most used scenario) or virtual. You can read more about this in the rooms dialog, by clicking the Help button there.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6499"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6531"/>
         <source>If the preferred room selected in the combo box is real, the list of selected real rooms must remain empty.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6501"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6533"/>
         <source>If the preferred room selected in the combo box is virtual, you can select also the list of real rooms to be allocated to the selected activity (if the preferred room selected in the combo box is virtual and the list of selected real rooms is not empty, the weight of the constraint must be 100.0%).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6505"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6537"/>
         <source>FET help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6666"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6687"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6698"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6719"/>
         <source>Invalid selected real room.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6708"/>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6729"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6740"/>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="6761"/>
         <source>Invalid selected room.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5310,7 +5310,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="5751"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="5964"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="6236"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="8142"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="8257"/>
         <source>Activities</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7891,389 +7891,389 @@ Note: teacher not available and break are not counted as gaps.</source>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="5671"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11327"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11332"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11359"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11369"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11458"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11463"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11479"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11442"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11447"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11474"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11484"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11610"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11626"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11633"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11637"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11649"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11654"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11703"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11758"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11573"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11578"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11594"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11599"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11725"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11741"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11748"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11752"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11764"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11782"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11787"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11800"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11805"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11811"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11826"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11954"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12080"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12085"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12098"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12103"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12118"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12127"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12134"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12148"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12157"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12164"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12176"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12181"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12284"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12289"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12294"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12309"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12314"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12319"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12334"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12339"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12344"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12359"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12364"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12369"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12407"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12416"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12423"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12472"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12481"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12490"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12497"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12509"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12514"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12583"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12589"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12607"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12613"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12703"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12712"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12719"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12835"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12839"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12855"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12861"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12878"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12884"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12890"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12961"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13110"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13127"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13228"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13241"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13268"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13281"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13324"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13329"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13334"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13349"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13354"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13359"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13374"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13379"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13384"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13399"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13404"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13409"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11769"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11818"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11873"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11879"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11897"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11902"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11915"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11920"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11926"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11941"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12069"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12195"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12200"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12213"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12218"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12233"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12242"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12249"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12263"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12272"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12279"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12291"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12296"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12399"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12404"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12409"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12424"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12429"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12434"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12449"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12454"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12459"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12474"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12479"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12484"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12522"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12531"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12538"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12587"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12596"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12605"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12612"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12624"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12629"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12698"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12704"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12722"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12728"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12818"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12827"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12834"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12950"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12954"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12970"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12976"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12993"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12999"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13005"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13076"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13225"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13242"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13343"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13356"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13383"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13396"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13439"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13444"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13449"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13464"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13469"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13474"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13489"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13494"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13499"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13514"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13519"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13524"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13529"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13534"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13549"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13554"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13559"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13574"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13579"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13584"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13599"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13604"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13609"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13734"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13740"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13758"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13763"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13776"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13795"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13856"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13861"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13958"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13963"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13969"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13983"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13995"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14008"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14013"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14026"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14043"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14060"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14077"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14094"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14111"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13639"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13644"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13649"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13664"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13669"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13674"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13689"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13694"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13699"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13714"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13719"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13724"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13849"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13855"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13873"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13878"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13891"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13910"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13971"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13976"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14073"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14078"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14084"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14098"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14110"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14123"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14128"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14133"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14148"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14187"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14224"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14237"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14280"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14285"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14300"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14305"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14310"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14316"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14332"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14337"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14342"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14348"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14364"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14369"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14374"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14380"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14396"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14401"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14406"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14412"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14766"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14771"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14777"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14782"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14788"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14807"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14812"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14818"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14823"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14829"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14848"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14853"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14859"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14864"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14870"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14889"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14894"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14900"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14905"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14911"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14928"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14940"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14942"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14945"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14948"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14952"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14955"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14973"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14978"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15000"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15085"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15090"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15134"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15139"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15144"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15413"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15525"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15565"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15607"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15612"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15617"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15642"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15647"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15652"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15818"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15845"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15870"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15875"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15880"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15886"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16053"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16058"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16064"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16069"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16075"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16098"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16101"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16119"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16124"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16151"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16161"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16195"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16300"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16305"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16324"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16329"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16390"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16523"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16541"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16548"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16552"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16575"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16608"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16612"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16627"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16631"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16646"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16650"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16655"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16678"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16718"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16866"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17010"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17014"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17029"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17033"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17050"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17059"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17066"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17082"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17091"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17098"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17112"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17116"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17258"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17263"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17268"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17289"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17294"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17299"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17319"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17324"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17329"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17350"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17355"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17360"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17413"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17422"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17429"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17505"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17514"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17523"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17530"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17545"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17549"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17656"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17661"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17686"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17691"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17819"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17828"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17835"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17977"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17981"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17998"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18003"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18027"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18032"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18038"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18146"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18358"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18379"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18515"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18531"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18569"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18585"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18645"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18650"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18655"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18676"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18681"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18686"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18706"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18711"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18716"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18737"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18742"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18747"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18899"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18904"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18909"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18930"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18935"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18940"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18960"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18965"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18970"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18991"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18996"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19001"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19171"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19176"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19201"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19205"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19223"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19247"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19331"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19336"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19468"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19473"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19479"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19502"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19539"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19551"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19570"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19574"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19592"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19613"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19633"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14141"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14158"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14175"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14192"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14209"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14226"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14243"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14248"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14263"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14302"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14339"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14352"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14395"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14400"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14415"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14420"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14425"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14431"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14447"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14452"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14457"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14463"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14479"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14484"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14489"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14495"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14511"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14516"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14521"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14527"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14881"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14886"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14892"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14897"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14903"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14922"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14927"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14933"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14938"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14944"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14963"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14968"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14974"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14979"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14985"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15004"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15009"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15015"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15020"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15026"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15043"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15055"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15057"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15060"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15063"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15067"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15070"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15088"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15093"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15115"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15200"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15205"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15249"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15254"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15259"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15528"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15640"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15680"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15722"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15727"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15732"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15757"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15762"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15767"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15933"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15960"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15985"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15990"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15995"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16001"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16168"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16173"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16179"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16184"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16190"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16213"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16216"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16234"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16239"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16266"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16276"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16310"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16415"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16420"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16439"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16444"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16505"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16638"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16656"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16663"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16667"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16690"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16723"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16727"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16742"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16746"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16761"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16765"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16770"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16793"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16833"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16981"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17125"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17129"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17144"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17148"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17165"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17174"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17181"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17197"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17206"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17213"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17227"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17231"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17373"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17378"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17383"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17404"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17409"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17414"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17434"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17439"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17444"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17465"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17470"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17475"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17528"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17537"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17544"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17620"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17629"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17638"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17645"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17660"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17664"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17771"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17776"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17801"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17806"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17934"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17943"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17950"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18092"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18096"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18113"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18118"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18142"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18147"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18153"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18261"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18473"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18494"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18630"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18646"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18684"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18700"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18760"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18765"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18770"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18791"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18796"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18801"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18821"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18826"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18831"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18852"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18857"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18862"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19014"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19019"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19024"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19045"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19050"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19055"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19075"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19080"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19085"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19106"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19111"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19116"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19286"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19291"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19316"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19320"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19338"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19362"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19446"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19451"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19583"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19588"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19594"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19617"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19654"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19674"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19695"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19715"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19719"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19741"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19792"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19839"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19855"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19911"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19915"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19935"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19940"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19945"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19951"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19972"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19977"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19982"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19988"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20011"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20016"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20021"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20027"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20048"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20053"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20058"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20064"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20519"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20524"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20530"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20535"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20541"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20568"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20573"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20579"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20584"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20590"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20615"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20620"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20626"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20631"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20637"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20664"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20669"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20675"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20680"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20686"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20892"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20895"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20910"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20913"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21042"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21055"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21068"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21081"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21164"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21177"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19666"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19685"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19689"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19707"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19728"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19748"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19769"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19789"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19810"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19830"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19834"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19856"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19907"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19954"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19970"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20026"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20030"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20050"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20055"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20060"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20066"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20087"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20092"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20097"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20103"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20126"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20131"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20136"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20142"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20163"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20168"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20173"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20179"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20634"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20639"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20645"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20650"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20656"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20683"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20688"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20694"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20699"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20705"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20730"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20735"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20741"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20746"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20752"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20779"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20784"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20790"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20795"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20801"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21007"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21010"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21025"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21028"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21157"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21170"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21183"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21196"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21279"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21292"/>
         <source>FET information</source>
         <translation type="unfinished">Maklumat FET</translation>
     </message>
@@ -8885,388 +8885,388 @@ Note: teacher not available and break are not counted as gaps.</source>
         <translation type="unfinished">Tambah kekangan</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="7577"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="7676"/>
         <source>Add constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="7578"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="7683"/>
         <source>Close</source>
         <translation type="unfinished">Tutup</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="7581"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="7686"/>
         <source>OK</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="7583"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="7688"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="7623"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="7736"/>
         <source>Weight percentage
 (recommended: 100.0%,
 allowed: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="7627"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="7741"/>
         <source>Weight percentage (recommended: 95.0% - 100.0%, allowed: 0.0% - 100.0%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="7631"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="7746"/>
         <source>Weight percentage (allowed: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="7635"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="7750"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="7783"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="7898"/>
         <source>End of day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="8143"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="8258"/>
         <source>Time slots</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="8231"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="8346"/>
         <source>First activities set</source>
         <comment>The first set of activities</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="8232"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="8347"/>
         <source>Second activities set</source>
         <comment>The second set of activities</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11327"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14973"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16119"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11442"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15088"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16234"/>
         <source>Invalid weight (percentage)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11332"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14978"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16124"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11447"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15093"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16239"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11345"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11581"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11595"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12733"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12740"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12745"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12759"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12766"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12771"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12785"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12792"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12797"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12811"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12818"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12823"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11460"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11696"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11710"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12848"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12855"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12860"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12874"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12881"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12886"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12900"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12907"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12920"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12912"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12926"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12933"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12946"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13890"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13904"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13918"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13932"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14428"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14435"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14440"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14454"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14461"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14466"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14480"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14487"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14492"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14506"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14513"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14518"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14532"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14546"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14560"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14574"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14588"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12938"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13022"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13035"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13048"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13061"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14005"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14019"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14033"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14047"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14543"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14550"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14555"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14569"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14576"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14581"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14595"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14600"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14614"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14602"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14607"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14621"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14626"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14640"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14628"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14633"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14647"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14652"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14666"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14673"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14678"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14692"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14706"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14720"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14734"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14987"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15254"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15261"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15266"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15288"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15796"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15912"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15919"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15924"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15948"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15972"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15979"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15984"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16008"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16137"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16487"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16504"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17855"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17862"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17867"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17886"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17893"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17898"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17919"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17926"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17931"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17950"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17957"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17962"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18063"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18083"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18101"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18121"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19378"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19396"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19416"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19434"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20091"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20098"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20103"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20122"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20129"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20134"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20155"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20162"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20167"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20186"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20193"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20198"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20219"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14661"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14675"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14689"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14703"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14710"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14715"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14729"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14736"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14741"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14755"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14762"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14767"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14781"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14788"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14793"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14807"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14821"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14835"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14849"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15102"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15369"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15376"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15381"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15403"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15911"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16027"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16034"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16039"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16063"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16087"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16094"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16099"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16123"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16252"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16602"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16619"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17970"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17977"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17982"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18001"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18008"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18013"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18034"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18041"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18046"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18065"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18072"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18077"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18178"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18198"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18216"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18236"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19493"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19511"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19531"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19549"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20206"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20213"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20218"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20237"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20257"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20275"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20295"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20302"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20307"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20326"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20333"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20338"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20359"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20366"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20371"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20244"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20249"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20270"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20277"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20282"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20301"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20308"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20313"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20334"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20352"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20372"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20390"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20397"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20402"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20423"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20410"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20417"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20422"/>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20441"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20461"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20479"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20448"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20453"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20474"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20481"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20486"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20505"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20512"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20517"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20538"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20556"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20576"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20594"/>
         <source>FET warning</source>
         <translation type="unfinished">FET - Amaran</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11346"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14988"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16138"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11461"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15103"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16253"/>
         <source>You selected a weight less than 100%. The generation algorithm is not perfectly optimized to work with such weights (even if in practice it might work well). It is recommended to work only with 100% weights for these constraints. Are you sure you want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11359"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15000"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16151"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11474"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15115"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16266"/>
         <source>Invalid teacher</source>
         <translation type="unfinished">Pengajar tidak sah</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11369"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16161"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11484"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16276"/>
         <source>Invalid students set</source>
         <translation type="unfinished">Kump pelajar tidak sah</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11458"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13228"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15085"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15525"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16300"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18515"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11573"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13343"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15200"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15640"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16415"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18630"/>
         <source>Allow empty days check box must be checked. If you need to not allow empty days for the teachers, please use the constraint teachers min days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11463"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15090"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11578"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15205"/>
         <source>Allow empty days check box must be checked. If you need to not allow empty days for the teachers, please use the constraint teachers min days per week (but the min days per week constraint is for real days. You can also use the constraint teachers min mornings/afternoons per week.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11484"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16305"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16329"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11599"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16420"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16444"/>
         <source>Allow empty days check box must be checked. If you need to not allow empty days for a teacher, please use the constraint teacher min days per week (but the min days per week constraint is for real days. You can also use the constraints teacher min mornings/afternoons per week.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11479"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16324"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11594"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16439"/>
         <source>Allow empty days check box must be checked. If you need to not allow empty days for a teacher, please use the constraint teacher min days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11581"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11595"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16487"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16504"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11696"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11710"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16602"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16619"/>
         <source>If you allow empty days, the min hours must be at least 2 (to make it a non-trivial constraint)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11610"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11626"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11826"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11954"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12961"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14148"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14187"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16523"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16541"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16718"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16866"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18146"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19741"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19792"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11725"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11741"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11941"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12069"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13076"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14263"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14302"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16638"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16656"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16833"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16981"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18261"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19856"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19907"/>
         <source>Invalid activity</source>
         <translation type="unfinished">Aktiviti tidak sah</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11633"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16548"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11748"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16663"/>
         <source>Invalid day</source>
         <translation type="unfinished">Hari tidak sah</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11637"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16552"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11752"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16667"/>
         <source>Invalid hour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11650"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11783"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11801"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12081"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12099"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12177"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12510"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12584"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12608"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12856"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12879"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13735"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13759"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13959"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14009"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14129"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14281"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16608"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16627"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16646"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17010"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17029"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17112"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17545"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19201"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19469"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19570"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19715"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19911"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11765"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11898"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11916"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12196"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12214"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12292"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12625"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12699"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12723"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12971"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12994"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13850"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13874"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14074"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14124"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14244"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14396"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16723"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16742"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16761"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17125"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17144"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17227"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17660"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19316"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19584"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19685"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19830"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20026"/>
         <source>Empty list of selected activities</source>
         <translation type="unfinished">Tiada langsung aktiviti telah dipilih</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11655"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11788"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11806"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12086"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12104"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12182"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12515"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13764"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13964"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14014"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14134"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14286"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16612"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16631"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16650"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17014"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17033"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17116"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17549"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19205"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19474"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19574"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19719"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19915"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11770"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11903"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11921"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12201"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12219"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12297"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12630"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13879"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14079"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14129"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14249"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14401"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16727"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16746"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16765"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17129"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17148"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17231"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17664"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19320"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19589"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19689"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19834"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20030"/>
         <source>Only one selected activity</source>
         <translation type="unfinished">Hanya satu aktiviti yg dipilih</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11694"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11809"/>
         <source>Subactivities do not correspond. Mistake:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11696"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11811"/>
         <source>1. First (sub)activity has id=%1 and represents %2 subactivities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11700"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11815"/>
         <source>2. Current (sub)activity has id=%1 and represents %2 subactivities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11755"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14928"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11870"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15043"/>
         <source>Constraint added:</source>
         <translation type="unfinished">Kekangan telah ditambah:</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11764"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14955"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11879"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15070"/>
         <source>Constraint NOT added - please report error</source>
         <translation type="unfinished">Kekangan TIDAK ditambah - sila lapur ralat</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11769"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11884"/>
         <source>Added %1 constraints (using the option to add multiple constraints):
 
 %2</source>
@@ -9274,60 +9274,60 @@ allowed: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11812"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16656"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11927"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16771"/>
         <source>Invalid number of min days between activities - it must be greater than 0.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11839"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11877"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11895"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11912"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11936"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11967"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12005"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12023"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12040"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12064"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12222"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12266"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16731"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16779"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16797"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16814"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16838"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16879"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16927"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16945"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16962"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16986"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17169"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17230"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11954"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11992"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12010"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12027"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12051"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12082"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12120"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12138"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12155"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12179"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12337"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12381"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16846"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16894"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16912"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16929"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16953"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16994"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17042"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17060"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17077"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17101"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17284"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17345"/>
         <source>FET question</source>
         <translation type="unfinished">Soalan FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11840"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11937"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11968"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12065"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12223"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12267"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16732"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16839"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16880"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16987"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17170"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17231"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11955"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12052"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12083"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12180"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12338"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12382"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16847"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16954"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16995"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17102"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17285"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17346"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11878"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12006"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16780"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16928"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11993"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12121"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16895"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17043"/>
         <source>You specified all the activities. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teachers&apos; and students&apos; timetable.
 
  The best practice would be to use constraint break times.
@@ -9336,26 +9336,26 @@ allowed: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11887"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11904"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11922"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12015"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12032"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12050"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16789"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16806"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16824"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16937"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16954"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16972"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12002"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12019"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12037"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12130"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12147"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12165"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16904"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16921"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16939"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17052"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17069"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17087"/>
         <source>Do you want to add current constraint?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11896"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12024"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16798"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16946"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12011"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12139"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16913"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17061"/>
         <source>You specified only the teacher. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teacher&apos;s timetable.
 
  The best practice would be to use constraint teacher not available times.
@@ -9364,10 +9364,10 @@ allowed: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="11913"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12041"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16815"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16963"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12028"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12156"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16930"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17078"/>
         <source>You specified only the students set. This might be a small problem: if you specify a not allowed slot between two allowed slots (or a not allowed slot before allowed slots), this not allowed slot will be counted as a gap (or early gap) in the students&apos; timetable.
 
  The best practice would be to use constraint students set not available times.
@@ -9376,590 +9376,590 @@ allowed: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12118"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12148"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12407"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12472"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12703"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17050"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17082"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17413"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17505"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17819"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12233"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12263"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12522"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12587"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12818"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17165"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17197"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17528"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17620"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17934"/>
         <source>Invalid first activity</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12127"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12157"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12416"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12481"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12712"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17059"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17091"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17422"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17514"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17828"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12242"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12272"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12531"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12596"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12827"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17174"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17206"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17537"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17629"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17943"/>
         <source>Invalid second activity</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12134"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12164"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12423"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12497"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12719"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17066"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17098"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17429"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17530"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17835"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12249"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12279"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12538"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12612"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12834"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17181"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17213"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17544"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17645"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17950"/>
         <source>Same activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12285"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12310"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12335"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12360"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13325"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13350"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13375"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13400"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13525"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13550"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13575"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13600"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14301"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14333"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14365"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14397"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15135"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15608"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15643"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15871"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17259"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17290"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17320"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17351"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18646"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18677"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18707"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18738"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18900"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18931"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18961"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18992"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19936"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19973"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20012"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20049"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12400"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12425"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12450"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12475"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13440"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13465"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13490"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13515"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13640"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13665"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13690"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13715"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14416"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14448"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14480"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14512"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15250"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15723"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15758"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15986"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17374"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17405"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17435"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17466"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18761"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18792"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18822"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18853"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19015"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19046"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19076"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19107"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20051"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20088"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20127"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20164"/>
         <source>Start hour invalid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12290"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12315"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12340"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12365"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13330"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13355"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13380"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13405"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13530"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13555"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13580"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13605"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14306"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14338"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14370"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14402"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15140"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15613"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15648"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15876"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17264"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17295"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17325"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17356"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18651"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18682"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18712"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18743"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18905"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18936"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18966"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18997"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19941"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19978"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20017"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20054"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12405"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12430"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12455"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12480"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13445"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13470"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13495"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13520"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13645"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13670"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13695"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13720"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14421"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14453"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14485"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14517"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15255"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15728"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15763"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15991"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17379"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17410"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17440"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17471"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18766"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18797"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18827"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18858"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19020"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19051"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19081"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19112"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20056"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20093"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20132"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20169"/>
         <source>End hour invalid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12295"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12320"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12345"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12370"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13335"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13360"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13385"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13410"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13535"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13560"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13585"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13610"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14311"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14343"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14375"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14407"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15145"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15618"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15653"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15881"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17269"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17300"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17330"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17361"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18656"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18687"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18717"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18748"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18910"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18941"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18971"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19002"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19946"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19983"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20022"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20059"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12410"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12435"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12460"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12485"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13450"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13475"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13500"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13525"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13650"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13675"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13700"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13725"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14426"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14458"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14490"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14522"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15260"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15733"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15768"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15996"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17384"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17415"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17445"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17476"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18771"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18802"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18832"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18863"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19025"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19056"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19086"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19117"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20061"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20098"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20137"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20174"/>
         <source>Start hour cannot be greater or equal than end hour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12490"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17523"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12605"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17638"/>
         <source>Invalid third activity</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12589"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17661"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12704"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17776"/>
         <source>You specified max occupied time slots to be 0. This is not perfect from efficiency point of view, because you can use instead constraint activity(ies) preferred time slots, and help FET to find a timetable easier and faster, with an equivalent result. Please correct.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12613"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17691"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12728"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17806"/>
         <source>You specified max simultaneous activities to be 0. This is not perfect from efficiency point of view, because you can use instead constraint activity(ies) preferred time slots, and help FET to find a timetable easier and faster, with an equivalent result. Please correct.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12733"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12759"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12785"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12811"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14428"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14454"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14480"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14506"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14588"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14614"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14640"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14666"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15254"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15912"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15972"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17855"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17886"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17919"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17950"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20091"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20122"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20155"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20186"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20295"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20326"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20359"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20390"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12848"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12874"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12900"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12926"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14543"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14569"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14595"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14621"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14703"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14729"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14755"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14781"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15369"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16027"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16087"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17970"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18001"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18034"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18065"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20206"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20237"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20270"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20301"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20410"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20441"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20474"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20505"/>
         <source>Invalid first activity tag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12740"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12766"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12792"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12818"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14435"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14461"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14487"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14513"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14595"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14621"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14647"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14673"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15261"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15919"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15979"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17862"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17893"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17926"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17957"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20098"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20129"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20162"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20193"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20302"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20333"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20366"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20397"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12855"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12881"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12907"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12933"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14550"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14576"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14602"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14628"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14710"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14736"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14762"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14788"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15376"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16034"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16094"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17977"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18008"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18041"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18072"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20213"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20244"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20277"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20308"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20417"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20448"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20481"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20512"/>
         <source>Invalid second activity tag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12745"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12771"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12797"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12823"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14440"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14466"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14492"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14518"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14600"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14626"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14652"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14678"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15266"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15924"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15984"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17867"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17898"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17931"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17962"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20103"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20134"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20167"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20198"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20307"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20338"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20371"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20402"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12860"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12886"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12912"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12938"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14555"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14581"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14607"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14633"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14715"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14741"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14767"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14793"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15381"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16039"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16099"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17982"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18013"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18046"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18077"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20218"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20249"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20282"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20313"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20422"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20453"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20486"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20517"/>
         <source>The two activity tags cannot be the same</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12835"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17977"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12950"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18092"/>
         <source>Empty list of not overlapping activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12839"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17981"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12954"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18096"/>
         <source>Only one selected activity tag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12861"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18003"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12976"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18118"/>
         <source>You specified min occupied time slots to be 0. This results in a useless constraint. Please correct.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12884"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18032"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12999"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18147"/>
         <source>You specified min simultaneous activities to be 0. This results in a useless constraint. Please correct.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12890"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18038"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13005"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18153"/>
         <source>You specified min simultaneous activities to be 1 and you allow empty slots. This results in a useless constraint. Please correct.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12907"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12920"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12933"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="12946"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15288"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18063"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18083"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18101"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18121"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13022"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13035"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13048"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13061"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15403"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18178"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18198"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18216"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18236"/>
         <source>Allow empty days is selected and min hours daily is 1, so this would be a useless constraint.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13111"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13128"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14027"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14044"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14061"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14078"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14095"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14112"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15414"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15819"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18359"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18380"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19593"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19614"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19634"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19655"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19675"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19696"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13226"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13243"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14142"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14159"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14176"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14193"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14210"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14227"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15529"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15934"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18474"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18495"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19708"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19729"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19749"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19770"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19790"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19811"/>
         <source>Please select at least two activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13241"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18531"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13356"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18646"/>
         <source>Allow empty days check box must be checked. If you need to not allow empty days for this teacher, please use the constraint teacher min days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13268"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15565"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18569"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13383"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15680"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18684"/>
         <source>Allow empty mornings check box must be checked. If you need to not allow empty mornings for the teachers, please use the constraint teachers min mornings per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13281"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18585"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13396"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18700"/>
         <source>Allow empty mornings check box must be checked. If you need to not allow empty mornings for a teacher, please use the constraint teacher min mornings per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13740"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19176"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13855"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19291"/>
         <source>You specified max total activities to be 0. This is not perfect from efficiency point of view, because you can use instead constraint activity(ies) preferred time slots, and help FET to find a timetable easier and faster, with an equivalent result. Please correct.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13777"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13796"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13984"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17656"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17686"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17998"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18027"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19171"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19224"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19248"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19540"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13892"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13911"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14099"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17771"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="17801"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18113"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="18142"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19286"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19339"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19363"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19655"/>
         <source>Empty list of activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13857"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19332"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13972"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19447"/>
         <source>Empty list of selected activities in the first set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13862"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19337"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13977"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19452"/>
         <source>Empty list of selected activities in the second set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13890"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13904"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13918"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13932"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14532"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14546"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14560"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14574"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14692"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14706"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14720"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14734"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15796"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15948"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16008"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19378"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19396"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19416"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19434"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20219"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20237"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20257"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20275"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20423"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20441"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20461"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20479"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14005"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14019"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14033"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14047"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14647"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14661"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14675"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14689"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14807"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14821"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14835"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14849"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15911"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16063"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16123"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19493"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19511"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19531"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19549"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20334"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20352"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20372"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20390"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20538"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20556"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20576"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20594"/>
         <source>Invalid activity tag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13970"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19480"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14085"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19595"/>
         <source>Invalid number of min half days between activities - it must be greater than 0.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="13996"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19552"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14111"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19667"/>
         <source>Min activities in a term is 1, and you allow empty terms, so this constraint would be useless.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14224"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15845"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19839"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14339"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15960"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19954"/>
         <source>Allow empty afternoons check box must be checked. If you need to not allow empty afternoons for the teachers, please use the constraint teachers min afternoons per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14237"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19855"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14352"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19970"/>
         <source>Allow empty afternoons check box must be checked. If you need to not allow empty afternoons for a teacher, please use the constraint teacher min afternoons per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14317"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14349"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15887"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19952"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19989"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14432"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14464"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16002"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20067"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20104"/>
         <source>If you need the maximum hours daily in the interval to be 0, please use the constraints of type teacher not available times or activities preferred time slots.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14381"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14413"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20028"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20065"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14496"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14528"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20143"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20180"/>
         <source>If you need the maximum hours daily in the interval to be 0, please use the constraints of type students set not available times or activities preferred time slots.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14767"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14808"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14849"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14890"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16054"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20520"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20569"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20616"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20665"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14882"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14923"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14964"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15005"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16169"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20635"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20684"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20731"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20780"/>
         <source>First time slot&apos;s day invalid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14772"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14813"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14854"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14895"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16059"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20525"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20574"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20621"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20670"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14887"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14928"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14969"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15010"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16174"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20640"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20689"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20736"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20785"/>
         <source>First time slot&apos;s hour invalid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14778"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14819"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14860"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14901"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16065"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20531"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20580"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20627"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20676"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14893"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14934"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14975"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15016"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16180"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20646"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20695"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20742"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20791"/>
         <source>Second time slot&apos;s day invalid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14783"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14824"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14865"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14906"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16070"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20536"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20585"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20632"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20681"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14898"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14939"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14980"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15021"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16185"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20651"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20700"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20747"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20796"/>
         <source>Second time slot&apos;s hour invalid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14789"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14830"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14871"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14912"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16076"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20542"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20591"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20638"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20687"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14904"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14945"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14986"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15027"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16191"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20657"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20706"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20753"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20802"/>
         <source>The two time slots are the same</source>
         <comment>It is a user error, the two time slots should not be equal</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14930"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15045"/>
         <source>Added the constraint:
 
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14940"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15055"/>
         <source>Constraint NOT added - there must be another constraint of this type. Please edit that one</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14942"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15057"/>
         <source>Constraint NOT added - there must be another constraint of this type referring to the same teacher. Please edit that one</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14945"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15060"/>
         <source>Constraint NOT added - there must be another constraint of this type referring to the same students set. Please edit that one</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14948"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15063"/>
         <source>Constraint NOT added - duplicate</source>
         <comment>&apos;Duplicate&apos; means that the constraint is identical to an already existing constraint and cannot be added.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14952"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15067"/>
         <source>Constraint NOT added - it must be a duplicate</source>
         <comment>&apos;Duplicate&apos; means that the constraint is identical to an already existing constraint and cannot be added.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14963"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15078"/>
         <source>FET confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="14964"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="15079"/>
         <source>This operation will add multiple constraints, one for each teacher. Do you want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16098"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16213"/>
         <source>Added %1 time constraints. Please note that these constraints will be visible as constraints for individual teachers.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16101"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16216"/>
         <source>Added %1 time constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16104"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16219"/>
         <source>Added %1 constraints, one for each teacher:
 
 %2</source>
@@ -9967,24 +9967,24 @@ allowed: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16195"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16310"/>
         <source>A constraint of this type exists for the same teacher - cannot proceed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16390"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16505"/>
         <source>A constraint of this type exists for the same students set - cannot proceed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16575"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16678"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19502"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16690"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="16793"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="19617"/>
         <source>Cannot proceed, current constraint is equal to another one (it is duplicated)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20708"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20823"/>
         <source>Modified the constraint:
 
 %1
@@ -9994,72 +9994,72 @@ into
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20829"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20944"/>
         <source>This constraint does not induce gaps for teachers. If a teacher has activities before and after a not available period, gaps will not be counted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20834"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20949"/>
         <source>If you really need to use weight under 100%, you can use activities preferred times with only the teacher specified, but this might generate problems, as possible gaps will be counted and you may obtain an impossible timetable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20838"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20856"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20870"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20953"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20971"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20985"/>
         <source>FET help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20847"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20962"/>
         <source>This constraint does not induce gaps (or early gaps) for students. If a student set has activities before and after a not available period, gaps will not be counted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20852"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20967"/>
         <source>If you really need to use weight under 100%, you can use activities preferred times with only the students set specified, but this might generate problems, as possible gaps will be counted and you may obtain an impossible timetable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20865"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20980"/>
         <source>Add multiple constraints: this is a check box. Select this if you want to input only the representatives of subactivities and FET to add multiple constraints, for all subactivities from the same larger split activity, in turn, respectively. There will be added more constraints activities same starting time, one for each corresponding tuple. The number of subactivities must match for the representatives and be careful to the order, to be what you need</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20892"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21042"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21007"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21157"/>
         <source>This check box must remain checked. If you really need to not allow empty days for the teachers, please use constraint teachers min days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20895"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20913"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21010"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21028"/>
         <source>This check box must remain checked. If you really need to not allow empty days for this teacher, please use constraint teacher min days per week (but the min days per week constraint is for real days. You can also use the constraints teacher min mornings/afternoons per week.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="20910"/>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21055"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21025"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21170"/>
         <source>This check box must remain checked. If you really need to not allow empty days for this teacher, please use constraint teacher min days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21068"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21183"/>
         <source>This check box must remain checked. If you really need to not allow empty mornings for the teachers, please use constraint teachers min mornings per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21081"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21196"/>
         <source>This check box must remain checked. If you really need to not allow empty mornings for this teacher, please use constraint teacher min mornings per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21164"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21279"/>
         <source>This check box must remain checked. If you really need to not allow empty afternoons for the teachers, please use constraint teachers min afternoons per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21177"/>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="21292"/>
         <source>This check box must remain checked. If you really need to not allow empty afternoons for this teacher, please use constraint teacher min afternoons per week.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -39769,12 +39769,12 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform.cpp" line="13291"/>
         <location filename="../src/interface/fetmainform.cpp" line="13543"/>
         <location filename="../src/interface/fetmainform.cpp" line="13602"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15081"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15129"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15151"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15173"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15194"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15218"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15091"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15139"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15161"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15183"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15204"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15228"/>
         <source>FET warning</source>
         <translation type="unfinished">FET - Amaran</translation>
     </message>
@@ -40528,16 +40528,16 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform.cpp" line="13471"/>
         <location filename="../src/interface/fetmainform.cpp" line="13481"/>
         <location filename="../src/interface/fetmainform.cpp" line="13488"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14781"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14794"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14849"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14855"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14882"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14888"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15013"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15019"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15030"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15036"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14791"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14804"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14859"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14865"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14892"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14898"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15023"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15029"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15040"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15046"/>
         <source>FET information</source>
         <translation type="unfinished">Maklumat FET</translation>
     </message>
@@ -40559,12 +40559,12 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13877"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13882"/>
         <source>&amp;Yes</source>
         <translation type="unfinished">&amp;Ya</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13877"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13882"/>
         <source>&amp;No</source>
         <translation type="unfinished">&amp;Tidak</translation>
     </message>
@@ -41009,10 +41009,10 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform.cpp" line="13440"/>
         <location filename="../src/interface/fetmainform.cpp" line="13466"/>
         <location filename="../src/interface/fetmainform.cpp" line="13482"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14850"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14883"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15014"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15031"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14860"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14893"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15024"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15041"/>
         <source>Please start a new file or open an existing one before accessing/modifying/saving/exporting the data.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -41384,12 +41384,12 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform.cpp" line="12776"/>
         <location filename="../src/interface/fetmainform.cpp" line="12939"/>
         <location filename="../src/interface/fetmainform.cpp" line="12970"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14782"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14795"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14856"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14889"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15020"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15037"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14792"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14805"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14866"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14899"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15030"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15047"/>
         <source>Generation in progress. Please stop the generation before this.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -41716,9 +41716,9 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform.cpp" line="13794"/>
         <location filename="../src/interface/fetmainform.cpp" line="13812"/>
         <location filename="../src/interface/fetmainform.cpp" line="13817"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13821"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13833"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13843"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13826"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13838"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13848"/>
         <source>true</source>
         <translation type="unfinished"></translation>
     </message>
@@ -41823,7 +41823,7 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13824"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13825"/>
         <source>55</source>
         <translation type="unfinished"></translation>
     </message>
@@ -41834,171 +41834,176 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13827"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13829"/>
         <source>56</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13830"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13832"/>
         <source>57</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13833"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13835"/>
         <source>58</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13836"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13838"/>
         <source>59</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13843"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13841"/>
         <source>60</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13824"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13829"/>
         <source>Write HTML timetables for subgroups in sorted order will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13854"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13857"/>
         <source>65</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13830"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13835"/>
         <source>The font will be reset to default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13857"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13859"/>
         <source>66</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13859"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13862"/>
         <source>67</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13861"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13864"/>
         <source>68</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13864"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13866"/>
         <source>69</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13867"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13869"/>
         <source>70</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13836"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13841"/>
         <source>The number of states to record in history to the memory will be %1</source>
         <comment>%1 is a number</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13846"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13851"/>
         <source>Enable file autosave will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13848"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13853"/>
         <source>The number of minutes before autosave will be %1</source>
         <comment>%1 is an integer</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13850"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13855"/>
         <source>The number of operations before autosave will be %1</source>
         <comment>%1 is an integer</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13852"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13857"/>
         <source>The directory for autosave will be &apos;%1&apos;</source>
         <comment>%1 is a directory name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13857"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13862"/>
         <source>Enable save and restore history to/from the disk will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13859"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13864"/>
         <source>The number of states to record in history to the disk will be %1</source>
         <comment>%1 is a number</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13861"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13866"/>
         <source>The file name suffix for saving the history to the disk will be &apos;%1&apos;</source>
         <comment>%1 is a suffix to be added to the file name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13864"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13869"/>
         <source>The timetable options about which information to be printed in which table will be reset to defaults.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13873"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13878"/>
         <source>Overwrite single generation files will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="14918"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13878"/>
+        <source>72</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="14928"/>
         <source>You have more than 6 real days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="14965"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14975"/>
         <source>You have less than 5 real days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="15192"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15202"/>
         <source>Continue only if you know what you are doing.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="15123"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15145"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15167"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15212"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15133"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15155"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15177"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15222"/>
         <source>It is recommended to keep this warning active, but if you really want, you can disable it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="15125"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15147"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15169"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15214"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15135"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15157"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15179"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15224"/>
         <source>Disable it only if you know what you are doing.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="15127"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15149"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15171"/>
-        <location filename="../src/interface/fetmainform.cpp" line="15216"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15137"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15159"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15181"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15226"/>
         <source>Are you sure you want to disable it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="15189"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15199"/>
         <source>This kind of option is good, but only in the right case. Adding such an option in the wrong circumstance may make your timetable solve too slow or even impossible.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -42249,28 +42254,34 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13846"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13820"/>
+        <source>For each successfully generated timetable in generate multiple, beep at the end of the generation will be %1, run external command at the end of generation will be %2, and the external command will be empty</source>
+        <comment>%1 and %2 are true or false</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="13848"/>
         <source>61</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13827"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13832"/>
         <source>The Boolean value &apos;The font is user selectable&apos; will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13848"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13851"/>
         <source>62</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13850"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13853"/>
         <source>63</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13852"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13855"/>
         <source>64</source>
         <translation type="unfinished"></translation>
     </message>
@@ -42920,7 +42931,7 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="14895"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14905"/>
         <source>You have more than 6 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -42928,15 +42939,15 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform.cpp" line="4376"/>
         <location filename="../src/interface/fetmainform.cpp" line="4404"/>
         <location filename="../src/interface/fetmainform.cpp" line="5157"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14912"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14935"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14959"/>
-        <location filename="../src/interface/fetmainform.cpp" line="14982"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14922"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14945"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14969"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14992"/>
         <source>FET question</source>
         <translation type="unfinished">Soalan FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="14942"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14952"/>
         <source>You have less than 5 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -43055,56 +43066,56 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13820"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13825"/>
         <source>Show warning if using constraints of type max hours daily with a weight less than 100% will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13833"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13838"/>
         <source>Enable save and restore history to/from the memory will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13840"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13845"/>
         <source>If the history settings will change, the history will be cleared.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13843"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13848"/>
         <source>Confirm activating/deactivating activities/constraints will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13854"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13859"/>
         <source>The file name suffix for autosave will be &apos;%1&apos;</source>
         <comment>%1 is a suffix to be added to the file name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13873"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13872"/>
         <source>71</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="13867"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13872"/>
         <source>The interface style and color scheme will be reset to defaults (useful only if the used Qt version is at least %1).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="14757"/>
+        <location filename="../src/interface/fetmainform.cpp" line="14767"/>
         <source>Cleared the history, because the history settings were modified when resetting all the settings to default.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="15068"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15078"/>
         <source>Choose results (output) directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="15081"/>
+        <location filename="../src/interface/fetmainform.cpp" line="15091"/>
         <source>You don&apos;t have write permissions in this directory</source>
         <translation type="unfinished"></translation>
     </message>
@@ -43127,11 +43138,12 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform.cpp" line="13788"/>
         <location filename="../src/interface/fetmainform.cpp" line="13808"/>
         <location filename="../src/interface/fetmainform.cpp" line="13817"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13824"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13827"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13846"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13857"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13873"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13822"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13829"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13832"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13851"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13862"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13878"/>
         <source>false</source>
         <translation type="unfinished"></translation>
     </message>
@@ -43140,7 +43152,7 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform.cpp" line="4627"/>
         <location filename="../src/interface/fetmainform.cpp" line="4689"/>
         <location filename="../src/interface/fetmainform.cpp" line="4743"/>
-        <location filename="../src/interface/fetmainform.cpp" line="13876"/>
+        <location filename="../src/interface/fetmainform.cpp" line="13881"/>
         <source>FET confirmation</source>
         <translation type="unfinished"></translation>
     </message>
@@ -45862,8 +45874,8 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fet.cpp" line="429"/>
         <location filename="../src/interface/fet.cpp" line="441"/>
         <location filename="../src/interface/fet.cpp" line="476"/>
-        <location filename="../src/interface/fet.cpp" line="2462"/>
-        <location filename="../src/interface/fet.cpp" line="2475"/>
+        <location filename="../src/interface/fet.cpp" line="2472"/>
+        <location filename="../src/interface/fet.cpp" line="2485"/>
         <source>FET warning</source>
         <translation type="unfinished">FET - Amaran</translation>
     </message>
@@ -45878,66 +45890,66 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2425"/>
-        <location filename="../src/interface/fet.cpp" line="2438"/>
+        <location filename="../src/interface/fet.cpp" line="2435"/>
+        <location filename="../src/interface/fet.cpp" line="2448"/>
         <source>FET critical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2448"/>
+        <location filename="../src/interface/fet.cpp" line="2458"/>
         <source>FET</source>
         <translation type="unfinished">FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2462"/>
+        <location filename="../src/interface/fet.cpp" line="2472"/>
         <source>Could not open file &apos;%1&apos; - not existing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2475"/>
+        <location filename="../src/interface/fet.cpp" line="2485"/>
         <source>To start FET in the interface mode, please either do not give any command-line parameters, or give a single command-line parameter, which is the name of the fet data file to be loaded on startup.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2988"/>
+        <location filename="../src/interface/fet.cpp" line="2998"/>
         <source>FET-CL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="3004"/>
-        <location filename="../src/interface/fet.cpp" line="3007"/>
+        <location filename="../src/interface/fet.cpp" line="3014"/>
+        <location filename="../src/interface/fet.cpp" line="3017"/>
         <source>This is the list of max placed activities, chronologically. If FET could reach maximum n-th activity, look at the n+1-st activity in the initial order of the activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="3522"/>
+        <location filename="../src/interface/fet.cpp" line="3532"/>
         <source>FET managed to schedule correctly the first %1 most difficult activities. You can see the initial order of placing the activities in the corresponding output file. The activity which might cause problems might be the next activity in the initial order of evaluation. This activity is listed below:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="3529"/>
-        <location filename="../src/interface/fet.cpp" line="3549"/>
+        <location filename="../src/interface/fet.cpp" line="3539"/>
+        <location filename="../src/interface/fet.cpp" line="3559"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="3534"/>
+        <location filename="../src/interface/fet.cpp" line="3544"/>
         <source>Difficult activity cannot be computed - please report possible bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="3538"/>
+        <location filename="../src/interface/fet.cpp" line="3548"/>
         <source>Here are the placed activities which lead to an inconsistency, in order from the first one to the last (the last one FET failed to schedule and the last ones are most likely impossible):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="3545"/>
+        <location filename="../src/interface/fet.cpp" line="3555"/>
         <source>No: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2425"/>
+        <location filename="../src/interface/fet.cpp" line="2435"/>
         <source>Cannot create or use %1 directory (where the results should be stored) - you can continue operation, but you might not be able to work with FET. Maybe you can try to change the output directory from the &apos;Settings&apos; menu. If this is a bug - please report it.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -45952,7 +45964,7 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2438"/>
+        <location filename="../src/interface/fet.cpp" line="2448"/>
         <source>You don&apos;t have write permissions in the output directory (FET cannot open or create file %1) - you might not be able to work correctly with FET. Maybe you can try to change the output directory from the &apos;Settings&apos; menu. If this is a bug - please report it.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -54325,659 +54337,665 @@ is:</source>
 <context>
     <name>ListSpaceConstraints</name>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="117"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="128"/>
         <source>Constraints basic compulsory space</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="125"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="136"/>
         <source>Constraints room not available times</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="135"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="146"/>
         <source>Constraints activity preferred room</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="150"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="161"/>
         <source>Constraints activity preferred rooms</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="165"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="176"/>
         <source>Constraints students set home room</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="168"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="179"/>
         <source>Note: a home room for a students set means that every activity which has this and ONLY this students set will have this as home room (not other superior or inferior set). You can add home rooms for a group, for a year or for a subgroup, careful not to make impossible timetables. Preferred rooms override the home rooms.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="183"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="194"/>
         <source>Constraints students set home rooms</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="186"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="197"/>
         <source>Note: home rooms for a students set means that every activity which has this and ONLY this students set will have these home rooms (not other superior or inferior set). You can add home rooms for a group, for a year or for a subgroup, careful not to make impossible timetables. Preferred rooms override the home rooms.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="200"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="211"/>
         <source>Constraints teacher home room</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="203"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="214"/>
         <source>Note: a home room for a teacher means that every activity which has this and ONLY this teacher will have this as home room. Preferred rooms override the home rooms.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="216"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="227"/>
         <source>Constraints teacher home rooms</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="219"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="230"/>
         <source>Note: home rooms for a teacher means that every activity which has this and ONLY this teacher will have these home rooms. Preferred rooms override the home rooms.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="232"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="243"/>
         <source>Constraints subject preferred room</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="244"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="255"/>
         <source>Constraints subject preferred rooms</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="256"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="267"/>
         <source>Constraints subject activity tag preferred room</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="269"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="280"/>
         <source>Constraints subject activity tag preferred rooms</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="282"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="293"/>
         <source>Constraints students max building changes per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="290"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="301"/>
         <source>Constraints students set max building changes per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="300"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="311"/>
         <source>Constraints students max building changes per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="303"/>
         <location filename="../src/interface/listspaceconstraints.cpp" line="314"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="363"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="325"/>
         <location filename="../src/interface/listspaceconstraints.cpp" line="374"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="385"/>
         <source>Note: The number of building changes per week is considered to be the sum of the building changes on each day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="311"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="322"/>
         <source>Constraints students set max building changes per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="324"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="335"/>
         <source>Constraints students min gaps between building changes</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="332"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="343"/>
         <source>Constraints students set min gaps between building changes</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="342"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="353"/>
         <source>Constraints teachers max building changes per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="350"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="361"/>
         <source>Constraints teacher max building changes per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="360"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="371"/>
         <source>Constraints teachers max building changes per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="371"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="382"/>
         <source>Constraints teacher max building changes per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="384"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="395"/>
         <source>Constraints teachers min gaps between building changes</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="392"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="403"/>
         <source>Constraints teacher min gaps between building changes</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="402"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="413"/>
         <source>Constraints activity tag preferred room</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="414"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="425"/>
         <source>Constraints activity tag preferred rooms</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="426"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="437"/>
         <source>Constraints activities occupy max different rooms</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="434"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="445"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="436"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="447"/>
         <source>Add/remove multiple constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="443"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="454"/>
         <source>Constraints activities same room if consecutive</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="456"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="467"/>
         <source>Constraints students max room changes per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="464"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="475"/>
         <source>Constraints students set max room changes per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="474"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="485"/>
         <source>Constraints students max room changes per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="477"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="489"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="539"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="551"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="488"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="500"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="550"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="562"/>
         <source>Note: The number of room changes per week is considered to be the sum of the room changes on each day. If you want the same room throughout the week, please use one or more constraints activities occupy max 1 different rooms.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="486"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="497"/>
         <source>Constraints students set max room changes per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="500"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="511"/>
         <source>Constraints students min gaps between room changes</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="508"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="519"/>
         <source>Constraints students set min gaps between room changes</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="518"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="529"/>
         <source>Constraints teachers max room changes per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="526"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="537"/>
         <source>Constraints teacher max room changes per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="536"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="547"/>
         <source>Constraints teachers max room changes per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="548"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="559"/>
         <source>Constraints teacher max room changes per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="562"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="573"/>
         <source>Constraints teachers min gaps between room changes</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="570"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="581"/>
         <source>Constraints teacher min gaps between room changes</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="580"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="591"/>
         <source>Constraints teacher room not available times</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="592"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="603"/>
         <source>Constraints students max room changes per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="600"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="611"/>
         <source>Constraints students set max room changes per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="610"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="621"/>
         <source>Constraints teachers max room changes per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="618"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="629"/>
         <source>Constraints teacher max room changes per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="628"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="639"/>
         <source>Constraints students max building changes per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="636"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="647"/>
         <source>Constraints students set max building changes per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="646"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="657"/>
         <source>Constraints teachers max building changes per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="654"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="665"/>
         <source>Constraints teacher max building changes per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="664"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="675"/>
         <source>Constraints students max building changes per day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="672"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="683"/>
         <source>Constraints students set max building changes per day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="682"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="693"/>
         <source>Constraints teachers max building changes per day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="690"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="701"/>
         <source>Constraints teacher max building changes per day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="700"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="711"/>
         <source>Constraints students max building changes per real day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="708"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="719"/>
         <source>Constraints students set max building changes per real day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="718"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="729"/>
         <source>Constraints teachers max building changes per real day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="726"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="737"/>
         <source>Constraints teacher max building changes per real day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="736"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="747"/>
         <source>Constraints students max room changes per day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="744"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="755"/>
         <source>Constraints students set max room changes per day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="754"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="765"/>
         <source>Constraints teachers max room changes per day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="762"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="773"/>
         <source>Constraints teacher max room changes per day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="772"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="783"/>
         <source>Constraints students max room changes per real day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="780"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="791"/>
         <source>Constraints students set max room changes per real day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="790"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="801"/>
         <source>Constraints teachers max room changes per real day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="798"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="809"/>
         <source>Constraints teacher max room changes per real day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="808"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="819"/>
         <source>Constraints room max activity tags per day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="811"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="822"/>
         <source>This constraint ensures that the specified room does not have more than the specified number of activity tags (one or two) from those selected, on any day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="813"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="830"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="847"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="824"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="841"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="858"/>
         <source>Note: For FET to be able to start the generation, the specified room must be real (not virtual), and should not be found in any set of real rooms of any virtual room.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="825"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="836"/>
         <source>Constraints room max activity tags per real day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="828"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="839"/>
         <source>This constraint ensures that the specified room does not have more than the specified number of activity tags (one or two) from those selected, on any real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="842"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="853"/>
         <source>Constraints room max activity tags per week from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="845"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="856"/>
         <source>This constraint ensures that the specified room does not have more than the specified number of activity tags (one or two) from those selected, throughout the week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="934"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="974"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1022"/>
         <source>Filter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="941"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="981"/>
         <source>Show related</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="982"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1024"/>
         <source>Sorted</source>
         <comment>It refers to space constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="987"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1029"/>
         <source>Activate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="988"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1030"/>
         <source>Deactivate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="989"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1031"/>
         <source>Weights</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="990"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1032"/>
         <source>Comments</source>
         <translation type="unfinished">Komen</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="992"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1034"/>
         <source>Add</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="993"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1035"/>
         <source>Modify</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="995"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1037"/>
         <source>Remove</source>
         <translation type="unfinished">Hapus</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="996"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1038"/>
         <source>Close</source>
         <translation type="unfinished">Tutup</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1940"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2221"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2288"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2302"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2420"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1187"/>
+        <source>Advanced filter for space constraints</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2151"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2432"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2499"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2513"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2631"/>
         <source>FET information</source>
         <translation type="unfinished">Maklumat FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1940"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2302"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2151"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2513"/>
         <source>Invalid selected constraint</source>
         <translation type="unfinished">Kekangan yg dipilih tidak sah</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1990"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2201"/>
         <source>Your selection contains the basic compulsory space constraint(s). Do you really want to remove all the selected constraints, including this (these) one(s)? You cannot generate a timetable without this (these) constraint(s).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1993"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2204"/>
         <source>Note: you can add again a constraint of this type from the menu Data -&gt; Space constraints -&gt; Miscellaneous -&gt; Basic compulsory space constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1996"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2207"/>
         <source>FET warning</source>
         <translation type="unfinished">FET - Amaran</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2010"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2221"/>
         <source>Remove these selected space constraints?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2014"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2171"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2237"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2225"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2382"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2448"/>
         <source>FET confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2015"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2226"/>
         <source>Yes</source>
         <translation type="unfinished">Ya</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2015"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2226"/>
         <source>No</source>
         <translation type="unfinished">Tidak</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2024"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2235"/>
         <source>Removed %1 space constraints:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2077"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2288"/>
         <source>To use this constraint, you need to specify a set of activities and the maximum number of different rooms which can be occupied by these activities. Note that each activity can take place in a single room, and a single room can hold a single activity at a certain moment. This constraint may be used for instance to constrain all activities of type Physics of a certain students set to be in the same room throughout the week, by adding all Physics activities for this students set and making max different rooms = 1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2082"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2293"/>
         <source>FET help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2134"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2345"/>
         <source>No: %1 / %2</source>
         <comment>%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2170"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2381"/>
         <source>Activate the selected space constraints?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2198"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2409"/>
         <source>Activated %1 space constraints:</source>
         <comment>%1 is the number of activated space constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2221"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2432"/>
         <source>Activated %1 space constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2235"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2446"/>
         <source>Deactivate the selected space constraints? (Note that the basic compulsory space constraints will not be deactivated, even if they are selected.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2265"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2476"/>
         <source>Deactivated %1 space constraints:</source>
         <comment>%1 is the number of deactivated space constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2288"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2499"/>
         <source>Deactivated %1 space constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2314"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2525"/>
         <source>Constraint comments</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2316"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2527"/>
         <source>OK</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2318"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2529"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2354"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2565"/>
         <source>Changed a constraint&apos;s comments. Constraint before:
 
 %1
@@ -54987,38 +55005,38 @@ Comments after:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2377"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2588"/>
         <source>%1 / %2 space constraints</source>
         <comment>%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2401"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2612"/>
         <source>Multiple selection: %1 / %2</source>
         <comment>It refers to the list of selected space constraints, %1 is the number of active selected space constraints, %2 is the total number of selected space constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2420"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2631"/>
         <source>No constraints from your selection can change their weight (remember that some types of constraints are allowed to have only 100% weight).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2430"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2439"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2641"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2650"/>
         <source>Modify the weights of the selected space constraints</source>
         <comment>The title of a dialog to modify the weights of the selected constraints with a single click</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2432"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2643"/>
         <source>You will modify %1 selected space constraints.
 Please enter the new weight percentage:</source>
         <comment>Translators: please split this field with new line characters, similarly to the original field, so that it is not too wide. You can use more lines (3 or even 4), if needed. %1 is the number of constraints which will change.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2441"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2652"/>
         <source>You will modify %1 space constraints from your
 selection (remember that some types of constraints
 are only allowed to have 100% weight, so %2
@@ -55028,7 +55046,7 @@ Please enter the new weight percentage:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2479"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2690"/>
         <source>Changed the weights of the following %1 selected space constraints to %2%:</source>
         <comment>%1 is the number of space constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints</comment>
         <translation type="unfinished"></translation>
@@ -55037,2417 +55055,2435 @@ Please enter the new weight percentage:</source>
 <context>
     <name>ListTimeConstraints</name>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="126"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="138"/>
         <source>Constraints basic compulsory time</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="134"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="146"/>
         <source>Constraints break times</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="137"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="149"/>
         <source>Note: An activity with duration greater than 1 cannot be split over a break. Also, the activities constrained by min days between activities constraints with &apos;consecutive if on the same day&apos; = true cannot spread over a break.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="146"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="158"/>
         <source>Constraints teacher not available times</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="156"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="168"/>
         <source>Constraints teachers max hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="159"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="197"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="309"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="319"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1217"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1241"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1255"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="171"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="209"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="321"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="331"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1229"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1253"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="1267"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1279"/>
         <source>It is recommended to use only a 100% weight for these constraints (otherwise the algorithm is not perfect).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="166"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="178"/>
         <source>Constraints teacher max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="176"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="188"/>
         <source>Constraints teachers max gaps per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="184"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="196"/>
         <source>Constraints teacher max gaps per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="194"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="206"/>
         <source>Constraints teacher max hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="206"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="218"/>
         <source>Constraints teachers max hours continuously</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="214"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="226"/>
         <source>Constraints teacher max hours continuously</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="224"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="236"/>
         <source>Constraints teachers min hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="232"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="244"/>
         <source>Constraints teacher min hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="242"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="254"/>
         <source>Constraints teachers max gaps per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="250"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="262"/>
         <source>Constraints teacher max gaps per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="260"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="272"/>
         <source>Constraints students early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="268"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="280"/>
         <source>Constraints students set early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="278"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="290"/>
         <source>Constraints students set not available times</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="288"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="300"/>
         <source>Constraints students max gaps per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="296"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="308"/>
         <source>Constraints students set max gaps per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="306"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="318"/>
         <source>Constraints students max hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="316"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="328"/>
         <source>Constraints students set max hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="328"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="340"/>
         <source>Constraints students max hours continuously</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="336"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="348"/>
         <source>Constraints students set max hours continuously</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="346"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="358"/>
         <source>Constraints students min hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="350"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="365"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="362"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="377"/>
         <source>If the user selects not allowed empty days, it is for real days (for the mornings-afternoons mode), also respecting minimum hours daily for FET days (half days) with allow empty FET days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="354"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="371"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="417"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="531"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="585"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="598"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="611"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="773"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="878"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="893"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1116"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1131"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1701"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1715"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2024"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2147"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="366"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="383"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="429"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="543"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="597"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="610"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="623"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="785"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="890"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="905"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1128"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1143"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1713"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1727"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2036"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="2159"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2223"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2171"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="2235"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2291"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2390"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2466"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2480"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2495"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2247"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2303"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2402"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2478"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2492"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2507"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="361"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="373"/>
         <source>Constraints students set min hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="378"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="390"/>
         <source>Constraints activity ends students day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="391"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="403"/>
         <source>Constraints activity preferred starting time</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="404"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="416"/>
         <source>Constraints activities same starting time</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="412"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="424"/>
         <source>Please read Help/Important tips, advice 2). It is IMPORTANT to remove redundant min days constraints after adding constraints same starting time. Click the Help button!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="415"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="427"/>
         <source>Note: You might not need this constraint. Click Help!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="424"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="436"/>
         <source>Constraints activities not overlapping</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="437"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="449"/>
         <source>Constraints min days between activities</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="445"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="457"/>
         <source>Min days is for real days. If the activities are on the same real day and consecutive if on the same day is checked, they must be consecutive and on the same half day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="449"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2252"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="461"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2264"/>
         <source>Modify multiple constraints at once</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="456"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="468"/>
         <source>Constraints activity preferred time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="464"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="475"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="476"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="487"/>
         <source>Each hour slot of each considered activity must be allowed by this constraint (more restrictive than preferred starting times for activities with duration greater than 1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="472"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="484"/>
         <source>Constraints activities preferred time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="483"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="495"/>
         <source>Constraints activity preferred starting times</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="496"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="508"/>
         <source>Constraints activities preferred starting times</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="504"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="516"/>
         <source>Constraints activities same starting hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="512"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="524"/>
         <source>Add/remove multiple constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="519"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="531"/>
         <source>Constraints activities same starting day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="527"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="539"/>
         <source>Please try to read Help/Important tips, advice 2). It is IMPORTANT to remove redundant min days constraints after adding constraints same starting day. Please also click Help button here for information.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="538"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="550"/>
         <source>Constraints two activities consecutive</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="548"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="672"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="753"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="560"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="684"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="765"/>
         <source>It is a good practice NOT to add this type of constraint to activities which are constrained to be in different days by min days between activities constraints. Please read Help/Important tips, tip number 3).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="557"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="569"/>
         <source>Constraints two activities ordered</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="565"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="577"/>
         <source>This constraint forces two activities A1 and A2: A2 to begin later than A1 has finished, separated by any time interval in the week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="573"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="585"/>
         <source>Constraints min gaps between activities</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="581"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="593"/>
         <source>This constraint ensures, for a set of activities: if any pair of activities are on the same day, they must be separated by at least min gaps (hours).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="583"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="595"/>
         <source>Note: please click Help for important advice</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="592"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="604"/>
         <source>Constraints subactivities preferred time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="595"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="608"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="607"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="620"/>
         <source>This constraint is useful to constrain only the n-th component of the activities. Please click Help button for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="605"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="617"/>
         <source>Constraints subactivities preferred starting times</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="618"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="630"/>
         <source>Constraints teacher interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="628"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="640"/>
         <source>Constraints teachers interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="636"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="648"/>
         <source>Constraints students set interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="646"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="658"/>
         <source>Constraints students interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="654"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="666"/>
         <source>Constraints activities end students day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="662"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="674"/>
         <source>Constraints two activities grouped</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="681"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="693"/>
         <source>Constraints teachers activity tag max hours continuously</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="686"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="698"/>
         <source>This constraint ensures that all teachers do not have more than max hours continuously of activities with the specified activity tag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="694"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="706"/>
         <source>Constraints teacher activity tag max hours continuously</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="700"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="712"/>
         <source>This constraint ensures that the specified teacher does not have more than max hours continuously of activities with the specified activity tag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="708"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="720"/>
         <source>Constraints students activity tag max hours continuously</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="713"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="725"/>
         <source>This constraint ensures that all students do not have more than max hours continuously of activities with the specified activity tag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="721"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="733"/>
         <source>Constraints students set activity tag max hours continuously</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="727"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="739"/>
         <source>This constraint ensures that the specified students do not have more than max hours continuously of activities with the specified activity tag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="735"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="747"/>
         <source>Constraints teachers max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="743"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="755"/>
         <source>Constraints three activities grouped</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="546"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="558"/>
         <source>This constraint forces two activities A1 and A2: A2 to be immediately after A1, same day; no gaps are allowed between them, except for break constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="670"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="682"/>
         <source>This constraint forces two activities to be on the same day, one immediately following the other, in any order; no gaps are allowed between them, except for break constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="751"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="763"/>
         <source>This constraint forces 3 activities to be on the same day, one immediately following the other, as a block of 3 activities, in any order; no gaps are allowed between them, except for break constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="762"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="774"/>
         <source>Constraints max days between activities</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="770"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="782"/>
         <source>Max days is for real days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="780"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="792"/>
         <source>Constraints teachers min days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="788"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="800"/>
         <source>Constraints teacher min days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="798"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="810"/>
         <source>Constraints teachers activity tag max hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="803"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="815"/>
         <source>This constraint ensures that all teachers do not have more than max hours daily of activities with the specified activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="811"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="823"/>
         <source>Constraints teacher activity tag max hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="817"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="829"/>
         <source>This constraint ensures that the specified teacher does not have more than max hours daily of activities with the specified activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="825"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="837"/>
         <source>Constraints students activity tag max hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="830"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="842"/>
         <source>This constraint ensures that all students do not have more than max hours daily of activities with the specified activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="838"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="850"/>
         <source>Constraints students set activity tag max hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="844"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="856"/>
         <source>This constraint ensures that the specified students do not have more than max hours daily of activities with the specified activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="852"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="864"/>
         <source>Constraints students max gaps per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="860"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="872"/>
         <source>Constraints students set max gaps per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="870"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="882"/>
         <source>Constraints activities occupy max time slots from selection</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="885"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="897"/>
         <source>Constraints activities max simultaneous in selected time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="900"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="912"/>
         <source>Constraints students set max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="910"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="922"/>
         <source>Constraints students max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="918"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="930"/>
         <source>Constraints teacher max span per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="921"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="935"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="975"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="989"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1607"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1622"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1635"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1650"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="933"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="947"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="987"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1001"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1619"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1634"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1647"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1662"/>
         <source>This constraint ensures a maximum span of activities on each day. Span means the count of slots (free or occupied) starting with the first occupied slot of the day and ending with the last occupied slot of the day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="932"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="944"/>
         <source>Constraints teachers max span per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="944"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="956"/>
         <source>Constraints teacher min resting hours</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="947"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="962"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1001"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1015"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="959"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="974"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1013"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1027"/>
         <source>This constraint ensures a minimum number of resting hours between the end of a day and the beginning of the next day. Circular means that the time between the end of the last day of the week and the beginning of the first day of the week is also considered.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="959"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="971"/>
         <source>Constraints teachers min resting hours</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="972"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="984"/>
         <source>Constraints students set max span per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="986"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="998"/>
         <source>Constraints students max span per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="998"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1010"/>
         <source>Constraints students set min resting hours</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1012"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1024"/>
         <source>Constraints students min resting hours</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1024"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1036"/>
         <source>Constraints two activities ordered if same day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1032"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1044"/>
         <source>This constraint forces two activities A1 and A2: if they are on the same day, A2 needs to begin later than A1 has finished.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1040"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1052"/>
         <source>Constraints students set min gaps between ordered pair of activity tags</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1043"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1055"/>
         <source>This constraint ensures that for the specified students, on each day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if they appear in this order.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1055"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1067"/>
         <source>Constraints students min gaps between ordered pair of activity tags</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1058"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1070"/>
         <source>This constraint ensures that for all the students, on each day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if they appear in this order.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1069"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1081"/>
         <source>Constraints teacher min gaps between ordered pair of activity tags</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1072"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1084"/>
         <source>This constraint ensures that for the specified teacher, on each day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if they appear in this order.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1084"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1096"/>
         <source>Constraints teachers min gaps between ordered pair of activity tags</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1087"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1099"/>
         <source>This constraint ensures that for all the teachers, on each day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if they appear in this order.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1098"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1110"/>
         <source>Constraints activity tags not overlapping</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1108"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1120"/>
         <source>Constraints activities occupy min time slots from selection</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1123"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1135"/>
         <source>Constraints activities min simultaneous in selected time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1138"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1150"/>
         <source>Constraints teachers activity tag min hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1143"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1155"/>
         <source>This constraint ensures that all teachers do not have less than min hours daily of activities with the specified activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1151"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1163"/>
         <source>Constraints teacher activity tag min hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1157"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1169"/>
         <source>This constraint ensures that the specified teacher does not have less than min hours daily of activities with the specified activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1165"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1177"/>
         <source>Constraints students activity tag min hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1170"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1182"/>
         <source>This constraint ensures that all students do not have less than min hours daily of activities with the specified activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1178"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1190"/>
         <source>Constraints students set activity tag min hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1184"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1196"/>
         <source>This constraint ensures that the specified students do not have less than min hours daily of activities with the specified activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1192"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1204"/>
         <source>Constraints activity ends teachers day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1205"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1217"/>
         <source>Constraints activities end teachers day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1213"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1225"/>
         <source>Constraints teachers max hours daily real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1216"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="1228"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="1240"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1254"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1252"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="1266"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1280"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1290"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1300"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1545"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1555"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1610"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1625"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1638"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1653"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1997"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1278"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1292"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1302"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1312"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1557"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1567"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1622"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1637"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1650"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1665"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="2009"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2021"/>
         <source>This constraint is for a real day
 (a real day = a morning + an afternoon)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1225"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1237"/>
         <source>Constraints teacher max real days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1237"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1249"/>
         <source>Constraints teacher max hours daily real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1251"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1263"/>
         <source>Constraints students max hours daily real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1263"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1275"/>
         <source>Constraints students set max hours daily real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1277"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1289"/>
         <source>Constraints teachers max real days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1287"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1299"/>
         <source>Constraints teachers min real days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1297"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1309"/>
         <source>Constraints teacher min real days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1309"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1321"/>
         <source>Constraints teachers activity tag max hours daily real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1314"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1326"/>
         <source>This constraint ensures that all teachers do not have more than max hours daily of activities with the specified activity tag, for a real day (two half-days).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1322"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1334"/>
         <source>Constraints teacher activity tag max hours daily real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1328"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1340"/>
         <source>This constraint ensures that the specified teacher does not have more than max hours daily of activities with the specified activity tag, for a real day (two half-days).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1336"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1348"/>
         <source>Constraints students activity tag max hours daily real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1341"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1353"/>
         <source>This constraint ensures that all students do not have more than max hours daily of activities with the specified activity tag, for a real day (two half-days).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1349"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1361"/>
         <source>Constraints students set activity tag max hours daily real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1355"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1367"/>
         <source>This constraint ensures that the specified students do not have more than max hours daily of activities with the specified activity tag, for a real day (two half-days).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1363"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1375"/>
         <source>Constraints teacher max afternoons per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1373"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1385"/>
         <source>Constraints teachers max afternoons per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1381"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1393"/>
         <source>Constraints teacher max mornings per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1391"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1403"/>
         <source>Constraints teachers max mornings per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1399"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1411"/>
         <source>Constraints teacher max activity tags per day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1405"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1417"/>
         <source>This constraint ensures that the specified teacher does not have more than the specified number of activity tags (one or two) from those selected, on any day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1413"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1425"/>
         <source>Constraints teachers max activity tags per day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1418"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1430"/>
         <source>This constraint ensures that all the teachers do not have more than the specified number of activity tags (one or two) from those selected, on any day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1426"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1438"/>
         <source>Constraints teachers min mornings per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1434"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1446"/>
         <source>Constraints teacher min mornings per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1444"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1456"/>
         <source>Constraints teachers min afternoons per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1452"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1464"/>
         <source>Constraints teacher min afternoons per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1462"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1474"/>
         <source>Constraints teacher max two consecutive mornings</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1472"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1484"/>
         <source>Constraints teachers max two consecutive mornings</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1480"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1492"/>
         <source>Constraints teacher max two consecutive afternoons</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1490"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1502"/>
         <source>Constraints teachers max two consecutive afternoons</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1498"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1510"/>
         <source>Constraints teachers max gaps per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1501"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1511"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1513"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="1523"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1533"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1535"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1545"/>
         <source>This constraint is for a real day (2 FET days, morning and afternoon).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1508"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1520"/>
         <source>Constraints teacher max gaps per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1520"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1532"/>
         <source>Constraints students max gaps per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1530"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1542"/>
         <source>Constraints students set max gaps per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1542"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1554"/>
         <source>Constraints teachers min hours daily for real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1552"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1564"/>
         <source>Constraints teacher min hours daily for real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1564"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1576"/>
         <source>Constraints teachers afternoons early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1572"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1584"/>
         <source>Constraints teacher afternoons early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1582"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1594"/>
         <source>Constraints teachers min hours per morning</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1585"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2442"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1597"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2454"/>
         <source>To use this constraint, the teachers must have a min hours daily constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1592"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1604"/>
         <source>Constraints teacher min hours per morning</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1595"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2452"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1607"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2464"/>
         <source>To use this constraint, the teacher must have a min hours daily constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1604"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1616"/>
         <source>Constraints teacher max span per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1619"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1631"/>
         <source>Constraints teachers max span per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1632"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1644"/>
         <source>Constraints students set max span per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1647"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1659"/>
         <source>Constraints students max span per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1660"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1672"/>
         <source>Constraints teacher morning interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1670"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1682"/>
         <source>Constraints teachers morning interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1678"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1690"/>
         <source>Constraints teacher afternoon interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1688"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1700"/>
         <source>Constraints teachers afternoon interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1696"/>
-        <source>Constraints students min hours per morning</source>
-        <comment>The title of the dialog to list the constraints of this type</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1699"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2464"/>
-        <source>To use this constraint, the students must have a min hours daily constraint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/listtimeconstraints.cpp" line="1708"/>
-        <source>Constraints students set min hours per morning</source>
+        <source>Constraints students min hours per morning</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/listtimeconstraints.cpp" line="1711"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="2476"/>
+        <source>To use this constraint, the students must have a min hours daily constraint</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1720"/>
+        <source>Constraints students set min hours per morning</source>
+        <comment>The title of the dialog to list the constraints of this type</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1723"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2488"/>
         <source>To use this constraint, the students set must have a min hours daily constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1722"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1734"/>
         <source>Constraints teacher max zero gaps per afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1732"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1744"/>
         <source>Constraints teachers max zero gaps per afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1740"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1752"/>
         <source>Constraints students set max afternoons per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1750"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1762"/>
         <source>Constraints students max afternoons per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1758"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1770"/>
         <source>Constraints students set max mornings per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1768"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1780"/>
         <source>Constraints students max mornings per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1776"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1788"/>
         <source>Constraints students min mornings per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1784"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1796"/>
         <source>Constraints students set min mornings per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1794"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1806"/>
         <source>Constraints students min afternoons per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1802"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1814"/>
         <source>Constraints students set min afternoons per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1812"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1824"/>
         <source>Constraints students set morning interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1822"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1834"/>
         <source>Constraints students morning interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1830"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1842"/>
         <source>Constraints students set afternoon interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1840"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1852"/>
         <source>Constraints students afternoon interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1848"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1860"/>
         <source>Constraints teacher max hours per all afternoons</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1858"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1870"/>
         <source>Constraints teachers max hours per all afternoons</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1866"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1878"/>
         <source>Constraints students set max hours per all afternoons</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1876"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1888"/>
         <source>Constraints students max hours per all afternoons</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1884"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1896"/>
         <source>Constraints teacher min resting hours between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1887"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1900"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1911"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1924"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1899"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1912"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1923"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1936"/>
         <source>This constraint ensures a minimum number of resting hours between the end of each morning and the beginning of the next afternoon (of the same real day).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1897"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1909"/>
         <source>Constraints teachers min resting hours between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1908"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1920"/>
         <source>Constraints students set min resting hours between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1921"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1933"/>
         <source>Constraints students min resting hours between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1932"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1944"/>
         <source>Constraints students set afternoons early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1942"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1954"/>
         <source>Constraints students afternoons early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1950"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1962"/>
         <source>Constraints teachers max gaps per week for real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1953"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1963"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1965"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="1975"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1985"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1987"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1997"/>
         <source>This constraint is for real days (a real day = 2 FET days, morning and afternoon).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1960"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1972"/>
         <source>Constraints teacher max gaps per week for real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1972"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1984"/>
         <source>Constraints students max gaps per week for real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1982"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1994"/>
         <source>Constraints students set max gaps per week for real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1994"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2006"/>
         <source>Constraints students set max real days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2006"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2018"/>
         <source>Constraints students max real days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2016"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2028"/>
         <source>Constraints max total activities from set in selected time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2031"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2043"/>
         <source>Constraints max gaps between activities</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2039"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2051"/>
         <source>This constraint ensures, for a set of activities: if any pair of activities are on the same day, they must be separated by at most max gaps (hours).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2047"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2059"/>
         <source>Constraints activities max in a term</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2060"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2072"/>
         <source>Constraints activities occupy max terms</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2073"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2085"/>
         <source>Constraints teachers max gaps per morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2081"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2093"/>
         <source>Constraints teacher max gaps per morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2091"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2103"/>
         <source>Constraints teachers mornings early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2099"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2111"/>
         <source>Constraints teacher mornings early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2109"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2121"/>
         <source>Constraints students set mornings early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2119"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2131"/>
         <source>Constraints students mornings early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2127"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2139"/>
         <source>Constraints two sets of activities ordered</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2135"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2147"/>
         <source>This constraint forces two sets of activities SA1 and SA2: each activity A2 from SA2 to begin later than the moment each activity A1 from SA1 has finished, separated by any time interval in the week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2144"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2156"/>
         <source>Constraints teachers max three consecutive days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2154"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2166"/>
         <source>Constraints teacher max three consecutive days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2166"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2178"/>
         <source>Constraints students set min gaps between activity tag</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2169"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2181"/>
         <source>This constraint ensures that for the specified students, on each day, there are at least min gaps (hours) between the activities which have this activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2180"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2192"/>
         <source>Constraints students min gaps between activity tag</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2183"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2195"/>
         <source>This constraint ensures that for all the students, on each day, there are at least min gaps (hours) between the activities which have this activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2193"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2205"/>
         <source>Constraints teacher min gaps between activity tag</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2196"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2208"/>
         <source>This constraint ensures that for the specified teacher, on each day, there are at least min gaps (hours) between the activities which have this activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2207"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2219"/>
         <source>Constraints teachers min gaps between activity tag</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2210"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2222"/>
         <source>This constraint ensures that for all the teachers, on each day, there are at least min gaps (hours) between the activities which have this activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2220"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2232"/>
         <source>Constraints students max three consecutive days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2230"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2242"/>
         <source>Constraints students set max three consecutive days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2242"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2254"/>
         <source>Constraints min half days between activities</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2250"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2262"/>
         <source>Min days is for half days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2259"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6184"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6680"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6690"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6699"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6705"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6716"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6726"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6737"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6747"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6758"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6815"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6872"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6882"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6891"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6897"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6908"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6918"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6929"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6986"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7157"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7224"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7238"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7356"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2271"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6410"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6452"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6945"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6955"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6964"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6970"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6981"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6991"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7002"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7012"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7023"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7080"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7137"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7147"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7156"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7162"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7173"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7183"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7194"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7251"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7422"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7489"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7503"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7621"/>
         <source>FET information</source>
         <translation type="unfinished">Maklumat FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2260"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2272"/>
         <source>You have met a FET bug. The constraint activity preferred day should not be editable in a separate dialog. The request will be ignored.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2270"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2282"/>
         <source>Constraints activities min in a term</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2283"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2295"/>
         <source>Constraints max terms between activities</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2298"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2310"/>
         <source>Constraints students set max activity tags per day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2304"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2316"/>
         <source>This constraint ensures that the specified students set does not have more than the specified number of activity tags (one or two) from those selected, on any day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2313"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2325"/>
         <source>Constraints students max activity tags per day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2318"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2330"/>
         <source>This constraint ensures that all the students do not have more than the specified number of activity tags (one or two) from those selected, on any day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2326"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2338"/>
         <source>Constraints teacher max activity tags per real day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2332"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2344"/>
         <source>This constraint ensures that the specified teacher does not have more than the specified number of activity tags (one or two) from those selected, on any real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2340"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2352"/>
         <source>Constraints teachers max activity tags per real day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2345"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2357"/>
         <source>This constraint ensures that all the teachers do not have more than the specified number of activity tags (one or two) from those selected, on any real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2353"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2365"/>
         <source>Constraints students set max activity tags per real day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2359"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2371"/>
         <source>This constraint ensures that the specified students set does not have more than the specified number of activity tags (one or two) from those selected, on any real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2367"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2379"/>
         <source>Constraints students max activity tags per real day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2372"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2384"/>
         <source>This constraint ensures that all the students do not have more than the specified number of activity tags (one or two) from those selected, on any real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2380"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2392"/>
         <source>Constraints max half days between activities</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2388"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2400"/>
         <source>Max days is for half days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2397"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2409"/>
         <source>Constraints activity begins students day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2410"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2422"/>
         <source>Constraints activities begin students day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2418"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2430"/>
         <source>Constraints activity begins teachers day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2431"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2443"/>
         <source>Constraints activities begin teachers day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2439"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2451"/>
         <source>Constraints teachers min hours per afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2449"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2461"/>
         <source>Constraints teacher min hours per afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2461"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2473"/>
         <source>Constraints students min hours per afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2473"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2485"/>
         <source>Constraints students set min hours per afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2487"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2499"/>
         <source>Constraints activities max hourly span</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2502"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2514"/>
         <source>Constraints teachers max hours daily in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2510"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2522"/>
         <source>Constraints teacher max hours daily in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2520"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2532"/>
         <source>Constraints students max hours daily in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2528"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2540"/>
         <source>Constraints students set max hours daily in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2538"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2550"/>
         <source>Constraints students set min gaps between ordered pair of activity tags per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2541"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2553"/>
         <source>This constraint ensures that for the specified students, on each real day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if they appear in this order.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2554"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2566"/>
         <source>Constraints students min gaps between ordered pair of activity tags per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2557"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2569"/>
         <source>This constraint ensures that for all the students, on each real day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if they appear in this order.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2569"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2581"/>
         <source>Constraints teacher min gaps between ordered pair of activity tags per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2572"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2584"/>
         <source>This constraint ensures that for the specified teacher, on each real day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if they appear in this order.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2585"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2597"/>
         <source>Constraints teachers min gaps between ordered pair of activity tags per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2588"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2600"/>
         <source>This constraint ensures that for all the teachers, on each real day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if they appear in this order.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2600"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2612"/>
         <source>Constraints students set min gaps between activity tag per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2603"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2615"/>
         <source>This constraint ensures that for the specified students, on each real day, there are at least min gaps (hours) between the activities which have this activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2614"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2626"/>
         <source>Constraints students min gaps between activity tag per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2617"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2629"/>
         <source>This constraint ensures that for all the students, on each real day, there are at least min gaps (hours) between the activities which have this activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2627"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2639"/>
         <source>Constraints teacher min gaps between activity tag per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2630"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2642"/>
         <source>This constraint ensures that for the specified teacher, on each real day, there are at least min gaps (hours) between the activities which have this activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2641"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2653"/>
         <source>Constraints teachers min gaps between activity tag per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2644"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2656"/>
         <source>This constraint ensures that for all the teachers, on each real day, there are at least min gaps (hours) between the activities which have this activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2654"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2666"/>
         <source>Constraints students set min gaps between ordered pair of activity tags between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2657"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2669"/>
         <source>This constraint ensures that for the specified students, on each real day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if the first activity tag appears in the morning and the second activity tag appears in the afternoon.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2669"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2681"/>
         <source>Constraints students min gaps between ordered pair of activity tags between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2672"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2684"/>
         <source>This constraint ensures that for all the students, on each real day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if the first activity tag appears in the morning and the second activity tag appears in the afternoon.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2683"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2695"/>
         <source>Constraints teacher min gaps between ordered pair of activity tags between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2686"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2698"/>
         <source>This constraint ensures that for the specified teacher, on each real day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if the first activity tag appears in the morning and the second activity tag appears in the afternoon.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2698"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2710"/>
         <source>Constraints teachers min gaps between ordered pair of activity tags between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2701"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2713"/>
         <source>This constraint ensures that for all the teachers, on each real day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if the first activity tag appears in the morning and the second activity tag appears in the afternoon.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2712"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2724"/>
         <source>Constraints students set min gaps between activity tag between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2715"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2727"/>
         <source>This constraint ensures that for the specified students, on each real day, there are at least min gaps (hours) between the last activity from the morning which has this activity tag and the first activity from the afternoon which has this activity tag (the constraint is considered respected if the activity tag is not met both in the morning and in the afternoon).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2725"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2737"/>
         <source>Constraints students min gaps between activity tag between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2728"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2740"/>
         <source>This constraint ensures that for all the students, on each real day, there are at least min gaps (hours) between the last activity from the morning which has this activity tag and the first activity from the afternoon which has this activity tag (the constraint is considered respected if the activity tag is not met both in the morning and in the afternoon).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2737"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2749"/>
         <source>Constraints teacher min gaps between activity tag between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2740"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2752"/>
         <source>This constraint ensures that for the specified teacher, on each real day, there are at least min gaps (hours) between the last activity from the morning which has this activity tag and the first activity from the afternoon which has this activity tag (the constraint is considered respected if the activity tag is not met both in the morning and in the afternoon).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2750"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2762"/>
         <source>Constraints teachers min gaps between activity tag between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2753"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2765"/>
         <source>This constraint ensures that for all the teachers, on each real day, there are at least min gaps (hours) between the last activity from the morning which has this activity tag and the first activity from the afternoon which has this activity tag (the constraint is considered respected if the activity tag is not met both in the morning and in the afternoon).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2762"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2774"/>
         <source>Constraints teachers no two consecutive days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2770"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2782"/>
         <source>Constraints teacher no two consecutive days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2780"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2792"/>
         <source>Constraints teacher pair of mutually exclusive time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2790"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2802"/>
         <source>Constraints teachers pair of mutually exclusive time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2798"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2810"/>
         <source>Constraints students set pair of mutually exclusive time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2808"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2820"/>
         <source>Constraints students pair of mutually exclusive time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2904"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2945"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2995"/>
         <source>Filter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2911"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2952"/>
         <source>Show related</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2954"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2997"/>
         <source>Sorted</source>
         <comment>It refers to time constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2959"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="3002"/>
         <source>Activate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2960"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="3003"/>
         <source>Deactivate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2961"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="3004"/>
         <source>Weights</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2962"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="3005"/>
         <source>Comments</source>
         <translation type="unfinished">Komen</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2964"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="3007"/>
         <source>Add</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2965"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="3008"/>
         <source>Modify</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2967"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="3017"/>
+        <source>Modify selected</source>
+        <comment>It refers to time constraints</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="3020"/>
         <source>Remove</source>
         <translation type="unfinished">Hapus</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2968"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="3021"/>
         <source>Close</source>
         <translation type="unfinished">Tutup</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6184"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7238"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="3182"/>
+        <source>Advanced filter for time constraints</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6410"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7503"/>
         <source>Invalid selected constraint</source>
         <translation type="unfinished">Kekangan yg dipilih tidak sah</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6234"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6452"/>
+        <source>No constraints selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6499"/>
         <source>Your selection contains the basic compulsory time constraint(s). Do you really want to remove all the selected constraints, including this (these) one(s)? You cannot generate a timetable without this (these) constraint(s).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6237"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6502"/>
         <source>Note: you can add again a constraint of this type from the menu Data -&gt; Time constraints -&gt; Miscellaneous -&gt; Basic compulsory time constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6240"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6505"/>
         <source>FET warning</source>
         <translation type="unfinished">FET - Amaran</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6254"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6519"/>
         <source>Remove these selected time constraints?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6258"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7107"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7173"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6523"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7372"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7438"/>
         <source>FET confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6259"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6524"/>
         <source>Yes</source>
         <translation type="unfinished">Ya</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6259"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6524"/>
         <source>No</source>
         <translation type="unfinished">Tidak</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6268"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6533"/>
         <source>Removed %1 time constraints:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6328"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6347"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6593"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6612"/>
         <source>IMPORTANT: after adding such constraints, it is necessary (otherwise generation might be impossible) to remove redundant constraints min days between activities. If you are sure that you don&apos;t have redundant constraints, you can skip this step, but it doesn&apos;t hurt to do it as a precaution. Also, you don&apos;t have to do that after each added constraint, but only once after adding more constraints of this type. Please read Help/Important tips - tip number 2 for details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6333"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6598"/>
         <source>If you divide the years by categories (the students have optional courses), you may not need this kind of constraint. If the year is for instance divided by language, English/French/German, sometimes people think that it is needed that these optional activities to have the same starting time. But solutions exist without adding same starting time constraints. Some people try to avoid students gaps by using this constraint, because they need to do it this way in other timetabling software. But it is not the best practice to do it with such a constraint. The correct way is to add a max 0 gaps per week constraint for students and maybe also an early max 0 beginnings at second hour constraint for students.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6340"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6352"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6366"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6373"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6397"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6438"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6448"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6458"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6468"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6486"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6514"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6528"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6543"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6557"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6571"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6586"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6613"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6648"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6605"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6617"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6631"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6638"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6662"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6703"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6713"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6723"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6733"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6751"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6779"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6793"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6808"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6822"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6836"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6851"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6878"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6913"/>
         <source>FET help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6359"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6624"/>
         <source>Please make sure that the selected activities are not forced to be consecutive by some other constraint &apos;min days between activities&apos; (with &apos;consecutive if on the same day&apos; true), by a constraint &apos;two activities consecutive&apos;, or by a constraint &apos;two activities grouped&apos; (also, if you have a constraint &apos;three activities grouped&apos; related to the selected activities, make sure that the constraints do not contradict).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6373"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6638"/>
         <source>This constraint is used to specify that for some components of a type of activities, for instance for math activities, you need that from say 4-5 per week, at least the first 2 to be early (say in the first 4 hours).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6378"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6402"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6643"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6667"/>
         <source>This is simple: just add 2 constraints of this type, with the component number 1, (then 2) and the corresponding subject (you can also define teacher, students set and activity tag, of course).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6382"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6407"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6647"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6672"/>
         <source>Note: if you have math with 4 and 5 splits and want to constrain 2 subactivities for those with 4 per week and 3 subactivities for those with 5 per week, you can add constraints only for math with components 3, 4 and 5 (nice trick)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6385"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6410"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6650"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6675"/>
         <source>Note: if an activity does not belong to a larger group (is a single activity), it is considered to have component number 1. As an advice, if you have activities of say biology split into 1 or 2 per week and want to constrain only one component if there are 2 per week, add a constraint for biology with component number=2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6389"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6414"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6654"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6679"/>
         <source>Note: if a teacher or a students set cannot have activities in some slots because of this constraint, gaps will be counted (if you have max gaps constraints). So be careful if you add this constraint for all subactivities, for only a teacher or for only a students set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6397"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6662"/>
         <source>This constraint is used to specify that for some components of a type of activities, for instance for math activities, you need that from say 4-5 per week, at least the first 2 to start early (say in the first 4 hours).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6424"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6689"/>
         <source>Help about the constraint max days between activities:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6426"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6691"/>
         <source>This constraint was suggested for the following situation: a user needed that activities A1, A2 and A3 to be in consecutive days (like: A1 on Tuesday, A2 on Wednesday and A3 on Thursday. So, they must be in 3 consecutive days). This is simple: add a constraint max days between activities for A1, A2 and A3, with max 2 days between them. It is supposed that these activities are constrained not to be on the same day by a constraint min days between activities.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6431"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6696"/>
         <source>So, the general situation: this constraint ensures that between each pair from the selected activities, the distance in days is at most the selected value. Distance = 1 day between a pair A1 and A2 means that A1 and A2 are in consecutive days (like Thursday and Friday). Distance = 3 days means that A1 and A2 are 3 days apart, for instance Monday and Thursday.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6435"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6700"/>
         <source>Another example: teacher T wants to ensure that his activities take place in at most 4 consecutive days (so, from Monday to Thursday or from Tuesday to Friday). Then, add all his activities and max days between them = 3.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6445"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6710"/>
         <source>To use this constraint, you need to specify a set of activities, a set of time slots, and a maximum number of time slots from those selected which can be occupied by the specified activities.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6455"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6720"/>
         <source>To use this constraint, you need to specify a set of activities, a set of time slots, and a maximum number of activities from those selected which can be simultaneous in each of the selected time slots.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6465"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6730"/>
         <source>To use this constraint, you need to specify a set of activities, a set of time slots, and a minimum number of time slots from those selected which must be occupied by the specified activities.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6477"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6742"/>
         <source>To use this constraint, you need to specify a set of activities, a set of time slots, and a minimum number of activities from those selected which must be simultaneous in each of the selected time slots.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6480"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6745"/>
         <source>You can select the option &apos;Allow empty slots&apos;. This means that each selected slot may either have the minimum number of simultaneous activities out of the selected ones, or no activities out of the selected ones.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6483"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6748"/>
         <source>IMPORTANT NOTE: If you need a solution without empty slots or if a solution with empty slots does not exist, please leave the option &apos;Allow empty slots&apos; unselected, because the generation is more efficient this way.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6509"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6774"/>
         <source>To use this constraint, you need to specify a set of activities, a set of time slots, and a maximum total number of activities from those selected which can be placed (even partially) in any of the selected time slots.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6512"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6777"/>
         <source>This constraint is useful to limit the number of activities in the overflow (or fake) blocks.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6521"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6535"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6786"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6800"/>
         <source>This constraint was suggested by %1, %2, and other users on this FET forum topic: %3.</source>
         <comment>%1 and %2 are two persons, %3 is an internet link</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6524"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6789"/>
         <source>It was designed to disallow the teachers to have activities in two consecutive real days, morning and afternoon on both, which can be tiring. If you can allow the teachers to have activities only on the afternoon of a real day (half day 1), then the whole next real day (both morning and afternoon, half days 2 and 3), then only on the next morning (half day 4), you can select the exception option. In this case only a succession of these four half-days: morning-afternoon-morning-afternoon is NOT allowed by the algorithm.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6539"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6804"/>
         <source>It was designed to disallow a teacher to have activities in two consecutive real days, morning and afternoon on both, which can be tiring. If you can allow the teacher to have activities only on the afternoon of a real day (half day 1), then the whole next real day (both morning and afternoon, half days 2 and 3), then only on the next morning (half day 4), you can select the exception option. In this case only a succession of these four half-days: morning-afternoon-morning-afternoon is NOT allowed by the algorithm.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6550"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6564"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6815"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6829"/>
         <source>This constraint was suggested by the user %1 on this FET forum topic: %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6553"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6818"/>
         <source>It was designed to disallow the students to have activities in two consecutive real days, morning and afternoon on both, which can be tiring. If you can allow the students to have activities only on the afternoon of a real day (half day 1), then the whole next real day (both morning and afternoon, half days 2 and 3), then only on the next morning (half day 4), you can select the exception option. In this case only a succession of these four half-days: morning-afternoon-morning-afternoon is NOT allowed by the algorithm.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6567"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6832"/>
         <source>It was designed to disallow a students set to have activities in two consecutive real days, morning and afternoon on both, which can be tiring. If you can allow the students set to have activities only on the afternoon of a real day (half day 1), then the whole next real day (both morning and afternoon, half days 2 and 3), then only on the next morning (half day 4), you can select the exception option. In this case only a succession of these four half-days: morning-afternoon-morning-afternoon is NOT allowed by the algorithm.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6580"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6845"/>
         <source>Help about the constraint max terms between activities:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6582"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6847"/>
         <source>This constraint was suggested for the following situation: a user needed that a set of activities to be in three consecutive terms. In this case add a constraint of type max terms between activities for these activities with max terms between activities = 2 (it is supposed that there are also other constraints that ensure that these activities occupy at least three terms).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6595"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6860"/>
         <source>Help about the constraint max half days between activities:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6597"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6862"/>
         <source>This constraint was suggested by two users, for two different situations in the Mornings-Afternoons mode:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6599"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6864"/>
         <source>1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6600"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6865"/>
         <source>This constraint was suggested by %1, so that a teacher does not work both on the afternoon of the last day of the week and the morning of the first day of the week. The user needs to add all the activities of the teacher, max half days between them = n_half_days_per_week-2. See the forum topic %2 for more details.</source>
         <comment>%1 is a person</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6604"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6869"/>
         <source>2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6605"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6870"/>
         <source>Also, this constraint was suggested by %1, to do the timetable for two weeks using tricks. Here are this user&apos;s words: &apos;For the Tunisian high schools I opted for the morning evening mode with two weeks A and B for the weekly activities with the constraints min days between activities 6, max days between activities 6 and the same starting hour with max different rooms 1. I added a trick so that the two activities are in the same half of the day: for each real room I created two rooms, one valid in the morning and the other valid in the evening; to avoid this bypass, is it possible to add a max half days between activities constraint?&apos; (Note: The constraint type min half days between activities was existing at the time of this post.) See the forum topic %2 for more details.</source>
         <comment>%1 is a person</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6636"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6901"/>
         <source>Help about the constraint activities max hourly span:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6638"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6903"/>
         <source>This constraint was suggested by %1.</source>
         <comment>%1 is a user</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6640"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6905"/>
         <source>The activities can be on any days, but their hourly span must be limited by the specified maximum value.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6642"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6907"/>
         <source>More details and an example: the hourly span of the a set of activities is the number of hours between the start of the earliest activity and the end of the latest activity, neglecting their days. So, if for instance the constraint addresses A1, A2, A3, and A4, each of them having duration 1, and say: A1 is on day 1 hour 2, A2 is on day 1 hour 3, A3 is on day 3 hour 5, and A4 is on day 5 hour 2, then the earliest activities (neglecting their days) are A1 and A4 (starting at hour 2), and the latest activity (neglecting its day) is A3 (ending after hour 5). The hourly span of A1, A2, A3, and A4 is thus (5 + 1) - 2 = 4.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6681"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6873"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6946"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7138"/>
         <source>FET has met a critical error - aborting current operation, please report bug (old weight is not -1 and not (&gt;=0.0 and &lt;=100.0))</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6691"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6883"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6956"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7148"/>
         <source>FET has met a critical error - aborting current operation, please report bug (new weight is not -1 and not (&gt;=0.0 and &lt;=100.0))</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6700"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6892"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6965"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7157"/>
         <source>FET has met a critical error - aborting current operation, please report bug (old consecutive is not any, yes or no)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6706"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6898"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6971"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7163"/>
         <source>FET has met a critical error - aborting current operation, please report bug (new consecutive is not no_change, yes or no)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6717"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6909"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6982"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7174"/>
         <source>FET has met a critical error - aborting current operation, please report bug (old min days is not -1 or 1..ndaysperweek)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6727"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6919"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6992"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7184"/>
         <source>FET has met a critical error - aborting current operation, please report bug (new min days is not -1 or 1..ndaysperweek)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6738"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7003"/>
         <source>FET has met a critical error - aborting current operation, please report bug (old min days is not -1 or 1..nrealdaysperweek)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6748"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7013"/>
         <source>FET has met a critical error - aborting current operation, please report bug (new min days is not -1 or 1..nrealdaysperweek)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6759"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6930"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7024"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7195"/>
         <source>FET has met a critical error - aborting current operation, please report bug (old nActivities is not -1 or &gt;=1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6815"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7080"/>
         <source>There were inspected (and possibly modified) %1 constraints min days between activities matching your criteria</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6817"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6988"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7082"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7253"/>
         <source>NOTE: If you are using constraints of type activities same starting time or activities same starting day, it is important (after current operation) to apply the operation of removing redundant constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6819"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6990"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7084"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7255"/>
         <source>Read Help/Important tips - tip 2) for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6822"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7087"/>
         <source>Modified multiple constraints min days between activities with filter:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6825"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6996"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7090"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7261"/>
         <source>Old weight percentage=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6827"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6998"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7092"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7263"/>
         <source>New weight percentage=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6830"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7001"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7095"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7266"/>
         <source>Old consecutive if same day=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6832"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7003"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7097"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7268"/>
         <source>New consecutive if same day=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6835"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7100"/>
         <source>Old min days=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6837"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7102"/>
         <source>New min days=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6840"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7011"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7105"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7276"/>
         <source>Old number of activities=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6986"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7251"/>
         <source>There were inspected (and possibly modified) %1 constraints min half days between activities matching your criteria</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6993"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7258"/>
         <source>Modified multiple constraints min half days between activities with filter:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7006"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7271"/>
         <source>Old min half days=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7008"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7273"/>
         <source>New min half days=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7070"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7335"/>
         <source>No: %1 / %2</source>
         <comment>%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7106"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7371"/>
         <source>Activate the selected time constraints?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7134"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7399"/>
         <source>Activated %1 time constraints:</source>
         <comment>%1 is the number of activated time constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7157"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7422"/>
         <source>Activated %1 time constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7171"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7436"/>
         <source>Deactivate the selected time constraints? (Note that the basic compulsory time constraints will not be deactivated, even if they are selected.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7201"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7466"/>
         <source>Deactivated %1 time constraints:</source>
         <comment>%1 is the number of deactivated time constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7224"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7489"/>
         <source>Deactivated %1 time constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7250"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7515"/>
         <source>Constraint comments</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7252"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7517"/>
         <source>OK</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7254"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7519"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7290"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7555"/>
         <source>Changed a constraint&apos;s comments. Constraint before:
 
 %1
@@ -57457,38 +57493,38 @@ Comments after:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7313"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7578"/>
         <source>%1 / %2 time constraints</source>
         <comment>%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7337"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7602"/>
         <source>Multiple selection: %1 / %2</source>
         <comment>It refers to the list of selected time constraints, %1 is the number of active selected time constraints, %2 is the total number of selected time constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7356"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7621"/>
         <source>No constraints from your selection can change their weight (remember that some types of constraints are allowed to have only 100% weight).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7366"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7375"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7631"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7640"/>
         <source>Modify the weights of the selected time constraints</source>
         <comment>The title of a dialog to modify the weights of the selected constraints with a single click</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7368"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7633"/>
         <source>You will modify %1 selected time constraints.
 Please enter the new weight percentage:</source>
         <comment>Translators: please split this field with new line characters, similarly to the original field, so that it is not too wide. You can use more lines (3 or even 4), if needed. %1 is the number of constraints which will change.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7377"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7642"/>
         <source>You will modify %1 time constraints from your
 selection (remember that some types of constraints
 are only allowed to have 100% weight, so %2
@@ -57498,7 +57534,7 @@ Please enter the new weight percentage:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7415"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7680"/>
         <source>Changed the weights of the following %1 selected time constraints to %2%:</source>
         <comment>%1 is the number of time constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints</comment>
         <translation type="unfinished"></translation>
@@ -58795,6 +58831,238 @@ into
     </message>
 </context>
 <context>
+    <name>ModifyTimeConstraints</name>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="114"/>
+        <source>Modify multiple teacher max gaps per week</source>
+        <comment>The title of the dialog to modify more constraints of this type</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="117"/>
+        <source>You must use weight percentage 100%, because otherwise you will get poor timetables. Try to fix firstly a rather large value for max gaps per week and lower it as you find new timetables.
+Note: teacher not available and break are not counted as gaps.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="100"/>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="121"/>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="138"/>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="155"/>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="174"/>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="198"/>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="215"/>
+        <source>Teacher</source>
+        <translation type="unfinished">Pengajar</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="97"/>
+        <source>Modify multiple teacher max days per week</source>
+        <comment>The title of the dialog to modify more constraints of this type</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="103"/>
+        <source>Max days per week</source>
+        <translation type="unfinished">Max bil hari seminggu</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="124"/>
+        <source>Max gaps per week</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="135"/>
+        <source>Modify multiple teacher max hours daily</source>
+        <comment>The title of the dialog to modify more constraints of this type</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="141"/>
+        <source>Max hours daily</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="152"/>
+        <source>Modify multiple teacher max hours continuously</source>
+        <comment>The title of the dialog to modify more constraints of this type</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="158"/>
+        <source>Max hours continuously</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="169"/>
+        <source>Modify multiple teacher min hours daily</source>
+        <comment>The title of the dialog to modify more constraints of this type</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="172"/>
+        <source>It is recommended to start with 2 min hours and strengthen them as you find new timetables.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="177"/>
+        <source>Min hours daily</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="183"/>
+        <source>Allow empty days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="191"/>
+        <source>Modify multiple teacher max gaps per day</source>
+        <comment>The title of the dialog to modify more constraints of this type</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="194"/>
+        <source>You must use weight percentage 100%, because otherwise you will get poor timetables. Try to fix firstly a rather large value for max gaps per day and lower it as you find new timetables.
+Note: teacher not available and break are not counted as gaps.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="201"/>
+        <source>Max gaps per day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="212"/>
+        <source>Modify multiple teacher min days per week</source>
+        <comment>The title of the dialog to modify more constraints of this type</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="218"/>
+        <source>Min days per week</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="271"/>
+        <source>OK</source>
+        <translation type="unfinished">OK</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="273"/>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="285"/>
+        <source>Weight percentage
+(recommended: 100.0%,
+allowed: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="288"/>
+        <source>Weight percentage (allowed: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="292"/>
+        <source>Weight percentage (necessary: 100%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="437"/>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="442"/>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="537"/>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="542"/>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="628"/>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="631"/>
+        <source>FET information</source>
+        <translation type="unfinished">Maklumat FET</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="437"/>
+        <source>Invalid weight (percentage)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="442"/>
+        <source>Invalid weight (percentage) - it has to be 100%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="448"/>
+        <source>FET warning</source>
+        <translation type="unfinished">FET - Amaran</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="449"/>
+        <source>You selected a weight less than 100%. The generation algorithm is not perfectly optimized to work with such weights (even if in practice it might work well). It is recommended to work only with 100% weights for these constraints. Are you sure you want to continue?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="467"/>
+        <source>Changed the maximum number of days per week to %1 in these %2 time constraints:
+%3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="484"/>
+        <source>Changed the maximum number of gaps per week to %1 in these %2 time constraints:
+%3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="501"/>
+        <source>Changed the maximum number of hours daily to %1 in these %2 time constraints:
+%3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="518"/>
+        <source>Changed the maximum number of hours continuously to %1 in these %2 time constraints:
+%3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="537"/>
+        <source>Allow empty days check box must be checked. If you need to not allow empty days for a teacher, please use the constraint teacher min days per week</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="542"/>
+        <source>Allow empty days check box must be checked. If you need to not allow empty days for a teacher, please use the constraint teacher min days per week (but the min days per week constraint is for real days. You can also use the constraints teacher min mornings/afternoons per week.)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="549"/>
+        <source>Changed the minimum number of hours daily to %1 in these %2 time constraints:
+%3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="567"/>
+        <source>Changed the maximum number of gaps per day to %1 in these %2 time constraints:
+%3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="584"/>
+        <source>Changed the minimum number of days per week to %1 in these %2 time constraints:
+%3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="628"/>
+        <source>This check box must remain checked. If you really need to not allow empty days for this teacher, please use constraint teacher min days per week</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifytimeconstraints.cpp" line="631"/>
+        <source>This check box must remain checked. If you really need to not allow empty days for this teacher, please use constraint teacher min days per week (but the min days per week constraint is for real days. You can also use the constraints teacher min mornings/afternoons per week.)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MonthsNames</name>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="50"/>
@@ -58808,12 +59076,12 @@ into
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="54"/>
-        <location filename="../src/interface/helpaboutform.cpp" line="82"/>
         <source>March</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="56"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="82"/>
         <source>April</source>
         <translation type="unfinished"></translation>
     </message>
@@ -58894,18 +59162,24 @@ into
 <context>
     <name>NotificationCommandForm</name>
     <message>
-        <location filename="../src/interface/notificationcommandform.cpp" line="116"/>
+        <location filename="../src/interface/notificationcommandform.cpp" line="126"/>
+        <location filename="../src/interface/notificationcommandform.cpp" line="136"/>
         <source>Choose an external command</source>
         <comment>Title of a dialog to choose an external command</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/notificationcommandform.cpp" line="182"/>
+        <location filename="../src/interface/notificationcommandform.cpp" line="230"/>
         <source>You can choose to make FET execute an external command at the end of each single or multiple generation, in addition to or as an alternative to the system beep.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/notificationcommandform.cpp" line="191"/>
+        <location filename="../src/interface/notificationcommandform.cpp" line="233"/>
+        <source>Also, you can choose to make FET issue a system beep and/or execute an external command after each successful timetable in a multiple generation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/notificationcommandform.cpp" line="241"/>
         <source>FET help</source>
         <translation type="unfinished"></translation>
     </message>
@@ -58919,32 +59193,45 @@ into
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/notificationcommandform_template.ui" line="22"/>
+        <location filename="../src/interface/notificationcommandform_template.ui" line="20"/>
+        <source>After each generation (single or multiple)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/notificationcommandform_template.ui" line="28"/>
+        <location filename="../src/interface/notificationcommandform_template.ui" line="112"/>
         <source>Beep</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/notificationcommandform_template.ui" line="46"/>
+        <location filename="../src/interface/notificationcommandform_template.ui" line="52"/>
+        <location filename="../src/interface/notificationcommandform_template.ui" line="136"/>
         <source>Run external command</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/notificationcommandform_template.ui" line="73"/>
+        <location filename="../src/interface/notificationcommandform_template.ui" line="79"/>
+        <location filename="../src/interface/notificationcommandform_template.ui" line="163"/>
         <source>Browse</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/notificationcommandform_template.ui" line="97"/>
+        <location filename="../src/interface/notificationcommandform_template.ui" line="104"/>
+        <source>After each successful timetable in a multiple generation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/notificationcommandform_template.ui" line="190"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/notificationcommandform_template.ui" line="117"/>
+        <location filename="../src/interface/notificationcommandform_template.ui" line="210"/>
         <source>OK</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/notificationcommandform_template.ui" line="124"/>
+        <location filename="../src/interface/notificationcommandform_template.ui" line="217"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -58952,52 +59239,52 @@ into
 <context>
     <name>QDialogButtonBox</name>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2289"/>
+        <location filename="../src/interface/fet.cpp" line="2299"/>
         <source>&amp;OK</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation type="unfinished">&amp;OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2291"/>
+        <location filename="../src/interface/fet.cpp" line="2301"/>
         <source>OK</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2294"/>
+        <location filename="../src/interface/fet.cpp" line="2304"/>
         <source>&amp;Cancel</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2296"/>
+        <location filename="../src/interface/fet.cpp" line="2306"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2299"/>
+        <location filename="../src/interface/fet.cpp" line="2309"/>
         <source>&amp;Yes</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation type="unfinished">&amp;Ya</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2301"/>
+        <location filename="../src/interface/fet.cpp" line="2311"/>
         <source>Yes to &amp;All</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2305"/>
+        <location filename="../src/interface/fet.cpp" line="2315"/>
         <source>N&amp;o to All</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2308"/>
+        <location filename="../src/interface/fet.cpp" line="2318"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2303"/>
+        <location filename="../src/interface/fet.cpp" line="2313"/>
         <source>&amp;No</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation type="unfinished">&amp;Tidak</translation>
@@ -59006,52 +59293,52 @@ into
 <context>
     <name>QFontDialog</name>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2358"/>
+        <location filename="../src/interface/fet.cpp" line="2368"/>
         <source>Select Font</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2360"/>
+        <location filename="../src/interface/fet.cpp" line="2370"/>
         <source>&amp;Font</source>
         <comment>Accelerator key (letter after ampersand) for &amp;Font, Font st&amp;yle, &amp;Size, Stri&amp;keout, &amp;Underline, Wr&amp;iting System, must be different</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2362"/>
+        <location filename="../src/interface/fet.cpp" line="2372"/>
         <source>Font st&amp;yle</source>
         <comment>Accelerator key (letter after ampersand) for &amp;Font, Font st&amp;yle, &amp;Size, Stri&amp;keout, &amp;Underline, Wr&amp;iting System, must be different</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2364"/>
+        <location filename="../src/interface/fet.cpp" line="2374"/>
         <source>&amp;Size</source>
         <comment>Accelerator key (letter after ampersand) for &amp;Font, Font st&amp;yle, &amp;Size, Stri&amp;keout, &amp;Underline, Wr&amp;iting System, must be different</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2366"/>
+        <location filename="../src/interface/fet.cpp" line="2376"/>
         <source>Effects</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2372"/>
+        <location filename="../src/interface/fet.cpp" line="2382"/>
         <source>Sample</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2368"/>
+        <location filename="../src/interface/fet.cpp" line="2378"/>
         <source>Stri&amp;keout</source>
         <comment>Accelerator key (letter after ampersand) for &amp;Font, Font st&amp;yle, &amp;Size, Stri&amp;keout, &amp;Underline, Wr&amp;iting System, must be different</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2370"/>
+        <location filename="../src/interface/fet.cpp" line="2380"/>
         <source>&amp;Underline</source>
         <comment>Accelerator key (letter after ampersand) for &amp;Font, Font st&amp;yle, &amp;Size, Stri&amp;keout, &amp;Underline, Wr&amp;iting System, must be different</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2374"/>
+        <location filename="../src/interface/fet.cpp" line="2384"/>
         <source>Wr&amp;iting System</source>
         <comment>Accelerator key (letter after ampersand) for &amp;Font, Font st&amp;yle, &amp;Size, Stri&amp;keout, &amp;Underline, Wr&amp;iting System, must be different</comment>
         <translation type="unfinished"></translation>
@@ -59060,53 +59347,53 @@ into
 <context>
     <name>QGnomeTheme</name>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2336"/>
+        <location filename="../src/interface/fet.cpp" line="2346"/>
         <source>&amp;OK</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation type="unfinished">&amp;OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2338"/>
+        <location filename="../src/interface/fet.cpp" line="2348"/>
         <source>OK</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2341"/>
+        <location filename="../src/interface/fet.cpp" line="2351"/>
         <source>&amp;Cancel</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2343"/>
+        <location filename="../src/interface/fet.cpp" line="2353"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2346"/>
+        <location filename="../src/interface/fet.cpp" line="2356"/>
         <source>&amp;Yes</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation type="unfinished">&amp;Ya</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2348"/>
+        <location filename="../src/interface/fet.cpp" line="2358"/>
         <source>Yes to &amp;All</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2350"/>
+        <location filename="../src/interface/fet.cpp" line="2360"/>
         <source>&amp;No</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation type="unfinished">&amp;Tidak</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2352"/>
+        <location filename="../src/interface/fet.cpp" line="2362"/>
         <source>N&amp;o to All</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2355"/>
+        <location filename="../src/interface/fet.cpp" line="2365"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
@@ -59114,53 +59401,53 @@ into
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2312"/>
+        <location filename="../src/interface/fet.cpp" line="2322"/>
         <source>&amp;OK</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation type="unfinished">&amp;OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2314"/>
+        <location filename="../src/interface/fet.cpp" line="2324"/>
         <source>OK</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2317"/>
+        <location filename="../src/interface/fet.cpp" line="2327"/>
         <source>&amp;Cancel</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2319"/>
+        <location filename="../src/interface/fet.cpp" line="2329"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2322"/>
+        <location filename="../src/interface/fet.cpp" line="2332"/>
         <source>&amp;Yes</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation type="unfinished">&amp;Ya</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2324"/>
+        <location filename="../src/interface/fet.cpp" line="2334"/>
         <source>Yes to &amp;All</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2326"/>
+        <location filename="../src/interface/fet.cpp" line="2336"/>
         <source>&amp;No</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation type="unfinished">&amp;Tidak</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2328"/>
+        <location filename="../src/interface/fet.cpp" line="2338"/>
         <source>N&amp;o to All</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2331"/>
+        <location filename="../src/interface/fet.cpp" line="2341"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
@@ -69410,17 +69697,17 @@ to
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="3369"/>
+        <location filename="../src/interface/fet.cpp" line="3379"/>
         <source>Please check the constraints related to the activity below, which might be impossible to schedule:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="3375"/>
+        <location filename="../src/interface/fet.cpp" line="3385"/>
         <source>No: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="3379"/>
+        <location filename="../src/interface/fet.cpp" line="3389"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
@@ -69899,8 +70186,8 @@ to
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="421"/>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="527"/>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="541"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1071"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1291"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1088"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1308"/>
         <source>FET information</source>
         <translation type="unfinished">Maklumat FET</translation>
     </message>
@@ -69932,67 +70219,67 @@ to
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="952"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1129"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="969"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1146"/>
         <source>From the interface you can access the last successfully generated timetable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="980"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1157"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="997"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1174"/>
         <source>(Thread %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="984"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1161"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1001"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1178"/>
         <source>Time exceeded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1005"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1182"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1022"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1199"/>
         <source>Maximum placed activities: %1 (at %2).</source>
         <comment>%1 represents the maximum number of activities placed, %2 is a time interval</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1031"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1208"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1048"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1225"/>
         <source>Conflicts</source>
         <comment>Title of dialog</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1034"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1211"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1051"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1228"/>
         <source>Number of broken constraints: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1038"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1215"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1055"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1232"/>
         <source>Total conflicts: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1041"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1218"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1058"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1235"/>
         <source>Conflicts listing (in decreasing order):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1063"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1244"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1080"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1261"/>
         <source>This file was automatically generated by FET %1 on %2.</source>
         <comment>%1 is the FET version, %2 is the date and time when this file was generated.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1053"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1058"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1230"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1235"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1070"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1075"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1247"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1252"/>
         <source>The results were saved in the directory %1.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -70022,37 +70309,37 @@ to
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="924"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="941"/>
         <source>Generation interrupted!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="986"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1163"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1003"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1180"/>
         <source>Generation stopped.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1055"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1060"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1072"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1077"/>
         <source>Total searching time was: %1h %2m %3s.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1121"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1138"/>
         <source>Generation finished!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1232"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1237"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1249"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1254"/>
         <source>Total searching time was %1h %2m %3s.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="994"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1171"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1358"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1011"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1188"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1375"/>
         <source>%1 h</source>
         <comment>hours</comment>
         <translation type="unfinished"></translation>
@@ -70063,41 +70350,41 @@ to
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="956"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1133"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="973"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1150"/>
         <source>From the interface you can access the last highest-stage timetable and on the disk there were saved all the highest-stage timetables (the highest number of scheduled activities is %1, reached in %2 timetables).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="961"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1138"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="978"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1155"/>
         <source>On the disk there were saved all the highest-stage timetables (the highest number of scheduled activities is %1, reached in %2 timetables).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="998"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1175"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1362"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1015"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1192"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1379"/>
         <source>%1 m</source>
         <comment>minutes</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1002"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1179"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1366"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1019"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1196"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1383"/>
         <source>%1 s</source>
         <comment>seconds</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1370"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1387"/>
         <source>Max placed activities: %1 (at %2)</source>
         <comment>%1 represents the maximum number of activities placed, %2 is a time interval</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1373"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1390"/>
         <source>Current timetable: %1 out of %2 activities placed, %3h %4m %5s</source>
         <translation type="unfinished"></translation>
     </message>
@@ -70130,12 +70417,12 @@ Max placed activities: 0 (at 0 s)</source>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="682"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1009"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1012"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1014"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1186"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1189"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1191"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1026"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1029"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1031"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1203"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1206"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1208"/>
         <source>Timetable no: %1 =&gt; %2</source>
         <comment>%1 is the number of this timetable when generating multiple timetables, %2 is its description</comment>
         <translation type="unfinished"></translation>
