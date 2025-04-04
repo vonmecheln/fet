@@ -10742,3 +10742,34 @@ https://lalescu.ro/liviu/fet/forum/index.php?topic=6340.0
 
 Is there a chance to store settings like output directory and stuff about html output into fet file rather than into fet config directory?
 So when you open file you have all settings for that timetable. When you open some other file it contains settings for its timetable.
+
+693--------------------------------------------------------
+From Vangelis Karafillidis:
+
+Vangelis suggests a multiple selection of more constraints and to bulk modify it with a single click.
+
+The most important constraints regarding bulk modification are the following:
+Teacher - min/max hours daily
+Teacher - max hours continuously
+Teacher - max gaps per day/week.
+Also, bulk modification could be useful for some other constraints such as:
+Teacher - min/max days per week
+The option of bulk modifying the other constraints might be useful too. It's up to you to decide which other constraints might be
+important to be included in this new feature.
+
+Ideas for bulk modification of teacher time constraints of a certain type:
+
+let's say that the user needs to bulk modify teacher - max hours continuously
+and... let's analyze just the hours part (not the weight)
+the user might need to select and bulk modify the constraints accordingly
+either the teacher name or the number of hours
+so, instead of your idea for filtering
+I think that sorting the constraints according to the user needs
+would be more flexible
+so...
+the user could sort the constraints
+according to
+1) teacher name
+2) number of max hours
+3) weight
+filtering would not be very flexible for these needs.

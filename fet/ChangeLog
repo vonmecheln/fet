@@ -3053,3 +3053,8 @@ Versions 7.1.0 - 7.1.v
 - Version 7.1.0
 	- Added the constraints of type teacher(s)/students (set) pair of mutually exclusive time slots (suggested by NYC FET, igorsch, and maybe other users
 	in the past).
+- Version 7.1.1
+	- Updated to Qt 6.8.3.
+	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares.
+	- Updated the Arabic translation, by Benahmed Abdelkrim.
+	- Updated the Italian translation, by Andrea Primiani.
