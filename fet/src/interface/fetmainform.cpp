@@ -13817,60 +13817,65 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	 "%1 and %2 are true or false").arg(tr("true")).arg(tr("false"));
 	s+="\n";
 
-	s+=tr("54")+QString(". ")+tr("Show warning if using constraints of type max hours daily with a weight less than 100%"
+	s+=tr("54")+QString(". ")+tr("For each successfully generated timetable in generate multiple, beep at the end of the generation will be %1,"
+	 " run external command at the end of generation will be %2, and the external command will be empty", "%1 and %2 are true or false")
+	 .arg(tr("false")).arg(tr("false"));
+	s+="\n";
+
+	s+=tr("55")+QString(". ")+tr("Show warning if using constraints of type max hours daily with a weight less than 100%"
 	 " will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 	
-	s+=tr("55")+QString(". ")+tr("Write HTML timetables for subgroups in sorted order will be %1", "%1 is true or false").arg(tr("false"));
+	s+=tr("56")+QString(". ")+tr("Write HTML timetables for subgroups in sorted order will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 	
-	s+=tr("56")+QString(". ")+tr("The Boolean value 'The font is user selectable' will be %1", "%1 is true or false").arg(tr("false"));
+	s+=tr("57")+QString(". ")+tr("The Boolean value 'The font is user selectable' will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=tr("57")+QString(". ")+tr("The font will be reset to default");
+	s+=tr("58")+QString(". ")+tr("The font will be reset to default");
 	s+="\n";
 	
-	s+=tr("58")+QString(". ")+tr("Enable save and restore history to/from the memory will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("59")+QString(". ")+tr("Enable save and restore history to/from the memory will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 
-	s+=tr("59")+QString(". ")+tr("The number of states to record in history to the memory will be %1", "%1 is a number").arg(100);
+	s+=tr("60")+QString(". ")+tr("The number of states to record in history to the memory will be %1", "%1 is a number").arg(100);
 	s+="\n";
 
 	s+="(";
 	s+=tr("If the history settings will change, the history will be cleared.");
 	s+=")\n";
 
-	s+=tr("60")+QString(". ")+tr("Confirm activating/deactivating activities/constraints will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("61")+QString(". ")+tr("Confirm activating/deactivating activities/constraints will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 
-	s+=tr("61")+QString(". ")+tr("Enable file autosave will be %1", "%1 is true or false").arg(tr("false"));
+	s+=tr("62")+QString(". ")+tr("Enable file autosave will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
-	s+=tr("62")+QString(". ")+tr("The number of minutes before autosave will be %1", "%1 is an integer").arg(3);
+	s+=tr("63")+QString(". ")+tr("The number of minutes before autosave will be %1", "%1 is an integer").arg(3);
 	s+="\n";
-	s+=tr("63")+QString(". ")+tr("The number of operations before autosave will be %1", "%1 is an integer").arg(1);
+	s+=tr("64")+QString(". ")+tr("The number of operations before autosave will be %1", "%1 is an integer").arg(1);
 	s+="\n";
-	s+=tr("64")+QString(". ")+tr("The directory for autosave will be '%1'", "%1 is a directory name").arg(QString(""));
+	s+=tr("65")+QString(". ")+tr("The directory for autosave will be '%1'", "%1 is a directory name").arg(QString(""));
 	s+="\n";
-	s+=tr("65")+QString(". ")+tr("The file name suffix for autosave will be '%1'", "%1 is a suffix to be added to the file name").arg(QString("_AUTOSAVE"));
-	s+="\n";
-
-	s+=tr("66")+QString(". ")+tr("Enable save and restore history to/from the disk will be %1", "%1 is true or false").arg(tr("false"));
-	s+="\n";
-	s+=tr("67")+QString(". ")+tr("The number of states to record in history to the disk will be %1", "%1 is a number").arg(20);
-	s+="\n";
-	s+=tr("68")+QString(". ")+tr("The file name suffix for saving the history to the disk will be '%1'", "%1 is a suffix to be added to the file name").arg(QString(".his"));
+	s+=tr("66")+QString(". ")+tr("The file name suffix for autosave will be '%1'", "%1 is a suffix to be added to the file name").arg(QString("_AUTOSAVE"));
 	s+="\n";
 
-	s+=tr("69")+QString(". ")+tr("The timetable options about which information to be printed in which table will be reset to defaults.");
+	s+=tr("67")+QString(". ")+tr("Enable save and restore history to/from the disk will be %1", "%1 is true or false").arg(tr("false"));
+	s+="\n";
+	s+=tr("68")+QString(". ")+tr("The number of states to record in history to the disk will be %1", "%1 is a number").arg(20);
+	s+="\n";
+	s+=tr("69")+QString(". ")+tr("The file name suffix for saving the history to the disk will be '%1'", "%1 is a suffix to be added to the file name").arg(QString(".his"));
 	s+="\n";
 
-	s+=tr("70")+QString(". ")+tr("The interface style and color scheme will be reset to defaults (useful only if the used Qt version is at least %1).").arg("6.8.0");
+	s+=tr("70")+QString(". ")+tr("The timetable options about which information to be printed in which table will be reset to defaults.");
 	s+="\n";
 
-	//s+=tr("71")+QString(". ")+tr("The compression level for the states in history will be %1 (the default compression level for zlib)").arg(-1);
+	s+=tr("71")+QString(". ")+tr("The interface style and color scheme will be reset to defaults (useful only if the used Qt version is at least %1).").arg("6.8.0");
+	s+="\n";
+
+	//s+=tr("72")+QString(". ")+tr("The compression level for the states in history will be %1 (the default compression level for zlib)").arg(-1);
 	//s+="\n";
 
-	s+=tr("71")+QString(". ")+tr("Overwrite single generation files will be %1", "%1 is true or false").arg(tr("false"));
+	s+=tr("72")+QString(". ")+tr("Overwrite single generation files will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
 	switch( LongTextMessageBox::largeConfirmation( this, tr("FET confirmation"), s,
@@ -14688,6 +14693,11 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	BEEP_AT_END_OF_GENERATION=true;
 	ENABLE_COMMAND_AT_END_OF_GENERATION=false;
 	commandAtEndOfGeneration=QString("");
+
+	BEEP_AT_END_OF_GENERATION_EACH_TIMETABLE=false;
+	ENABLE_COMMAND_AT_END_OF_GENERATION_EACH_TIMETABLE=false;
+	commandAtEndOfGenerationEachTimetable=QString("");
+
 	//DETACHED_NOTIFICATION=false;
 	//terminateCommandAfterSeconds=0;
 	//killCommandAfterSeconds=0;

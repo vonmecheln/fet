@@ -34,6 +34,7 @@
 #include <QSettings>
 
 static QString LAST_USED_DIRECTORY;
+static QString LAST_USED_DIRECTORY_EACH_TIMETABLE;
 
 extern const QString COMPANY;
 extern const QString PROGRAM;
@@ -50,18 +51,24 @@ NotificationCommandForm::NotificationCommandForm(QWidget* parent): QDialog(paren
 	connect(helpPushButton, &QPushButton::clicked, this, &NotificationCommandForm::help);
 	
 	externalCommandCheckBox->setChecked(ENABLE_COMMAND_AT_END_OF_GENERATION);
+	externalCommandEachTimetableCheckBox->setChecked(ENABLE_COMMAND_AT_END_OF_GENERATION_EACH_TIMETABLE);
 	//detachedCheckBox->setChecked(DETACHED_NOTIFICATION);
 
 	connect(externalCommandCheckBox, &QCheckBox::toggled, this, &NotificationCommandForm::externalCommandCheckBoxToggled);
+	connect(externalCommandEachTimetableCheckBox, &QCheckBox::toggled, this, &NotificationCommandForm::externalCommandEachTimetableCheckBoxToggled);
 	//connect(detachedCheckBox, SIG NAL(toggled(bool)), this, SL OT(detachedCheckBoxToggled()));
 
 	connect(browsePushButton, &QPushButton::clicked, this, &NotificationCommandForm::browse);
+	connect(browseEachTimetablePushButton, &QPushButton::clicked, this, &NotificationCommandForm::browseEachTimetable);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 	
 	beepCheckBox->setChecked(BEEP_AT_END_OF_GENERATION);
 	externalCommandLineEdit->setText(QDir::toNativeSeparators(commandAtEndOfGeneration));
+
+	beepEachTimetableCheckBox->setChecked(BEEP_AT_END_OF_GENERATION_EACH_TIMETABLE);
+	externalCommandEachTimetableLineEdit->setText(QDir::toNativeSeparators(commandAtEndOfGenerationEachTimetable));
 	
 	/*terminateAfterSecondsSpinBox->setMinimum(0);
 	terminateAfterSecondsSpinBox->setMaximum(600);
@@ -97,10 +104,12 @@ NotificationCommandForm::NotificationCommandForm(QWidget* parent): QDialog(paren
 	killAfterSecondsSpinBox->setSuffix(suffix);*/
 
 	externalCommandCheckBoxToggled();
+	externalCommandEachTimetableCheckBoxToggled();
 	//detachedCheckBoxToggled();
 	
 	QSettings settings(COMPANY, PROGRAM);
 	LAST_USED_DIRECTORY=settings.value(this->metaObject()->className()+QString("/last-used-directory"), QString("")).toString();
+	LAST_USED_DIRECTORY_EACH_TIMETABLE=settings.value(this->metaObject()->className()+QString("/last-used-directory-each-timetable"), QString("")).toString();
 }
 
 NotificationCommandForm::~NotificationCommandForm()
@@ -109,6 +118,7 @@ NotificationCommandForm::~NotificationCommandForm()
 	
 	QSettings settings(COMPANY, PROGRAM);
 	settings.setValue(this->metaObject()->className()+QString("/last-used-directory"), LAST_USED_DIRECTORY);
+	settings.setValue(this->metaObject()->className()+QString("/last-used-directory-each-timetable"), LAST_USED_DIRECTORY_EACH_TIMETABLE);
 }
 
 void NotificationCommandForm::browse()
@@ -118,6 +128,16 @@ void NotificationCommandForm::browse()
 		externalCommandLineEdit->setText(QDir::toNativeSeparators(s));
 		int tmp=s.lastIndexOf(FILE_SEP);
 		LAST_USED_DIRECTORY=s.left(tmp);
+	}
+}
+
+void NotificationCommandForm::browseEachTimetable()
+{
+	QString s=QFileDialog::getOpenFileName(this, tr("Choose an external command", "Title of a dialog to choose an external command"), LAST_USED_DIRECTORY_EACH_TIMETABLE);
+	if(!s.isNull()){
+		externalCommandEachTimetableLineEdit->setText(QDir::toNativeSeparators(s));
+		int tmp=s.lastIndexOf(FILE_SEP);
+		LAST_USED_DIRECTORY_EACH_TIMETABLE=s.left(tmp);
 	}
 }
 
@@ -145,6 +165,30 @@ void NotificationCommandForm::externalCommandCheckBoxToggled()
 	}
 }
 
+void NotificationCommandForm::externalCommandEachTimetableCheckBoxToggled()
+{
+	if(externalCommandEachTimetableCheckBox->isChecked()){
+		//detachedCheckBox->setEnabled(true);
+		externalCommandEachTimetableLineEdit->setEnabled(true);
+		browseEachTimetablePushButton->setEnabled(true);
+		//if(!detachedCheckBox->isChecked()){
+			//terminateAfterSecondsSpinBox->setEnabled(true);
+			//killAfterSecondsSpinBox->setEnabled(true);
+		//}
+		//else{
+		//	terminateAfterSecondsSpinBox->setEnabled(false);
+		//	killAfterSecondsSpinBox->setEnabled(false);
+		//}
+	}
+	else{
+		//detachedCheckBox->setEnabled(false);
+		externalCommandEachTimetableLineEdit->setEnabled(false);
+		browseEachTimetablePushButton->setEnabled(false);
+		//terminateAfterSecondsSpinBox->setEnabled(false);
+		//killAfterSecondsSpinBox->setEnabled(false);
+	}
+}
+
 /*void NotificationCommandForm::detachedCheckBoxToggled()
 {
 	//externalCommandCheckBoxToggled();
@@ -167,6 +211,10 @@ void NotificationCommandForm::ok()
 	//terminateCommandAfterSeconds=terminateAfterSecondsSpinBox->value();
 	//killCommandAfterSeconds=killAfterSecondsSpinBox->value();
 
+	BEEP_AT_END_OF_GENERATION_EACH_TIMETABLE=beepEachTimetableCheckBox->isChecked();
+	ENABLE_COMMAND_AT_END_OF_GENERATION_EACH_TIMETABLE=externalCommandEachTimetableCheckBox->isChecked();
+	commandAtEndOfGenerationEachTimetable=QDir::fromNativeSeparators(externalCommandEachTimetableLineEdit->text());
+
 	this->close();
 }
 
@@ -181,6 +229,8 @@ void NotificationCommandForm::help()
 	
 	s+=tr("You can choose to make FET execute an external command at the end of each single or multiple generation, in addition to or as an alternative"
 	 " to the system beep.");
+	s+=" ";
+	s+=tr("Also, you can choose to make FET issue a system beep and/or execute an external command after each successful timetable in a multiple generation.");
 	//s+="\n\n";
 	//s+=tr("This external command can be terminated and/or killed after a respective specified time (expressed in seconds).");
 	/*s+=tr("1) If the notification command is not detached, it can be terminated and/or killed after a respective specified time (expressed in seconds)."

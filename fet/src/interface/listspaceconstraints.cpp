@@ -45,6 +45,16 @@ extern Timetable gt;
 extern const QString COMPANY;
 extern const QString PROGRAM;
 
+//The order is important: we must have DESCRIPTION < DETDESCRIPTION, because we use std::stable_sort to put
+//the hopefully simpler/faster/easier to check filters first.
+const int DESCRIPTION=0;
+const int DETDESCRIPTION=1;
+
+const int CONTAINS=0;
+const int DOESNOTCONTAIN=1;
+const int REGEXP=2;
+const int NOTREGEXP=3;
+
 int spaceConstraintsAscendingByDescription(SpaceConstraint* t1, SpaceConstraint* t2); //defined in allspaceconstraints.cpp
 
 ListSpaceConstraintsDialog::ListSpaceConstraintsDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop, QSplitter* _splitter,
@@ -87,6 +97,7 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 
 	showRelatedCheckBox=nullptr;
 
+	filterCheckBox=nullptr;
 	sortedCheckBox=nullptr;
 
 	countOfConstraintsLabel=nullptr;
@@ -859,6 +870,35 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 			break;
 	}
 
+	///////
+	QSettings settings(COMPANY, PROGRAM);
+	QString settingsName=dialogName+"AdvancedFilterForm";
+
+	all=settings.value(settingsName+"/all-conditions", "true").toBool();
+
+	descrDetDescr.clear();
+	int n=settings.value(settingsName+"/number-of-descriptions", "1").toInt();
+	for(int i=0; i<n; i++)
+		descrDetDescr.append(settings.value(settingsName+"/description/"+CustomFETString::number(i+1), CustomFETString::number(DESCRIPTION)).toInt());
+
+	contains.clear();
+	n=settings.value(settingsName+"/number-of-contains", "1").toInt();
+	for(int i=0; i<n; i++)
+		contains.append(settings.value(settingsName+"/contains/"+CustomFETString::number(i+1), CustomFETString::number(CONTAINS)).toInt());
+
+	text.clear();
+	n=settings.value(settingsName+"/number-of-texts", "1").toInt();
+	for(int i=0; i<n; i++)
+		text.append(settings.value(settingsName+"/text/"+CustomFETString::number(i+1), QString("")).toString());
+
+	caseSensitive=settings.value(settingsName+"/case-sensitive", "false").toBool();
+
+	useFilter=false;
+
+	//not yet created!!!
+	//assert(filterCheckBox->isChecked()==false);
+	///////
+
 	if(firstInstructionsLabel!=nullptr){
 		firstInstructionsLabel->setWordWrap(true);
 		//firstInstructionsLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
@@ -979,6 +1019,8 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 	constraintDescriptionTextEdit=new QTextEdit;
 	constraintDescriptionTextEdit->setReadOnly(true);
 
+	filterCheckBox=new QCheckBox(tr("Filter"));
+	filterCheckBox->setChecked(false);
 	sortedCheckBox=new QCheckBox(tr("Sorted", "It refers to space constraints"));
 	sortedCheckBox->setChecked(false);
 
@@ -1017,7 +1059,7 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 	splitter->addWidget(leftWidget);
 	splitter->addWidget(filterAndDescriptionWidget);
 	//restore splitter state
-	QSettings settings(COMPANY, PROGRAM);
+	//QSettings settings(COMPANY, PROGRAM);
 	if(settings.contains(dialogName+QString("/splitter-state")))
 		splitter->restoreState(settings.value(dialogName+QString("/splitter-state")).toByteArray());
 
@@ -1032,6 +1074,7 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 
 	QHBoxLayout* buttons2Layout=new QHBoxLayout;
 	buttons2Layout->addStretch();
+	buttons2Layout->addWidget(filterCheckBox);
 	buttons2Layout->addWidget(sortedCheckBox);
 	buttons2Layout->addWidget(activatePushButton);
 	buttons2Layout->addWidget(deactivatePushButton);
@@ -1071,6 +1114,7 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 
 	connect(constraintsListWidget, &QListWidget::itemSelectionChanged, this, &ListSpaceConstraints::selectionChanged);
 
+	connect(filterCheckBox, &QCheckBox::toggled, this, &ListSpaceConstraints::advancedFilter);
 	connect(sortedCheckBox, &QCheckBox::toggled, this, &ListSpaceConstraints::sortedChanged);
 
 	connect(activatePushButton, &QPushButton::clicked, this, &ListSpaceConstraints::activateConstraints);
@@ -1097,8 +1141,96 @@ ListSpaceConstraints::~ListSpaceConstraints()
 
 	//delete dialog;
 
+	///////
+	QSettings settings(COMPANY, PROGRAM);
+	QString settingsName=dialogName+"AdvancedFilterForm";
+
+	settings.setValue(settingsName+"/all-conditions", all);
+
+	settings.setValue(settingsName+"/number-of-descriptions", descrDetDescr.count());
+	settings.remove(settingsName+"/description");
+	for(int i=0; i<descrDetDescr.count(); i++)
+		settings.setValue(settingsName+"/description/"+CustomFETString::number(i+1), descrDetDescr.at(i));
+
+	settings.setValue(settingsName+"/number-of-contains", contains.count());
+	settings.remove(settingsName+"/contains");
+	for(int i=0; i<contains.count(); i++)
+		settings.setValue(settingsName+"/contains/"+CustomFETString::number(i+1), contains.at(i));
+
+	settings.setValue(settingsName+"/number-of-texts", text.count());
+	settings.remove(settingsName+"/text");
+	for(int i=0; i<text.count(); i++)
+		settings.setValue(settingsName+"/text/"+CustomFETString::number(i+1), text.at(i));
+
+	settings.setValue(settingsName+"/case-sensitive", caseSensitive);
+	///////
+
 	assert(!eventLoop->isRunning());
 	delete eventLoop;
+}
+
+void ListSpaceConstraints::advancedFilter(bool active)
+{
+	if(!active){
+		assert(useFilter==true);
+		useFilter=false;
+
+		filter();
+
+		constraintsListWidget->setFocus();
+
+		return;
+	}
+
+	assert(active);
+
+	filterForm=new AdvancedFilterForm(dialog, tr("Advanced filter for space constraints"), false, all, descrDetDescr, contains, text, caseSensitive, dialogName+"AdvancedFilterForm");
+
+	int t=filterForm->exec();
+
+	if(t==QDialog::Accepted){
+		assert(useFilter==false);
+		useFilter=true;
+
+		if(filterForm->allRadio->isChecked())
+			all=true;
+		else if(filterForm->anyRadio->isChecked())
+			all=false;
+		else
+			assert(0);
+
+		caseSensitive=filterForm->caseSensitiveCheckBox->isChecked();
+
+		descrDetDescr.clear();
+		contains.clear();
+		text.clear();
+
+		assert(filterForm->descrDetDescrDetDescrWithConstraintsComboBoxList.count()==filterForm->contNContReNReComboBoxList.count());
+		assert(filterForm->descrDetDescrDetDescrWithConstraintsComboBoxList.count()==filterForm->textLineEditList.count());
+		for(int i=0; i<filterForm->rows; i++){
+			QComboBox* cb1=filterForm->descrDetDescrDetDescrWithConstraintsComboBoxList.at(i);
+			QComboBox* cb2=filterForm->contNContReNReComboBoxList.at(i);
+			QLineEdit* tl=filterForm->textLineEditList.at(i);
+
+			descrDetDescr.append(cb1->currentIndex());
+			contains.append(cb2->currentIndex());
+			text.append(tl->text());
+		}
+
+		filter();
+
+		constraintsListWidget->setFocus();
+	}
+	else{
+		assert(useFilter==false);
+		useFilter=false;
+
+		disconnect(filterCheckBox, &QCheckBox::toggled, this, &ListSpaceConstraints::advancedFilter);
+		filterCheckBox->setChecked(false);
+		connect(filterCheckBox, &QCheckBox::toggled, this, &ListSpaceConstraints::advancedFilter);
+	}
+
+	delete filterForm;
 }
 
 bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
@@ -1106,6 +1238,85 @@ bool ListSpaceConstraints::filterOk(SpaceConstraint* sc)
 	if(sc->type!=type)
 		return false;
 
+	if(useFilter){
+		assert(descrDetDescr.count()==contains.count());
+		assert(contains.count()==text.count());
+
+		Qt::CaseSensitivity csens=Qt::CaseSensitive;
+		if(!caseSensitive)
+			csens=Qt::CaseInsensitive;
+
+		QList<int> perm;
+		for(int i=0; i<descrDetDescr.count(); i++)
+			perm.append(i);
+		//Below we do a stable sorting, so that first inputted filters are hopefully filtering out more entries.
+		std::stable_sort(perm.begin(), perm.end(), [this](int a, int b){return descrDetDescr.at(a)<descrDetDescr.at(b);});
+		for(int i=0; i<perm.count()-1; i++)
+			assert(descrDetDescr.at(perm.at(i))<=descrDetDescr.at(perm.at(i+1)));
+
+		int firstPosWithDescr=-1;
+		int firstPosWithDetDescr=-1;
+		for(int i=0; i<perm.count(); i++){
+			if(descrDetDescr.at(perm.at(i))==DESCRIPTION && firstPosWithDescr==-1){
+				firstPosWithDescr=i;
+			}
+			else if(descrDetDescr.at(perm.at(i))==DETDESCRIPTION && firstPosWithDetDescr==-1){
+				firstPosWithDetDescr=i;
+			}
+		}
+
+		QString s=QString("");
+		for(int i=0; i<perm.count(); i++){
+			if(descrDetDescr.at(perm.at(i))==DESCRIPTION){
+				assert(firstPosWithDescr>=0);
+
+				if(i==firstPosWithDescr)
+					s=sc->getDescription(gt.rules);
+			}
+			else{
+				assert(descrDetDescr.at(perm.at(i))==DETDESCRIPTION);
+
+				assert(firstPosWithDetDescr>=0);
+
+				if(i==firstPosWithDetDescr)
+					s=sc->getDetailedDescription(gt.rules);
+			}
+
+			bool okPartial=true; //We initialize okPartial to silence a MinGW 11.2.0 warning of type 'this variable might be used uninitialized'.
+
+			QString t=text.at(perm.at(i));
+			if(contains.at(perm.at(i))==CONTAINS){
+				okPartial=s.contains(t, csens);
+			}
+			else if(contains.at(perm.at(i))==DOESNOTCONTAIN){
+				okPartial=!(s.contains(t, csens));
+			}
+			else if(contains.at(perm.at(i))==REGEXP){
+				QRegularExpression regExp(t);
+				if(!caseSensitive)
+					regExp.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
+				okPartial=(regExp.match(s)).hasMatch();
+			}
+			else if(contains.at(perm.at(i))==NOTREGEXP){
+				QRegularExpression regExp(t);
+				if(!caseSensitive)
+					regExp.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
+				okPartial=!(regExp.match(s)).hasMatch();
+			}
+			else
+				assert(0);
+
+			if(all && !okPartial)
+				return false;
+			else if(!all && okPartial)
+				goto filtered_ok;
+		}
+
+		if(!all)
+			return false;
+	}
+
+filtered_ok:
 	switch(type){
 		//1
 		case CONSTRAINT_BASIC_COMPULSORY_SPACE:
