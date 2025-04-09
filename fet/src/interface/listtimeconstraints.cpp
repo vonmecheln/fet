@@ -18,7 +18,6 @@
 #include "listtimeconstraints.h"
 
 #include "addormodifytimeconstraint.h"
-#include "modifytimeconstraints.h"
 
 #include "timetable.h"
 
@@ -50,16 +49,6 @@ extern Timetable gt;
 
 extern const QString COMPANY;
 extern const QString PROGRAM;
-
-//The order is important: we must have DESCRIPTION < DETDESCRIPTION, because we use std::stable_sort to put
-//the hopefully simpler/faster/easier to check filters first.
-const int DESCRIPTION=0;
-const int DETDESCRIPTION=1;
-
-const int CONTAINS=0;
-const int DOESNOTCONTAIN=1;
-const int REGEXP=2;
-const int NOTREGEXP=3;
 
 int timeConstraintsAscendingByDescription(TimeConstraint* t1, TimeConstraint* t2); //defined in alltimeconstraints.cpp
 
@@ -103,7 +92,6 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 	showRelatedCheckBox=nullptr;
 
-	filterCheckBox=nullptr;
 	sortedCheckBox=nullptr;
 
 	countOfConstraintsLabel=nullptr;
@@ -2827,35 +2815,6 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 			assert(0);
 			break;
 	}
-
-	///////
-	QSettings settings(COMPANY, PROGRAM);
-	QString settingsName=dialogName+"AdvancedFilterForm";
-
-	all=settings.value(settingsName+"/all-conditions", "true").toBool();
-
-	descrDetDescr.clear();
-	int n=settings.value(settingsName+"/number-of-descriptions", "1").toInt();
-	for(int i=0; i<n; i++)
-		descrDetDescr.append(settings.value(settingsName+"/description/"+CustomFETString::number(i+1), CustomFETString::number(DESCRIPTION)).toInt());
-
-	contains.clear();
-	n=settings.value(settingsName+"/number-of-contains", "1").toInt();
-	for(int i=0; i<n; i++)
-		contains.append(settings.value(settingsName+"/contains/"+CustomFETString::number(i+1), CustomFETString::number(CONTAINS)).toInt());
-
-	text.clear();
-	n=settings.value(settingsName+"/number-of-texts", "1").toInt();
-	for(int i=0; i<n; i++)
-		text.append(settings.value(settingsName+"/text/"+CustomFETString::number(i+1), QString("")).toString());
-
-	caseSensitive=settings.value(settingsName+"/case-sensitive", "false").toBool();
-
-	useFilter=false;
-
-	//not yet created!!!
-	//assert(filterCheckBox->isChecked()==false);
-	///////
 	
 	if(firstInstructionsLabel!=nullptr){
 		firstInstructionsLabel->setWordWrap(true);
@@ -2992,8 +2951,6 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 	constraintDescriptionTextEdit=new QTextEdit;
 	constraintDescriptionTextEdit->setReadOnly(true);
 
-	filterCheckBox=new QCheckBox(tr("Filter"));
-	filterCheckBox->setChecked(false);
 	sortedCheckBox=new QCheckBox(tr("Sorted", "It refers to time constraints"));
 	sortedCheckBox->setChecked(false);
 
@@ -3007,16 +2964,6 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 	addPushButton=new QPushButton(tr("Add"));
 	modifyPushButton=new QPushButton(tr("Modify"));
 	modifyPushButton->setDefault(true);
-	if(type==CONSTRAINT_TEACHER_MAX_DAYS_PER_WEEK ||
-			type==CONSTRAINT_TEACHER_MIN_DAYS_PER_WEEK ||
-			type==CONSTRAINT_TEACHER_MIN_HOURS_DAILY ||
-			type==CONSTRAINT_TEACHER_MAX_HOURS_DAILY ||
-			type==CONSTRAINT_TEACHER_MAX_HOURS_CONTINUOUSLY ||
-			type==CONSTRAINT_TEACHER_MAX_GAPS_PER_DAY ||
-			type==CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK)
-		modifyMultiplePushButton=new QPushButton(tr("Modify selected", "It refers to time constraints"));
-	else
-		modifyMultiplePushButton=nullptr;
 	removePushButton=new QPushButton(tr("Remove"));
 	closePushButton=new QPushButton(tr("Close"));
 
@@ -3042,7 +2989,7 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 	splitter->addWidget(leftWidget);
 	splitter->addWidget(filterAndDescriptionWidget);
 	//restore splitter state
-	//QSettings settings(COMPANY, PROGRAM);
+	QSettings settings(COMPANY, PROGRAM);
 	if(settings.contains(dialogName+QString("/splitter-state")))
 		splitter->restoreState(settings.value(dialogName+QString("/splitter-state")).toByteArray());
 
@@ -3050,8 +2997,6 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 	buttons1Layout->addStretch();
 	buttons1Layout->addWidget(addPushButton);
 	buttons1Layout->addWidget(modifyPushButton);
-	if(modifyMultiplePushButton!=nullptr)
-		buttons1Layout->addWidget(modifyMultiplePushButton);
 	buttons1Layout->addWidget(removePushButton);
 	if(helpPushButton!=nullptr)
 		buttons1Layout->addWidget(helpPushButton);
@@ -3059,7 +3004,6 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 	QHBoxLayout* buttons2Layout=new QHBoxLayout;
 	buttons2Layout->addStretch();
-	buttons2Layout->addWidget(filterCheckBox);
 	buttons2Layout->addWidget(sortedCheckBox);
 	buttons2Layout->addWidget(activatePushButton);
 	buttons2Layout->addWidget(deactivatePushButton);
@@ -3092,8 +3036,6 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 	connect(addPushButton, &QPushButton::clicked, this, &ListTimeConstraints::addClicked);
 	connect(modifyPushButton, &QPushButton::clicked, this, &ListTimeConstraints::modifyClicked);
-	if(modifyMultiplePushButton!=nullptr)
-		connect(modifyMultiplePushButton, &QPushButton::clicked, this, &ListTimeConstraints::modifyMultipleClicked);
 	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ListTimeConstraints::modifyClicked);
 	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ListTimeConstraints::constraintChanged);
 	connect(removePushButton, &QPushButton::clicked, this, &ListTimeConstraints::removeClicked);
@@ -3109,7 +3051,6 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 	connect(constraintsListWidget, &QListWidget::itemSelectionChanged, this, &ListTimeConstraints::selectionChanged);
 
-	connect(filterCheckBox, &QCheckBox::toggled, this, &ListTimeConstraints::advancedFilter);
 	connect(sortedCheckBox, &QCheckBox::toggled, this, &ListTimeConstraints::sortedChanged);
 
 	connect(activatePushButton, &QPushButton::clicked, this, &ListTimeConstraints::activateConstraints);
@@ -3135,97 +3076,9 @@ ListTimeConstraints::~ListTimeConstraints()
 	//dialog->hide();
 	
 	//delete dialog;
-
-	///////
-	QSettings settings(COMPANY, PROGRAM);
-	QString settingsName=dialogName+"AdvancedFilterForm";
-
-	settings.setValue(settingsName+"/all-conditions", all);
-
-	settings.setValue(settingsName+"/number-of-descriptions", descrDetDescr.count());
-	settings.remove(settingsName+"/description");
-	for(int i=0; i<descrDetDescr.count(); i++)
-		settings.setValue(settingsName+"/description/"+CustomFETString::number(i+1), descrDetDescr.at(i));
-
-	settings.setValue(settingsName+"/number-of-contains", contains.count());
-	settings.remove(settingsName+"/contains");
-	for(int i=0; i<contains.count(); i++)
-		settings.setValue(settingsName+"/contains/"+CustomFETString::number(i+1), contains.at(i));
-
-	settings.setValue(settingsName+"/number-of-texts", text.count());
-	settings.remove(settingsName+"/text");
-	for(int i=0; i<text.count(); i++)
-		settings.setValue(settingsName+"/text/"+CustomFETString::number(i+1), text.at(i));
-
-	settings.setValue(settingsName+"/case-sensitive", caseSensitive);
-	///////
-
+	
 	assert(!eventLoop->isRunning());
 	delete eventLoop;
-}
-
-void ListTimeConstraints::advancedFilter(bool active)
-{
-	if(!active){
-		assert(useFilter==true);
-		useFilter=false;
-
-		filter();
-
-		constraintsListWidget->setFocus();
-
-		return;
-	}
-
-	assert(active);
-
-	filterForm=new AdvancedFilterForm(dialog, tr("Advanced filter for time constraints"), false, all, descrDetDescr, contains, text, caseSensitive, dialogName+"AdvancedFilterForm");
-
-	int t=filterForm->exec();
-
-	if(t==QDialog::Accepted){
-		assert(useFilter==false);
-		useFilter=true;
-
-		if(filterForm->allRadio->isChecked())
-			all=true;
-		else if(filterForm->anyRadio->isChecked())
-			all=false;
-		else
-			assert(0);
-
-		caseSensitive=filterForm->caseSensitiveCheckBox->isChecked();
-
-		descrDetDescr.clear();
-		contains.clear();
-		text.clear();
-
-		assert(filterForm->descrDetDescrDetDescrWithConstraintsComboBoxList.count()==filterForm->contNContReNReComboBoxList.count());
-		assert(filterForm->descrDetDescrDetDescrWithConstraintsComboBoxList.count()==filterForm->textLineEditList.count());
-		for(int i=0; i<filterForm->rows; i++){
-			QComboBox* cb1=filterForm->descrDetDescrDetDescrWithConstraintsComboBoxList.at(i);
-			QComboBox* cb2=filterForm->contNContReNReComboBoxList.at(i);
-			QLineEdit* tl=filterForm->textLineEditList.at(i);
-
-			descrDetDescr.append(cb1->currentIndex());
-			contains.append(cb2->currentIndex());
-			text.append(tl->text());
-		}
-
-		filter();
-
-		constraintsListWidget->setFocus();
-	}
-	else{
-		assert(useFilter==false);
-		useFilter=false;
-
-		disconnect(filterCheckBox, &QCheckBox::toggled, this, &ListTimeConstraints::advancedFilter);
-		filterCheckBox->setChecked(false);
-		connect(filterCheckBox, &QCheckBox::toggled, this, &ListTimeConstraints::advancedFilter);
-	}
-
-	delete filterForm;
 }
 
 bool ListTimeConstraints::filterOk(TimeConstraint* tc)
@@ -3233,85 +3086,6 @@ bool ListTimeConstraints::filterOk(TimeConstraint* tc)
 	if(tc->type!=type)
 		return false;
 
-	if(useFilter){
-		assert(descrDetDescr.count()==contains.count());
-		assert(contains.count()==text.count());
-
-		Qt::CaseSensitivity csens=Qt::CaseSensitive;
-		if(!caseSensitive)
-			csens=Qt::CaseInsensitive;
-
-		QList<int> perm;
-		for(int i=0; i<descrDetDescr.count(); i++)
-			perm.append(i);
-		//Below we do a stable sorting, so that first inputted filters are hopefully filtering out more entries.
-		std::stable_sort(perm.begin(), perm.end(), [this](int a, int b){return descrDetDescr.at(a)<descrDetDescr.at(b);});
-		for(int i=0; i<perm.count()-1; i++)
-			assert(descrDetDescr.at(perm.at(i))<=descrDetDescr.at(perm.at(i+1)));
-
-		int firstPosWithDescr=-1;
-		int firstPosWithDetDescr=-1;
-		for(int i=0; i<perm.count(); i++){
-			if(descrDetDescr.at(perm.at(i))==DESCRIPTION && firstPosWithDescr==-1){
-				firstPosWithDescr=i;
-			}
-			else if(descrDetDescr.at(perm.at(i))==DETDESCRIPTION && firstPosWithDetDescr==-1){
-				firstPosWithDetDescr=i;
-			}
-		}
-
-		QString s=QString("");
-		for(int i=0; i<perm.count(); i++){
-			if(descrDetDescr.at(perm.at(i))==DESCRIPTION){
-				assert(firstPosWithDescr>=0);
-
-				if(i==firstPosWithDescr)
-					s=tc->getDescription(gt.rules);
-			}
-			else{
-				assert(descrDetDescr.at(perm.at(i))==DETDESCRIPTION);
-
-				assert(firstPosWithDetDescr>=0);
-
-				if(i==firstPosWithDetDescr)
-					s=tc->getDetailedDescription(gt.rules);
-			}
-
-			bool okPartial=true; //We initialize okPartial to silence a MinGW 11.2.0 warning of type 'this variable might be used uninitialized'.
-
-			QString t=text.at(perm.at(i));
-			if(contains.at(perm.at(i))==CONTAINS){
-				okPartial=s.contains(t, csens);
-			}
-			else if(contains.at(perm.at(i))==DOESNOTCONTAIN){
-				okPartial=!(s.contains(t, csens));
-			}
-			else if(contains.at(perm.at(i))==REGEXP){
-				QRegularExpression regExp(t);
-				if(!caseSensitive)
-					regExp.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
-				okPartial=(regExp.match(s)).hasMatch();
-			}
-			else if(contains.at(perm.at(i))==NOTREGEXP){
-				QRegularExpression regExp(t);
-				if(!caseSensitive)
-					regExp.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
-				okPartial=!(regExp.match(s)).hasMatch();
-			}
-			else
-				assert(0);
-
-			if(all && !okPartial)
-				return false;
-			else if(!all && okPartial)
-				goto filtered_ok;
-		}
-
-		if(!all)
-			return false;
-	}
-
-filtered_ok:
 	switch(type){
 		//1
 		case CONSTRAINT_BASIC_COMPULSORY_TIME:
@@ -6435,45 +6209,6 @@ void ListTimeConstraints::modifyClicked()
 
 	constraintChanged();
 	
-	constraintsListWidget->setFocus();
-}
-
-void ListTimeConstraints::modifyMultipleClicked()
-{
-	int crtRow=constraintsListWidget->currentRow();
-
-	QList<TimeConstraint*> constraintsToModify;
-
-	for(int i=0; i<constraintsListWidget->count(); i++)
-		if(constraintsListWidget->item(i)->isSelected())
-			constraintsToModify.append(visibleTimeConstraintsList.at(i));
-
-	if(constraintsToModify.isEmpty()){
-		QMessageBox::information(dialog, tr("FET information"), tr("No constraints selected"));
-
-		constraintsListWidget->setFocus();
-
-		return;
-	}
-
-	int valv=constraintsListWidget->verticalScrollBar()->value();
-	int valh=constraintsListWidget->horizontalScrollBar()->value();
-
-	ModifyTimeConstraints mtc(dialog, type, constraintsToModify);
-
-	filter();
-
-	constraintsListWidget->verticalScrollBar()->setValue(valv);
-	constraintsListWidget->horizontalScrollBar()->setValue(valh);
-
-	if(crtRow>=constraintsListWidget->count())
-		crtRow=constraintsListWidget->count()-1;
-
-	if(crtRow>=0)
-		constraintsListWidget->setCurrentRow(crtRow);
-
-	constraintChanged();
-
 	constraintsListWidget->setFocus();
 }
 

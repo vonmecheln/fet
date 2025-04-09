@@ -20,8 +20,6 @@
 
 #include "spaceconstraint.h"
 
-#include "advancedfilterform.h"
-
 #include <QWidget>
 #include <QDialog>
 
@@ -61,16 +59,6 @@ class ListSpaceConstraints: public QObject
 {
 	Q_OBJECT
 
-	AdvancedFilterForm* filterForm;
-
-	bool all; //all or any, true means all, false means any
-	QList<int> descrDetDescr;
-	QList<int> contains;
-	QStringList text;
-	bool caseSensitive;
-
-	bool useFilter;
-
 	QEventLoop* eventLoop;
 
 	QDialog* dialog;
@@ -109,7 +97,6 @@ class ListSpaceConstraints: public QObject
 	QLabel* countOfConstraintsLabel;
 	QLabel* mSLabel;
 
-	QCheckBox* filterCheckBox;
 	QCheckBox* sortedCheckBox;
 
 	QPushButton* activatePushButton;
@@ -137,7 +124,6 @@ private:
 
 	void constraintChanged();
 
-	void advancedFilter(bool active);
 	void sortedChanged(bool checked);
 
 	void activateConstraints();

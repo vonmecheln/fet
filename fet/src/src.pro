@@ -33,7 +33,6 @@ SOURCES += \
 	interface/messageboxes.cpp \
 	\
 	interface/addormodifytimeconstraint.cpp \
-	interface/modifytimeconstraints.cpp \
 	interface/listtimeconstraints.cpp \
 	\
 	interface/addormodifyspaceconstraint.cpp \
@@ -201,7 +200,6 @@ HEADERS += \
 	interface/messageboxes.h \
 	\
 	interface/addormodifytimeconstraint.h \
-	interface/modifytimeconstraints.h \
 	interface/listtimeconstraints.h \
 	\
 	interface/addormodifyspaceconstraint.h \

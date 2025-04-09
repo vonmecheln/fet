@@ -57,7 +57,7 @@ int STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
 /**
 The FET version
 */
-const QString FET_VERSION="7.1.2";
+const QString FET_VERSION="7.1.1";
 
 /**
 The version number of the data format, useful when saving/restoring the history to/from the disk.
@@ -275,13 +275,8 @@ double customFETStrToDouble(const QString& str, bool* ok)
 ///////end tricks
 
 bool BEEP_AT_END_OF_GENERATION=true;
-bool ENABLE_COMMAND_AT_END_OF_GENERATION=false;
+bool ENABLE_COMMAND_AT_END_OF_GENERATION=true;
 QString commandAtEndOfGeneration=QString("");
-
-bool BEEP_AT_END_OF_GENERATION_EACH_TIMETABLE=false;
-bool ENABLE_COMMAND_AT_END_OF_GENERATION_EACH_TIMETABLE=false;
-QString commandAtEndOfGenerationEachTimetable=QString("");
-
 //bool DETACHED_NOTIFICATION=false;
 //int terminateCommandAfterSeconds=0;
 //int killCommandAfterSeconds=0;
