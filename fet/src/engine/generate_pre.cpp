@@ -1053,6 +1053,13 @@ Matrix1D<bool> mustComputeTimetableTeacher;
 //bool homeRoomsAreOk(QWidget* parent);
 
 
+//2025-04-02
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+std::list<TwoSetsOfActivitiesSameSections_item> assabList;
+Matrix1D<QList<TwoSetsOfActivitiesSameSections_item*>> assabListForActivity;
+
+
 //2011-09-25 - Constraint activities occupy max time slots from selection
 
 //We need the references to the elements to be valid, so we need this to be a std::list
@@ -1084,6 +1091,9 @@ std::list<ActivitiesMinSimultaneousInSelectedTimeSlots_item> aminsistsList;
 Matrix1D<QList<ActivitiesMinSimultaneousInSelectedTimeSlots_item*>> aminsistsListForActivity;
 
 //bool computeActivitiesMinSimultaneousInSelectedTimeSlots(QWidget* parent);
+
+bool haveTwoSetsOfActivitiesSameSections;
+Matrix1D<bool> activityHasTwoSetsOfActivitiesSameSections;
 
 bool haveActivitiesOccupyMaxConstraints;
 Matrix1D<bool> activityHasOccupyMaxConstraints;
@@ -1735,6 +1745,8 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	mustComputeTimetableSubgroup.resize(gt.rules.nInternalSubgroups);
 	mustComputeTimetableTeacher.resize(gt.rules.nInternalTeachers);
 	//
+	activityHasTwoSetsOfActivitiesSameSections.resize(gt.rules.nInternalActivities);
+	//
 	activityHasOccupyMaxConstraints.resize(gt.rules.nInternalActivities);
 	activityHasMaxSimultaneousConstraints.resize(gt.rules.nInternalActivities);
 	//
@@ -1952,6 +1964,9 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	satmhdListForSubgroup.resize(gt.rules.nInternalSubgroups);
 	tatmhdListForTeacher.resize(gt.rules.nInternalTeachers);
 	
+	//2025-04-02
+	assabListForActivity.resize(gt.rules.nInternalActivities);
+
 	//2011-09-25
 	aomtsListForActivity.resize(gt.rules.nInternalActivities);
 	//2019-11-16
@@ -2466,6 +2481,11 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 		return false;
 
 	t=computeTeachersStudentsMaxActivityTagsFromSet(parent);
+	if(!t)
+		return false;
+
+	//2025-04-02
+	t=computeTwoSetsOfActivitiesSameSections(parent);
 	if(!t)
 		return false;
 
@@ -16675,6 +16695,186 @@ bool computeSubgroupsAfternoonIntervalMaxDaysPerWeek(QWidget* parent)
 					subgroupsAfternoonIntervalMaxDaysPerWeekIntervalStart[sbg].append(cn->startHour);
 					subgroupsAfternoonIntervalMaxDaysPerWeekIntervalEnd[sbg].append(cn->endHour);
 				}
+			}
+		}
+	}
+
+	return ok;
+}
+
+//2025-04-02
+bool computeTwoSetsOfActivitiesSameSections(QWidget* parent)
+{
+	haveTwoSetsOfActivitiesSameSections=false;
+
+	bool ok=true;
+
+	assabList.clear();
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		assabListForActivity[i].clear();
+		activityHasTwoSetsOfActivitiesSameSections[i]=false;
+	}
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TWO_SETS_OF_ACTIVITIES_SAME_SECTIONS){
+			if(!haveTwoSetsOfActivitiesSameSections)
+				haveTwoSetsOfActivitiesSameSections=true;
+
+			ConstraintTwoSetsOfActivitiesSameSections* cn=(ConstraintTwoSetsOfActivitiesSameSections*)gt.rules.internalTimeConstraintsList[i];
+
+			if(cn->weightPercentage!=100.0){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'two sets of activities have the same sections'"
+				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+
+				if(t==0)
+					return false;
+			}
+
+			if(cn->_activitiesAIndices.count()!=cn->_activitiesBIndices.count()){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint of type 'two sets of activities have the same sections'"
+				 " with a different number of activities in the first and in the second set. The constraint is:\n%1").arg(cn->getDetailedDescription(gt.rules))
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+
+				if(t==0)
+					return false;
+			}
+
+			//for(int ai : std::as_const(cn->_activitiesAIndices)){
+				/*if(gt.rules.internalActivitiesList[ai].duration!=1){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint of type 'activities same sections AB'"
+					 " with an activity in A with duration > 1")
+					 ,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+
+					if(t==0)
+						return false;
+				}*/
+				/*if(gt.rules.internalActivitiesList[ai].iSubgroupsList.count()!=1){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint of type 'two sets of activities have the same sections'"
+					 " with an activity in the first set with the number of sets of students different from 1")
+					 ,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+
+					if(t==0)
+						return false;
+				}*/
+			//}
+			//for(int ai : std::as_const(cn->_activitiesBIndices)){
+				/*if(gt.rules.internalActivitiesList[ai].duration!=1){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint of type 'activities same sections AB'"
+					 " with an activity in B with duration > 1")
+					 ,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+
+					if(t==0)
+						return false;
+				}*/
+				/*if(gt.rules.internalActivitiesList[ai].iSubgroupsList.count()!=1){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint of type 'two sets of activities have the same sections'"
+					 " with an activity in the second set with the number of sets of students different from 1")
+					 ,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+
+					if(t==0)
+						return false;
+				}*/
+			//}
+
+			for(int i=0; i<cn->_activitiesAIndices.count(); i++){
+				if(gt.rules.internalActivitiesList[cn->_activitiesAIndices.at(i)].iSubgroupsList
+				 != gt.rules.internalActivitiesList[cn->_activitiesBIndices.at(i)].iSubgroupsList){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint of type 'two sets of activities same sections'"
+					 " in which the activities are not the same in both sets, having respectively the same students set(s). The constraint is:\n%1")
+					 .arg(cn->getDetailedDescription(gt.rules))
+					 ,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+
+					if(t==0)
+						return false;
+				}
+			}
+
+			if(!cn->_activitiesAIndices.isEmpty()){
+				for(int i=0; i<cn->_activitiesAIndices.count(); i++){
+					if(gt.rules.internalActivitiesList[cn->_activitiesAIndices.at(i)].duration!=gt.rules.internalActivitiesList[cn->_activitiesAIndices.at(0)].duration
+					 || gt.rules.internalActivitiesList[cn->_activitiesBIndices.at(i)].duration!=gt.rules.internalActivitiesList[cn->_activitiesAIndices.at(0)].duration){
+						ok=false;
+
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+						 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint of type 'two sets of activities have the same sections'"
+						 " in which there are activity(ies) with different durations. The durations of all the activities in such a constraint should"
+						 " be equal. The constraint is:\n%1")
+						 .arg(cn->getDetailedDescription(gt.rules))
+						 ,
+						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+						 1, 0 );
+
+						if(t==0)
+							return false;
+					}
+				}
+			}
+
+			TwoSetsOfActivitiesSameSections_item item;
+			item.activitiesAList=cn->_activitiesAIndices;
+			item.activitiesBList=cn->_activitiesBIndices;
+			
+			item.activitiesAHash.clear();
+			for(int i=0; i<cn->_activitiesAIndices.count(); i++)
+				item.activitiesAHash.insert(cn->_activitiesAIndices.at(i), i);
+			item.activitiesBHash.clear();
+			for(int i=0; i<cn->_activitiesBIndices.count(); i++)
+				item.activitiesBHash.insert(cn->_activitiesBIndices.at(i), i);
+
+			//for(int t=0; t < cn->oDays.count(); t++)
+			//	item.oTimeSlotsSet.insert(cn->oDays.at(t)+cn->oHours.at(t)*gt.rules.nDaysPerWeek);
+			item.oTimeSlotsSet=cn->_oSlotsSet;
+
+			assabList.push_back(item);
+			//ActivitiesOccupyMaxTimeSlotsFromSelection_item* p_item=&aomtsList[aomtsList.count()-1];
+			TwoSetsOfActivitiesSameSections_item* p_item=&assabList.back();
+			for(int ai : std::as_const(cn->_activitiesAIndices)){
+				assabListForActivity[ai].append(p_item);
+
+				if(activityHasTwoSetsOfActivitiesSameSections[ai]==false)
+					activityHasTwoSetsOfActivitiesSameSections[ai]=true;
+			}
+			for(int ai : std::as_const(cn->_activitiesBIndices)){
+				assabListForActivity[ai].append(p_item);
+
+				if(activityHasTwoSetsOfActivitiesSameSections[ai]==false)
+					activityHasTwoSetsOfActivitiesSameSections[ai]=true;
 			}
 		}
 	}

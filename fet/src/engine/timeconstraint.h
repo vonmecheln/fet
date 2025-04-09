@@ -386,6 +386,8 @@ const int CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS												=
 const int CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS											=228;
 const int CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS												=229;
 
+const int CONSTRAINT_TWO_SETS_OF_ACTIVITIES_SAME_SECTIONS														=230;
+
 class QDataStream;
 
 QString getActivityDetailedDescription(Rules& r, int id);
@@ -11671,6 +11673,59 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
+class ConstraintTwoSetsOfActivitiesSameSections: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTwoSetsOfActivitiesSameSections)
+
+public:
+	QList<int> activitiesAIds;
+	QSet<int> activitiesAIdsSet;
+
+	QList<int> activitiesBIds;
+	QSet<int> activitiesBIdsSet;
+
+	QList<int> oDays; //exception slots (previously overflow slots).
+	QList<int> oHours;
+
+	//internal variables
+	QList<int> _activitiesAIndices;
+	QList<int> _activitiesBIndices;
+	QSet<int> _oSlotsSet;
+
+	ConstraintTwoSetsOfActivitiesSameSections();
+
+	ConstraintTwoSetsOfActivitiesSameSections(double wp, const QList<int>& aA_L, const QList<int>& aB_L, const QList<int>& d_L, const QList<int>& h_L);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	void removeUseless(Rules& r);
+
+	void recomputeActivitiesSets();
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
 //1
 QDataStream& operator<<(QDataStream& stream, const ConstraintBasicCompulsoryTime& tc);
 //2
@@ -12129,6 +12184,8 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersPairOfMutua
 QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots& tc);
 //229
 QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsPairOfMutuallyExclusiveTimeSlots& tc);
+//230
+QDataStream& operator<<(QDataStream& stream, const ConstraintTwoSetsOfActivitiesSameSections& tc);
 
 //1
 QDataStream& operator>>(QDataStream& stream, ConstraintBasicCompulsoryTime& tc);
@@ -12588,5 +12645,7 @@ QDataStream& operator>>(QDataStream& stream, ConstraintTeachersPairOfMutuallyExc
 QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots& tc);
 //229
 QDataStream& operator>>(QDataStream& stream, ConstraintStudentsPairOfMutuallyExclusiveTimeSlots& tc);
+//230
+QDataStream& operator>>(QDataStream& stream, ConstraintTwoSetsOfActivitiesSameSections& tc);
 
 #endif

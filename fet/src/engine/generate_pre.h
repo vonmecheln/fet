@@ -1139,6 +1139,35 @@ void computeMustComputeTimetableTeachers();
 bool homeRoomsAreOk(QWidget* parent);
 
 
+//2025-04-02
+class TwoSetsOfActivitiesSameSections_item
+{
+public:
+	//double weight; -> must be 100.0%
+	QList<int> activitiesAList;
+	QHash<int, int> activitiesAHash;
+
+	QList<int> activitiesBList;
+	QHash<int, int> activitiesBHash;
+
+	//not really needed
+	/*QList<int> aTimeSlotsList;
+	QSet<int> aTimeSlotsSet;
+
+	QList<int> bTimeSlotsList;
+	QSet<int> bTimeSlotsSet;*/
+
+	//QList<int> oTimeSlotsList;
+	QSet<int> oTimeSlotsSet; //exception slots
+};
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+extern std::list<TwoSetsOfActivitiesSameSections_item> assabList;
+extern Matrix1D<QList<TwoSetsOfActivitiesSameSections_item*>> assabListForActivity;
+
+bool computeTwoSetsOfActivitiesSameSections(QWidget* parent);
+
+
 //2011-09-25 - Constraint activities occupy max time slots from selection
 class ActivitiesOccupyMaxTimeSlotsFromSelection_item
 {
@@ -1212,6 +1241,9 @@ extern std::list<ActivitiesMinSimultaneousInSelectedTimeSlots_item> aminsistsLis
 extern Matrix1D<QList<ActivitiesMinSimultaneousInSelectedTimeSlots_item*>> aminsistsListForActivity;
 
 bool computeActivitiesMinSimultaneousInSelectedTimeSlots(QWidget* parent);
+
+extern bool haveTwoSetsOfActivitiesSameSections;
+extern Matrix1D<bool> activityHasTwoSetsOfActivitiesSameSections;
 
 extern bool haveActivitiesOccupyMaxConstraints;
 extern Matrix1D<bool> activityHasOccupyMaxConstraints;

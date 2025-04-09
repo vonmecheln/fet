@@ -579,7 +579,7 @@ by several users simultaneously.
 32---------------------------------------------------------
 From Volker Dirr:
 
-If you think that other people don't like this default constaint how about
+If you think that other people don't like this default constraint how about
 making a menu "default settings". there you can add "language" and my
 default wish. maybe there are other parameters, that can be set in this
 settings. I guess that there a people who want set duration to 2 or 4 by
@@ -1998,7 +1998,7 @@ i am not sure if it is a problem.
 
 it was more an information to you.
 
-i was able to proove that the destructor is doing his job, but to slow. the
+i was able to proove that the destructor is doing his job, but too slow. the
 destructor isn't ready if the function go back to the main programm.
 if i add a delay in the main programm and check if the destructor have
 done his work, then it is ok. but without that delay it isn't ok. so
@@ -3654,18 +3654,7 @@ The code in the loop does some checks that are replicated in several other loops
 
 217-----------------------DONE------------------------------
 
-218-----------------------DONE?-----------------------------
-From Volker Dirr:
-
-since FET is able to change split year automatically without losing
-activities, it is useful to load and save the settings.
-i don't talk about qsettings. it it already stored there and that is fine.
-but the settings are different a bit. so year 5 and 6 have very similar
-categories and divisions, but year 7-10 have got a bit different.
-so it would be fine to save and load them into a file. so a user can save
-settings for year 5-6 and save settings for year 7-10. i am not sure if
-into the fet file or into a separate file. it has different advantages and
-disadvantages. but i think into a new separate file is a bit better.
+218-----------------------DONE------------------------------
 
 219-------------------------DONE----------------------------
 
@@ -3792,7 +3781,7 @@ From adso (on forum):
 It would be useful in the best timetable processed (highest html) (but unfinished) to have at the top of the table for each teacher and each class the number of hours included and not included in order to understand where the problems are.
 And have a file fet also not complete to import into Excel to be able to work manually.
 
-229---------------------------------------------------------
+229-----------------------DONE?-----------------------------
 From Volker Dirr:
 
 About adding constraints students/teachers interval max days per week:
@@ -3839,7 +3828,7 @@ From Luigi Valbonesi:
 
 When fet generates timetables, to run a parallel routine that saves
 every new generated timetable (the best possible at the moment)
-overwriting the previous and the most difficult ativities with the one
+overwriting the previous and the most difficult activities with the one
 that blocked the generation. If the computer crashes there will be some
 data to think about and work with.
 
@@ -9408,7 +9397,6 @@ Mathematics Teachers Group
     Mathematics 2
     Mathematics 3
 
-
 This parameterization would make it easier to organize meetings that involve many teachers.
 Instead of selecting each teacher individually for the activities, we could simply select the desired group, ensuring that all teachers in that group
 are considered for the activities.
@@ -10697,7 +10685,7 @@ From GUEFFAZ REDA (on forum):
 
 https://lalescu.ro/liviu/fet/forum/index.php?topic=6326.0
 
-Shutown - sleep  - save and locking  or  other option After end Generate.
+Shutdown - sleep  - save and locking  or  other option After end Generate.
 
 689--------------------------------------------------------
 From GUEFFAZ REDA (on forum):
@@ -10759,3 +10747,19 @@ In the dialog for dividing a year automatically by selecting categories:
 
 You have added as default separation character the "space" but it's actually "invisible" for the user.
 Maybe you could add the word [SPACE] in gray font in order to "warn" the user.
+
+696--------------------------------------------------------
+From ygoldblatt (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6363.0
+
+Is it possible to direct FET to color by year-groups not by subjects so that (for example) all year 7 classes are on color etc?
+
+Is it possible to change the colors from the heavy dark colors that are default?
+
+697--------------------------------------------------------
+From GUEFFAZ REDA:
+
+1) He sent a picture: add what is new in FET in the Help > About > News section.
+
+2) He sent a picture: add a button for the Notification command in the Timetable > Generate multiple dialog.

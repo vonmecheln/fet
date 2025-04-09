@@ -3065,3 +3065,12 @@ Versions 7.1.0 - 7.1.v
 	days per week, teacher min/max hours daily, teacher max hours continuously, and teacher max gaps per day/week (suggested by Vangelis Karafillidis).
 	- Added the possibility of being informed by a beep and/or a notification command after each successful timetable in a multiple generation
 	(suggested by Benahmed Abdelkrim).
+- Version 7.1.3
+	- Added a new constraint in the Block planning mode, two sets of activities have the same sections (suggested by Edward Downes and Richard B. Gross).
+	- Added the possibility of modifying multiple selected constraints at once, with a single click, for these types of time constraints: teacher min/max
+	real days/mornings/afternoons per week, teacher min/max hours per real day, teacher min hours per morning/afternoon, teacher max hours per all afternoons,
+	teacher mornings/afternoons early max beginnings at second hour, teacher max gaps per real day/per week for real days/per morning and afternoon
+	(in the Mornings-Afternoon mode).
+	- Updated the Greek translation, by Vangelis Karafillidis.
+	- Updated the French translation, by Pascal Cohen.
+	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares.

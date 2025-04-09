@@ -2822,6 +2822,21 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				break;
 			}
+		//230
+		case CONSTRAINT_TWO_SETS_OF_ACTIVITIES_SAME_SECTIONS:
+			{
+				dialogTitle=tr("Constraints two sets of activities have the same sections", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsTwoSetsOfActivitiesSameSections");
+
+				teachersComboBox=new QComboBox;
+				studentsComboBox=new QComboBox;
+				subjectsComboBox=new QComboBox;
+				activityTagsComboBox=new QComboBox;
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -3007,16 +3022,62 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 	addPushButton=new QPushButton(tr("Add"));
 	modifyPushButton=new QPushButton(tr("Modify"));
 	modifyPushButton->setDefault(true);
-	if(type==CONSTRAINT_TEACHER_MAX_DAYS_PER_WEEK ||
-			type==CONSTRAINT_TEACHER_MIN_DAYS_PER_WEEK ||
-			type==CONSTRAINT_TEACHER_MIN_HOURS_DAILY ||
-			type==CONSTRAINT_TEACHER_MAX_HOURS_DAILY ||
-			type==CONSTRAINT_TEACHER_MAX_HOURS_CONTINUOUSLY ||
-			type==CONSTRAINT_TEACHER_MAX_GAPS_PER_DAY ||
-			type==CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK)
-		modifyMultiplePushButton=new QPushButton(tr("Modify selected", "It refers to time constraints"));
-	else
-		modifyMultiplePushButton=nullptr;
+	
+	switch(type){
+		case CONSTRAINT_TEACHER_MAX_DAYS_PER_WEEK:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MIN_DAYS_PER_WEEK:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MIN_HOURS_DAILY:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MAX_HOURS_DAILY:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MAX_HOURS_CONTINUOUSLY:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MAX_GAPS_PER_DAY:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK:
+			[[fallthrough]];
+		//
+		case CONSTRAINT_TEACHER_MAX_REAL_DAYS_PER_WEEK:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MIN_REAL_DAYS_PER_WEEK:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MAX_MORNINGS_PER_WEEK:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MIN_MORNINGS_PER_WEEK:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MAX_AFTERNOONS_PER_WEEK:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MIN_AFTERNOONS_PER_WEEK:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MAX_GAPS_PER_MORNING_AND_AFTERNOON:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MAX_GAPS_PER_REAL_DAY:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK_FOR_REAL_DAYS:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MAX_HOURS_PER_ALL_AFTERNOONS:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MIN_HOURS_DAILY_REAL_DAYS:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MAX_HOURS_DAILY_REAL_DAYS:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MIN_HOURS_PER_MORNING:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MIN_HOURS_PER_AFTERNOON:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_AFTERNOONS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR:
+			modifyMultiplePushButton=new QPushButton(tr("Modify selected", "It refers to time constraints"));
+			break;
+		
+		default:
+			modifyMultiplePushButton=nullptr;
+			break;
+	}
+	
 	removePushButton=new QPushButton(tr("Remove"));
 	closePushButton=new QPushButton(tr("Close"));
 
@@ -6323,6 +6384,67 @@ filtered_ok:
 
 				break;
 			}
+		//230
+		case CONSTRAINT_TWO_SETS_OF_ACTIVITIES_SAME_SECTIONS:
+			{
+				assert(teachersComboBox!=nullptr);
+				assert(studentsComboBox!=nullptr);
+				assert(subjectsComboBox!=nullptr);
+				assert(activityTagsComboBox!=nullptr);
+
+				if(teachersComboBox->currentText()==QString("")
+						&& subjectsComboBox->currentText()==QString("")
+						&& activityTagsComboBox->currentText()==QString("")
+						&& studentsComboBox->currentText()==QString(""))
+					return true;
+
+				ConstraintTwoSetsOfActivitiesSameSections* ctr=(ConstraintTwoSetsOfActivitiesSameSections*)tc;
+
+				bool foundTeacher=false;
+				bool foundSubject=false;
+				bool foundActivityTag=false;
+				bool foundStudents=false;
+
+				for(int id : ctr->activitiesAIds){
+					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
+
+					if(act!=nullptr){
+						if(teachersComboBox->currentText()==QString("") || act->teachersNames.contains(teachersComboBox->currentText()))
+							foundTeacher=true;
+						if(subjectsComboBox->currentText()==QString("") || subjectsComboBox->currentText()==act->subjectName)
+							foundSubject=true;
+						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
+							foundActivityTag=true;
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
+							foundStudents=true;
+					}
+
+					if(foundTeacher && foundSubject && foundActivityTag && foundStudents)
+						return true;
+				}
+				
+				for(int id : ctr->activitiesBIds){
+					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
+
+					if(act!=nullptr){
+						if(teachersComboBox->currentText()==QString("") || act->teachersNames.contains(teachersComboBox->currentText()))
+							foundTeacher=true;
+						if(subjectsComboBox->currentText()==QString("") || subjectsComboBox->currentText()==act->subjectName)
+							foundSubject=true;
+						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
+							foundActivityTag=true;
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
+							foundStudents=true;
+					}
+
+					if(foundTeacher && foundSubject && foundActivityTag && foundStudents)
+						return true;
+				}
+
+				return false;
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -6909,6 +7031,62 @@ void ListTimeConstraints::helpClicked()
 				 " and say: A1 is on day 1 hour 2, A2 is on day 1 hour 3, A3 is on day 3 hour 5, and A4 is on day 5 hour 2, then the earliest activities"
 				 " (neglecting their days) are A1 and A4 (starting at hour 2), and the latest activity (neglecting its day) is A3 (ending after hour 5)."
 				 " The hourly span of A1, A2, A3, and A4 is thus (5 + 1) - 2 = 4.");
+
+				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
+
+				break;
+			}
+		//230
+		case CONSTRAINT_TWO_SETS_OF_ACTIVITIES_SAME_SECTIONS:
+			{
+				QString s=tr("This constraint was suggested by %1 and %2.", "%1 and %2 are the two persons who suggested this constraint.")
+				 .arg("Edward Downes").arg("Richard B. Gross");
+				s+="\n\n";
+				s+=tr("The two sets must have the same number of activities, and the activities should have the same students sets, respectively.");
+				s+=" ";
+				s+=tr("Also, all the activities in such a constraint must have equal durations.");
+				s+="\n\n";
+				s+=tr("You can add exceptions for the time slots. If an activity is placed, even partially, in these exception time slots,"
+				 " it is not forced to respect this constraint.");
+				s+="\n\n";
+
+				s+=tr("More details, written by %1 and %2:", "%1 and %2 are two persons.").arg("Edward Downes").arg("Richard B. Gross");
+				s+="\n\n";
+				s+=tr("*Two sets of activities have the same sections*"
+				 "\n"
+				 "This constraint can be used to create *identical groupings* of students for classes that meet multiple times with multiple sections."
+				 " Note: both sets of activities MUST have the same number of activities and be all of the same duration."
+				 "\n\n"
+				 "Example 1:"
+				 "\n\n"
+				 "   - Your block schedule has two days (A day and B day) with all students in 7th grade taking a Math class."
+				 "\n"
+				 "   - There are max >=2 sections of 7th grade Math on either day."
+				 "\n"
+				 "   - You have A day *and* B day activities for each student's Math class (Student1 - Math - A day, Student1 - Math - B day, Student2 - Math - A day, etc.)"
+				 "\n"
+				 "   - Use this constraint and the tabs to select,"
+				 "\n"
+				 "      -  all the A day activities in the First activities set, followed by all the B day activities in the Second activities set."
+				 "\n"
+				 "   - The constraint will now form the same groupings or sections of students on the B days as it does on the A days."
+				 "\n\n"
+				 "Example 2:"
+				 "\n\n"
+				 "   - You have two classes, say Math and Chemistry (both with same duration), with the exact same students lists."
+				 "\n"
+				 "   - You want max >=2 sections of Math and max >=2 sections of Chemistry in your block schedule."
+				 "\n"
+				 "   - You want identical groupings of students in the Math sections as the Chemistry sections."
+				 "\n"
+				 "   - Use this constraint, then the tabs and select,"
+				 "\n"
+				 "      -  all the Math activities in the First activities set, followed by all the Chemistry activities in the Second activities set.");
+				s+="\n\n";
+				s+=tr("Note (by %1): if you use overflow slots for the activities which cannot be placed in the real time slots, these overflow slots should"
+				 " be added in the exception slots, in which an activity is not forced to respect this 'same sections' constraint."
+				 , "%1 is the person who wrote this note.").arg("Liviu Lalescu");
+				s+="\n";
 
 				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
 

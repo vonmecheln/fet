@@ -8430,6 +8430,15 @@ inline bool Generate::compareFunctionGenerate(int i, int j)
 	return false;
 }
 
+inline bool Generate::isExceptionTime(int ai, int t, const QSet<int>& ets)
+{
+	for(int at=t; at<t+gt.rules.internalActivitiesList[ai].duration*gt.rules.nDaysPerWeek; at+=gt.rules.nDaysPerWeek)
+		if(ets.contains(at))
+			return true;
+	
+	return false;
+}
+
 //#define nMinDaysBroken			(nMinDaysBrokenL[level])
 #define selectedRoom			(selectedRoomL[level])
 #define perm					(permL[level])
@@ -8645,6 +8654,9 @@ again_if_impossible_activity:
 		bool okstudentsmaxactivitytagsperrealdayfromset;
 
 		bool okteachersmaxhoursperallafternoons;
+
+		//2025-04-02
+		bool oktwosetsofactivitiessamesections;
 
 		//2011-09-25
 		bool okactivitiesoccupymaxtimeslotsfromselection;
@@ -32124,6 +32136,195 @@ impossibleactivitiesoccupymaxterms:
 			nConflActivities[newtime]=MAX_ACTIVITIES;
 			continue;
 		}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+		//2025-04-02
+		//care about two sets of activities have the same sections
+		//I think it is best to put this after all other major constraints
+
+		if(gt.rules.mode==BLOCK_PLANNING && haveTwoSetsOfActivitiesSameSections && activityHasTwoSetsOfActivitiesSameSections[ai]){
+			oktwosetsofactivitiessamesections=true;
+			
+			for(TwoSetsOfActivitiesSameSections_item* item : std::as_const(assabListForActivity[ai])){
+				int indexA=-1;
+				int indexB=-1;
+				if(item->activitiesAHash.contains(ai))
+					indexA=item->activitiesAHash.value(ai);
+				else if(item->activitiesBHash.contains(ai))
+					indexB=item->activitiesBHash.value(ai);
+				else
+					assert(0);
+				assert(indexA>=0 || indexB>=0);
+				if(indexA>=0){ //ai is in the first set
+					if(!isExceptionTime(ai, newtime, item->oTimeSlotsSet)){
+						assert(item->activitiesAList.at(indexA)==ai);
+						int pair_ai=item->activitiesBList.at(indexA);
+						
+						if(c.times[pair_ai]!=UNALLOCATED_TIME && !isExceptionTime(pair_ai, c.times[pair_ai], item->oTimeSlotsSet) && !conflActivities[newtime].contains(pair_ai)){
+							for(int i=0; i<item->activitiesAList.count(); i++){
+								if(i==indexA)
+									continue;
+								
+								int aia=item->activitiesAList.at(i);
+								int pair_aia=item->activitiesBList.at(i);
+								
+								if(c.times[aia]==UNALLOCATED_TIME || isExceptionTime(aia, c.times[aia], item->oTimeSlotsSet) || conflActivities[newtime].contains(aia))
+									continue;
+								if(c.times[pair_aia]==UNALLOCATED_TIME || isExceptionTime(pair_aia, c.times[pair_aia], item->oTimeSlotsSet) || conflActivities[newtime].contains(pair_aia))
+									continue;
+								
+								if((newtime==c.times[aia] && c.times[pair_ai]!=c.times[pair_aia])
+								 || (newtime!=c.times[aia] && c.times[pair_ai]==c.times[pair_aia])){
+								//need to unallocate aia, pair_aia, or pair_ai
+									QList<int> tl;
+									tl.append(0);
+									tl.append(1);
+									tl.append(2);
+
+									for(int i=0; i<tl.count(); i++){
+										int t=tl.at(i);
+										int r=rng.intMRG32k3a(tl.count()-i);
+										tl[i]=tl[i+r];
+										tl[i+r]=t;
+									}
+
+									int i;
+									if(true || level>0){
+										for(i=0; i<3; i++){
+											int j=tl.at(i);
+											int aitodisplace;
+											if(j==0)
+												aitodisplace=aia;
+											else if(j==1)
+												aitodisplace=pair_ai;
+											else if(j==2)
+												aitodisplace=pair_aia;
+											else
+												assert(0);
+
+											//try to unallocate aitodisplace
+											if(fixedTimeActivity[aitodisplace] || swappedActivities[aitodisplace]){
+												//okbasictime=false;
+												//goto impossiblebasictime;
+												continue;
+											}
+
+											if(!conflActivities[newtime].contains(aitodisplace)){
+												conflActivities[newtime].append(aitodisplace);
+												nConflActivities[newtime]++;
+												assert(nConflActivities[newtime]==conflActivities[newtime].count());
+
+												break;
+											}
+										}
+									}
+									else{
+										assert(level==0);
+										assert(0);
+									}
+
+									if(i==3){
+										oktwosetsofactivitiessamesections=false;
+										goto impossibletwosetsofactivitiessamesections;
+									}
+								}
+							}
+						}
+					}
+				}
+				else if(indexB>=0){ //ai is in the second set
+					if(!isExceptionTime(ai, newtime, item->oTimeSlotsSet)){
+						assert(item->activitiesBList.at(indexB)==ai);
+						int pair_ai=item->activitiesAList.at(indexB);
+						
+						if(c.times[pair_ai]!=UNALLOCATED_TIME && !isExceptionTime(pair_ai, c.times[pair_ai], item->oTimeSlotsSet) && !conflActivities[newtime].contains(pair_ai)){
+							for(int i=0; i<item->activitiesBList.count(); i++){
+								if(i==indexB)
+									continue;
+								
+								int aia=item->activitiesBList.at(i);
+								int pair_aia=item->activitiesAList.at(i);
+								
+								if(c.times[aia]==UNALLOCATED_TIME || isExceptionTime(aia, c.times[aia], item->oTimeSlotsSet) || conflActivities[newtime].contains(aia))
+									continue;
+								if(c.times[pair_aia]==UNALLOCATED_TIME || isExceptionTime(pair_aia, c.times[pair_aia], item->oTimeSlotsSet) || conflActivities[newtime].contains(pair_aia))
+									continue;
+								
+								if((newtime==c.times[aia] && c.times[pair_ai]!=c.times[pair_aia])
+								 || (newtime!=c.times[aia] && c.times[pair_ai]==c.times[pair_aia])){
+								//need to unallocate aia, pair_aia, or pair_ai
+									QList<int> tl;
+									tl.append(0);
+									tl.append(1);
+									tl.append(2);
+
+									for(int i=0; i<tl.count(); i++){
+										int t=tl.at(i);
+										int r=rng.intMRG32k3a(tl.count()-i);
+										tl[i]=tl[i+r];
+										tl[i+r]=t;
+									}
+
+									int i;
+									if(true || level>0){
+										for(i=0; i<3; i++){
+											int j=tl.at(i);
+											int aitodisplace;
+											if(j==0)
+												aitodisplace=aia;
+											else if(j==1)
+												aitodisplace=pair_ai;
+											else if(j==2)
+												aitodisplace=pair_aia;
+											else
+												assert(0);
+
+											//try to unallocate aitodisplace
+											if(fixedTimeActivity[aitodisplace] || swappedActivities[aitodisplace]){
+												//okbasictime=false;
+												//goto impossiblebasictime;
+												continue;
+											}
+
+											if(!conflActivities[newtime].contains(aitodisplace)){
+												conflActivities[newtime].append(aitodisplace);
+												nConflActivities[newtime]++;
+												assert(nConflActivities[newtime]==conflActivities[newtime].count());
+
+												break;
+											}
+										}
+									}
+									else{
+										assert(level==0);
+										assert(0);
+									}
+
+									if(i==3){
+										oktwosetsofactivitiessamesections=false;
+										goto impossibletwosetsofactivitiessamesections;
+									}
+								}
+							}
+						}
+					}
+				}
+				else{
+					assert(0);
+				}
+			}
+		
+impossibletwosetsofactivitiessamesections:
+			if(!oktwosetsofactivitiessamesections){
+				if(updateSubgroups || updateTeachers)
+					removeAiFromNewTimetable(ai, act, d, h);
+				//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+				nConflActivities[newtime]=MAX_ACTIVITIES;
+				continue;
+			}
+	}
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 

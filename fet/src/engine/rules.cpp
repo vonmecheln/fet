@@ -1942,6 +1942,13 @@ QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 					stream<<*c;
 					break;
 				}
+			//230
+			case CONSTRAINT_TWO_SETS_OF_ACTIVITIES_SAME_SECTIONS:
+				{
+					ConstraintTwoSetsOfActivitiesSameSections* c=(ConstraintTwoSetsOfActivitiesSameSections*)ctr;
+					stream<<*c;
+					break;
+				}
 			
 			default:
 				assert(0);
@@ -4506,6 +4513,14 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 			case CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
 				{
 					ConstraintStudentsPairOfMutuallyExclusiveTimeSlots* c=new ConstraintStudentsPairOfMutuallyExclusiveTimeSlots;
+					stream>>*c;
+					rules.timeConstraintsList.append(c);
+					break;
+				}
+			//230
+			case CONSTRAINT_TWO_SETS_OF_ACTIVITIES_SAME_SECTIONS:
+				{
+					ConstraintTwoSetsOfActivitiesSameSections* c=new ConstraintTwoSetsOfActivitiesSameSections;
 					stream>>*c;
 					rules.timeConstraintsList.append(c);
 					break;
@@ -11012,6 +11027,13 @@ void Rules::recomputeActivitiesSetForTimeConstraint(TimeConstraint* ctr)
 				c->recomputeActivitiesSet();
 				break;
 			}
+		case CONSTRAINT_TWO_SETS_OF_ACTIVITIES_SAME_SECTIONS:
+			{
+				ConstraintTwoSetsOfActivitiesSameSections* c=(ConstraintTwoSetsOfActivitiesSameSections*) ctr;
+				c->recomputeActivitiesSets();
+				break;
+			}
+
 		default:
 			//do nothing.
 			break;
@@ -13063,6 +13085,14 @@ void Rules::updateConstraintsAfterRemoval()
 				{
 					ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots* c=(ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots*)tc;
 					if(!permanentStudentsHash.contains(c->students))
+						toBeRemovedTime.append(tc);
+					break;
+				}
+			case CONSTRAINT_TWO_SETS_OF_ACTIVITIES_SAME_SECTIONS:
+				{
+					ConstraintTwoSetsOfActivitiesSameSections* c=(ConstraintTwoSetsOfActivitiesSameSections*)tc;
+					c->removeUseless(*this);
+					if(c->activitiesAIds.count()<1 && c->activitiesBIds.count()<1)
 						toBeRemovedTime.append(tc);
 					break;
 				}
@@ -16835,6 +16865,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 				}
 				else if(xmlReader.name()==QString("ConstraintSubactivitiesPreferredStartingTimes")){
 					crt_constraint=readSubactivitiesPreferredStartingTimes(xmlReader, xmlReadingLog);
+				}
+////////////////2025-04-02
+				else if(xmlReader.name()==QString("ConstraintTwoSetsOfActivitiesSameSections")){
+					crt_constraint=readTwoSetsOfActivitiesSameSections(xmlReader, xmlReadingLog);
 				}
 ////////////////2011-09-25
 				else if(xmlReader.name()==QString("ConstraintActivitiesOccupyMaxTimeSlotsFromSelection")){
@@ -29021,6 +29055,207 @@ TimeConstraint* Rules::readSubactivitiesPreferredStartingTimes(QXmlStreamReader&
 		return nullptr;
 	}
 	assert(i==cn->nPreferredStartingTimes_L);
+	return cn;
+}
+
+//2025-04-02
+TimeConstraint* Rules::readTwoSetsOfActivitiesSameSections(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTwoSetsOfActivitiesSameSections"));
+	ConstraintTwoSetsOfActivitiesSameSections* cn=new ConstraintTwoSetsOfActivitiesSameSections();
+
+	int rnfa=0;
+	int rnsa=0;
+	int tsc=0;
+	int i=0;
+
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("First_Activities_Ids_Set")){
+			xmlReadingLog+="    Reading first activities ids set\n";
+			assert(xmlReader.isStartElement());
+			while(xmlReader.readNextStartElement()){
+				xmlReadingLog+="     Found "+xmlReader.name().toString()+" tag\n";
+				if(xmlReader.name()==QString("Number_of_Activities")){
+					QString text=xmlReader.readElementText();
+					rnfa=text.toInt();
+					xmlReadingLog+="     Read number of activities="+CustomFETString::number(rnfa)+"\n";
+				}
+				else if(xmlReader.name()==QString("Activity_Id")){
+					QString text=xmlReader.readElementText();
+					cn->activitiesAIds.append(text.toInt());
+					xmlReadingLog+="     Read activity id="+CustomFETString::number(cn->activitiesAIds.last())+"\n";
+				}
+				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+					xmlReader.skipCurrentElement();
+					xmlReaderNumberOfUnrecognizedFields++;
+				}
+			}
+			if(rnfa==-1){
+				xmlReader.raiseError(tr("Field %1 not met").arg("Number_of_Activities"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			else if(rnfa!=cn->activitiesAIds.count()){
+				xmlReader.raiseError(tr("The value in field %1 is not equal with the number of read %2 fields").arg("Number_of_Activities").arg("Activity_Id"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+		}
+		else if(xmlReader.name()==QString("Second_Activities_Ids_Set")){
+			xmlReadingLog+="    Reading second activities ids set\n";
+			assert(xmlReader.isStartElement());
+			while(xmlReader.readNextStartElement()){
+				xmlReadingLog+="     Found "+xmlReader.name().toString()+" tag\n";
+				if(xmlReader.name()==QString("Number_of_Activities")){
+					QString text=xmlReader.readElementText();
+					rnsa=text.toInt();
+					xmlReadingLog+="     Read number of activities="+CustomFETString::number(rnsa)+"\n";
+				}
+				else if(xmlReader.name()==QString("Activity_Id")){
+					QString text=xmlReader.readElementText();
+					cn->activitiesBIds.append(text.toInt());
+					xmlReadingLog+="     Read activity id="+CustomFETString::number(cn->activitiesBIds.last())+"\n";
+				}
+				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+					xmlReader.skipCurrentElement();
+					xmlReaderNumberOfUnrecognizedFields++;
+				}
+			}
+			if(rnsa==-1){
+				xmlReader.raiseError(tr("Field %1 not met").arg("Number_of_Activities"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			else if(rnsa!=cn->activitiesBIds.count()){
+				xmlReader.raiseError(tr("The value in field %1 is not equal with the number of read %2 fields").arg("Number_of_Activities").arg("Activity_Id"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+		}
+		else if(xmlReader.name()==QString("Number_of_Exception_Time_Slots")){
+			QString text=xmlReader.readElementText();
+			tsc=text.toInt();
+			xmlReadingLog+="    Read number of exception time slots="+CustomFETString::number(tsc)+"\n";
+		}
+		else if(xmlReader.name()==QString("Exception_Time_Slot")){
+			xmlReadingLog+="    Read: exception time slot\n";
+
+			assert(xmlReader.isStartElement());
+			while(xmlReader.readNextStartElement()){
+				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+				if(xmlReader.name()==QString("Exception_Day")){
+					QString text=xmlReader.readElementText();
+					cn->oDays.append(0);
+					assert(cn->oDays.count()-1==i);
+					for(cn->oDays[i]=0; cn->oDays[i]<this->nDaysPerWeek; cn->oDays[i]++)
+						if(this->daysOfTheWeek[cn->oDays[i]]==text)
+							break;
+
+					if(cn->oDays[i]>=this->nDaysPerWeek){
+						xmlReader.raiseError(tr("Day %1 is nonexistent").arg(text));
+						/*RulesReconcilableMessage::information(parent, tr("FET information"),
+							tr("Constraint ActivitiesOccupyMaxTimeSlotsFromSelection day corrupt, day %1 is nonexistent ... ignoring constraint")
+							.arg(text));*/
+						delete cn;
+						cn=nullptr;
+						//goto corruptConstraintTime;
+						return nullptr;
+					}
+
+					assert(cn->oDays[i]<this->nDaysPerWeek);
+					xmlReadingLog+="    Exception day="+this->daysOfTheWeek[cn->oDays[i]]+"("+CustomFETString::number(i)+")"+"\n";
+				}
+				else if(xmlReader.name()==QString("Exception_Hour")){
+					QString text=xmlReader.readElementText();
+					cn->oHours.append(0);
+					assert(cn->oHours.count()-1==i);
+					for(cn->oHours[i]=0; cn->oHours[i] < this->nHoursPerDay; cn->oHours[i]++)
+						if(this->hoursOfTheDay[cn->oHours[i]]==text)
+							break;
+
+					if(cn->oHours[i]>=this->nHoursPerDay){
+						xmlReader.raiseError(tr("Hour %1 is nonexistent").arg(text));
+						/*RulesReconcilableMessage::information(parent, tr("FET information"),
+							tr(" Constraint ActivitiesOccupyMaxTimeSlotsFromSelection hour corrupt, hour %1 is nonexistent ... ignoring constraint")
+							.arg(text));*/
+						delete cn;
+						cn=nullptr;
+						//goto corruptConstraintTime;
+						return nullptr;
+					}
+
+					assert(cn->oHours[i]>=0 && cn->oHours[i] < this->nHoursPerDay);
+					xmlReadingLog+="    Exception hour="+this->hoursOfTheDay[cn->oHours[i]]+"\n";
+				}
+				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+					xmlReader.skipCurrentElement();
+					xmlReaderNumberOfUnrecognizedFields++;
+				}
+			}
+
+			i++;
+
+			if(!(i==cn->oDays.count()) || !(i==cn->oHours.count())){
+				xmlReader.raiseError(tr("%1 is incorrect").arg("Exception_Time_Slot"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			assert(i==cn->oDays.count());
+			assert(i==cn->oHours.count());
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+
+	if(!(i==tsc)){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Exception_Time_Slots").arg("Exception_Time_Slot"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+
+	assert(rnfa==cn->activitiesAIds.count());
+	assert(rnsa==cn->activitiesBIds.count());
+	assert(i==tsc);
 	return cn;
 }
 

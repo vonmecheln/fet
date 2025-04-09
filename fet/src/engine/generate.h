@@ -250,6 +250,8 @@ private:
 	//for sorting slots in ascending order of potential conflicts
 	bool compareFunctionGenerate(int i, int j);
 
+	bool isExceptionTime(int ai, int t, const QSet<int>& ets);
+
 public:
 	MRG32k3a rng;
 	

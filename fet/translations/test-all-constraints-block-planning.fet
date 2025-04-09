@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<fet version="7.1.0">
+<fet version="7.1.3">
   <Mode>Block_Planning</Mode>
   <Institution_Name>Default institution</Institution_Name>
   <Comments>Default comments</Comments>
@@ -2268,6 +2268,34 @@
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintStudentsPairOfMutuallyExclusiveTimeSlots>
+    <ConstraintTwoSetsOfActivitiesSameSections>
+      <Weight_Percentage>100</Weight_Percentage>
+      <First_Activities_Ids_Set>
+        <Number_of_Activities>2</Number_of_Activities>
+        <Activity_Id>3</Activity_Id>
+        <Activity_Id>8</Activity_Id>
+      </First_Activities_Ids_Set>
+      <Second_Activities_Ids_Set>
+        <Number_of_Activities>2</Number_of_Activities>
+        <Activity_Id>8</Activity_Id>
+        <Activity_Id>11</Activity_Id>
+      </Second_Activities_Ids_Set>
+      <Number_of_Exception_Time_Slots>3</Number_of_Exception_Time_Slots>
+      <Exception_Time_Slot>
+        <Exception_Day>Monday</Exception_Day>
+        <Exception_Hour>08:00</Exception_Hour>
+      </Exception_Time_Slot>
+      <Exception_Time_Slot>
+        <Exception_Day>Tuesday</Exception_Day>
+        <Exception_Hour>08:00</Exception_Hour>
+      </Exception_Time_Slot>
+      <Exception_Time_Slot>
+        <Exception_Day>Wednesday</Exception_Day>
+        <Exception_Hour>08:00</Exception_Hour>
+      </Exception_Time_Slot>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintTwoSetsOfActivitiesSameSections>
   </Time_Constraints_List>
   <Space_Constraints_List>
     <ConstraintBasicCompulsorySpace>

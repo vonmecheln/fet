@@ -84,6 +84,9 @@ private:
 
 	QAction* dataTimeConstraintsActivitiesPreferredTimeSlotsAction;
 	QAction* dataTimeConstraintsActivitiesSameStartingTimeAction;
+
+	QAction* dataTimeConstraintsTwoSetsOfActivitiesSameSectionsAction;
+
 	QAction* dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction;
 	QAction* dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction;
 	QAction* dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction;
@@ -633,6 +636,9 @@ public slots:
 	void dataTimeConstraintsActivitiesSameStartingTimeAction_triggered();
 	void dataTimeConstraintsActivitiesSameStartingHourAction_triggered();
 	void dataTimeConstraintsActivitiesSameStartingDayAction_triggered();
+
+	void dataTimeConstraintsTwoSetsOfActivitiesSameSectionsAction_triggered();
+
 	void dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction_triggered();
 	void dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction_triggered();
 	void dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction_triggered();

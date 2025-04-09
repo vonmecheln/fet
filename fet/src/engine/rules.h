@@ -999,6 +999,8 @@ private:
 	TimeConstraint* readSubactivitiesPreferredTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readSubactivitiesPreferredStartingTimes(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
+	TimeConstraint* readTwoSetsOfActivitiesSameSections(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
 	TimeConstraint* readActivitiesOccupyMaxTimeSlotsFromSelection(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readActivitiesOccupyMinTimeSlotsFromSelection(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readActivitiesMaxSimultaneousInSelectedTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);

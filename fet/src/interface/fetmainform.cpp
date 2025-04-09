@@ -1939,6 +1939,9 @@ void FetMainForm::createActionsForConstraints()
 {
 	dataTimeConstraintsActivitiesPreferredTimeSlotsAction = new QAction(this);
 	dataTimeConstraintsActivitiesSameStartingTimeAction = new QAction(this);
+
+	dataTimeConstraintsTwoSetsOfActivitiesSameSectionsAction = new QAction(this);
+
 	dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction = new QAction(this);
 	dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction = new QAction(this);
 	dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction = new QAction(this);
@@ -2272,6 +2275,9 @@ void FetMainForm::createActionsForConstraints()
 
 	connect(dataTimeConstraintsActivitiesPreferredTimeSlotsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesPreferredTimeSlotsAction_triggered);
 	connect(dataTimeConstraintsActivitiesSameStartingTimeAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesSameStartingTimeAction_triggered);
+
+	connect(dataTimeConstraintsTwoSetsOfActivitiesSameSectionsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTwoSetsOfActivitiesSameSectionsAction_triggered);
+
 	connect(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction_triggered);
 	connect(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction_triggered);
 	connect(dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction_triggered);
@@ -2653,6 +2659,9 @@ void FetMainForm::retranslateConstraints()
 
 	dataTimeConstraintsActivitiesPreferredTimeSlotsAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities has a set of preferred time slots", nullptr));
 	dataTimeConstraintsActivitiesSameStartingTimeAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities has same starting time (day+hour)", nullptr));
+
+	dataTimeConstraintsTwoSetsOfActivitiesSameSectionsAction->setText(QCoreApplication::translate("FetMainForm_template", "Two sets of activities have the same sections", nullptr));
+
 	dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities occupies max time slots from selection", nullptr));
 	dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities occupies min time slots from selection", nullptr));
 	dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction->setText(QCoreApplication::translate("FetMainForm_template", "Max simultaneous activities from a set in selected time slots", nullptr));
@@ -3936,6 +3945,9 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction);
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction);
+		menuActivities_others_2_time_constraints->addSeparator();
+
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoSetsOfActivitiesSameSectionsAction);
 		menuActivities_others_2_time_constraints->addSeparator();
 
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsMaxTotalActivitiesFromSetInSelectedTimeSlotsAction);
@@ -7206,6 +7218,26 @@ void FetMainForm::dataTimeConstraintsActivitiesSameStartingDayAction_triggered()
 	setParentAndOtherThings(&form, this);
 	form.exec();*/
 	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY);
+}
+
+void FetMainForm::dataTimeConstraintsTwoSetsOfActivitiesSameSectionsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	/*ConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TWO_SETS_OF_ACTIVITIES_SAME_SECTIONS);
 }
 
 void FetMainForm::dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction_triggered()

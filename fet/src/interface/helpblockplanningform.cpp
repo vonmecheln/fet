@@ -46,7 +46,7 @@ void HelpBlockPlanningForm::setText()
 	
 	s+=tr("Instructions for the block-planning mode.");
 	s+="\n\n";
-	s+=tr("Last modified on %1.").arg(tr("27 March 2021"));
+	s+=tr("Last modified on %1.").arg(tr("4 April 2025"));
 	s+="\n\n";
 	s+=tr("The block-planning mode was suggested, chronologically, by these users: %1, %2, and %3. You can follow a forum discussion about it here: %4",
 	 "%1, %2, and %3 are three persons, %4 is an internet link").arg("Jude G").arg("ChicagoPianoTuner").arg("Darren McDonald")
@@ -212,6 +212,10 @@ void HelpBlockPlanningForm::setText()
 	 " block, decrease the value of N by 1 for each course duration.");
 	s+=" ";
 	s+=tr("The constraint \"max gaps (hours) between a set of activities\" was designed/introduced in the block-planning mode.");
+	s+="\n\n";
+	s+=tr("If you would like to keep the same sections in two groups of activities, you could use the constraint of type 'Two sets of"
+	 " activities have the same sections', introduced on %1, suggested by %2 and %3. See its dialog for Help about it.",
+	 "%1 is a date, %2 and %3 are two persons").arg("2 April 2025").arg("Edward Downes").arg("Richard B. Gross");
 	s+="\n";
 
 	plainTextEdit->setPlainText(s);
