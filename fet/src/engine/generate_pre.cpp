@@ -5799,7 +5799,7 @@ bool computeStudentsActivityTagMinHoursDaily(QWidget* parent)
 						//satmhdListForSubgroup[sbg].append(&satmhdList[satmhdList.count()-1]);
 						satmhdListForSubgroup[sbg].append(&satmhdList.back());
 						
-						if(item.durationOfActivitiesWithActivityTagForSubgroup<item.minDaysWithTag*item.minHoursDaily){
+						if(item.durationOfActivitiesWithActivityTagForSubgroup<max(1,item.minDaysWithTag)*item.minHoursDaily){
 							ok=false;
 				
 							int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
@@ -5807,7 +5807,7 @@ bool computeStudentsActivityTagMinHoursDaily(QWidget* parent)
 							 " requires at least %4 hours of work per week, but the activities of this subgroup with this activity tag sum to only %5 hours"
 							 " per week (the constraint requires %6 nonempty days). Please correct and try again")
 							 .arg(smd->activityTagName).arg(smd->minHoursDaily).arg(gt.rules.internalSubgroupsList[sbg]->name)
-							 .arg(item.minDaysWithTag*item.minHoursDaily).arg(item.durationOfActivitiesWithActivityTagForSubgroup).arg(smd->minDaysWithTag),
+							 .arg(max(1,item.minDaysWithTag)*item.minHoursDaily).arg(item.durationOfActivitiesWithActivityTagForSubgroup).arg(smd->minDaysWithTag),
 							 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 							 1, 0 );
 							 	
@@ -5842,7 +5842,7 @@ bool computeStudentsActivityTagMinHoursDaily(QWidget* parent)
 						//satmhdListForSubgroup[sbg].append(&satmhdList[satmhdList.count()-1]);
 						satmhdListForSubgroup[sbg].append(&satmhdList.back());
 						
-						if(item.durationOfActivitiesWithActivityTagForSubgroup<item.minDaysWithTag*item.minHoursDaily){
+						if(item.durationOfActivitiesWithActivityTagForSubgroup<max(1,item.minDaysWithTag)*item.minHoursDaily){
 							ok=false;
 				
 							int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
@@ -5850,7 +5850,7 @@ bool computeStudentsActivityTagMinHoursDaily(QWidget* parent)
 							 " requires at least %4 hours of work per week, but the activities of this subgroup with this activity tag sum to only %5 hours"
 							 " per week (the constraint requires %6 nonempty days). Please correct and try again")
 							 .arg(smd->activityTagName).arg(smd->minHoursDaily).arg(gt.rules.internalSubgroupsList[sbg]->name)
-							 .arg(item.minDaysWithTag*item.minHoursDaily).arg(item.durationOfActivitiesWithActivityTagForSubgroup).arg(smd->minDaysWithTag),
+							 .arg(max(1,item.minDaysWithTag)*item.minHoursDaily).arg(item.durationOfActivitiesWithActivityTagForSubgroup).arg(smd->minDaysWithTag),
 							 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 							 1, 0 );
 							
@@ -8535,7 +8535,7 @@ bool computeTeachersActivityTagMinHoursDaily(QWidget* parent)
 						//tatmhdListForTeacher[tch].append(&tatmhdList[tatmhdList.count()-1]);
 						tatmhdListForTeacher[tch].append(&tatmhdList.back());
 						
-						if(item.durationOfActivitiesWithActivityTagForTeacher<item.minDaysWithTag*item.minHoursDaily){
+						if(item.durationOfActivitiesWithActivityTagForTeacher<max(1,item.minDaysWithTag)*item.minHoursDaily){
 							ok=false;
 				
 							int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
@@ -8543,7 +8543,7 @@ bool computeTeachersActivityTagMinHoursDaily(QWidget* parent)
 							 " requires at least %4 hours of work per week, but the activities of this teacher with this activity tag sum to only %5 hours"
 							 " per week (the constraint requires %6 nonempty days). Please correct and try again")
 							 .arg(tmd->activityTagName).arg(tmd->minHoursDaily).arg(gt.rules.internalTeachersList[tch]->name)
-							 .arg(item.minDaysWithTag*item.minHoursDaily).arg(item.durationOfActivitiesWithActivityTagForTeacher).arg(tmd->minDaysWithTag),
+							 .arg(max(1,item.minDaysWithTag)*item.minHoursDaily).arg(item.durationOfActivitiesWithActivityTagForTeacher).arg(tmd->minDaysWithTag),
 							 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 							 1, 0 );
 							 	
@@ -8578,7 +8578,7 @@ bool computeTeachersActivityTagMinHoursDaily(QWidget* parent)
 						//tatmhdListForTeacher[tch].append(&tatmhdList[tatmhdList.count()-1]);
 						tatmhdListForTeacher[tch].append(&tatmhdList.back());
 						
-						if(item.durationOfActivitiesWithActivityTagForTeacher<item.minDaysWithTag*item.minHoursDaily){
+						if(item.durationOfActivitiesWithActivityTagForTeacher<max(1,item.minDaysWithTag)*item.minHoursDaily){
 							ok=false;
 				
 							int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
@@ -8586,7 +8586,7 @@ bool computeTeachersActivityTagMinHoursDaily(QWidget* parent)
 							 " requires at least %4 hours of work per week, but the activities of this teacher with this activity tag sum to only %5 hours"
 							 " per week (the constraint requires %6 nonempty days). Please correct and try again")
 							 .arg(tmd->activityTagName).arg(tmd->minHoursDaily).arg(gt.rules.internalTeachersList[tch]->name)
-							 .arg(item.minDaysWithTag*item.minHoursDaily).arg(item.durationOfActivitiesWithActivityTagForTeacher).arg(tmd->minDaysWithTag),
+							 .arg(max(1,item.minDaysWithTag)*item.minHoursDaily).arg(item.durationOfActivitiesWithActivityTagForTeacher).arg(tmd->minDaysWithTag),
 							 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 							 1, 0 );
 							 	

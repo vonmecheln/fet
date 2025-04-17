@@ -3084,4 +3084,9 @@ Versions 7.1.0 - 7.1.v
 	- Updated the Greek translation, by Vangelis Karafillidis.
 	- Updated the Italian translation, by Andrea Primiani.
 	- Updated the Arabic translation, by Benahmed Abdelkrim.
-	- Updated the Italian translation, by Andrea Primiani.
+- Version 7.1.5
+	- Improved the preliminary feasibility test of the constraints of type teacher(s)/students (set) activity tag min hours daily.
+	- Updated the Arabic translation, by Benahmed Abdelkrim.
+	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares.
+	- Updated the French translation, by Pascal Cohen.
+	- Updated the Greek translation, by Vangelis Karafillidis.
