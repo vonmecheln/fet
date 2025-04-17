@@ -4474,7 +4474,7 @@ public:
 	*/
 	int minHoursDaily;
 	
-	bool allowEmptyDays;
+	int minDaysWithTag;
 	
 	QString activityTagName;
 	
@@ -4484,7 +4484,7 @@ public:
 
 	ConstraintTeachersActivityTagMinHoursDaily();
 
-	ConstraintTeachersActivityTagMinHoursDaily(double wp, int minhours, bool allowemptydays, const QString& activityTag);
+	ConstraintTeachersActivityTagMinHoursDaily(double wp, int minhours, int mindays, const QString& activityTag);
 
 	QString getXmlDescription(Rules& r);
 
@@ -4522,7 +4522,7 @@ public:
 	*/
 	int minHoursDaily;
 	
-	bool allowEmptyDays;
+	int minDaysWithTag;
 	
 	QString teacherName;
 	
@@ -4536,7 +4536,7 @@ public:
 
 	ConstraintTeacherActivityTagMinHoursDaily();
 
-	ConstraintTeacherActivityTagMinHoursDaily(double wp, int minhours, bool allowemptydays, const QString& teacher, const QString& activityTag);
+	ConstraintTeacherActivityTagMinHoursDaily(double wp, int minhours, int mindays, const QString& teacher, const QString& activityTag);
 
 	QString getXmlDescription(Rules& r);
 
@@ -4571,7 +4571,7 @@ class ConstraintStudentsActivityTagMinHoursDaily: public TimeConstraint{
 public:
 	int minHoursDaily;
 	
-	bool allowEmptyDays;
+	int minDaysWithTag;
 	
 	QString activityTagName;
 	
@@ -4581,7 +4581,7 @@ public:
 
 	ConstraintStudentsActivityTagMinHoursDaily();
 
-	ConstraintStudentsActivityTagMinHoursDaily(double wp, int maxnh, bool allowEmptyDays, const QString& activityTag);
+	ConstraintStudentsActivityTagMinHoursDaily(double wp, int maxnh, int mindays, const QString& activityTag);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -4616,7 +4616,7 @@ class ConstraintStudentsSetActivityTagMinHoursDaily: public TimeConstraint{
 public:
 	int minHoursDaily;
 	
-	bool allowEmptyDays;
+	int minDaysWithTag;
 
 	/**
 	The students set name
@@ -4644,7 +4644,7 @@ public:
 
 	ConstraintStudentsSetActivityTagMinHoursDaily();
 
-	ConstraintStudentsSetActivityTagMinHoursDaily(double wp, int minnh, bool allowEmptyDays, const QString& s, const QString& activityTag);
+	ConstraintStudentsSetActivityTagMinHoursDaily(double wp, int minnh, int mindays, const QString& s, const QString& activityTag);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 

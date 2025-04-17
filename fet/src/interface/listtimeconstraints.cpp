@@ -7084,7 +7084,7 @@ void ListTimeConstraints::helpClicked()
 				 "      -  all the Math activities in the First activities set, followed by all the Chemistry activities in the Second activities set.");
 				s+="\n\n";
 				s+=tr("Note (by %1): if you use overflow slots for the activities which cannot be placed in the real time slots, these overflow slots should"
-				 " be added in the exception slots, in which an activity is not forced to respect this 'same sections' constraint."
+				 " be added as exception slots, in which an activity is not forced to respect this 'same sections' constraint."
 				 , "%1 is the person who wrote this note.").arg("Liviu Lalescu");
 				s+="\n";
 

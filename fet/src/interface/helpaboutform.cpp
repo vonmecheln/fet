@@ -874,7 +874,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("russell");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString("Nguyen Huu Tuyen");
+	thanksTo+=QString("Nguyễn Hữu Tuyên");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("fromturkey");
 	thanksTo+=QString("<br />");
@@ -1423,6 +1423,10 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("Edward Downes");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Richard B. Gross");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Herbadji Djamel");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("HAMMACHE_S");
 	thanksTo+=QString("<br />");
 	
 	thanksToTextBrowser->setHtml(thanksTo);

@@ -182,6 +182,9 @@ class AddOrModifyTimeConstraint: public QObject
 	QLabel* labelForSpinBox;
 	QSpinBox* spinBox;
 
+	QLabel* secondLabelForSpinBox;
+	QSpinBox* secondSpinBox;
+
 	QCheckBox* checkBox;
 
 	QGroupBox* periodGroupBox;

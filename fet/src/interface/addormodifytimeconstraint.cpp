@@ -311,6 +311,9 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 	labelForSpinBox=nullptr;
 	spinBox=nullptr;
 
+	secondLabelForSpinBox=nullptr;
+	secondSpinBox=nullptr;
+
 	checkBox=nullptr;
 
 	periodGroupBox=nullptr;
@@ -3122,11 +3125,17 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				spinBox->setMaximum(gt.rules.nHoursPerDay);
 				spinBox->setValue(1);
 
+				secondLabelForSpinBox=new QLabel(tr("Min days with tag", "The minimum number of days in the teachers' timetable with activities having this activity tag"));
+				secondSpinBox=new QSpinBox;
+				secondSpinBox->setMinimum(0);
+				secondSpinBox->setMaximum(gt.rules.nDaysPerWeek);
+				secondSpinBox->setValue(0);
+
 				activityTagLabel=new QLabel(tr("Activity tag"));
 				activityTagsComboBox=new QComboBox;
 
-				checkBox=new QCheckBox(tr("Allow empty days"));
-				checkBox->setChecked(false);
+				/*checkBox=new QCheckBox(tr("Allow empty days"));
+				checkBox->setChecked(false);*/
 
 				break;
 			}
@@ -3148,13 +3157,19 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				spinBox->setMaximum(gt.rules.nHoursPerDay);
 				spinBox->setValue(1);
 
+				secondLabelForSpinBox=new QLabel(tr("Min days with tag", "The minimum number of days in the teacher's timetable with activities having this activity tag"));
+				secondSpinBox=new QSpinBox;
+				secondSpinBox->setMinimum(0);
+				secondSpinBox->setMaximum(gt.rules.nDaysPerWeek);
+				secondSpinBox->setValue(0);
+
 				teacherLabel=new QLabel(tr("Teacher"));
 				teachersComboBox=new QComboBox;
 				activityTagLabel=new QLabel(tr("Activity tag"));
 				activityTagsComboBox=new QComboBox;
 
-				checkBox=new QCheckBox(tr("Allow empty days"));
-				checkBox->setChecked(false);
+				/*checkBox=new QCheckBox(tr("Allow empty days"));
+				checkBox->setChecked(false);*/
 
 				break;
 			}
@@ -3176,11 +3191,17 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				spinBox->setMaximum(gt.rules.nHoursPerDay);
 				spinBox->setValue(1);
 
+				secondLabelForSpinBox=new QLabel(tr("Min days with tag", "The minimum number of days in the students' timetable with activities having this activity tag"));
+				secondSpinBox=new QSpinBox;
+				secondSpinBox->setMinimum(0);
+				secondSpinBox->setMaximum(gt.rules.nDaysPerWeek);
+				secondSpinBox->setValue(0);
+
 				activityTagLabel=new QLabel(tr("Activity tag"));
 				activityTagsComboBox=new QComboBox;
 
-				checkBox=new QCheckBox(tr("Allow empty days"));
-				checkBox->setChecked(false);
+				/*checkBox=new QCheckBox(tr("Allow empty days"));
+				checkBox->setChecked(false);*/
 
 				break;
 			}
@@ -3202,13 +3223,19 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				spinBox->setMaximum(gt.rules.nHoursPerDay);
 				spinBox->setValue(1);
 
+				secondLabelForSpinBox=new QLabel(tr("Min days with tag", "The minimum number of days in the students set's timetable with activities having this activity tag"));
+				secondSpinBox=new QSpinBox;
+				secondSpinBox->setMinimum(0);
+				secondSpinBox->setMaximum(gt.rules.nDaysPerWeek);
+				secondSpinBox->setValue(0);
+
 				studentsLabel=new QLabel(tr("Students set"));
 				studentsComboBox=new QComboBox;
 				activityTagLabel=new QLabel(tr("Activity tag"));
 				activityTagsComboBox=new QComboBox;
 
-				checkBox=new QCheckBox(tr("Allow empty days"));
-				checkBox->setChecked(false);
+				/*checkBox=new QCheckBox(tr("Allow empty days"));
+				checkBox->setChecked(false);*/
 
 				break;
 			}
@@ -7841,6 +7868,14 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 		spinBoxLayout->addWidget(spinBox);
 	}
 	
+	QHBoxLayout* secondSpinBoxLayout=nullptr;
+	if(secondSpinBox!=nullptr && secondLabelForSpinBox!=nullptr){
+		secondSpinBoxLayout=new QHBoxLayout;
+
+		secondSpinBoxLayout->addWidget(secondLabelForSpinBox);
+		secondSpinBoxLayout->addWidget(secondSpinBox);
+	}
+	
 	QVBoxLayout* wholeDialog=new QVBoxLayout(dialog);
 	//wholeDialog->addStretch();
 	assert(tabWidget==nullptr || tabWidgetTwoSetsOfActivities==nullptr);
@@ -8230,6 +8265,8 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			wholeDialog->addWidget(timesTable);
 		if(spinBoxLayout!=nullptr)
 			wholeDialog->addLayout(spinBoxLayout);
+		if(secondSpinBoxLayout!=nullptr)
+			wholeDialog->addLayout(secondSpinBoxLayout);
 		if(checkBox!=nullptr)
 			wholeDialog->addWidget(checkBox);
 
@@ -8314,6 +8351,8 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			timeSlotsLayout->addWidget(timesTable);
 		if(spinBoxLayout!=nullptr)
 			timeSlotsLayout->addLayout(spinBoxLayout);
+		//if(secondSpinBoxLayout!=nullptr)
+		//	wholeDialog->addLayout(secondSpinBoxLayout);
 		if(allowEmptySlotsCheckBox!=nullptr)
 			timeSlotsLayout->addWidget(allowEmptySlotsCheckBox);
 
@@ -9575,7 +9614,8 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 					activityTagsComboBox->setCurrentIndex(activityTagsComboBox->findText(ctr->activityTagName));
 					spinBox->setValue(ctr->minHoursDaily);
-					checkBox->setChecked(ctr->allowEmptyDays);
+					secondSpinBox->setValue(ctr->minDaysWithTag);
+					//checkBox->setChecked(ctr->allowEmptyDays);
 
 					break;
 				}
@@ -9587,7 +9627,8 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					teachersComboBox->setCurrentIndex(teachersComboBox->findText(ctr->teacherName));
 					activityTagsComboBox->setCurrentIndex(activityTagsComboBox->findText(ctr->activityTagName));
 					spinBox->setValue(ctr->minHoursDaily);
-					checkBox->setChecked(ctr->allowEmptyDays);
+					secondSpinBox->setValue(ctr->minDaysWithTag);
+					//checkBox->setChecked(ctr->allowEmptyDays);
 
 					break;
 				}
@@ -9598,7 +9639,8 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 					activityTagsComboBox->setCurrentIndex(activityTagsComboBox->findText(ctr->activityTagName));
 					spinBox->setValue(ctr->minHoursDaily);
-					checkBox->setChecked(ctr->allowEmptyDays);
+					secondSpinBox->setValue(ctr->minDaysWithTag);
+					//checkBox->setChecked(ctr->allowEmptyDays);
 
 					break;
 				}
@@ -9616,7 +9658,8 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 					activityTagsComboBox->setCurrentIndex(activityTagsComboBox->findText(ctr->activityTagName));
 					spinBox->setValue(ctr->minHoursDaily);
-					checkBox->setChecked(ctr->allowEmptyDays);
+					secondSpinBox->setValue(ctr->minDaysWithTag);
+					//checkBox->setChecked(ctr->allowEmptyDays);
 
 					break;
 				}
@@ -11616,7 +11659,7 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 		QString students_name=studentsComboBox->currentText();
 		StudentsSet* s=gt.rules.searchStudentsSet(students_name);
 		if(s==nullptr){
-			QMessageBox::warning(dialog, tr("FET information"),	tr("Invalid students set"));
+			QMessageBox::warning(dialog, tr("FET information"), tr("Invalid students set"));
 			return;
 		}
 	}
@@ -13153,52 +13196,52 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 		//83
 		case CONSTRAINT_TEACHERS_ACTIVITY_TAG_MIN_HOURS_DAILY:
 			{
-				if(checkBox->isChecked() && spinBox->value()==1){
+				/*if(checkBox->isChecked() && spinBox->value()==1){
 					QMessageBox::warning(dialog, tr("FET warning"), tr("Allow empty days is selected and min hours daily is 1, "
 																	   "so this would be a useless constraint."));
 					return;
-				}
+				}*/
 
-				tc=new ConstraintTeachersActivityTagMinHoursDaily(weight, spinBox->value(), checkBox->isChecked(), activityTagsComboBox->currentText());
+				tc=new ConstraintTeachersActivityTagMinHoursDaily(weight, spinBox->value(), secondSpinBox->value(), activityTagsComboBox->currentText());
 
 				break;
 			}
 		//84
 		case CONSTRAINT_TEACHER_ACTIVITY_TAG_MIN_HOURS_DAILY:
 			{
-				if(checkBox->isChecked() && spinBox->value()==1){
+				/*if(checkBox->isChecked() && spinBox->value()==1){
 					QMessageBox::warning(dialog, tr("FET warning"), tr("Allow empty days is selected and min hours daily is 1, "
 																	   "so this would be a useless constraint."));
 					return;
-				}
+				}*/
 
-				tc=new ConstraintTeacherActivityTagMinHoursDaily(weight, spinBox->value(), checkBox->isChecked(), teachersComboBox->currentText(), activityTagsComboBox->currentText());
+				tc=new ConstraintTeacherActivityTagMinHoursDaily(weight, spinBox->value(), secondSpinBox->value(), teachersComboBox->currentText(), activityTagsComboBox->currentText());
 
 				break;
 			}
 		//85
 		case CONSTRAINT_STUDENTS_ACTIVITY_TAG_MIN_HOURS_DAILY:
 			{
-				if(checkBox->isChecked() && spinBox->value()==1){
+				/*if(checkBox->isChecked() && spinBox->value()==1){
 					QMessageBox::warning(dialog, tr("FET warning"), tr("Allow empty days is selected and min hours daily is 1, "
 																	   "so this would be a useless constraint."));
 					return;
-				}
+				}*/
 
-				tc=new ConstraintStudentsActivityTagMinHoursDaily(weight, spinBox->value(), checkBox->isChecked(), activityTagsComboBox->currentText());
+				tc=new ConstraintStudentsActivityTagMinHoursDaily(weight, spinBox->value(), secondSpinBox->value(), activityTagsComboBox->currentText());
 
 				break;
 			}
 		//86
 		case CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MIN_HOURS_DAILY:
 			{
-				if(checkBox->isChecked() && spinBox->value()==1){
+				/*if(checkBox->isChecked() && spinBox->value()==1){
 					QMessageBox::warning(dialog, tr("FET warning"), tr("Allow empty days is selected and min hours daily is 1, "
 																	   "so this would be a useless constraint."));
 					return;
-				}
+				}*/
 
-				tc=new ConstraintStudentsSetActivityTagMinHoursDaily(weight, spinBox->value(), checkBox->isChecked(), studentsComboBox->currentText(), activityTagsComboBox->currentText());
+				tc=new ConstraintStudentsSetActivityTagMinHoursDaily(weight, spinBox->value(), secondSpinBox->value(), studentsComboBox->currentText(), activityTagsComboBox->currentText());
 
 				break;
 			}
@@ -15556,14 +15599,14 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 		//84
 		case CONSTRAINT_TEACHER_ACTIVITY_TAG_MIN_HOURS_DAILY:
 			{
-				if(checkBox->isChecked() && spinBox->value()==1){
+				/*if(checkBox->isChecked() && spinBox->value()==1){
 					QMessageBox::warning(dialog, tr("FET warning"), tr("Allow empty days is selected and min hours daily is 1, so "
 																	   "this would be a useless constraint."));
 					return;
-				}
+				}*/
 
 				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherActivityTagMinHoursDaily(weight, spinBox->value(), checkBox->isChecked(), tch->name, activityTagsComboBox->currentText());
+					TimeConstraint *ctr=new ConstraintTeacherActivityTagMinHoursDaily(weight, spinBox->value(), secondSpinBox->value(), tch->name, activityTagsComboBox->currentText());
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
@@ -18344,11 +18387,11 @@ void AddOrModifyTimeConstraint::okClicked()
 		//83
 		case CONSTRAINT_TEACHERS_ACTIVITY_TAG_MIN_HOURS_DAILY:
 			{
-				if(checkBox->isChecked() && spinBox->value()==1){
+				/*if(checkBox->isChecked() && spinBox->value()==1){
 					QMessageBox::warning(dialog, tr("FET warning"), tr("Allow empty days is selected and min hours daily is 1, "
 																	   "so this would be a useless constraint."));
 					return;
-				}
+				}*/
 
 				ConstraintTeachersActivityTagMinHoursDaily* ctr=(ConstraintTeachersActivityTagMinHoursDaily*)oldtc;
 
@@ -18356,37 +18399,39 @@ void AddOrModifyTimeConstraint::okClicked()
 				assert(gt.rules.searchActivityTag(activityTag)>=0);
 
 				ctr->minHoursDaily=spinBox->value();
+				ctr->minDaysWithTag=secondSpinBox->value();
 				ctr->activityTagName=activityTag;
-				ctr->allowEmptyDays=checkBox->isChecked();
+				//ctr->allowEmptyDays=checkBox->isChecked();
 
 				break;
 			}
 		//84
 		case CONSTRAINT_TEACHER_ACTIVITY_TAG_MIN_HOURS_DAILY:
 			{
-				if(checkBox->isChecked() && spinBox->value()==1){
+				/*if(checkBox->isChecked() && spinBox->value()==1){
 					QMessageBox::warning(dialog, tr("FET warning"), tr("Allow empty days is selected and min hours daily is 1, "
 																	   "so this would be a useless constraint."));
 					return;
-				}
+				}*/
 
 				ConstraintTeacherActivityTagMinHoursDaily* ctr=(ConstraintTeacherActivityTagMinHoursDaily*)oldtc;
 
 				ctr->minHoursDaily=spinBox->value();
+				ctr->minDaysWithTag=secondSpinBox->value();
 				ctr->teacherName=teachersComboBox->currentText();
 				ctr->activityTagName=activityTagsComboBox->currentText();
-				ctr->allowEmptyDays=checkBox->isChecked();
+				//ctr->allowEmptyDays=checkBox->isChecked();
 
 				break;
 			}
 		//85
 		case CONSTRAINT_STUDENTS_ACTIVITY_TAG_MIN_HOURS_DAILY:
 			{
-				if(checkBox->isChecked() && spinBox->value()==1){
+				/*if(checkBox->isChecked() && spinBox->value()==1){
 					QMessageBox::warning(dialog, tr("FET warning"), tr("Allow empty days is selected and min hours daily is 1, "
 																	   "so this would be a useless constraint."));
 					return;
-				}
+				}*/
 
 				ConstraintStudentsActivityTagMinHoursDaily* ctr=(ConstraintStudentsActivityTagMinHoursDaily*)oldtc;
 
@@ -18394,19 +18439,20 @@ void AddOrModifyTimeConstraint::okClicked()
 				assert(gt.rules.searchActivityTag(activityTag)>=0);
 
 				ctr->minHoursDaily=spinBox->value();
+				ctr->minDaysWithTag=secondSpinBox->value();
 				ctr->activityTagName=activityTag;
-				ctr->allowEmptyDays=checkBox->isChecked();
+				//ctr->allowEmptyDays=checkBox->isChecked();
 
 				break;
 			}
 		//86
 		case CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MIN_HOURS_DAILY:
 			{
-				if(checkBox->isChecked() && spinBox->value()==1){
+				/*if(checkBox->isChecked() && spinBox->value()==1){
 					QMessageBox::warning(dialog, tr("FET warning"), tr("Allow empty days is selected and min hours daily is 1, "
 																	   "so this would be a useless constraint."));
 					return;
-				}
+				}*/
 
 				ConstraintStudentsSetActivityTagMinHoursDaily* ctr=(ConstraintStudentsSetActivityTagMinHoursDaily*)oldtc;
 
@@ -18414,9 +18460,10 @@ void AddOrModifyTimeConstraint::okClicked()
 				assert(gt.rules.searchActivityTag(activityTag)>=0);
 
 				ctr->minHoursDaily=spinBox->value();
+				ctr->minDaysWithTag=secondSpinBox->value();
 				ctr->students=studentsComboBox->currentText();
 				ctr->activityTagName=activityTag;
-				ctr->allowEmptyDays=checkBox->isChecked();
+				//ctr->allowEmptyDays=checkBox->isChecked();
 
 				break;
 			}

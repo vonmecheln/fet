@@ -22072,12 +22072,17 @@ TimeConstraint* Rules::readTeacherActivityTagMinHoursDaily(QXmlStreamReader& xml
 			cn->activityTagName=text;
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 		}
-		else if(xmlReader.name()==QString("Allow_Empty_Days")){
+		else if(xmlReader.name()==QString("Allow_Empty_Days")){ //old option
 			QString text=xmlReader.readElementText();
 			if(text=="true")
-				cn->allowEmptyDays=true;
+				cn->minDaysWithTag=0;
 			else
-				cn->allowEmptyDays=false;
+				cn->minDaysWithTag=this->nDaysPerWeek;
+		}
+		else if(xmlReader.name()==QString("Minimum_Days_With_Tag")){
+			QString text=xmlReader.readElementText();
+			cn->minDaysWithTag=text.toInt();
+			xmlReadingLog+="    Read minDaysWithTag="+CustomFETString::number(cn->minDaysWithTag)+"\n";
 		}
 		else{
 			unrecognizedXmlTags.append(xmlReader.name().toString());
@@ -22126,12 +22131,17 @@ TimeConstraint* Rules::readTeachersActivityTagMinHoursDaily(QXmlStreamReader& xm
 			cn->activityTagName=text;
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 		}
-		else if(xmlReader.name()==QString("Allow_Empty_Days")){
+		else if(xmlReader.name()==QString("Allow_Empty_Days")){ //old option
 			QString text=xmlReader.readElementText();
 			if(text=="true")
-				cn->allowEmptyDays=true;
+				cn->minDaysWithTag=0;
 			else
-				cn->allowEmptyDays=false;
+				cn->minDaysWithTag=this->nDaysPerWeek;
+		}
+		else if(xmlReader.name()==QString("Minimum_Days_With_Tag")){
+			QString text=xmlReader.readElementText();
+			cn->minDaysWithTag=text.toInt();
+			xmlReadingLog+="    Read minDaysWithTag="+CustomFETString::number(cn->minDaysWithTag)+"\n";
 		}
 		else{
 			unrecognizedXmlTags.append(xmlReader.name().toString());
@@ -22873,12 +22883,17 @@ TimeConstraint* Rules::readStudentsSetActivityTagMinHoursDaily(QXmlStreamReader&
 			cn->activityTagName=text;
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 		}
-		else if(xmlReader.name()==QString("Allow_Empty_Days")){
+		else if(xmlReader.name()==QString("Allow_Empty_Days")){ //old option
 			QString text=xmlReader.readElementText();
 			if(text=="true")
-				cn->allowEmptyDays=true;
+				cn->minDaysWithTag=0;
 			else
-				cn->allowEmptyDays=false;
+				cn->minDaysWithTag=this->nDaysPerWeek;
+		}
+		else if(xmlReader.name()==QString("Minimum_Days_With_Tag")){
+			QString text=xmlReader.readElementText();
+			cn->minDaysWithTag=text.toInt();
+			xmlReadingLog+="    Read minDaysWithTag="+CustomFETString::number(cn->minDaysWithTag)+"\n";
 		}
 		else{
 			unrecognizedXmlTags.append(xmlReader.name().toString());
@@ -22936,12 +22951,17 @@ TimeConstraint* Rules::readStudentsActivityTagMinHoursDaily(QXmlStreamReader& xm
 			cn->activityTagName=text;
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 		}
-		else if(xmlReader.name()==QString("Allow_Empty_Days")){
+		else if(xmlReader.name()==QString("Allow_Empty_Days")){ //old option
 			QString text=xmlReader.readElementText();
 			if(text=="true")
-				cn->allowEmptyDays=true;
+				cn->minDaysWithTag=0;
 			else
-				cn->allowEmptyDays=false;
+				cn->minDaysWithTag=this->nDaysPerWeek;
+		}
+		else if(xmlReader.name()==QString("Minimum_Days_With_Tag")){
+			QString text=xmlReader.readElementText();
+			cn->minDaysWithTag=text.toInt();
+			xmlReadingLog+="    Read minDaysWithTag="+CustomFETString::number(cn->minDaysWithTag)+"\n";
 		}
 		else{
 			unrecognizedXmlTags.append(xmlReader.name().toString());
@@ -24680,7 +24700,7 @@ bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPr
 			cn->activityId=text.toInt();
 			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activityId)+"\n";
 		}
-		else if(xmlReader.name()==QString("Preferred_Day")){
+		else if(xmlReader.name()==QString("Preferred_Day") || xmlReader.name()==QString("Day")){
 			QString text=xmlReader.readElementText();
 			for(cn->day=0; cn->day<this->nDaysPerWeek; cn->day++)
 				if(this->daysOfTheWeek[cn->day]==text)
@@ -24697,9 +24717,9 @@ bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPr
 				return nullptr;
 			}
 			assert(cn->day<this->nDaysPerWeek);
-			xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->day]+"\n";
+			xmlReadingLog+="    Day="+this->daysOfTheWeek[cn->day]+"\n";
 		}
-		else if(xmlReader.name()==QString("Preferred_Hour")){
+		else if(xmlReader.name()==QString("Preferred_Hour") || xmlReader.name()==QString("Hour")){
 			QString text=xmlReader.readElementText();
 			for(cn->hour=0; cn->hour < this->nHoursPerDay; cn->hour++)
 				if(this->hoursOfTheDay[cn->hour]==text)
@@ -24716,7 +24736,7 @@ bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPr
 				return nullptr;
 			}
 			assert(cn->hour>=0 && cn->hour < this->nHoursPerDay);
-			xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hour]+"\n";
+			xmlReadingLog+="    Hour="+this->hoursOfTheDay[cn->hour]+"\n";
 		}
 		else{
 			unrecognizedXmlTags.append(xmlReader.name().toString());
@@ -24862,7 +24882,7 @@ bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPr
 			cn->activityId=text.toInt();
 			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activityId)+"\n";
 		}
-		else if(xmlReader.name()==QString("Preferred_Day")){
+		else if(xmlReader.name()==QString("Preferred_Day") || xmlReader.name()==QString("Day")){
 			QString text=xmlReader.readElementText();
 			for(cn->day=0; cn->day<this->nDaysPerWeek; cn->day++)
 				if(this->daysOfTheWeek[cn->day]==text)
@@ -24879,9 +24899,9 @@ bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPr
 				return nullptr;
 			}
 			assert(cn->day<this->nDaysPerWeek);
-			xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->day]+"\n";
+			xmlReadingLog+="    Day="+this->daysOfTheWeek[cn->day]+"\n";
 		}
-		else if(xmlReader.name()==QString("Preferred_Hour")){
+		else if(xmlReader.name()==QString("Preferred_Hour") || xmlReader.name()==QString("Hour")){
 			QString text=xmlReader.readElementText();
 			for(cn->hour=0; cn->hour < this->nHoursPerDay; cn->hour++)
 				if(this->hoursOfTheDay[cn->hour]==text)
@@ -24898,7 +24918,7 @@ bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPr
 				return nullptr;
 			}
 			assert(cn->hour>=0 && cn->hour < this->nHoursPerDay);
-			xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hour]+"\n";
+			xmlReadingLog+="    Hour="+this->hoursOfTheDay[cn->hour]+"\n";
 		}
 		else{
 			unrecognizedXmlTags.append(xmlReader.name().toString());
@@ -25051,7 +25071,7 @@ TimeConstraint* Rules::readActivityPreferredDay(QXmlStreamReader& xmlReader, Fak
 				return nullptr;
 			}
 		}
-		else if(xmlReader.name()==QString("Preferred_Day")){
+		else if(xmlReader.name()==QString("Preferred_Day") || xmlReader.name()==QString("Day")){
 			QString text=xmlReader.readElementText();
 			for(cn->day=0; cn->day<this->nDaysPerWeek; cn->day++)
 				if(this->daysOfTheWeek[cn->day]==text)
@@ -25068,7 +25088,7 @@ TimeConstraint* Rules::readActivityPreferredDay(QXmlStreamReader& xmlReader, Fak
 				return nullptr;
 			}
 			assert(cn->day<this->nDaysPerWeek);
-			xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->day]+"\n";
+			xmlReadingLog+="    Day="+this->daysOfTheWeek[cn->day]+"\n";
 		}
 		else{
 			unrecognizedXmlTags.append(xmlReader.name().toString());
@@ -26312,7 +26332,7 @@ TimeConstraint* Rules::readActivityPreferredTimes(QXmlStreamReader& xmlReader, F
 			assert(xmlReader.isStartElement());
 			while(xmlReader.readNextStartElement()){
 				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
-				if(xmlReader.name()==QString("Preferred_Day")){
+				if(xmlReader.name()==QString("Preferred_Day") || xmlReader.name()==QString("Day")){
 					QString text=xmlReader.readElementText();
 					cn->days_L.append(0);
 					assert(cn->days_L.count()-1==i);
@@ -26333,9 +26353,9 @@ TimeConstraint* Rules::readActivityPreferredTimes(QXmlStreamReader& xmlReader, F
 					}
 		
 					assert(cn->days_L[i]<this->nDaysPerWeek);
-					xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->days_L[i]]+"("+CustomFETString::number(i)+")"+"\n";
+					xmlReadingLog+="    Day="+this->daysOfTheWeek[cn->days_L[i]]+"("+CustomFETString::number(i)+")"+"\n";
 				}
-				else if(xmlReader.name()==QString("Preferred_Hour")){
+				else if(xmlReader.name()==QString("Preferred_Hour") || xmlReader.name()==QString("Hour")){
 					QString text=xmlReader.readElementText();
 					cn->hours_L.append(0);
 					assert(cn->hours_L.count()-1==i);
@@ -26356,7 +26376,7 @@ TimeConstraint* Rules::readActivityPreferredTimes(QXmlStreamReader& xmlReader, F
 					}
 					
 					assert(cn->hours_L[i]>=0 && cn->hours_L[i] < this->nHoursPerDay);
-					xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hours_L[i]]+"\n";
+					xmlReadingLog+="    Hour="+this->hoursOfTheDay[cn->hours_L[i]]+"\n";
 				}
 				else{
 					unrecognizedXmlTags.append(xmlReader.name().toString());
@@ -26458,7 +26478,7 @@ TimeConstraint* Rules::readActivityPreferredTimeSlots(QXmlStreamReader& xmlReade
 			assert(xmlReader.isStartElement());
 			while(xmlReader.readNextStartElement()){
 				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
-				if(xmlReader.name()==QString("Preferred_Day")){
+				if(xmlReader.name()==QString("Preferred_Day") || xmlReader.name()==QString("Day")){
 					QString text=xmlReader.readElementText();
 					cn->p_days_L.append(0);
 					assert(cn->p_days_L.count()-1==i);
@@ -26479,9 +26499,9 @@ TimeConstraint* Rules::readActivityPreferredTimeSlots(QXmlStreamReader& xmlReade
 					}
 		
 					assert(cn->p_days_L[i]<this->nDaysPerWeek);
-					xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->p_days_L[i]]+"("+CustomFETString::number(i)+")"+"\n";
+					xmlReadingLog+="    Day="+this->daysOfTheWeek[cn->p_days_L[i]]+"("+CustomFETString::number(i)+")"+"\n";
 				}
-				else if(xmlReader.name()==QString("Preferred_Hour")){
+				else if(xmlReader.name()==QString("Preferred_Hour") || xmlReader.name()==QString("Hour")){
 					QString text=xmlReader.readElementText();
 					cn->p_hours_L.append(0);
 					assert(cn->p_hours_L.count()-1==i);
@@ -26502,7 +26522,7 @@ TimeConstraint* Rules::readActivityPreferredTimeSlots(QXmlStreamReader& xmlReade
 					}
 					
 					assert(cn->p_hours_L[i]>=0 && cn->p_hours_L[i] < this->nHoursPerDay);
-					xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->p_hours_L[i]]+"\n";
+					xmlReadingLog+="    Hour="+this->hoursOfTheDay[cn->p_hours_L[i]]+"\n";
 				}
 				else{
 					unrecognizedXmlTags.append(xmlReader.name().toString());
@@ -26605,7 +26625,7 @@ TimeConstraint* Rules::readActivityPreferredStartingTimes(QXmlStreamReader& xmlR
 			assert(xmlReader.isStartElement());
 			while(xmlReader.readNextStartElement()){
 				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
-				if(xmlReader.name()==QString("Preferred_Starting_Day")){
+				if(xmlReader.name()==QString("Preferred_Starting_Day") || xmlReader.name()==QString("Day")){
 					QString text=xmlReader.readElementText();
 					cn->days_L.append(0);
 					assert(cn->days_L.count()-1==i);
@@ -26626,9 +26646,9 @@ TimeConstraint* Rules::readActivityPreferredStartingTimes(QXmlStreamReader& xmlR
 					}
 					
 					assert(cn->days_L[i]<this->nDaysPerWeek);
-					xmlReadingLog+="    Preferred starting day="+this->daysOfTheWeek[cn->days_L[i]]+"("+CustomFETString::number(i)+")"+"\n";
+					xmlReadingLog+="    Day="+this->daysOfTheWeek[cn->days_L[i]]+"("+CustomFETString::number(i)+")"+"\n";
 				}
-				else if(xmlReader.name()==QString("Preferred_Starting_Hour")){
+				else if(xmlReader.name()==QString("Preferred_Starting_Hour") || xmlReader.name()==QString("Hour")){
 					QString text=xmlReader.readElementText();
 					cn->hours_L.append(0);
 					assert(cn->hours_L.count()-1==i);
@@ -26649,7 +26669,7 @@ TimeConstraint* Rules::readActivityPreferredStartingTimes(QXmlStreamReader& xmlR
 					}
 					
 					assert(cn->hours_L[i]>=0 && cn->hours_L[i] < this->nHoursPerDay);
-					xmlReadingLog+="    Preferred starting hour="+this->hoursOfTheDay[cn->hours_L[i]]+"\n";
+					xmlReadingLog+="    Hour="+this->hoursOfTheDay[cn->hours_L[i]]+"\n";
 				}
 				else{
 					unrecognizedXmlTags.append(xmlReader.name().toString());
@@ -28117,7 +28137,7 @@ TimeConstraint* Rules::readActivitiesPreferredTimes(QXmlStreamReader& xmlReader,
 			assert(xmlReader.isStartElement());
 			while(xmlReader.readNextStartElement()){
 				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
-				if(xmlReader.name()==QString("Preferred_Day")){
+				if(xmlReader.name()==QString("Preferred_Day") || xmlReader.name()==QString("Day")){
 					QString text=xmlReader.readElementText();
 					cn->days_L.append(0);
 					assert(cn->days_L.count()-1==i);
@@ -28141,9 +28161,9 @@ TimeConstraint* Rules::readActivitiesPreferredTimes(QXmlStreamReader& xmlReader,
 					}
 							
 					assert(cn->days_L[i]<this->nDaysPerWeek);
-					xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->days_L[i]]+"("+CustomFETString::number(i)+")"+"\n";
+					xmlReadingLog+="    Day="+this->daysOfTheWeek[cn->days_L[i]]+"("+CustomFETString::number(i)+")"+"\n";
 				}
-				else if(xmlReader.name()==QString("Preferred_Hour")){
+				else if(xmlReader.name()==QString("Preferred_Hour") || xmlReader.name()==QString("Hour")){
 					QString text=xmlReader.readElementText();
 					cn->hours_L.append(0);
 					assert(cn->hours_L.count()-1==i);
@@ -28167,7 +28187,7 @@ TimeConstraint* Rules::readActivitiesPreferredTimes(QXmlStreamReader& xmlReader,
 					}
 							
 					assert(cn->hours_L[i]>=0 && cn->hours_L[i] < this->nHoursPerDay);
-					xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hours_L[i]]+"\n";
+					xmlReadingLog+="    Hour="+this->hoursOfTheDay[cn->hours_L[i]]+"\n";
 				}
 				else{
 					unrecognizedXmlTags.append(xmlReader.name().toString());
@@ -28326,7 +28346,7 @@ TimeConstraint* Rules::readActivitiesPreferredTimeSlots(QXmlStreamReader& xmlRea
 			assert(xmlReader.isStartElement());
 			while(xmlReader.readNextStartElement()){
 				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
-				if(xmlReader.name()==QString("Preferred_Day")){
+				if(xmlReader.name()==QString("Preferred_Day") || xmlReader.name()==QString("Day")){
 					QString text=xmlReader.readElementText();
 					cn->p_days_L.append(0);
 					assert(cn->p_days_L.count()-1==i);
@@ -28350,9 +28370,9 @@ TimeConstraint* Rules::readActivitiesPreferredTimeSlots(QXmlStreamReader& xmlRea
 					}
 							
 					assert(cn->p_days_L[i]<this->nDaysPerWeek);
-					xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->p_days_L[i]]+"("+CustomFETString::number(i)+")"+"\n";
+					xmlReadingLog+="    Day="+this->daysOfTheWeek[cn->p_days_L[i]]+"("+CustomFETString::number(i)+")"+"\n";
 				}
-				else if(xmlReader.name()==QString("Preferred_Hour")){
+				else if(xmlReader.name()==QString("Preferred_Hour") || xmlReader.name()==QString("Hour")){
 					QString text=xmlReader.readElementText();
 					cn->p_hours_L.append(0);
 					assert(cn->p_hours_L.count()-1==i);
@@ -28376,7 +28396,7 @@ TimeConstraint* Rules::readActivitiesPreferredTimeSlots(QXmlStreamReader& xmlRea
 					}
 							
 					assert(cn->p_hours_L[i]>=0 && cn->p_hours_L[i] < this->nHoursPerDay);
-					xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->p_hours_L[i]]+"\n";
+					xmlReadingLog+="    Hour="+this->hoursOfTheDay[cn->p_hours_L[i]]+"\n";
 				}
 				else{
 					unrecognizedXmlTags.append(xmlReader.name().toString());
@@ -28535,7 +28555,7 @@ TimeConstraint* Rules::readActivitiesPreferredStartingTimes(QXmlStreamReader& xm
 			assert(xmlReader.isStartElement());
 			while(xmlReader.readNextStartElement()){
 				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
-				if(xmlReader.name()==QString("Preferred_Starting_Day")){
+				if(xmlReader.name()==QString("Preferred_Starting_Day") || xmlReader.name()==QString("Day")){
 					QString text=xmlReader.readElementText();
 					cn->days_L.append(0);
 					assert(cn->days_L.count()-1==i);
@@ -28557,11 +28577,11 @@ TimeConstraint* Rules::readActivitiesPreferredStartingTimes(QXmlStreamReader& xm
 						//goto corruptConstraintTime;
 						return nullptr;
 					}
-							
+					
 					assert(cn->days_L[i]<this->nDaysPerWeek);
-					xmlReadingLog+="    Preferred starting day="+this->daysOfTheWeek[cn->days_L[i]]+"("+CustomFETString::number(i)+")"+"\n";
+					xmlReadingLog+="    Day="+this->daysOfTheWeek[cn->days_L[i]]+"("+CustomFETString::number(i)+")"+"\n";
 				}
-				else if(xmlReader.name()==QString("Preferred_Starting_Hour")){
+				else if(xmlReader.name()==QString("Preferred_Starting_Hour") || xmlReader.name()==QString("Hour")){
 					QString text=xmlReader.readElementText();
 					cn->hours_L.append(0);
 					assert(cn->hours_L.count()-1==i);
@@ -28585,7 +28605,7 @@ TimeConstraint* Rules::readActivitiesPreferredStartingTimes(QXmlStreamReader& xm
 					}
 							
 					assert(cn->hours_L[i]>=0 && cn->hours_L[i] < this->nHoursPerDay);
-					xmlReadingLog+="    Preferred starting hour="+this->hoursOfTheDay[cn->hours_L[i]]+"\n";
+					xmlReadingLog+="    Hour="+this->hoursOfTheDay[cn->hours_L[i]]+"\n";
 				}
 				else{
 					unrecognizedXmlTags.append(xmlReader.name().toString());
@@ -28751,7 +28771,7 @@ TimeConstraint* Rules::readSubactivitiesPreferredTimeSlots(QXmlStreamReader& xml
 			assert(xmlReader.isStartElement());
 			while(xmlReader.readNextStartElement()){
 				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
-				if(xmlReader.name()==QString("Preferred_Day")){
+				if(xmlReader.name()==QString("Preferred_Day") || xmlReader.name()==QString("Day")){
 					QString text=xmlReader.readElementText();
 					cn->p_days_L.append(0);
 					assert(cn->p_days_L.count()-1==i);
@@ -28775,9 +28795,9 @@ TimeConstraint* Rules::readSubactivitiesPreferredTimeSlots(QXmlStreamReader& xml
 					}
 					
 					assert(cn->p_days_L[i]<this->nDaysPerWeek);
-					xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->p_days_L[i]]+"("+CustomFETString::number(i)+")"+"\n";
+					xmlReadingLog+="    Day="+this->daysOfTheWeek[cn->p_days_L[i]]+"("+CustomFETString::number(i)+")"+"\n";
 				}
-				else if(xmlReader.name()==QString("Preferred_Hour")){
+				else if(xmlReader.name()==QString("Preferred_Hour") || xmlReader.name()==QString("Hour")){
 					QString text=xmlReader.readElementText();
 					cn->p_hours_L.append(0);
 					assert(cn->p_hours_L.count()-1==i);
@@ -28801,7 +28821,7 @@ TimeConstraint* Rules::readSubactivitiesPreferredTimeSlots(QXmlStreamReader& xml
 					}
 					
 					assert(cn->p_hours_L[i]>=0 && cn->p_hours_L[i] < this->nHoursPerDay);
-					xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->p_hours_L[i]]+"\n";
+					xmlReadingLog+="    Hour="+this->hoursOfTheDay[cn->p_hours_L[i]]+"\n";
 				}
 				else{
 					unrecognizedXmlTags.append(xmlReader.name().toString());
@@ -28966,14 +28986,14 @@ TimeConstraint* Rules::readSubactivitiesPreferredStartingTimes(QXmlStreamReader&
 			assert(xmlReader.isStartElement());
 			while(xmlReader.readNextStartElement()){
 				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
-				if(xmlReader.name()==QString("Preferred_Starting_Day")){
+				if(xmlReader.name()==QString("Preferred_Starting_Day") || xmlReader.name()==QString("Day")){
 					QString text=xmlReader.readElementText();
 					cn->days_L.append(0);
 					assert(cn->days_L.count()-1==i);
 					for(cn->days_L[i]=0; cn->days_L[i]<this->nDaysPerWeek; cn->days_L[i]++)
 						if(this->daysOfTheWeek[cn->days_L[i]]==text)
 							break;
-							
+					
 					if(cn->days_L[i]>=this->nDaysPerWeek){
 						xmlReader.raiseError(tr("Day %1 is nonexistent").arg(text));
 						/*RulesReconcilableMessage::information(parent, tr("FET information"),
@@ -28990,9 +29010,9 @@ TimeConstraint* Rules::readSubactivitiesPreferredStartingTimes(QXmlStreamReader&
 					}
 					
 					assert(cn->days_L[i]<this->nDaysPerWeek);
-					xmlReadingLog+="    Preferred starting day="+this->daysOfTheWeek[cn->days_L[i]]+"("+CustomFETString::number(i)+")"+"\n";
+					xmlReadingLog+="    Day="+this->daysOfTheWeek[cn->days_L[i]]+"("+CustomFETString::number(i)+")"+"\n";
 				}
-				else if(xmlReader.name()==QString("Preferred_Starting_Hour")){
+				else if(xmlReader.name()==QString("Preferred_Starting_Hour") || xmlReader.name()==QString("Hour")){
 					QString text=xmlReader.readElementText();
 					cn->hours_L.append(0);
 					assert(cn->hours_L.count()-1==i);
@@ -29016,7 +29036,7 @@ TimeConstraint* Rules::readSubactivitiesPreferredStartingTimes(QXmlStreamReader&
 					}
 					
 					assert(cn->hours_L[i]>=0 && cn->hours_L[i] < this->nHoursPerDay);
-					xmlReadingLog+="    Preferred starting hour="+this->hoursOfTheDay[cn->hours_L[i]]+"\n";
+					xmlReadingLog+="    Hour="+this->hoursOfTheDay[cn->hours_L[i]]+"\n";
 				}
 				else{
 					unrecognizedXmlTags.append(xmlReader.name().toString());
@@ -29171,7 +29191,7 @@ TimeConstraint* Rules::readTwoSetsOfActivitiesSameSections(QXmlStreamReader& xml
 			assert(xmlReader.isStartElement());
 			while(xmlReader.readNextStartElement()){
 				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
-				if(xmlReader.name()==QString("Exception_Day")){
+				if(xmlReader.name()==QString("Exception_Day") || xmlReader.name()==QString("Day")){
 					QString text=xmlReader.readElementText();
 					cn->oDays.append(0);
 					assert(cn->oDays.count()-1==i);
@@ -29191,9 +29211,9 @@ TimeConstraint* Rules::readTwoSetsOfActivitiesSameSections(QXmlStreamReader& xml
 					}
 
 					assert(cn->oDays[i]<this->nDaysPerWeek);
-					xmlReadingLog+="    Exception day="+this->daysOfTheWeek[cn->oDays[i]]+"("+CustomFETString::number(i)+")"+"\n";
+					xmlReadingLog+="    Day="+this->daysOfTheWeek[cn->oDays[i]]+"("+CustomFETString::number(i)+")"+"\n";
 				}
-				else if(xmlReader.name()==QString("Exception_Hour")){
+				else if(xmlReader.name()==QString("Exception_Hour") || xmlReader.name()==QString("Hour")){
 					QString text=xmlReader.readElementText();
 					cn->oHours.append(0);
 					assert(cn->oHours.count()-1==i);
@@ -29213,7 +29233,7 @@ TimeConstraint* Rules::readTwoSetsOfActivitiesSameSections(QXmlStreamReader& xml
 					}
 
 					assert(cn->oHours[i]>=0 && cn->oHours[i] < this->nHoursPerDay);
-					xmlReadingLog+="    Exception hour="+this->hoursOfTheDay[cn->oHours[i]]+"\n";
+					xmlReadingLog+="    Hour="+this->hoursOfTheDay[cn->oHours[i]]+"\n";
 				}
 				else{
 					unrecognizedXmlTags.append(xmlReader.name().toString());
@@ -29307,7 +29327,7 @@ TimeConstraint* Rules::readActivitiesOccupyMaxTimeSlotsFromSelection(QXmlStreamR
 			assert(xmlReader.isStartElement());
 			while(xmlReader.readNextStartElement()){
 				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
-				if(xmlReader.name()==QString("Selected_Day")){
+				if(xmlReader.name()==QString("Selected_Day") || xmlReader.name()==QString("Day")){
 					QString text=xmlReader.readElementText();
 					cn->selectedDays.append(0);
 					assert(cn->selectedDays.count()-1==i);
@@ -29327,9 +29347,9 @@ TimeConstraint* Rules::readActivitiesOccupyMaxTimeSlotsFromSelection(QXmlStreamR
 					}
 					
 					assert(cn->selectedDays[i]<this->nDaysPerWeek);
-					xmlReadingLog+="    Selected day="+this->daysOfTheWeek[cn->selectedDays[i]]+"("+CustomFETString::number(i)+")"+"\n";
+					xmlReadingLog+="    Day="+this->daysOfTheWeek[cn->selectedDays[i]]+"("+CustomFETString::number(i)+")"+"\n";
 				}
-				else if(xmlReader.name()==QString("Selected_Hour")){
+				else if(xmlReader.name()==QString("Selected_Hour") || xmlReader.name()==QString("Hour")){
 					QString text=xmlReader.readElementText();
 					cn->selectedHours.append(0);
 					assert(cn->selectedHours.count()-1==i);
@@ -29349,7 +29369,7 @@ TimeConstraint* Rules::readActivitiesOccupyMaxTimeSlotsFromSelection(QXmlStreamR
 					}
 					
 					assert(cn->selectedHours[i]>=0 && cn->selectedHours[i] < this->nHoursPerDay);
-					xmlReadingLog+="    Selected hour="+this->hoursOfTheDay[cn->selectedHours[i]]+"\n";
+					xmlReadingLog+="    Hour="+this->hoursOfTheDay[cn->selectedHours[i]]+"\n";
 				}
 				else{
 					unrecognizedXmlTags.append(xmlReader.name().toString());
@@ -29455,7 +29475,7 @@ TimeConstraint* Rules::readActivitiesOccupyMinTimeSlotsFromSelection(QXmlStreamR
 			assert(xmlReader.isStartElement());
 			while(xmlReader.readNextStartElement()){
 				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
-				if(xmlReader.name()==QString("Selected_Day")){
+				if(xmlReader.name()==QString("Selected_Day") || xmlReader.name()==QString("Day")){
 					QString text=xmlReader.readElementText();
 					cn->selectedDays.append(0);
 					assert(cn->selectedDays.count()-1==i);
@@ -29475,9 +29495,9 @@ TimeConstraint* Rules::readActivitiesOccupyMinTimeSlotsFromSelection(QXmlStreamR
 					}
 					
 					assert(cn->selectedDays[i]<this->nDaysPerWeek);
-					xmlReadingLog+="    Selected day="+this->daysOfTheWeek[cn->selectedDays[i]]+"("+CustomFETString::number(i)+")"+"\n";
+					xmlReadingLog+="    Day="+this->daysOfTheWeek[cn->selectedDays[i]]+"("+CustomFETString::number(i)+")"+"\n";
 				}
-				else if(xmlReader.name()==QString("Selected_Hour")){
+				else if(xmlReader.name()==QString("Selected_Hour") || xmlReader.name()==QString("Hour")){
 					QString text=xmlReader.readElementText();
 					cn->selectedHours.append(0);
 					assert(cn->selectedHours.count()-1==i);
@@ -29497,7 +29517,7 @@ TimeConstraint* Rules::readActivitiesOccupyMinTimeSlotsFromSelection(QXmlStreamR
 					}
 					
 					assert(cn->selectedHours[i]>=0 && cn->selectedHours[i] < this->nHoursPerDay);
-					xmlReadingLog+="    Selected hour="+this->hoursOfTheDay[cn->selectedHours[i]]+"\n";
+					xmlReadingLog+="    Hour="+this->hoursOfTheDay[cn->selectedHours[i]]+"\n";
 				}
 				else{
 					unrecognizedXmlTags.append(xmlReader.name().toString());
@@ -29603,7 +29623,7 @@ TimeConstraint* Rules::readActivitiesMaxSimultaneousInSelectedTimeSlots(QXmlStre
 			assert(xmlReader.isStartElement());
 			while(xmlReader.readNextStartElement()){
 				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
-				if(xmlReader.name()==QString("Selected_Day")){
+				if(xmlReader.name()==QString("Selected_Day") || xmlReader.name()==QString("Day")){
 					QString text=xmlReader.readElementText();
 					cn->selectedDays.append(0);
 					assert(cn->selectedDays.count()-1==i);
@@ -29621,11 +29641,11 @@ TimeConstraint* Rules::readActivitiesMaxSimultaneousInSelectedTimeSlots(QXmlStre
 						//goto corruptConstraintTime;
 						return nullptr;
 					}
-							
+					
 					assert(cn->selectedDays[i]<this->nDaysPerWeek);
-					xmlReadingLog+="    Selected day="+this->daysOfTheWeek[cn->selectedDays[i]]+"("+CustomFETString::number(i)+")"+"\n";
+					xmlReadingLog+="    Day="+this->daysOfTheWeek[cn->selectedDays[i]]+"("+CustomFETString::number(i)+")"+"\n";
 				}
-				else if(xmlReader.name()==QString("Selected_Hour")){
+				else if(xmlReader.name()==QString("Selected_Hour") || xmlReader.name()==QString("Hour")){
 					QString text=xmlReader.readElementText();
 					cn->selectedHours.append(0);
 					assert(cn->selectedHours.count()-1==i);
@@ -29645,7 +29665,7 @@ TimeConstraint* Rules::readActivitiesMaxSimultaneousInSelectedTimeSlots(QXmlStre
 					}
 					
 					assert(cn->selectedHours[i]>=0 && cn->selectedHours[i] < this->nHoursPerDay);
-					xmlReadingLog+="    Selected hour="+this->hoursOfTheDay[cn->selectedHours[i]]+"\n";
+					xmlReadingLog+="    Hour="+this->hoursOfTheDay[cn->selectedHours[i]]+"\n";
 				}
 				else{
 					unrecognizedXmlTags.append(xmlReader.name().toString());
@@ -29753,7 +29773,7 @@ TimeConstraint* Rules::readActivitiesMinSimultaneousInSelectedTimeSlots(QXmlStre
 			assert(xmlReader.isStartElement());
 			while(xmlReader.readNextStartElement()){
 				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
-				if(xmlReader.name()==QString("Selected_Day")){
+				if(xmlReader.name()==QString("Selected_Day") || xmlReader.name()==QString("Day")){
 					QString text=xmlReader.readElementText();
 					cn->selectedDays.append(0);
 					assert(cn->selectedDays.count()-1==i);
@@ -29771,11 +29791,11 @@ TimeConstraint* Rules::readActivitiesMinSimultaneousInSelectedTimeSlots(QXmlStre
 						//goto corruptConstraintTime;
 						return nullptr;
 					}
-							
+					
 					assert(cn->selectedDays[i]<this->nDaysPerWeek);
-					xmlReadingLog+="    Selected day="+this->daysOfTheWeek[cn->selectedDays[i]]+"("+CustomFETString::number(i)+")"+"\n";
+					xmlReadingLog+="    Day="+this->daysOfTheWeek[cn->selectedDays[i]]+"("+CustomFETString::number(i)+")"+"\n";
 				}
-				else if(xmlReader.name()==QString("Selected_Hour")){
+				else if(xmlReader.name()==QString("Selected_Hour") || xmlReader.name()==QString("Hour")){
 					QString text=xmlReader.readElementText();
 					cn->selectedHours.append(0);
 					assert(cn->selectedHours.count()-1==i);
@@ -29795,7 +29815,7 @@ TimeConstraint* Rules::readActivitiesMinSimultaneousInSelectedTimeSlots(QXmlStre
 					}
 					
 					assert(cn->selectedHours[i]>=0 && cn->selectedHours[i] < this->nHoursPerDay);
-					xmlReadingLog+="    Selected hour="+this->hoursOfTheDay[cn->selectedHours[i]]+"\n";
+					xmlReadingLog+="    Hour="+this->hoursOfTheDay[cn->selectedHours[i]]+"\n";
 				}
 				else{
 					unrecognizedXmlTags.append(xmlReader.name().toString());
@@ -29908,7 +29928,7 @@ TimeConstraint* Rules::readMaxTotalActivitiesFromSetInSelectedTimeSlots(QXmlStre
 			assert(xmlReader.isStartElement());
 			while(xmlReader.readNextStartElement()){
 				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
-				if(xmlReader.name()==QString("Selected_Day")){
+				if(xmlReader.name()==QString("Selected_Day") || xmlReader.name()==QString("Day")){
 					QString text=xmlReader.readElementText();
 					cn->selectedDays.append(0);
 					assert(cn->selectedDays.count()-1==i);
@@ -29928,9 +29948,9 @@ TimeConstraint* Rules::readMaxTotalActivitiesFromSetInSelectedTimeSlots(QXmlStre
 					}
 
 					assert(cn->selectedDays[i]<this->nDaysPerWeek);
-					xmlReadingLog+="    Selected day="+this->daysOfTheWeek[cn->selectedDays[i]]+"("+CustomFETString::number(i)+")"+"\n";
+					xmlReadingLog+="    Day="+this->daysOfTheWeek[cn->selectedDays[i]]+"("+CustomFETString::number(i)+")"+"\n";
 				}
-				else if(xmlReader.name()==QString("Selected_Hour")){
+				else if(xmlReader.name()==QString("Selected_Hour") || xmlReader.name()==QString("Hour")){
 					QString text=xmlReader.readElementText();
 					cn->selectedHours.append(0);
 					assert(cn->selectedHours.count()-1==i);
@@ -29950,7 +29970,7 @@ TimeConstraint* Rules::readMaxTotalActivitiesFromSetInSelectedTimeSlots(QXmlStre
 					}
 
 					assert(cn->selectedHours[i]>=0 && cn->selectedHours[i] < this->nHoursPerDay);
-					xmlReadingLog+="    Selected hour="+this->hoursOfTheDay[cn->selectedHours[i]]+"\n";
+					xmlReadingLog+="    Hour="+this->hoursOfTheDay[cn->selectedHours[i]]+"\n";
 				}
 				else{
 					unrecognizedXmlTags.append(xmlReader.name().toString());

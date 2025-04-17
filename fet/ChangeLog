@@ -3074,3 +3074,14 @@ Versions 7.1.0 - 7.1.v
 	- Updated the Greek translation, by Vangelis Karafillidis.
 	- Updated the French translation, by Pascal Cohen.
 	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares.
+- Version 7.1.4
+	- Crash bugs fixed, in the dialog for modifying a constraint of type max activity tags from a set per day/real day/week for a room, when removing
+	an activity tag (reported by Nguyễn Hữu Tuyên).
+	- Improved the constraints of type teacher(s)/students (set) activity tag min hours daily - now they allow the user to specify the minimum required
+	number of days per week with the selected tag (suggested by Nahum Lipkunsky).
+	- Improved the data file structure.
+	- Improved the resulted time horizontal timetables (suggested by Vangelis Karafillidis).
+	- Updated the Greek translation, by Vangelis Karafillidis.
+	- Updated the Italian translation, by Andrea Primiani.
+	- Updated the Arabic translation, by Benahmed Abdelkrim.
+	- Updated the Italian translation, by Andrea Primiani.

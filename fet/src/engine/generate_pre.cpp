@@ -5793,21 +5793,21 @@ bool computeStudentsActivityTagMinHoursDaily(QWidget* parent)
 					if(item.durationOfActivitiesWithActivityTagForSubgroup>0){
 						item.activityTag=smd->activityTagIndex;
 						item.minHoursDaily=smd->minHoursDaily;
-						item.allowEmptyDays=smd->allowEmptyDays;
+						item.minDaysWithTag=smd->minDaysWithTag;
 						
 						satmhdList.push_back(item);
 						//satmhdListForSubgroup[sbg].append(&satmhdList[satmhdList.count()-1]);
 						satmhdListForSubgroup[sbg].append(&satmhdList.back());
 						
-						if(!item.allowEmptyDays && item.durationOfActivitiesWithActivityTagForSubgroup<gt.rules.nDaysPerWeek*item.minHoursDaily){
+						if(item.durationOfActivitiesWithActivityTagForSubgroup<item.minDaysWithTag*item.minHoursDaily){
 							ok=false;
 				
 							int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 							 GeneratePreTranslate::tr("Cannot optimize, because the constraint of type activity tag %1 min %2 hours daily relating to subgroup %3"
 							 " requires at least %4 hours of work per week, but the activities of this subgroup with this activity tag sum to only %5 hours"
-							 " per week (the constraint does not allow empty days). Please correct and try again")
+							 " per week (the constraint requires %6 nonempty days). Please correct and try again")
 							 .arg(smd->activityTagName).arg(smd->minHoursDaily).arg(gt.rules.internalSubgroupsList[sbg]->name)
-							 .arg(gt.rules.nDaysPerWeek*item.minHoursDaily).arg(item.durationOfActivitiesWithActivityTagForSubgroup),
+							 .arg(item.minDaysWithTag*item.minHoursDaily).arg(item.durationOfActivitiesWithActivityTagForSubgroup).arg(smd->minDaysWithTag),
 							 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 							 1, 0 );
 							 	
@@ -5836,24 +5836,24 @@ bool computeStudentsActivityTagMinHoursDaily(QWidget* parent)
 					if(item.durationOfActivitiesWithActivityTagForSubgroup>0){
 						item.activityTag=smd->activityTagIndex;
 						item.minHoursDaily=smd->minHoursDaily;
-						item.allowEmptyDays=smd->allowEmptyDays;
+						item.minDaysWithTag=smd->minDaysWithTag;
 						
 						satmhdList.push_back(item);
 						//satmhdListForSubgroup[sbg].append(&satmhdList[satmhdList.count()-1]);
 						satmhdListForSubgroup[sbg].append(&satmhdList.back());
 						
-						if(!item.allowEmptyDays && item.durationOfActivitiesWithActivityTagForSubgroup<gt.rules.nDaysPerWeek*item.minHoursDaily){
+						if(item.durationOfActivitiesWithActivityTagForSubgroup<item.minDaysWithTag*item.minHoursDaily){
 							ok=false;
 				
 							int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 							 GeneratePreTranslate::tr("Cannot optimize, because the constraint of type activity tag %1 min %2 hours daily relating to subgroup %3"
 							 " requires at least %4 hours of work per week, but the activities of this subgroup with this activity tag sum to only %5 hours"
-							 " per week (the constraint does not allow empty days). Please correct and try again")
+							 " per week (the constraint requires %6 nonempty days). Please correct and try again")
 							 .arg(smd->activityTagName).arg(smd->minHoursDaily).arg(gt.rules.internalSubgroupsList[sbg]->name)
-							 .arg(gt.rules.nDaysPerWeek*item.minHoursDaily).arg(item.durationOfActivitiesWithActivityTagForSubgroup),
+							 .arg(item.minDaysWithTag*item.minHoursDaily).arg(item.durationOfActivitiesWithActivityTagForSubgroup).arg(smd->minDaysWithTag),
 							 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 							 1, 0 );
-							 	
+							
 							if(t==0)
 								return false;
 						}
@@ -8529,21 +8529,21 @@ bool computeTeachersActivityTagMinHoursDaily(QWidget* parent)
 					if(item.durationOfActivitiesWithActivityTagForTeacher>0){
 						item.activityTag=tmd->activityTagIndex;
 						item.minHoursDaily=tmd->minHoursDaily;
-						item.allowEmptyDays=tmd->allowEmptyDays;
+						item.minDaysWithTag=tmd->minDaysWithTag;
 						
 						tatmhdList.push_back(item);
 						//tatmhdListForTeacher[tch].append(&tatmhdList[tatmhdList.count()-1]);
 						tatmhdListForTeacher[tch].append(&tatmhdList.back());
 						
-						if(!item.allowEmptyDays && item.durationOfActivitiesWithActivityTagForTeacher<gt.rules.nDaysPerWeek*item.minHoursDaily){
+						if(item.durationOfActivitiesWithActivityTagForTeacher<item.minDaysWithTag*item.minHoursDaily){
 							ok=false;
 				
 							int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 							 GeneratePreTranslate::tr("Cannot optimize, because the constraint of type activity tag %1 min %2 hours daily relating to teacher %3"
 							 " requires at least %4 hours of work per week, but the activities of this teacher with this activity tag sum to only %5 hours"
-							 " per week (the constraint does not allow empty days). Please correct and try again")
+							 " per week (the constraint requires %6 nonempty days). Please correct and try again")
 							 .arg(tmd->activityTagName).arg(tmd->minHoursDaily).arg(gt.rules.internalTeachersList[tch]->name)
-							 .arg(gt.rules.nDaysPerWeek*item.minHoursDaily).arg(item.durationOfActivitiesWithActivityTagForTeacher),
+							 .arg(item.minDaysWithTag*item.minHoursDaily).arg(item.durationOfActivitiesWithActivityTagForTeacher).arg(tmd->minDaysWithTag),
 							 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 							 1, 0 );
 							 	
@@ -8572,21 +8572,21 @@ bool computeTeachersActivityTagMinHoursDaily(QWidget* parent)
 					if(item.durationOfActivitiesWithActivityTagForTeacher>0){
 						item.activityTag=tmd->activityTagIndex;
 						item.minHoursDaily=tmd->minHoursDaily;
-						item.allowEmptyDays=tmd->allowEmptyDays;
+						item.minDaysWithTag=tmd->minDaysWithTag;
 						
 						tatmhdList.push_back(item);
 						//tatmhdListForTeacher[tch].append(&tatmhdList[tatmhdList.count()-1]);
 						tatmhdListForTeacher[tch].append(&tatmhdList.back());
 						
-						if(!item.allowEmptyDays && item.durationOfActivitiesWithActivityTagForTeacher<gt.rules.nDaysPerWeek*item.minHoursDaily){
+						if(item.durationOfActivitiesWithActivityTagForTeacher<item.minDaysWithTag*item.minHoursDaily){
 							ok=false;
 				
 							int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 							 GeneratePreTranslate::tr("Cannot optimize, because the constraint of type activity tag %1 min %2 hours daily relating to teacher %3"
 							 " requires at least %4 hours of work per week, but the activities of this teacher with this activity tag sum to only %5 hours"
-							 " per week (the constraint does not allow empty days). Please correct and try again")
+							 " per week (the constraint requires %6 nonempty days). Please correct and try again")
 							 .arg(tmd->activityTagName).arg(tmd->minHoursDaily).arg(gt.rules.internalTeachersList[tch]->name)
-							 .arg(gt.rules.nDaysPerWeek*item.minHoursDaily).arg(item.durationOfActivitiesWithActivityTagForTeacher),
+							 .arg(item.minDaysWithTag*item.minHoursDaily).arg(item.durationOfActivitiesWithActivityTagForTeacher).arg(tmd->minDaysWithTag),
 							 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 							 1, 0 );
 							 	
@@ -16741,7 +16741,7 @@ bool computeTwoSetsOfActivitiesSameSections(QWidget* parent)
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint of type 'two sets of activities have the same sections'"
-				 " with a different number of activities in the first and in the second set. The constraint is:\n%1").arg(cn->getDetailedDescription(gt.rules))
+				 " with a different number of active activities between the first and in the second set. The constraint is:\n%1").arg(cn->getDetailedDescription(gt.rules))
 				 ,
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
@@ -16813,7 +16813,7 @@ bool computeTwoSetsOfActivitiesSameSections(QWidget* parent)
 					ok=false;
 
 					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-					 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint of type 'two sets of activities same sections'"
+					 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint of type 'two sets of activities have the same sections'"
 					 " in which the activities are not the same in both sets, having respectively the same students set(s). The constraint is:\n%1")
 					 .arg(cn->getDetailedDescription(gt.rules))
 					 ,
@@ -16833,7 +16833,7 @@ bool computeTwoSetsOfActivitiesSameSections(QWidget* parent)
 
 						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 						 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint of type 'two sets of activities have the same sections'"
-						 " in which there are activity(ies) with different durations. The durations of all the activities in such a constraint should"
+						 " in which there are activities with different durations. The durations of all the activities in such a constraint should"
 						 " be equal. The constraint is:\n%1")
 						 .arg(cn->getDetailedDescription(gt.rules))
 						 ,

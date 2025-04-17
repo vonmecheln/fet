@@ -20309,7 +20309,7 @@ impossiblestudentsmaxhoursperallafternoons:
 									sbgTimetable(d2,h2)=ai2;
 									sbgDayNHoursWithTag[d2]++;
 									
-									if(item->allowEmptyDays && (ai2==ai || fixedTimeActivity[ai2] || swappedActivities[ai2]))
+									if(ai2==ai || fixedTimeActivity[ai2] || swappedActivities[ai2])
 										possibleToEmptyDay[d2]=false;
 								}
 								else{
@@ -20323,11 +20323,16 @@ impossiblestudentsmaxhoursperallafternoons:
 					}
 					
 					int necessary=0;
+					int nd=0;
 					for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
-						if(sbgDayNHoursWithTag[d2]>0 || (sbgDayNHoursWithTag[d2]==0 && !item->allowEmptyDays)){
+						if(sbgDayNHoursWithTag[d2]>0){
 							necessary+=max(item->minHoursDaily, sbgDayNHoursWithTag[d2]);
+							nd++;
 						}
 					}
+					
+					if(nd < item->minDaysWithTag)
+						necessary += (item->minDaysWithTag - nd) * item->minHoursDaily;
 					
 					if(necessary > item->durationOfActivitiesWithActivityTagForSubgroup){
 						//not OK
@@ -20340,7 +20345,7 @@ impossiblestudentsmaxhoursperallafternoons:
 						
 						for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 							if(sbgDayNHoursWithTag[d2]>0){
-								if((item->allowEmptyDays && possibleToEmptyDay[d2]) || sbgDayNHoursWithTag[d2] > item->minHoursDaily){
+								if((nd > item->minDaysWithTag && possibleToEmptyDay[d2]) || sbgDayNHoursWithTag[d2] > item->minHoursDaily){
 									for(int h2=0; h2<gt.rules.nHoursPerDay; ){
 										int ai2=sbgTimetable(d2,h2);
 										if(ai2>=0){
@@ -20412,17 +20417,18 @@ impossiblestudentsmaxhoursperallafternoons:
 								sbgDayNHoursWithTag[d2]-=dur2;
 								assert(sbgDayNHoursWithTag[d2]>=0);
 								
-								if(sbgDayNHoursWithTag[d2]==0 && item->allowEmptyDays){
-									necessary-=max(item->minHoursDaily, dur2);
-									assert(necessary>=0);
+								int oldNecessary=necessary;
+								if(sbgDayNHoursWithTag[d2]==0){
+									nd--;
+									if(nd >= item->minDaysWithTag){
+										necessary-=max(item->minHoursDaily, dur2);
+										assert(necessary>=0);
+									}
 								}
 								else{
-									int oldNecessary=necessary;
 									necessary-=max(item->minHoursDaily, sbgDayNHoursWithTag[d2]+dur2);
 									assert(necessary>=0);
 									necessary+=max(item->minHoursDaily, sbgDayNHoursWithTag[d2]);
-									if(!item->allowEmptyDays)
-										assert(oldNecessary>necessary);
 								}
 								
 								for(int h3=h2; h3<h2+dur2; h3++){
@@ -20430,14 +20436,16 @@ impossiblestudentsmaxhoursperallafternoons:
 									sbgTimetable(d2,h3)=-1;
 								}
 								
+								assert(oldNecessary>=necessary);
+								
 								if(necessary <= item->durationOfActivitiesWithActivityTagForSubgroup)
 									break; //OK
-									
+								
 								bool tr=candidatesSet.remove(ai2);
 								assert(tr);
 								
 								if(sbgDayNHoursWithTag[d2]>0 && sbgDayNHoursWithTag[d2]<=item->minHoursDaily &&
-								 !(item->allowEmptyDays && possibleToEmptyDay[d2])){
+								 (nd <= item->minDaysWithTag || !possibleToEmptyDay[d2])){
 									for(int h3=0; h3<gt.rules.nHoursPerDay; ){
 										int ai3=sbgTimetable(d2,h3);
 										if(ai3>=0){
@@ -30152,7 +30160,7 @@ impossibleteachersmaxhoursperallafternoons:
 									tchTimetable(d2,h2)=ai2;
 									tchDayNHoursWithTag[d2]++;
 									
-									if(item->allowEmptyDays && (ai2==ai || fixedTimeActivity[ai2] || swappedActivities[ai2]))
+									if(ai2==ai || fixedTimeActivity[ai2] || swappedActivities[ai2])
 										possibleToEmptyDay[d2]=false;
 								}
 								else{
@@ -30166,11 +30174,15 @@ impossibleteachersmaxhoursperallafternoons:
 					}
 					
 					int necessary=0;
+					int nd=0;
 					for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
-						if(tchDayNHoursWithTag[d2]>0 || (tchDayNHoursWithTag[d2]==0 && !item->allowEmptyDays)){
+						if(tchDayNHoursWithTag[d2]>0){
 							necessary+=max(item->minHoursDaily, tchDayNHoursWithTag[d2]);
+							nd++;
 						}
 					}
+					if(nd < item->minDaysWithTag)
+						necessary += (item->minDaysWithTag - nd) * item->minHoursDaily;
 					
 					if(necessary > item->durationOfActivitiesWithActivityTagForTeacher){
 						//not OK
@@ -30183,7 +30195,7 @@ impossibleteachersmaxhoursperallafternoons:
 						
 						for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 							if(tchDayNHoursWithTag[d2]>0){
-								if((item->allowEmptyDays && possibleToEmptyDay[d2]) || tchDayNHoursWithTag[d2] > item->minHoursDaily){
+								if((nd > item->minDaysWithTag && possibleToEmptyDay[d2]) || tchDayNHoursWithTag[d2] > item->minHoursDaily){
 									for(int h2=0; h2<gt.rules.nHoursPerDay; ){
 										int ai2=tchTimetable(d2,h2);
 										if(ai2>=0){
@@ -30255,18 +30267,21 @@ impossibleteachersmaxhoursperallafternoons:
 								tchDayNHoursWithTag[d2]-=dur2;
 								assert(tchDayNHoursWithTag[d2]>=0);
 								
-								if(tchDayNHoursWithTag[d2]==0 && item->allowEmptyDays){
-									necessary-=max(item->minHoursDaily, dur2);
-									assert(necessary>=0);
+								int oldNecessary=necessary;
+								if(tchDayNHoursWithTag[d2]==0){
+									nd--;
+									if(nd >= item->minDaysWithTag){
+										necessary-=max(item->minHoursDaily, dur2);
+										assert(necessary>=0);
+									}
 								}
 								else{
-									int oldNecessary=necessary;
 									necessary-=max(item->minHoursDaily, tchDayNHoursWithTag[d2]+dur2);
 									assert(necessary>=0);
 									necessary+=max(item->minHoursDaily, tchDayNHoursWithTag[d2]);
-									if(!item->allowEmptyDays)
-										assert(oldNecessary>necessary);
 								}
+								
+								assert(oldNecessary>=necessary);
 								
 								for(int h3=h2; h3<h2+dur2; h3++){
 									assert(tchTimetable(d2,h3)==ai2);
@@ -30275,12 +30290,12 @@ impossibleteachersmaxhoursperallafternoons:
 								
 								if(necessary <= item->durationOfActivitiesWithActivityTagForTeacher)
 									break; //OK
-									
+								
 								bool tr=candidatesSet.remove(ai2);
 								assert(tr);
 								
 								if(tchDayNHoursWithTag[d2]>0 && tchDayNHoursWithTag[d2]<=item->minHoursDaily &&
-								 !(item->allowEmptyDays && possibleToEmptyDay[d2])){
+								 (nd <= item->minDaysWithTag || !possibleToEmptyDay[d2])){
 									for(int h3=0; h3<gt.rules.nHoursPerDay; ){
 										int ai3=tchTimetable(d2,h3);
 										if(ai3>=0){

@@ -1551,7 +1551,7 @@ class SubgroupActivityTagMinHoursDaily_item
 public:
 	int activityTag;
 	int minHoursDaily;
-	bool allowEmptyDays;
+	int minDaysWithTag;
 	int durationOfActivitiesWithActivityTagForSubgroup;
 };
 
@@ -1568,7 +1568,7 @@ class TeacherActivityTagMinHoursDaily_item
 public:
 	int activityTag;
 	int minHoursDaily;
-	bool allowEmptyDays;
+	int minDaysWithTag;
 	int durationOfActivitiesWithActivityTagForTeacher;
 };
 

@@ -3433,8 +3433,13 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 
 					roomsComboBox->setCurrentIndex(roomsComboBox->findText(ctr->room));
 
-					for(const QString& at : std::as_const(ctr->tagsList))
+					selectedActivityTagsListWidget->clear();
+					selectedActivityTagsSet.clear();
+
+					for(const QString& at : std::as_const(ctr->tagsList)){
+						selectedActivityTagsSet.insert(at);
 						selectedActivityTagsListWidget->addItem(at);
+					}
 
 					spinBox->setValue(ctr->maxTags);
 
@@ -3447,8 +3452,13 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 
 					roomsComboBox->setCurrentIndex(roomsComboBox->findText(ctr->room));
 
-					for(const QString& at : std::as_const(ctr->tagsList))
+					selectedActivityTagsListWidget->clear();
+					selectedActivityTagsSet.clear();
+
+					for(const QString& at : std::as_const(ctr->tagsList)){
+						selectedActivityTagsSet.insert(at);
 						selectedActivityTagsListWidget->addItem(at);
+					}
 
 					spinBox->setValue(ctr->maxTags);
 
@@ -3461,8 +3471,13 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 
 					roomsComboBox->setCurrentIndex(roomsComboBox->findText(ctr->room));
 
-					for(const QString& at : std::as_const(ctr->tagsList))
+					selectedActivityTagsListWidget->clear();
+					selectedActivityTagsSet.clear();
+
+					for(const QString& at : std::as_const(ctr->tagsList)){
+						selectedActivityTagsSet.insert(at);
 						selectedActivityTagsListWidget->addItem(at);
+					}
 
 					spinBox->setValue(ctr->maxTags);
 

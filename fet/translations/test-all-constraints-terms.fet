@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<fet version="7.1.3">
+<fet version="7.1.4">
   <Mode>Terms</Mode>
   <Institution_Name>Default institution</Institution_Name>
   <Comments>Default comments</Comments>
@@ -697,8 +697,8 @@
     <ConstraintActivityPreferredStartingTime>
       <Weight_Percentage>100</Weight_Percentage>
       <Activity_Id>2</Activity_Id>
-      <Preferred_Day>Wednesday</Preferred_Day>
-      <Preferred_Hour>15:00</Preferred_Hour>
+      <Day>Wednesday</Day>
+      <Hour>15:00</Hour>
       <Permanently_Locked>true</Permanently_Locked>
       <Active>true</Active>
       <Comments></Comments>
@@ -708,12 +708,12 @@
       <Activity_Id>1</Activity_Id>
       <Number_of_Preferred_Starting_Times>2</Number_of_Preferred_Starting_Times>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+        <Day>Tuesday</Day>
+        <Hour>08:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+        <Day>Tuesday</Day>
+        <Hour>09:00</Hour>
       </Preferred_Starting_Time>
       <Active>true</Active>
       <Comments></Comments>
@@ -723,16 +723,16 @@
       <Activity_Id>3</Activity_Id>
       <Number_of_Preferred_Time_Slots>3</Number_of_Preferred_Time_Slots>
       <Preferred_Time_Slot>
-        <Preferred_Day>Wednesday</Preferred_Day>
-        <Preferred_Hour>11:00</Preferred_Hour>
+        <Day>Wednesday</Day>
+        <Hour>11:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Wednesday</Preferred_Day>
-        <Preferred_Hour>12:00</Preferred_Hour>
+        <Day>Wednesday</Day>
+        <Hour>12:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Wednesday</Preferred_Day>
-        <Preferred_Hour>13:00</Preferred_Hour>
+        <Day>Wednesday</Day>
+        <Hour>13:00</Hour>
       </Preferred_Time_Slot>
       <Active>true</Active>
       <Comments></Comments>
@@ -746,232 +746,232 @@
       <Duration></Duration>
       <Number_of_Preferred_Starting_Times>57</Number_of_Preferred_Starting_Times>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Monday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+        <Day>Monday</Day>
+        <Hour>08:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Monday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+        <Day>Monday</Day>
+        <Hour>09:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Monday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+        <Day>Monday</Day>
+        <Hour>10:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Monday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+        <Day>Monday</Day>
+        <Hour>11:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Monday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>12:00</Preferred_Starting_Hour>
+        <Day>Monday</Day>
+        <Hour>12:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Monday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>13:00</Preferred_Starting_Hour>
+        <Day>Monday</Day>
+        <Hour>13:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Monday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>14:00</Preferred_Starting_Hour>
+        <Day>Monday</Day>
+        <Hour>14:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Monday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>15:00</Preferred_Starting_Hour>
+        <Day>Monday</Day>
+        <Hour>15:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Monday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>16:00</Preferred_Starting_Hour>
+        <Day>Monday</Day>
+        <Hour>16:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Monday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>17:00</Preferred_Starting_Hour>
+        <Day>Monday</Day>
+        <Hour>17:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Monday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>18:00</Preferred_Starting_Hour>
+        <Day>Monday</Day>
+        <Hour>18:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Monday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>19:00</Preferred_Starting_Hour>
+        <Day>Monday</Day>
+        <Hour>19:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+        <Day>Tuesday</Day>
+        <Hour>08:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+        <Day>Tuesday</Day>
+        <Hour>09:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+        <Day>Tuesday</Day>
+        <Hour>10:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+        <Day>Tuesday</Day>
+        <Hour>11:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>12:00</Preferred_Starting_Hour>
+        <Day>Tuesday</Day>
+        <Hour>12:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>13:00</Preferred_Starting_Hour>
+        <Day>Tuesday</Day>
+        <Hour>13:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>14:00</Preferred_Starting_Hour>
+        <Day>Tuesday</Day>
+        <Hour>14:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>15:00</Preferred_Starting_Hour>
+        <Day>Tuesday</Day>
+        <Hour>15:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>16:00</Preferred_Starting_Hour>
+        <Day>Tuesday</Day>
+        <Hour>16:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>17:00</Preferred_Starting_Hour>
+        <Day>Tuesday</Day>
+        <Hour>17:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>18:00</Preferred_Starting_Hour>
+        <Day>Tuesday</Day>
+        <Hour>18:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>19:00</Preferred_Starting_Hour>
+        <Day>Tuesday</Day>
+        <Hour>19:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+        <Day>Wednesday</Day>
+        <Hour>08:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+        <Day>Wednesday</Day>
+        <Hour>09:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+        <Day>Wednesday</Day>
+        <Hour>10:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+        <Day>Wednesday</Day>
+        <Hour>11:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>12:00</Preferred_Starting_Hour>
+        <Day>Wednesday</Day>
+        <Hour>12:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>13:00</Preferred_Starting_Hour>
+        <Day>Wednesday</Day>
+        <Hour>13:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>14:00</Preferred_Starting_Hour>
+        <Day>Wednesday</Day>
+        <Hour>14:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>15:00</Preferred_Starting_Hour>
+        <Day>Wednesday</Day>
+        <Hour>15:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>17:00</Preferred_Starting_Hour>
+        <Day>Wednesday</Day>
+        <Hour>17:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>18:00</Preferred_Starting_Hour>
+        <Day>Wednesday</Day>
+        <Hour>18:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>19:00</Preferred_Starting_Hour>
+        <Day>Wednesday</Day>
+        <Hour>19:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+        <Day>Thursday</Day>
+        <Hour>08:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+        <Day>Thursday</Day>
+        <Hour>09:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+        <Day>Thursday</Day>
+        <Hour>10:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+        <Day>Thursday</Day>
+        <Hour>11:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>12:00</Preferred_Starting_Hour>
+        <Day>Thursday</Day>
+        <Hour>12:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>13:00</Preferred_Starting_Hour>
+        <Day>Thursday</Day>
+        <Hour>13:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>14:00</Preferred_Starting_Hour>
+        <Day>Thursday</Day>
+        <Hour>14:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>17:00</Preferred_Starting_Hour>
+        <Day>Thursday</Day>
+        <Hour>17:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>18:00</Preferred_Starting_Hour>
+        <Day>Thursday</Day>
+        <Hour>18:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>19:00</Preferred_Starting_Hour>
+        <Day>Thursday</Day>
+        <Hour>19:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Friday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+        <Day>Friday</Day>
+        <Hour>08:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Friday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+        <Day>Friday</Day>
+        <Hour>09:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Friday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+        <Day>Friday</Day>
+        <Hour>10:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Friday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+        <Day>Friday</Day>
+        <Hour>11:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Friday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>12:00</Preferred_Starting_Hour>
+        <Day>Friday</Day>
+        <Hour>12:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Friday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>13:00</Preferred_Starting_Hour>
+        <Day>Friday</Day>
+        <Hour>13:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Friday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>14:00</Preferred_Starting_Hour>
+        <Day>Friday</Day>
+        <Hour>14:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Friday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>15:00</Preferred_Starting_Hour>
+        <Day>Friday</Day>
+        <Hour>15:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Friday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>16:00</Preferred_Starting_Hour>
+        <Day>Friday</Day>
+        <Hour>16:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Friday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>17:00</Preferred_Starting_Hour>
+        <Day>Friday</Day>
+        <Hour>17:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Friday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>18:00</Preferred_Starting_Hour>
+        <Day>Friday</Day>
+        <Hour>18:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Friday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>19:00</Preferred_Starting_Hour>
+        <Day>Friday</Day>
+        <Hour>19:00</Hour>
       </Preferred_Starting_Time>
       <Active>true</Active>
       <Comments></Comments>
@@ -985,232 +985,232 @@
       <Duration></Duration>
       <Number_of_Preferred_Time_Slots>57</Number_of_Preferred_Time_Slots>
       <Preferred_Time_Slot>
-        <Preferred_Day>Monday</Preferred_Day>
-        <Preferred_Hour>08:00</Preferred_Hour>
+        <Day>Monday</Day>
+        <Hour>08:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Monday</Preferred_Day>
-        <Preferred_Hour>09:00</Preferred_Hour>
+        <Day>Monday</Day>
+        <Hour>09:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Monday</Preferred_Day>
-        <Preferred_Hour>10:00</Preferred_Hour>
+        <Day>Monday</Day>
+        <Hour>10:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Monday</Preferred_Day>
-        <Preferred_Hour>11:00</Preferred_Hour>
+        <Day>Monday</Day>
+        <Hour>11:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Monday</Preferred_Day>
-        <Preferred_Hour>12:00</Preferred_Hour>
+        <Day>Monday</Day>
+        <Hour>12:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Monday</Preferred_Day>
-        <Preferred_Hour>13:00</Preferred_Hour>
+        <Day>Monday</Day>
+        <Hour>13:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Monday</Preferred_Day>
-        <Preferred_Hour>14:00</Preferred_Hour>
+        <Day>Monday</Day>
+        <Hour>14:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Monday</Preferred_Day>
-        <Preferred_Hour>15:00</Preferred_Hour>
+        <Day>Monday</Day>
+        <Hour>15:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Monday</Preferred_Day>
-        <Preferred_Hour>16:00</Preferred_Hour>
+        <Day>Monday</Day>
+        <Hour>16:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Monday</Preferred_Day>
-        <Preferred_Hour>17:00</Preferred_Hour>
+        <Day>Monday</Day>
+        <Hour>17:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Monday</Preferred_Day>
-        <Preferred_Hour>18:00</Preferred_Hour>
+        <Day>Monday</Day>
+        <Hour>18:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Monday</Preferred_Day>
-        <Preferred_Hour>19:00</Preferred_Hour>
+        <Day>Monday</Day>
+        <Hour>19:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Tuesday</Preferred_Day>
-        <Preferred_Hour>08:00</Preferred_Hour>
+        <Day>Tuesday</Day>
+        <Hour>08:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Tuesday</Preferred_Day>
-        <Preferred_Hour>09:00</Preferred_Hour>
+        <Day>Tuesday</Day>
+        <Hour>09:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Tuesday</Preferred_Day>
-        <Preferred_Hour>10:00</Preferred_Hour>
+        <Day>Tuesday</Day>
+        <Hour>10:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Tuesday</Preferred_Day>
-        <Preferred_Hour>11:00</Preferred_Hour>
+        <Day>Tuesday</Day>
+        <Hour>11:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Tuesday</Preferred_Day>
-        <Preferred_Hour>12:00</Preferred_Hour>
+        <Day>Tuesday</Day>
+        <Hour>12:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Tuesday</Preferred_Day>
-        <Preferred_Hour>13:00</Preferred_Hour>
+        <Day>Tuesday</Day>
+        <Hour>13:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Tuesday</Preferred_Day>
-        <Preferred_Hour>14:00</Preferred_Hour>
+        <Day>Tuesday</Day>
+        <Hour>14:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Tuesday</Preferred_Day>
-        <Preferred_Hour>15:00</Preferred_Hour>
+        <Day>Tuesday</Day>
+        <Hour>15:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Tuesday</Preferred_Day>
-        <Preferred_Hour>16:00</Preferred_Hour>
+        <Day>Tuesday</Day>
+        <Hour>16:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Tuesday</Preferred_Day>
-        <Preferred_Hour>17:00</Preferred_Hour>
+        <Day>Tuesday</Day>
+        <Hour>17:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Tuesday</Preferred_Day>
-        <Preferred_Hour>18:00</Preferred_Hour>
+        <Day>Tuesday</Day>
+        <Hour>18:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Tuesday</Preferred_Day>
-        <Preferred_Hour>19:00</Preferred_Hour>
+        <Day>Tuesday</Day>
+        <Hour>19:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Wednesday</Preferred_Day>
-        <Preferred_Hour>08:00</Preferred_Hour>
+        <Day>Wednesday</Day>
+        <Hour>08:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Wednesday</Preferred_Day>
-        <Preferred_Hour>09:00</Preferred_Hour>
+        <Day>Wednesday</Day>
+        <Hour>09:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Wednesday</Preferred_Day>
-        <Preferred_Hour>10:00</Preferred_Hour>
+        <Day>Wednesday</Day>
+        <Hour>10:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Wednesday</Preferred_Day>
-        <Preferred_Hour>11:00</Preferred_Hour>
+        <Day>Wednesday</Day>
+        <Hour>11:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Wednesday</Preferred_Day>
-        <Preferred_Hour>12:00</Preferred_Hour>
+        <Day>Wednesday</Day>
+        <Hour>12:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Wednesday</Preferred_Day>
-        <Preferred_Hour>13:00</Preferred_Hour>
+        <Day>Wednesday</Day>
+        <Hour>13:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Wednesday</Preferred_Day>
-        <Preferred_Hour>14:00</Preferred_Hour>
+        <Day>Wednesday</Day>
+        <Hour>14:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Wednesday</Preferred_Day>
-        <Preferred_Hour>15:00</Preferred_Hour>
+        <Day>Wednesday</Day>
+        <Hour>15:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Wednesday</Preferred_Day>
-        <Preferred_Hour>16:00</Preferred_Hour>
+        <Day>Wednesday</Day>
+        <Hour>16:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Wednesday</Preferred_Day>
-        <Preferred_Hour>17:00</Preferred_Hour>
+        <Day>Wednesday</Day>
+        <Hour>17:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Wednesday</Preferred_Day>
-        <Preferred_Hour>18:00</Preferred_Hour>
+        <Day>Wednesday</Day>
+        <Hour>18:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Wednesday</Preferred_Day>
-        <Preferred_Hour>19:00</Preferred_Hour>
+        <Day>Wednesday</Day>
+        <Hour>19:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Thursday</Preferred_Day>
-        <Preferred_Hour>08:00</Preferred_Hour>
+        <Day>Thursday</Day>
+        <Hour>08:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Thursday</Preferred_Day>
-        <Preferred_Hour>09:00</Preferred_Hour>
+        <Day>Thursday</Day>
+        <Hour>09:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Thursday</Preferred_Day>
-        <Preferred_Hour>10:00</Preferred_Hour>
+        <Day>Thursday</Day>
+        <Hour>10:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Thursday</Preferred_Day>
-        <Preferred_Hour>14:00</Preferred_Hour>
+        <Day>Thursday</Day>
+        <Hour>14:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Thursday</Preferred_Day>
-        <Preferred_Hour>15:00</Preferred_Hour>
+        <Day>Thursday</Day>
+        <Hour>15:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Thursday</Preferred_Day>
-        <Preferred_Hour>16:00</Preferred_Hour>
+        <Day>Thursday</Day>
+        <Hour>16:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Thursday</Preferred_Day>
-        <Preferred_Hour>17:00</Preferred_Hour>
+        <Day>Thursday</Day>
+        <Hour>17:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Thursday</Preferred_Day>
-        <Preferred_Hour>18:00</Preferred_Hour>
+        <Day>Thursday</Day>
+        <Hour>18:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Thursday</Preferred_Day>
-        <Preferred_Hour>19:00</Preferred_Hour>
+        <Day>Thursday</Day>
+        <Hour>19:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Friday</Preferred_Day>
-        <Preferred_Hour>08:00</Preferred_Hour>
+        <Day>Friday</Day>
+        <Hour>08:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Friday</Preferred_Day>
-        <Preferred_Hour>09:00</Preferred_Hour>
+        <Day>Friday</Day>
+        <Hour>09:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Friday</Preferred_Day>
-        <Preferred_Hour>10:00</Preferred_Hour>
+        <Day>Friday</Day>
+        <Hour>10:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Friday</Preferred_Day>
-        <Preferred_Hour>11:00</Preferred_Hour>
+        <Day>Friday</Day>
+        <Hour>11:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Friday</Preferred_Day>
-        <Preferred_Hour>12:00</Preferred_Hour>
+        <Day>Friday</Day>
+        <Hour>12:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Friday</Preferred_Day>
-        <Preferred_Hour>13:00</Preferred_Hour>
+        <Day>Friday</Day>
+        <Hour>13:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Friday</Preferred_Day>
-        <Preferred_Hour>14:00</Preferred_Hour>
+        <Day>Friday</Day>
+        <Hour>14:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Friday</Preferred_Day>
-        <Preferred_Hour>15:00</Preferred_Hour>
+        <Day>Friday</Day>
+        <Hour>15:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Friday</Preferred_Day>
-        <Preferred_Hour>16:00</Preferred_Hour>
+        <Day>Friday</Day>
+        <Hour>16:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Friday</Preferred_Day>
-        <Preferred_Hour>17:00</Preferred_Hour>
+        <Day>Friday</Day>
+        <Hour>17:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Friday</Preferred_Day>
-        <Preferred_Hour>18:00</Preferred_Hour>
+        <Day>Friday</Day>
+        <Hour>18:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Friday</Preferred_Day>
-        <Preferred_Hour>19:00</Preferred_Hour>
+        <Day>Friday</Day>
+        <Hour>19:00</Hour>
       </Preferred_Time_Slot>
       <Active>true</Active>
       <Comments></Comments>
@@ -1225,232 +1225,232 @@
       <Duration>1</Duration>
       <Number_of_Preferred_Starting_Times>57</Number_of_Preferred_Starting_Times>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Monday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+        <Day>Monday</Day>
+        <Hour>08:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Monday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+        <Day>Monday</Day>
+        <Hour>09:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Monday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+        <Day>Monday</Day>
+        <Hour>10:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Monday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+        <Day>Monday</Day>
+        <Hour>11:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Monday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>12:00</Preferred_Starting_Hour>
+        <Day>Monday</Day>
+        <Hour>12:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Monday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>13:00</Preferred_Starting_Hour>
+        <Day>Monday</Day>
+        <Hour>13:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Monday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>14:00</Preferred_Starting_Hour>
+        <Day>Monday</Day>
+        <Hour>14:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Monday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>15:00</Preferred_Starting_Hour>
+        <Day>Monday</Day>
+        <Hour>15:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Monday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>16:00</Preferred_Starting_Hour>
+        <Day>Monday</Day>
+        <Hour>16:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Monday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>17:00</Preferred_Starting_Hour>
+        <Day>Monday</Day>
+        <Hour>17:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Monday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>18:00</Preferred_Starting_Hour>
+        <Day>Monday</Day>
+        <Hour>18:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Monday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>19:00</Preferred_Starting_Hour>
+        <Day>Monday</Day>
+        <Hour>19:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+        <Day>Tuesday</Day>
+        <Hour>08:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+        <Day>Tuesday</Day>
+        <Hour>09:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+        <Day>Tuesday</Day>
+        <Hour>10:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+        <Day>Tuesday</Day>
+        <Hour>11:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>12:00</Preferred_Starting_Hour>
+        <Day>Tuesday</Day>
+        <Hour>12:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>13:00</Preferred_Starting_Hour>
+        <Day>Tuesday</Day>
+        <Hour>13:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>14:00</Preferred_Starting_Hour>
+        <Day>Tuesday</Day>
+        <Hour>14:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>15:00</Preferred_Starting_Hour>
+        <Day>Tuesday</Day>
+        <Hour>15:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>16:00</Preferred_Starting_Hour>
+        <Day>Tuesday</Day>
+        <Hour>16:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>17:00</Preferred_Starting_Hour>
+        <Day>Tuesday</Day>
+        <Hour>17:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>18:00</Preferred_Starting_Hour>
+        <Day>Tuesday</Day>
+        <Hour>18:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>19:00</Preferred_Starting_Hour>
+        <Day>Tuesday</Day>
+        <Hour>19:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+        <Day>Wednesday</Day>
+        <Hour>08:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+        <Day>Wednesday</Day>
+        <Hour>09:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+        <Day>Wednesday</Day>
+        <Hour>10:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>14:00</Preferred_Starting_Hour>
+        <Day>Wednesday</Day>
+        <Hour>14:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>15:00</Preferred_Starting_Hour>
+        <Day>Wednesday</Day>
+        <Hour>15:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>16:00</Preferred_Starting_Hour>
+        <Day>Wednesday</Day>
+        <Hour>16:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>17:00</Preferred_Starting_Hour>
+        <Day>Wednesday</Day>
+        <Hour>17:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>18:00</Preferred_Starting_Hour>
+        <Day>Wednesday</Day>
+        <Hour>18:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>19:00</Preferred_Starting_Hour>
+        <Day>Wednesday</Day>
+        <Hour>19:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+        <Day>Thursday</Day>
+        <Hour>08:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+        <Day>Thursday</Day>
+        <Hour>09:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+        <Day>Thursday</Day>
+        <Hour>10:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+        <Day>Thursday</Day>
+        <Hour>11:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>12:00</Preferred_Starting_Hour>
+        <Day>Thursday</Day>
+        <Hour>12:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>13:00</Preferred_Starting_Hour>
+        <Day>Thursday</Day>
+        <Hour>13:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>14:00</Preferred_Starting_Hour>
+        <Day>Thursday</Day>
+        <Hour>14:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>15:00</Preferred_Starting_Hour>
+        <Day>Thursday</Day>
+        <Hour>15:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>16:00</Preferred_Starting_Hour>
+        <Day>Thursday</Day>
+        <Hour>16:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>17:00</Preferred_Starting_Hour>
+        <Day>Thursday</Day>
+        <Hour>17:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>18:00</Preferred_Starting_Hour>
+        <Day>Thursday</Day>
+        <Hour>18:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>19:00</Preferred_Starting_Hour>
+        <Day>Thursday</Day>
+        <Hour>19:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Friday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+        <Day>Friday</Day>
+        <Hour>08:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Friday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+        <Day>Friday</Day>
+        <Hour>09:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Friday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+        <Day>Friday</Day>
+        <Hour>10:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Friday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+        <Day>Friday</Day>
+        <Hour>11:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Friday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>12:00</Preferred_Starting_Hour>
+        <Day>Friday</Day>
+        <Hour>12:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Friday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>13:00</Preferred_Starting_Hour>
+        <Day>Friday</Day>
+        <Hour>13:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Friday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>14:00</Preferred_Starting_Hour>
+        <Day>Friday</Day>
+        <Hour>14:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Friday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>15:00</Preferred_Starting_Hour>
+        <Day>Friday</Day>
+        <Hour>15:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Friday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>16:00</Preferred_Starting_Hour>
+        <Day>Friday</Day>
+        <Hour>16:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Friday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>17:00</Preferred_Starting_Hour>
+        <Day>Friday</Day>
+        <Hour>17:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Friday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>18:00</Preferred_Starting_Hour>
+        <Day>Friday</Day>
+        <Hour>18:00</Hour>
       </Preferred_Starting_Time>
       <Preferred_Starting_Time>
-        <Preferred_Starting_Day>Friday</Preferred_Starting_Day>
-        <Preferred_Starting_Hour>19:00</Preferred_Starting_Hour>
+        <Day>Friday</Day>
+        <Hour>19:00</Hour>
       </Preferred_Starting_Time>
       <Active>true</Active>
       <Comments></Comments>
@@ -1465,12 +1465,12 @@
       <Duration></Duration>
       <Number_of_Preferred_Time_Slots>2</Number_of_Preferred_Time_Slots>
       <Preferred_Time_Slot>
-        <Preferred_Day>Monday</Preferred_Day>
-        <Preferred_Hour>11:00</Preferred_Hour>
+        <Day>Monday</Day>
+        <Hour>11:00</Hour>
       </Preferred_Time_Slot>
       <Preferred_Time_Slot>
-        <Preferred_Day>Tuesday</Preferred_Day>
-        <Preferred_Hour>11:00</Preferred_Hour>
+        <Day>Tuesday</Day>
+        <Hour>11:00</Hour>
       </Preferred_Time_Slot>
       <Active>true</Active>
       <Comments></Comments>
@@ -1666,76 +1666,76 @@
       <Activity_Id>5</Activity_Id>
       <Number_of_Selected_Time_Slots>18</Number_of_Selected_Time_Slots>
       <Selected_Time_Slot>
-        <Selected_Day>Monday</Selected_Day>
-        <Selected_Hour>08:00</Selected_Hour>
+        <Day>Monday</Day>
+        <Hour>08:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Monday</Selected_Day>
-        <Selected_Hour>09:00</Selected_Hour>
+        <Day>Monday</Day>
+        <Hour>09:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Monday</Selected_Day>
-        <Selected_Hour>10:00</Selected_Hour>
+        <Day>Monday</Day>
+        <Hour>10:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Monday</Selected_Day>
-        <Selected_Hour>11:00</Selected_Hour>
+        <Day>Monday</Day>
+        <Hour>11:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Monday</Selected_Day>
-        <Selected_Hour>12:00</Selected_Hour>
+        <Day>Monday</Day>
+        <Hour>12:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Monday</Selected_Day>
-        <Selected_Hour>13:00</Selected_Hour>
+        <Day>Monday</Day>
+        <Hour>13:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Monday</Selected_Day>
-        <Selected_Hour>14:00</Selected_Hour>
+        <Day>Monday</Day>
+        <Hour>14:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Monday</Selected_Day>
-        <Selected_Hour>15:00</Selected_Hour>
+        <Day>Monday</Day>
+        <Hour>15:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Monday</Selected_Day>
-        <Selected_Hour>16:00</Selected_Hour>
+        <Day>Monday</Day>
+        <Hour>16:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Monday</Selected_Day>
-        <Selected_Hour>17:00</Selected_Hour>
+        <Day>Monday</Day>
+        <Hour>17:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Monday</Selected_Day>
-        <Selected_Hour>18:00</Selected_Hour>
+        <Day>Monday</Day>
+        <Hour>18:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Monday</Selected_Day>
-        <Selected_Hour>19:00</Selected_Hour>
+        <Day>Monday</Day>
+        <Hour>19:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Tuesday</Selected_Day>
-        <Selected_Hour>08:00</Selected_Hour>
+        <Day>Tuesday</Day>
+        <Hour>08:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Tuesday</Selected_Day>
-        <Selected_Hour>13:00</Selected_Hour>
+        <Day>Tuesday</Day>
+        <Hour>13:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Wednesday</Selected_Day>
-        <Selected_Hour>08:00</Selected_Hour>
+        <Day>Wednesday</Day>
+        <Hour>08:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Wednesday</Selected_Day>
-        <Selected_Hour>13:00</Selected_Hour>
+        <Day>Wednesday</Day>
+        <Hour>13:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Thursday</Selected_Day>
-        <Selected_Hour>08:00</Selected_Hour>
+        <Day>Thursday</Day>
+        <Hour>08:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Friday</Selected_Day>
-        <Selected_Hour>08:00</Selected_Hour>
+        <Day>Friday</Day>
+        <Hour>08:00</Hour>
       </Selected_Time_Slot>
       <Max_Number_of_Occupied_Time_Slots>2</Max_Number_of_Occupied_Time_Slots>
       <Active>true</Active>
@@ -1749,32 +1749,32 @@
       <Activity_Id>3</Activity_Id>
       <Number_of_Selected_Time_Slots>7</Number_of_Selected_Time_Slots>
       <Selected_Time_Slot>
-        <Selected_Day>Monday</Selected_Day>
-        <Selected_Hour>10:00</Selected_Hour>
+        <Day>Monday</Day>
+        <Hour>10:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Monday</Selected_Day>
-        <Selected_Hour>11:00</Selected_Hour>
+        <Day>Monday</Day>
+        <Hour>11:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Tuesday</Selected_Day>
-        <Selected_Hour>10:00</Selected_Hour>
+        <Day>Tuesday</Day>
+        <Hour>10:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Tuesday</Selected_Day>
-        <Selected_Hour>11:00</Selected_Hour>
+        <Day>Tuesday</Day>
+        <Hour>11:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Wednesday</Selected_Day>
-        <Selected_Hour>10:00</Selected_Hour>
+        <Day>Wednesday</Day>
+        <Hour>10:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Thursday</Selected_Day>
-        <Selected_Hour>10:00</Selected_Hour>
+        <Day>Thursday</Day>
+        <Hour>10:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Friday</Selected_Day>
-        <Selected_Hour>10:00</Selected_Hour>
+        <Day>Friday</Day>
+        <Hour>10:00</Hour>
       </Selected_Time_Slot>
       <Max_Number_of_Simultaneous_Activities>3</Max_Number_of_Simultaneous_Activities>
       <Active>true</Active>
@@ -1911,28 +1911,28 @@
       <Activity_Id>5</Activity_Id>
       <Number_of_Selected_Time_Slots>6</Number_of_Selected_Time_Slots>
       <Selected_Time_Slot>
-        <Selected_Day>Monday</Selected_Day>
-        <Selected_Hour>08:00</Selected_Hour>
+        <Day>Monday</Day>
+        <Hour>08:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Monday</Selected_Day>
-        <Selected_Hour>09:00</Selected_Hour>
+        <Day>Monday</Day>
+        <Hour>09:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Monday</Selected_Day>
-        <Selected_Hour>10:00</Selected_Hour>
+        <Day>Monday</Day>
+        <Hour>10:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Tuesday</Selected_Day>
-        <Selected_Hour>08:00</Selected_Hour>
+        <Day>Tuesday</Day>
+        <Hour>08:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Tuesday</Selected_Day>
-        <Selected_Hour>09:00</Selected_Hour>
+        <Day>Tuesday</Day>
+        <Hour>09:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Tuesday</Selected_Day>
-        <Selected_Hour>10:00</Selected_Hour>
+        <Day>Tuesday</Day>
+        <Hour>10:00</Hour>
       </Selected_Time_Slot>
       <Min_Number_of_Occupied_Time_Slots>3</Min_Number_of_Occupied_Time_Slots>
       <Active>true</Active>
@@ -1946,16 +1946,16 @@
       <Activity_Id>8</Activity_Id>
       <Number_of_Selected_Time_Slots>3</Number_of_Selected_Time_Slots>
       <Selected_Time_Slot>
-        <Selected_Day>Monday</Selected_Day>
-        <Selected_Hour>08:00</Selected_Hour>
+        <Day>Monday</Day>
+        <Hour>08:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Tuesday</Selected_Day>
-        <Selected_Hour>08:00</Selected_Hour>
+        <Day>Tuesday</Day>
+        <Hour>08:00</Hour>
       </Selected_Time_Slot>
       <Selected_Time_Slot>
-        <Selected_Day>Wednesday</Selected_Day>
-        <Selected_Hour>08:00</Selected_Hour>
+        <Day>Wednesday</Day>
+        <Hour>08:00</Hour>
       </Selected_Time_Slot>
       <Min_Number_of_Simultaneous_Activities>2</Min_Number_of_Simultaneous_Activities>
       <Allow_Empty_Slots>true</Allow_Empty_Slots>
@@ -1967,7 +1967,7 @@
       <Teacher>t1</Teacher>
       <Activity_Tag>at1</Activity_Tag>
       <Minimum_Hours_Daily>2</Minimum_Hours_Daily>
-      <Allow_Empty_Days>true</Allow_Empty_Days>
+      <Minimum_Days_With_Tag>0</Minimum_Days_With_Tag>
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintTeacherActivityTagMinHoursDaily>
@@ -1975,16 +1975,16 @@
       <Weight_Percentage>100</Weight_Percentage>
       <Activity_Tag>at1</Activity_Tag>
       <Minimum_Hours_Daily>3</Minimum_Hours_Daily>
-      <Allow_Empty_Days>false</Allow_Empty_Days>
+      <Minimum_Days_With_Tag>5</Minimum_Days_With_Tag>
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintTeachersActivityTagMinHoursDaily>
     <ConstraintStudentsSetActivityTagMinHoursDaily>
       <Weight_Percentage>100</Weight_Percentage>
-      <Minimum_Hours_Daily>2</Minimum_Hours_Daily>
-      <Allow_Empty_Days>true</Allow_Empty_Days>
       <Students>y1</Students>
       <Activity_Tag>at1</Activity_Tag>
+      <Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+      <Minimum_Days_With_Tag>0</Minimum_Days_With_Tag>
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintStudentsSetActivityTagMinHoursDaily>
@@ -1992,7 +1992,7 @@
       <Weight_Percentage>100</Weight_Percentage>
       <Activity_Tag>at1</Activity_Tag>
       <Minimum_Hours_Daily>1</Minimum_Hours_Daily>
-      <Allow_Empty_Days>false</Allow_Empty_Days>
+      <Minimum_Days_With_Tag>5</Minimum_Days_With_Tag>
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintStudentsActivityTagMinHoursDaily>

@@ -1120,7 +1120,7 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersActivityTag
 	stream<<tc.active;
 	stream<<tc.comments;
 
-	stream<<tc.activityTagName<<tc.minHoursDaily<<tc.allowEmptyDays;
+	stream<<tc.activityTagName<<tc.minHoursDaily<<tc.minDaysWithTag;
 
 	return stream;
 }
@@ -1133,7 +1133,7 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherActivityTagM
 	stream<<tc.active;
 	stream<<tc.comments;
 
-	stream<<tc.activityTagName<<tc.minHoursDaily<<tc.allowEmptyDays<<tc.teacherName;
+	stream<<tc.activityTagName<<tc.minHoursDaily<<tc.minDaysWithTag<<tc.teacherName;
 
 	return stream;
 }
@@ -1146,7 +1146,7 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsActivityTag
 	stream<<tc.active;
 	stream<<tc.comments;
 
-	stream<<tc.activityTagName<<tc.minHoursDaily<<tc.allowEmptyDays;
+	stream<<tc.activityTagName<<tc.minHoursDaily<<tc.minDaysWithTag;
 
 	return stream;
 }
@@ -1159,7 +1159,7 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetActivity
 	stream<<tc.active;
 	stream<<tc.comments;
 
-	stream<<tc.activityTagName<<tc.minHoursDaily<<tc.allowEmptyDays<<tc.students;
+	stream<<tc.activityTagName<<tc.minHoursDaily<<tc.minDaysWithTag<<tc.students;
 
 	return stream;
 }
@@ -4104,7 +4104,7 @@ QDataStream& operator>>(QDataStream& stream, ConstraintTeachersActivityTagMinHou
 	stream>>tc.active;
 	stream>>tc.comments;
 
-	stream>>tc.activityTagName>>tc.minHoursDaily>>tc.allowEmptyDays;
+	stream>>tc.activityTagName>>tc.minHoursDaily>>tc.minDaysWithTag;
 
 	return stream;
 }
@@ -4117,7 +4117,7 @@ QDataStream& operator>>(QDataStream& stream, ConstraintTeacherActivityTagMinHour
 	stream>>tc.active;
 	stream>>tc.comments;
 
-	stream>>tc.activityTagName>>tc.minHoursDaily>>tc.allowEmptyDays>>tc.teacherName;
+	stream>>tc.activityTagName>>tc.minHoursDaily>>tc.minDaysWithTag>>tc.teacherName;
 
 	return stream;
 }
@@ -4130,7 +4130,7 @@ QDataStream& operator>>(QDataStream& stream, ConstraintStudentsActivityTagMinHou
 	stream>>tc.active;
 	stream>>tc.comments;
 
-	stream>>tc.activityTagName>>tc.minHoursDaily>>tc.allowEmptyDays;
+	stream>>tc.activityTagName>>tc.minHoursDaily>>tc.minDaysWithTag;
 
 	return stream;
 }
@@ -4143,7 +4143,7 @@ QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetActivityTagMin
 	stream>>tc.active;
 	stream>>tc.comments;
 
-	stream>>tc.activityTagName>>tc.minHoursDaily>>tc.allowEmptyDays>>tc.students;
+	stream>>tc.activityTagName>>tc.minHoursDaily>>tc.minDaysWithTag>>tc.students;
 
 	return stream;
 }
@@ -18258,9 +18258,9 @@ QString ConstraintActivityPreferredStartingTime::getXmlDescription(Rules& r)
 	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+=IL3+"<Activity_Id>"+CustomFETString::number(this->activityId)+"</Activity_Id>\n";
 	if(this->day>=0)
-		s+=IL3+"<Preferred_Day>"+protect(r.daysOfTheWeek[this->day])+"</Preferred_Day>\n";
+		s+=IL3+"<Day>"+protect(r.daysOfTheWeek[this->day])+"</Day>\n";
 	if(this->hour>=0)
-		s+=IL3+"<Preferred_Hour>"+protect(r.hoursOfTheDay[this->hour])+"</Preferred_Hour>\n";
+		s+=IL3+"<Hour>"+protect(r.hoursOfTheDay[this->hour])+"</Hour>\n";
 	s+=IL3+"<Permanently_Locked>";s+=trueFalse(this->permanentlyLocked);s+="</Permanently_Locked>\n";
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
 	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
@@ -18531,9 +18531,9 @@ QString ConstraintActivityPreferredTimeSlots::getXmlDescription(Rules& r)
 	for(int i=0; i<p_nPreferredTimeSlots_L; i++){
 		s+=IL3+"<Preferred_Time_Slot>\n";
 		if(this->p_days_L[i]>=0)
-			s+=IL4+"<Preferred_Day>"+protect(r.daysOfTheWeek[this->p_days_L[i]])+"</Preferred_Day>\n";
+			s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->p_days_L[i]])+"</Day>\n";
 		if(this->p_hours_L[i]>=0)
-			s+=IL4+"<Preferred_Hour>"+protect(r.hoursOfTheDay[this->p_hours_L[i]])+"</Preferred_Hour>\n";
+			s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->p_hours_L[i]])+"</Hour>\n";
 		s+=IL3+"</Preferred_Time_Slot>\n";
 	}
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
@@ -18949,9 +18949,9 @@ QString ConstraintActivitiesPreferredTimeSlots::getXmlDescription(Rules& r)
 	for(int i=0; i<p_nPreferredTimeSlots_L; i++){
 		s+=IL3+"<Preferred_Time_Slot>\n";
 		if(this->p_days_L[i]>=0)
-			s+=IL4+"<Preferred_Day>"+protect(r.daysOfTheWeek[this->p_days_L[i]])+"</Preferred_Day>\n";
+			s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->p_days_L[i]])+"</Day>\n";
 		if(this->p_hours_L[i]>=0)
-			s+=IL4+"<Preferred_Hour>"+protect(r.hoursOfTheDay[this->p_hours_L[i]])+"</Preferred_Hour>\n";
+			s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->p_hours_L[i]])+"</Hour>\n";
 		s+=IL3+"</Preferred_Time_Slot>\n";
 	}
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
@@ -19456,9 +19456,9 @@ QString ConstraintSubactivitiesPreferredTimeSlots::getXmlDescription(Rules& r)
 	for(int i=0; i<p_nPreferredTimeSlots_L; i++){
 		s+=IL3+"<Preferred_Time_Slot>\n";
 		if(this->p_days_L[i]>=0)
-			s+=IL4+"<Preferred_Day>"+protect(r.daysOfTheWeek[this->p_days_L[i]])+"</Preferred_Day>\n";
+			s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->p_days_L[i]])+"</Day>\n";
 		if(this->p_hours_L[i]>=0)
-			s+=IL4+"<Preferred_Hour>"+protect(r.hoursOfTheDay[this->p_hours_L[i]])+"</Preferred_Hour>\n";
+			s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->p_hours_L[i]])+"</Hour>\n";
 		s+=IL3+"</Preferred_Time_Slot>\n";
 	}
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
@@ -19863,9 +19863,9 @@ QString ConstraintActivityPreferredStartingTimes::getXmlDescription(Rules& r)
 	for(int i=0; i<nPreferredStartingTimes_L; i++){
 		s+=IL3+"<Preferred_Starting_Time>\n";
 		if(this->days_L[i]>=0)
-			s+=IL4+"<Preferred_Starting_Day>"+protect(r.daysOfTheWeek[this->days_L[i]])+"</Preferred_Starting_Day>\n";
+			s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->days_L[i]])+"</Day>\n";
 		if(this->hours_L[i]>=0)
-			s+=IL4+"<Preferred_Starting_Hour>"+protect(r.hoursOfTheDay[this->hours_L[i]])+"</Preferred_Starting_Hour>\n";
+			s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->hours_L[i]])+"</Hour>\n";
 		s+=IL3+"</Preferred_Starting_Time>\n";
 	}
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
@@ -20267,9 +20267,9 @@ QString ConstraintActivitiesPreferredStartingTimes::getXmlDescription(Rules& r)
 	for(int i=0; i<nPreferredStartingTimes_L; i++){
 		s+=IL3+"<Preferred_Starting_Time>\n";
 		if(this->days_L[i]>=0)
-			s+=IL4+"<Preferred_Starting_Day>"+protect(r.daysOfTheWeek[this->days_L[i]])+"</Preferred_Starting_Day>\n";
+			s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->days_L[i]])+"</Day>\n";
 		if(this->hours_L[i]>=0)
-			s+=IL4+"<Preferred_Starting_Hour>"+protect(r.hoursOfTheDay[this->hours_L[i]])+"</Preferred_Starting_Hour>\n";
+			s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->hours_L[i]])+"</Hour>\n";
 		s+=IL3+"</Preferred_Starting_Time>\n";
 	}
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
@@ -20763,9 +20763,9 @@ QString ConstraintSubactivitiesPreferredStartingTimes::getXmlDescription(Rules& 
 	for(int i=0; i<nPreferredStartingTimes_L; i++){
 		s+=IL3+"<Preferred_Starting_Time>\n";
 		if(this->days_L[i]>=0)
-			s+=IL4+"<Preferred_Starting_Day>"+protect(r.daysOfTheWeek[this->days_L[i]])+"</Preferred_Starting_Day>\n";
+			s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->days_L[i]])+"</Day>\n";
 		if(this->hours_L[i]>=0)
-			s+=IL4+"<Preferred_Starting_Hour>"+protect(r.hoursOfTheDay[this->hours_L[i]])+"</Preferred_Starting_Hour>\n";
+			s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->hours_L[i]])+"</Hour>\n";
 		s+=IL3+"</Preferred_Starting_Time>\n";
 	}
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
@@ -27602,12 +27602,12 @@ ConstraintTeachersActivityTagMinHoursDaily::ConstraintTeachersActivityTagMinHour
 	this->type=CONSTRAINT_TEACHERS_ACTIVITY_TAG_MIN_HOURS_DAILY;
 }
 
-ConstraintTeachersActivityTagMinHoursDaily::ConstraintTeachersActivityTagMinHoursDaily(double wp, int minhours, bool allowemptydays, const QString& activityTag)
+ConstraintTeachersActivityTagMinHoursDaily::ConstraintTeachersActivityTagMinHoursDaily(double wp, int minhours, int mindays, const QString& activityTag)
  : TimeConstraint(wp)
  {
 	assert(minhours>0);
 	this->minHoursDaily=minhours;
-	this->allowEmptyDays=allowemptydays;
+	this->minDaysWithTag=mindays;
 	this->activityTagName=activityTag;
 
 	this->type=CONSTRAINT_TEACHERS_ACTIVITY_TAG_MIN_HOURS_DAILY;
@@ -27654,10 +27654,7 @@ QString ConstraintTeachersActivityTagMinHoursDaily::getXmlDescription(Rules& r)
 	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+=IL3+"<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
 	s+=IL3+"<Minimum_Hours_Daily>"+CustomFETString::number(this->minHoursDaily)+"</Minimum_Hours_Daily>\n";
-	if(this->allowEmptyDays)
-		s+=IL3+"<Allow_Empty_Days>true</Allow_Empty_Days>\n";
-	else
-		s+=IL3+"<Allow_Empty_Days>false</Allow_Empty_Days>\n";
+	s+=IL3+"<Minimum_Days_With_Tag>"+CustomFETString::number(this->minDaysWithTag)+"</Minimum_Days_With_Tag>\n";
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
 	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
 	s+=IL2+"</ConstraintTeachersActivityTagMinHoursDaily>\n";
@@ -27678,7 +27675,7 @@ QString ConstraintTeachersActivityTagMinHoursDaily::getDescription(Rules& r)
 		
 	QString s;
 	s+=tr("Teachers for activity tag %1 have min %2 hours daily").arg(this->activityTagName).arg(this->minHoursDaily);s+=", ";
-	s+=tr("AED:%1", "Allow empty days").arg(yesNoTranslated(this->allowEmptyDays));s+=", ";
+	s+=tr("mDWT:%1", "Min days with tag").arg(this->minDaysWithTag);s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -27693,7 +27690,7 @@ QString ConstraintTeachersActivityTagMinHoursDaily::getDetailedDescription(Rules
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Activity tag=%1").arg(this->activityTagName); s+="\n";
 	s+=tr("Minimum hours daily=%1").arg(this->minHoursDaily); s+="\n";
-	s+=tr("Allow empty days=%1").arg(yesNoTranslated(this->allowEmptyDays));s+="\n";
+	s+=tr("Minimum days with tag=%1").arg(this->minDaysWithTag);s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -27730,7 +27727,7 @@ double ConstraintTeachersActivityTagMinHoursDaily::fitness(Solution& c, Rules& r
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtTeacherTimetableActivityTag[d][h]=-1;
-				
+		
 		for(int ai : std::as_const(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
@@ -27741,15 +27738,18 @@ double ConstraintTeachersActivityTagMinHoursDaily::fitness(Solution& c, Rules& r
 					crtTeacherTimetableActivityTag[d][h+dur]=this->activityTagIndex;
 			}
 		}
-	
+		
+		int nrd = r.nDaysPerWeek - this->minDaysWithTag;
 		for(int d=0; d<r.nDaysPerWeek; d++){
 			int nd=0;
 			for(int h=0; h<r.nHoursPerDay; h++)
 				if(crtTeacherTimetableActivityTag[d][h]==this->activityTagIndex)
 					nd++;
 
-			if(nd==0 && this->allowEmptyDays)
+			if(nd==0 && nrd>0){
+				nrd--;
 				continue;
+			}
 			if(nd<this->minHoursDaily){
 				nbroken++;
 
@@ -27820,7 +27820,10 @@ bool ConstraintTeachersActivityTagMinHoursDaily::hasWrongDayOrHour(Rules& r)
 {
 	if(minHoursDaily>r.nHoursPerDay)
 		return true;
-		
+	
+	if(minDaysWithTag>r.nDaysPerWeek)
+		return true;
+	
 	return false;
 }
 
@@ -27837,7 +27840,10 @@ bool ConstraintTeachersActivityTagMinHoursDaily::repairWrongDayOrHour(Rules& r)
 	
 	if(minHoursDaily>r.nHoursPerDay)
 		minHoursDaily=r.nHoursPerDay;
-
+	
+	if(minDaysWithTag>r.nDaysPerWeek)
+		minDaysWithTag=r.nDaysPerWeek;
+	
 	return true;
 }
 
@@ -27850,12 +27856,12 @@ ConstraintTeacherActivityTagMinHoursDaily::ConstraintTeacherActivityTagMinHoursD
 	this->type=CONSTRAINT_TEACHER_ACTIVITY_TAG_MIN_HOURS_DAILY;
 }
 
-ConstraintTeacherActivityTagMinHoursDaily::ConstraintTeacherActivityTagMinHoursDaily(double wp, int minhours, bool allowemptydays, const QString& teacher, const QString& activityTag)
+ConstraintTeacherActivityTagMinHoursDaily::ConstraintTeacherActivityTagMinHoursDaily(double wp, int minhours, int mindays, const QString& teacher, const QString& activityTag)
  : TimeConstraint(wp)
  {
 	assert(minhours>0);
 	this->minHoursDaily=minhours;
-	this->allowEmptyDays=allowemptydays;
+	this->minDaysWithTag=mindays;
 	this->teacherName=teacher;
 	this->activityTagName=activityTag;
 
@@ -27907,10 +27913,7 @@ QString ConstraintTeacherActivityTagMinHoursDaily::getXmlDescription(Rules& r)
 	s+=IL3+"<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+=IL3+"<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
 	s+=IL3+"<Minimum_Hours_Daily>"+CustomFETString::number(this->minHoursDaily)+"</Minimum_Hours_Daily>\n";
-	if(this->allowEmptyDays)
-		s+=IL3+"<Allow_Empty_Days>true</Allow_Empty_Days>\n";
-	else
-		s+=IL3+"<Allow_Empty_Days>false</Allow_Empty_Days>\n";
+	s+=IL3+"<Minimum_Days_With_Tag>"+CustomFETString::number(this->minDaysWithTag)+"</Minimum_Days_With_Tag>\n";
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
 	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
 	s+=IL2+"</ConstraintTeacherActivityTagMinHoursDaily>\n";
@@ -27931,7 +27934,7 @@ QString ConstraintTeacherActivityTagMinHoursDaily::getDescription(Rules& r)
 		
 	QString s;
 	s+=tr("Teacher %1 for activity tag %2 has min %3 hours daily").arg(this->teacherName).arg(this->activityTagName).arg(this->minHoursDaily);s+=", ";
-	s+=tr("AED:%1", "Allow empty days").arg(yesNoTranslated(this->allowEmptyDays));s+=", ";
+	s+=tr("mDWT:%1", "Min days with tag").arg(this->minDaysWithTag);s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -27947,7 +27950,7 @@ QString ConstraintTeacherActivityTagMinHoursDaily::getDetailedDescription(Rules&
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 	s+=tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
 	s+=tr("Minimum hours daily=%1").arg(this->minHoursDaily); s+="\n";
-	s+=tr("Allow empty days=%1").arg(yesNoTranslated(this->allowEmptyDays));s+="\n";
+	s+=tr("Minimum days with tag=%1").arg(this->minDaysWithTag);s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -27996,14 +27999,17 @@ double ConstraintTeacherActivityTagMinHoursDaily::fitness(Solution& c, Rules& r,
 			}
 		}
 	
+		int nrd = r.nDaysPerWeek - this->minDaysWithTag;
 		for(int d=0; d<r.nDaysPerWeek; d++){
 			int nd=0;
 			for(int h=0; h<r.nHoursPerDay; h++)
 				if(crtTeacherTimetableActivityTag[d][h]==this->activityTagIndex)
 					nd++;
 
-			if(nd==0 && this->allowEmptyDays)
+			if(nd==0 && nrd>0){
+				nrd--;
 				continue;
+			}
 			if(nd<this->minHoursDaily){
 				nbroken++;
 
@@ -28074,7 +28080,10 @@ bool ConstraintTeacherActivityTagMinHoursDaily::hasWrongDayOrHour(Rules& r)
 {
 	if(minHoursDaily>r.nHoursPerDay)
 		return true;
-		
+
+	if(minDaysWithTag>r.nDaysPerWeek)
+		return true;
+
 	return false;
 }
 
@@ -28092,6 +28101,9 @@ bool ConstraintTeacherActivityTagMinHoursDaily::repairWrongDayOrHour(Rules& r)
 	if(minHoursDaily>r.nHoursPerDay)
 		minHoursDaily=r.nHoursPerDay;
 
+	if(minDaysWithTag>r.nDaysPerWeek)
+		minDaysWithTag=r.nDaysPerWeek;
+
 	return true;
 }
 
@@ -28105,11 +28117,11 @@ ConstraintStudentsActivityTagMinHoursDaily::ConstraintStudentsActivityTagMinHour
 	this->minHoursDaily = -1;
 }
 
-ConstraintStudentsActivityTagMinHoursDaily::ConstraintStudentsActivityTagMinHoursDaily(double wp, int minnh, bool allowemptydays, const QString& activityTag)
+ConstraintStudentsActivityTagMinHoursDaily::ConstraintStudentsActivityTagMinHoursDaily(double wp, int minnh, int mindays, const QString& activityTag)
 	: TimeConstraint(wp)
 {
 	this->minHoursDaily = minnh;
-	this->allowEmptyDays=allowemptydays;
+	this->minDaysWithTag=mindays;
 	this->activityTagName=activityTag;
 	this->type = CONSTRAINT_STUDENTS_ACTIVITY_TAG_MIN_HOURS_DAILY;
 }
@@ -28160,10 +28172,9 @@ QString ConstraintStudentsActivityTagMinHoursDaily::getXmlDescription(Rules& r)
 		s+=IL3+"<Minimum_Hours_Daily>"+CustomFETString::number(this->minHoursDaily)+"</Minimum_Hours_Daily>\n";
 	else
 		assert(0);
-	if(this->allowEmptyDays)
-		s+=IL3+"<Allow_Empty_Days>true</Allow_Empty_Days>\n";
-	else
-		s+=IL3+"<Allow_Empty_Days>false</Allow_Empty_Days>\n";
+
+	s+=IL3+"<Minimum_Days_With_Tag>"+CustomFETString::number(this->minDaysWithTag)+"</Minimum_Days_With_Tag>\n";
+
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
 	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
 	s+=IL2+"</ConstraintStudentsActivityTagMinHoursDaily>\n";
@@ -28185,7 +28196,7 @@ QString ConstraintStudentsActivityTagMinHoursDaily::getDescription(Rules& r)
 	QString s;
 	s+=tr("Students for activity tag %1 have min %2 hours daily")
 		.arg(this->activityTagName).arg(this->minHoursDaily); s+=", ";
-	s+=tr("AED:%1", "Allow empty days").arg(yesNoTranslated(this->allowEmptyDays));s+=", ";
+	s+=tr("mDWT:%1", "Min days with tag").arg(this->minDaysWithTag);s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -28200,7 +28211,7 @@ QString ConstraintStudentsActivityTagMinHoursDaily::getDetailedDescription(Rules
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
 	s+=tr("Minimum hours daily=%1").arg(this->minHoursDaily);s+="\n";
-	s+=tr("Allow empty days=%1").arg(yesNoTranslated(this->allowEmptyDays));s+="\n";
+	s+=tr("Minimum days with tag=%1").arg(this->minDaysWithTag);s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -28249,14 +28260,17 @@ double ConstraintStudentsActivityTagMinHoursDaily::fitness(Solution& c, Rules& r
 			}
 		}
 
+		int nrd = r.nDaysPerWeek - this->minDaysWithTag;
 		for(int d=0; d<r.nDaysPerWeek; d++){
 			int nd=0;
 			for(int h=0; h<r.nHoursPerDay; h++)
 				if(crtSubgroupTimetableActivityTag[d][h]==this->activityTagIndex)
 					nd++;
 				
-			if(nd==0 && this->allowEmptyDays)
+			if(nd==0 && nrd>0){
+				nrd--;
 				continue;
+			}
 			if(nd<this->minHoursDaily){
 				nbroken++;
 
@@ -28328,7 +28342,10 @@ bool ConstraintStudentsActivityTagMinHoursDaily::hasWrongDayOrHour(Rules& r)
 {
 	if(minHoursDaily>r.nHoursPerDay)
 		return true;
-		
+	
+	if(minDaysWithTag>r.nDaysPerWeek)
+		return true;
+	
 	return false;
 }
 
@@ -28346,6 +28363,9 @@ bool ConstraintStudentsActivityTagMinHoursDaily::repairWrongDayOrHour(Rules& r)
 	if(minHoursDaily>r.nHoursPerDay)
 		minHoursDaily=r.nHoursPerDay;
 
+	if(minDaysWithTag>r.nDaysPerWeek)
+		minDaysWithTag=r.nDaysPerWeek;
+
 	return true;
 }
 
@@ -28359,11 +28379,11 @@ ConstraintStudentsSetActivityTagMinHoursDaily::ConstraintStudentsSetActivityTagM
 	this->minHoursDaily = -1;
 }
 
-ConstraintStudentsSetActivityTagMinHoursDaily::ConstraintStudentsSetActivityTagMinHoursDaily(double wp, int minnh, bool allowemptydays, const QString& s, const QString& activityTag)
+ConstraintStudentsSetActivityTagMinHoursDaily::ConstraintStudentsSetActivityTagMinHoursDaily(double wp, int minnh, int mindays, const QString& s, const QString& activityTag)
 	: TimeConstraint(wp)
 {
 	this->minHoursDaily = minnh;
-	this->allowEmptyDays=allowemptydays;
+	this->minDaysWithTag=mindays;
 	this->students = s;
 	this->activityTagName=activityTag;
 	this->type = CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MIN_HOURS_DAILY;
@@ -28381,13 +28401,10 @@ QString ConstraintStudentsSetActivityTagMinHoursDaily::getXmlDescription(Rules& 
 
 	QString s=IL2+"<ConstraintStudentsSetActivityTagMinHoursDaily>\n";
 	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+=IL3+"<Minimum_Hours_Daily>"+CustomFETString::number(this->minHoursDaily)+"</Minimum_Hours_Daily>\n";
-	if(this->allowEmptyDays)
-		s+=IL3+"<Allow_Empty_Days>true</Allow_Empty_Days>\n";
-	else
-		s+=IL3+"<Allow_Empty_Days>false</Allow_Empty_Days>\n";
 	s+=IL3+"<Students>"+protect(this->students)+"</Students>\n";
 	s+=IL3+"<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
+	s+=IL3+"<Minimum_Hours_Daily>"+CustomFETString::number(this->minHoursDaily)+"</Minimum_Hours_Daily>\n";
+	s+=IL3+"<Minimum_Days_With_Tag>"+CustomFETString::number(this->minDaysWithTag)+"</Minimum_Days_With_Tag>\n";
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
 	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
 	s+=IL2+"</ConstraintStudentsSetActivityTagMinHoursDaily>\n";
@@ -28409,7 +28426,7 @@ QString ConstraintStudentsSetActivityTagMinHoursDaily::getDescription(Rules& r)
 	QString s;
 	s+=tr("Students set %1 for activity tag %2 has min %3 hours daily").arg(this->students).arg(this->activityTagName).arg(this->minHoursDaily);
 	s+=", ";
-	s+=tr("AED:%1", "Allow empty days").arg(yesNoTranslated(this->allowEmptyDays));
+	s+=tr("mDWT:%1", "Min days with tag").arg(this->minDaysWithTag);
 	s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -28426,7 +28443,7 @@ QString ConstraintStudentsSetActivityTagMinHoursDaily::getDetailedDescription(Ru
 	s+=tr("Students set=%1").arg(this->students);s+="\n";
 	s+=tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
 	s+=tr("Minimum hours daily=%1").arg(this->minHoursDaily);s+="\n";
-	s+=tr("Allow empty days=%1").arg(yesNoTranslated(this->allowEmptyDays));s+="\n";
+	s+=tr("Minimum days with tag=%1").arg(this->minDaysWithTag);s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -28554,14 +28571,17 @@ double ConstraintStudentsSetActivityTagMinHoursDaily::fitness(Solution& c, Rules
 			}
 		}
 
+		int nrd = r.nDaysPerWeek - this->minDaysWithTag;
 		for(int d=0; d<r.nDaysPerWeek; d++){
 			int nd=0;
 			for(int h=0; h<r.nHoursPerDay; h++)
 				if(crtSubgroupTimetableActivityTag[d][h]==this->activityTagIndex)
 					nd++;
 				
-			if(nd==0 && this->allowEmptyDays)
+			if(nd==0 && nrd>0){
+				nrd--;
 				continue;
+			}
 			if(nd<this->minHoursDaily){
 				nbroken++;
 
@@ -28632,7 +28652,10 @@ bool ConstraintStudentsSetActivityTagMinHoursDaily::hasWrongDayOrHour(Rules& r)
 {
 	if(minHoursDaily>r.nHoursPerDay)
 		return true;
-		
+	
+	if(minDaysWithTag>r.nDaysPerWeek)
+		return true;
+	
 	return false;
 }
 
@@ -28649,6 +28672,9 @@ bool ConstraintStudentsSetActivityTagMinHoursDaily::repairWrongDayOrHour(Rules& 
 	
 	if(minHoursDaily>r.nHoursPerDay)
 		minHoursDaily=r.nHoursPerDay;
+
+	if(minDaysWithTag>r.nDaysPerWeek)
+		minDaysWithTag=r.nDaysPerWeek;
 
 	return true;
 }
@@ -29246,8 +29272,8 @@ QString ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::getXmlDescription(R
 	s+=IL3+"<Number_of_Selected_Time_Slots>"+QString::number(this->selectedDays.count())+"</Number_of_Selected_Time_Slots>\n";
 	for(int i=0; i<this->selectedDays.count(); i++){
 		s+=IL3+"<Selected_Time_Slot>\n";
-		s+=IL4+"<Selected_Day>"+protect(r.daysOfTheWeek[this->selectedDays.at(i)])+"</Selected_Day>\n";
-		s+=IL4+"<Selected_Hour>"+protect(r.hoursOfTheDay[this->selectedHours.at(i)])+"</Selected_Hour>\n";
+		s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->selectedDays.at(i)])+"</Day>\n";
+		s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->selectedHours.at(i)])+"</Hour>\n";
 		s+=IL3+"</Selected_Time_Slot>\n";
 	}
 	s+=IL3+"<Max_Number_of_Occupied_Time_Slots>"+CustomFETString::number(this->maxOccupiedTimeSlots)+"</Max_Number_of_Occupied_Time_Slots>\n";
@@ -29622,8 +29648,8 @@ QString ConstraintActivitiesOccupyMinTimeSlotsFromSelection::getXmlDescription(R
 	s+=IL3+"<Number_of_Selected_Time_Slots>"+QString::number(this->selectedDays.count())+"</Number_of_Selected_Time_Slots>\n";
 	for(int i=0; i<this->selectedDays.count(); i++){
 		s+=IL3+"<Selected_Time_Slot>\n";
-		s+=IL4+"<Selected_Day>"+protect(r.daysOfTheWeek[this->selectedDays.at(i)])+"</Selected_Day>\n";
-		s+=IL4+"<Selected_Hour>"+protect(r.hoursOfTheDay[this->selectedHours.at(i)])+"</Selected_Hour>\n";
+		s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->selectedDays.at(i)])+"</Day>\n";
+		s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->selectedHours.at(i)])+"</Hour>\n";
 		s+=IL3+"</Selected_Time_Slot>\n";
 	}
 	s+=IL3+"<Min_Number_of_Occupied_Time_Slots>"+CustomFETString::number(this->minOccupiedTimeSlots)+"</Min_Number_of_Occupied_Time_Slots>\n";
@@ -30007,8 +30033,8 @@ QString ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::getXmlDescriptio
 	s+=IL3+"<Number_of_Selected_Time_Slots>"+QString::number(this->selectedDays.count())+"</Number_of_Selected_Time_Slots>\n";
 	for(int i=0; i<this->selectedDays.count(); i++){
 		s+=IL3+"<Selected_Time_Slot>\n";
-		s+=IL4+"<Selected_Day>"+protect(r.daysOfTheWeek[this->selectedDays.at(i)])+"</Selected_Day>\n";
-		s+=IL4+"<Selected_Hour>"+protect(r.hoursOfTheDay[this->selectedHours.at(i)])+"</Selected_Hour>\n";
+		s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->selectedDays.at(i)])+"</Day>\n";
+		s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->selectedHours.at(i)])+"</Hour>\n";
 		s+=IL3+"</Selected_Time_Slot>\n";
 	}
 	s+=IL3+"<Max_Number_of_Simultaneous_Activities>"+CustomFETString::number(this->maxSimultaneous)+"</Max_Number_of_Simultaneous_Activities>\n";
@@ -30380,8 +30406,8 @@ QString ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::getXmlDescriptio
 	s+=IL3+"<Number_of_Selected_Time_Slots>"+QString::number(this->selectedDays.count())+"</Number_of_Selected_Time_Slots>\n";
 	for(int i=0; i<this->selectedDays.count(); i++){
 		s+=IL3+"<Selected_Time_Slot>\n";
-		s+=IL4+"<Selected_Day>"+protect(r.daysOfTheWeek[this->selectedDays.at(i)])+"</Selected_Day>\n";
-		s+=IL4+"<Selected_Hour>"+protect(r.hoursOfTheDay[this->selectedHours.at(i)])+"</Selected_Hour>\n";
+		s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->selectedDays.at(i)])+"</Day>\n";
+		s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->selectedHours.at(i)])+"</Hour>\n";
 		s+=IL3+"</Selected_Time_Slot>\n";
 	}
 	s+=IL3+"<Min_Number_of_Simultaneous_Activities>"+CustomFETString::number(this->minSimultaneous)+"</Min_Number_of_Simultaneous_Activities>\n";
@@ -30767,8 +30793,8 @@ QString ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::getXmlDescriptio
 	s+=IL3+"<Number_of_Selected_Time_Slots>"+QString::number(this->selectedDays.count())+"</Number_of_Selected_Time_Slots>\n";
 	for(int i=0; i<this->selectedDays.count(); i++){
 		s+=IL3+"<Selected_Time_Slot>\n";
-		s+=IL4+"<Selected_Day>"+protect(r.daysOfTheWeek[this->selectedDays.at(i)])+"</Selected_Day>\n";
-		s+=IL4+"<Selected_Hour>"+protect(r.hoursOfTheDay[this->selectedHours.at(i)])+"</Selected_Hour>\n";
+		s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->selectedDays.at(i)])+"</Day>\n";
+		s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->selectedHours.at(i)])+"</Hour>\n";
 		s+=IL3+"</Selected_Time_Slot>\n";
 	}
 	s+=IL3+"<Max_Total_Number_of_Activities>"+CustomFETString::number(this->maxActivities)+"</Max_Total_Number_of_Activities>\n";
@@ -61158,7 +61184,7 @@ QString ConstraintActivityPreferredDay::getXmlDescription(Rules& r)
 	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+=IL3+"<Activity_Id>"+CustomFETString::number(this->activityId)+"</Activity_Id>\n";
 	if(this->day>=0)
-		s+=IL3+"<Preferred_Day>"+protect(r.daysOfTheWeek[this->day])+"</Preferred_Day>\n";
+		s+=IL3+"<Day>"+protect(r.daysOfTheWeek[this->day])+"</Day>\n";
 	//s+="	<Permanently_Locked>";s+=trueFalse(this->permanentlyLocked);s+="</Permanently_Locked>\n";
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
 	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
@@ -68357,7 +68383,7 @@ bool ConstraintTwoSetsOfActivitiesSameSections::computeInternalStructure(QWidget
 		return true;
 	else{
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
-			tr("Following constraint is wrong (refers to no activities in the first set or in the second set or in both). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
+			tr("Following constraint is wrong (the first set and/or the second set contain(s) no active activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 }
@@ -68398,8 +68424,8 @@ QString ConstraintTwoSetsOfActivitiesSameSections::getXmlDescription(Rules& r)
 	s+=IL3+"<Number_of_Exception_Time_Slots>"+QString::number(this->oDays.count())+"</Number_of_Exception_Time_Slots>\n";
 	for(int i=0; i<this->oDays.count(); i++){
 		s+=IL3+"<Exception_Time_Slot>\n";
-		s+=IL4+"<Exception_Day>"+protect(r.daysOfTheWeek[this->oDays.at(i)])+"</Exception_Day>\n";
-		s+=IL4+"<Exception_Hour>"+protect(r.hoursOfTheDay[this->oHours.at(i)])+"</Exception_Hour>\n";
+		s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->oDays.at(i)])+"</Day>\n";
+		s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->oHours.at(i)])+"</Hour>\n";
 		s+=IL3+"</Exception_Time_Slot>\n";
 	}
 
