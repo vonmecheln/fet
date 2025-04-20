@@ -452,26 +452,22 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	 "%1 is the name of the algoritm, %2 is an internet page.")
 	 .arg("Hopcroft-Karp")
 	 .arg("https://en.wikipedia.org/wiki/Hopcroft%E2%80%93Karp_algorithm");
-
-	references+=QString("<br /><br /><br />");
-
-	references+=tr("C++ code references for FET:");
 	references+=QString("<br /><br />");
-	references+=QString("1. ")+tr("Qt Documentation: %1.", "%1 is the internet address for the Qt documentation.").arg("https://doc.qt.io/");
+	references+=QString("5. ")+tr("Qt Documentation: %1.", "%1 is the internet address for the Qt documentation.").arg("https://doc.qt.io/");
 	references+=QString("<br /><br />");
-	references+=QString("2. ")+tr("%1: %2. We used the idea of contiguous memory allocation into a dynamic array. We used the idea in the file %3.",
+	references+=QString("6. ")+tr("%1: %2. We used the idea of contiguous memory allocation into a dynamic array. We used the idea in the file %3.",
 	 "%1 is a tutorial referenced by FET, %2 is its internet address, %3 is a FET file.")
 	 .arg("A tutorial on pointers and arrays in C, by Ted Jensen, Chapter 9: Pointers and Dynamic Allocation of Memory")
 	 .arg("https://pdos.csail.mit.edu/6.828/2014/readings/pointers.pdf")
 	 .arg("src/engine/matrix.h");
 	references+=QString("<br /><br />");
-	references+=QString("3. ")+tr("%1: %2. We used the recommendation to add the () operator for a dynamically allocated matrix, which is not necessarily slower. "
+	references+=QString("7. ")+tr("%1: %2. We used the recommendation to add the () operator for a dynamically allocated matrix, which is not necessarily slower. "
 	 "We used the idea in the file %3.", "%1 is a paper referenced by FET, %2 is its internet address, %3 is a FET file.")
 	 .arg("C++ FAQ LITE, by Marshall Cline, Section [13] - Operator overloading, Article [13.12]")
 	 .arg("http://parashift.com/c++-faq-lite/")
 	 .arg("src/engine/matrix.h");
 	references+=QString("<br /><br />");
-	references+=QString("4. ")+tr("References for the Javascript code to highlight similar entries in the HTML timetables (FET code by %1) can be found in "
+	references+=QString("8. ")+tr("References for the Javascript code to highlight similar entries in the HTML timetables (FET code by %1) can be found in "
 	 "%2: %3, authored by %4.", "%1 is a FET author, %2 is the name of this software referenced by FET, %3 is its internet address, "
 	 "%4 is the author of the software referenced by FET.")
 	 .arg("Volker Dirr")
@@ -479,31 +475,41 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	 .arg("http://www.openadmin.ca/")
 	 .arg("Les Richardson");
 	references+=QString("<br /><br />");
-	references+=QString("5. https://www.qtcentre.org/threads/53066-QMap-sorting-according-to-QLocale");
+	references+=QString("9. https://www.qtcentre.org/threads/53066-QMap-sorting-according-to-QLocale");
 	references+=QString("<br /><br />");
-	references+=QString("6. https://www.qtcentre.org/threads/57210-how-to-change-background-color-of-individual-QHeaderView-section");
+	references+=QString("10. https://www.qtcentre.org/threads/57210-how-to-change-background-color-of-individual-QHeaderView-section");
 	references+=QString("<br /><br />");
-	references+=QString("7. https://www.qtcentre.org/threads/46841-Can-t-style-QHeaderView-section-selected-in-QSS-stylesheet");
+	references+=QString("11. https://www.qtcentre.org/threads/46841-Can-t-style-QHeaderView-section-selected-in-QSS-stylesheet");
 	references+=QString("<br /><br />");
-	references+=QString("8. https://stackoverflow.com/questions/15519749/how-to-get-widget-background-qcolor");
+	references+=QString("12. https://stackoverflow.com/questions/15519749/how-to-get-widget-background-qcolor");
 	references+=QString("<br /><br />");
-	references+=QString("9. https://stackoverflow.com/questions/22635867/is-it-possible-to-set-the-text-of-the-qtableview-corner-button");
+	references+=QString("13. https://stackoverflow.com/questions/22635867/is-it-possible-to-set-the-text-of-the-qtableview-corner-button");
 	references+=QString("<br /><br />");
-	references+=QString("10. https://stackoverflow.com/questions/19555121/how-to-get-current-timestamp-in-milliseconds-since-1970-just-the-way-java-gets");
+	references+=QString("14. https://stackoverflow.com/questions/19555121/how-to-get-current-timestamp-in-milliseconds-since-1970-just-the-way-java-gets");
 	references+=QString("<br /><br />");
-	references+=QString("11. https://stackoverflow.com/questions/31255486/c-how-do-i-convert-a-stdchronotime-point-to-long-and-back");
+	references+=QString("15. https://stackoverflow.com/questions/31255486/c-how-do-i-convert-a-stdchronotime-point-to-long-and-back");
 	references+=QString("<br /><br />");
-	references+=QString("12. https://stackoverflow.com/questions/18022927/convert-high-resolution-clock-time-into-an-integer-chrono/18023064");
+	references+=QString("16. https://stackoverflow.com/questions/18022927/convert-high-resolution-clock-time-into-an-integer-chrono/18023064");
 	references+=QString("<br /><br />");
-	references+=QString("13. https://stackoverflow.com/questions/37767847/stdsort-function-with-custom-compare-function-results-error-reference-to-non");
+	references+=QString("17. https://stackoverflow.com/questions/37767847/stdsort-function-with-custom-compare-function-results-error-reference-to-non");
 	references+=QString("<br /><br />");
-	references+=QString("14. https://stackoverflow.com/questions/14416786/webpage-returning-http-406-error-only-when-connecting-from-qt");
+	references+=QString("18. https://stackoverflow.com/questions/14416786/webpage-returning-http-406-error-only-when-connecting-from-qt");
 	references+=QString("<br /><br />");
-	references+=QString("15. http://amin-ahmadi.com/2016/06/13/fix-modsecurity-issues-in-qt-network-module-download-functionality/");
+	references+=QString("19. http://amin-ahmadi.com/2016/06/13/fix-modsecurity-issues-in-qt-network-module-download-functionality/");
 	references+=QString("<br /><br />");
-	references+=QString("16. https://stackoverflow.com/questions/48093102/how-does-qt-select-a-default-style");
+	references+=QString("20. https://stackoverflow.com/questions/48093102/how-does-qt-select-a-default-style");
 	references+=QString("<br /><br />");
-	references+=QString("17. https://stackoverflow.com/questions/3065438/switch-statement-with-returns-code-correctness");
+	references+=QString("21. https://stackoverflow.com/questions/3065438/switch-statement-with-returns-code-correctness");
+	references+=QString("<br /><br />");
+	references+=QString("22. https://unix.stackexchange.com/questions/497526/linux-shell-script-run-a-program-only-if-it-exists-ignore-it-if-it-does-not-ex");
+	references+=QString("<br /><br />");
+	references+=QString("23. OpenAI. ChatGPT. 2025. https://chat.openai.com/");
+	references+=QString("<br /><br />");
+	references+=QString("24. https://bbs.archlinux.org/viewtopic.php?id=199695");
+	references+=QString("<br /><br />");
+	references+=QString("25. https://stackoverflow.com/questions/6736536/c-input-and-output-to-the-console-window-at-the-same-time");
+	references+=QString("<br /><br />");
+	references+=QString("26. https://stackoverflow.com/questions/4184468/sleep-for-milliseconds");
 
 	references+=QString("<br /><br /><br />");
 

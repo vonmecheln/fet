@@ -27,47 +27,54 @@ https://www.iro.umontreal.ca/~lecuyer/myftp/papers/combmrg2.c. Used with permiss
 Hopcroft-Karp algorithm, which was described and implemented in pseudocode on the Wikipedia internet page:
 https://en.wikipedia.org/wiki/Hopcroft%E2%80%93Karp_algorithm.
 
+5. Qt Documentation: https://doc.qt.io/.
 
-C++ code references for FET:
-
-1. Qt Documentation: https://doc.qt.io/.
-
-2. A tutorial on pointers and arrays in C, by Ted Jensen, Chapter 9: Pointers and Dynamic Allocation of Memory:
+6. A tutorial on pointers and arrays in C, by Ted Jensen, Chapter 9: Pointers and Dynamic Allocation of Memory:
 https://pdos.csail.mit.edu/6.828/2014/readings/pointers.pdf. We used the idea of contiguous memory allocation into a dynamic array.
 We used the idea in the file src/engine/matrix.h.
 
-3. C++ FAQ LITE, by Marshall Cline, Section [13] - Operator overloading, Article [13.12]: http://parashift.com/c++-faq-lite/.
+7. C++ FAQ LITE, by Marshall Cline, Section [13] - Operator overloading, Article [13.12]: http://parashift.com/c++-faq-lite/.
 We used the recommendation to add the () operator for a dynamically allocated matrix, which is not necessarily slower. We used the
 idea in the file src/engine/matrix.h.
 
-4. References for the Javascript code to highlight similar entries in the HTML timetables (FET code by Volker Dirr) can be found in
+8. References for the Javascript code to highlight similar entries in the HTML timetables (FET code by Volker Dirr) can be found in
 Open Admin for Schools: http://www.openadmin.ca/, authored by Les Richardson.
 
-5. https://www.qtcentre.org/threads/53066-QMap-sorting-according-to-QLocale
+9. https://www.qtcentre.org/threads/53066-QMap-sorting-according-to-QLocale
 
-6. https://www.qtcentre.org/threads/57210-how-to-change-background-color-of-individual-QHeaderView-section
+10. https://www.qtcentre.org/threads/57210-how-to-change-background-color-of-individual-QHeaderView-section
 
-7. https://www.qtcentre.org/threads/46841-Can-t-style-QHeaderView-section-selected-in-QSS-stylesheet
+11. https://www.qtcentre.org/threads/46841-Can-t-style-QHeaderView-section-selected-in-QSS-stylesheet
 
-8. https://stackoverflow.com/questions/15519749/how-to-get-widget-background-qcolor
+12. https://stackoverflow.com/questions/15519749/how-to-get-widget-background-qcolor
 
-9. https://stackoverflow.com/questions/22635867/is-it-possible-to-set-the-text-of-the-qtableview-corner-button
+13. https://stackoverflow.com/questions/22635867/is-it-possible-to-set-the-text-of-the-qtableview-corner-button
 
-10. https://stackoverflow.com/questions/19555121/how-to-get-current-timestamp-in-milliseconds-since-1970-just-the-way-java-gets
+14. https://stackoverflow.com/questions/19555121/how-to-get-current-timestamp-in-milliseconds-since-1970-just-the-way-java-gets
 
-11. https://stackoverflow.com/questions/31255486/c-how-do-i-convert-a-stdchronotime-point-to-long-and-back
+15. https://stackoverflow.com/questions/31255486/c-how-do-i-convert-a-stdchronotime-point-to-long-and-back
 
-12. https://stackoverflow.com/questions/18022927/convert-high-resolution-clock-time-into-an-integer-chrono/18023064
+16. https://stackoverflow.com/questions/18022927/convert-high-resolution-clock-time-into-an-integer-chrono/18023064
 
-13. https://stackoverflow.com/questions/37767847/stdsort-function-with-custom-compare-function-results-error-reference-to-non
+17. https://stackoverflow.com/questions/37767847/stdsort-function-with-custom-compare-function-results-error-reference-to-non
 
-14. https://stackoverflow.com/questions/14416786/webpage-returning-http-406-error-only-when-connecting-from-qt
+18. https://stackoverflow.com/questions/14416786/webpage-returning-http-406-error-only-when-connecting-from-qt
 
-15. http://amin-ahmadi.com/2016/06/13/fix-modsecurity-issues-in-qt-network-module-download-functionality/
+19. http://amin-ahmadi.com/2016/06/13/fix-modsecurity-issues-in-qt-network-module-download-functionality/
 
-16. https://stackoverflow.com/questions/48093102/how-does-qt-select-a-default-style
+20. https://stackoverflow.com/questions/48093102/how-does-qt-select-a-default-style
 
-17. https://stackoverflow.com/questions/3065438/switch-statement-with-returns-code-correctness
+21. https://stackoverflow.com/questions/3065438/switch-statement-with-returns-code-correctness
+
+22. https://unix.stackexchange.com/questions/497526/linux-shell-script-run-a-program-only-if-it-exists-ignore-it-if-it-does-not-ex
+
+23. OpenAI. ChatGPT. 2025. https://chat.openai.com/
+
+24. https://bbs.archlinux.org/viewtopic.php?id=199695
+
+25. https://stackoverflow.com/questions/6736536/c-input-and-output-to-the-console-window-at-the-same-time
+
+26. https://stackoverflow.com/questions/4184468/sleep-for-milliseconds
 
 
 You may find updated or additional references for the algorithms and techniques used in this program on the FET documentation web page, https://lalescu.ro/liviu/fet/doc/

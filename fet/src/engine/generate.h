@@ -54,6 +54,10 @@ class Generate: public QObject{
 	Q_OBJECT
 	
 public:
+#ifdef FET_COMMAND_LINE
+	std::atomic<bool> writeCurrentAndHighestTimetable; //for fet-cl, we poll a file and if it exists we will write the current and highest-stage timetables.
+#endif
+
 	//QMutex myMutex;
 	std::mutex myMutex;
 	
@@ -251,6 +255,10 @@ private:
 	bool compareFunctionGenerate(int i, int j);
 
 	bool isExceptionTime(int ai, int t, const QSet<int>& ets);
+
+#ifdef FET_COMMAND_LINE
+	void checkWriteCurrentAndHighestTimetable();
+#endif
 
 public:
 	MRG32k3a rng;

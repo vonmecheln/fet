@@ -1,4 +1,4 @@
-This is FET version 7.1.5
+This is FET version 7.1.7
 
 
 Program description:
@@ -14,7 +14,7 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.14.0, Xfce 4.20,
+	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.14.1, Xfce 4.20,
 	Xfce Terminal Emulator 1.1.4, Midnight Commander 4.8.33, Krusader 2.9.0, Kate 24.12.2, KDiff3 0.9.98, grep 3.11, sed 4.9,
 	Thunar Bulk Rename 4.20.1, Qt 6.9.0, QMake 3.1, CMake 3.31.6, Ninja 1.12.1, Qt Creator 16.0.1, GCC 14.2.1, Clang 19.1.7,
 	GNU Make 4.4.1, GDB 14.2, Valgrind 3.24.0, Coverity Scan 2024.6.1, Cppcheck 2.15, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0,
@@ -222,6 +222,12 @@ Installing FET:
 
 	GNU/Linux, and maybe macOS:
 	Type "make install" with root permissions.
+	
+	GNU/Linux: to associate the *.fet files with the FET executable and to make them display the FET icon in the file browser, after "make install",
+	you might need to write these three commands (again, with root permissions):
+		xdg-icon-resource forceupdate --theme hicolor
+		update-mime-database /usr/share/mime
+		update-desktop-database
 	
 	GNU/Linux: How to obtain a universally running file using linuxdeploy:
 	
@@ -434,6 +440,9 @@ Running FET:
 	You can ask the FET command line process to stop the timetable generation, by sending it the SIGTERM (or SIGBREAK, on Windows) signal. FET will then
 	write the current timetable and the highest stage timetable and exit. (If you send the FET command line the SIGINT signal it will stop immediately,
 	without writing the timetable.)
+
+	If you create a file named exactly 'sigwrite' in the root output directory, the program will output the current and the highest stage timetables
+	without stopping the generation (a poll for the existence of this file is done once every second), and then remove this file.
 
 	The potential warnings are logged in the file outputdir/logs/warnings.txt, and the potential errors are logged in the file outputdir/logs/errors.txt.
 

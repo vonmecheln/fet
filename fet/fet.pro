@@ -18,6 +18,9 @@ unix {
 	examples.path = /usr/share/fet
 	examples.files = examples/
 
+	mime.path = /usr/share/mime/packages
+	mime.files = fet.xml
+
 	desktop.path = /usr/share/applications
 	desktop.files = fet.desktop
 
@@ -43,5 +46,5 @@ unix {
 	icon_svg.files = icons/fet.svg
 
 	# The "licenses" entry needs to appear before the "documentation" entry, so that "make uninstall" can remove the "/usr/share/doc/fet" directory.
-	INSTALLS += translations examples desktop manual licenses documentation icon_png icon_png_256x256 icon_png_512x512 icon_svg
+	INSTALLS += translations examples mime desktop manual licenses documentation icon_png icon_png_256x256 icon_png_512x512 icon_svg
 }

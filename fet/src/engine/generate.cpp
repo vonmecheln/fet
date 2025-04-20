@@ -90,6 +90,18 @@ using namespace std;
 
 #include <tuple>
 
+#ifdef FET_COMMAND_LINE
+#include <QDir>
+
+#include "timetableexport.h"
+#include "export.h"
+#include "fet.h"
+
+extern QString tempOutputDirectory;
+extern QString logsDir;
+extern QString csvOutputDirectory;
+#endif
+
 //#include <condition_variable>
 
 //extern QMutex myMutex; //timetablegenerateform.cpp
@@ -116,6 +128,161 @@ const int INF=2000000000;
 
 //const int MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0=400000;
 const int MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0=2000000000;
+
+#ifdef FET_COMMAND_LINE
+void Generate::checkWriteCurrentAndHighestTimetable()
+{
+	assert(writeCurrentAndHighestTimetable);
+	Solution& cc=this->c;
+
+	//needed to find the conflicts strings
+	FakeString tmp;
+	cc.fitness(gt.rules, &tmp);
+
+	/*TimetableExport::getStudentsTimetable(cc);
+	TimetableExport::getTeachersTimetable(cc);
+	TimetableExport::getRoomsTimetable(cc);*/
+	TimetableExport::getStudentsTeachersRoomsBuildingsTimetable(cc);
+
+	QString toc=tempOutputDirectory;
+
+	if(toc!="")
+		toc+=QString("-current");
+	else if(toc=="")
+		toc=QString("current");
+
+	if(QFileInfo::exists(toc)){
+		int i=2;
+		for(;;){
+			QString CODN=toc+"-"+QString::number(i);
+			if(!QFileInfo::exists(CODN)){
+				toc=CODN;
+				break;
+			}
+			i++;
+		}
+	}
+
+	QDir dir;
+	if(toc!="")
+		if(!dir.exists(toc))
+			dir.mkpath(toc);
+
+	toc+=FILE_SEP;
+
+	TimetableExport::writeGenerationResultsCommandLine(nullptr, toc);
+
+	QString s;
+
+	if(this->maxActivitiesPlaced>=0 && this->maxActivitiesPlaced<gt.rules.nInternalActivities
+		&& initialOrderOfActivitiesIndices[this->maxActivitiesPlaced]>=0 && initialOrderOfActivitiesIndices[this->maxActivitiesPlaced]<gt.rules.nInternalActivities){
+		s=FetTranslate::tr("FET managed to schedule correctly the first %1 most difficult activities."
+			" You can see the initial order of placing the activities in the corresponding output file. The activity which might cause problems"
+			" might be the next activity in the initial order of evaluation. This activity is listed below:").arg(this->maxActivitiesPlaced);
+		s+=QString("\n\n");
+
+		int ai=initialOrderOfActivitiesIndices[this->maxActivitiesPlaced];
+
+		s+=FetTranslate::tr("Id: %1 (%2)", "%1 is id of activity, %2 is detailed description of activity")
+			.arg(gt.rules.internalActivitiesList[ai].id)
+			.arg(getActivityDetailedDescription(gt.rules, gt.rules.internalActivitiesList[ai].id));
+	}
+	else
+		s=FetTranslate::tr("Difficult activity cannot be computed - please report possible bug");
+
+	s+=QString("\n\n----------\n\n");
+
+	s+=FetTranslate::tr("Here are the placed activities which lead to an inconsistency, "
+		"in order from the first one to the last (the last one FET failed to schedule "
+		"and the last ones are most likely impossible):");
+	s+="\n\n";
+	for(int i=0; i<this->nDifficultActivities; i++){
+		int ai=this->difficultActivities[i];
+
+		s+=FetTranslate::tr("No: %1").arg(i+1);
+
+		s+=", ";
+
+		s+=FetTranslate::tr("Id: %1 (%2)", "%1 is id of activity, %2 is detailed description of activity")
+			.arg(gt.rules.internalActivitiesList[ai].id)
+			.arg(getActivityDetailedDescription(gt.rules, gt.rules.internalActivitiesList[ai].id));
+
+		s+="\n";
+	}
+
+	QFile difficultActivitiesFile(logsDir+"difficult_activities.txt");
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	bool t=difficultActivitiesFile.open(QIODeviceBase::WriteOnly);
+#else
+	bool t=difficultActivitiesFile.open(QIODevice::WriteOnly);
+#endif
+	if(!t){
+		cout<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"difficult_activities.txt)."
+			" If this is a bug - please report it."<<endl;
+		exit(1);
+	}
+	QTextStream difficultActivitiesOut(&difficultActivitiesFile);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	difficultActivitiesOut.setEncoding(QStringConverter::Utf8);
+#else
+	difficultActivitiesOut.setCodec("UTF-8");
+#endif
+	difficultActivitiesOut.setGenerateByteOrderMark(true);
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+	difficultActivitiesOut<<s<<Qt::endl;
+#else
+	difficultActivitiesOut<<s<<endl;
+#endif
+
+	//write highest stage timetable
+	Solution& ch=this->highestStageSolution;
+
+	//needed to find the conflicts strings
+	FakeString tmp2;
+	ch.fitness(gt.rules, &tmp2);
+
+	/*TimetableExport::getStudentsTimetable(ch);
+	TimetableExport::getTeachersTimetable(ch);
+	TimetableExport::getRoomsTimetable(ch);*/
+	TimetableExport::getStudentsTeachersRoomsBuildingsTimetable(ch);
+
+	QString toh=tempOutputDirectory;
+
+	if(toh!="")
+		toh+=QString("-highest");
+	else if(toh=="")
+		toh=QString("highest");
+
+	if(QFileInfo::exists(toh)){
+		int i=2;
+		for(;;){
+			QString CODN=toh+"-"+QString::number(i);
+			if(!QFileInfo::exists(CODN)){
+				toh=CODN;
+				break;
+			}
+			i++;
+		}
+	}
+
+	if(toh!="")
+		if(!dir.exists(toh))
+			dir.mkpath(toh);
+
+	toh+=FILE_SEP;
+
+	TimetableExport::writeGenerationResultsCommandLine(nullptr, toh);
+
+	QString oldDir=OUTPUT_DIR;
+	OUTPUT_DIR=csvOutputDirectory;
+	Export::exportCSV(&this->highestStageSolution, &this->c);
+	OUTPUT_DIR=oldDir;
+
+	//done when returning from this function
+	//writeCurrentAndHighestTimetable=false;
+}
+#endif
 
 bool Generate::compareConflictsIncreasing(int a, int b)
 {
@@ -7098,6 +7265,11 @@ void Generate::generateWithSemaphore(int maxSeconds, bool& impossible, bool& tim
 
 void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream)
 {
+#ifdef FET_COMMAND_LINE
+	if(!threaded)
+		writeCurrentAndHighestTimetable=false;
+#endif
+
 	activityRetryLevel0TimeLimit=maxSeconds;
 	activityRetryLevel0TimeExceeded=false;
 
@@ -7325,7 +7497,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 	assert(level_limit<=MAX_LEVEL);
 	
 	for(int added_act=0; added_act<gt.rules.nInternalActivities; added_act++){
-		prevvalue:
+prevvalue:
 		
 		if(abortOptimization)
 			return;
@@ -7866,6 +8038,14 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 				
 				semaphorePlacedActivity.acquire();
 			}
+#ifdef FET_COMMAND_LINE
+			else{
+				if(writeCurrentAndHighestTimetable){
+					checkWriteCurrentAndHighestTimetable();
+					writeCurrentAndHighestTimetable=false;
+				}
+			}
+#endif
 			//}
 
 			goto prevvalue;
@@ -7916,6 +8096,14 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 				//semaphorePlacedActivity.acquire();
 				myMutex.lock();
 			}
+#ifdef FET_COMMAND_LINE
+			else{
+				if(writeCurrentAndHighestTimetable){
+					checkWriteCurrentAndHighestTimetable();
+					writeCurrentAndHighestTimetable=false;
+				}
+			}
+#endif
 			/*if(added_act==gt.rules.nInternalActivities && foundGoodSwap){ //Should be added_act+1==...
 				//isRunning=false;
 
@@ -32428,6 +32616,14 @@ skip_here_if_already_allocated_in_time:
 					semaphorePlacedActivity.acquire();
 					myMutex.lock();
 				}
+#ifdef FET_COMMAND_LINE
+				else{
+					if(writeCurrentAndHighestTimetable){
+						checkWriteCurrentAndHighestTimetable();
+						writeCurrentAndHighestTimetable=false;
+					}
+				}
+#endif
 				
 				if(searchTime>=activityRetryLevel0TimeLimit){
 					activityRetryLevel0TimeExceeded=true;

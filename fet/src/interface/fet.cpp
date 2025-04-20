@@ -66,6 +66,7 @@ extern Generate gen;
 
 #ifdef FET_COMMAND_LINE
 QString logsDir;
+QString csvOutputDirectory;
 #endif
 
 #ifndef FET_COMMAND_LINE
@@ -119,6 +120,10 @@ QString logsDir;
 #ifdef FET_COMMAND_LINE
 #include <csignal>
 #include <QtGlobal>
+
+#include <atomic>
+#include <thread>
+#include <chrono>
 #endif
 
 #include <iostream>
@@ -136,6 +141,8 @@ extern int MAIN_FORM_SHORTCUTS_TAB_POSITION;
 extern bool students_schedule_ready;
 extern bool teachers_schedule_ready;
 extern bool rooms_buildings_schedule_ready;
+
+QString tempOutputDirectory;
 
 //#ifndef FET_COMMAND_LINE
 //extern QMutex myMutex;
@@ -206,10 +213,27 @@ extern const int EXPORT_VERTICALBAR;
 //extern Solution best_solution;
 
 extern QString DIRECTORY_CSV;
+
+QString communicationFile;
 #endif
 
-//for command line version, if the user stops using a signal
 #ifdef FET_COMMAND_LINE
+
+//https://stackoverflow.com/questions/6736536/c-input-and-output-to-the-console-window-at-the-same-time/31500127#31500127
+//https://stackoverflow.com/questions/4184468/sleep-for-milliseconds
+void pollFile(std::atomic<bool>& run)
+{
+	while(run.load()){
+		std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+		if(!terminateGeneratePointer->writeCurrentAndHighestTimetable && QFile::exists(communicationFile)){
+			bool t=QFile::remove(communicationFile);
+			if(t)
+				terminateGeneratePointer->writeCurrentAndHighestTimetable=true;
+		}
+	}
+}
+
+//for command line version, if the user stops using a signal
 void terminate(int param)
 {
 	Q_UNUSED(param);
@@ -367,7 +391,10 @@ void usage(QTextStream* out, const QString& error)
 		"\n"
 		"You can ask the FET command line process to stop the timetable generation, by sending it the SIGTERM (or SIGBREAK, on Windows) signal. "
 		"FET will then write the current timetable and the highest stage timetable and exit. "
-		"(If you send the FET command line the SIGINT signal it will stop immediately, without writing the timetable.)"
+		"(If you send the FET command line the SIGINT signal it will stop immediately, without writing the timetable.)\n"
+		"\n"
+		"If you create a file named exactly 'sigwrite' in the root output directory, the program will output the current and the "
+		"highest stage timetables without stopping the generation (a poll for the existence of this file is done once every second), and then remove this file."
 	);
 	
 	cout<<qPrintable(s)<<endl;
@@ -2815,7 +2842,7 @@ int main(int argc, char **argv)
 			}
 			else if(s.left(30)=="--writetimetablesactivitytags="){
 				if(s.right(5)=="false")
-					WRITE_TIMETABLES_ACTIVITIES=false;
+					WRITE_TIMETABLES_ACTIVITY_TAGS=false;
 			}
 			else if(s.left(28)=="--writetimetablesactivities="){
 				if(s.right(5)=="false")
@@ -2898,7 +2925,7 @@ int main(int argc, char **argv)
 		if(initialDir!="")
 			initialDir.append(FILE_SEP);
 		
-		QString csvOutputDirectory=outputDirectory;
+		csvOutputDirectory=outputDirectory;
 		//cout<<"csvOutputDirectory="<<qPrintable(csvOutputDirectory)<<endl;
 		
 		if(outputDirectory!="")
@@ -2943,6 +2970,18 @@ int main(int argc, char **argv)
 		}
 		QTextStream out(&logFile);
 		///////
+
+		communicationFile=initialDir+"sigwrite";
+		if(QFile::exists(communicationFile)){
+			bool t=QFile::remove(communicationFile);
+			if(!t){
+				out<<"Cannot remove the file named "<<qPrintable(QDir::toNativeSeparators(communicationFile))
+				 <<". This is a fatal error for FET-CL. Please either remove this file, or start the generation in another directory."<<Qt::endl;
+				cout<<"Cannot remove the file named "<<qPrintable(QDir::toNativeSeparators(communicationFile))
+				 <<". This is a fatal error for FET-CL. Please either remove this file, or start the generation in another directory."<<endl;
+				exit(1);
+			}
+		}
 		
 		if(unrecognizedOptions.count()>0){
 			for(const QString& s : std::as_const(unrecognizedOptions)){
@@ -3048,7 +3087,7 @@ int main(int argc, char **argv)
 		out<<"FET command line generation started on "<<qPrintable(sTime)<<endl<<endl;
 #endif
 		
-		QString tempOutputDirectory=outputDirectory;
+		tempOutputDirectory=outputDirectory;
 		
 		if(QFileInfo::exists(outputDirectory)){
 			int i=2;
@@ -3068,7 +3107,7 @@ int main(int argc, char **argv)
 		
 		if(outputDirectory!="")
 			outputDirectory.append(FILE_SEP);
-			
+
 		QFile test(outputDirectory+"test_write_permissions_2.tmp");
 		bool existedBefore=test.exists();
 #if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
@@ -3284,13 +3323,17 @@ int main(int argc, char **argv)
 			logFile.close();
 			return 1;
 		}
-	
+		
 		terminateGeneratePointer=&gen;
 		signal(SIGTERM, terminate);
 #ifdef SIGBREAK
 		signal(SIGBREAK, terminate);
 #endif
-	
+		
+		//https://stackoverflow.com/questions/6736536/c-input-and-output-to-the-console-window-at-the-same-time/31500127#31500127
+		std::atomic<bool> run(true);
+		std::thread pollFileThread(pollFile, std::ref(run));
+
 		gen.abortOptimization=false;
 		bool ok=gen.precompute(nullptr, &initialOrderStream);
 		
@@ -3323,6 +3366,9 @@ int main(int argc, char **argv)
 		TimetableExport::writeRandomSeedCommandLine(nullptr, gen.rng, outputDirectory, true); //true represents 'before' state
 
 		gen.generate(secondsLimit, impossible, timeExceeded, false, &maxPlacedActivityStream); //false means no thread
+
+		run.store(false);
+		pollFileThread.join();
 		
 		maxPlacedActivityFile.close();
 	

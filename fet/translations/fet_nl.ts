@@ -46035,100 +46035,106 @@ Having a subgroup with too little working hours per week means that you inputted
 <context>
     <name>FetTranslate</name>
     <message>
-        <location filename="../src/interface/fet.cpp" line="429"/>
-        <location filename="../src/interface/fet.cpp" line="441"/>
-        <location filename="../src/interface/fet.cpp" line="476"/>
-        <location filename="../src/interface/fet.cpp" line="2472"/>
-        <location filename="../src/interface/fet.cpp" line="2485"/>
+        <location filename="../src/interface/fet.cpp" line="456"/>
+        <location filename="../src/interface/fet.cpp" line="468"/>
+        <location filename="../src/interface/fet.cpp" line="503"/>
+        <location filename="../src/interface/fet.cpp" line="2499"/>
+        <location filename="../src/interface/fet.cpp" line="2512"/>
         <source>FET warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="430"/>
+        <location filename="../src/interface/fet.cpp" line="457"/>
         <source>Official</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="441"/>
+        <location filename="../src/interface/fet.cpp" line="468"/>
         <source>Output directory %1 does not exist and cannot be created - output directory will be made the default value %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2435"/>
-        <location filename="../src/interface/fet.cpp" line="2448"/>
+        <location filename="../src/interface/fet.cpp" line="2462"/>
+        <location filename="../src/interface/fet.cpp" line="2475"/>
         <source>FET critical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2458"/>
+        <location filename="../src/interface/fet.cpp" line="2485"/>
         <source>FET</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2472"/>
+        <location filename="../src/interface/fet.cpp" line="2499"/>
         <source>Could not open file &apos;%1&apos; - not existing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2485"/>
+        <location filename="../src/interface/fet.cpp" line="2512"/>
         <source>To start FET in the interface mode, please either do not give any command-line parameters, or give a single command-line parameter, which is the name of the fet data file to be loaded on startup.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2998"/>
+        <location filename="../src/interface/fet.cpp" line="3037"/>
         <source>FET-CL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="3014"/>
-        <location filename="../src/interface/fet.cpp" line="3017"/>
+        <location filename="../src/interface/fet.cpp" line="3053"/>
+        <location filename="../src/interface/fet.cpp" line="3056"/>
         <source>This is the list of max placed activities, chronologically. If FET could reach maximum n-th activity, look at the n+1-st activity in the initial order of the activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="3532"/>
+        <location filename="../src/engine/generate.cpp" line="179"/>
+        <location filename="../src/interface/fet.cpp" line="3578"/>
         <source>FET managed to schedule correctly the first %1 most difficult activities. You can see the initial order of placing the activities in the corresponding output file. The activity which might cause problems might be the next activity in the initial order of evaluation. This activity is listed below:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="3539"/>
-        <location filename="../src/interface/fet.cpp" line="3559"/>
+        <location filename="../src/engine/generate.cpp" line="186"/>
+        <location filename="../src/engine/generate.cpp" line="206"/>
+        <location filename="../src/interface/fet.cpp" line="3585"/>
+        <location filename="../src/interface/fet.cpp" line="3605"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="3544"/>
+        <location filename="../src/engine/generate.cpp" line="191"/>
+        <location filename="../src/interface/fet.cpp" line="3590"/>
         <source>Difficult activity cannot be computed - please report possible bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="3548"/>
+        <location filename="../src/engine/generate.cpp" line="195"/>
+        <location filename="../src/interface/fet.cpp" line="3594"/>
         <source>Here are the placed activities which lead to an inconsistency, in order from the first one to the last (the last one FET failed to schedule and the last ones are most likely impossible):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="3555"/>
+        <location filename="../src/engine/generate.cpp" line="202"/>
+        <location filename="../src/interface/fet.cpp" line="3601"/>
         <source>No: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2435"/>
+        <location filename="../src/interface/fet.cpp" line="2462"/>
         <source>Cannot create or use %1 directory (where the results should be stored) - you can continue operation, but you might not be able to work with FET. Maybe you can try to change the output directory from the &apos;Settings&apos; menu. If this is a bug - please report it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="429"/>
+        <location filename="../src/interface/fet.cpp" line="456"/>
         <source>Incorrect startup mode read from the settings - making it %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="476"/>
+        <location filename="../src/interface/fet.cpp" line="503"/>
         <source>Incorrect HTML level read from the settings - making it %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2448"/>
+        <location filename="../src/interface/fet.cpp" line="2475"/>
         <source>You don&apos;t have write permissions in the output directory (FET cannot open or create file %1) - you might not be able to work correctly with FET. Maybe you can try to change the output directory from the &apos;Settings&apos; menu. If this is a bug - please report it.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -46136,7 +46142,7 @@ Having a subgroup with too little working hours per week means that you inputted
 <context>
     <name>Generate</name>
     <message>
-        <location filename="../src/engine/generate.cpp" line="7892"/>
+        <location filename="../src/engine/generate.cpp" line="8072"/>
         <source>At time %1 h %2 m %3 s, FET reached %4 activities placed</source>
         <comment>h=hours, m=minutes, s=seconds. Please leave spaces between &apos;time&apos;, %1, h, %2, m, %3, s, so they are visible</comment>
         <translation type="unfinished"></translation>
@@ -51339,13 +51345,13 @@ to
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform.cpp" line="462"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="458"/>
         <source>%1: %2. We used the idea of contiguous memory allocation into a dynamic array. We used the idea in the file %3.</source>
         <comment>%1 is a tutorial referenced by FET, %2 is its internet address, %3 is a FET file.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform.cpp" line="474"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="470"/>
         <source>References for the Javascript code to highlight similar entries in the HTML timetables (FET code by %1) can be found in %2: %3, authored by %4.</source>
         <comment>%1 is a FET author, %2 is the name of this software referenced by FET, %3 is its internet address, %4 is the author of the software referenced by FET.</comment>
         <translation type="unfinished"></translation>
@@ -51369,30 +51375,25 @@ to
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform.cpp" line="458"/>
-        <source>C++ code references for FET:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform.cpp" line="460"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="456"/>
         <source>Qt Documentation: %1.</source>
         <comment>%1 is the internet address for the Qt documentation.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform.cpp" line="468"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="464"/>
         <source>%1: %2. We used the recommendation to add the () operator for a dynamically allocated matrix, which is not necessarily slower. We used the idea in the file %3.</source>
         <comment>%1 is a paper referenced by FET, %2 is its internet address, %3 is a FET file.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform.cpp" line="510"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="516"/>
         <source>You may find updated or additional references for the algorithms and techniques used in this program on the FET documentation web page, %1</source>
         <comment>%1 is the FET documentation web page.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform.cpp" line="518"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="524"/>
         <source>The following people, listed chronologically, participated in this project with suggestions, example files, reports, and/or other kinds of contributions:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -59876,52 +59877,52 @@ allowed: 0.0%-100.0%)</source>
 <context>
     <name>QDialogButtonBox</name>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2299"/>
+        <location filename="../src/interface/fet.cpp" line="2326"/>
         <source>&amp;OK</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2301"/>
+        <location filename="../src/interface/fet.cpp" line="2328"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2304"/>
+        <location filename="../src/interface/fet.cpp" line="2331"/>
         <source>&amp;Cancel</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2306"/>
+        <location filename="../src/interface/fet.cpp" line="2333"/>
         <source>Cancel</source>
         <translation type="unfinished">Annuleren</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2309"/>
+        <location filename="../src/interface/fet.cpp" line="2336"/>
         <source>&amp;Yes</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2311"/>
+        <location filename="../src/interface/fet.cpp" line="2338"/>
         <source>Yes to &amp;All</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2315"/>
+        <location filename="../src/interface/fet.cpp" line="2342"/>
         <source>N&amp;o to All</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2318"/>
+        <location filename="../src/interface/fet.cpp" line="2345"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2313"/>
+        <location filename="../src/interface/fet.cpp" line="2340"/>
         <source>&amp;No</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation type="unfinished"></translation>
@@ -59930,52 +59931,52 @@ allowed: 0.0%-100.0%)</source>
 <context>
     <name>QFontDialog</name>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2368"/>
+        <location filename="../src/interface/fet.cpp" line="2395"/>
         <source>Select Font</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2370"/>
+        <location filename="../src/interface/fet.cpp" line="2397"/>
         <source>&amp;Font</source>
         <comment>Accelerator key (letter after ampersand) for &amp;Font, Font st&amp;yle, &amp;Size, Stri&amp;keout, &amp;Underline, Wr&amp;iting System, must be different</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2372"/>
+        <location filename="../src/interface/fet.cpp" line="2399"/>
         <source>Font st&amp;yle</source>
         <comment>Accelerator key (letter after ampersand) for &amp;Font, Font st&amp;yle, &amp;Size, Stri&amp;keout, &amp;Underline, Wr&amp;iting System, must be different</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2374"/>
+        <location filename="../src/interface/fet.cpp" line="2401"/>
         <source>&amp;Size</source>
         <comment>Accelerator key (letter after ampersand) for &amp;Font, Font st&amp;yle, &amp;Size, Stri&amp;keout, &amp;Underline, Wr&amp;iting System, must be different</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2376"/>
+        <location filename="../src/interface/fet.cpp" line="2403"/>
         <source>Effects</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2382"/>
+        <location filename="../src/interface/fet.cpp" line="2409"/>
         <source>Sample</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2378"/>
+        <location filename="../src/interface/fet.cpp" line="2405"/>
         <source>Stri&amp;keout</source>
         <comment>Accelerator key (letter after ampersand) for &amp;Font, Font st&amp;yle, &amp;Size, Stri&amp;keout, &amp;Underline, Wr&amp;iting System, must be different</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2380"/>
+        <location filename="../src/interface/fet.cpp" line="2407"/>
         <source>&amp;Underline</source>
         <comment>Accelerator key (letter after ampersand) for &amp;Font, Font st&amp;yle, &amp;Size, Stri&amp;keout, &amp;Underline, Wr&amp;iting System, must be different</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2384"/>
+        <location filename="../src/interface/fet.cpp" line="2411"/>
         <source>Wr&amp;iting System</source>
         <comment>Accelerator key (letter after ampersand) for &amp;Font, Font st&amp;yle, &amp;Size, Stri&amp;keout, &amp;Underline, Wr&amp;iting System, must be different</comment>
         <translation type="unfinished"></translation>
@@ -59984,53 +59985,53 @@ allowed: 0.0%-100.0%)</source>
 <context>
     <name>QGnomeTheme</name>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2346"/>
+        <location filename="../src/interface/fet.cpp" line="2373"/>
         <source>&amp;OK</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2348"/>
+        <location filename="../src/interface/fet.cpp" line="2375"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2351"/>
+        <location filename="../src/interface/fet.cpp" line="2378"/>
         <source>&amp;Cancel</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2353"/>
+        <location filename="../src/interface/fet.cpp" line="2380"/>
         <source>Cancel</source>
         <translation type="unfinished">Annuleren</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2356"/>
+        <location filename="../src/interface/fet.cpp" line="2383"/>
         <source>&amp;Yes</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2358"/>
+        <location filename="../src/interface/fet.cpp" line="2385"/>
         <source>Yes to &amp;All</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2360"/>
+        <location filename="../src/interface/fet.cpp" line="2387"/>
         <source>&amp;No</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2362"/>
+        <location filename="../src/interface/fet.cpp" line="2389"/>
         <source>N&amp;o to All</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2365"/>
+        <location filename="../src/interface/fet.cpp" line="2392"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
@@ -60038,53 +60039,53 @@ allowed: 0.0%-100.0%)</source>
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2322"/>
+        <location filename="../src/interface/fet.cpp" line="2349"/>
         <source>&amp;OK</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2324"/>
+        <location filename="../src/interface/fet.cpp" line="2351"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2327"/>
+        <location filename="../src/interface/fet.cpp" line="2354"/>
         <source>&amp;Cancel</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2329"/>
+        <location filename="../src/interface/fet.cpp" line="2356"/>
         <source>Cancel</source>
         <translation type="unfinished">Annuleren</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2332"/>
+        <location filename="../src/interface/fet.cpp" line="2359"/>
         <source>&amp;Yes</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2334"/>
+        <location filename="../src/interface/fet.cpp" line="2361"/>
         <source>Yes to &amp;All</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2336"/>
+        <location filename="../src/interface/fet.cpp" line="2363"/>
         <source>&amp;No</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2338"/>
+        <location filename="../src/interface/fet.cpp" line="2365"/>
         <source>N&amp;o to All</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="2341"/>
+        <location filename="../src/interface/fet.cpp" line="2368"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
@@ -70372,17 +70373,17 @@ to
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="3379"/>
+        <location filename="../src/interface/fet.cpp" line="3425"/>
         <source>Please check the constraints related to the activity below, which might be impossible to schedule:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="3385"/>
+        <location filename="../src/interface/fet.cpp" line="3431"/>
         <source>No: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="3389"/>
+        <location filename="../src/interface/fet.cpp" line="3435"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
