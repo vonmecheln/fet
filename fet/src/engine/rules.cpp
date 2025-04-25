@@ -5407,58 +5407,58 @@ void Rules::init() //initializes the rules (empty, but with default hours and da
 
 	this->nDaysPerWeek=5;
 	this->daysOfTheWeek.clear();
-	this->daysOfTheWeek.append(tr("Mo", "Abbreviation for Monday"));
-	this->daysOfTheWeek.append(tr("Tu", "Abbreviation for Tuesday"));
-	this->daysOfTheWeek.append(tr("We", "Abbreviation for Wednesday"));
-	this->daysOfTheWeek.append(tr("Th", "Abbreviation for Thursday"));
-	this->daysOfTheWeek.append(tr("Fr", "Abbreviation for Friday"));
+	this->daysOfTheWeek.append(QString("D1"));
+	this->daysOfTheWeek.append(QString("D2"));
+	this->daysOfTheWeek.append(QString("D3"));
+	this->daysOfTheWeek.append(QString("D4"));
+	this->daysOfTheWeek.append(QString("D5"));
 	
 	this->nRealDaysPerWeek=2;
 	this->realDaysOfTheWeek.clear();
-	this->realDaysOfTheWeek.append(tr("Mo", "Abbreviation for Monday"));
-	this->realDaysOfTheWeek.append(tr("Tu", "Abbreviation for Tuesday"));
+	this->realDaysOfTheWeek.append(QString("RD1"));
+	this->realDaysOfTheWeek.append(QString("RD2"));
 	
 	this->nHoursPerDay=12;
 	this->hoursOfTheDay.clear();
-	this->hoursOfTheDay.append(QString::number(1));
-	this->hoursOfTheDay.append(QString::number(2));
-	this->hoursOfTheDay.append(QString::number(3));
-	this->hoursOfTheDay.append(QString::number(4));
-	this->hoursOfTheDay.append(QString::number(5));
-	this->hoursOfTheDay.append(QString::number(6));
-	this->hoursOfTheDay.append(QString::number(7));
-	this->hoursOfTheDay.append(QString::number(8));
-	this->hoursOfTheDay.append(QString::number(9));
-	this->hoursOfTheDay.append(QString::number(10));
-	this->hoursOfTheDay.append(QString::number(11));
-	this->hoursOfTheDay.append(QString::number(12));
+	this->hoursOfTheDay.append(QString("H1"));
+	this->hoursOfTheDay.append(QString("H2"));
+	this->hoursOfTheDay.append(QString("H3"));
+	this->hoursOfTheDay.append(QString("H4"));
+	this->hoursOfTheDay.append(QString("H5"));
+	this->hoursOfTheDay.append(QString("H6"));
+	this->hoursOfTheDay.append(QString("H7"));
+	this->hoursOfTheDay.append(QString("H8"));
+	this->hoursOfTheDay.append(QString("H9"));
+	this->hoursOfTheDay.append(QString("H10"));
+	this->hoursOfTheDay.append(QString("H11"));
+	this->hoursOfTheDay.append(QString("H12"));
 
 	this->nRealHoursPerDay=24;
 	this->realHoursOfTheDay.clear();
-	this->realHoursOfTheDay.append(QString::number(1));
-	this->realHoursOfTheDay.append(QString::number(2));
-	this->realHoursOfTheDay.append(QString::number(3));
-	this->realHoursOfTheDay.append(QString::number(4));
-	this->realHoursOfTheDay.append(QString::number(5));
-	this->realHoursOfTheDay.append(QString::number(6));
-	this->realHoursOfTheDay.append(QString::number(7));
-	this->realHoursOfTheDay.append(QString::number(8));
-	this->realHoursOfTheDay.append(QString::number(9));
-	this->realHoursOfTheDay.append(QString::number(10));
-	this->realHoursOfTheDay.append(QString::number(11));
-	this->realHoursOfTheDay.append(QString::number(12));
-	this->realHoursOfTheDay.append(QString::number(13));
-	this->realHoursOfTheDay.append(QString::number(14));
-	this->realHoursOfTheDay.append(QString::number(15));
-	this->realHoursOfTheDay.append(QString::number(16));
-	this->realHoursOfTheDay.append(QString::number(17));
-	this->realHoursOfTheDay.append(QString::number(18));
-	this->realHoursOfTheDay.append(QString::number(19));
-	this->realHoursOfTheDay.append(QString::number(20));
-	this->realHoursOfTheDay.append(QString::number(21));
-	this->realHoursOfTheDay.append(QString::number(22));
-	this->realHoursOfTheDay.append(QString::number(23));
-	this->realHoursOfTheDay.append(QString::number(24));
+	this->realHoursOfTheDay.append(QString("RH1"));
+	this->realHoursOfTheDay.append(QString("RH2"));
+	this->realHoursOfTheDay.append(QString("RH3"));
+	this->realHoursOfTheDay.append(QString("RH4"));
+	this->realHoursOfTheDay.append(QString("RH5"));
+	this->realHoursOfTheDay.append(QString("RH6"));
+	this->realHoursOfTheDay.append(QString("RH7"));
+	this->realHoursOfTheDay.append(QString("RH8"));
+	this->realHoursOfTheDay.append(QString("RH9"));
+	this->realHoursOfTheDay.append(QString("RH10"));
+	this->realHoursOfTheDay.append(QString("RH11"));
+	this->realHoursOfTheDay.append(QString("RH12"));
+	this->realHoursOfTheDay.append(QString("RH13"));
+	this->realHoursOfTheDay.append(QString("RH14"));
+	this->realHoursOfTheDay.append(QString("RH15"));
+	this->realHoursOfTheDay.append(QString("RH16"));
+	this->realHoursOfTheDay.append(QString("RH17"));
+	this->realHoursOfTheDay.append(QString("RH18"));
+	this->realHoursOfTheDay.append(QString("RH19"));
+	this->realHoursOfTheDay.append(QString("RH20"));
+	this->realHoursOfTheDay.append(QString("RH21"));
+	this->realHoursOfTheDay.append(QString("RH22"));
+	this->realHoursOfTheDay.append(QString("RH23"));
+	this->realHoursOfTheDay.append(QString("RH24"));
 
 	this->daysOfTheWeek_longNames.clear();
 	this->daysOfTheWeek_longNames.append(tr("Monday"));
@@ -5658,6 +5658,21 @@ bool Rules::computeInternalStructure(QWidget* parent)
 			tmpGroup->name = sty->name+" "+tr("Automatic Group", "Please keep the translation short. It is used when a year contains no groups and an automatic group "
 			 "is added in the year, in the timetable (when viewing the students timetable from FET and also in the HTML timetables for students groups or subgroups)"
 			 ". In the empty year there will be added a group with name = yearName+a space character+your translation of 'Automatic Group'.");
+			
+			//to avoid rare/very improbable but possible name crashes
+			if(augmentedHash.contains(tmpGroup->name)){
+				int i=2;
+				for(;;){
+					QString tgn=tmpGroup->name+" "+QString::number(i);
+					if(!augmentedHash.contains(tgn)){
+						tmpGroup->name=tgn;
+						break;
+					}
+					i++;
+				}
+			}
+			augmentedHash.insert(tmpGroup->name, tmpGroup);
+			
 			tmpGroup->longName = sty->longName+" "+tr("Automatic Group", "Please keep the translation short. It is used when a year contains no groups and an automatic group "
 			 "is added in the year, in the timetable (when viewing the students timetable from FET and also in the HTML timetables for students groups or subgroups)"
 			 ". In the empty year there will be added a group with name = yearName+a space character+your translation of 'Automatic Group'.");
@@ -5677,6 +5692,21 @@ bool Rules::computeInternalStructure(QWidget* parent)
 				tmpSubgroup->name = stg->name+" "+tr("Automatic Subgroup", "Please keep the translation short. It is used when a group contains no subgroups and an automatic subgroup "
 				 "is added in the group, in the timetable (when viewing the students timetable from FET and also in the HTML timetables for students subgroups)"
 				 ". In the empty group there will be added a subgroup with name = groupName+a space character+your translation of 'Automatic Subgroup'.");
+				
+				//to avoid rare/very improbable but possible name crashes
+				if(augmentedHash.contains(tmpSubgroup->name)){
+					int i=2;
+					for(;;){
+						QString tsn=tmpSubgroup->name+" "+QString::number(i);
+						if(!augmentedHash.contains(tsn)){
+							tmpSubgroup->name=tsn;
+							break;
+						}
+						i++;
+					}
+				}
+				augmentedHash.insert(tmpSubgroup->name, tmpSubgroup);
+				
 				tmpSubgroup->longName = stg->longName+" "+tr("Automatic Subgroup", "Please keep the translation short. It is used when a group contains no subgroups and an automatic subgroup "
 				 "is added in the group, in the timetable (when viewing the students timetable from FET and also in the HTML timetables for students subgroups)"
 				 ". In the empty group there will be added a subgroup with name = groupName+a space character+your translation of 'Automatic Subgroup'.");
@@ -6514,11 +6544,11 @@ void Rules::setMode(int newMode)
 		this->realHoursOfTheDay.clear();
 		this->realHoursOfTheDay_longNames.clear();
 		for(int h=0; h<this->nHoursPerDay; h++){
-			this->realHoursOfTheDay.append(QString::number(h+1));
+			this->realHoursOfTheDay.append(QString("H")+QString::number(h+1));
 			this->realHoursOfTheDay_longNames.append(this->hoursOfTheDay_longNames.at(h)+QString(" ")+tr("AM", "Ante Meridiem, before noon"));
 		}
 		for(int h=0; h<this->nHoursPerDay; h++){
-			this->realHoursOfTheDay.append(QString::number(this->nHoursPerDay+h+1));
+			this->realHoursOfTheDay.append(QString("H")+QString::number(this->nHoursPerDay+h+1));
 			this->realHoursOfTheDay_longNames.append(this->hoursOfTheDay_longNames.at(h)+QString(" ")+tr("PM", "Post Meridiem, afternoon"));
 		}
 		
@@ -13870,29 +13900,29 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 
 	this->nDaysPerWeek=5;
 	this->daysOfTheWeek.clear();
-	this->daysOfTheWeek.append(tr("Mo", "Abbreviation for Monday"));
-	this->daysOfTheWeek.append(tr("Tu", "Abbreviation for Tuesday"));
-	this->daysOfTheWeek.append(tr("We", "Abbreviation for Wednesday"));
-	this->daysOfTheWeek.append(tr("Th", "Abbreviation for Thursday"));
-	this->daysOfTheWeek.append(tr("Fr", "Abbreviation for Friday"));
+	this->daysOfTheWeek.append(QString("D1"));
+	this->daysOfTheWeek.append(QString("D2"));
+	this->daysOfTheWeek.append(QString("D3"));
+	this->daysOfTheWeek.append(QString("D4"));
+	this->daysOfTheWeek.append(QString("D5"));
 	
 	this->nRealDaysPerWeek=-1;
 	this->realDaysOfTheWeek.clear();
 
 	this->nHoursPerDay=12;
 	this->hoursOfTheDay.clear();
-	this->hoursOfTheDay.append(QString::number(1));
-	this->hoursOfTheDay.append(QString::number(2));
-	this->hoursOfTheDay.append(QString::number(3));
-	this->hoursOfTheDay.append(QString::number(4));
-	this->hoursOfTheDay.append(QString::number(5));
-	this->hoursOfTheDay.append(QString::number(6));
-	this->hoursOfTheDay.append(QString::number(7));
-	this->hoursOfTheDay.append(QString::number(8));
-	this->hoursOfTheDay.append(QString::number(9));
-	this->hoursOfTheDay.append(QString::number(10));
-	this->hoursOfTheDay.append(QString::number(11));
-	this->hoursOfTheDay.append(QString::number(12));
+	this->hoursOfTheDay.append(QString("H1"));
+	this->hoursOfTheDay.append(QString("H2"));
+	this->hoursOfTheDay.append(QString("H3"));
+	this->hoursOfTheDay.append(QString("H4"));
+	this->hoursOfTheDay.append(QString("H5"));
+	this->hoursOfTheDay.append(QString("H6"));
+	this->hoursOfTheDay.append(QString("H7"));
+	this->hoursOfTheDay.append(QString("H8"));
+	this->hoursOfTheDay.append(QString("H9"));
+	this->hoursOfTheDay.append(QString("H10"));
+	this->hoursOfTheDay.append(QString("H11"));
+	this->hoursOfTheDay.append(QString("H12"));
 
 	this->nRealHoursPerDay=-1;
 	this->realHoursOfTheDay.clear();
@@ -15806,7 +15836,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 							QString text=xmlReader.readElementText();
 							if(text=="yes" || text=="true" || text=="1"){
 								ac=true;
-								xmlReadingLog+="	Current activity is active\n";
+								xmlReadingLog+="    Current activity is active\n";
 							}
 							else{
 								if(!(text=="no" || text=="false" || text=="0")){
@@ -15817,7 +15847,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 								}
 								//assert(text=="no" || text=="false" || text=="0");
 								ac=false;
-								xmlReadingLog+="	Current activity is not active\n";
+								xmlReadingLog+="    Current activity is not active\n";
 							}
 						}
 						else if(xmlReader.name()==QString("Comments")){

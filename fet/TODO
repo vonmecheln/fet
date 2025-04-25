@@ -10788,3 +10788,34 @@ The option to click on it to stop the generation and go to the Activities
 screen will be great.
 
 The option to click it, deactivate it mid run or re-run run will be superb.
+
+702--------------------------------------------------------
+From Nahum Lipkunsky:
+
+It seems that a teacher's gap is considered an empty slot between 2 non empty
+slots  (we call it a window). However an empty slot on 1st hour  (we
+call it a door)
+is not considered a gap.  Is there a way to minimize doors as well
+(for teachers)  ?
+
+703--------------------------------------------------------
+From Vangelis Karafillidis:
+
+Constraints students (set) min days per week.
+
+704--------------------------------------------------------
+From Vangelis Karafillidis:
+
+Button for pausing (temporarily) the generation... plus exporting .fet file
+
+(Vangelis refers to exporting a locked fet file from a partial generation, with a name other than file_data_and_timetable.fet.)
+
+705--------------------------------------------------------
+From Nahum Lipkunsky:
+
+Nahum suggested a filter in the activities/time/space constraints dialogs, to show/hide the active/not active items. Liviu instructed
+him to use the filter option with an option: "Detailed description contains/does not contain" "Active activity/time/space constraint=false".
+So Nahum said this is a bit too complicated, and further suggested:
+
+In the filter dialog add an option: save as ....(name) - to save filter configuration.
+Then in the front screen add a section with toggle buttons (or combo box) to activate the saved filter.

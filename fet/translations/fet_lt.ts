@@ -61196,553 +61196,553 @@ to
     <message>
         <location filename="../src/engine/rules.cpp" line="5464"/>
         <location filename="../src/engine/rules.cpp" line="5471"/>
-        <location filename="../src/engine/rules.cpp" line="13901"/>
+        <location filename="../src/engine/rules.cpp" line="13931"/>
         <source>Monday</source>
         <translation type="unfinished">Pirmadienis</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5465"/>
         <location filename="../src/engine/rules.cpp" line="5472"/>
-        <location filename="../src/engine/rules.cpp" line="13902"/>
+        <location filename="../src/engine/rules.cpp" line="13932"/>
         <source>Tuesday</source>
         <translation type="unfinished">Antradienis</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5466"/>
-        <location filename="../src/engine/rules.cpp" line="13903"/>
+        <location filename="../src/engine/rules.cpp" line="13933"/>
         <source>Wednesday</source>
         <translation type="unfinished">Trečiadienis</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5467"/>
-        <location filename="../src/engine/rules.cpp" line="13904"/>
+        <location filename="../src/engine/rules.cpp" line="13934"/>
         <source>Thursday</source>
         <translation type="unfinished">Ketvirtadienis</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5468"/>
-        <location filename="../src/engine/rules.cpp" line="13905"/>
+        <location filename="../src/engine/rules.cpp" line="13935"/>
         <source>Friday</source>
         <translation type="unfinished">Penktadienis</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5401"/>
-        <location filename="../src/engine/rules.cpp" line="13864"/>
+        <location filename="../src/engine/rules.cpp" line="13894"/>
         <source>Default institution</source>
         <translation type="unfinished">Numatyta įstaiga</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5402"/>
-        <location filename="../src/engine/rules.cpp" line="13865"/>
+        <location filename="../src/engine/rules.cpp" line="13895"/>
         <source>Default comments</source>
         <translation type="unfinished">Numatyti komentarai</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5658"/>
-        <location filename="../src/engine/rules.cpp" line="5661"/>
-        <location filename="../src/engine/rules.cpp" line="5664"/>
+        <location filename="../src/engine/rules.cpp" line="5676"/>
+        <location filename="../src/engine/rules.cpp" line="5679"/>
         <source>Automatic Group</source>
         <comment>Please keep the translation short. It is used when a year contains no groups and an automatic group is added in the year, in the timetable (when viewing the students timetable from FET and also in the HTML timetables for students groups or subgroups). In the empty year there will be added a group with name = yearName+a space character+your translation of &apos;Automatic Group&apos;.</comment>
         <translation type="unfinished">Automatinė Grupė</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5677"/>
-        <location filename="../src/engine/rules.cpp" line="5680"/>
-        <location filename="../src/engine/rules.cpp" line="5683"/>
+        <location filename="../src/engine/rules.cpp" line="5692"/>
+        <location filename="../src/engine/rules.cpp" line="5710"/>
+        <location filename="../src/engine/rules.cpp" line="5713"/>
         <source>Automatic Subgroup</source>
         <comment>Please keep the translation short. It is used when a group contains no subgroups and an automatic subgroup is added in the group, in the timetable (when viewing the students timetable from FET and also in the HTML timetables for students subgroups). In the empty group there will be added a subgroup with name = groupName+a space character+your translation of &apos;Automatic Subgroup&apos;.</comment>
         <translation type="unfinished">Automatinis pogrupis</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5720"/>
-        <location filename="../src/engine/rules.cpp" line="5734"/>
-        <location filename="../src/engine/rules.cpp" line="5741"/>
-        <location filename="../src/engine/rules.cpp" line="5748"/>
-        <location filename="../src/engine/rules.cpp" line="5873"/>
-        <location filename="../src/engine/rules.cpp" line="5878"/>
-        <location filename="../src/engine/rules.cpp" line="5886"/>
-        <location filename="../src/engine/rules.cpp" line="5899"/>
+        <location filename="../src/engine/rules.cpp" line="5750"/>
+        <location filename="../src/engine/rules.cpp" line="5764"/>
+        <location filename="../src/engine/rules.cpp" line="5771"/>
+        <location filename="../src/engine/rules.cpp" line="5778"/>
+        <location filename="../src/engine/rules.cpp" line="5903"/>
         <location filename="../src/engine/rules.cpp" line="5908"/>
         <location filename="../src/engine/rules.cpp" line="5916"/>
-        <location filename="../src/engine/rules.cpp" line="5953"/>
-        <location filename="../src/engine/rules.cpp" line="6124"/>
-        <location filename="../src/engine/rules.cpp" line="6152"/>
-        <location filename="../src/engine/rules.cpp" line="6206"/>
-        <location filename="../src/engine/rules.cpp" line="6234"/>
-        <location filename="../src/engine/rules.cpp" line="6294"/>
-        <location filename="../src/engine/rules.cpp" line="13811"/>
-        <location filename="../src/engine/rules.cpp" line="13846"/>
-        <location filename="../src/engine/rules.cpp" line="13850"/>
-        <location filename="../src/engine/rules.cpp" line="14612"/>
-        <location filename="../src/engine/rules.cpp" line="14918"/>
-        <location filename="../src/engine/rules.cpp" line="16314"/>
-        <location filename="../src/engine/rules.cpp" line="16367"/>
-        <location filename="../src/engine/rules.cpp" line="16619"/>
-        <location filename="../src/engine/rules.cpp" line="16710"/>
-        <location filename="../src/engine/rules.cpp" line="16731"/>
-        <location filename="../src/engine/rules.cpp" line="16767"/>
-        <location filename="../src/engine/rules.cpp" line="16781"/>
-        <location filename="../src/engine/rules.cpp" line="16809"/>
-        <location filename="../src/engine/rules.cpp" line="16826"/>
-        <location filename="../src/engine/rules.cpp" line="16843"/>
-        <location filename="../src/engine/rules.cpp" line="16972"/>
-        <location filename="../src/engine/rules.cpp" line="16989"/>
-        <location filename="../src/engine/rules.cpp" line="17012"/>
-        <location filename="../src/engine/rules.cpp" line="17025"/>
-        <location filename="../src/engine/rules.cpp" line="17039"/>
-        <location filename="../src/engine/rules.cpp" line="17052"/>
-        <location filename="../src/engine/rules.cpp" line="17066"/>
-        <location filename="../src/engine/rules.cpp" line="17079"/>
-        <location filename="../src/engine/rules.cpp" line="17093"/>
-        <location filename="../src/engine/rules.cpp" line="17106"/>
-        <location filename="../src/engine/rules.cpp" line="17169"/>
-        <location filename="../src/engine/rules.cpp" line="17186"/>
-        <location filename="../src/engine/rules.cpp" line="17230"/>
-        <location filename="../src/engine/rules.cpp" line="17247"/>
-        <location filename="../src/engine/rules.cpp" line="17306"/>
-        <location filename="../src/engine/rules.cpp" line="17323"/>
-        <location filename="../src/engine/rules.cpp" line="17340"/>
+        <location filename="../src/engine/rules.cpp" line="5929"/>
+        <location filename="../src/engine/rules.cpp" line="5938"/>
+        <location filename="../src/engine/rules.cpp" line="5946"/>
+        <location filename="../src/engine/rules.cpp" line="5983"/>
+        <location filename="../src/engine/rules.cpp" line="6154"/>
+        <location filename="../src/engine/rules.cpp" line="6182"/>
+        <location filename="../src/engine/rules.cpp" line="6236"/>
+        <location filename="../src/engine/rules.cpp" line="6264"/>
+        <location filename="../src/engine/rules.cpp" line="6324"/>
+        <location filename="../src/engine/rules.cpp" line="13841"/>
+        <location filename="../src/engine/rules.cpp" line="13876"/>
+        <location filename="../src/engine/rules.cpp" line="13880"/>
+        <location filename="../src/engine/rules.cpp" line="14642"/>
+        <location filename="../src/engine/rules.cpp" line="14948"/>
+        <location filename="../src/engine/rules.cpp" line="16344"/>
+        <location filename="../src/engine/rules.cpp" line="16397"/>
+        <location filename="../src/engine/rules.cpp" line="16649"/>
+        <location filename="../src/engine/rules.cpp" line="16740"/>
+        <location filename="../src/engine/rules.cpp" line="16761"/>
+        <location filename="../src/engine/rules.cpp" line="16797"/>
+        <location filename="../src/engine/rules.cpp" line="16811"/>
+        <location filename="../src/engine/rules.cpp" line="16839"/>
+        <location filename="../src/engine/rules.cpp" line="16856"/>
+        <location filename="../src/engine/rules.cpp" line="16873"/>
+        <location filename="../src/engine/rules.cpp" line="17002"/>
+        <location filename="../src/engine/rules.cpp" line="17019"/>
+        <location filename="../src/engine/rules.cpp" line="17042"/>
+        <location filename="../src/engine/rules.cpp" line="17055"/>
+        <location filename="../src/engine/rules.cpp" line="17069"/>
+        <location filename="../src/engine/rules.cpp" line="17082"/>
+        <location filename="../src/engine/rules.cpp" line="17096"/>
+        <location filename="../src/engine/rules.cpp" line="17109"/>
+        <location filename="../src/engine/rules.cpp" line="17123"/>
+        <location filename="../src/engine/rules.cpp" line="17136"/>
+        <location filename="../src/engine/rules.cpp" line="17199"/>
+        <location filename="../src/engine/rules.cpp" line="17216"/>
+        <location filename="../src/engine/rules.cpp" line="17260"/>
+        <location filename="../src/engine/rules.cpp" line="17277"/>
+        <location filename="../src/engine/rules.cpp" line="17336"/>
         <location filename="../src/engine/rules.cpp" line="17353"/>
-        <location filename="../src/engine/rules.cpp" line="17367"/>
-        <location filename="../src/engine/rules.cpp" line="17384"/>
-        <location filename="../src/engine/rules.cpp" line="17437"/>
-        <location filename="../src/engine/rules.cpp" line="17454"/>
-        <location filename="../src/engine/rules.cpp" line="17471"/>
-        <location filename="../src/engine/rules.cpp" line="17488"/>
-        <location filename="../src/engine/rules.cpp" line="17580"/>
-        <location filename="../src/engine/rules.cpp" line="17597"/>
-        <location filename="../src/engine/rules.cpp" line="17614"/>
-        <location filename="../src/engine/rules.cpp" line="17631"/>
-        <location filename="../src/engine/rules.cpp" line="17722"/>
-        <location filename="../src/engine/rules.cpp" line="17758"/>
-        <location filename="../src/engine/rules.cpp" line="18055"/>
-        <location filename="../src/engine/rules.cpp" line="18076"/>
-        <location filename="../src/engine/rules.cpp" line="18097"/>
-        <location filename="../src/engine/rules.cpp" line="18118"/>
-        <location filename="../src/engine/rules.cpp" line="18217"/>
-        <location filename="../src/engine/rules.cpp" line="18353"/>
-        <location filename="../src/engine/rules.cpp" line="19570"/>
-        <location filename="../src/engine/rules.cpp" line="19690"/>
-        <location filename="../src/engine/rules.cpp" line="19789"/>
-        <location filename="../src/engine/rules.cpp" line="19833"/>
-        <location filename="../src/engine/rules.cpp" line="19903"/>
-        <location filename="../src/engine/rules.cpp" line="20023"/>
-        <location filename="../src/engine/rules.cpp" line="24753"/>
-        <location filename="../src/engine/rules.cpp" line="24775"/>
-        <location filename="../src/engine/rules.cpp" line="24935"/>
-        <location filename="../src/engine/rules.cpp" line="24957"/>
-        <location filename="../src/engine/rules.cpp" line="32835"/>
-        <location filename="../src/engine/rules.cpp" line="32955"/>
-        <location filename="../src/engine/rules.cpp" line="33082"/>
-        <location filename="../src/engine/rules.cpp" line="33202"/>
-        <location filename="../src/engine/rules.cpp" line="33490"/>
-        <location filename="../src/engine/rules.cpp" line="33534"/>
-        <location filename="../src/engine/rules.cpp" line="33582"/>
-        <location filename="../src/engine/rules.cpp" line="33626"/>
-        <location filename="../src/engine/rules.cpp" line="33675"/>
-        <location filename="../src/engine/rules.cpp" line="33719"/>
-        <location filename="../src/engine/rules.cpp" line="33767"/>
-        <location filename="../src/engine/rules.cpp" line="33811"/>
-        <location filename="../src/engine/rules.cpp" line="33883"/>
-        <location filename="../src/engine/rules.cpp" line="34003"/>
-        <location filename="../src/engine/rules.cpp" line="34123"/>
-        <location filename="../src/engine/rules.cpp" line="34243"/>
-        <location filename="../src/engine/rules.cpp" line="39938"/>
+        <location filename="../src/engine/rules.cpp" line="17370"/>
+        <location filename="../src/engine/rules.cpp" line="17383"/>
+        <location filename="../src/engine/rules.cpp" line="17397"/>
+        <location filename="../src/engine/rules.cpp" line="17414"/>
+        <location filename="../src/engine/rules.cpp" line="17467"/>
+        <location filename="../src/engine/rules.cpp" line="17484"/>
+        <location filename="../src/engine/rules.cpp" line="17501"/>
+        <location filename="../src/engine/rules.cpp" line="17518"/>
+        <location filename="../src/engine/rules.cpp" line="17610"/>
+        <location filename="../src/engine/rules.cpp" line="17627"/>
+        <location filename="../src/engine/rules.cpp" line="17644"/>
+        <location filename="../src/engine/rules.cpp" line="17661"/>
+        <location filename="../src/engine/rules.cpp" line="17752"/>
+        <location filename="../src/engine/rules.cpp" line="17788"/>
+        <location filename="../src/engine/rules.cpp" line="18085"/>
+        <location filename="../src/engine/rules.cpp" line="18106"/>
+        <location filename="../src/engine/rules.cpp" line="18127"/>
+        <location filename="../src/engine/rules.cpp" line="18148"/>
+        <location filename="../src/engine/rules.cpp" line="18247"/>
+        <location filename="../src/engine/rules.cpp" line="18383"/>
+        <location filename="../src/engine/rules.cpp" line="19600"/>
+        <location filename="../src/engine/rules.cpp" line="19720"/>
+        <location filename="../src/engine/rules.cpp" line="19819"/>
+        <location filename="../src/engine/rules.cpp" line="19863"/>
+        <location filename="../src/engine/rules.cpp" line="19933"/>
+        <location filename="../src/engine/rules.cpp" line="20053"/>
+        <location filename="../src/engine/rules.cpp" line="24783"/>
+        <location filename="../src/engine/rules.cpp" line="24805"/>
+        <location filename="../src/engine/rules.cpp" line="24965"/>
+        <location filename="../src/engine/rules.cpp" line="24987"/>
+        <location filename="../src/engine/rules.cpp" line="32865"/>
+        <location filename="../src/engine/rules.cpp" line="32985"/>
+        <location filename="../src/engine/rules.cpp" line="33112"/>
+        <location filename="../src/engine/rules.cpp" line="33232"/>
+        <location filename="../src/engine/rules.cpp" line="33520"/>
+        <location filename="../src/engine/rules.cpp" line="33564"/>
+        <location filename="../src/engine/rules.cpp" line="33612"/>
+        <location filename="../src/engine/rules.cpp" line="33656"/>
+        <location filename="../src/engine/rules.cpp" line="33705"/>
+        <location filename="../src/engine/rules.cpp" line="33749"/>
+        <location filename="../src/engine/rules.cpp" line="33797"/>
+        <location filename="../src/engine/rules.cpp" line="33841"/>
+        <location filename="../src/engine/rules.cpp" line="33913"/>
+        <location filename="../src/engine/rules.cpp" line="34033"/>
+        <location filename="../src/engine/rules.cpp" line="34153"/>
+        <location filename="../src/engine/rules.cpp" line="34273"/>
+        <location filename="../src/engine/rules.cpp" line="39968"/>
         <source>FET information</source>
         <translation type="unfinished">FET informacija</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5936"/>
+        <location filename="../src/engine/rules.cpp" line="5966"/>
         <source>Processing internally the activities ... please wait</source>
         <translation type="unfinished">Vykdomas vidinis veiklų apdirbimas ... prašome palaukti</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5953"/>
-        <location filename="../src/engine/rules.cpp" line="6152"/>
-        <location filename="../src/engine/rules.cpp" line="6234"/>
+        <location filename="../src/engine/rules.cpp" line="5983"/>
+        <location filename="../src/engine/rules.cpp" line="6182"/>
+        <location filename="../src/engine/rules.cpp" line="6264"/>
         <source>Canceled</source>
         <translation type="unfinished">Atšaukta</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6120"/>
+        <location filename="../src/engine/rules.cpp" line="6150"/>
         <source>The following time constraint is ignored, because it refers to inactive activities:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6125"/>
-        <location filename="../src/engine/rules.cpp" line="6207"/>
-        <location filename="../src/engine/rules.cpp" line="16317"/>
-        <location filename="../src/engine/rules.cpp" line="16370"/>
-        <location filename="../src/engine/rules.cpp" line="16470"/>
-        <location filename="../src/engine/rules.cpp" line="16481"/>
-        <location filename="../src/engine/rules.cpp" line="16492"/>
-        <location filename="../src/engine/rules.cpp" line="16623"/>
-        <location filename="../src/engine/rules.cpp" line="16700"/>
-        <location filename="../src/engine/rules.cpp" line="16716"/>
-        <location filename="../src/engine/rules.cpp" line="16734"/>
-        <location filename="../src/engine/rules.cpp" line="16772"/>
-        <location filename="../src/engine/rules.cpp" line="16786"/>
-        <location filename="../src/engine/rules.cpp" line="16814"/>
-        <location filename="../src/engine/rules.cpp" line="16831"/>
-        <location filename="../src/engine/rules.cpp" line="16849"/>
-        <location filename="../src/engine/rules.cpp" line="16917"/>
-        <location filename="../src/engine/rules.cpp" line="16928"/>
-        <location filename="../src/engine/rules.cpp" line="16976"/>
-        <location filename="../src/engine/rules.cpp" line="16993"/>
-        <location filename="../src/engine/rules.cpp" line="17016"/>
-        <location filename="../src/engine/rules.cpp" line="17029"/>
-        <location filename="../src/engine/rules.cpp" line="17043"/>
-        <location filename="../src/engine/rules.cpp" line="17056"/>
-        <location filename="../src/engine/rules.cpp" line="17070"/>
-        <location filename="../src/engine/rules.cpp" line="17083"/>
-        <location filename="../src/engine/rules.cpp" line="17097"/>
-        <location filename="../src/engine/rules.cpp" line="17110"/>
-        <location filename="../src/engine/rules.cpp" line="17173"/>
-        <location filename="../src/engine/rules.cpp" line="17190"/>
-        <location filename="../src/engine/rules.cpp" line="17234"/>
-        <location filename="../src/engine/rules.cpp" line="17251"/>
-        <location filename="../src/engine/rules.cpp" line="17310"/>
-        <location filename="../src/engine/rules.cpp" line="17327"/>
-        <location filename="../src/engine/rules.cpp" line="17344"/>
+        <location filename="../src/engine/rules.cpp" line="6155"/>
+        <location filename="../src/engine/rules.cpp" line="6237"/>
+        <location filename="../src/engine/rules.cpp" line="16347"/>
+        <location filename="../src/engine/rules.cpp" line="16400"/>
+        <location filename="../src/engine/rules.cpp" line="16500"/>
+        <location filename="../src/engine/rules.cpp" line="16511"/>
+        <location filename="../src/engine/rules.cpp" line="16522"/>
+        <location filename="../src/engine/rules.cpp" line="16653"/>
+        <location filename="../src/engine/rules.cpp" line="16730"/>
+        <location filename="../src/engine/rules.cpp" line="16746"/>
+        <location filename="../src/engine/rules.cpp" line="16764"/>
+        <location filename="../src/engine/rules.cpp" line="16802"/>
+        <location filename="../src/engine/rules.cpp" line="16816"/>
+        <location filename="../src/engine/rules.cpp" line="16844"/>
+        <location filename="../src/engine/rules.cpp" line="16861"/>
+        <location filename="../src/engine/rules.cpp" line="16879"/>
+        <location filename="../src/engine/rules.cpp" line="16947"/>
+        <location filename="../src/engine/rules.cpp" line="16958"/>
+        <location filename="../src/engine/rules.cpp" line="17006"/>
+        <location filename="../src/engine/rules.cpp" line="17023"/>
+        <location filename="../src/engine/rules.cpp" line="17046"/>
+        <location filename="../src/engine/rules.cpp" line="17059"/>
+        <location filename="../src/engine/rules.cpp" line="17073"/>
+        <location filename="../src/engine/rules.cpp" line="17086"/>
+        <location filename="../src/engine/rules.cpp" line="17100"/>
+        <location filename="../src/engine/rules.cpp" line="17113"/>
+        <location filename="../src/engine/rules.cpp" line="17127"/>
+        <location filename="../src/engine/rules.cpp" line="17140"/>
+        <location filename="../src/engine/rules.cpp" line="17203"/>
+        <location filename="../src/engine/rules.cpp" line="17220"/>
+        <location filename="../src/engine/rules.cpp" line="17264"/>
+        <location filename="../src/engine/rules.cpp" line="17281"/>
+        <location filename="../src/engine/rules.cpp" line="17340"/>
         <location filename="../src/engine/rules.cpp" line="17357"/>
-        <location filename="../src/engine/rules.cpp" line="17371"/>
-        <location filename="../src/engine/rules.cpp" line="17388"/>
-        <location filename="../src/engine/rules.cpp" line="17441"/>
-        <location filename="../src/engine/rules.cpp" line="17458"/>
-        <location filename="../src/engine/rules.cpp" line="17475"/>
-        <location filename="../src/engine/rules.cpp" line="17492"/>
-        <location filename="../src/engine/rules.cpp" line="17584"/>
-        <location filename="../src/engine/rules.cpp" line="17601"/>
-        <location filename="../src/engine/rules.cpp" line="17618"/>
-        <location filename="../src/engine/rules.cpp" line="17635"/>
-        <location filename="../src/engine/rules.cpp" line="17724"/>
-        <location filename="../src/engine/rules.cpp" line="17761"/>
-        <location filename="../src/engine/rules.cpp" line="17778"/>
-        <location filename="../src/engine/rules.cpp" line="17790"/>
-        <location filename="../src/engine/rules.cpp" line="17803"/>
-        <location filename="../src/engine/rules.cpp" line="17815"/>
-        <location filename="../src/engine/rules.cpp" line="17827"/>
-        <location filename="../src/engine/rules.cpp" line="17839"/>
-        <location filename="../src/engine/rules.cpp" line="17851"/>
+        <location filename="../src/engine/rules.cpp" line="17374"/>
+        <location filename="../src/engine/rules.cpp" line="17387"/>
+        <location filename="../src/engine/rules.cpp" line="17401"/>
+        <location filename="../src/engine/rules.cpp" line="17418"/>
+        <location filename="../src/engine/rules.cpp" line="17471"/>
+        <location filename="../src/engine/rules.cpp" line="17488"/>
+        <location filename="../src/engine/rules.cpp" line="17505"/>
+        <location filename="../src/engine/rules.cpp" line="17522"/>
+        <location filename="../src/engine/rules.cpp" line="17614"/>
+        <location filename="../src/engine/rules.cpp" line="17631"/>
+        <location filename="../src/engine/rules.cpp" line="17648"/>
+        <location filename="../src/engine/rules.cpp" line="17665"/>
+        <location filename="../src/engine/rules.cpp" line="17754"/>
+        <location filename="../src/engine/rules.cpp" line="17791"/>
+        <location filename="../src/engine/rules.cpp" line="17808"/>
+        <location filename="../src/engine/rules.cpp" line="17820"/>
+        <location filename="../src/engine/rules.cpp" line="17833"/>
+        <location filename="../src/engine/rules.cpp" line="17845"/>
+        <location filename="../src/engine/rules.cpp" line="17857"/>
         <location filename="../src/engine/rules.cpp" line="17869"/>
-        <location filename="../src/engine/rules.cpp" line="17918"/>
-        <location filename="../src/engine/rules.cpp" line="17930"/>
-        <location filename="../src/engine/rules.cpp" line="17942"/>
-        <location filename="../src/engine/rules.cpp" line="17954"/>
-        <location filename="../src/engine/rules.cpp" line="18059"/>
-        <location filename="../src/engine/rules.cpp" line="18080"/>
-        <location filename="../src/engine/rules.cpp" line="18101"/>
-        <location filename="../src/engine/rules.cpp" line="18122"/>
-        <location filename="../src/engine/rules.cpp" line="18219"/>
-        <location filename="../src/engine/rules.cpp" line="24768"/>
-        <location filename="../src/engine/rules.cpp" line="24780"/>
-        <location filename="../src/engine/rules.cpp" line="24950"/>
-        <location filename="../src/engine/rules.cpp" line="24962"/>
-        <location filename="../src/engine/rules.cpp" line="39953"/>
+        <location filename="../src/engine/rules.cpp" line="17881"/>
+        <location filename="../src/engine/rules.cpp" line="17899"/>
+        <location filename="../src/engine/rules.cpp" line="17948"/>
+        <location filename="../src/engine/rules.cpp" line="17960"/>
+        <location filename="../src/engine/rules.cpp" line="17972"/>
+        <location filename="../src/engine/rules.cpp" line="17984"/>
+        <location filename="../src/engine/rules.cpp" line="18089"/>
+        <location filename="../src/engine/rules.cpp" line="18110"/>
+        <location filename="../src/engine/rules.cpp" line="18131"/>
+        <location filename="../src/engine/rules.cpp" line="18152"/>
+        <location filename="../src/engine/rules.cpp" line="18249"/>
+        <location filename="../src/engine/rules.cpp" line="24798"/>
+        <location filename="../src/engine/rules.cpp" line="24810"/>
+        <location filename="../src/engine/rules.cpp" line="24980"/>
+        <location filename="../src/engine/rules.cpp" line="24992"/>
+        <location filename="../src/engine/rules.cpp" line="39983"/>
         <source>Skip rest</source>
         <translation type="unfinished">Praleisti kitus</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6125"/>
-        <location filename="../src/engine/rules.cpp" line="6207"/>
-        <location filename="../src/engine/rules.cpp" line="16317"/>
-        <location filename="../src/engine/rules.cpp" line="16370"/>
-        <location filename="../src/engine/rules.cpp" line="16470"/>
-        <location filename="../src/engine/rules.cpp" line="16481"/>
-        <location filename="../src/engine/rules.cpp" line="16492"/>
-        <location filename="../src/engine/rules.cpp" line="16623"/>
-        <location filename="../src/engine/rules.cpp" line="16700"/>
-        <location filename="../src/engine/rules.cpp" line="16716"/>
-        <location filename="../src/engine/rules.cpp" line="16734"/>
-        <location filename="../src/engine/rules.cpp" line="16772"/>
-        <location filename="../src/engine/rules.cpp" line="16786"/>
-        <location filename="../src/engine/rules.cpp" line="16814"/>
-        <location filename="../src/engine/rules.cpp" line="16831"/>
-        <location filename="../src/engine/rules.cpp" line="16849"/>
-        <location filename="../src/engine/rules.cpp" line="16917"/>
-        <location filename="../src/engine/rules.cpp" line="16928"/>
-        <location filename="../src/engine/rules.cpp" line="16976"/>
-        <location filename="../src/engine/rules.cpp" line="16993"/>
-        <location filename="../src/engine/rules.cpp" line="17016"/>
-        <location filename="../src/engine/rules.cpp" line="17029"/>
-        <location filename="../src/engine/rules.cpp" line="17043"/>
-        <location filename="../src/engine/rules.cpp" line="17056"/>
-        <location filename="../src/engine/rules.cpp" line="17070"/>
-        <location filename="../src/engine/rules.cpp" line="17083"/>
-        <location filename="../src/engine/rules.cpp" line="17097"/>
-        <location filename="../src/engine/rules.cpp" line="17110"/>
-        <location filename="../src/engine/rules.cpp" line="17173"/>
-        <location filename="../src/engine/rules.cpp" line="17190"/>
-        <location filename="../src/engine/rules.cpp" line="17234"/>
-        <location filename="../src/engine/rules.cpp" line="17251"/>
-        <location filename="../src/engine/rules.cpp" line="17310"/>
-        <location filename="../src/engine/rules.cpp" line="17327"/>
-        <location filename="../src/engine/rules.cpp" line="17344"/>
+        <location filename="../src/engine/rules.cpp" line="6155"/>
+        <location filename="../src/engine/rules.cpp" line="6237"/>
+        <location filename="../src/engine/rules.cpp" line="16347"/>
+        <location filename="../src/engine/rules.cpp" line="16400"/>
+        <location filename="../src/engine/rules.cpp" line="16500"/>
+        <location filename="../src/engine/rules.cpp" line="16511"/>
+        <location filename="../src/engine/rules.cpp" line="16522"/>
+        <location filename="../src/engine/rules.cpp" line="16653"/>
+        <location filename="../src/engine/rules.cpp" line="16730"/>
+        <location filename="../src/engine/rules.cpp" line="16746"/>
+        <location filename="../src/engine/rules.cpp" line="16764"/>
+        <location filename="../src/engine/rules.cpp" line="16802"/>
+        <location filename="../src/engine/rules.cpp" line="16816"/>
+        <location filename="../src/engine/rules.cpp" line="16844"/>
+        <location filename="../src/engine/rules.cpp" line="16861"/>
+        <location filename="../src/engine/rules.cpp" line="16879"/>
+        <location filename="../src/engine/rules.cpp" line="16947"/>
+        <location filename="../src/engine/rules.cpp" line="16958"/>
+        <location filename="../src/engine/rules.cpp" line="17006"/>
+        <location filename="../src/engine/rules.cpp" line="17023"/>
+        <location filename="../src/engine/rules.cpp" line="17046"/>
+        <location filename="../src/engine/rules.cpp" line="17059"/>
+        <location filename="../src/engine/rules.cpp" line="17073"/>
+        <location filename="../src/engine/rules.cpp" line="17086"/>
+        <location filename="../src/engine/rules.cpp" line="17100"/>
+        <location filename="../src/engine/rules.cpp" line="17113"/>
+        <location filename="../src/engine/rules.cpp" line="17127"/>
+        <location filename="../src/engine/rules.cpp" line="17140"/>
+        <location filename="../src/engine/rules.cpp" line="17203"/>
+        <location filename="../src/engine/rules.cpp" line="17220"/>
+        <location filename="../src/engine/rules.cpp" line="17264"/>
+        <location filename="../src/engine/rules.cpp" line="17281"/>
+        <location filename="../src/engine/rules.cpp" line="17340"/>
         <location filename="../src/engine/rules.cpp" line="17357"/>
-        <location filename="../src/engine/rules.cpp" line="17371"/>
-        <location filename="../src/engine/rules.cpp" line="17388"/>
-        <location filename="../src/engine/rules.cpp" line="17441"/>
-        <location filename="../src/engine/rules.cpp" line="17458"/>
-        <location filename="../src/engine/rules.cpp" line="17475"/>
-        <location filename="../src/engine/rules.cpp" line="17492"/>
-        <location filename="../src/engine/rules.cpp" line="17584"/>
-        <location filename="../src/engine/rules.cpp" line="17601"/>
-        <location filename="../src/engine/rules.cpp" line="17618"/>
-        <location filename="../src/engine/rules.cpp" line="17635"/>
-        <location filename="../src/engine/rules.cpp" line="17724"/>
-        <location filename="../src/engine/rules.cpp" line="17761"/>
-        <location filename="../src/engine/rules.cpp" line="17778"/>
-        <location filename="../src/engine/rules.cpp" line="17790"/>
-        <location filename="../src/engine/rules.cpp" line="17803"/>
-        <location filename="../src/engine/rules.cpp" line="17815"/>
-        <location filename="../src/engine/rules.cpp" line="17827"/>
-        <location filename="../src/engine/rules.cpp" line="17839"/>
-        <location filename="../src/engine/rules.cpp" line="17851"/>
+        <location filename="../src/engine/rules.cpp" line="17374"/>
+        <location filename="../src/engine/rules.cpp" line="17387"/>
+        <location filename="../src/engine/rules.cpp" line="17401"/>
+        <location filename="../src/engine/rules.cpp" line="17418"/>
+        <location filename="../src/engine/rules.cpp" line="17471"/>
+        <location filename="../src/engine/rules.cpp" line="17488"/>
+        <location filename="../src/engine/rules.cpp" line="17505"/>
+        <location filename="../src/engine/rules.cpp" line="17522"/>
+        <location filename="../src/engine/rules.cpp" line="17614"/>
+        <location filename="../src/engine/rules.cpp" line="17631"/>
+        <location filename="../src/engine/rules.cpp" line="17648"/>
+        <location filename="../src/engine/rules.cpp" line="17665"/>
+        <location filename="../src/engine/rules.cpp" line="17754"/>
+        <location filename="../src/engine/rules.cpp" line="17791"/>
+        <location filename="../src/engine/rules.cpp" line="17808"/>
+        <location filename="../src/engine/rules.cpp" line="17820"/>
+        <location filename="../src/engine/rules.cpp" line="17833"/>
+        <location filename="../src/engine/rules.cpp" line="17845"/>
+        <location filename="../src/engine/rules.cpp" line="17857"/>
         <location filename="../src/engine/rules.cpp" line="17869"/>
-        <location filename="../src/engine/rules.cpp" line="17918"/>
-        <location filename="../src/engine/rules.cpp" line="17930"/>
-        <location filename="../src/engine/rules.cpp" line="17942"/>
-        <location filename="../src/engine/rules.cpp" line="17954"/>
-        <location filename="../src/engine/rules.cpp" line="18059"/>
-        <location filename="../src/engine/rules.cpp" line="18080"/>
-        <location filename="../src/engine/rules.cpp" line="18101"/>
-        <location filename="../src/engine/rules.cpp" line="18122"/>
-        <location filename="../src/engine/rules.cpp" line="18219"/>
-        <location filename="../src/engine/rules.cpp" line="24768"/>
-        <location filename="../src/engine/rules.cpp" line="24780"/>
-        <location filename="../src/engine/rules.cpp" line="24950"/>
-        <location filename="../src/engine/rules.cpp" line="24962"/>
-        <location filename="../src/engine/rules.cpp" line="39953"/>
+        <location filename="../src/engine/rules.cpp" line="17881"/>
+        <location filename="../src/engine/rules.cpp" line="17899"/>
+        <location filename="../src/engine/rules.cpp" line="17948"/>
+        <location filename="../src/engine/rules.cpp" line="17960"/>
+        <location filename="../src/engine/rules.cpp" line="17972"/>
+        <location filename="../src/engine/rules.cpp" line="17984"/>
+        <location filename="../src/engine/rules.cpp" line="18089"/>
+        <location filename="../src/engine/rules.cpp" line="18110"/>
+        <location filename="../src/engine/rules.cpp" line="18131"/>
+        <location filename="../src/engine/rules.cpp" line="18152"/>
+        <location filename="../src/engine/rules.cpp" line="18249"/>
+        <location filename="../src/engine/rules.cpp" line="24798"/>
+        <location filename="../src/engine/rules.cpp" line="24810"/>
+        <location filename="../src/engine/rules.cpp" line="24980"/>
+        <location filename="../src/engine/rules.cpp" line="24992"/>
+        <location filename="../src/engine/rules.cpp" line="39983"/>
         <source>See next</source>
         <translation type="unfinished">Žiūrėti toliau</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6140"/>
+        <location filename="../src/engine/rules.cpp" line="6170"/>
         <source>Processing internally the time constraints ... please wait</source>
         <translation type="unfinished">Vykdomas vidinis laiko apribojimų apdirbimas ... prašome palaukti</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6202"/>
+        <location filename="../src/engine/rules.cpp" line="6232"/>
         <source>The following space constraint is ignored, because it refers to inactive activities:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6222"/>
+        <location filename="../src/engine/rules.cpp" line="6252"/>
         <source>Processing internally the space constraints ... please wait</source>
         <translation type="unfinished">Vykdomas vidinis vietos apribojimų apdirbimas ... prašome palaukti</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5192"/>
-        <location filename="../src/engine/rules.cpp" line="10093"/>
-        <location filename="../src/engine/rules.cpp" line="10098"/>
-        <location filename="../src/engine/rules.cpp" line="10103"/>
-        <location filename="../src/engine/rules.cpp" line="10147"/>
-        <location filename="../src/engine/rules.cpp" line="10152"/>
-        <location filename="../src/engine/rules.cpp" line="10157"/>
-        <location filename="../src/engine/rules.cpp" line="10258"/>
-        <location filename="../src/engine/rules.cpp" line="10264"/>
-        <location filename="../src/engine/rules.cpp" line="10270"/>
-        <location filename="../src/engine/rules.cpp" line="13515"/>
-        <location filename="../src/engine/rules.cpp" line="13536"/>
-        <location filename="../src/engine/rules.cpp" line="13547"/>
-        <location filename="../src/engine/rules.cpp" line="13650"/>
-        <location filename="../src/engine/rules.cpp" line="13678"/>
-        <location filename="../src/engine/rules.cpp" line="13702"/>
-        <location filename="../src/engine/rules.cpp" line="13729"/>
-        <location filename="../src/engine/rules.cpp" line="13806"/>
-        <location filename="../src/engine/rules.cpp" line="14579"/>
-        <location filename="../src/engine/rules.cpp" line="14645"/>
-        <location filename="../src/engine/rules.cpp" line="14726"/>
-        <location filename="../src/engine/rules.cpp" line="14875"/>
-        <location filename="../src/engine/rules.cpp" line="15813"/>
-        <location filename="../src/engine/rules.cpp" line="16017"/>
-        <location filename="../src/engine/rules.cpp" line="16068"/>
-        <location filename="../src/engine/rules.cpp" line="16245"/>
-        <location filename="../src/engine/rules.cpp" line="16468"/>
-        <location filename="../src/engine/rules.cpp" line="16479"/>
-        <location filename="../src/engine/rules.cpp" line="16490"/>
-        <location filename="../src/engine/rules.cpp" line="16698"/>
-        <location filename="../src/engine/rules.cpp" line="16915"/>
-        <location filename="../src/engine/rules.cpp" line="16926"/>
-        <location filename="../src/engine/rules.cpp" line="17776"/>
-        <location filename="../src/engine/rules.cpp" line="17788"/>
-        <location filename="../src/engine/rules.cpp" line="17801"/>
-        <location filename="../src/engine/rules.cpp" line="17813"/>
-        <location filename="../src/engine/rules.cpp" line="17825"/>
-        <location filename="../src/engine/rules.cpp" line="17837"/>
-        <location filename="../src/engine/rules.cpp" line="17849"/>
+        <location filename="../src/engine/rules.cpp" line="10123"/>
+        <location filename="../src/engine/rules.cpp" line="10128"/>
+        <location filename="../src/engine/rules.cpp" line="10133"/>
+        <location filename="../src/engine/rules.cpp" line="10177"/>
+        <location filename="../src/engine/rules.cpp" line="10182"/>
+        <location filename="../src/engine/rules.cpp" line="10187"/>
+        <location filename="../src/engine/rules.cpp" line="10288"/>
+        <location filename="../src/engine/rules.cpp" line="10294"/>
+        <location filename="../src/engine/rules.cpp" line="10300"/>
+        <location filename="../src/engine/rules.cpp" line="13545"/>
+        <location filename="../src/engine/rules.cpp" line="13566"/>
+        <location filename="../src/engine/rules.cpp" line="13577"/>
+        <location filename="../src/engine/rules.cpp" line="13680"/>
+        <location filename="../src/engine/rules.cpp" line="13708"/>
+        <location filename="../src/engine/rules.cpp" line="13732"/>
+        <location filename="../src/engine/rules.cpp" line="13759"/>
+        <location filename="../src/engine/rules.cpp" line="13836"/>
+        <location filename="../src/engine/rules.cpp" line="14609"/>
+        <location filename="../src/engine/rules.cpp" line="14675"/>
+        <location filename="../src/engine/rules.cpp" line="14756"/>
+        <location filename="../src/engine/rules.cpp" line="14905"/>
+        <location filename="../src/engine/rules.cpp" line="15843"/>
+        <location filename="../src/engine/rules.cpp" line="16047"/>
+        <location filename="../src/engine/rules.cpp" line="16098"/>
+        <location filename="../src/engine/rules.cpp" line="16275"/>
+        <location filename="../src/engine/rules.cpp" line="16498"/>
+        <location filename="../src/engine/rules.cpp" line="16509"/>
+        <location filename="../src/engine/rules.cpp" line="16520"/>
+        <location filename="../src/engine/rules.cpp" line="16728"/>
+        <location filename="../src/engine/rules.cpp" line="16945"/>
+        <location filename="../src/engine/rules.cpp" line="16956"/>
+        <location filename="../src/engine/rules.cpp" line="17806"/>
+        <location filename="../src/engine/rules.cpp" line="17818"/>
+        <location filename="../src/engine/rules.cpp" line="17831"/>
+        <location filename="../src/engine/rules.cpp" line="17843"/>
+        <location filename="../src/engine/rules.cpp" line="17855"/>
         <location filename="../src/engine/rules.cpp" line="17867"/>
-        <location filename="../src/engine/rules.cpp" line="17916"/>
-        <location filename="../src/engine/rules.cpp" line="17928"/>
-        <location filename="../src/engine/rules.cpp" line="17940"/>
-        <location filename="../src/engine/rules.cpp" line="17952"/>
-        <location filename="../src/engine/rules.cpp" line="18309"/>
-        <location filename="../src/engine/rules.cpp" line="20428"/>
-        <location filename="../src/engine/rules.cpp" line="20583"/>
-        <location filename="../src/engine/rules.cpp" line="20738"/>
-        <location filename="../src/engine/rules.cpp" line="22211"/>
-        <location filename="../src/engine/rules.cpp" line="22297"/>
-        <location filename="../src/engine/rules.cpp" line="23045"/>
-        <location filename="../src/engine/rules.cpp" line="23140"/>
-        <location filename="../src/engine/rules.cpp" line="24686"/>
-        <location filename="../src/engine/rules.cpp" line="24868"/>
-        <location filename="../src/engine/rules.cpp" line="35105"/>
-        <location filename="../src/engine/rules.cpp" line="35124"/>
-        <location filename="../src/engine/rules.cpp" line="35211"/>
-        <location filename="../src/engine/rules.cpp" line="35230"/>
-        <location filename="../src/engine/rules.cpp" line="35287"/>
-        <location filename="../src/engine/rules.cpp" line="35354"/>
-        <location filename="../src/engine/rules.cpp" line="35430"/>
-        <location filename="../src/engine/rules.cpp" line="35516"/>
-        <location filename="../src/engine/rules.cpp" line="36123"/>
-        <location filename="../src/engine/rules.cpp" line="36218"/>
-        <location filename="../src/engine/rules.cpp" line="36289"/>
-        <location filename="../src/engine/rules.cpp" line="36365"/>
-        <location filename="../src/engine/rules.cpp" line="38151"/>
-        <location filename="../src/engine/rules.cpp" line="38212"/>
-        <location filename="../src/engine/rules.cpp" line="38279"/>
-        <location filename="../src/engine/rules.cpp" line="38340"/>
-        <location filename="../src/engine/rules.cpp" line="39859"/>
+        <location filename="../src/engine/rules.cpp" line="17879"/>
+        <location filename="../src/engine/rules.cpp" line="17897"/>
+        <location filename="../src/engine/rules.cpp" line="17946"/>
+        <location filename="../src/engine/rules.cpp" line="17958"/>
+        <location filename="../src/engine/rules.cpp" line="17970"/>
+        <location filename="../src/engine/rules.cpp" line="17982"/>
+        <location filename="../src/engine/rules.cpp" line="18339"/>
+        <location filename="../src/engine/rules.cpp" line="20458"/>
+        <location filename="../src/engine/rules.cpp" line="20613"/>
+        <location filename="../src/engine/rules.cpp" line="20768"/>
+        <location filename="../src/engine/rules.cpp" line="22241"/>
+        <location filename="../src/engine/rules.cpp" line="22327"/>
+        <location filename="../src/engine/rules.cpp" line="23075"/>
+        <location filename="../src/engine/rules.cpp" line="23170"/>
+        <location filename="../src/engine/rules.cpp" line="24716"/>
+        <location filename="../src/engine/rules.cpp" line="24898"/>
+        <location filename="../src/engine/rules.cpp" line="35135"/>
+        <location filename="../src/engine/rules.cpp" line="35154"/>
+        <location filename="../src/engine/rules.cpp" line="35241"/>
+        <location filename="../src/engine/rules.cpp" line="35260"/>
+        <location filename="../src/engine/rules.cpp" line="35317"/>
+        <location filename="../src/engine/rules.cpp" line="35384"/>
+        <location filename="../src/engine/rules.cpp" line="35460"/>
+        <location filename="../src/engine/rules.cpp" line="35546"/>
+        <location filename="../src/engine/rules.cpp" line="36153"/>
+        <location filename="../src/engine/rules.cpp" line="36248"/>
+        <location filename="../src/engine/rules.cpp" line="36319"/>
+        <location filename="../src/engine/rules.cpp" line="36395"/>
+        <location filename="../src/engine/rules.cpp" line="38181"/>
+        <location filename="../src/engine/rules.cpp" line="38242"/>
+        <location filename="../src/engine/rules.cpp" line="38309"/>
+        <location filename="../src/engine/rules.cpp" line="38370"/>
+        <location filename="../src/engine/rules.cpp" line="39889"/>
         <source>FET warning</source>
         <translation type="unfinished">FET įspėjimas</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13515"/>
+        <location filename="../src/engine/rules.cpp" line="13545"/>
         <source>Could not open file - not existing or in use</source>
         <translation type="unfinished">Negalima atidaryti bylos - neegzistuoja arba yra naudojama</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13943"/>
+        <location filename="../src/engine/rules.cpp" line="13973"/>
         <source>Incorrect mode - it has to be %1, %2, %3, or %4.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16187"/>
+        <location filename="../src/engine/rules.cpp" line="16217"/>
         <source>The specified number of real rooms is not equal with the met number of real rooms for the virtual room %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16226"/>
+        <location filename="../src/engine/rules.cpp" line="16256"/>
         <source>The specified number of sets of real rooms was not found in the input file for the virtual room %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16233"/>
+        <location filename="../src/engine/rules.cpp" line="16263"/>
         <source>The specified number of sets of real rooms is not equal with the met number of sets of real rooms for the virtual room %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16469"/>
+        <location filename="../src/engine/rules.cpp" line="16499"/>
         <source>File contains deprecated constraint teachers subgroups max hours daily - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16480"/>
+        <location filename="../src/engine/rules.cpp" line="16510"/>
         <source>File contains deprecated constraint students n hours daily - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16491"/>
+        <location filename="../src/engine/rules.cpp" line="16521"/>
         <source>File contains deprecated constraint students set n hours daily - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16699"/>
+        <location filename="../src/engine/rules.cpp" line="16729"/>
         <source>File contains deprecated constraint activity ends day - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16916"/>
+        <location filename="../src/engine/rules.cpp" line="16946"/>
         <source>File contains deprecated constraint teachers subject tags max hours continuously - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16927"/>
+        <location filename="../src/engine/rules.cpp" line="16957"/>
         <source>File contains deprecated constraint teachers subject tag max hours continuously - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17438"/>
+        <location filename="../src/engine/rules.cpp" line="17468"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type students max hours daily, which will be converted to a constraint of type students max hours daily real days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17455"/>
+        <location filename="../src/engine/rules.cpp" line="17485"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type student set max hours daily, which will be converted to a constraint of type students set max hours daily real days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17489"/>
+        <location filename="../src/engine/rules.cpp" line="17519"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type students activity tag max hours daily, which will be converted to a constraint of type students activity tag max hours daily real days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17777"/>
+        <location filename="../src/engine/rules.cpp" line="17807"/>
         <source>File contains deprecated constraint room type not allowed subjects - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17789"/>
+        <location filename="../src/engine/rules.cpp" line="17819"/>
         <source>File contains deprecated constraint subject requires equipments - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17802"/>
+        <location filename="../src/engine/rules.cpp" line="17832"/>
         <source>File contains deprecated constraint subject tag requires equipments - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17814"/>
+        <location filename="../src/engine/rules.cpp" line="17844"/>
         <source>File contains deprecated constraint teacher requires room - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17826"/>
+        <location filename="../src/engine/rules.cpp" line="17856"/>
         <source>File contains deprecated constraint teacher subject require room - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17838"/>
+        <location filename="../src/engine/rules.cpp" line="17868"/>
         <source>File contains deprecated constraint minimize number of rooms for students - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17850"/>
+        <location filename="../src/engine/rules.cpp" line="17880"/>
         <source>File contains deprecated constraint minimize number of rooms for teachers - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17868"/>
+        <location filename="../src/engine/rules.cpp" line="17898"/>
         <source>File contains deprecated constraint activities same room - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17917"/>
+        <location filename="../src/engine/rules.cpp" line="17947"/>
         <source>File contains deprecated constraint max building changes per day for teachers - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17929"/>
+        <location filename="../src/engine/rules.cpp" line="17959"/>
         <source>File contains deprecated constraint max building changes per day for students - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17941"/>
+        <location filename="../src/engine/rules.cpp" line="17971"/>
         <source>File contains deprecated constraint max room changes per day for teachers - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17953"/>
+        <location filename="../src/engine/rules.cpp" line="17983"/>
         <source>File contains deprecated constraint max room changes per day for students - will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18119"/>
+        <location filename="../src/engine/rules.cpp" line="18149"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type students max room changes per day, which will be converted to a constraint of type students max room changes per real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18310"/>
+        <location filename="../src/engine/rules.cpp" line="18340"/>
         <source>Could not read file - XML parse error at line %1, column %2:
 %3</source>
         <comment>The error description is %3</comment>
@@ -61750,220 +61750,220 @@ to
 %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13536"/>
-        <location filename="../src/engine/rules.cpp" line="13547"/>
+        <location filename="../src/engine/rules.cpp" line="13566"/>
+        <location filename="../src/engine/rules.cpp" line="13577"/>
         <source>Cannot create or use directory %1 - cannot continue</source>
         <translation type="unfinished">Negalima sukurti ar panaudoti katalogo %1 - negalima tęsti</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13584"/>
+        <location filename="../src/engine/rules.cpp" line="13614"/>
         <source>A solution is to remove that file (if it exists already) or set its permissions to allow writing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13585"/>
+        <location filename="../src/engine/rules.cpp" line="13615"/>
         <source>Please report possible bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5371"/>
-        <location filename="../src/engine/rules.cpp" line="13586"/>
-        <location filename="../src/engine/rules.cpp" line="18401"/>
-        <location filename="../src/engine/rules.cpp" line="18452"/>
-        <location filename="../src/engine/rules.cpp" line="18627"/>
+        <location filename="../src/engine/rules.cpp" line="13616"/>
+        <location filename="../src/engine/rules.cpp" line="18431"/>
+        <location filename="../src/engine/rules.cpp" line="18482"/>
+        <location filename="../src/engine/rules.cpp" line="18657"/>
         <source>FET critical</source>
         <translation type="unfinished">FET kritiškas</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13650"/>
-        <location filename="../src/engine/rules.cpp" line="13702"/>
+        <location filename="../src/engine/rules.cpp" line="13680"/>
+        <location filename="../src/engine/rules.cpp" line="13732"/>
         <source>File contains a version numbering scheme which is not matched by v.v.va (3 numbers separated by points, followed by any string a, which may be empty). File will be opened, but you are advised to check the version of the .fet file (in the beginning of the file). If this is a FET bug, please report it</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13653"/>
-        <location filename="../src/engine/rules.cpp" line="13705"/>
+        <location filename="../src/engine/rules.cpp" line="13683"/>
+        <location filename="../src/engine/rules.cpp" line="13735"/>
         <source>If you are opening a file older than FET format version 5, it will be converted to latest FET data format</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13678"/>
-        <location filename="../src/engine/rules.cpp" line="13729"/>
+        <location filename="../src/engine/rules.cpp" line="13708"/>
+        <location filename="../src/engine/rules.cpp" line="13759"/>
         <source>FET version does not respect the format v.v.va (3 numbers separated by points, followed by any string a, which may be empty). This is probably a bug in FET - please report it</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13851"/>
+        <location filename="../src/engine/rules.cpp" line="13881"/>
         <source>Opening a file generated with a newer version than your current FET software ... file will be opened but it is recommended to update your FET software to the latest version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13852"/>
+        <location filename="../src/engine/rules.cpp" line="13882"/>
         <source>Your FET version: %1, file version: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13966"/>
-        <location filename="../src/engine/rules.cpp" line="13982"/>
-        <location filename="../src/engine/rules.cpp" line="14013"/>
-        <location filename="../src/engine/rules.cpp" line="14139"/>
-        <location filename="../src/engine/rules.cpp" line="14265"/>
-        <location filename="../src/engine/rules.cpp" line="14407"/>
-        <location filename="../src/engine/rules.cpp" line="14602"/>
-        <location filename="../src/engine/rules.cpp" line="14668"/>
-        <location filename="../src/engine/rules.cpp" line="14749"/>
-        <location filename="../src/engine/rules.cpp" line="14898"/>
-        <location filename="../src/engine/rules.cpp" line="15950"/>
-        <location filename="../src/engine/rules.cpp" line="15954"/>
-        <location filename="../src/engine/rules.cpp" line="15956"/>
-        <location filename="../src/engine/rules.cpp" line="16091"/>
-        <location filename="../src/engine/rules.cpp" line="16269"/>
-        <location filename="../src/engine/rules.cpp" line="19248"/>
-        <location filename="../src/engine/rules.cpp" line="19334"/>
-        <location filename="../src/engine/rules.cpp" line="19383"/>
-        <location filename="../src/engine/rules.cpp" line="19441"/>
-        <location filename="../src/engine/rules.cpp" line="19490"/>
-        <location filename="../src/engine/rules.cpp" line="20356"/>
-        <location filename="../src/engine/rules.cpp" line="22364"/>
-        <location filename="../src/engine/rules.cpp" line="22434"/>
-        <location filename="../src/engine/rules.cpp" line="22509"/>
-        <location filename="../src/engine/rules.cpp" line="22579"/>
-        <location filename="../src/engine/rules.cpp" line="22635"/>
-        <location filename="../src/engine/rules.cpp" line="22696"/>
-        <location filename="../src/engine/rules.cpp" line="22752"/>
-        <location filename="../src/engine/rules.cpp" line="22813"/>
-        <location filename="../src/engine/rules.cpp" line="22869"/>
-        <location filename="../src/engine/rules.cpp" line="22942"/>
-        <location filename="../src/engine/rules.cpp" line="23030"/>
-        <location filename="../src/engine/rules.cpp" line="23120"/>
-        <location filename="../src/engine/rules.cpp" line="23195"/>
-        <location filename="../src/engine/rules.cpp" line="23261"/>
-        <location filename="../src/engine/rules.cpp" line="23322"/>
-        <location filename="../src/engine/rules.cpp" line="23388"/>
-        <location filename="../src/engine/rules.cpp" line="23449"/>
-        <location filename="../src/engine/rules.cpp" line="23510"/>
-        <location filename="../src/engine/rules.cpp" line="23566"/>
-        <location filename="../src/engine/rules.cpp" line="23627"/>
-        <location filename="../src/engine/rules.cpp" line="23683"/>
-        <location filename="../src/engine/rules.cpp" line="23749"/>
-        <location filename="../src/engine/rules.cpp" line="23810"/>
-        <location filename="../src/engine/rules.cpp" line="23876"/>
-        <location filename="../src/engine/rules.cpp" line="23937"/>
-        <location filename="../src/engine/rules.cpp" line="23998"/>
-        <location filename="../src/engine/rules.cpp" line="24054"/>
-        <location filename="../src/engine/rules.cpp" line="24115"/>
-        <location filename="../src/engine/rules.cpp" line="24171"/>
-        <location filename="../src/engine/rules.cpp" line="24237"/>
-        <location filename="../src/engine/rules.cpp" line="24298"/>
-        <location filename="../src/engine/rules.cpp" line="24364"/>
-        <location filename="../src/engine/rules.cpp" line="24425"/>
-        <location filename="../src/engine/rules.cpp" line="24486"/>
-        <location filename="../src/engine/rules.cpp" line="24542"/>
-        <location filename="../src/engine/rules.cpp" line="24603"/>
-        <location filename="../src/engine/rules.cpp" line="26393"/>
-        <location filename="../src/engine/rules.cpp" line="26540"/>
-        <location filename="../src/engine/rules.cpp" line="26687"/>
-        <location filename="../src/engine/rules.cpp" line="26965"/>
-        <location filename="../src/engine/rules.cpp" line="27859"/>
-        <location filename="../src/engine/rules.cpp" line="27988"/>
-        <location filename="../src/engine/rules.cpp" line="28205"/>
-        <location filename="../src/engine/rules.cpp" line="28414"/>
-        <location filename="../src/engine/rules.cpp" line="28623"/>
-        <location filename="../src/engine/rules.cpp" line="28839"/>
-        <location filename="../src/engine/rules.cpp" line="29054"/>
-        <location filename="../src/engine/rules.cpp" line="29251"/>
-        <location filename="../src/engine/rules.cpp" line="29387"/>
-        <location filename="../src/engine/rules.cpp" line="29535"/>
-        <location filename="../src/engine/rules.cpp" line="29683"/>
-        <location filename="../src/engine/rules.cpp" line="29833"/>
-        <location filename="../src/engine/rules.cpp" line="29988"/>
-        <location filename="../src/engine/rules.cpp" line="30645"/>
-        <location filename="../src/engine/rules.cpp" line="30723"/>
-        <location filename="../src/engine/rules.cpp" line="30772"/>
-        <location filename="../src/engine/rules.cpp" line="30820"/>
-        <location filename="../src/engine/rules.cpp" line="30897"/>
-        <location filename="../src/engine/rules.cpp" line="30946"/>
-        <location filename="../src/engine/rules.cpp" line="32125"/>
-        <location filename="../src/engine/rules.cpp" line="32174"/>
-        <location filename="../src/engine/rules.cpp" line="32384"/>
-        <location filename="../src/engine/rules.cpp" line="32443"/>
-        <location filename="../src/engine/rules.cpp" line="32492"/>
-        <location filename="../src/engine/rules.cpp" line="32540"/>
-        <location filename="../src/engine/rules.cpp" line="32598"/>
-        <location filename="../src/engine/rules.cpp" line="32647"/>
-        <location filename="../src/engine/rules.cpp" line="32705"/>
-        <location filename="../src/engine/rules.cpp" line="32754"/>
-        <location filename="../src/engine/rules.cpp" line="33301"/>
-        <location filename="../src/engine/rules.cpp" line="33351"/>
-        <location filename="../src/engine/rules.cpp" line="33396"/>
-        <location filename="../src/engine/rules.cpp" line="33440"/>
-        <location filename="../src/engine/rules.cpp" line="35583"/>
-        <location filename="../src/engine/rules.cpp" line="35653"/>
-        <location filename="../src/engine/rules.cpp" line="35723"/>
-        <location filename="../src/engine/rules.cpp" line="35798"/>
-        <location filename="../src/engine/rules.cpp" line="35854"/>
-        <location filename="../src/engine/rules.cpp" line="35915"/>
-        <location filename="../src/engine/rules.cpp" line="35976"/>
-        <location filename="../src/engine/rules.cpp" line="36032"/>
-        <location filename="../src/engine/rules.cpp" line="36108"/>
-        <location filename="../src/engine/rules.cpp" line="36198"/>
-        <location filename="../src/engine/rules.cpp" line="36274"/>
-        <location filename="../src/engine/rules.cpp" line="36345"/>
-        <location filename="../src/engine/rules.cpp" line="36798"/>
-        <location filename="../src/engine/rules.cpp" line="36868"/>
-        <location filename="../src/engine/rules.cpp" line="36944"/>
-        <location filename="../src/engine/rules.cpp" line="37014"/>
-        <location filename="../src/engine/rules.cpp" line="37090"/>
-        <location filename="../src/engine/rules.cpp" line="37160"/>
-        <location filename="../src/engine/rules.cpp" line="37236"/>
-        <location filename="../src/engine/rules.cpp" line="37306"/>
-        <location filename="../src/engine/rules.cpp" line="39646"/>
-        <location filename="../src/engine/rules.cpp" line="39772"/>
+        <location filename="../src/engine/rules.cpp" line="13996"/>
+        <location filename="../src/engine/rules.cpp" line="14012"/>
+        <location filename="../src/engine/rules.cpp" line="14043"/>
+        <location filename="../src/engine/rules.cpp" line="14169"/>
+        <location filename="../src/engine/rules.cpp" line="14295"/>
+        <location filename="../src/engine/rules.cpp" line="14437"/>
+        <location filename="../src/engine/rules.cpp" line="14632"/>
+        <location filename="../src/engine/rules.cpp" line="14698"/>
+        <location filename="../src/engine/rules.cpp" line="14779"/>
+        <location filename="../src/engine/rules.cpp" line="14928"/>
+        <location filename="../src/engine/rules.cpp" line="15980"/>
+        <location filename="../src/engine/rules.cpp" line="15984"/>
+        <location filename="../src/engine/rules.cpp" line="15986"/>
+        <location filename="../src/engine/rules.cpp" line="16121"/>
+        <location filename="../src/engine/rules.cpp" line="16299"/>
+        <location filename="../src/engine/rules.cpp" line="19278"/>
+        <location filename="../src/engine/rules.cpp" line="19364"/>
+        <location filename="../src/engine/rules.cpp" line="19413"/>
+        <location filename="../src/engine/rules.cpp" line="19471"/>
+        <location filename="../src/engine/rules.cpp" line="19520"/>
+        <location filename="../src/engine/rules.cpp" line="20386"/>
+        <location filename="../src/engine/rules.cpp" line="22394"/>
+        <location filename="../src/engine/rules.cpp" line="22464"/>
+        <location filename="../src/engine/rules.cpp" line="22539"/>
+        <location filename="../src/engine/rules.cpp" line="22609"/>
+        <location filename="../src/engine/rules.cpp" line="22665"/>
+        <location filename="../src/engine/rules.cpp" line="22726"/>
+        <location filename="../src/engine/rules.cpp" line="22782"/>
+        <location filename="../src/engine/rules.cpp" line="22843"/>
+        <location filename="../src/engine/rules.cpp" line="22899"/>
+        <location filename="../src/engine/rules.cpp" line="22972"/>
+        <location filename="../src/engine/rules.cpp" line="23060"/>
+        <location filename="../src/engine/rules.cpp" line="23150"/>
+        <location filename="../src/engine/rules.cpp" line="23225"/>
+        <location filename="../src/engine/rules.cpp" line="23291"/>
+        <location filename="../src/engine/rules.cpp" line="23352"/>
+        <location filename="../src/engine/rules.cpp" line="23418"/>
+        <location filename="../src/engine/rules.cpp" line="23479"/>
+        <location filename="../src/engine/rules.cpp" line="23540"/>
+        <location filename="../src/engine/rules.cpp" line="23596"/>
+        <location filename="../src/engine/rules.cpp" line="23657"/>
+        <location filename="../src/engine/rules.cpp" line="23713"/>
+        <location filename="../src/engine/rules.cpp" line="23779"/>
+        <location filename="../src/engine/rules.cpp" line="23840"/>
+        <location filename="../src/engine/rules.cpp" line="23906"/>
+        <location filename="../src/engine/rules.cpp" line="23967"/>
+        <location filename="../src/engine/rules.cpp" line="24028"/>
+        <location filename="../src/engine/rules.cpp" line="24084"/>
+        <location filename="../src/engine/rules.cpp" line="24145"/>
+        <location filename="../src/engine/rules.cpp" line="24201"/>
+        <location filename="../src/engine/rules.cpp" line="24267"/>
+        <location filename="../src/engine/rules.cpp" line="24328"/>
+        <location filename="../src/engine/rules.cpp" line="24394"/>
+        <location filename="../src/engine/rules.cpp" line="24455"/>
+        <location filename="../src/engine/rules.cpp" line="24516"/>
+        <location filename="../src/engine/rules.cpp" line="24572"/>
+        <location filename="../src/engine/rules.cpp" line="24633"/>
+        <location filename="../src/engine/rules.cpp" line="26423"/>
+        <location filename="../src/engine/rules.cpp" line="26570"/>
+        <location filename="../src/engine/rules.cpp" line="26717"/>
+        <location filename="../src/engine/rules.cpp" line="26995"/>
+        <location filename="../src/engine/rules.cpp" line="27889"/>
+        <location filename="../src/engine/rules.cpp" line="28018"/>
+        <location filename="../src/engine/rules.cpp" line="28235"/>
+        <location filename="../src/engine/rules.cpp" line="28444"/>
+        <location filename="../src/engine/rules.cpp" line="28653"/>
+        <location filename="../src/engine/rules.cpp" line="28869"/>
+        <location filename="../src/engine/rules.cpp" line="29084"/>
+        <location filename="../src/engine/rules.cpp" line="29281"/>
+        <location filename="../src/engine/rules.cpp" line="29417"/>
+        <location filename="../src/engine/rules.cpp" line="29565"/>
+        <location filename="../src/engine/rules.cpp" line="29713"/>
+        <location filename="../src/engine/rules.cpp" line="29863"/>
+        <location filename="../src/engine/rules.cpp" line="30018"/>
+        <location filename="../src/engine/rules.cpp" line="30675"/>
+        <location filename="../src/engine/rules.cpp" line="30753"/>
+        <location filename="../src/engine/rules.cpp" line="30802"/>
+        <location filename="../src/engine/rules.cpp" line="30850"/>
+        <location filename="../src/engine/rules.cpp" line="30927"/>
+        <location filename="../src/engine/rules.cpp" line="30976"/>
+        <location filename="../src/engine/rules.cpp" line="32155"/>
+        <location filename="../src/engine/rules.cpp" line="32204"/>
+        <location filename="../src/engine/rules.cpp" line="32414"/>
+        <location filename="../src/engine/rules.cpp" line="32473"/>
+        <location filename="../src/engine/rules.cpp" line="32522"/>
+        <location filename="../src/engine/rules.cpp" line="32570"/>
+        <location filename="../src/engine/rules.cpp" line="32628"/>
+        <location filename="../src/engine/rules.cpp" line="32677"/>
+        <location filename="../src/engine/rules.cpp" line="32735"/>
+        <location filename="../src/engine/rules.cpp" line="32784"/>
+        <location filename="../src/engine/rules.cpp" line="33331"/>
+        <location filename="../src/engine/rules.cpp" line="33381"/>
+        <location filename="../src/engine/rules.cpp" line="33426"/>
+        <location filename="../src/engine/rules.cpp" line="33470"/>
+        <location filename="../src/engine/rules.cpp" line="35613"/>
+        <location filename="../src/engine/rules.cpp" line="35683"/>
+        <location filename="../src/engine/rules.cpp" line="35753"/>
+        <location filename="../src/engine/rules.cpp" line="35828"/>
+        <location filename="../src/engine/rules.cpp" line="35884"/>
+        <location filename="../src/engine/rules.cpp" line="35945"/>
+        <location filename="../src/engine/rules.cpp" line="36006"/>
+        <location filename="../src/engine/rules.cpp" line="36062"/>
+        <location filename="../src/engine/rules.cpp" line="36138"/>
+        <location filename="../src/engine/rules.cpp" line="36228"/>
+        <location filename="../src/engine/rules.cpp" line="36304"/>
+        <location filename="../src/engine/rules.cpp" line="36375"/>
+        <location filename="../src/engine/rules.cpp" line="36828"/>
+        <location filename="../src/engine/rules.cpp" line="36898"/>
+        <location filename="../src/engine/rules.cpp" line="36974"/>
+        <location filename="../src/engine/rules.cpp" line="37044"/>
+        <location filename="../src/engine/rules.cpp" line="37120"/>
+        <location filename="../src/engine/rules.cpp" line="37190"/>
+        <location filename="../src/engine/rules.cpp" line="37266"/>
+        <location filename="../src/engine/rules.cpp" line="37336"/>
+        <location filename="../src/engine/rules.cpp" line="39676"/>
+        <location filename="../src/engine/rules.cpp" line="39802"/>
         <source>%1 is incorrect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13969"/>
-        <location filename="../src/engine/rules.cpp" line="13985"/>
-        <location filename="../src/engine/rules.cpp" line="14016"/>
-        <location filename="../src/engine/rules.cpp" line="14142"/>
-        <location filename="../src/engine/rules.cpp" line="14268"/>
-        <location filename="../src/engine/rules.cpp" line="14410"/>
+        <location filename="../src/engine/rules.cpp" line="13999"/>
+        <location filename="../src/engine/rules.cpp" line="14015"/>
+        <location filename="../src/engine/rules.cpp" line="14046"/>
+        <location filename="../src/engine/rules.cpp" line="14172"/>
+        <location filename="../src/engine/rules.cpp" line="14298"/>
+        <location filename="../src/engine/rules.cpp" line="14440"/>
         <source>%1 is too large. Maximum allowed is %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14026"/>
-        <location filename="../src/engine/rules.cpp" line="14045"/>
-        <location filename="../src/engine/rules.cpp" line="14059"/>
-        <location filename="../src/engine/rules.cpp" line="14171"/>
-        <location filename="../src/engine/rules.cpp" line="14185"/>
-        <location filename="../src/engine/rules.cpp" line="14278"/>
-        <location filename="../src/engine/rules.cpp" line="14297"/>
-        <location filename="../src/engine/rules.cpp" line="14311"/>
-        <location filename="../src/engine/rules.cpp" line="14439"/>
-        <location filename="../src/engine/rules.cpp" line="14453"/>
+        <location filename="../src/engine/rules.cpp" line="14056"/>
+        <location filename="../src/engine/rules.cpp" line="14075"/>
+        <location filename="../src/engine/rules.cpp" line="14089"/>
+        <location filename="../src/engine/rules.cpp" line="14201"/>
+        <location filename="../src/engine/rules.cpp" line="14215"/>
+        <location filename="../src/engine/rules.cpp" line="14308"/>
+        <location filename="../src/engine/rules.cpp" line="14327"/>
+        <location filename="../src/engine/rules.cpp" line="14341"/>
+        <location filename="../src/engine/rules.cpp" line="14469"/>
+        <location filename="../src/engine/rules.cpp" line="14483"/>
         <source>Too many %1 items. Maximum allowed is %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14876"/>
+        <location filename="../src/engine/rules.cpp" line="14906"/>
         <source>Duplicate teacher %1 found - ignoring</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14580"/>
+        <location filename="../src/engine/rules.cpp" line="14610"/>
         <source>Duplicate subject %1 found - ignoring</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14612"/>
+        <location filename="../src/engine/rules.cpp" line="14642"/>
         <source>Your file contains subject tags list, which is named in versions&gt;=5.5.0 activity tags list</source>
         <translation type="unfinished">Jūsų byloje yra temos žymių sąrašas, kuris nuo 5.5.0 versijos yra pervadintas į veiklos žymių sąrašą</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14646"/>
-        <location filename="../src/engine/rules.cpp" line="14727"/>
+        <location filename="../src/engine/rules.cpp" line="14676"/>
+        <location filename="../src/engine/rules.cpp" line="14757"/>
         <source>Duplicate activity tag %1 found - ignoring</source>
         <translation type="unfinished"></translation>
     </message>
@@ -61971,7 +61971,7 @@ to
         <location filename="../src/engine/rules.cpp" line="5475"/>
         <location filename="../src/engine/rules.cpp" line="5489"/>
         <location filename="../src/engine/rules.cpp" line="5501"/>
-        <location filename="../src/engine/rules.cpp" line="13910"/>
+        <location filename="../src/engine/rules.cpp" line="13940"/>
         <source>08:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
@@ -61990,7 +61990,7 @@ to
         <location filename="../src/engine/rules.cpp" line="5476"/>
         <location filename="../src/engine/rules.cpp" line="5490"/>
         <location filename="../src/engine/rules.cpp" line="5502"/>
-        <location filename="../src/engine/rules.cpp" line="13911"/>
+        <location filename="../src/engine/rules.cpp" line="13941"/>
         <source>09:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
@@ -61999,7 +61999,7 @@ to
         <location filename="../src/engine/rules.cpp" line="5477"/>
         <location filename="../src/engine/rules.cpp" line="5491"/>
         <location filename="../src/engine/rules.cpp" line="5503"/>
-        <location filename="../src/engine/rules.cpp" line="13912"/>
+        <location filename="../src/engine/rules.cpp" line="13942"/>
         <source>10:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
@@ -62008,7 +62008,7 @@ to
         <location filename="../src/engine/rules.cpp" line="5478"/>
         <location filename="../src/engine/rules.cpp" line="5492"/>
         <location filename="../src/engine/rules.cpp" line="5504"/>
-        <location filename="../src/engine/rules.cpp" line="13913"/>
+        <location filename="../src/engine/rules.cpp" line="13943"/>
         <source>11:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
@@ -62017,7 +62017,7 @@ to
         <location filename="../src/engine/rules.cpp" line="5479"/>
         <location filename="../src/engine/rules.cpp" line="5493"/>
         <location filename="../src/engine/rules.cpp" line="5505"/>
-        <location filename="../src/engine/rules.cpp" line="13914"/>
+        <location filename="../src/engine/rules.cpp" line="13944"/>
         <source>12:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
@@ -62026,7 +62026,7 @@ to
         <location filename="../src/engine/rules.cpp" line="5480"/>
         <location filename="../src/engine/rules.cpp" line="5494"/>
         <location filename="../src/engine/rules.cpp" line="5506"/>
-        <location filename="../src/engine/rules.cpp" line="13915"/>
+        <location filename="../src/engine/rules.cpp" line="13945"/>
         <source>13:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
@@ -62035,7 +62035,7 @@ to
         <location filename="../src/engine/rules.cpp" line="5481"/>
         <location filename="../src/engine/rules.cpp" line="5495"/>
         <location filename="../src/engine/rules.cpp" line="5507"/>
-        <location filename="../src/engine/rules.cpp" line="13916"/>
+        <location filename="../src/engine/rules.cpp" line="13946"/>
         <source>14:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
@@ -62044,7 +62044,7 @@ to
         <location filename="../src/engine/rules.cpp" line="5482"/>
         <location filename="../src/engine/rules.cpp" line="5496"/>
         <location filename="../src/engine/rules.cpp" line="5508"/>
-        <location filename="../src/engine/rules.cpp" line="13917"/>
+        <location filename="../src/engine/rules.cpp" line="13947"/>
         <source>15:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
@@ -62053,7 +62053,7 @@ to
         <location filename="../src/engine/rules.cpp" line="5483"/>
         <location filename="../src/engine/rules.cpp" line="5497"/>
         <location filename="../src/engine/rules.cpp" line="5509"/>
-        <location filename="../src/engine/rules.cpp" line="13918"/>
+        <location filename="../src/engine/rules.cpp" line="13948"/>
         <source>16:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
@@ -62062,7 +62062,7 @@ to
         <location filename="../src/engine/rules.cpp" line="5484"/>
         <location filename="../src/engine/rules.cpp" line="5498"/>
         <location filename="../src/engine/rules.cpp" line="5510"/>
-        <location filename="../src/engine/rules.cpp" line="13919"/>
+        <location filename="../src/engine/rules.cpp" line="13949"/>
         <source>17:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
@@ -62071,7 +62071,7 @@ to
         <location filename="../src/engine/rules.cpp" line="5485"/>
         <location filename="../src/engine/rules.cpp" line="5499"/>
         <location filename="../src/engine/rules.cpp" line="5511"/>
-        <location filename="../src/engine/rules.cpp" line="13920"/>
+        <location filename="../src/engine/rules.cpp" line="13950"/>
         <source>18:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
@@ -62080,7 +62080,7 @@ to
         <location filename="../src/engine/rules.cpp" line="5486"/>
         <location filename="../src/engine/rules.cpp" line="5500"/>
         <location filename="../src/engine/rules.cpp" line="5512"/>
-        <location filename="../src/engine/rules.cpp" line="13921"/>
+        <location filename="../src/engine/rules.cpp" line="13951"/>
         <source>19:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
@@ -62098,8 +62098,8 @@ to
         <location filename="../src/engine/rules.cpp" line="5498"/>
         <location filename="../src/engine/rules.cpp" line="5499"/>
         <location filename="../src/engine/rules.cpp" line="5500"/>
-        <location filename="../src/engine/rules.cpp" line="6518"/>
-        <location filename="../src/engine/rules.cpp" line="18372"/>
+        <location filename="../src/engine/rules.cpp" line="6548"/>
+        <location filename="../src/engine/rules.cpp" line="18402"/>
         <source>AM</source>
         <comment>Ante Meridiem, before noon</comment>
         <translation type="unfinished"></translation>
@@ -62117,551 +62117,514 @@ to
         <location filename="../src/engine/rules.cpp" line="5510"/>
         <location filename="../src/engine/rules.cpp" line="5511"/>
         <location filename="../src/engine/rules.cpp" line="5512"/>
-        <location filename="../src/engine/rules.cpp" line="6522"/>
-        <location filename="../src/engine/rules.cpp" line="18376"/>
+        <location filename="../src/engine/rules.cpp" line="6552"/>
+        <location filename="../src/engine/rules.cpp" line="18406"/>
         <source>PM</source>
         <comment>Post Meridiem, afternoon</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5721"/>
+        <location filename="../src/engine/rules.cpp" line="5751"/>
         <source>You have too many total subgroups. You need to increase the variable MAX_TOTAL_SUBGROUPS (which is currently %1).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5735"/>
+        <location filename="../src/engine/rules.cpp" line="5765"/>
         <source>You have too many active activities. You need to increase the variable MAX_ACTIVITIES (which is currently %1).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5742"/>
+        <location filename="../src/engine/rules.cpp" line="5772"/>
         <source>You have too many buildings. You need to increase the variable MAX_BUILDINGS (which is currently %1).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5749"/>
+        <location filename="../src/engine/rules.cpp" line="5779"/>
         <source>You have too many rooms. You need to increase the variable MAX_ROOMS (which is currently %1).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5873"/>
+        <location filename="../src/engine/rules.cpp" line="5903"/>
         <source>Virtual room %1 has 0 sets of real rooms to choose from. The number of sets of real rooms must be at least 2. Please correct this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5878"/>
+        <location filename="../src/engine/rules.cpp" line="5908"/>
         <source>Virtual room %1 has only 1 set of real rooms to choose from. The number of sets of real rooms must be at least 2. Please correct this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5886"/>
+        <location filename="../src/engine/rules.cpp" line="5916"/>
         <source>Virtual room %1, in set number %2, has 0 real rooms to choose from. The number of real rooms from each set must be at least 1. Please correct this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5899"/>
+        <location filename="../src/engine/rules.cpp" line="5929"/>
         <source>Virtual room %1, in set number %2, has these duplicate real rooms names: %3. Please correct this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5909"/>
+        <location filename="../src/engine/rules.cpp" line="5939"/>
         <source>The virtual room %1 contains the unrecognized real room %2 in the sets of real rooms - please correct this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5916"/>
+        <location filename="../src/engine/rules.cpp" line="5946"/>
         <source>Virtual room %1, in set number %2, contains the virtual room %3 - please correct this (a virtual room can only contain sets with real rooms).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5935"/>
+        <location filename="../src/engine/rules.cpp" line="5965"/>
         <source>Computing internal structure</source>
         <comment>Title of a progress dialog</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6275"/>
+        <location filename="../src/engine/rules.cpp" line="6305"/>
         <source>All &apos;group activities in the initial order for timetable generation&apos; items should contain at least two activities ids. This is not true for item number %1. Please report potential bug.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10093"/>
-        <location filename="../src/engine/rules.cpp" line="15960"/>
+        <location filename="../src/engine/rules.cpp" line="10123"/>
+        <location filename="../src/engine/rules.cpp" line="15990"/>
         <source>Activity with Id=%1 contains %2 duplicate teachers - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10098"/>
-        <location filename="../src/engine/rules.cpp" line="15962"/>
+        <location filename="../src/engine/rules.cpp" line="10128"/>
+        <location filename="../src/engine/rules.cpp" line="15992"/>
         <source>Activity with Id=%1 contains %2 duplicate students sets - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10103"/>
-        <location filename="../src/engine/rules.cpp" line="15964"/>
+        <location filename="../src/engine/rules.cpp" line="10133"/>
+        <location filename="../src/engine/rules.cpp" line="15994"/>
         <source>Activity with Id=%1 contains %2 duplicate activity tags - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10147"/>
+        <location filename="../src/engine/rules.cpp" line="10177"/>
         <source>Activities with group_Id=%1 contain %2 duplicate teachers - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10152"/>
+        <location filename="../src/engine/rules.cpp" line="10182"/>
         <source>Activities with group_Id=%1 contain %2 duplicate students sets - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10157"/>
+        <location filename="../src/engine/rules.cpp" line="10187"/>
         <source>Activities with group_Id=%1 contain %2 duplicate activity tags - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10258"/>
+        <location filename="../src/engine/rules.cpp" line="10288"/>
         <source>The activity with id=%1 contains %2 duplicate teachers - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10264"/>
+        <location filename="../src/engine/rules.cpp" line="10294"/>
         <source>The activity with id=%1 contains %2 duplicate students sets - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10270"/>
+        <location filename="../src/engine/rules.cpp" line="10300"/>
         <source>The activity with id=%1 contains %2 duplicate activity tags - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13581"/>
+        <location filename="../src/engine/rules.cpp" line="13611"/>
         <source>FET cannot open the log file %1 for writing. This might mean that you don&apos;t have write permissions in this location. You can continue operation, but you might not be able to save the generated timetables as HTML files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13806"/>
+        <location filename="../src/engine/rules.cpp" line="13836"/>
         <source>File is incorrect...it cannot be opened</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13812"/>
+        <location filename="../src/engine/rules.cpp" line="13842"/>
         <source>Opening older file - it will be converted to latest format, automatically assigning weight percentages to constraints and dropping parity (weekly/fortnightly) for activities. You are advised to make a backup of your old file before saving in new format.
 
 Please note that the default weight percentage of constraints min days between activities will be 95% (mainly satisfied, not always) and &apos;consecutive if on the same day&apos; will be set to true (meaning that if the activities are on the same day, they will be placed continuously, in a bigger duration activity). If you want, you can modify this percent to be 100%, manually in the fet input file or from the interface</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13824"/>
+        <location filename="../src/engine/rules.cpp" line="13854"/>
         <source>Opening an older file - it will be converted to the latest format. FET detected that this file was generated with a custom FET-5-MA version for mornings-afternoons, because the file version contains the string &apos;-ma&apos;. Some constraints will be renamed. The new style will refer to half days as &apos;days&apos; and to real days as &apos;real days&apos;. Please be very careful and check once more the list of your constraints. If this is not true, please report the bug.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13828"/>
+        <location filename="../src/engine/rules.cpp" line="13858"/>
         <source>Opening an older file - it will be converted to the latest format. FET detected that this file was generated with a custom FET-5-Morocco version for mornings-afternoons, because the file version contains the string &apos;-morocco&apos;. Some constraints will be renamed. The new style will refer to half days as &apos;days&apos; and to real days as &apos;real days&apos;. Please be very careful and check once more the list of your constraints. If this is not true, please report the bug.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13832"/>
+        <location filename="../src/engine/rules.cpp" line="13862"/>
         <source>Opening an older file - it will be converted to the latest format. FET detected that this file was generated with a custom FET-5-Algeria version for mornings-afternoons, because the file version contains the string &apos;-algeria&apos;. Some constraints will be renamed. The new style will refer to half days as &apos;days&apos; and to real days as &apos;real days&apos;. Please be very careful and check once more the list of your constraints. If this is not true, please report the bug.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13836"/>
+        <location filename="../src/engine/rules.cpp" line="13866"/>
         <source>Opening an older file - it will be converted to the latest format. FET detected that this file was generated with a custom FET-5-BP (block-planning) version, because the file version contains the string &apos;-bp&apos;. Please be very careful and check once more the list of your constraints. If this is not true, please report the bug.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13839"/>
+        <location filename="../src/engine/rules.cpp" line="13869"/>
         <source>Opening an older file - it will be converted to the latest format. FET detected that this file was generated with a custom FET-5-mathmake (terms) version, because the file version contains the string &apos;-mathmake&apos;. Please be very careful and check once more the list of your constraints. If this is not true, please report the bug.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13842"/>
+        <location filename="../src/engine/rules.cpp" line="13872"/>
         <source>Opening an older file - it will be converted to the latest format. FET detected that this file was generated with a FET-5 version. After opening, please check your constraints. If this is not true, please report the bug.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="13845"/>
+        <location filename="../src/engine/rules.cpp" line="13875"/>
         <source>It is advisable to keep a backup copy of your old file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14095"/>
+        <location filename="../src/engine/rules.cpp" line="14125"/>
         <source>%1: %2 and the number of %3 read do not correspond</source>
         <comment>%1 is an XML string, %2 is the specified number of days, %3 is the number of actually read days.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14349"/>
-        <location filename="../src/engine/rules.cpp" line="14362"/>
+        <location filename="../src/engine/rules.cpp" line="14379"/>
+        <location filename="../src/engine/rules.cpp" line="14392"/>
         <source>%1: %2 and the number of %3 read do not correspond</source>
         <comment>%1 is an XML string, %2 is the specified number of hours, %3 is the number of actually read hours.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14221"/>
+        <location filename="../src/engine/rules.cpp" line="14251"/>
         <source>%1: %2 and the number of %3 read do not correspond</source>
         <comment>%1 is an XML string, %2 is the specified number of real days, %3 is the number of actually read real days.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5410"/>
-        <location filename="../src/engine/rules.cpp" line="5418"/>
-        <location filename="../src/engine/rules.cpp" line="13873"/>
-        <source>Mo</source>
-        <comment>Abbreviation for Monday</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="5411"/>
-        <location filename="../src/engine/rules.cpp" line="5419"/>
-        <location filename="../src/engine/rules.cpp" line="13874"/>
-        <source>Tu</source>
-        <comment>Abbreviation for Tuesday</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="5412"/>
-        <location filename="../src/engine/rules.cpp" line="13875"/>
-        <source>We</source>
-        <comment>Abbreviation for Wednesday</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="5413"/>
-        <location filename="../src/engine/rules.cpp" line="13876"/>
-        <source>Th</source>
-        <comment>Abbreviation for Thursday</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="5414"/>
-        <location filename="../src/engine/rules.cpp" line="13877"/>
-        <source>Fr</source>
-        <comment>Abbreviation for Friday</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="14100"/>
+        <location filename="../src/engine/rules.cpp" line="14130"/>
         <source>%1: %2 and the number of %3 read do not correspond</source>
         <comment>%1 is an XML string, %2 is the specified number of days, %3 is the number of actually read days long names.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14226"/>
+        <location filename="../src/engine/rules.cpp" line="14256"/>
         <source>%1: %2 and the number of %3 read do not correspond</source>
         <comment>%1 is an XML string, %2 is the specified number of real days, %3 is the number of actually read real days long names.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14367"/>
+        <location filename="../src/engine/rules.cpp" line="14397"/>
         <source>%1: %2 and the number of %3 read do not correspond</source>
         <comment>%1 is an XML string, %2 is the specified number of hours, %3 is the number of actually read hours long names.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14514"/>
+        <location filename="../src/engine/rules.cpp" line="14544"/>
         <source>%1: %2 and the number of %3 read do not correspond</source>
         <comment>%1 is an XML string, %2 is the specified number of real hours, %3 is the number of actually read real hours.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14519"/>
+        <location filename="../src/engine/rules.cpp" line="14549"/>
         <source>%1: %2 and the number of %3 read do not correspond</source>
         <comment>%1 is an XML string, %2 is the specified number of real hours, %3 is the number of actually read real hours long names.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14834"/>
+        <location filename="../src/engine/rules.cpp" line="14864"/>
         <source>The teacher %1 has duplicate qualified subject %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14922"/>
+        <location filename="../src/engine/rules.cpp" line="14952"/>
         <source>(The program detected this because your file contains the section %1.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14924"/>
+        <location filename="../src/engine/rules.cpp" line="14954"/>
         <source>Please note that if you save now your file, you won&apos;t be able to open it correctly again later using the old version of FET Morocco.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15223"/>
+        <location filename="../src/engine/rules.cpp" line="15253"/>
         <source>Trying to add year %1, which is already added as another year.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15225"/>
+        <location filename="../src/engine/rules.cpp" line="15255"/>
         <source>Trying to add year %1, which is already added as another group.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15227"/>
+        <location filename="../src/engine/rules.cpp" line="15257"/>
         <source>Trying to add year %1, which is already added as another subgroup.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15324"/>
+        <location filename="../src/engine/rules.cpp" line="15354"/>
         <source>The specified number of divisions was not found, but there were found specified the divisions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15329"/>
+        <location filename="../src/engine/rules.cpp" line="15359"/>
         <source>The specified number of divisions is not equal with the met number of divisions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15384"/>
+        <location filename="../src/engine/rules.cpp" line="15414"/>
         <source>Trying to add group %1, which is already added as another year.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15389"/>
+        <location filename="../src/engine/rules.cpp" line="15419"/>
         <source>Trying to add group %1 in year %2 but it is already added.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15398"/>
+        <location filename="../src/engine/rules.cpp" line="15428"/>
         <source>Trying to add group %1, which is already added as another subgroup.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15513"/>
+        <location filename="../src/engine/rules.cpp" line="15543"/>
         <source>Trying to add subgroup %1, which is already added as another year.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15517"/>
+        <location filename="../src/engine/rules.cpp" line="15547"/>
         <source>Trying to add subgroup %1, which is already added as another group.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15522"/>
+        <location filename="../src/engine/rules.cpp" line="15552"/>
         <source>Trying to add subgroup %1 in year %2, group %3 but it is already added.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15651"/>
+        <location filename="../src/engine/rules.cpp" line="15681"/>
         <source>The specified number of categories was not found, but there were found specified the categories.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15656"/>
+        <location filename="../src/engine/rules.cpp" line="15686"/>
         <source>The specified number of categories is not equal with the met number of categories.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15814"/>
+        <location filename="../src/engine/rules.cpp" line="15844"/>
         <source>Found activity active tag which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The activity will be considered not active</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15842"/>
+        <location filename="../src/engine/rules.cpp" line="15872"/>
         <source>Line %1, column %2: Teacher %3 was not found in the teachers list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15854"/>
+        <location filename="../src/engine/rules.cpp" line="15884"/>
         <source>Line %1, column %2: Subject %3 was not found in the subjects list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15873"/>
-        <location filename="../src/engine/rules.cpp" line="15892"/>
+        <location filename="../src/engine/rules.cpp" line="15903"/>
+        <location filename="../src/engine/rules.cpp" line="15922"/>
         <source>Line %1, column %2: Activity tag %3 was not found in the activity tags list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15910"/>
+        <location filename="../src/engine/rules.cpp" line="15940"/>
         <source>Line %1, column %2: Students set %3 was not found in the students sets list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15952"/>
+        <location filename="../src/engine/rules.cpp" line="15982"/>
         <source>%1 is incorrect (already existing)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15992"/>
+        <location filename="../src/engine/rules.cpp" line="16022"/>
         <source>The activity with id=%1 contains incorrect data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15994"/>
+        <location filename="../src/engine/rules.cpp" line="16024"/>
         <source>Additional details:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16018"/>
+        <location filename="../src/engine/rules.cpp" line="16048"/>
         <source>File contains deprecated equipments list - will be ignored</source>
         <translation type="unfinished">Byloje yra nereikalingų duomenų sąrašą - bus ignoruojama</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16069"/>
+        <location filename="../src/engine/rules.cpp" line="16099"/>
         <source>Duplicate building %1 found - ignoring</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16182"/>
+        <location filename="../src/engine/rules.cpp" line="16212"/>
         <source>The specified number of real rooms was not found in the input file for the virtual room %1, for the set of real rooms number %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16246"/>
+        <location filename="../src/engine/rules.cpp" line="16276"/>
         <source>Duplicate room %1 found - ignoring</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16315"/>
+        <location filename="../src/engine/rules.cpp" line="16345"/>
         <source>File contains constraint teacher not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint teacher not available times (a matrix).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16368"/>
+        <location filename="../src/engine/rules.cpp" line="16398"/>
         <source>File contains constraint students set not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set not available times (a matrix).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16620"/>
+        <location filename="../src/engine/rules.cpp" line="16650"/>
         <source>File contains old constraint type activity preferred time, which will be converted to the newer similar constraint of this type, constraint activity preferred STARTING time. This improvement is done in versions 5.5.9 and above</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16711"/>
+        <location filename="../src/engine/rules.cpp" line="16741"/>
         <source>Your file contains old constraint activity preferred times, which will be converted to new equivalent constraint activity preferred starting times. Beginning with FET-5.5.9 it is possible to specify: 1. the starting times of an activity (constraint activity preferred starting times) or: 2. the accepted time slots (constraint activity preferred time slots). If what you need is type 2 of this constraint, you will have to add it by yourself from the interface.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16732"/>
+        <location filename="../src/engine/rules.cpp" line="16762"/>
         <source>File contains constraint break, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint break times (a matrix).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16768"/>
+        <location filename="../src/engine/rules.cpp" line="16798"/>
         <source>File contains constraint students no gaps, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students max gaps per week, with max gaps=0. If you like, you can modify this constraint to allow more gaps per week (normally not accepted in schools)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16782"/>
+        <location filename="../src/engine/rules.cpp" line="16812"/>
         <source>File contains constraint students set no gaps, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set max gaps per week, with max gaps=0. If you like, you can modify this constraint to allow more gaps per week (normally not accepted in schools)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16810"/>
+        <location filename="../src/engine/rules.cpp" line="16840"/>
         <source>File contains constraint students early, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students early max beginnings at second hour, with max beginnings=0. If you like, you can modify this constraint to allow more beginnings at second available hour (above 0 - this will make the timetable easier)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16827"/>
+        <location filename="../src/engine/rules.cpp" line="16857"/>
         <source>File contains constraint students set early, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set early max beginnings at second hour, with max beginnings=0. If you like, you can modify this constraint to allow more beginnings at second available hour (above 0 - this will make the timetable easier)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16844"/>
+        <location filename="../src/engine/rules.cpp" line="16874"/>
         <source>Your file contains old constraint activities preferred times, which will be converted to new equivalent constraint activities preferred starting times. Beginning with FET-5.5.9 it is possible to specify: 1. the starting times of several activities (constraint activities preferred starting times) or: 2. the accepted time slots (constraint activities preferred time slots). If what you need is type 2 of this constraint, you will have to add it by yourself from the interface.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16973"/>
+        <location filename="../src/engine/rules.cpp" line="17003"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teacher max days per week, which will be converted to a constraint of type teacher max real days per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="16990"/>
+        <location filename="../src/engine/rules.cpp" line="17020"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teachers max days per week, which will be converted to a constraint of type teachers max real days per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17013"/>
-        <location filename="../src/engine/rules.cpp" line="17026"/>
-        <location filename="../src/engine/rules.cpp" line="17040"/>
-        <location filename="../src/engine/rules.cpp" line="17053"/>
-        <location filename="../src/engine/rules.cpp" line="17067"/>
-        <location filename="../src/engine/rules.cpp" line="17080"/>
-        <location filename="../src/engine/rules.cpp" line="17094"/>
-        <location filename="../src/engine/rules.cpp" line="17107"/>
+        <location filename="../src/engine/rules.cpp" line="17043"/>
+        <location filename="../src/engine/rules.cpp" line="17056"/>
+        <location filename="../src/engine/rules.cpp" line="17070"/>
+        <location filename="../src/engine/rules.cpp" line="17083"/>
+        <location filename="../src/engine/rules.cpp" line="17097"/>
+        <location filename="../src/engine/rules.cpp" line="17110"/>
+        <location filename="../src/engine/rules.cpp" line="17124"/>
+        <location filename="../src/engine/rules.cpp" line="17137"/>
         <source>Your file contains a constraint of type teacher(s)/students (set) max two activity tags per day/real day from N1, N2, N3, which will be converted to the newer constraint, teacher(s)/students (set) max activity tags per day/real day from a set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17170"/>
+        <location filename="../src/engine/rules.cpp" line="17200"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teacher min days per week, which will be converted to a constraint of type teacher min real days per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17187"/>
+        <location filename="../src/engine/rules.cpp" line="17217"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teachers min days per week, which will be converted to a constraint of type teachers min real days per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17231"/>
+        <location filename="../src/engine/rules.cpp" line="17261"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type students set max days per week, which will be converted to a constraint of type students set max real days per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17248"/>
+        <location filename="../src/engine/rules.cpp" line="17278"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type students max days per week, which will be converted to a constraint of type students max real days per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17307"/>
+        <location filename="../src/engine/rules.cpp" line="17337"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teachers max hours daily, which will be converted to a constraint of type teachers max hours daily real days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17324"/>
+        <location filename="../src/engine/rules.cpp" line="17354"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teacher max hours daily, which will be converted to a constraint of type teacher max hours daily real days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17341"/>
+        <location filename="../src/engine/rules.cpp" line="17371"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teachers max hours daily for half days, which will be converted to a constraint of type teachers max hours daily.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17354"/>
+        <location filename="../src/engine/rules.cpp" line="17384"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teacher max hours daily for half days, which will be converted to a constraint of type teacher max hours daily.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17368"/>
+        <location filename="../src/engine/rules.cpp" line="17398"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teacher activity tag max hours daily, which will be converted to a constraint of type teacher activity tag max hours daily real days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17385"/>
+        <location filename="../src/engine/rules.cpp" line="17415"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teachers activity tag max hours daily, which will be converted to a constraint of type teachers activity tag max hours daily real days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17472"/>
+        <location filename="../src/engine/rules.cpp" line="17502"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type student set activity tag max hours daily, which will be converted to a constraint of type students set activity tag max hours daily real days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17581"/>
+        <location filename="../src/engine/rules.cpp" line="17611"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teacher max span per day, which will be converted to a constraint of type teacher max span per real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17598"/>
+        <location filename="../src/engine/rules.cpp" line="17628"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teachers max span per day, which will be converted to a constraint of type teachers max span per real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17615"/>
+        <location filename="../src/engine/rules.cpp" line="17645"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type students set max span per day, which will be converted to a constraint of type students set max span per real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17632"/>
+        <location filename="../src/engine/rules.cpp" line="17662"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type students max span per day, which will be converted to a constraint of type students max span per real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17723"/>
-        <location filename="../src/engine/rules.cpp" line="18218"/>
+        <location filename="../src/engine/rules.cpp" line="17753"/>
+        <location filename="../src/engine/rules.cpp" line="18248"/>
         <source>Constraint
 %1
 not added - must be a duplicate</source>
@@ -62670,486 +62633,486 @@ not added - must be a duplicate</source>
 nepridėtas - kartojasi</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="17759"/>
+        <location filename="../src/engine/rules.cpp" line="17789"/>
         <source>File contains constraint room not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint room not available times (a matrix).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18056"/>
+        <location filename="../src/engine/rules.cpp" line="18086"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teacher max room changes per day, which will be converted to a constraint of type teacher max room changes per real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18077"/>
+        <location filename="../src/engine/rules.cpp" line="18107"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type teachers max room changes per day, which will be converted to a constraint of type teachers max room changes per real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18098"/>
+        <location filename="../src/engine/rules.cpp" line="18128"/>
         <source>Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and contains a constraint of type students set max room changes per day, which will be converted to a constraint of type students set max room changes per real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18277"/>
-        <location filename="../src/engine/rules.cpp" line="19270"/>
-        <location filename="../src/engine/rules.cpp" line="20378"/>
-        <location filename="../src/engine/rules.cpp" line="20498"/>
-        <location filename="../src/engine/rules.cpp" line="20653"/>
-        <location filename="../src/engine/rules.cpp" line="20808"/>
-        <location filename="../src/engine/rules.cpp" line="20905"/>
-        <location filename="../src/engine/rules.cpp" line="20966"/>
-        <location filename="../src/engine/rules.cpp" line="21027"/>
-        <location filename="../src/engine/rules.cpp" line="21088"/>
-        <location filename="../src/engine/rules.cpp" line="21147"/>
-        <location filename="../src/engine/rules.cpp" line="21206"/>
-        <location filename="../src/engine/rules.cpp" line="21280"/>
-        <location filename="../src/engine/rules.cpp" line="21366"/>
-        <location filename="../src/engine/rules.cpp" line="21440"/>
-        <location filename="../src/engine/rules.cpp" line="21514"/>
-        <location filename="../src/engine/rules.cpp" line="21569"/>
-        <location filename="../src/engine/rules.cpp" line="26411"/>
-        <location filename="../src/engine/rules.cpp" line="26558"/>
-        <location filename="../src/engine/rules.cpp" line="26705"/>
-        <location filename="../src/engine/rules.cpp" line="26981"/>
-        <location filename="../src/engine/rules.cpp" line="28223"/>
-        <location filename="../src/engine/rules.cpp" line="28432"/>
-        <location filename="../src/engine/rules.cpp" line="28641"/>
-        <location filename="../src/engine/rules.cpp" line="28857"/>
-        <location filename="../src/engine/rules.cpp" line="29072"/>
-        <location filename="../src/engine/rules.cpp" line="29270"/>
-        <location filename="../src/engine/rules.cpp" line="29411"/>
-        <location filename="../src/engine/rules.cpp" line="29418"/>
-        <location filename="../src/engine/rules.cpp" line="29559"/>
-        <location filename="../src/engine/rules.cpp" line="29566"/>
-        <location filename="../src/engine/rules.cpp" line="29707"/>
-        <location filename="../src/engine/rules.cpp" line="29714"/>
-        <location filename="../src/engine/rules.cpp" line="29864"/>
-        <location filename="../src/engine/rules.cpp" line="29871"/>
-        <location filename="../src/engine/rules.cpp" line="30012"/>
-        <location filename="../src/engine/rules.cpp" line="30019"/>
-        <location filename="../src/engine/rules.cpp" line="30082"/>
-        <location filename="../src/engine/rules.cpp" line="30150"/>
-        <location filename="../src/engine/rules.cpp" line="30211"/>
-        <location filename="../src/engine/rules.cpp" line="31458"/>
-        <location filename="../src/engine/rules.cpp" line="31542"/>
-        <location filename="../src/engine/rules.cpp" line="31631"/>
-        <location filename="../src/engine/rules.cpp" line="31715"/>
-        <location filename="../src/engine/rules.cpp" line="31804"/>
-        <location filename="../src/engine/rules.cpp" line="31888"/>
-        <location filename="../src/engine/rules.cpp" line="31977"/>
-        <location filename="../src/engine/rules.cpp" line="32061"/>
-        <location filename="../src/engine/rules.cpp" line="39668"/>
-        <location filename="../src/engine/rules.cpp" line="39799"/>
-        <location filename="../src/engine/rules.cpp" line="40041"/>
-        <location filename="../src/engine/rules.cpp" line="40177"/>
-        <location filename="../src/engine/rules.cpp" line="40323"/>
-        <location filename="../src/engine/rules.cpp" line="40469"/>
-        <location filename="../src/engine/rules.cpp" line="40568"/>
-        <location filename="../src/engine/rules.cpp" line="40666"/>
-        <location filename="../src/engine/rules.cpp" line="40764"/>
-        <location filename="../src/engine/rules.cpp" line="41773"/>
-        <location filename="../src/engine/rules.cpp" line="41831"/>
-        <location filename="../src/engine/rules.cpp" line="44059"/>
-        <location filename="../src/engine/rules.cpp" line="44148"/>
-        <location filename="../src/engine/rules.cpp" line="44237"/>
+        <location filename="../src/engine/rules.cpp" line="18307"/>
+        <location filename="../src/engine/rules.cpp" line="19300"/>
+        <location filename="../src/engine/rules.cpp" line="20408"/>
+        <location filename="../src/engine/rules.cpp" line="20528"/>
+        <location filename="../src/engine/rules.cpp" line="20683"/>
+        <location filename="../src/engine/rules.cpp" line="20838"/>
+        <location filename="../src/engine/rules.cpp" line="20935"/>
+        <location filename="../src/engine/rules.cpp" line="20996"/>
+        <location filename="../src/engine/rules.cpp" line="21057"/>
+        <location filename="../src/engine/rules.cpp" line="21118"/>
+        <location filename="../src/engine/rules.cpp" line="21177"/>
+        <location filename="../src/engine/rules.cpp" line="21236"/>
+        <location filename="../src/engine/rules.cpp" line="21310"/>
+        <location filename="../src/engine/rules.cpp" line="21396"/>
+        <location filename="../src/engine/rules.cpp" line="21470"/>
+        <location filename="../src/engine/rules.cpp" line="21544"/>
+        <location filename="../src/engine/rules.cpp" line="21599"/>
+        <location filename="../src/engine/rules.cpp" line="26441"/>
+        <location filename="../src/engine/rules.cpp" line="26588"/>
+        <location filename="../src/engine/rules.cpp" line="26735"/>
+        <location filename="../src/engine/rules.cpp" line="27011"/>
+        <location filename="../src/engine/rules.cpp" line="28253"/>
+        <location filename="../src/engine/rules.cpp" line="28462"/>
+        <location filename="../src/engine/rules.cpp" line="28671"/>
+        <location filename="../src/engine/rules.cpp" line="28887"/>
+        <location filename="../src/engine/rules.cpp" line="29102"/>
+        <location filename="../src/engine/rules.cpp" line="29300"/>
+        <location filename="../src/engine/rules.cpp" line="29441"/>
+        <location filename="../src/engine/rules.cpp" line="29448"/>
+        <location filename="../src/engine/rules.cpp" line="29589"/>
+        <location filename="../src/engine/rules.cpp" line="29596"/>
+        <location filename="../src/engine/rules.cpp" line="29737"/>
+        <location filename="../src/engine/rules.cpp" line="29744"/>
+        <location filename="../src/engine/rules.cpp" line="29894"/>
+        <location filename="../src/engine/rules.cpp" line="29901"/>
+        <location filename="../src/engine/rules.cpp" line="30042"/>
+        <location filename="../src/engine/rules.cpp" line="30049"/>
+        <location filename="../src/engine/rules.cpp" line="30112"/>
+        <location filename="../src/engine/rules.cpp" line="30180"/>
+        <location filename="../src/engine/rules.cpp" line="30241"/>
+        <location filename="../src/engine/rules.cpp" line="31488"/>
+        <location filename="../src/engine/rules.cpp" line="31572"/>
+        <location filename="../src/engine/rules.cpp" line="31661"/>
+        <location filename="../src/engine/rules.cpp" line="31745"/>
+        <location filename="../src/engine/rules.cpp" line="31834"/>
+        <location filename="../src/engine/rules.cpp" line="31918"/>
+        <location filename="../src/engine/rules.cpp" line="32007"/>
+        <location filename="../src/engine/rules.cpp" line="32091"/>
+        <location filename="../src/engine/rules.cpp" line="39698"/>
+        <location filename="../src/engine/rules.cpp" line="39829"/>
+        <location filename="../src/engine/rules.cpp" line="40071"/>
+        <location filename="../src/engine/rules.cpp" line="40207"/>
+        <location filename="../src/engine/rules.cpp" line="40353"/>
+        <location filename="../src/engine/rules.cpp" line="40499"/>
+        <location filename="../src/engine/rules.cpp" line="40598"/>
+        <location filename="../src/engine/rules.cpp" line="40696"/>
+        <location filename="../src/engine/rules.cpp" line="40794"/>
+        <location filename="../src/engine/rules.cpp" line="41803"/>
+        <location filename="../src/engine/rules.cpp" line="41861"/>
+        <location filename="../src/engine/rules.cpp" line="44089"/>
+        <location filename="../src/engine/rules.cpp" line="44178"/>
+        <location filename="../src/engine/rules.cpp" line="44267"/>
         <source>%1 does not coincide with the number of read %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18347"/>
+        <location filename="../src/engine/rules.cpp" line="18377"/>
         <source>Line %1, column %2: %3</source>
         <comment>%3 is the unrecognized XML tag which is met in the .fet input file in line %1, column %2</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18402"/>
+        <location filename="../src/engine/rules.cpp" line="18432"/>
         <source>Saving the logging file gave the error message &apos;%1&apos;, which means you cannot see the data file reading log. Please check your disk&apos;s free space.</source>
         <comment>It means you cannot see the log of the operation of reading the data file.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18453"/>
+        <location filename="../src/engine/rules.cpp" line="18483"/>
         <source>Cannot open %1 for writing ... please check the write permissions of the selected directory and your disk&apos;s free space. Saving of the data file aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18993"/>
-        <location filename="../src/engine/rules.cpp" line="20108"/>
-        <location filename="../src/engine/rules.cpp" line="26729"/>
+        <location filename="../src/engine/rules.cpp" line="19023"/>
+        <location filename="../src/engine/rules.cpp" line="20138"/>
+        <location filename="../src/engine/rules.cpp" line="26759"/>
         <source>Weight percentage incorrect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="19034"/>
-        <location filename="../src/engine/rules.cpp" line="20148"/>
-        <location filename="../src/engine/rules.cpp" line="26768"/>
-        <location filename="../src/engine/rules.cpp" line="39438"/>
+        <location filename="../src/engine/rules.cpp" line="19064"/>
+        <location filename="../src/engine/rules.cpp" line="20178"/>
+        <location filename="../src/engine/rules.cpp" line="26798"/>
+        <location filename="../src/engine/rules.cpp" line="39468"/>
         <source>Hour %1 is the last hour - impossible</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="19057"/>
-        <location filename="../src/engine/rules.cpp" line="20170"/>
-        <location filename="../src/engine/rules.cpp" line="26789"/>
-        <location filename="../src/engine/rules.cpp" line="39460"/>
+        <location filename="../src/engine/rules.cpp" line="19087"/>
+        <location filename="../src/engine/rules.cpp" line="20200"/>
+        <location filename="../src/engine/rules.cpp" line="26819"/>
+        <location filename="../src/engine/rules.cpp" line="39490"/>
         <source>Hour %1 is the first hour - impossible</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="19098"/>
-        <location filename="../src/engine/rules.cpp" line="19102"/>
-        <location filename="../src/engine/rules.cpp" line="19106"/>
-        <location filename="../src/engine/rules.cpp" line="20205"/>
-        <location filename="../src/engine/rules.cpp" line="20209"/>
-        <location filename="../src/engine/rules.cpp" line="20213"/>
-        <location filename="../src/engine/rules.cpp" line="26818"/>
-        <location filename="../src/engine/rules.cpp" line="26822"/>
-        <location filename="../src/engine/rules.cpp" line="26826"/>
-        <location filename="../src/engine/rules.cpp" line="39496"/>
-        <location filename="../src/engine/rules.cpp" line="39500"/>
-        <location filename="../src/engine/rules.cpp" line="39504"/>
+        <location filename="../src/engine/rules.cpp" line="19128"/>
+        <location filename="../src/engine/rules.cpp" line="19132"/>
+        <location filename="../src/engine/rules.cpp" line="19136"/>
+        <location filename="../src/engine/rules.cpp" line="20235"/>
+        <location filename="../src/engine/rules.cpp" line="20239"/>
+        <location filename="../src/engine/rules.cpp" line="20243"/>
+        <location filename="../src/engine/rules.cpp" line="26848"/>
+        <location filename="../src/engine/rules.cpp" line="26852"/>
+        <location filename="../src/engine/rules.cpp" line="26856"/>
+        <location filename="../src/engine/rules.cpp" line="39526"/>
+        <location filename="../src/engine/rules.cpp" line="39530"/>
+        <location filename="../src/engine/rules.cpp" line="39534"/>
         <source>Field missing: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="19571"/>
+        <location filename="../src/engine/rules.cpp" line="19601"/>
         <source>Constraint TeacherIntervalMaxDaysPerWeek max days corrupt for teacher %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="19691"/>
+        <location filename="../src/engine/rules.cpp" line="19721"/>
         <source>Constraint TeachersIntervalMaxDaysPerWeek max days corrupt, max days %1 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="19790"/>
+        <location filename="../src/engine/rules.cpp" line="19820"/>
         <source>Constraint StudentsSetMaxDaysPerWeek max days corrupt for students set %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="19834"/>
+        <location filename="../src/engine/rules.cpp" line="19864"/>
         <source>Constraint StudentsMaxDaysPerWeek max days corrupt, max days %1 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="20024"/>
+        <location filename="../src/engine/rules.cpp" line="20054"/>
         <source>Constraint StudentsIntervalMaxDaysPerWeek max days corrupt: max days %1 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="20429"/>
-        <location filename="../src/engine/rules.cpp" line="20584"/>
+        <location filename="../src/engine/rules.cpp" line="20459"/>
+        <location filename="../src/engine/rules.cpp" line="20614"/>
         <source>Found constraint min days between activities with tag consecutive if on the same day which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="20467"/>
-        <location filename="../src/engine/rules.cpp" line="20622"/>
-        <location filename="../src/engine/rules.cpp" line="20778"/>
+        <location filename="../src/engine/rules.cpp" line="20497"/>
+        <location filename="../src/engine/rules.cpp" line="20652"/>
+        <location filename="../src/engine/rules.cpp" line="20808"/>
         <source>Activity id %1 is a duplicate in this constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="20739"/>
+        <location filename="../src/engine/rules.cpp" line="20769"/>
         <source>Found constraint min half days between activities with tag consecutive if on the same day which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31414"/>
+        <location filename="../src/engine/rules.cpp" line="31444"/>
         <source>The number of maximum allowed activity tags in a constraint teacher max activity tags per day from set should be 1 or 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31426"/>
+        <location filename="../src/engine/rules.cpp" line="31456"/>
         <source>The number of activity tags in the constraint teacher max activity tags per day from set is lower than two</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31498"/>
+        <location filename="../src/engine/rules.cpp" line="31528"/>
         <source>The number of maximum allowed activity tags in a constraint teachers max activity tags per day from set should be 1 or 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31510"/>
+        <location filename="../src/engine/rules.cpp" line="31540"/>
         <source>The number of activity tags in the constraint teachers max activity tags per day from set is lower than two</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31587"/>
+        <location filename="../src/engine/rules.cpp" line="31617"/>
         <source>The number of maximum allowed activity tags in a constraint students set max activity tags per day from set should be 1 or 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31599"/>
+        <location filename="../src/engine/rules.cpp" line="31629"/>
         <source>The number of activity tags in the constraint students set max activity tags per day from set is lower than two</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31671"/>
+        <location filename="../src/engine/rules.cpp" line="31701"/>
         <source>The number of maximum allowed activity tags in a constraint students max activity tags per day from set should be 1 or 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31683"/>
+        <location filename="../src/engine/rules.cpp" line="31713"/>
         <source>The number of activity tags in the constraint students max activity tags per day from set is lower than two</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31760"/>
+        <location filename="../src/engine/rules.cpp" line="31790"/>
         <source>The number of maximum allowed activity tags in a constraint teacher max activity tags per real day from set should be 1 or 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31772"/>
+        <location filename="../src/engine/rules.cpp" line="31802"/>
         <source>The number of activity tags in the constraint teacher max activity tags per real day from set is lower than two</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31844"/>
+        <location filename="../src/engine/rules.cpp" line="31874"/>
         <source>The number of maximum allowed activity tags in a constraint teachers max activity tags per real day from set should be 1 or 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31856"/>
+        <location filename="../src/engine/rules.cpp" line="31886"/>
         <source>The number of activity tags in the constraint teachers max activity tags per real day from set is lower than two</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31933"/>
+        <location filename="../src/engine/rules.cpp" line="31963"/>
         <source>The number of maximum allowed activity tags in a constraint students set max activity tags per real day from set should be 1 or 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31945"/>
+        <location filename="../src/engine/rules.cpp" line="31975"/>
         <source>The number of activity tags in the constraint students set max activity tags per real day from set is lower than two</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="32017"/>
+        <location filename="../src/engine/rules.cpp" line="32047"/>
         <source>The number of maximum allowed activity tags in a constraint students max activity tags per real day from set should be 1 or 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="32029"/>
+        <location filename="../src/engine/rules.cpp" line="32059"/>
         <source>The number of activity tags in the constraint students max activity tags per real day from set is lower than two</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="42673"/>
-        <location filename="../src/engine/rules.cpp" line="42801"/>
-        <location filename="../src/engine/rules.cpp" line="42934"/>
-        <location filename="../src/engine/rules.cpp" line="43062"/>
-        <location filename="../src/engine/rules.cpp" line="43505"/>
-        <location filename="../src/engine/rules.cpp" line="43633"/>
-        <location filename="../src/engine/rules.cpp" line="43766"/>
-        <location filename="../src/engine/rules.cpp" line="43894"/>
+        <location filename="../src/engine/rules.cpp" line="42703"/>
+        <location filename="../src/engine/rules.cpp" line="42831"/>
+        <location filename="../src/engine/rules.cpp" line="42964"/>
+        <location filename="../src/engine/rules.cpp" line="43092"/>
+        <location filename="../src/engine/rules.cpp" line="43535"/>
+        <location filename="../src/engine/rules.cpp" line="43663"/>
+        <location filename="../src/engine/rules.cpp" line="43796"/>
+        <location filename="../src/engine/rules.cpp" line="43924"/>
         <source>&apos;Interval_Start_Day&apos; %1 is neither &apos;Morning&apos; nor &apos;Afternoon&apos;</source>
         <comment>Keep the quoted fields untranslated</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="42702"/>
-        <location filename="../src/engine/rules.cpp" line="42830"/>
-        <location filename="../src/engine/rules.cpp" line="42963"/>
-        <location filename="../src/engine/rules.cpp" line="43091"/>
-        <location filename="../src/engine/rules.cpp" line="43534"/>
-        <location filename="../src/engine/rules.cpp" line="43662"/>
-        <location filename="../src/engine/rules.cpp" line="43795"/>
-        <location filename="../src/engine/rules.cpp" line="43923"/>
+        <location filename="../src/engine/rules.cpp" line="42732"/>
+        <location filename="../src/engine/rules.cpp" line="42860"/>
+        <location filename="../src/engine/rules.cpp" line="42993"/>
+        <location filename="../src/engine/rules.cpp" line="43121"/>
+        <location filename="../src/engine/rules.cpp" line="43564"/>
+        <location filename="../src/engine/rules.cpp" line="43692"/>
+        <location filename="../src/engine/rules.cpp" line="43825"/>
+        <location filename="../src/engine/rules.cpp" line="43953"/>
         <source>&apos;Interval_End_Day&apos; %1 is neither &apos;Morning&apos; nor &apos;Afternoon&apos;</source>
         <comment>Keep the quoted fields untranslated</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="42738"/>
-        <location filename="../src/engine/rules.cpp" line="42866"/>
-        <location filename="../src/engine/rules.cpp" line="42999"/>
-        <location filename="../src/engine/rules.cpp" line="43127"/>
-        <location filename="../src/engine/rules.cpp" line="43570"/>
-        <location filename="../src/engine/rules.cpp" line="43698"/>
-        <location filename="../src/engine/rules.cpp" line="43831"/>
-        <location filename="../src/engine/rules.cpp" line="43959"/>
+        <location filename="../src/engine/rules.cpp" line="42768"/>
+        <location filename="../src/engine/rules.cpp" line="42896"/>
+        <location filename="../src/engine/rules.cpp" line="43029"/>
+        <location filename="../src/engine/rules.cpp" line="43157"/>
+        <location filename="../src/engine/rules.cpp" line="43600"/>
+        <location filename="../src/engine/rules.cpp" line="43728"/>
+        <location filename="../src/engine/rules.cpp" line="43861"/>
+        <location filename="../src/engine/rules.cpp" line="43989"/>
         <source>Tag &apos;Interval_Start_Day&apos; not met</source>
         <comment>Keep the quoted field untranslated</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="42748"/>
-        <location filename="../src/engine/rules.cpp" line="42876"/>
-        <location filename="../src/engine/rules.cpp" line="43009"/>
-        <location filename="../src/engine/rules.cpp" line="43137"/>
-        <location filename="../src/engine/rules.cpp" line="43580"/>
-        <location filename="../src/engine/rules.cpp" line="43708"/>
-        <location filename="../src/engine/rules.cpp" line="43841"/>
-        <location filename="../src/engine/rules.cpp" line="43969"/>
+        <location filename="../src/engine/rules.cpp" line="42778"/>
+        <location filename="../src/engine/rules.cpp" line="42906"/>
+        <location filename="../src/engine/rules.cpp" line="43039"/>
+        <location filename="../src/engine/rules.cpp" line="43167"/>
+        <location filename="../src/engine/rules.cpp" line="43610"/>
+        <location filename="../src/engine/rules.cpp" line="43738"/>
+        <location filename="../src/engine/rules.cpp" line="43871"/>
+        <location filename="../src/engine/rules.cpp" line="43999"/>
         <source>Tag &apos;Interval_End_Day&apos; not met</source>
         <comment>Keep the quoted field untranslated</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="44010"/>
+        <location filename="../src/engine/rules.cpp" line="44040"/>
         <source>The number of maximum allowed activity tags in a constraint room max activity tags per day from set should be 1 or 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="44099"/>
+        <location filename="../src/engine/rules.cpp" line="44129"/>
         <source>The number of maximum allowed activity tags in a constraint room max activity tags per real day from set should be 1 or 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="44188"/>
+        <location filename="../src/engine/rules.cpp" line="44218"/>
         <source>The number of maximum allowed activity tags in a constraint room max activity tags per week from set should be 1 or 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="44200"/>
+        <location filename="../src/engine/rules.cpp" line="44230"/>
         <source>The number of activity tags in the constraint room max activity tags per week from set is lower than two</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="44210"/>
+        <location filename="../src/engine/rules.cpp" line="44240"/>
         <source>Duplicate activity tag %1 found in the constraint room max activity tags per week from set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="44022"/>
+        <location filename="../src/engine/rules.cpp" line="44052"/>
         <source>The number of activity tags in the constraint room max activity tags per day from set is lower than two</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="44032"/>
+        <location filename="../src/engine/rules.cpp" line="44062"/>
         <source>Duplicate activity tag %1 found in the constraint room max activity tags per day from set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="44111"/>
+        <location filename="../src/engine/rules.cpp" line="44141"/>
         <source>The number of activity tags in the constraint room max activity tags per real day from set is lower than two</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="44121"/>
+        <location filename="../src/engine/rules.cpp" line="44151"/>
         <source>Duplicate activity tag %1 found in the constraint room max activity tags per real day from set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="19904"/>
+        <location filename="../src/engine/rules.cpp" line="19934"/>
         <source>Constraint StudentsSetIntervalMaxDaysPerWeek max days corrupt for students set %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6282"/>
+        <location filename="../src/engine/rules.cpp" line="6312"/>
         <source>All &apos;group activities in the initial order for timetable generation&apos; items should have different activities ids. (Each activity id must appear at most once in all the items.) This is not true for item number %1 and activity id %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="21335"/>
+        <location filename="../src/engine/rules.cpp" line="21365"/>
         <source>The number of activity tags in the constraint activity tags not overlapping is lower than two</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="21345"/>
+        <location filename="../src/engine/rules.cpp" line="21375"/>
         <source>Duplicate activity tag %1 found in constraint activity tags not overlapping</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="22212"/>
-        <location filename="../src/engine/rules.cpp" line="35431"/>
+        <location filename="../src/engine/rules.cpp" line="22242"/>
+        <location filename="../src/engine/rules.cpp" line="35461"/>
         <source>Found constraint teachers min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="22298"/>
-        <location filename="../src/engine/rules.cpp" line="35517"/>
+        <location filename="../src/engine/rules.cpp" line="22328"/>
+        <location filename="../src/engine/rules.cpp" line="35547"/>
         <source>Found constraint teacher min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14091"/>
-        <location filename="../src/engine/rules.cpp" line="14217"/>
-        <location filename="../src/engine/rules.cpp" line="14343"/>
-        <location filename="../src/engine/rules.cpp" line="14510"/>
-        <location filename="../src/engine/rules.cpp" line="22381"/>
-        <location filename="../src/engine/rules.cpp" line="22456"/>
-        <location filename="../src/engine/rules.cpp" line="22526"/>
-        <location filename="../src/engine/rules.cpp" line="22601"/>
-        <location filename="../src/engine/rules.cpp" line="22662"/>
-        <location filename="../src/engine/rules.cpp" line="22718"/>
-        <location filename="../src/engine/rules.cpp" line="22779"/>
-        <location filename="../src/engine/rules.cpp" line="22835"/>
-        <location filename="../src/engine/rules.cpp" line="22908"/>
-        <location filename="../src/engine/rules.cpp" line="22976"/>
-        <location filename="../src/engine/rules.cpp" line="23066"/>
-        <location filename="../src/engine/rules.cpp" line="23161"/>
-        <location filename="../src/engine/rules.cpp" line="23227"/>
-        <location filename="../src/engine/rules.cpp" line="23288"/>
-        <location filename="../src/engine/rules.cpp" line="23354"/>
-        <location filename="../src/engine/rules.cpp" line="23415"/>
-        <location filename="../src/engine/rules.cpp" line="23476"/>
-        <location filename="../src/engine/rules.cpp" line="23532"/>
-        <location filename="../src/engine/rules.cpp" line="23593"/>
-        <location filename="../src/engine/rules.cpp" line="23649"/>
-        <location filename="../src/engine/rules.cpp" line="23715"/>
-        <location filename="../src/engine/rules.cpp" line="23776"/>
-        <location filename="../src/engine/rules.cpp" line="23842"/>
-        <location filename="../src/engine/rules.cpp" line="23903"/>
-        <location filename="../src/engine/rules.cpp" line="23964"/>
-        <location filename="../src/engine/rules.cpp" line="24020"/>
-        <location filename="../src/engine/rules.cpp" line="24081"/>
-        <location filename="../src/engine/rules.cpp" line="24137"/>
-        <location filename="../src/engine/rules.cpp" line="24203"/>
-        <location filename="../src/engine/rules.cpp" line="24264"/>
-        <location filename="../src/engine/rules.cpp" line="24330"/>
-        <location filename="../src/engine/rules.cpp" line="24391"/>
-        <location filename="../src/engine/rules.cpp" line="24452"/>
-        <location filename="../src/engine/rules.cpp" line="24508"/>
-        <location filename="../src/engine/rules.cpp" line="24569"/>
-        <location filename="../src/engine/rules.cpp" line="24625"/>
-        <location filename="../src/engine/rules.cpp" line="27889"/>
-        <location filename="../src/engine/rules.cpp" line="28023"/>
-        <location filename="../src/engine/rules.cpp" line="35600"/>
-        <location filename="../src/engine/rules.cpp" line="35670"/>
-        <location filename="../src/engine/rules.cpp" line="35745"/>
-        <location filename="../src/engine/rules.cpp" line="35820"/>
-        <location filename="../src/engine/rules.cpp" line="35881"/>
-        <location filename="../src/engine/rules.cpp" line="35942"/>
-        <location filename="../src/engine/rules.cpp" line="35998"/>
-        <location filename="../src/engine/rules.cpp" line="36054"/>
-        <location filename="../src/engine/rules.cpp" line="36144"/>
-        <location filename="../src/engine/rules.cpp" line="36239"/>
-        <location filename="../src/engine/rules.cpp" line="36310"/>
-        <location filename="../src/engine/rules.cpp" line="36386"/>
-        <location filename="../src/engine/rules.cpp" line="36828"/>
-        <location filename="../src/engine/rules.cpp" line="36903"/>
-        <location filename="../src/engine/rules.cpp" line="36974"/>
-        <location filename="../src/engine/rules.cpp" line="37049"/>
-        <location filename="../src/engine/rules.cpp" line="37120"/>
-        <location filename="../src/engine/rules.cpp" line="37195"/>
-        <location filename="../src/engine/rules.cpp" line="37266"/>
-        <location filename="../src/engine/rules.cpp" line="37341"/>
-        <location filename="../src/engine/rules.cpp" line="38172"/>
-        <location filename="../src/engine/rules.cpp" line="38233"/>
-        <location filename="../src/engine/rules.cpp" line="38300"/>
-        <location filename="../src/engine/rules.cpp" line="38361"/>
-        <location filename="../src/engine/rules.cpp" line="38819"/>
-        <location filename="../src/engine/rules.cpp" line="38825"/>
-        <location filename="../src/engine/rules.cpp" line="38831"/>
-        <location filename="../src/engine/rules.cpp" line="38837"/>
-        <location filename="../src/engine/rules.cpp" line="38975"/>
-        <location filename="../src/engine/rules.cpp" line="38981"/>
-        <location filename="../src/engine/rules.cpp" line="38987"/>
-        <location filename="../src/engine/rules.cpp" line="38993"/>
-        <location filename="../src/engine/rules.cpp" line="39136"/>
-        <location filename="../src/engine/rules.cpp" line="39142"/>
-        <location filename="../src/engine/rules.cpp" line="39148"/>
-        <location filename="../src/engine/rules.cpp" line="39154"/>
-        <location filename="../src/engine/rules.cpp" line="39292"/>
-        <location filename="../src/engine/rules.cpp" line="39298"/>
-        <location filename="../src/engine/rules.cpp" line="39304"/>
-        <location filename="../src/engine/rules.cpp" line="39310"/>
+        <location filename="../src/engine/rules.cpp" line="14121"/>
+        <location filename="../src/engine/rules.cpp" line="14247"/>
+        <location filename="../src/engine/rules.cpp" line="14373"/>
+        <location filename="../src/engine/rules.cpp" line="14540"/>
+        <location filename="../src/engine/rules.cpp" line="22411"/>
+        <location filename="../src/engine/rules.cpp" line="22486"/>
+        <location filename="../src/engine/rules.cpp" line="22556"/>
+        <location filename="../src/engine/rules.cpp" line="22631"/>
+        <location filename="../src/engine/rules.cpp" line="22692"/>
+        <location filename="../src/engine/rules.cpp" line="22748"/>
+        <location filename="../src/engine/rules.cpp" line="22809"/>
+        <location filename="../src/engine/rules.cpp" line="22865"/>
+        <location filename="../src/engine/rules.cpp" line="22938"/>
+        <location filename="../src/engine/rules.cpp" line="23006"/>
+        <location filename="../src/engine/rules.cpp" line="23096"/>
+        <location filename="../src/engine/rules.cpp" line="23191"/>
+        <location filename="../src/engine/rules.cpp" line="23257"/>
+        <location filename="../src/engine/rules.cpp" line="23318"/>
+        <location filename="../src/engine/rules.cpp" line="23384"/>
+        <location filename="../src/engine/rules.cpp" line="23445"/>
+        <location filename="../src/engine/rules.cpp" line="23506"/>
+        <location filename="../src/engine/rules.cpp" line="23562"/>
+        <location filename="../src/engine/rules.cpp" line="23623"/>
+        <location filename="../src/engine/rules.cpp" line="23679"/>
+        <location filename="../src/engine/rules.cpp" line="23745"/>
+        <location filename="../src/engine/rules.cpp" line="23806"/>
+        <location filename="../src/engine/rules.cpp" line="23872"/>
+        <location filename="../src/engine/rules.cpp" line="23933"/>
+        <location filename="../src/engine/rules.cpp" line="23994"/>
+        <location filename="../src/engine/rules.cpp" line="24050"/>
+        <location filename="../src/engine/rules.cpp" line="24111"/>
+        <location filename="../src/engine/rules.cpp" line="24167"/>
+        <location filename="../src/engine/rules.cpp" line="24233"/>
+        <location filename="../src/engine/rules.cpp" line="24294"/>
+        <location filename="../src/engine/rules.cpp" line="24360"/>
+        <location filename="../src/engine/rules.cpp" line="24421"/>
+        <location filename="../src/engine/rules.cpp" line="24482"/>
+        <location filename="../src/engine/rules.cpp" line="24538"/>
+        <location filename="../src/engine/rules.cpp" line="24599"/>
+        <location filename="../src/engine/rules.cpp" line="24655"/>
+        <location filename="../src/engine/rules.cpp" line="27919"/>
+        <location filename="../src/engine/rules.cpp" line="28053"/>
+        <location filename="../src/engine/rules.cpp" line="35630"/>
+        <location filename="../src/engine/rules.cpp" line="35700"/>
+        <location filename="../src/engine/rules.cpp" line="35775"/>
+        <location filename="../src/engine/rules.cpp" line="35850"/>
+        <location filename="../src/engine/rules.cpp" line="35911"/>
+        <location filename="../src/engine/rules.cpp" line="35972"/>
+        <location filename="../src/engine/rules.cpp" line="36028"/>
+        <location filename="../src/engine/rules.cpp" line="36084"/>
+        <location filename="../src/engine/rules.cpp" line="36174"/>
+        <location filename="../src/engine/rules.cpp" line="36269"/>
+        <location filename="../src/engine/rules.cpp" line="36340"/>
+        <location filename="../src/engine/rules.cpp" line="36416"/>
+        <location filename="../src/engine/rules.cpp" line="36858"/>
+        <location filename="../src/engine/rules.cpp" line="36933"/>
+        <location filename="../src/engine/rules.cpp" line="37004"/>
+        <location filename="../src/engine/rules.cpp" line="37079"/>
+        <location filename="../src/engine/rules.cpp" line="37150"/>
+        <location filename="../src/engine/rules.cpp" line="37225"/>
+        <location filename="../src/engine/rules.cpp" line="37296"/>
+        <location filename="../src/engine/rules.cpp" line="37371"/>
+        <location filename="../src/engine/rules.cpp" line="38202"/>
+        <location filename="../src/engine/rules.cpp" line="38263"/>
+        <location filename="../src/engine/rules.cpp" line="38330"/>
+        <location filename="../src/engine/rules.cpp" line="38391"/>
+        <location filename="../src/engine/rules.cpp" line="38849"/>
+        <location filename="../src/engine/rules.cpp" line="38855"/>
+        <location filename="../src/engine/rules.cpp" line="38861"/>
+        <location filename="../src/engine/rules.cpp" line="38867"/>
+        <location filename="../src/engine/rules.cpp" line="39005"/>
+        <location filename="../src/engine/rules.cpp" line="39011"/>
+        <location filename="../src/engine/rules.cpp" line="39017"/>
+        <location filename="../src/engine/rules.cpp" line="39023"/>
+        <location filename="../src/engine/rules.cpp" line="39166"/>
+        <location filename="../src/engine/rules.cpp" line="39172"/>
+        <location filename="../src/engine/rules.cpp" line="39178"/>
+        <location filename="../src/engine/rules.cpp" line="39184"/>
+        <location filename="../src/engine/rules.cpp" line="39322"/>
+        <location filename="../src/engine/rules.cpp" line="39328"/>
+        <location filename="../src/engine/rules.cpp" line="39334"/>
+        <location filename="../src/engine/rules.cpp" line="39340"/>
         <source>%1 not found</source>
         <translation type="unfinished"></translation>
     </message>
@@ -63159,475 +63122,475 @@ nepridėtas - kartojasi</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14837"/>
+        <location filename="../src/engine/rules.cpp" line="14867"/>
         <source>The teacher %1 has attached an nonexistent qualified subject %2. Please note that starting with FET version %3 the list of subjects (tag &lt;Subjects_List&gt; in the .fet XML file) must appear before the list of teachers (tag &lt;Teachers_List&gt; in the .fet XML file)</source>
         <comment>%3 is the FET version number. Please keep &lt;Subjects_List&gt; and &lt;Teachers_List&gt; untranslated, as in the original English string</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="14919"/>
+        <location filename="../src/engine/rules.cpp" line="14949"/>
         <source>You are opening an old Morocco file. All the teachers will have mornings-afternoons behavior &apos;Exclusive mornings/afternoons&apos; by default, and the exceptions will be recognized correctly. If this is a mistake and your file is not an old Morocco file, please report the bug.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18335"/>
+        <location filename="../src/engine/rules.cpp" line="18365"/>
         <source>There are %1 unrecognized XML tags in your input file. They are written below. Your file will be opened, but these tags will be ignored and they probably represent mistakes in your input file:</source>
         <comment>You can assume that %1 is at least 2</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18341"/>
+        <location filename="../src/engine/rules.cpp" line="18371"/>
         <source>There is an unrecognized XML tag in your input file. It is written below. Your file will be opened, but this tag will be ignored and it probably represents a mistake in your input file:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="18628"/>
+        <location filename="../src/engine/rules.cpp" line="18658"/>
         <source>Saving the data file gave the error message &apos;%1&apos;, which means the saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="19015"/>
-        <location filename="../src/engine/rules.cpp" line="19198"/>
-        <location filename="../src/engine/rules.cpp" line="20130"/>
-        <location filename="../src/engine/rules.cpp" line="20306"/>
-        <location filename="../src/engine/rules.cpp" line="24709"/>
-        <location filename="../src/engine/rules.cpp" line="24891"/>
-        <location filename="../src/engine/rules.cpp" line="25080"/>
-        <location filename="../src/engine/rules.cpp" line="26344"/>
-        <location filename="../src/engine/rules.cpp" line="26490"/>
-        <location filename="../src/engine/rules.cpp" line="26637"/>
-        <location filename="../src/engine/rules.cpp" line="26751"/>
-        <location filename="../src/engine/rules.cpp" line="26917"/>
-        <location filename="../src/engine/rules.cpp" line="28149"/>
-        <location filename="../src/engine/rules.cpp" line="28358"/>
-        <location filename="../src/engine/rules.cpp" line="28567"/>
-        <location filename="../src/engine/rules.cpp" line="28783"/>
-        <location filename="../src/engine/rules.cpp" line="28998"/>
-        <location filename="../src/engine/rules.cpp" line="29203"/>
-        <location filename="../src/engine/rules.cpp" line="29339"/>
-        <location filename="../src/engine/rules.cpp" line="29487"/>
-        <location filename="../src/engine/rules.cpp" line="29635"/>
-        <location filename="../src/engine/rules.cpp" line="29657"/>
-        <location filename="../src/engine/rules.cpp" line="29785"/>
-        <location filename="../src/engine/rules.cpp" line="29807"/>
-        <location filename="../src/engine/rules.cpp" line="29940"/>
-        <location filename="../src/engine/rules.cpp" line="29962"/>
-        <location filename="../src/engine/rules.cpp" line="38726"/>
-        <location filename="../src/engine/rules.cpp" line="38774"/>
-        <location filename="../src/engine/rules.cpp" line="38882"/>
-        <location filename="../src/engine/rules.cpp" line="38930"/>
-        <location filename="../src/engine/rules.cpp" line="39043"/>
-        <location filename="../src/engine/rules.cpp" line="39091"/>
-        <location filename="../src/engine/rules.cpp" line="39199"/>
-        <location filename="../src/engine/rules.cpp" line="39247"/>
-        <location filename="../src/engine/rules.cpp" line="39420"/>
-        <location filename="../src/engine/rules.cpp" line="39596"/>
-        <location filename="../src/engine/rules.cpp" line="39722"/>
+        <location filename="../src/engine/rules.cpp" line="19045"/>
+        <location filename="../src/engine/rules.cpp" line="19228"/>
+        <location filename="../src/engine/rules.cpp" line="20160"/>
+        <location filename="../src/engine/rules.cpp" line="20336"/>
+        <location filename="../src/engine/rules.cpp" line="24739"/>
+        <location filename="../src/engine/rules.cpp" line="24921"/>
+        <location filename="../src/engine/rules.cpp" line="25110"/>
+        <location filename="../src/engine/rules.cpp" line="26374"/>
+        <location filename="../src/engine/rules.cpp" line="26520"/>
+        <location filename="../src/engine/rules.cpp" line="26667"/>
+        <location filename="../src/engine/rules.cpp" line="26781"/>
+        <location filename="../src/engine/rules.cpp" line="26947"/>
+        <location filename="../src/engine/rules.cpp" line="28179"/>
+        <location filename="../src/engine/rules.cpp" line="28388"/>
+        <location filename="../src/engine/rules.cpp" line="28597"/>
+        <location filename="../src/engine/rules.cpp" line="28813"/>
+        <location filename="../src/engine/rules.cpp" line="29028"/>
+        <location filename="../src/engine/rules.cpp" line="29233"/>
+        <location filename="../src/engine/rules.cpp" line="29369"/>
+        <location filename="../src/engine/rules.cpp" line="29517"/>
+        <location filename="../src/engine/rules.cpp" line="29665"/>
+        <location filename="../src/engine/rules.cpp" line="29687"/>
+        <location filename="../src/engine/rules.cpp" line="29815"/>
+        <location filename="../src/engine/rules.cpp" line="29837"/>
+        <location filename="../src/engine/rules.cpp" line="29970"/>
+        <location filename="../src/engine/rules.cpp" line="29992"/>
+        <location filename="../src/engine/rules.cpp" line="38756"/>
+        <location filename="../src/engine/rules.cpp" line="38804"/>
+        <location filename="../src/engine/rules.cpp" line="38912"/>
+        <location filename="../src/engine/rules.cpp" line="38960"/>
+        <location filename="../src/engine/rules.cpp" line="39073"/>
+        <location filename="../src/engine/rules.cpp" line="39121"/>
+        <location filename="../src/engine/rules.cpp" line="39229"/>
+        <location filename="../src/engine/rules.cpp" line="39277"/>
+        <location filename="../src/engine/rules.cpp" line="39450"/>
+        <location filename="../src/engine/rules.cpp" line="39626"/>
+        <location filename="../src/engine/rules.cpp" line="39752"/>
         <source>Day %1 is nonexistent</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="19038"/>
-        <location filename="../src/engine/rules.cpp" line="19061"/>
-        <location filename="../src/engine/rules.cpp" line="19219"/>
-        <location filename="../src/engine/rules.cpp" line="19587"/>
-        <location filename="../src/engine/rules.cpp" line="19707"/>
-        <location filename="../src/engine/rules.cpp" line="19920"/>
-        <location filename="../src/engine/rules.cpp" line="20039"/>
-        <location filename="../src/engine/rules.cpp" line="20152"/>
-        <location filename="../src/engine/rules.cpp" line="20174"/>
-        <location filename="../src/engine/rules.cpp" line="20327"/>
-        <location filename="../src/engine/rules.cpp" line="24728"/>
-        <location filename="../src/engine/rules.cpp" line="24910"/>
-        <location filename="../src/engine/rules.cpp" line="26367"/>
-        <location filename="../src/engine/rules.cpp" line="26513"/>
-        <location filename="../src/engine/rules.cpp" line="26660"/>
-        <location filename="../src/engine/rules.cpp" line="26772"/>
-        <location filename="../src/engine/rules.cpp" line="26793"/>
-        <location filename="../src/engine/rules.cpp" line="26937"/>
-        <location filename="../src/engine/rules.cpp" line="28175"/>
-        <location filename="../src/engine/rules.cpp" line="28384"/>
-        <location filename="../src/engine/rules.cpp" line="28593"/>
-        <location filename="../src/engine/rules.cpp" line="28809"/>
-        <location filename="../src/engine/rules.cpp" line="29024"/>
-        <location filename="../src/engine/rules.cpp" line="29225"/>
-        <location filename="../src/engine/rules.cpp" line="29361"/>
-        <location filename="../src/engine/rules.cpp" line="29509"/>
-        <location filename="../src/engine/rules.cpp" line="32852"/>
-        <location filename="../src/engine/rules.cpp" line="32972"/>
-        <location filename="../src/engine/rules.cpp" line="33099"/>
-        <location filename="../src/engine/rules.cpp" line="33219"/>
-        <location filename="../src/engine/rules.cpp" line="33900"/>
-        <location filename="../src/engine/rules.cpp" line="34019"/>
-        <location filename="../src/engine/rules.cpp" line="34140"/>
-        <location filename="../src/engine/rules.cpp" line="34259"/>
-        <location filename="../src/engine/rules.cpp" line="38409"/>
-        <location filename="../src/engine/rules.cpp" line="38484"/>
-        <location filename="../src/engine/rules.cpp" line="38569"/>
-        <location filename="../src/engine/rules.cpp" line="38644"/>
-        <location filename="../src/engine/rules.cpp" line="38742"/>
-        <location filename="../src/engine/rules.cpp" line="38790"/>
-        <location filename="../src/engine/rules.cpp" line="38898"/>
-        <location filename="../src/engine/rules.cpp" line="38946"/>
-        <location filename="../src/engine/rules.cpp" line="39059"/>
-        <location filename="../src/engine/rules.cpp" line="39107"/>
-        <location filename="../src/engine/rules.cpp" line="39215"/>
-        <location filename="../src/engine/rules.cpp" line="39263"/>
-        <location filename="../src/engine/rules.cpp" line="39442"/>
-        <location filename="../src/engine/rules.cpp" line="39464"/>
-        <location filename="../src/engine/rules.cpp" line="39617"/>
-        <location filename="../src/engine/rules.cpp" line="39743"/>
-        <location filename="../src/engine/rules.cpp" line="42356"/>
-        <location filename="../src/engine/rules.cpp" line="42431"/>
-        <location filename="../src/engine/rules.cpp" line="42511"/>
-        <location filename="../src/engine/rules.cpp" line="42586"/>
-        <location filename="../src/engine/rules.cpp" line="42684"/>
-        <location filename="../src/engine/rules.cpp" line="42812"/>
-        <location filename="../src/engine/rules.cpp" line="42945"/>
-        <location filename="../src/engine/rules.cpp" line="43073"/>
-        <location filename="../src/engine/rules.cpp" line="43188"/>
-        <location filename="../src/engine/rules.cpp" line="43263"/>
-        <location filename="../src/engine/rules.cpp" line="43343"/>
-        <location filename="../src/engine/rules.cpp" line="43418"/>
-        <location filename="../src/engine/rules.cpp" line="43516"/>
-        <location filename="../src/engine/rules.cpp" line="43644"/>
-        <location filename="../src/engine/rules.cpp" line="43777"/>
-        <location filename="../src/engine/rules.cpp" line="43905"/>
+        <location filename="../src/engine/rules.cpp" line="19068"/>
+        <location filename="../src/engine/rules.cpp" line="19091"/>
+        <location filename="../src/engine/rules.cpp" line="19249"/>
+        <location filename="../src/engine/rules.cpp" line="19617"/>
+        <location filename="../src/engine/rules.cpp" line="19737"/>
+        <location filename="../src/engine/rules.cpp" line="19950"/>
+        <location filename="../src/engine/rules.cpp" line="20069"/>
+        <location filename="../src/engine/rules.cpp" line="20182"/>
+        <location filename="../src/engine/rules.cpp" line="20204"/>
+        <location filename="../src/engine/rules.cpp" line="20357"/>
+        <location filename="../src/engine/rules.cpp" line="24758"/>
+        <location filename="../src/engine/rules.cpp" line="24940"/>
+        <location filename="../src/engine/rules.cpp" line="26397"/>
+        <location filename="../src/engine/rules.cpp" line="26543"/>
+        <location filename="../src/engine/rules.cpp" line="26690"/>
+        <location filename="../src/engine/rules.cpp" line="26802"/>
+        <location filename="../src/engine/rules.cpp" line="26823"/>
+        <location filename="../src/engine/rules.cpp" line="26967"/>
+        <location filename="../src/engine/rules.cpp" line="28205"/>
+        <location filename="../src/engine/rules.cpp" line="28414"/>
+        <location filename="../src/engine/rules.cpp" line="28623"/>
+        <location filename="../src/engine/rules.cpp" line="28839"/>
+        <location filename="../src/engine/rules.cpp" line="29054"/>
+        <location filename="../src/engine/rules.cpp" line="29255"/>
+        <location filename="../src/engine/rules.cpp" line="29391"/>
+        <location filename="../src/engine/rules.cpp" line="29539"/>
+        <location filename="../src/engine/rules.cpp" line="32882"/>
+        <location filename="../src/engine/rules.cpp" line="33002"/>
+        <location filename="../src/engine/rules.cpp" line="33129"/>
+        <location filename="../src/engine/rules.cpp" line="33249"/>
+        <location filename="../src/engine/rules.cpp" line="33930"/>
+        <location filename="../src/engine/rules.cpp" line="34049"/>
+        <location filename="../src/engine/rules.cpp" line="34170"/>
+        <location filename="../src/engine/rules.cpp" line="34289"/>
+        <location filename="../src/engine/rules.cpp" line="38439"/>
+        <location filename="../src/engine/rules.cpp" line="38514"/>
+        <location filename="../src/engine/rules.cpp" line="38599"/>
+        <location filename="../src/engine/rules.cpp" line="38674"/>
+        <location filename="../src/engine/rules.cpp" line="38772"/>
+        <location filename="../src/engine/rules.cpp" line="38820"/>
+        <location filename="../src/engine/rules.cpp" line="38928"/>
+        <location filename="../src/engine/rules.cpp" line="38976"/>
+        <location filename="../src/engine/rules.cpp" line="39089"/>
+        <location filename="../src/engine/rules.cpp" line="39137"/>
+        <location filename="../src/engine/rules.cpp" line="39245"/>
+        <location filename="../src/engine/rules.cpp" line="39293"/>
+        <location filename="../src/engine/rules.cpp" line="39472"/>
+        <location filename="../src/engine/rules.cpp" line="39494"/>
+        <location filename="../src/engine/rules.cpp" line="39647"/>
+        <location filename="../src/engine/rules.cpp" line="39773"/>
+        <location filename="../src/engine/rules.cpp" line="42386"/>
+        <location filename="../src/engine/rules.cpp" line="42461"/>
+        <location filename="../src/engine/rules.cpp" line="42541"/>
+        <location filename="../src/engine/rules.cpp" line="42616"/>
+        <location filename="../src/engine/rules.cpp" line="42714"/>
+        <location filename="../src/engine/rules.cpp" line="42842"/>
+        <location filename="../src/engine/rules.cpp" line="42975"/>
+        <location filename="../src/engine/rules.cpp" line="43103"/>
+        <location filename="../src/engine/rules.cpp" line="43218"/>
+        <location filename="../src/engine/rules.cpp" line="43293"/>
+        <location filename="../src/engine/rules.cpp" line="43373"/>
+        <location filename="../src/engine/rules.cpp" line="43448"/>
+        <location filename="../src/engine/rules.cpp" line="43546"/>
+        <location filename="../src/engine/rules.cpp" line="43674"/>
+        <location filename="../src/engine/rules.cpp" line="43807"/>
+        <location filename="../src/engine/rules.cpp" line="43935"/>
         <source>Hour %1 is nonexistent</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="19612"/>
-        <location filename="../src/engine/rules.cpp" line="19732"/>
-        <location filename="../src/engine/rules.cpp" line="19945"/>
-        <location filename="../src/engine/rules.cpp" line="20064"/>
-        <location filename="../src/engine/rules.cpp" line="32877"/>
-        <location filename="../src/engine/rules.cpp" line="32997"/>
-        <location filename="../src/engine/rules.cpp" line="33124"/>
-        <location filename="../src/engine/rules.cpp" line="33244"/>
-        <location filename="../src/engine/rules.cpp" line="33925"/>
-        <location filename="../src/engine/rules.cpp" line="34044"/>
-        <location filename="../src/engine/rules.cpp" line="34165"/>
-        <location filename="../src/engine/rules.cpp" line="34284"/>
-        <location filename="../src/engine/rules.cpp" line="38428"/>
-        <location filename="../src/engine/rules.cpp" line="38503"/>
-        <location filename="../src/engine/rules.cpp" line="38588"/>
-        <location filename="../src/engine/rules.cpp" line="38663"/>
-        <location filename="../src/engine/rules.cpp" line="42375"/>
-        <location filename="../src/engine/rules.cpp" line="42450"/>
-        <location filename="../src/engine/rules.cpp" line="42530"/>
-        <location filename="../src/engine/rules.cpp" line="42605"/>
-        <location filename="../src/engine/rules.cpp" line="42718"/>
-        <location filename="../src/engine/rules.cpp" line="42846"/>
-        <location filename="../src/engine/rules.cpp" line="42979"/>
-        <location filename="../src/engine/rules.cpp" line="43107"/>
-        <location filename="../src/engine/rules.cpp" line="43207"/>
-        <location filename="../src/engine/rules.cpp" line="43282"/>
-        <location filename="../src/engine/rules.cpp" line="43362"/>
-        <location filename="../src/engine/rules.cpp" line="43437"/>
-        <location filename="../src/engine/rules.cpp" line="43550"/>
-        <location filename="../src/engine/rules.cpp" line="43678"/>
-        <location filename="../src/engine/rules.cpp" line="43811"/>
-        <location filename="../src/engine/rules.cpp" line="43939"/>
+        <location filename="../src/engine/rules.cpp" line="19642"/>
+        <location filename="../src/engine/rules.cpp" line="19762"/>
+        <location filename="../src/engine/rules.cpp" line="19975"/>
+        <location filename="../src/engine/rules.cpp" line="20094"/>
+        <location filename="../src/engine/rules.cpp" line="32907"/>
+        <location filename="../src/engine/rules.cpp" line="33027"/>
+        <location filename="../src/engine/rules.cpp" line="33154"/>
+        <location filename="../src/engine/rules.cpp" line="33274"/>
+        <location filename="../src/engine/rules.cpp" line="33955"/>
+        <location filename="../src/engine/rules.cpp" line="34074"/>
+        <location filename="../src/engine/rules.cpp" line="34195"/>
+        <location filename="../src/engine/rules.cpp" line="34314"/>
+        <location filename="../src/engine/rules.cpp" line="38458"/>
+        <location filename="../src/engine/rules.cpp" line="38533"/>
+        <location filename="../src/engine/rules.cpp" line="38618"/>
+        <location filename="../src/engine/rules.cpp" line="38693"/>
+        <location filename="../src/engine/rules.cpp" line="42405"/>
+        <location filename="../src/engine/rules.cpp" line="42480"/>
+        <location filename="../src/engine/rules.cpp" line="42560"/>
+        <location filename="../src/engine/rules.cpp" line="42635"/>
+        <location filename="../src/engine/rules.cpp" line="42748"/>
+        <location filename="../src/engine/rules.cpp" line="42876"/>
+        <location filename="../src/engine/rules.cpp" line="43009"/>
+        <location filename="../src/engine/rules.cpp" line="43137"/>
+        <location filename="../src/engine/rules.cpp" line="43237"/>
+        <location filename="../src/engine/rules.cpp" line="43312"/>
+        <location filename="../src/engine/rules.cpp" line="43392"/>
+        <location filename="../src/engine/rules.cpp" line="43467"/>
+        <location filename="../src/engine/rules.cpp" line="43580"/>
+        <location filename="../src/engine/rules.cpp" line="43708"/>
+        <location filename="../src/engine/rules.cpp" line="43841"/>
+        <location filename="../src/engine/rules.cpp" line="43969"/>
         <source>Hour %1 is nonexistent (it is also not void, to specify end of the day)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="23046"/>
+        <location filename="../src/engine/rules.cpp" line="23076"/>
         <source>Found constraint students min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="23141"/>
+        <location filename="../src/engine/rules.cpp" line="23171"/>
         <source>Found constraint students set min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="24687"/>
-        <location filename="../src/engine/rules.cpp" line="24869"/>
+        <location filename="../src/engine/rules.cpp" line="24717"/>
+        <location filename="../src/engine/rules.cpp" line="24899"/>
         <source>Found constraint activity preferred starting time with tag permanently locked which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="24754"/>
-        <location filename="../src/engine/rules.cpp" line="24936"/>
+        <location filename="../src/engine/rules.cpp" line="24784"/>
+        <location filename="../src/engine/rules.cpp" line="24966"/>
         <source>Found constraint activity preferred starting time, with unspecified tag &apos;permanently locked&apos; - this tag will be set to &apos;false&apos; by default. You can always modify it by editing the constraint in the &apos;Data&apos; menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="24757"/>
-        <location filename="../src/engine/rules.cpp" line="24939"/>
+        <location filename="../src/engine/rules.cpp" line="24787"/>
+        <location filename="../src/engine/rules.cpp" line="24969"/>
         <source>Explanation: starting with version 5.8.0 (January 2009), the constraint activity preferred starting time has a new tag, &apos;permanently locked&apos; (true or false). It is recommended to make the tag &apos;permanently locked&apos; true for the constraints you need to be not modifiable from the &apos;Timetable&apos; menu and leave this tag false for the constraints you need to be modifiable from the &apos;Timetable&apos; menu (the &apos;permanently locked&apos; tag can be modified by editing the constraint from the &apos;Data&apos; menu). This way, when viewing the timetable and locking/unlocking some activities, you will not unlock the constraints which need to be locked all the time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="24776"/>
-        <location filename="../src/engine/rules.cpp" line="24958"/>
+        <location filename="../src/engine/rules.cpp" line="24806"/>
+        <location filename="../src/engine/rules.cpp" line="24988"/>
         <source>Found constraint activity preferred starting time, with unspecified day or hour. This constraint will be transformed into constraint activity preferred starting times (a set of times, not only one). This change is done in FET versions 5.8.1 and higher.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="25067"/>
+        <location filename="../src/engine/rules.cpp" line="25097"/>
         <source>It is not allowed to have more than one constraint of type activity preferred day for an activity; this condition is not respected for the activity id %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15958"/>
-        <location filename="../src/engine/rules.cpp" line="26151"/>
-        <location filename="../src/engine/rules.cpp" line="26188"/>
-        <location filename="../src/engine/rules.cpp" line="29134"/>
-        <location filename="../src/engine/rules.cpp" line="29171"/>
+        <location filename="../src/engine/rules.cpp" line="15988"/>
+        <location filename="../src/engine/rules.cpp" line="26181"/>
+        <location filename="../src/engine/rules.cpp" line="26218"/>
+        <location filename="../src/engine/rules.cpp" line="29164"/>
+        <location filename="../src/engine/rules.cpp" line="29201"/>
         <source>Field %1 not met</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15210"/>
+        <location filename="../src/engine/rules.cpp" line="15240"/>
         <source>The field &apos;%1&apos; is met more than once in the students year&apos;s description.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15371"/>
+        <location filename="../src/engine/rules.cpp" line="15401"/>
         <source>The field &apos;%1&apos; is met more than once in the students group&apos;s description.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15500"/>
+        <location filename="../src/engine/rules.cpp" line="15530"/>
         <source>The field &apos;%1&apos; is met more than once in the students subgroup&apos;s description.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="26157"/>
-        <location filename="../src/engine/rules.cpp" line="26194"/>
-        <location filename="../src/engine/rules.cpp" line="29140"/>
-        <location filename="../src/engine/rules.cpp" line="29177"/>
+        <location filename="../src/engine/rules.cpp" line="26187"/>
+        <location filename="../src/engine/rules.cpp" line="26224"/>
+        <location filename="../src/engine/rules.cpp" line="29170"/>
+        <location filename="../src/engine/rules.cpp" line="29207"/>
         <source>The value in field %1 is not equal with the number of read %2 fields</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31436"/>
+        <location filename="../src/engine/rules.cpp" line="31466"/>
         <source>Duplicate activity tag %1 found in the constraint teacher max activity tags per day from set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31520"/>
+        <location filename="../src/engine/rules.cpp" line="31550"/>
         <source>Duplicate activity tag %1 found in the constraint teachers max activity tags per day from set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31609"/>
+        <location filename="../src/engine/rules.cpp" line="31639"/>
         <source>Duplicate activity tag %1 found in the constraint students set max activity tags per day from set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31693"/>
+        <location filename="../src/engine/rules.cpp" line="31723"/>
         <source>Duplicate activity tag %1 found in the constraint students max activity tags per day from set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31782"/>
+        <location filename="../src/engine/rules.cpp" line="31812"/>
         <source>Duplicate activity tag %1 found in the constraint teacher max activity tags per real day from set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31866"/>
+        <location filename="../src/engine/rules.cpp" line="31896"/>
         <source>Duplicate activity tag %1 found in the constraint teachers max activity tags per real day from set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="31955"/>
+        <location filename="../src/engine/rules.cpp" line="31985"/>
         <source>Duplicate activity tag %1 found in the constraint students set max activity tags per real day from set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="32039"/>
+        <location filename="../src/engine/rules.cpp" line="32069"/>
         <source>Duplicate activity tag %1 found in the constraint students max activity tags per real day from set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="32836"/>
+        <location filename="../src/engine/rules.cpp" line="32866"/>
         <source>Constraint TeacherMorningIntervalMaxDaysPerWeek max days corrupt for teacher %1, max days %2 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="32956"/>
+        <location filename="../src/engine/rules.cpp" line="32986"/>
         <source>Constraint TeachersMorningIntervalMaxDaysPerWeek max days corrupt, max days %1 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="33083"/>
+        <location filename="../src/engine/rules.cpp" line="33113"/>
         <source>Constraint TeacherAfternoonIntervalMaxDaysPerWeek max days corrupt for teacher %1, max days %2 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="33203"/>
+        <location filename="../src/engine/rules.cpp" line="33233"/>
         <source>Constraint TeachersAfternoonIntervalMaxDaysPerWeek max days corrupt, max days %1 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="33491"/>
+        <location filename="../src/engine/rules.cpp" line="33521"/>
         <source>Constraint StudentsSetMaxAfternoonsPerWeek max afternoons corrupt for students set %1, max afternoons %2 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="33535"/>
+        <location filename="../src/engine/rules.cpp" line="33565"/>
         <source>Constraint StudentsMaxAfternoonsPerWeek max afternoons corrupt, max afternoons %1 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="33583"/>
+        <location filename="../src/engine/rules.cpp" line="33613"/>
         <source>Constraint StudentsSetMaxMorningsPerWeek max mornings corrupt for students set %1, max mornings %2 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="33627"/>
+        <location filename="../src/engine/rules.cpp" line="33657"/>
         <source>Constraint StudentsMaxMorningsPerWeek max mornings corrupt, max mornings %1 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="33676"/>
+        <location filename="../src/engine/rules.cpp" line="33706"/>
         <source>Constraint StudentsSetMinAfternoonsPerWeek min afternoons corrupt for students set %1, min afternoons %2 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="33720"/>
+        <location filename="../src/engine/rules.cpp" line="33750"/>
         <source>Constraint StudentsMinAfternoonsPerWeek min afternoons corrupt, min afternoons %1 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="33768"/>
+        <location filename="../src/engine/rules.cpp" line="33798"/>
         <source>Constraint StudentsSetMinMorningsPerWeek min mornings corrupt for students set %1, min mornings %2 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="33812"/>
+        <location filename="../src/engine/rules.cpp" line="33842"/>
         <source>Constraint StudentsMinMorningsPerWeek min mornings corrupt, min mornings %1 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="33884"/>
+        <location filename="../src/engine/rules.cpp" line="33914"/>
         <source>Constraint StudentsSetMorningIntervalMaxDaysPerWeek max days corrupt for students set %1, max days %2 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="34004"/>
+        <location filename="../src/engine/rules.cpp" line="34034"/>
         <source>Constraint StudentsMorningIntervalMaxDaysPerWeek max days corrupt: max days %1 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="34124"/>
+        <location filename="../src/engine/rules.cpp" line="34154"/>
         <source>Constraint StudentsSetAfternoonIntervalMaxDaysPerWeek max days corrupt for students set %1, max days %2 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="34244"/>
+        <location filename="../src/engine/rules.cpp" line="34274"/>
         <source>Constraint StudentsAfternoonIntervalMaxDaysPerWeek max days corrupt: max days %1 &gt;nDaysPerWeek/2, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="35106"/>
+        <location filename="../src/engine/rules.cpp" line="35136"/>
         <source>Found constraint teachers min hours per morning with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="35125"/>
+        <location filename="../src/engine/rules.cpp" line="35155"/>
         <source>Found constraint teachers min hours per morning with tag allow empty mornings which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="35212"/>
+        <location filename="../src/engine/rules.cpp" line="35242"/>
         <source>Found constraint teacher min hours per morning with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="35231"/>
+        <location filename="../src/engine/rules.cpp" line="35261"/>
         <source>Found constraint teacher min hours per morning with tag allow empty mornings which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="35288"/>
+        <location filename="../src/engine/rules.cpp" line="35318"/>
         <source>Found constraint teachers min hours per afternoon with tag allow empty afternoons which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="35355"/>
+        <location filename="../src/engine/rules.cpp" line="35385"/>
         <source>Found constraint teacher min hours per afternoon with tag allow empty afternoons which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="36124"/>
+        <location filename="../src/engine/rules.cpp" line="36154"/>
         <source>Found constraint students min hours per morning with tag allow empty mornings which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="36219"/>
+        <location filename="../src/engine/rules.cpp" line="36249"/>
         <source>Found constraint students set min hours per morning with tag allow empty mornings which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="36290"/>
+        <location filename="../src/engine/rules.cpp" line="36320"/>
         <source>Found constraint students min hours per afternoon with tag allow empty afternoons which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="36366"/>
+        <location filename="../src/engine/rules.cpp" line="36396"/>
         <source>Found constraint students set min hours per afternoon with tag allow empty afternoons which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="38152"/>
+        <location filename="../src/engine/rules.cpp" line="38182"/>
         <source>Found constraint teacher max three consecutive days with tag %1 which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="38213"/>
+        <location filename="../src/engine/rules.cpp" line="38243"/>
         <source>Found constraint teachers max three consecutive days with tag %1 which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="38280"/>
+        <location filename="../src/engine/rules.cpp" line="38310"/>
         <source>Found constraint students set max three consecutive days with tag %1 which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="38341"/>
+        <location filename="../src/engine/rules.cpp" line="38371"/>
         <source>Found constraint students max three consecutive days with tag %1 which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="39860"/>
+        <location filename="../src/engine/rules.cpp" line="39890"/>
         <source>Found constraint activity preferred room with tag permanently locked which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="39931"/>
+        <location filename="../src/engine/rules.cpp" line="39961"/>
         <source>The specified number of real rooms is not equal to the read number of real rooms in constraint.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="39939"/>
+        <location filename="../src/engine/rules.cpp" line="39969"/>
         <source>Found constraint activity preferred room, with unspecified tag &apos;permanently locked&apos; - this tag will be set to &apos;false&apos; by default. You can always modify it by editing the constraint in the &apos;Data&apos; menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="39942"/>
+        <location filename="../src/engine/rules.cpp" line="39972"/>
         <source>Explanation: starting with version 5.8.0 (January 2009), the constraint activity preferred room has a new tag, &apos;permanently locked&apos; (true or false). It is recommended to make the tag &apos;permanently locked&apos; true for the constraints you need to be not modifiable from the &apos;Timetable&apos; menu and leave this tag false for the constraints you need to be modifiable from the &apos;Timetable&apos; menu (the &apos;permanently locked&apos; tag can be modified by editing the constraint from the &apos;Data&apos; menu). This way, when viewing the timetable and locking/unlocking some activities, you will not unlock the constraints which need to be locked all the time.</source>
         <translation type="unfinished"></translation>
     </message>
