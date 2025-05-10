@@ -1,3 +1,5 @@
+ 7.2.0
+	- Minor interface bug fix (the bug was found by watching an online FET tutorial presented by Apisit Piamnoi).
  7.1.9
 	- Minor bug fix: the hours' names and long names were not correctly separated by a new line character in the timetables if the user selected this
 	option (reported by Željko Vrabec).

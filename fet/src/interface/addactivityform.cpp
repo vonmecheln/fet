@@ -952,7 +952,7 @@ void AddActivityForm::addMultipleActivities()
 	//int numberOfStudents=0;
 	QStringList students_names;
 	if(selectedStudentsListWidget->count()<=1){
-		QMessageBox::warning(this, tr("FET question"),
+		QMessageBox::warning(this, tr("FET warning"),
 		 tr("If you intend to add multiple activities for students (option 'Separately' is checked), please select at least 2 students sets."));
 
 		return;

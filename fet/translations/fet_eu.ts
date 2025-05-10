@@ -1854,7 +1854,6 @@ to
         <location filename="../src/interface/addactivityform.cpp" line="654"/>
         <location filename="../src/interface/addactivityform.cpp" line="722"/>
         <location filename="../src/interface/addactivityform.cpp" line="936"/>
-        <location filename="../src/interface/addactivityform.cpp" line="955"/>
         <location filename="../src/interface/addactivityform.cpp" line="1021"/>
         <source>FET question</source>
         <translation>FET galdera</translation>
@@ -1862,6 +1861,7 @@ to
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="620"/>
         <location filename="../src/interface/addactivityform.cpp" line="921"/>
+        <location filename="../src/interface/addactivityform.cpp" line="955"/>
         <source>FET warning</source>
         <translation>FET abisua</translation>
     </message>
