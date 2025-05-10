@@ -59720,12 +59720,12 @@ allowed: 0.0%-100.0%)</source>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="56"/>
-        <location filename="../src/interface/helpaboutform.cpp" line="82"/>
         <source>April</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="58"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="82"/>
         <source>May</source>
         <translation type="unfinished"></translation>
     </message>

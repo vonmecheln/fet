@@ -1,3 +1,6 @@
+ 7.1.9
+	- Minor bug fix: the hours' names and long names were not correctly separated by a new line character in the timetables if the user selected this
+	option (reported by Željko Vrabec).
  7.1.8
 	- Potential bug fix: the default translated names of some days of the week could have been the same, leading to critical bugs. Now we use generic default
 	names for the days in any language: D1, ..., D5 (and H1, ..., H12 for the hours). Of course these can be changed by the user after the initial setup.

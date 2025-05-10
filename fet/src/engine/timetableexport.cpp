@@ -18702,7 +18702,7 @@ QString TimetableExport::getHourOrRealHourString(int h, bool printHoursNames, bo
 	if(printHoursLongNames && !hln.isEmpty())
 		tl.append(protect2(hln));
 
-	return tl.join(SETTINGS_TIMETABLES_SEPARATE_DAYS_NAME_LONG_NAME_BY_BREAK?QString("<br />"):QString(" "));
+	return tl.join(SETTINGS_TIMETABLES_SEPARATE_HOURS_NAME_LONG_NAME_BY_BREAK?QString("<br />"):QString(" "));
 }
 
 QString TimetableExport::getHourString(int h, bool printHoursNames, bool printHoursLongNames)
@@ -18716,7 +18716,7 @@ QString TimetableExport::getHourString(int h, bool printHoursNames, bool printHo
 	if(printHoursLongNames && !hln.isEmpty())
 		tl.append(protect2(hln));
 
-	return tl.join(SETTINGS_TIMETABLES_SEPARATE_DAYS_NAME_LONG_NAME_BY_BREAK?QString("<br />"):QString(" "));
+	return tl.join(SETTINGS_TIMETABLES_SEPARATE_HOURS_NAME_LONG_NAME_BY_BREAK?QString("<br />"):QString(" "));
 }
 
 QString TimetableExport::getRealHourString(int h, bool printHoursNames, bool printHoursLongNames)
@@ -18730,7 +18730,7 @@ QString TimetableExport::getRealHourString(int h, bool printHoursNames, bool pri
 	if(printHoursLongNames && !hln.isEmpty())
 		tl.append(protect2(hln));
 
-	return tl.join(SETTINGS_TIMETABLES_SEPARATE_DAYS_NAME_LONG_NAME_BY_BREAK?QString("<br />"):QString(" "));
+	return tl.join(SETTINGS_TIMETABLES_SEPARATE_HOURS_NAME_LONG_NAME_BY_BREAK?QString("<br />"):QString(" "));
 }
 
 QString TimetableExport::getVerticalDayString(int d, bool printDaysNames, bool printDaysLongNames)

@@ -10819,3 +10819,52 @@ So Nahum said this is a bit too complicated, and further suggested:
 
 In the filter dialog add an option: save as ....(name) - to save filter configuration.
 Then in the front screen add a section with toggle buttons (or combo box) to activate the saved filter.
+
+706--------------------------------------------------------
+From Cyrus Ireri (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6380.0
+
+I have a scenario where on Mondays,only form 4 s are taught. Form 1-3 have exams same day. All classes are on sessions as from Tue to Fri.
+Due to that, teachers can have session on Mon or not depending on whether they teach form 4. Is it possible to have min hours/sessions
+that a teacher can have between Tue and Fri so that we don't have a scenario like i have attached of a teacher having 2 sessions in a day
+and others have many. If this can happen, it can help in balancing.
+
+Liviu Lalescu:
+
+Maybe "teacher(s) min hours daily with exception of one day".
+
+Cyrus Ireri:
+
+Can Min hours daily in an hourly interval be a solution more so when every day can be treated individually?
+
+Just wondering though i know we only have Max hours daily in an hourly interval for all days.
+
+707--------------------------------------------------------
+From Željko Vrabec (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6384.msg35499#msg35499
+
+Is there any plan to clear html structure?  :)
+
+Liviu Lalescu:
+
+How would you suggest to clear it?
+
+Željko Vrabec:
+
+1. Use HTML5 document structure:
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>My Web Page</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
+      </head>
+      <body>
+        <h1>Welcome to my web page!</h1>
+        <p>This is the content of my web page.</p>
+      </body>
+    </html>
+
+2. Move tr with foot class into tfoot (out of tbody)
