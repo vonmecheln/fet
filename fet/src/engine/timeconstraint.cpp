@@ -69084,6 +69084,24 @@ double ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::fitness(Solution& 
 			nbroken++;
 	}
 
+	if(nbroken>0 && conflictsString!=nullptr){
+		QString s;
+		if(c.nPlacedActivities==r.nInternalActivities){
+			s=tr("Time constraint %1 broken - this should not happen, as this kind of constraint should "
+			 "have only 100.0% weight. Please report error!").arg(this->getDescription(r));
+		}
+		else{
+			s=tr("Time constraint %1 broken for the partial timetable.").arg(this->getDescription(r));
+			s+=" ";
+			s+=tr("Conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(nbroken*weightPercentage/100));
+		}
+		
+		dl.append(s);
+		cl.append(weightPercentage/100.0);
+		
+		*conflictsString+= s+"\n";
+	}
+
 	assert(weightPercentage==100);
 
 	if(c.nPlacedActivities==r.nInternalActivities)
@@ -69356,6 +69374,24 @@ double ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::fitness(Solution& c, 
 		
 		if(cnt>this->maxSingleGaps)
 			nbroken++;
+	}
+
+	if(nbroken>0 && conflictsString!=nullptr){
+		QString s;
+		if(c.nPlacedActivities==r.nInternalActivities){
+			s=tr("Time constraint %1 broken - this should not happen, as this kind of constraint should "
+			 "have only 100.0% weight. Please report error!").arg(this->getDescription(r));
+		}
+		else{
+			s=tr("Time constraint %1 broken for the partial timetable.").arg(this->getDescription(r));
+			s+=" ";
+			s+=tr("Conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(nbroken*weightPercentage/100));
+		}
+		
+		dl.append(s);
+		cl.append(weightPercentage/100.0);
+		
+		*conflictsString+= s+"\n";
 	}
 
 	assert(weightPercentage==100);
@@ -69633,6 +69669,24 @@ double ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::fitness(Solution& c, 
 		
 		if(cnt>this->maxSingleGaps)
 			nbroken++;
+	}
+
+	if(nbroken>0 && conflictsString!=nullptr){
+		QString s;
+		if(c.nPlacedActivities==r.nInternalActivities){
+			s=tr("Time constraint %1 broken - this should not happen, as this kind of constraint should "
+			 "have only 100.0% weight. Please report error!").arg(this->getDescription(r));
+		}
+		else{
+			s=tr("Time constraint %1 broken for the partial timetable.").arg(this->getDescription(r));
+			s+=" ";
+			s+=tr("Conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(nbroken*weightPercentage/100));
+		}
+		
+		dl.append(s);
+		cl.append(weightPercentage/100.0);
+		
+		*conflictsString+= s+"\n";
 	}
 
 	assert(weightPercentage==100);
@@ -69927,6 +69981,24 @@ double ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::fitness(Solution& c, R
 	
 	if(cnt>this->maxSingleGaps)
 		nbroken++;
+
+	if(nbroken>0 && conflictsString!=nullptr){
+		QString s;
+		if(c.nPlacedActivities==r.nInternalActivities){
+			s=tr("Time constraint %1 broken - this should not happen, as this kind of constraint should "
+			 "have only 100.0% weight. Please report error!").arg(this->getDescription(r));
+		}
+		else{
+			s=tr("Time constraint %1 broken for the partial timetable.").arg(this->getDescription(r));
+			s+=" ";
+			s+=tr("Conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(nbroken*weightPercentage/100));
+		}
+		
+		dl.append(s);
+		cl.append(weightPercentage/100.0);
+		
+		*conflictsString+= s+"\n";
+	}
 
 	assert(weightPercentage==100);
 

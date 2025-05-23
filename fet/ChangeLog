@@ -1,3 +1,6 @@
+ 7.2.2
+	- Bug fix: for partial timetables, the conflicts for the constraints of type teacher(s)/students (set) max single gaps in selected time slots were
+	not logged.
  7.2.1
 	- Added the constraints of type teacher(s)/students (set) max single gaps in selected time slots (suggested and tested by Yush Yuen).
 	- The description of the constraints involving activities will now show an 'X' before the id if the activity is deactivated (suggested by GUEFFAZ REDA).

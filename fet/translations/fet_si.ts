@@ -20033,100 +20033,115 @@ to
 <context>
     <name>ConstraintStudentsMaxSingleGapsInSelectedTimeSlots</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69205"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="69212"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="69219"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="69226"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69223"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69230"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69237"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69244"/>
         <source>FET information</source>
         <translation type="unfinished">FET තොරතුරු</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69206"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69224"/>
         <source>Constraint students max single gaps in selected time slots is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69213"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69231"/>
         <source>Constraint students max single gaps in selected time slots is wrong because an hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69220"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69238"/>
         <source>Constraint students max single gaps in selected time slots is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69227"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69245"/>
         <source>Constraint students max single gaps in selected time slots is wrong because hour or day is not specified for a slot (-1). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69280"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69298"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69282"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69300"/>
         <source>Students max single gaps in selected time slots</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69283"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69301"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69284"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69302"/>
         <source>MSG:%1</source>
         <comment>Max single gaps</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69291"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69309"/>
         <source>STS: %1</source>
         <comment>Selected time slots</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69301"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69319"/>
         <source>Time constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69302"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69320"/>
         <source>All students must respect a maximum number of single gaps in the selected time slots</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69303"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69321"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69305"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69323"/>
         <source>Maximum number of single gaps=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69312"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69330"/>
         <source>Selected time slots: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69315"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69333"/>
         <source>Active time constraint=%1</source>
         <comment>Represents a yes/no value, if a time constraint is active or not, %1 is yes or no</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69319"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69337"/>
         <source>Comments=%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="69382"/>
+        <source>Time constraint %1 broken - this should not happen, as this kind of constraint should have only 100.0% weight. Please report error!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="69386"/>
+        <source>Time constraint %1 broken for the partial timetable.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="69388"/>
+        <source>Conflicts factor increase=%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -25229,6 +25244,21 @@ to
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="69045"/>
         <source>Comments=%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="69090"/>
+        <source>Time constraint %1 broken - this should not happen, as this kind of constraint should have only 100.0% weight. Please report error!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="69094"/>
+        <source>Time constraint %1 broken for the partial timetable.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="69096"/>
+        <source>Conflicts factor increase=%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -31359,122 +31389,137 @@ to
 <context>
     <name>ConstraintTeacherMaxSingleGapsInSelectedTimeSlots</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69760"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69814"/>
         <source>FET warning</source>
         <translation type="unfinished">FET අවවාද</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69761"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69815"/>
         <source>Constraint teacher max single gaps in selected time slots is wrong because it refers to nonexistent teacher. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69773"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="69780"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="69787"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="69794"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69827"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69834"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69841"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69848"/>
         <source>FET information</source>
         <translation type="unfinished">FET තොරතුරු</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69774"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69828"/>
         <source>Constraint teacher max single gaps in selected time slots is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69781"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69835"/>
         <source>Constraint teacher max single gaps in selected time slots is wrong because an hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69788"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69842"/>
         <source>Constraint teacher max single gaps in selected time slots is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69795"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69849"/>
         <source>Constraint teacher max single gaps in selected time slots is wrong because hour or day is not specified for a slot (-1). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69850"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69904"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69852"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69906"/>
         <source>Teacher max single gaps in selected time slots</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69853"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69907"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69854"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69908"/>
         <source>T:%1</source>
         <comment>Teacher</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69855"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69909"/>
         <source>MSG:%1</source>
         <comment>Max single gaps</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69862"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69916"/>
         <source>STS: %1</source>
         <comment>Selected time slots</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69872"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69926"/>
         <source>Time constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69873"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69927"/>
         <source>A teacher must respect a maximum number of single gaps in the selected time slots</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69874"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69928"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69875"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69929"/>
         <source>Teacher=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69877"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69931"/>
         <source>Maximum number of single gaps=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69884"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69938"/>
         <source>Selected time slots: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69887"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69941"/>
         <source>Active time constraint=%1</source>
         <comment>Represents a yes/no value, if a time constraint is active or not, %1 is yes or no</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69891"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69945"/>
         <source>Comments=%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="69988"/>
+        <source>Time constraint %1 broken - this should not happen, as this kind of constraint should have only 100.0% weight. Please report error!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="69992"/>
+        <source>Time constraint %1 broken for the partial timetable.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="69994"/>
+        <source>Conflicts factor increase=%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -36758,100 +36803,115 @@ to
 <context>
     <name>ConstraintTeachersMaxSingleGapsInSelectedTimeSlots</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69482"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="69489"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="69496"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="69503"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69518"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69525"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69532"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69539"/>
         <source>FET information</source>
         <translation type="unfinished">FET තොරතුරු</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69483"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69519"/>
         <source>Constraint teachers max single gaps in selected time slots is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69490"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69526"/>
         <source>Constraint teachers max single gaps in selected time slots is wrong because an hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69497"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69533"/>
         <source>Constraint teachers max single gaps in selected time slots is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69504"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69540"/>
         <source>Constraint teachers max single gaps in selected time slots is wrong because hour or day is not specified for a slot (-1). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69557"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69593"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69559"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69595"/>
         <source>Teachers max single gaps in selected time slots</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69560"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69596"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69561"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69597"/>
         <source>MSG:%1</source>
         <comment>Max single gaps</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69568"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69604"/>
         <source>STS: %1</source>
         <comment>Selected time slots</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69578"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69614"/>
         <source>Time constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69579"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69615"/>
         <source>All teachers must respect a maximum number of single gaps in the selected time slots</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69580"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69616"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69582"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69618"/>
         <source>Maximum number of single gaps=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69589"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69625"/>
         <source>Selected time slots: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69592"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69628"/>
         <source>Active time constraint=%1</source>
         <comment>Represents a yes/no value, if a time constraint is active or not, %1 is yes or no</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="69596"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="69632"/>
         <source>Comments=%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="69677"/>
+        <source>Time constraint %1 broken - this should not happen, as this kind of constraint should have only 100.0% weight. Please report error!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="69681"/>
+        <source>Time constraint %1 broken for the partial timetable.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="69683"/>
+        <source>Conflicts factor increase=%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
