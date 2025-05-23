@@ -3028,6 +3028,58 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintTwoSetsOfActivities
 	return stream;
 }
 
+//231
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxSingleGapsInSelectedTimeSlots& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxSingleGaps<<tc.selectedDays<<tc.selectedHours;
+
+	return stream;
+}
+
+//232
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.students<<tc.maxSingleGaps<<tc.selectedDays<<tc.selectedHours;
+
+	return stream;
+}
+
+//233
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxSingleGapsInSelectedTimeSlots& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxSingleGaps<<tc.selectedDays<<tc.selectedHours;
+
+	return stream;
+}
+
+//234
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxSingleGapsInSelectedTimeSlots& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.teacher<<tc.maxSingleGaps<<tc.selectedDays<<tc.selectedHours;
+
+	return stream;
+}
+
 //1
 QDataStream& operator>>(QDataStream& stream, ConstraintBasicCompulsoryTime& tc)
 {
@@ -6012,6 +6064,58 @@ QDataStream& operator>>(QDataStream& stream, ConstraintTwoSetsOfActivitiesSameSe
 	return stream;
 }
 
+//231
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxSingleGapsInSelectedTimeSlots& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxSingleGaps>>tc.selectedDays>>tc.selectedHours;
+
+	return stream;
+}
+
+//232
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.students>>tc.maxSingleGaps>>tc.selectedDays>>tc.selectedHours;
+
+	return stream;
+}
+
+//233
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxSingleGapsInSelectedTimeSlots& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxSingleGaps>>tc.selectedDays>>tc.selectedHours;
+
+	return stream;
+}
+
+//234
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxSingleGapsInSelectedTimeSlots& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.teacher>>tc.maxSingleGaps>>tc.selectedDays>>tc.selectedHours;
+
+	return stream;
+}
+
 static QString trueFalse(bool x){
 	if(!x)
 		return QString("false");
@@ -6043,6 +6147,23 @@ extern Matrix3D<bool> subgroupNotAvailableDayHour;
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
+
+QString getActivityDescription(Rules& r, int id)
+{
+	QString s="";
+	
+	Activity* act=r.activitiesPointerHash.value(id, nullptr);
+	if(act==nullptr){
+		s+="?";
+	}
+	else{
+		if(!act->active)
+			s+="X-";
+		s+=QString::number(id);
+	}
+	
+	return s;
+}
 
 QString getActivityDetailedDescription(Rules& r, int id)
 {
@@ -6610,6 +6731,14 @@ bool TimeConstraint::canBeUsedInOfficialMode()
 		case CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
 			[[fallthrough]];
 		case CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_SET_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHERS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
 			t=true;
 			break;
 			
@@ -7076,6 +7205,14 @@ bool TimeConstraint::canBeUsedInMorningsAfternoonsMode()
 		case CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
 			[[fallthrough]];
 		case CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_SET_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHERS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
 			t=true;
 			break;
 		
@@ -7330,6 +7467,14 @@ bool TimeConstraint::canBeUsedInBlockPlanningMode()
 		case CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
 			[[fallthrough]];
 		case CONSTRAINT_TWO_SETS_OF_ACTIVITIES_SAME_SECTIONS:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_SET_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHERS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
 			t=true;
 			break;
 		
@@ -7585,6 +7730,14 @@ bool TimeConstraint::canBeUsedInTermsMode()
 		case CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
 			[[fallthrough]];
 		case CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_SET_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHERS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
 			t=true;
 			break;
 		
@@ -8833,7 +8986,7 @@ QString ConstraintActivitiesSameStartingTime::getDescription(Rules& r)
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(this->activitiesIds[i]);
+		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));
 		if(i<this->n_activities-1)
 			s+=", ";
 	}
@@ -9152,7 +9305,7 @@ QString ConstraintActivitiesNotOverlapping::getDescription(Rules& r)
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(this->activitiesIds[i]);
+		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));
 		if(i<this->n_activities-1)
 			s+=", ";
 	}
@@ -9780,7 +9933,7 @@ QString ConstraintMinDaysBetweenActivities::getDescription(Rules& r)
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(this->activitiesIds[i]);s+=", ";
+		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));s+=", ";
 	}
 	s+=tr("mD:%1", "Min days").arg(this->minDays);s+=", ";
 	s+=tr("CSD:%1", "Consecutive if on the same day").arg(yesNoTranslated(this->consecutiveIfSameDay));
@@ -10201,7 +10354,7 @@ QString ConstraintMaxDaysBetweenActivities::getDescription(Rules& r)
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(this->activitiesIds[i]);s+=", ";
+		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));s+=", ";
 	}
 	s+=tr("MD:%1", "Abbreviation for maximum days").arg(this->maxDays);
 
@@ -10561,7 +10714,7 @@ QString ConstraintActivitiesMaxHourlySpan::getDescription(Rules& r)
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(this->activitiesIds[i]);s+=", ";
+		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));s+=", ";
 	}
 	s+=tr("MHS:%1", "Abbreviation for maximum hourly span").arg(this->maxHourlySpan);
 
@@ -10925,7 +11078,7 @@ QString ConstraintMinGapsBetweenActivities::getDescription(Rules& r)
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(this->activitiesIds[i]);s+=", ";
+		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));s+=", ";
 	}
 	s+=tr("mG:%1", "Minimum number of gaps").arg(this->minGaps);
 
@@ -11238,7 +11391,7 @@ QString ConstraintMaxGapsBetweenActivities::getDescription(Rules& r){
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(this->activitiesIds[i]);s+=", ";
+		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));s+=", ";
 	}
 	s+=tr("MG:%1", "Maximum number of gaps").arg(this->maxGaps);
 
@@ -18282,7 +18435,7 @@ QString ConstraintActivityPreferredStartingTime::getDescription(Rules& r)
 		
 	QString s;
 	s+=tr("Act. id: %1 (%2) has a preferred starting time: %3", "%1 is the id, %2 is the detailed description of the activity. %3 is time (day and hour)")
-	 .arg(this->activityId)
+	 .arg(getActivityDescription(r, this->activityId))
 	 .arg(getActivityDetailedDescription(r, this->activityId))
 	 .arg(r.daysOfTheWeek[this->day]+" "+r.hoursOfTheDay[this->hour]);
 
@@ -18554,7 +18707,7 @@ QString ConstraintActivityPreferredTimeSlots::getDescription(Rules& r)
 		
 	QString s;
 	s+=tr("Act. id: %1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-		.arg(this->p_activityId)
+		.arg(getActivityDescription(r, this->p_activityId))
 		.arg(getActivityDetailedDescription(r, this->p_activityId));
 	s+=" ";
 
@@ -19886,7 +20039,7 @@ QString ConstraintActivityPreferredStartingTimes::getDescription(Rules& r)
 		
 	QString s;
 	s+=tr("Act. id: %1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
-		.arg(this->activityId)
+		.arg(getActivityDescription(r, this->activityId))
 		.arg(getActivityDetailedDescription(r, this->activityId));
 	
 	s+=" ";
@@ -21214,7 +21367,7 @@ QString ConstraintActivitiesSameStartingHour::getDescription(Rules& r)
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(this->activitiesIds[i]);
+		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));
 		if(i<this->n_activities-1)
 			s+=", ";
 	}
@@ -21533,7 +21686,7 @@ QString ConstraintActivitiesSameStartingDay::getDescription(Rules& r)
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(this->activitiesIds[i]);
+		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));
 		if(i<this->n_activities-1)
 			s+=", ";
 	}
@@ -21819,9 +21972,9 @@ QString ConstraintTwoActivitiesConsecutive::getDescription(Rules& r)
 	s=tr("Two activities consecutive:");
 	s+=" ";
 	
-	s+=tr("first act. id: %1", "act.=activity").arg(this->firstActivityId);
+	s+=tr("first act. id: %1", "act.=activity").arg(getActivityDescription(r, this->firstActivityId));
 	s+=", ";
-	s+=tr("second act. id: %1", "act.=activity").arg(this->secondActivityId);
+	s+=tr("second act. id: %1", "act.=activity").arg(getActivityDescription(r, this->secondActivityId));
 	s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -22093,9 +22246,9 @@ QString ConstraintTwoActivitiesGrouped::getDescription(Rules& r)
 	s=tr("Two activities grouped:");
 	s+=" ";
 	
-	s+=tr("first act. id: %1", "act.=activity").arg(this->firstActivityId);
+	s+=tr("first act. id: %1", "act.=activity").arg(getActivityDescription(r, this->firstActivityId));
 	s+=", ";
-	s+=tr("second act. id: %1", "act.=activity").arg(this->secondActivityId);
+	s+=tr("second act. id: %1", "act.=activity").arg(getActivityDescription(r, this->secondActivityId));
 	s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -22402,11 +22555,11 @@ QString ConstraintThreeActivitiesGrouped::getDescription(Rules& r)
 	s=tr("Three activities grouped:");
 	s+=" ";
 	
-	s+=tr("first act. id: %1", "act.=activity").arg(this->firstActivityId);
+	s+=tr("first act. id: %1", "act.=activity").arg(getActivityDescription(r, this->firstActivityId));
 	s+=", ";
-	s+=tr("second act. id: %1", "act.=activity").arg(this->secondActivityId);
+	s+=tr("second act. id: %1", "act.=activity").arg(getActivityDescription(r, this->secondActivityId));
 	s+=", ";
-	s+=tr("third act. id: %1", "act.=activity").arg(this->thirdActivityId);
+	s+=tr("third act. id: %1", "act.=activity").arg(getActivityDescription(r, this->thirdActivityId));
 	s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -22748,9 +22901,9 @@ QString ConstraintTwoActivitiesOrdered::getDescription(Rules& r)
 	s=tr("Two activities ordered:");
 	s+=" ";
 	
-	s+=tr("first act. id: %1", "act.=activity").arg(this->firstActivityId);
+	s+=tr("first act. id: %1", "act.=activity").arg(getActivityDescription(r, this->firstActivityId));
 	s+=", ";
-	s+=tr("second act. id: %1", "act.=activity").arg(this->secondActivityId);
+	s+=tr("second act. id: %1", "act.=activity").arg(getActivityDescription(r, this->secondActivityId));
 	s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -23033,14 +23186,14 @@ QString ConstraintTwoSetsOfActivitiesOrdered::getDescription(Rules& r)
 	s+=tr("NA:%1", "Number of activities").arg(this->firstActivitiesIdsList.count());
 	s+=", ";
 	for(int ai : std::as_const(this->firstActivitiesIdsList))
-		s+=tr("Id:%1").arg(ai)+", ";
+		s+=tr("Id:%1").arg(getActivityDescription(r, ai))+", ";
 
 	s+=tr("second activities set:");
 	s+=" ";
 	s+=tr("NA:%1", "Number of activities").arg(this->secondActivitiesIdsList.count());
 	s+=", ";
 	for(int ai : std::as_const(this->secondActivitiesIdsList))
-		s+=tr("Id:%1").arg(ai)+", ";
+		s+=tr("Id:%1").arg(getActivityDescription(r, ai))+", ";
 
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -23364,9 +23517,9 @@ QString ConstraintTwoActivitiesOrderedIfSameDay::getDescription(Rules& r)
 	s=tr("Two activities ordered if same day:");
 	s+=" ";
 	
-	s+=tr("first act. id: %1", "act.=activity").arg(this->firstActivityId);
+	s+=tr("first act. id: %1", "act.=activity").arg(getActivityDescription(r, this->firstActivityId));
 	s+=", ";
-	s+=tr("second act. id: %1", "act.=activity").arg(this->secondActivityId);
+	s+=tr("second act. id: %1", "act.=activity").arg(getActivityDescription(r, this->secondActivityId));
 	s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -23589,7 +23742,7 @@ QString ConstraintActivityEndsStudentsDay::getDescription(Rules& r)
 	QString s;
 	s+=tr("Act. id: %1 (%2) must end students' day",
 		"%1 is the id, %2 is the detailed description of the activity.")
-		.arg(this->activityId)
+		.arg(getActivityDescription(r, this->activityId))
 		.arg(getActivityDetailedDescription(r, this->activityId));
 	s+=", ";
 
@@ -26105,7 +26258,7 @@ QString ConstraintActivityEndsTeachersDay::getDescription(Rules& r)
 	QString s;
 	s+=tr("Act. id: %1 (%2) must end teachers' day",
 		"%1 is the id, %2 is the detailed description of the activity.")
-		.arg(this->activityId)
+		.arg(getActivityDescription(r, this->activityId))
 		.arg(getActivityDetailedDescription(r, this->activityId));
 	s+=", ";
 
@@ -29298,7 +29451,7 @@ QString ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::getDescription(Rule
 
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
-		actids+=CustomFETString::number(aid)+QString(", ");
+		actids+=getActivityDescription(r, aid)+QString(", ");
 	actids.chop(2);
 	
 	QString timeslots=QString("");
@@ -29674,7 +29827,7 @@ QString ConstraintActivitiesOccupyMinTimeSlotsFromSelection::getDescription(Rule
 
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
-		actids+=CustomFETString::number(aid)+QString(", ");
+		actids+=getActivityDescription(r, aid)+QString(", ");
 	actids.chop(2);
 		
 	QString timeslots=QString("");
@@ -30059,7 +30212,7 @@ QString ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::getDescription(R
 
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
-		actids+=CustomFETString::number(aid)+QString(", ");
+		actids+=getActivityDescription(r, aid)+QString(", ");
 	actids.chop(2);
 	
 	QString timeslots=QString("");
@@ -30433,7 +30586,7 @@ QString ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::getDescription(R
 
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
-		actids+=CustomFETString::number(aid)+QString(", ");
+		actids+=getActivityDescription(r, aid)+QString(", ");
 	actids.chop(2);
 	
 	QString timeslots=QString("");
@@ -30819,7 +30972,7 @@ QString ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::getDescription(R
 
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
-		actids+=CustomFETString::number(aid)+QString(", ");
+		actids+=getActivityDescription(r, aid)+QString(", ");
 	actids.chop(2);
 
 	QString timeslots=QString("");
@@ -31139,7 +31292,7 @@ QString ConstraintActivitiesMaxInATerm::getDescription(Rules& r)
 
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
-		actids+=CustomFETString::number(aid)+QString(", ");
+		actids+=getActivityDescription(r, aid)+QString(", ");
 	actids.chop(2);
 
 	QString s=tr("Activities max in a term, WP:%1%, NA:%2, A: %3, MAIAT:%4", "Constraint description. WP means weight percentage, "
@@ -31410,7 +31563,7 @@ QString ConstraintActivitiesOccupyMaxTerms::getDescription(Rules& r)
 
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
-		actids+=CustomFETString::number(aid)+QString(", ");
+		actids+=getActivityDescription(r, aid)+QString(", ");
 	actids.chop(2);
 
 	QString s=tr("Activities occupy max terms, WP:%1%, NA:%2, A: %3, MOT:%4", "Constraint description. WP means weight percentage, "
@@ -60872,7 +61025,7 @@ QString ConstraintMinHalfDaysBetweenActivities::getDescription(Rules& r)
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(this->activitiesIds[i]);s+=", ";
+		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));s+=", ";
 	}
 	s+=tr("mD:%1", "Min days").arg(this->minDays);s+=", ";
 	s+=tr("CSD:%1", "Consecutive if on the same day").arg(yesNoTranslated(this->consecutiveIfSameDay));
@@ -61206,7 +61359,7 @@ QString ConstraintActivityPreferredDay::getDescription(Rules& r)
 		
 	QString s;
 	s+=tr("Act. id: %1 (%2) has a preferred day: %3", "%1 is the id, %2 is the detailed description of the activity. %3 is day")
-	 .arg(this->activityId)
+	 .arg(getActivityDescription(r, this->activityId))
 	 .arg(getActivityDetailedDescription(r, this->activityId))
 	 .arg(r.daysOfTheWeek[this->day]);
 
@@ -61460,7 +61613,7 @@ QString ConstraintActivitiesMinInATerm::getDescription(Rules& r)
 
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
-		actids+=CustomFETString::number(aid)+QString(", ");
+		actids+=getActivityDescription(r, aid)+QString(", ");
 	actids.chop(2);
 
 	QString s=tr("Activities min in a term, WP:%1%, NA:%2, A: %3, mAIAT:%4, AET:%5", "Constraint description. WP means weight percentage, "
@@ -61793,7 +61946,7 @@ QString ConstraintMaxTermsBetweenActivities::getDescription(Rules& r)
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(this->activitiesIds[i]);s+=", ";
+		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));s+=", ";
 	}
 	s+=tr("MT:%1", "Abbreviation for maximum terms").arg(this->maxTerms);
 
@@ -63504,7 +63657,7 @@ QString ConstraintMaxHalfDaysBetweenActivities::getDescription(Rules& r)
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(this->activitiesIds[i]);s+=", ";
+		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));s+=", ";
 	}
 	s+=tr("MD:%1", "Abbreviation for maximum days").arg(this->maxDays);
 
@@ -63780,7 +63933,7 @@ QString ConstraintActivityBeginsStudentsDay::getDescription(Rules& r)
 	QString s;
 	s+=tr("Act. id: %1 (%2) must begin students' day",
 		"%1 is the id, %2 is the detailed description of the activity.")
-		.arg(this->activityId)
+		.arg(getActivityDescription(r, this->activityId))
 		.arg(getActivityDetailedDescription(r, this->activityId));
 	s+=", ";
 
@@ -64321,7 +64474,7 @@ QString ConstraintActivityBeginsTeachersDay::getDescription(Rules& r)
 	QString s;
 	s+=tr("Act. id: %1 (%2) must begin teachers' day",
 		"%1 is the id, %2 is the detailed description of the activity.")
-		.arg(this->activityId)
+		.arg(getActivityDescription(r, this->activityId))
 		.arg(getActivityDetailedDescription(r, this->activityId));
 	s+=", ";
 
@@ -68449,12 +68602,12 @@ QString ConstraintTwoSetsOfActivitiesSameSections::getDescription(Rules& r)
 
 	QString actAids=QString("");
 	for(int aid : std::as_const(this->activitiesAIds))
-		actAids+=CustomFETString::number(aid)+QString(", ");
+		actAids+=getActivityDescription(r, aid)+QString(", ");
 	actAids.chop(2);
 
 	QString actBids=QString("");
 	for(int aid : std::as_const(this->activitiesBIds))
-		actBids+=CustomFETString::number(aid)+QString(", ");
+		actBids+=getActivityDescription(r, aid)+QString(", ");
 	actBids.chop(2);
 
 	QString timeslots=QString("");
@@ -68724,6 +68877,1147 @@ bool ConstraintTwoSetsOfActivitiesSameSections::repairWrongDayOrHour(Rules& r)
 	oDays=newDays;
 	oHours=newHours;
 
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+
+	return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_STUDENTS_SET_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS;
+}
+
+ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots(double wp, const QString& sn, int maxsg, const QList<int>& d_L, const QList<int>& h_L)
+	 : TimeConstraint(wp)
+{
+	this->students = sn;
+	this->type=CONSTRAINT_STUDENTS_SET_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS;
+
+	this->maxSingleGaps=maxsg;
+
+	this->selectedDays=d_L;
+	this->selectedHours=h_L;
+}
+
+bool ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	StudentsSet* ss=r.studentsHash.value(students, nullptr);
+
+	if(ss==nullptr){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint students set max single gaps in selected time slots is wrong because it refers to nonexistent students set."
+		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+
+		return false;
+	}
+
+	assert(ss!=nullptr);
+
+	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
+
+	///
+	assert(this->selectedDays.count()==this->selectedHours.count());
+	
+	for(int k=0; k<this->selectedDays.count(); k++){
+		if(this->selectedDays.at(k) >= r.nDaysPerWeek){
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
+			 tr("Constraint students set max single gaps in selected time slots is wrong because it refers to removed day. Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+			return false;
+		}
+		if(this->selectedHours.at(k) == r.nHoursPerDay){
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
+			 tr("Constraint students set max single gaps in selected time slots is wrong because an hour is too late (after the last acceptable slot). Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+			return false;
+		}
+		if(this->selectedHours.at(k) > r.nHoursPerDay){
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
+			 tr("Constraint students set max single gaps in selected time slots is wrong because it refers to removed hour. Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+			return false;
+		}
+		if(this->selectedDays.at(k)<0 || this->selectedHours.at(k)<0){
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
+			 tr("Constraint students set max single gaps in selected time slots is wrong because hour or day is not specified for a slot (-1). Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+			return false;
+		}
+	}
+	///////////////////////
+
+	return true;
+}
+
+bool ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	assert(this->selectedDays.count()==this->selectedHours.count());
+
+	QString s=IL2+"<ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Students>"+protect(this->students)+"</Students>\n";
+
+	s+=IL3+"<Max_Single_Gaps>"+QString::number(maxSingleGaps)+"</Max_Single_Gaps>\n";
+
+	s+=IL3+"<Number_of_Selected_Time_Slots>"+QString::number(this->selectedDays.count())+"</Number_of_Selected_Time_Slots>\n";
+	for(int i=0; i<this->selectedDays.count(); i++){
+		s+=IL3+"<Selected_Time_Slot>\n";
+		s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->selectedDays.at(i)])+"</Day>\n";
+		s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->selectedHours.at(i)])+"</Hour>\n";
+		s+=IL3+"</Selected_Time_Slot>\n";
+	}
+
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots>\n";
+	return s;
+}
+
+QString ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::getDescription(Rules& r){
+	Q_UNUSED(r);
+
+	assert(this->selectedDays.count()==this->selectedHours.count());
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+
+	QString s=tr("Students set max single gaps in selected time slots");s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("St:%1", "Students").arg(this->students);s+=", ";
+	s+=tr("MSG:%1", "Max single gaps").arg(maxSingleGaps);s+=", ";
+
+	QString timeslots=QString("");
+	for(int i=0; i<this->selectedDays.count(); i++)
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+QString(", ");
+	timeslots.chop(2);
+
+	s+=tr("STS: %1", "Selected time slots").arg(timeslots);
+
+	return begin+s+end;
+}
+
+QString ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::getDetailedDescription(Rules& r){
+	Q_UNUSED(r);
+
+	assert(this->selectedDays.count()==this->selectedHours.count());
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("A students set must respect a maximum number of single gaps in the selected time slots");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Students=%1").arg(this->students);s+="\n";
+
+	s+=tr("Maximum number of single gaps=%1").arg(maxSingleGaps);s+="\n";
+
+	QString timeslots=QString("");
+	for(int i=0; i<this->selectedDays.count(); i++)
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+QString(", ");
+	timeslots.chop(2);
+
+	s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
+	
+	if(!active){
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
+{
+	Q_UNUSED(cl);
+	Q_UNUSED(dl);
+	Q_UNUSED(conflictsString);
+
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken=0;
+
+	for(int sbg : std::as_const(this->iSubgroupsList)){
+		int cnt=0;
+		assert(this->selectedDays.count()==this->selectedHours.count());
+		for(int t=0; t<this->selectedDays.count(); t++){
+			int d=this->selectedDays.at(t);
+			int h=this->selectedHours.at(t);
+			
+			if(subgroupsMatrix[sbg][d][h]==0)
+				if(h>0 && h<r.nHoursPerDay-1)
+					if(subgroupsMatrix[sbg][d][h-1]>0 && subgroupsMatrix[sbg][d][h+1]>0)
+						cnt++;
+		}
+		
+		if(cnt>this->maxSingleGaps)
+			nbroken++;
+	}
+
+	assert(weightPercentage==100);
+
+	if(c.nPlacedActivities==r.nInternalActivities)
+		if(weightPercentage==100)
+			assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	return r.setsShareStudents(this->students, s->name);
+}
+
+bool ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::hasWrongDayOrHour(Rules& r)
+{
+	assert(selectedDays.count()==selectedHours.count());
+	
+	for(int i=0; i<selectedDays.count(); i++)
+		if(selectedDays.at(i)<0 || selectedDays.at(i)>=r.nDaysPerWeek
+		 || selectedHours.at(i)<0 || selectedHours.at(i)>=r.nHoursPerDay)
+			return true;
+			
+	if(maxSingleGaps>r.nDaysPerWeek*r.nHoursPerDay)
+		return true;
+
+	return false;
+}
+
+bool ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	assert(selectedDays.count()==selectedHours.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	
+	for(int i=0; i<selectedDays.count(); i++)
+		if(selectedDays.at(i)>=0 && selectedDays.at(i)<r.nDaysPerWeek
+		 && selectedHours.at(i)>=0 && selectedHours.at(i)<r.nHoursPerDay){
+			newDays.append(selectedDays.at(i));
+			newHours.append(selectedHours.at(i));
+		}
+	
+	selectedDays=newDays;
+	selectedHours=newHours;
+	
+	if(maxSingleGaps>r.nDaysPerWeek*r.nHoursPerDay)
+		maxSingleGaps=r.nDaysPerWeek*r.nHoursPerDay;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+
+	return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::ConstraintStudentsMaxSingleGapsInSelectedTimeSlots()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_STUDENTS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS;
+}
+
+ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::ConstraintStudentsMaxSingleGapsInSelectedTimeSlots(double wp, int maxsg, const QList<int>& d_L, const QList<int>& h_L)
+	 : TimeConstraint(wp)
+{
+	this->type=CONSTRAINT_STUDENTS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS;
+
+	this->maxSingleGaps=maxsg;
+
+	this->selectedDays=d_L;
+	this->selectedHours=h_L;
+}
+
+bool ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	assert(this->selectedDays.count()==this->selectedHours.count());
+	
+	for(int k=0; k<this->selectedDays.count(); k++){
+		if(this->selectedDays.at(k) >= r.nDaysPerWeek){
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
+			 tr("Constraint students max single gaps in selected time slots is wrong because it refers to removed day. Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+			return false;
+		}
+		if(this->selectedHours.at(k) == r.nHoursPerDay){
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
+			 tr("Constraint students max single gaps in selected time slots is wrong because an hour is too late (after the last acceptable slot). Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+			return false;
+		}
+		if(this->selectedHours.at(k) > r.nHoursPerDay){
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
+			 tr("Constraint students max single gaps in selected time slots is wrong because it refers to removed hour. Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+			return false;
+		}
+		if(this->selectedDays.at(k)<0 || this->selectedHours.at(k)<0){
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
+			 tr("Constraint students max single gaps in selected time slots is wrong because hour or day is not specified for a slot (-1). Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+			return false;
+		}
+	}
+	///////////////////////
+
+	return true;
+}
+
+bool ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	assert(this->selectedDays.count()==this->selectedHours.count());
+
+	QString s=IL2+"<ConstraintStudentsMaxSingleGapsInSelectedTimeSlots>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+
+	s+=IL3+"<Max_Single_Gaps>"+QString::number(maxSingleGaps)+"</Max_Single_Gaps>\n";
+
+	s+=IL3+"<Number_of_Selected_Time_Slots>"+QString::number(this->selectedDays.count())+"</Number_of_Selected_Time_Slots>\n";
+	for(int i=0; i<this->selectedDays.count(); i++){
+		s+=IL3+"<Selected_Time_Slot>\n";
+		s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->selectedDays.at(i)])+"</Day>\n";
+		s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->selectedHours.at(i)])+"</Hour>\n";
+		s+=IL3+"</Selected_Time_Slot>\n";
+	}
+
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsMaxSingleGapsInSelectedTimeSlots>\n";
+	return s;
+}
+
+QString ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::getDescription(Rules& r){
+	Q_UNUSED(r);
+
+	assert(this->selectedDays.count()==this->selectedHours.count());
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+
+	QString s=tr("Students max single gaps in selected time slots");s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("MSG:%1", "Max single gaps").arg(maxSingleGaps);s+=", ";
+
+	QString timeslots=QString("");
+	for(int i=0; i<this->selectedDays.count(); i++)
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+QString(", ");
+	timeslots.chop(2);
+
+	s+=tr("STS: %1", "Selected time slots").arg(timeslots);
+
+	return begin+s+end;
+}
+
+QString ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::getDetailedDescription(Rules& r){
+	Q_UNUSED(r);
+
+	assert(this->selectedDays.count()==this->selectedHours.count());
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("All students must respect a maximum number of single gaps in the selected time slots");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+	s+=tr("Maximum number of single gaps=%1").arg(maxSingleGaps);s+="\n";
+
+	QString timeslots=QString("");
+	for(int i=0; i<this->selectedDays.count(); i++)
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+QString(", ");
+	timeslots.chop(2);
+
+	s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
+	
+	if(!active){
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
+{
+	Q_UNUSED(cl);
+	Q_UNUSED(dl);
+	Q_UNUSED(conflictsString);
+
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken=0;
+
+	for(int sbg=0; sbg<r.nInternalSubgroups; sbg++){
+		int cnt=0;
+		assert(this->selectedDays.count()==this->selectedHours.count());
+		for(int t=0; t<this->selectedDays.count(); t++){
+			int d=this->selectedDays.at(t);
+			int h=this->selectedHours.at(t);
+			
+			if(subgroupsMatrix[sbg][d][h]==0)
+				if(h>0 && h<r.nHoursPerDay-1)
+					if(subgroupsMatrix[sbg][d][h-1]>0 && subgroupsMatrix[sbg][d][h+1]>0)
+						cnt++;
+		}
+		
+		if(cnt>this->maxSingleGaps)
+			nbroken++;
+	}
+
+	assert(weightPercentage==100);
+
+	if(c.nPlacedActivities==r.nInternalActivities)
+		if(weightPercentage==100)
+			assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return true;
+}
+
+bool ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::hasWrongDayOrHour(Rules& r)
+{
+	assert(selectedDays.count()==selectedHours.count());
+	
+	for(int i=0; i<selectedDays.count(); i++)
+		if(selectedDays.at(i)<0 || selectedDays.at(i)>=r.nDaysPerWeek
+		 || selectedHours.at(i)<0 || selectedHours.at(i)>=r.nHoursPerDay)
+			return true;
+			
+	if(maxSingleGaps>r.nDaysPerWeek*r.nHoursPerDay)
+		return true;
+
+	return false;
+}
+
+bool ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	assert(selectedDays.count()==selectedHours.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	
+	for(int i=0; i<selectedDays.count(); i++)
+		if(selectedDays.at(i)>=0 && selectedDays.at(i)<r.nDaysPerWeek
+		 && selectedHours.at(i)>=0 && selectedHours.at(i)<r.nHoursPerDay){
+			newDays.append(selectedDays.at(i));
+			newHours.append(selectedHours.at(i));
+		}
+	
+	selectedDays=newDays;
+	selectedHours=newHours;
+	
+	if(maxSingleGaps>r.nDaysPerWeek*r.nHoursPerDay)
+		maxSingleGaps=r.nDaysPerWeek*r.nHoursPerDay;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+
+	return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::ConstraintTeachersMaxSingleGapsInSelectedTimeSlots()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_TEACHERS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS;
+}
+
+ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::ConstraintTeachersMaxSingleGapsInSelectedTimeSlots(double wp, int maxsg, const QList<int>& d_L, const QList<int>& h_L)
+	 : TimeConstraint(wp)
+{
+	this->type=CONSTRAINT_TEACHERS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS;
+
+	this->maxSingleGaps=maxsg;
+
+	this->selectedDays=d_L;
+	this->selectedHours=h_L;
+}
+
+bool ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	assert(this->selectedDays.count()==this->selectedHours.count());
+	
+	for(int k=0; k<this->selectedDays.count(); k++){
+		if(this->selectedDays.at(k) >= r.nDaysPerWeek){
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
+			 tr("Constraint teachers max single gaps in selected time slots is wrong because it refers to removed day. Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+			return false;
+		}
+		if(this->selectedHours.at(k) == r.nHoursPerDay){
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
+			 tr("Constraint teachers max single gaps in selected time slots is wrong because an hour is too late (after the last acceptable slot). Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+			return false;
+		}
+		if(this->selectedHours.at(k) > r.nHoursPerDay){
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
+			 tr("Constraint teachers max single gaps in selected time slots is wrong because it refers to removed hour. Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+			return false;
+		}
+		if(this->selectedDays.at(k)<0 || this->selectedHours.at(k)<0){
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
+			 tr("Constraint teachers max single gaps in selected time slots is wrong because hour or day is not specified for a slot (-1). Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+			return false;
+		}
+	}
+	///////////////////////
+
+	return true;
+}
+
+bool ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	assert(this->selectedDays.count()==this->selectedHours.count());
+
+	QString s=IL2+"<ConstraintTeachersMaxSingleGapsInSelectedTimeSlots>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+
+	s+=IL3+"<Max_Single_Gaps>"+QString::number(maxSingleGaps)+"</Max_Single_Gaps>\n";
+
+	s+=IL3+"<Number_of_Selected_Time_Slots>"+QString::number(this->selectedDays.count())+"</Number_of_Selected_Time_Slots>\n";
+	for(int i=0; i<this->selectedDays.count(); i++){
+		s+=IL3+"<Selected_Time_Slot>\n";
+		s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->selectedDays.at(i)])+"</Day>\n";
+		s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->selectedHours.at(i)])+"</Hour>\n";
+		s+=IL3+"</Selected_Time_Slot>\n";
+	}
+
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeachersMaxSingleGapsInSelectedTimeSlots>\n";
+	return s;
+}
+
+QString ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::getDescription(Rules& r){
+	Q_UNUSED(r);
+
+	assert(this->selectedDays.count()==this->selectedHours.count());
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+
+	QString s=tr("Teachers max single gaps in selected time slots");s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("MSG:%1", "Max single gaps").arg(maxSingleGaps);s+=", ";
+
+	QString timeslots=QString("");
+	for(int i=0; i<this->selectedDays.count(); i++)
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+QString(", ");
+	timeslots.chop(2);
+
+	s+=tr("STS: %1", "Selected time slots").arg(timeslots);
+
+	return begin+s+end;
+}
+
+QString ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::getDetailedDescription(Rules& r){
+	Q_UNUSED(r);
+
+	assert(this->selectedDays.count()==this->selectedHours.count());
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("All teachers must respect a maximum number of single gaps in the selected time slots");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+	s+=tr("Maximum number of single gaps=%1").arg(maxSingleGaps);s+="\n";
+
+	QString timeslots=QString("");
+	for(int i=0; i<this->selectedDays.count(); i++)
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+QString(", ");
+	timeslots.chop(2);
+
+	s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
+	
+	if(!active){
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
+{
+	Q_UNUSED(cl);
+	Q_UNUSED(dl);
+	Q_UNUSED(conflictsString);
+
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken=0;
+
+	for(int tch=0; tch<r.nInternalTeachers; tch++){
+		int cnt=0;
+		assert(this->selectedDays.count()==this->selectedHours.count());
+		for(int t=0; t<this->selectedDays.count(); t++){
+			int d=this->selectedDays.at(t);
+			int h=this->selectedHours.at(t);
+			
+			if(teachersMatrix[tch][d][h]==0)
+				if(h>0 && h<r.nHoursPerDay-1)
+					if(teachersMatrix[tch][d][h-1]>0 && teachersMatrix[tch][d][h+1]>0)
+						cnt++;
+		}
+		
+		if(cnt>this->maxSingleGaps)
+			nbroken++;
+	}
+
+	assert(weightPercentage==100);
+
+	if(c.nPlacedActivities==r.nInternalActivities)
+		if(weightPercentage==100)
+			assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return true;
+}
+
+bool ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::hasWrongDayOrHour(Rules& r)
+{
+	assert(selectedDays.count()==selectedHours.count());
+	
+	for(int i=0; i<selectedDays.count(); i++)
+		if(selectedDays.at(i)<0 || selectedDays.at(i)>=r.nDaysPerWeek
+		 || selectedHours.at(i)<0 || selectedHours.at(i)>=r.nHoursPerDay)
+			return true;
+			
+	if(maxSingleGaps>r.nDaysPerWeek*r.nHoursPerDay)
+		return true;
+
+	return false;
+}
+
+bool ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	assert(selectedDays.count()==selectedHours.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	
+	for(int i=0; i<selectedDays.count(); i++)
+		if(selectedDays.at(i)>=0 && selectedDays.at(i)<r.nDaysPerWeek
+		 && selectedHours.at(i)>=0 && selectedHours.at(i)<r.nHoursPerDay){
+			newDays.append(selectedDays.at(i));
+			newHours.append(selectedHours.at(i));
+		}
+	
+	selectedDays=newDays;
+	selectedHours=newHours;
+	
+	if(maxSingleGaps>r.nDaysPerWeek*r.nHoursPerDay)
+		maxSingleGaps=r.nDaysPerWeek*r.nHoursPerDay;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+
+	return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::ConstraintTeacherMaxSingleGapsInSelectedTimeSlots()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_TEACHER_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS;
+}
+
+ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::ConstraintTeacherMaxSingleGapsInSelectedTimeSlots(double wp, const QString& tn, int maxsg, const QList<int>& d_L, const QList<int>& h_L)
+	 : TimeConstraint(wp)
+{
+	this->type=CONSTRAINT_TEACHER_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS;
+
+	this->teacher=tn;
+
+	this->maxSingleGaps=maxsg;
+
+	this->selectedDays=d_L;
+	this->selectedHours=h_L;
+}
+
+bool ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	teacher_ID=r.teachersHash.value(teacher, -1);
+
+	if(this->teacher_ID<0){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint teacher max single gaps in selected time slots is wrong because it refers to nonexistent teacher."
+		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+
+	assert(this->teacher_ID>=0);
+
+	assert(this->selectedDays.count()==this->selectedHours.count());
+
+	for(int k=0; k<this->selectedDays.count(); k++){
+		if(this->selectedDays.at(k) >= r.nDaysPerWeek){
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
+			 tr("Constraint teacher max single gaps in selected time slots is wrong because it refers to removed day. Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+			return false;
+		}
+		if(this->selectedHours.at(k) == r.nHoursPerDay){
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
+			 tr("Constraint teacher max single gaps in selected time slots is wrong because an hour is too late (after the last acceptable slot). Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+			return false;
+		}
+		if(this->selectedHours.at(k) > r.nHoursPerDay){
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
+			 tr("Constraint teacher max single gaps in selected time slots is wrong because it refers to removed hour. Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+			return false;
+		}
+		if(this->selectedDays.at(k)<0 || this->selectedHours.at(k)<0){
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
+			 tr("Constraint teacher max single gaps in selected time slots is wrong because hour or day is not specified for a slot (-1). Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+			return false;
+		}
+	}
+	///////////////////////
+
+	return true;
+}
+
+bool ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	assert(this->selectedDays.count()==this->selectedHours.count());
+
+	QString s=IL2+"<ConstraintTeacherMaxSingleGapsInSelectedTimeSlots>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+
+	s+=IL3+"<Teacher>"+protect(this->teacher)+"</Teacher>\n";
+
+	s+=IL3+"<Max_Single_Gaps>"+QString::number(maxSingleGaps)+"</Max_Single_Gaps>\n";
+
+	s+=IL3+"<Number_of_Selected_Time_Slots>"+QString::number(this->selectedDays.count())+"</Number_of_Selected_Time_Slots>\n";
+	for(int i=0; i<this->selectedDays.count(); i++){
+		s+=IL3+"<Selected_Time_Slot>\n";
+		s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->selectedDays.at(i)])+"</Day>\n";
+		s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->selectedHours.at(i)])+"</Hour>\n";
+		s+=IL3+"</Selected_Time_Slot>\n";
+	}
+
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeacherMaxSingleGapsInSelectedTimeSlots>\n";
+	return s;
+}
+
+QString ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::getDescription(Rules& r){
+	Q_UNUSED(r);
+
+	assert(this->selectedDays.count()==this->selectedHours.count());
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+
+	QString s=tr("Teacher max single gaps in selected time slots");s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("T:%1", "Teacher").arg(this->teacher);s+=", ";
+	s+=tr("MSG:%1", "Max single gaps").arg(maxSingleGaps);s+=", ";
+
+	QString timeslots=QString("");
+	for(int i=0; i<this->selectedDays.count(); i++)
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+QString(", ");
+	timeslots.chop(2);
+
+	s+=tr("STS: %1", "Selected time slots").arg(timeslots);
+
+	return begin+s+end;
+}
+
+QString ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::getDetailedDescription(Rules& r){
+	Q_UNUSED(r);
+
+	assert(this->selectedDays.count()==this->selectedHours.count());
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("A teacher must respect a maximum number of single gaps in the selected time slots");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Teacher=%1").arg(this->teacher);s+="\n";
+
+	s+=tr("Maximum number of single gaps=%1").arg(maxSingleGaps);s+="\n";
+
+	QString timeslots=QString("");
+	for(int i=0; i<this->selectedDays.count(); i++)
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+QString(", ");
+	timeslots.chop(2);
+
+	s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
+	
+	if(!active){
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
+{
+	Q_UNUSED(cl);
+	Q_UNUSED(dl);
+	Q_UNUSED(conflictsString);
+
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken=0;
+
+	int cnt=0;
+	assert(this->selectedDays.count()==this->selectedHours.count());
+	for(int t=0; t<this->selectedDays.count(); t++){
+		int d=this->selectedDays.at(t);
+		int h=this->selectedHours.at(t);
+		
+		if(teachersMatrix[this->teacher_ID][d][h]==0)
+			if(h>0 && h<r.nHoursPerDay-1)
+				if(teachersMatrix[this->teacher_ID][d][h-1]>0 && teachersMatrix[this->teacher_ID][d][h+1]>0)
+					cnt++;
+	}
+	
+	if(cnt>this->maxSingleGaps)
+		nbroken++;
+
+	assert(weightPercentage==100);
+
+	if(c.nPlacedActivities==r.nInternalActivities)
+		if(weightPercentage==100)
+			assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::isRelatedToTeacher(Teacher* t)
+{
+	if(this->teacher==t->name)
+		return true;
+
+	return false;
+}
+
+bool ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::hasWrongDayOrHour(Rules& r)
+{
+	assert(selectedDays.count()==selectedHours.count());
+	
+	for(int i=0; i<selectedDays.count(); i++)
+		if(selectedDays.at(i)<0 || selectedDays.at(i)>=r.nDaysPerWeek
+		 || selectedHours.at(i)<0 || selectedHours.at(i)>=r.nHoursPerDay)
+			return true;
+			
+	if(maxSingleGaps>r.nDaysPerWeek*r.nHoursPerDay)
+		return true;
+
+	return false;
+}
+
+bool ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	assert(selectedDays.count()==selectedHours.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	
+	for(int i=0; i<selectedDays.count(); i++)
+		if(selectedDays.at(i)>=0 && selectedDays.at(i)<r.nDaysPerWeek
+		 && selectedHours.at(i)>=0 && selectedHours.at(i)<r.nHoursPerDay){
+			newDays.append(selectedDays.at(i));
+			newHours.append(selectedHours.at(i));
+		}
+	
+	selectedDays=newDays;
+	selectedHours=newHours;
+	
+	if(maxSingleGaps>r.nDaysPerWeek*r.nHoursPerDay)
+		maxSingleGaps=r.nDaysPerWeek*r.nHoursPerDay;
+	
 	r.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&r);
 

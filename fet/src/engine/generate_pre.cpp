@@ -1239,6 +1239,28 @@ Matrix1D<QList<ActivitiesSameRoomIfConsecutive_item*>> asricListForActivity;
 
 /////////////////////////////////////////////////////////////////////////
 
+//We need the references to the elements to be valid, so we need this to be a std::list
+std::list<SubgroupMaxSingleGapsInSelectedTimeSlots_item> smsgistsList;
+Matrix1D<QList<SubgroupMaxSingleGapsInSelectedTimeSlots_item*>> smsgistsListForSubgroup;
+bool haveStudentsMaxSingleGapsInSelectedTimeSlots;
+
+Matrix1D<QList<int>> activitiesWithDuration1ForSubgroup;
+
+//bool computeStudentsMaxSingleGapsInSelectedTimeSlots(QWidget* parent);
+
+/////////////////////////////////////////////////////////////////////////
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+std::list<TeacherMaxSingleGapsInSelectedTimeSlots_item> tmsgistsList;
+Matrix1D<QList<TeacherMaxSingleGapsInSelectedTimeSlots_item*>> tmsgistsListForTeacher;
+bool haveTeachersMaxSingleGapsInSelectedTimeSlots;
+
+Matrix1D<QList<int>> activitiesWithDuration1ForTeacher;
+
+//bool computeTeachersMaxSingleGapsInSelectedTimeSlots(QWidget* parent);
+
+/////////////////////////////////////////////////////////////////////////
+
 //2019-11-20
 //We need the references to the elements to be valid, so we need this to be a std::list
 std::list<SubgroupActivityTagMinHoursDaily_item> satmhdList;
@@ -1960,7 +1982,10 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	subgroupsActivityTagMaxHoursContinuouslyMaxHours.resize(gt.rules.nInternalSubgroups);
 	subgroupsActivityTagMaxHoursContinuouslyActivityTag.resize(gt.rules.nInternalSubgroups);
 	subgroupsActivityTagMaxHoursContinuouslyPercentage.resize(gt.rules.nInternalSubgroups);
-	
+
+	smsgistsListForSubgroup.resize(gt.rules.nInternalSubgroups);
+	tmsgistsListForTeacher.resize(gt.rules.nInternalTeachers);
+
 	satmhdListForSubgroup.resize(gt.rules.nInternalSubgroups);
 	tatmhdListForTeacher.resize(gt.rules.nInternalTeachers);
 	
@@ -2170,6 +2195,13 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	if(!t)
 		return false;
 
+	t=computeStudentsMaxSingleGapsInSelectedTimeSlots(parent);
+	if(!t)
+		return false;
+	t=computeTeachersMaxSingleGapsInSelectedTimeSlots(parent);
+	if(!t)
+		return false;
+	
 	//!!!After subgroups early
 	t=computeSubgroupsAfternoonsEarlyMaxBeginningsAtSecondHourPercentages(parent);
 	if(!t)
@@ -5720,6 +5752,208 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 						return false;
 				}
 			}
+		}
+	}
+
+	return ok;
+}
+
+bool computeStudentsMaxSingleGapsInSelectedTimeSlots(QWidget* parent)
+{
+	haveStudentsMaxSingleGapsInSelectedTimeSlots=false;
+
+	bool ok=true;
+
+	smsgistsList.clear();
+	for(int i=0; i<gt.rules.nInternalSubgroups; i++)
+		smsgistsListForSubgroup[i].clear();
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS){
+			haveStudentsMaxSingleGapsInSelectedTimeSlots=true;
+			ConstraintStudentsMaxSingleGapsInSelectedTimeSlots* smd=(ConstraintStudentsMaxSingleGapsInSelectedTimeSlots*)gt.rules.internalTimeConstraintsList[i];
+
+			if(smd->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize for students, because the constraint of type max single gaps in selected time slots relating to students"
+				 " has no 100% weight"
+				 ". Please modify your data accordingly and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+
+				if(t==0)
+					return false;
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS){
+			haveStudentsMaxSingleGapsInSelectedTimeSlots=true;
+			ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots* smd=(ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots*)gt.rules.internalTimeConstraintsList[i];
+
+			if(smd->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize for students, because the constraint of type max single gaps in selected time slots relating to students set %1"
+				 " has no 100% weight"
+				 ". Please modify your data accordingly and try again").arg(smd->students),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+
+				if(t==0)
+					return false;
+			}
+		}
+	}
+
+	if(haveStudentsMaxSingleGapsInSelectedTimeSlots){
+		for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS){
+				ConstraintStudentsMaxSingleGapsInSelectedTimeSlots* smd=(ConstraintStudentsMaxSingleGapsInSelectedTimeSlots*)gt.rules.internalTimeConstraintsList[i];
+
+				for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++){
+					SubgroupMaxSingleGapsInSelectedTimeSlots_item item;
+
+					item.maxSingleGaps=smd->maxSingleGaps;
+
+					for(int t=0; t < smd->selectedDays.count(); t++)
+						item.selectedTimeSlotsList.append(smd->selectedDays.at(t)+smd->selectedHours.at(t)*gt.rules.nDaysPerWeek);
+					item.selectedTimeSlotsSet=QSet<int>(item.selectedTimeSlotsList.constBegin(), item.selectedTimeSlotsList.constEnd());
+
+					smsgistsList.push_back(item);
+					smsgistsListForSubgroup[sbg].append(&smsgistsList.back());
+				}
+			}
+			else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS){
+				ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots* smd=(ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots*)gt.rules.internalTimeConstraintsList[i];
+
+				for(int sbg : std::as_const(smd->iSubgroupsList)){
+					SubgroupMaxSingleGapsInSelectedTimeSlots_item item;
+
+					item.maxSingleGaps=smd->maxSingleGaps;
+
+					for(int t=0; t < smd->selectedDays.count(); t++)
+						item.selectedTimeSlotsList.append(smd->selectedDays.at(t)+smd->selectedHours.at(t)*gt.rules.nDaysPerWeek);
+					item.selectedTimeSlotsSet=QSet<int>(item.selectedTimeSlotsList.constBegin(), item.selectedTimeSlotsList.constEnd());
+
+					smsgistsList.push_back(item);
+					smsgistsListForSubgroup[sbg].append(&smsgistsList.back());
+				}
+			}
+		}
+	}
+	
+	if(haveStudentsMaxSingleGapsInSelectedTimeSlots){
+		activitiesWithDuration1ForSubgroup.resize(gt.rules.nInternalSubgroups);
+		for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++){
+			activitiesWithDuration1ForSubgroup[sbg].clear();
+			
+			const QList<int>& l1=gt.rules.internalSubgroupsList[sbg]->activitiesForSubgroup;
+			
+			for(int ai : std::as_const(l1))
+				if(gt.rules.internalActivitiesList[ai].duration==1)
+					activitiesWithDuration1ForSubgroup[sbg].append(ai);
+		}
+	}
+
+	return ok;
+}
+
+bool computeTeachersMaxSingleGapsInSelectedTimeSlots(QWidget* parent)
+{
+	haveTeachersMaxSingleGapsInSelectedTimeSlots=false;
+
+	bool ok=true;
+
+	tmsgistsList.clear();
+	for(int i=0; i<gt.rules.nInternalTeachers; i++)
+		tmsgistsListForTeacher[i].clear();
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS){
+			haveTeachersMaxSingleGapsInSelectedTimeSlots=true;
+			ConstraintTeachersMaxSingleGapsInSelectedTimeSlots* smd=(ConstraintTeachersMaxSingleGapsInSelectedTimeSlots*)gt.rules.internalTimeConstraintsList[i];
+
+			if(smd->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize for teachers, because the constraint of type max single gaps in selected time slots relating to teachers"
+				 " has no 100% weight"
+				 ". Please modify your data accordingly and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+
+				if(t==0)
+					return false;
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS){
+			haveTeachersMaxSingleGapsInSelectedTimeSlots=true;
+			ConstraintTeacherMaxSingleGapsInSelectedTimeSlots* smd=(ConstraintTeacherMaxSingleGapsInSelectedTimeSlots*)gt.rules.internalTimeConstraintsList[i];
+
+			if(smd->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize for teachers, because the constraint of type max single gaps in selected time slots relating to teacher %1"
+				 " has no 100% weight"
+				 ". Please modify your data accordingly and try again").arg(smd->teacher),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+
+				if(t==0)
+					return false;
+			}
+		}
+	}
+
+	if(haveTeachersMaxSingleGapsInSelectedTimeSlots){
+		for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS){
+				ConstraintTeachersMaxSingleGapsInSelectedTimeSlots* smd=(ConstraintTeachersMaxSingleGapsInSelectedTimeSlots*)gt.rules.internalTimeConstraintsList[i];
+
+				for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
+					TeacherMaxSingleGapsInSelectedTimeSlots_item item;
+
+					item.maxSingleGaps=smd->maxSingleGaps;
+
+					for(int t=0; t < smd->selectedDays.count(); t++)
+						item.selectedTimeSlotsList.append(smd->selectedDays.at(t)+smd->selectedHours.at(t)*gt.rules.nDaysPerWeek);
+					item.selectedTimeSlotsSet=QSet<int>(item.selectedTimeSlotsList.constBegin(), item.selectedTimeSlotsList.constEnd());
+
+					tmsgistsList.push_back(item);
+					tmsgistsListForTeacher[tch].append(&tmsgistsList.back());
+				}
+			}
+			else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS){
+				ConstraintTeacherMaxSingleGapsInSelectedTimeSlots* smd=(ConstraintTeacherMaxSingleGapsInSelectedTimeSlots*)gt.rules.internalTimeConstraintsList[i];
+
+				TeacherMaxSingleGapsInSelectedTimeSlots_item item;
+
+				item.maxSingleGaps=smd->maxSingleGaps;
+
+				for(int t=0; t < smd->selectedDays.count(); t++)
+					item.selectedTimeSlotsList.append(smd->selectedDays.at(t)+smd->selectedHours.at(t)*gt.rules.nDaysPerWeek);
+				item.selectedTimeSlotsSet=QSet<int>(item.selectedTimeSlotsList.constBegin(), item.selectedTimeSlotsList.constEnd());
+
+				tmsgistsList.push_back(item);
+				tmsgistsListForTeacher[smd->teacher_ID].append(&tmsgistsList.back());
+			}
+		}
+	}
+	
+	if(haveTeachersMaxSingleGapsInSelectedTimeSlots){
+		activitiesWithDuration1ForTeacher.resize(gt.rules.nInternalTeachers);
+		for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
+			activitiesWithDuration1ForTeacher[tch].clear();
+			
+			const QList<int>& l1=gt.rules.internalTeachersList[tch]->activitiesForTeacher;
+			
+			for(int ai : std::as_const(l1))
+				if(gt.rules.internalActivitiesList[ai].duration==1)
+					activitiesWithDuration1ForTeacher[tch].append(ai);
 		}
 	}
 
@@ -22056,6 +22290,9 @@ void computeMustComputeTimetableSubgroups()
 			  subgroupsActivityTagMaxHoursContinuouslyPercentage[sbg].count()>0 ||
 			  subgroupsActivityTagMaxHoursDailyPercentage[sbg].count()>0 ||
 			  satmhdListForSubgroup[sbg].count()>0 ||
+
+			  smsgistsListForSubgroup[sbg].count()>0 ||
+
 			  //no need to consider constraints students (set) min gaps between ordered pair of activity tags
 			  //or min gaps between activity tag
 			  //2024-03-15: or these two above per real day
@@ -22142,6 +22379,9 @@ void computeMustComputeTimetableTeachers()
 			  teachersActivityTagMaxHoursContinuouslyPercentage[tch].count()>0 ||
 			  teachersActivityTagMaxHoursDailyPercentage[tch].count()>0 ||
 			  tatmhdListForTeacher[tch].count()>0 ||
+
+			  tmsgistsListForTeacher[tch].count()>0 ||
+
 			  //no need to consider constraints teacher(s) min gaps between ordered pair of activity tags
 			  //or min gaps between activity tag
 			  //2024-03-15: or these two above per real day

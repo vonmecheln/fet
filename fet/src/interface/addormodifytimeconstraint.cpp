@@ -6995,6 +6995,168 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				break;
 			}
+		//231
+		case CONSTRAINT_STUDENTS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add students max single gaps in selected time slots", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintStudentsMaxSingleGapsInSelectedTimeSlots");
+
+					firstAddInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
+					 "and an empty cell (or green) means that the slot is not selected"));
+				}
+				else{
+					dialogTitle=tr("Modify students max single gaps in selected time slots", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("ModifyConstraintStudentsMaxSingleGapsInSelectedTimeSlots");
+
+					firstModifyInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
+					 "and an empty cell (or green) means that the slot is not selected"));
+				}
+
+				labelForSpinBox=new QLabel(tr("Max single gaps"));
+				spinBox=new QSpinBox;
+				spinBox->setMinimum(0);
+				spinBox->setMaximum(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
+				spinBox->setValue(0);
+
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors")))
+					colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors")).toBool());
+				else
+					colorsCheckBox->setChecked(false);
+
+				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
+
+				break;
+			}
+		//232
+		case CONSTRAINT_STUDENTS_SET_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add students set max single gaps in selected time slots", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots");
+
+					firstAddInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
+					 "and an empty cell (or green) means that the slot is not selected"));
+				}
+				else{
+					dialogTitle=tr("Modify students set max single gaps in selected time slots", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("ModifyConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots");
+
+					firstModifyInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
+					 "and an empty cell (or green) means that the slot is not selected"));
+				}
+
+				studentsLabel=new QLabel(tr("Students set"));
+				studentsComboBox=new QComboBox;
+
+				labelForSpinBox=new QLabel(tr("Max single gaps"));
+				spinBox=new QSpinBox;
+				spinBox->setMinimum(0);
+				spinBox->setMaximum(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
+				spinBox->setValue(0);
+
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors")))
+					colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors")).toBool());
+				else
+					colorsCheckBox->setChecked(false);
+
+				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
+
+				break;
+			}
+		//233
+		case CONSTRAINT_TEACHERS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add teachers max single gaps in selected time slots", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintTeachersMaxSingleGapsInSelectedTimeSlots");
+
+					firstAddInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
+					 "and an empty cell (or green) means that the slot is not selected"));
+				}
+				else{
+					dialogTitle=tr("Modify teachers max single gaps in selected time slots", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("ModifyConstraintTeachersMaxSingleGapsInSelectedTimeSlots");
+
+					firstModifyInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
+					 "and an empty cell (or green) means that the slot is not selected"));
+				}
+
+				labelForSpinBox=new QLabel(tr("Max single gaps"));
+				spinBox=new QSpinBox;
+				spinBox->setMinimum(0);
+				spinBox->setMaximum(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
+				spinBox->setValue(0);
+
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors")))
+					colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors")).toBool());
+				else
+					colorsCheckBox->setChecked(false);
+
+				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
+
+				break;
+			}
+		//234
+		case CONSTRAINT_TEACHER_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add teacher max single gaps in selected time slots", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintTeacherMaxSingleGapsInSelectedTimeSlots");
+
+					firstAddInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
+					 "and an empty cell (or green) means that the slot is not selected"));
+				}
+				else{
+					dialogTitle=tr("Modify teacher max single gaps in selected time slots", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("ModifyConstraintTeacherMaxSingleGapsInSelectedTimeSlots");
+
+					firstModifyInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
+					 "and an empty cell (or green) means that the slot is not selected"));
+				}
+
+				teacherLabel=new QLabel(tr("Teacher"));
+				teachersComboBox=new QComboBox;
+
+				labelForSpinBox=new QLabel(tr("Max single gaps"));
+				spinBox=new QSpinBox;
+				spinBox->setMinimum(0);
+				spinBox->setMaximum(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
+				spinBox->setValue(0);
+
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors")))
+					colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors")).toBool());
+				else
+					colorsCheckBox->setChecked(false);
+
+				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -7769,6 +7931,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			case CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
 				[[fallthrough]];
 			case CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+				[[fallthrough]];
+			case CONSTRAINT_TEACHERS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+				[[fallthrough]];
+			case CONSTRAINT_TEACHER_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
 				addConstraintsPushButton=new QPushButton(tr("Add constraints"));
 				break;
 			
@@ -9204,35 +9370,35 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				}
 			//53
 			case CONSTRAINT_THREE_ACTIVITIES_GROUPED:
-			{
-				ConstraintThreeActivitiesGrouped* ctr=(ConstraintThreeActivitiesGrouped*)oldtc;
+				{
+					ConstraintThreeActivitiesGrouped* ctr=(ConstraintThreeActivitiesGrouped*)oldtc;
 
-				first_initialActivityId=ctr->firstActivityId;
-				second_initialActivityId=ctr->secondActivityId;
-				third_initialActivityId=ctr->thirdActivityId;
+					first_initialActivityId=ctr->firstActivityId;
+					second_initialActivityId=ctr->secondActivityId;
+					third_initialActivityId=ctr->thirdActivityId;
 
-				break;
-			}
+					break;
+				}
 			//54
 			case CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES:
-			{
-				ConstraintMaxDaysBetweenActivities* ctr=(ConstraintMaxDaysBetweenActivities*)oldtc;
+				{
+					ConstraintMaxDaysBetweenActivities* ctr=(ConstraintMaxDaysBetweenActivities*)oldtc;
 
-				selectedActivitiesListWidget->clear();
-				selectedActivitiesList.clear();
+					selectedActivitiesListWidget->clear();
+					selectedActivitiesList.clear();
 
-				for(int i=0; i<ctr->n_activities; i++){
-					int actId=ctr->activitiesIds[i];
-					selectedActivitiesList.append(actId);
-					Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
-					assert(act!=nullptr);
-					selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+					for(int i=0; i<ctr->n_activities; i++){
+						int actId=ctr->activitiesIds[i];
+						selectedActivitiesList.append(actId);
+						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
+						assert(act!=nullptr);
+						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+					}
+
+					spinBox->setValue(ctr->maxDays);
+
+					break;
 				}
-
-				spinBox->setValue(ctr->maxDays);
-
-				break;
-			}
 			//55
 			case CONSTRAINT_TEACHERS_MIN_DAYS_PER_WEEK:
 				{
@@ -9302,96 +9468,96 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				}
 			//61
 			case CONSTRAINT_STUDENTS_MAX_GAPS_PER_DAY:
-			{
-				ConstraintStudentsMaxGapsPerDay* ctr=(ConstraintStudentsMaxGapsPerDay*)oldtc;
+				{
+					ConstraintStudentsMaxGapsPerDay* ctr=(ConstraintStudentsMaxGapsPerDay*)oldtc;
 
-				spinBox->setValue(ctr->maxGaps);
+					spinBox->setValue(ctr->maxGaps);
 
-				break;
-			}
+					break;
+				}
 			//62
 			case CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_DAY:
-			{
-				ConstraintStudentsSetMaxGapsPerDay* ctr=(ConstraintStudentsSetMaxGapsPerDay*)oldtc;
+				{
+					ConstraintStudentsSetMaxGapsPerDay* ctr=(ConstraintStudentsSetMaxGapsPerDay*)oldtc;
 
-				int j=studentsComboBox->findText(ctr->students);
-				if(j<0)
-					showWarningForInvisibleSubgroupConstraint(parent, ctr->students);
-				else
-					assert(j>=0);
-				studentsComboBox->setCurrentIndex(j);
+					int j=studentsComboBox->findText(ctr->students);
+					if(j<0)
+						showWarningForInvisibleSubgroupConstraint(parent, ctr->students);
+					else
+						assert(j>=0);
+					studentsComboBox->setCurrentIndex(j);
 
-				spinBox->setValue(ctr->maxGaps);
+					spinBox->setValue(ctr->maxGaps);
 
-				break;
-			}
+					break;
+				}
 			//63
 			case CONSTRAINT_ACTIVITIES_OCCUPY_MAX_TIME_SLOTS_FROM_SELECTION:
-			{
-				ConstraintActivitiesOccupyMaxTimeSlotsFromSelection* ctr=(ConstraintActivitiesOccupyMaxTimeSlotsFromSelection*)oldtc;
+				{
+					ConstraintActivitiesOccupyMaxTimeSlotsFromSelection* ctr=(ConstraintActivitiesOccupyMaxTimeSlotsFromSelection*)oldtc;
 
-				selectedActivitiesListWidget->clear();
-				selectedActivitiesList.clear();
+					selectedActivitiesListWidget->clear();
+					selectedActivitiesList.clear();
 
-				for(int actId : std::as_const(ctr->activitiesIds)){
-					selectedActivitiesList.append(actId);
-					Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
-					assert(act!=nullptr);
-					selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+					for(int actId : std::as_const(ctr->activitiesIds)){
+						selectedActivitiesList.append(actId);
+						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
+						assert(act!=nullptr);
+						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+					}
+
+					fillTimesTable(timesTable, ctr->selectedDays, ctr->selectedHours, true);
+
+					spinBox->setValue(ctr->maxOccupiedTimeSlots);
+
+					break;
 				}
-
-				fillTimesTable(timesTable, ctr->selectedDays, ctr->selectedHours, true);
-
-				spinBox->setValue(ctr->maxOccupiedTimeSlots);
-
-				break;
-			}
 			//64
 			case CONSTRAINT_ACTIVITIES_MAX_SIMULTANEOUS_IN_SELECTED_TIME_SLOTS:
-			{
-				ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots* ctr=(ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots*)oldtc;
+				{
+					ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots* ctr=(ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots*)oldtc;
 
-				selectedActivitiesListWidget->clear();
-				selectedActivitiesList.clear();
+					selectedActivitiesListWidget->clear();
+					selectedActivitiesList.clear();
 
-				for(int actId : std::as_const(ctr->activitiesIds)){
-					selectedActivitiesList.append(actId);
-					Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
-					assert(act!=nullptr);
-					selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+					for(int actId : std::as_const(ctr->activitiesIds)){
+						selectedActivitiesList.append(actId);
+						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
+						assert(act!=nullptr);
+						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+					}
+
+					fillTimesTable(timesTable, ctr->selectedDays, ctr->selectedHours, true);
+
+					spinBox->setValue(ctr->maxSimultaneous);
+
+					break;
 				}
-
-				fillTimesTable(timesTable, ctr->selectedDays, ctr->selectedHours, true);
-
-				spinBox->setValue(ctr->maxSimultaneous);
-
-				break;
-			}
 			//65
 			case CONSTRAINT_STUDENTS_SET_MAX_DAYS_PER_WEEK:
-			{
-				ConstraintStudentsSetMaxDaysPerWeek* ctr=(ConstraintStudentsSetMaxDaysPerWeek*)oldtc;
+				{
+					ConstraintStudentsSetMaxDaysPerWeek* ctr=(ConstraintStudentsSetMaxDaysPerWeek*)oldtc;
 
-				int j=studentsComboBox->findText(ctr->students);
-				if(j<0)
-					showWarningForInvisibleSubgroupConstraint(parent, ctr->students);
-				else
-					assert(j>=0);
-				studentsComboBox->setCurrentIndex(j);
+					int j=studentsComboBox->findText(ctr->students);
+					if(j<0)
+						showWarningForInvisibleSubgroupConstraint(parent, ctr->students);
+					else
+						assert(j>=0);
+					studentsComboBox->setCurrentIndex(j);
 
-				spinBox->setValue(ctr->maxDaysPerWeek);
+					spinBox->setValue(ctr->maxDaysPerWeek);
 
-				break;
-			}
+					break;
+				}
 			//66
 			case CONSTRAINT_STUDENTS_MAX_DAYS_PER_WEEK:
-			{
-				ConstraintStudentsMaxDaysPerWeek* ctr=(ConstraintStudentsMaxDaysPerWeek*)oldtc;
+				{
+					ConstraintStudentsMaxDaysPerWeek* ctr=(ConstraintStudentsMaxDaysPerWeek*)oldtc;
 
-				spinBox->setValue(ctr->maxDaysPerWeek);
+					spinBox->setValue(ctr->maxDaysPerWeek);
 
-				break;
-			}
+					break;
+				}
 			//67
 			case CONSTRAINT_TEACHER_MAX_SPAN_PER_DAY:
 				{
@@ -9488,14 +9654,14 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				}
 			//75
 			case CONSTRAINT_TWO_ACTIVITIES_ORDERED_IF_SAME_DAY:
-			{
-				ConstraintTwoActivitiesOrderedIfSameDay* ctr=(ConstraintTwoActivitiesOrderedIfSameDay*)oldtc;
+				{
+					ConstraintTwoActivitiesOrderedIfSameDay* ctr=(ConstraintTwoActivitiesOrderedIfSameDay*)oldtc;
 
-				first_initialActivityId=ctr->firstActivityId;
-				second_initialActivityId=ctr->secondActivityId;
+					first_initialActivityId=ctr->firstActivityId;
+					second_initialActivityId=ctr->secondActivityId;
 
-				break;
-			}
+					break;
+				}
 			//76
 			case CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS:
 				{
@@ -9551,62 +9717,62 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				}
 			//80
 			case CONSTRAINT_ACTIVITY_TAGS_NOT_OVERLAPPING:
-			{
-				ConstraintActivityTagsNotOverlapping* ctr=(ConstraintActivityTagsNotOverlapping*)oldtc;
+				{
+					ConstraintActivityTagsNotOverlapping* ctr=(ConstraintActivityTagsNotOverlapping*)oldtc;
 
-				selectedActivityTagsListWidget->clear();
-				selectedActivityTagsSet.clear();
+					selectedActivityTagsListWidget->clear();
+					selectedActivityTagsSet.clear();
 
-				for(const QString& at : std::as_const(ctr->activityTagsNames)){
-					selectedActivityTagsSet.insert(at);
-					selectedActivityTagsListWidget->addItem(at);
+					for(const QString& at : std::as_const(ctr->activityTagsNames)){
+						selectedActivityTagsSet.insert(at);
+						selectedActivityTagsListWidget->addItem(at);
+					}
+
+					break;
 				}
-
-				break;
-			}
 			//81
 			case CONSTRAINT_ACTIVITIES_OCCUPY_MIN_TIME_SLOTS_FROM_SELECTION:
-			{
-				ConstraintActivitiesOccupyMinTimeSlotsFromSelection* ctr=(ConstraintActivitiesOccupyMinTimeSlotsFromSelection*)oldtc;
+				{
+					ConstraintActivitiesOccupyMinTimeSlotsFromSelection* ctr=(ConstraintActivitiesOccupyMinTimeSlotsFromSelection*)oldtc;
 
-				selectedActivitiesListWidget->clear();
-				selectedActivitiesList.clear();
+					selectedActivitiesListWidget->clear();
+					selectedActivitiesList.clear();
 
-				for(int actId : std::as_const(ctr->activitiesIds)){
-					selectedActivitiesList.append(actId);
-					Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
-					assert(act!=nullptr);
-					selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+					for(int actId : std::as_const(ctr->activitiesIds)){
+						selectedActivitiesList.append(actId);
+						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
+						assert(act!=nullptr);
+						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+					}
+
+					fillTimesTable(timesTable, ctr->selectedDays, ctr->selectedHours, true);
+
+					spinBox->setValue(ctr->minOccupiedTimeSlots);
+
+					break;
 				}
-
-				fillTimesTable(timesTable, ctr->selectedDays, ctr->selectedHours, true);
-
-				spinBox->setValue(ctr->minOccupiedTimeSlots);
-
-				break;
-			}
 			//82
 			case CONSTRAINT_ACTIVITIES_MIN_SIMULTANEOUS_IN_SELECTED_TIME_SLOTS:
-			{
-				ConstraintActivitiesMinSimultaneousInSelectedTimeSlots* ctr=(ConstraintActivitiesMinSimultaneousInSelectedTimeSlots*)oldtc;
+				{
+					ConstraintActivitiesMinSimultaneousInSelectedTimeSlots* ctr=(ConstraintActivitiesMinSimultaneousInSelectedTimeSlots*)oldtc;
 
-				selectedActivitiesListWidget->clear();
-				selectedActivitiesList.clear();
+					selectedActivitiesListWidget->clear();
+					selectedActivitiesList.clear();
 
-				for(int actId : std::as_const(ctr->activitiesIds)){
-					selectedActivitiesList.append(actId);
-					Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
-					assert(act!=nullptr);
-					selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+					for(int actId : std::as_const(ctr->activitiesIds)){
+						selectedActivitiesList.append(actId);
+						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
+						assert(act!=nullptr);
+						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+					}
+
+					fillTimesTable(timesTable, ctr->selectedDays, ctr->selectedHours, true);
+
+					spinBox->setValue(ctr->minSimultaneous);
+					allowEmptySlotsCheckBox->setChecked(ctr->allowEmptySlots);
+
+					break;
 				}
-
-				fillTimesTable(timesTable, ctr->selectedDays, ctr->selectedHours, true);
-
-				spinBox->setValue(ctr->minSimultaneous);
-				allowEmptySlotsCheckBox->setChecked(ctr->allowEmptySlots);
-
-				break;
-			}
 			//83
 			case CONSTRAINT_TEACHERS_ACTIVITY_TAG_MIN_HOURS_DAILY:
 				{
@@ -9665,30 +9831,30 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				}
 			//87
 			case CONSTRAINT_ACTIVITY_ENDS_TEACHERS_DAY:
-			{
-				ConstraintActivityEndsTeachersDay* ctr=(ConstraintActivityEndsTeachersDay*)oldtc;
+				{
+					ConstraintActivityEndsTeachersDay* ctr=(ConstraintActivityEndsTeachersDay*)oldtc;
 
-				initialActivityId=ctr->activityId;
+					initialActivityId=ctr->activityId;
 
-				break;
-			}
+					break;
+				}
 			//88
 			case CONSTRAINT_ACTIVITIES_END_TEACHERS_DAY:
-			{
-				ConstraintActivitiesEndTeachersDay* ctr=(ConstraintActivitiesEndTeachersDay*)oldtc;
+				{
+					ConstraintActivitiesEndTeachersDay* ctr=(ConstraintActivitiesEndTeachersDay*)oldtc;
 
-				teachersComboBox->setCurrentIndex(teachersComboBox->findText(ctr->teacherName));
-				int j=studentsComboBox->findText(ctr->studentsName);
-				if(j<0)
-					showWarningForInvisibleSubgroupConstraint(parent, ctr->studentsName);
-				else
-					assert(j>=0);
-				studentsComboBox->setCurrentIndex(j);
-				subjectsComboBox->setCurrentIndex(subjectsComboBox->findText(ctr->subjectName));
-				activityTagsComboBox->setCurrentIndex(activityTagsComboBox->findText(ctr->activityTagName));
+					teachersComboBox->setCurrentIndex(teachersComboBox->findText(ctr->teacherName));
+					int j=studentsComboBox->findText(ctr->studentsName);
+					if(j<0)
+						showWarningForInvisibleSubgroupConstraint(parent, ctr->studentsName);
+					else
+						assert(j>=0);
+					studentsComboBox->setCurrentIndex(j);
+					subjectsComboBox->setCurrentIndex(subjectsComboBox->findText(ctr->subjectName));
+					activityTagsComboBox->setCurrentIndex(activityTagsComboBox->findText(ctr->activityTagName));
 
-				break;
-			}
+					break;
+				}
 			//89
 			case CONSTRAINT_TEACHERS_MAX_HOURS_DAILY_REAL_DAYS:
 				{
@@ -10218,104 +10384,104 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				}
 			//137
 			case CONSTRAINT_STUDENTS_SET_MAX_AFTERNOONS_PER_WEEK:
-			{
-				ConstraintStudentsSetMaxAfternoonsPerWeek* ctr=(ConstraintStudentsSetMaxAfternoonsPerWeek*)oldtc;
+				{
+					ConstraintStudentsSetMaxAfternoonsPerWeek* ctr=(ConstraintStudentsSetMaxAfternoonsPerWeek*)oldtc;
 
-				int j=studentsComboBox->findText(ctr->students);
-				if(j<0)
-					showWarningForInvisibleSubgroupConstraint(parent, ctr->students);
-				else
-					assert(j>=0);
-				studentsComboBox->setCurrentIndex(j);
+					int j=studentsComboBox->findText(ctr->students);
+					if(j<0)
+						showWarningForInvisibleSubgroupConstraint(parent, ctr->students);
+					else
+						assert(j>=0);
+					studentsComboBox->setCurrentIndex(j);
 
-				spinBox->setValue(ctr->maxAfternoonsPerWeek);
+					spinBox->setValue(ctr->maxAfternoonsPerWeek);
 
-				break;
-			}
+					break;
+				}
 			//138
 			case CONSTRAINT_STUDENTS_MAX_AFTERNOONS_PER_WEEK:
-			{
-				ConstraintStudentsMaxAfternoonsPerWeek* ctr=(ConstraintStudentsMaxAfternoonsPerWeek*)oldtc;
+				{
+					ConstraintStudentsMaxAfternoonsPerWeek* ctr=(ConstraintStudentsMaxAfternoonsPerWeek*)oldtc;
 
-				spinBox->setValue(ctr->maxAfternoonsPerWeek);
+					spinBox->setValue(ctr->maxAfternoonsPerWeek);
 
-				break;
-			}
+					break;
+				}
 			//139
 			case CONSTRAINT_STUDENTS_SET_MAX_MORNINGS_PER_WEEK:
-			{
-				ConstraintStudentsSetMaxMorningsPerWeek* ctr=(ConstraintStudentsSetMaxMorningsPerWeek*)oldtc;
+				{
+					ConstraintStudentsSetMaxMorningsPerWeek* ctr=(ConstraintStudentsSetMaxMorningsPerWeek*)oldtc;
 
-				int j=studentsComboBox->findText(ctr->students);
-				if(j<0)
-					showWarningForInvisibleSubgroupConstraint(parent, ctr->students);
-				else
-					assert(j>=0);
-				studentsComboBox->setCurrentIndex(j);
+					int j=studentsComboBox->findText(ctr->students);
+					if(j<0)
+						showWarningForInvisibleSubgroupConstraint(parent, ctr->students);
+					else
+						assert(j>=0);
+					studentsComboBox->setCurrentIndex(j);
 
-				spinBox->setValue(ctr->maxMorningsPerWeek);
+					spinBox->setValue(ctr->maxMorningsPerWeek);
 
-				break;
-			}
+					break;
+				}
 			//140
 			case CONSTRAINT_STUDENTS_MAX_MORNINGS_PER_WEEK:
-			{
-				ConstraintStudentsMaxMorningsPerWeek* ctr=(ConstraintStudentsMaxMorningsPerWeek*)oldtc;
+				{
+					ConstraintStudentsMaxMorningsPerWeek* ctr=(ConstraintStudentsMaxMorningsPerWeek*)oldtc;
 
-				spinBox->setValue(ctr->maxMorningsPerWeek);
+					spinBox->setValue(ctr->maxMorningsPerWeek);
 
-				break;
-			}
+					break;
+				}
 			//141
 			case CONSTRAINT_STUDENTS_MIN_MORNINGS_PER_WEEK:
-			{
-				ConstraintStudentsMinMorningsPerWeek* ctr=(ConstraintStudentsMinMorningsPerWeek*)oldtc;
+				{
+					ConstraintStudentsMinMorningsPerWeek* ctr=(ConstraintStudentsMinMorningsPerWeek*)oldtc;
 
-				spinBox->setValue(ctr->minMorningsPerWeek);
+					spinBox->setValue(ctr->minMorningsPerWeek);
 
-				break;
-			}
+					break;
+				}
 			//142
 			case CONSTRAINT_STUDENTS_SET_MIN_MORNINGS_PER_WEEK:
-			{
-				ConstraintStudentsSetMinMorningsPerWeek* ctr=(ConstraintStudentsSetMinMorningsPerWeek*)oldtc;
+				{
+					ConstraintStudentsSetMinMorningsPerWeek* ctr=(ConstraintStudentsSetMinMorningsPerWeek*)oldtc;
 
-				int j=studentsComboBox->findText(ctr->students);
-				if(j<0)
-					showWarningForInvisibleSubgroupConstraint(parent, ctr->students);
-				else
-					assert(j>=0);
-				studentsComboBox->setCurrentIndex(j);
+					int j=studentsComboBox->findText(ctr->students);
+					if(j<0)
+						showWarningForInvisibleSubgroupConstraint(parent, ctr->students);
+					else
+						assert(j>=0);
+					studentsComboBox->setCurrentIndex(j);
 
-				spinBox->setValue(ctr->minMorningsPerWeek);
+					spinBox->setValue(ctr->minMorningsPerWeek);
 
-				break;
-			}
+					break;
+				}
 			//143
 			case CONSTRAINT_STUDENTS_MIN_AFTERNOONS_PER_WEEK:
-			{
-				ConstraintStudentsMinAfternoonsPerWeek* ctr=(ConstraintStudentsMinAfternoonsPerWeek*)oldtc;
+				{
+					ConstraintStudentsMinAfternoonsPerWeek* ctr=(ConstraintStudentsMinAfternoonsPerWeek*)oldtc;
 
-				spinBox->setValue(ctr->minAfternoonsPerWeek);
+					spinBox->setValue(ctr->minAfternoonsPerWeek);
 
-				break;
-			}
+					break;
+				}
 			//144
 			case CONSTRAINT_STUDENTS_SET_MIN_AFTERNOONS_PER_WEEK:
-			{
-				ConstraintStudentsSetMinAfternoonsPerWeek* ctr=(ConstraintStudentsSetMinAfternoonsPerWeek*)oldtc;
+				{
+					ConstraintStudentsSetMinAfternoonsPerWeek* ctr=(ConstraintStudentsSetMinAfternoonsPerWeek*)oldtc;
 
-				int j=studentsComboBox->findText(ctr->students);
-				if(j<0)
-					showWarningForInvisibleSubgroupConstraint(parent, ctr->students);
-				else
-					assert(j>=0);
-				studentsComboBox->setCurrentIndex(j);
+					int j=studentsComboBox->findText(ctr->students);
+					if(j<0)
+						showWarningForInvisibleSubgroupConstraint(parent, ctr->students);
+					else
+						assert(j>=0);
+					studentsComboBox->setCurrentIndex(j);
 
-				spinBox->setValue(ctr->minAfternoonsPerWeek);
+					spinBox->setValue(ctr->minAfternoonsPerWeek);
 
-				break;
-			}
+					break;
+				}
 			//145
 			case CONSTRAINT_STUDENTS_SET_MORNING_INTERVAL_MAX_DAYS_PER_WEEK:
 				{
@@ -10701,30 +10867,30 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				}
 			//175
 			case CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED:
-			{
-				ConstraintTwoSetsOfActivitiesOrdered* ctr=(ConstraintTwoSetsOfActivitiesOrdered*)oldtc;
+				{
+					ConstraintTwoSetsOfActivitiesOrdered* ctr=(ConstraintTwoSetsOfActivitiesOrdered*)oldtc;
 
-				selectedActivitiesListWidget_TwoSetsOfActivities_1->clear();
-				selectedActivitiesListWidget_TwoSetsOfActivities_2->clear();
-				selectedActivitiesList_TwoSetsOfActivities_1.clear();
-				selectedActivitiesList_TwoSetsOfActivities_2.clear();
+					selectedActivitiesListWidget_TwoSetsOfActivities_1->clear();
+					selectedActivitiesListWidget_TwoSetsOfActivities_2->clear();
+					selectedActivitiesList_TwoSetsOfActivities_1.clear();
+					selectedActivitiesList_TwoSetsOfActivities_2.clear();
 
-				for(int actId : std::as_const(ctr->firstActivitiesIdsList)){
-					selectedActivitiesList_TwoSetsOfActivities_1.append(actId);
-					Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
-					assert(act!=nullptr);
-					selectedActivitiesListWidget_TwoSetsOfActivities_1->addItem(act->getDescription(gt.rules));
+					for(int actId : std::as_const(ctr->firstActivitiesIdsList)){
+						selectedActivitiesList_TwoSetsOfActivities_1.append(actId);
+						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
+						assert(act!=nullptr);
+						selectedActivitiesListWidget_TwoSetsOfActivities_1->addItem(act->getDescription(gt.rules));
+					}
+
+					for(int actId : std::as_const(ctr->secondActivitiesIdsList)){
+						selectedActivitiesList_TwoSetsOfActivities_2.append(actId);
+						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
+						assert(act!=nullptr);
+						selectedActivitiesListWidget_TwoSetsOfActivities_2->addItem(act->getDescription(gt.rules));
+					}
+
+					break;
 				}
-
-				for(int actId : std::as_const(ctr->secondActivitiesIdsList)){
-					selectedActivitiesList_TwoSetsOfActivities_2.append(actId);
-					Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
-					assert(act!=nullptr);
-					selectedActivitiesListWidget_TwoSetsOfActivities_2->addItem(act->getDescription(gt.rules));
-				}
-
-				break;
-			}
 			//176
 			case CONSTRAINT_TEACHERS_MAX_THREE_CONSECUTIVE_DAYS:
 				{
@@ -11501,6 +11667,59 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					}
 
 					fillTimesTable(timesTable, ctr->oDays, ctr->oHours, true);
+
+					break;
+				}
+			//231
+			case CONSTRAINT_STUDENTS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+				{
+					ConstraintStudentsMaxSingleGapsInSelectedTimeSlots* ctr=(ConstraintStudentsMaxSingleGapsInSelectedTimeSlots*)oldtc;
+
+					spinBox->setValue(ctr->maxSingleGaps);
+
+					fillTimesTable(timesTable, ctr->selectedDays, ctr->selectedHours, true);
+
+					break;
+				}
+			//232
+			case CONSTRAINT_STUDENTS_SET_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+				{
+					ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots* ctr=(ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots*)oldtc;
+
+					int j=studentsComboBox->findText(ctr->students);
+					if(j<0)
+						showWarningForInvisibleSubgroupConstraint(parent, ctr->students);
+					else
+						assert(j>=0);
+					studentsComboBox->setCurrentIndex(j);
+
+					spinBox->setValue(ctr->maxSingleGaps);
+
+					fillTimesTable(timesTable, ctr->selectedDays, ctr->selectedHours, true);
+
+					break;
+				}
+			//233
+			case CONSTRAINT_TEACHERS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+				{
+					ConstraintTeachersMaxSingleGapsInSelectedTimeSlots* ctr=(ConstraintTeachersMaxSingleGapsInSelectedTimeSlots*)oldtc;
+
+					spinBox->setValue(ctr->maxSingleGaps);
+
+					fillTimesTable(timesTable, ctr->selectedDays, ctr->selectedHours, true);
+
+					break;
+				}
+			//234
+			case CONSTRAINT_TEACHER_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+				{
+					ConstraintTeacherMaxSingleGapsInSelectedTimeSlots* ctr=(ConstraintTeacherMaxSingleGapsInSelectedTimeSlots*)oldtc;
+
+					teachersComboBox->setCurrentIndex(teachersComboBox->findText(ctr->teacher));
+
+					spinBox->setValue(ctr->maxSingleGaps);
+
+					fillTimesTable(timesTable, ctr->selectedDays, ctr->selectedHours, true);
 
 					break;
 				}
@@ -12857,18 +13076,18 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 			}
 		//61
 		case CONSTRAINT_STUDENTS_MAX_GAPS_PER_DAY:
-		{
-			tc=new ConstraintStudentsMaxGapsPerDay(weight, spinBox->value());
+			{
+				tc=new ConstraintStudentsMaxGapsPerDay(weight, spinBox->value());
 
-			break;
-		}
+				break;
+			}
 		//62
 		case CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_DAY:
-		{
-			tc=new ConstraintStudentsSetMaxGapsPerDay(weight, spinBox->value(), studentsComboBox->currentText());
+			{
+				tc=new ConstraintStudentsSetMaxGapsPerDay(weight, spinBox->value(), studentsComboBox->currentText());
 
-			break;
-		}
+				break;
+			}
 		//63
 		case CONSTRAINT_ACTIVITIES_OCCUPY_MAX_TIME_SLOTS_FROM_SELECTION:
 			{
@@ -12919,18 +13138,18 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 			}
 		//65
 		case CONSTRAINT_STUDENTS_SET_MAX_DAYS_PER_WEEK:
-		{
-			tc=new ConstraintStudentsSetMaxDaysPerWeek(weight, spinBox->value(), studentsComboBox->currentText());
+			{
+				tc=new ConstraintStudentsSetMaxDaysPerWeek(weight, spinBox->value(), studentsComboBox->currentText());
 
-			break;
-		}
+				break;
+			}
 		//66
 		case CONSTRAINT_STUDENTS_MAX_DAYS_PER_WEEK:
-		{
-			tc=new ConstraintStudentsMaxDaysPerWeek(weight, spinBox->value());
+			{
+				tc=new ConstraintStudentsMaxDaysPerWeek(weight, spinBox->value());
 
-			break;
-		}
+				break;
+			}
 		//67
 		case CONSTRAINT_TEACHER_MAX_SPAN_PER_DAY:
 			{
@@ -13754,60 +13973,60 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 			}
 		//137
 		case CONSTRAINT_STUDENTS_SET_MAX_AFTERNOONS_PER_WEEK:
-		{
-			tc=new ConstraintStudentsSetMaxAfternoonsPerWeek(weight, spinBox->value(), studentsComboBox->currentText());
+			{
+				tc=new ConstraintStudentsSetMaxAfternoonsPerWeek(weight, spinBox->value(), studentsComboBox->currentText());
 
-			break;
-		}
+				break;
+			}
 		//138
 		case CONSTRAINT_STUDENTS_MAX_AFTERNOONS_PER_WEEK:
-		{
-			tc=new ConstraintStudentsMaxAfternoonsPerWeek(weight, spinBox->value());
+			{
+				tc=new ConstraintStudentsMaxAfternoonsPerWeek(weight, spinBox->value());
 
-			break;
-		}
+				break;
+			}
 		//139
 		case CONSTRAINT_STUDENTS_SET_MAX_MORNINGS_PER_WEEK:
-		{
-			tc=new ConstraintStudentsSetMaxMorningsPerWeek(weight, spinBox->value(), studentsComboBox->currentText());
+			{
+				tc=new ConstraintStudentsSetMaxMorningsPerWeek(weight, spinBox->value(), studentsComboBox->currentText());
 
-			break;
-		}
+				break;
+			}
 		//140
 		case CONSTRAINT_STUDENTS_MAX_MORNINGS_PER_WEEK:
-		{
-			tc=new ConstraintStudentsMaxMorningsPerWeek(weight, spinBox->value());
+			{
+				tc=new ConstraintStudentsMaxMorningsPerWeek(weight, spinBox->value());
 
-			break;
-		}
+				break;
+			}
 		//141
 		case CONSTRAINT_STUDENTS_MIN_MORNINGS_PER_WEEK:
-		{
-			tc=new ConstraintStudentsMinMorningsPerWeek(weight, spinBox->value());
+			{
+				tc=new ConstraintStudentsMinMorningsPerWeek(weight, spinBox->value());
 
-			break;
-		}
+				break;
+			}
 		//142
 		case CONSTRAINT_STUDENTS_SET_MIN_MORNINGS_PER_WEEK:
-		{
-			tc=new ConstraintStudentsSetMinMorningsPerWeek(weight, spinBox->value(), studentsComboBox->currentText());
+			{
+				tc=new ConstraintStudentsSetMinMorningsPerWeek(weight, spinBox->value(), studentsComboBox->currentText());
 
-			break;
-		}
+				break;
+			}
 		//143
 		case CONSTRAINT_STUDENTS_MIN_AFTERNOONS_PER_WEEK:
-		{
-			tc=new ConstraintStudentsMinAfternoonsPerWeek(weight, spinBox->value());
+			{
+				tc=new ConstraintStudentsMinAfternoonsPerWeek(weight, spinBox->value());
 
-			break;
-		}
+				break;
+			}
 		//144
 		case CONSTRAINT_STUDENTS_SET_MIN_AFTERNOONS_PER_WEEK:
-		{
-			tc=new ConstraintStudentsSetMinAfternoonsPerWeek(weight, spinBox->value(), studentsComboBox->currentText());
+			{
+				tc=new ConstraintStudentsSetMinAfternoonsPerWeek(weight, spinBox->value(), studentsComboBox->currentText());
 
-			break;
-		}
+				break;
+			}
 		//145
 		case CONSTRAINT_STUDENTS_SET_MORNING_INTERVAL_MAX_DAYS_PER_WEEK:
 			{
@@ -13980,46 +14199,46 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 			}
 		//159
 		case CONSTRAINT_TEACHERS_MAX_GAPS_PER_WEEK_FOR_REAL_DAYS:
-		{
-			tc=new ConstraintTeachersMaxGapsPerWeekForRealDays(weight, spinBox->value());
+			{
+				tc=new ConstraintTeachersMaxGapsPerWeekForRealDays(weight, spinBox->value());
 
-			break;
-		}
+				break;
+			}
 		//160
 		case CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK_FOR_REAL_DAYS:
-		{
-			tc=new ConstraintTeacherMaxGapsPerWeekForRealDays(weight, teachersComboBox->currentText(), spinBox->value());
+			{
+				tc=new ConstraintTeacherMaxGapsPerWeekForRealDays(weight, teachersComboBox->currentText(), spinBox->value());
 
-			break;
-		}
+				break;
+			}
 		//161
 		case CONSTRAINT_STUDENTS_MAX_GAPS_PER_WEEK_FOR_REAL_DAYS:
-		{
-			tc=new ConstraintStudentsMaxGapsPerWeekForRealDays(weight, spinBox->value());
+			{
+				tc=new ConstraintStudentsMaxGapsPerWeekForRealDays(weight, spinBox->value());
 
-			break;
-		}
+				break;
+			}
 		//162
 		case CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_WEEK_FOR_REAL_DAYS:
-		{
-			tc=new ConstraintStudentsSetMaxGapsPerWeekForRealDays(weight, spinBox->value(), studentsComboBox->currentText());
+			{
+				tc=new ConstraintStudentsSetMaxGapsPerWeekForRealDays(weight, spinBox->value(), studentsComboBox->currentText());
 
-			break;
-		}
+				break;
+			}
 		//163
 		case CONSTRAINT_STUDENTS_SET_MAX_REAL_DAYS_PER_WEEK:
-		{
-			tc=new ConstraintStudentsSetMaxRealDaysPerWeek(weight, spinBox->value(), studentsComboBox->currentText());
+			{
+				tc=new ConstraintStudentsSetMaxRealDaysPerWeek(weight, spinBox->value(), studentsComboBox->currentText());
 
-			break;
-		}
+				break;
+			}
 		//164
 		case CONSTRAINT_STUDENTS_MAX_REAL_DAYS_PER_WEEK:
-		{
-			tc=new ConstraintStudentsMaxRealDaysPerWeek(weight, spinBox->value());
+			{
+				tc=new ConstraintStudentsMaxRealDaysPerWeek(weight, spinBox->value());
 
-			break;
-		}
+				break;
+			}
 		//165
 		case CONSTRAINT_MAX_TOTAL_ACTIVITIES_FROM_SET_IN_SELECTED_TIME_SLOTS:
 			{
@@ -14102,18 +14321,18 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 			}
 		//169
 		case CONSTRAINT_TEACHERS_MAX_GAPS_PER_MORNING_AND_AFTERNOON:
-		{
-			tc=new ConstraintTeachersMaxGapsPerMorningAndAfternoon(weight, spinBox->value());
+			{
+				tc=new ConstraintTeachersMaxGapsPerMorningAndAfternoon(weight, spinBox->value());
 
-			break;
-		}
+				break;
+			}
 		//170
 		case CONSTRAINT_TEACHER_MAX_GAPS_PER_MORNING_AND_AFTERNOON:
-		{
-			tc=new ConstraintTeacherMaxGapsPerMorningAndAfternoon(weight, teachersComboBox->currentText(), spinBox->value());
+			{
+				tc=new ConstraintTeacherMaxGapsPerMorningAndAfternoon(weight, teachersComboBox->currentText(), spinBox->value());
 
-			break;
-		}
+				break;
+			}
 		//171
 		case CONSTRAINT_TEACHERS_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR:
 			{
@@ -15229,6 +15448,50 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 				getTimesTable(timesTable, days, hours, true);
 
 				tc=new ConstraintTwoSetsOfActivitiesSameSections(weight, selectedActivitiesList_TwoSetsOfActivities_1, selectedActivitiesList_TwoSetsOfActivities_2, days, hours);
+
+				break;
+			}
+		//231
+		case CONSTRAINT_STUDENTS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			{
+				QList<int> days;
+				QList<int> hours;
+				getTimesTable(timesTable, days, hours, true);
+
+				tc=new ConstraintStudentsMaxSingleGapsInSelectedTimeSlots(weight, spinBox->value(), days, hours);
+
+				break;
+			}
+		//232
+		case CONSTRAINT_STUDENTS_SET_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			{
+				QList<int> days;
+				QList<int> hours;
+				getTimesTable(timesTable, days, hours, true);
+
+				tc=new ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots(weight, studentsComboBox->currentText(), spinBox->value(), days, hours);
+
+				break;
+			}
+		//233
+		case CONSTRAINT_TEACHERS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			{
+				QList<int> days;
+				QList<int> hours;
+				getTimesTable(timesTable, days, hours, true);
+
+				tc=new ConstraintTeachersMaxSingleGapsInSelectedTimeSlots(weight, spinBox->value(), days, hours);
+
+				break;
+			}
+		//234
+		case CONSTRAINT_TEACHER_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			{
+				QList<int> days;
+				QList<int> hours;
+				getTimesTable(timesTable, days, hours, true);
+
+				tc=new ConstraintTeacherMaxSingleGapsInSelectedTimeSlots(weight, teachersComboBox->currentText(), spinBox->value(), days, hours);
 
 				break;
 			}
@@ -16394,6 +16657,27 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 
 				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
 					TimeConstraint *ctr=new ConstraintTeacherPairOfMutuallyExclusiveTimeSlots(weight, tch->name, day1, hour1, day2, hour2);
+					bool tmp2=gt.rules.addTimeConstraint(ctr);
+					assert(tmp2);
+
+					ctrs+=ctr->getDetailedDescription(gt.rules);
+					ctrs+=QString("\n");
+				}
+
+				break;
+			}
+		//233
+		case CONSTRAINT_TEACHERS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		//234
+		case CONSTRAINT_TEACHER_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			{
+				QList<int> days;
+				QList<int> hours;
+				getTimesTable(timesTable, days, hours, true);
+
+				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
+					TimeConstraint *ctr=new ConstraintTeacherMaxSingleGapsInSelectedTimeSlots(weight, tch->name, spinBox->value(), days, hours);
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
@@ -21055,6 +21339,73 @@ void AddOrModifyTimeConstraint::okClicked()
 				ctr->oHours=hours;
 
 				ctr->recomputeActivitiesSets();
+
+				break;
+			}
+		//231
+		case CONSTRAINT_STUDENTS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			{
+				ConstraintStudentsMaxSingleGapsInSelectedTimeSlots* ctr=(ConstraintStudentsMaxSingleGapsInSelectedTimeSlots*)oldtc;
+
+				ctr->maxSingleGaps=spinBox->value();
+
+				QList<int> days;
+				QList<int> hours;
+				getTimesTable(timesTable, days, hours, true);
+
+				ctr->selectedDays=days;
+				ctr->selectedHours=hours;
+
+				break;
+			}
+		//232
+		case CONSTRAINT_STUDENTS_SET_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			{
+				ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots* ctr=(ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots*)oldtc;
+
+				ctr->students=studentsComboBox->currentText();
+				ctr->maxSingleGaps=spinBox->value();
+
+				QList<int> days;
+				QList<int> hours;
+				getTimesTable(timesTable, days, hours, true);
+
+				ctr->selectedDays=days;
+				ctr->selectedHours=hours;
+
+				break;
+			}
+		//233
+		case CONSTRAINT_TEACHERS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			{
+				ConstraintTeachersMaxSingleGapsInSelectedTimeSlots* ctr=(ConstraintTeachersMaxSingleGapsInSelectedTimeSlots*)oldtc;
+
+				ctr->maxSingleGaps=spinBox->value();
+
+				QList<int> days;
+				QList<int> hours;
+				getTimesTable(timesTable, days, hours, true);
+
+				ctr->selectedDays=days;
+				ctr->selectedHours=hours;
+
+				break;
+			}
+		//234
+		case CONSTRAINT_TEACHER_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			{
+				ConstraintTeacherMaxSingleGapsInSelectedTimeSlots* ctr=(ConstraintTeacherMaxSingleGapsInSelectedTimeSlots*)oldtc;
+
+				ctr->teacher=teachersComboBox->currentText();
+
+				ctr->maxSingleGaps=spinBox->value();
+
+				QList<int> days;
+				QList<int> hours;
+				getTimesTable(timesTable, days, hours, true);
+
+				ctr->selectedDays=days;
+				ctr->selectedHours=hours;
 
 				break;
 			}

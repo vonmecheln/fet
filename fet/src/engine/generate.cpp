@@ -8810,6 +8810,9 @@ again_if_impossible_activity:
 		bool okmingapsbetweenactivities;
 		bool okmaxgapsbetweenactivities;
 
+		bool okstudentsmaxsinglegapsinselectedtimeslots;
+		bool okteachersmaxsinglegapsinselectedtimeslots;
+		
 		bool okteachersactivitytagmaxhourscontinuously;
 		bool okstudentsactivitytagmaxhourscontinuously;
 
@@ -21305,6 +21308,146 @@ impossiblestudentsmingapsbetweenactivitytagbetweenmorningandafternoon:
 		
 /////////////////////////////////////////////////////////////////////////////////////////////
 
+		//students (set) max single gaps in selected time slots
+		
+		okstudentsmaxsinglegapsinselectedtimeslots=true;
+		
+		if(haveStudentsMaxSingleGapsInSelectedTimeSlots){
+			QSet<int> conflActivitiesSet(conflActivities[newtime].begin(), conflActivities[newtime].end());
+			
+			for(int sbg : std::as_const(act->iSubgroupsList)){
+				for(SubgroupMaxSingleGapsInSelectedTimeSlots_item* item : std::as_const(smsgistsListForSubgroup[sbg])){
+					QSet<int> removableActsSet;
+					QSet<int> nearSingleGapRemovableActsSet;
+					int cntsg=0;
+					int cnth=0;
+					for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+						for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+							int ai2=newSubgroupsTimetable(sbg,d2,h2);
+							if(ai2>=0 && !conflActivitiesSet.contains(ai2)){
+								//cnth+=gt.rules.internalActivitiesList[ai2].duration;
+								cnth++;
+
+								if(ai2!=ai && !fixedTimeActivity[ai2] && !swappedActivities[ai2])
+									removableActsSet.insert(ai2);
+							}
+							else if(h2>0 && h2<gt.rules.nHoursPerDay-1){
+								int t=d2+gt.rules.nDaysPerWeek*h2;
+								if(item->selectedTimeSlotsSet.contains(t)){
+									assert(ai2==-1 || conflActivitiesSet.contains(ai2));
+									int bai2=newSubgroupsTimetable(sbg,d2,h2-1); //before ai2
+									int aai2=newSubgroupsTimetable(sbg,d2,h2+1); //after ai2
+									if(bai2>=0 && aai2>=0 && !conflActivitiesSet.contains(bai2) && !conflActivitiesSet.contains(aai2)){
+										//single gap
+										if(bai2!=ai && !fixedTimeActivity[bai2] && !swappedActivities[bai2])
+											nearSingleGapRemovableActsSet.insert(bai2);
+										if(aai2!=ai && !fixedTimeActivity[aai2] && !swappedActivities[aai2])
+											nearSingleGapRemovableActsSet.insert(aai2);
+										cntsg++;
+									}
+								}
+							}
+						}
+					}
+					
+					int n1=0;
+					for(int ai4 : std::as_const(activitiesWithDuration1ForSubgroup[sbg]))
+						if(c.times[ai4]==UNALLOCATED_TIME || conflActivitiesSet.contains(ai4))
+							n1++;
+					//cout<<"1. n1="<<n1<<", cntsg="<<cntsg<<endl;
+					
+					if(nHoursPerSubgroup[sbg] - cnth >= cntsg - item->maxSingleGaps)
+						removableActsSet=nearSingleGapRemovableActsSet;
+					
+					while(nHoursPerSubgroup[sbg] - cnth < cntsg - item->maxSingleGaps || n1 < cntsg - item->maxSingleGaps){
+						//not OK
+
+						if(removableActsSet.isEmpty()){
+							okstudentsmaxsinglegapsinselectedtimeslots=false;
+							goto impossiblestudentsmaxsinglegapsinselectedtimeslots;
+						}
+						
+						QList<int> tl(removableActsSet.begin(), removableActsSet.end());
+						std::stable_sort(tl.begin(), tl.end()); //to keep generation identical on any computer, for the same random seed
+						
+						int q=rng.intMRG32k3a(tl.count());
+						int ai3=tl.at(q);
+						//cout<<"q="<<q<<", ai3="<<ai3<<endl;
+
+						assert(ai3!=ai);
+						assert(!fixedTimeActivity[ai3] && !swappedActivities[ai3]);
+
+						assert(!conflActivities[newtime].contains(ai3));
+						conflActivities[newtime].append(ai3);
+
+						nConflActivities[newtime]++;
+						assert(nConflActivities[newtime]==conflActivities[newtime].count());
+						
+						assert(!conflActivitiesSet.contains(ai3));
+						conflActivitiesSet.insert(ai3);
+						int t=removableActsSet.remove(ai3);
+						assert(t==1);
+						
+						if(gt.rules.internalActivitiesList[ai3].duration==1)
+							n1++;
+
+						/////////////
+						cntsg=0;
+						cnth=0;
+						for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+							for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+								int ai2=newSubgroupsTimetable(sbg,d2,h2);
+								if(ai2>=0 && !conflActivitiesSet.contains(ai2)){
+									//cnth+=gt.rules.internalActivitiesList[ai2].duration;
+									cnth++;
+
+									/*if(ai2!=ai && !fixedTimeActivity[ai2] && !swappedActivities[ai2])
+										assert(removableActsSet.contains(ai2));*/
+								}
+								else if(h2>0 && h2<gt.rules.nHoursPerDay-1){
+									int t=d2+gt.rules.nDaysPerWeek*h2;
+									if(item->selectedTimeSlotsSet.contains(t)){
+										assert(ai2==-1 || conflActivitiesSet.contains(ai2));
+										int bai2=newSubgroupsTimetable(sbg,d2,h2-1); //before ai2
+										int aai2=newSubgroupsTimetable(sbg,d2,h2+1); //after ai2
+										if(bai2>=0 && aai2>=0 && !conflActivitiesSet.contains(bai2) && !conflActivitiesSet.contains(aai2)){
+											//single gap
+											if(bai2!=ai && !fixedTimeActivity[bai2] && !swappedActivities[bai2])
+												assert(removableActsSet.contains(bai2));
+												//removableActsSet.insert(bai2);
+											if(aai2!=ai && !fixedTimeActivity[aai2] && !swappedActivities[aai2])
+												assert(removableActsSet.contains(aai2));
+												//removableActsSet.insert(aai2);
+											
+											cntsg++;
+										}
+									}
+								}
+							}
+						}
+						
+						/*n1=0;
+						for(int ai4 : std::as_const(activitiesWithDuration1ForSubgroup[sbg]))
+							if(c.times[ai4]==UNALLOCATED_TIME || conflActivitiesSet.contains(ai4))
+								n1++;*/
+						//cout<<"2. n1="<<n1<<", cntsg="<<cntsg<<endl;
+					}
+				}
+			}
+		}
+		
+impossiblestudentsmaxsinglegapsinselectedtimeslots:
+		if(!okstudentsmaxsinglegapsinselectedtimeslots){
+			if(updateSubgroups || updateTeachers)
+				removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+		
+/////////////////////////////////////////////////////////////////////////////////////////////
+
 
 				////////////TEACHERS////////////////
 
@@ -31161,7 +31304,146 @@ impossibleteachersmingapsbetweenactivitytagbetweenmorningandafternoon:
 			continue;
 		}
 		
+/////////////////////////////////////////////////////////////////////////////////////////////
 
+		//teacher(s) max single gaps in selected time slots
+		
+		okteachersmaxsinglegapsinselectedtimeslots=true;
+		
+		if(haveTeachersMaxSingleGapsInSelectedTimeSlots){
+			QSet<int> conflActivitiesSet(conflActivities[newtime].begin(), conflActivities[newtime].end());
+			
+			for(int tch : std::as_const(act->iTeachersList)){
+				for(TeacherMaxSingleGapsInSelectedTimeSlots_item* item : std::as_const(tmsgistsListForTeacher[tch])){
+					QSet<int> removableActsSet;
+					QSet<int> nearSingleGapRemovableActsSet;
+					int cntsg=0;
+					int cnth=0;
+					for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+						for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+							int ai2=newTeachersTimetable(tch,d2,h2);
+							if(ai2>=0 && !conflActivitiesSet.contains(ai2)){
+								//cnth+=gt.rules.internalActivitiesList[ai2].duration;
+								cnth++;
+
+								if(ai2!=ai && !fixedTimeActivity[ai2] && !swappedActivities[ai2])
+									removableActsSet.insert(ai2);
+							}
+							else if(h2>0 && h2<gt.rules.nHoursPerDay-1){
+								int t=d2+gt.rules.nDaysPerWeek*h2;
+								if(item->selectedTimeSlotsSet.contains(t)){
+									assert(ai2==-1 || conflActivitiesSet.contains(ai2));
+									int bai2=newTeachersTimetable(tch,d2,h2-1); //before ai2
+									int aai2=newTeachersTimetable(tch,d2,h2+1); //after ai2
+									if(bai2>=0 && aai2>=0 && !conflActivitiesSet.contains(bai2) && !conflActivitiesSet.contains(aai2)){
+										//single gap
+										if(bai2!=ai && !fixedTimeActivity[bai2] && !swappedActivities[bai2])
+											nearSingleGapRemovableActsSet.insert(bai2);
+										if(aai2!=ai && !fixedTimeActivity[aai2] && !swappedActivities[aai2])
+											nearSingleGapRemovableActsSet.insert(aai2);
+										cntsg++;
+									}
+								}
+							}
+						}
+					}
+					
+					int n1=0;
+					for(int ai4 : std::as_const(activitiesWithDuration1ForTeacher[tch]))
+						if(c.times[ai4]==UNALLOCATED_TIME || conflActivitiesSet.contains(ai4))
+							n1++;
+					//cout<<"1. n1="<<n1<<", cntsg="<<cntsg<<endl;
+					
+					if(nHoursPerTeacher[tch] - cnth >= cntsg - item->maxSingleGaps)
+						removableActsSet=nearSingleGapRemovableActsSet;
+					
+					while(nHoursPerTeacher[tch] - cnth < cntsg - item->maxSingleGaps || n1 < cntsg - item->maxSingleGaps){
+						//not OK
+
+						if(removableActsSet.isEmpty()){
+							okteachersmaxsinglegapsinselectedtimeslots=false;
+							goto impossibleteachersmaxsinglegapsinselectedtimeslots;
+						}
+						
+						QList<int> tl(removableActsSet.begin(), removableActsSet.end());
+						std::stable_sort(tl.begin(), tl.end()); //to keep generation identical on any computer, for the same random seed
+						
+						int q=rng.intMRG32k3a(tl.count());
+						int ai3=tl.at(q);
+						//cout<<"q="<<q<<", ai3="<<ai3<<endl;
+
+						assert(ai3!=ai);
+						assert(!fixedTimeActivity[ai3] && !swappedActivities[ai3]);
+
+						assert(!conflActivities[newtime].contains(ai3));
+						conflActivities[newtime].append(ai3);
+
+						nConflActivities[newtime]++;
+						assert(nConflActivities[newtime]==conflActivities[newtime].count());
+						
+						assert(!conflActivitiesSet.contains(ai3));
+						conflActivitiesSet.insert(ai3);
+						int t=removableActsSet.remove(ai3);
+						assert(t==1);
+						
+						if(gt.rules.internalActivitiesList[ai3].duration==1)
+							n1++;
+
+						/////////////
+						cntsg=0;
+						cnth=0;
+						for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+							for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+								int ai2=newTeachersTimetable(tch,d2,h2);
+								if(ai2>=0 && !conflActivitiesSet.contains(ai2)){
+									//cnth+=gt.rules.internalActivitiesList[ai2].duration;
+									cnth++;
+
+									/*if(ai2!=ai && !fixedTimeActivity[ai2] && !swappedActivities[ai2])
+										assert(removableActsSet.contains(ai2));*/
+								}
+								else if(h2>0 && h2<gt.rules.nHoursPerDay-1){
+									int t=d2+gt.rules.nDaysPerWeek*h2;
+									if(item->selectedTimeSlotsSet.contains(t)){
+										assert(ai2==-1 || conflActivitiesSet.contains(ai2));
+										int bai2=newTeachersTimetable(tch,d2,h2-1); //before ai2
+										int aai2=newTeachersTimetable(tch,d2,h2+1); //after ai2
+										if(bai2>=0 && aai2>=0 && !conflActivitiesSet.contains(bai2) && !conflActivitiesSet.contains(aai2)){
+											//single gap
+											if(bai2!=ai && !fixedTimeActivity[bai2] && !swappedActivities[bai2])
+												assert(removableActsSet.contains(bai2));
+												//removableActsSet.insert(bai2);
+											if(aai2!=ai && !fixedTimeActivity[aai2] && !swappedActivities[aai2])
+												assert(removableActsSet.contains(aai2));
+												//removableActsSet.insert(aai2);
+											
+											cntsg++;
+										}
+									}
+								}
+							}
+						}
+						
+						/*n1=0;
+						for(int ai4 : std::as_const(activitiesWithDuration1ForSubgroup[sbg]))
+							if(c.times[ai4]==UNALLOCATED_TIME || conflActivitiesSet.contains(ai4))
+								n1++;*/
+						//cout<<"2. n1="<<n1<<", cntsg="<<cntsg<<endl;
+					}
+				}
+			}
+		}
+		
+impossibleteachersmaxsinglegapsinselectedtimeslots:
+		if(!okteachersmaxsinglegapsinselectedtimeslots){
+			if(updateSubgroups || updateTeachers)
+				removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+		
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 

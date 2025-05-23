@@ -57,14 +57,14 @@ int STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
 /**
 The FET version
 */
-const QString FET_VERSION="7.2.0";
+const QString FET_VERSION="7.2.1";
 
 /**
 The version number of the data format, useful when saving/restoring the history to/from the disk.
 On any change of the data format, no matter how small or large, this number must be updated;
 older or newer data history versions are not compatible.
 */
-const QString FET_DATA_FORMAT_VERSION="7.1.4"; //started from "6.15.1", since FET-6.15.1.
+const QString FET_DATA_FORMAT_VERSION="7.2.1"; //started from "6.15.1", since FET-6.15.1.
 
 /**
 The FET language

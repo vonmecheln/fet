@@ -266,6 +266,12 @@ private:
 	QAction* dataTimeConstraintsStudentsSetMaxDaysPerWeekAction;
 	QAction* dataTimeConstraintsStudentsMaxDaysPerWeekAction;
 
+	QAction* dataTimeConstraintsStudentsSetMaxSingleGapsInSelectedTimeSlotsAction;
+	QAction* dataTimeConstraintsStudentsMaxSingleGapsInSelectedTimeSlotsAction;
+
+	QAction* dataTimeConstraintsTeacherMaxSingleGapsInSelectedTimeSlotsAction;
+	QAction* dataTimeConstraintsTeachersMaxSingleGapsInSelectedTimeSlotsAction;
+
 	//mornings-afternoons
 	QAction* dataTimeConstraintsTeacherMaxRealDaysPerWeekAction;
 	QAction* dataTimeConstraintsTeacherMaxMorningsPerWeekAction;
@@ -721,6 +727,12 @@ public slots:
 
 	void dataTimeConstraintsStudentsSetMaxGapsPerDayAction_triggered();
 	void dataTimeConstraintsStudentsMaxGapsPerDayAction_triggered();
+
+	void dataTimeConstraintsStudentsSetMaxSingleGapsInSelectedTimeSlotsAction_triggered();
+	void dataTimeConstraintsStudentsMaxSingleGapsInSelectedTimeSlotsAction_triggered();
+
+	void dataTimeConstraintsTeacherMaxSingleGapsInSelectedTimeSlotsAction_triggered();
+	void dataTimeConstraintsTeachersMaxSingleGapsInSelectedTimeSlotsAction_triggered();
 
 	void dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction_triggered();
 	void dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction_triggered();

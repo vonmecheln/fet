@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<fet version="7.1.4">
+<fet version="7.2.1">
   <Mode>Block_Planning</Mode>
   <Institution_Name>Default institution</Institution_Name>
   <Comments>Default comments</Comments>
@@ -2296,6 +2296,100 @@
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintTwoSetsOfActivitiesSameSections>
+    <ConstraintTeacherMaxSingleGapsInSelectedTimeSlots>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Teacher>t1</Teacher>
+      <Max_Single_Gaps>1</Max_Single_Gaps>
+      <Number_of_Selected_Time_Slots>6</Number_of_Selected_Time_Slots>
+      <Selected_Time_Slot>
+        <Day>Monday</Day>
+        <Hour>09:00</Hour>
+      </Selected_Time_Slot>
+      <Selected_Time_Slot>
+        <Day>Tuesday</Day>
+        <Hour>09:00</Hour>
+      </Selected_Time_Slot>
+      <Selected_Time_Slot>
+        <Day>Tuesday</Day>
+        <Hour>10:00</Hour>
+      </Selected_Time_Slot>
+      <Selected_Time_Slot>
+        <Day>Wednesday</Day>
+        <Hour>09:00</Hour>
+      </Selected_Time_Slot>
+      <Selected_Time_Slot>
+        <Day>Thursday</Day>
+        <Hour>09:00</Hour>
+      </Selected_Time_Slot>
+      <Selected_Time_Slot>
+        <Day>Friday</Day>
+        <Hour>09:00</Hour>
+      </Selected_Time_Slot>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintTeacherMaxSingleGapsInSelectedTimeSlots>
+    <ConstraintTeachersMaxSingleGapsInSelectedTimeSlots>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Max_Single_Gaps>0</Max_Single_Gaps>
+      <Number_of_Selected_Time_Slots>3</Number_of_Selected_Time_Slots>
+      <Selected_Time_Slot>
+        <Day>Tuesday</Day>
+        <Hour>09:00</Hour>
+      </Selected_Time_Slot>
+      <Selected_Time_Slot>
+        <Day>Tuesday</Day>
+        <Hour>10:00</Hour>
+      </Selected_Time_Slot>
+      <Selected_Time_Slot>
+        <Day>Wednesday</Day>
+        <Hour>08:00</Hour>
+      </Selected_Time_Slot>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintTeachersMaxSingleGapsInSelectedTimeSlots>
+    <ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Students>y1</Students>
+      <Max_Single_Gaps>2</Max_Single_Gaps>
+      <Number_of_Selected_Time_Slots>5</Number_of_Selected_Time_Slots>
+      <Selected_Time_Slot>
+        <Day>Monday</Day>
+        <Hour>10:00</Hour>
+      </Selected_Time_Slot>
+      <Selected_Time_Slot>
+        <Day>Tuesday</Day>
+        <Hour>11:00</Hour>
+      </Selected_Time_Slot>
+      <Selected_Time_Slot>
+        <Day>Wednesday</Day>
+        <Hour>10:00</Hour>
+      </Selected_Time_Slot>
+      <Selected_Time_Slot>
+        <Day>Wednesday</Day>
+        <Hour>11:00</Hour>
+      </Selected_Time_Slot>
+      <Selected_Time_Slot>
+        <Day>Wednesday</Day>
+        <Hour>12:00</Hour>
+      </Selected_Time_Slot>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots>
+    <ConstraintStudentsMaxSingleGapsInSelectedTimeSlots>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Max_Single_Gaps>0</Max_Single_Gaps>
+      <Number_of_Selected_Time_Slots>2</Number_of_Selected_Time_Slots>
+      <Selected_Time_Slot>
+        <Day>Monday</Day>
+        <Hour>10:00</Hour>
+      </Selected_Time_Slot>
+      <Selected_Time_Slot>
+        <Day>Monday</Day>
+        <Hour>12:00</Hour>
+      </Selected_Time_Slot>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintStudentsMaxSingleGapsInSelectedTimeSlots>
   </Time_Constraints_List>
   <Space_Constraints_List>
     <ConstraintBasicCompulsorySpace>

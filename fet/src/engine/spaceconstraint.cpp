@@ -1825,6 +1825,7 @@ static Matrix3D<int> roomsMatrix;
 
 static int rooms_conflicts=-1;
 
+QString getActivityDescription(Rules& r, int id); //implemented in timeconstraint.cpp
 QString getActivityDetailedDescription(Rules& r, int id); //implemented in timeconstraint.cpp
 
 void populateInternalSubgroupsList(const Rules& r, const StudentsSet* ss, QList<int>& iSubgroupsList); //implemented in timeconstraint.cpp
@@ -3528,7 +3529,7 @@ QString ConstraintActivityPreferredRoom::getDescription(Rules& r)
 	QString s=tr("Activity preferred room"); s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("Id:%1 (%2)", "%1 is activity id, %2 is detailed description of activity")
-		.arg(this->activityId)
+		.arg(getActivityDescription(r, this->activityId))
 		.arg(getActivityDetailedDescription(r, this->activityId));
 	s+=", ";
 
@@ -3837,7 +3838,7 @@ QString ConstraintActivityPreferredRooms::getDescription(Rules& r)
 	QString s=tr("Activity preferred rooms"); s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("Id:%1 (%2)", "%1 is activity id, %2 is detailed description of activity")
-		.arg(this->activityId)
+		.arg(getActivityDescription(r, this->activityId))
 		.arg(getActivityDetailedDescription(r, this->activityId));
 
 	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++){
@@ -12859,7 +12860,7 @@ QString ConstraintActivitiesOccupyMaxDifferentRooms::getDescription(Rules& r)
 		
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
-		actids+=CustomFETString::number(aid)+QString(", ");
+		actids+=getActivityDescription(r, aid)+QString(", ");
 	actids.chop(2);
 		
 	QString s=tr("Activities occupy max different rooms, WP:%1%, NA:%2, A: %3, MDR:%4", "Constraint description. WP means weight percentage, "
@@ -13129,7 +13130,7 @@ QString ConstraintActivitiesSameRoomIfConsecutive::getDescription(Rules& r)
 		
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
-		actids+=CustomFETString::number(aid)+QString(", ");
+		actids+=getActivityDescription(r, aid)+QString(", ");
 	actids.chop(2);
 		
 	QString s=tr("Activities same room if consecutive, WP:%1%, NA:%2, A: %3", "Constraint description. WP means weight percentage, "

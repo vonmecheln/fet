@@ -1545,6 +1545,46 @@ bool computeActivitiesSameRoomIfConsecutive(QWidget* parent);
 
 /////////////////////////////////////////////////////////////////////////
 
+//2025-05-15
+class SubgroupMaxSingleGapsInSelectedTimeSlots_item
+{
+public:
+	int maxSingleGaps;
+	QList<int> selectedTimeSlotsList;
+	QSet<int> selectedTimeSlotsSet;
+};
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+extern std::list<SubgroupMaxSingleGapsInSelectedTimeSlots_item> smsgistsList;
+extern Matrix1D<QList<SubgroupMaxSingleGapsInSelectedTimeSlots_item*>> smsgistsListForSubgroup;
+extern bool haveStudentsMaxSingleGapsInSelectedTimeSlots;
+
+extern Matrix1D<QList<int>> activitiesWithDuration1ForSubgroup;
+
+bool computeStudentsMaxSingleGapsInSelectedTimeSlots(QWidget* parent);
+
+/////////////////////////////////////////////////////////////////////////
+
+//2025-05-17
+class TeacherMaxSingleGapsInSelectedTimeSlots_item
+{
+public:
+	int maxSingleGaps;
+	QList<int> selectedTimeSlotsList;
+	QSet<int> selectedTimeSlotsSet;
+};
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+extern std::list<TeacherMaxSingleGapsInSelectedTimeSlots_item> tmsgistsList;
+extern Matrix1D<QList<TeacherMaxSingleGapsInSelectedTimeSlots_item*>> tmsgistsListForTeacher;
+extern bool haveTeachersMaxSingleGapsInSelectedTimeSlots;
+
+extern Matrix1D<QList<int>> activitiesWithDuration1ForTeacher;
+
+bool computeTeachersMaxSingleGapsInSelectedTimeSlots(QWidget* parent);
+
+/////////////////////////////////////////////////////////////////////////
+
 //2019-11-20
 class SubgroupActivityTagMinHoursDaily_item
 {

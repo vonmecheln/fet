@@ -2837,6 +2837,50 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				break;
 			}
+		//231
+		case CONSTRAINT_STUDENTS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			{
+				dialogTitle=tr("Constraints students max single gaps in selected time slots", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsStudentsMaxSingleGapsInSelectedTimeSlots");
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
+		//232
+		case CONSTRAINT_STUDENTS_SET_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			{
+				dialogTitle=tr("Constraints students set max single gaps in selected time slots", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsStudentsSetMaxSingleGapsInSelectedTimeSlots");
+
+				studentsComboBox=new QComboBox;
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
+		//233
+		case CONSTRAINT_TEACHERS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			{
+				dialogTitle=tr("Constraints teachers max single gaps in selected time slots", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsTeachersMaxSingleGapsInSelectedTimeSlots");
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
+		//234
+		case CONSTRAINT_TEACHER_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			{
+				dialogTitle=tr("Constraints teacher max single gaps in selected time slots", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsTeacherMaxSingleGapsInSelectedTimeSlots");
+
+				teachersComboBox=new QComboBox;
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -6445,6 +6489,38 @@ filtered_ok:
 
 				break;
 			}
+		//231
+		case CONSTRAINT_STUDENTS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			{
+				return true;
+
+				break;
+			}
+		//232
+		case CONSTRAINT_STUDENTS_SET_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			{
+				assert(studentsComboBox!=nullptr);
+				ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots* ctr=(ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots*)tc;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
+
+				break;
+			}
+		//233
+		case CONSTRAINT_TEACHERS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			{
+				return true;
+
+				break;
+			}
+		//234
+		case CONSTRAINT_TEACHER_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			{
+				assert(teachersComboBox!=nullptr);
+				ConstraintTeacherMaxSingleGapsInSelectedTimeSlots* ctr=(ConstraintTeacherMaxSingleGapsInSelectedTimeSlots*)tc;
+				return teachersComboBox->currentText()==QString("") || teachersComboBox->currentText()==ctr->teacher;
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -7086,6 +7162,35 @@ void ListTimeConstraints::helpClicked()
 				s+=tr("Note (by %1): if you use overflow slots for the activities which cannot be placed in the real time slots, these overflow slots should"
 				 " be added as exception slots, in which an activity is not forced to respect this 'same sections' constraint."
 				 , "%1 is the person who wrote this note.").arg("Liviu Lalescu");
+				s+="\n";
+
+				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
+
+				break;
+			}
+		//231
+		case CONSTRAINT_STUDENTS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		//232
+		case CONSTRAINT_STUDENTS_SET_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		//233
+		case CONSTRAINT_TEACHERS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		//234
+		case CONSTRAINT_TEACHER_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			{
+				QString s=tr("This constraint was suggested by %1.", "%1 is the person who suggested this constraint.")
+				 .arg("Yush Yuen");
+				s+="\n\n";
+				s+=tr("This constraint is useful if you want to avoid small chunks of free time"
+				 " between classes. A gap is defined as a single FET hour between two"
+				 " activities. Select the students/teachers for whom you want this"
+				 " constraint applied to, then select the time slots where you DO NOT want gaps"
+				 " to appear. The maximum allowed number of single gaps is defaulted to zero. Increasing"
+				 " this number will result in more gaps appearing within the select time"
+				 " slots. This might be helpful in troubleshooting an impossible timetable."
+				 " Note that two consecutive single gaps are not considered a 'gap'.");
 				s+="\n";
 
 				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);

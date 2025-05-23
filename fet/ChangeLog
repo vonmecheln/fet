@@ -1,3 +1,8 @@
+ 7.2.1
+	- Added the constraints of type teacher(s)/students (set) max single gaps in selected time slots (suggested and tested by Yush Yuen).
+	- The description of the constraints involving activities will now show an 'X' before the id if the activity is deactivated (suggested by GUEFFAZ REDA).
+	- Minor interface bug fix: when restoring the default settings, the option 'The font is user selectable' was not updated correctly
+	(reported by Vangelis Karafillidis).
  7.2.0
 	- Minor interface bug fix (the bug was found by watching an online FET tutorial presented by Apisit Piamnoi).
  7.1.9
@@ -359,7 +364,6 @@
 	- Improvements in the dialogs of not available times for teachers / students and teachers / students / rooms timetable view time horizontal,
 	the lines separating the days are thicker.
 	- Other minor improvements.
-Version 6.12.0
  6.11.0
 	- In the dialogs of all activities, all time constraints, and all space constraints, the list of activities / time constraints / space constraints
 	is multi-selectable (suggested by T. Renganathan, Yush Yuen, daviodan, Lizio, fartoto_dz2004, Vangelis Karafillidis, and maybe other users).
@@ -382,7 +386,6 @@ Version 6.12.0
 	- Updated to Qt 6.6.0. This involved updating the FET code in many places (using an easy search-and-replace), to get rid of the many new
 	compilation warnings (referring to the use of the deprecated function qAsConst). Now you will need a C++17 complying C++ compiler to compile FET.
 	- Minor improvement in an English field.
-Version 6.10.0
  6.9.6
 	- Updated to Qt 6.5.3.
 	- Very rare crash bugs fixed (reported by Rouge Rosé).
@@ -582,7 +585,6 @@ Version 6.10.0
 	- Minor improvements.
 	- Minor correction in the Arabic translation, by Benahmed Abdelkrim.
 	- Updated the Russian translation, by Alexey Chernous.
-Version 6.4.0
  6.3.3
 	- Interface bug fix: when switching from a language with a right-to-left layout to one with a left-to-right layout, the interface layout remained
 	right-to-left.
@@ -1274,11 +1276,9 @@ Version 6.4.0
 	- Added a new example file from Vietnam, by nguyenhuuduyet.
 	- Added a new example file from Namibia, by Bobby Wise.
 	- Added two anonymous example files.
-Version 5.25.0
  5.23.4
 	- Added a partial Chinese Simplified (zh_CN) translation, by orange.
 	- Added two example files from Vietnam, by Nguyen Huu Tuyen.
-Version 5.24.0
  5.23.3
 	- Updated to Qt 5.3.2.
 	- Added a fet.desktop file (by Alexey Loginov).
@@ -1308,7 +1308,6 @@ Version 5.24.0
 	- Added a new Morocco example file, by Mohamed Bahaj.
  5.21.3
 	- Updated the Windows version to Qt 5.2.1.
-Version 5.22.0
  5.21.2
 	- Corrected a bug in two of the Brazil examples (the bug was introduced in the previous version).
  5.21.1
@@ -1393,7 +1392,6 @@ Version 5.22.0
 	- Exporting of the timetable as a CSV file now saves also the activities comments (suggested by m, implemented by Volker Dirr).
 	- Minor bug fix in HTML timetables, by Volker Dirr.
 	- Minor interface bug fixes.
-Version 5.17.0
  5.16.0
 	- Each constraint can be activated/deactivated and also each constraint may have an optional comment. The user can sort the constraints
 	based on their comment. These special functions can only be accessed from all time/space constraints dialogs (suggested by George Miliotis,
@@ -1575,7 +1573,6 @@ Version 5.17.0
 	- Improved the names of constraints: "2" activities grouped, ordered and consecutive are now "two" activities grouped, ordered and consecutive.
 	- Code cleanup.
 	- Added a new Italian sample file, by Marco.
-Version 5.11.0
  5.10.2
 	- Speed improvement if user has constraints activities same starting time, 2 activities consecutive and 2 activities ordered and
 	 activities not overlapping (idea and partial code by Volker Dirr). In some cases, the speed improvement is very high. This has to
