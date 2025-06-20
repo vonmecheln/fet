@@ -1,3 +1,6 @@
+ 7.2.5
+	- Updated to Qt 6.9.1.
+	- Updated the Arabic translation, by Benahmed Abdelkrim.
  7.2.4
 	- Added a new type of constraint for the Terms mode: teacher(s) max hours per term (suggested by mikkojoo).
  7.2.3

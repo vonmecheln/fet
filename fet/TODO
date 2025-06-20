@@ -10904,3 +10904,21 @@ From mikkojoo (on forum):
 https://lalescu.ro/liviu/fet/forum/index.php?topic=6411.0
 
 Add the constraints of type teacher(s) min hours per term (in the Terms mode). The variant with 'max' was implemented in version 7.2.4.
+
+713--------------------------------------------------------
+From alexwonglk (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6412.msg35649#msg35649
+
+It would be a good feature in future versions that we can filter by the durations of sub-activities in constraints windows.
+
+Liviu Lalescu: in recent FET versions you can add an activity tag to a selection of activities. Filter activities by duration, add tags say Duration1
+and Duration2, add the corresponding tag to a whole selection of activities, and then in the constraints dialogs filter by tag.
+
+Volker Dirr: Liviu, I think your idea is only a workaround, but not better.
+You need to add such a tag to every activity. That is much work.
+It will flood/increase the number of tags.
+It will also "double" data. "Doubling" data is always bad, especially because you need to modify the duration sometimes and then there is a high risk
+that you modify the duration but you forget to modify the tag. It will be very difficult to locate such a bug.
+
+Liviu Lalescu: you can filter with an advanced filter the activities, and add a tag to the selection with a single click.
