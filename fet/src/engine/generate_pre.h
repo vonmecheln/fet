@@ -286,6 +286,13 @@ bool computeMaxDaysPerWeekForStudents(QWidget* parent);
 ////////END   teachers max days per week
 
 
+//2025-05-30
+extern Matrix1D<int> teachersMaxHoursPerTermMaxHours; //-1 for not existing
+extern Matrix1D<double> teachersMaxHoursPerTermWeightPercentages; //-1 for not existing
+extern Matrix1D<QList<int>> teachersWithMaxHoursPerTermForActivities;
+bool computeMaxHoursPerTermForTeachers(QWidget* parent);
+
+
 ////////BEGIN teachers no two consecutive days
 //activities indices (in 0..gt.rules.nInternalActivities-1) for each teacher
 extern Matrix1D<double> teachersNoTwoConsecutiveDaysPercentages; //-1 for not existing

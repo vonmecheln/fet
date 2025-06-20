@@ -408,7 +408,7 @@ void TimetableGenerateForm::stop()
 	te->setReadOnly(true);
 	QPushButton* pb=new QPushButton(TimetableGenerateForm::tr("OK"));
 
-	QHBoxLayout* hl=new QHBoxLayout(0);
+	QHBoxLayout* hl=new QHBoxLayout();
 	hl->addStretch(1);
 	hl->addWidget(pb);
 
@@ -579,7 +579,7 @@ void TimetableGenerateForm::stopHighest()
 	te->setReadOnly(true);
 	QPushButton* pb=new QPushButton(TimetableGenerateForm::tr("OK"));
 
-	QHBoxLayout* hl=new QHBoxLayout(0);
+	QHBoxLayout* hl=new QHBoxLayout();
 	hl->addStretch(1);
 	hl->addWidget(pb);
 
@@ -739,7 +739,7 @@ void TimetableGenerateForm::impossibleToSolve()
 	te->setReadOnly(true);
 	QPushButton* pb=new QPushButton(TimetableGenerateForm::tr("OK"));
 
-	QHBoxLayout* hl=new QHBoxLayout(0);
+	QHBoxLayout* hl=new QHBoxLayout();
 	hl->addStretch(1);
 	hl->addWidget(pb);
 
@@ -1248,7 +1248,7 @@ void TimetableGenerateForm::seeImpossible()
 	te->setReadOnly(true);
 	QPushButton* pb=new QPushButton(tr("OK"));
 
-	QHBoxLayout* hl=new QHBoxLayout(0);
+	QHBoxLayout* hl=new QHBoxLayout();
 	hl->addStretch(1);
 	hl->addWidget(pb);
 
@@ -1280,7 +1280,7 @@ void TimetableGenerateForm::seeInitialOrder()
 	te->setReadOnly(true);
 	QPushButton* pb=new QPushButton(tr("OK"));
 
-	QHBoxLayout* hl=new QHBoxLayout(0);
+	QHBoxLayout* hl=new QHBoxLayout();
 	hl->addStretch(1);
 	hl->addWidget(pb);
 

@@ -1198,6 +1198,9 @@ private:
 	TimeConstraint* readTeacherMaxSingleGapsInSelectedTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readTeachersMaxSingleGapsInSelectedTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
+	TimeConstraint* readTeacherMaxHoursPerTerm(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMaxHoursPerTerm(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
 	//
 	SpaceConstraint* readBasicCompulsorySpace(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	SpaceConstraint* readRoomNotAvailable(QXmlStreamReader& xml, FakeString& xmlReadingLog);

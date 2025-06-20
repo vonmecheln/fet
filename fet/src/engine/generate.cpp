@@ -8703,6 +8703,8 @@ again_if_impossible_activity:
 		bool okteachersmorningsafternoonsbehavior;
 		bool ok_max_two_consecutive_mornings_afternoons;
 
+		bool okteachersmaxhoursperterm;
+		
 		bool okbasictime;
 		bool okmindays;
 		bool okminhalfdays;
@@ -21727,6 +21729,7 @@ impossiblestudentsmaxsinglegapsinselectedtimeslots:
 				}
 			}
 		}
+
 impossibleteachersmaxdaysperweek:
 		if(!okteachersmaxdaysperweek){
 			if(updateSubgroups || updateTeachers)
@@ -31444,6 +31447,102 @@ impossibleteachersmaxsinglegapsinselectedtimeslots:
 			continue;
 		}
 		
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+		//2025-05-29 - for mikkojoo
+		//not breaking the teachers max hours per term
+		////////////////////////////BEGIN max hours per term for teachers
+
+		okteachersmaxhoursperterm=true;
+		if(gt.rules.mode==TERMS){
+			for(int tch : std::as_const(teachersWithMaxHoursPerTermForActivities[ai])){
+				if(skipRandom(teachersMaxHoursPerTermWeightPercentages[tch]))
+					continue;
+				
+				int maxHours=teachersMaxHoursPerTermMaxHours[tch];
+				assert(maxHours>=0);
+				
+				int termai = d/gt.rules.nDaysPerTerm;
+				
+				int totalh=act->duration;
+				
+				QList<int> candidates;
+				
+				for(int d2=termai*gt.rules.nDaysPerTerm; d2<(termai+1)*gt.rules.nDaysPerTerm; d2++){
+					for(int ai2 : std::as_const(teacherActivitiesOfTheDay(tch,d2))){
+						if(ai2>=0){
+							assert(ai2!=ai);
+							if(!conflActivities[newtime].contains(ai2)){
+								totalh+=gt.rules.internalActivitiesList[ai2].duration;
+								if(!fixedTimeActivity[ai2] && !swappedActivities[ai2])
+									candidates.append(ai2);
+							}
+						}
+					}
+				}
+				
+				while(maxHours<totalh){
+					if(candidates.count()==0){
+						okteachersmaxhoursperterm=false;
+						goto impossibleteachersmaxhoursperterm;
+					}
+
+					int ai2=-1;
+					if(level>0){
+						ai2=candidates.at(rng.intMRG32k3a(candidates.count()));
+					}
+					else{
+						assert(level==0);
+
+						int optMinWrong=INF;
+
+						QList<int> tl;
+
+						for(int ai3 : std::as_const(candidates)){
+							if(optMinWrong>triedRemovals(ai3,c.times[ai3])){
+								optMinWrong=triedRemovals(ai3,c.times[ai3]);
+								tl.clear();
+								tl.append(ai3);
+							}
+							else if(optMinWrong==triedRemovals(ai3,c.times[ai3])){
+								tl.append(ai3);
+							}
+						}
+
+						assert(tl.count()>0);
+						int q=rng.intMRG32k3a(tl.count());
+						ai2=tl.at(q);
+					}
+
+					assert(ai2>=0);
+					assert(ai2!=ai);
+					assert(!swappedActivities[ai2]);
+					assert(!fixedTimeActivity[ai2]);
+					assert(!conflActivities[newtime].contains(ai2));
+					conflActivities[newtime].append(ai2);
+					nConflActivities[newtime]++;
+					assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+					
+					int t=candidates.removeAll(ai2);
+					assert(t==1);
+					
+					totalh-=gt.rules.internalActivitiesList[ai2].duration;
+				}
+			}
+		}
+
+impossibleteachersmaxhoursperterm:
+		if(!okteachersmaxhoursperterm){
+			if(updateSubgroups || updateTeachers)
+				removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+
+		////////////////////////////END teachers max hours per term
+
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 

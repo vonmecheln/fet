@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<fet version="7.2.1">
+<fet version="7.2.4">
   <Mode>Terms</Mode>
   <Institution_Name>Default institution</Institution_Name>
   <Comments>Default comments</Comments>
@@ -2346,6 +2346,19 @@
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintStudentsMaxSingleGapsInSelectedTimeSlots>
+    <ConstraintTeacherMaxHoursPerTerm>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Teacher>t1</Teacher>
+      <Max_Hours_Per_Term>11</Max_Hours_Per_Term>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintTeacherMaxHoursPerTerm>
+    <ConstraintTeachersMaxHoursPerTerm>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Max_Hours_Per_Term>15</Max_Hours_Per_Term>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintTeachersMaxHoursPerTerm>
   </Time_Constraints_List>
   <Space_Constraints_List>
     <ConstraintBasicCompulsorySpace>

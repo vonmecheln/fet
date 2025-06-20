@@ -1979,6 +1979,20 @@ QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 					stream<<*c;
 					break;
 				}
+			//235
+			case CONSTRAINT_TEACHER_MAX_HOURS_PER_TERM:
+				{
+					ConstraintTeacherMaxHoursPerTerm* c=(ConstraintTeacherMaxHoursPerTerm*)ctr;
+					stream<<*c;
+					break;
+				}
+			//236
+			case CONSTRAINT_TEACHERS_MAX_HOURS_PER_TERM:
+				{
+					ConstraintTeachersMaxHoursPerTerm* c=(ConstraintTeachersMaxHoursPerTerm*)ctr;
+					stream<<*c;
+					break;
+				}
 			
 			default:
 				assert(0);
@@ -4589,6 +4603,22 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 					rules.timeConstraintsList.append(c);
 					break;
 				}
+			//235
+			case CONSTRAINT_TEACHER_MAX_HOURS_PER_TERM:
+				{
+					ConstraintTeacherMaxHoursPerTerm* c=new ConstraintTeacherMaxHoursPerTerm;
+					stream>>*c;
+					rules.timeConstraintsList.append(c);
+					break;
+				}
+			//236
+			case CONSTRAINT_TEACHERS_MAX_HOURS_PER_TERM:
+				{
+					ConstraintTeachersMaxHoursPerTerm* c=new ConstraintTeachersMaxHoursPerTerm;
+					stream>>*c;
+					rules.timeConstraintsList.append(c);
+					break;
+				}
 			
 			default:
 				//commented, so that the program won't crash on wrong history files.
@@ -6659,6 +6689,21 @@ void Rules::setTerms(int numberOfTerms, int numberOfDaysPerTerm)
 						camt->maxOccupiedTerms=this->nTerms;
 					break;
 				}
+			case CONSTRAINT_TEACHER_MAX_HOURS_PER_TERM:
+				{
+					ConstraintTeacherMaxHoursPerTerm* ctmht=(ConstraintTeacherMaxHoursPerTerm*)tc;
+					if(ctmht->maxHoursPerTerm > this->nDaysPerTerm * this->nHoursPerDay)
+						ctmht->maxHoursPerTerm = this->nDaysPerTerm * this->nHoursPerDay;
+					break;
+				}
+			case CONSTRAINT_TEACHERS_MAX_HOURS_PER_TERM:
+				{
+					ConstraintTeachersMaxHoursPerTerm* ctsmht=(ConstraintTeachersMaxHoursPerTerm*)tc;
+					if(ctsmht->maxHoursPerTerm > this->nDaysPerTerm * this->nHoursPerDay)
+						ctsmht->maxHoursPerTerm = this->nDaysPerTerm * this->nHoursPerDay;
+					break;
+				}
+				
 			default:
 				//do nothing.
 				break;
@@ -7192,6 +7237,13 @@ bool Rules::modifyTeacher(const QString& initialTeacherName, const QString& fina
 					ConstraintTeacherMaxSingleGapsInSelectedTimeSlots* crt_constraint=(ConstraintTeacherMaxSingleGapsInSelectedTimeSlots*)ctr;
 					if(initialTeacherName == crt_constraint->teacher)
 						crt_constraint->teacher=finalTeacherName;
+					break;
+				}
+			case CONSTRAINT_TEACHER_MAX_HOURS_PER_TERM:
+				{
+					ConstraintTeacherMaxHoursPerTerm* crt_constraint=(ConstraintTeacherMaxHoursPerTerm*)ctr;
+					if(initialTeacherName == crt_constraint->teacherName)
+						crt_constraint->teacherName=finalTeacherName;
 					break;
 				}
 
@@ -13231,6 +13283,14 @@ void Rules::updateConstraintsAfterRemoval()
 					break;
 				}
 
+			case CONSTRAINT_TEACHER_MAX_HOURS_PER_TERM:
+				{
+					ConstraintTeacherMaxHoursPerTerm* c=(ConstraintTeacherMaxHoursPerTerm*)tc;
+					if(!existingTeachersNames.contains(c->teacherName))
+						toBeRemovedTime.append(tc);
+					break;
+				}
+
 			default:
 				//do nothing.
 				break;
@@ -16564,6 +16624,14 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 				else if(xmlReader.name()==QString("ConstraintTeachersMaxHoursContinuously")){
 					crt_constraint=readTeachersMaxHoursContinuously(xmlReader, xmlReadingLog);
 				}
+				//2025-05-30
+				else if(xmlReader.name()==QString("ConstraintTeacherMaxHoursPerTerm")){
+					crt_constraint=readTeacherMaxHoursPerTerm(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintTeachersMaxHoursPerTerm")){
+					crt_constraint=readTeachersMaxHoursPerTerm(xmlReader, xmlReadingLog);
+				}
+				//
 				else if(xmlReader.name()==QString("ConstraintTeacherMaxHoursContinuously")){
 					crt_constraint=readTeacherMaxHoursContinuously(xmlReader, xmlReadingLog);
 				}
@@ -39971,6 +40039,109 @@ TimeConstraint* Rules::readStudentsPairOfMutuallyExclusiveTimeSlots(QXmlStreamRe
 		delete cn;
 		cn=nullptr;
 		return nullptr;
+	}
+	return cn;
+}
+
+TimeConstraint* Rules::readTeacherMaxHoursPerTerm(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeacherMaxHoursPerTerm"));
+	
+	ConstraintTeacherMaxHoursPerTerm* cn=new ConstraintTeacherMaxHoursPerTerm();
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Max_Hours_Per_Term")){
+			QString text=xmlReader.readElementText();
+			cn->maxHoursPerTerm=text.toInt();
+			if(cn->maxHoursPerTerm<=0 || cn->maxHoursPerTerm > this->nDaysPerTerm*this->nHoursPerDay){
+				xmlReader.raiseError(tr("%1 is incorrect").arg("Max_Hours_Per_Term"));
+				/*RulesReconcilableMessage::information(parent, tr("FET information"),
+					tr("Constraint TeacherMaxDaysPerWeek max days corrupt for teacher %1, max days %2 <= 0 or >nDaysPerWeek, ignoring constraint")
+					.arg(cn->teacherName)
+					.arg(text));*/
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			assert(cn->maxHoursPerTerm>0 && cn->maxHoursPerTerm <= this->nDaysPerTerm*this->nHoursPerDay);
+			xmlReadingLog+="    Max. hours per term="+CustomFETString::number(cn->maxHoursPerTerm)+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
+TimeConstraint* Rules::readTeachersMaxHoursPerTerm(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeachersMaxHoursPerTerm"));
+	
+	ConstraintTeachersMaxHoursPerTerm* cn=new ConstraintTeachersMaxHoursPerTerm();
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Max_Hours_Per_Term")){
+			QString text=xmlReader.readElementText();
+			cn->maxHoursPerTerm=text.toInt();
+			if(cn->maxHoursPerTerm<=0 || cn->maxHoursPerTerm > this->nDaysPerTerm*this->nHoursPerDay){
+				xmlReader.raiseError(tr("%1 is incorrect").arg("Max_Hours_Per_Term"));
+				/*RulesReconcilableMessage::information(parent, tr("FET information"),
+					tr("Constraint TeacherMaxDaysPerWeek max days corrupt for teacher %1, max days %2 <= 0 or >nDaysPerWeek, ignoring constraint")
+					.arg(cn->teacherName)
+					.arg(text));*/
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			assert(cn->maxHoursPerTerm>0 && cn->maxHoursPerTerm <= this->nDaysPerTerm*this->nHoursPerDay);
+			xmlReadingLog+="    Max. hours per term="+CustomFETString::number(cn->maxHoursPerTerm)+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
 	}
 	return cn;
 }

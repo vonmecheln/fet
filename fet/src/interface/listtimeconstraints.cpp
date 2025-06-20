@@ -2884,6 +2884,24 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				break;
 			}
+		//235
+		case CONSTRAINT_TEACHER_MAX_HOURS_PER_TERM:
+			{
+				dialogTitle=tr("Constraints teacher max hours per term", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsTeacherMaxHoursPerTerm");
+
+				teachersComboBox=new QComboBox;
+
+				break;
+			}
+		//236
+		case CONSTRAINT_TEACHERS_MAX_HOURS_PER_TERM:
+			{
+				dialogTitle=tr("Constraints teachers max hours per term", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsTeachersMaxHoursPerTerm");
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -6521,6 +6539,22 @@ filtered_ok:
 				assert(teachersComboBox!=nullptr);
 				ConstraintTeacherMaxSingleGapsInSelectedTimeSlots* ctr=(ConstraintTeacherMaxSingleGapsInSelectedTimeSlots*)tc;
 				return teachersComboBox->currentText()==QString("") || teachersComboBox->currentText()==ctr->teacher;
+
+				break;
+			}
+		//235
+		case CONSTRAINT_TEACHER_MAX_HOURS_PER_TERM:
+			{
+				assert(teachersComboBox!=nullptr);
+				ConstraintTeacherMaxHoursPerTerm* ctr=(ConstraintTeacherMaxHoursPerTerm*)tc;
+				return teachersComboBox->currentText()==QString("") || teachersComboBox->currentText()==ctr->teacherName;
+
+				break;
+			}
+		//236
+		case CONSTRAINT_TEACHERS_MAX_HOURS_PER_TERM:
+			{
+				return true;
 
 				break;
 			}

@@ -7158,6 +7158,49 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				break;
 			}
+		//235
+		case CONSTRAINT_TEACHER_MAX_HOURS_PER_TERM:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add teacher max hours per term", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintTeacherMaxHoursPerTerm");
+				}
+				else{
+					dialogTitle=tr("Modify teacher max hours per term", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintTeacherMaxHoursPerTerm");
+				}
+
+				teacherLabel=new QLabel(tr("Teacher"));
+				teachersComboBox=new QComboBox;
+
+				labelForSpinBox=new QLabel(tr("Max hours per term"));
+				spinBox=new QSpinBox;
+				spinBox->setMinimum(1);
+				spinBox->setMaximum(gt.rules.nDaysPerTerm*gt.rules.nHoursPerDay);
+				spinBox->setValue(gt.rules.nDaysPerTerm*gt.rules.nHoursPerDay);
+
+				break;
+			}
+		//236
+		case CONSTRAINT_TEACHERS_MAX_HOURS_PER_TERM:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add teachers max hours per term", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintTeachersMaxHoursPerTerm");
+				}
+				else{
+					dialogTitle=tr("Modify teachers max hours per term", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintTeachersMaxHoursPerTerm");
+				}
+
+				labelForSpinBox=new QLabel(tr("Max hours per term"));
+				spinBox=new QSpinBox;
+				spinBox->setMinimum(1);
+				spinBox->setMaximum(gt.rules.nDaysPerTerm*gt.rules.nHoursPerDay);
+				spinBox->setValue(gt.rules.nDaysPerTerm*gt.rules.nHoursPerDay);
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -7936,6 +7979,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			case CONSTRAINT_TEACHERS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
 				[[fallthrough]];
 			case CONSTRAINT_TEACHER_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+				[[fallthrough]];
+			case CONSTRAINT_TEACHER_MAX_HOURS_PER_TERM:
+				[[fallthrough]];
+			case CONSTRAINT_TEACHERS_MAX_HOURS_PER_TERM:
 				addConstraintsPushButton=new QPushButton(tr("Add constraints"));
 				break;
 			
@@ -11820,6 +11867,25 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 					break;
 				}
+			//235
+			case CONSTRAINT_TEACHER_MAX_HOURS_PER_TERM:
+				{
+					ConstraintTeacherMaxHoursPerTerm* ctr=(ConstraintTeacherMaxHoursPerTerm*)oldtc;
+
+					teachersComboBox->setCurrentIndex(teachersComboBox->findText(ctr->teacherName));
+					spinBox->setValue(ctr->maxHoursPerTerm);
+
+					break;
+				}
+			//236
+			case CONSTRAINT_TEACHERS_MAX_HOURS_PER_TERM:
+				{
+					ConstraintTeachersMaxHoursPerTerm* ctr=(ConstraintTeachersMaxHoursPerTerm*)oldtc;
+
+					spinBox->setValue(ctr->maxHoursPerTerm);
+
+					break;
+				}
 
 			default:
 				assert(0);
@@ -15592,6 +15658,20 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 
 				break;
 			}
+		//235
+		case CONSTRAINT_TEACHER_MAX_HOURS_PER_TERM:
+			{
+				tc=new ConstraintTeacherMaxHoursPerTerm(weight, spinBox->value(), teachersComboBox->currentText());
+
+				break;
+			}
+		//236
+		case CONSTRAINT_TEACHERS_MAX_HOURS_PER_TERM:
+			{
+				tc=new ConstraintTeachersMaxHoursPerTerm(weight, spinBox->value());
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -16775,6 +16855,23 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 
 				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
 					TimeConstraint *ctr=new ConstraintTeacherMaxSingleGapsInSelectedTimeSlots(weight, tch->name, spinBox->value(), days, hours);
+					bool tmp2=gt.rules.addTimeConstraint(ctr);
+					assert(tmp2);
+
+					ctrs+=ctr->getDetailedDescription(gt.rules);
+					ctrs+=QString("\n");
+				}
+
+				break;
+			}
+		//235
+		case CONSTRAINT_TEACHER_MAX_HOURS_PER_TERM:
+			[[fallthrough]];
+		//236
+		case CONSTRAINT_TEACHERS_MAX_HOURS_PER_TERM:
+			{
+				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
+					TimeConstraint *ctr=new ConstraintTeacherMaxHoursPerTerm(weight, spinBox->value(), tch->name);
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
@@ -21503,6 +21600,25 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				ctr->selectedDays=days;
 				ctr->selectedHours=hours;
+
+				break;
+			}
+		//235
+		case CONSTRAINT_TEACHER_MAX_HOURS_PER_TERM:
+			{
+				ConstraintTeacherMaxHoursPerTerm* ctr=(ConstraintTeacherMaxHoursPerTerm*)oldtc;
+
+				ctr->teacherName=teachersComboBox->currentText();
+				ctr->maxHoursPerTerm=spinBox->value();
+
+				break;
+			}
+		//236
+		case CONSTRAINT_TEACHERS_MAX_HOURS_PER_TERM:
+			{
+				ConstraintTeachersMaxHoursPerTerm* ctr=(ConstraintTeachersMaxHoursPerTerm*)oldtc;
+
+				ctr->maxHoursPerTerm=spinBox->value();
 
 				break;
 			}

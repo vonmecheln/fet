@@ -10888,3 +10888,19 @@ Is it possible for your program to allow users to make manual edits?
 From Lekcir Ali (on Facebook):
 
 Could you use artificial intelligence to further develop your program in order to make it easier to work with and to facilitate data entry and constraints?
+
+711--------------------------------------------------------
+From Omar (on Facebook):
+
+(translated from Arabic with Google Translate)
+
+Can developer Liviu Lalescu introduce artificial intelligence into the FET program? Is it possible, when copying tables in FET, to give the addition as
+writing at the end of the tables the date of the supervisor, the manager? Is it possible, when producing tables when work is stopped, to directly
+determine the entry that stopped work for students or teachers?
+
+712--------------------------------------------------------
+From mikkojoo (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6411.0
+
+Add the constraints of type teacher(s) min hours per term (in the Terms mode). The variant with 'max' was implemented in version 7.2.4.

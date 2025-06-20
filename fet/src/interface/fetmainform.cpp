@@ -1955,6 +1955,9 @@ void FetMainForm::createActionsForConstraints()
 	dataTimeConstraintsTeacherMaxDaysPerWeekAction = new QAction(this);
 	dataTimeConstraintsTeachersMaxHoursDailyAction = new QAction(this);
 
+	dataTimeConstraintsTeacherMaxHoursPerTermAction = new QAction(this);
+	dataTimeConstraintsTeachersMaxHoursPerTermAction = new QAction(this);
+
 	dataTimeConstraintsTeachersMaxHoursDailyInIntervalAction = new QAction(this);
 	dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction = new QAction(this);
 	dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction = new QAction(this);
@@ -2296,6 +2299,9 @@ void FetMainForm::createActionsForConstraints()
 	connect(dataTimeConstraintsBreakTimesAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsBreakTimesAction_triggered);
 	connect(dataTimeConstraintsTeacherMaxDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxDaysPerWeekAction_triggered);
 	connect(dataTimeConstraintsTeachersMaxHoursDailyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxHoursDailyAction_triggered);
+
+	connect(dataTimeConstraintsTeacherMaxHoursPerTermAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxHoursPerTermAction_triggered);
+	connect(dataTimeConstraintsTeachersMaxHoursPerTermAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxHoursPerTermAction_triggered);
 
 	connect(dataTimeConstraintsTeachersMaxHoursDailyInIntervalAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxHoursDailyInIntervalAction_triggered);
 	connect(dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction_triggered);
@@ -2686,6 +2692,9 @@ void FetMainForm::retranslateConstraints()
 	dataTimeConstraintsBreakTimesAction->setText(QCoreApplication::translate("FetMainForm_template", "Break times", nullptr));
 	dataTimeConstraintsTeacherMaxDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max days per week for a teacher", nullptr));
 	dataTimeConstraintsTeachersMaxHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily for all teachers", nullptr));
+
+	dataTimeConstraintsTeacherMaxHoursPerTermAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours per term for a teacher", nullptr));
+	dataTimeConstraintsTeachersMaxHoursPerTermAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours per term for all teachers", nullptr));
 
 	dataTimeConstraintsTeachersMaxHoursDailyInIntervalAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily in an hourly interval for all teachers", nullptr));
 	dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily in an hourly interval for a teacher", nullptr));
@@ -4158,6 +4167,9 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction);
 		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherMinRestingHoursAction);
 
+		menuA_teacher_2_time_constraints->addSeparator();
+		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursPerTermAction);
+
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersNotAvailableTimesAction);
 		menuAll_teachers_1_time_constraints->addSeparator();
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersMaxDaysPerWeekAction);
@@ -4184,6 +4196,9 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction);
 		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction);
 		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersMinRestingHoursAction);
+
+		menuAll_teachers_2_time_constraints->addSeparator();
+		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursPerTermAction);
 
 		menuA_students_set_1_time_constraints->addAction(dataTimeConstraintsStudentsSetNotAvailableTimesAction);
 		menuA_students_set_1_time_constraints->addSeparator();
@@ -8327,6 +8342,46 @@ void FetMainForm::dataTimeConstraintsTeachersMaxDaysPerWeekAction_triggered()
 	setParentAndOtherThings(&form, this);
 	form.exec();*/
 	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MAX_DAYS_PER_WEEK);
+}
+
+void FetMainForm::dataTimeConstraintsTeacherMaxHoursPerTermAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	/*ConstraintTeacherMaxDaysPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHER_MAX_HOURS_PER_TERM);
+}
+
+void FetMainForm::dataTimeConstraintsTeachersMaxHoursPerTermAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	/*ConstraintTeacherMaxDaysPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_TEACHERS_MAX_HOURS_PER_TERM);
 }
 
 void FetMainForm::dataTimeConstraintsTeacherMinDaysPerWeekAction_triggered()

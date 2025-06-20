@@ -1,5 +1,5 @@
 /***************************************************************************
-                          addormodifytimeconstraint.h  -  description
+                          modifytimeconstraint.h  -  description
                              -------------------
     begin                : 2024
     copyright            : (C) 2024 by Liviu Lalescu

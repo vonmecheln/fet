@@ -1,9 +1,11 @@
+ 7.2.4
+	- Added a new type of constraint for the Terms mode: teacher(s) max hours per term (suggested by mikkojoo).
  7.2.3
 	- Timetable generation code improvements in the new constraints of type teacher(s)/students (set) max single gaps in selected time slots (found with
 	the help of Yush Yuen).
 	- Bug fix: the option '--printteachers=[true|false]' of FET-CL was not correctly recognized, because of a typo in the source code (reported by samloba).
 	- The inactive items (activities, subactivities, time constraints, space constraints, and group activities in the initial order items) will have a
-	corresponding color (suggested by GUEFFAZ REDA).
+	corresponding distinctive color (suggested by GUEFFAZ REDA).
  7.2.2
 	- Bug fix: for partial timetables, the conflicts for the constraints of type teacher(s)/students (set) max single gaps in selected time slots were
 	not logged.

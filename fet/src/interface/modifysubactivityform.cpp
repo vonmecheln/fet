@@ -501,7 +501,7 @@ void ModifySubactivityForm::help()
 	te->setReadOnly(true);
 	QPushButton* pb=new QPushButton(tr("OK"));
 
-	QHBoxLayout* hl=new QHBoxLayout(0);
+	QHBoxLayout* hl=new QHBoxLayout();
 	hl->addStretch(1);
 	hl->addWidget(pb);
 

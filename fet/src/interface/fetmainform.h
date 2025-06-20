@@ -100,6 +100,9 @@ private:
 	QAction* dataTimeConstraintsTeacherMaxDaysPerWeekAction;
 	QAction* dataTimeConstraintsTeachersMaxHoursDailyAction;
 
+	QAction* dataTimeConstraintsTeacherMaxHoursPerTermAction;
+	QAction* dataTimeConstraintsTeachersMaxHoursPerTermAction;
+
 	QAction* dataTimeConstraintsTeachersMaxHoursDailyInIntervalAction;
 	QAction* dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction;
 	QAction* dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction;
@@ -675,6 +678,9 @@ public slots:
 	void dataTimeConstraintsTeachersNotAvailableTimesAction_triggered();
 	void dataTimeConstraintsTeacherMaxDaysPerWeekAction_triggered();
 	void dataTimeConstraintsTeachersMaxDaysPerWeekAction_triggered();
+
+	void dataTimeConstraintsTeacherMaxHoursPerTermAction_triggered();
+	void dataTimeConstraintsTeachersMaxHoursPerTermAction_triggered();
 
 	void dataTimeConstraintsTeacherMinDaysPerWeekAction_triggered();
 	void dataTimeConstraintsTeachersMinDaysPerWeekAction_triggered();

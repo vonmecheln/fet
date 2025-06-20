@@ -3080,6 +3080,32 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxSingleGap
 	return stream;
 }
 
+//235
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxHoursPerTerm& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxHoursPerTerm<<tc.teacherName;
+
+	return stream;
+}
+
+//236
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxHoursPerTerm& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxHoursPerTerm;
+
+	return stream;
+}
+
 //1
 QDataStream& operator>>(QDataStream& stream, ConstraintBasicCompulsoryTime& tc)
 {
@@ -6116,6 +6142,32 @@ QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxSingleGapsInSel
 	return stream;
 }
 
+//235
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxHoursPerTerm& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxHoursPerTerm>>tc.teacherName;
+
+	return stream;
+}
+
+//236
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxHoursPerTerm& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxHoursPerTerm;
+
+	return stream;
+}
+
 static QString trueFalse(bool x){
 	if(!x)
 		return QString("false");
@@ -7738,6 +7790,10 @@ bool TimeConstraint::canBeUsedInTermsMode()
 		case CONSTRAINT_TEACHERS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
 			[[fallthrough]];
 		case CONSTRAINT_TEACHER_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MAX_HOURS_PER_TERM:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHERS_MAX_HOURS_PER_TERM:
 			t=true;
 			break;
 		
@@ -70092,6 +70148,374 @@ bool ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::repairWrongDayOrHour(Rul
 	
 	r.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&r);
+
+	return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTeacherMaxHoursPerTerm::ConstraintTeacherMaxHoursPerTerm()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_TEACHER_MAX_HOURS_PER_TERM;
+}
+
+ConstraintTeacherMaxHoursPerTerm::ConstraintTeacherMaxHoursPerTerm(double wp, int maxht, const QString& tn)
+	 : TimeConstraint(wp)
+{
+	this->teacherName = tn;
+	this->maxHoursPerTerm=maxht;
+	this->type=CONSTRAINT_TEACHER_MAX_HOURS_PER_TERM;
+}
+
+bool ConstraintTeacherMaxHoursPerTerm::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	Q_UNUSED(parent);
+
+	//this->teacher_ID=r.searchTeacher(this->teacherName);
+	teacher_ID=r.teachersHash.value(teacherName, -1);
+	assert(this->teacher_ID>=0);
+	return true;
+}
+
+bool ConstraintTeacherMaxHoursPerTerm::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintTeacherMaxHoursPerTerm::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintTeacherMaxHoursPerTerm>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+=IL3+"<Max_Hours_Per_Term>"+CustomFETString::number(this->maxHoursPerTerm)+"</Max_Hours_Per_Term>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeacherMaxHoursPerTerm>\n";
+	return s;
+}
+
+QString ConstraintTeacherMaxHoursPerTerm::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+		
+	QString s=tr("Teacher max hours per term");s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
+	s+=tr("MHPT:%1", "Max hours per term").arg(this->maxHoursPerTerm);
+
+	return begin+s+end;
+}
+
+QString ConstraintTeacherMaxHoursPerTerm::getDetailedDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("A teacher must respect the maximum number of hours per term");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
+	s+=tr("Maximum hours per term=%1").arg(this->maxHoursPerTerm);s+="\n";
+
+	if(!active){
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintTeacherMaxHoursPerTerm::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	Q_UNUSED(cl);
+	Q_UNUSED(dl);
+	Q_UNUSED(conflictsString);
+
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken=0;
+
+	int t=this->teacher_ID;
+	
+	for(int term=0; term<r.nTerms; term++){
+		int nh=0;
+
+		for(int d=term*r.nDaysPerTerm; d<(term+1)*r.nDaysPerTerm; d++)
+			for(int h=0; h<r.nHoursPerDay; h++)
+				nh += teachersMatrix[t][d][h]>=1 ? 1 : 0;
+
+		if(nh>this->maxHoursPerTerm)
+			nbroken+=nh-this->maxHoursPerTerm;
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintTeacherMaxHoursPerTerm::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxHoursPerTerm::isRelatedToTeacher(Teacher* t)
+{
+	if(this->teacherName==t->name)
+		return true;
+	return false;
+}
+
+bool ConstraintTeacherMaxHoursPerTerm::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxHoursPerTerm::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxHoursPerTerm::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxHoursPerTerm::hasWrongDayOrHour(Rules& r)
+{
+	if(maxHoursPerTerm>r.nDaysPerTerm*r.nHoursPerDay)
+		return true;
+	
+	return false;
+}
+
+bool ConstraintTeacherMaxHoursPerTerm::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintTeacherMaxHoursPerTerm::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(maxHoursPerTerm>r.nDaysPerTerm*r.nHoursPerDay)
+		maxHoursPerTerm=r.nDaysPerTerm*r.nHoursPerDay;
+
+	return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTeachersMaxHoursPerTerm::ConstraintTeachersMaxHoursPerTerm()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_TEACHERS_MAX_HOURS_PER_TERM;
+}
+
+ConstraintTeachersMaxHoursPerTerm::ConstraintTeachersMaxHoursPerTerm(double wp, int maxht)
+	 : TimeConstraint(wp)
+{
+	this->maxHoursPerTerm=maxht;
+	this->type=CONSTRAINT_TEACHERS_MAX_HOURS_PER_TERM;
+}
+
+bool ConstraintTeachersMaxHoursPerTerm::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	Q_UNUSED(parent);
+	Q_UNUSED(r);
+
+	return true;
+}
+
+bool ConstraintTeachersMaxHoursPerTerm::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintTeachersMaxHoursPerTerm::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintTeachersMaxHoursPerTerm>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Max_Hours_Per_Term>"+CustomFETString::number(this->maxHoursPerTerm)+"</Max_Hours_Per_Term>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeachersMaxHoursPerTerm>\n";
+	return s;
+}
+
+QString ConstraintTeachersMaxHoursPerTerm::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+		
+	QString s=tr("Teachers max hours per term");s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("MHPT:%1", "Max hours per term").arg(this->maxHoursPerTerm);
+
+	return begin+s+end;
+}
+
+QString ConstraintTeachersMaxHoursPerTerm::getDetailedDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("All teachers must respect the maximum number of hours per term");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Maximum hours per term=%1").arg(this->maxHoursPerTerm);s+="\n";
+
+	if(!active){
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintTeachersMaxHoursPerTerm::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	Q_UNUSED(cl);
+	Q_UNUSED(dl);
+	Q_UNUSED(conflictsString);
+
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken=0;
+
+	for(int t=0; t<r.nInternalTeachers; t++){
+		for(int term=0; term<r.nTerms; term++){
+			int nh=0;
+
+			for(int d=term*r.nDaysPerTerm; d<(term+1)*r.nDaysPerTerm; d++)
+				for(int h=0; h<r.nHoursPerDay; h++)
+					nh += teachersMatrix[t][d][h]>=1 ? 1 : 0;
+
+			if(nh>this->maxHoursPerTerm)
+				nbroken+=nh-this->maxHoursPerTerm;
+		}
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintTeachersMaxHoursPerTerm::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxHoursPerTerm::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return true;
+}
+
+bool ConstraintTeachersMaxHoursPerTerm::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxHoursPerTerm::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxHoursPerTerm::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxHoursPerTerm::hasWrongDayOrHour(Rules& r)
+{
+	if(maxHoursPerTerm>r.nDaysPerTerm*r.nHoursPerDay)
+		return true;
+	
+	return false;
+}
+
+bool ConstraintTeachersMaxHoursPerTerm::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintTeachersMaxHoursPerTerm::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(maxHoursPerTerm>r.nDaysPerTerm*r.nHoursPerDay)
+		maxHoursPerTerm=r.nDaysPerTerm*r.nHoursPerDay;
 
 	return true;
 }

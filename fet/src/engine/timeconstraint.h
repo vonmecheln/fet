@@ -395,6 +395,9 @@ const int CONSTRAINT_STUDENTS_SET_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS								
 const int CONSTRAINT_TEACHERS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS											=233;
 const int CONSTRAINT_TEACHER_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS												=234;
 
+const int CONSTRAINT_TEACHER_MAX_HOURS_PER_TERM																	=235;
+const int CONSTRAINT_TEACHERS_MAX_HOURS_PER_TERM																=236;
+
 class QDataStream;
 
 QString getActivityDescription(Rules& r, int id);
@@ -11903,6 +11906,90 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
+class ConstraintTeacherMaxHoursPerTerm: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeacherMaxHoursPerTerm)
+
+public:
+	int maxHoursPerTerm;
+
+	/**
+	The teacher's name
+	*/
+	QString teacherName;
+
+	/**
+	The teacher's id, or index in the rules
+	*/
+	int teacher_ID;
+
+	ConstraintTeacherMaxHoursPerTerm();
+
+	ConstraintTeacherMaxHoursPerTerm(double wp, int maxht, const QString& t);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintTeachersMaxHoursPerTerm: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeachersMaxHoursPerTerm)
+
+public:
+	int maxHoursPerTerm;
+
+	ConstraintTeachersMaxHoursPerTerm();
+
+	ConstraintTeachersMaxHoursPerTerm(double wp, int maxht);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
 //1
 QDataStream& operator<<(QDataStream& stream, const ConstraintBasicCompulsoryTime& tc);
 //2
@@ -12371,6 +12458,10 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxSingl
 QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxSingleGapsInSelectedTimeSlots& tc);
 //234
 QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxSingleGapsInSelectedTimeSlots& tc);
+//235
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxHoursPerTerm& tc);
+//236
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxHoursPerTerm& tc);
 
 //1
 QDataStream& operator>>(QDataStream& stream, ConstraintBasicCompulsoryTime& tc);
@@ -12840,5 +12931,9 @@ QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxSingleGapsI
 QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxSingleGapsInSelectedTimeSlots& tc);
 //234
 QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxSingleGapsInSelectedTimeSlots& tc);
+//235
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxHoursPerTerm& tc);
+//236
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxHoursPerTerm& tc);
 
 #endif

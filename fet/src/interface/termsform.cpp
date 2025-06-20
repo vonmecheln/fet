@@ -58,15 +58,39 @@ void TermsForm::ok()
 {
 	int cnt_mod=0;
 	for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList)){
-		if(tc->type==CONSTRAINT_MAX_TERMS_BETWEEN_ACTIVITIES){
-			ConstraintMaxTermsBetweenActivities* cmt=(ConstraintMaxTermsBetweenActivities*)tc;
-			if(cmt->maxTerms>=numberOfTermsSpinBox->value())
-				cnt_mod++;
-		}
-		else if(tc->type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_TERMS){
-			ConstraintActivitiesOccupyMaxTerms* camt=(ConstraintActivitiesOccupyMaxTerms*)tc;
-			if(camt->maxOccupiedTerms>numberOfTermsSpinBox->value())
-				cnt_mod++;
+		switch(tc->type){
+			case CONSTRAINT_MAX_TERMS_BETWEEN_ACTIVITIES:
+				{
+					ConstraintMaxTermsBetweenActivities* cmt=(ConstraintMaxTermsBetweenActivities*)tc;
+					if(cmt->maxTerms>=numberOfTermsSpinBox->value())
+						cnt_mod++;
+					break;
+				}
+			case CONSTRAINT_ACTIVITIES_OCCUPY_MAX_TERMS:
+				{
+					ConstraintActivitiesOccupyMaxTerms* camt=(ConstraintActivitiesOccupyMaxTerms*)tc;
+					if(camt->maxOccupiedTerms>numberOfTermsSpinBox->value())
+						cnt_mod++;
+					break;
+				}
+			case CONSTRAINT_TEACHER_MAX_HOURS_PER_TERM:
+				{
+					ConstraintTeacherMaxHoursPerTerm* ctmht=(ConstraintTeacherMaxHoursPerTerm*)tc;
+					if(ctmht->maxHoursPerTerm > numberOfDaysPerTermSpinBox->value() * gt.rules.nHoursPerDay)
+						cnt_mod++;
+					break;
+				}
+			case CONSTRAINT_TEACHERS_MAX_HOURS_PER_TERM:
+				{
+					ConstraintTeachersMaxHoursPerTerm* ctsmht=(ConstraintTeachersMaxHoursPerTerm*)tc;
+					if(ctsmht->maxHoursPerTerm > numberOfDaysPerTermSpinBox->value() * gt.rules.nHoursPerDay)
+						cnt_mod++;
+					break;
+				}
+			
+			default:
+				//do nothing
+				break;
 		}
 	}
 	
