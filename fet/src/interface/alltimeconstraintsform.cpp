@@ -50,6 +50,7 @@
 #include <QObject>
 #include <QMetaObject>
 
+#include <QBrush>
 #include <QPalette>
 
 #include <algorithm>
@@ -308,15 +309,23 @@ void AllTimeConstraintsForm::moveTimeConstraintUp()
 	
 	gt.rules.addUndoPoint(tr("A constraint was moved up:\n\n%1", "%1 is the detailed description of the constraint").arg(tc1->getDetailedDescription(gt.rules)));
 	
-	if(tc2->active)
-		constraintsListWidget->item(i)->setBackground(constraintsListWidget->palette().base());
-	else
-		constraintsListWidget->item(i)->setBackground(constraintsListWidget->palette().alternateBase());
+	if(tc2->active){
+		constraintsListWidget->item(i)->setBackground(QBrush());
+		constraintsListWidget->item(i)->setForeground(QBrush());
+	}
+	else{
+		constraintsListWidget->item(i)->setBackground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+		constraintsListWidget->item(i)->setForeground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+	}
 
-	if(tc1->active)
-		constraintsListWidget->item(i-1)->setBackground(constraintsListWidget->palette().base());
-	else
-		constraintsListWidget->item(i-1)->setBackground(constraintsListWidget->palette().alternateBase());
+	if(tc1->active){
+		constraintsListWidget->item(i-1)->setBackground(QBrush());
+		constraintsListWidget->item(i-1)->setForeground(QBrush());
+	}
+	else{
+		constraintsListWidget->item(i-1)->setBackground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+		constraintsListWidget->item(i-1)->setForeground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+	}
 
 	constraintsListWidget->setCurrentRow(i-1);
 	constraintChanged(/*i-1*/);
@@ -364,15 +373,23 @@ void AllTimeConstraintsForm::moveTimeConstraintDown()
 	
 	gt.rules.addUndoPoint(tr("A constraint was moved down:\n\n%1", "%1 is the detailed description of the constraint").arg(tc1->getDetailedDescription(gt.rules)));
 	
-	if(tc2->active)
-		constraintsListWidget->item(i)->setBackground(constraintsListWidget->palette().base());
-	else
-		constraintsListWidget->item(i)->setBackground(constraintsListWidget->palette().alternateBase());
+	if(tc2->active){
+		constraintsListWidget->item(i)->setBackground(QBrush());
+		constraintsListWidget->item(i)->setForeground(QBrush());
+	}
+	else{
+		constraintsListWidget->item(i)->setBackground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+		constraintsListWidget->item(i)->setForeground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+	}
 
-	if(tc1->active)
-		constraintsListWidget->item(i+1)->setBackground(constraintsListWidget->palette().base());
-	else
-		constraintsListWidget->item(i+1)->setBackground(constraintsListWidget->palette().alternateBase());
+	if(tc1->active){
+		constraintsListWidget->item(i+1)->setBackground(QBrush());
+		constraintsListWidget->item(i+1)->setForeground(QBrush());
+	}
+	else{
+		constraintsListWidget->item(i+1)->setBackground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+		constraintsListWidget->item(i+1)->setForeground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+	}
 
 	constraintsListWidget->setCurrentRow(i+1);
 	constraintChanged(/*i+1*/);
@@ -413,10 +430,13 @@ void AllTimeConstraintsForm::filterChanged()
 		assert(filterOk(ctr));
 		constraintsListWidget->addItem(ctr->getDescription(gt.rules));
 		
-		if(ctr->active)
+		if(ctr->active){
 			n_active++;
-		else
-			constraintsListWidget->item(constraintsListWidget->count()-1)->setBackground(constraintsListWidget->palette().alternateBase());
+		}
+		else{
+			constraintsListWidget->item(constraintsListWidget->count()-1)->setBackground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+			constraintsListWidget->item(constraintsListWidget->count()-1)->setForeground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+		}
 	}
 
 	if(constraintsListWidget->count()<=0)

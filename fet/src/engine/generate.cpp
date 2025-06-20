@@ -21313,7 +21313,7 @@ impossiblestudentsmingapsbetweenactivitytagbetweenmorningandafternoon:
 		okstudentsmaxsinglegapsinselectedtimeslots=true;
 		
 		if(haveStudentsMaxSingleGapsInSelectedTimeSlots){
-			QSet<int> conflActivitiesSet(conflActivities[newtime].begin(), conflActivities[newtime].end());
+			QSet<int> conflActivitiesSet(conflActivities[newtime].constBegin(), conflActivities[newtime].constEnd());
 			
 			for(int sbg : std::as_const(act->iSubgroupsList)){
 				for(SubgroupMaxSingleGapsInSelectedTimeSlots_item* item : std::as_const(smsgistsListForSubgroup[sbg])){
@@ -21367,7 +21367,7 @@ impossiblestudentsmingapsbetweenactivitytagbetweenmorningandafternoon:
 							goto impossiblestudentsmaxsinglegapsinselectedtimeslots;
 						}
 						
-						QList<int> tl(removableActsSet.begin(), removableActsSet.end());
+						QList<int> tl(removableActsSet.constBegin(), removableActsSet.constEnd());
 						std::stable_sort(tl.begin(), tl.end()); //to keep generation identical on any computer, for the same random seed
 						
 						int q=rng.intMRG32k3a(tl.count());
@@ -31311,7 +31311,7 @@ impossibleteachersmingapsbetweenactivitytagbetweenmorningandafternoon:
 		okteachersmaxsinglegapsinselectedtimeslots=true;
 		
 		if(haveTeachersMaxSingleGapsInSelectedTimeSlots){
-			QSet<int> conflActivitiesSet(conflActivities[newtime].begin(), conflActivities[newtime].end());
+			QSet<int> conflActivitiesSet(conflActivities[newtime].constBegin(), conflActivities[newtime].constEnd());
 			
 			for(int tch : std::as_const(act->iTeachersList)){
 				for(TeacherMaxSingleGapsInSelectedTimeSlots_item* item : std::as_const(tmsgistsListForTeacher[tch])){
@@ -31365,7 +31365,7 @@ impossibleteachersmingapsbetweenactivitytagbetweenmorningandafternoon:
 							goto impossibleteachersmaxsinglegapsinselectedtimeslots;
 						}
 						
-						QList<int> tl(removableActsSet.begin(), removableActsSet.end());
+						QList<int> tl(removableActsSet.constBegin(), removableActsSet.constEnd());
 						std::stable_sort(tl.begin(), tl.end()); //to keep generation identical on any computer, for the same random seed
 						
 						int q=rng.intMRG32k3a(tl.count());

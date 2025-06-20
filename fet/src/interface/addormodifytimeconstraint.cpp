@@ -39,6 +39,7 @@
 #include <QSet>
 
 #include <QBrush>
+#include <QPalette>
 
 #include <QGuiApplication>
 #include <QPainter>
@@ -8983,6 +8984,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 						assert(act!=nullptr);
 						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 					}
 
 					break;
@@ -9001,6 +9006,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 						assert(act!=nullptr);
 						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 					}
 
 					break;
@@ -9019,6 +9028,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 						assert(act!=nullptr);
 						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 					}
 
 					spinBox->setValue(ctr->minDays);
@@ -9114,6 +9127,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 						assert(act!=nullptr);
 						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 					}
 
 					break;
@@ -9132,6 +9149,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 						assert(act!=nullptr);
 						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 					}
 
 					break;
@@ -9170,6 +9191,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 						assert(act!=nullptr);
 						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 					}
 
 					spinBox->setValue(ctr->minGaps);
@@ -9393,6 +9418,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 						assert(act!=nullptr);
 						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 					}
 
 					spinBox->setValue(ctr->maxDays);
@@ -9504,6 +9533,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 						assert(act!=nullptr);
 						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 					}
 
 					fillTimesTable(timesTable, ctr->selectedDays, ctr->selectedHours, true);
@@ -9525,6 +9558,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 						assert(act!=nullptr);
 						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 					}
 
 					fillTimesTable(timesTable, ctr->selectedDays, ctr->selectedHours, true);
@@ -9743,6 +9780,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 						assert(act!=nullptr);
 						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 					}
 
 					fillTimesTable(timesTable, ctr->selectedDays, ctr->selectedHours, true);
@@ -9764,6 +9805,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 						assert(act!=nullptr);
 						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 					}
 
 					fillTimesTable(timesTable, ctr->selectedDays, ctr->selectedHours, true);
@@ -10735,6 +10780,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 						assert(act!=nullptr);
 						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 					}
 
 					fillTimesTable(timesTable, ctr->selectedDays, ctr->selectedHours, true);
@@ -10757,6 +10806,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 						assert(act!=nullptr);
 						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 					}
 
 					spinBox->setValue(ctr->maxGaps);
@@ -10776,6 +10829,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 						assert(act!=nullptr);
 						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 					}
 
 					spinBox->setValue(ctr->maxActivitiesInATerm);
@@ -10795,6 +10852,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 						assert(act!=nullptr);
 						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 					}
 
 					spinBox->setValue(ctr->maxOccupiedTerms);
@@ -10880,6 +10941,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 						assert(act!=nullptr);
 						selectedActivitiesListWidget_TwoSetsOfActivities_1->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget_TwoSetsOfActivities_1->item(selectedActivitiesListWidget_TwoSetsOfActivities_1->count()-1)->setBackground(selectedActivitiesListWidget_TwoSetsOfActivities_1->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget_TwoSetsOfActivities_1->item(selectedActivitiesListWidget_TwoSetsOfActivities_1->count()-1)->setForeground(selectedActivitiesListWidget_TwoSetsOfActivities_1->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 					}
 
 					for(int actId : std::as_const(ctr->secondActivitiesIdsList)){
@@ -10887,6 +10952,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 						assert(act!=nullptr);
 						selectedActivitiesListWidget_TwoSetsOfActivities_2->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget_TwoSetsOfActivities_2->item(selectedActivitiesListWidget_TwoSetsOfActivities_2->count()-1)->setBackground(selectedActivitiesListWidget_TwoSetsOfActivities_2->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget_TwoSetsOfActivities_2->item(selectedActivitiesListWidget_TwoSetsOfActivities_2->count()-1)->setForeground(selectedActivitiesListWidget_TwoSetsOfActivities_2->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 					}
 
 					break;
@@ -10999,6 +11068,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 						assert(act!=nullptr);
 						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 					}
 
 					spinBox->setValue(ctr->minDays);
@@ -11020,6 +11093,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 						assert(act!=nullptr);
 						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 					}
 
 					spinBox->setValue(ctr->minActivitiesInATerm);
@@ -11041,6 +11118,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 						assert(act!=nullptr);
 						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 					}
 
 					spinBox->setValue(ctr->maxTerms);
@@ -11179,6 +11260,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 						assert(act!=nullptr);
 						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 					}
 
 					spinBox->setValue(ctr->maxDays);
@@ -11300,6 +11385,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 						assert(act!=nullptr);
 						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 					}
 
 					spinBox->setValue(ctr->maxHourlySpan);
@@ -11657,6 +11746,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 						assert(act!=nullptr);
 						selectedActivitiesListWidget_TwoSetsOfActivities_1->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget_TwoSetsOfActivities_1->item(selectedActivitiesListWidget_TwoSetsOfActivities_1->count()-1)->setBackground(selectedActivitiesListWidget_TwoSetsOfActivities_1->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget_TwoSetsOfActivities_1->item(selectedActivitiesListWidget_TwoSetsOfActivities_1->count()-1)->setForeground(selectedActivitiesListWidget_TwoSetsOfActivities_1->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 					}
 
 					for(int actId : std::as_const(ctr->activitiesBIds)){
@@ -11664,6 +11757,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 						assert(act!=nullptr);
 						selectedActivitiesListWidget_TwoSetsOfActivities_2->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget_TwoSetsOfActivities_2->item(selectedActivitiesListWidget_TwoSetsOfActivities_2->count()-1)->setBackground(selectedActivitiesListWidget_TwoSetsOfActivities_2->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget_TwoSetsOfActivities_2->item(selectedActivitiesListWidget_TwoSetsOfActivities_2->count()-1)->setForeground(selectedActivitiesListWidget_TwoSetsOfActivities_2->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 					}
 
 					fillTimesTable(timesTable, ctr->oDays, ctr->oHours, true);
@@ -22003,6 +22100,12 @@ int AddOrModifyTimeConstraint::filterActivitiesComboBox()
 	for(Activity* act : std::as_const(gt.rules.activitiesList)){
 		if(filterOk(act)){
 			activitiesComboBox->addItem(act->getDescription(gt.rules));
+			if(!act->active){
+				//activitiesComboBox->item(activitiesComboBox->count()-1)->setBackground(activitiesComboBox->palette().brush(QPalette::Disabled, QPalette::Window));
+				//activitiesComboBox->item(activitiesComboBox->count()-1)->setForeground(activitiesComboBox->palette().brush(QPalette::Disabled, QPalette::WindowText));
+				activitiesComboBox->setItemData(activitiesComboBox->count()-1, activitiesComboBox->palette().brush(QPalette::Disabled, QPalette::Window), Qt::BackgroundRole);
+				activitiesComboBox->setItemData(activitiesComboBox->count()-1, activitiesComboBox->palette().brush(QPalette::Disabled, QPalette::WindowText), Qt::ForegroundRole);
+			}
 			activitiesList.append(act->id);
 			if(initialActivityId>=0 && initialActivityId==act->id)
 				i=activitiesList.count()-1;
@@ -22029,7 +22132,17 @@ void AddOrModifyTimeConstraint::filterActivitiesListWidgets1And2()
 	for(Activity* act : std::as_const(gt.rules.activitiesList)){
 		if(filterOk(act)){
 			activitiesListWidget_TwoSetsOfActivities_1->addItem(act->getDescription(gt.rules));
+			if(!act->active){
+				activitiesListWidget_TwoSetsOfActivities_1->item(activitiesListWidget_TwoSetsOfActivities_1->count()-1)->setBackground(activitiesListWidget_TwoSetsOfActivities_1->palette().brush(QPalette::Disabled, QPalette::Window));
+				activitiesListWidget_TwoSetsOfActivities_1->item(activitiesListWidget_TwoSetsOfActivities_1->count()-1)->setForeground(activitiesListWidget_TwoSetsOfActivities_1->palette().brush(QPalette::Disabled, QPalette::WindowText));
+			}
+
 			activitiesListWidget_TwoSetsOfActivities_2->addItem(act->getDescription(gt.rules));
+			if(!act->active){
+				activitiesListWidget_TwoSetsOfActivities_2->item(activitiesListWidget_TwoSetsOfActivities_2->count()-1)->setBackground(activitiesListWidget_TwoSetsOfActivities_2->palette().brush(QPalette::Disabled, QPalette::Window));
+				activitiesListWidget_TwoSetsOfActivities_2->item(activitiesListWidget_TwoSetsOfActivities_2->count()-1)->setForeground(activitiesListWidget_TwoSetsOfActivities_2->palette().brush(QPalette::Disabled, QPalette::WindowText));
+			}
+
 			activitiesList.append(act->id);
 		}
 	}
@@ -22057,6 +22170,10 @@ void AddOrModifyTimeConstraint::filterActivitiesListWidget()
 				if(filterOk(act)){
 					if(act->activityGroupId==0 || act->id==act->activityGroupId){
 						activitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							activitiesListWidget->item(activitiesListWidget->count()-1)->setBackground(activitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							activitiesListWidget->item(activitiesListWidget->count()-1)->setForeground(activitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 						activitiesList.append(act->id);
 					}
 				}
@@ -22066,6 +22183,10 @@ void AddOrModifyTimeConstraint::filterActivitiesListWidget()
 			for(Activity* act : std::as_const(gt.rules.activitiesList)){
 				if(filterOk(act)){
 					activitiesListWidget->addItem(act->getDescription(gt.rules));
+					if(!act->active){
+						activitiesListWidget->item(activitiesListWidget->count()-1)->setBackground(activitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+						activitiesListWidget->item(activitiesListWidget->count()-1)->setForeground(activitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+					}
 					activitiesList.append(act->id);
 				}
 			}
@@ -22075,6 +22196,10 @@ void AddOrModifyTimeConstraint::filterActivitiesListWidget()
 		for(Activity* act : std::as_const(gt.rules.activitiesList)){
 			if(filterOk(act)){
 				activitiesListWidget->addItem(act->getDescription(gt.rules));
+				if(!act->active){
+					activitiesListWidget->item(activitiesListWidget->count()-1)->setBackground(activitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+					activitiesListWidget->item(activitiesListWidget->count()-1)->setForeground(activitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+				}
 				activitiesList.append(act->id);
 			}
 		}
@@ -22097,6 +22222,12 @@ int AddOrModifyTimeConstraint::first_activitiesComboBoxFilter()
 	for(Activity* act : std::as_const(gt.rules.activitiesList)){
 		if(first_filterOk(act)){
 			first_activitiesComboBox->addItem(act->getDescription(gt.rules));
+			if(!act->active){
+				//first_activitiesComboBox->item(first_activitiesComboBox->count()-1)->setBackground(first_activitiesComboBox->palette().brush(QPalette::Disabled, QPalette::Window));
+				//first_activitiesComboBox->item(first_activitiesComboBox->count()-1)->setForeground(first_activitiesComboBox->palette().brush(QPalette::Disabled, QPalette::WindowText));
+				first_activitiesComboBox->setItemData(first_activitiesComboBox->count()-1, first_activitiesComboBox->palette().brush(QPalette::Disabled, QPalette::Window), Qt::BackgroundRole);
+				first_activitiesComboBox->setItemData(first_activitiesComboBox->count()-1, first_activitiesComboBox->palette().brush(QPalette::Disabled, QPalette::WindowText), Qt::ForegroundRole);
+			}
 			first_activitiesList.append(act->id);
 			if(first_initialActivityId>=0 && first_initialActivityId==act->id)
 				i=first_activitiesList.count()-1;
@@ -22121,6 +22252,12 @@ int AddOrModifyTimeConstraint::second_activitiesComboBoxFilter()
 	for(Activity* act : std::as_const(gt.rules.activitiesList)){
 		if(second_filterOk(act)){
 			second_activitiesComboBox->addItem(act->getDescription(gt.rules));
+			if(!act->active){
+				//second_activitiesComboBox->item(second_activitiesComboBox->count()-1)->setBackground(second_activitiesComboBox->palette().brush(QPalette::Disabled, QPalette::Window));
+				//second_activitiesComboBox->item(second_activitiesComboBox->count()-1)->setForeground(second_activitiesComboBox->palette().brush(QPalette::Disabled, QPalette::WindowText));
+				second_activitiesComboBox->setItemData(second_activitiesComboBox->count()-1, second_activitiesComboBox->palette().brush(QPalette::Disabled, QPalette::Window), Qt::BackgroundRole);
+				second_activitiesComboBox->setItemData(second_activitiesComboBox->count()-1, second_activitiesComboBox->palette().brush(QPalette::Disabled, QPalette::WindowText), Qt::ForegroundRole);
+			}
 			second_activitiesList.append(act->id);
 			if(second_initialActivityId>=0 && second_initialActivityId==act->id)
 				i=second_activitiesList.count()-1;
@@ -22145,6 +22282,12 @@ int AddOrModifyTimeConstraint::third_activitiesComboBoxFilter()
 	for(Activity* act : std::as_const(gt.rules.activitiesList)){
 		if(third_filterOk(act)){
 			third_activitiesComboBox->addItem(act->getDescription(gt.rules));
+			if(!act->active){
+				//third_activitiesComboBox->item(third_activitiesComboBox->count()-1)->setBackground(third_activitiesComboBox->palette().brush(QPalette::Disabled, QPalette::Window));
+				//third_activitiesComboBox->item(third_activitiesComboBox->count()-1)->setForeground(third_activitiesComboBox->palette().brush(QPalette::Disabled, QPalette::WindowText));
+				third_activitiesComboBox->setItemData(third_activitiesComboBox->count()-1, third_activitiesComboBox->palette().brush(QPalette::Disabled, QPalette::Window), Qt::BackgroundRole);
+				third_activitiesComboBox->setItemData(third_activitiesComboBox->count()-1, third_activitiesComboBox->palette().brush(QPalette::Disabled, QPalette::WindowText), Qt::ForegroundRole);
+			}
 			third_activitiesList.append(act->id);
 			if(third_initialActivityId>=0 && third_initialActivityId==act->id)
 				i=third_activitiesList.count()-1;
@@ -22158,17 +22301,27 @@ int AddOrModifyTimeConstraint::third_activitiesComboBoxFilter()
 
 void AddOrModifyTimeConstraint::addAllActivitiesClicked()
 {
+	QSet<int> ts(selectedActivitiesList.constBegin(), selectedActivitiesList.constEnd());
+
 	for(int tmp=0; tmp<activitiesListWidget->count(); tmp++){
 		int _id=activitiesList.at(tmp);
 
 		QString actName=activitiesListWidget->item(tmp)->text();
 		assert(actName!="");
 
-		if(selectedActivitiesList.contains(_id))
+		if(ts.contains(_id))
 			continue;
 
 		selectedActivitiesListWidget->addItem(actName);
+		Activity* act=gt.rules.activitiesPointerHash.value(_id, nullptr);
+		if(act!=nullptr){
+			if(!act->active){
+				selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+				selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+			}
+		}
 		selectedActivitiesList.append(_id);
+		ts.insert(_id);
 	}
 
 	selectedActivitiesListWidget->setCurrentRow(selectedActivitiesListWidget->count()-1);
@@ -22197,6 +22350,13 @@ void AddOrModifyTimeConstraint::addActivity()
 		return;
 
 	selectedActivitiesListWidget->addItem(actName);
+	Activity* act=gt.rules.activitiesPointerHash.value(_id, nullptr);
+	if(act!=nullptr){
+		if(!act->active){
+			selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+			selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+		}
+	}
 	selectedActivitiesListWidget->setCurrentRow(selectedActivitiesListWidget->count()-1);
 
 	selectedActivitiesList.append(_id);
@@ -22372,17 +22532,27 @@ void AddOrModifyTimeConstraint::removeActivityTag()
 
 void AddOrModifyTimeConstraint::addAllActivitiesClicked1()
 {
+	QSet<int> ts(selectedActivitiesList_TwoSetsOfActivities_1.constBegin(), selectedActivitiesList_TwoSetsOfActivities_1.constEnd());
+
 	for(int tmp=0; tmp<activitiesListWidget_TwoSetsOfActivities_1->count(); tmp++){
 		int _id=activitiesList.at(tmp);
 
 		QString actName=activitiesListWidget_TwoSetsOfActivities_1->item(tmp)->text();
 		assert(actName!="");
 
-		if(selectedActivitiesList_TwoSetsOfActivities_1.contains(_id))
+		if(ts.contains(_id))
 			continue;
 
 		selectedActivitiesListWidget_TwoSetsOfActivities_1->addItem(actName);
+		Activity* act=gt.rules.activitiesPointerHash.value(_id, nullptr);
+		if(act!=nullptr){
+			if(!act->active){
+				selectedActivitiesListWidget_TwoSetsOfActivities_1->item(selectedActivitiesListWidget_TwoSetsOfActivities_1->count()-1)->setBackground(selectedActivitiesListWidget_TwoSetsOfActivities_1->palette().brush(QPalette::Disabled, QPalette::Window));
+				selectedActivitiesListWidget_TwoSetsOfActivities_1->item(selectedActivitiesListWidget_TwoSetsOfActivities_1->count()-1)->setForeground(selectedActivitiesListWidget_TwoSetsOfActivities_1->palette().brush(QPalette::Disabled, QPalette::WindowText));
+			}
+		}
 		selectedActivitiesList_TwoSetsOfActivities_1.append(_id);
+		ts.insert(_id);
 	}
 
 	selectedActivitiesListWidget_TwoSetsOfActivities_1->setCurrentRow(selectedActivitiesListWidget_TwoSetsOfActivities_1->count()-1);
@@ -22411,6 +22581,13 @@ void AddOrModifyTimeConstraint::addActivity1()
 		return;
 
 	selectedActivitiesListWidget_TwoSetsOfActivities_1->addItem(actName);
+	Activity* act=gt.rules.activitiesPointerHash.value(_id, nullptr);
+	if(act!=nullptr){
+		if(!act->active){
+			selectedActivitiesListWidget_TwoSetsOfActivities_1->item(selectedActivitiesListWidget_TwoSetsOfActivities_1->count()-1)->setBackground(selectedActivitiesListWidget_TwoSetsOfActivities_1->palette().brush(QPalette::Disabled, QPalette::Window));
+			selectedActivitiesListWidget_TwoSetsOfActivities_1->item(selectedActivitiesListWidget_TwoSetsOfActivities_1->count()-1)->setForeground(selectedActivitiesListWidget_TwoSetsOfActivities_1->palette().brush(QPalette::Disabled, QPalette::WindowText));
+		}
+	}
 	selectedActivitiesListWidget_TwoSetsOfActivities_1->setCurrentRow(selectedActivitiesListWidget_TwoSetsOfActivities_1->count()-1);
 
 	selectedActivitiesList_TwoSetsOfActivities_1.append(_id);
@@ -22437,17 +22614,27 @@ void AddOrModifyTimeConstraint::removeActivity1()
 
 void AddOrModifyTimeConstraint::addAllActivitiesClicked2()
 {
+	QSet<int> ts(selectedActivitiesList_TwoSetsOfActivities_2.constBegin(), selectedActivitiesList_TwoSetsOfActivities_2.constEnd());
+
 	for(int tmp=0; tmp<activitiesListWidget_TwoSetsOfActivities_2->count(); tmp++){
 		int _id=activitiesList.at(tmp);
 
 		QString actName=activitiesListWidget_TwoSetsOfActivities_2->item(tmp)->text();
 		assert(actName!="");
 
-		if(selectedActivitiesList_TwoSetsOfActivities_2.contains(_id))
+		if(ts.contains(_id))
 			continue;
 
 		selectedActivitiesListWidget_TwoSetsOfActivities_2->addItem(actName);
+		Activity* act=gt.rules.activitiesPointerHash.value(_id, nullptr);
+		if(act!=nullptr){
+			if(!act->active){
+				selectedActivitiesListWidget_TwoSetsOfActivities_2->item(selectedActivitiesListWidget_TwoSetsOfActivities_2->count()-1)->setBackground(selectedActivitiesListWidget_TwoSetsOfActivities_2->palette().brush(QPalette::Disabled, QPalette::Window));
+				selectedActivitiesListWidget_TwoSetsOfActivities_2->item(selectedActivitiesListWidget_TwoSetsOfActivities_2->count()-1)->setForeground(selectedActivitiesListWidget_TwoSetsOfActivities_2->palette().brush(QPalette::Disabled, QPalette::WindowText));
+			}
+		}
 		selectedActivitiesList_TwoSetsOfActivities_2.append(_id);
+		ts.insert(_id);
 	}
 
 	selectedActivitiesListWidget_TwoSetsOfActivities_2->setCurrentRow(selectedActivitiesListWidget_TwoSetsOfActivities_2->count()-1);
@@ -22476,6 +22663,13 @@ void AddOrModifyTimeConstraint::addActivity2()
 		return;
 
 	selectedActivitiesListWidget_TwoSetsOfActivities_2->addItem(actName);
+	Activity* act=gt.rules.activitiesPointerHash.value(_id, nullptr);
+	if(act!=nullptr){
+		if(!act->active){
+			selectedActivitiesListWidget_TwoSetsOfActivities_2->item(selectedActivitiesListWidget_TwoSetsOfActivities_2->count()-1)->setBackground(selectedActivitiesListWidget_TwoSetsOfActivities_2->palette().brush(QPalette::Disabled, QPalette::Window));
+			selectedActivitiesListWidget_TwoSetsOfActivities_2->item(selectedActivitiesListWidget_TwoSetsOfActivities_2->count()-1)->setForeground(selectedActivitiesListWidget_TwoSetsOfActivities_2->palette().brush(QPalette::Disabled, QPalette::WindowText));
+		}
+	}
 	selectedActivitiesListWidget_TwoSetsOfActivities_2->setCurrentRow(selectedActivitiesListWidget_TwoSetsOfActivities_2->count()-1);
 
 	selectedActivitiesList_TwoSetsOfActivities_2.append(_id);
@@ -22509,12 +22703,20 @@ void AddOrModifyTimeConstraint::swapTwoSetsOfActivitiesPushButtonClicked()
 		Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 		assert(act!=nullptr);
 		selectedActivitiesListWidget_TwoSetsOfActivities_1->addItem(act->getDescription(gt.rules));
+		if(!act->active){
+			selectedActivitiesListWidget_TwoSetsOfActivities_1->item(selectedActivitiesListWidget_TwoSetsOfActivities_1->count()-1)->setBackground(selectedActivitiesListWidget_TwoSetsOfActivities_1->palette().brush(QPalette::Disabled, QPalette::Window));
+			selectedActivitiesListWidget_TwoSetsOfActivities_1->item(selectedActivitiesListWidget_TwoSetsOfActivities_1->count()-1)->setForeground(selectedActivitiesListWidget_TwoSetsOfActivities_1->palette().brush(QPalette::Disabled, QPalette::WindowText));
+		}
 	}
 
 	for(int actId : std::as_const(selectedActivitiesList_TwoSetsOfActivities_2)){
 		Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 		assert(act!=nullptr);
 		selectedActivitiesListWidget_TwoSetsOfActivities_2->addItem(act->getDescription(gt.rules));
+		if(!act->active){
+			selectedActivitiesListWidget_TwoSetsOfActivities_2->item(selectedActivitiesListWidget_TwoSetsOfActivities_2->count()-1)->setBackground(selectedActivitiesListWidget_TwoSetsOfActivities_2->palette().brush(QPalette::Disabled, QPalette::Window));
+			selectedActivitiesListWidget_TwoSetsOfActivities_2->item(selectedActivitiesListWidget_TwoSetsOfActivities_2->count()-1)->setForeground(selectedActivitiesListWidget_TwoSetsOfActivities_2->palette().brush(QPalette::Disabled, QPalette::WindowText));
+		}
 	}
 }
 

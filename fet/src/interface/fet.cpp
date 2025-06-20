@@ -2636,7 +2636,7 @@ int main(int argc, char **argv)
 				if(s.right(5)=="false")
 					TIMETABLE_HTML_PRINT_SUBJECTS=false;
 			}
-			else if(s.left(17)=="--printsteachers="){
+			else if(s.left(16)=="--printteachers="){
 				if(s.right(5)=="false")
 					TIMETABLE_HTML_PRINT_TEACHERS=false;
 			}

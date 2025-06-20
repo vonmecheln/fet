@@ -510,6 +510,8 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	references+=QString("25. https://stackoverflow.com/questions/6736536/c-input-and-output-to-the-console-window-at-the-same-time");
 	references+=QString("<br /><br />");
 	references+=QString("26. https://stackoverflow.com/questions/4184468/sleep-for-milliseconds");
+	references+=QString("<br /><br />");
+	references+=QString("27. https://stackoverflow.com/questions/3070450/qt-how-do-i-change-the-text-color-of-one-item-of-a-qcombobox-c");
 
 	references+=QString("<br /><br /><br />");
 
@@ -1437,6 +1439,10 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("Cesare De Munda");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Apisit Piamnoi");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("samloba");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Lekcir Ali");
 	thanksTo+=QString("<br />");
 	
 	thanksToTextBrowser->setHtml(thanksTo);

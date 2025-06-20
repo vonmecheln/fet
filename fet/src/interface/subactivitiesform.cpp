@@ -45,6 +45,7 @@
 
 #include <QAbstractItemView>
 
+#include <QBrush>
 #include <QPalette>
 
 #include <QSplitter>
@@ -547,8 +548,10 @@ void SubactivitiesForm::filterChanged()
 			subactivitiesListWidget->addItem(s);
 			k++;
 			
-			if(!act->active)
-				subactivitiesListWidget->item(k-1)->setBackground(subactivitiesListWidget->palette().alternateBase());
+			if(!act->active){
+				subactivitiesListWidget->item(k-1)->setBackground(subactivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+				subactivitiesListWidget->item(k-1)->setForeground(subactivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+			}
 			
 			//if(act->id==act->activityGroupId || act->activityGroupId==0)
 			//	nacts++;
@@ -866,7 +869,8 @@ void SubactivitiesForm::activateSubactivity()
 		}
 		else{
 			subactivitiesListWidget->currentItem()->setText(act->getDescription(gt.rules));
-			subactivitiesListWidget->currentItem()->setBackground(subactivitiesListWidget->palette().base());
+			subactivitiesListWidget->currentItem()->setBackground(QBrush());
+			subactivitiesListWidget->currentItem()->setForeground(QBrush());
 			subactivityChanged();
 		}
 
@@ -927,7 +931,8 @@ void SubactivitiesForm::deactivateSubactivity()
 		}
 		else{
 			subactivitiesListWidget->currentItem()->setText(act->getDescription(gt.rules));
-			subactivitiesListWidget->currentItem()->setBackground(subactivitiesListWidget->palette().alternateBase());
+			subactivitiesListWidget->currentItem()->setBackground(subactivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+			subactivitiesListWidget->currentItem()->setForeground(subactivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
 			subactivityChanged();
 		}
 		

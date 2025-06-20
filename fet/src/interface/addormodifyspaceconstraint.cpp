@@ -37,6 +37,7 @@
 #include <QStringList>
 
 #include <QBrush>
+#include <QPalette>
 
 #include <QGuiApplication>
 #include <QPainter>
@@ -2937,6 +2938,10 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 						assert(act!=nullptr);
 						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 					}
 
 					spinBox->setValue(ctr->maxDifferentRooms);
@@ -2956,6 +2961,10 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 						assert(act!=nullptr);
 						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
 					}
 
 					break;
@@ -6608,6 +6617,10 @@ int AddOrModifySpaceConstraint::filterActivitiesComboBox()
 	for(Activity* act : std::as_const(gt.rules.activitiesList)){
 		if(filterOk(act)){
 			activitiesComboBox->addItem(act->getDescription(gt.rules));
+			if(!act->active){
+				activitiesComboBox->setItemData(activitiesComboBox->count()-1, activitiesComboBox->palette().brush(QPalette::Disabled, QPalette::Window), Qt::BackgroundRole);
+				activitiesComboBox->setItemData(activitiesComboBox->count()-1, activitiesComboBox->palette().brush(QPalette::Disabled, QPalette::WindowText), Qt::ForegroundRole);
+			}
 			activitiesList.append(act->id);
 			if(initialActivityId>=0 && initialActivityId==act->id)
 				i=activitiesList.count()-1;
@@ -6630,6 +6643,10 @@ void AddOrModifySpaceConstraint::filterActivitiesListWidget()
 	for(Activity* act : std::as_const(gt.rules.activitiesList)){
 		if(filterOk(act)){
 			activitiesListWidget->addItem(act->getDescription(gt.rules));
+			if(!act->active){
+				activitiesListWidget->item(activitiesListWidget->count()-1)->setBackground(activitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+				activitiesListWidget->item(activitiesListWidget->count()-1)->setForeground(activitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+			}
 			activitiesList.append(act->id);
 		}
 	}
@@ -6640,17 +6657,27 @@ void AddOrModifySpaceConstraint::filterActivitiesListWidget()
 
 void AddOrModifySpaceConstraint::addAllActivitiesClicked()
 {
+	QSet<int> ts(selectedActivitiesList.constBegin(), selectedActivitiesList.constEnd());
+
 	for(int tmp=0; tmp<activitiesListWidget->count(); tmp++){
 		int _id=activitiesList.at(tmp);
 
 		QString actName=activitiesListWidget->item(tmp)->text();
 		assert(actName!="");
 
-		if(selectedActivitiesList.contains(_id))
+		if(ts.contains(_id))
 			continue;
 
 		selectedActivitiesListWidget->addItem(actName);
+		Activity* act=gt.rules.activitiesPointerHash.value(_id, nullptr);
+		if(act!=nullptr){
+			if(!act->active){
+				selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+				selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+			}
+		}
 		selectedActivitiesList.append(_id);
+		ts.insert(_id);
 	}
 
 	selectedActivitiesListWidget->setCurrentRow(selectedActivitiesListWidget->count()-1);
@@ -6679,6 +6706,13 @@ void AddOrModifySpaceConstraint::addActivity()
 		return;
 
 	selectedActivitiesListWidget->addItem(actName);
+	Activity* act=gt.rules.activitiesPointerHash.value(_id, nullptr);
+	if(act!=nullptr){
+		if(!act->active){
+			selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+			selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+		}
+	}
 	selectedActivitiesListWidget->setCurrentRow(selectedActivitiesListWidget->count()-1);
 
 	selectedActivitiesList.append(_id);

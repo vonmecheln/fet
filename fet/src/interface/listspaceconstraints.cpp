@@ -38,6 +38,9 @@
 
 #include <QSplitter>
 
+#include <QBrush>
+#include <QPalette>
+
 #include <QSettings>
 
 extern Timetable gt;
@@ -2331,10 +2334,13 @@ void ListSpaceConstraints::filter()
 		assert(filterOk(ctr));
 		constraintsListWidget->addItem(ctr->getDescription(gt.rules));
 
-		if(ctr->active)
+		if(ctr->active){
 			n_active++;
-		else
-			constraintsListWidget->item(constraintsListWidget->count()-1)->setBackground(constraintsListWidget->palette().alternateBase());
+		}
+		else{
+			constraintsListWidget->item(constraintsListWidget->count()-1)->setBackground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+			constraintsListWidget->item(constraintsListWidget->count()-1)->setForeground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+		}
 	}
 
 	if(constraintsListWidget->count()<=0)

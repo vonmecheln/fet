@@ -35,6 +35,7 @@
 
 #include <QMessageBox>
 
+#include <QBrush>
 #include <QPalette>
 
 #include <QProgressDialog>
@@ -3458,8 +3459,10 @@ void LockAdvancedDialog::filterChanged()
 				
 				k++;
 
-				if(!act->active)
-					selectedActivitiesLW->item(k-1)->setBackground(selectedActivitiesLW->palette().alternateBase());
+				if(!act->active){
+					selectedActivitiesLW->item(k-1)->setBackground(selectedActivitiesLW->palette().brush(QPalette::Disabled, QPalette::Window));
+					selectedActivitiesLW->item(k-1)->setForeground(selectedActivitiesLW->palette().brush(QPalette::Disabled, QPalette::WindowText));
+				}
 				
 				//if(act->id==act->activityGroupId || act->activityGroupId==0)
 				//	nacts++;
@@ -4057,8 +4060,10 @@ void UnlockAdvancedDialog::filterChanged()
 
 			k++;
 
-			if(!act->active)
-				selectedActivitiesLW->item(k-1)->setBackground(selectedActivitiesLW->palette().alternateBase());
+			if(!act->active){
+				selectedActivitiesLW->item(k-1)->setBackground(selectedActivitiesLW->palette().brush(QPalette::Disabled, QPalette::Window));
+				selectedActivitiesLW->item(k-1)->setForeground(selectedActivitiesLW->palette().brush(QPalette::Disabled, QPalette::WindowText));
+			}
 			
 			//if(act->id==act->activityGroupId || act->activityGroupId==0)
 			//	nacts++;

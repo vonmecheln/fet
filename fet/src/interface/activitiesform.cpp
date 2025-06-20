@@ -47,6 +47,7 @@
 #include <QScrollBar>
 #include <QAbstractItemView>
 
+#include <QBrush>
 #include <QPalette>
 
 #include <QSplitter>
@@ -559,8 +560,10 @@ void ActivitiesForm::filterChanged()
 			activitiesListWidget->addItem(s);
 			k++;
 			
-			if(!act->active)
-				activitiesListWidget->item(k-1)->setBackground(activitiesListWidget->palette().alternateBase());
+			if(!act->active){
+				activitiesListWidget->item(k-1)->setBackground(activitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+				activitiesListWidget->item(k-1)->setForeground(activitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+			}
 			
 			//if(act->id==act->activityGroupId || act->activityGroupId==0)
 			//	nacts++;

@@ -25,6 +25,9 @@
 #include <QAbstractItemView>
 #include <QScrollBar>
 
+#include <QBrush>
+#include <QPalette>
+
 #include <QSettings>
 
 extern const QString COMPANY;
@@ -220,6 +223,10 @@ void AddGroupActivitiesInInitialOrderItemForm::filterChanged()
 		Activity* ac=gt.rules.activitiesList[i];
 		if(filterOk(ac)){
 			allActivitiesListWidget->addItem(ac->getDescription(gt.rules));
+			if(!ac->active){
+				allActivitiesListWidget->item(allActivitiesListWidget->count()-1)->setBackground(allActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+				allActivitiesListWidget->item(allActivitiesListWidget->count()-1)->setForeground(allActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+			}
 			this->activitiesList.append(ac->id);
 		}
 	}
@@ -280,6 +287,13 @@ void AddGroupActivitiesInInitialOrderItemForm::addActivity()
 		return;
 	
 	selectedActivitiesListWidget->addItem(actName);
+	Activity* act=gt.rules.activitiesPointerHash.value(_id, nullptr);
+	if(act!=nullptr){
+		if(!act->active){
+			selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+			selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+		}
+	}
 	selectedActivitiesListWidget->setCurrentRow(selectedActivitiesListWidget->count()-1);
 
 	this->selectedActivitiesList.append(_id);
@@ -287,17 +301,27 @@ void AddGroupActivitiesInInitialOrderItemForm::addActivity()
 
 void AddGroupActivitiesInInitialOrderItemForm::addAllActivities()
 {
+	QSet<int> ts(selectedActivitiesList.constBegin(), selectedActivitiesList.constEnd());
+
 	for(int tmp=0; tmp<allActivitiesListWidget->count(); tmp++){
 		int _id=this->activitiesList.at(tmp);
 	
 		QString actName=allActivitiesListWidget->item(tmp)->text();
 		assert(actName!="");
 		
-		if(this->selectedActivitiesList.contains(_id))
+		if(ts.contains(_id))
 			continue;
 		
 		selectedActivitiesListWidget->addItem(actName);
+		Activity* act=gt.rules.activitiesPointerHash.value(_id, nullptr);
+		if(act!=nullptr){
+			if(!act->active){
+				selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+				selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+			}
+		}
 		this->selectedActivitiesList.append(_id);
+		ts.insert(_id);
 	}
 	
 	selectedActivitiesListWidget->setCurrentRow(selectedActivitiesListWidget->count()-1);

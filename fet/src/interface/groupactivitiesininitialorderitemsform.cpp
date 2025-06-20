@@ -34,6 +34,7 @@
 #include <QScrollBar>
 #include <QAbstractItemView>
 
+#include <QBrush>
 #include <QPalette>
 
 #include <QSettings>
@@ -396,15 +397,23 @@ void GroupActivitiesInInitialOrderItemsForm::moveItemUp()
 	
 	gt.rules.addUndoPoint(tr("Moved a 'group activities in the initial order' item up:\n\n%1", "%1 is the detailed description of the item").arg(it1->getDetailedDescription(gt.rules)));
 
-	if(it2->active)
-		itemsListWidget->item(i)->setBackground(itemsListWidget->palette().base());
-	else
-		itemsListWidget->item(i)->setBackground(itemsListWidget->palette().alternateBase());
+	if(it2->active){
+		itemsListWidget->item(i)->setBackground(QBrush());
+		itemsListWidget->item(i)->setForeground(QBrush());
+	}
+	else{
+		itemsListWidget->item(i)->setBackground(itemsListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+		itemsListWidget->item(i)->setForeground(itemsListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+	}
 
-	if(it1->active)
-		itemsListWidget->item(i-1)->setBackground(itemsListWidget->palette().base());
-	else
-		itemsListWidget->item(i-1)->setBackground(itemsListWidget->palette().alternateBase());
+	if(it1->active){
+		itemsListWidget->item(i-1)->setBackground(QBrush());
+		itemsListWidget->item(i-1)->setForeground(QBrush());
+	}
+	else{
+		itemsListWidget->item(i-1)->setBackground(itemsListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+		itemsListWidget->item(i-1)->setForeground(itemsListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+	}
 
 	itemsListWidget->setCurrentRow(i-1);
 	itemChanged(i-1);
@@ -448,15 +457,23 @@ void GroupActivitiesInInitialOrderItemsForm::moveItemDown()
 	
 	gt.rules.addUndoPoint(tr("Moved a 'group activities in the initial order' item down:\n\n%1", "%1 is the detailed description of the item").arg(it1->getDetailedDescription(gt.rules)));
 
-	if(it2->active)
-		itemsListWidget->item(i)->setBackground(itemsListWidget->palette().base());
-	else
-		itemsListWidget->item(i)->setBackground(itemsListWidget->palette().alternateBase());
+	if(it2->active){
+		itemsListWidget->item(i)->setBackground(QBrush());
+		itemsListWidget->item(i)->setForeground(QBrush());
+	}
+	else{
+		itemsListWidget->item(i)->setBackground(itemsListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+		itemsListWidget->item(i)->setForeground(itemsListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+	}
 
-	if(it1->active)
-		itemsListWidget->item(i+1)->setBackground(itemsListWidget->palette().base());
-	else
-		itemsListWidget->item(i+1)->setBackground(itemsListWidget->palette().alternateBase());
+	if(it1->active){
+		itemsListWidget->item(i+1)->setBackground(QBrush());
+		itemsListWidget->item(i+1)->setForeground(QBrush());
+	}
+	else{
+		itemsListWidget->item(i+1)->setBackground(itemsListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+		itemsListWidget->item(i+1)->setForeground(itemsListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+	}
 
 	itemsListWidget->setCurrentRow(i+1);
 	itemChanged(i+1);
@@ -534,10 +551,13 @@ void GroupActivitiesInInitialOrderItemsForm::filterChanged()
 		assert(filterOk(item));
 		itemsListWidget->addItem(item->getDescription(gt.rules));
 
-		if(item->active)
+		if(item->active){
 			n_active++;
-		else
-			itemsListWidget->item(itemsListWidget->count()-1)->setBackground(itemsListWidget->palette().alternateBase());
+		}
+		else{
+			itemsListWidget->item(itemsListWidget->count()-1)->setBackground(itemsListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+			itemsListWidget->item(itemsListWidget->count()-1)->setForeground(itemsListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+		}
 	}
 	
 	if(itemsListWidget->count()<=0)
@@ -693,7 +713,8 @@ void GroupActivitiesInInitialOrderItemsForm::activateItem()
 		setRulesModifiedAndOtherThings(&gt.rules);
 
 		itemsListWidget->currentItem()->setText(item->getDescription(gt.rules));
-		itemsListWidget->currentItem()->setBackground(itemsListWidget->palette().base());
+		itemsListWidget->currentItem()->setBackground(QBrush());
+		itemsListWidget->currentItem()->setForeground(QBrush());
 		itemChanged(itemsListWidget->currentRow());
 	
 		int n_active=0;
@@ -731,7 +752,8 @@ void GroupActivitiesInInitialOrderItemsForm::deactivateItem()
 		setRulesModifiedAndOtherThings(&gt.rules);
 
 		itemsListWidget->currentItem()->setText(item->getDescription(gt.rules));
-		itemsListWidget->currentItem()->setBackground(itemsListWidget->palette().alternateBase());
+		itemsListWidget->currentItem()->setBackground(itemsListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+		itemsListWidget->currentItem()->setForeground(itemsListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
 		itemChanged(itemsListWidget->currentRow());
 
 		int n_active=0;
