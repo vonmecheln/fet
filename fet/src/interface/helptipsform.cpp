@@ -61,21 +61,33 @@ void HelpTipsForm::setText()
 	
 	s+="\n\n";
 	
-	s+=tr("2) When adding constraints activities same starting time (or day), please remove redundant min days constraints. "
-	 "For instance, A1 (at same time with B1 and C1), A2 (same time with B2 and C2) and A3 (same time with B3 and C3)."
-	 " You will normally have 3 or 6 constraints min days between activities (first one or two with A1,A2,A3 and then "
-	 "with B1,B2,B3 and then with C1,C2,C3). These 3 or 6 constraints min days will result in a much stronger constraint, "
-	 "which will make the timetable much harder to find. If you have say 4 groups of activities (A, B, C, D), things will be even harder.");
+	s+=tr("2) After adding constraints of type activities same starting time or same starting day or max 0 days between activities "
+	 "or max 0 half days between activities (in the Mornings-Afternoons mode), if you have 'bad' redundant constraints (see below), "
+	 "it is necessary to apply the advanced function of removing redundant constraints of type min days between activities (and min "
+	 "half days between activities, in the Mornings-Afternoons mode). The redundant constraints of type min (half) days between "
+	 "activities with weight < 100% are considered 'bad' for the generation, because they can make the timetable too difficult, "
+	 "their weights being 'amplified'. These constraints will be removed by this advanced function. The redundant constraints of type min (half) "
+	 "days between activities with weight 100% are considered 'good' for the generation and will not be removed by this advanced function.");
 	s+="\n\n";
-	s+=tr("The correct way is to leave only the constraints min days referring to the first group of activities (A)."
-	 " You will have a much faster generation (maybe 10 times faster or more).");
+	s+=tr("For example, if we have these activities: A1 (at the same time with B1 and C1), A2 (at the same time with B2 and C2) and "
+	 "A3 (at the same time with B3 and C3). "
+	 "You will normally have 3 or 6 constraints min days between activities (the first one or two for A1,A2,A3 and then the next one or two "
+	 "for B1,B2,B3 and then the next one or two for C1,C2,C3). Assume that these 3 or 6 constraints have weights < 100%. Then these 3 or 6 "
+	 "constraints will result in a much stronger overall constraint, which might make the timetable too difficult to find. If you have say "
+	 "4 groups of activities (A, B, C, D), the timetable will be even more difficult to find. "
+	 "The correct way in this case (if the weights of the min days between activities constraints is < 100%) is to leave only the "
+	 "constraints referring to the first group of activities (A). You will have a much faster generation (maybe 10 times faster or more). "
+	 "But if the weights of the min days between activities constraints are equal with 100%, then it is better to keep all of them, even "
+	 "if they are redundant, because in this case FET will reject earlier the incorrect placements.");
 	s+="\n\n";
 	s+=tr("PS: Suppose there are 2 constraints for activities A1,2,3 and 2 constraints for activities B1,2,3 and 2 "
 	 "constraints for activities C1,2,3. If A and B and C are simultaneous, remove only the constraints referring to B "
 	 "and C (but leave both for A, if for instance you have min 2 days with 95% and min 1 day with 100%).");
 	s+="\n\n";
-	s+=tr("More details: the combination of 2 or more redundant constraints min days between activities gives another "
-	 "resultant constraint, much stronger. From 3 redundant constraints with 95%, you get one with 100%-5%*5%*5%=99.9875%, which is not what you want.");
+	s+=tr("More details: the combination of 2 or more redundant constraints min (half) days between activities with weights < 100% implies "
+	 "a much stronger constraint. From 3 redundant constraints with 95%, you get one with 100%-5%*5%*5%=99.9875%, which is not what you want. "
+	 "But if the weights of the min (half) days between activities constraints are 100%, this useful redundancy will help guide FET faster "
+	 "towards a solution.");
 	s+="\n\n";
 	s+=tr("Do not consider redundant constraints with the same activities but different number of days "
 	 "(you may want to add min 2 days 95% and min 1 day 95%, which gives in 95% cases the 2 days will be "
@@ -84,18 +96,13 @@ void HelpTipsForm::setText()
 	s+=tr("The other constraints (like preferred time(s) constraints) do not have the problem of redundancy like min "
 	 "days constraints, so no need to take care about them.");
 	s+="\n\n";
-	s+=tr("It is IMPORTANT to remove redundant min days constraints after you inputted data and before generating "
-	 "(for instance, apply this after adding more constraints of type same starting time/day and before generating)."
-	 " Any modification of the min days constraints should be followed by this removal of redundant min days "
-	 "constraints (well, not all modifications, but better to do it than not). If you modify more constraints "
-	 "at once or apply the balancing of activities, it is important to remove redundant constraints. If you have "
-	 "no redundant constraints, it is no need to remove the redundant constraints, but better to check again than "
-	 "let some redundant constraints active.");
-	s+="\n\n";
-	s+=tr("Note: redundant constraints min days with weight 100.0% do not really affect the generation. This is because the resultant of more constraints"
-	 " with weight 100.0% is also 100.0%. So, if your data contains only min days between activities constraints with 100.0% weight, there "
-	 "is no imperative need to remove redundant constraints."
-	 " But, again, better to remove redundant constraints as a precaution.");
+	s+=tr("It is IMPORTANT to remove the 'bad' redundant min (half) days between activities constraints after you have input "
+	 "the data, before generating (for instance, apply this after adding more constraints of type same starting time/day/max 0 (half) days between activities "
+	 "and before generating). Any modification of the min (half) days between activities constraints should be followed by this removal of the 'bad' redundant "
+	 "min (half) days between activities constraints (well, not all modifications, but it does not hurt to do it more often). If you modify more constraints "
+	 "at once or apply the advanced function of spreading the activities over the week, it is important to remove redundant constraints. If you have "
+	 "no 'bad' redundant constraints, there is no need to worry about this, but applying the advanced function of removing redundant constraints will "
+	 "not hurt.");
 	
 	s+="\n\n";
 	s+=tr("3) About the constraints of type two activities grouped, two activities consecutive and three activities grouped:"

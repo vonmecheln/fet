@@ -46,7 +46,7 @@ void HelpInstructionsForm::setText()
 
 	s+=tr("Instructions.");
 	s+="\n\n";
-	s+=tr("Last modified on %1.").arg(tr("2 November 2021"));
+	s+=tr("Last modified on %1.").arg(tr("2 July 2025"));
 	s+="\n\n";
 	s+=tr("These are some small instructions which you have to follow in order to input a solvable data set.");
 	s+="\n\n";
@@ -145,8 +145,11 @@ void HelpInstructionsForm::setText()
 	s+=tr("13) If you have for instance 7 hours of math on a 5 days week (more activities than days), "
 		"please respect the correct way to add these as a split activity. See question Q-1-27-March-2008 from FAQ. It is important!");
 	s+="\n\n";
-	s+=tr("14) It is recommended to remove redundant min days between activities constraints after adding constraints same starting day or time "
-		"(read Help/Important tips).");
+	s+=tr("14) It is necessary to apply the advanced function of removing redundant min days (or min half days, in the Mornings-Afternoons mode) "
+		"between activities constraints after adding constraints of type same starting time or same starting day or max 0 days between activities "
+		"(or max 0 half days between activities, in the Mornings-Afternoons mode) (read Help/Important tips). This function will remove the "
+		"redundant constraints with weight < 100% which might make your timetable too difficult to find. Note that the redundant constraints "
+		"with weight 100% are actually beneficial for the generation, stopping earlier the incorrect assignments, and will not be removed by this function.");
 	s+="\n\n";
 	s+=tr("15) If you want for instance teachers (or students) not to have more than 2 times per week "
 		"activities in the last hours, you have to use the constraint teacher(s) or students (set) hourly interval "

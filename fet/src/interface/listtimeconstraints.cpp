@@ -425,8 +425,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 				activityTagsComboBox=new QComboBox;
 
 				firstInstructionsLabel=new QLabel(tr("Please read Help/Important tips, advice 2). It is IMPORTANT to "
-													 "remove redundant min days constraints after adding constraints "
-													 "same starting time. Click the Help button!"));
+													 "remove redundant min days between activities constraints with weight < 100% after "
+													 "adding constraints same starting time. Click the Help button!"));
 				secondInstructionsLabel=new QLabel(tr("Note: You might not need this constraint. Click Help!"));
 
 				helpPushButton=new QPushButton(tr("Help"));
@@ -539,9 +539,9 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 				subjectsComboBox=new QComboBox;
 				activityTagsComboBox=new QComboBox;
 
-				firstInstructionsLabel=new QLabel(tr("Please try to read Help/Important tips, advice 2). It is IMPORTANT to remove redundant "
-													 "min days constraints after adding constraints same starting day. Please also click Help "
-													 "button here for information."));
+				firstInstructionsLabel=new QLabel(tr("Please read Help/Important tips, advice 2). It is IMPORTANT to remove redundant "
+													 "min days between activities constraints with weight < 100% after adding constraints same starting day. "
+													 "Please also click the Help button here for information!"));
 
 				helpPushButton=new QPushButton(tr("Help"));
 
@@ -608,7 +608,7 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 				dialogName=QString("ConstraintsSubactivitiesPreferredTimeSlots");
 
 				firstInstructionsLabel=new QLabel(tr("This constraint is useful to constrain only the n-th component of the activities. Please "
-													 "click Help button for details."));
+													 "click the Help button for details!"));
 
 				helpPushButton=new QPushButton(tr("Help"));
 
@@ -621,7 +621,7 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 				dialogName=QString("ConstraintsSubactivitiesPreferredStartingTimes");
 
 				firstInstructionsLabel=new QLabel(tr("This constraint is useful to constrain only the n-th component of the activities. Please "
-													 "click Help button for details."));
+													 "click the Help button for details!"));
 
 				helpPushButton=new QPushButton(tr("Help"));
 
@@ -784,6 +784,10 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				firstInstructionsLabel=new QLabel(tr("Max days is for real days"));
 				firstInstructionsLabel->setVisible(gt.rules.mode==MORNINGS_AFTERNOONS);
+
+				secondInstructionsLabel=new QLabel(tr("Please read Help/Important tips, advice 2). It is IMPORTANT to "
+													 "remove redundant min days between activities constraints with weight < 100% after "
+													 "adding constraints max 0 days between activities. Click the Help button!"));
 
 				helpPushButton=new QPushButton(tr("Help"));
 
@@ -2401,6 +2405,10 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 				activityTagsComboBox=new QComboBox;
 
 				firstInstructionsLabel=new QLabel(tr("Max days is for half days"));
+
+				secondInstructionsLabel=new QLabel(tr("Please read Help/Important tips, advice 2). It is IMPORTANT to "
+													 "remove redundant min (half) days between activities constraints with weight < 100% after "
+													 "adding constraints max 0 half days between activities. Click the Help button!"));
 
 				helpPushButton=new QPushButton(tr("Help"));
 
@@ -6825,10 +6833,10 @@ void ListTimeConstraints::helpClicked()
 			{
 				QString s;
 
-				s+=tr("IMPORTANT: after adding such constraints, it is necessary (otherwise generation might be impossible) to remove redundant constraints"
-				 " min days between activities. If you are sure that you don't have redundant constraints, you can skip this step, but it doesn't hurt to do it as a precaution."
+				s+=tr("IMPORTANT: after adding such constraints, it is necessary (otherwise the generation might be impossible) to remove 'bad' (redundant and with weight < 100%) constraints"
+				 " min days between activities. If you are sure that you don't have 'bad' constraints, you can skip this step, but it doesn't hurt to do it, as a precaution."
 				 " Also, you don't have to do that after each added constraint, but only once after adding more constraints of this type."
-				 " Please read Help/Important tips - tip number 2 for details");
+				 " Please read Help/Important tips - tip number 2 for details.");
 				s+="\n\n";
 				s+=tr("If you divide the years by categories (the students have optional courses), you may not need this kind of constraint. If the year is for instance"
 				 " divided by language, English/French/German, sometimes people think that it is needed that these optional activities to have the same starting"
@@ -6844,10 +6852,10 @@ void ListTimeConstraints::helpClicked()
 		//36
 		case CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY:
 			{
-				QString s=tr("IMPORTANT: after adding such constraints, it is necessary (otherwise generation might be impossible) to remove redundant constraints"
-				" min days between activities. If you are sure that you don't have redundant constraints, you can skip this step, but it doesn't hurt to do it as a precaution."
+				QString s=tr("IMPORTANT: after adding such constraints, it is necessary (otherwise the generation might be impossible) to remove 'bad' (redundant and with weight < 100%) constraints"
+				" min days between activities. If you are sure that you don't have 'bad' constraints, you can skip this step, but it doesn't hurt to do it, as a precaution."
 				" Also, you don't have to do that after each added constraint, but only once after adding more constraints of this type."
-				" Please read Help/Important tips - tip number 2 for details");
+				" Please read Help/Important tips - tip number 2 for details.");
 
 				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
 
@@ -6934,6 +6942,12 @@ void ListTimeConstraints::helpClicked()
 				s+="\n\n";
 				s+=tr("Another example: teacher T wants to ensure that his activities take place in at most 4 consecutive days (so, from Monday to Thursday or from"
 				 " Tuesday to Friday). Then, add all his activities and max days between them = 3.");
+
+				s+="\n\n";
+				s+=tr("IMPORTANT: after adding constraints of this type with max days between the activities = 0, it is necessary (otherwise the generation might be impossible) to "
+				 "remove 'bad' (redundant and with weight < 100%) constraints min days between activities. If you are sure that you don't have 'bad' constraints, you can skip "
+				 "this step, but it doesn't hurt to do it, as a precaution. Also, you don't have to do that after each added constraint, but only once after adding more constraints "
+				 "of this type. Please read Help/Important tips - tip number 2 for details.");
 
 				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
 
@@ -7109,6 +7123,12 @@ void ListTimeConstraints::helpClicked()
 				 " the evening; to avoid this bypass, is it possible to add a max half days between activities constraint?' (Note: The constraint type min half days"
 				 " between activities was existing at the time of this post.) See the forum topic %2 for more details.", "%1 is a person")
 				 .arg("fourat").arg("https://lalescu.ro/liviu/fet/forum/index.php?topic=5208.0");
+
+				s+="\n\n";
+				s+=tr("IMPORTANT: after adding constraints of this type with max half days between the activities = 0, it is necessary (otherwise the generation might be impossible) to "
+				 "remove 'bad' (redundant and with weight < 100%) constraints min (half) days between activities. If you are sure that you don't have 'bad' constraints, you can skip "
+				 "this step, but it doesn't hurt to do it, as a precaution. Also, you don't have to do that after each added constraint, but only once after adding more constraints "
+				 "of this type. Please read Help/Important tips - tip number 2 for details.");
 
 				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
 
@@ -7399,7 +7419,7 @@ void ListTimeConstraints::modifyMultipleMinDaysBetweenActivitiesConstraintsClick
 
 			QMessageBox::information(dialog, tr("FET information"), tr("There were inspected (and possibly modified) %1 constraints min days between activities"
 			 " matching your criteria").arg(count)+"\n\n"+
-			 tr("NOTE: If you are using constraints of type activities same starting time or activities same starting day, it is important"
+			 tr("NOTE: If you are using constraints of type activities same starting time or activities same starting day or max 0 (half) days between activities, it is important"
 			  " (after current operation) to apply the operation of removing redundant constraints.")
 			 +" "+tr("Read Help/Important tips - tip 2) for details.")
 			 );
@@ -7570,7 +7590,7 @@ void ListTimeConstraints::modifyMultipleMinDaysBetweenActivitiesConstraintsClick
 
 			QMessageBox::information(dialog, tr("FET information"), tr("There were inspected (and possibly modified) %1 constraints min half days between activities"
 			 " matching your criteria").arg(count)+"\n\n"+
-			 tr("NOTE: If you are using constraints of type activities same starting time or activities same starting day, it is important"
+			 tr("NOTE: If you are using constraints of type activities same starting time or activities same starting day or max 0 (half) days between activities, it is important"
 			  " (after current operation) to apply the operation of removing redundant constraints.")
 			 +" "+tr("Read Help/Important tips - tip 2) for details.")
 			 );

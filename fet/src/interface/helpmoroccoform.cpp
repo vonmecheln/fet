@@ -32,7 +32,7 @@ HelpMoroccoForm::HelpMoroccoForm(QWidget* parent): QDialog(parent)
 
 	QString s=QString("");
 	
-	s+=tr("This help by %1 and %2, last modified on %3", "%1 and %2 are two persons, %3 is a date").arg("Chafik Graiguer").arg("Liviu Lalescu").arg(tr("10 June 2020."));
+	s+=tr("This help by %1 and %2, last modified on %3.", "%1 and %2 are two persons, %3 is a date").arg("Chafik Graiguer").arg("Liviu Lalescu").arg(tr("2 July 2025"));
 	s+="\n\n";
 	s+=tr("FET mornings-afternoons with exclusive mornings/afternoons for teachers was designed for institutions in Morocco, but might be also used in other"
 	 " institutions working in two shifts, where teachers can work either in the morning or in the evening, but not both on the same day (with exceptions).");

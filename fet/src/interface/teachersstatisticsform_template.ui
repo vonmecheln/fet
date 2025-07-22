@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>687</width>
+    <width>652</width>
     <height>504</height>
    </rect>
   </property>
@@ -23,10 +23,21 @@
       <string>Options</string>
      </property>
      <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="0">
+      <item row="1" column="0">
        <widget class="QCheckBox" name="hideFullTeachersCheckBox">
         <property name="text">
-         <string comment="It refers to teachers who have their number of hours fulfilled. Please keep translation short">Hide full teachers</string>
+         <string comment="It refers to teachers who have their target number of hours fulfilled. Translate with each word on a new line (to keep the width small).">Hide
+full
+teachers</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="highlightIncompleteTeachersCheckBox">
+        <property name="text">
+         <string comment="It refers to teachers who don't have their target number of hours fulfilled. Their entries in the statistics table widget will be colored differently, with a 'highlight' background and foreground. Translate with each word on a new line (to keep the width small).">Highlight
+incomplete
+teachers</string>
         </property>
        </widget>
       </item>

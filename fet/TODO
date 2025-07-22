@@ -10922,3 +10922,20 @@ It will also "double" data. "Doubling" data is always bad, especially because yo
 that you modify the duration but you forget to modify the tag. It will be very difficult to locate such a bug.
 
 Liviu Lalescu: you can filter with an advanced filter the activities, and add a tag to the selection with a single click.
+
+714---------------------------DONE in FET-7.2.6------------
+
+715--------------------------------------------------------
+From GUEFFAZ REDA (on Facebook):
+
+He sent Liviu Lalescu a picture of a CSV file for teachers, having as
+labels: Teacher, Long name, Code, Target number of hours, Qualified subjects,
+and Comments.
+
+716---------------------------------------------------------
+From Neury Nunes Cardoso:
+
+I would like to make a suggestion because I believe it will be very useful in making use of previous plans. We know that class planning happens
+cyclically and that for each of these cycles it is possible to reuse previous restrictions and plans. Therefore, when we search for a previous plan,
+as a starting point, it would be convenient to have an indication within the restrictions menus if there is any registration for that specific
+restriction. It could be just a symbol (for example: ✓) next to the menu option indicating that there is something registered for that restriction.

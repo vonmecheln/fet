@@ -32,7 +32,7 @@ HelpAlgeriaForm::HelpAlgeriaForm(QWidget* parent): QDialog(parent)
 
 	QString s=QString("");
 	
-	s+=tr("This help by %1, last modified on %2", "%1 is a person").arg("Liviu Lalescu").arg(tr("10 June 2020"));
+	s+=tr("This help by %1, last modified on %2.", "%1 is a person").arg("Liviu Lalescu").arg(tr("2 July 2025"));
 	s+="\n\n";
 
 	s+=tr("FET mornings-afternoons with unrestricted mornings/afternoons for teachers was originally designed for Algerian schools (as requested by the user %1)"

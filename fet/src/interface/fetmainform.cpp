@@ -145,9 +145,6 @@
 #include <QList>
 #include <QHash>
 
-#include <QPalette>
-#include <QColor>
-
 #include <QDesktopServices>
 #include <QUrl>
 #include <QApplication>

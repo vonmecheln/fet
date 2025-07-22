@@ -1,4 +1,4 @@
-This is FET version 7.2.5
+This is FET version 7.2.6
 
 
 Program description:
@@ -14,15 +14,15 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.15.0, Xfce 4.20,
+	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.15.4, Xfce 4.20,
 	Xfce Terminal Emulator 1.1.5, Midnight Commander 4.8.33, Krusader 2.9.0, Kate 25.04.1, KDiff3 0.9.99-beta, grep 3.12, sed 4.9,
-	Thunar Bulk Rename 4.20.2, Qt 6.9.1, QMake 3.1, CMake 3.31.7, Ninja 1.12.1, Qt Creator 16.0.2, GCC 14.3.0, Clang 20.1.5,
+	Thunar Bulk Rename 4.20.2, Qt 6.9.1, QMake 3.1, CMake 3.31.7, Ninja 1.12.1, Qt Creator 16.0.2, GCC 15.1.1, Clang 20.1.5,
 	GNU Make 4.4.1, GDB 16.3, Valgrind 3.24.0, Coverity Scan 2024.6.1, Cppcheck 2.15, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0,
 	Inkscape 1.4, GIMP 3.0.2, ImageMagick 7.1.1-47, International Ispell 3.1.20 / Aspell 0.60.8.1, tar 1.35, Gzip 1.14, bzip2 1.0.8,
 	other great software (most of them are free software, in the sense defined by The Free Software Foundation).
 
 	The executable version of FET for Windows is obtained in the following environment: Windows 10 operating system,
-	Command Prompt, Total Commander 11.51, Notepad, Python 3.9.7, ActivePerl 5.28, CMake 3.30.5, Ninja 1.12.1, Qt 6.9.1,
+	Command Prompt, Total Commander 11.55, Notepad, Python 3.9.7, ActivePerl 5.28, CMake 3.30.5, Ninja 1.12.1, Qt 6.9.1,
 	QMake 3.1, Qt Creator 16.0.2, MinGW 13.1.0, Microsoft Visual C++ 2019, 7-Zip 24.09.
 
 	The executable version of FET for GNU/Linux is obtained in the following environment: openSUSE Leap 15.5 GNU/Linux distribution
@@ -38,7 +38,7 @@ Requirements:
 	For running, you need only the archive of FET compiled for your operating system (which contains the necessary libraries).
 	For compiling, you will need this software:
 		Make 4.2.1 or similar (GNU Make).
-		GCC 14.3.0 or similar.
+		GCC 15.1.1 or similar.
 		Qt 6.9.1 or compatible. Qt 5.15 or later should be fine.
 		QMake 3.1 or compatible (usually available with Qt).
 

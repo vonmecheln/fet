@@ -45,7 +45,9 @@ RemoveRedundantConfirmationForm::RemoveRedundantConfirmationForm(QWidget* parent
 	 "type min days between activities (and min half days between activities, if you use the Mornings-Afternoons mode), "
 	 "so that your data is more correct and the timetable easier for FET to find.");
 	s+="\n\n";
-	s+=tr("The function is only useful for the redundant constraints with weight < 100%.");
+	s+=tr("This function is only useful if you have redundant constraints with weight < 100%. The redundant constraints "
+	 "with weight 100% are actually useful for the generation algorithm, and should not be removed. They are expected to help avoiding "
+	 "potentially incorrect placements of activities in time slots at earlier stages of generating the timetable.");
 	s+="\n\n";
 	s+=tr("NOTE: If in a group of redundant constraints there is at least one with weight 100%, no constraint from this group "
 	 "will be removed.");

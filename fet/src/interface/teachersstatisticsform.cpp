@@ -39,6 +39,7 @@ TeachersStatisticsForm::TeachersStatisticsForm(QWidget* parent): QDialog(parent)
 	
 	closeButton->setDefault(true);
 
+	connect(highlightIncompleteTeachersCheckBox, &QCheckBox::toggled, this, &TeachersStatisticsForm::highlightIncompleteTeachersCheckBoxModified);
 	connect(hideFullTeachersCheckBox, &QCheckBox::toggled, this, &TeachersStatisticsForm::hideFullTeachersCheckBoxModified);
 
 	connect(closeButton, &QPushButton::clicked, this, &TeachersStatisticsForm::close);
@@ -64,7 +65,7 @@ TeachersStatisticsForm::TeachersStatisticsForm(QWidget* parent): QDialog(parent)
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
 		Teacher* t=gt.rules.teachersList[i];
 		
-		int	nSubActivities=0;
+		int nSubActivities=0;
 		int nHours=0;
 		
 		QSet<Activity*> acts=activitiesForTeacher.value(t->name, QSet<Activity*>());
@@ -96,6 +97,11 @@ TeachersStatisticsForm::TeachersStatisticsForm(QWidget* parent): QDialog(parent)
 TeachersStatisticsForm::~TeachersStatisticsForm()
 {
 	saveFETDialogGeometry(this);
+}
+
+void TeachersStatisticsForm::highlightIncompleteTeachersCheckBoxModified()
+{
+	hideFullTeachersCheckBoxModified();
 }
 
 void TeachersStatisticsForm::hideFullTeachersCheckBoxModified()
@@ -136,6 +142,15 @@ void TeachersStatisticsForm::hideFullTeachersCheckBoxModified()
 			newItem=new QTableWidgetItem(CustomFETString::number(targets.at(i)));
 			newItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 			tableWidget->setItem(j, 3, newItem);
+			
+			if(highlightIncompleteTeachersCheckBox->isChecked() && !hideFullTeacher.at(i)){
+				for(int k=0; k<4; k++){
+					tableWidget->item(j, k)->setBackground(tableWidget->palette().highlight());
+					tableWidget->item(j, k)->setForeground(tableWidget->palette().highlightedText());
+					/*tableWidget->item(j, k)->setBackground(QBrush(QColorConstants::DarkGreen));
+					tableWidget->item(j, k)->setForeground(QBrush(QColorConstants::DarkRed));*/
+				}
+			}
 			
 			j++;
 		}

@@ -46,7 +46,7 @@ void HelpTermsForm::setText()
 	
 	s+=tr("Instructions for the terms mode (Finland).");
 	s+="\n\n";
-	s+=tr("Last modified on %1.", "%1 is a date").arg(tr("29 March 2021"));
+	s+=tr("Last modified on %1.", "%1 is a date").arg(tr("2 July 2025"));
 	s+="\n\n";
 	s+=tr("The terms mode was suggested, chronologically, by these users: %1 and %2. You can follow a forum discussion about it here: %3",
 	 "%1 and %2 are two persons, %3 is an internet link").arg("mathmake").arg("mikkojoo")
@@ -58,13 +58,7 @@ void HelpTermsForm::setText()
 	s+=" ";
 	s+=tr("The terms are in order, one after another, and one day after another.");
 	s+="\n\n";
-	s+=tr("This mode adds two constraints:");
-	s+="\n\n";
-	s+=tr("1) Constraint activities max in a term.");
-	s+="\n";
-	s+=tr("2) Constraint activities occupy max terms.");
-	s+="\n\n";
-	s+=tr("NOTE: This mode is new and not thoroughly tested. Please report bugs!");
+	s+=tr("In this mode you can use some additional constraints referring to terms.");
 
 	plainTextEdit->setPlainText(s);
 }

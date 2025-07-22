@@ -52,10 +52,11 @@ SpreadConfirmationForm::SpreadConfirmationForm(QWidget* parent): QDialog(parent)
 	s+=tr("Please SAVE/BACKUP your current file and keep it safe, in case anything goes wrong, and only continue if you did that "
 	"already. The current function might modify much your data.");
 	s+="\n\n";
-	s+=tr("If you use constraints activities same starting time or same starting day then "
-	"you must take care of this aspect: after applying this function and before generating a timetable, it is IMPORTANT to "
-	"remove constraints min days between activities which are redundant, like described in Help/Important tips, advice 2) ."
-	" If you don't do that, you might get too difficult timetables or even impossible ones.");
+	s+=tr("If you use constraints activities same starting time or same starting day or max 0 days between activities "
+	"or max 0 half days between activities (in the Mornings-Afternoons mode), then you must take care of this aspect: "
+	"after applying this function and before generating a timetable, it is IMPORTANT to remove constraints min (half) "
+	"days between activities which are 'bad' (redundant and with weight < 100%), like it is described in Help/Important tips, advice 2) ."
+	" If you don't do that, you might get very difficult timetables or even impossible ones.");
 	s+="\n\n";
 	s+=tr("It is important for you to choose good weights percentages, suitable for your institution. A good weighting might "
 	"be values from 95.0% to 100.0% (ex.: 95.0%, 99.0%, 99.75%, 100.0%). You may want to select the check boxes for activities "

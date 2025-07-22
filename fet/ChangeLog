@@ -1,3 +1,8 @@
+ 7.2.6
+	- Corrected some instructions/documentation (reported by Yush Yuen).
+	- Added the option to highlight the incompletely assigned teachers in the teachers' statistics, by comparing their target number of hours with their
+	assigned list of activities (suggested by GUEFFAZ REDA).
+	- Updated the Italian translation, by Andrea Primiani.
  7.2.5
 	- Updated to Qt 6.9.1.
 	- Updated the Arabic translation, by Benahmed Abdelkrim.

@@ -37,6 +37,7 @@ public:
 	~TeachersStatisticsForm();
 	
 public slots:
+	void highlightIncompleteTeachersCheckBoxModified();
 	void hideFullTeachersCheckBoxModified();
 };
 

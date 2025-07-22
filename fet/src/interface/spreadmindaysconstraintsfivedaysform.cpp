@@ -465,8 +465,9 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 	
 	QString s2=tr("Spreading of activities operation completed successfully");
 	s2+="\n\n";
-	s2+=tr("NOTE: If you are using constraints of type activities same starting time or activities same starting day, it is important"
-	 " (after current operation) to apply the operation of removing redundant constraints.")
+	s2+=tr("NOTE: If you are using constraints of type activities same starting time or activities same starting day or max 0 days between "
+	 "activities or max 0 half days between activities (in the Mornings-Afternoons mode), it is important (after the current operation) "
+	 "to apply the operation of removing constraints which are 'bad' (redundant and with weight < 100%).")
 	 +" "+tr("Read Help/Important tips - tip 2) for details.");
 	QMessageBox::information(this, tr("FET information"), s2);
 	
