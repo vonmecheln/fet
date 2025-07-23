@@ -849,7 +849,7 @@ QString StatisticsExport::exportStatisticsTeachersSubjectsHtml(QWidget* parent, 
 									default: tmpSt+=protect2(*st); break;
 									}
 								if(st!=studentsNames.constEnd()-1)
-									tmpSt+=", ";
+									tmpSt+=translatedCommaSpace();
 							}
 							if(printActivityTags){
 								for(QStringList::const_iterator atn=activityTagsNames.constBegin(); atn!=activityTagsNames.constEnd(); atn++){
@@ -865,11 +865,11 @@ QString StatisticsExport::exportStatisticsTeachersSubjectsHtml(QWidget* parent, 
 											case 6 : tmpSt+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
 											default: tmpSt+=" "+protect2(*atn); break;
 										}
-										tmpSt+=", ";
+										tmpSt+=translatedCommaSpace();
 									}
 								}
-								if(tmpSt.endsWith(", ")){
-									tmpSt.remove(tmpSt.size()-2, 2);
+								if(tmpSt.endsWith(translatedCommaSpace())){
+									tmpSt.remove(tmpSt.size()-translatedCommaSpace().size(), translatedCommaSpace().size());
 								}
 							}
 							if(tmpSt=="")
@@ -1158,7 +1158,7 @@ QString StatisticsExport::exportStatisticsSubjectsTeachersHtml(QWidget* parent, 
 									default: tmpSt+=protect2(*st); break;
 									}
 								if(st!=studentsNames.constEnd()-1)
-									tmpSt+=", ";
+									tmpSt+=translatedCommaSpace();
 							}
 							if(printActivityTags){
 								for(QStringList::const_iterator atn=activityTagsNames.constBegin(); atn!=activityTagsNames.constEnd(); atn++){
@@ -1174,11 +1174,11 @@ QString StatisticsExport::exportStatisticsSubjectsTeachersHtml(QWidget* parent, 
 											case 6 : tmpSt+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
 											default: tmpSt+=" "+protect2(*atn); break;
 										}
-										tmpSt+=", ";
+										tmpSt+=translatedCommaSpace();
 									}
 								}
-								if(tmpSt.endsWith(", ")){
-									tmpSt.remove(tmpSt.size()-2, 2);
+								if(tmpSt.endsWith(translatedCommaSpace())){
+									tmpSt.remove(tmpSt.size()-translatedCommaSpace().size(), translatedCommaSpace().size());
 								}
 							}
 							if(tmpSt=="")
@@ -1484,11 +1484,11 @@ QString StatisticsExport::exportStatisticsTeachersStudentsHtml(QWidget* parent, 
 											case 6 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
 											default: tmpS+=" "+protect2(*atn); break;
 										}
-										tmpS+=", ";
+										tmpS+=translatedCommaSpace();
 									}
 								}
-								if(tmpS.endsWith(", ")){
-									tmpS.remove(tmpS.size()-2, 2);
+								if(tmpS.endsWith(translatedCommaSpace())){
+									tmpS.remove(tmpS.size()-translatedCommaSpace().size(), translatedCommaSpace().size());
 								}
 							}
 							if(tmpS=="")
@@ -1794,11 +1794,11 @@ QString StatisticsExport::exportStatisticsStudentsTeachersHtml(QWidget* parent, 
 											case 6 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
 											default: tmpS+=" "+protect2(*atn); break;
 										}
-										tmpS+=", ";
+										tmpS+=translatedCommaSpace();
 									}
 								}
-								if(tmpS.endsWith(", ")){
-									tmpS.remove(tmpS.size()-2, 2);
+								if(tmpS.endsWith(translatedCommaSpace())){
+									tmpS.remove(tmpS.size()-translatedCommaSpace().size(), translatedCommaSpace().size());
 								}
 							}
 							if(tmpS=="")
@@ -2088,7 +2088,7 @@ QString StatisticsExport::exportStatisticsSubjectsStudentsHtml(QWidget* parent, 
 									default: tmpT+=protect2(*it); break;
 								}
 								if(it!=teachersNames.constEnd()-1)
-									tmpT+=", ";
+									tmpT+=translatedCommaSpace();
 							}
 							if(printActivityTags){
 								for(QStringList::const_iterator atn=activityTagsNames.constBegin(); atn!=activityTagsNames.constEnd(); atn++){
@@ -2104,11 +2104,11 @@ QString StatisticsExport::exportStatisticsSubjectsStudentsHtml(QWidget* parent, 
 											case 6 : tmpT+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
 											default: tmpT+=" "+protect2(*atn); break;
 										}
-										tmpT+=", ";
+										tmpT+=translatedCommaSpace();
 									}
 								}
-								if(tmpT.endsWith(", ")){
-									tmpT.remove(tmpT.size()-2, 2);
+								if(tmpT.endsWith(translatedCommaSpace())){
+									tmpT.remove(tmpT.size()-translatedCommaSpace().size(), translatedCommaSpace().size());
 								}
 							}
 							if(tmpT=="")
@@ -2399,7 +2399,7 @@ QString StatisticsExport::exportStatisticsStudentsSubjectsHtml(QWidget* parent, 
 									default: tmpT+=protect2(*it); break;
 								}
 								if(it!=teachersNames.constEnd()-1)
-									tmpT+=", ";
+									tmpT+=translatedCommaSpace();
 							}
 							if(printActivityTags){
 								for(QStringList::const_iterator atn=activityTagsNames.constBegin(); atn!=activityTagsNames.constEnd(); atn++){
@@ -2415,11 +2415,11 @@ QString StatisticsExport::exportStatisticsStudentsSubjectsHtml(QWidget* parent, 
 											case 6 : tmpT+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
 											default: tmpT+=" "+protect2(*atn); break;
 										}
-										tmpT+=", ";
+										tmpT+=translatedCommaSpace();
 									}
 								}
-								if(tmpT.endsWith(", ")){
-									tmpT.remove(tmpT.size()-2, 2);
+								if(tmpT.endsWith(translatedCommaSpace())){
+									tmpT.remove(tmpT.size()-translatedCommaSpace().size(), translatedCommaSpace().size());
 								}
 							}
 							if(tmpT=="")

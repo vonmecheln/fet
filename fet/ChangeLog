@@ -1,3 +1,7 @@
+ 7.4.0
+	- Added a complete Bosnian translation, by Bolja škola (assisted by Google Translate and ChatGPT).
+	- Some punctuation marks are now translated, because in some languages, like Arabic, they are different from the Latin ones (reported/suggested
+	by Walid).
  7.3.2
 	- Interface bugs fixed in the teachers'/students' not available times time horizontal dialogs: when using a right-to-left writing system,
 	the lines separating the days were drawn incorrectly (reported by GUEFFAZ REDA).

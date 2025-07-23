@@ -679,7 +679,7 @@ void TimetableViewRoomsDaysHorizontalForm::updateRoomsTimetableTable(){
 
 				if(subjectsCheckBox->isChecked()){
 					if(activityTagsCheckBox->isChecked() && act->activityTagsNames.count()>0){
-						QString ats=act->activityTagsNames.join(", ");
+						QString ats=act->activityTagsNames.join(translatedCommaSpace());
 						s += act->subjectName + " " + ats;
 					}
 					else{
@@ -688,17 +688,17 @@ void TimetableViewRoomsDaysHorizontalForm::updateRoomsTimetableTable(){
 					s+="\n";
 				}
 				else if(activityTagsCheckBox->isChecked()){
-					s+=act->activityTagsNames.join(", ");
+					s+=act->activityTagsNames.join(translatedCommaSpace());
 					s+="\n";
 				}
 				
 				if(teachersCheckBox->isChecked() && act->teachersNames.count()>0){
-					s+=act->teachersNames.join(", ");
+					s+=act->teachersNames.join(translatedCommaSpace());
 					s+="\n";
 				}
 				
 				if(studentsCheckBox->isChecked() && act->studentsNames.count()>0){
-					s+=act->studentsNames.join(", ");
+					s+=act->studentsNames.join(translatedCommaSpace());
 					s+="\n";
 				}
 				
@@ -917,7 +917,7 @@ void TimetableViewRoomsDaysHorizontalForm::detailActivity(QTableWidgetItem* item
 					QStringList tsl;
 					for(int i : std::as_const(best_solution.realRoomsList[ai]))
 						tsl.append(gt.rules.internalRoomsList[i]->name);
-					s+=QString(" (")+tsl.join(", ")+QString(")");
+					s+=QString(" (")+tsl.join(translatedCommaSpace())+QString(")");
 				}
 				
 				if(gt.rules.internalRoomsList[r]->building!=""){

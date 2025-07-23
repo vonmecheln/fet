@@ -720,7 +720,7 @@ again_here_2:
 	sb+=tr("Number of categories: %1").arg(yearPointer->divisions.count());
 	sb+=QString("\n");
 	for(int i=0; i<yearPointer->divisions.count(); i++){
-		sb+=tr("Category %1: %2").arg(i+1).arg(yearPointer->divisions.at(i).join(", "));
+		sb+=tr("Category %1: %2").arg(i+1).arg(yearPointer->divisions.at(i).join(translatedCommaSpace()));
 		sb+=QString("\n");
 	}
 	/*if(yearPointer->divisions.count()==0){
@@ -963,7 +963,7 @@ again_here_4:
 	for(int i=0; i<_nCategories; i++){
 		newYear->divisions.append(_divisions[i]);
 
-		sa+=tr("Category %1: %2").arg(i+1).arg(_divisions[i].join(", "));
+		sa+=tr("Category %1: %2").arg(i+1).arg(_divisions[i].join(translatedCommaSpace()));
 		sa+=QString("\n");
 	}
 	/*if(_nCategories==0){

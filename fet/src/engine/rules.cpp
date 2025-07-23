@@ -6021,7 +6021,7 @@ bool Rules::computeInternalStructure(QWidget* parent)
 						tl2.append(t);
 				if(!tl2.isEmpty()){
 					RulesImpossible::warning(parent, tr("FET information"), tr("Virtual room %1, in set number %2, has these duplicate real rooms names: %3."
-					 " Please correct this.").arg(rm->name).arg(i+1).arg(tl2.join(", ")));
+					 " Please correct this.").arg(rm->name).arg(i+1).arg(tl2.join(translatedCommaSpace())));
 					return false;
 				}
 				

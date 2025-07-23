@@ -118,7 +118,7 @@ void AddExistingStudentsSubgroupsForm::ok()
 	}
 	
 	if(cnt>0)
-		gt.rules.addUndoPoint(tr("Added the existing subgroups %1 into the group %2 from the year %3.").arg(sl.join(", ")).arg(group->name).arg(year->name));
+		gt.rules.addUndoPoint(tr("Added the existing subgroups %1 into the group %2 from the year %3.").arg(sl.join(translatedCommaSpace())).arg(group->name).arg(year->name));
 	
 	this->accept();
 }

@@ -195,16 +195,16 @@ void Generate::checkWriteCurrentAndHighestTimetable()
 
 	s+=QString("\n\n----------\n\n");
 
-	s+=FetTranslate::tr("Here are the placed activities which lead to an inconsistency, "
+	s+=FetTranslate::tr("Here are the placed activities which led to an inconsistency, "
 		"in order from the first one to the last (the last one FET failed to schedule "
-		"and the last ones are most likely impossible):");
+		"and the last ones are most likely the difficult ones):");
 	s+="\n\n";
 	for(int i=0; i<this->nDifficultActivities; i++){
 		int ai=this->difficultActivities[i];
 
 		s+=FetTranslate::tr("No: %1").arg(i+1);
 
-		s+=", ";
+		s+=translatedCommaSpace();
 
 		s+=FetTranslate::tr("Id: %1 (%2)", "%1 is id of activity, %2 is detailed description of activity")
 			.arg(gt.rules.internalActivitiesList[ai].id)

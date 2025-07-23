@@ -117,9 +117,9 @@ QString Teacher::getXmlDescription(const Rules& r)
 QString Teacher::getDescription(const Rules& r)
 {
 	QString s=tr("N:%1", "The (short) name of the teacher").arg(name);
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("LN:%1", "The long name of the teacher").arg(longName);
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("C:%1", "The code of the teacher").arg(code);
 
 	if(r.mode==MORNINGS_AFTERNOONS){
@@ -140,13 +140,13 @@ QString Teacher::getDescription(const Rules& r)
 			mab=tr("5DE", "Five days exception");
 		else
 			assert(0);
-		s+=", ";
+		s+=translatedCommaSpace();
 		s+=tr("MAB: %1", "Mornings-afternoons behavior").arg(mab);
 	}
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 	
 	return s+end;
 }

@@ -28,6 +28,8 @@ File timetable_defs.cpp
 
 #include <QLocale>
 
+#include <QCoreApplication>
+
 const QString IL1=QString(2, ' '); //indentation levels
 const QString IL2=QString(4, ' ');
 const QString IL3=QString(6, ' ');
@@ -57,7 +59,7 @@ int STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
 /**
 The FET version
 */
-const QString FET_VERSION="7.3.2";
+const QString FET_VERSION="7.4.0";
 
 /**
 The version number of the data format, useful when saving/restoring the history to/from the disk.
@@ -193,6 +195,41 @@ QString protect2vert(const QString& str) //used for HTML
 		returnstring.append(b);
 	}
 	return returnstring;
+}
+
+QString translatedComma()
+{
+	return QCoreApplication::translate("PunctuationMarks", ",", "Comma");
+}
+
+QString translatedCommaSpace()
+{
+	return translatedComma()+QString(" ");
+}
+
+QString translatedSemicolon()
+{
+	return QCoreApplication::translate("PunctuationMarks", ";", "Semicolon");
+}
+
+QString translatedSemicolonSpace()
+{
+	return translatedSemicolon()+QString(" ");
+}
+
+QString translatedDot()
+{
+	return QCoreApplication::translate("PunctuationMarks", ".", "Dot");
+}
+
+QString translatedQuestionMark()
+{
+	return QCoreApplication::translate("PunctuationMarks", "?", "Question mark");
+}
+
+QString translatedThreeQuestionMarks()
+{
+	return translatedQuestionMark()+translatedQuestionMark()+translatedQuestionMark();
 }
 
 ///////begin tricks

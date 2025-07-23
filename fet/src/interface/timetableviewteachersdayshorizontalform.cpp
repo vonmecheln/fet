@@ -651,14 +651,14 @@ void TimetableViewTeachersDaysHorizontalForm::updateTeachersTimetableTable(){
 						//Don't do the assert below, because it crashes if you change the teacher's name and view the teachers' timetable,
 						//without generating again (as reported by Yush Yuen).
 						//assert(act->teachersNames.contains(teachername));
-						s+=act->teachersNames.join(", ");
+						s+=act->teachersNames.join(translatedCommaSpace());
 						s+="\n";
 					}
 				}
 				
 				if(subjectsCheckBox->isChecked()){
 					if(activityTagsCheckBox->isChecked() && act->activityTagsNames.count()>0){
-						QString ats=act->activityTagsNames.join(", ");
+						QString ats=act->activityTagsNames.join(translatedCommaSpace());
 						s += act->subjectName+" "+ats;
 					}
 					else{
@@ -667,14 +667,14 @@ void TimetableViewTeachersDaysHorizontalForm::updateTeachersTimetableTable(){
 					s+="\n";
 				}
 				else if(activityTagsCheckBox->isChecked()){
-					s+=act->activityTagsNames.join(", ");
+					s+=act->activityTagsNames.join(translatedCommaSpace());
 					s+="\n";
 				}
 				
 				//students
 				if(studentsCheckBox->isChecked()){
 					if(act->studentsNames.count()>0){
-						s+=act->studentsNames.join(", ");
+						s+=act->studentsNames.join(translatedCommaSpace());
 						s+="\n";
 					}
 				}
@@ -690,7 +690,7 @@ void TimetableViewTeachersDaysHorizontalForm::updateTeachersTimetableTable(){
 							QStringList tsl;
 							for(int i : std::as_const(best_solution.realRoomsList[ai]))
 								tsl.append(gt.rules.internalRoomsList[i]->name);
-							s+=QString(" (")+tsl.join(", ")+QString(")");
+							s+=QString(" (")+tsl.join(translatedCommaSpace())+QString(")");
 						}
 						s+="\n";
 					}
@@ -911,7 +911,7 @@ void TimetableViewTeachersDaysHorizontalForm::detailActivity(QTableWidgetItem* i
 						QStringList tsl;
 						for(int i : std::as_const(best_solution.realRoomsList[ai]))
 							tsl.append(gt.rules.internalRoomsList[i]->name);
-						s+=QString(" (")+tsl.join(", ")+QString(")");
+						s+=QString(" (")+tsl.join(translatedCommaSpace())+QString(")");
 					}
 
 					if(gt.rules.internalRoomsList[r]->building!=""){

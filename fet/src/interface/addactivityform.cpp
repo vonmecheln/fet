@@ -734,8 +734,8 @@ void AddActivityForm::addActivity()
 			
 			gt.rules.addUndoPoint(tr("Added an activity:\nId=%1\nTeachers=%2\nSubject=%3\nActivity tags=%4\n"
 			 "Students=%5")
-			 .arg(sfid).arg(teachers_names.join(", ")).arg(subject_name).arg(activity_tags_names.join(", "))
-			 .arg(students_names.join(", ")));
+			 .arg(sfid).arg(teachers_names.join(translatedCommaSpace())).arg(subject_name).arg(activity_tags_names.join(translatedCommaSpace()))
+			 .arg(students_names.join(translatedCommaSpace())));
 		}
 		else{
 			QMessageBox::critical(this, tr("FET information"), tr("Activity NOT added - please report error"));
@@ -889,8 +889,8 @@ void AddActivityForm::addActivity()
 			 ". It is advisable to check the statistics after adding all the activities"));
 
 			gt.rules.addUndoPoint(tr("Added a split activity:\nFirst activity's id=%1\nTeachers=%2\nSubject=%3\nActivity tags=%4\nStudents=%5\nNumber of subactivities=%6")
-			 .arg(sfid).arg(teachers_names.join(", ")).arg(subject_name).arg(activity_tags_names.join(", "))
-			 .arg(students_names.join(", ")).arg(nsplit));
+			 .arg(sfid).arg(teachers_names.join(translatedCommaSpace())).arg(subject_name).arg(activity_tags_names.join(translatedCommaSpace()))
+			 .arg(students_names.join(translatedCommaSpace())).arg(nsplit));
 		}
 		else
 			QMessageBox::critical(this, tr("FET information"), tr("Split activity NOT added - error???"));
@@ -1036,8 +1036,8 @@ void AddActivityForm::addMultipleActivities()
 		QMessageBox::information(this, tr("FET information"), tr("%1 activities added").arg(cnt_act));
 
 		gt.rules.addUndoPoint(tr("Added multiple activities:\nFirst activity's id=%1\nTeachers=%2\nSubject=%3\nActivity tags=%4\nStudents (separately)=%5")
-		 .arg(sfid).arg(teachers_names.join(", ")).arg(subject_name).arg(activity_tags_names.join(", "))
-		 .arg(students_names.join(", ")));
+		 .arg(sfid).arg(teachers_names.join(translatedCommaSpace())).arg(subject_name).arg(activity_tags_names.join(translatedCommaSpace()))
+		 .arg(students_names.join(translatedCommaSpace())));
 	}
 	else{ //split activity
 		if(gt.rules.mode!=MORNINGS_AFTERNOONS){
@@ -1226,8 +1226,8 @@ void AddActivityForm::addMultipleActivities()
 
 		gt.rules.addUndoPoint(tr("Added multiple split activities:\nFirst activity's id=%1\nTeachers=%2\nSubject=%3\nActivity tags=%4\nStudents (separately)=%5\n"
 		 "Number of subactivities in each larger split activity=%6")
-		 .arg(sfid).arg(teachers_names.join(", ")).arg(subject_name).arg(activity_tags_names.join(", "))
-		 .arg(students_names.join(", ")).arg(nsplit));
+		 .arg(sfid).arg(teachers_names.join(translatedCommaSpace())).arg(subject_name).arg(activity_tags_names.join(translatedCommaSpace()))
+		 .arg(students_names.join(translatedCommaSpace())).arg(nsplit));
 	}
 
 	PlanningChanged::increasePlanningCommunicationSpinBox();

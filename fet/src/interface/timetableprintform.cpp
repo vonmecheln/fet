@@ -1247,7 +1247,7 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 		for(int i : std::as_const(activeHashActivityColorBySubjectAndStudents)){
 			Activity* act=&gt.rules.internalActivitiesList[i];
 			
-			QString tmpString=act->subjectName+" "+act->studentsNames.join(" ,");
+			QString tmpString=act->subjectName+" "+act->studentsNames.join(", ");
 			
 			//similar to the coloring by Marco Vassura (start)
 			int r, g, b;

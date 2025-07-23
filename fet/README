@@ -1,4 +1,4 @@
-This is FET version 7.3.2
+This is FET version 7.4.0
 
 
 Program description:
@@ -318,8 +318,8 @@ Running FET:
 			details/facilities and larger file sizes).
 
 		--language=LANG
-			LANG is one of: ar, bg, ca, cs, da, de, el, en_GB, en_US, es, eu, fa, fr, gl, he, hu, id, it, ja, lt, mk, ms, nl, pl, pt_BR, ro, ru, si,
-			sk, sq, sr, tr, uk, uz, vi, zh_CN, zh_TW (default en_US).
+			LANG is one of: ar, bg, bs, ca, cs, da, de, el, en_GB, en_US, es, eu, fa, fr, gl, he, hu, id, it, ja, lt, mk, ms, nl, pl, pt_BR, ro, ru,
+			si, sk, sq, sr, tr, uk, uz, vi, zh_CN, zh_TW (default en_US).
 
 		--writetimetableconflicts=WT1
 		--writetimetablesstatistics=WT2

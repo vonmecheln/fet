@@ -126,42 +126,42 @@ void Room::computeInternalStructureRealRoomsSetsList(Rules& r)
 QString Room::getDescription()
 {
 	QString s=tr("N:%1", "The (short) name of room").arg(this->name);
-	s+=", ";
+	s+=translatedCommaSpace();
 	
 	s+=tr("LN:%1", "The long name of room").arg(this->longName);
-	s+=", ";
+	s+=translatedCommaSpace();
 	
 	s+=tr("C:%1", "The code of room").arg(this->code);
-	s+=", ";
+	s+=translatedCommaSpace();
 	
 	if(this->building!=""){
 		s+=tr("B:%1", "Building").arg(this->building);
-		s+=", ";
+		s+=translatedCommaSpace();
 	}
 	/*s+=tr("T:");
 	s+=this->type;
-	s+=",";*/
+	s+=translatedComma();*/
 	s+=tr("C:%1", "Capacity").arg(CustomFETString::number(this->capacity));
 	
 	if(this->isVirtual){
-		s+=", ";
+		s+=translatedCommaSpace();
 		s+=tr("V:%1", "The room is virtual: yes or no.").arg(yesNoTranslated(this->isVirtual));
 		int i=0;
 		for(const QStringList& sl : std::as_const(this->realRoomsSetsList)){
-			s+=", ";
-			s+=tr("S%1(%2)", "Set %1 is composed of rooms, which form the list %2").arg(i+1).arg(sl.join(","));
+			s+=translatedCommaSpace();
+			s+=tr("S%1(%2)", "Set %1 is composed of rooms, which form the list %2").arg(i+1).arg(sl.join(translatedComma()));
 			
 			i++;
 		}
 	}
-	//s+=",";
+	//s+=translatedComma();
 
 	/*for(QStringList::Iterator it=this->equipments.begin(); it!=this->equipments.end(); it++)
-		s+="E:"+(*it)+", ";*/
+		s+="E:"+(*it)+translatedCommaSpace();*/
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=QString(", ")+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	return s+end;
 }
@@ -192,7 +192,7 @@ QString Room::getDetailedDescription()
 		s+="\n";
 		int i=0;
 		for(const QStringList& sl : std::as_const(this->realRoomsSetsList)){
-			s+=tr("Set number %1=(%2)", "Set %1 is composed of rooms, which form the list %2").arg(i+1).arg(sl.join(", "));
+			s+=tr("Set number %1=(%2)", "Set %1 is composed of rooms, which form the list %2").arg(i+1).arg(sl.join(translatedCommaSpace()));
 			s+="\n";
 			
 			i++;

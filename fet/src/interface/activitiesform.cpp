@@ -709,7 +709,7 @@ void ActivitiesForm::modifyActivity()
 			 " and modify individual subactivities from the corresponding menu. Otherwise you will modify the fields for all the subactivities"
 			 " from this larger split activity.");
 			s2+="\n\n";
-			s2+=tr("The fields which are different are: %1").arg(s.join(", "));
+			s2+=tr("The fields which are different are: %1").arg(s.join(translatedCommaSpace()));
 				
 			/*int t=QMessageBox::warning(this, tr("FET warning"), s2, tr("Abort"), tr("Continue"), QString(), 1, 0);
 			

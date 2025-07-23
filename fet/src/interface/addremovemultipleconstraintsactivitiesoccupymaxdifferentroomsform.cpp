@@ -121,7 +121,7 @@ void AddRemoveMultipleConstraintsActivitiesOccupyMaxDifferentRoomsForm::addAllCo
 	
 	if(cnt>0)
 		gt.rules.addUndoPoint(tr("Added %1 space constraints of type activities occupy max different rooms, with weight=%2%, conditions=%3, max different rooms=%4.")
-		 .arg(cnt).arg(100.0).arg(descr.join(", ")).arg(maxDifferentRoomsSpinBox->value()));
+		 .arg(cnt).arg(100.0).arg(descr.join(translatedCommaSpace())).arg(maxDifferentRoomsSpinBox->value()));
 }
 
 void AddRemoveMultipleConstraintsActivitiesOccupyMaxDifferentRoomsForm::removeAllConstraints()

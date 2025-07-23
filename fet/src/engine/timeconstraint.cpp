@@ -6206,7 +6206,7 @@ QString getActivityDescription(Rules& r, int id)
 	
 	Activity* act=r.activitiesPointerHash.value(id, nullptr);
 	if(act==nullptr){
-		s+="?";
+		s+=translatedQuestionMark();
 	}
 	else{
 		if(!act->active)
@@ -6229,11 +6229,11 @@ QString getActivityDetailedDescription(Rules& r, int id)
 
 	/*if(act->activityTagsNames.count()>0){
 		s+=QCoreApplication::translate("Activity", "T:%1, S:%2, AT:%3, St:%4", "This is an important translation for an activity's detailed description, please take care (it appears in many places in constraints)."
-		 "The abbreviations are: Teachers, Subject, Activity tags, Students. This variant includes activity tags").arg(act->teachersNames.join(",")).arg(act->subjectName).arg(act->activityTagsNames.join(",")).arg(act->studentsNames.join(","));
+		 "The abbreviations are: Teachers, Subject, Activity tags, Students. This variant includes activity tags").arg(act->teachersNames.join(translatedComma())).arg(act->subjectName).arg(act->activityTagsNames.join(translatedComma())).arg(act->studentsNames.join(translatedComma()));
 	}
 	else{
 		s+=QCoreApplication::translate("Activity", "T:%1, S:%2, St:%3", "This is an important translation for an activity's detailed description, please take care (it appears in many places in constraints)."
-		 "The abbreviations are: Teachers, Subject, Students. There are no activity tags here").arg(act->teachersNames.join(",")).arg(act->subjectName).arg(act->studentsNames.join(","));
+		 "The abbreviations are: Teachers, Subject, Students. There are no activity tags here").arg(act->teachersNames.join(translatedComma())).arg(act->subjectName).arg(act->studentsNames.join(translatedComma()));
 	}
 	return s;*/
 
@@ -6255,17 +6255,17 @@ QString getActivityDetailedDescription(Rules& r, int id)
 	if(act->teachersNames.count()==0)
 		_teachers=QCoreApplication::translate("Activity", "no teachers");
 	else
-		_teachers=act->teachersNames.join(",");
+		_teachers=act->teachersNames.join(translatedComma());
 
 	QString _subject=act->subjectName;
 	
-	QString _activityTags=act->activityTagsNames.join(",");
+	QString _activityTags=act->activityTagsNames.join(translatedComma());
 
 	QString _students="";
 	if(act->studentsNames.count()==0)
 		_students=QCoreApplication::translate("Activity", "no students");
 	else
-		_students=act->studentsNames.join(",");
+		_students=act->studentsNames.join(translatedComma());
 
 	/*QString _id;
 	_id = CustomFETString::number(id);
@@ -7856,9 +7856,9 @@ QString ConstraintBasicCompulsoryTime::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
-	return begin+tr("Basic compulsory constraints (time)") + ", " + tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage))+end;
+	return begin+tr("Basic compulsory constraints (time)") + translatedCommaSpace() + tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage))+end;
 }
 
 QString ConstraintBasicCompulsoryTime::getDetailedDescription(Rules& r)
@@ -8346,11 +8346,11 @@ QString ConstraintTeacherNotAvailableTimes::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
-	QString s=tr("Teacher not available");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacher);s+=", ";
+	QString s=tr("Teacher not available");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacher);s+=translatedCommaSpace();
 
 	s+=tr("NA at:", "Not available at");
 	s+=" ";
@@ -8364,7 +8364,7 @@ QString ConstraintTeacherNotAvailableTimes::getDescription(Rules& r)
 			s+=r.hoursOfTheDay[this->hours.at(i)];
 		}
 		if(i<days.count()-1)
-			s+="; ";
+			s+=translatedSemicolonSpace();
 	}
 
 	return begin+s+end;
@@ -8389,7 +8389,7 @@ QString ConstraintTeacherNotAvailableTimes::getDetailedDescription(Rules& r)
 			s+=r.hoursOfTheDay[this->hours.at(i)];
 		}
 		if(i<days.count()-1)
-			s+="; ";
+			s+=translatedSemicolonSpace();
 	}
 	s+="\n";
 
@@ -8712,12 +8712,12 @@ QString ConstraintStudentsSetNotAvailableTimes::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s=tr("Students set not available");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Students").arg(this->students);s+=", ";
+	s=tr("Students set not available");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students").arg(this->students);s+=translatedCommaSpace();
 
 	s+=tr("NA at:", "Not available at");
 	s+=" ";
@@ -8731,7 +8731,7 @@ QString ConstraintStudentsSetNotAvailableTimes::getDescription(Rules& r)
 			s+=r.hoursOfTheDay[this->hours.at(i)];
 		}
 		if(i<days.count()-1)
-			s+="; ";
+			s+=translatedSemicolonSpace();
 	}
 
 	return begin+s+end;
@@ -8757,7 +8757,7 @@ QString ConstraintStudentsSetNotAvailableTimes::getDetailedDescription(Rules& r)
 			s+=r.hoursOfTheDay[this->hours.at(i)];
 		}
 		if(i<days.count()-1)
-			s+="; ";
+			s+=translatedSemicolonSpace();
 	}
 	s+="\n";
 
@@ -9035,16 +9035,16 @@ QString ConstraintActivitiesSameStartingTime::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Activities same starting time");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
+	s+=tr("Activities same starting time");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=translatedCommaSpace();
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));
 		if(i<this->n_activities-1)
-			s+=", ";
+			s+=translatedCommaSpace();
 	}
 
 	return begin+s+end;
@@ -9354,16 +9354,16 @@ QString ConstraintActivitiesNotOverlapping::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Activities not overlapping");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
+	s+=tr("Activities not overlapping");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=translatedCommaSpace();
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));
 		if(i<this->n_activities-1)
-			s+=", ";
+			s+=translatedCommaSpace();
 	}
 
 	return begin+s+end;
@@ -9474,7 +9474,7 @@ double ConstraintActivitiesNotOverlapping::fitness(Solution& c, Rules& r, QList<
 							 .arg(r.internalActivitiesList[this->_activities[j]].id)
 							 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[this->_activities[j]].id))
 							 .arg(tt);
-							s+=", ";
+							s+=translatedCommaSpace();
 							s+=tr("conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
 							
 							dl.append(s);
@@ -9645,17 +9645,17 @@ QString ConstraintActivityTagsNotOverlapping::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Activity tags not overlapping");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("NAT:%1", "Number of activity tags").arg(this->activityTagsNames.count());s+=", ";
+	s+=tr("Activity tags not overlapping");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("NAT:%1", "Number of activity tags").arg(this->activityTagsNames.count());s+=translatedCommaSpace();
 	int i=0;
 	for(const QString& atn : std::as_const(activityTagsNames)){
 		s+=tr("AT:%1", "Activity tag").arg(atn);
 		if(i<this->activityTagsNames.count()-1)
-			s+=", ";
+			s+=translatedCommaSpace();
 		i++;
 	}
 
@@ -9738,7 +9738,7 @@ double ConstraintActivityTagsNotOverlapping::fitness(Solution& c, Rules& r, QLis
 								 .arg(r.internalActivitiesList[j].id)
 								 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[j].id))
 								 .arg(tt);
-								s+=", ";
+								s+=translatedCommaSpace();
 								s+=tr("conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
 								
 								dl.append(s);
@@ -9982,16 +9982,16 @@ QString ConstraintMinDaysBetweenActivities::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Min days between activities");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
+	s+=tr("Min days between activities");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=translatedCommaSpace();
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));s+=", ";
+		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));s+=translatedCommaSpace();
 	}
-	s+=tr("mD:%1", "Min days").arg(this->minDays);s+=", ";
+	s+=tr("mD:%1", "Min days").arg(this->minDays);s+=translatedCommaSpace();
 	s+=tr("CSD:%1", "Consecutive if on the same day").arg(yesNoTranslated(this->consecutiveIfSameDay));
 
 	return begin+s+end;
@@ -10123,9 +10123,9 @@ double ConstraintMinDaysBetweenActivities::fitness(Solution& c, Rules& r, QList<
 							 .arg(r.daysOfTheWeek[day2]);
 							 ;
 
-							s+=", ";
+							s+=translatedCommaSpace();
 							s+=tr("conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
-							s+=".";
+							s+=translatedDot();
 							
 							if(this->consecutiveIfSameDay && ((r.mode!=MORNINGS_AFTERNOONS && day1==day2) || (r.mode==MORNINGS_AFTERNOONS && day1/2==day2/2))){
 								s+=" ";
@@ -10403,14 +10403,14 @@ QString ConstraintMaxDaysBetweenActivities::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Max days between activities");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
+	s+=tr("Max days between activities");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=translatedCommaSpace();
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));s+=", ";
+		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));s+=translatedCommaSpace();
 	}
 	s+=tr("MD:%1", "Abbreviation for maximum days").arg(this->maxDays);
 
@@ -10529,9 +10529,9 @@ double ConstraintMaxDaysBetweenActivities::fitness(Solution& c, Rules& r, QList<
 							 .arg(r.daysOfTheWeek[day1])
 							 .arg(r.daysOfTheWeek[day2]);
 							
-							s+=", ";
+							s+=translatedCommaSpace();
 							s+=tr("conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
-							s+=".";
+							s+=translatedDot();
 							
 							dl.append(s);
 							cl.append(tmp*weightPercentage/100);
@@ -10763,14 +10763,14 @@ QString ConstraintActivitiesMaxHourlySpan::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Activities max hourly span");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
+	s+=tr("Activities max hourly span");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=translatedCommaSpace();
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));s+=", ";
+		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));s+=translatedCommaSpace();
 	}
 	s+=tr("MHS:%1", "Abbreviation for maximum hourly span").arg(this->maxHourlySpan);
 
@@ -10906,9 +10906,9 @@ double ConstraintActivitiesMaxHourlySpan::fitness(Solution& c, Rules& r, QList<d
 							 .arg(r.daysOfTheWeek[day2])
 							 .arg(r.hoursOfTheDay[hour2]);
 							
-							s+=", ";
+							s+=translatedCommaSpace();
 							s+=tr("conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
-							s+=".";
+							s+=translatedDot();
 							
 							dl.append(s);
 							cl.append(tmp*weightPercentage/100);
@@ -11127,14 +11127,14 @@ QString ConstraintMinGapsBetweenActivities::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Min gaps between activities");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
+	s+=tr("Min gaps between activities");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=translatedCommaSpace();
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));s+=", ";
+		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));s+=translatedCommaSpace();
 	}
 	s+=tr("mG:%1", "Minimum number of gaps").arg(this->minGaps);
 
@@ -11222,9 +11222,9 @@ double ConstraintMinGapsBetweenActivities::fitness(Solution& c, Rules& r, QList<
 						 .arg(r.daysOfTheWeek[day1])
 						 .arg(tt);
 
-						s+=", ";
+						s+=translatedCommaSpace();
 						s+=tr("conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
-						s+=".";
+						s+=translatedDot();
 							
 						dl.append(s);
 						cl.append(tmp*weightPercentage/100);
@@ -11440,14 +11440,14 @@ QString ConstraintMaxGapsBetweenActivities::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Max gaps between activities");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
+	s+=tr("Max gaps between activities");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=translatedCommaSpace();
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));s+=", ";
+		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));s+=translatedCommaSpace();
 	}
 	s+=tr("MG:%1", "Maximum number of gaps").arg(this->maxGaps);
 
@@ -11534,9 +11534,9 @@ double ConstraintMaxGapsBetweenActivities::fitness(Solution& c, Rules& r, QList<
 						 .arg(r.daysOfTheWeek[day1])
 						 .arg(tt);
 
-						s+=", ";
+						s+=translatedCommaSpace();
 						s+=tr("conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
-						s+=".";
+						s+=translatedDot();
 
 						dl.append(s);
 						cl.append(tmp*weightPercentage/100);
@@ -11674,11 +11674,11 @@ QString ConstraintTeachersMaxHoursDaily::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Teachers max hours daily"), s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Teachers max hours daily"), s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MH:%1", "Maximum hours (daily)").arg(this->maxHoursDaily);
 
 	return begin+s+end;
@@ -11896,12 +11896,12 @@ QString ConstraintTeacherMaxHoursDaily::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Teacher max hours daily");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
+	s+=tr("Teacher max hours daily");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
 	s+=tr("MH:%1", "Maximum hours (daily)").arg(this->maxHoursDaily);
 
 	return begin+s+end;
@@ -12114,11 +12114,11 @@ QString ConstraintTeachersMaxHoursContinuously::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Teachers max hours continuously");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Teachers max hours continuously");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MH:%1", "Maximum hours (continuously)").arg(this->maxHoursContinuously);
 
 	return begin+s+end;
@@ -12345,12 +12345,12 @@ QString ConstraintTeacherMaxHoursContinuously::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Teacher max hours continuously");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
+	s+=tr("Teacher max hours continuously");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
 	s+=tr("MH:%1", "Maximum hours continuously").arg(this->maxHoursContinuously);
 
 	return begin+s+end;
@@ -12594,10 +12594,10 @@ QString ConstraintTeachersActivityTagMaxHoursContinuously::getDescription(Rules&
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Teachers for activity tag %1 have max %2 hours continuously").arg(this->activityTagName).arg(this->maxHoursContinuously);s+=", ";
+	s+=tr("Teachers for activity tag %1 have max %2 hours continuously").arg(this->activityTagName).arg(this->maxHoursContinuously);s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -12870,10 +12870,10 @@ QString ConstraintTeacherActivityTagMaxHoursContinuously::getDescription(Rules& 
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Teacher %1 for activity tag %2 has max %3 hours continuously").arg(this->teacherName).arg(this->activityTagName).arg(this->maxHoursContinuously);s+=", ";
+	s+=tr("Teacher %1 for activity tag %2 has max %3 hours continuously").arg(this->teacherName).arg(this->activityTagName).arg(this->maxHoursContinuously);s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -13124,11 +13124,11 @@ QString ConstraintTeacherMaxDaysPerWeek::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
-	QString s=tr("Teacher max days per week");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
+	QString s=tr("Teacher max days per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
 	s+=tr("MD:%1", "Max days (per week)").arg(this->maxDaysPerWeek);
 
 	return begin+s+end;
@@ -13362,10 +13362,10 @@ QString ConstraintTeachersMaxDaysPerWeek::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
-	QString s=tr("Teachers max days per week");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	QString s=tr("Teachers max days per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MD:%1", "Max days (per week)").arg(this->maxDaysPerWeek);
 
 	return begin+s+end;
@@ -13609,11 +13609,11 @@ QString ConstraintTeachersMaxGapsPerWeek::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Teachers max gaps per week");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Teachers max gaps per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MG:%1", "Max gaps (per week)").arg(this->maxGaps);
 
 	return begin+s+end;
@@ -13820,12 +13820,12 @@ QString ConstraintTeacherMaxGapsPerWeek::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Teacher max gaps per week");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName); s+=", ";
+	s+=tr("Teacher max gaps per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName); s+=translatedCommaSpace();
 	s+=tr("MG:%1", "Max gaps (per week").arg(this->maxGaps);
 
 	return begin+s+end;
@@ -14028,11 +14028,11 @@ QString ConstraintTeachersMaxGapsPerDay::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Teachers max gaps per day");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Teachers max gaps per day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MG:%1", "Max gaps (per day)").arg(this->maxGaps);
 
 	return begin+s+end;
@@ -14238,12 +14238,12 @@ QString ConstraintTeacherMaxGapsPerDay::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Teacher max gaps per day");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName); s+=", ";
+	s+=tr("Teacher max gaps per day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName); s+=translatedCommaSpace();
 	s+=tr("MG:%1", "Max gaps (per day)").arg(this->maxGaps);
 
 	return begin+s+end;
@@ -14447,11 +14447,11 @@ QString ConstraintTeachersMaxGapsPerMorningAndAfternoon::getDescription(Rules& r
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Teachers max gaps per morning and afternoon");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Teachers max gaps per morning and afternoon");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MG:%1", "Max gaps (per morning and afternoon)").arg(this->maxGaps);
 
 	return begin+s+end;
@@ -14674,12 +14674,12 @@ QString ConstraintTeacherMaxGapsPerMorningAndAfternoon::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Teacher max gaps per morning and afternoon");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName); s+=", ";
+	s+=tr("Teacher max gaps per morning and afternoon");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName); s+=translatedCommaSpace();
 	s+=tr("MG:%1", "Max gaps (per morning and afternoon)").arg(this->maxGaps);
 
 	return begin+s+end;
@@ -14900,11 +14900,11 @@ QString ConstraintBreakTimes::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Break times");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Break times");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 
 	s+=tr("B at:", "Break at");
 	s+=" ";
@@ -14918,7 +14918,7 @@ QString ConstraintBreakTimes::getDescription(Rules& r)
 			s+=r.hoursOfTheDay[this->hours.at(i)];
 		}
 		if(i<days.count()-1)
-			s+="; ";
+			s+=translatedSemicolonSpace();
 	}
 	
 	return begin+s+end;
@@ -14941,7 +14941,7 @@ QString ConstraintBreakTimes::getDetailedDescription(Rules& r)
 			s+=r.hoursOfTheDay[this->hours.at(i)];
 		}
 		if(i<days.count()-1)
-			s+="; ";
+			s+=translatedSemicolonSpace();
 	}
 	s+="\n";
 
@@ -15178,11 +15178,11 @@ QString ConstraintStudentsMaxGapsPerWeek::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Students max gaps per week");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Students max gaps per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MG:%1", "Max gaps (per week)").arg(this->maxGaps);
 
 	return begin+s+end;
@@ -15441,12 +15441,12 @@ QString ConstraintStudentsSetMaxGapsPerWeek::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Students set max gaps per week"); s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage)); s+=", ";
-	s+=tr("MG:%1", "Max gaps (per week)").arg(this->maxGaps);s+=", ";
+	s+=tr("Students set max gaps per week"); s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage)); s+=translatedCommaSpace();
+	s+=tr("MG:%1", "Max gaps (per week)").arg(this->maxGaps);s+=translatedCommaSpace();
 	s+=tr("St:%1", "Students").arg(this->students);
 
 	return begin+s+end;
@@ -15653,12 +15653,12 @@ QString ConstraintStudentsEarlyMaxBeginningsAtSecondHour::getDescription(Rules& 
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	s+=tr("Students must arrive early, respecting maximum %1 arrivals at second hour")
 	 .arg(this->maxBeginningsAtSecondHour);
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -15953,13 +15953,13 @@ QString ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::getDescription(Rule
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 
 	s+=tr("Students set must arrive early, respecting maximum %1 arrivals at second hour")
-	 .arg(this->maxBeginningsAtSecondHour); s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	 .arg(this->maxBeginningsAtSecondHour); s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("St:%1", "Students set").arg(this->students);
 
 	return begin+s+end;
@@ -16204,11 +16204,11 @@ QString ConstraintStudentsMaxHoursDaily::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Students max hours daily");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Students max hours daily");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MH:%1", "Max hours (daily)").arg(this->maxHoursDaily);
 
 	return begin+s+end;
@@ -16399,12 +16399,12 @@ QString ConstraintStudentsSetMaxHoursDaily::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Students set max hours daily");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Students (set)").arg(this->students); s+=", ";
+	s+=tr("Students set max hours daily");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students (set)").arg(this->students); s+=translatedCommaSpace();
 	s+=tr("MH:%1", "Max hours (daily)").arg(this->maxHoursDaily);
 
 	return begin+s+end;
@@ -16661,11 +16661,11 @@ QString ConstraintStudentsMaxHoursContinuously::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Students max hours continuously");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Students max hours continuously");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MH:%1", "Max hours (continuously)").arg(this->maxHoursContinuously);
 
 	return begin+s+end;
@@ -16881,12 +16881,12 @@ QString ConstraintStudentsSetMaxHoursContinuously::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Students set max hours continuously");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Students (set)").arg(this->students);s+=", ";
+	s+=tr("Students set max hours continuously");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students (set)").arg(this->students);s+=translatedCommaSpace();
 	s+=tr("MH:%1", "Max hours (continuously)").arg(this->maxHoursContinuously);
 
 	return begin+s+end;
@@ -17190,11 +17190,11 @@ QString ConstraintStudentsActivityTagMaxHoursContinuously::getDescription(Rules&
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	s+=tr("Students for activity tag %1 have max %2 hours continuously")
-		.arg(this->activityTagName).arg(this->maxHoursContinuously); s+=", ";
+		.arg(this->activityTagName).arg(this->maxHoursContinuously); s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -17437,11 +17437,11 @@ QString ConstraintStudentsSetActivityTagMaxHoursContinuously::getDescription(Rul
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	s+=tr("Students set %1 for activity tag %2 has max %3 hours continuously").arg(this->students).arg(this->activityTagName).arg(this->maxHoursContinuously);
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -17776,13 +17776,13 @@ QString ConstraintStudentsMinHoursDaily::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 
-	s+=tr("Students min hours daily");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("mH:%1", "Min hours (daily)").arg(this->minHoursDaily);s+=", ";
+	s+=tr("Students min hours daily");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("mH:%1", "Min hours (daily)").arg(this->minHoursDaily);s+=translatedCommaSpace();
 	s+=tr("AED:%1", "Allow empty days").arg(yesNoTranslated(this->allowEmptyDays));
 
 	return begin+s+end;
@@ -18073,14 +18073,14 @@ QString ConstraintStudentsSetMinHoursDaily::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
-	s+=tr("Students set min hours daily");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Students (set)").arg(this->students);s+=", ";
-	s+=tr("mH:%1", "Min hours (daily)").arg(this->minHoursDaily);s+=", ";
+	s+=tr("Students set min hours daily");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students (set)").arg(this->students);s+=translatedCommaSpace();
+	s+=tr("mH:%1", "Min hours (daily)").arg(this->minHoursDaily);s+=translatedCommaSpace();
 	s+=tr("AED:%1", "Allow empty days").arg(yesNoTranslated(this->allowEmptyDays));
 
 	return begin+s+end;
@@ -18487,7 +18487,7 @@ QString ConstraintActivityPreferredStartingTime::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	s+=tr("Act. id: %1 (%2) has a preferred starting time: %3", "%1 is the id, %2 is the detailed description of the activity. %3 is time (day and hour)")
@@ -18495,10 +18495,10 @@ QString ConstraintActivityPreferredStartingTime::getDescription(Rules& r)
 	 .arg(getActivityDetailedDescription(r, this->activityId))
 	 .arg(r.daysOfTheWeek[this->day]+" "+r.hoursOfTheDay[this->hour]);
 
-	s+=", ";
+	s+=translatedCommaSpace();
 
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("PL:%1", "Abbreviation for permanently locked").arg(yesNoTranslated(this->permanentlyLocked));
 
 	return begin+s+end;
@@ -18759,7 +18759,7 @@ QString ConstraintActivityPreferredTimeSlots::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	s+=tr("Act. id: %1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
@@ -18778,9 +18778,9 @@ QString ConstraintActivityPreferredTimeSlots::getDescription(Rules& r)
 			s+=r.hoursOfTheDay[this->p_hours_L[i]];
 		}
 		if(i<this->p_nPreferredTimeSlots_L-1)
-			s+="; ";
+			s+=translatedSemicolonSpace();
 	}
-	s+=", ";
+	s+=translatedCommaSpace();
 
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -19177,7 +19177,7 @@ QString ConstraintActivitiesPreferredTimeSlots::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 
@@ -19219,9 +19219,9 @@ QString ConstraintActivitiesPreferredTimeSlots::getDescription(Rules& r)
 			s+=r.hoursOfTheDay[this->p_hours_L[i]];
 		}
 		if(i<this->p_nPreferredTimeSlots_L-1)
-			s+="; ";
+			s+=translatedSemicolonSpace();
 	}
-	s+=", ";
+	s+=translatedCommaSpace();
 
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -19684,7 +19684,7 @@ QString ConstraintSubactivitiesPreferredTimeSlots::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
@@ -19729,9 +19729,9 @@ QString ConstraintSubactivitiesPreferredTimeSlots::getDescription(Rules& r)
 			s+=r.hoursOfTheDay[this->p_hours_L[i]];
 		}
 		if(i<this->p_nPreferredTimeSlots_L-1)
-			s+="; ";
+			s+=translatedSemicolonSpace();
 	}
-	s+=", ";
+	s+=translatedCommaSpace();
 
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -20091,7 +20091,7 @@ QString ConstraintActivityPreferredStartingTimes::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	s+=tr("Act. id: %1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
@@ -20110,9 +20110,9 @@ QString ConstraintActivityPreferredStartingTimes::getDescription(Rules& r)
 			s+=r.hoursOfTheDay[this->hours_L[i]];
 		}
 		if(i<nPreferredStartingTimes_L-1)
-			s+="; ";
+			s+=translatedSemicolonSpace();
 	}
-	s+=", ";
+	s+=translatedCommaSpace();
 
 	s+=tr("WP:%1%", "Weight Percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -20495,7 +20495,7 @@ QString ConstraintActivitiesPreferredStartingTimes::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 
@@ -20538,9 +20538,9 @@ QString ConstraintActivitiesPreferredStartingTimes::getDescription(Rules& r)
 			s+=r.hoursOfTheDay[this->hours_L[i]];
 		}
 		if(i<this->nPreferredStartingTimes_L-1)
-			s+="; ";
+			s+=translatedSemicolonSpace();
 	}
-	s+=", ";
+	s+=translatedCommaSpace();
 	
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -20991,7 +20991,7 @@ QString ConstraintSubactivitiesPreferredStartingTimes::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString tc, st, su, at, dur;
 	
@@ -21035,9 +21035,9 @@ QString ConstraintSubactivitiesPreferredStartingTimes::getDescription(Rules& r)
 			s+=r.hoursOfTheDay[this->hours_L[i]];
 		}
 		if(i<this->nPreferredStartingTimes_L-1)
-			s+="; ";
+			s+=translatedSemicolonSpace();
 	}
-	s+=", ";
+	s+=translatedCommaSpace();
 
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -21416,16 +21416,16 @@ QString ConstraintActivitiesSameStartingHour::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Activities same starting hour");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
+	s+=tr("Activities same starting hour");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=translatedCommaSpace();
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));
 		if(i<this->n_activities-1)
-			s+=", ";
+			s+=translatedCommaSpace();
 	}
 
 	return begin+s+end;
@@ -21735,16 +21735,16 @@ QString ConstraintActivitiesSameStartingDay::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Activities same starting day");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
+	s+=tr("Activities same starting day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=translatedCommaSpace();
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));
 		if(i<this->n_activities-1)
-			s+=", ";
+			s+=translatedCommaSpace();
 	}
 
 	return begin+s+end;
@@ -22021,7 +22021,7 @@ QString ConstraintTwoActivitiesConsecutive::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
@@ -22029,9 +22029,9 @@ QString ConstraintTwoActivitiesConsecutive::getDescription(Rules& r)
 	s+=" ";
 	
 	s+=tr("first act. id: %1", "act.=activity").arg(getActivityDescription(r, this->firstActivityId));
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("second act. id: %1", "act.=activity").arg(getActivityDescription(r, this->secondActivityId));
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -22295,7 +22295,7 @@ QString ConstraintTwoActivitiesGrouped::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
@@ -22303,9 +22303,9 @@ QString ConstraintTwoActivitiesGrouped::getDescription(Rules& r)
 	s+=" ";
 	
 	s+=tr("first act. id: %1", "act.=activity").arg(getActivityDescription(r, this->firstActivityId));
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("second act. id: %1", "act.=activity").arg(getActivityDescription(r, this->secondActivityId));
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -22604,7 +22604,7 @@ QString ConstraintThreeActivitiesGrouped::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
@@ -22612,11 +22612,11 @@ QString ConstraintThreeActivitiesGrouped::getDescription(Rules& r)
 	s+=" ";
 	
 	s+=tr("first act. id: %1", "act.=activity").arg(getActivityDescription(r, this->firstActivityId));
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("second act. id: %1", "act.=activity").arg(getActivityDescription(r, this->secondActivityId));
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("third act. id: %1", "act.=activity").arg(getActivityDescription(r, this->thirdActivityId));
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -22950,7 +22950,7 @@ QString ConstraintTwoActivitiesOrdered::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
@@ -22958,9 +22958,9 @@ QString ConstraintTwoActivitiesOrdered::getDescription(Rules& r)
 	s+=" ";
 	
 	s+=tr("first act. id: %1", "act.=activity").arg(getActivityDescription(r, this->firstActivityId));
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("second act. id: %1", "act.=activity").arg(getActivityDescription(r, this->secondActivityId));
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -23230,7 +23230,7 @@ QString ConstraintTwoSetsOfActivitiesOrdered::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
@@ -23240,16 +23240,16 @@ QString ConstraintTwoSetsOfActivitiesOrdered::getDescription(Rules& r)
 	s+=tr("first activities set:");
 	s+=" ";
 	s+=tr("NA:%1", "Number of activities").arg(this->firstActivitiesIdsList.count());
-	s+=", ";
+	s+=translatedCommaSpace();
 	for(int ai : std::as_const(this->firstActivitiesIdsList))
-		s+=tr("Id:%1").arg(getActivityDescription(r, ai))+", ";
+		s+=tr("Id:%1").arg(getActivityDescription(r, ai))+translatedCommaSpace();
 
 	s+=tr("second activities set:");
 	s+=" ";
 	s+=tr("NA:%1", "Number of activities").arg(this->secondActivitiesIdsList.count());
-	s+=", ";
+	s+=translatedCommaSpace();
 	for(int ai : std::as_const(this->secondActivitiesIdsList))
-		s+=tr("Id:%1").arg(getActivityDescription(r, ai))+", ";
+		s+=tr("Id:%1").arg(getActivityDescription(r, ai))+translatedCommaSpace();
 
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -23566,7 +23566,7 @@ QString ConstraintTwoActivitiesOrderedIfSameDay::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
@@ -23574,9 +23574,9 @@ QString ConstraintTwoActivitiesOrderedIfSameDay::getDescription(Rules& r)
 	s+=" ";
 	
 	s+=tr("first act. id: %1", "act.=activity").arg(getActivityDescription(r, this->firstActivityId));
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("second act. id: %1", "act.=activity").arg(getActivityDescription(r, this->secondActivityId));
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -23793,14 +23793,14 @@ QString ConstraintActivityEndsStudentsDay::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	s+=tr("Act. id: %1 (%2) must end students' day",
 		"%1 is the id, %2 is the detailed description of the activity.")
 		.arg(getActivityDescription(r, this->activityId))
 		.arg(getActivityDetailedDescription(r, this->activityId));
-	s+=", ";
+	s+=translatedCommaSpace();
 
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -24012,12 +24012,12 @@ QString ConstraintTeachersMinHoursDaily::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Teachers min hours daily");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("mH:%1", "Min hours (daily)").arg(this->minHoursDaily);s+=", ";
+	s+=tr("Teachers min hours daily");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("mH:%1", "Min hours (daily)").arg(this->minHoursDaily);s+=translatedCommaSpace();
 	s+=tr("AED:%1", "Allow empty days").arg(yesNoTranslated(this->allowEmptyDays));
 
 	return begin+s+end;
@@ -24256,13 +24256,13 @@ QString ConstraintTeacherMinHoursDaily::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Teacher min hours daily");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
-	s+=tr("mH:%1", "Minimum hours (daily)").arg(this->minHoursDaily);s+=", ";
+	s+=tr("Teacher min hours daily");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
+	s+=tr("mH:%1", "Minimum hours (daily)").arg(this->minHoursDaily);s+=translatedCommaSpace();
 	s+=tr("AED:%1", "Allow empty days").arg(yesNoTranslated(this->allowEmptyDays));
 
 	return begin+s+end;
@@ -24484,12 +24484,12 @@ QString ConstraintTeacherMinDaysPerWeek::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Teacher min days per week");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
+	s+=tr("Teacher min days per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
 	s+=tr("mD:%1", "Minimum days per week").arg(this->minDaysPerWeek);
 
 	return begin+s+end;
@@ -24687,11 +24687,11 @@ QString ConstraintTeachersMinDaysPerWeek::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Teachers min days per week");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Teachers min days per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("mD:%1", "Minimum days per week").arg(this->minDaysPerWeek);
 
 	return begin+s+end;
@@ -24925,17 +24925,17 @@ QString ConstraintTeacherIntervalMaxDaysPerWeek::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
-	QString s=tr("Teacher interval max days per week");s+=", ";
-	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Abbreviation for teacher").arg(this->teacherName);s+=", ";
-	s+=tr("ISH:%1", "Abbreviation for interval start hour").arg(r.hoursOfTheDay[this->startHour]);s+=", ";
+	QString s=tr("Teacher interval max days per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Abbreviation for teacher").arg(this->teacherName);s+=translatedCommaSpace();
+	s+=tr("ISH:%1", "Abbreviation for interval start hour").arg(r.hoursOfTheDay[this->startHour]);s+=translatedCommaSpace();
 	if(this->endHour<r.nHoursPerDay)
 		s+=tr("IEH:%1", "Abbreviation for interval end hour").arg(r.hoursOfTheDay[this->endHour]);
 	else
 		s+=tr("IEH:%1", "Abbreviation for interval end hour").arg(tr("End of the day"));
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("MD:%1", "Abbreviation for max days").arg(this->maxDaysPerWeek);
 
 	return begin+s+end;
@@ -25181,17 +25181,17 @@ QString ConstraintTeachersIntervalMaxDaysPerWeek::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
-	QString s=tr("Teachers interval max days per week");s+=", ";
-	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	QString s=tr("Teachers interval max days per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("ISH:%1", "Abbreviation for interval start hour").arg(r.hoursOfTheDay[this->startHour]);
-	s+=", ";
+	s+=translatedCommaSpace();
 	if(this->endHour<r.nHoursPerDay)
 		s+=tr("IEH:%1", "Abbreviation for interval end hour").arg(r.hoursOfTheDay[this->endHour]);
 	else
 		s+=tr("IEH:%1", "Abbreviation for interval end hour").arg(tr("End of the day"));
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("MD:%1", "Abbreviation for max days").arg(this->maxDaysPerWeek);
 
 	return begin+s+end;
@@ -25491,18 +25491,18 @@ QString ConstraintStudentsSetIntervalMaxDaysPerWeek::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
-	QString s=tr("Students set interval max days per week");s+=", ";
-	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Abbreviation for students (sets)").arg(this->students);s+=", ";
+	QString s=tr("Students set interval max days per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Abbreviation for students (sets)").arg(this->students);s+=translatedCommaSpace();
 	s+=tr("ISH:%1", "Abbreviation for interval start hour").arg(r.hoursOfTheDay[this->startHour]);
-	s+=", ";
+	s+=translatedCommaSpace();
 	if(this->endHour<r.nHoursPerDay)
 		s+=tr("IEH:%1", "Abbreviation for interval end hour").arg(r.hoursOfTheDay[this->endHour]);
 	else
 		s+=tr("IEH:%1", "Abbreviation for interval end hour").arg(tr("End of the day"));
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("MD:%1", "Abbreviation for max days").arg(this->maxDaysPerWeek);
 
 	return begin+s+end;
@@ -25745,17 +25745,17 @@ QString ConstraintStudentsIntervalMaxDaysPerWeek::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
-	QString s=tr("Students interval max days per week");s+=", ";
-	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	QString s=tr("Students interval max days per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("ISH:%1", "Abbreviation for interval start hour").arg(r.hoursOfTheDay[this->startHour]);
-	s+=", ";
+	s+=translatedCommaSpace();
 	if(this->endHour<r.nHoursPerDay)
 		s+=tr("IEH:%1", "Abbreviation for interval end hour").arg(r.hoursOfTheDay[this->endHour]);
 	else
 		s+=tr("IEH:%1", "Abbreviation for interval end hour").arg(tr("End of the day"));
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("MD:%1", "Abbreviation for max days").arg(this->maxDaysPerWeek);
 
 	return begin+s+end;
@@ -26021,7 +26021,7 @@ QString ConstraintActivitiesEndStudentsDay::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString tc, st, su, at;
 	
@@ -26048,7 +26048,7 @@ QString ConstraintActivitiesEndStudentsDay::getDescription(Rules& r)
 	QString s;
 	s+=tr("Activities with %1, %2, %3, %4, must end students' day", "%1...%4 are conditions for the activities").arg(tc).arg(st).arg(su).arg(at);
 
-	s+=", ";
+	s+=translatedCommaSpace();
 
 	s+=tr("WP:%1%", "Abbreviation for Weight Percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -26309,14 +26309,14 @@ QString ConstraintActivityEndsTeachersDay::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	s+=tr("Act. id: %1 (%2) must end teachers' day",
 		"%1 is the id, %2 is the detailed description of the activity.")
 		.arg(getActivityDescription(r, this->activityId))
 		.arg(getActivityDetailedDescription(r, this->activityId));
-	s+=", ";
+	s+=translatedCommaSpace();
 
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -26562,7 +26562,7 @@ QString ConstraintActivitiesEndTeachersDay::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString tc, st, su, at;
 	
@@ -26589,7 +26589,7 @@ QString ConstraintActivitiesEndTeachersDay::getDescription(Rules& r)
 	QString s;
 	s+=tr("Activities with %1, %2, %3, %4, must end teachers' day", "%1...%4 are conditions for the activities").arg(tc).arg(st).arg(su).arg(at);
 
-	s+=", ";
+	s+=translatedCommaSpace();
 
 	s+=tr("WP:%1%", "Abbreviation for Weight Percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -26859,10 +26859,10 @@ QString ConstraintTeachersActivityTagMaxHoursDaily::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Teachers for activity tag %1 have max %2 hours daily").arg(this->activityTagName).arg(this->maxHoursDaily);s+=", ";
+	s+=tr("Teachers for activity tag %1 have max %2 hours daily").arg(this->activityTagName).arg(this->maxHoursDaily);s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -27102,10 +27102,10 @@ QString ConstraintTeacherActivityTagMaxHoursDaily::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Teacher %1 for activity tag %2 has max %3 hours daily").arg(this->teacherName).arg(this->activityTagName).arg(this->maxHoursDaily);s+=", ";
+	s+=tr("Teacher %1 for activity tag %2 has max %3 hours daily").arg(this->teacherName).arg(this->activityTagName).arg(this->maxHoursDaily);s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -27345,11 +27345,11 @@ QString ConstraintStudentsActivityTagMaxHoursDaily::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	s+=tr("Students for activity tag %1 have max %2 hours daily")
-		.arg(this->activityTagName).arg(this->maxHoursDaily); s+=", ";
+		.arg(this->activityTagName).arg(this->maxHoursDaily); s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -27559,11 +27559,11 @@ QString ConstraintStudentsSetActivityTagMaxHoursDaily::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	s+=tr("Students set %1 for activity tag %2 has max %3 hours daily").arg(this->students).arg(this->activityTagName).arg(this->maxHoursDaily);
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -27880,11 +27880,11 @@ QString ConstraintTeachersActivityTagMinHoursDaily::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Teachers for activity tag %1 have min %2 hours daily").arg(this->activityTagName).arg(this->minHoursDaily);s+=", ";
-	s+=tr("mDWT:%1", "Min days with tag").arg(this->minDaysWithTag);s+=", ";
+	s+=tr("Teachers for activity tag %1 have min %2 hours daily").arg(this->activityTagName).arg(this->minHoursDaily);s+=translatedCommaSpace();
+	s+=tr("mDWT:%1", "Min days with tag").arg(this->minDaysWithTag);s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -28139,11 +28139,11 @@ QString ConstraintTeacherActivityTagMinHoursDaily::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Teacher %1 for activity tag %2 has min %3 hours daily").arg(this->teacherName).arg(this->activityTagName).arg(this->minHoursDaily);s+=", ";
-	s+=tr("mDWT:%1", "Min days with tag").arg(this->minDaysWithTag);s+=", ";
+	s+=tr("Teacher %1 for activity tag %2 has min %3 hours daily").arg(this->teacherName).arg(this->activityTagName).arg(this->minHoursDaily);s+=translatedCommaSpace();
+	s+=tr("mDWT:%1", "Min days with tag").arg(this->minDaysWithTag);s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -28400,12 +28400,12 @@ QString ConstraintStudentsActivityTagMinHoursDaily::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	s+=tr("Students for activity tag %1 have min %2 hours daily")
-		.arg(this->activityTagName).arg(this->minHoursDaily); s+=", ";
-	s+=tr("mDWT:%1", "Min days with tag").arg(this->minDaysWithTag);s+=", ";
+		.arg(this->activityTagName).arg(this->minHoursDaily); s+=translatedCommaSpace();
+	s+=tr("mDWT:%1", "Min days with tag").arg(this->minDaysWithTag);s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -28630,13 +28630,13 @@ QString ConstraintStudentsSetActivityTagMinHoursDaily::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	s+=tr("Students set %1 for activity tag %2 has min %3 hours daily").arg(this->students).arg(this->activityTagName).arg(this->minHoursDaily);
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("mDWT:%1", "Min days with tag").arg(this->minDaysWithTag);
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -28941,11 +28941,11 @@ QString ConstraintStudentsMaxGapsPerDay::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Students max gaps per day");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Students max gaps per day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MG:%1", "Max gaps (per day)").arg(this->maxGaps);
 
 	return begin+s+end;
@@ -29206,12 +29206,12 @@ QString ConstraintStudentsSetMaxGapsPerDay::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Students set max gaps per day"); s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage)); s+=", ";
-	s+=tr("MG:%1", "Max gaps (per day)").arg(this->maxGaps);s+=", ";
+	s+=tr("Students set max gaps per day"); s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage)); s+=translatedCommaSpace();
+	s+=tr("MG:%1", "Max gaps (per day)").arg(this->maxGaps);s+=translatedCommaSpace();
 	s+=tr("St:%1", "Students").arg(this->students);
 
 	return begin+s+end;
@@ -29501,18 +29501,18 @@ QString ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::getDescription(Rule
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 	
 	assert(this->selectedDays.count()==this->selectedHours.count());
 
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
-		actids+=getActivityDescription(r, aid)+QString(", ");
+		actids+=getActivityDescription(r, aid)+translatedCommaSpace();
 	actids.chop(2);
 	
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+QString(", ");
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
 	timeslots.chop(2);
 	
 	QString s=tr("Activities occupy max time slots from selection, WP:%1%, NA:%2, A: %3, STS: %4, MTS:%5", "Constraint description. WP means weight percentage, "
@@ -29537,7 +29537,7 @@ QString ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::getDetailedDescript
 	
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+QString(", ");
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
 	timeslots.chop(2);
 	
 	QString s=tr("Time constraint"); s+="\n";
@@ -29877,18 +29877,18 @@ QString ConstraintActivitiesOccupyMinTimeSlotsFromSelection::getDescription(Rule
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	assert(this->selectedDays.count()==this->selectedHours.count());
 
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
-		actids+=getActivityDescription(r, aid)+QString(", ");
+		actids+=getActivityDescription(r, aid)+translatedCommaSpace();
 	actids.chop(2);
 		
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+QString(", ");
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
 	timeslots.chop(2);
 	
 	QString s=tr("Activities occupy min time slots from selection, WP:%1%, NA:%2, A: %3, STS: %4, mTS:%5", "Constraint description. WP means weight percentage, "
@@ -29913,7 +29913,7 @@ QString ConstraintActivitiesOccupyMinTimeSlotsFromSelection::getDetailedDescript
 	
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+QString(", ");
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
 	timeslots.chop(2);
 	
 	QString s=tr("Time constraint"); s+="\n";
@@ -30262,18 +30262,18 @@ QString ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::getDescription(R
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	assert(this->selectedDays.count()==this->selectedHours.count());
 
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
-		actids+=getActivityDescription(r, aid)+QString(", ");
+		actids+=getActivityDescription(r, aid)+translatedCommaSpace();
 	actids.chop(2);
 	
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+QString(", ");
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
 	timeslots.chop(2);
 	
 	QString s=tr("Activities max simultaneous in selected time slots, WP:%1%, NA:%2, A: %3, STS: %4, MS:%5", "Constraint description. WP means weight percentage, "
@@ -30298,7 +30298,7 @@ QString ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::getDetailedDescr
 	
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+QString(", ");
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
 	timeslots.chop(2);
 	
 	QString s=tr("Time constraint"); s+="\n";
@@ -30636,18 +30636,18 @@ QString ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::getDescription(R
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 	
 	assert(this->selectedDays.count()==this->selectedHours.count());
 
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
-		actids+=getActivityDescription(r, aid)+QString(", ");
+		actids+=getActivityDescription(r, aid)+translatedCommaSpace();
 	actids.chop(2);
 	
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+QString(", ");
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
 	timeslots.chop(2);
 	
 	QString s=tr("Activities min simultaneous in selected time slots, WP:%1%, NA:%2, A: %3, STS: %4, mS:%5, AES=%6", "Constraint description. WP means weight percentage, "
@@ -30674,7 +30674,7 @@ QString ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::getDetailedDescr
 	
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+QString(", ");
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
 	timeslots.chop(2);
 	
 	QString s=tr("Time constraint"); s+="\n";
@@ -31022,18 +31022,18 @@ QString ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::getDescription(R
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	assert(this->selectedDays.count()==this->selectedHours.count());
 
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
-		actids+=getActivityDescription(r, aid)+QString(", ");
+		actids+=getActivityDescription(r, aid)+translatedCommaSpace();
 	actids.chop(2);
 
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+QString(", ");
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
 	timeslots.chop(2);
 
 	QString s=tr("Max total activities from set in selected time slots, WP:%1%, NA:%2, A: %3, STS: %4, MA:%5", "Constraint description. WP means weight percentage, "
@@ -31058,7 +31058,7 @@ QString ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::getDetailedDescr
 
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+QString(", ");
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
 	timeslots.chop(2);
 
 	QString s=tr("Time constraint"); s+="\n";
@@ -31344,11 +31344,11 @@ QString ConstraintActivitiesMaxInATerm::getDescription(Rules& r)
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
-		actids+=getActivityDescription(r, aid)+QString(", ");
+		actids+=getActivityDescription(r, aid)+translatedCommaSpace();
 	actids.chop(2);
 
 	QString s=tr("Activities max in a term, WP:%1%, NA:%2, A: %3, MAIAT:%4", "Constraint description. WP means weight percentage, "
@@ -31615,11 +31615,11 @@ QString ConstraintActivitiesOccupyMaxTerms::getDescription(Rules& r)
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
-		actids+=getActivityDescription(r, aid)+QString(", ");
+		actids+=getActivityDescription(r, aid)+translatedCommaSpace();
 	actids.chop(2);
 
 	QString s=tr("Activities occupy max terms, WP:%1%, NA:%2, A: %3, MOT:%4", "Constraint description. WP means weight percentage, "
@@ -31905,11 +31905,11 @@ QString ConstraintStudentsSetMaxDaysPerWeek::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
-	QString s=tr("Students set max days per week");s+=", ";
-	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Abbreviation for students (sets)").arg(this->students);s+=", ";
+	QString s=tr("Students set max days per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Abbreviation for students (sets)").arg(this->students);s+=translatedCommaSpace();
 	s+=tr("MD:%1", "Abbreviation for max days").arg(this->maxDaysPerWeek);
 
 	return begin+s+end;
@@ -32105,10 +32105,10 @@ QString ConstraintStudentsMaxDaysPerWeek::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
-	QString s=tr("Students max days per week");s+=", ";
-	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	QString s=tr("Students max days per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MD:%1", "Abbreviation for max days").arg(this->maxDaysPerWeek);
 
 	return begin+s+end;
@@ -32315,13 +32315,13 @@ QString ConstraintTeacherMaxSpanPerDay::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Teacher max span per day");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
-	s+=tr("MS:%1", "Maximum span (in hours, per day)").arg(this->maxSpanPerDay);s+=", ";
+	s+=tr("Teacher max span per day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
+	s+=tr("MS:%1", "Maximum span (in hours, per day)").arg(this->maxSpanPerDay);s+=translatedCommaSpace();
 	s+=tr("ODE:%1", "One day exception (in which the teacher can have span+1)").arg(yesNoTranslated(this->allowOneDayExceptionPlusOne));
 
 	return begin+s+end;
@@ -32527,12 +32527,12 @@ QString ConstraintTeachersMaxSpanPerDay::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Teachers max span per day");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("MS:%1", "Maximum span (in hours, per day)").arg(this->maxSpanPerDay);s+=", ";
+	s+=tr("Teachers max span per day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("MS:%1", "Maximum span (in hours, per day)").arg(this->maxSpanPerDay);s+=translatedCommaSpace();
 	s+=tr("ODE:%1", "One day exception (in which the teachers can have span+1)").arg(yesNoTranslated(this->allowOneDayExceptionPlusOne));
 
 	return begin+s+end;
@@ -32727,12 +32727,12 @@ QString ConstraintStudentsSetMaxSpanPerDay::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Students set max span per day");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Students (set)").arg(this->students); s+=", ";
+	s+=tr("Students set max span per day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students (set)").arg(this->students); s+=translatedCommaSpace();
 	s+=tr("MS:%1", "Max span (in hours, per day)").arg(this->maxSpanPerDay);
 
 	return begin+s+end;
@@ -32970,11 +32970,11 @@ QString ConstraintStudentsMaxSpanPerDay::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Students max span per day");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Students max span per day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MS:%1", "Max span (in hours, per day)").arg(this->maxSpanPerDay);
 
 	return begin+s+end;
@@ -33181,13 +33181,13 @@ QString ConstraintTeacherMinRestingHours::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Teacher min resting hours");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
-	s+=tr("mRH:%1", "Minimum resting hours").arg(this->minRestingHours);s+=", ";
+	s+=tr("Teacher min resting hours");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
+	s+=tr("mRH:%1", "Minimum resting hours").arg(this->minRestingHours);s+=translatedCommaSpace();
 	s+=tr("C:%1", "Circular").arg(yesNoTranslated(this->circular));
 
 	return begin+s+end;
@@ -33380,12 +33380,12 @@ QString ConstraintTeachersMinRestingHours::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Teachers min resting hours");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("mRH:%1", "Minimum resting hours").arg(this->minRestingHours);s+=", ";
+	s+=tr("Teachers min resting hours");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("mRH:%1", "Minimum resting hours").arg(this->minRestingHours);s+=translatedCommaSpace();
 	s+=tr("C:%1", "Circular").arg(yesNoTranslated(this->circular));
 
 	return begin+s+end;
@@ -33571,13 +33571,13 @@ QString ConstraintStudentsSetMinRestingHours::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Students set min resting hours");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Students (set)").arg(this->students); s+=", ";
-	s+=tr("mRH:%1", "Minimum resting hours").arg(this->minRestingHours);s+=", ";
+	s+=tr("Students set min resting hours");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students (set)").arg(this->students); s+=translatedCommaSpace();
+	s+=tr("mRH:%1", "Minimum resting hours").arg(this->minRestingHours);s+=translatedCommaSpace();
 	s+=tr("C:%1", "Circular").arg(yesNoTranslated(this->circular));
 
 	return begin+s+end;
@@ -33817,12 +33817,12 @@ QString ConstraintStudentsMinRestingHours::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Students min resting hours");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("mRH:%1", "Minimum resting hours").arg(this->minRestingHours);s+=", ";
+	s+=tr("Students min resting hours");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("mRH:%1", "Minimum resting hours").arg(this->minRestingHours);s+=translatedCommaSpace();
 	s+=tr("C:%1", "Circular").arg(yesNoTranslated(this->circular));
 
 	return begin+s+end;
@@ -34022,15 +34022,15 @@ QString ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::getDescrip
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
-	s+=tr("Students set min gaps between ordered pair of activity tags");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Students (set)").arg(this->students);s+=", ";
-	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=", ";
-	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=", ";
+	s+=tr("Students set min gaps between ordered pair of activity tags");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students (set)").arg(this->students);s+=translatedCommaSpace();
+	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=translatedCommaSpace();
+	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=translatedCommaSpace();
 	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
 
 	return begin+s+end;
@@ -34349,14 +34349,14 @@ QString ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::getDescriptio
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
-	s+=tr("Students min gaps between ordered pair of activity tags");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=", ";
-	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=", ";
+	s+=tr("Students min gaps between ordered pair of activity tags");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=translatedCommaSpace();
+	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=translatedCommaSpace();
 	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
 
 	return begin+s+end;
@@ -34627,15 +34627,15 @@ QString ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::getDescription
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
-	s+=tr("Teacher min gaps between ordered pair of activity tags");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacher);s+=", ";
-	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=", ";
-	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=", ";
+	s+=tr("Teacher min gaps between ordered pair of activity tags");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacher);s+=translatedCommaSpace();
+	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=translatedCommaSpace();
+	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=translatedCommaSpace();
 	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
 
 	return begin+s+end;
@@ -34914,14 +34914,14 @@ QString ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::getDescriptio
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
-	s+=tr("Teachers min gaps between ordered pair of activity tags");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=", ";
-	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=", ";
+	s+=tr("Teachers min gaps between ordered pair of activity tags");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=translatedCommaSpace();
+	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=translatedCommaSpace();
 	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
 
 	return begin+s+end;
@@ -35191,14 +35191,14 @@ QString ConstraintStudentsSetMinGapsBetweenActivityTag::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
-	s+=tr("Students set min gaps between activity tag");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Students (set)").arg(this->students);s+=", ";
-	s+=tr("AT:%1", "Activity tag").arg(this->activityTag);s+=", ";
+	s+=tr("Students set min gaps between activity tag");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students (set)").arg(this->students);s+=translatedCommaSpace();
+	s+=tr("AT:%1", "Activity tag").arg(this->activityTag);s+=translatedCommaSpace();
 	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
 
 	return begin+s+end;
@@ -35511,13 +35511,13 @@ QString ConstraintStudentsMinGapsBetweenActivityTag::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
-	s+=tr("Students min gaps between activity tag");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("AT:%1", "Activity tag").arg(this->activityTag);s+=", ";
+	s+=tr("Students min gaps between activity tag");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("AT:%1", "Activity tag").arg(this->activityTag);s+=translatedCommaSpace();
 	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
 
 	return begin+s+end;
@@ -35781,14 +35781,14 @@ QString ConstraintTeacherMinGapsBetweenActivityTag::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
-	s+=tr("Teacher min gaps between activity tag");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacher);s+=", ";
-	s+=tr("AT:%1", "Activity tag").arg(this->activityTag);s+=", ";
+	s+=tr("Teacher min gaps between activity tag");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacher);s+=translatedCommaSpace();
+	s+=tr("AT:%1", "Activity tag").arg(this->activityTag);s+=translatedCommaSpace();
 	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
 
 	return begin+s+end;
@@ -36060,13 +36060,13 @@ QString ConstraintTeachersMinGapsBetweenActivityTag::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
-	s+=tr("Teachers min gaps between activity tag");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("AT:%1", "Activity tag").arg(this->activityTag);s+=", ";
+	s+=tr("Teachers min gaps between activity tag");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("AT:%1", "Activity tag").arg(this->activityTag);s+=translatedCommaSpace();
 	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
 
 	return begin+s+end;
@@ -36336,15 +36336,15 @@ QString ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
-	s+=tr("Students set min gaps between ordered pair of activity tags per real day");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Students (set)").arg(this->students);s+=", ";
-	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=", ";
-	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=", ";
+	s+=tr("Students set min gaps between ordered pair of activity tags per real day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students (set)").arg(this->students);s+=translatedCommaSpace();
+	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=translatedCommaSpace();
+	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=translatedCommaSpace();
 	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
 
 	return begin+s+end;
@@ -36663,14 +36663,14 @@ QString ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::get
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
-	s+=tr("Students min gaps between ordered pair of activity tags per real day");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=", ";
-	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=", ";
+	s+=tr("Students min gaps between ordered pair of activity tags per real day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=translatedCommaSpace();
+	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=translatedCommaSpace();
 	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
 
 	return begin+s+end;
@@ -36941,15 +36941,15 @@ QString ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::getD
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
-	s+=tr("Teacher min gaps between ordered pair of activity tags per real day");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacher);s+=", ";
-	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=", ";
-	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=", ";
+	s+=tr("Teacher min gaps between ordered pair of activity tags per real day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacher);s+=translatedCommaSpace();
+	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=translatedCommaSpace();
+	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=translatedCommaSpace();
 	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
 
 	return begin+s+end;
@@ -37228,14 +37228,14 @@ QString ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::get
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
-	s+=tr("Teachers min gaps between ordered pair of activity tags per real day");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=", ";
-	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=", ";
+	s+=tr("Teachers min gaps between ordered pair of activity tags per real day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=translatedCommaSpace();
+	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=translatedCommaSpace();
 	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
 
 	return begin+s+end;
@@ -37505,14 +37505,14 @@ QString ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay::getDescription
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
-	s+=tr("Students set min gaps between activity tag per real day");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Students (set)").arg(this->students);s+=", ";
-	s+=tr("AT:%1", "Activity tag").arg(this->activityTag);s+=", ";
+	s+=tr("Students set min gaps between activity tag per real day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students (set)").arg(this->students);s+=translatedCommaSpace();
+	s+=tr("AT:%1", "Activity tag").arg(this->activityTag);s+=translatedCommaSpace();
 	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
 
 	return begin+s+end;
@@ -37825,13 +37825,13 @@ QString ConstraintStudentsMinGapsBetweenActivityTagPerRealDay::getDescription(Ru
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
-	s+=tr("Students min gaps between activity tag per real day");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("AT:%1", "Activity tag").arg(this->activityTag);s+=", ";
+	s+=tr("Students min gaps between activity tag per real day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("AT:%1", "Activity tag").arg(this->activityTag);s+=translatedCommaSpace();
 	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
 
 	return begin+s+end;
@@ -38095,14 +38095,14 @@ QString ConstraintTeacherMinGapsBetweenActivityTagPerRealDay::getDescription(Rul
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
-	s+=tr("Teacher min gaps between activity tag per real day");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacher);s+=", ";
-	s+=tr("AT:%1", "Activity tag").arg(this->activityTag);s+=", ";
+	s+=tr("Teacher min gaps between activity tag per real day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacher);s+=translatedCommaSpace();
+	s+=tr("AT:%1", "Activity tag").arg(this->activityTag);s+=translatedCommaSpace();
 	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
 
 	return begin+s+end;
@@ -38374,13 +38374,13 @@ QString ConstraintTeachersMinGapsBetweenActivityTagPerRealDay::getDescription(Ru
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
-	s+=tr("Teachers min gaps between activity tag per real day");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("AT:%1", "Activity tag").arg(this->activityTag);s+=", ";
+	s+=tr("Teachers min gaps between activity tag per real day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("AT:%1", "Activity tag").arg(this->activityTag);s+=translatedCommaSpace();
 	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
 
 	return begin+s+end;
@@ -38650,15 +38650,15 @@ QString ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorni
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
-	s+=tr("Students set min gaps between ordered pair of activity tags between morning and afternoon");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Students (set)").arg(this->students);s+=", ";
-	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=", ";
-	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=", ";
+	s+=tr("Students set min gaps between ordered pair of activity tags between morning and afternoon");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students (set)").arg(this->students);s+=translatedCommaSpace();
+	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=translatedCommaSpace();
+	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=translatedCommaSpace();
 	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
 
 	return begin+s+end;
@@ -38979,14 +38979,14 @@ QString ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningA
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
-	s+=tr("Students min gaps between ordered pair of activity tags between morning and afternoon");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=", ";
-	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=", ";
+	s+=tr("Students min gaps between ordered pair of activity tags between morning and afternoon");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=translatedCommaSpace();
+	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=translatedCommaSpace();
 	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
 
 	return begin+s+end;
@@ -39259,15 +39259,15 @@ QString ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAn
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
-	s+=tr("Teacher min gaps between ordered pair of activity tags between morning and afternoon");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacher);s+=", ";
-	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=", ";
-	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=", ";
+	s+=tr("Teacher min gaps between ordered pair of activity tags between morning and afternoon");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacher);s+=translatedCommaSpace();
+	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=translatedCommaSpace();
+	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=translatedCommaSpace();
 	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
 
 	return begin+s+end;
@@ -39548,14 +39548,14 @@ QString ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningA
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
-	s+=tr("Teachers min gaps between ordered pair of activity tags between morning and afternoon");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=", ";
-	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=", ";
+	s+=tr("Teachers min gaps between ordered pair of activity tags between morning and afternoon");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("FAT:%1", "First activity tag").arg(this->firstActivityTag);s+=translatedCommaSpace();
+	s+=tr("SAT:%1", "Second activity tag").arg(this->secondActivityTag);s+=translatedCommaSpace();
 	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
 
 	return begin+s+end;
@@ -39827,14 +39827,14 @@ QString ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
-	s+=tr("Students set min gaps between activity tag between morning and afternoon");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Students (set)").arg(this->students);s+=", ";
-	s+=tr("AT:%1", "Activity tag").arg(this->activityTag);s+=", ";
+	s+=tr("Students set min gaps between activity tag between morning and afternoon");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students (set)").arg(this->students);s+=translatedCommaSpace();
+	s+=tr("AT:%1", "Activity tag").arg(this->activityTag);s+=translatedCommaSpace();
 	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
 
 	return begin+s+end;
@@ -40141,13 +40141,13 @@ QString ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon::g
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
-	s+=tr("Students min gaps between activity tag between morning and afternoon");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("AT:%1", "Activity tag").arg(this->activityTag);s+=", ";
+	s+=tr("Students min gaps between activity tag between morning and afternoon");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("AT:%1", "Activity tag").arg(this->activityTag);s+=translatedCommaSpace();
 	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
 
 	return begin+s+end;
@@ -40405,14 +40405,14 @@ QString ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon::ge
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
-	s+=tr("Teacher min gaps between activity tag between morning and afternoon");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacher);s+=", ";
-	s+=tr("AT:%1", "Activity tag").arg(this->activityTag);s+=", ";
+	s+=tr("Teacher min gaps between activity tag between morning and afternoon");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacher);s+=translatedCommaSpace();
+	s+=tr("AT:%1", "Activity tag").arg(this->activityTag);s+=translatedCommaSpace();
 	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
 
 	return begin+s+end;
@@ -40678,13 +40678,13 @@ QString ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon::g
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	
-	s+=tr("Teachers min gaps between activity tag between morning and afternoon");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("AT:%1", "Activity tag").arg(this->activityTag);s+=", ";
+	s+=tr("Teachers min gaps between activity tag between morning and afternoon");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("AT:%1", "Activity tag").arg(this->activityTag);s+=translatedCommaSpace();
 	s+=tr("mG:%1", "Min gaps").arg(this->minGaps);
 
 	return begin+s+end;
@@ -40948,11 +40948,11 @@ QString ConstraintTeachersMaxHoursDailyRealDays::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teachers max hours daily per real day"), s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Teachers max hours daily per real day"), s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MH:%1", "Maximum hours (daily)").arg(this->maxHoursDaily);
 
 	return begin+s+end;
@@ -41173,12 +41173,12 @@ QString ConstraintTeacherMaxHoursDailyRealDays::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teacher max hours daily per real day");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
+	s+=tr("Teacher max hours daily per real day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
 	s+=tr("MH:%1", "Maximum hours (daily)").arg(this->maxHoursDaily);
 
 	return begin+s+end;
@@ -41397,11 +41397,11 @@ QString ConstraintTeacherMaxRealDaysPerWeek::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Teacher max real days per week");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
+	QString s=tr("Teacher max real days per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
 	s+=tr("MD:%1", "Max days (per week)").arg(this->maxDaysPerWeek);
 
 	return begin+s+end;
@@ -41642,10 +41642,10 @@ QString ConstraintTeachersMaxRealDaysPerWeek::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Teachers max real days per week");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	QString s=tr("Teachers max real days per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MD:%1", "Max days (per week)").arg(this->maxDaysPerWeek);
 
 	return begin+s+end;
@@ -41898,12 +41898,12 @@ QString ConstraintTeachersMaxGapsPerRealDay::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teachers max gaps per real day");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("MG:%1", "Max gaps (per real day)").arg(this->maxGaps);s+=", ";
+	s+=tr("Teachers max gaps per real day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("MG:%1", "Max gaps (per real day)").arg(this->maxGaps);s+=translatedCommaSpace();
 	s+=tr("ODE:%1", "One day exception (in which the teacher can have gaps+1)").arg(yesNoTranslated(this->allowOneDayExceptionPlusOne));
 
 	return begin+s+end;
@@ -42154,13 +42154,13 @@ QString ConstraintTeacherMaxGapsPerRealDay::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teacher max gaps per real day");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName); s+=", ";
-	s+=tr("MG:%1", "Max gaps (per real day)").arg(this->maxGaps);s+=", ";
+	s+=tr("Teacher max gaps per real day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName); s+=translatedCommaSpace();
+	s+=tr("MG:%1", "Max gaps (per real day)").arg(this->maxGaps);s+=translatedCommaSpace();
 	s+=tr("ODE:%1", "One day exception (in which the teacher can have gaps+1)").arg(yesNoTranslated(this->allowOneDayExceptionPlusOne));
 
 	return begin+s+end;
@@ -42409,11 +42409,11 @@ QString ConstraintStudentsMaxHoursDailyRealDays::getDescription(Rules& r)
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Students max hours daily per real day");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Students max hours daily per real day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MH:%1", "Max hours (daily)").arg(this->maxHoursDaily);
 
 	return begin+s+end;
@@ -42605,12 +42605,12 @@ QString ConstraintStudentsSetMaxHoursDailyRealDays::getDescription(Rules& r)
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Students set max hours daily per real day");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Students (set)").arg(this->students); s+=", ";
+	s+=tr("Students set max hours daily per real day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students (set)").arg(this->students); s+=translatedCommaSpace();
 	s+=tr("MH:%1", "Max hours (daily)").arg(this->maxHoursDaily);
 
 	return begin+s+end;
@@ -42882,12 +42882,12 @@ QString ConstraintTeachersMinHoursPerMorning::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teachers min hours per morning");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("mH:%1", "Min hours (per morning)").arg(this->minHoursPerMorning);s+=", ";
+	s+=tr("Teachers min hours per morning");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("mH:%1", "Min hours (per morning)").arg(this->minHoursPerMorning);s+=translatedCommaSpace();
 	s+=tr("AEM:%1", "Allow empty mornings").arg(yesNoTranslated(this->allowEmptyMornings));
 
 	return begin+s+end;
@@ -43127,13 +43127,13 @@ QString ConstraintTeacherMinHoursPerMorning::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teacher min hours per morning");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
-	s+=tr("mH:%1", "Minimum hours (per morning)").arg(this->minHoursPerMorning);s+=", ";
+	s+=tr("Teacher min hours per morning");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
+	s+=tr("mH:%1", "Minimum hours (per morning)").arg(this->minHoursPerMorning);s+=translatedCommaSpace();
 	s+=tr("AEM:%1", "Allow empty mornings").arg(yesNoTranslated(this->allowEmptyMornings));
 
 	return begin+s+end;
@@ -43369,12 +43369,12 @@ QString ConstraintTeachersMinHoursDailyRealDays::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teachers min hours daily for real days");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("mH:%1", "Min hours (daily)").arg(this->minHoursDaily);s+=", ";
+	s+=tr("Teachers min hours daily for real days");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("mH:%1", "Min hours (daily)").arg(this->minHoursDaily);s+=translatedCommaSpace();
 	s+=tr("AED:%1", "Allow empty days").arg(yesNoTranslated(this->allowEmptyDays));
 
 	return begin+s+end;
@@ -43616,13 +43616,13 @@ QString ConstraintTeacherMinHoursDailyRealDays::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teacher min hours daily for real days");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
-	s+=tr("mH:%1", "Minimum hours (daily)").arg(this->minHoursDaily);s+=", ";
+	s+=tr("Teacher min hours daily for real days");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
+	s+=tr("mH:%1", "Minimum hours (daily)").arg(this->minHoursDaily);s+=translatedCommaSpace();
 	s+=tr("AED:%1", "Allow empty days").arg(yesNoTranslated(this->allowEmptyDays));
 
 	return begin+s+end;
@@ -43847,12 +43847,12 @@ QString ConstraintTeacherMinRealDaysPerWeek::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teacher min real days per week");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
+	s+=tr("Teacher min real days per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
 	s+=tr("mD:%1", "Minimum days per week").arg(this->minDaysPerWeek);
 
 	return begin+s+end;
@@ -44047,11 +44047,11 @@ QString ConstraintTeachersMinRealDaysPerWeek::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teachers min real days per week");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Teachers min real days per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("mD:%1", "Minimum days per week").arg(this->minDaysPerWeek);
 
 	return begin+s+end;
@@ -44285,17 +44285,17 @@ QString ConstraintTeacherMorningIntervalMaxDaysPerWeek::getDescription(Rules& r)
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Teacher morning interval max days per week");s+=", ";
-	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Abbreviation for teacher").arg(this->teacherName);s+=", ";
-	s+=tr("ISH:%1", "Abbreviation for interval start hour").arg(r.hoursOfTheDay[this->startHour]);s+=", ";
+	QString s=tr("Teacher morning interval max days per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Abbreviation for teacher").arg(this->teacherName);s+=translatedCommaSpace();
+	s+=tr("ISH:%1", "Abbreviation for interval start hour").arg(r.hoursOfTheDay[this->startHour]);s+=translatedCommaSpace();
 	if(this->endHour<r.nHoursPerDay)
 		s+=tr("IEH:%1", "Abbreviation for interval end hour").arg(r.hoursOfTheDay[this->endHour]);
 	else
 		s+=tr("IEH:%1", "Abbreviation for interval end hour").arg(tr("End of the day"));
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("MD:%1", "Abbreviation for max days").arg(this->maxDaysPerWeek);
 
 	return begin+s+end;
@@ -44540,17 +44540,17 @@ QString ConstraintTeachersMorningIntervalMaxDaysPerWeek::getDescription(Rules& r
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Teachers morning interval max days per week");s+=", ";
-	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	QString s=tr("Teachers morning interval max days per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("ISH:%1", "Abbreviation for interval start hour").arg(r.hoursOfTheDay[this->startHour]);
-	s+=", ";
+	s+=translatedCommaSpace();
 	if(this->endHour<r.nHoursPerDay)
 		s+=tr("IEH:%1", "Abbreviation for interval end hour").arg(r.hoursOfTheDay[this->endHour]);
 	else
 		s+=tr("IEH:%1", "Abbreviation for interval end hour").arg(tr("End of the day"));
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("MD:%1", "Abbreviation for max days").arg(this->maxDaysPerWeek);
 
 	return begin+s+end;
@@ -44798,17 +44798,17 @@ QString ConstraintTeacherAfternoonIntervalMaxDaysPerWeek::getDescription(Rules& 
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Teacher afternoon interval max days per week");s+=", ";
-	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Abbreviation for teacher").arg(this->teacherName);s+=", ";
-	s+=tr("ISH:%1", "Abbreviation for interval start hour").arg(r.hoursOfTheDay[this->startHour]);s+=", ";
+	QString s=tr("Teacher afternoon interval max days per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Abbreviation for teacher").arg(this->teacherName);s+=translatedCommaSpace();
+	s+=tr("ISH:%1", "Abbreviation for interval start hour").arg(r.hoursOfTheDay[this->startHour]);s+=translatedCommaSpace();
 	if(this->endHour<r.nHoursPerDay)
 		s+=tr("IEH:%1", "Abbreviation for interval end hour").arg(r.hoursOfTheDay[this->endHour]);
 	else
 		s+=tr("IEH:%1", "Abbreviation for interval end hour").arg(tr("End of the day"));
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("MD:%1", "Abbreviation for max days").arg(this->maxDaysPerWeek);
 
 	return begin+s+end;
@@ -45053,17 +45053,17 @@ QString ConstraintTeachersAfternoonIntervalMaxDaysPerWeek::getDescription(Rules&
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Teachers afternoon interval max days per week");s+=", ";
-	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	QString s=tr("Teachers afternoon interval max days per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("ISH:%1", "Abbreviation for interval start hour").arg(r.hoursOfTheDay[this->startHour]);
-	s+=", ";
+	s+=translatedCommaSpace();
 	if(this->endHour<r.nHoursPerDay)
 		s+=tr("IEH:%1", "Abbreviation for interval end hour").arg(r.hoursOfTheDay[this->endHour]);
 	else
 		s+=tr("IEH:%1", "Abbreviation for interval end hour").arg(tr("End of the day"));
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("MD:%1", "Abbreviation for max days").arg(this->maxDaysPerWeek);
 
 	return begin+s+end;
@@ -45296,10 +45296,10 @@ QString ConstraintTeachersActivityTagMaxHoursDailyRealDays::getDescription(Rules
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teachers for activity tag %1 have max %2 hours daily per real day").arg(this->activityTagName).arg(this->maxHoursDaily);s+=", ";
+	s+=tr("Teachers for activity tag %1 have max %2 hours daily per real day").arg(this->activityTagName).arg(this->maxHoursDaily);s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -45540,10 +45540,10 @@ QString ConstraintTeacherActivityTagMaxHoursDailyRealDays::getDescription(Rules&
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teacher %1 for activity tag %2 has max %3 hours daily per real day").arg(this->teacherName).arg(this->activityTagName).arg(this->maxHoursDaily);s+=", ";
+	s+=tr("Teacher %1 for activity tag %2 has max %3 hours daily per real day").arg(this->teacherName).arg(this->activityTagName).arg(this->maxHoursDaily);s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -45786,11 +45786,11 @@ QString ConstraintStudentsActivityTagMaxHoursDailyRealDays::getDescription(Rules
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
 	s+=tr("Students for activity tag %1 have max %2 hours daily per real day")
-		.arg(this->activityTagName).arg(this->maxHoursDaily); s+=", ";
+		.arg(this->activityTagName).arg(this->maxHoursDaily); s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -46004,11 +46004,11 @@ QString ConstraintStudentsSetActivityTagMaxHoursDailyRealDays::getDescription(Ru
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
 	s+=tr("Students set %1 for activity tag %2 has max %3 hours daily per real day").arg(this->students).arg(this->activityTagName).arg(this->maxHoursDaily);
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -46305,11 +46305,11 @@ QString ConstraintStudentsMaxGapsPerRealDay::getDescription(Rules& r)
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Students max gaps per real day");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Students max gaps per real day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MG:%1", "Max gaps (per real day)").arg(this->maxGaps);
 
 	return begin+s+end;
@@ -46585,12 +46585,12 @@ QString ConstraintStudentsSetMaxGapsPerRealDay::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Students set max gaps per real day"); s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage)); s+=", ";
-	s+=tr("MG:%1", "Max gaps (per real day)").arg(this->maxGaps);s+=", ";
+	s+=tr("Students set max gaps per real day"); s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage)); s+=translatedCommaSpace();
+	s+=tr("MG:%1", "Max gaps (per real day)").arg(this->maxGaps);s+=translatedCommaSpace();
 	s+=tr("St:%1", "Students").arg(this->students);
 
 	return begin+s+end;
@@ -46866,11 +46866,11 @@ QString ConstraintStudentsSetMaxRealDaysPerWeek::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Students set max real days per week");s+=", ";
-	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Abbreviation for students (sets)").arg(this->students);s+=", ";
+	QString s=tr("Students set max real days per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Abbreviation for students (sets)").arg(this->students);s+=translatedCommaSpace();
 	s+=tr("MD:%1", "Abbreviation for max days").arg(this->maxDaysPerWeek);
 
 	return begin+s+end;
@@ -47072,10 +47072,10 @@ QString ConstraintStudentsMaxRealDaysPerWeek::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Students max real days per week");s+=", ";
-	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	QString s=tr("Students max real days per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MD:%1", "Abbreviation for max days").arg(this->maxDaysPerWeek);
 
 	return begin+s+end;
@@ -47287,13 +47287,13 @@ QString ConstraintTeacherMaxSpanPerRealDay::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teacher max span per real day");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
-	s+=tr("MS:%1", "Maximum span (in hours, per real day)").arg(this->maxSpanPerDay);s+=", ";
+	s+=tr("Teacher max span per real day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
+	s+=tr("MS:%1", "Maximum span (in hours, per real day)").arg(this->maxSpanPerDay);s+=translatedCommaSpace();
 	s+=tr("ODE:%1", "One day exception (in which the teacher can have span+1)").arg(yesNoTranslated(this->allowOneDayExceptionPlusOne));
 
 	return begin+s+end;
@@ -47502,12 +47502,12 @@ QString ConstraintTeachersMaxSpanPerRealDay::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teachers max span per real day");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("MS:%1", "Maximum span (in hours, per real day)").arg(this->maxSpanPerDay);s+=", ";
+	s+=tr("Teachers max span per real day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("MS:%1", "Maximum span (in hours, per real day)").arg(this->maxSpanPerDay);s+=translatedCommaSpace();
 	s+=tr("ODE:%1", "One day exception (in which the teachers can have span+1)").arg(yesNoTranslated(this->allowOneDayExceptionPlusOne));
 
 	return begin+s+end;
@@ -47707,12 +47707,12 @@ QString ConstraintStudentsSetMaxSpanPerRealDay::getDescription(Rules& r)
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Students set max span per real day");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Students (set)").arg(this->students); s+=", ";
+	s+=tr("Students set max span per real day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students (set)").arg(this->students); s+=translatedCommaSpace();
 	s+=tr("MS:%1", "Max span (in hours, per real day)").arg(this->maxSpanPerDay);
 
 	return begin+s+end;
@@ -47956,11 +47956,11 @@ QString ConstraintStudentsMaxSpanPerRealDay::getDescription(Rules& r)
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Students max span per real day");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Students max span per real day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MS:%1", "Max span (in hours, per day)").arg(this->maxSpanPerDay);
 
 	return begin+s+end;
@@ -48166,11 +48166,11 @@ QString ConstraintTeacherMaxAfternoonsPerWeek::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Teacher max afternoons per week");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
+	QString s=tr("Teacher max afternoons per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
 	s+=tr("MA:%1", "Max afternoons (per week)").arg(this->maxAfternoonsPerWeek);
 
 	return begin+s+end;
@@ -48409,10 +48409,10 @@ QString ConstraintTeachersMaxAfternoonsPerWeek::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Teachers max afternoons per week");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	QString s=tr("Teachers max afternoons per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MA:%1", "Max afternoons (per week)").arg(this->maxAfternoonsPerWeek);
 
 	return begin+s+end;
@@ -48664,11 +48664,11 @@ QString ConstraintTeacherMaxMorningsPerWeek::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Teacher max mornings per week");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
+	QString s=tr("Teacher max mornings per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
 	s+=tr("MM:%1", "Max mornings (per week)").arg(this->maxMorningsPerWeek);
 
 	return begin+s+end;
@@ -48907,10 +48907,10 @@ QString ConstraintTeachersMaxMorningsPerWeek::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Teachers max mornings per week");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	QString s=tr("Teachers max mornings per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MM:%1", "Max mornings (per week)").arg(this->maxMorningsPerWeek);
 
 	return begin+s+end;
@@ -49185,13 +49185,13 @@ QString ConstraintTeacherMaxActivityTagsPerDayFromSet::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Teacher max activity tags per day from a set");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
-	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=", ";
-	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(", "));
+	QString s=tr("Teacher max activity tags per day from a set");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
+	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=translatedCommaSpace();
+	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));
 
 	return begin+s+end;
 }
@@ -49205,7 +49205,7 @@ QString ConstraintTeacherMaxActivityTagsPerDayFromSet::getDetailedDescription(Ru
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 
 	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
-	s+=tr("Set of activity tags=%1").arg(tagsList.join(", "));s+="\n";
+	s+=tr("Set of activity tags=%1").arg(tagsList.join(translatedCommaSpace()));s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -49411,12 +49411,12 @@ QString ConstraintTeachersMaxActivityTagsPerDayFromSet::getDescription(Rules& r)
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Teachers max activity tags per day from a set");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=", ";
-	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(", "));
+	QString s=tr("Teachers max activity tags per day from a set");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=translatedCommaSpace();
+	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));
 
 	return begin+s+end;
 }
@@ -49429,7 +49429,7 @@ QString ConstraintTeachersMaxActivityTagsPerDayFromSet::getDetailedDescription(R
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
-	s+=tr("Set of activity tags=%1").arg(tagsList.join(", "));s+="\n";
+	s+=tr("Set of activity tags=%1").arg(tagsList.join(translatedCommaSpace()));s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -49616,12 +49616,12 @@ QString ConstraintTeacherMinMorningsPerWeek::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teacher min mornings per week");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
+	s+=tr("Teacher min mornings per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
 	s+=tr("mM:%1", "Minimum mornings per week").arg(this->minMorningsPerWeek);
 
 	return begin+s+end;
@@ -49816,11 +49816,11 @@ QString ConstraintTeachersMinMorningsPerWeek::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teachers min mornings per week");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Teachers min mornings per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("mM:%1", "Minimum morning per week").arg(this->minMorningsPerWeek);
 
 	return begin+s+end;
@@ -50022,12 +50022,12 @@ QString ConstraintTeacherMinAfternoonsPerWeek::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teacher min afternoons per week");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
+	s+=tr("Teacher min afternoons per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
 	s+=tr("mA:%1", "Minimum afternoons per week").arg(this->minAfternoonsPerWeek);
 
 	return begin+s+end;
@@ -50222,11 +50222,11 @@ QString ConstraintTeachersMinAfternoonsPerWeek::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teachers min afternoons per week");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Teachers min afternoons per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("mA:%1", "Minimum afternoons per week").arg(this->minAfternoonsPerWeek);
 
 	return begin+s+end;
@@ -50425,10 +50425,10 @@ QString ConstraintTeacherMaxTwoConsecutiveMornings::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Teacher max two consecutive mornings");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	QString s=tr("Teacher max two consecutive mornings");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("T:%1", "Teacher").arg(this->teacherName);
 
 	return begin+s+end;
@@ -50688,9 +50688,9 @@ QString ConstraintTeachersMaxTwoConsecutiveMornings::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Teachers max two consecutive mornings");s+=", ";
+	QString s=tr("Teachers max two consecutive mornings");s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 //	s+=tr("T:%1", "Teacher").arg(this->teacherName);
 
@@ -50952,10 +50952,10 @@ QString ConstraintTeacherMaxTwoConsecutiveAfternoons::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Teacher max two consecutive afternoons");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	QString s=tr("Teacher max two consecutive afternoons");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("T:%1", "Teacher").arg(this->teacherName);
 
 	return begin+s+end;
@@ -51215,9 +51215,9 @@ QString ConstraintTeachersMaxTwoConsecutiveAfternoons::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Teachers max two consecutive afternoons");s+=", ";
+	QString s=tr("Teachers max two consecutive afternoons");s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 //	s+=tr("T:%1", "Teacher").arg(this->teacherName);
 
@@ -51479,12 +51479,12 @@ QString ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour::getDescripti
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
 	s+=tr("Teachers must begin afternoons early, respecting maximum %1 arrivals at second hour")
 	 .arg(this->maxBeginningsAtSecondHour);
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -51735,13 +51735,13 @@ QString ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour::getDescriptio
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
 
 	s+=tr("Teacher must begin afternoons early, respecting maximum %1 arrivals at second hour")
-	 .arg(this->maxBeginningsAtSecondHour); s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	 .arg(this->maxBeginningsAtSecondHour); s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("T:%1", "Teacher").arg(this->teacherName);
 
 	return begin+s+end;
@@ -52001,13 +52001,13 @@ QString ConstraintStudentsMinHoursPerMorning::getDescription(Rules& r)
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
 
-	s+=tr("Students min hours per morning");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("mH:%1", "Min hours (per morning)").arg(this->minHoursPerMorning);s+=", ";
+	s+=tr("Students min hours per morning");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("mH:%1", "Min hours (per morning)").arg(this->minHoursPerMorning);s+=translatedCommaSpace();
 	s+=tr("AEM:%1", "Allow empty mornings").arg(yesNoTranslated(this->allowEmptyMornings));
 
 	return begin+s+end;
@@ -52247,14 +52247,14 @@ QString ConstraintStudentsSetMinHoursPerMorning::getDescription(Rules& r)
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
 
-	s+=tr("Students set min hours per morning");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Students (set)").arg(this->students);s+=", ";
-	s+=tr("mH:%1", "Min hours (per morning)").arg(this->minHoursPerMorning);s+=", ";
+	s+=tr("Students set min hours per morning");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students (set)").arg(this->students);s+=translatedCommaSpace();
+	s+=tr("mH:%1", "Min hours (per morning)").arg(this->minHoursPerMorning);s+=translatedCommaSpace();
 	s+=tr("AEM:%1", "Allow empty mornings").arg(yesNoTranslated(this->allowEmptyMornings));
 
 	return begin+s+end;
@@ -52549,11 +52549,11 @@ QString ConstraintTeacherMaxZeroGapsPerAfternoon::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teacher max zero gaps per afternoon");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Teacher max zero gaps per afternoon");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("T:%1", "Teacher").arg(this->teacherName);
 
 	return begin+s+end;
@@ -52749,10 +52749,10 @@ QString ConstraintTeachersMaxZeroGapsPerAfternoon::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teachers max zero gaps per afternoon");s+=", ";
+	s+=tr("Teachers max zero gaps per afternoon");s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -53003,11 +53003,11 @@ QString ConstraintStudentsSetMaxAfternoonsPerWeek::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Students set max afternoons per week");s+=", ";
-	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Abbreviation for students (sets)").arg(this->students);s+=", ";
+	QString s=tr("Students set max afternoons per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Abbreviation for students (sets)").arg(this->students);s+=translatedCommaSpace();
 	s+=tr("MA:%1", "Abbreviation for max afternoons").arg(this->maxAfternoonsPerWeek);
 
 	return begin+s+end;
@@ -53209,10 +53209,10 @@ QString ConstraintStudentsMaxAfternoonsPerWeek::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Students max afternoons per week");s+=", ";
-	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	QString s=tr("Students max afternoons per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MA:%1", "Abbreviation for max afternoons").arg(this->maxAfternoonsPerWeek);
 
 	return begin+s+end;
@@ -53468,11 +53468,11 @@ QString ConstraintStudentsSetMaxMorningsPerWeek::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Students set max mornings per week");s+=", ";
-	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Abbreviation for students (sets)").arg(this->students);s+=", ";
+	QString s=tr("Students set max mornings per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Abbreviation for students (sets)").arg(this->students);s+=translatedCommaSpace();
 	s+=tr("MM:%1", "Abbreviation for max mornings").arg(this->maxMorningsPerWeek);
 
 	return begin+s+end;
@@ -53674,10 +53674,10 @@ QString ConstraintStudentsMaxMorningsPerWeek::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Students max mornings per week");s+=", ";
-	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	QString s=tr("Students max mornings per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MM:%1", "Abbreviation for max mornings").arg(this->maxMorningsPerWeek);
 
 	return begin+s+end;
@@ -53934,11 +53934,11 @@ QString ConstraintStudentsSetMinAfternoonsPerWeek::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Students set min afternoons per week");s+=", ";
-	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Abbreviation for students (sets)").arg(this->students);s+=", ";
+	QString s=tr("Students set min afternoons per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Abbreviation for students (sets)").arg(this->students);s+=translatedCommaSpace();
 	s+=tr("mA:%1", "Abbreviation for min afternoons").arg(this->minAfternoonsPerWeek);
 
 	return begin+s+end;
@@ -54140,10 +54140,10 @@ QString ConstraintStudentsMinAfternoonsPerWeek::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Students min afternoons per week");s+=", ";
-	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	QString s=tr("Students min afternoons per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("mA:%1", "Abbreviation for min afternoons").arg(this->minAfternoonsPerWeek);
 
 	return begin+s+end;
@@ -54399,11 +54399,11 @@ QString ConstraintStudentsSetMinMorningsPerWeek::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Students set min mornings per week");s+=", ";
-	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Abbreviation for students (sets)").arg(this->students);s+=", ";
+	QString s=tr("Students set min mornings per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Abbreviation for students (sets)").arg(this->students);s+=translatedCommaSpace();
 	s+=tr("mM:%1", "Abbreviation for min mornings").arg(this->minMorningsPerWeek);
 
 	return begin+s+end;
@@ -54605,10 +54605,10 @@ QString ConstraintStudentsMinMorningsPerWeek::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Students min mornings per week");s+=", ";
-	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	QString s=tr("Students min mornings per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("mM:%1", "Abbreviation for min mornings").arg(this->minMorningsPerWeek);
 
 	return begin+s+end;
@@ -54900,18 +54900,18 @@ QString ConstraintStudentsSetMorningIntervalMaxDaysPerWeek::getDescription(Rules
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Students set morning interval max days per week");s+=", ";
-	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Abbreviation for students (sets)").arg(this->students);s+=", ";
+	QString s=tr("Students set morning interval max days per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Abbreviation for students (sets)").arg(this->students);s+=translatedCommaSpace();
 	s+=tr("ISH:%1", "Abbreviation for interval start hour").arg(r.hoursOfTheDay[this->startHour]);
-	s+=", ";
+	s+=translatedCommaSpace();
 	if(this->endHour<r.nHoursPerDay)
 		s+=tr("IEH:%1", "Abbreviation for interval end hour").arg(r.hoursOfTheDay[this->endHour]);
 	else
 		s+=tr("IEH:%1", "Abbreviation for interval end hour").arg(tr("End of the day"));
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("MD:%1", "Abbreviation for max days").arg(this->maxDaysPerWeek);
 
 	return begin+s+end;
@@ -55152,17 +55152,17 @@ QString ConstraintStudentsMorningIntervalMaxDaysPerWeek::getDescription(Rules& r
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Students morning interval max days per week");s+=", ";
-	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	QString s=tr("Students morning interval max days per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("ISH:%1", "Abbreviation for interval start hour").arg(r.hoursOfTheDay[this->startHour]);
-	s+=", ";
+	s+=translatedCommaSpace();
 	if(this->endHour<r.nHoursPerDay)
 		s+=tr("IEH:%1", "Abbreviation for interval end hour").arg(r.hoursOfTheDay[this->endHour]);
 	else
 		s+=tr("IEH:%1", "Abbreviation for interval end hour").arg(tr("End of the day"));
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("MD:%1", "Abbreviation for max days").arg(this->maxDaysPerWeek);
 
 	return begin+s+end;
@@ -55460,18 +55460,18 @@ QString ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek::getDescription(Rul
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Students set afternoon interval max days per week");s+=", ";
-	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Abbreviation for students (sets)").arg(this->students);s+=", ";
+	QString s=tr("Students set afternoon interval max days per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Abbreviation for students (sets)").arg(this->students);s+=translatedCommaSpace();
 	s+=tr("ISH:%1", "Abbreviation for interval start hour").arg(r.hoursOfTheDay[this->startHour]);
-	s+=", ";
+	s+=translatedCommaSpace();
 	if(this->endHour<r.nHoursPerDay)
 		s+=tr("IEH:%1", "Abbreviation for interval end hour").arg(r.hoursOfTheDay[this->endHour]);
 	else
 		s+=tr("IEH:%1", "Abbreviation for interval end hour").arg(tr("End of the day"));
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("MD:%1", "Abbreviation for max days").arg(this->maxDaysPerWeek);
 
 	return begin+s+end;
@@ -55712,17 +55712,17 @@ QString ConstraintStudentsAfternoonIntervalMaxDaysPerWeek::getDescription(Rules&
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Students afternoon interval max days per week");s+=", ";
-	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	QString s=tr("Students afternoon interval max days per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("ISH:%1", "Abbreviation for interval start hour").arg(r.hoursOfTheDay[this->startHour]);
-	s+=", ";
+	s+=translatedCommaSpace();
 	if(this->endHour<r.nHoursPerDay)
 		s+=tr("IEH:%1", "Abbreviation for interval end hour").arg(r.hoursOfTheDay[this->endHour]);
 	else
 		s+=tr("IEH:%1", "Abbreviation for interval end hour").arg(tr("End of the day"));
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("MD:%1", "Abbreviation for max days").arg(this->maxDaysPerWeek);
 
 	return begin+s+end;
@@ -55940,12 +55940,12 @@ QString ConstraintTeacherMaxHoursPerAllAfternoons::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teacher max hours per all afternoons");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
+	s+=tr("Teacher max hours per all afternoons");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
 	s+=tr("MHAA:%1", "Maximum hours per all afternoons").arg(this->maxHoursPerAllAfternoons);
 
 	return begin+s+end;
@@ -56122,11 +56122,11 @@ QString ConstraintTeachersMaxHoursPerAllAfternoons::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teachers max hours per all afternoons");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Teachers max hours per all afternoons");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MHAA:%1", "Maximum hours per all afternoons").arg(this->maxHoursPerAllAfternoons);
 
 	return begin+s+end;
@@ -56356,12 +56356,12 @@ QString ConstraintStudentsSetMaxHoursPerAllAfternoons::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Students set max hours per all afternoons");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Students").arg(this->students);s+=", ";
+	s+=tr("Students set max hours per all afternoons");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students").arg(this->students);s+=translatedCommaSpace();
 	s+=tr("MHAA:%1", "Maximum hours per all afternoons").arg(this->maxHoursPerAllAfternoons);
 
 	return begin+s+end;
@@ -56536,11 +56536,11 @@ QString ConstraintStudentsMaxHoursPerAllAfternoons::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Students max hours per all afternoons");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Students max hours per all afternoons");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MHAA:%1", "Maximum hours per all afternoons").arg(this->maxHoursPerAllAfternoons);
 
 	return begin+s+end;
@@ -56722,12 +56722,12 @@ QString ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon::getDescripti
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teacher min resting hours between morning and afternoon");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
+	s+=tr("Teacher min resting hours between morning and afternoon");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
 	s+=tr("mRH:%1", "Minimum resting hours").arg(this->minRestingHours);
 
 	return begin+s+end;
@@ -56913,11 +56913,11 @@ QString ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoon::getDescript
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teachers min resting hours between morning and afternoon");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Teachers min resting hours between morning and afternoon");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("mRH:%1", "Minimum resting hours").arg(this->minRestingHours);
 
 	return begin+s+end;
@@ -57098,12 +57098,12 @@ QString ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon::getDescr
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Students set min resting hours between morning and afternoon");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Students (set)").arg(this->students); s+=", ";
+	s+=tr("Students set min resting hours between morning and afternoon");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students (set)").arg(this->students); s+=translatedCommaSpace();
 	s+=tr("mRH:%1", "Minimum resting hours").arg(this->minRestingHours);
 
 	return begin+s+end;
@@ -57339,11 +57339,11 @@ QString ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon::getDescript
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Students min resting hours between morning and afternoon");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Students min resting hours between morning and afternoon");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("mRH:%1", "Minimum resting hours").arg(this->minRestingHours);
 
 	return begin+s+end;
@@ -57538,12 +57538,12 @@ QString ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour::getDescripti
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
 	s+=tr("Students must begin afternoons early, respecting maximum %1 arrivals at second hour")
 	 .arg(this->maxBeginningsAtSecondHour);
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -57841,13 +57841,13 @@ QString ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour::getDescri
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
 
 	s+=tr("Students set must begin the afternoons early, respecting maximum %1 arrivals at second hour")
-	 .arg(this->maxBeginningsAtSecondHour); s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	 .arg(this->maxBeginningsAtSecondHour); s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("St:%1", "Students set").arg(this->students);
 
 	return begin+s+end;
@@ -58091,11 +58091,11 @@ QString ConstraintTeachersMaxGapsPerWeekForRealDays::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teachers max gaps per week for real days");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Teachers max gaps per week for real days");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MG:%1", "Max gaps (per week for real days)").arg(this->maxGaps);
 
 	return begin+s+end;
@@ -58316,12 +58316,12 @@ QString ConstraintTeacherMaxGapsPerWeekForRealDays::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teacher max gaps per week for real days");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName); s+=", ";
+	s+=tr("Teacher max gaps per week for real days");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName); s+=translatedCommaSpace();
 	s+=tr("MG:%1", "Max gaps (per week for real days)").arg(this->maxGaps);
 
 	return begin+s+end;
@@ -58538,11 +58538,11 @@ QString ConstraintStudentsMaxGapsPerWeekForRealDays::getDescription(Rules& r)
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Students max gaps per week for real days");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Students max gaps per week for real days");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MG:%1", "Max gaps (per week for real days)").arg(this->maxGaps);
 
 	return begin+s+end;
@@ -58816,12 +58816,12 @@ QString ConstraintStudentsSetMaxGapsPerWeekForRealDays::getDescription(Rules& r)
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Students set max gaps per week for real days"); s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage)); s+=", ";
-	s+=tr("MG:%1", "Max gaps (per week for real days)").arg(this->maxGaps);s+=", ";
+	s+=tr("Students set max gaps per week for real days"); s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage)); s+=translatedCommaSpace();
+	s+=tr("MG:%1", "Max gaps (per week for real days)").arg(this->maxGaps);s+=translatedCommaSpace();
 	s+=tr("St:%1", "Students").arg(this->students);
 
 	return begin+s+end;
@@ -59045,12 +59045,12 @@ QString ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::getDescription
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
 	s+=tr("Teachers must begin mornings early, respecting maximum %1 arrivals at second hour")
 	 .arg(this->maxBeginningsAtSecondHour);
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -59301,13 +59301,13 @@ QString ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::getDescription(
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
 
 	s+=tr("Teacher must begin mornings early, respecting maximum %1 arrivals at second hour")
-	 .arg(this->maxBeginningsAtSecondHour); s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	 .arg(this->maxBeginningsAtSecondHour); s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("T:%1", "Teacher").arg(this->teacherName);
 
 	return begin+s+end;
@@ -59554,12 +59554,12 @@ QString ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::getDescription
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
 	s+=tr("Students must begin mornings early, respecting maximum %1 arrivals at second hour")
 	 .arg(this->maxBeginningsAtSecondHour);
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -59857,13 +59857,13 @@ QString ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::getDescript
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
 
 	s+=tr("Students set must begin the mornings early, respecting maximum %1 arrivals at second hour")
-	 .arg(this->maxBeginningsAtSecondHour); s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	 .arg(this->maxBeginningsAtSecondHour); s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("St:%1", "Students set").arg(this->students);
 
 	return begin+s+end;
@@ -60112,11 +60112,11 @@ QString ConstraintTeacherMaxThreeConsecutiveDays::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
-	QString s=tr("Teacher max three consecutive days");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
+	QString s=tr("Teacher max three consecutive days");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
 	s+=tr("A-AMAM-E:%1", "Allow afternoon-morning-afternoon-morning exception").arg(yesNoTranslated(this->allowAMAMException));
 
 	return begin+s+end;
@@ -60312,10 +60312,10 @@ QString ConstraintTeachersMaxThreeConsecutiveDays::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
-	QString s=tr("Teachers max three consecutive days");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	QString s=tr("Teachers max three consecutive days");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("A-AMAM-E:%1", "Allow afternoon-morning-afternoon-morning exception").arg(yesNoTranslated(this->allowAMAMException));
 
 	return begin+s+end;
@@ -60567,11 +60567,11 @@ QString ConstraintStudentsSetMaxThreeConsecutiveDays::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
-	QString s=tr("Students set max three consecutive days");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Students").arg(this->students);s+=", ";
+	QString s=tr("Students set max three consecutive days");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students").arg(this->students);s+=translatedCommaSpace();
 	s+=tr("A-AMAM-E:%1", "Allow afternoon-morning-afternoon-morning exception").arg(yesNoTranslated(this->allowAMAMException));
 
 	return begin+s+end;
@@ -60770,10 +60770,10 @@ QString ConstraintStudentsMaxThreeConsecutiveDays::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
-	QString s=tr("Students max three consecutive days");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	QString s=tr("Students max three consecutive days");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("A-AMAM-E:%1", "Allow afternoon-morning-afternoon-morning exception").arg(yesNoTranslated(this->allowAMAMException));
 
 	return begin+s+end;
@@ -61074,16 +61074,16 @@ QString ConstraintMinHalfDaysBetweenActivities::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Min half days between activities");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
+	s+=tr("Min half days between activities");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=translatedCommaSpace();
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));s+=", ";
+		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));s+=translatedCommaSpace();
 	}
-	s+=tr("mD:%1", "Min days").arg(this->minDays);s+=", ";
+	s+=tr("mD:%1", "Min days").arg(this->minDays);s+=translatedCommaSpace();
 	s+=tr("CSD:%1", "Consecutive if on the same day").arg(yesNoTranslated(this->consecutiveIfSameDay));
 
 	return begin+s+end;
@@ -61203,9 +61203,9 @@ double ConstraintMinHalfDaysBetweenActivities::fitness(Solution& c, Rules& r, QL
 							 .arg(r.daysOfTheWeek[day2]);
 							 ;
 
-							s+=", ";
+							s+=translatedCommaSpace();
 							s+=tr("conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
-							s+=".";
+							s+=translatedDot();
 							
 							if(this->consecutiveIfSameDay && day1==day2){
 								s+=" ";
@@ -61411,7 +61411,7 @@ QString ConstraintActivityPreferredDay::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	s+=tr("Act. id: %1 (%2) has a preferred day: %3", "%1 is the id, %2 is the detailed description of the activity. %3 is day")
@@ -61419,10 +61419,10 @@ QString ConstraintActivityPreferredDay::getDescription(Rules& r)
 	 .arg(getActivityDetailedDescription(r, this->activityId))
 	 .arg(r.daysOfTheWeek[this->day]);
 
-	s+=", ";
+	s+=translatedCommaSpace();
 
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
-	//s+=", ";
+	//s+=translatedCommaSpace();
 	//s+=tr("PL:%1", "Abbreviation for permanently locked").arg(yesNoTranslated(this->permanentlyLocked));
 
 	return begin+s+end;
@@ -61665,11 +61665,11 @@ QString ConstraintActivitiesMinInATerm::getDescription(Rules& r)
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
-		actids+=getActivityDescription(r, aid)+QString(", ");
+		actids+=getActivityDescription(r, aid)+translatedCommaSpace();
 	actids.chop(2);
 
 	QString s=tr("Activities min in a term, WP:%1%, NA:%2, A: %3, mAIAT:%4, AET:%5", "Constraint description. WP means weight percentage, "
@@ -61995,14 +61995,14 @@ QString ConstraintMaxTermsBetweenActivities::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Max terms between activities");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
+	s+=tr("Max terms between activities");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=translatedCommaSpace();
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));s+=", ";
+		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));s+=translatedCommaSpace();
 	}
 	s+=tr("MT:%1", "Abbreviation for maximum terms").arg(this->maxTerms);
 
@@ -62109,9 +62109,9 @@ double ConstraintMaxTermsBetweenActivities::fitness(Solution& c, Rules& r, QList
 							 .arg(term1)
 							 .arg(term2);
 							
-							s+=", ";
+							s+=translatedCommaSpace();
 							s+=tr("conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
-							s+=".";
+							s+=translatedDot();
 							
 							dl.append(s);
 							cl.append(tmp*weightPercentage/100);
@@ -62278,13 +62278,13 @@ QString ConstraintStudentsSetMaxActivityTagsPerDayFromSet::getDescription(Rules&
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Students set max activity tags per day from a set");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Students").arg(this->students);s+=", ";
-	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=", ";
-	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(", "));
+	QString s=tr("Students set max activity tags per day from a set");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students").arg(this->students);s+=translatedCommaSpace();
+	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=translatedCommaSpace();
+	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));
 
 	return begin+s+end;
 }
@@ -62298,7 +62298,7 @@ QString ConstraintStudentsSetMaxActivityTagsPerDayFromSet::getDetailedDescriptio
 	s+=tr("Students=%1").arg(this->students);s+="\n";
 
 	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
-	s+=tr("Set of activity tags=%1").arg(tagsList.join(", "));s+="\n";
+	s+=tr("Set of activity tags=%1").arg(tagsList.join(translatedCommaSpace()));s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -62500,12 +62500,12 @@ QString ConstraintStudentsMaxActivityTagsPerDayFromSet::getDescription(Rules& r)
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Students max activity tags per day from a set");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=", ";
-	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(", "));
+	QString s=tr("Students max activity tags per day from a set");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=translatedCommaSpace();
+	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));
 
 	return begin+s+end;
 }
@@ -62518,7 +62518,7 @@ QString ConstraintStudentsMaxActivityTagsPerDayFromSet::getDetailedDescription(R
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
-	s+=tr("Set of activity tags=%1").arg(tagsList.join(", "));s+="\n";
+	s+=tr("Set of activity tags=%1").arg(tagsList.join(translatedCommaSpace()));s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -62727,13 +62727,13 @@ QString ConstraintTeacherMaxActivityTagsPerRealDayFromSet::getDescription(Rules&
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Teacher max activity tags per real day from a set");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
-	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=", ";
-	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(", "));
+	QString s=tr("Teacher max activity tags per real day from a set");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
+	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=translatedCommaSpace();
+	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));
 
 	return begin+s+end;
 }
@@ -62747,7 +62747,7 @@ QString ConstraintTeacherMaxActivityTagsPerRealDayFromSet::getDetailedDescriptio
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 
 	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
-	s+=tr("Set of activity tags=%1").arg(tagsList.join(", "));s+="\n";
+	s+=tr("Set of activity tags=%1").arg(tagsList.join(translatedCommaSpace()));s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -62956,12 +62956,12 @@ QString ConstraintTeachersMaxActivityTagsPerRealDayFromSet::getDescription(Rules
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Teachers max activity tags per real day from a set");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=", ";
-	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(", "));
+	QString s=tr("Teachers max activity tags per real day from a set");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=translatedCommaSpace();
+	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));
 
 	return begin+s+end;
 }
@@ -62974,7 +62974,7 @@ QString ConstraintTeachersMaxActivityTagsPerRealDayFromSet::getDetailedDescripti
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
-	s+=tr("Set of activity tags=%1").arg(tagsList.join(", "));s+="\n";
+	s+=tr("Set of activity tags=%1").arg(tagsList.join(translatedCommaSpace()));s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -63194,13 +63194,13 @@ QString ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet::getDescription(Ru
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Students set max activity tags per real day from a set");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Students").arg(this->students);s+=", ";
-	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=", ";
-	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(", "));
+	QString s=tr("Students set max activity tags per real day from a set");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students").arg(this->students);s+=translatedCommaSpace();
+	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=translatedCommaSpace();
+	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));
 
 	return begin+s+end;
 }
@@ -63214,7 +63214,7 @@ QString ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet::getDetailedDescri
 	s+=tr("Students=%1").arg(this->students);s+="\n";
 
 	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
-	s+=tr("Set of activity tags=%1").arg(tagsList.join(", "));s+="\n";
+	s+=tr("Set of activity tags=%1").arg(tagsList.join(translatedCommaSpace()));s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -63419,12 +63419,12 @@ QString ConstraintStudentsMaxActivityTagsPerRealDayFromSet::getDescription(Rules
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Students max activity tags per real day from a set");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=", ";
-	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(", "));
+	QString s=tr("Students max activity tags per real day from a set");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=translatedCommaSpace();
+	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));
 
 	return begin+s+end;
 }
@@ -63437,7 +63437,7 @@ QString ConstraintStudentsMaxActivityTagsPerRealDayFromSet::getDetailedDescripti
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
-	s+=tr("Set of activity tags=%1").arg(tagsList.join(", "));s+="\n";
+	s+=tr("Set of activity tags=%1").arg(tagsList.join(translatedCommaSpace()));s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -63706,14 +63706,14 @@ QString ConstraintMaxHalfDaysBetweenActivities::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Max half days between activities");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
+	s+=tr("Max half days between activities");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=translatedCommaSpace();
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));s+=", ";
+		s+=tr("Id:%1", "Id of activity").arg(getActivityDescription(r, this->activitiesIds[i]));s+=translatedCommaSpace();
 	}
 	s+=tr("MD:%1", "Abbreviation for maximum days").arg(this->maxDays);
 
@@ -63831,9 +63831,9 @@ double ConstraintMaxHalfDaysBetweenActivities::fitness(Solution& c, Rules& r, QL
 							 .arg(r.daysOfTheWeek[day1])
 							 .arg(r.daysOfTheWeek[day2]);
 							
-							s+=", ";
+							s+=translatedCommaSpace();
 							s+=tr("conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
-							s+=".";
+							s+=translatedDot();
 							
 							dl.append(s);
 							cl.append(tmp*weightPercentage/100);
@@ -63984,14 +63984,14 @@ QString ConstraintActivityBeginsStudentsDay::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	s+=tr("Act. id: %1 (%2) must begin students' day",
 		"%1 is the id, %2 is the detailed description of the activity.")
 		.arg(getActivityDescription(r, this->activityId))
 		.arg(getActivityDetailedDescription(r, this->activityId));
-	s+=", ";
+	s+=translatedCommaSpace();
 
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -64237,7 +64237,7 @@ QString ConstraintActivitiesBeginStudentsDay::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString tc, st, su, at;
 	
@@ -64264,7 +64264,7 @@ QString ConstraintActivitiesBeginStudentsDay::getDescription(Rules& r)
 	QString s;
 	s+=tr("Activities with %1, %2, %3, %4, must begin students' day", "%1...%4 are conditions for the activities").arg(tc).arg(st).arg(su).arg(at);
 
-	s+=", ";
+	s+=translatedCommaSpace();
 
 	s+=tr("WP:%1%", "Abbreviation for Weight Percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -64525,14 +64525,14 @@ QString ConstraintActivityBeginsTeachersDay::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
 	s+=tr("Act. id: %1 (%2) must begin teachers' day",
 		"%1 is the id, %2 is the detailed description of the activity.")
 		.arg(getActivityDescription(r, this->activityId))
 		.arg(getActivityDetailedDescription(r, this->activityId));
-	s+=", ";
+	s+=translatedCommaSpace();
 
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -64778,7 +64778,7 @@ QString ConstraintActivitiesBeginTeachersDay::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString tc, st, su, at;
 	
@@ -64805,7 +64805,7 @@ QString ConstraintActivitiesBeginTeachersDay::getDescription(Rules& r)
 	QString s;
 	s+=tr("Activities with %1, %2, %3, %4, must begin teachers' day", "%1...%4 are conditions for the activities").arg(tc).arg(st).arg(su).arg(at);
 
-	s+=", ";
+	s+=translatedCommaSpace();
 
 	s+=tr("WP:%1%", "Abbreviation for Weight Percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -65070,12 +65070,12 @@ QString ConstraintTeachersMinHoursPerAfternoon::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teachers min hours per afternoon");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("mH:%1", "Min hours (per afternoon)").arg(this->minHoursPerAfternoon);s+=", ";
+	s+=tr("Teachers min hours per afternoon");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("mH:%1", "Min hours (per afternoon)").arg(this->minHoursPerAfternoon);s+=translatedCommaSpace();
 	s+=tr("AEA:%1", "Allow empty afternoons").arg(yesNoTranslated(this->allowEmptyAfternoons));
 
 	return begin+s+end;
@@ -65315,13 +65315,13 @@ QString ConstraintTeacherMinHoursPerAfternoon::getDescription(Rules& r){
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teacher min hours per afternoon");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
-	s+=tr("mH:%1", "Minimum hours (per afternoon)").arg(this->minHoursPerAfternoon);s+=", ";
+	s+=tr("Teacher min hours per afternoon");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
+	s+=tr("mH:%1", "Minimum hours (per afternoon)").arg(this->minHoursPerAfternoon);s+=translatedCommaSpace();
 	s+=tr("AEA:%1", "Allow empty afternoons").arg(yesNoTranslated(this->allowEmptyAfternoons));
 
 	return begin+s+end;
@@ -65552,13 +65552,13 @@ QString ConstraintStudentsMinHoursPerAfternoon::getDescription(Rules& r)
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
 
-	s+=tr("Students min hours per afternoon");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("mH:%1", "Min hours (per afternoon)").arg(this->minHoursPerAfternoon);s+=", ";
+	s+=tr("Students min hours per afternoon");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("mH:%1", "Min hours (per afternoon)").arg(this->minHoursPerAfternoon);s+=translatedCommaSpace();
 	s+=tr("AEA:%1", "Allow empty afternoons").arg(yesNoTranslated(this->allowEmptyAfternoons));
 
 	return begin+s+end;
@@ -65798,14 +65798,14 @@ QString ConstraintStudentsSetMinHoursPerAfternoon::getDescription(Rules& r)
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
 
-	s+=tr("Students set min hours per afternoon");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Students (set)").arg(this->students);s+=", ";
-	s+=tr("mH:%1", "Min hours (per afternoon)").arg(this->minHoursPerAfternoon);s+=", ";
+	s+=tr("Students set min hours per afternoon");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students (set)").arg(this->students);s+=translatedCommaSpace();
+	s+=tr("mH:%1", "Min hours (per afternoon)").arg(this->minHoursPerAfternoon);s+=translatedCommaSpace();
 	s+=tr("AEA:%1", "Allow empty afternoons").arg(yesNoTranslated(this->allowEmptyAfternoons));
 
 	return begin+s+end;
@@ -66118,19 +66118,19 @@ QString ConstraintTeacherMaxHoursDailyInInterval::getDescription(Rules& r)
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 	
 	QString s;
-	s+=tr("Teacher max hours daily in hourly interval");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
+	s+=tr("Teacher max hours daily in hourly interval");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
 
-	s+=tr("ISH:%1", "Abbreviation for interval start hour. Please use different abbreviations for interval start hour and interval end hour.").arg(r.hoursOfTheDay[this->startHour]);s+=", ";
+	s+=tr("ISH:%1", "Abbreviation for interval start hour. Please use different abbreviations for interval start hour and interval end hour.").arg(r.hoursOfTheDay[this->startHour]);s+=translatedCommaSpace();
 	if(this->endHour<r.nHoursPerDay)
 		s+=tr("IEH:%1", "Abbreviation for interval end hour. Please use different abbreviations for interval start hour and interval end hour.").arg(r.hoursOfTheDay[this->endHour]);
 	else
 		s+=tr("IEH:%1", "Abbreviation for interval end hour. Please use different abbreviations for interval start hour and interval end hour.").arg(tr("End of the day"));
-	s+=", ";
+	s+=translatedCommaSpace();
 
 	s+=tr("MH:%1", "Maximum hours (daily)").arg(this->maxHoursDaily);
 
@@ -66373,18 +66373,18 @@ QString ConstraintTeachersMaxHoursDailyInInterval::getDescription(Rules& r)
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 	
 	QString s;
-	s+=tr("Teachers max hours daily in hourly interval");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Teachers max hours daily in hourly interval");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 
-	s+=tr("ISH:%1", "Abbreviation for interval start hour. Please use different abbreviations for interval start hour and interval end hour.").arg(r.hoursOfTheDay[this->startHour]);s+=", ";
+	s+=tr("ISH:%1", "Abbreviation for interval start hour. Please use different abbreviations for interval start hour and interval end hour.").arg(r.hoursOfTheDay[this->startHour]);s+=translatedCommaSpace();
 	if(this->endHour<r.nHoursPerDay)
 		s+=tr("IEH:%1", "Abbreviation for interval end hour. Please use different abbreviations for interval start hour and interval end hour.").arg(r.hoursOfTheDay[this->endHour]);
 	else
 		s+=tr("IEH:%1", "Abbreviation for interval end hour. Please use different abbreviations for interval start hour and interval end hour.").arg(tr("End of the day"));
-	s+=", ";
+	s+=translatedCommaSpace();
 
 	s+=tr("MH:%1", "Maximum hours (daily)").arg(this->maxHoursDaily);
 
@@ -66623,19 +66623,19 @@ QString ConstraintStudentsSetMaxHoursDailyInInterval::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Students set max hours daily in hourly interval");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Students (set)").arg(this->students); s+=", ";
+	s+=tr("Students set max hours daily in hourly interval");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students (set)").arg(this->students); s+=translatedCommaSpace();
 
-	s+=tr("ISH:%1", "Abbreviation for interval start hour. Please use different abbreviations for interval start hour and interval end hour.").arg(r.hoursOfTheDay[this->startHour]);s+=", ";
+	s+=tr("ISH:%1", "Abbreviation for interval start hour. Please use different abbreviations for interval start hour and interval end hour.").arg(r.hoursOfTheDay[this->startHour]);s+=translatedCommaSpace();
 	if(this->endHour<r.nHoursPerDay)
 		s+=tr("IEH:%1", "Abbreviation for interval end hour. Please use different abbreviations for interval start hour and interval end hour.").arg(r.hoursOfTheDay[this->endHour]);
 	else
 		s+=tr("IEH:%1", "Abbreviation for interval end hour. Please use different abbreviations for interval start hour and interval end hour.").arg(tr("End of the day"));
-	s+=", ";
+	s+=translatedCommaSpace();
 
 	s+=tr("MH:%1", "Max hours (daily)").arg(this->maxHoursDaily);
 
@@ -66912,18 +66912,18 @@ QString ConstraintStudentsMaxHoursDailyInInterval::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Students max hours daily in hourly interval");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Students max hours daily in hourly interval");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 
-	s+=tr("ISH:%1", "Abbreviation for interval start hour. Please use different abbreviations for interval start hour and interval end hour.").arg(r.hoursOfTheDay[this->startHour]);s+=", ";
+	s+=tr("ISH:%1", "Abbreviation for interval start hour. Please use different abbreviations for interval start hour and interval end hour.").arg(r.hoursOfTheDay[this->startHour]);s+=translatedCommaSpace();
 	if(this->endHour<r.nHoursPerDay)
 		s+=tr("IEH:%1", "Abbreviation for interval end hour. Please use different abbreviations for interval start hour and interval end hour.").arg(r.hoursOfTheDay[this->endHour]);
 	else
 		s+=tr("IEH:%1", "Abbreviation for interval end hour. Please use different abbreviations for interval start hour and interval end hour.").arg(tr("End of the day"));
-	s+=", ";
+	s+=translatedCommaSpace();
 
 	s+=tr("MH:%1", "Max hours (daily)").arg(this->maxHoursDaily);
 
@@ -67147,10 +67147,10 @@ QString ConstraintTeacherNoTwoConsecutiveDays::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
-	QString s=tr("Teacher no two consecutive days");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	QString s=tr("Teacher no two consecutive days");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("T:%1", "Teacher").arg(this->teacherName);
 
 	return begin+s+end;
@@ -67338,9 +67338,9 @@ QString ConstraintTeachersNoTwoConsecutiveDays::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
-	QString s=tr("Teachers no two consecutive days");s+=", ";
+	QString s=tr("Teachers no two consecutive days");s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
@@ -67588,14 +67588,14 @@ QString ConstraintTeacherPairOfMutuallyExclusiveTimeSlots::getDescription(Rules&
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 	
 	QString s;
-	s+=tr("Teacher pair of mutually exclusive time slots");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
+	s+=tr("Teacher pair of mutually exclusive time slots");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
 
-	s+=tr("FTS:%1", "First time slot").arg(r.daysOfTheWeek[this->day1]+" "+r.hoursOfTheDay[this->hour1]);s+=", ";
+	s+=tr("FTS:%1", "First time slot").arg(r.daysOfTheWeek[this->day1]+" "+r.hoursOfTheDay[this->hour1]);s+=translatedCommaSpace();
 	s+=tr("STS:%1", "Second time slot").arg(r.daysOfTheWeek[this->day2]+" "+r.hoursOfTheDay[this->hour2]);
 
 	return begin+s+end;
@@ -67836,13 +67836,13 @@ QString ConstraintTeachersPairOfMutuallyExclusiveTimeSlots::getDescription(Rules
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 	
 	QString s;
-	s+=tr("Teachers pair of mutually exclusive time slots");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Teachers pair of mutually exclusive time slots");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 
-	s+=tr("FTS:%1", "First time slot").arg(r.daysOfTheWeek[this->day1]+" "+r.hoursOfTheDay[this->hour1]);s+=", ";
+	s+=tr("FTS:%1", "First time slot").arg(r.daysOfTheWeek[this->day1]+" "+r.hoursOfTheDay[this->hour1]);s+=translatedCommaSpace();
 	s+=tr("STS:%1", "Second time slot").arg(r.daysOfTheWeek[this->day2]+" "+r.hoursOfTheDay[this->hour2]);
 
 	return begin+s+end;
@@ -68098,14 +68098,14 @@ QString ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots::getDescription(Ru
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 	
 	QString s;
-	s+=tr("Students set pair of mutually exclusive time slots");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Students").arg(this->students);s+=", ";
+	s+=tr("Students set pair of mutually exclusive time slots");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students").arg(this->students);s+=translatedCommaSpace();
 
-	s+=tr("FTS:%1", "First time slot").arg(r.daysOfTheWeek[this->day1]+" "+r.hoursOfTheDay[this->hour1]);s+=", ";
+	s+=tr("FTS:%1", "First time slot").arg(r.daysOfTheWeek[this->day1]+" "+r.hoursOfTheDay[this->hour1]);s+=translatedCommaSpace();
 	s+=tr("STS:%1", "Second time slot").arg(r.daysOfTheWeek[this->day2]+" "+r.hoursOfTheDay[this->hour2]);
 
 	return begin+s+end;
@@ -68345,13 +68345,13 @@ QString ConstraintStudentsPairOfMutuallyExclusiveTimeSlots::getDescription(Rules
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 	
 	QString s;
-	s+=tr("Students pair of mutually exclusive time slots");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("Students pair of mutually exclusive time slots");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 
-	s+=tr("FTS:%1", "First time slot").arg(r.daysOfTheWeek[this->day1]+" "+r.hoursOfTheDay[this->hour1]);s+=", ";
+	s+=tr("FTS:%1", "First time slot").arg(r.daysOfTheWeek[this->day1]+" "+r.hoursOfTheDay[this->hour1]);s+=translatedCommaSpace();
 	s+=tr("STS:%1", "Second time slot").arg(r.daysOfTheWeek[this->day2]+" "+r.hoursOfTheDay[this->hour2]);
 
 	return begin+s+end;
@@ -68652,23 +68652,23 @@ QString ConstraintTwoSetsOfActivitiesSameSections::getDescription(Rules& r)
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	assert(this->oDays.count()==this->oHours.count());
 
 	QString actAids=QString("");
 	for(int aid : std::as_const(this->activitiesAIds))
-		actAids+=getActivityDescription(r, aid)+QString(", ");
+		actAids+=getActivityDescription(r, aid)+translatedCommaSpace();
 	actAids.chop(2);
 
 	QString actBids=QString("");
 	for(int aid : std::as_const(this->activitiesBIds))
-		actBids+=getActivityDescription(r, aid)+QString(", ");
+		actBids+=getActivityDescription(r, aid)+translatedCommaSpace();
 	actBids.chop(2);
 
 	QString timeslots=QString("");
 	for(int i=0; i<this->oDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[oDays.at(i)]+QString(" ")+r.hoursOfTheDay[oHours.at(i)]+QString(", ");
+		timeslots+=r.daysOfTheWeek[oDays.at(i)]+QString(" ")+r.hoursOfTheDay[oHours.at(i)]+translatedCommaSpace();
 	timeslots.chop(2);
 
 	QString s=tr("Two sets of activities have the same sections, WP:%1%, N1:%2, SA1: %3, N2:%4, SA2: %5, ETS: %6", "Constraint description. WP means weight percentage, "
@@ -68690,17 +68690,17 @@ QString ConstraintTwoSetsOfActivitiesSameSections::getDetailedDescription(Rules&
 
 	QString actAids=QString("");
 	for(int aid : std::as_const(this->activitiesAIds))
-		actAids+=CustomFETString::number(aid)+QString(", ");
+		actAids+=CustomFETString::number(aid)+translatedCommaSpace();
 	actAids.chop(2);
 
 	QString actBids=QString("");
 	for(int aid : std::as_const(this->activitiesBIds))
-		actBids+=CustomFETString::number(aid)+QString(", ");
+		actBids+=CustomFETString::number(aid)+translatedCommaSpace();
 	actBids.chop(2);
 
 	QString timeslots=QString("");
 	for(int i=0; i<this->oDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[oDays.at(i)]+QString(" ")+r.hoursOfTheDay[oHours.at(i)]+QString(", ");
+		timeslots+=r.daysOfTheWeek[oDays.at(i)]+QString(" ")+r.hoursOfTheDay[oHours.at(i)]+translatedCommaSpace();
 	timeslots.chop(2);
 
 	QString s=tr("Time constraint"); s+="\n";
@@ -69057,16 +69057,16 @@ QString ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::getDescription(Ru
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Students set max single gaps in selected time slots");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("St:%1", "Students").arg(this->students);s+=", ";
-	s+=tr("MSG:%1", "Max single gaps").arg(maxSingleGaps);s+=", ";
+	QString s=tr("Students set max single gaps in selected time slots");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students").arg(this->students);s+=translatedCommaSpace();
+	s+=tr("MSG:%1", "Max single gaps").arg(maxSingleGaps);s+=translatedCommaSpace();
 
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+QString(", ");
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
 	timeslots.chop(2);
 
 	s+=tr("STS: %1", "Selected time slots").arg(timeslots);
@@ -69088,7 +69088,7 @@ QString ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::getDetailedDescri
 
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+QString(", ");
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
 	timeslots.chop(2);
 
 	s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
@@ -69351,15 +69351,15 @@ QString ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::getDescription(Rules
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Students max single gaps in selected time slots");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("MSG:%1", "Max single gaps").arg(maxSingleGaps);s+=", ";
+	QString s=tr("Students max single gaps in selected time slots");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("MSG:%1", "Max single gaps").arg(maxSingleGaps);s+=translatedCommaSpace();
 
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+QString(", ");
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
 	timeslots.chop(2);
 
 	s+=tr("STS: %1", "Selected time slots").arg(timeslots);
@@ -69380,7 +69380,7 @@ QString ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::getDetailedDescripti
 
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+QString(", ");
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
 	timeslots.chop(2);
 
 	s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
@@ -69646,15 +69646,15 @@ QString ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::getDescription(Rules
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Teachers max single gaps in selected time slots");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("MSG:%1", "Max single gaps").arg(maxSingleGaps);s+=", ";
+	QString s=tr("Teachers max single gaps in selected time slots");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("MSG:%1", "Max single gaps").arg(maxSingleGaps);s+=translatedCommaSpace();
 
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+QString(", ");
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
 	timeslots.chop(2);
 
 	s+=tr("STS: %1", "Selected time slots").arg(timeslots);
@@ -69675,7 +69675,7 @@ QString ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::getDetailedDescripti
 
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+QString(", ");
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
 	timeslots.chop(2);
 
 	s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
@@ -69957,16 +69957,16 @@ QString ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::getDescription(Rules&
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
-	QString s=tr("Teacher max single gaps in selected time slots");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacher);s+=", ";
-	s+=tr("MSG:%1", "Max single gaps").arg(maxSingleGaps);s+=", ";
+	QString s=tr("Teacher max single gaps in selected time slots");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacher);s+=translatedCommaSpace();
+	s+=tr("MSG:%1", "Max single gaps").arg(maxSingleGaps);s+=translatedCommaSpace();
 
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+QString(", ");
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
 	timeslots.chop(2);
 
 	s+=tr("STS: %1", "Selected time slots").arg(timeslots);
@@ -69988,7 +69988,7 @@ QString ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::getDetailedDescriptio
 
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+QString(", ");
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
 	timeslots.chop(2);
 
 	s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
@@ -70209,11 +70209,11 @@ QString ConstraintTeacherMaxHoursPerTerm::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
-	QString s=tr("Teacher max hours per term");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
+	QString s=tr("Teacher max hours per term");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
 	s+=tr("MHPT:%1", "Max hours per term").arg(this->maxHoursPerTerm);
 
 	return begin+s+end;
@@ -70392,10 +70392,10 @@ QString ConstraintTeachersMaxHoursPerTerm::getDescription(Rules& r)
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
-	QString s=tr("Teachers max hours per term");s+=", ";
-	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	QString s=tr("Teachers max hours per term");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("MHPT:%1", "Max hours per term").arg(this->maxHoursPerTerm);
 
 	return begin+s+end;

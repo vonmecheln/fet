@@ -10851,13 +10851,7 @@ https://lalescu.ro/liviu/fet/forum/index.php?topic=6447.0
 I kindly suggest making the color selection option apply to all windows. In other words, when colors are chosen, they should be applied to all constraints.
 In the latest versions, we have to reselect the colors each time we access a constraint, which is not a pleasant experience.
 
-721--------------------------------------------------------
-From Walid (on forum):
-
-https://lalescu.ro/liviu/fet/forum/index.php?topic=6449.0
-
-When using FET in Arabic, and 2 tags, the software places a Latin script comma between the tags (either in software or in prints),
-while it should be an Arabic script comma.
+721-------DONE in FET-7.4.0 on 19 July 2025----------------
 
 722--------------------------------------------------------
 From GUEFFAZ REDA (on Facebook):

@@ -117,7 +117,7 @@ void AddExistingStudentsGroupsForm::ok()
 	}
 	
 	if(cnt>0)
-		gt.rules.addUndoPoint(tr("Added the existing groups %1 into the year %2.").arg(gl.join(", ")).arg(year->name));
+		gt.rules.addUndoPoint(tr("Added the existing groups %1 into the year %2.").arg(gl.join(translatedCommaSpace())).arg(year->name));
 	
 	this->accept();
 }

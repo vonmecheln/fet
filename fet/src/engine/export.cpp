@@ -1478,7 +1478,7 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 				
 				lastWarnings+=tr("The subactivities with the activity group id %1 are different between themselves (they were separately edited)."
 					" The fields which are different are: %2. These fields will be separated by the %3 symbol, one group for each subactivity.")
-					.arg(CustomFETString::number(acti->activityGroupId)).arg(s.join(", ")).arg("|")+"\n";
+					.arg(CustomFETString::number(acti->activityGroupId)).arg(s.join(translatedCommaSpace())).arg("|")+"\n";
 			}
 			if(isActivityNotManuallyEditedPart2(ai, diffCompNStud, diffNStud, diffActive)){
 			}
@@ -1497,7 +1497,7 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 				
 				lastWarnings+=tr("The subactivities with the activity group id %1 are different between themselves (they were separately edited),"
 					" so the export will not be very accurate. The fields which are different will be considered those of the representative subactivity."
-					" The fields which are different are: %2").arg(CustomFETString::number(acti->activityGroupId)).arg(s.join(", "))+"\n";
+					" The fields which are different are: %2").arg(CustomFETString::number(acti->activityGroupId)).arg(s.join(translatedCommaSpace()))+"\n";
 			}
 			if(!acti->active){
 				if(acti->activityGroupId==0)

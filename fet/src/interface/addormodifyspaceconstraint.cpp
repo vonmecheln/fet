@@ -3762,7 +3762,7 @@ void AddOrModifySpaceConstraint::addConstraintClicked()
 					}
 					if(!incorrectList.isEmpty()){
 						switch(LongTextMessageBox::confirmation(dialog, tr("FET information"), tr("The selected real rooms: %1 are not found in the sets of sets of real rooms of the"
-						 " selected preferred virtual room. This is probably wrong. Are you sure you want to add this constraint?").arg(incorrectList.join(", ")),
+						 " selected preferred virtual room. This is probably wrong. Are you sure you want to add this constraint?").arg(incorrectList.join(translatedCommaSpace())),
 						 tr("Yes"), tr("No"), QString(), 0, 1)){
 						case 0:
 							break;
@@ -5251,7 +5251,7 @@ void AddOrModifySpaceConstraint::okClicked()
 					}
 					if(!incorrectList.isEmpty()){
 						switch(LongTextMessageBox::confirmation(dialog, tr("FET information"), tr("The selected real rooms: %1 are not found in the sets of sets of real rooms of the"
-						 " selected preferred virtual room. This is probably wrong. Are you sure you want to add this constraint?").arg(incorrectList.join(", ")),
+						 " selected preferred virtual room. This is probably wrong. Are you sure you want to add this constraint?").arg(incorrectList.join(translatedCommaSpace())),
 						 tr("Yes"), tr("No"), QString(), 0, 1)){
 						case 0:
 							break;

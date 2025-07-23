@@ -988,7 +988,7 @@ void TimetableViewStudentsTimeHorizontalForm::updateStudentsTimetableTable(){
 					}
 					
 					if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
-						QString ats=act->activityTagsNames.join(", ");
+						QString ats=act->activityTagsNames.join(translatedCommaSpace());
 						s += act->subjectName+" "+ats;
 					}
 					else{
@@ -999,7 +999,7 @@ void TimetableViewStudentsTimeHorizontalForm::updateStudentsTimetableTable(){
 					if(act->teachersNames.count()>0){
 						//s+=" ";
 						s+="\n";
-						s+=act->teachersNames.join(", ");
+						s+=act->teachersNames.join(translatedCommaSpace());
 					}
 					
 					if(act->studentsNames.count()==1){
@@ -1016,7 +1016,7 @@ void TimetableViewStudentsTimeHorizontalForm::updateStudentsTimetableTable(){
 						//assert(act->teachersNames.contains(teachername));
 						//s+=" ";
 						s+="\n";
-						s+=act->studentsNames.join(", ");
+						s+=act->studentsNames.join(translatedCommaSpace());
 					}
 					
 					int r=best_solution.rooms[ai];
@@ -1134,7 +1134,7 @@ void TimetableViewStudentsTimeHorizontalForm::updateStudentsTimetableTable(){
 					QString s2;
 					Activity* act=&gt.rules.internalActivitiesList[ai];
 					if(teachersCheckBox->isChecked() && !act->teachersNames.isEmpty()){
-						s2+=act->teachersNames.join(", ");
+						s2+=act->teachersNames.join(translatedCommaSpace());
 					}
 					if(subjectsCheckBox->isChecked()){
 						if(!s2.isEmpty()){
@@ -1306,7 +1306,7 @@ void TimetableViewStudentsTimeHorizontalForm::detailActivity(QTableWidgetItem* i
 					QStringList tsl;
 					for(int i : std::as_const(best_solution.realRoomsList[ai]))
 						tsl.append(gt.rules.internalRoomsList[i]->name);
-					s+=QString(" (")+tsl.join(", ")+QString(")");
+					s+=QString(" (")+tsl.join(translatedCommaSpace())+QString(")");
 				}
 
 				if(gt.rules.internalRoomsList[r]->building!=""){

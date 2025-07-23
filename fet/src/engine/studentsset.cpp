@@ -193,16 +193,16 @@ QString StudentsYear::getDescription()
 {
 	QString s;
 	s+=tr("YN:%1", "Year (short) name").arg(this->name);
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("YLN:%1", "Year long name").arg(this->longName);
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("YC:%1", "Year code").arg(this->code);
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("NoS:%1", "Number of students").arg(this->numberOfStudents);
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=QString(", ")+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	return s+end;
 }
@@ -295,16 +295,16 @@ QString StudentsGroup::getDescription()
 {
 	QString s="";
 	s+=tr("GN:%1", "Group (short) name").arg(this->name);
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("GLN:%1", "Group long name").arg(this->longName);
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("GC:%1", "Group code").arg(this->code);
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("NoS:%1", "Number of students").arg(this->numberOfStudents);
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=QString(", ")+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	return s+end;
 }
@@ -393,16 +393,16 @@ QString StudentsSubgroup::getDescription()
 {
 	QString s="";
 	s+=tr("SgN:%1", "Subgroup (short) name").arg(this->name);
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("SgLN:%1", "Subgroup long name").arg(this->longName);
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("SgC:%1", "Subgroup code").arg(this->code);
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("NoS:%1", "Number of students").arg(this->numberOfStudents);
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=QString(", ")+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	return s+end;
 }

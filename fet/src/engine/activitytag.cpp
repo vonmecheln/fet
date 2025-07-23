@@ -79,13 +79,13 @@ QString ActivityTag::getXmlDescription()
 QString ActivityTag::getDescription()
 {
 	QString s=tr("N:%1", "The (short) name of the activity tag").arg(name);
-	s+=", ";
+	s+=translatedCommaSpace();
 
 	s+=tr("LN:%1", "The long name of the activity tag").arg(longName);
-	s+=", ";
+	s+=translatedCommaSpace();
 
 	s+=tr("C:%1", "The code of the activity tag").arg(code);
-	s+=", ";
+	s+=translatedCommaSpace();
 
 	QString printableYesNo;
 	if(this->printable)
@@ -96,7 +96,7 @@ QString ActivityTag::getDescription()
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 	
 	return s+end;
 }

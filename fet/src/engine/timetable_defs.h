@@ -969,6 +969,14 @@ A function used in HTML saving
 */
 QString protect2vert(const QString& str);
 
+QString translatedComma();
+QString translatedCommaSpace();
+QString translatedSemicolon();
+QString translatedSemicolonSpace();
+QString translatedDot();
+QString translatedQuestionMark();
+QString translatedThreeQuestionMarks();
+
 /**
 A function used in HTML saving
 */

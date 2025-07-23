@@ -150,14 +150,14 @@ QString GroupActivitiesInInitialOrderItem::getDescription(Rules& r)
 		begin="X - ";
 
 	QString s=tr("Group activities in the initial order item");
-	s+=QString(", ");
+	s+=translatedCommaSpace();
 	s+=tr("NA:%1", "Number of activities").arg(ids.count());
 	for(int id : std::as_const(ids))
-		s+=QString(", ")+tr("Id:%1", "Id of activity").arg(id);
+		s+=translatedCommaSpace()+tr("Id:%1", "Id of activity").arg(id);
 
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	return begin+s+end;
 }
@@ -582,17 +582,17 @@ QString Activity::getDescription(Rules& r)
 	if(teachersNames.count()==0)
 		_teachers=tr("no teachers");
 	else
-		_teachers=this->teachersNames.join(",");
+		_teachers=this->teachersNames.join(translatedComma());
 
 	QString _subject=this->subjectName;
 	
-	QString _activityTags=this->activityTagsNames.join(",");
+	QString _activityTags=this->activityTagsNames.join(translatedComma());
 
 	QString _students="";
 	if(studentsNames.count()==0)
 		_students=tr("no students");
 	else
-		_students=this->studentsNames.join(",");
+		_students=this->studentsNames.join(translatedComma());
 
 	QString _id;
 	_id = CustomFETString::number(id);

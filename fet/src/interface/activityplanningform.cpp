@@ -2332,7 +2332,7 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 						 " and modify individual subactivities from the corresponding menu. Otherwise you will modify the fields for all the subactivities"
 						 " from this larger split activity.");
 						s2+="\n\n";
-						s2+=tr("The fields which are different are: %1").arg(s.join(", "));
+						s2+=tr("The fields which are different are: %1").arg(s.join(translatedCommaSpace()));
 							
 						int t=QMessageBox::warning(this, tr("FET warning"), s2, tr("Abort"), tr("Continue"), QString(), 1, 0);
 						
@@ -2429,7 +2429,7 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 				s=tr("Delete %1 activities from selected cell?").arg(tmpIdentifySet.size());
 				s+=" (";
 				s+=tr("subject=%1").arg(statisticValues.allSubjectsNames[row]);
-				s+=", ";
+				s+=translatedCommaSpace();
 				s+=tr("students=%1").arg(statisticValues.allStudentsNames[column]);
 				s+=")";
 				undoSubject=statisticValues.allSubjectsNames[row];
@@ -2454,7 +2454,7 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 				s=tr("Delete %1 activities from selected cell?").arg(tmpIdentifySet.size());
 				s+=" (";
 				s+=tr("students=%1").arg(statisticValues.allStudentsNames[row]);
-				s+=", ";
+				s+=translatedCommaSpace();
 				s+=tr("subject=%1").arg(statisticValues.allSubjectsNames[column]);
 				s+=")";
 				undoSubject=statisticValues.allSubjectsNames[column];
@@ -2563,7 +2563,7 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 				s=tr("Modify %1 activities from selected cell?").arg(tmpIdentifySet.size());
 				s+="\n(";
 				s+=tr("subject=%1").arg(statisticValues.allSubjectsNames[row]);
-				s+=",\n";
+				s+=translatedComma()+"\n";
 				s+=tr("students=%1").arg(statisticValues.allStudentsNames[column]);
 				s+=")";
 				undoSubject=statisticValues.allSubjectsNames[row];
@@ -2588,7 +2588,7 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 				s=tr("Modify %1 activities from selected cell?").arg(tmpIdentifySet.size());
 				s+="\n(";
 				s+=tr("students=%1").arg(statisticValues.allStudentsNames[row]);
-				s+=",\n";
+				s+=translatedComma()+"\n";
 				s+=tr("subject=%1").arg(statisticValues.allSubjectsNames[column]);
 				s+=")";
 				undoSubject=statisticValues.allSubjectsNames[column];
@@ -3735,7 +3735,7 @@ void ActivityPlanningForm::updateTables_Students_Subjects(){	//similar to statis
 							for(QStringList::const_iterator it=act->teachersNames.constBegin(); it!=act->teachersNames.constEnd(); it++){
 								tmpIdent+=*it;
 								if(it!=act->teachersNames.constEnd()-1)
-									tmpIdent+=", ";
+									tmpIdent+=translatedCommaSpace();
 							}
 						}
 					}
@@ -3745,7 +3745,7 @@ void ActivityPlanningForm::updateTables_Students_Subjects(){	//similar to statis
 							for(QStringList::const_iterator it=act->activityTagsNames.constBegin(); it!=act->activityTagsNames.constEnd(); it++){
 								tmpIdent+=*it;
 								if(it!=act->activityTagsNames.constEnd()-1)
-									tmpIdent+=", ";
+									tmpIdent+=translatedCommaSpace();
 							}
 						}
 					}
@@ -3891,7 +3891,7 @@ void ActivityPlanningForm::updateTables_Teachers(){	//similar to statisticsexpor
 				for(QStringList::const_iterator it=act->studentsNames.constBegin(); it!=act->studentsNames.constEnd(); it++){
 					tmpIdent+=*it;
 					if(it!=act->studentsNames.constEnd()-1)
-						tmpIdent+=", ";
+						tmpIdent+=translatedCommaSpace();
 				}
 			}
 			tmpIdent+=" ";
@@ -3900,7 +3900,7 @@ void ActivityPlanningForm::updateTables_Teachers(){	//similar to statisticsexpor
 					for(QStringList::const_iterator it=act->activityTagsNames.constBegin(); it!=act->activityTagsNames.constEnd(); it++){
 						tmpIdent+=*it;
 						if(it!=act->activityTagsNames.constEnd()-1)
-							tmpIdent+=", ";
+							tmpIdent+=translatedCommaSpace();
 					}
 				}
 			}
@@ -3917,7 +3917,7 @@ void ActivityPlanningForm::updateTables_Teachers(){	//similar to statisticsexpor
 					for(QStringList::const_iterator it=act->activityTagsNames.constBegin(); it!=act->activityTagsNames.constEnd(); it++){
 						tmpIdent+=*it;
 						if(it!=act->activityTagsNames.constEnd()-1)
-							tmpIdent+=", ";
+							tmpIdent+=translatedCommaSpace();
 					}
 				}
 			}

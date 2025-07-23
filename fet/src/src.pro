@@ -470,6 +470,7 @@ FORMS += \
 TRANSLATIONS += \
 	../translations/fet_ar.ts \
 	../translations/fet_bg.ts \
+	../translations/fet_bs.ts \
 	../translations/fet_ca.ts \
 	../translations/fet_cs.ts \
 	../translations/fet_da.ts \

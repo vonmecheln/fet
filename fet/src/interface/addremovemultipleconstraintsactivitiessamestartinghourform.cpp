@@ -117,7 +117,7 @@ void AddRemoveMultipleConstraintsActivitiesSameStartingHourForm::addAllConstrain
 	
 	if(cnt>0)
 		gt.rules.addUndoPoint(tr("Added %1 time constraints of type activities same starting hour, with weight=%2%, conditions=%3.")
-		 .arg(cnt).arg(100.0).arg(descr.join(", ")));
+		 .arg(cnt).arg(100.0).arg(descr.join(translatedCommaSpace())));
 }
 
 void AddRemoveMultipleConstraintsActivitiesSameStartingHourForm::removeAllConstraints()

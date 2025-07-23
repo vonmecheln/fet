@@ -94,7 +94,7 @@ void TeachersNotAvailableTimesTimeHorizontalDelegate::paint(QPainter* painter, c
 			painter->drawLine(option.rect.bottomLeft().x(), option.rect.bottomLeft().y()-1, option.rect.bottomRight().x(), option.rect.bottomRight().y()-1);
 		}
 	}
-	else{
+	else if(QGuiApplication::isRightToLeft()){
 		if(hour==0){
 			painter->drawLine(option.rect.topRight(), option.rect.bottomRight());
 			painter->drawLine(option.rect.topRight().x()-1, option.rect.topRight().y(), option.rect.bottomRight().x()-1, option.rect.bottomRight().y());
@@ -953,22 +953,22 @@ void TeachersNotAvailableTimesTimeHorizontalForm::ok()
 		QString s2;
 		if(added>0){
 			s2+=tr("Added constraints for these %1 teachers: %2.",
-			 "%1 is the number of affected teachers, %2 is their list of names").arg(added).arg(addedNames.join(", "));
+			 "%1 is the number of affected teachers, %2 is their list of names").arg(added).arg(addedNames.join(translatedCommaSpace()));
 			s2+=QString("\n");
 		}
 		if(modified>0){
 			s2+=tr("Modified constraints for these %1 teachers: %2.",
-			 "%1 is the number of affected teachers, %2 is their list of names").arg(modified).arg(modifiedNames.join(", "));
+			 "%1 is the number of affected teachers, %2 is their list of names").arg(modified).arg(modifiedNames.join(translatedCommaSpace()));
 			s2+=QString("\n");
 		}
 		if(modifiedOrder>0){
 			s2+=tr("Modified order of the slots in the constraints for these %1 teachers: %2.",
-			 "%1 is the number of affected teachers, %2 is their list of names").arg(modifiedOrder).arg(modifiedOrderNames.join(", "));
+			 "%1 is the number of affected teachers, %2 is their list of names").arg(modifiedOrder).arg(modifiedOrderNames.join(translatedCommaSpace()));
 			s2+=QString("\n");
 		}
 		if(emptyRemoved>0){
 			s2+=tr("Removed constraints for these %1 teachers: %2.",
-			 "%1 is the number of affected teachers, %2 is their list of names").arg(emptyRemoved).arg(emptyRemovedNames.join(", "));
+			 "%1 is the number of affected teachers, %2 is their list of names").arg(emptyRemoved).arg(emptyRemovedNames.join(translatedCommaSpace()));
 			s2+=QString("\n");
 		}
 

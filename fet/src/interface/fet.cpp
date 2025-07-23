@@ -272,8 +272,8 @@ void usage(QTextStream* out, const QString& error)
 		"(default 2, larger values have more details/facilities and larger file sizes).\n"
 		"\n"
 		"\t--language=LANG\n"
-		"\t\tLANG is one of: ar, bg, ca, cs, da, de, el, en_GB, en_US, es, eu, fa, fr, gl, he, hu, id, it, ja, lt, mk, ms, nl, pl, pt_BR, ro, ru, si, sk, sq, sr, "
-		"tr, uk, uz, vi, zh_CN, zh_TW (default en_US).\n"
+		"\t\tLANG is one of: ar, bg, bs, ca, cs, da, de, el, en_GB, en_US, es, eu, fa, fr, gl, he, hu, id, it, ja, lt, mk, ms, nl, pl, pt_BR, ro, ru, si, sk, sq, "
+		"sr, tr, uk, uz, vi, zh_CN, zh_TW (default en_US).\n"
 		"\n"
 		"\t--writetimetableconflicts=WT1\n"
 		"\t--writetimetablesstatistics=WT2\n"
@@ -2079,6 +2079,7 @@ void initLanguagesSet()
 	languagesSet.insert("cs");
 	languagesSet.insert("ja");
 	languagesSet.insert("bg");
+	languagesSet.insert("bs");
 }
 
 #ifndef FET_COMMAND_LINE
@@ -3239,7 +3240,7 @@ int main(int argc, char **argv)
 				notSpecified.append("s22");
 				
 			usage(nullptr, QString("If you want to specify the random seed, you need to specify all the 6 components. You specified %1, but you did not"
-			 " specify %2.").arg(specified.join(", ")).arg(notSpecified.join(", ")));
+			 " specify %2.").arg(specified.join(translatedCommaSpace())).arg(notSpecified.join(translatedCommaSpace())));
 			logFile.close();
 			return 1;
 		}
@@ -3433,7 +3434,7 @@ int main(int argc, char **argv)
 
 				s+=TimetableExport::tr("No: %1").arg(i+1);
 
-				s+=", ";
+				s+=translatedCommaSpace();
 
 				s+=TimetableExport::tr("Id: %1 (%2)", "%1 is id of activity, %2 is detailed description of activity")
 					.arg(gt.rules.internalActivitiesList[ai].id)
@@ -3594,16 +3595,16 @@ int main(int argc, char **argv)
 			
 			s+=QString("\n\n----------\n\n");
 			
-			s+=FetTranslate::tr("Here are the placed activities which lead to an inconsistency, "
+			s+=FetTranslate::tr("Here are the placed activities which led to an inconsistency, "
 			 "in order from the first one to the last (the last one FET failed to schedule "
-			 "and the last ones are most likely impossible):");
+			 "and the last ones are most likely the difficult ones):");
 			s+="\n\n";
 			for(int i=0; i<gen.nDifficultActivities; i++){
 				int ai=gen.difficultActivities[i];
 
 				s+=FetTranslate::tr("No: %1").arg(i+1);
 		
-				s+=", ";
+				s+=translatedCommaSpace();
 
 				s+=FetTranslate::tr("Id: %1 (%2)", "%1 is id of activity, %2 is detailed description of activity")
 					.arg(gt.rules.internalActivitiesList[ai].id)

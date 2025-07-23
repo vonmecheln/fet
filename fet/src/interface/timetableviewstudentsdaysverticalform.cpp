@@ -928,14 +928,14 @@ void TimetableViewStudentsDaysVerticalForm::updateStudentsTimetableTable(){
 				if(studentsCheckBox->isChecked()){
 					assert(act->studentsNames.count()>=1);
 					if((act->studentsNames.count()==1 && act->studentsNames.at(0)!=subgroupname) || act->studentsNames.count()>=2){
-						s+=act->studentsNames.join(", ");
+						s+=act->studentsNames.join(translatedCommaSpace());
 						s+="\n";
 					}
 				}
 				
 				if(subjectsCheckBox->isChecked()){
 					if(activityTagsCheckBox->isChecked() && act->activityTagsNames.count()>0){
-						QString ats=act->activityTagsNames.join(", ");
+						QString ats=act->activityTagsNames.join(translatedCommaSpace());
 						s+=act->subjectName +" "+ ats;
 					}
 					else{
@@ -944,13 +944,13 @@ void TimetableViewStudentsDaysVerticalForm::updateStudentsTimetableTable(){
 					s+="\n";
 				}
 				else if(activityTagsCheckBox->isChecked()){
-					s+=act->activityTagsNames.join(", ");
+					s+=act->activityTagsNames.join(translatedCommaSpace());
 					s+="\n";
 				}
 				
 				if(teachersCheckBox->isChecked()){
 					if(act->teachersNames.count()>0){
-						s+=act->teachersNames.join(", ");
+						s+=act->teachersNames.join(translatedCommaSpace());
 					}
 					s+="\n";
 				}
@@ -966,7 +966,7 @@ void TimetableViewStudentsDaysVerticalForm::updateStudentsTimetableTable(){
 							QStringList tsl;
 							for(int i : std::as_const(best_solution.realRoomsList[ai]))
 								tsl.append(gt.rules.internalRoomsList[i]->name);
-							s+=QString(" (")+tsl.join(", ")+QString(")");
+							s+=QString(" (")+tsl.join(translatedCommaSpace())+QString(")");
 						}
 						s+="\n";
 					}
@@ -1219,7 +1219,7 @@ void TimetableViewStudentsDaysVerticalForm::detailActivity(QTableWidgetItem* ite
 					QStringList tsl;
 					for(int i : std::as_const(best_solution.realRoomsList[ai]))
 						tsl.append(gt.rules.internalRoomsList[i]->name);
-					s+=QString(" (")+tsl.join(", ")+QString(")");
+					s+=QString(" (")+tsl.join(translatedCommaSpace())+QString(")");
 				}
 
 				if(gt.rules.internalRoomsList[r]->building!=""){

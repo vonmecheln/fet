@@ -2874,7 +2874,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 		s+=GeneratePreTranslate::tr("Note: You can deactivate this warning from the Settings menu.");
 		s+="\n\n";
 		s+=GeneratePreTranslate::tr("The ids of the activities are: %1.")
-		 .arg(tlids.join(", "));
+		 .arg(tlids.join(translatedCommaSpace()));
 
 		int t=GeneratePreReconcilableMessage::largeConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 		 GeneratePreTranslate::tr("Continue"), GeneratePreTranslate::tr("Cancel"), QString(), 0, 1);
@@ -23108,7 +23108,7 @@ bool computeRoomsMaxActivityTagsFromSet(QWidget* parent)
 				 ", %3 is the list of virtual rooms which include the real room %1 in at least one of their sets")
 				 .arg(gt.rules.internalRoomsList[rm]->name)
 				 .arg(roomsMaxActivityTagsPerDayFromSetPercentages[rm].count())
-				 .arg(ts.join(", "));
+				 .arg(ts.join(translatedCommaSpace()));
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
@@ -23149,7 +23149,7 @@ bool computeRoomsMaxActivityTagsFromSet(QWidget* parent)
 				 ", %3 is the list of virtual rooms which include the real room %1 in at least one of their sets")
 				 .arg(gt.rules.internalRoomsList[rm]->name)
 				 .arg(roomsMaxActivityTagsPerRealDayFromSetPercentages[rm].count())
-				 .arg(ts.join(", "));
+				 .arg(ts.join(translatedCommaSpace()));
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
@@ -23190,7 +23190,7 @@ bool computeRoomsMaxActivityTagsFromSet(QWidget* parent)
 				 ", %3 is the list of virtual rooms which include the real room %1 in at least one of their sets")
 				 .arg(gt.rules.internalRoomsList[rm]->name)
 				 .arg(roomsMaxActivityTagsPerWeekFromSetPercentages[rm].count())
-				 .arg(ts.join(", "));
+				 .arg(ts.join(translatedCommaSpace()));
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
@@ -24107,11 +24107,11 @@ void sortActivities(QWidget* parent, const QHash<int, int>& reprSameStartingTime
 		initialOrderOfActivitiesIndices[i]=copyOfInitialPermutation[i];
 	
 		s+=GeneratePreTranslate::tr("No: %1", "Number").arg(i+1);
-		s+=", ";
+		s+=translatedCommaSpace();
 	
 		Activity* act=&gt.rules.internalActivitiesList[copyOfInitialPermutation[i]];
 		s+=GeneratePreTranslate::tr("Id: %1", "Id of activity").arg(act->id);
-		s+=", ";
+		s+=translatedCommaSpace();
 
 		bool spacerBefore=false, spacerAfter=false;
 		if(act->isSplit()){
@@ -24130,24 +24130,24 @@ void sortActivities(QWidget* parent, const QHash<int, int>& reprSameStartingTime
 			s+=GeneratePreTranslate::tr("Duration: %1").arg(CustomFETString::number(act->duration)+QString("/")+CustomFETString::number(act->totalDuration));
 		else
 			s+=GeneratePreTranslate::tr("Duration: %1").arg(act->duration);
-		s+=", ";
+		s+=translatedCommaSpace();
 		if(spacerAfter)
 			s+="    ";
 		
-		s+=GeneratePreTranslate::tr("Teachers: %1").arg(act->teachersNames.join(", "));
-		s+=", ";
+		s+=GeneratePreTranslate::tr("Teachers: %1").arg(act->teachersNames.join(translatedCommaSpace()));
+		s+=translatedCommaSpace();
 		s+=GeneratePreTranslate::tr("Subject: %1").arg(act->subjectName);
-		s+=", ";
+		s+=translatedCommaSpace();
 		//if(act->activityTagsNames.count()>0)
-		s+=GeneratePreTranslate::tr("Activity tags: %1").arg(act->activityTagsNames.join(", "));
-		s+=", ";
-		s+=GeneratePreTranslate::tr("Students: %1").arg(act->studentsNames.join(", "));
+		s+=GeneratePreTranslate::tr("Activity tags: %1").arg(act->activityTagsNames.join(translatedCommaSpace()));
+		s+=translatedCommaSpace();
+		s+=GeneratePreTranslate::tr("Students: %1").arg(act->studentsNames.join(translatedCommaSpace()));
 
 		if(gt.rules.groupActivitiesInInitialOrderList.count()>0){
-			s+=", ";
+			s+=translatedCommaSpace();
 			s+=GeneratePreTranslate::tr("nIncompatible: %1").arg(nIncompatible[copyOfInitialPermutation[i]]);
 			if(nMinDaysConstraintsBroken[copyOfInitialPermutation[i]]>0.0){
-				s+=", ";
+				s+=translatedCommaSpace();
 				s+=GeneratePreTranslate::tr("nMinDaysConstraintsBroken: %1").arg(nMinDaysConstraintsBroken[copyOfInitialPermutation[i]]);
 			}
 			

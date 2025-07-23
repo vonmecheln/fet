@@ -198,13 +198,13 @@ void TimetablingThread::startGenerating()
 		s+=tr("Max placed activities: %1 (at %2)", "%1 represents the maximum number of activities placed, %2 is a time interval").arg(mact).arg(tim);
 		///////
 
-		s+=QString(".");
+		s+=translatedDot();
 
 		ok=false;
 	}
 	else if(impossible){
 		s+=tr("Timetable impossible to generate");
-		s+=QString(".");
+		s+=translatedDot();
 		ok=false;
 	}
 	else if(timeExceeded){
@@ -240,7 +240,7 @@ void TimetablingThread::startGenerating()
 		s+=tr("Max placed activities: %1 (at %2)", "%1 represents the maximum number of activities placed, %2 is a time interval").arg(mact).arg(tim);
 		///////
 
-		s+=QString(".");
+		s+=translatedDot();
 
 		ok=false;
 	}
@@ -1245,7 +1245,7 @@ void TimetableGenerateMultipleForm::stop()
 			}
 			tim.remove(0, 1);
 			description+=tr("Maximum placed activities: %1 (at %2).", "%1 represents the maximum number of activities placed, %2 is a time interval").arg(highestPlacedActivities).arg(tim);
-			//description+=QString(".");
+			//description+=translatedDot();
 			
 			if(i>=1 || currentResultsTextEdit->toPlainText().isEmpty())
 				currentResultsTextEdit->append(tr("Timetable no: %1 => %2", "%1 is the number of this timetable when generating multiple timetables, %2 is its description")
@@ -1422,7 +1422,7 @@ void TimetableGenerateMultipleForm::generationFinished()
 			}
 			tim.remove(0, 1);
 			description+=tr("Maximum placed activities: %1 (at %2).", "%1 represents the maximum number of activities placed, %2 is a time interval").arg(highestPlacedActivities).arg(tim);
-			//description+=QString(".");
+			//description+=translatedDot();
 
 			if(i>=1 || currentResultsTextEdit->toPlainText().isEmpty())
 				currentResultsTextEdit->append(tr("Timetable no: %1 => %2", "%1 is the number of this timetable when generating multiple timetables, %2 is its description")

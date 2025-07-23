@@ -61,15 +61,15 @@ QString Building::getDescription()
 {
 	QString s=tr("N:%1", "The (short) name of the building").arg(name);
 	
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("LN:%1", "The long name of the building").arg(longName);
 
-	s+=", ";
+	s+=translatedCommaSpace();
 	s+=tr("C:%1", "The code of the building").arg(code);
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
-		end=", "+tr("C: %1", "Comments").arg(comments);
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 	
 	return s+end;
 }

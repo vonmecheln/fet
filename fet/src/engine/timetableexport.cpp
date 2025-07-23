@@ -113,7 +113,7 @@ extern Rules rules2;
 
 const QString STRING_EMPTY_SLOT="---";
 
-const QString STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES="???";
+//const QString STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES="???";
 
 const QString STRING_NOT_AVAILABLE_TIME_SLOT="-x-";
 
@@ -6500,14 +6500,14 @@ void TimetableExport::computeHashActivityColorBySubjectAndStudents(){
 				hashColorStringIDsTimetable.insert(tmpString, CustomFETString::number(alreadyAddedString.count()));
 			}
 			//coloring for teachers
-			tmpString=act->subjectName+" "+act->studentsNames.join(", ");
+			tmpString=act->subjectName+" "+act->studentsNames.join(translatedCommaSpace());
 			if(!alreadyAddedString.contains(tmpString)){
 				alreadyAddedString<<tmpString;
 				hashColorStringIDsTimetable.insert(tmpString, CustomFETString::number(alreadyAddedString.count()));
 			}
 			//coloring for rooms
 //			it is similar to students
-//			tmpString=act->subjectName+" "+act->studentsNames.join(", ");
+//			tmpString=act->subjectName+" "+act->studentsNames.join(translatedCommaSpace());
 //			if(!alreadyAddedString.contains(tmpString)){
 //				alreadyAddedString<<tmpString;
 //				hashColorStringIDsTimetable.insert(tmpString, CustomFETString::number(alreadyAddedString.count()));
@@ -6840,7 +6840,7 @@ QString TimetableExport::writeSubjectAndActivityTags(int htmlLevel, const Activi
 
 						if(!oldtt.isEmpty()){
 							bool ml = SETTINGS_TIMETABLES_SEPARATE_ACTIVITY_TAGS_NAME_LONG_NAME_CODE_BY_BREAK && (oldtt.contains("<br />") || tt.contains("<br />"));
-							tmp += ml ? QString("<br />") : (firstTag ? QString(" ") : QString(", "));
+							tmp += ml ? QString("<br />") : (firstTag ? QString(" ") : translatedCommaSpace());
 						}
 						
 						oldtt=tt;
@@ -6889,7 +6889,7 @@ QString TimetableExport::writeStudents(int htmlLevel, const Activity* act, const
 			
 			if(!oldtt.isEmpty()){
 				bool ml = SETTINGS_TIMETABLES_SEPARATE_STUDENTS_NAME_LONG_NAME_CODE_BY_BREAK && (oldtt.contains("<br />") || tt.contains("<br />"));
-				tmp += ml ? QString("<br />") : QString(", ");
+				tmp += ml ? QString("<br />") : translatedCommaSpace();
 			}
 			
 			oldtt=tt;
@@ -6923,7 +6923,7 @@ QString TimetableExport::writeTeachers(int htmlLevel, const Activity* act, const
 
 			if(!oldtt.isEmpty()){
 				bool ml = SETTINGS_TIMETABLES_SEPARATE_TEACHERS_NAME_LONG_NAME_CODE_BY_BREAK && (oldtt.contains("<br />") || tt.contains("<br />"));
-				tmp += ml ? QString("<br />") : QString(", ");
+				tmp += ml ? QString("<br />") : translatedCommaSpace();
 			}
 			
 			oldtt=tt;
@@ -6994,7 +6994,7 @@ QString TimetableExport::writeRoom(int htmlLevel, int ai, const QString& startTa
 				}
 				rooms.append(room);
 			}
-			tmp+=rooms.join(", ");
+			tmp+=rooms.join(translatedCommaSpace());
 			if(SHOW_VIRTUAL_ROOMS_IN_TIMETABLES){
 				tmp+=")";
 			}
@@ -9436,7 +9436,7 @@ QString TimetableExport::singleGroupsTimetableDaysHorizontalHtml(int htmlLevel, 
 				 gt.rules.internalGroupsList[group]->name
 				 );
 			} else{
-				if(!detailed) tmpString+="          <td>"+protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)+"</td>\n";
+				if(!detailed) tmpString+="          <td>"+protect2(/*STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES*/translatedThreeQuestionMarks())+"</td>\n";
 				else{
 					tmpString+=writeActivitiesStudents(htmlLevel, allActivitiesList, printSubjects, printActivityTags, printTeachers, printStudents, printRooms,
 					 SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_SUBJECTS_CODES,
@@ -9612,7 +9612,7 @@ QString TimetableExport::singleGroupsTimetableDaysVerticalHtml(int htmlLevel, in
 				 gt.rules.internalGroupsList[group]->name
 				 );
 			} else{
-				if(!detailed) tmpString+="          <td>"+protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)+"</td>\n";
+				if(!detailed) tmpString+="          <td>"+protect2(/*STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES*/translatedThreeQuestionMarks())+"</td>\n";
 				else{
 					tmpString+=writeActivitiesStudents(htmlLevel, allActivitiesList, printSubjects, printActivityTags, printTeachers, printStudents, printRooms,
 					 SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_SUBJECTS_CODES,
@@ -9765,7 +9765,7 @@ QString TimetableExport::singleGroupsTimetableTimeVerticalHtml(int htmlLevel, in
 					 gt.rules.internalGroupsList[group]->name
 					 );
 				} else{
-					if(!detailed) tmpString+="          <td>"+protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)+"</td>\n";
+					if(!detailed) tmpString+="          <td>"+protect2(/*STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES*/translatedThreeQuestionMarks())+"</td>\n";
 					else{
 						tmpString+=writeActivitiesStudents(htmlLevel, allActivitiesList, printSubjects, printActivityTags, printTeachers, printStudents, printRooms,
 						 SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_CODES,
@@ -10022,7 +10022,7 @@ QString TimetableExport::singleGroupsTimetableTimeHorizontalHtml(int htmlLevel, 
 					 gt.rules.internalGroupsList[group]->name
 					 );
 				} else{
-					if(!detailed) tmpString+="          <td>"+protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)+"</td>\n";
+					if(!detailed) tmpString+="          <td>"+protect2(/*STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES*/translatedThreeQuestionMarks())+"</td>\n";
 					else{
 						tmpString+=writeActivitiesStudents(htmlLevel, allActivitiesList, printSubjects, printActivityTags, printTeachers, printStudents, printRooms,
 						 SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_CODES,
@@ -10196,7 +10196,7 @@ QString TimetableExport::singleGroupsTimetableTimeVerticalDailyHtml(int htmlLeve
 				 gt.rules.internalGroupsList[group]->name
 				 );
 			} else{
-				if(!detailed) tmpString+="          <td>"+protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)+"</td>\n";
+				if(!detailed) tmpString+="          <td>"+protect2(/*STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES*/translatedThreeQuestionMarks())+"</td>\n";
 				else{
 					tmpString+=writeActivitiesStudents(htmlLevel, allActivitiesList, printSubjects, printActivityTags, printTeachers, printStudents, printRooms,
 					 SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_CODES,
@@ -10370,7 +10370,7 @@ QString TimetableExport::singleGroupsTimetableTimeHorizontalDailyHtml(int htmlLe
 				 SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ROOMS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ROOMS_LONG_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ROOMS_CODES,
 				 gt.rules.internalGroupsList[group]->name);
 			} else{
-				if(!detailed) tmpString+="          <td>"+protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)+"</td>\n";
+				if(!detailed) tmpString+="          <td>"+protect2(/*STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES*/translatedThreeQuestionMarks())+"</td>\n";
 				else{
 					tmpString+=writeActivitiesStudents(htmlLevel, allActivitiesList, printSubjects, printActivityTags, printTeachers, printStudents, printRooms,
 					 SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_CODES,
@@ -10533,7 +10533,7 @@ QString TimetableExport::singleYearsTimetableDaysHorizontalHtml(int htmlLevel, i
 				 gt.rules.augmentedYearsList.at(year)->name
 				 );
 			} else{
-				if(!detailed) tmpString+="          <td>"+protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)+"</td>\n";
+				if(!detailed) tmpString+="          <td>"+protect2(/*STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES*/translatedThreeQuestionMarks())+"</td>\n";
 				else{
 					tmpString+=writeActivitiesStudents(htmlLevel, allActivitiesList, printSubjects, printActivityTags, printTeachers, printStudents, printRooms,
 					 SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_SUBJECTS_CODES,
@@ -10712,7 +10712,7 @@ QString TimetableExport::singleYearsTimetableDaysVerticalHtml(int htmlLevel, int
 				 gt.rules.augmentedYearsList.at(year)->name
 				 );
 			} else{
-				if(!detailed) tmpString+="          <td>"+protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)+"</td>\n";
+				if(!detailed) tmpString+="          <td>"+protect2(/*STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES*/translatedThreeQuestionMarks())+"</td>\n";
 				else{
 					tmpString+=writeActivitiesStudents(htmlLevel, allActivitiesList, printSubjects, printActivityTags, printTeachers, printStudents, printRooms,
 					 SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_SUBJECTS_CODES,
@@ -10870,7 +10870,7 @@ QString TimetableExport::singleYearsTimetableTimeVerticalHtml(int htmlLevel, int
 					 gt.rules.augmentedYearsList.at(year)->name
 					 );
 				} else{
-					if(!detailed) tmpString+="          <td>"+protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)+"</td>\n";
+					if(!detailed) tmpString+="          <td>"+protect2(/*STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES*/translatedThreeQuestionMarks())+"</td>\n";
 					else{
 						tmpString+=writeActivitiesStudents(htmlLevel, allActivitiesList, printSubjects, printActivityTags, printTeachers, printStudents, printRooms,
 						 SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_CODES,
@@ -11131,7 +11131,7 @@ QString TimetableExport::singleYearsTimetableTimeHorizontalHtml(int htmlLevel, i
 					 gt.rules.augmentedYearsList.at(year)->name
 					 );
 				} else{
-					if(!detailed) tmpString+="          <td>"+protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)+"</td>\n";
+					if(!detailed) tmpString+="          <td>"+protect2(/*STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES*/translatedThreeQuestionMarks())+"</td>\n";
 					else{
 						tmpString+=writeActivitiesStudents(htmlLevel, allActivitiesList, printSubjects, printActivityTags, printTeachers, printStudents, printRooms,
 						 SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_CODES,
@@ -11311,7 +11311,7 @@ QString TimetableExport::singleYearsTimetableTimeVerticalDailyHtml(int htmlLevel
 				 gt.rules.augmentedYearsList.at(year)->name
 				 );
 			} else{
-				if(!detailed) tmpString+="          <td>"+protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)+"</td>\n";
+				if(!detailed) tmpString+="          <td>"+protect2(/*STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES*/translatedThreeQuestionMarks())+"</td>\n";
 				else{
 					tmpString+=writeActivitiesStudents(htmlLevel, allActivitiesList, printSubjects, printActivityTags, printTeachers, printStudents, printRooms,
 					 SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_CODES,
@@ -11490,7 +11490,7 @@ QString TimetableExport::singleYearsTimetableTimeHorizontalDailyHtml(int htmlLev
 				 gt.rules.augmentedYearsList.at(year)->name
 				 );
 			} else{
-				if(!detailed) tmpString+="          <td>"+protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)+"</td>\n";
+				if(!detailed) tmpString+="          <td>"+protect2(/*STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES*/translatedThreeQuestionMarks())+"</td>\n";
 				else{
 					tmpString+=writeActivitiesStudents(htmlLevel, allActivitiesList, printSubjects, printActivityTags, printTeachers, printStudents, printRooms,
 					 SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_CODES,
