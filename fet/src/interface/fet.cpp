@@ -3335,6 +3335,7 @@ int main(int argc, char **argv)
 		std::thread pollFileThread(pollFile, std::ref(run));
 
 		gen.abortOptimization=false;
+		gen.restart=false;
 		bool ok=gen.precompute(nullptr, &initialOrderStream);
 		
 		initialOrderFile.close();
@@ -3350,7 +3351,7 @@ int main(int argc, char **argv)
 			return 1;
 		}
 	
-		bool impossible, timeExceeded;
+		bool restarted, impossible, timeExceeded;
 		
 		cout<<"Starting timetable generation..."<<endl;
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
@@ -3365,7 +3366,7 @@ int main(int argc, char **argv)
 		
 		TimetableExport::writeRandomSeedCommandLine(nullptr, gen.rng, outputDirectory, true); //true represents 'before' state
 
-		gen.generate(secondsLimit, impossible, timeExceeded, false, &maxPlacedActivityStream); //false means no thread
+		gen.generate(secondsLimit, restarted, impossible, timeExceeded, false, &maxPlacedActivityStream); //false means no thread
 
 		run.store(false);
 		pollFileThread.join();

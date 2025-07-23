@@ -1,5 +1,10 @@
+ 7.3.0
+	- Added the possibility of restarting a certain thread in the generate multiple timetables dialog (suggested by Yush Yuen).
+	- Added the possibility of viewing the initial order of placing the activities in the generate multiple timetables dialog (suggested by Yush Yuen).
+	- Corrections in the interface: when resizing the constraints' dialogs the list of constraints remained too small (reported by Yush Yuen).
  7.2.6
-	- Corrected some instructions/documentation (reported by Yush Yuen).
+	- Corrected some instructions/documentation referring to the advanced function of removing the redundant constraints (the inaccuracies were reported
+	by Yush Yuen).
 	- Added the option to highlight the incompletely assigned teachers in the teachers' statistics, by comparing their target number of hours with their
 	assigned list of activities (suggested by GUEFFAZ REDA).
 	- Updated the Italian translation, by Andrea Primiani.

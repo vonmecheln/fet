@@ -101,12 +101,12 @@ const QString settingsName=QString("TimetableGenerateUnsuccessfulForm");
 void runSingle()
 {
 	const int INF=2000000000;
-	bool impossible, timeExceeded;
+	bool restarted, impossible, timeExceeded;
 
 	gen.semaphorePlacedActivity.tryAcquire(); //this has effect after stopping the generation or if the timetable is impossible to solve
 	assert(gen.semaphorePlacedActivity.available()==0);
 	assert(gen.semaphoreFinished.available()==0);
-	gen.generateWithSemaphore(INF, impossible, timeExceeded, true); //true means threaded
+	gen.generateWithSemaphore(INF, restarted, impossible, timeExceeded, true); //true means threaded
 }
 
 TimetableGenerateForm::TimetableGenerateForm(QWidget* parent): QDialog(parent)
@@ -181,6 +181,7 @@ void TimetableGenerateForm::start(){
 	currentResultsTextEdit->setPlainText(TimetableGenerateForm::tr("Entering generation ... precomputing, please be patient"));
 
 	gen.abortOptimization=false;
+	gen.restart=false;
 	bool ok=gen.precompute(this);
 	
 	if(!ok){

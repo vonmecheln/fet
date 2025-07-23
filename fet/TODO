@@ -10939,3 +10939,38 @@ I would like to make a suggestion because I believe it will be very useful in ma
 cyclically and that for each of these cycles it is possible to reuse previous restrictions and plans. Therefore, when we search for a previous plan,
 as a starting point, it would be convenient to have an indication within the restrictions menus if there is any registration for that specific
 restriction. It could be just a symbol (for example: ✓) next to the menu option indicating that there is something registered for that restriction.
+
+717--------------------------------------------------------
+From abuayham2016 (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6433.0
+
+718--------------------------------------------------------
+From Carine Saade (on guestbook):
+
+I suggest having the final printable format as an Excel file. This would make it easier to adjust the final layout and to add the school’s logo.
+I also recommend allowing sorting of teachers by cycles or groups, as well as sorting classes — it makes it easier to navigate, especially when creating schedules for French schools.
+One more suggestion, if possible: it would be helpful to generate a single schedule that includes classes with different period durations.
+
+719--------------------------------------------------------
+From Fabio Lucchini:
+
+He sent Liviu Lalescu his locked file, which was generated successfully (in approximately one hour). The locked file, instead of generating instantly,
+seemed impossible to Fabio - but we needed to let FET generate on it some more, like some minutes. The problem is a combination of constraints
+with weights near but less than 100% (in our case 99%). This was a known problem, reported previously by math.
+
+Volker Dirr suggested this:
+
+Generating a timetable where ALL activities are locked in time
+AND/OR locked in space are not a rare case.
+
+maybe we can fix this easy in the generation_pre.cpp:
+
+If ALL activities have a locked time, then delete/remove/don't add time
+constraints with less then 100%.
+
+If ALL activities have a locked room, then delete/remove/don't add room
+constraints with less then 100%.
+
+So the source of generate.cpp can stay the same (untouched) by this
+special check/feature.

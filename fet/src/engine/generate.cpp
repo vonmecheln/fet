@@ -7255,15 +7255,15 @@ inline bool Generate::getRoom(int level, const Activity* act, int ai, int d, int
 	}
 }
 
-void Generate::generateWithSemaphore(int maxSeconds, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream)
+void Generate::generateWithSemaphore(int maxSeconds, bool& restarted, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream)
 {
 	isRunning=true;
-	generate(maxSeconds, impossible, timeExceeded, threaded, maxPlacedActivityStream);
+	generate(maxSeconds, restarted, impossible, timeExceeded, threaded, maxPlacedActivityStream);
 	semaphoreFinished.release();
 	isRunning=false;
 }
 
-void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream)
+void Generate::generate(int maxSeconds, bool& restarted, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream)
 {
 #ifdef FET_COMMAND_LINE
 	if(!threaded)
@@ -7442,6 +7442,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 	
 	nDifficultActivities=0;
 
+	restarted=false;
 	impossible=false;
 	timeExceeded=false;
 
@@ -7501,6 +7502,12 @@ prevvalue:
 		
 		if(abortOptimization)
 			return;
+		
+		if(restart){
+			//abortOptimization=true;
+			restarted=true;
+			return;
+		}
 
 		if(threaded){
 			myMutex.lock();
@@ -7886,6 +7893,16 @@ prevvalue:
 				if(threaded){
 					myMutex.unlock();
 				}
+				
+				return;
+			}
+			if(restart){
+				if(threaded){
+					myMutex.unlock();
+				}
+				
+				//abortOptimization=true;
+				restarted=true;
 				
 				return;
 			}
@@ -32985,7 +33002,7 @@ skip_here_if_already_allocated_in_time:
 			myMutex.unlock();
 			myMutex.lock();
 		}*/
-		if(!abortOptimization && activity_count_impossible_tries<MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0){
+		if(!abortOptimization && !restart && activity_count_impossible_tries<MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0){
 			if(activity_count_impossible_tries%10000==0){
 				time_t crt_time;
 				time(&crt_time);

@@ -85,6 +85,8 @@ class TimetableGenerateMultipleForm : public QDialog, Ui::TimetableGenerateMulti
 
 	QList<QLabel*> labels;
 	
+	QList<QPushButton*> restartPushButtons;
+	
 	//QList<Controller*> controllersList;
 	
 	time_t all_processes_start_time;
@@ -108,6 +110,8 @@ public slots:
 	void help();
 
 	void start();
+	
+	void restartCurrentThread();
 
 	void stop();
 	
@@ -123,6 +127,8 @@ private slots:
 	void generationFinished();
 	
 	void activityPlaced(int nThread, int na);
+	
+	void seeInitialOrder();
 };
 
 #endif

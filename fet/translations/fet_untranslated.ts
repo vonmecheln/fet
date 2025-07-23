@@ -46875,34 +46875,34 @@ Having a subgroup with too little working hours per week means that you inputted
     </message>
     <message>
         <location filename="../src/engine/generate.cpp" line="179"/>
-        <location filename="../src/interface/fet.cpp" line="3578"/>
+        <location filename="../src/interface/fet.cpp" line="3579"/>
         <source>FET managed to schedule correctly the first %1 most difficult activities. You can see the initial order of placing the activities in the corresponding output file. The activity which might cause problems might be the next activity in the initial order of evaluation. This activity is listed below:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/generate.cpp" line="186"/>
         <location filename="../src/engine/generate.cpp" line="206"/>
-        <location filename="../src/interface/fet.cpp" line="3585"/>
-        <location filename="../src/interface/fet.cpp" line="3605"/>
+        <location filename="../src/interface/fet.cpp" line="3586"/>
+        <location filename="../src/interface/fet.cpp" line="3606"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/generate.cpp" line="191"/>
-        <location filename="../src/interface/fet.cpp" line="3590"/>
+        <location filename="../src/interface/fet.cpp" line="3591"/>
         <source>Difficult activity cannot be computed - please report possible bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/generate.cpp" line="195"/>
-        <location filename="../src/interface/fet.cpp" line="3594"/>
+        <location filename="../src/interface/fet.cpp" line="3595"/>
         <source>Here are the placed activities which lead to an inconsistency, in order from the first one to the last (the last one FET failed to schedule and the last ones are most likely impossible):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/generate.cpp" line="202"/>
-        <location filename="../src/interface/fet.cpp" line="3601"/>
+        <location filename="../src/interface/fet.cpp" line="3602"/>
         <source>No: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -46930,7 +46930,7 @@ Having a subgroup with too little working hours per week means that you inputted
 <context>
     <name>Generate</name>
     <message>
-        <location filename="../src/engine/generate.cpp" line="8072"/>
+        <location filename="../src/engine/generate.cpp" line="8089"/>
         <source>At time %1 h %2 m %3 s, FET reached %4 activities placed</source>
         <comment>h=hours, m=minutes, s=seconds. Please leave spaces between &apos;time&apos;, %1, h, %2, m, %3, s, so they are visible</comment>
         <translation type="unfinished"></translation>
@@ -55367,665 +55367,665 @@ is:</source>
 <context>
     <name>ListSpaceConstraints</name>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="131"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="133"/>
         <source>Constraints basic compulsory space</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="139"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="141"/>
         <source>Constraints room not available times</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="149"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="151"/>
         <source>Constraints activity preferred room</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="164"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="166"/>
         <source>Constraints activity preferred rooms</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="179"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="181"/>
         <source>Constraints students set home room</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="182"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="184"/>
         <source>Note: a home room for a students set means that every activity which has this and ONLY this students set will have this as home room (not other superior or inferior set). You can add home rooms for a group, for a year or for a subgroup, careful not to make impossible timetables. Preferred rooms override the home rooms.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="197"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="199"/>
         <source>Constraints students set home rooms</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="200"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="202"/>
         <source>Note: home rooms for a students set means that every activity which has this and ONLY this students set will have these home rooms (not other superior or inferior set). You can add home rooms for a group, for a year or for a subgroup, careful not to make impossible timetables. Preferred rooms override the home rooms.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="214"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="216"/>
         <source>Constraints teacher home room</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="217"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="219"/>
         <source>Note: a home room for a teacher means that every activity which has this and ONLY this teacher will have this as home room. Preferred rooms override the home rooms.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="230"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="232"/>
         <source>Constraints teacher home rooms</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="233"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="235"/>
         <source>Note: home rooms for a teacher means that every activity which has this and ONLY this teacher will have these home rooms. Preferred rooms override the home rooms.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="246"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="248"/>
         <source>Constraints subject preferred room</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="258"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="260"/>
         <source>Constraints subject preferred rooms</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="270"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="272"/>
         <source>Constraints subject activity tag preferred room</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="283"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="285"/>
         <source>Constraints subject activity tag preferred rooms</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="296"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="298"/>
         <source>Constraints students max building changes per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="304"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="306"/>
         <source>Constraints students set max building changes per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="314"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="316"/>
         <source>Constraints students max building changes per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="317"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="328"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="377"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="388"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="319"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="330"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="379"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="390"/>
         <source>Note: The number of building changes per week is considered to be the sum of the building changes on each day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="325"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="327"/>
         <source>Constraints students set max building changes per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="338"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="340"/>
         <source>Constraints students min gaps between building changes</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="346"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="348"/>
         <source>Constraints students set min gaps between building changes</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="356"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="358"/>
         <source>Constraints teachers max building changes per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="364"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="366"/>
         <source>Constraints teacher max building changes per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="374"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="376"/>
         <source>Constraints teachers max building changes per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="385"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="387"/>
         <source>Constraints teacher max building changes per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="398"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="400"/>
         <source>Constraints teachers min gaps between building changes</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="406"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="408"/>
         <source>Constraints teacher min gaps between building changes</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="416"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="418"/>
         <source>Constraints activity tag preferred room</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="428"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="430"/>
         <source>Constraints activity tag preferred rooms</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="440"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="442"/>
         <source>Constraints activities occupy max different rooms</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="448"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="450"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="450"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="452"/>
         <source>Add/remove multiple constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="457"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="459"/>
         <source>Constraints activities same room if consecutive</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="470"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="472"/>
         <source>Constraints students max room changes per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="478"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="480"/>
         <source>Constraints students set max room changes per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="488"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="490"/>
         <source>Constraints students max room changes per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="491"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="503"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="553"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="565"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="493"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="505"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="555"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="567"/>
         <source>Note: The number of room changes per week is considered to be the sum of the room changes on each day. If you want the same room throughout the week, please use one or more constraints activities occupy max 1 different rooms.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="500"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="502"/>
         <source>Constraints students set max room changes per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="514"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="516"/>
         <source>Constraints students min gaps between room changes</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="522"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="524"/>
         <source>Constraints students set min gaps between room changes</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="532"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="534"/>
         <source>Constraints teachers max room changes per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="540"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="542"/>
         <source>Constraints teacher max room changes per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="550"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="552"/>
         <source>Constraints teachers max room changes per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="562"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="564"/>
         <source>Constraints teacher max room changes per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="576"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="578"/>
         <source>Constraints teachers min gaps between room changes</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="584"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="586"/>
         <source>Constraints teacher min gaps between room changes</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="594"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="596"/>
         <source>Constraints teacher room not available times</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="606"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="608"/>
         <source>Constraints students max room changes per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="614"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="616"/>
         <source>Constraints students set max room changes per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="624"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="626"/>
         <source>Constraints teachers max room changes per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="632"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="634"/>
         <source>Constraints teacher max room changes per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="642"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="644"/>
         <source>Constraints students max building changes per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="650"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="652"/>
         <source>Constraints students set max building changes per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="660"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="662"/>
         <source>Constraints teachers max building changes per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="668"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="670"/>
         <source>Constraints teacher max building changes per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="678"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="680"/>
         <source>Constraints students max building changes per day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="686"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="688"/>
         <source>Constraints students set max building changes per day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="696"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="698"/>
         <source>Constraints teachers max building changes per day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="704"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="706"/>
         <source>Constraints teacher max building changes per day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="714"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="716"/>
         <source>Constraints students max building changes per real day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="722"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="724"/>
         <source>Constraints students set max building changes per real day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="732"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="734"/>
         <source>Constraints teachers max building changes per real day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="740"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="742"/>
         <source>Constraints teacher max building changes per real day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="750"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="752"/>
         <source>Constraints students max room changes per day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="758"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="760"/>
         <source>Constraints students set max room changes per day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="768"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="770"/>
         <source>Constraints teachers max room changes per day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="776"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="778"/>
         <source>Constraints teacher max room changes per day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="786"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="788"/>
         <source>Constraints students max room changes per real day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="794"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="796"/>
         <source>Constraints students set max room changes per real day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="804"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="806"/>
         <source>Constraints teachers max room changes per real day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="812"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="814"/>
         <source>Constraints teacher max room changes per real day in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="822"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="824"/>
         <source>Constraints room max activity tags per day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="825"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="827"/>
         <source>This constraint ensures that the specified room does not have more than the specified number of activity tags (one or two) from those selected, on any day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="827"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="844"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="861"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="829"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="846"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="863"/>
         <source>Note: For FET to be able to start the generation, the specified room must be real (not virtual), and should not be found in any set of real rooms of any virtual room.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="839"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="841"/>
         <source>Constraints room max activity tags per real day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="842"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="844"/>
         <source>This constraint ensures that the specified room does not have more than the specified number of activity tags (one or two) from those selected, on any real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="856"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="858"/>
         <source>Constraints room max activity tags per week from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="859"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="861"/>
         <source>This constraint ensures that the specified room does not have more than the specified number of activity tags (one or two) from those selected, throughout the week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="977"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1025"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="979"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1028"/>
         <source>Filter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="984"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="986"/>
         <source>Show related</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1027"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1030"/>
         <source>Sorted</source>
         <comment>It refers to space constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1032"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1035"/>
         <source>Activate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1033"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1036"/>
         <source>Deactivate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1034"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1037"/>
         <source>Weights</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1035"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1038"/>
         <source>Comments</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1037"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1040"/>
         <source>Add</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1038"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1041"/>
         <source>Modify</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1040"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1043"/>
         <source>Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1041"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1044"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1190"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1193"/>
         <source>Advanced filter for space constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2154"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2438"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2505"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2519"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2637"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2157"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2441"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2508"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2522"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2640"/>
         <source>FET information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2154"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2519"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2157"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2522"/>
         <source>Invalid selected constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2204"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2207"/>
         <source>Your selection contains the basic compulsory space constraint(s). Do you really want to remove all the selected constraints, including this (these) one(s)? You cannot generate a timetable without this (these) constraint(s).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2207"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2210"/>
         <source>Note: you can add again a constraint of this type from the menu Data -&gt; Space constraints -&gt; Miscellaneous -&gt; Basic compulsory space constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2210"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2213"/>
         <source>FET warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2224"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2227"/>
         <source>Remove these selected space constraints?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2228"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2388"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2454"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2231"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2391"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2457"/>
         <source>FET confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2229"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2232"/>
         <source>Yes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2229"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2232"/>
         <source>No</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2238"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2241"/>
         <source>Removed %1 space constraints:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2291"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2294"/>
         <source>To use this constraint, you need to specify a set of activities and the maximum number of different rooms which can be occupied by these activities. Note that each activity can take place in a single room, and a single room can hold a single activity at a certain moment. This constraint may be used for instance to constrain all activities of type Physics of a certain students set to be in the same room throughout the week, by adding all Physics activities for this students set and making max different rooms = 1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2296"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2299"/>
         <source>FET help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2351"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2354"/>
         <source>No: %1 / %2</source>
         <comment>%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2387"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2390"/>
         <source>Activate the selected space constraints?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2415"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2418"/>
         <source>Activated %1 space constraints:</source>
         <comment>%1 is the number of activated space constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2438"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2441"/>
         <source>Activated %1 space constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2452"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2455"/>
         <source>Deactivate the selected space constraints? (Note that the basic compulsory space constraints will not be deactivated, even if they are selected.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2482"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2485"/>
         <source>Deactivated %1 space constraints:</source>
         <comment>%1 is the number of deactivated space constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2505"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2508"/>
         <source>Deactivated %1 space constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2531"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2534"/>
         <source>Constraint comments</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2533"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2536"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2535"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2538"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2571"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2574"/>
         <source>Changed a constraint&apos;s comments. Constraint before:
 
 %1
@@ -56035,38 +56035,38 @@ Comments after:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2594"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2597"/>
         <source>%1 / %2 space constraints</source>
         <comment>%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2618"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2621"/>
         <source>Multiple selection: %1 / %2</source>
         <comment>It refers to the list of selected space constraints, %1 is the number of active selected space constraints, %2 is the total number of selected space constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2637"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2640"/>
         <source>No constraints from your selection can change their weight (remember that some types of constraints are allowed to have only 100% weight).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2647"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2656"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2650"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2659"/>
         <source>Modify the weights of the selected space constraints</source>
         <comment>The title of a dialog to modify the weights of the selected constraints with a single click</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2649"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2652"/>
         <source>You will modify %1 selected space constraints.
 Please enter the new weight percentage:</source>
         <comment>Translators: please split this field with new line characters, similarly to the original field, so that it is not too wide. You can use more lines (3 or even 4), if needed. %1 is the number of constraints which will change.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2658"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2661"/>
         <source>You will modify %1 space constraints from your
 selection (remember that some types of constraints
 are only allowed to have 100% weight, so %2
@@ -56076,7 +56076,7 @@ Please enter the new weight percentage:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2696"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2699"/>
         <source>Changed the weights of the following %1 selected space constraints to %2%:</source>
         <comment>%1 is the number of space constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints</comment>
         <translation type="unfinished"></translation>
@@ -56085,2350 +56085,2350 @@ Please enter the new weight percentage:</source>
 <context>
     <name>ListTimeConstraints</name>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="141"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="143"/>
         <source>Constraints basic compulsory time</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="149"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="151"/>
         <source>Constraints break times</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="152"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="154"/>
         <source>Note: An activity with duration greater than 1 cannot be split over a break. Also, the activities constrained by min days between activities constraints with &apos;consecutive if on the same day&apos; = true cannot spread over a break.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="161"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="163"/>
         <source>Constraints teacher not available times</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="171"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="173"/>
         <source>Constraints teachers max hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="174"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="212"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="324"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="334"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1236"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1260"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1274"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1286"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="176"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="214"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="326"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="336"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1238"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1262"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1276"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1288"/>
         <source>It is recommended to use only a 100% weight for these constraints (otherwise the algorithm is not perfect).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="181"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="183"/>
         <source>Constraints teacher max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="191"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="193"/>
         <source>Constraints teachers max gaps per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="199"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="201"/>
         <source>Constraints teacher max gaps per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="209"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="211"/>
         <source>Constraints teacher max hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="221"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="223"/>
         <source>Constraints teachers max hours continuously</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="229"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="231"/>
         <source>Constraints teacher max hours continuously</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="239"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="241"/>
         <source>Constraints teachers min hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="247"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="249"/>
         <source>Constraints teacher min hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="257"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="259"/>
         <source>Constraints teachers max gaps per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="265"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="267"/>
         <source>Constraints teacher max gaps per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="275"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="277"/>
         <source>Constraints students early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="283"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="285"/>
         <source>Constraints students set early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="293"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="295"/>
         <source>Constraints students set not available times</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="303"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="305"/>
         <source>Constraints students max gaps per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="311"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="313"/>
         <source>Constraints students set max gaps per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="321"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="323"/>
         <source>Constraints students max hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="331"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="333"/>
         <source>Constraints students set max hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="343"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="345"/>
         <source>Constraints students max hours continuously</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="351"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="353"/>
         <source>Constraints students set max hours continuously</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="361"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="363"/>
         <source>Constraints students min hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="365"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="380"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="367"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="382"/>
         <source>If the user selects not allowed empty days, it is for real days (for the mornings-afternoons mode), also respecting minimum hours daily for FET days (half days) with allow empty FET days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="369"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="386"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="432"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="546"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="600"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="613"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="626"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="792"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="897"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="912"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1135"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1150"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1720"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1734"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2043"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2166"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2178"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2242"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2254"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2310"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2413"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2489"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2503"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2518"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2847"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2857"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2869"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2879"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2891"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="371"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="388"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="434"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="548"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="602"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="615"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="628"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="794"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="899"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="914"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1137"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1152"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1722"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1736"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2045"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2168"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2180"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2244"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2256"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2312"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2415"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2491"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2505"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2520"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2849"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2859"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2871"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2881"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2893"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="376"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="378"/>
         <source>Constraints students set min hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="393"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="395"/>
         <source>Constraints activity ends students day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="406"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="408"/>
         <source>Constraints activity preferred starting time</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="419"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="421"/>
         <source>Constraints activities same starting time</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="430"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="432"/>
         <source>Note: You might not need this constraint. Click Help!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="439"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="441"/>
         <source>Constraints activities not overlapping</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="452"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="454"/>
         <source>Constraints min days between activities</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="460"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="462"/>
         <source>Min days is for real days. If the activities are on the same real day and consecutive if on the same day is checked, they must be consecutive and on the same half day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="464"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2271"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="466"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2273"/>
         <source>Modify multiple constraints at once</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="471"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="473"/>
         <source>Constraints activity preferred time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="479"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="490"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="481"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="492"/>
         <source>Each hour slot of each considered activity must be allowed by this constraint (more restrictive than preferred starting times for activities with duration greater than 1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="487"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="489"/>
         <source>Constraints activities preferred time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="498"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="500"/>
         <source>Constraints activity preferred starting times</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="511"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="513"/>
         <source>Constraints activities preferred starting times</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="519"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="521"/>
         <source>Constraints activities same starting hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="527"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="529"/>
         <source>Add/remove multiple constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="534"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="536"/>
         <source>Constraints activities same starting day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="553"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="555"/>
         <source>Constraints two activities consecutive</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="563"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="687"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="768"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="565"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="689"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="770"/>
         <source>It is a good practice NOT to add this type of constraint to activities which are constrained to be in different days by min days between activities constraints. Please read Help/Important tips, tip number 3).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="572"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="574"/>
         <source>Constraints two activities ordered</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="580"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="582"/>
         <source>This constraint forces two activities A1 and A2: A2 to begin later than A1 has finished, separated by any time interval in the week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="588"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="590"/>
         <source>Constraints min gaps between activities</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="596"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="598"/>
         <source>This constraint ensures, for a set of activities: if any pair of activities are on the same day, they must be separated by at least min gaps (hours).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="598"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="600"/>
         <source>Note: please click Help for important advice</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="607"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="609"/>
         <source>Constraints subactivities preferred time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="620"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="622"/>
         <source>Constraints subactivities preferred starting times</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="633"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="635"/>
         <source>Constraints teacher interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="643"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="645"/>
         <source>Constraints teachers interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="651"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="653"/>
         <source>Constraints students set interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="661"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="663"/>
         <source>Constraints students interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="669"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="671"/>
         <source>Constraints activities end students day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="677"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="679"/>
         <source>Constraints two activities grouped</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="696"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="698"/>
         <source>Constraints teachers activity tag max hours continuously</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="701"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="703"/>
         <source>This constraint ensures that all teachers do not have more than max hours continuously of activities with the specified activity tag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="709"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="711"/>
         <source>Constraints teacher activity tag max hours continuously</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="715"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="717"/>
         <source>This constraint ensures that the specified teacher does not have more than max hours continuously of activities with the specified activity tag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="723"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="725"/>
         <source>Constraints students activity tag max hours continuously</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="728"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="730"/>
         <source>This constraint ensures that all students do not have more than max hours continuously of activities with the specified activity tag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="736"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="738"/>
         <source>Constraints students set activity tag max hours continuously</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="742"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="744"/>
         <source>This constraint ensures that the specified students do not have more than max hours continuously of activities with the specified activity tag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="750"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="752"/>
         <source>Constraints teachers max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="758"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="760"/>
         <source>Constraints three activities grouped</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="561"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="563"/>
         <source>This constraint forces two activities A1 and A2: A2 to be immediately after A1, same day; no gaps are allowed between them, except for break constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="542"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="544"/>
         <source>Please read Help/Important tips, advice 2). It is IMPORTANT to remove redundant min days between activities constraints with weight &lt; 100% after adding constraints same starting day. Please also click the Help button here for information!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="610"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="623"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="612"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="625"/>
         <source>This constraint is useful to constrain only the n-th component of the activities. Please click the Help button for details!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="685"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="687"/>
         <source>This constraint forces two activities to be on the same day, one immediately following the other, in any order; no gaps are allowed between them, except for break constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="766"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="768"/>
         <source>This constraint forces 3 activities to be on the same day, one immediately following the other, as a block of 3 activities, in any order; no gaps are allowed between them, except for break constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="777"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="779"/>
         <source>Constraints max days between activities</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="785"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="787"/>
         <source>Max days is for real days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="799"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="801"/>
         <source>Constraints teachers min days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="807"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="809"/>
         <source>Constraints teacher min days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="817"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="819"/>
         <source>Constraints teachers activity tag max hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="822"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="824"/>
         <source>This constraint ensures that all teachers do not have more than max hours daily of activities with the specified activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="830"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="832"/>
         <source>Constraints teacher activity tag max hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="836"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="838"/>
         <source>This constraint ensures that the specified teacher does not have more than max hours daily of activities with the specified activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="844"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="846"/>
         <source>Constraints students activity tag max hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="849"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="851"/>
         <source>This constraint ensures that all students do not have more than max hours daily of activities with the specified activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="857"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="859"/>
         <source>Constraints students set activity tag max hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="863"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="865"/>
         <source>This constraint ensures that the specified students do not have more than max hours daily of activities with the specified activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="871"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="873"/>
         <source>Constraints students max gaps per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="879"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="881"/>
         <source>Constraints students set max gaps per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="889"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="891"/>
         <source>Constraints activities occupy max time slots from selection</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="904"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="906"/>
         <source>Constraints activities max simultaneous in selected time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="919"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="921"/>
         <source>Constraints students set max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="929"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="931"/>
         <source>Constraints students max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="937"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="939"/>
         <source>Constraints teacher max span per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="940"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="954"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="994"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1008"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1626"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1641"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1654"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1669"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="942"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="956"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="996"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1010"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1628"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1643"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1656"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1671"/>
         <source>This constraint ensures a maximum span of activities on each day. Span means the count of slots (free or occupied) starting with the first occupied slot of the day and ending with the last occupied slot of the day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="951"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="953"/>
         <source>Constraints teachers max span per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="963"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="965"/>
         <source>Constraints teacher min resting hours</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="966"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="981"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1020"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1034"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="968"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="983"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1022"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1036"/>
         <source>This constraint ensures a minimum number of resting hours between the end of a day and the beginning of the next day. Circular means that the time between the end of the last day of the week and the beginning of the first day of the week is also considered.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="978"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="980"/>
         <source>Constraints teachers min resting hours</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="991"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="993"/>
         <source>Constraints students set max span per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1005"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1007"/>
         <source>Constraints students max span per day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1017"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1019"/>
         <source>Constraints students set min resting hours</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1031"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1033"/>
         <source>Constraints students min resting hours</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1043"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1045"/>
         <source>Constraints two activities ordered if same day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1051"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1053"/>
         <source>This constraint forces two activities A1 and A2: if they are on the same day, A2 needs to begin later than A1 has finished.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1059"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1061"/>
         <source>Constraints students set min gaps between ordered pair of activity tags</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1062"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1064"/>
         <source>This constraint ensures that for the specified students, on each day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if they appear in this order.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1074"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1076"/>
         <source>Constraints students min gaps between ordered pair of activity tags</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1077"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1079"/>
         <source>This constraint ensures that for all the students, on each day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if they appear in this order.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1088"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1090"/>
         <source>Constraints teacher min gaps between ordered pair of activity tags</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1091"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1093"/>
         <source>This constraint ensures that for the specified teacher, on each day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if they appear in this order.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1103"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1105"/>
         <source>Constraints teachers min gaps between ordered pair of activity tags</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1106"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1108"/>
         <source>This constraint ensures that for all the teachers, on each day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if they appear in this order.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1117"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1119"/>
         <source>Constraints activity tags not overlapping</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1127"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1129"/>
         <source>Constraints activities occupy min time slots from selection</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1142"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1144"/>
         <source>Constraints activities min simultaneous in selected time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1157"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1159"/>
         <source>Constraints teachers activity tag min hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1162"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1164"/>
         <source>This constraint ensures that all teachers do not have less than min hours daily of activities with the specified activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1170"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1172"/>
         <source>Constraints teacher activity tag min hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1176"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1178"/>
         <source>This constraint ensures that the specified teacher does not have less than min hours daily of activities with the specified activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1184"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1186"/>
         <source>Constraints students activity tag min hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1189"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1191"/>
         <source>This constraint ensures that all students do not have less than min hours daily of activities with the specified activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1197"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1199"/>
         <source>Constraints students set activity tag min hours daily</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1203"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1205"/>
         <source>This constraint ensures that the specified students do not have less than min hours daily of activities with the specified activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1211"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1213"/>
         <source>Constraints activity ends teachers day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1224"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1226"/>
         <source>Constraints activities end teachers day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1232"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1234"/>
         <source>Constraints teachers max hours daily real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1235"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1247"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1259"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1273"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1285"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1299"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1309"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1319"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1564"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1574"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1629"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1644"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1657"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1672"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2016"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2028"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1237"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1249"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1261"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1275"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1287"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1301"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1311"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1321"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1566"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1576"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1631"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1646"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1659"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1674"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2018"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2030"/>
         <source>This constraint is for a real day
 (a real day = a morning + an afternoon)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1244"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1246"/>
         <source>Constraints teacher max real days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1256"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1258"/>
         <source>Constraints teacher max hours daily real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1270"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1272"/>
         <source>Constraints students max hours daily real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1282"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1284"/>
         <source>Constraints students set max hours daily real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1296"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1298"/>
         <source>Constraints teachers max real days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1306"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1308"/>
         <source>Constraints teachers min real days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1316"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1318"/>
         <source>Constraints teacher min real days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1328"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1330"/>
         <source>Constraints teachers activity tag max hours daily real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1333"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1335"/>
         <source>This constraint ensures that all teachers do not have more than max hours daily of activities with the specified activity tag, for a real day (two half-days).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1341"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1343"/>
         <source>Constraints teacher activity tag max hours daily real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1347"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1349"/>
         <source>This constraint ensures that the specified teacher does not have more than max hours daily of activities with the specified activity tag, for a real day (two half-days).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1355"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1357"/>
         <source>Constraints students activity tag max hours daily real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1360"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1362"/>
         <source>This constraint ensures that all students do not have more than max hours daily of activities with the specified activity tag, for a real day (two half-days).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1368"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1370"/>
         <source>Constraints students set activity tag max hours daily real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1374"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1376"/>
         <source>This constraint ensures that the specified students do not have more than max hours daily of activities with the specified activity tag, for a real day (two half-days).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1382"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1384"/>
         <source>Constraints teacher max afternoons per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1392"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1394"/>
         <source>Constraints teachers max afternoons per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1400"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1402"/>
         <source>Constraints teacher max mornings per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1410"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1412"/>
         <source>Constraints teachers max mornings per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1418"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1420"/>
         <source>Constraints teacher max activity tags per day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1424"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1426"/>
         <source>This constraint ensures that the specified teacher does not have more than the specified number of activity tags (one or two) from those selected, on any day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1432"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1434"/>
         <source>Constraints teachers max activity tags per day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1437"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1439"/>
         <source>This constraint ensures that all the teachers do not have more than the specified number of activity tags (one or two) from those selected, on any day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1445"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1447"/>
         <source>Constraints teachers min mornings per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1453"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1455"/>
         <source>Constraints teacher min mornings per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1463"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1465"/>
         <source>Constraints teachers min afternoons per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1471"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1473"/>
         <source>Constraints teacher min afternoons per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1481"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1483"/>
         <source>Constraints teacher max two consecutive mornings</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1491"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1493"/>
         <source>Constraints teachers max two consecutive mornings</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1499"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1501"/>
         <source>Constraints teacher max two consecutive afternoons</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1509"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1511"/>
         <source>Constraints teachers max two consecutive afternoons</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1517"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1519"/>
         <source>Constraints teachers max gaps per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1520"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1530"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1542"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1552"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1522"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1532"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1544"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1554"/>
         <source>This constraint is for a real day (2 FET days, morning and afternoon).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1527"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1529"/>
         <source>Constraints teacher max gaps per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1539"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1541"/>
         <source>Constraints students max gaps per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1549"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1551"/>
         <source>Constraints students set max gaps per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1561"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1563"/>
         <source>Constraints teachers min hours daily for real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1571"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1573"/>
         <source>Constraints teacher min hours daily for real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1583"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1585"/>
         <source>Constraints teachers afternoons early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1591"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1593"/>
         <source>Constraints teacher afternoons early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1601"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1603"/>
         <source>Constraints teachers min hours per morning</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1604"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2465"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1606"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2467"/>
         <source>To use this constraint, the teachers must have a min hours daily constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1611"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1613"/>
         <source>Constraints teacher min hours per morning</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1614"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2475"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1616"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2477"/>
         <source>To use this constraint, the teacher must have a min hours daily constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1623"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1625"/>
         <source>Constraints teacher max span per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1638"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1640"/>
         <source>Constraints teachers max span per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1651"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1653"/>
         <source>Constraints students set max span per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1666"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1668"/>
         <source>Constraints students max span per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1679"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1681"/>
         <source>Constraints teacher morning interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1689"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1691"/>
         <source>Constraints teachers morning interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1697"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1699"/>
         <source>Constraints teacher afternoon interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1707"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1709"/>
         <source>Constraints teachers afternoon interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1715"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1717"/>
         <source>Constraints students min hours per morning</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1718"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2487"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1720"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2489"/>
         <source>To use this constraint, the students must have a min hours daily constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1727"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1729"/>
         <source>Constraints students set min hours per morning</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1730"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2499"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1732"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2501"/>
         <source>To use this constraint, the students set must have a min hours daily constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1741"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1743"/>
         <source>Constraints teacher max zero gaps per afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1751"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1753"/>
         <source>Constraints teachers max zero gaps per afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1759"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1761"/>
         <source>Constraints students set max afternoons per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1769"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1771"/>
         <source>Constraints students max afternoons per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1777"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1779"/>
         <source>Constraints students set max mornings per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1787"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1789"/>
         <source>Constraints students max mornings per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1795"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1797"/>
         <source>Constraints students min mornings per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1803"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1805"/>
         <source>Constraints students set min mornings per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1813"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1815"/>
         <source>Constraints students min afternoons per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1821"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1823"/>
         <source>Constraints students set min afternoons per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1831"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1833"/>
         <source>Constraints students set morning interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1841"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1843"/>
         <source>Constraints students morning interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1849"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1851"/>
         <source>Constraints students set afternoon interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1859"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1861"/>
         <source>Constraints students afternoon interval max days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1867"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1869"/>
         <source>Constraints teacher max hours per all afternoons</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1877"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1879"/>
         <source>Constraints teachers max hours per all afternoons</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1885"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1887"/>
         <source>Constraints students set max hours per all afternoons</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1895"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1897"/>
         <source>Constraints students max hours per all afternoons</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1903"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1905"/>
         <source>Constraints teacher min resting hours between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1906"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1919"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1930"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1943"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1908"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1921"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1932"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1945"/>
         <source>This constraint ensures a minimum number of resting hours between the end of each morning and the beginning of the next afternoon (of the same real day).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1916"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1918"/>
         <source>Constraints teachers min resting hours between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1927"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1929"/>
         <source>Constraints students set min resting hours between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1940"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1942"/>
         <source>Constraints students min resting hours between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1951"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1953"/>
         <source>Constraints students set afternoons early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1961"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1963"/>
         <source>Constraints students afternoons early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1969"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1971"/>
         <source>Constraints teachers max gaps per week for real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1972"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1982"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1994"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2004"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1974"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1984"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1996"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2006"/>
         <source>This constraint is for real days (a real day = 2 FET days, morning and afternoon).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1979"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1981"/>
         <source>Constraints teacher max gaps per week for real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="1991"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="1993"/>
         <source>Constraints students max gaps per week for real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2001"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2003"/>
         <source>Constraints students set max gaps per week for real days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2013"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2015"/>
         <source>Constraints students set max real days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2025"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2027"/>
         <source>Constraints students max real days per week</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2035"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2037"/>
         <source>Constraints max total activities from set in selected time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2050"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2052"/>
         <source>Constraints max gaps between activities</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2058"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2060"/>
         <source>This constraint ensures, for a set of activities: if any pair of activities are on the same day, they must be separated by at most max gaps (hours).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2066"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2068"/>
         <source>Constraints activities max in a term</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2079"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2081"/>
         <source>Constraints activities occupy max terms</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2092"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2094"/>
         <source>Constraints teachers max gaps per morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2100"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2102"/>
         <source>Constraints teacher max gaps per morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2110"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2112"/>
         <source>Constraints teachers mornings early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2118"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2120"/>
         <source>Constraints teacher mornings early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2128"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2130"/>
         <source>Constraints students set mornings early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2138"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2140"/>
         <source>Constraints students mornings early max beginnings at second hour</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2146"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2148"/>
         <source>Constraints two sets of activities ordered</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2154"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2156"/>
         <source>This constraint forces two sets of activities SA1 and SA2: each activity A2 from SA2 to begin later than the moment each activity A1 from SA1 has finished, separated by any time interval in the week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2163"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2165"/>
         <source>Constraints teachers max three consecutive days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2173"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2175"/>
         <source>Constraints teacher max three consecutive days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2185"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2187"/>
         <source>Constraints students set min gaps between activity tag</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2188"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2190"/>
         <source>This constraint ensures that for the specified students, on each day, there are at least min gaps (hours) between the activities which have this activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2199"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2201"/>
         <source>Constraints students min gaps between activity tag</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2202"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2204"/>
         <source>This constraint ensures that for all the students, on each day, there are at least min gaps (hours) between the activities which have this activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2212"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2214"/>
         <source>Constraints teacher min gaps between activity tag</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2215"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2217"/>
         <source>This constraint ensures that for the specified teacher, on each day, there are at least min gaps (hours) between the activities which have this activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2226"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2228"/>
         <source>Constraints teachers min gaps between activity tag</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2229"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2231"/>
         <source>This constraint ensures that for all the teachers, on each day, there are at least min gaps (hours) between the activities which have this activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2239"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2241"/>
         <source>Constraints students max three consecutive days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2249"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2251"/>
         <source>Constraints students set max three consecutive days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2261"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2263"/>
         <source>Constraints min half days between activities</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2269"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2271"/>
         <source>Min days is for half days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2278"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6653"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6695"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7285"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7295"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7304"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7310"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7321"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7331"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7342"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7352"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7363"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7420"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7477"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7487"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7496"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7502"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7513"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7523"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7534"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7591"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7765"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7832"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7846"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7964"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2280"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6656"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6698"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7288"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7298"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7307"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7313"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7324"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7334"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7345"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7355"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7366"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7423"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7480"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7490"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7499"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7505"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7516"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7526"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7537"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7594"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7768"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7835"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7849"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7967"/>
         <source>FET information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2279"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2281"/>
         <source>You have met a FET bug. The constraint activity preferred day should not be editable in a separate dialog. The request will be ignored.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2289"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2291"/>
         <source>Constraints activities min in a term</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2302"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2304"/>
         <source>Constraints max terms between activities</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2317"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2319"/>
         <source>Constraints students set max activity tags per day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2323"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2325"/>
         <source>This constraint ensures that the specified students set does not have more than the specified number of activity tags (one or two) from those selected, on any day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2332"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2334"/>
         <source>Constraints students max activity tags per day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2337"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2339"/>
         <source>This constraint ensures that all the students do not have more than the specified number of activity tags (one or two) from those selected, on any day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2345"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2347"/>
         <source>Constraints teacher max activity tags per real day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2351"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2353"/>
         <source>This constraint ensures that the specified teacher does not have more than the specified number of activity tags (one or two) from those selected, on any real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2359"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2361"/>
         <source>Constraints teachers max activity tags per real day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2364"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2366"/>
         <source>This constraint ensures that all the teachers do not have more than the specified number of activity tags (one or two) from those selected, on any real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2372"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2374"/>
         <source>Constraints students set max activity tags per real day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2378"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2380"/>
         <source>This constraint ensures that the specified students set does not have more than the specified number of activity tags (one or two) from those selected, on any real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2386"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2388"/>
         <source>Constraints students max activity tags per real day from set</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2391"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2393"/>
         <source>This constraint ensures that all the students do not have more than the specified number of activity tags (one or two) from those selected, on any real day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2399"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2401"/>
         <source>Constraints max half days between activities</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2407"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2409"/>
         <source>Max days is for half days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2420"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2422"/>
         <source>Constraints activity begins students day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2433"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2435"/>
         <source>Constraints activities begin students day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2441"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2443"/>
         <source>Constraints activity begins teachers day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2454"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2456"/>
         <source>Constraints activities begin teachers day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2462"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2464"/>
         <source>Constraints teachers min hours per afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2472"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2474"/>
         <source>Constraints teacher min hours per afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2484"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2486"/>
         <source>Constraints students min hours per afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2496"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2498"/>
         <source>Constraints students set min hours per afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2510"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2512"/>
         <source>Constraints activities max hourly span</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2525"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2527"/>
         <source>Constraints teachers max hours daily in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2533"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2535"/>
         <source>Constraints teacher max hours daily in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2543"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2545"/>
         <source>Constraints students max hours daily in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2551"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2553"/>
         <source>Constraints students set max hours daily in interval</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2561"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2563"/>
         <source>Constraints students set min gaps between ordered pair of activity tags per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2564"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2566"/>
         <source>This constraint ensures that for the specified students, on each real day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if they appear in this order.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2577"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2579"/>
         <source>Constraints students min gaps between ordered pair of activity tags per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2580"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2582"/>
         <source>This constraint ensures that for all the students, on each real day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if they appear in this order.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2592"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2594"/>
         <source>Constraints teacher min gaps between ordered pair of activity tags per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2595"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2597"/>
         <source>This constraint ensures that for the specified teacher, on each real day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if they appear in this order.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2608"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2610"/>
         <source>Constraints teachers min gaps between ordered pair of activity tags per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2611"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2613"/>
         <source>This constraint ensures that for all the teachers, on each real day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if they appear in this order.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2623"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2625"/>
         <source>Constraints students set min gaps between activity tag per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2626"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2628"/>
         <source>This constraint ensures that for the specified students, on each real day, there are at least min gaps (hours) between the activities which have this activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2637"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2639"/>
         <source>Constraints students min gaps between activity tag per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2640"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2642"/>
         <source>This constraint ensures that for all the students, on each real day, there are at least min gaps (hours) between the activities which have this activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2650"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2652"/>
         <source>Constraints teacher min gaps between activity tag per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2653"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2655"/>
         <source>This constraint ensures that for the specified teacher, on each real day, there are at least min gaps (hours) between the activities which have this activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2664"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2666"/>
         <source>Constraints teachers min gaps between activity tag per real day</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2667"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2669"/>
         <source>This constraint ensures that for all the teachers, on each real day, there are at least min gaps (hours) between the activities which have this activity tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2677"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2679"/>
         <source>Constraints students set min gaps between ordered pair of activity tags between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2680"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2682"/>
         <source>This constraint ensures that for the specified students, on each real day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if the first activity tag appears in the morning and the second activity tag appears in the afternoon.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2692"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2694"/>
         <source>Constraints students min gaps between ordered pair of activity tags between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2695"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2697"/>
         <source>This constraint ensures that for all the students, on each real day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if the first activity tag appears in the morning and the second activity tag appears in the afternoon.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2706"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2708"/>
         <source>Constraints teacher min gaps between ordered pair of activity tags between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2709"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2711"/>
         <source>This constraint ensures that for the specified teacher, on each real day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if the first activity tag appears in the morning and the second activity tag appears in the afternoon.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2721"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2723"/>
         <source>Constraints teachers min gaps between ordered pair of activity tags between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2724"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2726"/>
         <source>This constraint ensures that for all the teachers, on each real day, there are at least min gaps (hours) between the first activity tag and the second activity tag, if the first activity tag appears in the morning and the second activity tag appears in the afternoon.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2735"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2737"/>
         <source>Constraints students set min gaps between activity tag between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2738"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2740"/>
         <source>This constraint ensures that for the specified students, on each real day, there are at least min gaps (hours) between the last activity from the morning which has this activity tag and the first activity from the afternoon which has this activity tag (the constraint is considered respected if the activity tag is not met both in the morning and in the afternoon).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2748"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2750"/>
         <source>Constraints students min gaps between activity tag between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2751"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2753"/>
         <source>This constraint ensures that for all the students, on each real day, there are at least min gaps (hours) between the last activity from the morning which has this activity tag and the first activity from the afternoon which has this activity tag (the constraint is considered respected if the activity tag is not met both in the morning and in the afternoon).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2760"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2762"/>
         <source>Constraints teacher min gaps between activity tag between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2763"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2765"/>
         <source>This constraint ensures that for the specified teacher, on each real day, there are at least min gaps (hours) between the last activity from the morning which has this activity tag and the first activity from the afternoon which has this activity tag (the constraint is considered respected if the activity tag is not met both in the morning and in the afternoon).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2773"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2775"/>
         <source>Constraints teachers min gaps between activity tag between morning and afternoon</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2776"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2778"/>
         <source>This constraint ensures that for all the teachers, on each real day, there are at least min gaps (hours) between the last activity from the morning which has this activity tag and the first activity from the afternoon which has this activity tag (the constraint is considered respected if the activity tag is not met both in the morning and in the afternoon).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2785"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2787"/>
         <source>Constraints teachers no two consecutive days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2793"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2795"/>
         <source>Constraints teacher no two consecutive days</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2803"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2805"/>
         <source>Constraints teacher pair of mutually exclusive time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2813"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2815"/>
         <source>Constraints teachers pair of mutually exclusive time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2821"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2823"/>
         <source>Constraints students set pair of mutually exclusive time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2831"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2833"/>
         <source>Constraints students pair of mutually exclusive time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2839"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2841"/>
         <source>Constraints two sets of activities have the same sections</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2854"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2856"/>
         <source>Constraints students max single gaps in selected time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2864"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2866"/>
         <source>Constraints students set max single gaps in selected time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2876"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2878"/>
         <source>Constraints teachers max single gaps in selected time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2886"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2888"/>
         <source>Constraints teacher max single gaps in selected time slots</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2898"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2900"/>
         <source>Constraints teacher max hours per term</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2908"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2910"/>
         <source>Constraints teachers max hours per term</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="3033"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="3083"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="3035"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="3086"/>
         <source>Filter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="3040"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="3042"/>
         <source>Show related</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="3085"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="3088"/>
         <source>Sorted</source>
         <comment>It refers to time constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="3090"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="3093"/>
         <source>Activate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="3091"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="3094"/>
         <source>Deactivate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="3092"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="3095"/>
         <source>Weights</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="3093"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="3096"/>
         <source>Comments</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="3095"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="3098"/>
         <source>Add</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="3096"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="3099"/>
         <source>Modify</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="3146"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="3149"/>
         <source>Modify selected</source>
         <comment>It refers to time constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="3154"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="3157"/>
         <source>Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="3155"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="3158"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="3316"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="3319"/>
         <source>Advanced filter for time constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6653"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7846"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6656"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7849"/>
         <source>Invalid selected constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6695"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6698"/>
         <source>No constraints selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6742"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6745"/>
         <source>Your selection contains the basic compulsory time constraint(s). Do you really want to remove all the selected constraints, including this (these) one(s)? You cannot generate a timetable without this (these) constraint(s).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6745"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6748"/>
         <source>Note: you can add again a constraint of this type from the menu Data -&gt; Time constraints -&gt; Miscellaneous -&gt; Basic compulsory time constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6748"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6751"/>
         <source>FET warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6762"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6765"/>
         <source>Remove these selected time constraints?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6766"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7715"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7781"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6769"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7718"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7784"/>
         <source>FET confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6767"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6770"/>
         <source>Yes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6767"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6770"/>
         <source>No</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6776"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6779"/>
         <source>Removed %1 time constraints:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6836"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6855"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6839"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6858"/>
         <source>IMPORTANT: after adding such constraints, it is necessary (otherwise the generation might be impossible) to remove &apos;bad&apos; (redundant and with weight &lt; 100%) constraints min days between activities. If you are sure that you don&apos;t have &apos;bad&apos; constraints, you can skip this step, but it doesn&apos;t hurt to do it, as a precaution. Also, you don&apos;t have to do that after each added constraint, but only once after adding more constraints of this type. Please read Help/Important tips - tip number 2 for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7422"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7593"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7425"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7596"/>
         <source>NOTE: If you are using constraints of type activities same starting time or activities same starting day or max 0 (half) days between activities, it is important (after current operation) to apply the operation of removing redundant constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6841"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6844"/>
         <source>If you divide the years by categories (the students have optional courses), you may not need this kind of constraint. If the year is for instance divided by language, English/French/German, sometimes people think that it is needed that these optional activities to have the same starting time. But solutions exist without adding same starting time constraints. Some people try to avoid students gaps by using this constraint, because they need to do it this way in other timetabling software. But it is not the best practice to do it with such a constraint. The correct way is to add a max 0 gaps per week constraint for students and maybe also an early max 0 beginnings at second hour constraint for students.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="427"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="429"/>
         <source>Please read Help/Important tips, advice 2). It is IMPORTANT to remove redundant min days between activities constraints with weight &lt; 100% after adding constraints same starting time. Click the Help button!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="788"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="790"/>
         <source>Please read Help/Important tips, advice 2). It is IMPORTANT to remove redundant min days between activities constraints with weight &lt; 100% after adding constraints max 0 days between activities. Click the Help button!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="2409"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="2411"/>
         <source>Please read Help/Important tips, advice 2). It is IMPORTANT to remove redundant min (half) days between activities constraints with weight &lt; 100% after adding constraints max 0 half days between activities. Click the Help button!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6848"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6860"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6874"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6881"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6905"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6952"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6962"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6972"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6982"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7000"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7028"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7042"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7057"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7071"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7085"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7100"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7133"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7168"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7224"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7253"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6851"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6863"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6877"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6884"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6908"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6955"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6965"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6975"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6985"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7003"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7031"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7045"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7060"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7074"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7088"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7103"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7136"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7171"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7227"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7256"/>
         <source>FET help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6867"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6870"/>
         <source>Please make sure that the selected activities are not forced to be consecutive by some other constraint &apos;min days between activities&apos; (with &apos;consecutive if on the same day&apos; true), by a constraint &apos;two activities consecutive&apos;, or by a constraint &apos;two activities grouped&apos; (also, if you have a constraint &apos;three activities grouped&apos; related to the selected activities, make sure that the constraints do not contradict).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6881"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6884"/>
         <source>This constraint is used to specify that for some components of a type of activities, for instance for math activities, you need that from say 4-5 per week, at least the first 2 to be early (say in the first 4 hours).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6886"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6910"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6889"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6913"/>
         <source>This is simple: just add 2 constraints of this type, with the component number 1, (then 2) and the corresponding subject (you can also define teacher, students set and activity tag, of course).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6890"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6915"/>
-        <source>Note: if you have math with 4 and 5 splits and want to constrain 2 subactivities for those with 4 per week and 3 subactivities for those with 5 per week, you can add constraints only for math with components 3, 4 and 5 (nice trick)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/listtimeconstraints.cpp" line="6893"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="6918"/>
+        <source>Note: if you have math with 4 and 5 splits and want to constrain 2 subactivities for those with 4 per week and 3 subactivities for those with 5 per week, you can add constraints only for math with components 3, 4 and 5 (nice trick)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6896"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6921"/>
         <source>Note: if an activity does not belong to a larger group (is a single activity), it is considered to have component number 1. As an advice, if you have activities of say biology split into 1 or 2 per week and want to constrain only one component if there are 2 per week, add a constraint for biology with component number=2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6897"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6922"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6900"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6925"/>
         <source>Note: if a teacher or a students set cannot have activities in some slots because of this constraint, gaps will be counted (if you have max gaps constraints). So be careful if you add this constraint for all subactivities, for only a teacher or for only a students set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6905"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6908"/>
         <source>This constraint is used to specify that for some components of a type of activities, for instance for math activities, you need that from say 4-5 per week, at least the first 2 to start early (say in the first 4 hours).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6932"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6935"/>
         <source>Help about the constraint max days between activities:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6934"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6937"/>
         <source>This constraint was suggested for the following situation: a user needed that activities A1, A2 and A3 to be in consecutive days (like: A1 on Tuesday, A2 on Wednesday and A3 on Thursday. So, they must be in 3 consecutive days). This is simple: add a constraint max days between activities for A1, A2 and A3, with max 2 days between them. It is supposed that these activities are constrained not to be on the same day by a constraint min days between activities.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6939"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6942"/>
         <source>So, the general situation: this constraint ensures that between each pair from the selected activities, the distance in days is at most the selected value. Distance = 1 day between a pair A1 and A2 means that A1 and A2 are in consecutive days (like Thursday and Friday). Distance = 3 days means that A1 and A2 are 3 days apart, for instance Monday and Thursday.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6943"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6946"/>
         <source>Another example: teacher T wants to ensure that his activities take place in at most 4 consecutive days (so, from Monday to Thursday or from Tuesday to Friday). Then, add all his activities and max days between them = 3.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6947"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6950"/>
         <source>IMPORTANT: after adding constraints of this type with max days between the activities = 0, it is necessary (otherwise the generation might be impossible) to remove &apos;bad&apos; (redundant and with weight &lt; 100%) constraints min days between activities. If you are sure that you don&apos;t have &apos;bad&apos; constraints, you can skip this step, but it doesn&apos;t hurt to do it, as a precaution. Also, you don&apos;t have to do that after each added constraint, but only once after adding more constraints of this type. Please read Help/Important tips - tip number 2 for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6959"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6962"/>
         <source>To use this constraint, you need to specify a set of activities, a set of time slots, and a maximum number of time slots from those selected which can be occupied by the specified activities.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6969"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6972"/>
         <source>To use this constraint, you need to specify a set of activities, a set of time slots, and a maximum number of activities from those selected which can be simultaneous in each of the selected time slots.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6979"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6982"/>
         <source>To use this constraint, you need to specify a set of activities, a set of time slots, and a minimum number of time slots from those selected which must be occupied by the specified activities.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6991"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6994"/>
         <source>To use this constraint, you need to specify a set of activities, a set of time slots, and a minimum number of activities from those selected which must be simultaneous in each of the selected time slots.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6994"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="6997"/>
         <source>You can select the option &apos;Allow empty slots&apos;. This means that each selected slot may either have the minimum number of simultaneous activities out of the selected ones, or no activities out of the selected ones.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="6997"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7000"/>
         <source>IMPORTANT NOTE: If you need a solution without empty slots or if a solution with empty slots does not exist, please leave the option &apos;Allow empty slots&apos; unselected, because the generation is more efficient this way.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7023"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7026"/>
         <source>To use this constraint, you need to specify a set of activities, a set of time slots, and a maximum total number of activities from those selected which can be placed (even partially) in any of the selected time slots.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7026"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7029"/>
         <source>This constraint is useful to limit the number of activities in the overflow (or fake) blocks.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7035"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7049"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7038"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7052"/>
         <source>This constraint was suggested by %1, %2, and other users on this FET forum topic: %3.</source>
         <comment>%1 and %2 are two persons, %3 is an internet link</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7038"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7041"/>
         <source>It was designed to disallow the teachers to have activities in two consecutive real days, morning and afternoon on both, which can be tiring. If you can allow the teachers to have activities only on the afternoon of a real day (half day 1), then the whole next real day (both morning and afternoon, half days 2 and 3), then only on the next morning (half day 4), you can select the exception option. In this case only a succession of these four half-days: morning-afternoon-morning-afternoon is NOT allowed by the algorithm.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7053"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7056"/>
         <source>It was designed to disallow a teacher to have activities in two consecutive real days, morning and afternoon on both, which can be tiring. If you can allow the teacher to have activities only on the afternoon of a real day (half day 1), then the whole next real day (both morning and afternoon, half days 2 and 3), then only on the next morning (half day 4), you can select the exception option. In this case only a succession of these four half-days: morning-afternoon-morning-afternoon is NOT allowed by the algorithm.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7064"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7078"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7067"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7081"/>
         <source>This constraint was suggested by the user %1 on this FET forum topic: %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7067"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7070"/>
         <source>It was designed to disallow the students to have activities in two consecutive real days, morning and afternoon on both, which can be tiring. If you can allow the students to have activities only on the afternoon of a real day (half day 1), then the whole next real day (both morning and afternoon, half days 2 and 3), then only on the next morning (half day 4), you can select the exception option. In this case only a succession of these four half-days: morning-afternoon-morning-afternoon is NOT allowed by the algorithm.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7081"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7084"/>
         <source>It was designed to disallow a students set to have activities in two consecutive real days, morning and afternoon on both, which can be tiring. If you can allow the students set to have activities only on the afternoon of a real day (half day 1), then the whole next real day (both morning and afternoon, half days 2 and 3), then only on the next morning (half day 4), you can select the exception option. In this case only a succession of these four half-days: morning-afternoon-morning-afternoon is NOT allowed by the algorithm.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7094"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7097"/>
         <source>Help about the constraint max terms between activities:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7096"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7099"/>
         <source>This constraint was suggested for the following situation: a user needed that a set of activities to be in three consecutive terms. In this case add a constraint of type max terms between activities for these activities with max terms between activities = 2 (it is supposed that there are also other constraints that ensure that these activities occupy at least three terms).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7109"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7112"/>
         <source>Help about the constraint max half days between activities:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7111"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7114"/>
         <source>This constraint was suggested by two users, for two different situations in the Mornings-Afternoons mode:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7113"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7116"/>
         <source>1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7114"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7117"/>
         <source>This constraint was suggested by %1, so that a teacher does not work both on the afternoon of the last day of the week and the morning of the first day of the week. The user needs to add all the activities of the teacher, max half days between them = n_half_days_per_week-2. See the forum topic %2 for more details.</source>
         <comment>%1 is a person</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7118"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7121"/>
         <source>2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7119"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7122"/>
         <source>Also, this constraint was suggested by %1, to do the timetable for two weeks using tricks. Here are this user&apos;s words: &apos;For the Tunisian high schools I opted for the morning evening mode with two weeks A and B for the weekly activities with the constraints min days between activities 6, max days between activities 6 and the same starting hour with max different rooms 1. I added a trick so that the two activities are in the same half of the day: for each real room I created two rooms, one valid in the morning and the other valid in the evening; to avoid this bypass, is it possible to add a max half days between activities constraint?&apos; (Note: The constraint type min half days between activities was existing at the time of this post.) See the forum topic %2 for more details.</source>
         <comment>%1 is a person</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7128"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7131"/>
         <source>IMPORTANT: after adding constraints of this type with max half days between the activities = 0, it is necessary (otherwise the generation might be impossible) to remove &apos;bad&apos; (redundant and with weight &lt; 100%) constraints min (half) days between activities. If you are sure that you don&apos;t have &apos;bad&apos; constraints, you can skip this step, but it doesn&apos;t hurt to do it, as a precaution. Also, you don&apos;t have to do that after each added constraint, but only once after adding more constraints of this type. Please read Help/Important tips - tip number 2 for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7156"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7159"/>
         <source>Help about the constraint activities max hourly span:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7158"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7161"/>
         <source>This constraint was suggested by %1.</source>
         <comment>%1 is a user</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7160"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7163"/>
         <source>The activities can be on any days, but their hourly span must be limited by the specified maximum value.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7162"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7165"/>
         <source>More details and an example: the hourly span of the a set of activities is the number of hours between the start of the earliest activity and the end of the latest activity, neglecting their days. So, if for instance the constraint addresses A1, A2, A3, and A4, each of them having duration 1, and say: A1 is on day 1 hour 2, A2 is on day 1 hour 3, A3 is on day 3 hour 5, and A4 is on day 5 hour 2, then the earliest activities (neglecting their days) are A1 and A4 (starting at hour 2), and the latest activity (neglecting its day) is A3 (ending after hour 5). The hourly span of A1, A2, A3, and A4 is thus (5 + 1) - 2 = 4.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7175"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7178"/>
         <source>This constraint was suggested by %1 and %2.</source>
         <comment>%1 and %2 are the two persons who suggested this constraint.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7178"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7181"/>
         <source>The two sets must have the same number of activities, and the activities should have the same students sets, respectively.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7180"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7183"/>
         <source>Also, all the activities in such a constraint must have equal durations.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7182"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7185"/>
         <source>You can add exceptions for the time slots. If an activity is placed, even partially, in these exception time slots, it is not forced to respect this constraint.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7186"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7189"/>
         <source>More details, written by %1 and %2:</source>
         <comment>%1 and %2 are two persons.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7188"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7191"/>
         <source>*Two sets of activities have the same sections*
 This constraint can be used to create *identical groupings* of students for classes that meet multiple times with multiple sections. Note: both sets of activities MUST have the same number of activities and be all of the same duration.
 
@@ -58451,205 +58451,205 @@ Example 2:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7219"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7222"/>
         <source>Note (by %1): if you use overflow slots for the activities which cannot be placed in the real time slots, these overflow slots should be added as exception slots, in which an activity is not forced to respect this &apos;same sections&apos; constraint.</source>
         <comment>%1 is the person who wrote this note.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7240"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7243"/>
         <source>This constraint was suggested by %1.</source>
         <comment>%1 is the person who suggested this constraint.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7243"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7246"/>
         <source>This constraint is useful if you want to avoid small chunks of free time between classes. A gap is defined as a single FET hour between two activities. Select the students/teachers for whom you want this constraint applied to, then select the time slots where you DO NOT want gaps to appear. The maximum allowed number of single gaps is defaulted to zero. Increasing this number will result in more gaps appearing within the select time slots. This might be helpful in troubleshooting an impossible timetable. Note that two consecutive single gaps are not considered a &apos;gap&apos;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7286"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7478"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7289"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7481"/>
         <source>FET has met a critical error - aborting current operation, please report bug (old weight is not -1 and not (&gt;=0.0 and &lt;=100.0))</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7296"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7488"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7299"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7491"/>
         <source>FET has met a critical error - aborting current operation, please report bug (new weight is not -1 and not (&gt;=0.0 and &lt;=100.0))</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7305"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7497"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7308"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7500"/>
         <source>FET has met a critical error - aborting current operation, please report bug (old consecutive is not any, yes or no)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7311"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7503"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7314"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7506"/>
         <source>FET has met a critical error - aborting current operation, please report bug (new consecutive is not no_change, yes or no)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7322"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7514"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7325"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7517"/>
         <source>FET has met a critical error - aborting current operation, please report bug (old min days is not -1 or 1..ndaysperweek)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7332"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7524"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7335"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7527"/>
         <source>FET has met a critical error - aborting current operation, please report bug (new min days is not -1 or 1..ndaysperweek)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7343"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7346"/>
         <source>FET has met a critical error - aborting current operation, please report bug (old min days is not -1 or 1..nrealdaysperweek)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7353"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7356"/>
         <source>FET has met a critical error - aborting current operation, please report bug (new min days is not -1 or 1..nrealdaysperweek)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7364"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7535"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7367"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7538"/>
         <source>FET has met a critical error - aborting current operation, please report bug (old nActivities is not -1 or &gt;=1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7420"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7423"/>
         <source>There were inspected (and possibly modified) %1 constraints min days between activities matching your criteria</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7424"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7595"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7427"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7598"/>
         <source>Read Help/Important tips - tip 2) for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7427"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7430"/>
         <source>Modified multiple constraints min days between activities with filter:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7430"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7601"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7433"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7604"/>
         <source>Old weight percentage=%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7432"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7603"/>
-        <source>New weight percentage=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/listtimeconstraints.cpp" line="7435"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="7606"/>
+        <source>New weight percentage=%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7438"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7609"/>
         <source>Old consecutive if same day=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7437"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7608"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7440"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7611"/>
         <source>New consecutive if same day=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7440"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7443"/>
         <source>Old min days=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7442"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7445"/>
         <source>New min days=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7445"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7616"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7448"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7619"/>
         <source>Old number of activities=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7591"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7594"/>
         <source>There were inspected (and possibly modified) %1 constraints min half days between activities matching your criteria</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7598"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7601"/>
         <source>Modified multiple constraints min half days between activities with filter:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7611"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7614"/>
         <source>Old min half days=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7613"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7616"/>
         <source>New min half days=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7678"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7681"/>
         <source>No: %1 / %2</source>
         <comment>%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7714"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7717"/>
         <source>Activate the selected time constraints?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7742"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7745"/>
         <source>Activated %1 time constraints:</source>
         <comment>%1 is the number of activated time constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7765"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7768"/>
         <source>Activated %1 time constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7779"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7782"/>
         <source>Deactivate the selected time constraints? (Note that the basic compulsory time constraints will not be deactivated, even if they are selected.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7809"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7812"/>
         <source>Deactivated %1 time constraints:</source>
         <comment>%1 is the number of deactivated time constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7832"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7835"/>
         <source>Deactivated %1 time constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7858"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7861"/>
         <source>Constraint comments</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7860"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7863"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7862"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7865"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7898"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7901"/>
         <source>Changed a constraint&apos;s comments. Constraint before:
 
 %1
@@ -58659,38 +58659,38 @@ Comments after:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7921"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7924"/>
         <source>%1 / %2 time constraints</source>
         <comment>%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7945"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7948"/>
         <source>Multiple selection: %1 / %2</source>
         <comment>It refers to the list of selected time constraints, %1 is the number of active selected time constraints, %2 is the total number of selected time constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7964"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7967"/>
         <source>No constraints from your selection can change their weight (remember that some types of constraints are allowed to have only 100% weight).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7974"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7983"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7977"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7986"/>
         <source>Modify the weights of the selected time constraints</source>
         <comment>The title of a dialog to modify the weights of the selected constraints with a single click</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7976"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7979"/>
         <source>You will modify %1 selected time constraints.
 Please enter the new weight percentage:</source>
         <comment>Translators: please split this field with new line characters, similarly to the original field, so that it is not too wide. You can use more lines (3 or even 4), if needed. %1 is the number of constraints which will change.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="7985"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="7988"/>
         <source>You will modify %1 time constraints from your
 selection (remember that some types of constraints
 are only allowed to have 100% weight, so %2
@@ -58700,7 +58700,7 @@ Please enter the new weight percentage:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8023"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8026"/>
         <source>Changed the weights of the following %1 selected time constraints to %2%:</source>
         <comment>%1 is the number of time constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints</comment>
         <translation type="unfinished"></translation>
@@ -71248,17 +71248,17 @@ teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="3425"/>
+        <location filename="../src/interface/fet.cpp" line="3426"/>
         <source>Please check the constraints related to the activity below, which might be impossible to schedule:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="3431"/>
+        <location filename="../src/interface/fet.cpp" line="3432"/>
         <source>No: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="3435"/>
+        <location filename="../src/interface/fet.cpp" line="3436"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
@@ -71278,312 +71278,312 @@ teachers</source>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="174"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="190"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="923"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1116"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1193"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="191"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="924"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1117"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1194"/>
         <source>FET information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="187"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="188"/>
         <source>Cannot generate - please modify your data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="282"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="476"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="648"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1061"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1138"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="283"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="477"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="649"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1062"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1139"/>
         <source>Number of broken constraints: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="284"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="478"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="647"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1063"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1140"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="285"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="479"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="648"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1064"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1141"/>
         <source>Total conflicts:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="288"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="482"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="653"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1067"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1144"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="289"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="483"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="654"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1068"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1145"/>
         <source>Conflicts listing (in decreasing order):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="349"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="543"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="350"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="544"/>
         <source>FET managed to schedule correctly the first %1 most difficult activities. You can see the initial order of placing the activities in the generate dialog. The activity which might cause problems might be the next activity in the initial order of evaluation. This activity is listed below:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="356"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="550"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="357"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="551"/>
         <source>Please check the constraints related to following possibly problematic activity (or teacher(s), or students set(s)):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="387"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="718"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1227"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="388"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="719"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1228"/>
         <source>No: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="403"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="404"/>
         <source>Generation stopped</source>
         <comment>The title of a dialog, meaning that the generation of the timetable was stopped.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="409"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="580"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="740"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1249"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1281"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="410"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="581"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="741"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1250"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1282"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="573"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="574"/>
         <source>Generation stopped (highest stage)</source>
         <comment>The title of a dialog, meaning that the generation of the timetable was stopped and highest stage timetable written.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="734"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="735"/>
         <source>Generation impossible</source>
         <comment>The title of a dialog, meaning that the generation of the timetable is impossible.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="841"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="874"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="842"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="875"/>
         <source>Number of broken soft constraints: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="845"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="846"/>
         <source>Total soft conflicts:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="960"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="961"/>
         <source>%1 out of %2 activities placed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="962"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="963"/>
         <source>Elapsed time:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="966"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="992"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="967"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="993"/>
         <source>%1 h</source>
         <comment>hours</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="972"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="996"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="973"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="997"/>
         <source>%1 m</source>
         <comment>minutes</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="977"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1000"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="978"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1001"/>
         <source>%1 s</source>
         <comment>seconds</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1013"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1014"/>
         <source>Please wait. It might take 5 to 20 minutes or even more for very difficult timetables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1015"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1016"/>
         <source>Activities are placed in order, most difficult ones first</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1017"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1018"/>
         <source>The process of searching is semi-randomized, which means that you will get different timetables and running times each time. You can choose the best timetable from several runs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1024"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1025"/>
         <source>It is recommended to strengthen the constraints step by step (for instance min days between activities weight or teacher(s) max gaps), as you obtain feasible timetables.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1027"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1028"/>
         <source>If your timetable gets stuck on a certain activity number k (and then begins going back), please check the initial evaluation order and see activity number k+1 in this list. You may find errors this way.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1031"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1032"/>
         <source>If the generation is successful, you cannot have hard conflicts. You can have only soft conflicts, corresponding to constraints with weight lower than 100.0%, which are reported in detail.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1034"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1035"/>
         <source>After the generation (successful or interrupted), you can view the current (complete or incomplete) timetable in the corresponding view timetable dialogs, and the list of conflicts in the view conflicts dialog.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1037"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1038"/>
         <source>The results are saved in your selected results directory in HTML and XML mode and the soft conflicts in text mode, along with the current data and timetable, saved as a .fet data file (with activities locked by constraints), so that you can open, modify and regenerate the current timetable later</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1041"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1042"/>
         <source>FET help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1194"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1195"/>
         <source>Highest stage results should now be written in the directory %1 in HTML and XML mode and the conflicts in txt mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1215"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1216"/>
         <source>Information relating difficult to schedule activities:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1217"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1218"/>
         <source>Please check the constraints related to the last activities in the list below, which might be difficult to schedule:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1220"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1221"/>
         <source>Here are the placed activities which lead to a difficulty, in order from the first one to the last (the last one FET failed to schedule and the last ones are difficult):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="280"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="474"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="645"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1059"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1136"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="281"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="475"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="646"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1060"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1137"/>
         <source>Conflicts</source>
         <comment>Title of dialog</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="323"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="517"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="324"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="518"/>
         <source>Generation interrupted! FET could not find a timetable. Maybe you can consider relaxing the constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="340"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="534"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="704"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="341"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="535"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="705"/>
         <source>The starting random seed was saved in the directory %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="342"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="706"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="343"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="707"/>
         <source>The partial results were saved in the directory %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="346"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="540"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="710"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="347"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="541"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="711"/>
         <source>Additional information relating to the impossible to schedule activities:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="365"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="391"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="559"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="722"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1231"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="366"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="392"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="560"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="723"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1232"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="377"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="378"/>
         <source>Please check the constraints related to the last activities in the list below, which might be impossible to schedule:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="380"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="381"/>
         <source>Here are the placed activities which lead to an inconsistency, in order from the first one to the last (the last one FET failed to schedule and the last ones are most likely impossible):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="536"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="537"/>
         <source>The partial highest-stage results were saved in the directory %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="688"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="689"/>
         <source>Generation impossible! Maybe you can consider relaxing the constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="712"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="713"/>
         <source>Please check the constraints related to the activity below, which might be impossible to schedule:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="838"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="839"/>
         <source>Soft conflicts</source>
         <comment>Title of dialog</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="849"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="850"/>
         <source>Soft conflicts listing (in decreasing order):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="872"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="873"/>
         <source>Generation successful!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="876"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="877"/>
         <source>Weighted soft conflicts: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="878"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="879"/>
         <source>The results were saved in the directory %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1117"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1118"/>
         <source>The generation results should now be written in the directory %1 in HTML and XML mode and the conflicts in txt mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1243"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1244"/>
         <source>FET - information about difficult activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1275"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1276"/>
         <source>FET - information about initial order of evaluation of activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1020"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1021"/>
         <source>Usually, there is no need to stop and restart the search. But for very difficult timetables this can help. Sometimes in such cases FET can become stuck and cycle forever, and restarting might produce a very fast solution.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -71598,18 +71598,18 @@ teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="191"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="192"/>
         <source>Your data cannot be processed - please modify it as instructed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="370"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="564"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="371"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="565"/>
         <source>Difficult activity cannot be computed - please report possible bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1004"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1005"/>
         <source>Max placed activities: %1 (at %2)</source>
         <comment>%1 represents the maximum number of activities placed, %2 is a time interval</comment>
         <translation type="unfinished"></translation>
@@ -71688,303 +71688,318 @@ teachers</source>
 <context>
     <name>TimetableGenerateMultipleForm</name>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="421"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="527"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="541"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1088"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1308"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="495"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="601"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="615"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1196"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1416"/>
         <source>FET information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="391"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="465"/>
         <source>For finished timetables, there are also saved the timetables in .fet format (data + constraints to lock the timetable), so that you can open each of them later.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="383"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="408"/>
+        <source>Restart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="457"/>
         <source>You can see the generated timetables on the hard disk, in HTML and XML formats and the soft conflicts in text format, or the latest timetable (or the latest highest-stage timetable, if no timetable was completed) in the Timetable/View menu.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="396"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="470"/>
         <source>Limit each</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="397"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="471"/>
         <source>The maximum and also the predefined value is %1 minutes, which means %2 hours, so virtually unlimited.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="399"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="473"/>
         <source>Note that if you start the multiple generation with the same global seed, the timetables will be identical (if you let the generations finish).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="400"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="474"/>
         <source>The seed of the first thread will be the global seed multiplied in each component with the number of threads (modulo m1=%1 and respectively m2=%2), for the second thread the seed will be the same as for the first thread, but +1 in each component (modulo m1 and respectively m2), for the third thread the seed will be the same as for the first thread, but +2 in each component, and so on.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="406"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="480"/>
         <source>This method was suggested by %1.</source>
         <comment>%1 is a person</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="407"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="481"/>
         <source>After generating multiple, the global seed will become equal to the seed of the first thread.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="409"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="483"/>
         <source>The number of threads is limited by your computer processor(s). If you have for example an 8 core/16 thread processor, the maximum allowed number of threads is 16. In this case you can make a comparison of generation time with 8 threads or with 16 threads. If you generate on a single thread, the speed of generation of a timetable will be in general a bit higher than that of obtaining a single timetable by generating on multiple threads, because the processor slows down if you are using more threads, but you will obtain more timetables in a comparable time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="417"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="491"/>
         <source>Note: If your file is very big, containing a very large number of teachers or total subgroups, generating on more threads might consume the processor cache and the generation might become very slow compared to generating on a single thread.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="521"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="595"/>
         <source>FET warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="521"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="595"/>
         <source>Data is wrong. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="538"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="612"/>
         <source>Cannot optimize - please modify your data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="582"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="640"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="659"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="721"/>
         <source>Generated: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="583"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="643"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="660"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="724"/>
         <source>Successfully: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="969"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1146"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1077"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1254"/>
         <source>From the interface you can access the last successfully generated timetable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="997"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1174"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1105"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1282"/>
         <source>(Thread %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1001"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1178"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1109"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1286"/>
         <source>Time exceeded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1022"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1199"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1130"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1307"/>
         <source>Maximum placed activities: %1 (at %2).</source>
         <comment>%1 represents the maximum number of activities placed, %2 is a time interval</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1048"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1225"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1156"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1333"/>
         <source>Conflicts</source>
         <comment>Title of dialog</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1051"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1228"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1159"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1336"/>
         <source>Number of broken constraints: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1055"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1232"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1163"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1340"/>
         <source>Total conflicts: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1058"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1235"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1166"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1343"/>
         <source>Conflicts listing (in decreasing order):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1080"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1261"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1188"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1369"/>
         <source>This file was automatically generated by FET %1 on %2.</source>
         <comment>%1 is the FET version, %2 is the date and time when this file was generated.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1070"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1075"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1247"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1252"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1522"/>
+        <source>FET - information about initial order of evaluation of activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1528"/>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1178"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1183"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1355"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1360"/>
         <source>The results were saved in the directory %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="386"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="460"/>
         <source>Note that, for large data, each timetable might occupy more megabytes of hard disk space, so make sure you have enough space (you can check the dimension of a single timetable as a precaution). Each attempted timetable will correspond to a folder in %1 that contains information about the random seed that was used, but only completed timetables will contain the full set of timetable files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="394"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="468"/>
         <source>If you get an impossible timetable, please enter menu Generate (single) and see the initial order of evaluation of activities; this might help.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="404"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="478"/>
         <source>(If the component of a such computed seed will be all zeroes, we will add to the components of that seed the total number of threads instead of the thread number starting from zero.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="414"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="488"/>
         <source>WARNING: As you use more threads, the processor will be used to a greater extent and it might overheat. Also, the system might become slow or nonreponsive.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="528"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="602"/>
         <source>You have entered the generation with uninitialized rules or 0 activities...aborting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="941"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1049"/>
         <source>Generation interrupted!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1003"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1180"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1111"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1288"/>
         <source>Generation stopped.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1072"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1077"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1180"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1185"/>
         <source>Total searching time was: %1h %2m %3s.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1138"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1246"/>
         <source>Generation finished!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1249"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1254"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1357"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1362"/>
         <source>Total searching time was %1h %2m %3s.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1011"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1188"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1375"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1119"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1296"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1486"/>
         <source>%1 h</source>
         <comment>hours</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="973"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1150"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1081"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1258"/>
         <source>From the interface you can access the last highest-stage timetable and on the disk there were saved all the highest-stage timetables (the highest number of scheduled activities is %1, reached in %2 timetables).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="978"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1155"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1086"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1263"/>
         <source>On the disk there were saved all the highest-stage timetables (the highest number of scheduled activities is %1, reached in %2 timetables).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1015"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1192"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1379"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1123"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1300"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1490"/>
         <source>%1 m</source>
         <comment>minutes</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1019"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1196"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1383"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1127"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1304"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1494"/>
         <source>%1 s</source>
         <comment>seconds</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1387"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1498"/>
         <source>Max placed activities: %1 (at %2)</source>
         <comment>%1 represents the maximum number of activities placed, %2 is a time interval</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1390"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1501"/>
         <source>Current timetable: %1 out of %2 activities placed, %3h %4m %5s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="340"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="406"/>
         <source>Current timetable: 0 out of 0 activities placed, 0h 0m 0s
 Max placed activities: 0 (at 0 s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="396"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="470"/>
         <source>You can limit the search time, by specifying the maximum number of minutes allowed to spend for each timetable (option %1).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="542"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="616"/>
         <source>Your data cannot be processed - please modify it as instructed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="682"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1026"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1029"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1031"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1203"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1206"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1208"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="763"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1134"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1137"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1139"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1311"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1314"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1316"/>
         <source>Timetable no: %1 =&gt; %2</source>
         <comment>%1 is the number of this timetable when generating multiple timetables, %2 is its description</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="707"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="788"/>
         <source>Soft conflicts</source>
         <comment>Title of dialog</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="710"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="791"/>
         <source>Number of broken soft constraints: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="714"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="795"/>
         <source>Total soft conflicts: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="717"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="798"/>
         <source>Soft conflicts listing (in decreasing order):</source>
         <translation type="unfinished"></translation>
     </message>
@@ -71992,7 +72007,7 @@ Max placed activities: 0 (at 0 s)</source>
 <context>
     <name>TimetableGenerateMultipleForm_template</name>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="89"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="101"/>
         <source>minutes</source>
         <extracomment>This is a label with the measure of time limit units for each timetable</extracomment>
         <translation type="unfinished"></translation>
@@ -72003,54 +72018,65 @@ Max placed activities: 0 (at 0 s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="41"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="39"/>
         <source>Current timetable: 0 out of 0 activities placed, 0h 0m 0s
 Max placed activities: 0 (at 0 s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="64"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="56"/>
+        <source>Restart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="76"/>
         <source>Limit each</source>
         <extracomment>In fact this is the time limit for search of each timetable, but I keep length short</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="99"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="111"/>
         <source>Timetables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="121"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="133"/>
         <source>Threads</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="135"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="147"/>
         <source>Generated: 0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="142"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="154"/>
         <source>Successfully: 0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="155"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="167"/>
         <source>Start</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="172"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="174"/>
+        <source>Order</source>
+        <comment>It means &apos;View initial order of placing the activities&apos;, but we need to make it very short.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="191"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="179"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="198"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="162"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="181"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
@@ -75783,46 +75809,55 @@ Bottom: %4</source>
 <context>
     <name>TimetablingThread</name>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="144"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="158"/>
         <source>(Thread %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="149"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="163"/>
+        <source>Generation was stopped by user</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="200"/>
         <source>Timetable impossible to generate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="154"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="205"/>
         <source>Time exceeded for current timetable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="171"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="180"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="222"/>
         <source>%1 h</source>
         <comment>hours</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="175"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="184"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="226"/>
         <source>%1 m</source>
         <comment>minutes</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="179"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="188"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="230"/>
         <source>%1 s</source>
         <comment>seconds</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="183"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="192"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="234"/>
         <source>Max placed activities: %1 (at %2)</source>
         <comment>%1 represents the maximum number of activities placed, %2 is a time interval</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="206"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="257"/>
         <source>Timetable breaks %1 soft constraints, has %2 soft conflicts total, and was generated in %3 hours, %4 minutes and %5 seconds.</source>
         <translation type="unfinished"></translation>
     </message>

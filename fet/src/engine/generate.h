@@ -375,11 +375,13 @@ public:
 	int timeToHighestStage; //seconds
 	
 	std::atomic<bool> abortOptimization;
+
+	std::atomic<bool> restart;
 	
 	bool precompute(QWidget* parent, QTextStream* maxPlacedActivityStream=nullptr);
 	
-	void generateWithSemaphore(int maxSeconds, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream=nullptr);
-	void generate(int maxSeconds, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream=nullptr);
+	void generateWithSemaphore(int maxSeconds, bool& restarted, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream=nullptr);
+	void generate(int maxSeconds, bool& restarted, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream=nullptr);
 	
 	void moveActivity(int ai, int fromslot, int toslot, int fromroom, int toroom, const QList<int>& fromRealRoomsList, const QList<int>& toRealRoomsList);
 	

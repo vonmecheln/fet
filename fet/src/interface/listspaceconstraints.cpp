@@ -41,6 +41,8 @@
 #include <QBrush>
 #include <QPalette>
 
+#include <QSizePolicy>
+
 #include <QSettings>
 
 extern Timetable gt;
@@ -1008,6 +1010,7 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 	eventLoop=new QEventLoop;
 
 	splitter=new QSplitter;
+	splitter->setSizePolicy(splitter->sizePolicy().horizontalPolicy(), QSizePolicy::Expanding);
 
 	dialog=new ListSpaceConstraintsDialog(parent, dialogName, dialogTitle, eventLoop, splitter,
 										  showRelatedCheckBox);

@@ -38,12 +38,15 @@
 #include <QScrollBar>
 
 #include <QVBoxLayout>
+#include <QHBoxLayout>
 
 #include <QDir>
 
 #include <QApplication>
 #include <QCoreApplication>
 #include <QtGlobal>
+
+#include <QSizePolicy>
 
 #include <QProcess>
 //#include <QTimer>
@@ -76,11 +79,18 @@ extern const QString PROGRAM;
 
 extern Generate gen;
 
+extern QString initialOrderOfActivities;
+
 //static Matrix1D<Worker> generateMultipleWorker;
 //static Matrix1D<QThread> generateMultipleThread;
+
 static int allNThreads;
+
 static Matrix1D<QSemaphore> semaphoreTimetableStarted;
 static Matrix1D<QSemaphore> semaphoreTimetableFinished;
+
+//static QSemaphore semaphoreRestarted;
+
 /*static Matrix1D<std::binary_semaphore> semaphoreTimetableStarted;
 static Matrix1D<std::binary_semaphore> semaphoreTimetableFinished;*/
 /*static Matrix1D<std::condition_variable> cvTimetableStarted;
@@ -110,15 +120,19 @@ static Matrix1D<time_t> process_start_time;
 
 static Matrix1D<TimetablingThread> timetablingThreads;
 
+const QString settingsNameMultiple=QString("TimetableGenerateMultipleInitialOrderForm");
+
 void TimetablingThread::startGenerating()
 {
 	//time_t start_time;
 
-	genMultiMatrix[_nThread].abortOptimization=false;
+	assert(genMultiMatrix[_nThread].abortOptimization==false);
+	assert(genMultiMatrix[_nThread].restart==false);
 	
 	//time(&start_time);
 	time(&process_start_time[_nThread]);
 
+	bool restarted;
 	bool impossible;
 	bool timeExceeded;
 
@@ -128,7 +142,7 @@ void TimetablingThread::startGenerating()
 	genMultiMatrix[_nThread].semaphorePlacedActivity.tryAcquire(); //this has effect after forcingly stopping the generation on this thread
 	assert(genMultiMatrix[_nThread].semaphorePlacedActivity.available()==0);
 	assert(genMultiMatrix[_nThread].semaphoreFinished.available()==0);
-	genMultiMatrix[_nThread].generateWithSemaphore(timeLimit, impossible, timeExceeded, true); //true means threaded
+	genMultiMatrix[_nThread].generateWithSemaphore(timeLimit, restarted, impossible, timeExceeded, true); //true means threaded
 	//genMultiMatrix[_nThread].myMutex.lock();
 	if(genMultiMatrix[_nThread].abortOptimization){
 		//genMultiMatrix[_nThread].myMutex.unlock();
@@ -145,7 +159,44 @@ void TimetablingThread::startGenerating()
 	else
 		s=QString("");
 
-	if(impossible){
+	if(restarted){
+		s+=tr("Generation was stopped by user");
+
+		////////2011-05-26
+		int mact=genMultiMatrix[_nThread].maxActivitiesPlaced;
+		int mseconds=genMultiMatrix[_nThread].timeToHighestStage;
+
+		bool zero=false;
+		if(mseconds==0)
+			zero=true;
+		int hh=mseconds/3600;
+		mseconds%=3600;
+		int mm=mseconds/60;
+		mseconds%=60;
+		int ss=mseconds;
+		QString tim;
+		if(hh>0){
+			tim+=" ";
+			tim+=tr("%1 h", "hours").arg(hh);
+		}
+		if(mm>0){
+			tim+=" ";
+			tim+=tr("%1 m", "minutes").arg(mm);
+		}
+		if(ss>0 || zero){
+			tim+=" ";
+			tim+=tr("%1 s", "seconds").arg(ss);
+		}
+		tim.remove(0, 1);
+		s+=QString(". ");
+		s+=tr("Max placed activities: %1 (at %2)", "%1 represents the maximum number of activities placed, %2 is a time interval").arg(mact).arg(tim);
+		///////
+
+		s+=QString(".");
+
+		ok=false;
+	}
+	else if(impossible){
 		s+=tr("Timetable impossible to generate");
 		s+=QString(".");
 		ok=false;
@@ -215,7 +266,11 @@ void TimetablingThread::startGenerating()
 
 	emit timetableGenerated(_nThread, nOverallTimetable+1, s, ok);
 
+	//if(restarted)
+	//	semaphoreRestarted.release();
+
 	semaphoreTimetableFinished[_nThread].acquire();
+
 	/*std::mutex mtx;
 	std::unique_lock<std::mutex> lck(mtx);
 	cvTimetableFinished[_nThread].wait(lck);*/
@@ -263,11 +318,14 @@ TimetableGenerateMultipleForm::TimetableGenerateMultipleForm(QWidget* parent): Q
 	connect(stopPushButton, &QPushButton::clicked, this, &TimetableGenerateMultipleForm::stop);
 	connect(closePushButton, &QPushButton::clicked, this, &TimetableGenerateMultipleForm::closePressed);
 	connect(helpPushButton, &QPushButton::clicked, this, &TimetableGenerateMultipleForm::help);
+	connect(seeInitialOrderPushButton, &QPushButton::clicked, this, &TimetableGenerateMultipleForm::seeInitialOrder);
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 	
 	generation_running_multi=false;
+	
+	pushButton->setDisabled(true);
 
 	startPushButton->setEnabled(true);
 	stopPushButton->setDisabled(true);
@@ -275,8 +333,14 @@ TimetableGenerateMultipleForm::TimetableGenerateMultipleForm(QWidget* parent): Q
 	minutesGroupBox->setEnabled(true);
 	timetablesGroupBox->setEnabled(true);
 	threadsGroupBox->setEnabled(true);
+	seeInitialOrderPushButton->setDisabled(true);
 
 	labels.append(textLabel);
+
+	restartPushButtons.append(pushButton);
+	//QPushButton* pb=new QPushButton(tr("Restart"), wd);
+	//pb->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+	connect(pushButton, &QPushButton::clicked, this, &TimetableGenerateMultipleForm::restartCurrentThread);
 
 	nThreadsSpinBox->setMinimum(1);
 	nThreadsSpinBox->setMaximum(std::max(1, QThread::idealThreadCount()));
@@ -325,6 +389,8 @@ void TimetableGenerateMultipleForm::nThreadsChanged(int nt)
 			timetablesTabWidget->removeTab(i);
 			assert(labels.count()>0);
 			labels.removeLast();
+			assert(restartPushButtons.count()>0);
+			restartPushButtons.removeLast();
 			delete wd;
 		}
 		
@@ -338,12 +404,20 @@ void TimetableGenerateMultipleForm::nThreadsChanged(int nt)
 			QWidget* wd=new QWidget(timetablesTabWidget);
 			
 			QLabel* lb=new QLabel(tr("Current timetable: 0 out of 0 activities placed, 0h 0m 0s\nMax placed activities: 0 (at 0 s)"), wd);
-			QVBoxLayout* bl=new QVBoxLayout(wd);
+
+			QPushButton* pb=new QPushButton(tr("Restart"), wd);
+			pb->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+			pb->setDisabled(true);
+			connect(pb, &QPushButton::clicked, this, &TimetableGenerateMultipleForm::restartCurrentThread);
+
+			QHBoxLayout* bl=new QHBoxLayout(wd);
 			bl->addWidget(lb);
+			bl->addWidget(pb);
 			
 			timetablesTabWidget->addTab(wd, QString::number(i+1));
 			
 			labels.append(lb);
+			restartPushButtons.append(pb);
 		}
 		
 		timetablesTabWidget->setCurrentIndex(timetablesTabWidget->count()-1);
@@ -546,6 +620,8 @@ void TimetableGenerateMultipleForm::start(){
 
 	//assert(controllersList.count()==0);
 	for(int t=0; t<nThreads; t++){
+		restartPushButtons.at(t)->setEnabled(true);
+
 		//generateMultipleWorker[t].disconnect(); //disconnect all connections for this QThread
 		genMultiMatrix[t].disconnect(); //disconnect all connections for this Generate
 		
@@ -572,6 +648,7 @@ void TimetableGenerateMultipleForm::start(){
 	timetablesGroupBox->setDisabled(true);
 	closePushButton->setDisabled(true);
 	threadsGroupBox->setDisabled(true);
+	seeInitialOrderPushButton->setEnabled(true);
 
 	nGeneratedTimetables=0;
 	nSuccessfullyGeneratedTimetables=0;
@@ -591,6 +668,9 @@ void TimetableGenerateMultipleForm::start(){
 	
 	for(int t=0; t<nThreads; t++){
 		genMultiMatrix[t].c.makeUnallocated(gt.rules);
+
+		genMultiMatrix[t].abortOptimization=false;
+		genMultiMatrix[t].restart=false;
 		
 		timetablingThreads[t].nOverallTimetable=t;
 
@@ -613,6 +693,7 @@ void TimetableGenerateMultipleForm::start(){
 		//2023-09-27: Must put [=] here, [&] does not work, gives various crashes. I am not sure why, I think maybe because
 		//the TimetablingThread must be reinstantiated in the detached thread. Probably t goes out of scope.
 		//std::thread([=]{timetablingThreads[t].startGenerating();}).detach();
+
 		std::thread([t]{timetablingThreads[t].startGenerating();}).detach();
 	}
 }
@@ -763,6 +844,9 @@ void TimetableGenerateMultipleForm::timetableGenerated(int nThread, int timetabl
 	
 		genMultiMatrix[nThread].c.makeUnallocated(gt.rules);
 
+		genMultiMatrix[nThread].abortOptimization=false;
+		genMultiMatrix[nThread].restart=false;
+
 		//Controller* controller=new Controller();
 		//controllersList[nThread]=controller;
 		
@@ -863,6 +947,28 @@ void TimetableGenerateMultipleForm::timetableGenerated(int nThread, int timetabl
 	}
 }
 
+void TimetableGenerateMultipleForm::restartCurrentThread()
+{
+	if(!generation_running_multi){
+		return;
+	}
+	
+	int t=timetablesTabWidget->currentIndex();
+	assert(t>=0);
+	assert(t<nThreadsSpinBox->value());
+	
+	restartPushButtons.at(t)->setDisabled(true);
+	
+	if(genMultiMatrix[t].isRunning && !genMultiMatrix[t].restart){
+		genMultiMatrix[t].restart=true;
+		//semaphoreRestarted.acquire();
+		//genMultiMatrix[t].semaphorePlacedActivity.release();
+		//genMultiMatrix[t].semaphoreFinished.acquire();
+	}
+
+	restartPushButtons.at(t)->setEnabled(true);
+}
+
 void TimetableGenerateMultipleForm::stop()
 {
 	if(!generation_running_multi){
@@ -874,6 +980,8 @@ void TimetableGenerateMultipleForm::stop()
 	//assert(controllersList.count()==nThreadsSpinBox->value());
 
 	for(int t=0; t<nThreadsSpinBox->value(); t++){
+		restartPushButtons.at(t)->setDisabled(true);
+		
 		/*genMultiMatrix[t].myMutex.lock();
 		bool iR=genMultiMatrix[t].isRunning;
 		genMultiMatrix[t].myMutex.unlock();*/
@@ -1310,6 +1418,9 @@ void TimetableGenerateMultipleForm::generationFinished()
 	msgBox.exec();
 	//QMessageBox::information(this, TimetableGenerateMultipleForm::tr("FET information"), ms);
 	
+	for(int t=0; t<nThreadsSpinBox->value(); t++)
+		restartPushButtons.at(t)->setDisabled(true);
+	
 	startPushButton->setEnabled(true);
 	stopPushButton->setDisabled(true);
 	minutesGroupBox->setEnabled(true);
@@ -1399,4 +1510,36 @@ void TimetableGenerateMultipleForm::closePressed()
 {
 	if(!generation_running_multi)
 		this->close();
+}
+
+void TimetableGenerateMultipleForm::seeInitialOrder()
+{
+	QString s=initialOrderOfActivities;
+
+	//show the message in a dialog
+	QDialog dialog(this);
+	
+	dialog.setWindowTitle(tr("FET - information about initial order of evaluation of activities"));
+
+	QVBoxLayout* vl=new QVBoxLayout(&dialog);
+	QPlainTextEdit* te=new QPlainTextEdit();
+	te->setPlainText(s);
+	te->setReadOnly(true);
+	QPushButton* pb=new QPushButton(tr("OK"));
+
+	QHBoxLayout* hl=new QHBoxLayout();
+	hl->addStretch(1);
+	hl->addWidget(pb);
+
+	vl->addWidget(te);
+	vl->addLayout(hl);
+	connect(pb, &QPushButton::clicked, &dialog, &QDialog::close);
+
+	dialog.resize(700,500);
+	centerWidgetOnScreen(&dialog);
+	restoreFETDialogGeometry(&dialog, settingsNameMultiple);
+
+	setParentAndOtherThings(&dialog, this);
+	dialog.exec();
+	saveFETDialogGeometry(&dialog, settingsNameMultiple);
 }

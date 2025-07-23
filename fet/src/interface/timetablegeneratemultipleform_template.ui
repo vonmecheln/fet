@@ -34,16 +34,28 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout_4">
        <item row="0" column="0">
-        <layout class="QVBoxLayout" name="verticalLayout">
-         <item>
-          <widget class="QLabel" name="textLabel">
-           <property name="text">
-            <string>Current timetable: 0 out of 0 activities placed, 0h 0m 0s
+        <widget class="QLabel" name="textLabel">
+         <property name="text">
+          <string>Current timetable: 0 out of 0 activities placed, 0h 0m 0s
 Max placed activities: 0 (at 0 s)</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="pushButton">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Restart</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -153,6 +165,13 @@ Max placed activities: 0 (at 0 s)</string>
       <widget class="QPushButton" name="startPushButton">
        <property name="text">
         <string>Start</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="seeInitialOrderPushButton">
+       <property name="text">
+        <string comment="It means 'View initial order of placing the activities', but we need to make it very short.">Order</string>
        </property>
       </widget>
      </item>
