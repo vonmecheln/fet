@@ -28,7 +28,7 @@
 #include <QAbstractItemView>
 #include <QScrollBar>
 
-#include <QPlainTextEdit>
+#include <QTextEdit>
 
 #include <QSettings>
 #include <QObject>
@@ -496,7 +496,7 @@ void ModifySubactivityForm::help()
 	dialog.setWindowTitle(tr("FET - help on modifying subactivity(ies)"));
 
 	QVBoxLayout* vl=new QVBoxLayout(&dialog);
-	QPlainTextEdit* te=new QPlainTextEdit();
+	QTextEdit* te=new QTextEdit();
 	te->setPlainText(s);
 	te->setReadOnly(true);
 	QPushButton* pb=new QPushButton(tr("OK"));

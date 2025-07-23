@@ -65,7 +65,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPlainTextEdit" name="currentSubactivityTextEdit"/>
+        <widget class="QTextEdit" name="currentSubactivityTextEdit"/>
        </item>
        <item>
         <widget class="QGroupBox" name="filterGroupBox">

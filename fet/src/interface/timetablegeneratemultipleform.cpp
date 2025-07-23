@@ -40,6 +40,8 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 
+#include <QFrame>
+
 #include <QDir>
 
 #include <QApplication>
@@ -61,6 +63,8 @@
 #include <QSettings>
 
 #include <QFileInfo>
+
+#include <QFont>
 
 #include <QThread> //only for QThread::idealThreadCount()
 
@@ -128,6 +132,8 @@ void TimetablingThread::startGenerating()
 
 	assert(genMultiMatrix[_nThread].abortOptimization==false);
 	assert(genMultiMatrix[_nThread].restart==false);
+	assert(genMultiMatrix[_nThread].paused==false);
+	assert(genMultiMatrix[_nThread].pausedTime==0);
 	
 	//time(&start_time);
 	time(&process_start_time[_nThread]);
@@ -243,7 +249,9 @@ void TimetablingThread::startGenerating()
 		
 		time_t finish_time;
 		time(&finish_time);
-		int seconds=int(difftime(finish_time, process_start_time[_nThread]));
+		int seconds=int(difftime(finish_time, process_start_time[_nThread]))-genMultiMatrix[_nThread].pausedTime;
+		if(seconds<0)
+			seconds=0;
 		int hours=seconds/3600;
 		seconds%=3600;
 		int minutes=seconds/60;
@@ -309,6 +317,12 @@ TimetableGenerateMultipleForm::TimetableGenerateMultipleForm(QWidget* parent): Q
 	
 	//Not necessary, this property is set in the ui file.
 	//timetablesTabWidget->setUsesScrollButtons(true);
+
+	pausedLabel->setVisible(false);
+	
+	QFont font(pausedLabel->font());
+	font.setBold(true);
+	pausedLabel->setFont(font);
 	
 	currentResultsTextEdit->setReadOnly(true);
 	
@@ -325,7 +339,9 @@ TimetableGenerateMultipleForm::TimetableGenerateMultipleForm(QWidget* parent): Q
 	
 	generation_running_multi=false;
 	
-	pushButton->setDisabled(true);
+	pausePushButton->setDisabled(true);
+	pausePushButton->setText(tr("Pause", "Pause generation"));
+	restartPushButton->setDisabled(true);
 
 	startPushButton->setEnabled(true);
 	stopPushButton->setDisabled(true);
@@ -336,11 +352,17 @@ TimetableGenerateMultipleForm::TimetableGenerateMultipleForm(QWidget* parent): Q
 	seeInitialOrderPushButton->setDisabled(true);
 
 	labels.append(textLabel);
+	pausedLabels.append(pausedLabel);
 
-	restartPushButtons.append(pushButton);
+	pausePushButtons.append(pausePushButton);
+	pausePushButton->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+	connect(pausePushButton, &QPushButton::clicked, this, &TimetableGenerateMultipleForm::pauseCurrentThread);
+
+	restartPushButtons.append(restartPushButton);
+	restartPushButton->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 	//QPushButton* pb=new QPushButton(tr("Restart"), wd);
 	//pb->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-	connect(pushButton, &QPushButton::clicked, this, &TimetableGenerateMultipleForm::restartCurrentThread);
+	connect(restartPushButton, &QPushButton::clicked, this, &TimetableGenerateMultipleForm::restartCurrentThread);
 
 	nThreadsSpinBox->setMinimum(1);
 	nThreadsSpinBox->setMaximum(std::max(1, QThread::idealThreadCount()));
@@ -389,8 +411,16 @@ void TimetableGenerateMultipleForm::nThreadsChanged(int nt)
 			timetablesTabWidget->removeTab(i);
 			assert(labels.count()>0);
 			labels.removeLast();
+
 			assert(restartPushButtons.count()>0);
 			restartPushButtons.removeLast();
+
+			assert(pausePushButtons.count()>0);
+			pausePushButtons.removeLast();
+
+			assert(pausedLabels.count()>0);
+			pausedLabels.removeLast();
+
 			delete wd;
 		}
 		
@@ -403,21 +433,50 @@ void TimetableGenerateMultipleForm::nThreadsChanged(int nt)
 		for(int i=oldN; i<nt; i++){
 			QWidget* wd=new QWidget(timetablesTabWidget);
 			
+			QLabel* plb=new QLabel(tr("[PAUSED]", "Generation is paused"), wd);
+			plb->setVisible(false);
+			///////
+			QFont font(plb->font());
+			font.setBold(true);
+			plb->setFont(font);
+			
 			QLabel* lb=new QLabel(tr("Current timetable: 0 out of 0 activities placed, 0h 0m 0s\nMax placed activities: 0 (at 0 s)"), wd);
+			
+			QVBoxLayout* lbl=new QVBoxLayout;
+			lbl->addWidget(plb);
+			lbl->addWidget(lb);
 
-			QPushButton* pb=new QPushButton(tr("Restart"), wd);
-			pb->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-			pb->setDisabled(true);
-			connect(pb, &QPushButton::clicked, this, &TimetableGenerateMultipleForm::restartCurrentThread);
+			QPushButton* ppb=new QPushButton(tr("Pause", "Pause generation"), wd);
+			ppb->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+			ppb->setDisabled(true);
+			connect(ppb, &QPushButton::clicked, this, &TimetableGenerateMultipleForm::pauseCurrentThread);
 
-			QHBoxLayout* bl=new QHBoxLayout(wd);
-			bl->addWidget(lb);
-			bl->addWidget(pb);
+			// https://stackoverflow.com/questions/10053839/how-does-designer-create-a-line-widget
+			QFrame* line=new QFrame(wd);
+			line->setFrameShape(QFrame::HLine);
+			line->setFrameShadow(QFrame::Sunken);
+
+			QPushButton* rpb=new QPushButton(tr("Restart"), wd);
+			rpb->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+			rpb->setDisabled(true);
+			connect(rpb, &QPushButton::clicked, this, &TimetableGenerateMultipleForm::restartCurrentThread);
+
+			QVBoxLayout* vbl=new QVBoxLayout;
+			vbl->addWidget(ppb);
+			vbl->addWidget(line);
+			vbl->addWidget(rpb);
+
+			QHBoxLayout* hbl=new QHBoxLayout(wd);
+			hbl->addLayout(lbl);
+			hbl->addStretch();
+			hbl->addLayout(vbl);
 			
 			timetablesTabWidget->addTab(wd, QString::number(i+1));
 			
 			labels.append(lb);
-			restartPushButtons.append(pb);
+			pausePushButtons.append(ppb);
+			restartPushButtons.append(rpb);
+			pausedLabels.append(plb);
 		}
 		
 		timetablesTabWidget->setCurrentIndex(timetablesTabWidget->count()-1);
@@ -620,6 +679,13 @@ void TimetableGenerateMultipleForm::start(){
 
 	//assert(controllersList.count()==0);
 	for(int t=0; t<nThreads; t++){
+		pausePushButtons.at(t)->setEnabled(true);
+		pausePushButtons.at(t)->setText(tr("Pause", "Pause generation"));
+		
+		pausedLabels[t]->setVisible(false);
+		
+		labels[t]->setEnabled(true);
+
 		restartPushButtons.at(t)->setEnabled(true);
 
 		//generateMultipleWorker[t].disconnect(); //disconnect all connections for this QThread
@@ -671,6 +737,8 @@ void TimetableGenerateMultipleForm::start(){
 
 		genMultiMatrix[t].abortOptimization=false;
 		genMultiMatrix[t].restart=false;
+		genMultiMatrix[t].paused=false;
+		genMultiMatrix[t].pausedTime=0;
 		
 		timetablingThreads[t].nOverallTimetable=t;
 
@@ -761,7 +829,7 @@ void TimetableGenerateMultipleForm::timetableGenerated(int nThread, int timetabl
 
 		QString s=QString("");
 		s+=tr("Timetable no: %1 => %2", "%1 is the number of this timetable when generating multiple timetables, %2 is its description").arg(timetable).arg(description);
-		currentResultsTextEdit->appendPlainText(s);
+		currentResultsTextEdit->append(s);
 	
 		bool begin;
 		if(nGeneratedTimetables==1)
@@ -846,6 +914,8 @@ void TimetableGenerateMultipleForm::timetableGenerated(int nThread, int timetabl
 
 		genMultiMatrix[nThread].abortOptimization=false;
 		genMultiMatrix[nThread].restart=false;
+		genMultiMatrix[nThread].paused=false;
+		genMultiMatrix[nThread].pausedTime=0;
 
 		//Controller* controller=new Controller();
 		//controllersList[nThread]=controller;
@@ -958,6 +1028,12 @@ void TimetableGenerateMultipleForm::restartCurrentThread()
 	assert(t<nThreadsSpinBox->value());
 	
 	restartPushButtons.at(t)->setDisabled(true);
+	pausePushButtons.at(t)->setDisabled(true);
+	pausePushButtons.at(t)->setText(tr("Pause", "Pause generation"));
+	
+	pausedLabels.at(t)->setVisible(false);
+	
+	labels.at(t)->setEnabled(true);
 	
 	if(genMultiMatrix[t].isRunning && !genMultiMatrix[t].restart){
 		genMultiMatrix[t].restart=true;
@@ -967,6 +1043,39 @@ void TimetableGenerateMultipleForm::restartCurrentThread()
 	}
 
 	restartPushButtons.at(t)->setEnabled(true);
+	pausePushButtons.at(t)->setEnabled(true);
+}
+
+void TimetableGenerateMultipleForm::pauseCurrentThread()
+{
+	if(!generation_running_multi){
+		return;
+	}
+	
+	int t=timetablesTabWidget->currentIndex();
+	assert(t>=0);
+	assert(t<nThreadsSpinBox->value());
+	
+	if(genMultiMatrix[t].isRunning){
+		if(!genMultiMatrix[t].paused){
+			pausePushButtons.at(t)->setText(tr("Resume", "Resume generation"));
+			genMultiMatrix[t].paused=true;
+
+			labels[t]->setDisabled(true);
+
+			pausedLabels[t]->setVisible(true);
+			//QString s=tr("[PAUSED]", "Generation is paused")+QString("\n")+labels[t]->text();
+			//labels[t]->setText(s);
+		}
+		else{
+			pausedLabels[t]->setVisible(false);
+			
+			labels[t]->setEnabled(true);
+
+			pausePushButtons.at(t)->setText(tr("Pause", "Pause generation"));
+			genMultiMatrix[t].paused=false;
+		}
+	}
 }
 
 void TimetableGenerateMultipleForm::stop()
@@ -980,6 +1089,12 @@ void TimetableGenerateMultipleForm::stop()
 	//assert(controllersList.count()==nThreadsSpinBox->value());
 
 	for(int t=0; t<nThreadsSpinBox->value(); t++){
+		pausedLabels[t]->setVisible(false);
+		
+		labels[t]->setEnabled(true);
+
+		pausePushButtons.at(t)->setDisabled(true);
+		pausePushButtons.at(t)->setText(tr("Pause", "Pause generation"));
 		restartPushButtons.at(t)->setDisabled(true);
 		
 		/*genMultiMatrix[t].myMutex.lock();
@@ -1131,10 +1246,10 @@ void TimetableGenerateMultipleForm::stop()
 			//description+=QString(".");
 			
 			if(i>=1 || currentResultsTextEdit->toPlainText().isEmpty())
-				currentResultsTextEdit->appendPlainText(tr("Timetable no: %1 => %2", "%1 is the number of this timetable when generating multiple timetables, %2 is its description")
+				currentResultsTextEdit->append(tr("Timetable no: %1 => %2", "%1 is the number of this timetable when generating multiple timetables, %2 is its description")
 				 .arg(nTimetable).arg(description));
 			else
-				currentResultsTextEdit->appendPlainText(QString("\n")+tr("Timetable no: %1 => %2", "%1 is the number of this timetable when generating multiple timetables, %2 is its description")
+				currentResultsTextEdit->append(QString("\n")+tr("Timetable no: %1 => %2", "%1 is the number of this timetable when generating multiple timetables, %2 is its description")
 				 .arg(nTimetable).arg(description));
 			ms3+=tr("Timetable no: %1 => %2", "%1 is the number of this timetable when generating multiple timetables, %2 is its description")
 			 .arg(nTimetable).arg(description)+QString("\n");
@@ -1308,10 +1423,10 @@ void TimetableGenerateMultipleForm::generationFinished()
 			//description+=QString(".");
 
 			if(i>=1 || currentResultsTextEdit->toPlainText().isEmpty())
-				currentResultsTextEdit->appendPlainText(tr("Timetable no: %1 => %2", "%1 is the number of this timetable when generating multiple timetables, %2 is its description")
+				currentResultsTextEdit->append(tr("Timetable no: %1 => %2", "%1 is the number of this timetable when generating multiple timetables, %2 is its description")
 				 .arg(nTimetable).arg(description));
 			else
-				currentResultsTextEdit->appendPlainText(QString("\n")+tr("Timetable no: %1 => %2", "%1 is the number of this timetable when generating multiple timetables, %2 is its description")
+				currentResultsTextEdit->append(QString("\n")+tr("Timetable no: %1 => %2", "%1 is the number of this timetable when generating multiple timetables, %2 is its description")
 				 .arg(nTimetable).arg(description));
 			ms3+=tr("Timetable no: %1 => %2", "%1 is the number of this timetable when generating multiple timetables, %2 is its description")
 			 .arg(nTimetable).arg(description)+QString("\n");
@@ -1418,8 +1533,15 @@ void TimetableGenerateMultipleForm::generationFinished()
 	msgBox.exec();
 	//QMessageBox::information(this, TimetableGenerateMultipleForm::tr("FET information"), ms);
 	
-	for(int t=0; t<nThreadsSpinBox->value(); t++)
+	for(int t=0; t<nThreadsSpinBox->value(); t++){
+		pausedLabels[t]->setVisible(false);
+		
+		labels[t]->setEnabled(true);
+
+		pausePushButtons.at(t)->setDisabled(true);
+		pausePushButtons.at(t)->setText(tr("Pause", "Pause generation"));
 		restartPushButtons.at(t)->setDisabled(true);
+	}
 	
 	startPushButton->setEnabled(true);
 	stopPushButton->setDisabled(true);
@@ -1449,6 +1571,9 @@ void TimetableGenerateMultipleForm::activityPlaced(int nThread, int na)
 {
 	assert(nThread>=0);
 	assert(nThread<nThreadsSpinBox->value());
+	
+	//if(genMultiMatrix[nThread].paused) -> DON'T DO THIS!!! We need to release the semaphore below.
+	//	return;
 
 	genMultiMatrix[nThread].myMutex.lock();
 	int seconds=genMultiMatrix[nThread].searchTime; //seconds
@@ -1498,7 +1623,11 @@ void TimetableGenerateMultipleForm::activityPlaced(int nThread, int na)
 	s+=tr("Max placed activities: %1 (at %2)", "%1 represents the maximum number of activities placed, %2 is a time interval").arg(mact).arg(tim);
 	///////
 	
-	labels[nThread]->setText(tr("Current timetable: %1 out of %2 activities placed, %3h %4m %5s")
+	//QString prefixS;
+	//if(genMultiMatrix[nThread].paused)
+	//	prefixS=tr("[PAUSED]", "Generation is paused")+QString("\n");
+	
+	labels[nThread]->setText(/*prefixS+*/tr("Current timetable: %1 out of %2 activities placed, %3h %4m %5s")
 	 .arg(na)
 	 .arg(gt.rules.nInternalActivities)
 	 .arg(hours)
@@ -1522,7 +1651,7 @@ void TimetableGenerateMultipleForm::seeInitialOrder()
 	dialog.setWindowTitle(tr("FET - information about initial order of evaluation of activities"));
 
 	QVBoxLayout* vl=new QVBoxLayout(&dialog);
-	QPlainTextEdit* te=new QPlainTextEdit();
+	QTextEdit* te=new QTextEdit();
 	te->setPlainText(s);
 	te->setReadOnly(true);
 	QPushButton* pb=new QPushButton(tr("OK"));

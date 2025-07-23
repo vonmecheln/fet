@@ -15,7 +15,7 @@
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="1" column="0">
-    <widget class="QPlainTextEdit" name="certainlyPlainTextEdit"/>
+    <widget class="QTextEdit" name="certainlyTextEdit"/>
    </item>
    <item row="3" column="0">
     <layout class="QHBoxLayout">
@@ -48,7 +48,7 @@
     </layout>
    </item>
    <item row="2" column="0">
-    <widget class="QPlainTextEdit" name="possiblyPlainTextEdit"/>
+    <widget class="QTextEdit" name="possiblyTextEdit"/>
    </item>
   </layout>
  </widget>

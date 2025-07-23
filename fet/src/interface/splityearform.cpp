@@ -1061,7 +1061,7 @@ void SplitYearForm::help()
 	dialog.setWindowTitle(tr("FET - help on dividing a year"));
 
 	QVBoxLayout* vl=new QVBoxLayout(&dialog);
-	QPlainTextEdit* te=new QPlainTextEdit();
+	QTextEdit* te=new QTextEdit();
 	te->setPlainText(s);
 	te->setReadOnly(true);
 	QPushButton* pb=new QPushButton(tr("OK"));

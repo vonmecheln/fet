@@ -1,3 +1,11 @@
+ 7.3.1
+	- Crash bug fixed, when importing activities from CSV files (reported by KR_OBS).
+	- Added the option to pause the timetable generation (suggested by russell, GUEFFAZ REDA, Nahum Lipkunsky, and maybe other users in the past).
+	This option is available in the single timetable generation dialog and for each thread in the multiple timetable generation dialog but,
+	unfortunately, it will not allow the user to exit FET and resume the generation; you will need to keep the program and the computer running
+	(but, of course, the paused generations will not consume processing power). GUEFFAZ REDA had some useful additional suggestions regarding
+	this new feature: to show the [PAUSE] text with a bold text, and to disable the text edit widget showing the progress, if paused.
+	- Bug fixes: some texts were shown aligned to the left when using a right-to-left writing system (reported by GUEFFAZ REDA).
  7.3.0
 	- Added the possibility of restarting a certain thread in the generate multiple timetables dialog (suggested by Yush Yuen).
 	- Added the possibility of viewing the initial order of placing the activities in the generate multiple timetables dialog (suggested by Yush Yuen).

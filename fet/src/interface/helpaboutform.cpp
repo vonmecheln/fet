@@ -512,6 +512,10 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	references+=QString("26. https://stackoverflow.com/questions/4184468/sleep-for-milliseconds");
 	references+=QString("<br /><br />");
 	references+=QString("27. https://stackoverflow.com/questions/3070450/qt-how-do-i-change-the-text-color-of-one-item-of-a-qcombobox-c");
+	references+=QString("<br /><br />");
+	references+=QString("28. https://stackoverflow.com/questions/10053839/how-does-designer-create-a-line-widget");
+	references+=QString("<br /><br />");
+	references+=QString("29. Google Translate: https://translate.google.com/");
 
 	references+=QString("<br /><br /><br />");
 
@@ -1453,6 +1457,8 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("Carine Saade");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Fabio Lucchini");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("KR_OBS");
 	thanksTo+=QString("<br />");
 	
 	thanksToTextBrowser->setHtml(thanksTo);

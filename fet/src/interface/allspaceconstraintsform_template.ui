@@ -78,7 +78,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPlainTextEdit" name="currentConstraintTextEdit"/>
+        <widget class="QTextEdit" name="currentConstraintTextEdit"/>
        </item>
       </layout>
      </widget>

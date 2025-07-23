@@ -57,7 +57,7 @@ int STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
 /**
 The FET version
 */
-const QString FET_VERSION="7.3.0";
+const QString FET_VERSION="7.3.1";
 
 /**
 The version number of the data format, useful when saving/restoring the history to/from the disk.
@@ -172,7 +172,7 @@ QString protect2(const QString& str) //used for HTML
 	p.replace("\"", "&quot;");
 	p.replace(">", "&gt;");
 	p.replace("<", "&lt;");
-	//p.replace("'", "&apos;");
+	//p.replace("'", "&#39;"); (note that "&apos;" does not work for HTML 4)
 	return p;
 }
 
@@ -183,7 +183,7 @@ QString protect2vert(const QString& str) //used for HTML
 	p.replace("\"", "&quot;");
 	p.replace(">", "&gt;");
 	p.replace("<", "&lt;");
-	//p.replace("'", "&apos;");
+	//p.replace("'", "&#39;"); (note that "&apos;" does not work for HTML 4)
 
 	QString returnstring;
 	for(int i=0; i<p.size();i++){

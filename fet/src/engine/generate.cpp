@@ -90,6 +90,9 @@ using namespace std;
 
 #include <tuple>
 
+#include <thread>
+#include <chrono>
+
 #ifdef FET_COMMAND_LINE
 #include <QDir>
 
@@ -7500,6 +7503,11 @@ void Generate::generate(int maxSeconds, bool& restarted, bool& impossible, bool&
 	for(int added_act=0; added_act<gt.rules.nInternalActivities; added_act++){
 prevvalue:
 		
+		while(paused && !abortOptimization && !restart){
+			std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+			pausedTime+=1;
+		}
+		
 		if(abortOptimization)
 			return;
 		
@@ -7523,6 +7531,9 @@ prevvalue:
 		time_t crt_time;
 		time(&crt_time);
 		searchTime=int(difftime(crt_time, starting_time));
+		searchTime-=pausedTime;
+		if(searchTime<0)
+			searchTime=0;
 		
 		if(searchTime>=maxSeconds){
 			//isRunning=false;
@@ -7889,6 +7900,11 @@ prevvalue:
 		randomSwap(permutation[added_act], 0);
 		
 		if(!foundGoodSwap){
+			while(paused && !abortOptimization && !restart && !activityRetryLevel0TimeExceeded && !impossibleActivity){
+				std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+				pausedTime+=1;
+			}
+
 			if(abortOptimization){
 				if(threaded){
 					myMutex.unlock();
@@ -8075,6 +8091,9 @@ prevvalue:
 				time_t tmp;
 				time(&tmp);
 				timeToHighestStage=int(difftime(tmp, starting_time));
+				timeToHighestStage-=pausedTime;
+				if(timeToHighestStage<0)
+					timeToHighestStage=0;
 				
 				highestStageSolution.copy(gt.rules, c);
 
@@ -8152,11 +8171,23 @@ prevvalue:
 	time_t end_time;
 	time(&end_time);
 	searchTime=int(difftime(end_time, starting_time));
+	searchTime-=pausedTime;
+	if(searchTime<0)
+		searchTime=0;
+	
 #ifdef FET_COMMAND_LINE
-	cout<<"Total searching time (seconds): "<<int(difftime(end_time, starting_time))<<endl;
+	int ttcl=int(difftime(end_time, starting_time))-pausedTime;
+	if(ttcl<0)
+		ttcl=0;
+
+	cout<<"Total searching time (seconds): "<<ttcl<<endl;
 #else
 	if(VERBOSE){
-		cout<<"Total searching time (seconds): "<<int(difftime(end_time, starting_time))<<endl;
+		int ttv=int(difftime(end_time, starting_time))-pausedTime;
+		if(ttv<0)
+			ttv=0;
+
+		cout<<"Total searching time (seconds): "<<ttv<<endl;
 	}
 #endif
 
@@ -33002,11 +33033,22 @@ skip_here_if_already_allocated_in_time:
 			myMutex.unlock();
 			myMutex.lock();
 		}*/
+		
+		if(activity_count_impossible_tries<MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0){
+			while(paused && !abortOptimization && !restart){
+				std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+				pausedTime+=1;
+			}
+		}
+		
 		if(!abortOptimization && !restart && activity_count_impossible_tries<MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0){
 			if(activity_count_impossible_tries%10000==0){
 				time_t crt_time;
 				time(&crt_time);
 				searchTime=int(difftime(crt_time, starting_time));
+				searchTime-=pausedTime;
+				if(searchTime<0)
+					searchTime=0;
 
 				emit activityPlaced(nThread, currentlyNPlacedActivities);
 				if(isThreaded){

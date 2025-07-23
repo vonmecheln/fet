@@ -73,6 +73,8 @@ private slots:
 	
 	void seeInitialOrder();
 	
+	void pause();
+	
 //	void seeHighestStage();
 };
 

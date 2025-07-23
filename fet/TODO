@@ -2816,12 +2816,7 @@ Liviu Lalescu:
 
 Maybe better "Teacher works in a days group from a set of days groups".
 
-196---------------------------------------------------------
-From russell:
-
-Maybe adding a Pause/Resume to "Generate new timetable" window (changing Start button after press to Pause).
-
-(Related to item #277.)
+196-------------DONE in FET-7.3.1 on 14 July 2025----------
 
 197---------------------------------------------------------
 From nouvakis (on forum, also from mercurialuser, also on forum):
@@ -8704,10 +8699,7 @@ English translation by Google Translate:
 I would like to know if it is possible to establish a maximum number of hours per week for each teacher, so that, if by mistake, when creating activities, I were
 to assign more hours, the system would notify me.
 
-548---------------------------------------------------------
-From GUEFFAZ REDA:
-
-add : pause button generation
+548--------DONE in FET-7.3.1 on 14 July 2025----------------
 
 549---------------------------------------------------------
 From Cyrus Ireri (on forum):
@@ -10378,10 +10370,7 @@ of students for each year/group/subgroup the number at an activity can vary (be 
 year/group/subgroup), because we can always have last years students attending if they didn't pass or have students passing an exam one year in advance.
 So for me it would be great if I could also import the number of students at an activity when importing activities.
 
-663--------------------------------------------------------
-From Nahum Lipkunsky:
-
-Add pause/resume on the timetable generation screen, or even hibernation option.
+663---------DONE in FET-7.3.1 on 14 July 2025---------------
 
 664---------------------------------------------------------
 From GUEFFAZ REDA:
@@ -10944,6 +10933,11 @@ restriction. It could be just a symbol (for example: ✓) next to the menu optio
 From abuayham2016 (on forum):
 
 https://lalescu.ro/liviu/fet/forum/index.php?topic=6433.0
+
+A new suggestion for enhancing HTML-generated tables :
+
+Add New Option For Tables Repeating vertical and horizontal headers in the empty area or cell between days in order to make it easier for the user
+to read long tables, especially if the time is horizontal or vertical.
 
 718--------------------------------------------------------
 From Carine Saade (on guestbook):

@@ -31,7 +31,7 @@ extern Timetable gt;
 
 #include <QPushButton>
 #include <QCheckBox>
-#include <QPlainTextEdit>
+#include <QTextEdit>
 #include <QLineEdit>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
@@ -366,7 +366,7 @@ void RemoveRedundantForm::wasAccepted()
 	connect(acceptPB, &QPushButton::clicked, &dialog, &QDialog::accept);
 	connect(cancelPB, &QPushButton::clicked, &dialog, &QDialog::reject);
 	
-	QPlainTextEdit* removedText=new QPlainTextEdit();
+	QTextEdit* removedText=new QTextEdit();
 	
 	QString s=tr("The following %1 time constraints will be inactivated (their weight will be made 0%):",
 	 "%1 is the count of time constraints which will have their weight made 0%").arg(toBeRemovedCombinedList.count());

@@ -26,7 +26,7 @@
       <enum>Qt::Horizontal</enum>
      </property>
      <widget class="QListWidget" name="teachersListWidget"/>
-     <widget class="QPlainTextEdit" name="currentTeacherTextEdit"/>
+     <widget class="QTextEdit" name="currentTeacherTextEdit"/>
     </widget>
    </item>
    <item row="1" column="0">

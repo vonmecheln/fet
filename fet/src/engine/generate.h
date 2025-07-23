@@ -378,6 +378,9 @@ public:
 
 	std::atomic<bool> restart;
 	
+	std::atomic<bool> paused;
+	std::atomic<int> pausedTime; //seconds
+	
 	bool precompute(QWidget* parent, QTextStream* maxPlacedActivityStream=nullptr);
 	
 	void generateWithSemaphore(int maxSeconds, bool& restarted, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream=nullptr);

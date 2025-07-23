@@ -24,7 +24,7 @@
 
 #include <QMessageBox>
 
-#include <QPlainTextEdit>
+#include <QTextEdit>
 
 #include <QList>
 
@@ -610,7 +610,7 @@ void ModifyActivityForm::help()
 	dialog.setWindowTitle(tr("FET - help on modifying activity(ies)"));
 
 	QVBoxLayout* vl=new QVBoxLayout(&dialog);
-	QPlainTextEdit* te=new QPlainTextEdit();
+	QTextEdit* te=new QTextEdit();
 	te->setPlainText(s);
 	te->setReadOnly(true);
 	QPushButton* pb=new QPushButton(tr("OK"));

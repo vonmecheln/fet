@@ -334,7 +334,7 @@ void AdvancedLockUnlockForm::lockDay(QWidget* parent)
 	all->addLayout(left);
 	all->addLayout(right);
 	
-	QPlainTextEdit* addTim=new QPlainTextEdit();
+	QTextEdit* addTim=new QTextEdit();
 	addTim->setReadOnly(true);
 	addTim->setPlainText(addedTimeConstraintsString);
 	QLabel* labAddTim=new QLabel(tr("These time constraints will be added"));
@@ -343,7 +343,7 @@ void AdvancedLockUnlockForm::lockDay(QWidget* parent)
 	left->addWidget(labAddTim);
 	left->addWidget(addTim);
 
-	QPlainTextEdit* notAddTim=new QPlainTextEdit();
+	QTextEdit* notAddTim=new QTextEdit();
 	notAddTim->setReadOnly(true);
 	notAddTim->setPlainText(notAddedTimeConstraintsString);
 	QLabel* labNotAddTim=new QLabel(tr("These time constraints will NOT be added"));
@@ -352,7 +352,7 @@ void AdvancedLockUnlockForm::lockDay(QWidget* parent)
 	left->addWidget(labNotAddTim);
 	left->addWidget(notAddTim);
 
-	QPlainTextEdit* addSpa=new QPlainTextEdit();
+	QTextEdit* addSpa=new QTextEdit();
 	addSpa->setReadOnly(true);
 	addSpa->setPlainText(addedSpaceConstraintsString);
 	QLabel* labAddSpa=new QLabel(tr("These space constraints will be added"));
@@ -361,7 +361,7 @@ void AdvancedLockUnlockForm::lockDay(QWidget* parent)
 	right->addWidget(labAddSpa);
 	right->addWidget(addSpa);
 	
-	QPlainTextEdit* notAddSpa=new QPlainTextEdit();
+	QTextEdit* notAddSpa=new QTextEdit();
 	notAddSpa->setReadOnly(true);
 	notAddSpa->setPlainText(notAddedSpaceConstraintsString);
 	QLabel* labNotAddSpa=new QLabel(tr("These space constraints will NOT be added"));
@@ -610,7 +610,7 @@ void AdvancedLockUnlockForm::lockDay(QWidget* parent)
 	all->addLayout(left);
 	all->addLayout(right);
 	
-	QPlainTextEdit* remTim=new QPlainTextEdit();
+	QTextEdit* remTim=new QTextEdit();
 	remTim->setReadOnly(true);
 	remTim->setPlainText(removedTimeConstraintsString);
 	QLabel* labRemTim=new QLabel(tr("These time constraints will be removed"));
@@ -619,7 +619,7 @@ void AdvancedLockUnlockForm::lockDay(QWidget* parent)
 	left->addWidget(labRemTim);
 	left->addWidget(remTim);
 
-	QPlainTextEdit* notRemTim=new QPlainTextEdit();
+	QTextEdit* notRemTim=new QTextEdit();
 	notRemTim->setReadOnly(true);
 	notRemTim->setPlainText(notRemovedTimeConstraintsString);
 	QLabel* labNotRemTim=new QLabel(tr("These time constraints will NOT be removed"));
@@ -628,7 +628,7 @@ void AdvancedLockUnlockForm::lockDay(QWidget* parent)
 	left->addWidget(labNotRemTim);
 	left->addWidget(notRemTim);
 
-	QPlainTextEdit* remSpa=new QPlainTextEdit();
+	QTextEdit* remSpa=new QTextEdit();
 	remSpa->setReadOnly(true);
 	remSpa->setPlainText(removedSpaceConstraintsString);
 	QLabel* labRemSpa=new QLabel(tr("These space constraints will be removed"));
@@ -637,7 +637,7 @@ void AdvancedLockUnlockForm::lockDay(QWidget* parent)
 	right->addWidget(labRemSpa);
 	right->addWidget(remSpa);
 	
-	QPlainTextEdit* notRemSpa=new QPlainTextEdit();
+	QTextEdit* notRemSpa=new QTextEdit();
 	notRemSpa->setReadOnly(true);
 	notRemSpa->setPlainText(notRemovedSpaceConstraintsString);
 	QLabel* labNotRemSpa=new QLabel(tr("These space constraints will NOT be removed"));
@@ -908,7 +908,7 @@ void AdvancedLockUnlockForm::lockEndStudentsDay(QWidget* parent)
 	all->addLayout(left);
 	all->addLayout(right);
 	
-	QPlainTextEdit* addTim=new QPlainTextEdit();
+	QTextEdit* addTim=new QTextEdit();
 	addTim->setReadOnly(true);
 	addTim->setPlainText(addedTimeConstraintsString);
 	QLabel* labAddTim=new QLabel(tr("These time constraints will be added"));
@@ -917,7 +917,7 @@ void AdvancedLockUnlockForm::lockEndStudentsDay(QWidget* parent)
 	left->addWidget(labAddTim);
 	left->addWidget(addTim);
 
-	QPlainTextEdit* notAddTim=new QPlainTextEdit();
+	QTextEdit* notAddTim=new QTextEdit();
 	notAddTim->setReadOnly(true);
 	notAddTim->setPlainText(notAddedTimeConstraintsString);
 	QLabel* labNotAddTim=new QLabel(tr("These time constraints will NOT be added"));
@@ -926,7 +926,7 @@ void AdvancedLockUnlockForm::lockEndStudentsDay(QWidget* parent)
 	left->addWidget(labNotAddTim);
 	left->addWidget(notAddTim);
 
-	QPlainTextEdit* addSpa=new QPlainTextEdit();
+	QTextEdit* addSpa=new QTextEdit();
 	addSpa->setReadOnly(true);
 	addSpa->setPlainText(addedSpaceConstraintsString);
 	QLabel* labAddSpa=new QLabel(tr("These space constraints will be added"));
@@ -935,7 +935,7 @@ void AdvancedLockUnlockForm::lockEndStudentsDay(QWidget* parent)
 	right->addWidget(labAddSpa);
 	right->addWidget(addSpa);
 	
-	QPlainTextEdit* notAddSpa=new QPlainTextEdit();
+	QTextEdit* notAddSpa=new QTextEdit();
 	notAddSpa->setReadOnly(true);
 	notAddSpa->setPlainText(notAddedSpaceConstraintsString);
 	QLabel* labNotAddSpa=new QLabel(tr("These space constraints will NOT be added"));
@@ -1176,7 +1176,7 @@ void AdvancedLockUnlockForm::unlockEndStudentsDay(QWidget* parent)
 	all->addLayout(left);
 	all->addLayout(right);
 	
-	QPlainTextEdit* remTim=new QPlainTextEdit();
+	QTextEdit* remTim=new QTextEdit();
 	remTim->setReadOnly(true);
 	remTim->setPlainText(removedTimeConstraintsString);
 	QLabel* labRemTim=new QLabel(tr("These time constraints will be removed"));
@@ -1185,7 +1185,7 @@ void AdvancedLockUnlockForm::unlockEndStudentsDay(QWidget* parent)
 	left->addWidget(labRemTim);
 	left->addWidget(remTim);
 
-	QPlainTextEdit* notRemTim=new QPlainTextEdit();
+	QTextEdit* notRemTim=new QTextEdit();
 	notRemTim->setReadOnly(true);
 	notRemTim->setPlainText(notRemovedTimeConstraintsString);
 	QLabel* labNotRemTim=new QLabel(tr("These time constraints will NOT be removed"));
@@ -1194,7 +1194,7 @@ void AdvancedLockUnlockForm::unlockEndStudentsDay(QWidget* parent)
 	left->addWidget(labNotRemTim);
 	left->addWidget(notRemTim);
 
-	QPlainTextEdit* remSpa=new QPlainTextEdit();
+	QTextEdit* remSpa=new QTextEdit();
 	remSpa->setReadOnly(true);
 	remSpa->setPlainText(removedSpaceConstraintsString);
 	QLabel* labRemSpa=new QLabel(tr("These space constraints will be removed"));
@@ -1203,7 +1203,7 @@ void AdvancedLockUnlockForm::unlockEndStudentsDay(QWidget* parent)
 	right->addWidget(labRemSpa);
 	right->addWidget(remSpa);
 	
-	QPlainTextEdit* notRemSpa=new QPlainTextEdit();
+	QTextEdit* notRemSpa=new QTextEdit();
 	notRemSpa->setReadOnly(true);
 	notRemSpa->setPlainText(notRemovedSpaceConstraintsString);
 	QLabel* labNotRemSpa=new QLabel(tr("These space constraints will NOT be removed"));
@@ -1447,7 +1447,7 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 	all->addLayout(left);
 	all->addLayout(right);
 	
-	QPlainTextEdit* addTim=new QPlainTextEdit();
+	QTextEdit* addTim=new QTextEdit();
 	addTim->setReadOnly(true);
 	addTim->setPlainText(addedTimeConstraintsString);
 	QLabel* labAddTim=new QLabel(tr("These time constraints will be added"));
@@ -1456,7 +1456,7 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 	left->addWidget(labAddTim);
 	left->addWidget(addTim);
 
-	QPlainTextEdit* notAddTim=new QPlainTextEdit();
+	QTextEdit* notAddTim=new QTextEdit();
 	notAddTim->setReadOnly(true);
 	notAddTim->setPlainText(notAddedTimeConstraintsString);
 	QLabel* labNotAddTim=new QLabel(tr("These time constraints will NOT be added"));
@@ -1465,7 +1465,7 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 	left->addWidget(labNotAddTim);
 	left->addWidget(notAddTim);
 
-	QPlainTextEdit* addSpa=new QPlainTextEdit();
+	QTextEdit* addSpa=new QTextEdit();
 	addSpa->setReadOnly(true);
 	addSpa->setPlainText(addedSpaceConstraintsString);
 	QLabel* labAddSpa=new QLabel(tr("These space constraints will be added"));
@@ -1474,7 +1474,7 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 	right->addWidget(labAddSpa);
 	right->addWidget(addSpa);
 	
-	QPlainTextEdit* notAddSpa=new QPlainTextEdit();
+	QTextEdit* notAddSpa=new QTextEdit();
 	notAddSpa->setReadOnly(true);
 	notAddSpa->setPlainText(notAddedSpaceConstraintsString);
 	QLabel* labNotAddSpa=new QLabel(tr("These space constraints will NOT be added"));
@@ -1697,7 +1697,7 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 	all->addLayout(left);
 	all->addLayout(right);
 	
-	QPlainTextEdit* remTim=new QPlainTextEdit();
+	QTextEdit* remTim=new QTextEdit();
 	remTim->setReadOnly(true);
 	remTim->setPlainText(removedTimeConstraintsString);
 	QLabel* labRemTim=new QLabel(tr("These time constraints will be removed"));
@@ -1706,7 +1706,7 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 	left->addWidget(labRemTim);
 	left->addWidget(remTim);
 
-	QPlainTextEdit* notRemTim=new QPlainTextEdit();
+	QTextEdit* notRemTim=new QTextEdit();
 	notRemTim->setReadOnly(true);
 	notRemTim->setPlainText(notRemovedTimeConstraintsString);
 	QLabel* labNotRemTim=new QLabel(tr("These time constraints will NOT be removed"));
@@ -1715,7 +1715,7 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 	left->addWidget(labNotRemTim);
 	left->addWidget(notRemTim);
 
-	QPlainTextEdit* remSpa=new QPlainTextEdit();
+	QTextEdit* remSpa=new QTextEdit();
 	remSpa->setReadOnly(true);
 	remSpa->setPlainText(removedSpaceConstraintsString);
 	QLabel* labRemSpa=new QLabel(tr("These space constraints will be removed"));
@@ -1724,7 +1724,7 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 	right->addWidget(labRemSpa);
 	right->addWidget(remSpa);
 	
-	QPlainTextEdit* notRemSpa=new QPlainTextEdit();
+	QTextEdit* notRemSpa=new QTextEdit();
 	notRemSpa->setReadOnly(true);
 	notRemSpa->setPlainText(notRemovedSpaceConstraintsString);
 	QLabel* labNotRemSpa=new QLabel(tr("These space constraints will NOT be removed"));
@@ -1953,7 +1953,7 @@ void AdvancedLockUnlockForm::unlockAllWithoutTimetable(QWidget* parent)
 	all->addLayout(left);
 	all->addLayout(right);
 	
-	QPlainTextEdit* remTim=new QPlainTextEdit();
+	QTextEdit* remTim=new QTextEdit();
 	remTim->setReadOnly(true);
 	remTim->setPlainText(removedTimeConstraintsString);
 	QLabel* labRemTim=new QLabel(tr("These time constraints will be removed"));
@@ -1962,7 +1962,7 @@ void AdvancedLockUnlockForm::unlockAllWithoutTimetable(QWidget* parent)
 	left->addWidget(labRemTim);
 	left->addWidget(remTim);
 
-	QPlainTextEdit* notRemTim=new QPlainTextEdit();
+	QTextEdit* notRemTim=new QTextEdit();
 	notRemTim->setReadOnly(true);
 	notRemTim->setPlainText(notRemovedTimeConstraintsString);
 	QLabel* labNotRemTim=new QLabel(tr("These time constraints will NOT be removed"));
@@ -1971,7 +1971,7 @@ void AdvancedLockUnlockForm::unlockAllWithoutTimetable(QWidget* parent)
 	left->addWidget(labNotRemTim);
 	left->addWidget(notRemTim);
 
-	QPlainTextEdit* remSpa=new QPlainTextEdit();
+	QTextEdit* remSpa=new QTextEdit();
 	remSpa->setReadOnly(true);
 	remSpa->setPlainText(removedSpaceConstraintsString);
 	QLabel* labRemSpa=new QLabel(tr("These space constraints will be removed"));
@@ -1980,7 +1980,7 @@ void AdvancedLockUnlockForm::unlockAllWithoutTimetable(QWidget* parent)
 	right->addWidget(labRemSpa);
 	right->addWidget(remSpa);
 	
-	QPlainTextEdit* notRemSpa=new QPlainTextEdit();
+	QTextEdit* notRemSpa=new QTextEdit();
 	notRemSpa->setReadOnly(true);
 	notRemSpa->setPlainText(notRemovedSpaceConstraintsString);
 	QLabel* labNotRemSpa=new QLabel(tr("These space constraints will NOT be removed"));
@@ -2240,7 +2240,7 @@ void AdvancedLockUnlockForm::unlockDayWithoutTimetable(QWidget* parent)
 	all->addLayout(left);
 	all->addLayout(right);
 	
-	QPlainTextEdit* remTim=new QPlainTextEdit();
+	QTextEdit* remTim=new QTextEdit();
 	remTim->setReadOnly(true);
 	remTim->setPlainText(removedTimeConstraintsString);
 	QLabel* labRemTim=new QLabel(tr("These time constraints will be removed"));
@@ -2249,7 +2249,7 @@ void AdvancedLockUnlockForm::unlockDayWithoutTimetable(QWidget* parent)
 	left->addWidget(labRemTim);
 	left->addWidget(remTim);
 
-	QPlainTextEdit* notRemTim=new QPlainTextEdit();
+	QTextEdit* notRemTim=new QTextEdit();
 	notRemTim->setReadOnly(true);
 	notRemTim->setPlainText(notRemovedTimeConstraintsString);
 	QLabel* labNotRemTim=new QLabel(tr("These time constraints will NOT be removed"));
@@ -2258,7 +2258,7 @@ void AdvancedLockUnlockForm::unlockDayWithoutTimetable(QWidget* parent)
 	left->addWidget(labNotRemTim);
 	left->addWidget(notRemTim);
 
-	QPlainTextEdit* remSpa=new QPlainTextEdit();
+	QTextEdit* remSpa=new QTextEdit();
 	remSpa->setReadOnly(true);
 	remSpa->setPlainText(removedSpaceConstraintsString);
 	QLabel* labRemSpa=new QLabel(tr("These space constraints will be removed"));
@@ -2267,7 +2267,7 @@ void AdvancedLockUnlockForm::unlockDayWithoutTimetable(QWidget* parent)
 	right->addWidget(labRemSpa);
 	right->addWidget(remSpa);
 	
-	QPlainTextEdit* notRemSpa=new QPlainTextEdit();
+	QTextEdit* notRemSpa=new QTextEdit();
 	notRemSpa->setReadOnly(true);
 	notRemSpa->setPlainText(notRemovedSpaceConstraintsString);
 	QLabel* labNotRemSpa=new QLabel(tr("These space constraints will NOT be removed"));
@@ -2534,7 +2534,7 @@ void AdvancedLockUnlockForm::lockActivityTag(QWidget* parent)
 	all->addLayout(left);
 	all->addLayout(right);
 	
-	QPlainTextEdit* addTim=new QPlainTextEdit();
+	QTextEdit* addTim=new QTextEdit();
 	addTim->setReadOnly(true);
 	addTim->setPlainText(addedTimeConstraintsString);
 	QLabel* labAddTim=new QLabel(tr("These time constraints will be added"));
@@ -2543,7 +2543,7 @@ void AdvancedLockUnlockForm::lockActivityTag(QWidget* parent)
 	left->addWidget(labAddTim);
 	left->addWidget(addTim);
 
-	QPlainTextEdit* notAddTim=new QPlainTextEdit();
+	QTextEdit* notAddTim=new QTextEdit();
 	notAddTim->setReadOnly(true);
 	notAddTim->setPlainText(notAddedTimeConstraintsString);
 	QLabel* labNotAddTim=new QLabel(tr("These time constraints will NOT be added"));
@@ -2552,7 +2552,7 @@ void AdvancedLockUnlockForm::lockActivityTag(QWidget* parent)
 	left->addWidget(labNotAddTim);
 	left->addWidget(notAddTim);
 
-	QPlainTextEdit* addSpa=new QPlainTextEdit();
+	QTextEdit* addSpa=new QTextEdit();
 	addSpa->setReadOnly(true);
 	addSpa->setPlainText(addedSpaceConstraintsString);
 	QLabel* labAddSpa=new QLabel(tr("These space constraints will be added"));
@@ -2561,7 +2561,7 @@ void AdvancedLockUnlockForm::lockActivityTag(QWidget* parent)
 	right->addWidget(labAddSpa);
 	right->addWidget(addSpa);
 	
-	QPlainTextEdit* notAddSpa=new QPlainTextEdit();
+	QTextEdit* notAddSpa=new QTextEdit();
 	notAddSpa->setReadOnly(true);
 	notAddSpa->setPlainText(notAddedSpaceConstraintsString);
 	QLabel* labNotAddSpa=new QLabel(tr("These space constraints will NOT be added"));
@@ -2811,7 +2811,7 @@ void AdvancedLockUnlockForm::lockActivityTag(QWidget* parent)
 	all->addLayout(left);
 	all->addLayout(right);
 	
-	QPlainTextEdit* remTim=new QPlainTextEdit();
+	QTextEdit* remTim=new QTextEdit();
 	remTim->setReadOnly(true);
 	remTim->setPlainText(removedTimeConstraintsString);
 	QLabel* labRemTim=new QLabel(tr("These time constraints will be removed"));
@@ -2820,7 +2820,7 @@ void AdvancedLockUnlockForm::lockActivityTag(QWidget* parent)
 	left->addWidget(labRemTim);
 	left->addWidget(remTim);
 
-	QPlainTextEdit* notRemTim=new QPlainTextEdit();
+	QTextEdit* notRemTim=new QTextEdit();
 	notRemTim->setReadOnly(true);
 	notRemTim->setPlainText(notRemovedTimeConstraintsString);
 	QLabel* labNotRemTim=new QLabel(tr("These time constraints will NOT be removed"));
@@ -2829,7 +2829,7 @@ void AdvancedLockUnlockForm::lockActivityTag(QWidget* parent)
 	left->addWidget(labNotRemTim);
 	left->addWidget(notRemTim);
 
-	QPlainTextEdit* remSpa=new QPlainTextEdit();
+	QTextEdit* remSpa=new QTextEdit();
 	remSpa->setReadOnly(true);
 	remSpa->setPlainText(removedSpaceConstraintsString);
 	QLabel* labRemSpa=new QLabel(tr("These space constraints will be removed"));
@@ -2838,7 +2838,7 @@ void AdvancedLockUnlockForm::lockActivityTag(QWidget* parent)
 	right->addWidget(labRemSpa);
 	right->addWidget(remSpa);
 	
-	QPlainTextEdit* notRemSpa=new QPlainTextEdit();
+	QTextEdit* notRemSpa=new QTextEdit();
 	notRemSpa->setReadOnly(true);
 	notRemSpa->setPlainText(notRemovedSpaceConstraintsString);
 	QLabel* labNotRemSpa=new QLabel(tr("These space constraints will NOT be removed"));
@@ -3092,7 +3092,7 @@ void AdvancedLockUnlockForm::unlockActivityTagWithoutTimetable(QWidget* parent)
 	all->addLayout(left);
 	all->addLayout(right);
 	
-	QPlainTextEdit* remTim=new QPlainTextEdit();
+	QTextEdit* remTim=new QTextEdit();
 	remTim->setReadOnly(true);
 	remTim->setPlainText(removedTimeConstraintsString);
 	QLabel* labRemTim=new QLabel(tr("These time constraints will be removed"));
@@ -3101,7 +3101,7 @@ void AdvancedLockUnlockForm::unlockActivityTagWithoutTimetable(QWidget* parent)
 	left->addWidget(labRemTim);
 	left->addWidget(remTim);
 
-	QPlainTextEdit* notRemTim=new QPlainTextEdit();
+	QTextEdit* notRemTim=new QTextEdit();
 	notRemTim->setReadOnly(true);
 	notRemTim->setPlainText(notRemovedTimeConstraintsString);
 	QLabel* labNotRemTim=new QLabel(tr("These time constraints will NOT be removed"));
@@ -3110,7 +3110,7 @@ void AdvancedLockUnlockForm::unlockActivityTagWithoutTimetable(QWidget* parent)
 	left->addWidget(labNotRemTim);
 	left->addWidget(notRemTim);
 
-	QPlainTextEdit* remSpa=new QPlainTextEdit();
+	QTextEdit* remSpa=new QTextEdit();
 	remSpa->setReadOnly(true);
 	remSpa->setPlainText(removedSpaceConstraintsString);
 	QLabel* labRemSpa=new QLabel(tr("These space constraints will be removed"));
@@ -3119,7 +3119,7 @@ void AdvancedLockUnlockForm::unlockActivityTagWithoutTimetable(QWidget* parent)
 	right->addWidget(labRemSpa);
 	right->addWidget(remSpa);
 	
-	QPlainTextEdit* notRemSpa=new QPlainTextEdit();
+	QTextEdit* notRemSpa=new QTextEdit();
 	notRemSpa->setReadOnly(true);
 	notRemSpa->setPlainText(notRemovedSpaceConstraintsString);
 	QLabel* labNotRemSpa=new QLabel(tr("These space constraints will NOT be removed"));
@@ -3689,7 +3689,7 @@ void AdvancedLockUnlockForm::lockAdvancedFilter(QWidget* parent)
 	all->addLayout(left);
 	all->addLayout(right);
 	
-	QPlainTextEdit* addTim=new QPlainTextEdit();
+	QTextEdit* addTim=new QTextEdit();
 	addTim->setReadOnly(true);
 	addTim->setPlainText(addedTimeConstraintsString);
 	QLabel* labAddTim=new QLabel(tr("These time constraints will be added"));
@@ -3698,7 +3698,7 @@ void AdvancedLockUnlockForm::lockAdvancedFilter(QWidget* parent)
 	left->addWidget(labAddTim);
 	left->addWidget(addTim);
 
-	QPlainTextEdit* notAddTim=new QPlainTextEdit();
+	QTextEdit* notAddTim=new QTextEdit();
 	notAddTim->setReadOnly(true);
 	notAddTim->setPlainText(notAddedTimeConstraintsString);
 	QLabel* labNotAddTim=new QLabel(tr("These time constraints will NOT be added"));
@@ -3707,7 +3707,7 @@ void AdvancedLockUnlockForm::lockAdvancedFilter(QWidget* parent)
 	left->addWidget(labNotAddTim);
 	left->addWidget(notAddTim);
 
-	QPlainTextEdit* addSpa=new QPlainTextEdit();
+	QTextEdit* addSpa=new QTextEdit();
 	addSpa->setReadOnly(true);
 	addSpa->setPlainText(addedSpaceConstraintsString);
 	QLabel* labAddSpa=new QLabel(tr("These space constraints will be added"));
@@ -3716,7 +3716,7 @@ void AdvancedLockUnlockForm::lockAdvancedFilter(QWidget* parent)
 	right->addWidget(labAddSpa);
 	right->addWidget(addSpa);
 	
-	QPlainTextEdit* notAddSpa=new QPlainTextEdit();
+	QTextEdit* notAddSpa=new QTextEdit();
 	notAddSpa->setReadOnly(true);
 	notAddSpa->setPlainText(notAddedSpaceConstraintsString);
 	QLabel* labNotAddSpa=new QLabel(tr("These space constraints will NOT be added"));
@@ -4281,7 +4281,7 @@ void AdvancedLockUnlockForm::unlockAdvancedFilterWithoutTimetable(QWidget* paren
 	all->addLayout(left);
 	all->addLayout(right);
 	
-	QPlainTextEdit* remTim=new QPlainTextEdit();
+	QTextEdit* remTim=new QTextEdit();
 	remTim->setReadOnly(true);
 	remTim->setPlainText(removedTimeConstraintsString);
 	QLabel* labRemTim=new QLabel(tr("These time constraints will be removed"));
@@ -4290,7 +4290,7 @@ void AdvancedLockUnlockForm::unlockAdvancedFilterWithoutTimetable(QWidget* paren
 	left->addWidget(labRemTim);
 	left->addWidget(remTim);
 
-	QPlainTextEdit* notRemTim=new QPlainTextEdit();
+	QTextEdit* notRemTim=new QTextEdit();
 	notRemTim->setReadOnly(true);
 	notRemTim->setPlainText(notRemovedTimeConstraintsString);
 	QLabel* labNotRemTim=new QLabel(tr("These time constraints will NOT be removed"));
@@ -4299,7 +4299,7 @@ void AdvancedLockUnlockForm::unlockAdvancedFilterWithoutTimetable(QWidget* paren
 	left->addWidget(labNotRemTim);
 	left->addWidget(notRemTim);
 
-	QPlainTextEdit* remSpa=new QPlainTextEdit();
+	QTextEdit* remSpa=new QTextEdit();
 	remSpa->setReadOnly(true);
 	remSpa->setPlainText(removedSpaceConstraintsString);
 	QLabel* labRemSpa=new QLabel(tr("These space constraints will be removed"));
@@ -4308,7 +4308,7 @@ void AdvancedLockUnlockForm::unlockAdvancedFilterWithoutTimetable(QWidget* paren
 	right->addWidget(labRemSpa);
 	right->addWidget(remSpa);
 	
-	QPlainTextEdit* notRemSpa=new QPlainTextEdit();
+	QTextEdit* notRemSpa=new QTextEdit();
 	notRemSpa->setReadOnly(true);
 	notRemSpa->setPlainText(notRemovedSpaceConstraintsString);
 	QLabel* labNotRemSpa=new QLabel(tr("These space constraints will NOT be removed"));

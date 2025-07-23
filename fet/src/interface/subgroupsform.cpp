@@ -675,7 +675,7 @@ void SubgroupsForm::comments()
 	
 	QVBoxLayout* vl=new QVBoxLayout();
 	
-	QPlainTextEdit* commentsPT=new QPlainTextEdit();
+	QTextEdit* commentsPT=new QTextEdit();
 	commentsPT->setPlainText(studentsSet->comments);
 	commentsPT->selectAll();
 	commentsPT->setFocus();

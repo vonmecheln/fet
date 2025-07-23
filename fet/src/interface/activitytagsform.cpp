@@ -409,7 +409,7 @@ void ActivityTagsForm::comments()
 	
 	QVBoxLayout* vl=new QVBoxLayout();
 	
-	QPlainTextEdit* commentsPT=new QPlainTextEdit();
+	QTextEdit* commentsPT=new QTextEdit();
 	commentsPT->setPlainText(at->comments);
 	commentsPT->selectAll();
 	commentsPT->setFocus();

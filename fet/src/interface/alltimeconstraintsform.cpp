@@ -31,7 +31,7 @@
 
 #include <QInputDialog>
 
-#include <QPlainTextEdit>
+#include <QTextEdit>
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QRegularExpression>
@@ -823,7 +823,7 @@ void AllTimeConstraintsForm::constraintComments()
 	
 	QVBoxLayout* vl=new QVBoxLayout();
 	
-	QPlainTextEdit* commentsPT=new QPlainTextEdit();
+	QTextEdit* commentsPT=new QTextEdit();
 	commentsPT->setPlainText(ctr->comments);
 	commentsPT->selectAll();
 	commentsPT->setFocus();

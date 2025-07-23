@@ -85,7 +85,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPlainTextEdit" name="currentActivityTextEdit"/>
+        <widget class="QTextEdit" name="currentActivityTextEdit"/>
        </item>
        <item>
         <widget class="QGroupBox" name="filterGroupBox">

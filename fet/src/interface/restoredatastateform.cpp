@@ -56,7 +56,7 @@ RestoreDataStateForm::RestoreDataStateForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
 
-	restoreDataStatePlainTextEdit->setReadOnly(true);
+	restoreDataStateTextEdit->setReadOnly(true);
 
 	restoreDataStateListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
@@ -170,7 +170,7 @@ void RestoreDataStateForm::restoreDataStateListWidgetSelectionChanged()
 		//qUncompress(...) should have the same behavior with other (older, and also hopefully newer) versions of Qt, see this Qt function's doc.
 		//We need this compatibility for the disk history, where the user might have saved the history on disk from a different Qt version.
 		if(descriptionBA.isEmpty()){
-			restoreDataStatePlainTextEdit->setPlainText(tr("Corrupted operation details read from the memory or from the disk (but your data might be valid).")
+			restoreDataStateTextEdit->setPlainText(tr("Corrupted operation details read from the memory or from the disk (but your data might be valid).")
 			 +QString("\n\n")+tr("If the problem is caused by the history file saved on the disk, you might want to exit FET, remove the corresponding history file"
 			 " ending in '%1', open FET again, and open your .fet data file again. Or just ignore the problem, until the history will be replaced with new, valid entries.")
 			 .arg(SUFFIX_FILENAME_SAVE_HISTORY));
@@ -183,7 +183,7 @@ void RestoreDataStateForm::restoreDataStateListWidgetSelectionChanged()
 #endif
 			QString descr;
 			dsd>>descr;
-			restoreDataStatePlainTextEdit->setPlainText(descr);
+			restoreDataStateTextEdit->setPlainText(descr);
 		}
 	}
 }

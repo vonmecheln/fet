@@ -29,7 +29,7 @@
 #include <QString>
 #include <QStringList>
 
-#include <QPlainTextEdit>
+#include <QTextEdit>
 
 //#include <QDateTime>
 //#include <QLocale>
@@ -48,6 +48,8 @@
 //#include <QTimer>
 
 #include <QFileInfo>
+
+#include <QFont>
 
 #include "longtextmessagebox.h"
 
@@ -113,10 +115,15 @@ TimetableGenerateForm::TimetableGenerateForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
 
+	QFont font(pausedLabel->font());
+	font.setBold(true);
+	pausedLabel->setFont(font);
+
 	currentResultsTextEdit->setReadOnly(true);
-	
+
 	connect(startPushButton, &QPushButton::clicked, this, &TimetableGenerateForm::start);
 	connect(stopPushButton, &QPushButton::clicked, this, &TimetableGenerateForm::stop);
+	connect(pausePushButton, &QPushButton::clicked, this, &TimetableGenerateForm::pause);
 	connect(writeResultsPushButton, &QPushButton::clicked, this, &TimetableGenerateForm::write);
 	connect(closePushButton, &QPushButton::clicked, this, &TimetableGenerateForm::closePressed);
 	connect(helpPushButton, &QPushButton::clicked, this, &TimetableGenerateForm::help);
@@ -132,8 +139,14 @@ TimetableGenerateForm::TimetableGenerateForm(QWidget* parent): QDialog(parent)
 
 	startPushButton->setDefault(true);
 
+	pausedLabel->setVisible(false);
+	
+	currentResultsTextEdit->setEnabled(true);
+	
 	startPushButton->setEnabled(true);
 	stopPushButton->setDisabled(true);
+	pausePushButton->setDisabled(true);
+	pausePushButton->setText(tr("Pause", "Pause generation"));
 	stopHighestPushButton->setDisabled(true);
 	closePushButton->setEnabled(true);
 	writeResultsPushButton->setDisabled(true);
@@ -182,6 +195,8 @@ void TimetableGenerateForm::start(){
 
 	gen.abortOptimization=false;
 	gen.restart=false;
+	gen.paused=false;
+	gen.pausedTime=0;
 	bool ok=gen.precompute(this);
 	
 	if(!ok){
@@ -194,8 +209,14 @@ void TimetableGenerateForm::start(){
 		return;
 	}
 
+	pausedLabel->setVisible(false);
+
+	currentResultsTextEdit->setEnabled(true);
+
 	startPushButton->setDisabled(true);
 	stopPushButton->setEnabled(true);
+	pausePushButton->setEnabled(true);
+	pausePushButton->setText(tr("Pause", "Pause generation"));
 	stopHighestPushButton->setEnabled(true);
 	closePushButton->setDisabled(true);
 	writeResultsPushButton->setEnabled(true);
@@ -404,7 +425,7 @@ void TimetableGenerateForm::stop()
 	dialog.setWindowTitle(TimetableGenerateForm::tr("Generation stopped", "The title of a dialog, meaning that the generation of the timetable was stopped."));
 
 	QVBoxLayout* vl=new QVBoxLayout(&dialog);
-	QPlainTextEdit* te=new QPlainTextEdit();
+	QTextEdit* te=new QTextEdit();
 	te->setPlainText(s);
 	te->setReadOnly(true);
 	QPushButton* pb=new QPushButton(TimetableGenerateForm::tr("OK"));
@@ -425,8 +446,14 @@ void TimetableGenerateForm::stop()
 	dialog.exec();
 	saveFETDialogGeometry(&dialog, settingsName);
 
+	pausedLabel->setVisible(false);
+
+	currentResultsTextEdit->setEnabled(true);
+
 	startPushButton->setEnabled(true);
 	stopPushButton->setDisabled(true);
+	pausePushButton->setDisabled(true);
+	pausePushButton->setText(tr("Pause", "Pause generation"));
 	stopHighestPushButton->setDisabled(true);
 	closePushButton->setEnabled(true);
 	writeResultsPushButton->setDisabled(true);
@@ -575,7 +602,7 @@ void TimetableGenerateForm::stopHighest()
 		"and highest stage timetable written."));
 
 	QVBoxLayout* vl=new QVBoxLayout(&dialog);
-	QPlainTextEdit* te=new QPlainTextEdit();
+	QTextEdit* te=new QTextEdit();
 	te->setPlainText(s);
 	te->setReadOnly(true);
 	QPushButton* pb=new QPushButton(TimetableGenerateForm::tr("OK"));
@@ -596,8 +623,14 @@ void TimetableGenerateForm::stopHighest()
 	dialog.exec();
 	saveFETDialogGeometry(&dialog, settingsName);
 
+	pausedLabel->setVisible(false);
+
+	currentResultsTextEdit->setEnabled(true);
+
 	startPushButton->setEnabled(true);
 	stopPushButton->setDisabled(true);
+	pausePushButton->setDisabled(true);
+	pausePushButton->setText(tr("Pause", "Pause generation"));
 	stopHighestPushButton->setDisabled(true);
 	closePushButton->setEnabled(true);
 	writeResultsPushButton->setDisabled(true);
@@ -735,7 +768,7 @@ void TimetableGenerateForm::impossibleToSolve()
 	dialog.setWindowTitle(TimetableGenerateForm::tr("Generation impossible", "The title of a dialog, meaning that the generation of the timetable is impossible."));
 
 	QVBoxLayout* vl=new QVBoxLayout(&dialog);
-	QPlainTextEdit* te=new QPlainTextEdit();
+	QTextEdit* te=new QTextEdit();
 	te->setPlainText(s);
 	te->setReadOnly(true);
 	QPushButton* pb=new QPushButton(TimetableGenerateForm::tr("OK"));
@@ -787,8 +820,14 @@ void TimetableGenerateForm::impossibleToSolve()
 	dialog.exec();
 	saveFETDialogGeometry(&dialog, settingsName);
 
+	pausedLabel->setVisible(false);
+
+	currentResultsTextEdit->setEnabled(true);
+
 	startPushButton->setEnabled(true);
 	stopPushButton->setDisabled(true);
+	pausePushButton->setDisabled(true);
+	pausePushButton->setText(tr("Pause", "Pause generation"));
 	stopHighestPushButton->setDisabled(true);
 	closePushButton->setEnabled(true);
 	writeResultsPushButton->setDisabled(true);
@@ -926,8 +965,14 @@ void TimetableGenerateForm::generationFinished()
 	msgBox.exec();
 	//QMessageBox::information(this, TimetableGenerateForm::tr("FET information"), s);
 
+	pausedLabel->setVisible(false);
+
+	currentResultsTextEdit->setEnabled(true);
+
 	startPushButton->setEnabled(true);
 	stopPushButton->setDisabled(true);
+	pausePushButton->setDisabled(true);
+	pausePushButton->setText(tr("Pause", "Pause generation"));
 	stopHighestPushButton->setDisabled(true);
 	closePushButton->setEnabled(true);
 	writeResultsPushButton->setDisabled(true);
@@ -944,12 +989,14 @@ void TimetableGenerateForm::activityPlaced(int nThread, int na){
 	Q_UNUSED(nThread);
 	
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
+	
+	//if(gen.paused) -> DON'T DO THIS!!! We need to release the semaphore below.
+	//	return;
 
 	gen.myMutex.lock();
 	int t=gen.searchTime; //seconds
 	int mact=gen.maxActivitiesPlaced;
 	int seconds=gen.timeToHighestStage;
-
 	gen.myMutex.unlock();
 
 	gen.semaphorePlacedActivity.release();
@@ -1004,6 +1051,9 @@ void TimetableGenerateForm::activityPlaced(int nThread, int na){
 	s+="\n\n";
 	s+=tr("Max placed activities: %1 (at %2)", "%1 represents the maximum number of activities placed, %2 is a time interval").arg(mact).arg(tim);
 
+	//if(gen.paused)
+	//	s.prepend(tr("[PAUSED]", "Generation is paused")+QString("\n"));
+
 	currentResultsTextEdit->setPlainText(s);
 }
 
@@ -1043,6 +1093,9 @@ void TimetableGenerateForm::help()
 }
 
 void TimetableGenerateForm::write(){
+	if(gen.paused) //should not happen
+		assert(0);
+
 	gen.myMutex.lock();
 
 	Solution& c=gen.c;
@@ -1120,6 +1173,9 @@ void TimetableGenerateForm::write(){
 }
 
 void TimetableGenerateForm::writeHighestStage(){
+	if(gen.paused) //should not happen
+		assert(0);
+
 	gen.myMutex.lock();
 
 	Solution& c=gen.highestStageSolution;
@@ -1209,6 +1265,9 @@ void TimetableGenerateForm::closePressed()
 
 void TimetableGenerateForm::seeImpossible()
 {
+	if(gen.paused) //should not happen
+		assert(0);
+
 	QString s;
 
 	gen.myMutex.lock();
@@ -1244,7 +1303,7 @@ void TimetableGenerateForm::seeImpossible()
 	dialog.setWindowTitle(tr("FET - information about difficult activities"));
 
 	QVBoxLayout* vl=new QVBoxLayout(&dialog);
-	QPlainTextEdit* te=new QPlainTextEdit();
+	QTextEdit* te=new QTextEdit();
 	te->setPlainText(s);
 	te->setReadOnly(true);
 	QPushButton* pb=new QPushButton(tr("OK"));
@@ -1266,6 +1325,37 @@ void TimetableGenerateForm::seeImpossible()
 	saveFETDialogGeometry(&dialog, settingsName);
 }
 
+void TimetableGenerateForm::pause()
+{
+	if(!gen.paused){
+		writeResultsPushButton->setDisabled(true);
+		writeHighestStagePushButton->setDisabled(true);
+		seeImpossiblePushButton->setDisabled(true);
+
+		pausePushButton->setText(tr("Resume", "Resume generation"));
+		gen.paused=true;
+		
+		currentResultsTextEdit->setDisabled(true);
+		
+		pausedLabel->setVisible(true);
+
+		//QString s=tr("[PAUSED]", "Generation is paused")+QString("\n")+currentResultsTextEdit->toPlainText();
+		//currentResultsTextEdit->setPlainText(s);
+	}
+	else{
+		pausedLabel->setVisible(false);
+
+		currentResultsTextEdit->setEnabled(true);
+
+		pausePushButton->setText(tr("Pause", "Pause generation"));
+		gen.paused=false;
+
+		writeResultsPushButton->setEnabled(true);
+		writeHighestStagePushButton->setEnabled(true);
+		seeImpossiblePushButton->setEnabled(true);
+	}
+}
+
 void TimetableGenerateForm::seeInitialOrder()
 {
 	QString s=initialOrderOfActivities;
@@ -1276,7 +1366,7 @@ void TimetableGenerateForm::seeInitialOrder()
 	dialog.setWindowTitle(tr("FET - information about initial order of evaluation of activities"));
 
 	QVBoxLayout* vl=new QVBoxLayout(&dialog);
-	QPlainTextEdit* te=new QPlainTextEdit();
+	QTextEdit* te=new QTextEdit();
 	te->setPlainText(s);
 	te->setReadOnly(true);
 	QPushButton* pb=new QPushButton(tr("OK"));

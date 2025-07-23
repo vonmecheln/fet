@@ -46874,35 +46874,35 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate.cpp" line="179"/>
-        <location filename="../src/interface/fet.cpp" line="3579"/>
+        <location filename="../src/engine/generate.cpp" line="182"/>
+        <location filename="../src/interface/fet.cpp" line="3581"/>
         <source>FET managed to schedule correctly the first %1 most difficult activities. You can see the initial order of placing the activities in the corresponding output file. The activity which might cause problems might be the next activity in the initial order of evaluation. This activity is listed below:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate.cpp" line="186"/>
-        <location filename="../src/engine/generate.cpp" line="206"/>
-        <location filename="../src/interface/fet.cpp" line="3586"/>
-        <location filename="../src/interface/fet.cpp" line="3606"/>
+        <location filename="../src/engine/generate.cpp" line="189"/>
+        <location filename="../src/engine/generate.cpp" line="209"/>
+        <location filename="../src/interface/fet.cpp" line="3588"/>
+        <location filename="../src/interface/fet.cpp" line="3608"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate.cpp" line="191"/>
-        <location filename="../src/interface/fet.cpp" line="3591"/>
+        <location filename="../src/engine/generate.cpp" line="194"/>
+        <location filename="../src/interface/fet.cpp" line="3593"/>
         <source>Difficult activity cannot be computed - please report possible bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate.cpp" line="195"/>
-        <location filename="../src/interface/fet.cpp" line="3595"/>
+        <location filename="../src/engine/generate.cpp" line="198"/>
+        <location filename="../src/interface/fet.cpp" line="3597"/>
         <source>Here are the placed activities which lead to an inconsistency, in order from the first one to the last (the last one FET failed to schedule and the last ones are most likely impossible):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate.cpp" line="202"/>
-        <location filename="../src/interface/fet.cpp" line="3602"/>
+        <location filename="../src/engine/generate.cpp" line="205"/>
+        <location filename="../src/interface/fet.cpp" line="3604"/>
         <source>No: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -46930,7 +46930,7 @@ Having a subgroup with too little working hours per week means that you inputted
 <context>
     <name>Generate</name>
     <message>
-        <location filename="../src/engine/generate.cpp" line="8089"/>
+        <location filename="../src/engine/generate.cpp" line="8108"/>
         <source>At time %1 h %2 m %3 s, FET reached %4 activities placed</source>
         <comment>h=hours, m=minutes, s=seconds. Please leave spaces between &apos;time&apos;, %1, h, %2, m, %3, s, so they are visible</comment>
         <translation type="unfinished"></translation>
@@ -52231,13 +52231,13 @@ to
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform.cpp" line="518"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="522"/>
         <source>You may find updated or additional references for the algorithms and techniques used in this program on the FET documentation web page, %1</source>
         <comment>%1 is the FET documentation web page.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform.cpp" line="526"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="530"/>
         <source>The following people, listed chronologically, participated in this project with suggestions, example files, reports, and/or other kinds of contributions:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -54618,37 +54618,37 @@ to
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="484"/>
-        <location filename="../src/engine/import.cpp" line="1437"/>
+        <location filename="../src/engine/import.cpp" line="1492"/>
         <source>activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="488"/>
-        <location filename="../src/engine/import.cpp" line="1439"/>
+        <location filename="../src/engine/import.cpp" line="1494"/>
         <source>buildings and rooms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="492"/>
-        <location filename="../src/engine/import.cpp" line="1441"/>
+        <location filename="../src/engine/import.cpp" line="1496"/>
         <source>teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="496"/>
-        <location filename="../src/engine/import.cpp" line="1443"/>
+        <location filename="../src/engine/import.cpp" line="1498"/>
         <source>subjects</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="500"/>
-        <location filename="../src/engine/import.cpp" line="1445"/>
+        <location filename="../src/engine/import.cpp" line="1500"/>
         <source>years, groups and subgroups</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="504"/>
-        <location filename="../src/engine/import.cpp" line="1447"/>
+        <location filename="../src/engine/import.cpp" line="1502"/>
         <source>activities</source>
         <translation type="unfinished"></translation>
     </message>
@@ -54703,7 +54703,7 @@ to
         <location filename="../src/engine/import.cpp" line="885"/>
         <location filename="../src/engine/import.cpp" line="894"/>
         <location filename="../src/engine/import.cpp" line="943"/>
-        <location filename="../src/engine/import.cpp" line="2333"/>
+        <location filename="../src/engine/import.cpp" line="2388"/>
         <source>FET warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -54739,10 +54739,10 @@ to
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="964"/>
-        <location filename="../src/engine/import.cpp" line="1926"/>
-        <location filename="../src/engine/import.cpp" line="1985"/>
-        <location filename="../src/engine/import.cpp" line="2058"/>
-        <location filename="../src/engine/import.cpp" line="2712"/>
+        <location filename="../src/engine/import.cpp" line="1981"/>
+        <location filename="../src/engine/import.cpp" line="2040"/>
+        <location filename="../src/engine/import.cpp" line="2113"/>
+        <location filename="../src/engine/import.cpp" line="2767"/>
         <source>Importing</source>
         <comment>Title of a progress dialog</comment>
         <translation type="unfinished"></translation>
@@ -54764,11 +54764,13 @@ to
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1121"/>
+        <location filename="../src/engine/import.cpp" line="1256"/>
         <source>Skipped line %1: Field &apos;%2&apos; contains incorrect data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1146"/>
+        <location filename="../src/engine/import.cpp" line="1281"/>
         <source>Skipped line %1: Fields &apos;%2&apos; and &apos;%3&apos; do not have the same value.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -54799,235 +54801,235 @@ to
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1342"/>
+        <location filename="../src/engine/import.cpp" line="1397"/>
         <source>Following data found in the file:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1344"/>
+        <location filename="../src/engine/import.cpp" line="1399"/>
         <source>There is no usable data in the file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1358"/>
+        <location filename="../src/engine/import.cpp" line="1413"/>
         <source>%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1386"/>
+        <location filename="../src/engine/import.cpp" line="1441"/>
         <source>FET noticed %1 warnings with the current data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1397"/>
+        <location filename="../src/engine/import.cpp" line="1452"/>
         <source>&amp;Import</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1398"/>
+        <location filename="../src/engine/import.cpp" line="1453"/>
         <source>&amp;Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1509"/>
-        <location filename="../src/engine/import.cpp" line="1621"/>
-        <location filename="../src/engine/import.cpp" line="1635"/>
-        <location filename="../src/engine/import.cpp" line="1752"/>
-        <location filename="../src/engine/import.cpp" line="1838"/>
+        <location filename="../src/engine/import.cpp" line="1564"/>
+        <location filename="../src/engine/import.cpp" line="1676"/>
+        <location filename="../src/engine/import.cpp" line="1690"/>
+        <location filename="../src/engine/import.cpp" line="1807"/>
+        <location filename="../src/engine/import.cpp" line="1893"/>
         <source>%1 is already in FET data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1536"/>
-        <location filename="../src/engine/import.cpp" line="1693"/>
-        <location filename="../src/engine/import.cpp" line="1781"/>
-        <location filename="../src/engine/import.cpp" line="1868"/>
-        <location filename="../src/engine/import.cpp" line="2990"/>
-        <location filename="../src/engine/import.cpp" line="3070"/>
+        <location filename="../src/engine/import.cpp" line="1591"/>
+        <location filename="../src/engine/import.cpp" line="1748"/>
+        <location filename="../src/engine/import.cpp" line="1836"/>
+        <location filename="../src/engine/import.cpp" line="1923"/>
+        <location filename="../src/engine/import.cpp" line="3045"/>
+        <location filename="../src/engine/import.cpp" line="3125"/>
         <source>FET information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1543"/>
+        <location filename="../src/engine/import.cpp" line="1598"/>
         <source>%1 activity tags imported from the CSV file %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1694"/>
+        <location filename="../src/engine/import.cpp" line="1749"/>
         <source>%1 rooms added. Please check rooms form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1701"/>
+        <location filename="../src/engine/import.cpp" line="1756"/>
         <source>%1 buildings and %2 rooms imported from the CSV file %3.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1781"/>
-        <location filename="../src/engine/import.cpp" line="2675"/>
+        <location filename="../src/engine/import.cpp" line="1836"/>
+        <location filename="../src/engine/import.cpp" line="2730"/>
         <source>%1 subjects added. Please check subjects form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1787"/>
+        <location filename="../src/engine/import.cpp" line="1842"/>
         <source>%1 subjects imported from the CSV file %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1868"/>
-        <location filename="../src/engine/import.cpp" line="2639"/>
+        <location filename="../src/engine/import.cpp" line="1923"/>
+        <location filename="../src/engine/import.cpp" line="2694"/>
         <source>%1 teachers added. Please check teachers form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1875"/>
+        <location filename="../src/engine/import.cpp" line="1930"/>
         <source>%1 teachers imported from the CSV file %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1928"/>
+        <location filename="../src/engine/import.cpp" line="1983"/>
         <source>Checking CSV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1935"/>
+        <location filename="../src/engine/import.cpp" line="1990"/>
         <source>Checking CSV canceled by user.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1986"/>
+        <location filename="../src/engine/import.cpp" line="2041"/>
         <source>Checking data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1996"/>
-        <location filename="../src/engine/import.cpp" line="2011"/>
-        <location filename="../src/engine/import.cpp" line="2028"/>
+        <location filename="../src/engine/import.cpp" line="2051"/>
+        <location filename="../src/engine/import.cpp" line="2066"/>
+        <location filename="../src/engine/import.cpp" line="2083"/>
         <source>Checking data canceled by user.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2001"/>
+        <location filename="../src/engine/import.cpp" line="2056"/>
         <source>Year %1 is already in FET data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2003"/>
+        <location filename="../src/engine/import.cpp" line="2058"/>
         <source>Can&apos;t import group %1. Name is already taken for a year.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2005"/>
+        <location filename="../src/engine/import.cpp" line="2060"/>
         <source>Can&apos;t import subgroup %1. Name is already taken for a year.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2017"/>
+        <location filename="../src/engine/import.cpp" line="2072"/>
         <source>Can&apos;t import year %1. Name is already taken for a group.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2021"/>
+        <location filename="../src/engine/import.cpp" line="2076"/>
         <source>Can&apos;t import subgroup %1. Name is already taken for a group.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2034"/>
+        <location filename="../src/engine/import.cpp" line="2089"/>
         <source>Can&apos;t import year %1. Name is already taken for a subgroup.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2036"/>
+        <location filename="../src/engine/import.cpp" line="2091"/>
         <source>Can&apos;t import group %1. Name is taken for a subgroup.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2059"/>
+        <location filename="../src/engine/import.cpp" line="2114"/>
         <source>Importing data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2083"/>
-        <location filename="../src/engine/import.cpp" line="2723"/>
+        <location filename="../src/engine/import.cpp" line="2138"/>
+        <location filename="../src/engine/import.cpp" line="2778"/>
         <source>Importing data canceled by user.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2333"/>
+        <location filename="../src/engine/import.cpp" line="2388"/>
         <source>FET needs to know %1 or %2 if you import %3.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2477"/>
+        <location filename="../src/engine/import.cpp" line="2532"/>
         <source>FET can&apos;t import activities, because FET needs to know the structure of the students sets. You must add (or import) years, groups and subgroups first.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2479"/>
+        <location filename="../src/engine/import.cpp" line="2534"/>
         <source>It is recommended to import also teachers, rooms, buildings, subjects and activity tags before importing activities. It is not needed, because FET will automatically do it, but you can check the activities CSV file by that.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2536"/>
-        <location filename="../src/engine/import.cpp" line="2562"/>
-        <location filename="../src/engine/import.cpp" line="2601"/>
+        <location filename="../src/engine/import.cpp" line="2591"/>
+        <location filename="../src/engine/import.cpp" line="2617"/>
+        <location filename="../src/engine/import.cpp" line="2656"/>
         <source>%1 %2 will be added.</source>
         <comment>For instance &apos;Subject math will be added&apos;, so use singular</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2713"/>
+        <location filename="../src/engine/import.cpp" line="2768"/>
         <source>Importing activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2782"/>
+        <location filename="../src/engine/import.cpp" line="2837"/>
         <source>Line %1: Activity contains duplicate teacher %2 - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2870"/>
+        <location filename="../src/engine/import.cpp" line="2925"/>
         <source>Line %1: Activity contains duplicate activity tag %2 - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2939"/>
+        <location filename="../src/engine/import.cpp" line="2994"/>
         <source>Line %1: Activity contains duplicate students set %2 - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2990"/>
+        <location filename="../src/engine/import.cpp" line="3045"/>
         <source>Activity NOT added - please report error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2992"/>
-        <location filename="../src/engine/import.cpp" line="3072"/>
+        <location filename="../src/engine/import.cpp" line="3047"/>
+        <location filename="../src/engine/import.cpp" line="3127"/>
         <source>Line %1: Activity duration is lower than 1 - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="3070"/>
+        <location filename="../src/engine/import.cpp" line="3125"/>
         <source>Split activity NOT added - error???</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="3081"/>
+        <location filename="../src/engine/import.cpp" line="3136"/>
         <source>Warning: found tags for the &apos;consecutive&apos; field of min days which are not a valid Boolean value (%1) - making them %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="3087"/>
+        <location filename="../src/engine/import.cpp" line="3142"/>
         <source>%1 container activities (%2 total activities) added. Please check activities form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="3105"/>
+        <location filename="../src/engine/import.cpp" line="3160"/>
         <source>%1 container activities (%2 total activities) imported from the CSV file %3.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="3106"/>
+        <location filename="../src/engine/import.cpp" line="3161"/>
         <source>This operation involved importing also %1 teachers, %2 subjects and %3 activity tags.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -55068,11 +55070,12 @@ to
         <location filename="../src/engine/import.cpp" line="1094"/>
         <location filename="../src/engine/import.cpp" line="1100"/>
         <location filename="../src/engine/import.cpp" line="1125"/>
-        <location filename="../src/engine/import.cpp" line="1496"/>
-        <location filename="../src/engine/import.cpp" line="1603"/>
-        <location filename="../src/engine/import.cpp" line="1609"/>
-        <location filename="../src/engine/import.cpp" line="1739"/>
-        <location filename="../src/engine/import.cpp" line="1825"/>
+        <location filename="../src/engine/import.cpp" line="1260"/>
+        <location filename="../src/engine/import.cpp" line="1551"/>
+        <location filename="../src/engine/import.cpp" line="1658"/>
+        <location filename="../src/engine/import.cpp" line="1664"/>
+        <location filename="../src/engine/import.cpp" line="1794"/>
+        <location filename="../src/engine/import.cpp" line="1880"/>
         <source>Skipped line %1: Field &apos;%2&apos; is empty.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -55080,133 +55083,134 @@ to
         <location filename="../src/engine/import.cpp" line="1139"/>
         <location filename="../src/engine/import.cpp" line="1189"/>
         <location filename="../src/engine/import.cpp" line="1201"/>
+        <location filename="../src/engine/import.cpp" line="1274"/>
         <source>Skipped line %1: Field &apos;%2&apos; doesn&apos;t contain an integer value.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1248"/>
+        <location filename="../src/engine/import.cpp" line="1303"/>
         <source>Skipped line %1: Data was already in a previous line.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1264"/>
+        <location filename="../src/engine/import.cpp" line="1319"/>
         <source>Line %1 is: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1305"/>
+        <location filename="../src/engine/import.cpp" line="1360"/>
         <source>FET import %1 question</source>
         <comment>A question regarding the import of &apos;%1&apos;. &apos;%1&apos; is a category of data, for instance &apos;years, groups and subgroups&apos;</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1317"/>
+        <location filename="../src/engine/import.cpp" line="1372"/>
         <source>There are problems in the file
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1319"/>
+        <location filename="../src/engine/import.cpp" line="1374"/>
         <source>There are no problems in the file
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1585"/>
-        <location filename="../src/engine/import.cpp" line="1594"/>
+        <location filename="../src/engine/import.cpp" line="1640"/>
+        <location filename="../src/engine/import.cpp" line="1649"/>
         <source>Skipped line %1: Field &apos;%2&apos; is already in a previous line.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1694"/>
+        <location filename="../src/engine/import.cpp" line="1749"/>
         <source>%1 buildings added. Please check buildings form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1962"/>
+        <location filename="../src/engine/import.cpp" line="2017"/>
         <source>Problem in line %1: Year name %2 is taken for a group - please consider another name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1970"/>
+        <location filename="../src/engine/import.cpp" line="2025"/>
         <source>Problem in line %1: Subgroup name %2 is taken for a year - please consider another name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1972"/>
+        <location filename="../src/engine/import.cpp" line="2027"/>
         <source>Problem in line %1: Subgroup name %2 is taken for a group - please consider another name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1974"/>
+        <location filename="../src/engine/import.cpp" line="2029"/>
         <source>Problem in line %1: Group name %2 is taken for a subgroup - please consider another name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1976"/>
+        <location filename="../src/engine/import.cpp" line="2031"/>
         <source>Problem in line %1: Year name %2 is taken for a subgroup - please consider another name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2019"/>
+        <location filename="../src/engine/import.cpp" line="2074"/>
         <source>Group name %1 is already in FET data (in the same or in another year).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2038"/>
+        <location filename="../src/engine/import.cpp" line="2093"/>
         <source>Subgroup name %1 is already in FET data (in the same or in another group).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2167"/>
-        <location filename="../src/engine/import.cpp" line="2170"/>
+        <location filename="../src/engine/import.cpp" line="2222"/>
+        <location filename="../src/engine/import.cpp" line="2225"/>
         <source>Group name %1 exists in another year. It means that some years share the same group.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2225"/>
+        <location filename="../src/engine/import.cpp" line="2280"/>
         <source>Subgroup name %1 exists in another group. It means that some groups share the same subgroup.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2272"/>
-        <location filename="../src/engine/import.cpp" line="3085"/>
+        <location filename="../src/engine/import.cpp" line="2327"/>
+        <location filename="../src/engine/import.cpp" line="3140"/>
         <source>Notes:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2273"/>
+        <location filename="../src/engine/import.cpp" line="2328"/>
         <source>%1 subgroups added. Please check subgroups form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2274"/>
+        <location filename="../src/engine/import.cpp" line="2329"/>
         <source>%1 groups added. Please check groups form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2275"/>
+        <location filename="../src/engine/import.cpp" line="2330"/>
         <source>%1 years added. Please check years form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1536"/>
-        <location filename="../src/engine/import.cpp" line="2697"/>
+        <location filename="../src/engine/import.cpp" line="1591"/>
+        <location filename="../src/engine/import.cpp" line="2752"/>
         <source>%1 activity tags added. Please check activity tags form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1960"/>
+        <location filename="../src/engine/import.cpp" line="2015"/>
         <source>Problem in line %1: Group name %2 is taken for a year - please consider another name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2292"/>
+        <location filename="../src/engine/import.cpp" line="2347"/>
         <source>%1 years, %2 groups, and %3 subgroups imported from the CSV file %4.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2484"/>
+        <location filename="../src/engine/import.cpp" line="2539"/>
         <source>Students set %1 doesn&apos;t exist. You must add (or import) years, groups and subgroups first.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -55221,7 +55225,7 @@ to
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1246"/>
+        <location filename="../src/engine/import.cpp" line="1301"/>
         <source>Note about line %1: Data was already in a previous line. So this data will be imported once again.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -55260,11 +55264,13 @@ is:</source>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1151"/>
+        <location filename="../src/engine/import.cpp" line="1286"/>
         <source>Skipped line %1: Field &apos;%2&apos; contains too many subactivities.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1117"/>
+        <location filename="../src/engine/import.cpp" line="1252"/>
         <source>Skipped line %1: Field &apos;%2&apos; produces too many subactivities.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -71248,17 +71254,17 @@ teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="3426"/>
+        <location filename="../src/interface/fet.cpp" line="3428"/>
         <source>Please check the constraints related to the activity below, which might be impossible to schedule:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="3432"/>
+        <location filename="../src/interface/fet.cpp" line="3434"/>
         <source>No: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="3436"/>
+        <location filename="../src/interface/fet.cpp" line="3438"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
@@ -71267,349 +71273,367 @@ teachers</source>
 <context>
     <name>TimetableGenerateForm</name>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="168"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="181"/>
         <source>FET warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="168"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="181"/>
         <source>Data is wrong. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="174"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="191"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="924"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1117"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1194"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="187"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="206"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="963"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1170"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1250"/>
         <source>FET information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="188"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="203"/>
         <source>Cannot generate - please modify your data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="283"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="477"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="649"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1062"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1139"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="304"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="504"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="682"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1115"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1195"/>
         <source>Number of broken constraints: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="285"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="479"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="648"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1064"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1141"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="306"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="506"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="681"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1117"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1197"/>
         <source>Total conflicts:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="289"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="483"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="654"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1068"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1145"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="310"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="510"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="687"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1121"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1201"/>
         <source>Conflicts listing (in decreasing order):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="350"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="544"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="371"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="571"/>
         <source>FET managed to schedule correctly the first %1 most difficult activities. You can see the initial order of placing the activities in the generate dialog. The activity which might cause problems might be the next activity in the initial order of evaluation. This activity is listed below:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="357"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="551"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="378"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="578"/>
         <source>Please check the constraints related to following possibly problematic activity (or teacher(s), or students set(s)):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="388"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="719"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1228"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="409"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="752"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1287"/>
         <source>No: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="404"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="425"/>
         <source>Generation stopped</source>
         <comment>The title of a dialog, meaning that the generation of the timetable was stopped.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="410"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="581"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="741"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1250"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1282"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="431"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="608"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="774"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1309"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1372"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="574"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="601"/>
         <source>Generation stopped (highest stage)</source>
         <comment>The title of a dialog, meaning that the generation of the timetable was stopped and highest stage timetable written.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="735"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="768"/>
         <source>Generation impossible</source>
         <comment>The title of a dialog, meaning that the generation of the timetable is impossible.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="842"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="875"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="881"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="914"/>
         <source>Number of broken soft constraints: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="846"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="885"/>
         <source>Total soft conflicts:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="961"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1008"/>
         <source>%1 out of %2 activities placed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="963"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1010"/>
         <source>Elapsed time:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="967"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="993"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1014"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1040"/>
         <source>%1 h</source>
         <comment>hours</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="973"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="997"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1020"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1044"/>
         <source>%1 m</source>
         <comment>minutes</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="978"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1001"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1025"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1048"/>
         <source>%1 s</source>
         <comment>seconds</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1014"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1064"/>
         <source>Please wait. It might take 5 to 20 minutes or even more for very difficult timetables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1016"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1066"/>
         <source>Activities are placed in order, most difficult ones first</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1018"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1068"/>
         <source>The process of searching is semi-randomized, which means that you will get different timetables and running times each time. You can choose the best timetable from several runs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1025"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1075"/>
         <source>It is recommended to strengthen the constraints step by step (for instance min days between activities weight or teacher(s) max gaps), as you obtain feasible timetables.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1028"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1078"/>
         <source>If your timetable gets stuck on a certain activity number k (and then begins going back), please check the initial evaluation order and see activity number k+1 in this list. You may find errors this way.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1032"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1082"/>
         <source>If the generation is successful, you cannot have hard conflicts. You can have only soft conflicts, corresponding to constraints with weight lower than 100.0%, which are reported in detail.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1035"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1085"/>
         <source>After the generation (successful or interrupted), you can view the current (complete or incomplete) timetable in the corresponding view timetable dialogs, and the list of conflicts in the view conflicts dialog.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1038"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1088"/>
         <source>The results are saved in your selected results directory in HTML and XML mode and the soft conflicts in text mode, along with the current data and timetable, saved as a .fet data file (with activities locked by constraints), so that you can open, modify and regenerate the current timetable later</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1042"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1092"/>
         <source>FET help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1195"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1251"/>
         <source>Highest stage results should now be written in the directory %1 in HTML and XML mode and the conflicts in txt mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1216"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1275"/>
         <source>Information relating difficult to schedule activities:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1218"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1277"/>
         <source>Please check the constraints related to the last activities in the list below, which might be difficult to schedule:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1221"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1280"/>
         <source>Here are the placed activities which lead to a difficulty, in order from the first one to the last (the last one FET failed to schedule and the last ones are difficult):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="281"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="475"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="646"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1060"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1137"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="302"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="502"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="679"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1113"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1193"/>
         <source>Conflicts</source>
         <comment>Title of dialog</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="324"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="518"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="345"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="545"/>
         <source>Generation interrupted! FET could not find a timetable. Maybe you can consider relaxing the constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="341"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="535"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="705"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="362"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="562"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="738"/>
         <source>The starting random seed was saved in the directory %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="343"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="707"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="364"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="740"/>
         <source>The partial results were saved in the directory %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="347"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="541"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="711"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="368"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="568"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="744"/>
         <source>Additional information relating to the impossible to schedule activities:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="366"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="392"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="560"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="723"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1232"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="387"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="413"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="587"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="756"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1291"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="378"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="399"/>
         <source>Please check the constraints related to the last activities in the list below, which might be impossible to schedule:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="381"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="402"/>
         <source>Here are the placed activities which lead to an inconsistency, in order from the first one to the last (the last one FET failed to schedule and the last ones are most likely impossible):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="537"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="564"/>
         <source>The partial highest-stage results were saved in the directory %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="689"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="722"/>
         <source>Generation impossible! Maybe you can consider relaxing the constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="713"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="746"/>
         <source>Please check the constraints related to the activity below, which might be impossible to schedule:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="839"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="878"/>
         <source>Soft conflicts</source>
         <comment>Title of dialog</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="850"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="889"/>
         <source>Soft conflicts listing (in decreasing order):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="873"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="912"/>
         <source>Generation successful!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="877"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="916"/>
         <source>Weighted soft conflicts: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="879"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="918"/>
         <source>The results were saved in the directory %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1118"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1171"/>
         <source>The generation results should now be written in the directory %1 in HTML and XML mode and the conflicts in txt mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1244"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1303"/>
         <source>FET - information about difficult activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1276"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1335"/>
+        <source>Resume</source>
+        <comment>Resume generation</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="149"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="219"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="456"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="633"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="830"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="975"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1350"/>
+        <source>Pause</source>
+        <comment>Pause generation</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1366"/>
         <source>FET - information about initial order of evaluation of activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1021"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1071"/>
         <source>Usually, there is no need to stop and restart the search. But for very difficult timetables this can help. Sometimes in such cases FET can become stuck and cycle forever, and restarting might produce a very fast solution.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="175"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="188"/>
         <source>You have entered the generation with uninitialized rules or 0 activities...aborting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="181"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="194"/>
         <source>Entering generation ... precomputing, please be patient</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="192"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="207"/>
         <source>Your data cannot be processed - please modify it as instructed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="371"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="565"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="392"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="592"/>
         <source>Difficult activity cannot be computed - please report possible bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1005"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="1052"/>
         <source>Max placed activities: %1 (at %2)</source>
         <comment>%1 represents the maximum number of activities placed, %2 is a time interval</comment>
         <translation type="unfinished"></translation>
@@ -71618,27 +71642,33 @@ teachers</source>
 <context>
     <name>TimetableGenerateForm_template</name>
     <message>
-        <location filename="../src/interface/timetablegenerateform_template.ui" line="23"/>
+        <location filename="../src/interface/timetablegenerateform_template.ui" line="97"/>
         <source>Current stage:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform_template.ui" line="98"/>
+        <location filename="../src/interface/timetablegenerateform_template.ui" line="77"/>
         <source>Write current timetable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform_template.ui" line="108"/>
+        <location filename="../src/interface/timetablegenerateform_template.ui" line="87"/>
         <source>Write highest stage timetable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform_template.ui" line="134"/>
+        <location filename="../src/interface/timetablegenerateform_template.ui" line="25"/>
+        <source>Pause</source>
+        <comment>Pause generation</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegenerateform_template.ui" line="39"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform_template.ui" line="127"/>
+        <location filename="../src/interface/timetablegenerateform_template.ui" line="32"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
@@ -71649,38 +71679,44 @@ teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform_template.ui" line="40"/>
+        <location filename="../src/interface/timetablegenerateform_template.ui" line="121"/>
         <source>Stop the generation and...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform_template.ui" line="49"/>
+        <location filename="../src/interface/timetablegenerateform_template.ui" line="130"/>
         <source>View current timetable and impossible activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform_template.ui" line="59"/>
+        <location filename="../src/interface/timetablegenerateform_template.ui" line="140"/>
         <source>View highest stage timetable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform_template.ui" line="69"/>
+        <location filename="../src/interface/timetablegenerateform_template.ui" line="155"/>
+        <source>[PAUSED]</source>
+        <comment>Generation is paused</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegenerateform_template.ui" line="48"/>
         <source>Without stopping the generation</source>
         <extracomment>This is the title of a group box with more buttons, and all the buttons do their function without stopping the generation</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform_template.ui" line="78"/>
+        <location filename="../src/interface/timetablegenerateform_template.ui" line="57"/>
         <source>View initial order of placing the activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform_template.ui" line="88"/>
+        <location filename="../src/interface/timetablegenerateform_template.ui" line="67"/>
         <source>View difficult activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform_template.ui" line="118"/>
+        <location filename="../src/interface/timetablegenerateform_template.ui" line="107"/>
         <source>Start</source>
         <translation type="unfinished"></translation>
     </message>
@@ -71688,318 +71724,342 @@ teachers</source>
 <context>
     <name>TimetableGenerateMultipleForm</name>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="495"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="601"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="615"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1196"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1416"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="554"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="660"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="674"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1311"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1531"/>
         <source>FET information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="465"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="524"/>
         <source>For finished timetables, there are also saved the timetables in .fet format (data + constraints to lock the timetable), so that you can open each of them later.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="408"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="459"/>
         <source>Restart</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="457"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="516"/>
         <source>You can see the generated timetables on the hard disk, in HTML and XML formats and the soft conflicts in text format, or the latest timetable (or the latest highest-stage timetable, if no timetable was completed) in the Timetable/View menu.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="470"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="529"/>
         <source>Limit each</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="471"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="530"/>
         <source>The maximum and also the predefined value is %1 minutes, which means %2 hours, so virtually unlimited.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="473"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="532"/>
         <source>Note that if you start the multiple generation with the same global seed, the timetables will be identical (if you let the generations finish).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="474"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="533"/>
         <source>The seed of the first thread will be the global seed multiplied in each component with the number of threads (modulo m1=%1 and respectively m2=%2), for the second thread the seed will be the same as for the first thread, but +1 in each component (modulo m1 and respectively m2), for the third thread the seed will be the same as for the first thread, but +2 in each component, and so on.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="480"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="539"/>
         <source>This method was suggested by %1.</source>
         <comment>%1 is a person</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="481"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="540"/>
         <source>After generating multiple, the global seed will become equal to the seed of the first thread.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="483"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="542"/>
         <source>The number of threads is limited by your computer processor(s). If you have for example an 8 core/16 thread processor, the maximum allowed number of threads is 16. In this case you can make a comparison of generation time with 8 threads or with 16 threads. If you generate on a single thread, the speed of generation of a timetable will be in general a bit higher than that of obtaining a single timetable by generating on multiple threads, because the processor slows down if you are using more threads, but you will obtain more timetables in a comparable time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="491"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="550"/>
         <source>Note: If your file is very big, containing a very large number of teachers or total subgroups, generating on more threads might consume the processor cache and the generation might become very slow compared to generating on a single thread.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="595"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="654"/>
         <source>FET warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="595"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="654"/>
         <source>Data is wrong. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="612"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="671"/>
         <source>Cannot optimize - please modify your data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="659"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="721"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="725"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="789"/>
         <source>Generated: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="660"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="724"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="726"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="792"/>
         <source>Successfully: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1077"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1254"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1061"/>
+        <source>Resume</source>
+        <comment>Resume generation</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="343"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="449"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="683"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1032"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1075"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1097"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1542"/>
+        <source>Pause</source>
+        <comment>Pause generation</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="436"/>
+        <source>[PAUSED]</source>
+        <comment>Generation is paused</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1192"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1369"/>
         <source>From the interface you can access the last successfully generated timetable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1105"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1282"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1220"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1397"/>
         <source>(Thread %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1109"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1286"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1224"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1401"/>
         <source>Time exceeded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1130"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1307"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1245"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1422"/>
         <source>Maximum placed activities: %1 (at %2).</source>
         <comment>%1 represents the maximum number of activities placed, %2 is a time interval</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1156"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1333"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1271"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1448"/>
         <source>Conflicts</source>
         <comment>Title of dialog</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1159"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1336"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1274"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1451"/>
         <source>Number of broken constraints: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1163"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1340"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1278"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1455"/>
         <source>Total conflicts: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1166"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1343"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1281"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1458"/>
         <source>Conflicts listing (in decreasing order):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1188"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1369"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1303"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1484"/>
         <source>This file was automatically generated by FET %1 on %2.</source>
         <comment>%1 is the FET version, %2 is the date and time when this file was generated.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1522"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1651"/>
         <source>FET - information about initial order of evaluation of activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1528"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1657"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1178"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1183"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1355"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1360"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1293"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1298"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1470"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1475"/>
         <source>The results were saved in the directory %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="460"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="519"/>
         <source>Note that, for large data, each timetable might occupy more megabytes of hard disk space, so make sure you have enough space (you can check the dimension of a single timetable as a precaution). Each attempted timetable will correspond to a folder in %1 that contains information about the random seed that was used, but only completed timetables will contain the full set of timetable files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="468"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="527"/>
         <source>If you get an impossible timetable, please enter menu Generate (single) and see the initial order of evaluation of activities; this might help.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="478"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="537"/>
         <source>(If the component of a such computed seed will be all zeroes, we will add to the components of that seed the total number of threads instead of the thread number starting from zero.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="488"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="547"/>
         <source>WARNING: As you use more threads, the processor will be used to a greater extent and it might overheat. Also, the system might become slow or nonreponsive.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="602"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="661"/>
         <source>You have entered the generation with uninitialized rules or 0 activities...aborting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1049"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1164"/>
         <source>Generation interrupted!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1111"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1288"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1226"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1403"/>
         <source>Generation stopped.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1180"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1185"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1295"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1300"/>
         <source>Total searching time was: %1h %2m %3s.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1246"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1361"/>
         <source>Generation finished!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1357"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1362"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1472"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1477"/>
         <source>Total searching time was %1h %2m %3s.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1119"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1296"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1486"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1234"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1411"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1611"/>
         <source>%1 h</source>
         <comment>hours</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1081"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1258"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1196"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1373"/>
         <source>From the interface you can access the last highest-stage timetable and on the disk there were saved all the highest-stage timetables (the highest number of scheduled activities is %1, reached in %2 timetables).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1086"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1263"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1201"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1378"/>
         <source>On the disk there were saved all the highest-stage timetables (the highest number of scheduled activities is %1, reached in %2 timetables).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1123"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1300"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1490"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1238"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1415"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1615"/>
         <source>%1 m</source>
         <comment>minutes</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1127"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1304"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1494"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1242"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1419"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1619"/>
         <source>%1 s</source>
         <comment>seconds</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1498"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1623"/>
         <source>Max placed activities: %1 (at %2)</source>
         <comment>%1 represents the maximum number of activities placed, %2 is a time interval</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1501"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1630"/>
         <source>Current timetable: %1 out of %2 activities placed, %3h %4m %5s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="406"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="443"/>
         <source>Current timetable: 0 out of 0 activities placed, 0h 0m 0s
 Max placed activities: 0 (at 0 s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="470"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="529"/>
         <source>You can limit the search time, by specifying the maximum number of minutes allowed to spend for each timetable (option %1).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="616"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="675"/>
         <source>Your data cannot be processed - please modify it as instructed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="763"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1134"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1137"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1139"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1311"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1314"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1316"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="831"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1249"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1252"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1254"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1426"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1429"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1431"/>
         <source>Timetable no: %1 =&gt; %2</source>
         <comment>%1 is the number of this timetable when generating multiple timetables, %2 is its description</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="788"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="856"/>
         <source>Soft conflicts</source>
         <comment>Title of dialog</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="791"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="859"/>
         <source>Number of broken soft constraints: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="795"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="863"/>
         <source>Total soft conflicts: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="798"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="866"/>
         <source>Soft conflicts listing (in decreasing order):</source>
         <translation type="unfinished"></translation>
     </message>
@@ -72007,7 +72067,7 @@ Max placed activities: 0 (at 0 s)</source>
 <context>
     <name>TimetableGenerateMultipleForm_template</name>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="101"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="154"/>
         <source>minutes</source>
         <extracomment>This is a label with the measure of time limit units for each timetable</extracomment>
         <translation type="unfinished"></translation>
@@ -72018,65 +72078,77 @@ Max placed activities: 0 (at 0 s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="39"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="46"/>
+        <source>[PAUSED]</source>
+        <comment>Generation is paused</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="53"/>
         <source>Current timetable: 0 out of 0 activities placed, 0h 0m 0s
 Max placed activities: 0 (at 0 s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="56"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="84"/>
+        <source>Pause</source>
+        <comment>Pause generation</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="107"/>
         <source>Restart</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="76"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="129"/>
         <source>Limit each</source>
         <extracomment>In fact this is the time limit for search of each timetable, but I keep length short</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="111"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="164"/>
         <source>Timetables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="133"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="186"/>
         <source>Threads</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="147"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="200"/>
         <source>Generated: 0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="154"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="207"/>
         <source>Successfully: 0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="167"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="220"/>
         <source>Start</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="174"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="227"/>
         <source>Order</source>
         <comment>It means &apos;View initial order of placing the activities&apos;, but we need to make it very short.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="191"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="244"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="198"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="251"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="181"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="234"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
@@ -75809,55 +75881,55 @@ Bottom: %4</source>
 <context>
     <name>TimetablingThread</name>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="158"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="164"/>
         <source>(Thread %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="163"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="169"/>
         <source>Generation was stopped by user</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="200"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="206"/>
         <source>Timetable impossible to generate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="205"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="211"/>
         <source>Time exceeded for current timetable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="180"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="222"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="186"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="228"/>
         <source>%1 h</source>
         <comment>hours</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="184"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="226"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="190"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="232"/>
         <source>%1 m</source>
         <comment>minutes</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="188"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="230"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="194"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="236"/>
         <source>%1 s</source>
         <comment>seconds</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="192"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="234"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="198"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="240"/>
         <source>Max placed activities: %1 (at %2)</source>
         <comment>%1 represents the maximum number of activities placed, %2 is a time interval</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="257"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="265"/>
         <source>Timetable breaks %1 soft constraints, has %2 soft conflicts total, and was generated in %3 hours, %4 minutes and %5 seconds.</source>
         <translation type="unfinished"></translation>
     </message>

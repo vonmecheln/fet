@@ -32,7 +32,7 @@
 #include <QVBoxLayout>
 #include <QScrollBar>
 
-#include <QPlainTextEdit>
+#include <QTextEdit>
 
 #include <QInputDialog>
 
@@ -2547,7 +2547,7 @@ void ListSpaceConstraints::constraintComments()
 
 	QVBoxLayout* vl=new QVBoxLayout();
 
-	QPlainTextEdit* commentsPT=new QPlainTextEdit();
+	QTextEdit* commentsPT=new QTextEdit();
 	commentsPT->setPlainText(ctr->comments);
 	commentsPT->selectAll();
 	commentsPT->setFocus();

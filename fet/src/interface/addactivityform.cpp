@@ -508,7 +508,7 @@ SecondMinDaysDialog::SecondMinDaysDialog(QWidget* p, int minD, double w) :QDialo
 				
 	QVBoxLayout* vl=new QVBoxLayout(this);
 	
-	QPlainTextEdit* la=new QPlainTextEdit();
+	QTextEdit* la=new QTextEdit();
 	la->setPlainText(l);
 	la->setReadOnly(true);
 
@@ -1363,7 +1363,7 @@ void AddActivityForm::help()
 	dialog.setWindowTitle(tr("FET - help on adding activity(ies)"));
 
 	QVBoxLayout* vl=new QVBoxLayout(&dialog);
-	QPlainTextEdit* te=new QPlainTextEdit();
+	QTextEdit* te=new QTextEdit();
 	te->setPlainText(s);
 	te->setReadOnly(true);
 	QPushButton* pb=new QPushButton(tr("OK"));

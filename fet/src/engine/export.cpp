@@ -1940,7 +1940,7 @@ LastWarningsDialogE::LastWarningsDialogE(QWidget* parent, const QString& lastWar
 	this->setWindowTitle(tr("FET - export comments", "The comments of the exporting operation"));
 	QVBoxLayout* lastWarningsMainLayout=new QVBoxLayout(this);
 
-	QPlainTextEdit* lastWarningsText=new QPlainTextEdit();
+	QTextEdit* lastWarningsText=new QTextEdit();
 	lastWarningsText->setMinimumWidth(500);				//width
 	lastWarningsText->setMinimumHeight(250);
 	lastWarningsText->setReadOnly(true);

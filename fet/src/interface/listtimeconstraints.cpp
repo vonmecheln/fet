@@ -38,7 +38,7 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 
-#include <QPlainTextEdit>
+#include <QTextEdit>
 
 #include <QInputDialog>
 
@@ -7874,7 +7874,7 @@ void ListTimeConstraints::constraintComments()
 
 	QVBoxLayout* vl=new QVBoxLayout();
 
-	QPlainTextEdit* commentsPT=new QPlainTextEdit;
+	QTextEdit* commentsPT=new QTextEdit;
 	commentsPT->setPlainText(ctr->comments);
 	commentsPT->selectAll();
 	commentsPT->setFocus();

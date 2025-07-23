@@ -919,7 +919,7 @@ void ActivitiesForm::activityComments()
 	
 	QVBoxLayout* vl=new QVBoxLayout();
 	
-	QPlainTextEdit* commentsPT=new QPlainTextEdit();
+	QTextEdit* commentsPT=new QTextEdit();
 	commentsPT->setPlainText(act->comments);
 	commentsPT->selectAll();
 	commentsPT->setFocus();

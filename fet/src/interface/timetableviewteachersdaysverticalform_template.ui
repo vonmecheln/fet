@@ -27,7 +27,7 @@
           <enum>Qt::Orientation::Horizontal</enum>
          </property>
          <widget class="QListWidget" name="teachersListWidget"/>
-         <widget class="QPlainTextEdit" name="detailsTextEdit"/>
+         <widget class="QTextEdit" name="detailsTextEdit"/>
         </widget>
        </item>
        <item>

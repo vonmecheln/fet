@@ -34,7 +34,7 @@ File longtextmessagebox.cpp
 #include <QWidget>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
-#include <QPlainTextEdit>
+#include <QTextEdit>
 #include <QPushButton>
 
 #else
@@ -78,7 +78,7 @@ int LongTextMessageBox::confirmationWithDimensions
 	dialog.setWindowTitle(title);
 	
 	QVBoxLayout* vl=new QVBoxLayout(&dialog);
-	QPlainTextEdit* te=new QPlainTextEdit();
+	QTextEdit* te=new QTextEdit();
 	te->setPlainText(text);
 	te->setReadOnly(true);
 	
@@ -217,7 +217,7 @@ void LongTextMessageBox::informationWithDimensions
 	dialog.setWindowTitle(title);
 	
 	QVBoxLayout* vl=new QVBoxLayout(&dialog);
-	QPlainTextEdit* te=new QPlainTextEdit();
+	QTextEdit* te=new QTextEdit();
 	te->setPlainText(text);
 	te->setReadOnly(true);
 	
@@ -330,7 +330,7 @@ int LongTextMessageBox::largeConfirmationWithDimensionsThreeButtonsYesNoCancel
 	dialog.setWindowTitle(title);
 	
 	QVBoxLayout* vl=new QVBoxLayout(&dialog);
-	QPlainTextEdit* te=new QPlainTextEdit();
+	QTextEdit* te=new QTextEdit();
 	te->setPlainText(text);
 	te->setReadOnly(true);
 	

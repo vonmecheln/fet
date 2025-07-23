@@ -441,7 +441,7 @@ LastWarningsDialog::LastWarningsDialog(QWidget *parent): QDialog(parent)
 	this->setWindowTitle(tr("FET - import %1 comments", "The comments of the importing of the category named %1").arg(importThing));
 	QVBoxLayout* lastWarningsMainLayout=new QVBoxLayout(this);
 
-	QPlainTextEdit* lastWarningsText=new QPlainTextEdit();
+	QTextEdit* lastWarningsText=new QTextEdit();
 	lastWarningsText->setMinimumWidth(500);				//width
 	lastWarningsText->setMinimumHeight(250);
 	lastWarningsText->setReadOnly(true);
@@ -756,7 +756,7 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 	topText->setText(Import::tr("The first line of file\n%1\nis:").arg(shortFileName));
 	top->addWidget(topText);
 	top->addStretch();
-	QPlainTextEdit* textOfFirstLine=new QPlainTextEdit();
+	QTextEdit* textOfFirstLine=new QTextEdit();
 	textOfFirstLine->setReadOnly(true);
 	textOfFirstLine->setPlainText(line);
 
@@ -1233,6 +1233,61 @@ int Import::readFields(QWidget* parent){
 						itemOfField[i] = fieldDefaultItem[i];
 						//Removed by Liviu - we may have empty default fields
 						//assert(!fieldDefaultItem[i].isEmpty());
+						
+						//Crash bug fixed on 2025-07-15, reported by KR_OBS, when reading a line with total duration void and split duration 'set always the same value'.
+						if(ok && i==FIELD_SPLIT_DURATION){
+							if(itemOfField[FIELD_SPLIT_DURATION].isEmpty()){
+								if(!itemOfField[FIELD_TOTAL_DURATION].isEmpty()){
+									int totalInt=itemOfField[FIELD_TOTAL_DURATION].toInt(&ok, 10);
+									if(ok && totalInt>=1){
+										if(totalInt<=MAX_SPLIT_OF_AN_ACTIVITY){
+											QString tmpString;
+											for(int n=0; n<totalInt; n++){
+												if(n!=0)
+													tmpString+="+";
+												tmpString+="1";
+											}
+											itemOfField[FIELD_SPLIT_DURATION]=tmpString;
+										} else {
+											warnText+=Import::tr("Skipped line %1: Field '%2' produces too many subactivities.").arg(lineNumber).arg(fieldName[FIELD_TOTAL_DURATION])+"\n";
+											ok=false;
+										}
+									} else {
+										warnText+=Import::tr("Skipped line %1: Field '%2' contains incorrect data.").arg(lineNumber).arg(fieldName[FIELD_TOTAL_DURATION])+"\n";
+										ok=false;
+									}
+								} else {
+									warnText+=Import::tr("Skipped line %1: Field '%2' is empty.").arg(lineNumber).arg(fieldName[i])+"\n";
+									ok=false;
+								}
+							} else {
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+								QStringList splitList=itemOfField[FIELD_SPLIT_DURATION].split("+", Qt::SkipEmptyParts);
+#else
+								QStringList splitList=itemOfField[FIELD_SPLIT_DURATION].split("+", QString::SkipEmptyParts);
+#endif
+								if(splitList.size()<=MAX_SPLIT_OF_AN_ACTIVITY){
+									int tmpInt=0;
+									for(const QString& split : std::as_const(splitList)){
+										tmpInt+=split.toInt(&ok, 10);
+										if(!ok)
+											warnText+=Import::tr("Skipped line %1: Field '%2' doesn't contain an integer value.").arg(lineNumber).arg(fieldName[FIELD_SPLIT_DURATION])+"\n";
+									}
+									if(itemOfField[FIELD_TOTAL_DURATION].isEmpty()){
+										itemOfField[FIELD_TOTAL_DURATION]=CustomFETString::number(tmpInt);
+									} else {
+										int totalInt=itemOfField[FIELD_TOTAL_DURATION].toInt(&ok, 10);
+										if(totalInt!=tmpInt){
+											warnText+=Import::tr("Skipped line %1: Fields '%2' and '%3' do not have the same value.").arg(lineNumber).arg(fieldName[i]).arg(fieldName[FIELD_TOTAL_DURATION])+"\n";
+											ok=false;
+										}
+									}
+								} else {
+									warnText+=Import::tr("Skipped line %1: Field '%2' contains too many subactivities.").arg(lineNumber).arg(fieldName[i])+"\n";
+									ok=false;
+								}
+							}
+						}
 					}
 				}
 			}
@@ -1330,7 +1385,7 @@ FILE_STRIPPED_NAME
 	headWarnings->addWidget(headWarningsText);
 	headWarnings->addStretch();
 
-	QPlainTextEdit* textOfWarnings=new QPlainTextEdit();
+	QTextEdit* textOfWarnings=new QTextEdit();
 	textOfWarnings->setMinimumWidth(500);			//width
 	textOfWarnings->setReadOnly(true);
 	textOfWarnings->setWordWrapMode(QTextOption::NoWrap);

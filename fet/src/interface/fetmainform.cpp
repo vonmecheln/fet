@@ -4927,7 +4927,7 @@ bool FetMainForm::getLastConfirmation(int newMode, int &ntm, int& nsm, int* nMin
 		all->addLayout(middle);
 	all->addLayout(right);
 
-	QPlainTextEdit* remTim=new QPlainTextEdit();
+	QTextEdit* remTim=new QTextEdit();
 	remTim->setReadOnly(true);
 	remTim->setPlainText(removedTimeConstraintsString);
 	QLabel* labRemTim=new QLabel(tr("These %1 time constraints will be removed:").arg(removedTimeConstraintsList.count()));
@@ -4937,7 +4937,7 @@ bool FetMainForm::getLastConfirmation(int newMode, int &ntm, int& nsm, int* nMin
 	left->addWidget(remTim);
 
 	if(newMode==MORNINGS_AFTERNOONS){
-		QPlainTextEdit* modTim=new QPlainTextEdit();
+		QTextEdit* modTim=new QTextEdit();
 		modTim->setReadOnly(true);
 		modTim->setPlainText(modifiedMinMaxDaysString);
 		QLabel* labModTim=new QLabel(tr("These %1 time constraints will be modified:").arg(modifiedTimeConstraintsList.count()));
@@ -4947,7 +4947,7 @@ bool FetMainForm::getLastConfirmation(int newMode, int &ntm, int& nsm, int* nMin
 		middle->addWidget(modTim);
 	}
 
-	QPlainTextEdit* remSpa=new QPlainTextEdit();
+	QTextEdit* remSpa=new QTextEdit();
 	remSpa->setReadOnly(true);
 	remSpa->setPlainText(removedSpaceConstraintsString);
 	QLabel* labRemSpa=new QLabel(tr("These %1 space constraints will be removed:").arg(removedSpaceConstraintsList.count()));

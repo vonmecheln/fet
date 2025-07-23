@@ -72,7 +72,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPlainTextEdit" name="groupTextEdit"/>
+        <widget class="QTextEdit" name="groupTextEdit"/>
        </item>
       </layout>
      </widget>

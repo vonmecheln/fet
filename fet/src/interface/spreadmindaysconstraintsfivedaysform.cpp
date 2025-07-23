@@ -22,7 +22,7 @@
 
 #include <QPushButton>
 #include <QCheckBox>
-#include <QPlainTextEdit>
+#include <QTextEdit>
 #include <QLineEdit>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
@@ -379,8 +379,8 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 	connect(acceptPB, &QPushButton::clicked, &dialog, &QDialog::accept);
 	connect(cancelPB, &QPushButton::clicked, &dialog, &QDialog::reject);
 	
-	QPlainTextEdit* removedText=new QPlainTextEdit();
-	QPlainTextEdit* addedText=new QPlainTextEdit();
+	QTextEdit* removedText=new QTextEdit();
+	QTextEdit* addedText=new QTextEdit();
 	
 	QString s=tr("The following time constraints will be removed:");
 	s+="\n\n";

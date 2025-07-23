@@ -364,7 +364,7 @@ void SubjectsForm::comments()
 	
 	QVBoxLayout* vl=new QVBoxLayout();
 	
-	QPlainTextEdit* commentsPT=new QPlainTextEdit();
+	QTextEdit* commentsPT=new QTextEdit();
 	commentsPT->setPlainText(sbj->comments);
 	commentsPT->selectAll();
 	commentsPT->setFocus();

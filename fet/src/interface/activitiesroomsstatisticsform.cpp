@@ -40,8 +40,8 @@ ActivitiesRoomsStatisticsForm::ActivitiesRoomsStatisticsForm(QWidget* parent): Q
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 
-	possiblyPlainTextEdit->setReadOnly(true);
-	certainlyPlainTextEdit->setReadOnly(true);
+	possiblyTextEdit->setReadOnly(true);
+	certainlyTextEdit->setReadOnly(true);
 	
 	QSet<int> activitiesWith100;
 	QSet<int> activitiesWithUnder100;
@@ -335,8 +335,8 @@ ActivitiesRoomsStatisticsForm::ActivitiesRoomsStatisticsForm(QWidget* parent): Q
 		strCertainlyWithoutRoom+=QString("\n");
 	}
 	
-	possiblyPlainTextEdit->setPlainText(strPossiblyWithoutRoom);
-	certainlyPlainTextEdit->setPlainText(strCertainlyWithoutRoom);
+	possiblyTextEdit->setPlainText(strPossiblyWithoutRoom);
+	certainlyTextEdit->setPlainText(strCertainlyWithoutRoom);
 }
 
 ActivitiesRoomsStatisticsForm::~ActivitiesRoomsStatisticsForm()

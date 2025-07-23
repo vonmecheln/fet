@@ -3336,6 +3336,8 @@ int main(int argc, char **argv)
 
 		gen.abortOptimization=false;
 		gen.restart=false;
+		gen.paused=false;
+		gen.pausedTime=0;
 		bool ok=gen.precompute(nullptr, &initialOrderStream);
 		
 		initialOrderFile.close();

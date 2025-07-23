@@ -325,7 +325,7 @@ void BuildingsForm::comments()
 	
 	QVBoxLayout* vl=new QVBoxLayout();
 	
-	QPlainTextEdit* commentsPT=new QPlainTextEdit();
+	QTextEdit* commentsPT=new QTextEdit();
 	commentsPT->setPlainText(bu->comments);
 	commentsPT->selectAll();
 	commentsPT->setFocus();
