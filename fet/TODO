@@ -3,7 +3,7 @@ From different old custom FET-MA users, for the Mornings-Afternoons mode, on the
 
 https://lalescu.ro/liviu/fet/forum/index.php?topic=4519.0
 
-- Max days per week for a room (Thai Chi Phoung also suggested, see below, max real days per week for a room, but (in Liviu's opinion), other tricks should work,
+- Max days per week for a room (Thai Chi Phuong also suggested, see below, max real days per week for a room, but (in Liviu's opinion), other tricks should work,
 since relying on rooms' constraints might be higly inefficient),
 - Max hours daily (half day) for a room,
 - Max hours daily (real day) for a room (suggested by bachiri401).
@@ -689,12 +689,13 @@ The times are locked.
 It would be the most simplier when I open e.g. the teachers timetable,
 click on a activities and I can add room to this.
 
-Liviu:
+Liviu Lalescu:
 I'm sorry, but you'll have to add manually constraints activity preferred
 room for each of the activities.
 I am not sure I understood correctly the problem, if not, please excuse me
 and explain more detailed.
 
+Zsolt Udvari:
 Yes, imho you understand my problem. I hoped that there is a simpler
 solution. So, maybe in the next releases would be nice: when a
 timetable is generated, user can changes/sets the rooms (only the
@@ -708,16 +709,7 @@ From Naji:
 Hopefully, FET's team can enhanced it to be able to export the xml data to database, that will facilitates the
 output of the data and enables programmers to engage it with their programs.
 
-41---------------------------------------------------------
-From Massimo Mancini:
-
-This is a request for a new feature...
-For Teachers and Subjects I like to use a brief description (BD), a code, and I optionally convert it to corresponding long description (LD) in the generated timetables (I refer to my current timetable procedures). So I need to define two new fields. Example:
-Teacher:  MANC, MANCINI
-Subjects: MAT, MATEMATICA
-
-I think that this can be achieved without any change to current interface, simply using the format above. Of course I want use the BD only in defining activities and when I have to specify subject and Teacher.
-I wish to output the brief (only BD) or complete (LD) timetables
+41------------------------DONE-----------------------------
 
 42---------------------------------------------------------
 From jaspal:
@@ -880,7 +872,7 @@ Chafik Graiguer:
 well
 to re-use last year .fet file,
 what about
--removing all activities at once, so Data keeps only subjects, teachers and groups ?
+- removing all activities at once, so Data keeps only subjects, teachers and groups ?
 or
 - removing all teachers from all activities (because teachers don't teach the same groups every year)
 or
@@ -891,10 +883,10 @@ I just looked in the sources and it seems that in statistics I only count active
 
 Chafik Graiguer:
 yes !
-and I spend nealy ONE hour counting periods for teacher  Eng1!!
+and I spend nearly ONE hour counting periods for teacher  Eng1!!
 in Statistics, teacher  Eng1 has only 20 hours
 in Data  ---> activities, I count 21 hours :-))  for him
-finaly, I realised that I has deactivted one hour component by mistake
+finaly, I realised that I have deactivated one hour component by mistake
 
 so, is it possible to add this line into activity window:
 Quote:
@@ -1054,7 +1046,7 @@ more constraints and repeating simulations. And this is the third hint.
 56---------------------------------------------------------
 From Chafik Graiguer:
 
-When a user click on Data ---> activities
+When a user clicks on Data ---> activities
 he is presented with a list of all activities because filter fields are empty
 all activities are listed based on Activity Id
 Now, is it possible to a add sort feature like this
@@ -1065,7 +1057,7 @@ Sort by:
 	Subject
 	Act Id
 	
-So for example, if you select teachers, all activities will be listed alphapetically in a ascendent order
+So for example, if you select teachers, all activities will be listed alphabetically in a ascendent order
 
 57---------------------------------------------------------
 From Massimo Mancini:
@@ -1140,7 +1132,7 @@ From aliponte:
 
 An activity tag can be assigned the property not to count the underlying activities.
 
-Please consider also this flag to affect the constraints with "days". A pseudo activity should not increase the number of days (if it is the only 
+Please consider also this flag to affect the constraints with "days". A pseudo activity should not increase the number of days (if it is the only
 activity of a day). A pseudo activity should be "invisible" for all countings concerning constraints, and for countings concerning statistics (teachers, students, subjects).
 
 65---------------------------------------------------------
@@ -1367,14 +1359,7 @@ Suggested also by nouvakis, mbarsan, and pgsrihr, here: https://lalescu.ro/liviu
 
 See also TODO items #84, #455, and #476.
 
-83---------------------------------------------------------
-From Massimo Mancini:
-
-1. Constraint not available time slots for a teacher
-2. I put a name in filter and I see there's any constraint of this kind on
-that teacher
-3. Then I press Add. I expect the teacher field filled with the name I used in
-filter... but currently FET propose always the first teacher in list.
+83----------DONE in FET-7.3.2 on 18 July 2025--------------
 
 84-----PARTIALLY-DONE in FET-6.11.0 22 October 2023--------
 From Massimo Mancini and Chafik Graiguer:
@@ -1637,17 +1622,7 @@ The problem with activity id 2 was a variation on this problem. T2 had 5 activit
 
 You do similar checking for student groups which have too many activities for the available time slots.
 
-102---------------------------------------------------------
-From Christian Kemmer:
-
-I have another suggestion which would make things easier for me.
-When defining time constraints for activities, I can choose a group of students, let's say "year 05". But no activity belongs to this group, because all activities belong to subgroups of that group, let's say "class 05A" or "class 05B". So choosing a group in those dialogs has no effect for me.
-What I really want to do is to define constraints for some activities that all belong to subgroups of a special group, for example all lessons in a certain subject of all classes in "year 05". I cannot use the "choose group"-combo-box at the moment, but I have to use the "subject" or "teacher" combo-boxes. If I use subject, I also get a lot of activities from other years, if I use teacher, I also get those other activities, and I have to change the teacher for each activity I am searching for.
-
-My suggestion is that there is a checkbox "show subgroups of group" with the following effect:
-If I choose a group and activate that checkbox, all subgroups of that group are also shown.
-So if I choose "year 05" and subject "physics", all activities with subject "physics" in all subgroups like "class 05A", "class 05B", ... of group "year 05" are shown.
-If I only choose the group and activate that checkbox while leaving the other comboboxes blank, all activities of all subgroups of that group are shown.
+102------------------------DONE-----------------------------
 
 103---------------------------------------------------------
 From Silver (on forum):
@@ -1873,94 +1848,7 @@ In addition to (6.), when Liviu said that Excel was not free software, rjmillett
 Another option would be to export as a Google sheet that's open source and
 free for all other than Microsoft's excel
 
-125---------------------------------------------------------
-From Volker Dirr and Bobby Wise:
-
-Bobby:
-
-1) I have a situation where a school has 3 Grade 11 classes. 11a, 11b and 11c.
-
-All the classes have compulsory subjects: 7 Periods of English, 7 periods of
-second language (Afrikaans, French and German) and 8 periods of Mathematics.
-
-Then each student must select 1 subject from each of the combinations below:
-
-
-Combination 1 (6 Periods)
-
-Accounting
-
-Biology
-
-History
-
-Science
-
-
-Combination 2 (6 Periods)
-
-Art
-
-Biology
-
-Economics
-
-Science
-
-
-Combination 3 (6 Periods)
-
-Art
-
-Biology
-
-Geography
-
-Science
-
-
-They also have 2 remaining subjects of 1 period each Life Skills and
-Religious Instruction.
-
-
-They have a 7 day cycle and 6 periods in each day.
-
-
-Could you please recommend a manner in which I should split the classes in
-order to make it possible for all the subject choices?
-
-
-2) Thanks Liviu, Volker did help so I have sorted out the problem.
-
-What I also discussed with Volker was the possibility of a forth category
-split. I know it will slow down the generation but for me that is not too
-much of a problem. I suggested that perhaps in the Settings Parameters you
-should put an option so the user can decide if they would like a 4th
-category or not. Then obviously they should realize if they do select the
-option that the generation process will be much slower.
-
-
-Volker:
-
-i had several talkings about the number of categories now again.
-
-what do you think about the following suggestion:
-
-add in the settings a integer "max number of subgroups for split year
-automaticly".
-
-by that idea it is much much flexible in the number of categories and
-the number of splits per category.
-
-so you can increase/change as long as you are not over that limit.
-
-the current limit is 12*6*6=432.
-i think setting the limit to 500 is ok.
-
-we maybe also allow the user to increase that limit a bit more, but of
-course only with the warning that it will be slow, produce large html
-files and doesn't make sence if it is (much) greater then "real"
-students per year.
+125----------------------DONE-------------------------------
 
 126---------------------------------------------------------
 From Volker Dirr:
@@ -1975,7 +1863,7 @@ From Volker Dirr:
 >> function.
 >> the strange thing was this:
 >> i saved QSettings in the destructor ~xyz and reload it in an other
->> function/file again, but it look like Qsettings didn't save. the
+>> function/file again, but it looks like QSettings didn't save. the
 >> strange things was that visible/correct as soon as i restarted that
 >> reload function a bit later.
 >> first of all i tried a QSettings.sync(), but it doesn't help.
@@ -2033,7 +1921,7 @@ will not appear.
 I really cannot do all perfectly with closeEvent. There are too many
 files. Maybe in the future.
 
-127---------------------------------------------------------
+127--------------------partially done-----------------------
 From Volker Dirr:
 
 Lift the limits for the generation algorithm, like MAX_TEACHERS and
@@ -2183,12 +2071,7 @@ good! isn'it? ;-)
 The best would be if you could show the first line of the comments along with
 the file name in the recents list... so I would avoid to remember...
 
-134---------------------------------------------------------
-From Pietro (on forum):
-
-I think would be nice we could enable/disable constraints even in the filtered masks
-(ex: "constraints teacher not available times" mask), and not only in the "all time
-constraints" mask. The "comments" button would be very useful too.
+134--------------------------DONE---------------------------
 
 135---------------------------------------------------------
 From Pietro (on forum):
@@ -2294,7 +2177,7 @@ What I do now for the next term is to export the information, I am interested in
 I do have a problem now. If I import the activities then I must add the constraints from scratch, hundreds of them.
 
 If there are only one or two constraints and a few changes to the activities that is not a problem.
-Is there not a way that the existing constraints can be inported withou entering them again.  I know that I can save the timetable with data, including constraints, but this is of no help to me.
+Is there not a way that the existing constraints can be inported without entering them again.  I know that I can save the timetable with data, including constraints, but this is of no help to me.
 
 Is there a solution?
 
@@ -2483,12 +2366,12 @@ From Volker Dirr:
 
 name of constraints isn't always the same:
 fet has for example: "teacher not available times" constraint.
-but it also has :"A set of activities has preferred times"
+but it also has: "A set of activities has preferred times"
 But are these times preferred? The opposite times are not available.
 So this constraint should be called "A set of activities has not
 allowed/available times".
 
-maybe even the "activity prefferd time" is also bad, because it is not
+maybe even the "activity preferred time" is also bad, because it is not
 only preffered. that is a 100% constraint. even the fet interface call it
 "locked". So this constraint should be "An activity has a locked time".
 
@@ -2536,7 +2419,7 @@ In the interface I am glad to see a button that add all teacher and set every si
 From agemagician (on forum):
 
 1- Print the name of the year, group and class under the institute name.
-2- Print the schedule from right to left rather than left to right "very useful for Arabic countries like our academy". - Qt bug (Liviu)
+2- Print the schedule from right to left rather than left to right "very useful for Arabic countries like our academy". - Qt bug (Liviu) -> DONE
 3- Make a bold line between each day in the printing and light line between periods.
 4- Make a bold line between groups in the printing.
 5- Change the font in the printing. -> DONE on 31 January 2022 in FET-6.2.7.
@@ -2646,10 +2529,7 @@ Please add a multiple select and then add to FET, then I need not to click the s
 
 185------------------------DONE-----------------------------
 
-186---------------------------------------------------------
-From plaldw (on forum):
-
-Max building changes in a time interval.
+186------------------------DONE-----------------------------
 
 187---------------------------------------------------------
 From llbuenoo (on forum):
@@ -2705,7 +2585,6 @@ only the first one, because others are already the same) have the same
 category.
 no: -> impossible to place activity
 yes: -> place activity
-
 
 i am not 100% sure, but i think with this kind of timetabling we can save
 space and maybe also improve speed.
@@ -3879,40 +3758,40 @@ in fact this suggestion should be done similar to students and rooms.
 
 but i explain now with a single example, so it's easier to explain:
 there are 2 dialogs:
-fet -> data -> time constraints -> teachers -> max gaps per week for a 
+fet -> data -> time constraints -> teachers -> max gaps per week for a
 teacher
-fet -> data -> time constraints -> teachers -> max gaps per week for all 
+fet -> data -> time constraints -> teachers -> max gaps per week for all
 teachers
 
 it should be only a single dialog:
 fet -> data -> time constraints -> teachers -> max gaps per week
-the dialog is similar to the current one. just ordered. first the "all" 
+the dialog is similar to the current one. just ordered. first the "all"
 constraints, then the "single" constraints.
 
-that will help much, since you only need to check a single list now and 
+that will help much, since you only need to check a single list now and
 it is still ordered, because the "all" will be always the first.
 this save a lot of space in the fet main window interface.
 
 then there are 2 ideas how to implement it.
 idea a)
 fet -> data -> time constraints -> teachers -> max gaps per week
-can stay as "fet -> data -> time constraints -> teachers -> max gaps per 
+can stay as "fet -> data -> time constraints -> teachers -> max gaps per
 week for a teacher" currently is.
-the "add" button must be renamed to "add one". And a "add all" 
+the "add" button must be renamed to "add one". And a "add all"
 pushbutton must be added.
 
 idea b)
 we can also remove a lot of dialogs. in this example:
 remove
-fet -> data -> time constraints -> teachers -> max gaps per week for all 
+fet -> data -> time constraints -> teachers -> max gaps per week for all
 teachers
 
 then only modify
-fet -> data -> time constraints -> teachers -> max gaps per week for a 
+fet -> data -> time constraints -> teachers -> max gaps per week for a
 teacher
 the combobox of this dialog only need a "all teachers" as first item.
 
-i prefer variant b, because it will save a lot of code, memory, 
+i prefer variant b, because it will save a lot of code, memory,
 translations, ...
 
 238-------------------------DONE----------------------------
@@ -3969,7 +3848,7 @@ From Lizio (on forum):
 
 Lizio:
 
-What about adding a new value to activities that is difficulty (let say 0=very easy like PE, 1=easy like art, 2= medium, 3=difficult and 4=very difficult like calculus), then it would be possible to add a constraint on maxximum difficulties per day in order to avoid "impossible days" for students.
+What about adding a new value to activities that is difficulty (let say 0=very easy like PE, 1=easy like art, 2= medium, 3=difficult and 4=very difficult like calculus), then it would be possible to add a constraint on maximum difficulties per day in order to avoid "impossible days" for students.
 
 Liviu:
 
@@ -4277,7 +4156,7 @@ for each teacher (a solution which you partially imply).
 From auriolar (on forum):
 
 I think it would be a good idea to have tags for teachers, this way we could add constraints to groups of teachers instead of doing one by one.
-Maybe it could be done for rooms to.
+Maybe it could be done for rooms too.
 
 272---------------------------------------------------------
 From Bob Hairgrove (on forum):
@@ -4356,12 +4235,7 @@ In the add constraint teacher not available dialog mark with "b" the slots in wh
 
 Liviu Lalescu: also in students set or room not available and activity(ies) preferred times?
 
-280---------------------------------------------------------
-From Lizio (on forum):
-
-It could be helpful to put disable and enable buttons in every windows about constraints, not only in the "All" ones.
-
-DONE-->It could be helpful too to put those buttons also on windows about activities.
+280-----------------------DONE------------------------------
 
 281--------PARTIALLY DONE IN FET-6.11.0 on 23 October 2023--
 From Lizio (on forum):
@@ -4714,12 +4588,12 @@ each component having duration 1.
 302---------------------------------------------------------
 From Volker Dirr:
 
-generate multiple: instead of a fixed max time use a more flexible max 
-time. "Calculate max X minutes longer than the time the last max 
-activity was placed" or "Countdown x minutes if no new max placed 
+generate multiple: instead of a fixed max time use a more flexible max
+time. "Calculate max X minutes longer than the time the last max
+activity was placed" or "Countdown x minutes if no new max placed
 activity was found"
 so for example thre is a countdown timelimit with 5 minutes.
-as soon as a new max placed activity was found the counter restarts at 5 
+as soon as a new max placed activity was found the counter restarts at 5
 minutes.
   so the time limit is 5 minutes.
 
@@ -5016,10 +4890,10 @@ Liviu, 2024-01-21: isn't this done a long time ago, min gaps between ordered pai
 From Volker Dirr:
 
 get rid of max_days_per_week and max_hours_per_day.
-one needed step for that is redesigning the interface, since the 
+one needed step for that is redesigning the interface, since the
 interface use it.
 it won't be too difficult to fix that.
-just add hours per day and days per week as a QStringList (like teacher 
+just add hours per day and days per week as a QStringList (like teacher
 names, subject names, ...)
 this dialog should get buttons like in teachers, rooms, subjects, ...
 so add a button with "up" and "down" to move the name.
@@ -5028,19 +4902,19 @@ so add a button with "up" and "down" to move the name.
 "delete"
 "add"
 
-the hours per day dialog should maybe also get a button with a spinbox 
+the hours per day dialog should maybe also get a button with a spinbox
 to add X names at once.
 Like name "1", "2", ...
 or "1.", "2.", ...
 or ...
 
 the days per week dialog should get 3 buttons like:
-"add Monday to Friday" (so it add those 5 days. if you press that button 
-again, it should add once again. so there will be 10 days added (maybe 
+"add Monday to Friday" (so it add those 5 days. if you press that button
+again, it should add once again. so there will be 10 days added (maybe
 with an attached small string).
 "add Monday to Saturday"
 "add Monday to Sunday"
-"add From a date To a date" So you can select 2 calender dates and it 
+"add From a date To a date" So you can select 2 calender dates and it
 just add all that dates.
 
 321---------------------------------------------------------
@@ -9767,7 +9641,7 @@ Anyway, I have opened a poll on the subject in a Facebook group and will wait fo
 
 As for my opinion, I think moving the teacher's behavior back to constraints would be a step backward in the development of the program. 
 
-MOHAMED AIT ICHOU: You can leave it as it is now, it is clear to those who use the program normally.
+Mohamed Ait Ichou: You can leave it as it is now, it is clear to those who use the program normally.
 
 ---
 
@@ -10968,3 +10842,45 @@ constraints with less then 100%.
 
 So the source of generate.cpp can stay the same (untouched) by this
 special check/feature.
+
+720--------------------------------------------------------
+From Mohamed Ait Ichou (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6447.0
+
+I kindly suggest making the color selection option apply to all windows. In other words, when colors are chosen, they should be applied to all constraints.
+In the latest versions, we have to reselect the colors each time we access a constraint, which is not a pleasant experience.
+
+721--------------------------------------------------------
+From Walid (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6449.0
+
+When using FET in Arabic, and 2 tags, the software places a Latin script comma between the tags (either in software or in prints),
+while it should be an Arabic script comma.
+
+722--------------------------------------------------------
+From GUEFFAZ REDA (on Facebook):
+
+He sent Liviu Lalescu two pictures of the teachers' not available times time horizontal (and the suggestions are also for the students' not available
+times time horizontal):
+
+a) First picture:
+	1. Color the columns according to the periods color by color so it is easier to concentrate.
+	2. The name of the day is divided into columns and the original name is in each column.
+	3. Rotate the name of the day.
+	4. If I use the colored style, the vertical lines don't show up and I can't focus in the boxes.
+
+b) Second picture:
+	He suggested to color the half days alternating: green for morning and normal for afternoon.
+
+723--------------------------------------------------------
+From Yush Yuen:
+
+I come back to a situation where I wish FET can do: randomly assign a teacher from a set of teachers.
+I have activities, PE, that I don't care who is teaching it. However, assigning one teacher as opposed to
+the other sometimes make other activities impossible or difficult. Something I cannot foresee.
+
+I know we have talked about this many years ago already. And it is something very complicated to implement.
+But I would stay that if FET is still missing any major feature (it has evolved into a very powerful
+program!), I would say that the ability to choose a teacher from a set would be a very good one.

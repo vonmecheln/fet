@@ -340,7 +340,7 @@ TimetableGenerateMultipleForm::TimetableGenerateMultipleForm(QWidget* parent): Q
 	generation_running_multi=false;
 	
 	pausePushButton->setDisabled(true);
-	pausePushButton->setText(tr("Pause", "Pause generation"));
+	pausePushButton->setText(tr("Pause", "Pause the generation"));
 	restartPushButton->setDisabled(true);
 
 	startPushButton->setEnabled(true);
@@ -433,7 +433,7 @@ void TimetableGenerateMultipleForm::nThreadsChanged(int nt)
 		for(int i=oldN; i<nt; i++){
 			QWidget* wd=new QWidget(timetablesTabWidget);
 			
-			QLabel* plb=new QLabel(tr("[PAUSED]", "Generation is paused"), wd);
+			QLabel* plb=new QLabel(tr("[PAUSED]", "The generation is paused"), wd);
 			plb->setVisible(false);
 			///////
 			QFont font(plb->font());
@@ -446,7 +446,7 @@ void TimetableGenerateMultipleForm::nThreadsChanged(int nt)
 			lbl->addWidget(plb);
 			lbl->addWidget(lb);
 
-			QPushButton* ppb=new QPushButton(tr("Pause", "Pause generation"), wd);
+			QPushButton* ppb=new QPushButton(tr("Pause", "Pause the generation"), wd);
 			ppb->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 			ppb->setDisabled(true);
 			connect(ppb, &QPushButton::clicked, this, &TimetableGenerateMultipleForm::pauseCurrentThread);
@@ -456,7 +456,8 @@ void TimetableGenerateMultipleForm::nThreadsChanged(int nt)
 			line->setFrameShape(QFrame::HLine);
 			line->setFrameShadow(QFrame::Sunken);
 
-			QPushButton* rpb=new QPushButton(tr("Restart"), wd);
+			QPushButton* rpb=new QPushButton(tr("Restart", "Restart the generation (stop the current generation and begin a new different one). "
+			 "Please make a clear distinction between 'Restart the generation' and 'Continue the generation'."), wd);
 			rpb->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 			rpb->setDisabled(true);
 			connect(rpb, &QPushButton::clicked, this, &TimetableGenerateMultipleForm::restartCurrentThread);
@@ -680,7 +681,7 @@ void TimetableGenerateMultipleForm::start(){
 	//assert(controllersList.count()==0);
 	for(int t=0; t<nThreads; t++){
 		pausePushButtons.at(t)->setEnabled(true);
-		pausePushButtons.at(t)->setText(tr("Pause", "Pause generation"));
+		pausePushButtons.at(t)->setText(tr("Pause", "Pause the generation"));
 		
 		pausedLabels[t]->setVisible(false);
 		
@@ -1029,7 +1030,7 @@ void TimetableGenerateMultipleForm::restartCurrentThread()
 	
 	restartPushButtons.at(t)->setDisabled(true);
 	pausePushButtons.at(t)->setDisabled(true);
-	pausePushButtons.at(t)->setText(tr("Pause", "Pause generation"));
+	pausePushButtons.at(t)->setText(tr("Pause", "Pause the generation"));
 	
 	pausedLabels.at(t)->setVisible(false);
 	
@@ -1058,7 +1059,8 @@ void TimetableGenerateMultipleForm::pauseCurrentThread()
 	
 	if(genMultiMatrix[t].isRunning){
 		if(!genMultiMatrix[t].paused){
-			pausePushButtons.at(t)->setText(tr("Resume", "Resume generation"));
+			pausePushButtons.at(t)->setText(tr("Continue", "Continue the generation (it was previously paused, and now it will continue from where it was paused). "
+			 "Please make a clear distinction between 'Continue the generation' and 'Restart the generation'."));
 			genMultiMatrix[t].paused=true;
 
 			labels[t]->setDisabled(true);
@@ -1072,7 +1074,7 @@ void TimetableGenerateMultipleForm::pauseCurrentThread()
 			
 			labels[t]->setEnabled(true);
 
-			pausePushButtons.at(t)->setText(tr("Pause", "Pause generation"));
+			pausePushButtons.at(t)->setText(tr("Pause", "Pause the generation"));
 			genMultiMatrix[t].paused=false;
 		}
 	}
@@ -1094,7 +1096,7 @@ void TimetableGenerateMultipleForm::stop()
 		labels[t]->setEnabled(true);
 
 		pausePushButtons.at(t)->setDisabled(true);
-		pausePushButtons.at(t)->setText(tr("Pause", "Pause generation"));
+		pausePushButtons.at(t)->setText(tr("Pause", "Pause the generation"));
 		restartPushButtons.at(t)->setDisabled(true);
 		
 		/*genMultiMatrix[t].myMutex.lock();
@@ -1539,7 +1541,7 @@ void TimetableGenerateMultipleForm::generationFinished()
 		labels[t]->setEnabled(true);
 
 		pausePushButtons.at(t)->setDisabled(true);
-		pausePushButtons.at(t)->setText(tr("Pause", "Pause generation"));
+		pausePushButtons.at(t)->setText(tr("Pause", "Pause the generation"));
 		restartPushButtons.at(t)->setDisabled(true);
 	}
 	

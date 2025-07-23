@@ -6620,7 +6620,40 @@ void ListTimeConstraints::addClicked()
 
 	int initialNumberOfTimeConstraints=gt.rules.timeConstraintsList.count();
 
-	AddOrModifyTimeConstraint aomtc(dialog, type);
+	QString preselectedTeacherName;
+	QString preselectedStudentsSetName;
+	QString preselectedActivityTagName;
+	QString preselectedFirstActivityTagName;
+	QString preselectedSecondActivityTagName;
+
+	if(teachersComboBox!=nullptr)
+		preselectedTeacherName=teachersComboBox->currentText();
+	else
+		preselectedTeacherName=QString();
+
+	if(studentsComboBox!=nullptr)
+		preselectedStudentsSetName=studentsComboBox->currentText();
+	else
+		preselectedStudentsSetName=QString();
+
+	if(activityTagsComboBox!=nullptr)
+		preselectedActivityTagName=activityTagsComboBox->currentText();
+	else
+		preselectedActivityTagName=QString();
+
+	if(first_activityTagsComboBox!=nullptr)
+		preselectedFirstActivityTagName=first_activityTagsComboBox->currentText();
+	else
+		preselectedFirstActivityTagName=QString();
+
+	if(second_activityTagsComboBox!=nullptr)
+		preselectedSecondActivityTagName=second_activityTagsComboBox->currentText();
+	else
+		preselectedSecondActivityTagName=QString();
+
+	AddOrModifyTimeConstraint aomtc(dialog, type, nullptr,
+	 preselectedTeacherName, preselectedStudentsSetName, preselectedActivityTagName,
+	 preselectedFirstActivityTagName, preselectedSecondActivityTagName);
 
 	int finalNumberOfTimeConstraints=gt.rules.timeConstraintsList.count();
 

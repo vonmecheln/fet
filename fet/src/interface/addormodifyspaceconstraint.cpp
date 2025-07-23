@@ -150,7 +150,9 @@ AddOrModifySpaceConstraintDialog::~AddOrModifySpaceConstraintDialog()
 	eventLoop->quit();
 }
 
-AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _type, SpaceConstraint* _oldsc)
+AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _type, SpaceConstraint* _oldsc,
+ const QString& _preselectedTeacherName, const QString& _preselectedStudentsSetName, const QString& _preselectedSubjectName, const QString& _preselectedActivityTagName,
+ const QString& _preselectedRoomName)
 {
 	type=_type;
 	oldsc=_oldsc;
@@ -2049,6 +2051,56 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 			roomsComboBox->addItem(rm->name);
 
 		roomsComboBox->setCurrentIndex(0);
+	}
+
+	if(oldsc==nullptr && !addEmpty){
+		if(teachersComboBox!=nullptr){
+			if(!_preselectedTeacherName.isEmpty()){
+				int q=teachersComboBox->findText(_preselectedTeacherName);
+				if(q>=0){
+					teachersComboBox->setCurrentIndex(q);
+				}
+			}
+		}
+
+		//Please remember that there is an option, show subgroups in students combo boxes.
+		if(studentsComboBox!=nullptr){
+			if(!_preselectedStudentsSetName.isEmpty()){
+				int q=studentsComboBox->findText(_preselectedStudentsSetName);
+				if(q>=0){
+					studentsComboBox->setCurrentIndex(q);
+				}
+			}
+		}
+
+		if(subjectsComboBox!=nullptr){
+			if(!_preselectedSubjectName.isEmpty()){
+				int q=subjectsComboBox->findText(_preselectedSubjectName);
+				if(q>=0){
+					subjectsComboBox->setCurrentIndex(q);
+				}
+			}
+		}
+
+		if(activityTagsComboBox!=nullptr){
+			if(!_preselectedActivityTagName.isEmpty()){
+				int q=activityTagsComboBox->findText(_preselectedActivityTagName);
+				if(q>=0){
+					activityTagsComboBox->setCurrentIndex(q);
+				}
+			}
+		}
+	}
+
+	if(oldsc==nullptr){
+		if(roomsComboBox!=nullptr){
+			if(!_preselectedRoomName.isEmpty()){
+				int q=roomsComboBox->findText(_preselectedRoomName);
+				if(q>=0){
+					roomsComboBox->setCurrentIndex(q);
+				}
+			}
+		}
 	}
 
 	assert(activitiesComboBox==nullptr || activitiesListWidget==nullptr);

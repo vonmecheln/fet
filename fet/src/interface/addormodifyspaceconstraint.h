@@ -207,7 +207,9 @@ class AddOrModifySpaceConstraint: public QObject
 	QSet<QString> showedStudents;
 
 public:
-	AddOrModifySpaceConstraint(QWidget* parent, int _type, SpaceConstraint* _oldsc=nullptr);
+	AddOrModifySpaceConstraint(QWidget* parent, int _type, SpaceConstraint* _oldsc=nullptr,
+	 const QString& _preselectedTeacherName=QString(), const QString& _preselectedStudentsSetName=QString(), const QString& _preselectedSubjectName=QString(), const QString& _preselectedActivityTagName=QString(),
+	 const QString& _preselectedRoomName=QString());
 	~AddOrModifySpaceConstraint();
 
 private:

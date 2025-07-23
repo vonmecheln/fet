@@ -167,7 +167,9 @@ AddOrModifyTimeConstraintDialog::~AddOrModifyTimeConstraintDialog()
 	eventLoop->quit();
 }
 
-AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type, TimeConstraint* _oldtc)
+AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type, TimeConstraint* _oldtc,
+	 const QString& _preselectedTeacherName, const QString& _preselectedStudentsSetName, const QString& _preselectedActivityTagName,
+	 const QString& _preselectedFirstActivityTagName, const QString& _preselectedSecondActivityTagName)
 {
 	type=_type;
 	oldtc=_oldtc;
@@ -7426,6 +7428,55 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			activityTagsListWidget->addItem(at->name);
 
 		activityTagsListWidget->setCurrentRow(0);
+	}
+
+	if(oldtc==nullptr && !addEmpty){
+		if(teachersComboBox!=nullptr){
+			if(!_preselectedTeacherName.isEmpty()){
+				int q=teachersComboBox->findText(_preselectedTeacherName);
+				if(q>=0){
+					teachersComboBox->setCurrentIndex(q);
+				}
+			}
+		}
+
+		//Please remember that there is an option, show subgroups in students combo boxes.
+		if(studentsComboBox!=nullptr){
+			if(!_preselectedStudentsSetName.isEmpty()){
+				int q=studentsComboBox->findText(_preselectedStudentsSetName);
+				if(q>=0){
+					studentsComboBox->setCurrentIndex(q);
+				}
+			}
+		}
+
+		if(activityTagsComboBox!=nullptr){
+			if(!_preselectedActivityTagName.isEmpty()){
+				int q=activityTagsComboBox->findText(_preselectedActivityTagName);
+				if(q>=0){
+					activityTagsComboBox->setCurrentIndex(q);
+				}
+			}
+		}
+	}
+	if(oldtc==nullptr){
+		if(first_activityTagsComboBox!=nullptr){
+			if(!_preselectedFirstActivityTagName.isEmpty()){
+				int q=first_activityTagsComboBox->findText(_preselectedFirstActivityTagName);
+				if(q>=0){
+					first_activityTagsComboBox->setCurrentIndex(q);
+				}
+			}
+		}
+
+		if(second_activityTagsComboBox!=nullptr){
+			if(!_preselectedSecondActivityTagName.isEmpty()){
+				int q=second_activityTagsComboBox->findText(_preselectedSecondActivityTagName);
+				if(q>=0){
+					second_activityTagsComboBox->setCurrentIndex(q);
+				}
+			}
+		}
 	}
 
 	if(first_filterTeachersComboBox!=nullptr)

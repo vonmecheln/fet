@@ -43,7 +43,7 @@
             </font>
            </property>
            <property name="text">
-            <string comment="Generation is paused">[PAUSED]</string>
+            <string comment="The generation is paused">[PAUSED]</string>
            </property>
           </widget>
          </item>
@@ -81,7 +81,7 @@ Max placed activities: 0 (at 0 s)</string>
             </sizepolicy>
            </property>
            <property name="text">
-            <string comment="Pause generation">Pause</string>
+            <string comment="Pause the generation">Pause</string>
            </property>
           </widget>
          </item>
@@ -104,7 +104,7 @@ Max placed activities: 0 (at 0 s)</string>
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Restart</string>
+            <string comment="Restart the generation (stop the current generation and begin a new different one). Please make a clear distinction between 'Restart the generation' and 'Continue the generation'.">Restart</string>
            </property>
           </widget>
          </item>

@@ -1,3 +1,12 @@
+ 7.3.2
+	- Interface bugs fixed in the teachers'/students' not available times time horizontal dialogs: when using a right-to-left writing system,
+	the lines separating the days were drawn incorrectly (reported by GUEFFAZ REDA).
+	- Interface improvements: the selected filters in the dialogs listing the constraints will be preselected in the corresponding combo boxes when
+	adding new constraints (suggested by Massimo Mancini).
+	- Interface improvements: changed the alternative text of the "Pause" push buttons from "Resume" to "Continue" in the timetable generate
+	single/multiple dialogs (this change was done for clarity, especially when this text is translated into other languages; we need the meaning of
+	this text to be clearly different from the meaning of the "Restart" push button, which is near it in the timetable generate multiple dialog, and
+	which has a totally different functionality: stop the current generation and begin a new different one).
  7.3.1
 	- Crash bug fixed, when importing activities from CSV files (reported by KR_OBS).
 	- Added the option to pause the timetable generation (suggested by russell, GUEFFAZ REDA, Nahum Lipkunsky, and maybe other users in the past).
@@ -621,7 +630,7 @@
 	- Interface bug fix: when switching from a language with a right-to-left layout to one with a left-to-right layout, the interface layout remained
 	right-to-left.
 	- Code cleanup.
-	- The Arabic translation will now use Western Arabic numerals (suggested by wldchtgmlcm and Benahmed Abdelkrim).
+	- The Arabic translation will now use Western Arabic numerals (suggested by Walid and Benahmed Abdelkrim).
  6.3.2
 	- Updated to Qt 6.3.0.
 	- Minor improvements.

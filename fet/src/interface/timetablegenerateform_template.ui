@@ -22,7 +22,7 @@
      <item>
       <widget class="QPushButton" name="pausePushButton">
        <property name="text">
-        <string comment="Pause generation">Pause</string>
+        <string comment="Pause the generation">Pause</string>
        </property>
       </widget>
      </item>
@@ -152,7 +152,7 @@
       </font>
      </property>
      <property name="text">
-      <string comment="Generation is paused">[PAUSED]</string>
+      <string comment="The generation is paused">[PAUSED]</string>
      </property>
     </widget>
    </item>

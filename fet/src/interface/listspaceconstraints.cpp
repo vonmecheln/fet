@@ -2121,7 +2121,40 @@ void ListSpaceConstraints::addClicked()
 
 	int initialNumberOfSpaceConstraints=gt.rules.spaceConstraintsList.count();
 
-	AddOrModifySpaceConstraint aomsc(dialog, type);
+	QString preselectedTeacherName;
+	QString preselectedStudentsSetName;
+	QString preselectedSubjectName;
+	QString preselectedActivityTagName;
+	QString preselectedRoomName;
+
+	if(teachersComboBox!=nullptr)
+		preselectedTeacherName=teachersComboBox->currentText();
+	else
+		preselectedTeacherName=QString();
+
+	if(studentsComboBox!=nullptr)
+		preselectedStudentsSetName=studentsComboBox->currentText();
+	else
+		preselectedStudentsSetName=QString();
+
+	if(subjectsComboBox!=nullptr)
+		preselectedSubjectName=subjectsComboBox->currentText();
+	else
+		preselectedSubjectName=QString();
+
+	if(activityTagsComboBox!=nullptr)
+		preselectedActivityTagName=activityTagsComboBox->currentText();
+	else
+		preselectedActivityTagName=QString();
+
+	if(roomsComboBox!=nullptr)
+		preselectedRoomName=roomsComboBox->currentText();
+	else
+		preselectedRoomName=QString();
+
+	AddOrModifySpaceConstraint aomsc(dialog, type, nullptr,
+	 preselectedTeacherName, preselectedStudentsSetName, preselectedSubjectName, preselectedActivityTagName,
+	 preselectedRoomName);
 
 	int finalNumberOfSpaceConstraints=gt.rules.spaceConstraintsList.count();
 

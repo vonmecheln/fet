@@ -146,7 +146,7 @@ TimetableGenerateForm::TimetableGenerateForm(QWidget* parent): QDialog(parent)
 	startPushButton->setEnabled(true);
 	stopPushButton->setDisabled(true);
 	pausePushButton->setDisabled(true);
-	pausePushButton->setText(tr("Pause", "Pause generation"));
+	pausePushButton->setText(tr("Pause", "Pause the generation"));
 	stopHighestPushButton->setDisabled(true);
 	closePushButton->setEnabled(true);
 	writeResultsPushButton->setDisabled(true);
@@ -216,7 +216,7 @@ void TimetableGenerateForm::start(){
 	startPushButton->setDisabled(true);
 	stopPushButton->setEnabled(true);
 	pausePushButton->setEnabled(true);
-	pausePushButton->setText(tr("Pause", "Pause generation"));
+	pausePushButton->setText(tr("Pause", "Pause the generation"));
 	stopHighestPushButton->setEnabled(true);
 	closePushButton->setDisabled(true);
 	writeResultsPushButton->setEnabled(true);
@@ -453,7 +453,7 @@ void TimetableGenerateForm::stop()
 	startPushButton->setEnabled(true);
 	stopPushButton->setDisabled(true);
 	pausePushButton->setDisabled(true);
-	pausePushButton->setText(tr("Pause", "Pause generation"));
+	pausePushButton->setText(tr("Pause", "Pause the generation"));
 	stopHighestPushButton->setDisabled(true);
 	closePushButton->setEnabled(true);
 	writeResultsPushButton->setDisabled(true);
@@ -630,7 +630,7 @@ void TimetableGenerateForm::stopHighest()
 	startPushButton->setEnabled(true);
 	stopPushButton->setDisabled(true);
 	pausePushButton->setDisabled(true);
-	pausePushButton->setText(tr("Pause", "Pause generation"));
+	pausePushButton->setText(tr("Pause", "Pause the generation"));
 	stopHighestPushButton->setDisabled(true);
 	closePushButton->setEnabled(true);
 	writeResultsPushButton->setDisabled(true);
@@ -827,7 +827,7 @@ void TimetableGenerateForm::impossibleToSolve()
 	startPushButton->setEnabled(true);
 	stopPushButton->setDisabled(true);
 	pausePushButton->setDisabled(true);
-	pausePushButton->setText(tr("Pause", "Pause generation"));
+	pausePushButton->setText(tr("Pause", "Pause the generation"));
 	stopHighestPushButton->setDisabled(true);
 	closePushButton->setEnabled(true);
 	writeResultsPushButton->setDisabled(true);
@@ -972,7 +972,7 @@ void TimetableGenerateForm::generationFinished()
 	startPushButton->setEnabled(true);
 	stopPushButton->setDisabled(true);
 	pausePushButton->setDisabled(true);
-	pausePushButton->setText(tr("Pause", "Pause generation"));
+	pausePushButton->setText(tr("Pause", "Pause the generation"));
 	stopHighestPushButton->setDisabled(true);
 	closePushButton->setEnabled(true);
 	writeResultsPushButton->setDisabled(true);
@@ -1332,7 +1332,8 @@ void TimetableGenerateForm::pause()
 		writeHighestStagePushButton->setDisabled(true);
 		seeImpossiblePushButton->setDisabled(true);
 
-		pausePushButton->setText(tr("Resume", "Resume generation"));
+		pausePushButton->setText(tr("Continue", "Continue the generation (it was previously paused, and now it will continue from where it was paused). "
+		 "Please make a clear distinction between 'Continue the generation' and 'Restart the generation'."));
 		gen.paused=true;
 		
 		currentResultsTextEdit->setDisabled(true);
@@ -1347,7 +1348,7 @@ void TimetableGenerateForm::pause()
 
 		currentResultsTextEdit->setEnabled(true);
 
-		pausePushButton->setText(tr("Pause", "Pause generation"));
+		pausePushButton->setText(tr("Pause", "Pause the generation"));
 		gen.paused=false;
 
 		writeResultsPushButton->setEnabled(true);
