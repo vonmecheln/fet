@@ -86,8 +86,8 @@ void TeacherSubjectsQualificationsForm::ok()
 
 	QString so;
 	for(const QString& s : std::as_const(_teacher->qualifiedSubjectsList))
-		so+=s+QString(", ");
-	so.chop(2);
+		so+=s+translatedCommaSpace();
+	so.chop(translatedCommaSpace().size());
 
 	_teacher->qualifiedSubjectsList.clear();
 	_teacher->qualifiedSubjectsHash.clear();
@@ -98,8 +98,8 @@ void TeacherSubjectsQualificationsForm::ok()
 
 	QString sn;
 	for(const QString& s : std::as_const(_teacher->qualifiedSubjectsList))
-		sn+=s+QString(", ");
-	sn.chop(2);
+		sn+=s+translatedCommaSpace();
+	sn.chop(translatedCommaSpace().size());
 
 	gt.rules.addUndoPoint(tr("Changed the list of qualified subjects for teacher %1 from:\n%2\nto\n%3.").arg(_teacher->name).arg(so).arg(sn));
 

@@ -969,6 +969,11 @@ A function used in HTML saving
 */
 QString protect2vert(const QString& str);
 
+/**
+A function used in CSS saving
+*/
+QString protect3(const QString& str);
+
 QString translatedComma();
 QString translatedCommaSpace();
 QString translatedSemicolon();

@@ -391,20 +391,20 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, const QStr
 	QString tt=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
 	if(INPUT_FILENAME_XML=="")
 		tt=tr("unnamed");
-	tos<<"/* "<<StatisticsExport::tr("CSS Style sheet of %1", "%1 is the file name").arg(tt);
+	tos<<"/* "<<protect3(StatisticsExport::tr("CSS Style sheet of %1", "%1 is the file name").arg(tt));
 	tos<<"\n";
-	tos<<"   "<<StatisticsExport::tr("Style sheet generated with FET %1 on %2", "%1 is FET version, %2 is date and time").arg(FET_VERSION).arg(saveTime)<<" */\n\n";
+	tos<<"   "<<protect3(StatisticsExport::tr("Style sheet generated with FET %1 on %2", "%1 is FET version, %2 is date and time").arg(FET_VERSION).arg(saveTime))<<" */\n\n";
 
-	tos<<"/* "<<StatisticsExport::tr("To hide an element just write the following phrase into the element: %1 (without quotes).",
-		"%1 is a short phrase beginning and ending with quotes, and we want the user to be able to add it, but without quotes").arg("\"display:none;\"")<<" */\n\n";
+	tos<<"/* "<<protect3(StatisticsExport::tr("To hide an element just write the following phrase into the element: %1 (without quotes).",
+		"%1 is a short phrase beginning and ending with quotes, and we want the user to be able to add it, but without quotes").arg("\"display:none;\""))<<" */\n\n";
 	tos<<"table {\n  text-align: center;\n}\n\n";
 	tos<<"table.detailed {\n  margin-left:auto; margin-right:auto;\n  text-align: center;\n  border: 0px;\n  border-spacing: 0;\n  border-collapse: collapse;\n}\n\n";
 	tos<<"caption {\n\n}\n\n";
 	tos<<"thead {\n\n}\n\n";
 
 	//workaround begin.
-	tos<<"/* "<<StatisticsExport::tr("Some programs import \"tfoot\" incorrectly. So we use \"tr.foot\" instead of \"tfoot\".",
-	 "Please keep tfoot and tr.foot untranslated, as they are in the original English phrase")<<" */\n\n";
+	tos<<"/* "<<protect3(StatisticsExport::tr("Some programs import \"tfoot\" incorrectly. So we use \"tr.foot\" instead of \"tfoot\".",
+	 "Please keep tfoot and tr.foot untranslated, as they are in the original English phrase"))<<" */\n\n";
 	//tos<<"tfoot {\n\n}\n\n";
 	tos<<"tr.foot {\n\n}\n\n";
 	//workaround end
@@ -419,31 +419,31 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, const QStr
 	}
 	if(TIMETABLE_HTML_LEVEL>=4){ // must be written before LEVEL 3, because LEVEL 3 should have higher priority
 		for(int i=0; i<gt.rules.subjectsList.size(); i++){
-			tos << "span.s_"<<statisticValues.hashSubjectIDsStatistics.value(gt.rules.subjectsList[i]->name)<<" { /* subject "<<gt.rules.subjectsList[i]->name<<" */\n\n}\n\n";
+			tos << "span.s_"<<statisticValues.hashSubjectIDsStatistics.value(gt.rules.subjectsList[i]->name)<<" { /* subject "<<protect3(gt.rules.subjectsList[i]->name)<<" */\n\n}\n\n";
 		}
 		if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
 			for(int i=0; i<gt.rules.activityTagsList.size(); i++){
 				if(gt.rules.activityTagsList[i]->printable)
-					tos << "span.at_"<<statisticValues.hashActivityTagIDsStatistics.value(gt.rules.activityTagsList[i]->name)<<" { /* activity tag "<<gt.rules.activityTagsList[i]->name<<" */\n\n}\n\n";
+					tos << "span.at_"<<statisticValues.hashActivityTagIDsStatistics.value(gt.rules.activityTagsList[i]->name)<<" { /* activity tag "<<protect3(gt.rules.activityTagsList[i]->name)<<" */\n\n}\n\n";
 			}
 		}
 		for(int i=0; i<gt.rules.yearsList.size(); i++){
 			StudentsYear* sty=gt.rules.yearsList[i];
 			if(usedStudents.contains(sty->name))
-				tos << "span.ss_"<<statisticValues.hashStudentIDsStatistics.value(sty->name)<<" { /* students set "<<sty->name<<" */\n\n}\n\n";
+				tos << "span.ss_"<<statisticValues.hashStudentIDsStatistics.value(sty->name)<<" { /* students set "<<protect3(sty->name)<<" */\n\n}\n\n";
 			for(int j=0; j<sty->groupsList.size(); j++){
 				StudentsGroup* stg=sty->groupsList[j];
 				if(usedStudents.contains(stg->name))
-					tos << "span.ss_"<<statisticValues.hashStudentIDsStatistics.value(stg->name)<<" { /* students set "<<stg->name<<" */\n\n}\n\n";
+					tos << "span.ss_"<<statisticValues.hashStudentIDsStatistics.value(stg->name)<<" { /* students set "<<protect3(stg->name)<<" */\n\n}\n\n";
 				for(int k=0; k<stg->subgroupsList.size(); k++){
 					StudentsSubgroup* sts=stg->subgroupsList[k];
 					if(usedStudents.contains(sts->name))
-						tos << "span.ss_"<<statisticValues.hashStudentIDsStatistics.value(sts->name)<<" { /* students set "<<sts->name<<" */\n\n}\n\n";
+						tos << "span.ss_"<<statisticValues.hashStudentIDsStatistics.value(sts->name)<<" { /* students set "<<protect3(sts->name)<<" */\n\n}\n\n";
 				}
 			}
 		}
 		for(int i=0; i<gt.rules.teachersList.size(); i++){
-			tos << "span.t_"<<statisticValues.hashTeacherIDsStatistics.value(gt.rules.teachersList[i]->name)<<" { /* teacher "<<gt.rules.teachersList[i]->name<<" */\n\n}\n\n";
+			tos << "span.t_"<<statisticValues.hashTeacherIDsStatistics.value(gt.rules.teachersList[i]->name)<<" { /* teacher "<<protect3(gt.rules.teachersList[i]->name)<<" */\n\n}\n\n";
 		}
 		//for(int room=0; room<gt.rules.roomsList.size(); room++){
 		//	tos << "span.r_"<<statisticValues.hashRoomIDsStatistics.value(gt.rules.roomsList[room]->name)<<" { /* room "<<gt.rules.roomsList[room]->name<<" */\n\n}\n\n";
@@ -479,7 +479,7 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, const QStr
 		//tos<<"tr.line3, div.line3 {\n  font-size: smaller;\n  color: silver;\n}\n\n";
 	}
 	
-	tos<<"/* "<<StatisticsExport::tr("End of file.")<<" */\n";
+	tos<<"/* "<<protect3(StatisticsExport::tr("End of file."))<<" */\n";
 
 	if(file.error()!=QFileDevice::NoError){
 		QMessageBox::critical(parent, tr("FET critical"),
@@ -565,39 +565,39 @@ bool StatisticsExport::exportStatisticsIndex(QWidget* parent, const QString& sav
 
 	tos<<"  <body>\n";
 
-	tos<<"    <table>\n      <tr align=\"left\" valign=\"top\">\n        <th>"+tr("Institution name")+":</th>\n        <td>"+protect2(gt.rules.institutionName)+"</td>\n      </tr>\n    </table>\n";
-	tos<<"    <table>\n      <tr align=\"left\" valign=\"top\">\n        <th>"+tr("Comments")+":</th>\n        <td>"+protect2(gt.rules.comments).replace(QString("\n"), QString("<br />\n"))+"</td>\n      </tr>\n    </table>\n";
+	tos<<"    <table>\n      <tr align=\"left\" valign=\"top\">\n        <th>"+protect2(tr("Institution name"))+":</th>\n        <td>"+protect2(gt.rules.institutionName)+"</td>\n      </tr>\n    </table>\n";
+	tos<<"    <table>\n      <tr align=\"left\" valign=\"top\">\n        <th>"+protect2(tr("Comments"))+":</th>\n        <td>"+protect2(gt.rules.comments).replace(QString("\n"), QString("<br />\n"))+"</td>\n      </tr>\n    </table>\n";
 	tos<<"    <p>\n";
 	tos<<"    </p>\n";
 
 	tos<<"    <table border=\"1\">\n";
 	tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-	tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\"3\">"+tr("Statistics")+"</th></tr>\n";
+	tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\"3\">"+protect2(tr("Statistics"))+"</th></tr>\n";
 	tos<<"        <tr>\n          <!-- span -->\n";
-	tos<<"          <th>"+tr("Teachers")+"</th><th>"+tr("Students")+"</th><th>"+tr("Subjects")+"</th>\n";
+	tos<<"          <th>"+protect2(tr("Teachers"))+"</th><th>"+protect2(tr("Students"))+"</th><th>"+protect2(tr("Subjects"))+"</th>\n";
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
 	tos<<"      <tbody>\n";
 	tos<<"        <tr>\n";
-	tos<<"          <th>"+tr("Teachers")+"</th>\n";
+	tos<<"          <th>"+protect2(tr("Teachers"))+"</th>\n";
 	tos<<"          <td>"<<protect2(STRING_EMPTY_SLOT_STATISTICS)<<"</td>\n";
-	tos<<"          <td><a href=\""<<s2+bar+TEACHERS_STUDENTS_STATISTICS<<"\">"+tr("view")+"</a></td>\n";
-	tos<<"          <td><a href=\""<<s2+bar+TEACHERS_SUBJECTS_STATISTICS<<"\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+TEACHERS_STUDENTS_STATISTICS<<"\">"+protect2(tr("view"))+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+TEACHERS_SUBJECTS_STATISTICS<<"\">"+protect2(tr("view"))+"</a></td>\n";
 	tos<<"        </tr>\n";
 	tos<<"        <tr>\n";
-	tos<<"          <th>"+tr("Students")+"</th>\n";
-	tos<<"          <td><a href=\""<<s2+bar+STUDENTS_TEACHERS_STATISTICS<<"\">"+tr("view")+"</a></td>\n";
+	tos<<"          <th>"+protect2(tr("Students"))+"</th>\n";
+	tos<<"          <td><a href=\""<<s2+bar+STUDENTS_TEACHERS_STATISTICS<<"\">"+protect2(tr("view"))+"</a></td>\n";
 	tos<<"          <td>"<<protect2(STRING_EMPTY_SLOT_STATISTICS)<<"</td>\n";
-	tos<<"          <td><a href=\""<<s2+bar+STUDENTS_SUBJECTS_STATISTICS<<"\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+STUDENTS_SUBJECTS_STATISTICS<<"\">"+protect2(tr("view"))+"</a></td>\n";
 	tos<<"        </tr>\n";
 	tos<<"        <tr>\n";
-	tos<<"          <th>"+tr("Subjects")+"</th>\n";
-	tos<<"          <td><a href=\""<<s2+bar+SUBJECTS_TEACHERS_STATISTICS<<"\">"+tr("view")+"</a></td>\n";
-	tos<<"          <td><a href=\""<<s2+bar+SUBJECTS_STUDENTS_STATISTICS<<"\">"+tr("view")+"</a></td>\n";
+	tos<<"          <th>"+protect2(tr("Subjects"))+"</th>\n";
+	tos<<"          <td><a href=\""<<s2+bar+SUBJECTS_TEACHERS_STATISTICS<<"\">"+protect2(tr("view"))+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+SUBJECTS_STUDENTS_STATISTICS<<"\">"+protect2(tr("view"))+"</a></td>\n";
 	tos<<"          <td>"<<protect2(STRING_EMPTY_SLOT_STATISTICS)<<"</td>\n";
 	tos<<"        </tr>\n";
 	//workaround begin.
-	tos<<"      <tr class=\"foot\"><td></td><td colspan=\"3\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+	tos<<"      <tr class=\"foot\"><td></td><td colspan=\"3\">"<<protect2(StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime))<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n";
 	tos<<"    </table>\n";
@@ -709,7 +709,7 @@ QString StatisticsExport::exportStatisticsTeachersSubjectsHtml(QWidget* parent, 
 	QString tmp;
 	tmp+="    <table border=\"1\">\n";
 	tmp+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
-	tmp+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(colspan+1)+"\">"+tr("Teachers - Subjects Matrix")+"</th></tr>\n";
+	tmp+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(colspan+1)+"\">"+protect2(tr("Teachers - Subjects Matrix"))+"</th></tr>\n";
 	tmp+="        <tr>\n          <!-- span -->\n";
 	int currentCount=0;
 	for(int teacher=0; teacher<statisticValues.allTeachersNames.count() && currentCount<maxNames; teacher++){
@@ -849,7 +849,7 @@ QString StatisticsExport::exportStatisticsTeachersSubjectsHtml(QWidget* parent, 
 									default: tmpSt+=protect2(*st); break;
 									}
 								if(st!=studentsNames.constEnd()-1)
-									tmpSt+=translatedCommaSpace();
+									tmpSt+=protect2(translatedCommaSpace());
 							}
 							if(printActivityTags){
 								for(QStringList::const_iterator atn=activityTagsNames.constBegin(); atn!=activityTagsNames.constEnd(); atn++){
@@ -865,11 +865,11 @@ QString StatisticsExport::exportStatisticsTeachersSubjectsHtml(QWidget* parent, 
 											case 6 : tmpSt+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
 											default: tmpSt+=" "+protect2(*atn); break;
 										}
-										tmpSt+=translatedCommaSpace();
+										tmpSt+=protect2(translatedCommaSpace());
 									}
 								}
-								if(tmpSt.endsWith(translatedCommaSpace())){
-									tmpSt.remove(tmpSt.size()-translatedCommaSpace().size(), translatedCommaSpace().size());
+								if(tmpSt.endsWith(protect2(translatedCommaSpace()))){
+									tmpSt.chop(protect2(translatedCommaSpace()).size());
 								}
 							}
 							if(tmpSt=="")
@@ -916,7 +916,7 @@ QString StatisticsExport::exportStatisticsTeachersSubjectsHtml(QWidget* parent, 
 	}
 	tmp+="          <th></th>\n        </tr>\n";
 	//workaround begin.
-	tmp+="      <tr class=\"foot\"><td></td><td colspan=\""+QString::number(colspan+1)+"\">"+StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	tmp+="      <tr class=\"foot\"><td></td><td colspan=\""+QString::number(colspan+1)+"\">"+protect2(StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime))+"</td></tr>\n";
 	//workaround end.
 	tmp+="      </tbody>\n";
 	tmp+="    </table>\n";
@@ -1020,7 +1020,7 @@ QString StatisticsExport::exportStatisticsSubjectsTeachersHtml(QWidget* parent, 
 	QString tmp;
 	tmp+="    <table border=\"1\">\n";	
 	tmp+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
-	tmp+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(colspan+1)+"\">"+tr("Subjects - Teachers Matrix")+"</th></tr>\n";
+	tmp+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(colspan+1)+"\">"+protect2(tr("Subjects - Teachers Matrix"))+"</th></tr>\n";
 	tmp+="        <tr>\n          <!-- span -->\n";
 	int currentCount=0;
 	for(int subject=0; subject<statisticValues.allSubjectsNames.count() && currentCount<maxNames; subject++){
@@ -1158,7 +1158,7 @@ QString StatisticsExport::exportStatisticsSubjectsTeachersHtml(QWidget* parent, 
 									default: tmpSt+=protect2(*st); break;
 									}
 								if(st!=studentsNames.constEnd()-1)
-									tmpSt+=translatedCommaSpace();
+									tmpSt+=protect2(translatedCommaSpace());
 							}
 							if(printActivityTags){
 								for(QStringList::const_iterator atn=activityTagsNames.constBegin(); atn!=activityTagsNames.constEnd(); atn++){
@@ -1174,11 +1174,11 @@ QString StatisticsExport::exportStatisticsSubjectsTeachersHtml(QWidget* parent, 
 											case 6 : tmpSt+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
 											default: tmpSt+=" "+protect2(*atn); break;
 										}
-										tmpSt+=translatedCommaSpace();
+										tmpSt+=protect2(translatedCommaSpace());
 									}
 								}
-								if(tmpSt.endsWith(translatedCommaSpace())){
-									tmpSt.remove(tmpSt.size()-translatedCommaSpace().size(), translatedCommaSpace().size());
+								if(tmpSt.endsWith(protect2(translatedCommaSpace()))){
+									tmpSt.chop(protect2(translatedCommaSpace()).size());
 								}
 							}
 							if(tmpSt=="")
@@ -1225,7 +1225,7 @@ QString StatisticsExport::exportStatisticsSubjectsTeachersHtml(QWidget* parent, 
 	}
 	tmp+="          <th></th>\n        </tr>\n";
 	//workaround begin.
-	tmp+="      <tr class=\"foot\"><td></td><td colspan=\""+QString::number(colspan+1)+"\">"+StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	tmp+="      <tr class=\"foot\"><td></td><td colspan=\""+QString::number(colspan+1)+"\">"+protect2(StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime))+"</td></tr>\n";
 	//workaround end.
 	tmp+="      </tbody>\n";
 	tmp+="    </table>\n";
@@ -1329,7 +1329,7 @@ QString StatisticsExport::exportStatisticsTeachersStudentsHtml(QWidget* parent, 
 	QString tmp;
 	tmp+="    <table border=\"1\">\n";	
 	tmp+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
-	tmp+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(colspan+1)+"\">"+tr("Teachers - Students Matrix")+"</th></tr>\n";
+	tmp+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(colspan+1)+"\">"+protect2(tr("Teachers - Students Matrix"))+"</th></tr>\n";
 	tmp+="        <tr>\n          <!-- span -->\n";
 	int currentCount=0;
 	for(int teacher=0; teacher<statisticValues.allTeachersNames.count() && currentCount<maxNames; teacher++){
@@ -1484,11 +1484,11 @@ QString StatisticsExport::exportStatisticsTeachersStudentsHtml(QWidget* parent, 
 											case 6 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
 											default: tmpS+=" "+protect2(*atn); break;
 										}
-										tmpS+=translatedCommaSpace();
+										tmpS+=protect2(translatedCommaSpace());
 									}
 								}
-								if(tmpS.endsWith(translatedCommaSpace())){
-									tmpS.remove(tmpS.size()-translatedCommaSpace().size(), translatedCommaSpace().size());
+								if(tmpS.endsWith(protect2(translatedCommaSpace()))){
+									tmpS.chop(protect2(translatedCommaSpace()).size());
 								}
 							}
 							if(tmpS=="")
@@ -1535,7 +1535,7 @@ QString StatisticsExport::exportStatisticsTeachersStudentsHtml(QWidget* parent, 
 	}
 	tmp+="          <th></th>\n        </tr>\n";
 	//workaround begin.
-	tmp+="      <tr class=\"foot\"><td></td><td colspan=\""+QString::number(colspan+1)+"\">"+StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	tmp+="      <tr class=\"foot\"><td></td><td colspan=\""+QString::number(colspan+1)+"\">"+protect2(StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime))+"</td></tr>\n";
 	//workaround end.
 	tmp+="      </tbody>\n";
 	tmp+="    </table>\n";	
@@ -1639,7 +1639,7 @@ QString StatisticsExport::exportStatisticsStudentsTeachersHtml(QWidget* parent, 
 	QString tmp;
 	tmp+="    <table border=\"1\">\n";	
 	tmp+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
-	tmp+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(colspan+1)+"\">"+tr("Students - Teachers Matrix")+"</th></tr>\n";
+	tmp+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(colspan+1)+"\">"+protect2(tr("Students - Teachers Matrix"))+"</th></tr>\n";
 	tmp+="        <tr>\n          <!-- span -->\n";
 	int currentCount=0;
 	for(int students=0; students<statisticValues.allStudentsNames.count() && currentCount<maxNames; students++){
@@ -1794,11 +1794,11 @@ QString StatisticsExport::exportStatisticsStudentsTeachersHtml(QWidget* parent, 
 											case 6 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
 											default: tmpS+=" "+protect2(*atn); break;
 										}
-										tmpS+=translatedCommaSpace();
+										tmpS+=protect2(translatedCommaSpace());
 									}
 								}
-								if(tmpS.endsWith(translatedCommaSpace())){
-									tmpS.remove(tmpS.size()-translatedCommaSpace().size(), translatedCommaSpace().size());
+								if(tmpS.endsWith(protect2(translatedCommaSpace()))){
+									tmpS.chop(protect2(translatedCommaSpace()).size());
 								}
 							}
 							if(tmpS=="")
@@ -1845,7 +1845,7 @@ QString StatisticsExport::exportStatisticsStudentsTeachersHtml(QWidget* parent, 
 	}
 	tmp+="          <th></th>\n        </tr>\n";
 	//workaround begin.
-	tmp+="      <tr class=\"foot\"><td></td><td colspan=\""+QString::number(colspan+1)+"\">"+StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	tmp+="      <tr class=\"foot\"><td></td><td colspan=\""+QString::number(colspan+1)+"\">"+protect2(StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime))+"</td></tr>\n";
 	//workaround end.
 	tmp+="      </tbody>\n";
 	tmp+="    </table>\n";
@@ -1949,7 +1949,7 @@ QString StatisticsExport::exportStatisticsSubjectsStudentsHtml(QWidget* parent, 
 	QString tmp;
 	tmp+="    <table border=\"1\">\n";	
 	tmp+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
-	tmp+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(colspan+1)+"\">"+tr("Subjects - Students Matrix")+"</th></tr>\n";
+	tmp+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(colspan+1)+"\">"+protect2(tr("Subjects - Students Matrix"))+"</th></tr>\n";
 	tmp+="        <tr>\n          <!-- span -->\n";
 	int currentCount=0;
 	for(int subject=0; subject<statisticValues.allSubjectsNames.count() && currentCount<maxNames; subject++){
@@ -2088,7 +2088,7 @@ QString StatisticsExport::exportStatisticsSubjectsStudentsHtml(QWidget* parent, 
 									default: tmpT+=protect2(*it); break;
 								}
 								if(it!=teachersNames.constEnd()-1)
-									tmpT+=translatedCommaSpace();
+									tmpT+=protect2(translatedCommaSpace());
 							}
 							if(printActivityTags){
 								for(QStringList::const_iterator atn=activityTagsNames.constBegin(); atn!=activityTagsNames.constEnd(); atn++){
@@ -2104,11 +2104,11 @@ QString StatisticsExport::exportStatisticsSubjectsStudentsHtml(QWidget* parent, 
 											case 6 : tmpT+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
 											default: tmpT+=" "+protect2(*atn); break;
 										}
-										tmpT+=translatedCommaSpace();
+										tmpT+=protect2(translatedCommaSpace());
 									}
 								}
-								if(tmpT.endsWith(translatedCommaSpace())){
-									tmpT.remove(tmpT.size()-translatedCommaSpace().size(), translatedCommaSpace().size());
+								if(tmpT.endsWith(protect2(translatedCommaSpace()))){
+									tmpT.chop(protect2(translatedCommaSpace()).size());
 								}
 							}
 							if(tmpT=="")
@@ -2155,7 +2155,7 @@ QString StatisticsExport::exportStatisticsSubjectsStudentsHtml(QWidget* parent, 
 	}
 	tmp+="          <th></th>\n        </tr>\n";
 	//workaround begin.
-	tmp+="      <tr class=\"foot\"><td></td><td colspan=\""+QString::number(colspan+1)+"\">"+StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	tmp+="      <tr class=\"foot\"><td></td><td colspan=\""+QString::number(colspan+1)+"\">"+protect2(StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime))+"</td></tr>\n";
 	//workaround end.
 	tmp+="      </tbody>\n";
 	tmp+="    </table>\n";
@@ -2258,7 +2258,7 @@ QString StatisticsExport::exportStatisticsStudentsSubjectsHtml(QWidget* parent, 
 	QString tmp;
 	tmp+="    <table border=\"1\">\n";	
 	tmp+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
-	tmp+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(colspan+1)+"\">"+tr("Students - Subjects Matrix")+"</th></tr>\n";
+	tmp+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(colspan+1)+"\">"+protect2(tr("Students - Subjects Matrix"))+"</th></tr>\n";
 	tmp+="        <tr>\n          <!-- span -->\n";
 	int currentCount=0;
 	for(int students=0; students<statisticValues.allStudentsNames.count() && currentCount<maxNames; students++){
@@ -2399,7 +2399,7 @@ QString StatisticsExport::exportStatisticsStudentsSubjectsHtml(QWidget* parent, 
 									default: tmpT+=protect2(*it); break;
 								}
 								if(it!=teachersNames.constEnd()-1)
-									tmpT+=translatedCommaSpace();
+									tmpT+=protect2(translatedCommaSpace());
 							}
 							if(printActivityTags){
 								for(QStringList::const_iterator atn=activityTagsNames.constBegin(); atn!=activityTagsNames.constEnd(); atn++){
@@ -2415,11 +2415,11 @@ QString StatisticsExport::exportStatisticsStudentsSubjectsHtml(QWidget* parent, 
 											case 6 : tmpT+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
 											default: tmpT+=" "+protect2(*atn); break;
 										}
-										tmpT+=translatedCommaSpace();
+										tmpT+=protect2(translatedCommaSpace());
 									}
 								}
-								if(tmpT.endsWith(translatedCommaSpace())){
-									tmpT.remove(tmpT.size()-translatedCommaSpace().size(), translatedCommaSpace().size());
+								if(tmpT.endsWith(protect2(translatedCommaSpace()))){
+									tmpT.chop(protect2(translatedCommaSpace()).size());
 								}
 							}
 							if(tmpT=="")
@@ -2466,7 +2466,7 @@ QString StatisticsExport::exportStatisticsStudentsSubjectsHtml(QWidget* parent, 
 	}
 	tmp+="          <th></th>\n        </tr>\n";
 	//workaround begin.
-	tmp+="      <tr class=\"foot\"><td></td><td colspan=\""+QString::number(colspan+1)+"\">"+StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	tmp+="      <tr class=\"foot\"><td></td><td colspan=\""+QString::number(colspan+1)+"\">"+protect2(StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime))+"</td></tr>\n";
 	//workaround end.
 	tmp+="      </tbody>\n";
 	tmp+="    </table>\n";

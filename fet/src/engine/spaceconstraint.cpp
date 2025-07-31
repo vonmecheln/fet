@@ -12861,7 +12861,7 @@ QString ConstraintActivitiesOccupyMaxDifferentRooms::getDescription(Rules& r)
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
 		actids+=getActivityDescription(r, aid)+translatedCommaSpace();
-	actids.chop(2);
+	actids.chop(translatedCommaSpace().size());
 		
 	QString s=tr("Activities occupy max different rooms, WP:%1%, NA:%2, A: %3, MDR:%4", "Constraint description. WP means weight percentage, "
 	 "NA means the number of activities, A means activities list, MDR means max different rooms")
@@ -12878,7 +12878,7 @@ QString ConstraintActivitiesOccupyMaxDifferentRooms::getDetailedDescription(Rule
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+translatedCommaSpace();
-	actids.chop(2);
+	actids.chop(translatedCommaSpace().size());
 		
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Activities occupy max different rooms"); s+="\n";
@@ -13131,7 +13131,7 @@ QString ConstraintActivitiesSameRoomIfConsecutive::getDescription(Rules& r)
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
 		actids+=getActivityDescription(r, aid)+translatedCommaSpace();
-	actids.chop(2);
+	actids.chop(translatedCommaSpace().size());
 		
 	QString s=tr("Activities same room if consecutive, WP:%1%, NA:%2, A: %3", "Constraint description. WP means weight percentage, "
 	 "NA means the number of activities, A means activities list")
@@ -13147,7 +13147,7 @@ QString ConstraintActivitiesSameRoomIfConsecutive::getDetailedDescription(Rules&
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+translatedCommaSpace();
-	actids.chop(2);
+	actids.chop(translatedCommaSpace().size());
 		
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Activities same room if consecutive"); s+="\n";

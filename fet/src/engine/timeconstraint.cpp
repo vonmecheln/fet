@@ -18806,7 +18806,7 @@ QString ConstraintActivityPreferredTimeSlots::getDetailedDescription(Rules& r)
 			s+=r.hoursOfTheDay[this->p_hours_L[i]];
 		}
 		if(i<this->p_nPreferredTimeSlots_L-1)
-			s+=";  ";
+			s+=translatedSemicolonSpace();
 	}
 	s+="\n";
 
@@ -19271,7 +19271,7 @@ QString ConstraintActivitiesPreferredTimeSlots::getDetailedDescription(Rules& r)
 			s+=r.hoursOfTheDay[this->p_hours_L[i]];
 		}
 		if(i<this->p_nPreferredTimeSlots_L-1)
-			s+=";  ";
+			s+=translatedSemicolonSpace();
 	}
 	s+="\n";
 
@@ -19787,7 +19787,7 @@ QString ConstraintSubactivitiesPreferredTimeSlots::getDetailedDescription(Rules&
 			s+=r.hoursOfTheDay[this->p_hours_L[i]];
 		}
 		if(i<this->p_nPreferredTimeSlots_L-1)
-			s+=";  ";
+			s+=translatedSemicolonSpace();
 	}
 	s+="\n";
 
@@ -20138,7 +20138,7 @@ QString ConstraintActivityPreferredStartingTimes::getDetailedDescription(Rules& 
 			s+=r.hoursOfTheDay[this->hours_L[i]];
 		}
 		if(i<this->nPreferredStartingTimes_L-1)
-			s+=";  ";
+			s+=translatedSemicolonSpace();
 	}
 	s+="\n";
 
@@ -20593,7 +20593,7 @@ QString ConstraintActivitiesPreferredStartingTimes::getDetailedDescription(Rules
 			s+=r.hoursOfTheDay[this->hours_L[i]];
 		}
 		if(i<this->nPreferredStartingTimes_L-1)
-			s+=";  ";
+			s+=translatedSemicolonSpace();
 	}
 	s+="\n";
 
@@ -21092,7 +21092,7 @@ QString ConstraintSubactivitiesPreferredStartingTimes::getDetailedDescription(Ru
 			s+=r.hoursOfTheDay[this->hours_L[i]];
 		}
 		if(i<this->nPreferredStartingTimes_L-1)
-			s+=";  ";
+			s+=translatedSemicolonSpace();
 	}
 	s+="\n";
 
@@ -29508,12 +29508,12 @@ QString ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::getDescription(Rule
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
 		actids+=getActivityDescription(r, aid)+translatedCommaSpace();
-	actids.chop(2);
+	actids.chop(translatedCommaSpace().size());
 	
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
 		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(2);
+	timeslots.chop(translatedCommaSpace().size());
 	
 	QString s=tr("Activities occupy max time slots from selection, WP:%1%, NA:%2, A: %3, STS: %4, MTS:%5", "Constraint description. WP means weight percentage, "
 	 "NA means the number of activities, A means activities list, STS means selected time slots, MTS means max time slots")
@@ -29538,7 +29538,7 @@ QString ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::getDetailedDescript
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
 		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(2);
+	timeslots.chop(translatedCommaSpace().size());
 	
 	QString s=tr("Time constraint"); s+="\n";
 	s+=tr("Activities occupy max time slots from selection"); s+="\n";
@@ -29884,12 +29884,12 @@ QString ConstraintActivitiesOccupyMinTimeSlotsFromSelection::getDescription(Rule
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
 		actids+=getActivityDescription(r, aid)+translatedCommaSpace();
-	actids.chop(2);
+	actids.chop(translatedCommaSpace().size());
 		
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
 		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(2);
+	timeslots.chop(translatedCommaSpace().size());
 	
 	QString s=tr("Activities occupy min time slots from selection, WP:%1%, NA:%2, A: %3, STS: %4, mTS:%5", "Constraint description. WP means weight percentage, "
 	 "NA means the number of activities, A means activities list, STS means selected time slots, mTS means min time slots")
@@ -29914,7 +29914,7 @@ QString ConstraintActivitiesOccupyMinTimeSlotsFromSelection::getDetailedDescript
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
 		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(2);
+	timeslots.chop(translatedCommaSpace().size());
 	
 	QString s=tr("Time constraint"); s+="\n";
 	s+=tr("Activities occupy min time slots from selection"); s+="\n";
@@ -30269,12 +30269,12 @@ QString ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::getDescription(R
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
 		actids+=getActivityDescription(r, aid)+translatedCommaSpace();
-	actids.chop(2);
+	actids.chop(translatedCommaSpace().size());
 	
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
 		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(2);
+	timeslots.chop(translatedCommaSpace().size());
 	
 	QString s=tr("Activities max simultaneous in selected time slots, WP:%1%, NA:%2, A: %3, STS: %4, MS:%5", "Constraint description. WP means weight percentage, "
 	 "NA means the number of activities, A means activities list, STS means selected time slots, MS means max simultaneous (number of activities in each selected time slot)")
@@ -30299,7 +30299,7 @@ QString ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::getDetailedDescr
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
 		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(2);
+	timeslots.chop(translatedCommaSpace().size());
 	
 	QString s=tr("Time constraint"); s+="\n";
 	s+=tr("Activities max simultaneous in selected time slots"); s+="\n";
@@ -30643,12 +30643,12 @@ QString ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::getDescription(R
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
 		actids+=getActivityDescription(r, aid)+translatedCommaSpace();
-	actids.chop(2);
+	actids.chop(translatedCommaSpace().size());
 	
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
 		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(2);
+	timeslots.chop(translatedCommaSpace().size());
 	
 	QString s=tr("Activities min simultaneous in selected time slots, WP:%1%, NA:%2, A: %3, STS: %4, mS:%5, AES=%6", "Constraint description. WP means weight percentage, "
 	 "NA means the number of activities, A means activities list, STS means selected time slots, mS means min simultaneous (number of activities in each selected time slot), "
@@ -30675,7 +30675,7 @@ QString ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::getDetailedDescr
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
 		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(2);
+	timeslots.chop(translatedCommaSpace().size());
 	
 	QString s=tr("Time constraint"); s+="\n";
 	s+=tr("Activities min simultaneous in selected time slots"); s+="\n";
@@ -31029,12 +31029,12 @@ QString ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::getDescription(R
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
 		actids+=getActivityDescription(r, aid)+translatedCommaSpace();
-	actids.chop(2);
+	actids.chop(translatedCommaSpace().size());
 
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
 		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(2);
+	timeslots.chop(translatedCommaSpace().size());
 
 	QString s=tr("Max total activities from set in selected time slots, WP:%1%, NA:%2, A: %3, STS: %4, MA:%5", "Constraint description. WP means weight percentage, "
 	 "NA means the number of activities, A means activities list, STS means selected time slots, MA means max number of activities.")
@@ -31059,7 +31059,7 @@ QString ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::getDetailedDescr
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
 		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(2);
+	timeslots.chop(translatedCommaSpace().size());
 
 	QString s=tr("Time constraint"); s+="\n";
 	s+=tr("Max total activities from set in selected time slots"); s+="\n";
@@ -31349,7 +31349,7 @@ QString ConstraintActivitiesMaxInATerm::getDescription(Rules& r)
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
 		actids+=getActivityDescription(r, aid)+translatedCommaSpace();
-	actids.chop(2);
+	actids.chop(translatedCommaSpace().size());
 
 	QString s=tr("Activities max in a term, WP:%1%, NA:%2, A: %3, MAIAT:%4", "Constraint description. WP means weight percentage, "
 	 "NA means the number of activities, A means activities list, MAIAT means max activities in a term")
@@ -31620,7 +31620,7 @@ QString ConstraintActivitiesOccupyMaxTerms::getDescription(Rules& r)
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
 		actids+=getActivityDescription(r, aid)+translatedCommaSpace();
-	actids.chop(2);
+	actids.chop(translatedCommaSpace().size());
 
 	QString s=tr("Activities occupy max terms, WP:%1%, NA:%2, A: %3, MOT:%4", "Constraint description. WP means weight percentage, "
 	 "NA means the number of activities, A means activities list, MOT means max occupied terms")
@@ -61670,7 +61670,7 @@ QString ConstraintActivitiesMinInATerm::getDescription(Rules& r)
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
 		actids+=getActivityDescription(r, aid)+translatedCommaSpace();
-	actids.chop(2);
+	actids.chop(translatedCommaSpace().size());
 
 	QString s=tr("Activities min in a term, WP:%1%, NA:%2, A: %3, mAIAT:%4, AET:%5", "Constraint description. WP means weight percentage, "
 	 "NA means the number of activities, A means activities list, mAIAT means min activities in a term, AET means allow empty terms")
@@ -68659,17 +68659,17 @@ QString ConstraintTwoSetsOfActivitiesSameSections::getDescription(Rules& r)
 	QString actAids=QString("");
 	for(int aid : std::as_const(this->activitiesAIds))
 		actAids+=getActivityDescription(r, aid)+translatedCommaSpace();
-	actAids.chop(2);
+	actAids.chop(translatedCommaSpace().size());
 
 	QString actBids=QString("");
 	for(int aid : std::as_const(this->activitiesBIds))
 		actBids+=getActivityDescription(r, aid)+translatedCommaSpace();
-	actBids.chop(2);
+	actBids.chop(translatedCommaSpace().size());
 
 	QString timeslots=QString("");
 	for(int i=0; i<this->oDays.count(); i++)
 		timeslots+=r.daysOfTheWeek[oDays.at(i)]+QString(" ")+r.hoursOfTheDay[oHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(2);
+	timeslots.chop(translatedCommaSpace().size());
 
 	QString s=tr("Two sets of activities have the same sections, WP:%1%, N1:%2, SA1: %3, N2:%4, SA2: %5, ETS: %6", "Constraint description. WP means weight percentage, "
 	 "N1 means the number of activities in the first set, SA1 means first set of activities, N2 means the number of activities in the second set, "
@@ -68691,17 +68691,17 @@ QString ConstraintTwoSetsOfActivitiesSameSections::getDetailedDescription(Rules&
 	QString actAids=QString("");
 	for(int aid : std::as_const(this->activitiesAIds))
 		actAids+=CustomFETString::number(aid)+translatedCommaSpace();
-	actAids.chop(2);
+	actAids.chop(translatedCommaSpace().size());
 
 	QString actBids=QString("");
 	for(int aid : std::as_const(this->activitiesBIds))
 		actBids+=CustomFETString::number(aid)+translatedCommaSpace();
-	actBids.chop(2);
+	actBids.chop(translatedCommaSpace().size());
 
 	QString timeslots=QString("");
 	for(int i=0; i<this->oDays.count(); i++)
 		timeslots+=r.daysOfTheWeek[oDays.at(i)]+QString(" ")+r.hoursOfTheDay[oHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(2);
+	timeslots.chop(translatedCommaSpace().size());
 
 	QString s=tr("Time constraint"); s+="\n";
 	s+=tr("Two sets of activities have the same sections"); s+="\n";
@@ -69067,7 +69067,7 @@ QString ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::getDescription(Ru
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
 		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(2);
+	timeslots.chop(translatedCommaSpace().size());
 
 	s+=tr("STS: %1", "Selected time slots").arg(timeslots);
 
@@ -69089,7 +69089,7 @@ QString ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::getDetailedDescri
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
 		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(2);
+	timeslots.chop(translatedCommaSpace().size());
 
 	s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
 	
@@ -69360,7 +69360,7 @@ QString ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::getDescription(Rules
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
 		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(2);
+	timeslots.chop(translatedCommaSpace().size());
 
 	s+=tr("STS: %1", "Selected time slots").arg(timeslots);
 
@@ -69381,7 +69381,7 @@ QString ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::getDetailedDescripti
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
 		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(2);
+	timeslots.chop(translatedCommaSpace().size());
 
 	s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
 	
@@ -69655,7 +69655,7 @@ QString ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::getDescription(Rules
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
 		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(2);
+	timeslots.chop(translatedCommaSpace().size());
 
 	s+=tr("STS: %1", "Selected time slots").arg(timeslots);
 
@@ -69676,7 +69676,7 @@ QString ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::getDetailedDescripti
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
 		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(2);
+	timeslots.chop(translatedCommaSpace().size());
 
 	s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
 	
@@ -69967,7 +69967,7 @@ QString ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::getDescription(Rules&
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
 		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(2);
+	timeslots.chop(translatedCommaSpace().size());
 
 	s+=tr("STS: %1", "Selected time slots").arg(timeslots);
 
@@ -69989,7 +69989,7 @@ QString ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::getDetailedDescriptio
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
 		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(2);
+	timeslots.chop(translatedCommaSpace().size());
 
 	s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
 	

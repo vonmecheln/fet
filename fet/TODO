@@ -10878,3 +10878,56 @@ the other sometimes make other activities impossible or difficult. Something I c
 I know we have talked about this many years ago already. And it is something very complicated to implement.
 But I would stay that if FET is still missing any major feature (it has evolved into a very powerful
 program!), I would say that the ability to choose a teacher from a set would be a very good one.
+
+724--------------------------------------------------------
+From Sérgio Augusto Dias Castro (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6460.0
+
+This year, I started using the program to develop the school schedule for the educational institution where I work, the Federal Institute of Piauí.
+I'm a math teacher and don't have much programming experience, so I watch YouTube videos to help me with the specifics I need. While developing the
+schedules during this period, I encountered a problem: the teachers at my institution cannot teach classes in all three shifts in a single day
+(morning, afternoon, and evening). They can teach classes in up to two shifts per day (morning and afternoon, morning and evening, or afternoon and evening).
+As far as I've searched, FET doesn't have a feature that restricts this.
+
+We have courses that are Technical Courses Integrated with High School, and although each class has a preferred shift (which must be full), they still need
+classes in the afternoon to complete the workload (e.g., 2 INFO (Manhã) is a course that primarily has morning classes, but requires some afternoons to
+complete the workload). So when I tried using the tags, I couldn't get it to work. Due to my limited experience, instead of dividing the breaks, I simply
+created the periods and also made the break times for the classes unavailable.
+
+The shift schedules are:
+Morning: 7:30 to 12:00
+Afternoon: 13:30 to 18:00
+Evening: 18:00 to 22:00
+
+Link for my code: https://gist.github.com/sergiocastro9/cfdf3d5fabfdd0ebf58bdf68394e669d
+
+725--------------------------------------------------------
+From midus74 (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6461.0
+
+ho visto che è possibile impostare il numero di ingressi alla seconda ora utilizzando questo vincolo:
+"Un gruppo di studenti deve iniziare le lezioni presto, rispettando un numero max di ingressi alla seconda ora".
+
+Esiste un vincolo per impostare il numero massimo di ingressi alla terza ora? oppure come posso fare?
+
+In English, by Google Translate:
+
+I saw that it's possible to set the number of entries for the second period using this constraint:
+"A group of students must start class early, respecting a maximum number of entries for the second period."
+
+Is there a constraint to set the maximum number of entries for the third period? Or how can I do it?
+
+726--------------------------------------------------------
+From Xardeuss (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6462.0
+
+I have a suggestion that I think would be useful for the app. In the statistics tab, I think it would be interesting
+to have the option to hide teachers who don't have a workload, similar to the option to hide teachers with a full workload,
+but the opposite.
+
+I think it would be useful in situations where a teacher might be on leave or something similar, but still have an
+"employment relationship" with the school. It could also be useful for "clean up" the statistics tab, making it easier
+to view the teachers who are "active" for internal school monitoring.

@@ -30,6 +30,9 @@ File timetable_defs.cpp
 
 #include <QCoreApplication>
 
+#include <QChar>
+#include <QString>
+
 const QString IL1=QString(2, ' '); //indentation levels
 const QString IL2=QString(4, ' ');
 const QString IL3=QString(6, ' ');
@@ -59,7 +62,7 @@ int STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
 /**
 The FET version
 */
-const QString FET_VERSION="7.4.0";
+const QString FET_VERSION="7.4.1";
 
 /**
 The version number of the data format, useful when saving/restoring the history to/from the disk.
@@ -195,6 +198,17 @@ QString protect2vert(const QString& str) //used for HTML
 		returnstring.append(b);
 	}
 	return returnstring;
+}
+
+QString protect3(const QString& str) //used for CSS
+{
+	//This should take care of wrongly nested comments in the CSS file. The situation that the returned string begins or ends with a "/" is
+	//assumed nonproblematic, because protect3(...) is supposed to be preceded and followed by a whitespace character (so we cannot have
+	//an ugly "/*/" at the beginning or at the end of the resulted string).
+	QString p=str;
+	p.replace("/*", "/_*");
+	p.replace("*/", "*_/");
+	return p;
 }
 
 QString translatedComma()

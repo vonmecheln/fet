@@ -1374,7 +1374,7 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 	tmp+="  <body id=\"top\">\n";
 
 	if(numberOfPlacedActivities1!=gt.rules.nInternalActivities)
-		tmp+="    <h1>"+tr("Warning! Only %1 out of %2 activities placed!").arg(numberOfPlacedActivities1).arg(gt.rules.nInternalActivities)+"</h1>\n";
+		tmp+="    <h1>"+protect2(tr("Warning! Only %1 out of %2 activities placed!").arg(numberOfPlacedActivities1).arg(gt.rules.nInternalActivities))+"</h1>\n";
 
 	QList<int> includedNamesIndex;
 	QSet<int> excludedNamesIndex;

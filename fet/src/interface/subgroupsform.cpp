@@ -234,7 +234,7 @@ void SubgroupsForm::removeSubgroup()
 		 " and the related activities and constraints will not be removed. Do you want to continue?");
 		s+="\n";
 		for(const QPair<QString, QString>& pair : std::as_const(yearsGroupsContainingSubgroup_List))
-			s+=QString("\n")+pair.first+QString(", ")+pair.second;
+			s+=QString("\n")+pair.first+translatedCommaSpace()+pair.second;
 	}
 	
 	int t=LongTextMessageBox::mediumConfirmation(this, tr("FET confirmation"), s,
@@ -317,7 +317,7 @@ void SubgroupsForm::purgeSubgroup()
 		 " All the related activities and constraints will be removed. Do you want to continue?");
 		s+="\n";
 		for(const QPair<QString, QString>& pair : std::as_const(yearsGroupsContainingSubgroup_List))
-			s+=QString("\n")+pair.first+QString(", ")+pair.second;
+			s+=QString("\n")+pair.first+translatedCommaSpace()+pair.second;
 	}
 	
 	int t=LongTextMessageBox::mediumConfirmation(this, tr("FET confirmation"), s,
