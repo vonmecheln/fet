@@ -34,7 +34,7 @@ public:
 	ModifyStudentsGroupForm(QWidget* parent, const QString& yearName, const QString& initialGroupName, int initialNumberOfStudents);
 	~ModifyStudentsGroupForm();
 
-public slots:
+public Q_SLOTS:
 	void ok();
 	void cancel();
 };

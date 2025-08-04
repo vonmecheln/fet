@@ -33,7 +33,7 @@ public:
 
 	bool filterOk(Room* rm);
 
-public slots:
+public Q_SLOTS:
 	void addRoom();
 	void removeRoom();
 	void modifyRoom();

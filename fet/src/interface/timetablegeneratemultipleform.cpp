@@ -272,7 +272,7 @@ void TimetablingThread::startGenerating()
 	//genMultiMatrix[_nThread].myMutex.unlock();
 	//emit resultReady(_nThread, s, ok);
 
-	emit timetableGenerated(_nThread, nOverallTimetable+1, s, ok);
+	Q_EMIT timetableGenerated(_nThread, nOverallTimetable+1, s, ok);
 
 	//if(restarted)
 	//	semaphoreRestarted.release();

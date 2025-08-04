@@ -27,7 +27,7 @@ public:
 	TermsForm(QWidget* parent);
 	~TermsForm();
 
-public slots:
+public Q_SLOTS:
 	void ok();
 	void cancel();
 };

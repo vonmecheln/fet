@@ -35,7 +35,7 @@ public:
 	QStringList realNamesForRealHours;
 	QStringList realLongNamesForRealHours;
 
-public slots:
+public Q_SLOTS:
 	void numberOfHoursChanged();
 	void insertHour();
 	void modifyHour();

@@ -30,7 +30,7 @@ public:
 	AddBuildingForm(QWidget* parent);
 	~AddBuildingForm();
 
-public slots:
+public Q_SLOTS:
 	void addBuilding();
 };
 

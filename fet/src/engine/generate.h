@@ -390,7 +390,7 @@ public:
 	
 	void randomSwap(int ai, int level);
 	
-signals:
+Q_SIGNALS:
 	void activityPlaced(int, int);
 	
 	void generationFinished();

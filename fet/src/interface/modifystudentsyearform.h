@@ -33,7 +33,7 @@ public:
 	ModifyStudentsYearForm(QWidget* parent, const QString& initialYearName, int initialNumberOfStudents);
 	~ModifyStudentsYearForm();
 
-public slots:
+public Q_SLOTS:
 	void ok();
 	void cancel();
 };

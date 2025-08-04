@@ -32,7 +32,7 @@ public:
 	ModifyBuildingForm(QWidget* parent, const QString& initialBuildingName);
 	~ModifyBuildingForm();
 
-public slots:
+public Q_SLOTS:
 	void ok();
 	void cancel();
 };

@@ -28,7 +28,7 @@ public:
 
 	~SubjectsForm();
 
-public slots:
+public Q_SLOTS:
 	void addSubject();
 	void removeSubject();
 	void renameSubject();

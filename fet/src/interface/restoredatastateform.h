@@ -32,7 +32,7 @@ public:
 	RestoreDataStateForm(QWidget* parent);
 	~RestoreDataStateForm();
 
-public slots:
+public Q_SLOTS:
 	void restoreDataStateListWidgetSelectionChanged();
 
 	void ok();

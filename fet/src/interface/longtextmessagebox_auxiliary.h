@@ -38,7 +38,7 @@ public:
 	MyDialogWithThreeButtons(QWidget* parent);
 	~MyDialogWithThreeButtons();
 	
-public slots:
+public Q_SLOTS:
 	void setYes();
 	void setNo();
 	void setCancel();

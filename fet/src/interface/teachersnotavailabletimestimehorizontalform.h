@@ -71,7 +71,7 @@ public:
 
 	void colorItem(QTableWidgetItem* item);
 
-public slots:
+public Q_SLOTS:
 	void itemClicked(QTableWidgetItem* item);
 
 	void ok();

@@ -56,7 +56,7 @@ public:
 
 	bool filterOk(Activity* act);
 
-public slots:
+public Q_SLOTS:
 	void addActivity();
 	void removeActivities();
 	void modifyActivity();

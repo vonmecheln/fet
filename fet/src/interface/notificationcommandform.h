@@ -27,7 +27,7 @@ public:
 	NotificationCommandForm(QWidget* parent);
 	~NotificationCommandForm();
 
-public slots:
+public Q_SLOTS:
 	void ok();
 	void cancel();
 	

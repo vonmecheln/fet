@@ -478,7 +478,7 @@ public:
 	void retranslateMode();
 	void retranslateConstraints();
 
-public slots:
+public Q_SLOTS:
 	void settingsAutosaveAction_triggered();
 
 	void restoreDataStateAction_triggered();

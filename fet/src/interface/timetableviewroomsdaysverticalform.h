@@ -68,7 +68,7 @@ public:
 
 	void detailActivity(QTableWidgetItem* item);
 
-public slots:
+public Q_SLOTS:
 	void updateRoomsTimetableTable();
 
 	void roomChanged(const QString& roomName);

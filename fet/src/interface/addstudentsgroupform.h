@@ -30,7 +30,7 @@ public:
 	AddStudentsGroupForm(QWidget* parent, const QString& yearName);
 	~AddStudentsGroupForm();
 	
-public slots:
+public Q_SLOTS:
 	void addStudentsGroup();
 };
 

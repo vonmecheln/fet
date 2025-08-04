@@ -30,7 +30,7 @@ public:
 	AddRoomForm(QWidget* parent);
 	~AddRoomForm();
 
-public slots:
+public Q_SLOTS:
 	void addRoom();
 	void help();
 };

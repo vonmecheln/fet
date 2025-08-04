@@ -29,7 +29,7 @@ public:
 
 	~ActivityTagsForm();
 
-public slots:
+public Q_SLOTS:
 	void addActivityTag();
 	void removeActivityTag();
 	void renameActivityTag();

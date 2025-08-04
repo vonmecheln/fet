@@ -33,7 +33,7 @@ public:
 	AddExistingStudentsGroupsForm(QWidget* parent, StudentsYear* y);
 	~AddExistingStudentsGroupsForm();
 
-public slots:
+public Q_SLOTS:
 	void addGroup();
 	void removeGroup();
 	void clear();

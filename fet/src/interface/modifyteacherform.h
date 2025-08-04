@@ -33,7 +33,7 @@ public:
 
 	~ModifyTeacherForm();
 
-public slots:
+public Q_SLOTS:
 	void ok();
 	void help();
 	void cancel();

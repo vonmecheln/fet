@@ -7944,7 +7944,7 @@ prevvalue:
 					myMutex.unlock();
 				}
 
-				emit impossibleToSolve();
+				Q_EMIT impossibleToSolve();
 				
 				return;
 			}
@@ -8061,7 +8061,7 @@ prevvalue:
 			}*/
 	
 			//if(semaphorePlacedActivity){
-			emit activityPlaced(nThread, q+1);
+			Q_EMIT activityPlaced(nThread, q+1);
 			if(threaded){
 				//std::mutex mtx;
 				//std::unique_lock<std::mutex> lck(mtx);
@@ -8119,7 +8119,7 @@ prevvalue:
 			/*if(threaded){
 				myMutex.unlock();
 			}*/
-			emit activityPlaced(nThread, added_act+1);
+			Q_EMIT activityPlaced(nThread, added_act+1);
 			if(threaded){
 				//std::mutex mtx;
 				//std::unique_lock<std::mutex> lck(mtx);
@@ -8191,7 +8191,7 @@ prevvalue:
 	}
 #endif
 
-	emit generationFinished();
+	Q_EMIT generationFinished();
 	
 	//if(threaded)
 	//	finishedSemaphore.release();
@@ -33050,7 +33050,7 @@ skip_here_if_already_allocated_in_time:
 				if(searchTime<0)
 					searchTime=0;
 
-				emit activityPlaced(nThread, currentlyNPlacedActivities);
+				Q_EMIT activityPlaced(nThread, currentlyNPlacedActivities);
 				if(isThreaded){
 					myMutex.unlock();
 					semaphorePlacedActivity.acquire();

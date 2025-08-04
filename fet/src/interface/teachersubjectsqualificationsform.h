@@ -33,7 +33,7 @@ public:
 	
 	Teacher* _teacher;
 
-public slots:
+public Q_SLOTS:
 	void clear();
 
 	void addSubject();

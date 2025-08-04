@@ -27,7 +27,7 @@ public:
 	SettingsRestoreDataFromDiskForm(QWidget* parent);
 	~SettingsRestoreDataFromDiskForm();
 
-public slots:
+public Q_SLOTS:
 	void enableHistoryOnDiskCheckBox_toggled();
 
 	void ok();

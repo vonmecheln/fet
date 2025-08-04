@@ -12097,6 +12097,16 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 		}
 	}
 
+	if(!addEmpty && activityTagsComboBox!=nullptr){
+		assert(filterGroupBox==nullptr);
+		QString activity_tag_name=activityTagsComboBox->currentText();
+		int activityTag_ID=gt.rules.searchActivityTag(activity_tag_name);
+		if(activityTag_ID<0){
+			QMessageBox::warning(dialog, tr("FET information"), tr("Invalid activity tag"));
+			return;
+		}
+	}
+
 	switch(type){
 		//1
 		case CONSTRAINT_BASIC_COMPULSORY_TIME:
@@ -14610,56 +14620,28 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 		//178
 		case CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ACTIVITY_TAG:
 			{
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				tc=new ConstraintStudentsSetMinGapsBetweenActivityTag(weight, studentsComboBox->currentText(), spinBox->value(), activityTagName);
+				tc=new ConstraintStudentsSetMinGapsBetweenActivityTag(weight, studentsComboBox->currentText(), spinBox->value(), activityTagsComboBox->currentText());
 
 				break;
 			}
 		//179
 		case CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ACTIVITY_TAG:
 			{
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				tc=new ConstraintStudentsMinGapsBetweenActivityTag(weight, spinBox->value(), activityTagName);
+				tc=new ConstraintStudentsMinGapsBetweenActivityTag(weight, spinBox->value(), activityTagsComboBox->currentText());
 
 				break;
 			}
 		//180
 		case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ACTIVITY_TAG:
 			{
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				tc=new ConstraintTeacherMinGapsBetweenActivityTag(weight, teachersComboBox->currentText(), spinBox->value(), activityTagName);
+				tc=new ConstraintTeacherMinGapsBetweenActivityTag(weight, teachersComboBox->currentText(), spinBox->value(), activityTagsComboBox->currentText());
 
 				break;
 			}
 		//181
 		case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG:
 			{
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				tc=new ConstraintTeachersMinGapsBetweenActivityTag(weight, spinBox->value(), activityTagName);
+				tc=new ConstraintTeachersMinGapsBetweenActivityTag(weight, spinBox->value(), activityTagsComboBox->currentText());
 
 				break;
 			}
@@ -15252,56 +15234,28 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 		//212
 		case CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ACTIVITY_TAG_PER_REAL_DAY:
 			{
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				tc=new ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay(weight, studentsComboBox->currentText(), spinBox->value(), activityTagName);
+				tc=new ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay(weight, studentsComboBox->currentText(), spinBox->value(), activityTagsComboBox->currentText());
 
 				break;
 			}
 		//213
 		case CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_PER_REAL_DAY:
 			{
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				tc=new ConstraintStudentsMinGapsBetweenActivityTagPerRealDay(weight, spinBox->value(), activityTagName);
+				tc=new ConstraintStudentsMinGapsBetweenActivityTagPerRealDay(weight, spinBox->value(), activityTagsComboBox->currentText());
 
 				break;
 			}
 		//214
 		case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ACTIVITY_TAG_PER_REAL_DAY:
 			{
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				tc=new ConstraintTeacherMinGapsBetweenActivityTagPerRealDay(weight, teachersComboBox->currentText(), spinBox->value(), activityTagName);
+				tc=new ConstraintTeacherMinGapsBetweenActivityTagPerRealDay(weight, teachersComboBox->currentText(), spinBox->value(), activityTagsComboBox->currentText());
 
 				break;
 			}
 		//215
 		case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_PER_REAL_DAY:
 			{
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				tc=new ConstraintTeachersMinGapsBetweenActivityTagPerRealDay(weight, spinBox->value(), activityTagName);
+				tc=new ConstraintTeachersMinGapsBetweenActivityTagPerRealDay(weight, spinBox->value(), activityTagsComboBox->currentText());
 
 				break;
 			}
@@ -15412,56 +15366,28 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 		//220
 		case CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
 			{
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				tc=new ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon(weight, studentsComboBox->currentText(), spinBox->value(), activityTagName);
+				tc=new ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon(weight, studentsComboBox->currentText(), spinBox->value(), activityTagsComboBox->currentText());
 
 				break;
 			}
 		//221
 		case CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
 			{
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				tc=new ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon(weight, spinBox->value(), activityTagName);
+				tc=new ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon(weight, spinBox->value(), activityTagsComboBox->currentText());
 
 				break;
 			}
 		//222
 		case CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
 			{
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				tc=new ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon(weight, teachersComboBox->currentText(), spinBox->value(), activityTagName);
+				tc=new ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon(weight, teachersComboBox->currentText(), spinBox->value(), activityTagsComboBox->currentText());
 
 				break;
 			}
 		//223
 		case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
 			{
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				tc=new ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon(weight, spinBox->value(), activityTagName);
+				tc=new ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon(weight, spinBox->value(), activityTagsComboBox->currentText());
 
 				break;
 			}
@@ -15799,11 +15725,22 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 		}
 	}
 
-	if(filterGroupBox==nullptr && teachersComboBox!=nullptr){
+	if(!addEmpty && teachersComboBox!=nullptr){
+		assert(filterGroupBox==nullptr);
 		QString teacher_name=teachersComboBox->currentText();
 		int teacher_ID=gt.rules.searchTeacher(teacher_name);
 		if(teacher_ID<0){
 			QMessageBox::warning(dialog, tr("FET information"), tr("Invalid teacher"));
+			return;
+		}
+	}
+
+	if(!addEmpty && activityTagsComboBox!=nullptr){
+		assert(filterGroupBox==nullptr);
+		QString activity_tag_name=activityTagsComboBox->currentText();
+		int activityTag_ID=gt.rules.searchActivityTag(activity_tag_name);
+		if(activityTag_ID<0){
+			QMessageBox::warning(dialog, tr("FET information"), tr("Invalid activity tag"));
 			return;
 		}
 	}
@@ -16596,15 +16533,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 		//181
 		case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG:
 			{
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
 				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMinGapsBetweenActivityTag(weight, tch->name, spinBox->value(), activityTagName);
+					TimeConstraint *ctr=new ConstraintTeacherMinGapsBetweenActivityTag(weight, tch->name, spinBox->value(), activityTagsComboBox->currentText());
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
@@ -16748,15 +16678,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 		//215
 		case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_PER_REAL_DAY:
 			{
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
 				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMinGapsBetweenActivityTagPerRealDay(weight, tch->name, spinBox->value(), activityTagName);
+					TimeConstraint *ctr=new ConstraintTeacherMinGapsBetweenActivityTagPerRealDay(weight, tch->name, spinBox->value(), activityTagsComboBox->currentText());
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
@@ -16808,15 +16731,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 		//223
 		case CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG_BETWEEN_MORNING_AND_AFTERNOON:
 			{
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
 				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
-					TimeConstraint *ctr=new ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon(weight, tch->name, spinBox->value(), activityTagName);
+					TimeConstraint *ctr=new ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon(weight, tch->name, spinBox->value(), activityTagsComboBox->currentText());
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
@@ -17016,6 +16932,16 @@ void AddOrModifyTimeConstraint::okClicked()
 		StudentsSet* s=gt.rules.searchStudentsSet(students_name);
 		if(s==nullptr){
 			QMessageBox::warning(dialog, tr("FET information"), tr("Invalid students set"));
+			return;
+		}
+	}
+
+	if(!addEmpty && activityTagsComboBox!=nullptr){
+		assert(filterGroupBox==nullptr);
+		QString activity_tag_name=activityTagsComboBox->currentText();
+		int activityTag_ID=gt.rules.searchActivityTag(activity_tag_name);
+		if(activityTag_ID<0){
+			QMessageBox::warning(dialog, tr("FET information"), tr("Invalid activity tag"));
 			return;
 		}
 	}
@@ -18298,11 +18224,8 @@ void AddOrModifyTimeConstraint::okClicked()
 			{
 				ConstraintTeachersActivityTagMaxHoursContinuously* ctr=(ConstraintTeachersActivityTagMaxHoursContinuously*)oldtc;
 
-				QString activityTag=activityTagsComboBox->currentText();
-				assert(gt.rules.searchActivityTag(activityTag)>=0);
-
 				ctr->maxHoursContinuously=spinBox->value();
-				ctr->activityTagName=activityTag;
+				ctr->activityTagName=activityTagsComboBox->currentText();
 
 				break;
 			}
@@ -18322,11 +18245,8 @@ void AddOrModifyTimeConstraint::okClicked()
 			{
 				ConstraintStudentsActivityTagMaxHoursContinuously* ctr=(ConstraintStudentsActivityTagMaxHoursContinuously*)oldtc;
 
-				QString activityTag=activityTagsComboBox->currentText();
-				assert(gt.rules.searchActivityTag(activityTag)>=0);
-
 				ctr->maxHoursContinuously=spinBox->value();
-				ctr->activityTagName=activityTag;
+				ctr->activityTagName=activityTagsComboBox->currentText();
 
 				break;
 			}
@@ -18335,12 +18255,9 @@ void AddOrModifyTimeConstraint::okClicked()
 			{
 				ConstraintStudentsSetActivityTagMaxHoursContinuously* ctr=(ConstraintStudentsSetActivityTagMaxHoursContinuously*)oldtc;
 
-				QString activityTag=activityTagsComboBox->currentText();
-				assert(gt.rules.searchActivityTag(activityTag)>=0);
-
 				ctr->maxHoursContinuously=spinBox->value();
 				ctr->students=studentsComboBox->currentText();
-				ctr->activityTagName=activityTag;
+				ctr->activityTagName=activityTagsComboBox->currentText();
 
 				break;
 			}
@@ -18441,11 +18358,8 @@ void AddOrModifyTimeConstraint::okClicked()
 			{
 				ConstraintTeachersActivityTagMaxHoursDaily* ctr=(ConstraintTeachersActivityTagMaxHoursDaily*)oldtc;
 
-				QString activityTag=activityTagsComboBox->currentText();
-				assert(gt.rules.searchActivityTag(activityTag)>=0);
-
 				ctr->maxHoursDaily=spinBox->value();
-				ctr->activityTagName=activityTag;
+				ctr->activityTagName=activityTagsComboBox->currentText();
 
 				break;
 			}
@@ -18465,11 +18379,8 @@ void AddOrModifyTimeConstraint::okClicked()
 			{
 				ConstraintStudentsActivityTagMaxHoursDaily* ctr=(ConstraintStudentsActivityTagMaxHoursDaily*)oldtc;
 
-				QString activityTag=activityTagsComboBox->currentText();
-				assert(gt.rules.searchActivityTag(activityTag)>=0);
-
 				ctr->maxHoursDaily=spinBox->value();
-				ctr->activityTagName=activityTag;
+				ctr->activityTagName=activityTagsComboBox->currentText();
 
 				break;
 			}
@@ -18478,12 +18389,9 @@ void AddOrModifyTimeConstraint::okClicked()
 			{
 				ConstraintStudentsSetActivityTagMaxHoursDaily* ctr=(ConstraintStudentsSetActivityTagMaxHoursDaily*)oldtc;
 
-				QString activityTag=activityTagsComboBox->currentText();
-				assert(gt.rules.searchActivityTag(activityTag)>=0);
-
 				ctr->maxHoursDaily=spinBox->value();
 				ctr->students=studentsComboBox->currentText();
-				ctr->activityTagName=activityTag;
+				ctr->activityTagName=activityTagsComboBox->currentText();
 
 				break;
 			}
@@ -18924,12 +18832,9 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				ConstraintTeachersActivityTagMinHoursDaily* ctr=(ConstraintTeachersActivityTagMinHoursDaily*)oldtc;
 
-				QString activityTag=activityTagsComboBox->currentText();
-				assert(gt.rules.searchActivityTag(activityTag)>=0);
-
 				ctr->minHoursDaily=spinBox->value();
 				ctr->minDaysWithTag=secondSpinBox->value();
-				ctr->activityTagName=activityTag;
+				ctr->activityTagName=activityTagsComboBox->currentText();
 				//ctr->allowEmptyDays=checkBox->isChecked();
 
 				break;
@@ -18964,12 +18869,9 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				ConstraintStudentsActivityTagMinHoursDaily* ctr=(ConstraintStudentsActivityTagMinHoursDaily*)oldtc;
 
-				QString activityTag=activityTagsComboBox->currentText();
-				assert(gt.rules.searchActivityTag(activityTag)>=0);
-
 				ctr->minHoursDaily=spinBox->value();
 				ctr->minDaysWithTag=secondSpinBox->value();
-				ctr->activityTagName=activityTag;
+				ctr->activityTagName=activityTagsComboBox->currentText();
 				//ctr->allowEmptyDays=checkBox->isChecked();
 
 				break;
@@ -18985,13 +18887,10 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				ConstraintStudentsSetActivityTagMinHoursDaily* ctr=(ConstraintStudentsSetActivityTagMinHoursDaily*)oldtc;
 
-				QString activityTag=activityTagsComboBox->currentText();
-				assert(gt.rules.searchActivityTag(activityTag)>=0);
-
 				ctr->minHoursDaily=spinBox->value();
 				ctr->minDaysWithTag=secondSpinBox->value();
 				ctr->students=studentsComboBox->currentText();
-				ctr->activityTagName=activityTag;
+				ctr->activityTagName=activityTagsComboBox->currentText();
 				//ctr->allowEmptyDays=checkBox->isChecked();
 
 				break;
@@ -19128,11 +19027,8 @@ void AddOrModifyTimeConstraint::okClicked()
 			{
 				ConstraintTeachersActivityTagMaxHoursDailyRealDays* ctr=(ConstraintTeachersActivityTagMaxHoursDailyRealDays*)oldtc;
 
-				QString activityTag=activityTagsComboBox->currentText();
-				assert(gt.rules.searchActivityTag(activityTag)>=0);
-
 				ctr->maxHoursDaily=spinBox->value();
-				ctr->activityTagName=activityTag;
+				ctr->activityTagName=activityTagsComboBox->currentText();
 
 				break;
 			}
@@ -19152,11 +19048,8 @@ void AddOrModifyTimeConstraint::okClicked()
 			{
 				ConstraintStudentsActivityTagMaxHoursDailyRealDays* ctr=(ConstraintStudentsActivityTagMaxHoursDailyRealDays*)oldtc;
 
-				QString activityTag=activityTagsComboBox->currentText();
-				assert(gt.rules.searchActivityTag(activityTag)>=0);
-
 				ctr->maxHoursDaily=spinBox->value();
-				ctr->activityTagName=activityTag;
+				ctr->activityTagName=activityTagsComboBox->currentText();
 
 				break;
 			}
@@ -19165,12 +19058,9 @@ void AddOrModifyTimeConstraint::okClicked()
 			{
 				ConstraintStudentsSetActivityTagMaxHoursDailyRealDays* ctr=(ConstraintStudentsSetActivityTagMaxHoursDailyRealDays*)oldtc;
 
-				QString activityTag=activityTagsComboBox->currentText();
-				assert(gt.rules.searchActivityTag(activityTag)>=0);
-
 				ctr->maxHoursDaily=spinBox->value();
 				ctr->students=studentsComboBox->currentText();
-				ctr->activityTagName=activityTag;
+				ctr->activityTagName=activityTagsComboBox->currentText();
 
 				break;
 			}
@@ -20233,14 +20123,7 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				ctr->students=studentsComboBox->currentText();
 
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				ctr->activityTag=activityTagName;
+				ctr->activityTag=activityTagsComboBox->currentText();
 
 				ctr->minGaps=spinBox->value();
 
@@ -20251,14 +20134,7 @@ void AddOrModifyTimeConstraint::okClicked()
 			{
 				ConstraintStudentsMinGapsBetweenActivityTag* ctr=(ConstraintStudentsMinGapsBetweenActivityTag*)oldtc;
 
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				ctr->activityTag=activityTagName;
+				ctr->activityTag=activityTagsComboBox->currentText();
 
 				ctr->minGaps=spinBox->value();
 
@@ -20271,14 +20147,7 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				ctr->teacher=teachersComboBox->currentText();
 
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				ctr->activityTag=activityTagName;
+				ctr->activityTag=activityTagsComboBox->currentText();
 
 				ctr->minGaps=spinBox->value();
 
@@ -20289,14 +20158,7 @@ void AddOrModifyTimeConstraint::okClicked()
 			{
 				ConstraintTeachersMinGapsBetweenActivityTag* ctr=(ConstraintTeachersMinGapsBetweenActivityTag*)oldtc;
 
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				ctr->activityTag=activityTagName;
+				ctr->activityTag=activityTagsComboBox->currentText();
 
 				ctr->minGaps=spinBox->value();
 
@@ -21074,14 +20936,7 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				ctr->students=studentsComboBox->currentText();
 
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				ctr->activityTag=activityTagName;
+				ctr->activityTag=activityTagsComboBox->currentText();
 
 				ctr->minGaps=spinBox->value();
 
@@ -21092,14 +20947,7 @@ void AddOrModifyTimeConstraint::okClicked()
 			{
 				ConstraintStudentsMinGapsBetweenActivityTagPerRealDay* ctr=(ConstraintStudentsMinGapsBetweenActivityTagPerRealDay*)oldtc;
 
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				ctr->activityTag=activityTagName;
+				ctr->activityTag=activityTagsComboBox->currentText();
 
 				ctr->minGaps=spinBox->value();
 
@@ -21112,14 +20960,7 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				ctr->teacher=teachersComboBox->currentText();
 
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				ctr->activityTag=activityTagName;
+				ctr->activityTag=activityTagsComboBox->currentText();
 
 				ctr->minGaps=spinBox->value();
 
@@ -21130,14 +20971,7 @@ void AddOrModifyTimeConstraint::okClicked()
 			{
 				ConstraintTeachersMinGapsBetweenActivityTagPerRealDay* ctr=(ConstraintTeachersMinGapsBetweenActivityTagPerRealDay*)oldtc;
 
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				ctr->activityTag=activityTagName;
+				ctr->activityTag=activityTagsComboBox->currentText();
 
 				ctr->minGaps=spinBox->value();
 
@@ -21278,14 +21112,7 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				ctr->students=studentsComboBox->currentText();
 
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				ctr->activityTag=activityTagName;
+				ctr->activityTag=activityTagsComboBox->currentText();
 
 				ctr->minGaps=spinBox->value();
 
@@ -21296,14 +21123,7 @@ void AddOrModifyTimeConstraint::okClicked()
 			{
 				ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon* ctr=(ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon*)oldtc;
 
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				ctr->activityTag=activityTagName;
+				ctr->activityTag=activityTagsComboBox->currentText();
 
 				ctr->minGaps=spinBox->value();
 
@@ -21316,14 +21136,7 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				ctr->teacher=teachersComboBox->currentText();
 
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				ctr->activityTag=activityTagName;
+				ctr->activityTag=activityTagsComboBox->currentText();
 
 				ctr->minGaps=spinBox->value();
 
@@ -21334,14 +21147,7 @@ void AddOrModifyTimeConstraint::okClicked()
 			{
 				ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon* ctr=(ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon*)oldtc;
 
-				QString activityTagName=activityTagsComboBox->currentText();
-				int acttagindex=gt.rules.searchActivityTag(activityTagName);
-				if(acttagindex<0){
-					QMessageBox::warning(dialog, tr("FET warning"), tr("Invalid activity tag"));
-					return;
-				}
-
-				ctr->activityTag=activityTagName;
+				ctr->activityTag=activityTagsComboBox->currentText();
 
 				ctr->minGaps=spinBox->value();
 

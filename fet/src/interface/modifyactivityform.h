@@ -61,7 +61,7 @@ public:
 
 	void populateSubactivitiesTabWidget(int n);
 
-public slots:
+public Q_SLOTS:
 	void allTeachersRadioButtonToggled(bool checked);
 	void qualifiedTeachersRadioButtonToggled(bool checked);
 	void updateAllTeachersListWidget();

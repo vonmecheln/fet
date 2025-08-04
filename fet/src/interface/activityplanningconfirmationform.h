@@ -30,7 +30,7 @@ public:
 	ActivityPlanningConfirmationForm(QWidget* parent);
 	~ActivityPlanningConfirmationForm();
 
-public slots:
+public Q_SLOTS:
 	void dontShowAgainCheckBoxToggled();
 };
 

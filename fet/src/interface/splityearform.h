@@ -51,7 +51,7 @@ public:
 	void updateNumberOfSubgroups();
 	void updateDivisionsLabel();
 	
-public slots:
+public Q_SLOTS:
 	void tabIndexChanged(int i);
 	
 	void ok();

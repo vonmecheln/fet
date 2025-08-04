@@ -77,7 +77,7 @@ class FetSettings: public QObject{
 public:
 	void readGenerationParameters(QApplication& qapplication);
 
-public slots:
+public Q_SLOTS:
 	void writeGenerationParameters();
 };
 //void writeDefaultGenerationParameters();

@@ -28,7 +28,7 @@ public:
 
 	~TeachersForm();
 
-public slots:
+public Q_SLOTS:
 	void addTeacher();
 	void removeTeacher();
 	void modifyTeacher();

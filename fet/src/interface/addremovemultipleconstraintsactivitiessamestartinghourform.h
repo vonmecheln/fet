@@ -27,7 +27,7 @@ public:
 	AddRemoveMultipleConstraintsActivitiesSameStartingHourForm(QWidget* parent);
 	~AddRemoveMultipleConstraintsActivitiesSameStartingHourForm();
 
-public slots:
+public Q_SLOTS:
 	void addAllConstraints();
 	void removeAllConstraints();
 	void help();

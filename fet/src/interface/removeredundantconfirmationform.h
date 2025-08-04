@@ -30,7 +30,7 @@ public:
 	RemoveRedundantConfirmationForm(QWidget* parent);
 	~RemoveRedundantConfirmationForm();
 
-public slots:
+public Q_SLOTS:
 	void dontShowAgainCheckBoxToggled();
 };
 

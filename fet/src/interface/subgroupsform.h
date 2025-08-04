@@ -27,7 +27,7 @@ public:
 	SubgroupsForm(QWidget* parent);
 	~SubgroupsForm();
 
-public slots:
+public Q_SLOTS:
 	void addSubgroup();
 	void addExistingSubgroups();
 	void removeSubgroup();

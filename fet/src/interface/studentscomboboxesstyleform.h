@@ -28,7 +28,7 @@ public:
 	StudentsComboBoxesStyleForm(QWidget* parent);
 	~StudentsComboBoxesStyleForm();
 	
-public slots:
+public Q_SLOTS:
 	void wasAccepted();
 	void wasCanceled();
 };

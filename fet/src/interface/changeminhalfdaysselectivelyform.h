@@ -44,7 +44,7 @@ public:
 	int newConsecutive;
 	QString newConsecutiveString;
 
-public slots:
+public Q_SLOTS:
 	void ok();
 	void cancel();
 };

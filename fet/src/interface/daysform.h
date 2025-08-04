@@ -37,7 +37,7 @@ public:
 	QStringList realNamesForRealDays;
 	QStringList realLongNamesForRealDays;
 
-public slots:
+public Q_SLOTS:
 	void numberOfDaysChanged();
 	void insertDay();
 	void modifyDay();

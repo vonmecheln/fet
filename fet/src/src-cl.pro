@@ -69,7 +69,7 @@ DEFINES += \
 	QT_NO_LINKED_LIST \
 	QT_STRICT_ITERATORS
 
-CONFIG += release warn_on c++17 cmdline
+CONFIG += release warn_on c++17 cmdline no_keywords
 
 QT -= gui
 

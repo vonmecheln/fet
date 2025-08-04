@@ -49,7 +49,7 @@ public:
 	
 	void filterChanged();
 	
-public slots:
+public Q_SLOTS:
 	void constraintChanged();
 	void modifyConstraint();
 	void removeConstraints();

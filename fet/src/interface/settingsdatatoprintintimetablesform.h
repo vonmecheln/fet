@@ -28,7 +28,7 @@ public:
 	SettingsDataToPrintInTimetablesForm(QWidget* parent);
 	~SettingsDataToPrintInTimetablesForm();
 	
-public slots:
+public Q_SLOTS:
 	void wasAccepted();
 	void wasCanceled();
 };

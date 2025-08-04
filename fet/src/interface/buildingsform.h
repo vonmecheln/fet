@@ -34,7 +34,7 @@ public:
 
 	bool filterOk(Building* bu);
 
-public slots:
+public Q_SLOTS:
 	void addBuilding();
 	void removeBuilding();
 	void buildingChanged(int index);

@@ -115,7 +115,7 @@ private:
 		QList<bool>& _affectOtherStudentsSetsToBeModified, bool& _affectOtherStudentsSetsOverall,
 		QList<bool>& _affectOtherSubjectsToBeModified, bool& _affectOtherSubjectsOverall);
 	
-private slots:
+private Q_SLOTS:
 	//void activitiesCellSelected(int, int);
 	void activitiesCellSelected(const QModelIndex& index);
 	//void teachersCellSelected(QTableWidgetItem*);
@@ -141,7 +141,6 @@ private slots:
 	void resizeEvent(QResizeEvent* event);*/
 };
 
-
 //communication spin box by Liviu Lalescu
 class PlanningCommunicationSpinBox: public QObject{
 	Q_OBJECT
@@ -155,13 +154,12 @@ public:
 	PlanningCommunicationSpinBox();
 	~PlanningCommunicationSpinBox();
 	
-signals:
+Q_SIGNALS:
 	int valueChanged(int newValue);
 	
-public slots:
+public Q_SLOTS:
 	void increaseValue();
 };
-
 
 class PlanningChanged{
 public:

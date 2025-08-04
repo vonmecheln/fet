@@ -55,7 +55,7 @@ public:
 	void updateSubjectsComboBox();
 	void updateActivityTagsListWidget();
 	
-public slots:
+public Q_SLOTS:
 	void allTeachersRadioButtonToggled(bool checked);
 	void qualifiedTeachersRadioButtonToggled(bool checked);
 	void updateAllTeachersListWidget();

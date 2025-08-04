@@ -67,7 +67,7 @@ public:
 	LockAdvancedDialog(QWidget* parent);
 	~LockAdvancedDialog();
 	
-public slots:
+public Q_SLOTS:
 	void filter(bool selected);
 	void help();
 };
@@ -102,7 +102,7 @@ public:
 	UnlockAdvancedDialog(QWidget* parent);
 	~UnlockAdvancedDialog();
 
-public slots:
+public Q_SLOTS:
 	void filter(bool selected);
 	void help();
 };

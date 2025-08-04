@@ -31,7 +31,7 @@ public:
 	ActivitiesTagsForm(QWidget* parent, const QList<Activity*>& salist);
 	~ActivitiesTagsForm();
 
-public slots:
+public Q_SLOTS:
 	void addActivityTag();
 	void removeActivityTag();
 };

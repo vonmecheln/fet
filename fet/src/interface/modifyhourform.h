@@ -33,7 +33,7 @@ public:
 	QString name;
 	QString longName;
 	
-public slots:
+public Q_SLOTS:
 	void ok();
 	void cancel();
 };

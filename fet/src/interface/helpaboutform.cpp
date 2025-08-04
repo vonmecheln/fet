@@ -79,7 +79,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	 "or a combination of these), %2 are the copyright holders").arg("2002-2025").arg("Liviu Lalescu, Volker Dirr");
 	about+=QString("<br /><br />");
 	about+=tr("Version: %1 (%2 %3).", "%1 is the current FET version, %2 is the current release month, %3 is the current release year").arg(FET_VERSION)
-	 .arg(QCoreApplication::translate("MonthsNames", "July")).arg("2025");
+	 .arg(QCoreApplication::translate("MonthsNames", "August")).arg("2025");
 	about+=QString("<br /><br />");
 	about+=tr("Licensed under the GNU Affero General Public License version 3 or later.");
 	about+=QString("<br /><br />");
@@ -156,7 +156,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
 	translators+=tr("%1 (assisted by %2 and %3) (%4)",
 	 "%1 is the name of the translator, %2 and %3 are tools which this translator used - such as Google Translate and ChatGPT, %4 is his or her email or web address")
-	 .arg("Bolja škola").arg("Google Translate").arg("ChatGPT").arg("boljaskola AT proton.me");
+	 .arg("Bolja škola").arg("Google Translate").arg("ChatGPT").arg("bs.safeguard362 AT passinbox.com");
 	translators+=QString("<br /><br /><br />");
 
 	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("ca").arg(tr("Catalan translation"));
@@ -1474,6 +1474,10 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("midus74");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Xardeuss");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Bouazza El Idrissi");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("JoeLaw");
 	thanksTo+=QString("<br />");
 	
 	thanksToTextBrowser->setHtml(thanksTo);

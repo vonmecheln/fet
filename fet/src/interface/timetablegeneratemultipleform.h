@@ -41,7 +41,7 @@ public:
 
 	void startGenerating();
 
-signals:
+Q_SIGNALS:
 	void timetableGenerated(int nThread, int timetable, const QString& description, bool ok);
 };
 
@@ -108,7 +108,7 @@ public:
 	
 	void writeTimetableDataFile();
 
-public slots:
+public Q_SLOTS:
 	void help();
 
 	void start();
@@ -119,7 +119,7 @@ public slots:
 	
 	void closePressed();
 	
-private slots:
+private Q_SLOTS:
 	void nThreadsChanged(int nt);
 
 	void timetableStarted(int nThread, int timetable);

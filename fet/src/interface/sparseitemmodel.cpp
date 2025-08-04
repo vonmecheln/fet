@@ -159,11 +159,11 @@ void SparseItemModel::resize(int _nr, int _nc)
 
 void SparseItemModel::allItemsChanged()
 {
-	emit dataChanged(index(0,0), index(n_rows-1, n_columns-1));
+	Q_EMIT dataChanged(index(0,0), index(n_rows-1, n_columns-1));
 }
 
 void SparseItemModel::allHeadersChanged()
 {
-	emit headerDataChanged(Qt::Horizontal, 0, n_columns-1);
-	emit headerDataChanged(Qt::Vertical, 0, n_rows-1);
+	Q_EMIT headerDataChanged(Qt::Horizontal, 0, n_columns-1);
+	Q_EMIT headerDataChanged(Qt::Vertical, 0, n_rows-1);
 }

@@ -27,7 +27,7 @@ public:
 	AddRemoveMultipleConstraintsActivitiesOccupyMaxDifferentRoomsForm(QWidget* parent);
 	~AddRemoveMultipleConstraintsActivitiesOccupyMaxDifferentRoomsForm();
 
-public slots:
+public Q_SLOTS:
 	void addAllConstraints();
 	void removeAllConstraints();
 	void help();

@@ -30,7 +30,7 @@ public:
 	AddStudentsYearForm(QWidget* parent);
 	~AddStudentsYearForm();
 
-public slots:
+public Q_SLOTS:
 	void addStudentsYear();
 };
 

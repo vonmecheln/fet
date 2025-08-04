@@ -27,7 +27,7 @@ public:
 	SettingsRestoreDataFromMemoryForm(QWidget* parent);
 	~SettingsRestoreDataFromMemoryForm();
 
-public slots:
+public Q_SLOTS:
 	void enableHistoryInMemoryCheckBox_toggled();
 
 	void ok();

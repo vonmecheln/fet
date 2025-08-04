@@ -27,7 +27,7 @@ public:
 	YearsForm(QWidget* parent);
 	~YearsForm();
 
-public slots:
+public Q_SLOTS:
 	void addYear();
 	void removeYear();
 	void modifyYear();

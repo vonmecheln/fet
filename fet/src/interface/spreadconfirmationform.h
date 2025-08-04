@@ -30,7 +30,7 @@ public:
 	SpreadConfirmationForm(QWidget* parent);
 	~SpreadConfirmationForm();
 
-public slots:
+public Q_SLOTS:
 	void dontShowAgainCheckBoxToggled();
 };
 

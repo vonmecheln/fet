@@ -28,7 +28,7 @@ public:
 	RemoveRedundantForm(QWidget* parent);
 	~RemoveRedundantForm();
 	
-public slots:
+public Q_SLOTS:
 	void wasAccepted();
 	void wasCanceled();
 	

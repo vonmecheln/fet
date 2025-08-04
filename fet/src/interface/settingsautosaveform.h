@@ -27,7 +27,7 @@ public:
 	SettingsAutosaveForm(QWidget* parent);
 	~SettingsAutosaveForm();
 
-public slots:
+public Q_SLOTS:
 	void enableAutosaveCheckBox_toggled();
 
 	void ok();

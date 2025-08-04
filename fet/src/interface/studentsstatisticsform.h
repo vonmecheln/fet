@@ -40,7 +40,7 @@ public:
 	
 	void insertStudentsSet(StudentsSet* studentsSet, int row);
 	
-public slots:
+public Q_SLOTS:
 	void checkBoxesModified();
 
 	void helpPushButton_clicked();

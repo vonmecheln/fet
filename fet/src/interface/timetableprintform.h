@@ -115,7 +115,7 @@ private:
 	
 	QPushButton* pbClose;
 
-private slots:
+private Q_SLOTS:
 	void selectAll();
 	void unselectAll();
 

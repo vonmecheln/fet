@@ -28,7 +28,7 @@ public:
 	TimetablesToWriteOnDiskForm(QWidget* parent);
 	~TimetablesToWriteOnDiskForm();
 	
-public slots:
+public Q_SLOTS:
 	void wasAccepted();
 	void wasCanceled();
 };

@@ -51,7 +51,7 @@ public:
 	TimetableGenerateForm(QWidget* parent);
 	~TimetableGenerateForm();
 
-public slots:
+public Q_SLOTS:
 	void start();
 	void stop();
 	void stopHighest();
@@ -62,7 +62,7 @@ public slots:
 
 	//void generationLogging(int generation);
 
-private slots:
+private Q_SLOTS:
 	void activityPlaced(int nThread, int na);
 
 	void generationFinished();

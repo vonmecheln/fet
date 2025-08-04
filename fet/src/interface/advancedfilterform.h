@@ -64,7 +64,7 @@ public:
 	AdvancedFilterForm(QWidget* parent, const QString& title, bool detDescrWithConstraints, bool all, QList<int> descrDetDescrDetDescrWithConstraints, QList<int> contNCont, QStringList text, bool caseSensitive, const QString& textToSettings);
 	~AdvancedFilterForm();
 	
-public slots:
+public Q_SLOTS:
 	void reset();
 	void more();
 	void fewer();

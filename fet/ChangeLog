@@ -1,3 +1,9 @@
+ 7.4.2
+	- Crash bugs fixed: if the user's file contained no activity tags, and if the user tried to add some time constraints for tags, such as teachers
+	activity tag max hours daily, the program did not report the error and added the constraint with an empty tag, and later crashed with an assertion
+	failed when editing that constraint or when trying to generate (reported by Bouazza El Idrissi, YOUSSEF HOUIET, and JoeLaw).
+	- Code cleanup (suggested by Volker Dirr).
+	- Updated the Bosnian translation, by Bolja škola.
  7.4.1
 	- Bug fix: the activity tags' timetables of type time horizontal divided by days were always empty.
 	- Other minor bug fixes in the interface.

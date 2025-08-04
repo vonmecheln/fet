@@ -29,7 +29,7 @@ public:
 	GetModeForNewFileForm(QWidget* parent);
 	~GetModeForNewFileForm();
 
-public slots:
+public Q_SLOTS:
 	void help();
 	void ok();
 	void cancel();

@@ -27,7 +27,7 @@ public:
 	RandomSeedForm(QWidget* parent);
 	~RandomSeedForm();
 
-public slots:
+public Q_SLOTS:
 	void help();
 	
 	void ok();

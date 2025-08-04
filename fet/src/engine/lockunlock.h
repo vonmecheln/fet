@@ -38,13 +38,12 @@ public:
 	CommunicationSpinBox();
 	~CommunicationSpinBox();
 	
-signals:
+Q_SIGNALS:
 	int valueChanged(int newValue);
 	
-public slots:
+public Q_SLOTS:
 	void increaseValue();
 };
-
 
 class LockUnlock{
 public:

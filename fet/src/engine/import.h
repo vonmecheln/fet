@@ -123,7 +123,7 @@ private:
 	
 	QString _settingsName;
 	
-private slots:
+private Q_SLOTS:
 	void chooseFieldsDialogClose();
 	void chooseFieldsDialogUpdateRadio1();
 	void chooseFieldsDialogUpdateRadio2();

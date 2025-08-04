@@ -35,7 +35,7 @@ public:
 	ModifyStudentsSubgroupForm(QWidget* parent, const QString& yearName, const QString& groupName, const QString& initialSubgroupName, int initialNumberOfStudents);
 	~ModifyStudentsSubgroupForm();
 
-public slots:
+public Q_SLOTS:
 	void ok();
 	void cancel();
 };

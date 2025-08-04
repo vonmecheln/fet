@@ -36,7 +36,7 @@ public:
 	
 	QList<QStringList> sets;
 	
-public slots:
+public Q_SLOTS:
 	void addSet();
 	void removeSet();
 	void setChanged();

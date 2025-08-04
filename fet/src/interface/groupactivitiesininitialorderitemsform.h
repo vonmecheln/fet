@@ -52,7 +52,7 @@ public:
 
 	bool filterOk(GroupActivitiesInInitialOrderItem* item);
 	
-public slots:
+public Q_SLOTS:
 	void itemChanged(int index);
 	void addItem();
 	void modifyItem();

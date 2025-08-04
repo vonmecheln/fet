@@ -10919,15 +10919,32 @@ I saw that it's possible to set the number of entries for the second period usin
 
 Is there a constraint to set the maximum number of entries for the third period? Or how can I do it?
 
-726--------------------------------------------------------
-From Xardeuss (on forum):
+726-------------------DONE in FET-7.2.6--------------------
 
-https://lalescu.ro/liviu/fet/forum/index.php?topic=6462.0
+727--------------------------------------------------------
+From GUEFFAZ REDA (on Facebook):
 
-I have a suggestion that I think would be useful for the app. In the statistics tab, I think it would be interesting
-to have the option to hide teachers who don't have a workload, similar to the option to hide teachers with a full workload,
-but the opposite.
+He sent Liviu Lalescu a screenshot, showing that in Teachers' not available times time horizontal
+views the days names are shown separately in the hours' columns.
 
-I think it would be useful in situations where a teacher might be on leave or something similar, but still have an
-"employment relationship" with the school. It could also be useful for "clean up" the statistics tab, making it easier
-to view the teachers who are "active" for internal school monitoring.
+Liviu Lalescu: Yes, indeed, this is not very nice, but a perfect solution, which would show a single
+day name cell spanning over the hours of that day is quite complicated.
+
+Also, this should be done in the other similar dialogs: Students' not available times time horizontal,
+and teachers'/students'/rooms' timetables time horizontal.
+
+728--------------------------------------------------------
+From GUEFFAZ REDA (on Facebook):
+
+He sent Liviu Lalescu a screenshot, with tables with selected/deselected cells, with the user's choices
+of generating a timetable: "Choice generate by students: all or by filter". The same idea for the subjects.
+
+More explanations from GUEFFAZ REDA:
+
+Adding a feature before starting the process of Generate timetables:
+We choose to generate all the tables or choose the Students where we
+want to be distributed. We select the Students where we want to
+distribute the classes from the Filtered button.
+
+The same idea for Subjects where we choose the Subject or Subjects we
+want to distribute.

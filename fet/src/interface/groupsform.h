@@ -27,7 +27,7 @@ public:
 	GroupsForm(QWidget* parent);
 	~GroupsForm();
 
-public slots:
+public Q_SLOTS:
 	void addGroup();
 	void addExistingGroups();
 	void removeGroup();

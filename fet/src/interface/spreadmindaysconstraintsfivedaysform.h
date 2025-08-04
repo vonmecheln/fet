@@ -28,7 +28,7 @@ public:
 	SpreadMinDaysConstraintsFiveDaysForm(QWidget* parent);
 	~SpreadMinDaysConstraintsFiveDaysForm();
 	
-public slots:
+public Q_SLOTS:
 	void wasAccepted();
 	void wasCanceled();
 	void help();

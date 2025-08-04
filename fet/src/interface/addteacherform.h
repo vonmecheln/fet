@@ -33,7 +33,7 @@ public:
 
 	~AddTeacherForm();
 
-public slots:
+public Q_SLOTS:
 	void addTeacher();
 	void help();
 };

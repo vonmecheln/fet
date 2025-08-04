@@ -34,7 +34,7 @@ public:
 	ModifyRoomForm(QWidget* parent, const QString& initialRoomName, const QString& initialRoomBuilding, int initialRoomCapacity);
 	~ModifyRoomForm();
 
-public slots:
+public Q_SLOTS:
 	void ok();
 	void cancel();
 };

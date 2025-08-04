@@ -36,7 +36,7 @@ public:
 	TeachersStatisticsForm(QWidget* parent);
 	~TeachersStatisticsForm();
 	
-public slots:
+public Q_SLOTS:
 	void highlightIncompleteTeachersCheckBoxModified();
 	void hideFullTeachersCheckBoxModified();
 };

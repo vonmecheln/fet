@@ -67,9 +67,8 @@ void CommunicationSpinBox::increaseValue()
 		
 	//cout<<"comm. spin box: increased value, crt value=="<<value<<endl;
 	
-	emit valueChanged(value);
+	Q_EMIT valueChanged(value);
 }
-
 
 void LockUnlock::computeLockedUnlockedActivitiesTimeSpace()
 {

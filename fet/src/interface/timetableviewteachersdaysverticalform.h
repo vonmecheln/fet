@@ -66,7 +66,7 @@ public:
 
 	void detailActivity(QTableWidgetItem* item);
 
-public slots:
+public Q_SLOTS:
 	void lockTime();
 	void lockSpace();
 	void lockTimeSpace();

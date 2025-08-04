@@ -30,7 +30,7 @@ public:
 	SaveTimetableConfirmationForm(QWidget* parent);
 	~SaveTimetableConfirmationForm();
 
-public slots:
+public Q_SLOTS:
 	void dontShowAgainCheckBoxToggled();
 };
 
