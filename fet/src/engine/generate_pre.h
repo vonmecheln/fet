@@ -502,6 +502,31 @@ bool computeSubgroupsPairOfMutuallyExclusiveTimeSlots(QWidget* parent);
 //END   students(s) pair of mutually exclusive time slots
 
 
+//BEGIN teacher(s) pair of mutually exclusive sets of time slots
+extern bool haveTeachersPairOfMutualExclusiveSetsOfTimeSlots;
+
+extern Matrix1D<QList<double>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages;
+extern Matrix1D<QList<QSet<int>>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet1;
+extern Matrix1D<QList<QList<int>>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList1;
+extern Matrix1D<QList<QSet<int>>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet2;
+extern Matrix1D<QList<QList<int>>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList2;
+
+bool computeTeachersPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent);
+//END   teacher(s) pair of mutually exclusive sets of time slots
+
+//BEGIN students(s) pair of mutually exclusive sets of time slots
+extern bool haveStudentsPairOfMutualExclusiveSetsOfTimeSlots;
+
+extern Matrix1D<QList<double>> subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages;
+extern Matrix1D<QList<QSet<int>>> subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet1;
+extern Matrix1D<QList<QList<int>>> subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList1;
+extern Matrix1D<QList<QSet<int>>> subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet2;
+extern Matrix1D<QList<QList<int>>> subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList2;
+
+bool computeSubgroupsPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent);
+//END   students(s) pair of mutually exclusive sets of time slots
+
+
 ////////BEGIN teacher(s) max hours daily
 extern Matrix1D<double> teachersMaxHoursDailyPercentages1;
 extern Matrix1D<int> teachersMaxHoursDailyMaxHours1;

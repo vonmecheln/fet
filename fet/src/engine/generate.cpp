@@ -8781,6 +8781,9 @@ again_if_impossible_activity:
 		bool okteacherspairofmutuallyexclusivetimeslots;
 		bool okstudentspairofmutuallyexclusivetimeslots;
 
+		bool okteacherspairofmutuallyexclusivesetsoftimeslots;
+		bool okstudentspairofmutuallyexclusivesetsoftimeslots;
+		
 		bool okstudentsmaxdaysperweek;
 		bool okstudentsmaxthreeconsecutivedays;
 		bool okstudentsmaxrealdaysperweek;
@@ -10838,6 +10841,194 @@ impossibleteacherspairofmutuallyexclusivetimeslots:
 
 impossiblestudentspairofmutuallyexclusivetimeslots:
 		if(!okstudentspairofmutuallyexclusivetimeslots){
+			//if(updateSubgroups || updateTeachers)
+			//	removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+		//allowed from constraints teachers pair of mutually exclusive sets of time slots
+		okteacherspairofmutuallyexclusivesetsoftimeslots=true;
+
+		if(haveTeachersPairOfMutualExclusiveSetsOfTimeSlots){
+			for(int tch : std::as_const(act->iTeachersList)){
+				for(int i=0; i<teachersPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages[tch].count(); i++){
+					double perc=teachersPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages[tch].at(i);
+					QSet<int> set1=teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet1[tch].at(i);
+					QList<int> list1=teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList1[tch].at(i);
+					QSet<int> set2=teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet2[tch].at(i);
+					QList<int> list2=teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList2[tch].at(i);
+
+					assert(perc==100.0);
+
+					bool set1ContainsAi=false;
+					bool set2ContainsAi=false;
+					
+					for(int t=newtime; t<newtime+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
+						if(!set1ContainsAi)
+							if(set1.contains(t))
+								set1ContainsAi=true;
+						if(!set2ContainsAi)
+							if(set2.contains(t))
+								set2ContainsAi=true;
+						//if(set1ContainsAi && set2ContainsAi)
+						//	break;
+					}
+					
+					if(set1ContainsAi && set2ContainsAi){
+						okteacherspairofmutuallyexclusivesetsoftimeslots=false;
+						goto impossibleteacherspairofmutuallyexclusivesetsoftimeslots;
+					}
+					else if(set1ContainsAi){
+						assert(!set2ContainsAi);
+						for(int t : std::as_const(list2)){
+							int day2=t%gt.rules.nDaysPerWeek;
+							int hour2=t/gt.rules.nDaysPerWeek;
+
+							if(teachersTimetable(tch,day2,hour2)>=0){
+								int ai2=teachersTimetable(tch,day2,hour2);
+								assert(ai2!=ai);
+
+								if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+									okteacherspairofmutuallyexclusivesetsoftimeslots=false;
+									goto impossibleteacherspairofmutuallyexclusivesetsoftimeslots;
+								}
+
+								if(!conflActivities[newtime].contains(ai2)){
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+									assert(nConflActivities[newtime]==conflActivities[newtime].count());
+								}
+							}
+						}
+					}
+					else if(set2ContainsAi){
+						assert(!set1ContainsAi);
+						for(int t : std::as_const(list1)){
+							int day2=t%gt.rules.nDaysPerWeek;
+							int hour2=t/gt.rules.nDaysPerWeek;
+
+							if(teachersTimetable(tch,day2,hour2)>=0){
+								int ai2=teachersTimetable(tch,day2,hour2);
+								assert(ai2!=ai);
+
+								if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+									okteacherspairofmutuallyexclusivesetsoftimeslots=false;
+									goto impossibleteacherspairofmutuallyexclusivesetsoftimeslots;
+								}
+
+								if(!conflActivities[newtime].contains(ai2)){
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+									assert(nConflActivities[newtime]==conflActivities[newtime].count());
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+impossibleteacherspairofmutuallyexclusivesetsoftimeslots:
+		if(!okteacherspairofmutuallyexclusivesetsoftimeslots){
+			//if(updateSubgroups || updateTeachers)
+			//	removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+		//allowed from constraints students pair of mutually exclusive sets of time slots
+		okstudentspairofmutuallyexclusivesetsoftimeslots=true;
+
+		if(haveStudentsPairOfMutualExclusiveSetsOfTimeSlots){
+			for(int sbg : std::as_const(act->iSubgroupsList)){
+				for(int i=0; i<subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages[sbg].count(); i++){
+					double perc=subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages[sbg].at(i);
+					QSet<int> set1=subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet1[sbg].at(i);
+					QList<int> list1=subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList1[sbg].at(i);
+					QSet<int> set2=subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet2[sbg].at(i);
+					QList<int> list2=subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList2[sbg].at(i);
+
+					assert(perc==100.0);
+
+					bool set1ContainsAi=false;
+					bool set2ContainsAi=false;
+					
+					for(int t=newtime; t<newtime+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
+						if(!set1ContainsAi)
+							if(set1.contains(t))
+								set1ContainsAi=true;
+						if(!set2ContainsAi)
+							if(set2.contains(t))
+								set2ContainsAi=true;
+						//if(set1ContainsAi && set2ContainsAi)
+						//	break;
+					}
+					
+					if(set1ContainsAi && set2ContainsAi){
+						okstudentspairofmutuallyexclusivesetsoftimeslots=false;
+						goto impossiblestudentspairofmutuallyexclusivesetsoftimeslots;
+					}
+					else if(set1ContainsAi){
+						assert(!set2ContainsAi);
+						for(int t : std::as_const(list2)){
+							int day2=t%gt.rules.nDaysPerWeek;
+							int hour2=t/gt.rules.nDaysPerWeek;
+
+							if(subgroupsTimetable(sbg,day2,hour2)>=0){
+								int ai2=subgroupsTimetable(sbg,day2,hour2);
+								assert(ai2!=ai);
+
+								if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+									okstudentspairofmutuallyexclusivesetsoftimeslots=false;
+									goto impossiblestudentspairofmutuallyexclusivesetsoftimeslots;
+								}
+
+								if(!conflActivities[newtime].contains(ai2)){
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+									assert(nConflActivities[newtime]==conflActivities[newtime].count());
+								}
+							}
+						}
+					}
+					else if(set2ContainsAi){
+						assert(!set1ContainsAi);
+						for(int t : std::as_const(list1)){
+							int day2=t%gt.rules.nDaysPerWeek;
+							int hour2=t/gt.rules.nDaysPerWeek;
+
+							if(subgroupsTimetable(sbg,day2,hour2)>=0){
+								int ai2=subgroupsTimetable(sbg,day2,hour2);
+								assert(ai2!=ai);
+
+								if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+									okstudentspairofmutuallyexclusivesetsoftimeslots=false;
+									goto impossiblestudentspairofmutuallyexclusivesetsoftimeslots;
+								}
+
+								if(!conflActivities[newtime].contains(ai2)){
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+									assert(nConflActivities[newtime]==conflActivities[newtime].count());
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+impossiblestudentspairofmutuallyexclusivesetsoftimeslots:
+		if(!okstudentspairofmutuallyexclusivesetsoftimeslots){
 			//if(updateSubgroups || updateTeachers)
 			//	removeAiFromNewTimetable(ai, act, d, h);
 			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);

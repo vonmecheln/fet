@@ -6804,7 +6804,7 @@ QString TimetableExport::writeSubjectAndActivityTags(int htmlLevel, const Activi
 			switch(htmlLevel){
 				case 3 : tmp+="<span class=\"subject\">"+tt+"</span>"; break;
 				case 4 : tmp+="<span class=\"subject\"><span class=\"s_"+hashSubjectIDsTimetable.value(act->subjectName)+"\">"+tt+"</span></span>"; break;
-				case 5 : ;
+				case 5 : [[fallthrough]];
 				case 6 : tmp+="<span class=\"subject\"><span class=\"s_"+hashSubjectIDsTimetable.value(act->subjectName)+"\" onmouseover=\"highlight('s_"+hashSubjectIDsTimetable.value(act->subjectName)+"')\">"+tt+"</span></span>"; break;
 				case 7 : tmp+="<span class=\"subject\">"+tt+"</span>"; break;
 				default: tmp+=tt; break;
@@ -6848,7 +6848,7 @@ QString TimetableExport::writeSubjectAndActivityTags(int htmlLevel, const Activi
 						switch(htmlLevel){
 							case 3 : tmp+=tt; break;
 							case 4 : tmp+="<span class=\"at_"+hashActivityTagIDsTimetable.value(atn)+"\">"+tt+"</span>"; break;
-							case 5 : ;
+							case 5 : [[fallthrough]];
 							case 6 : tmp+="<span class=\"at_"+hashActivityTagIDsTimetable.value(atn)+"\" onmouseover=\"highlight('at_"+hashActivityTagIDsTimetable.value(atn)+"')\">"+tt+"</span>"; break;
 							default: tmp+=tt; break;
 						}
@@ -6896,7 +6896,7 @@ QString TimetableExport::writeStudents(int htmlLevel, const Activity* act, const
 
 			switch(htmlLevel){
 				case 4 : tmp+="<span class=\"ss_"+hashStudentIDsTimetable.value(st)+"\">"+tt+"</span>"; break;
-				case 5 : ;
+				case 5 : [[fallthrough]];
 				case 6 : tmp+="<span class=\"ss_"+hashStudentIDsTimetable.value(st)+"\" onmouseover=\"highlight('ss_"+hashStudentIDsTimetable.value(st)+"')\">"+tt+"</span>"; break;
 				default: tmp+=tt; break;
 			}
@@ -6930,7 +6930,7 @@ QString TimetableExport::writeTeachers(int htmlLevel, const Activity* act, const
 
 			switch(htmlLevel){
 				case 4 : tmp+="<span class=\"t_"+hashTeacherIDsTimetable.value(t)+"\">"+tt+"</span>"; break;
-				case 5 : ;
+				case 5 : [[fallthrough]];
 				case 6 : tmp+="<span class=\"t_"+hashTeacherIDsTimetable.value(t)+"\" onmouseover=\"highlight('t_"+hashTeacherIDsTimetable.value(t)+"')\">"+tt+"</span>"; break;
 				default: tmp+=tt; break;
 			}
@@ -6960,7 +6960,7 @@ QString TimetableExport::writeRoom(int htmlLevel, int ai, const QString& startTa
 
 			switch(htmlLevel){
 				case 4 : tmp+="<span class=\"r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[r]->name)+"\">"+tt+"</span>"; break;
-				case 5 : ;
+				case 5 : [[fallthrough]];
 				case 6 : tmp+="<span class=\"r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[r]->name)+"\" onmouseover=\"highlight('r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[r]->name)+"')\">"+tt+"</span>"; break;
 				default: tmp+=tt; break;
 			}
@@ -6972,7 +6972,7 @@ QString TimetableExport::writeRoom(int htmlLevel, int ai, const QString& startTa
 
 				switch(htmlLevel){
 					case 4 : tmp+="<span class=\"r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[r]->name)+"\">"+tt+"</span>"; break;
-					case 5 : ;
+					case 5 : [[fallthrough]];
 					case 6 : tmp+="<span class=\"r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[r]->name)+"\" onmouseover=\"highlight('r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[r]->name)+"')\">"+tt+"</span>"; break;
 					default: tmp+=tt; break;
 				}
@@ -6988,7 +6988,7 @@ QString TimetableExport::writeRoom(int htmlLevel, int ai, const QString& startTa
 				QString room;
 				switch(htmlLevel){
 					case 4 : room+="<span class=\"r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[rr]->name)+"\">"+tt+"</span>"; break;
-					case 5 : ;
+					case 5 : [[fallthrough]];
 					case 6 : room+="<span class=\"r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[rr]->name)+"\" onmouseover=\"highlight('r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[rr]->name)+"')\">"+tt+"</span>"; break;
 					default: room+=tt; break;
 				}
@@ -7014,9 +7014,9 @@ QString TimetableExport::writeNotAvailableSlot(int htmlLevel, const QString& wei
 	QString tmp;
 	//weight=" "+weight;
 	switch(htmlLevel){
-		case 3 : ;
+		case 3 : [[fallthrough]];
 		case 4 : tmp="          <td class=\"notAvailable\"><span class=\"notAvailable\">"+protect2(STRING_NOT_AVAILABLE_TIME_SLOT)+weight+"</span></td>\n"; break;
-		case 5 : ;
+		case 5 : [[fallthrough]];
 		case 6 : tmp="          <td class=\"notAvailable\"><span class=\"notAvailable\" onmouseover=\"highlight('notAvailable')\">"+protect2(STRING_NOT_AVAILABLE_TIME_SLOT)+weight+"</span></td>\n"; break;
 		case 7 : tmp="          <td class=\"notAvailable\"><span class=\"notAvailable\">"+protect2(STRING_NOT_AVAILABLE_TIME_SLOT)+weight+"</span></td>\n"; break;
 		default: tmp="          <td>"+protect2(STRING_NOT_AVAILABLE_TIME_SLOT)+weight+"</td>\n";
@@ -7029,9 +7029,9 @@ QString TimetableExport::writeBreakSlot(int htmlLevel, const QString& weight){
 	QString tmp;
 	//weight=" "+weight;
 	switch(htmlLevel){
-		case 3 : ;
+		case 3 : [[fallthrough]];
 		case 4 : tmp="          <td class=\"break\"><span class=\"break\">"+protect2(STRING_BREAK_SLOT)+weight+"</span></td>\n"; break;
-		case 5 : ;
+		case 5 : [[fallthrough]];
 		case 6 : tmp="          <td class=\"break\"><span class=\"break\" onmouseover=\"highlight('break')\">"+protect2(STRING_BREAK_SLOT)+weight+"</span></td>\n"; break;
 		case 7 : tmp="          <td class=\"break\"><span class=\"break\">"+protect2(STRING_BREAK_SLOT)+weight+"</span></td>\n"; break;
 		default: tmp="          <td>"+protect2(STRING_BREAK_SLOT)+weight+"</td>\n";
@@ -7043,9 +7043,9 @@ QString TimetableExport::writeBreakSlot(int htmlLevel, const QString& weight){
 QString TimetableExport::writeEmpty(int htmlLevel){
 	QString tmp;
 	switch(htmlLevel){
-		case 3 : ;
+		case 3 : [[fallthrough]];
 		case 4 : tmp="          <td class=\"empty\"><span class=\"empty\">"+protect2(STRING_EMPTY_SLOT)+"</span></td>\n"; break;
-		case 5 : ;
+		case 5 : [[fallthrough]];
 		case 6 : tmp="          <td class=\"empty\"><span class=\"empty\" onmouseover=\"highlight('empty')\">"+protect2(STRING_EMPTY_SLOT)+"</span></td>\n"; break;
 		case 7 : tmp="          <td class=\"empty\"><span class=\"empty\">"+protect2(STRING_EMPTY_SLOT)+"</span></td>\n"; break;
 		default: tmp="          <td>"+protect2(STRING_EMPTY_SLOT)+"</td>\n";
@@ -17769,7 +17769,7 @@ QString TimetableExport::singleTeachersFreePeriodsTimetableDaysHorizontalHtml(in
 						QString teacher_name = gt.rules.internalTeachersList[teachers_free_periods_timetable_weekly[tfp][day][hour].at(t)]->name;
 							switch(htmlLevel){
 								case 4 : tmpString+="<span class=\"t_"+hashTeacherIDsTimetable.value(teacher_name)+"\">"+protect2(teacher_name)+"</span>"; break;
-								case 5 : ;
+								case 5 : [[fallthrough]];
 								case 6 : tmpString+="<span class=\"t_"+hashTeacherIDsTimetable.value(teacher_name)+"\" onmouseover=\"highlight('t_"+hashTeacherIDsTimetable.value(teacher_name)+"')\">"+protect2(teacher_name)+"</span>"; break;
 								default: tmpString+=protect2(teacher_name); break;
 							}
@@ -17912,7 +17912,7 @@ QString TimetableExport::singleTeachersFreePeriodsTimetableDaysVerticalHtml(int 
 						QString teacher_name = gt.rules.internalTeachersList[teachers_free_periods_timetable_weekly[tfp][day][hour].at(t)]->name;
 							switch(htmlLevel){
 								case 4 : tmpString+="<span class=\"t_"+hashTeacherIDsTimetable.value(teacher_name)+"\">"+protect2(teacher_name)+"</span>"; break;
-								case 5 : ;
+								case 5 : [[fallthrough]];
 								case 6 : tmpString+="<span class=\"t_"+hashTeacherIDsTimetable.value(teacher_name)+"\" onmouseover=\"highlight('t_"+hashTeacherIDsTimetable.value(teacher_name)+"')\">"+protect2(teacher_name)+"</span>"; break;
 								default: tmpString+=protect2(teacher_name); break;
 							}

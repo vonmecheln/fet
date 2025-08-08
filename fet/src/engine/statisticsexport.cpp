@@ -775,9 +775,9 @@ QString StatisticsExport::exportStatisticsTeachersSubjectsHtml(QWidget* parent, 
 				tmpActivities=tmpTeachers.values(statisticValues.allTeachersNames.at(teacher));
 				if(tmpActivities.isEmpty()){
 					switch(htmlLevel){
-						case 3 : ;
+						case 3 : [[fallthrough]];
 						case 4 : tmp+="          <td class=\"empty\"><span class=\"empty\">"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</span></td>\n"; break;
-						case 5 : ;
+						case 5 : [[fallthrough]];
 						case 6 : tmp+="          <td class=\"empty\"><span class=\"empty\" onmouseover=\"highlight('empty')\">"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</span></td>\n"; break;
 						default: tmp+="          <td>"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</td>\n";
 					}
@@ -844,7 +844,7 @@ QString StatisticsExport::exportStatisticsTeachersSubjectsHtml(QWidget* parent, 
 							for(QStringList::const_iterator st=studentsNames.constBegin(); st!=studentsNames.constEnd(); st++){
 								switch(htmlLevel){
 									case 4 : tmpSt+="<span class=\"ss_"+statisticValues.hashStudentIDsStatistics.value(*st)+"\">"+protect2(*st)+"</span>"; break;
-									case 5 : ;
+									case 5 : [[fallthrough]];
 									case 6 : tmpSt+="<span class=\"ss_"+statisticValues.hashStudentIDsStatistics.value(*st)+"\" onmouseover=\"highlight('ss_"+statisticValues.hashStudentIDsStatistics.value(*st)+"')\">"+protect2(*st)+"</span>"; break;
 									default: tmpSt+=protect2(*st); break;
 									}
@@ -861,7 +861,7 @@ QString StatisticsExport::exportStatisticsTeachersSubjectsHtml(QWidget* parent, 
 										switch(htmlLevel){
 											case 3 : tmpSt+=" <span class=\"activitytag\">"+protect2(*atn)+"</span>"; break;
 											case 4 : tmpSt+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\">"+protect2(*atn)+"</span></span>"; break;
-											case 5 : ;
+											case 5 : [[fallthrough]];
 											case 6 : tmpSt+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
 											default: tmpSt+=" "+protect2(*atn); break;
 										}
@@ -1084,9 +1084,9 @@ QString StatisticsExport::exportStatisticsSubjectsTeachersHtml(QWidget* parent, 
 				tmpActivities=tmpSubjects.values(statisticValues.allSubjectsNames.at(subject));
 				if(tmpActivities.isEmpty()){
 					switch(htmlLevel){
-						case 3 : ;
+						case 3 : [[fallthrough]];
 						case 4 : tmp+="          <td class=\"empty\"><span class=\"empty\">"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</span></td>\n"; break;
-						case 5 : ;
+						case 5 : [[fallthrough]];
 						case 6 : tmp+="          <td class=\"empty\"><span class=\"empty\" onmouseover=\"highlight('empty')\">"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</span></td>\n"; break;
 						default: tmp+="          <td>"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</td>\n";
 					}
@@ -1153,7 +1153,7 @@ QString StatisticsExport::exportStatisticsSubjectsTeachersHtml(QWidget* parent, 
 							for(QStringList::const_iterator st=studentsNames.constBegin(); st!=studentsNames.constEnd(); st++){
 								switch(htmlLevel){
 									case 4 : tmpSt+="<span class=\"ss_"+statisticValues.hashStudentIDsStatistics.value(*st)+"\">"+protect2(*st)+"</span>"; break;
-									case 5 : ;
+									case 5 : [[fallthrough]];
 									case 6 : tmpSt+="<span class=\"ss_"+statisticValues.hashStudentIDsStatistics.value(*st)+"\" onmouseover=\"highlight('ss_"+statisticValues.hashStudentIDsStatistics.value(*st)+"')\">"+protect2(*st)+"</span>"; break;
 									default: tmpSt+=protect2(*st); break;
 									}
@@ -1170,7 +1170,7 @@ QString StatisticsExport::exportStatisticsSubjectsTeachersHtml(QWidget* parent, 
 										switch(htmlLevel){
 											case 3 : tmpSt+=" <span class=\"activitytag\">"+protect2(*atn)+"</span>"; break;
 											case 4 : tmpSt+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\">"+protect2(*atn)+"</span></span>"; break;
-											case 5 : ;
+											case 5 : [[fallthrough]];
 											case 6 : tmpSt+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
 											default: tmpSt+=" "+protect2(*atn); break;
 										}
@@ -1395,9 +1395,9 @@ QString StatisticsExport::exportStatisticsTeachersStudentsHtml(QWidget* parent, 
 				tmpActivities=tmpTeachers.values(statisticValues.allTeachersNames.at(teacher));
 				if(tmpActivities.isEmpty()){
 					switch(htmlLevel){
-						case 3 : ;
+						case 3 : [[fallthrough]];
 						case 4 : tmp+="          <td class=\"empty\"><span class=\"empty\">"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</span></td>\n"; break;
-						case 5 : ;
+						case 5 : [[fallthrough]];
 						case 6 : tmp+="          <td class=\"empty\"><span class=\"empty\" onmouseover=\"highlight('empty')\">"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</span></td>\n"; break;
 						default: tmp+="          <td>"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</td>\n";
 					}
@@ -1466,7 +1466,7 @@ QString StatisticsExport::exportStatisticsTeachersStudentsHtml(QWidget* parent, 
 								switch(htmlLevel){
 									case 3 : tmpS+="<span class=\"subject\">"+protect2(subjectName)+"</span>"; break;
 									case 4 : tmpS+="<span class=\"subject\"><span class=\"s_"+statisticValues.hashSubjectIDsStatistics.value(subjectName)+"\">"+protect2(subjectName)+"</span></span>"; break;
-									case 5 : ;
+									case 5 : [[fallthrough]];
 									case 6 : tmpS+="<span class=\"subject\"><span class=\"s_"+statisticValues.hashSubjectIDsStatistics.value(subjectName)+"\" onmouseover=\"highlight('s_"+statisticValues.hashSubjectIDsStatistics.value(subjectName)+"')\">"+protect2(subjectName)+"</span></span>"; break;
 									default: tmpS+=protect2(subjectName); break;
 								}
@@ -1480,7 +1480,7 @@ QString StatisticsExport::exportStatisticsTeachersStudentsHtml(QWidget* parent, 
 										switch(htmlLevel){
 											case 3 : tmpS+=" <span class=\"activitytag\">"+protect2(*atn)+"</span>"; break;
 											case 4 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\">"+protect2(*atn)+"</span></span>"; break;
-											case 5 : ;
+											case 5 : [[fallthrough]];
 											case 6 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
 											default: tmpS+=" "+protect2(*atn); break;
 										}
@@ -1705,9 +1705,9 @@ QString StatisticsExport::exportStatisticsStudentsTeachersHtml(QWidget* parent, 
 				tmpActivities=tmpStudents.values(statisticValues.allStudentsNames.at(students));
 				if(tmpActivities.isEmpty()){
 					switch(htmlLevel){
-						case 3 : ;
+						case 3 : [[fallthrough]];
 						case 4 : tmp+="          <td class=\"empty\"><span class=\"empty\">"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</span></td>\n"; break;
-						case 5 : ;
+						case 5 : [[fallthrough]];
 						case 6 : tmp+="          <td class=\"empty\"><span class=\"empty\" onmouseover=\"highlight('empty')\">"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</span></td>\n"; break;
 						default: tmp+="          <td>"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</td>\n";
 					}
@@ -1776,7 +1776,7 @@ QString StatisticsExport::exportStatisticsStudentsTeachersHtml(QWidget* parent, 
 								switch(htmlLevel){
 									case 3 : tmpS+="<span class=\"subject\">"+protect2(subjectName)+"</span>"; break;
 									case 4 : tmpS+="<span class=\"subject\"><span class=\"s_"+statisticValues.hashSubjectIDsStatistics.value(subjectName)+"\">"+protect2(subjectName)+"</span></span>"; break;
-									case 5 : ;
+									case 5 : [[fallthrough]];
 									case 6 : tmpS+="<span class=\"subject\"><span class=\"s_"+statisticValues.hashSubjectIDsStatistics.value(subjectName)+"\" onmouseover=\"highlight('s_"+statisticValues.hashSubjectIDsStatistics.value(subjectName)+"')\">"+protect2(subjectName)+"</span></span>"; break;
 									default: tmpS+=protect2(subjectName); break;
 								}
@@ -1790,7 +1790,7 @@ QString StatisticsExport::exportStatisticsStudentsTeachersHtml(QWidget* parent, 
 										switch(htmlLevel){
 											case 3 : tmpS+=" <span class=\"activitytag\">"+protect2(*atn)+"</span>"; break;
 											case 4 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\">"+protect2(*atn)+"</span></span>"; break;
-											case 5 : ;
+											case 5 : [[fallthrough]];
 											case 6 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
 											default: tmpS+=" "+protect2(*atn); break;
 										}
@@ -2013,9 +2013,9 @@ QString StatisticsExport::exportStatisticsSubjectsStudentsHtml(QWidget* parent, 
 				tmpActivities=tmpSubjects.values(statisticValues.allSubjectsNames.at(subject));
 				if(tmpActivities.isEmpty()){
 					switch(htmlLevel){
-						case 3 : ;
+						case 3 : [[fallthrough]];
 						case 4 : tmp+="          <td class=\"empty\"><span class=\"empty\">"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</span></td>\n"; break;
-						case 5 : ;
+						case 5 : [[fallthrough]];
 						case 6 : tmp+="          <td class=\"empty\"><span class=\"empty\" onmouseover=\"highlight('empty')\">"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</span></td>\n"; break;
 						default: tmp+="          <td>"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</td>\n";
 					}
@@ -2083,7 +2083,7 @@ QString StatisticsExport::exportStatisticsSubjectsStudentsHtml(QWidget* parent, 
 							for(QStringList::const_iterator it=teachersNames.constBegin(); it!=teachersNames.constEnd(); it++){
 								switch(htmlLevel){
 									case 4 : tmpT+="<span class=\"t_"+statisticValues.hashTeacherIDsStatistics.value(*it)+"\">"+protect2(*it)+"</span>"; break;
-									case 5 : ;
+									case 5 : [[fallthrough]];
 									case 6 : tmpT+="<span class=\"t_"+statisticValues.hashTeacherIDsStatistics.value(*it)+"\" onmouseover=\"highlight('t_"+statisticValues.hashTeacherIDsStatistics.value(*it)+"')\">"+protect2(*it)+"</span>"; break;
 									default: tmpT+=protect2(*it); break;
 								}
@@ -2100,7 +2100,7 @@ QString StatisticsExport::exportStatisticsSubjectsStudentsHtml(QWidget* parent, 
 										switch(htmlLevel){
 											case 3 : tmpT+=" <span class=\"activitytag\">"+protect2(*atn)+"</span>"; break;
 											case 4 : tmpT+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\">"+protect2(*atn)+"</span></span>"; break;
-											case 5 : ;
+											case 5 : [[fallthrough]];
 											case 6 : tmpT+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
 											default: tmpT+=" "+protect2(*atn); break;
 										}
@@ -2324,9 +2324,9 @@ QString StatisticsExport::exportStatisticsStudentsSubjectsHtml(QWidget* parent, 
 				tmpActivities=tmpStudents.values(statisticValues.allStudentsNames.at(students));
 				if(tmpActivities.isEmpty()){
 					switch(htmlLevel){
-						case 3 : ;
+						case 3 : [[fallthrough]];
 						case 4 : tmp+="          <td class=\"empty\"><span class=\"empty\">"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</span></td>\n"; break;
-						case 5 : ;
+						case 5 : [[fallthrough]];
 						case 6 : tmp+="          <td class=\"empty\"><span class=\"empty\" onmouseover=\"highlight('empty')\">"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</span></td>\n"; break;
 						default: tmp+="          <td>"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</td>\n";
 					}
@@ -2394,7 +2394,7 @@ QString StatisticsExport::exportStatisticsStudentsSubjectsHtml(QWidget* parent, 
 							for(QStringList::const_iterator it=teachersNames.constBegin(); it!=teachersNames.constEnd(); it++){
 								switch(htmlLevel){
 									case 4 : tmpT+="<span class=\"t_"+statisticValues.hashTeacherIDsStatistics.value(*it)+"\">"+protect2(*it)+"</span>"; break;
-									case 5 : ;
+									case 5 : [[fallthrough]];
 									case 6 : tmpT+="<span class=\"t_"+statisticValues.hashTeacherIDsStatistics.value(*it)+"\" onmouseover=\"highlight('t_"+statisticValues.hashTeacherIDsStatistics.value(*it)+"')\">"+protect2(*it)+"</span>"; break;
 									default: tmpT+=protect2(*it); break;
 								}
@@ -2411,7 +2411,7 @@ QString StatisticsExport::exportStatisticsStudentsSubjectsHtml(QWidget* parent, 
 										switch(htmlLevel){
 											case 3 : tmpT+=" <span class=\"activitytag\">"+protect2(*atn)+"</span>"; break;
 											case 4 : tmpT+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\">"+protect2(*atn)+"</span></span>"; break;
-											case 5 : ;
+											case 5 : [[fallthrough]];
 											case 6 : tmpT+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
 											default: tmpT+=" "+protect2(*atn); break;
 										}

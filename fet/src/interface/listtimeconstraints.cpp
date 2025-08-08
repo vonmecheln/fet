@@ -2807,6 +2807,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				teachersComboBox=new QComboBox;
 
+				helpPushButton=new QPushButton(tr("Help"));
+
 				break;
 			}
 		//227
@@ -2814,6 +2816,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 			{
 				dialogTitle=tr("Constraints teachers pair of mutually exclusive time slots", "The title of the dialog to list the constraints of this type");
 				dialogName=QString("ConstraintsTeachersPairOfMutuallyExclusiveTimeSlots");
+
+				helpPushButton=new QPushButton(tr("Help"));
 
 				break;
 			}
@@ -2825,6 +2829,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				studentsComboBox=new QComboBox;
 
+				helpPushButton=new QPushButton(tr("Help"));
+
 				break;
 			}
 		//229
@@ -2832,6 +2838,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 			{
 				dialogTitle=tr("Constraints students pair of mutually exclusive time slots", "The title of the dialog to list the constraints of this type");
 				dialogName=QString("ConstraintsStudentsPairOfMutuallyExclusiveTimeSlots");
+
+				helpPushButton=new QPushButton(tr("Help"));
 
 				break;
 			}
@@ -2909,6 +2917,50 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 			{
 				dialogTitle=tr("Constraints teachers max hours per term", "The title of the dialog to list the constraints of this type");
 				dialogName=QString("ConstraintsTeachersMaxHoursPerTerm");
+
+				break;
+			}
+		//237
+		case CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				dialogTitle=tr("Constraints teacher pair of mutually exclusive sets of time slots", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsTeacherPairOfMutuallyExclusiveSetsOfTimeSlots");
+
+				teachersComboBox=new QComboBox;
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
+		//238
+		case CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				dialogTitle=tr("Constraints teachers pair of mutually exclusive sets of time slots", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsTeachersPairOfMutuallyExclusiveSetsOfTimeSlots");
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
+		//239
+		case CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				dialogTitle=tr("Constraints students set pair of mutually exclusive sets of time slots", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots");
+
+				studentsComboBox=new QComboBox;
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
+		//240
+		case CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				dialogTitle=tr("Constraints students pair of mutually exclusive sets of time slots", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsStudentsPairOfMutuallyExclusiveSetsOfTimeSlots");
+
+				helpPushButton=new QPushButton(tr("Help"));
 
 				break;
 			}
@@ -6569,6 +6621,38 @@ filtered_ok:
 
 				break;
 			}
+		//237
+		case CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				assert(teachersComboBox!=nullptr);
+				ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots* ctr=(ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots*)tc;
+				return teachersComboBox->currentText()==QString("") || teachersComboBox->currentText()==ctr->teacherName;
+
+				break;
+			}
+		//238
+		case CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				return true;
+
+				break;
+			}
+		//239
+		case CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				assert(studentsComboBox!=nullptr);
+				ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots* ctr=(ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots*)tc;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
+
+				break;
+			}
+		//240
+		case CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				return true;
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -7284,6 +7368,51 @@ void ListTimeConstraints::helpClicked()
 				 " this number will result in more gaps appearing within the select time"
 				 " slots. This might be helpful in troubleshooting an impossible timetable."
 				 " Note that two consecutive single gaps are not considered a 'gap'.");
+				s+="\n";
+
+				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
+
+				break;
+			}
+		//226
+		case CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			[[fallthrough]];
+		//227
+		case CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			[[fallthrough]];
+		//228
+		case CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			[[fallthrough]];
+		//229
+		case CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				QString s=tr("This constraint ensures that the specified teacher(s)/students (set) can have activities either in"
+				 " the first selected time slot or in the second one, but not in both together."
+				 " The unselected slots are not constrained.");
+				s+="\n";
+
+				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
+
+				break;
+			}
+		//237
+		case CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			[[fallthrough]];
+		//238
+		case CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			[[fallthrough]];
+		//239
+		case CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			[[fallthrough]];
+		//240
+		case CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				QString s=tr("This constraint was suggested by %1.", "%1 is the person who suggested this constraint.")
+				 .arg("YOUSSEF HOUIET");
+				s+="\n\n";
+				s+=tr("This constraint ensures that the specified teacher(s)/students (set) can have activities either in"
+				 " the first set of selected time slots or in the second one, but not in both together."
+				 " The unselected slots are not constrained.");
 				s+="\n";
 
 				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);

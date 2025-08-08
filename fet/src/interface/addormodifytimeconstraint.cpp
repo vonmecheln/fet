@@ -38,6 +38,8 @@
 
 #include <QSet>
 
+#include <QPair>
+
 #include <QBrush>
 #include <QPalette>
 
@@ -45,6 +47,9 @@
 #include <QPainter>
 
 #include <QSettings>
+
+//std::stable_sort
+#include <algorithm>
 
 extern Timetable gt;
 
@@ -102,7 +107,19 @@ AddOrModifyTimeConstraintDialog::AddOrModifyTimeConstraintDialog(QWidget* parent
 																 CornerEnabledTableWidget* _timesTable,
 																 QAbstractItemDelegate* _oldItemDelegate,
 																 AddOrModifyTimeConstraintTimesTableDelegate* _newItemDelegate,
+
+																 CornerEnabledTableWidget* _timesTable1,
+																 QAbstractItemDelegate* _oldItemDelegate1,
+																 AddOrModifyTimeConstraintTimesTableDelegate* _newItemDelegate1,
+																 CornerEnabledTableWidget* _timesTable2,
+																 QAbstractItemDelegate* _oldItemDelegate2,
+																 AddOrModifyTimeConstraintTimesTableDelegate* _newItemDelegate2,
+
 																 QCheckBox* _colorsCheckBox,
+
+																 QCheckBox* _colorsCheckBox1,
+																 QCheckBox* _colorsCheckBox2,
+
 																 QCheckBox* _showRelatedCheckBox,
 																 QCheckBox* _firstFilter_showRelatedCheckBox,
 																 QCheckBox* _secondFilter_showRelatedCheckBox,
@@ -116,7 +133,17 @@ AddOrModifyTimeConstraintDialog::AddOrModifyTimeConstraintDialog(QWidget* parent
 	oldItemDelegate=_oldItemDelegate;
 	newItemDelegate=_newItemDelegate;
 
+	timesTable1=_timesTable1;
+	oldItemDelegate1=_oldItemDelegate1;
+	newItemDelegate1=_newItemDelegate1;
+	timesTable2=_timesTable2;
+	oldItemDelegate2=_oldItemDelegate2;
+	newItemDelegate2=_newItemDelegate2;
+
 	colorsCheckBox=_colorsCheckBox;
+
+	colorsCheckBox1=_colorsCheckBox1;
+	colorsCheckBox2=_colorsCheckBox2;
 
 	showRelatedCheckBox=_showRelatedCheckBox;
 
@@ -144,14 +171,34 @@ AddOrModifyTimeConstraintDialog::~AddOrModifyTimeConstraintDialog()
 		delete newItemDelegate;
 	}
 
+	if(timesTable1!=nullptr){
+		//assert(oldItemDelegate1!=nullptr); don't assert this!!! It might be nullptr.
+		assert(newItemDelegate1!=nullptr);
+
+		timesTable1->setItemDelegate(oldItemDelegate1);
+		delete newItemDelegate1;
+	}
+	if(timesTable2!=nullptr){
+		//assert(oldItemDelegate2!=nullptr); don't assert this!!! It might be nullptr.
+		assert(newItemDelegate2!=nullptr);
+
+		timesTable2->setItemDelegate(oldItemDelegate2);
+		delete newItemDelegate2;
+	}
+
 	saveFETDialogGeometry(this, dialogName);
 
-	if(colorsCheckBox!=nullptr || showRelatedCheckBox!=nullptr || firstFilter_showRelatedCheckBox!=nullptr
+	if(colorsCheckBox!=nullptr || colorsCheckBox1!=nullptr ||colorsCheckBox2!=nullptr || showRelatedCheckBox!=nullptr || firstFilter_showRelatedCheckBox!=nullptr
 	 || secondFilter_showRelatedCheckBox!=nullptr || thirdFilter_showRelatedCheckBox!=nullptr){
 		QSettings settings(COMPANY, PROGRAM);
 
 		if(colorsCheckBox!=nullptr)
 			settings.setValue(dialogName+QString("/use-colors"), colorsCheckBox->isChecked());
+
+		if(colorsCheckBox1!=nullptr)
+			settings.setValue(dialogName+QString("/use-colors-1"), colorsCheckBox1->isChecked());
+		if(colorsCheckBox2!=nullptr)
+			settings.setValue(dialogName+QString("/use-colors-2"), colorsCheckBox2->isChecked());
 
 		if(showRelatedCheckBox!=nullptr)
 			settings.setValue(dialogName+QString("/show-related"), showRelatedCheckBox->isChecked());
@@ -251,6 +298,8 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 	//
 	swapTwoSetsOfActivitiesPushButton=nullptr;
 
+	tabWidgetPairOfMutuallyExclusiveSets=nullptr;
+
 	intervalStartHourLabel=nullptr;
 	intervalStartHourComboBox=nullptr;
 	intervalEndHourLabel=nullptr;
@@ -285,10 +334,22 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 	colorsCheckBox=nullptr;
 	toggleAllPushButton=nullptr;
+
+	colorsCheckBox1=nullptr;
+	toggleAllPushButton1=nullptr;
+	colorsCheckBox2=nullptr;
+	toggleAllPushButton2=nullptr;
 	
 	timesTable=nullptr;
 	oldItemDelegate=nullptr;
 	newItemDelegate=nullptr;
+
+	timesTable1=nullptr;
+	oldItemDelegate1=nullptr;
+	newItemDelegate1=nullptr;
+	timesTable2=nullptr;
+	oldItemDelegate2=nullptr;
+	newItemDelegate2=nullptr;
 
 	filterGroupBox=nullptr;
 
@@ -7203,6 +7264,196 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				break;
 			}
+		//237
+		case CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add teacher pair of mutually exclusive sets of time slots", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots");
+
+					firstAddInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
+					 "and an empty cell (or green) means that the slot is not selected"));
+				}
+				else{
+					dialogTitle=tr("Modify teacher pair of mutually exclusive sets of time slots", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots");
+
+					firstModifyInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
+					 "and an empty cell (or green) means that the slot is not selected"));
+				}
+
+				teacherLabel=new QLabel(tr("Teacher"));
+				teachersComboBox=new QComboBox;
+
+				colorsCheckBox1=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors-1")))
+					colorsCheckBox1->setChecked(settings.value(dialogName+QString("/use-colors-1")).toBool());
+				else
+					colorsCheckBox1->setChecked(false);
+
+				toggleAllPushButton1=new QPushButton(tr("Toggle all", "It refers to time slots"));
+				
+				timesTable1=new CornerEnabledTableWidget(colorsCheckBox1->isChecked());
+
+				colorsCheckBox2=new QCheckBox(tr("Colors"));
+				//QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors-2")))
+					colorsCheckBox2->setChecked(settings.value(dialogName+QString("/use-colors-2")).toBool());
+				else
+					colorsCheckBox2->setChecked(false);
+
+				toggleAllPushButton2=new QPushButton(tr("Toggle all", "It refers to time slots"));
+				
+				timesTable2=new CornerEnabledTableWidget(colorsCheckBox2->isChecked());
+
+				tabWidgetPairOfMutuallyExclusiveSets=new QTabWidget;
+
+				break;
+			}
+		//238
+		case CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add teachers pair of mutually exclusive sets of time slots", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots");
+
+					firstAddInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
+					 "and an empty cell (or green) means that the slot is not selected"));
+				}
+				else{
+					dialogTitle=tr("Modify teachers pair of mutually exclusive sets of time slots", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots");
+
+					firstModifyInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
+					 "and an empty cell (or green) means that the slot is not selected"));
+				}
+
+				colorsCheckBox1=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors-1")))
+					colorsCheckBox1->setChecked(settings.value(dialogName+QString("/use-colors-1")).toBool());
+				else
+					colorsCheckBox1->setChecked(false);
+
+				toggleAllPushButton1=new QPushButton(tr("Toggle all", "It refers to time slots"));
+				
+				timesTable1=new CornerEnabledTableWidget(colorsCheckBox1->isChecked());
+
+				colorsCheckBox2=new QCheckBox(tr("Colors"));
+				//QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors-2")))
+					colorsCheckBox2->setChecked(settings.value(dialogName+QString("/use-colors-2")).toBool());
+				else
+					colorsCheckBox2->setChecked(false);
+
+				toggleAllPushButton2=new QPushButton(tr("Toggle all", "It refers to time slots"));
+				
+				timesTable2=new CornerEnabledTableWidget(colorsCheckBox2->isChecked());
+
+				tabWidgetPairOfMutuallyExclusiveSets=new QTabWidget;
+
+				break;
+			}
+		//239
+		case CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add students set pair of mutually exclusive sets of time slots", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots");
+
+					firstAddInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
+					 "and an empty cell (or green) means that the slot is not selected"));
+				}
+				else{
+					dialogTitle=tr("Modify students set pair of mutually exclusive sets of time slots", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots");
+
+					firstModifyInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
+					 "and an empty cell (or green) means that the slot is not selected"));
+				}
+
+				studentsLabel=new QLabel(tr("Students set"));
+				studentsComboBox=new QComboBox;
+
+				colorsCheckBox1=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors-1")))
+					colorsCheckBox1->setChecked(settings.value(dialogName+QString("/use-colors-1")).toBool());
+				else
+					colorsCheckBox1->setChecked(false);
+
+				toggleAllPushButton1=new QPushButton(tr("Toggle all", "It refers to time slots"));
+				
+				timesTable1=new CornerEnabledTableWidget(colorsCheckBox1->isChecked());
+
+				colorsCheckBox2=new QCheckBox(tr("Colors"));
+				//QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors-2")))
+					colorsCheckBox2->setChecked(settings.value(dialogName+QString("/use-colors-2")).toBool());
+				else
+					colorsCheckBox2->setChecked(false);
+
+				toggleAllPushButton2=new QPushButton(tr("Toggle all", "It refers to time slots"));
+				
+				timesTable2=new CornerEnabledTableWidget(colorsCheckBox2->isChecked());
+
+				tabWidgetPairOfMutuallyExclusiveSets=new QTabWidget;
+
+				break;
+			}
+		//240
+		case CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add students pair of mutually exclusive sets of time slots", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots");
+
+					firstAddInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
+					 "and an empty cell (or green) means that the slot is not selected"));
+				}
+				else{
+					dialogTitle=tr("Modify students pair of mutually exclusive sets of time slots", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots");
+
+					firstModifyInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
+					 "and an empty cell (or green) means that the slot is not selected"));
+				}
+
+				colorsCheckBox1=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors-1")))
+					colorsCheckBox1->setChecked(settings.value(dialogName+QString("/use-colors-1")).toBool());
+				else
+					colorsCheckBox1->setChecked(false);
+
+				toggleAllPushButton1=new QPushButton(tr("Toggle all", "It refers to time slots"));
+				
+				timesTable1=new CornerEnabledTableWidget(colorsCheckBox1->isChecked());
+
+				colorsCheckBox2=new QCheckBox(tr("Colors"));
+				//QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors-2")))
+					colorsCheckBox2->setChecked(settings.value(dialogName+QString("/use-colors-2")).toBool());
+				else
+					colorsCheckBox2->setChecked(false);
+
+				toggleAllPushButton2=new QPushButton(tr("Toggle all", "It refers to time slots"));
+				
+				timesTable2=new CornerEnabledTableWidget(colorsCheckBox2->isChecked());
+
+				tabWidgetPairOfMutuallyExclusiveSets=new QTabWidget;
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -7600,6 +7851,63 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 		timesTable->setMouseTracking(true);
 	}
 
+	if(timesTable1!=nullptr){
+		connect(timesTable1, &CornerEnabledTableWidget::itemClicked, this, &AddOrModifyTimeConstraint::itemClicked1);
+		
+		assert(colorsCheckBox1!=nullptr);
+		connect(colorsCheckBox1, &QCheckBox::toggled, this, &AddOrModifyTimeConstraint::colorsCheckBoxToggled1);
+
+		assert(toggleAllPushButton1!=nullptr);
+		connect(toggleAllPushButton1, &QPushButton::clicked, this, &AddOrModifyTimeConstraint::toggleAllClicked1);
+		
+		initTimesTable(timesTable1);
+
+		oldItemDelegate1=timesTable1->itemDelegate();
+		newItemDelegate1=new AddOrModifyTimeConstraintTimesTableDelegate(nullptr, gt.rules.nHoursPerDay, timesTable1->columnCount());
+		timesTable1->setItemDelegate(newItemDelegate1);
+
+		timesTable1->resizeRowsToContents();
+		//timesTable->resizeColumnsToContents();
+
+		connect(timesTable1->horizontalHeader(), &QHeaderView::sectionClicked, this, &AddOrModifyTimeConstraint::horizontalHeaderClicked1);
+		connect(timesTable1->verticalHeader(), &QHeaderView::sectionClicked, this, &AddOrModifyTimeConstraint::verticalHeaderClicked1);
+
+		timesTable1->setSelectionMode(QAbstractItemView::NoSelection);
+
+		setStretchAvailabilityTableNicely(timesTable1);
+
+		connect(timesTable1, &CornerEnabledTableWidget::cellEntered, this, &AddOrModifyTimeConstraint::cellEntered1);
+		timesTable1->setMouseTracking(true);
+	}
+	if(timesTable2!=nullptr){
+		connect(timesTable2, &CornerEnabledTableWidget::itemClicked, this, &AddOrModifyTimeConstraint::itemClicked2);
+		
+		assert(colorsCheckBox2!=nullptr);
+		connect(colorsCheckBox2, &QCheckBox::toggled, this, &AddOrModifyTimeConstraint::colorsCheckBoxToggled2);
+
+		assert(toggleAllPushButton2!=nullptr);
+		connect(toggleAllPushButton2, &QPushButton::clicked, this, &AddOrModifyTimeConstraint::toggleAllClicked2);
+		
+		initTimesTable(timesTable2);
+
+		oldItemDelegate2=timesTable2->itemDelegate();
+		newItemDelegate2=new AddOrModifyTimeConstraintTimesTableDelegate(nullptr, gt.rules.nHoursPerDay, timesTable2->columnCount());
+		timesTable2->setItemDelegate(newItemDelegate2);
+
+		timesTable2->resizeRowsToContents();
+		//timesTable->resizeColumnsToContents();
+
+		connect(timesTable2->horizontalHeader(), &QHeaderView::sectionClicked, this, &AddOrModifyTimeConstraint::horizontalHeaderClicked2);
+		connect(timesTable2->verticalHeader(), &QHeaderView::sectionClicked, this, &AddOrModifyTimeConstraint::verticalHeaderClicked2);
+
+		timesTable2->setSelectionMode(QAbstractItemView::NoSelection);
+
+		setStretchAvailabilityTableNicely(timesTable2);
+
+		connect(timesTable2, &CornerEnabledTableWidget::cellEntered, this, &AddOrModifyTimeConstraint::cellEntered2);
+		timesTable2->setMouseTracking(true);
+	}
+
 	if(activitiesListWidget_TwoSetsOfActivities_1!=nullptr){
 		assert(activitiesLabel_TwoSetsOfActivities_1!=nullptr);
 		assert(selectedActivitiesLabel_TwoSetsOfActivities_1!=nullptr);
@@ -7674,7 +7982,11 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 	dialog=new AddOrModifyTimeConstraintDialog(parent, dialogName, dialogTitle, eventLoop,
 											   timesTable, oldItemDelegate, newItemDelegate,
+											   timesTable1, oldItemDelegate1, newItemDelegate1,
+											   timesTable2, oldItemDelegate2, newItemDelegate2,
 											   colorsCheckBox,
+											   colorsCheckBox1,
+											   colorsCheckBox2,
 											   showRelatedCheckBox,
 											   firstFilter_showRelatedCheckBox,
 											   secondFilter_showRelatedCheckBox,
@@ -8034,6 +8346,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			case CONSTRAINT_TEACHER_MAX_HOURS_PER_TERM:
 				[[fallthrough]];
 			case CONSTRAINT_TEACHERS_MAX_HOURS_PER_TERM:
+				[[fallthrough]];
+			case CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+				[[fallthrough]];
+			case CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
 				addConstraintsPushButton=new QPushButton(tr("Add constraints"));
 				break;
 			
@@ -8143,8 +8459,22 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 	
 	QVBoxLayout* wholeDialog=new QVBoxLayout(dialog);
 	//wholeDialog->addStretch();
-	assert(tabWidget==nullptr || tabWidgetTwoSetsOfActivities==nullptr);
-	if(tabWidget==nullptr && tabWidgetTwoSetsOfActivities==nullptr){
+	
+	int k1=0;
+	if(tabWidget!=nullptr)
+		k1=1;
+	
+	int k2=0;
+	if(tabWidgetTwoSetsOfActivities!=nullptr)
+		k2=1;
+	
+	int k3=0;
+	if(tabWidgetPairOfMutuallyExclusiveSets!=nullptr)
+		k3=1;
+	
+	assert(k1+k2+k3<=1);
+	
+	if(tabWidget==nullptr && tabWidgetTwoSetsOfActivities==nullptr && tabWidgetPairOfMutuallyExclusiveSets==nullptr){
 		if(oldtc==nullptr){
 			if(firstAddInstructionsLabel!=nullptr)
 				wholeDialog->addWidget(firstAddInstructionsLabel);
@@ -8547,7 +8877,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 		wholeDialog->addLayout(buttons);
 	}
 	else if(tabWidget!=nullptr){
-		assert(tabWidgetTwoSetsOfActivities==nullptr);
+		assert(tabWidgetTwoSetsOfActivities==nullptr && tabWidgetPairOfMutuallyExclusiveSets==nullptr);
 
 		QVBoxLayout* activitiesLayout=new QVBoxLayout;
 		QVBoxLayout* timeSlotsLayout=new QVBoxLayout;
@@ -8635,8 +8965,8 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 		wholeDialog->addLayout(weight);
 		wholeDialog->addLayout(buttons);
 	}
-	else{
-		assert(tabWidgetTwoSetsOfActivities!=nullptr);
+	else if(tabWidgetTwoSetsOfActivities!=nullptr){
+		assert(tabWidgetPairOfMutuallyExclusiveSets==nullptr);
 
 		assert(teacherLayout!=nullptr);
 		assert(studentsLayout!=nullptr);
@@ -8738,14 +9068,79 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 		activitiesWidget1->setLayout(activitiesLayout1);
 		activitiesWidget2->setLayout(activitiesLayout2);
 
-		tabWidgetTwoSetsOfActivities->addTab(activitiesWidget1, tr("First activities set", "The first set of activities"));
-		tabWidgetTwoSetsOfActivities->addTab(activitiesWidget2, tr("Second activities set", "The second set of activities"));
+		tabWidgetTwoSetsOfActivities->addTab(activitiesWidget1, tr("First set of activities", "Set, as in a collection of selected activities"));
+		tabWidgetTwoSetsOfActivities->addTab(activitiesWidget2, tr("Second set of activities", "Set, as in a collection of selected activities"));
 		if(timesTable!=nullptr){
 			tabWidgetTwoSetsOfActivities->addTab(timeSlotsWidget, tr("Exception time slots", "The selected time slots constitute an exception"));
 		}
 
 		//wholeDialog->addStretch();
 		wholeDialog->addWidget(tabWidgetTwoSetsOfActivities);
+		wholeDialog->addLayout(weight);
+		wholeDialog->addLayout(buttons);
+	}
+	else if(tabWidgetPairOfMutuallyExclusiveSets!=nullptr){
+		if(oldtc==nullptr){
+			if(firstAddInstructionsLabel!=nullptr)
+				wholeDialog->addWidget(firstAddInstructionsLabel);
+			//if(secondAddInstructionsLabel!=nullptr)
+			//	wholeDialog->addWidget(secondAddInstructionsLabel);
+		}
+		else{
+			if(firstModifyInstructionsLabel!=nullptr)
+				wholeDialog->addWidget(firstModifyInstructionsLabel);
+			//if(secondModifyInstructionsLabel!=nullptr)
+			//	wholeDialog->addWidget(secondModifyInstructionsLabel);
+		}
+
+		if(teacherLayout!=nullptr)
+			wholeDialog->addLayout(teacherLayout);
+		if(studentsLayout!=nullptr)
+			wholeDialog->addLayout(studentsLayout);
+		assert(activityTagLayout==nullptr);
+
+		assert(colorsCheckBox1!=nullptr);
+		assert(colorsCheckBox2!=nullptr);
+		assert(toggleAllPushButton1!=nullptr);
+		assert(toggleAllPushButton2!=nullptr);
+
+		QHBoxLayout* buttons1=new QHBoxLayout;
+		buttons1->addStretch();
+		if(colorsCheckBox1!=nullptr)
+			buttons1->addWidget(colorsCheckBox1);
+		if(toggleAllPushButton1!=nullptr)
+			buttons1->addWidget(toggleAllPushButton1);
+
+		QHBoxLayout* buttons2=new QHBoxLayout;
+		buttons2->addStretch();
+		if(colorsCheckBox2!=nullptr)
+			buttons2->addWidget(colorsCheckBox2);
+		if(toggleAllPushButton2!=nullptr)
+			buttons2->addWidget(toggleAllPushButton2);
+
+		QVBoxLayout* timeSlotsLayout1=new QVBoxLayout;
+		QVBoxLayout* timeSlotsLayout2=new QVBoxLayout;
+
+		assert(timesTable1!=nullptr);
+		assert(timesTable2!=nullptr);
+		if(timesTable1!=nullptr)
+			timeSlotsLayout1->addWidget(timesTable1);
+		if(timesTable2!=nullptr)
+			timeSlotsLayout2->addWidget(timesTable2);
+
+		timeSlotsLayout1->addLayout(buttons1);
+		timeSlotsLayout2->addLayout(buttons2);
+
+		QWidget* timeSlotsWidget1=new QWidget;
+		QWidget* timeSlotsWidget2=new QWidget;
+
+		timeSlotsWidget1->setLayout(timeSlotsLayout1);
+		timeSlotsWidget2->setLayout(timeSlotsLayout2);
+
+		tabWidgetPairOfMutuallyExclusiveSets->addTab(timeSlotsWidget1, tr("First set of time slots", "Set, as in a collection of selected time slots"));
+		tabWidgetPairOfMutuallyExclusiveSets->addTab(timeSlotsWidget2, tr("Second set of time slots", "Set, as in a collection of selected time slots"));
+
+		wholeDialog->addWidget(tabWidgetPairOfMutuallyExclusiveSets);
 		wholeDialog->addLayout(weight);
 		wholeDialog->addLayout(buttons);
 	}
@@ -11934,6 +12329,55 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					ConstraintTeachersMaxHoursPerTerm* ctr=(ConstraintTeachersMaxHoursPerTerm*)oldtc;
 
 					spinBox->setValue(ctr->maxHoursPerTerm);
+
+					break;
+				}
+			//237
+			case CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+				{
+					ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots* ctr=(ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots*)oldtc;
+
+					teachersComboBox->setCurrentIndex(teachersComboBox->findText(ctr->teacherName));
+
+					fillTimesTable(timesTable1, ctr->selectedDays1, ctr->selectedHours1, true);
+					fillTimesTable(timesTable2, ctr->selectedDays2, ctr->selectedHours2, true);
+
+					break;
+				}
+			//238
+			case CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+				{
+					ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots* ctr=(ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots*)oldtc;
+
+					fillTimesTable(timesTable1, ctr->selectedDays1, ctr->selectedHours1, true);
+					fillTimesTable(timesTable2, ctr->selectedDays2, ctr->selectedHours2, true);
+
+					break;
+				}
+			//239
+			case CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+				{
+					ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots* ctr=(ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots*)oldtc;
+
+					int j=studentsComboBox->findText(ctr->students);
+					if(j<0)
+						showWarningForInvisibleSubgroupConstraint(parent, ctr->students);
+					else
+						assert(j>=0);
+					studentsComboBox->setCurrentIndex(j);
+
+					fillTimesTable(timesTable1, ctr->selectedDays1, ctr->selectedHours1, true);
+					fillTimesTable(timesTable2, ctr->selectedDays2, ctr->selectedHours2, true);
+
+					break;
+				}
+			//240
+			case CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+				{
+					ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots* ctr=(ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots*)oldtc;
+
+					fillTimesTable(timesTable1, ctr->selectedDays1, ctr->selectedHours1, true);
+					fillTimesTable(timesTable2, ctr->selectedDays2, ctr->selectedHours2, true);
 
 					break;
 				}
@@ -15649,6 +16093,206 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 
 				break;
 			}
+		//237
+		case CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				QList<int> days1;
+				QList<int> hours1;
+				getTimesTable(timesTable1, days1, hours1, true);
+				
+				assert(days1.count()==hours1.count());
+				if(days1.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least one time slot in the first set of time slots"));
+					return;
+				}
+
+				QList<int> days2;
+				QList<int> hours2;
+				getTimesTable(timesTable2, days2, hours2, true);
+				
+				assert(days2.count()==hours2.count());
+				if(days2.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least one time slot in the second set of time slots"));
+					return;
+				}
+				
+				QSet<QPair<int, int>> set1;
+				QSet<QPair<int, int>> set2;
+				for(int i=0; i<days1.count(); i++)
+					set1.insert(QPair<int, int>(days1.at(i), hours1.at(i)));
+				for(int i=0; i<days2.count(); i++)
+					set2.insert(QPair<int, int>(days2.at(i), hours2.at(i)));
+				if(set1.intersects(set2)){
+					QSet<QPair<int, int>> intersectionSet = set1 & set2;
+					QList<QPair<int, int>> intersectionList(intersectionSet.constBegin(), intersectionSet.constEnd());
+					std::stable_sort(intersectionList.begin(), intersectionList.end());
+					
+					QStringList cts;
+					for(const QPair<int, int>& pr : std::as_const(intersectionList))
+						cts.append(gt.rules.daysOfTheWeek[pr.first]+QString(" ")+gt.rules.hoursOfTheDay[pr.second]);
+					
+					LongTextMessageBox::information(dialog, tr("FET information"),
+						 tr("The two sets of selected time slots cannot have common time slots. The common time slots are: %1.")
+						 .arg(cts.join(translatedCommaSpace())));
+					return;
+				}
+
+				tc=new ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots(weight, teachersComboBox->currentText(), days1, hours1, days2, hours2);
+
+				break;
+			}
+		//238
+		case CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				QList<int> days1;
+				QList<int> hours1;
+				getTimesTable(timesTable1, days1, hours1, true);
+				
+				assert(days1.count()==hours1.count());
+				if(days1.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least one time slot in the first set of time slots"));
+					return;
+				}
+
+				QList<int> days2;
+				QList<int> hours2;
+				getTimesTable(timesTable2, days2, hours2, true);
+				
+				assert(days2.count()==hours2.count());
+				if(days2.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least one time slot in the second set of time slots"));
+					return;
+				}
+
+				QSet<QPair<int, int>> set1;
+				QSet<QPair<int, int>> set2;
+				for(int i=0; i<days1.count(); i++)
+					set1.insert(QPair<int, int>(days1.at(i), hours1.at(i)));
+				for(int i=0; i<days2.count(); i++)
+					set2.insert(QPair<int, int>(days2.at(i), hours2.at(i)));
+				if(set1.intersects(set2)){
+					QSet<QPair<int, int>> intersectionSet = set1 & set2;
+					QList<QPair<int, int>> intersectionList(intersectionSet.constBegin(), intersectionSet.constEnd());
+					std::stable_sort(intersectionList.begin(), intersectionList.end());
+					
+					QStringList cts;
+					for(const QPair<int, int>& pr : std::as_const(intersectionList))
+						cts.append(gt.rules.daysOfTheWeek[pr.first]+QString(" ")+gt.rules.hoursOfTheDay[pr.second]);
+					
+					LongTextMessageBox::information(dialog, tr("FET information"),
+						 tr("The two sets of selected time slots cannot have common time slots. The common time slots are: %1.")
+						 .arg(cts.join(translatedCommaSpace())));
+					return;
+				}
+
+				tc=new ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots(weight, days1, hours1, days2, hours2);
+
+				break;
+			}
+		//239
+		case CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				QList<int> days1;
+				QList<int> hours1;
+				getTimesTable(timesTable1, days1, hours1, true);
+				
+				assert(days1.count()==hours1.count());
+				if(days1.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least one time slot in the first set of time slots"));
+					return;
+				}
+
+				QList<int> days2;
+				QList<int> hours2;
+				getTimesTable(timesTable2, days2, hours2, true);
+				
+				assert(days2.count()==hours2.count());
+				if(days2.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least one time slot in the second set of time slots"));
+					return;
+				}
+
+				QSet<QPair<int, int>> set1;
+				QSet<QPair<int, int>> set2;
+				for(int i=0; i<days1.count(); i++)
+					set1.insert(QPair<int, int>(days1.at(i), hours1.at(i)));
+				for(int i=0; i<days2.count(); i++)
+					set2.insert(QPair<int, int>(days2.at(i), hours2.at(i)));
+				if(set1.intersects(set2)){
+					QSet<QPair<int, int>> intersectionSet = set1 & set2;
+					QList<QPair<int, int>> intersectionList(intersectionSet.constBegin(), intersectionSet.constEnd());
+					std::stable_sort(intersectionList.begin(), intersectionList.end());
+					
+					QStringList cts;
+					for(const QPair<int, int>& pr : std::as_const(intersectionList))
+						cts.append(gt.rules.daysOfTheWeek[pr.first]+QString(" ")+gt.rules.hoursOfTheDay[pr.second]);
+					
+					LongTextMessageBox::information(dialog, tr("FET information"),
+						 tr("The two sets of selected time slots cannot have common time slots. The common time slots are: %1.")
+						 .arg(cts.join(translatedCommaSpace())));
+					return;
+				}
+
+				tc=new ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots(weight, studentsComboBox->currentText(), days1, hours1, days2, hours2);
+
+				break;
+			}
+		//240
+		case CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				QList<int> days1;
+				QList<int> hours1;
+				getTimesTable(timesTable1, days1, hours1, true);
+				
+				assert(days1.count()==hours1.count());
+				if(days1.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least one time slot in the first set of time slots"));
+					return;
+				}
+
+				QList<int> days2;
+				QList<int> hours2;
+				getTimesTable(timesTable2, days2, hours2, true);
+				
+				assert(days2.count()==hours2.count());
+				if(days2.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least one time slot in the second set of time slots"));
+					return;
+				}
+
+				QSet<QPair<int, int>> set1;
+				QSet<QPair<int, int>> set2;
+				for(int i=0; i<days1.count(); i++)
+					set1.insert(QPair<int, int>(days1.at(i), hours1.at(i)));
+				for(int i=0; i<days2.count(); i++)
+					set2.insert(QPair<int, int>(days2.at(i), hours2.at(i)));
+				if(set1.intersects(set2)){
+					QSet<QPair<int, int>> intersectionSet = set1 & set2;
+					QList<QPair<int, int>> intersectionList(intersectionSet.constBegin(), intersectionSet.constEnd());
+					std::stable_sort(intersectionList.begin(), intersectionList.end());
+					
+					QStringList cts;
+					for(const QPair<int, int>& pr : std::as_const(intersectionList))
+						cts.append(gt.rules.daysOfTheWeek[pr.first]+QString(" ")+gt.rules.hoursOfTheDay[pr.second]);
+					
+					LongTextMessageBox::information(dialog, tr("FET information"),
+						 tr("The two sets of selected time slots cannot have common time slots. The common time slots are: %1.")
+						 .arg(cts.join(translatedCommaSpace())));
+					return;
+				}
+
+				tc=new ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots(weight, days1, hours1, days2, hours2);
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -16839,6 +17483,66 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 			{
 				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
 					TimeConstraint *ctr=new ConstraintTeacherMaxHoursPerTerm(weight, spinBox->value(), tch->name);
+					bool tmp2=gt.rules.addTimeConstraint(ctr);
+					assert(tmp2);
+
+					ctrs+=ctr->getDetailedDescription(gt.rules);
+					ctrs+=QString("\n");
+				}
+
+				break;
+			}
+		//237
+		case CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			[[fallthrough]];
+		//238
+		case CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				QList<int> days1;
+				QList<int> hours1;
+				getTimesTable(timesTable1, days1, hours1, true);
+				
+				assert(days1.count()==hours1.count());
+				if(days1.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least one time slot in the first set of time slots"));
+					return;
+				}
+
+				QList<int> days2;
+				QList<int> hours2;
+				getTimesTable(timesTable2, days2, hours2, true);
+				
+				assert(days2.count()==hours2.count());
+				if(days2.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least one time slot in the second set of time slots"));
+					return;
+				}
+				
+				QSet<QPair<int, int>> set1;
+				QSet<QPair<int, int>> set2;
+				for(int i=0; i<days1.count(); i++)
+					set1.insert(QPair<int, int>(days1.at(i), hours1.at(i)));
+				for(int i=0; i<days2.count(); i++)
+					set2.insert(QPair<int, int>(days2.at(i), hours2.at(i)));
+				if(set1.intersects(set2)){
+					QSet<QPair<int, int>> intersectionSet = set1 & set2;
+					QList<QPair<int, int>> intersectionList(intersectionSet.constBegin(), intersectionSet.constEnd());
+					std::stable_sort(intersectionList.begin(), intersectionList.end());
+					
+					QStringList cts;
+					for(const QPair<int, int>& pr : std::as_const(intersectionList))
+						cts.append(gt.rules.daysOfTheWeek[pr.first]+QString(" ")+gt.rules.hoursOfTheDay[pr.second]);
+					
+					LongTextMessageBox::information(dialog, tr("FET information"),
+						 tr("The two sets of selected time slots cannot have common time slots. The common time slots are: %1.")
+						 .arg(cts.join(translatedCommaSpace())));
+					return;
+				}
+
+				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
+					TimeConstraint *ctr=new ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots(weight, tch->name, days1, hours1, days2, hours2);
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
@@ -21479,6 +22183,232 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				break;
 			}
+		//237
+		case CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots* ctr=(ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots*)oldtc;
+
+				QList<int> days1;
+				QList<int> hours1;
+				getTimesTable(timesTable1, days1, hours1, true);
+				
+				assert(days1.count()==hours1.count());
+				if(days1.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least one time slot in the first set of time slots"));
+					return;
+				}
+
+				QList<int> days2;
+				QList<int> hours2;
+				getTimesTable(timesTable2, days2, hours2, true);
+				
+				assert(days2.count()==hours2.count());
+				if(days2.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least one time slot in the second set of time slots"));
+					return;
+				}
+				
+				QSet<QPair<int, int>> set1;
+				QSet<QPair<int, int>> set2;
+				for(int i=0; i<days1.count(); i++)
+					set1.insert(QPair<int, int>(days1.at(i), hours1.at(i)));
+				for(int i=0; i<days2.count(); i++)
+					set2.insert(QPair<int, int>(days2.at(i), hours2.at(i)));
+				if(set1.intersects(set2)){
+					QSet<QPair<int, int>> intersectionSet = set1 & set2;
+					QList<QPair<int, int>> intersectionList(intersectionSet.constBegin(), intersectionSet.constEnd());
+					std::stable_sort(intersectionList.begin(), intersectionList.end());
+					
+					QStringList cts;
+					for(const QPair<int, int>& pr : std::as_const(intersectionList))
+						cts.append(gt.rules.daysOfTheWeek[pr.first]+QString(" ")+gt.rules.hoursOfTheDay[pr.second]);
+					
+					LongTextMessageBox::information(dialog, tr("FET information"),
+						 tr("The two sets of selected time slots cannot have common time slots. The common time slots are: %1.")
+						 .arg(cts.join(translatedCommaSpace())));
+					return;
+				}
+
+				ctr->teacherName=teachersComboBox->currentText();
+
+				ctr->selectedDays1=days1;
+				ctr->selectedHours1=hours1;
+
+				ctr->selectedDays2=days2;
+				ctr->selectedHours2=hours2;
+
+				break;
+			}
+		//238
+		case CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots* ctr=(ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots*)oldtc;
+
+				QList<int> days1;
+				QList<int> hours1;
+				getTimesTable(timesTable1, days1, hours1, true);
+				
+				assert(days1.count()==hours1.count());
+				if(days1.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least one time slot in the first set of time slots"));
+					return;
+				}
+
+				QList<int> days2;
+				QList<int> hours2;
+				getTimesTable(timesTable2, days2, hours2, true);
+				
+				assert(days2.count()==hours2.count());
+				if(days2.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least one time slot in the second set of time slots"));
+					return;
+				}
+				
+				QSet<QPair<int, int>> set1;
+				QSet<QPair<int, int>> set2;
+				for(int i=0; i<days1.count(); i++)
+					set1.insert(QPair<int, int>(days1.at(i), hours1.at(i)));
+				for(int i=0; i<days2.count(); i++)
+					set2.insert(QPair<int, int>(days2.at(i), hours2.at(i)));
+				if(set1.intersects(set2)){
+					QSet<QPair<int, int>> intersectionSet = set1 & set2;
+					QList<QPair<int, int>> intersectionList(intersectionSet.constBegin(), intersectionSet.constEnd());
+					std::stable_sort(intersectionList.begin(), intersectionList.end());
+					
+					QStringList cts;
+					for(const QPair<int, int>& pr : std::as_const(intersectionList))
+						cts.append(gt.rules.daysOfTheWeek[pr.first]+QString(" ")+gt.rules.hoursOfTheDay[pr.second]);
+					
+					LongTextMessageBox::information(dialog, tr("FET information"),
+						 tr("The two sets of selected time slots cannot have common time slots. The common time slots are: %1.")
+						 .arg(cts.join(translatedCommaSpace())));
+					return;
+				}
+
+				ctr->selectedDays1=days1;
+				ctr->selectedHours1=hours1;
+
+				ctr->selectedDays2=days2;
+				ctr->selectedHours2=hours2;
+
+				break;
+			}
+		//239
+		case CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots* ctr=(ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots*)oldtc;
+
+				QList<int> days1;
+				QList<int> hours1;
+				getTimesTable(timesTable1, days1, hours1, true);
+				
+				assert(days1.count()==hours1.count());
+				if(days1.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least one time slot in the first set of time slots"));
+					return;
+				}
+
+				QList<int> days2;
+				QList<int> hours2;
+				getTimesTable(timesTable2, days2, hours2, true);
+				
+				assert(days2.count()==hours2.count());
+				if(days2.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least one time slot in the second set of time slots"));
+					return;
+				}
+				
+				QSet<QPair<int, int>> set1;
+				QSet<QPair<int, int>> set2;
+				for(int i=0; i<days1.count(); i++)
+					set1.insert(QPair<int, int>(days1.at(i), hours1.at(i)));
+				for(int i=0; i<days2.count(); i++)
+					set2.insert(QPair<int, int>(days2.at(i), hours2.at(i)));
+				if(set1.intersects(set2)){
+					QSet<QPair<int, int>> intersectionSet = set1 & set2;
+					QList<QPair<int, int>> intersectionList(intersectionSet.constBegin(), intersectionSet.constEnd());
+					std::stable_sort(intersectionList.begin(), intersectionList.end());
+					
+					QStringList cts;
+					for(const QPair<int, int>& pr : std::as_const(intersectionList))
+						cts.append(gt.rules.daysOfTheWeek[pr.first]+QString(" ")+gt.rules.hoursOfTheDay[pr.second]);
+					
+					LongTextMessageBox::information(dialog, tr("FET information"),
+						 tr("The two sets of selected time slots cannot have common time slots. The common time slots are: %1.")
+						 .arg(cts.join(translatedCommaSpace())));
+					return;
+				}
+
+				ctr->selectedDays1=days1;
+				ctr->selectedHours1=hours1;
+
+				ctr->selectedDays2=days2;
+				ctr->selectedHours2=hours2;
+
+				break;
+			}
+		//240
+		case CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots* ctr=(ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots*)oldtc;
+
+				QList<int> days1;
+				QList<int> hours1;
+				getTimesTable(timesTable1, days1, hours1, true);
+				
+				assert(days1.count()==hours1.count());
+				if(days1.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least one time slot in the first set of time slots"));
+					return;
+				}
+
+				QList<int> days2;
+				QList<int> hours2;
+				getTimesTable(timesTable2, days2, hours2, true);
+				
+				assert(days2.count()==hours2.count());
+				if(days2.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least one time slot in the second set of time slots"));
+					return;
+				}
+				
+				QSet<QPair<int, int>> set1;
+				QSet<QPair<int, int>> set2;
+				for(int i=0; i<days1.count(); i++)
+					set1.insert(QPair<int, int>(days1.at(i), hours1.at(i)));
+				for(int i=0; i<days2.count(); i++)
+					set2.insert(QPair<int, int>(days2.at(i), hours2.at(i)));
+				if(set1.intersects(set2)){
+					QSet<QPair<int, int>> intersectionSet = set1 & set2;
+					QList<QPair<int, int>> intersectionList(intersectionSet.constBegin(), intersectionSet.constEnd());
+					std::stable_sort(intersectionList.begin(), intersectionList.end());
+					
+					QStringList cts;
+					for(const QPair<int, int>& pr : std::as_const(intersectionList))
+						cts.append(gt.rules.daysOfTheWeek[pr.first]+QString(" ")+gt.rules.hoursOfTheDay[pr.second]);
+					
+					LongTextMessageBox::information(dialog, tr("FET information"),
+						 tr("The two sets of selected time slots cannot have common time slots. The common time slots are: %1.")
+						 .arg(cts.join(translatedCommaSpace())));
+					return;
+				}
+
+				ctr->selectedDays1=days1;
+				ctr->selectedHours1=hours1;
+
+				ctr->selectedDays2=days2;
+				ctr->selectedHours2=hours2;
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -21599,6 +22529,70 @@ void AddOrModifyTimeConstraint::itemClicked(QTableWidgetItem* item)
 	}
 	item->setText(s);
 	colorItem(item);*/
+}
+
+void AddOrModifyTimeConstraint::horizontalHeaderClicked1(int col)
+{
+	horizontalHeaderClickedTimesTable(timesTable1, col);
+}
+
+void AddOrModifyTimeConstraint::verticalHeaderClicked1(int row)
+{
+	verticalHeaderClickedTimesTable(timesTable1, row);
+}
+
+void AddOrModifyTimeConstraint::cellEntered1(int row, int col)
+{
+	cellEnteredTimesTable(timesTable1, row, col);
+}
+
+void AddOrModifyTimeConstraint::colorsCheckBoxToggled1()
+{
+	timesTable1->useColors=colorsCheckBox1->isChecked();
+	
+	colorsCheckBoxToggledTimesTable(timesTable1);
+}
+
+void AddOrModifyTimeConstraint::toggleAllClicked1()
+{
+	toggleAllClickedTimesTable(timesTable1);
+}
+
+void AddOrModifyTimeConstraint::itemClicked1(QTableWidgetItem* item)
+{
+	itemClickedTimesTable(timesTable1, item);
+}
+
+void AddOrModifyTimeConstraint::horizontalHeaderClicked2(int col)
+{
+	horizontalHeaderClickedTimesTable(timesTable2, col);
+}
+
+void AddOrModifyTimeConstraint::verticalHeaderClicked2(int row)
+{
+	verticalHeaderClickedTimesTable(timesTable2, row);
+}
+
+void AddOrModifyTimeConstraint::cellEntered2(int row, int col)
+{
+	cellEnteredTimesTable(timesTable2, row, col);
+}
+
+void AddOrModifyTimeConstraint::colorsCheckBoxToggled2()
+{
+	timesTable2->useColors=colorsCheckBox2->isChecked();
+	
+	colorsCheckBoxToggledTimesTable(timesTable2);
+}
+
+void AddOrModifyTimeConstraint::toggleAllClicked2()
+{
+	toggleAllClickedTimesTable(timesTable2);
+}
+
+void AddOrModifyTimeConstraint::itemClicked2(QTableWidgetItem* item)
+{
+	itemClickedTimesTable(timesTable2, item);
 }
 
 void AddOrModifyTimeConstraint::helpClicked()

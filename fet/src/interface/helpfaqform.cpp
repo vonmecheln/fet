@@ -133,7 +133,7 @@ void HelpFaqForm::setText()
 	s+="\n\n";
 
 	s+=tr("Q: Help on ConstraintStudentsEarlyMaxBeginningsAtSecondHour.\n\n"
-		"A: You can specify the maximum number of beginnings at second available hour (arrivals at third hour not possible).\n\n"
+		"A: You can specify the maximum number of beginnings at second available hour (beginnings at third hour not possible).\n\n"
 		"If you input only partial data, please use with caution. If you add a constraint with max 0 beginnings at second "
 		"hour: you might for instance input only 4+4 hourly activities of math with the same teacher for 2 students "
 		"sets (each group of 4 activities must be balanced - in different days). Then it is clear that you cannot place "
@@ -335,7 +335,7 @@ void HelpFaqForm::setText()
 
 	s+=tr("Q: I got an impossible to solve timetable!\n\n"
 		"A: If you get an impossible timetable, maybe the constraints students (set) early are too difficult. "
-		"Maybe you can allow more arrivals at second hour. Also teachers' min hours daily might be too strong. "
+		"Maybe you can allow more beginnings at second hour. Also teachers' min hours daily might be too strong. "
 		"Please also check the statistics to be correct. Remove other constraints until you get a possible timetable.");
 
 	s+="\n\n";

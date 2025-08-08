@@ -10814,11 +10814,19 @@ Add New Option For Tables Repeating vertical and horizontal headers in the empty
 to read long tables, especially if the time is horizontal or vertical.
 
 718--------------------------------------------------------
-From Carine Saade (on guestbook):
+From Carine (on forum):
 
-I suggest having the final printable format as an Excel file. This would make it easier to adjust the final layout and to add the school’s logo.
-I also recommend allowing sorting of teachers by cycles or groups, as well as sorting classes — it makes it easier to navigate, especially when creating schedules for French schools.
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6480.0
+
+I suggest having the final printable format as an Excel file. This would make it easier to adjust the final layout and to add the school's logo.
+I also recommend allowing sorting of teachers by cycles or groups, as well as sorting classes — it makes it easier to navigate, especially when
+creating schedules for French schools.
 One more suggestion, if possible: it would be helpful to generate a single schedule that includes classes with different period durations.
+
+Volker Dirr:
+
+If you have different time periods, then you must set smaller FET hours. For example if class A have got 45 minutes and class B 30 minutes,
+then you need to set a FET hour as 15 minutes. So class A get 3 FET hours and class B get 2 FET hours.
 
 719--------------------------------------------------------
 From Fabio Lucchini:
@@ -10948,3 +10956,40 @@ distribute the classes from the Filtered button.
 
 The same idea for Subjects where we choose the Subject or Subjects we
 want to distribute.
+
+729--------------------------------------------------------
+From Pass Enger (on Facebook):
+
+Pouvez-vous ajouter la contrainte du nombre maximum de cours le soir pour un professeur et le nombre maximum de cours le matin pour un professeur ?
+
+Liviu Lalescu:
+
+Do you mean teacher(s) max hours per morning and teacher(s) max hours per afternoon?
+
+Pass Enger:
+
+Yes.
+
+Il existe des établissements éducatifs qui fonctionnent quatre heures le matin et quatre heures le soir. Pour alléger la pression sur l'enseignant
+afin qu'il ne travaille pas quatre heures complètes durant la période du soir, on peut ajouter une contrainte de nombre maximum de cours le soir ou
+le matin pour un enseignant ou pour tous les enseignants.
+
+Liviu Lalescu:
+
+Can't you use teacher(s) max hours daily per real day?
+
+Pass Enger:
+
+Yes, I used the maximum limit of slots for a professor in a real day and set it to 6, but he can schedule 2 hours in the morning and 4 hours in the evening.
+
+We have four evening classes. A group of professors must work for 3 hours in the evening—either by teaching the first three evening classes or the last three
+evening classes.
+
+Liviu Lalescu:
+
+Then, I propose you to add n_afternoons constraints teachers pair of mutually exclusive time slots, for each afternoon add the first slot of that afternoon
+and the last slot of that afternoon. It is exactly what you need.
+
+Pass Enger:
+
+I'll try to apply it... but the suggestion I gave you will be easy and straightforward to implement... I hope you succeed in applying it.

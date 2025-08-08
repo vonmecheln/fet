@@ -83,7 +83,19 @@ class AddOrModifyTimeConstraintDialog: public QDialog
 	QAbstractItemDelegate* oldItemDelegate;
 	AddOrModifyTimeConstraintTimesTableDelegate* newItemDelegate;
 
+	//For teacher(s)/students (set) pair of mutually exclusive sets of time slots
+	CornerEnabledTableWidget* timesTable1;
+	QAbstractItemDelegate* oldItemDelegate1;
+	AddOrModifyTimeConstraintTimesTableDelegate* newItemDelegate1;
+	CornerEnabledTableWidget* timesTable2;
+	QAbstractItemDelegate* oldItemDelegate2;
+	AddOrModifyTimeConstraintTimesTableDelegate* newItemDelegate2;
+
 	QCheckBox* colorsCheckBox;
+
+	//For teacher(s)/students (set) pair of mutually exclusive sets of time slots
+	QCheckBox* colorsCheckBox1;
+	QCheckBox* colorsCheckBox2;
 
 	QCheckBox* showRelatedCheckBox;
 
@@ -96,7 +108,19 @@ public:
 									CornerEnabledTableWidget* _timesTable,
 									QAbstractItemDelegate* _oldItemDelegate,
 									AddOrModifyTimeConstraintTimesTableDelegate* _newItemDelegate,
+
+									CornerEnabledTableWidget* _timesTable1,
+									QAbstractItemDelegate* _oldItemDelegate1,
+									AddOrModifyTimeConstraintTimesTableDelegate* _newItemDelegate1,
+									CornerEnabledTableWidget* _timesTable2,
+									QAbstractItemDelegate* _oldItemDelegate2,
+									AddOrModifyTimeConstraintTimesTableDelegate* _newItemDelegate2,
+
 									QCheckBox* _colorsCheckBox,
+
+									QCheckBox* _colorsCheckBox1,
+									QCheckBox* _colorsCheckBox2,
+
 									QCheckBox* _showRelatedCheckBox,
 									QCheckBox* _firstFilter_showRelatedCheckBox,
 									QCheckBox* _secondFilter_showRelatedCheckBox,
@@ -149,10 +173,24 @@ class AddOrModifyTimeConstraint: public QObject
 
 	QCheckBox* colorsCheckBox;
 	QPushButton* toggleAllPushButton;
+
+	//For teacher(s)/students (set) pair of mutually exclusive sets of time slots
+	QCheckBox* colorsCheckBox1;
+	QPushButton* toggleAllPushButton1;
+	QCheckBox* colorsCheckBox2;
+	QPushButton* toggleAllPushButton2;
 	
 	CornerEnabledTableWidget* timesTable;
 	QAbstractItemDelegate* oldItemDelegate;
 	AddOrModifyTimeConstraintTimesTableDelegate* newItemDelegate;
+
+	//For teacher(s)/students (set) pair of mutually exclusive sets of time slots
+	CornerEnabledTableWidget* timesTable1;
+	QAbstractItemDelegate* oldItemDelegate1;
+	AddOrModifyTimeConstraintTimesTableDelegate* newItemDelegate1;
+	CornerEnabledTableWidget* timesTable2;
+	QAbstractItemDelegate* oldItemDelegate2;
+	AddOrModifyTimeConstraintTimesTableDelegate* newItemDelegate2;
 
 	QGroupBox* filterGroupBox;
 
@@ -270,6 +308,9 @@ class AddOrModifyTimeConstraint: public QObject
 	//
 	QPushButton* swapTwoSetsOfActivitiesPushButton;
 
+	//For teacher(s)/students (set) pair of mutually exclusive sets of time slots
+	QTabWidget* tabWidgetPairOfMutuallyExclusiveSets;
+
 	QGroupBox* first_filterGroupBox;
 	QGroupBox* second_filterGroupBox;
 	QGroupBox* third_filterGroupBox;
@@ -342,6 +383,22 @@ private:
 	void cellEntered(int row, int col);
 	void colorsCheckBoxToggled();
 	void toggleAllClicked();
+
+	//For teacher(s)/students (set) pair of mutually exclusive sets of time slots
+	//void colorItem1(QTableWidgetItem* item);
+	void itemClicked1(QTableWidgetItem* item);
+	void horizontalHeaderClicked1(int col);
+	void verticalHeaderClicked1(int row);
+	void cellEntered1(int row, int col);
+	void colorsCheckBoxToggled1();
+	void toggleAllClicked1();
+	//void colorItem2(QTableWidgetItem* item);
+	void itemClicked2(QTableWidgetItem* item);
+	void horizontalHeaderClicked2(int col);
+	void verticalHeaderClicked2(int row);
+	void cellEntered2(int row, int col);
+	void colorsCheckBoxToggled2();
+	void toggleAllClicked2();
 
 	void durationCheckBoxToggled();
 

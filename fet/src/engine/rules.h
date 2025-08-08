@@ -1192,6 +1192,11 @@ private:
 	TimeConstraint* readStudentsSetPairOfMutuallyExclusiveTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readStudentsPairOfMutuallyExclusiveTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
+	TimeConstraint* readTeacherPairOfMutuallyExclusiveSetsOfTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersPairOfMutuallyExclusiveSetsOfTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsPairOfMutuallyExclusiveSetsOfTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
 	TimeConstraint* readStudentsSetMaxSingleGapsInSelectedTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readStudentsMaxSingleGapsInSelectedTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 

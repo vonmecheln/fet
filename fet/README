@@ -1,4 +1,4 @@
-This is FET version 7.4.2
+This is FET version 7.4.3
 
 
 Program description:
@@ -17,7 +17,7 @@ Requirements:
 	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.15.8, Xfce 4.20,
 	Xfce Terminal Emulator 1.1.5, Midnight Commander 4.8.33, Krusader 2.9.0, Kate 25.04.1, KDiff3 0.9.99-beta, grep 3.12, sed 4.9,
 	Thunar Bulk Rename 4.20.2, Qt 6.9.1, QMake 3.1, CMake 4.0.3, Ninja 1.12.1, Qt Creator 17.0.0, GCC 15.1.1, Clang 20.1.8,
-	GNU Make 4.4.1, GDB 16.3, Valgrind 3.24.0, Coverity Scan 2024.6.1, Cppcheck 2.15, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0,
+	GNU Make 4.4.1, GDB 16.3, Valgrind 3.24.0, Coverity Scan 2024.12.1, Cppcheck 2.15, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0,
 	Inkscape 1.4, GIMP 3.0.2, ImageMagick 7.1.1-47, International Ispell 3.1.20 / Aspell 0.60.8.1, tar 1.35, Gzip 1.14, bzip2 1.0.8,
 	other great software (most of these software packages are free software, in the sense defined by The Free Software Foundation).
 
@@ -26,7 +26,7 @@ Requirements:
 	QMake 3.1, Qt Creator 17.0.0, MinGW 13.1.0, Microsoft Visual C++ 2019, 7-Zip 25.00.
 
 	The executable version of FET for GNU/Linux is obtained in the following environment: openSUSE Leap 15.6 GNU/Linux distribution
-	with the standard packages, Xfce 4.20, Qt 6.9.1, QMake 3.1, Qt Creator 17.0.0, GCC 12.3.0, linuxdeploy 1-alpha
+	with the standard packages, Xfce 4.20, Qt 6.9.1, QMake 3.1, Qt Creator 17.0.0, GCC 12.3.0, GNU Make 4.2.1, GDB 14.2, linuxdeploy 1-alpha
 	(most of these software packages are free software, in the sense defined by The Free Software Foundation).
 
 	FET is a C++ application and uses Qt, a C++ toolkit for cross-platform application development.
@@ -243,19 +243,27 @@ Installing FET:
 	Assuming you compiled FET and that you copied the whole directory to /home/user/fet-appdir/ and to /home/user/fet-appimage/ :
 	
 	AppDir:
-		Copy the translations near the executable.
 		./linuxdeploy-x86_64.AppImage --appdir /home/user/fet-appdir/fet-v.v.v/ -e /home/user/fet-appdir/fet-v.v.v/fet
 			-d /home/user/fet-appdir/fet-v.v.v/fet.desktop -i /home/user/fet-appdir/fet-v.v.v/icons/256x256/fet.png --plugin qt
 		also for fet-cl, without -d and -i.
+		Copy/move the translations directory near the executables, in the directory /home/user/fet-appdir/fet-v.v.v/AppDir/usr/bin.
+		It might be useful/necessary to remove the file named /home/user/fet-appdir/fet-v.v.v/usr/lib/libcrypto.so.3. This step
+		might/should be done to ensure there are no problems with the distribution of this file (because of import and export
+		restrictions), and to ensure that the option of checking for updates on program startup works correctly (the computer
+		running this version of FET will need to have installed a compatible openssl library, probably version 3).
 	
 	AppImage:
 		make install INSTALL_ROOT=AppDir
-		Copy the fet executable to /home/user/fet-appimage/fet-v.v.v/AppDir/usr/bin/fet
-		Copy the translations near the executable.
+		Copy/move the fet executable to /home/user/fet-appimage/fet-v.v.v/AppDir/usr/bin/fet
+		Copy/move the translations directory near the executable, in the directory /home/user/fet-appimage/fet-v.v.v/AppDir/usr/bin.
 		./linuxdeploy-x86_64.AppImage --appdir /home/user/fet-appimage/fet-v.v.v/AppDir/ -e /home/user/fet-appimage/fet-v.v.v/AppDir/usr/bin/fet
 			-d /home/user/fet-appimage/fet-v.v.v/AppDir/usr/share/applications/fet.desktop
 			-i /home/user/fet-appimage/fet-v.v.v/AppDir/usr/share/icons/hicolor/256x256/apps/fet.png
 			--plugin qt --output appimage
+		The authors tried to remove the file libcrypto.so.3 (see above, AppDir) from the AppImage, but it was impossible at the
+		time of writing this. The obtained AppImage file might include this file (which might be problematic to distribute, because
+		of import and export restrictions), and the program might not be able to search for updates on startup, if the user
+		selected this option.
 	
 	macOS: The user Darren McDonald reported that one can obtain a universal macOS executable with:
 	cd /Users/YOURUSERNAME/Qt/6.9.1/macos/bin/

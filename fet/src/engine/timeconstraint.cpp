@@ -3106,6 +3106,58 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxHoursPer
 	return stream;
 }
 
+//237
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.teacherName<<tc.selectedDays1<<tc.selectedHours1<<tc.selectedDays2<<tc.selectedHours2;
+
+	return stream;
+}
+
+//238
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.selectedDays1<<tc.selectedHours1<<tc.selectedDays2<<tc.selectedHours2;
+
+	return stream;
+}
+
+//239
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.students<<tc.selectedDays1<<tc.selectedHours1<<tc.selectedDays2<<tc.selectedHours2;
+
+	return stream;
+}
+
+//240
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.selectedDays1<<tc.selectedHours1<<tc.selectedDays2<<tc.selectedHours2;
+
+	return stream;
+}
+
 //1
 QDataStream& operator>>(QDataStream& stream, ConstraintBasicCompulsoryTime& tc)
 {
@@ -6168,6 +6220,58 @@ QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxHoursPerTerm& 
 	return stream;
 }
 
+//237
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.teacherName>>tc.selectedDays1>>tc.selectedHours1>>tc.selectedDays2>>tc.selectedHours2;
+
+	return stream;
+}
+
+//238
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.selectedDays1>>tc.selectedHours1>>tc.selectedDays2>>tc.selectedHours2;
+
+	return stream;
+}
+
+//239
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.students>>tc.selectedDays1>>tc.selectedHours1>>tc.selectedDays2>>tc.selectedHours2;
+
+	return stream;
+}
+
+//240
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.selectedDays1>>tc.selectedHours1>>tc.selectedDays2>>tc.selectedHours2;
+
+	return stream;
+}
+
 static QString trueFalse(bool x){
 	if(!x)
 		return QString("false");
@@ -6791,6 +6895,14 @@ bool TimeConstraint::canBeUsedInOfficialMode()
 		case CONSTRAINT_TEACHERS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
 			[[fallthrough]];
 		case CONSTRAINT_TEACHER_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
 			t=true;
 			break;
 			
@@ -7265,6 +7377,14 @@ bool TimeConstraint::canBeUsedInMorningsAfternoonsMode()
 		case CONSTRAINT_TEACHERS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
 			[[fallthrough]];
 		case CONSTRAINT_TEACHER_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
 			t=true;
 			break;
 		
@@ -7527,6 +7647,14 @@ bool TimeConstraint::canBeUsedInBlockPlanningMode()
 		case CONSTRAINT_TEACHERS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
 			[[fallthrough]];
 		case CONSTRAINT_TEACHER_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
 			t=true;
 			break;
 		
@@ -7794,6 +7922,14 @@ bool TimeConstraint::canBeUsedInTermsMode()
 		case CONSTRAINT_TEACHER_MAX_HOURS_PER_TERM:
 			[[fallthrough]];
 		case CONSTRAINT_TEACHERS_MAX_HOURS_PER_TERM:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
 			t=true;
 			break;
 		
@@ -15656,7 +15792,7 @@ QString ConstraintStudentsEarlyMaxBeginningsAtSecondHour::getDescription(Rules& 
 		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Students must arrive early, respecting maximum %1 arrivals at second hour")
+	s+=tr("Students must begin early, respecting maximum %1 beginnings at second hour")
 	 .arg(this->maxBeginningsAtSecondHour);
 	s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
@@ -15669,7 +15805,7 @@ QString ConstraintStudentsEarlyMaxBeginningsAtSecondHour::getDetailedDescription
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("All students must begin their activities early, respecting maximum %1 later arrivals, at second hour")
+	s+=tr("All students must begin their activities early, respecting maximum %1 later beginnings, at second hour")
 	 .arg(this->maxBeginningsAtSecondHour);s+="\n";
 	s+=tr("(breaks and students set not available not counted)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -15762,7 +15898,7 @@ double ConstraintStudentsEarlyMaxBeginningsAtSecondHour::fitness(Solution& c, Ru
 		if(nGapsFirstHour>this->maxBeginningsAtSecondHour){
 			if(conflictsString!=nullptr){
 				QString s=tr("Constraint students early max %1 beginnings at second hour broken for subgroup %2,"
-				 " because students have too many arrivals at second hour, increases conflicts total by %3")
+				 " because students have too many beginnings at second hour, increases conflicts total by %3")
 				 .arg(this->maxBeginningsAtSecondHour)
 				 .arg(r.internalSubgroupsList[i]->name)
 				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100));
@@ -15957,7 +16093,7 @@ QString ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::getDescription(Rule
 		
 	QString s;
 
-	s+=tr("Students set must arrive early, respecting maximum %1 arrivals at second hour")
+	s+=tr("Students set must begin early, respecting maximum %1 beginnings at second hour")
 	 .arg(this->maxBeginningsAtSecondHour); s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("St:%1", "Students set").arg(this->students);
@@ -15971,11 +16107,11 @@ QString ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::getDetailedDescript
 
 	QString s=tr("Time constraint");s+="\n";
 
-	s+=tr("A students set must begin its activities early, respecting a maximum number of later arrivals, at second hour"); s+="\n";
+	s+=tr("A students set must begin its activities early, respecting a maximum number of later beginnings, at second hour"); s+="\n";
 	s+=tr("(breaks and students set not available not counted)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Students set=%1").arg(this->students); s+="\n";
-	s+=tr("Maximum number of arrivals at the second hour=%1").arg(this->maxBeginningsAtSecondHour);s+="\n";
+	s+=tr("Maximum number of beginnings at the second hour=%1").arg(this->maxBeginningsAtSecondHour);s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -16064,7 +16200,7 @@ double ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::fitness(Solution& c,
 		if(nGapsFirstHour>this->maxBeginningsAtSecondHour){
 			if(conflictsString!=nullptr){
 				QString s=tr("Constraint students set early max %1 beginnings at second hour broken for subgroup %2,"
-				 " because students have too many arrivals at second hour, increases conflicts total by %3")
+				 " because students have too many beginnings at second hour, increases conflicts total by %3")
 				 .arg(this->maxBeginningsAtSecondHour)
 				 .arg(r.internalSubgroupsList[i]->name)
 				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100));
@@ -51482,7 +51618,7 @@ QString ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour::getDescripti
 		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teachers must begin afternoons early, respecting maximum %1 arrivals at second hour")
+	s+=tr("Teachers must begin afternoons early, respecting maximum %1 beginnings at second hour")
 	 .arg(this->maxBeginningsAtSecondHour);
 	s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
@@ -51495,7 +51631,7 @@ QString ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour::getDetailedD
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("All teachers must begin the afternoons early, respecting maximum %1 later arrivals, at second hour")
+	s+=tr("All teachers must begin the afternoons early, respecting maximum %1 later beginnings, at second hour")
 	 .arg(this->maxBeginningsAtSecondHour);s+="\n";
 	s+=tr("(breaks and teacher not available not counted)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -51591,7 +51727,7 @@ double ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour::fitness(Solut
 		if(nGapsFirstHour>this->maxBeginningsAtSecondHour){
 			if(conflictsString!=nullptr){
 				QString s=tr("Constraint teachers afternoons early max %1 beginnings at second hour broken for teacher %2,"
-				 " because the teacher has too many arrivals at second hour, increases conflicts total by %3")
+				 " because the teacher has too many beginnings at second hour, increases conflicts total by %3")
 				 .arg(this->maxBeginningsAtSecondHour)
 				 .arg(r.internalTeachersList[i]->name)
 				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100));
@@ -51739,7 +51875,7 @@ QString ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour::getDescriptio
 
 	QString s;
 
-	s+=tr("Teacher must begin afternoons early, respecting maximum %1 arrivals at second hour")
+	s+=tr("Teacher must begin afternoons early, respecting maximum %1 beginnings at second hour")
 	 .arg(this->maxBeginningsAtSecondHour); s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("T:%1", "Teacher").arg(this->teacherName);
@@ -51753,11 +51889,11 @@ QString ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour::getDetailedDe
 
 	QString s=tr("Time constraint");s+="\n";
 
-	s+=tr("A teacher must begin his afternoons early, respecting a maximum number of later arrivals, at second hour"); s+="\n";
+	s+=tr("A teacher must begin his afternoons early, respecting a maximum number of later beginnings, at second hour"); s+="\n";
 	s+=tr("(breaks and teacher not available not counted)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Teacher=%1").arg(this->teacherName); s+="\n";
-	s+=tr("Maximum number of arrivals at the second hour=%1").arg(this->maxBeginningsAtSecondHour);s+="\n";
+	s+=tr("Maximum number of beginnings at the second hour=%1").arg(this->maxBeginningsAtSecondHour);s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -51851,7 +51987,7 @@ double ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour::fitness(Soluti
 		if(nGapsFirstHour>this->maxBeginningsAtSecondHour){
 			if(conflictsString!=nullptr){
 				QString s=tr("Constraint teacher afternoons early max %1 beginnings at second hour broken for teacher %2,"
-				 " because the teacher has too many arrivals at second hour, increases conflicts total by %3")
+				 " because the teacher has too many beginnings at second hour, increases conflicts total by %3")
 				 .arg(this->maxBeginningsAtSecondHour)
 				 .arg(r.internalTeachersList[i]->name)
 				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100));
@@ -57541,7 +57677,7 @@ QString ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour::getDescripti
 		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Students must begin afternoons early, respecting maximum %1 arrivals at second hour")
+	s+=tr("Students must begin afternoons early, respecting maximum %1 beginnings at second hour")
 	 .arg(this->maxBeginningsAtSecondHour);
 	s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
@@ -57554,7 +57690,7 @@ QString ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour::getDetailedD
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("All students must begin the afternoons early, respecting maximum %1 later arrivals, at second hour")
+	s+=tr("All students must begin the afternoons early, respecting maximum %1 later beginnings, at second hour")
 	 .arg(this->maxBeginningsAtSecondHour);s+="\n";
 	s+=tr("(breaks and students set not available not counted)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -57650,7 +57786,7 @@ double ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour::fitness(Solut
 		if(nGapsFirstHour>this->maxBeginningsAtSecondHour){
 			if(conflictsString!=nullptr){
 				QString s=tr("Constraint students afternoons early max %1 beginnings at second hour broken for subgroup %2,"
-				 " because students have too many arrivals at second hour, increases conflicts total by %3")
+				 " because students have too many beginnings at second hour, increases conflicts total by %3")
 				 .arg(this->maxBeginningsAtSecondHour)
 				 .arg(r.internalSubgroupsList[i]->name)
 				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100));
@@ -57845,7 +57981,7 @@ QString ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour::getDescri
 
 	QString s;
 
-	s+=tr("Students set must begin the afternoons early, respecting maximum %1 arrivals at second hour")
+	s+=tr("Students set must begin the afternoons early, respecting maximum %1 beginnings at second hour")
 	 .arg(this->maxBeginningsAtSecondHour); s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("St:%1", "Students set").arg(this->students);
@@ -57859,11 +57995,11 @@ QString ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour::getDetail
 
 	QString s=tr("Time constraint");s+="\n";
 
-	s+=tr("A students set must begin the afternoons early, respecting a maximum number of later arrivals, at second hour"); s+="\n";
+	s+=tr("A students set must begin the afternoons early, respecting a maximum number of later beginnings, at second hour"); s+="\n";
 	s+=tr("(breaks and students set not available not counted)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Students set=%1").arg(this->students); s+="\n";
-	s+=tr("Maximum number of arrivals at the second hour=%1").arg(this->maxBeginningsAtSecondHour);s+="\n";
+	s+=tr("Maximum number of beginnings at the second hour=%1").arg(this->maxBeginningsAtSecondHour);s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -57955,7 +58091,7 @@ double ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour::fitness(So
 		if(nGapsFirstHour>this->maxBeginningsAtSecondHour){
 			if(conflictsString!=nullptr){
 				QString s=tr("Constraint students set afternoons early max %1 beginnings at second hour broken for subgroup %2,"
-				 " because students have too many arrivals at second hour, increases conflicts total by %3")
+				 " because students have too many beginnings at second hour, increases conflicts total by %3")
 				 .arg(this->maxBeginningsAtSecondHour)
 				 .arg(r.internalSubgroupsList[i]->name)
 				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100));
@@ -59048,7 +59184,7 @@ QString ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::getDescription
 		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Teachers must begin mornings early, respecting maximum %1 arrivals at second hour")
+	s+=tr("Teachers must begin mornings early, respecting maximum %1 beginnings at second hour")
 	 .arg(this->maxBeginningsAtSecondHour);
 	s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
@@ -59061,7 +59197,7 @@ QString ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::getDetailedDes
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("All teachers must begin the mornings early, respecting maximum %1 later arrivals, at second hour")
+	s+=tr("All teachers must begin the mornings early, respecting maximum %1 later beginnings, at second hour")
 	 .arg(this->maxBeginningsAtSecondHour);s+="\n";
 	s+=tr("(breaks and teacher not available not counted)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -59157,7 +59293,7 @@ double ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::fitness(Solutio
 		if(nGapsFirstHour>this->maxBeginningsAtSecondHour){
 			if(conflictsString!=nullptr){
 				QString s=tr("Constraint teachers mornings early max %1 beginnings at second hour broken for teacher %2,"
-				 " because the teacher has too many arrivals at second hour, increases conflicts total by %3")
+				 " because the teacher has too many beginnings at second hour, increases conflicts total by %3")
 				 .arg(this->maxBeginningsAtSecondHour)
 				 .arg(r.internalTeachersList[i]->name)
 				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100));
@@ -59305,7 +59441,7 @@ QString ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::getDescription(
 
 	QString s;
 
-	s+=tr("Teacher must begin mornings early, respecting maximum %1 arrivals at second hour")
+	s+=tr("Teacher must begin mornings early, respecting maximum %1 beginnings at second hour")
 	 .arg(this->maxBeginningsAtSecondHour); s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("T:%1", "Teacher").arg(this->teacherName);
@@ -59319,11 +59455,11 @@ QString ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::getDetailedDesc
 
 	QString s=tr("Time constraint");s+="\n";
 
-	s+=tr("A teacher must begin his mornings early, respecting a maximum number of later arrivals, at second hour"); s+="\n";
+	s+=tr("A teacher must begin his mornings early, respecting a maximum number of later beginnings, at second hour"); s+="\n";
 	s+=tr("(breaks and teacher not available not counted)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Teacher=%1").arg(this->teacherName); s+="\n";
-	s+=tr("Maximum number of arrivals at the second hour=%1").arg(this->maxBeginningsAtSecondHour);s+="\n";
+	s+=tr("Maximum number of beginnings at the second hour=%1").arg(this->maxBeginningsAtSecondHour);s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -59417,7 +59553,7 @@ double ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::fitness(Solution
 		if(nGapsFirstHour>this->maxBeginningsAtSecondHour){
 			if(conflictsString!=nullptr){
 				QString s=tr("Constraint teacher mornings early max %1 beginnings at second hour broken for teacher %2,"
-				 " because the teacher has too many arrivals at second hour, increases conflicts total by %3")
+				 " because the teacher has too many beginnings at second hour, increases conflicts total by %3")
 				 .arg(this->maxBeginningsAtSecondHour)
 				 .arg(r.internalTeachersList[i]->name)
 				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100));
@@ -59557,7 +59693,7 @@ QString ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::getDescription
 		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s;
-	s+=tr("Students must begin mornings early, respecting maximum %1 arrivals at second hour")
+	s+=tr("Students must begin mornings early, respecting maximum %1 beginnings at second hour")
 	 .arg(this->maxBeginningsAtSecondHour);
 	s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
@@ -59570,7 +59706,7 @@ QString ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::getDetailedDes
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("All students must begin the mornings early, respecting maximum %1 later arrivals, at second hour")
+	s+=tr("All students must begin the mornings early, respecting maximum %1 later beginnings, at second hour")
 	 .arg(this->maxBeginningsAtSecondHour);s+="\n";
 	s+=tr("(breaks and students set not available not counted)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -59666,7 +59802,7 @@ double ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::fitness(Solutio
 		if(nGapsFirstHour>this->maxBeginningsAtSecondHour){
 			if(conflictsString!=nullptr){
 				QString s=tr("Constraint students mornings early max %1 beginnings at second hour broken for subgroup %2,"
-				 " because students have too many arrivals at second hour, increases conflicts total by %3")
+				 " because students have too many beginnings at second hour, increases conflicts total by %3")
 				 .arg(this->maxBeginningsAtSecondHour)
 				 .arg(r.internalSubgroupsList[i]->name)
 				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100));
@@ -59861,7 +59997,7 @@ QString ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::getDescript
 
 	QString s;
 
-	s+=tr("Students set must begin the mornings early, respecting maximum %1 arrivals at second hour")
+	s+=tr("Students set must begin the mornings early, respecting maximum %1 beginnings at second hour")
 	 .arg(this->maxBeginningsAtSecondHour); s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("St:%1", "Students set").arg(this->students);
@@ -59875,11 +60011,11 @@ QString ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::getDetailed
 
 	QString s=tr("Time constraint");s+="\n";
 
-	s+=tr("A students set must begin the mornings early, respecting a maximum number of later arrivals, at second hour"); s+="\n";
+	s+=tr("A students set must begin the mornings early, respecting a maximum number of later beginnings, at second hour"); s+="\n";
 	s+=tr("(breaks and students set not available not counted)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Students set=%1").arg(this->students); s+="\n";
-	s+=tr("Maximum number of arrivals at the second hour=%1").arg(this->maxBeginningsAtSecondHour);s+="\n";
+	s+=tr("Maximum number of beginnings at the second hour=%1").arg(this->maxBeginningsAtSecondHour);s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -59971,7 +60107,7 @@ double ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::fitness(Solu
 		if(nGapsFirstHour>this->maxBeginningsAtSecondHour){
 			if(conflictsString!=nullptr){
 				QString s=tr("Constraint students set mornings early max %1 beginnings at second hour broken for subgroup %2,"
-				 " because students have too many arrivals at second hour, increases conflicts total by %3")
+				 " because students have too many beginnings at second hour, increases conflicts total by %3")
 				 .arg(this->maxBeginningsAtSecondHour)
 				 .arg(r.internalSubgroupsList[i]->name)
 				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100));
@@ -67504,7 +67640,6 @@ ConstraintTeacherPairOfMutuallyExclusiveTimeSlots::ConstraintTeacherPairOfMutual
 
 bool ConstraintTeacherPairOfMutuallyExclusiveTimeSlots::computeInternalStructure(QWidget* parent, Rules& r)
 {
-
 	teacher_ID=r.teachersHash.value(teacherName, -1);
 	assert(this->teacher_ID>=0);
 
@@ -70516,6 +70651,1382 @@ bool ConstraintTeachersMaxHoursPerTerm::repairWrongDayOrHour(Rules& r)
 	
 	if(maxHoursPerTerm>r.nDaysPerTerm*r.nHoursPerDay)
 		maxHoursPerTerm=r.nDaysPerTerm*r.nHoursPerDay;
+
+	return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots::ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS;
+}
+
+ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots::ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots(double wp, const QString& teacher,
+ const QList<int>& sd1, const QList<int>& sh1, const QList<int>& sd2, const QList<int>& sh2)
+ : TimeConstraint(wp)
+ {
+	this->teacherName=teacher;
+	this->selectedDays1=sd1;
+	this->selectedHours1=sh1;
+	this->selectedDays2=sd2;
+	this->selectedHours2=sh2;
+
+	this->type=CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS;
+}
+
+bool ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	teacher_ID=r.teachersHash.value(teacherName, -1);
+	assert(this->teacher_ID>=0);
+
+	assert(selectedDays1.count()==selectedHours1.count());
+	assert(selectedDays2.count()==selectedHours2.count());
+
+	if(selectedDays1.count()==0){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint teacher pair of mutually exclusive sets of time slots is wrong because the first set of selected time slots is empty. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information, or removing the constraint. Constraint is:\n%1")
+		 .arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+	if(selectedDays2.count()==0){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint teacher pair of mutually exclusive sets of time slots is wrong because the second set of selected time slots is empty. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information, or removing the constraint. Constraint is:\n%1")
+		 .arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+
+	set1.clear();
+	list1.clear();
+	set2.clear();
+	list2.clear();
+	for(int k=0; k<selectedDays1.count(); k++){
+		int d=selectedDays1.at(k);
+		int h=selectedHours1.at(k);
+		if(d>=0 && d<r.nDaysPerWeek && h>=0 && h<r.nHoursPerDay){
+			set1.insert(d+h*r.nDaysPerWeek);
+			list1.append(d+h*r.nDaysPerWeek);
+		}
+	}
+	for(int k=0; k<selectedDays2.count(); k++){
+		int d=selectedDays2.at(k);
+		int h=selectedHours2.at(k);
+		if(d>=0 && d<r.nDaysPerWeek && h>=0 && h<r.nHoursPerDay){
+			set2.insert(d+h*r.nDaysPerWeek);
+			list2.append(d+h*r.nDaysPerWeek);
+		}
+	}
+
+	if(set1.intersects(set2)){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint teacher pair of mutually exclusive sets of time slots is wrong because the two sets of time slots have at least one common time slot. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+
+	return true;
+}
+
+bool ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+
+	s+=IL3+"<Number_of_Selected_Time_Slots_in_First_Set>"+QString::number(this->selectedDays1.count())+"</Number_of_Selected_Time_Slots_in_First_Set>\n";
+	for(int i=0; i<this->selectedDays1.count(); i++){
+		s+=IL3+"<Selected_Time_Slot_in_First_Set>\n";
+		s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->selectedDays1.at(i)])+"</Day>\n";
+		s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->selectedHours1.at(i)])+"</Hour>\n";
+		s+=IL3+"</Selected_Time_Slot_in_First_Set>\n";
+	}
+
+	s+=IL3+"<Number_of_Selected_Time_Slots_in_Second_Set>"+QString::number(this->selectedDays2.count())+"</Number_of_Selected_Time_Slots_in_Second_Set>\n";
+	for(int i=0; i<this->selectedDays2.count(); i++){
+		s+=IL3+"<Selected_Time_Slot_in_Second_Set>\n";
+		s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->selectedDays2.at(i)])+"</Day>\n";
+		s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->selectedHours2.at(i)])+"</Hour>\n";
+		s+=IL3+"</Selected_Time_Slot_in_Second_Set>\n";
+	}
+
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots>\n";
+	return s;
+}
+
+QString ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+	
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+	
+	QString s;
+	s+=tr("Teacher pair of mutually exclusive sets of time slots");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
+
+	QString timeslots1=QString("");
+	for(int i=0; i<this->selectedDays1.count(); i++)
+		timeslots1+=r.daysOfTheWeek[selectedDays1.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours1.at(i)]+translatedCommaSpace();
+	timeslots1.chop(translatedCommaSpace().size());
+
+	QString timeslots2=QString("");
+	for(int i=0; i<this->selectedDays2.count(); i++)
+		timeslots2+=r.daysOfTheWeek[selectedDays2.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours2.at(i)]+translatedCommaSpace();
+	timeslots2.chop(translatedCommaSpace().size());
+
+	s+=tr("FSoSTS:%1", "First set of selected time slots").arg(timeslots1);s+=translatedCommaSpace();
+	s+=tr("SSoSTS:%1", "Second set of selected time slots").arg(timeslots2);
+
+	return begin+s+end;
+}
+
+QString ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots::getDetailedDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("A teacher has a pair of mutually exclusive sets of time slots");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
+
+	QString timeslots1=QString("");
+	for(int i=0; i<this->selectedDays1.count(); i++)
+		timeslots1+=r.daysOfTheWeek[selectedDays1.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours1.at(i)]+translatedCommaSpace();
+	timeslots1.chop(translatedCommaSpace().size());
+
+	QString timeslots2=QString("");
+	for(int i=0; i<this->selectedDays2.count(); i++)
+		timeslots2+=r.daysOfTheWeek[selectedDays2.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours2.at(i)]+translatedCommaSpace();
+	timeslots2.chop(translatedCommaSpace().size());
+
+	s+=tr("First set of selected time slots=%1").arg(timeslots1);s+="\n";
+	s+=tr("Second set of selected time slots=%1").arg(timeslots2);s+="\n";
+
+	if(!active){
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken=0;
+
+	int i=this->teacher_ID;
+
+	for(int k1=0; k1<selectedDays1.count(); k1++){
+		int day1=selectedDays1.at(k1);
+		int hour1=selectedHours1.at(k1);
+		
+		if(teachersMatrix[i][day1][hour1]>0){
+			for(int k2=0; k2<selectedDays2.count(); k2++){
+				int day2=selectedDays2.at(k2);
+				int hour2=selectedHours2.at(k2);
+
+				if(teachersMatrix[i][day2][hour2]>0){
+					nbroken++;
+
+					if(conflictsString!=nullptr){
+						QString s=(tr(
+						 "Time constraint teacher pair of mutually exclusive sets of time slots broken for teacher %1, first time slot's day %2, first time slot's hour %3, second time slot's day %4, second time slot's hour %5.")
+						 .arg(r.internalTeachersList[i]->name)
+						 .arg(r.daysOfTheWeek[day1])
+						 .arg(r.hoursOfTheDay[hour1])
+						 .arg(r.daysOfTheWeek[day2])
+						 .arg(r.hoursOfTheDay[hour2])
+						 )
+						 +" "
+						 +
+						 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
+						
+						dl.append(s);
+						cl.append(weightPercentage/100);
+						
+						*conflictsString+= s+"\n";
+					}
+				}
+			}
+		}
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToTeacher(Teacher* t)
+{
+	if(this->teacherName==t->name)
+		return true;
+	return false;
+}
+
+bool ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots::hasWrongDayOrHour(Rules& r)
+{
+	for(int k1=0; k1<selectedDays1.count(); k1++){
+		int day1=selectedDays1.at(k1);
+		int hour1=selectedHours1.at(k1);
+		
+		if(day1>=r.nDaysPerWeek)
+			return true;
+		if(hour1>=r.nHoursPerDay)
+			return true;
+	}
+	
+	for(int k2=0; k2<selectedDays2.count(); k2++){
+		int day2=selectedDays2.at(k2);
+		int hour2=selectedHours2.at(k2);
+		
+		if(day2>=r.nDaysPerWeek)
+			return true;
+		if(hour2>=r.nHoursPerDay)
+			return true;
+	}
+	
+	return false;
+}
+
+bool ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	assert(selectedDays1.count()==selectedHours1.count());
+	
+	QList<int> newDays1;
+	QList<int> newHours1;
+	
+	for(int i=0; i<selectedDays1.count(); i++)
+		if(selectedDays1.at(i)<r.nDaysPerWeek && selectedHours1.at(i)<r.nHoursPerDay){
+			newDays1.append(selectedDays1.at(i));
+			newHours1.append(selectedHours1.at(i));
+		}
+	
+	selectedDays1=newDays1;
+	selectedHours1=newHours1;
+	///////
+	assert(selectedDays2.count()==selectedHours2.count());
+	
+	QList<int> newDays2;
+	QList<int> newHours2;
+	
+	for(int i=0; i<selectedDays2.count(); i++)
+		if(selectedDays2.at(i)<r.nDaysPerWeek && selectedHours2.at(i)<r.nHoursPerDay){
+			newDays2.append(selectedDays2.at(i));
+			newHours2.append(selectedHours2.at(i));
+		}
+	
+	selectedDays2=newDays2;
+	selectedHours2=newHours2;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+
+	return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots::ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS;
+}
+
+ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots::ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots(double wp,
+ const QList<int>& sd1, const QList<int>& sh1, const QList<int>& sd2, const QList<int>& sh2)
+ : TimeConstraint(wp)
+ {
+	this->selectedDays1=sd1;
+	this->selectedHours1=sh1;
+	this->selectedDays2=sd2;
+	this->selectedHours2=sh2;
+
+	this->type=CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS;
+}
+
+bool ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	assert(selectedDays1.count()==selectedHours1.count());
+	assert(selectedDays2.count()==selectedHours2.count());
+
+	if(selectedDays1.count()==0){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint teachers pair of mutually exclusive sets of time slots is wrong because the first set of selected time slots is empty. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information, or removing the constraint. Constraint is:\n%1")
+		 .arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+	if(selectedDays2.count()==0){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint teachers pair of mutually exclusive sets of time slots is wrong because the second set of selected time slots is empty. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information, or removing the constraint. Constraint is:\n%1")
+		 .arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+
+	set1.clear();
+	list1.clear();
+	set2.clear();
+	list2.clear();
+	for(int k=0; k<selectedDays1.count(); k++){
+		int d=selectedDays1.at(k);
+		int h=selectedHours1.at(k);
+		if(d>=0 && d<r.nDaysPerWeek && h>=0 && h<r.nHoursPerDay){
+			set1.insert(d+h*r.nDaysPerWeek);
+			list1.append(d+h*r.nDaysPerWeek);
+		}
+	}
+	for(int k=0; k<selectedDays2.count(); k++){
+		int d=selectedDays2.at(k);
+		int h=selectedHours2.at(k);
+		if(d>=0 && d<r.nDaysPerWeek && h>=0 && h<r.nHoursPerDay){
+			set2.insert(d+h*r.nDaysPerWeek);
+			list2.append(d+h*r.nDaysPerWeek);
+		}
+	}
+
+	if(set1.intersects(set2)){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint teachers pair of mutually exclusive sets of time slots is wrong because the two sets of time slots have at least one common time slot. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+
+	return true;
+}
+
+bool ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+
+	s+=IL3+"<Number_of_Selected_Time_Slots_in_First_Set>"+QString::number(this->selectedDays1.count())+"</Number_of_Selected_Time_Slots_in_First_Set>\n";
+	for(int i=0; i<this->selectedDays1.count(); i++){
+		s+=IL3+"<Selected_Time_Slot_in_First_Set>\n";
+		s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->selectedDays1.at(i)])+"</Day>\n";
+		s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->selectedHours1.at(i)])+"</Hour>\n";
+		s+=IL3+"</Selected_Time_Slot_in_First_Set>\n";
+	}
+
+	s+=IL3+"<Number_of_Selected_Time_Slots_in_Second_Set>"+QString::number(this->selectedDays2.count())+"</Number_of_Selected_Time_Slots_in_Second_Set>\n";
+	for(int i=0; i<this->selectedDays2.count(); i++){
+		s+=IL3+"<Selected_Time_Slot_in_Second_Set>\n";
+		s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->selectedDays2.at(i)])+"</Day>\n";
+		s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->selectedHours2.at(i)])+"</Hour>\n";
+		s+=IL3+"</Selected_Time_Slot_in_Second_Set>\n";
+	}
+
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots>\n";
+	return s;
+}
+
+QString ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+	
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+	
+	QString s;
+	s+=tr("Teachers pair of mutually exclusive sets of time slots");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+
+	QString timeslots1=QString("");
+	for(int i=0; i<this->selectedDays1.count(); i++)
+		timeslots1+=r.daysOfTheWeek[selectedDays1.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours1.at(i)]+translatedCommaSpace();
+	timeslots1.chop(translatedCommaSpace().size());
+
+	QString timeslots2=QString("");
+	for(int i=0; i<this->selectedDays2.count(); i++)
+		timeslots2+=r.daysOfTheWeek[selectedDays2.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours2.at(i)]+translatedCommaSpace();
+	timeslots2.chop(translatedCommaSpace().size());
+
+	s+=tr("FSoSTS:%1", "First set of selected time slots").arg(timeslots1);s+=translatedCommaSpace();
+	s+=tr("SSoSTS:%1", "Second set of selected time slots").arg(timeslots2);
+
+	return begin+s+end;
+}
+
+QString ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots::getDetailedDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("All teachers have a pair of mutually exclusive sets of time slots");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+	QString timeslots1=QString("");
+	for(int i=0; i<this->selectedDays1.count(); i++)
+		timeslots1+=r.daysOfTheWeek[selectedDays1.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours1.at(i)]+translatedCommaSpace();
+	timeslots1.chop(translatedCommaSpace().size());
+
+	QString timeslots2=QString("");
+	for(int i=0; i<this->selectedDays2.count(); i++)
+		timeslots2+=r.daysOfTheWeek[selectedDays2.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours2.at(i)]+translatedCommaSpace();
+	timeslots2.chop(translatedCommaSpace().size());
+
+	s+=tr("First set of selected time slots=%1").arg(timeslots1);s+="\n";
+	s+=tr("Second set of selected time slots=%1").arg(timeslots2);s+="\n";
+
+	if(!active){
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken=0;
+
+	for(int i=0; i<r.nInternalTeachers; i++){
+		for(int k1=0; k1<selectedDays1.count(); k1++){
+			int day1=selectedDays1.at(k1);
+			int hour1=selectedHours1.at(k1);
+			
+			if(teachersMatrix[i][day1][hour1]>0){
+				for(int k2=0; k2<selectedDays2.count(); k2++){
+					int day2=selectedDays2.at(k2);
+					int hour2=selectedHours2.at(k2);
+
+					if(teachersMatrix[i][day2][hour2]>0){
+						nbroken++;
+
+						if(conflictsString!=nullptr){
+							QString s=(tr(
+							 "Time constraint teachers pair of mutually exclusive sets of time slots broken for teacher %1, first time slot's day %2, first time slot's hour %3, second time slot's day %4, second time slot's hour %5.")
+							 .arg(r.internalTeachersList[i]->name)
+							 .arg(r.daysOfTheWeek[day1])
+							 .arg(r.hoursOfTheDay[hour1])
+							 .arg(r.daysOfTheWeek[day2])
+							 .arg(r.hoursOfTheDay[hour2])
+							 )
+							 +" "
+							 +
+							 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
+							
+							dl.append(s);
+							cl.append(weightPercentage/100);
+							
+							*conflictsString+= s+"\n";
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return true;
+}
+
+bool ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots::hasWrongDayOrHour(Rules& r)
+{
+	for(int k1=0; k1<selectedDays1.count(); k1++){
+		int day1=selectedDays1.at(k1);
+		int hour1=selectedHours1.at(k1);
+		
+		if(day1>=r.nDaysPerWeek)
+			return true;
+		if(hour1>=r.nHoursPerDay)
+			return true;
+	}
+	
+	for(int k2=0; k2<selectedDays2.count(); k2++){
+		int day2=selectedDays2.at(k2);
+		int hour2=selectedHours2.at(k2);
+		
+		if(day2>=r.nDaysPerWeek)
+			return true;
+		if(hour2>=r.nHoursPerDay)
+			return true;
+	}
+	
+	return false;
+}
+
+bool ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	assert(selectedDays1.count()==selectedHours1.count());
+	
+	QList<int> newDays1;
+	QList<int> newHours1;
+	
+	for(int i=0; i<selectedDays1.count(); i++)
+		if(selectedDays1.at(i)<r.nDaysPerWeek && selectedHours1.at(i)<r.nHoursPerDay){
+			newDays1.append(selectedDays1.at(i));
+			newHours1.append(selectedHours1.at(i));
+		}
+	
+	selectedDays1=newDays1;
+	selectedHours1=newHours1;
+	///////
+	assert(selectedDays2.count()==selectedHours2.count());
+	
+	QList<int> newDays2;
+	QList<int> newHours2;
+	
+	for(int i=0; i<selectedDays2.count(); i++)
+		if(selectedDays2.at(i)<r.nDaysPerWeek && selectedHours2.at(i)<r.nHoursPerDay){
+			newDays2.append(selectedDays2.at(i));
+			newHours2.append(selectedHours2.at(i));
+		}
+	
+	selectedDays2=newDays2;
+	selectedHours2=newHours2;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+
+	return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots::ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS;
+}
+
+ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots::ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots(double wp, const QString& s,
+ const QList<int>& sd1, const QList<int>& sh1, const QList<int>& sd2, const QList<int>& sh2)
+ : TimeConstraint(wp)
+ {
+	this->students=s;
+
+	this->selectedDays1=sd1;
+	this->selectedHours1=sh1;
+	this->selectedDays2=sd2;
+	this->selectedHours2=sh2;
+
+	this->type=CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS;
+}
+
+bool ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	StudentsSet* ss=r.studentsHash.value(students, nullptr);
+	
+	if(ss==nullptr){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint students set pair of mutually exclusive sets of time slots is wrong because it refers to nonexistent students set."
+		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+	
+	assert(selectedDays1.count()==selectedHours1.count());
+	assert(selectedDays2.count()==selectedHours2.count());
+
+	if(selectedDays1.count()==0){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint students set pair of mutually exclusive sets of time slots is wrong because the first set of selected time slots is empty. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information, or removing the constraint. Constraint is:\n%1")
+		 .arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+	if(selectedDays2.count()==0){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint students set pair of mutually exclusive sets of time slots is wrong because the second set of selected time slots is empty. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information, or removing the constraint. Constraint is:\n%1")
+		 .arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+
+	set1.clear();
+	list1.clear();
+	set2.clear();
+	list2.clear();
+	for(int k=0; k<selectedDays1.count(); k++){
+		int d=selectedDays1.at(k);
+		int h=selectedHours1.at(k);
+		if(d>=0 && d<r.nDaysPerWeek && h>=0 && h<r.nHoursPerDay){
+			set1.insert(d+h*r.nDaysPerWeek);
+			list1.append(d+h*r.nDaysPerWeek);
+		}
+	}
+	for(int k=0; k<selectedDays2.count(); k++){
+		int d=selectedDays2.at(k);
+		int h=selectedHours2.at(k);
+		if(d>=0 && d<r.nDaysPerWeek && h>=0 && h<r.nHoursPerDay){
+			set2.insert(d+h*r.nDaysPerWeek);
+			list2.append(d+h*r.nDaysPerWeek);
+		}
+	}
+
+	if(set1.intersects(set2)){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint students set pair of mutually exclusive sets of time slots is wrong because the two sets of time slots have at least one common time slot. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+	
+	assert(ss!=nullptr);
+	
+	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
+
+	return true;
+}
+
+bool ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Students>"+protect(this->students)+"</Students>\n";
+
+	s+=IL3+"<Number_of_Selected_Time_Slots_in_First_Set>"+QString::number(this->selectedDays1.count())+"</Number_of_Selected_Time_Slots_in_First_Set>\n";
+	for(int i=0; i<this->selectedDays1.count(); i++){
+		s+=IL3+"<Selected_Time_Slot_in_First_Set>\n";
+		s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->selectedDays1.at(i)])+"</Day>\n";
+		s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->selectedHours1.at(i)])+"</Hour>\n";
+		s+=IL3+"</Selected_Time_Slot_in_First_Set>\n";
+	}
+
+	s+=IL3+"<Number_of_Selected_Time_Slots_in_Second_Set>"+QString::number(this->selectedDays2.count())+"</Number_of_Selected_Time_Slots_in_Second_Set>\n";
+	for(int i=0; i<this->selectedDays2.count(); i++){
+		s+=IL3+"<Selected_Time_Slot_in_Second_Set>\n";
+		s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->selectedDays2.at(i)])+"</Day>\n";
+		s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->selectedHours2.at(i)])+"</Hour>\n";
+		s+=IL3+"</Selected_Time_Slot_in_Second_Set>\n";
+	}
+
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots>\n";
+	return s;
+}
+
+QString ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+	
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+	
+	QString s;
+	s+=tr("Students set pair of mutually exclusive sets of time slots");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students").arg(this->students);s+=translatedCommaSpace();
+
+	QString timeslots1=QString("");
+	for(int i=0; i<this->selectedDays1.count(); i++)
+		timeslots1+=r.daysOfTheWeek[selectedDays1.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours1.at(i)]+translatedCommaSpace();
+	timeslots1.chop(translatedCommaSpace().size());
+
+	QString timeslots2=QString("");
+	for(int i=0; i<this->selectedDays2.count(); i++)
+		timeslots2+=r.daysOfTheWeek[selectedDays2.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours2.at(i)]+translatedCommaSpace();
+	timeslots2.chop(translatedCommaSpace().size());
+
+	s+=tr("FSoSTS:%1", "First set of selected time slots").arg(timeslots1);s+=translatedCommaSpace();
+	s+=tr("SSoSTS:%1", "Second set of selected time slots").arg(timeslots2);
+
+	return begin+s+end;
+}
+
+QString ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots::getDetailedDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("A students set has a pair of mutually exclusive sets of time slots");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+	s+=tr("Students=%1").arg(this->students);s+="\n";
+
+	QString timeslots1=QString("");
+	for(int i=0; i<this->selectedDays1.count(); i++)
+		timeslots1+=r.daysOfTheWeek[selectedDays1.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours1.at(i)]+translatedCommaSpace();
+	timeslots1.chop(translatedCommaSpace().size());
+
+	QString timeslots2=QString("");
+	for(int i=0; i<this->selectedDays2.count(); i++)
+		timeslots2+=r.daysOfTheWeek[selectedDays2.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours2.at(i)]+translatedCommaSpace();
+	timeslots2.chop(translatedCommaSpace().size());
+
+	s+=tr("First set of selected time slots=%1").arg(timeslots1);s+="\n";
+	s+=tr("Second set of selected time slots=%1").arg(timeslots2);s+="\n";
+
+	if(!active){
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken=0;
+
+	for(int i : std::as_const(this->iSubgroupsList)){
+		for(int k1=0; k1<selectedDays1.count(); k1++){
+			int day1=selectedDays1.at(k1);
+			int hour1=selectedHours1.at(k1);
+			
+			if(subgroupsMatrix[i][day1][hour1]>0){
+				for(int k2=0; k2<selectedDays2.count(); k2++){
+					int day2=selectedDays2.at(k2);
+					int hour2=selectedHours2.at(k2);
+
+					if(subgroupsMatrix[i][day2][hour2]>0){
+						nbroken++;
+
+						if(conflictsString!=nullptr){
+							QString s=(tr(
+							 "Time constraint students set pair of mutually exclusive sets of time slots broken for subgroup %1, first time slot's day %2, first time slot's hour %3, second time slot's day %4, second time slot's hour %5.")
+							 .arg(r.internalSubgroupsList[i]->name)
+							 .arg(r.daysOfTheWeek[day1])
+							 .arg(r.hoursOfTheDay[hour1])
+							 .arg(r.daysOfTheWeek[day2])
+							 .arg(r.hoursOfTheDay[hour2])
+							 )
+							 +" "
+							 +
+							 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
+							
+							dl.append(s);
+							cl.append(weightPercentage/100);
+							
+							*conflictsString+= s+"\n";
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	return r.setsShareStudents(this->students, s->name);
+}
+
+bool ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots::hasWrongDayOrHour(Rules& r)
+{
+	for(int k1=0; k1<selectedDays1.count(); k1++){
+		int day1=selectedDays1.at(k1);
+		int hour1=selectedHours1.at(k1);
+		
+		if(day1>=r.nDaysPerWeek)
+			return true;
+		if(hour1>=r.nHoursPerDay)
+			return true;
+	}
+	
+	for(int k2=0; k2<selectedDays2.count(); k2++){
+		int day2=selectedDays2.at(k2);
+		int hour2=selectedHours2.at(k2);
+		
+		if(day2>=r.nDaysPerWeek)
+			return true;
+		if(hour2>=r.nHoursPerDay)
+			return true;
+	}
+	
+	return false;
+}
+
+bool ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	assert(selectedDays1.count()==selectedHours1.count());
+	
+	QList<int> newDays1;
+	QList<int> newHours1;
+	
+	for(int i=0; i<selectedDays1.count(); i++)
+		if(selectedDays1.at(i)<r.nDaysPerWeek && selectedHours1.at(i)<r.nHoursPerDay){
+			newDays1.append(selectedDays1.at(i));
+			newHours1.append(selectedHours1.at(i));
+		}
+	
+	selectedDays1=newDays1;
+	selectedHours1=newHours1;
+	///////
+	assert(selectedDays2.count()==selectedHours2.count());
+	
+	QList<int> newDays2;
+	QList<int> newHours2;
+	
+	for(int i=0; i<selectedDays2.count(); i++)
+		if(selectedDays2.at(i)<r.nDaysPerWeek && selectedHours2.at(i)<r.nHoursPerDay){
+			newDays2.append(selectedDays2.at(i));
+			newHours2.append(selectedHours2.at(i));
+		}
+	
+	selectedDays2=newDays2;
+	selectedHours2=newHours2;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+
+	return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots::ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS;
+}
+
+ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots::ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots(double wp,
+ const QList<int>& sd1, const QList<int>& sh1, const QList<int>& sd2, const QList<int>& sh2)
+ : TimeConstraint(wp)
+ {
+	this->selectedDays1=sd1;
+	this->selectedHours1=sh1;
+	this->selectedDays2=sd2;
+	this->selectedHours2=sh2;
+
+	this->type=CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS;
+}
+
+bool ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	assert(selectedDays1.count()==selectedHours1.count());
+	assert(selectedDays2.count()==selectedHours2.count());
+
+	if(selectedDays1.count()==0){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint students pair of mutually exclusive sets of time slots is wrong because the first set of selected time slots is empty. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information, or removing the constraint. Constraint is:\n%1")
+		 .arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+	if(selectedDays2.count()==0){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint students pair of mutually exclusive sets of time slots is wrong because the second set of selected time slots is empty. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information, or removing the constraint. Constraint is:\n%1")
+		 .arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+
+	set1.clear();
+	list1.clear();
+	set2.clear();
+	list2.clear();
+	for(int k=0; k<selectedDays1.count(); k++){
+		int d=selectedDays1.at(k);
+		int h=selectedHours1.at(k);
+		if(d>=0 && d<r.nDaysPerWeek && h>=0 && h<r.nHoursPerDay){
+			set1.insert(d+h*r.nDaysPerWeek);
+			list1.append(d+h*r.nDaysPerWeek);
+		}
+	}
+	for(int k=0; k<selectedDays2.count(); k++){
+		int d=selectedDays2.at(k);
+		int h=selectedHours2.at(k);
+		if(d>=0 && d<r.nDaysPerWeek && h>=0 && h<r.nHoursPerDay){
+			set2.insert(d+h*r.nDaysPerWeek);
+			list2.append(d+h*r.nDaysPerWeek);
+		}
+	}
+
+	if(set1.intersects(set2)){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint students pair of mutually exclusive sets of time slots is wrong because the two sets of time slots have at least one common time slot. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+
+	return true;
+}
+
+bool ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+
+	s+=IL3+"<Number_of_Selected_Time_Slots_in_First_Set>"+QString::number(this->selectedDays1.count())+"</Number_of_Selected_Time_Slots_in_First_Set>\n";
+	for(int i=0; i<this->selectedDays1.count(); i++){
+		s+=IL3+"<Selected_Time_Slot_in_First_Set>\n";
+		s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->selectedDays1.at(i)])+"</Day>\n";
+		s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->selectedHours1.at(i)])+"</Hour>\n";
+		s+=IL3+"</Selected_Time_Slot_in_First_Set>\n";
+	}
+
+	s+=IL3+"<Number_of_Selected_Time_Slots_in_Second_Set>"+QString::number(this->selectedDays2.count())+"</Number_of_Selected_Time_Slots_in_Second_Set>\n";
+	for(int i=0; i<this->selectedDays2.count(); i++){
+		s+=IL3+"<Selected_Time_Slot_in_Second_Set>\n";
+		s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->selectedDays2.at(i)])+"</Day>\n";
+		s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->selectedHours2.at(i)])+"</Hour>\n";
+		s+=IL3+"</Selected_Time_Slot_in_Second_Set>\n";
+	}
+
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots>\n";
+	return s;
+}
+
+QString ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+	
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+	
+	QString s;
+	s+=tr("Students pair of mutually exclusive sets of time slots");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+
+	QString timeslots1=QString("");
+	for(int i=0; i<this->selectedDays1.count(); i++)
+		timeslots1+=r.daysOfTheWeek[selectedDays1.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours1.at(i)]+translatedCommaSpace();
+	timeslots1.chop(translatedCommaSpace().size());
+
+	QString timeslots2=QString("");
+	for(int i=0; i<this->selectedDays2.count(); i++)
+		timeslots2+=r.daysOfTheWeek[selectedDays2.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours2.at(i)]+translatedCommaSpace();
+	timeslots2.chop(translatedCommaSpace().size());
+
+	s+=tr("FSoSTS:%1", "First set of selected time slots").arg(timeslots1);s+=translatedCommaSpace();
+	s+=tr("SSoSTS:%1", "Second set of selected time slots").arg(timeslots2);
+
+	return begin+s+end;
+}
+
+QString ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots::getDetailedDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("All students have a pair of mutually exclusive sets of time slots");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+	QString timeslots1=QString("");
+	for(int i=0; i<this->selectedDays1.count(); i++)
+		timeslots1+=r.daysOfTheWeek[selectedDays1.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours1.at(i)]+translatedCommaSpace();
+	timeslots1.chop(translatedCommaSpace().size());
+
+	QString timeslots2=QString("");
+	for(int i=0; i<this->selectedDays2.count(); i++)
+		timeslots2+=r.daysOfTheWeek[selectedDays2.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours2.at(i)]+translatedCommaSpace();
+	timeslots2.chop(translatedCommaSpace().size());
+
+	s+=tr("First set of selected time slots=%1").arg(timeslots1);s+="\n";
+	s+=tr("Second set of selected time slots=%1").arg(timeslots2);s+="\n";
+
+	if(!active){
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken=0;
+
+	for(int i=0; i<r.nInternalSubgroups; i++){
+		for(int k1=0; k1<selectedDays1.count(); k1++){
+			int day1=selectedDays1.at(k1);
+			int hour1=selectedHours1.at(k1);
+			
+			if(subgroupsMatrix[i][day1][hour1]>0){
+				for(int k2=0; k2<selectedDays2.count(); k2++){
+					int day2=selectedDays2.at(k2);
+					int hour2=selectedHours2.at(k2);
+
+					if(subgroupsMatrix[i][day2][hour2]>0){
+						nbroken++;
+
+						if(conflictsString!=nullptr){
+							QString s=(tr(
+							 "Time constraint students pair of mutually exclusive sets of time slots broken for subgroup %1, first time slot's day %2, first time slot's hour %3, second time slot's day %4, second time slot's hour %5.")
+							 .arg(r.internalSubgroupsList[i]->name)
+							 .arg(r.daysOfTheWeek[day1])
+							 .arg(r.hoursOfTheDay[hour1])
+							 .arg(r.daysOfTheWeek[day2])
+							 .arg(r.hoursOfTheDay[hour2])
+							 )
+							 +" "
+							 +
+							 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
+							
+							dl.append(s);
+							cl.append(weightPercentage/100);
+							
+							*conflictsString+= s+"\n";
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return true;
+}
+
+bool ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots::hasWrongDayOrHour(Rules& r)
+{
+	for(int k1=0; k1<selectedDays1.count(); k1++){
+		int day1=selectedDays1.at(k1);
+		int hour1=selectedHours1.at(k1);
+		
+		if(day1>=r.nDaysPerWeek)
+			return true;
+		if(hour1>=r.nHoursPerDay)
+			return true;
+	}
+	
+	for(int k2=0; k2<selectedDays2.count(); k2++){
+		int day2=selectedDays2.at(k2);
+		int hour2=selectedHours2.at(k2);
+		
+		if(day2>=r.nDaysPerWeek)
+			return true;
+		if(hour2>=r.nHoursPerDay)
+			return true;
+	}
+	
+	return false;
+}
+
+bool ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	assert(selectedDays1.count()==selectedHours1.count());
+	
+	QList<int> newDays1;
+	QList<int> newHours1;
+	
+	for(int i=0; i<selectedDays1.count(); i++)
+		if(selectedDays1.at(i)<r.nDaysPerWeek && selectedHours1.at(i)<r.nHoursPerDay){
+			newDays1.append(selectedDays1.at(i));
+			newHours1.append(selectedHours1.at(i));
+		}
+	
+	selectedDays1=newDays1;
+	selectedHours1=newHours1;
+	///////
+	assert(selectedDays2.count()==selectedHours2.count());
+	
+	QList<int> newDays2;
+	QList<int> newHours2;
+	
+	for(int i=0; i<selectedDays2.count(); i++)
+		if(selectedDays2.at(i)<r.nDaysPerWeek && selectedHours2.at(i)<r.nHoursPerDay){
+			newDays2.append(selectedDays2.at(i));
+			newHours2.append(selectedHours2.at(i));
+		}
+	
+	selectedDays2=newDays2;
+	selectedHours2=newHours2;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 
 	return true;
 }
