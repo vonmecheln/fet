@@ -22,14 +22,19 @@
 
 #include "ui_addteacherform_template.h"
 
+#include <QHash>
+#include <QString>
+
 class AddTeacherForm : public QDialog, Ui::AddTeacherForm_template
 {
 	Q_OBJECT
 	
 	bool teachersMorningsAfternoonsBehaviorChosen;
 	
+	QHash<QString, int>* activeHoursHashPointer;
+	
 public:
-	AddTeacherForm(QWidget* parent);
+	AddTeacherForm(QWidget* parent, QHash<QString, int>& activeHoursHash);
 
 	~AddTeacherForm();
 

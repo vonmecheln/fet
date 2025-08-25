@@ -2296,6 +2296,7 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 	cancelPushButton=nullptr;
 	if(oldsc==nullptr){
 		addConstraintPushButton=new QPushButton(tr("Add constraint"));
+		addConstraintPushButton->setDefault(true);
 		
 		switch(type){
 			case CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_DAY:

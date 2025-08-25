@@ -1183,7 +1183,7 @@ void ListSpaceConstraints::advancedFilter(bool active)
 
 		filter();
 
-		constraintsListWidget->setFocus();
+		//constraintsListWidget->setFocus();
 
 		return;
 	}
@@ -1225,7 +1225,7 @@ void ListSpaceConstraints::advancedFilter(bool active)
 
 		filter();
 
-		constraintsListWidget->setFocus();
+		//constraintsListWidget->setFocus();
 	}
 	else{
 		assert(useFilter==false);
@@ -2180,7 +2180,7 @@ void ListSpaceConstraints::addClicked()
 	constraintsListWidget->setCurrentRow(newRow);
 	constraintChanged();
 
-	constraintsListWidget->setFocus();
+	//constraintsListWidget->setFocus();
 }
 
 void ListSpaceConstraints::modifyClicked()
@@ -2189,7 +2189,7 @@ void ListSpaceConstraints::modifyClicked()
 	if(i<0){
 		QMessageBox::information(dialog, tr("FET information"), tr("Invalid selected constraint"));
 
-		constraintsListWidget->setFocus();
+		//constraintsListWidget->setFocus();
 
 		return;
 	}
@@ -2215,7 +2215,7 @@ void ListSpaceConstraints::modifyClicked()
 
 	constraintChanged();
 
-	constraintsListWidget->setFocus();
+	//constraintsListWidget->setFocus();
 }
 
 void ListSpaceConstraints::removeClicked()
@@ -2247,7 +2247,7 @@ void ListSpaceConstraints::removeClicked()
 					QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
 
 				if(wr==QMessageBox::No){
-					constraintsListWidget->setFocus();
+					//constraintsListWidget->setFocus();
 					return;
 				}
 			}
@@ -2265,7 +2265,7 @@ void ListSpaceConstraints::removeClicked()
 		s, tr("Yes"), tr("No"), QString(), 0, 1 );
 
 	if(lres!=0){
-		constraintsListWidget->setFocus();
+		//constraintsListWidget->setFocus();
 		return;
 	}
 
@@ -2308,7 +2308,7 @@ void ListSpaceConstraints::removeClicked()
 
 	constraintChanged();
 
-	constraintsListWidget->setFocus();
+	//constraintsListWidget->setFocus();
 }
 
 void ListSpaceConstraints::closeClicked()
@@ -2413,7 +2413,7 @@ void ListSpaceConstraints::sortedChanged(bool checked)
 
 	filter();
 
-	constraintsListWidget->setFocus();
+	//constraintsListWidget->setFocus();
 }
 
 void ListSpaceConstraints::activateConstraints()
@@ -2423,7 +2423,7 @@ void ListSpaceConstraints::activateConstraints()
 		QString s=tr("Activate the selected space constraints?");
 		ret=QMessageBox::question(dialog, tr("FET confirmation"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
 		if(ret==QMessageBox::No){
-			constraintsListWidget->setFocus();
+			//constraintsListWidget->setFocus();
 			return;
 		}
 	}
@@ -2478,7 +2478,7 @@ void ListSpaceConstraints::activateConstraints()
 		LockUnlock::increaseCommunicationSpinBox();
 	}
 
-	constraintsListWidget->setFocus();
+	//constraintsListWidget->setFocus();
 }
 
 void ListSpaceConstraints::deactivateConstraints()
@@ -2489,7 +2489,7 @@ void ListSpaceConstraints::deactivateConstraints()
 		 "(Note that the basic compulsory space constraints will not be deactivated, even if they are selected.)");
 		ret=QMessageBox::question(dialog, tr("FET confirmation"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
 		if(ret==QMessageBox::No){
-			constraintsListWidget->setFocus();
+			//constraintsListWidget->setFocus();
 			return;
 		}
 	}
@@ -2545,7 +2545,7 @@ void ListSpaceConstraints::deactivateConstraints()
 		LockUnlock::increaseCommunicationSpinBox();
 	}
 
-	constraintsListWidget->setFocus();
+	//constraintsListWidget->setFocus();
 }
 
 void ListSpaceConstraints::constraintComments()
@@ -2554,7 +2554,7 @@ void ListSpaceConstraints::constraintComments()
 	if(i<0){
 		QMessageBox::information(dialog, tr("FET information"), tr("Invalid selected constraint"));
 
-		constraintsListWidget->setFocus();
+		//constraintsListWidget->setFocus();
 
 		return;
 	}
@@ -2637,7 +2637,7 @@ void ListSpaceConstraints::constraintComments()
 		}
 	}
 
-	constraintsListWidget->setFocus();
+	//constraintsListWidget->setFocus();
 }
 
 void ListSpaceConstraints::selectionChanged()
@@ -2673,7 +2673,7 @@ void ListSpaceConstraints::changeWeights()
 		QMessageBox::information(dialog, tr("FET information"), tr("No constraints from your selection can change their weight"
 		 " (remember that some types of constraints are allowed to have only 100% weight)."));
 
-		constraintsListWidget->setFocus();
+		//constraintsListWidget->setFocus();
 
 		return;
 	}
@@ -2758,7 +2758,7 @@ void ListSpaceConstraints::changeWeights()
 		LockUnlock::increaseCommunicationSpinBox();
 	}
 
-	constraintsListWidget->setFocus();
+	//constraintsListWidget->setFocus();
 }
 
 void ListSpaceConstraints::showRelatedCheckBoxToggled()

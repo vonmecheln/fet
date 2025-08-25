@@ -404,6 +404,16 @@ const int CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS					
 const int CONSTRAINT_STUDENTS_SET_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS									=239;
 const int CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS										=240;
 
+const int CONSTRAINT_ACTIVITIES_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS									=241;
+const int CONSTRAINT_ACTIVITIES_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS											=242;
+
+//2025-08-17
+const int CONSTRAINT_TEACHER_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION										=243;
+const int CONSTRAINT_TEACHERS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION										=244;
+
+const int CONSTRAINT_STUDENTS_SET_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION								=245;
+const int CONSTRAINT_STUDENTS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION										=246;
+
 class QDataStream;
 
 QString getActivityDescription(Rules& r, int id);
@@ -12192,6 +12202,297 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
+class ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots)
+
+public:
+	QList<int> activitiesIds;
+
+	QSet<int> activitiesIdsSet;
+
+	QList<int> selectedDays1;
+	QList<int> selectedHours1;
+	QList<int> selectedDays2;
+	QList<int> selectedHours2;
+	
+	//internal variables
+	QList<int> _activitiesIndices;
+
+	QSet<int> timeSlotsSet1;
+	QList<int> timeSlotsList1;
+	QSet<int> timeSlotsSet2;
+	QList<int> timeSlotsList2;
+
+	ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots();
+
+	ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots(double wp, const QList<int>& a_L,
+	 const QList<int>& sd1, const QList<int>& sh1, const QList<int>& sd2, const QList<int>& sh2);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	void removeUseless(Rules& r);
+
+	void recomputeActivitiesSet();
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots)
+
+public:
+	QList<int> activitiesIds;
+
+	QSet<int> activitiesIdsSet;
+
+	int day1;
+	int hour1;
+	int day2;
+	int hour2;
+	
+	//internal variables
+	QList<int> _activitiesIndices;
+
+	ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots();
+	ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots(double wp, const QList<int>& a_L, int d1, int h1, int d2, int h2);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	void removeUseless(Rules& r);
+
+	void recomputeActivitiesSet();
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection)
+
+public:
+	int maxOccupiedSets;
+	
+	QList<QList<int>> selectedDays;
+	QList<QList<int>> selectedHours;
+	
+	QString teacherName;
+	
+	//internal
+	QList<QSet<int>> listOfSets;
+	QList<QList<int>> listOfLists;
+	
+	int teacher_ID;
+
+	ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection();
+
+	ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection(double wp, const QString& teacher, int mos, const QList<QList<int>>& sd, const QList<QList<int>>& sh);
+
+	QString getXmlDescription(Rules& r);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection)
+
+public:
+	int maxOccupiedSets;
+	
+	QList<QList<int>> selectedDays;
+	QList<QList<int>> selectedHours;
+	
+	//internal
+	QList<QSet<int>> listOfSets;
+	QList<QList<int>> listOfLists;
+	
+	ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection();
+
+	ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection(double wp, int mos, const QList<QList<int>>& sd, const QList<QList<int>>& sh);
+
+	QString getXmlDescription(Rules& r);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection)
+
+public:
+	int maxOccupiedSets;
+	
+	QList<QList<int>> selectedDays;
+	QList<QList<int>> selectedHours;
+	
+	QString students;
+	
+	//internal
+	QList<QSet<int>> listOfSets;
+	QList<QList<int>> listOfLists;
+	
+	QList<int> iSubgroupsList;
+
+	ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection();
+
+	ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection(double wp, const QString& s, int mos, const QList<QList<int>>& sd, const QList<QList<int>>& sh);
+
+	QString getXmlDescription(Rules& r);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection)
+
+public:
+	int maxOccupiedSets;
+	
+	QList<QList<int>> selectedDays;
+	QList<QList<int>> selectedHours;
+	
+	//internal
+	QList<QSet<int>> listOfSets;
+	QList<QList<int>> listOfLists;
+	
+	ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection();
+
+	ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection(double wp, int mos, const QList<QList<int>>& sd, const QList<QList<int>>& sh);
+
+	QString getXmlDescription(Rules& r);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
 //1
 QDataStream& operator<<(QDataStream& stream, const ConstraintBasicCompulsoryTime& tc);
 //2
@@ -12672,6 +12973,18 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersPairOfMutua
 QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots& tc);
 //240
 QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots& tc);
+//241
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots& tc);
+//242
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots& tc);
+//243
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection& tc);
+//244
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection& tc);
+//245
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection& tc);
+//246
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection& tc);
 
 //1
 QDataStream& operator>>(QDataStream& stream, ConstraintBasicCompulsoryTime& tc);
@@ -13153,5 +13466,17 @@ QDataStream& operator>>(QDataStream& stream, ConstraintTeachersPairOfMutuallyExc
 QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots& tc);
 //240
 QDataStream& operator>>(QDataStream& stream, ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots& tc);
+//241
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots& tc);
+//242
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots& tc);
+//243
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection& tc);
+//244
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection& tc);
+//245
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection& tc);
+//246
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection& tc);
 
 #endif

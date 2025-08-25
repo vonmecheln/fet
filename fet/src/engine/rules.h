@@ -1001,6 +1001,9 @@ private:
 
 	TimeConstraint* readTwoSetsOfActivitiesSameSections(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
+	TimeConstraint* readActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readActivitiesPairOfMutuallyExclusiveTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
 	TimeConstraint* readActivitiesOccupyMaxTimeSlotsFromSelection(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readActivitiesOccupyMinTimeSlotsFromSelection(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readActivitiesMaxSimultaneousInSelectedTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
@@ -1196,6 +1199,12 @@ private:
 	TimeConstraint* readTeachersPairOfMutuallyExclusiveSetsOfTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readStudentsPairOfMutuallyExclusiveSetsOfTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readTeacherOccupiesMaxSetsOfTimeSlotsFromSelection(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersOccupyMaxSetsOfTimeSlotsFromSelection(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsOccupyMaxSetsOfTimeSlotsFromSelection(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
 	TimeConstraint* readStudentsSetMaxSingleGapsInSelectedTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readStudentsMaxSingleGapsInSelectedTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);

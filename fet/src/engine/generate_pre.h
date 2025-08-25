@@ -477,6 +477,73 @@ void computeActivitiesNotOverlapping();
 ////////END   activities not overlapping
 
 
+//2025-08-09 - Constraint activities pair of mutually exclusive sets of time slots
+extern bool haveActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots;
+
+class ActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots_item
+{
+public:
+	//double weight; -> must be 100.0%
+	QList<int> activitiesList;
+	//QSet<int> activitiesSet;
+	QSet<int> timeSlotsSet1;
+	QList<int> timeSlotsList1;
+	QSet<int> timeSlotsSet2;
+	QList<int> timeSlotsList2;
+};
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+extern std::list<ActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots_item> apomesotsList;
+extern Matrix1D<QList<ActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots_item*>> apomesotsListForActivity;
+
+bool computeActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent);
+
+
+//2025-08-09 - Constraint activities pair of mutually exclusive time slots
+extern bool haveActivitiesPairOfMutuallyExclusiveTimeSlots;
+
+class ActivitiesPairOfMutuallyExclusiveTimeSlots_item
+{
+public:
+	//double weight; -> must be 100.0%
+	QList<int> activitiesList;
+	//QSet<int> activitiesSet;
+	int day1;
+	int hour1;
+	int day2;
+	int hour2;
+};
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+extern std::list<ActivitiesPairOfMutuallyExclusiveTimeSlots_item> apometsList;
+extern Matrix1D<QList<ActivitiesPairOfMutuallyExclusiveTimeSlots_item*>> apometsListForActivity;
+
+bool computeActivitiesPairOfMutuallyExclusiveTimeSlots(QWidget* parent);
+
+
+//BEGIN teacher(s) occupy max sets of time slots from selection
+extern bool haveTeachersOccupyMaxSetsOfTimeSlotsFromSelection;
+
+extern Matrix1D<QList<double>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionPercentages;
+extern Matrix1D<QList<int>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets;
+extern Matrix1D<QList<QList<QSet<int>>>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets;
+extern Matrix1D<QList<QList<QList<int>>>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists;
+
+bool computeTeachersOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent);
+//END   teacher(s) occupy max sets of time slots from selection
+
+//BEGIN students (set) occupy max sets of time slots from selection
+extern bool haveStudentsOccupyMaxSetsOfTimeSlotsFromSelection;
+
+extern Matrix1D<QList<double>> subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionPercentages;
+extern Matrix1D<QList<int>> subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets;
+extern Matrix1D<QList<QList<QSet<int>>>> subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets;
+extern Matrix1D<QList<QList<QList<int>>>> subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists;
+
+bool computeSubgroupsOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent);
+//END   students (set) occupy max sets of time slots from selection
+
+
 //BEGIN teacher(s) pair of mutually exclusive time slots
 extern bool haveTeachersPairOfMutualExclusiveTimeSlots;
 

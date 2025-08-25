@@ -39,9 +39,11 @@
 extern const QString COMPANY;
 extern const QString PROGRAM;
 
-AddTeacherForm::AddTeacherForm(QWidget* parent): QDialog(parent)
+AddTeacherForm::AddTeacherForm(QWidget* parent, QHash<QString, int>& activeHoursHash): QDialog(parent)
 {
 	setupUi(this);
+	
+	activeHoursHashPointer=&activeHoursHash;
 	
 	teachersMorningsAfternoonsBehaviorChosen=false;
 	
@@ -198,6 +200,9 @@ void AddTeacherForm::addTeacher()
 	}
 	else{
 		QMessageBox::information(this, tr("FET information"), tr("Teacher added"));
+		
+		assert(!activeHoursHashPointer->contains(tn));
+		activeHoursHashPointer->insert(tn, 0);
 
 		gt.rules.addUndoPoint(tr("Added the teacher with the description:\n\n%1").arg(tch->getDetailedDescription(gt.rules)));
 	}

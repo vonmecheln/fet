@@ -400,7 +400,7 @@ void TimetableGenerateForm::stop()
 	 "activities in the list below, which might be impossible to schedule:");
 	s+="\n\n";
 	s+=TimetableGenerateForm::tr("Here are the placed activities which led to an inconsistency, "
-	 "in order from the first one to the last (the last one FET failed to schedule "
+	 "in order, from the first one to the last one (the last one FET failed to schedule "
 	 "and the last ones are most likely the difficult ones):");
 	s+="\n\n";
 	for(int i=0; i<gen.nDifficultActivities; i++){
@@ -1278,7 +1278,7 @@ void TimetableGenerateForm::seeImpossible()
 	 "activities in the list below, which might be difficult to schedule:");
 	s+="\n\n";
 	s+=TimetableGenerateForm::tr("Here are the placed activities which led to a difficulty, "
-	 "in order from the first one to the last (the last one FET failed to schedule "
+	 "in order, from the first one to the last one (the last one FET failed to schedule "
 	 "and the last ones are probably difficult):");
 	s+="\n\n";
 	for(int i=0; i<gen.nDifficultActivities; i++){

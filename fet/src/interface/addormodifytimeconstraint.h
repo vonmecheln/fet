@@ -20,6 +20,8 @@
 
 #include "timeconstraint.h"
 
+#include "matrix.h"
+
 #include <QAbstractItemDelegate>
 #include <QStyledItemDelegate>
 
@@ -79,6 +81,10 @@ class AddOrModifyTimeConstraintDialog: public QDialog
 	QString dialogTitle;
 	QEventLoop* eventLoop;
 
+	QTableWidget* occupyMaxTimesTable;
+	QAbstractItemDelegate* occupyMaxOldItemDelegate;
+	AddOrModifyTimeConstraintTimesTableDelegate* occupyMaxNewItemDelegate;
+
 	CornerEnabledTableWidget* timesTable;
 	QAbstractItemDelegate* oldItemDelegate;
 	AddOrModifyTimeConstraintTimesTableDelegate* newItemDelegate;
@@ -105,6 +111,10 @@ class AddOrModifyTimeConstraintDialog: public QDialog
 
 public:
 	AddOrModifyTimeConstraintDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop,
+									QTableWidget* _occupyMaxTimesTable,
+									QAbstractItemDelegate* _occupyMaxOldItemDelegate,
+									AddOrModifyTimeConstraintTimesTableDelegate* _occupyMaxNewItemDelegate,
+
 									CornerEnabledTableWidget* _timesTable,
 									QAbstractItemDelegate* _oldItemDelegate,
 									AddOrModifyTimeConstraintTimesTableDelegate* _newItemDelegate,
@@ -140,6 +150,14 @@ class AddOrModifyTimeConstraint: public QObject
 	
 	int type;
 	TimeConstraint* oldtc;
+
+	QTableWidget* occupyMaxSetsOfTimeSlotsFromSelectionTableWidget;
+	QAbstractItemDelegate* occupyMaxOldItemDelegate;
+	AddOrModifyTimeConstraintTimesTableDelegate* occupyMaxNewItemDelegate;
+	Matrix2D<QSpinBox*> spinBoxesTable;
+
+	bool ctrActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots; //true only if the constraint is of this type
+	bool ctrActivitiesPairOfMutuallyExclusiveTimeSlots; //true only if the constraint is of this type
 
 	//for teacher(s)/students (set) pair of mutually exclusive time slots
 	QGroupBox* firstTimeSlotGroupBox;
@@ -422,6 +440,13 @@ private:
 	void firstFilter_showRelatedCheckBoxToggled();
 	void secondFilter_showRelatedCheckBoxToggled();
 	void thirdFilter_showRelatedCheckBoxToggled();
+	
+	void initOccupyMaxTableWidget();
+	void fillSpinBoxTimesTable(const QList<QList<int>>& days, const QList<QList<int>>& hours);
+	void getSpinBoxTimesTable(QList<QList<int>>& days, QList<QList<int>>& hours);
+
+	void colorSpinBox();
+	void colorAllSpinBoxes();
 };
 
 #endif

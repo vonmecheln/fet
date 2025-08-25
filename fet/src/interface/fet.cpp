@@ -296,19 +296,19 @@ void usage(QTextStream* out, const QString& error)
 		"\n"
 		
 		"\t--printsubjects=PS\n"
-		"\t\tPS is either true or false and represets if you want the subjects to be present in the final HTML timetables (default true).\n"
+		"\t\tPS is either true or false and represents if you want the subjects to be present in the final HTML timetables (default true).\n"
 		"\n"
 		"\t--printactivitytags=PAT\n"
-		"\t\tPAT is either true or false and represets if you want the activity tags to be present in the final HTML timetables (default true).\n"
+		"\t\tPAT is either true or false and represents if you want the activity tags to be present in the final HTML timetables (default true).\n"
 		"\n"
 		"\t--printteachers=PT\n"
-		"\t\tPT is either true or false and represets if you want the teachers to be present in the final HTML timetables (default true).\n"
+		"\t\tPT is either true or false and represents if you want the teachers to be present in the final HTML timetables (default true).\n"
 		"\n"
 		"\t--printstudents=PSt\n"
-		"\t\tPSt is either true or false and represets if you want the students to be present in the final HTML timetables (default true).\n"
+		"\t\tPSt is either true or false and represents if you want the students to be present in the final HTML timetables (default true).\n"
 		"\n"
 		"\t--printrooms=PR\n"
-		"\t\tPR is either true or false and represets if you want the rooms to be present in the final HTML timetables (default true).\n"
+		"\t\tPR is either true or false and represents if you want the rooms to be present in the final HTML timetables (default true).\n"
 		
 		"\n"
 		"\t--printnotavailable=PNA\n"
@@ -345,7 +345,7 @@ void usage(QTextStream* out, const QString& error)
 		"generation options to group activities in the initial order (default true).\n"
 		"\n"
 		"\t--warnsubgroupswiththesameactivities=WSSA\n"
-		"\t\tWSSA is either true or false, represents whether you want a message box to be show, with a warning, if your input file contains subgroups which have "
+		"\t\tWSSA is either true or false, represents whether you want a message box to be shown, with a warning, if your input file contains subgroups which have "
 		"the same activities (default true).\n"
 		"\n"
 		"\t--printdetailedtimetables=PDT\n"
@@ -375,7 +375,7 @@ void usage(QTextStream* out, const QString& error)
 		"\t\tSVR is either true or false, represents whether you want to show virtual rooms in the timetables (default false).\n"
 		"\n"
 		"\t--warnifusingactivitiesnotfixedtimefixedspacevirtualroomsrealrooms=WANFTFS\n"
-		"\t\tWANFTFS is either true or false, represents whether you want the program to issue a warning if you are using activites which are not fixed in time, "
+		"\t\tWANFTFS is either true or false, represents whether you want the program to issue a warning if you are using activities which are not fixed in time, "
 		"but are fixed in space in a virtual room, specifying also the real rooms (which is not recommended) (default true).\n"
 		"\n"
 		"\t--warnifusingmaxhoursdailywithlessthan100percentweight=WMHDWLT100PW\n"
@@ -3596,7 +3596,7 @@ int main(int argc, char **argv)
 			s+=QString("\n\n----------\n\n");
 			
 			s+=FetTranslate::tr("Here are the placed activities which led to an inconsistency, "
-			 "in order from the first one to the last (the last one FET failed to schedule "
+			 "in order, from the first one to the last one (the last one FET failed to schedule "
 			 "and the last ones are most likely the difficult ones):");
 			s+="\n\n";
 			for(int i=0; i<gen.nDifficultActivities; i++){

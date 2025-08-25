@@ -78,7 +78,9 @@ public:
 	QString getXmlDescription(const Rules& r);
 	QString getDescription(const Rules& r);
 	QString getDetailedDescription(const Rules& r);
+	QString getDetailedDescriptionWithNumberOfActiveHours(const Rules& r, const QHash<QString, int>& activeHoursHash);
 	QString getDetailedDescriptionWithConstraints(Rules& r);
+	QString getDetailedDescriptionWithConstraintsAndNumberOfActiveHours(Rules& r, const QHash<QString, int>& activeHoursHash);
 
 	void recomputeQualifiedSubjectsHash();
 };

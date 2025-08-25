@@ -22,14 +22,19 @@
 
 #include "ui_modifyteacherform_template.h"
 
+#include <QHash>
+#include <QString>
+
 class ModifyTeacherForm : public QDialog, Ui::ModifyTeacherForm_template
 {
 	Q_OBJECT
 	
 	Teacher* tch;
 	
+	QHash<QString, int>* activeHoursHashPointer;
+	
 public:
-	ModifyTeacherForm(QWidget* parent, Teacher* _tch);
+	ModifyTeacherForm(QWidget* parent, Teacher* _tch, QHash<QString, int>& activeHoursHash);
 
 	~ModifyTeacherForm();
 

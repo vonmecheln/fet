@@ -75,6 +75,8 @@ From Smail Smail, on Facebook: We would only like if you improve the output of t
 
 From Abdelhakim Zoumar, on Facebook: We would be very pleased if you make the output manipulable : to make minor changes such as to replace , add , or delete... .
 
+See also item #729.
+
 0.75-------------------------------------------------------
 From Thành Nam:
 
@@ -1282,7 +1284,7 @@ About constraint min gaps between a set of activities:
 
 Now, how about applying this contraint globally? I mean every activities with subject (or tag) Math sould be 2 hours apart from an activity with subject (or tag) Physics?
 Entering all activities, one by one is tedious
-How it is easy/possible to add: min gaps between a set of activites with a tag?
+How it is easy/possible to add: min gaps between a set of activities with a tag?
 
 or better:
 Min gaps between two subjects/tag
@@ -5086,7 +5088,7 @@ I attached the file and try to generate and check:
 
     Nr. 895 and 896 activities (without any teacher and student)
     They have preferred starting time: "Szerda 1." (Wednesday) and "Hétfő 3." (Monday) with 100%
-    They have same starting time (day+hour) with 7 other activites (for example 647 and 648)
+    They have same starting time (day+hour) with 7 other activities (for example 647 and 648)
     Generate (without success)
     Check the student's timetable, go to "11A" and the 647 is on "Péntek" (Friday)!
 
@@ -10993,3 +10995,264 @@ and the last slot of that afternoon. It is exactly what you need.
 Pass Enger:
 
 I'll try to apply it... but the suggestion I gave you will be easy and straightforward to implement... I hope you succeed in applying it.
+
+730--------------------------------------------------------
+The first suggestion was done in FET-7.4.4 on 2025-08-09.
+
+From Bachir Nacer Elhak Sayah (on Facebook):
+
+2- always the same topic: if it is possible to select multiple teachers to change their type together... and not to do them one by one.
+
+731--------------------------------------------------------
+From Bachir Nacer Elhak Sayah (on Facebook):
+
+He suggests that the teacher not available times dialogs should have a behavior like the teachers not available times time horizontal,
+so the user can click and drag more cells, or click on a half day's header and change the cells only for a half day.
+
+732--------------------------------------------------------
+From aries10 (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6483.0
+
+I'd like to suggest two changes to the activity constraints: the possibility to modify the percentage of the maximum or minimum number
+of activities in the selected time slots to allow for more solutions to be found. At the moment, the constraint is only at 100%.
+
+Liviu Lalescu:
+
+Please confirm me that you refer to the constraints min/max simultaneous activities in selected time slots.
+
+aries10:
+
+Yes, I confirm this.
+
+733--------------------------------------------------------
+From GUEFFAZ REDA (on Facebook):
+
+He sent more screenshots and messages as FET suggestions to Liviu Lalescu:
+
+1. After the user inputs the activities, he can create the teachers' qualifications from these activities.
+
+2. Add the number of activities and the duration of the activities for the teacher in the teacher's not available times dialog.
+
+3. Raport detaillee pour les classes et les professeur nb trous nb demi-journee libres nb journee libres (add detailed statistics
+for the students and the teachers in the Mornings-Afternoons mode for half-days).
+
+4. After the user interrupts the single timetable generation, he gets a dialog with the order of the impossible activities. He suggested
+to highlight the locked activities (he suggested the yellow color).
+
+734--------------------------------------------------------
+From Youssef Bourdha (via GUEFFAZ REDA, on Facebook), copied by Liviu Lalescu on the forum:
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6491.0
+
+Google Translate from Arabic to English:
+
+This is a suggestion from Brother Youssef Bourdha
+To develop a new entry
+Develop the existing entry
+There is an entry
+Students arrive early, maximum start time in the second period
+---------
+We add a new entry
+--------
+Students arrive early, maximum start time in the third period
+----*****-------
+Thus, we use the first entry to prevent attendance in the second period by setting it to 0
+And we allow attendance and start time with the third period with the new entry
+
+Liviu Lalescu:
+
+It is not like that
+Max 0 beginnings at second hour means that the students will always begin at the first hour.
+The solution might be another new constraint, if the students have activities at the second hour they must have also activities in the first hour.
+
+735--------------------------------------------------------
+From GUEFFAZ REDA (on Facebook):
+
+He sent Liviu Lalescu a screenshot, with the timetable generate single dialog, and the text over the button of writing the highest-stage timetable:
+"Automatically write over the file every time if it exceeds half the number of activities."
+
+He said that he generated for 30 hours and the power supply went off, and he lost all that computation.
+
+736---------------------------------------------------------
+From Khineche Kaddour (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6499.0
+
+Google translate from Arabic to English:
+
+After the recent updates, the tables now display beautifully, especially in the outputs groups_days_horizontal.html and teachers_days_horizontal.html.
+However, we still use print utilities to add headings above the student and teacher tables, such as:
+People's Democratic Republic of Algeria
+Ministry of National Education
+Directorate of Education for the State: Name of State
+High School: Name of High School
+Academic Year: 2025/2026
+This is in the center of the page, in clear, somewhat large fonts above each student and teacher table.
+My suggestion: Is it possible to add an option to place this information from the program so that it appears in all tables, in the center of the page,
+and in large fonts? This way, we can print directly from the output without resorting to utilities.
+Thank you very much for the wonderful program.
+
+Liviu Lalescu:
+
+Khineche Kaddour posted an example picture. The header is centered horizontally and above the table, and has some lines with larger fonts than the table's,
+and some with fonts the same size as the table's.
+
+737---------------------------------------------------------
+From Benahmed Abdelkrim (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=2607.msg36075#msg36075
+
+(Possibly continuing item #267)
+
+Liviu Lalescu:
+
+I have a question, related to http://lalescu.ro/liviu/fet/forum/index.php?topic=2603.msg14012#msg14012 :
+
+A constraint min days between activities, with force consecutive if same day = true. Can (should) two activities if on the same day span over a break?
+
+In the present, two activities cannot be consecutive on the same day over a break if force consecutive is selected.
+
+If I make this change, to allow spread over a break, I cannot undo it in subsequent FET versions.
+
+Benahmed Abdelkrim:
+
+Suggestion: If it is possible to add this feature as an option (selection box) to this constraint, it would be better and beneficial for everyone.
+
+Liviu Lalescu:
+
+Maybe we could make the "force consecutive if on the same day" with three values: no, yes_continuously, yes_allowed_breaks_in_between, or something like that.
+
+Or maybe the three-valued option:
+
+"Consecutive if on the same day":
+
+- "Indifferent". Or "Don't care".
+- "Consecutive but allow break in between".
+- "Consecutive" (default when adding a split activity or a constraint min days between activities).
+
+When reading old files, make the new setting indifferent (if NO), or consecutive (if YES).
+
+Benahmed Abdelkrim:
+
+Maybe, but I prefer to leave things as they are, and simply add one line with a selection square: allow a break between activities.
+
+Or this sentence:Allow consecutive activities to spread after a break time.
+
+Or this: if consecutive allow activities to spread after a break time.
+
+Liviu Lalescu:
+
+I noted your opinion, but we need to think of this: adding two Boolean variables for a constraint complicates things. Also, there are not really 2x2=4 options,
+but only 3, because if the "Force consecutive if on same day" is false, the new variable "Allow breaks between activities" is useless.
+
+Benahmed Abdelkrim:
+
+Yes, I agree with you. It will be as you said: useless because the new variable will only work if the first variable works, but it is simple and
+understandable and does not complicate things too much.
+
+Vangelis Karafillidis:
+
+I thought that the clearest form for this feature would be a double check box. The first part should be "consecutive if on the same day".
+This first part should always be "active" (i.e. the user should always be able to check/uncheck it); the second part should be "inactive"
+(i.e. the user should not be able to select anything) when the first check box is unchecked) and become automatically "active"
+(i.e. the user should be able to check it) when the first check box is checked, and appear by default unchecked when the first one is unchecked.
+This second part should be a "sub-option" (a "nested" option) and appear "indented" to the right (when compared to the first part/option).
+I think that the indication "allow break(s) between consecutive activities" is the clearest one I could think of.
+
+Liviu Lalescu:
+
+Also, for the Mornings-Afternoons mode, the two activities must be on the same half day if they are on the same real day. This is current in FET.
+Do you need to allow one activity morning and the other afternoon?
+
+Benahmed Abdelkrim:
+
+I think that for the morning - afternoon mode it does not matter; the 2 activities placed in the same half-day or separated, one in the morning
+and the other in the afternoon... but we must accept that this is relative and depends a lot on the wishes of the users.
+
+Liviu Lalescu:
+
+Maybe allowing breaks for the constraint (the check box would be checked) would allow one activity in the morning and the next one in the afternoon;
+otherwise, they must be immediately consecutive on the same half day.
+
+Benahmed Abdelkrim:
+
+Agree with this idea.
+
+738---------------------------------------------------------
+From Mo Da (on Facebook):
+
+Would it be possible to add a feature to your program FET that consists of a button allowing the user to return to the last state
+(or several previous states) before changing activities and constraints in the timetable, or to go back to one of the previous
+generated versions.
+
+739---------------------------------------------------------
+From Aboulhamid (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6491.msg36105#msg36105
+
+Currently, the program includes two categories of constraints depending on the scope: one that applies to an individual teacher, and another
+that applies to all teachers.
+If possible, it would be highly appreciated to add a third category of constraints that applies specifically to a selected group of teachers.
+
+Vangelis Karafillidis:
+
+Liviu.
+
+I think that there might be some kind of misunderstanding...
+There are two variants.
+1) The "literal" variant: The user needs to define a group of teachers and then apply the necessary constraints to this group of teachers.
+2) The "functional" variant: The user can select the teachers they need (let's say by clicking on the respective checkbox for each one of
+the teachers), and then add the constraint to the selected teachers (practically: add multiple constraints at once... one constraint for
+each one of the selected teachers).
+
+The 1st variant seems to be what Aboulhamid suggested, and most likely it's difficult and tricky to code.
+The 2nd variant, seems (at least to me) to be primarily some kind of UI "manipulation", which most likely does not need some "tricky" code
+for defining groups teachers, plus some "exotic" code for applying constraints to groups of teachers. Maybe... the 2nd variant (regarding
+the functionality part) is a good option, without severe implications regarding the coding part. What do you think Liviu? And... what do
+other users think about these variants?
+
+Liviu Lalescu:
+
+Vangelis, I considered the first variant (defining groups of teachers).
+
+740---------------------------------------------------------
+From islam (on Facebook):
+
+I want to suggest to add a new constraint if you can, max resting hours between morning and afternoon for a teacher.
+
+741---------------------------------------------------------
+From YOUSSEF HOUIET (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6504.0
+
+I noticed a possible issue in FET when using the constraint A set of activities has a set of preferred starting times.
+
+If I add this constraint with duration = 2, while in fact the file contains no activities of duration 2, FET shows the following error when
+starting generation the timetable:
+
+(and attached is a screenshot: "Following constraint is wrong (refers to no activities). Please correct it:".)
+
+742---------------------------------------------------------
+From YOUSSEF HOUIET (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6505.msg36119#msg36119
+
+I have an idea to help the user input sets of time slots by using colors for the fields, all the fields of the same group having the same color.
+
+(YOUSSEF HOUIET refers to the dialog of adding/modifying the constraints of type teacher(s)/students (set) occupy max sets of time slots from selection,
+where there is a table of spin boxes.)
+
+743---------------------------------------------------------
+From thiagonunes (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6508.0
+
+I would like to suggest that the csv file export include information like teacher's long name and code. The same for students, subjects and spaces.
+I usually use these file to customize HTML and CSS.
+
+744---------------------------------------------------------
+From Anisse Hanifi (on Facebook):
+
+When the program stops production, can the program indicate the restriction that hinders production and not activity?
+
+Also, number the entries in the list (the time and space constraints).

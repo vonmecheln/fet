@@ -69,7 +69,7 @@ int LongTextMessageBox::confirmationWithDimensions
 	Q_UNUSED(isError);
 
 	if(button0Text==QString() || button1Text==QString() || button2Text!=QString()){
-		QMessageBox::critical(parent, tr("FET critical"), tr("You have met a FET bug. The problem is in file"
+		QMessageBox::critical(parent, tr("FET critical"), tr("You have encountered a FET bug. The problem is in file"
 		 " %1 line %2, the reason is that a confirmation dialog box does not get exactly 2 arguments. Please report bug. FET will now continue."
 		 " You probably don't have any problems with your data file - you can save it.").arg(__FILE__).arg(__LINE__));
 	}

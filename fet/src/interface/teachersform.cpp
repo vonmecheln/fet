@@ -67,7 +67,6 @@ TeachersForm::TeachersForm(QWidget* parent): QDialog(parent)
 
 	connect(sortTeachersPushButton, &QPushButton::clicked, this, &TeachersForm::sortTeachers);
 	connect(removeTeacherPushButton, &QPushButton::clicked, this, &TeachersForm::removeTeacher);
-	connect(teachersListWidget, &QListWidget::currentRowChanged, this, &TeachersForm::teacherChanged);
 	connect(activateTeacherPushButton, &QPushButton::clicked, this, &TeachersForm::activateTeacher);
 	connect(deactivateTeacherPushButton, &QPushButton::clicked, this, &TeachersForm::deactivateTeacher);
 	connect(teachersListWidget, &QListWidget::itemDoubleClicked, this, &TeachersForm::modifyTeacher);
@@ -89,8 +88,28 @@ TeachersForm::TeachersForm(QWidget* parent): QDialog(parent)
 		teachersListWidget->addItem(tch->name);
 	}
 	
-	if(teachersListWidget->count()>0)
+	activeHoursHash.clear();
+	for(Teacher* tch : std::as_const(gt.rules.teachersList)){
+		assert(!activeHoursHash.contains(tch->name));
+		activeHoursHash.insert(tch->name, 0);
+	}
+	for(Activity* act : std::as_const(gt.rules.activitiesList)){
+		if(act->active){
+			for(const QString& tch : std::as_const(act->teachersNames)){
+				assert(activeHoursHash.contains(tch));
+				int td=activeHoursHash.value(tch);
+				td+=act->duration;
+				activeHoursHash.insert(tch, td);
+			}
+		}
+	}
+
+	if(teachersListWidget->count()>0){
 		teachersListWidget->setCurrentRow(0);
+		teacherChanged(0);
+	}
+	
+	connect(teachersListWidget, &QListWidget::currentRowChanged, this, &TeachersForm::teacherChanged);
 }
 
 TeachersForm::~TeachersForm()
@@ -127,10 +146,10 @@ void TeachersForm::addTeacher()
 		delete tch;// user entered nothing or pressed Cancel
 	}*/
 
-	AddTeacherForm form(this);
+	AddTeacherForm form(this, activeHoursHash);
 	setParentAndOtherThings(&form, this);
 	form.exec();
-	
+
 	teachersListWidget->clear();
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
 		Teacher* tch=gt.rules.teachersList[i];
@@ -170,6 +189,9 @@ void TeachersForm::removeTeacher()
 
 	int tmp=gt.rules.removeTeacher(text);
 	if(tmp){
+		assert(activeHoursHash.contains(text));
+		activeHoursHash.remove(text);
+
 		teachersListWidget->setCurrentRow(-1);
 		QListWidgetItem* item;
 		item=teachersListWidget->takeItem(i);
@@ -232,7 +254,7 @@ void TeachersForm::modifyTeacher()
 	Teacher* tch=gt.rules.teachersList.at(i);
 	assert(tch->name==teachersListWidget->currentItem()->text());
 	
-	ModifyTeacherForm form(this, tch);
+	ModifyTeacherForm form(this, tch, activeHoursHash);
 	setParentAndOtherThings(&form, this);
 	form.exec();
 
@@ -396,7 +418,7 @@ void TeachersForm::teacherChanged(int index)
 	
 	Teacher* t=gt.rules.teachersList.at(index);
 	assert(t!=nullptr);
-	QString s=t->getDetailedDescriptionWithConstraints(gt.rules);
+	QString s=t->getDetailedDescriptionWithConstraintsAndNumberOfActiveHours(gt.rules, activeHoursHash);
 	currentTeacherTextEdit->setPlainText(s);
 }
 

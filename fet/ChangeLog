@@ -1,7 +1,22 @@
+ 7.4.5
+	- Added a new type of constraint: teacher(s)/students (set) occupy max sets of time slots from selection (suggested recently by
+	Sérgio Augusto Dias Castro; it was also suggested in the past by GUEFFAZ REDA and maybe other users; YOUSSEF HOUIET suggested
+	the option to color the selected slots distinctively, and Andrea Primiani, the Italian translator, found some important English
+	mistakes in the new constraint). The maximum value can be chosen by the user to be 1 or 2. This constraint might be useful for
+	instance to constrain the teachers to work only maximum 2 shifts out of 3 per day.
+ 7.4.4
+	- Added two new types of constraints: activities pair of mutually exclusive time slots and activities pair of mutually exclusive sets of
+	time slots (suggested by Vũ Ngọc Thành).
+	- The detailed description of the selected teacher in the teachers' dialog will show the total duration of his/her active activities
+	(suggested by Bachir Nacer Elhak Sayah).
+	- The program will keep the focus on the last pressed button in the dialogs which list the time/space constraints (suggested by more users,
+	via YOUSSEF HOUIET).
+	- A few English text fields were corrected/improved (reported by Volker Dirr, found using ChatGPT and Gemini).
+	- A few Romanian translations were corrected/improved (reported by Volker Dirr, found using ChatGPT and Gemini).
  7.4.3
-	- Added a new type of constraint: teacher(s)/students set pair of mutually exclusive sets of time slots (suggested by YOUSSEF HOUIET, and maybe
+	- Added a new type of constraint: teacher(s)/students (set) pair of mutually exclusive sets of time slots (suggested by YOUSSEF HOUIET, and maybe
 	other users in the past).
-	- Code cleanup (reported by Coverity Scan).
+	- Code cleanup (fixing issues reported by Coverity Scan).
  7.4.2
 	- Crash bugs fixed: if the user's file contained no activity tags, and if the user tried to add some time constraints for tags, such as teachers
 	activity tag max hours daily, the program did not report the error and added the constraint with an empty tag, and later crashed with an assertion
@@ -138,9 +153,9 @@
 	- Improved the add/modify constraints dialogs which include a times table: the user can click on the top-left corner instead of the button "Toggle all",
 	button which will now toggle/swap empty (green) cells with X (red) cells. Suggested by Volker Dirr and gradgrind; gradgrind also suggested the main idea
 	for coding this. Volker suggested to use the ∀ symbol in the top-left corner to express this functionality.
-	- The add/modify constraints dialogs with tables will each have a separate option, a check box, for choosing whether to use colors or not (sugested
+	- The add/modify constraints dialogs with tables will each have a separate option, a check box, for choosing whether to use colors or not (suggested
 	by GUEFFAZ REDA).
-	- Added filters in the constraints teachers/students not available time horizontal views (sugested by GUEFFAZ REDA).
+	- Added filters in the constraints teachers/students not available time horizontal views (suggested by GUEFFAZ REDA).
 	- The students filters in the dialogs for listing the constraints and in the dialogs for adding/modifying the constraints will have a 'Show related'
 	check box (suggested by more users in the past).
  7.0.4
@@ -179,7 +194,7 @@
  6.28.4
 	- Crash bugs fixed, if trying to add constraints teacher/teachers max hours daily in an hourly interval with max hours daily = 0. Reported by math.
 	- The timetable views days horizontal/vertical now contain check boxes to show/hide the teachers, the students, the subjects, the activity tags,
-	and the rooms (sugested by GUEFFAZ REDA).
+	and the rooms (suggested by GUEFFAZ REDA).
  6.28.3
 	- Updated to Qt 6.8.1.
  6.28.2
@@ -552,7 +567,7 @@
 	- Code cleanup.
  6.7.4
 	- Added the possibility to select, in the Mornings-Afternoons mode, instead of min days between activities, the number of min _half_ days between activities,
-	when adding activities from the interface or when importing them from CSV files (suggested by ngoctp29121982, who's advice was very useful).
+	when adding activities from the interface or when importing them from CSV files (suggested by ngoctp29121982, whose advice was very useful).
 	The export of the activities to CSV files in this case is also updated (if there are constraints of type min half days between activities, they will be exported
 	in a format compatible with the importing).
 	- Code cleanup.
@@ -2405,7 +2420,7 @@
 	- Small interface bug fixes in ConstraintMaxRoomChangesPerDay add dialog and modify
 	dialog (reported by Daan Huntjens).
  3.16.6
-	- The activity can now contain maximum 100 teachers (sugested by Dragos Petrascu)
+	- The activity can now contain maximum 100 teachers (suggested by Dragos Petrascu)
  3.16.5
 	- The _studentstimetable2.html contains also the teachers (suggested by Daniel Schockett).
  3.16.4

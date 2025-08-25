@@ -203,9 +203,96 @@ QString Teacher::getDetailedDescription(const Rules& r)
 	return s;
 }
 
+QString Teacher::getDetailedDescriptionWithNumberOfActiveHours(const Rules& r, const QHash<QString, int>& activeHoursHash)
+{
+	QString s=tr("Teacher");
+	s+="\n";
+	s+=tr("Name=%1", "The (short) name of the teacher").arg(this->name);
+	s+="\n";
+	s+=tr("Long name=%1", "The long name of the teacher").arg(this->longName);
+	s+="\n";
+	s+=tr("Code=%1", "The code of the teacher").arg(this->code);
+	s+="\n";
+	
+	if(r.mode==MORNINGS_AFTERNOONS){
+		QString mab;
+		if(morningsAfternoonsBehavior==TEACHER_UNRESTRICTED_MORNINGS_AFTERNOONS)
+			mab=tr("Unrestricted mornings/afternoons");
+		else if(morningsAfternoonsBehavior==TEACHER_MORNING_OR_EXCLUSIVELY_AFTERNOON)
+			mab=tr("Exclusive mornings/afternoons");
+		else if(morningsAfternoonsBehavior==TEACHER_ONE_DAY_EXCEPTION)
+			mab=tr("One day exception");
+		else if(morningsAfternoonsBehavior==TEACHER_TWO_DAYS_EXCEPTION)
+			mab=tr("Two days exception");
+		else if(morningsAfternoonsBehavior==TEACHER_THREE_DAYS_EXCEPTION)
+			mab=tr("Three days exception");
+		else if(morningsAfternoonsBehavior==TEACHER_FOUR_DAYS_EXCEPTION)
+			mab=tr("Four days exception");
+		else if(morningsAfternoonsBehavior==TEACHER_FIVE_DAYS_EXCEPTION)
+			mab=tr("Five days exception");
+		else
+			assert(0);
+		s+=tr("Mornings-afternoons behavior=%1").arg(mab);
+		s+="\n";
+	}
+	
+	assert(activeHoursHash.contains(this->name));
+	int acthours=activeHoursHash.value(this->name);
+	s+=tr("Number of active hours=%1", "The total duration of the active activities for the teacher").arg(acthours);
+	s+="\n";
+
+	s+=tr("Target number of hours=%1", "The target number of hours for the teacher").arg(targetNumberOfHours);
+	s+="\n";
+
+	s+=tr("Qualified subjects:", "The list of qualified subjects for a teacher");
+	s+="\n";
+	for(const QString& sbj : std::as_const(qualifiedSubjectsList)){
+		s+=sbj;
+		s+="\n";
+	}
+
+	//Has comments?
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
 QString Teacher::getDetailedDescriptionWithConstraints(Rules& r)
 {
 	QString s=this->getDetailedDescription(r);
+
+	s+="--------------------------------------------------\n";
+	s+=tr("Time constraints directly related to this teacher:");
+	s+="\n";
+	for(int i=0; i<r.timeConstraintsList.size(); i++){
+		TimeConstraint* c=r.timeConstraintsList[i];
+		if(c->isRelatedToTeacher(this)){
+			s+="\n";
+			s+=c->getDetailedDescription(r);
+		}
+	}
+
+	s+="--------------------------------------------------\n";
+	s+=tr("Space constraints directly related to this teacher:");
+	s+="\n";
+	for(int i=0; i<r.spaceConstraintsList.size(); i++){
+		SpaceConstraint* c=r.spaceConstraintsList[i];
+		if(c->isRelatedToTeacher(this)){
+			s+="\n";
+			s+=c->getDetailedDescription(r);
+		}
+	}
+	s+="--------------------------------------------------\n";
+
+	return s;
+}
+
+QString Teacher::getDetailedDescriptionWithConstraintsAndNumberOfActiveHours(Rules& r, const QHash<QString, int>& activeHoursHash)
+{
+	QString s=this->getDetailedDescriptionWithNumberOfActiveHours(r, activeHoursHash);
 
 	s+="--------------------------------------------------\n";
 	s+=tr("Time constraints directly related to this teacher:");

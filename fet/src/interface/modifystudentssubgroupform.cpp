@@ -74,7 +74,7 @@ void ModifyStudentsSubgroupForm::ok()
 		 tr("Name exists. If you would like to make more groups to contain a subgroup (overlapping groups),"
  		 " please remove current subgroup (FET will unfortunately remove all related activities and constraints)"
 		 " and add a new subgroup with desired name in current group."
- 		 " I know this is a not an elegant procedure, I'll try to fix that in the future."));
+ 		 " I know this is not an elegant procedure, I'll try to fix that in the future."));
 		
 		nameLineEdit->selectAll();
 		nameLineEdit->setFocus();

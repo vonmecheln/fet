@@ -69,7 +69,7 @@ void ModifyStudentsGroupForm::ok()
 		 tr("Name exists. If you would like to make more years to contain a group (overlapping years),"
 		 " please remove current group (FET will unfortunately remove all related activities and constraints)"
 		 " and add a new group with desired name in current year."
-		 " I know this is a not an elegant procedure, I'll try to fix that in the future."));
+		 " I know this is not an elegant procedure, I'll try to fix that in the future."));
 
 		nameLineEdit->selectAll();
 		nameLineEdit->setFocus();

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<fet version="7.4.3">
+<fet version="7.4.5">
   <Mode>Mornings_Afternoons</Mode>
   <Institution_Name>Default institution</Institution_Name>
   <Comments>Default comments</Comments>
@@ -3200,6 +3200,185 @@
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots>
+    <ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Number_of_Activities>3</Number_of_Activities>
+      <Activity_Id>3</Activity_Id>
+      <Activity_Id>6</Activity_Id>
+      <Activity_Id>9</Activity_Id>
+      <First_Time_Slot>
+        <Day>Monday a</Day>
+        <Hour>08:00</Hour>
+      </First_Time_Slot>
+      <Second_Time_Slot>
+        <Day>Monday m</Day>
+        <Hour>08:00</Hour>
+      </Second_Time_Slot>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots>
+    <ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Number_of_Activities>3</Number_of_Activities>
+      <Activity_Id>3</Activity_Id>
+      <Activity_Id>2</Activity_Id>
+      <Activity_Id>1</Activity_Id>
+      <Number_of_Selected_Time_Slots_in_First_Set>4</Number_of_Selected_Time_Slots_in_First_Set>
+      <Selected_Time_Slot_in_First_Set>
+        <Day>Monday m</Day>
+        <Hour>08:00</Hour>
+      </Selected_Time_Slot_in_First_Set>
+      <Selected_Time_Slot_in_First_Set>
+        <Day>Monday m</Day>
+        <Hour>09:00</Hour>
+      </Selected_Time_Slot_in_First_Set>
+      <Selected_Time_Slot_in_First_Set>
+        <Day>Monday m</Day>
+        <Hour>10:00</Hour>
+      </Selected_Time_Slot_in_First_Set>
+      <Selected_Time_Slot_in_First_Set>
+        <Day>Monday m</Day>
+        <Hour>11:00</Hour>
+      </Selected_Time_Slot_in_First_Set>
+      <Number_of_Selected_Time_Slots_in_Second_Set>4</Number_of_Selected_Time_Slots_in_Second_Set>
+      <Selected_Time_Slot_in_Second_Set>
+        <Day>Tueday a</Day>
+        <Hour>08:00</Hour>
+      </Selected_Time_Slot_in_Second_Set>
+      <Selected_Time_Slot_in_Second_Set>
+        <Day>Tueday a</Day>
+        <Hour>09:00</Hour>
+      </Selected_Time_Slot_in_Second_Set>
+      <Selected_Time_Slot_in_Second_Set>
+        <Day>Tueday a</Day>
+        <Hour>10:00</Hour>
+      </Selected_Time_Slot_in_Second_Set>
+      <Selected_Time_Slot_in_Second_Set>
+        <Day>Tueday a</Day>
+        <Hour>11:00</Hour>
+      </Selected_Time_Slot_in_Second_Set>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots>
+    <ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Teacher>t2</Teacher>
+      <Maximum_Number_of_Occupied_Sets>1</Maximum_Number_of_Occupied_Sets>
+      <Number_of_Selected_Sets_of_Time_Slots>2</Number_of_Selected_Sets_of_Time_Slots>
+      <Selected_Set_of_Time_Slots>
+        <Number_of_Selected_Time_Slots>1</Number_of_Selected_Time_Slots>
+        <Selected_Time_Slot>
+          <Day>Tuesday m</Day>
+          <Hour>08:00</Hour>
+        </Selected_Time_Slot>
+      </Selected_Set_of_Time_Slots>
+      <Selected_Set_of_Time_Slots>
+        <Number_of_Selected_Time_Slots>1</Number_of_Selected_Time_Slots>
+        <Selected_Time_Slot>
+          <Day>Tueday a</Day>
+          <Hour>09:00</Hour>
+        </Selected_Time_Slot>
+      </Selected_Set_of_Time_Slots>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection>
+    <ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Maximum_Number_of_Occupied_Sets>1</Maximum_Number_of_Occupied_Sets>
+      <Number_of_Selected_Sets_of_Time_Slots>3</Number_of_Selected_Sets_of_Time_Slots>
+      <Selected_Set_of_Time_Slots>
+        <Number_of_Selected_Time_Slots>1</Number_of_Selected_Time_Slots>
+        <Selected_Time_Slot>
+          <Day>Monday m</Day>
+          <Hour>08:00</Hour>
+        </Selected_Time_Slot>
+      </Selected_Set_of_Time_Slots>
+      <Selected_Set_of_Time_Slots>
+        <Number_of_Selected_Time_Slots>1</Number_of_Selected_Time_Slots>
+        <Selected_Time_Slot>
+          <Day>Tuesday m</Day>
+          <Hour>10:00</Hour>
+        </Selected_Time_Slot>
+      </Selected_Set_of_Time_Slots>
+      <Selected_Set_of_Time_Slots>
+        <Number_of_Selected_Time_Slots>1</Number_of_Selected_Time_Slots>
+        <Selected_Time_Slot>
+          <Day>Wednesday m</Day>
+          <Hour>11:00</Hour>
+        </Selected_Time_Slot>
+      </Selected_Set_of_Time_Slots>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection>
+    <ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Students>y1</Students>
+      <Maximum_Number_of_Occupied_Sets>1</Maximum_Number_of_Occupied_Sets>
+      <Number_of_Selected_Sets_of_Time_Slots>3</Number_of_Selected_Sets_of_Time_Slots>
+      <Selected_Set_of_Time_Slots>
+        <Number_of_Selected_Time_Slots>2</Number_of_Selected_Time_Slots>
+        <Selected_Time_Slot>
+          <Day>Tuesday m</Day>
+          <Hour>08:00</Hour>
+        </Selected_Time_Slot>
+        <Selected_Time_Slot>
+          <Day>Tuesday m</Day>
+          <Hour>09:00</Hour>
+        </Selected_Time_Slot>
+      </Selected_Set_of_Time_Slots>
+      <Selected_Set_of_Time_Slots>
+        <Number_of_Selected_Time_Slots>1</Number_of_Selected_Time_Slots>
+        <Selected_Time_Slot>
+          <Day>Tuesday m</Day>
+          <Hour>10:00</Hour>
+        </Selected_Time_Slot>
+      </Selected_Set_of_Time_Slots>
+      <Selected_Set_of_Time_Slots>
+        <Number_of_Selected_Time_Slots>1</Number_of_Selected_Time_Slots>
+        <Selected_Time_Slot>
+          <Day>Tuesday m</Day>
+          <Hour>11:00</Hour>
+        </Selected_Time_Slot>
+      </Selected_Set_of_Time_Slots>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection>
+    <ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Maximum_Number_of_Occupied_Sets>1</Maximum_Number_of_Occupied_Sets>
+      <Number_of_Selected_Sets_of_Time_Slots>3</Number_of_Selected_Sets_of_Time_Slots>
+      <Selected_Set_of_Time_Slots>
+        <Number_of_Selected_Time_Slots>1</Number_of_Selected_Time_Slots>
+        <Selected_Time_Slot>
+          <Day>Thursday m</Day>
+          <Hour>09:00</Hour>
+        </Selected_Time_Slot>
+      </Selected_Set_of_Time_Slots>
+      <Selected_Set_of_Time_Slots>
+        <Number_of_Selected_Time_Slots>1</Number_of_Selected_Time_Slots>
+        <Selected_Time_Slot>
+          <Day>Thursday m</Day>
+          <Hour>08:00</Hour>
+        </Selected_Time_Slot>
+      </Selected_Set_of_Time_Slots>
+      <Selected_Set_of_Time_Slots>
+        <Number_of_Selected_Time_Slots>3</Number_of_Selected_Time_Slots>
+        <Selected_Time_Slot>
+          <Day>Thursday a</Day>
+          <Hour>08:00</Hour>
+        </Selected_Time_Slot>
+        <Selected_Time_Slot>
+          <Day>Thursday a</Day>
+          <Hour>09:00</Hour>
+        </Selected_Time_Slot>
+        <Selected_Time_Slot>
+          <Day>Friday a</Day>
+          <Hour>08:00</Hour>
+        </Selected_Time_Slot>
+      </Selected_Set_of_Time_Slots>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection>
   </Time_Constraints_List>
   <Space_Constraints_List>
     <ConstraintBasicCompulsorySpace>

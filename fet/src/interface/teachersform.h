@@ -20,9 +20,15 @@
 
 #include "ui_teachersform_template.h"
 
+#include <QString>
+#include <QHash>
+
 class TeachersForm : public QDialog, Ui::TeachersForm_template
 {
 	Q_OBJECT
+	
+	QHash<QString, int> activeHoursHash;
+	
 public:
 	TeachersForm(QWidget* parent);
 

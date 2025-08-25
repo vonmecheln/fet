@@ -25,6 +25,8 @@
 
 #include "lockunlock.h"
 
+#include "timetableexport.h"
+
 #include <QMessageBox>
 #include <QScrollBar>
 #include <QHBoxLayout>
@@ -37,6 +39,7 @@
 #include <QStringList>
 
 #include <QSet>
+#include <QMap>
 
 #include <QPair>
 
@@ -104,6 +107,10 @@ void AddOrModifyTimeConstraintTimesTableDelegate::paint(QPainter* painter, const
 }
 
 AddOrModifyTimeConstraintDialog::AddOrModifyTimeConstraintDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop,
+																 QTableWidget* _occupyMaxTimesTable,
+																 QAbstractItemDelegate* _occupyMaxOldItemDelegate,
+																 AddOrModifyTimeConstraintTimesTableDelegate* _occupyMaxNewItemDelegate,
+
 																 CornerEnabledTableWidget* _timesTable,
 																 QAbstractItemDelegate* _oldItemDelegate,
 																 AddOrModifyTimeConstraintTimesTableDelegate* _newItemDelegate,
@@ -128,6 +135,10 @@ AddOrModifyTimeConstraintDialog::AddOrModifyTimeConstraintDialog(QWidget* parent
 	dialogName=_dialogName;
 	dialogTitle=_dialogTitle;
 	eventLoop=_eventLoop;
+
+	occupyMaxTimesTable=_occupyMaxTimesTable;
+	occupyMaxOldItemDelegate=_occupyMaxOldItemDelegate;
+	occupyMaxNewItemDelegate=_occupyMaxNewItemDelegate;
 
 	timesTable=_timesTable;
 	oldItemDelegate=_oldItemDelegate;
@@ -163,6 +174,14 @@ AddOrModifyTimeConstraintDialog::AddOrModifyTimeConstraintDialog(QWidget* parent
 
 AddOrModifyTimeConstraintDialog::~AddOrModifyTimeConstraintDialog()
 {
+	if(occupyMaxTimesTable!=nullptr){
+		//assert(occupyMaxOldItemDelegate!=nullptr); don't assert this!!! It might be nullptr.
+		assert(occupyMaxNewItemDelegate!=nullptr);
+
+		occupyMaxTimesTable->setItemDelegate(occupyMaxOldItemDelegate);
+		delete occupyMaxNewItemDelegate;
+	}
+
 	if(timesTable!=nullptr){
 		//assert(oldItemDelegate!=nullptr); don't assert this!!! It might be nullptr.
 		assert(newItemDelegate!=nullptr);
@@ -220,6 +239,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 {
 	type=_type;
 	oldtc=_oldtc;
+
+	occupyMaxSetsOfTimeSlotsFromSelectionTableWidget=nullptr;
+	occupyMaxOldItemDelegate=nullptr;
+	occupyMaxNewItemDelegate=nullptr;
 
 	firstTimeSlotGroupBox=nullptr;
 	secondTimeSlotGroupBox=nullptr;
@@ -297,6 +320,9 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 	selectedActivitiesList_TwoSetsOfActivities_2.clear();
 	//
 	swapTwoSetsOfActivitiesPushButton=nullptr;
+
+	ctrActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots=false;
+	ctrActivitiesPairOfMutuallyExclusiveTimeSlots=false;
 
 	tabWidgetPairOfMutuallyExclusiveSets=nullptr;
 
@@ -5760,7 +5786,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 		case CONSTRAINT_ACTIVITY_PREFERRED_DAY:
 			{
 				QMessageBox::warning(dialog, tr("FET information"),
-									 tr("You have met a FET bug. The constraint activity preferred day should not "
+									 tr("You have encountered a FET bug. The constraint activity preferred day should not "
 										"be editable in a separate dialog. The request will be ignored."));
 
 				return;
@@ -7454,6 +7480,277 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				break;
 			}
+		//241
+		case CONSTRAINT_ACTIVITIES_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add activities pair of mutually exclusive sets of time slots", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots");
+
+					firstAddInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
+					 "and an empty cell (or green) means that the slot is not selected"));
+					//trick to use each label on its tab
+					secondAddInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
+					 "and an empty cell (or green) means that the slot is not selected"));
+				}
+				else{
+					dialogTitle=tr("Modify activities pair of mutually exclusive sets of time slots", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots");
+
+					firstModifyInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
+					 "and an empty cell (or green) means that the slot is not selected"));
+					//trick to use each label on its tab
+					secondModifyInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
+					 "and an empty cell (or green) means that the slot is not selected"));
+				}
+
+				colorsCheckBox1=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors-1")))
+					colorsCheckBox1->setChecked(settings.value(dialogName+QString("/use-colors-1")).toBool());
+				else
+					colorsCheckBox1->setChecked(false);
+
+				toggleAllPushButton1=new QPushButton(tr("Toggle all", "It refers to time slots"));
+				
+				timesTable1=new CornerEnabledTableWidget(colorsCheckBox1->isChecked());
+
+				colorsCheckBox2=new QCheckBox(tr("Colors"));
+				//QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors-2")))
+					colorsCheckBox2->setChecked(settings.value(dialogName+QString("/use-colors-2")).toBool());
+				else
+					colorsCheckBox2->setChecked(false);
+
+				toggleAllPushButton2=new QPushButton(tr("Toggle all", "It refers to time slots"));
+				
+				timesTable2=new CornerEnabledTableWidget(colorsCheckBox2->isChecked());
+
+				tabWidgetPairOfMutuallyExclusiveSets=new QTabWidget;
+				
+				ctrActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots=true;
+				
+				addEmpty=true;
+				filterGroupBox=new QGroupBox(tr("Filter"));
+
+				//teacherLabel=new QLabel(tr("Teacher"));
+				teachersComboBox=new QComboBox;
+
+				//studentsLabel=new QLabel(tr("Students set"));
+				studentsComboBox=new QComboBox;
+
+				//subjectLabel=new QLabel(tr("Subject"));
+				subjectsComboBox=new QComboBox;
+
+				//activityTagLabel=new QLabel(tr("Activity tag"));
+				activityTagsComboBox=new QComboBox;
+
+				activitiesLabel=new QLabel(tr("Activities"));
+				selectedActivitiesLabel=new QLabel(tr("Selected", "It refers to activities"));
+				activitiesListWidget=new QListWidget;
+				selectedActivitiesListWidget=new QListWidget;
+				addAllActivitiesPushButton=new QPushButton(tr("All", "Add all filtered activities to the list of selected activities"));
+				clearActivitiesPushButton=new QPushButton(tr("Clear", "Clear the list of selected activities"));
+
+				break;
+			}
+		//242
+		case CONSTRAINT_ACTIVITIES_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add activities pair of mutually exclusive time slots", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintActivitiesPairOfMutuallyExclusiveTimeSlots");
+				}
+				else{
+					dialogTitle=tr("Modify activities pair of mutually exclusive time slots", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintActivitiesPairOfMutuallyExclusiveTimeSlots");
+				}
+
+				firstTimeSlotGroupBox=new QGroupBox(tr("First time slot"));
+				firstDayComboBox=new QComboBox;
+				firstHourComboBox=new QComboBox;
+				secondTimeSlotGroupBox=new QGroupBox(tr("Second time slot"));
+				secondDayComboBox=new QComboBox;
+				secondHourComboBox=new QComboBox;
+
+				tabWidgetPairOfMutuallyExclusiveSets=new QTabWidget;
+
+				ctrActivitiesPairOfMutuallyExclusiveTimeSlots=true;
+
+				addEmpty=true;
+				filterGroupBox=new QGroupBox(tr("Filter"));
+
+				//teacherLabel=new QLabel(tr("Teacher"));
+				teachersComboBox=new QComboBox;
+
+				//studentsLabel=new QLabel(tr("Students set"));
+				studentsComboBox=new QComboBox;
+
+				//subjectLabel=new QLabel(tr("Subject"));
+				subjectsComboBox=new QComboBox;
+
+				//activityTagLabel=new QLabel(tr("Activity tag"));
+				activityTagsComboBox=new QComboBox;
+
+				activitiesLabel=new QLabel(tr("Activities"));
+				selectedActivitiesLabel=new QLabel(tr("Selected", "It refers to activities"));
+				activitiesListWidget=new QListWidget;
+				selectedActivitiesListWidget=new QListWidget;
+				addAllActivitiesPushButton=new QPushButton(tr("All", "Add all filtered activities to the list of selected activities"));
+				clearActivitiesPushButton=new QPushButton(tr("Clear", "Clear the list of selected activities"));
+
+				break;
+			}
+		//243
+		case CONSTRAINT_TEACHER_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add teacher occupies max sets of time slots from selection", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection");
+
+					firstAddInstructionsLabel=new QLabel(tr("The number chosen in a cell of the table widget represents the number of the selected set of"
+					 " time slots to which this slot belongs to (the value 0, shown here as a space, represents an unselected slot)."));
+				}
+				else{
+					dialogTitle=tr("Modify teacher occupies max sets of time slots from selection", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("ModifyConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection");
+
+					firstModifyInstructionsLabel=new QLabel(tr("The number chosen in a cell of the table widget represents the number of the selected set of"
+					 " time slots to which this slot belongs to (the value 0, shown here as a space, represents an unselected slot)."));
+				}
+
+				teacherLabel=new QLabel(tr("Teacher"));
+				teachersComboBox=new QComboBox;
+
+				occupyMaxSetsOfTimeSlotsFromSelectionTableWidget=new QTableWidget;
+
+				labelForSpinBox=new QLabel(tr("Max occupied sets of time slots (1 or 2)"));
+				spinBox=new QSpinBox;
+				spinBox->setMinimum(1);
+				spinBox->setMaximum(2);
+				spinBox->setValue(2);
+
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors")))
+					colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors")).toBool());
+				else
+					colorsCheckBox->setChecked(false);
+
+				break;
+			}
+		//244
+		case CONSTRAINT_TEACHERS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add teachers occupy max sets of time slots from selection", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection");
+
+					firstAddInstructionsLabel=new QLabel(tr("The number chosen in a cell of the table widget represents the number of the selected set of"
+					 " time slots to which this slot belongs to (the value 0, shown here as a space, represents an unselected slot)."));
+				}
+				else{
+					dialogTitle=tr("Modify teachers occupy max sets of time slots from selection", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("ModifyConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection");
+
+					firstModifyInstructionsLabel=new QLabel(tr("The number chosen in a cell of the table widget represents the number of the selected set of"
+					 " time slots to which this slot belongs to (the value 0, shown here as a space, represents an unselected slot)."));
+				}
+
+				occupyMaxSetsOfTimeSlotsFromSelectionTableWidget=new QTableWidget;
+
+				labelForSpinBox=new QLabel(tr("Max occupied sets of time slots (1 or 2)"));
+				spinBox=new QSpinBox;
+				spinBox->setMinimum(1);
+				spinBox->setMaximum(2);
+				spinBox->setValue(2);
+
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors")))
+					colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors")).toBool());
+				else
+					colorsCheckBox->setChecked(false);
+
+				break;
+			}
+		//245
+		case CONSTRAINT_STUDENTS_SET_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add students set occupies max sets of time slots from selection", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection");
+
+					firstAddInstructionsLabel=new QLabel(tr("The number chosen in a cell of the table widget represents the number of the selected set of"
+					 " time slots to which this slot belongs to (the value 0, shown here as a space, represents an unselected slot)."));
+				}
+				else{
+					dialogTitle=tr("Modify students set occupies max sets of time slots from selection", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("ModifyConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection");
+
+					firstModifyInstructionsLabel=new QLabel(tr("The number chosen in a cell of the table widget represents the number of the selected set of"
+					 " time slots to which this slot belongs to (the value 0, shown here as a space, represents an unselected slot)."));
+				}
+
+				studentsLabel=new QLabel(tr("Students set"));
+				studentsComboBox=new QComboBox;
+
+				occupyMaxSetsOfTimeSlotsFromSelectionTableWidget=new QTableWidget;
+
+				labelForSpinBox=new QLabel(tr("Max occupied sets of time slots (1 or 2)"));
+				spinBox=new QSpinBox;
+				spinBox->setMinimum(1);
+				spinBox->setMaximum(2);
+				spinBox->setValue(2);
+
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors")))
+					colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors")).toBool());
+				else
+					colorsCheckBox->setChecked(false);
+
+				break;
+			}
+		//246
+		case CONSTRAINT_STUDENTS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add students occupy max sets of time slots from selection", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection");
+
+					firstAddInstructionsLabel=new QLabel(tr("The number chosen in a cell of the table widget represents the number of the selected set of"
+					 " time slots to which this slot belongs to (the value 0, shown here as a space, represents an unselected slot)."));
+				}
+				else{
+					dialogTitle=tr("Modify students occupy max sets of time slots from selection", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("ModifyConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection");
+
+					firstModifyInstructionsLabel=new QLabel(tr("The number chosen in a cell of the table widget represents the number of the selected set of"
+					 " time slots to which this slot belongs to (the value 0, shown here as a space, represents an unselected slot)."));
+				}
+
+				occupyMaxSetsOfTimeSlotsFromSelectionTableWidget=new QTableWidget;
+
+				labelForSpinBox=new QLabel(tr("Max occupied sets of time slots (1 or 2)"));
+				spinBox=new QSpinBox;
+				spinBox->setMinimum(1);
+				spinBox->setMaximum(2);
+				spinBox->setValue(2);
+
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors")))
+					colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors")).toBool());
+				else
+					colorsCheckBox->setChecked(false);
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -7822,6 +8119,15 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 		//permanentlyLockedLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	}
 
+	if(occupyMaxSetsOfTimeSlotsFromSelectionTableWidget!=nullptr){
+		occupyMaxOldItemDelegate=occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->itemDelegate();
+		occupyMaxNewItemDelegate=new AddOrModifyTimeConstraintTimesTableDelegate(nullptr, gt.rules.nHoursPerDay, occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->columnCount());
+		occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->setItemDelegate(occupyMaxNewItemDelegate);
+		
+		assert(colorsCheckBox!=nullptr);
+		connect(colorsCheckBox, &QCheckBox::toggled, this, &AddOrModifyTimeConstraint::colorAllSpinBoxes);
+	}
+
 	if(timesTable!=nullptr){
 		connect(timesTable, &CornerEnabledTableWidget::itemClicked, this, &AddOrModifyTimeConstraint::itemClicked);
 		
@@ -7981,6 +8287,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 	eventLoop=new QEventLoop;
 
 	dialog=new AddOrModifyTimeConstraintDialog(parent, dialogName, dialogTitle, eventLoop,
+											   occupyMaxSetsOfTimeSlotsFromSelectionTableWidget, occupyMaxOldItemDelegate, occupyMaxNewItemDelegate,
 											   timesTable, oldItemDelegate, newItemDelegate,
 											   timesTable1, oldItemDelegate1, newItemDelegate1,
 											   timesTable2, oldItemDelegate2, newItemDelegate2,
@@ -8141,6 +8448,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 	cancelPushButton=nullptr;
 	if(oldtc==nullptr){
 		addConstraintPushButton=new QPushButton(tr("Add constraint"));
+		addConstraintPushButton->setDefault(true);
 		
 		switch(type){
 			case CONSTRAINT_TEACHERS_MAX_HOURS_DAILY:
@@ -8350,6 +8658,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			case CONSTRAINT_TEACHER_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
 				[[fallthrough]];
 			case CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+				[[fallthrough]];
+			case CONSTRAINT_TEACHER_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+				[[fallthrough]];
+			case CONSTRAINT_TEACHERS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
 				addConstraintsPushButton=new QPushButton(tr("Add constraints"));
 				break;
 			
@@ -8474,7 +8786,261 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 	
 	assert(k1+k2+k3<=1);
 	
-	if(tabWidget==nullptr && tabWidgetTwoSetsOfActivities==nullptr && tabWidgetPairOfMutuallyExclusiveSets==nullptr){
+	if(ctrActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots){
+		assert(tabWidgetPairOfMutuallyExclusiveSets!=nullptr);
+		/*if(oldtc==nullptr){
+			if(firstAddInstructionsLabel!=nullptr)
+				wholeDialog->addWidget(firstAddInstructionsLabel);
+			//if(secondAddInstructionsLabel!=nullptr)
+			//	wholeDialog->addWidget(secondAddInstructionsLabel);
+		}
+		else{
+			if(firstModifyInstructionsLabel!=nullptr)
+				wholeDialog->addWidget(firstModifyInstructionsLabel);
+			//if(secondModifyInstructionsLabel!=nullptr)
+			//	wholeDialog->addWidget(secondModifyInstructionsLabel);
+		}*/
+
+		//filter
+		QWidget* timeSlotsWidget0A=new QWidget;
+		QVBoxLayout* layout0A=new QVBoxLayout;
+		
+		assert(filterGroupBox!=nullptr);
+
+		assert(teacherLayout!=nullptr);
+		assert(studentsLayout!=nullptr);
+		assert(subjectLayout!=nullptr);
+		assert(activityTagLayout!=nullptr);
+
+		QVBoxLayout* layoutLeft=new QVBoxLayout;
+		layoutLeft->addLayout(teacherLayout);
+		layoutLeft->addLayout(studentsLayout);
+
+		QVBoxLayout* layoutRight=new QVBoxLayout;
+		layoutRight->addLayout(subjectLayout);
+		layoutRight->addLayout(activityTagLayout);
+
+		QHBoxLayout* layout=new QHBoxLayout;
+		layout->addLayout(layoutLeft);
+		layout->addLayout(layoutRight);
+
+		filterGroupBox->setLayout(layout);
+
+		layout0A->addWidget(filterGroupBox);
+		
+		assert(activitiesListWidget!=nullptr);
+		assert(activitiesLabel!=nullptr);
+		assert(selectedActivitiesLabel!=nullptr);
+		assert(selectedActivitiesListWidget!=nullptr);
+		assert(addAllActivitiesPushButton!=nullptr);
+		assert(clearActivitiesPushButton!=nullptr);
+
+		QVBoxLayout* layout1=new QVBoxLayout;
+		layout1->addWidget(activitiesLabel);
+		layout1->addWidget(activitiesListWidget);
+		layout1->addWidget(addAllActivitiesPushButton);
+
+		QVBoxLayout* layout2=new QVBoxLayout;
+		layout2->addWidget(selectedActivitiesLabel);
+		layout2->addWidget(selectedActivitiesListWidget);
+		layout2->addWidget(clearActivitiesPushButton);
+
+		QHBoxLayout* layout3=new QHBoxLayout;
+		layout3->addLayout(layout1);
+		layout3->addLayout(layout2);
+
+		layout0A->addLayout(layout3);
+
+		timeSlotsWidget0A->setLayout(layout0A);
+		///////
+
+		assert(colorsCheckBox1!=nullptr);
+		assert(colorsCheckBox2!=nullptr);
+		assert(toggleAllPushButton1!=nullptr);
+		assert(toggleAllPushButton2!=nullptr);
+
+		QHBoxLayout* buttons1=new QHBoxLayout;
+		buttons1->addStretch();
+		if(colorsCheckBox1!=nullptr)
+			buttons1->addWidget(colorsCheckBox1);
+		if(toggleAllPushButton1!=nullptr)
+			buttons1->addWidget(toggleAllPushButton1);
+
+		QHBoxLayout* buttons2=new QHBoxLayout;
+		buttons2->addStretch();
+		if(colorsCheckBox2!=nullptr)
+			buttons2->addWidget(colorsCheckBox2);
+		if(toggleAllPushButton2!=nullptr)
+			buttons2->addWidget(toggleAllPushButton2);
+
+		QVBoxLayout* timeSlotsLayout1=new QVBoxLayout;
+		QVBoxLayout* timeSlotsLayout2=new QVBoxLayout;
+
+		if(firstAddInstructionsLabel!=nullptr)
+			timeSlotsLayout1->addWidget(firstAddInstructionsLabel);
+		else if(firstModifyInstructionsLabel!=nullptr)
+			timeSlotsLayout1->addWidget(firstModifyInstructionsLabel);
+		else
+			assert(0);
+
+		if(secondAddInstructionsLabel!=nullptr)
+			timeSlotsLayout2->addWidget(secondAddInstructionsLabel);
+		else if(secondModifyInstructionsLabel!=nullptr)
+			timeSlotsLayout2->addWidget(secondModifyInstructionsLabel);
+		else
+			assert(0);
+
+		assert(timesTable1!=nullptr);
+		assert(timesTable2!=nullptr);
+		if(timesTable1!=nullptr)
+			timeSlotsLayout1->addWidget(timesTable1);
+		if(timesTable2!=nullptr)
+			timeSlotsLayout2->addWidget(timesTable2);
+
+		timeSlotsLayout1->addLayout(buttons1);
+		timeSlotsLayout2->addLayout(buttons2);
+
+		QWidget* timeSlotsWidget1=new QWidget;
+		QWidget* timeSlotsWidget2=new QWidget;
+
+		timeSlotsWidget1->setLayout(timeSlotsLayout1);
+		timeSlotsWidget2->setLayout(timeSlotsLayout2);
+
+		tabWidgetPairOfMutuallyExclusiveSets->addTab(timeSlotsWidget0A, tr("Activities"));
+		tabWidgetPairOfMutuallyExclusiveSets->addTab(timeSlotsWidget1, tr("First set of time slots", "Set, as in a collection of selected time slots"));
+		tabWidgetPairOfMutuallyExclusiveSets->addTab(timeSlotsWidget2, tr("Second set of time slots", "Set, as in a collection of selected time slots"));
+
+		wholeDialog->addWidget(tabWidgetPairOfMutuallyExclusiveSets);
+		wholeDialog->addLayout(weight);
+		wholeDialog->addLayout(buttons);
+	}
+	else if(ctrActivitiesPairOfMutuallyExclusiveTimeSlots){
+		assert(tabWidgetPairOfMutuallyExclusiveSets!=nullptr);
+		/*if(oldtc==nullptr){
+			if(firstAddInstructionsLabel!=nullptr)
+				wholeDialog->addWidget(firstAddInstructionsLabel);
+			//if(secondAddInstructionsLabel!=nullptr)
+			//	wholeDialog->addWidget(secondAddInstructionsLabel);
+		}
+		else{
+			if(firstModifyInstructionsLabel!=nullptr)
+				wholeDialog->addWidget(firstModifyInstructionsLabel);
+			//if(secondModifyInstructionsLabel!=nullptr)
+			//	wholeDialog->addWidget(secondModifyInstructionsLabel);
+		}*/
+
+		//filter
+		QWidget* timeSlotsWidget0A=new QWidget;
+		QVBoxLayout* layout0A=new QVBoxLayout;
+		
+		assert(filterGroupBox!=nullptr);
+
+		assert(teacherLayout!=nullptr);
+		assert(studentsLayout!=nullptr);
+		assert(subjectLayout!=nullptr);
+		assert(activityTagLayout!=nullptr);
+
+		QVBoxLayout* layoutLeft=new QVBoxLayout;
+		layoutLeft->addLayout(teacherLayout);
+		layoutLeft->addLayout(studentsLayout);
+
+		QVBoxLayout* layoutRight=new QVBoxLayout;
+		layoutRight->addLayout(subjectLayout);
+		layoutRight->addLayout(activityTagLayout);
+
+		QHBoxLayout* layout=new QHBoxLayout;
+		layout->addLayout(layoutLeft);
+		layout->addLayout(layoutRight);
+
+		filterGroupBox->setLayout(layout);
+
+		layout0A->addWidget(filterGroupBox);
+		
+		assert(activitiesListWidget!=nullptr);
+		assert(activitiesLabel!=nullptr);
+		assert(selectedActivitiesLabel!=nullptr);
+		assert(selectedActivitiesListWidget!=nullptr);
+		assert(addAllActivitiesPushButton!=nullptr);
+		assert(clearActivitiesPushButton!=nullptr);
+
+		QVBoxLayout* layout1=new QVBoxLayout;
+		layout1->addWidget(activitiesLabel);
+		layout1->addWidget(activitiesListWidget);
+		layout1->addWidget(addAllActivitiesPushButton);
+
+		QVBoxLayout* layout2=new QVBoxLayout;
+		layout2->addWidget(selectedActivitiesLabel);
+		layout2->addWidget(selectedActivitiesListWidget);
+		layout2->addWidget(clearActivitiesPushButton);
+
+		QHBoxLayout* layout3=new QHBoxLayout;
+		layout3->addLayout(layout1);
+		layout3->addLayout(layout2);
+
+		layout0A->addLayout(layout3);
+
+		timeSlotsWidget0A->setLayout(layout0A);
+		
+		///////
+		
+		if(firstTimeSlotGroupBox!=nullptr){
+			assert(firstDayComboBox!=nullptr);
+			assert(firstHourComboBox!=nullptr);
+
+			for(int i=0; i<gt.rules.nDaysPerWeek; i++)
+				firstDayComboBox->addItem(gt.rules.daysOfTheWeek[i]);
+			firstDayComboBox->setCurrentIndex(0);
+
+			for(int i=0; i<gt.rules.nHoursPerDay; i++)
+				firstHourComboBox->addItem(gt.rules.hoursOfTheDay[i]);
+			firstHourComboBox->setCurrentIndex(0);
+
+			QHBoxLayout* layout=new QHBoxLayout;
+			layout->addWidget(firstDayComboBox);
+			layout->addWidget(firstHourComboBox);
+			firstTimeSlotGroupBox->setLayout(layout);
+		}
+		else{
+			assert(0);
+		}
+
+		if(secondTimeSlotGroupBox!=nullptr){
+			assert(secondDayComboBox!=nullptr);
+			assert(secondHourComboBox!=nullptr);
+
+			for(int i=0; i<gt.rules.nDaysPerWeek; i++)
+				secondDayComboBox->addItem(gt.rules.daysOfTheWeek[i]);
+			secondDayComboBox->setCurrentIndex(0);
+
+			for(int i=0; i<gt.rules.nHoursPerDay; i++)
+				secondHourComboBox->addItem(gt.rules.hoursOfTheDay[i]);
+			secondHourComboBox->setCurrentIndex(0);
+
+			QHBoxLayout* layout=new QHBoxLayout;
+			layout->addWidget(secondDayComboBox);
+			layout->addWidget(secondHourComboBox);
+			secondTimeSlotGroupBox->setLayout(layout);
+		}
+		else{
+			assert(0);
+		}
+		
+		///////
+		
+		QWidget* timeSlotsWidget1=new QWidget;
+		QVBoxLayout* layout4=new QVBoxLayout;
+		layout4->addWidget(firstTimeSlotGroupBox);
+		layout4->addWidget(secondTimeSlotGroupBox);
+		timeSlotsWidget1->setLayout(layout4);
+		
+		tabWidgetPairOfMutuallyExclusiveSets->addTab(timeSlotsWidget0A, tr("Activities"));
+		tabWidgetPairOfMutuallyExclusiveSets->addTab(timeSlotsWidget1, tr("Time slots"));
+
+		wholeDialog->addWidget(tabWidgetPairOfMutuallyExclusiveSets);
+		wholeDialog->addLayout(weight);
+		wholeDialog->addLayout(buttons);
+	}
+	else if(tabWidget==nullptr && tabWidgetTwoSetsOfActivities==nullptr && tabWidgetPairOfMutuallyExclusiveSets==nullptr){
 		if(oldtc==nullptr){
 			if(firstAddInstructionsLabel!=nullptr)
 				wholeDialog->addWidget(firstAddInstructionsLabel);
@@ -8858,6 +9424,32 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 		if(timesTable!=nullptr)
 			wholeDialog->addWidget(timesTable);
+		
+		if(occupyMaxSetsOfTimeSlotsFromSelectionTableWidget!=nullptr){
+			occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->resizeRowsToContents();
+			//occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->resizeColumnsToContents();
+
+			occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->setSelectionMode(QAbstractItemView::NoSelection);
+			///////
+			occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
+			int q=occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->horizontalHeader()->defaultSectionSize();
+			occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->horizontalHeader()->setMinimumSectionSize(q);
+
+			occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
+			q=-1;
+			for(int i=0; i<occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->verticalHeader()->count(); i++)
+				if(q<occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->verticalHeader()->sectionSizeHint(i))
+					q=occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->verticalHeader()->sectionSizeHint(i);
+			occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->verticalHeader()->setMinimumSectionSize(q);
+			///////
+
+			wholeDialog->addWidget(occupyMaxSetsOfTimeSlotsFromSelectionTableWidget);
+			
+			initOccupyMaxTableWidget();
+		}
+		
 		if(spinBoxLayout!=nullptr)
 			wholeDialog->addLayout(spinBoxLayout);
 		if(secondSpinBoxLayout!=nullptr)
@@ -12381,6 +12973,112 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 					break;
 				}
+			//241
+			case CONSTRAINT_ACTIVITIES_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+				{
+					ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots* ctr=(ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots*)oldtc;
+
+					fillTimesTable(timesTable1, ctr->selectedDays1, ctr->selectedHours1, true);
+					fillTimesTable(timesTable2, ctr->selectedDays2, ctr->selectedHours2, true);
+
+					selectedActivitiesListWidget->clear();
+					selectedActivitiesList.clear();
+
+					for(int i=0; i<ctr->activitiesIds.count(); i++){
+						int actId=ctr->activitiesIds[i];
+						selectedActivitiesList.append(actId);
+						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
+						assert(act!=nullptr);
+						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
+					}
+
+					break;
+				}
+			//242
+			case CONSTRAINT_ACTIVITIES_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+				{
+					ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots* ctr=(ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots*)oldtc;
+
+					selectedActivitiesListWidget->clear();
+					selectedActivitiesList.clear();
+
+					for(int i=0; i<ctr->activitiesIds.count(); i++){
+						int actId=ctr->activitiesIds[i];
+						selectedActivitiesList.append(actId);
+						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
+						assert(act!=nullptr);
+						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
+					}
+
+					firstDayComboBox->setCurrentIndex(ctr->day1);
+					firstHourComboBox->setCurrentIndex(ctr->hour1);
+
+					secondDayComboBox->setCurrentIndex(ctr->day2);
+					secondHourComboBox->setCurrentIndex(ctr->hour2);
+
+					break;
+				}
+			//243
+			case CONSTRAINT_TEACHER_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+				{
+					ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection* ctr=(ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection*)oldtc;
+
+					teachersComboBox->setCurrentIndex(teachersComboBox->findText(ctr->teacherName));
+
+					fillSpinBoxTimesTable(ctr->selectedDays, ctr->selectedHours);
+
+					spinBox->setValue(ctr->maxOccupiedSets);
+
+					break;
+				}
+			//244
+			case CONSTRAINT_TEACHERS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+				{
+					ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection* ctr=(ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection*)oldtc;
+
+					fillSpinBoxTimesTable(ctr->selectedDays, ctr->selectedHours);
+
+					spinBox->setValue(ctr->maxOccupiedSets);
+
+					break;
+				}
+			//245
+			case CONSTRAINT_STUDENTS_SET_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+				{
+					ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection* ctr=(ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection*)oldtc;
+
+					int j=studentsComboBox->findText(ctr->students);
+					if(j<0)
+						showWarningForInvisibleSubgroupConstraint(parent, ctr->students);
+					else
+						assert(j>=0);
+					studentsComboBox->setCurrentIndex(j);
+
+					fillSpinBoxTimesTable(ctr->selectedDays, ctr->selectedHours);
+
+					spinBox->setValue(ctr->maxOccupiedSets);
+
+					break;
+				}
+			//246
+			case CONSTRAINT_STUDENTS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+				{
+					ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection* ctr=(ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection*)oldtc;
+
+					fillSpinBoxTimesTable(ctr->selectedDays, ctr->selectedHours);
+
+					spinBox->setValue(ctr->maxOccupiedSets);
+
+					break;
+				}
 
 			default:
 				assert(0);
@@ -13055,11 +13753,11 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 
 				if(duration==-1 && teacher=="" && students=="" && subject=="" && activityTag==""){
 					int t=QMessageBox::question(dialog, tr("FET question"),
-					 tr("You specified all the activities. This might be a small problem: if you specify"
+					 tr("You specified all the activities. This might cause a minor issue: if you specify"
 					  " a not allowed slot between two allowed slots, this not allowed slot will"
 					  " be counted as a gap in the teachers' and students' timetable.\n\n"
-					  " The best practice would be to use constraint break times.\n\n"
-					  " If you need weight under 100%, then you can use this constraint, but be careful"
+					  "The best practice would be to use constraint break times.\n\n"
+					  "If you need weight under 100%, then you can use this constraint, but be careful"
 					  " not to obtain an impossible timetable (if your teachers/students are constrained on gaps"
 					  " or early gaps and if you leave a not allowed slot between 2 allowed slots or"
 					  " a not allowed slot early in the day and more allowed slots after it,"
@@ -13073,11 +13771,11 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 
 				if(duration==-1 && teacher!="" && students=="" && subject=="" && activityTag==""){
 					int t=QMessageBox::question(dialog, tr("FET question"),
-					 tr("You specified only the teacher. This might be a small problem: if you specify"
+					 tr("You specified only the teacher. This might cause a minor issue: if you specify"
 					  " a not allowed slot between two allowed slots, this not allowed slot will"
 					  " be counted as a gap in the teacher's timetable.\n\n"
-					  " The best practice would be to use constraint teacher not available times.\n\n"
-					  " If you need weight under 100%, then you can use this constraint, but be careful"
+					  "The best practice would be to use constraint teacher not available times.\n\n"
+					  "If you need weight under 100%, then you can use this constraint, but be careful"
 					  " not to obtain an impossible timetable (if your teacher is constrained on gaps"
 					  " and if you leave a not allowed slot between 2 allowed slots, this possible"
 					  " gap might be counted in teacher's timetable)")
@@ -13090,12 +13788,12 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 
 				if(duration==-1 && teacher=="" && students!="" && subject=="" && activityTag==""){
 					int t=QMessageBox::question(dialog, tr("FET question"),
-					 tr("You specified only the students set. This might be a small problem: if you specify"
+					 tr("You specified only the students set. This might cause a minor issue: if you specify"
 					  " a not allowed slot between two allowed slots (or a not allowed slot before allowed slots),"
 					  " this not allowed slot will"
 					  " be counted as a gap (or early gap) in the students' timetable.\n\n"
-					  " The best practice would be to use constraint students set not available times.\n\n"
-					  " If you need weight under 100%, then you can use this constraint, but be careful"
+					  "The best practice would be to use constraint students set not available times.\n\n"
+					  "If you need weight under 100%, then you can use this constraint, but be careful"
 					  " not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps"
 					  " and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible"
 					  " gap might be counted in students' timetable)")
@@ -13183,11 +13881,11 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 
 				if(duration==-1 && teacher=="" && students=="" && subject=="" && activityTag==""){
 					int t=QMessageBox::question(dialog, tr("FET question"),
-					 tr("You specified all the activities. This might be a small problem: if you specify"
+					 tr("You specified all the activities. This might cause a minor issue: if you specify"
 					  " a not allowed slot between two allowed slots, this not allowed slot will"
 					  " be counted as a gap in the teachers' and students' timetable.\n\n"
-					  " The best practice would be to use constraint break times.\n\n"
-					  " If you need weight under 100%, then you can use this constraint, but be careful"
+					  "The best practice would be to use constraint break times.\n\n"
+					  "If you need weight under 100%, then you can use this constraint, but be careful"
 					  " not to obtain an impossible timetable (if your teachers/students are constrained on gaps"
 					  " or early gaps and if you leave a not allowed slot between 2 allowed slots or"
 					  " a not allowed slot early in the day and more allowed slots after it,"
@@ -13201,11 +13899,11 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 
 				if(duration==-1 && teacher!="" && students=="" && subject=="" && activityTag==""){
 					int t=QMessageBox::question(dialog, tr("FET question"),
-					 tr("You specified only the teacher. This might be a small problem: if you specify"
+					 tr("You specified only the teacher. This might cause a minor issue: if you specify"
 					  " a not allowed slot between two allowed slots, this not allowed slot will"
 					  " be counted as a gap in the teacher's timetable.\n\n"
-					  " The best practice would be to use constraint teacher not available times.\n\n"
-					  " If you need weight under 100%, then you can use this constraint, but be careful"
+					  "The best practice would be to use constraint teacher not available times.\n\n"
+					  "If you need weight under 100%, then you can use this constraint, but be careful"
 					  " not to obtain an impossible timetable (if your teacher is constrained on gaps"
 					  " and if you leave a not allowed slot between 2 allowed slots, this possible"
 					  " gap might be counted in teacher's timetable)")
@@ -13218,12 +13916,12 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 
 				if(duration==-1 && teacher=="" && students!="" && subject=="" && activityTag==""){
 					int t=QMessageBox::question(dialog, tr("FET question"),
-					 tr("You specified only the students set. This might be a small problem: if you specify"
+					 tr("You specified only the students set. This might cause a minor issue: if you specify"
 					  " a not allowed slot between two allowed slots (or a not allowed slot before allowed slots),"
 					  " this not allowed slot will"
 					  " be counted as a gap (or early gap) in the students' timetable.\n\n"
-					  " The best practice would be to use constraint students set not available times.\n\n"
-					  " If you need weight under 100%, then you can use this constraint, but be careful"
+					  "The best practice would be to use constraint students set not available times.\n\n"
+					  "If you need weight under 100%, then you can use this constraint, but be careful"
 					  " not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps"
 					  " and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible"
 					  " gap might be counted in students' timetable)")
@@ -16293,6 +16991,239 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 
 				break;
 			}
+		//241
+		case CONSTRAINT_ACTIVITIES_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				QList<int> days1;
+				QList<int> hours1;
+				getTimesTable(timesTable1, days1, hours1, true);
+				
+				assert(days1.count()==hours1.count());
+				if(days1.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least one time slot in the first set of time slots"));
+					return;
+				}
+
+				QList<int> days2;
+				QList<int> hours2;
+				getTimesTable(timesTable2, days2, hours2, true);
+				
+				assert(days2.count()==hours2.count());
+				if(days2.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least one time slot in the second set of time slots"));
+					return;
+				}
+
+				QSet<QPair<int, int>> set1;
+				QSet<QPair<int, int>> set2;
+				for(int i=0; i<days1.count(); i++)
+					set1.insert(QPair<int, int>(days1.at(i), hours1.at(i)));
+				for(int i=0; i<days2.count(); i++)
+					set2.insert(QPair<int, int>(days2.at(i), hours2.at(i)));
+				if(set1.intersects(set2)){
+					QSet<QPair<int, int>> intersectionSet = set1 & set2;
+					QList<QPair<int, int>> intersectionList(intersectionSet.constBegin(), intersectionSet.constEnd());
+					std::stable_sort(intersectionList.begin(), intersectionList.end());
+					
+					QStringList cts;
+					for(const QPair<int, int>& pr : std::as_const(intersectionList))
+						cts.append(gt.rules.daysOfTheWeek[pr.first]+QString(" ")+gt.rules.hoursOfTheDay[pr.second]);
+					
+					LongTextMessageBox::information(dialog, tr("FET information"),
+						 tr("The two sets of selected time slots cannot have common time slots. The common time slots are: %1.")
+						 .arg(cts.join(translatedCommaSpace())));
+					return;
+				}
+
+				if(selectedActivitiesList.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Empty list of selected activities"));
+					return;
+				}
+				/*if(selectedActivitiesList.count()==1){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Only one selected activity"));
+					return;
+				}*/
+
+				tc=new ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots(weight, selectedActivitiesList, days1, hours1, days2, hours2);
+
+				break;
+			}
+		//242
+		case CONSTRAINT_ACTIVITIES_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				int day1=firstDayComboBox->currentIndex();
+				int hour1=firstHourComboBox->currentIndex();
+
+				int day2=secondDayComboBox->currentIndex();
+				int hour2=secondHourComboBox->currentIndex();
+
+				if(day1<0 || day1>=gt.rules.nDaysPerWeek){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("First time slot's day invalid"));
+					return;
+				}
+				if(hour1<0 || hour1>=gt.rules.nHoursPerDay){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("First time slot's hour invalid"));
+					return;
+				}
+
+				if(day2<0 || day2>=gt.rules.nDaysPerWeek){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Second time slot's day invalid"));
+					return;
+				}
+				if(hour2<0 || hour2>=gt.rules.nHoursPerDay){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Second time slot's hour invalid"));
+					return;
+				}
+
+				if(day1==day2 && hour1==hour2){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("The two time slots are the same", "It is a user error, the two time slots should not be equal"));
+					return;
+				}
+
+				if(selectedActivitiesList.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Empty list of selected activities"));
+					return;
+				}
+				/*if(selectedActivitiesList.count()==1){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Only one selected activity"));
+					return;
+				}*/
+
+				tc=new ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots(weight, selectedActivitiesList, day1, hour1, day2, hour2);
+
+				break;
+			}
+		//243
+		case CONSTRAINT_TEACHER_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				QList<QList<int>> days;
+				QList<QList<int>> hours;
+				getSpinBoxTimesTable(days, hours);
+				
+				assert(days.count()==hours.count());
+				if(days.count()<=1){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least two sets of time slots."));
+					return;
+				}
+				
+				for(int i=0; i<days.count(); i++){
+					const QList<int>& cdl=days.at(i);
+					const QList<int>& chl=hours.at(i);
+					assert(cdl.count()==chl.count());
+					if(cdl.count()==0){
+						QMessageBox::warning(dialog, tr("FET information"),
+							tr("Set number %1 of selected time slots is empty - please correct this"
+							 " (the selected numbers must start from 1, and they must be continuous, without any gap between them).").arg(i+1));
+						return;
+					}
+				}
+
+				tc=new ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection(weight, teachersComboBox->currentText(), spinBox->value(), days, hours);
+
+				break;
+			}
+		//244
+		case CONSTRAINT_TEACHERS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				QList<QList<int>> days;
+				QList<QList<int>> hours;
+				getSpinBoxTimesTable(days, hours);
+				
+				assert(days.count()==hours.count());
+				if(days.count()<=1){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least two sets of time slots."));
+					return;
+				}
+				
+				for(int i=0; i<days.count(); i++){
+					const QList<int>& cdl=days.at(i);
+					const QList<int>& chl=hours.at(i);
+					assert(cdl.count()==chl.count());
+					if(cdl.count()==0){
+						QMessageBox::warning(dialog, tr("FET information"),
+							tr("Set number %1 of selected time slots is empty - please correct this"
+							 " (the selected numbers must start from 1, and they must be continuous, without any gap between them).").arg(i+1));
+						return;
+					}
+				}
+
+				tc=new ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection(weight, spinBox->value(), days, hours);
+
+				break;
+			}
+		//245
+		case CONSTRAINT_STUDENTS_SET_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				QList<QList<int>> days;
+				QList<QList<int>> hours;
+				getSpinBoxTimesTable(days, hours);
+				
+				assert(days.count()==hours.count());
+				if(days.count()<=1){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least two sets of time slots."));
+					return;
+				}
+				
+				for(int i=0; i<days.count(); i++){
+					const QList<int>& cdl=days.at(i);
+					const QList<int>& chl=hours.at(i);
+					assert(cdl.count()==chl.count());
+					if(cdl.count()==0){
+						QMessageBox::warning(dialog, tr("FET information"),
+							tr("Set number %1 of selected time slots is empty - please correct this"
+							 " (the selected numbers must start from 1, and they must be continuous, without any gap between them).").arg(i+1));
+						return;
+					}
+				}
+
+				tc=new ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection(weight, studentsComboBox->currentText(), spinBox->value(), days, hours);
+
+				break;
+			}
+		//246
+		case CONSTRAINT_STUDENTS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				QList<QList<int>> days;
+				QList<QList<int>> hours;
+				getSpinBoxTimesTable(days, hours);
+				
+				assert(days.count()==hours.count());
+				if(days.count()<=1){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least two sets of time slots."));
+					return;
+				}
+				
+				for(int i=0; i<days.count(); i++){
+					const QList<int>& cdl=days.at(i);
+					const QList<int>& chl=hours.at(i);
+					assert(cdl.count()==chl.count());
+					if(cdl.count()==0){
+						QMessageBox::warning(dialog, tr("FET information"),
+							tr("Set number %1 of selected time slots is empty - please correct this"
+							 " (the selected numbers must start from 1, and they must be continuous, without any gap between them).").arg(i+1));
+						return;
+					}
+				}
+
+				tc=new ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection(weight, spinBox->value(), days, hours);
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -17552,6 +18483,46 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 
 				break;
 			}
+		//243
+		case CONSTRAINT_TEACHER_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			[[fallthrough]];
+		//244
+		case CONSTRAINT_TEACHERS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				QList<QList<int>> days;
+				QList<QList<int>> hours;
+				getSpinBoxTimesTable(days, hours);
+				
+				assert(days.count()==hours.count());
+				if(days.count()<=1){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least two sets of time slots."));
+					return;
+				}
+				
+				for(int i=0; i<days.count(); i++){
+					const QList<int>& cdl=days.at(i);
+					const QList<int>& chl=hours.at(i);
+					assert(cdl.count()==chl.count());
+					if(cdl.count()==0){
+						QMessageBox::warning(dialog, tr("FET information"),
+							tr("Set number %1 of selected time slots is empty - please correct this"
+							 " (the selected numbers must start from 1, and they must be continuous, without any gap between them).").arg(i+1));
+						return;
+					}
+				}
+
+				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
+					TimeConstraint *ctr=new ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection(weight, tch->name, spinBox->value(), days, hours);
+					bool tmp2=gt.rules.addTimeConstraint(ctr);
+					assert(tmp2);
+
+					ctrs+=ctr->getDetailedDescription(gt.rules);
+					ctrs+=QString("\n");
+				}
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -18096,7 +19067,7 @@ void AddOrModifyTimeConstraint::okClicked()
 					return;
 				}
 				if(selectedActivitiesList.size()==1){
-					QMessageBox::warning(dialog, tr("FET information"),	tr("Only one selected activity"));
+					QMessageBox::warning(dialog, tr("FET information"), tr("Only one selected activity"));
 					return;
 				}
 
@@ -18115,7 +19086,7 @@ void AddOrModifyTimeConstraint::okClicked()
 					return;
 				}
 				if(selectedActivitiesList.size()==1){
-					QMessageBox::warning(dialog, tr("FET information"),	tr("Only one selected activity"));
+					QMessageBox::warning(dialog, tr("FET information"), tr("Only one selected activity"));
 					return;
 				}
 
@@ -18134,7 +19105,7 @@ void AddOrModifyTimeConstraint::okClicked()
 					return;
 				}
 				if(selectedActivitiesList.size()==1){
-					QMessageBox::warning(dialog, tr("FET information"),	tr("Only one selected activity"));
+					QMessageBox::warning(dialog, tr("FET information"), tr("Only one selected activity"));
 					return;
 				}
 
@@ -18264,11 +19235,11 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				if(duration==-1 && teacher=="" && students=="" && subject=="" && activityTag==""){
 					int t=QMessageBox::question(dialog, tr("FET question"),
-					 tr("You specified all the activities. This might be a small problem: if you specify"
+					 tr("You specified all the activities. This might cause a minor issue: if you specify"
 					  " a not allowed slot between two allowed slots, this not allowed slot will"
 					  " be counted as a gap in the teachers' and students' timetable.\n\n"
-					  " The best practice would be to use constraint break times.\n\n"
-					  " If you need weight under 100%, then you can use this constraint, but be careful"
+					  "The best practice would be to use constraint break times.\n\n"
+					  "If you need weight under 100%, then you can use this constraint, but be careful"
 					  " not to obtain an impossible timetable (if your teachers/students are constrained on gaps"
 					  " or early gaps and if you leave a not allowed slot between 2 allowed slots or"
 					  " a not allowed slot early in the day and more allowed slots after it,"
@@ -18282,11 +19253,11 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				if(duration==-1 && teacher!="" && students=="" && subject=="" && activityTag==""){
 					int t=QMessageBox::question(dialog, tr("FET question"),
-					 tr("You specified only the teacher. This might be a small problem: if you specify"
+					 tr("You specified only the teacher. This might cause a minor issue: if you specify"
 					  " a not allowed slot between two allowed slots, this not allowed slot will"
 					  " be counted as a gap in the teacher's timetable.\n\n"
-					  " The best practice would be to use constraint teacher not available times.\n\n"
-					  " If you need weight under 100%, then you can use this constraint, but be careful"
+					  "The best practice would be to use constraint teacher not available times.\n\n"
+					  "If you need weight under 100%, then you can use this constraint, but be careful"
 					  " not to obtain an impossible timetable (if your teacher is constrained on gaps"
 					  " and if you leave a not allowed slot between 2 allowed slots, this possible"
 					  " gap might be counted in teacher's timetable)")
@@ -18299,12 +19270,12 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				if(duration==-1 && teacher=="" && students!="" && subject=="" && activityTag==""){
 					int t=QMessageBox::question(dialog, tr("FET question"),
-					 tr("You specified only the students set. This might be a small problem: if you specify"
+					 tr("You specified only the students set. This might cause a minor issue: if you specify"
 					  " a not allowed slot between two allowed slots (or a not allowed slot before allowed slots),"
 					  " this not allowed slot will"
 					  " be counted as a gap (or early gap) in the students' timetable.\n\n"
-					  " The best practice would be to use constraint students set not available times.\n\n"
-					  " If you need weight under 100%, then you can use this constraint, but be careful"
+					  "The best practice would be to use constraint students set not available times.\n\n"
+					  "If you need weight under 100%, then you can use this constraint, but be careful"
 					  " not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps"
 					  " and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible"
 					  " gap might be counted in students' timetable)")
@@ -18412,11 +19383,11 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				if(duration==-1 && teacher=="" && students=="" && subject=="" && activityTag==""){
 					int t=QMessageBox::question(dialog, tr("FET question"),
-					 tr("You specified all the activities. This might be a small problem: if you specify"
+					 tr("You specified all the activities. This might cause a minor issue: if you specify"
 					  " a not allowed slot between two allowed slots, this not allowed slot will"
 					  " be counted as a gap in the teachers' and students' timetable.\n\n"
-					  " The best practice would be to use constraint break times.\n\n"
-					  " If you need weight under 100%, then you can use this constraint, but be careful"
+					  "The best practice would be to use constraint break times.\n\n"
+					  "If you need weight under 100%, then you can use this constraint, but be careful"
 					  " not to obtain an impossible timetable (if your teachers/students are constrained on gaps"
 					  " or early gaps and if you leave a not allowed slot between 2 allowed slots or"
 					  " a not allowed slot early in the day and more allowed slots after it,"
@@ -18430,11 +19401,11 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				if(duration==-1 && teacher!="" && students=="" && subject=="" && activityTag==""){
 					int t=QMessageBox::question(dialog, tr("FET question"),
-					 tr("You specified only the teacher. This might be a small problem: if you specify"
+					 tr("You specified only the teacher. This might cause a minor issue: if you specify"
 					  " a not allowed slot between two allowed slots, this not allowed slot will"
 					  " be counted as a gap in the teacher's timetable.\n\n"
-					  " The best practice would be to use constraint teacher not available times.\n\n"
-					  " If you need weight under 100%, then you can use this constraint, but be careful"
+					  "The best practice would be to use constraint teacher not available times.\n\n"
+					  "If you need weight under 100%, then you can use this constraint, but be careful"
 					  " not to obtain an impossible timetable (if your teacher is constrained on gaps"
 					  " and if you leave a not allowed slot between 2 allowed slots, this possible"
 					  " gap might be counted in teacher's timetable)")
@@ -18447,12 +19418,12 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				if(duration==-1 && teacher=="" && students!="" && subject=="" && activityTag==""){
 					int t=QMessageBox::question(dialog, tr("FET question"),
-					 tr("You specified only the students set. This might be a small problem: if you specify"
+					 tr("You specified only the students set. This might cause a minor issue: if you specify"
 					  " a not allowed slot between two allowed slots (or a not allowed slot before allowed slots),"
 					  " this not allowed slot will"
 					  " be counted as a gap (or early gap) in the students' timetable.\n\n"
-					  " The best practice would be to use constraint students set not available times.\n\n"
-					  " If you need weight under 100%, then you can use this constraint, but be careful"
+					  "The best practice would be to use constraint students set not available times.\n\n"
+					  "If you need weight under 100%, then you can use this constraint, but be careful"
 					  " not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps"
 					  " and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible"
 					  " gap might be counted in students' timetable)")
@@ -19024,7 +19995,7 @@ void AddOrModifyTimeConstraint::okClicked()
 					return;
 				}
 				if(selectedActivitiesList.size()==1){
-					QMessageBox::warning(dialog, tr("FET information"),	tr("Only one selected activity"));
+					QMessageBox::warning(dialog, tr("FET information"), tr("Only one selected activity"));
 					return;
 				}
 
@@ -22409,6 +23380,277 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				break;
 			}
+		//241
+		case CONSTRAINT_ACTIVITIES_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots* ctr=(ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots*)oldtc;
+
+				if(selectedActivitiesList.size()==0){
+					QMessageBox::warning(dialog, tr("FET information"), tr("Empty list of selected activities"));
+					return;
+				}
+				/*if(selectedActivitiesList.size()==1){
+					QMessageBox::warning(dialog, tr("FET information"), tr("Only one selected activity"));
+					return;
+				}*/
+
+				QList<int> days1;
+				QList<int> hours1;
+				getTimesTable(timesTable1, days1, hours1, true);
+				
+				assert(days1.count()==hours1.count());
+				if(days1.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least one time slot in the first set of time slots"));
+					return;
+				}
+
+				QList<int> days2;
+				QList<int> hours2;
+				getTimesTable(timesTable2, days2, hours2, true);
+				
+				assert(days2.count()==hours2.count());
+				if(days2.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least one time slot in the second set of time slots"));
+					return;
+				}
+				
+				QSet<QPair<int, int>> set1;
+				QSet<QPair<int, int>> set2;
+				for(int i=0; i<days1.count(); i++)
+					set1.insert(QPair<int, int>(days1.at(i), hours1.at(i)));
+				for(int i=0; i<days2.count(); i++)
+					set2.insert(QPair<int, int>(days2.at(i), hours2.at(i)));
+				if(set1.intersects(set2)){
+					QSet<QPair<int, int>> intersectionSet = set1 & set2;
+					QList<QPair<int, int>> intersectionList(intersectionSet.constBegin(), intersectionSet.constEnd());
+					std::stable_sort(intersectionList.begin(), intersectionList.end());
+					
+					QStringList cts;
+					for(const QPair<int, int>& pr : std::as_const(intersectionList))
+						cts.append(gt.rules.daysOfTheWeek[pr.first]+QString(" ")+gt.rules.hoursOfTheDay[pr.second]);
+					
+					LongTextMessageBox::information(dialog, tr("FET information"),
+						 tr("The two sets of selected time slots cannot have common time slots. The common time slots are: %1.")
+						 .arg(cts.join(translatedCommaSpace())));
+					return;
+				}
+
+				ctr->activitiesIds=selectedActivitiesList;
+				ctr->recomputeActivitiesSet();
+
+				ctr->selectedDays1=days1;
+				ctr->selectedHours1=hours1;
+
+				ctr->selectedDays2=days2;
+				ctr->selectedHours2=hours2;
+
+				break;
+			}
+		//242
+		case CONSTRAINT_ACTIVITIES_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots* ctr=(ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots*)oldtc;
+
+				if(selectedActivitiesList.size()==0){
+					QMessageBox::warning(dialog, tr("FET information"), tr("Empty list of selected activities"));
+					return;
+				}
+				/*if(selectedActivitiesList.size()==1){
+					QMessageBox::warning(dialog, tr("FET information"), tr("Only one selected activity"));
+					return;
+				}*/
+
+				int day1=firstDayComboBox->currentIndex();
+				int hour1=firstHourComboBox->currentIndex();
+
+				int day2=secondDayComboBox->currentIndex();
+				int hour2=secondHourComboBox->currentIndex();
+
+				if(day1<0 || day1>=gt.rules.nDaysPerWeek){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("First time slot's day invalid"));
+					return;
+				}
+				if(hour1<0 || hour1>=gt.rules.nHoursPerDay){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("First time slot's hour invalid"));
+					return;
+				}
+
+				if(day2<0 || day2>=gt.rules.nDaysPerWeek){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Second time slot's day invalid"));
+					return;
+				}
+				if(hour2<0 || hour2>=gt.rules.nHoursPerDay){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Second time slot's hour invalid"));
+					return;
+				}
+
+				if(day1==day2 && hour1==hour2){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("The two time slots are the same", "It is a user error, the two time slots should not be equal"));
+					return;
+				}
+
+				ctr->activitiesIds=selectedActivitiesList;
+				ctr->recomputeActivitiesSet();
+
+				ctr->day1=day1;
+				ctr->hour1=hour1;
+
+				ctr->day2=day2;
+				ctr->hour2=hour2;
+
+				break;
+			}
+		//243
+		case CONSTRAINT_TEACHER_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection* ctr=(ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection*)oldtc;
+
+				QList<QList<int>> days;
+				QList<QList<int>> hours;
+				getSpinBoxTimesTable(days, hours);
+				
+				assert(days.count()==hours.count());
+				if(days.count()<=1){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least two sets of time slots."));
+					return;
+				}
+				
+				for(int i=0; i<days.count(); i++){
+					const QList<int>& cdl=days.at(i);
+					const QList<int>& chl=hours.at(i);
+					assert(cdl.count()==chl.count());
+					if(cdl.count()==0){
+						QMessageBox::warning(dialog, tr("FET information"),
+							tr("Set number %1 of selected time slots is empty - please correct this"
+							 " (the selected numbers must start from 1, and they must be continuous, without any gap between them).").arg(i+1));
+						return;
+					}
+				}
+				
+				ctr->teacherName=teachersComboBox->currentText();
+
+				ctr->selectedDays=days;
+				ctr->selectedHours=hours;
+
+				ctr->maxOccupiedSets=spinBox->value();
+
+				break;
+			}
+		//244
+		case CONSTRAINT_TEACHERS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection* ctr=(ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection*)oldtc;
+
+				QList<QList<int>> days;
+				QList<QList<int>> hours;
+				getSpinBoxTimesTable(days, hours);
+				
+				assert(days.count()==hours.count());
+				if(days.count()<=1){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least two sets of time slots."));
+					return;
+				}
+				
+				for(int i=0; i<days.count(); i++){
+					const QList<int>& cdl=days.at(i);
+					const QList<int>& chl=hours.at(i);
+					assert(cdl.count()==chl.count());
+					if(cdl.count()==0){
+						QMessageBox::warning(dialog, tr("FET information"),
+							tr("Set number %1 of selected time slots is empty - please correct this"
+							 " (the selected numbers must start from 1, and they must be continuous, without any gap between them).").arg(i+1));
+						return;
+					}
+				}
+				
+				ctr->selectedDays=days;
+				ctr->selectedHours=hours;
+
+				ctr->maxOccupiedSets=spinBox->value();
+
+				break;
+			}
+		//245
+		case CONSTRAINT_STUDENTS_SET_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection* ctr=(ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection*)oldtc;
+
+				QList<QList<int>> days;
+				QList<QList<int>> hours;
+				getSpinBoxTimesTable(days, hours);
+				
+				assert(days.count()==hours.count());
+				if(days.count()<=1){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least two sets of time slots."));
+					return;
+				}
+				
+				for(int i=0; i<days.count(); i++){
+					const QList<int>& cdl=days.at(i);
+					const QList<int>& chl=hours.at(i);
+					assert(cdl.count()==chl.count());
+					if(cdl.count()==0){
+						QMessageBox::warning(dialog, tr("FET information"),
+							tr("Set number %1 of selected time slots is empty - please correct this"
+							 " (the selected numbers must start from 1, and they must be continuous, without any gap between them).").arg(i+1));
+						return;
+					}
+				}
+				
+				ctr->students=studentsComboBox->currentText();
+
+				ctr->selectedDays=days;
+				ctr->selectedHours=hours;
+
+				ctr->maxOccupiedSets=spinBox->value();
+
+				break;
+			}
+		//246
+		case CONSTRAINT_STUDENTS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection* ctr=(ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection*)oldtc;
+
+				QList<QList<int>> days;
+				QList<QList<int>> hours;
+				getSpinBoxTimesTable(days, hours);
+				
+				assert(days.count()==hours.count());
+				if(days.count()<=1){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least two sets of time slots."));
+					return;
+				}
+				
+				for(int i=0; i<days.count(); i++){
+					const QList<int>& cdl=days.at(i);
+					const QList<int>& chl=hours.at(i);
+					assert(cdl.count()==chl.count());
+					if(cdl.count()==0){
+						QMessageBox::warning(dialog, tr("FET information"),
+							tr("Set number %1 of selected time slots is empty - please correct this"
+							 " (the selected numbers must start from 1, and they must be continuous, without any gap between them).").arg(i+1));
+						return;
+					}
+				}
+				
+				ctr->selectedDays=days;
+				ctr->selectedHours=hours;
+
+				ctr->maxOccupiedSets=spinBox->value();
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -23993,6 +25235,271 @@ void AddOrModifyTimeConstraint::thirdFilter_showRelatedCheckBoxToggled()
 			assert(i<third_activitiesList.count());
 			assert(i<third_activitiesComboBox->count());
 			third_activitiesComboBox->setCurrentIndex(i);
+		}
+	}
+}
+
+void AddOrModifyTimeConstraint::initOccupyMaxTableWidget()
+{
+	assert(occupyMaxSetsOfTimeSlotsFromSelectionTableWidget!=nullptr);
+	
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+		occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->setRowCount(gt.rules.nHoursPerDay);
+		occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->setColumnCount(gt.rules.nDaysPerWeek);
+		
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+			occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->setHorizontalHeaderItem(j, new QTableWidgetItem(gt.rules.daysOfTheWeek[j]));
+		for(int i=0; i<gt.rules.nHoursPerDay; i++)
+			occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->setVerticalHeaderItem(i, new QTableWidgetItem(gt.rules.hoursOfTheDay[i]));
+	}
+	else{
+		occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->setRowCount(gt.rules.nRealHoursPerDay);
+		occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->setColumnCount(gt.rules.nRealDaysPerWeek);
+
+		for(int j=0; j<gt.rules.nRealDaysPerWeek; j++)
+			occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->setHorizontalHeaderItem(j, new QTableWidgetItem(gt.rules.realDaysOfTheWeek[j]));
+		for(int i=0; i<gt.rules.nRealHoursPerDay; i++)
+			occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->setVerticalHeaderItem(i, new QTableWidgetItem(gt.rules.realHoursOfTheDay[i]));
+	}
+	
+	spinBoxesTable.resize(occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->rowCount(), occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->columnCount());
+	
+	for(int i=0; i<occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->rowCount(); i++){
+		for(int j=0; j<occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->columnCount(); j++){
+			QSpinBox* sb=new QSpinBox;
+			sb->setMinimum(0);
+			if(gt.rules.mode!=MORNINGS_AFTERNOONS)
+				sb->setMaximum(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
+			else
+				sb->setMaximum(gt.rules.nRealDaysPerWeek*gt.rules.nRealHoursPerDay);
+			sb->setValue(0);
+			//sb->setSpecialValueText(tr("Not selected", "The corresponding time slot is not selected. Please keep the translation short."));
+			sb->setSpecialValueText(QString(" "));
+			
+			occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->setCellWidget(i, j, sb);
+			spinBoxesTable(i, j)=sb;
+			
+			connect(sb, qOverload<int>(&QSpinBox::valueChanged), this, &AddOrModifyTimeConstraint::colorSpinBox);
+		}
+	}
+}
+
+void AddOrModifyTimeConstraint::fillSpinBoxTimesTable(const QList<QList<int>>& days, const QList<QList<int>>& hours)
+{
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+		for(int i=0; i<gt.rules.nHoursPerDay; i++)
+			for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+				spinBoxesTable(i, j)->setValue(0);
+		
+		assert(days.count()==hours.count());
+		for(int q=0; q<days.count(); q++){
+			QList<int> cdays=days.at(q);
+			QList<int> chours=hours.at(q);
+			assert(cdays.count()==chours.count());
+			for(int k=0; k<cdays.count(); k++){
+				int d=cdays.at(k);
+				int h=chours.at(k);
+				assert(d>=0 && d<gt.rules.nDaysPerWeek);
+				assert(h>=0 && h<gt.rules.nHoursPerDay);
+				spinBoxesTable(h, d)->setValue(q+1);
+			}
+		}
+	}
+	else{
+		for(int i=0; i<gt.rules.nRealHoursPerDay; i++)
+			for(int j=0; j<gt.rules.nRealDaysPerWeek; j++)
+				spinBoxesTable(i, j)->setValue(0);
+		
+		assert(days.count()==hours.count());
+		for(int q=0; q<days.count(); q++){
+			QList<int> cdays=days.at(q);
+			QList<int> chours=hours.at(q);
+			assert(cdays.count()==chours.count());
+			for(int k=0; k<cdays.count(); k++){
+				int d=cdays.at(k);
+				int h=chours.at(k);
+				assert(d>=0 && d<gt.rules.nDaysPerWeek);
+				assert(h>=0 && h<gt.rules.nHoursPerDay);
+				int rd=d/2;
+				int rh=h+(d%2)*gt.rules.nHoursPerDay;
+				if(rd>=0 && rd<gt.rules.nRealDaysPerWeek && rh>=0 && rh<gt.rules.nRealHoursPerDay) //the number of days might be odd (incorrectly - the generation cannot begin).
+					spinBoxesTable(rh, rd)->setValue(q+1);
+			}
+		}
+	}
+}
+
+void AddOrModifyTimeConstraint::getSpinBoxTimesTable(QList<QList<int>>& days, QList<QList<int>>& hours)
+{
+	days.clear();
+	hours.clear();
+
+	QMap<int, QPair<QList<int>, QList<int>>> selectedMap;
+
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++){
+			for(int i=0; i<gt.rules.nHoursPerDay; i++){
+				int k=spinBoxesTable(i, j)->value();
+				if(k>0){
+					QPair<QList<int>, QList<int>> pr=selectedMap.value(k, QPair<QList<int>, QList<int>>());
+					pr.first.append(j);
+					pr.second.append(i);
+					selectedMap.insert(k, pr);
+				}
+			}
+		}
+	}
+	else{
+		for(int j=0; j<gt.rules.nRealDaysPerWeek; j++){
+			for(int i=0; i<gt.rules.nRealHoursPerDay; i++){
+				int k=spinBoxesTable(i, j)->value();
+				if(k>0){
+					QPair<QList<int>, QList<int>> pr=selectedMap.value(k, QPair<QList<int>, QList<int>>());
+					pr.first.append(2*j+(i/gt.rules.nHoursPerDay));
+					pr.second.append(i%gt.rules.nHoursPerDay);
+					selectedMap.insert(k, pr);
+				}
+			}
+		}
+	}
+	
+	for(QMap<int, QPair<QList<int>, QList<int>>>::const_iterator it=selectedMap.constBegin(); it!=selectedMap.constEnd(); it++){
+		int q=it.key();
+		
+		if(it==selectedMap.constBegin() && q>1){ //incorrect
+			days.append(QList<int>());
+			hours.append(QList<int>());
+		}
+		
+		QList<int> dtl=it.value().first;
+		QList<int> htl=it.value().second;
+		days.append(dtl);
+		hours.append(htl);
+		
+		QMap<int, QPair<QList<int>, QList<int>>>::const_iterator it2=std::next(it);
+		if(it2!=selectedMap.constEnd()){
+			for(int k=q+1; k<it2.key(); k++){
+				days.append(QList<int>());
+				hours.append(QList<int>());
+			}
+		}
+	}
+}
+
+void AddOrModifyTimeConstraint::colorSpinBox()
+{
+	QSpinBox* sb=(QSpinBox*)sender();
+	
+	if(!colorsCheckBox->isChecked()){
+		sb->setStyleSheet("");
+	}
+	else{
+		switch(sb->value()){
+			case 0:
+				sb->setStyleSheet("");
+				break;
+			case 1:
+				sb->setStyleSheet("QSpinBox { background-color: darkgreen; color: white; }");
+				break;
+			case 2:
+				sb->setStyleSheet("QSpinBox { background-color: darkred; color: white; }");
+				break;
+			case 3:
+				sb->setStyleSheet("QSpinBox { background-color: darkblue; color: white; }");
+				break;
+			case 4:
+				sb->setStyleSheet("QSpinBox { background-color: darkorange; color: black; }");
+				break;
+			case 5:
+				sb->setStyleSheet("QSpinBox { background-color: darkcyan; color: white; }");
+				break;
+			case 6:
+				sb->setStyleSheet("QSpinBox { background-color: darkviolet; color: white; }");
+				break;
+			case 7:
+				sb->setStyleSheet("QSpinBox { background-color: darkkhaki; color: black; }");
+				break;
+			case 8:
+				sb->setStyleSheet("QSpinBox { background-color: darksalmon; color: black; }");
+				break;
+			case 9:
+				sb->setStyleSheet("QSpinBox { background-color: darkseagreen; color: black; }");
+				break;
+			case 10:
+				sb->setStyleSheet("QSpinBox { background-color: darkturquoise; color: white; }");
+				break;
+			
+			default:
+				int r, g, b;
+				TimetableExport::stringToColor(QString::number(sb->value()), r, g, b);
+				double brightness = double(r)*0.299 + double(g)*0.587 + double(b)*0.114;
+				if (brightness<127.5)
+					sb->setStyleSheet("QSpinBox { background-color: rgb("+QString::number(r)+", "+QString::number(g)+", "+QString::number(b)+"); color: white; }");
+				else
+					sb->setStyleSheet("QSpinBox { background-color: rgb("+QString::number(r)+", "+QString::number(g)+", "+QString::number(b)+"); color: black; }");
+				
+				break;
+		}
+	}
+}
+
+void AddOrModifyTimeConstraint::colorAllSpinBoxes()
+{
+	for(int i=0; i<occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->rowCount(); i++){
+		for(int j=0; j<occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->columnCount(); j++){
+			QSpinBox* sb=spinBoxesTable(i, j);
+
+			if(!colorsCheckBox->isChecked()){
+				sb->setStyleSheet("");
+			}
+			else{
+				switch(sb->value()){
+					case 0:
+						sb->setStyleSheet("");
+						break;
+					case 1:
+						sb->setStyleSheet("QSpinBox { background-color: darkgreen; color: white; }");
+						break;
+					case 2:
+						sb->setStyleSheet("QSpinBox { background-color: darkred; color: white; }");
+						break;
+					case 3:
+						sb->setStyleSheet("QSpinBox { background-color: darkblue; color: white; }");
+						break;
+					case 4:
+						sb->setStyleSheet("QSpinBox { background-color: darkorange; color: black; }");
+						break;
+					case 5:
+						sb->setStyleSheet("QSpinBox { background-color: darkcyan; color: white; }");
+						break;
+					case 6:
+						sb->setStyleSheet("QSpinBox { background-color: darkviolet; color: white; }");
+						break;
+					case 7:
+						sb->setStyleSheet("QSpinBox { background-color: darkkhaki; color: black; }");
+						break;
+					case 8:
+						sb->setStyleSheet("QSpinBox { background-color: darksalmon; color: black; }");
+						break;
+					case 9:
+						sb->setStyleSheet("QSpinBox { background-color: darkseagreen; color: black; }");
+						break;
+					case 10:
+						sb->setStyleSheet("QSpinBox { background-color: darkturquoise; color: white; }");
+						break;
+					
+					default:
+						int r, g, b;
+						TimetableExport::stringToColor(QString::number(sb->value()), r, g, b);
+						double brightness = double(r)*0.299 + double(g)*0.587 + double(b)*0.114;
+						if (brightness<127.5)
+							sb->setStyleSheet("QSpinBox { background-color: rgb("+QString::number(r)+", "+QString::number(g)+", "+QString::number(b)+"); color: white; }");
+						else
+							sb->setStyleSheet("QSpinBox { background-color: rgb("+QString::number(r)+", "+QString::number(g)+", "+QString::number(b)+"); color: black; }");
+						
+						break;
+				}
+			}
 		}
 	}
 }

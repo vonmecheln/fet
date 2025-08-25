@@ -114,7 +114,7 @@ void HelpFaqForm::setText()
 	s+="--------------------";
 	s+="\n\n";
 
-	s+=tr("Q: Why some activities appear indented while others not?\n\n"
+	s+=tr("Q: Why some activities appear indented while others do not?\n\n"
 		"A: The activities are indented for easier visualization. The non-indented ones are the representatives of a "
 		"larger split activity (their id is the group id of the larger split activity), while indented ones are "
 		"the other components of this larger split activity.");

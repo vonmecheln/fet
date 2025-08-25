@@ -432,6 +432,49 @@ Matrix1D<QList<double>> activitiesNotOverlappingPercentages;
 ////////END   activities not overlapping
 
 
+//2025-08-09 - Constraint activities pair of mutually exclusive sets of time slots
+bool haveActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots;
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+std::list<ActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots_item> apomesotsList;
+Matrix1D<QList<ActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots_item*>> apomesotsListForActivity;
+
+//bool computeActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent);
+
+
+//2025-08-09 - Constraint activities pair of mutually exclusive time slots
+bool haveActivitiesPairOfMutuallyExclusiveTimeSlots;
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+std::list<ActivitiesPairOfMutuallyExclusiveTimeSlots_item> apometsList;
+Matrix1D<QList<ActivitiesPairOfMutuallyExclusiveTimeSlots_item*>> apometsListForActivity;
+
+//bool computeActivitiesPairOfMutuallyExclusiveTimeSlots(QWidget* parent);
+
+
+//BEGIN teacher(s) occupy max sets of time slots from selection
+bool haveTeachersOccupyMaxSetsOfTimeSlotsFromSelection;
+
+Matrix1D<QList<double>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionPercentages;
+Matrix1D<QList<int>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets;
+Matrix1D<QList<QList<QSet<int>>>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets;
+Matrix1D<QList<QList<QList<int>>>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists;
+
+//bool computeTeachersOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent);
+//END   teacher(s) occupy max sets of time slots from selection
+
+//BEGIN students (set) occupy max sets of time slots from selection
+bool haveStudentsOccupyMaxSetsOfTimeSlotsFromSelection;
+
+Matrix1D<QList<double>> subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionPercentages;
+Matrix1D<QList<int>> subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets;
+Matrix1D<QList<QList<QSet<int>>>> subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets;
+Matrix1D<QList<QList<QList<int>>>> subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists;
+
+//bool computeSubgroupsOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent);
+//END   students (set) occupy max sets of time slots from selection
+
+
 //BEGIN teacher(s) pair of mutually exclusive time slots
 bool haveTeachersPairOfMutualExclusiveTimeSlots;
 
@@ -1548,6 +1591,16 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	teachersMaxGapsPerMorningAndAfternoonMaxGaps.resize(gt.rules.nInternalTeachers);
 	nHoursPerTeacher.resize(gt.rules.nInternalTeachers);
 	//
+	teachersOccupyMaxSetsOfTimeSlotsFromSelectionPercentages.resize(gt.rules.nInternalTeachers);
+	teachersOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets.resize(gt.rules.nInternalTeachers);
+	teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets.resize(gt.rules.nInternalTeachers);
+	teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists.resize(gt.rules.nInternalTeachers);
+	//
+	subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionPercentages.resize(gt.rules.nInternalSubgroups);
+	subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets.resize(gt.rules.nInternalSubgroups);
+	subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets.resize(gt.rules.nInternalSubgroups);
+	subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists.resize(gt.rules.nInternalSubgroups);
+	//
 	teachersPairOfMutuallyExclusiveTimeSlotsPercentages.resize(gt.rules.nInternalTeachers);
 	teachersPairOfMutuallyExclusiveTimeSlotsDay1.resize(gt.rules.nInternalTeachers);
 	teachersPairOfMutuallyExclusiveTimeSlotsHour1.resize(gt.rules.nInternalTeachers);
@@ -2040,6 +2093,12 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	//2025-04-02
 	assabListForActivity.resize(gt.rules.nInternalActivities);
 
+	//2025-08-09
+	apometsListForActivity.resize(gt.rules.nInternalActivities);
+
+	//2025-08-09
+	apomesotsListForActivity.resize(gt.rules.nInternalActivities);
+
 	//2011-09-25
 	aomtsListForActivity.resize(gt.rules.nInternalActivities);
 	//2019-11-16
@@ -2448,6 +2507,13 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	if(!t)
 		return false;
 
+	t=computeTeachersOccupyMaxSetsOfTimeSlotsFromSelection(parent);
+	if(!t)
+		return false;
+	t=computeSubgroupsOccupyMaxSetsOfTimeSlotsFromSelection(parent);
+	if(!t)
+		return false;
+
 	t=computeTeachersPairOfMutuallyExclusiveTimeSlots(parent);
 	if(!t)
 		return false;
@@ -2580,6 +2646,18 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 
 	//2025-04-02
 	t=computeTwoSetsOfActivitiesSameSections(parent);
+	if(!t)
+		return false;
+
+	////////////////
+	//2025-08-09
+	t=computeActivitiesPairOfMutuallyExclusiveTimeSlots(parent);
+	if(!t)
+		return false;
+
+	////////////////
+	//2025-08-09
+	t=computeActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots(parent);
 	if(!t)
 		return false;
 
@@ -3539,6 +3617,195 @@ bool computeSubgroupsPairOfMutuallyExclusiveTimeSlots(QWidget* parent)
 					subgroupsPairOfMutuallyExclusiveTimeSlotsHour1[sbg].append(tc->hour1);
 					subgroupsPairOfMutuallyExclusiveTimeSlotsDay2[sbg].append(tc->day2);
 					subgroupsPairOfMutuallyExclusiveTimeSlotsHour2[sbg].append(tc->hour2);
+				}
+			}
+		}
+	}
+
+	return ok;
+}
+
+bool computeTeachersOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent)
+{
+	haveTeachersOccupyMaxSetsOfTimeSlotsFromSelection=false;
+
+	for(int i=0; i<gt.rules.nInternalTeachers; i++){
+		teachersOccupyMaxSetsOfTimeSlotsFromSelectionPercentages[i].clear();
+		teachersOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets[i].clear();
+		teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets[i].clear();
+		teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists[i].clear();
+	}
+	
+	bool ok=true;
+	
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION){
+			haveTeachersOccupyMaxSetsOfTimeSlotsFromSelection=true;
+			
+			ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection* tc=(ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(tc->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a time constraint teacher occupies max sets of time slots from selection"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			int tch=tc->teacher_ID;
+			bool found=false;
+			for(int cnt=0; cnt<teachersOccupyMaxSetsOfTimeSlotsFromSelectionPercentages[tch].count(); cnt++){
+				if(teachersOccupyMaxSetsOfTimeSlotsFromSelectionPercentages[tch].at(cnt)==tc->weightPercentage
+				 && teachersOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets[tch].at(cnt)==tc->maxOccupiedSets
+				 && teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets[tch].at(cnt)==tc->listOfSets
+				 && teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists[tch].at(cnt)==tc->listOfLists){
+					found=true;
+					break;
+				}
+			}
+			
+			if(!found){
+				teachersOccupyMaxSetsOfTimeSlotsFromSelectionPercentages[tch].append(tc->weightPercentage);
+				teachersOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets[tch].append(tc->maxOccupiedSets);
+				teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets[tch].append(tc->listOfSets);
+				teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists[tch].append(tc->listOfLists);
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION){
+			haveTeachersOccupyMaxSetsOfTimeSlotsFromSelection=true;
+			
+			ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection* tc=(ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(tc->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a time constraint teachers occupy max sets of time slots from selection"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
+				bool found=false;
+				for(int cnt=0; cnt<teachersOccupyMaxSetsOfTimeSlotsFromSelectionPercentages[tch].count(); cnt++){
+					if(teachersOccupyMaxSetsOfTimeSlotsFromSelectionPercentages[tch].at(cnt)==tc->weightPercentage
+					 && teachersOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets[tch].at(cnt)==tc->maxOccupiedSets
+					 && teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets[tch].at(cnt)==tc->listOfSets
+					 && teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists[tch].at(cnt)==tc->listOfLists){
+						found=true;
+						break;
+					}
+				}
+				
+				if(!found){
+					teachersOccupyMaxSetsOfTimeSlotsFromSelectionPercentages[tch].append(tc->weightPercentage);
+					teachersOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets[tch].append(tc->maxOccupiedSets);
+					teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets[tch].append(tc->listOfSets);
+					teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists[tch].append(tc->listOfLists);
+				}
+			}
+		}
+	}
+
+	return ok;
+}
+
+bool computeSubgroupsOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent)
+{
+	haveStudentsOccupyMaxSetsOfTimeSlotsFromSelection=false;
+
+	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
+		subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionPercentages[i].clear();
+		subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets[i].clear();
+		subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets[i].clear();
+		subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists[i].clear();
+	}
+	
+	bool ok=true;
+	
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION){
+			haveStudentsOccupyMaxSetsOfTimeSlotsFromSelection=true;
+			
+			ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection* tc=(ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(tc->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a time constraint students set occupies max sets of time slots from selection"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			for(int sbg : std::as_const(tc->iSubgroupsList)){
+				bool found=false;
+				for(int cnt=0; cnt<subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionPercentages[sbg].count(); cnt++){
+					if(subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionPercentages[sbg].at(cnt)==tc->weightPercentage
+					 && subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets[sbg].at(cnt)==tc->maxOccupiedSets
+					 && subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets[sbg].at(cnt)==tc->listOfSets
+					 && subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists[sbg].at(cnt)==tc->listOfLists){
+						found=true;
+						break;
+					}
+				}
+				
+				if(!found){
+					subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionPercentages[sbg].append(tc->weightPercentage);
+					subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets[sbg].append(tc->maxOccupiedSets);
+					subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets[sbg].append(tc->listOfSets);
+					subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists[sbg].append(tc->listOfLists);
+				}
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION){
+			haveStudentsOccupyMaxSetsOfTimeSlotsFromSelection=true;
+			
+			ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection* tc=(ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(tc->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a time constraint students occupy max sets of time slots from selection"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++){
+				bool found=false;
+				for(int cnt=0; cnt<subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionPercentages[sbg].count(); cnt++){
+					if(subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionPercentages[sbg].at(cnt)==tc->weightPercentage
+					 && subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets[sbg].at(cnt)==tc->maxOccupiedSets
+					 && subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets[sbg].at(cnt)==tc->listOfSets
+					 && subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists[sbg].at(cnt)==tc->listOfLists){
+						found=true;
+						break;
+					}
+				}
+				
+				if(!found){
+					subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionPercentages[sbg].append(tc->weightPercentage);
+					subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets[sbg].append(tc->maxOccupiedSets);
+					subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets[sbg].append(tc->listOfSets);
+					subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists[sbg].append(tc->listOfLists);
 				}
 			}
 		}
@@ -17477,6 +17744,108 @@ bool computeTwoSetsOfActivitiesSameSections(QWidget* parent)
 		}
 	}
 
+	return ok;
+}
+
+//2025-08-09
+bool computeActivitiesPairOfMutuallyExclusiveTimeSlots(QWidget* parent)
+{
+	haveActivitiesPairOfMutuallyExclusiveTimeSlots=false;
+
+	bool ok=true;
+	
+	apometsList.clear();
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		apometsListForActivity[i].clear();
+	}
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS){
+			if(!haveActivitiesPairOfMutuallyExclusiveTimeSlots)
+				haveActivitiesPairOfMutuallyExclusiveTimeSlots=true;
+
+			ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots* cn=(ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots*)gt.rules.internalTimeConstraintsList[i];
+
+			if(cn->weightPercentage!=100.0){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'activities pair of mutually exclusive time slots'"
+				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			ActivitiesPairOfMutuallyExclusiveTimeSlots_item item;
+			item.activitiesList=cn->_activitiesIndices;
+			item.day1=cn->day1;
+			item.hour1=cn->hour1;
+			item.day2=cn->day2;
+			item.hour2=cn->hour2;
+			
+			apometsList.push_back(item);
+			ActivitiesPairOfMutuallyExclusiveTimeSlots_item* p_item=&apometsList.back();
+			for(int ai : std::as_const(cn->_activitiesIndices)){
+				apometsListForActivity[ai].append(p_item);
+			}
+		}
+	}
+	
+	return ok;
+}
+
+//2025-08-09
+bool computeActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent)
+{
+	haveActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots=false;
+
+	bool ok=true;
+	
+	apomesotsList.clear();
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		apomesotsListForActivity[i].clear();
+	}
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS){
+			if(!haveActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots)
+				haveActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots=true;
+
+			ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots* cn=(ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots*)gt.rules.internalTimeConstraintsList[i];
+
+			if(cn->weightPercentage!=100.0){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'activities pair of mutually exclusive sets of time slots'"
+				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			
+			ActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots_item item;
+			item.activitiesList=cn->_activitiesIndices;
+			item.timeSlotsSet1=cn->timeSlotsSet1;
+			item.timeSlotsList1=cn->timeSlotsList1;
+			item.timeSlotsSet2=cn->timeSlotsSet2;
+			item.timeSlotsList2=cn->timeSlotsList2;
+			
+			apomesotsList.push_back(item);
+			ActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots_item* p_item=&apomesotsList.back();
+			for(int ai : std::as_const(cn->_activitiesIndices)){
+				apomesotsListForActivity[ai].append(p_item);
+			}
+		}
+	}
+	
 	return ok;
 }
 

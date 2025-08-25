@@ -1,11 +1,11 @@
-This is FET version 7.4.3
+This is FET version 7.4.5
 
 
 Program description:
 
 	FET is free timetabling software (licensed under the GNU Affero General Public License version 3 or later).
 	This program aims to automatically generate the timetable of a school, high-school or university.
-	It may be used for other timetabling purposes.
+	It can be used for other timetabling purposes.
 
 	FET can mean "Free Educational Timetabling" (the "E" in the middle may also stand for other words, based on your personal preference).
 
@@ -14,16 +14,16 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.15.8, Xfce 4.20,
-	Xfce Terminal Emulator 1.1.5, Midnight Commander 4.8.33, Krusader 2.9.0, Kate 25.04.1, KDiff3 0.9.99-beta, grep 3.12, sed 4.9,
+	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.16.1, Xfce 4.20,
+	Xfce Terminal Emulator 1.1.5, Midnight Commander 4.8.33, Krusader 2.9.0, Kate 25.08.0, KDiff3 0.9.99-beta, grep 3.12, sed 4.9,
 	Thunar Bulk Rename 4.20.2, Qt 6.9.1, QMake 3.1, CMake 4.0.3, Ninja 1.12.1, Qt Creator 17.0.0, GCC 15.1.1, Clang 20.1.8,
 	GNU Make 4.4.1, GDB 16.3, Valgrind 3.24.0, Coverity Scan 2024.12.1, Cppcheck 2.15, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0,
 	Inkscape 1.4, GIMP 3.0.2, ImageMagick 7.1.1-47, International Ispell 3.1.20 / Aspell 0.60.8.1, tar 1.35, Gzip 1.14, bzip2 1.0.8,
 	other great software (most of these software packages are free software, in the sense defined by The Free Software Foundation).
 
 	The executable version of FET for Windows is obtained in the following environment: Windows 11 operating system,
-	Command Prompt, Total Commander 11.55, Notepad, Python 3.9.7, ActivePerl 5.28, CMake 3.30.5, Ninja 1.12.1, Qt 6.9.1,
-	QMake 3.1, Qt Creator 17.0.0, MinGW 13.1.0, Microsoft Visual C++ 2019, 7-Zip 25.00.
+	Command Prompt, Total Commander 11.56, Notepad, Python 3.9.7, ActivePerl 5.28, CMake 3.30.5, Ninja 1.12.1, Qt 6.9.1,
+	QMake 3.1, Qt Creator 17.0.0, MinGW 13.1.0, Microsoft Visual C++ 2019, 7-Zip 25.01.
 
 	The executable version of FET for GNU/Linux is obtained in the following environment: openSUSE Leap 15.6 GNU/Linux distribution
 	with the standard packages, Xfce 4.20, Qt 6.9.1, QMake 3.1, Qt Creator 17.0.0, GCC 12.3.0, GNU Make 4.2.1, GDB 14.2, linuxdeploy 1-alpha
@@ -44,7 +44,7 @@ Requirements:
 
 		Note: You need a C++17 compliant C++ compiler. You might be able to use the Clang C++ compiler or other C++ compiler instead of GCC.
 
-		Note2: Starting with Qt 6.5, a new dependency under GNU/Linux might pose problems: if you get an error like:
+		Note2: Starting with Qt 6.5, a new dependency under GNU/Linux might cause problems: if you get an error like:
 		"qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
 		This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
 		Available platform plugins are: eglfs, wayland-egl, vkkhrdisplay, xcb, offscreen, vnc, minimalegl, linuxfb, minimal, wayland.
@@ -129,7 +129,7 @@ Compiling FET:
 		6. $ tar -jxvf fet-v.v.v.bz2
 
 	Note NMkJobs: advice from a user: if you have a multiple core computer, you may be able to split the compilation into more threads, with the -j option for the
-	make command, so that the compilation is faster. This option creates a number of compilation threads equal with the number specified along with the -j option.
+	make command, so that the compilation is faster. This option creates a number of compilation threads equal to the number specified along with the -j option.
 	Under GNU/Linux or macOS, just write "make -j 16" if you have a 16 threads computer. This is proven to work under GNU/Linux and macOS. Under Windows it depends
 	on the C++ compiler (you may try it to see if it works) - with MinGW it works.
 
@@ -299,7 +299,7 @@ Running FET:
 	try to install xcb-cursor0 or libxcb-cursor0.
 
 	Note for macOS about using translations: If you want to use FET in a language other than the default, you'll need to move the translation files
-	into the appropriate location. The files you need to move can be found in /Users/YOURUSERNAME/Downloads/fet-v.v.v/translations - you'll want to
+	into the appropriate location. The files you need to move can be found in /Users/YOURUSERNAME/Downloads/fet-v.v.v/translations. You'll want to
 	move all of the files ending with .qm to a new location. Open a new Finder window and right-click on the FET.app you've just created in
 	/Users/YOURUSERNAME/Downloads, and select Show Package Contents. Then open the Contents folder, and finally open the MacOS folder within Contents.
 	This is where you should move the .qm files. Once these have been moved, you switch FET languages within the FET app as usual.
@@ -349,19 +349,19 @@ Running FET:
 			WT1 to WT17 are either true or false and represent whether you want the corresponding timetables to be written on the disk (default true).
 
 		--printsubjects=PS
-			PS is either true or false and represets if you want the subjects to be present in the final HTML timetables (default true).
+			PS is either true or false and represents if you want the subjects to be present in the final HTML timetables (default true).
 
 		--printactivitytags=PAT
-			PAT is either true or false and represets if you want the activity tags to be present in the final HTML timetables (default true).
+			PAT is either true or false and represents if you want the activity tags to be present in the final HTML timetables (default true).
 
 		--printteachers=PT
-			PT is either true or false and represets if you want the teachers to be present in the final HTML timetables (default true).
+			PT is either true or false and represents if you want the teachers to be present in the final HTML timetables (default true).
 
 		--printstudents=PSt
-			PSt is either true or false and represets if you want the students to be present in the final HTML timetables (default true).
+			PSt is either true or false and represents if you want the students to be present in the final HTML timetables (default true).
 
 		--printrooms=PR
-			PR is either true or false and represets if you want the rooms to be present in the final HTML timetables (default true).
+			PR is either true or false and represents if you want the rooms to be present in the final HTML timetables (default true).
 
 		--printnotavailable=PNA
 			PNA is either true or false and represents if you want -x- (for true) or --- (for false) in the generated timetables for the not available
@@ -372,8 +372,8 @@ Running FET:
 			(default true).
 
 		--sortsubgroups=SS
-			SS is either true or false and represents if you want the timetables of the subgroups to be sorted alphabetically by subgroup name 
-			(default false).\n"
+			SS is either true or false and represents if you want the timetables of the subgroups to be sorted alphabetically by subgroup name
+			(default false).
 
 		--dividetimeaxisbydays=DTAD
 			DTAD is either true or false, represents if you want the HTML timetables with time axis divided by days (default false).
@@ -398,7 +398,7 @@ Running FET:
 			timetable generation options to group activities in the initial order (default true).
 
 		--warnsubgroupswiththesameactivities=WSSA
-			WSSA is either true or false, represents whether you want a message box to be show, with a warning, if your input file contains subgroups
+			WSSA is either true or false, represents whether you want a message box to be shown, with a warning, if your input file contains subgroups
 			which have the same activities (default true).
 
 		--printdetailedtimetables=PDT
@@ -430,7 +430,7 @@ Running FET:
 			SVR is either true or false, represents whether you want to show virtual rooms in the timetables (default false).
 
 		--warnifusingactivitiesnotfixedtimefixedspacevirtualroomsrealrooms=WANFTFS
-			WANFTFS is either true or false, represents whether you want the program to issue a warning if you are using activites which are not
+			WANFTFS is either true or false, represents whether you want the program to issue a warning if you are using activities which are not
 			fixed in time, but are fixed in space in a virtual room, specifying also the real rooms (which is not recommended) (default true).
 
 		--warnifusingmaxhoursdailywithlessthan100percentweight=WMHDWLT100PW
@@ -508,7 +508,7 @@ Languages (translations):
 		- Under GNU/Linux, and maybe macOS, usually in your $HOME/.config directory you'll find a directory "fet",
 		containing file "fettimetabling.conf". Edit that file - the line beginning with language, instead of language=... (for instance, language=ro),
 		make it language=en_US (case sensitive).
-		- Under Windows: run regedit.exe (Registry Editor), search key "fet". You will find a section "fet" with sub-section "fettimetabling".
+		- Under Windows: run regedit.exe (Registry Editor), search key "fet". You will find a "fet" section with "fettimetabling" subsection.
 		Modify the value name language (from, for instance, ro, or other language) to have the value data en_US (5 characters, case sensitive).
 	Another solution: simply remove the translation files (or move them so they are not available to the fet executable) and start FET. It will report
 		that the custom language is not found and it will revert to en_US.
@@ -523,7 +523,7 @@ Documentation:
 
 Input files:
 
-	You can open a few sample input files in "fet-v.v.v/examples/" directory
+	You can open a few sample input files in the "fet-v.v.v/examples/" directory
 	(under GNU/Linux or macOS, they may be found in /usr/share/fet/examples/)
 
 
@@ -549,7 +549,7 @@ Uninstalling FET:
 	Remove the "fet" section and its contents.
 
 
-Feed-back / help:
+Feedback / help:
 
 	You are encouraged to express your opinion about this program, to send your data files, for the purpose of testing or
 	for inclusion into examples, and also to report possible bugs and suggestions. See the FET homepage for contact information.

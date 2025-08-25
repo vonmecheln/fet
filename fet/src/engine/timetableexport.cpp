@@ -15945,7 +15945,7 @@ QString TimetableExport::singleSubjectsTimetableTimeVerticalHtml(int htmlLevel, 
 						allActivitiesSet.insert(ai);
 					}
 				
-				/* //Now get the activities ids. I don't run through the InternalActivitiesList, even if that is faster. I run through subgroupsList, because by that the activites are sorted by that in the html-table.
+				/* //Now get the activities ids. I don't run through the internalActivitiesList, even if that is faster. I run through subgroupsList, because by that the activities are sorted by that in the html-table.
 				for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
 					if(students_timetable_weekly[subgroup][day][hour]!=UNALLOCATED_ACTIVITY){
 						Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][day][hour]];
@@ -16214,7 +16214,7 @@ QString TimetableExport::singleSubjectsTimetableTimeHorizontalHtml(int htmlLevel
 					allActivitiesSet.insert(ai);
 
 				/*allActivities.clear();
-				//Now get the activitiy ids. I don't run through the InternalActivitiesList, even that is faster. I run through subgroupsList, because by that the activites are sorted by that in the html-table.
+				//Now get the activities ids. I don't run through the internalActivitiesList, even that is faster. I run through subgroupsList, because by that the activities are sorted by that in the html-table.
 				for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
 					if(students_timetable_weekly[subgroup][day][hour]!=UNALLOCATED_ACTIVITY){
 						Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][day][hour]];
@@ -16391,7 +16391,7 @@ QString TimetableExport::singleSubjectsTimetableTimeVerticalDailyHtml(int htmlLe
 					allActivitiesSet.insert(ai);
 				}
 			
-			/*//Now get the activitiy ids. I don't run through the InternalActivitiesList, even that is faster. I run through subgroupsList, because by that the activites are sorted by that in the html-table.
+			/*//Now get the activities ids. I don't run through the internalActivitiesList, even that is faster. I run through subgroupsList, because by that the activities are sorted by that in the html-table.
 			for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
 				if(students_timetable_weekly[subgroup][day][hour]!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][day][hour]];
@@ -16581,7 +16581,7 @@ QString TimetableExport::singleSubjectsTimetableTimeHorizontalDailyHtml(int html
 				allActivitiesSet.insert(ai);
 
 			/*allActivities.clear();
-			//Now get the activitiy ids. I don't run through the InternalActivitiesList, even that is faster. I run through subgroupsList, because by that the activites are sorted by that in the html-table.
+			//Now get the activities ids. I don't run through the internalActivitiesList, even that is faster. I run through subgroupsList, because by that the activities are sorted by that in the html-table.
 			for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
 				if(students_timetable_weekly[subgroup][day][hour]!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][day][hour]];

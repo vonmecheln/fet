@@ -523,6 +523,10 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	references+=QString("28. https://stackoverflow.com/questions/10053839/how-does-designer-create-a-line-widget");
 	references+=QString("<br /><br />");
 	references+=QString("29. Google Translate: https://translate.google.com/");
+	references+=QString("<br /><br />");
+	references+=QString("30. https://forum.qt.io/topic/94474/how-to-add-a-spinbox-column-and-combo-box-column-in-qtablewidget-or-qtableview");
+	references+=QString("<br /><br />");
+	references+=QString("31. https://stackoverflow.com/questions/35435254/refer-to-the-sender-object-in-qt");
 
 	references+=QString("<br /><br /><br />");
 
@@ -1227,7 +1231,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Arvind Kumar Agarwal");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString("Bachir Sayah");
+	thanksTo+=QString("Bachir Nacer Elhak Sayah");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Prof info");
 	thanksTo+=QString("<br />");
@@ -1383,8 +1387,6 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Muhammad Ratrout");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString("Bachir Nacer Elhak Sayah");
-	thanksTo+=QString("<br />");
 	thanksTo+=QString("Kamel Ben");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Bahri Abderezak");
@@ -1480,6 +1482,20 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("JoeLaw");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Pass Enger");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("aries10");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Youssef Bourdha");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Mo Da");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Aboulhamid");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("islam");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("thiagonunes");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Anisse Hanifi");
 	thanksTo+=QString("<br />");
 	
 	thanksToTextBrowser->setHtml(thanksTo);

@@ -2278,7 +2278,7 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 		case CONSTRAINT_ACTIVITY_PREFERRED_DAY:
 			{
 				QMessageBox::warning(dialog, tr("FET information"),
-									 tr("You have met a FET bug. The constraint activity preferred day should not "
+									 tr("You have encountered a FET bug. The constraint activity preferred day should not "
 										"be editable in a separate dialog. The request will be ignored."));
 
 				return;
@@ -2964,6 +2964,80 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				break;
 			}
+		//241
+		case CONSTRAINT_ACTIVITIES_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				dialogTitle=tr("Constraints activities pair of mutually exclusive sets of time slots", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots");
+
+				teachersComboBox=new QComboBox;
+				studentsComboBox=new QComboBox;
+				subjectsComboBox=new QComboBox;
+				activityTagsComboBox=new QComboBox;
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
+		//242
+		case CONSTRAINT_ACTIVITIES_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				dialogTitle=tr("Constraints activities pair of mutually exclusive time slots", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsActivitiesPairOfMutuallyExclusiveTimeSlots");
+
+				teachersComboBox=new QComboBox;
+				studentsComboBox=new QComboBox;
+				subjectsComboBox=new QComboBox;
+				activityTagsComboBox=new QComboBox;
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
+		//243
+		case CONSTRAINT_TEACHER_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				dialogTitle=tr("Constraints teacher occupies max sets of time slots from selection", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsTeacherOccupiesMaxSetsOfTimeSlotsFromSelection");
+
+				teachersComboBox=new QComboBox;
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
+		//244
+		case CONSTRAINT_TEACHERS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				dialogTitle=tr("Constraints teachers occupy max sets of time slots from selection", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsTeachersOccupyMaxSetsOfTimeSlotsFromSelection");
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
+		//245
+		case CONSTRAINT_STUDENTS_SET_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				dialogTitle=tr("Constraints students set occupies max sets of time slots from selection", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection");
+
+				studentsComboBox=new QComboBox;
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
+		//246
+		case CONSTRAINT_STUDENTS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				dialogTitle=tr("Constraints students occupy max sets of time slots from selection", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsStudentsOccupyMaxSetsOfTimeSlotsFromSelection");
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -3361,7 +3435,7 @@ void ListTimeConstraints::advancedFilter(bool active)
 
 		filter();
 
-		constraintsListWidget->setFocus();
+		//constraintsListWidget->setFocus();
 
 		return;
 	}
@@ -3403,7 +3477,7 @@ void ListTimeConstraints::advancedFilter(bool active)
 
 		filter();
 
-		constraintsListWidget->setFocus();
+		//constraintsListWidget->setFocus();
 	}
 	else{
 		assert(useFilter==false);
@@ -6653,6 +6727,124 @@ filtered_ok:
 
 				break;
 			}
+		//241
+		case CONSTRAINT_ACTIVITIES_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				assert(teachersComboBox!=nullptr);
+				assert(studentsComboBox!=nullptr);
+				assert(subjectsComboBox!=nullptr);
+				assert(activityTagsComboBox!=nullptr);
+
+				if(teachersComboBox->currentText()==QString("")
+						&& subjectsComboBox->currentText()==QString("")
+						&& activityTagsComboBox->currentText()==QString("")
+						&& studentsComboBox->currentText()==QString(""))
+					return true;
+
+				ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots* ctr=(ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots*)tc;
+
+				bool foundTeacher=false;
+				bool foundSubject=false;
+				bool foundActivityTag=false;
+				bool foundStudents=false;
+
+				for(int id : ctr->activitiesIds){
+					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
+
+					if(act!=nullptr){
+						if(teachersComboBox->currentText()==QString("") || act->teachersNames.contains(teachersComboBox->currentText()))
+							foundTeacher=true;
+						if(subjectsComboBox->currentText()==QString("") || subjectsComboBox->currentText()==act->subjectName)
+							foundSubject=true;
+						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
+							foundActivityTag=true;
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
+							foundStudents=true;
+					}
+
+					if(foundTeacher && foundSubject && foundActivityTag && foundStudents)
+						return true;
+				}
+
+				return false;
+
+				break;
+			}
+		//242
+		case CONSTRAINT_ACTIVITIES_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				assert(teachersComboBox!=nullptr);
+				assert(studentsComboBox!=nullptr);
+				assert(subjectsComboBox!=nullptr);
+				assert(activityTagsComboBox!=nullptr);
+
+				if(teachersComboBox->currentText()==QString("")
+						&& subjectsComboBox->currentText()==QString("")
+						&& activityTagsComboBox->currentText()==QString("")
+						&& studentsComboBox->currentText()==QString(""))
+					return true;
+
+				ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots* ctr=(ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots*)tc;
+
+				bool foundTeacher=false;
+				bool foundSubject=false;
+				bool foundActivityTag=false;
+				bool foundStudents=false;
+
+				for(int id : ctr->activitiesIds){
+					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
+
+					if(act!=nullptr){
+						if(teachersComboBox->currentText()==QString("") || act->teachersNames.contains(teachersComboBox->currentText()))
+							foundTeacher=true;
+						if(subjectsComboBox->currentText()==QString("") || subjectsComboBox->currentText()==act->subjectName)
+							foundSubject=true;
+						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
+							foundActivityTag=true;
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
+							foundStudents=true;
+					}
+
+					if(foundTeacher && foundSubject && foundActivityTag && foundStudents)
+						return true;
+				}
+
+				return false;
+
+				break;
+			}
+		//243
+		case CONSTRAINT_TEACHER_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				assert(teachersComboBox!=nullptr);
+				ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection* ctr=(ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection*)tc;
+				return teachersComboBox->currentText()==QString("") || teachersComboBox->currentText()==ctr->teacherName;
+
+				break;
+			}
+		//244
+		case CONSTRAINT_TEACHERS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				return true;
+
+				break;
+			}
+		//245
+		case CONSTRAINT_STUDENTS_SET_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				assert(studentsComboBox!=nullptr);
+				ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection* ctr=(ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection*)tc;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
+
+				break;
+			}
+		//246
+		case CONSTRAINT_STUDENTS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				return true;
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -6763,7 +6955,7 @@ void ListTimeConstraints::addClicked()
 	constraintsListWidget->setCurrentRow(newRow);
 	constraintChanged();
 
-	constraintsListWidget->setFocus();
+	//constraintsListWidget->setFocus();
 }
 
 void ListTimeConstraints::modifyClicked()
@@ -6772,7 +6964,7 @@ void ListTimeConstraints::modifyClicked()
 	if(i<0){
 		QMessageBox::information(dialog, tr("FET information"), tr("Invalid selected constraint"));
 	
-		constraintsListWidget->setFocus();
+		//constraintsListWidget->setFocus();
 
 		return;
 	}
@@ -6798,7 +6990,7 @@ void ListTimeConstraints::modifyClicked()
 
 	constraintChanged();
 	
-	constraintsListWidget->setFocus();
+	//constraintsListWidget->setFocus();
 }
 
 void ListTimeConstraints::modifyMultipleClicked()
@@ -6814,7 +7006,7 @@ void ListTimeConstraints::modifyMultipleClicked()
 	if(constraintsToModify.isEmpty()){
 		QMessageBox::information(dialog, tr("FET information"), tr("No constraints selected"));
 
-		constraintsListWidget->setFocus();
+		//constraintsListWidget->setFocus();
 
 		return;
 	}
@@ -6837,7 +7029,7 @@ void ListTimeConstraints::modifyMultipleClicked()
 
 	constraintChanged();
 
-	constraintsListWidget->setFocus();
+	//constraintsListWidget->setFocus();
 }
 
 void ListTimeConstraints::removeClicked()
@@ -6869,7 +7061,7 @@ void ListTimeConstraints::removeClicked()
 					QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
 
 				if(wr==QMessageBox::No){
-					constraintsListWidget->setFocus();
+					//constraintsListWidget->setFocus();
 					return;
 				}
 			}
@@ -6887,7 +7079,7 @@ void ListTimeConstraints::removeClicked()
 		s, tr("Yes"), tr("No"), QString(), 0, 1 );
 
 	if(lres!=0){
-		constraintsListWidget->setFocus();
+		//constraintsListWidget->setFocus();
 		return;
 	}
 
@@ -6930,7 +7122,7 @@ void ListTimeConstraints::removeClicked()
 
 	constraintChanged();
 
-	constraintsListWidget->setFocus();
+	//constraintsListWidget->setFocus();
 }
 
 void ListTimeConstraints::closeClicked()
@@ -7386,9 +7578,12 @@ void ListTimeConstraints::helpClicked()
 		//229
 		case CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
 			{
-				QString s=tr("This constraint ensures that the specified teacher(s)/students (set) can have activities either in"
+				/*QString tt=tr("This constraint ensures that the specified teacher(s)/students (set) can have activities either in"
 				 " the first selected time slot or in the second one, but not in both together."
-				 " The unselected slots are not constrained.");
+				 " The unselected slots are not constrained.");*/
+				QString s=tr("This constraint ensures that the teachers (or the specified teacher), or the students (or the specified"
+				 " students set) can have activities in either the first selected time slot or in the second one, but not in both"
+				 " at the same time. The unselected time slots are not subject to constraints.");
 				s+="\n";
 
 				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
@@ -7410,9 +7605,69 @@ void ListTimeConstraints::helpClicked()
 				QString s=tr("This constraint was suggested by %1.", "%1 is the person who suggested this constraint.")
 				 .arg("YOUSSEF HOUIET");
 				s+="\n\n";
-				s+=tr("This constraint ensures that the specified teacher(s)/students (set) can have activities either in"
+				/*QString tt=tr("This constraint ensures that the specified teacher(s)/students (set) can have activities either in"
 				 " the first set of selected time slots or in the second one, but not in both together."
-				 " The unselected slots are not constrained.");
+				 " The unselected slots are not constrained.");*/
+				s+=tr("This constraint ensures that the teachers (or the specified teacher), or the students (or the specified"
+				 " students set) can have activities in either the first set of selected time slots or in the second one, but"
+				 " not in both at the same time. The unselected time slots are not subject to constraints.");
+				s+="\n";
+
+				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
+
+				break;
+			}
+		//241
+		case CONSTRAINT_ACTIVITIES_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				QString s=tr("This constraint was suggested by %1.", "%1 is the person who suggested this constraint.")
+				 .arg("Vũ Ngọc Thành");
+				s+="\n\n";
+				/*QString tt=tr("This constraint ensures that the selected set of activities are placed either in"
+				 " the first set of selected time slots or in the second one, but not in both together."
+				 " The unselected slots are not constrained.");*/
+				s+=tr("This constraint ensures that the selected activities will be placed in either the"
+				 " first set of selected time slots or in the second one, but not in both at the same time."
+				 " The unselected time slots are not subject to constraints.");
+				s+="\n";
+
+				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
+
+				break;
+			}
+		//242
+		case CONSTRAINT_ACTIVITIES_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				/*QString tt=tr("This constraint ensures that the selected set of activities are placed either in"
+				 " the first selected time slot or in the second one, but not in both together."
+				 " The unselected slots are not constrained.");*/
+				QString s=tr("This constraint ensures that the selected activities will be placed in either the"
+				 " first selected time slot or in the second one, but not in both at the same time. The unselected"
+				 " time slots are not subject to constraints.");
+				s+="\n";
+
+				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
+
+				break;
+			}
+		//243
+		case CONSTRAINT_TEACHER_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			[[fallthrough]];
+		//244
+		case CONSTRAINT_TEACHERS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			[[fallthrough]];
+		//245
+		case CONSTRAINT_STUDENTS_SET_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			[[fallthrough]];
+		//246
+		case CONSTRAINT_STUDENTS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				QString s=tr("This constraint was suggested by %1.", "%1 is the person who suggested this constraint.")
+				 .arg("Sérgio Augusto Dias Castro");
+				s+="\n\n";
+				s+=tr("This constraint ensures that the teachers (or the specified teacher), or the students (or the specified"
+				 " students set) can have activities in a maximum 1 or 2 (this number is selected by the user) sets of time"
+				 " slots from a selection of sets of time slots");
 				s+="\n";
 
 				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
@@ -7869,7 +8124,7 @@ void ListTimeConstraints::sortedChanged(bool checked)
 
 	filter();
 
-	constraintsListWidget->setFocus();
+	//constraintsListWidget->setFocus();
 }
 
 void ListTimeConstraints::activateConstraints()
@@ -7879,7 +8134,7 @@ void ListTimeConstraints::activateConstraints()
 		QString s=tr("Activate the selected time constraints?");
 		ret=QMessageBox::question(dialog, tr("FET confirmation"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
 		if(ret==QMessageBox::No){
-			constraintsListWidget->setFocus();
+			//constraintsListWidget->setFocus();
 			return;
 		}
 	}
@@ -7934,7 +8189,7 @@ void ListTimeConstraints::activateConstraints()
 		LockUnlock::increaseCommunicationSpinBox();
 	}
 
-	constraintsListWidget->setFocus();
+	//constraintsListWidget->setFocus();
 }
 
 void ListTimeConstraints::deactivateConstraints()
@@ -7945,7 +8200,7 @@ void ListTimeConstraints::deactivateConstraints()
 		 "(Note that the basic compulsory time constraints will not be deactivated, even if they are selected.)");
 		ret=QMessageBox::question(dialog, tr("FET confirmation"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
 		if(ret==QMessageBox::No){
-			constraintsListWidget->setFocus();
+			//constraintsListWidget->setFocus();
 			return;
 		}
 	}
@@ -8001,7 +8256,7 @@ void ListTimeConstraints::deactivateConstraints()
 		LockUnlock::increaseCommunicationSpinBox();
 	}
 
-	constraintsListWidget->setFocus();
+	//constraintsListWidget->setFocus();
 }
 
 void ListTimeConstraints::constraintComments()
@@ -8010,7 +8265,7 @@ void ListTimeConstraints::constraintComments()
 	if(i<0){
 		QMessageBox::information(dialog, tr("FET information"), tr("Invalid selected constraint"));
 
-		constraintsListWidget->setFocus();
+		//constraintsListWidget->setFocus();
 
 		return;
 	}
@@ -8093,7 +8348,7 @@ void ListTimeConstraints::constraintComments()
 		}
 	}
 
-	constraintsListWidget->setFocus();
+	//constraintsListWidget->setFocus();
 }
 
 void ListTimeConstraints::selectionChanged()
@@ -8129,7 +8384,7 @@ void ListTimeConstraints::changeWeights()
 		QMessageBox::information(dialog, tr("FET information"), tr("No constraints from your selection can change their weight"
 		 " (remember that some types of constraints are allowed to have only 100% weight)."));
 
-		constraintsListWidget->setFocus();
+		//constraintsListWidget->setFocus();
 
 		return;
 	}
@@ -8214,7 +8469,7 @@ void ListTimeConstraints::changeWeights()
 		LockUnlock::increaseCommunicationSpinBox();
 	}
 
-	constraintsListWidget->setFocus();
+	//constraintsListWidget->setFocus();
 }
 
 void ListTimeConstraints::showRelatedCheckBoxToggled()

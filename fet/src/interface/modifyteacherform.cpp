@@ -43,11 +43,13 @@ extern bool students_schedule_ready;
 extern bool teachers_schedule_ready;
 extern bool rooms_buildings_schedule_ready;
 
-ModifyTeacherForm::ModifyTeacherForm(QWidget* parent, Teacher* _tch): QDialog(parent)
+ModifyTeacherForm::ModifyTeacherForm(QWidget* parent, Teacher* _tch, QHash<QString, int>& activeHoursHash): QDialog(parent)
 {
 	setupUi(this);
 	
 	tch=_tch;
+	
+	activeHoursHashPointer=&activeHoursHash;
 	
 	teacherNameLineEdit->setText(tch->name);
 	teacherNameLineEdit->selectAll();
@@ -160,6 +162,11 @@ void ModifyTeacherForm::ok()
 		gt.rules.modifyTeacher(oldName, tn);
 
 		tch->morningsAfternoonsBehavior=newMab;
+		
+		assert(activeHoursHashPointer->contains(oldName));
+		int nh=activeHoursHashPointer->value(oldName);
+		activeHoursHashPointer->remove(oldName);
+		activeHoursHashPointer->insert(tn, nh);
 
 		gt.rules.addUndoPoint(tr("Modified the teacher from:\n\n%1\ninto\n\n%2").arg(od).arg(tch->getDetailedDescription(gt.rules)));
 	}
