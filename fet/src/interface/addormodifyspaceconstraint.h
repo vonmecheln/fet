@@ -44,16 +44,7 @@
 
 #include <QEventLoop>
 
-class CornerEnabledTableWidget: public QTableWidget
-{
-public:
-	bool useColors;
-
-	CornerEnabledTableWidget(bool _useColors);
-
-private:
-	void selectAll();
-};
+class CornerEnabledTableWidget;
 
 class AddOrModifySpaceConstraintTimesTableDelegate: public QStyledItemDelegate
 {

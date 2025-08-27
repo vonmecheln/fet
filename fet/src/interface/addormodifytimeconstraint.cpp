@@ -107,7 +107,7 @@ void AddOrModifyTimeConstraintTimesTableDelegate::paint(QPainter* painter, const
 }
 
 AddOrModifyTimeConstraintDialog::AddOrModifyTimeConstraintDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop,
-																 QTableWidget* _occupyMaxTimesTable,
+																 CornerEnabledTableWidgetOfSpinBoxes* _occupyMaxTimesTable,
 																 QAbstractItemDelegate* _occupyMaxOldItemDelegate,
 																 AddOrModifyTimeConstraintTimesTableDelegate* _occupyMaxNewItemDelegate,
 
@@ -7626,7 +7626,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				teacherLabel=new QLabel(tr("Teacher"));
 				teachersComboBox=new QComboBox;
 
-				occupyMaxSetsOfTimeSlotsFromSelectionTableWidget=new QTableWidget;
+				occupyMaxSetsOfTimeSlotsFromSelectionTableWidget=new CornerEnabledTableWidgetOfSpinBoxes;
 
 				labelForSpinBox=new QLabel(tr("Max occupied sets of time slots (1 or 2)"));
 				spinBox=new QSpinBox;
@@ -7661,7 +7661,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					 " time slots to which this slot belongs to (the value 0, shown here as a space, represents an unselected slot)."));
 				}
 
-				occupyMaxSetsOfTimeSlotsFromSelectionTableWidget=new QTableWidget;
+				occupyMaxSetsOfTimeSlotsFromSelectionTableWidget=new CornerEnabledTableWidgetOfSpinBoxes;
 
 				labelForSpinBox=new QLabel(tr("Max occupied sets of time slots (1 or 2)"));
 				spinBox=new QSpinBox;
@@ -7699,7 +7699,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				studentsLabel=new QLabel(tr("Students set"));
 				studentsComboBox=new QComboBox;
 
-				occupyMaxSetsOfTimeSlotsFromSelectionTableWidget=new QTableWidget;
+				occupyMaxSetsOfTimeSlotsFromSelectionTableWidget=new CornerEnabledTableWidgetOfSpinBoxes;
 
 				labelForSpinBox=new QLabel(tr("Max occupied sets of time slots (1 or 2)"));
 				spinBox=new QSpinBox;
@@ -7734,7 +7734,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					 " time slots to which this slot belongs to (the value 0, shown here as a space, represents an unselected slot)."));
 				}
 
-				occupyMaxSetsOfTimeSlotsFromSelectionTableWidget=new QTableWidget;
+				occupyMaxSetsOfTimeSlotsFromSelectionTableWidget=new CornerEnabledTableWidgetOfSpinBoxes;
 
 				labelForSpinBox=new QLabel(tr("Max occupied sets of time slots (1 or 2)"));
 				spinBox=new QSpinBox;
@@ -9430,20 +9430,8 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			//occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->resizeColumnsToContents();
 
 			occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->setSelectionMode(QAbstractItemView::NoSelection);
-			///////
-			occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
-			int q=occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->horizontalHeader()->defaultSectionSize();
-			occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->horizontalHeader()->setMinimumSectionSize(q);
-
-			occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-
-			q=-1;
-			for(int i=0; i<occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->verticalHeader()->count(); i++)
-				if(q<occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->verticalHeader()->sectionSizeHint(i))
-					q=occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->verticalHeader()->sectionSizeHint(i);
-			occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->verticalHeader()->setMinimumSectionSize(q);
-			///////
+			setStretchAvailabilityTableNicely(occupyMaxSetsOfTimeSlotsFromSelectionTableWidget);
 
 			wholeDialog->addWidget(occupyMaxSetsOfTimeSlotsFromSelectionTableWidget);
 			
@@ -25386,10 +25374,8 @@ void AddOrModifyTimeConstraint::getSpinBoxTimesTable(QList<QList<int>>& days, QL
 	}
 }
 
-void AddOrModifyTimeConstraint::colorSpinBox()
+void AddOrModifyTimeConstraint::colorSpinBoxWithPointer(QSpinBox* sb)
 {
-	QSpinBox* sb=(QSpinBox*)sender();
-	
 	if(!colorsCheckBox->isChecked()){
 		sb->setStyleSheet("");
 	}
@@ -25399,34 +25385,34 @@ void AddOrModifyTimeConstraint::colorSpinBox()
 				sb->setStyleSheet("");
 				break;
 			case 1:
-				sb->setStyleSheet("QSpinBox { background-color: darkgreen; color: white; }");
-				break;
-			case 2:
-				sb->setStyleSheet("QSpinBox { background-color: darkred; color: white; }");
-				break;
-			case 3:
 				sb->setStyleSheet("QSpinBox { background-color: darkblue; color: white; }");
 				break;
-			case 4:
+			case 2:
 				sb->setStyleSheet("QSpinBox { background-color: darkorange; color: black; }");
 				break;
-			case 5:
+			case 3:
 				sb->setStyleSheet("QSpinBox { background-color: darkcyan; color: white; }");
 				break;
-			case 6:
-				sb->setStyleSheet("QSpinBox { background-color: darkviolet; color: white; }");
+			case 4:
+				sb->setStyleSheet("QSpinBox { background-color: darkmagenta; color: white; }");
 				break;
-			case 7:
-				sb->setStyleSheet("QSpinBox { background-color: darkkhaki; color: black; }");
-				break;
-			case 8:
+			case 5:
 				sb->setStyleSheet("QSpinBox { background-color: darksalmon; color: black; }");
 				break;
+			case 6:
+				sb->setStyleSheet("QSpinBox { background-color: chartreuse; color: black; }");
+				break;
+			case 7:
+				sb->setStyleSheet("QSpinBox { background-color: darkgrey; color: black; }");
+				break;
+			case 8:
+				sb->setStyleSheet("QSpinBox { background-color: gold; color: black; }");
+				break;
 			case 9:
-				sb->setStyleSheet("QSpinBox { background-color: darkseagreen; color: black; }");
+				sb->setStyleSheet("QSpinBox { background-color: rgb(178, 94, 199); color: black; }");
 				break;
 			case 10:
-				sb->setStyleSheet("QSpinBox { background-color: darkturquoise; color: white; }");
+				sb->setStyleSheet("QSpinBox { background-color: rgb(147, 95, 53); color: white; }");
 				break;
 			
 			default:
@@ -25443,63 +25429,19 @@ void AddOrModifyTimeConstraint::colorSpinBox()
 	}
 }
 
+void AddOrModifyTimeConstraint::colorSpinBox()
+{
+	assert(sender()!=nullptr);
+	QSpinBox* sb=(QSpinBox*)sender();
+	colorSpinBoxWithPointer(sb);
+}
+
 void AddOrModifyTimeConstraint::colorAllSpinBoxes()
 {
 	for(int i=0; i<occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->rowCount(); i++){
 		for(int j=0; j<occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->columnCount(); j++){
 			QSpinBox* sb=spinBoxesTable(i, j);
-
-			if(!colorsCheckBox->isChecked()){
-				sb->setStyleSheet("");
-			}
-			else{
-				switch(sb->value()){
-					case 0:
-						sb->setStyleSheet("");
-						break;
-					case 1:
-						sb->setStyleSheet("QSpinBox { background-color: darkgreen; color: white; }");
-						break;
-					case 2:
-						sb->setStyleSheet("QSpinBox { background-color: darkred; color: white; }");
-						break;
-					case 3:
-						sb->setStyleSheet("QSpinBox { background-color: darkblue; color: white; }");
-						break;
-					case 4:
-						sb->setStyleSheet("QSpinBox { background-color: darkorange; color: black; }");
-						break;
-					case 5:
-						sb->setStyleSheet("QSpinBox { background-color: darkcyan; color: white; }");
-						break;
-					case 6:
-						sb->setStyleSheet("QSpinBox { background-color: darkviolet; color: white; }");
-						break;
-					case 7:
-						sb->setStyleSheet("QSpinBox { background-color: darkkhaki; color: black; }");
-						break;
-					case 8:
-						sb->setStyleSheet("QSpinBox { background-color: darksalmon; color: black; }");
-						break;
-					case 9:
-						sb->setStyleSheet("QSpinBox { background-color: darkseagreen; color: black; }");
-						break;
-					case 10:
-						sb->setStyleSheet("QSpinBox { background-color: darkturquoise; color: white; }");
-						break;
-					
-					default:
-						int r, g, b;
-						TimetableExport::stringToColor(QString::number(sb->value()), r, g, b);
-						double brightness = double(r)*0.299 + double(g)*0.587 + double(b)*0.114;
-						if (brightness<127.5)
-							sb->setStyleSheet("QSpinBox { background-color: rgb("+QString::number(r)+", "+QString::number(g)+", "+QString::number(b)+"); color: white; }");
-						else
-							sb->setStyleSheet("QSpinBox { background-color: rgb("+QString::number(r)+", "+QString::number(g)+", "+QString::number(b)+"); color: black; }");
-						
-						break;
-				}
-			}
+			colorSpinBoxWithPointer(sb);
 		}
 	}
 }

@@ -5609,7 +5609,7 @@ void FetMainForm::fileNewAction_triggered()
 void FetMainForm::openRecentFile()
 {
 	QAction* action=qobject_cast<QAction*>(sender());
-	if(action)
+	if(action!=nullptr)
 		openFile(action->data().toString());
 }
 

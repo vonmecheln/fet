@@ -22,6 +22,8 @@ File utilities.h
 #ifndef UTILITIES_H
 #define UTILITIES_H
 
+#include "matrix.h"
+
 class Rules;
 
 #ifndef FET_COMMAND_LINE
@@ -33,8 +35,30 @@ class QComboBox;
 
 class QWidget;
 class QTableView;
-class CornerEnabledTableWidget;
 class QTableWidgetItem;
+
+#include <QTableWidget>
+#include <QSpinBox>
+
+class CornerEnabledTableWidget: public QTableWidget
+{
+public:
+	bool useColors;
+
+	CornerEnabledTableWidget(bool _useColors);
+
+private:
+	void selectAll();
+};
+
+class CornerEnabledTableWidgetOfSpinBoxes: public QTableWidget
+{
+public:
+	CornerEnabledTableWidgetOfSpinBoxes();
+
+private:
+	void selectAll();
+};
 
 void centerWidgetOnScreen(QWidget* widget);
 void forceCenterWidgetOnScreen(QWidget* widget);
@@ -50,6 +74,7 @@ void restoreFETDialogGeometry(QWidget* widget, const QString& alternativeName=QS
 void setParentAndOtherThings(QWidget* widget, QWidget* parent);
 
 void setStretchAvailabilityTableNicely(CornerEnabledTableWidget* tableWidget);
+void setStretchAvailabilityTableNicely(CornerEnabledTableWidgetOfSpinBoxes* tableWidget);
 
 void setRulesModifiedAndOtherThings(Rules* rules);
 void setRulesUnmodifiedAndOtherThings(Rules* rules);

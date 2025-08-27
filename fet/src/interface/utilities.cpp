@@ -99,17 +99,6 @@ extern FetMainForm* pFetMainForm;
 
 extern Timetable gt;
 
-class CornerEnabledTableWidget: public QTableWidget
-{
-public:
-	bool useColors;
-
-	CornerEnabledTableWidget(bool _useColors);
-
-private:
-	void selectAll();
-};
-
 CornerEnabledTableWidget::CornerEnabledTableWidget(bool _useColors): QTableWidget()
 {
 	useColors=_useColors;
@@ -137,6 +126,27 @@ void CornerEnabledTableWidget::selectAll()
 			item(i, j)->setText(newText);
 			colorItemTimesTable(this, item(i,j));
 		}
+}
+
+CornerEnabledTableWidgetOfSpinBoxes::CornerEnabledTableWidgetOfSpinBoxes(): QTableWidget()
+{
+}
+
+void CornerEnabledTableWidgetOfSpinBoxes::selectAll()
+{
+	int nD, nH;
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+		nD=gt.rules.nDaysPerWeek;
+		nH=gt.rules.nHoursPerDay;
+	}
+	else{
+		nD=gt.rules.nDaysPerWeek/2;
+		nH=2*gt.rules.nHoursPerDay;
+	}
+
+	for(int i=0; i<nH; i++)
+		for(int j=0; j<nD; j++)
+			((QSpinBox*)cellWidget(i, j))->setValue(0);
 }
 
 void centerWidgetOnScreen(QWidget* widget)
@@ -258,6 +268,53 @@ void setParentAndOtherThings(QWidget* widget, QWidget* parent)
 }
 
 void setStretchAvailabilityTableNicely(CornerEnabledTableWidget* tableWidget)
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
+	tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+#else
+	tableWidget->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
+#endif
+
+	int q=tableWidget->horizontalHeader()->defaultSectionSize();
+	tableWidget->horizontalHeader()->setMinimumSectionSize(q);
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
+	tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+#else
+	tableWidget->verticalHeader()->setResizeMode(QHeaderView::Stretch);
+#endif
+
+	q=-1;
+	for(int i=0; i<tableWidget->verticalHeader()->count(); i++)
+		if(q<tableWidget->verticalHeader()->sectionSizeHint(i))
+			q=tableWidget->verticalHeader()->sectionSizeHint(i);
+	tableWidget->verticalHeader()->setMinimumSectionSize(q);
+	
+	//2011-09-23
+	/*for(int i=0; i<tableWidget->rowCount(); i++){
+		for(int j=0; j<tableWidget->columnCount(); j++){
+			QFont font=tableWidget->item(i,j)->font();
+			font.setBold(true);
+			tableWidget->item(i,j)->setFont(font);
+		}
+	}*/
+	tableWidget->setCornerButtonEnabled(true);
+
+	//As in the second answer on https://stackoverflow.com/questions/22635867/is-it-possible-to-set-the-text-of-the-qtableview-corner-button (2025-02-23)
+	QAbstractButton* button=tableWidget->findChild<QAbstractButton*>();
+	if(button!=nullptr){
+		QVBoxLayout* layout=new QVBoxLayout(button);
+		layout->setContentsMargins(0, 0, 0, 0);
+		QLabel* label=new QLabel(QString("∀"));
+		//label->setStyleSheet("QLabel {font-face: ArialMT; font-size: 10px; color: #FFFFFF; font-weight: bold; }""QToolTip { color: #ffffff; background-color: #000000; border: 1px #000000; }");
+		label->setAlignment(Qt::AlignCenter);
+		//label->setToolTip("Text");
+		label->setContentsMargins(2, 2, 2, 2);
+		layout->addWidget(label);
+	}
+}
+
+void setStretchAvailabilityTableNicely(CornerEnabledTableWidgetOfSpinBoxes* tableWidget)
 {
 #if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 	tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);

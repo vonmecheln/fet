@@ -47,16 +47,7 @@
 
 #include <QEventLoop>
 
-class CornerEnabledTableWidget: public QTableWidget
-{
-public:
-	bool useColors;
-
-	CornerEnabledTableWidget(bool _useColors);
-
-private:
-	void selectAll();
-};
+class CornerEnabledTableWidget;
 
 class AddOrModifyTimeConstraintTimesTableDelegate: public QStyledItemDelegate
 {
@@ -81,7 +72,7 @@ class AddOrModifyTimeConstraintDialog: public QDialog
 	QString dialogTitle;
 	QEventLoop* eventLoop;
 
-	QTableWidget* occupyMaxTimesTable;
+	CornerEnabledTableWidgetOfSpinBoxes* occupyMaxTimesTable;
 	QAbstractItemDelegate* occupyMaxOldItemDelegate;
 	AddOrModifyTimeConstraintTimesTableDelegate* occupyMaxNewItemDelegate;
 
@@ -111,7 +102,7 @@ class AddOrModifyTimeConstraintDialog: public QDialog
 
 public:
 	AddOrModifyTimeConstraintDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop,
-									QTableWidget* _occupyMaxTimesTable,
+									CornerEnabledTableWidgetOfSpinBoxes* _occupyMaxTimesTable,
 									QAbstractItemDelegate* _occupyMaxOldItemDelegate,
 									AddOrModifyTimeConstraintTimesTableDelegate* _occupyMaxNewItemDelegate,
 
@@ -151,7 +142,7 @@ class AddOrModifyTimeConstraint: public QObject
 	int type;
 	TimeConstraint* oldtc;
 
-	QTableWidget* occupyMaxSetsOfTimeSlotsFromSelectionTableWidget;
+	CornerEnabledTableWidgetOfSpinBoxes* occupyMaxSetsOfTimeSlotsFromSelectionTableWidget;
 	QAbstractItemDelegate* occupyMaxOldItemDelegate;
 	AddOrModifyTimeConstraintTimesTableDelegate* occupyMaxNewItemDelegate;
 	Matrix2D<QSpinBox*> spinBoxesTable;
@@ -445,6 +436,7 @@ private:
 	void fillSpinBoxTimesTable(const QList<QList<int>>& days, const QList<QList<int>>& hours);
 	void getSpinBoxTimesTable(QList<QList<int>>& days, QList<QList<int>>& hours);
 
+	void colorSpinBoxWithPointer(QSpinBox* sb);
 	void colorSpinBox();
 	void colorAllSpinBoxes();
 };

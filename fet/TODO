@@ -11256,3 +11256,90 @@ From Anisse Hanifi (on Facebook):
 When the program stops production, can the program indicate the restriction that hinders production and not activity?
 
 Also, number the entries in the list (the time and space constraints).
+
+745---------------------------------------------------------
+From Thai Chi Phuong (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6512.0
+
+First of all, thank you for the new constraint group in the August 21 update. I appreciate this constraint, but I think if possible, can you add an option
+for users to do a maximum of 1 or 2 for each day instead of the whole week as it is currently? I am seeing that if each day is divided into 3 shifts and
+the constraint is a maximum of 2 shifts, the teacher will do the whole week as shifts 1 and 3 or shifts 1 and 2 or shifts 2 and 3. I mean it is random
+to do 1 or 2 shifts per day, for example Monday is shifts 1 and 2; Tuesday is shifts 2 and 3; Wednesday is shifts 1 and 3, ...
+
+YOUSSEF HOUIET:
+
+You need to add the constraint day by day, that is, for each day of the week a separate constraint has to be added.
+
+Thai Chi Phuong:
+
+I understand this, but what I mean is can I add an optional command button: "For all" or "For specific days"?
+
+But if my school has 50 teachers and each teacher repeats 5 to 6 times, I see the constraints created are a lot.
+
+Before suggesting I did as You said, but I still like it to have a checkbox, for example: "Apply to all" or "Apply to each day" or have a range of checkboxes;
+"Monday"; "Tuesday"; "Wednesday"; ...
+
+YOUSSEF HOUIET:
+
+Maybe an option "days sparated" is solution.
+
+746---------------------------------------------------------
+From Ngô Minh Ngọc (on Facebook):
+
+The constraint "a set of activities are ordered", generalizing the constraint "two activities are ordered".
+
+747---------------------------------------------------------
+From YOUSSEF HOUIET (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6517.0
+
+In Morocco, it is often very difficult to assign one teacher to the same room throughout the entire week. Teachers usually have to use more than one room.
+
+Currently, the only way to control this situation in FET is by assigning a large number of possible rooms to a teacher's activities, and then adding the
+constraint "activities occupy max different rooms". While this works technically, many users find it complicated and not very intuitive, since it requires
+select theacher's activities.
+
+To simplify this, I suggest introducing a new direct constraint:
+"Teacher(s) occupy max different rooms"
+
+This constraint would allow the user to directly set the maximum number of different rooms a teacher may use, without having to go through the step of
+selecting activities.
+
+Such a feature would be especially helpful for Moroccan schools (and possibly elsewhere) where room allocation is highly constrained and teachers are
+often forced to rotate between several rooms.
+
+748---------------------------------------------------------
+From SATIA.OUSAMA (on Facebook):
+
+Existe-t-il cette contrainte : un groupe d’enseignants travaille dans la même plage horaire ?
+
+Liviu Lalescu:
+
+You can add a constraint activities occupy max time slots from selection, with all activities of these teachers, select with X (red) all the slots of the week,
+max occupied = max(duration of activities of teacher). This is if you want an exact overlapping. For only the beginning and ending of the timetable of the teachers,
+there is no such constraint.
+
+From SATIA.OUSAMA (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=1220.msg36224#msg36224
+
+Please add the following constraint:
+A group of teachers works in the same time slot.
+
+749---------------------------------------------------------
+From Željko Vrabec (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6518.0
+
+Is it possible to implement that some set of activities either begin or end students day? For example group 5.A has 2 separate school hours of 2nd foreign
+language per week which need to begin OR end students day (and here we are not talking about exclusive OR).
+
+Liviu Lalescu:
+
+Many others suggested this, but it is not possible to implement efficiently.
+
+The problem with this constraint is that we cannot decide which way to continue: with the activity starting or ending the day.
+
+A possible option is to double the students sets (Y1 and Y2), and to add all the activities to Y1 and to Y2 add only the other activities
+(without the ones beginning or ending the days). Then, max 0 gaps for Y1 and Y2.
