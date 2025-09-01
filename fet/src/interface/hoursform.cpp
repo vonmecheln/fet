@@ -25,6 +25,12 @@
 #include "modifyhourform.h"
 #include "modifyrealhourform.h"
 
+/*
+#include <Qt>
+#include <QShortcut>
+#include <QKeySequence>
+*/
+
 #include <QMessageBox>
 #include <QListWidget>
 #include <QListWidgetItem>
@@ -60,8 +66,26 @@ HoursForm::HoursForm(QWidget* parent): QDialog(parent)
 	connect(modifyHourPushButton, &QPushButton::clicked, this, &HoursForm::modifyHour);
 	connect(modifyRealHourPushButton, &QPushButton::clicked, this, &HoursForm::modifyRealHour);
 	connect(removeHourPushButton, &QPushButton::clicked, this, &HoursForm::removeHour);
+
 	connect(hoursListWidget, &QListWidget::itemDoubleClicked, this, &HoursForm::modifyHour);
 	connect(realHoursListWidget, &QListWidget::itemDoubleClicked, this, &HoursForm::modifyRealHour);
+
+	/*
+	QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
+	connect(addShortcut, &QShortcut::activated, [=]{insertHourPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		insertHourPushButton->setToolTip(QString("+"));
+	//
+	QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), this);
+	connect(modifyShortcut, &QShortcut::activated, [=]{modifyHourPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		modifyHourPushButton->setToolTip(QString("M"));
+	//
+	QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, this);
+	connect(removeShortcut, &QShortcut::activated, [=]{removeHourPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		removeHourPushButton->setToolTip(QString("⌦"));
+	*/
 
 	disconnect(nHoursSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &HoursForm::numberOfHoursChanged);
 	nHoursSpinBox->setMinimum(1);

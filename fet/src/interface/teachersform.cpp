@@ -26,6 +26,12 @@
 
 #include <QMessageBox>
 
+/*
+#include <Qt>
+#include <QShortcut>
+#include <QKeySequence>
+*/
+
 #include <QListWidget>
 #include <QAbstractItemView>
 
@@ -67,6 +73,7 @@ TeachersForm::TeachersForm(QWidget* parent): QDialog(parent)
 
 	connect(sortTeachersPushButton, &QPushButton::clicked, this, &TeachersForm::sortTeachers);
 	connect(removeTeacherPushButton, &QPushButton::clicked, this, &TeachersForm::removeTeacher);
+
 	connect(activateTeacherPushButton, &QPushButton::clicked, this, &TeachersForm::activateTeacher);
 	connect(deactivateTeacherPushButton, &QPushButton::clicked, this, &TeachersForm::deactivateTeacher);
 	connect(teachersListWidget, &QListWidget::itemDoubleClicked, this, &TeachersForm::modifyTeacher);
@@ -74,6 +81,48 @@ TeachersForm::TeachersForm(QWidget* parent): QDialog(parent)
 	connect(longNamePushButton, &QPushButton::clicked, this, &TeachersForm::longName);
 	connect(codePushButton, &QPushButton::clicked, this, &TeachersForm::code);
 	connect(commentsPushButton, &QPushButton::clicked, this, &TeachersForm::comments);
+
+	/*
+	QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
+	connect(addShortcut, &QShortcut::activated, [=]{addTeacherPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		addTeacherPushButton->setToolTip(QString("+"));
+	//
+	QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), this);
+	connect(modifyShortcut, &QShortcut::activated, [=]{modifyTeacherPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		modifyTeacherPushButton->setToolTip(QString("M"));
+	//
+	QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, this);
+	connect(removeShortcut, &QShortcut::activated, [=]{removeTeacherPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		removeTeacherPushButton->setToolTip(QString("⌦"));
+	//
+	QShortcut* activateShortcut=new QShortcut(QKeySequence(Qt::Key_A), this);
+	connect(activateShortcut, &QShortcut::activated, [=]{activateTeacherPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		activateTeacherPushButton->setToolTip(QString("A"));
+	//
+	QShortcut* deactivateShortcut=new QShortcut(QKeySequence(Qt::Key_D), this);
+	connect(deactivateShortcut, &QShortcut::activated, [=]{deactivateTeacherPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		deactivateTeacherPushButton->setToolTip(QString("D"));
+	//
+	QShortcut* commentsShortcut=new QShortcut(QKeySequence(Qt::Key_C), this);
+	connect(commentsShortcut, &QShortcut::activated, [=]{commentsPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		commentsPushButton->setToolTip(QString("C"));
+	//
+	QShortcut* upShortcut=new QShortcut(QKeySequence(Qt::Key_U), this);
+	connect(upShortcut, &QShortcut::activated, [=]{moveTeacherUpPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		moveTeacherUpPushButton->setToolTip(QString("U"));
+	//
+	QShortcut* downShortcut=new QShortcut(QKeySequence(Qt::Key_J), this);
+	connect(downShortcut, &QShortcut::activated, [=]{moveTeacherDownPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		moveTeacherDownPushButton->setToolTip(QString("J"));
+	*/
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -184,7 +233,7 @@ void TeachersForm::removeTeacher()
 	 return;*/
 	if(QMessageBox::warning( this, tr("FET"),
 	 tr("Are you sure you want to delete this teacher and all related activities and constraints?"),
-	 QMessageBox::Yes | QMessageBox::No) == QMessageBox::No)
+	 QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes) == QMessageBox::No)
 		return;
 
 	int tmp=gt.rules.removeTeacher(text);

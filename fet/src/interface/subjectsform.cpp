@@ -27,6 +27,12 @@
 
 #include <QMessageBox>
 
+/*
+#include <Qt>
+#include <QShortcut>
+#include <QKeySequence>
+*/
+
 #include <QListWidget>
 #include <QAbstractItemView>
 
@@ -55,6 +61,7 @@ SubjectsForm::SubjectsForm(QWidget* parent): QDialog(parent)
 	connect(closePushButton, &QPushButton::clicked, this, &SubjectsForm::close);
 	connect(addSubjectPushButton, &QPushButton::clicked, this, &SubjectsForm::addSubject);
 	connect(removeSubjectPushButton, &QPushButton::clicked, this, &SubjectsForm::removeSubject);
+	
 	connect(renameSubjectPushButton, &QPushButton::clicked, this, &SubjectsForm::renameSubject);
 
 	connect(moveSubjectUpPushButton, &QPushButton::clicked, this, &SubjectsForm::moveSubjectUp);
@@ -69,6 +76,48 @@ SubjectsForm::SubjectsForm(QWidget* parent): QDialog(parent)
 	connect(longNamePushButton, &QPushButton::clicked, this, &SubjectsForm::longName);
 	connect(codePushButton, &QPushButton::clicked, this, &SubjectsForm::code);
 	connect(commentsPushButton, &QPushButton::clicked, this, &SubjectsForm::comments);
+
+	/*
+	QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
+	connect(addShortcut, &QShortcut::activated, [=]{addSubjectPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		addSubjectPushButton->setToolTip(QString("+"));
+	//
+	QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), this);
+	connect(modifyShortcut, &QShortcut::activated, [=]{renameSubjectPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		renameSubjectPushButton->setToolTip(QString("M"));
+	//
+	QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, this);
+	connect(removeShortcut, &QShortcut::activated, [=]{removeSubjectPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		removeSubjectPushButton->setToolTip(QString("⌦"));
+	//
+	QShortcut* activateShortcut=new QShortcut(QKeySequence(Qt::Key_A), this);
+	connect(activateShortcut, &QShortcut::activated, [=]{activateSubjectPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		activateSubjectPushButton->setToolTip(QString("A"));
+	//
+	QShortcut* deactivateShortcut=new QShortcut(QKeySequence(Qt::Key_D), this);
+	connect(deactivateShortcut, &QShortcut::activated, [=]{deactivateSubjectPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		deactivateSubjectPushButton->setToolTip(QString("D"));
+	//
+	QShortcut* commentsShortcut=new QShortcut(QKeySequence(Qt::Key_C), this);
+	connect(commentsShortcut, &QShortcut::activated, [=]{commentsPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		commentsPushButton->setToolTip(QString("C"));
+	//
+	QShortcut* upShortcut=new QShortcut(QKeySequence(Qt::Key_U), this);
+	connect(upShortcut, &QShortcut::activated, [=]{moveSubjectUpPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		moveSubjectUpPushButton->setToolTip(QString("U"));
+	//
+	QShortcut* downShortcut=new QShortcut(QKeySequence(Qt::Key_J), this);
+	connect(downShortcut, &QShortcut::activated, [=]{moveSubjectDownPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		moveSubjectDownPushButton->setToolTip(QString("J"));
+	*/
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -146,7 +195,7 @@ void SubjectsForm::removeSubject()
 		return;*/
 	if(QMessageBox::warning( this, tr("FET"),
 	 tr("Are you sure you want to delete this subject and all related activities and constraints?"),
-	 QMessageBox::Yes | QMessageBox::No) == QMessageBox::No)
+	 QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes) == QMessageBox::No)
 		return;
 
 	int tmp=gt.rules.removeSubject(text);

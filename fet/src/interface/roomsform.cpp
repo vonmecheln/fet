@@ -27,6 +27,12 @@
 
 #include <QMessageBox>
 
+/*
+#include <Qt>
+#include <QShortcut>
+#include <QKeySequence>
+*/
+
 #include <QListWidget>
 #include <QScrollBar>
 #include <QAbstractItemView>
@@ -55,6 +61,7 @@ RoomsForm::RoomsForm(QWidget* parent): QDialog(parent)
 
 	connect(addRoomPushButton, &QPushButton::clicked, this, &RoomsForm::addRoom);
 	connect(removeRoomPushButton, &QPushButton::clicked, this, &RoomsForm::removeRoom);
+
 	connect(roomsListWidget, &QListWidget::currentRowChanged, this, &RoomsForm::roomChanged);
 	connect(closePushButton, &QPushButton::clicked, this, &RoomsForm::close);
 	connect(modifyRoomPushButton, &QPushButton::clicked, this, &RoomsForm::modifyRoom);
@@ -72,6 +79,38 @@ RoomsForm::RoomsForm(QWidget* parent): QDialog(parent)
 	connect(makeRealPushButton, &QPushButton::clicked, this, &RoomsForm::makeReal);
 	connect(makeEditVirtualPushButton, &QPushButton::clicked, this, &RoomsForm::makeEditVirtual);
 	connect(helpPushButton, &QPushButton::clicked, this, &RoomsForm::help);
+
+	/*
+	QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
+	connect(addShortcut, &QShortcut::activated, [=]{addRoomPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		addRoomPushButton->setToolTip(QString("+"));
+	//
+	QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), this);
+	connect(modifyShortcut, &QShortcut::activated, [=]{modifyRoomPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		modifyRoomPushButton->setToolTip(QString("M"));
+	//
+	QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, this);
+	connect(removeShortcut, &QShortcut::activated, [=]{removeRoomPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		removeRoomPushButton->setToolTip(QString("⌦"));
+	//
+	QShortcut* commentsShortcut=new QShortcut(QKeySequence(Qt::Key_C), this);
+	connect(commentsShortcut, &QShortcut::activated, [=]{commentsPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		commentsPushButton->setToolTip(QString("C"));
+	//
+	QShortcut* upShortcut=new QShortcut(QKeySequence(Qt::Key_U), this);
+	connect(upShortcut, &QShortcut::activated, [=]{moveRoomUpPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		moveRoomUpPushButton->setToolTip(QString("U"));
+	//
+	QShortcut* downShortcut=new QShortcut(QKeySequence(Qt::Key_J), this);
+	connect(downShortcut, &QShortcut::activated, [=]{moveRoomDownPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		moveRoomDownPushButton->setToolTip(QString("J"));
+	*/
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -147,7 +186,7 @@ void RoomsForm::removeRoom()
 
 	if(QMessageBox::warning( this, tr("FET"),
 	 tr("Are you sure you want to delete this room and all related constraints?"),
-	 QMessageBox::Yes | QMessageBox::No ) == QMessageBox::No)
+	 QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes ) == QMessageBox::No)
 		return;
 		
 	int nv=0;

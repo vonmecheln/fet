@@ -1,3 +1,7 @@
+ 7.4.7
+	- Minor interface improvements.
+	- Added a keyboard shortcut, Ctrl+H, for the 'Timetable > Generate multiple' command (suggested by Alami Mohammed).
+	- Corrected an Arabic translation field, by Benahmed Abdelkrim (fixing an error reported by Bachir Nacer Elhak Sayah).
  7.4.6
 	- Updated to Qt 6.9.2.
 	- Changed the (optional) colors in the dialogs for adding/modifying a constraint of type teacher(s)/students (set) occupy max sets of time

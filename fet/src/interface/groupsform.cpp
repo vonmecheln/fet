@@ -28,6 +28,12 @@
 
 #include <QMessageBox>
 
+/*
+#include <Qt>
+#include <QShortcut>
+#include <QKeySequence>
+*/
+
 #include <QListWidget>
 #include <QScrollBar>
 #include <QAbstractItemView>
@@ -60,6 +66,7 @@ GroupsForm::GroupsForm(QWidget* parent): QDialog(parent)
 	connect(addExistingGroupsPushButton, &QPushButton::clicked, this, &GroupsForm::addExistingGroups);
 	connect(removeGroupPushButton, &QPushButton::clicked, this, &GroupsForm::removeGroup);
 	connect(purgeGroupPushButton, &QPushButton::clicked, this, &GroupsForm::purgeGroup);
+	
 	connect(closePushButton, &QPushButton::clicked, this, &GroupsForm::close);
 	connect(groupsListWidget, &QListWidget::currentTextChanged, this, &GroupsForm::groupChanged);
 	connect(modifyGroupPushButton, &QPushButton::clicked, this, &GroupsForm::modifyGroup);
@@ -75,6 +82,48 @@ GroupsForm::GroupsForm(QWidget* parent): QDialog(parent)
 	connect(longNamePushButton, &QPushButton::clicked, this, &GroupsForm::longName);
 	connect(codePushButton, &QPushButton::clicked, this, &GroupsForm::code);
 	connect(commentsPushButton, &QPushButton::clicked, this, &GroupsForm::comments);
+
+	/*
+	QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
+	connect(addShortcut, &QShortcut::activated, [=]{addGroupPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		addGroupPushButton->setToolTip(QString("+"));
+	//
+	QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), this);
+	connect(modifyShortcut, &QShortcut::activated, [=]{modifyGroupPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		modifyGroupPushButton->setToolTip(QString("M"));
+	//
+	QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, this);
+	connect(removeShortcut, &QShortcut::activated, [=]{removeGroupPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		removeGroupPushButton->setToolTip(QString("⌦"));
+	//
+	QShortcut* activateShortcut=new QShortcut(QKeySequence(Qt::Key_A), this);
+	connect(activateShortcut, &QShortcut::activated, [=]{activateStudentsPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		activateStudentsPushButton->setToolTip(QString("A"));
+	//
+	QShortcut* deactivateShortcut=new QShortcut(QKeySequence(Qt::Key_D), this);
+	connect(deactivateShortcut, &QShortcut::activated, [=]{deactivateStudentsPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		deactivateStudentsPushButton->setToolTip(QString("D"));
+	//
+	QShortcut* commentsShortcut=new QShortcut(QKeySequence(Qt::Key_C), this);
+	connect(commentsShortcut, &QShortcut::activated, [=]{commentsPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		commentsPushButton->setToolTip(QString("C"));
+	//
+	QShortcut* upShortcut=new QShortcut(QKeySequence(Qt::Key_U), this);
+	connect(upShortcut, &QShortcut::activated, [=]{moveGroupUpPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		moveGroupUpPushButton->setToolTip(QString("U"));
+	//
+	QShortcut* downShortcut=new QShortcut(QKeySequence(Qt::Key_J), this);
+	connect(downShortcut, &QShortcut::activated, [=]{moveGroupDownPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		moveGroupDownPushButton->setToolTip(QString("J"));
+	*/
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

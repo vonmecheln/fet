@@ -25,6 +25,12 @@
 #include "modifydayform.h"
 #include "modifyrealdayform.h"
 
+/*
+#include <Qt>
+#include <QShortcut>
+#include <QKeySequence>
+*/
+
 #include <QMessageBox>
 #include <QListWidget>
 #include <QListWidgetItem>
@@ -60,6 +66,24 @@ DaysForm::DaysForm(QWidget* parent): QDialog(parent)
 	connect(modifyDayPushButton, &QPushButton::clicked, this, &DaysForm::modifyDay);
 	connect(modifyRealDayPushButton, &QPushButton::clicked, this, &DaysForm::modifyRealDay);
 	connect(removeDayPushButton, &QPushButton::clicked, this, &DaysForm::removeDay);
+	
+	/*
+	QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
+	connect(addShortcut, &QShortcut::activated, [=]{insertDayPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		insertDayPushButton->setToolTip(QString("+"));
+	//
+	QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), this);
+	connect(modifyShortcut, &QShortcut::activated, [=]{modifyDayPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		modifyDayPushButton->setToolTip(QString("M"));
+	//
+	QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, this);
+	connect(removeShortcut, &QShortcut::activated, [=]{removeDayPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		removeDayPushButton->setToolTip(QString("⌦"));
+	*/
+
 	connect(daysListWidget, &QListWidget::itemDoubleClicked, this, &DaysForm::modifyDay);
 	connect(realDaysListWidget, &QListWidget::itemDoubleClicked, this, &DaysForm::modifyRealDay);
 

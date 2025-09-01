@@ -33,6 +33,12 @@
 
 #include <QTextEdit>
 
+/*
+#include <Qt>
+#include <QShortcut>
+#include <QKeySequence>
+*/
+
 #if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
@@ -89,6 +95,7 @@ AllTimeConstraintsForm::AllTimeConstraintsForm(QWidget* parent): QDialog(parent)
 
 	connect(closePushButton, &QPushButton::clicked, this, &AllTimeConstraintsForm::close);
 	connect(removeConstraintsPushButton, &QPushButton::clicked, this, &AllTimeConstraintsForm::removeConstraints);
+	
 	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &AllTimeConstraintsForm::modifyConstraint);
 	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &AllTimeConstraintsForm::modifyConstraint);
 	connect(filterCheckBox, &QCheckBox::toggled, this, &AllTimeConstraintsForm::filter);
@@ -107,6 +114,48 @@ AllTimeConstraintsForm::AllTimeConstraintsForm(QWidget* parent): QDialog(parent)
 	connect(commentsPushButton, &QPushButton::clicked, this, &AllTimeConstraintsForm::constraintComments);
 
 	connect(weightsPushButton, &QPushButton::clicked, this, &AllTimeConstraintsForm::changeWeights);
+
+	/*
+	QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), this);
+	connect(modifyShortcut, &QShortcut::activated, [=]{modifyConstraintPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		modifyConstraintPushButton->setToolTip(QString("M"));
+	//
+	QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, this);
+	connect(removeShortcut, &QShortcut::activated, [=]{removeConstraintsPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		removeConstraintsPushButton->setToolTip(QString("⌦"));
+	//
+	QShortcut* activateShortcut=new QShortcut(QKeySequence(Qt::Key_A), this);
+	connect(activateShortcut, &QShortcut::activated, [=]{activatePushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		activatePushButton->setToolTip(QString("A"));
+	//
+	QShortcut* deactivateShortcut=new QShortcut(QKeySequence(Qt::Key_D), this);
+	connect(deactivateShortcut, &QShortcut::activated, [=]{deactivatePushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		deactivatePushButton->setToolTip(QString("D"));
+	//
+	QShortcut* commentsShortcut=new QShortcut(QKeySequence(Qt::Key_C), this);
+	connect(commentsShortcut, &QShortcut::activated, [=]{commentsPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		commentsPushButton->setToolTip(QString("C"));
+	//
+	QShortcut* upShortcut=new QShortcut(QKeySequence(Qt::Key_U), this);
+	connect(upShortcut, &QShortcut::activated, [=]{moveTimeConstraintUpPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		moveTimeConstraintUpPushButton->setToolTip(QString("U"));
+	//
+	QShortcut* downShortcut=new QShortcut(QKeySequence(Qt::Key_J), this);
+	connect(downShortcut, &QShortcut::activated, [=]{moveTimeConstraintDownPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		moveTimeConstraintDownPushButton->setToolTip(QString("J"));
+	//
+	QShortcut* weightsShortcut=new QShortcut(QKeySequence(Qt::Key_W), this);
+	connect(weightsShortcut, &QShortcut::activated, [=]{weightsPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		weightsPushButton->setToolTip(QString("W"));
+	*/
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -667,7 +716,7 @@ void AllTimeConstraintsForm::activateConstraints()
 	if(CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS){
 		QMessageBox::StandardButton ret=QMessageBox::No;
 		QString s=tr("Activate the selected time constraints?");
-		ret=QMessageBox::question(this, tr("FET confirmation"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+		ret=QMessageBox::question(this, tr("FET confirmation"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::Yes);
 		if(ret==QMessageBox::No){
 			constraintsListWidget->setFocus();
 			return;
@@ -733,7 +782,7 @@ void AllTimeConstraintsForm::deactivateConstraints()
 		QMessageBox::StandardButton ret=QMessageBox::No;
 		QString s=tr("Deactivate the selected time constraints? "
 		 "(Note that the basic compulsory time constraints will not be deactivated, even if they are selected.)");
-		ret=QMessageBox::question(this, tr("FET confirmation"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+		ret=QMessageBox::question(this, tr("FET confirmation"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::Yes);
 		if(ret==QMessageBox::No){
 			constraintsListWidget->setFocus();
 			return;

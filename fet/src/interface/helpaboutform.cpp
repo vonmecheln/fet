@@ -79,7 +79,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	 "or a combination of these), %2 are the copyright holders").arg("2002-2025").arg("Liviu Lalescu, Volker Dirr");
 	about+=QString("<br /><br />");
 	about+=tr("Version: %1 (%2 %3).", "%1 is the current FET version, %2 is the current release month, %3 is the current release year").arg(FET_VERSION)
-	 .arg(QCoreApplication::translate("MonthsNames", "August")).arg("2025");
+	 .arg(QCoreApplication::translate("MonthsNames", "September")).arg("2025");
 	about+=QString("<br /><br />");
 	about+=tr("Licensed under the GNU Affero General Public License version 3 or later.");
 	about+=QString("<br /><br />");
@@ -527,6 +527,8 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	references+=QString("30. https://forum.qt.io/topic/94474/how-to-add-a-spinbox-column-and-combo-box-column-in-qtablewidget-or-qtableview");
 	references+=QString("<br /><br />");
 	references+=QString("31. https://stackoverflow.com/questions/35435254/refer-to-the-sender-object-in-qt");
+	references+=QString("<br /><br />");
+	references+=QString("32. https://stackoverflow.com/questions/69758930/how-to-map-qt-push-button-to-keyboard-key-presses");
 
 	references+=QString("<br /><br /><br />");
 
@@ -1498,6 +1500,10 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("Anisse Hanifi");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("SATIA.OUSAMA");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Alami Mohammed");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("drvemana");
 	thanksTo+=QString("<br />");
 	
 	thanksToTextBrowser->setHtml(thanksTo);

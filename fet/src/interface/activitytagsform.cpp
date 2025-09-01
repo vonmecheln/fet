@@ -28,6 +28,12 @@
 
 #include <QMessageBox>
 
+/*
+#include <Qt>
+#include <QShortcut>
+#include <QKeySequence>
+*/
+
 #include <QListWidget>
 #include <QAbstractItemView>
 
@@ -57,7 +63,7 @@ ActivityTagsForm::ActivityTagsForm(QWidget* parent): QDialog(parent)
 	connect(addActivityTagPushButton, &QPushButton::clicked, this, &ActivityTagsForm::addActivityTag);
 	connect(removeActivityTagPushButton, &QPushButton::clicked, this, &ActivityTagsForm::removeActivityTag);
 	connect(renameActivityTagPushButton, &QPushButton::clicked, this, &ActivityTagsForm::renameActivityTag);
-
+	
 	connect(moveActivityTagUpPushButton, &QPushButton::clicked, this, &ActivityTagsForm::moveActivityTagUp);
 	connect(moveActivityTagDownPushButton, &QPushButton::clicked, this, &ActivityTagsForm::moveActivityTagDown);
 
@@ -74,6 +80,48 @@ ActivityTagsForm::ActivityTagsForm(QWidget* parent): QDialog(parent)
 	connect(longNamePushButton, &QPushButton::clicked, this, &ActivityTagsForm::longName);
 	connect(codePushButton, &QPushButton::clicked, this, &ActivityTagsForm::code);
 	connect(commentsPushButton, &QPushButton::clicked, this, &ActivityTagsForm::comments);
+
+	/*
+	QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
+	connect(addShortcut, &QShortcut::activated, [=]{addActivityTagPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		addActivityTagPushButton->setToolTip(QString("+"));
+	//
+	QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), this);
+	connect(modifyShortcut, &QShortcut::activated, [=]{renameActivityTagPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		renameActivityTagPushButton->setToolTip(QString("M"));
+	//
+	QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, this);
+	connect(removeShortcut, &QShortcut::activated, [=]{removeActivityTagPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		removeActivityTagPushButton->setToolTip(QString("⌦"));
+	//
+	QShortcut* activateShortcut=new QShortcut(QKeySequence(Qt::Key_A), this);
+	connect(activateShortcut, &QShortcut::activated, [=]{activateActivityTagPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		activateActivityTagPushButton->setToolTip(QString("A"));
+	//
+	QShortcut* deactivateShortcut=new QShortcut(QKeySequence(Qt::Key_D), this);
+	connect(deactivateShortcut, &QShortcut::activated, [=]{deactivateActivityTagPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		deactivateActivityTagPushButton->setToolTip(QString("D"));
+	//
+	QShortcut* commentsShortcut=new QShortcut(QKeySequence(Qt::Key_C), this);
+	connect(commentsShortcut, &QShortcut::activated, [=]{commentsPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		commentsPushButton->setToolTip(QString("C"));
+	//
+	QShortcut* upShortcut=new QShortcut(QKeySequence(Qt::Key_U), this);
+	connect(upShortcut, &QShortcut::activated, [=]{moveActivityTagUpPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		moveActivityTagUpPushButton->setToolTip(QString("U"));
+	//
+	QShortcut* downShortcut=new QShortcut(QKeySequence(Qt::Key_J), this);
+	connect(downShortcut, &QShortcut::activated, [=]{moveActivityTagDownPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		moveActivityTagDownPushButton->setToolTip(QString("J"));
+	*/
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -151,7 +199,7 @@ void ActivityTagsForm::removeActivityTag()
 		return;*/
 	if(QMessageBox::warning( this, tr("FET"),
 	 tr("Are you sure you want to delete this activity tag?"),
-	 QMessageBox::Yes | QMessageBox::No) == QMessageBox::No)
+	 QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes) == QMessageBox::No)
 		return;
 
 	int tmp=gt.rules.removeActivityTag(text);

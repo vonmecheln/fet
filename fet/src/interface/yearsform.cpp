@@ -27,6 +27,12 @@
 
 #include <QMessageBox>
 
+/*
+#include <Qt>
+#include <QShortcut>
+#include <QKeySequence>
+*/
+
 #include <QListWidget>
 #include <QScrollBar>
 #include <QAbstractItemView>
@@ -56,6 +62,7 @@ YearsForm::YearsForm(QWidget* parent): QDialog(parent)
 	connect(addYearPushButton, &QPushButton::clicked, this, &YearsForm::addYear);
 	connect(closePushButton, &QPushButton::clicked, this, &YearsForm::close);
 	connect(removeYearPushButton, &QPushButton::clicked, this, &YearsForm::removeYear);
+	
 	connect(yearsListWidget, &QListWidget::currentRowChanged, this, &YearsForm::yearChanged);
 	connect(modifyYearPushButton, &QPushButton::clicked, this, &YearsForm::modifyYear);
 
@@ -71,6 +78,48 @@ YearsForm::YearsForm(QWidget* parent): QDialog(parent)
 	connect(longNamePushButton, &QPushButton::clicked, this, &YearsForm::longName);
 	connect(codePushButton, &QPushButton::clicked, this, &YearsForm::code);
 	connect(commentsPushButton, &QPushButton::clicked, this, &YearsForm::comments);
+
+	/*
+	QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
+	connect(addShortcut, &QShortcut::activated, [=]{addYearPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		addYearPushButton->setToolTip(QString("+"));
+	//
+	QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), this);
+	connect(modifyShortcut, &QShortcut::activated, [=]{modifyYearPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		modifyYearPushButton->setToolTip(QString("M"));
+	//
+	QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, this);
+	connect(removeShortcut, &QShortcut::activated, [=]{removeYearPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		removeYearPushButton->setToolTip(QString("⌦"));
+	//
+	QShortcut* activateShortcut=new QShortcut(QKeySequence(Qt::Key_A), this);
+	connect(activateShortcut, &QShortcut::activated, [=]{activateStudentsPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		activateStudentsPushButton->setToolTip(QString("A"));
+	//
+	QShortcut* deactivateShortcut=new QShortcut(QKeySequence(Qt::Key_D), this);
+	connect(deactivateShortcut, &QShortcut::activated, [=]{deactivateStudentsPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		deactivateStudentsPushButton->setToolTip(QString("D"));
+	//
+	QShortcut* commentsShortcut=new QShortcut(QKeySequence(Qt::Key_C), this);
+	connect(commentsShortcut, &QShortcut::activated, [=]{commentsPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		commentsPushButton->setToolTip(QString("C"));
+	//
+	QShortcut* upShortcut=new QShortcut(QKeySequence(Qt::Key_U), this);
+	connect(upShortcut, &QShortcut::activated, [=]{moveYearUpPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		moveYearUpPushButton->setToolTip(QString("U"));
+	//
+	QShortcut* downShortcut=new QShortcut(QKeySequence(Qt::Key_J), this);
+	connect(downShortcut, &QShortcut::activated, [=]{moveYearDownPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		moveYearDownPushButton->setToolTip(QString("J"));
+	*/
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -130,7 +179,7 @@ void YearsForm::removeYear()
 		return;*/
 	if(QMessageBox::warning( this, tr("FET"),
 	 tr("Are you sure you want to delete year %1 and all related groups, subgroups, activities and constraints?").arg(yearName),
-	 QMessageBox::Yes | QMessageBox::No) == QMessageBox::No)
+	 QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes) == QMessageBox::No)
 		return;
 
 	bool tmp=gt.rules.removeYear(yearName);

@@ -24,6 +24,12 @@
 
 #include <QMessageBox>
 
+/*
+#include <Qt>
+#include <QShortcut>
+#include <QKeySequence>
+*/
+
 #include <QListWidget>
 #include <QScrollBar>
 #include <QAbstractItemView>
@@ -52,6 +58,7 @@ BuildingsForm::BuildingsForm(QWidget* parent): QDialog(parent)
 
 	connect(addBuildingPushButton, &QPushButton::clicked, this, &BuildingsForm::addBuilding);
 	connect(removeBuildingPushButton, &QPushButton::clicked, this, &BuildingsForm::removeBuilding);
+	
 	connect(buildingsListWidget, &QListWidget::currentRowChanged, this, &BuildingsForm::buildingChanged);
 	connect(closePushButton, &QPushButton::clicked, this, &BuildingsForm::close);
 	connect(modifyBuildingPushButton, &QPushButton::clicked, this, &BuildingsForm::modifyBuilding);
@@ -65,6 +72,38 @@ BuildingsForm::BuildingsForm(QWidget* parent): QDialog(parent)
 	connect(longNamePushButton, &QPushButton::clicked, this, &BuildingsForm::longName);
 	connect(codePushButton, &QPushButton::clicked, this, &BuildingsForm::code);
 	connect(commentsPushButton, &QPushButton::clicked, this, &BuildingsForm::comments);
+
+	/*
+	QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
+	connect(addShortcut, &QShortcut::activated, [=]{addBuildingPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		addBuildingPushButton->setToolTip(QString("+"));
+	//
+	QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), this);
+	connect(modifyShortcut, &QShortcut::activated, [=]{modifyBuildingPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		modifyBuildingPushButton->setToolTip(QString("M"));
+	//
+	QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, this);
+	connect(removeShortcut, &QShortcut::activated, [=]{removeBuildingPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		removeBuildingPushButton->setToolTip(QString("⌦"));
+	//
+	QShortcut* commentsShortcut=new QShortcut(QKeySequence(Qt::Key_C), this);
+	connect(commentsShortcut, &QShortcut::activated, [=]{commentsPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		commentsPushButton->setToolTip(QString("C"));
+	//
+	QShortcut* upShortcut=new QShortcut(QKeySequence(Qt::Key_U), this);
+	connect(upShortcut, &QShortcut::activated, [=]{moveBuildingUpPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		moveBuildingUpPushButton->setToolTip(QString("U"));
+	//
+	QShortcut* downShortcut=new QShortcut(QKeySequence(Qt::Key_J), this);
+	connect(downShortcut, &QShortcut::activated, [=]{moveBuildingDownPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		moveBuildingDownPushButton->setToolTip(QString("J"));
+	*/
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -137,7 +176,7 @@ void BuildingsForm::removeBuilding()
 
 	if(QMessageBox::warning( this, tr("FET"),
 	 tr("Are you sure you want to delete this building?"),
-	 QMessageBox::Yes | QMessageBox::No) == QMessageBox::No)
+	 QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes) == QMessageBox::No)
 		return;
 	
 	QString on=bu->name;

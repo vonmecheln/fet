@@ -11065,6 +11065,8 @@ It is not like that
 Max 0 beginnings at second hour means that the students will always begin at the first hour.
 The solution might be another new constraint, if the students have activities at the second hour they must have also activities in the first hour.
 
+See also item #755.
+
 735--------------------------------------------------------
 From GUEFFAZ REDA (on Facebook):
 
@@ -11343,3 +11345,113 @@ The problem with this constraint is that we cannot decide which way to continue:
 
 A possible option is to double the students sets (Y1 and Y2), and to add all the activities to Y1 and to Y2 add only the other activities
 (without the ones beginning or ending the days). Then, max 0 gaps for Y1 and Y2.
+
+750--------------'Ctrl+H' is DONE in FET-7.4.7--------------
+From Alami Mohammed (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6526.0
+
+Currently, we have the Ctrl+G shortcut for generating an individual timetable, which is very convenient.
+I would like to suggest adding two more shortcuts:
+
+DONE Ctrl+H → for generating multiple timetables
+
+Delete (Supp) key → for deleting selected items
+
+---
+
+I'd also like to suggest some additional shortcuts for quickly showing the horizontal timetables:
+
+Ctrl+Shift+T → Teachers' timetables (days as rows)
+
+Ctrl+Shift+S → Students' timetables (days as rows)
+
+Ctrl+Shift+R → Rooms' timetables (days as rows)
+
+These would make it much faster to switch between the different horizontal views.
+
+751---------------------------------------------------------
+From Alami Mohammed (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6527.0
+
+I have a small idea that could be very useful while working with FET.
+
+When we start a single generation, it would be nice to have a button inside that window which allows us to switch directly to multiple generation — without losing
+the first single generation result.
+
+This way, if we begin with a quick single generation and later decide to continue testing multiple generations, we won't need to restart the process from scratch.
+
+I think this could save time and make the workflow smoother.
+
+752---------------------------------------------------------
+From Alami Mohammed (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6528.0
+
+Right now, we can export timetables as HTML or PDF, which is great.
+I think it would be even more powerful if we also had the option to export directly to Excel (XLSX) format.
+
+That way, schools could easily make small manual adjustments or apply custom formatting in Excel after generating the timetable with FET.
+
+753---------------------------------------------------------
+From Alami Mohammed (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6529.0
+
+I'd like to suggest a new feature in FET: the ability to define some activities as optional.
+
+Here's how I imagine it could work:
+
+First, we run the normal generation for all compulsory activities.
+
+After that, there could be a button or option to "Add Optional Activities".
+
+FET would then try to place these optional activities into the existing timetable, depending on the availability of teachers, students, and classrooms.
+
+The duration of an optional activity could be flexible, for example: it might fit as 1 hour or 2 hours, depending on what FET can find.
+
+These optional activities could be scheduled even if they create gaps in teachers' or students' timetables.
+
+A stop condition could be set: for example, FET stops adding optional activities once it has successfully placed a specified number of them.
+
+If no space is found, optional activities would simply remain unscheduled without affecting the main timetable.
+
+This way, schools could handle enrichment or extra lessons more flexibly, without compromising the core timetable.
+
+754---------------------------------------------------------
+From drvemana (on guestbook):
+
+I would like to suggest that, if possible, kindly provide one more student group under the subgroup.
+Example: Year - July 2025 Term, Group - UGProg_Arts, Subgroup - Section_A. If one more subgroup under
+Section_a, it is useful for group students for common elective subjects from core subjects.
+
+755---------------------------------------------------------
+From Bahri Abderezak (on Facebook):
+
+A suggestion that will surely help lots of schools in different countries .. which is related to the numerous classes in comparison to the number of rooms
+.. a suggestion to help reducing the entrance/ exit movement of students to the school .. through introducing a new constraint if it s possible..
+which makes all classes start studies whether at session 1 or 3, to avoid entrance at 9 (it is similar to .. all sts start early constraint, but different
+in starting the third hour).
+
+See also item #734.
+
+756---------------------------------------------------------
+From YOUSSEF HOUIET (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6541.0
+
+A set of overlapping activities
+
+This new constraint would allow a defined set of activities to overlap in time (partially or fully).
+
+Possible use cases include:
+
+-Two or more teachers working at the same time.
+-Two or more student groups scheduled at the same time whenever possible (for example, to ensure they can share the same school transport in rural areas).
+-Synchronizing multiple sub-activities in pairs (such as English and Spanish lessons running in parallel).
+
+This constraint is related to the existing "A set of activities occupies max selected time slots", but it would be more practical to have a dedicated one
+for overlapping activities.
+
+If it is easy to implement, the new constraint would be very useful. Otherwise, the existing constraint can still be used as an alternative.

@@ -29,6 +29,12 @@
 
 #include <QMessageBox>
 
+/*
+#include <Qt>
+#include <QShortcut>
+#include <QKeySequence>
+*/
+
 #include <QVBoxLayout>
 #include <QScrollBar>
 
@@ -1109,6 +1115,7 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ListSpaceConstraints::modifyClicked);
 	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ListSpaceConstraints::constraintChanged);
 	connect(removePushButton, &QPushButton::clicked, this, &ListSpaceConstraints::removeClicked);
+	
 	if(helpPushButton!=nullptr)
 		connect(helpPushButton, &QPushButton::clicked, this, &ListSpaceConstraints::helpClicked);
 	connect(closePushButton, &QPushButton::clicked, this, &ListSpaceConstraints::closeClicked);
@@ -1127,6 +1134,43 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 	connect(deactivatePushButton, &QPushButton::clicked, this, &ListSpaceConstraints::deactivateConstraints);
 	connect(commentsPushButton, &QPushButton::clicked, this, &ListSpaceConstraints::constraintComments);
 	connect(weightsPushButton, &QPushButton::clicked, this, &ListSpaceConstraints::changeWeights);
+
+	/*
+	QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), dialog);
+	connect(addShortcut, &QShortcut::activated, [=]{addPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		addPushButton->setToolTip(QString("+"));
+	//
+	QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), dialog);
+	connect(modifyShortcut, &QShortcut::activated, [=]{modifyPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		modifyPushButton->setToolTip(QString("M"));
+	//
+	QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, dialog);
+	connect(removeShortcut, &QShortcut::activated, [=]{removePushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		removePushButton->setToolTip(QString("⌦"));
+	//
+	QShortcut* activateShortcut=new QShortcut(QKeySequence(Qt::Key_A), dialog);
+	connect(activateShortcut, &QShortcut::activated, [=]{activatePushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		activatePushButton->setToolTip(QString("A"));
+	//
+	QShortcut* deactivateShortcut=new QShortcut(QKeySequence(Qt::Key_D), dialog);
+	connect(deactivateShortcut, &QShortcut::activated, [=]{deactivatePushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		deactivatePushButton->setToolTip(QString("D"));
+	//
+	QShortcut* commentsShortcut=new QShortcut(QKeySequence(Qt::Key_C), dialog);
+	connect(commentsShortcut, &QShortcut::activated, [=]{commentsPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		commentsPushButton->setToolTip(QString("C"));
+	//
+	QShortcut* weightsShortcut=new QShortcut(QKeySequence(Qt::Key_W), dialog);
+	connect(weightsShortcut, &QShortcut::activated, [=]{weightsPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		weightsPushButton->setToolTip(QString("W"));
+	*/
 
 	filter();
 
@@ -2421,7 +2465,7 @@ void ListSpaceConstraints::activateConstraints()
 	if(CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS){
 		QMessageBox::StandardButton ret=QMessageBox::No;
 		QString s=tr("Activate the selected space constraints?");
-		ret=QMessageBox::question(dialog, tr("FET confirmation"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+		ret=QMessageBox::question(dialog, tr("FET confirmation"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::Yes);
 		if(ret==QMessageBox::No){
 			//constraintsListWidget->setFocus();
 			return;
@@ -2487,7 +2531,7 @@ void ListSpaceConstraints::deactivateConstraints()
 		QMessageBox::StandardButton ret=QMessageBox::No;
 		QString s=tr("Deactivate the selected space constraints? "
 		 "(Note that the basic compulsory space constraints will not be deactivated, even if they are selected.)");
-		ret=QMessageBox::question(dialog, tr("FET confirmation"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+		ret=QMessageBox::question(dialog, tr("FET confirmation"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::Yes);
 		if(ret==QMessageBox::No){
 			//constraintsListWidget->setFocus();
 			return;

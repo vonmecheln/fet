@@ -40,6 +40,12 @@
 #include <QRegExp>
 #endif
 
+/*
+#include <Qt>
+#include <QShortcut>
+#include <QKeySequence>
+*/
+
 #include <QString>
 #include <QMessageBox>
 
@@ -110,6 +116,7 @@ ActivitiesForm::ActivitiesForm(QWidget* parent, const QString& teacherName, cons
 	
 	connect(addActivityPushButton, &QPushButton::clicked, this, &ActivitiesForm::addActivity);
 	connect(removeActivitiesPushButton, &QPushButton::clicked, this, &ActivitiesForm::removeActivities);
+
 	connect(closePushButton, &QPushButton::clicked, this, &ActivitiesForm::close);
 
 	connect(filterCheckBox, &QCheckBox::toggled, this, &ActivitiesForm::filter);
@@ -126,8 +133,40 @@ ActivitiesForm::ActivitiesForm(QWidget* parent, const QString& teacherName, cons
 	//connect(deactivateAllPushButton, SIG NAL(clicked()), this, SL OT(deactivateAllActivities()));
 
 	connect(commentsPushButton, &QPushButton::clicked, this, &ActivitiesForm::activityComments);
-
+	
 	connect(activityTagsPushButton, &QPushButton::clicked, this, &ActivitiesForm::changeActivityTags);
+
+	/*
+	QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
+	connect(addShortcut, &QShortcut::activated, [=]{addActivityPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		addActivityPushButton->setToolTip(QString("+"));
+	//
+	QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), this);
+	connect(modifyShortcut, &QShortcut::activated, [=]{modifyActivityPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		modifyActivityPushButton->setToolTip(QString("M"));
+	//
+	QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, this);
+	connect(removeShortcut, &QShortcut::activated, [=]{removeActivitiesPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		removeActivitiesPushButton->setToolTip(QString("⌦"));
+	//
+	QShortcut* activateShortcut=new QShortcut(QKeySequence(Qt::Key_A), this);
+	connect(activateShortcut, &QShortcut::activated, [=]{activatePushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		activatePushButton->setToolTip(QString("A"));
+	//
+	QShortcut* deactivateShortcut=new QShortcut(QKeySequence(Qt::Key_D), this);
+	connect(deactivateShortcut, &QShortcut::activated, [=]{deactivatePushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		deactivatePushButton->setToolTip(QString("D"));
+	//
+	QShortcut* commentsShortcut=new QShortcut(QKeySequence(Qt::Key_C), this);
+	connect(commentsShortcut, &QShortcut::activated, [=]{commentsPushButton->animateClick();});
+	if(SHOW_TOOL_TIPS)
+		commentsPushButton->setToolTip(QString("C"));
+	*/
 
 	//////////////////
 	QString settingsName="ActivitiesAdvancedFilterForm";
