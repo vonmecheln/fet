@@ -136,7 +136,7 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 	helpPushButton=nullptr;
 
-	modifyMultipleMinDaysBetweenActivitiesConstraintsPushButton=nullptr;
+	//modifyMultipleMinDaysBetweenActivitiesConstraintsPushButton=nullptr;
 
 	addRemoveMultipleConstraintsPushButton=nullptr;
 
@@ -467,7 +467,7 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 													 "if on the same day is checked, they must be consecutive and on the same half day."));
 				firstInstructionsLabel->setVisible(gt.rules.mode==MORNINGS_AFTERNOONS);
 
-				modifyMultipleMinDaysBetweenActivitiesConstraintsPushButton=new QPushButton(tr("Modify multiple constraints at once"));
+				//modifyMultipleMinDaysBetweenActivitiesConstraintsPushButton=new QPushButton(tr("Modify multiple constraints at once"));
 
 				break;
 			}
@@ -2274,7 +2274,7 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				firstInstructionsLabel=new QLabel(tr("Min days is for half days"));
 
-				modifyMultipleMinDaysBetweenActivitiesConstraintsPushButton=new QPushButton(tr("Modify multiple constraints at once"));
+				//modifyMultipleMinDaysBetweenActivitiesConstraintsPushButton=new QPushButton(tr("Modify multiple constraints at once"));
 
 				break;
 			}
@@ -3366,6 +3366,10 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 		case CONSTRAINT_TEACHER_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR:
 			[[fallthrough]];
 		case CONSTRAINT_TEACHER_AFTERNOONS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR:
+			[[fallthrough]];
+		case CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES:
+			[[fallthrough]];
+		case CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES:
 			modifyMultiplePushButton=new QPushButton(tr("Modify selected", "It refers to time constraints"));
 			break;
 		
@@ -3431,13 +3435,13 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 	//wholeDialog->addLayout(constraintsLayout);
 	wholeDialog->addWidget(splitter);
 	wholeDialog->addLayout(buttons1Layout);
-	if(modifyMultipleMinDaysBetweenActivitiesConstraintsPushButton!=nullptr){
+	/*if(modifyMultipleMinDaysBetweenActivitiesConstraintsPushButton!=nullptr){
 		//wholeDialog->addWidget(modifyMultipleMinDaysBetweenActivitiesConstraintsPushButton);
 		QHBoxLayout* layoutM=new QHBoxLayout;
 		layoutM->addStretch();
 		layoutM->addWidget(modifyMultipleMinDaysBetweenActivitiesConstraintsPushButton);
 		wholeDialog->addLayout(layoutM);
-	}
+	}*/
 	if(addRemoveMultipleConstraintsPushButton!=nullptr){
 		//wholeDialog->addWidget(addRemoveMultipleConstraintsPushButton);
 		QHBoxLayout* layoutM=new QHBoxLayout;
@@ -3458,8 +3462,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 	if(helpPushButton!=nullptr)
 		connect(helpPushButton, &QPushButton::clicked, this, &ListTimeConstraints::helpClicked);
 	connect(closePushButton, &QPushButton::clicked, this, &ListTimeConstraints::closeClicked);
-	if(modifyMultipleMinDaysBetweenActivitiesConstraintsPushButton!=nullptr)
-		connect(modifyMultipleMinDaysBetweenActivitiesConstraintsPushButton, &QPushButton::clicked, this, &ListTimeConstraints::modifyMultipleMinDaysBetweenActivitiesConstraintsClicked);
+	//if(modifyMultipleMinDaysBetweenActivitiesConstraintsPushButton!=nullptr)
+	//	connect(modifyMultipleMinDaysBetweenActivitiesConstraintsPushButton, &QPushButton::clicked, this, &ListTimeConstraints::modifyMultipleMinDaysBetweenActivitiesConstraintsClicked);
 	if(addRemoveMultipleConstraintsPushButton!=nullptr)
 		connect(addRemoveMultipleConstraintsPushButton, &QPushButton::clicked, this, &ListTimeConstraints::addRemoveMultipleConstraintsActivitiesSameStartingHourClicked);
 
@@ -7354,7 +7358,412 @@ void ListTimeConstraints::modifyMultipleClicked()
 	int valv=constraintsListWidget->verticalScrollBar()->value();
 	int valh=constraintsListWidget->horizontalScrollBar()->value();
 
-	ModifyTimeConstraints mtc(dialog, type, constraintsToModify);
+	switch(type){
+		case CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES:
+			{
+				ChangeMinDaysSelectivelyForm csDialog(dialog);
+
+				setParentAndOtherThings(&csDialog, dialog);
+				bool result=csDialog.exec();
+
+				if(result==QDialog::Accepted){
+					double oldWeight=csDialog.oldWeight;
+					double newWeight=csDialog.newWeight;
+					int oldConsecutive=csDialog.oldConsecutive;
+					QString oldConsecutiveString=csDialog.oldConsecutiveString;
+					int newConsecutive=csDialog.newConsecutive;
+					QString newConsecutiveString=csDialog.newConsecutiveString;
+					int oldDays=csDialog.oldDays;
+					int newDays=csDialog.newDays;
+					int oldNActs=csDialog.oldNActs;
+					if(oldWeight==-1){
+					}
+					else if(oldWeight>=0 && oldWeight<=100.0){
+					}
+					else{
+						QMessageBox::critical(dialog, tr("FET information"),
+						tr("FET has met a critical error - aborting current operation, please report bug (old weight is not -1 and not (>=0.0 and <=100.0))"));
+						return;
+					}
+
+					if(newWeight==-1){
+					}
+					else if(newWeight>=0 && newWeight<=100.0){
+					}
+					else{
+						QMessageBox::critical(dialog, tr("FET information"),
+						tr("FET has met a critical error - aborting current operation, please report bug (new weight is not -1 and not (>=0.0 and <=100.0))"));
+						return;
+					}
+
+					enum {ANY=0, YES=1, NO=2};
+					enum {NOCHANGE=0};
+
+					if(oldConsecutive<0 || oldConsecutive>2){
+						QMessageBox::critical(dialog, tr("FET information"),
+						tr("FET has met a critical error - aborting current operation, please report bug (old consecutive is not any, yes or no)"));
+						return;
+					}
+
+					if(newConsecutive<0 || newConsecutive>2){
+						QMessageBox::critical(dialog, tr("FET information"),
+						tr("FET has met a critical error - aborting current operation, please report bug (new consecutive is not no_change, yes or no)"));
+						return;
+					}
+
+					if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+						if(oldDays==-1){
+						}
+						else if(oldDays>=1 && oldDays<=gt.rules.nDaysPerWeek){
+						}
+						else{
+							QMessageBox::critical(dialog, tr("FET information"),
+							tr("FET has met a critical error - aborting current operation, please report bug (old min days is not -1 or 1..ndaysperweek)"));
+							return;
+						}
+
+						if(newDays==-1){
+						}
+						else if(newDays>=1 && newDays<=gt.rules.nDaysPerWeek){
+						}
+						else{
+							QMessageBox::critical(dialog, tr("FET information"),
+							tr("FET has met a critical error - aborting current operation, please report bug (new min days is not -1 or 1..ndaysperweek)"));
+							return;
+						}
+					}
+					else{
+						if(oldDays==-1){
+						}
+						else if(oldDays>=1 && oldDays<=gt.rules.nDaysPerWeek/2){
+						}
+						else{
+							QMessageBox::critical(dialog, tr("FET information"),
+							tr("FET has met a critical error - aborting current operation, please report bug (old min days is not -1 or 1..nrealdaysperweek)"));
+							return;
+						}
+
+						if(newDays==-1){
+						}
+						else if(newDays>=1 && newDays<=gt.rules.nDaysPerWeek/2){
+						}
+						else{
+							QMessageBox::critical(dialog, tr("FET information"),
+							tr("FET has met a critical error - aborting current operation, please report bug (new min days is not -1 or 1..nrealdaysperweek)"));
+							return;
+						}
+					}
+
+					if(oldNActs==-1){
+					}
+					else if(oldNActs>=1){
+					}
+					else{
+						QMessageBox::critical(dialog, tr("FET information"),
+						tr("FET has met a critical error - aborting current operation, please report bug (old nActivities is not -1 or >=1)"));
+						return;
+					}
+
+					int count=0;
+
+					QString cs;
+
+					for(TimeConstraint* tc : std::as_const(constraintsToModify)){
+						if(tc->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
+							ConstraintMinDaysBetweenActivities* mc=(ConstraintMinDaysBetweenActivities*)tc;
+							bool okw, okd, okc, okn;
+							if(oldWeight==-1)
+								okw=true;
+							else if(oldWeight==mc->weightPercentage)
+								okw=true;
+							else
+								okw=false;
+
+							if(oldConsecutive==ANY)
+								okc=true;
+							else if(oldConsecutive==YES && mc->consecutiveIfSameDay==true)
+								okc=true;
+							else if(oldConsecutive==NO && mc->consecutiveIfSameDay==false)
+								okc=true;
+							else
+								okc=false;
+
+							if(oldDays==-1)
+								okd=true;
+							else if(oldDays==mc->minDays)
+								okd=true;
+							else
+								okd=false;
+
+							if(oldNActs==-1)
+								okn=true;
+							else if(mc->n_activities==oldNActs)
+								okn=true;
+							else
+								okn=false;
+
+							if(okw && okc && okd && okn){
+								cs+=mc->getDetailedDescription(gt.rules);
+								cs+=QString("\n");
+
+								if(newWeight>=0)
+									mc->weightPercentage=newWeight;
+
+								if(newConsecutive==YES)
+									mc->consecutiveIfSameDay=true;
+								else if(newConsecutive==NO)
+									mc->consecutiveIfSameDay=false;
+
+								if(newDays>=0)
+									mc->minDays=newDays;
+
+								count++;
+							}
+						}
+						else{
+							assert(0);
+						}
+					}
+
+					QMessageBox::information(dialog, tr("FET information"), tr("There were inspected (and possibly modified) %1 constraints min days between activities"
+					" matching your criteria").arg(count)+"\n\n"+
+					tr("NOTE: If you are using constraints of type activities same starting time or activities same starting day or max 0 (half) days between activities, it is important"
+					" (after current operation) to apply the operation of removing redundant constraints.")
+					+" "+tr("Read Help/Important tips - tip 2) for details.")
+					);
+
+					if(count==0)
+						return;
+
+					QString s;
+					s+=tr("Modified multiple constraints min days between activities with filter:");
+					s+=QString("\n\n");
+
+					s+=tr("Old weight percentage=%1").arg(oldWeight);
+					s+=QString("\n");
+					s+=tr("New weight percentage=%1").arg(newWeight);
+					s+=QString("\n\n");
+
+					s+=tr("Old consecutive if same day=%1").arg(oldConsecutiveString);
+					s+=QString("\n");
+					s+=tr("New consecutive if same day=%1").arg(newConsecutiveString);
+					s+=QString("\n\n");
+
+					s+=tr("Old min days=%1").arg(oldDays);
+					s+=QString("\n");
+					s+=tr("New min days=%1").arg(newDays);
+					s+=QString("\n\n");
+
+					s+=tr("Old number of activities=%1").arg(oldNActs);
+					s+=QString("\n\n");
+
+					s+=tr("There were inspected (and possibly modified) %1 constraints min days between activities"
+					" matching your criteria:").arg(count);
+					s+=QString("\n\n");
+					s+=cs;
+					s+=QString("\n");
+
+					gt.rules.addUndoPoint(s);
+
+					gt.rules.internalStructureComputed=false;
+					setRulesModifiedAndOtherThings(&gt.rules);
+				}
+				break;
+			}
+		case CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES:
+			{
+				ChangeMinHalfDaysSelectivelyForm csDialog(dialog);
+
+				setParentAndOtherThings(&csDialog, dialog);
+				bool result=csDialog.exec();
+
+				if(result==QDialog::Accepted){
+					double oldWeight=csDialog.oldWeight;
+					double newWeight=csDialog.newWeight;
+					int oldConsecutive=csDialog.oldConsecutive;
+					QString oldConsecutiveString=csDialog.oldConsecutiveString;
+					int newConsecutive=csDialog.newConsecutive;
+					QString newConsecutiveString=csDialog.newConsecutiveString;
+					int oldDays=csDialog.oldDays;
+					int newDays=csDialog.newDays;
+					int oldNActs=csDialog.oldNActs;
+					if(oldWeight==-1){
+					}
+					else if(oldWeight>=0 && oldWeight<=100.0){
+					}
+					else{
+						QMessageBox::critical(dialog, tr("FET information"),
+						tr("FET has met a critical error - aborting current operation, please report bug (old weight is not -1 and not (>=0.0 and <=100.0))"));
+						return;
+					}
+
+					if(newWeight==-1){
+					}
+					else if(newWeight>=0 && newWeight<=100.0){
+					}
+					else{
+						QMessageBox::critical(dialog, tr("FET information"),
+						tr("FET has met a critical error - aborting current operation, please report bug (new weight is not -1 and not (>=0.0 and <=100.0))"));
+						return;
+					}
+
+					enum {ANY=0, YES=1, NO=2};
+					enum {NOCHANGE=0};
+
+					if(oldConsecutive<0 || oldConsecutive>2){
+						QMessageBox::critical(dialog, tr("FET information"),
+						tr("FET has met a critical error - aborting current operation, please report bug (old consecutive is not any, yes or no)"));
+						return;
+					}
+
+					if(newConsecutive<0 || newConsecutive>2){
+						QMessageBox::critical(dialog, tr("FET information"),
+						tr("FET has met a critical error - aborting current operation, please report bug (new consecutive is not no_change, yes or no)"));
+						return;
+					}
+
+					if(true){
+						if(oldDays==-1){
+						}
+						else if(oldDays>=1 && oldDays<=gt.rules.nDaysPerWeek){
+						}
+						else{
+							QMessageBox::critical(dialog, tr("FET information"),
+							tr("FET has met a critical error - aborting current operation, please report bug (old min days is not -1 or 1..ndaysperweek)"));
+							return;
+						}
+
+						if(newDays==-1){
+						}
+						else if(newDays>=1 && newDays<=gt.rules.nDaysPerWeek){
+						}
+						else{
+							QMessageBox::critical(dialog, tr("FET information"),
+							tr("FET has met a critical error - aborting current operation, please report bug (new min days is not -1 or 1..ndaysperweek)"));
+							return;
+						}
+					}
+
+					if(oldNActs==-1){
+					}
+					else if(oldNActs>=1){
+					}
+					else{
+						QMessageBox::critical(dialog, tr("FET information"),
+						tr("FET has met a critical error - aborting current operation, please report bug (old nActivities is not -1 or >=1)"));
+						return;
+					}
+
+					int count=0;
+
+					QString cs;
+
+					for(TimeConstraint* tc : std::as_const(constraintsToModify)){
+						if(tc->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
+							ConstraintMinHalfDaysBetweenActivities* mc=(ConstraintMinHalfDaysBetweenActivities*)tc;
+							bool okw, okd, okc, okn;
+							if(oldWeight==-1)
+								okw=true;
+							else if(oldWeight==mc->weightPercentage)
+								okw=true;
+							else
+								okw=false;
+
+							if(oldConsecutive==ANY)
+								okc=true;
+							else if(oldConsecutive==YES && mc->consecutiveIfSameDay==true)
+								okc=true;
+							else if(oldConsecutive==NO && mc->consecutiveIfSameDay==false)
+								okc=true;
+							else
+								okc=false;
+
+							if(oldDays==-1)
+								okd=true;
+							else if(oldDays==mc->minDays)
+								okd=true;
+							else
+								okd=false;
+
+							if(oldNActs==-1)
+								okn=true;
+							else if(mc->n_activities==oldNActs)
+								okn=true;
+							else
+								okn=false;
+
+							if(okw && okc && okd && okn){
+								cs+=mc->getDetailedDescription(gt.rules);
+								cs+=QString("\n");
+
+								if(newWeight>=0)
+									mc->weightPercentage=newWeight;
+
+								if(newConsecutive==YES)
+									mc->consecutiveIfSameDay=true;
+								else if(newConsecutive==NO)
+									mc->consecutiveIfSameDay=false;
+
+								if(newDays>=0)
+									mc->minDays=newDays;
+
+								count++;
+							}
+						}
+						else{
+							assert(0);
+						}
+					}
+
+					QMessageBox::information(dialog, tr("FET information"), tr("There were inspected (and possibly modified) %1 constraints min half days between activities"
+					" matching your criteria").arg(count)+"\n\n"+
+					tr("NOTE: If you are using constraints of type activities same starting time or activities same starting day or max 0 (half) days between activities, it is important"
+					" (after current operation) to apply the operation of removing redundant constraints.")
+					+" "+tr("Read Help/Important tips - tip 2) for details.")
+					);
+
+					if(count==0)
+						return;
+
+					QString s=tr("Modified multiple constraints min half days between activities with filter:");
+					s+=QString("\n\n");
+
+					s+=tr("Old weight percentage=%1").arg(oldWeight);
+					s+=QString("\n");
+					s+=tr("New weight percentage=%1").arg(newWeight);
+					s+=QString("\n\n");
+
+					s+=tr("Old consecutive if same day=%1").arg(oldConsecutiveString);
+					s+=QString("\n");
+					s+=tr("New consecutive if same day=%1").arg(newConsecutiveString);
+					s+=QString("\n\n");
+
+					s+=tr("Old min half days=%1").arg(oldDays);
+					s+=QString("\n");
+					s+=tr("New min half days=%1").arg(newDays);
+					s+=QString("\n\n");
+
+					s+=tr("Old number of activities=%1").arg(oldNActs);
+					s+=QString("\n\n");
+
+					s+=tr("There were inspected (and possibly modified) %1 constraints min half days between activities"
+					" matching your criteria:").arg(count);
+					s+=QString("\n\n");
+					s+=cs;
+					s+=QString("\n");
+
+					gt.rules.addUndoPoint(s);
+
+					gt.rules.internalStructureComputed=false;
+					setRulesModifiedAndOtherThings(&gt.rules);
+				}
+				break;
+			}
+		
+		default:
+			ModifyTimeConstraints mtc(dialog, type, constraintsToModify);
+			break;
+	}
 
 	filter();
 
@@ -8067,375 +8476,9 @@ void ListTimeConstraints::helpClicked()
 	}
 }
 
-void ListTimeConstraints::modifyMultipleMinDaysBetweenActivitiesConstraintsClicked()
+/*void ListTimeConstraints::modifyMultipleMinDaysBetweenActivitiesConstraintsClicked()
 {
-	if(type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
-		ChangeMinDaysSelectivelyForm csDialog(dialog);
-
-		setParentAndOtherThings(&csDialog, dialog);
-		bool result=csDialog.exec();
-
-		if(result==QDialog::Accepted){
-			double oldWeight=csDialog.oldWeight;
-			double newWeight=csDialog.newWeight;
-			int oldConsecutive=csDialog.oldConsecutive;
-			QString oldConsecutiveString=csDialog.oldConsecutiveString;
-			int newConsecutive=csDialog.newConsecutive;
-			QString newConsecutiveString=csDialog.newConsecutiveString;
-			int oldDays=csDialog.oldDays;
-			int newDays=csDialog.newDays;
-			int oldNActs=csDialog.oldNActs;
-			if(oldWeight==-1){
-			}
-			else if(oldWeight>=0 && oldWeight<=100.0){
-			}
-			else{
-				QMessageBox::critical(dialog, tr("FET information"),
-				 tr("FET has met a critical error - aborting current operation, please report bug (old weight is not -1 and not (>=0.0 and <=100.0))"));
-				return;
-			}
-
-			if(newWeight==-1){
-			}
-			else if(newWeight>=0 && newWeight<=100.0){
-			}
-			else{
-				QMessageBox::critical(dialog, tr("FET information"),
-				 tr("FET has met a critical error - aborting current operation, please report bug (new weight is not -1 and not (>=0.0 and <=100.0))"));
-				return;
-			}
-
-			enum {ANY=0, YES=1, NO=2};
-			enum {NOCHANGE=0};
-
-			if(oldConsecutive<0 || oldConsecutive>2){
-				QMessageBox::critical(dialog, tr("FET information"),
-				 tr("FET has met a critical error - aborting current operation, please report bug (old consecutive is not any, yes or no)"));
-				return;
-			}
-
-			if(newConsecutive<0 || newConsecutive>2){
-				QMessageBox::critical(dialog, tr("FET information"),
-				 tr("FET has met a critical error - aborting current operation, please report bug (new consecutive is not no_change, yes or no)"));
-				return;
-			}
-
-			if(gt.rules.mode!=MORNINGS_AFTERNOONS){
-				if(oldDays==-1){
-				}
-				else if(oldDays>=1 && oldDays<=gt.rules.nDaysPerWeek){
-				}
-				else{
-					QMessageBox::critical(dialog, tr("FET information"),
-					 tr("FET has met a critical error - aborting current operation, please report bug (old min days is not -1 or 1..ndaysperweek)"));
-					return;
-				}
-
-				if(newDays==-1){
-				}
-				else if(newDays>=1 && newDays<=gt.rules.nDaysPerWeek){
-				}
-				else{
-					QMessageBox::critical(dialog, tr("FET information"),
-					 tr("FET has met a critical error - aborting current operation, please report bug (new min days is not -1 or 1..ndaysperweek)"));
-					return;
-				}
-			}
-			else{
-				if(oldDays==-1){
-				}
-				else if(oldDays>=1 && oldDays<=gt.rules.nDaysPerWeek/2){
-				}
-				else{
-					QMessageBox::critical(dialog, tr("FET information"),
-					 tr("FET has met a critical error - aborting current operation, please report bug (old min days is not -1 or 1..nrealdaysperweek)"));
-					return;
-				}
-
-				if(newDays==-1){
-				}
-				else if(newDays>=1 && newDays<=gt.rules.nDaysPerWeek/2){
-				}
-				else{
-					QMessageBox::critical(dialog, tr("FET information"),
-					 tr("FET has met a critical error - aborting current operation, please report bug (new min days is not -1 or 1..nrealdaysperweek)"));
-					return;
-				}
-			}
-
-			if(oldNActs==-1){
-			}
-			else if(oldNActs>=1){
-			}
-			else{
-				QMessageBox::critical(dialog, tr("FET information"),
-				 tr("FET has met a critical error - aborting current operation, please report bug (old nActivities is not -1 or >=1)"));
-				return;
-			}
-
-			int count=0;
-
-			for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList))
-				if(tc->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
-					ConstraintMinDaysBetweenActivities* mc=(ConstraintMinDaysBetweenActivities*)tc;
-					bool okw, okd, okc, okn;
-					if(oldWeight==-1)
-						okw=true;
-					else if(oldWeight==mc->weightPercentage)
-						okw=true;
-					else
-						okw=false;
-
-					if(oldConsecutive==ANY)
-						okc=true;
-					else if(oldConsecutive==YES && mc->consecutiveIfSameDay==true)
-						okc=true;
-					else if(oldConsecutive==NO && mc->consecutiveIfSameDay==false)
-						okc=true;
-					else
-						okc=false;
-
-					if(oldDays==-1)
-						okd=true;
-					else if(oldDays==mc->minDays)
-						okd=true;
-					else
-						okd=false;
-
-					if(oldNActs==-1)
-						okn=true;
-					else if(mc->n_activities==oldNActs)
-						okn=true;
-					else
-						okn=false;
-
-					if(okw && okc && okd && okn){
-						if(newWeight>=0)
-							mc->weightPercentage=newWeight;
-
-						if(newConsecutive==YES)
-							mc->consecutiveIfSameDay=true;
-						else if(newConsecutive==NO)
-							mc->consecutiveIfSameDay=false;
-
-						if(newDays>=0)
-							mc->minDays=newDays;
-
-						count++;
-					}
-				}
-
-			QMessageBox::information(dialog, tr("FET information"), tr("There were inspected (and possibly modified) %1 constraints min days between activities"
-			 " matching your criteria").arg(count)+"\n\n"+
-			 tr("NOTE: If you are using constraints of type activities same starting time or activities same starting day or max 0 (half) days between activities, it is important"
-			  " (after current operation) to apply the operation of removing redundant constraints.")
-			 +" "+tr("Read Help/Important tips - tip 2) for details.")
-			 );
-
-			QString s=tr("Modified multiple constraints min days between activities with filter:");
-			s+=QString("\n\n");
-
-			s+=tr("Old weight percentage=%1").arg(oldWeight);
-			s+=QString("\n");
-			s+=tr("New weight percentage=%1").arg(newWeight);
-			s+=QString("\n\n");
-
-			s+=tr("Old consecutive if same day=%1").arg(oldConsecutiveString);
-			s+=QString("\n");
-			s+=tr("New consecutive if same day=%1").arg(newConsecutiveString);
-			s+=QString("\n\n");
-
-			s+=tr("Old min days=%1").arg(oldDays);
-			s+=QString("\n");
-			s+=tr("New min days=%1").arg(newDays);
-			s+=QString("\n\n");
-
-			s+=tr("Old number of activities=%1").arg(oldNActs);
-			s+=QString("\n");
-
-			gt.rules.addUndoPoint(s);
-
-			gt.rules.internalStructureComputed=false;
-			setRulesModifiedAndOtherThings(&gt.rules);
-
-			filter();
-		}
-	}
-	else if(type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
-		ChangeMinHalfDaysSelectivelyForm csDialog(dialog);
-
-		setParentAndOtherThings(&csDialog, dialog);
-		bool result=csDialog.exec();
-
-		if(result==QDialog::Accepted){
-			double oldWeight=csDialog.oldWeight;
-			double newWeight=csDialog.newWeight;
-			int oldConsecutive=csDialog.oldConsecutive;
-			QString oldConsecutiveString=csDialog.oldConsecutiveString;
-			int newConsecutive=csDialog.newConsecutive;
-			QString newConsecutiveString=csDialog.newConsecutiveString;
-			int oldDays=csDialog.oldDays;
-			int newDays=csDialog.newDays;
-			int oldNActs=csDialog.oldNActs;
-			if(oldWeight==-1){
-			}
-			else if(oldWeight>=0 && oldWeight<=100.0){
-			}
-			else{
-				QMessageBox::critical(dialog, tr("FET information"),
-				 tr("FET has met a critical error - aborting current operation, please report bug (old weight is not -1 and not (>=0.0 and <=100.0))"));
-				return;
-			}
-
-			if(newWeight==-1){
-			}
-			else if(newWeight>=0 && newWeight<=100.0){
-			}
-			else{
-				QMessageBox::critical(dialog, tr("FET information"),
-				 tr("FET has met a critical error - aborting current operation, please report bug (new weight is not -1 and not (>=0.0 and <=100.0))"));
-				return;
-			}
-
-			enum {ANY=0, YES=1, NO=2};
-			enum {NOCHANGE=0};
-
-			if(oldConsecutive<0 || oldConsecutive>2){
-				QMessageBox::critical(dialog, tr("FET information"),
-				 tr("FET has met a critical error - aborting current operation, please report bug (old consecutive is not any, yes or no)"));
-				return;
-			}
-
-			if(newConsecutive<0 || newConsecutive>2){
-				QMessageBox::critical(dialog, tr("FET information"),
-				 tr("FET has met a critical error - aborting current operation, please report bug (new consecutive is not no_change, yes or no)"));
-				return;
-			}
-
-			if(true){
-				if(oldDays==-1){
-				}
-				else if(oldDays>=1 && oldDays<=gt.rules.nDaysPerWeek){
-				}
-				else{
-					QMessageBox::critical(dialog, tr("FET information"),
-					 tr("FET has met a critical error - aborting current operation, please report bug (old min days is not -1 or 1..ndaysperweek)"));
-					return;
-				}
-
-				if(newDays==-1){
-				}
-				else if(newDays>=1 && newDays<=gt.rules.nDaysPerWeek){
-				}
-				else{
-					QMessageBox::critical(dialog, tr("FET information"),
-					 tr("FET has met a critical error - aborting current operation, please report bug (new min days is not -1 or 1..ndaysperweek)"));
-					return;
-				}
-			}
-
-			if(oldNActs==-1){
-			}
-			else if(oldNActs>=1){
-			}
-			else{
-				QMessageBox::critical(dialog, tr("FET information"),
-				 tr("FET has met a critical error - aborting current operation, please report bug (old nActivities is not -1 or >=1)"));
-				return;
-			}
-
-			int count=0;
-
-			for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList))
-				if(tc->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
-					ConstraintMinHalfDaysBetweenActivities* mc=(ConstraintMinHalfDaysBetweenActivities*)tc;
-					bool okw, okd, okc, okn;
-					if(oldWeight==-1)
-						okw=true;
-					else if(oldWeight==mc->weightPercentage)
-						okw=true;
-					else
-						okw=false;
-
-					if(oldConsecutive==ANY)
-						okc=true;
-					else if(oldConsecutive==YES && mc->consecutiveIfSameDay==true)
-						okc=true;
-					else if(oldConsecutive==NO && mc->consecutiveIfSameDay==false)
-						okc=true;
-					else
-						okc=false;
-
-					if(oldDays==-1)
-						okd=true;
-					else if(oldDays==mc->minDays)
-						okd=true;
-					else
-						okd=false;
-
-					if(oldNActs==-1)
-						okn=true;
-					else if(mc->n_activities==oldNActs)
-						okn=true;
-					else
-						okn=false;
-
-					if(okw && okc && okd && okn){
-						if(newWeight>=0)
-							mc->weightPercentage=newWeight;
-
-						if(newConsecutive==YES)
-							mc->consecutiveIfSameDay=true;
-						else if(newConsecutive==NO)
-							mc->consecutiveIfSameDay=false;
-
-						if(newDays>=0)
-							mc->minDays=newDays;
-
-						count++;
-					}
-				}
-
-			QMessageBox::information(dialog, tr("FET information"), tr("There were inspected (and possibly modified) %1 constraints min half days between activities"
-			 " matching your criteria").arg(count)+"\n\n"+
-			 tr("NOTE: If you are using constraints of type activities same starting time or activities same starting day or max 0 (half) days between activities, it is important"
-			  " (after current operation) to apply the operation of removing redundant constraints.")
-			 +" "+tr("Read Help/Important tips - tip 2) for details.")
-			 );
-
-			QString s=tr("Modified multiple constraints min half days between activities with filter:");
-			s+=QString("\n\n");
-
-			s+=tr("Old weight percentage=%1").arg(oldWeight);
-			s+=QString("\n");
-			s+=tr("New weight percentage=%1").arg(newWeight);
-			s+=QString("\n\n");
-
-			s+=tr("Old consecutive if same day=%1").arg(oldConsecutiveString);
-			s+=QString("\n");
-			s+=tr("New consecutive if same day=%1").arg(newConsecutiveString);
-			s+=QString("\n\n");
-
-			s+=tr("Old min half days=%1").arg(oldDays);
-			s+=QString("\n");
-			s+=tr("New min half days=%1").arg(newDays);
-			s+=QString("\n\n");
-
-			s+=tr("Old number of activities=%1").arg(oldNActs);
-			s+=QString("\n");
-
-			gt.rules.addUndoPoint(s);
-
-			gt.rules.internalStructureComputed=false;
-			setRulesModifiedAndOtherThings(&gt.rules);
-
-			filter();
-		}
-	}
-	else{
-		assert(0);
-	}
-}
+}*/
 
 void ListTimeConstraints::addRemoveMultipleConstraintsActivitiesSameStartingHourClicked()
 {

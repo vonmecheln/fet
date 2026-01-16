@@ -106,7 +106,7 @@ class ListTimeConstraints: public QObject
 	QComboBox* first_activityTagsComboBox;
 	QComboBox* second_activityTagsComboBox;
 
-	QPushButton* modifyMultipleMinDaysBetweenActivitiesConstraintsPushButton;
+	//QPushButton* modifyMultipleMinDaysBetweenActivitiesConstraintsPushButton;
 
 	QPushButton* addRemoveMultipleConstraintsPushButton;
 
@@ -135,7 +135,7 @@ private:
 	void helpClicked();
 	void closeClicked();
 
-	void modifyMultipleMinDaysBetweenActivitiesConstraintsClicked();
+	//void modifyMultipleMinDaysBetweenActivitiesConstraintsClicked();
 	void addRemoveMultipleConstraintsActivitiesSameStartingHourClicked();
 
 	bool filterOk(TimeConstraint* tc);

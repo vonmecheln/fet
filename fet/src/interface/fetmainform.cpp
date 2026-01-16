@@ -4620,47 +4620,47 @@ void FetMainForm::populateLanguagesMap(QMap<QString, QString>& languagesMap)
 {
 	languagesMap.clear();
 
-	languagesMap.insert("en_US", QString("US English"));
-	languagesMap.insert("en_GB", QString("British English"));
+	languagesMap.insert("en_US", "US English");
+	languagesMap.insert("en_GB", "British English");
 
-	languagesMap.insert("ar", QString("عربي"));
-	languagesMap.insert("ca", QString("Català"));
-	languagesMap.insert("de", QString("Deutsch"));
-	languagesMap.insert("el", QString("Ελληνικά"));
-	languagesMap.insert("es", QString("Español"));
-	languagesMap.insert("fr", QString("Français"));
-	languagesMap.insert("id", QString("Indonesia"));
-	languagesMap.insert("it", QString("Italiano"));
-	languagesMap.insert("ro", QString("Română"));
-	languagesMap.insert("uk", QString("Українська"));
-	languagesMap.insert("pt_BR", QString("Português Brasil"));
-	languagesMap.insert("da", QString("Dansk"));
-	languagesMap.insert("sr", QString("Српски"));
-	languagesMap.insert("gl", QString("Galego"));
-	languagesMap.insert("vi", QString("Tiếng Việt"));
-	languagesMap.insert("sq", QString("Shqip"));
-	languagesMap.insert("zh_TW", QString("正體字型"));
-	languagesMap.insert("cs", QString("Český"));
-	languagesMap.insert("ja", QString("日本語"));
-	languagesMap.insert("ru", QString("Русский"));
-	languagesMap.insert("bg", QString("Български"));
-	languagesMap.insert("bs", QString("Bosanski"));
-	languagesMap.insert("tr", QString("Türkçe"));
+	languagesMap.insert("ar", "عربي");
+	languagesMap.insert("ca", "Català");
+	languagesMap.insert("de", "Deutsch");
+	languagesMap.insert("el", "Ελληνικά");
+	languagesMap.insert("es", "Español");
+	languagesMap.insert("fr", "Français");
+	languagesMap.insert("id", "Indonesia");
+	languagesMap.insert("it", "Italiano");
+	languagesMap.insert("ro", "Română");
+	languagesMap.insert("uk", "Українська");
+	languagesMap.insert("pt_BR", "Português Brasil");
+	languagesMap.insert("da", "Dansk");
+	languagesMap.insert("sr", "Српски");
+	languagesMap.insert("gl", "Galego");
+	languagesMap.insert("vi", "Tiếng Việt");
+	languagesMap.insert("sq", "Shqip");
+	languagesMap.insert("zh_TW", "正體字型");
+	languagesMap.insert("cs", "Český");
+	languagesMap.insert("ja", "日本語");
+	languagesMap.insert("ru", "Русский");
+	languagesMap.insert("bg", "Български");
+	languagesMap.insert("bs", "Bosanski");
+	languagesMap.insert("tr", "Türkçe");
 
 	//We need to write the following language names in their native language, as above:
-	languagesMap.insert("hu", QString("Hungarian"));
-	languagesMap.insert("lt", QString("Lithuanian"));
-	languagesMap.insert("mk", QString("Macedonian"));
-	languagesMap.insert("ms", QString("Malay"));
-	languagesMap.insert("nl", QString("Dutch"));
-	languagesMap.insert("pl", QString("Polish"));
-	languagesMap.insert("fa", QString("Persian"));
-	languagesMap.insert("si", QString("Sinhala"));
-	languagesMap.insert("sk", QString("Slovak"));
-	languagesMap.insert("he", QString("Hebrew"));
-	languagesMap.insert("uz", QString("Uzbek"));
-	languagesMap.insert("zh_CN", QString("Chinese Simplified"));
-	languagesMap.insert("eu", QString("Basque"));
+	languagesMap.insert("hu", "Hungarian");
+	languagesMap.insert("lt", "Lithuanian");
+	languagesMap.insert("mk", "Macedonian");
+	languagesMap.insert("ms", "Malay");
+	languagesMap.insert("nl", "Dutch");
+	languagesMap.insert("pl", "Polish");
+	languagesMap.insert("fa", "Persian");
+	languagesMap.insert("si", "Sinhala");
+	languagesMap.insert("sk", "Slovak");
+	languagesMap.insert("he", "Hebrew");
+	languagesMap.insert("uz", "Uzbek");
+	languagesMap.insert("zh_CN", "Chinese Simplified");
+	languagesMap.insert("eu", "Basque");
 }
 
 void FetMainForm::overwriteSingleGenerationFilesToggled(bool checked)

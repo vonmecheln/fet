@@ -1,3 +1,8 @@
+ 7.6.4
+	- Modifying multiple constraints of type min (half) days between activities now applies only to the selected constraints, not to all the constraints
+	(suggested by GUEFFAZ REDA).
+	- Updated the Italian translation, by Andrea Primiani.
+	- Code cleanup.
  7.6.3
 	- Bug fix in the new feature, introduced in version 7.6.0, to view/edit the related constraints in the timetable view days vertical dialogs
 	(reported by GUEFFAZ REDA).

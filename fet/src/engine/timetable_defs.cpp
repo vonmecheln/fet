@@ -61,7 +61,7 @@ int STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
 /**
 The FET version
 */
-const QString FET_VERSION="7.6.3";
+const QString FET_VERSION="7.6.4";
 
 /**
 The version number of the data format, useful when saving/restoring the history to/from the disk.
@@ -189,14 +189,14 @@ QString protect2vert(const QString& str) //used for HTML
 	p.replace("<", "&lt;");
 	//p.replace("'", "&#39;"); (note that "&apos;" does not work for HTML 4)
 
-	QString returnstring;
+	QString returnString;
 	for(int i=0; i<p.size();i++){
 		QString a=p.at(i);
 		QString b="<br />";
-		returnstring.append(a);
-		returnstring.append(b);
+		returnString.append(a);
+		returnString.append(b);
 	}
-	return returnstring;
+	return returnString;
 }
 
 QString protect3(const QString& str) //used for CSS
@@ -316,7 +316,7 @@ double customFETStrToDouble(const QString& str, bool* ok)
 
 	//tricks to convert numbers like 97.123456789 to 97.123457, to CUSTOM_DOUBLE_PRECISION (6) decimal digits after the decimal point
 	double tmpd=c.toDouble(str, ok);
-	if(ok!=0)
+	if(ok!=nullptr)
 		if((*ok)==false)
 			return tmpd;
 	QString tmps=CustomFETString::number(tmpd);

@@ -2053,6 +2053,7 @@ void FetSettings::writeGenerationParameters()
 void initLanguagesSet()
 {
 	//This is one of the two places to insert a new language in the sources (the other one is in fetmainform.cpp).
+	//(Also, don't forget about the README file!)
 	languagesSet.clear();
 
 	languagesSet.insert("en_US");
@@ -2908,7 +2909,10 @@ int main(int argc, char **argv)
 			else if(showVersion){
 				std::cout<<"FET version "<<qPrintable(FET_VERSION)<<std::endl;
 				std::cout<<"Free timetabling software, licensed under the GNU Affero General Public License version 3"<<std::endl;
-				std::cout<<"Copyright (C) 2002-2025 Liviu Lalescu, Volker Dirr"<<std::endl;
+				//This is one of the two places in which we print the program's copyright period and authors.
+				//The other place is in the file src/interface/helpaboutform.cpp.
+				//(Also, don't forget about the README file and about the two files in the "man" directory!)
+				std::cout<<"Copyright (C) 2002-2026 Liviu Lalescu, Volker Dirr"<<std::endl;
 				std::cout<<"Homepage: https://lalescu.ro/liviu/fet/"<<std::endl;
 				std::cout<<"This program uses Qt version "<<qVersion()<<", Copyright (C) The Qt Company Ltd and other contributors."<<std::endl;
 				std::cout<<"Depending on the platform and compiler, this program may use libraries from:"<<std::endl;
