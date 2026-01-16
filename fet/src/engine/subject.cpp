@@ -107,7 +107,7 @@ QString Subject::getDetailedDescriptionWithConstraints(Rules& r)
 	s+="\n";
 	for(int i=0; i<r.timeConstraintsList.size(); i++){
 		TimeConstraint* c=r.timeConstraintsList[i];
-		if(c->isRelatedToSubject(this)){
+		if(c->isRelatedToSubject(this->name)){
 			s+="\n";
 			s+=c->getDetailedDescription(r);
 		}
@@ -118,7 +118,7 @@ QString Subject::getDetailedDescriptionWithConstraints(Rules& r)
 	s+="\n";
 	for(int i=0; i<r.spaceConstraintsList.size(); i++){
 		SpaceConstraint* c=r.spaceConstraintsList[i];
-		if(c->isRelatedToSubject(this)){
+		if(c->isRelatedToSubject(this->name)){
 			s+="\n";
 			s+=c->getDetailedDescription(r);
 		}

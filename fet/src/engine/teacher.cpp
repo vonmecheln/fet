@@ -268,7 +268,7 @@ QString Teacher::getDetailedDescriptionWithConstraints(Rules& r)
 	s+="\n";
 	for(int i=0; i<r.timeConstraintsList.size(); i++){
 		TimeConstraint* c=r.timeConstraintsList[i];
-		if(c->isRelatedToTeacher(this)){
+		if(c->isRelatedToTeacher(this->name)){
 			s+="\n";
 			s+=c->getDetailedDescription(r);
 		}
@@ -279,7 +279,7 @@ QString Teacher::getDetailedDescriptionWithConstraints(Rules& r)
 	s+="\n";
 	for(int i=0; i<r.spaceConstraintsList.size(); i++){
 		SpaceConstraint* c=r.spaceConstraintsList[i];
-		if(c->isRelatedToTeacher(this)){
+		if(c->isRelatedToTeacher(this->name)){
 			s+="\n";
 			s+=c->getDetailedDescription(r);
 		}
@@ -298,7 +298,7 @@ QString Teacher::getDetailedDescriptionWithConstraintsAndNumberOfActiveHours(Rul
 	s+="\n";
 	for(int i=0; i<r.timeConstraintsList.size(); i++){
 		TimeConstraint* c=r.timeConstraintsList[i];
-		if(c->isRelatedToTeacher(this)){
+		if(c->isRelatedToTeacher(this->name)){
 			s+="\n";
 			s+=c->getDetailedDescription(r);
 		}
@@ -309,7 +309,7 @@ QString Teacher::getDetailedDescriptionWithConstraintsAndNumberOfActiveHours(Rul
 	s+="\n";
 	for(int i=0; i<r.spaceConstraintsList.size(); i++){
 		SpaceConstraint* c=r.spaceConstraintsList[i];
-		if(c->isRelatedToTeacher(this)){
+		if(c->isRelatedToTeacher(this->name)){
 			s+="\n";
 			s+=c->getDetailedDescription(r);
 		}

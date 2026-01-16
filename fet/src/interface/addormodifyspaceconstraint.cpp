@@ -151,7 +151,7 @@ AddOrModifySpaceConstraintDialog::~AddOrModifySpaceConstraintDialog()
 
 AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _type, SpaceConstraint* _oldsc,
  const QString& _preselectedTeacherName, const QString& _preselectedStudentsSetName, const QString& _preselectedSubjectName, const QString& _preselectedActivityTagName,
- const QString& _preselectedRoomName, const QList<Activity*>& _filteredActivitiesList)
+ const QString& _preselectedRoomName, const QList<int>& _filteredActivitiesIdsList)
 {
 	type=_type;
 	oldsc=_oldsc;
@@ -221,7 +221,15 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 	activitiesComboBox=nullptr;
 	activitiesList.clear();
 	initialActivityId=-1;
-	filteredActivitiesList=_filteredActivitiesList;
+
+	filteredActivitiesList.clear();
+	if(!_filteredActivitiesIdsList.isEmpty()){
+		for(int aid : std::as_const(_filteredActivitiesIdsList)){
+			Activity* act=gt.rules.activitiesPointerHash.value(aid, nullptr);
+			assert(act!=nullptr);
+			filteredActivitiesList.append(act);
+		}
+	}
 
 	helpPushButton=nullptr;
 
@@ -6941,7 +6949,7 @@ void AddOrModifySpaceConstraint::filterActivityTagsCheckBoxToggled()
 		QSet<QString> tagsSet;
 
 		QString room=roomsComboBox->currentText();
-		Room* rm=gt.rules.roomsList.at(roomsComboBox->currentIndex());
+		//Room* rm=gt.rules.roomsList.at(roomsComboBox->currentIndex());
 		//Hmmm... for other than activity preferred room(s) it might be quite inefficient (slow).
 		for(SpaceConstraint* ctr : std::as_const(gt.rules.spaceConstraintsList)){
 			switch(ctr->type){
@@ -6949,7 +6957,7 @@ void AddOrModifySpaceConstraint::filterActivityTagsCheckBoxToggled()
 				case CONSTRAINT_ACTIVITY_PREFERRED_ROOM:
 					{
 						ConstraintActivityPreferredRoom* sc=(ConstraintActivityPreferredRoom*)ctr;
-						if(sc->isRelatedToRoom(rm)){
+						if(sc->isRelatedToRoom(room)){
 							Activity* act=gt.rules.activitiesPointerHash.value(sc->activityId, nullptr);
 							//assert(act!=nullptr);
 							if(act!=nullptr)
@@ -6962,7 +6970,7 @@ void AddOrModifySpaceConstraint::filterActivityTagsCheckBoxToggled()
 				case CONSTRAINT_ACTIVITY_PREFERRED_ROOMS:
 					{
 						ConstraintActivityPreferredRooms* sc=(ConstraintActivityPreferredRooms*)ctr;
-						if(sc->isRelatedToRoom(rm)){
+						if(sc->isRelatedToRoom(room)){
 							Activity* act=gt.rules.activitiesPointerHash.value(sc->activityId, nullptr);
 							//assert(act!=nullptr);
 							if(act!=nullptr)
@@ -6975,9 +6983,9 @@ void AddOrModifySpaceConstraint::filterActivityTagsCheckBoxToggled()
 				case CONSTRAINT_STUDENTS_SET_HOME_ROOM:
 					{
 						ConstraintStudentsSetHomeRoom* sc=(ConstraintStudentsSetHomeRoom*)ctr;
-						if(sc->isRelatedToRoom(rm))
+						if(sc->isRelatedToRoom(room))
 							for(Activity* act : std::as_const(gt.rules.activitiesList))
-								if(sc->isRelatedToActivity(act))
+								if(sc->isRelatedToActivity(gt.rules, act->id))
 									for(const QString& at : act->activityTagsNames)
 										tagsSet.insert(at);
 						break;
@@ -6986,9 +6994,9 @@ void AddOrModifySpaceConstraint::filterActivityTagsCheckBoxToggled()
 				case CONSTRAINT_STUDENTS_SET_HOME_ROOMS:
 					{
 						ConstraintStudentsSetHomeRooms* sc=(ConstraintStudentsSetHomeRooms*)ctr;
-						if(sc->isRelatedToRoom(rm))
+						if(sc->isRelatedToRoom(room))
 							for(Activity* act : std::as_const(gt.rules.activitiesList))
-								if(sc->isRelatedToActivity(act))
+								if(sc->isRelatedToActivity(gt.rules, act->id))
 									for(const QString& at : act->activityTagsNames)
 										tagsSet.insert(at);
 						break;
@@ -6997,9 +7005,9 @@ void AddOrModifySpaceConstraint::filterActivityTagsCheckBoxToggled()
 				case CONSTRAINT_TEACHER_HOME_ROOM:
 					{
 						ConstraintTeacherHomeRoom* sc=(ConstraintTeacherHomeRoom*)ctr;
-						if(sc->isRelatedToRoom(rm))
+						if(sc->isRelatedToRoom(room))
 							for(Activity* act : std::as_const(gt.rules.activitiesList))
-								if(sc->isRelatedToActivity(act))
+								if(sc->isRelatedToActivity(gt.rules, act->id))
 									for(const QString& at : act->activityTagsNames)
 										tagsSet.insert(at);
 						break;
@@ -7008,9 +7016,9 @@ void AddOrModifySpaceConstraint::filterActivityTagsCheckBoxToggled()
 				case CONSTRAINT_TEACHER_HOME_ROOMS:
 					{
 						ConstraintTeacherHomeRooms* sc=(ConstraintTeacherHomeRooms*)ctr;
-						if(sc->isRelatedToRoom(rm))
+						if(sc->isRelatedToRoom(room))
 							for(Activity* act : std::as_const(gt.rules.activitiesList))
-								if(sc->isRelatedToActivity(act))
+								if(sc->isRelatedToActivity(gt.rules, act->id))
 									for(const QString& at : act->activityTagsNames)
 										tagsSet.insert(at);
 						break;
@@ -7019,9 +7027,9 @@ void AddOrModifySpaceConstraint::filterActivityTagsCheckBoxToggled()
 				case CONSTRAINT_SUBJECT_PREFERRED_ROOM:
 					{
 						ConstraintSubjectPreferredRoom* sc=(ConstraintSubjectPreferredRoom*)ctr;
-						if(sc->isRelatedToRoom(rm))
+						if(sc->isRelatedToRoom(room))
 							for(Activity* act : std::as_const(gt.rules.activitiesList))
-								if(sc->isRelatedToActivity(act))
+								if(sc->isRelatedToActivity(gt.rules, act->id))
 									for(const QString& at : act->activityTagsNames)
 										tagsSet.insert(at);
 						break;
@@ -7030,9 +7038,9 @@ void AddOrModifySpaceConstraint::filterActivityTagsCheckBoxToggled()
 				case CONSTRAINT_SUBJECT_PREFERRED_ROOMS:
 					{
 						ConstraintSubjectPreferredRooms* sc=(ConstraintSubjectPreferredRooms*)ctr;
-						if(sc->isRelatedToRoom(rm))
+						if(sc->isRelatedToRoom(room))
 							for(Activity* act : std::as_const(gt.rules.activitiesList))
-								if(sc->isRelatedToActivity(act))
+								if(sc->isRelatedToActivity(gt.rules, act->id))
 									for(const QString& at : act->activityTagsNames)
 										tagsSet.insert(at);
 						break;
@@ -7041,9 +7049,9 @@ void AddOrModifySpaceConstraint::filterActivityTagsCheckBoxToggled()
 				case CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOM:
 					{
 						ConstraintSubjectActivityTagPreferredRoom* sc=(ConstraintSubjectActivityTagPreferredRoom*)ctr;
-						if(sc->isRelatedToRoom(rm))
+						if(sc->isRelatedToRoom(room))
 							for(Activity* act : std::as_const(gt.rules.activitiesList))
-								if(sc->isRelatedToActivity(act))
+								if(sc->isRelatedToActivity(gt.rules, act->id))
 									for(const QString& at : act->activityTagsNames)
 										tagsSet.insert(at);
 						break;
@@ -7052,9 +7060,9 @@ void AddOrModifySpaceConstraint::filterActivityTagsCheckBoxToggled()
 				case CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOMS:
 					{
 						ConstraintSubjectActivityTagPreferredRooms* sc=(ConstraintSubjectActivityTagPreferredRooms*)ctr;
-						if(sc->isRelatedToRoom(rm))
+						if(sc->isRelatedToRoom(room))
 							for(Activity* act : std::as_const(gt.rules.activitiesList))
-								if(sc->isRelatedToActivity(act))
+								if(sc->isRelatedToActivity(gt.rules, act->id))
 									for(const QString& at : act->activityTagsNames)
 										tagsSet.insert(at);
 						break;
@@ -7064,9 +7072,9 @@ void AddOrModifySpaceConstraint::filterActivityTagsCheckBoxToggled()
 				case CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOM:
 					{
 						ConstraintActivityTagPreferredRoom* sc=(ConstraintActivityTagPreferredRoom*)ctr;
-						if(sc->isRelatedToRoom(rm))
+						if(sc->isRelatedToRoom(room))
 							for(Activity* act : std::as_const(gt.rules.activitiesList))
-								if(sc->isRelatedToActivity(act))
+								if(sc->isRelatedToActivity(gt.rules, act->id))
 									for(const QString& at : act->activityTagsNames)
 										tagsSet.insert(at);
 						break;
@@ -7075,9 +7083,9 @@ void AddOrModifySpaceConstraint::filterActivityTagsCheckBoxToggled()
 				case CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOMS:
 					{
 						ConstraintActivityTagPreferredRooms* sc=(ConstraintActivityTagPreferredRooms*)ctr;
-						if(sc->isRelatedToRoom(rm))
+						if(sc->isRelatedToRoom(room))
 							for(Activity* act : std::as_const(gt.rules.activitiesList))
-								if(sc->isRelatedToActivity(act))
+								if(sc->isRelatedToActivity(gt.rules, act->id))
 									for(const QString& at : act->activityTagsNames)
 										tagsSet.insert(at);
 						break;

@@ -1,3 +1,6 @@
+ 7.6.1
+	- Bug fixes: when viewing the detailed description of an activity tag in the activity tags dialog, some types of related constraints were not listed.
+	- Code improvements.
  7.6.0
 	- Added the option to view/edit the time/space constraints associated with one or more teachers/students sets/rooms/activities, from the timetable
 	view dialogs (suggested by Vangelis Karafillidis, and maybe by other users in the past).

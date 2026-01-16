@@ -238,7 +238,7 @@ public:
 	//2025-12-10. Used only for groups/subgroups which are automatically added when starting the generation,
 	//when a year/group contains no groups/subgroups. For instance, '6a Automatic Subgroup' -> '6a'.
 	//Used in the two timetable view students days horizontal/vertical dialogs, to get the name of the real
-	//the superior set, to be able to correctly call Time/SpaceConstraint::isRelatedToStudentsSet(...).
+	//superior set, to be able to correctly call Time/SpaceConstraint::isRelatedToStudentsSet(...).
 	//If a name is not in this hash, then it is real (exists in the fet data file, added by the user).
 	QHash<QString, QString> correspondingRealStudentsSetName;
 
@@ -451,7 +451,7 @@ public:
 	
 	/**
 	True if the students sets contain one common subgroup.
-	This function is used in constraints isRelatedToStudentsSet
+	Used in the constraints' isRelatedToStudentsSet(...) function
 	*/
 	bool setsShareStudents(const QString& studentsSet1, const QString& studentsSet2);
 

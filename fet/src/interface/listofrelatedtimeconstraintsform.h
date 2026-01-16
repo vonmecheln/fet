@@ -35,7 +35,7 @@ class ListOfRelatedTimeConstraintsForm : public QDialog, Ui::ListOfRelatedTimeCo
 	
 private:
 	int filterBy;
-	QList<Activity*> filterId;
+	QList<int> filterId;
 	QString filterName;
 	QList<TimeConstraint*> allRelatedTimeConstraintsList;
 
@@ -52,7 +52,7 @@ private:
 	bool useFilter;
 	
 public:
-	ListOfRelatedTimeConstraintsForm(QWidget* parent, int _filterBy, const QList<Activity*>& _filterId, const QString& _filterName, const QList<TimeConstraint*>& _allRelatedTimeConstraintsList);
+	ListOfRelatedTimeConstraintsForm(QWidget* parent, int _filterBy, const QList<int>& _filterId, const QString& _filterName, const QList<TimeConstraint*>& _allRelatedTimeConstraintsList);
 	~ListOfRelatedTimeConstraintsForm();
 	
 	bool filterOk(TimeConstraint* ctr);

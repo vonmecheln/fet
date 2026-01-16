@@ -246,7 +246,7 @@ QString Room::getDetailedDescriptionWithConstraints(Rules& r)
 	s+="\n";
 	for(int i=0; i<r.spaceConstraintsList.size(); i++){
 		SpaceConstraint* c=r.spaceConstraintsList[i];
-		if(c->isRelatedToRoom(this)){
+		if(c->isRelatedToRoom(this->name)){
 			s+="\n";
 			s+=c->getDetailedDescription(r);
 		}

@@ -766,7 +766,7 @@ QString Activity::getDetailedDescriptionWithConstraints(Rules& r)
 	s+="\n";
 	for(int i=0; i<r.timeConstraintsList.size(); i++){
 		TimeConstraint* c=r.timeConstraintsList[i];
-		if(c->isRelatedToActivity(r, this)){
+		if(c->isRelatedToActivity(r, this->id)){
 			s+="\n";
 			s+=c->getDetailedDescription(r);
 		}
@@ -777,7 +777,7 @@ QString Activity::getDetailedDescriptionWithConstraints(Rules& r)
 	s+="\n";
 	for(int i=0; i<r.spaceConstraintsList.size(); i++){
 		SpaceConstraint* c=r.spaceConstraintsList[i];
-		if(c->isRelatedToActivity(this)){
+		if(c->isRelatedToActivity(r, this->id)){
 			s+="\n";
 			s+=c->getDetailedDescription(r);
 		}

@@ -238,7 +238,7 @@ QString StudentsYear::getDetailedDescriptionWithConstraints(Rules& r)
 	s+="\n";
 	for(int i=0; i<r.timeConstraintsList.size(); i++){
 		TimeConstraint* c=r.timeConstraintsList[i];
-		if(c->isRelatedToStudentsSet(r, this)){
+		if(c->isRelatedToStudentsSet(r, this->name)){
 			s+="\n";
 			s+=c->getDetailedDescription(r);
 		}
@@ -249,7 +249,7 @@ QString StudentsYear::getDetailedDescriptionWithConstraints(Rules& r)
 	s+="\n";
 	for(int i=0; i<r.spaceConstraintsList.size(); i++){
 		SpaceConstraint* c=r.spaceConstraintsList[i];
-		if(c->isRelatedToStudentsSet(r, this)){
+		if(c->isRelatedToStudentsSet(r, this->name)){
 			s+="\n";
 			s+=c->getDetailedDescription(r);
 		}
@@ -340,7 +340,7 @@ QString StudentsGroup::getDetailedDescriptionWithConstraints(Rules& r)
 	s+="\n";
 	for(int i=0; i<r.timeConstraintsList.size(); i++){
 		TimeConstraint* c=r.timeConstraintsList[i];
-		if(c->isRelatedToStudentsSet(r, this)){
+		if(c->isRelatedToStudentsSet(r, this->name)){
 			s+="\n";
 			s+=c->getDetailedDescription(r);
 		}
@@ -351,7 +351,7 @@ QString StudentsGroup::getDetailedDescriptionWithConstraints(Rules& r)
 	s+="\n";
 	for(int i=0; i<r.spaceConstraintsList.size(); i++){
 		SpaceConstraint* c=r.spaceConstraintsList[i];
-		if(c->isRelatedToStudentsSet(r, this)){
+		if(c->isRelatedToStudentsSet(r, this->name)){
 			s+="\n";
 			s+=c->getDetailedDescription(r);
 		}
@@ -438,7 +438,7 @@ QString StudentsSubgroup::getDetailedDescriptionWithConstraints(Rules& r)
 	s+="\n";
 	for(int i=0; i<r.timeConstraintsList.size(); i++){
 		TimeConstraint* c=r.timeConstraintsList[i];
-		if(c->isRelatedToStudentsSet(r, this)){
+		if(c->isRelatedToStudentsSet(r, this->name)){
 			s+="\n";
 			s+=c->getDetailedDescription(r);
 		}
@@ -449,7 +449,7 @@ QString StudentsSubgroup::getDetailedDescriptionWithConstraints(Rules& r)
 	s+="\n";
 	for(int i=0; i<r.spaceConstraintsList.size(); i++){
 		SpaceConstraint* c=r.spaceConstraintsList[i];
-		if(c->isRelatedToStudentsSet(r, this)){
+		if(c->isRelatedToStudentsSet(r, this->name)){
 			s+="\n";
 			s+=c->getDetailedDescription(r);
 		}

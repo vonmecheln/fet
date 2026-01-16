@@ -1,4 +1,4 @@
-This is FET version 7.6.0
+This is FET version 7.6.1
 
 
 Program description:
@@ -14,16 +14,16 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.18.0, Xfce 4.20,
-	Xfce Terminal Emulator 1.1.5, Midnight Commander 4.8.33, Krusader 2.9.0, Kate 25.08.1, KDiff3 0.9.99-beta, grep 3.12, sed 4.9,
-	Thunar Bulk Rename 4.20.4, Qt 6.10.1, QMake 3.1, CMake 4.1.2, Ninja 1.13.0, Qt Creator 18.0.0, GCC 15.2.1, Clang 21.1.6,
+	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.18.1, Xfce 4.20,
+	Xfce Terminal Emulator 1.1.5, Midnight Commander 4.8.33, Krusader 2.9.0, Kate 25.12.0, KDiff3 0.9.99-beta, grep 3.12, sed 4.9,
+	Thunar Bulk Rename 4.20.4, Qt 6.10.1, QMake 3.1, CMake 4.1.2, Ninja 1.13.0, Qt Creator 18.0.1, GCC 15.2.1, Clang 21.1.6,
 	GNU Make 4.4.1, GDB 16.3, Valgrind 3.25.1, Coverity Scan 2024.12.1, Cppcheck 2.15, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0,
 	Inkscape 1.4.2, GIMP 3.0.6, ImageMagick 7.1.2-8, International Ispell 3.1.20 / Aspell 0.60.8.1, tar 1.35, Gzip 1.14, bzip2 1.0.8,
 	other great software (most of these software packages are free software, in the sense defined by The Free Software Foundation).
 
 	The executable version of FET for Windows is obtained in the following environment: Windows 11 operating system,
 	Command Prompt, Total Commander 11.56, Notepad, Python 3.9.7, ActivePerl 5.28, CMake 3.30.5, Ninja 1.12.1, Qt 6.10.1,
-	QMake 3.1, Qt Creator 18.0.0, MinGW 13.1.0, Microsoft Visual C++ 2019, 7-Zip 25.01.
+	QMake 3.1, Qt Creator 18.0.1, MinGW 13.1.0, Microsoft Visual C++ 2019, 7-Zip 25.01.
 
 	The executable version of FET for GNU/Linux is obtained in the following environment: GNU/Linux Mint 21.3 "Virginia" Xfce Edition
 	with the standard packages, Qt 6.10.1, linuxdeploy 1-alpha (most of these software packages are free software, in the sense defined

@@ -35,7 +35,7 @@ class ListOfRelatedSpaceConstraintsForm : public QDialog, Ui::ListOfRelatedSpace
 
 private:
 	int filterBy;
-	QList<Activity*> filterId;
+	QList<int> filterId;
 	QString filterName;
 	QList<SpaceConstraint*> allRelatedSpaceConstraintsList;
 
@@ -52,7 +52,7 @@ private:
 	bool useFilter;
 	
 public:
-	ListOfRelatedSpaceConstraintsForm(QWidget* parent, int _filterBy, const QList<Activity*>& _filterId, const QString& _filterName, const QList<SpaceConstraint*>& _allRelatedSpaceConstraintsList);
+	ListOfRelatedSpaceConstraintsForm(QWidget* parent, int _filterBy, const QList<int>& _filterId, const QString& _filterName, const QList<SpaceConstraint*>& _allRelatedSpaceConstraintsList);
 	~ListOfRelatedSpaceConstraintsForm();
 
 	bool filterOk(SpaceConstraint* ctr);

@@ -1422,10 +1422,10 @@ void TimetableViewRoomsDaysHorizontalForm::roomSpace()
 
 	QList<SpaceConstraint*> tscl;
 	for(SpaceConstraint* sc : std::as_const(gt.rules.spaceConstraintsList))
-		if(sc->isRelatedToRoom(gt.rules.internalRoomsList[roomIndex]))
+		if(sc->isRelatedToRoom(roomName))
 			tscl.append(sc);
 
-	ListOfRelatedSpaceConstraintsForm form(this, FILTER_IS_ROOM, QList<Activity*>(), tr("Room: %1").arg(roomName), tscl);
+	ListOfRelatedSpaceConstraintsForm form(this, FILTER_IS_ROOM, QList<int>(), tr("Room: %1").arg(roomName), tscl);
 	form.exec();
 }
 
@@ -1465,7 +1465,7 @@ void TimetableViewRoomsDaysHorizontalForm::activitiesTime()
 	bool realView=(gt.rules.mode==MORNINGS_AFTERNOONS && REAL_VIEW==true);
 	bool normalView=!realView;
 
-	QList<Activity*> actl;
+	QList<int> actl;
 
 	QSet<int> careAboutIndex;		//added by Volker Dirr. Needed, because of activities with duration > 1
 	careAboutIndex.clear();
@@ -1488,7 +1488,7 @@ void TimetableViewRoomsDaysHorizontalForm::activitiesTime()
 				if(ai!=UNALLOCATED_ACTIVITY && !careAboutIndex.contains(ai)){	//modified, because of activities with duration > 1
 					careAboutIndex.insert(ai);					//Needed, because of activities with duration > 1
 
-					actl.append(&gt.rules.internalActivitiesList[ai]);
+					actl.append(gt.rules.internalActivitiesList[ai].id);
 				}
 			}
 		}
@@ -1499,12 +1499,12 @@ void TimetableViewRoomsDaysHorizontalForm::activitiesTime()
 		return;
 	}
 
-	std::stable_sort(actl.begin(), actl.end(), [](const Activity* a, const Activity* b){return a->id < b->id;});
+	std::stable_sort(actl.begin(), actl.end(), [](const int& a, const int& b){return a < b;});
 
 	QList<TimeConstraint*> ttcl;
 	for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList)){
-		for(Activity* act : std::as_const(actl)){
-			if(tc->isRelatedToActivity(gt.rules, act)){
+		for(int aid : std::as_const(actl)){
+			if(tc->isRelatedToActivity(gt.rules, aid)){
 				ttcl.append(tc);
 				break;
 			}
@@ -1513,7 +1513,7 @@ void TimetableViewRoomsDaysHorizontalForm::activitiesTime()
 
 	QString s;
 	if(actl.count()==1)
-		s=tr("Activity Id: %1").arg(actl.at(0)->id);
+		s=tr("Activity Id: %1").arg(actl.at(0));
 	else
 		s=tr("%1 activities selected", "%1 is the number of selected activities").arg(actl.count());
 	ListOfRelatedTimeConstraintsForm form(this, FILTER_IS_ACTIVITY, actl, s, ttcl);
@@ -1556,7 +1556,7 @@ void TimetableViewRoomsDaysHorizontalForm::activitiesSpace()
 	bool realView=(gt.rules.mode==MORNINGS_AFTERNOONS && REAL_VIEW==true);
 	bool normalView=!realView;
 
-	QList<Activity*> actl;
+	QList<int> actl;
 
 	QSet<int> careAboutIndex;		//added by Volker Dirr. Needed, because of activities with duration > 1
 	careAboutIndex.clear();
@@ -1579,7 +1579,7 @@ void TimetableViewRoomsDaysHorizontalForm::activitiesSpace()
 				if(ai!=UNALLOCATED_ACTIVITY && !careAboutIndex.contains(ai)){	//modified, because of activities with duration > 1
 					careAboutIndex.insert(ai);					//Needed, because of activities with duration > 1
 
-					actl.append(&gt.rules.internalActivitiesList[ai]);
+					actl.append(gt.rules.internalActivitiesList[ai].id);
 				}
 			}
 		}
@@ -1590,12 +1590,12 @@ void TimetableViewRoomsDaysHorizontalForm::activitiesSpace()
 		return;
 	}
 
-	std::stable_sort(actl.begin(), actl.end(), [](const Activity* a, const Activity* b){return a->id < b->id;});
+	std::stable_sort(actl.begin(), actl.end(), [](const int& a, const int& b){return a < b;});
 
 	QList<SpaceConstraint*> tscl;
 	for(SpaceConstraint* sc : std::as_const(gt.rules.spaceConstraintsList)){
-		for(Activity* act : std::as_const(actl)){
-			if(sc->isRelatedToActivity(act)){
+		for(int aid : std::as_const(actl)){
+			if(sc->isRelatedToActivity(gt.rules, aid)){
 				tscl.append(sc);
 				break;
 			}
@@ -1604,7 +1604,7 @@ void TimetableViewRoomsDaysHorizontalForm::activitiesSpace()
 
 	QString s;
 	if(actl.count()==1)
-		s=tr("Activity Id: %1").arg(actl.at(0)->id);
+		s=tr("Activity Id: %1").arg(actl.at(0));
 	else
 		s=tr("%1 activities selected", "%1 is the number of selected activities").arg(actl.count());
 	ListOfRelatedSpaceConstraintsForm form(this, FILTER_IS_ACTIVITY, actl, s, tscl);

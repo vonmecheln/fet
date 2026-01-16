@@ -2306,9 +2306,7 @@ void TimetableViewStudentsTimeHorizontalForm::studentsTime()
 	QList<TimeConstraint*> ttcl;
 	for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList)){
 		for(int st : std::as_const(sstd)){
-			StudentsSet* ss=gt.rules.studentsHash.value(usedStudentsList.at(st), nullptr);
-			assert(ss!=nullptr);
-			if(tc->isRelatedToStudentsSet(gt.rules, ss)){
+			if(tc->isRelatedToStudentsSet(gt.rules, usedStudentsList.at(st))){
 				ttcl.append(tc);
 				break;
 			}
@@ -2320,7 +2318,7 @@ void TimetableViewStudentsTimeHorizontalForm::studentsTime()
 		s=tr("Students set: %1").arg(usedStudentsList.at(sstd.at(0)));
 	else
 		s=tr("%1 students sets selected", "%1 is the number of selected students sets").arg(sstd.count());
-	ListOfRelatedTimeConstraintsForm form(this, FILTER_IS_STUDENTS_SET, QList<Activity*>(), s, ttcl);
+	ListOfRelatedTimeConstraintsForm form(this, FILTER_IS_STUDENTS_SET, QList<int>(), s, ttcl);
 	form.exec();
 }
 
@@ -2358,9 +2356,7 @@ void TimetableViewStudentsTimeHorizontalForm::studentsSpace()
 	QList<SpaceConstraint*> ttcl;
 	for(SpaceConstraint* sc : std::as_const(gt.rules.spaceConstraintsList)){
 		for(int st : std::as_const(sstd)){
-			StudentsSet* ss=gt.rules.studentsHash.value(usedStudentsList.at(st), nullptr);
-			assert(ss!=nullptr);
-			if(sc->isRelatedToStudentsSet(gt.rules, ss)){
+			if(sc->isRelatedToStudentsSet(gt.rules, usedStudentsList.at(st))){
 				ttcl.append(sc);
 				break;
 			}
@@ -2372,7 +2368,7 @@ void TimetableViewStudentsTimeHorizontalForm::studentsSpace()
 		s=tr("Students set: %1").arg(usedStudentsList.at(sstd.at(0)));
 	else
 		s=tr("%1 students sets selected", "%1 is the number of selected students sets").arg(sstd.count());
-	ListOfRelatedSpaceConstraintsForm form(this, FILTER_IS_STUDENTS_SET, QList<Activity*>(), s, ttcl);
+	ListOfRelatedSpaceConstraintsForm form(this, FILTER_IS_STUDENTS_SET, QList<int>(), s, ttcl);
 	form.exec();
 }
 
@@ -2483,14 +2479,14 @@ void TimetableViewStudentsTimeHorizontalForm::activitiesTime()
 		}
 	}
 
-	QList<Activity*> actl;
+	QList<int> actl;
 
 	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
 		assert( ! (realActivities.contains(ai) && dummyActivities.contains(ai)) );
 		if(realActivities.contains(ai) || dummyActivities.contains(ai)){
 			assert(tc->times[ai]!=UNALLOCATED_TIME);
 
-			actl.append(&gt.rules.internalActivitiesList[ai]);
+			actl.append(gt.rules.internalActivitiesList[ai].id);
 		}
 	}
 
@@ -2499,12 +2495,12 @@ void TimetableViewStudentsTimeHorizontalForm::activitiesTime()
 		return;
 	}
 
-	std::stable_sort(actl.begin(), actl.end(), [](const Activity* a, const Activity* b){return a->id < b->id;});
+	std::stable_sort(actl.begin(), actl.end(), [](const int& a, const int& b){return a < b;});
 
 	QList<TimeConstraint*> ttcl;
 	for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList)){
-		for(Activity* act : std::as_const(actl)){
-			if(tc->isRelatedToActivity(gt.rules, act)){
+		for(int aid : std::as_const(actl)){
+			if(tc->isRelatedToActivity(gt.rules, aid)){
 				ttcl.append(tc);
 				break;
 			}
@@ -2513,7 +2509,7 @@ void TimetableViewStudentsTimeHorizontalForm::activitiesTime()
 
 	QString s;
 	if(actl.count()==1)
-		s=tr("Activity Id: %1").arg(actl.at(0)->id);
+		s=tr("Activity Id: %1").arg(actl.at(0));
 	else
 		s=tr("%1 activities selected", "%1 is the number of selected activities").arg(actl.count());
 	ListOfRelatedTimeConstraintsForm form(this, FILTER_IS_ACTIVITY, actl, s, ttcl);
@@ -2627,14 +2623,14 @@ void TimetableViewStudentsTimeHorizontalForm::activitiesSpace()
 		}
 	}
 
-	QList<Activity*> actl;
+	QList<int> actl;
 
 	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
 		assert( ! (realActivities.contains(ai) && dummyActivities.contains(ai)) );
 		if(realActivities.contains(ai) || dummyActivities.contains(ai)){
 			assert(tc->times[ai]!=UNALLOCATED_TIME);
 
-			actl.append(&gt.rules.internalActivitiesList[ai]);
+			actl.append(gt.rules.internalActivitiesList[ai].id);
 		}
 	}
 
@@ -2643,12 +2639,12 @@ void TimetableViewStudentsTimeHorizontalForm::activitiesSpace()
 		return;
 	}
 
-	std::stable_sort(actl.begin(), actl.end(), [](const Activity* a, const Activity* b){return a->id < b->id;});
+	std::stable_sort(actl.begin(), actl.end(), [](const int& a, const int& b){return a < b;});
 
 	QList<SpaceConstraint*> tscl;
 	for(SpaceConstraint* sc : std::as_const(gt.rules.spaceConstraintsList)){
-		for(Activity* act : std::as_const(actl)){
-			if(sc->isRelatedToActivity(act)){
+		for(int aid : std::as_const(actl)){
+			if(sc->isRelatedToActivity(gt.rules, aid)){
 				tscl.append(sc);
 				break;
 			}
@@ -2657,7 +2653,7 @@ void TimetableViewStudentsTimeHorizontalForm::activitiesSpace()
 
 	QString s;
 	if(actl.count()==1)
-		s=tr("Activity Id: %1").arg(actl.at(0)->id);
+		s=tr("Activity Id: %1").arg(actl.at(0));
 	else
 		s=tr("%1 activities selected", "%1 is the number of selected activities").arg(actl.count());
 	ListOfRelatedSpaceConstraintsForm form(this, FILTER_IS_ACTIVITY, actl, s, tscl);

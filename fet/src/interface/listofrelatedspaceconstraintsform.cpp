@@ -74,7 +74,7 @@ const int NOTREGEXP=3;
 
 int spaceConstraintsAscendingByDescription(SpaceConstraint* s1, SpaceConstraint* s2); //defined in allspaceconstraints.cpp
 
-ListOfRelatedSpaceConstraintsForm::ListOfRelatedSpaceConstraintsForm(QWidget* parent, int _filterBy, const QList<Activity*>& _filterId, const QString& _filterName, const QList<SpaceConstraint*>& _allRelatedSpaceConstraintsList):
+ListOfRelatedSpaceConstraintsForm::ListOfRelatedSpaceConstraintsForm(QWidget* parent, int _filterBy, const QList<int>& _filterId, const QString& _filterName, const QList<SpaceConstraint*>& _allRelatedSpaceConstraintsList):
  QDialog(parent)
 {
 	setupUi(this);

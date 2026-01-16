@@ -8759,7 +8759,7 @@ bool Rules::augmentedSetsShareStudentsFaster(const QString& studentsSet1, const 
 
 void Rules::computePermanentStudentsHash()
 {
-	//The commented tests are good, but bring a somewhat slowdown.
+	//The commented tests are good, but can lead to a small slowdown.
 	permanentStudentsHash.clear();
 	
 	for(StudentsYear* year : std::as_const(yearsList)){

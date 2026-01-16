@@ -80,7 +80,7 @@ const int NOTREGEXP=3;
 
 int timeConstraintsAscendingByDescription(TimeConstraint* t1, TimeConstraint* t2); //defined in alltimeconstraints.cpp
 
-ListOfRelatedTimeConstraintsForm::ListOfRelatedTimeConstraintsForm(QWidget* parent, int _filterBy, const QList<Activity*>& _filterId, const QString& _filterName, const QList<TimeConstraint*>& _allRelatedTimeConstraintsList):
+ListOfRelatedTimeConstraintsForm::ListOfRelatedTimeConstraintsForm(QWidget* parent, int _filterBy, const QList<int>& _filterId, const QString& _filterName, const QList<TimeConstraint*>& _allRelatedTimeConstraintsList):
  QDialog(parent)
 {
 	setupUi(this);
