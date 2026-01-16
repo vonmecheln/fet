@@ -11719,6 +11719,38 @@ Liviu Lalescu:
 
 An activity can end up in an unspecified room (meaning it will have no room) if there are no space constraints for it.
 
+Alami Mohammed:
+
+I would like to clarify my idea in more detail, so that the goal of this new constraint becomes clearer.
+
+The main objective of "Activities available to multiple teachers" is not to make two teachers teach the same activity simultaneously, but rather to define an alternative teacher for the same activity in a flexible and conflict-free way.
+
+For example:
+
+Suppose "Math – Class 2A – Monday 10:00" is normally assigned to Teacher A.
+
+In the same activity, we could also specify Teacher B as an "available alternative teacher."
+
+This means:
+
+FET would still treat the activity as belonging to Teacher A in the generated timetable.
+
+However, in the data structure, the system would recognize that Teacher B is also compatible with that same activity, and can replace Teacher A if necessary (for example, in case of absence or substitution).
+
+The advantage of this approach compared to using "dummy" simultaneous activities is:
+
+1. No duplicate room usage – the activity only occupies one room.
+
+2. No artificial load increase for Teacher B – the program knows it's an optional link, not a real assignment.
+
+3. Simpler data structure – no need to create extra activities or multiple constraints manually.
+
+4. Better flexibility for real schools, where substitution is common.
+
+Technically, this new constraint could act as a "link" or "secondary teacher option" associated with a specific activity or group of activities, without affecting the rest of the timetable generation process.
+
+I believe this feature could be a powerful improvement, especially for schools that need automatic flexibility in case of teacher absence or activity sharing between teachers.
+
 769---------------------------------------------------------
 From Dr Amit Sharma (on guestbook):
 

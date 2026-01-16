@@ -363,7 +363,12 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
 	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Mahir Nacar").arg("mahirnacar AT email.com");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Yakup Kadri Demirci").arg("yakup AT engineer.com");
+	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Yakup Kadri Demirci").arg("yakup AT engineer.com");
+	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
+	translators+=tr("current translator: %1 (assisted by %2) (%3)",
+	 "%1 is the name of the translator, %2 is the tool which this translator used - such as ChatGPT, %3 is his or her email or web address")
+	 .arg("Erdem Uygun").arg("ChatGPT").arg("uygun.erdem AT proton.me");
+	translators+=QString(" - ")+tr("rewrote the translation from zero");
 	translators+=QString("<br /><br /><br />");
 
 	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("uk").arg(tr("Ukrainian translation"));
@@ -391,8 +396,12 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	 "section about Vietnamese translation, or contact forum user %4)", "%1 is the current translator, %2 is his or her email or web address, %3 is the FET forum address, "
 	 "%4 is the username of the translator").arg(QString("Ngọc Ngô Minh")).arg("nmngoc.c3hvt AT yenbai.edu.vn").arg("https://lalescu.ro/liviu/fet/forum/").arg("ngoctp29121982");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address")
+	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address")
 	 .arg(QString("Phạm Văn Quyền Anh")).arg("phamanhlc1992 AT gmail.com");
+	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
+	translators+=tr("current translator: %1 (assisted by %2 and %3) (%4)",
+	 "%1 is the name of the translator, %2 and %3 are the tools which this translator used - such as Gemini and ChatGPT, %4 is his or her email or web address")
+	 .arg(QString("Vũ Ngọc Thành")).arg("Gemini").arg("ChatGPT").arg("daytoan2011 AT gmail.com");
 	translators+=QString("<br /><br /><br />");
 
 	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("zh_CN").arg(tr("Chinese Simplified translation"));
@@ -1522,6 +1531,8 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("Dr Amit Sharma");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("moke");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Erdem Uygun");
 	thanksTo+=QString("<br />");
 	
 	thanksToTextBrowser->setHtml(thanksTo);

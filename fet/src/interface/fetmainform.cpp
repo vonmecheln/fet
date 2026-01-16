@@ -4637,6 +4637,7 @@ void FetMainForm::populateLanguagesMap(QMap<QString, QString>& languagesMap)
 	languagesMap.insert("ru", QString("Русский"));
 	languagesMap.insert("bg", QString("Български"));
 	languagesMap.insert("bs", QString("Bosanski"));
+	languagesMap.insert("tr", QString("Türkçe"));
 
 	//We need to write the following language names in their native language, as above:
 	languagesMap.insert("hu", QString("Hungarian"));
@@ -4645,7 +4646,6 @@ void FetMainForm::populateLanguagesMap(QMap<QString, QString>& languagesMap)
 	languagesMap.insert("ms", QString("Malay"));
 	languagesMap.insert("nl", QString("Dutch"));
 	languagesMap.insert("pl", QString("Polish"));
-	languagesMap.insert("tr", QString("Turkish"));
 	languagesMap.insert("fa", QString("Persian"));
 	languagesMap.insert("si", QString("Sinhala"));
 	languagesMap.insert("sk", QString("Slovak"));
