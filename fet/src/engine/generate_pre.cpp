@@ -432,14 +432,14 @@ Matrix1D<QList<double>> activitiesNotOverlappingPercentages;
 ////////END   activities not overlapping
 
 
-//2025-09-22 - Constraint activities overlap completely or don't overlap
-bool haveActivitiesOverlapCompletelyOrDontOverlap;
+//2025-09-22 - Constraint activities overlap completely or do not overlap
+bool haveActivitiesOverlapCompletelyOrDoNotOverlap;
 
 //We need the references to the elements to be valid, so we need this to be a std::list
-std::list<ActivitiesOverlapCompletelyOrDontOverlap_item> aocodoList;
-Matrix1D<QList<ActivitiesOverlapCompletelyOrDontOverlap_item*>> aocodoListForActivity;
+std::list<ActivitiesOverlapCompletelyOrDoNotOverlap_item> aocodnoList;
+Matrix1D<QList<ActivitiesOverlapCompletelyOrDoNotOverlap_item*>> aocodnoListForActivity;
 
-//bool computeActivitiesOverlapCompletelyOrDontOverlap(QWidget* parent);
+//bool computeActivitiesOverlapCompletelyOrDoNotOverlap(QWidget* parent);
 
 
 //2025-08-09 - Constraint activities pair of mutually exclusive sets of time slots
@@ -462,13 +462,25 @@ Matrix1D<QList<ActivitiesPairOfMutuallyExclusiveTimeSlots_item*>> apometsListFor
 //bool computeActivitiesPairOfMutuallyExclusiveTimeSlots(QWidget* parent);
 
 
+//BEGIN activities occupy max sets of time slots from selection
+bool haveActivitiesOccupyMaxSetsOfTimeSlotsFromSelection;
+
+std::list<ActivitiesOccupyMaxSetsOfTimeSlotsFromSelection_item> aomsotsfsList;
+Matrix1D<QList<ActivitiesOccupyMaxSetsOfTimeSlotsFromSelection_item*>> aomsotsfsListForActivity;
+
+//bool computeActivitiesOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent);
+//END   activities occupy max sets of time slots from selection
+
 //BEGIN teacher(s) occupy max sets of time slots from selection
 bool haveTeachersOccupyMaxSetsOfTimeSlotsFromSelection;
 
-Matrix1D<QList<double>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionPercentages;
+/*Matrix1D<QList<double>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionPercentages;
 Matrix1D<QList<int>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets;
 Matrix1D<QList<QList<QSet<int>>>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets;
-Matrix1D<QList<QList<QList<int>>>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists;
+Matrix1D<QList<QList<QList<int>>>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists;*/
+
+std::list<TeachersOccupyMaxSetsOfTimeSlotsFromSelection_item> tomsotsfsList;
+Matrix1D<QList<TeachersOccupyMaxSetsOfTimeSlotsFromSelection_item*>> tomsotsfsListForTeacher;
 
 //bool computeTeachersOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent);
 //END   teacher(s) occupy max sets of time slots from selection
@@ -476,10 +488,13 @@ Matrix1D<QList<QList<QList<int>>>> teachersOccupyMaxSetsOfTimeSlotsFromSelection
 //BEGIN students (set) occupy max sets of time slots from selection
 bool haveStudentsOccupyMaxSetsOfTimeSlotsFromSelection;
 
-Matrix1D<QList<double>> subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionPercentages;
+/*Matrix1D<QList<double>> subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionPercentages;
 Matrix1D<QList<int>> subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets;
 Matrix1D<QList<QList<QSet<int>>>> subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets;
-Matrix1D<QList<QList<QList<int>>>> subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists;
+Matrix1D<QList<QList<QList<int>>>> subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists;*/
+
+std::list<StudentsOccupyMaxSetsOfTimeSlotsFromSelection_item> somsotsfsList;
+Matrix1D<QList<StudentsOccupyMaxSetsOfTimeSlotsFromSelection_item*>> somsotsfsListForSubgroup;
 
 //bool computeSubgroupsOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent);
 //END   students (set) occupy max sets of time slots from selection
@@ -513,11 +528,14 @@ Matrix1D<QList<int>> subgroupsPairOfMutuallyExclusiveTimeSlotsHour2;
 //BEGIN teacher(s) pair of mutually exclusive sets of time slots
 bool haveTeachersPairOfMutualExclusiveSetsOfTimeSlots;
 
-Matrix1D<QList<double>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages;
+/*Matrix1D<QList<double>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages;
 Matrix1D<QList<QSet<int>>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet1;
 Matrix1D<QList<QList<int>>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList1;
 Matrix1D<QList<QSet<int>>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet2;
-Matrix1D<QList<QList<int>>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList2;
+Matrix1D<QList<QList<int>>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList2;*/
+
+std::list<TeachersPairOfMutuallyExclusiveSetsOfTimeSlots_item> tpomesotsList;
+Matrix1D<QList<TeachersPairOfMutuallyExclusiveSetsOfTimeSlots_item*>> tpomesotsListForTeacher;
 
 //bool computeTeachersPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent);
 //END   teacher(s) pair of mutually exclusive sets of time slots
@@ -530,6 +548,9 @@ Matrix1D<QList<QSet<int>>> subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSl
 Matrix1D<QList<QList<int>>> subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList1;
 Matrix1D<QList<QSet<int>>> subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet2;
 Matrix1D<QList<QList<int>>> subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList2;
+
+std::list<StudentsPairOfMutuallyExclusiveSetsOfTimeSlots_item> spomesotsList;
+Matrix1D<QList<StudentsPairOfMutuallyExclusiveSetsOfTimeSlots_item*>> spomesotsListForSubgroup;
 
 //bool computeSubgroupsPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent);
 //END   students(s) pair of mutually exclusive sets of time slots
@@ -812,6 +833,19 @@ Matrix1D<double> activityBeginsTeachersDayPercentages; //-1 for not existing
 //bool computeActivityBeginsTeachersDayPercentages(QWidget* parent);
 bool haveActivityBeginsTeachersDay;
 ////////////END   activity begins teachers day
+
+
+////////////BEGIN activity begins or ends students day
+Matrix1D<double> activityBeginsOrEndsStudentsDayPercentages; //-1 for not existing
+//bool computeActivityBeginsOrEndsStudentsDayPercentages(QWidget* parent);
+bool haveActivityBeginsOrEndsStudentsDay;
+////////////END   activity begins or ends students day
+
+////////////BEGIN activity begins or ends teachers day
+Matrix1D<double> activityBeginsOrEndsTeachersDayPercentages; //-1 for not existing
+//bool computeActivityBeginsOrEndsTeachersDayPercentages(QWidget* parent);
+bool haveActivityBeginsOrEndsTeachersDay;
+////////////END   activity begins or ends teachers day
 
 
 bool checkMinDays100Percent(QWidget* parent);
@@ -1601,7 +1635,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	teachersMaxGapsPerMorningAndAfternoonMaxGaps.resize(gt.rules.nInternalTeachers);
 	nHoursPerTeacher.resize(gt.rules.nInternalTeachers);
 	//
-	teachersOccupyMaxSetsOfTimeSlotsFromSelectionPercentages.resize(gt.rules.nInternalTeachers);
+	/*teachersOccupyMaxSetsOfTimeSlotsFromSelectionPercentages.resize(gt.rules.nInternalTeachers);
 	teachersOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets.resize(gt.rules.nInternalTeachers);
 	teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets.resize(gt.rules.nInternalTeachers);
 	teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists.resize(gt.rules.nInternalTeachers);
@@ -1609,7 +1643,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionPercentages.resize(gt.rules.nInternalSubgroups);
 	subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets.resize(gt.rules.nInternalSubgroups);
 	subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets.resize(gt.rules.nInternalSubgroups);
-	subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists.resize(gt.rules.nInternalSubgroups);
+	subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists.resize(gt.rules.nInternalSubgroups);*/
 	//
 	teachersPairOfMutuallyExclusiveTimeSlotsPercentages.resize(gt.rules.nInternalTeachers);
 	teachersPairOfMutuallyExclusiveTimeSlotsDay1.resize(gt.rules.nInternalTeachers);
@@ -1623,7 +1657,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	subgroupsPairOfMutuallyExclusiveTimeSlotsDay2.resize(gt.rules.nInternalSubgroups);
 	subgroupsPairOfMutuallyExclusiveTimeSlotsHour2.resize(gt.rules.nInternalSubgroups);
 	//
-	teachersPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages.resize(gt.rules.nInternalTeachers);
+	/*teachersPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages.resize(gt.rules.nInternalTeachers);
 	teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet1.resize(gt.rules.nInternalTeachers);
 	teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList1.resize(gt.rules.nInternalTeachers);
 	teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet2.resize(gt.rules.nInternalTeachers);
@@ -1633,7 +1667,10 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet1.resize(gt.rules.nInternalSubgroups);
 	subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList1.resize(gt.rules.nInternalSubgroups);
 	subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet2.resize(gt.rules.nInternalSubgroups);
-	subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList2.resize(gt.rules.nInternalSubgroups);
+	subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList2.resize(gt.rules.nInternalSubgroups);*/
+
+	tpomesotsListForTeacher.resize(gt.rules.nInternalTeachers);
+	spomesotsListForSubgroup.resize(gt.rules.nInternalSubgroups);
 	//
 	teachersMaxHoursDailyPercentages1.resize(gt.rules.nInternalTeachers);
 	teachersMaxHoursDailyMaxHours1.resize(gt.rules.nInternalTeachers);
@@ -1757,6 +1794,9 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	//
 	activityBeginsStudentsDayPercentages.resize(gt.rules.nInternalActivities);
 	activityBeginsTeachersDayPercentages.resize(gt.rules.nInternalActivities);
+	//
+	activityBeginsOrEndsStudentsDayPercentages.resize(gt.rules.nInternalActivities);
+	activityBeginsOrEndsTeachersDayPercentages.resize(gt.rules.nInternalActivities);
 	//
 	teachersMaxSpanPerDayMaxSpan.resize(gt.rules.nInternalTeachers);
 	teachersMaxSpanPerDayPercentages.resize(gt.rules.nInternalTeachers);
@@ -2099,6 +2139,11 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 
 	satmhdListForSubgroup.resize(gt.rules.nInternalSubgroups);
 	tatmhdListForTeacher.resize(gt.rules.nInternalTeachers);
+
+	somsotsfsListForSubgroup.resize(gt.rules.nInternalSubgroups);
+	tomsotsfsListForTeacher.resize(gt.rules.nInternalTeachers);
+
+	aomsotsfsListForActivity.resize(gt.rules.nInternalActivities);
 	
 	//2025-04-02
 	assabListForActivity.resize(gt.rules.nInternalActivities);
@@ -2110,7 +2155,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	apomesotsListForActivity.resize(gt.rules.nInternalActivities);
 
 	//2025-09-22
-	aocodoListForActivity.resize(gt.rules.nInternalActivities);
+	aocodnoListForActivity.resize(gt.rules.nInternalActivities);
 
 	//2011-09-25
 	aomtsListForActivity.resize(gt.rules.nInternalActivities);
@@ -2520,6 +2565,9 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	if(!t)
 		return false;
 
+	t=computeActivitiesOccupyMaxSetsOfTimeSlotsFromSelection(parent);
+	if(!t)
+		return false;
 	t=computeTeachersOccupyMaxSetsOfTimeSlotsFromSelection(parent);
 	if(!t)
 		return false;
@@ -2564,6 +2612,14 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 		return false;
 
 	t=computeActivityBeginsTeachersDayPercentages(parent);
+	if(!t)
+		return false;
+		
+	t=computeActivityBeginsOrEndsStudentsDayPercentages(parent);
+	if(!t)
+		return false;
+
+	t=computeActivityBeginsOrEndsTeachersDayPercentages(parent);
 	if(!t)
 		return false;
 		
@@ -2664,7 +2720,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 
 	////////////////
 	//2025-09-22
-	t=computeActivitiesOverlapCompletelyOrDontOverlap(parent);
+	t=computeActivitiesOverlapCompletelyOrDoNotOverlap(parent);
 	if(!t)
 		return false;
 
@@ -3644,15 +3700,77 @@ bool computeSubgroupsPairOfMutuallyExclusiveTimeSlots(QWidget* parent)
 	return ok;
 }
 
+bool computeActivitiesOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent)
+{
+	haveActivitiesOccupyMaxSetsOfTimeSlotsFromSelection=false;
+
+	aomsotsfsList.clear();
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		aomsotsfsListForActivity[i].clear();
+	}
+	
+	bool ok=true;
+	
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION){
+			haveActivitiesOccupyMaxSetsOfTimeSlotsFromSelection=true;
+			
+			ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection* tc=(ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(tc->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a time constraint activities occupy max sets of time slots from selection"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			ActivitiesOccupyMaxSetsOfTimeSlotsFromSelection_item item;
+
+			item.maxOccupiedSets=tc->maxOccupiedSets;
+			item.listOfLists=tc->listOfLists;
+
+			//item.timeToListIndex.resize(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
+			for(int t=0; t<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay; t++)
+				item.timeToListIndex.append(-1);
+			int cnt=0;
+			for(const QList<int>& lst : std::as_const(item.listOfLists)){
+				for(int t : std::as_const(lst)){
+					assert(item.timeToListIndex[t]==-1);
+					item.timeToListIndex[t]=cnt;
+				}
+				cnt++;
+			}
+			
+			item.listOfActivities=tc->_activitiesIndices;
+
+			aomsotsfsList.push_back(item);
+			ActivitiesOccupyMaxSetsOfTimeSlotsFromSelection_item* p_item=&aomsotsfsList.back();
+			for(int ai : std::as_const(tc->_activitiesIndices)){
+				aomsotsfsListForActivity[ai].append(p_item);
+			}
+		}
+	}
+
+	return ok;
+}
+
 bool computeTeachersOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent)
 {
 	haveTeachersOccupyMaxSetsOfTimeSlotsFromSelection=false;
 
+	tomsotsfsList.clear();
 	for(int i=0; i<gt.rules.nInternalTeachers; i++){
-		teachersOccupyMaxSetsOfTimeSlotsFromSelectionPercentages[i].clear();
+		tomsotsfsListForTeacher[i].clear();
+		/*teachersOccupyMaxSetsOfTimeSlotsFromSelectionPercentages[i].clear();
 		teachersOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets[i].clear();
 		teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets[i].clear();
-		teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists[i].clear();
+		teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists[i].clear();*/
 	}
 	
 	bool ok=true;
@@ -3675,8 +3793,28 @@ bool computeTeachersOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent)
 				if(t==0)
 					return false;
 			}
+
+			TeachersOccupyMaxSetsOfTimeSlotsFromSelection_item item;
+
+			item.maxOccupiedSets=tc->maxOccupiedSets;
+			item.listOfLists=tc->listOfLists;
 			
-			int tch=tc->teacher_ID;
+			//item.timeToListIndex.resize(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
+			for(int t=0; t<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay; t++)
+				item.timeToListIndex.append(-1);
+			int cnt=0;
+			for(const QList<int>& lst : std::as_const(item.listOfLists)){
+				for(int t : std::as_const(lst)){
+					assert(item.timeToListIndex[t]==-1);
+					item.timeToListIndex[t]=cnt;
+				}
+				cnt++;
+			}
+
+			tomsotsfsList.push_back(item);
+			tomsotsfsListForTeacher[tc->teacher_ID].append(&tomsotsfsList.back());
+
+			/*int tch=tc->teacher_ID;
 			bool found=false;
 			for(int cnt=0; cnt<teachersOccupyMaxSetsOfTimeSlotsFromSelectionPercentages[tch].count(); cnt++){
 				if(teachersOccupyMaxSetsOfTimeSlotsFromSelectionPercentages[tch].at(cnt)==tc->weightPercentage
@@ -3693,7 +3831,7 @@ bool computeTeachersOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent)
 				teachersOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets[tch].append(tc->maxOccupiedSets);
 				teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets[tch].append(tc->listOfSets);
 				teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists[tch].append(tc->listOfLists);
-			}
+			}*/
 		}
 		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION){
 			haveTeachersOccupyMaxSetsOfTimeSlotsFromSelection=true;
@@ -3713,8 +3851,27 @@ bool computeTeachersOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent)
 					return false;
 			}
 			
+			TeachersOccupyMaxSetsOfTimeSlotsFromSelection_item item;
+
+			item.maxOccupiedSets=tc->maxOccupiedSets;
+			item.listOfLists=tc->listOfLists;
+
+			//item.timeToListIndex.resize(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
+			for(int t=0; t<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay; t++)
+				item.timeToListIndex.append(-1);
+			int cnt=0;
+			for(const QList<int>& lst : std::as_const(item.listOfLists)){
+				for(int t : std::as_const(lst)){
+					assert(item.timeToListIndex[t]==-1);
+					item.timeToListIndex[t]=cnt;
+				}
+				cnt++;
+			}
+
+			tomsotsfsList.push_back(item);
+
 			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
-				bool found=false;
+				/*bool found=false;
 				for(int cnt=0; cnt<teachersOccupyMaxSetsOfTimeSlotsFromSelectionPercentages[tch].count(); cnt++){
 					if(teachersOccupyMaxSetsOfTimeSlotsFromSelectionPercentages[tch].at(cnt)==tc->weightPercentage
 					 && teachersOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets[tch].at(cnt)==tc->maxOccupiedSets
@@ -3730,7 +3887,9 @@ bool computeTeachersOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent)
 					teachersOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets[tch].append(tc->maxOccupiedSets);
 					teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets[tch].append(tc->listOfSets);
 					teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists[tch].append(tc->listOfLists);
-				}
+				}*/
+
+				tomsotsfsListForTeacher[tch].append(&tomsotsfsList.back());
 			}
 		}
 	}
@@ -3742,11 +3901,13 @@ bool computeSubgroupsOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent)
 {
 	haveStudentsOccupyMaxSetsOfTimeSlotsFromSelection=false;
 
+	somsotsfsList.clear();
 	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
-		subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionPercentages[i].clear();
+		somsotsfsListForSubgroup[i].clear();
+		/*subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionPercentages[i].clear();
 		subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets[i].clear();
 		subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets[i].clear();
-		subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists[i].clear();
+		subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists[i].clear();*/
 	}
 	
 	bool ok=true;
@@ -3770,8 +3931,27 @@ bool computeSubgroupsOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent)
 					return false;
 			}
 			
+			StudentsOccupyMaxSetsOfTimeSlotsFromSelection_item item;
+
+			item.maxOccupiedSets=tc->maxOccupiedSets;
+			item.listOfLists=tc->listOfLists;
+
+			//item.timeToListIndex.resize(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
+			for(int t=0; t<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay; t++)
+				item.timeToListIndex.append(-1);
+			int cnt=0;
+			for(const QList<int>& lst : std::as_const(item.listOfLists)){
+				for(int t : std::as_const(lst)){
+					assert(item.timeToListIndex[t]==-1);
+					item.timeToListIndex[t]=cnt;
+				}
+				cnt++;
+			}
+
+			somsotsfsList.push_back(item);
+
 			for(int sbg : std::as_const(tc->iSubgroupsList)){
-				bool found=false;
+				/*bool found=false;
 				for(int cnt=0; cnt<subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionPercentages[sbg].count(); cnt++){
 					if(subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionPercentages[sbg].at(cnt)==tc->weightPercentage
 					 && subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets[sbg].at(cnt)==tc->maxOccupiedSets
@@ -3787,7 +3967,9 @@ bool computeSubgroupsOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent)
 					subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets[sbg].append(tc->maxOccupiedSets);
 					subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets[sbg].append(tc->listOfSets);
 					subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists[sbg].append(tc->listOfLists);
-				}
+				}*/
+
+				somsotsfsListForSubgroup[sbg].append(&somsotsfsList.back());
 			}
 		}
 		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION){
@@ -3808,8 +3990,27 @@ bool computeSubgroupsOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent)
 					return false;
 			}
 			
+			StudentsOccupyMaxSetsOfTimeSlotsFromSelection_item item;
+
+			item.maxOccupiedSets=tc->maxOccupiedSets;
+			item.listOfLists=tc->listOfLists;
+
+			//item.timeToListIndex.resize(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
+			for(int t=0; t<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay; t++)
+				item.timeToListIndex.append(-1);
+			int cnt=0;
+			for(const QList<int>& lst : std::as_const(item.listOfLists)){
+				for(int t : std::as_const(lst)){
+					assert(item.timeToListIndex[t]==-1);
+					item.timeToListIndex[t]=cnt;
+				}
+				cnt++;
+			}
+
+			somsotsfsList.push_back(item);
+
 			for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++){
-				bool found=false;
+				/*bool found=false;
 				for(int cnt=0; cnt<subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionPercentages[sbg].count(); cnt++){
 					if(subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionPercentages[sbg].at(cnt)==tc->weightPercentage
 					 && subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets[sbg].at(cnt)==tc->maxOccupiedSets
@@ -3825,7 +4026,9 @@ bool computeSubgroupsOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent)
 					subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets[sbg].append(tc->maxOccupiedSets);
 					subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets[sbg].append(tc->listOfSets);
 					subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists[sbg].append(tc->listOfLists);
-				}
+				}*/
+
+				somsotsfsListForSubgroup[sbg].append(&somsotsfsList.back());
 			}
 		}
 	}
@@ -3936,12 +4139,14 @@ bool computeSubgroupsPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent)
 {
 	haveStudentsPairOfMutualExclusiveSetsOfTimeSlots=false;
 
+	spomesotsList.clear();
 	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
-		subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages[i].clear();
+		spomesotsListForSubgroup[i].clear();
+		/*subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages[i].clear();
 		subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet1[i].clear();
 		subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList1[i].clear();
 		subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet2[i].clear();
-		subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList2[i].clear();
+		subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList2[i].clear();*/
 	}
 	
 	bool ok=true;
@@ -3964,9 +4169,18 @@ bool computeSubgroupsPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent)
 				if(t==0)
 					return false;
 			}
-			
+
+			StudentsPairOfMutuallyExclusiveSetsOfTimeSlots_item item;
+
+			item.set1=tc->set1;
+			item.list1=tc->list1;
+			item.set2=tc->set2;
+			item.list2=tc->list2;
+
+			spomesotsList.push_back(item);
+
 			for(int sbg : std::as_const(tc->iSubgroupsList)){
-				bool found=false;
+				/*bool found=false;
 				for(int cnt=0; cnt<subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages[sbg].count(); cnt++){
 					if(subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages[sbg].at(cnt)==tc->weightPercentage
 					 && subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet1[sbg].at(cnt)==tc->set1
@@ -3984,7 +4198,9 @@ bool computeSubgroupsPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent)
 					subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList1[sbg].append(tc->list1);
 					subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet2[sbg].append(tc->set2);
 					subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList2[sbg].append(tc->list2);
-				}
+				}*/
+
+				spomesotsListForSubgroup[sbg].append(&spomesotsList.back());
 			}
 		}
 		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS){
@@ -4004,9 +4220,18 @@ bool computeSubgroupsPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent)
 				if(t==0)
 					return false;
 			}
+
+			StudentsPairOfMutuallyExclusiveSetsOfTimeSlots_item item;
+
+			item.set1=tc->set1;
+			item.list1=tc->list1;
+			item.set2=tc->set2;
+			item.list2=tc->list2;
+
+			spomesotsList.push_back(item);
 			
 			for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++){
-				bool found=false;
+				/*bool found=false;
 				for(int cnt=0; cnt<subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages[sbg].count(); cnt++){
 					if(subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages[sbg].at(cnt)==tc->weightPercentage
 					 && subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet1[sbg].at(cnt)==tc->set1
@@ -4024,7 +4249,9 @@ bool computeSubgroupsPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent)
 					subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList1[sbg].append(tc->list1);
 					subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet2[sbg].append(tc->set2);
 					subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList2[sbg].append(tc->list2);
-				}
+				}*/
+
+				spomesotsListForSubgroup[sbg].append(&spomesotsList.back());
 			}
 		}
 	}
@@ -4036,12 +4263,14 @@ bool computeTeachersPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent)
 {
 	haveTeachersPairOfMutualExclusiveSetsOfTimeSlots=false;
 
+	tpomesotsList.clear();
 	for(int i=0; i<gt.rules.nInternalTeachers; i++){
-		teachersPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages[i].clear();
+		tpomesotsListForTeacher[i].clear();
+		/*teachersPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages[i].clear();
 		teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet1[i].clear();
 		teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList1[i].clear();
 		teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet2[i].clear();
-		teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList2[i].clear();
+		teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList2[i].clear();*/
 	}
 	
 	bool ok=true;
@@ -4065,9 +4294,21 @@ bool computeTeachersPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent)
 					return false;
 			}
 			
-			int tch=tc->teacher_ID;
-			bool found=false;
-			for(int cnt=0; cnt<teachersPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages[tch].count(); cnt++){
+			//int tch=tc->teacher_ID;
+			//bool found=false;
+
+			TeachersPairOfMutuallyExclusiveSetsOfTimeSlots_item item;
+
+			item.set1=tc->set1;
+			item.list1=tc->list1;
+			item.set2=tc->set2;
+			item.list2=tc->list2;
+
+			tpomesotsList.push_back(item);
+
+			tpomesotsListForTeacher[tc->teacher_ID].append(&tpomesotsList.back());
+
+			/*for(int cnt=0; cnt<teachersPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages[tch].count(); cnt++){
 				if(teachersPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages[tch].at(cnt)==tc->weightPercentage
 				 && teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet1[tch].at(cnt)==tc->set1
 				 && teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList1[tch].at(cnt)==tc->list1
@@ -4084,7 +4325,7 @@ bool computeTeachersPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent)
 				teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList1[tch].append(tc->list1);
 				teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet2[tch].append(tc->set2);
 				teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList2[tch].append(tc->list2);
-			}
+			}*/
 		}
 		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS){
 			haveTeachersPairOfMutualExclusiveSetsOfTimeSlots=true;
@@ -4103,8 +4344,21 @@ bool computeTeachersPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent)
 				if(t==0)
 					return false;
 			}
-			
+
+			TeachersPairOfMutuallyExclusiveSetsOfTimeSlots_item item;
+
+			item.set1=tc->set1;
+			item.list1=tc->list1;
+			item.set2=tc->set2;
+			item.list2=tc->list2;
+
+			tpomesotsList.push_back(item);
+
 			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
+				tpomesotsListForTeacher[tch].append(&tpomesotsList.back());
+			}
+			
+			/*for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
 				bool found=false;
 				for(int cnt=0; cnt<teachersPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages[tch].count(); cnt++){
 					if(teachersPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages[tch].at(cnt)==tc->weightPercentage
@@ -4124,7 +4378,7 @@ bool computeTeachersPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent)
 					teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet2[tch].append(tc->set2);
 					teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList2[tch].append(tc->list2);
 				}
-			}
+			}*/
 		}
 	}
 
@@ -6359,15 +6613,15 @@ bool computeStudentsMaxSingleGapsInSelectedTimeSlots(QWidget* parent)
 			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS){
 				ConstraintStudentsMaxSingleGapsInSelectedTimeSlots* smd=(ConstraintStudentsMaxSingleGapsInSelectedTimeSlots*)gt.rules.internalTimeConstraintsList[i];
 
+				SubgroupMaxSingleGapsInSelectedTimeSlots_item item;
+
+				item.maxSingleGaps=smd->maxSingleGaps;
+
+				for(int t=0; t < smd->selectedDays.count(); t++)
+					item.selectedTimeSlotsList.append(smd->selectedDays.at(t)+smd->selectedHours.at(t)*gt.rules.nDaysPerWeek);
+				item.selectedTimeSlotsSet=QSet<int>(item.selectedTimeSlotsList.constBegin(), item.selectedTimeSlotsList.constEnd());
+
 				for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++){
-					SubgroupMaxSingleGapsInSelectedTimeSlots_item item;
-
-					item.maxSingleGaps=smd->maxSingleGaps;
-
-					for(int t=0; t < smd->selectedDays.count(); t++)
-						item.selectedTimeSlotsList.append(smd->selectedDays.at(t)+smd->selectedHours.at(t)*gt.rules.nDaysPerWeek);
-					item.selectedTimeSlotsSet=QSet<int>(item.selectedTimeSlotsList.constBegin(), item.selectedTimeSlotsList.constEnd());
-
 					smsgistsList.push_back(item);
 					smsgistsListForSubgroup[sbg].append(&smsgistsList.back());
 				}
@@ -6375,15 +6629,15 @@ bool computeStudentsMaxSingleGapsInSelectedTimeSlots(QWidget* parent)
 			else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS){
 				ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots* smd=(ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots*)gt.rules.internalTimeConstraintsList[i];
 
+				SubgroupMaxSingleGapsInSelectedTimeSlots_item item;
+
+				item.maxSingleGaps=smd->maxSingleGaps;
+
+				for(int t=0; t < smd->selectedDays.count(); t++)
+					item.selectedTimeSlotsList.append(smd->selectedDays.at(t)+smd->selectedHours.at(t)*gt.rules.nDaysPerWeek);
+				item.selectedTimeSlotsSet=QSet<int>(item.selectedTimeSlotsList.constBegin(), item.selectedTimeSlotsList.constEnd());
+
 				for(int sbg : std::as_const(smd->iSubgroupsList)){
-					SubgroupMaxSingleGapsInSelectedTimeSlots_item item;
-
-					item.maxSingleGaps=smd->maxSingleGaps;
-
-					for(int t=0; t < smd->selectedDays.count(); t++)
-						item.selectedTimeSlotsList.append(smd->selectedDays.at(t)+smd->selectedHours.at(t)*gt.rules.nDaysPerWeek);
-					item.selectedTimeSlotsSet=QSet<int>(item.selectedTimeSlotsList.constBegin(), item.selectedTimeSlotsList.constEnd());
-
 					smsgistsList.push_back(item);
 					smsgistsListForSubgroup[sbg].append(&smsgistsList.back());
 				}
@@ -6461,15 +6715,15 @@ bool computeTeachersMaxSingleGapsInSelectedTimeSlots(QWidget* parent)
 			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_SINGLE_GAPS_IN_SELECTED_TIME_SLOTS){
 				ConstraintTeachersMaxSingleGapsInSelectedTimeSlots* smd=(ConstraintTeachersMaxSingleGapsInSelectedTimeSlots*)gt.rules.internalTimeConstraintsList[i];
 
+				TeacherMaxSingleGapsInSelectedTimeSlots_item item;
+
+				item.maxSingleGaps=smd->maxSingleGaps;
+
+				for(int t=0; t < smd->selectedDays.count(); t++)
+					item.selectedTimeSlotsList.append(smd->selectedDays.at(t)+smd->selectedHours.at(t)*gt.rules.nDaysPerWeek);
+				item.selectedTimeSlotsSet=QSet<int>(item.selectedTimeSlotsList.constBegin(), item.selectedTimeSlotsList.constEnd());
+
 				for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
-					TeacherMaxSingleGapsInSelectedTimeSlots_item item;
-
-					item.maxSingleGaps=smd->maxSingleGaps;
-
-					for(int t=0; t < smd->selectedDays.count(); t++)
-						item.selectedTimeSlotsList.append(smd->selectedDays.at(t)+smd->selectedHours.at(t)*gt.rules.nDaysPerWeek);
-					item.selectedTimeSlotsSet=QSet<int>(item.selectedTimeSlotsList.constBegin(), item.selectedTimeSlotsList.constEnd());
-
 					tmsgistsList.push_back(item);
 					tmsgistsListForTeacher[tch].append(&tmsgistsList.back());
 				}
@@ -16288,6 +16542,142 @@ bool computeActivityBeginsTeachersDayPercentages(QWidget* parent)
 	return ok;
 }
 
+bool computeActivityBeginsOrEndsStudentsDayPercentages(QWidget* parent)
+{
+	Q_UNUSED(parent);
+
+	bool ok=true;
+
+	for(int ai=0; ai<gt.rules.nInternalActivities; ai++)
+		activityBeginsOrEndsStudentsDayPercentages[ai]=-1;
+	
+	haveActivityBeginsOrEndsStudentsDay=false;
+	
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_STUDENTS_DAY){
+			haveActivityBeginsOrEndsStudentsDay=true;
+		
+			ConstraintActivityBeginsOrEndsStudentsDay* cae=(ConstraintActivityBeginsOrEndsStudentsDay*)gt.rules.internalTimeConstraintsList[i];
+			
+			/*if(cae->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
+				 "activity begins students day for activity with id=%1 with weight percentage under 100%. "
+				 "Constraint activity begins students day can only have weight percentage 100%. "
+				 "Please modify your data accordingly (remove or edit constraint) and try again.")
+				 .arg(gt.rules.internalActivitiesList[cae->activityIndex].id),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				1, 0 );
+				
+				if(t==0)
+					break;
+			}*/
+			
+			int ai=cae->activityIndex;
+			if(activityBeginsOrEndsStudentsDayPercentages[ai] < cae->weightPercentage)
+				activityBeginsOrEndsStudentsDayPercentages[ai] = cae->weightPercentage;
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_BEGIN_OR_END_STUDENTS_DAY){
+			haveActivityBeginsOrEndsStudentsDay=true;
+		
+			ConstraintActivitiesBeginOrEndStudentsDay* cae=(ConstraintActivitiesBeginOrEndStudentsDay*)gt.rules.internalTimeConstraintsList[i];
+			
+			/*if(cae->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
+				 "activities begin students day with weight percentage under 100%. "
+				 "Constraint activities begin students day can only have weight percentage 100%. "
+				 "Please modify your data accordingly (remove or edit constraint) and try again."),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				1, 0 );
+				
+				if(t==0)
+					break;
+			}*/
+			
+			for(int i=0; i<cae->nActivities; i++){
+				int ai=cae->activitiesIndices[i];
+				if(activityBeginsOrEndsStudentsDayPercentages[ai] < cae->weightPercentage)
+					activityBeginsOrEndsStudentsDayPercentages[ai] = cae->weightPercentage;
+			}
+		}
+	}
+	
+	return ok;
+}
+
+bool computeActivityBeginsOrEndsTeachersDayPercentages(QWidget* parent)
+{
+	Q_UNUSED(parent);
+
+	bool ok=true;
+
+	for(int ai=0; ai<gt.rules.nInternalActivities; ai++)
+		activityBeginsOrEndsTeachersDayPercentages[ai]=-1;
+	
+	haveActivityBeginsOrEndsTeachersDay=false;
+	
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_TEACHERS_DAY){
+			haveActivityBeginsOrEndsTeachersDay=true;
+		
+			ConstraintActivityBeginsOrEndsTeachersDay* cae=(ConstraintActivityBeginsOrEndsTeachersDay*)gt.rules.internalTimeConstraintsList[i];
+			
+			/*if(cae->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
+				 "activity begins teachers day for activity with id=%1 with weight percentage under 100%. "
+				 "Constraint activity begins teachers day can only have weight percentage 100%. "
+				 "Please modify your data accordingly (remove or edit constraint) and try again.")
+				 .arg(gt.rules.internalActivitiesList[cae->activityIndex].id),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				1, 0 );
+				
+				if(t==0)
+					break;
+			}*/
+			
+			int ai=cae->activityIndex;
+			if(activityBeginsOrEndsTeachersDayPercentages[ai] < cae->weightPercentage)
+				activityBeginsOrEndsTeachersDayPercentages[ai] = cae->weightPercentage;
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY){
+			haveActivityBeginsOrEndsTeachersDay=true;
+		
+			ConstraintActivitiesBeginOrEndTeachersDay* cae=(ConstraintActivitiesBeginOrEndTeachersDay*)gt.rules.internalTimeConstraintsList[i];
+			
+			/*if(cae->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
+				 "activities begin teachers day with weight percentage under 100%. "
+				 "Constraint activities begin teachers day can only have weight percentage 100%. "
+				 "Please modify your data accordingly (remove or edit constraint) and try again."),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				1, 0 );
+				
+				if(t==0)
+					break;
+			}*/
+			
+			for(int i=0; i<cae->nActivities; i++){
+				int ai=cae->activitiesIndices[i];
+				if(activityBeginsOrEndsTeachersDayPercentages[ai] < cae->weightPercentage)
+					activityBeginsOrEndsTeachersDayPercentages[ai] = cae->weightPercentage;
+			}
+		}
+	}
+	
+	return ok;
+}
+
 bool checkMinDays100Percent(QWidget* parent)
 {
 	bool ok=true;
@@ -17767,29 +18157,29 @@ bool computeTwoSetsOfActivitiesSameSections(QWidget* parent)
 }
 
 //2025-09-22
-bool computeActivitiesOverlapCompletelyOrDontOverlap(QWidget* parent)
+bool computeActivitiesOverlapCompletelyOrDoNotOverlap(QWidget* parent)
 {
-	haveActivitiesOverlapCompletelyOrDontOverlap=false;
+	haveActivitiesOverlapCompletelyOrDoNotOverlap=false;
 
 	bool ok=true;
 	
-	aocodoList.clear();
+	aocodnoList.clear();
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
-		aocodoListForActivity[i].clear();
+		aocodnoListForActivity[i].clear();
 	}
 
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
-		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP){
-			if(!haveActivitiesOverlapCompletelyOrDontOverlap)
-				haveActivitiesOverlapCompletelyOrDontOverlap=true;
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DO_NOT_OVERLAP){
+			if(!haveActivitiesOverlapCompletelyOrDoNotOverlap)
+				haveActivitiesOverlapCompletelyOrDoNotOverlap=true;
 
-			ConstraintActivitiesOverlapCompletelyOrDontOverlap* cn=(ConstraintActivitiesOverlapCompletelyOrDontOverlap*)gt.rules.internalTimeConstraintsList[i];
+			ConstraintActivitiesOverlapCompletelyOrDoNotOverlap* cn=(ConstraintActivitiesOverlapCompletelyOrDoNotOverlap*)gt.rules.internalTimeConstraintsList[i];
 
 			if(cn->weightPercentage!=100.0){
 				ok=false;
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'activities overlap completely or don't overlap'"
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'activities overlap completely or do not overlap'"
 				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
 				 ,
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -17799,13 +18189,13 @@ bool computeActivitiesOverlapCompletelyOrDontOverlap(QWidget* parent)
 					return false;
 			}
 			
-			ActivitiesOverlapCompletelyOrDontOverlap_item item;
+			ActivitiesOverlapCompletelyOrDoNotOverlap_item item;
 			item.activitiesList=cn->_activitiesIndices;
 
-			aocodoList.push_back(item);
-			ActivitiesOverlapCompletelyOrDontOverlap_item* p_item=&aocodoList.back();
+			aocodnoList.push_back(item);
+			ActivitiesOverlapCompletelyOrDoNotOverlap_item* p_item=&aocodnoList.back();
 			for(int ai : std::as_const(cn->_activitiesIndices)){
-				aocodoListForActivity[ai].append(p_item);
+				aocodnoListForActivity[ai].append(p_item);
 			}
 		}
 	}

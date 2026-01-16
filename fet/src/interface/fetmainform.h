@@ -78,6 +78,7 @@ private:
 	QMenu* menuAll_students_4_time_constraints;
 	
 	QMenu* menuActivities_preferred_times_time_constraints;
+	QMenu* menuActivities_begin_end_day_time_constraints;
 	QMenu* menuActivities_others_1_time_constraints;
 	QMenu* menuActivities_others_2_time_constraints;
 	QMenu* menuActivities_others_3_time_constraints;
@@ -124,10 +125,12 @@ private:
 	QAction* dataTimeConstraintsStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelectionAction;
 	QAction* dataTimeConstraintsStudentsOccupyMaxSetsOfTimeSlotsFromSelectionAction;
 
+	QAction* dataTimeConstraintsActivitiesOccupyMaxSetsOfTimeSlotsFromSelectionAction;
+
 	QAction* dataTimeConstraintsActivitiesPairOfMutuallyExclusiveTimeSlotsAction;
 	QAction* dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction;
 
-	QAction* dataTimeConstraintsActivitiesOverlapCompletelyOrDontOverlapAction;
+	QAction* dataTimeConstraintsActivitiesOverlapCompletelyOrDoNotOverlapAction;
 
 	QAction* dataTimeConstraintsActivityPreferredStartingTimeAction;
 	QAction* dataTimeConstraintsStudentsSetMaxGapsPerWeekAction;
@@ -189,6 +192,10 @@ private:
 	QAction* dataTimeConstraintsActivityEndsTeachersDayAction;
 	QAction* dataTimeConstraintsActivityBeginsStudentsDayAction;
 	QAction* dataTimeConstraintsActivityBeginsTeachersDayAction;
+
+	QAction* dataTimeConstraintsActivityBeginsOrEndsStudentsDayAction;
+	QAction* dataTimeConstraintsActivityBeginsOrEndsTeachersDayAction;
+
 	QAction* dataTimeConstraintsTeachersMinHoursDailyAction;
 	QAction* dataTimeConstraintsTeacherMinHoursDailyAction;
 	QAction* dataTimeConstraintsTeachersMaxGapsPerDayAction;
@@ -255,6 +262,10 @@ private:
 	QAction* dataTimeConstraintsActivitiesEndTeachersDayAction;
 	QAction* dataTimeConstraintsActivitiesBeginStudentsDayAction;
 	QAction* dataTimeConstraintsActivitiesBeginTeachersDayAction;
+
+	QAction* dataTimeConstraintsActivitiesBeginOrEndStudentsDayAction;
+	QAction* dataTimeConstraintsActivitiesBeginOrEndTeachersDayAction;
+
 	QAction* dataTimeConstraintsTwoActivitiesGroupedAction;
 	QAction* dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction;
 	QAction* dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction;
@@ -690,6 +701,12 @@ public Q_SLOTS:
 	void dataTimeConstraintsActivityBeginsTeachersDayAction_triggered();
 	void dataTimeConstraintsActivitiesBeginTeachersDayAction_triggered();
 
+	void dataTimeConstraintsActivityBeginsOrEndsStudentsDayAction_triggered();
+	void dataTimeConstraintsActivitiesBeginOrEndStudentsDayAction_triggered();
+
+	void dataTimeConstraintsActivityBeginsOrEndsTeachersDayAction_triggered();
+	void dataTimeConstraintsActivitiesBeginOrEndTeachersDayAction_triggered();
+
 	void dataTimeConstraintsTeacherNotAvailableTimesAction_triggered();
 	void dataTimeConstraintsTeachersNotAvailableTimesAction_triggered();
 	void dataTimeConstraintsTeacherMaxDaysPerWeekAction_triggered();
@@ -727,10 +744,12 @@ public Q_SLOTS:
 	void dataTimeConstraintsStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelectionAction_triggered();
 	void dataTimeConstraintsStudentsOccupyMaxSetsOfTimeSlotsFromSelectionAction_triggered();
 
+	void dataTimeConstraintsActivitiesOccupyMaxSetsOfTimeSlotsFromSelectionAction_triggered();
+
 	void dataTimeConstraintsActivitiesPairOfMutuallyExclusiveTimeSlotsAction_triggered();
 	void dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction_triggered();
 
-	void dataTimeConstraintsActivitiesOverlapCompletelyOrDontOverlapAction_triggered();
+	void dataTimeConstraintsActivitiesOverlapCompletelyOrDoNotOverlapAction_triggered();
 
 	void dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction_triggered();
 	void dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction_triggered();

@@ -414,7 +414,14 @@ const int CONSTRAINT_TEACHERS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION						
 const int CONSTRAINT_STUDENTS_SET_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION								=245;
 const int CONSTRAINT_STUDENTS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION										=246;
 
-const int CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP												=247;
+const int CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DO_NOT_OVERLAP											=247;
+
+const int CONSTRAINT_ACTIVITIES_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION									=248;
+
+const int CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_STUDENTS_DAY									=249;
+const int CONSTRAINT_ACTIVITIES_BEGIN_OR_END_STUDENTS_DAY									=250;
+const int CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_TEACHERS_DAY									=251;
+const int CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY									=252;
 
 class QDataStream;
 
@@ -12495,8 +12502,8 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
-class ConstraintActivitiesOverlapCompletelyOrDontOverlap: public TimeConstraint{
-	Q_DECLARE_TR_FUNCTIONS(ConstraintActivitiesOverlapCompletelyOrDontOverlap)
+class ConstraintActivitiesOverlapCompletelyOrDoNotOverlap: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintActivitiesOverlapCompletelyOrDoNotOverlap)
 
 public:
 	QList<int> activitiesIds;
@@ -12506,8 +12513,8 @@ public:
 	//internal variables
 	QList<int> _activitiesIndices;
 
-	ConstraintActivitiesOverlapCompletelyOrDontOverlap();
-	ConstraintActivitiesOverlapCompletelyOrDontOverlap(double wp, const QList<int>& a_L);
+	ConstraintActivitiesOverlapCompletelyOrDoNotOverlap();
+	ConstraintActivitiesOverlapCompletelyOrDoNotOverlap(double wp, const QList<int>& a_L);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -12524,6 +12531,291 @@ public:
 	void removeUseless(Rules& r);
 
 	void recomputeActivitiesSet();
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection)
+
+public:
+	QList<int> activitiesIds;
+
+	QSet<int> activitiesIdsSet;
+
+	int maxOccupiedSets;
+	
+	QList<QList<int>> selectedDays;
+	QList<QList<int>> selectedHours;
+	
+	//internal variables
+	QList<int> _activitiesIndices;
+
+	QList<QSet<int>> listOfSets;
+	QList<QList<int>> listOfLists;
+	
+	ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection();
+
+	ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection(double wp, const QList<int>& a_L, int mos, const QList<QList<int>>& sd, const QList<QList<int>>& sh);
+
+	QString getXmlDescription(Rules& r);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	void removeUseless(Rules& r);
+	
+	void recomputeActivitiesSet();
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintActivityBeginsOrEndsStudentsDay: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintActivityBeginsOrEndsStudentsDay)
+
+public:
+	/**
+	Activity id
+	*/
+	int activityId;
+
+	//internal variables
+	/**
+	The index of the activity in the rules (from 0 to rules.nActivities-1) - it is not the id of the activity
+	*/
+	int activityIndex;
+
+	ConstraintActivityBeginsOrEndsStudentsDay();
+
+	ConstraintActivityBeginsOrEndsStudentsDay(double wp, int actId);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintActivitiesBeginOrEndStudentsDay: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintActivitiesBeginOrEndStudentsDay)
+
+public:
+	/**
+	The teacher. If void, all teachers.
+	*/
+	QString teacherName;
+
+	/**
+	The students. If void, all students.
+	*/
+	QString studentsName;
+
+	/**
+	The subject. If void, all subjects.
+	*/
+	QString subjectName;
+
+	/**
+	The activity tag. If void, all activity tags.
+	*/
+	QString activityTagName;
+	
+	
+	//internal data
+
+	/**
+	The number of activities which are represented by the subject, teacher and students requirements.
+	*/
+	int nActivities;
+	
+	/**
+	The indices of the activities in the rules (from 0 to rules.nActivities-1)
+	These are indices in the internal list -> Rules::internalActivitiesList
+	*/
+	QList<int> activitiesIndices;
+
+	ConstraintActivitiesBeginOrEndStudentsDay();
+
+	ConstraintActivitiesBeginOrEndStudentsDay(double wp, const QString& te, const QString& st, const QString& su, const QString& sut);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintActivityBeginsOrEndsTeachersDay: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintActivityBeginsOrEndsTeachersDay)
+
+public:
+	/**
+	Activity id
+	*/
+	int activityId;
+
+	//internal variables
+	/**
+	The index of the activity in the rules (from 0 to rules.nActivities-1) - it is not the id of the activity
+	*/
+	int activityIndex;
+
+	ConstraintActivityBeginsOrEndsTeachersDay();
+
+	ConstraintActivityBeginsOrEndsTeachersDay(double wp, int actId);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintActivitiesBeginOrEndTeachersDay: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintActivitiesBeginOrEndTeachersDay)
+
+public:
+	/**
+	The teacher. If void, all teachers.
+	*/
+	QString teacherName;
+
+	/**
+	The students. If void, all students.
+	*/
+	QString studentsName;
+
+	/**
+	The subject. If void, all subjects.
+	*/
+	QString subjectName;
+
+	/**
+	The activity tag. If void, all activity tags.
+	*/
+	QString activityTagName;
+	
+	
+	//internal data
+
+	/**
+	The number of activities which are represented by the subject, teacher and students requirements.
+	*/
+	int nActivities;
+	
+	/**
+	The indices of the activities in the rules (from 0 to rules.nActivities-1)
+	These are indices in the internal list -> Rules::internalActivitiesList
+	*/
+	//int activitiesIndices[MAX_ACTIVITIES];
+	QList<int> activitiesIndices;
+
+	ConstraintActivitiesBeginOrEndTeachersDay();
+
+	ConstraintActivitiesBeginOrEndTeachersDay(double wp, const QString& te, const QString& st, const QString& su, const QString& sut);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
 	bool isRelatedToActivity(Rules& r, Activity* a);
 	
@@ -13033,7 +13325,17 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetOccupies
 //246
 QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection& tc);
 //247
-QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesOverlapCompletelyOrDontOverlap& tc);
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesOverlapCompletelyOrDoNotOverlap& tc);
+//248
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection& tc);
+//249
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityBeginsOrEndsStudentsDay& tc);
+//250
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesBeginOrEndStudentsDay& tc);
+//251
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityBeginsOrEndsTeachersDay& tc);
+//252
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesBeginOrEndTeachersDay& tc);
 
 //1
 QDataStream& operator>>(QDataStream& stream, ConstraintBasicCompulsoryTime& tc);
@@ -13528,6 +13830,16 @@ QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetOccupiesMaxSet
 //246
 QDataStream& operator>>(QDataStream& stream, ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection& tc);
 //247
-QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesOverlapCompletelyOrDontOverlap& tc);
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesOverlapCompletelyOrDoNotOverlap& tc);
+//248
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection& tc);
+//249
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityBeginsOrEndsStudentsDay& tc);
+//250
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesBeginOrEndStudentsDay& tc);
+//251
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityBeginsOrEndsTeachersDay& tc);
+//252
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesBeginOrEndTeachersDay& tc);
 
 #endif

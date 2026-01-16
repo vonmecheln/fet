@@ -299,6 +299,8 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 	tabWidget=nullptr;
 
+	tabWidgetAOMSOTSFS=nullptr;
+
 	tabWidgetTwoSetsOfActivities=nullptr;
 	//
 	activitiesLabel_TwoSetsOfActivities_1=nullptr;
@@ -475,7 +477,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
 				
-				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked(), false);
 				
 				break;
 			}
@@ -510,7 +512,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
 
-				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked(), false);
 
 				teacherLabel=new QLabel(tr("Teacher"));
 				teachersComboBox=new QComboBox;
@@ -926,7 +928,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
 
-				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked(), false);
 
 				studentsLabel=new QLabel(tr("Students set"));
 				studentsComboBox=new QComboBox;
@@ -1405,7 +1407,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
 
-				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked(), false);
 
 				break;
 			}
@@ -1460,7 +1462,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
 
-				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked(), false);
 
 				break;
 			}
@@ -1511,7 +1513,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
 
-				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked(), false);
 
 				break;
 			}
@@ -1566,7 +1568,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
 
-				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked(), false);
 
 				break;
 			}
@@ -1841,7 +1843,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
 
-				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked(), false);
 
 				splitIndexLabel=new QLabel(tr("Component number (split index)"));
 				splitIndexSpinBox=new QSpinBox;
@@ -1901,7 +1903,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
 
-				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked(), false);
 
 				splitIndexLabel=new QLabel(tr("Component number (split index)"));
 				splitIndexSpinBox=new QSpinBox;
@@ -2525,17 +2527,19 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add activities occupy max time slots from selection", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintActivitiesOccupyMaxTimeSlotsFromSelection");
 
-					firstAddInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 				else{
 					dialogTitle=tr("Modify activities occupy max time slots from selection", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelection");
 
-					firstModifyInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 
 				addEmpty=true;
@@ -2569,7 +2573,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
 
-				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked(), true);
 
 				labelForSpinBox=new QLabel(tr("Max occupied"));
 				spinBox=new QSpinBox;
@@ -2588,17 +2592,19 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add activities max simultaneous in selected time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintActivitiesMaxSimultaneousInSelectedTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 				else{
 					dialogTitle=tr("Modify activities max simultaneous in selected time slots", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintActivitiesMaxSimultaneousInSelectedTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 
 				addEmpty=true;
@@ -2632,7 +2638,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
 
-				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked(), true);
 
 				labelForSpinBox=new QLabel(tr("Max simultaneous"));
 				spinBox=new QSpinBox;
@@ -3075,17 +3081,19 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add activities occupy min time slots from selection", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintActivitiesOccupyMinTimeSlotsFromSelection");
 
-					firstAddInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 				else{
 					dialogTitle=tr("Modify activities occupy min time slots from selection", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintActivitiesOccupyMinTimeSlotsFromSelection");
 
-					firstModifyInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 
 				addEmpty=true;
@@ -3119,7 +3127,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
 
-				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked(), true);
 
 				labelForSpinBox=new QLabel(tr("Min occupied"));
 				spinBox=new QSpinBox;
@@ -3138,17 +3146,19 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add activities min simultaneous in selected time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintActivitiesMinSimultaneousInSelectedTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 				else{
 					dialogTitle=tr("Modify activities min simultaneous in selected time slots", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintActivitiesMinSimultaneousInSelectedTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 
 				addEmpty=true;
@@ -3182,7 +3192,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
 
-				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked(), true);
 
 				labelForSpinBox=new QLabel(tr("Min simultaneous"));
 				spinBox=new QSpinBox;
@@ -5176,17 +5186,19 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add max total activities from set in selected time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 				else{
 					dialogTitle=tr("Modify max total activities from set in selected time slots", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 
 				addEmpty=true;
@@ -5220,7 +5232,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
 
-				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked(), true);
 
 				labelForSpinBox=new QLabel(tr("Max total activities"));
 				spinBox=new QSpinBox;
@@ -7023,17 +7035,19 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add two sets of activities have the same sections", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintTwoSetsOfActivitiesSameSections");
 
-					firstAddInstructionsLabel=new QLabel(tr("X (red)=exception, empty (green)=no exception",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected as an exception, "
-					 "and an empty cell (or green) means that the slot is not selected as an exception"));
+					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=exception, empty (darkgoldenrod)=not exception",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected as an exception, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected as an exception. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 				else{
 					dialogTitle=tr("Modify two sets of activities have the same sections", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintTwoSetsOfActivitiesSameSections");
 
-					firstModifyInstructionsLabel=new QLabel(tr("X (red)=exception, empty (green)=no exception",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected as an exception, "
-					 "and an empty cell (or green) means that the slot is not selected as an exception"));
+					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=exception, empty (darkgoldenrod)=not exception",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected as an exception, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected as an exception. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 
 				addEmpty=true;
@@ -7081,7 +7095,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
 
-				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked(), true);
 
 				break;
 			}
@@ -7092,17 +7106,19 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add students max single gaps in selected time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintStudentsMaxSingleGapsInSelectedTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 				else{
 					dialogTitle=tr("Modify students max single gaps in selected time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("ModifyConstraintStudentsMaxSingleGapsInSelectedTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 
 				labelForSpinBox=new QLabel(tr("Max single gaps"));
@@ -7120,7 +7136,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
 
-				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked(), true);
 
 				break;
 			}
@@ -7131,17 +7147,19 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add students set max single gaps in selected time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 				else{
 					dialogTitle=tr("Modify students set max single gaps in selected time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("ModifyConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 
 				studentsLabel=new QLabel(tr("Students set"));
@@ -7162,7 +7180,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
 
-				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked(), true);
 
 				break;
 			}
@@ -7173,17 +7191,19 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add teachers max single gaps in selected time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintTeachersMaxSingleGapsInSelectedTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 				else{
 					dialogTitle=tr("Modify teachers max single gaps in selected time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("ModifyConstraintTeachersMaxSingleGapsInSelectedTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 
 				labelForSpinBox=new QLabel(tr("Max single gaps"));
@@ -7201,7 +7221,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
 
-				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked(), true);
 
 				break;
 			}
@@ -7212,17 +7232,19 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add teacher max single gaps in selected time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintTeacherMaxSingleGapsInSelectedTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 				else{
 					dialogTitle=tr("Modify teacher max single gaps in selected time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("ModifyConstraintTeacherMaxSingleGapsInSelectedTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 
 				teacherLabel=new QLabel(tr("Teacher"));
@@ -7243,7 +7265,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
 
-				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked(), true);
 
 				break;
 			}
@@ -7297,17 +7319,19 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add teacher pair of mutually exclusive sets of time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 				else{
 					dialogTitle=tr("Modify teacher pair of mutually exclusive sets of time slots", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 
 				teacherLabel=new QLabel(tr("Teacher"));
@@ -7322,7 +7346,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton1=new QPushButton(tr("Toggle all", "It refers to time slots"));
 				
-				timesTable1=new CornerEnabledTableWidget(colorsCheckBox1->isChecked());
+				timesTable1=new CornerEnabledTableWidget(colorsCheckBox1->isChecked(), true);
 
 				colorsCheckBox2=new QCheckBox(tr("Colors"));
 				//QSettings settings(COMPANY, PROGRAM);
@@ -7333,7 +7357,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton2=new QPushButton(tr("Toggle all", "It refers to time slots"));
 				
-				timesTable2=new CornerEnabledTableWidget(colorsCheckBox2->isChecked());
+				timesTable2=new CornerEnabledTableWidget(colorsCheckBox2->isChecked(), true);
 
 				tabWidgetPairOfMutuallyExclusiveSets=new QTabWidget;
 
@@ -7346,17 +7370,19 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add teachers pair of mutually exclusive sets of time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 				else{
 					dialogTitle=tr("Modify teachers pair of mutually exclusive sets of time slots", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 
 				colorsCheckBox1=new QCheckBox(tr("Colors"));
@@ -7368,7 +7394,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton1=new QPushButton(tr("Toggle all", "It refers to time slots"));
 				
-				timesTable1=new CornerEnabledTableWidget(colorsCheckBox1->isChecked());
+				timesTable1=new CornerEnabledTableWidget(colorsCheckBox1->isChecked(), true);
 
 				colorsCheckBox2=new QCheckBox(tr("Colors"));
 				//QSettings settings(COMPANY, PROGRAM);
@@ -7379,7 +7405,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton2=new QPushButton(tr("Toggle all", "It refers to time slots"));
 				
-				timesTable2=new CornerEnabledTableWidget(colorsCheckBox2->isChecked());
+				timesTable2=new CornerEnabledTableWidget(colorsCheckBox2->isChecked(), true);
 
 				tabWidgetPairOfMutuallyExclusiveSets=new QTabWidget;
 
@@ -7392,17 +7418,19 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add students set pair of mutually exclusive sets of time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 				else{
 					dialogTitle=tr("Modify students set pair of mutually exclusive sets of time slots", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 
 				studentsLabel=new QLabel(tr("Students set"));
@@ -7417,7 +7445,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton1=new QPushButton(tr("Toggle all", "It refers to time slots"));
 				
-				timesTable1=new CornerEnabledTableWidget(colorsCheckBox1->isChecked());
+				timesTable1=new CornerEnabledTableWidget(colorsCheckBox1->isChecked(), true);
 
 				colorsCheckBox2=new QCheckBox(tr("Colors"));
 				//QSettings settings(COMPANY, PROGRAM);
@@ -7428,7 +7456,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton2=new QPushButton(tr("Toggle all", "It refers to time slots"));
 				
-				timesTable2=new CornerEnabledTableWidget(colorsCheckBox2->isChecked());
+				timesTable2=new CornerEnabledTableWidget(colorsCheckBox2->isChecked(), true);
 
 				tabWidgetPairOfMutuallyExclusiveSets=new QTabWidget;
 
@@ -7441,17 +7469,19 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add students pair of mutually exclusive sets of time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 				else{
 					dialogTitle=tr("Modify students pair of mutually exclusive sets of time slots", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 
 				colorsCheckBox1=new QCheckBox(tr("Colors"));
@@ -7463,7 +7493,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton1=new QPushButton(tr("Toggle all", "It refers to time slots"));
 				
-				timesTable1=new CornerEnabledTableWidget(colorsCheckBox1->isChecked());
+				timesTable1=new CornerEnabledTableWidget(colorsCheckBox1->isChecked(), true);
 
 				colorsCheckBox2=new QCheckBox(tr("Colors"));
 				//QSettings settings(COMPANY, PROGRAM);
@@ -7474,7 +7504,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton2=new QPushButton(tr("Toggle all", "It refers to time slots"));
 				
-				timesTable2=new CornerEnabledTableWidget(colorsCheckBox2->isChecked());
+				timesTable2=new CornerEnabledTableWidget(colorsCheckBox2->isChecked(), true);
 
 				tabWidgetPairOfMutuallyExclusiveSets=new QTabWidget;
 
@@ -7487,25 +7517,29 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add activities pair of mutually exclusive sets of time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 					//trick to use each label on its tab
-					secondAddInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					secondAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 				else{
 					dialogTitle=tr("Modify activities pair of mutually exclusive sets of time slots", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 					//trick to use each label on its tab
-					secondModifyInstructionsLabel=new QLabel(tr("X (red)=selected, empty (green)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is selected, "
-					 "and an empty cell (or green) means that the slot is not selected"));
+					secondModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
 				}
 
 				colorsCheckBox1=new QCheckBox(tr("Colors"));
@@ -7517,7 +7551,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton1=new QPushButton(tr("Toggle all", "It refers to time slots"));
 				
-				timesTable1=new CornerEnabledTableWidget(colorsCheckBox1->isChecked());
+				timesTable1=new CornerEnabledTableWidget(colorsCheckBox1->isChecked(), true);
 
 				colorsCheckBox2=new QCheckBox(tr("Colors"));
 				//QSettings settings(COMPANY, PROGRAM);
@@ -7528,7 +7562,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				toggleAllPushButton2=new QPushButton(tr("Toggle all", "It refers to time slots"));
 				
-				timesTable2=new CornerEnabledTableWidget(colorsCheckBox2->isChecked());
+				timesTable2=new CornerEnabledTableWidget(colorsCheckBox2->isChecked(), true);
 
 				tabWidgetPairOfMutuallyExclusiveSets=new QTabWidget;
 				
@@ -7752,10 +7786,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				break;
 			}
 		//247
-		case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP:
+		case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DO_NOT_OVERLAP:
 			{
 				if(oldtc==nullptr){
-					dialogTitle=tr("Add activities overlap completely or don't overlap", "The title of the dialog to add a new constraint of this type");
+					dialogTitle=tr("Add activities overlap completely or do not overlap", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintActivitiesNotOverlapping");
 
 					firstAddInstructionsLabel=new QLabel(tr("This constraint means that each pair of activities from the selected set should either have"
@@ -7763,7 +7797,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 															" should have the same duration, greater than 1."));
 				}
 				else{
-					dialogTitle=tr("Modify activities overlap completely or don't overlap", "The title of the dialog to modify a constraint of this type");
+					dialogTitle=tr("Modify activities overlap completely or do not overlap", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintActivitiesNotOverlapping");
 
 					firstModifyInstructionsLabel=new QLabel(tr("This constraint means that each pair of activities from the selected set should either have"
@@ -7792,6 +7826,198 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				selectedActivitiesListWidget=new QListWidget;
 				addAllActivitiesPushButton=new QPushButton(tr("All", "Add all filtered activities to the list of selected activities"));
 				clearActivitiesPushButton=new QPushButton(tr("Clear", "Clear the list of selected activities"));
+
+				break;
+			}
+		//248
+		case CONSTRAINT_ACTIVITIES_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add activities occupy max sets of time slots from selection", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection");
+
+					firstAddInstructionsLabel=new QLabel(tr("The number chosen in a cell of the table widget represents the number of the selected set of"
+					 " time slots to which this slot belongs to (the value 0, shown here as a space, represents an unselected slot)."));
+				}
+				else{
+					dialogTitle=tr("Modify activities occupy max sets of time slots from selection", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("ModifyConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection");
+
+					firstModifyInstructionsLabel=new QLabel(tr("The number chosen in a cell of the table widget represents the number of the selected set of"
+					 " time slots to which this slot belongs to (the value 0, shown here as a space, represents an unselected slot)."));
+				}
+
+				occupyMaxSetsOfTimeSlotsFromSelectionTableWidget=new CornerEnabledTableWidgetOfSpinBoxes;
+
+				labelForSpinBox=new QLabel(tr("Max occupied sets of time slots (1 or 2)"));
+				spinBox=new QSpinBox;
+				spinBox->setMinimum(1);
+				spinBox->setMaximum(2);
+				spinBox->setValue(2);
+
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors")))
+					colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors")).toBool());
+				else
+					colorsCheckBox->setChecked(false);
+
+				//activities
+				addEmpty=true;
+				filterGroupBox=new QGroupBox(tr("Filter"));
+
+				//teacherLabel=new QLabel(tr("Teacher"));
+				teachersComboBox=new QComboBox;
+
+				//studentsLabel=new QLabel(tr("Students set"));
+				studentsComboBox=new QComboBox;
+
+				//subjectLabel=new QLabel(tr("Subject"));
+				subjectsComboBox=new QComboBox;
+
+				//activityTagLabel=new QLabel(tr("Activity tag"));
+				activityTagsComboBox=new QComboBox;
+
+				activitiesLabel=new QLabel(tr("Activities"));
+				selectedActivitiesLabel=new QLabel(tr("Selected", "It refers to activities"));
+				activitiesListWidget=new QListWidget;
+				selectedActivitiesListWidget=new QListWidget;
+				addAllActivitiesPushButton=new QPushButton(tr("All", "Add all filtered activities to the list of selected activities"));
+				clearActivitiesPushButton=new QPushButton(tr("Clear", "Clear the list of selected activities"));
+
+				tabWidgetAOMSOTSFS=new QTabWidget;
+
+				break;
+			}
+		//249
+		case CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_STUDENTS_DAY:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add activity begins or ends students day", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintActivityBeginsOrEndsStudentsDay");
+				}
+				else{
+					dialogTitle=tr("Modify activity begins or ends students day", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintActivityBeginsOrEndsStudentsDay");
+				}
+
+				addEmpty=true;
+				filterGroupBox=new QGroupBox(tr("Filter"));
+
+				//teacherLabel=new QLabel(tr("Teacher"));
+				teachersComboBox=new QComboBox;
+
+				//studentsLabel=new QLabel(tr("Students set"));
+				studentsComboBox=new QComboBox;
+
+				//subjectLabel=new QLabel(tr("Subject"));
+				subjectsComboBox=new QComboBox;
+
+				//activityTagLabel=new QLabel(tr("Activity tag"));
+				activityTagsComboBox=new QComboBox;
+
+				activityLabel=new QLabel(tr("Activity"));
+				activitiesComboBox=new QComboBox;
+
+				break;
+			}
+		//250
+		case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_STUDENTS_DAY:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add activities begin or end students day", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintActivitiesBeginOrEndStudentsDay");
+
+					firstAddInstructionsLabel=new QLabel(tr("Instructions: you can choose a set of activities with a certain teacher (or "
+															"blank for all teachers), students set, subject and activity tag."));
+				}
+				else{
+					dialogTitle=tr("Modify activities begin or end students day", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintActivitiesBeginOrEndStudentsDay");
+
+					firstModifyInstructionsLabel=new QLabel(tr("Instructions: you can choose a set of activities with a certain teacher (or "
+															   "blank for all teachers), students set, subject and activity tag."));
+				}
+
+				addEmpty=true;
+
+				teacherLabel=new QLabel(tr("Teacher"));
+				teachersComboBox=new QComboBox;
+
+				studentsLabel=new QLabel(tr("Students set"));
+				studentsComboBox=new QComboBox;
+
+				subjectLabel=new QLabel(tr("Subject"));
+				subjectsComboBox=new QComboBox;
+
+				activityTagLabel=new QLabel(tr("Activity tag"));
+				activityTagsComboBox=new QComboBox;
+
+				break;
+			}
+		//251
+		case CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_TEACHERS_DAY:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add activity begins or ends teachers day", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintActivityBeginsOrEndsTeachersDay");
+				}
+				else{
+					dialogTitle=tr("Modify activity begins or ends teachers day", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintActivityBeginsOrEndsTeachersDay");
+				}
+
+				addEmpty=true;
+				filterGroupBox=new QGroupBox(tr("Filter"));
+
+				//teacherLabel=new QLabel(tr("Teacher"));
+				teachersComboBox=new QComboBox;
+
+				//studentsLabel=new QLabel(tr("Students set"));
+				studentsComboBox=new QComboBox;
+
+				//subjectLabel=new QLabel(tr("Subject"));
+				subjectsComboBox=new QComboBox;
+
+				//activityTagLabel=new QLabel(tr("Activity tag"));
+				activityTagsComboBox=new QComboBox;
+
+				activityLabel=new QLabel(tr("Activity"));
+				activitiesComboBox=new QComboBox;
+
+				break;
+			}
+		//252
+		case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add activities begin or end teachers day", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintActivitiesBeginOrEndTeachersDay");
+
+					firstAddInstructionsLabel=new QLabel(tr("Instructions: you can choose a set of activities with a certain teacher (or "
+															"blank for all teachers), students set, subject and activity tag."));
+				}
+				else{
+					dialogTitle=tr("Modify activities begin or end teachers day", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintActivitiesBeginOrEndTeachersDay");
+
+					firstModifyInstructionsLabel=new QLabel(tr("Instructions: you can choose a set of activities with a certain teacher (or "
+															   "blank for all teachers), students set, subject and activity tag."));
+				}
+
+				addEmpty=true;
+
+				teacherLabel=new QLabel(tr("Teacher"));
+				teachersComboBox=new QComboBox;
+
+				studentsLabel=new QLabel(tr("Students set"));
+				studentsComboBox=new QComboBox;
+
+				subjectLabel=new QLabel(tr("Subject"));
+				subjectsComboBox=new QComboBox;
+
+				activityTagLabel=new QLabel(tr("Activity tag"));
+				activityTagsComboBox=new QComboBox;
 
 				break;
 			}
@@ -8730,11 +8956,13 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 	if(swapActivityTagsPushButton!=nullptr)
 		buttons->addWidget(swapActivityTagsPushButton);
 	if(colorsCheckBox!=nullptr)
-		if(tabWidget==nullptr)
+		if(tabWidget==nullptr && tabWidgetAOMSOTSFS==nullptr)
 			buttons->addWidget(colorsCheckBox);
-	if(toggleAllPushButton!=nullptr)
+	if(toggleAllPushButton!=nullptr){
+		assert(tabWidgetAOMSOTSFS==nullptr);
 		if(tabWidget==nullptr)
 			buttons->addWidget(toggleAllPushButton);
+	}
 	if(addConstraintPushButton!=nullptr)
 		buttons->addWidget(addConstraintPushButton);
 	if(addConstraintsPushButton!=nullptr)
@@ -8800,6 +9028,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			assert(toggleAllPushButton!=nullptr);
 			spinBoxLayout->addWidget(toggleAllPushButton);
 		}
+		else if(tabWidgetAOMSOTSFS!=nullptr){
+			assert(colorsCheckBox!=nullptr);
+			spinBoxLayout->addWidget(colorsCheckBox);
+		}
 
 		spinBoxLayout->addWidget(labelForSpinBox);
 		spinBoxLayout->addWidget(spinBox);
@@ -8828,7 +9060,11 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 	if(tabWidgetPairOfMutuallyExclusiveSets!=nullptr)
 		k3=1;
 	
-	assert(k1+k2+k3<=1);
+	int k4=0;
+	if(tabWidgetAOMSOTSFS!=nullptr)
+		k4=1;
+	
+	assert(k1+k2+k3+k4<=1);
 	
 	if(ctrActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots){
 		assert(tabWidgetPairOfMutuallyExclusiveSets!=nullptr);
@@ -9084,7 +9320,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 		wholeDialog->addLayout(weight);
 		wholeDialog->addLayout(buttons);
 	}
-	else if(tabWidget==nullptr && tabWidgetTwoSetsOfActivities==nullptr && tabWidgetPairOfMutuallyExclusiveSets==nullptr){
+	else if(tabWidgetAOMSOTSFS==nullptr && tabWidget==nullptr && tabWidgetTwoSetsOfActivities==nullptr && tabWidgetPairOfMutuallyExclusiveSets==nullptr){
 		if(oldtc==nullptr){
 			if(firstAddInstructionsLabel!=nullptr)
 				wholeDialog->addWidget(firstAddInstructionsLabel);
@@ -9470,6 +9706,8 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			wholeDialog->addWidget(timesTable);
 		
 		if(occupyMaxSetsOfTimeSlotsFromSelectionTableWidget!=nullptr){
+			assert(tabWidgetAOMSOTSFS==nullptr);
+			
 			occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->resizeRowsToContents();
 			//occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->resizeColumnsToContents();
 
@@ -9497,6 +9735,112 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			wholeDialog->addWidget(permanentlyLockedLabel);
 
 		//wholeDialog->addStretch();
+		wholeDialog->addLayout(weight);
+		wholeDialog->addLayout(buttons);
+	}
+	else if(tabWidgetAOMSOTSFS!=nullptr){
+		assert(tabWidget==nullptr && tabWidgetTwoSetsOfActivities==nullptr && tabWidgetPairOfMutuallyExclusiveSets==nullptr);
+
+		if(occupyMaxSetsOfTimeSlotsFromSelectionTableWidget!=nullptr){
+			occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->resizeRowsToContents();
+			//occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->resizeColumnsToContents();
+
+			occupyMaxSetsOfTimeSlotsFromSelectionTableWidget->setSelectionMode(QAbstractItemView::NoSelection);
+
+			setStretchAvailabilityTableNicely(occupyMaxSetsOfTimeSlotsFromSelectionTableWidget);
+
+			initOccupyMaxTableWidget();
+		}
+		else{
+			assert(0);
+		}
+
+		QVBoxLayout* activitiesLayout=new QVBoxLayout;
+		QVBoxLayout* timeSlotsLayout=new QVBoxLayout;
+
+		if(oldtc==nullptr){
+			if(firstAddInstructionsLabel!=nullptr)
+				timeSlotsLayout->addWidget(firstAddInstructionsLabel);
+			assert(secondAddInstructionsLabel==nullptr);
+			//if(secondAddInstructionsLabel!=nullptr)
+				//timeSlotsLayout->addWidget(secondAddInstructionsLabel);
+		}
+		else{
+			if(firstModifyInstructionsLabel!=nullptr)
+				timeSlotsLayout->addWidget(firstModifyInstructionsLabel);
+			assert(secondModifyInstructionsLabel==nullptr);
+			//if(secondModifyInstructionsLabel!=nullptr)
+				//wholeDialog->addWidget(secondModifyInstructionsLabel);
+		}
+
+		assert(teacherLayout!=nullptr);
+		assert(studentsLayout!=nullptr);
+		assert(subjectLayout!=nullptr);
+		assert(activityTagLayout!=nullptr);
+
+		QVBoxLayout* layoutLeft=new QVBoxLayout;
+		layoutLeft->addLayout(teacherLayout);
+		layoutLeft->addLayout(studentsLayout);
+
+		QVBoxLayout* layoutRight=new QVBoxLayout;
+		layoutRight->addLayout(subjectLayout);
+		layoutRight->addLayout(activityTagLayout);
+
+		QHBoxLayout* layout=new QHBoxLayout;
+		layout->addLayout(layoutLeft);
+		layout->addLayout(layoutRight);
+
+		filterGroupBox->setLayout(layout);
+
+		activitiesLayout->addWidget(filterGroupBox);
+
+		if(activitiesListWidget!=nullptr){
+			assert(activitiesLabel!=nullptr);
+			assert(selectedActivitiesLabel!=nullptr);
+			assert(selectedActivitiesListWidget!=nullptr);
+			assert(addAllActivitiesPushButton!=nullptr);
+			assert(clearActivitiesPushButton!=nullptr);
+
+			QVBoxLayout* layout1=new QVBoxLayout;
+			layout1->addWidget(activitiesLabel);
+			layout1->addWidget(activitiesListWidget);
+			layout1->addWidget(addAllActivitiesPushButton);
+
+			QVBoxLayout* layout2=new QVBoxLayout;
+			layout2->addWidget(selectedActivitiesLabel);
+			layout2->addWidget(selectedActivitiesListWidget);
+			layout2->addWidget(clearActivitiesPushButton);
+
+			QHBoxLayout* layout3=new QHBoxLayout;
+			layout3->addLayout(layout1);
+			layout3->addLayout(layout2);
+
+			activitiesLayout->addLayout(layout3);
+		}
+		else{
+			assert(0);
+		}
+
+		if(occupyMaxSetsOfTimeSlotsFromSelectionTableWidget!=nullptr)
+			timeSlotsLayout->addWidget(occupyMaxSetsOfTimeSlotsFromSelectionTableWidget);
+		else
+			assert(0);
+		if(spinBoxLayout!=nullptr)
+			timeSlotsLayout->addLayout(spinBoxLayout);
+		else
+			assert(0);
+
+		QWidget* activitiesWidget=new QWidget;
+		QWidget* timeSlotsWidget=new QWidget;
+
+		activitiesWidget->setLayout(activitiesLayout);
+		timeSlotsWidget->setLayout(timeSlotsLayout);
+
+		tabWidgetAOMSOTSFS->addTab(activitiesWidget, tr("Activities"));
+		tabWidgetAOMSOTSFS->addTab(timeSlotsWidget, tr("Time slots"));
+
+		//wholeDialog->addStretch();
+		wholeDialog->addWidget(tabWidgetAOMSOTSFS);
 		wholeDialog->addLayout(weight);
 		wholeDialog->addLayout(buttons);
 	}
@@ -13112,9 +13456,9 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					break;
 				}
 			//247
-			case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP:
+			case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DO_NOT_OVERLAP:
 				{
-					ConstraintActivitiesOverlapCompletelyOrDontOverlap* ctr=(ConstraintActivitiesOverlapCompletelyOrDontOverlap*)oldtc;
+					ConstraintActivitiesOverlapCompletelyOrDoNotOverlap* ctr=(ConstraintActivitiesOverlapCompletelyOrDoNotOverlap*)oldtc;
 
 					selectedActivitiesListWidget->clear();
 					selectedActivitiesList.clear();
@@ -13130,6 +13474,84 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
 						}
 					}
+
+					break;
+				}
+			//248
+			case CONSTRAINT_ACTIVITIES_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+				{
+					ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection* ctr=(ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection*)oldtc;
+
+					fillSpinBoxTimesTable(ctr->selectedDays, ctr->selectedHours);
+
+					spinBox->setValue(ctr->maxOccupiedSets);
+
+					selectedActivitiesListWidget->clear();
+					selectedActivitiesList.clear();
+
+					for(int i=0; i<ctr->activitiesIds.count(); i++){
+						int actId=ctr->activitiesIds[i];
+						selectedActivitiesList.append(actId);
+						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
+						assert(act!=nullptr);
+						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
+					}
+
+					break;
+				}
+			//249
+			case CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_STUDENTS_DAY:
+				{
+					ConstraintActivityBeginsOrEndsStudentsDay* ctr=(ConstraintActivityBeginsOrEndsStudentsDay*)oldtc;
+
+					initialActivityId=ctr->activityId;
+
+					break;
+				}
+			//250
+			case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_STUDENTS_DAY:
+				{
+					ConstraintActivitiesBeginOrEndStudentsDay* ctr=(ConstraintActivitiesBeginOrEndStudentsDay*)oldtc;
+
+					teachersComboBox->setCurrentIndex(teachersComboBox->findText(ctr->teacherName));
+					int j=studentsComboBox->findText(ctr->studentsName);
+					if(j<0)
+						showWarningForInvisibleSubgroupConstraint(parent, ctr->studentsName);
+					else
+						assert(j>=0);
+					studentsComboBox->setCurrentIndex(j);
+					subjectsComboBox->setCurrentIndex(subjectsComboBox->findText(ctr->subjectName));
+					activityTagsComboBox->setCurrentIndex(activityTagsComboBox->findText(ctr->activityTagName));
+
+					break;
+				}
+			//251
+			case CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_TEACHERS_DAY:
+				{
+					ConstraintActivityBeginsOrEndsTeachersDay* ctr=(ConstraintActivityBeginsOrEndsTeachersDay*)oldtc;
+
+					initialActivityId=ctr->activityId;
+
+					break;
+				}
+			//252
+			case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY:
+				{
+					ConstraintActivitiesBeginOrEndTeachersDay* ctr=(ConstraintActivitiesBeginOrEndTeachersDay*)oldtc;
+
+					teachersComboBox->setCurrentIndex(teachersComboBox->findText(ctr->teacherName));
+					int j=studentsComboBox->findText(ctr->studentsName);
+					if(j<0)
+						showWarningForInvisibleSubgroupConstraint(parent, ctr->studentsName);
+					else
+						assert(j>=0);
+					studentsComboBox->setCurrentIndex(j);
+					subjectsComboBox->setCurrentIndex(subjectsComboBox->findText(ctr->subjectName));
+					activityTagsComboBox->setCurrentIndex(activityTagsComboBox->findText(ctr->activityTagName));
 
 					break;
 				}
@@ -17279,7 +17701,7 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 				break;
 			}
 		//247
-		case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP:
+		case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DO_NOT_OVERLAP:
 			{
 				if(selectedActivitiesList.count()==0){
 					QMessageBox::warning(dialog, tr("FET information"),
@@ -17311,7 +17733,126 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 					return;
 				}
 
-				tc=new ConstraintActivitiesOverlapCompletelyOrDontOverlap(weight, selectedActivitiesList);
+				tc=new ConstraintActivitiesOverlapCompletelyOrDoNotOverlap(weight, selectedActivitiesList);
+
+				break;
+			}
+		//248
+		case CONSTRAINT_ACTIVITIES_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				if(selectedActivitiesList.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Empty list of selected activities"));
+					return;
+				}
+				if(selectedActivitiesList.count()==1){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Only one selected activity"));
+					return;
+				}
+
+				QList<QList<int>> days;
+				QList<QList<int>> hours;
+				getSpinBoxTimesTable(days, hours);
+				
+				assert(days.count()==hours.count());
+				if(days.count()<=1){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least two sets of time slots."));
+					return;
+				}
+				
+				for(int i=0; i<days.count(); i++){
+					const QList<int>& cdl=days.at(i);
+					const QList<int>& chl=hours.at(i);
+					assert(cdl.count()==chl.count());
+					if(cdl.count()==0){
+						QMessageBox::warning(dialog, tr("FET information"),
+							tr("Set number %1 of selected time slots is empty - please correct this"
+							 " (the selected numbers must start from 1, and they must be continuous, without any gap between them).").arg(i+1));
+						return;
+					}
+				}
+
+				tc=new ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection(weight, selectedActivitiesList, spinBox->value(), days, hours);
+
+				break;
+			}
+		//249
+		case CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_STUDENTS_DAY:
+			{
+				assert(activitiesComboBox!=nullptr);
+				int i=activitiesComboBox->currentIndex();
+				if(i<0){
+					QMessageBox::warning(dialog, tr("FET information"), tr("Invalid activity"));
+					return;
+				}
+				assert(i<activitiesList.count());
+				int id=activitiesList.at(i);
+
+				tc=new ConstraintActivityBeginsOrEndsStudentsDay(weight, id);
+
+				break;
+			}
+		//250
+		case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_STUDENTS_DAY:
+			{
+				QString teacher=teachersComboBox->currentText();
+				if(teacher!="")
+					assert(gt.rules.searchTeacher(teacher)>=0);
+
+				QString students=studentsComboBox->currentText();
+				if(students!="")
+					assert(gt.rules.searchStudentsSet(students)!=nullptr);
+
+				QString subject=subjectsComboBox->currentText();
+				if(subject!="")
+					assert(gt.rules.searchSubject(subject)>=0);
+
+				QString activityTag=activityTagsComboBox->currentText();
+				if(activityTag!="")
+					assert(gt.rules.searchActivityTag(activityTag)>=0);
+
+				tc=new ConstraintActivitiesBeginOrEndStudentsDay(weight, teacher, students, subject, activityTag);
+
+				break;
+			}
+		//251
+		case CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_TEACHERS_DAY:
+			{
+				assert(activitiesComboBox!=nullptr);
+				int i=activitiesComboBox->currentIndex();
+				if(i<0){
+					QMessageBox::warning(dialog, tr("FET information"), tr("Invalid activity"));
+					return;
+				}
+				assert(i<activitiesList.count());
+				int id=activitiesList.at(i);
+
+				tc=new ConstraintActivityBeginsOrEndsTeachersDay(weight, id);
+
+				break;
+			}
+		//252
+		case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY:
+			{
+				QString teacher=teachersComboBox->currentText();
+				if(teacher!="")
+					assert(gt.rules.searchTeacher(teacher)>=0);
+
+				QString students=studentsComboBox->currentText();
+				if(students!="")
+					assert(gt.rules.searchStudentsSet(students)!=nullptr);
+
+				QString subject=subjectsComboBox->currentText();
+				if(subject!="")
+					assert(gt.rules.searchSubject(subject)>=0);
+
+				QString activityTag=activityTagsComboBox->currentText();
+				if(activityTag!="")
+					assert(gt.rules.searchActivityTag(activityTag)>=0);
+
+				tc=new ConstraintActivitiesBeginOrEndTeachersDay(weight, teacher, students, subject, activityTag);
 
 				break;
 			}
@@ -23743,7 +24284,7 @@ void AddOrModifyTimeConstraint::okClicked()
 				break;
 			}
 		//247
-		case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP:
+		case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DO_NOT_OVERLAP:
 			{
 				if(selectedActivitiesList.size()==0){
 					QMessageBox::warning(dialog, tr("FET information"), tr("Empty list of selected activities"));
@@ -23773,9 +24314,158 @@ void AddOrModifyTimeConstraint::okClicked()
 					return;
 				}
 
-				ConstraintActivitiesOverlapCompletelyOrDontOverlap* ctr=(ConstraintActivitiesOverlapCompletelyOrDontOverlap*)oldtc;
+				ConstraintActivitiesOverlapCompletelyOrDoNotOverlap* ctr=(ConstraintActivitiesOverlapCompletelyOrDoNotOverlap*)oldtc;
 				ctr->activitiesIds=selectedActivitiesList;
 				ctr->recomputeActivitiesSet();
+
+				break;
+			}
+		//248
+		case CONSTRAINT_ACTIVITIES_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				if(selectedActivitiesList.size()==0){
+					QMessageBox::warning(dialog, tr("FET information"), tr("Empty list of selected activities"));
+					return;
+				}
+				if(selectedActivitiesList.size()==1){
+					QMessageBox::warning(dialog, tr("FET information"), tr("Only one selected activity"));
+					return;
+				}
+
+				QList<QList<int>> days;
+				QList<QList<int>> hours;
+				getSpinBoxTimesTable(days, hours);
+				
+				assert(days.count()==hours.count());
+				if(days.count()<=1){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least two sets of time slots."));
+					return;
+				}
+				
+				for(int i=0; i<days.count(); i++){
+					const QList<int>& cdl=days.at(i);
+					const QList<int>& chl=hours.at(i);
+					assert(cdl.count()==chl.count());
+					if(cdl.count()==0){
+						QMessageBox::warning(dialog, tr("FET information"),
+							tr("Set number %1 of selected time slots is empty - please correct this"
+							 " (the selected numbers must start from 1, and they must be continuous, without any gap between them).").arg(i+1));
+						return;
+					}
+				}
+				
+				ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection* ctr=(ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection*)oldtc;
+
+				ctr->selectedDays=days;
+				ctr->selectedHours=hours;
+
+				ctr->maxOccupiedSets=spinBox->value();
+
+				ctr->activitiesIds=selectedActivitiesList;
+				ctr->recomputeActivitiesSet();
+
+				break;
+			}
+		//249
+		case CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_STUDENTS_DAY:
+			{
+				ConstraintActivityBeginsOrEndsStudentsDay* ctr=(ConstraintActivityBeginsOrEndsStudentsDay*)oldtc;
+
+				assert(activitiesComboBox!=nullptr);
+				int i=activitiesComboBox->currentIndex();
+				if(i<0){
+					QMessageBox::warning(dialog, tr("FET information"), tr("Invalid activity"));
+					return;
+				}
+				assert(i<activitiesList.count());
+				int id=activitiesList.at(i);
+
+				ctr->activityId=id;
+
+				break;
+			}
+		//250
+		case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_STUDENTS_DAY:
+			{
+				ConstraintActivitiesBeginOrEndStudentsDay* ctr=(ConstraintActivitiesBeginOrEndStudentsDay*)oldtc;
+
+				if(studentsComboBox->currentIndex()<0){
+					showWarningCannotModifyConstraintInvisibleSubgroupConstraint(dialog, ctr->studentsName);
+					return;
+				}
+
+				QString teacher=teachersComboBox->currentText();
+				if(teacher!="")
+					assert(gt.rules.searchTeacher(teacher)>=0);
+
+				QString students=studentsComboBox->currentText();
+				if(students!="")
+					assert(gt.rules.searchStudentsSet(students)!=nullptr);
+
+				QString subject=subjectsComboBox->currentText();
+				if(subject!="")
+					assert(gt.rules.searchSubject(subject)>=0);
+
+				QString activityTag=activityTagsComboBox->currentText();
+				if(activityTag!="")
+					assert(gt.rules.searchActivityTag(activityTag)>=0);
+
+				ctr->teacherName=teacher;
+				ctr->studentsName=students;
+				ctr->subjectName=subject;
+				ctr->activityTagName=activityTag;
+
+				break;
+			}
+		//251
+		case CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_TEACHERS_DAY:
+			{
+				ConstraintActivityBeginsOrEndsTeachersDay* ctr=(ConstraintActivityBeginsOrEndsTeachersDay*)oldtc;
+
+				assert(activitiesComboBox!=nullptr);
+				int i=activitiesComboBox->currentIndex();
+				if(i<0){
+					QMessageBox::warning(dialog, tr("FET information"), tr("Invalid activity"));
+					return;
+				}
+				assert(i<activitiesList.count());
+				int id=activitiesList.at(i);
+
+				ctr->activityId=id;
+
+				break;
+			}
+		//252
+		case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY:
+			{
+				ConstraintActivitiesBeginOrEndTeachersDay* ctr=(ConstraintActivitiesBeginOrEndTeachersDay*)oldtc;
+
+				if(studentsComboBox->currentIndex()<0){
+					showWarningCannotModifyConstraintInvisibleSubgroupConstraint(dialog, ctr->studentsName);
+					return;
+				}
+
+				QString teacher=teachersComboBox->currentText();
+				if(teacher!="")
+					assert(gt.rules.searchTeacher(teacher)>=0);
+
+				QString students=studentsComboBox->currentText();
+				if(students!="")
+					assert(gt.rules.searchStudentsSet(students)!=nullptr);
+
+				QString subject=subjectsComboBox->currentText();
+				if(subject!="")
+					assert(gt.rules.searchSubject(subject)>=0);
+
+				QString activityTag=activityTagsComboBox->currentText();
+				if(activityTag!="")
+					assert(gt.rules.searchActivityTag(activityTag)>=0);
+
+				ctr->teacherName=teacher;
+				ctr->studentsName=students;
+				ctr->subjectName=subject;
+				ctr->activityTagName=activityTag;
 
 				break;
 			}

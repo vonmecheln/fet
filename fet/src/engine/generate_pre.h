@@ -477,10 +477,10 @@ void computeActivitiesNotOverlapping();
 ////////END   activities not overlapping
 
 
-//2025-09-22 - Constraint activities overlap completely or don't overlap
-extern bool haveActivitiesOverlapCompletelyOrDontOverlap;
+//2025-09-22 - Constraint activities overlap completely or do not overlap
+extern bool haveActivitiesOverlapCompletelyOrDoNotOverlap;
 
-class ActivitiesOverlapCompletelyOrDontOverlap_item
+class ActivitiesOverlapCompletelyOrDoNotOverlap_item
 {
 public:
 	//double weight; -> must be 100.0%
@@ -489,10 +489,10 @@ public:
 };
 
 //We need the references to the elements to be valid, so we need this to be a std::list
-extern std::list<ActivitiesOverlapCompletelyOrDontOverlap_item> aocodoList;
-extern Matrix1D<QList<ActivitiesOverlapCompletelyOrDontOverlap_item*>> aocodoListForActivity;
+extern std::list<ActivitiesOverlapCompletelyOrDoNotOverlap_item> aocodnoList;
+extern Matrix1D<QList<ActivitiesOverlapCompletelyOrDoNotOverlap_item*>> aocodnoListForActivity;
 
-bool computeActivitiesOverlapCompletelyOrDontOverlap(QWidget* parent);
+bool computeActivitiesOverlapCompletelyOrDoNotOverlap(QWidget* parent);
 
 
 //2025-08-09 - Constraint activities pair of mutually exclusive sets of time slots
@@ -539,24 +539,72 @@ extern Matrix1D<QList<ActivitiesPairOfMutuallyExclusiveTimeSlots_item*>> apomets
 bool computeActivitiesPairOfMutuallyExclusiveTimeSlots(QWidget* parent);
 
 
+//BEGIN activities occupy max sets of time slots from selection
+extern bool haveActivitiesOccupyMaxSetsOfTimeSlotsFromSelection;
+
+class ActivitiesOccupyMaxSetsOfTimeSlotsFromSelection_item
+{
+public:
+	//weight is 100.0%
+	QList<int> listOfActivities;
+	//QSet<int> activitiesSet;
+	int maxOccupiedSets;
+	QList<QList<int>> listOfLists;
+	//Matrix1D<int> timeToListIndex;
+	QList<int> timeToListIndex;
+};
+
+extern std::list<ActivitiesOccupyMaxSetsOfTimeSlotsFromSelection_item> aomsotsfsList;
+extern Matrix1D<QList<ActivitiesOccupyMaxSetsOfTimeSlotsFromSelection_item*>> aomsotsfsListForActivity;
+
+bool computeActivitiesOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent);
+//END   activities occupy max sets of time slots from selection
+
 //BEGIN teacher(s) occupy max sets of time slots from selection
 extern bool haveTeachersOccupyMaxSetsOfTimeSlotsFromSelection;
 
-extern Matrix1D<QList<double>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionPercentages;
+class TeachersOccupyMaxSetsOfTimeSlotsFromSelection_item
+{
+public:
+	//weight is 100.0%
+	int maxOccupiedSets;
+	QList<QList<int>> listOfLists;
+	//Matrix1D<int> timeToListIndex;
+	QList<int> timeToListIndex;
+};
+
+/*extern Matrix1D<QList<double>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionPercentages;
 extern Matrix1D<QList<int>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets;
 extern Matrix1D<QList<QList<QSet<int>>>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets;
-extern Matrix1D<QList<QList<QList<int>>>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists;
+extern Matrix1D<QList<QList<QList<int>>>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists;*/
+
+extern std::list<TeachersOccupyMaxSetsOfTimeSlotsFromSelection_item> tomsotsfsList;
+extern Matrix1D<QList<TeachersOccupyMaxSetsOfTimeSlotsFromSelection_item*>> tomsotsfsListForTeacher;
 
 bool computeTeachersOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent);
 //END   teacher(s) occupy max sets of time slots from selection
 
+
 //BEGIN students (set) occupy max sets of time slots from selection
 extern bool haveStudentsOccupyMaxSetsOfTimeSlotsFromSelection;
 
-extern Matrix1D<QList<double>> subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionPercentages;
+class StudentsOccupyMaxSetsOfTimeSlotsFromSelection_item
+{
+public:
+	//weight percentage is 100.0%
+	int maxOccupiedSets;
+	QList<QList<int>> listOfLists;
+	//Matrix1D<int> timeToListIndex;
+	QList<int> timeToListIndex;
+};
+
+/*extern Matrix1D<QList<double>> subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionPercentages;
 extern Matrix1D<QList<int>> subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets;
 extern Matrix1D<QList<QList<QSet<int>>>> subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets;
-extern Matrix1D<QList<QList<QList<int>>>> subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists;
+extern Matrix1D<QList<QList<QList<int>>>> subgroupsOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists;*/
+
+extern std::list<StudentsOccupyMaxSetsOfTimeSlotsFromSelection_item> somsotsfsList;
+extern Matrix1D<QList<StudentsOccupyMaxSetsOfTimeSlotsFromSelection_item*>> somsotsfsListForSubgroup;
 
 bool computeSubgroupsOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent);
 //END   students (set) occupy max sets of time slots from selection
@@ -590,11 +638,24 @@ bool computeSubgroupsPairOfMutuallyExclusiveTimeSlots(QWidget* parent);
 //BEGIN teacher(s) pair of mutually exclusive sets of time slots
 extern bool haveTeachersPairOfMutualExclusiveSetsOfTimeSlots;
 
-extern Matrix1D<QList<double>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages;
+class TeachersPairOfMutuallyExclusiveSetsOfTimeSlots_item
+{
+public:
+	//weight percentage is 100.0%
+	QSet<int> set1;
+	QList<int> list1;
+	QSet<int> set2;
+	QList<int> list2;
+};
+
+/*extern Matrix1D<QList<double>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages;
 extern Matrix1D<QList<QSet<int>>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet1;
 extern Matrix1D<QList<QList<int>>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList1;
 extern Matrix1D<QList<QSet<int>>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet2;
-extern Matrix1D<QList<QList<int>>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList2;
+extern Matrix1D<QList<QList<int>>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList2;*/
+
+extern std::list<TeachersPairOfMutuallyExclusiveSetsOfTimeSlots_item> tpomesotsList;
+extern Matrix1D<QList<TeachersPairOfMutuallyExclusiveSetsOfTimeSlots_item*>> tpomesotsListForTeacher;
 
 bool computeTeachersPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent);
 //END   teacher(s) pair of mutually exclusive sets of time slots
@@ -602,11 +663,24 @@ bool computeTeachersPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent);
 //BEGIN students(s) pair of mutually exclusive sets of time slots
 extern bool haveStudentsPairOfMutualExclusiveSetsOfTimeSlots;
 
-extern Matrix1D<QList<double>> subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages;
+class StudentsPairOfMutuallyExclusiveSetsOfTimeSlots_item
+{
+public:
+	//weight percentage is 100.0%
+	QSet<int> set1;
+	QList<int> list1;
+	QSet<int> set2;
+	QList<int> list2;
+};
+
+/*extern Matrix1D<QList<double>> subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages;
 extern Matrix1D<QList<QSet<int>>> subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet1;
 extern Matrix1D<QList<QList<int>>> subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList1;
 extern Matrix1D<QList<QSet<int>>> subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet2;
-extern Matrix1D<QList<QList<int>>> subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList2;
+extern Matrix1D<QList<QList<int>>> subgroupsPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList2;*/
+
+extern std::list<StudentsPairOfMutuallyExclusiveSetsOfTimeSlots_item> spomesotsList;
+extern Matrix1D<QList<StudentsPairOfMutuallyExclusiveSetsOfTimeSlots_item*>> spomesotsListForSubgroup;
 
 bool computeSubgroupsPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent);
 //END   students(s) pair of mutually exclusive sets of time slots
@@ -921,6 +995,19 @@ extern Matrix1D<double> activityBeginsTeachersDayPercentages; //-1 for not exist
 bool computeActivityBeginsTeachersDayPercentages(QWidget* parent);
 extern bool haveActivityBeginsTeachersDay;
 ////////////END   activity begins teachers day
+
+
+////////////BEGIN activity begins or ends students day
+extern Matrix1D<double> activityBeginsOrEndsStudentsDayPercentages; //-1 for not existing
+bool computeActivityBeginsOrEndsStudentsDayPercentages(QWidget* parent);
+extern bool haveActivityBeginsOrEndsStudentsDay;
+////////////END   activity begins or ends students day
+
+////////////BEGIN activity begins or ends teachers day
+extern Matrix1D<double> activityBeginsOrEndsTeachersDayPercentages; //-1 for not existing
+bool computeActivityBeginsOrEndsTeachersDayPercentages(QWidget* parent);
+extern bool haveActivityBeginsOrEndsTeachersDay;
+////////////END   activity begins or ends teachers day
 
 
 bool checkMinDays100Percent(QWidget* parent);

@@ -289,7 +289,7 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
 
-				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked(), false);
 
 				roomLabel=new QLabel(tr("Room"));
 				roomsComboBox=new QComboBox;
@@ -1226,7 +1226,7 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 
 				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
 
-				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked());
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked(), false);
 
 				teacherLabel=new QLabel(tr("Teacher"));
 				teachersComboBox=new QComboBox;

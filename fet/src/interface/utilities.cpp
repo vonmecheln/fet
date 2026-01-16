@@ -87,8 +87,9 @@ File utilities.cpp
 
 #include <QBrush>
 
-#define YES	(QString("X"))
-#define NO	(QString(" "))
+#define YES		(QString("X"))
+#define YESV	(QString("✓"))
+#define NO		(QString(" "))
 
 extern const QString COMPANY;
 extern const QString PROGRAM;
@@ -99,9 +100,10 @@ extern FetMainForm* pFetMainForm;
 
 extern Timetable gt;
 
-CornerEnabledTableWidget::CornerEnabledTableWidget(bool _useColors): QTableWidget()
+CornerEnabledTableWidget::CornerEnabledTableWidget(bool _useColors, bool _V): QTableWidget()
 {
 	useColors=_useColors;
+	V=_V;
 }
 
 void CornerEnabledTableWidget::selectAll()
@@ -118,7 +120,7 @@ void CornerEnabledTableWidget::selectAll()
 
 	QString newText;
 	if(item(0, 0)->text()==NO)
-		newText=YES;
+		newText=(V?YESV:YES);
 	else
 		newText=NO;
 	for(int i=0; i<nH; i++)
@@ -938,11 +940,20 @@ void tableViewSetHighlightHeader(QTableView* tableWidget)
 void colorItemTimesTable(CornerEnabledTableWidget* timesTable, QTableWidgetItem* item)
 {
 	if(timesTable->useColors){
-		if(item->text()==NO)
-			item->setBackground(QBrush(QColorConstants::DarkGreen));
-		else
-			item->setBackground(QBrush(QColorConstants::DarkRed));
-		item->setForeground(QBrush(QColorConstants::LightGray));
+		if(timesTable->V){
+			if(item->text()==NO)
+				item->setBackground(QBrush(QColorConstants::Svg::darkgoldenrod));
+			else
+				item->setBackground(QBrush(QColorConstants::Svg::darkcyan));
+			item->setForeground(QBrush(QColorConstants::LightGray));
+		}
+		else{
+			if(item->text()==NO)
+				item->setBackground(QBrush(QColorConstants::DarkGreen));
+			else
+				item->setBackground(QBrush(QColorConstants::DarkRed));
+			item->setForeground(QBrush(QColorConstants::LightGray));
+		}
 	}
 	else{
 		item->setBackground(timesTable->palette().base());
@@ -972,7 +983,7 @@ void initTimesTable(CornerEnabledTableWidget* timesTable)
 				QTableWidgetItem* item=new QTableWidgetItem(NO);
 
 				QFont font=item->font();
-				font.setBold(true);
+				font.setBold(!timesTable->V);
 				item->setFont(font);
 
 				item->setTextAlignment(Qt::AlignCenter);
@@ -1001,7 +1012,7 @@ void initTimesTable(CornerEnabledTableWidget* timesTable)
 				QTableWidgetItem* item=new QTableWidgetItem(NO);
 
 				QFont font=item->font();
-				font.setBold(true);
+				font.setBold(!timesTable->V);
 				item->setFont(font);
 
 				item->setTextAlignment(Qt::AlignCenter);
@@ -1038,7 +1049,7 @@ void fillTimesTable(CornerEnabledTableWidget* timesTable, const QList<int>& days
 				QTableWidgetItem* item=new QTableWidgetItem;
 
 				QFont font=item->font();
-				font.setBold(true);
+				font.setBold(!timesTable->V);
 				item->setFont(font);
 
 				item->setTextAlignment(Qt::AlignCenter);
@@ -1049,7 +1060,7 @@ void fillTimesTable(CornerEnabledTableWidget* timesTable, const QList<int>& days
 
 				if(direct){
 					if(currentMatrix[i][j])
-						item->setText(YES);
+						item->setText(timesTable->V?YESV:YES);
 					else
 						item->setText(NO);
 				}
@@ -1057,7 +1068,7 @@ void fillTimesTable(CornerEnabledTableWidget* timesTable, const QList<int>& days
 					if(currentMatrix[i][j])
 						item->setText(NO);
 					else
-						item->setText(YES);
+						item->setText(timesTable->V?YESV:YES);
 				}
 
 				colorItemTimesTable(timesTable, item);
@@ -1069,7 +1080,7 @@ void fillTimesTable(CornerEnabledTableWidget* timesTable, const QList<int>& days
 				QTableWidgetItem* item=new QTableWidgetItem;
 
 				QFont font=item->font();
-				font.setBold(true);
+				font.setBold(!timesTable->V);
 				item->setFont(font);
 
 				item->setTextAlignment(Qt::AlignCenter);
@@ -1080,7 +1091,7 @@ void fillTimesTable(CornerEnabledTableWidget* timesTable, const QList<int>& days
 
 				if(direct){
 					if(currentMatrix[i%gt.rules.nHoursPerDay][2*j+i/gt.rules.nHoursPerDay])
-						item->setText(YES);
+						item->setText(timesTable->V?YESV:YES);
 					else
 						item->setText(NO);
 				}
@@ -1088,7 +1099,7 @@ void fillTimesTable(CornerEnabledTableWidget* timesTable, const QList<int>& days
 					if(currentMatrix[i%gt.rules.nHoursPerDay][2*j+i/gt.rules.nHoursPerDay])
 						item->setText(NO);
 					else
-						item->setText(YES);
+						item->setText(timesTable->V?YESV:YES);
 				}
 
 				colorItemTimesTable(timesTable, item);
@@ -1104,7 +1115,7 @@ void getTimesTable(CornerEnabledTableWidget* timesTable, QList<int>& days, QList
 		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 			for(int i=0; i<gt.rules.nHoursPerDay; i++)
 				if(direct){
-					if(timesTable->item(i, j)->text()==YES){
+					if(timesTable->item(i, j)->text()==(timesTable->V?YESV:YES)){
 						days.append(j);
 						hours.append(i);
 					}
@@ -1120,7 +1131,7 @@ void getTimesTable(CornerEnabledTableWidget* timesTable, QList<int>& days, QList
 		for(int j=0; j<gt.rules.nDaysPerWeek/2; j++)
 			for(int i=0; i<2*gt.rules.nHoursPerDay; i++)
 				if(direct){
-					if(timesTable->item(i, j)->text()==YES){
+					if(timesTable->item(i, j)->text()==(timesTable->V?YESV:YES)){
 						days.append(2*j+i/gt.rules.nHoursPerDay);
 						hours.append(i%gt.rules.nHoursPerDay);
 					}
@@ -1150,11 +1161,11 @@ void horizontalHeaderClickedTimesTable(CornerEnabledTableWidget* timesTable, int
 
 	if(col>=0 && col<nD){
 		QString s=timesTable->item(0, col)->text();
-		if(s==YES)
+		if(s==(timesTable->V?YESV:YES))
 			s=NO;
 		else{
 			assert(s==NO);
-			s=YES;
+			s=(timesTable->V?YESV:YES);
 		}
 
 		for(int row=0; row<nH; row++){
@@ -1180,11 +1191,11 @@ void verticalHeaderClickedTimesTable(CornerEnabledTableWidget* timesTable, int r
 
 	if(row>=0 && row<nH){
 		QString s=timesTable->item(row, 0)->text();
-		if(s==YES)
+		if(s==(timesTable->V?YESV:YES))
 			s=NO;
 		else{
 			assert(s==NO);
-			s=YES;
+			s=(timesTable->V?YESV:YES);
 		}
 
 		for(int col=0; col<nD; col++){
@@ -1232,7 +1243,7 @@ void toggleAllClickedTimesTable(CornerEnabledTableWidget* timesTable)
 		for(int j=0; j<nD; j++){
 			QString newText;
 			if(timesTable->item(i, j)->text()==NO)
-				newText=YES;
+				newText=(timesTable->V?YESV:YES);
 			else
 				newText=NO;
 
@@ -1244,11 +1255,11 @@ void toggleAllClickedTimesTable(CornerEnabledTableWidget* timesTable)
 void itemClickedTimesTable(CornerEnabledTableWidget* timesTable, QTableWidgetItem* item)
 {
 	QString s=item->text();
-	if(s==YES)
+	if(s==(timesTable->V?YESV:YES))
 		s=NO;
 	else{
 		assert(s==NO);
-		s=YES;
+		s=(timesTable->V?YESV:YES);
 	}
 	item->setText(s);
 	colorItemTimesTable(timesTable, item);

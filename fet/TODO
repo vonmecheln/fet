@@ -42,25 +42,6 @@ Then the teacher's name will appear in item 4
 From mohammed, on forum (https://lalescu.ro/liviu/fet/forum/index.php?topic=4805.0):
 - Teacher(s)/students (set) activity tag min hours continuously.
 
-From ghani1990, on forum (https://lalescu.ro/liviu/fet/forum/index.php?topic=4729.0):
-- Activity(ies) start(s) or end(s) students day.
-This was implemented as a custom version for him, but it is ugly/not perfect, because each half day may contain only one
-such activity, and the implementation is not perfect (even if ghani1990 says in practice it works very well).
-ghani1990 says on that forum topic that this is to ensure that optional activities begin or end the students' day. But a
-perfect way to do this would be to divide the students and add all the activities for a students set, all the activities
-without the optional ones for another students set, and add max zero gaps for these students.
-
-Also suggested by Ali Doussary here: https://lalescu.ro/liviu/fet/forum/index.php?topic=5155.0 :
-- We need a constraint of the kind "a set of activities end students day". But we want the constraint to allow a set of activities
-to "start" or to "end" students day. The aim is to have some activities as the first or last activities the students do during
-a "Fet day", not a real day.
-
-Also suggested by YOUSSEF HOUIET here: https://lalescu.ro/liviu/fet/forum/index.php?topic=5254.0 :
-Is it possible to combine two constraints:
-Activities begin student/teacher's day
-+Activities end student/teacher's day
-to allow an activity to be in begin _or_ end of students/teacher's day.
-
 From bachiri401:
 -> In general every constraint referring to days should have a corresponding constraint for real days,
 and every constraint referring to mornings should have a corresponding one referring to afternoons.
@@ -11329,22 +11310,7 @@ https://lalescu.ro/liviu/fet/forum/index.php?topic=1220.msg36224#msg36224
 Please add the following constraint:
 A group of teachers works in the same time slot.
 
-749---------------------------------------------------------
-From Željko Vrabec (on forum):
-
-https://lalescu.ro/liviu/fet/forum/index.php?topic=6518.0
-
-Is it possible to implement that some set of activities either begin or end students day? For example group 5.A has 2 separate school hours of 2nd foreign
-language per week which need to begin OR end students day (and here we are not talking about exclusive OR).
-
-Liviu Lalescu:
-
-Many others suggested this, but it is not possible to implement efficiently.
-
-The problem with this constraint is that we cannot decide which way to continue: with the activity starting or ending the day.
-
-A possible option is to double the students sets (Y1 and Y2), and to add all the activities to Y1 and to Y2 add only the other activities
-(without the ones beginning or ending the days). Then, max 0 gaps for Y1 and Y2.
+749--------DONE in FET-7.5.1 on 27 September 2025-----------
 
 750--------------'Ctrl+H' is DONE in FET-7.4.7--------------
 From Alami Mohammed (on forum):
@@ -11369,6 +11335,14 @@ Ctrl+Shift+S → Students' timetables (days as rows)
 Ctrl+Shift+R → Rooms' timetables (days as rows)
 
 These would make it much faster to switch between the different horizontal views.
+
+---
+
+Thank you for your clarification. I understand the concern about shortcuts interfering with normal typing. Maybe a good compromise would be to keep
+these shortcuts but allow them to be optional (enabled/disabled from Settings > Interface), just like the tool tips.
+
+This way, users who prefer the mouse can continue as before, and those who want to work faster with shortcuts (for example: Ctrl+Shift+S for results,
+T for teachers, R for rooms) can enable them.
 
 751---------------------------------------------------------
 From Alami Mohammed (on forum):
@@ -11635,3 +11609,112 @@ Another request: it would be helpful if FET somehow highlighted the "transfer mo
 in the advanced statistics, also to distinguish them from simple "gaps": we take this into account when choosing among the possible schedules produced by FET;
 a schedule with fewer overall transfers is more efficient (and, usually, more popular with colleagues... especially when it rains :p).
 At the moment we're working with a patchwork made by combining Excel spreadsheets... but it's not great...
+
+766---------------------------------------------------------
+From Alami Mohammed (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6618.msg36679#msg36679
+
+I would also kindly suggest adding in the future:
+
+Export timetables to Excel (XLSX)
+
+Shortcuts for horizontal timetables:
+
+Ctrl+Shift+S → Students (days as rows)
+
+Ctrl+Shift+T → Teachers (days as rows)
+
+Ctrl+Shift+R → Rooms (days as rows)
+
+---
+
+Thank you for your clarification. I understand the concern about shortcuts interfering with normal typing. Maybe a good compromise would be to keep
+these shortcuts but allow them to be optional (enabled/disabled from Settings > Interface), just like the tool tips.
+
+This way, users who prefer the mouse can continue as before, and those who want to work faster with shortcuts (for example: Ctrl+Shift+S for results,
+T for teachers, R for rooms) can enable them.
+
+767---------------------------------------------------------
+From Alami Mohammed (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6619.0
+
+I would like to suggest adding a new type of constraint:
+
+Constraint: "Rooms available for a teacher in specific time slots"
+
+This constraint allows us to specify that a particular room is NOT available for a teacher during certain time slots, and it can be applied separately to each room.
+
+The program would then take this into account during timetable generation, ensuring that the teacher is assigned only to the allowed rooms at the specified times.
+
+For example:
+
+A teacher may have two rooms during the week.
+
+We may want to fix that in the first 4 days the teacher uses room 1, and in the last 2 days the teacher uses room 2.
+
+Currently, simply allowing two rooms may lead to a timetable where the teacher alternates randomly between the two rooms. This new constraint would prevent that.
+
+---
+
+I understand that the current constraint teacher room not available times already exists, but what I am suggesting is slightly different.
+
+The new proposed constraint is about directly assigning one or more specific rooms to a teacher in certain time slots, not just forbidding rooms.
+
+For example:
+
+I want to assign Room 1 to a teacher during the first days of the week,
+
+and Room 2 to the same teacher during the last days.
+
+With the current constraint, I would have to forbid many rooms for the teacher, which is less practical. It would be better to have a direct assignment of
+specific rooms to a teacher in chosen time slots.
+
+768---------------------------------------------------------
+From Alami Mohammed (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6620.0
+
+Thank you for your continuous improvements in FET. I would like to suggest a new type of guide/constraint regarding time restrictions for activities.
+
+Constraint: "Activities available to different teachers"
+
+This would allow an activity to be initially assigned to a first teacher, as usual.
+
+After the timetable generation, it would give the possibility to link the same activity to a second teacher, without causing conflicts or errors for
+students or other teachers.
+
+The main goal is to provide flexibility: if the first teacher is absent, the activity can be assigned to the second teacher directly.
+
+I am aware that we cannot use tags for this purpose, but using tags might complicate the process later. Therefore, it would be better to have a specific
+constraint directed at one activity or a group of activities, allowing them to be assigned to two different teachers in a controlled way.
+
+This feature would be very helpful for schools where certain activities can be taught by more than one teacher or in cases of temporary teacher absence.
+
+Liviu Lalescu:
+
+But, could you think of constraint activities min simultaneous in selected time slots?
+
+Alami Mohammed:
+
+Regarding the constraint activities min simultaneous in selected time slots: I have already tried to use it in one of my timetables. The difficulty is
+that the user needs to manually select all the time slots for each teacher's activity, and also add other constraints like no gaps, minimum hours,
+and many more. This makes the process complicated.
+
+In the new constraint I suggested, the program itself would handle the distribution more effectively. The user only defines that an activity is available
+to two teachers, and FET would automatically decide the placement of the activities and the possible substitution for the second teacher in case of absence.
+This would be much simpler and more efficient.
+
+YOUSSEF HOUIET:
+
+You can use dummy activities assigned to the second teacher and make them simultaneous with the main teacher's activities.
+
+Alami Mohammed:
+
+But in this way we will exhaust the halls theoretically because every activity, whether real or fake, must be provided with a specific place for it.
+However, if the matter is done through registration, the place will be reserved for only one activity.
+
+Liviu Lalescu:
+
+An activity can end up in an unspecified room (meaning it will have no room) if there are no space constraints for it.

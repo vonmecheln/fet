@@ -1210,6 +1210,7 @@ FetMainForm::FetMainForm()
 	menuAll_students_4_time_constraints=nullptr;
 
 	menuActivities_preferred_times_time_constraints=nullptr;
+	menuActivities_begin_end_day_time_constraints=nullptr;
 	menuActivities_others_1_time_constraints=nullptr;
 	menuActivities_others_2_time_constraints=nullptr;
 	menuActivities_others_3_time_constraints=nullptr;
@@ -1976,10 +1977,12 @@ void FetMainForm::createActionsForConstraints()
 	dataTimeConstraintsStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelectionAction = new QAction(this);
 	dataTimeConstraintsStudentsOccupyMaxSetsOfTimeSlotsFromSelectionAction = new QAction(this);
 
+	dataTimeConstraintsActivitiesOccupyMaxSetsOfTimeSlotsFromSelectionAction = new QAction(this);
+
 	dataTimeConstraintsActivitiesPairOfMutuallyExclusiveTimeSlotsAction = new QAction(this);
 	dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction = new QAction(this);
 
-	dataTimeConstraintsActivitiesOverlapCompletelyOrDontOverlapAction = new QAction(this);
+	dataTimeConstraintsActivitiesOverlapCompletelyOrDoNotOverlapAction = new QAction(this);
 
 	dataTimeConstraintsActivityPreferredStartingTimeAction = new QAction(this);
 	dataTimeConstraintsStudentsSetMaxGapsPerWeekAction = new QAction(this);
@@ -2041,6 +2044,11 @@ void FetMainForm::createActionsForConstraints()
 
 	dataTimeConstraintsActivityBeginsStudentsDayAction = new QAction(this);
 	dataTimeConstraintsActivityBeginsTeachersDayAction = new QAction(this);
+
+	dataTimeConstraintsActivityBeginsOrEndsStudentsDayAction = new QAction(this);
+	dataTimeConstraintsActivityBeginsOrEndsTeachersDayAction = new QAction(this);
+	dataTimeConstraintsActivitiesBeginOrEndStudentsDayAction = new QAction(this);
+	dataTimeConstraintsActivitiesBeginOrEndTeachersDayAction = new QAction(this);
 
 	dataTimeConstraintsTeachersMinHoursDailyAction = new QAction(this);
 	dataTimeConstraintsTeacherMinHoursDailyAction = new QAction(this);
@@ -2337,10 +2345,12 @@ void FetMainForm::createActionsForConstraints()
 	connect(dataTimeConstraintsStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelectionAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelectionAction_triggered);
 	connect(dataTimeConstraintsStudentsOccupyMaxSetsOfTimeSlotsFromSelectionAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsOccupyMaxSetsOfTimeSlotsFromSelectionAction_triggered);
 
+	connect(dataTimeConstraintsActivitiesOccupyMaxSetsOfTimeSlotsFromSelectionAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesOccupyMaxSetsOfTimeSlotsFromSelectionAction_triggered);
+
 	connect(dataTimeConstraintsActivitiesPairOfMutuallyExclusiveTimeSlotsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesPairOfMutuallyExclusiveTimeSlotsAction_triggered);
 	connect(dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction_triggered);
 
-	connect(dataTimeConstraintsActivitiesOverlapCompletelyOrDontOverlapAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesOverlapCompletelyOrDontOverlapAction_triggered);
+	connect(dataTimeConstraintsActivitiesOverlapCompletelyOrDoNotOverlapAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesOverlapCompletelyOrDoNotOverlapAction_triggered);
 
 	connect(dataTimeConstraintsActivityPreferredStartingTimeAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivityPreferredStartingTimeAction_triggered);
 	connect(dataTimeConstraintsStudentsSetMaxGapsPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerWeekAction_triggered);
@@ -2402,6 +2412,11 @@ void FetMainForm::createActionsForConstraints()
 
 	connect(dataTimeConstraintsActivityBeginsStudentsDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivityBeginsStudentsDayAction_triggered);
 	connect(dataTimeConstraintsActivityBeginsTeachersDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivityBeginsTeachersDayAction_triggered);
+
+	connect(dataTimeConstraintsActivityBeginsOrEndsStudentsDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivityBeginsOrEndsStudentsDayAction_triggered);
+	connect(dataTimeConstraintsActivityBeginsOrEndsTeachersDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivityBeginsOrEndsTeachersDayAction_triggered);
+	connect(dataTimeConstraintsActivitiesBeginOrEndStudentsDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesBeginOrEndStudentsDayAction_triggered);
+	connect(dataTimeConstraintsActivitiesBeginOrEndTeachersDayAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesBeginOrEndTeachersDayAction_triggered);
 
 	connect(dataTimeConstraintsTeachersMinHoursDailyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMinHoursDailyAction_triggered);
 	connect(dataTimeConstraintsTeacherMinHoursDailyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMinHoursDailyAction_triggered);
@@ -2697,6 +2712,8 @@ void FetMainForm::retranslateConstraints()
 
 	if(menuActivities_preferred_times_time_constraints!=nullptr)
 		menuActivities_preferred_times_time_constraints->setTitle(QCoreApplication::translate("FetMainForm_template", "Preferred times", "The menu of the list of preferred time constraints for activities"));
+	if(menuActivities_begin_end_day_time_constraints!=nullptr)
+		menuActivities_begin_end_day_time_constraints->setTitle(QCoreApplication::translate("FetMainForm_template", "Begin/end day", "The menu of the list of begin/end day time constraints for activities"));
 	if(menuActivities_others_1_time_constraints!=nullptr)
 		menuActivities_others_1_time_constraints->setTitle(QCoreApplication::translate("FetMainForm_template", "Others (1)", "The menu of the list of other time constraints for activities (1st part)"));
 	if(menuActivities_others_2_time_constraints!=nullptr)
@@ -2746,10 +2763,12 @@ void FetMainForm::retranslateConstraints()
 	dataTimeConstraintsStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelectionAction->setText(QCoreApplication::translate("FetMainForm_template", "A students set occupies max sets of time slots from selection", nullptr));
 	dataTimeConstraintsStudentsOccupyMaxSetsOfTimeSlotsFromSelectionAction->setText(QCoreApplication::translate("FetMainForm_template", "All students occupy max sets of time slots from selection", nullptr));
 
+	dataTimeConstraintsActivitiesOccupyMaxSetsOfTimeSlotsFromSelectionAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities occupies max sets of time slots from selection", nullptr));
+
 	dataTimeConstraintsActivitiesPairOfMutuallyExclusiveTimeSlotsAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities has a pair of mutually exclusive time slots", nullptr));
 	dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities has a pair of mutually exclusive sets of time slots", nullptr));
 
-	dataTimeConstraintsActivitiesOverlapCompletelyOrDontOverlapAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities overlap completely or don't overlap", nullptr));
+	dataTimeConstraintsActivitiesOverlapCompletelyOrDoNotOverlapAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities overlap completely or do not overlap", nullptr));
 
 	dataTimeConstraintsActivityPreferredStartingTimeAction->setText(QCoreApplication::translate("FetMainForm_template", "An activity has a preferred starting time", nullptr));
 	dataTimeConstraintsStudentsSetMaxGapsPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max gaps per week for a students set", nullptr));
@@ -2812,6 +2831,11 @@ void FetMainForm::retranslateConstraints()
 
 	dataTimeConstraintsActivityBeginsStudentsDayAction->setText(QCoreApplication::translate("FetMainForm_template", "An activity begins students day", nullptr));
 	dataTimeConstraintsActivityBeginsTeachersDayAction->setText(QCoreApplication::translate("FetMainForm_template", "An activity begins teachers day", nullptr));
+
+	dataTimeConstraintsActivityBeginsOrEndsStudentsDayAction->setText(QCoreApplication::translate("FetMainForm_template", "An activity begins or ends students day", nullptr));
+	dataTimeConstraintsActivityBeginsOrEndsTeachersDayAction->setText(QCoreApplication::translate("FetMainForm_template", "An activity begins or ends teachers day", nullptr));
+	dataTimeConstraintsActivitiesBeginOrEndStudentsDayAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities begin or end students day", nullptr));
+	dataTimeConstraintsActivitiesBeginOrEndTeachersDayAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities begin or end teachers day", nullptr));
 
 	dataTimeConstraintsTeachersMinHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Min hours daily for all teachers", nullptr));
 	dataTimeConstraintsTeacherMinHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Min hours daily for a teacher", nullptr));
@@ -3093,6 +3117,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 	menuAll_students_4_time_constraints=nullptr;
 
 	menuActivities_preferred_times_time_constraints=nullptr;
+	menuActivities_begin_end_day_time_constraints=nullptr;
 	menuActivities_others_1_time_constraints=nullptr;
 	menuActivities_others_2_time_constraints=nullptr;
 	menuActivities_others_3_time_constraints=nullptr;
@@ -3143,16 +3168,19 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuMisc_time_constraints->addAction(dataTimeConstraintsBreakTimesAction);
 		//
 		menuActivities_preferred_times_time_constraints=new QMenu(menuActivities_time_constraints);
+		menuActivities_begin_end_day_time_constraints=new QMenu(menuActivities_time_constraints);
 		menuActivities_others_1_time_constraints=new QMenu(menuActivities_time_constraints);
 		menuActivities_others_2_time_constraints=new QMenu(menuActivities_time_constraints);
 		menuActivities_others_3_time_constraints=new QMenu(menuActivities_time_constraints);
 		//
 		menuActivities_time_constraints->addMenu(menuActivities_preferred_times_time_constraints);
+		menuActivities_time_constraints->addMenu(menuActivities_begin_end_day_time_constraints);
 		menuActivities_time_constraints->addMenu(menuActivities_others_1_time_constraints);
 		menuActivities_time_constraints->addMenu(menuActivities_others_2_time_constraints);
 		menuActivities_time_constraints->addMenu(menuActivities_others_3_time_constraints);
 		//
 		menuActivities_preferred_times_time_constraints->setTitle(QCoreApplication::translate("FetMainForm_template", "Preferred times", "The menu of the list of preferred time constraints for activities"));
+		menuActivities_begin_end_day_time_constraints->setTitle(QCoreApplication::translate("FetMainForm_template", "Begin/end day", "The menu of the list of begin/end day time constraints for activities"));
 		menuActivities_others_1_time_constraints->setTitle(QCoreApplication::translate("FetMainForm_template", "Others (1)", "The menu of the list of other time constraints for activities (1st part)"));
 		menuActivities_others_2_time_constraints->setTitle(QCoreApplication::translate("FetMainForm_template", "Others (2)", "The menu of the list of other time constraints for activities (2nd part)"));
 		menuActivities_others_3_time_constraints->setTitle(QCoreApplication::translate("FetMainForm_template", "Others (3)", "The menu of the list of other time constraints for activities (3rd part)"));
@@ -3285,49 +3313,56 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsSubactivitiesPreferredStartingTimesAction);
 		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction);
 
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivityBeginsStudentsDayAction);
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivitiesBeginStudentsDayAction);
+		menuActivities_begin_end_day_time_constraints->addSeparator();
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivityBeginsTeachersDayAction);
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivitiesBeginTeachersDayAction);
+		menuActivities_begin_end_day_time_constraints->addSeparator();
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivityEndsStudentsDayAction);
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivitiesEndStudentsDayAction);
+		menuActivities_begin_end_day_time_constraints->addSeparator();
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivityEndsTeachersDayAction);
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivitiesEndTeachersDayAction);
+		menuActivities_begin_end_day_time_constraints->addSeparator();
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivityBeginsOrEndsStudentsDayAction);
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivitiesBeginOrEndStudentsDayAction);
+		menuActivities_begin_end_day_time_constraints->addSeparator();
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivityBeginsOrEndsTeachersDayAction);
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivitiesBeginOrEndTeachersDayAction);
+
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMinDaysBetweenActivitiesAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMaxDaysBetweenActivitiesAction);
 
 		menuActivities_others_1_time_constraints->addSeparator();
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityBeginsStudentsDayAction);
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesBeginStudentsDayAction);
-		menuActivities_others_1_time_constraints->addSeparator();
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityBeginsTeachersDayAction);
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesBeginTeachersDayAction);
+
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingTimeAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingDayAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingHourAction);
 
 		menuActivities_others_1_time_constraints->addSeparator();
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityEndsStudentsDayAction);
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesEndStudentsDayAction);
-		menuActivities_others_1_time_constraints->addSeparator();
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityEndsTeachersDayAction);
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesEndTeachersDayAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesPairOfMutuallyExclusiveTimeSlotsAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
 
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMaxSetsOfTimeSlotsFromSelectionAction);
+
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction);
 		//menuActivities_others_1_time_constraints->addSeparator();
-		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingTimeAction);
-		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingDayAction);
-		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingHourAction);
-
-		menuActivities_others_2_time_constraints->addSeparator();
-		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesPairOfMutuallyExclusiveTimeSlotsAction);
-		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
-
-		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction);
-		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction);
-		menuActivities_others_2_time_constraints->addSeparator();
 
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedAction);
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoSetsOfActivitiesOrderedAction);
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction);
-		//menuActivities_others_2_time_constraints->addSeparator();
-		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsTwoActivitiesConsecutiveAction);
-		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsTwoActivitiesGroupedAction);
-		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsThreeActivitiesGroupedAction);
-		menuActivities_others_3_time_constraints->addSeparator();
-		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxHourlySpanAction);
-		menuActivities_others_3_time_constraints->addSeparator();
+		menuActivities_others_2_time_constraints->addSeparator();
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesConsecutiveAction);
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesGroupedAction);
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsThreeActivitiesGroupedAction);
+		menuActivities_others_2_time_constraints->addSeparator();
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesMaxHourlySpanAction);
+		//menuActivities_others_3_time_constraints->addSeparator();
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesNotOverlappingAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivityTagsNotOverlappingAction);
-		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesOverlapCompletelyOrDontOverlapAction);
+		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesOverlapCompletelyOrDoNotOverlapAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction);
 		menuActivities_others_3_time_constraints->addSeparator();
@@ -3426,6 +3461,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_students_4_time_constraints=new QMenu(menuStudents_time_constraints);
 		//
 		menuActivities_preferred_times_time_constraints=new QMenu(menuActivities_time_constraints);
+		menuActivities_begin_end_day_time_constraints=new QMenu(menuActivities_time_constraints);
 		menuActivities_others_1_time_constraints=new QMenu(menuActivities_time_constraints);
 		menuActivities_others_2_time_constraints=new QMenu(menuActivities_time_constraints);
 		menuActivities_others_3_time_constraints=new QMenu(menuActivities_time_constraints);
@@ -3449,6 +3485,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuStudents_time_constraints->addMenu(menuAll_students_4_time_constraints);
 		//
 		menuActivities_time_constraints->addMenu(menuActivities_preferred_times_time_constraints);
+		menuActivities_time_constraints->addMenu(menuActivities_begin_end_day_time_constraints);
 		menuActivities_time_constraints->addMenu(menuActivities_others_1_time_constraints);
 		menuActivities_time_constraints->addMenu(menuActivities_others_2_time_constraints);
 		menuActivities_time_constraints->addMenu(menuActivities_others_3_time_constraints);
@@ -3472,6 +3509,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_students_4_time_constraints->setTitle(QCoreApplication::translate("FetMainForm_template", "All students (4)", "The menu of all students time constraints, part 4"));
 		//
 		menuActivities_preferred_times_time_constraints->setTitle(QCoreApplication::translate("FetMainForm_template", "Preferred times", "The menu of the list of preferred time constraints for activities"));
+		menuActivities_begin_end_day_time_constraints->setTitle(QCoreApplication::translate("FetMainForm_template", "Begin/end day", "The menu of the list of begin/end day time constraints for activities"));
 		menuActivities_others_1_time_constraints->setTitle(QCoreApplication::translate("FetMainForm_template", "Others (1)", "The menu of the list of other time constraints for activities (1st part)"));
 		menuActivities_others_2_time_constraints->setTitle(QCoreApplication::translate("FetMainForm_template", "Others (2)", "The menu of the list of other time constraints for activities (2nd part)"));
 		menuActivities_others_3_time_constraints->setTitle(QCoreApplication::translate("FetMainForm_template", "Others (3)", "The menu of the list of other time constraints for activities (3rd part)"));
@@ -3774,51 +3812,58 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsSubactivitiesPreferredStartingTimesAction);
 		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction);
 
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivityBeginsStudentsDayAction);
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivitiesBeginStudentsDayAction);
+		menuActivities_begin_end_day_time_constraints->addSeparator();
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivityBeginsTeachersDayAction);
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivitiesBeginTeachersDayAction);
+		menuActivities_begin_end_day_time_constraints->addSeparator();
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivityEndsStudentsDayAction);
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivitiesEndStudentsDayAction);
+		menuActivities_begin_end_day_time_constraints->addSeparator();
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivityEndsTeachersDayAction);
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivitiesEndTeachersDayAction);
+		menuActivities_begin_end_day_time_constraints->addSeparator();
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivityBeginsOrEndsStudentsDayAction);
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivitiesBeginOrEndStudentsDayAction);
+		menuActivities_begin_end_day_time_constraints->addSeparator();
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivityBeginsOrEndsTeachersDayAction);
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivitiesBeginOrEndTeachersDayAction);
+		
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMinDaysBetweenActivitiesAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMinHalfDaysBetweenActivitiesAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMaxDaysBetweenActivitiesAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMaxHalfDaysBetweenActivitiesAction);
 
 		menuActivities_others_1_time_constraints->addSeparator();
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityBeginsStudentsDayAction);
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesBeginStudentsDayAction);
-		menuActivities_others_1_time_constraints->addSeparator();
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityBeginsTeachersDayAction);
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesBeginTeachersDayAction);
-
-		menuActivities_others_1_time_constraints->addSeparator();
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityEndsStudentsDayAction);
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesEndStudentsDayAction);
-		menuActivities_others_1_time_constraints->addSeparator();
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityEndsTeachersDayAction);
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesEndTeachersDayAction);
-
 		//menuActivities_others_1_time_constraints->addSeparator();
-		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingTimeAction);
-		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingDayAction);
-		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingHourAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingTimeAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingDayAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingHourAction);
 
-		menuActivities_others_2_time_constraints->addSeparator();
-		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesPairOfMutuallyExclusiveTimeSlotsAction);
-		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
+		menuActivities_others_1_time_constraints->addSeparator();
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesPairOfMutuallyExclusiveTimeSlotsAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
 
-		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction);
-		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction);
-		menuActivities_others_2_time_constraints->addSeparator();
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMaxSetsOfTimeSlotsFromSelectionAction);
+
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction);
+		//menuActivities_others_1_time_constraints->addSeparator();
 
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedAction);
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoSetsOfActivitiesOrderedAction);
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction);
-		//menuActivities_others_2_time_constraints->addSeparator();
-		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsTwoActivitiesConsecutiveAction);
-		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsTwoActivitiesGroupedAction);
-		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsThreeActivitiesGroupedAction);
-		menuActivities_others_3_time_constraints->addSeparator();
-		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxHourlySpanAction);
-		menuActivities_others_3_time_constraints->addSeparator();
+		menuActivities_others_2_time_constraints->addSeparator();
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesConsecutiveAction);
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesGroupedAction);
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsThreeActivitiesGroupedAction);
+		menuActivities_others_2_time_constraints->addSeparator();
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesMaxHourlySpanAction);
+		//menuActivities_others_3_time_constraints->addSeparator();
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesNotOverlappingAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivityTagsNotOverlappingAction);
-		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesOverlapCompletelyOrDontOverlapAction);
+		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesOverlapCompletelyOrDoNotOverlapAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction);
 		menuActivities_others_3_time_constraints->addSeparator();
@@ -3946,16 +3991,19 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuMisc_time_constraints->addAction(dataTimeConstraintsBreakTimesAction);
 
 		menuActivities_preferred_times_time_constraints=new QMenu(menuActivities_time_constraints);
+		menuActivities_begin_end_day_time_constraints=new QMenu(menuActivities_time_constraints);
 		menuActivities_others_1_time_constraints=new QMenu(menuActivities_time_constraints);
 		menuActivities_others_2_time_constraints=new QMenu(menuActivities_time_constraints);
 		menuActivities_others_3_time_constraints=new QMenu(menuActivities_time_constraints);
 		//
 		menuActivities_time_constraints->addMenu(menuActivities_preferred_times_time_constraints);
+		menuActivities_time_constraints->addMenu(menuActivities_begin_end_day_time_constraints);
 		menuActivities_time_constraints->addMenu(menuActivities_others_1_time_constraints);
 		menuActivities_time_constraints->addMenu(menuActivities_others_2_time_constraints);
 		menuActivities_time_constraints->addMenu(menuActivities_others_3_time_constraints);
 		//
 		menuActivities_preferred_times_time_constraints->setTitle(QCoreApplication::translate("FetMainForm_template", "Preferred times", "The menu of the list of preferred time constraints for activities"));
+		menuActivities_begin_end_day_time_constraints->setTitle(QCoreApplication::translate("FetMainForm_template", "Begin/end day", "The menu of the list of begin/end day time constraints for activities"));
 		menuActivities_others_1_time_constraints->setTitle(QCoreApplication::translate("FetMainForm_template", "Others (1)", "The menu of the list of other time constraints for activities (1st part)"));
 		menuActivities_others_2_time_constraints->setTitle(QCoreApplication::translate("FetMainForm_template", "Others (2)", "The menu of the list of other time constraints for activities (2nd part)"));
 		menuActivities_others_3_time_constraints->setTitle(QCoreApplication::translate("FetMainForm_template", "Others (3)", "The menu of the list of other time constraints for activities (3rd part)"));
@@ -4088,54 +4136,61 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsSubactivitiesPreferredStartingTimesAction);
 		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction);
 
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivityBeginsStudentsDayAction);
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivitiesBeginStudentsDayAction);
+		menuActivities_begin_end_day_time_constraints->addSeparator();
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivityBeginsTeachersDayAction);
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivitiesBeginTeachersDayAction);
+		menuActivities_begin_end_day_time_constraints->addSeparator();
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivityEndsStudentsDayAction);
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivitiesEndStudentsDayAction);
+		menuActivities_begin_end_day_time_constraints->addSeparator();
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivityEndsTeachersDayAction);
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivitiesEndTeachersDayAction);
+		menuActivities_begin_end_day_time_constraints->addSeparator();
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivityBeginsOrEndsStudentsDayAction);
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivitiesBeginOrEndStudentsDayAction);
+		menuActivities_begin_end_day_time_constraints->addSeparator();
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivityBeginsOrEndsTeachersDayAction);
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivitiesBeginOrEndTeachersDayAction);
+
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMinDaysBetweenActivitiesAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMaxDaysBetweenActivitiesAction);
 
 		menuActivities_others_1_time_constraints->addSeparator();
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityBeginsStudentsDayAction);
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesBeginStudentsDayAction);
-		menuActivities_others_1_time_constraints->addSeparator();
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityBeginsTeachersDayAction);
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesBeginTeachersDayAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingTimeAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingDayAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingHourAction);
 
 		menuActivities_others_1_time_constraints->addSeparator();
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityEndsStudentsDayAction);
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesEndStudentsDayAction);
-		menuActivities_others_1_time_constraints->addSeparator();
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityEndsTeachersDayAction);
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesEndTeachersDayAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesPairOfMutuallyExclusiveTimeSlotsAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
 
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMaxSetsOfTimeSlotsFromSelectionAction);
+
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction);
 		//menuActivities_others_1_time_constraints->addSeparator();
-		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingTimeAction);
-		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingDayAction);
-		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingHourAction);
-
-		menuActivities_others_2_time_constraints->addSeparator();
-		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesPairOfMutuallyExclusiveTimeSlotsAction);
-		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
-
-		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction);
-		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction);
-		menuActivities_others_2_time_constraints->addSeparator();
 
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoSetsOfActivitiesSameSectionsAction);
 		menuActivities_others_2_time_constraints->addSeparator();
 
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsMaxTotalActivitiesFromSetInSelectedTimeSlotsAction);
-		//menuActivities_others_2_time_constraints->addSeparator();
-		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedAction);
-		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsTwoSetsOfActivitiesOrderedAction);
-		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction);
-		menuActivities_others_3_time_constraints->addSeparator();
-		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsTwoActivitiesConsecutiveAction);
-		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsTwoActivitiesGroupedAction);
-		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsThreeActivitiesGroupedAction);
-		menuActivities_others_3_time_constraints->addSeparator();
+		menuActivities_others_2_time_constraints->addSeparator();
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedAction);
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoSetsOfActivitiesOrderedAction);
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction);
+		menuActivities_others_2_time_constraints->addSeparator();
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesConsecutiveAction);
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesGroupedAction);
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsThreeActivitiesGroupedAction);
+
+		//menuActivities_others_3_time_constraints->addSeparator();
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxHourlySpanAction);
 		menuActivities_others_3_time_constraints->addSeparator();
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesNotOverlappingAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivityTagsNotOverlappingAction);
-		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesOverlapCompletelyOrDontOverlapAction);
+		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesOverlapCompletelyOrDoNotOverlapAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction);
 		menuActivities_others_3_time_constraints->addSeparator();
@@ -4247,16 +4302,19 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuMisc_time_constraints->addAction(dataTimeConstraintsBreakTimesAction);
 
 		menuActivities_preferred_times_time_constraints=new QMenu(menuActivities_time_constraints);
+		menuActivities_begin_end_day_time_constraints=new QMenu(menuActivities_time_constraints);
 		menuActivities_others_1_time_constraints=new QMenu(menuActivities_time_constraints);
 		menuActivities_others_2_time_constraints=new QMenu(menuActivities_time_constraints);
 		menuActivities_others_3_time_constraints=new QMenu(menuActivities_time_constraints);
 		//
 		menuActivities_time_constraints->addMenu(menuActivities_preferred_times_time_constraints);
+		menuActivities_time_constraints->addMenu(menuActivities_begin_end_day_time_constraints);
 		menuActivities_time_constraints->addMenu(menuActivities_others_1_time_constraints);
 		menuActivities_time_constraints->addMenu(menuActivities_others_2_time_constraints);
 		menuActivities_time_constraints->addMenu(menuActivities_others_3_time_constraints);
 		//
 		menuActivities_preferred_times_time_constraints->setTitle(QCoreApplication::translate("FetMainForm_template", "Preferred times", "The menu of the list of preferred time constraints for activities"));
+		menuActivities_begin_end_day_time_constraints->setTitle(QCoreApplication::translate("FetMainForm_template", "Begin/end day", "The menu of the list of begin/end day time constraints for activities"));
 		menuActivities_others_1_time_constraints->setTitle(QCoreApplication::translate("FetMainForm_template", "Others (1)", "The menu of the list of other time constraints for activities (1st part)"));
 		menuActivities_others_2_time_constraints->setTitle(QCoreApplication::translate("FetMainForm_template", "Others (2)", "The menu of the list of other time constraints for activities (2nd part)"));
 		menuActivities_others_3_time_constraints->setTitle(QCoreApplication::translate("FetMainForm_template", "Others (3)", "The menu of the list of other time constraints for activities (3rd part)"));
@@ -4395,35 +4453,42 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsSubactivitiesPreferredStartingTimesAction);
 		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction);
 
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivityBeginsStudentsDayAction);
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivitiesBeginStudentsDayAction);
+		menuActivities_begin_end_day_time_constraints->addSeparator();
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivityBeginsTeachersDayAction);
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivitiesBeginTeachersDayAction);
+		menuActivities_begin_end_day_time_constraints->addSeparator();
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivityEndsStudentsDayAction);
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivitiesEndStudentsDayAction);
+		menuActivities_begin_end_day_time_constraints->addSeparator();
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivityEndsTeachersDayAction);
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivitiesEndTeachersDayAction);
+		menuActivities_begin_end_day_time_constraints->addSeparator();
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivityBeginsOrEndsStudentsDayAction);
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivitiesBeginOrEndStudentsDayAction);
+		menuActivities_begin_end_day_time_constraints->addSeparator();
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivityBeginsOrEndsTeachersDayAction);
+		menuActivities_begin_end_day_time_constraints->addAction(dataTimeConstraintsActivitiesBeginOrEndTeachersDayAction);
+		
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMinDaysBetweenActivitiesAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMaxDaysBetweenActivitiesAction);
-
-		menuActivities_others_1_time_constraints->addSeparator();
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityBeginsStudentsDayAction);
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesBeginStudentsDayAction);
-		menuActivities_others_1_time_constraints->addSeparator();
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityBeginsTeachersDayAction);
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesBeginTeachersDayAction);
-
-		menuActivities_others_1_time_constraints->addSeparator();
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityEndsStudentsDayAction);
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesEndStudentsDayAction);
-		menuActivities_others_1_time_constraints->addSeparator();
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityEndsTeachersDayAction);
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesEndTeachersDayAction);
 
 		menuActivities_others_1_time_constraints->addSeparator();
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingTimeAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingDayAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingHourAction);
 
-		//menuActivities_others_1_time_constraints->addSeparator();
-		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesPairOfMutuallyExclusiveTimeSlotsAction);
-		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
+		menuActivities_others_1_time_constraints->addSeparator();
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesPairOfMutuallyExclusiveTimeSlotsAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
 
-		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction);
-		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction);
-		menuActivities_others_2_time_constraints->addSeparator();
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMaxSetsOfTimeSlotsFromSelectionAction);
+
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction);
+
+		//menuActivities_others_2_time_constraints->addSeparator();
 
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedAction);
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoSetsOfActivitiesOrderedAction);
@@ -4434,13 +4499,17 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsThreeActivitiesGroupedAction);
 		menuActivities_others_2_time_constraints->addSeparator();
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesMaxHourlySpanAction);
+
 		//menuActivities_others_2_time_constraints->addSeparator();
+
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesNotOverlappingAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivityTagsNotOverlappingAction);
-		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesOverlapCompletelyOrDontOverlapAction);
+		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesOverlapCompletelyOrDoNotOverlapAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction);
+
 		menuActivities_others_3_time_constraints->addSeparator();
+
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsMinGapsBetweenActivitiesAction);
 
 		menuActivities_others_3_time_constraints->addSeparator();
@@ -7368,6 +7437,86 @@ void FetMainForm::dataTimeConstraintsActivitiesBeginTeachersDayAction_triggered(
 	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY);
 }
 
+void FetMainForm::dataTimeConstraintsActivityBeginsOrEndsStudentsDayAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	/*ConstraintActivityBeginsStudentsDayForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_STUDENTS_DAY);
+}
+
+void FetMainForm::dataTimeConstraintsActivitiesBeginOrEndStudentsDayAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	/*ConstraintActivitiesBeginStudentsDayForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_BEGIN_OR_END_STUDENTS_DAY);
+}
+
+void FetMainForm::dataTimeConstraintsActivityBeginsOrEndsTeachersDayAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	/*ConstraintActivityBeginsTeachersDayForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_TEACHERS_DAY);
+}
+
+void FetMainForm::dataTimeConstraintsActivitiesBeginOrEndTeachersDayAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	/*ConstraintActivitiesBeginTeachersDayForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY);
+}
+
 void FetMainForm::dataTimeConstraintsActivitiesSameStartingTimeAction_triggered()
 {
 	if(!gt.rules.initialized){
@@ -7528,7 +7677,7 @@ void FetMainForm::dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlot
 	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_MIN_SIMULTANEOUS_IN_SELECTED_TIME_SLOTS);
 }
 
-void FetMainForm::dataTimeConstraintsActivitiesOverlapCompletelyOrDontOverlapAction_triggered()
+void FetMainForm::dataTimeConstraintsActivitiesOverlapCompletelyOrDoNotOverlapAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -7545,7 +7694,7 @@ void FetMainForm::dataTimeConstraintsActivitiesOverlapCompletelyOrDontOverlapAct
 	/*ConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();*/
-	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP);
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DO_NOT_OVERLAP);
 }
 
 void FetMainForm::dataTimeConstraintsMaxTotalActivitiesFromSetInSelectedTimeSlotsAction_triggered()
@@ -9009,6 +9158,23 @@ void FetMainForm::dataTimeConstraintsStudentsOccupyMaxSetsOfTimeSlotsFromSelecti
 	}
 
 	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION);
+}
+
+void FetMainForm::dataTimeConstraintsActivitiesOccupyMaxSetsOfTimeSlotsFromSelectionAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION);
 }
 
 void FetMainForm::dataTimeConstraintsActivitiesPairOfMutuallyExclusiveTimeSlotsAction_triggered()

@@ -293,6 +293,8 @@ class AddOrModifyTimeConstraint: public QObject
 
 	QTabWidget* tabWidget;
 
+	QTabWidget* tabWidgetAOMSOTSFS; //activities occupy max sets of time slots from selection
+
 	QCheckBox* allowEmptySlotsCheckBox;
 
 	QTabWidget* tabWidgetTwoSetsOfActivities;

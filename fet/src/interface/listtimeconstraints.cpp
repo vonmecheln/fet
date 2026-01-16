@@ -3046,10 +3046,10 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 				break;
 			}
 		//247
-		case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP:
+		case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DO_NOT_OVERLAP:
 			{
-				dialogTitle=tr("Constraints activities overlap completely or don't overlap", "The title of the dialog to list the constraints of this type");
-				dialogName=QString("ConstraintsActivitiesOverlapCompletelyOrDontOverlap");
+				dialogTitle=tr("Constraints activities overlap completely or do not overlap", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsActivitiesOverlapCompletelyOrDoNotOverlap");
 
 				teachersComboBox=new QComboBox;
 				studentsComboBox=new QComboBox;
@@ -3057,6 +3057,63 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 				activityTagsComboBox=new QComboBox;
 
 				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
+		//248
+		case CONSTRAINT_ACTIVITIES_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				dialogTitle=tr("Constraints activities occupy max sets of time slots from selection", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsActivitiesOccupyMaxSetsOfTimeSlotsFromSelection");
+
+				teachersComboBox=new QComboBox;
+				studentsComboBox=new QComboBox;
+				subjectsComboBox=new QComboBox;
+				activityTagsComboBox=new QComboBox;
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
+		//249
+		case CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_STUDENTS_DAY:
+			{
+				dialogTitle=tr("Constraints activity begins or ends students day", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsActivityBeginsOrEndsStudentsDay");
+
+				teachersComboBox=new QComboBox;
+				studentsComboBox=new QComboBox;
+				subjectsComboBox=new QComboBox;
+				activityTagsComboBox=new QComboBox;
+
+				break;
+			}
+		//250
+		case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_STUDENTS_DAY:
+			{
+				dialogTitle=tr("Constraints activities begin or end students day", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsActivitiesBeginOrEndStudentsDay");
+
+				break;
+			}
+		//251
+		case CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_TEACHERS_DAY:
+			{
+				dialogTitle=tr("Constraints activity begins or ends teachers day", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsActivityBeginsOrEndsTeachersDay");
+
+				teachersComboBox=new QComboBox;
+				studentsComboBox=new QComboBox;
+				subjectsComboBox=new QComboBox;
+				activityTagsComboBox=new QComboBox;
+
+				break;
+			}
+		//252
+		case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY:
+			{
+				dialogTitle=tr("Constraints activities begin or end teachers day", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsActivitiesBeginOrEndTeachersDay");
 
 				break;
 			}
@@ -6906,7 +6963,7 @@ filtered_ok:
 				break;
 			}
 		//247
-		case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP:
+		case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DO_NOT_OVERLAP:
 			{
 				assert(teachersComboBox!=nullptr);
 				assert(studentsComboBox!=nullptr);
@@ -6919,7 +6976,7 @@ filtered_ok:
 						&& studentsComboBox->currentText()==QString(""))
 					return true;
 
-				ConstraintActivitiesOverlapCompletelyOrDontOverlap* ctr=(ConstraintActivitiesOverlapCompletelyOrDontOverlap*)tc;
+				ConstraintActivitiesOverlapCompletelyOrDoNotOverlap* ctr=(ConstraintActivitiesOverlapCompletelyOrDoNotOverlap*)tc;
 
 				bool foundTeacher=false;
 				bool foundSubject=false;
@@ -6945,6 +7002,119 @@ filtered_ok:
 				}
 
 				return false;
+
+				break;
+			}
+		//248
+		case CONSTRAINT_ACTIVITIES_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				assert(teachersComboBox!=nullptr);
+				assert(studentsComboBox!=nullptr);
+				assert(subjectsComboBox!=nullptr);
+				assert(activityTagsComboBox!=nullptr);
+
+				if(teachersComboBox->currentText()==QString("")
+						&& subjectsComboBox->currentText()==QString("")
+						&& activityTagsComboBox->currentText()==QString("")
+						&& studentsComboBox->currentText()==QString(""))
+					return true;
+
+				ConstraintActivitiesOverlapCompletelyOrDoNotOverlap* ctr=(ConstraintActivitiesOverlapCompletelyOrDoNotOverlap*)tc;
+
+				bool foundTeacher=false;
+				bool foundSubject=false;
+				bool foundActivityTag=false;
+				bool foundStudents=false;
+
+				for(int id : ctr->activitiesIds){
+					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
+
+					if(act!=nullptr){
+						if(teachersComboBox->currentText()==QString("") || act->teachersNames.contains(teachersComboBox->currentText()))
+							foundTeacher=true;
+						if(subjectsComboBox->currentText()==QString("") || subjectsComboBox->currentText()==act->subjectName)
+							foundSubject=true;
+						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
+							foundActivityTag=true;
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
+							foundStudents=true;
+					}
+
+					if(foundTeacher && foundSubject && foundActivityTag && foundStudents)
+						return true;
+				}
+
+				return false;
+
+				break;
+			}
+		//249
+		case CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_STUDENTS_DAY:
+			{
+				assert(teachersComboBox!=nullptr);
+				assert(studentsComboBox!=nullptr);
+				assert(subjectsComboBox!=nullptr);
+				assert(activityTagsComboBox!=nullptr);
+
+				ConstraintActivityBeginsOrEndsStudentsDay* ctr=(ConstraintActivityBeginsOrEndsStudentsDay*)tc;
+
+				int id=ctr->activityId;
+				Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
+
+				if(act!=nullptr){
+					if(teachersComboBox->currentText()!=QString("") && !act->teachersNames.contains(teachersComboBox->currentText()))
+						return false;
+					if(subjectsComboBox->currentText()!=QString("") && subjectsComboBox->currentText()!=act->subjectName)
+						return false;
+					if(activityTagsComboBox->currentText()!=QString("") && !act->activityTagsNames.contains(activityTagsComboBox->currentText()))
+						return false;
+					if(studentsComboBox->currentText()!=QString("") && !showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
+						return false;
+				}
+
+				return true;
+
+				break;
+			}
+		//250
+		case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_STUDENTS_DAY:
+			{
+				return true;
+
+				break;
+			}
+		//251
+		case CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_TEACHERS_DAY:
+			{
+				assert(teachersComboBox!=nullptr);
+				assert(studentsComboBox!=nullptr);
+				assert(subjectsComboBox!=nullptr);
+				assert(activityTagsComboBox!=nullptr);
+
+				ConstraintActivityBeginsOrEndsTeachersDay* ctr=(ConstraintActivityBeginsOrEndsTeachersDay*)tc;
+
+				int id=ctr->activityId;
+				Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
+
+				if(act!=nullptr){
+					if(teachersComboBox->currentText()!=QString("") && !act->teachersNames.contains(teachersComboBox->currentText()))
+						return false;
+					if(subjectsComboBox->currentText()!=QString("") && subjectsComboBox->currentText()!=act->subjectName)
+						return false;
+					if(activityTagsComboBox->currentText()!=QString("") && !act->activityTagsNames.contains(activityTagsComboBox->currentText()))
+						return false;
+					if(studentsComboBox->currentText()!=QString("") && !showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
+						return false;
+				}
+
+				return true;
+
+				break;
+			}
+		//252
+		case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY:
+			{
+				return true;
 
 				break;
 			}
@@ -7770,7 +7940,7 @@ void ListTimeConstraints::helpClicked()
 				s+="\n\n";
 				s+=tr("This constraint ensures that the teachers (or the specified teacher), or the students (or the specified"
 				 " students set) can have activities in a maximum 1 or 2 (this number is selected by the user) sets of time"
-				 " slots from a selection of sets of time slots");
+				 " slots from a selection of sets of time slots. The unselected time slots are not subject to constraints.");
 				s+="\n";
 
 				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
@@ -7778,7 +7948,7 @@ void ListTimeConstraints::helpClicked()
 				break;
 			}
 		//247
-		case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP:
+		case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DO_NOT_OVERLAP:
 			{
 				QString s=tr("This constraint was suggested by %1.", "%1 is the person who suggested this constraint.")
 				 .arg("alege");
@@ -7786,6 +7956,21 @@ void ListTimeConstraints::helpClicked()
 				s+=tr("This constraint has specified a set of activities, which must all have the same duration, greater than 1,"
 				 " and ensures that each pair of activities from this set are either overlapping completely (they have the same"
 				 " starting day and hour), or are not overlapping at all (have no common time slot(s)).");
+				s+="\n";
+
+				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
+
+				break;
+			}
+		//248
+		case CONSTRAINT_ACTIVITIES_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				QString s=tr("This constraint was suggested by %1, and maybe by other users in the past.",
+				 "%1 is a person who suggested this constraint.").arg("k3nt0n");
+				s+="\n\n";
+				s+=tr("This constraint ensures that the selected activities can take place in a maximum 1 or 2"
+				 " (this number is selected by the user) sets of time slots from a selection of sets of time slots."
+				 " The unselected time slots are not subject to constraints.");
 				s+="\n";
 
 				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);

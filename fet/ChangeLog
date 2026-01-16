@@ -1,5 +1,17 @@
+ 7.5.1
+	- Updated to Qt 6.9.3.
+	- Added a new type of constraint, activity(ies) begin(s) or end(s) teachers'/students' day (suggested recently by
+	Nelson Gomes, and suggested in the past by ghani1990, Ali Doussary, YOUSSEF HOUIET, Željko Vrabec, and maybe other users).
+	- Added a new type of constraint, activities occupy max sets of time slots from selection (suggested recently by k3nt0n, and
+	maybe by other users in the past). The maximum value can be chosen by the user to be 1 or 2.
+	- Memory and speed improvements for the constraints of type teacher(s)/students (set) max single gaps in selected time slots,
+	teacher(s)/students (set) occupy max sets of time slots from selection, and teacher(s)/students (set) pair of mutually exclusive
+	sets of time slots.
+	- Changed the 'selected' symbol (now it is ✓) and the colors for the constraints with selected/not selected slots
+	(suggested by k3nt0n, and by other users in the past). Rodica Lalescu suggested the new colors.
+	- Other minor improvements.
  7.5.0
-	- Added a new type of constraint, activities overlap completely or don't overlap (suggested by alege).
+	- Added a new type of constraint, activities overlap completely or do not overlap (suggested by alege).
 	- Minor interface improvements.
 	- Corrected an Italian translation field, by Andrea Primiani (fixing an error reported by ggscuola).
  7.4.7

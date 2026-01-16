@@ -949,6 +949,12 @@ private:
 	TimeConstraint* readActivityBeginsTeachersDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readActivitiesBeginTeachersDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
+	TimeConstraint* readActivityBeginsOrEndsStudentsDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readActivitiesBeginOrEndStudentsDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	
+	TimeConstraint* readActivityBeginsOrEndsTeachersDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readActivitiesBeginOrEndTeachersDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
 	/*old, with 2 and 3*/
 	TimeConstraint* read2ActivitiesConsecutive(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* read2ActivitiesGrouped(QXmlStreamReader& xml, FakeString& xmlReadingLog);
@@ -1005,6 +1011,7 @@ private:
 	TimeConstraint* readActivitiesPairOfMutuallyExclusiveTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
 	TimeConstraint* readActivitiesOverlapCompletelyOrDontOverlap(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readActivitiesOverlapCompletelyOrDoNotOverlap(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
 	TimeConstraint* readActivitiesOccupyMaxTimeSlotsFromSelection(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readActivitiesOccupyMinTimeSlotsFromSelection(QXmlStreamReader& xml, FakeString& xmlReadingLog);
@@ -1201,6 +1208,8 @@ private:
 	TimeConstraint* readTeachersPairOfMutuallyExclusiveSetsOfTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readStudentsPairOfMutuallyExclusiveSetsOfTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readActivitiesOccupyMaxSetsOfTimeSlotsFromSelection(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
 	TimeConstraint* readTeacherOccupiesMaxSetsOfTimeSlotsFromSelection(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readTeachersOccupyMaxSetsOfTimeSlotsFromSelection(QXmlStreamReader& xml, FakeString& xmlReadingLog);

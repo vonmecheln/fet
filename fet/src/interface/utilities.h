@@ -44,8 +44,9 @@ class CornerEnabledTableWidget: public QTableWidget
 {
 public:
 	bool useColors;
+	bool V;
 
-	CornerEnabledTableWidget(bool _useColors);
+	CornerEnabledTableWidget(bool _useColors, bool _V);
 
 private:
 	void selectAll();

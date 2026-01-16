@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<fet version="7.5.0">
+<fet version="7.5.1">
   <Mode>Mornings_Afternoons</Mode>
   <Institution_Name>Default institution</Institution_Name>
   <Comments>Default comments</Comments>
@@ -3379,14 +3379,76 @@
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection>
-    <ConstraintActivitiesOverlapCompletelyOrDontOverlap>
+    <ConstraintActivitiesOverlapCompletelyOrDoNotOverlap>
       <Weight_Percentage>100</Weight_Percentage>
       <Number_of_Activities>2</Number_of_Activities>
       <Activity_Id>1</Activity_Id>
       <Activity_Id>4</Activity_Id>
       <Active>true</Active>
       <Comments></Comments>
-    </ConstraintActivitiesOverlapCompletelyOrDontOverlap>
+    </ConstraintActivitiesOverlapCompletelyOrDoNotOverlap>
+    <ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Number_of_Activities>3</Number_of_Activities>
+      <Activity_Id>7</Activity_Id>
+      <Activity_Id>6</Activity_Id>
+      <Activity_Id>4</Activity_Id>
+      <Maximum_Number_of_Occupied_Sets>2</Maximum_Number_of_Occupied_Sets>
+      <Number_of_Selected_Sets_of_Time_Slots>3</Number_of_Selected_Sets_of_Time_Slots>
+      <Selected_Set_of_Time_Slots>
+        <Number_of_Selected_Time_Slots>1</Number_of_Selected_Time_Slots>
+        <Selected_Time_Slot>
+          <Day>Monday m</Day>
+          <Hour>08:00</Hour>
+        </Selected_Time_Slot>
+      </Selected_Set_of_Time_Slots>
+      <Selected_Set_of_Time_Slots>
+        <Number_of_Selected_Time_Slots>1</Number_of_Selected_Time_Slots>
+        <Selected_Time_Slot>
+          <Day>Monday m</Day>
+          <Hour>09:00</Hour>
+        </Selected_Time_Slot>
+      </Selected_Set_of_Time_Slots>
+      <Selected_Set_of_Time_Slots>
+        <Number_of_Selected_Time_Slots>1</Number_of_Selected_Time_Slots>
+        <Selected_Time_Slot>
+          <Day>Monday m</Day>
+          <Hour>10:00</Hour>
+        </Selected_Time_Slot>
+      </Selected_Set_of_Time_Slots>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection>
+    <ConstraintActivityBeginsOrEndsStudentsDay>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Activity_Id>1</Activity_Id>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintActivityBeginsOrEndsStudentsDay>
+    <ConstraintActivitiesBeginOrEndStudentsDay>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Teacher></Teacher>
+      <Students>y1</Students>
+      <Subject></Subject>
+      <Activity_Tag></Activity_Tag>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintActivitiesBeginOrEndStudentsDay>
+    <ConstraintActivityBeginsOrEndsTeachersDay>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Activity_Id>1</Activity_Id>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintActivityBeginsOrEndsTeachersDay>
+    <ConstraintActivitiesBeginOrEndTeachersDay>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Teacher></Teacher>
+      <Students></Students>
+      <Subject></Subject>
+      <Activity_Tag>at1</Activity_Tag>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintActivitiesBeginOrEndTeachersDay>
   </Time_Constraints_List>
   <Space_Constraints_List>
     <ConstraintBasicCompulsorySpace>

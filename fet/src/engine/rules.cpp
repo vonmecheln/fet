@@ -2064,9 +2064,45 @@ QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 					break;
 				}
 			//247
-			case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP:
+			case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DO_NOT_OVERLAP:
 				{
-					ConstraintActivitiesOverlapCompletelyOrDontOverlap* c=(ConstraintActivitiesOverlapCompletelyOrDontOverlap*)ctr;
+					ConstraintActivitiesOverlapCompletelyOrDoNotOverlap* c=(ConstraintActivitiesOverlapCompletelyOrDoNotOverlap*)ctr;
+					stream<<*c;
+					break;
+				}
+			//248
+			case CONSTRAINT_ACTIVITIES_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+				{
+					ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection* c=(ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection*)ctr;
+					stream<<*c;
+					break;
+				}
+				
+			//249
+			case CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_STUDENTS_DAY:
+				{
+					ConstraintActivityBeginsOrEndsStudentsDay* c=(ConstraintActivityBeginsOrEndsStudentsDay*)ctr;
+					stream<<*c;
+					break;
+				}
+			//250
+			case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_STUDENTS_DAY:
+				{
+					ConstraintActivitiesBeginOrEndStudentsDay* c=(ConstraintActivitiesBeginOrEndStudentsDay*)ctr;
+					stream<<*c;
+					break;
+				}
+			//251
+			case CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_TEACHERS_DAY:
+				{
+					ConstraintActivityBeginsOrEndsTeachersDay* c=(ConstraintActivityBeginsOrEndsTeachersDay*)ctr;
+					stream<<*c;
+					break;
+				}
+			//252
+			case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY:
+				{
+					ConstraintActivitiesBeginOrEndTeachersDay* c=(ConstraintActivitiesBeginOrEndTeachersDay*)ctr;
 					stream<<*c;
 					break;
 				}
@@ -4777,9 +4813,50 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 					break;
 				}
 			//247
-			case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP:
+			case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DO_NOT_OVERLAP:
 				{
-					ConstraintActivitiesOverlapCompletelyOrDontOverlap* c=new ConstraintActivitiesOverlapCompletelyOrDontOverlap;
+					ConstraintActivitiesOverlapCompletelyOrDoNotOverlap* c=new ConstraintActivitiesOverlapCompletelyOrDoNotOverlap;
+					stream>>*c;
+					rules.timeConstraintsList.append(c);
+					break;
+				}
+			//248
+			case CONSTRAINT_ACTIVITIES_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+				{
+					ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection* c=new ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection;
+					stream>>*c;
+					rules.timeConstraintsList.append(c);
+					break;
+				}
+
+			//249
+			case CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_STUDENTS_DAY:
+				{
+					ConstraintActivityBeginsOrEndsStudentsDay* c=new ConstraintActivityBeginsOrEndsStudentsDay;
+					stream>>*c;
+					rules.timeConstraintsList.append(c);
+					break;
+				}
+			//250
+			case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_STUDENTS_DAY:
+				{
+					ConstraintActivitiesBeginOrEndStudentsDay* c=new ConstraintActivitiesBeginOrEndStudentsDay;
+					stream>>*c;
+					rules.timeConstraintsList.append(c);
+					break;
+				}
+			//251
+			case CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_TEACHERS_DAY:
+				{
+					ConstraintActivityBeginsOrEndsTeachersDay* c=new ConstraintActivityBeginsOrEndsTeachersDay;
+					stream>>*c;
+					rules.timeConstraintsList.append(c);
+					break;
+				}
+			//252
+			case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY:
+				{
+					ConstraintActivitiesBeginOrEndTeachersDay* c=new ConstraintActivitiesBeginOrEndTeachersDay;
 					stream>>*c;
 					rules.timeConstraintsList.append(c);
 					break;
@@ -7169,6 +7246,21 @@ bool Rules::modifyTeacher(const QString& initialTeacherName, const QString& fina
 					break;
 				}
 
+			case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_STUDENTS_DAY:
+				{
+					ConstraintActivitiesBeginOrEndStudentsDay* crt_constraint=(ConstraintActivitiesBeginOrEndStudentsDay*)ctr;
+					if(initialTeacherName == crt_constraint->teacherName)
+						crt_constraint->teacherName=finalTeacherName;
+					break;
+				}
+			case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY:
+				{
+					ConstraintActivitiesBeginOrEndTeachersDay* crt_constraint=(ConstraintActivitiesBeginOrEndTeachersDay*)ctr;
+					if(initialTeacherName == crt_constraint->teacherName)
+						crt_constraint->teacherName=finalTeacherName;
+					break;
+				}
+
 			case CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS:
 				{
 					ConstraintSubactivitiesPreferredTimeSlots* crt_constraint=(ConstraintSubactivitiesPreferredTimeSlots*)ctr;
@@ -7748,6 +7840,21 @@ bool Rules::modifySubject(const QString& initialSubjectName, const QString& fina
 					break;
 				}
 
+			case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_STUDENTS_DAY:
+				{
+					ConstraintActivitiesBeginOrEndStudentsDay* crt_constraint=(ConstraintActivitiesBeginOrEndStudentsDay*)ctr;
+					if(initialSubjectName == crt_constraint->subjectName)
+						crt_constraint->subjectName=finalSubjectName;
+					break;
+				}
+			case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY:
+				{
+					ConstraintActivitiesBeginOrEndTeachersDay* crt_constraint=(ConstraintActivitiesBeginOrEndTeachersDay*)ctr;
+					if(initialSubjectName == crt_constraint->subjectName)
+						crt_constraint->subjectName=finalSubjectName;
+					break;
+				}
+
 			case CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS:
 				{
 					ConstraintSubactivitiesPreferredTimeSlots* crt_constraint=(ConstraintSubactivitiesPreferredTimeSlots*)ctr;
@@ -8240,6 +8347,21 @@ bool Rules::modifyActivityTag(const QString& initialActivityTagName, const QStri
 			case CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY:
 				{
 					ConstraintActivitiesBeginTeachersDay* crt_constraint=(ConstraintActivitiesBeginTeachersDay*)ctr;
+					if(initialActivityTagName == crt_constraint->activityTagName)
+						crt_constraint->activityTagName=finalActivityTagName;
+					break;
+				}
+
+			case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_STUDENTS_DAY:
+				{
+					ConstraintActivitiesBeginOrEndStudentsDay* crt_constraint=(ConstraintActivitiesBeginOrEndStudentsDay*)ctr;
+					if(initialActivityTagName == crt_constraint->activityTagName)
+						crt_constraint->activityTagName=finalActivityTagName;
+					break;
+				}
+			case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY:
+				{
+					ConstraintActivitiesBeginOrEndTeachersDay* crt_constraint=(ConstraintActivitiesBeginOrEndTeachersDay*)ctr;
 					if(initialActivityTagName == crt_constraint->activityTagName)
 						crt_constraint->activityTagName=finalActivityTagName;
 					break;
@@ -9062,6 +9184,21 @@ bool Rules::modifyStudentsSet(const QString& initialStudentsSetName, const QStri
 						break;
 					}
 
+				case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_STUDENTS_DAY:
+					{
+						ConstraintActivitiesBeginOrEndStudentsDay* crt_constraint=(ConstraintActivitiesBeginOrEndStudentsDay*)ctr;
+						if(initialStudentsSetName == crt_constraint->studentsName)
+							crt_constraint->studentsName=finalStudentsSetName;
+						break;
+					}
+				case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY:
+					{
+						ConstraintActivitiesBeginOrEndTeachersDay* crt_constraint=(ConstraintActivitiesBeginOrEndTeachersDay*)ctr;
+						if(initialStudentsSetName == crt_constraint->studentsName)
+							crt_constraint->studentsName=finalStudentsSetName;
+						break;
+					}
+
 				case CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS:
 					{
 						ConstraintSubactivitiesPreferredTimeSlots* crt_constraint=(ConstraintSubactivitiesPreferredTimeSlots*)ctr;
@@ -9613,6 +9750,21 @@ bool Rules::modifyStudentsSets(const QHash<QString, QString>& oldAndNewStudentsS
 			case CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY:
 				{
 					ConstraintActivitiesBeginTeachersDay* crt_constraint=(ConstraintActivitiesBeginTeachersDay*)ctr;
+					if(oldAndNewStudentsSetNames.contains(crt_constraint->studentsName))
+						crt_constraint->studentsName=oldAndNewStudentsSetNames.value(crt_constraint->studentsName);
+					break;
+				}
+
+			case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_STUDENTS_DAY:
+				{
+					ConstraintActivitiesBeginOrEndStudentsDay* crt_constraint=(ConstraintActivitiesBeginOrEndStudentsDay*)ctr;
+					if(oldAndNewStudentsSetNames.contains(crt_constraint->studentsName))
+						crt_constraint->studentsName=oldAndNewStudentsSetNames.value(crt_constraint->studentsName);
+					break;
+				}
+			case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY:
+				{
+					ConstraintActivitiesBeginOrEndTeachersDay* crt_constraint=(ConstraintActivitiesBeginOrEndTeachersDay*)ctr;
 					if(oldAndNewStudentsSetNames.contains(crt_constraint->studentsName))
 						crt_constraint->studentsName=oldAndNewStudentsSetNames.value(crt_constraint->studentsName);
 					break;
@@ -11428,9 +11580,15 @@ void Rules::recomputeActivitiesSetForTimeConstraint(TimeConstraint* ctr)
 				c->recomputeActivitiesSet();
 				break;
 			}
-		case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP:
+		case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DO_NOT_OVERLAP:
 			{
-				ConstraintActivitiesOverlapCompletelyOrDontOverlap* c=(ConstraintActivitiesOverlapCompletelyOrDontOverlap*) ctr;
+				ConstraintActivitiesOverlapCompletelyOrDoNotOverlap* c=(ConstraintActivitiesOverlapCompletelyOrDoNotOverlap*) ctr;
+				c->recomputeActivitiesSet();
+				break;
+			}
+		case CONSTRAINT_ACTIVITIES_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection* c=(ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection*) ctr;
 				c->recomputeActivitiesSet();
 				break;
 			}
@@ -12838,6 +12996,20 @@ void Rules::updateConstraintsAfterRemoval()
 						toBeRemovedTime.append(tc);
 					break;
 				}
+			case CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_STUDENTS_DAY:
+				{
+					ConstraintActivityBeginsOrEndsStudentsDay* c=(ConstraintActivityBeginsOrEndsStudentsDay*)tc;
+					if(!existingActivitiesIds.contains(c->activityId))
+						toBeRemovedTime.append(tc);
+					break;
+				}
+			case CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_TEACHERS_DAY:
+				{
+					ConstraintActivityBeginsOrEndsTeachersDay* c=(ConstraintActivityBeginsOrEndsTeachersDay*)tc;
+					if(!existingActivitiesIds.contains(c->activityId))
+						toBeRemovedTime.append(tc);
+					break;
+				}
 			case CONSTRAINT_TEACHER_MIN_HOURS_DAILY:
 				{
 					ConstraintTeacherMinHoursDaily* c=(ConstraintTeacherMinHoursDaily*)tc;
@@ -12893,6 +13065,27 @@ void Rules::updateConstraintsAfterRemoval()
 			case CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY:
 				{
 					ConstraintActivitiesBeginTeachersDay* c=(ConstraintActivitiesBeginTeachersDay*)tc;
+					if( (c->teacherName!="" && !existingTeachersNames.contains(c->teacherName)) ||
+					(c->studentsName!="" && !permanentStudentsHash.contains(c->studentsName)) ||
+					(c->subjectName!="" && !existingSubjectsNames.contains(c->subjectName)) ||
+					(c->activityTagName!="" && !existingActivityTagsNames.contains(c->activityTagName)) )
+						toBeRemovedTime.append(tc);
+					break;
+				}
+
+			case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_STUDENTS_DAY:
+				{
+					ConstraintActivitiesBeginOrEndStudentsDay* c=(ConstraintActivitiesBeginOrEndStudentsDay*)tc;
+					if( (c->teacherName!="" && !existingTeachersNames.contains(c->teacherName)) ||
+					(c->studentsName!="" && !permanentStudentsHash.contains(c->studentsName)) ||
+					(c->subjectName!="" && !existingSubjectsNames.contains(c->subjectName)) ||
+					(c->activityTagName!="" && !existingActivityTagsNames.contains(c->activityTagName)) )
+						toBeRemovedTime.append(tc);
+					break;
+				}
+			case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY:
+				{
+					ConstraintActivitiesBeginOrEndTeachersDay* c=(ConstraintActivitiesBeginOrEndTeachersDay*)tc;
 					if( (c->teacherName!="" && !existingTeachersNames.contains(c->teacherName)) ||
 					(c->studentsName!="" && !permanentStudentsHash.contains(c->studentsName)) ||
 					(c->subjectName!="" && !existingSubjectsNames.contains(c->subjectName)) ||
@@ -13571,11 +13764,19 @@ void Rules::updateConstraintsAfterRemoval()
 						toBeRemovedTime.append(tc);
 					break;
 				}
-			case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP:
+			case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DO_NOT_OVERLAP:
 				{
-					ConstraintActivitiesOverlapCompletelyOrDontOverlap* c=(ConstraintActivitiesOverlapCompletelyOrDontOverlap*)tc;
+					ConstraintActivitiesOverlapCompletelyOrDoNotOverlap* c=(ConstraintActivitiesOverlapCompletelyOrDoNotOverlap*)tc;
 					c->removeUseless(*this);
 					if(c->activitiesIds.count()<2)
+						toBeRemovedTime.append(tc);
+					break;
+				}
+			case CONSTRAINT_ACTIVITIES_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+				{
+					ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection* c=(ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection*)tc;
+					c->removeUseless(*this);
+					if(c->activitiesIds.count()<1)
 						toBeRemovedTime.append(tc);
 					break;
 				}
@@ -17153,6 +17354,19 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 					crt_constraint=readActivitiesBeginTeachersDay(xmlReader, xmlReadingLog);
 				}
 				//
+				else if(xmlReader.name()==QString("ConstraintActivityBeginsOrEndsStudentsDay")){
+					crt_constraint=readActivityBeginsOrEndsStudentsDay(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintActivitiesBeginOrEndStudentsDay")){
+					crt_constraint=readActivitiesBeginOrEndStudentsDay(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintActivityBeginsOrEndsTeachersDay")){
+					crt_constraint=readActivityBeginsOrEndsTeachersDay(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintActivitiesBeginOrEndTeachersDay")){
+					crt_constraint=readActivitiesBeginOrEndTeachersDay(xmlReader, xmlReadingLog);
+				}
+				//
 				//old, with 2 and 3
 				else if(xmlReader.name()==QString("Constraint2ActivitiesConsecutive")){
 					crt_constraint=read2ActivitiesConsecutive(xmlReader, xmlReadingLog);
@@ -17383,8 +17597,13 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 					crt_constraint=readActivitiesPairOfMutuallyExclusiveTimeSlots(xmlReader, xmlReadingLog);
 				}
 ////////////////2025-09-22
+				//old deprecated name
 				else if(xmlReader.name()==QString("ConstraintActivitiesOverlapCompletelyOrDontOverlap")){
 					crt_constraint=readActivitiesOverlapCompletelyOrDontOverlap(xmlReader, xmlReadingLog);
+				}
+				//2025-09-26
+				else if(xmlReader.name()==QString("ConstraintActivitiesOverlapCompletelyOrDoNotOverlap")){
+					crt_constraint=readActivitiesOverlapCompletelyOrDoNotOverlap(xmlReader, xmlReadingLog);
 				}
 ////////////////2011-09-25
 				else if(xmlReader.name()==QString("ConstraintActivitiesOccupyMaxTimeSlotsFromSelection")){
@@ -18243,6 +18462,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 				}
 				else if(xmlReader.name()==QString("ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection")){
 					crt_constraint=readStudentsOccupyMaxSetsOfTimeSlotsFromSelection(xmlReader, xmlReadingLog);
+				}
+				//
+				else if(xmlReader.name()==QString("ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection")){
+					crt_constraint=readActivitiesOccupyMaxSetsOfTimeSlotsFromSelection(xmlReader, xmlReadingLog);
 				}
 				//
 				else{
@@ -26184,6 +26407,246 @@ TimeConstraint* Rules::readActivitiesBeginTeachersDay(QXmlStreamReader& xmlReade
 	return cn;
 }
 
+TimeConstraint* Rules::readActivityBeginsOrEndsStudentsDay(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintActivityBeginsOrEndsStudentsDay"));
+	ConstraintActivityBeginsOrEndsStudentsDay* cn=new ConstraintActivityBeginsOrEndsStudentsDay();
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Activity_Id")){
+			QString text=xmlReader.readElementText();
+			cn->activityId=text.toInt();
+			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activityId)+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
+TimeConstraint* Rules::readActivitiesBeginOrEndStudentsDay(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintActivitiesBeginOrEndStudentsDay"));
+	ConstraintActivitiesBeginOrEndStudentsDay* cn=new ConstraintActivitiesBeginOrEndStudentsDay();
+	cn->teacherName="";
+	cn->studentsName="";
+	cn->subjectName="";
+	cn->activityTagName="";
+	
+	//i=0;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Teacher_Name")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Students_Name")){
+			QString text=xmlReader.readElementText();
+			cn->studentsName=text;
+			xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
+		}
+		else if(xmlReader.name()==QString("Students")){
+			QString text=xmlReader.readElementText();
+			cn->studentsName=text;
+			xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
+		}
+		else if(xmlReader.name()==QString("Subject_Name")){
+			QString text=xmlReader.readElementText();
+			cn->subjectName=text;
+			xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
+		}
+		else if(xmlReader.name()==QString("Subject")){
+			QString text=xmlReader.readElementText();
+			cn->subjectName=text;
+			xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
+		}
+		else if(xmlReader.name()==QString("Subject_Tag_Name")){
+			QString text=xmlReader.readElementText();
+			cn->activityTagName=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag_Name")){
+			QString text=xmlReader.readElementText();
+			cn->activityTagName=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			cn->activityTagName=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
+TimeConstraint* Rules::readActivityBeginsOrEndsTeachersDay(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintActivityBeginsOrEndsTeachersDay"));
+	ConstraintActivityBeginsOrEndsTeachersDay* cn=new ConstraintActivityBeginsOrEndsTeachersDay();
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Activity_Id")){
+			QString text=xmlReader.readElementText();
+			cn->activityId=text.toInt();
+			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activityId)+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
+TimeConstraint* Rules::readActivitiesBeginOrEndTeachersDay(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintActivitiesBeginOrEndTeachersDay"));
+	ConstraintActivitiesBeginOrEndTeachersDay* cn=new ConstraintActivitiesBeginOrEndTeachersDay();
+	cn->teacherName="";
+	cn->studentsName="";
+	cn->subjectName="";
+	cn->activityTagName="";
+	
+	//i=0;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Teacher_Name")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Students_Name")){
+			QString text=xmlReader.readElementText();
+			cn->studentsName=text;
+			xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
+		}
+		else if(xmlReader.name()==QString("Students")){
+			QString text=xmlReader.readElementText();
+			cn->studentsName=text;
+			xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
+		}
+		else if(xmlReader.name()==QString("Subject_Name")){
+			QString text=xmlReader.readElementText();
+			cn->subjectName=text;
+			xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
+		}
+		else if(xmlReader.name()==QString("Subject")){
+			QString text=xmlReader.readElementText();
+			cn->subjectName=text;
+			xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
+		}
+		else if(xmlReader.name()==QString("Subject_Tag_Name")){
+			QString text=xmlReader.readElementText();
+			cn->activityTagName=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag_Name")){
+			QString text=xmlReader.readElementText();
+			cn->activityTagName=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			cn->activityTagName=text;
+			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
 TimeConstraint* Rules::read2ActivitiesConsecutive(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
 	assert(xmlReader.isStartElement() && xmlReader.name()==QString("Constraint2ActivitiesConsecutive"));
 	ConstraintTwoActivitiesConsecutive* cn=new ConstraintTwoActivitiesConsecutive();
@@ -30898,9 +31361,68 @@ TimeConstraint* Rules::readActivitiesPairOfMutuallyExclusiveTimeSlots(QXmlStream
 ////////////////
 
 //2025-09-22
+//old deprecated name
 TimeConstraint* Rules::readActivitiesOverlapCompletelyOrDontOverlap(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
 	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintActivitiesOverlapCompletelyOrDontOverlap"));
-	ConstraintActivitiesOverlapCompletelyOrDontOverlap* cn=new ConstraintActivitiesOverlapCompletelyOrDontOverlap();
+	ConstraintActivitiesOverlapCompletelyOrDoNotOverlap* cn=new ConstraintActivitiesOverlapCompletelyOrDoNotOverlap();
+	
+	int ac=0;
+
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Number_of_Activities")){
+			QString text=xmlReader.readElementText();
+			ac=text.toInt();
+			xmlReadingLog+="    Read number of activities="+CustomFETString::number(ac)+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Id")){
+			QString text=xmlReader.readElementText();
+			cn->activitiesIds.append(text.toInt());
+			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesIds[cn->activitiesIds.count()-1])+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	
+	if(!(ac==cn->activitiesIds.count())){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+
+	assert(ac==cn->activitiesIds.count());
+
+	return cn;
+}
+////////////////
+
+//2025-09-26
+TimeConstraint* Rules::readActivitiesOverlapCompletelyOrDoNotOverlap(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintActivitiesOverlapCompletelyOrDoNotOverlap"));
+	ConstraintActivitiesOverlapCompletelyOrDoNotOverlap* cn=new ConstraintActivitiesOverlapCompletelyOrDoNotOverlap();
 	
 	int ac=0;
 
@@ -42326,6 +42848,187 @@ TimeConstraint* Rules::readStudentsOccupyMaxSetsOfTimeSlotsFromSelection(QXmlStr
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
 	}
+
+	assert(cn->selectedDays.count()==cn->selectedHours.count());
+	if(readSetsCount!=cn->selectedDays.count()){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2", "%1 and %2 are XML elements, like"
+		 " 'Number_of_Selected_Sets_of_Time_Slots' and 'Selected_Set_of_Time_Slots'").arg("Number_of_Selected_Sets_of_Time_Slots").arg("Selected_Set_of_Time_Slots"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+
+	return cn;
+}
+
+TimeConstraint* Rules::readActivitiesOccupyMaxSetsOfTimeSlotsFromSelection(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection"));
+	ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection* cn=new ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection();
+
+	int ac=0;
+
+	int readSetsCount=0;
+
+	int tsc=0;
+
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Number_of_Activities")){
+			QString text=xmlReader.readElementText();
+			ac=text.toInt();
+			xmlReadingLog+="    Read number of activities="+CustomFETString::number(ac)+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Id")){
+			QString text=xmlReader.readElementText();
+			cn->activitiesIds.append(text.toInt());
+			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesIds[cn->activitiesIds.count()-1])+"\n";
+		}
+		else if(xmlReader.name()==QString("Maximum_Number_of_Occupied_Sets")){
+			QString text=xmlReader.readElementText();
+			cn->maxOccupiedSets=text.toInt();
+			if(cn->maxOccupiedSets<1 || cn->maxOccupiedSets>2){
+				xmlReader.raiseError(tr("%1 must be >=1 and <=2", "%1 is an XML element, like 'Maximum_Number_of_Occupied_Sets'").arg("Maximum_Number_of_Occupied_Sets"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Read maxOccupiedSets="+CustomFETString::number(cn->maxOccupiedSets)+"\n";
+		}
+		else if(xmlReader.name()==QString("Number_of_Selected_Sets_of_Time_Slots")){
+			QString text=xmlReader.readElementText();
+			readSetsCount=text.toInt();
+			xmlReadingLog+="    Read number of selected sets of time slots="+CustomFETString::number(readSetsCount)+"\n";
+		}
+		else if(xmlReader.name()==QString("Selected_Set_of_Time_Slots")){
+			QList<int> days;
+			QList<int> hours;
+			
+			xmlReadingLog+="    Read: selected set of time slots\n";
+
+			assert(xmlReader.isStartElement());
+			while(xmlReader.readNextStartElement()){
+				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+				
+				if(xmlReader.name()==QString("Number_of_Selected_Time_Slots")){
+					QString text=xmlReader.readElementText();
+					tsc=text.toInt();
+					xmlReadingLog+="    Read number of selected time slots="+CustomFETString::number(tsc)+"\n";
+				}
+				else if(xmlReader.name()==QString("Selected_Time_Slot")){
+					xmlReadingLog+="    Read: selected time slot\n";
+
+					assert(xmlReader.isStartElement());
+					while(xmlReader.readNextStartElement()){
+						xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+						if(xmlReader.name()==QString("Day")){
+							QString text=xmlReader.readElementText();
+							int day;
+							for(day=0; day < this->nDaysPerWeek; day++)
+								if(this->daysOfTheWeek[day]==text)
+									break;
+									
+							if(day>=this->nDaysPerWeek){
+								xmlReader.raiseError(tr("Day %1 is nonexistent").arg(text));
+								delete cn;
+								cn=nullptr;
+								return nullptr;
+							}
+							
+							assert(day>=0 && day<this->nDaysPerWeek);
+							xmlReadingLog+="    Day="+this->daysOfTheWeek[day]+"("+CustomFETString::number(day)+")"+"\n";
+							
+							days.append(day);
+						}
+						else if(xmlReader.name()==QString("Hour")){
+							QString text=xmlReader.readElementText();
+							int hour;
+							for(hour=0; hour < this->nHoursPerDay; hour++)
+								if(this->hoursOfTheDay[hour]==text)
+									break;
+							
+							if(hour>=this->nHoursPerDay){
+								xmlReader.raiseError(tr("Hour %1 is nonexistent").arg(text));
+								delete cn;
+								cn=nullptr;
+								return nullptr;
+							}
+							
+							assert(hour>=0 && hour < this->nHoursPerDay);
+							xmlReadingLog+="    Hour="+this->hoursOfTheDay[hour]+"("+CustomFETString::number(hour)+")"+"\n";
+							
+							hours.append(hour);
+						}
+						else{
+							unrecognizedXmlTags.append(xmlReader.name().toString());
+							unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+							unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+							xmlReader.skipCurrentElement();
+							xmlReaderNumberOfUnrecognizedFields++;
+						}
+					}
+				}
+				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+					xmlReader.skipCurrentElement();
+					xmlReaderNumberOfUnrecognizedFields++;
+				}
+			}
+			
+			if(days.count()!=hours.count()){
+				xmlReader.raiseError(tr("The number of read %1 is not equal to the number of read %2", "%1 is an XML element, like 'Day', and %2 is another XML element, like 'Hour'")
+				 .arg("Day").arg("Hour"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			if(tsc!=days.count()){
+				xmlReader.raiseError(tr("%1 does not coincide with the number of read %2", "%1 and %2 are XML elements, like"
+				 " 'Number_of_Selected_Time_Slots' and 'Selected_Time_Slot'").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			
+			cn->selectedDays.append(days);
+			cn->selectedHours.append(hours);
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+
+	if(!(ac==cn->activitiesIds.count())){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+
+	assert(ac==cn->activitiesIds.count());
 
 	assert(cn->selectedDays.count()==cn->selectedHours.count());
 	if(readSetsCount!=cn->selectedDays.count()){
