@@ -11866,3 +11866,17 @@ variable rooms on certain days.
 Liviu Lalescu:
 
 Maybe a good thing in FET would be to double each type of home and preferred room(s) constraint to a new constraint type, to action only in a selection of time slots.
+
+781---------------------------------------------------------
+From Michael Chourdakis (on Facebook):
+
+Perhaps you can add a post processing of the rooms. Ie after fet has created a timetable, see if you can switch rooms based on teacher preference.
+
+I.e. lesson A has no requirements and is placed in R1 and T1 has R1 as preferred room and it's activity can be placed in R1 -> swap instantly.
+
+782---------------------------------------------------------
+From boubata (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6685.0
+
+I wonder if it is possible to provide the ability to customize the colours in FET by subjects and teacher to let us control the results effectively.

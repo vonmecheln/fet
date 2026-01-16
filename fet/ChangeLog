@@ -1,3 +1,7 @@
+ 7.5.7
+	- Crash bugs fixed, when using one or more constraints of type teacher(s)/students (set) max mornings/afternoons per week
+	(in the Mornings/Afternoons mode) with the max allowed mornings/afternoons per week set to zero (reported by Thái Chí Phương).
+	- Corrected a field in the Arabic translation, by Benahmed Abdelkrim.
  7.5.6
 	- Code cleanup.
 	- Updated the Arabic translation, by Benahmed Abdelkrim.

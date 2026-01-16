@@ -15875,7 +15875,7 @@ impossiblestudentsmorningsearlymaxbeginningsatsecondhour:
 					continue; //OK, preliminary
 
 				if(maxAfternoons>=0){
-					assert(maxAfternoons>0);
+					//assert(maxAfternoons>0);
 
 					//getTchTimetable(tch, conflActivities[newtime]);
 					//tchGetNHoursGaps(tch);
@@ -16067,7 +16067,7 @@ impossiblestudentsmaxafternoonsperweek:
 					continue; //OK, preliminary
 
 				if(maxMornings>=0){
-					assert(maxMornings>0);
+					//assert(maxMornings>0);
 
 					//getTchTimetable(tch, conflActivities[newtime]);
 					//tchGetNHoursGaps(tch);
@@ -25354,7 +25354,7 @@ impossibleteachersmorningsafternoonsearlymaxbeginningsatsecondhour:
 					continue; //OK, preliminary
 
 				if(maxAfternoons>=0){
-					assert(maxAfternoons>0);
+					//assert(maxAfternoons>0);
 
 					//getTchTimetable(tch, conflActivities[newtime]);
 					//tchGetNHoursGaps(tch);
@@ -25546,7 +25546,7 @@ impossibleteachermaxafternoonsperweek:
 					continue; //OK, preliminary
 
 				if(maxMornings>=0){
-					assert(maxMornings>0);
+					//assert(maxMornings>0);
 
 					//getTchTimetable(tch, conflActivities[newtime]);
 					//tchGetNHoursGaps(tch);
