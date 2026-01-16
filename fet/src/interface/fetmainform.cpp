@@ -6492,8 +6492,8 @@ void FetMainForm::timetableSaveTimetableAsAction_triggered()
 		rules2.groupActivitiesInInitialOrderList=gt.rules.groupActivitiesInInitialOrderList;
 
 		//add locking constraints
-		TimeConstraintsList lockTimeConstraintsList;
-		SpaceConstraintsList lockSpaceConstraintsList;
+		QList<TimeConstraint*> lockTimeConstraintsList;
+		QList<SpaceConstraint*> lockSpaceConstraintsList;
 
 		//bool report=true;
 		

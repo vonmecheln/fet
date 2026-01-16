@@ -1,3 +1,6 @@
+ 7.6.0
+	- Added the option to view/edit the time/space constraints associated with one or more teachers/students sets/rooms/activities, from the timetable
+	view dialogs (suggested by Vangelis Karafillidis, and maybe by other users in the past).
  7.5.8
 	- Updated to Qt 6.10.1.
  7.5.7

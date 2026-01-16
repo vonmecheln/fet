@@ -151,7 +151,7 @@ AddOrModifySpaceConstraintDialog::~AddOrModifySpaceConstraintDialog()
 
 AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _type, SpaceConstraint* _oldsc,
  const QString& _preselectedTeacherName, const QString& _preselectedStudentsSetName, const QString& _preselectedSubjectName, const QString& _preselectedActivityTagName,
- const QString& _preselectedRoomName)
+ const QString& _preselectedRoomName, const QList<Activity*>& _filteredActivitiesList)
 {
 	type=_type;
 	oldsc=_oldsc;
@@ -221,6 +221,7 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 	activitiesComboBox=nullptr;
 	activitiesList.clear();
 	initialActivityId=-1;
+	filteredActivitiesList=_filteredActivitiesList;
 
 	helpPushButton=nullptr;
 
@@ -6666,7 +6667,7 @@ int AddOrModifySpaceConstraint::filterActivitiesComboBox()
 	activitiesList.clear();
 
 	int i=-1;
-	for(Activity* act : std::as_const(gt.rules.activitiesList)){
+	for(Activity* act : (filteredActivitiesList.isEmpty() ? std::as_const(gt.rules.activitiesList) : std::as_const(filteredActivitiesList))){
 		if(filterOk(act)){
 			activitiesComboBox->addItem(act->getDescription(gt.rules));
 			if(!act->active){

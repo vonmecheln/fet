@@ -75,6 +75,11 @@ public Q_SLOTS:
 
 	void currentItemChanged(QTableWidgetItem* current, QTableWidgetItem* previous);
 
+	void teacherTime();
+	void teacherSpace();
+	void activitiesTime();
+	void activitiesSpace();
+
 	void help();
 
 protected:

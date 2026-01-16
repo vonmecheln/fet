@@ -22,6 +22,8 @@
 
 #include "fetmainform.h"
 #include "timetableviewteachersdaysverticalform.h"
+#include "listofrelatedtimeconstraintsform.h"
+#include "listofrelatedspaceconstraintsform.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "solution.h"
@@ -60,6 +62,9 @@
 #include <QBrush>
 #include <QColor>
 //end by Marco Vassura
+
+//std::stable_sort
+#include <algorithm>
 
 extern const QString COMPANY;
 extern const QString PROGRAM;
@@ -161,6 +166,11 @@ TimetableViewTeachersDaysVerticalForm::TimetableViewTeachersDaysVerticalForm(QWi
 	connect(lockTimePushButton, &QPushButton::clicked, this, &TimetableViewTeachersDaysVerticalForm::lockTime);
 	connect(lockSpacePushButton, &QPushButton::clicked, this, &TimetableViewTeachersDaysVerticalForm::lockSpace);
 	connect(lockTimeSpacePushButton, &QPushButton::clicked, this, &TimetableViewTeachersDaysVerticalForm::lockTimeSpace);
+
+	connect(teacherTimePushButton, &QPushButton::clicked, this, &TimetableViewTeachersDaysVerticalForm::teacherTime);
+	connect(teacherSpacePushButton, &QPushButton::clicked, this, &TimetableViewTeachersDaysVerticalForm::teacherSpace);
+	connect(activitiesTimePushButton, &QPushButton::clicked, this, &TimetableViewTeachersDaysVerticalForm::activitiesTime);
+	connect(activitiesSpacePushButton, &QPushButton::clicked, this, &TimetableViewTeachersDaysVerticalForm::activitiesSpace);
 
 	connect(helpPushButton, &QPushButton::clicked, this, &TimetableViewTeachersDaysVerticalForm::help);
 
@@ -968,7 +978,7 @@ void TimetableViewTeachersDaysVerticalForm::lockTime()
 {
 	this->lock(true, false);
 }
-	
+
 void TimetableViewTeachersDaysVerticalForm::lockSpace()
 {
 	this->lock(false, true);
@@ -978,7 +988,7 @@ void TimetableViewTeachersDaysVerticalForm::lockTimeSpace()
 {
 	this->lock(true, true);
 }
-			
+
 void TimetableViewTeachersDaysVerticalForm::lock(bool lockTime, bool lockSpace)
 {
 	if(generation_running || generation_running_multi){
@@ -1369,4 +1379,264 @@ void TimetableViewTeachersDaysVerticalForm::help()
 	s+=QCoreApplication::translate("TimetableViewForm", "An underlined font cell means that the activity has a preferred day constraint (with any weight).");
 
 	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
+}
+
+void TimetableViewTeachersDaysVerticalForm::teacherTime()
+{
+	//listing the selected teacher's time constraints
+	
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	if(!(students_schedule_ready && teachers_schedule_ready)){
+		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view teachers timetable dialog - please generate a new timetable"));
+		return;
+	}
+	assert(students_schedule_ready && teachers_schedule_ready);
+
+	if(gt.rules.nInternalRooms!=gt.rules.roomsList.count()){
+		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it"));
+		return;
+	}
+
+	//find teacher index
+	QString teachername;
+
+	if(teachersListWidget->currentRow()<0 || teachersListWidget->currentRow()>=teachersListWidget->count()){
+		QMessageBox::information(this, tr("FET information"), tr("Please select a teacher"));
+		return;
+	}
+
+	teachername = teachersListWidget->currentItem()->text();
+	int i=gt.rules.searchTeacher(teachername);
+	
+	if(i<0){
+		QMessageBox::warning(this, tr("FET warning"), tr("Invalid teacher - please close this dialog and open a new view teachers dialog"));
+		return;
+	}
+	
+	QList<TimeConstraint*> ttcl;
+	for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList))
+		if(tc->isRelatedToTeacher(gt.rules.teachersList.at(i)))
+			ttcl.append(tc);
+	
+	ListOfRelatedTimeConstraintsForm form(this, FILTER_IS_TEACHER, QList<Activity*>(), tr("Teacher: %1").arg(teachername), ttcl);
+	form.exec();
+}
+
+void TimetableViewTeachersDaysVerticalForm::teacherSpace()
+{
+	//listing the selected teacher's space constraints
+	
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	if(!(students_schedule_ready && teachers_schedule_ready)){
+		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view teachers timetable dialog - please generate a new timetable"));
+		return;
+	}
+	assert(students_schedule_ready && teachers_schedule_ready);
+
+	if(gt.rules.nInternalRooms!=gt.rules.roomsList.count()){
+		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it"));
+		return;
+	}
+
+	//find teacher index
+	QString teachername;
+
+	if(teachersListWidget->currentRow()<0 || teachersListWidget->currentRow()>=teachersListWidget->count()){
+		QMessageBox::information(this, tr("FET information"), tr("Please select a teacher"));
+		return;
+	}
+
+	teachername = teachersListWidget->currentItem()->text();
+	int i=gt.rules.searchTeacher(teachername);
+	
+	if(i<0){
+		QMessageBox::warning(this, tr("FET warning"), tr("Invalid teacher - please close this dialog and open a new view teachers dialog"));
+		return;
+	}
+	
+	QList<SpaceConstraint*> tscl;
+	for(SpaceConstraint* sc : std::as_const(gt.rules.spaceConstraintsList))
+		if(sc->isRelatedToTeacher(gt.rules.teachersList.at(i)))
+			tscl.append(sc);
+	
+	ListOfRelatedSpaceConstraintsForm form(this, FILTER_IS_TEACHER, QList<Activity*>(), tr("Teacher: %1").arg(teachername), tscl);
+	form.exec();
+}
+
+void TimetableViewTeachersDaysVerticalForm::activitiesTime()
+{
+	if(!(students_schedule_ready && teachers_schedule_ready)){
+		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view teachers timetable dialog - please generate a new timetable"));
+		return;
+	}
+	assert(students_schedule_ready && teachers_schedule_ready);
+
+	if(gt.rules.nInternalRooms!=gt.rules.roomsList.count()){
+		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it"));
+		return;
+	}
+
+	QString teachername;
+
+	if(teachersListWidget->currentRow()<0 || teachersListWidget->currentRow()>=teachersListWidget->count())
+		return;
+
+	teachername = teachersListWidget->currentItem()->text();
+
+	int teacher=gt.rules.searchTeacher(teachername);
+	if(teacher<0){
+		QMessageBox::warning(this, tr("FET warning"), tr("The teacher is invalid - please close this dialog and open a new view teachers timetable"));
+		return;
+	}
+
+	QList<Activity*> actl;
+
+	bool realView=(gt.rules.mode==MORNINGS_AFTERNOONS && REAL_VIEW==true);
+	bool normalView=!realView;
+
+	QSet<int> careAboutIndex;		//added by Volker Dirr. Needed, because of activities with duration > 1
+	careAboutIndex.clear();
+	for(int j=0; j<(normalView?gt.rules.nHoursPerDay:gt.rules.nRealHoursPerDay) && j<teachersTimetableTable->rowCount(); j++){
+		int jj;
+		if(normalView)
+			jj=j;
+		else
+			jj=j%gt.rules.nHoursPerDay;
+
+		for(int k=0; k<(normalView?gt.rules.nDaysPerWeek:gt.rules.nRealDaysPerWeek) && k<teachersTimetableTable->columnCount(); k++){
+			int kk;
+			if(normalView)
+				kk=k;
+			else
+				kk=2*k+j/gt.rules.nHoursPerDay;
+			
+			if(teachersTimetableTable->item(k, j)->isSelected()){
+				int ai=teachers_timetable_weekly[teacher][kk][jj];
+				if(ai!=UNALLOCATED_ACTIVITY && !careAboutIndex.contains(ai)){	//modified, because of activities with duration > 1
+					careAboutIndex.insert(ai);					//Needed, because of activities with duration > 1
+					
+					actl.append(&gt.rules.internalActivitiesList[ai]);
+				}
+			}
+		}
+	}
+
+	if(actl.isEmpty()){
+		QMessageBox::information(this, tr("FET information"), tr("Please select at least one activity (one table cell)"));
+		return;
+	}
+
+	std::stable_sort(actl.begin(), actl.end(), [](const Activity* a, const Activity* b){return a->id < b->id;});
+
+	QList<TimeConstraint*> ttcl;
+	for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList)){
+		for(Activity* act : std::as_const(actl)){
+			if(tc->isRelatedToActivity(gt.rules, act)){
+				ttcl.append(tc);
+				break;
+			}
+		}
+	}
+	
+	QString s;
+	if(actl.count()==1)
+		s=tr("Activity Id: %1").arg(actl.at(0)->id);
+	else
+		s=tr("%1 activities selected", "%1 is the number of selected activities").arg(actl.count());
+	ListOfRelatedTimeConstraintsForm form(this, FILTER_IS_ACTIVITY, actl, s, ttcl);
+	form.exec();
+}
+
+void TimetableViewTeachersDaysVerticalForm::activitiesSpace()
+{
+	if(!(students_schedule_ready && teachers_schedule_ready)){
+		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view teachers timetable dialog - please generate a new timetable"));
+		return;
+	}
+	assert(students_schedule_ready && teachers_schedule_ready);
+
+	if(gt.rules.nInternalRooms!=gt.rules.roomsList.count()){
+		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it"));
+		return;
+	}
+
+	QString teachername;
+
+	if(teachersListWidget->currentRow()<0 || teachersListWidget->currentRow()>=teachersListWidget->count())
+		return;
+
+	teachername = teachersListWidget->currentItem()->text();
+
+	int teacher=gt.rules.searchTeacher(teachername);
+	if(teacher<0){
+		QMessageBox::warning(this, tr("FET warning"), tr("The teacher is invalid - please close this dialog and open a new view teachers timetable"));
+		return;
+	}
+
+	QList<Activity*> actl;
+
+	bool realView=(gt.rules.mode==MORNINGS_AFTERNOONS && REAL_VIEW==true);
+	bool normalView=!realView;
+
+	QSet<int> careAboutIndex;		//added by Volker Dirr. Needed, because of activities with duration > 1
+	careAboutIndex.clear();
+	for(int j=0; j<(normalView?gt.rules.nHoursPerDay:gt.rules.nRealHoursPerDay) && j<teachersTimetableTable->rowCount(); j++){
+		int jj;
+		if(normalView)
+			jj=j;
+		else
+			jj=j%gt.rules.nHoursPerDay;
+
+		for(int k=0; k<(normalView?gt.rules.nDaysPerWeek:gt.rules.nRealDaysPerWeek) && k<teachersTimetableTable->columnCount(); k++){
+			int kk;
+			if(normalView)
+				kk=k;
+			else
+				kk=2*k+j/gt.rules.nHoursPerDay;
+			
+			if(teachersTimetableTable->item(k, j)->isSelected()){
+				int ai=teachers_timetable_weekly[teacher][kk][jj];
+				if(ai!=UNALLOCATED_ACTIVITY && !careAboutIndex.contains(ai)){	//modified, because of activities with duration > 1
+					careAboutIndex.insert(ai);					//Needed, because of activities with duration > 1
+					
+					actl.append(&gt.rules.internalActivitiesList[ai]);
+				}
+			}
+		}
+	}
+
+	if(actl.isEmpty()){
+		QMessageBox::information(this, tr("FET information"), tr("Please select at least one activity (one table cell)"));
+		return;
+	}
+
+	std::stable_sort(actl.begin(), actl.end(), [](const Activity* a, const Activity* b){return a->id < b->id;});
+
+	QList<SpaceConstraint*> tscl;
+	for(SpaceConstraint* sc : std::as_const(gt.rules.spaceConstraintsList)){
+		for(Activity* act : std::as_const(actl)){
+			if(sc->isRelatedToActivity(act)){
+				tscl.append(sc);
+				break;
+			}
+		}
+	}
+	
+	QString s;
+	if(actl.count()==1)
+		s=tr("Activity Id: %1").arg(actl.at(0)->id);
+	else
+		s=tr("%1 activities selected", "%1 is the number of selected activities").arg(actl.count());
+	ListOfRelatedSpaceConstraintsForm form(this, FILTER_IS_ACTIVITY, actl, s, tscl);
+	form.exec();
 }

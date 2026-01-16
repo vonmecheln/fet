@@ -620,7 +620,6 @@ void AllTimeConstraintsForm::removeConstraints()
 	}
 
 	//The user clicked the OK button or pressed Enter
-
 	gt.rules.removeTimeConstraints(tl);
 
 	if(!tl.isEmpty())

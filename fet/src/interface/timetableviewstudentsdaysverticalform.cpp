@@ -22,6 +22,8 @@
 
 #include "fetmainform.h"
 #include "timetableviewstudentsdaysverticalform.h"
+#include "listofrelatedtimeconstraintsform.h"
+#include "listofrelatedspaceconstraintsform.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -61,6 +63,9 @@
 #include <QBrush>
 #include <QColor>
 //end by Marco Vassura
+
+//std::stable_sort
+#include <algorithm>
 
 extern const QString COMPANY;
 extern const QString PROGRAM;
@@ -170,6 +175,12 @@ TimetableViewStudentsDaysVerticalForm::TimetableViewStudentsDaysVerticalForm(QWi
 	connect(lockTimePushButton, &QPushButton::clicked, this, &TimetableViewStudentsDaysVerticalForm::lockTime);
 	connect(lockSpacePushButton, &QPushButton::clicked, this, &TimetableViewStudentsDaysVerticalForm::lockSpace);
 	connect(lockTimeSpacePushButton, &QPushButton::clicked, this, &TimetableViewStudentsDaysVerticalForm::lockTimeSpace);
+
+	connect(studentsSubgroupTimePushButton, &QPushButton::clicked, this, &TimetableViewStudentsDaysVerticalForm::studentsSubgroupTime);
+	connect(studentsSubgroupSpacePushButton, &QPushButton::clicked, this, &TimetableViewStudentsDaysVerticalForm::studentsSubgroupSpace);
+	connect(activitiesTimePushButton, &QPushButton::clicked, this, &TimetableViewStudentsDaysVerticalForm::activitiesTime);
+	connect(activitiesSpacePushButton, &QPushButton::clicked, this, &TimetableViewStudentsDaysVerticalForm::activitiesSpace);
+
 	connect(helpPushButton, &QPushButton::clicked, this, &TimetableViewStudentsDaysVerticalForm::help);
 
 	centerWidgetOnScreen(this);
@@ -1719,4 +1730,350 @@ void TimetableViewStudentsDaysVerticalForm::help()
 	s+="\n\n";
 
 	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
+}
+
+void TimetableViewStudentsDaysVerticalForm::studentsSubgroupTime()
+{
+	if(!(students_schedule_ready && teachers_schedule_ready)){
+		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view students timetable dialog - please generate a new timetable "
+		 "or close the timetable view students dialog"));
+		return;
+	}
+	assert(students_schedule_ready && teachers_schedule_ready);
+
+	if(gt.rules.nInternalRooms!=gt.rules.roomsList.count()){
+		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it"));
+		return;
+	}
+
+	QString subgroupname;
+
+	subgroupname = subgroupsListWidget->currentItem()->text();
+
+	StudentsSet* ss=gt.rules.studentsHash.value(subgroupname, nullptr);
+	if(ss==nullptr){
+		QMessageBox::information(this, tr("FET warning"), tr("Nonexistent subgroup - please reload this dialog"));
+		return;
+	}
+	if(ss->type!=STUDENTS_SUBGROUP){
+		QMessageBox::warning(this, tr("FET warning"), tr("Incorrect subgroup settings - please reload this dialog"));
+		return;
+	}
+	StudentsSubgroup* sts=(StudentsSubgroup*)ss;
+
+	assert(gt.rules.initialized);
+
+	assert(sts!=nullptr);
+	int i;
+	i=sts->indexInInternalSubgroupsList;
+	assert(i>=0);
+	assert(i<gt.rules.nInternalSubgroups);
+
+	StudentsSet* realStudentsSet;
+	if(gt.rules.correspondingRealStudentsSetName.contains(subgroupname)){
+		QString realStudentsSetName;
+		realStudentsSetName=gt.rules.correspondingRealStudentsSetName.value(subgroupname);
+		realStudentsSet=gt.rules.permanentStudentsHash.value(realStudentsSetName, nullptr);
+		assert(realStudentsSet!=nullptr);
+	}
+	else{
+		realStudentsSet=ss;
+	}
+
+	QList<TimeConstraint*> ttcl;
+	for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList))
+		if(tc->isRelatedToStudentsSet(gt.rules, realStudentsSet))
+			ttcl.append(tc);
+
+	ListOfRelatedTimeConstraintsForm form(this, FILTER_IS_STUDENTS_SET, QList<Activity*>(), tr("Students subgroup: %1").arg(subgroupname), ttcl);
+	form.exec();
+}
+
+void TimetableViewStudentsDaysVerticalForm::studentsSubgroupSpace()
+{
+	if(!(students_schedule_ready && teachers_schedule_ready)){
+		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view students timetable dialog - please generate a new timetable "
+		 "or close the timetable view students dialog"));
+		return;
+	}
+	assert(students_schedule_ready && teachers_schedule_ready);
+
+	if(gt.rules.nInternalRooms!=gt.rules.roomsList.count()){
+		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it"));
+		return;
+	}
+
+	QString subgroupname;
+
+	subgroupname = subgroupsListWidget->currentItem()->text();
+
+	StudentsSet* ss=gt.rules.studentsHash.value(subgroupname, nullptr);
+	if(ss==nullptr){
+		QMessageBox::information(this, tr("FET warning"), tr("Nonexistent subgroup - please reload this dialog"));
+		return;
+	}
+	if(ss->type!=STUDENTS_SUBGROUP){
+		QMessageBox::warning(this, tr("FET warning"), tr("Incorrect subgroup settings - please reload this dialog"));
+		return;
+	}
+	StudentsSubgroup* sts=(StudentsSubgroup*)ss;
+
+	assert(gt.rules.initialized);
+
+	assert(sts!=nullptr);
+	int i;
+	i=sts->indexInInternalSubgroupsList;
+	assert(i>=0);
+	assert(i<gt.rules.nInternalSubgroups);
+
+	StudentsSet* realStudentsSet;
+	if(gt.rules.correspondingRealStudentsSetName.contains(subgroupname)){
+		QString realStudentsSetName;
+		realStudentsSetName=gt.rules.correspondingRealStudentsSetName.value(subgroupname);
+		realStudentsSet=gt.rules.permanentStudentsHash.value(realStudentsSetName, nullptr);
+		assert(realStudentsSet!=nullptr);
+	}
+	else{
+		realStudentsSet=ss;
+	}
+
+	QList<SpaceConstraint*> tscl;
+	for(SpaceConstraint* sc : std::as_const(gt.rules.spaceConstraintsList))
+		if(sc->isRelatedToStudentsSet(gt.rules, realStudentsSet))
+			tscl.append(sc);
+
+	ListOfRelatedSpaceConstraintsForm form(this, FILTER_IS_STUDENTS_SET, QList<Activity*>(), tr("Students subgroup: %1").arg(subgroupname), tscl);
+	form.exec();
+}
+
+void TimetableViewStudentsDaysVerticalForm::activitiesTime()
+{
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	//find subgroup index
+	if(!(students_schedule_ready && teachers_schedule_ready)){
+		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view students timetable dialog - please generate a new timetable"));
+		return;
+	}
+	assert(students_schedule_ready && teachers_schedule_ready);
+
+	if(gt.rules.nInternalRooms!=gt.rules.roomsList.count()){
+		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it"));
+		return;
+	}
+
+	QString subgroupname;
+
+	//Note: the years and the groups list widgets might contain useless information if the user selected to see only groups or subgroups.
+	//However, in this case they are not void and the currentRow() will be 0 (first year) for the year list widget and, if the variant is
+	//to show only the subgroups, the same for the groups list widget (initialized in the dialog's constructor).
+
+	/*if(yearsListWidget->currentRow()<0 || yearsListWidget->currentRow()>=yearsListWidget->count()){
+		QMessageBox::information(this, tr("FET information"), tr("Please select a year"));
+		return;
+	}
+	if(groupsListWidget->currentRow()<0 || groupsListWidget->currentRow()>=groupsListWidget->count()){
+		QMessageBox::information(this, tr("FET information"), tr("Please select a group"));
+		return;
+	}*/
+	if(subgroupsListWidget->currentRow()<0 || subgroupsListWidget->currentRow()>=subgroupsListWidget->count()){
+		QMessageBox::information(this, tr("FET information"), tr("Please select a subgroup"));
+		return;
+	}
+
+	subgroupname = subgroupsListWidget->currentItem()->text();
+
+	StudentsSet* ss=gt.rules.studentsHash.value(subgroupname, nullptr);
+	if(ss==nullptr){
+		QMessageBox::information(this, tr("FET warning"), tr("Nonexistent subgroup - please reload this dialog"));
+		return;
+	}
+	if(ss->type!=STUDENTS_SUBGROUP){
+		QMessageBox::warning(this, tr("FET warning"), tr("Incorrect subgroup settings - please reload this dialog"));
+		return;
+	}
+	StudentsSubgroup* sts=(StudentsSubgroup*)ss;
+
+	assert(sts!=nullptr);
+	int i;
+	i=sts->indexInInternalSubgroupsList;
+	assert(i>=0);
+	assert(i<gt.rules.nInternalSubgroups);
+
+	bool realView=(gt.rules.mode==MORNINGS_AFTERNOONS && REAL_VIEW==true);
+	bool normalView=!realView;
+
+	QList<Activity*> actl;
+
+	QSet<int> careAboutIndex;		//added by Volker Dirr. Needed, because of activities with duration > 1
+	careAboutIndex.clear();
+	for(int j=0; j<(normalView?gt.rules.nHoursPerDay:gt.rules.nRealHoursPerDay) && j<studentsTimetableTable->rowCount(); j++){
+		int jj;
+		if(normalView)
+			jj=j;
+		else
+			jj=j%gt.rules.nHoursPerDay;
+
+		for(int k=0; k<(normalView?gt.rules.nDaysPerWeek:gt.rules.nRealDaysPerWeek) && k<studentsTimetableTable->columnCount(); k++){
+			int kk;
+			if(normalView)
+				kk=k;
+			else
+				kk=2*k+j/gt.rules.nHoursPerDay;
+
+			if(studentsTimetableTable->item(k, j)->isSelected()){
+				int ai=students_timetable_weekly[i][kk][jj];
+				if(ai!=UNALLOCATED_ACTIVITY && !careAboutIndex.contains(ai)){	//modified, because of activities with duration > 1
+					careAboutIndex.insert(ai);					//Needed, because of activities with duration > 1
+
+					actl.append(&gt.rules.internalActivitiesList[ai]);
+				}
+			}
+		}
+	}
+
+	if(actl.isEmpty()){
+		QMessageBox::information(this, tr("FET information"), tr("Please select at least one activity (one table cell)"));
+		return;
+	}
+
+	std::stable_sort(actl.begin(), actl.end(), [](const Activity* a, const Activity* b){return a->id < b->id;});
+
+	QList<TimeConstraint*> ttcl;
+	for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList)){
+		for(Activity* act : std::as_const(actl)){
+			if(tc->isRelatedToActivity(gt.rules, act)){
+				ttcl.append(tc);
+				break;
+			}
+		}
+	}
+
+	QString s;
+	if(actl.count()==1)
+		s=tr("Activity Id: %1").arg(actl.at(0)->id);
+	else
+		s=tr("%1 activities selected", "%1 is the number of selected activities").arg(actl.count());
+	ListOfRelatedTimeConstraintsForm form(this, FILTER_IS_ACTIVITY, actl, s, ttcl);
+	form.exec();
+}
+
+void TimetableViewStudentsDaysVerticalForm::activitiesSpace()
+{
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	//find subgroup index
+	if(!(students_schedule_ready && teachers_schedule_ready)){
+		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view students timetable dialog - please generate a new timetable"));
+		return;
+	}
+	assert(students_schedule_ready && teachers_schedule_ready);
+
+	if(gt.rules.nInternalRooms!=gt.rules.roomsList.count()){
+		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it"));
+		return;
+	}
+
+	QString subgroupname;
+
+	//Note: the years and the groups list widgets might contain useless information if the user selected to see only groups or subgroups.
+	//However, in this case they are not void and the currentRow() will be 0 (first year) for the year list widget and, if the variant is
+	//to show only the subgroups, the same for the groups list widget (initialized in the dialog's constructor).
+
+	/*if(yearsListWidget->currentRow()<0 || yearsListWidget->currentRow()>=yearsListWidget->count()){
+		QMessageBox::information(this, tr("FET information"), tr("Please select a year"));
+		return;
+	}
+	if(groupsListWidget->currentRow()<0 || groupsListWidget->currentRow()>=groupsListWidget->count()){
+		QMessageBox::information(this, tr("FET information"), tr("Please select a group"));
+		return;
+	}*/
+	if(subgroupsListWidget->currentRow()<0 || subgroupsListWidget->currentRow()>=subgroupsListWidget->count()){
+		QMessageBox::information(this, tr("FET information"), tr("Please select a subgroup"));
+		return;
+	}
+
+	subgroupname = subgroupsListWidget->currentItem()->text();
+
+	StudentsSet* ss=gt.rules.studentsHash.value(subgroupname, nullptr);
+	if(ss==nullptr){
+		QMessageBox::information(this, tr("FET warning"), tr("Nonexistent subgroup - please reload this dialog"));
+		return;
+	}
+	if(ss->type!=STUDENTS_SUBGROUP){
+		QMessageBox::warning(this, tr("FET warning"), tr("Incorrect subgroup settings - please reload this dialog"));
+		return;
+	}
+	StudentsSubgroup* sts=(StudentsSubgroup*)ss;
+
+	assert(sts!=nullptr);
+	int i;
+	i=sts->indexInInternalSubgroupsList;
+	assert(i>=0);
+	assert(i<gt.rules.nInternalSubgroups);
+
+	bool realView=(gt.rules.mode==MORNINGS_AFTERNOONS && REAL_VIEW==true);
+	bool normalView=!realView;
+
+	QList<Activity*> actl;
+
+	QSet<int> careAboutIndex;		//added by Volker Dirr. Needed, because of activities with duration > 1
+	careAboutIndex.clear();
+	for(int j=0; j<(normalView?gt.rules.nHoursPerDay:gt.rules.nRealHoursPerDay) && j<studentsTimetableTable->rowCount(); j++){
+		int jj;
+		if(normalView)
+			jj=j;
+		else
+			jj=j%gt.rules.nHoursPerDay;
+
+		for(int k=0; k<(normalView?gt.rules.nDaysPerWeek:gt.rules.nRealDaysPerWeek) && k<studentsTimetableTable->columnCount(); k++){
+			int kk;
+			if(normalView)
+				kk=k;
+			else
+				kk=2*k+j/gt.rules.nHoursPerDay;
+
+			if(studentsTimetableTable->item(k, j)->isSelected()){
+				int ai=students_timetable_weekly[i][kk][jj];
+				if(ai!=UNALLOCATED_ACTIVITY && !careAboutIndex.contains(ai)){	//modified, because of activities with duration > 1
+					careAboutIndex.insert(ai);					//Needed, because of activities with duration > 1
+
+					actl.append(&gt.rules.internalActivitiesList[ai]);
+				}
+			}
+		}
+	}
+
+	if(actl.isEmpty()){
+		QMessageBox::information(this, tr("FET information"), tr("Please select at least one activity (one table cell)"));
+		return;
+	}
+
+	std::stable_sort(actl.begin(), actl.end(), [](const Activity* a, const Activity* b){return a->id < b->id;});
+
+	QList<SpaceConstraint*> tscl;
+	for(SpaceConstraint* sc : std::as_const(gt.rules.spaceConstraintsList)){
+		for(Activity* act : std::as_const(actl)){
+			if(sc->isRelatedToActivity(act)){
+				tscl.append(sc);
+				break;
+			}
+		}
+	}
+
+	QString s;
+	if(actl.count()==1)
+		s=tr("Activity Id: %1").arg(actl.at(0)->id);
+	else
+		s=tr("%1 activities selected", "%1 is the number of selected activities").arg(actl.count());
+	ListOfRelatedSpaceConstraintsForm form(this, FILTER_IS_ACTIVITY, actl, s, tscl);
+	form.exec();
 }

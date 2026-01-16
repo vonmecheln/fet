@@ -22,6 +22,8 @@
 
 #include "fetmainform.h"
 #include "timetableviewstudentstimehorizontalform.h"
+#include "listofrelatedtimeconstraintsform.h"
+#include "listofrelatedspaceconstraintsform.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "solution.h"
@@ -64,6 +66,9 @@
 #include <QHash>
 #include <QSet>
 #include <QPair>
+
+//std::stable_sort
+#include <algorithm>
 
 extern const QString COMPANY;
 extern const QString PROGRAM;
@@ -192,6 +197,11 @@ TimetableViewStudentsTimeHorizontalForm::TimetableViewStudentsTimeHorizontalForm
 	connect(lockTimePushButton, &QPushButton::clicked, this, &TimetableViewStudentsTimeHorizontalForm::lockTime);
 	connect(lockSpacePushButton, &QPushButton::clicked, this, &TimetableViewStudentsTimeHorizontalForm::lockSpace);
 	connect(lockTimeSpacePushButton, &QPushButton::clicked, this, &TimetableViewStudentsTimeHorizontalForm::lockTimeSpace);
+
+	connect(studentsTimePushButton, &QPushButton::clicked, this, &TimetableViewStudentsTimeHorizontalForm::studentsTime);
+	connect(studentsSpacePushButton, &QPushButton::clicked, this, &TimetableViewStudentsTimeHorizontalForm::studentsSpace);
+	connect(activitiesTimePushButton, &QPushButton::clicked, this, &TimetableViewStudentsTimeHorizontalForm::activitiesTime);
+	connect(activitiesSpacePushButton, &QPushButton::clicked, this, &TimetableViewStudentsTimeHorizontalForm::activitiesSpace);
 
 	connect(helpPushButton, &QPushButton::clicked, this, &TimetableViewStudentsTimeHorizontalForm::help);
 
@@ -2260,4 +2270,396 @@ void TimetableViewStudentsTimeHorizontalForm::help()
 		"their initially scheduled day.", "%1 and %2 are two users").arg("Vangelis Karafillidis").arg("Alexey Chernous");
 
 	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
+}
+
+void TimetableViewStudentsTimeHorizontalForm::studentsTime()
+{
+	if(!(students_schedule_ready && teachers_schedule_ready)){
+		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view students timetable dialog - please generate a new timetable "
+		"or close the timetable view students dialog"));
+		return;
+	}
+	assert(students_schedule_ready && teachers_schedule_ready);
+
+	if(gt.rules.nInternalRooms!=gt.rules.roomsList.count()){
+		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it"));
+		return;
+	}
+
+	QList<int> sstd;
+
+	for(int t=0; t<usedStudentsList.count(); t++){
+		assert(t<studentsTimetableTable->rowCount());
+		for(int k=0; k<studentsTimetableTable->columnCount(); k++){
+			if(studentsTimetableTable->item(t, k)->isSelected()){
+				sstd.append(t);
+				break;
+			}
+		}
+	}
+
+	if(sstd.isEmpty()){
+		QMessageBox::information(this, tr("FET information"), tr("Please select at least one students set (one table cell)"));
+		return;
+	}
+
+	QList<TimeConstraint*> ttcl;
+	for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList)){
+		for(int st : std::as_const(sstd)){
+			StudentsSet* ss=gt.rules.studentsHash.value(usedStudentsList.at(st), nullptr);
+			assert(ss!=nullptr);
+			if(tc->isRelatedToStudentsSet(gt.rules, ss)){
+				ttcl.append(tc);
+				break;
+			}
+		}
+	}
+
+	QString s;
+	if(sstd.count()==1)
+		s=tr("Students set: %1").arg(usedStudentsList.at(sstd.at(0)));
+	else
+		s=tr("%1 students sets selected", "%1 is the number of selected students sets").arg(sstd.count());
+	ListOfRelatedTimeConstraintsForm form(this, FILTER_IS_STUDENTS_SET, QList<Activity*>(), s, ttcl);
+	form.exec();
+}
+
+void TimetableViewStudentsTimeHorizontalForm::studentsSpace()
+{
+	if(!(students_schedule_ready && teachers_schedule_ready)){
+		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view students timetable dialog - please generate a new timetable "
+		"or close the timetable view students dialog"));
+		return;
+	}
+	assert(students_schedule_ready && teachers_schedule_ready);
+
+	if(gt.rules.nInternalRooms!=gt.rules.roomsList.count()){
+		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it"));
+		return;
+	}
+
+	QList<int> sstd;
+
+	for(int t=0; t<usedStudentsList.count(); t++){
+		assert(t<studentsTimetableTable->rowCount());
+		for(int k=0; k<studentsTimetableTable->columnCount(); k++){
+			if(studentsTimetableTable->item(t, k)->isSelected()){
+				sstd.append(t);
+				break;
+			}
+		}
+	}
+
+	if(sstd.isEmpty()){
+		QMessageBox::information(this, tr("FET information"), tr("Please select at least one students set (one table cell)"));
+		return;
+	}
+
+	QList<SpaceConstraint*> ttcl;
+	for(SpaceConstraint* sc : std::as_const(gt.rules.spaceConstraintsList)){
+		for(int st : std::as_const(sstd)){
+			StudentsSet* ss=gt.rules.studentsHash.value(usedStudentsList.at(st), nullptr);
+			assert(ss!=nullptr);
+			if(sc->isRelatedToStudentsSet(gt.rules, ss)){
+				ttcl.append(sc);
+				break;
+			}
+		}
+	}
+
+	QString s;
+	if(sstd.count()==1)
+		s=tr("Students set: %1").arg(usedStudentsList.at(sstd.at(0)));
+	else
+		s=tr("%1 students sets selected", "%1 is the number of selected students sets").arg(sstd.count());
+	ListOfRelatedSpaceConstraintsForm form(this, FILTER_IS_STUDENTS_SET, QList<Activity*>(), s, ttcl);
+	form.exec();
+}
+
+void TimetableViewStudentsTimeHorizontalForm::activitiesTime()
+{
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	if(!(students_schedule_ready && teachers_schedule_ready)){
+		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view students timetable dialog - please generate a new timetable"));
+		return;
+	}
+	assert(students_schedule_ready && teachers_schedule_ready);
+
+	if(gt.rules.nInternalRooms!=gt.rules.roomsList.count()){
+		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it"));
+		return;
+	}
+
+	Solution* tc=&best_solution;
+
+	QSet<int> dummyActivitiesColumn; //Dummy activities (no students) column to be considered, because the whole column is selected.
+	for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+		for(int h=0; h<gt.rules.nHoursPerDay; h++){
+			assert(d*gt.rules.nHoursPerDay+h < studentsTimetableTable->columnCount());
+			bool wholeColumn=true;
+			for(int t=0; t<usedStudentsList.count(); t++){
+				assert(t<studentsTimetableTable->rowCount());
+
+				if(!studentsTimetableTable->item(t, d*gt.rules.nHoursPerDay+h)->isSelected()){
+					wholeColumn=false;
+					break;
+				}
+			}
+			if(wholeColumn)
+				dummyActivitiesColumn.insert(d+h*gt.rules.nDaysPerWeek);
+		}
+	}
+
+	QSet<int> dummyActivities;
+	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+		if(gt.rules.internalActivitiesList[ai].iSubgroupsList.count()==0){
+			if(tc->times[ai]!=UNALLOCATED_TIME){
+				int da=tc->times[ai]%gt.rules.nDaysPerWeek;
+				int ha=tc->times[ai]/gt.rules.nDaysPerWeek;
+				for(int ha2=ha; ha2<ha+gt.rules.internalActivitiesList[ai].duration; ha2++)
+					if(dummyActivitiesColumn.contains(da+ha2*gt.rules.nDaysPerWeek))
+						if(!dummyActivities.contains(ai))
+							dummyActivities.insert(ai);
+			}
+		}
+	}
+
+	QSet<int> realActivities;
+	for(int t=0; t<usedStudentsList.count(); t++){
+		assert(t<studentsTimetableTable->rowCount());
+
+		if(!gt.rules.studentsHash.contains(usedStudentsList.at(t)))
+			continue;
+		assert(gt.rules.studentsHash.contains(usedStudentsList.at(t)));
+		StudentsSet* ss=gt.rules.studentsHash.value(usedStudentsList.at(t), nullptr);
+		assert(ss!=nullptr);
+		int sbg=-1;
+		if(ss->type==STUDENTS_YEAR){
+			StudentsYear* year=(StudentsYear*)ss;
+			sbg=year->groupsList.at(0)->subgroupsList.at(0)->indexInInternalSubgroupsList;
+		}
+		else if(ss->type==STUDENTS_GROUP){
+			StudentsGroup* group=(StudentsGroup*)ss;
+			sbg=group->subgroupsList.at(0)->indexInInternalSubgroupsList;
+		}
+		else if(ss->type==STUDENTS_SUBGROUP){
+			StudentsSubgroup* subgroup=(StudentsSubgroup*)ss;
+			sbg=subgroup->indexInInternalSubgroupsList;
+		}
+		else{
+			assert(0);
+		}
+
+		assert(sbg>=0 && sbg<gt.rules.nInternalSubgroups);
+
+		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+			for(int h=0; h<gt.rules.nHoursPerDay; h++){
+				assert(d*gt.rules.nHoursPerDay+h<studentsTimetableTable->columnCount());
+				if(studentsTimetableTable->item(t, d*gt.rules.nHoursPerDay+h)->isSelected()){
+
+					int ai=students_timetable_weekly[sbg][d][h];
+
+					bool ok=true;
+					if(ai==UNALLOCATED_ACTIVITY){
+						ok=false;
+					}
+					else{
+						if(!gt.rules.internalActivitiesList[ai].studentsNames.contains(usedStudentsList.at(t))){
+							ok=false;
+						}
+					}
+
+					//Activity* act=gt.rules.activitiesList.at(ai);
+					if(ok)
+						if(!realActivities.contains(ai))
+							realActivities.insert(ai);
+				}
+			}
+		}
+	}
+
+	QList<Activity*> actl;
+
+	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+		assert( ! (realActivities.contains(ai) && dummyActivities.contains(ai)) );
+		if(realActivities.contains(ai) || dummyActivities.contains(ai)){
+			assert(tc->times[ai]!=UNALLOCATED_TIME);
+
+			actl.append(&gt.rules.internalActivitiesList[ai]);
+		}
+	}
+
+	if(actl.isEmpty()){
+		QMessageBox::information(this, tr("FET information"), tr("Please select at least one activity (one table cell)"));
+		return;
+	}
+
+	std::stable_sort(actl.begin(), actl.end(), [](const Activity* a, const Activity* b){return a->id < b->id;});
+
+	QList<TimeConstraint*> ttcl;
+	for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList)){
+		for(Activity* act : std::as_const(actl)){
+			if(tc->isRelatedToActivity(gt.rules, act)){
+				ttcl.append(tc);
+				break;
+			}
+		}
+	}
+
+	QString s;
+	if(actl.count()==1)
+		s=tr("Activity Id: %1").arg(actl.at(0)->id);
+	else
+		s=tr("%1 activities selected", "%1 is the number of selected activities").arg(actl.count());
+	ListOfRelatedTimeConstraintsForm form(this, FILTER_IS_ACTIVITY, actl, s, ttcl);
+	form.exec();
+}
+
+void TimetableViewStudentsTimeHorizontalForm::activitiesSpace()
+{
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	if(!(students_schedule_ready && teachers_schedule_ready)){
+		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view students timetable dialog - please generate a new timetable"));
+		return;
+	}
+	assert(students_schedule_ready && teachers_schedule_ready);
+
+	if(gt.rules.nInternalRooms!=gt.rules.roomsList.count()){
+		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it"));
+		return;
+	}
+
+	Solution* tc=&best_solution;
+
+	QSet<int> dummyActivitiesColumn; //Dummy activities (no students) column to be considered, because the whole column is selected.
+	for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+		for(int h=0; h<gt.rules.nHoursPerDay; h++){
+			assert(d*gt.rules.nHoursPerDay+h < studentsTimetableTable->columnCount());
+			bool wholeColumn=true;
+			for(int t=0; t<usedStudentsList.count(); t++){
+				assert(t<studentsTimetableTable->rowCount());
+
+				if(!studentsTimetableTable->item(t, d*gt.rules.nHoursPerDay+h)->isSelected()){
+					wholeColumn=false;
+					break;
+				}
+			}
+			if(wholeColumn)
+				dummyActivitiesColumn.insert(d+h*gt.rules.nDaysPerWeek);
+		}
+	}
+
+	QSet<int> dummyActivities;
+	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+		if(gt.rules.internalActivitiesList[ai].iSubgroupsList.count()==0){
+			if(tc->times[ai]!=UNALLOCATED_TIME){
+				int da=tc->times[ai]%gt.rules.nDaysPerWeek;
+				int ha=tc->times[ai]/gt.rules.nDaysPerWeek;
+				for(int ha2=ha; ha2<ha+gt.rules.internalActivitiesList[ai].duration; ha2++)
+					if(dummyActivitiesColumn.contains(da+ha2*gt.rules.nDaysPerWeek))
+						if(!dummyActivities.contains(ai))
+							dummyActivities.insert(ai);
+			}
+		}
+	}
+
+	QSet<int> realActivities;
+	for(int t=0; t<usedStudentsList.count(); t++){
+		assert(t<studentsTimetableTable->rowCount());
+
+		if(!gt.rules.studentsHash.contains(usedStudentsList.at(t)))
+			continue;
+		assert(gt.rules.studentsHash.contains(usedStudentsList.at(t)));
+		StudentsSet* ss=gt.rules.studentsHash.value(usedStudentsList.at(t), nullptr);
+		assert(ss!=nullptr);
+		int sbg=-1;
+		if(ss->type==STUDENTS_YEAR){
+			StudentsYear* year=(StudentsYear*)ss;
+			sbg=year->groupsList.at(0)->subgroupsList.at(0)->indexInInternalSubgroupsList;
+		}
+		else if(ss->type==STUDENTS_GROUP){
+			StudentsGroup* group=(StudentsGroup*)ss;
+			sbg=group->subgroupsList.at(0)->indexInInternalSubgroupsList;
+		}
+		else if(ss->type==STUDENTS_SUBGROUP){
+			StudentsSubgroup* subgroup=(StudentsSubgroup*)ss;
+			sbg=subgroup->indexInInternalSubgroupsList;
+		}
+		else{
+			assert(0);
+		}
+
+		assert(sbg>=0 && sbg<gt.rules.nInternalSubgroups);
+
+		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+			for(int h=0; h<gt.rules.nHoursPerDay; h++){
+				assert(d*gt.rules.nHoursPerDay+h<studentsTimetableTable->columnCount());
+				if(studentsTimetableTable->item(t, d*gt.rules.nHoursPerDay+h)->isSelected()){
+
+					int ai=students_timetable_weekly[sbg][d][h];
+
+					bool ok=true;
+					if(ai==UNALLOCATED_ACTIVITY){
+						ok=false;
+					}
+					else{
+						if(!gt.rules.internalActivitiesList[ai].studentsNames.contains(usedStudentsList.at(t))){
+							ok=false;
+						}
+					}
+
+					//Activity* act=gt.rules.activitiesList.at(ai);
+					if(ok)
+						if(!realActivities.contains(ai))
+							realActivities.insert(ai);
+				}
+			}
+		}
+	}
+
+	QList<Activity*> actl;
+
+	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+		assert( ! (realActivities.contains(ai) && dummyActivities.contains(ai)) );
+		if(realActivities.contains(ai) || dummyActivities.contains(ai)){
+			assert(tc->times[ai]!=UNALLOCATED_TIME);
+
+			actl.append(&gt.rules.internalActivitiesList[ai]);
+		}
+	}
+
+	if(actl.isEmpty()){
+		QMessageBox::information(this, tr("FET information"), tr("Please select at least one activity (one table cell)"));
+		return;
+	}
+
+	std::stable_sort(actl.begin(), actl.end(), [](const Activity* a, const Activity* b){return a->id < b->id;});
+
+	QList<SpaceConstraint*> tscl;
+	for(SpaceConstraint* sc : std::as_const(gt.rules.spaceConstraintsList)){
+		for(Activity* act : std::as_const(actl)){
+			if(sc->isRelatedToActivity(act)){
+				tscl.append(sc);
+				break;
+			}
+		}
+	}
+
+	QString s;
+	if(actl.count()==1)
+		s=tr("Activity Id: %1").arg(actl.at(0)->id);
+	else
+		s=tr("%1 activities selected", "%1 is the number of selected activities").arg(actl.count());
+	ListOfRelatedSpaceConstraintsForm form(this, FILTER_IS_ACTIVITY, actl, s, tscl);
+	form.exec();
 }

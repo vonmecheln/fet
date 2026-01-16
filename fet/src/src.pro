@@ -173,7 +173,10 @@ SOURCES += \
 	\
 	interface/settingsautosaveform.cpp \
 	\
-	interface/settingsstyleandcolorschemeform.cpp
+	interface/settingsstyleandcolorschemeform.cpp \
+	\
+	interface/listofrelatedtimeconstraintsform.cpp \
+	interface/listofrelatedspaceconstraintsform.cpp
 
 HEADERS += \
 	engine/timetableexport.h \
@@ -342,7 +345,10 @@ HEADERS += \
 	\
 	interface/settingsautosaveform.h \
 	\
-	interface/settingsstyleandcolorschemeform.h
+	interface/settingsstyleandcolorschemeform.h \
+	\
+	interface/listofrelatedtimeconstraintsform.h \
+	interface/listofrelatedspaceconstraintsform.h
 
 FORMS += \
 	interface/fetmainform_template.ui \
@@ -465,7 +471,10 @@ FORMS += \
 	\
 	interface/settingsautosaveform_template.ui \
 	\
-	interface/settingsstyleandcolorschemeform_template.ui
+	interface/settingsstyleandcolorschemeform_template.ui \
+	\
+	interface/listofrelatedtimeconstraintsform_template.ui \
+	interface/listofrelatedspaceconstraintsform_template.ui
 
 TRANSLATIONS += \
 	../translations/fet_ar.ts \

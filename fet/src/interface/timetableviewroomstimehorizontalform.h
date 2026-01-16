@@ -75,6 +75,10 @@ public Q_SLOTS:
 
 	void currentItemChanged(QTableWidgetItem* current, QTableWidgetItem* previous);
 
+	void roomsSpace();
+	void activitiesTime();
+	void activitiesSpace();
+
 	void help();
 	
 	void widthSpinBoxValueChanged();

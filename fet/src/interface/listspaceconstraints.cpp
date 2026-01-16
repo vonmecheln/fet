@@ -63,7 +63,7 @@ const int DOESNOTCONTAIN=1;
 const int REGEXP=2;
 const int NOTREGEXP=3;
 
-int spaceConstraintsAscendingByDescription(SpaceConstraint* t1, SpaceConstraint* t2); //defined in allspaceconstraints.cpp
+int spaceConstraintsAscendingByDescription(SpaceConstraint* s1, SpaceConstraint* s2); //defined in allspaceconstraints.cpp
 
 ListSpaceConstraintsDialog::ListSpaceConstraintsDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop, QSplitter* _splitter,
 													   QCheckBox* _showRelatedCheckBox): QDialog(parent)

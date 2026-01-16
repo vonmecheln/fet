@@ -234,7 +234,7 @@ AddOrModifyTimeConstraintDialog::~AddOrModifyTimeConstraintDialog()
 
 AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type, TimeConstraint* _oldtc,
 	 const QString& _preselectedTeacherName, const QString& _preselectedStudentsSetName, const QString& _preselectedActivityTagName,
-	 const QString& _preselectedFirstActivityTagName, const QString& _preselectedSecondActivityTagName)
+	 const QString& _preselectedFirstActivityTagName, const QString& _preselectedSecondActivityTagName, const QList<Activity*>& _filteredActivitiesList)
 {
 	type=_type;
 	oldtc=_oldtc;
@@ -396,6 +396,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 	activitiesComboBox=nullptr;
 	activitiesList.clear();
 	initialActivityId=-1;
+	filteredActivitiesList=_filteredActivitiesList;
 
 	helpPushButton=nullptr;
 
@@ -25267,7 +25268,7 @@ int AddOrModifyTimeConstraint::filterActivitiesComboBox()
 	activitiesList.clear();
 
 	int i=-1;
-	for(Activity* act : std::as_const(gt.rules.activitiesList)){
+	for(Activity* act : (filteredActivitiesList.isEmpty() ? std::as_const(gt.rules.activitiesList) : std::as_const(filteredActivitiesList))){
 		if(filterOk(act)){
 			activitiesComboBox->addItem(act->getDescription(gt.rules));
 			if(!act->active){

@@ -14,115 +14,6 @@
    <string extracomment="Title of dialog">View rooms days vertical timetable</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
-   <item row="0" column="0">
-    <widget class="QSplitter" name="horizontalSplitter">
-     <property name="orientation">
-      <enum>Qt::Orientation::Vertical</enum>
-     </property>
-     <widget class="QWidget" name="layoutWidget">
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
-       <item>
-        <widget class="QSplitter" name="verticalSplitter">
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-         <widget class="QListWidget" name="roomsListWidget"/>
-         <widget class="QTextEdit" name="detailsTextEdit"/>
-        </widget>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_2">
-         <item>
-          <widget class="QGroupBox" name="groupBox">
-           <property name="title">
-            <string extracomment="This is a group box for locking/unlocking buttons">Lock/unlock</string>
-           </property>
-           <layout class="QGridLayout" name="gridLayout">
-            <item row="0" column="0">
-             <layout class="QHBoxLayout" name="horizontalLayout_2">
-              <item>
-               <widget class="QPushButton" name="lockTimePushButton">
-                <property name="text">
-                 <string extracomment="This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).">Time</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="lockSpacePushButton">
-                <property name="text">
-                 <string extracomment="This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).">Space</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item row="2" column="0">
-             <widget class="QPushButton" name="lockTimeSpacePushButton">
-              <property name="text">
-               <string extracomment="This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).">Both</string>
-              </property>
-              <property name="shortcut">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="0">
-             <widget class="Line" name="line">
-              <property name="orientation">
-               <enum>Qt::Orientation::Horizontal</enum>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout">
-           <item>
-            <widget class="QPushButton" name="helpPushButton">
-             <property name="text">
-              <string>Help</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="closePushButton">
-             <property name="text">
-              <string>Close</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="layoutWidget2">
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QLabel" name="roomNameTextLabel">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Room's name</string>
-         </property>
-         <property name="wordWrap">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QTableWidget" name="roomsTimetableTable"/>
-       </item>
-      </layout>
-     </widget>
-    </widget>
-   </item>
    <item row="1" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout_4">
      <item>
@@ -131,7 +22,7 @@
         <string notr="true">No: 100, Dur: 100</string>
        </property>
        <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignCenter</set>
+        <set>Qt::AlignCenter</set>
        </property>
        <property name="wordWrap">
         <bool>false</bool>
@@ -141,7 +32,7 @@
      <item>
       <spacer name="horizontalSpacer">
        <property name="orientation">
-        <enum>Qt::Orientation::Horizontal</enum>
+        <enum>Qt::Horizontal</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -197,6 +88,140 @@
       <widget class="QCheckBox" name="colorsCheckBox">
        <property name="text">
         <string extracomment="It means to use colors in the timetable view.">Colors</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="0" column="0">
+    <widget class="QSplitter" name="horizontalSplitter">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <widget class="QWidget" name="layoutWidget">
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QSplitter" name="verticalSplitter">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <widget class="QListWidget" name="roomsListWidget"/>
+         <widget class="QTextEdit" name="detailsTextEdit"/>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QGroupBox" name="groupBox">
+           <property name="title">
+            <string extracomment="This is a group box for locking/unlocking buttons">Lock/unlock</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout">
+            <item row="0" column="0">
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <item>
+               <widget class="QPushButton" name="lockTimePushButton">
+                <property name="text">
+                 <string extracomment="This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).">Time</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="lockSpacePushButton">
+                <property name="text">
+                 <string extracomment="This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).">Space</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="2" column="0">
+             <widget class="QPushButton" name="lockTimeSpacePushButton">
+              <property name="text">
+               <string extracomment="This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).">Both</string>
+              </property>
+              <property name="shortcut">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="Line" name="line">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QPushButton" name="helpPushButton">
+             <property name="text">
+              <string>Help</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="closePushButton">
+             <property name="text">
+              <string>Close</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="layoutWidget2">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="roomNameTextLabel">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Room's name</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTableWidget" name="roomsTimetableTable"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_6">
+     <item>
+      <widget class="QPushButton" name="roomSpacePushButton">
+       <property name="text">
+        <string comment="View/edit the selected room's space constraints">Room space</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="activitiesTimePushButton">
+       <property name="text">
+        <string comment="View/edit the selected activities' time constraints">Activities time</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="activitiesSpacePushButton">
+       <property name="text">
+        <string comment="View/edit the selected activities' space constraints">Activities space</string>
        </property>
       </widget>
      </item>

@@ -145,6 +145,7 @@ class AddOrModifySpaceConstraint: public QObject
 	QComboBox* activitiesComboBox;
 	QList<int> activitiesList;
 	int initialActivityId;
+	QList<Activity*> filteredActivitiesList;
 
 	QLabel* labelForSpinBox;
 	QSpinBox* spinBox;
@@ -199,7 +200,8 @@ class AddOrModifySpaceConstraint: public QObject
 public:
 	AddOrModifySpaceConstraint(QWidget* parent, int _type, SpaceConstraint* _oldsc=nullptr,
 	 const QString& _preselectedTeacherName=QString(), const QString& _preselectedStudentsSetName=QString(), const QString& _preselectedSubjectName=QString(), const QString& _preselectedActivityTagName=QString(),
-	 const QString& _preselectedRoomName=QString());
+	 const QString& _preselectedRoomName=QString(),
+	 const QList<Activity*>& _filteredActivitiesList=QList<Activity*>());
 	~AddOrModifySpaceConstraint();
 
 private:

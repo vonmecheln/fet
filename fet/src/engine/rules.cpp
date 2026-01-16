@@ -5925,6 +5925,8 @@ bool Rules::computeInternalStructure(QWidget* parent)
 		delete subgroup;
 	}
 	augmentedYearsList.clear();
+	
+	correspondingRealStudentsSetName.clear();
 	//////////////////
 	
 	//copy list of students sets into augmented list
@@ -6009,7 +6011,7 @@ bool Rules::computeInternalStructure(QWidget* parent)
 			 "is added in the year, in the timetable (when viewing the students timetable from FET and also in the HTML timetables for students groups or subgroups)"
 			 ". In the empty year there will be added a group with name = yearName+a space character+your translation of 'Automatic Group'.");
 			
-			//to avoid rare/very improbable but possible name crashes
+			//to avoid rare/very improbable, but possible name crashes
 			if(augmentedHash.contains(tmpGroup->name)){
 				int i=2;
 				for(;;){
@@ -6031,6 +6033,8 @@ bool Rules::computeInternalStructure(QWidget* parent)
 			 ". In the empty year there will be added a group with name = yearName+a space character+your translation of 'Automatic Group'.");
 			tmpGroup->numberOfStudents = sty->numberOfStudents;
 			sty->groupsList << tmpGroup;
+			
+			correspondingRealStudentsSetName.insert(tmpGroup->name, sty->name);
 		}
 		
 		for(int j=0; j<sty->groupsList.size(); j++){
@@ -6043,7 +6047,7 @@ bool Rules::computeInternalStructure(QWidget* parent)
 				 "is added in the group, in the timetable (when viewing the students timetable from FET and also in the HTML timetables for students subgroups)"
 				 ". In the empty group there will be added a subgroup with name = groupName+a space character+your translation of 'Automatic Subgroup'.");
 				
-				//to avoid rare/very improbable but possible name crashes
+				//to avoid rare/very improbable, but possible name crashes
 				if(augmentedHash.contains(tmpSubgroup->name)){
 					int i=2;
 					for(;;){
@@ -6065,6 +6069,11 @@ bool Rules::computeInternalStructure(QWidget* parent)
 				 ". In the empty group there will be added a subgroup with name = groupName+a space character+your translation of 'Automatic Subgroup'.");
 				tmpSubgroup->numberOfStudents=stg->numberOfStudents;
 				stg->subgroupsList << tmpSubgroup;
+				
+				if(!correspondingRealStudentsSetName.contains(stg->name))
+					correspondingRealStudentsSetName.insert(tmpSubgroup->name, stg->name);
+				else
+					correspondingRealStudentsSetName.insert(tmpSubgroup->name, correspondingRealStudentsSetName.value(stg->name));
 			}
 		}
 	}
@@ -6774,6 +6783,8 @@ void Rules::clear() //clears the memory for the rules.
 	internalGroupsList.clear();
 	
 	augmentedYearsList.clear();
+
+	correspondingRealStudentsSetName.clear();
 	//////////////////
 	
 	//Activities

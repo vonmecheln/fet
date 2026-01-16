@@ -77,6 +77,11 @@ public Q_SLOTS:
 
 	void currentItemChanged(QTableWidgetItem* current, QTableWidgetItem* previous);
 
+	void studentsSubgroupTime();
+	void studentsSubgroupSpace();
+	void activitiesTime();
+	void activitiesSpace();
+
 	void help();
 	
 	void shownComboBoxChanged();

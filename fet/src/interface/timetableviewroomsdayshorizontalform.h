@@ -77,6 +77,11 @@ public Q_SLOTS:
 	void lockTime();
 	void lockSpace();
 	void lockTimeSpace();
+
+	void roomSpace();
+	void activitiesTime();
+	void activitiesSpace();
+
 	void help();
 	
 protected:

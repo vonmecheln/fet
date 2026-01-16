@@ -22,6 +22,8 @@
 
 #include "fetmainform.h"
 #include "timetableviewroomstimehorizontalform.h"
+#include "listofrelatedtimeconstraintsform.h"
+#include "listofrelatedspaceconstraintsform.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "solution.h"
@@ -60,6 +62,9 @@
 #include <QBrush>
 #include <QColor>
 //end by Marco Vassura
+
+//std::stable_sort
+#include <algorithm>
 
 extern const QString COMPANY;
 extern const QString PROGRAM;
@@ -186,6 +191,10 @@ TimetableViewRoomsTimeHorizontalForm::TimetableViewRoomsTimeHorizontalForm(QWidg
 	connect(lockTimePushButton, &QPushButton::clicked, this, &TimetableViewRoomsTimeHorizontalForm::lockTime);
 	connect(lockSpacePushButton, &QPushButton::clicked, this, &TimetableViewRoomsTimeHorizontalForm::lockSpace);
 	connect(lockTimeSpacePushButton, &QPushButton::clicked, this, &TimetableViewRoomsTimeHorizontalForm::lockTimeSpace);
+
+	connect(roomsSpacePushButton, &QPushButton::clicked, this, &TimetableViewRoomsTimeHorizontalForm::roomsSpace);
+	connect(activitiesTimePushButton, &QPushButton::clicked, this, &TimetableViewRoomsTimeHorizontalForm::activitiesTime);
+	connect(activitiesSpacePushButton, &QPushButton::clicked, this, &TimetableViewRoomsTimeHorizontalForm::activitiesSpace);
 
 	connect(helpPushButton, &QPushButton::clicked, this, &TimetableViewRoomsTimeHorizontalForm::help);
 	
@@ -1671,4 +1680,209 @@ void TimetableViewRoomsTimeHorizontalForm::help()
 	s+=QCoreApplication::translate("TimetableViewForm", "Note: In this dialog, the virtual rooms' timetable will be empty.");
 		
 	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
+}
+
+void TimetableViewRoomsTimeHorizontalForm::roomsSpace()
+{
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	if(!(students_schedule_ready && teachers_schedule_ready)){
+		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view rooms timetable dialog - please generate a new timetable"));
+		return;
+	}
+	assert(students_schedule_ready && teachers_schedule_ready);
+
+	if(!rooms_buildings_schedule_ready){
+		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view rooms timetable dialog - please generate a new timetable"));
+		return;
+	}
+	assert(rooms_buildings_schedule_ready);
+
+	if(gt.rules.nInternalRooms!=gt.rules.roomsList.count()){
+		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it"));
+		return;
+	}
+
+	QList<int> srm;
+	for(int t=0; t<gt.rules.nInternalRooms; t++){
+		assert(t<roomsTimetableTable->rowCount());
+		for(int k=0; k<roomsTimetableTable->columnCount(); k++){
+			if(roomsTimetableTable->item(t, k)->isSelected()){
+				srm.append(t);
+			}
+		}
+	}
+
+	if(srm.isEmpty()){
+		QMessageBox::information(this, tr("FET information"), tr("Please select at least one room (one table cell)"));
+		return;
+	}
+
+	QList<SpaceConstraint*> tscl;
+	for(SpaceConstraint* sc : std::as_const(gt.rules.spaceConstraintsList)){
+		for(int rm : std::as_const(srm)){
+			if(sc->isRelatedToRoom(gt.rules.internalRoomsList[rm])){
+				tscl.append(sc);
+				break;
+			}
+		}
+	}
+
+	QString s;
+	if(srm.count()==1)
+		s=tr("Room: %1").arg(gt.rules.internalRoomsList[srm.at(0)]->name);
+	else
+		s=tr("%1 rooms selected", "%1 is the number of selected rooms").arg(srm.count());
+	ListOfRelatedSpaceConstraintsForm form(this, FILTER_IS_ROOM, QList<Activity*>(), s, tscl);
+	form.exec();
+}
+
+void TimetableViewRoomsTimeHorizontalForm::activitiesTime()
+{
+	if(!(students_schedule_ready && teachers_schedule_ready)){
+		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view rooms timetable dialog - please generate a new timetable"));
+		return;
+	}
+	assert(students_schedule_ready && teachers_schedule_ready);
+
+	if(!rooms_buildings_schedule_ready){
+		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view rooms timetable dialog - please generate a new timetable"));
+		return;
+	}
+	assert(rooms_buildings_schedule_ready);
+
+	if(gt.rules.nInternalRooms!=gt.rules.roomsList.count()){
+		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it"));
+		return;
+	}
+
+	Solution* tc=&best_solution;
+
+	QSet<int> realActivities;
+	for(int t=0; t<gt.rules.nInternalRooms; t++){
+		assert(t<roomsTimetableTable->rowCount());
+		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+			for(int h=0; h<gt.rules.nHoursPerDay; h++){
+				assert(d*gt.rules.nHoursPerDay+h<roomsTimetableTable->columnCount());
+				if(roomsTimetableTable->item(t, d*gt.rules.nHoursPerDay+h)->isSelected()){
+					int ai=rooms_timetable_weekly[t][d][h];
+					if(ai!=UNALLOCATED_ACTIVITY)
+						if(!realActivities.contains(ai))
+							realActivities.insert(ai);
+				}
+			}
+		}
+	}
+
+	QList<Activity*> actl;
+
+	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+		if(realActivities.contains(ai)){
+			assert(tc->times[ai]!=UNALLOCATED_TIME);
+
+			actl.append(&gt.rules.internalActivitiesList[ai]);
+		}
+	}
+
+	if(actl.isEmpty()){
+		QMessageBox::information(this, tr("FET information"), tr("Please select at least one activity (one table cell)"));
+		return;
+	}
+
+	std::stable_sort(actl.begin(), actl.end(), [](const Activity* a, const Activity* b){return a->id < b->id;});
+
+	QList<TimeConstraint*> ttcl;
+	for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList)){
+		for(Activity* act : std::as_const(actl)){
+			if(tc->isRelatedToActivity(gt.rules, act)){
+				ttcl.append(tc);
+				break;
+			}
+		}
+	}
+
+	QString s;
+	if(actl.count()==1)
+		s=tr("Activity Id: %1").arg(actl.at(0)->id);
+	else
+		s=tr("%1 activities selected", "%1 is the number of selected activities").arg(actl.count());
+	ListOfRelatedTimeConstraintsForm form(this, FILTER_IS_ACTIVITY, actl, s, ttcl);
+	form.exec();
+}
+
+void TimetableViewRoomsTimeHorizontalForm::activitiesSpace()
+{
+	if(!(students_schedule_ready && teachers_schedule_ready)){
+		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view rooms timetable dialog - please generate a new timetable"));
+		return;
+	}
+	assert(students_schedule_ready && teachers_schedule_ready);
+
+	if(!rooms_buildings_schedule_ready){
+		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view rooms timetable dialog - please generate a new timetable"));
+		return;
+	}
+	assert(rooms_buildings_schedule_ready);
+
+	if(gt.rules.nInternalRooms!=gt.rules.roomsList.count()){
+		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it"));
+		return;
+	}
+
+	Solution* tc=&best_solution;
+
+	QSet<int> realActivities;
+	for(int t=0; t<gt.rules.nInternalRooms; t++){
+		assert(t<roomsTimetableTable->rowCount());
+		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+			for(int h=0; h<gt.rules.nHoursPerDay; h++){
+				assert(d*gt.rules.nHoursPerDay+h<roomsTimetableTable->columnCount());
+				if(roomsTimetableTable->item(t, d*gt.rules.nHoursPerDay+h)->isSelected()){
+					int ai=rooms_timetable_weekly[t][d][h];
+					if(ai!=UNALLOCATED_ACTIVITY)
+						if(!realActivities.contains(ai))
+							realActivities.insert(ai);
+				}
+			}
+		}
+	}
+
+	QList<Activity*> actl;
+
+	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+		if(realActivities.contains(ai)){
+			assert(tc->times[ai]!=UNALLOCATED_TIME);
+
+			actl.append(&gt.rules.internalActivitiesList[ai]);
+		}
+	}
+
+	if(actl.isEmpty()){
+		QMessageBox::information(this, tr("FET information"), tr("Please select at least one activity (one table cell)"));
+		return;
+	}
+
+	std::stable_sort(actl.begin(), actl.end(), [](const Activity* a, const Activity* b){return a->id < b->id;});
+
+	QList<SpaceConstraint*> tscl;
+	for(SpaceConstraint* sc : std::as_const(gt.rules.spaceConstraintsList)){
+		for(Activity* act : std::as_const(actl)){
+			if(sc->isRelatedToActivity(act)){
+				tscl.append(sc);
+				break;
+			}
+		}
+	}
+
+	QString s;
+	if(actl.count()==1)
+		s=tr("Activity Id: %1").arg(actl.at(0)->id);
+	else
+		s=tr("%1 activities selected", "%1 is the number of selected activities").arg(actl.count());
+	ListOfRelatedSpaceConstraintsForm form(this, FILTER_IS_ACTIVITY, actl, s, tscl);
+	form.exec();
 }
