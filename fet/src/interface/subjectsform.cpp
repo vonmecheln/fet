@@ -22,6 +22,8 @@
 #include "teacher.h"
 #include "subject.h"
 
+#include "utilities.h"
+
 #include <QInputDialog>
 
 #include <QMessageBox>

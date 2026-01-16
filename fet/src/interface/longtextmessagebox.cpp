@@ -22,9 +22,9 @@ File longtextmessagebox.cpp
 
 #include "timetable_defs.h"
 
-#ifndef FET_COMMAND_LINE
-
 #include "longtextmessagebox_auxiliary.h"
+
+#include "utilities.h"
 
 #include <QMessageBox>
 
@@ -35,12 +35,6 @@ File longtextmessagebox.cpp
 #include <QHBoxLayout>
 #include <QTextEdit>
 #include <QPushButton>
-
-#else
-
-#include "messageboxes.h"
-
-#endif
 
 const int MIN_WIDTH=420;  //golden ratio 1.618 for min dimensions :-)
 const int MAX_WIDTH=1000;
@@ -63,7 +57,6 @@ int LongTextMessageBox::confirmationWithDimensions
  int defaultButton, int escapeButton, int MINW, int MAXW, int MINH, int MAXH,
  bool isWarning, bool isError )
 {
-#ifndef FET_COMMAND_LINE
 	Q_UNUSED(isWarning);
 	Q_UNUSED(isError);
 
@@ -153,16 +146,6 @@ int LongTextMessageBox::confirmationWithDimensions
 		//cout<<"rejected"<<endl;
 		return escapeButton;
 	}
-#else
-	Q_UNUSED(MINW);
-	Q_UNUSED(MAXW);
-	Q_UNUSED(MINH);
-	Q_UNUSED(MAXH);
-	
-	commandLineMessage(parent, title, text, button0Text, button1Text, button2Text, defaultButton, escapeButton,
-	 isWarning, isError);
-	return defaultButton;
-#endif
 }
 
 int LongTextMessageBox::confirmation
@@ -208,7 +191,6 @@ void LongTextMessageBox::informationWithDimensions
  (QWidget* parent, const QString& title, const QString& text, int MINW, int MAXW, int MINH, int MAXH,
  bool isWarning, bool isError)
 {
-#ifndef FET_COMMAND_LINE
 	Q_UNUSED(isWarning);
 	Q_UNUSED(isError);
 
@@ -244,15 +226,6 @@ void LongTextMessageBox::informationWithDimensions
 		forceCenterWidgetOnScreen(&dialog);
 	
 	dialog.exec();
-#else
-	Q_UNUSED(MINW);
-	Q_UNUSED(MAXW);
-	Q_UNUSED(MINH);
-	Q_UNUSED(MAXH);
-	
-	commandLineMessage(parent, title, text,
-	 isWarning, isError);
-#endif
 }
 
 void LongTextMessageBox::information
@@ -279,7 +252,6 @@ void LongTextMessageBox::mediumInformation
 	 isWarning, isError);
 }
 
-#ifndef FET_COMMAND_LINE
 MyDialogWithThreeButtons::MyDialogWithThreeButtons(QWidget* parent): QDialog(parent)
 {
 }
@@ -419,4 +391,3 @@ int LongTextMessageBox::largeConfirmationWithDimensionsThreeButtonsYesNoCancel
 	assert(dialog.clickedButton>=0);
 	return dialog.clickedButton;
 }
-#endif

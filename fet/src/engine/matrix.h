@@ -29,8 +29,6 @@
 #ifndef MATRIX_H
 #define MATRIX_H
 
-#include "timetable_defs.h"
-
 template <typename T>
 class Matrix3D
 {

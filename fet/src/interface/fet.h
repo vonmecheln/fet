@@ -28,15 +28,9 @@ File fet.h
 
 #include <QTextStream>
 
-#ifndef FET_COMMAND_LINE
 #include <QApplication>
-#endif
 
 class QWidget;
-
-class FetTranslate: public QObject{
-	Q_OBJECT
-};
 
 /**
 The one and only instantiation of the main class.
@@ -69,7 +63,6 @@ The timetable for the buildings
 */
 extern Matrix3D<QList<int>> buildings_timetable_weekly;
 
-#ifndef FET_COMMAND_LINE
 class FetSettings: public QObject{
 	Q_OBJECT
 
@@ -80,13 +73,8 @@ public Q_SLOTS:
 	void writeGenerationParameters();
 };
 //void writeDefaultGenerationParameters();
-#endif
 
-#ifndef FET_COMMAND_LINE
 void setLanguage(QApplication& qapplication, QWidget* parent);
-#else
-void setLanguage(QCoreApplication& qapplication, QWidget* parent);
-#endif
 
 void initLanguagesSet();
 

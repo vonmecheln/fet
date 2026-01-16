@@ -19,6 +19,8 @@
 
 #include "spaceconstraint.h"
 
+#include "utilities.h"
+
 #include <QAbstractItemDelegate>
 #include <QStyledItemDelegate>
 

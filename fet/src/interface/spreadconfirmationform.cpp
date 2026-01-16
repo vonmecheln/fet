@@ -18,6 +18,8 @@
 
 #include "timetable_defs.h"
 
+#include "utilities.h"
+
 SpreadConfirmationForm::SpreadConfirmationForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);

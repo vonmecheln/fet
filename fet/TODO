@@ -12077,3 +12077,53 @@ be implemented in FET, because it is unfeasible/impossible. The solution must be
 From Michael Chourdakis (on Facebook):
 
 The ability for fet-cl to save it's current state in a file then restart from it, say I reached 90% of a timetable, perhaps save this, stop fet and resume later.
+
+797--------------------------------------------------------
+From Michael Towers:
+
+It seems the current (binary) FET distribution doesn't include Wayland
+support on Linux. Apparently it still runs on a Wayland session (I
+tested it on a recent Fedora) by using XWayland, but by using a recent
+feature of CMake+Qt (for example) it is possible to include direct
+Wayland support in the FET package.
+
+Running FET on Linux using the binary distribution, the file system is
+accessed using Qt's own file dialogs, rather than the native ones, at
+least where I have tested it. This seems to have something to do with
+the packaging using linuxdeploy, which can also affect the styling. With
+my CMake-built package, the native file dialogs are used.
+
+FET doesn't use Qt's own translations. This is occasionally visible in a
+dialog (only in Linux, only the file dialogs?). It is probably a very
+minor issue.
+
+Because some of the features of CMake I have used are new, my CMake
+build files can only be used on very recent Qt versions. I have been
+testing with FET-7.6.4 and Qt6.10.1, compiling on MX Linux 23 (Debian
+12) and Windows 10.
+
+798---------------------------------------------------------
+From GUEFFAZ REDA:
+
+In the Mornings-Afternoons mode, add the possibility to convert the selected min half days between activities constraints to min days between activities constraints
+(he sent to Liviu Lalescu a picture in which this option is added in the min half days between activities dialog, and he said that in the past he added by mistake
+min half days instead of min days. Liviu proposed him to use the Advanced > Spread activities evenly over the week option).
+
+799---------------------------------------------------------
+From Eleni Damaskou and Vangelis Karafillidis:
+
+The user should be able to modify a timetable with MINIMAL changes.
+
+The user actually does not care about the number of tries of the algorithm itself when the weight is <100%,
+but they do care about the number of the constraints that are violated.
+
+So, the user might accept ANY 20 of 40 selected activities to change.
+
+So, what the user REALLY needs is a way to limit (constrain) the number of the constraints that are violated.
+For example, max hour continuously for a teacher - the user might accept 4 hours with 100% and 3 hours with 99%.
+But, what they really care about is that max 3 hours is violated 1 or 2 times (for example),
+so the weight is not the most important parameter for the user.
+
+Liviu Lalescu:
+
+This must be implemented specially for each constraint, and is really complicated.

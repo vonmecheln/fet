@@ -20,6 +20,8 @@
 
 #include "settingsrestoredatafrommemoryform.h"
 
+#include "utilities.h"
+
 /*#include <QDate>
 #include <QTime>
 #include <QPair>*/

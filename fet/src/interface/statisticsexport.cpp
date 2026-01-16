@@ -27,6 +27,8 @@ File statisticsexport.cpp
 #include "timetable_defs.h"
 #include "statisticsexport.h"
 
+#include "utilities.h"
+
 // BE CAREFUL: DON'T USE INTERNAL VARIABLES HERE, because maybe computeInternalStructure() is not done!
 
 #include <QString>

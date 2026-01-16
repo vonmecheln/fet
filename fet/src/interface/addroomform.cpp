@@ -18,6 +18,8 @@
 
 #include "longtextmessagebox.h"
 
+#include "utilities.h"
+
 #include <QMessageBox>
 
 AddRoomForm::AddRoomForm(QWidget* parent): QDialog(parent)

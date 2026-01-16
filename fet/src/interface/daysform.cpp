@@ -24,6 +24,8 @@
 #include "modifydayform.h"
 #include "modifyrealdayform.h"
 
+#include "utilities.h"
+
 #include <Qt>
 #include <QShortcut>
 #include <QKeySequence>

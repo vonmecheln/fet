@@ -29,6 +29,8 @@
 
 #include "longtextmessagebox.h"
 
+#include "utilities.h"
+
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
 

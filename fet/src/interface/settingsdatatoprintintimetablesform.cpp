@@ -18,6 +18,8 @@
 
 #include "settingsdatatoprintintimetablesform.h"
 
+#include "utilities.h"
+
 SettingsDataToPrintInTimetablesForm::SettingsDataToPrintInTimetablesForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);

@@ -24,6 +24,8 @@
 #include "modifyhourform.h"
 #include "modifyrealhourform.h"
 
+#include "utilities.h"
+
 #include <Qt>
 #include <QShortcut>
 #include <QKeySequence>

@@ -23,6 +23,8 @@
 
 #include "longtextmessagebox.h"
 
+#include "utilities.h"
+
 #include <QMessageBox>
 
 #include <QListWidget>

@@ -24,6 +24,8 @@
 
 #include "rules.h"
 
+#include "utilities.h"
+
 #include <QMessageBox>
 
 extern const QString COMPANY;

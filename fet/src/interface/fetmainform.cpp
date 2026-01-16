@@ -19,11 +19,11 @@
 #include "solution.h"
 #include "rules.h"
 
+#include "utilities.h"
+
 #include <iostream>
 //for std::min
 #include <algorithm>
-
-#ifndef FET_COMMAND_LINE
 
 #include <Qt>
 
@@ -55,8 +55,8 @@
 #include "timetableprintform.h"
 #include "statisticsprintform.h"
 
-#include "export.h"
-#include "import.h"
+#include "exportinterface.h"
+#include "importinterface.h"
 
 #include "institutionnameform.h"
 #include "commentsform.h"
@@ -177,7 +177,7 @@
 #include <QFontDialog>
 
 #include <deque>
-#include <list>
+//#include <list>
 #include <iterator>
 
 #include <QByteArray>
@@ -189,8 +189,6 @@ int MAIN_FORM_SHORTCUTS_TAB_POSITION;
 #include "spreadmindaysconstraintsfivedaysform.h"
 
 #include "statisticsexport.h"
-
-#endif
 
 bool generation_running; //true if the user started a generation of the timetable
 
@@ -882,13 +880,10 @@ bool SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
 //
 //2024-06-12 end
 
-#ifndef FET_COMMAND_LINE
 extern QApplication* pqapplication;
-#endif
 
 Rules rules2;
 
-#ifndef FET_COMMAND_LINE
 static bool fontIsUserSelectable=false;
 static bool userChoseAFont=false;
 static QFont originalFont;
@@ -16253,13 +16248,3 @@ void FetMainForm::shortcutSaveAsPushButton_clicked()
 {
 	fileSaveAsAction_triggered();
 }
-
-#else
-bool SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES=true;
-
-bool SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME=true;
-
-bool SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT=true;
-
-bool SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER=true;
-#endif

@@ -24,6 +24,8 @@
 
 #include "advancedfilterform.h"
 
+#include "utilities.h"
+
 #include <Qt>
 
 #include <QMessageBox>

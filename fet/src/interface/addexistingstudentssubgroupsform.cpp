@@ -22,6 +22,8 @@
 
 #include "matrix.h"
 
+#include "utilities.h"
+
 #include <QListWidget>
 #include <QAbstractItemView>
 #include <QScrollBar>

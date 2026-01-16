@@ -20,6 +20,8 @@
 #include "fet.h"
 #include "timetable.h"
 
+#include "utilities.h"
+
 #include <QMessageBox>
 
 extern bool teachers_schedule_ready;

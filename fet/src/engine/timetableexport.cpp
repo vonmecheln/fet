@@ -18747,7 +18747,7 @@ void TimetableExport::addActivitiesLegend(const QList<int>& allActivitiesList, Q
 		for(int ai : std::as_const(allActivitiesList)){
 			if(ai!=UNALLOCATED_ACTIVITY){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
-				for(const QString& at : act->activityTagsNames){
+				for(const QString& at : std::as_const(act->activityTagsNames)){
 					int ati=gt.rules.activityTagsHash.value(at, -1);
 					assert(ati>=0);
 					usedActivityTagsSet.insert(gt.rules.internalActivityTagsList[ati]);
@@ -18760,7 +18760,7 @@ void TimetableExport::addActivitiesLegend(const QList<int>& allActivitiesList, Q
 		for(int ai : std::as_const(allActivitiesList)){
 			if(ai!=UNALLOCATED_ACTIVITY){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
-				for(const QString& tch : act->teachersNames){
+				for(const QString& tch : std::as_const(act->teachersNames)){
 					int tchi=gt.rules.teachersHash.value(tch, -1);
 					assert(tchi>=0);
 					usedTeachersSet.insert(gt.rules.internalTeachersList[tchi]);
@@ -18773,7 +18773,7 @@ void TimetableExport::addActivitiesLegend(const QList<int>& allActivitiesList, Q
 		for(int ai : std::as_const(allActivitiesList)){
 			if(ai!=UNALLOCATED_ACTIVITY){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
-				for(const QString& st : act->studentsNames){
+				for(const QString& st : std::as_const(act->studentsNames)){
 					StudentsSet* stp=gt.rules.studentsHash.value(st, nullptr);
 					assert(stp!=nullptr);
 					usedStudentsSet.insert(stp);

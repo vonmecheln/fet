@@ -22,6 +22,8 @@
 
 #include "lockunlock.h"
 
+#include "utilities.h"
+
 #include "advancedfilterform.h"
 
 #include <Qt>

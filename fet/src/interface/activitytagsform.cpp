@@ -23,6 +23,8 @@
 #include "subject.h"
 #include "activitytag.h"
 
+#include "utilities.h"
+
 #include <QInputDialog>
 
 #include <QMessageBox>

@@ -25,6 +25,8 @@
 
 #include "rules.h"
 
+#include "utilities.h"
+
 #include <QString>
 #include <QStringList>
 
@@ -83,7 +85,7 @@ extern QString conflictsString;
 
 Generate gen;
 
-QString initialOrderOfActivities;
+extern QString initialOrderOfActivities;
 
 QString getActivityDetailedDescription(Rules& r, int id);
 
@@ -107,7 +109,7 @@ void runSingle()
 	gen.semaphorePlacedActivity.tryAcquire(); //this has effect after stopping the generation or if the timetable is impossible to solve
 	assert(gen.semaphorePlacedActivity.available()==0);
 	assert(gen.semaphoreFinished.available()==0);
-	gen.generateWithSemaphore(INF, restarted, impossible, timeExceeded, true); //true means threaded
+	gen.generateWithSemaphore(INF, restarted, impossible, timeExceeded, true, false); //true means threaded, false means not command line
 }
 
 TimetableGenerateForm::TimetableGenerateForm(QWidget* parent): QDialog(parent)

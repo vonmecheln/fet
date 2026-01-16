@@ -34,6 +34,8 @@
 
 #include "matrix.h"
 
+#include "utilities.h"
+
 #include <QMessageBox>
 
 #include <QTableWidget>

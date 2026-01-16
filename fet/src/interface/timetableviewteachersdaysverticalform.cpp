@@ -34,6 +34,8 @@
 
 #include "lockunlock.h"
 
+#include "utilities.h"
+
 #include <QMessageBox>
 
 #include <QTableWidget>

@@ -25,6 +25,8 @@
 
 #include "longtextmessagebox.h"
 
+#include "utilities.h"
+
 #include "groupactivitiesininitialorderitemsform.h"
 #include "addgroupactivitiesininitialorderitemform.h"
 #include "modifygroupactivitiesininitialorderitemform.h"

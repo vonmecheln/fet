@@ -85,38 +85,31 @@ So at least for now FET will use QList.*/
 
 #include "matrix.h"
 
+#include "timetableexport.h"
+
 #include <QList>
 #include <QSet>
 #include <QHash>
 //#include <QQueue>
 
+#include <QFile>
+#include <QFileInfo>
+
 #include <QPair>
+
+#include <QDir>
 
 #include <tuple>
 
 #include <thread>
 #include <chrono>
 
-#ifdef FET_COMMAND_LINE
-#include <QDir>
-#include <QFileInfo>
-#include <QFile>
-
-#include "timetableexport.h"
-#include "export.h"
-#include "fet.h"
-
-extern QString tempOutputDirectory;
-extern QString logsDir;
-extern QString csvOutputDirectory;
-#endif
-
 //#include <condition_variable>
 
 //extern QMutex myMutex; //timetablegenerateform.cpp
 
 /*
-#ifndef FET_COMMAND_LINE
+#ifndef FET_COM MAND_LINE
 extern QSemaphore semaphorePlacedActivity;
 extern QSemaphore finishedSemaphore;
 #else
@@ -138,11 +131,18 @@ const int INF=2000000000;
 //const int MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0=400000;
 const int MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0=2000000000;
 
-#ifdef FET_COMMAND_LINE
 extern QString communicationFile;
+
+void exportExportCSV(Solution* bestOrHighest, Solution* current=nullptr);
+
+extern QString tempOutputDirectory;
+extern QString logsDir;
+extern QString csvOutputDirectory;
 
 void Generate::checkWriteCurrentAndHighestTimetable()
 {
+	assert(this->isCommandLine);
+
 	static std::chrono::steady_clock::time_point startClock=std::chrono::steady_clock::now();
 	
 	std::chrono::steady_clock::time_point currentClock=std::chrono::steady_clock::now();
@@ -301,13 +301,12 @@ void Generate::checkWriteCurrentAndHighestTimetable()
 
 	QString oldDir=OUTPUT_DIR;
 	OUTPUT_DIR=csvOutputDirectory;
-	Export::exportCSV(&this->highestStageSolution, &this->c);
+	exportExportCSV(&this->highestStageSolution, &this->c);
 	OUTPUT_DIR=oldDir;
 
 	//done when returning from this function
 	//writeCurrentAndHighestTimetable=false;
 }
-#endif
 
 bool Generate::compareConflictsIncreasing(int a, int b)
 {
@@ -7537,17 +7536,17 @@ inline bool Generate::getOptimumActivitiesToDisplace(int level, const QList<QLis
 	}
 }
 
-void Generate::generateWithSemaphore(int maxSeconds, bool& restarted, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream)
+void Generate::generateWithSemaphore(int maxSeconds, bool& restarted, bool& impossible, bool& timeExceeded, bool threaded, bool commandLine, QTextStream* maxPlacedActivityStream)
 {
 	isRunning=true;
-	generate(maxSeconds, restarted, impossible, timeExceeded, threaded, maxPlacedActivityStream);
+	generate(maxSeconds, restarted, impossible, timeExceeded, threaded, commandLine, maxPlacedActivityStream);
 	semaphoreFinished.release();
 	isRunning=false;
 }
 
-void Generate::generate(int maxSeconds, bool& restarted, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream)
+void Generate::generate(int maxSeconds, bool& restarted, bool& impossible, bool& timeExceeded, bool threaded, bool commandLine, QTextStream* maxPlacedActivityStream)
 {
-//#ifdef FET_COMMAND_LINE
+//#ifdef FET_COM MAND_LINE
 //	if(!threaded)
 //		writeCurrentAndHighestTimetable=false;
 //#endif
@@ -7560,6 +7559,7 @@ void Generate::generate(int maxSeconds, bool& restarted, bool& impossible, bool&
 		permutation[i]=copyOfInitialPermutation[i];
 
 	this->isThreaded=threaded;
+	this->isCommandLine=commandLine;
 	
 	//2019-09-14 - begin for the maximum bipartite matching algorithm
 	int j=0; //the number of real rooms
@@ -8338,14 +8338,12 @@ prevvalue:
 				
 				semaphorePlacedActivity.acquire();
 			}
-#ifdef FET_COMMAND_LINE
-			else{
+			if(isCommandLine){
 				//if(writeCurrentAndHighestTimetable){
 				checkWriteCurrentAndHighestTimetable();
 				//	writeCurrentAndHighestTimetable=false;
 				//}
 			}
-#endif
 			//}
 
 			goto prevvalue;
@@ -8395,14 +8393,12 @@ prevvalue:
 				//semaphorePlacedActivity.acquire();
 				myMutex.lock();
 			}
-#ifdef FET_COMMAND_LINE
-			else{
+			if(isCommandLine){
 				//if(writeCurrentAndHighestTimetable){
 				checkWriteCurrentAndHighestTimetable();
 				//	writeCurrentAndHighestTimetable=false;
 				//}
 			}
-#endif
 			/*if(added_act==gt.rules.nInternalActivities && foundGoodSwap){ //Should be added_act+1==...
 				//isRunning=false;
 
@@ -8438,21 +8434,13 @@ prevvalue:
 	if(searchTime<0)
 		searchTime=0;
 	
-#ifdef FET_COMMAND_LINE
-	int ttcl=int(difftime(end_time, starting_time))-pausedTime;
-	if(ttcl<0)
-		ttcl=0;
+	if(isCommandLine || (!isCommandLine && VERBOSE)){
+		int gtm=int(difftime(end_time, starting_time))-pausedTime;
+		if(gtm<0)
+			gtm=0;
 
-	std::cout<<"Total searching time (seconds): "<<ttcl<<std::endl;
-#else
-	if(VERBOSE){
-		int ttv=int(difftime(end_time, starting_time))-pausedTime;
-		if(ttv<0)
-			ttv=0;
-
-		std::cout<<"Total searching time (seconds): "<<ttv<<std::endl;
+		std::cout<<"Total searching time (seconds): "<<gtm<<std::endl;
 	}
-#endif
 
 	Q_EMIT generationFinished();
 	
@@ -36021,14 +36009,12 @@ skip_here_if_already_allocated_in_time:
 					semaphorePlacedActivity.acquire();
 					myMutex.lock();
 				}
-#ifdef FET_COMMAND_LINE
-				else{
+				if(isCommandLine){
 					//if(writeCurrentAndHighestTimetable){
 					checkWriteCurrentAndHighestTimetable();
 					//	writeCurrentAndHighestTimetable=false;
 					//}
 				}
-#endif
 				
 				if(searchTime>=activityRetryLevel0TimeLimit){
 					activityRetryLevel0TimeExceeded=true;

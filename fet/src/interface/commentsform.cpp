@@ -20,6 +20,8 @@
 
 #include "commentsform.h"
 
+#include "utilities.h"
+
 #include <QMessageBox>
 
 extern Timetable gt;

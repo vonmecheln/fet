@@ -21,6 +21,8 @@
 
 #include "longtextmessagebox.h"
 
+#include "utilities.h"
+
 #include <tuple>
 #include <algorithm>
 

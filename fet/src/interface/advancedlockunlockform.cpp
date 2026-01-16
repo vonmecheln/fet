@@ -44,6 +44,8 @@
 
 #include "longtextmessagebox.h"
 
+#include "utilities.h"
+
 extern bool students_schedule_ready;
 extern bool teachers_schedule_ready;
 extern bool rooms_buildings_schedule_ready;

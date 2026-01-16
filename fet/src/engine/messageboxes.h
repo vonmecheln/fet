@@ -23,29 +23,15 @@
 
 #include <QObject>
 
-#ifndef FET_COMMAND_LINE
-#include <QWidget>
-#else
-class QWidget{
-};
-#endif
+class QWidget;
 
-#ifdef FET_COMMAND_LINE
-class FetCommandLine: public QObject{
-	Q_OBJECT
-};
+class QProgressDialog;
 
 void commandLineMessage(QWidget* parent, const QString& title, const QString& message,
  bool isWarning, bool isError);
 int commandLineMessage(QWidget* parent, const QString& title, const QString& message,
  const QString& button0Text, const QString& button1Text, const QString& button2Text, int defaultButton, int escapeButton,
  bool isWarning, bool isError);
-#else
-//Just to disable a Qt moc warning
-class DummyFetGuiClass: public QObject{
-	Q_OBJECT
-};
-#endif
 
 //Rules
 
@@ -177,11 +163,12 @@ public:
 
 //QProgressDialog
 
-#ifdef FET_COMMAND_LINE
+class EngineProgressDialog{
+	QProgressDialog* qpd;
 
-class QProgressDialog{
 public:
-	QProgressDialog(QWidget* parent);
+	EngineProgressDialog(QWidget* parent);
+	~EngineProgressDialog();
 	void setWindowTitle(const QString& title);
 	void setLabelText(const QString& title);
 	void setRange(int a, int b);
@@ -189,7 +176,5 @@ public:
 	void setValue(int v);
 	bool wasCanceled();
 };
-
-#endif
 
 #endif

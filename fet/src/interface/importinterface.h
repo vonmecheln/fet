@@ -1,5 +1,5 @@
 /*
-File import.h
+File importinterface.h
 */
 
 /***************************************************************************
@@ -8,9 +8,9 @@ File import.h
    copyright            : (C) by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************
-                          import.h  -  description
+                          importinterface.h  -  description
                              -------------------
-    begin                : Mar 2008
+    begin                : Mar 2026
     copyright            : (C) by Volker Dirr
                          : https://www.timetabling.de/
  ***************************************************************************
@@ -21,8 +21,8 @@ File import.h
  *                                                                         *
  ***************************************************************************/
 
-#ifndef IMPORT_H
-#define IMPORT_H
+#ifndef IMPORTINTERFACE_H
+#define IMPORTINTERFACE_H
 
 #include <QDialog>
 

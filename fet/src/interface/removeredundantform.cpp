@@ -20,6 +20,8 @@
 
 extern Timetable gt;
 
+#include "utilities.h"
+
 #include <QHash>
 #include <QMultiHash>
 #include <QList>

@@ -33,9 +33,10 @@ File timetable_defs.h
 
 #include <QtGlobal>
 
-#include "utilities.h"
-
 class QWidget;
+
+class Rules;
+void setRulesModifiedAndOtherThings(Rules* rules);
 
 extern const QString IL1; //indentation levels
 extern const QString IL2;

@@ -23,6 +23,8 @@
 #include "teacher.h"
 #include "teachersubjectsqualificationsform.h"
 
+#include "utilities.h"
+
 #include <QMessageBox>
 
 #include <Qt>

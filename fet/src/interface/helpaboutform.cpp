@@ -22,6 +22,8 @@
 
 #include "timetable_defs.h"
 
+#include "utilities.h"
+
 HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
@@ -1543,6 +1545,8 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("SEMMARI MILOUD");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("corra");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Eleni Damaskou");
 	thanksTo+=QString("<br />");
 	
 	thanksToTextBrowser->setHtml(thanksTo);

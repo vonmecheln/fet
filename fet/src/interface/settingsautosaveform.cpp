@@ -20,6 +20,8 @@
 
 #include "settingsautosaveform.h"
 
+#include "utilities.h"
+
 #include <QFileDialog>
 #include <QDir>
 

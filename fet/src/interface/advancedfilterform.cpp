@@ -18,6 +18,8 @@
 
 #include "timetable_defs.h"
 
+#include "utilities.h"
+
 AdvancedFilterForm::AdvancedFilterForm(QWidget* parent, const QString& title, bool detDescrWithConstraints, bool all, QList<int> descrDetDescrDetDescrWithConstraints, QList<int> contNCont, QStringList text, bool caseSensitive, const QString& textToSettings): QDialog(parent)
 {
 	atts=textToSettings;

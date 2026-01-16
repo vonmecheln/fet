@@ -18,6 +18,8 @@
 
 #include "settingstimetablehtmllevelform.h"
 
+#include "utilities.h"
+
 extern QApplication* pqapplication;
 
 #include <QMessageBox>

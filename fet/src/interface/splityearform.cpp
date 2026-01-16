@@ -14,9 +14,11 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <QtGlobal>
-
 #include "splityearform.h"
+
+#include "utilities.h"
+
+#include <QtGlobal>
 
 #include <Qt>
 #include <QShortcut>

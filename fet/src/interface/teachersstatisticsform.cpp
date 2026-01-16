@@ -21,6 +21,8 @@
 
 #include "fet.h"
 
+#include "utilities.h"
+
 #include <Qt>
 
 #include <QString>

@@ -33,6 +33,8 @@
 
 #include "lockunlock.h"
 
+#include "utilities.h"
+
 #include <QList>
 #include <QSet>
 

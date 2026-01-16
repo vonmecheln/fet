@@ -26,6 +26,8 @@
 
 #include "rules.h"
 
+#include "utilities.h"
+
 #include <ctime>
 
 #include <algorithm> //for std::max
@@ -147,7 +149,7 @@ void TimetablingThread::startGenerating()
 	genMultiMatrix[_nThread].semaphorePlacedActivity.tryAcquire(); //this has effect after forcingly stopping the generation on this thread
 	assert(genMultiMatrix[_nThread].semaphorePlacedActivity.available()==0);
 	assert(genMultiMatrix[_nThread].semaphoreFinished.available()==0);
-	genMultiMatrix[_nThread].generateWithSemaphore(timeLimit, restarted, impossible, timeExceeded, true); //true means threaded
+	genMultiMatrix[_nThread].generateWithSemaphore(timeLimit, restarted, impossible, timeExceeded, true, false); //true means threaded, false means not command line
 	//genMultiMatrix[_nThread].myMutex.lock();
 	if(genMultiMatrix[_nThread].abortOptimization){
 		//genMultiMatrix[_nThread].myMutex.unlock();

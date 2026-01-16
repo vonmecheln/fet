@@ -1,5 +1,5 @@
 /*
-File import.cpp
+File importinterface.cpp
 */
 
 /***************************************************************************
@@ -10,7 +10,7 @@ File import.cpp
  ***************************************************************************
                           import.cpp  -  description
                              -------------------
-    begin                : Mar 2008
+    begin                : Mar 2026
     copyright            : (C) by Volker Dirr
                          : https://www.timetabling.de/
  ***************************************************************************
@@ -26,7 +26,9 @@ File import.cpp
 //TODO: import days per week
 //TODO: import hours per day
 
-#include "import.h"
+#include "importinterface.h"
+
+#include "utilities.h"
 
 #include <Qt>
 

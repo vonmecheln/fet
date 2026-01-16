@@ -18,6 +18,8 @@
 
 #include "timetable.h"
 
+#include "utilities.h"
+
 #include <QString>
 
 extern Timetable gt;

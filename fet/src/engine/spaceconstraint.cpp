@@ -20537,7 +20537,7 @@ bool ConstraintRoomMaxActivityTagsPerDayFromSet::computeInternalStructure(QWidge
 	}
 	
 	internalTagsSet.clear();
-	for(const QString& at : tagsList){
+	for(const QString& at : std::as_const(tagsList)){
 		int tgi=r.activityTagsHash.value(at, -1);
 		
 		if(tgi==-1){
@@ -20789,7 +20789,7 @@ bool ConstraintRoomMaxActivityTagsPerRealDayFromSet::computeInternalStructure(QW
 	}
 	
 	internalTagsSet.clear();
-	for(const QString& at : tagsList){
+	for(const QString& at : std::as_const(tagsList)){
 		int tgi=r.activityTagsHash.value(at, -1);
 		
 		if(tgi==-1){
@@ -21044,7 +21044,7 @@ bool ConstraintRoomMaxActivityTagsPerWeekFromSet::computeInternalStructure(QWidg
 	}
 	
 	internalTagsSet.clear();
-	for(const QString& at : tagsList){
+	for(const QString& at : std::as_const(tagsList)){
 		int tgi=r.activityTagsHash.value(at, -1);
 		
 		if(tgi==-1){

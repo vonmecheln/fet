@@ -21,6 +21,8 @@
 
 #include "matrix.h"
 
+#include "utilities.h"
+
 #include <QAbstractItemDelegate>
 #include <QStyledItemDelegate>
 

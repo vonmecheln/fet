@@ -21,9 +21,6 @@
 
 //maybe TODO: maybe use only HTML level 1 instead of 3? advantage: a bit speedup. disadvantage: no coloring
 
-#include <QtGlobal>
-#include <QSizePolicy>
-
 #include "timetableprintform.h"
 
 #include "timetable.h"
@@ -32,6 +29,11 @@
 #include "solution.h"
 
 #include "longtextmessagebox.h"
+
+#include "utilities.h"
+
+#include <QtGlobal>
+#include <QSizePolicy>
 
 #include <QtWidgets>
 

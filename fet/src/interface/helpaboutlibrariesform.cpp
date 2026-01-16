@@ -22,6 +22,8 @@
 
 #include "timetable_defs.h"
 
+#include "utilities.h"
+
 HelpAboutLibrariesForm::HelpAboutLibrariesForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);

@@ -16,6 +16,8 @@
 
 #include "modifybuildingform.h"
 
+#include "utilities.h"
+
 #include <QMessageBox>
 
 ModifyBuildingForm::ModifyBuildingForm(QWidget* parent, const QString& initialBuildingName): QDialog(parent)

@@ -18,7 +18,13 @@ Please read the instructions below very carefully and follow them:
 STEP 1: You can use the fet_untranslated.ts file, just rename it
 fet_**.ts (** means your language).
 
-(alternative procedure:
+(alternative procedure using CMake:
+Modify the file "fet-v.v.v/CMakeLists.txt", by adding a corresponding short string
+in the I18N_TRANSLATED_LANGUAGES section, and then run "cmake --build . --target lupdate"
+in the corresponding directory. This will create the needed file, named
+"fet-v.v.v/translations/fet_**.ts").
+
+(alternative procedure using QMake:
 Modify the file "fet-v.v.v/src/src.pro", by adding a line
 in the TRANSLATIONS section for your language (for instance, adding
 a backslash after the last translation and then "../translations/fet_it.ts" for Italian).
@@ -143,7 +149,7 @@ these files/functions:
 also the alternative procedure for STEP 1).
 Then recompile. But this is complicated and unneeded.
 
-Note: under macOS, to test your translation, you need to put it into the directory /usr/share/fet/translations/,
+Note: under macOS, to test your translation, you need to put it into the directory ../share/fet/translations/,
 fet.app/Contents/MacOS/translations/, or fet.app/Contents/MacOS/ (information provided by a translator).
 More notes for the macOS platform, from a user: copying the translation file fet_**.qm into the directory fet.app/Contents/MacOS/translations
 is possible from the command line in X11 xterm (but it is not possible with the finder program, because the file extension ".app" is

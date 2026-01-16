@@ -57,9 +57,9 @@ File rules.cpp
 #include <QByteArray>
 
 //#include <QApplication>
-#ifndef FET_COMMAND_LINE
-#include <QProgressDialog>
-#endif
+//#ifndef FET_COM MAND_LINE
+//#include <QProgressDialog>
+//#endif
 
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
@@ -77,8 +77,6 @@ extern bool students_schedule_ready;
 extern bool rooms_buildings_schedule_ready;
 extern bool teachers_schedule_ready;
 
-#ifndef FET_COMMAND_LINE
-#include <QMessageBox>
 #include <ctime>
 
 int cntUndoRedoStackIterator=0;
@@ -101,7 +99,6 @@ extern FetMainForm* pFetMainForm;
 void showStatusBarAutosaved();
 void updateFetMainFormAfterHistoryRestored(int iterationsBackward);
 //void clearHistory();
-#endif
 
 FakeString::FakeString()
 {
@@ -127,7 +124,6 @@ void FakeString::operator+=(const char* str)
 	Q_UNUSED(str);
 }
 
-#ifndef FET_COMMAND_LINE
 QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 {
 	stream<<rules.mode;
@@ -5661,6 +5657,7 @@ void Rules::addUndoPoint(const QString& description, bool autosave, bool resetCo
 	}
 
 	cntUndoRedoStackIterator=int(oldRulesArchived.size());
+	assert(!oldRulesArchived.empty());
 	crtBAIt=std::prev(oldRulesArchived.cend());
 	//crtDIt=std::prev(operationWhichWasDone.cend());
 	//crtDTIt=std::prev(operationDateTime.cend());
@@ -5716,7 +5713,7 @@ void Rules::restoreState(QWidget* parent, int iterationsBackward)
 	//qUncompress(...) should have the same behavior with other (older, and also hopefully newer) versions of Qt, see this Qt function's doc.
 	//We need this compatibility for the disk history, where the user might have saved the history on disk from a different Qt version.
 	if(oldRulesBA.isEmpty()){
-		QMessageBox::critical(parent, tr("FET critical"), tr("Corrupted state read from the memory or from the hard disk ... returning to the previous state.")+
+		EngineMessageBox::critical(parent, tr("FET critical"), tr("Corrupted state read from the memory or from the hard disk ... returning to the previous state.")+
 		 QString("\n\n")+tr("If the problem is caused by the history file saved on the disk, you might want to exit FET, remove the corresponding history file"
 		 " ending in '%1', open FET again, and open your .fet data file again. Or just ignore the problem, until the history will be replaced with new, valid entries.")
 		 .arg(SUFFIX_FILENAME_SAVE_HISTORY));
@@ -5739,7 +5736,6 @@ void Rules::restoreState(QWidget* parent, int iterationsBackward)
 		updateFetMainFormAfterHistoryRestored(iterationsBackward);
 	}
 }
-#endif
 
 void Rules::init() //initializes the rules (empty, but with default hours and days)
 {
@@ -6318,7 +6314,7 @@ bool Rules::computeInternalStructure(QWidget* parent)
 	for(Activity* act : std::as_const(this->activitiesList))
 		if(act->active)
 			range++;
-	QProgressDialog progress(parent);
+	EngineProgressDialog progress(parent);
 	progress.setWindowTitle(tr("Computing internal structure", "Title of a progress dialog"));
 	progress.setLabelText(tr("Processing internally the activities ... please wait"));
 	progress.setRange(0, qMax(range, 1));

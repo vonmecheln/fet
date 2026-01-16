@@ -18,6 +18,8 @@
 
 #include "timetable_defs.h"
 
+#include "utilities.h"
+
 HelpFaqForm::HelpFaqForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);

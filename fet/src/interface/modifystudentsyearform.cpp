@@ -22,6 +22,8 @@
 
 #include "longtextmessagebox.h"
 
+#include "utilities.h"
+
 ModifyStudentsYearForm::ModifyStudentsYearForm(QWidget* parent, const QString& initialYearName, int initialNumberOfStudents): QDialog(parent)
 {
 	setupUi(this);

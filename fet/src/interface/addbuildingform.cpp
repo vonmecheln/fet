@@ -16,6 +16,8 @@
 
 #include "addbuildingform.h"
 
+#include "utilities.h"
+
 #include <QMessageBox>
 
 AddBuildingForm::AddBuildingForm(QWidget* parent): QDialog(parent)

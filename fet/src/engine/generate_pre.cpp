@@ -27,11 +27,11 @@
 
 #include "matrix.h"
 
+#include "messageboxes.h"
+
 #include <iostream>
 #include <algorithm>
 #include <cmath>
-
-#include "messageboxes.h"
 
 #include <QtGlobal>
 
@@ -49,18 +49,19 @@
 extern Timetable gt;
 
 //#include <QApplication>
-#ifndef FET_COMMAND_LINE
+/*#ifndef FET_COM MAND_LINE
 #include <QProgressDialog>
 #include <QMessageBox>
-#endif
+#endif*/
 
 
-#ifndef FET_COMMAND_LINE
-extern QString initialOrderOfActivities;
-#else
+//#ifndef FET_COM MAND_LINE
+//extern QString initialOrderOfActivities;
+//#else
 QString initialOrderOfActivities;
-#endif
+//#endif
 
+bool generatePreMessage(QWidget* parent, const QString& s);
 
 Matrix1D<QSet<int>> tmpPreferredRealRooms;
 Matrix1D<bool> tmpFoundNonEmpty;
@@ -3052,7 +3053,10 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 			s+="\n\n";
 			s+=GeneratePreTranslate::tr("Are you sure you want to continue?");
 
-#ifdef FET_COMMAND_LINE
+			bool res=generatePreMessage(parent, s);
+			if(!res)
+				return false;
+/*#ifdef FET_COM MAND_LINE
 			int b=GeneratePreReconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s, GeneratePreTranslate::tr("Yes"), GeneratePreTranslate::tr("No"), QString(), 0, 1);
 			if(b!=0)
 				return false;
@@ -3060,7 +3064,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 			QMessageBox::StandardButton b=QMessageBox::warning(parent, GeneratePreTranslate::tr("FET warning"), s, QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
 			if(b!=QMessageBox::Yes)
 				return false;
-#endif
+#endif*/
 		}
 	}
 
@@ -10944,7 +10948,7 @@ bool computeStudentsMinMorningsAfternoonsPerWeek(QWidget* parent)
 			}
 			//////////
 
-			for(int sbg : tmd->iSubgroupsList)
+			for(int sbg : std::as_const(tmd->iSubgroupsList))
 				if(subgroupsMinMorningsPerWeekMinMornings[sbg]==-1 || subgroupsMinMorningsPerWeekMinMornings[sbg]<tmd->minMorningsPerWeek){
 					subgroupsMinMorningsPerWeekMinMornings[sbg]=tmd->minMorningsPerWeek;
 					subgroupsMinMorningsPerWeekPercentages[sbg]=100;
@@ -11029,7 +11033,7 @@ bool computeStudentsMinMorningsAfternoonsPerWeek(QWidget* parent)
 			}
 			//////////
 
-			for(int sbg : tmd->iSubgroupsList)
+			for(int sbg : std::as_const(tmd->iSubgroupsList))
 				if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]==-1 || subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]<tmd->minAfternoonsPerWeek){
 					subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]=tmd->minAfternoonsPerWeek;
 					subgroupsMinAfternoonsPerWeekPercentages[sbg]=100;
@@ -12472,7 +12476,7 @@ bool computeSubgroupsAfternoonsEarlyMaxBeginningsAtSecondHourPercentages(QWidget
 		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_AFTERNOONS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
 			haveStudentsAfternoonsEarly=true;
 			ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour* se=(ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour*) gt.rules.internalTimeConstraintsList[i];
-			for(int j : se->iSubgroupsList){
+			for(int j : std::as_const(se->iSubgroupsList)){
 				if(subgroupsAfternoonsEarlyMaxBeginningsAtSecondHourPercentage[j] < se->weightPercentage)
 					subgroupsAfternoonsEarlyMaxBeginningsAtSecondHourPercentage[j] = se->weightPercentage;
 				if(subgroupsAfternoonsEarlyMaxBeginningsAtSecondHourMaxBeginnings[j]==-1 || subgroupsAfternoonsEarlyMaxBeginningsAtSecondHourMaxBeginnings[j] > se->maxBeginningsAtSecondHour)
@@ -12569,7 +12573,7 @@ bool computeSubgroupsMorningsEarlyMaxBeginningsAtSecondHourPercentages(QWidget* 
 		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
 			haveStudentsMorningsEarly=true;
 			ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour* se=(ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour*) gt.rules.internalTimeConstraintsList[i];
-			for(int j : se->iSubgroupsList){
+			for(int j : std::as_const(se->iSubgroupsList)){
 				if(subgroupsMorningsEarlyMaxBeginningsAtSecondHourPercentage[j] < se->weightPercentage)
 					subgroupsMorningsEarlyMaxBeginningsAtSecondHourPercentage[j] = se->weightPercentage;
 				if(subgroupsMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[j]==-1 || subgroupsMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[j] > se->maxBeginningsAtSecondHour)
@@ -14370,7 +14374,7 @@ bool computeMaxAfternoonsPerWeekForStudents(QWidget* parent)
 					return false;
 			}
 
-			for(int sbg : tn->iSubgroupsList)
+			for(int sbg : std::as_const(tn->iSubgroupsList))
 				if(subgroupsMaxAfternoonsPerWeekMaxAfternoons[sbg]==-1 ||
 				 (subgroupsMaxAfternoonsPerWeekMaxAfternoons[sbg]>=0 && subgroupsMaxAfternoonsPerWeekMaxAfternoons[sbg] > tn->maxAfternoonsPerWeek)){
 					subgroupsMaxAfternoonsPerWeekMaxAfternoons[sbg]=tn->maxAfternoonsPerWeek;
@@ -14448,7 +14452,7 @@ bool computeMaxMorningsPerWeekForStudents(QWidget* parent)
 					return false;
 			}
 
-			for(int sbg : tn->iSubgroupsList)
+			for(int sbg : std::as_const(tn->iSubgroupsList))
 				if(subgroupsMaxMorningsPerWeekMaxMornings[sbg]==-1 ||
 				 (subgroupsMaxMorningsPerWeekMaxMornings[sbg]>=0 && subgroupsMaxMorningsPerWeekMaxMornings[sbg] > tn->maxMorningsPerWeek)){
 					subgroupsMaxMorningsPerWeekMaxMornings[sbg]=tn->maxMorningsPerWeek;
@@ -15929,7 +15933,7 @@ bool computeActivitiesConflictingPercentage(QWidget* parent)
 	for(int i=0; i<gt.rules.nInternalActivities; i++)
 		activitiesConflictingPercentage[i].insert(i, 100);
 
-	QProgressDialog progress(parent);
+	EngineProgressDialog progress(parent);
 	progress.setWindowTitle(GeneratePreTranslate::tr("Precomputing", "Title of a progress dialog"));
 	progress.setLabelText(GeneratePreTranslate::tr("Precomputing ... please wait"));
 	progress.setRange(0, qMax(gt.rules.nInternalTeachers+gt.rules.nInternalSubgroups, 1));
@@ -23127,7 +23131,7 @@ bool computeMaxRoomChangesPerRealDayForStudents(QWidget* parent)
 					return false;
 			}
 
-			for(int sbg : spr->iSubgroupsList){
+			for(int sbg : std::as_const(spr->iSubgroupsList)){
 				maxRoomChangesPerRealDayForSubgroupsPercentages[sbg]=100;
 				if(maxRoomChangesPerRealDayForSubgroupsMaxChanges[sbg]<0)
 					maxRoomChangesPerRealDayForSubgroupsMaxChanges[sbg]=spr->maxRoomChangesPerDay;
@@ -23251,7 +23255,7 @@ bool computeMaxBuildingChangesPerRealDayForStudents(QWidget* parent)
 					return false;
 			}
 
-			for(int sbg : spr->iSubgroupsList){
+			for(int sbg : std::as_const(spr->iSubgroupsList)){
 				maxBuildingChangesPerRealDayForSubgroupsPercentages[sbg]=100;
 				if(maxBuildingChangesPerRealDayForSubgroupsMaxChanges[sbg]<0)
 					maxBuildingChangesPerRealDayForSubgroupsMaxChanges[sbg]=spr->maxBuildingChangesPerDay;

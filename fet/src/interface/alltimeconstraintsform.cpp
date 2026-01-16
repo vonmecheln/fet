@@ -14,6 +14,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "utilities.h"
+
 #include "longtextmessagebox.h"
 
 #include "alltimeconstraintsform.h"

@@ -22,6 +22,8 @@
 
 #include "generate.h"
 
+#include "utilities.h"
+
 extern const QString COMPANY;
 extern const QString PROGRAM;
 

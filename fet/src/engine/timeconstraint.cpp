@@ -9414,7 +9414,7 @@ bool ConstraintStudentsSetNotAvailableTimes::isRelatedToActivity(Rules& r, int a
 	Activity* a=r.activitiesPointerHash.value(aid, nullptr);
 	assert(a!=nullptr);
 
-	for(const QString& st : a->studentsNames)
+	for(const QString& st : std::as_const(a->studentsNames))
 		if(r.setsShareStudents(st, this->students))
 			return true;
 
@@ -23736,14 +23736,14 @@ bool ConstraintTwoSetsOfActivitiesOrdered::computeInternalStructure(QWidget* par
 bool ConstraintTwoSetsOfActivitiesOrdered::hasInactiveActivities(Rules& r)
 {
 	bool okf=false;
-	for(int ai : this->firstActivitiesIdsList)
+	for(int ai : std::as_const(this->firstActivitiesIdsList))
 		if(!r.inactiveActivities.contains(ai)){
 			okf=true;
 			break;
 		}
 
 	bool oks=false;
-	for(int ai : this->secondActivitiesIdsList)
+	for(int ai : std::as_const(this->secondActivitiesIdsList))
 		if(!r.inactiveActivities.contains(ai)){
 			oks=true;
 			break;
@@ -49657,7 +49657,7 @@ bool ConstraintTeacherMaxActivityTagsPerDayFromSet::computeInternalStructure(QWi
 	assert(this->teacher_ID>=0);
 	
 	internalTagsSet.clear();
-	for(const QString& at : tagsList){
+	for(const QString& at : std::as_const(tagsList)){
 		int tgi=r.activityTagsHash.value(at, -1);
 		
 		if(tgi==-1){
@@ -49888,7 +49888,7 @@ bool ConstraintTeachersMaxActivityTagsPerDayFromSet::computeInternalStructure(QW
 	//assert(this->teacher_ID>=0);
 	
 	internalTagsSet.clear();
-	for(const QString& at : tagsList){
+	for(const QString& at : std::as_const(tagsList)){
 		int tgi=r.activityTagsHash.value(at, -1);
 
 		if(tgi==-1){
@@ -62746,7 +62746,7 @@ bool ConstraintStudentsSetMaxActivityTagsPerDayFromSet::computeInternalStructure
 	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
 
 	internalTagsSet.clear();
-	for(const QString& at : tagsList){
+	for(const QString& at : std::as_const(tagsList)){
 		int tgi=r.activityTagsHash.value(at, -1);
 
 		if(tgi==-1){
@@ -62972,7 +62972,7 @@ bool ConstraintStudentsMaxActivityTagsPerDayFromSet::computeInternalStructure(QW
 	//Q_UNUSED(r);
 	
 	internalTagsSet.clear();
-	for(const QString& at : tagsList){
+	for(const QString& at : std::as_const(tagsList)){
 		int tgi=r.activityTagsHash.value(at, -1);
 
 		if(tgi==-1){
@@ -63203,7 +63203,7 @@ bool ConstraintTeacherMaxActivityTagsPerRealDayFromSet::computeInternalStructure
 	assert(this->teacher_ID>=0);
 	
 	internalTagsSet.clear();
-	for(const QString& at : tagsList){
+	for(const QString& at : std::as_const(tagsList)){
 		int tgi=r.activityTagsHash.value(at, -1);
 
 		if(tgi==-1){
@@ -63437,7 +63437,7 @@ bool ConstraintTeachersMaxActivityTagsPerRealDayFromSet::computeInternalStructur
 	//assert(this->teacher_ID>=0);
 	
 	internalTagsSet.clear();
-	for(const QString& at : tagsList){
+	for(const QString& at : std::as_const(tagsList)){
 		int tgi=r.activityTagsHash.value(at, -1);
 
 		if(tgi==-1){
@@ -63678,7 +63678,7 @@ bool ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet::computeInternalStruc
 	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
 	
 	internalTagsSet.clear();
-	for(const QString& at : tagsList){
+	for(const QString& at : std::as_const(tagsList)){
 		int tgi=r.activityTagsHash.value(at, -1);
 
 		if(tgi==-1){
@@ -63907,7 +63907,7 @@ bool ConstraintStudentsMaxActivityTagsPerRealDayFromSet::computeInternalStructur
 	//Q_UNUSED(r);
 	
 	internalTagsSet.clear();
-	for(const QString& at : tagsList){
+	for(const QString& at : std::as_const(tagsList)){
 		int tgi=r.activityTagsHash.value(at, -1);
 
 		if(tgi==-1){

@@ -20,6 +20,8 @@
 
 #include "addgroupactivitiesininitialorderitemform.h"
 
+#include "utilities.h"
+
 #include <QListWidget>
 #include <QAbstractItemView>
 #include <QScrollBar>

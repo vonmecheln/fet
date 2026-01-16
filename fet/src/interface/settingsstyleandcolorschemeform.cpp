@@ -20,6 +20,8 @@
 
 #include "settingsstyleandcolorschemeform.h"
 
+#include "utilities.h"
+
 #include <QStyleFactory>
 #include <QStringList>
 #include <QString>

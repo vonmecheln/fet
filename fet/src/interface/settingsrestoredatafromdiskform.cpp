@@ -20,6 +20,8 @@
 
 #include "settingsrestoredatafromdiskform.h"
 
+#include "utilities.h"
+
 SettingsRestoreDataFromDiskForm::SettingsRestoreDataFromDiskForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);

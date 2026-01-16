@@ -32,6 +32,8 @@
 
 #include "addremovemultipleconstraintsactivitiessamestartinghourform.h"
 
+#include "utilities.h"
+
 #include <QMessageBox>
 
 #include <Qt>
@@ -3996,7 +3998,7 @@ filtered_ok:
 				bool foundActivityTag=false;
 				bool foundStudents=false;
 
-				for(int id : ctr->activitiesIds){
+				for(int id : std::as_const(ctr->activitiesIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){
@@ -4039,7 +4041,7 @@ filtered_ok:
 				bool foundActivityTag=false;
 				bool foundStudents=false;
 
-				for(int id : ctr->activitiesIds){
+				for(int id : std::as_const(ctr->activitiesIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){
@@ -4082,7 +4084,7 @@ filtered_ok:
 				bool foundActivityTag=false;
 				bool foundStudents=false;
 
-				for(int id : ctr->activitiesIds){
+				for(int id : std::as_const(ctr->activitiesIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){
@@ -4195,7 +4197,7 @@ filtered_ok:
 				bool foundActivityTag=false;
 				bool foundStudents=false;
 
-				for(int id : ctr->activitiesIds){
+				for(int id : std::as_const(ctr->activitiesIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){
@@ -4238,7 +4240,7 @@ filtered_ok:
 				bool foundActivityTag=false;
 				bool foundStudents=false;
 
-				for(int id : ctr->activitiesIds){
+				for(int id : std::as_const(ctr->activitiesIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){
@@ -4389,7 +4391,7 @@ filtered_ok:
 				bool foundActivityTag=false;
 				bool foundStudents=false;
 
-				for(int id : ctr->activitiesIds){
+				for(int id : std::as_const(ctr->activitiesIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){
@@ -4642,7 +4644,7 @@ filtered_ok:
 				bool foundActivityTag=false;
 				bool foundStudents=false;
 
-				for(int id : ctr->activitiesIds){
+				for(int id : std::as_const(ctr->activitiesIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){
@@ -4757,7 +4759,7 @@ filtered_ok:
 				bool foundActivityTag=false;
 				bool foundStudents=false;
 
-				for(int id : ctr->activitiesIds){
+				for(int id : std::as_const(ctr->activitiesIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){
@@ -4800,7 +4802,7 @@ filtered_ok:
 				bool foundActivityTag=false;
 				bool foundStudents=false;
 
-				for(int id : ctr->activitiesIds){
+				for(int id : std::as_const(ctr->activitiesIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){
@@ -5025,7 +5027,7 @@ filtered_ok:
 				bool foundActivityTag=false;
 				bool foundStudents=false;
 
-				for(int id : ctr->activitiesIds){
+				for(int id : std::as_const(ctr->activitiesIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){
@@ -5068,7 +5070,7 @@ filtered_ok:
 				bool foundActivityTag=false;
 				bool foundStudents=false;
 
-				for(int id : ctr->activitiesIds){
+				for(int id : std::as_const(ctr->activitiesIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){
@@ -5806,7 +5808,7 @@ filtered_ok:
 				bool foundActivityTag=false;
 				bool foundStudents=false;
 
-				for(int id : ctr->activitiesIds){
+				for(int id : std::as_const(ctr->activitiesIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){
@@ -5849,7 +5851,7 @@ filtered_ok:
 				bool foundActivityTag=false;
 				bool foundStudents=false;
 
-				for(int id : ctr->activitiesIds){
+				for(int id : std::as_const(ctr->activitiesIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){
@@ -5892,7 +5894,7 @@ filtered_ok:
 				bool foundActivityTag=false;
 				bool foundStudents=false;
 
-				for(int id : ctr->activitiesIds){
+				for(int id : std::as_const(ctr->activitiesIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){
@@ -5935,7 +5937,7 @@ filtered_ok:
 				bool foundActivityTag=false;
 				bool foundStudents=false;
 
-				for(int id : ctr->activitiesIds){
+				for(int id : std::as_const(ctr->activitiesIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){
@@ -6139,7 +6141,7 @@ filtered_ok:
 				bool foundActivityTag=false;
 				bool foundStudents=false;
 
-				for(int id : ctr->activitiesIds){
+				for(int id : std::as_const(ctr->activitiesIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){
@@ -6183,7 +6185,7 @@ filtered_ok:
 				bool foundActivityTag=false;
 				bool foundStudents=false;
 
-				for(int id : ctr->activitiesIds){
+				for(int id : std::as_const(ctr->activitiesIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){
@@ -6226,7 +6228,7 @@ filtered_ok:
 				bool foundActivityTag=false;
 				bool foundStudents=false;
 
-				for(int id : ctr->activitiesIds){
+				for(int id : std::as_const(ctr->activitiesIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){
@@ -6329,7 +6331,7 @@ filtered_ok:
 				bool foundActivityTag=false;
 				bool foundStudents=false;
 
-				for(int id : ctr->activitiesIds){
+				for(int id : std::as_const(ctr->activitiesIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){
@@ -6474,7 +6476,7 @@ filtered_ok:
 				bool foundActivityTag=false;
 				bool foundStudents=false;
 
-				for(int id : ctr->activitiesIds){
+				for(int id : std::as_const(ctr->activitiesIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){
@@ -6749,7 +6751,7 @@ filtered_ok:
 				bool foundActivityTag=false;
 				bool foundStudents=false;
 
-				for(int id : ctr->activitiesAIds){
+				for(int id : std::as_const(ctr->activitiesAIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){
@@ -6767,7 +6769,7 @@ filtered_ok:
 						return true;
 				}
 				
-				for(int id : ctr->activitiesBIds){
+				for(int id : std::as_const(ctr->activitiesBIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){
@@ -6890,7 +6892,7 @@ filtered_ok:
 				bool foundActivityTag=false;
 				bool foundStudents=false;
 
-				for(int id : ctr->activitiesIds){
+				for(int id : std::as_const(ctr->activitiesIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){
@@ -6933,7 +6935,7 @@ filtered_ok:
 				bool foundActivityTag=false;
 				bool foundStudents=false;
 
-				for(int id : ctr->activitiesIds){
+				for(int id : std::as_const(ctr->activitiesIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){
@@ -7008,7 +7010,7 @@ filtered_ok:
 				bool foundActivityTag=false;
 				bool foundStudents=false;
 
-				for(int id : ctr->activitiesIds){
+				for(int id : std::as_const(ctr->activitiesIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){
@@ -7051,7 +7053,7 @@ filtered_ok:
 				bool foundActivityTag=false;
 				bool foundStudents=false;
 
-				for(int id : ctr->activitiesIds){
+				for(int id : std::as_const(ctr->activitiesIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){
@@ -7164,7 +7166,7 @@ filtered_ok:
 				bool foundActivityTag=false;
 				bool foundStudents=false;
 
-				for(int id : ctr->activitiesIds){
+				for(int id : std::as_const(ctr->activitiesIds)){
 					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 
 					if(act!=nullptr){

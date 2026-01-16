@@ -34,6 +34,8 @@
 
 #include "timetable.h"
 
+#include "utilities.h"
+
 #include <algorithm>
 
 extern Timetable gt;

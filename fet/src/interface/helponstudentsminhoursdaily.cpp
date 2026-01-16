@@ -21,6 +21,8 @@
 #include "rules.h"
 #include "timetable.h"
 
+#include "utilities.h"
+
 #include <QApplication>
 
 extern Timetable gt;

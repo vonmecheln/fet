@@ -21,6 +21,8 @@
 #include "teachersubjectsqualificationsform.h"
 #include "teacher.h"
 
+#include "utilities.h"
+
 #include <QListWidget>
 #include <QAbstractItemView>
 #include <QSet>

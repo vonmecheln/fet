@@ -18,6 +18,8 @@
 
 #include "modifystudentssubgroupform.h"
 
+#include "utilities.h"
+
 ModifyStudentsSubgroupForm::ModifyStudentsSubgroupForm(QWidget* parent, const QString& yearName, const QString& groupName, const QString& initialSubgroupName, int initialNumberOfStudents): QDialog(parent)
 {
 	setupUi(this);

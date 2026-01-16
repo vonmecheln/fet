@@ -25,6 +25,8 @@
 
 #include "longtextmessagebox.h"
 
+#include "utilities.h"
+
 #include <Qt>
 
 #include <QString>

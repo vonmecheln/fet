@@ -1,3 +1,12 @@
+ 7.7.0
+	- The sources and the GNU/Linux binaries are now archived with tar.xz (suggested by Michael Towers).
+	- It is now possible (and recommended) to build FET with CMake (minimum Qt version for CMake: 6.10) (suggested by Michael Towers, who also
+	provided extensive instructions/help on how to do this; also Volker Dirr, assisted by ChatGPT and Gemini, suggested some important corrections).
+	On this occasion, we added an improvement so that the engine is no longer compiled twice, but only once, as a static library (suggested by
+	Volker Dirr, assisted by Gemini). QMake is still supported, but not recommended (one reason is that the engine is compiled twice, and another
+	reason is that it is an old building method). Older Qt versions (5.15 to 6.9) are supported only with QMake. Chichi Lalescu suggested the code
+	to make the conditional building of FET with the language preselected to the local language, enabling the option USE_SYSTEM_LOCALE.
+	- Minor improvements (suggested by Michael Towers, found using Qt Creator).
  7.6.5
 	- Improved the command line generation, by removing the additional thread which was checking for the possible existence of the 'sigwrite' file.
 	The new check for the existence of this file is done in the already existing generation thread (idea and code suggested by Michael Chourdakis).

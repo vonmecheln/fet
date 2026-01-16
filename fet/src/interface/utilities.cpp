@@ -22,8 +22,6 @@ File utilities.cpp
 
 #include <QtGlobal>
 
-#ifndef FET_COMMAND_LINE
-
 #include <Qt>
 
 #include "rules.h"
@@ -1230,95 +1228,3 @@ void itemClickedTimesTable(CornerEnabledTableWidget* timesTable, QTableWidgetIte
 	item->setText(s);
 	colorItemTimesTable(timesTable, item);
 }
-
-#else
-
-/*void centerWidgetOnScreen(QWidget* widget)
-{
-	Q_UNUSED(widget);
-}
-
-void forceCenterWidgetOnScreen(QWidget* widget)
-{
-	Q_UNUSED(widget);
-}
-
-int maxScreenWidth(QWidget* widget)
-{
-	Q_UNUSED(widget);
-	
-	return 0;
-}
-
-int maxRecommendedWidth(QWidget* widget)
-{
-	Q_UNUSED(widget);
-
-	return 0;
-}
-
-void saveFETDialogGeometry(QWidget* widget, const QString& alternativeName)
-{
-	Q_UNUSED(widget);
-	Q_UNUSED(alternativeName);
-}
-
-void restoreFETDialogGeometry(QWidget* widget, const QString& alternativeName)
-{
-	Q_UNUSED(widget);
-	Q_UNUSED(alternativeName);
-}
-
-void setParentAndOtherThings(QWidget* widget, QWidget* parent)
-{
-	Q_UNUSED(widget);
-	Q_UNUSED(parent);
-}
-
-void setStretchAvailabilityTableNicely(QTableWidget* tableWidget)
-{
-	Q_UNUSED(tableWidget);
-}*/
-
-void setRulesModifiedAndOtherThings(Rules* rules)
-{
-	Q_UNUSED(rules);
-}
-
-/*void setRulesUnmodifiedAndOtherThings(Rules* rules)
-{
-	Q_UNUSED(rules);
-}
-
-void showWarningForInvisibleSubgroupConstraint(QWidget* parent, const QString& initialSubgroupName)
-{
-	Q_UNUSED(parent);
-	Q_UNUSED(initialSubgroupName);
-}
-
-void showWarningCannotModifyConstraintInvisibleSubgroupConstraint(QWidget* parent, const QString& initialSubgroupName)
-{
-	Q_UNUSED(parent);
-	Q_UNUSED(initialSubgroupName);
-}
-
-void showWarningForInvisibleSubgroupActivity(QWidget* parent, const QString& initialSubgroupName)
-{
-	Q_UNUSED(parent);
-	Q_UNUSED(initialSubgroupName);
-}
-
-void populateStudentsComboBox(QComboBox* studentsComboBox)
-{
-	Q_UNUSED(studentsComboBox);
-}*/
-
-/*void closeAllTimetableViewDialogs()
-{
-}*/
-
-/*void updateAllTimetableViewDialogs()
-{
-}*/
-
-#endif

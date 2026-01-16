@@ -19,6 +19,8 @@
 
 #include "timetable_defs.h"
 
+#include "utilities.h"
+
 #include <QCoreApplication>
 
 HelpAlgeriaForm::HelpAlgeriaForm(QWidget* parent): QDialog(parent)

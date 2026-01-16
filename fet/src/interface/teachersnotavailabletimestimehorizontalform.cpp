@@ -38,6 +38,8 @@
 #include "teachersnotavailabletimestimehorizontalform.h"
 #include "timeconstraint.h"
 
+#include "utilities.h"
+
 #define YES		(QString("X"))
 #define NO		(QString(" "))
 

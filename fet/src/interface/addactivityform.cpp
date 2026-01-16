@@ -25,6 +25,8 @@
 
 #include "activityplanningform.h"
 
+#include "utilities.h"
+
 #include <QMessageBox>
 
 #include <QDialog>

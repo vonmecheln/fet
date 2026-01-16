@@ -25,7 +25,6 @@ File utilities.h
 
 class Rules;
 
-#ifndef FET_COMMAND_LINE
 #include <QString>
 
 #include <QList>
@@ -105,9 +104,5 @@ void verticalHeaderClickedTimesTable(CornerEnabledTableWidget* timesTable, int r
 void cellEnteredTimesTable(CornerEnabledTableWidget* timesTable, int row, int col);
 void colorsCheckBoxToggledTimesTable(CornerEnabledTableWidget* timesTable);
 void toggleAllClickedTimesTable(CornerEnabledTableWidget* timesTable);
-
-#else
-void setRulesModifiedAndOtherThings(Rules* rules);
-#endif
 
 #endif

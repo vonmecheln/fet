@@ -20,6 +20,8 @@
 
 #include "restoredatastateform.h"
 
+#include "utilities.h"
+
 #include <QPalette>
 
 #include <QFont>

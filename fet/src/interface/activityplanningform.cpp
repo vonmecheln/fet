@@ -32,6 +32,8 @@
 
 #include "studentsset.h"
 
+#include "utilities.h"
+
 // BE CAREFUL: DON'T USE INTERNAL VARIABLES HERE, because maybe computeInternalStructure() is not done!
 
 #include <QtWidgets>

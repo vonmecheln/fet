@@ -46,6 +46,10 @@ class Activity;
 
 class QWidget;
 
+class FetTranslate: public QObject{
+	Q_OBJECT
+};
+
 /**
 This class incorporates the routines for time and space allocation of activities
 */
@@ -53,10 +57,9 @@ class Generate: public QObject{
 	Q_OBJECT
 	
 public:
-//#ifdef FET_COMMAND_LINE
+//#ifdef FET_COM MAND_LINE
 //	std::atomic<bool> writeCurrentAndHighestTimetable; //for fet-cl, we poll a file and if it exists we will write the current and highest-stage timetables.
 //#endif
-
 	//QMutex myMutex;
 	std::mutex myMutex;
 	
@@ -255,9 +258,7 @@ private:
 
 	bool isExceptionTime(int ai, int t, const QSet<int>& ets);
 
-#ifdef FET_COMMAND_LINE
 	void checkWriteCurrentAndHighestTimetable();
-#endif
 
 public:
 	MRG32k3a rng;
@@ -384,8 +385,8 @@ public:
 	
 	bool precompute(QWidget* parent, QTextStream* maxPlacedActivityStream=nullptr);
 	
-	void generateWithSemaphore(int maxSeconds, bool& restarted, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream=nullptr);
-	void generate(int maxSeconds, bool& restarted, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream=nullptr);
+	void generateWithSemaphore(int maxSeconds, bool& restarted, bool& impossible, bool& timeExceeded, bool threaded, bool commandLine, QTextStream* maxPlacedActivityStream=nullptr);
+	void generate(int maxSeconds, bool& restarted, bool& impossible, bool& timeExceeded, bool threaded, bool commandLine, QTextStream* maxPlacedActivityStream=nullptr);
 	
 	void moveActivity(int ai, int fromslot, int toslot, int fromroom, int toroom, const QList<int>& fromRealRoomsList, const QList<int>& toRealRoomsList);
 	
@@ -400,6 +401,7 @@ Q_SIGNALS:
 	
 private:
 	bool isThreaded;
+	bool isCommandLine;
 	
 	int currentlyNPlacedActivities;
 	time_t starting_time;

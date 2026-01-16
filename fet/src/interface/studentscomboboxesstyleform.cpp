@@ -18,6 +18,8 @@
 
 #include "studentscomboboxesstyleform.h"
 
+#include "utilities.h"
+
 StudentsComboBoxesStyleForm::StudentsComboBoxesStyleForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);

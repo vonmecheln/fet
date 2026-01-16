@@ -18,6 +18,8 @@
 
 #include "modifygroupactivitiesininitialorderitemform.h"
 
+#include "utilities.h"
+
 #include <QList>
 
 #include <QListWidget>

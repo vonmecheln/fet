@@ -18,6 +18,8 @@
 
 #include "fet.h"
 
+#include "utilities.h"
+
 #include <QMessageBox>
 
 ChangeMinDaysSelectivelyForm::ChangeMinDaysSelectivelyForm(QWidget* parent): QDialog(parent)

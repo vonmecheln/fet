@@ -71,6 +71,11 @@ public:
 	void operator+=(const char* str);
 };
 
+class EngineMessageBox{
+public:
+	static void critical(QWidget* parent, const QString& title, const QString& message);
+};
+
 class QDataStream;
 class Rules;
 
@@ -88,10 +93,10 @@ class Rules{
 	Q_DECLARE_TR_FUNCTIONS(Rules)
 
 public:
-#ifndef FET_COMMAND_LINE
+//#ifndef FET_COM MAND_LINE
 	void addUndoPoint(const QString& description, bool autosave=true, bool resetCounter=false);
 	void restoreState(QWidget* parent, int iterationsBackward); //iterationsBackward<0 means Redo, >0 means Undo, and ==0 is not allowed
-#endif
+//#endif
 
 	void recomputeActivitiesSetForTimeConstraint(TimeConstraint* ctr);
 	void insertTimeConstraintInHash(TimeConstraint* ctr);

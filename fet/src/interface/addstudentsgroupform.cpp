@@ -16,6 +16,8 @@
 
 #include "addstudentsgroupform.h"
 
+#include "utilities.h"
+
 #include <QMessageBox>
 
 AddStudentsGroupForm::AddStudentsGroupForm(QWidget* parent, const QString& yearName): QDialog(parent)
