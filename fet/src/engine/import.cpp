@@ -1553,7 +1553,7 @@ void Import::importCSVActivityTags(QWidget* parent){
 
 	//check if already in memory (start)
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-	QSet<QString> tmpSet=QSet<QString>(fieldList[FIELD_ACTIVITY_TAG_NAME].constBegin(), fieldList[FIELD_ACTIVITY_TAG_NAME].constEnd());
+	QSet<QString> tmpSet(fieldList[FIELD_ACTIVITY_TAG_NAME].constBegin(), fieldList[FIELD_ACTIVITY_TAG_NAME].constEnd());
 #else
 	QSet<QString> tmpSet=fieldList[FIELD_ACTIVITY_TAG_NAME].toSet();
 #endif
@@ -1665,7 +1665,7 @@ void Import::importCSVRoomsAndBuildings(QWidget* parent){
 
 	//check if rooms are already in memory (start)
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-	QSet<QString> tmpSet=QSet<QString>(fieldList[FIELD_ROOM_NAME].constBegin(), fieldList[FIELD_ROOM_NAME].constEnd());
+	QSet<QString> tmpSet(fieldList[FIELD_ROOM_NAME].constBegin(), fieldList[FIELD_ROOM_NAME].constEnd());
 #else
 	QSet<QString> tmpSet=fieldList[FIELD_ROOM_NAME].toSet();
 #endif

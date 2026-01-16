@@ -4196,7 +4196,7 @@ void AdvancedLockUnlockForm::unlockAdvancedFilterWithoutTimetable(QWidget* paren
 	QSet<int> actsSet;
 	
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-	QSet<int> filteredActivitiesIdsSet=QSet<int>(taDialog.filteredActivitiesIdsList.constBegin(), taDialog.filteredActivitiesIdsList.constEnd());
+	QSet<int> filteredActivitiesIdsSet(taDialog.filteredActivitiesIdsList.constBegin(), taDialog.filteredActivitiesIdsList.constEnd());
 #else
 	QSet<int> filteredActivitiesIdsSet=taDialog.filteredActivitiesIdsList.toSet();
 #endif

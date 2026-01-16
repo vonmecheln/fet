@@ -18837,7 +18837,7 @@ void TimetableExport::printLegend(QString& tmpString, QSet<Subject*>& usedSubjec
 	
 	if(!printCodesFirst){
 		if(printSubjectsLegend && !usedSubjectsSet.isEmpty()){
-			QList<Subject*> usedSubjectsList=QList<Subject*>(usedSubjectsSet.constBegin(), usedSubjectsSet.constEnd());
+			QList<Subject*> usedSubjectsList(usedSubjectsSet.constBegin(), usedSubjectsSet.constEnd());
 			std::stable_sort(usedSubjectsList.begin(), usedSubjectsList.end(), subjectsAscending);
 			tmpString+=indent+"<p>\n";
 			tmpString+=indent+"  <span class=\"legend_title\">"+protect2(tr("Subjects legend:", "It means the list of the complete information for the subjects: name, long name, code, and comments"))+"</span><br />\n";
@@ -18862,7 +18862,7 @@ void TimetableExport::printLegend(QString& tmpString, QSet<Subject*>& usedSubjec
 		}
 
 		if(printActivityTagsLegend && !usedActivityTagsSet.isEmpty()){
-			QList<ActivityTag*> usedActivityTagsList=QList<ActivityTag*>(usedActivityTagsSet.constBegin(), usedActivityTagsSet.constEnd());
+			QList<ActivityTag*> usedActivityTagsList(usedActivityTagsSet.constBegin(), usedActivityTagsSet.constEnd());
 			std::stable_sort(usedActivityTagsList.begin(), usedActivityTagsList.end(), activityTagsAscending);
 			tmpString+=indent+"<p>\n";
 			tmpString+=indent+"  <span class=\"legend_title\">"+protect2(tr("Activity tags legend:", "It means the list of the complete information for the activity tag: name, long name, code, and comments"))+"</span><br />\n";
@@ -18887,7 +18887,7 @@ void TimetableExport::printLegend(QString& tmpString, QSet<Subject*>& usedSubjec
 		}
 
 		if(printTeachersLegend && !usedTeachersSet.isEmpty()){
-			QList<Teacher*> usedTeachersList=QList<Teacher*>(usedTeachersSet.constBegin(), usedTeachersSet.constEnd());
+			QList<Teacher*> usedTeachersList(usedTeachersSet.constBegin(), usedTeachersSet.constEnd());
 			std::stable_sort(usedTeachersList.begin(), usedTeachersList.end(), teachersAscending);
 			tmpString+=indent+"<p>\n";
 			tmpString+=indent+"  <span class=\"legend_title\">"+protect2(tr("Teachers legend:", "It means the list of the complete information for the teachers: name, long name, code, and comments"))+"</span><br />\n";
@@ -18912,7 +18912,7 @@ void TimetableExport::printLegend(QString& tmpString, QSet<Subject*>& usedSubjec
 		}
 
 		if(printStudentsLegend && !usedStudentsSet.isEmpty()){
-			QList<StudentsSet*> usedStudentsList=QList<StudentsSet*>(usedStudentsSet.constBegin(), usedStudentsSet.constEnd());
+			QList<StudentsSet*> usedStudentsList(usedStudentsSet.constBegin(), usedStudentsSet.constEnd());
 			std::stable_sort(usedStudentsList.begin(), usedStudentsList.end(), studentsSetsAscending);
 			tmpString+=indent+"<p>\n";
 			tmpString+=indent+"  <span class=\"legend_title\">"+protect2(tr("Students legend:", "It means the list of the complete information for the students: name, long name, code, and comments"))+"</span><br />\n";
@@ -18937,7 +18937,7 @@ void TimetableExport::printLegend(QString& tmpString, QSet<Subject*>& usedSubjec
 		}
 
 		if(printRoomsLegend && !usedRoomsSet.isEmpty()){
-			QList<Room*> usedRoomsList=QList<Room*>(usedRoomsSet.constBegin(), usedRoomsSet.constEnd());
+			QList<Room*> usedRoomsList(usedRoomsSet.constBegin(), usedRoomsSet.constEnd());
 			std::stable_sort(usedRoomsList.begin(), usedRoomsList.end(), roomsAscending);
 			tmpString+=indent+"<p>\n";
 			tmpString+=indent+"  <span class=\"legend_title\">"+protect2(tr("Rooms legend:", "It means the list of the complete information for the rooms: name, long name, code, and comments"))+"</span><br />\n";
@@ -18963,7 +18963,7 @@ void TimetableExport::printLegend(QString& tmpString, QSet<Subject*>& usedSubjec
 	}
 	else{ //if print codes first
 		if(printSubjectsLegend && !usedSubjectsSet.isEmpty()){
-			QList<Subject*> usedSubjectsList=QList<Subject*>(usedSubjectsSet.constBegin(), usedSubjectsSet.constEnd());
+			QList<Subject*> usedSubjectsList(usedSubjectsSet.constBegin(), usedSubjectsSet.constEnd());
 			std::stable_sort(usedSubjectsList.begin(), usedSubjectsList.end(), subjectsCodesAscending);
 			tmpString+=indent+"<p>\n";
 			tmpString+=indent+"  <span class=\"legend_title\">"+protect2(tr("Subjects legend:", "It means the list of the complete information for the subjects: name, long name, code, and comments"))+"</span><br />\n";
@@ -18989,7 +18989,7 @@ void TimetableExport::printLegend(QString& tmpString, QSet<Subject*>& usedSubjec
 		}
 
 		if(printActivityTagsLegend && !usedActivityTagsSet.isEmpty()){
-			QList<ActivityTag*> usedActivityTagsList=QList<ActivityTag*>(usedActivityTagsSet.constBegin(), usedActivityTagsSet.constEnd());
+			QList<ActivityTag*> usedActivityTagsList(usedActivityTagsSet.constBegin(), usedActivityTagsSet.constEnd());
 			std::stable_sort(usedActivityTagsList.begin(), usedActivityTagsList.end(), activityTagsCodesAscending);
 			tmpString+=indent+"<p>\n";
 			tmpString+=indent+"  <span class=\"legend_title\">"+protect2(tr("Activity tags legend:", "It means the list of the complete information for the activity tag: name, long name, code, and comments"))+"</span><br />\n";
@@ -19015,7 +19015,7 @@ void TimetableExport::printLegend(QString& tmpString, QSet<Subject*>& usedSubjec
 		}
 
 		if(printTeachersLegend && !usedTeachersSet.isEmpty()){
-			QList<Teacher*> usedTeachersList=QList<Teacher*>(usedTeachersSet.constBegin(), usedTeachersSet.constEnd());
+			QList<Teacher*> usedTeachersList(usedTeachersSet.constBegin(), usedTeachersSet.constEnd());
 			std::stable_sort(usedTeachersList.begin(), usedTeachersList.end(), teachersCodesAscending);
 			tmpString+=indent+"<p>\n";
 			tmpString+=indent+"  <span class=\"legend_title\">"+protect2(tr("Teachers legend:", "It means the list of the complete information for the teachers: name, long name, code, and comments"))+"</span><br />\n";
@@ -19041,7 +19041,7 @@ void TimetableExport::printLegend(QString& tmpString, QSet<Subject*>& usedSubjec
 		}
 
 		if(printStudentsLegend && !usedStudentsSet.isEmpty()){
-			QList<StudentsSet*> usedStudentsList=QList<StudentsSet*>(usedStudentsSet.constBegin(), usedStudentsSet.constEnd());
+			QList<StudentsSet*> usedStudentsList(usedStudentsSet.constBegin(), usedStudentsSet.constEnd());
 			std::stable_sort(usedStudentsList.begin(), usedStudentsList.end(), studentsSetsCodesAscending);
 			tmpString+=indent+"<p>\n";
 			tmpString+=indent+"  <span class=\"legend_title\">"+protect2(tr("Students legend:", "It means the list of the complete information for the students: name, long name, code, and comments"))+"</span><br />\n";
@@ -19067,7 +19067,7 @@ void TimetableExport::printLegend(QString& tmpString, QSet<Subject*>& usedSubjec
 		}
 
 		if(printRoomsLegend && !usedRoomsSet.isEmpty()){
-			QList<Room*> usedRoomsList=QList<Room*>(usedRoomsSet.constBegin(), usedRoomsSet.constEnd());
+			QList<Room*> usedRoomsList(usedRoomsSet.constBegin(), usedRoomsSet.constEnd());
 			std::stable_sort(usedRoomsList.begin(), usedRoomsList.end(), roomsCodesAscending);
 			tmpString+=indent+"<p>\n";
 			tmpString+=indent+"  <span class=\"legend_title\">"+protect2(tr("Rooms legend:", "It means the list of the complete information for the rooms: name, long name, code, and comments"))+"</span><br />\n";

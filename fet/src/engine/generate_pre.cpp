@@ -3067,7 +3067,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 
 	if(SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME && !fixedVirtualSpaceNonZeroButNotTimeActivities.isEmpty()){
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-		QList<int> tl=QList<int>(fixedVirtualSpaceNonZeroButNotTimeActivities.constBegin(), fixedVirtualSpaceNonZeroButNotTimeActivities.constEnd());
+		QList<int> tl(fixedVirtualSpaceNonZeroButNotTimeActivities.constBegin(), fixedVirtualSpaceNonZeroButNotTimeActivities.constEnd());
 #else
 		QList<int> tl=fixedVirtualSpaceNonZeroButNotTimeActivities.toList();
 #endif
@@ -23734,12 +23734,12 @@ void computeSubgroupsTeachersForActivitiesOfTheDay()
 {
 	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
 		//students
-		QSet<int> st_smhd=QSet<int>(subgroupsWithMaxDaysPerWeekForActivities[ai].constBegin(), subgroupsWithMaxDaysPerWeekForActivities[ai].constEnd());
-		QSet<int> st_smtd=QSet<int>(subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].constBegin(), subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].constEnd());
-		QSet<int> st_smd=QSet<int>(subgroupsWithMaxRealDaysPerWeekForActivities[ai].constBegin(), subgroupsWithMaxRealDaysPerWeekForActivities[ai].constEnd());
-		QSet<int> st_sma=QSet<int>(subgroupsWithMaxAfternoonsPerWeekForActivities[ai].constBegin(), subgroupsWithMaxAfternoonsPerWeekForActivities[ai].constEnd());
-		QSet<int> st_smntags=QSet<int>(subgroupsWithTagsForActivities[ai].constBegin(), subgroupsWithTagsForActivities[ai].constEnd());
-		QSet<int> st_smm=QSet<int>(subgroupsWithMaxMorningsPerWeekForActivities[ai].constBegin(), subgroupsWithMaxMorningsPerWeekForActivities[ai].constEnd());
+		QSet<int> st_smhd(subgroupsWithMaxDaysPerWeekForActivities[ai].constBegin(), subgroupsWithMaxDaysPerWeekForActivities[ai].constEnd());
+		QSet<int> st_smtd(subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].constBegin(), subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].constEnd());
+		QSet<int> st_smd(subgroupsWithMaxRealDaysPerWeekForActivities[ai].constBegin(), subgroupsWithMaxRealDaysPerWeekForActivities[ai].constEnd());
+		QSet<int> st_sma(subgroupsWithMaxAfternoonsPerWeekForActivities[ai].constBegin(), subgroupsWithMaxAfternoonsPerWeekForActivities[ai].constEnd());
+		QSet<int> st_smntags(subgroupsWithTagsForActivities[ai].constBegin(), subgroupsWithTagsForActivities[ai].constEnd());
+		QSet<int> st_smm(subgroupsWithMaxMorningsPerWeekForActivities[ai].constBegin(), subgroupsWithMaxMorningsPerWeekForActivities[ai].constEnd());
 
 		QSet<int> st_smda=st_smhd+st_smtd+st_smd+st_sma+st_smntags;
 		QSet<int> st_smdm=st_smhd+st_smtd+st_smd+st_smm+st_smntags;
@@ -23757,23 +23757,23 @@ void computeSubgroupsTeachersForActivitiesOfTheDay()
 		subgroupsForActivitiesOfTheDayMornings[ai]=st_lmdm;
 
 		QSet<int> st_stchl=st_smhd+st_smntags;
-		QList<int> st_ltchl=QList<int>(st_stchl.constBegin(), st_stchl.constEnd());
+		QList<int> st_ltchl(st_stchl.constBegin(), st_stchl.constEnd());
 		std::stable_sort(st_ltchl.begin(), st_ltchl.end());
 		subgroupsForActivitiesOfTheDay[ai]=st_ltchl;
 	}
 	
 	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
 		//teachers
-		QSet<int> smhd=QSet<int>(teachersWithMaxDaysPerWeekForActivities[ai].constBegin(), teachersWithMaxDaysPerWeekForActivities[ai].constEnd());
-		QSet<int> sntd=QSet<int>(teachersWithNoTwoConsecutiveDaysForActivities[ai].constBegin(), teachersWithNoTwoConsecutiveDaysForActivities[ai].constEnd());
-		QSet<int> smtd=QSet<int>(teachersWithMaxThreeConsecutiveDaysForActivities[ai].constBegin(), teachersWithMaxThreeConsecutiveDaysForActivities[ai].constEnd());
-		QSet<int> smd=QSet<int>(teachersWithMaxRealDaysPerWeekForActivities[ai].constBegin(), teachersWithMaxRealDaysPerWeekForActivities[ai].constEnd());
-		QSet<int> smntags=QSet<int>(teachersWithTagsForActivities[ai].constBegin(), teachersWithTagsForActivities[ai].constEnd());
-		QSet<int> sma=QSet<int>(teachersWithMaxAfternoonsPerWeekForActivities[ai].constBegin(), teachersWithMaxAfternoonsPerWeekForActivities[ai].constEnd());
-		QSet<int> smm=QSet<int>(teachersWithMaxMorningsPerWeekForActivities[ai].constBegin(), teachersWithMaxMorningsPerWeekForActivities[ai].constEnd());
+		QSet<int> smhd(teachersWithMaxDaysPerWeekForActivities[ai].constBegin(), teachersWithMaxDaysPerWeekForActivities[ai].constEnd());
+		QSet<int> sntd(teachersWithNoTwoConsecutiveDaysForActivities[ai].constBegin(), teachersWithNoTwoConsecutiveDaysForActivities[ai].constEnd());
+		QSet<int> smtd(teachersWithMaxThreeConsecutiveDaysForActivities[ai].constBegin(), teachersWithMaxThreeConsecutiveDaysForActivities[ai].constEnd());
+		QSet<int> smd(teachersWithMaxRealDaysPerWeekForActivities[ai].constBegin(), teachersWithMaxRealDaysPerWeekForActivities[ai].constEnd());
+		QSet<int> smntags(teachersWithTagsForActivities[ai].constBegin(), teachersWithTagsForActivities[ai].constEnd());
+		QSet<int> sma(teachersWithMaxAfternoonsPerWeekForActivities[ai].constBegin(), teachersWithMaxAfternoonsPerWeekForActivities[ai].constEnd());
+		QSet<int> smm(teachersWithMaxMorningsPerWeekForActivities[ai].constBegin(), teachersWithMaxMorningsPerWeekForActivities[ai].constEnd());
 
 		//2025-05-30
-		QSet<int> smht=QSet<int>(teachersWithMaxHoursPerTermForActivities[ai].constBegin(), teachersWithMaxHoursPerTermForActivities[ai].constEnd());
+		QSet<int> smht(teachersWithMaxHoursPerTermForActivities[ai].constBegin(), teachersWithMaxHoursPerTermForActivities[ai].constEnd());
 
 		QSet<int> smda=smhd+sntd+smtd+smd+sma+smntags+smht; //smht must be empty in the Mornings-Afternoons mode (smht is nonempty only in the Terms mode,
 		QSet<int> smdm=smhd+sntd+smtd+smd+smm+smntags+smht; //so adding it here is useless, but it does not hurt).
@@ -23791,7 +23791,7 @@ void computeSubgroupsTeachersForActivitiesOfTheDay()
 		teachersForActivitiesOfTheDayMornings[ai]=lmdm;
 
 		QSet<int> stchl=smhd+sntd+smntags+smht;
-		QList<int> ltchl=QList<int>(stchl.constBegin(), stchl.constEnd());
+		QList<int> ltchl(stchl.constBegin(), stchl.constEnd());
 		std::stable_sort(ltchl.begin(), ltchl.end());
 		teachersForActivitiesOfTheDay[ai]=ltchl;
 	}

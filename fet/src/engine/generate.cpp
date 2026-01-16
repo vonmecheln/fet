@@ -5592,7 +5592,7 @@ inline bool Generate::checkActivitiesOccupyMaxDifferentRooms(const QList<int>& g
 		
 		//To keep the generation identical on all computers - 2013-01-03
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-		QList<int> tmpListFromSet=QList<int>(activitiesInRoom.at(indexToRemove).constBegin(), activitiesInRoom.at(indexToRemove).constEnd());
+		QList<int> tmpListFromSet(activitiesInRoom.at(indexToRemove).constBegin(), activitiesInRoom.at(indexToRemove).constEnd());
 #else
 		QList<int> tmpListFromSet=activitiesInRoom.at(indexToRemove).toList();
 #endif
@@ -5744,7 +5744,7 @@ inline bool Generate::checkRoomMaxActivityTagsPerDayFromSet(const QList<int>& gl
 				int c1=-1;
 				int c2=-1;
 
-				QList<int> tagsList=QList<int>(tagsSet.constBegin(), tagsSet.constEnd());
+				QList<int> tagsList(tagsSet.constBegin(), tagsSet.constEnd());
 				std::stable_sort(tagsList.begin(), tagsList.end()); //keep the generation identical
 
 				for(int i : std::as_const(tagsList)){
@@ -5920,7 +5920,7 @@ inline bool Generate::checkRoomMaxActivityTagsPerDayFromSet(const QList<int>& gl
 			QList<bool> canEmpty;
 
 			if(cntTags==k && newCrtTag){
-				QList<int> tagsList=QList<int>(tagsSet.constBegin(), tagsSet.constEnd());
+				QList<int> tagsList(tagsSet.constBegin(), tagsSet.constEnd());
 				std::stable_sort(tagsList.begin(), tagsList.end()); //keep the generation identical
 
 				for(int i : std::as_const(tagsList)){
@@ -6087,7 +6087,7 @@ inline bool Generate::checkRoomMaxActivityTagsPerRealDayFromSet(const QList<int>
 				int c1=-1;
 				int c2=-1;
 
-				QList<int> tagsList=QList<int>(tagsSet.constBegin(), tagsSet.constEnd());
+				QList<int> tagsList(tagsSet.constBegin(), tagsSet.constEnd());
 				std::stable_sort(tagsList.begin(), tagsList.end()); //keep the generation identical
 
 				for(int i : std::as_const(tagsList)){
@@ -6268,7 +6268,7 @@ inline bool Generate::checkRoomMaxActivityTagsPerRealDayFromSet(const QList<int>
 			QList<bool> canEmpty;
 
 			if(cntTags==k && newCrtTag){
-				QList<int> tagsList=QList<int>(tagsSet.constBegin(), tagsSet.constEnd());
+				QList<int> tagsList(tagsSet.constBegin(), tagsSet.constEnd());
 				std::stable_sort(tagsList.begin(), tagsList.end()); //keep the generation identical
 
 				for(int i : std::as_const(tagsList)){
@@ -6438,7 +6438,7 @@ inline bool Generate::checkRoomMaxActivityTagsPerWeekFromSet(const QList<int>& g
 				int c1=-1;
 				int c2=-1;
 
-				QList<int> tagsList=QList<int>(tagsSet.constBegin(), tagsSet.constEnd());
+				QList<int> tagsList(tagsSet.constBegin(), tagsSet.constEnd());
 				std::stable_sort(tagsList.begin(), tagsList.end()); //keep the generation identical
 
 				for(int i : std::as_const(tagsList)){
@@ -6616,7 +6616,7 @@ inline bool Generate::checkRoomMaxActivityTagsPerWeekFromSet(const QList<int>& g
 			QList<bool> canEmpty;
 
 			if(cntTags==k && newCrtTag){
-				QList<int> tagsList=QList<int>(tagsSet.constBegin(), tagsSet.constEnd());
+				QList<int> tagsList(tagsSet.constBegin(), tagsSet.constEnd());
 				std::stable_sort(tagsList.begin(), tagsList.end()); //keep the generation identical
 
 				for(int i : std::as_const(tagsList)){
@@ -19270,7 +19270,7 @@ impossiblestudentsmaxhoursdaily:
 
 						//To keep the generation identical on all computers
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-						QList<int> tmpSortedList=QList<int>(candidates.constBegin(), candidates.constEnd());
+						QList<int> tmpSortedList(candidates.constBegin(), candidates.constEnd());
 #else
 						QList<int> tmpSortedList=candidates.toList();
 #endif
@@ -21754,7 +21754,7 @@ impossiblestudentsminmorningsafternoonsperweek:
 						int c1=-1;
 						int c2=-1;
 
-						QList<int> tagsList=QList<int>(tagsSet.constBegin(), tagsSet.constEnd());
+						QList<int> tagsList(tagsSet.constBegin(), tagsSet.constEnd());
 						std::stable_sort(tagsList.begin(), tagsList.end()); //keep the generation identical
 
 						for(int i : std::as_const(tagsList)){
@@ -21943,7 +21943,7 @@ impossiblestudentsminmorningsafternoonsperweek:
 					QList<bool> canEmpty;
 
 					if(cntTags==k && newCrtTag){
-						QList<int> tagsList=QList<int>(tagsSet.constBegin(), tagsSet.constEnd());
+						QList<int> tagsList(tagsSet.constBegin(), tagsSet.constEnd());
 						std::stable_sort(tagsList.begin(), tagsList.end()); //keep the generation identical
 
 						for(int i : std::as_const(tagsList)){
@@ -22139,7 +22139,7 @@ impossiblestudentsmaxactivitytagsperdayfromset:
 						int c1=-1;
 						int c2=-1;
 
-						QList<int> tagsList=QList<int>(tagsSet.constBegin(), tagsSet.constEnd());
+						QList<int> tagsList(tagsSet.constBegin(), tagsSet.constEnd());
 						std::stable_sort(tagsList.begin(), tagsList.end()); //keep the generation identical
 
 						for(int i : std::as_const(tagsList)){
@@ -22363,7 +22363,7 @@ impossiblestudentsmaxactivitytagsperdayfromset:
 					QList<bool> canEmpty;
 
 					if(cntTags==k && newCrtTag){
-						QList<int> tagsList=QList<int>(tagsSet.constBegin(), tagsSet.constEnd());
+						QList<int> tagsList(tagsSet.constBegin(), tagsSet.constEnd());
 						std::stable_sort(tagsList.begin(), tagsList.end()); //keep the generation identical
 
 						for(int i : std::as_const(tagsList)){
@@ -22513,7 +22513,7 @@ impossiblestudentsmaxactivitytagsperrealdayfromset:
 
 								//To keep the generation identical on all computers
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-								QList<int> tmpSortedList=QList<int>(candidates.constBegin(), candidates.constEnd());
+								QList<int> tmpSortedList(candidates.constBegin(), candidates.constEnd());
 #else
 								QList<int> tmpSortedList=candidates.toList();
 #endif
@@ -28830,7 +28830,7 @@ impossibleteachersmaxhoursdaily:
 
 						//To keep the generation identical on all computers
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-						QList<int> tmpSortedList=QList<int>(candidates.constBegin(), candidates.constEnd());
+						QList<int> tmpSortedList(candidates.constBegin(), candidates.constEnd());
 #else
 						QList<int> tmpSortedList=candidates.toList();
 #endif
@@ -31881,7 +31881,7 @@ impossibleteachersminmorningsafternoonsperweek:
 						int c1=-1;
 						int c2=-1;
 
-						QList<int> tagsList=QList<int>(tagsSet.constBegin(), tagsSet.constEnd());
+						QList<int> tagsList(tagsSet.constBegin(), tagsSet.constEnd());
 						std::stable_sort(tagsList.begin(), tagsList.end()); //keep the generation identical
 
 						for(int i : std::as_const(tagsList)){
@@ -32070,7 +32070,7 @@ impossibleteachersminmorningsafternoonsperweek:
 					QList<bool> canEmpty;
 
 					if(cntTags==k && newCrtTag){
-						QList<int> tagsList=QList<int>(tagsSet.constBegin(), tagsSet.constEnd());
+						QList<int> tagsList(tagsSet.constBegin(), tagsSet.constEnd());
 						std::stable_sort(tagsList.begin(), tagsList.end()); //keep the generation identical
 
 						for(int i : std::as_const(tagsList)){
@@ -32266,7 +32266,7 @@ impossibleteachersmaxactivitytagsperdayfromset:
 						int c1=-1;
 						int c2=-1;
 
-						QList<int> tagsList=QList<int>(tagsSet.constBegin(), tagsSet.constEnd());
+						QList<int> tagsList(tagsSet.constBegin(), tagsSet.constEnd());
 						std::stable_sort(tagsList.begin(), tagsList.end()); //keep the generation identical
 
 						for(int i : std::as_const(tagsList)){
@@ -32490,7 +32490,7 @@ impossibleteachersmaxactivitytagsperdayfromset:
 					QList<bool> canEmpty;
 
 					if(cntTags==k && newCrtTag){
-						QList<int> tagsList=QList<int>(tagsSet.constBegin(), tagsSet.constEnd());
+						QList<int> tagsList(tagsSet.constBegin(), tagsSet.constEnd());
 						std::stable_sort(tagsList.begin(), tagsList.end()); //keep the generation identical
 
 						for(int i : std::as_const(tagsList)){
@@ -33304,7 +33304,7 @@ impossiblestudentsoccupymaxsetsoftimeslotsfromselection:
 
 								//To keep the generation identical on all computers
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-								QList<int> tmpSortedList=QList<int>(candidates.constBegin(), candidates.constEnd());
+								QList<int> tmpSortedList(candidates.constBegin(), candidates.constEnd());
 #else
 								QList<int> tmpSortedList=candidates.toList();
 #endif
@@ -34547,7 +34547,7 @@ impossibleteachersmaxhoursperterm:
 						
 						//To keep the generation identical on all computers - 2013-01-03
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-						QList<int> tmpSortedList=QList<int>(allCandidates.constBegin(), allCandidates.constEnd());
+						QList<int> tmpSortedList(allCandidates.constBegin(), allCandidates.constEnd());
 #else
 						QList<int> tmpSortedList=allCandidates.toList();
 #endif
@@ -34706,7 +34706,7 @@ impossibleactivitiesmaxsimultaneousinselectedtimeslots:
 						
 						//To keep the generation identical on all computers - 2013-01-03
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-						QList<int> tmpSortedList=QList<int>(candidates.constBegin(), candidates.constEnd());
+						QList<int> tmpSortedList(candidates.constBegin(), candidates.constEnd());
 #else
 						QList<int> tmpSortedList=candidates.toList();
 #endif
@@ -34771,7 +34771,7 @@ impossibleactivitiesmaxsimultaneousinselectedtimeslots:
 						const QSet<int>& tmpSet=slotSetOfActivities[t];
 						//To keep the generation identical on all computers - 2013-01-03
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-						QList<int> tmpListFromSet=QList<int>(tmpSet.constBegin(), tmpSet.constEnd());
+						QList<int> tmpListFromSet(tmpSet.constBegin(), tmpSet.constEnd());
 #else
 						QList<int> tmpListFromSet=tmpSet.toList();
 #endif

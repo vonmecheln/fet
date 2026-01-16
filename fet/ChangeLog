@@ -1,5 +1,8 @@
+ 7.5.6
+	- Code cleanup.
+	- Updated the Arabic translation, by Benahmed Abdelkrim.
  7.5.5
-	- An English field correction (reported by Vangelis Karafillidis).
+	- Corrected an English field (reported by Vangelis Karafillidis).
 	- Updated the Greek translation, by Vangelis Karafillidis.
  7.5.4
 	- Changed the license of the program to the GNU Affero General Public License version 3 (Volker Dirr suggested to remove the term 'or later').
