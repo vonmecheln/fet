@@ -2056,12 +2056,7 @@ the file name in the recents list... so I would avoid to remember...
 
 134--------------------------DONE---------------------------
 
-135---------------------------------------------------------
-From Pietro (on forum):
-
-I would suggest one more feature:
-it would be very useful to have shortcuts with "ALT or CTRL + key" for the buttons in the various masks all over the FET.
-So we could for example enable, disable or delete the various constraints without have to use the mouse, only the keyboard.
+135---------------------DONE in FET-7.5.4-------------------
 
 136---------------------------------------------------------
 From arivasm (on forum):
@@ -11880,3 +11875,113 @@ From boubata (on forum):
 https://lalescu.ro/liviu/fet/forum/index.php?topic=6685.0
 
 I wonder if it is possible to provide the ability to customize the colours in FET by subjects and teacher to let us control the results effectively.
+
+783---------------------------------------------------------
+From Michael Chourdakis (on Facebook):
+
+Please consider a) saving the state and b) introducing subconstraints with OR.
+
+784---------------------------------------------------------
+From gradgrind (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6688.0
+
+Having done some work on interfacing FET with other software, it seems to me that it might be useful in some cases to have Code and Comments fields on
+more elements.
+
+The current state seems to be:
+
+Day and Hour elements have neither Comments nor Code.
+
+Activity elements have no Code.
+
+Constraint elements have no Code – and also no unique identifier like Id or Name.
+
+You probably had reasons for your choices, but if it is not too much work, perhaps it might be helpful to some people if these fields were also available
+on these elements (I may have missed something ...).
+
+785---------------------------------------------------------
+From gradgrind (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6689.0
+
+I guess this one might be quite a bit more work (so I could understand you wanting sponsorship for something like this), but I think it might be a good idea
+for those cold, dark winter days ...
+
+My suggestion is to make a library version of FET, rather like the command-line version, but interfacing via some communication mechanism (callbacks,
+messaging, whatever, ...). Or it could be an HTML server, using JSON messages for example ...
+
+Anyway, this FET version would create no files, but pass all generated data and progress information back to the client, which could do with it whatever it
+wanted. Control of the processes, setting of options, etc., would be done by messages from the client.
+
+786---------------------------------------------------------
+From Vangelis Karafillidis:
+
+We had a discussion about some issues which a user encountered when using the constraint "a set of activities occupies max time slots from selection".
+If the number of max time slots is n and the number of the selected time slots is m, and n>m the constraint is ignored. It would be really useful if
+the user had some kind of warning that this constraint is going to be ignored. The same applies for the constraint "a set of activities occupies min
+time slots from selection".
+
+Liviu Lalescu:
+
+The Help description and the constraints' names should be self-explanatory.
+Also, it is tricky: for max, if n>=m the constraint is ignored,
+otherwise it is useful, while for min, if n<=m the constraint is
+useful, otherwise it is impossible.
+
+787---------------------------------------------------------
+From Vangelis Karafillidis (on Facebook):
+
+We had a discussion about Greek institutions' timetabling. A functionality to keep a quite similar timetable to what was generated would be useful. We could
+add a new type of time constraint, activity preferred starting _window of_ time. It will accept for the day and for the hour either a range
+[a, b], or a centered range, [c+a, c+b]. The user will convert from the starting time to the starting window of time from the timetable view dialogs.
+
+788---------------------------------------------------------
+From Pietro Giudice (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6697.0
+
+I have a suggestion for a new time constraint "building" related; it should be something like:
+
+"Max days per week for a student set in a building"
+"Min days per week for a student set in a building"
+(one should have the entries: student set, max/min days per week, building)
+
+and maybe also:
+"Max days per week for all student in a building"
+"Min days per week for all student in a building"
+(one should have the entries: max/min days per week, building)
+
+I try to explain why it is important in my case (and I hope also for other schools).
+
+In my school we have two buildings, very far apart from each other, and for various logistic reasons, during the week students have to stay in
+one building for a few days and the rest of the week in the other building (students go to school 6 days per week). Moreover the Principal would
+like the classes spend time in the two buildings homogeneously (ideally 3 days in each building) but this is actually not always possible
+because there are other good reasons for spending, for example, 2 days in one and 4 in the other. Note that some laboratories (and gym) are in
+one building but not in the other, therefore they are forced to go in a specific building.
+
+At the moment FET decides to send one class (student set) in one building or in the other just according to "activity preferred room" or just
+because the rooms in a building are finished. But sometimes happen that one class is in a building for one day and the other five days is in
+the other: this is not acceptable for me. Therefore I had to modify the timetable by hand...
+
+Introducing the above suggested constraints the classes can be distributed between the two (or more) buildings in a controlled way.
+
+Liviu Lalescu:
+
+If you knew exactly for each activity its corresponding building (each activity has a fixed single building possible), the "max" variant is possible:
+a set of activities occupies max sets of time slots from selection; add one such constraint for each students set's activities, selecting the slots
+as 6 sets: day 1, ..., day 6, max occupied = 4 for your case.
+
+But I think in your case a specific activity may take place in either building, so maybe the approach above is not possible.
+
+Pietro Giudice:
+
+Unfortunately, as you have noticed, a specific activity may take place in either buildings. For example, certain theoretical subjects such as mathematics,
+history, geography, philosophy, etc., can be taught (by the same teacher to the same class) in both buildings. Other ideas ? Or any chance to introduce
+a new constraint ?
+
+Liviu Lalescu:
+
+I think you need a new constraint.
+
+It is a research problem, and "min" seems much more difficult than "max".

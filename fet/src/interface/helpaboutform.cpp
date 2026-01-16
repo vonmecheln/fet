@@ -78,7 +78,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	 "or a combination of these), %2 are the copyright holders").arg("2002-2025").arg("Liviu Lalescu, Volker Dirr");
 	about+=QString("<br /><br />");
 	about+=tr("Version: %1 (%2 %3).", "%1 is the current FET version, %2 is the current release month, %3 is the current release year").arg(FET_VERSION)
-	 .arg(QCoreApplication::translate("MonthsNames", "November")).arg("2025");
+	 .arg(QCoreApplication::translate("MonthsNames", "December")).arg("2025");
 	about+=QString("<br /><br />");
 	about+=tr("Licensed under the GNU Affero General Public License version 3.");
 	about+=QString("<br /><br />");
@@ -167,7 +167,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	 "%4 is the username of the translator").arg(QString("Sílvia Lag")).arg(QString("Sílvia")).arg("https://lalescu.ro/liviu/fet/forum/").arg("silvia");
 	translators+=QString(" - ")+tr("rewrote the translation from zero");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Innocent De Marchi").arg("tangram.peces AT gmail.com");
+	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Innocent De Marchi").arg("tangram.peces AT gmail.com");
 	translators+=QString("<br /><br /><br />");
 
 	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("cs").arg(tr("Czech translation"));
@@ -398,7 +398,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address")
 	 .arg(QString("Phạm Văn Quyền Anh")).arg("phamanhlc1992 AT gmail.com");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("current translator: %1 (assisted by %2 and %3) (%4)",
+	translators+=tr("former translator: %1 (assisted by %2 and %3) (%4)",
 	 "%1 is the name of the translator, %2 and %3 are the tools which this translator used - such as Gemini and ChatGPT, %4 is his or her email or web address")
 	 .arg(QString("Vũ Ngọc Thành")).arg("Gemini").arg("ChatGPT").arg("daytoan2011 AT gmail.com");
 	translators+=QString("<br /><br /><br />");
@@ -1536,6 +1536,8 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("Furkan Kızılaslan");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("boubata");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Pietro Giudice");
 	thanksTo+=QString("<br />");
 	
 	thanksToTextBrowser->setHtml(thanksTo);

@@ -1,3 +1,5 @@
+ 7.5.8
+	- Updated to Qt 6.10.1.
  7.5.7
 	- Crash bugs fixed, when using one or more constraints of type teacher(s)/students (set) max mornings/afternoons per week
 	(in the Mornings/Afternoons mode) with the max allowed mornings/afternoons per week set to zero (reported by Thái Chí Phương).
@@ -16,7 +18,7 @@
 	necessary.
 	- Implemented additional keyboard shortcuts: Ctrl+Shift+T/S/R for teachers/students/rooms days horizontal timetables. Also, the user can enable
 	some other keyboard shortcuts from the Settings > Interface menu: + for adding, M for modifying, Delete for removing, A for activating, D for
-	deactivating, C for comments, U for up, J for down, and W for weights (suggested by Alami Mohammed).
+	deactivating, C for comments, U for up, J for down, and W for weights (suggested recently by Alami Mohammed, and in the past by Pietro).
 	- Minor improvements.
  7.5.3
 	- Added a new and complete Turkish translation, by the newly assigned translator, Erdem Uygun (he was assisted by ChatGPT).
