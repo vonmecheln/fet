@@ -273,7 +273,7 @@ bool SubactivitiesForm::filterOk(Activity* act)
 	QString stn=studentsComboBox->currentText();
 	QString sbn=subjectsComboBox->currentText();
 	QString atn=activityTagsComboBox->currentText();
-	int ok=true;
+	bool ok=true;
 
 	//teacher
 	if(tn!=""){

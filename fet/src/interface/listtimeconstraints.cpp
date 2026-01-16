@@ -1431,7 +1431,7 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 				activityTagsComboBox=new QComboBox;
 
 				firstInstructionsLabel=new QLabel(tr("This constraint ensures that the specified teacher does not have more than the specified number of "
-													 "activity tags (one or two) from those selected, on any day."));
+													 "activity tags from those selected, on any day."));
 
 				break;
 			}
@@ -1444,7 +1444,7 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 				activityTagsComboBox=new QComboBox;
 
 				firstInstructionsLabel=new QLabel(tr("This constraint ensures that all the teachers do not have more than the specified number of "
-													 "activity tags (one or two) from those selected, on any day."));
+													 "activity tags from those selected, on any day."));
 
 				break;
 			}
@@ -2330,7 +2330,7 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 				activityTagsComboBox=new QComboBox;
 
 				firstInstructionsLabel=new QLabel(tr("This constraint ensures that the specified students set does not have more "
-													 "than the specified number of activity tags (one or two) from those selected, "
+													 "than the specified number of activity tags from those selected, "
 													 "on any day."));
 
 				break;
@@ -2344,7 +2344,7 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 				activityTagsComboBox=new QComboBox;
 
 				firstInstructionsLabel=new QLabel(tr("This constraint ensures that all the students do not have more than the specified number "
-													 "of activity tags (one or two) from those selected, on any day."));
+													 "of activity tags from those selected, on any day."));
 
 				break;
 			}
@@ -2358,7 +2358,7 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 				activityTagsComboBox=new QComboBox;
 
 				firstInstructionsLabel=new QLabel(tr("This constraint ensures that the specified teacher does not have more than the specified number of activity "
-													 "tags (one or two) from those selected, on any real day."));
+													 "tags from those selected, on any real day."));
 
 				break;
 			}
@@ -2371,7 +2371,7 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 				activityTagsComboBox=new QComboBox;
 
 				firstInstructionsLabel=new QLabel(tr("This constraint ensures that all the teachers do not have more than the specified number of activity tags "
-													 "(one or two) from those selected, on any real day."));
+													 "from those selected, on any real day."));
 
 				break;
 			}
@@ -2385,7 +2385,7 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 				activityTagsComboBox=new QComboBox;
 
 				firstInstructionsLabel=new QLabel(tr("This constraint ensures that the specified students set does not have more than the specified number of "
-													 "activity tags (one or two) from those selected, on any real day."));
+													 "activity tags from those selected, on any real day."));
 
 				break;
 			}
@@ -2398,7 +2398,7 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 				activityTagsComboBox=new QComboBox;
 
 				firstInstructionsLabel=new QLabel(tr("This constraint ensures that all the students do not have more than the specified number of activity tags "
-													 "(one or two) from those selected, on any real day."));
+													 "from those selected, on any real day."));
 
 				break;
 			}
@@ -7939,7 +7939,7 @@ void ListTimeConstraints::helpClicked()
 				 .arg("Sérgio Augusto Dias Castro");
 				s+="\n\n";
 				s+=tr("This constraint ensures that the teachers (or the specified teacher), or the students (or the specified"
-				 " students set) can have activities in a maximum 1 or 2 (this number is selected by the user) sets of time"
+				 " students set) can have activities in a specified maximum number of sets of time"
 				 " slots from a selection of sets of time slots. The unselected time slots are not subject to constraints.");
 				s+="\n";
 
@@ -7968,8 +7968,8 @@ void ListTimeConstraints::helpClicked()
 				QString s=tr("This constraint was suggested by %1, and maybe by other users in the past.",
 				 "%1 is a person who suggested this constraint.").arg("k3nt0n");
 				s+="\n\n";
-				s+=tr("This constraint ensures that the selected activities can take place in a maximum 1 or 2"
-				 " (this number is selected by the user) sets of time slots from a selection of sets of time slots."
+				s+=tr("This constraint ensures that the selected activities can take place in a specified maximum number"
+				 " of sets of time slots from a selection of sets of time slots."
 				 " The unselected time slots are not subject to constraints.");
 				s+="\n";
 

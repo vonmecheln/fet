@@ -3039,10 +3039,19 @@ int main(int argc, char **argv)
 		
 		QFile maxPlacedActivityFile(logsDir+"max_placed_activities.txt");
 #if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
-		maxPlacedActivityFile.open(QIODeviceBase::WriteOnly);
+		bool tmpaf=maxPlacedActivityFile.open(QIODeviceBase::WriteOnly);
 #else
-		maxPlacedActivityFile.open(QIODevice::WriteOnly);
+		bool tmpaf=maxPlacedActivityFile.open(QIODevice::WriteOnly);
 #endif
+		if(!tmpaf){
+			cout<<"fet: critical error - cannot open the log file for the maximum placed activities - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"max_placed_activities.txt."
+			 " If this is a bug - please report it."<<endl;
+			out<<"fet: critical error - cannot open the log file for the maximum placed activities - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"max_placed_activities.txt."
+			 " If this is a bug - please report it."<<Qt::endl;
+
+			return 1;
+		}
+		
 		QTextStream maxPlacedActivityStream(&maxPlacedActivityFile);
 #if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
 		maxPlacedActivityStream.setEncoding(QStringConverter::Utf8);
@@ -3060,10 +3069,19 @@ int main(int argc, char **argv)
 		
 		QFile initialOrderFile(logsDir+"initial_order.txt");
 #if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
-		initialOrderFile.open(QIODeviceBase::WriteOnly);
+		bool iof=initialOrderFile.open(QIODeviceBase::WriteOnly);
 #else
-		initialOrderFile.open(QIODevice::WriteOnly);
+		bool iof=initialOrderFile.open(QIODevice::WriteOnly);
 #endif
+		if(!iof){
+			cout<<"fet: critical error - cannot open the log file for the initial order of the activities - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"initial_order.txt."
+			 " If this is a bug - please report it."<<endl;
+			out<<"fet: critical error - cannot open the log file for the initial order of the activities - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"initial_order.txt."
+			 " If this is a bug - please report it."<<Qt::endl;
+
+			return 1;
+		}
+
 		QTextStream initialOrderStream(&initialOrderFile);
 #if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
 		initialOrderStream.setEncoding(QStringConverter::Utf8);

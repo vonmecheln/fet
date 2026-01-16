@@ -831,7 +831,7 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 				dialogName=QString("ConstraintsRoomMaxActivityTagsPerDayFromSet");
 
 				firstInstructionsLabel=new QLabel(tr("This constraint ensures that the specified room does not have more than the specified number "
-													 "of activity tags (one or two) from those selected, on any day."));
+													 "of activity tags from those selected, on any day."));
 				secondInstructionsLabel=new QLabel(tr("Note: For FET to be able to start the generation, the specified room must be real (not virtual), "
 													  "and should not be found in any set of real rooms of any virtual room."));
 
@@ -848,7 +848,7 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 				dialogName=QString("ConstraintsRoomMaxActivityTagsPerRealDayFromSet");
 
 				firstInstructionsLabel=new QLabel(tr("This constraint ensures that the specified room does not have more than the specified number of "
-													 "activity tags (one or two) from those selected, on any real day."));
+													 "activity tags from those selected, on any real day."));
 				secondInstructionsLabel=new QLabel(tr("Note: For FET to be able to start the generation, the specified room must be real (not virtual), "
 													  "and should not be found in any set of real rooms of any virtual room."));
 
@@ -865,7 +865,7 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 				dialogName=QString("ConstraintsRoomMaxActivityTagsPerWeekFromSet");
 
 				firstInstructionsLabel=new QLabel(tr("This constraint ensures that the specified room does not have more than the specified number of "
-													 "activity tags (one or two) from those selected, throughout the week."));
+													 "activity tags from those selected, throughout the week."));
 				secondInstructionsLabel=new QLabel(tr("Note: For FET to be able to start the generation, the specified room must be real (not virtual), "
 													  "and should not be found in any set of real rooms of any virtual room."));
 

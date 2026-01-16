@@ -5646,7 +5646,7 @@ inline bool Generate::checkRoomMaxActivityTagsPerDayFromSet(const QList<int>& gl
 		int wg=roomsMaxActivityTagsPerDayFromSetPercentages[rm].at(j);
 		int k=roomsMaxActivityTagsPerDayFromSetMaxTags[rm].at(j);
 		const QSet<int>& tagsSet=roomsMaxActivityTagsPerDayFromSetTagsSet[rm].at(j);
-
+		
 		assert(wg==100.0);
 
 		int aiTag=-1;
@@ -5696,7 +5696,7 @@ inline bool Generate::checkRoomMaxActivityTagsPerDayFromSet(const QList<int>& gl
 		}
 
 		int cntTags=0;
-		int newCrtTag=false;
+		bool newCrtTag=false;
 		for(int i : std::as_const(tagsSet)){
 			if(cntTagsMatrix[i]>0){
 				cntTags++;
@@ -5708,7 +5708,6 @@ inline bool Generate::checkRoomMaxActivityTagsPerDayFromSet(const QList<int>& gl
 			}
 		}
 		assert(cntTags<=k);
-
 		if(k==1){
 			if(cntTags==1 && newCrtTag){
 				assert(k1>=0);
@@ -5734,9 +5733,7 @@ inline bool Generate::checkRoomMaxActivityTagsPerDayFromSet(const QList<int>& gl
 				}
 			}
 		}
-		else{
-			assert(k==2);
-
+		else if(k==2){
 			if(cntTags==2 && newCrtTag){
 				int c0=-1;
 				int c1=-1;
@@ -5912,6 +5909,70 @@ inline bool Generate::checkRoomMaxActivityTagsPerDayFromSet(const QList<int>& gl
 				}
 			}
 		}
+		else if(k>=3){
+			QHash<int, int> tagToIndex;
+			QList<QList<int>> activitiesList;
+			QList<bool> canEmpty;
+
+			if(cntTags==k && newCrtTag){
+				QList<int> tagsList=QList<int>(tagsSet.constBegin(), tagsSet.constEnd());
+				std::stable_sort(tagsList.begin(), tagsList.end()); //keep the generation identical
+
+				for(int i : std::as_const(tagsList)){
+					if(cntTagsMatrix[i]>0){
+						assert(i!=aiTag);
+						int index=activitiesList.count();
+						assert(!tagToIndex.contains(i));
+						tagToIndex.insert(i, index);
+						activitiesList.append(QList<int>());
+						canEmpty.append(true);
+					}
+				}
+
+				for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+					if(h2>0)
+						if(roomsTimetable(rm,d,h2)==roomsTimetable(rm,d,h2-1))
+							continue;
+		
+					int ai2=roomsTimetable(rm,d,h2);
+					if(ai2>=0){
+						assert(ai2!=ai);
+						if(!globalConflActivities.contains(ai2) && !tmp_list.contains(ai2)){
+							int actTag=-1;
+							for(int tg2 : std::as_const(gt.rules.internalActivitiesList[ai2].iActivityTagsSet)){
+								if(tagsSet.contains(tg2)){
+									assert(actTag==-1);
+									actTag=tg2;
+								}
+							}
+							
+							if(actTag>=0 && tagToIndex.contains(actTag)){
+								int index=tagToIndex.value(actTag);
+								assert(index>=0);
+
+								if(!(fixedTimeActivity[ai2] && fixedSpaceActivity[ai2]) && !swappedActivities[ai2])
+									activitiesList[index].append(ai2);
+								else
+									canEmpty[index]=false;
+							}
+						}
+					}
+				}
+				
+				QList<int> chosenList;
+				bool t=getOptimumActivitiesToDisplace(level, activitiesList, canEmpty, chosenList);
+				if(!t){
+					return false;
+				}
+				else{
+					for(int ai2 : std::as_const(chosenList))
+						tmp_list.append(ai2);
+				}
+			}
+		}
+		else{
+			assert(0);
+		}
 	}
 	
 	return true;
@@ -5975,7 +6036,7 @@ inline bool Generate::checkRoomMaxActivityTagsPerRealDayFromSet(const QList<int>
 		}
 
 		int cntTags=0;
-		int newCrtTag=false;
+		bool newCrtTag=false;
 		for(int i : std::as_const(tagsSet)){
 			if(cntTagsMatrix[i]>0){
 				cntTags++;
@@ -6015,9 +6076,7 @@ inline bool Generate::checkRoomMaxActivityTagsPerRealDayFromSet(const QList<int>
 				}
 			}
 		}
-		else{
-			assert(k==2);
-
+		else if(k==2){
 			if(cntTags==2 && newCrtTag){
 				int c0=-1;
 				int c1=-1;
@@ -6198,6 +6257,72 @@ inline bool Generate::checkRoomMaxActivityTagsPerRealDayFromSet(const QList<int>
 				}
 			}
 		}
+		else if(k>=3){
+			QHash<int, int> tagToIndex;
+			QList<QList<int>> activitiesList;
+			QList<bool> canEmpty;
+
+			if(cntTags==k && newCrtTag){
+				QList<int> tagsList=QList<int>(tagsSet.constBegin(), tagsSet.constEnd());
+				std::stable_sort(tagsList.begin(), tagsList.end()); //keep the generation identical
+
+				for(int i : std::as_const(tagsList)){
+					if(cntTagsMatrix[i]>0){
+						assert(i!=aiTag);
+						int index=activitiesList.count();
+						assert(!tagToIndex.contains(i));
+						tagToIndex.insert(i, index);
+						activitiesList.append(QList<int>());
+						canEmpty.append(true);
+					}
+				}
+
+				for(int rdc=0; rdc<2; rdc++){
+					for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+						if(h2>0)
+							if(roomsTimetable(rm,(d/2)*2+rdc,h2)==roomsTimetable(rm,(d/2)*2+rdc,h2-1))
+								continue;
+
+						int ai2=roomsTimetable(rm,(d/2)*2+rdc,h2);
+						if(ai2>=0){
+							assert(ai2!=ai);
+							if(!globalConflActivities.contains(ai2) && !tmp_list.contains(ai2)){
+								int actTag=-1;
+								for(int tg2 : std::as_const(gt.rules.internalActivitiesList[ai2].iActivityTagsSet)){
+									if(tagsSet.contains(tg2)){
+										assert(actTag==-1);
+										actTag=tg2;
+									}
+								}
+								
+								if(actTag>=0 && tagToIndex.contains(actTag)){
+									int index=tagToIndex.value(actTag);
+									assert(index>=0);
+
+									if(!(fixedTimeActivity[ai2] && fixedSpaceActivity[ai2]) && !swappedActivities[ai2])
+										activitiesList[index].append(ai2);
+									else
+										canEmpty[index]=false;
+								}
+							}
+						}
+					}
+				}
+				
+				QList<int> chosenList;
+				bool t=getOptimumActivitiesToDisplace(level, activitiesList, canEmpty, chosenList);
+				if(!t){
+					return false;
+				}
+				else{
+					for(int ai2 : std::as_const(chosenList))
+						tmp_list.append(ai2);
+				}
+			}
+		}
+		else{
+			assert(0);
+		}
 	}
 	
 	return true;
@@ -6262,7 +6387,7 @@ inline bool Generate::checkRoomMaxActivityTagsPerWeekFromSet(const QList<int>& g
 		}
 
 		int cntTags=0;
-		int newCrtTag=false;
+		bool newCrtTag=false;
 		for(int i : std::as_const(tagsSet)){
 			if(cntTagsMatrix[i]>0){
 				cntTags++;
@@ -6302,9 +6427,7 @@ inline bool Generate::checkRoomMaxActivityTagsPerWeekFromSet(const QList<int>& g
 				}
 			}
 		}
-		else{
-			assert(k==2);
-
+		else if(k==2){
 			if(cntTags==2 && newCrtTag){
 				int c0=-1;
 				int c1=-1;
@@ -6481,6 +6604,72 @@ inline bool Generate::checkRoomMaxActivityTagsPerWeekFromSet(const QList<int>& g
 					}
 				}
 			}
+		}
+		else if(k>=3){
+			QHash<int, int> tagToIndex;
+			QList<QList<int>> activitiesList;
+			QList<bool> canEmpty;
+
+			if(cntTags==k && newCrtTag){
+				QList<int> tagsList=QList<int>(tagsSet.constBegin(), tagsSet.constEnd());
+				std::stable_sort(tagsList.begin(), tagsList.end()); //keep the generation identical
+
+				for(int i : std::as_const(tagsList)){
+					if(cntTagsMatrix[i]>0){
+						assert(i!=aiTag);
+						int index=activitiesList.count();
+						assert(!tagToIndex.contains(i));
+						tagToIndex.insert(i, index);
+						activitiesList.append(QList<int>());
+						canEmpty.append(true);
+					}
+				}
+
+				for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+					for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+						if(h2>0)
+							if(roomsTimetable(rm,d2,h2)==roomsTimetable(rm,d2,h2-1))
+								continue;
+			
+						int ai2=roomsTimetable(rm,d2,h2);
+						if(ai2>=0){
+							assert(ai2!=ai);
+							if(!globalConflActivities.contains(ai2) && !tmp_list.contains(ai2)){
+								int actTag=-1;
+								for(int tg2 : std::as_const(gt.rules.internalActivitiesList[ai2].iActivityTagsSet)){
+									if(tagsSet.contains(tg2)){
+										assert(actTag==-1);
+										actTag=tg2;
+									}
+								}
+								
+								if(actTag>=0 && tagToIndex.contains(actTag)){
+									int index=tagToIndex.value(actTag);
+									assert(index>=0);
+
+									if(!(fixedTimeActivity[ai2] && fixedSpaceActivity[ai2]) && !swappedActivities[ai2])
+										activitiesList[index].append(ai2);
+									else
+										canEmpty[index]=false;
+								}
+							}
+						}
+					}
+				}
+				
+				QList<int> chosenList;
+				bool t=getOptimumActivitiesToDisplace(level, activitiesList, canEmpty, chosenList);
+				if(!t){
+					return false;
+				}
+				else{
+					for(int ai2 : std::as_const(chosenList))
+						tmp_list.append(ai2);
+				}
+			}
+		}
+		else{
+			assert(0);
 		}
 	}
 	
@@ -7255,6 +7444,76 @@ inline bool Generate::getRoom(int level, const Activity* act, int ai, int d, int
 				return okp;
 			}
 		}
+	}
+}
+
+//2025-10-06
+inline bool Generate::getOptimumActivitiesToDisplace(int level, const QList<QList<int>>& activitiesList, const QList<bool>& canEmpty, QList<int>& chosenActivitiesList)
+{
+	QList<QList<int>> optionsList;
+
+	assert(activitiesList.count()==canEmpty.count());
+
+	if(level>0){
+		int nopt=gt.rules.nInternalActivities;
+		
+		for(int i=0; i<activitiesList.count(); i++){
+			if(canEmpty.at(i)){
+				if(nopt>activitiesList.at(i).count()){
+					nopt=activitiesList.at(i).count();
+					optionsList.clear();
+					optionsList.append(activitiesList.at(i));
+				}
+				else if(nopt==activitiesList.at(i).count()){
+					optionsList.append(activitiesList.at(i));
+				}
+			}
+		}
+	}
+	else{
+		assert(level==0);
+		
+		int _minWrong=INF;
+		int _nWrong=0;
+		int _nConflActivities=gt.rules.nInternalActivities;
+		int _minIndexAct=gt.rules.nInternalActivities;
+		
+		for(const QList<int>& tl : std::as_const(activitiesList)){
+			int _mW=INF;
+			int _nW=0;
+			int _nCA=tl.count();
+			int _mIA=gt.rules.nInternalActivities;
+
+			for(int ai2 : std::as_const(tl)){
+				_mW = min (_mW, triedRemovals(ai2,c.times[ai2]));
+				_nW+=triedRemovals(ai2,c.times[ai2]);
+				_mIA=min(_mIA, invPermutation[ai2]);
+			}
+			
+			if(_minWrong>_mW ||
+			 (_minWrong==_mW && _nWrong>_nW) ||
+			 (_minWrong==_mW && _nWrong==_nW && _nConflActivities>_nCA) ||
+			 (_minWrong==_mW && _nWrong==_nW && _nConflActivities==_nCA && _minIndexAct>_mIA)){
+				_minWrong=_mW;
+				_nWrong=_nW;
+				_nConflActivities=_nCA;
+				_minIndexAct=_mIA;
+				
+				optionsList.clear();
+				optionsList.append(tl);
+			}
+			else if(_minWrong==_mW && _nWrong==_nW && _nConflActivities==_nCA && _minIndexAct==_mIA){
+				optionsList.append(tl);
+			}
+		}
+	}
+
+	if(optionsList.count()==0){
+		return false;
+	}
+	else{
+		chosenActivitiesList=optionsList.at(rng.intMRG32k3a(optionsList.count()));
+		return true;
 	}
 }
 
@@ -11862,13 +12121,13 @@ impossibleactivitiespairofmutuallyexclusivesetsoftimeslots:
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
-		/////////begin activities occupy max (1 or 2) sets of time slots from selection
+		/////////begin activities occupy max sets of time slots from selection
 
 		okactivitiesoccupymaxsetsoftimeslotsfromselection=true;
 
 		if(haveActivitiesOccupyMaxSetsOfTimeSlotsFromSelection){
 			for(ActivitiesOccupyMaxSetsOfTimeSlotsFromSelection_item* item : std::as_const(aomsotsfsListForActivity[ai])){
-				const QList<int>& activitiesList=item->listOfActivities;
+				//const QList<int>& activitiesList=item->listOfActivities;
 				int maxOccupiedSets=item->maxOccupiedSets;
 				//const QList<QList<int>>& lists=item->listOfLists;
 				
@@ -11892,7 +12151,7 @@ impossibleactivitiespairofmutuallyexclusivesetsoftimeslots:
 						bool canemptyb=true;
 						QList<int> aibl;
 
-						for(int ai2 : std::as_const(activitiesList)){
+						for(int ai2 : std::as_const(item->listOfActivities)){
 							if(ai2!=ai){
 								if(c.times[ai2]!=UNALLOCATED_TIME){
 									if(!conflActivities[newtime].contains(ai2)){
@@ -11935,7 +12194,7 @@ impossibleactivitiespairofmutuallyexclusivesetsoftimeslots:
 						QList<int> aibl;
 						QList<int> aicl;
 
-						for(int ai2 : std::as_const(activitiesList)){
+						for(int ai2 : std::as_const(item->listOfActivities)){
 							if(ai2!=ai){
 								if(c.times[ai2]!=UNALLOCATED_TIME){
 									if(!conflActivities[newtime].contains(ai2)){
@@ -12088,6 +12347,63 @@ impossibleactivitiespairofmutuallyexclusivesetsoftimeslots:
 							}
 						}
 					}
+					else if(maxOccupiedSets>=3){
+						QHash<int, int> indexHash;
+						QList<QList<int>> activitiesList;
+						QList<bool> canEmpty;
+
+						for(int ai2 : std::as_const(item->listOfActivities)){
+							if(ai2!=ai){
+								if(c.times[ai2]!=UNALLOCATED_TIME){
+									if(!conflActivities[newtime].contains(ai2)){
+										for(int t=c.times[ai2]; t<c.times[ai2]+gt.rules.internalActivitiesList[ai2].duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
+											int q=item->timeToListIndex[t];
+											if(q>=0 && q!=indexsetaia){
+												if(!indexHash.contains(q)){
+													indexHash.insert(q, activitiesList.count());
+													activitiesList.append(QList<int>());
+													canEmpty.append(true);
+												}
+												int idx=indexHash.value(q, -1);
+												assert(idx>=0);
+												if(canEmpty.at(idx)){
+													if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+														canEmpty[idx]=false;
+													}
+													else{
+														if(!activitiesList[idx].contains(ai2))
+															activitiesList[idx].append(ai2);
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+						
+						assert(activitiesList.count()==canEmpty.count());
+						if(activitiesList.count()<maxOccupiedSets){
+							//OK, do nothing
+						}
+						else if(activitiesList.count()==maxOccupiedSets){
+							QList<int> chosenList;
+							bool t=getOptimumActivitiesToDisplace(level, activitiesList, canEmpty, chosenList);
+							if(!t){
+								okactivitiesoccupymaxsetsoftimeslotsfromselection=false;
+								goto impossibleactivitiesoccupymaxsetsoftimeslotsfromselection;
+							}
+							else{
+								for(int ai2 : std::as_const(chosenList)){
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+								}
+							}
+						}
+						else{
+							assert(0);
+						}
+					}
 					else{
 						assert(0);
 					}
@@ -12105,7 +12421,7 @@ impossibleactivitiesoccupymaxsetsoftimeslotsfromselection:
 			continue;
 		}
 
-		/////////end activities occupy max (1 or 2) sets of time slots from selection
+		/////////end activities occupy max sets of time slots from selection
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -21385,7 +21701,7 @@ impossiblestudentsminmorningsafternoonsperweek:
 				}
 
 				int cntTags=0;
-				int newCrtTag=false;
+				bool newCrtTag=false;
 				for(int i : std::as_const(tagsSet)){
 					if(cntTagsMatrix[i]>0){
 						cntTags++;
@@ -21419,9 +21735,7 @@ impossiblestudentsminmorningsafternoonsperweek:
 						}
 					}
 				}
-				else{
-					assert(k==2);
-
+				else if(k==2){
 					if(cntTags==2 && newCrtTag){
 						int c0=-1;
 						int c1=-1;
@@ -21610,6 +21924,65 @@ impossiblestudentsminmorningsafternoonsperweek:
 						}
 					}
 				}
+				else if(k>=3){
+					QHash<int, int> tagToIndex;
+					QList<QList<int>> activitiesList;
+					QList<bool> canEmpty;
+
+					if(cntTags==k && newCrtTag){
+						QList<int> tagsList=QList<int>(tagsSet.constBegin(), tagsSet.constEnd());
+						std::stable_sort(tagsList.begin(), tagsList.end()); //keep the generation identical
+
+						for(int i : std::as_const(tagsList)){
+							if(cntTagsMatrix[i]>0){
+								assert(i!=aiTag);
+								int index=activitiesList.count();
+								assert(!tagToIndex.contains(i));
+								tagToIndex.insert(i, index);
+								activitiesList.append(QList<int>());
+								canEmpty.append(true);
+							}
+						}
+
+						for(int ai2 : std::as_const(subgroupActivitiesOfTheDay[sbg][d])){
+							if(!conflActivities[newtime].contains(ai2)){
+								int actTag=-1;
+								for(int tg2 : std::as_const(gt.rules.internalActivitiesList[ai2].iActivityTagsSet)){
+									if(tagsSet.contains(tg2)){
+										assert(actTag==-1);
+										actTag=tg2;
+									}
+								}
+								
+								if(actTag>=0 && tagToIndex.contains(actTag)){
+									int index=tagToIndex.value(actTag);
+									assert(index>=0);
+
+									if(!fixedTimeActivity[ai2] && !swappedActivities[ai2])
+										activitiesList[index].append(ai2);
+									else
+										canEmpty[index]=false;
+								}
+							}
+						}
+						
+						QList<int> chosenList;
+						bool t=getOptimumActivitiesToDisplace(level, activitiesList, canEmpty, chosenList);
+						if(!t){
+							okstudentsmaxactivitytagsperdayfromset=false;
+							goto impossiblestudentsmaxactivitytagsperdayfromset;
+						}
+						else{
+							for(int ai2 : std::as_const(chosenList)){
+								conflActivities[newtime].append(ai2);
+								nConflActivities[newtime]++;
+							}
+						}
+					}
+				}
+				else{
+					assert(0);
+				}
 			}
 		}
 
@@ -21698,7 +22071,7 @@ impossiblestudentsmaxactivitytagsperdayfromset:
 				}
 
 				int cntTags=0;
-				int newCrtTag=false;
+				bool newCrtTag=false;
 				for(int i : std::as_const(tagsSet)){
 					if(cntTagsMatrix[i]>0){
 						cntTags++;
@@ -21747,9 +22120,7 @@ impossiblestudentsmaxactivitytagsperdayfromset:
 						}
 					}
 				}
-				else{
-					assert(k==2);
-
+				else if(k==2){
 					if(cntTags==2 && newCrtTag){
 						int c0=-1;
 						int c1=-1;
@@ -21972,6 +22343,86 @@ impossiblestudentsmaxactivitytagsperdayfromset:
 							}
 						}
 					}
+				}
+				else if(k>=3){
+					QHash<int, int> tagToIndex;
+					QList<QList<int>> activitiesList;
+					QList<bool> canEmpty;
+
+					if(cntTags==k && newCrtTag){
+						QList<int> tagsList=QList<int>(tagsSet.constBegin(), tagsSet.constEnd());
+						std::stable_sort(tagsList.begin(), tagsList.end()); //keep the generation identical
+
+						for(int i : std::as_const(tagsList)){
+							if(cntTagsMatrix[i]>0){
+								assert(i!=aiTag);
+								int index=activitiesList.count();
+								assert(!tagToIndex.contains(i));
+								tagToIndex.insert(i, index);
+								activitiesList.append(QList<int>());
+								canEmpty.append(true);
+							}
+						}
+
+						for(int ai2 : std::as_const(subgroupActivitiesOfTheDay[sbg][d])){
+							if(!conflActivities[newtime].contains(ai2)){
+								int actTag=-1;
+								for(int tg2 : std::as_const(gt.rules.internalActivitiesList[ai2].iActivityTagsSet)){
+									if(tagsSet.contains(tg2)){
+										assert(actTag==-1);
+										actTag=tg2;
+									}
+								}
+								
+								if(actTag>=0 && tagToIndex.contains(actTag)){
+									int index=tagToIndex.value(actTag);
+									assert(index>=0);
+
+									if(!fixedTimeActivity[ai2] && !swappedActivities[ai2])
+										activitiesList[index].append(ai2);
+									else
+										canEmpty[index]=false;
+								}
+							}
+						}
+						for(int ai2 : std::as_const(subgroupActivitiesOfTheDay[sbg][dpair])){
+							if(!conflActivities[newtime].contains(ai2)){
+								int actTag=-1;
+								for(int tg2 : std::as_const(gt.rules.internalActivitiesList[ai2].iActivityTagsSet)){
+									if(tagsSet.contains(tg2)){
+										assert(actTag==-1);
+										actTag=tg2;
+									}
+								}
+								
+								if(actTag>=0 && tagToIndex.contains(actTag)){
+									int index=tagToIndex.value(actTag);
+									assert(index>=0);
+
+									if(!fixedTimeActivity[ai2] && !swappedActivities[ai2])
+										activitiesList[index].append(ai2);
+									else
+										canEmpty[index]=false;
+								}
+							}
+						}
+						
+						QList<int> chosenList;
+						bool t=getOptimumActivitiesToDisplace(level, activitiesList, canEmpty, chosenList);
+						if(!t){
+							okstudentsmaxactivitytagsperrealdayfromset=false;
+							goto impossiblestudentsmaxactivitytagsperrealdayfromset;
+						}
+						else{
+							for(int ai2 : std::as_const(chosenList)){
+								conflActivities[newtime].append(ai2);
+								nConflActivities[newtime]++;
+							}
+						}
+					}
+				}
+				else{
+					assert(0);
 				}
 			}
 		}
@@ -31377,7 +31828,7 @@ impossibleteachersminmorningsafternoonsperweek:
 				}
 
 				int cntTags=0;
-				int newCrtTag=false;
+				bool newCrtTag=false;
 				for(int i : std::as_const(tagsSet)){
 					if(cntTagsMatrix[i]>0){
 						cntTags++;
@@ -31411,9 +31862,7 @@ impossibleteachersminmorningsafternoonsperweek:
 						}
 					}
 				}
-				else{
-					assert(k==2);
-
+				else if(k==2){
 					if(cntTags==2 && newCrtTag){
 						int c0=-1;
 						int c1=-1;
@@ -31602,6 +32051,65 @@ impossibleteachersminmorningsafternoonsperweek:
 						}
 					}
 				}
+				else if(k>=3){
+					QHash<int, int> tagToIndex;
+					QList<QList<int>> activitiesList;
+					QList<bool> canEmpty;
+
+					if(cntTags==k && newCrtTag){
+						QList<int> tagsList=QList<int>(tagsSet.constBegin(), tagsSet.constEnd());
+						std::stable_sort(tagsList.begin(), tagsList.end()); //keep the generation identical
+
+						for(int i : std::as_const(tagsList)){
+							if(cntTagsMatrix[i]>0){
+								assert(i!=aiTag);
+								int index=activitiesList.count();
+								assert(!tagToIndex.contains(i));
+								tagToIndex.insert(i, index);
+								activitiesList.append(QList<int>());
+								canEmpty.append(true);
+							}
+						}
+
+						for(int ai2 : std::as_const(teacherActivitiesOfTheDay[tch][d])){
+							if(!conflActivities[newtime].contains(ai2)){
+								int actTag=-1;
+								for(int tg2 : std::as_const(gt.rules.internalActivitiesList[ai2].iActivityTagsSet)){
+									if(tagsSet.contains(tg2)){
+										assert(actTag==-1);
+										actTag=tg2;
+									}
+								}
+								
+								if(actTag>=0 && tagToIndex.contains(actTag)){
+									int index=tagToIndex.value(actTag);
+									assert(index>=0);
+
+									if(!fixedTimeActivity[ai2] && !swappedActivities[ai2])
+										activitiesList[index].append(ai2);
+									else
+										canEmpty[index]=false;
+								}
+							}
+						}
+						
+						QList<int> chosenList;
+						bool t=getOptimumActivitiesToDisplace(level, activitiesList, canEmpty, chosenList);
+						if(!t){
+							okteachersmaxactivitytagsperdayfromset=false;
+							goto impossibleteachersmaxactivitytagsperdayfromset;
+						}
+						else{
+							for(int ai2 : std::as_const(chosenList)){
+								conflActivities[newtime].append(ai2);
+								nConflActivities[newtime]++;
+							}
+						}
+					}
+				}
+				else{
+					assert(0);
+				}
 			}
 		}
 
@@ -31690,7 +32198,7 @@ impossibleteachersmaxactivitytagsperdayfromset:
 				}
 
 				int cntTags=0;
-				int newCrtTag=false;
+				bool newCrtTag=false;
 				for(int i : std::as_const(tagsSet)){
 					if(cntTagsMatrix[i]>0){
 						cntTags++;
@@ -31739,9 +32247,7 @@ impossibleteachersmaxactivitytagsperdayfromset:
 						}
 					}
 				}
-				else{
-					assert(k==2);
-
+				else if(k==2){
 					if(cntTags==2 && newCrtTag){
 						int c0=-1;
 						int c1=-1;
@@ -31965,6 +32471,86 @@ impossibleteachersmaxactivitytagsperdayfromset:
 						}
 					}
 				}
+				else if(k>=3){
+					QHash<int, int> tagToIndex;
+					QList<QList<int>> activitiesList;
+					QList<bool> canEmpty;
+
+					if(cntTags==k && newCrtTag){
+						QList<int> tagsList=QList<int>(tagsSet.constBegin(), tagsSet.constEnd());
+						std::stable_sort(tagsList.begin(), tagsList.end()); //keep the generation identical
+
+						for(int i : std::as_const(tagsList)){
+							if(cntTagsMatrix[i]>0){
+								assert(i!=aiTag);
+								int index=activitiesList.count();
+								assert(!tagToIndex.contains(i));
+								tagToIndex.insert(i, index);
+								activitiesList.append(QList<int>());
+								canEmpty.append(true);
+							}
+						}
+
+						for(int ai2 : std::as_const(teacherActivitiesOfTheDay[tch][d])){
+							if(!conflActivities[newtime].contains(ai2)){
+								int actTag=-1;
+								for(int tg2 : std::as_const(gt.rules.internalActivitiesList[ai2].iActivityTagsSet)){
+									if(tagsSet.contains(tg2)){
+										assert(actTag==-1);
+										actTag=tg2;
+									}
+								}
+								
+								if(actTag>=0 && tagToIndex.contains(actTag)){
+									int index=tagToIndex.value(actTag);
+									assert(index>=0);
+
+									if(!fixedTimeActivity[ai2] && !swappedActivities[ai2])
+										activitiesList[index].append(ai2);
+									else
+										canEmpty[index]=false;
+								}
+							}
+						}
+						for(int ai2 : std::as_const(teacherActivitiesOfTheDay[tch][dpair])){
+							if(!conflActivities[newtime].contains(ai2)){
+								int actTag=-1;
+								for(int tg2 : std::as_const(gt.rules.internalActivitiesList[ai2].iActivityTagsSet)){
+									if(tagsSet.contains(tg2)){
+										assert(actTag==-1);
+										actTag=tg2;
+									}
+								}
+								
+								if(actTag>=0 && tagToIndex.contains(actTag)){
+									int index=tagToIndex.value(actTag);
+									assert(index>=0);
+
+									if(!fixedTimeActivity[ai2] && !swappedActivities[ai2])
+										activitiesList[index].append(ai2);
+									else
+										canEmpty[index]=false;
+								}
+							}
+						}
+						
+						QList<int> chosenList;
+						bool t=getOptimumActivitiesToDisplace(level, activitiesList, canEmpty, chosenList);
+						if(!t){
+							okteachersmaxactivitytagsperrealdayfromset=false;
+							goto impossibleteachersmaxactivitytagsperrealdayfromset;
+						}
+						else{
+							for(int ai2 : std::as_const(chosenList)){
+								conflActivities[newtime].append(ai2);
+								nConflActivities[newtime]++;
+							}
+						}
+					}
+				}
+				else{
+					assert(0);
+				}
 			}
 		}
 
@@ -31981,7 +32567,7 @@ impossibleteachersmaxactivitytagsperrealdayfromset:
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
-		/////////begin teacher(s) occupy max (1 or 2) sets of time slots from selection
+		/////////begin teacher(s) occupy max sets of time slots from selection
 
 		okteachersoccupymaxsetsoftimeslotsfromselection=true;
 
@@ -32233,6 +32819,64 @@ impossibleteachersmaxactivitytagsperrealdayfromset:
 								}
 							}
 						}
+						else if(maxOccupiedSets>=3){
+							QHash<int, int> indexHash;
+							QList<QList<int>> activitiesList;
+							QList<bool> canEmpty;
+
+							for(int q=0; q<lists.count(); q++){
+								if(q!=indexsetaia){
+									for(int tts : std::as_const(lists.at(q))){
+										int d2=tts%gt.rules.nDaysPerWeek;
+										int h2=tts/gt.rules.nDaysPerWeek;
+
+										int ai2=teachersTimetable(tch,d2,h2);
+										if(ai2>=0){
+											if(!conflActivities[newtime].contains(ai2)){
+												if(!indexHash.contains(q)){
+													indexHash.insert(q, activitiesList.count());
+													activitiesList.append(QList<int>());
+													canEmpty.append(true);
+												}
+												int idx=indexHash.value(q, -1);
+												assert(idx>=0);
+												if(canEmpty.at(idx)){
+													if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+														canEmpty[idx]=false;
+													}
+													else{
+														if(!activitiesList[idx].contains(ai2))
+															activitiesList[idx].append(ai2);
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+							
+							assert(activitiesList.count()==canEmpty.count());
+							if(activitiesList.count()<maxOccupiedSets){
+								//OK, do nothing
+							}
+							else if(activitiesList.count()==maxOccupiedSets){
+								QList<int> chosenList;
+								bool t=getOptimumActivitiesToDisplace(level, activitiesList, canEmpty, chosenList);
+								if(!t){
+									okteachersoccupymaxsetsoftimeslotsfromselection=false;
+									goto impossibleteachersoccupymaxsetsoftimeslotsfromselection;
+								}
+								else{
+									for(int ai2 : std::as_const(chosenList)){
+										conflActivities[newtime].append(ai2);
+										nConflActivities[newtime]++;
+									}
+								}
+							}
+							else{
+								assert(0);
+							}
+						}
 						else{
 							assert(0);
 						}
@@ -32250,11 +32894,11 @@ impossibleteachersoccupymaxsetsoftimeslotsfromselection:
 			continue;
 		}
 
-		/////////end teacher(s) occupy max (1 or 2) sets of time slots from selection
+		/////////end teacher(s) occupy max sets of time slots from selection
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
-		/////////begin students (set) occupy max (1 or 2) sets of time slots from selection
+		/////////begin students (set) occupy max sets of time slots from selection
 
 		okstudentsoccupymaxsetsoftimeslotsfromselection=true;
 
@@ -32508,6 +33152,64 @@ impossibleteachersoccupymaxsetsoftimeslotsfromselection:
 								}
 							}
 						}
+						else if(maxOccupiedSets>=3){
+							QHash<int, int> indexHash;
+							QList<QList<int>> activitiesList;
+							QList<bool> canEmpty;
+
+							for(int q=0; q<lists.count(); q++){
+								if(q!=indexsetaia){
+									for(int tts : std::as_const(lists.at(q))){
+										int d2=tts%gt.rules.nDaysPerWeek;
+										int h2=tts/gt.rules.nDaysPerWeek;
+
+										int ai2=subgroupsTimetable(sbg,d2,h2);
+										if(ai2>=0){
+											if(!conflActivities[newtime].contains(ai2)){
+												if(!indexHash.contains(q)){
+													indexHash.insert(q, activitiesList.count());
+													activitiesList.append(QList<int>());
+													canEmpty.append(true);
+												}
+												int idx=indexHash.value(q, -1);
+												assert(idx>=0);
+												if(canEmpty.at(idx)){
+													if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+														canEmpty[idx]=false;
+													}
+													else{
+														if(!activitiesList[idx].contains(ai2))
+															activitiesList[idx].append(ai2);
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+							
+							assert(activitiesList.count()==canEmpty.count());
+							if(activitiesList.count()<maxOccupiedSets){
+								//OK, do nothing
+							}
+							else if(activitiesList.count()==maxOccupiedSets){
+								QList<int> chosenList;
+								bool t=getOptimumActivitiesToDisplace(level, activitiesList, canEmpty, chosenList);
+								if(!t){
+									okstudentsoccupymaxsetsoftimeslotsfromselection=false;
+									goto impossiblestudentsoccupymaxsetsoftimeslotsfromselection;
+								}
+								else{
+									for(int ai2 : std::as_const(chosenList)){
+										conflActivities[newtime].append(ai2);
+										nConflActivities[newtime]++;
+									}
+								}
+							}
+							else{
+								assert(0);
+							}
+						}
 						else{
 							assert(0);
 						}
@@ -32525,7 +33227,7 @@ impossiblestudentsoccupymaxsetsoftimeslotsfromselection:
 			continue;
 		}
 
-		/////////end students (set) occupy max (1 or 2) sets of time slots from selection
+		/////////end students (set) occupy max sets of time slots from selection
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -35358,7 +36060,7 @@ skip_here_if_already_allocated_in_time:
 				break;
 			}
 		
-			int ok=true;
+			bool ok=true;
 			for(int a : std::as_const(conflActivities[newtime])){
 				if(swappedActivities[a]){
 					assert(0);

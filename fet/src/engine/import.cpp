@@ -1338,7 +1338,7 @@ int Import::readFields(QWidget* parent){
 int Import::showFieldsAndWarnings(QWidget* parent, QDialog* &newParent){
 	newParent=(QDialog*)parent;
 
-	int ok=true;
+	int ok=QDialog::Accepted;
 
 	int max=0;
 	for(int i=0; i<NUMBER_OF_FIELDS; i++){

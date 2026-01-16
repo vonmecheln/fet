@@ -362,6 +362,8 @@ public:
 	inline bool getPreferredRoom(const QList<int>& globalConflActivities, int level, const Activity* act, int ai, int d, int h, int& roomSlot, int& selectedSlot, QList<int>& localConflActivities, bool& canBeUnspecifiedPreferredRoom, QList<int>& realRoomsList);
 	inline bool getRoom(int level, const Activity* act, int ai, int d, int h, int& roomSlot, int& selectedSlot, QList<int>& conflActivities, int& nConflActivities, QList<int>& realRoomsList);
 
+	inline bool getOptimumActivitiesToDisplace(int level, const QList<QList<int>>& activitiesList, const QList<bool>& canEmpty, QList<int>& chosenActivitiesList);
+
 	Solution c;
 	
 	int nPlacedActivities;

@@ -33460,12 +33460,12 @@ TimeConstraint* Rules::readTeacherMaxActivityTagsPerDayFromSet(QXmlStreamReader&
 		else if(xmlReader.name()==QString("Maximum_Allowed_Activity_Tags")){
 			QString text=xmlReader.readElementText();
 			int mat=text.toInt();
-			if(mat!=1 && mat!=2){
+			/*if(mat!=1 && mat!=2){
 				xmlReader.raiseError(tr("The number of maximum allowed activity tags in a constraint teacher max activity tags per day from set should be 1 or 2"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
-			}
+			}*/
 			cn->maxTags=mat;
 			xmlReadingLog+="    Read maximum allowed activity tags="+CustomFETString::number(mat)+"\n";
 		}
@@ -33544,12 +33544,12 @@ TimeConstraint* Rules::readTeachersMaxActivityTagsPerDayFromSet(QXmlStreamReader
 		else if(xmlReader.name()==QString("Maximum_Allowed_Activity_Tags")){
 			QString text=xmlReader.readElementText();
 			int mat=text.toInt();
-			if(mat!=1 && mat!=2){
+			/*if(mat!=1 && mat!=2){
 				xmlReader.raiseError(tr("The number of maximum allowed activity tags in a constraint teachers max activity tags per day from set should be 1 or 2"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
-			}
+			}*/
 			cn->maxTags=mat;
 			xmlReadingLog+="    Read maximum allowed activity tags="+CustomFETString::number(mat)+"\n";
 		}
@@ -33633,12 +33633,12 @@ TimeConstraint* Rules::readStudentsSetMaxActivityTagsPerDayFromSet(QXmlStreamRea
 		else if(xmlReader.name()==QString("Maximum_Allowed_Activity_Tags")){
 			QString text=xmlReader.readElementText();
 			int mat=text.toInt();
-			if(mat!=1 && mat!=2){
+			/*if(mat!=1 && mat!=2){
 				xmlReader.raiseError(tr("The number of maximum allowed activity tags in a constraint students set max activity tags per day from set should be 1 or 2"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
-			}
+			}*/
 			cn->maxTags=mat;
 			xmlReadingLog+="    Read maximum allowed activity tags="+CustomFETString::number(mat)+"\n";
 		}
@@ -33717,12 +33717,12 @@ TimeConstraint* Rules::readStudentsMaxActivityTagsPerDayFromSet(QXmlStreamReader
 		else if(xmlReader.name()==QString("Maximum_Allowed_Activity_Tags")){
 			QString text=xmlReader.readElementText();
 			int mat=text.toInt();
-			if(mat!=1 && mat!=2){
+			/*if(mat!=1 && mat!=2){
 				xmlReader.raiseError(tr("The number of maximum allowed activity tags in a constraint students max activity tags per day from set should be 1 or 2"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
-			}
+			}*/
 			cn->maxTags=mat;
 			xmlReadingLog+="    Read maximum allowed activity tags="+CustomFETString::number(mat)+"\n";
 		}
@@ -33806,12 +33806,12 @@ TimeConstraint* Rules::readTeacherMaxActivityTagsPerRealDayFromSet(QXmlStreamRea
 		else if(xmlReader.name()==QString("Maximum_Allowed_Activity_Tags")){
 			QString text=xmlReader.readElementText();
 			int mat=text.toInt();
-			if(mat!=1 && mat!=2){
+			/*if(mat!=1 && mat!=2){
 				xmlReader.raiseError(tr("The number of maximum allowed activity tags in a constraint teacher max activity tags per real day from set should be 1 or 2"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
-			}
+			}*/
 			cn->maxTags=mat;
 			xmlReadingLog+="    Read maximum allowed activity tags="+CustomFETString::number(mat)+"\n";
 		}
@@ -33890,12 +33890,12 @@ TimeConstraint* Rules::readTeachersMaxActivityTagsPerRealDayFromSet(QXmlStreamRe
 		else if(xmlReader.name()==QString("Maximum_Allowed_Activity_Tags")){
 			QString text=xmlReader.readElementText();
 			int mat=text.toInt();
-			if(mat!=1 && mat!=2){
+			/*if(mat!=1 && mat!=2){
 				xmlReader.raiseError(tr("The number of maximum allowed activity tags in a constraint teachers max activity tags per real day from set should be 1 or 2"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
-			}
+			}*/
 			cn->maxTags=mat;
 			xmlReadingLog+="    Read maximum allowed activity tags="+CustomFETString::number(mat)+"\n";
 		}
@@ -33979,12 +33979,12 @@ TimeConstraint* Rules::readStudentsSetMaxActivityTagsPerRealDayFromSet(QXmlStrea
 		else if(xmlReader.name()==QString("Maximum_Allowed_Activity_Tags")){
 			QString text=xmlReader.readElementText();
 			int mat=text.toInt();
-			if(mat!=1 && mat!=2){
+			/*if(mat!=1 && mat!=2){
 				xmlReader.raiseError(tr("The number of maximum allowed activity tags in a constraint students set max activity tags per real day from set should be 1 or 2"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
-			}
+			}*/
 			cn->maxTags=mat;
 			xmlReadingLog+="    Read maximum allowed activity tags="+CustomFETString::number(mat)+"\n";
 		}
@@ -34063,12 +34063,12 @@ TimeConstraint* Rules::readStudentsMaxActivityTagsPerRealDayFromSet(QXmlStreamRe
 		else if(xmlReader.name()==QString("Maximum_Allowed_Activity_Tags")){
 			QString text=xmlReader.readElementText();
 			int mat=text.toInt();
-			if(mat!=1 && mat!=2){
+			/*if(mat!=1 && mat!=2){
 				xmlReader.raiseError(tr("The number of maximum allowed activity tags in a constraint students max activity tags per real day from set should be 1 or 2"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
-			}
+			}*/
 			cn->maxTags=mat;
 			xmlReadingLog+="    Read maximum allowed activity tags="+CustomFETString::number(mat)+"\n";
 		}
@@ -42244,12 +42244,12 @@ TimeConstraint* Rules::readTeacherOccupiesMaxSetsOfTimeSlotsFromSelection(QXmlSt
 		else if(xmlReader.name()==QString("Maximum_Number_of_Occupied_Sets")){
 			QString text=xmlReader.readElementText();
 			cn->maxOccupiedSets=text.toInt();
-			if(cn->maxOccupiedSets<1 || cn->maxOccupiedSets>2){
+			/*if(cn->maxOccupiedSets<1 || cn->maxOccupiedSets>2){
 				xmlReader.raiseError(tr("%1 must be >=1 and <=2", "%1 is an XML element, like 'Maximum_Number_of_Occupied_Sets'").arg("Maximum_Number_of_Occupied_Sets"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
-			}
+			}*/
 			xmlReadingLog+="    Read maxOccupiedSets="+CustomFETString::number(cn->maxOccupiedSets)+"\n";
 		}
 		else if(xmlReader.name()==QString("Number_of_Selected_Sets_of_Time_Slots")){
@@ -42404,12 +42404,12 @@ TimeConstraint* Rules::readTeachersOccupyMaxSetsOfTimeSlotsFromSelection(QXmlStr
 		else if(xmlReader.name()==QString("Maximum_Number_of_Occupied_Sets")){
 			QString text=xmlReader.readElementText();
 			cn->maxOccupiedSets=text.toInt();
-			if(cn->maxOccupiedSets<1 || cn->maxOccupiedSets>2){
+			/*if(cn->maxOccupiedSets<1 || cn->maxOccupiedSets>2){
 				xmlReader.raiseError(tr("%1 must be >=1 and <=2", "%1 is an XML element, like 'Maximum_Number_of_Occupied_Sets'").arg("Maximum_Number_of_Occupied_Sets"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
-			}
+			}*/
 			xmlReadingLog+="    Read maxOccupiedSets="+CustomFETString::number(cn->maxOccupiedSets)+"\n";
 		}
 		else if(xmlReader.name()==QString("Number_of_Selected_Sets_of_Time_Slots")){
@@ -42569,12 +42569,12 @@ TimeConstraint* Rules::readStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection(QX
 		else if(xmlReader.name()==QString("Maximum_Number_of_Occupied_Sets")){
 			QString text=xmlReader.readElementText();
 			cn->maxOccupiedSets=text.toInt();
-			if(cn->maxOccupiedSets<1 || cn->maxOccupiedSets>2){
+			/*if(cn->maxOccupiedSets<1 || cn->maxOccupiedSets>2){
 				xmlReader.raiseError(tr("%1 must be >=1 and <=2", "%1 is an XML element, like 'Maximum_Number_of_Occupied_Sets'").arg("Maximum_Number_of_Occupied_Sets"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
-			}
+			}*/
 			xmlReadingLog+="    Read maxOccupiedSets="+CustomFETString::number(cn->maxOccupiedSets)+"\n";
 		}
 		else if(xmlReader.name()==QString("Number_of_Selected_Sets_of_Time_Slots")){
@@ -42729,12 +42729,12 @@ TimeConstraint* Rules::readStudentsOccupyMaxSetsOfTimeSlotsFromSelection(QXmlStr
 		else if(xmlReader.name()==QString("Maximum_Number_of_Occupied_Sets")){
 			QString text=xmlReader.readElementText();
 			cn->maxOccupiedSets=text.toInt();
-			if(cn->maxOccupiedSets<1 || cn->maxOccupiedSets>2){
+			/*if(cn->maxOccupiedSets<1 || cn->maxOccupiedSets>2){
 				xmlReader.raiseError(tr("%1 must be >=1 and <=2", "%1 is an XML element, like 'Maximum_Number_of_Occupied_Sets'").arg("Maximum_Number_of_Occupied_Sets"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
-			}
+			}*/
 			xmlReadingLog+="    Read maxOccupiedSets="+CustomFETString::number(cn->maxOccupiedSets)+"\n";
 		}
 		else if(xmlReader.name()==QString("Number_of_Selected_Sets_of_Time_Slots")){
@@ -42901,12 +42901,12 @@ TimeConstraint* Rules::readActivitiesOccupyMaxSetsOfTimeSlotsFromSelection(QXmlS
 		else if(xmlReader.name()==QString("Maximum_Number_of_Occupied_Sets")){
 			QString text=xmlReader.readElementText();
 			cn->maxOccupiedSets=text.toInt();
-			if(cn->maxOccupiedSets<1 || cn->maxOccupiedSets>2){
+			/*if(cn->maxOccupiedSets<1 || cn->maxOccupiedSets>2){
 				xmlReader.raiseError(tr("%1 must be >=1 and <=2", "%1 is an XML element, like 'Maximum_Number_of_Occupied_Sets'").arg("Maximum_Number_of_Occupied_Sets"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
-			}
+			}*/
 			xmlReadingLog+="    Read maxOccupiedSets="+CustomFETString::number(cn->maxOccupiedSets)+"\n";
 		}
 		else if(xmlReader.name()==QString("Number_of_Selected_Sets_of_Time_Slots")){
@@ -47836,12 +47836,12 @@ SpaceConstraint* Rules::readRoomMaxActivityTagsPerDayFromSet(QXmlStreamReader& x
 		else if(xmlReader.name()==QString("Maximum_Allowed_Activity_Tags")){
 			QString text=xmlReader.readElementText();
 			int mat=text.toInt();
-			if(mat!=1 && mat!=2){
+			/*if(mat!=1 && mat!=2){
 				xmlReader.raiseError(tr("The number of maximum allowed activity tags in a constraint room max activity tags per day from set should be 1 or 2"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
-			}
+			}*/
 			cn->maxTags=mat;
 			xmlReadingLog+="    Read maximum allowed activity tags="+CustomFETString::number(mat)+"\n";
 		}
@@ -47925,12 +47925,12 @@ SpaceConstraint* Rules::readRoomMaxActivityTagsPerRealDayFromSet(QXmlStreamReade
 		else if(xmlReader.name()==QString("Maximum_Allowed_Activity_Tags")){
 			QString text=xmlReader.readElementText();
 			int mat=text.toInt();
-			if(mat!=1 && mat!=2){
+			/*if(mat!=1 && mat!=2){
 				xmlReader.raiseError(tr("The number of maximum allowed activity tags in a constraint room max activity tags per real day from set should be 1 or 2"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
-			}
+			}*/
 			cn->maxTags=mat;
 			xmlReadingLog+="    Read maximum allowed activity tags="+CustomFETString::number(mat)+"\n";
 		}
@@ -48014,12 +48014,12 @@ SpaceConstraint* Rules::readRoomMaxActivityTagsPerWeekFromSet(QXmlStreamReader& 
 		else if(xmlReader.name()==QString("Maximum_Allowed_Activity_Tags")){
 			QString text=xmlReader.readElementText();
 			int mat=text.toInt();
-			if(mat!=1 && mat!=2){
+			/*if(mat!=1 && mat!=2){
 				xmlReader.raiseError(tr("The number of maximum allowed activity tags in a constraint room max activity tags per week from set should be 1 or 2"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
-			}
+			}*/
 			cn->maxTags=mat;
 			xmlReadingLog+="    Read maximum allowed activity tags="+CustomFETString::number(mat)+"\n";
 		}

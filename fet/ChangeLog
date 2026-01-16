@@ -1,3 +1,11 @@
+ 7.5.2
+	- Updated to Qt 6.10.0.
+	- The constraints of types room max activity tags per day/real day/week, teacher(s)/students (set) max activity tags per day/real day,
+	and teacher(s)/students (set)/activities occupy max sets of time slots from selection will now accept any maximum limit, not just 1 or 2
+	(suggested recently by moke, and suggested in the past by Thái Chí Phương and Vũ Ngọc Thành).
+	- Code cleanup.
+	- Updated the Italian translation, by Andrea Primiani.
+	- Updated the Arabic translation, by Benahmed Abdelkrim.
  7.5.1
 	- Updated to Qt 6.9.3.
 	- Added a new type of constraint, activity(ies) begin(s) or end(s) teachers'/students' day (suggested recently by

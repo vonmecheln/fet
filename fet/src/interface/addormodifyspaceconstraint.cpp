@@ -1864,10 +1864,10 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 				filterActivityTagsCheckBox=new QCheckBox(tr("Filter"));
 				filterActivityTagsCheckBox->setChecked(false);
 
-				labelForSpinBox=new QLabel(tr("Max activity tags per day (1 or 2)"));
+				labelForSpinBox=new QLabel(tr("Max activity tags per day"));
 				spinBox=new QSpinBox;
 				spinBox->setMinimum(1);
-				spinBox->setMaximum(2);
+				spinBox->setMaximum(gt.rules.nHoursPerDay);
 				spinBox->setValue(1);
 
 				break;
@@ -1896,10 +1896,10 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 				filterActivityTagsCheckBox=new QCheckBox(tr("Filter"));
 				filterActivityTagsCheckBox->setChecked(false);
 
-				labelForSpinBox=new QLabel(tr("Max activity tags per day (1 or 2)"));
+				labelForSpinBox=new QLabel(tr("Max activity tags per real day"));
 				spinBox=new QSpinBox;
 				spinBox->setMinimum(1);
-				spinBox->setMaximum(2);
+				spinBox->setMaximum(2*gt.rules.nHoursPerDay);
 				spinBox->setValue(1);
 
 				break;
@@ -1928,10 +1928,10 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 				filterActivityTagsCheckBox=new QCheckBox(tr("Filter"));
 				filterActivityTagsCheckBox->setChecked(false);
 
-				labelForSpinBox=new QLabel(tr("Max activity tags per week (1 or 2)"));
+				labelForSpinBox=new QLabel(tr("Max activity tags per week"));
 				spinBox=new QSpinBox;
 				spinBox->setMinimum(1);
-				spinBox->setMaximum(2);
+				spinBox->setMaximum(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
 				spinBox->setValue(1);
 
 				break;

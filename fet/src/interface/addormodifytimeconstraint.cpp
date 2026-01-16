@@ -3771,10 +3771,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogName=QString("ModifyConstraintTeacherMaxActivityTagsPerDayFromSet");
 				}
 
-				labelForSpinBox=new QLabel(tr("Max activity tags per day (1 or 2)"));
+				labelForSpinBox=new QLabel(tr("Max activity tags per day"));
 				spinBox=new QSpinBox;
 				spinBox->setMinimum(1);
-				spinBox->setMaximum(2);
+				spinBox->setMaximum(gt.rules.nHoursPerDay);
 				spinBox->setValue(2);
 
 				teacherLabel=new QLabel(tr("Teacher"));
@@ -3801,10 +3801,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogName=QString("ModifyConstraintTeachersMaxActivityTagsPerDayFromSet");
 				}
 
-				labelForSpinBox=new QLabel(tr("Max activity tags per day (1 or 2)"));
+				labelForSpinBox=new QLabel(tr("Max activity tags per day"));
 				spinBox=new QSpinBox;
 				spinBox->setMinimum(1);
-				spinBox->setMaximum(2);
+				spinBox->setMaximum(gt.rules.nHoursPerDay);
 				spinBox->setValue(2);
 
 				activityTagsLabel=new QLabel(tr("Activity tags"));
@@ -5904,10 +5904,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogName=QString("ModifyConstraintStudenstSetMaxActivityTagsPerDayFromSet");
 				}
 
-				labelForSpinBox=new QLabel(tr("Max activity tags per day (1 or 2)"));
+				labelForSpinBox=new QLabel(tr("Max activity tags per day"));
 				spinBox=new QSpinBox;
 				spinBox->setMinimum(1);
-				spinBox->setMaximum(2);
+				spinBox->setMaximum(gt.rules.nHoursPerDay);
 				spinBox->setValue(2);
 
 				studentsLabel=new QLabel(tr("Students set"));
@@ -5934,10 +5934,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogName=QString("ModifyConstraintStudenstMaxActivityTagsPerDayFromSet");
 				}
 
-				labelForSpinBox=new QLabel(tr("Max activity tags per day (1 or 2)"));
+				labelForSpinBox=new QLabel(tr("Max activity tags per day"));
 				spinBox=new QSpinBox;
 				spinBox->setMinimum(1);
-				spinBox->setMaximum(2);
+				spinBox->setMaximum(gt.rules.nHoursPerDay);
 				spinBox->setValue(2);
 
 				activityTagsLabel=new QLabel(tr("Activity tags"));
@@ -5961,10 +5961,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogName=QString("ModifyConstraintTeacherMaxActivityTagsPerRealDayFromSet");
 				}
 
-				labelForSpinBox=new QLabel(tr("Max activity tags per real day (1 or 2)"));
+				labelForSpinBox=new QLabel(tr("Max activity tags per real day"));
 				spinBox=new QSpinBox;
 				spinBox->setMinimum(1);
-				spinBox->setMaximum(2);
+				spinBox->setMaximum(2*gt.rules.nHoursPerDay);
 				spinBox->setValue(2);
 
 				teacherLabel=new QLabel(tr("Teacher"));
@@ -5991,10 +5991,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogName=QString("ModifyConstraintTeachersMaxActivityTagsPerRealDayFromSet");
 				}
 
-				labelForSpinBox=new QLabel(tr("Max activity tags per real day (1 or 2)"));
+				labelForSpinBox=new QLabel(tr("Max activity tags per real day"));
 				spinBox=new QSpinBox;
 				spinBox->setMinimum(1);
-				spinBox->setMaximum(2);
+				spinBox->setMaximum(2*gt.rules.nHoursPerDay);
 				spinBox->setValue(2);
 
 				activityTagsLabel=new QLabel(tr("Activity tags"));
@@ -6018,10 +6018,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogName=QString("ModifyConstraintStudenstSetMaxActivityTagsPerRealDayFromSet");
 				}
 
-				labelForSpinBox=new QLabel(tr("Max activity tags per day (1 or 2)"));
+				labelForSpinBox=new QLabel(tr("Max activity tags per real day"));
 				spinBox=new QSpinBox;
 				spinBox->setMinimum(1);
-				spinBox->setMaximum(2);
+				spinBox->setMaximum(2*gt.rules.nHoursPerDay);
 				spinBox->setValue(2);
 
 				studentsLabel=new QLabel(tr("Students set"));
@@ -6048,10 +6048,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogName=QString("ModifyConstraintStudenstMaxActivityTagsPerRealDayFromSet");
 				}
 
-				labelForSpinBox=new QLabel(tr("Max activity tags per day (1 or 2)"));
+				labelForSpinBox=new QLabel(tr("Max activity tags per real day"));
 				spinBox=new QSpinBox;
 				spinBox->setMinimum(1);
-				spinBox->setMaximum(2);
+				spinBox->setMaximum(2*gt.rules.nHoursPerDay);
 				spinBox->setValue(2);
 
 				activityTagsLabel=new QLabel(tr("Activity tags"));
@@ -7662,10 +7662,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				occupyMaxSetsOfTimeSlotsFromSelectionTableWidget=new CornerEnabledTableWidgetOfSpinBoxes;
 
-				labelForSpinBox=new QLabel(tr("Max occupied sets of time slots (1 or 2)"));
+				labelForSpinBox=new QLabel(tr("Max occupied sets of time slots"));
 				spinBox=new QSpinBox;
 				spinBox->setMinimum(1);
-				spinBox->setMaximum(2);
+				spinBox->setMaximum(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
 				spinBox->setValue(2);
 
 				colorsCheckBox=new QCheckBox(tr("Colors"));
@@ -7697,10 +7697,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				occupyMaxSetsOfTimeSlotsFromSelectionTableWidget=new CornerEnabledTableWidgetOfSpinBoxes;
 
-				labelForSpinBox=new QLabel(tr("Max occupied sets of time slots (1 or 2)"));
+				labelForSpinBox=new QLabel(tr("Max occupied sets of time slots"));
 				spinBox=new QSpinBox;
 				spinBox->setMinimum(1);
-				spinBox->setMaximum(2);
+				spinBox->setMaximum(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
 				spinBox->setValue(2);
 
 				colorsCheckBox=new QCheckBox(tr("Colors"));
@@ -7735,10 +7735,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				occupyMaxSetsOfTimeSlotsFromSelectionTableWidget=new CornerEnabledTableWidgetOfSpinBoxes;
 
-				labelForSpinBox=new QLabel(tr("Max occupied sets of time slots (1 or 2)"));
+				labelForSpinBox=new QLabel(tr("Max occupied sets of time slots"));
 				spinBox=new QSpinBox;
 				spinBox->setMinimum(1);
-				spinBox->setMaximum(2);
+				spinBox->setMaximum(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
 				spinBox->setValue(2);
 
 				colorsCheckBox=new QCheckBox(tr("Colors"));
@@ -7770,10 +7770,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				occupyMaxSetsOfTimeSlotsFromSelectionTableWidget=new CornerEnabledTableWidgetOfSpinBoxes;
 
-				labelForSpinBox=new QLabel(tr("Max occupied sets of time slots (1 or 2)"));
+				labelForSpinBox=new QLabel(tr("Max occupied sets of time slots"));
 				spinBox=new QSpinBox;
 				spinBox->setMinimum(1);
-				spinBox->setMaximum(2);
+				spinBox->setMaximum(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
 				spinBox->setValue(2);
 
 				colorsCheckBox=new QCheckBox(tr("Colors"));
@@ -7849,10 +7849,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				occupyMaxSetsOfTimeSlotsFromSelectionTableWidget=new CornerEnabledTableWidgetOfSpinBoxes;
 
-				labelForSpinBox=new QLabel(tr("Max occupied sets of time slots (1 or 2)"));
+				labelForSpinBox=new QLabel(tr("Max occupied sets of time slots"));
 				spinBox=new QSpinBox;
 				spinBox->setMinimum(1);
-				spinBox->setMaximum(2);
+				spinBox->setMaximum(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
 				spinBox->setValue(2);
 
 				colorsCheckBox=new QCheckBox(tr("Colors"));

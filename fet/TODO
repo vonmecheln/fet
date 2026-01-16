@@ -11718,3 +11718,25 @@ However, if the matter is done through registration, the place will be reserved 
 Liviu Lalescu:
 
 An activity can end up in an unspecified room (meaning it will have no room) if there are no space constraints for it.
+
+769---------------------------------------------------------
+From Dr Amit Sharma (on guestbook):
+
+I kindly request you to add a feature that allows us to select and display certain information from the existing data, such as teachers’ load or the
+full forms of abbreviations, at the bottom of each timetable page—provided there is sufficient space available.
+
+770---------------------------------------------------------
+From Michael Chourdakis (on Facebook):
+
+I have a request. Sometimes the ConstraintActivityTagsNotOverlapping has tags that no activity belongs to. Can this be ignored instead of throwing an error?
+This will help me to progressively create a timetable in steps where the tags I'd need are there already.
+
+Generally in the fet if something can be ignored, ignore it with a warning not an error.
+
+771---------------------------------------------------------
+From Michael Chourdakis (on Facebook):
+
+Perhaps you can also add a time/space constraint between students
+So I don't have to put it to all their activities
+Ie I may have three years. A1, A1SYN, A1ENG
+These must not overlap but currently I have to put that constraint in all their activities
