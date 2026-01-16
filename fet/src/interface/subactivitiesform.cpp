@@ -29,12 +29,8 @@
 
 #include "longtextmessagebox.h"
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
-#else
-#include <QRegExp>
-#endif
 
 #include <QString>
 #include <QMessageBox>
@@ -413,7 +409,6 @@ bool SubactivitiesForm::filterOk(Activity* act)
 		else if(contains.at(perm.at(i))==DOESNOTCONTAIN){
 			okPartial=!(s.contains(t, csens));
 		}
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 		else if(contains.at(perm.at(i))==REGEXP){
 			QRegularExpression regExp(t);
 			if(!caseSensitive)
@@ -426,18 +421,6 @@ bool SubactivitiesForm::filterOk(Activity* act)
 				regExp.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
 			okPartial=!(regExp.match(s)).hasMatch();
 		}
-#else
-		else if(contains.at(perm.at(i))==REGEXP){
-			QRegExp regExp(t);
-			regExp.setCaseSensitivity(csens);
-			okPartial=(regExp.indexIn(s)>=0);
-		}
-		else if(contains.at(perm.at(i))==NOTREGEXP){
-			QRegExp regExp(t);
-			regExp.setCaseSensitivity(csens);
-			okPartial=(regExp.indexIn(s)<0);
-		}
-#endif
 		else
 			assert(0);
 			

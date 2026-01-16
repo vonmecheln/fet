@@ -49,11 +49,7 @@ ActivitiesRoomsStatisticsForm::ActivitiesRoomsStatisticsForm(QWidget* parent): Q
 		if(!act->active)
 			continue;
 	
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 		QSet<QString> currentActivityTagsSet(act->activityTagsNames.constBegin(), act->activityTagsNames.constEnd());
-#else
-		QSet<QString> currentActivityTagsSet=act->activityTagsNames.toSet();
-#endif
 	
 		for(SpaceConstraint* genericConstraint : std::as_const(gt.rules.spaceConstraintsList)){
 			if(!genericConstraint->active)

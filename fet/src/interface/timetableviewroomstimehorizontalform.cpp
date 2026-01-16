@@ -404,21 +404,13 @@ TimetableViewRoomsTimeHorizontalForm::TimetableViewRoomsTimeHorizontalForm(QWidg
 		
 	widthSpinBox->setSuffix(QString(" ")+tr("px", "Abbreviation for pixels"));
 	widthSpinBox->setMinimum(MINIMUM_WIDTH_SPIN_BOX_VALUE);
-#if QT_VERSION >= QT_VERSION_CHECK(5,2,0)
 	widthSpinBox->setMaximum(roomsTimetableTable->verticalHeader()->maximumSectionSize());
-#else
-	widthSpinBox->setMaximum(maxScreenWidth(this));
-#endif
 	widthSpinBox->setValue(w);
 	widthSpinBox->setSpecialValueText(tr("Automatic", "Automatic mode of selection of the width"));
 	
 	heightSpinBox->setSuffix(QString(" ")+tr("px", "Abbreviation for pixels"));
 	heightSpinBox->setMinimum(MINIMUM_HEIGHT_SPIN_BOX_VALUE);
-#if QT_VERSION >= QT_VERSION_CHECK(5,2,0)
 	heightSpinBox->setMaximum(roomsTimetableTable->verticalHeader()->maximumSectionSize());
-#else
-	heightSpinBox->setMaximum(maxScreenWidth(this));
-#endif
 	heightSpinBox->setValue(h);
 	heightSpinBox->setSpecialValueText(tr("Automatic", "Automatic mode of selection of the height"));
 	
@@ -434,13 +426,8 @@ TimetableViewRoomsTimeHorizontalForm::TimetableViewRoomsTimeHorizontalForm(QWidg
 //	teachersTimetableTable->verticalHeader()->setDefaultSectionSize(h);
 //	teachersTimetableTable->horizontalHeader()->setDefaultSectionSize(w);
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 	roomsTimetableTable->verticalHeader()->setSectionResizeMode(QHeaderView::Interactive);
 	roomsTimetableTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Interactive);
-#else
-	roomsTimetableTable->verticalHeader()->setResizeMode(QHeaderView::Interactive);
-	roomsTimetableTable->horizontalHeader()->setResizeMode(QHeaderView::Interactive);
-#endif
 	//}
 	////////////////
 	
@@ -718,21 +705,13 @@ void TimetableViewRoomsTimeHorizontalForm::newTimetableGenerated()
 		
 	widthSpinBox->setSuffix(QString(" ")+tr("px", "Abbreviation for pixels"));
 	widthSpinBox->setMinimum(MINIMUM_WIDTH_SPIN_BOX_VALUE);
-#if QT_VERSION >= QT_VERSION_CHECK(5,2,0)
 	widthSpinBox->setMaximum(roomsTimetableTable->verticalHeader()->maximumSectionSize());
-#else
-	widthSpinBox->setMaximum(maxScreenWidth(this));
-#endif
 	widthSpinBox->setValue(w);
 	widthSpinBox->setSpecialValueText(tr("Automatic"));
 	
 	heightSpinBox->setSuffix(QString(" ")+tr("px", "Abbreviation for pixels"));
 	heightSpinBox->setMinimum(MINIMUM_HEIGHT_SPIN_BOX_VALUE);
-#if QT_VERSION >= QT_VERSION_CHECK(5,2,0)
 	heightSpinBox->setMaximum(roomsTimetableTable->verticalHeader()->maximumSectionSize());
-#else
-	heightSpinBox->setMaximum(maxScreenWidth(this));
-#endif
 	heightSpinBox->setValue(h);
 	heightSpinBox->setSpecialValueText(tr("Automatic"));
 	
@@ -745,13 +724,8 @@ void TimetableViewRoomsTimeHorizontalForm::newTimetableGenerated()
 //	teachersTimetableTable->verticalHeader()->setDefaultSectionSize(h);
 //	teachersTimetableTable->horizontalHeader()->setDefaultSectionSize(w);
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 	roomsTimetableTable->verticalHeader()->setSectionResizeMode(QHeaderView::Interactive);
 	roomsTimetableTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Interactive);
-#else
-	roomsTimetableTable->verticalHeader()->setResizeMode(QHeaderView::Interactive);
-	roomsTimetableTable->horizontalHeader()->setResizeMode(QHeaderView::Interactive);
-#endif
 	//}
 	////////////////
 	
@@ -1013,17 +987,10 @@ void TimetableViewRoomsTimeHorizontalForm::updateRoomsTimetableTable(){
 						QBrush bg(stringToColor(act->subjectName+" "+act->studentsNames.join(", ")));
 						roomsTimetableTable->item(t, d*gt.rules.nHoursPerDay+h)->setBackground(bg);
 						double brightness = bg.color().redF()*0.299 + bg.color().greenF()*0.587 + bg.color().blueF()*0.114;
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 						if (brightness<0.5)
 							roomsTimetableTable->item(t, d*gt.rules.nHoursPerDay+h)->setForeground(QBrush(QColorConstants::White));
 						else
 							roomsTimetableTable->item(t, d*gt.rules.nHoursPerDay+h)->setForeground(QBrush(QColorConstants::Black));
-#else
-						if (brightness<0.5)
-							roomsTimetableTable->item(t, d*gt.rules.nHoursPerDay+h)->setForeground(QBrush(Qt::white));
-						else
-							roomsTimetableTable->item(t, d*gt.rules.nHoursPerDay+h)->setForeground(QBrush(Qt::black));
-#endif
 					}
 					// add colors (end)
 					//end by Marco Vassura
@@ -1530,7 +1497,6 @@ void TimetableViewRoomsTimeHorizontalForm::lock(bool lockTime, bool lockSpace)
 		}
 	}
 	else{
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 		if(addedT>0){
 			added << QCoreApplication::translate("TimetableViewForm", "Added %n locking time constraint(s).",
 			 "See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field."
@@ -1563,40 +1529,6 @@ void TimetableViewRoomsTimeHorizontalForm::lock(bool lockTime, bool lockSpace)
 			 " (open these files with Qt Linguist and see the translation of this field).",
 			 unlockedS);
 		}
-#else
-		if(addedT>0){
-			added << QCoreApplication::translate("TimetableViewForm", "Added %n locking time constraint(s).",
-			 "See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field."
-			 " Also, see https://doc.qt.io/qt-6/i18n-source-translation.html, section 'Handle Plural Forms'."
-			 " You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
-			 " (open these files with Qt Linguist and see the translation of this field).", QCoreApplication::UnicodeUTF8,
-			 addedT);
-		}
-		if(addedS>0){
-			added << QCoreApplication::translate("TimetableViewForm", "Added %n locking space constraint(s).",
-			 "See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field."
-			 " Also, see https://doc.qt.io/qt-6/i18n-source-translation.html, section 'Handle Plural Forms'."
-			 " You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
-			 " (open these files with Qt Linguist and see the translation of this field).", QCoreApplication::UnicodeUTF8,
-			 addedS);
-		}
-		if(unlockedT>0){
-			removed << QCoreApplication::translate("TimetableViewForm", "Removed %n locking time constraint(s).",
-			 "See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field."
-			 " Also, see https://doc.qt.io/qt-6/i18n-source-translation.html, section 'Handle Plural Forms'."
-			 " You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
-			 " (open these files with Qt Linguist and see the translation of this field).", QCoreApplication::UnicodeUTF8,
-			 unlockedT);
-		}
-		if(unlockedS>0){
-			removed << QCoreApplication::translate("TimetableViewForm", "Removed %n locking space constraint(s).",
-			 "See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field."
-			 " Also, see https://doc.qt.io/qt-6/i18n-source-translation.html, section 'Handle Plural Forms'."
-			 " You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
-			 " (open these files with Qt Linguist and see the translation of this field).", QCoreApplication::UnicodeUTF8,
-			 unlockedS);
-		}
-#endif
 	}
 	QString ad=added.join("\n");
 	QString re=removed.join("\n");

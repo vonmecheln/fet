@@ -34,11 +34,7 @@ File export.cpp
 #include <QDir>
 
 #ifndef FET_COMMAND_LINE
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QtWidgets>
-#else
-#include <QtGui>
-#endif
 #endif
 
 #include <QHash>
@@ -95,7 +91,7 @@ const int EXPORT_VERTICALBAR=2;
 int EXPORT_FIELD_SEPARATOR=EXPORT_COMMA;
 
 #include <iostream>
-using namespace std;
+//using namespace std;
 #endif
 
 Export::Export()
@@ -334,12 +330,12 @@ void Export::exportCSV(Solution* bestOrHighest, Solution* current){
 	
 	lastWarnings.insert(0,Export::tr("CSV files were exported to directory %1.").arg(QDir::toNativeSeparators(DIRECTORY_CSV))+"\n");
 	if(ok)
-		lastWarnings.insert(0,Export::tr("Export complete")+"\n");
+		lastWarnings.insert(0,Export::tr("Export complete"));
 	else
-		lastWarnings.insert(0,Export::tr("Export incomplete")+"\n");
+		lastWarnings.insert(0,Export::tr("Export incomplete"));
 		
-	cout<<qPrintable(tr("FET - export comments", "The comments of the exporting operation"))<<endl;
-	cout<<qPrintable(lastWarnings); //no endl here - there is one already
+	std::cout<<qPrintable(tr("FET - export comments", "The comments of the exporting operation"))<<std::endl;
+	std::cout<<qPrintable(lastWarnings)<<std::endl;
 }
 #endif
 
@@ -815,18 +811,10 @@ bool Export::exportCSVActivityTags(QString& lastWarnings, const QString& textquo
 	tosExport.setGenerateByteOrderMark(true);
 
 	if(head)
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 		tosExport<<textquote<<"Activity Tag"<<textquote<<fieldSeparator<<textquote<<"Comments"<<textquote<<Qt::endl;
-#else
-		tosExport<<textquote<<"Activity Tag"<<textquote<<fieldSeparator<<textquote<<"Comments"<<textquote<<endl;
-#endif
 
 	for(ActivityTag* a : std::as_const(gt.rules.activityTagsList)){
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 		tosExport<<textquote<<protectCSV(a->name)<<textquote<<fieldSeparator<<textquote<<protectCSVComments(a->comments)<<textquote<<Qt::endl;
-#else
-		tosExport<<textquote<<protectCSV(a->name)<<textquote<<fieldSeparator<<textquote<<protectCSVComments(a->comments)<<textquote<<endl;
-#endif
 		if(!checkComponentSeparator(a->name, componentSeparator))
 			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes component separator |.", "%1 is an activity tag's name").arg(a->name)+"\n";
 		if(!checkSetSeparator(a->name, setSeparator))
@@ -905,21 +893,13 @@ bool Export::exportCSVRoomsAndBuildings(QString& lastWarnings, const QString& te
 	if(head)
 		tosExport	<<textquote<<"Room"<<textquote<<fieldSeparator
 				<<textquote<<"Room Capacity"<<textquote<<fieldSeparator
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 				<<textquote<<"Building"<<textquote<<fieldSeparator<<textquote<<"Comments"<<textquote<<Qt::endl;
-#else
-				<<textquote<<"Building"<<textquote<<fieldSeparator<<textquote<<"Comments"<<textquote<<endl;
-#endif
 				
 	QStringList checkBuildings;
 	for(Room* r : std::as_const(gt.rules.roomsList)){
 		tosExport	<<textquote<<protectCSV(r->name)<<textquote<<fieldSeparator
 				<<CustomFETString::number(r->capacity)<<fieldSeparator
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 				<<textquote<<protectCSV(r->building)<<textquote<<fieldSeparator<<textquote<<protectCSVComments(r->comments)<<textquote<<Qt::endl;
-#else
-				<<textquote<<protectCSV(r->building)<<textquote<<fieldSeparator<<textquote<<protectCSVComments(r->comments)<<textquote<<endl;
-#endif
 		if(!checkBuildings.contains(r->building)&&!r->building.isEmpty())
 			checkBuildings<<r->building;
 	}
@@ -981,18 +961,10 @@ bool Export::exportCSVSubjects(QString& lastWarnings, const QString& textquote, 
 	tosExport.setGenerateByteOrderMark(true);
 	
 	if(head)
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 		tosExport<<textquote<<"Subject"<<textquote<<fieldSeparator<<textquote<<"Comments"<<textquote<<Qt::endl;
-#else
-		tosExport<<textquote<<"Subject"<<textquote<<fieldSeparator<<textquote<<"Comments"<<textquote<<endl;
-#endif
 
 	for(Subject* s : std::as_const(gt.rules.subjectsList)){
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 		tosExport<<textquote<<protectCSV(s->name)<<textquote<<fieldSeparator<<textquote<<protectCSVComments(s->comments)<<textquote<<Qt::endl;
-#else
-		tosExport<<textquote<<protectCSV(s->name)<<textquote<<fieldSeparator<<textquote<<protectCSVComments(s->comments)<<textquote<<endl;
-#endif
 		if(!checkComponentSeparator(s->name, componentSeparator))
 			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes component separator |.", "%1 is a subject's name").arg(s->name)+"\n";
 	}
@@ -1049,18 +1021,10 @@ bool Export::exportCSVTeachers(QString& lastWarnings, const QString& textquote, 
 	tosExport.setGenerateByteOrderMark(true);
 	
 	if(head)
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 		tosExport<<textquote<<"Teacher"<<textquote<<fieldSeparator<<textquote<<"Comments"<<textquote<<Qt::endl;
-#else
-		tosExport<<textquote<<"Teacher"<<textquote<<fieldSeparator<<textquote<<"Comments"<<textquote<<endl;
-#endif
 
 	for(Teacher* t : std::as_const(gt.rules.teachersList)){
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 		tosExport<<textquote<<protectCSV(t->name)<<textquote<<fieldSeparator<<textquote<<protectCSVComments(t->comments)<<textquote<<Qt::endl;
-#else
-		tosExport<<textquote<<protectCSV(t->name)<<textquote<<fieldSeparator<<textquote<<protectCSVComments(t->comments)<<textquote<<endl;
-#endif
 		if(!checkComponentSeparator(t->name, componentSeparator))
 			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes component separator |.", "%1 is a teacher's name").arg(t->name)+"\n";
 		if(!checkSetSeparator(t->name, setSeparator))
@@ -1124,21 +1088,13 @@ bool Export::exportCSVStudents(QString& lastWarnings, const QString& textquote, 
 				<<textquote<<"Group"<<textquote<<fieldSeparator
 				<<textquote<<"Number of Students per Group"<<textquote<<fieldSeparator
 				<<textquote<<"Subgroup"<<textquote<<fieldSeparator
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 				<<textquote<<"Number of Students per Subgroup"<<textquote<<fieldSeparator<<textquote<<"Comments"<<textquote<<Qt::endl;
-#else
-				<<textquote<<"Number of Students per Subgroup"<<textquote<<fieldSeparator<<textquote<<"Comments"<<textquote<<endl;
-#endif
 
 	int ig=0;
 	int is=0;
 	for(StudentsYear* sty : std::as_const(gt.rules.yearsList)){
 		tosExport<<textquote<<protectCSV(sty->name)<<textquote<<fieldSeparator
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 					<<CustomFETString::number(sty->numberOfStudents)<<fieldSeparator<<fieldSeparator<<fieldSeparator<<fieldSeparator<<fieldSeparator<<textquote<<protectCSVComments(sty->comments)<<textquote<<Qt::endl;
-#else
-					<<CustomFETString::number(sty->numberOfStudents)<<fieldSeparator<<fieldSeparator<<fieldSeparator<<fieldSeparator<<fieldSeparator<<textquote<<protectCSVComments(sty->comments)<<textquote<<endl;
-#endif
 		if(!checkComponentSeparator(sty->name, componentSeparator))
 			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes component separator |.", "%1 is a students year's name").arg(sty->name)+"\n";
 		if(!checkSetSeparator(sty->name, setSeparator))
@@ -1148,11 +1104,7 @@ bool Export::exportCSVStudents(QString& lastWarnings, const QString& textquote, 
 			tosExport	<<textquote<<protectCSV(sty->name)<<textquote<<fieldSeparator
 					<<CustomFETString::number(sty->numberOfStudents)<<fieldSeparator
 					<<textquote<<protectCSV(stg->name)<<textquote<<fieldSeparator
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 					<<CustomFETString::number(stg->numberOfStudents)<<fieldSeparator<<fieldSeparator<<fieldSeparator<<textquote<<protectCSVComments(stg->comments)<<textquote<<Qt::endl;
-#else
-					<<CustomFETString::number(stg->numberOfStudents)<<fieldSeparator<<fieldSeparator<<fieldSeparator<<textquote<<protectCSVComments(stg->comments)<<textquote<<endl;
-#endif
 			if(!checkComponentSeparator(stg->name, componentSeparator))
 				lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes component separator |.", "%1 is a students group's name").arg(stg->name)+"\n";
 			if(!checkSetSeparator(stg->name, setSeparator))
@@ -1164,11 +1116,7 @@ bool Export::exportCSVStudents(QString& lastWarnings, const QString& textquote, 
 						<<textquote<<protectCSV(stg->name)<<textquote<<fieldSeparator
 						<<CustomFETString::number(stg->numberOfStudents)<<fieldSeparator
 						<<textquote<<protectCSV(sts->name)<<textquote<<fieldSeparator
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 						<<CustomFETString::number(sts->numberOfStudents)<<fieldSeparator<<textquote<<protectCSVComments(sts->comments)<<textquote<<Qt::endl;
-#else
-						<<CustomFETString::number(sts->numberOfStudents)<<fieldSeparator<<textquote<<protectCSVComments(sts->comments)<<textquote<<endl;
-#endif
 				if(!checkComponentSeparator(sts->name, componentSeparator))
 					lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes component separator |.", "%1 is a students subgroup's name").arg(sts->name)+"\n";
 				if(!checkSetSeparator(sts->name, setSeparator))
@@ -1239,11 +1187,7 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 				<<textquote<<"Split Duration"<<textquote<<fieldSeparator
 				<<textquote<<"Min Days"<<textquote<<fieldSeparator
 				<<textquote<<"Weight"<<textquote<<fieldSeparator
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 				<<textquote<<"Consecutive"<<textquote<<fieldSeparator<<textquote<<"Comments"<<textquote<<Qt::endl;
-#else
-				<<textquote<<"Consecutive"<<textquote<<fieldSeparator<<textquote<<"Comments"<<textquote<<endl;
-#endif
 
 	//code by Liviu Lalescu (begin)
 	//better detection of min days constraint
@@ -1593,11 +1537,7 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 					if(careAboutMinDays)
 						tosExport<<tcmd->consecutiveIfSameDay;
 					tosExport<<fieldSeparator<<textquote<<protectCSVComments(acti->comments)<<textquote;
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 					tosExport<<Qt::endl;
-#else
-					tosExport<<endl;
-#endif
 				}
 				else{
 					assert(tc->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES);
@@ -1616,20 +1556,12 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 					if(careAboutMinDays)
 						tosExport<<tcmd->consecutiveIfSameDay;
 					tosExport<<fieldSeparator<<textquote<<protectCSVComments(acti->comments)<<textquote;
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 					tosExport<<Qt::endl;
-#else
-					tosExport<<endl;
-#endif
 				}
 			}
 			else{
 				tosExport<<fieldSeparator<<fieldSeparator<<fieldSeparator<<textquote<<protectCSVComments(acti->comments)<<textquote;
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 				tosExport<<Qt::endl;
-#else
-				tosExport<<endl;
-#endif
 			}
 		}
 		//}
@@ -1648,18 +1580,18 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 	}
 #else
 	if(manuallyEditedPart1){
-		cout<<qPrintable(tr("FET warning"))<<endl;
-		cout<<qPrintable(tr("There are subactivities which were modified separately - so the "
+		std::cout<<qPrintable(tr("FET warning"))<<std::endl;
+		std::cout<<qPrintable(tr("There are subactivities which were modified separately - so the "
 		 "components had different values for subject, activity tags, teachers, or students. The export is done, "
 		 "but for each field which is different there will be added n_subactivities fields, separated by the %1 symbol.").arg("|"))
-		 <<endl;
+		 <<std::endl;
 	}
 	if(manuallyEditedPart2){
-		cout<<qPrintable(tr("FET warning"))<<endl;
-		cout<<qPrintable(tr("There are subactivities which were modified separately - so the "
+		std::cout<<qPrintable(tr("FET warning"))<<std::endl;
+		std::cout<<qPrintable(tr("There are subactivities which were modified separately - so the "
 		 "components had different values for 'must compute n total students' or number of students from the representative subactivity. "
 		 "The export is done, but it is not very accurate."))
-		 <<endl;
+		 <<std::endl;
 	}
 #endif
 
@@ -1719,11 +1651,7 @@ bool Export::exportCSVActivitiesStatistics(QString& lastWarnings, const QString&
 				<<textquote<<"Subject"<<textquote<<fieldSeparator
 				<<textquote<<"Teachers"<<textquote<<fieldSeparator
 				<<textquote<<"Total Duration"<<textquote;
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 				tosExport<<Qt::endl;
-#else
-				tosExport<<endl;
-#endif
 
 	Activity* acti;
 	int countExportedActivities=0;
@@ -1759,11 +1687,7 @@ bool Export::exportCSVActivitiesStatistics(QString& lastWarnings, const QString&
 		countExportedActivities++;
 		tosExport<<it.key();
 		tosExport<<textquote<<CustomFETString::number(it.value())<<textquote;
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 		tosExport<<Qt::endl;
-#else
-		tosExport<<endl;
-#endif
 		it++;
 	}
 
@@ -1829,11 +1753,7 @@ bool Export::exportCSVTimetable(QString& lastWarnings, const QString& textquote,
 				<<textquote<<"Teachers"<<textquote<<fieldSeparator
 				<<textquote<<"Activity Tags"<<textquote<<fieldSeparator
 				<<textquote<<"Room"<<textquote<<fieldSeparator
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 				<<textquote<<"Comments"<<textquote<<Qt::endl;
-#else
-				<<textquote<<"Comments"<<textquote<<endl;
-#endif
 
 	if(gt.rules.initialized && gt.rules.internalStructureComputed
 	 && students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready){
@@ -1912,11 +1832,7 @@ bool Export::exportCSVTimetable(QString& lastWarnings, const QString& textquote,
 					//Comments
 					QString tmpString=protectCSVComments(act->comments);
 					//tmpString.replace("\n", " ");
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 					tosExport<<tmpString<<textquote<<Qt::endl;
-#else
-					tosExport<<tmpString<<textquote<<endl;
-#endif
 				}
 			}
 		}

@@ -19,11 +19,7 @@
 
 #include <QtGlobal>
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QtWidgets>
-#else
-#include <QtGui>
-#endif
 
 const int ADVANCED_FILTER_MAX_ROWS=8;
 const int ADVANCED_FILTER_MIN_ROWS=1;

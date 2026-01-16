@@ -151,12 +151,8 @@
 
 #include <QSysInfo>
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QGuiApplication>
 #include <QScreen>
-#else
-#include <QDesktopWidget>
-#endif
 
 #include <QStyleFactory>
 #include <QStyleHints>
@@ -170,12 +166,8 @@
 #include <QNetworkReply>
 #include <QSslSocket>
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
-#else
-#include <QRegExp>
-#endif
 
 //for the icons of not perfect constraints and for the application window icon
 #include <QIcon>
@@ -1384,13 +1376,8 @@ FetMainForm::FetMainForm()
 	QRect rect=mainFormSettingsRect;
 	if(rect.isValid()){
 		bool ok=false;
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 		for(QScreen* screen : QGuiApplication::screens()){
 			if(screen->availableGeometry().intersects(rect)){
-#else
-		for(int i=0; i<QApplication::desktop()->screenCount(); i++){
-			if(QApplication::desktop()->availableGeometry(i).intersects(rect)){
-#endif
 				ok=true;
 				break;
 			}
@@ -1490,14 +1477,8 @@ FetMainForm::FetMainForm()
 			//As on https://stackoverflow.com/questions/14416786/webpage-returning-http-406-error-only-when-connecting-from-qt
 			//and http://amin-ahmadi.com/2016/06/13/fix-modsecurity-issues-in-qt-network-module-download-functionality/ ,
 			//to avoid code 406 from the server.
-#if QT_VERSION >= QT_VERSION_CHECK(5,4,0)
 			req.setHeader(QNetworkRequest::UserAgentHeader, QString("FET")+QString(" ")+FET_VERSION+
 			 QString(" (Qt ")+QString(qVersion())+QString("; ")+QSysInfo::prettyProductName()+QString("; ")+QSysInfo::currentCpuArchitecture()+QString(")"));
-#elif QT_VERSION >= QT_VERSION_CHECK(5,0,0)
-			req.setHeader(QNetworkRequest::UserAgentHeader, QString("FET")+QString(" ")+FET_VERSION+QString(" (Qt ")+QString(qVersion())+QString(")"));
-#else
-			req.setRawHeader("User-Agent", (QString("FET")+QString(" ")+FET_VERSION+QString(" (Qt ")+QString(qVersion())+QString(")")).toUtf8());
-#endif
 			networkManager->get(req);
 		}
 	}
@@ -5459,7 +5440,6 @@ void FetMainForm::replyFinished(QNetworkReply* networkReply)
 		QString internetVersion;
 		QString additionalComments;
 		
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 		QRegularExpression regExp("^\\s*(\\S+)(.*)$");
 		QRegularExpressionMatch match=regExp.match(QString(networkReply->readAll()));
 		if(!match.hasMatch()){
@@ -5476,24 +5456,6 @@ void FetMainForm::replyFinished(QNetworkReply* networkReply)
 		else{
 			internetVersion=match.captured(1);
 			additionalComments=match.captured(2).trimmed();
-#else
-		QRegExp regExp("^\\s*(\\S+)(.*)$");
-		int t=regExp.indexIn(QString(networkReply->readAll()));
-		if(t!=0){
-			QString s=QString("");
-			s+=tr("The file %1 from the FET homepage, indicating the current FET version, is incorrect.").arg("https://lalescu.ro/liviu/fet/crtversion/crtversion.txt");
-			s+=QString("\n\n");
-			s+=tr("Maybe the FET homepage has some temporary problems, so try again later."
-			 " Or maybe the current structure on FET homepage was changed. You may visit FET homepage: %1, and get latest version or,"
-			 " if it does not work, try to search for the new FET page on the internet (maybe it has changed).")
-			  .arg("https://lalescu.ro/liviu/fet/");
-
-			QMessageBox::warning(this, tr("FET warning"), s);
-		}
-		else{
-			internetVersion=regExp.cap(1);
-			additionalComments=regExp.cap(2).trimmed();
-#endif
 
 			if(VERBOSE){
 				std::cout<<"Your current version: '";

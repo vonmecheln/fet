@@ -34,11 +34,7 @@
 
 // BE CAREFUL: DON'T USE INTERNAL VARIABLES HERE, because maybe computeInternalStructure() is not done!
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QtWidgets>
-#else
-#include <QtGui>
-#endif
 
 #include <QInputDialog>
 

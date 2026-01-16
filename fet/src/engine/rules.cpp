@@ -27,7 +27,7 @@ File rules.cpp
 
 #include <algorithm>
 #include <iostream>
-using namespace std;
+//using namespace std;
 
 #include <QTextStream>
 #include <QFile>
@@ -61,12 +61,8 @@ using namespace std;
 #include <QProgressDialog>
 #endif
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
-#else
-#include <QRegExp>
-#endif
 
 #include "messageboxes.h"
 
@@ -6560,8 +6556,8 @@ bool Rules::computeInternalStructure(QWidget* parent)
 
 	this->nInternalTimeConstraints=tctri;
 	if(VERBOSE){
-		cout<<_c<<" time constraints after first pass (after removing inactive ones)"<<endl;
-		cout<<"  "<<this->nInternalTimeConstraints<<" time constraints after second pass (after removing wrong ones)"<<endl;
+		std::cout<<_c<<" time constraints after first pass (after removing inactive ones)"<<std::endl;
+		std::cout<<"  "<<this->nInternalTimeConstraints<<" time constraints after second pass (after removing wrong ones)"<<std::endl;
 	}
 	assert(_c>=this->nInternalTimeConstraints); //because some constraints may have toSkipTime false, but computeInternalStructure also false
 	//assert(this->nInternalTimeConstraints<=MAX_TIME_CONSTRAINTS);
@@ -6642,8 +6638,8 @@ bool Rules::computeInternalStructure(QWidget* parent)
 
 	this->nInternalSpaceConstraints=sctri;
 	if(VERBOSE){
-		cout<<_c<<" space constraints after first pass (after removing inactive ones)"<<endl;
-		cout<<"  "<<this->nInternalSpaceConstraints<<" space constraints after second pass (after removing wrong ones)"<<endl;
+		std::cout<<_c<<" space constraints after first pass (after removing inactive ones)"<<std::endl;
+		std::cout<<"  "<<this->nInternalSpaceConstraints<<" space constraints after second pass (after removing wrong ones)"<<std::endl;
 	}
 	assert(_c>=this->nInternalSpaceConstraints); //because some constraints may have toSkipSpace false, but computeInternalStructure also false
 	//assert(this->nInternalSpaceConstraints<=MAX_SPACE_CONSTRAINTS);
@@ -10890,11 +10886,7 @@ void Rules::removeActivities(const QList<int>& _idsList, bool updateConstraints)
 	if(_idsList.isEmpty())
 		return;
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	QSet<int> _removedIdsSet(_idsList.constBegin(), _idsList.constEnd());
-#else
-	QSet<int> _removedIdsSet=_idsList.toSet();
-#endif
 	
 	QSet<int> _groupIdsSet;
 	for(Activity* act : std::as_const(activitiesList))
@@ -11995,11 +11987,7 @@ bool Rules::removeTimeConstraints(const QList<TimeConstraint*>& _tcl)
 	if(_tcl.isEmpty())
 		return true;
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	QSet<TimeConstraint*> _tcs(_tcl.constBegin(), _tcl.constEnd());
-#else
-	QSet<TimeConstraint*> _tcs=_tcl.toSet();
-#endif
 	QList<TimeConstraint*> remaining;
 
 	for(int i=0; i<this->timeConstraintsList.size(); i++){
@@ -12290,11 +12278,7 @@ bool Rules::removeSpaceConstraints(const QList<SpaceConstraint*>& _scl)
 	if(_scl.isEmpty())
 		return true;
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	QSet<SpaceConstraint*> _scs(_scl.constBegin(), _scl.constEnd());
-#else
-	QSet<SpaceConstraint*> _scs=_scl.toSet();
-#endif
 	QList<SpaceConstraint*> remaining;
 
 	for(int i=0; i<this->spaceConstraintsList.size(); i++){
@@ -14365,7 +14349,6 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 			QString version=a.value();
 			file_version=version;*/
 			
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 			QRegularExpression fileVerReCap("^(\\d+)\\.(\\d+)\\.(\\d+)(.*)$");
 			QRegularExpressionMatch match=fileVerReCap.match(file_version);
 			filev[0]=filev[1]=filev[2]=-1;
@@ -14375,7 +14358,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 				" to check the version of the .fet file (in the beginning of the file). If this is a FET bug, please report it")+"\n\n"+
 				tr("If you are opening a file older than FET format version 5, it will be converted to latest FET data format"));
 				if(VERBOSE){
-					cout<<"Opened file version not matched by regexp"<<endl;
+					std::cout<<"Opened file version not matched by regexp"<<std::endl;
 				}
 			}
 			else{
@@ -14388,8 +14371,8 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 				assert(ok);
 				fileVersionSuffix=match.captured(4);
 				if(VERBOSE){
-					cout<<"Opened file version matched by regexp: major="<<filev[0]<<", minor="<<filev[1]<<", revision="<<filev[2];
-					cout<<", additional text="<<qPrintable(match.captured(4))<<"."<<endl;
+					std::cout<<"Opened file version matched by regexp: major="<<filev[0]<<", minor="<<filev[1]<<", revision="<<filev[2];
+					std::cout<<", additional text="<<qPrintable(match.captured(4))<<"."<<std::endl;
 				}
 			}
 		
@@ -14401,7 +14384,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 				RulesReconcilableMessage::warning(parent, tr("FET warning"), tr("FET version does not respect the format v.v.va"
 				" (3 numbers separated by points, followed by any string a, which may be empty). This is probably a bug in FET - please report it"));
 				if(VERBOSE){
-					cout<<"FET version not matched by regexp"<<endl;
+					std::cout<<"FET version not matched by regexp"<<std::endl;
 				}
 			}
 			else{
@@ -14413,62 +14396,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 				fetv[2]=match.captured(3).toInt(&ok);
 				assert(ok);
 				if(VERBOSE){
-					cout<<"FET version matched by regexp: major="<<fetv[0]<<", minor="<<fetv[1]<<", revision="<<fetv[2];
-					cout<<", additional text="<<qPrintable(match.captured(4))<<"."<<endl;
+					std::cout<<"FET version matched by regexp: major="<<fetv[0]<<", minor="<<fetv[1]<<", revision="<<fetv[2];
+					std::cout<<", additional text="<<qPrintable(match.captured(4))<<"."<<std::endl;
 				}
 			}
-#else
-			QRegExp fileVerReCap("^(\\d+)\\.(\\d+)\\.(\\d+)(.*)$");
-			int tfile=fileVerReCap.indexIn(file_version);
-			filev[0]=filev[1]=filev[2]=-1;
-			if(tfile!=0){
-				RulesReconcilableMessage::warning(parent, tr("FET warning"), tr("File contains a version numbering scheme which"
-				" is not matched by v.v.va (3 numbers separated by points, followed by any string a, which may be empty). File will be opened, but you are advised"
-				" to check the version of the .fet file (in the beginning of the file). If this is a FET bug, please report it")+"\n\n"+
-				tr("If you are opening a file older than FET format version 5, it will be converted to latest FET data format"));
-				if(VERBOSE){
-					cout<<"Opened file version not matched by regexp"<<endl;
-				}
-			}
-			else{
-				bool ok;
-				filev[0]=fileVerReCap.cap(1).toInt(&ok);
-				assert(ok);
-				filev[1]=fileVerReCap.cap(2).toInt(&ok);
-				assert(ok);
-				filev[2]=fileVerReCap.cap(3).toInt(&ok);
-				assert(ok);
-				fileVersionSuffix=fileVerReCap.cap(4);
-				if(VERBOSE){
-					cout<<"Opened file version matched by regexp: major="<<filev[0]<<", minor="<<filev[1]<<", revision="<<filev[2];
-					cout<<", additional text="<<qPrintable(fileVerReCap.cap(4))<<"."<<endl;
-				}
-			}
-		
-			QRegExp fetVerReCap("^(\\d+)\\.(\\d+)\\.(\\d+)(.*)$");
-			int tfet=fetVerReCap.indexIn(FET_VERSION);
-			fetv[0]=fetv[1]=fetv[2]=-1;
-			if(tfet!=0){
-				RulesReconcilableMessage::warning(parent, tr("FET warning"), tr("FET version does not respect the format v.v.va"
-				" (3 numbers separated by points, followed by any string a, which may be empty). This is probably a bug in FET - please report it"));
-				if(VERBOSE){
-					cout<<"FET version not matched by regexp"<<endl;
-				}
-			}
-			else{
-				bool ok;
-				fetv[0]=fetVerReCap.cap(1).toInt(&ok);
-				assert(ok);
-				fetv[1]=fetVerReCap.cap(2).toInt(&ok);
-				assert(ok);
-				fetv[2]=fetVerReCap.cap(3).toInt(&ok);
-				assert(ok);
-				if(VERBOSE){
-					cout<<"FET version matched by regexp: major="<<fetv[0]<<", minor="<<fetv[1]<<", revision="<<fetv[2];
-					cout<<", additional text="<<qPrintable(fetVerReCap.cap(4))<<"."<<endl;
-				}
-			}
-#endif
 			
 			if(filev[0]>=0 && fetv[0]>=0 && filev[1]>=0 && fetv[1]>=0 && filev[2]>=0 && fetv[2]>=0){
 				if(filev[0]>fetv[0] || (filev[0]==fetv[0] && filev[1]>fetv[1]) || (filev[0]==fetv[0]&&filev[1]==fetv[1]&&filev[2]>fetv[2])){
@@ -14512,7 +14443,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 	}
 	if(!okAbove3_12_17){
 		if(VERBOSE){
-			cout<<"Invalid fet 3.12.17 or above input file"<<endl;
+			std::cout<<"Invalid fet 3.12.17 or above input file"<<std::endl;
 		}
 		file.close();
 		

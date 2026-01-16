@@ -925,7 +925,7 @@ void TimetableGenerateForm::generationFinished()
 //We test the macro Q_OS_WIN32 because on the old Qt 4 it is the only available macro from these three below,
 //Q_OS_WIN, Q_OS_WIN32, and Q_OS_WIN64 (which are available on Qt 5.14.1). Yes, the test is redundant (because if QT_VERSION < 5.14.1
 //the condition is true and if QT_VERSION >= 5.14.1 then all these three macros are available), but this doesn't hurt.
-//#if (!defined(Q_OS_WIN) && !defined(Q_OS_WIN32) && !defined(Q_OS_WIN64)) || (QT_VERSION < QT_VERSION_CHECK(5,14,1))
+//#if (!defined(Q_OS_WIN) && !defined(Q_OS_WIN32) && !defined(Q_OS_WIN64)) || (QT_VERSION < QT_VERSION_CHECK( 5,14,1))
 	if(BEEP_AT_END_OF_GENERATION)
 		QApplication::beep();
 //#endif

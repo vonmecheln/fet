@@ -33,11 +33,7 @@
 
 #include "longtextmessagebox.h"
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QtWidgets>
-#else
-#include <QtGui>
-#endif
 
 #include <QString>
 #include <QStringList>
@@ -48,11 +44,7 @@
 #include <QPrinter>
 #include <QPrintDialog>
 #include <QPrintPreviewDialog>
-
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,2)
 #include <QPageSize>
-#endif
-
 #endif
 
 //std::stable_sort
@@ -78,13 +70,7 @@ static int numberOfPlacedActivities1;
 #ifdef QT_NO_PRINTER
 static QMap<LocaleString, int> paperSizesMap;
 #else
-
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,2)
 static QMap<LocaleString, QPageSize> paperSizesMap;
-#else
-static QMap<LocaleString, QPrinter::PaperSize> paperSizesMap;
-#endif
-
 #endif
 
 const QString CBTablesState="/timetables-combo-box-state";
@@ -281,8 +267,6 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 #ifdef QT_NO_PRINTER
 	paperSizesMap.insert(tr("Custom", "Type of paper size"), 30);
 #else
-
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,2)
 	paperSizesMap.insert(tr("A0", "Type of paper size"), QPageSize(QPageSize::A0));
 	paperSizesMap.insert(tr("A1", "Type of paper size"), QPageSize(QPageSize::A1));
 	paperSizesMap.insert(tr("A2", "Type of paper size"), QPageSize(QPageSize::A2));
@@ -313,39 +297,6 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	paperSizesMap.insert(tr("Legal", "Type of paper size"), QPageSize(QPageSize::Legal));
 	paperSizesMap.insert(tr("Letter", "Type of paper size"), QPageSize(QPageSize::Letter));
 	paperSizesMap.insert(tr("Tabloid", "Type of paper size"), QPageSize(QPageSize::Tabloid));
-#else
-	paperSizesMap.insert(tr("A0", "Type of paper size"), QPrinter::A0);
-	paperSizesMap.insert(tr("A1", "Type of paper size"), QPrinter::A1);
-	paperSizesMap.insert(tr("A2", "Type of paper size"), QPrinter::A2);
-	paperSizesMap.insert(tr("A3", "Type of paper size"), QPrinter::A3);
-	paperSizesMap.insert(tr("A4", "Type of paper size"), QPrinter::A4);
-	paperSizesMap.insert(tr("A5", "Type of paper size"), QPrinter::A5);
-	paperSizesMap.insert(tr("A6", "Type of paper size"), QPrinter::A6);
-	paperSizesMap.insert(tr("A7", "Type of paper size"), QPrinter::A7);
-	paperSizesMap.insert(tr("A8", "Type of paper size"), QPrinter::A8);
-	paperSizesMap.insert(tr("A9", "Type of paper size"), QPrinter::A9);
-	paperSizesMap.insert(tr("B0", "Type of paper size"), QPrinter::B0);
-	paperSizesMap.insert(tr("B1", "Type of paper size"), QPrinter::B1);
-	paperSizesMap.insert(tr("B2", "Type of paper size"), QPrinter::B2);
-	paperSizesMap.insert(tr("B3", "Type of paper size"), QPrinter::B3);
-	paperSizesMap.insert(tr("B4", "Type of paper size"), QPrinter::B4);
-	paperSizesMap.insert(tr("B5", "Type of paper size"), QPrinter::B5);
-	paperSizesMap.insert(tr("B6", "Type of paper size"), QPrinter::B6);
-	paperSizesMap.insert(tr("B7", "Type of paper size"), QPrinter::B7);
-	paperSizesMap.insert(tr("B8", "Type of paper size"), QPrinter::B8);
-	paperSizesMap.insert(tr("B9", "Type of paper size"), QPrinter::B9);
-	paperSizesMap.insert(tr("B10", "Type of paper size"), QPrinter::B10);
-	paperSizesMap.insert(tr("C5E", "Type of paper size"), QPrinter::C5E);
-	paperSizesMap.insert(tr("Comm10E", "Type of paper size"), QPrinter::Comm10E);
-	paperSizesMap.insert(tr("DLE", "Type of paper size"), QPrinter::DLE);
-	paperSizesMap.insert(tr("Executive", "Type of paper size"), QPrinter::Executive);
-	paperSizesMap.insert(tr("Folio", "Type of paper size"), QPrinter::Folio);
-	paperSizesMap.insert(tr("Ledger", "Type of paper size"), QPrinter::Ledger);
-	paperSizesMap.insert(tr("Legal", "Type of paper size"), QPrinter::Legal);
-	paperSizesMap.insert(tr("Letter", "Type of paper size"), QPrinter::Letter);
-	paperSizesMap.insert(tr("Tabloid", "Type of paper size"), QPrinter::Tabloid);
-#endif
-	
 #endif
 
 	CBpaperSize=new QComboBox();
@@ -1784,23 +1735,13 @@ void TimetablePrintForm::print(){
 	QPrinter printer(QPrinter::HighResolution);
 
 	assert(paperSizesMap.contains(CBpaperSize->currentText()));
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,2)
 	printer.setPageSize(paperSizesMap.value(CBpaperSize->currentText()));
-#else
-	printer.setPaperSize(paperSizesMap.value(CBpaperSize->currentText()));
-#endif
 
 	switch(CBorientationMode->currentIndex()){
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,2)
 		case 0: printer.setPageOrientation(QPageLayout::Portrait); break;
 		case 1: printer.setPageOrientation(QPageLayout::Landscape); break;
-#else
-		case 0: printer.setOrientation(QPrinter::Portrait); break;
-		case 1: printer.setOrientation(QPrinter::Landscape); break;
-#endif
 		default: assert(0==1);
 	}
-#if QT_VERSION >= QT_VERSION_CHECK(5,3,0)
 	QMarginsF printerMargins;
 	printerMargins.setLeft(leftPageMargin->value());
 	printerMargins.setRight(rightPageMargin->value());
@@ -1812,9 +1753,6 @@ void TimetablePrintForm::print(){
 		"You need to enter at least:\nLeft: %1\nRight: %2\nTop: %3\nBottom: %4")
 		.arg(printerMargins.left()).arg(printerMargins.right()).arg(printerMargins.top()).arg(printerMargins.bottom()));
 	}
-#else
-	printer.setPageMargins(leftPageMargin->value(), topPageMargin->value(), rightPageMargin->value(), bottomPageMargin->value(), QPrinter::Millimeter);
-#endif
 	//QPrintDialog *printDialog = new QPrintDialog(&printer, this);
 	QPrintDialog printDialog(&printer, this);
 	printDialog.setWindowTitle(tr("Print timetable"));
@@ -1825,11 +1763,7 @@ void TimetablePrintForm::print(){
 	if (printDialog.exec() == QDialog::Accepted) {
 		QTextDocument textDocument;
 		textDocument.documentLayout()->setPaintDevice(&printer);
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,2)
 		textDocument.setPageSize(QSizeF(printer.pageLayout().paintRectPixels(printer.resolution()).size()));
-#else
-		textDocument.setPageSize(QSizeF(printer.pageRect().size()));
-#endif
 		textDocument.setHtml(updateHtmlPrintString(true));
 		textDocument.print(&printer);
 	}
@@ -1846,23 +1780,13 @@ void TimetablePrintForm::printPreviewFull(){
 	QPrinter printer(QPrinter::HighResolution);
 
 	assert(paperSizesMap.contains(CBpaperSize->currentText()));
-#if QT_VERSION >= QT_VERSION_CHECK(5,3,0)
 	printer.setPageSize(paperSizesMap.value(CBpaperSize->currentText()));
-#else
-	printer.setPaperSize(paperSizesMap.value(CBpaperSize->currentText()));
-#endif
 
 	switch(CBorientationMode->currentIndex()){
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,2)
 		case 0: printer.setPageOrientation(QPageLayout::Portrait); break;
 		case 1: printer.setPageOrientation(QPageLayout::Landscape); break;
-#else
-		case 0: printer.setOrientation(QPrinter::Portrait); break;
-		case 1: printer.setOrientation(QPrinter::Landscape); break;
-#endif
 		default: assert(0==1);
 	}
-#if QT_VERSION >= QT_VERSION_CHECK(5,3,0)
 	QMarginsF printerMargins;
 	printerMargins.setLeft(leftPageMargin->value());
 	printerMargins.setRight(rightPageMargin->value());
@@ -1874,9 +1798,6 @@ void TimetablePrintForm::printPreviewFull(){
 		"You need to enter at least:\nLeft: %1\nRight: %2\nTop: %3\nBottom: %4")
 		.arg(printerMargins.left()).arg(printerMargins.right()).arg(printerMargins.top()).arg(printerMargins.bottom()));
 	}
-#else
-	printer.setPageMargins(leftPageMargin->value(), topPageMargin->value(), rightPageMargin->value(), bottomPageMargin->value(), QPrinter::Millimeter);
-#endif
 	QPrintPreviewDialog printPreviewFull(&printer, this);
 	connect(&printPreviewFull, &QPrintPreviewDialog::paintRequested, this, &TimetablePrintForm::updatePreviewFull);
 
@@ -1898,11 +1819,7 @@ void TimetablePrintForm::updatePreviewFull(QPrinter* printer){
 #else
 	QTextDocument textDocument;
 	textDocument.documentLayout()->setPaintDevice(printer);
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,2)
 	textDocument.setPageSize(QSizeF(printer->pageLayout().paintRectPixels(printer->resolution()).size()));
-#else
-	textDocument.setPageSize(QSizeF(printer->pageRect().size()));
-#endif
 	textDocument.setHtml(updateHtmlPrintString(true));
 	textDocument.print(printer);
 #endif
@@ -1916,24 +1833,14 @@ void TimetablePrintForm::printPreviewSmall(){
 	QPrinter printer(QPrinter::HighResolution);
 
 	assert(paperSizesMap.contains(CBpaperSize->currentText()));
-#if QT_VERSION >= QT_VERSION_CHECK(5,3,0)
 	printer.setPageSize(paperSizesMap.value(CBpaperSize->currentText()));
-#else
-	printer.setPaperSize(paperSizesMap.value(CBpaperSize->currentText()));
-#endif
 
 	switch(CBorientationMode->currentIndex()){
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,2)
 		case 0: printer.setPageOrientation(QPageLayout::Portrait); break;
 		case 1: printer.setPageOrientation(QPageLayout::Landscape); break;
-#else
-		case 0: printer.setOrientation(QPrinter::Portrait); break;
-		case 1: printer.setOrientation(QPrinter::Landscape); break;
-#endif
 		default: assert(0==1);
 	}
 	
-#if QT_VERSION >= QT_VERSION_CHECK(5,3,0)
 	QMarginsF printerMargins;
 	printerMargins.setLeft(leftPageMargin->value());
 	printerMargins.setRight(rightPageMargin->value());
@@ -1945,9 +1852,6 @@ void TimetablePrintForm::printPreviewSmall(){
 		"You need to enter at least:\nLeft: %1\nRight: %2\nTop: %3\nBottom: %4")
 		.arg(printerMargins.left()).arg(printerMargins.right()).arg(printerMargins.top()).arg(printerMargins.bottom()));
 	}
-#else
-	printer.setPageMargins(leftPageMargin->value(), topPageMargin->value(), rightPageMargin->value(), bottomPageMargin->value(), QPrinter::Millimeter);
-#endif
 	QPrintPreviewDialog printPreviewSmall(&printer, this);
 
 	const QString settingsName=QString("TimetablePrintFormPrintPreviewSmallDialog");
@@ -1969,11 +1873,7 @@ void TimetablePrintForm::updatePreviewSmall(QPrinter* printer){
 #else
 	QTextDocument textDocument;
 	textDocument.documentLayout()->setPaintDevice(printer);
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,2)
 	textDocument.setPageSize(QSizeF(printer->pageLayout().paintRectPixels(printer->resolution()).size()));
-#else
-	textDocument.setPageSize(QSizeF(printer->pageRect().size()));
-#endif
 	textDocument.setHtml(updateHtmlPrintString(false));
 	textDocument.print(printer);
 #endif

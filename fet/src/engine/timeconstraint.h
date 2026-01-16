@@ -3007,7 +3007,7 @@ public:
 	//ConstraintActivitiesPreferredTimeSlots(double wp, const QString& te,
 	//	const QString& st, const QString& su, const QString& sut, int nPT, int d[], int h[]);
 	ConstraintActivitiesPreferredTimeSlots(double wp, const QString& te,
-		const QString& st, const QString& su, const QString& sut, int dur, int nPT_L, QList<int> d_L, QList<int> h_L);
+		const QString& st, const QString& su, const QString& sut, int dur, int nPT_L, const QList<int>& d_L, const QList<int>& h_L);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -3099,7 +3099,7 @@ public:
 	//ConstraintSubactivitiesPreferredTimeSlots(double wp, int compNo, const QString& te,
 	//	const QString& st, const QString& su, const QString& sut, int nPT, int d[], int h[]);
 	ConstraintSubactivitiesPreferredTimeSlots(double wp, int compNo, const QString& te,
-		const QString& st, const QString& su, const QString& sut, int dur, int nPT_L, QList<int> d_L, QList<int> h_L);
+		const QString& st, const QString& su, const QString& sut, int dur, int nPT_L, const QList<int>& d_L, const QList<int>& h_L);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -3189,7 +3189,7 @@ public:
 	//ConstraintActivitiesPreferredStartingTimes(double wp, const QString& te,
 	//	const QString& st, const QString& su, const QString& sut, int nPT, int d[], int h[]);
 	ConstraintActivitiesPreferredStartingTimes(double wp, const QString& te,
-		const QString& st, const QString& su, const QString& sut, int dur, int nPT_L, QList<int> d_L, QList<int> h_L);
+		const QString& st, const QString& su, const QString& sut, int dur, int nPT_L, const QList<int>& d_L, const QList<int>& h_L);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -3279,7 +3279,7 @@ public:
 	ConstraintSubactivitiesPreferredStartingTimes();
 
 	ConstraintSubactivitiesPreferredStartingTimes(double wp, int compNo, const QString& te,
-		const QString& st, const QString& su, const QString& sut, int dur, int nPT_L, QList<int> d_L, QList<int> h_L);
+		const QString& st, const QString& su, const QString& sut, int dur, int nPT_L, const QList<int>& d_L, const QList<int>& h_L);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 

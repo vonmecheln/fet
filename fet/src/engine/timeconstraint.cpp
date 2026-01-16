@@ -9578,11 +9578,7 @@ void ConstraintActivitiesSameStartingTime::removeUseless(Rules& r)
 
 void ConstraintActivitiesSameStartingTime::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintActivitiesSameStartingTime::hasInactiveActivities(Rules& r)
@@ -9897,11 +9893,7 @@ void ConstraintActivitiesNotOverlapping::removeUseless(Rules& r)
 
 void ConstraintActivitiesNotOverlapping::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintActivitiesNotOverlapping::hasInactiveActivities(Rules& r)
@@ -10352,19 +10344,10 @@ bool ConstraintActivityTagsNotOverlapping::isRelatedToActivity(Rules& r, int aid
 	Activity* a=r.activitiesPointerHash.value(aid, nullptr);
 	assert(a!=nullptr);
 	
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	QSet<QString> ats(activityTagsNames.constBegin(), activityTagsNames.constEnd());
 	QSet<QString> aats(a->activityTagsNames.constBegin(), a->activityTagsNames.constEnd());
-#else
-	QSet<QString> ats=activityTagsNames.toSet();
-	QSet<QString> aats=a->activityTagsNames.toSet();
-#endif
-	ats.intersect(aats);
 
-	if(ats.count()>0)
-		return true;
-
-	return false;
+	return ats.intersects(aats);
 }
 
 bool ConstraintActivityTagsNotOverlapping::isRelatedToTeacher(const QString& t)
@@ -10524,11 +10507,7 @@ void ConstraintMinDaysBetweenActivities::removeUseless(Rules& r)
 
 void ConstraintMinDaysBetweenActivities::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintMinDaysBetweenActivities::hasInactiveActivities(Rules& r)
@@ -10946,11 +10925,7 @@ void ConstraintMaxDaysBetweenActivities::removeUseless(Rules& r)
 
 void ConstraintMaxDaysBetweenActivities::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintMaxDaysBetweenActivities::hasInactiveActivities(Rules& r)
@@ -11306,11 +11281,7 @@ void ConstraintActivitiesMaxHourlySpan::removeUseless(Rules& r)
 
 void ConstraintActivitiesMaxHourlySpan::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintActivitiesMaxHourlySpan::hasInactiveActivities(Rules& r)
@@ -11670,11 +11641,7 @@ void ConstraintMinGapsBetweenActivities::removeUseless(Rules& r)
 
 void ConstraintMinGapsBetweenActivities::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintMinGapsBetweenActivities::hasInactiveActivities(Rules& r)
@@ -11985,11 +11952,7 @@ void ConstraintMaxGapsBetweenActivities::removeUseless(Rules& r)
 
 void ConstraintMaxGapsBetweenActivities::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintMaxGapsBetweenActivities::hasInactiveActivities(Rules& r)
@@ -19567,7 +19530,7 @@ ConstraintActivitiesPreferredTimeSlots::ConstraintActivitiesPreferredTimeSlots()
 }
 
 ConstraintActivitiesPreferredTimeSlots::ConstraintActivitiesPreferredTimeSlots(double wp, const QString& te,
-	const QString& st, const QString& su, const QString& sut, int dur, int nPT_L, QList<int> d_L, QList<int> h_L)
+	const QString& st, const QString& su, const QString& sut, int dur, int nPT_L, const QList<int>& d_L, const QList<int>& h_L)
 	: TimeConstraint(wp)
 {
 	assert(dur==-1 || dur>=1);
@@ -20071,7 +20034,7 @@ ConstraintSubactivitiesPreferredTimeSlots::ConstraintSubactivitiesPreferredTimeS
 }
 
 ConstraintSubactivitiesPreferredTimeSlots::ConstraintSubactivitiesPreferredTimeSlots(double wp, int compNo, const QString& te,
-	const QString& st, const QString& su, const QString& sut, int dur, int nPT_L, QList<int> d_L, QList<int> h_L)
+	const QString& st, const QString& su, const QString& sut, int dur, int nPT_L, const QList<int>& d_L, const QList<int>& h_L)
 	: TimeConstraint(wp)
 {
 	assert(dur==-1 || dur>=1);
@@ -20900,7 +20863,7 @@ ConstraintActivitiesPreferredStartingTimes::ConstraintActivitiesPreferredStartin
 }
 
 ConstraintActivitiesPreferredStartingTimes::ConstraintActivitiesPreferredStartingTimes(double wp, const QString& te,
-	const QString& st, const QString& su, const QString& sut, int dur, int nPT_L, QList<int> d_L, QList<int> h_L)
+	const QString& st, const QString& su, const QString& sut, int dur, int nPT_L, const QList<int>& d_L, const QList<int>& h_L)
 	: TimeConstraint(wp)
 {
 	assert(dur==-1 || dur>=1);
@@ -21391,7 +21354,7 @@ ConstraintSubactivitiesPreferredStartingTimes::ConstraintSubactivitiesPreferredS
 }
 
 ConstraintSubactivitiesPreferredStartingTimes::ConstraintSubactivitiesPreferredStartingTimes(double wp, int compNo, const QString& te,
-	const QString& st, const QString& su, const QString& sut, int dur, int nPT_L, QList<int> d_L, QList<int> h_L)
+	const QString& st, const QString& su, const QString& sut, int dur, int nPT_L, const QList<int>& d_L, const QList<int>& h_L)
 	: TimeConstraint(wp)
 {
 	assert(dur==-1 || dur>=1);
@@ -21972,11 +21935,7 @@ void ConstraintActivitiesSameStartingHour::removeUseless(Rules& r)
 
 void ConstraintActivitiesSameStartingHour::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintActivitiesSameStartingHour::hasInactiveActivities(Rules& r)
@@ -22291,11 +22250,7 @@ void ConstraintActivitiesSameStartingDay::removeUseless(Rules& r)
 
 void ConstraintActivitiesSameStartingDay::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintActivitiesSameStartingDay::hasInactiveActivities(Rules& r)
@@ -23992,13 +23947,8 @@ void ConstraintTwoSetsOfActivitiesOrdered::removeUseless(Rules& r)
 
 void ConstraintTwoSetsOfActivitiesOrdered::recomputeActivitiesSets()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	firstActivitiesIdsSet=QSet<int>(firstActivitiesIdsList.constBegin(), firstActivitiesIdsList.constEnd());
 	secondActivitiesIdsSet=QSet<int>(secondActivitiesIdsList.constBegin(), secondActivitiesIdsList.constEnd());
-#else
-	firstActivitiesIdsSet=firstActivitiesIdsList.toSet();
-	secondActivitiesIdsSet=secondActivitiesIdsList.toSet();
-#endif
 }
 
 bool ConstraintTwoSetsOfActivitiesOrdered::isRelatedToActivity(Rules& r, int aid)
@@ -30252,11 +30202,7 @@ void ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::removeUseless(Rules& r
 
 void ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::isRelatedToActivity(Rules& r, int aid)
@@ -30637,11 +30583,7 @@ void ConstraintActivitiesOccupyMinTimeSlotsFromSelection::removeUseless(Rules& r
 
 void ConstraintActivitiesOccupyMinTimeSlotsFromSelection::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintActivitiesOccupyMinTimeSlotsFromSelection::isRelatedToActivity(Rules& r, int aid)
@@ -31011,11 +30953,7 @@ void ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::removeUseless(Rules
 
 void ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::isRelatedToActivity(Rules& r, int aid)
@@ -31399,11 +31337,7 @@ void ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::removeUseless(Rules
 
 void ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::isRelatedToActivity(Rules& r, int aid)
@@ -31765,11 +31699,7 @@ void ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::removeUseless(Rules
 
 void ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::isRelatedToActivity(Rules& r, int aid)
@@ -32063,11 +31993,7 @@ void ConstraintActivitiesMaxInATerm::removeUseless(Rules& r)
 
 void ConstraintActivitiesMaxInATerm::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintActivitiesMaxInATerm::isRelatedToActivity(Rules& r, int aid)
@@ -32338,11 +32264,7 @@ void ConstraintActivitiesOccupyMaxTerms::removeUseless(Rules& r)
 
 void ConstraintActivitiesOccupyMaxTerms::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintActivitiesOccupyMaxTerms::isRelatedToActivity(Rules& r, int aid)
@@ -61636,11 +61558,7 @@ void ConstraintMinHalfDaysBetweenActivities::removeUseless(Rules& r)
 
 void ConstraintMinHalfDaysBetweenActivities::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintMinHalfDaysBetweenActivities::hasInactiveActivities(Rules& r)
@@ -62403,11 +62321,7 @@ void ConstraintActivitiesMinInATerm::removeUseless(Rules& r)
 
 void ConstraintActivitiesMinInATerm::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintActivitiesMinInATerm::isRelatedToActivity(Rules& r, int aid)
@@ -62558,11 +62472,7 @@ void ConstraintMaxTermsBetweenActivities::removeUseless(Rules& r)
 
 void ConstraintMaxTermsBetweenActivities::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintMaxTermsBetweenActivities::hasInactiveActivities(Rules& r)
@@ -64293,11 +64203,7 @@ void ConstraintMaxHalfDaysBetweenActivities::removeUseless(Rules& r)
 
 void ConstraintMaxHalfDaysBetweenActivities::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintMaxHalfDaysBetweenActivities::hasInactiveActivities(Rules& r)
@@ -72842,11 +72748,7 @@ void ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots::removeUseless(R
 
 void ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToActivity(Rules& r, int aid)
@@ -73209,11 +73111,7 @@ void ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots::removeUseless(Rules& 
 
 void ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots::isRelatedToActivity(Rules& r, int aid)
@@ -74957,11 +74855,7 @@ void ConstraintActivitiesOverlapCompletelyOrDoNotOverlap::removeUseless(Rules& r
 
 void ConstraintActivitiesOverlapCompletelyOrDoNotOverlap::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintActivitiesOverlapCompletelyOrDoNotOverlap::isRelatedToActivity(Rules& r, int aid)
@@ -75353,11 +75247,7 @@ void ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection::removeUseless(Ru
 
 void ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection::isRelatedToActivity(Rules& r, int aid)
@@ -76882,11 +76772,7 @@ void ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::removeUsel
 
 void ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::isRelatedToActivity(Rules& r, int aid)

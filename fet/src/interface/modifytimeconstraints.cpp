@@ -568,7 +568,8 @@ ModifyTimeConstraints::ModifyTimeConstraints(QWidget* parent, int _type, QList<T
 	}
 
 	okPushButton=new QPushButton(tr("OK"));
-	okPushButton->setDefault(true);
+	if(okPushButton!=nullptr)
+		okPushButton->setDefault(true);
 	cancelPushButton=new QPushButton(tr("Cancel"));
 	
 	QHBoxLayout* buttons=new QHBoxLayout;

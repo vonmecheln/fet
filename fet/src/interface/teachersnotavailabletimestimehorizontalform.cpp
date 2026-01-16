@@ -202,13 +202,8 @@ TeachersNotAvailableTimesTimeHorizontalForm::TeachersNotAvailableTimesTimeHorizo
 	naTableWidget->setRowCount(gt.rules.teachersList.count());
 	naTableWidget->setColumnCount(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 	naTableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Interactive);
 	naTableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Interactive);
-#else
-	naTableWidget->verticalHeader()->setResizeMode(QHeaderView::Interactive);
-	naTableWidget->horizontalHeader()->setResizeMode(QHeaderView::Interactive);
-#endif
 
 	oldItemDelegate=naTableWidget->itemDelegate();
 	newItemDelegate=new TeachersNotAvailableTimesTimeHorizontalDelegate(nullptr, naTableWidget->rowCount(), gt.rules.nHoursPerDay);
@@ -319,21 +314,13 @@ TeachersNotAvailableTimesTimeHorizontalForm::TeachersNotAvailableTimesTimeHorizo
 
 	widthSpinBox->setSuffix(QString(" ")+tr("px", "Abbreviation for pixels"));
 	widthSpinBox->setMinimum(MINIMUM_WIDTH_SPIN_BOX_VALUE);
-#if QT_VERSION >= QT_VERSION_CHECK(5,2,0)
 	widthSpinBox->setMaximum(naTableWidget->verticalHeader()->maximumSectionSize());
-#else
-	widthSpinBox->setMaximum(maxScreenWidth(this));
-#endif
 	widthSpinBox->setValue(w);
 	widthSpinBox->setSpecialValueText(tr("Automatic", "Automatic mode of selection of the width"));
 
 	heightSpinBox->setSuffix(QString(" ")+tr("px", "Abbreviation for pixels"));
 	heightSpinBox->setMinimum(MINIMUM_HEIGHT_SPIN_BOX_VALUE);
-#if QT_VERSION >= QT_VERSION_CHECK(5,2,0)
 	heightSpinBox->setMaximum(naTableWidget->verticalHeader()->maximumSectionSize());
-#else
-	heightSpinBox->setMaximum(maxScreenWidth(this));
-#endif
 	heightSpinBox->setValue(h);
 	heightSpinBox->setSpecialValueText(tr("Automatic", "Automatic mode of selection of the height"));
 
@@ -492,7 +479,6 @@ void TeachersNotAvailableTimesTimeHorizontalForm::colorItem(QTableWidgetItem* it
 {
 	assert(item->row()>=0 && item->row()<gt.rules.teachersList.count());
 	if(colorsCheckBox->isChecked()){
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 		if(!inactiveConstraint[item->row()]){
 			if(item->text()==NO)
 				item->setBackground(QBrush(QColorConstants::DarkGreen));
@@ -507,22 +493,6 @@ void TeachersNotAvailableTimesTimeHorizontalForm::colorItem(QTableWidgetItem* it
 				item->setBackground(QBrush(QColorConstants::DarkGray));
 			item->setForeground(QBrush(QColorConstants::Gray));
 		}
-#else
-		if(!inactiveConstraint[item->row()]){
-			if(item->text()==NO)
-				item->setBackground(QBrush(Qt::darkGreen));
-			else
-				item->setBackground(QBrush(Qt::darkRed));
-			item->setForeground(QBrush(Qt::lightGray));
-		}
-		else{
-			if(item->text()==NO)
-				item->setBackground(QBrush(Qt::lightGray));
-			else
-				item->setBackground(QBrush(Qt::darkGray));
-			item->setForeground(QBrush(Qt::gray));
-		}
-#endif
 	}
 	else{
 		if(!inactiveConstraint[item->row()]){

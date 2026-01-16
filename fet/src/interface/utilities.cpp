@@ -49,12 +49,8 @@ File utilities.cpp
 
 #include <QStyle>
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QGuiApplication>
 #include <QScreen>
-#else
-#include <QDesktopWidget>
-#endif
 
 #include <QRect>
 #include <QSize>
@@ -166,11 +162,7 @@ void forceCenterWidgetOnScreen(QWidget* widget)
 	//widget->setWindowFlags(widget->windowFlags() | Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint | Qt::WindowMinMaxButtonsHint);
 	
 	QRect frect=widget->frameGeometry();
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	frect.moveCenter(widget->screen()->availableGeometry().center());
-#else
-	frect.moveCenter(QApplication::desktop()->availableGeometry(widget).center());
-#endif
 	widget->move(frect.topLeft());
 }
 
@@ -187,11 +179,7 @@ void forceCenterWidgetOnScreen(QWidget* widget)
 
 int maxScreenWidth(QWidget* widget)
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	QRect rect = widget->screen()->availableGeometry();
-#else
-	QRect rect = QApplication::desktop()->availableGeometry(widget);
-#endif
 
 	return rect.width();
 }
@@ -235,13 +223,8 @@ void restoreFETDialogGeometry(QWidget* widget, const QString& alternativeName)
 		QRect rect=settings.value(name+QString("/geometry")).toRect();
 		if(rect.isValid()){
 			bool ok=false;
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 			for(QScreen* screen : QGuiApplication::screens()){
 				if(screen->availableGeometry().intersects(rect)){
-#else
-			for(int i=0; i<QApplication::desktop()->screenCount(); i++){
-				if(QApplication::desktop()->availableGeometry(i).intersects(rect)){
-#endif
 					ok=true;
 					break;
 				}
@@ -270,20 +253,12 @@ void setParentAndOtherThings(QWidget* widget, QWidget* parent)
 
 void setStretchAvailabilityTableNicely(CornerEnabledTableWidget* tableWidget)
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 	tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-#else
-	tableWidget->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
-#endif
 
 	int q=tableWidget->horizontalHeader()->defaultSectionSize();
 	tableWidget->horizontalHeader()->setMinimumSectionSize(q);
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 	tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-#else
-	tableWidget->verticalHeader()->setResizeMode(QHeaderView::Stretch);
-#endif
 
 	q=-1;
 	for(int i=0; i<tableWidget->verticalHeader()->count(); i++)
@@ -317,20 +292,12 @@ void setStretchAvailabilityTableNicely(CornerEnabledTableWidget* tableWidget)
 
 void setStretchAvailabilityTableNicely(CornerEnabledTableWidgetOfSpinBoxes* tableWidget)
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 	tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-#else
-	tableWidget->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
-#endif
 
 	int q=tableWidget->horizontalHeader()->defaultSectionSize();
 	tableWidget->horizontalHeader()->setMinimumSectionSize(q);
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 	tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-#else
-	tableWidget->verticalHeader()->setResizeMode(QHeaderView::Stretch);
-#endif
 
 	q=-1;
 	for(int i=0; i<tableWidget->verticalHeader()->count(); i++)

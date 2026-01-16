@@ -20,7 +20,7 @@
 #include <QMessageBox>
 #else
 #include <iostream>
-using namespace std;
+//using namespace std;
 
 #include <QDir>
 #include <QFile>
@@ -58,8 +58,8 @@ void commandLineMessage(QWidget* parent, const QString& title, const QString& me
 #else
 	if(!file.open(QIODevice::Append)){
 #endif
-		cout<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(filename))<<")."
-			 " If this is a bug - please report it."<<endl;
+		std::cout<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(filename))<<")."
+			 " If this is a bug - please report it."<<std::endl;
 		return;
 	}
 	QTextStream tos(&file);
@@ -77,8 +77,8 @@ void commandLineMessage(QWidget* parent, const QString& title, const QString& me
 	tos<<Qt::endl;
 	
 	if(file.error()!=QFileDevice::NoError){
-		cout<<"FET critical - writing in the file "<<qPrintable(QDir::toNativeSeparators(filename))<<" gave the error message "
-			 <<qPrintable(file.errorString())<<" which means the writing is compromised. Please check your disk's free space."<<endl;
+		std::cout<<"FET critical - writing in the file "<<qPrintable(QDir::toNativeSeparators(filename))<<" gave the error message "
+			 <<qPrintable(file.errorString())<<" which means the writing is compromised. Please check your disk's free space."<<std::endl;
 	}
 	file.close();
 }
@@ -110,8 +110,8 @@ int commandLineMessage(QWidget* parent, const QString& title, const QString& mes
 #else
 	if(!file.open(QIODevice::Append)){
 #endif
-		cout<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(filename))<<")."
-			 " If this is a bug - please report it."<<endl;
+		std::cout<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(filename))<<")."
+			 " If this is a bug - please report it."<<std::endl;
 		return defaultButton;
 	}
 	QTextStream tos(&file);
@@ -142,8 +142,8 @@ int commandLineMessage(QWidget* parent, const QString& title, const QString& mes
 	tos<<Qt::endl;
 	
 	if(file.error()!=QFileDevice::NoError){
-		cout<<"FET critical - writing in the file "<<qPrintable(QDir::toNativeSeparators(filename))<<" gave the error message "
-			 <<qPrintable(file.errorString())<<" which means the writing is compromised. Please check your disk's free space."<<endl;
+		std::cout<<"FET critical - writing in the file "<<qPrintable(QDir::toNativeSeparators(filename))<<" gave the error message "
+			 <<qPrintable(file.errorString())<<" which means the writing is compromised. Please check your disk's free space."<<std::endl;
 	}
 	file.close();
 	
@@ -357,21 +357,21 @@ QProgressDialog::QProgressDialog(QWidget* parent)
 void QProgressDialog::setWindowTitle(const QString& title)
 {
 	if(VERBOSE){
-		cout<<qPrintable(FetCommandLine::tr("Progress title: %1").arg(title))<<endl;
+		std::cout<<qPrintable(FetCommandLine::tr("Progress title: %1").arg(title))<<std::endl;
 	}
 }
 
 void QProgressDialog::setLabelText(const QString& label)
 {
 	if(VERBOSE){
-		cout<<qPrintable(FetCommandLine::tr("Progress label: %1").arg(label))<<endl;
+		std::cout<<qPrintable(FetCommandLine::tr("Progress label: %1").arg(label))<<std::endl;
 	}
 }
 
 void QProgressDialog::setRange(int a, int b)
 {
 	if(VERBOSE){
-		cout<<qPrintable(FetCommandLine::tr("Progress range: %1..%2").arg(a).arg(b))<<endl;
+		std::cout<<qPrintable(FetCommandLine::tr("Progress range: %1..%2").arg(a).arg(b))<<std::endl;
 	}
 }
 
@@ -379,9 +379,9 @@ void QProgressDialog::setModal(bool m)
 {
 	if(VERBOSE){
 		if(m)
-			cout<<qPrintable(FetCommandLine::tr("Progress setModal(true)"))<<endl;
+			std::cout<<qPrintable(FetCommandLine::tr("Progress setModal(true)"))<<std::endl;
 		else
-			cout<<qPrintable(FetCommandLine::tr("Progress setModal(false)"))<<endl;
+			std::cout<<qPrintable(FetCommandLine::tr("Progress setModal(false)"))<<std::endl;
 	}
 }
 

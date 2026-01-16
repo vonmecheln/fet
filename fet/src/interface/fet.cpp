@@ -126,7 +126,7 @@ QString csvOutputDirectory;
 #endif
 
 #include <iostream>
-using namespace std;
+//using namespace std;
 
 #ifndef FET_COMMAND_LINE
 extern QRect mainFormSettingsRect;
@@ -396,13 +396,9 @@ void usage(QTextStream* out, const QString& error)
 		"highest stage timetables without stopping the generation (a poll for the existence of this file is done once every second), and then remove this file."
 	);
 	
-	cout<<qPrintable(s)<<endl;
+	std::cout<<qPrintable(s)<<std::endl;
 	if(out!=nullptr)
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 		(*out)<<qPrintable(s)<<Qt::endl;
-#else
-		(*out)<<qPrintable(s)<<endl;
-#endif
 }
 #endif
 
@@ -1275,7 +1271,7 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 //	killCommandAfterSeconds=settings.value("kill-command-at-the-end-of-generation-after-seconds", "0").toInt();
 	
 	if(VERBOSE){
-		cout<<"Settings read"<<endl;
+		std::cout<<"Settings read"<<std::endl;
 	}
 }
 
@@ -2048,7 +2044,7 @@ void FetSettings::writeGenerationParameters()
 //	settings.setValue("kill-command-at-the-end-of-generation-after-seconds", killCommandAfterSeconds);
 	
 	if(VERBOSE){
-		cout<<"Settings saved"<<endl;
+		std::cout<<"Settings saved"<<std::endl;
 	}
 	
 	pFetMainForm=nullptr;
@@ -2901,9 +2897,9 @@ int main(int argc, char **argv)
 		if(filename==""){
 			if(unrecognizedOptions.count()>0){
 				for(const QString& s : std::as_const(unrecognizedOptions)){
-					cout<<"Unrecognized option: "<<qPrintable(s)<<endl;
+					std::cout<<"Unrecognized option: "<<qPrintable(s)<<std::endl;
 				}
-				cout<<endl;
+				std::cout<<std::endl;
 			}
 
 			if(showHelp){
@@ -2911,15 +2907,15 @@ int main(int argc, char **argv)
 				return 0;
 			}
 			else if(showVersion){
-				cout<<"FET version "<<qPrintable(FET_VERSION)<<endl;
-				cout<<"Free timetabling software, licensed under the GNU Affero General Public License version 3"<<endl;
-				cout<<"Copyright (C) 2002-2025 Liviu Lalescu, Volker Dirr"<<endl;
-				cout<<"Homepage: https://lalescu.ro/liviu/fet/"<<endl;
-				cout<<"This program uses Qt version "<<qVersion()<<", Copyright (C) The Qt Company Ltd and other contributors."<<endl;
-				cout<<"Depending on the platform and compiler, this program may use libraries from:"<<endl;
-				cout<<"  gcc, Copyright (C) Free Software Foundation, Inc."<<endl;
-				cout<<"  MinGW-w64, Copyright (c) by the mingw-w64 project"<<endl;
-				cout<<"  Clang"<<endl;
+				std::cout<<"FET version "<<qPrintable(FET_VERSION)<<std::endl;
+				std::cout<<"Free timetabling software, licensed under the GNU Affero General Public License version 3"<<std::endl;
+				std::cout<<"Copyright (C) 2002-2025 Liviu Lalescu, Volker Dirr"<<std::endl;
+				std::cout<<"Homepage: https://lalescu.ro/liviu/fet/"<<std::endl;
+				std::cout<<"This program uses Qt version "<<qVersion()<<", Copyright (C) The Qt Company Ltd and other contributors."<<std::endl;
+				std::cout<<"Depending on the platform and compiler, this program may use libraries from:"<<std::endl;
+				std::cout<<"  gcc, Copyright (C) Free Software Foundation, Inc."<<std::endl;
+				std::cout<<"  MinGW-w64, Copyright (c) by the mingw-w64 project"<<std::endl;
+				std::cout<<"  Clang"<<std::endl;
 				return 0;
 			}
 			else{
@@ -2930,12 +2926,12 @@ int main(int argc, char **argv)
 		else if(!QFile::exists(filename)){
 			if(unrecognizedOptions.count()>0){
 				for(const QString& s : std::as_const(unrecognizedOptions)){
-					cout<<"Unrecognized option: "<<qPrintable(s)<<endl;
+					std::cout<<"Unrecognized option: "<<qPrintable(s)<<std::endl;
 				}
-				cout<<endl;
+				std::cout<<std::endl;
 			}
 
-			cout<<"Error: the specified input file "<<qPrintable(QDir::toNativeSeparators(filename))<<" is not existing"<<endl;
+			std::cout<<"Error: the specified input file "<<qPrintable(QDir::toNativeSeparators(filename))<<" is not existing"<<std::endl;
 			return 1;
 		}
 		
@@ -2984,8 +2980,8 @@ int main(int argc, char **argv)
 		bool tttt=logFile.open(QIODevice::WriteOnly);
 #endif
 		if(!tttt){
-			cout<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"result.txt)."
-			 " If this is a bug - please report it."<<endl;
+			std::cout<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"result.txt)."
+			 " If this is a bug - please report it."<<std::endl;
 			return 1;
 		}
 		QTextStream out(&logFile);
@@ -2997,27 +2993,19 @@ int main(int argc, char **argv)
 			if(!t){
 				out<<"Cannot remove the file named "<<qPrintable(QDir::toNativeSeparators(communicationFile))
 				 <<". This is a fatal error for FET-CL. Please either remove this file, or start the generation in another directory."<<Qt::endl;
-				cout<<"Cannot remove the file named "<<qPrintable(QDir::toNativeSeparators(communicationFile))
-				 <<". This is a fatal error for FET-CL. Please either remove this file, or start the generation in another directory."<<endl;
+				std::cout<<"Cannot remove the file named "<<qPrintable(QDir::toNativeSeparators(communicationFile))
+				 <<". This is a fatal error for FET-CL. Please either remove this file, or start the generation in another directory."<<std::endl;
 				exit(1);
 			}
 		}
 		
 		if(unrecognizedOptions.count()>0){
 			for(const QString& s : std::as_const(unrecognizedOptions)){
-				cout<<"Unrecognized option: "<<qPrintable(s)<<endl;
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+				std::cout<<"Unrecognized option: "<<qPrintable(s)<<std::endl;
 				out<<"Unrecognized option: "<<qPrintable(s)<<Qt::endl;
-#else
-				out<<"Unrecognized option: "<<qPrintable(s)<<endl;
-#endif
 			}
-			cout<<endl;
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			std::cout<<std::endl;
 			out<<Qt::endl;
-#else
-			out<<endl;
-#endif
 		}
 		
 		//Cleanup the previous unsuccessful generation, if any. No need to remove the other files, they are overwritten.
@@ -3025,12 +3013,8 @@ int main(int argc, char **argv)
 		if(oldDifficultActivitiesFile.exists()){
 			bool t=oldDifficultActivitiesFile.remove();
 			if(!t){
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 				out<<"Cannot remove the old existing file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"difficult_activities.txt"<<Qt::endl;
-#else
-				out<<"Cannot remove the old existing file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"difficult_activities.txt"<<endl;
-#endif
-				cout<<"Cannot remove the old existing file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"difficult_activities.txt"<<endl;
+				std::cout<<"Cannot remove the old existing file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"difficult_activities.txt"<<std::endl;
 			}
 		}
 		
@@ -3039,7 +3023,7 @@ int main(int argc, char **argv)
 			bool t=oldWarningsFile.remove();
 			if(!t){
 				out<<"Cannot remove the old warnings file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"warnings.txt"<<Qt::endl;
-				cout<<"Cannot remove the old warnings file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"warnings.txt"<<endl;
+				std::cout<<"Cannot remove the old warnings file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"warnings.txt"<<std::endl;
 			}
 		}
 		
@@ -3048,7 +3032,7 @@ int main(int argc, char **argv)
 			bool t=oldErrorsFile.remove();
 			if(!t){
 				out<<"Cannot remove the old errors file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"errors.txt"<<Qt::endl;
-				cout<<"Cannot remove the old errors file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"errors.txt"<<endl;
+				std::cout<<"Cannot remove the old errors file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"errors.txt"<<std::endl;
 			}
 		}
 		
@@ -3063,8 +3047,8 @@ int main(int argc, char **argv)
 		bool tmpaf=maxPlacedActivityFile.open(QIODevice::WriteOnly);
 #endif
 		if(!tmpaf){
-			cout<<"fet: critical error - cannot open the log file for the maximum placed activities - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"max_placed_activities.txt."
-			 " If this is a bug - please report it."<<endl;
+			std::cout<<"fet: critical error - cannot open the log file for the maximum placed activities - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"max_placed_activities.txt."
+			 " If this is a bug - please report it."<<std::endl;
 			out<<"fet: critical error - cannot open the log file for the maximum placed activities - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"max_placed_activities.txt."
 			 " If this is a bug - please report it."<<Qt::endl;
 
@@ -3078,13 +3062,8 @@ int main(int argc, char **argv)
 		maxPlacedActivityStream.setCodec("UTF-8");
 #endif
 		maxPlacedActivityStream.setGenerateByteOrderMark(true);
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 		maxPlacedActivityStream<<FetTranslate::tr("This is the list of max placed activities, chronologically. If FET could reach maximum n-th activity, look at the n+1-st activity"
 			" in the initial order of the activities")<<Qt::endl<<Qt::endl;
-#else
-		maxPlacedActivityStream<<FetTranslate::tr("This is the list of max placed activities, chronologically. If FET could reach maximum n-th activity, look at the n+1-st activity"
-			" in the initial order of the activities")<<endl<<endl;
-#endif
 		
 		QFile initialOrderFile(logsDir+"initial_order.txt");
 #if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
@@ -3093,8 +3072,8 @@ int main(int argc, char **argv)
 		bool iof=initialOrderFile.open(QIODevice::WriteOnly);
 #endif
 		if(!iof){
-			cout<<"fet: critical error - cannot open the log file for the initial order of the activities - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"initial_order.txt."
-			 " If this is a bug - please report it."<<endl;
+			std::cout<<"fet: critical error - cannot open the log file for the initial order of the activities - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"initial_order.txt."
+			 " If this is a bug - please report it."<<std::endl;
 			out<<"fet: critical error - cannot open the log file for the initial order of the activities - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"initial_order.txt."
 			 " If this is a bug - please report it."<<Qt::endl;
 
@@ -3109,21 +3088,13 @@ int main(int argc, char **argv)
 #endif
 		initialOrderStream.setGenerateByteOrderMark(true);
 		
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 		out<<"This file contains the result (log) of last operation"<<Qt::endl<<Qt::endl;
-#else
-		out<<"This file contains the result (log) of last operation"<<endl<<endl;
-#endif
 		
 		QDate dat=QDate::currentDate();
 		QTime tim=QTime::currentTime();
 		QLocale loc(FET_LANGUAGE);
 		QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 		out<<"FET command line generation started on "<<qPrintable(sTime)<<Qt::endl<<Qt::endl;
-#else
-		out<<"FET command line generation started on "<<qPrintable(sTime)<<endl<<endl;
-#endif
 		
 		tempOutputDirectory=outputDirectory;
 		
@@ -3154,15 +3125,10 @@ int main(int argc, char **argv)
 		bool t_t=test.open(QIODevice::ReadWrite);
 #endif
 		if(!t_t){
-			cout<<"fet: critical error - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(outputDirectory))<<"test_write_permissions_2.tmp)."
-			 " If this is a bug - please report it."<<endl;
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			std::cout<<"fet: critical error - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(outputDirectory))<<"test_write_permissions_2.tmp)."
+			 " If this is a bug - please report it."<<std::endl;
 			out<<"fet: critical error - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(outputDirectory))<<"test_write_permissions_2.tmp)."
 			 " If this is a bug - please report it."<<Qt::endl;
-#else
-			out<<"fet: critical error - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(outputDirectory))<<"test_write_permissions_2.tmp)."
-			 " If this is a bug - please report it."<<endl;
-#endif
 			return 1;
 		}
 		else{
@@ -3322,12 +3288,8 @@ int main(int argc, char **argv)
 	
 		bool t=gt.rules.read(nullptr, filename, true, initialDir);
 		if(!t){
-			cout<<"fet-cl: cannot read input file (not existing, in use, or incorrect file) - aborting"<<endl;
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			std::cout<<"fet-cl: cannot read input file (not existing, in use, or incorrect file) - aborting"<<std::endl;
 			out<<"Cannot read input file (not existing, in use, or incorrect file) - aborting"<<Qt::endl;
-#else
-			out<<"Cannot read input file (not existing, in use, or incorrect file) - aborting"<<endl;
-#endif
 			logFile.close();
 			return 1;
 		}
@@ -3340,24 +3302,16 @@ int main(int argc, char **argv)
 				count++;
 		}
 		if(count<1){
-			cout<<"Please input at least one active activity before generating"<<endl;
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			std::cout<<"Please input at least one active activity before generating"<<std::endl;
 			out<<"Please input at least one active activity before generating"<<Qt::endl;
-#else
-			out<<"Please input at least one active activity before generating"<<endl;
-#endif
 			logFile.close();
 			return 1;
 		}
 		
 		t=gt.rules.computeInternalStructure(nullptr);
 		if(!t){
-			cout<<"Cannot compute internal structure - aborting"<<endl;
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			std::cout<<"Cannot compute internal structure - aborting"<<std::endl;
 			out<<"Cannot compute internal structure - aborting"<<Qt::endl;
-#else
-			out<<"Cannot compute internal structure - aborting"<<endl;
-#endif
 			logFile.close();
 			return 1;
 		}
@@ -3381,26 +3335,18 @@ int main(int argc, char **argv)
 		initialOrderFile.close();
 		
 		if(!ok){
-			cout<<"Cannot precompute - data is wrong - aborting"<<endl;
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			std::cout<<"Cannot precompute - data is wrong - aborting"<<std::endl;
 			out<<"Cannot precompute - data is wrong - aborting"<<Qt::endl;
-#else
-			out<<"Cannot precompute - data is wrong - aborting"<<endl;
-#endif
 			logFile.close();
 			return 1;
 		}
 	
 		bool restarted, impossible, timeExceeded;
 		
-		cout<<"Starting timetable generation..."<<endl;
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+		std::cout<<"Starting timetable generation..."<<std::endl;
 		out<<"Starting timetable generation..."<<Qt::endl;
-#else
-		out<<"Starting timetable generation..."<<endl;
-#endif
 		if(VERBOSE){
-			cout<<"secondsLimit=="<<secondsLimit<<endl;
+			std::cout<<"secondsLimit=="<<secondsLimit<<std::endl;
 		}
 		//out<<"secondsLimit=="<<secondsLimit<<endl;
 		
@@ -3414,12 +3360,8 @@ int main(int argc, char **argv)
 		maxPlacedActivityFile.close();
 	
 		if(impossible){
-			cout<<"Impossible"<<endl;
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			std::cout<<"Impossible"<<std::endl;
 			out<<"Impossible"<<Qt::endl;
-#else
-			out<<"Impossible"<<endl;
-#endif
 			
 			//2016-11-17 - suggested by thanhnambkhn, FET will write the impossible activity and the current and highest-stage timetables
 			//(which should be identical)
@@ -3487,8 +3429,8 @@ int main(int argc, char **argv)
 			bool t=difficultActivitiesFile.open(QIODevice::WriteOnly);
 #endif
 			if(!t){
-				cout<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"difficult_activities.txt)."
-				 " If this is a bug - please report it."<<endl;
+				std::cout<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"difficult_activities.txt)."
+				 " If this is a bug - please report it."<<std::endl;
 				return 1;
 			}
 			QTextStream difficultActivitiesOut(&difficultActivitiesFile);
@@ -3499,11 +3441,7 @@ int main(int argc, char **argv)
 #endif
 			difficultActivitiesOut.setGenerateByteOrderMark(true);
 			
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 			difficultActivitiesOut<<s<<Qt::endl;
-#else
-			difficultActivitiesOut<<s<<endl;
-#endif
 			
 			//2011-11-11 (2)
 			//write highest stage timetable
@@ -3555,20 +3493,12 @@ int main(int argc, char **argv)
 		//by Ian Holden (begin)
 		else if(timeExceeded || gen.abortOptimization){
 			if(timeExceeded){
-				cout<<"Time exceeded"<<endl;
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+				std::cout<<"Time exceeded"<<std::endl;
 				out<<"Time exceeded"<<Qt::endl;
-#else
-				out<<"Time exceeded"<<endl;
-#endif
 			}
 			else if(gen.abortOptimization){
-				cout<<"Generation interrupted"<<endl;
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+				std::cout<<"Generation interrupted"<<std::endl;
 				out<<"Generation interrupted"<<Qt::endl;
-#else
-				out<<"Generation interrupted"<<endl;
-#endif
 			}
 			//by Ian Holden (end)
 			
@@ -3657,8 +3587,8 @@ int main(int argc, char **argv)
 			bool t=difficultActivitiesFile.open(QIODevice::WriteOnly);
 #endif
 			if(!t){
-				cout<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"difficult_activities.txt)."
-				 " If this is a bug - please report it."<<endl;
+				std::cout<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(QDir::toNativeSeparators(logsDir))<<"difficult_activities.txt)."
+				 " If this is a bug - please report it."<<std::endl;
 				return 1;
 			}
 			QTextStream difficultActivitiesOut(&difficultActivitiesFile);
@@ -3669,11 +3599,7 @@ int main(int argc, char **argv)
 #endif
 			difficultActivitiesOut.setGenerateByteOrderMark(true);
 			
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 			difficultActivitiesOut<<s<<Qt::endl;
-#else
-			difficultActivitiesOut<<s<<endl;
-#endif
 			
 			//2011-11-11 (2)
 			//write highest stage timetable
@@ -3721,12 +3647,8 @@ int main(int argc, char **argv)
 			OUTPUT_DIR=oldDir;
 		}
 		else{
-			cout<<"Generation successful"<<endl;
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			std::cout<<"Generation successful"<<std::endl;
 			out<<"Generation successful"<<Qt::endl;
-#else
-			out<<"Generation successful"<<endl;
-#endif
 		
 			TimetableExport::writeRandomSeedCommandLine(nullptr, gen.rng, outputDirectory, false); //false represents 'before' state
 

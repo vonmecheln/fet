@@ -186,8 +186,8 @@ double Solution::fitness(Rules& r, FakeString* conflictsString){
 #if 0
 	//I cannot put this test. I got situations of assert failed with 15.2 != 15.2 ??? Maybe rounding errors
 	if(this->_fitness!=conflictsTotal){
-		cout<<"this->_fitness=="<<this->_fitness<<endl;
-		cout<<"conflictsTotal=="<<conflictsTotal<<endl;
+		std::cout<<"this->_fitness=="<<this->_fitness<<std::endl;
+		std::cout<<"conflictsTotal=="<<conflictsTotal<<std::endl;
 	}
 	assert(this->_fitness==conflictsTotal);//TODO
 #endif

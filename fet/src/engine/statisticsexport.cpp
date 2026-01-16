@@ -1537,7 +1537,7 @@ QString StatisticsExport::exportStatisticsTeachersStudentsHtml(QWidget* parent, 
 	tmp+="      <tr class=\"foot\"><td></td><td colspan=\""+QString::number(colspan+1)+"\">"+protect2(StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime))+"</td></tr>\n";
 	//workaround end.
 	tmp+="      </tbody>\n";
-	tmp+="    </table>\n";	
+	tmp+="    </table>\n";
 	return tmp;
 }
 

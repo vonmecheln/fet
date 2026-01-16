@@ -1,3 +1,11 @@
+ 7.6.2
+	- Minor bug fixes (reported by Volker Dirr, found using Cppcheck).
+	- Minor bug fix when printing the advanced statistics.
+	- Minor bug fix: the examples directory contained a special character, which gave warnings on some systems (reported by Andrea Primiani). On this
+	occasion, some other example files were renamed, to avoid the special '+' character in a filename, which is not recommended on older systems.
+	- Code improvements.
+	- Updated the Italian translation, by Andrea Primiani.
+	- Updated the Arabic translation, by Benahmed Abdelkrim.
  7.6.1
 	- Bug fixes: when viewing the detailed description of an activity tag in the activity tags dialog, some types of related constraints were not listed.
 	- Code improvements.

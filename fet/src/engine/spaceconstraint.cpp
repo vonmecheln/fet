@@ -3418,12 +3418,8 @@ ConstraintActivityPreferredRoom::ConstraintActivityPreferredRoom(double wp, int 
 bool ConstraintActivityPreferredRoom::operator==(ConstraintActivityPreferredRoom& c){
 	if(this->roomName!=c.roomName)
 		return false;
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	if(QSet<QString>(this->preferredRealRoomsNames.constBegin(), this->preferredRealRoomsNames.constEnd()) !=
 	 QSet<QString>(c.preferredRealRoomsNames.constBegin(), c.preferredRealRoomsNames.constEnd()))
-#else
-	if(this->preferredRealRoomsNames.toSet()!=c.preferredRealRoomsNames.toSet())
-#endif
 		return false;
 	if(this->activityId!=c.activityId)
 		return false;
@@ -3643,11 +3639,7 @@ double ConstraintActivityPreferredRoom::fitness(
 		if(!preferredRealRooms.isEmpty()){
 			assert(this->weightPercentage==100.0);
 		
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 			if(preferredRealRooms!=QSet<int>(c.realRoomsList[this->_activity].constBegin(), c.realRoomsList[this->_activity].constEnd())){
-#else
-			if(preferredRealRooms!=c.realRoomsList[this->_activity].toSet()){
-#endif
 				ok=false;
 
 				if(conflictsString!=nullptr){
@@ -13031,11 +13023,7 @@ void ConstraintActivitiesOccupyMaxDifferentRooms::removeUseless(Rules& r)
 
 void ConstraintActivitiesOccupyMaxDifferentRooms::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintActivitiesOccupyMaxDifferentRooms::isRelatedToActivity(Rules& r, int aid)
@@ -13310,11 +13298,7 @@ void ConstraintActivitiesSameRoomIfConsecutive::removeUseless(Rules& r)
 
 void ConstraintActivitiesSameRoomIfConsecutive::recomputeActivitiesSet()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
-#else
-	activitiesIdsSet=activitiesIds.toSet();
-#endif
 }
 
 bool ConstraintActivitiesSameRoomIfConsecutive::isRelatedToActivity(Rules& r, int aid)

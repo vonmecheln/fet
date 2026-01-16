@@ -331,11 +331,7 @@ TimetableViewRoomsDaysHorizontalForm::TimetableViewRoomsDaysHorizontalForm(QWidg
 	//if(!columnResizeModeInitialized){
 	roomsTimetableTable->horizontalHeader()->setMinimumSectionSize(roomsTimetableTable->horizontalHeader()->defaultSectionSize());
 	//	columnResizeModeInitialized=true;
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 	roomsTimetableTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-#else
-	roomsTimetableTable->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
-#endif
 	//}
 	///////////////
 
@@ -502,11 +498,7 @@ void TimetableViewRoomsDaysHorizontalForm::newTimetableGenerated()
 	//if(!columnResizeModeInitialized){
 	roomsTimetableTable->horizontalHeader()->setMinimumSectionSize(roomsTimetableTable->horizontalHeader()->defaultSectionSize());
 	//	columnResizeModeInitialized=true;
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 	roomsTimetableTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-#else
-	roomsTimetableTable->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
-#endif
 	//}
 	///////////////
 */
@@ -775,17 +767,10 @@ void TimetableViewRoomsDaysHorizontalForm::updateRoomsTimetableTable(){
 					QBrush bg(stringToColor(act->subjectName+" "+act->studentsNames.join(", ")));
 					roomsTimetableTable->item(j, k)->setBackground(bg);
 					double brightness = bg.color().redF()*0.299 + bg.color().greenF()*0.587 + bg.color().blueF()*0.114;
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 					if (brightness<0.5)
 						roomsTimetableTable->item(j, k)->setForeground(QBrush(QColorConstants::White));
 					else
 						roomsTimetableTable->item(j, k)->setForeground(QBrush(QColorConstants::Black));
-#else
-					if (brightness<0.5)
-						roomsTimetableTable->item(j, k)->setForeground(QBrush(Qt::white));
-					else
-						roomsTimetableTable->item(j, k)->setForeground(QBrush(Qt::black));
-#endif
 				}
 				// add colors (end)
 				//end by Marco Vassura
@@ -1258,7 +1243,6 @@ void TimetableViewRoomsDaysHorizontalForm::lock(bool lockTime, bool lockSpace)
 		}
 	}
 	else{
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 		if(addedT>0){
 			added << QCoreApplication::translate("TimetableViewForm", "Added %n locking time constraint(s).",
 			 "See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field."
@@ -1291,40 +1275,6 @@ void TimetableViewRoomsDaysHorizontalForm::lock(bool lockTime, bool lockSpace)
 			 " (open these files with Qt Linguist and see the translation of this field).",
 			 unlockedS);
 		}
-#else
-		if(addedT>0){
-			added << QCoreApplication::translate("TimetableViewForm", "Added %n locking time constraint(s).",
-			 "See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field."
-			 " Also, see https://doc.qt.io/qt-6/i18n-source-translation.html, section 'Handle Plural Forms'."
-			 " You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
-			 " (open these files with Qt Linguist and see the translation of this field).", QCoreApplication::UnicodeUTF8,
-			 addedT);
-		}
-		if(addedS>0){
-			added << QCoreApplication::translate("TimetableViewForm", "Added %n locking space constraint(s).",
-			 "See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field."
-			 " Also, see https://doc.qt.io/qt-6/i18n-source-translation.html, section 'Handle Plural Forms'."
-			 " You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
-			 " (open these files with Qt Linguist and see the translation of this field).", QCoreApplication::UnicodeUTF8,
-			 addedS);
-		}
-		if(unlockedT>0){
-			removed << QCoreApplication::translate("TimetableViewForm", "Removed %n locking time constraint(s).",
-			 "See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field."
-			 " Also, see https://doc.qt.io/qt-6/i18n-source-translation.html, section 'Handle Plural Forms'."
-			 " You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
-			 " (open these files with Qt Linguist and see the translation of this field).", QCoreApplication::UnicodeUTF8,
-			 unlockedT);
-		}
-		if(unlockedS>0){
-			removed << QCoreApplication::translate("TimetableViewForm", "Removed %n locking space constraint(s).",
-			 "See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field."
-			 " Also, see https://doc.qt.io/qt-6/i18n-source-translation.html, section 'Handle Plural Forms'."
-			 " You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
-			 " (open these files with Qt Linguist and see the translation of this field).", QCoreApplication::UnicodeUTF8,
-			 unlockedS);
-		}
-#endif
 	}
 	QString ad=added.join("\n");
 	QString re=removed.join("\n");

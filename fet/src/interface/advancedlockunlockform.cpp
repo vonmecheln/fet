@@ -19,18 +19,10 @@
 #include <QtGlobal>
 #include <QSizePolicy>
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
-#else
-#include <QRegExp>
-#endif
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QtWidgets>
-#else
-#include <QtGui>
-#endif
 
 #include <QMessageBox>
 
@@ -3380,7 +3372,6 @@ bool LockAdvancedDialog::filterOk(Activity* act)
 			else if(contains.at(perm.at(i))==DOESNOTCONTAIN){
 				okPartial=!(s.contains(t, csens));
 			}
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 			else if(contains.at(perm.at(i))==REGEXP){
 				QRegularExpression regExp(t);
 				if(!caseSensitive)
@@ -3393,18 +3384,6 @@ bool LockAdvancedDialog::filterOk(Activity* act)
 					regExp.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
 				okPartial=!(regExp.match(s)).hasMatch();
 			}
-#else
-			else if(contains.at(perm.at(i))==REGEXP){
-				QRegExp regExp(t);
-				regExp.setCaseSensitivity(csens);
-				okPartial=(regExp.indexIn(s)>=0);
-			}
-			else if(contains.at(perm.at(i))==NOTREGEXP){
-				QRegExp regExp(t);
-				regExp.setCaseSensitivity(csens);
-				okPartial=(regExp.indexIn(s)<0);
-			}
-#endif
 			else
 				assert(0);
 				
@@ -3983,7 +3962,6 @@ bool UnlockAdvancedDialog::filterOk(Activity* act)
 			else if(contains.at(perm.at(i))==DOESNOTCONTAIN){
 				okPartial=!(s.contains(t, csens));
 			}
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 			else if(contains.at(perm.at(i))==REGEXP){
 				QRegularExpression regExp(t);
 				if(!caseSensitive)
@@ -3996,18 +3974,6 @@ bool UnlockAdvancedDialog::filterOk(Activity* act)
 					regExp.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
 				okPartial=!(regExp.match(s)).hasMatch();
 			}
-#else
-			else if(contains.at(perm.at(i))==REGEXP){
-				QRegExp regExp(t);
-				regExp.setCaseSensitivity(csens);
-				okPartial=(regExp.indexIn(s)>=0);
-			}
-			else if(contains.at(perm.at(i))==NOTREGEXP){
-				QRegExp regExp(t);
-				regExp.setCaseSensitivity(csens);
-				okPartial=(regExp.indexIn(s)<0);
-			}
-#endif
 			else
 				assert(0);
 				
@@ -4195,11 +4161,7 @@ void AdvancedLockUnlockForm::unlockAdvancedFilterWithoutTimetable(QWidget* paren
 	
 	QSet<int> actsSet;
 	
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	QSet<int> filteredActivitiesIdsSet(taDialog.filteredActivitiesIdsList.constBegin(), taDialog.filteredActivitiesIdsList.constEnd());
-#else
-	QSet<int> filteredActivitiesIdsSet=taDialog.filteredActivitiesIdsList.toSet();
-#endif
 	
 	if(unlockTime || unlockSpace) // ||unlockSpace is added on 2018-06-26, correcting a bug if the user only selected Space and the timetable was not generated.
 		for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList))

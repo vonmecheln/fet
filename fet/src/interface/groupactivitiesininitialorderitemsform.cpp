@@ -20,12 +20,8 @@
 #include <QShortcut>
 #include <QKeySequence>
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
-#else
-#include <QRegExp>
-#endif
 
 #include "longtextmessagebox.h"
 
@@ -375,7 +371,6 @@ bool GroupActivitiesInInitialOrderItemsForm::filterOk(GroupActivitiesInInitialOr
 		else if(contains.at(perm.at(i))==DOESNOTCONTAIN){
 			okPartial=!(s.contains(t, csens));
 		}
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 		else if(contains.at(perm.at(i))==REGEXP){
 			QRegularExpression regExp(t);
 			if(!caseSensitive)
@@ -388,18 +383,6 @@ bool GroupActivitiesInInitialOrderItemsForm::filterOk(GroupActivitiesInInitialOr
 				regExp.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
 			okPartial=!(regExp.match(s)).hasMatch();
 		}
-#else
-		else if(contains.at(perm.at(i))==REGEXP){
-			QRegExp regExp(t);
-			regExp.setCaseSensitivity(csens);
-			okPartial=(regExp.indexIn(s)>=0);
-		}
-		else if(contains.at(perm.at(i))==NOTREGEXP){
-			QRegExp regExp(t);
-			regExp.setCaseSensitivity(csens);
-			okPartial=(regExp.indexIn(s)<0);
-		}
-#endif
 		else
 			assert(0);
 			

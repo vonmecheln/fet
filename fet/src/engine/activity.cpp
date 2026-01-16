@@ -108,11 +108,7 @@ void GroupActivitiesInInitialOrderItem::removeUseless(Rules& r)
 }
 
 void GroupActivitiesInInitialOrderItem::recomputeActivitiesSet(){
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	idsSet=QSet<int>(ids.constBegin(), ids.constEnd());
-#else
-	idsSet=ids.toSet();
-#endif
 }
 
 QString GroupActivitiesInInitialOrderItem::getXmlDescription(Rules& r)

@@ -2120,6 +2120,9 @@ filtered_ok:
 
 		default:
 			assert(0);
+
+			return false;
+
 			break;
 	}
 }
@@ -2381,7 +2384,9 @@ void ListSpaceConstraints::helpClicked()
 				break;
 			}
 
-		default: assert(0);
+		default:
+			assert(0);
+			break;
 	}
 }
 

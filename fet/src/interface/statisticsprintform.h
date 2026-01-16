@@ -108,7 +108,7 @@ private Q_SLOTS:
 	void unselectAll();
 
 	void updateNamesList();
-	QString updateHTMLprintString(bool printAll);
+	QString updateHtmlPrintString(bool printAll);
 	
 	void print();
 	void printPreviewFull();

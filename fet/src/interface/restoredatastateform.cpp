@@ -116,13 +116,8 @@ RestoreDataStateForm::RestoreDataStateForm(QWidget* parent): QDialog(parent)
 		itu++;
 	}
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	descriptionsArchivedBA=QList<QByteArray>(operationWhichWasDoneArchived.cbegin(), operationWhichWasDoneArchived.cend());
 	//fileNames=QList<QString>(stateFileName.cbegin(), stateFileName.cend());
-#else
-	descriptionsArchivedBA=QList<QByteArray>::fromStdList(operationWhichWasDoneArchived);
-	//fileNames=QList<QString>::fromStdList(stateFileName);
-#endif
 
 	assert(descriptionsArchivedBA.count()==restoreDataStateListWidget->count());
 
