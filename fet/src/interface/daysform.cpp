@@ -10,8 +10,7 @@
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU Affero General Public License as        *
- *   published by the Free Software Foundation, either version 3 of the    *
- *   License, or (at your option) any later version.                       *
+ *   published by the Free Software Foundation, version 3 of the License.  *
  *                                                                         *
  ***************************************************************************/
 
@@ -25,11 +24,9 @@
 #include "modifydayform.h"
 #include "modifyrealdayform.h"
 
-/*
 #include <Qt>
 #include <QShortcut>
 #include <QKeySequence>
-*/
 
 #include <QMessageBox>
 #include <QListWidget>
@@ -67,22 +64,24 @@ DaysForm::DaysForm(QWidget* parent): QDialog(parent)
 	connect(modifyRealDayPushButton, &QPushButton::clicked, this, &DaysForm::modifyRealDay);
 	connect(removeDayPushButton, &QPushButton::clicked, this, &DaysForm::removeDay);
 	
-	/*
-	QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
-	connect(addShortcut, &QShortcut::activated, [=]{insertDayPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		insertDayPushButton->setToolTip(QString("+"));
-	//
-	QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), this);
-	connect(modifyShortcut, &QShortcut::activated, [=]{modifyDayPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		modifyDayPushButton->setToolTip(QString("M"));
-	//
-	QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, this);
-	connect(removeShortcut, &QShortcut::activated, [=]{removeDayPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		removeDayPushButton->setToolTip(QString("⌦"));
-	*/
+	if(SHORTCUT_PLUS){
+		QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
+		connect(addShortcut, &QShortcut::activated, [=]{insertDayPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	insertDayPushButton->setToolTip(QString("+"));
+	}
+	if(SHORTCUT_M){
+		QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), this);
+		connect(modifyShortcut, &QShortcut::activated, [=]{modifyDayPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	modifyDayPushButton->setToolTip(QString("M"));
+	}
+	if(SHORTCUT_DELETE){
+		QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, this);
+		connect(removeShortcut, &QShortcut::activated, [=]{removeDayPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	removeDayPushButton->setToolTip(QString("⌦"));
+	}
 
 	connect(daysListWidget, &QListWidget::itemDoubleClicked, this, &DaysForm::modifyDay);
 	connect(realDaysListWidget, &QListWidget::itemDoubleClicked, this, &DaysForm::modifyRealDay);

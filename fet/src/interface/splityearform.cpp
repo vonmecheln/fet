@@ -10,8 +10,7 @@
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU Affero General Public License as        *
- *   published by the Free Software Foundation, either version 3 of the    *
- *   License, or (at your option) any later version.                       *
+ *   published by the Free Software Foundation, version 3 of the License.  *
  *                                                                         *
  ***************************************************************************/
 
@@ -19,11 +18,9 @@
 
 #include "splityearform.h"
 
-/*
 #include <Qt>
 #include <QShortcut>
 #include <QKeySequence>
-*/
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QtWidgets>
@@ -100,22 +97,24 @@ SplitYearForm::SplitYearForm(QWidget* parent, const QString& _year): QDialog(par
 	connect(removePushButton, &QPushButton::clicked, this, &SplitYearForm::removeClicked);
 	connect(removeAllPushButton, &QPushButton::clicked, this, &SplitYearForm::removeAllClicked);
 	
-	/*
-	QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
-	connect(addShortcut, &QShortcut::activated, [=]{addPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		addPushButton->setToolTip(QString("+"));
-	//
-	QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), this);
-	connect(modifyShortcut, &QShortcut::activated, [=]{modifyPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		modifyPushButton->setToolTip(QString("M"));
-	//
-	QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, this);
-	connect(removeShortcut, &QShortcut::activated, [=]{removePushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		removePushButton->setToolTip(QString("⌦"));
-	*/
+	if(SHORTCUT_PLUS){
+		QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
+		connect(addShortcut, &QShortcut::activated, [=]{addPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	addPushButton->setToolTip(QString("+"));
+	}
+	if(SHORTCUT_M){
+		QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), this);
+		connect(modifyShortcut, &QShortcut::activated, [=]{modifyPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	modifyPushButton->setToolTip(QString("M"));
+	}
+	if(SHORTCUT_DELETE){
+		QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, this);
+		connect(removeShortcut, &QShortcut::activated, [=]{removePushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	removePushButton->setToolTip(QString("⌦"));
+	}
 	
 	connect(helpPushButton, &QPushButton::clicked, this, &SplitYearForm::help);
 	connect(resetPushButton, &QPushButton::clicked, this, &SplitYearForm::reset);

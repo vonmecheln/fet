@@ -14,8 +14,7 @@ File generate_pre.h
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU Affero General Public License as        *
- *   published by the Free Software Foundation, either version 3 of the    *
- *   License, or (at your option) any later version.                       *
+ *   published by the Free Software Foundation, version 3 of the License.  *
  *                                                                         *
  ***************************************************************************/
 
@@ -1446,6 +1445,26 @@ extern Matrix1D<QList<ActivitiesMinSimultaneousInSelectedTimeSlots_item*>> amins
 
 bool computeActivitiesMinSimultaneousInSelectedTimeSlots(QWidget* parent);
 
+
+//2025-10-18 - Constraint activities max total number of students in selected time slots
+class ActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots_item
+{
+public:
+	//double weight; -> must be 100.0%
+	QList<int> activitiesList;
+	QSet<int> activitiesSet;
+	QList<int> selectedTimeSlotsList;
+	QSet<int> selectedTimeSlotsSet;
+	int maxNumberOfStudents;
+};
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+extern std::list<ActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots_item> amtnosistsList;
+extern Matrix1D<QList<ActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots_item*>> amtnosistsListForActivity;
+
+bool computeActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots(QWidget* parent);
+
+
 extern bool haveTwoSetsOfActivitiesSameSections;
 extern Matrix1D<bool> activityHasTwoSetsOfActivitiesSameSections;
 
@@ -1454,6 +1473,9 @@ extern Matrix1D<bool> activityHasOccupyMaxConstraints;
 
 extern bool haveActivitiesMaxSimultaneousConstraints;
 extern Matrix1D<bool> activityHasMaxSimultaneousConstraints;
+
+extern bool haveActivitiesMaxNumberOfStudentsConstraints;
+extern Matrix1D<bool> activityHasMaxNumberOfStudentsConstraints;
 
 //2020-05-01 - Constraint max total activities from set in selected time slots
 class ActivitiesMaxTotalFromSetInSelectedTimeSlots_item

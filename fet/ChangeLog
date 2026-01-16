@@ -1,3 +1,13 @@
+ 7.5.4
+	- Changed the license of the program to the GNU Affero General Public License version 3 (Volker Dirr suggested to remove the term 'or later').
+	- Logic bugs fixed in the generation algorithm.
+	- Added a new type of constraint, activities max total number of students in selected time slots (suggested by Furkan Kızılaslan).
+	Unfortunately, this constraint might have a bad behavior in practice; we need to scrutinize it before using it, and use it only if strictly
+	necessary.
+	- Implemented additional keyboard shortcuts: Ctrl+Shift+T/S/R for teachers/students/rooms days horizontal timetables. Also, the user can enable
+	some other keyboard shortcuts from the Settings > Interface menu: + for adding, M for modifying, Delete for removing, A for activating, D for
+	deactivating, C for comments, U for up, J for down, and W for weights (suggested by Alami Mohammed).
+	- Minor improvements.
  7.5.3
 	- Added a new and complete Turkish translation, by the newly assigned translator, Erdem Uygun (he was assisted by ChatGPT).
 	- Updated the Vietnamese translation, which is now complete, by the newly assigned translator, Vũ Ngọc Thành (he was assisted by Gemini and ChatGPT).

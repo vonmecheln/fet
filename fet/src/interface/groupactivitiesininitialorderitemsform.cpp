@@ -10,18 +10,15 @@
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU Affero General Public License as        *
- *   published by the Free Software Foundation, either version 3 of the    *
- *   License, or (at your option) any later version.                       *
+ *   published by the Free Software Foundation, version 3 of the License.  *
  *                                                                         *
  ***************************************************************************/
 
 #include <QMessageBox>
 
-/*
 #include <Qt>
 #include <QShortcut>
 #include <QKeySequence>
-*/
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QRegularExpression>
@@ -96,47 +93,54 @@ GroupActivitiesInInitialOrderItemsForm::GroupActivitiesInInitialOrderItemsForm(Q
 
 	connect(commentsPushButton, &QPushButton::clicked, this, &GroupActivitiesInInitialOrderItemsForm::itemComments);
 
-	/*
-	QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
-	connect(addShortcut, &QShortcut::activated, [=]{addItemPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		addItemPushButton->setToolTip(QString("+"));
-	//
-	QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), this);
-	connect(modifyShortcut, &QShortcut::activated, [=]{modifyItemPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		modifyItemPushButton->setToolTip(QString("M"));
-	//
-	QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, this);
-	connect(removeShortcut, &QShortcut::activated, [=]{removeItemPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		removeItemPushButton->setToolTip(QString("⌦"));
-	//
-	QShortcut* activateShortcut=new QShortcut(QKeySequence(Qt::Key_A), this);
-	connect(activateShortcut, &QShortcut::activated, [=]{activatePushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		activatePushButton->setToolTip(QString("A"));
-	//
-	QShortcut* deactivateShortcut=new QShortcut(QKeySequence(Qt::Key_D), this);
-	connect(deactivateShortcut, &QShortcut::activated, [=]{deactivatePushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		deactivatePushButton->setToolTip(QString("D"));
-	//
-	QShortcut* commentsShortcut=new QShortcut(QKeySequence(Qt::Key_C), this);
-	connect(commentsShortcut, &QShortcut::activated, [=]{commentsPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		commentsPushButton->setToolTip(QString("C"));
-	//
-	QShortcut* upShortcut=new QShortcut(QKeySequence(Qt::Key_U), this);
-	connect(upShortcut, &QShortcut::activated, [=]{moveItemUpPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		moveItemUpPushButton->setToolTip(QString("U"));
-	//
-	QShortcut* downShortcut=new QShortcut(QKeySequence(Qt::Key_J), this);
-	connect(downShortcut, &QShortcut::activated, [=]{moveItemDownPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		moveItemDownPushButton->setToolTip(QString("J"));
-	*/
+	if(SHORTCUT_PLUS){
+		QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
+		connect(addShortcut, &QShortcut::activated, [=]{addItemPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	addItemPushButton->setToolTip(QString("+"));
+	}
+	if(SHORTCUT_M){
+		QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), this);
+		connect(modifyShortcut, &QShortcut::activated, [=]{modifyItemPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	modifyItemPushButton->setToolTip(QString("M"));
+	}
+	if(SHORTCUT_DELETE){
+		QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, this);
+		connect(removeShortcut, &QShortcut::activated, [=]{removeItemPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	removeItemPushButton->setToolTip(QString("⌦"));
+	}
+	if(SHORTCUT_A){
+		QShortcut* activateShortcut=new QShortcut(QKeySequence(Qt::Key_A), this);
+		connect(activateShortcut, &QShortcut::activated, [=]{activatePushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	activatePushButton->setToolTip(QString("A"));
+	}
+	if(SHORTCUT_D){
+		QShortcut* deactivateShortcut=new QShortcut(QKeySequence(Qt::Key_D), this);
+		connect(deactivateShortcut, &QShortcut::activated, [=]{deactivatePushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	deactivatePushButton->setToolTip(QString("D"));
+	}
+	if(SHORTCUT_C){
+		QShortcut* commentsShortcut=new QShortcut(QKeySequence(Qt::Key_C), this);
+		connect(commentsShortcut, &QShortcut::activated, [=]{commentsPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	commentsPushButton->setToolTip(QString("C"));
+	}
+	if(SHORTCUT_U){
+		QShortcut* upShortcut=new QShortcut(QKeySequence(Qt::Key_U), this);
+		connect(upShortcut, &QShortcut::activated, [=]{moveItemUpPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	moveItemUpPushButton->setToolTip(QString("U"));
+	}
+	if(SHORTCUT_J){
+		QShortcut* downShortcut=new QShortcut(QKeySequence(Qt::Key_J), this);
+		connect(downShortcut, &QShortcut::activated, [=]{moveItemDownPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	moveItemDownPushButton->setToolTip(QString("J"));
+	}
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

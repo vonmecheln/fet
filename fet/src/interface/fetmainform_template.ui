@@ -1209,6 +1209,7 @@
      <addaction name="settingsFontAction"/>
      <addaction name="separator"/>
      <addaction name="settingsShowShortcutsOnMainWindowAction"/>
+     <addaction name="settingsOptionalKeyboardShortcutsAction"/>
      <addaction name="separator"/>
      <addaction name="settingsShowToolTipsForConstraintsWithTablesAction"/>
      <addaction name="separator"/>
@@ -1913,6 +1914,9 @@
    <property name="text">
     <string>Days horizontal</string>
    </property>
+   <property name="shortcut">
+    <string extracomment="Shortcut for teachers days horizontal timetable. Keep different T (teachers), S (students), and R (rooms). Best is to keep as English original.">Ctrl+Shift+T</string>
+   </property>
   </action>
   <action name="timetableViewTeachersTimeHorizontalAction">
    <property name="text">
@@ -1923,6 +1927,9 @@
    <property name="text">
     <string>Days horizontal</string>
    </property>
+   <property name="shortcut">
+    <string extracomment="Shortcut for students days horizontal timetable. Keep different T (teachers), S (students), and R (rooms). Best is to keep as English original.">Ctrl+Shift+S</string>
+   </property>
   </action>
   <action name="timetableViewStudentsTimeHorizontalAction">
    <property name="text">
@@ -1932,6 +1939,9 @@
   <action name="timetableViewRoomsDaysHorizontalAction">
    <property name="text">
     <string>Days horizontal</string>
+   </property>
+   <property name="shortcut">
+    <string extracomment="Shortcut for rooms days horizontal timetable. Keep different T (teachers), S (students), and R (rooms). Best is to keep as English original.">Ctrl+Shift+R</string>
    </property>
   </action>
   <action name="timetableViewRoomsTimeHorizontalAction">
@@ -2168,6 +2178,11 @@
    </property>
    <property name="text">
     <string extracomment="The user can select this check box, so that single timetable generation files will be written over the old ones, in the same directory, instead of the program creating a new directory each time">Overwrite single generation files</string>
+   </property>
+  </action>
+  <action name="settingsOptionalKeyboardShortcutsAction">
+   <property name="text">
+    <string>Optional keyboard shortcuts</string>
    </property>
   </action>
  </widget>

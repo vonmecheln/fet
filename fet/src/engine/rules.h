@@ -14,8 +14,7 @@ File rules.h
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU Affero General Public License as        *
- *   published by the Free Software Foundation, either version 3 of the    *
- *   License, or (at your option) any later version.                       *
+ *   published by the Free Software Foundation, version 3 of the License.  *
  *                                                                         *
  ***************************************************************************/
 
@@ -1017,6 +1016,8 @@ private:
 	TimeConstraint* readActivitiesOccupyMinTimeSlotsFromSelection(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readActivitiesMaxSimultaneousInSelectedTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readActivitiesMinSimultaneousInSelectedTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
 	TimeConstraint* readMaxTotalActivitiesFromSetInSelectedTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 

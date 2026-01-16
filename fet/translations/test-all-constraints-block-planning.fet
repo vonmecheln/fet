@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<fet version="7.5.1">
+<fet version="7.5.4">
   <Mode>Block_Planning</Mode>
   <Institution_Name>Default institution</Institution_Name>
   <Comments>Default comments</Comments>
@@ -2740,6 +2740,28 @@
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintActivitiesBeginOrEndTeachersDay>
+    <ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Number_of_Activities>2</Number_of_Activities>
+      <Activity_Id>3</Activity_Id>
+      <Activity_Id>6</Activity_Id>
+      <Number_of_Selected_Time_Slots>3</Number_of_Selected_Time_Slots>
+      <Selected_Time_Slot>
+        <Day>Monday</Day>
+        <Hour>10:00</Hour>
+      </Selected_Time_Slot>
+      <Selected_Time_Slot>
+        <Day>Wednesday</Day>
+        <Hour>13:00</Hour>
+      </Selected_Time_Slot>
+      <Selected_Time_Slot>
+        <Day>Thursday</Day>
+        <Hour>14:00</Hour>
+      </Selected_Time_Slot>
+      <Max_Total_Number_of_Students>20</Max_Total_Number_of_Students>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots>
   </Time_Constraints_List>
   <Space_Constraints_List>
     <ConstraintBasicCompulsorySpace>

@@ -11,8 +11,7 @@
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU Affero General Public License as        *
- *   published by the Free Software Foundation, either version 3 of the    *
- *   License, or (at your option) any later version.                       *
+ *   published by the Free Software Foundation, version 3 of the License.  *
  *                                                                         *
  ***************************************************************************/
 
@@ -24,11 +23,9 @@
 
 #include <QMessageBox>
 
-/*
 #include <Qt>
 #include <QShortcut>
 #include <QKeySequence>
-*/
 
 #include <QListWidget>
 #include <QScrollBar>
@@ -73,37 +70,42 @@ BuildingsForm::BuildingsForm(QWidget* parent): QDialog(parent)
 	connect(codePushButton, &QPushButton::clicked, this, &BuildingsForm::code);
 	connect(commentsPushButton, &QPushButton::clicked, this, &BuildingsForm::comments);
 
-	/*
-	QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
-	connect(addShortcut, &QShortcut::activated, [=]{addBuildingPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		addBuildingPushButton->setToolTip(QString("+"));
-	//
-	QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), this);
-	connect(modifyShortcut, &QShortcut::activated, [=]{modifyBuildingPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		modifyBuildingPushButton->setToolTip(QString("M"));
-	//
-	QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, this);
-	connect(removeShortcut, &QShortcut::activated, [=]{removeBuildingPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		removeBuildingPushButton->setToolTip(QString("⌦"));
-	//
-	QShortcut* commentsShortcut=new QShortcut(QKeySequence(Qt::Key_C), this);
-	connect(commentsShortcut, &QShortcut::activated, [=]{commentsPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		commentsPushButton->setToolTip(QString("C"));
-	//
-	QShortcut* upShortcut=new QShortcut(QKeySequence(Qt::Key_U), this);
-	connect(upShortcut, &QShortcut::activated, [=]{moveBuildingUpPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		moveBuildingUpPushButton->setToolTip(QString("U"));
-	//
-	QShortcut* downShortcut=new QShortcut(QKeySequence(Qt::Key_J), this);
-	connect(downShortcut, &QShortcut::activated, [=]{moveBuildingDownPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		moveBuildingDownPushButton->setToolTip(QString("J"));
-	*/
+	if(SHORTCUT_PLUS){
+		QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
+		connect(addShortcut, &QShortcut::activated, [=]{addBuildingPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	addBuildingPushButton->setToolTip(QString("+"));
+	}
+	if(SHORTCUT_M){
+		QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), this);
+		connect(modifyShortcut, &QShortcut::activated, [=]{modifyBuildingPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	modifyBuildingPushButton->setToolTip(QString("M"));
+	}
+	if(SHORTCUT_DELETE){
+		QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, this);
+		connect(removeShortcut, &QShortcut::activated, [=]{removeBuildingPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	removeBuildingPushButton->setToolTip(QString("⌦"));
+	}
+	if(SHORTCUT_C){
+		QShortcut* commentsShortcut=new QShortcut(QKeySequence(Qt::Key_C), this);
+		connect(commentsShortcut, &QShortcut::activated, [=]{commentsPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	commentsPushButton->setToolTip(QString("C"));
+	}
+	if(SHORTCUT_U){
+		QShortcut* upShortcut=new QShortcut(QKeySequence(Qt::Key_U), this);
+		connect(upShortcut, &QShortcut::activated, [=]{moveBuildingUpPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	moveBuildingUpPushButton->setToolTip(QString("U"));
+	}
+	if(SHORTCUT_J){
+		QShortcut* downShortcut=new QShortcut(QKeySequence(Qt::Key_J), this);
+		connect(downShortcut, &QShortcut::activated, [=]{moveBuildingDownPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	moveBuildingDownPushButton->setToolTip(QString("J"));
+	}
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

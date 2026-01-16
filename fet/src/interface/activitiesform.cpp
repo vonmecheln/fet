@@ -10,8 +10,7 @@
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU Affero General Public License as        *
- *   published by the Free Software Foundation, either version 3 of the    *
- *   License, or (at your option) any later version.                       *
+ *   published by the Free Software Foundation, version 3 of the License.  *
  *                                                                         *
  ***************************************************************************/
 
@@ -40,11 +39,9 @@
 #include <QRegExp>
 #endif
 
-/*
 #include <Qt>
 #include <QShortcut>
 #include <QKeySequence>
-*/
 
 #include <QString>
 #include <QMessageBox>
@@ -136,37 +133,42 @@ ActivitiesForm::ActivitiesForm(QWidget* parent, const QString& teacherName, cons
 	
 	connect(activityTagsPushButton, &QPushButton::clicked, this, &ActivitiesForm::changeActivityTags);
 
-	/*
-	QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
-	connect(addShortcut, &QShortcut::activated, [=]{addActivityPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		addActivityPushButton->setToolTip(QString("+"));
-	//
-	QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), this);
-	connect(modifyShortcut, &QShortcut::activated, [=]{modifyActivityPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		modifyActivityPushButton->setToolTip(QString("M"));
-	//
-	QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, this);
-	connect(removeShortcut, &QShortcut::activated, [=]{removeActivitiesPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		removeActivitiesPushButton->setToolTip(QString("⌦"));
-	//
-	QShortcut* activateShortcut=new QShortcut(QKeySequence(Qt::Key_A), this);
-	connect(activateShortcut, &QShortcut::activated, [=]{activatePushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		activatePushButton->setToolTip(QString("A"));
-	//
-	QShortcut* deactivateShortcut=new QShortcut(QKeySequence(Qt::Key_D), this);
-	connect(deactivateShortcut, &QShortcut::activated, [=]{deactivatePushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		deactivatePushButton->setToolTip(QString("D"));
-	//
-	QShortcut* commentsShortcut=new QShortcut(QKeySequence(Qt::Key_C), this);
-	connect(commentsShortcut, &QShortcut::activated, [=]{commentsPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		commentsPushButton->setToolTip(QString("C"));
-	*/
+	if(SHORTCUT_PLUS){
+		QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
+		connect(addShortcut, &QShortcut::activated, [=]{addActivityPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	addActivityPushButton->setToolTip(QString("+"));
+	}
+	if(SHORTCUT_M){
+		QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), this);
+		connect(modifyShortcut, &QShortcut::activated, [=]{modifyActivityPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	modifyActivityPushButton->setToolTip(QString("M"));
+	}
+	if(SHORTCUT_DELETE){
+		QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, this);
+		connect(removeShortcut, &QShortcut::activated, [=]{removeActivitiesPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	removeActivitiesPushButton->setToolTip(QString("⌦"));
+	}
+	if(SHORTCUT_A){
+		QShortcut* activateShortcut=new QShortcut(QKeySequence(Qt::Key_A), this);
+		connect(activateShortcut, &QShortcut::activated, [=]{activatePushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	activatePushButton->setToolTip(QString("A"));
+	}
+	if(SHORTCUT_D){
+		QShortcut* deactivateShortcut=new QShortcut(QKeySequence(Qt::Key_D), this);
+		connect(deactivateShortcut, &QShortcut::activated, [=]{deactivatePushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	deactivatePushButton->setToolTip(QString("D"));
+	}
+	if(SHORTCUT_C){
+		QShortcut* commentsShortcut=new QShortcut(QKeySequence(Qt::Key_C), this);
+		connect(commentsShortcut, &QShortcut::activated, [=]{commentsPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	commentsPushButton->setToolTip(QString("C"));
+	}
 
 	//////////////////
 	QString settingsName="ActivitiesAdvancedFilterForm";

@@ -10,8 +10,7 @@
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU Affero General Public License as        *
- *   published by the Free Software Foundation, either version 3 of the    *
- *   License, or (at your option) any later version.                       *
+ *   published by the Free Software Foundation, version 3 of the License.  *
  *                                                                         *
  ***************************************************************************/
 
@@ -25,11 +24,9 @@
 #include "modifyhourform.h"
 #include "modifyrealhourform.h"
 
-/*
 #include <Qt>
 #include <QShortcut>
 #include <QKeySequence>
-*/
 
 #include <QMessageBox>
 #include <QListWidget>
@@ -70,22 +67,24 @@ HoursForm::HoursForm(QWidget* parent): QDialog(parent)
 	connect(hoursListWidget, &QListWidget::itemDoubleClicked, this, &HoursForm::modifyHour);
 	connect(realHoursListWidget, &QListWidget::itemDoubleClicked, this, &HoursForm::modifyRealHour);
 
-	/*
-	QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
-	connect(addShortcut, &QShortcut::activated, [=]{insertHourPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		insertHourPushButton->setToolTip(QString("+"));
-	//
-	QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), this);
-	connect(modifyShortcut, &QShortcut::activated, [=]{modifyHourPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		modifyHourPushButton->setToolTip(QString("M"));
-	//
-	QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, this);
-	connect(removeShortcut, &QShortcut::activated, [=]{removeHourPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		removeHourPushButton->setToolTip(QString("⌦"));
-	*/
+	if(SHORTCUT_PLUS){
+		QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
+		connect(addShortcut, &QShortcut::activated, [=]{insertHourPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	insertHourPushButton->setToolTip(QString("+"));
+	}
+	if(SHORTCUT_M){
+		QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), this);
+		connect(modifyShortcut, &QShortcut::activated, [=]{modifyHourPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	modifyHourPushButton->setToolTip(QString("M"));
+	}
+	if(SHORTCUT_DELETE){
+		QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, this);
+		connect(removeShortcut, &QShortcut::activated, [=]{removeHourPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	removeHourPushButton->setToolTip(QString("⌦"));
+	}
 
 	disconnect(nHoursSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &HoursForm::numberOfHoursChanged);
 	nHoursSpinBox->setMinimum(1);

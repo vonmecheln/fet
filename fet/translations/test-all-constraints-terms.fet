@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<fet version="7.5.1">
+<fet version="7.5.4">
   <Mode>Terms</Mode>
   <Institution_Name>Default institution</Institution_Name>
   <Comments>Default comments</Comments>
@@ -2761,6 +2761,37 @@
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintActivitiesBeginOrEndTeachersDay>
+    <ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Number_of_Activities>3</Number_of_Activities>
+      <Activity_Id>7</Activity_Id>
+      <Activity_Id>4</Activity_Id>
+      <Activity_Id>2</Activity_Id>
+      <Number_of_Selected_Time_Slots>5</Number_of_Selected_Time_Slots>
+      <Selected_Time_Slot>
+        <Day>Monday</Day>
+        <Hour>09:00</Hour>
+      </Selected_Time_Slot>
+      <Selected_Time_Slot>
+        <Day>Tuesday</Day>
+        <Hour>10:00</Hour>
+      </Selected_Time_Slot>
+      <Selected_Time_Slot>
+        <Day>Tuesday</Day>
+        <Hour>12:00</Hour>
+      </Selected_Time_Slot>
+      <Selected_Time_Slot>
+        <Day>Tuesday</Day>
+        <Hour>15:00</Hour>
+      </Selected_Time_Slot>
+      <Selected_Time_Slot>
+        <Day>Thursday</Day>
+        <Hour>14:00</Hour>
+      </Selected_Time_Slot>
+      <Max_Total_Number_of_Students>5</Max_Total_Number_of_Students>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots>
   </Time_Constraints_List>
   <Space_Constraints_List>
     <ConstraintBasicCompulsorySpace>

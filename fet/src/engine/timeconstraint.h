@@ -14,8 +14,7 @@ File timeconstraint.h
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU Affero General Public License as        *
- *   published by the Free Software Foundation, either version 3 of the    *
- *   License, or (at your option) any later version.                       *
+ *   published by the Free Software Foundation, version 3 of the License.  *
  *                                                                         *
  ***************************************************************************/
 
@@ -418,10 +417,12 @@ const int CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DO_NOT_OVERLAP											=
 
 const int CONSTRAINT_ACTIVITIES_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION									=248;
 
-const int CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_STUDENTS_DAY									=249;
-const int CONSTRAINT_ACTIVITIES_BEGIN_OR_END_STUDENTS_DAY									=250;
-const int CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_TEACHERS_DAY									=251;
-const int CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY									=252;
+const int CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_STUDENTS_DAY														=249;
+const int CONSTRAINT_ACTIVITIES_BEGIN_OR_END_STUDENTS_DAY														=250;
+const int CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_TEACHERS_DAY														=251;
+const int CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY														=252;
+
+const int CONSTRAINT_ACTIVITIES_MAX_TOTAL_NUMBER_OF_STUDENTS_IN_SELECTED_TIME_SLOTS								=253;
 
 class QDataStream;
 
@@ -12832,6 +12833,57 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
+class ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots)
+
+public:
+	QList<int> activitiesIds;
+
+	QSet<int> activitiesIdsSet;
+	
+	QList<int> selectedDays;
+	QList<int> selectedHours;
+	
+	int maxNumberOfStudents;
+
+	//internal variables
+	QList<int> _activitiesIndices;
+
+	ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots();
+
+	ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots(double wp, const QList<int>& a_L, const QList<int>& d_L, const QList<int>& h_L, int max_n_st);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	void removeUseless(Rules& r);
+
+	void recomputeActivitiesSet();
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
 //1
 QDataStream& operator<<(QDataStream& stream, const ConstraintBasicCompulsoryTime& tc);
 //2
@@ -13336,6 +13388,8 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesBeginOrEn
 QDataStream& operator<<(QDataStream& stream, const ConstraintActivityBeginsOrEndsTeachersDay& tc);
 //252
 QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesBeginOrEndTeachersDay& tc);
+//253
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots& tc);
 
 //1
 QDataStream& operator>>(QDataStream& stream, ConstraintBasicCompulsoryTime& tc);
@@ -13841,5 +13895,7 @@ QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesBeginOrEndStude
 QDataStream& operator>>(QDataStream& stream, ConstraintActivityBeginsOrEndsTeachersDay& tc);
 //252
 QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesBeginOrEndTeachersDay& tc);
+//253
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots& tc);
 
 #endif

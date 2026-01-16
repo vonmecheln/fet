@@ -11312,37 +11312,7 @@ A group of teachers works in the same time slot.
 
 749--------DONE in FET-7.5.1 on 27 September 2025-----------
 
-750--------------'Ctrl+H' is DONE in FET-7.4.7--------------
-From Alami Mohammed (on forum):
-
-https://lalescu.ro/liviu/fet/forum/index.php?topic=6526.0
-
-Currently, we have the Ctrl+G shortcut for generating an individual timetable, which is very convenient.
-I would like to suggest adding two more shortcuts:
-
-DONE Ctrl+H → for generating multiple timetables
-
-Delete (Supp) key → for deleting selected items
-
----
-
-I'd also like to suggest some additional shortcuts for quickly showing the horizontal timetables:
-
-Ctrl+Shift+T → Teachers' timetables (days as rows)
-
-Ctrl+Shift+S → Students' timetables (days as rows)
-
-Ctrl+Shift+R → Rooms' timetables (days as rows)
-
-These would make it much faster to switch between the different horizontal views.
-
----
-
-Thank you for your clarification. I understand the concern about shortcuts interfering with normal typing. Maybe a good compromise would be to keep
-these shortcuts but allow them to be optional (enabled/disabled from Settings > Interface), just like the tool tips.
-
-This way, users who prefer the mouse can continue as before, and those who want to work faster with shortcuts (for example: Ctrl+Shift+S for results,
-T for teachers, R for rooms) can enable them.
+750------------------------DONE-----------------------------
 
 751---------------------------------------------------------
 From Alami Mohammed (on forum):
@@ -11619,22 +11589,6 @@ I would also kindly suggest adding in the future:
 
 Export timetables to Excel (XLSX)
 
-Shortcuts for horizontal timetables:
-
-Ctrl+Shift+S → Students (days as rows)
-
-Ctrl+Shift+T → Teachers (days as rows)
-
-Ctrl+Shift+R → Rooms (days as rows)
-
----
-
-Thank you for your clarification. I understand the concern about shortcuts interfering with normal typing. Maybe a good compromise would be to keep
-these shortcuts but allow them to be optional (enabled/disabled from Settings > Interface), just like the tool tips.
-
-This way, users who prefer the mouse can continue as before, and those who want to work faster with shortcuts (for example: Ctrl+Shift+S for results,
-T for teachers, R for rooms) can enable them.
-
 767---------------------------------------------------------
 From Alami Mohammed (on forum):
 
@@ -11772,3 +11726,84 @@ Perhaps you can also add a time/space constraint between students
 So I don't have to put it to all their activities
 Ie I may have three years. A1, A1SYN, A1ENG
 These must not overlap but currently I have to put that constraint in all their activities
+
+772---------------------------------------------------------
+From Michael Chourdakis (on Facebook):
+
+I'm introducing ConstraintTeacherPreferredRooms, in which the processor will convert to preferred rooms for activities before sending to FET.
+I will AND it with the lesson preferred rooms and place the result in the activity preferred rooms.
+
+I'd suggest you drop the home room and replace it with that.
+
+The same for ConstraintStudentsSetPreferredRooms. A class might have a preferred room. This is VERY common.
+
+773---------------------------------------------------------
+From Michael Chourdakis (on Facebook):
+
+It would help IF, if a specific thread makes it to something high, the rest of the threads could be "restarted" at that position.
+
+774---------------------------------------------------------
+From Michael Chourdakis (on Facebook):
+
+For presentation
+I have for example year A and A1 A2
+But, at some point, another set of students create two classes,
+So, it would be nice if a print out of years can be combined in html output
+
+Liviu Lalescu:
+
+Combine 2 years in HTML printout?
+
+Michael Chourdakis:
+
+Let me explain
+I have a year A and two groups A1 and A2
+But, for two hours per week, these A students form another set of groups, AX and AY. These activities are separated.
+So I want a print which includes All the students that belong to A
+Not one with A and one with the other year
+
+Liviu Lalescu:
+
+I don't understand, you have in HTML results the years' timetable
+
+Michael Chourdakis:
+
+Let me give another example
+I have students 1, 2, 3 and 4
+Students 1 and 2 belong to A1 Group and 3, 4 belong to A2
+I have another year Az which has two groups AX and AY. AX has students 1 and 3 and AY 2 and 4
+So I want a print for student 1 with both of its years
+
+775---------------------------------------------------------
+From Michael Chourdakis (on Facebook):
+
+what would help is to specify a color, so html colors are groupped.
+
+Liviu Lalescu:
+
+You mean the user to specify the colors, not random?
+
+Michael Chourdakis:
+
+Yes. I want a tag to have a specific color so in the print I can debug more easily.
+
+776---------------------------------------------------------
+From Michael Chourdakis (on Facebook):
+
+It would greatly help if once you reach a long problem (i.e. stuck in activity X, to show a log to show all failed constraints for the activity that can't be placed).
+
+Liviu Lalescu:
+
+Unfortunately, I think this is impossible... but I will add in the TODO, and think of it, maybe it is possible.
+
+Michael Chourdakis:
+
+Just keep a log of the constraints that fail.
+
+777---------------------------------------------------------
+From Michael Chourdakis (on Facebook):
+
+Also, something that would help. In Win32 non console it is not posssible to send a ctrl+c. Perhaps fet-cl would accept a command line flag of a "termination"
+HANDLE of an EVent -> Easier to communicate
+also, something that would help: the ability to "resume".
+i.e. i stop a fet generation and keep the current state to restart later, perhaps with different seeds

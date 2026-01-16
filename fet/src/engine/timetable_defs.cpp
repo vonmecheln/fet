@@ -14,8 +14,7 @@ File timetable_defs.cpp
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU Affero General Public License as        *
- *   published by the Free Software Foundation, either version 3 of the    *
- *   License, or (at your option) any later version.                       *
+ *   published by the Free Software Foundation, version 3 of the License.  *
  *                                                                         *
  ***************************************************************************/
 
@@ -62,14 +61,14 @@ int STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
 /**
 The FET version
 */
-const QString FET_VERSION="7.5.3";
+const QString FET_VERSION="7.5.4";
 
 /**
 The version number of the data format, useful when saving/restoring the history to/from the disk.
 On any change of the data format, no matter how small or large, this number must be updated;
 older or newer data history versions are not compatible.
 */
-const QString FET_DATA_FORMAT_VERSION="7.5.2"; //started from "6.15.1", since FET-6.15.1.
+const QString FET_DATA_FORMAT_VERSION="7.5.4"; //started from "6.15.1", since FET-6.15.1.
 
 /**
 The FET language

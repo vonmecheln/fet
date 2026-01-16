@@ -10,8 +10,7 @@
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU Affero General Public License as        *
- *   published by the Free Software Foundation, either version 3 of the    *
- *   License, or (at your option) any later version.                       *
+ *   published by the Free Software Foundation, version 3 of the License.  *
  *                                                                         *
  ***************************************************************************/
 
@@ -938,6 +937,16 @@ bool CONFIRM_SAVE_TIMETABLE=true;
 
 bool CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS=true;
 
+bool SHORTCUT_PLUS=false;
+bool SHORTCUT_M=false;
+bool SHORTCUT_DELETE=false;
+bool SHORTCUT_A=false;
+bool SHORTCUT_D=false;
+bool SHORTCUT_C=false;
+bool SHORTCUT_U=false;
+bool SHORTCUT_J=false;
+bool SHORTCUT_W=false;
+
 //extern MRG32k3a rng;
 
 const int STATUS_BAR_MILLISECONDS=2500;
@@ -1578,6 +1587,8 @@ FetMainForm::FetMainForm()
 
 	setEnabledIcon(groupActivitiesInInitialOrderAction, ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
 
+	connect(settingsOptionalKeyboardShortcutsAction, &QAction::triggered, this, &FetMainForm::settingsOptionalKeyboardShortcutsAction_triggered);
+
 	//2024-01-25
 	connect(settingsAutosaveAction, &QAction::triggered, this, &FetMainForm::settingsAutosaveAction_triggered);
 
@@ -1939,6 +1950,8 @@ void FetMainForm::createActionsForConstraints()
 	dataTimeConstraintsActivitiesSameStartingTimeAction = new QAction(this);
 
 	dataTimeConstraintsTwoSetsOfActivitiesSameSectionsAction = new QAction(this);
+
+	dataTimeConstraintsActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlotsAction = new QAction(this);
 
 	dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction = new QAction(this);
 	dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction = new QAction(this);
@@ -2307,6 +2320,8 @@ void FetMainForm::createActionsForConstraints()
 	connect(dataTimeConstraintsActivitiesSameStartingTimeAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesSameStartingTimeAction_triggered);
 
 	connect(dataTimeConstraintsTwoSetsOfActivitiesSameSectionsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTwoSetsOfActivitiesSameSectionsAction_triggered);
+
+	connect(dataTimeConstraintsActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlotsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlotsAction_triggered);
 
 	connect(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction_triggered);
 	connect(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction_triggered);
@@ -2725,6 +2740,8 @@ void FetMainForm::retranslateConstraints()
 	dataTimeConstraintsActivitiesSameStartingTimeAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities has same starting time (day+hour)", nullptr));
 
 	dataTimeConstraintsTwoSetsOfActivitiesSameSectionsAction->setText(QCoreApplication::translate("FetMainForm_template", "Two sets of activities have the same sections", nullptr));
+
+	dataTimeConstraintsActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlotsAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities has a max total number of students in selected time slots", nullptr));
 
 	dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities occupies max time slots from selection", nullptr));
 	dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities occupies min time slots from selection", nullptr));
@@ -3365,6 +3382,9 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesOverlapCompletelyOrDoNotOverlapAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction);
+
+		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlotsAction);
+
 		menuActivities_others_3_time_constraints->addSeparator();
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsMinGapsBetweenActivitiesAction);
 
@@ -3866,7 +3886,10 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesOverlapCompletelyOrDoNotOverlapAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction);
+		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlotsAction);
+
 		menuActivities_others_3_time_constraints->addSeparator();
+
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsMinGapsBetweenActivitiesAction);
 
 		menuMisc_space_constraints->addAction(dataSpaceConstraintsBasicCompulsorySpaceAction);
@@ -4193,6 +4216,9 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesOverlapCompletelyOrDoNotOverlapAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction);
+
+		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlotsAction);
+
 		menuActivities_others_3_time_constraints->addSeparator();
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsMinGapsBetweenActivitiesAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsMaxGapsBetweenActivitiesAction);
@@ -4508,6 +4534,8 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction);
 
+		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlotsAction);
+
 		menuActivities_others_3_time_constraints->addSeparator();
 
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsMinGapsBetweenActivitiesAction);
@@ -4814,6 +4842,79 @@ void FetMainForm::settingsStyleAndColorSchemeAction_triggered()
 	
 	return;
 #endif
+}
+
+void FetMainForm::settingsOptionalKeyboardShortcutsAction_triggered()
+{
+	QDialog dialog(this);
+	
+	dialog.setWindowTitle(tr("Optional keyboard shortcuts"));
+	
+	QCheckBox* cbPlus=new QCheckBox(tr("'%1' for adding a new item", "Keyboard shortcut option. %1 is '+' on the keyboard.").arg("+"));
+	cbPlus->setChecked(SHORTCUT_PLUS);
+
+	QCheckBox* cbM=new QCheckBox(tr("'%1' for modifying the selected item", "Keyboard shortcut option. %1 is 'M' on the keyboard.").arg('M'));
+	cbM->setChecked(SHORTCUT_M);
+
+	QCheckBox* cbDelete=new QCheckBox(tr("'%1' for removing the selected item(s)", "Keyboard shortcut option. %1 is 'Delete' on the keyboard (which is a separate string to translate).").arg(tr("Delete", "The 'Delete' key on the keyboard.")));
+	cbDelete->setChecked(SHORTCUT_DELETE);
+
+	QCheckBox* cbA=new QCheckBox(tr("'%1' for activating the selected item(s)", "Keyboard shortcut option. %1 is 'A' on the keyboard.").arg("A"));
+	cbA->setChecked(SHORTCUT_A);
+
+	QCheckBox* cbD=new QCheckBox(tr("'%1' for deactivating the selected item(s)", "Keyboard shortcut option. %1 is 'D' on the keyboard.").arg("D"));
+	cbD->setChecked(SHORTCUT_D);
+
+	QCheckBox* cbC=new QCheckBox(tr("'%1' for modifying the comments of the selected item", "Keyboard shortcut option. %1 is 'C' on the keyboard.").arg("C"));
+	cbC->setChecked(SHORTCUT_C);
+
+	QCheckBox* cbU=new QCheckBox(tr("'%1' for moving the selected item up", "Keyboard shortcut option. %1 is 'U' on the keyboard.").arg("U"));
+	cbU->setChecked(SHORTCUT_U);
+
+	QCheckBox* cbJ=new QCheckBox(tr("'%1' for moving the selected item down", "Keyboard shortcut option. %1 is 'J' on the keyboard.").arg("J"));
+	cbJ->setChecked(SHORTCUT_J);
+
+	QCheckBox* cbW=new QCheckBox(tr("'%1' for changing the weight(s) of the selected item(s)", "Keyboard shortcut option. %1 is 'W' on the keyboard.").arg("W"));
+	cbW->setChecked(SHORTCUT_W);
+	
+	QDialogButtonBox* buttonBox=new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+
+	connect(buttonBox, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
+	connect(buttonBox, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
+	
+	QVBoxLayout* layout=new QVBoxLayout;
+	
+	layout->addWidget(cbPlus);
+	layout->addWidget(cbM);
+	layout->addWidget(cbDelete);
+	layout->addWidget(cbA);
+	layout->addWidget(cbD);
+	layout->addWidget(cbC);
+	layout->addWidget(cbU);
+	layout->addWidget(cbJ);
+	layout->addWidget(cbW);
+	layout->addStretch();
+	layout->addWidget(buttonBox);
+	
+	dialog.setLayout(layout);
+
+	centerWidgetOnScreen(&dialog);
+	restoreFETDialogGeometry(&dialog, "OptionalKeyboardShortcutsForm");
+
+	int res=dialog.exec();
+	if(res==QDialog::Accepted){
+		SHORTCUT_PLUS=cbPlus->isChecked();
+		SHORTCUT_M=cbM->isChecked();
+		SHORTCUT_DELETE=cbDelete->isChecked();
+		SHORTCUT_A=cbA->isChecked();
+		SHORTCUT_D=cbD->isChecked();
+		SHORTCUT_C=cbC->isChecked();
+		SHORTCUT_U=cbU->isChecked();
+		SHORTCUT_J=cbJ->isChecked();
+		SHORTCUT_W=cbW->isChecked();
+	}
+
+	saveFETDialogGeometry(&dialog, "OptionalKeyboardShortcutsForm");
 }
 
 void FetMainForm::settingsAutosaveAction_triggered()
@@ -7595,6 +7696,26 @@ void FetMainForm::dataTimeConstraintsTwoSetsOfActivitiesSameSectionsAction_trigg
 	setParentAndOtherThings(&form, this);
 	form.exec();*/
 	ListTimeConstraints ltcdialog(this, CONSTRAINT_TWO_SETS_OF_ACTIVITIES_SAME_SECTIONS);
+}
+
+void FetMainForm::dataTimeConstraintsActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlotsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	/*ConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_MAX_TOTAL_NUMBER_OF_STUDENTS_IN_SELECTED_TIME_SLOTS);
 }
 
 void FetMainForm::dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction_triggered()
@@ -14594,6 +14715,9 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	s+=tr("72")+QString(". ")+tr("Overwrite single generation files will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
+	s+=tr("73")+QString(". ")+tr("All the optional keyboard shortcuts will disabled.");
+	s+="\n";
+
 	switch( LongTextMessageBox::largeConfirmation( this, tr("FET confirmation"), s,
 	 tr("&Yes"), tr("&No"), QString(), 0 , 1 ) ) {
 	case 0: // Yes
@@ -15497,6 +15621,16 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	OPERATIONS_AUTOSAVE=1;
 	DIRECTORY_AUTOSAVE="";
 	SUFFIX_FILENAME_AUTOSAVE="_AUTOSAVE";
+	
+	SHORTCUT_PLUS=false;
+	SHORTCUT_M=false;
+	SHORTCUT_DELETE=false;
+	SHORTCUT_A=false;
+	SHORTCUT_D=false;
+	SHORTCUT_C=false;
+	SHORTCUT_U=false;
+	SHORTCUT_J=false;
+	SHORTCUT_W=false;
 
 	setLanguage(*pqapplication, this);
 	setCurrentFile(INPUT_FILENAME_XML);

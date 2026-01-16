@@ -10,8 +10,7 @@
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU Affero General Public License as        *
- *   published by the Free Software Foundation, either version 3 of the    *
- *   License, or (at your option) any later version.                       *
+ *   published by the Free Software Foundation, version 3 of the License.  *
  *                                                                         *
  ***************************************************************************/
 
@@ -35,11 +34,9 @@
 
 #include <QMessageBox>
 
-/*
 #include <Qt>
 #include <QShortcut>
 #include <QKeySequence>
-*/
 
 #include <QScrollBar>
 #include <QHBoxLayout>
@@ -3117,6 +3114,24 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				break;
 			}
+		//253
+		case CONSTRAINT_ACTIVITIES_MAX_TOTAL_NUMBER_OF_STUDENTS_IN_SELECTED_TIME_SLOTS:
+			{
+				dialogTitle=tr("Constraints activities max total number of students in selected time slots", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots");
+
+				firstInstructionsLabel=new QLabel(tr("WARNING: potentially very SLOW constraint! Use ONLY if strictly necessary! Read the Help!"));
+				secondInstructionsLabel=new QLabel(tr("Note: it is recommended to use this constraint only if strictly necessary and not redundantly, because it might be very slow."));
+
+				teachersComboBox=new QComboBox;
+				studentsComboBox=new QComboBox;
+				subjectsComboBox=new QComboBox;
+				activityTagsComboBox=new QComboBox;
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -3460,42 +3475,48 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 	connect(commentsPushButton, &QPushButton::clicked, this, &ListTimeConstraints::constraintComments);
 	connect(weightsPushButton, &QPushButton::clicked, this, &ListTimeConstraints::changeWeights);
 
-	/*
-	QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), dialog);
-	connect(addShortcut, &QShortcut::activated, [=]{addPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		addPushButton->setToolTip(QString("+"));
-	//
-	QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), dialog);
-	connect(modifyShortcut, &QShortcut::activated, [=]{modifyPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		modifyPushButton->setToolTip(QString("M"));
-	//
-	QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, dialog);
-	connect(removeShortcut, &QShortcut::activated, [=]{removePushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		removePushButton->setToolTip(QString("⌦"));
-	//
-	QShortcut* activateShortcut=new QShortcut(QKeySequence(Qt::Key_A), dialog);
-	connect(activateShortcut, &QShortcut::activated, [=]{activatePushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		activatePushButton->setToolTip(QString("A"));
-	//
-	QShortcut* deactivateShortcut=new QShortcut(QKeySequence(Qt::Key_D), dialog);
-	connect(deactivateShortcut, &QShortcut::activated, [=]{deactivatePushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		deactivatePushButton->setToolTip(QString("D"));
-	//
-	QShortcut* commentsShortcut=new QShortcut(QKeySequence(Qt::Key_C), dialog);
-	connect(commentsShortcut, &QShortcut::activated, [=]{commentsPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		commentsPushButton->setToolTip(QString("C"));
-	//
-	QShortcut* weightsShortcut=new QShortcut(QKeySequence(Qt::Key_W), dialog);
-	connect(weightsShortcut, &QShortcut::activated, [=]{weightsPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		weightsPushButton->setToolTip(QString("W"));
-	*/
+	if(SHORTCUT_PLUS){
+		QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), dialog);
+		connect(addShortcut, &QShortcut::activated, [=]{addPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	addPushButton->setToolTip(QString("+"));
+	}
+	if(SHORTCUT_M){
+		QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), dialog);
+		connect(modifyShortcut, &QShortcut::activated, [=]{modifyPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	modifyPushButton->setToolTip(QString("M"));
+	}
+	if(SHORTCUT_DELETE){
+		QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, dialog);
+		connect(removeShortcut, &QShortcut::activated, [=]{removePushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	removePushButton->setToolTip(QString("⌦"));
+	}
+	if(SHORTCUT_A){
+		QShortcut* activateShortcut=new QShortcut(QKeySequence(Qt::Key_A), dialog);
+		connect(activateShortcut, &QShortcut::activated, [=]{activatePushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	activatePushButton->setToolTip(QString("A"));
+	}
+	if(SHORTCUT_D){
+		QShortcut* deactivateShortcut=new QShortcut(QKeySequence(Qt::Key_D), dialog);
+		connect(deactivateShortcut, &QShortcut::activated, [=]{deactivatePushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	deactivatePushButton->setToolTip(QString("D"));
+	}
+	if(SHORTCUT_C){
+		QShortcut* commentsShortcut=new QShortcut(QKeySequence(Qt::Key_C), dialog);
+		connect(commentsShortcut, &QShortcut::activated, [=]{commentsPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	commentsPushButton->setToolTip(QString("C"));
+	}
+	if(SHORTCUT_W){
+		QShortcut* weightsShortcut=new QShortcut(QKeySequence(Qt::Key_W), dialog);
+		connect(weightsShortcut, &QShortcut::activated, [=]{weightsPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	weightsPushButton->setToolTip(QString("W"));
+	}
 
 	filter();
 
@@ -7118,6 +7139,49 @@ filtered_ok:
 
 				break;
 			}
+		//253
+		case CONSTRAINT_ACTIVITIES_MAX_TOTAL_NUMBER_OF_STUDENTS_IN_SELECTED_TIME_SLOTS:
+			{
+				assert(teachersComboBox!=nullptr);
+				assert(studentsComboBox!=nullptr);
+				assert(subjectsComboBox!=nullptr);
+				assert(activityTagsComboBox!=nullptr);
+
+				if(teachersComboBox->currentText()==QString("")
+						&& subjectsComboBox->currentText()==QString("")
+						&& activityTagsComboBox->currentText()==QString("")
+						&& studentsComboBox->currentText()==QString(""))
+					return true;
+
+				ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots* ctr=(ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots*)tc;
+
+				bool foundTeacher=false;
+				bool foundSubject=false;
+				bool foundActivityTag=false;
+				bool foundStudents=false;
+
+				for(int id : ctr->activitiesIds){
+					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
+
+					if(act!=nullptr){
+						if(teachersComboBox->currentText()==QString("") || act->teachersNames.contains(teachersComboBox->currentText()))
+							foundTeacher=true;
+						if(subjectsComboBox->currentText()==QString("") || subjectsComboBox->currentText()==act->subjectName)
+							foundSubject=true;
+						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
+							foundActivityTag=true;
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
+							foundStudents=true;
+					}
+
+					if(foundTeacher && foundSubject && foundActivityTag && foundStudents)
+						return true;
+				}
+
+				return false;
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -7972,6 +8036,22 @@ void ListTimeConstraints::helpClicked()
 				 " of sets of time slots from a selection of sets of time slots."
 				 " The unselected time slots are not subject to constraints.");
 				s+="\n";
+
+				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
+
+				break;
+			}
+		//253
+		case CONSTRAINT_ACTIVITIES_MAX_TOTAL_NUMBER_OF_STUDENTS_IN_SELECTED_TIME_SLOTS:
+			{
+				QString s=tr("Warning: this constraint might slow down very much the generation! Please use only if strictly necessary, and with care!");
+				s+="\n\n";
+				s+=tr("This constraint was suggested by %1.").arg("Furkan Kızılaslan");
+				s+="\n\n";
+				s+=tr("This constraint type was added on %1.").arg(tr("18 October 2025"));
+				s+="\n\n";
+				s+=tr("To use this constraint, you need to specify a set of activities, a set of time slots, and a maximum number "
+				 "of students which can be present, considering the number of students of these activities, in these time slots.");
 
 				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
 

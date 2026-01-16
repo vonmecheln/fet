@@ -10,8 +10,7 @@
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU Affero General Public License as        *
- *   published by the Free Software Foundation, either version 3 of the    *
- *   License, or (at your option) any later version.                       *
+ *   published by the Free Software Foundation, version 3 of the License.  *
  *                                                                         *
  ***************************************************************************/
 
@@ -87,6 +86,8 @@ private:
 	QAction* dataTimeConstraintsActivitiesSameStartingTimeAction;
 
 	QAction* dataTimeConstraintsTwoSetsOfActivitiesSameSectionsAction;
+
+	QAction* dataTimeConstraintsActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlotsAction;
 
 	QAction* dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction;
 	QAction* dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction;
@@ -506,6 +507,8 @@ public:
 	void retranslateConstraints();
 
 public Q_SLOTS:
+	void settingsOptionalKeyboardShortcutsAction_triggered();
+
 	void settingsAutosaveAction_triggered();
 
 	void restoreDataStateAction_triggered();
@@ -675,6 +678,8 @@ public Q_SLOTS:
 
 	void dataTimeConstraintsTwoSetsOfActivitiesSameSectionsAction_triggered();
 
+	void dataTimeConstraintsActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlotsAction_triggered();
+	
 	void dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction_triggered();
 	void dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction_triggered();
 	void dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction_triggered();

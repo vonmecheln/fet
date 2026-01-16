@@ -14,8 +14,7 @@ File spaceconstraint.cpp
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU Affero General Public License as        *
- *   published by the Free Software Foundation, either version 3 of the    *
- *   License, or (at your option) any later version.                       *
+ *   published by the Free Software Foundation, version 3 of the License.  *
  *                                                                         *
  ***************************************************************************/
 
@@ -20659,9 +20658,7 @@ bool ConstraintRoomMaxActivityTagsPerDayFromSet::isRelatedToRoom(Room* r)
 
 bool ConstraintRoomMaxActivityTagsPerDayFromSet::hasWrongDayOrHour(Rules& r)
 {
-	Q_UNUSED(r);
-
-	return false;
+	return this->maxTags > r.nHoursPerDay;
 }
 
 bool ConstraintRoomMaxActivityTagsPerDayFromSet::canRepairWrongDayOrHour(Rules& r)
@@ -20674,6 +20671,12 @@ bool ConstraintRoomMaxActivityTagsPerDayFromSet::canRepairWrongDayOrHour(Rules& 
 bool ConstraintRoomMaxActivityTagsPerDayFromSet::repairWrongDayOrHour(Rules& r)
 {
 	assert(hasWrongDayOrHour(r));
+
+	if(this->maxTags > r.nHoursPerDay)
+		this->maxTags=r.nHoursPerDay;
+
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 
 	return true;
 }
@@ -20909,9 +20912,7 @@ bool ConstraintRoomMaxActivityTagsPerRealDayFromSet::isRelatedToRoom(Room* r)
 
 bool ConstraintRoomMaxActivityTagsPerRealDayFromSet::hasWrongDayOrHour(Rules& r)
 {
-	Q_UNUSED(r);
-
-	return false;
+	return this->maxTags > 2*r.nHoursPerDay;
 }
 
 bool ConstraintRoomMaxActivityTagsPerRealDayFromSet::canRepairWrongDayOrHour(Rules& r)
@@ -20924,6 +20925,12 @@ bool ConstraintRoomMaxActivityTagsPerRealDayFromSet::canRepairWrongDayOrHour(Rul
 bool ConstraintRoomMaxActivityTagsPerRealDayFromSet::repairWrongDayOrHour(Rules& r)
 {
 	assert(hasWrongDayOrHour(r));
+
+	if(this->maxTags > 2*r.nHoursPerDay)
+		this->maxTags = 2*r.nHoursPerDay;
+
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 
 	return true;
 }
@@ -21155,9 +21162,7 @@ bool ConstraintRoomMaxActivityTagsPerWeekFromSet::isRelatedToRoom(Room* r)
 
 bool ConstraintRoomMaxActivityTagsPerWeekFromSet::hasWrongDayOrHour(Rules& r)
 {
-	Q_UNUSED(r);
-
-	return false;
+	return this->maxTags > r.nDaysPerWeek*r.nHoursPerDay;
 }
 
 bool ConstraintRoomMaxActivityTagsPerWeekFromSet::canRepairWrongDayOrHour(Rules& r)
@@ -21170,6 +21175,12 @@ bool ConstraintRoomMaxActivityTagsPerWeekFromSet::canRepairWrongDayOrHour(Rules&
 bool ConstraintRoomMaxActivityTagsPerWeekFromSet::repairWrongDayOrHour(Rules& r)
 {
 	assert(hasWrongDayOrHour(r));
+
+	if(this->maxTags > r.nDaysPerWeek*r.nHoursPerDay)
+		this->maxTags = r.nDaysPerWeek*r.nHoursPerDay;
+
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 
 	return true;
 }

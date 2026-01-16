@@ -14,8 +14,7 @@ File fet.cpp - this is where FET starts
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU Affero General Public License as        *
- *   published by the Free Software Foundation, either version 3 of the    *
- *   License, or (at your option) any later version.                       *
+ *   published by the Free Software Foundation, version 3 of the License.  *
  *                                                                         *
  ***************************************************************************/
 
@@ -562,6 +561,16 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 	CONFIRM_SAVE_TIMETABLE=settings.value("confirm-save-data-and-timetable", "true").toBool();
 	CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS=settings.value("confirm-activate-deactivate-activities-constraints", "true").toBool();
 /////////
+
+	SHORTCUT_PLUS=settings.value("shorcut-plus", "false").toBool();
+	SHORTCUT_M=settings.value("shorcut-m", "false").toBool();
+	SHORTCUT_DELETE=settings.value("shorcut-delete", "false").toBool();
+	SHORTCUT_A=settings.value("shorcut-a", "false").toBool();
+	SHORTCUT_D=settings.value("shorcut-d", "false").toBool();
+	SHORTCUT_C=settings.value("shorcut-c", "false").toBool();
+	SHORTCUT_U=settings.value("shorcut-u", "false").toBool();
+	SHORTCUT_J=settings.value("shorcut-j", "false").toBool();
+	SHORTCUT_W=settings.value("shorcut-w", "false").toBool();
 
 	SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES=settings.value("warn-subgroups-with-the-same-activities", "true").toBool();
 	SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME=settings.value("warn-activities-not-fixed-time-fixed-space-virtual-real", "true").toBool();
@@ -1346,6 +1355,16 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("confirm-save-data-and-timetable", CONFIRM_SAVE_TIMETABLE);
 	settings.setValue("confirm-activate-deactivate-activities-constraints", CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS);
 ///////////
+
+	settings.setValue("shorcut-plus", SHORTCUT_PLUS);
+	settings.setValue("shorcut-m", SHORTCUT_M);
+	settings.setValue("shorcut-delete", SHORTCUT_DELETE);
+	settings.setValue("shorcut-a", SHORTCUT_A);
+	settings.setValue("shorcut-d", SHORTCUT_D);
+	settings.setValue("shorcut-c", SHORTCUT_C);
+	settings.setValue("shorcut-u", SHORTCUT_U);
+	settings.setValue("shorcut-j", SHORTCUT_J);
+	settings.setValue("shorcut-w", SHORTCUT_W);
 
 	settings.setValue("warn-subgroups-with-the-same-activities", SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES);
 	settings.setValue("warn-activities-not-fixed-time-fixed-space-virtual-real", SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME);
@@ -2893,7 +2912,7 @@ int main(int argc, char **argv)
 			}
 			else if(showVersion){
 				cout<<"FET version "<<qPrintable(FET_VERSION)<<endl;
-				cout<<"Free timetabling software, licensed under the GNU Affero General Public License version 3 or later"<<endl;
+				cout<<"Free timetabling software, licensed under the GNU Affero General Public License version 3"<<endl;
 				cout<<"Copyright (C) 2002-2025 Liviu Lalescu, Volker Dirr"<<endl;
 				cout<<"Homepage: https://lalescu.ro/liviu/fet/"<<endl;
 				cout<<"This program uses Qt version "<<qVersion()<<", Copyright (C) The Qt Company Ltd and other contributors."<<endl;

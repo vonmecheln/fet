@@ -1,9 +1,9 @@
-This is FET version 7.5.3
+This is FET version 7.5.4
 
 
 Program description:
 
-	FET is free timetabling software (licensed under the GNU Affero General Public License version 3 or later).
+	FET is free timetabling software (licensed under the GNU Affero General Public License version 3).
 	This program aims to automatically generate the timetable of a school, high-school or university.
 	It can be used for other timetabling purposes.
 
@@ -14,7 +14,7 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.17.0, Xfce 4.20,
+	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.17.3, Xfce 4.20,
 	Xfce Terminal Emulator 1.1.5, Midnight Commander 4.8.33, Krusader 2.9.0, Kate 25.08.1, KDiff3 0.9.99-beta, grep 3.12, sed 4.9,
 	Thunar Bulk Rename 4.20.4, Qt 6.10.0, QMake 3.1, CMake 4.1.2, Ninja 1.13.0, Qt Creator 17.0.2, GCC 15.2.0, Clang 21.1.2,
 	GNU Make 4.4.1, GDB 16.3, Valgrind 3.25.1, Coverity Scan 2024.12.1, Cppcheck 2.15, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0,

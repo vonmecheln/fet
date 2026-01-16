@@ -14,8 +14,7 @@ File timeconstraint.cpp
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU Affero General Public License as        *
- *   published by the Free Software Foundation, either version 3 of the    *
- *   License, or (at your option) any later version.                       *
+ *   published by the Free Software Foundation, version 3 of the License.  *
  *                                                                         *
  ***************************************************************************/
 
@@ -3314,6 +3313,19 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesBeginOrEn
 	return stream;
 }
 
+//253
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activitiesIds<<tc.maxNumberOfStudents<<tc.selectedDays<<tc.selectedHours;
+
+	return stream;
+}
+
 //1
 QDataStream& operator>>(QDataStream& stream, ConstraintBasicCompulsoryTime& tc)
 {
@@ -6584,6 +6596,19 @@ QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesBeginOrEndTeach
 	return stream;
 }
 
+//253
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activitiesIds>>tc.maxNumberOfStudents>>tc.selectedDays>>tc.selectedHours;
+
+	return stream;
+}
+
 static QString trueFalse(bool x){
 	if(!x)
 		return QString("false");
@@ -7247,6 +7272,8 @@ bool TimeConstraint::canBeUsedInOfficialMode()
 		case CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_TEACHERS_DAY:
 			[[fallthrough]];
 		case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY:
+			[[fallthrough]];
+		case CONSTRAINT_ACTIVITIES_MAX_TOTAL_NUMBER_OF_STUDENTS_IN_SELECTED_TIME_SLOTS:
 			t=true;
 			break;
 			
@@ -7753,6 +7780,8 @@ bool TimeConstraint::canBeUsedInMorningsAfternoonsMode()
 		case CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_TEACHERS_DAY:
 			[[fallthrough]];
 		case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY:
+			[[fallthrough]];
+		case CONSTRAINT_ACTIVITIES_MAX_TOTAL_NUMBER_OF_STUDENTS_IN_SELECTED_TIME_SLOTS:
 			t=true;
 			break;
 		
@@ -8047,6 +8076,8 @@ bool TimeConstraint::canBeUsedInBlockPlanningMode()
 		case CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_TEACHERS_DAY:
 			[[fallthrough]];
 		case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY:
+			[[fallthrough]];
+		case CONSTRAINT_ACTIVITIES_MAX_TOTAL_NUMBER_OF_STUDENTS_IN_SELECTED_TIME_SLOTS:
 			t=true;
 			break;
 		
@@ -8346,6 +8377,8 @@ bool TimeConstraint::canBeUsedInTermsMode()
 		case CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_TEACHERS_DAY:
 			[[fallthrough]];
 		case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY:
+			[[fallthrough]];
+		case CONSTRAINT_ACTIVITIES_MAX_TOTAL_NUMBER_OF_STUDENTS_IN_SELECTED_TIME_SLOTS:
 			t=true;
 			break;
 		
@@ -49866,9 +49899,7 @@ bool ConstraintTeacherMaxActivityTagsPerDayFromSet::isRelatedToStudentsSet(Rules
 
 bool ConstraintTeacherMaxActivityTagsPerDayFromSet::hasWrongDayOrHour(Rules& r)
 {
-	Q_UNUSED(r);
-
-	return false;
+	return this->maxTags>r.nHoursPerDay;
 }
 
 bool ConstraintTeacherMaxActivityTagsPerDayFromSet::canRepairWrongDayOrHour(Rules& r)
@@ -49881,6 +49912,12 @@ bool ConstraintTeacherMaxActivityTagsPerDayFromSet::canRepairWrongDayOrHour(Rule
 bool ConstraintTeacherMaxActivityTagsPerDayFromSet::repairWrongDayOrHour(Rules& r)
 {
 	assert(hasWrongDayOrHour(r));
+
+	if(this->maxTags>r.nHoursPerDay)
+		this->maxTags=r.nHoursPerDay;
+
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 
 	return true;
 }
@@ -50092,9 +50129,7 @@ bool ConstraintTeachersMaxActivityTagsPerDayFromSet::isRelatedToStudentsSet(Rule
 
 bool ConstraintTeachersMaxActivityTagsPerDayFromSet::hasWrongDayOrHour(Rules& r)
 {
-	Q_UNUSED(r);
-
-	return false;
+	return this->maxTags>r.nHoursPerDay;
 }
 
 bool ConstraintTeachersMaxActivityTagsPerDayFromSet::canRepairWrongDayOrHour(Rules& r)
@@ -50107,6 +50142,12 @@ bool ConstraintTeachersMaxActivityTagsPerDayFromSet::canRepairWrongDayOrHour(Rul
 bool ConstraintTeachersMaxActivityTagsPerDayFromSet::repairWrongDayOrHour(Rules& r)
 {
 	assert(hasWrongDayOrHour(r));
+
+	if(this->maxTags>r.nHoursPerDay)
+		this->maxTags=r.nHoursPerDay;
+
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 
 	return true;
 }
@@ -62958,9 +62999,7 @@ bool ConstraintStudentsSetMaxActivityTagsPerDayFromSet::isRelatedToStudentsSet(R
 
 bool ConstraintStudentsSetMaxActivityTagsPerDayFromSet::hasWrongDayOrHour(Rules& r)
 {
-	Q_UNUSED(r);
-
-	return false;
+	return this->maxTags>r.nHoursPerDay;
 }
 
 bool ConstraintStudentsSetMaxActivityTagsPerDayFromSet::canRepairWrongDayOrHour(Rules& r)
@@ -62973,6 +63012,12 @@ bool ConstraintStudentsSetMaxActivityTagsPerDayFromSet::canRepairWrongDayOrHour(
 bool ConstraintStudentsSetMaxActivityTagsPerDayFromSet::repairWrongDayOrHour(Rules& r)
 {
 	assert(hasWrongDayOrHour(r));
+
+	if(this->maxTags>r.nHoursPerDay)
+		this->maxTags=r.nHoursPerDay;
+
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 
 	return true;
 }
@@ -63181,9 +63226,7 @@ bool ConstraintStudentsMaxActivityTagsPerDayFromSet::isRelatedToStudentsSet(Rule
 
 bool ConstraintStudentsMaxActivityTagsPerDayFromSet::hasWrongDayOrHour(Rules& r)
 {
-	Q_UNUSED(r);
-
-	return false;
+	return this->maxTags>r.nHoursPerDay;
 }
 
 bool ConstraintStudentsMaxActivityTagsPerDayFromSet::canRepairWrongDayOrHour(Rules& r)
@@ -63196,6 +63239,12 @@ bool ConstraintStudentsMaxActivityTagsPerDayFromSet::canRepairWrongDayOrHour(Rul
 bool ConstraintStudentsMaxActivityTagsPerDayFromSet::repairWrongDayOrHour(Rules& r)
 {
 	assert(hasWrongDayOrHour(r));
+
+	if(this->maxTags>r.nHoursPerDay)
+		this->maxTags=r.nHoursPerDay;
+
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 
 	return true;
 }
@@ -63411,9 +63460,7 @@ bool ConstraintTeacherMaxActivityTagsPerRealDayFromSet::isRelatedToStudentsSet(R
 
 bool ConstraintTeacherMaxActivityTagsPerRealDayFromSet::hasWrongDayOrHour(Rules& r)
 {
-	Q_UNUSED(r);
-
-	return false;
+	return this->maxTags>2*r.nHoursPerDay;
 }
 
 bool ConstraintTeacherMaxActivityTagsPerRealDayFromSet::canRepairWrongDayOrHour(Rules& r)
@@ -63426,6 +63473,12 @@ bool ConstraintTeacherMaxActivityTagsPerRealDayFromSet::canRepairWrongDayOrHour(
 bool ConstraintTeacherMaxActivityTagsPerRealDayFromSet::repairWrongDayOrHour(Rules& r)
 {
 	assert(hasWrongDayOrHour(r));
+
+	if(this->maxTags>2*r.nHoursPerDay)
+		this->maxTags=2*r.nHoursPerDay;
+
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 
 	return true;
 }
@@ -63640,9 +63693,7 @@ bool ConstraintTeachersMaxActivityTagsPerRealDayFromSet::isRelatedToStudentsSet(
 
 bool ConstraintTeachersMaxActivityTagsPerRealDayFromSet::hasWrongDayOrHour(Rules& r)
 {
-	Q_UNUSED(r);
-
-	return false;
+	return this->maxTags>2*r.nHoursPerDay;
 }
 
 bool ConstraintTeachersMaxActivityTagsPerRealDayFromSet::canRepairWrongDayOrHour(Rules& r)
@@ -63655,6 +63706,12 @@ bool ConstraintTeachersMaxActivityTagsPerRealDayFromSet::canRepairWrongDayOrHour
 bool ConstraintTeachersMaxActivityTagsPerRealDayFromSet::repairWrongDayOrHour(Rules& r)
 {
 	assert(hasWrongDayOrHour(r));
+
+	if(this->maxTags>2*r.nHoursPerDay)
+		this->maxTags=2*r.nHoursPerDay;
+
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 
 	return true;
 }
@@ -63877,9 +63934,7 @@ bool ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet::isRelatedToStudentsS
 
 bool ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet::hasWrongDayOrHour(Rules& r)
 {
-	Q_UNUSED(r);
-
-	return false;
+	return this->maxTags>2*r.nHoursPerDay;
 }
 
 bool ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet::canRepairWrongDayOrHour(Rules& r)
@@ -63892,6 +63947,12 @@ bool ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet::canRepairWrongDayOrH
 bool ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet::repairWrongDayOrHour(Rules& r)
 {
 	assert(hasWrongDayOrHour(r));
+
+	if(this->maxTags>2*r.nHoursPerDay)
+		this->maxTags=2*r.nHoursPerDay;
+
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 
 	return true;
 }
@@ -64103,9 +64164,7 @@ bool ConstraintStudentsMaxActivityTagsPerRealDayFromSet::isRelatedToStudentsSet(
 
 bool ConstraintStudentsMaxActivityTagsPerRealDayFromSet::hasWrongDayOrHour(Rules& r)
 {
-	Q_UNUSED(r);
-
-	return false;
+	return this->maxTags>2*r.nHoursPerDay;
 }
 
 bool ConstraintStudentsMaxActivityTagsPerRealDayFromSet::canRepairWrongDayOrHour(Rules& r)
@@ -64118,6 +64177,12 @@ bool ConstraintStudentsMaxActivityTagsPerRealDayFromSet::canRepairWrongDayOrHour
 bool ConstraintStudentsMaxActivityTagsPerRealDayFromSet::repairWrongDayOrHour(Rules& r)
 {
 	assert(hasWrongDayOrHour(r));
+
+	if(this->maxTags>2*r.nHoursPerDay)
+		this->maxTags=2*r.nHoursPerDay;
+
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 
 	return true;
 }
@@ -73506,6 +73571,9 @@ bool ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection::hasWrongDayOrHour
 				return true;
 		}
 	}
+	
+	if(this->maxOccupiedSets > r.nDaysPerWeek*r.nHoursPerDay)
+		return true;
 
 	return false;
 }
@@ -73549,6 +73617,9 @@ bool ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection::repairWrongDayOrH
 	
 	selectedDays=newSelectedDays;
 	selectedHours=newSelectedHours;
+
+	if(this->maxOccupiedSets > r.nDaysPerWeek*r.nHoursPerDay)
+		this->maxOccupiedSets = r.nDaysPerWeek*r.nHoursPerDay;
 	
 	r.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&r);
@@ -73862,6 +73933,9 @@ bool ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection::hasWrongDayOrHour(
 		}
 	}
 
+	if(this->maxOccupiedSets > r.nDaysPerWeek*r.nHoursPerDay)
+		return true;
+
 	return false;
 }
 
@@ -73904,6 +73978,9 @@ bool ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection::repairWrongDayOrHo
 	
 	selectedDays=newSelectedDays;
 	selectedHours=newSelectedHours;
+
+	if(this->maxOccupiedSets > r.nDaysPerWeek*r.nHoursPerDay)
+		this->maxOccupiedSets = r.nDaysPerWeek*r.nHoursPerDay;
 	
 	r.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&r);
@@ -74231,6 +74308,9 @@ bool ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection::hasWrongDayOr
 		}
 	}
 
+	if(this->maxOccupiedSets > r.nDaysPerWeek*r.nHoursPerDay)
+		return true;
+
 	return false;
 }
 
@@ -74273,6 +74353,9 @@ bool ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection::repairWrongDa
 	
 	selectedDays=newSelectedDays;
 	selectedHours=newSelectedHours;
+
+	if(this->maxOccupiedSets > r.nDaysPerWeek*r.nHoursPerDay)
+		this->maxOccupiedSets = r.nDaysPerWeek*r.nHoursPerDay;
 	
 	r.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&r);
@@ -74585,6 +74668,9 @@ bool ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection::hasWrongDayOrHour(
 		}
 	}
 
+	if(this->maxOccupiedSets > r.nDaysPerWeek*r.nHoursPerDay)
+		return true;
+
 	return false;
 }
 
@@ -74627,6 +74713,9 @@ bool ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection::repairWrongDayOrHo
 	
 	selectedDays=newSelectedDays;
 	selectedHours=newSelectedHours;
+
+	if(this->maxOccupiedSets > r.nDaysPerWeek*r.nHoursPerDay)
+		this->maxOccupiedSets = r.nDaysPerWeek*r.nHoursPerDay;
 	
 	r.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&r);
@@ -75303,6 +75392,9 @@ bool ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection::hasWrongDayOrHou
 		}
 	}
 
+	if(this->maxOccupiedSets > r.nDaysPerWeek*r.nHoursPerDay)
+		return true;
+
 	return false;
 }
 
@@ -75346,6 +75438,9 @@ bool ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection::repairWrongDayOr
 	selectedDays=newSelectedDays;
 	selectedHours=newSelectedHours;
 	
+	if(this->maxOccupiedSets > r.nDaysPerWeek*r.nHoursPerDay)
+		this->maxOccupiedSets = r.nDaysPerWeek*r.nHoursPerDay;
+
 	r.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&r);
 
@@ -76471,6 +76566,378 @@ bool ConstraintActivitiesBeginOrEndTeachersDay::repairWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
 	assert(0); //should check hasWrongDayOrHour, firstly
+
+	return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_ACTIVITIES_MAX_TOTAL_NUMBER_OF_STUDENTS_IN_SELECTED_TIME_SLOTS;
+}
+
+ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots(double wp,
+	const QList<int>& a_L, const QList<int>& d_L, const QList<int>& h_L, int max_n_st)
+	: TimeConstraint(wp)
+{
+	assert(d_L.count()==h_L.count());
+
+	this->activitiesIds=a_L;
+	this->selectedDays=d_L;
+	this->selectedHours=h_L;
+	this->maxNumberOfStudents=max_n_st;
+	
+	this->type=CONSTRAINT_ACTIVITIES_MAX_TOTAL_NUMBER_OF_STUDENTS_IN_SELECTED_TIME_SLOTS;
+}
+
+bool ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	//this cares about inactive activities and activities with 0 students, also, so do not assert this->_actIndices.count()==this->actIds.count()
+	_activitiesIndices.clear();
+	for(int id : std::as_const(activitiesIds)){
+		int i=r.activitiesHash.value(id, -1);
+		if(i>=0)
+			if(r.internalActivitiesList[i].nTotalStudents>=1)
+				_activitiesIndices.append(i);
+	}
+
+	/*this->_activitiesIndices.clear();
+	
+	QSet<int> req=this->activitiesIds.toSet();
+	assert(req.count()==this->activitiesIds.count());
+	
+	//this cares about inactive activities, also, so do not assert this->_actIndices.count()==this->actIds.count()
+	int i;
+	for(i=0; i<r.nInternalActivities; i++)
+		if(req.contains(r.internalActivitiesList[i].id))
+			this->_activitiesIndices.append(i);*/
+			
+	//////////////////////
+	assert(this->selectedDays.count()==this->selectedHours.count());
+	
+	for(int k=0; k<this->selectedDays.count(); k++){
+		if(this->selectedDays.at(k) >= r.nDaysPerWeek){
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
+			 tr("Constraint activities max total number of students in selected time slots is wrong because it refers to removed day. Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+			return false;
+		}
+		if(this->selectedHours.at(k) == r.nHoursPerDay){
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
+			 tr("Constraint activities max total number of students in selected time slots is wrong because an hour is too late (after the last acceptable slot). Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+			return false;
+		}
+		if(this->selectedHours.at(k) > r.nHoursPerDay){
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
+			 tr("Constraint activities max total number of students in selected time slots is wrong because it refers to removed hour. Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+			return false;
+		}
+		if(this->selectedDays.at(k)<0 || this->selectedHours.at(k)<0){
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
+			 tr("Constraint activities max total number of students in selected time slots is wrong because hour or day is not specified for a slot (-1). Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+			return false;
+		}
+	}
+	///////////////////////
+	
+	if(this->_activitiesIndices.count()>0)
+		return true;
+	else{
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
+			tr("Following constraint is wrong (refers to no activities with the number of students > 0). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
+		return false;
+	}
+}
+
+bool ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::hasInactiveActivities(Rules& r)
+{
+	//returns true if all activities are inactive
+	
+	for(int aid : std::as_const(this->activitiesIds))
+		if(!r.inactiveActivities.contains(aid))
+			return false;
+
+	return true;
+}
+
+QString ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::getXmlDescription(Rules& r)
+{
+	assert(this->selectedDays.count()==this->selectedHours.count());
+
+	QString s=IL2+"<ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots>\n";
+	
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	
+	s+=IL3+"<Number_of_Activities>"+QString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
+	for(int aid : std::as_const(this->activitiesIds))
+		s+=IL3+"<Activity_Id>"+CustomFETString::number(aid)+"</Activity_Id>\n";
+	
+	s+=IL3+"<Number_of_Selected_Time_Slots>"+QString::number(this->selectedDays.count())+"</Number_of_Selected_Time_Slots>\n";
+	for(int i=0; i<this->selectedDays.count(); i++){
+		s+=IL3+"<Selected_Time_Slot>\n";
+		s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->selectedDays.at(i)])+"</Day>\n";
+		s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->selectedHours.at(i)])+"</Hour>\n";
+		s+=IL3+"</Selected_Time_Slot>\n";
+	}
+	s+=IL3+"<Max_Total_Number_of_Students>"+CustomFETString::number(this->maxNumberOfStudents)+"</Max_Total_Number_of_Students>\n";
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots>\n";
+	return s;
+}
+
+QString ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::getDescription(Rules& r)
+{
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+		
+	begin+="! ";
+	
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+	
+	assert(this->selectedDays.count()==this->selectedHours.count());
+
+	QString actids=QString("");
+	for(int aid : std::as_const(this->activitiesIds))
+		actids+=getActivityDescription(r, aid)+translatedCommaSpace();
+	actids.chop(translatedCommaSpace().size());
+	
+	QString timeslots=QString("");
+	for(int i=0; i<this->selectedDays.count(); i++)
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
+	timeslots.chop(translatedCommaSpace().size());
+	
+	QString s=tr("Activities max total number of students in selected time slots, WP:%1%, NA:%2, A: %3, STS: %4, MTNS:%5", "Constraint description. WP means weight percentage, "
+	 "NA means the number of activities, A means activities list, STS means selected time slots, MTNS means max total number of students")
+	 .arg(CustomFETString::number(this->weightPercentage))
+	 .arg(QString::number(this->activitiesIds.count()))
+	 .arg(actids)
+	 .arg(timeslots)
+	 .arg(CustomFETString::number(this->maxNumberOfStudents));
+	
+	return begin+s+end;
+}
+
+QString ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::getDetailedDescription(Rules& r)
+{
+	assert(this->selectedDays.count()==this->selectedHours.count());
+
+	/*QString actids=QString("");
+	for(int aid : std::as_const(this->activitiesIds))
+		actids+=CustomFETString::number(aid)+QString(", ");
+	actids.chop(2);*/
+	
+	QString timeslots=QString("");
+	for(int i=0; i<this->selectedDays.count(); i++)
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
+	timeslots.chop(translatedCommaSpace().size());
+	
+	QString s;
+	s+=tr("Warning: this constraint might slow down very much the generation! Please use only if strictly necessary, and with care!"); s+="\n";
+	s+=tr("Time constraint"); s+="\n";
+	s+=tr("Activities max total number of students in selected time slots"); s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
+	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
+	for(int id : std::as_const(this->activitiesIds)){
+		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+		 .arg(id)
+		 .arg(getActivityDetailedDescription(r, id));
+		s+="\n";
+	}
+	s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
+	s+=tr("Maximum total number of students=%1").arg(CustomFETString::number(this->maxNumberOfStudents)); s+="\n";
+
+	if(!active){
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+	
+	return s;
+}
+
+double ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken;
+
+	assert(r.internalStructureComputed);
+
+	///////////////////
+	Matrix2D<int> nstudents;
+	nstudents.resize(r.nDaysPerWeek, r.nHoursPerDay);
+	for(int d=0; d<r.nDaysPerWeek; d++)
+		for(int h=0; h<r.nHoursPerDay; h++)
+			nstudents[d][h]=0;
+	
+	for(int ai : std::as_const(this->_activitiesIndices)){
+		if(c.times[ai]!=UNALLOCATED_TIME){
+			Activity* act=&r.internalActivitiesList[ai];
+			int d=c.times[ai]%r.nDaysPerWeek;
+			int h=c.times[ai]/r.nDaysPerWeek;
+			for(int dur=0; dur<act->duration; dur++){
+				assert(h+dur<r.nHoursPerDay);
+				nstudents[d][h+dur]+=r.internalActivitiesList[ai].nTotalStudents;
+			}
+		}
+	}
+
+	nbroken=0;
+
+	assert(this->selectedDays.count()==this->selectedHours.count());
+	for(int t=0; t<this->selectedDays.count(); t++){
+		int d=this->selectedDays.at(t);
+		int h=this->selectedHours.at(t);
+		
+		if(nstudents[d][h] > this->maxNumberOfStudents)
+			nbroken++;
+	}
+
+	if(nbroken>0){
+		if(conflictsString!=nullptr){
+			QString s=tr("Time constraint %1 broken - this should not happen, as this kind of constraint should "
+			 "have only 100.0% weight. Please report error!").arg(this->getDescription(r));
+			
+			dl.append(s);
+			cl.append(weightPercentage/100.0);
+		
+			*conflictsString+= s+"\n";
+		}
+	}
+
+	if(weightPercentage==100.0)
+		assert(nbroken==0);
+	return nbroken * weightPercentage / 100.0;
+}
+
+void ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::removeUseless(Rules& r)
+{
+	QList<int> newActs;
+	
+	for(int aid : std::as_const(activitiesIds)){
+		Activity* act=r.activitiesPointerHash.value(aid, nullptr);
+		if(act!=nullptr)
+			newActs.append(aid);
+	}
+	
+	activitiesIds=newActs;
+
+	r.internalStructureComputed=false;
+}
+
+void ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::recomputeActivitiesSet()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
+#else
+	activitiesIdsSet=activitiesIds.toSet();
+#endif
+}
+
+bool ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+
+	return activitiesIdsSet.contains(a->id);
+
+	//return this->activitiesIds.contains(a->id);
+}
+
+bool ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	
+	return false;
+}
+
+bool ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::hasWrongDayOrHour(Rules& r)
+{
+	assert(selectedDays.count()==selectedHours.count());
+	
+	for(int i=0; i<selectedDays.count(); i++)
+		if(selectedDays.at(i)<0 || selectedDays.at(i)>=r.nDaysPerWeek
+		 || selectedHours.at(i)<0 || selectedHours.at(i)>=r.nHoursPerDay)
+			return true;
+
+	return false;
+}
+
+bool ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	assert(selectedDays.count()==selectedHours.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	
+	for(int i=0; i<selectedDays.count(); i++)
+		if(selectedDays.at(i)>=0 && selectedDays.at(i)<r.nDaysPerWeek
+		 && selectedHours.at(i)>=0 && selectedHours.at(i)<r.nHoursPerDay){
+			newDays.append(selectedDays.at(i));
+			newHours.append(selectedHours.at(i));
+		}
+	
+	selectedDays=newDays;
+	selectedHours=newHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 
 	return true;
 }

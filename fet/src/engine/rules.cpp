@@ -14,8 +14,7 @@ File rules.cpp
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU Affero General Public License as        *
- *   published by the Free Software Foundation, either version 3 of the    *
- *   License, or (at your option) any later version.                       *
+ *   published by the Free Software Foundation, version 3 of the License.  *
  *                                                                         *
  ***************************************************************************/
 
@@ -2103,6 +2102,13 @@ QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 			case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY:
 				{
 					ConstraintActivitiesBeginOrEndTeachersDay* c=(ConstraintActivitiesBeginOrEndTeachersDay*)ctr;
+					stream<<*c;
+					break;
+				}
+			//253
+			case CONSTRAINT_ACTIVITIES_MAX_TOTAL_NUMBER_OF_STUDENTS_IN_SELECTED_TIME_SLOTS:
+				{
+					ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots* c=(ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots*)ctr;
 					stream<<*c;
 					break;
 				}
@@ -4857,6 +4863,14 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 			case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY:
 				{
 					ConstraintActivitiesBeginOrEndTeachersDay* c=new ConstraintActivitiesBeginOrEndTeachersDay;
+					stream>>*c;
+					rules.timeConstraintsList.append(c);
+					break;
+				}
+			//253
+			case CONSTRAINT_ACTIVITIES_MAX_TOTAL_NUMBER_OF_STUDENTS_IN_SELECTED_TIME_SLOTS:
+				{
+					ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots* c=new ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots;
 					stream>>*c;
 					rules.timeConstraintsList.append(c);
 					break;
@@ -11592,6 +11606,12 @@ void Rules::recomputeActivitiesSetForTimeConstraint(TimeConstraint* ctr)
 				c->recomputeActivitiesSet();
 				break;
 			}
+		case CONSTRAINT_ACTIVITIES_MAX_TOTAL_NUMBER_OF_STUDENTS_IN_SELECTED_TIME_SLOTS:
+			{
+				ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots* c=(ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots*) ctr;
+				c->recomputeActivitiesSet();
+				break;
+			}
 
 		default:
 			//do nothing.
@@ -13775,6 +13795,14 @@ void Rules::updateConstraintsAfterRemoval()
 			case CONSTRAINT_ACTIVITIES_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
 				{
 					ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection* c=(ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection*)tc;
+					c->removeUseless(*this);
+					if(c->activitiesIds.count()<1)
+						toBeRemovedTime.append(tc);
+					break;
+				}
+			case CONSTRAINT_ACTIVITIES_MAX_TOTAL_NUMBER_OF_STUDENTS_IN_SELECTED_TIME_SLOTS:
+				{
+					ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots* c=(ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots*)tc;
 					c->removeUseless(*this);
 					if(c->activitiesIds.count()<1)
 						toBeRemovedTime.append(tc);
@@ -17610,6 +17638,11 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 					crt_constraint=readActivitiesOccupyMaxTimeSlotsFromSelection(xmlReader, xmlReadingLog);
 				}
 ////////////////
+////////////////2025-10-18
+				else if(xmlReader.name()==QString("ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots")){
+					crt_constraint=readActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots(xmlReader, xmlReadingLog);
+				}
+////////////////
 ////////////////2019-11-16
 				else if(xmlReader.name()==QString("ConstraintActivitiesOccupyMinTimeSlotsFromSelection")){
 					crt_constraint=readActivitiesOccupyMinTimeSlotsFromSelection(xmlReader, xmlReadingLog);
@@ -19039,7 +19072,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 						}
 					}
 					if(!(nActs==item->ids.count())){
-						xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+						xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 						delete item;
 					}
 					else{
@@ -20032,7 +20065,7 @@ TimeConstraint* Rules::readTeacherNotAvailableTimes(QXmlStreamReader& xmlReader,
 	}
 	assert(i==cn->days.count() && i==cn->hours.count());
 	if(!(i==nNotAvailableSlots)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Not_Available_Times").arg("Not_Available_Time"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Not_Available_Times").arg("Not_Available_Time"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -21140,7 +21173,7 @@ TimeConstraint* Rules::readStudentsSetNotAvailableTimes(QXmlStreamReader& xmlRea
 	}
 	assert(i==cn->days.count() && i==cn->hours.count());
 	if(!(i==nNotAvailableSlots)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Not_Available_Times").arg("Not_Available_Time"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Not_Available_Times").arg("Not_Available_Time"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -21260,7 +21293,7 @@ TimeConstraint* Rules::readMinNDaysBetweenActivities(QWidget* parent, QXmlStream
 		cn->consecutiveIfSameDay=true;
 	}
 	if(!(n_act==cn->n_activities)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -21415,7 +21448,7 @@ TimeConstraint* Rules::readMinDaysBetweenActivities(QWidget* parent, QXmlStreamR
 		cn->consecutiveIfSameDay=true;
 	}
 	if(!(n_act==cn->n_activities)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -21570,7 +21603,7 @@ TimeConstraint* Rules::readMinHalfDaysBetweenActivities(QWidget* parent, QXmlStr
 		cn->consecutiveIfSameDay=true;
 	}
 	if(!(n_act==cn->n_activities)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -21667,7 +21700,7 @@ TimeConstraint* Rules::readMaxDaysBetweenActivities(QXmlStreamReader& xmlReader,
 		}
 	}
 	if(!(n_act==cn->n_activities)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -21728,7 +21761,7 @@ TimeConstraint* Rules::readActivitiesMaxHourlySpan(QXmlStreamReader& xmlReader, 
 		}
 	}
 	if(!(n_act==cn->n_activities)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -21789,7 +21822,7 @@ TimeConstraint* Rules::readMaxHalfDaysBetweenActivities(QXmlStreamReader& xmlRea
 		}
 	}
 	if(!(n_act==cn->n_activities)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -21850,7 +21883,7 @@ TimeConstraint* Rules::readMaxTermsBetweenActivities(QXmlStreamReader& xmlReader
 		}
 	}
 	if(!(n_act==cn->n_activities)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -21909,7 +21942,7 @@ TimeConstraint* Rules::readMinGapsBetweenActivities(QXmlStreamReader& xmlReader,
 		}
 	}
 	if(!(n_act==cn->n_activities)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -21968,7 +22001,7 @@ TimeConstraint* Rules::readMaxGapsBetweenActivities(QXmlStreamReader& xmlReader,
 		}
 	}
 	if(!(n_act==cn->n_activities)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -22042,7 +22075,7 @@ TimeConstraint* Rules::readActivitiesNotOverlapping(QXmlStreamReader& xmlReader,
 		}
 	}
 	if(!(n_act==cn->n_activities)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -22128,7 +22161,7 @@ TimeConstraint* Rules::readActivityTagsNotOverlapping(QXmlStreamReader& xmlReade
 		}
 	}
 	if(!(nActivityTags==cn->activityTagsNames.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -22202,7 +22235,7 @@ TimeConstraint* Rules::readActivitiesSameStartingTime(QXmlStreamReader& xmlReade
 		}
 	}
 	if(!(n_act==cn->n_activities)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -22276,7 +22309,7 @@ TimeConstraint* Rules::readActivitiesSameStartingHour(QXmlStreamReader& xmlReade
 		}
 	}
 	if(!(n_act==cn->n_activities)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -22331,7 +22364,7 @@ TimeConstraint* Rules::readActivitiesSameStartingDay(QXmlStreamReader& xmlReader
 		}
 	}
 	if(!(n_act==cn->n_activities)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -27159,7 +27192,7 @@ TimeConstraint* Rules::readTwoSetsOfActivitiesOrdered(QXmlStreamReader& xmlReade
 				return nullptr;
 			}
 			else if(rnfa!=cn->firstActivitiesIdsList.count()){
-				xmlReader.raiseError(tr("The value in field %1 is not equal with the number of read %2 fields").arg("Number_of_Activities").arg("Activity_Id"));
+				xmlReader.raiseError(tr("The value in field %1 is not equal with the number of %2 fields which were read").arg("Number_of_Activities").arg("Activity_Id"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
@@ -27196,7 +27229,7 @@ TimeConstraint* Rules::readTwoSetsOfActivitiesOrdered(QXmlStreamReader& xmlReade
 				return nullptr;
 			}
 			else if(rnsa!=cn->secondActivitiesIdsList.count()){
-				xmlReader.raiseError(tr("The value in field %1 is not equal with the number of read %2 fields").arg("Number_of_Activities").arg("Activity_Id"));
+				xmlReader.raiseError(tr("The value in field %1 is not equal with the number of %2 fields which were read").arg("Number_of_Activities").arg("Activity_Id"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
@@ -27413,7 +27446,7 @@ TimeConstraint* Rules::readActivityPreferredTimes(QXmlStreamReader& xmlReader, F
 		}
 	}
 	if(!(i==cn->nPreferredStartingTimes_L)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Times").arg("Preferred_Time"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Preferred_Times").arg("Preferred_Time"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -27560,7 +27593,7 @@ TimeConstraint* Rules::readActivityPreferredTimeSlots(QXmlStreamReader& xmlReade
 		}
 	}
 	if(!(i==cn->p_nPreferredTimeSlots_L)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Time_Slots").arg("Preferred_Time_Slot"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Preferred_Time_Slots").arg("Preferred_Time_Slot"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -27707,7 +27740,7 @@ TimeConstraint* Rules::readActivityPreferredStartingTimes(QXmlStreamReader& xmlR
 		}
 	}
 	if(!(i==cn->nPreferredStartingTimes_L)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Starting_Times").arg("Preferred_Starting_Time"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Preferred_Starting_Times").arg("Preferred_Starting_Time"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -27983,7 +28016,7 @@ TimeConstraint* Rules::readBreakTimes(QXmlStreamReader& xmlReader, FakeString& x
 		}
 	}
 	if(!(i==nNotAvailableSlots)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Break_Times").arg("Break_Time"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Break_Times").arg("Break_Time"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -28899,7 +28932,7 @@ TimeConstraint* Rules::readStudentsSetMaxSingleGapsInSelectedTimeSlots(QXmlStrea
 	}
 	
 	if(!(i==tsc)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -29024,7 +29057,7 @@ TimeConstraint* Rules::readStudentsMaxSingleGapsInSelectedTimeSlots(QXmlStreamRe
 	}
 	
 	if(!(i==tsc)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -29155,7 +29188,7 @@ TimeConstraint* Rules::readTeacherMaxSingleGapsInSelectedTimeSlots(QXmlStreamRea
 	}
 	
 	if(!(i==tsc)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -29280,7 +29313,7 @@ TimeConstraint* Rules::readTeachersMaxSingleGapsInSelectedTimeSlots(QXmlStreamRe
 	}
 	
 	if(!(i==tsc)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -29737,7 +29770,7 @@ TimeConstraint* Rules::readActivitiesPreferredTimes(QXmlStreamReader& xmlReader,
 		}
 	}
 	if(!(i==cn->nPreferredStartingTimes_L)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Times").arg("Preferred_Time"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Preferred_Times").arg("Preferred_Time"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -29946,7 +29979,7 @@ TimeConstraint* Rules::readActivitiesPreferredTimeSlots(QXmlStreamReader& xmlRea
 		}
 	}
 	if(!(i==cn->p_nPreferredTimeSlots_L)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Time_Slots").arg("Preferred_Time_Slot"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Preferred_Time_Slots").arg("Preferred_Time_Slot"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -30155,7 +30188,7 @@ TimeConstraint* Rules::readActivitiesPreferredStartingTimes(QXmlStreamReader& xm
 		}
 	}
 	if(!(i==cn->nPreferredStartingTimes_L)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Starting_Times").arg("Preferred_Starting_Time"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Preferred_Starting_Times").arg("Preferred_Starting_Time"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -30371,7 +30404,7 @@ TimeConstraint* Rules::readSubactivitiesPreferredTimeSlots(QXmlStreamReader& xml
 		}
 	}
 	if(!(i==cn->p_nPreferredTimeSlots_L)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Time_Slots").arg("Preferred_Time_Slot"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Preferred_Time_Slots").arg("Preferred_Time_Slot"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -30586,7 +30619,7 @@ TimeConstraint* Rules::readSubactivitiesPreferredStartingTimes(QXmlStreamReader&
 		}
 	}
 	if(!(i==cn->nPreferredStartingTimes_L)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Starting_Times").arg("Preferred_Starting_Time"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Preferred_Starting_Times").arg("Preferred_Starting_Time"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -30654,7 +30687,7 @@ TimeConstraint* Rules::readTwoSetsOfActivitiesSameSections(QXmlStreamReader& xml
 				return nullptr;
 			}
 			else if(rnfa!=cn->activitiesAIds.count()){
-				xmlReader.raiseError(tr("The value in field %1 is not equal with the number of read %2 fields").arg("Number_of_Activities").arg("Activity_Id"));
+				xmlReader.raiseError(tr("The value in field %1 is not equal with the number of %2 fields which were read").arg("Number_of_Activities").arg("Activity_Id"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
@@ -30691,7 +30724,7 @@ TimeConstraint* Rules::readTwoSetsOfActivitiesSameSections(QXmlStreamReader& xml
 				return nullptr;
 			}
 			else if(rnsa!=cn->activitiesBIds.count()){
-				xmlReader.raiseError(tr("The value in field %1 is not equal with the number of read %2 fields").arg("Number_of_Activities").arg("Activity_Id"));
+				xmlReader.raiseError(tr("The value in field %1 is not equal with the number of %2 fields which were read").arg("Number_of_Activities").arg("Activity_Id"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
@@ -30784,7 +30817,7 @@ TimeConstraint* Rules::readTwoSetsOfActivitiesSameSections(QXmlStreamReader& xml
 	}
 
 	if(!(i==tsc)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Exception_Time_Slots").arg("Exception_Time_Slot"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Exception_Time_Slots").arg("Exception_Time_Slot"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -30925,14 +30958,162 @@ TimeConstraint* Rules::readActivitiesOccupyMaxTimeSlotsFromSelection(QXmlStreamR
 	}
 	
 	if(!(ac==cn->activitiesIds.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
 	}
 
 	if(!(i==tsc)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+
+	assert(ac==cn->activitiesIds.count());
+	assert(i==tsc);
+	return cn;
+}
+////////////////
+
+//2025-10-18
+TimeConstraint* Rules::readActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots"));
+	ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots* cn=new ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots();
+	
+	int ac=0;
+	int tsc=0;
+	int i=0;
+	
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Number_of_Activities")){
+			QString text=xmlReader.readElementText();
+			ac=text.toInt();
+			xmlReadingLog+="    Read number of activities="+CustomFETString::number(ac)+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Id")){
+			QString text=xmlReader.readElementText();
+			cn->activitiesIds.append(text.toInt());
+			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesIds[cn->activitiesIds.count()-1])+"\n";
+		}
+		else if(xmlReader.name()==QString("Number_of_Selected_Time_Slots")){
+			QString text=xmlReader.readElementText();
+			tsc=text.toInt();
+			xmlReadingLog+="    Read number of selected time slots="+CustomFETString::number(tsc)+"\n";
+		}
+		else if(xmlReader.name()==QString("Selected_Time_Slot")){
+			xmlReadingLog+="    Read: selected time slot\n";
+
+			assert(xmlReader.isStartElement());
+			while(xmlReader.readNextStartElement()){
+				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+				if(xmlReader.name()==QString("Selected_Day") || xmlReader.name()==QString("Day")){
+					QString text=xmlReader.readElementText();
+					cn->selectedDays.append(0);
+					assert(cn->selectedDays.count()-1==i);
+					for(cn->selectedDays[i]=0; cn->selectedDays[i]<this->nDaysPerWeek; cn->selectedDays[i]++)
+						if(this->daysOfTheWeek[cn->selectedDays[i]]==text)
+							break;
+							
+					if(cn->selectedDays[i]>=this->nDaysPerWeek){
+						xmlReader.raiseError(tr("Day %1 is nonexistent").arg(text));
+						/*RulesReconcilableMessage::information(parent, tr("FET information"),
+							tr("Constraint ActivitiesOccupyMaxTimeSlotsFromSelection day corrupt, day %1 is nonexistent ... ignoring constraint")
+							.arg(text));*/
+						delete cn;
+						cn=nullptr;
+						//goto corruptConstraintTime;
+						return nullptr;
+					}
+					
+					assert(cn->selectedDays[i]<this->nDaysPerWeek);
+					xmlReadingLog+="    Day="+this->daysOfTheWeek[cn->selectedDays[i]]+"("+CustomFETString::number(i)+")"+"\n";
+				}
+				else if(xmlReader.name()==QString("Selected_Hour") || xmlReader.name()==QString("Hour")){
+					QString text=xmlReader.readElementText();
+					cn->selectedHours.append(0);
+					assert(cn->selectedHours.count()-1==i);
+					for(cn->selectedHours[i]=0; cn->selectedHours[i] < this->nHoursPerDay; cn->selectedHours[i]++)
+						if(this->hoursOfTheDay[cn->selectedHours[i]]==text)
+							break;
+							
+					if(cn->selectedHours[i]>=this->nHoursPerDay){
+						xmlReader.raiseError(tr("Hour %1 is nonexistent").arg(text));
+						/*RulesReconcilableMessage::information(parent, tr("FET information"),
+							tr(" Constraint ActivitiesOccupyMaxTimeSlotsFromSelection hour corrupt, hour %1 is nonexistent ... ignoring constraint")
+							.arg(text));*/
+						delete cn;
+						cn=nullptr;
+						//goto corruptConstraintTime;
+						return nullptr;
+					}
+					
+					assert(cn->selectedHours[i]>=0 && cn->selectedHours[i] < this->nHoursPerDay);
+					xmlReadingLog+="    Hour="+this->hoursOfTheDay[cn->selectedHours[i]]+"\n";
+				}
+				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+					xmlReader.skipCurrentElement();
+					xmlReaderNumberOfUnrecognizedFields++;
+				}
+			}
+
+			i++;
+			
+			if(!(i==cn->selectedDays.count()) || !(i==cn->selectedHours.count())){
+				xmlReader.raiseError(tr("%1 is incorrect").arg("Selected_Time_Slot"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			assert(i==cn->selectedDays.count());
+			assert(i==cn->selectedHours.count());
+		}
+		else if(xmlReader.name()==QString("Max_Total_Number_of_Students")){
+			QString text=xmlReader.readElementText();
+			cn->maxNumberOfStudents=text.toInt();
+			xmlReadingLog+="    Read max total number of students="+CustomFETString::number(cn->maxNumberOfStudents)+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	
+	if(!(ac==cn->activitiesIds.count())){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+
+	if(!(i==tsc)){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -31147,7 +31328,7 @@ TimeConstraint* Rules::readActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots(QXml
 	}
 	
 	if(!(ac==cn->activitiesIds.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -31156,7 +31337,7 @@ TimeConstraint* Rules::readActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots(QXml
 	assert(ac==cn->activitiesIds.count());
 	
 	if(!(i1==tsc1)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Selected_Time_Slots_in_First_Set").arg("Selected_Time_Slot_in_First_Set"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Selected_Time_Slots_in_First_Set").arg("Selected_Time_Slot_in_First_Set"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -31165,7 +31346,7 @@ TimeConstraint* Rules::readActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots(QXml
 	assert(i1==tsc1);
 
 	if(!(i2==tsc2)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Selected_Time_Slots_in_Second_Set").arg("Selected_Time_Slot_in_Second_Set"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Selected_Time_Slots_in_Second_Set").arg("Selected_Time_Slot_in_Second_Set"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -31323,7 +31504,7 @@ TimeConstraint* Rules::readActivitiesPairOfMutuallyExclusiveTimeSlots(QXmlStream
 	}
 	
 	if(!(ac==cn->activitiesIds.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -31407,7 +31588,7 @@ TimeConstraint* Rules::readActivitiesOverlapCompletelyOrDontOverlap(QXmlStreamRe
 	}
 	
 	if(!(ac==cn->activitiesIds.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -31465,7 +31646,7 @@ TimeConstraint* Rules::readActivitiesOverlapCompletelyOrDoNotOverlap(QXmlStreamR
 	}
 	
 	if(!(ac==cn->activitiesIds.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -31606,14 +31787,14 @@ TimeConstraint* Rules::readActivitiesOccupyMinTimeSlotsFromSelection(QXmlStreamR
 	}
 	
 	if(!(ac==cn->activitiesIds.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
 	}
 
 	if(!(i==tsc)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -31754,14 +31935,14 @@ TimeConstraint* Rules::readActivitiesMaxSimultaneousInSelectedTimeSlots(QXmlStre
 	}
 	
 	if(!(ac==cn->activitiesIds.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
 	}
 
 	if(!(i==tsc)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -31911,14 +32092,14 @@ TimeConstraint* Rules::readActivitiesMinSimultaneousInSelectedTimeSlots(QXmlStre
 	}
 	
 	if(!(ac==cn->activitiesIds.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
 	}
 
 	if(!(i==tsc)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -32059,14 +32240,14 @@ TimeConstraint* Rules::readMaxTotalActivitiesFromSetInSelectedTimeSlots(QXmlStre
 	}
 
 	if(!(ac==cn->activitiesIds.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
 	}
 
 	if(!(i==tsc)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -32129,7 +32310,7 @@ TimeConstraint* Rules::readActivitiesMaxInATerm(QXmlStreamReader& xmlReader, Fak
 	}
 
 	if(!(ac==cn->activitiesIds.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -32197,7 +32378,7 @@ TimeConstraint* Rules::readActivitiesMinInATerm(QXmlStreamReader& xmlReader, Fak
 	}
 
 	if(!(ac==cn->activitiesIds.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -32258,7 +32439,7 @@ TimeConstraint* Rules::readActivitiesOccupyMaxTerms(QXmlStreamReader& xmlReader,
 	}
 
 	if(!(ac==cn->activitiesIds.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -33505,7 +33686,7 @@ TimeConstraint* Rules::readTeacherMaxActivityTagsPerDayFromSet(QXmlStreamReader&
 	}
 
 	if(!(nActivityTags==cn->tagsList.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -33589,7 +33770,7 @@ TimeConstraint* Rules::readTeachersMaxActivityTagsPerDayFromSet(QXmlStreamReader
 	}
 
 	if(!(nActivityTags==cn->tagsList.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -33678,7 +33859,7 @@ TimeConstraint* Rules::readStudentsSetMaxActivityTagsPerDayFromSet(QXmlStreamRea
 	}
 
 	if(!(nActivityTags==cn->tagsList.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -33762,7 +33943,7 @@ TimeConstraint* Rules::readStudentsMaxActivityTagsPerDayFromSet(QXmlStreamReader
 	}
 
 	if(!(nActivityTags==cn->tagsList.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -33851,7 +34032,7 @@ TimeConstraint* Rules::readTeacherMaxActivityTagsPerRealDayFromSet(QXmlStreamRea
 	}
 
 	if(!(nActivityTags==cn->tagsList.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -33935,7 +34116,7 @@ TimeConstraint* Rules::readTeachersMaxActivityTagsPerRealDayFromSet(QXmlStreamRe
 	}
 
 	if(!(nActivityTags==cn->tagsList.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -34024,7 +34205,7 @@ TimeConstraint* Rules::readStudentsSetMaxActivityTagsPerRealDayFromSet(QXmlStrea
 	}
 
 	if(!(nActivityTags==cn->tagsList.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -34108,7 +34289,7 @@ TimeConstraint* Rules::readStudentsMaxActivityTagsPerRealDayFromSet(QXmlStreamRe
 	}
 
 	if(!(nActivityTags==cn->tagsList.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -41559,7 +41740,7 @@ TimeConstraint* Rules::readTeacherPairOfMutuallyExclusiveSetsOfTimeSlots(QXmlStr
 	}
 
 	if(!(i1==tsc1)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Selected_Time_Slots_in_First_Set").arg("Selected_Time_Slot_in_First_Set"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Selected_Time_Slots_in_First_Set").arg("Selected_Time_Slot_in_First_Set"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -41568,7 +41749,7 @@ TimeConstraint* Rules::readTeacherPairOfMutuallyExclusiveSetsOfTimeSlots(QXmlStr
 	assert(i1==tsc1);
 
 	if(!(i2==tsc2)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Selected_Time_Slots_in_Second_Set").arg("Selected_Time_Slot_in_Second_Set"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Selected_Time_Slots_in_Second_Set").arg("Selected_Time_Slot_in_Second_Set"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -41768,7 +41949,7 @@ TimeConstraint* Rules::readTeachersPairOfMutuallyExclusiveSetsOfTimeSlots(QXmlSt
 	}
 
 	if(!(i1==tsc1)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Selected_Time_Slots_in_First_Set").arg("Selected_Time_Slot_in_First_Set"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Selected_Time_Slots_in_First_Set").arg("Selected_Time_Slot_in_First_Set"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -41777,7 +41958,7 @@ TimeConstraint* Rules::readTeachersPairOfMutuallyExclusiveSetsOfTimeSlots(QXmlSt
 	assert(i1==tsc1);
 
 	if(!(i2==tsc2)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Selected_Time_Slots_in_Second_Set").arg("Selected_Time_Slot_in_Second_Set"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Selected_Time_Slots_in_Second_Set").arg("Selected_Time_Slot_in_Second_Set"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -41982,7 +42163,7 @@ TimeConstraint* Rules::readStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots(QXm
 	}
 
 	if(!(i1==tsc1)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Selected_Time_Slots_in_First_Set").arg("Selected_Time_Slot_in_First_Set"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Selected_Time_Slots_in_First_Set").arg("Selected_Time_Slot_in_First_Set"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -41991,7 +42172,7 @@ TimeConstraint* Rules::readStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots(QXm
 	assert(i1==tsc1);
 
 	if(!(i2==tsc2)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Selected_Time_Slots_in_Second_Set").arg("Selected_Time_Slot_in_Second_Set"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Selected_Time_Slots_in_Second_Set").arg("Selected_Time_Slot_in_Second_Set"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -42191,7 +42372,7 @@ TimeConstraint* Rules::readStudentsPairOfMutuallyExclusiveSetsOfTimeSlots(QXmlSt
 	}
 
 	if(!(i1==tsc1)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Selected_Time_Slots_in_First_Set").arg("Selected_Time_Slot_in_First_Set"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Selected_Time_Slots_in_First_Set").arg("Selected_Time_Slot_in_First_Set"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -42200,7 +42381,7 @@ TimeConstraint* Rules::readStudentsPairOfMutuallyExclusiveSetsOfTimeSlots(QXmlSt
 	assert(i1==tsc1);
 
 	if(!(i2==tsc2)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Selected_Time_Slots_in_Second_Set").arg("Selected_Time_Slot_in_Second_Set"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Selected_Time_Slots_in_Second_Set").arg("Selected_Time_Slot_in_Second_Set"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -42337,14 +42518,14 @@ TimeConstraint* Rules::readTeacherOccupiesMaxSetsOfTimeSlotsFromSelection(QXmlSt
 			}
 			
 			if(days.count()!=hours.count()){
-				xmlReader.raiseError(tr("The number of read %1 is not equal to the number of read %2", "%1 is an XML element, like 'Day', and %2 is another XML element, like 'Hour'")
+				xmlReader.raiseError(tr("The number of %1 which were read is not equal to the number of %2 which were read", "%1 is an XML element, like 'Day', and %2 is another XML element, like 'Hour'")
 				 .arg("Day").arg("Hour"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
 			}
 			if(tsc!=days.count()){
-				xmlReader.raiseError(tr("%1 does not coincide with the number of read %2", "%1 and %2 are XML elements, like"
+				xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read", "%1 and %2 are XML elements, like"
 				 " 'Number_of_Selected_Time_Slots' and 'Selected_Time_Slot'").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
 				delete cn;
 				cn=nullptr;
@@ -42366,7 +42547,7 @@ TimeConstraint* Rules::readTeacherOccupiesMaxSetsOfTimeSlotsFromSelection(QXmlSt
 
 	assert(cn->selectedDays.count()==cn->selectedHours.count());
 	if(readSetsCount!=cn->selectedDays.count()){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2", "%1 and %2 are XML elements, like"
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read", "%1 and %2 are XML elements, like"
 		 " 'Number_of_Selected_Sets_of_Time_Slots' and 'Selected_Set_of_Time_Slots'").arg("Number_of_Selected_Sets_of_Time_Slots").arg("Selected_Set_of_Time_Slots"));
 		delete cn;
 		cn=nullptr;
@@ -42497,14 +42678,14 @@ TimeConstraint* Rules::readTeachersOccupyMaxSetsOfTimeSlotsFromSelection(QXmlStr
 			}
 			
 			if(days.count()!=hours.count()){
-				xmlReader.raiseError(tr("The number of read %1 is not equal to the number of read %2", "%1 is an XML element, like 'Day', and %2 is another XML element, like 'Hour'")
+				xmlReader.raiseError(tr("The number of %1 which were read is not equal to the number of %2 which were read", "%1 is an XML element, like 'Day', and %2 is another XML element, like 'Hour'")
 				 .arg("Day").arg("Hour"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
 			}
 			if(tsc!=days.count()){
-				xmlReader.raiseError(tr("%1 does not coincide with the number of read %2", "%1 and %2 are XML elements, like"
+				xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read", "%1 and %2 are XML elements, like"
 				 " 'Number_of_Selected_Time_Slots' and 'Selected_Time_Slot'").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
 				delete cn;
 				cn=nullptr;
@@ -42526,7 +42707,7 @@ TimeConstraint* Rules::readTeachersOccupyMaxSetsOfTimeSlotsFromSelection(QXmlStr
 
 	assert(cn->selectedDays.count()==cn->selectedHours.count());
 	if(readSetsCount!=cn->selectedDays.count()){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2", "%1 and %2 are XML elements, like"
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read", "%1 and %2 are XML elements, like"
 		 " 'Number_of_Selected_Sets_of_Time_Slots' and 'Selected_Set_of_Time_Slots'").arg("Number_of_Selected_Sets_of_Time_Slots").arg("Selected_Set_of_Time_Slots"));
 		delete cn;
 		cn=nullptr;
@@ -42662,14 +42843,14 @@ TimeConstraint* Rules::readStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection(QX
 			}
 			
 			if(days.count()!=hours.count()){
-				xmlReader.raiseError(tr("The number of read %1 is not equal to the number of read %2", "%1 is an XML element, like 'Day', and %2 is another XML element, like 'Hour'")
+				xmlReader.raiseError(tr("The number of %1 which were read is not equal to the number of %2 which were read", "%1 is an XML element, like 'Day', and %2 is another XML element, like 'Hour'")
 				 .arg("Day").arg("Hour"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
 			}
 			if(tsc!=days.count()){
-				xmlReader.raiseError(tr("%1 does not coincide with the number of read %2", "%1 and %2 are XML elements, like"
+				xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read", "%1 and %2 are XML elements, like"
 				 " 'Number_of_Selected_Time_Slots' and 'Selected_Time_Slot'").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
 				delete cn;
 				cn=nullptr;
@@ -42691,7 +42872,7 @@ TimeConstraint* Rules::readStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection(QX
 
 	assert(cn->selectedDays.count()==cn->selectedHours.count());
 	if(readSetsCount!=cn->selectedDays.count()){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2", "%1 and %2 are XML elements, like"
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read", "%1 and %2 are XML elements, like"
 		 " 'Number_of_Selected_Sets_of_Time_Slots' and 'Selected_Set_of_Time_Slots'").arg("Number_of_Selected_Sets_of_Time_Slots").arg("Selected_Set_of_Time_Slots"));
 		delete cn;
 		cn=nullptr;
@@ -42822,14 +43003,14 @@ TimeConstraint* Rules::readStudentsOccupyMaxSetsOfTimeSlotsFromSelection(QXmlStr
 			}
 			
 			if(days.count()!=hours.count()){
-				xmlReader.raiseError(tr("The number of read %1 is not equal to the number of read %2", "%1 is an XML element, like 'Day', and %2 is another XML element, like 'Hour'")
+				xmlReader.raiseError(tr("The number of %1 which were read is not equal to the number of %2 which were read", "%1 is an XML element, like 'Day', and %2 is another XML element, like 'Hour'")
 				 .arg("Day").arg("Hour"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
 			}
 			if(tsc!=days.count()){
-				xmlReader.raiseError(tr("%1 does not coincide with the number of read %2", "%1 and %2 are XML elements, like"
+				xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read", "%1 and %2 are XML elements, like"
 				 " 'Number_of_Selected_Time_Slots' and 'Selected_Time_Slot'").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
 				delete cn;
 				cn=nullptr;
@@ -42851,7 +43032,7 @@ TimeConstraint* Rules::readStudentsOccupyMaxSetsOfTimeSlotsFromSelection(QXmlStr
 
 	assert(cn->selectedDays.count()==cn->selectedHours.count());
 	if(readSetsCount!=cn->selectedDays.count()){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2", "%1 and %2 are XML elements, like"
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read", "%1 and %2 are XML elements, like"
 		 " 'Number_of_Selected_Sets_of_Time_Slots' and 'Selected_Set_of_Time_Slots'").arg("Number_of_Selected_Sets_of_Time_Slots").arg("Selected_Set_of_Time_Slots"));
 		delete cn;
 		cn=nullptr;
@@ -42994,14 +43175,14 @@ TimeConstraint* Rules::readActivitiesOccupyMaxSetsOfTimeSlotsFromSelection(QXmlS
 			}
 			
 			if(days.count()!=hours.count()){
-				xmlReader.raiseError(tr("The number of read %1 is not equal to the number of read %2", "%1 is an XML element, like 'Day', and %2 is another XML element, like 'Hour'")
+				xmlReader.raiseError(tr("The number of %1 which were read is not equal to the number of %2 which were read", "%1 is an XML element, like 'Day', and %2 is another XML element, like 'Hour'")
 				 .arg("Day").arg("Hour"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
 			}
 			if(tsc!=days.count()){
-				xmlReader.raiseError(tr("%1 does not coincide with the number of read %2", "%1 and %2 are XML elements, like"
+				xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read", "%1 and %2 are XML elements, like"
 				 " 'Number_of_Selected_Time_Slots' and 'Selected_Time_Slot'").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
 				delete cn;
 				cn=nullptr;
@@ -43022,7 +43203,7 @@ TimeConstraint* Rules::readActivitiesOccupyMaxSetsOfTimeSlotsFromSelection(QXmlS
 	}
 
 	if(!(ac==cn->activitiesIds.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -43032,7 +43213,7 @@ TimeConstraint* Rules::readActivitiesOccupyMaxSetsOfTimeSlotsFromSelection(QXmlS
 
 	assert(cn->selectedDays.count()==cn->selectedHours.count());
 	if(readSetsCount!=cn->selectedDays.count()){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2", "%1 and %2 are XML elements, like"
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read", "%1 and %2 are XML elements, like"
 		 " 'Number_of_Selected_Sets_of_Time_Slots' and 'Selected_Set_of_Time_Slots'").arg("Number_of_Selected_Sets_of_Time_Slots").arg("Selected_Set_of_Time_Slots"));
 		delete cn;
 		cn=nullptr;
@@ -43495,7 +43676,7 @@ SpaceConstraint* Rules::readRoomNotAvailableTimes(QXmlStreamReader& xmlReader, F
 	}
 	assert(i==cn->days.count() && i==cn->hours.count());
 	if(!(i==nNotAvailableSlots)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Not_Available_Times").arg("Not_Available_Time"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Not_Available_Times").arg("Not_Available_Time"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -43626,7 +43807,7 @@ SpaceConstraint* Rules::readTeacherRoomNotAvailableTimes(QXmlStreamReader& xmlRe
 	}
 	assert(i==cn->days.count() && i==cn->hours.count());
 	if(!(i==nNotAvailableSlots)){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Not_Available_Times").arg("Not_Available_Time"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Not_Available_Times").arg("Not_Available_Time"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -43868,7 +44049,7 @@ SpaceConstraint* Rules::readActivityPreferredRooms(QXmlStreamReader& xmlReader, 
 		}
 	}
 	if(!(_n_preferred_rooms==cn->roomsNames.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Rooms").arg("Preferred_Room"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Preferred_Rooms").arg("Preferred_Room"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -44004,7 +44185,7 @@ SpaceConstraint* Rules::readSubjectPreferredRooms(QXmlStreamReader& xmlReader, F
 		}
 	}
 	if(!(_n_preferred_rooms==cn->roomsNames.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Rooms").arg("Preferred_Room"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Preferred_Rooms").arg("Preferred_Room"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -44150,7 +44331,7 @@ SpaceConstraint* Rules::readSubjectSubjectTagPreferredRooms(QXmlStreamReader& xm
 		}
 	}
 	if(!(_n_preferred_rooms==cn->roomsNames.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Rooms").arg("Preferred_Room"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Preferred_Rooms").arg("Preferred_Room"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -44296,7 +44477,7 @@ SpaceConstraint* Rules::readSubjectActivityTagPreferredRooms(QXmlStreamReader& x
 		}
 	}
 	if(!(_n_preferred_rooms==cn->roomsNames.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Rooms").arg("Preferred_Room"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Preferred_Rooms").arg("Preferred_Room"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -44395,7 +44576,7 @@ SpaceConstraint* Rules::readActivityTagPreferredRooms(QXmlStreamReader& xmlReade
 		}
 	}
 	if(!(_n_preferred_rooms==cn->roomsNames.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Rooms").arg("Preferred_Room"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Preferred_Rooms").arg("Preferred_Room"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -44493,7 +44674,7 @@ SpaceConstraint* Rules::readStudentsSetHomeRooms(QXmlStreamReader& xmlReader, Fa
 		}
 	}
 	if(!(_n_preferred_rooms==cn->roomsNames.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Rooms").arg("Preferred_Room"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Preferred_Rooms").arg("Preferred_Room"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -44591,7 +44772,7 @@ SpaceConstraint* Rules::readTeacherHomeRooms(QXmlStreamReader& xmlReader, FakeSt
 		}
 	}
 	if(!(_n_preferred_rooms==cn->roomsNames.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Rooms").arg("Preferred_Room"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Preferred_Rooms").arg("Preferred_Room"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -45600,7 +45781,7 @@ SpaceConstraint* Rules::readActivitiesOccupyMaxDifferentRooms(QXmlStreamReader& 
 	}
 	
 	if(!(ac==cn->activitiesIds.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -45658,7 +45839,7 @@ SpaceConstraint* Rules::readActivitiesSameRoomIfConsecutive(QXmlStreamReader& xm
 	}
 	
 	if(!(ac==cn->activitiesIds.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -47886,7 +48067,7 @@ SpaceConstraint* Rules::readRoomMaxActivityTagsPerDayFromSet(QXmlStreamReader& x
 	}
 
 	if(!(nActivityTags==cn->tagsList.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -47975,7 +48156,7 @@ SpaceConstraint* Rules::readRoomMaxActivityTagsPerRealDayFromSet(QXmlStreamReade
 	}
 
 	if(!(nActivityTags==cn->tagsList.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;
@@ -48064,7 +48245,7 @@ SpaceConstraint* Rules::readRoomMaxActivityTagsPerWeekFromSet(QXmlStreamReader& 
 	}
 
 	if(!(nActivityTags==cn->tagsList.count())){
-		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
 		delete cn;
 		cn=nullptr;
 		return nullptr;

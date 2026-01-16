@@ -10,8 +10,7 @@
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU Affero General Public License as        *
- *   published by the Free Software Foundation, either version 3 of the    *
- *   License, or (at your option) any later version.                       *
+ *   published by the Free Software Foundation, version 3 of the License.  *
  *                                                                         *
  ***************************************************************************/
 
@@ -8021,6 +8020,71 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				break;
 			}
+		//253
+		case CONSTRAINT_ACTIVITIES_MAX_TOTAL_NUMBER_OF_STUDENTS_IN_SELECTED_TIME_SLOTS:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add activities max total number of students in selected time slots", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots");
+
+					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+				}
+				else{
+					dialogTitle=tr("Modify activities max total number of students in selected time slots", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots");
+
+					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
+					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
+					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+				}
+
+				addEmpty=true;
+				filterGroupBox=new QGroupBox(tr("Filter"));
+
+				//teacherLabel=new QLabel(tr("Teacher"));
+				teachersComboBox=new QComboBox;
+
+				//studentsLabel=new QLabel(tr("Students set"));
+				studentsComboBox=new QComboBox;
+
+				//subjectLabel=new QLabel(tr("Subject"));
+				subjectsComboBox=new QComboBox;
+
+				//activityTagLabel=new QLabel(tr("Activity tag"));
+				activityTagsComboBox=new QComboBox;
+
+				activitiesLabel=new QLabel(tr("Activities"));
+				selectedActivitiesLabel=new QLabel(tr("Selected", "It refers to activities"));
+				activitiesListWidget=new QListWidget;
+				selectedActivitiesListWidget=new QListWidget;
+				addAllActivitiesPushButton=new QPushButton(tr("All", "Add all filtered activities to the list of selected activities"));
+				clearActivitiesPushButton=new QPushButton(tr("Clear", "Clear the list of selected activities"));
+
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors")))
+					colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors")).toBool());
+				else
+					colorsCheckBox->setChecked(false);
+
+				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked(), true);
+
+				labelForSpinBox=new QLabel(tr("Max total number of students"));
+				spinBox=new QSpinBox;
+				spinBox->setMinimum(0);
+				spinBox->setMaximum(MAX_TOTAL_SUBGROUPS);
+				spinBox->setValue(0);
+
+				tabWidget=new QTabWidget;
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -13555,6 +13619,31 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 					break;
 				}
+			//253
+			case CONSTRAINT_ACTIVITIES_MAX_TOTAL_NUMBER_OF_STUDENTS_IN_SELECTED_TIME_SLOTS:
+				{
+					ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots* ctr=(ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots*)oldtc;
+
+					selectedActivitiesListWidget->clear();
+					selectedActivitiesList.clear();
+
+					for(int actId : std::as_const(ctr->activitiesIds)){
+						selectedActivitiesList.append(actId);
+						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
+						assert(act!=nullptr);
+						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
+					}
+
+					fillTimesTable(timesTable, ctr->selectedDays, ctr->selectedHours, true);
+
+					spinBox->setValue(ctr->maxNumberOfStudents);
+
+					break;
+				}
 
 			default:
 				assert(0);
@@ -17853,6 +17942,30 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 					assert(gt.rules.searchActivityTag(activityTag)>=0);
 
 				tc=new ConstraintActivitiesBeginOrEndTeachersDay(weight, teacher, students, subject, activityTag);
+
+				break;
+			}
+		//253
+		case CONSTRAINT_ACTIVITIES_MAX_TOTAL_NUMBER_OF_STUDENTS_IN_SELECTED_TIME_SLOTS:
+			{
+				if(selectedActivitiesList.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Empty list of selected activities"));
+					return;
+				}
+
+				if(spinBox->value()==0){
+					QMessageBox::warning(dialog, tr("FET information"), tr("You specified the max total number of students to be 0. This is "
+					 "not perfect from efficiency point of view, because you can use instead constraint activity(ies) preferred time slots, "
+					 "and help FET to find a timetable easier and faster, with an equivalent result. Please correct."));
+					return;
+				}
+
+				QList<int> days;
+				QList<int> hours;
+				getTimesTable(timesTable, days, hours, true);
+
+				tc=new ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots(weight, selectedActivitiesList, days, hours, spinBox->value());
 
 				break;
 			}
@@ -24466,6 +24579,36 @@ void AddOrModifyTimeConstraint::okClicked()
 				ctr->studentsName=students;
 				ctr->subjectName=subject;
 				ctr->activityTagName=activityTag;
+
+				break;
+			}
+		//253
+		case CONSTRAINT_ACTIVITIES_MAX_TOTAL_NUMBER_OF_STUDENTS_IN_SELECTED_TIME_SLOTS:
+			{
+				if(selectedActivitiesList.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"), tr("Empty list of activities"));
+					return;
+				}
+
+				if(spinBox->value()==0){
+					QMessageBox::warning(dialog, tr("FET information"), tr("You specified the max total number of students to be 0. This is "
+					 "not perfect from efficiency point of view, because you can use instead constraint activity(ies) preferred time slots, "
+					 "and help FET to find a timetable easier and faster, with an equivalent result. Please correct."));
+					return;
+				}
+
+				QList<int> days;
+				QList<int> hours;
+				getTimesTable(timesTable, days, hours, true);
+
+				ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots* ctr=(ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots*)oldtc;
+				ctr->activitiesIds=selectedActivitiesList;
+				ctr->recomputeActivitiesSet();
+
+				ctr->selectedDays=days;
+				ctr->selectedHours=hours;
+
+				ctr->maxNumberOfStudents=spinBox->value();
 
 				break;
 			}

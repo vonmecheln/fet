@@ -10,8 +10,7 @@
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU Affero General Public License as        *
- *   published by the Free Software Foundation, either version 3 of the    *
- *   License, or (at your option) any later version.                       *
+ *   published by the Free Software Foundation, version 3 of the License.  *
  *                                                                         *
  ***************************************************************************/
 
@@ -81,7 +80,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	about+=tr("Version: %1 (%2 %3).", "%1 is the current FET version, %2 is the current release month, %3 is the current release year").arg(FET_VERSION)
 	 .arg(QCoreApplication::translate("MonthsNames", "October")).arg("2025");
 	about+=QString("<br /><br />");
-	about+=tr("Licensed under the GNU Affero General Public License version 3 or later.");
+	about+=tr("Licensed under the GNU Affero General Public License version 3.");
 	about+=QString("<br /><br />");
 	about+=tr("FET homepage: %1", "%1 is the FET homepage").arg("<a href=\"https://lalescu.ro/liviu/fet/\">https://lalescu.ro/liviu/fet/</a>");
 	about+=QString("<br />");
@@ -1533,6 +1532,8 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("moke");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Erdem Uygun");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Furkan Kızılaslan");
 	thanksTo+=QString("<br />");
 	
 	thanksToTextBrowser->setHtml(thanksTo);

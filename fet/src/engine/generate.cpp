@@ -14,8 +14,7 @@ File generate.cpp
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU Affero General Public License as        *
- *   published by the Free Software Foundation, either version 3 of the    *
- *   License, or (at your option) any later version.                       *
+ *   published by the Free Software Foundation, version 3 of the License.  *
  *                                                                         *
  ***************************************************************************/
 
@@ -1263,7 +1262,7 @@ inline bool Generate::teacherRemoveAnActivityFromBeginOrEnd(int level, int ai, Q
 			for(int q=0; q<acts.count(); q++){
 				int ai2=acts.at(q);
 				if(optMinWrong>triedRemovals(ai2,c.times[ai2])){
-				 	optMinWrong=triedRemovals(ai2,c.times[ai2]);
+					optMinWrong=triedRemovals(ai2,c.times[ai2]);
 				}
 			}
 			
@@ -1747,16 +1746,18 @@ inline bool Generate::teacherRemoveAnActivityFromBeginOrEndCertainDay(int d2, in
 			if(actIndexBegin>=0){
 				if(optMinWrong>triedRemovals(actIndexBegin,c.times[actIndexBegin])){
 					optMinWrong=triedRemovals(actIndexBegin,c.times[actIndexBegin]);
+					ai2=actIndexBegin;
 				}
-				ai2=actIndexBegin;
 			}
 
 			if(actIndexEnd>=0){
 				if(optMinWrong>triedRemovals(actIndexEnd,c.times[actIndexEnd])){
 					optMinWrong=triedRemovals(actIndexEnd,c.times[actIndexEnd]);
+					ai2=actIndexEnd;
 				}
-				ai2=actIndexEnd;
 			}
+			
+			assert(ai2>=0);
 			
 			if(actIndexBegin>=0 && actIndexEnd>=0 && optMinWrong==triedRemovals(actIndexEnd,c.times[actIndexEnd]) &&
 			  optMinWrong==triedRemovals(actIndexBegin,c.times[actIndexBegin])){
@@ -1847,30 +1848,32 @@ inline bool Generate::teacherRemoveAnActivityFromBeginOrEndCertainTwoDays(int d2
 			if(actIndexBegin2>=0){
 				if(optMinWrong>triedRemovals(actIndexBegin2,c.times[actIndexBegin2])){
 					optMinWrong=triedRemovals(actIndexBegin2,c.times[actIndexBegin2]);
+					ai2=actIndexBegin2;
 				}
-				ai2=actIndexBegin2;
 			}
 
 			if(actIndexEnd2>=0){
 				if(optMinWrong>triedRemovals(actIndexEnd2,c.times[actIndexEnd2])){
 					optMinWrong=triedRemovals(actIndexEnd2,c.times[actIndexEnd2]);
+					ai2=actIndexEnd2;
 				}
-				ai2=actIndexEnd2;
 			}
 
 			if(actIndexBegin4>=0){
 				if(optMinWrong>triedRemovals(actIndexBegin4,c.times[actIndexBegin4])){
 					optMinWrong=triedRemovals(actIndexBegin4,c.times[actIndexBegin4]);
+					ai2=actIndexBegin4;
 				}
-				ai2=actIndexBegin4;
 			}
 
 			if(actIndexEnd4>=0){
 				if(optMinWrong>triedRemovals(actIndexEnd4,c.times[actIndexEnd4])){
 					optMinWrong=triedRemovals(actIndexEnd4,c.times[actIndexEnd4]);
+					ai2=actIndexEnd4;
 				}
-				ai2=actIndexEnd4;
 			}
+			
+			assert(ai2>=0);
 
 			QList<int> tl;
 
@@ -3977,16 +3980,18 @@ inline bool Generate::subgroupRemoveAnActivityFromBeginOrEndCertainDay(int d2, i
 			if(actIndexBegin>=0){
 				if(optMinWrong>triedRemovals(actIndexBegin,c.times[actIndexBegin])){
 				 	optMinWrong=triedRemovals(actIndexBegin,c.times[actIndexBegin]);
+					ai2=actIndexBegin;
 				}
-				ai2=actIndexBegin;
 			}
 
 			if(actIndexEnd>=0){
 				if(optMinWrong>triedRemovals(actIndexEnd,c.times[actIndexEnd])){
 				 	optMinWrong=triedRemovals(actIndexEnd,c.times[actIndexEnd]);
+					ai2=actIndexEnd;
 				}
-				ai2=actIndexEnd;
 			}
+			
+			assert(ai2>=0);
 			
 			if(actIndexBegin>=0 && actIndexEnd>=0 && optMinWrong==triedRemovals(actIndexEnd,c.times[actIndexEnd]) &&
 			  optMinWrong==triedRemovals(actIndexBegin,c.times[actIndexBegin])){
@@ -7688,11 +7693,14 @@ void Generate::generate(int maxSeconds, bool& restarted, bool& impossible, bool&
 	_tags_nConflActivities.resize(gt.rules.nInternalActivityTags);
 	_tags_minIndexAct.resize(gt.rules.nInternalActivityTags);
 	
-	//2011-09-30
-	if(haveActivitiesOccupyMaxConstraints || haveActivitiesMaxSimultaneousConstraints){
+	//2011-09-30 - updated on 2025-10-18
+	if(haveActivitiesOccupyMaxConstraints || haveActivitiesMaxSimultaneousConstraints || haveActivitiesMaxNumberOfStudentsConstraints){
 		activitiesAtTime.resize(gt.rules.nHoursPerWeek);
-
+	}
+	if(haveActivitiesOccupyMaxConstraints || haveActivitiesMaxSimultaneousConstraints){
 		slotSetOfActivities.resize(gt.rules.nHoursPerWeek);
+	}
+	if(haveActivitiesOccupyMaxConstraints){
 		slotCanEmpty.resize(gt.rules.nHoursPerWeek);
 	}
 
@@ -7758,6 +7766,8 @@ void Generate::generate(int maxSeconds, bool& restarted, bool& impossible, bool&
 	level_limit=14;
 	
 	assert(level_limit<=MAX_LEVEL);
+
+	highestStageSolution.copy(gt.rules, c); //to avoid crash if no activity was placed and we try to obtain the highest-stage solution
 	
 	for(int added_act=0; added_act<gt.rules.nInternalActivities; added_act++){
 prevvalue:
@@ -8118,15 +8128,15 @@ prevvalue:
 		}
 		//////////////
 		
-		//2011-09-30
-		if(haveActivitiesOccupyMaxConstraints || haveActivitiesMaxSimultaneousConstraints){
+		//2011-09-30, updated on 2025-10-18
+		if(haveActivitiesOccupyMaxConstraints || haveActivitiesMaxSimultaneousConstraints || haveActivitiesMaxNumberOfStudentsConstraints){
 			for(int t=0; t<gt.rules.nHoursPerWeek; t++)
 				activitiesAtTime[t].clear();
 	
 			for(int j=0; j<gt.rules.nInternalActivities/*added_act*/; j++){
 				int i=permutation[j];
 				
-				if(!activityHasOccupyMaxConstraints[i] && !activityHasMaxSimultaneousConstraints[i])
+				if(!activityHasOccupyMaxConstraints[i] && !activityHasMaxSimultaneousConstraints[i] && !activityHasMaxNumberOfStudentsConstraints[i])
 					continue;
 				
 				if(j<added_act){
@@ -8668,8 +8678,8 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 				/////////////////
 			}
 			
-			//2011-09-30
-			if(activityHasOccupyMaxConstraints[ai] || activityHasMaxSimultaneousConstraints[ai]){
+			//2011-09-30, updated on 2025-10-18
+			if(activityHasOccupyMaxConstraints[ai] || activityHasMaxSimultaneousConstraints[ai] || activityHasMaxNumberOfStudentsConstraints[ai]){
 				for(int t=fromslot; t<fromslot+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
 					assert(activitiesAtTime[t].contains(ai));
 					activitiesAtTime[t].remove(ai);
@@ -8890,8 +8900,8 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 				/////////////////
 			}
 
-			//2011-09-30
-			if(activityHasOccupyMaxConstraints[ai] || activityHasMaxSimultaneousConstraints[ai]){
+			//2011-09-30, updated on 2025-10-18
+			if(activityHasOccupyMaxConstraints[ai] || activityHasMaxSimultaneousConstraints[ai] || activityHasMaxNumberOfStudentsConstraints[ai]){
 				for(int t=toslot; t<toslot+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
 					assert(!activitiesAtTime[t].contains(ai));
 					activitiesAtTime[t].insert(ai);
@@ -9175,6 +9185,9 @@ again_if_impossible_activity:
 
 		//2011-09-25
 		bool okactivitiesoccupymaxtimeslotsfromselection;
+
+		//2025-10-18
+		bool okactivitiesmaxtotalnumberofstudentsinselectedtimeslots;
 		
 		//2020-04-30
 		bool okmaxtotalactivitiesfromsetinselectedtimeslots;
@@ -23421,7 +23434,7 @@ impossiblestudentsmingapsbetweenactivitytagbetweenmorningandafternoon:
 		okstudentsmaxsinglegapsinselectedtimeslots=true;
 		
 		if(haveStudentsMaxSingleGapsInSelectedTimeSlots){
-			QSet<int> conflActivitiesSet(conflActivities[newtime].constBegin(), conflActivities[newtime].constEnd());
+			conflActivitiesSet=QSet<int>(conflActivities[newtime].constBegin(), conflActivities[newtime].constEnd());
 			
 			for(int sbg : std::as_const(act->iSubgroupsList)){
 				for(SubgroupMaxSingleGapsInSelectedTimeSlots_item* item : std::as_const(smsgistsListForSubgroup[sbg])){
@@ -34219,7 +34232,7 @@ impossibleteachersmingapsbetweenactivitytagbetweenmorningandafternoon:
 		okteachersmaxsinglegapsinselectedtimeslots=true;
 		
 		if(haveTeachersMaxSingleGapsInSelectedTimeSlots){
-			QSet<int> conflActivitiesSet(conflActivities[newtime].constBegin(), conflActivities[newtime].constEnd());
+			conflActivitiesSet=QSet<int>(conflActivities[newtime].constBegin(), conflActivities[newtime].constEnd());
 			
 			for(int tch : std::as_const(act->iTeachersList)){
 				for(TeacherMaxSingleGapsInSelectedTimeSlots_item* item : std::as_const(tmsgistsListForTeacher[tch])){
@@ -34811,7 +34824,194 @@ impossibleactivitiesoccupymaxtimeslotsfromselection:
 				continue;
 			}
 		}
-		
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+		//2025-10-18
+		//care about activities max total number of students in selected time slots
+		//I think it is best to put this after all other major constraints
+		//I think it is best to put this after activities max simultaneous in selected time slots
+		//I think it is best to put this after activities occupy max time slots from selection
+
+		if(haveActivitiesMaxNumberOfStudentsConstraints && activityHasMaxNumberOfStudentsConstraints[ai]){
+			okactivitiesmaxtotalnumberofstudentsinselectedtimeslots=true;
+			
+			assert(act->nTotalStudents>=1);
+			
+			conflActivitiesSet=QSet<int>(conflActivities[newtime].constBegin(), conflActivities[newtime].constEnd());
+
+			for(ActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots_item* item : std::as_const(amtnosistsListForActivity[ai])){
+				QList<int> occupiedTimeSlotsList;
+
+				for(int t=newtime; t<newtime+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek)
+					if(item->selectedTimeSlotsSet.contains(t))
+						occupiedTimeSlotsList.append(t);
+
+				if(occupiedTimeSlotsList.count()==0) //OK, nothing to check for the current activity
+					continue;
+
+				if(act->nTotalStudents > item->maxNumberOfStudents){
+					okactivitiesmaxtotalnumberofstudentsinselectedtimeslots=false;
+					goto impossibleactivitiesmaxtotalnumberofstudentsinselectedtimeslots;
+				}
+				
+				QList<QList<int>> occupiedActivitiesLists;
+
+				for(int t : std::as_const(occupiedTimeSlotsList)){
+					QSet<int> ts=activitiesAtTime[t];
+					ts.intersect(item->activitiesSet);
+					ts.subtract(conflActivitiesSet);
+
+					QList<int> tl(ts.constBegin(), ts.constEnd());
+
+					//2025-10-19 - this sorting is postponed for the next loop, for speed, if we don't reach the next part
+					//std::stable_sort(tl.begin(), tl.end()); //keep the generation identical if the random seed is the same
+					occupiedActivitiesLists.append(tl);
+				}
+				
+				//QList<QList<int>> incorrectActivitiesLists;
+				QList<QSet<int>> incorrectActivitiesSets;
+				QList<int> numberOfStudentsList;
+				QSet<int> candidateActivitiesSet;
+
+				for(const QList<int>& tl : std::as_const(occupiedActivitiesLists)){
+					int ns=act->nTotalStudents;
+					for(int ai2 : std::as_const(tl)){
+						ns+=gt.rules.internalActivitiesList[ai2].nTotalStudents;
+					}
+					if(ns > item->maxNumberOfStudents){ //not OK
+						int nsNotRemovable=act->nTotalStudents;
+
+						//QList<int> removableActivitiesList;
+						QSet<int> removableActivitiesSet;
+						for(int ai2 : std::as_const(tl)){
+							if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
+								//removableActivitiesList.append(ai2);
+								removableActivitiesSet.insert(ai2);
+								if(!candidateActivitiesSet.contains(ai2))
+									candidateActivitiesSet.insert(ai2);
+							}
+							else{
+								nsNotRemovable+=gt.rules.internalActivitiesList[ai2].nTotalStudents;
+							}
+						}
+
+						if(nsNotRemovable > item->maxNumberOfStudents){
+							okactivitiesmaxtotalnumberofstudentsinselectedtimeslots=false;
+							goto impossibleactivitiesmaxtotalnumberofstudentsinselectedtimeslots;
+						}
+
+						numberOfStudentsList.append(ns);
+
+						//not needed anymore: std::stable_sort(removableActivitiesList.begin(), removableActivitiesList.end()); //keep the generation identical if the random seed is the same
+
+						//incorrectActivitiesLists.append(removableActivitiesList);
+						incorrectActivitiesSets.append(removableActivitiesSet);
+					}
+				}
+
+				if(numberOfStudentsList.count()>=1){ //not OK
+					assert(candidateActivitiesSet.count()>0);
+					QList<int> candidateActivitiesList(candidateActivitiesSet.constBegin(), candidateActivitiesSet.constEnd());
+					std::stable_sort(candidateActivitiesList.begin(), candidateActivitiesList.end()); //keep the generation identical for the same random seed
+					for(;;){
+						assert(candidateActivitiesList.count()>0);
+						
+						int ai2=-1;
+
+						if(level>0){
+							ai2=candidateActivitiesList.at(rng.intMRG32k3a(candidateActivitiesList.count()));
+						}
+						else{
+							assert(level==0);
+
+							int minWrong=INF;
+							QList<int> optCandidates;
+
+							for(int ai3 : std::as_const(candidateActivitiesList)){
+								if(minWrong>triedRemovals(ai3,c.times[ai3])){
+									minWrong=triedRemovals(ai3,c.times[ai3]);
+									optCandidates.clear();
+									optCandidates.append(ai3);
+								}
+								else if(minWrong==triedRemovals(ai3,c.times[ai3])){
+									optCandidates.append(ai3);
+								}
+							}
+
+							assert(optCandidates.count()>0);
+							int q=rng.intMRG32k3a(optCandidates.count());
+							ai2=optCandidates.at(q);
+						}
+
+						assert(ai2>=0);
+
+						assert(!fixedTimeActivity[ai2] && !swappedActivities[ai2]);
+						
+						/*assert(candidateActivitiesSet.contains(ai2));
+						candidateActivitiesSet.remove(ai2);*/
+						int t=candidateActivitiesList.removeAll(ai2);
+						assert(t==1);
+
+						assert(!conflActivities[newtime].contains(ai2));
+						conflActivities[newtime].append(ai2);
+
+						nConflActivities[newtime]++;
+						assert(nConflActivities[newtime]==conflActivities[newtime].count());
+
+						assert(!conflActivitiesSet.contains(ai2));
+						conflActivitiesSet.insert(ai2);
+
+						assert(gt.rules.internalActivitiesList[ai2].nTotalStudents>=1);
+						
+						//QList<QList<int>> newIncorrectActivitiesLists;
+						QList<QSet<int>> newIncorrectActivitiesSets;
+						QList<int> newNumberOfStudentsList;
+						
+						for(int i=0; i<numberOfStudentsList.count(); i++){
+							QSet<int> ts=incorrectActivitiesSets.at(i);
+							//QList<int> tl=incorrectActivitiesLists.at(i);
+							int ns=numberOfStudentsList.at(i);
+							if(ts.contains(ai2)){
+								ts.remove(ai2);
+								//int tt=tl.removeAll(ai2);
+								//assert(tt==1);
+								ns-=gt.rules.internalActivitiesList[ai2].nTotalStudents;
+								
+								if(ns > item->maxNumberOfStudents){
+									//newIncorrectActivitiesLists.append(tl);
+									newIncorrectActivitiesSets.append(ts);
+									newNumberOfStudentsList.append(ns);
+								}
+							}
+							else{
+								//newIncorrectActivitiesLists.append(tl);
+								newIncorrectActivitiesSets.append(ts);
+								newNumberOfStudentsList.append(ns);
+							}
+						}
+						
+						if(newNumberOfStudentsList.count()==0)
+							break;
+						
+						//incorrectActivitiesLists=newIncorrectActivitiesLists;
+						incorrectActivitiesSets=newIncorrectActivitiesSets;
+						numberOfStudentsList=newNumberOfStudentsList;
+					}
+				}
+			}
+			
+impossibleactivitiesmaxtotalnumberofstudentsinselectedtimeslots:
+			if(!okactivitiesmaxtotalnumberofstudentsinselectedtimeslots){
+				if(updateSubgroups || updateTeachers)
+					removeAiFromNewTimetable(ai, act, d, h);
+				//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+				nConflActivities[newtime]=MAX_ACTIVITIES;
+				continue;
+			}
+		}
+
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 		//2020-04-30

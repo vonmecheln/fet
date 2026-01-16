@@ -10,8 +10,7 @@
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU Affero General Public License as        *
- *   published by the Free Software Foundation, either version 3 of the    *
- *   License, or (at your option) any later version.                       *
+ *   published by the Free Software Foundation, version 3 of the License.  *
  *                                                                         *
  ***************************************************************************/
 
@@ -27,11 +26,9 @@
 
 #include <QMessageBox>
 
-/*
 #include <Qt>
 #include <QShortcut>
 #include <QKeySequence>
-*/
 
 #include <QListWidget>
 #include <QScrollBar>
@@ -80,37 +77,42 @@ RoomsForm::RoomsForm(QWidget* parent): QDialog(parent)
 	connect(makeEditVirtualPushButton, &QPushButton::clicked, this, &RoomsForm::makeEditVirtual);
 	connect(helpPushButton, &QPushButton::clicked, this, &RoomsForm::help);
 
-	/*
-	QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
-	connect(addShortcut, &QShortcut::activated, [=]{addRoomPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		addRoomPushButton->setToolTip(QString("+"));
-	//
-	QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), this);
-	connect(modifyShortcut, &QShortcut::activated, [=]{modifyRoomPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		modifyRoomPushButton->setToolTip(QString("M"));
-	//
-	QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, this);
-	connect(removeShortcut, &QShortcut::activated, [=]{removeRoomPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		removeRoomPushButton->setToolTip(QString("⌦"));
-	//
-	QShortcut* commentsShortcut=new QShortcut(QKeySequence(Qt::Key_C), this);
-	connect(commentsShortcut, &QShortcut::activated, [=]{commentsPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		commentsPushButton->setToolTip(QString("C"));
-	//
-	QShortcut* upShortcut=new QShortcut(QKeySequence(Qt::Key_U), this);
-	connect(upShortcut, &QShortcut::activated, [=]{moveRoomUpPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		moveRoomUpPushButton->setToolTip(QString("U"));
-	//
-	QShortcut* downShortcut=new QShortcut(QKeySequence(Qt::Key_J), this);
-	connect(downShortcut, &QShortcut::activated, [=]{moveRoomDownPushButton->animateClick();});
-	if(SHOW_TOOL_TIPS)
-		moveRoomDownPushButton->setToolTip(QString("J"));
-	*/
+	if(SHORTCUT_PLUS){
+		QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
+		connect(addShortcut, &QShortcut::activated, [=]{addRoomPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	addRoomPushButton->setToolTip(QString("+"));
+	}
+	if(SHORTCUT_M){
+		QShortcut* modifyShortcut=new QShortcut(QKeySequence(Qt::Key_M), this);
+		connect(modifyShortcut, &QShortcut::activated, [=]{modifyRoomPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	modifyRoomPushButton->setToolTip(QString("M"));
+	}
+	if(SHORTCUT_DELETE){
+		QShortcut* removeShortcut=new QShortcut(QKeySequence::Delete, this);
+		connect(removeShortcut, &QShortcut::activated, [=]{removeRoomPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	removeRoomPushButton->setToolTip(QString("⌦"));
+	}
+	if(SHORTCUT_C){
+		QShortcut* commentsShortcut=new QShortcut(QKeySequence(Qt::Key_C), this);
+		connect(commentsShortcut, &QShortcut::activated, [=]{commentsPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	commentsPushButton->setToolTip(QString("C"));
+	}
+	if(SHORTCUT_U){
+		QShortcut* upShortcut=new QShortcut(QKeySequence(Qt::Key_U), this);
+		connect(upShortcut, &QShortcut::activated, [=]{moveRoomUpPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	moveRoomUpPushButton->setToolTip(QString("U"));
+	}
+	if(SHORTCUT_J){
+		QShortcut* downShortcut=new QShortcut(QKeySequence(Qt::Key_J), this);
+		connect(downShortcut, &QShortcut::activated, [=]{moveRoomDownPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	moveRoomDownPushButton->setToolTip(QString("J"));
+	}
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);

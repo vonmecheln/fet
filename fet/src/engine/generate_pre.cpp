@@ -13,8 +13,7 @@
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU Affero General Public License as        *
- *   published by the Free Software Foundation, either version 3 of the    *
- *   License, or (at your option) any later version.                       *
+ *   published by the Free Software Foundation, version 3 of the License.  *
  *                                                                         *
  ***************************************************************************/
 
@@ -1210,6 +1209,16 @@ Matrix1D<QList<ActivitiesMinSimultaneousInSelectedTimeSlots_item*>> aminsistsLis
 
 //bool computeActivitiesMinSimultaneousInSelectedTimeSlots(QWidget* parent);
 
+
+//2025-10-18 - Constraint activities max total number of students in selected time slots
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+std::list<ActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots_item> amtnosistsList;
+Matrix1D<QList<ActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots_item*>> amtnosistsListForActivity;
+
+//bool computeActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots(QWidget* parent);
+
+
 bool haveTwoSetsOfActivitiesSameSections;
 Matrix1D<bool> activityHasTwoSetsOfActivitiesSameSections;
 
@@ -1218,6 +1227,9 @@ Matrix1D<bool> activityHasOccupyMaxConstraints;
 
 bool haveActivitiesMaxSimultaneousConstraints;
 Matrix1D<bool> activityHasMaxSimultaneousConstraints;
+
+bool haveActivitiesMaxNumberOfStudentsConstraints;
+Matrix1D<bool> activityHasMaxNumberOfStudentsConstraints;
 
 //2020-05-01 - Constraint max total activities from set in selected time slots
 std::list<ActivitiesMaxTotalFromSetInSelectedTimeSlots_item> amtfsistsList;
@@ -1920,6 +1932,8 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	//
 	activityHasOccupyMaxConstraints.resize(gt.rules.nInternalActivities);
 	activityHasMaxSimultaneousConstraints.resize(gt.rules.nInternalActivities);
+	//2025-10-18
+	activityHasMaxNumberOfStudentsConstraints.resize(gt.rules.nInternalActivities);
 	//
 	fixedTimeActivity.resize(gt.rules.nInternalActivities);
 	fixedSpaceActivity.resize(gt.rules.nInternalActivities);
@@ -2165,6 +2179,9 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	amsistsListForActivity.resize(gt.rules.nInternalActivities);
 	//2019-11-16
 	aminsistsListForActivity.resize(gt.rules.nInternalActivities);
+
+	//2025-10-18
+	amtnosistsListForActivity.resize(gt.rules.nInternalActivities);
 
 	//2020-05-02
 	amtfsistsListForActivity.resize(gt.rules.nInternalActivities);
@@ -2759,6 +2776,13 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	if(!t)
 		return false;
 	////////////////
+
+	////////////////
+	//2025-10-18
+	//no longer necessary: after computeNotAllowedTimesPercentages(parent)!
+	t=computeActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots(parent);
+	if(!t)
+		return false;
 
 	//2020-05-02
 	t=computeActivitiesMaxTotalFromSetInSelectedTimeSlots(parent);
@@ -18603,6 +18627,86 @@ bool computeActivitiesMinSimultaneousInSelectedTimeSlots(QWidget* parent)
 			ActivitiesMinSimultaneousInSelectedTimeSlots_item* p_item=&aminsistsList.back();
 			for(int ai : std::as_const(cn->_activitiesIndices))
 				aminsistsListForActivity[ai].append(p_item);
+		}
+	}
+	
+	return ok;
+}
+
+//2025-10-18
+bool computeActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots(QWidget* parent)
+{
+	haveActivitiesMaxNumberOfStudentsConstraints=false;
+
+	bool ok=true;
+	
+	amtnosistsList.clear();
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		amtnosistsListForActivity[i].clear();
+		activityHasMaxNumberOfStudentsConstraints[i]=false;
+	}
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_MAX_TOTAL_NUMBER_OF_STUDENTS_IN_SELECTED_TIME_SLOTS){
+			if(!haveActivitiesMaxNumberOfStudentsConstraints)
+				haveActivitiesMaxNumberOfStudentsConstraints=true;
+
+			ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots* cn=(ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots*)gt.rules.internalTimeConstraintsList[i];
+
+			if(cn->weightPercentage!=100.0){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'activities max total number of students in selected time slots'"
+				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			
+			ActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots_item item;
+			item.activitiesList=cn->_activitiesIndices;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.activitiesSet=QSet<int>(item.activitiesList.constBegin(), item.activitiesList.constEnd());
+#else
+			item.activitiesSet=item.activitiesList.toSet();
+#endif
+			item.maxNumberOfStudents=cn->maxNumberOfStudents;
+			for(int t=0; t < cn->selectedDays.count(); t++)
+				item.selectedTimeSlotsList.append(cn->selectedDays.at(t)+cn->selectedHours.at(t)*gt.rules.nDaysPerWeek);
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.selectedTimeSlotsSet=QSet<int>(item.selectedTimeSlotsList.constBegin(), item.selectedTimeSlotsList.constEnd());
+#else
+			item.selectedTimeSlotsSet=item.selectedTimeSlotsList.toSet();
+#endif
+			
+			amtnosistsList.push_back(item);
+			//ActivitiesOccupyMaxTimeSlotsFromSelection_item* p_item=&aomtsList[aomtsList.count()-1];
+			ActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots_item* p_item=&amtnosistsList.back();
+			for(int ai : std::as_const(cn->_activitiesIndices)){
+				assert(gt.rules.internalActivitiesList[ai].nTotalStudents>=1); //taken care of in computeInternalStructure in timeconstraint.cpp.
+				
+				/*if(gt.rules.internalActivitiesList[ai].nTotalStudents > cn->maxNumberOfStudents){
+					for(int t=0; t < cn->selectedDays.count(); t++)
+						notAllowedTimesPercentages[ai][cn->selectedDays.at(t)+cn->selectedHours.at(t)*gt.rules.nDaysPerWeek]=100.0;
+
+					assert(p_item->activitiesList.contains(ai));
+					int t=p_item->activitiesList.removeAll(ai);
+					assert(t==1);
+
+					assert(p_item->activitiesSet.contains(ai));
+					p_item->activitiesSet.remove(ai);
+				}
+				else{*/
+				amtnosistsListForActivity[ai].append(p_item);
+				
+				if(activityHasMaxNumberOfStudentsConstraints[ai]==false)
+					activityHasMaxNumberOfStudentsConstraints[ai]=true;
+				//}
+			}
 		}
 	}
 	
