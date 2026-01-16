@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<fet version="7.4.5">
+<fet version="7.5.0">
   <Mode>Terms</Mode>
   <Institution_Name>Default institution</Institution_Name>
   <Comments>Default comments</Comments>
@@ -320,8 +320,8 @@
       <Subject>s1</Subject>
       <Activity_Tag>at2</Activity_Tag>
       <Students>y1 a</Students>
-      <Duration>1</Duration>
-      <Total_Duration>4</Total_Duration>
+      <Duration>2</Duration>
+      <Total_Duration>5</Total_Duration>
       <Id>6</Id>
       <Activity_Group_Id>6</Activity_Group_Id>
       <Active>true</Active>
@@ -333,7 +333,7 @@
       <Activity_Tag>at2</Activity_Tag>
       <Students>y1 a</Students>
       <Duration>1</Duration>
-      <Total_Duration>4</Total_Duration>
+      <Total_Duration>5</Total_Duration>
       <Id>7</Id>
       <Activity_Group_Id>6</Activity_Group_Id>
       <Active>true</Active>
@@ -345,7 +345,7 @@
       <Activity_Tag>at2</Activity_Tag>
       <Students>y1 a</Students>
       <Duration>1</Duration>
-      <Total_Duration>4</Total_Duration>
+      <Total_Duration>5</Total_Duration>
       <Id>8</Id>
       <Activity_Group_Id>6</Activity_Group_Id>
       <Active>true</Active>
@@ -357,7 +357,7 @@
       <Activity_Tag>at2</Activity_Tag>
       <Students>y1 a</Students>
       <Duration>1</Duration>
-      <Total_Duration>4</Total_Duration>
+      <Total_Duration>5</Total_Duration>
       <Id>9</Id>
       <Activity_Group_Id>6</Activity_Group_Id>
       <Active>true</Active>
@@ -2699,6 +2699,14 @@
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection>
+    <ConstraintActivitiesOverlapCompletelyOrDontOverlap>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Number_of_Activities>2</Number_of_Activities>
+      <Activity_Id>2</Activity_Id>
+      <Activity_Id>6</Activity_Id>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintActivitiesOverlapCompletelyOrDontOverlap>
   </Time_Constraints_List>
   <Space_Constraints_List>
     <ConstraintBasicCompulsorySpace>

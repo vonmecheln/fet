@@ -1,3 +1,7 @@
+ 7.5.0
+	- Added a new type of constraint, activities overlap completely or don't overlap (suggested by alege).
+	- Minor interface improvements.
+	- Corrected an Italian translation field, by Andrea Primiani (fixing an error reported by ggscuola).
  7.4.7
 	- Minor interface improvements.
 	- Added a keyboard shortcut, Ctrl+H, for the 'Timetable > Generate multiple' command (suggested by Alami Mohammed).

@@ -477,6 +477,24 @@ void computeActivitiesNotOverlapping();
 ////////END   activities not overlapping
 
 
+//2025-09-22 - Constraint activities overlap completely or don't overlap
+extern bool haveActivitiesOverlapCompletelyOrDontOverlap;
+
+class ActivitiesOverlapCompletelyOrDontOverlap_item
+{
+public:
+	//double weight; -> must be 100.0%
+	QList<int> activitiesList;
+	//QSet<int> activitiesSet;
+};
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+extern std::list<ActivitiesOverlapCompletelyOrDontOverlap_item> aocodoList;
+extern Matrix1D<QList<ActivitiesOverlapCompletelyOrDontOverlap_item*>> aocodoListForActivity;
+
+bool computeActivitiesOverlapCompletelyOrDontOverlap(QWidget* parent);
+
+
 //2025-08-09 - Constraint activities pair of mutually exclusive sets of time slots
 extern bool haveActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots;
 

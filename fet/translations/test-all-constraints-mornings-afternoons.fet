@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<fet version="7.4.5">
+<fet version="7.5.0">
   <Mode>Mornings_Afternoons</Mode>
   <Institution_Name>Default institution</Institution_Name>
   <Comments>Default comments</Comments>
@@ -3379,6 +3379,14 @@
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection>
+    <ConstraintActivitiesOverlapCompletelyOrDontOverlap>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Number_of_Activities>2</Number_of_Activities>
+      <Activity_Id>1</Activity_Id>
+      <Activity_Id>4</Activity_Id>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintActivitiesOverlapCompletelyOrDontOverlap>
   </Time_Constraints_List>
   <Space_Constraints_List>
     <ConstraintBasicCompulsorySpace>

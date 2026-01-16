@@ -127,6 +127,8 @@ private:
 	QAction* dataTimeConstraintsActivitiesPairOfMutuallyExclusiveTimeSlotsAction;
 	QAction* dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction;
 
+	QAction* dataTimeConstraintsActivitiesOverlapCompletelyOrDontOverlapAction;
+
 	QAction* dataTimeConstraintsActivityPreferredStartingTimeAction;
 	QAction* dataTimeConstraintsStudentsSetMaxGapsPerWeekAction;
 	QAction* dataTimeConstraintsStudentsMaxGapsPerWeekAction;
@@ -727,6 +729,8 @@ public Q_SLOTS:
 
 	void dataTimeConstraintsActivitiesPairOfMutuallyExclusiveTimeSlotsAction_triggered();
 	void dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction_triggered();
+
+	void dataTimeConstraintsActivitiesOverlapCompletelyOrDontOverlapAction_triggered();
 
 	void dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction_triggered();
 	void dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction_triggered();

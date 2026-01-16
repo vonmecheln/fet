@@ -7751,6 +7751,50 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				break;
 			}
+		//247
+		case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add activities overlap completely or don't overlap", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintActivitiesNotOverlapping");
+
+					firstAddInstructionsLabel=new QLabel(tr("This constraint means that each pair of activities from the selected set should either have"
+															" the same starting time (day+hour), or have no common time slot(s). All the selected activities"
+															" should have the same duration, greater than 1."));
+				}
+				else{
+					dialogTitle=tr("Modify activities overlap completely or don't overlap", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintActivitiesNotOverlapping");
+
+					firstModifyInstructionsLabel=new QLabel(tr("This constraint means that each pair of activities from the selected set should either have"
+															" the same starting time (day+hour), or have no common time slot(s). All the selected activities"
+															" should have the same duration, greater than 1."));
+				}
+
+				addEmpty=true;
+				filterGroupBox=new QGroupBox(tr("Filter"));
+
+				//teacherLabel=new QLabel(tr("Teacher"));
+				teachersComboBox=new QComboBox;
+
+				//studentsLabel=new QLabel(tr("Students set"));
+				studentsComboBox=new QComboBox;
+
+				//subjectLabel=new QLabel(tr("Subject"));
+				subjectsComboBox=new QComboBox;
+
+				//activityTagLabel=new QLabel(tr("Activity tag"));
+				activityTagsComboBox=new QComboBox;
+
+				activitiesLabel=new QLabel(tr("Activities"));
+				selectedActivitiesLabel=new QLabel(tr("Selected", "It refers to activities"));
+				activitiesListWidget=new QListWidget;
+				selectedActivitiesListWidget=new QListWidget;
+				addAllActivitiesPushButton=new QPushButton(tr("All", "Add all filtered activities to the list of selected activities"));
+				clearActivitiesPushButton=new QPushButton(tr("Clear", "Clear the list of selected activities"));
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -13067,6 +13111,28 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 					break;
 				}
+			//247
+			case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP:
+				{
+					ConstraintActivitiesOverlapCompletelyOrDontOverlap* ctr=(ConstraintActivitiesOverlapCompletelyOrDontOverlap*)oldtc;
+
+					selectedActivitiesListWidget->clear();
+					selectedActivitiesList.clear();
+
+					for(int i=0; i<ctr->activitiesIds.count(); i++){
+						int actId=ctr->activitiesIds[i];
+						selectedActivitiesList.append(actId);
+						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
+						assert(act!=nullptr);
+						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
+					}
+
+					break;
+				}
 
 			default:
 				assert(0);
@@ -17209,6 +17275,43 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 				}
 
 				tc=new ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection(weight, spinBox->value(), days, hours);
+
+				break;
+			}
+		//247
+		case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP:
+			{
+				if(selectedActivitiesList.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Empty list of selected activities"));
+					return;
+				}
+				if(selectedActivitiesList.count()==1){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Only one selected activity"));
+					return;
+				}
+				
+				int dur=-1;
+				for(int actId : std::as_const(selectedActivitiesList)){
+					Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
+					assert(act!=nullptr);
+					if(dur==-1 || dur==act->duration){
+						dur=act->duration;
+					}
+					else{
+						QMessageBox::warning(dialog, tr("FET information"),
+							tr("All the selected activities should have the same duration"));
+						return;
+					}
+				}
+				if(dur==1){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("The constraint is useless, because the durations of the activities are 1"));
+					return;
+				}
+
+				tc=new ConstraintActivitiesOverlapCompletelyOrDontOverlap(weight, selectedActivitiesList);
 
 				break;
 			}
@@ -23636,6 +23739,43 @@ void AddOrModifyTimeConstraint::okClicked()
 				ctr->selectedHours=hours;
 
 				ctr->maxOccupiedSets=spinBox->value();
+
+				break;
+			}
+		//247
+		case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP:
+			{
+				if(selectedActivitiesList.size()==0){
+					QMessageBox::warning(dialog, tr("FET information"), tr("Empty list of selected activities"));
+					return;
+				}
+				if(selectedActivitiesList.size()==1){
+					QMessageBox::warning(dialog, tr("FET information"), tr("Only one selected activity"));
+					return;
+				}
+
+				int dur=-1;
+				for(int actId : std::as_const(selectedActivitiesList)){
+					Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
+					assert(act!=nullptr);
+					if(dur==-1 || dur==act->duration){
+						dur=act->duration;
+					}
+					else{
+						QMessageBox::warning(dialog, tr("FET information"),
+							tr("All the selected activities should have the same duration"));
+						return;
+					}
+				}
+				if(dur==1){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("The constraint is useless, because the durations of the activities are 1"));
+					return;
+				}
+
+				ConstraintActivitiesOverlapCompletelyOrDontOverlap* ctr=(ConstraintActivitiesOverlapCompletelyOrDontOverlap*)oldtc;
+				ctr->activitiesIds=selectedActivitiesList;
+				ctr->recomputeActivitiesSet();
 
 				break;
 			}

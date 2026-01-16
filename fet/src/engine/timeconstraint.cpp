@@ -3236,6 +3236,19 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsOccupyMaxSe
 	return stream;
 }
 
+//247
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesOverlapCompletelyOrDontOverlap& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activitiesIds;
+
+	return stream;
+}
+
 //1
 QDataStream& operator>>(QDataStream& stream, ConstraintBasicCompulsoryTime& tc)
 {
@@ -6428,6 +6441,19 @@ QDataStream& operator>>(QDataStream& stream, ConstraintStudentsOccupyMaxSetsOfTi
 	return stream;
 }
 
+//247
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesOverlapCompletelyOrDontOverlap& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activitiesIds;
+
+	return stream;
+}
+
 static QString trueFalse(bool x){
 	if(!x)
 		return QString("false");
@@ -7071,6 +7097,8 @@ bool TimeConstraint::canBeUsedInOfficialMode()
 		case CONSTRAINT_STUDENTS_SET_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
 			[[fallthrough]];
 		case CONSTRAINT_STUDENTS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			[[fallthrough]];
+		case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP:
 			t=true;
 			break;
 			
@@ -7565,6 +7593,8 @@ bool TimeConstraint::canBeUsedInMorningsAfternoonsMode()
 		case CONSTRAINT_STUDENTS_SET_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
 			[[fallthrough]];
 		case CONSTRAINT_STUDENTS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			[[fallthrough]];
+		case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP:
 			t=true;
 			break;
 		
@@ -7847,6 +7877,8 @@ bool TimeConstraint::canBeUsedInBlockPlanningMode()
 		case CONSTRAINT_STUDENTS_SET_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
 			[[fallthrough]];
 		case CONSTRAINT_STUDENTS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			[[fallthrough]];
+		case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP:
 			t=true;
 			break;
 		
@@ -8134,6 +8166,8 @@ bool TimeConstraint::canBeUsedInTermsMode()
 		case CONSTRAINT_STUDENTS_SET_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
 			[[fallthrough]];
 		case CONSTRAINT_STUDENTS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			[[fallthrough]];
+		case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP:
 			t=true;
 			break;
 		
@@ -74418,6 +74452,284 @@ bool ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection::repairWrongDayOrHo
 	
 	r.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&r);
+
+	return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintActivitiesOverlapCompletelyOrDontOverlap::ConstraintActivitiesOverlapCompletelyOrDontOverlap()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP;
+}
+
+ConstraintActivitiesOverlapCompletelyOrDontOverlap::ConstraintActivitiesOverlapCompletelyOrDontOverlap(double wp, const QList<int>& a_L) : TimeConstraint(wp)
+{
+	this->activitiesIds=a_L;
+
+	this->type=CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP;
+}
+
+bool ConstraintActivitiesOverlapCompletelyOrDontOverlap::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	//this cares about inactive activities, also, so do not assert this->_actIndices.count()==this->actIds.count()
+	_activitiesIndices.clear();
+	int dur=-1;
+	for(int id : std::as_const(activitiesIds)){
+		int i=r.activitiesHash.value(id, -1);
+		if(i>=0){
+			_activitiesIndices.append(i);
+			
+			if(dur==-1 || dur==r.internalActivitiesList[i].duration){
+				dur=r.internalActivitiesList[i].duration;
+			}
+			else{
+				TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
+					tr("Following constraint is wrong, because the activities have different durations. Please correct it:\n%1").arg(this->getDetailedDescription(r)));
+
+				return false;
+			}
+		}
+	}
+	if(dur==1){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
+			tr("Following constraint is useless, because the durations of the activities are 1. Please correct it or remove it:\n%1").arg(this->getDetailedDescription(r)));
+
+		return false;
+	}
+
+	if(this->_activitiesIndices.count()<=1){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
+			tr("Following constraint is wrong (because you need 2 or more activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
+
+		return false;
+	}
+
+	return true;
+}
+
+bool ConstraintActivitiesOverlapCompletelyOrDontOverlap::hasInactiveActivities(Rules& r)
+{
+	int count=0;
+
+	for(int aid : std::as_const(this->activitiesIds))
+		if(r.inactiveActivities.contains(aid))
+			count++;
+
+	if(this->activitiesIds.count()-count<=1)
+		return true;
+	else
+		return false;
+}
+
+QString ConstraintActivitiesOverlapCompletelyOrDontOverlap::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintActivitiesOverlapCompletelyOrDontOverlap>\n";
+	
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	
+	s+=IL3+"<Number_of_Activities>"+QString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
+	for(int aid : std::as_const(this->activitiesIds))
+		s+=IL3+"<Activity_Id>"+CustomFETString::number(aid)+"</Activity_Id>\n";
+
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintActivitiesOverlapCompletelyOrDontOverlap>\n";
+	return s;
+}
+
+QString ConstraintActivitiesOverlapCompletelyOrDontOverlap::getDescription(Rules& r)
+{
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+	
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+	
+	QString actids=QString("");
+	for(int aid : std::as_const(this->activitiesIds))
+		actids+=getActivityDescription(r, aid)+translatedCommaSpace();
+	actids.chop(translatedCommaSpace().size());
+	
+	QString s=tr("Activities overlap completely or don't overlap, WP:%1%, NA:%2, A: %3",
+	 "Constraint description. WP means weight percentage, NA means the number of activities, A means activities list")
+	 .arg(CustomFETString::number(this->weightPercentage))
+	 .arg(QString::number(this->activitiesIds.count()))
+	 .arg(actids);
+	
+	return begin+s+end;
+}
+
+QString ConstraintActivitiesOverlapCompletelyOrDontOverlap::getDetailedDescription(Rules& r)
+{
+	QString s=tr("Time constraint"); s+="\n";
+	s+=tr("Activities overlap completely or don't overlap"); s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
+	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
+	for(int id : std::as_const(this->activitiesIds)){
+		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+		 .arg(id)
+		 .arg(getActivityDetailedDescription(r, id));
+		s+="\n";
+	}
+
+	if(!active){
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+	
+	return s;
+}
+
+double ConstraintActivitiesOverlapCompletelyOrDontOverlap::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken=0;
+
+	assert(r.internalStructureComputed);
+
+	///////////////////
+	for(int ai1 : std::as_const(this->_activitiesIndices)){
+		if(c.times[ai1]!=UNALLOCATED_TIME){
+			int d1=c.times[ai1]%r.nDaysPerWeek;
+			int dur1=r.internalActivitiesList[ai1].duration;
+			for(int ai2 : std::as_const(this->_activitiesIndices)){
+				if(ai1!=ai2){
+					if(c.times[ai2]!=UNALLOCATED_TIME){
+						int d2=c.times[ai2]%r.nDaysPerWeek;
+						if(d1==d2){
+							int dur2=r.internalActivitiesList[ai2].duration;
+							assert(dur1==dur2);
+							if(!(c.times[ai1]+dur1<=c.times[ai2] || c.times[ai2]+dur2<=c.times[ai1]) && c.times[ai1]!=c.times[ai2]){
+								nbroken++;
+								
+								if(conflictsString!=nullptr){
+									QString s=(tr(
+									 "Time constraint activities overlap completely or don't overlap broken, these two activities break it: Id %1 and Id %2.")
+									 .arg(r.internalActivitiesList[ai1].id)
+									 .arg(r.internalActivitiesList[ai2].id)
+									 )
+									 +" "
+									 +
+									 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
+									
+									dl.append(s);
+									cl.append(weightPercentage/100);
+									
+									*conflictsString+= s+"\n";
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	if(weightPercentage==100.0)
+		assert(nbroken==0);
+	return nbroken * weightPercentage / 100.0;
+}
+
+void ConstraintActivitiesOverlapCompletelyOrDontOverlap::removeUseless(Rules& r)
+{
+	QList<int> newActs;
+	
+	for(int aid : std::as_const(activitiesIds)){
+		Activity* act=r.activitiesPointerHash.value(aid, nullptr);
+		if(act!=nullptr)
+			newActs.append(aid);
+	}
+	
+	activitiesIds=newActs;
+
+	r.internalStructureComputed=false;
+}
+
+void ConstraintActivitiesOverlapCompletelyOrDontOverlap::recomputeActivitiesSet()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
+#else
+	activitiesIdsSet=activitiesIds.toSet();
+#endif
+}
+
+bool ConstraintActivitiesOverlapCompletelyOrDontOverlap::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+
+	return activitiesIdsSet.contains(a->id);
+
+	//return this->activitiesIds.contains(a->id);
+}
+
+bool ConstraintActivitiesOverlapCompletelyOrDontOverlap::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintActivitiesOverlapCompletelyOrDontOverlap::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintActivitiesOverlapCompletelyOrDontOverlap::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintActivitiesOverlapCompletelyOrDontOverlap::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	
+	return false;
+}
+
+bool ConstraintActivitiesOverlapCompletelyOrDontOverlap::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+bool ConstraintActivitiesOverlapCompletelyOrDontOverlap::canRepairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+	
+	return true;
+}
+
+bool ConstraintActivitiesOverlapCompletelyOrDontOverlap::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
 }

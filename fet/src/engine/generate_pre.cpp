@@ -432,6 +432,16 @@ Matrix1D<QList<double>> activitiesNotOverlappingPercentages;
 ////////END   activities not overlapping
 
 
+//2025-09-22 - Constraint activities overlap completely or don't overlap
+bool haveActivitiesOverlapCompletelyOrDontOverlap;
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+std::list<ActivitiesOverlapCompletelyOrDontOverlap_item> aocodoList;
+Matrix1D<QList<ActivitiesOverlapCompletelyOrDontOverlap_item*>> aocodoListForActivity;
+
+//bool computeActivitiesOverlapCompletelyOrDontOverlap(QWidget* parent);
+
+
 //2025-08-09 - Constraint activities pair of mutually exclusive sets of time slots
 bool haveActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots;
 
@@ -2099,6 +2109,9 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	//2025-08-09
 	apomesotsListForActivity.resize(gt.rules.nInternalActivities);
 
+	//2025-09-22
+	aocodoListForActivity.resize(gt.rules.nInternalActivities);
+
 	//2011-09-25
 	aomtsListForActivity.resize(gt.rules.nInternalActivities);
 	//2019-11-16
@@ -2646,6 +2659,12 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 
 	//2025-04-02
 	t=computeTwoSetsOfActivitiesSameSections(parent);
+	if(!t)
+		return false;
+
+	////////////////
+	//2025-09-22
+	t=computeActivitiesOverlapCompletelyOrDontOverlap(parent);
 	if(!t)
 		return false;
 
@@ -17744,6 +17763,53 @@ bool computeTwoSetsOfActivitiesSameSections(QWidget* parent)
 		}
 	}
 
+	return ok;
+}
+
+//2025-09-22
+bool computeActivitiesOverlapCompletelyOrDontOverlap(QWidget* parent)
+{
+	haveActivitiesOverlapCompletelyOrDontOverlap=false;
+
+	bool ok=true;
+	
+	aocodoList.clear();
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		aocodoListForActivity[i].clear();
+	}
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP){
+			if(!haveActivitiesOverlapCompletelyOrDontOverlap)
+				haveActivitiesOverlapCompletelyOrDontOverlap=true;
+
+			ConstraintActivitiesOverlapCompletelyOrDontOverlap* cn=(ConstraintActivitiesOverlapCompletelyOrDontOverlap*)gt.rules.internalTimeConstraintsList[i];
+
+			if(cn->weightPercentage!=100.0){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'activities overlap completely or don't overlap'"
+				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			ActivitiesOverlapCompletelyOrDontOverlap_item item;
+			item.activitiesList=cn->_activitiesIndices;
+
+			aocodoList.push_back(item);
+			ActivitiesOverlapCompletelyOrDontOverlap_item* p_item=&aocodoList.back();
+			for(int ai : std::as_const(cn->_activitiesIndices)){
+				aocodoListForActivity[ai].append(p_item);
+			}
+		}
+	}
+	
 	return ok;
 }
 

@@ -414,6 +414,8 @@ const int CONSTRAINT_TEACHERS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION						
 const int CONSTRAINT_STUDENTS_SET_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION								=245;
 const int CONSTRAINT_STUDENTS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION										=246;
 
+const int CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP												=247;
+
 class QDataStream;
 
 QString getActivityDescription(Rules& r, int id);
@@ -12493,6 +12495,51 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
+class ConstraintActivitiesOverlapCompletelyOrDontOverlap: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintActivitiesOverlapCompletelyOrDontOverlap)
+
+public:
+	QList<int> activitiesIds;
+
+	QSet<int> activitiesIdsSet;
+
+	//internal variables
+	QList<int> _activitiesIndices;
+
+	ConstraintActivitiesOverlapCompletelyOrDontOverlap();
+	ConstraintActivitiesOverlapCompletelyOrDontOverlap(double wp, const QList<int>& a_L);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	void removeUseless(Rules& r);
+
+	void recomputeActivitiesSet();
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
 //1
 QDataStream& operator<<(QDataStream& stream, const ConstraintBasicCompulsoryTime& tc);
 //2
@@ -12985,6 +13032,8 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersOccupyMaxSe
 QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection& tc);
 //246
 QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection& tc);
+//247
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesOverlapCompletelyOrDontOverlap& tc);
 
 //1
 QDataStream& operator>>(QDataStream& stream, ConstraintBasicCompulsoryTime& tc);
@@ -13478,5 +13527,7 @@ QDataStream& operator>>(QDataStream& stream, ConstraintTeachersOccupyMaxSetsOfTi
 QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection& tc);
 //246
 QDataStream& operator>>(QDataStream& stream, ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection& tc);
+//247
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesOverlapCompletelyOrDontOverlap& tc);
 
 #endif

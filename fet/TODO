@@ -11455,3 +11455,183 @@ This constraint is related to the existing "A set of activities occupies max sel
 for overlapping activities.
 
 If it is easy to implement, the new constraint would be very useful. Otherwise, the existing constraint can still be used as an alternative.
+
+757---------------------------------------------------------
+From Hamou Berkouche (on Facebook):
+
+Would it be possible for you to add a constraint that reduces the break period for teachers between the morning and afternoon sessions?
+
+758---------------------------------------------------------
+From TongThanhKieu (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6543.0
+
+I would like to propose a new feature for your consideration:
+
+Feature Request:
+In the Time → All time constraints tab, please add two new buttons:
+
+Export: to extract all existing "Teacher not available times" constraints into a CSV file (UTF-8 encoded).
+
+Import: to load such constraints back into FET from a previously exported CSV (UTF-8).
+
+Motivation / Use Case:
+
+Many schools frequently update teacher unavailability data. Having an export/import mechanism would make it much easier to back up constraints,
+share them between different FET files, or update them in bulk using external tools like Excel.
+
+Currently, this process requires manual editing or re-entering the constraints, which is time-consuming and prone to human error.
+
+A standardized CSV (UTF-8) format would ensure compatibility and avoid encoding issues.
+
+Possible Implementation Idea:
+
+The CSV structure could follow a simple format with teacher ID/name, day, and time slots.
+
+The Export button would write all constraints into a CSV file.
+
+The Import button would parse a CSV file and add/update the corresponding constraints in the FET project.
+
+I believe this feature would significantly improve usability for schools with large numbers of teachers and frequent schedule updates.
+
+Volker Dirr:
+
+The "add/update" part might be critical.
+I think the "easiest" variant will be "if there is a single new not available time slot, then delete all values of the constraint and place the new ones".
+Because if you don't do it that way and if you want to keep the old values, then it mean you also need a variant how to remove old values.
+
+759---------------------------------------------------------
+From Syed (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6545.0
+
+I'd like to suggest a UI enhancement that could make FET even more user-friendly. In dialogs such as Activities, Subjects, Teachers, Students, and Constraints,
+the lists can become quite long and difficult to navigate. It would be extremely helpful to have a fold/expand toggle for grouped items—similar to how code
+folding works in editors like VS Code.
+For example:
+•    In the Activities dialog, fold all activities under "O1 Business" or "O2 Science"
+•    In the Subjects dialog, collapse subjects by department or level
+•    In Constraints, group and fold by type (e.g., time constraints, space constraints)
+This would make it much easier to focus on specific sections without excessive scrolling, especially when working on large timetables.
+
+760---------------------------------------------------------
+From Devrim Altınkurt (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6555.0
+
+I think the following constraint could be added:
+If a teacher has less than X (total activity hours) hours of activity, they must be in school for a maximum of Y days.
+
+For example,
+(there are 10 hours per day)
+
+- if a teacher has less than 20 total activity hours, they must be in school for a maximum of 2 days.
+- if a teacher has less than 35 total activity hours, they must be in school for a maximum of 4 days.
+
+761---------------------------------------------------------
+From abououbeida (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6571.0
+
+I hope that Mr. Livio will add the possibility of adding a period to an activity, for example: an activity that includes 02 periods, I want to make
+it 03 periods instead of deleting it and adding it again with 03 periods.
+
+762---------------------------------------------------------
+From niobee (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6066.msg36425#msg36425
+
+We have 6 hours per day, some teachers want to work maximum 4h a day, some others are willing to work up to 5h a day one teacher told me he can also work 6 hours.
+
+For the teachers willing to work 5 or 6 hours a day I would like this to happen only one day a week.
+But then a second day could have a break, so the teacher is at school 5h, but only 4 of them are with students.
+
+I allready put minimum hours per day (2 for each teacher) and maximum hours per day (4, 5 or 6 per day, depending on the teacher). I also put maximum 1h a day
+and 3h a week for "ore buca" so hours when the teacher isn't in a class and 2h a day and 3h a week for those teachers who want to stay only 4h in class.
+
+(hope I explained everything well)
+
+Now my problem is that some teachers are working 5 hours two times a week. I tried "Teachers max span" but it doesn't generate a timetable. What else could I try
+to solve this issue?
+
+763---------------------------------------------------------
+From xtzetzias (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6587.0
+
+I've have a question and perhaps a request. Is there a way to set min gaps per day or per week for a teacher? I don't see a relative constraint.
+It seems a bit strange perhaps, but i need it.
+If there isn't a way, then could two constraints be added? One for min gaps per day and one for min gaps per week.
+
+Liviu Lalescu:
+
+If you need a variable break, you could use teacher(s) max hours daily in an hourly interval.
+
+xtzetzias:
+
+I will think more of it, but at a first thought, i cannot find a way to use the constraint you propose. What i'm trying to do is to force a teacher
+spend a min hours per day at school which is more than the actual teaching hours. For example if a specific timetable gives him or her 2 teaching
+hours on Tuesday, then there should be at least one gap between these two hours, so that he stays for at least three hours at school.
+
+Vangelis Karafillidis:
+
+Liviu, this situation is quite common in Greek schools. The directors of studies expect the teachers to have a minimum number of gaps (especially per week),
+in order to provide "secretarial" support services. Constraints such as "teacher(s) - min gaps per day", "teacher(s) - min gaps per week",
+"teacher(s) - min span per day", "teacher(s) - min span per week" (or maybe... "teacher(s) - min hourly span per week" or something like that)
+are in some cases quite useful.
+
+Maybe something like "teacher(s) - min total hourly span per week" could solve these problems. I think that most of the time, "min gaps" could be
+"replaced" with the above mentioned constraint.
+
+xtzetzias:
+
+I was thinking last week what you just wrote, if "teacher(s) - min total hourly span per week" could replace "min gaps per week". It can, i think.
+However, in terms of per day restriction, i think it's not the same. "Min total hourly span per day" is not such a good replacement for "min gaps per day".
+It's more restrictive, because it forces a somehow evenly distribution of teaching hours, even when it is not necessary (or else many gaps could be placed
+in the same day, which is not good). It should be used along with other restrictions, in order to give the same result.
+
+Vangelis Karafillidis:
+
+It seems that this situation occurs in quite many cases in Greek schools. What I think is that "teacher(s) - min total hourly span per week"
+in combination with existing constraints could solve the real-life problem we both described, at least in most cases.
+
+Liviu Lalescu:
+
+I also added this further conversation in the TODO. However, I am not sure it is possible/feasible.
+
+Vangelis Karafillidis:
+
+Liviu, this is not an "exact" problem. Let's say that the timetabler just needs to achieve a minimum number of gaps for specific teachers. This can be
+achieved via different approaches (theoretically). ANY of this approaches could be useful towards this direction. For example, if the implementation
+of "teacher(s) - min daily span" is easy, this could provide the timetabler with a tool to solve this type of problems. The exact constraint is not
+so important. The important part is to have ANY kind of constraint that helps the timetabler.
+
+764---------------------------------------------------------
+From Andrea Primiani:
+
+(Following an email correspondence with Liviu Lalescu, about the symbols and the colors of the table cells in the constraints of type not available,
+preferred times, occupy min/max time slots from selection, and min/max simultaneous in selected time slots.)
+
+I'm not sure to agree totally in the use of this same red/green tables
+in different context, since the meaning of the colors is not always the
+same and the meaning is somewhat reversed (not available/available
+teacher hours vs. selected/not selected hours for activities).
+
+765---------------------------------------------------------
+From alege (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6600.0
+
+The first and most difficult part of the message/suggestions was done in FET-7.5.0. The second part is written below:
+
+Un'altra richiesta: sarebbe comodo se FET evidenziasse in qualche modo i "moduli di trasferimento" (viaggi tra un plesso e l'altro) nell'interfaccia grafica e
+nelle statistiche avanzate, anche per distinguerli dai semplici "buchi": ne teniamo conto in fase di scelta fra i possibili orari prodotti da FET, un orario
+con meno trasferimenti complessivi è più efficiente (e, di solito, più gradito dai colleghi...soprattutto quando piove :p).
+Al momento lavoriamo con un tapullo fatto combinando fogli excel...ma non è un granché...
+
+Google Translate to English:
+
+Another request: it would be helpful if FET somehow highlighted the "transfer modules" (trips between one campus and another) in the graphical interface and
+in the advanced statistics, also to distinguish them from simple "gaps": we take this into account when choosing among the possible schedules produced by FET;
+a schedule with fewer overall transfers is more efficient (and, usually, more popular with colleagues... especially when it rains :p).
+At the moment we're working with a patchwork made by combining Excel spreadsheets... but it's not great...

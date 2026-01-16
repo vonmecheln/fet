@@ -2063,6 +2063,13 @@ QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 					stream<<*c;
 					break;
 				}
+			//247
+			case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP:
+				{
+					ConstraintActivitiesOverlapCompletelyOrDontOverlap* c=(ConstraintActivitiesOverlapCompletelyOrDontOverlap*)ctr;
+					stream<<*c;
+					break;
+				}
 			
 			default:
 				assert(0);
@@ -4765,6 +4772,14 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 			case CONSTRAINT_STUDENTS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
 				{
 					ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection* c=new ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection;
+					stream>>*c;
+					rules.timeConstraintsList.append(c);
+					break;
+				}
+			//247
+			case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP:
+				{
+					ConstraintActivitiesOverlapCompletelyOrDontOverlap* c=new ConstraintActivitiesOverlapCompletelyOrDontOverlap;
 					stream>>*c;
 					rules.timeConstraintsList.append(c);
 					break;
@@ -11413,6 +11428,12 @@ void Rules::recomputeActivitiesSetForTimeConstraint(TimeConstraint* ctr)
 				c->recomputeActivitiesSet();
 				break;
 			}
+		case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP:
+			{
+				ConstraintActivitiesOverlapCompletelyOrDontOverlap* c=(ConstraintActivitiesOverlapCompletelyOrDontOverlap*) ctr;
+				c->recomputeActivitiesSet();
+				break;
+			}
 
 		default:
 			//do nothing.
@@ -13547,6 +13568,14 @@ void Rules::updateConstraintsAfterRemoval()
 					ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots* c=(ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots*)tc;
 					c->removeUseless(*this);
 					if(c->activitiesIds.count()<1)
+						toBeRemovedTime.append(tc);
+					break;
+				}
+			case CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP:
+				{
+					ConstraintActivitiesOverlapCompletelyOrDontOverlap* c=(ConstraintActivitiesOverlapCompletelyOrDontOverlap*)tc;
+					c->removeUseless(*this);
+					if(c->activitiesIds.count()<2)
 						toBeRemovedTime.append(tc);
 					break;
 				}
@@ -17352,6 +17381,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 				}
 				else if(xmlReader.name()==QString("ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots")){
 					crt_constraint=readActivitiesPairOfMutuallyExclusiveTimeSlots(xmlReader, xmlReadingLog);
+				}
+////////////////2025-09-22
+				else if(xmlReader.name()==QString("ConstraintActivitiesOverlapCompletelyOrDontOverlap")){
+					crt_constraint=readActivitiesOverlapCompletelyOrDontOverlap(xmlReader, xmlReadingLog);
 				}
 ////////////////2011-09-25
 				else if(xmlReader.name()==QString("ConstraintActivitiesOccupyMaxTimeSlotsFromSelection")){
@@ -30860,6 +30893,64 @@ TimeConstraint* Rules::readActivitiesPairOfMutuallyExclusiveTimeSlots(QXmlStream
 		return nullptr;
 	}
 	
+	return cn;
+}
+////////////////
+
+//2025-09-22
+TimeConstraint* Rules::readActivitiesOverlapCompletelyOrDontOverlap(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintActivitiesOverlapCompletelyOrDontOverlap"));
+	ConstraintActivitiesOverlapCompletelyOrDontOverlap* cn=new ConstraintActivitiesOverlapCompletelyOrDontOverlap();
+	
+	int ac=0;
+
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Number_of_Activities")){
+			QString text=xmlReader.readElementText();
+			ac=text.toInt();
+			xmlReadingLog+="    Read number of activities="+CustomFETString::number(ac)+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Id")){
+			QString text=xmlReader.readElementText();
+			cn->activitiesIds.append(text.toInt());
+			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesIds[cn->activitiesIds.count()-1])+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	
+	if(!(ac==cn->activitiesIds.count())){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+
+	assert(ac==cn->activitiesIds.count());
+
 	return cn;
 }
 ////////////////

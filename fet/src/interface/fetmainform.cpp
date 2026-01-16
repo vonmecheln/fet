@@ -1979,6 +1979,8 @@ void FetMainForm::createActionsForConstraints()
 	dataTimeConstraintsActivitiesPairOfMutuallyExclusiveTimeSlotsAction = new QAction(this);
 	dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction = new QAction(this);
 
+	dataTimeConstraintsActivitiesOverlapCompletelyOrDontOverlapAction = new QAction(this);
+
 	dataTimeConstraintsActivityPreferredStartingTimeAction = new QAction(this);
 	dataTimeConstraintsStudentsSetMaxGapsPerWeekAction = new QAction(this);
 	dataTimeConstraintsStudentsMaxGapsPerWeekAction = new QAction(this);
@@ -2337,6 +2339,8 @@ void FetMainForm::createActionsForConstraints()
 
 	connect(dataTimeConstraintsActivitiesPairOfMutuallyExclusiveTimeSlotsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesPairOfMutuallyExclusiveTimeSlotsAction_triggered);
 	connect(dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction_triggered);
+
+	connect(dataTimeConstraintsActivitiesOverlapCompletelyOrDontOverlapAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesOverlapCompletelyOrDontOverlapAction_triggered);
 
 	connect(dataTimeConstraintsActivityPreferredStartingTimeAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivityPreferredStartingTimeAction_triggered);
 	connect(dataTimeConstraintsStudentsSetMaxGapsPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerWeekAction_triggered);
@@ -2744,6 +2748,8 @@ void FetMainForm::retranslateConstraints()
 
 	dataTimeConstraintsActivitiesPairOfMutuallyExclusiveTimeSlotsAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities has a pair of mutually exclusive time slots", nullptr));
 	dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities has a pair of mutually exclusive sets of time slots", nullptr));
+
+	dataTimeConstraintsActivitiesOverlapCompletelyOrDontOverlapAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities overlap completely or don't overlap", nullptr));
 
 	dataTimeConstraintsActivityPreferredStartingTimeAction->setText(QCoreApplication::translate("FetMainForm_template", "An activity has a preferred starting time", nullptr));
 	dataTimeConstraintsStudentsSetMaxGapsPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max gaps per week for a students set", nullptr));
@@ -3321,6 +3327,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuActivities_others_3_time_constraints->addSeparator();
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesNotOverlappingAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivityTagsNotOverlappingAction);
+		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesOverlapCompletelyOrDontOverlapAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction);
 		menuActivities_others_3_time_constraints->addSeparator();
@@ -3811,6 +3818,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuActivities_others_3_time_constraints->addSeparator();
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesNotOverlappingAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivityTagsNotOverlappingAction);
+		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesOverlapCompletelyOrDontOverlapAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction);
 		menuActivities_others_3_time_constraints->addSeparator();
@@ -4127,6 +4135,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuActivities_others_3_time_constraints->addSeparator();
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesNotOverlappingAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivityTagsNotOverlappingAction);
+		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesOverlapCompletelyOrDontOverlapAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction);
 		menuActivities_others_3_time_constraints->addSeparator();
@@ -4428,6 +4437,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		//menuActivities_others_2_time_constraints->addSeparator();
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesNotOverlappingAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivityTagsNotOverlappingAction);
+		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesOverlapCompletelyOrDontOverlapAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction);
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction);
 		menuActivities_others_3_time_constraints->addSeparator();
@@ -7516,6 +7526,26 @@ void FetMainForm::dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlot
 	setParentAndOtherThings(&form, this);
 	form.exec();*/
 	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_MIN_SIMULTANEOUS_IN_SELECTED_TIME_SLOTS);
+}
+
+void FetMainForm::dataTimeConstraintsActivitiesOverlapCompletelyOrDontOverlapAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	/*ConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DONT_OVERLAP);
 }
 
 void FetMainForm::dataTimeConstraintsMaxTotalActivitiesFromSetInSelectedTimeSlotsAction_triggered()

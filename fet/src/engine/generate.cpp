@@ -8767,6 +8767,7 @@ again_if_impossible_activity:
 		bool oksamestartinghour;
 		bool oksamestartingday;
 		bool oknotoverlapping;
+		bool okoverlapcompletelyordontoverlap;
 		bool oktwoactivitiesconsecutive;
 		bool oktwoactivitiesgrouped;
 		bool okthreeactivitiesgrouped;
@@ -9677,7 +9678,62 @@ impossiblenotoverlapping:
 			nConflActivities[newtime]=MAX_ACTIVITIES;
 			continue;
 		}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+		//allowed from overlap completely or don't overlap
+		okoverlapcompletelyordontoverlap=true;
 		
+		if(haveActivitiesOverlapCompletelyOrDontOverlap){
+			for(ActivitiesOverlapCompletelyOrDontOverlap_item* item : std::as_const(aocodoListForActivity[ai])){
+				QList<int> activitiesList=item->activitiesList;
+				for(int ai2 : std::as_const(activitiesList)){
+					if(ai2!=ai){
+						if(c.times[ai2]!=UNALLOCATED_TIME){
+							int d2=c.times[ai2]%gt.rules.nDaysPerWeek;
+							//int h2=c.times[ai2]/gt.rules.nDaysPerWeek;
+							if(d==d2){
+								assert(act->duration==gt.rules.internalActivitiesList[ai2].duration);
+								
+								int st=newtime;
+								int en=st+gt.rules.nDaysPerWeek*act->duration;
+								int st2=c.times[ai2];
+								int en2=st2+gt.rules.nDaysPerWeek*gt.rules.internalActivitiesList[ai2].duration;
+								
+								//bool sR=skipRandom(perc);
+								//if(fixedTimeActivity[ai] && perc<100.0)
+								//	sR=true;
+								
+								if(!(en<=st2 || en2<=st) && st!=st2 /*&& !sR*/){
+									assert(ai2!=ai);
+									
+									if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+										okoverlapcompletelyordontoverlap=false;
+										goto impossibleoverlapcompletelyordontoverlap;
+									}
+									
+									if(!conflActivities[newtime].contains(ai2)){
+										conflActivities[newtime].append(ai2);
+										nConflActivities[newtime]++;
+										assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+impossibleoverlapcompletelyordontoverlap:
+		if(!okoverlapcompletelyordontoverlap){
+			//if(updateSubgroups || updateTeachers)
+			//	removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 		//allowed from two activities consecutive

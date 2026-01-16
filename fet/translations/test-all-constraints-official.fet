@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<fet version="7.4.5">
+<fet version="7.5.0">
   <Mode>Official</Mode>
   <Institution_Name>Default institution</Institution_Name>
   <Comments>Default comments</Comments>
@@ -366,8 +366,8 @@
       <Subject>s1</Subject>
       <Activity_Tag>at3</Activity_Tag>
       <Students>y1 b</Students>
-      <Duration>1</Duration>
-      <Total_Duration>2</Total_Duration>
+      <Duration>2</Duration>
+      <Total_Duration>4</Total_Duration>
       <Id>10</Id>
       <Activity_Group_Id>10</Activity_Group_Id>
       <Active>true</Active>
@@ -378,8 +378,8 @@
       <Subject>s1</Subject>
       <Activity_Tag>at3</Activity_Tag>
       <Students>y1 b</Students>
-      <Duration>1</Duration>
-      <Total_Duration>2</Total_Duration>
+      <Duration>2</Duration>
+      <Total_Duration>4</Total_Duration>
       <Id>11</Id>
       <Activity_Group_Id>10</Activity_Group_Id>
       <Active>true</Active>
@@ -2648,6 +2648,15 @@
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection>
+    <ConstraintActivitiesOverlapCompletelyOrDontOverlap>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Number_of_Activities>3</Number_of_Activities>
+      <Activity_Id>2</Activity_Id>
+      <Activity_Id>10</Activity_Id>
+      <Activity_Id>11</Activity_Id>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintActivitiesOverlapCompletelyOrDontOverlap>
   </Time_Constraints_List>
   <Space_Constraints_List>
     <ConstraintBasicCompulsorySpace>
