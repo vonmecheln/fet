@@ -80,6 +80,18 @@ These are some rather technical problems, for developers, referring to some poss
 Also in the all time/space constraints dialogs in the interface. -> PARTIALLY DONE, only remaining is reading constraints, where
 we compare strings.
 
+1.5--------------------------------------------------------
+From Liviu Lalescu and Volker Dirr:
+
+- The generate code could use QVarLengthArray instead of QList in some places, for a possible slightly better speed. About QVarLengthArray, Volker Dirr said:
+
+Maybe it will be clever to count some useful init values for default size in generate_pre. So I think, depending on the constraint, different default size might be
+useful, like:
+- max number of activities of a teacher.
+- max number of activities of a subgroup.
+- max number of activities for a room.
+...
+
 2----------------------------------------------------------
 From Volker Dirr:
 
@@ -10100,7 +10112,7 @@ For me it’s fine, but I think a new user might find it a bit confusing (what i
 A nice option (if possible) would be to have the default selection (when no filter item is chosen) appear instead as text (“Teacher” “Student” “Subject”, etc.).
 Is that a possible?
 
-Also gradgrind suggested on the forum to add (restore as in FET-6.27.0) labels for the filters:
+Also Michael Towers suggested on the forum to add (restore as in FET-6.27.0) labels for the filters:
 https://lalescu.ro/liviu/fet/forum/index.php?topic=6242.0
 
 Also Vangelis Karafillidis reported that the filter labels are missing.
@@ -11882,7 +11894,7 @@ From Michael Chourdakis (on Facebook):
 Please consider a) saving the state and b) introducing subconstraints with OR.
 
 784---------------------------------------------------------
-From gradgrind (on forum):
+From Michael Towers (on forum):
 
 https://lalescu.ro/liviu/fet/forum/index.php?topic=6688.0
 
@@ -11901,7 +11913,7 @@ You probably had reasons for your choices, but if it is not too much work, perha
 on these elements (I may have missed something ...).
 
 785---------------------------------------------------------
-From gradgrind (on forum):
+From Michael Towers (on forum):
 
 https://lalescu.ro/liviu/fet/forum/index.php?topic=6689.0
 
@@ -12028,3 +12040,40 @@ From GUEFFAZ REDA (on Facebook):
 
 He sent Liviu Lalescu a screenshot, with the activities dialog having additional radio buttons or check boxes to show the corresponding long names and codes
 for the teachers.
+
+795---------------------------------------------------------
+From corra (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6706.0
+
+When I generate the timetable, my usual approach is to insert step by step the constraints and running the solver to get a timetable. Of course, at the
+beginning everything runs smoothly, but after inserting a number of constraints the solver becomes slower because the number of constraints starts getting
+significant.
+
+My question is: is it possible to run a solver feeding a previously generated timetable as starting point? Being an optimisation problem, I would expect
+that giving a reasonable starting point the solution would be got more easily than a full start from scratch.
+
+Liviu Lalescu:
+
+It is not possible. You cannot take a solution and make it better in terms of hard (100% weight) and/or soft (<100% weight) constraints. You need to start
+from zero each timetable. It is not possible even to start with a partial solution (a part of activities allocated in time and space).
+
+My advice is to generate on a file with all the activities and only the not available constraints. If it succeeds in a reasonable time, you could add also
+min days between activities constraints and generate again. Then, add all the remaining constraints and try to generate, possibly on more threads to see
+which solution is found first. Then, if not successful, deactivate or lower the noncritical constraints.
+
+corra:
+
+Many thanks. Maybe it is something that could be introduced in the future?
+
+Also, another useful thing could be a drag and drop feature in the timetable view (for instance vertical view by rooms).
+
+Liviu Lalescu:
+
+What I meant by "You cannot take a solution and make it better in terms of hard (100% weight) and/or soft (<100% weight) constraints." is that it cannot
+be implemented in FET, because it is unfeasible/impossible. The solution must be constructed from zero placed activities, increasingly adding activities.
+
+796---------------------------------------------------------
+From Michael Chourdakis (on Facebook):
+
+The ability for fet-cl to save it's current state in a file then restart from it, say I reached 90% of a timetable, perhaps save this, stop fet and resume later.

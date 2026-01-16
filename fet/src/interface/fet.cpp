@@ -120,9 +120,9 @@ QString csvOutputDirectory;
 #include <csignal>
 #include <QtGlobal>
 
-#include <atomic>
-#include <thread>
-#include <chrono>
+//#include <atomic>
+//#include <thread>
+//#include <chrono>
 #endif
 
 #include <iostream>
@@ -213,13 +213,13 @@ extern const int EXPORT_VERTICALBAR;
 extern QString DIRECTORY_CSV;
 
 QString communicationFile;
-#endif
+//#endif
 
-#ifdef FET_COMMAND_LINE
+//#ifdef FET_COMMAND_LINE
 
 //https://stackoverflow.com/questions/6736536/c-input-and-output-to-the-console-window-at-the-same-time/31500127#31500127
 //https://stackoverflow.com/questions/4184468/sleep-for-milliseconds
-void pollFile(std::atomic<bool>& run)
+/*void pollFile(std::atomic<bool>& run)
 {
 	while(run.load()){
 		std::this_thread::sleep_for(std::chrono::milliseconds(1000));
@@ -229,7 +229,7 @@ void pollFile(std::atomic<bool>& run)
 				terminateGeneratePointer->writeCurrentAndHighestTimetable=true;
 		}
 	}
-}
+}*/
 
 //for command line version, if the user stops using a signal
 void terminate(int param)
@@ -391,8 +391,8 @@ void usage(QTextStream* out, const QString& error)
 		"FET will then write the current timetable and the highest stage timetable and exit. "
 		"(If you send the FET command line the SIGINT signal it will stop immediately, without writing the timetable.)\n"
 		"\n"
-		"If you create a file named exactly 'sigwrite' in the root output directory, the program will output the current and the "
-		"highest stage timetables without stopping the generation (a poll for the existence of this file is done once every second), and then remove this file."
+		"If you create a file named exactly 'sigwrite' in the root output directory, the program will try to remove this file and, if the file was successfully removed, "
+		"it will output the current and the highest stage timetables without stopping the generation (a poll for the existence of this file is done once every second)."
 	);
 	
 	std::cout<<qPrintable(s)<<std::endl;
@@ -3326,8 +3326,8 @@ int main(int argc, char **argv)
 #endif
 		
 		//https://stackoverflow.com/questions/6736536/c-input-and-output-to-the-console-window-at-the-same-time/31500127#31500127
-		std::atomic<bool> run(true);
-		std::thread pollFileThread(pollFile, std::ref(run));
+		//std::atomic<bool> run(true);
+		//std::thread pollFileThread(pollFile, std::ref(run));
 
 		gen.abortOptimization=false;
 		gen.restart=false;
@@ -3357,8 +3357,8 @@ int main(int argc, char **argv)
 
 		gen.generate(secondsLimit, restarted, impossible, timeExceeded, false, &maxPlacedActivityStream); //false means no thread
 
-		run.store(false);
-		pollFileThread.join();
+		//run.store(false);
+		//pollFileThread.join();
 		
 		maxPlacedActivityFile.close();
 	

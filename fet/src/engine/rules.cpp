@@ -49,6 +49,7 @@ File rules.cpp
 #include <QSet>
 #include <QHash>
 
+#include <deque>
 #include <list>
 #include <iterator>
 
@@ -81,14 +82,14 @@ extern bool teachers_schedule_ready;
 #include <ctime>
 
 int cntUndoRedoStackIterator=0;
-std::list<QByteArray> oldRulesArchived; //.front() is oldest, .back() is newest
+std::deque<QByteArray> oldRulesArchived; //.front() is oldest, .back() is newest
 //std::list<QString> operationWhichWasDone; //as above
-std::list<QByteArray> operationWhichWasDoneArchived; //as above
-std::list<QPair<QDate, QTime>> operationDateTime; //as above
-std::list<int> unarchivedSizes; //as above
+std::deque<QByteArray> operationWhichWasDoneArchived; //as above
+std::deque<QPair<QDate, QTime>> operationDateTime; //as above
+std::deque<int> unarchivedSizes; //as above
 //std::list<QString> stateFileName; //as above
 
-std::list<QByteArray>::const_iterator crtBAIt;
+std::deque<QByteArray>::const_iterator crtBAIt;
 //std::list<QString>::const_iterator crtFNIt;
 
 int savedStateIterator=0;
@@ -5670,7 +5671,7 @@ void Rules::restoreState(QWidget* parent, int iterationsBackward)
 {
 	assert(USE_UNDO_REDO);
 
-	std::list<QByteArray>::const_iterator savedCrtBAIt=crtBAIt;
+	std::deque<QByteArray>::const_iterator savedCrtBAIt=crtBAIt;
 	int savedCntUndoRedoStackIterator=cntUndoRedoStackIterator;
 
 	if(iterationsBackward==0){
@@ -5683,12 +5684,13 @@ void Rules::restoreState(QWidget* parent, int iterationsBackward)
 		}
 		else{
 			cntUndoRedoStackIterator-=iterationsBackward;
-			for(int i=0; i<iterationsBackward; i++){
+			/*for(int i=0; i<iterationsBackward; i++){
 				crtBAIt--;
 				//crtDIt--;
 				//crtDTIt--;
 				//crtFNIt--;
-			}
+			}*/
+			std::advance(crtBAIt, -iterationsBackward);
 		}
 	}
 	else if(iterationsBackward<0){
@@ -5700,12 +5702,13 @@ void Rules::restoreState(QWidget* parent, int iterationsBackward)
 		}
 		else{
 			cntUndoRedoStackIterator+=iterationsForward;
-			for(int i=0; i<iterationsForward; i++){
+			/*for(int i=0; i<iterationsForward; i++){
 				crtBAIt++;
 				//crtDIt++;
 				//crtDTIt++;
 				//crtFNIt++;
-			}
+			}*/
+			std::advance(crtBAIt, iterationsForward);
 		}
 	}
 	QByteArray oldRulesArchivedBA=*crtBAIt;

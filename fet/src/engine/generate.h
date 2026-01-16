@@ -53,9 +53,9 @@ class Generate: public QObject{
 	Q_OBJECT
 	
 public:
-#ifdef FET_COMMAND_LINE
-	std::atomic<bool> writeCurrentAndHighestTimetable; //for fet-cl, we poll a file and if it exists we will write the current and highest-stage timetables.
-#endif
+//#ifdef FET_COMMAND_LINE
+//	std::atomic<bool> writeCurrentAndHighestTimetable; //for fet-cl, we poll a file and if it exists we will write the current and highest-stage timetables.
+//#endif
 
 	//QMutex myMutex;
 	std::mutex myMutex;

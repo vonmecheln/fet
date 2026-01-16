@@ -37,16 +37,18 @@
 #include <QByteArray>
 #include <QDataStream>
 
+#include <deque>
+
 extern const QString COMPANY;
 extern const QString PROGRAM;
 
 //in rules.cpp
 extern int cntUndoRedoStackIterator;
-extern std::list<QByteArray> oldRulesArchived; //.front() is oldest, .back() is newest
+extern std::deque<QByteArray> oldRulesArchived; //.front() is oldest, .back() is newest
 //extern std::list<QString> operationWhichWasDone; //as above
-extern std::list<QByteArray> operationWhichWasDoneArchived; //as above
-extern std::list<QPair<QDate, QTime>> operationDateTime; //as above
-extern std::list<int> unarchivedSizes; //as above
+extern std::deque<QByteArray> operationWhichWasDoneArchived; //as above
+extern std::deque<QPair<QDate, QTime>> operationDateTime; //as above
+extern std::deque<int> unarchivedSizes; //as above
 //extern std::list<QString> stateFileName; //as above
 
 extern int savedStateIterator;
@@ -71,8 +73,8 @@ RestoreDataStateForm::RestoreDataStateForm(QWidget* parent): QDialog(parent)
 	connect(buttonBox, &QDialogButtonBox::rejected, this, &RestoreDataStateForm::cancel);
 	
 	QLocale loc(FET_LANGUAGE_WITH_LOCALE);
-	std::list<QByteArray>::const_iterator ita=oldRulesArchived.cbegin();
-	std::list<int>::const_iterator itu=unarchivedSizes.cbegin();
+	std::deque<QByteArray>::const_iterator ita=oldRulesArchived.cbegin();
+	std::deque<int>::const_iterator itu=unarchivedSizes.cbegin();
 	int membytes=0;
 	int k=0;
 	for(const QPair<QDate, QTime>& dt : std::as_const(operationDateTime)){

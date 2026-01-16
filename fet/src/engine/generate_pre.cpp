@@ -24535,7 +24535,7 @@ void sortActivities(QWidget* parent, const QHash<int, int>& reprSameStartingTime
 			adjMatrix.insert(c2c->secondActivityIndex, c2c->firstActivityIndex);
 		}
 	}
-		
+	
 	QHash<int, int> repr;
 	//repr.clear();
 	

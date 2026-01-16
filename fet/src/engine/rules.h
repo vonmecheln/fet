@@ -46,8 +46,6 @@ File rules.h
 
 #include <QPair>
 
-#include <list>
-
 class QXmlStreamReader;
 
 class QWidget;

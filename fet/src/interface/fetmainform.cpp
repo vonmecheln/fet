@@ -176,6 +176,7 @@
 #include <QFont>
 #include <QFontDialog>
 
+#include <deque>
 #include <list>
 #include <iterator>
 
@@ -944,14 +945,14 @@ const int STATUS_BAR_MILLISECONDS=2500;
 
 //in rules.cpp
 extern int cntUndoRedoStackIterator;
-extern std::list<QByteArray> oldRulesArchived; //.front() is oldest, .back() is newest
+extern std::deque<QByteArray> oldRulesArchived; //.front() is oldest, .back() is newest
 //extern std::list<QString> operationWhichWasDone; //as above
-extern std::list<QByteArray> operationWhichWasDoneArchived; //as above
-extern std::list<QPair<QDate, QTime>> operationDateTime; //as above
-extern std::list<int> unarchivedSizes; //as above
+extern std::deque<QByteArray> operationWhichWasDoneArchived; //as above
+extern std::deque<QPair<QDate, QTime>> operationDateTime; //as above
+extern std::deque<int> unarchivedSizes; //as above
 //extern std::list<QString> stateFileName; //as above
 
-extern std::list<QByteArray>::const_iterator crtBAIt;
+extern std::deque<QByteArray>::const_iterator crtBAIt;
 
 extern int savedStateIterator;
 
@@ -1105,10 +1106,10 @@ bool FetMainForm::saveHistory()
 	QString filename=INPUT_FILENAME_XML+SUFFIX_FILENAME_SAVE_HISTORY;
 
 	if(USE_UNDO_REDO && USE_UNDO_REDO_SAVE){
-		std::list<QByteArray>::const_iterator oRAit=oldRulesArchived.cbegin();
-		std::list<QByteArray>::const_iterator oWWDAit=operationWhichWasDoneArchived.cbegin();
-		std::list<QPair<QDate, QTime>>::const_iterator oDTit=operationDateTime.cbegin();
-		std::list<int>::const_iterator uSit=unarchivedSizes.cbegin();
+		std::deque<QByteArray>::const_iterator oRAit=oldRulesArchived.cbegin();
+		std::deque<QByteArray>::const_iterator oWWDAit=operationWhichWasDoneArchived.cbegin();
+		std::deque<QPair<QDate, QTime>>::const_iterator oDTit=operationDateTime.cbegin();
+		std::deque<int>::const_iterator uSit=unarchivedSizes.cbegin();
 
 		assert(cntUndoRedoStackIterator==savedStateIterator);
 		assert(savedStateIterator>=0);
@@ -1120,12 +1121,16 @@ bool FetMainForm::saveHistory()
 				return true;
 		}
 		else{
-			for(int i=1; i<savedStateIterator; i++){
+			/*for(int i=1; i<savedStateIterator; i++){
 				oRAit++;
 				oWWDAit++;
 				oDTit++;
 				uSit++;
-			}
+			}*/
+			std::advance(oRAit, savedStateIterator-1);
+			std::advance(oWWDAit, savedStateIterator-1);
+			std::advance(oDTit, savedStateIterator-1);
+			std::advance(uSit, savedStateIterator-1);
 
 			QSaveFile file(filename);
 

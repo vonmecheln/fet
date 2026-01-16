@@ -60,6 +60,13 @@ So at least for now FET will use QList.*/
 //to use 'const' for the global variables which are accessed in more than one thread concurrently. It seems that in Qt 6 this does not matter,
 //but it is better to use it. We are using the 'const' variant for the begin() and end() iterators in the whole generate.cpp file, for safety.
 
+//TODO: In some places, maybe we could consider using QVarLengthArray instead of QList, because it might be slightly faster. But a lot of testing
+//is needed. Also, I (Liviu Lalescu) tested this, and the results were inconclusive:
+//- when I used QVarLengthArray only a bit, in the beginning of generate.cpp (maybe in teacherRemoveAnActivityFromBeginOrEnd and a few other places),
+//  the program was about 5% faster for the examples/official/by-Volker-Dirr/German_subact_constr.fet.
+//- when I used QVarLengthArray in almost the entire generate.cpp and in generate.h->getOptimumActivitiesToDisplace(...), the speed was the same
+//  as with QList everywhere or maybe even a bit slower for the same example file as above (examples/official/by-Volker-Dirr/German_subact_constr.fet).
+
 #include <ctime>
 
 #include <Qt>
@@ -92,6 +99,8 @@ So at least for now FET will use QList.*/
 
 #ifdef FET_COMMAND_LINE
 #include <QDir>
+#include <QFileInfo>
+#include <QFile>
 
 #include "timetableexport.h"
 #include "export.h"
@@ -130,9 +139,29 @@ const int INF=2000000000;
 const int MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0=2000000000;
 
 #ifdef FET_COMMAND_LINE
+extern QString communicationFile;
+
 void Generate::checkWriteCurrentAndHighestTimetable()
 {
-	assert(writeCurrentAndHighestTimetable);
+	static std::chrono::steady_clock::time_point startClock=std::chrono::steady_clock::now();
+	
+	std::chrono::steady_clock::time_point currentClock=std::chrono::steady_clock::now();
+	std::chrono::milliseconds elapsedMilliseconds=std::chrono::duration_cast<std::chrono::milliseconds>(currentClock-startClock);
+	qint64 elapsedMillisecondsInt64=static_cast<qint64>(elapsedMilliseconds.count());
+	
+	if(elapsedMillisecondsInt64<1000)
+		return;
+
+	startClock=std::chrono::steady_clock::now();
+
+	if(!QFile::exists(communicationFile))
+		return;
+
+	bool fileWasRemoved=QFile::remove(communicationFile);
+	if(!fileWasRemoved)
+		return;
+
+	//assert(writeCurrentAndHighestTimetable);
 	Solution& cc=this->c;
 
 	//needed to find the conflicts strings
@@ -7518,10 +7547,10 @@ void Generate::generateWithSemaphore(int maxSeconds, bool& restarted, bool& impo
 
 void Generate::generate(int maxSeconds, bool& restarted, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream)
 {
-#ifdef FET_COMMAND_LINE
-	if(!threaded)
-		writeCurrentAndHighestTimetable=false;
-#endif
+//#ifdef FET_COMMAND_LINE
+//	if(!threaded)
+//		writeCurrentAndHighestTimetable=false;
+//#endif
 
 	activityRetryLevel0TimeLimit=maxSeconds;
 	activityRetryLevel0TimeExceeded=false;
@@ -8311,10 +8340,10 @@ prevvalue:
 			}
 #ifdef FET_COMMAND_LINE
 			else{
-				if(writeCurrentAndHighestTimetable){
-					checkWriteCurrentAndHighestTimetable();
-					writeCurrentAndHighestTimetable=false;
-				}
+				//if(writeCurrentAndHighestTimetable){
+				checkWriteCurrentAndHighestTimetable();
+				//	writeCurrentAndHighestTimetable=false;
+				//}
 			}
 #endif
 			//}
@@ -8368,10 +8397,10 @@ prevvalue:
 			}
 #ifdef FET_COMMAND_LINE
 			else{
-				if(writeCurrentAndHighestTimetable){
-					checkWriteCurrentAndHighestTimetable();
-					writeCurrentAndHighestTimetable=false;
-				}
+				//if(writeCurrentAndHighestTimetable){
+				checkWriteCurrentAndHighestTimetable();
+				//	writeCurrentAndHighestTimetable=false;
+				//}
 			}
 #endif
 			/*if(added_act==gt.rules.nInternalActivities && foundGoodSwap){ //Should be added_act+1==...
@@ -9894,7 +9923,7 @@ impossiblenotoverlapping:
 		
 		if(haveActivitiesOverlapCompletelyOrDoNotOverlap){
 			for(ActivitiesOverlapCompletelyOrDoNotOverlap_item* item : std::as_const(aocodnoListForActivity[ai])){
-				QList<int> activitiesList=item->activitiesList;
+				const QList<int>& activitiesList=item->activitiesList;
 				for(int ai2 : std::as_const(activitiesList)){
 					if(ai2!=ai){
 						if(c.times[ai2]!=UNALLOCATED_TIME){
@@ -35639,7 +35668,7 @@ impossibleactivitiesmininaterm:
 
 							for(int k : std::as_const(candidateTerms)){
 								assert(canEmptyTerm[k]);
-								QList<int> acts=termActivities[k];
+								const QList<int>& acts=termActivities[k];
 								assert(acts.count()>0);
 
 								int tmp_n_confl_acts=acts.count();
@@ -35994,10 +36023,10 @@ skip_here_if_already_allocated_in_time:
 				}
 #ifdef FET_COMMAND_LINE
 				else{
-					if(writeCurrentAndHighestTimetable){
-						checkWriteCurrentAndHighestTimetable();
-						writeCurrentAndHighestTimetable=false;
-					}
+					//if(writeCurrentAndHighestTimetable){
+					checkWriteCurrentAndHighestTimetable();
+					//	writeCurrentAndHighestTimetable=false;
+					//}
 				}
 #endif
 				

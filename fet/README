@@ -1,4 +1,4 @@
-This is FET version 7.6.4
+This is FET version 7.6.5
 
 
 Program description:
@@ -14,7 +14,7 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.18.2, Xfce 4.20,
+	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.18.3, Xfce 4.20,
 	Xfce Terminal Emulator 1.1.5, Midnight Commander 4.8.33, Krusader 2.9.0, Kate 25.12.0, KDiff3 0.9.99-beta, grep 3.12, sed 4.9,
 	Thunar Bulk Rename 4.20.4, Qt 6.10.1, QMake 3.1, CMake 4.1.2, Ninja 1.13.0, Qt Creator 18.0.1, GCC 15.2.1, Clang 21.1.6,
 	GNU Make 4.4.1, GDB 16.3, Valgrind 3.25.1, Coverity Scan 2024.12.1, Cppcheck 2.19, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0,
@@ -442,8 +442,9 @@ Running FET:
 	write the current timetable and the highest stage timetable and exit. (If you send the FET command line the SIGINT signal it will stop immediately,
 	without writing the timetable.)
 
-	If you create a file named exactly 'sigwrite' in the root output directory, the program will output the current and the highest stage timetables
-	without stopping the generation (a poll for the existence of this file is done once every second), and then remove this file.
+	If you create a file named exactly 'sigwrite' in the root output directory, the program will try to remove this file and, if the file was
+	successfully removed, it will output the current and the highest stage timetables without stopping the generation (a poll for the existence of this
+	file is done once every second).
 
 	The potential warnings are logged in the file outputdir/logs/warnings.txt, and the potential errors are logged in the file outputdir/logs/errors.txt.
 

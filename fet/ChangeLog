@@ -1,3 +1,9 @@
+ 7.6.5
+	- Improved the command line generation, by removing the additional thread which was checking for the possible existence of the 'sigwrite' file.
+	The new check for the existence of this file is done in the already existing generation thread (idea and code suggested by Michael Chourdakis).
+	- Minor improvement: the History states will now be stored in four std::deque-s instead of four std::list-s (but the improvement is not noticeable
+	in practice).
+	- Minor improvements.
  7.6.4
 	- Modifying multiple constraints of type min (half) days between activities now applies only to the selected constraints, not to all the constraints
 	(suggested by GUEFFAZ REDA).
@@ -239,8 +245,8 @@
 	- The list/add/modify group activities in initial order items dialogs will have a 'Show related' check box for the students filter.
  7.0.5
 	- Improved the add/modify constraints dialogs which include a times table: the user can click on the top-left corner instead of the button "Toggle all",
-	button which will now toggle/swap empty (green) cells with X (red) cells. Suggested by Volker Dirr and gradgrind; gradgrind also suggested the main idea
-	for coding this. Volker suggested to use the ∀ symbol in the top-left corner to express this functionality.
+	button which will now toggle/swap empty (green) cells with X (red) cells. Suggested by Volker Dirr and Michael Towers; Michael Towers also suggested the
+	main idea for coding this. Volker suggested to use the ∀ symbol in the top-left corner to express this functionality.
 	- The add/modify constraints dialogs with tables will each have a separate option, a check box, for choosing whether to use colors or not (suggested
 	by GUEFFAZ REDA).
 	- Added filters in the constraints teachers/students not available time horizontal views (suggested by GUEFFAZ REDA).
