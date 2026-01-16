@@ -53,7 +53,6 @@
 #include <QPalette>
 
 #include <algorithm>
-//using namespace std;
 
 extern const QString COMPANY;
 extern const QString PROGRAM;

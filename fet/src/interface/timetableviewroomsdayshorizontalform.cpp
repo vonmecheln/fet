@@ -63,6 +63,8 @@
 #include <QColor>
 //end by Marco Vassura
 
+#include <QCursor>
+
 //std::stable_sort
 #include <algorithm>
 
@@ -168,9 +170,20 @@ TimetableViewRoomsDaysHorizontalForm::TimetableViewRoomsDaysHorizontalForm(QWidg
 	connect(lockTimePushButton, &QPushButton::clicked, this, &TimetableViewRoomsDaysHorizontalForm::lockTime);
 	connect(lockSpacePushButton, &QPushButton::clicked, this, &TimetableViewRoomsDaysHorizontalForm::lockSpace);
 
-	connect(roomSpacePushButton, &QPushButton::clicked, this, &TimetableViewRoomsDaysHorizontalForm::roomSpace);
-	connect(activitiesTimePushButton, &QPushButton::clicked, this, &TimetableViewRoomsDaysHorizontalForm::activitiesTime);
-	connect(activitiesSpacePushButton, &QPushButton::clicked, this, &TimetableViewRoomsDaysHorizontalForm::activitiesSpace);
+	roomSpaceAction=new QAction(tr("Room space", "View/edit the selected rooms's space constraints"), this);
+	activitiesTimeAction=new QAction(tr("Activities time", "View/edit the selected activities' time constraints"), this);
+	activitiesSpaceAction=new QAction(tr("Activities space", "View/edit the selected activities' space constraints"), this);
+	constraintsMenu=new QMenu(this);
+
+	constraintsMenu->addAction(roomSpaceAction);
+	constraintsMenu->addSeparator();
+	constraintsMenu->addAction(activitiesTimeAction);
+	constraintsMenu->addAction(activitiesSpaceAction);
+
+	connect(roomSpaceAction, &QAction::triggered, this, &TimetableViewRoomsDaysHorizontalForm::roomSpace);
+	connect(activitiesTimeAction, &QAction::triggered, this, &TimetableViewRoomsDaysHorizontalForm::activitiesTime);
+	connect(activitiesSpaceAction, &QAction::triggered, this, &TimetableViewRoomsDaysHorizontalForm::activitiesSpace);
+	connect(constraintsPushButton, &QPushButton::clicked, this, &TimetableViewRoomsDaysHorizontalForm::constraints);
 
 	connect(helpPushButton, &QPushButton::clicked, this, &TimetableViewRoomsDaysHorizontalForm::help);
 
@@ -1336,6 +1349,11 @@ void TimetableViewRoomsDaysHorizontalForm::help()
 	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
 }
 
+void TimetableViewRoomsDaysHorizontalForm::constraints()
+{
+	constraintsMenu->popup(QCursor::pos());
+}
+
 void TimetableViewRoomsDaysHorizontalForm::roomSpace()
 {
 	if(!(students_schedule_ready && teachers_schedule_ready)){
@@ -1445,7 +1463,7 @@ void TimetableViewRoomsDaysHorizontalForm::activitiesTime()
 	}
 
 	if(actl.isEmpty()){
-		QMessageBox::information(this, tr("FET information"), tr("Please select at least one activity (one table cell)"));
+		QMessageBox::information(this, tr("FET information"), tr("Please select at least one activity (one nonempty table cell)"));
 		return;
 	}
 
@@ -1536,7 +1554,7 @@ void TimetableViewRoomsDaysHorizontalForm::activitiesSpace()
 	}
 
 	if(actl.isEmpty()){
-		QMessageBox::information(this, tr("FET information"), tr("Please select at least one activity (one table cell)"));
+		QMessageBox::information(this, tr("FET information"), tr("Please select at least one activity (one nonempty table cell)"));
 		return;
 	}
 

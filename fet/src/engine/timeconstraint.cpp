@@ -38,10 +38,9 @@ File timeconstraint.cpp
 
 #include <QDataStream>
 
-//for min max functions
+//for the min and max functions
 //2025-04-03: also for std::stable_sort
 #include <algorithm>
-//using namespace std;
 
 //1
 QDataStream& operator<<(QDataStream& stream, const ConstraintBasicCompulsoryTime& tc)

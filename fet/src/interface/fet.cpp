@@ -126,7 +126,6 @@ QString csvOutputDirectory;
 #endif
 
 #include <iostream>
-//using namespace std;
 
 #ifndef FET_COMMAND_LINE
 extern QRect mainFormSettingsRect;

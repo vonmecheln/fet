@@ -22,9 +22,12 @@
 #include <QAbstractItemDelegate>
 #include <QStyledItemDelegate>
 
-class QColor; //by Marco Vassura
+#include <QAction>
+#include <QMenu>
 
 #include "ui_timetableviewroomstimehorizontalform_template.h"
+
+class QColor; //by Marco Vassura
 
 class TimetableViewRoomsTimeHorizontalDelegate: public QStyledItemDelegate
 {
@@ -56,6 +59,11 @@ private:
 	QAbstractItemDelegate* oldItemDelegate;
 	TimetableViewRoomsTimeHorizontalDelegate* newItemDelegate;
 
+	QAction* roomsSpaceAction;
+	QAction* activitiesTimeAction;
+	QAction* activitiesSpaceAction;
+	QMenu* constraintsMenu;
+
 public:
 	TimetableViewRoomsTimeHorizontalForm(QWidget* parent);
 	void newTimetableGenerated();
@@ -74,15 +82,17 @@ public Q_SLOTS:
 	void updateRoomsTimetableTable();
 
 	void currentItemChanged(QTableWidgetItem* current, QTableWidgetItem* previous);
+	
+	void widthSpinBoxValueChanged();
+	void heightSpinBoxValueChanged();
 
 	void roomsSpace();
 	void activitiesTime();
 	void activitiesSpace();
 
+	void constraints();
+
 	void help();
-	
-	void widthSpinBoxValueChanged();
-	void heightSpinBoxValueChanged();
 
 protected:
 //	void resizeEvent(QResizeEvent* event);

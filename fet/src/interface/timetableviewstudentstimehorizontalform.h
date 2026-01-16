@@ -22,16 +22,19 @@
 #include <QAbstractItemDelegate>
 #include <QStyledItemDelegate>
 
+#include <QAction>
+#include <QMenu>
+
 #include <QString>
 #include <QSet>
 //#include <QHash>
 #include <QStringList>
 
+#include "ui_timetableviewstudentstimehorizontalform_template.h"
+
 class QColor; //by Marco Vassura
 
 //class ConstraintStudentsSetNotAvailableTimes;
-
-#include "ui_timetableviewstudentstimehorizontalform_template.h"
 
 class TimetableViewStudentsTimeHorizontalDelegate: public QStyledItemDelegate
 {
@@ -69,6 +72,12 @@ private:
 	QAbstractItemDelegate* oldItemDelegate;
 	TimetableViewStudentsTimeHorizontalDelegate* newItemDelegate;
 
+	QAction* studentsTimeAction;
+	QAction* studentsSpaceAction;
+	QAction* activitiesTimeAction;
+	QAction* activitiesSpaceAction;
+	QMenu* constraintsMenu;
+
 public:
 	TimetableViewStudentsTimeHorizontalForm(QWidget* parent);
 	void newTimetableGenerated();
@@ -92,16 +101,18 @@ public Q_SLOTS:
 	void updateStudentsTimetableTable();
 
 	void currentItemChanged(QTableWidgetItem* current, QTableWidgetItem* previous);
+	
+	void widthSpinBoxValueChanged();
+	void heightSpinBoxValueChanged();
 
 	void studentsTime();
 	void studentsSpace();
 	void activitiesTime();
 	void activitiesSpace();
 
+	void constraints();
+
 	void help();
-	
-	void widthSpinBoxValueChanged();
-	void heightSpinBoxValueChanged();
 	
 protected:
 //	void resizeEvent(QResizeEvent* event);

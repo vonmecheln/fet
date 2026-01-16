@@ -35,7 +35,6 @@
 #include "timetable.h"
 
 #include <algorithm>
-//using namespace std;
 
 extern Timetable gt;
 

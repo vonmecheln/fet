@@ -20,7 +20,6 @@
 #include <QMessageBox>
 #else
 #include <iostream>
-//using namespace std;
 
 #include <QDir>
 #include <QFile>

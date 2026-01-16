@@ -22,6 +22,9 @@
 #include <QAbstractItemDelegate>
 #include <QStyledItemDelegate>
 
+#include <QAction>
+#include <QMenu>
+
 #include "ui_timetableviewstudentsdayshorizontalform_template.h"
 
 class QColor; //by Marco Vassura
@@ -53,6 +56,12 @@ class TimetableViewStudentsDaysHorizontalForm : public QDialog, public Ui::Timet
 private:
 	QAbstractItemDelegate* oldItemDelegate;
 	TimetableViewStudentsDaysHorizontalDelegate* newItemDelegate;
+	
+	QAction* studentsSubgroupTimeAction;
+	QAction* studentsSubgroupSpaceAction;
+	QAction* activitiesTimeAction;
+	QAction* activitiesSpaceAction;
+	QMenu* constraintsMenu;
 
 public:
 	TimetableViewStudentsDaysHorizontalForm(QWidget* parent);
@@ -81,6 +90,8 @@ public Q_SLOTS:
 	void studentsSubgroupSpace();
 	void activitiesTime();
 	void activitiesSpace();
+
+	void constraints();
 
 	void help();
 	

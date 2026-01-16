@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>835</width>
+    <width>818</width>
     <height>540</height>
    </rect>
   </property>
@@ -117,41 +117,41 @@
            <property name="title">
             <string extracomment="This is a group box for locking/unlocking buttons">Lock/unlock</string>
            </property>
-           <layout class="QGridLayout" name="gridLayout">
+           <layout class="QGridLayout" name="gridLayout_3">
             <item row="0" column="0">
-             <layout class="QHBoxLayout" name="horizontalLayout_3">
-              <item>
+             <layout class="QGridLayout" name="gridLayout">
+              <item row="0" column="0">
                <widget class="QPushButton" name="lockTimePushButton">
                 <property name="text">
                  <string extracomment="This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).">Time</string>
                 </property>
                </widget>
               </item>
-              <item>
+              <item row="0" column="1">
                <widget class="QPushButton" name="lockSpacePushButton">
                 <property name="text">
                  <string extracomment="This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).">Space</string>
                 </property>
                </widget>
               </item>
+              <item row="1" column="0" colspan="2">
+               <widget class="Line" name="line">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0" colspan="2">
+               <widget class="QPushButton" name="lockTimeSpacePushButton">
+                <property name="text">
+                 <string extracomment="This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).">Both</string>
+                </property>
+                <property name="shortcut">
+                 <string/>
+                </property>
+               </widget>
+              </item>
              </layout>
-            </item>
-            <item row="2" column="0">
-             <widget class="QPushButton" name="lockTimeSpacePushButton">
-              <property name="text">
-               <string extracomment="This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).">Both</string>
-              </property>
-              <property name="shortcut">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="0">
-             <widget class="Line" name="line">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-             </widget>
             </item>
            </layout>
           </widget>
@@ -160,6 +160,13 @@
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
             <widget class="QComboBox" name="shownComboBox"/>
+           </item>
+           <item>
+            <widget class="QPushButton" name="constraintsPushButton">
+             <property name="text">
+              <string>Constraints</string>
+             </property>
+            </widget>
            </item>
            <item>
             <widget class="QPushButton" name="helpPushButton">
@@ -240,38 +247,6 @@
       </widget>
      </widget>
     </widget>
-   </item>
-   <item row="2" column="0">
-    <layout class="QHBoxLayout" name="horizontalLayout_6">
-     <item>
-      <widget class="QPushButton" name="studentsSubgroupTimePushButton">
-       <property name="text">
-        <string comment="View/edit the selected students subgroup's time constraints">Subgroup time</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="studentsSubgroupSpacePushButton">
-       <property name="text">
-        <string comment="View/edit the selected students subgroup's space constraints">Subgroup space</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="activitiesTimePushButton">
-       <property name="text">
-        <string comment="View/edit the selected activities' time constraints">Activities time</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="activitiesSpacePushButton">
-       <property name="text">
-        <string comment="View/edit the selected activities' space constraints">Activities space</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
    </item>
   </layout>
  </widget>

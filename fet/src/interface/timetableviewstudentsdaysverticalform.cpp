@@ -59,6 +59,8 @@
 #include <QObject>
 #include <QMetaObject>
 
+#include <QCursor>
+
 //begin by Marco Vassura
 #include <QBrush>
 #include <QColor>
@@ -176,10 +178,23 @@ TimetableViewStudentsDaysVerticalForm::TimetableViewStudentsDaysVerticalForm(QWi
 	connect(lockSpacePushButton, &QPushButton::clicked, this, &TimetableViewStudentsDaysVerticalForm::lockSpace);
 	connect(lockTimeSpacePushButton, &QPushButton::clicked, this, &TimetableViewStudentsDaysVerticalForm::lockTimeSpace);
 
-	connect(studentsSubgroupTimePushButton, &QPushButton::clicked, this, &TimetableViewStudentsDaysVerticalForm::studentsSubgroupTime);
-	connect(studentsSubgroupSpacePushButton, &QPushButton::clicked, this, &TimetableViewStudentsDaysVerticalForm::studentsSubgroupSpace);
-	connect(activitiesTimePushButton, &QPushButton::clicked, this, &TimetableViewStudentsDaysVerticalForm::activitiesTime);
-	connect(activitiesSpacePushButton, &QPushButton::clicked, this, &TimetableViewStudentsDaysVerticalForm::activitiesSpace);
+	studentsSubgroupTimeAction=new QAction(tr("Subgroup time", "View/edit the selected students subgroup's time constraints"), this);
+	studentsSubgroupSpaceAction=new QAction(tr("Subgroup space", "View/edit the selected students subgroup's space constraints"), this);
+	activitiesTimeAction=new QAction(tr("Activities time", "View/edit the selected activities' time constraints"), this);
+	activitiesSpaceAction=new QAction(tr("Activities space", "View/edit the selected activities' space constraints"), this);
+	constraintsMenu=new QMenu(this);
+
+	constraintsMenu->addAction(studentsSubgroupTimeAction);
+	constraintsMenu->addAction(studentsSubgroupSpaceAction);
+	constraintsMenu->addSeparator();
+	constraintsMenu->addAction(activitiesTimeAction);
+	constraintsMenu->addAction(activitiesSpaceAction);
+
+	connect(studentsSubgroupTimeAction, &QAction::triggered, this, &TimetableViewStudentsDaysVerticalForm::studentsSubgroupTime);
+	connect(studentsSubgroupSpaceAction, &QAction::triggered, this, &TimetableViewStudentsDaysVerticalForm::studentsSubgroupSpace);
+	connect(activitiesTimeAction, &QAction::triggered, this, &TimetableViewStudentsDaysVerticalForm::activitiesTime);
+	connect(activitiesSpaceAction, &QAction::triggered, this, &TimetableViewStudentsDaysVerticalForm::activitiesSpace);
+	connect(constraintsPushButton, &QPushButton::clicked, this, &TimetableViewStudentsDaysVerticalForm::constraints);
 
 	connect(helpPushButton, &QPushButton::clicked, this, &TimetableViewStudentsDaysVerticalForm::help);
 
@@ -1682,6 +1697,11 @@ void TimetableViewStudentsDaysVerticalForm::help()
 	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
 }
 
+void TimetableViewStudentsDaysVerticalForm::constraints()
+{
+	constraintsMenu->popup(QCursor::pos());
+}
+
 void TimetableViewStudentsDaysVerticalForm::studentsSubgroupTime()
 {
 	if(!(students_schedule_ready && teachers_schedule_ready)){
@@ -1833,14 +1853,14 @@ void TimetableViewStudentsDaysVerticalForm::activitiesTime()
 
 	QSet<int> careAboutIndex;		//added by Volker Dirr. Needed, because of activities with duration > 1
 	careAboutIndex.clear();
-	for(int j=0; j<(normalView?gt.rules.nHoursPerDay:gt.rules.nRealHoursPerDay) && j<studentsTimetableTable->rowCount(); j++){
+	for(int j=0; j<(normalView?gt.rules.nHoursPerDay:gt.rules.nRealHoursPerDay) && j<studentsTimetableTable->columnCount(); j++){
 		int jj;
 		if(normalView)
 			jj=j;
 		else
 			jj=j%gt.rules.nHoursPerDay;
 
-		for(int k=0; k<(normalView?gt.rules.nDaysPerWeek:gt.rules.nRealDaysPerWeek) && k<studentsTimetableTable->columnCount(); k++){
+		for(int k=0; k<(normalView?gt.rules.nDaysPerWeek:gt.rules.nRealDaysPerWeek) && k<studentsTimetableTable->rowCount(); k++){
 			int kk;
 			if(normalView)
 				kk=k;
@@ -1859,7 +1879,7 @@ void TimetableViewStudentsDaysVerticalForm::activitiesTime()
 	}
 
 	if(actl.isEmpty()){
-		QMessageBox::information(this, tr("FET information"), tr("Please select at least one activity (one table cell)"));
+		QMessageBox::information(this, tr("FET information"), tr("Please select at least one activity (one nonempty table cell)"));
 		return;
 	}
 
@@ -1949,14 +1969,14 @@ void TimetableViewStudentsDaysVerticalForm::activitiesSpace()
 
 	QSet<int> careAboutIndex;		//added by Volker Dirr. Needed, because of activities with duration > 1
 	careAboutIndex.clear();
-	for(int j=0; j<(normalView?gt.rules.nHoursPerDay:gt.rules.nRealHoursPerDay) && j<studentsTimetableTable->rowCount(); j++){
+	for(int j=0; j<(normalView?gt.rules.nHoursPerDay:gt.rules.nRealHoursPerDay) && j<studentsTimetableTable->columnCount(); j++){
 		int jj;
 		if(normalView)
 			jj=j;
 		else
 			jj=j%gt.rules.nHoursPerDay;
 
-		for(int k=0; k<(normalView?gt.rules.nDaysPerWeek:gt.rules.nRealDaysPerWeek) && k<studentsTimetableTable->columnCount(); k++){
+		for(int k=0; k<(normalView?gt.rules.nDaysPerWeek:gt.rules.nRealDaysPerWeek) && k<studentsTimetableTable->rowCount(); k++){
 			int kk;
 			if(normalView)
 				kk=k;
@@ -1975,7 +1995,7 @@ void TimetableViewStudentsDaysVerticalForm::activitiesSpace()
 	}
 
 	if(actl.isEmpty()){
-		QMessageBox::information(this, tr("FET information"), tr("Please select at least one activity (one table cell)"));
+		QMessageBox::information(this, tr("FET information"), tr("Please select at least one activity (one nonempty table cell)"));
 		return;
 	}
 

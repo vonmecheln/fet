@@ -22,6 +22,9 @@
 #include <QAbstractItemDelegate>
 #include <QStyledItemDelegate>
 
+#include <QAction>
+#include <QMenu>
+
 #include "ui_timetableviewteachersdaysverticalform_template.h"
 
 class QColor; //by Marco Vassura
@@ -54,6 +57,12 @@ private:
 	QAbstractItemDelegate* oldItemDelegate;
 	TimetableViewTeachersDaysVerticalDelegate* newItemDelegate;
 
+	QAction* teacherTimeAction;
+	QAction* teacherSpaceAction;
+	QAction* activitiesTimeAction;
+	QAction* activitiesSpaceAction;
+	QMenu* constraintsMenu;
+
 public:
 	TimetableViewTeachersDaysVerticalForm(QWidget* parent);
 	void newTimetableGenerated();
@@ -79,6 +88,8 @@ public Q_SLOTS:
 	void teacherSpace();
 	void activitiesTime();
 	void activitiesSpace();
+
+	void constraints();
 
 	void help();
 

@@ -14,85 +14,6 @@
    <string extracomment="Title of dialog">View students days horizontal timetable</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
-   <item row="1" column="0">
-    <layout class="QHBoxLayout" name="horizontalLayout_4">
-     <item>
-      <widget class="QLabel" name="numberAndDurationTextLabel">
-       <property name="text">
-        <string notr="true">No: 100, Dur: 100</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-       <property name="wordWrap">
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="teachersCheckBox">
-       <property name="text">
-        <string>Teachers</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="studentsCheckBox">
-       <property name="text">
-        <string>Students</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="subjectsCheckBox">
-       <property name="text">
-        <string>Subjects</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="activityTagsCheckBox">
-       <property name="text">
-        <string>Activity tags</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="roomsCheckBox">
-       <property name="text">
-        <string>Rooms</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="spanCheckBox">
-       <property name="text">
-        <string extracomment="It means that the cells for the same activity will be merged.">Merge</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="colorsCheckBox">
-       <property name="text">
-        <string extracomment="It means to use colors in the timetable view.">Colors</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
    <item row="0" column="0">
     <widget class="QSplitter" name="horizontalSplitter">
      <property name="orientation">
@@ -117,41 +38,41 @@
            <property name="title">
             <string extracomment="This is a group box for locking/unlocking buttons">Lock/unlock</string>
            </property>
-           <layout class="QGridLayout" name="gridLayout">
+           <layout class="QGridLayout" name="gridLayout_3">
             <item row="0" column="0">
-             <layout class="QHBoxLayout" name="horizontalLayout_3">
-              <item>
+             <layout class="QGridLayout" name="gridLayout">
+              <item row="0" column="0">
                <widget class="QPushButton" name="lockTimePushButton">
                 <property name="text">
                  <string extracomment="This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).">Time</string>
                 </property>
                </widget>
               </item>
-              <item>
+              <item row="0" column="1">
                <widget class="QPushButton" name="lockSpacePushButton">
                 <property name="text">
                  <string extracomment="This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).">Space</string>
                 </property>
                </widget>
               </item>
+              <item row="1" column="0" colspan="2">
+               <widget class="Line" name="line">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0" colspan="2">
+               <widget class="QPushButton" name="lockTimeSpacePushButton">
+                <property name="text">
+                 <string extracomment="This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).">Both</string>
+                </property>
+                <property name="shortcut">
+                 <string/>
+                </property>
+               </widget>
+              </item>
              </layout>
-            </item>
-            <item row="2" column="0">
-             <widget class="QPushButton" name="lockTimeSpacePushButton">
-              <property name="text">
-               <string extracomment="This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).">Both</string>
-              </property>
-              <property name="shortcut">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="0">
-             <widget class="Line" name="line">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-             </widget>
             </item>
            </layout>
           </widget>
@@ -160,6 +81,13 @@
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
             <widget class="QComboBox" name="shownComboBox"/>
+           </item>
+           <item>
+            <widget class="QPushButton" name="constraintsPushButton">
+             <property name="text">
+              <string>Constraints</string>
+             </property>
+            </widget>
            </item>
            <item>
             <widget class="QPushButton" name="helpPushButton">
@@ -241,33 +169,80 @@
      </widget>
     </widget>
    </item>
-   <item row="2" column="0">
-    <layout class="QHBoxLayout" name="horizontalLayout_5">
+   <item row="1" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
      <item>
-      <widget class="QPushButton" name="studentsSubgroupTimePushButton">
+      <widget class="QLabel" name="numberAndDurationTextLabel">
        <property name="text">
-        <string comment="View/edit the selected students subgroups' time constraints">Subgroup time</string>
+        <string notr="true">No: 100, Dur: 100</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="studentsSubgroupSpacePushButton">
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="teachersCheckBox">
        <property name="text">
-        <string comment="View/edit the selected students subgroups' space constraints">Subgroup space</string>
+        <string>Teachers</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="activitiesTimePushButton">
+      <widget class="QCheckBox" name="studentsCheckBox">
        <property name="text">
-        <string comment="View/edit the selected activities' time constraints">Activities time</string>
+        <string>Students</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="activitiesSpacePushButton">
+      <widget class="QCheckBox" name="subjectsCheckBox">
        <property name="text">
-        <string comment="View/edit the selected activities' space constraints">Activities space</string>
+        <string>Subjects</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="activityTagsCheckBox">
+       <property name="text">
+        <string>Activity tags</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="roomsCheckBox">
+       <property name="text">
+        <string>Rooms</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="spanCheckBox">
+       <property name="text">
+        <string extracomment="It means that the cells for the same activity will be merged.">Merge</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="colorsCheckBox">
+       <property name="text">
+        <string extracomment="It means to use colors in the timetable view.">Colors</string>
        </property>
       </widget>
      </item>

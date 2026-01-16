@@ -51,7 +51,6 @@ File timetableexport.cpp
 #include "matrix.h"
 
 #include <iostream>
-//using namespace std;
 
 #include <Qt>
 

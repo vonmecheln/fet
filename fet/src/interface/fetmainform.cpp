@@ -22,7 +22,6 @@
 #include <iostream>
 //for std::min
 #include <algorithm>
-//using namespace std;
 
 #ifndef FET_COMMAND_LINE
 

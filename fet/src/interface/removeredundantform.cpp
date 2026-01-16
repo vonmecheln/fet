@@ -36,7 +36,6 @@ extern Timetable gt;
 #include <QVBoxLayout>
 
 #include <algorithm>
-//using namespace std;
 
 RemoveRedundantForm::RemoveRedundantForm(QWidget* parent): QDialog(parent)
 {

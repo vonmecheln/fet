@@ -14,30 +14,12 @@
    <string extracomment="Title of dialog to view the rooms timetable">View rooms time horizontal timetable</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_4">
-   <item row="2" column="0">
-    <layout class="QHBoxLayout" name="horizontalLayout_6">
-     <item>
-      <widget class="QPushButton" name="roomsSpacePushButton">
-       <property name="text">
-        <string comment="View/edit the selected rooms' space constraints">Rooms space</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="activitiesTimePushButton">
-       <property name="text">
-        <string comment="View/edit the selected activities' time constraints">Activities time</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="activitiesSpacePushButton">
-       <property name="text">
-        <string comment="View/edit the selected activities' space constraints">Activities space</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+   <item row="1" column="0">
+    <widget class="Line" name="line_3">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
    </item>
    <item row="0" column="0">
     <widget class="QSplitter" name="horizontalSplitter">
@@ -209,6 +191,13 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
+           <widget class="QPushButton" name="constraintsPushButton">
+            <property name="text">
+             <string>Constraints</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QPushButton" name="helpPushButton">
             <property name="text">
              <string>Help</string>
@@ -227,13 +216,6 @@
        </layout>
       </widget>
      </widget>
-    </widget>
-   </item>
-   <item row="1" column="0">
-    <widget class="Line" name="line_3">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
     </widget>
    </item>
   </layout>

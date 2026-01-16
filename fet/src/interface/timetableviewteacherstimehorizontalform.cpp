@@ -58,6 +58,8 @@
 #include <QObject>
 #include <QMetaObject>
 
+#include <QCursor>
+
 //begin by Marco Vassura
 #include <QBrush>
 #include <QColor>
@@ -191,10 +193,23 @@ TimetableViewTeachersTimeHorizontalForm::TimetableViewTeachersTimeHorizontalForm
 	connect(lockSpacePushButton, &QPushButton::clicked, this, &TimetableViewTeachersTimeHorizontalForm::lockSpace);
 	connect(lockTimeSpacePushButton, &QPushButton::clicked, this, &TimetableViewTeachersTimeHorizontalForm::lockTimeSpace);
 
-	connect(teachersTimePushButton, &QPushButton::clicked, this, &TimetableViewTeachersTimeHorizontalForm::teachersTime);
-	connect(teachersSpacePushButton, &QPushButton::clicked, this, &TimetableViewTeachersTimeHorizontalForm::teachersSpace);
-	connect(activitiesTimePushButton, &QPushButton::clicked, this, &TimetableViewTeachersTimeHorizontalForm::activitiesTime);
-	connect(activitiesSpacePushButton, &QPushButton::clicked, this, &TimetableViewTeachersTimeHorizontalForm::activitiesSpace);
+	teachersTimeAction=new QAction(tr("Teachers time", "View/edit the selected teachers' time constraints"), this);
+	teachersSpaceAction=new QAction(tr("Teachers space", "View/edit the selected teachers' space constraints"), this);
+	activitiesTimeAction=new QAction(tr("Activities time", "View/edit the selected activities' time constraints"), this);
+	activitiesSpaceAction=new QAction(tr("Activities space", "View/edit the selected activities' space constraints"), this);
+	constraintsMenu=new QMenu(this);
+
+	constraintsMenu->addAction(teachersTimeAction);
+	constraintsMenu->addAction(teachersSpaceAction);
+	constraintsMenu->addSeparator();
+	constraintsMenu->addAction(activitiesTimeAction);
+	constraintsMenu->addAction(activitiesSpaceAction);
+
+	connect(teachersTimeAction, &QAction::triggered, this, &TimetableViewTeachersTimeHorizontalForm::teachersTime);
+	connect(teachersSpaceAction, &QAction::triggered, this, &TimetableViewTeachersTimeHorizontalForm::teachersSpace);
+	connect(activitiesTimeAction, &QAction::triggered, this, &TimetableViewTeachersTimeHorizontalForm::activitiesTime);
+	connect(activitiesSpaceAction, &QAction::triggered, this, &TimetableViewTeachersTimeHorizontalForm::activitiesSpace);
+	connect(constraintsPushButton, &QPushButton::clicked, this, &TimetableViewTeachersTimeHorizontalForm::constraints);
 
 	connect(helpPushButton, &QPushButton::clicked, this, &TimetableViewTeachersTimeHorizontalForm::help);
 
@@ -1887,6 +1902,11 @@ void TimetableViewTeachersTimeHorizontalForm::help()
 	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
 }
 
+void TimetableViewTeachersTimeHorizontalForm::constraints()
+{
+	constraintsMenu->popup(QCursor::pos());
+}
+
 void TimetableViewTeachersTimeHorizontalForm::teachersTime()
 {
 	if(!(students_schedule_ready && teachers_schedule_ready)){
@@ -2075,7 +2095,7 @@ void TimetableViewTeachersTimeHorizontalForm::activitiesTime()
 	}
 
 	if(actl.isEmpty()){
-		QMessageBox::information(this, tr("FET information"), tr("Please select at least one activity (one table cell)"));
+		QMessageBox::information(this, tr("FET information"), tr("Please select at least one activity (one nonempty table cell)"));
 		return;
 	}
 
@@ -2180,7 +2200,7 @@ void TimetableViewTeachersTimeHorizontalForm::activitiesSpace()
 	}
 
 	if(actl.isEmpty()){
-		QMessageBox::information(this, tr("FET information"), tr("Please select at least one activity (one table cell)"));
+		QMessageBox::information(this, tr("FET information"), tr("Please select at least one activity (one nonempty table cell)"));
 		return;
 	}
 

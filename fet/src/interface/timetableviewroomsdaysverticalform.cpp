@@ -58,6 +58,8 @@
 #include <QObject>
 #include <QMetaObject>
 
+#include <QCursor>
+
 //begin by Marco Vassura
 #include <QBrush>
 #include <QColor>
@@ -168,9 +170,20 @@ TimetableViewRoomsDaysVerticalForm::TimetableViewRoomsDaysVerticalForm(QWidget* 
 	connect(lockTimePushButton, &QPushButton::clicked, this, &TimetableViewRoomsDaysVerticalForm::lockTime);
 	connect(lockSpacePushButton, &QPushButton::clicked, this, &TimetableViewRoomsDaysVerticalForm::lockSpace);
 
-	connect(roomSpacePushButton, &QPushButton::clicked, this, &TimetableViewRoomsDaysVerticalForm::roomSpace);
-	connect(activitiesTimePushButton, &QPushButton::clicked, this, &TimetableViewRoomsDaysVerticalForm::activitiesTime);
-	connect(activitiesSpacePushButton, &QPushButton::clicked, this, &TimetableViewRoomsDaysVerticalForm::activitiesSpace);
+	roomSpaceAction=new QAction(tr("Room space", "View/edit the selected room's space constraints"), this);
+	activitiesTimeAction=new QAction(tr("Activities time", "View/edit the selected activities' time constraints"), this);
+	activitiesSpaceAction=new QAction(tr("Activities space", "View/edit the selected activities' space constraints"), this);
+	constraintsMenu=new QMenu(this);
+
+	constraintsMenu->addAction(roomSpaceAction);
+	constraintsMenu->addSeparator();
+	constraintsMenu->addAction(activitiesTimeAction);
+	constraintsMenu->addAction(activitiesSpaceAction);
+
+	connect(roomSpaceAction, &QAction::triggered, this, &TimetableViewRoomsDaysVerticalForm::roomSpace);
+	connect(activitiesTimeAction, &QAction::triggered, this, &TimetableViewRoomsDaysVerticalForm::activitiesTime);
+	connect(activitiesSpaceAction, &QAction::triggered, this, &TimetableViewRoomsDaysVerticalForm::activitiesSpace);
+	connect(constraintsPushButton, &QPushButton::clicked, this, &TimetableViewRoomsDaysVerticalForm::constraints);
 
 	connect(helpPushButton, &QPushButton::clicked, this, &TimetableViewRoomsDaysVerticalForm::help);
 
@@ -1336,6 +1349,11 @@ void TimetableViewRoomsDaysVerticalForm::help()
 	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
 }
 
+void TimetableViewRoomsDaysVerticalForm::constraints()
+{
+	constraintsMenu->popup(QCursor::pos());
+}
+
 void TimetableViewRoomsDaysVerticalForm::roomSpace()
 {
 	if(!(students_schedule_ready && teachers_schedule_ready)){
@@ -1419,14 +1437,14 @@ void TimetableViewRoomsDaysVerticalForm::activitiesTime()
 
 	QSet<int> careAboutIndex;		//added by Volker Dirr. Needed, because of activities with duration > 1
 	careAboutIndex.clear();
-	for(int j=0; j<(normalView?gt.rules.nHoursPerDay:gt.rules.nRealHoursPerDay) && j<roomsTimetableTable->rowCount(); j++){
+	for(int j=0; j<(normalView?gt.rules.nHoursPerDay:gt.rules.nRealHoursPerDay) && j<roomsTimetableTable->columnCount(); j++){
 		int jj;
 		if(normalView)
 			jj=j;
 		else
 			jj=j%gt.rules.nHoursPerDay;
 
-		for(int k=0; k<(normalView?gt.rules.nDaysPerWeek:gt.rules.nRealDaysPerWeek) && k<roomsTimetableTable->columnCount(); k++){
+		for(int k=0; k<(normalView?gt.rules.nDaysPerWeek:gt.rules.nRealDaysPerWeek) && k<roomsTimetableTable->rowCount(); k++){
 			int kk;
 			if(normalView)
 				kk=k;
@@ -1445,7 +1463,7 @@ void TimetableViewRoomsDaysVerticalForm::activitiesTime()
 	}
 
 	if(actl.isEmpty()){
-		QMessageBox::information(this, tr("FET information"), tr("Please select at least one activity (one table cell)"));
+		QMessageBox::information(this, tr("FET information"), tr("Please select at least one activity (one nonempty table cell)"));
 		return;
 	}
 
@@ -1510,14 +1528,14 @@ void TimetableViewRoomsDaysVerticalForm::activitiesSpace()
 
 	QSet<int> careAboutIndex;		//added by Volker Dirr. Needed, because of activities with duration > 1
 	careAboutIndex.clear();
-	for(int j=0; j<(normalView?gt.rules.nHoursPerDay:gt.rules.nRealHoursPerDay) && j<roomsTimetableTable->rowCount(); j++){
+	for(int j=0; j<(normalView?gt.rules.nHoursPerDay:gt.rules.nRealHoursPerDay) && j<roomsTimetableTable->columnCount(); j++){
 		int jj;
 		if(normalView)
 			jj=j;
 		else
 			jj=j%gt.rules.nHoursPerDay;
 
-		for(int k=0; k<(normalView?gt.rules.nDaysPerWeek:gt.rules.nRealDaysPerWeek) && k<roomsTimetableTable->columnCount(); k++){
+		for(int k=0; k<(normalView?gt.rules.nDaysPerWeek:gt.rules.nRealDaysPerWeek) && k<roomsTimetableTable->rowCount(); k++){
 			int kk;
 			if(normalView)
 				kk=k;
@@ -1536,7 +1554,7 @@ void TimetableViewRoomsDaysVerticalForm::activitiesSpace()
 	}
 
 	if(actl.isEmpty()){
-		QMessageBox::information(this, tr("FET information"), tr("Please select at least one activity (one table cell)"));
+		QMessageBox::information(this, tr("FET information"), tr("Please select at least one activity (one nonempty table cell)"));
 		return;
 	}
 

@@ -32,7 +32,6 @@
 #include <QProgressDialog>
 
 #include <algorithm>
-//using namespace std;
 
 #include "lockunlock.h"
 #include "advancedlockunlockform.h"

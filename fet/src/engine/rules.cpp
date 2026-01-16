@@ -27,7 +27,6 @@ File rules.cpp
 
 #include <algorithm>
 #include <iostream>
-//using namespace std;
 
 #include <QTextStream>
 #include <QFile>

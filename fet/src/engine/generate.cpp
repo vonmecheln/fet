@@ -69,8 +69,6 @@ So at least for now FET will use QList.*/
 #include <algorithm>
 #include <cstdlib>
 
-//using namespace std;
-
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "generate.h"
