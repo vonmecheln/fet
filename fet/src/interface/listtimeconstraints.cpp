@@ -8048,7 +8048,7 @@ void ListTimeConstraints::helpClicked()
 				s+="\n\n";
 				s+=tr("This constraint was suggested by %1.").arg("Furkan Kızılaslan");
 				s+="\n\n";
-				s+=tr("This constraint type was added on %1.").arg(tr("18 October 2025"));
+				s+=tr("This constraint type was added on %1.", "%1 is the date at which this constraint type was implemented in FET").arg(tr("18 October 2025"));
 				s+="\n\n";
 				s+=tr("To use this constraint, you need to specify a set of activities, a set of time slots, and a maximum number "
 				 "of students which can be present, considering the number of students of these activities, in these time slots.");

@@ -14715,7 +14715,7 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	s+=tr("72")+QString(". ")+tr("Overwrite single generation files will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=tr("73")+QString(". ")+tr("All the optional keyboard shortcuts will disabled.");
+	s+=tr("73")+QString(". ")+tr("All the optional keyboard shortcuts will be disabled.");
 	s+="\n";
 
 	switch( LongTextMessageBox::largeConfirmation( this, tr("FET confirmation"), s,

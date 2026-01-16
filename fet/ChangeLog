@@ -1,3 +1,6 @@
+ 7.5.5
+	- An English field correction (reported by Vangelis Karafillidis).
+	- Updated the Greek translation, by Vangelis Karafillidis.
  7.5.4
 	- Changed the license of the program to the GNU Affero General Public License version 3 (Volker Dirr suggested to remove the term 'or later').
 	- Logic bugs fixed in the generation algorithm.

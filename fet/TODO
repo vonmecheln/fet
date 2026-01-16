@@ -11807,3 +11807,62 @@ Also, something that would help. In Win32 non console it is not posssible to sen
 HANDLE of an EVent -> Easier to communicate
 also, something that would help: the ability to "resume".
 i.e. i stop a fet generation and keep the current state to restart later, perhaps with different seeds
+
+778---------------------------------------------------------
+From Michael Chourdakis (on Facebook):
+
+In fet-cl it says that a "sigwrite" file will write the current timetable, but i only get .html files. It would be nice if I get a .xml file of the current
+like the finishing version.
+and then another fet can start from that with different seeds
+the idea is to "punch" stuck fets with a more progressed version
+
+---
+
+Do think the fact about partial restart please
+It seems useful
+Perhaps you can save the state and restart based on new seeds
+
+779---------------------------------------------------------
+From Herbadji Djamel (on Facebook):
+
+I have a small suggestion, if possible:
+It would be helpful to add a constraint that limits the maximum number of activities with the same tag in one time slot.
+Instead of having to apply this constraint repeatedly for each individual slot, it would be more convenient if it could be applied once for the whole day.
+
+Liviu Lalescu:
+
+Can't you use max simultaneous activities in selected time slots? For a tag which interests you.
+
+Herbadji Djamel:
+
+Yes, I can, but it needs to be applied separately for each time slot.
+My suggestion is to add an option to apply this constraint once — for example, to set the maximum number of activities with a certain tag during a time
+period — and have it applied automatically for the whole day at once.
+
+779---------------------------------------------------------
+From Michael Chourdakis (on Facebook):
+
+I added <Coordinates> tag to the Building. Perhaps you want to add a distance constraint.
+
+780---------------------------------------------------------
+From Alami Mohammed (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6660.0
+
+I would like to propose a new possible constraint named:
+"Preferred room for a teacher in a specific time interval."
+
+This constraint would allow assigning a preferred room to a particular teacher during defined time periods.
+
+It would be especially useful in situations such as:
+
+When a teacher needs to stay in the same room from Monday to Friday for better stability and organization.
+
+While on Saturday, teachers can freely change their rooms or be assigned randomly, depending on the schedule.
+
+This feature would bring more flexibility and realism to timetables, particularly in institutions where teachers have fixed rooms most of the week but
+variable rooms on certain days.
+
+Liviu Lalescu:
+
+Maybe a good thing in FET would be to double each type of home and preferred room(s) constraint to a new constraint type, to action only in a selection of time slots.
