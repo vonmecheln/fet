@@ -1,3 +1,5 @@
+ 7.7.3
+	- Compilation bug fixed: it was impossible to compile FET with the option USE_SYSTEM_LOCALE enabled (reported by g.theodoroy).
  7.7.2
 	- Improvements in the interface: the constraints with tables will be shown in human-readable form (suggested by GUEFFAZ REDA, and maybe other
 	users in the past). g.theodoroy had useful suggestions and contributions, and wrote the code to divide the tables in the Mornings-Afternoons

@@ -16325,18 +16325,25 @@ void FetMainForm::restoreSettings()
 		FET_LANGUAGE=settings.value("language").toString();
 	}
 	else{
-		FET_LANGUAGE=QLocale::system().name();
+		QMap<QString, QString> languagesMap;
+		populateLanguagesMap(languagesMap);
 
+		FET_LANGUAGE=QLocale::system().name();
+		
 		bool ok=false;
-		for(const QString& s : std::as_const(languagesSet)){
-			if(FET_LANGUAGE.left(s.length())==s){
-				FET_LANGUAGE=s;
+		QMap<QString, QString>::const_iterator i=languagesMap.constBegin();
+		while(i!=languagesMap.constEnd()){
+			if(FET_LANGUAGE.left(i.key().length())==i.key()){
+				FET_LANGUAGE=i.key();
 				ok=true;
 				break;
 			}
+			i++;
 		}
 		if(!ok)
 			FET_LANGUAGE="en_US";
+		
+		assert(languagesMap.contains(FET_LANGUAGE));
 	}
 #endif
 	
