@@ -68,13 +68,18 @@ const int NOTREGEXP=3;
 int spaceConstraintsAscendingByDescription(SpaceConstraint* s1, SpaceConstraint* s2); //defined in allspaceconstraints.cpp
 
 ListSpaceConstraintsDialog::ListSpaceConstraintsDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop, QSplitter* _splitter,
-													   QCheckBox* _showRelatedCheckBox): QDialog(parent)
+													   QCheckBox* _showRelatedCheckBox, QCheckBox* _colorsCheckBox, QCheckBox* _filterCheckBox, QCheckBox* _sortedCheckBox): QDialog(parent)
 {
 	dialogName=_dialogName;
 	dialogTitle=_dialogTitle;
 	eventLoop=_eventLoop;
 
 	showRelatedCheckBox=_showRelatedCheckBox;
+
+	colorsCheckBox=_colorsCheckBox;
+
+	filterCheckBox=_filterCheckBox;
+	sortedCheckBox=_sortedCheckBox;
 
 	setWindowTitle(dialogTitle);
 
@@ -98,6 +103,14 @@ ListSpaceConstraintsDialog::~ListSpaceConstraintsDialog()
 	if(showRelatedCheckBox!=nullptr)
 		settings.setValue(dialogName+QString("/show-related"), showRelatedCheckBox->isChecked());
 
+	if(colorsCheckBox!=nullptr)
+		settings.setValue(dialogName+QString("/use-colors"), colorsCheckBox->isChecked());
+
+	if(filterCheckBox!=nullptr)
+		settings.setValue(dialogName+QString("/list-filtered"), filterCheckBox->isChecked());
+	if(sortedCheckBox!=nullptr)
+		settings.setValue(dialogName+QString("/list-sorted"), sortedCheckBox->isChecked());
+
 	eventLoop->quit();
 }
 
@@ -106,6 +119,8 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 	type=_type;
 
 	showRelatedCheckBox=nullptr;
+
+	colorsCheckBox=nullptr;
 
 	filterCheckBox=nullptr;
 	sortedCheckBox=nullptr;
@@ -903,12 +918,6 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 
 	caseSensitive=settings.value(settingsName+"/case-sensitive", "false").toBool();
 
-	useFilter=false;
-
-	//not yet created!!!
-	//assert(filterCheckBox->isChecked()==false);
-	///////
-
 	if(firstInstructionsLabel!=nullptr){
 		firstInstructionsLabel->setWordWrap(true);
 		//firstInstructionsLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
@@ -990,7 +999,7 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 		if(studentsComboBox!=nullptr){
 			showRelatedCheckBox=new QCheckBox(tr("Show related"));
 
-			QSettings settings(COMPANY, PROGRAM);
+			//QSettings settings(COMPANY, PROGRAM);
 			showRelatedCheckBox->setChecked(settings.value(dialogName+QString("/show-related"), "false").toBool());
 
 			connect(showRelatedCheckBox, &QCheckBox::toggled, this, &ListSpaceConstraints::showRelatedCheckBoxToggled);
@@ -1017,8 +1026,19 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 	splitter=new QSplitter;
 	splitter->setSizePolicy(splitter->sizePolicy().horizontalPolicy(), QSizePolicy::Expanding);
 
+	colorsCheckBox=new QCheckBox(tr("Colors"));
+	//QSettings settings(COMPANY, PROGRAM);
+	colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors"), "false").toBool());
+	connect(colorsCheckBox, &QCheckBox::toggled, this, &ListSpaceConstraints::colorsCheckBoxToggled);
+
+	useFilter=settings.value(dialogName+QString("/list-filtered"), "false").toBool();
+	filterCheckBox=new QCheckBox(tr("Filter"));
+	filterCheckBox->setChecked(useFilter);
+	sortedCheckBox=new QCheckBox(tr("Sorted", "It refers to space constraints"));
+	sortedCheckBox->setChecked(settings.value(dialogName+QString("/list-sorted"), "false").toBool());
+
 	dialog=new ListSpaceConstraintsDialog(parent, dialogName, dialogTitle, eventLoop, splitter,
-										  showRelatedCheckBox);
+										  showRelatedCheckBox, colorsCheckBox, filterCheckBox, sortedCheckBox);
 
 	//dialog->setWindowTitle(dialogTitle);
 
@@ -1029,11 +1049,6 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 	constraintsListWidget->setSelectionMode(QAbstractItemView::ExtendedSelection);
 	constraintDescriptionTextEdit=new QTextEdit;
 	constraintDescriptionTextEdit->setReadOnly(true);
-
-	filterCheckBox=new QCheckBox(tr("Filter"));
-	filterCheckBox->setChecked(false);
-	sortedCheckBox=new QCheckBox(tr("Sorted", "It refers to space constraints"));
-	sortedCheckBox->setChecked(false);
 
 	countOfConstraintsLabel=new QLabel;
 	mSLabel=new QLabel;
@@ -1046,10 +1061,17 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 	modifyPushButton=new QPushButton(tr("Modify"));
 	modifyPushButton->setDefault(true);
 	removePushButton=new QPushButton(tr("Remove"));
+
+	upPushButton=new QPushButton(tr("Up"));
+	downPushButton=new QPushButton(tr("Down"));
+
 	closePushButton=new QPushButton(tr("Close"));
 
 	QVBoxLayout* filterAndDescriptionLayout=new QVBoxLayout;
+	assert(constraintDescriptionTextEdit!=nullptr);
 	filterAndDescriptionLayout->addWidget(constraintDescriptionTextEdit);
+	assert(colorsCheckBox!=nullptr);
+	filterAndDescriptionLayout->addWidget(colorsCheckBox);
 	if(filterGroupBox!=nullptr)
 		filterAndDescriptionLayout->addWidget(filterGroupBox);
 
@@ -1079,6 +1101,10 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 	buttons1Layout->addWidget(addPushButton);
 	buttons1Layout->addWidget(modifyPushButton);
 	buttons1Layout->addWidget(removePushButton);
+
+	buttons1Layout->addWidget(upPushButton);
+	buttons1Layout->addWidget(downPushButton);
+
 	if(helpPushButton!=nullptr)
 		buttons1Layout->addWidget(helpPushButton);
 	buttons1Layout->addWidget(commentsPushButton);
@@ -1114,6 +1140,9 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ListSpaceConstraints::modifyClicked);
 	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ListSpaceConstraints::constraintChanged);
 	connect(removePushButton, &QPushButton::clicked, this, &ListSpaceConstraints::removeClicked);
+
+	connect(upPushButton, &QPushButton::clicked, this, &ListSpaceConstraints::moveSpaceConstraintUp);
+	connect(downPushButton, &QPushButton::clicked, this, &ListSpaceConstraints::moveSpaceConstraintDown);
 	
 	if(helpPushButton!=nullptr)
 		connect(helpPushButton, &QPushButton::clicked, this, &ListSpaceConstraints::helpClicked);
@@ -1169,6 +1198,18 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 		connect(commentsShortcut, &QShortcut::activated, [=]{commentsPushButton->animateClick();});
 		//if(SHOW_TOOL_TIPS)
 		//	commentsPushButton->setToolTip(QString("C"));
+	}
+	if(SHORTCUT_U){
+		QShortcut* upShortcut=new QShortcut(QKeySequence(Qt::Key_U), dialog);
+		connect(upShortcut, &QShortcut::activated, [=]{upPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	moveSpaceConstraintUpPushButton->setToolTip(QString("U"));
+	}
+	if(SHORTCUT_J){
+		QShortcut* downShortcut=new QShortcut(QKeySequence(Qt::Key_J), dialog);
+		connect(downShortcut, &QShortcut::activated, [=]{downPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	moveSpaceConstraintDownPushButton->setToolTip(QString("J"));
 	}
 	if(SHORTCUT_W){
 		QShortcut* weightsShortcut=new QShortcut(QKeySequence(Qt::Key_W), dialog);
@@ -2309,10 +2350,10 @@ void ListSpaceConstraints::removeClicked()
 		}
 
 	QString s;
-	s=tr("Remove these selected space constraints?");
-	s+=QString("\n\n");
+	s=protect4(tr("Remove these selected space constraints?", "Following is the list of detailed descriptions of the constraints marked for removal."));
+	s+=QString("<br />\n<br />\n");
 	for(SpaceConstraint* ctr : std::as_const(tl))
-		s+=ctr->getDetailedDescription(gt.rules)+"\n";
+		s+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+QString("<br />\n");
 	int lres=LongTextMessageBox::confirmation(dialog, tr("FET confirmation"),
 		s, tr("Yes"), tr("No"), QString(), 0, 1 );
 
@@ -2323,10 +2364,10 @@ void ListSpaceConstraints::removeClicked()
 
 	QString su;
 	if(!tl.isEmpty()){
-		su=tr("Removed %1 space constraints:").arg(tl.count());
-		su+=QString("\n\n");
+		su=protect4(tr("Removed %1 space constraints:").arg(tl.count()));
+		su+=QString("<br />\n<br />\n");
 		for(SpaceConstraint* ctr : std::as_const(tl))
-			su+=ctr->getDetailedDescription(gt.rules)+"\n";
+			su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+"<br />\n";
 	}
 
 	//The user clicked the OK button or pressed Enter
@@ -2434,7 +2475,7 @@ void ListSpaceConstraints::filter()
 	}
 
 	if(constraintsListWidget->count()<=0)
-		constraintDescriptionTextEdit->setPlainText("");
+		constraintDescriptionTextEdit->setText("");
 	else
 		constraintsListWidget->setCurrentRow(0);
 
@@ -2457,8 +2498,182 @@ void ListSpaceConstraints::constraintChanged()
 	assert(index<visibleSpaceConstraintsList.count());
 	SpaceConstraint* ctr=visibleSpaceConstraintsList.at(index);
 	assert(ctr!=nullptr);
-	QString s=ctr->getDetailedDescription(gt.rules);
-	constraintDescriptionTextEdit->setPlainText(s);
+	QString s=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked()); //'true' means 'richText'
+	constraintDescriptionTextEdit->setText(s);
+}
+
+void ListSpaceConstraints::moveSpaceConstraintUp()
+{
+	/*if(filterCheckBox->isChecked()){
+		QMessageBox::information(this, tr("FET information"), tr("To move a space constraint up, the 'Filter' check box must not be checked."));
+		return;
+	}*/
+	if(sortedCheckBox->isChecked()){
+		QMessageBox::information(dialog, tr("FET information"), tr("To move a space constraint up, the 'Sorted' check box must not be checked."));
+		return;
+	}
+	
+	if(constraintsListWidget->count()<=1)
+		return;
+	int i=constraintsListWidget->currentRow();
+	if(i<0 || i>=constraintsListWidget->count())
+		return;
+	if(i==0)
+		return;
+	
+	QString s1=constraintsListWidget->item(i)->text();
+	QString s2=constraintsListWidget->item(i-1)->text();
+	
+	/*assert(gt.rules.spaceConstraintsList.count()==visibleSpaceConstraintsList.count());
+	SpaceConstraint* sc1=gt.rules.spaceConstraintsList.at(i);
+	assert(sc1==visibleSpaceConstraintsList.at(i));
+	SpaceConstraint* sc2=gt.rules.spaceConstraintsList.at(i-1);
+	assert(sc2==visibleSpaceConstraintsList.at(i-1));*/
+
+	SpaceConstraint* sc1=visibleSpaceConstraintsList.at(i);
+	SpaceConstraint* sc2=visibleSpaceConstraintsList.at(i-1);
+	
+	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
+	
+	constraintsListWidget->item(i)->setText(s2);
+	constraintsListWidget->item(i-1)->setText(s1);
+	
+	int j=-1;
+	int k=-1;
+	for(int q=0; q<gt.rules.spaceConstraintsList.count(); q++){
+		if(gt.rules.spaceConstraintsList.at(q)==sc2){
+			assert(j==-1);
+			j=q;
+		}
+		if(gt.rules.spaceConstraintsList.at(q)==sc1){
+			assert(k==-1);
+			k=q;
+		}
+	}
+	assert(k>=0);
+	assert(j>=0);
+	assert(k>j);
+	//gt.rules.spaceConstraintsList[i]=sc2;
+	//gt.rules.spaceConstraintsList[i-1]=sc1;
+	//std::rotate(&gt.rules.spaceConstraintsList[j], &gt.rules.spaceConstraintsList[k], &gt.rules.spaceConstraintsList[k+1]); -> might be unsafe/incorrect
+	for(int q=k; q>j; q--)
+		gt.rules.spaceConstraintsList[q]=gt.rules.spaceConstraintsList[q-1];
+	gt.rules.spaceConstraintsList[j]=sc1;
+	
+	visibleSpaceConstraintsList[i]=sc2;
+	visibleSpaceConstraintsList[i-1]=sc1;
+	
+	gt.rules.addUndoPoint(protect4(tr("A constraint was moved up:", "This is a History item. Following is the detailed description of the constraint which was moved up."))
+	 +QString("<br />\n<br />\n")+sc1->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked()));
+	
+	if(sc2->active){
+		constraintsListWidget->item(i)->setBackground(QBrush());
+		constraintsListWidget->item(i)->setForeground(QBrush());
+	}
+	else{
+		constraintsListWidget->item(i)->setBackground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+		constraintsListWidget->item(i)->setForeground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+	}
+
+	if(sc1->active){
+		constraintsListWidget->item(i-1)->setBackground(QBrush());
+		constraintsListWidget->item(i-1)->setForeground(QBrush());
+	}
+	else{
+		constraintsListWidget->item(i-1)->setBackground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+		constraintsListWidget->item(i-1)->setForeground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+	}
+
+	constraintsListWidget->setCurrentRow(i-1);
+	constraintChanged(/*i-1*/);
+}
+
+void ListSpaceConstraints::moveSpaceConstraintDown()
+{
+	/*if(filterCheckBox->isChecked()){
+		QMessageBox::information(this, tr("FET information"), tr("To move a space constraint down, the 'Filter' check box must not be checked."));
+		return;
+	}*/
+	if(sortedCheckBox->isChecked()){
+		QMessageBox::information(dialog, tr("FET information"), tr("To move a space constraint down, the 'Sorted' check box must not be checked."));
+		return;
+	}
+	
+	if(constraintsListWidget->count()<=1)
+		return;
+	int i=constraintsListWidget->currentRow();
+	if(i<0 || i>=constraintsListWidget->count())
+		return;
+	if(i==constraintsListWidget->count()-1)
+		return;
+	
+	QString s1=constraintsListWidget->item(i)->text();
+	QString s2=constraintsListWidget->item(i+1)->text();
+	
+	/*assert(gt.rules.spaceConstraintsList.count()==visibleSpaceConstraintsList.count());
+	SpaceConstraint* sc1=gt.rules.spaceConstraintsList.at(i);
+	assert(sc1==visibleSpaceConstraintsList.at(i));
+	SpaceConstraint* sc2=gt.rules.spaceConstraintsList.at(i+1);
+	assert(sc2==visibleSpaceConstraintsList.at(i+1));*/
+
+	SpaceConstraint* sc1=visibleSpaceConstraintsList.at(i);
+	SpaceConstraint* sc2=visibleSpaceConstraintsList.at(i+1);
+
+	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
+	
+	constraintsListWidget->item(i)->setText(s2);
+	constraintsListWidget->item(i+1)->setText(s1);
+	
+	int j=-1;
+	int k=-1;
+	for(int q=0; q<gt.rules.spaceConstraintsList.count(); q++){
+		if(gt.rules.spaceConstraintsList.at(q)==sc2){
+			assert(j==-1);
+			j=q;
+		}
+		if(gt.rules.spaceConstraintsList.at(q)==sc1){
+			assert(k==-1);
+			k=q;
+		}
+	}
+	assert(k>=0);
+	assert(j>=0);
+	assert(k<j);
+	//gt.rules.spaceConstraintsList[i]=sc2;
+	//gt.rules.spaceConstraintsList[i+1]=sc1;
+	//std::rotate(&gt.rules.spaceConstraintsList[k], &gt.rules.spaceConstraintsList[k+1], &gt.rules.spaceConstraintsList[j+1]); -> might be unsafe/incorrect
+	for(int q=k; q<j; q++)
+		gt.rules.spaceConstraintsList[q]=gt.rules.spaceConstraintsList[q+1];
+	gt.rules.spaceConstraintsList[j]=sc1;
+	
+	visibleSpaceConstraintsList[i]=sc2;
+	visibleSpaceConstraintsList[i+1]=sc1;
+	
+	gt.rules.addUndoPoint(protect4(tr("A constraint was moved down:", "This is a History item. Following is the detailed description of the constraint which was moved down."))
+	 +QString("<br />\n<br />\n")+sc1->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked()));
+	
+	if(sc2->active){
+		constraintsListWidget->item(i)->setBackground(QBrush());
+		constraintsListWidget->item(i)->setForeground(QBrush());
+	}
+	else{
+		constraintsListWidget->item(i)->setBackground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+		constraintsListWidget->item(i)->setForeground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+	}
+
+	if(sc1->active){
+		constraintsListWidget->item(i+1)->setBackground(QBrush());
+		constraintsListWidget->item(i+1)->setForeground(QBrush());
+	}
+	else{
+		constraintsListWidget->item(i+1)->setBackground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+		constraintsListWidget->item(i+1)->setForeground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+	}
+
+	constraintsListWidget->setCurrentRow(i+1);
+	constraintChanged(/*i+1*/);
 }
 
 void ListSpaceConstraints::sortedChanged(bool checked)
@@ -2492,8 +2707,8 @@ void ListSpaceConstraints::activateConstraints()
 			assert(i<visibleSpaceConstraintsList.count());
 			SpaceConstraint* ctr=visibleSpaceConstraintsList.at(i);
 			if(!ctr->active){
-				su+=ctr->getDetailedDescription(gt.rules)+QString("\n");
-
+				su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+QString("<br />\n");
+				
 				cnt++;
 				ctr->active=true;
 				if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM)
@@ -2502,7 +2717,7 @@ void ListSpaceConstraints::activateConstraints()
 		}
 
 	if(cnt>0){
-		gt.rules.addUndoPoint(tr("Activated %1 space constraints:", "%1 is the number of activated space constraints").arg(cnt)+QString("\n\n")+su);
+		gt.rules.addUndoPoint(protect4(tr("Activated %1 space constraints:", "%1 is the number of activated space constraints").arg(cnt))+QString("<br />\n<br />\n")+su);
 
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
@@ -2560,7 +2775,7 @@ void ListSpaceConstraints::deactivateConstraints()
 			if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_SPACE)
 				continue;
 			if(ctr->active){
-				su+=ctr->getDetailedDescription(gt.rules)+QString("\n");
+				su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+QString("<br />\n");
 
 				cnt++;
 				ctr->active=false;
@@ -2569,7 +2784,7 @@ void ListSpaceConstraints::deactivateConstraints()
 			}
 		}
 	if(cnt>0){
-		gt.rules.addUndoPoint(tr("Deactivated %1 space constraints:", "%1 is the number of deactivated space constraints").arg(cnt)+QString("\n\n")+su);
+		gt.rules.addUndoPoint(protect4(tr("Deactivated %1 space constraints:", "%1 is the number of deactivated space constraints").arg(cnt))+QString("<br />\n<br />\n")+su);
 
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
@@ -2654,11 +2869,19 @@ void ListSpaceConstraints::constraintComments()
 	saveFETDialogGeometry(&getCommentsDialog, settingsName);
 
 	if(t==QDialog::Accepted){
-		QString cb=ctr->getDetailedDescription(gt.rules);
+		QString cb=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked());
 
 		ctr->comments=commentsPT->toPlainText();
 
-		gt.rules.addUndoPoint(tr("Changed a constraint's comments. Constraint before:\n\n%1\nComments after:\n\n%2").arg(cb).arg(ctr->comments));
+		gt.rules.addUndoPoint(protect4(tr("Changed a constraint's comments.", "The user changed the constraint's comments"))
+		 +QString(" ")+protect4(tr("Constraint before:", "The detailed description of a constraint before the change."))
+		 +QString("<br />\n<br />\n")
+		 +cb
+		 +QString("<br />\n")
+		 +protect4(tr("Comments after:", "The comments of the constraint were changed to this new value (Comments after)."))
+		 +QString("<br />\n<br />\n")
+		 +protect4(ctr->comments));
+		//gt.rules.addUndoPoint(tr("Changed a constraint's comments. Constraint before:\n\n%1\nComments after:\n\n%2").arg(cb).arg(ctr->comments));
 
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
@@ -2674,7 +2897,7 @@ void ListSpaceConstraints::constraintComments()
 			if(i>=0)
 				constraintsListWidget->setCurrentRow(i);
 			else
-				constraintDescriptionTextEdit->setPlainText(QString(""));
+				constraintDescriptionTextEdit->setText(QString(""));
 
 			int n_active=0;
 			for(SpaceConstraint* ctr2 : std::as_const(visibleSpaceConstraintsList))
@@ -2770,7 +2993,7 @@ void ListSpaceConstraints::changeWeights()
 			assert(i<visibleSpaceConstraintsList.count());
 			SpaceConstraint* ctr=visibleSpaceConstraintsList.at(i);
 			if(ctr->canHaveAnyWeight()){
-				su+=ctr->getDetailedDescription(gt.rules)+QString("\n");
+				su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+QString("<br />\n");
 
 				cnt++;
 				ctr->weightPercentage=nw;
@@ -2783,9 +3006,9 @@ void ListSpaceConstraints::changeWeights()
 	assert(cnt==cnt_pre);
 
 	if(cnt>0){
-		gt.rules.addUndoPoint(tr("Changed the weights of the following %1 selected space constraints to %2%:",
+		gt.rules.addUndoPoint(protect4(tr("Changed the weights of the following %1 selected space constraints to %2%:",
 		 "%1 is the number of space constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints")
-		 .arg(cnt).arg(CustomFETString::number(nw))+QString("\n\n")+su);
+		 .arg(cnt).arg(CustomFETString::number(nw)))+QString("<br />\n<br />\n")+su);
 
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
@@ -2813,6 +3036,11 @@ void ListSpaceConstraints::changeWeights()
 	}
 
 	//constraintsListWidget->setFocus();
+}
+
+void ListSpaceConstraints::colorsCheckBoxToggled()
+{
+	constraintChanged();
 }
 
 void ListSpaceConstraints::showRelatedCheckBoxToggled()

@@ -65,6 +65,9 @@ public Q_SLOTS:
 	void removeConstraints();
 	void filter(bool active);
 
+	void moveTimeConstraintUp();
+	void moveTimeConstraintDown();
+
 	void sortedChanged(bool checked);
 	
 	void activateConstraints();
@@ -76,6 +79,8 @@ public Q_SLOTS:
 	void selectionChanged();
 	
 	void addConstraint();
+
+	void useColorsChanged();
 };
 
 #endif

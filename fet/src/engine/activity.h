@@ -291,7 +291,7 @@ public:
 	Returns a representation of this activity (detailed),
 	together with the constraints related to this activity.
 	*/
-	QString getDetailedDescriptionWithConstraints(Rules& r);
+	QString getDetailedDescriptionWithConstraints(Rules& r, bool richText=false, bool colors=false);
 
 	/**
 	Returns true if this activity is split into more subactivities per week.

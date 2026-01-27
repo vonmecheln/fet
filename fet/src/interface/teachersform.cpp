@@ -43,6 +43,8 @@
 
 #include <QScrollBar>
 
+QString listsOfDaysAndHoursToTable(Rules& r, const QList<int>& days, const QList<int>& hours, bool direct, bool notAvailable, bool colors); //implemented in timeconstraint.cpp
+
 extern const QString COMPANY;
 extern const QString PROGRAM;
 
@@ -80,6 +82,8 @@ TeachersForm::TeachersForm(QWidget* parent): QDialog(parent)
 	connect(longNamePushButton, &QPushButton::clicked, this, &TeachersForm::longName);
 	connect(codePushButton, &QPushButton::clicked, this, &TeachersForm::code);
 	connect(commentsPushButton, &QPushButton::clicked, this, &TeachersForm::comments);
+
+	connect(colorsCheckBox, &QCheckBox::toggled, this, &TeachersForm::colorsCheckBoxToggled);
 
 	if(SHORTCUT_PLUS){
 		QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
@@ -136,6 +140,8 @@ TeachersForm::TeachersForm(QWidget* parent): QDialog(parent)
 	QSettings settings(COMPANY, PROGRAM);
 	if(settings.contains(this->metaObject()->className()+QString("/splitter-state")))
 		splitter->restoreState(settings.value(this->metaObject()->className()+QString("/splitter-state")).toByteArray());
+
+	colorsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/use-colors"), "false").toBool());
 	
 	teachersListWidget->clear();
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
@@ -173,6 +179,8 @@ TeachersForm::~TeachersForm()
 	//save splitter state
 	QSettings settings(COMPANY, PROGRAM);
 	settings.setValue(this->metaObject()->className()+QString("/splitter-state"), splitter->saveState());
+
+	settings.setValue(this->metaObject()->className()+QString("/use-colors"), colorsCheckBox->isChecked());
 }
 
 void TeachersForm::addTeacher()
@@ -215,7 +223,7 @@ void TeachersForm::addTeacher()
 	if(i>=0)
 		teachersListWidget->setCurrentRow(i);
 	else
-		currentTeacherTextEdit->setPlainText(QString(""));
+		currentTeacherTextEdit->setText(QString(""));
 }
 
 void TeachersForm::removeTeacher()
@@ -257,7 +265,7 @@ void TeachersForm::removeTeacher()
 		if(i>=0)
 			teachersListWidget->setCurrentRow(i);
 		else
-			currentTeacherTextEdit->setPlainText(QString(""));
+			currentTeacherTextEdit->setText(QString(""));
 
 		gt.rules.addUndoPoint(tr("Removed the teacher %1.").arg(text));
 	}
@@ -467,14 +475,47 @@ void TeachersForm::sortTeachers()
 void TeachersForm::teacherChanged(int index)
 {
 	if(index<0){
-		currentTeacherTextEdit->setPlainText("");
+		currentTeacherTextEdit->setText("");
 		return;
 	}
 	
 	Teacher* t=gt.rules.teachersList.at(index);
 	assert(t!=nullptr);
-	QString s=t->getDetailedDescriptionWithConstraintsAndNumberOfActiveHours(gt.rules, activeHoursHash);
-	currentTeacherTextEdit->setPlainText(s);
+	QString s1=t->getDetailedDescriptionWithConstraintsAndNumberOfActiveHours(gt.rules, activeHoursHash);
+	
+	QString s2;
+	if(gt.rules.mode==MORNINGS_AFTERNOONS){
+		QString mab;
+		if(t->morningsAfternoonsBehavior==TEACHER_UNRESTRICTED_MORNINGS_AFTERNOONS)
+			mab=tr("Unrestricted mornings/afternoons");
+		else if(t->morningsAfternoonsBehavior==TEACHER_MORNING_OR_EXCLUSIVELY_AFTERNOON)
+			mab=tr("Exclusive mornings/afternoons");
+		else if(t->morningsAfternoonsBehavior==TEACHER_ONE_DAY_EXCEPTION)
+			mab=tr("One day exception");
+		else if(t->morningsAfternoonsBehavior==TEACHER_TWO_DAYS_EXCEPTION)
+			mab=tr("Two days exception");
+		else if(t->morningsAfternoonsBehavior==TEACHER_THREE_DAYS_EXCEPTION)
+			mab=tr("Three days exception");
+		else if(t->morningsAfternoonsBehavior==TEACHER_FOUR_DAYS_EXCEPTION)
+			mab=tr("Four days exception");
+		else if(t->morningsAfternoonsBehavior==TEACHER_FIVE_DAYS_EXCEPTION)
+			mab=tr("Five days exception");
+		else
+			assert(0);
+		s2+=mab;
+		s2+="<br />\n";
+	}
+	QSet<ConstraintTeacherNotAvailableTimes*> cs=gt.rules.tnatHash.value(t->name, QSet<ConstraintTeacherNotAvailableTimes*>());
+	assert(cs.count()<=1);
+	ConstraintTeacherNotAvailableTimes* ctr=nullptr;
+	if(!cs.isEmpty())
+		ctr=*cs.constBegin();
+	if(ctr!=nullptr){
+		s2+=listsOfDaysAndHoursToTable(gt.rules, ctr->days, ctr->hours, true, true, colorsCheckBox->isChecked());
+		s2+="<br />\n";
+	}
+	
+	currentTeacherTextEdit->setText(s2+protect4(s1));
 }
 
 void TeachersForm::activateTeacher()
@@ -691,4 +732,9 @@ void TeachersForm::code()
 
 		teacherChanged(ind);
 	}
+}
+
+void TeachersForm::colorsCheckBoxToggled()
+{
+	teacherChanged(teachersListWidget->currentRow());
 }

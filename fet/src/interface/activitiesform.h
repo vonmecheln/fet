@@ -78,6 +78,8 @@ public Q_SLOTS:
 	void selectionChanged();
 	
 	void changeActivityTags();
+
+	void colorsCheckBoxToggled();
 };
 
 #endif

@@ -1024,6 +1024,8 @@
     <addaction name="statisticsPrintAction"/>
     <addaction name="statisticsExportToDiskAction"/>
     <addaction name="separator"/>
+    <addaction name="humanReadableTextFileAction"/>
+    <addaction name="separator"/>
     <addaction name="dataHelpOnStatisticsAction"/>
    </widget>
    <widget class="QMenu" name="dataMenu">
@@ -1263,6 +1265,15 @@
      <addaction name="selectOutputDirAction"/>
      <addaction name="overwriteSingleGenerationFilesAction"/>
     </widget>
+    <widget class="QMenu" name="menuBackupRestoreSettings">
+     <property name="title">
+      <string comment="Backup or restore the settings to/from a file.">Backup/restore settings</string>
+     </property>
+     <addaction name="backupSettingsToFileAction"/>
+     <addaction name="restoreSettingsFromFileAction"/>
+     <addaction name="separator"/>
+     <addaction name="settingsRestoreDefaultsAction"/>
+    </widget>
     <addaction name="checkForUpdatesAction"/>
     <addaction name="separator"/>
     <addaction name="languageAction"/>
@@ -1275,7 +1286,7 @@
     <addaction name="separator"/>
     <addaction name="menuSettingsAdvanced"/>
     <addaction name="separator"/>
-    <addaction name="settingsRestoreDefaultsAction"/>
+    <addaction name="menuBackupRestoreSettings"/>
     <addaction name="separator"/>
     <addaction name="helpSettingsAction"/>
    </widget>
@@ -1502,7 +1513,7 @@
   </action>
   <action name="settingsRestoreDefaultsAction">
    <property name="text">
-    <string>Restore default settings</string>
+    <string>Reset settings to default</string>
    </property>
   </action>
   <action name="settingsTimetableHtmlLevelAction">
@@ -2183,6 +2194,21 @@
   <action name="settingsOptionalKeyboardShortcutsAction">
    <property name="text">
     <string>Optional keyboard shortcuts</string>
+   </property>
+  </action>
+  <action name="humanReadableTextFileAction">
+   <property name="text">
+    <string>Human-readable text file</string>
+   </property>
+  </action>
+  <action name="restoreSettingsFromFileAction">
+   <property name="text">
+    <string comment="Restore the FET settings from a file.">Restore settings from file</string>
+   </property>
+  </action>
+  <action name="backupSettingsToFileAction">
+   <property name="text">
+    <string comment="Save the FET settings to a file.">Backup settings to file</string>
    </property>
   </action>
  </widget>

@@ -97,7 +97,7 @@ public:
 	QString getXmlDescription();
 	QString getDescription();
 	QString getDetailedDescription();
-	QString getDetailedDescriptionWithConstraints(Rules& r);
+	QString getDetailedDescriptionWithConstraints(Rules& r, bool richText=false, bool colors=false);
 };
 
 class StudentsGroup: public StudentsSet
@@ -115,7 +115,7 @@ public:
 	QString getXmlDescription();
 	QString getDescription();
 	QString getDetailedDescription();
-	QString getDetailedDescriptionWithConstraints(Rules& r);
+	QString getDetailedDescriptionWithConstraints(Rules& r, bool richText=false, bool colors=false);
 };
 
 class StudentsSubgroup: public StudentsSet
@@ -133,7 +133,7 @@ public:
 	QString getXmlDescription();
 	QString getDescription();
 	QString getDetailedDescription();
-	QString getDetailedDescriptionWithConstraints(Rules& r);
+	QString getDetailedDescriptionWithConstraints(Rules& r, bool richText=false, bool colors=false);
 };
 
 int studentsSetsAscending(const StudentsSet* st1, const StudentsSet* st2);

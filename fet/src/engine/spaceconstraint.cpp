@@ -1827,6 +1827,9 @@ static int rooms_conflicts=-1;
 QString getActivityDescription(Rules& r, int id); //implemented in timeconstraint.cpp
 QString getActivityDetailedDescription(Rules& r, int id); //implemented in timeconstraint.cpp
 
+QString listsOfDaysAndHoursToTable(Rules& r, const QList<int>& days, const QList<int>& hours, bool direct, bool notAvailable, bool colors); //implemented in timeconstraint.cpp
+QString listsOfListsOfDaysAndHoursToTableOfNumbers(Rules& r, const QList<QList<int>>& days, const QList<QList<int>>& hours, bool colors); //implemented in timeconstraint.cpp
+
 void populateInternalSubgroupsList(const Rules& r, const StudentsSet* ss, QList<int>& iSubgroupsList); //implemented in timeconstraint.cpp
 
 bool spaceConstraintCanHaveAnyWeight(int type)
@@ -2496,9 +2499,10 @@ QString ConstraintBasicCompulsorySpace::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintBasicCompulsorySpace::getDetailedDescription(Rules& r)
+QString ConstraintBasicCompulsorySpace::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("These are the basic compulsory constraints (referring to rooms allocation) for any timetable");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -2516,7 +2520,7 @@ QString ConstraintBasicCompulsorySpace::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintBasicCompulsorySpace::fitness(
@@ -2853,39 +2857,65 @@ QString ConstraintRoomNotAvailableTimes::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintRoomNotAvailableTimes::getDetailedDescription(Rules& r)
+QString ConstraintRoomNotAvailableTimes::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
-	QString s=tr("Space constraint");s+="\n";
-	s+=tr("Room not available");s+="\n";
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
-	s+=tr("Room=%1").arg(this->room);s+="\n";
+	if(!richText){
+		QString s=tr("Space constraint");s+="\n";
+		s+=tr("Room not available");s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+		s+=tr("Room=%1").arg(this->room);s+="\n";
 
-	s+=tr("Not available at:", "It refers to a room");
-	s+="\n";
-	assert(days.count()==hours.count());
-	for(int i=0; i<days.count(); i++){
-		if(this->days.at(i)>=0){
-			s+=r.daysOfTheWeek[this->days.at(i)];
-			s+=" ";
-		}
-		if(this->hours.at(i)>=0){
-			s+=r.hoursOfTheDay[this->hours.at(i)];
-		}
-		if(i<days.count()-1)
-			s+=translatedSemicolonSpace();
-	}
-	s+="\n";
-
-	if(!active){
-		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+=tr("Not available at:", "It refers to a room");
 		s+="\n";
-	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
+		assert(days.count()==hours.count());
+		for(int i=0; i<days.count(); i++){
+			if(this->days.at(i)>=0){
+				s+=r.daysOfTheWeek[this->days.at(i)];
+				s+=" ";
+			}
+			if(this->hours.at(i)>=0){
+				s+=r.hoursOfTheDay[this->hours.at(i)];
+			}
+			if(i<days.count()-1)
+				s+=translatedSemicolonSpace();
+		}
 		s+="\n";
-	}
 
-	return s;
+		if(!active){
+			s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+
+		return s;
+	}
+	else{
+		QString begin=tr("Space constraint");begin+="\n";
+		begin+=tr("Room not available");begin+="\n";
+		begin+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));begin+="\n";
+		begin+=tr("Room=%1").arg(this->room);begin+="\n";
+
+		begin+=tr("Not available at:", "It refers to a room");
+		begin+="\n";
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString middle=listsOfDaysAndHoursToTable(r, days, hours, true, true, colors);
+		QString end;
+		end+="\n";
+
+		if(!active){
+			end+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+
+		return protect4(begin)+middle+protect4(end);
+	}
 }
 
 bool ConstraintRoomNotAvailableTimes::computeInternalStructure(QWidget* parent, Rules& r){
@@ -3155,39 +3185,66 @@ QString ConstraintTeacherRoomNotAvailableTimes::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherRoomNotAvailableTimes::getDetailedDescription(Rules& r){
-	QString s=tr("Space constraint");s+="\n";
-	s+=tr("Teacher room not available");s+="\n";
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
-	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
-	s+=tr("Room=%1").arg(this->room);s+="\n";
+QString ConstraintTeacherRoomNotAvailableTimes::getDetailedDescription(Rules&r, bool richText, bool colors){
+	if(!richText){
+		QString s=tr("Space constraint");s+="\n";
+		s+=tr("Teacher room not available");s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+		s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
+		s+=tr("Room=%1").arg(this->room);s+="\n";
 
-	s+=tr("Not available at:", "It refers to a room");
-	s+="\n";
-	assert(days.count()==hours.count());
-	for(int i=0; i<days.count(); i++){
-		if(this->days.at(i)>=0){
-			s+=r.daysOfTheWeek[this->days.at(i)];
-			s+=" ";
-		}
-		if(this->hours.at(i)>=0){
-			s+=r.hoursOfTheDay[this->hours.at(i)];
-		}
-		if(i<days.count()-1)
-			s+=translatedSemicolonSpace();
-	}
-	s+="\n";
-
-	if(!active){
-		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+=tr("Not available at:", "It refers to a room");
 		s+="\n";
-	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
+		assert(days.count()==hours.count());
+		for(int i=0; i<days.count(); i++){
+			if(this->days.at(i)>=0){
+				s+=r.daysOfTheWeek[this->days.at(i)];
+				s+=" ";
+			}
+			if(this->hours.at(i)>=0){
+				s+=r.hoursOfTheDay[this->hours.at(i)];
+			}
+			if(i<days.count()-1)
+				s+=translatedSemicolonSpace();
+		}
 		s+="\n";
-	}
 
-	return s;
+		if(!active){
+			s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+
+		return s;
+	}
+	else{
+		QString begin=tr("Space constraint");begin+="\n";
+		begin+=tr("Teacher room not available");begin+="\n";
+		begin+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));begin+="\n";
+		begin+=tr("Teacher=%1").arg(this->teacherName);begin+="\n";
+		begin+=tr("Room=%1").arg(this->room);begin+="\n";
+
+		begin+=tr("Not available at:", "It refers to a room");
+		begin+="\n";
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString middle=listsOfDaysAndHoursToTable(r, days, hours, true, true, colors);
+		QString end;
+		end+="\n";
+
+		if(!active){
+			end+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+
+		return protect4(begin)+middle+protect4(end);
+	}
 }
 
 bool ConstraintTeacherRoomNotAvailableTimes::computeInternalStructure(QWidget* parent, Rules& r){
@@ -3563,8 +3620,10 @@ QString ConstraintActivityPreferredRoom::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivityPreferredRoom::getDetailedDescription(Rules& r)
+QString ConstraintActivityPreferredRoom::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Activity preferred room"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -3601,7 +3660,7 @@ QString ConstraintActivityPreferredRoom::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivityPreferredRoom::fitness(
@@ -3865,8 +3924,10 @@ QString ConstraintActivityPreferredRooms::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivityPreferredRooms::getDetailedDescription(Rules& r)
+QString ConstraintActivityPreferredRooms::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Activity preferred rooms"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -3890,7 +3951,7 @@ QString ConstraintActivityPreferredRooms::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivityPreferredRooms::fitness(
@@ -4123,9 +4184,10 @@ QString ConstraintStudentsSetHomeRoom::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetHomeRoom::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetHomeRoom::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Students set home room"); s+="\n";
@@ -4144,7 +4206,7 @@ QString ConstraintStudentsSetHomeRoom::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetHomeRoom::fitness(
@@ -4408,9 +4470,10 @@ QString ConstraintStudentsSetHomeRooms::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetHomeRooms::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetHomeRooms::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Students set home rooms"); s+="\n";
@@ -4432,7 +4495,7 @@ QString ConstraintStudentsSetHomeRooms::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetHomeRooms::fitness(
@@ -4685,9 +4748,10 @@ QString ConstraintTeacherHomeRoom::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherHomeRoom::getDetailedDescription(Rules& r)
+QString ConstraintTeacherHomeRoom::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Teacher home room"); s+="\n";
@@ -4706,7 +4770,7 @@ QString ConstraintTeacherHomeRoom::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherHomeRoom::fitness(
@@ -4967,9 +5031,10 @@ QString ConstraintTeacherHomeRooms::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherHomeRooms::getDetailedDescription(Rules& r)
+QString ConstraintTeacherHomeRooms::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Teacher home rooms"); s+="\n";
@@ -4991,7 +5056,7 @@ QString ConstraintTeacherHomeRooms::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherHomeRooms::fitness(
@@ -5225,9 +5290,10 @@ QString ConstraintSubjectPreferredRoom::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintSubjectPreferredRoom::getDetailedDescription(Rules& r)
+QString ConstraintSubjectPreferredRoom::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Subject preferred room"); s+="\n";
@@ -5244,7 +5310,7 @@ QString ConstraintSubjectPreferredRoom::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintSubjectPreferredRoom::fitness(
@@ -5473,9 +5539,10 @@ QString ConstraintSubjectPreferredRooms::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintSubjectPreferredRooms::getDetailedDescription(Rules& r)
+QString ConstraintSubjectPreferredRooms::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Subject preferred rooms"); s+="\n";
@@ -5495,7 +5562,7 @@ QString ConstraintSubjectPreferredRooms::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintSubjectPreferredRooms::fitness(
@@ -5722,9 +5789,10 @@ QString ConstraintSubjectActivityTagPreferredRoom::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintSubjectActivityTagPreferredRoom::getDetailedDescription(Rules& r)
+QString ConstraintSubjectActivityTagPreferredRoom::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Subject activity tag preferred room"); s+="\n";
@@ -5742,7 +5810,7 @@ QString ConstraintSubjectActivityTagPreferredRoom::getDetailedDescription(Rules&
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintSubjectActivityTagPreferredRoom::fitness(
@@ -5976,9 +6044,10 @@ QString ConstraintSubjectActivityTagPreferredRooms::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintSubjectActivityTagPreferredRooms::getDetailedDescription(Rules& r)
+QString ConstraintSubjectActivityTagPreferredRooms::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Subject activity tag preferred rooms"); s+="\n";
@@ -5999,7 +6068,7 @@ QString ConstraintSubjectActivityTagPreferredRooms::getDetailedDescription(Rules
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintSubjectActivityTagPreferredRooms::fitness(
@@ -6223,9 +6292,10 @@ QString ConstraintActivityTagPreferredRoom::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivityTagPreferredRoom::getDetailedDescription(Rules& r)
+QString ConstraintActivityTagPreferredRoom::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Activity tag preferred room"); s+="\n";
@@ -6242,7 +6312,7 @@ QString ConstraintActivityTagPreferredRoom::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivityTagPreferredRoom::fitness(
@@ -6472,9 +6542,10 @@ QString ConstraintActivityTagPreferredRooms::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivityTagPreferredRooms::getDetailedDescription(Rules& r)
+QString ConstraintActivityTagPreferredRooms::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Activity tag preferred rooms"); s+="\n";
@@ -6494,7 +6565,7 @@ QString ConstraintActivityTagPreferredRooms::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivityTagPreferredRooms::fitness(
@@ -6750,9 +6821,10 @@ QString ConstraintStudentsSetMaxBuildingChangesPerDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxBuildingChangesPerDay::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMaxBuildingChangesPerDay::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -6773,7 +6845,7 @@ QString ConstraintStudentsSetMaxBuildingChangesPerDay::getDetailedDescription(Ru
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMaxBuildingChangesPerDay::fitness(
@@ -6996,9 +7068,10 @@ QString ConstraintStudentsMaxBuildingChangesPerDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxBuildingChangesPerDay::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMaxBuildingChangesPerDay::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -7017,7 +7090,7 @@ QString ConstraintStudentsMaxBuildingChangesPerDay::getDetailedDescription(Rules
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMaxBuildingChangesPerDay::fitness(
@@ -7292,9 +7365,10 @@ QString ConstraintStudentsSetMaxBuildingChangesPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxBuildingChangesPerWeek::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMaxBuildingChangesPerWeek::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -7315,7 +7389,7 @@ QString ConstraintStudentsSetMaxBuildingChangesPerWeek::getDetailedDescription(R
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMaxBuildingChangesPerWeek::fitness(
@@ -7538,9 +7612,10 @@ QString ConstraintStudentsMaxBuildingChangesPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxBuildingChangesPerWeek::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMaxBuildingChangesPerWeek::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -7559,7 +7634,7 @@ QString ConstraintStudentsMaxBuildingChangesPerWeek::getDetailedDescription(Rule
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMaxBuildingChangesPerWeek::fitness(
@@ -7833,9 +7908,10 @@ QString ConstraintStudentsSetMinGapsBetweenBuildingChanges::getDescription(Rules
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMinGapsBetweenBuildingChanges::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMinGapsBetweenBuildingChanges::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -7856,7 +7932,7 @@ QString ConstraintStudentsSetMinGapsBetweenBuildingChanges::getDetailedDescripti
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMinGapsBetweenBuildingChanges::fitness(
@@ -8091,9 +8167,10 @@ QString ConstraintStudentsMinGapsBetweenBuildingChanges::getDescription(Rules& r
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMinGapsBetweenBuildingChanges::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMinGapsBetweenBuildingChanges::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -8112,7 +8189,7 @@ QString ConstraintStudentsMinGapsBetweenBuildingChanges::getDetailedDescription(
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMinGapsBetweenBuildingChanges::fitness(
@@ -8362,9 +8439,10 @@ QString ConstraintTeacherMaxBuildingChangesPerDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxBuildingChangesPerDay::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMaxBuildingChangesPerDay::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -8385,7 +8463,7 @@ QString ConstraintTeacherMaxBuildingChangesPerDay::getDetailedDescription(Rules&
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxBuildingChangesPerDay::fitness(
@@ -8609,9 +8687,10 @@ QString ConstraintTeachersMaxBuildingChangesPerDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxBuildingChangesPerDay::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMaxBuildingChangesPerDay::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -8630,7 +8709,7 @@ QString ConstraintTeachersMaxBuildingChangesPerDay::getDetailedDescription(Rules
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxBuildingChangesPerDay::fitness(
@@ -8868,9 +8947,10 @@ QString ConstraintTeacherMaxBuildingChangesPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxBuildingChangesPerWeek::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMaxBuildingChangesPerWeek::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -8891,7 +8971,7 @@ QString ConstraintTeacherMaxBuildingChangesPerWeek::getDetailedDescription(Rules
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxBuildingChangesPerWeek::fitness(
@@ -9115,9 +9195,10 @@ QString ConstraintTeachersMaxBuildingChangesPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxBuildingChangesPerWeek::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMaxBuildingChangesPerWeek::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -9136,7 +9217,7 @@ QString ConstraintTeachersMaxBuildingChangesPerWeek::getDetailedDescription(Rule
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxBuildingChangesPerWeek::fitness(
@@ -9374,9 +9455,10 @@ QString ConstraintTeacherMinGapsBetweenBuildingChanges::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMinGapsBetweenBuildingChanges::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMinGapsBetweenBuildingChanges::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -9397,7 +9479,7 @@ QString ConstraintTeacherMinGapsBetweenBuildingChanges::getDetailedDescription(R
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMinGapsBetweenBuildingChanges::fitness(
@@ -9633,9 +9715,10 @@ QString ConstraintTeachersMinGapsBetweenBuildingChanges::getDescription(Rules& r
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMinGapsBetweenBuildingChanges::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMinGapsBetweenBuildingChanges::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -9654,7 +9737,7 @@ QString ConstraintTeachersMinGapsBetweenBuildingChanges::getDetailedDescription(
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMinGapsBetweenBuildingChanges::fitness(
@@ -9942,9 +10025,10 @@ QString ConstraintStudentsSetMaxRoomChangesPerDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxRoomChangesPerDay::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMaxRoomChangesPerDay::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -9965,7 +10049,7 @@ QString ConstraintStudentsSetMaxRoomChangesPerDay::getDetailedDescription(Rules&
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMaxRoomChangesPerDay::fitness(
@@ -10188,9 +10272,10 @@ QString ConstraintStudentsMaxRoomChangesPerDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxRoomChangesPerDay::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMaxRoomChangesPerDay::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -10209,7 +10294,7 @@ QString ConstraintStudentsMaxRoomChangesPerDay::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMaxRoomChangesPerDay::fitness(
@@ -10484,9 +10569,10 @@ QString ConstraintStudentsSetMaxRoomChangesPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxRoomChangesPerWeek::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMaxRoomChangesPerWeek::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -10507,7 +10593,7 @@ QString ConstraintStudentsSetMaxRoomChangesPerWeek::getDetailedDescription(Rules
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMaxRoomChangesPerWeek::fitness(
@@ -10730,9 +10816,10 @@ QString ConstraintStudentsMaxRoomChangesPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxRoomChangesPerWeek::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMaxRoomChangesPerWeek::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -10751,7 +10838,7 @@ QString ConstraintStudentsMaxRoomChangesPerWeek::getDetailedDescription(Rules& r
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMaxRoomChangesPerWeek::fitness(
@@ -11025,9 +11112,10 @@ QString ConstraintStudentsSetMinGapsBetweenRoomChanges::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMinGapsBetweenRoomChanges::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMinGapsBetweenRoomChanges::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -11048,7 +11136,7 @@ QString ConstraintStudentsSetMinGapsBetweenRoomChanges::getDetailedDescription(R
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMinGapsBetweenRoomChanges::fitness(
@@ -11283,9 +11371,10 @@ QString ConstraintStudentsMinGapsBetweenRoomChanges::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMinGapsBetweenRoomChanges::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMinGapsBetweenRoomChanges::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -11304,7 +11393,7 @@ QString ConstraintStudentsMinGapsBetweenRoomChanges::getDetailedDescription(Rule
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMinGapsBetweenRoomChanges::fitness(
@@ -11554,9 +11643,10 @@ QString ConstraintTeacherMaxRoomChangesPerDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxRoomChangesPerDay::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMaxRoomChangesPerDay::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -11577,7 +11667,7 @@ QString ConstraintTeacherMaxRoomChangesPerDay::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxRoomChangesPerDay::fitness(
@@ -11801,9 +11891,10 @@ QString ConstraintTeachersMaxRoomChangesPerDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxRoomChangesPerDay::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMaxRoomChangesPerDay::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -11822,7 +11913,7 @@ QString ConstraintTeachersMaxRoomChangesPerDay::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxRoomChangesPerDay::fitness(
@@ -12060,9 +12151,10 @@ QString ConstraintTeacherMaxRoomChangesPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxRoomChangesPerWeek::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMaxRoomChangesPerWeek::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -12083,7 +12175,7 @@ QString ConstraintTeacherMaxRoomChangesPerWeek::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxRoomChangesPerWeek::fitness(
@@ -12307,9 +12399,10 @@ QString ConstraintTeachersMaxRoomChangesPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxRoomChangesPerWeek::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMaxRoomChangesPerWeek::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -12328,7 +12421,7 @@ QString ConstraintTeachersMaxRoomChangesPerWeek::getDetailedDescription(Rules& r
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxRoomChangesPerWeek::fitness(
@@ -12566,9 +12659,10 @@ QString ConstraintTeacherMinGapsBetweenRoomChanges::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMinGapsBetweenRoomChanges::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMinGapsBetweenRoomChanges::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -12589,7 +12683,7 @@ QString ConstraintTeacherMinGapsBetweenRoomChanges::getDetailedDescription(Rules
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMinGapsBetweenRoomChanges::fitness(
@@ -12825,9 +12919,10 @@ QString ConstraintTeachersMinGapsBetweenRoomChanges::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMinGapsBetweenRoomChanges::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMinGapsBetweenRoomChanges::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -12846,7 +12941,7 @@ QString ConstraintTeachersMinGapsBetweenRoomChanges::getDetailedDescription(Rule
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMinGapsBetweenRoomChanges::fitness(
@@ -13121,8 +13216,10 @@ QString ConstraintActivitiesOccupyMaxDifferentRooms::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesOccupyMaxDifferentRooms::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesOccupyMaxDifferentRooms::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+translatedCommaSpace();
@@ -13149,7 +13246,7 @@ QString ConstraintActivitiesOccupyMaxDifferentRooms::getDetailedDescription(Rule
 		s+="\n";
 	}
 	
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivitiesOccupyMaxDifferentRooms::fitness(
@@ -13393,8 +13490,10 @@ QString ConstraintActivitiesSameRoomIfConsecutive::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesSameRoomIfConsecutive::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesSameRoomIfConsecutive::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+translatedCommaSpace();
@@ -13419,7 +13518,7 @@ QString ConstraintActivitiesSameRoomIfConsecutive::getDetailedDescription(Rules&
 		s+="\n";
 	}
 	
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivitiesSameRoomIfConsecutive::fitness(
@@ -13640,9 +13739,10 @@ QString ConstraintStudentsMaxRoomChangesPerRealDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxRoomChangesPerRealDay::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMaxRoomChangesPerRealDay::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -13661,7 +13761,7 @@ QString ConstraintStudentsMaxRoomChangesPerRealDay::getDetailedDescription(Rules
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMaxRoomChangesPerRealDay::fitness(
@@ -13945,9 +14045,10 @@ QString ConstraintStudentsSetMaxRoomChangesPerRealDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxRoomChangesPerRealDay::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMaxRoomChangesPerRealDay::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -13968,7 +14069,7 @@ QString ConstraintStudentsSetMaxRoomChangesPerRealDay::getDetailedDescription(Ru
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMaxRoomChangesPerRealDay::fitness(
@@ -14212,9 +14313,10 @@ QString ConstraintTeacherMaxRoomChangesPerRealDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxRoomChangesPerRealDay::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMaxRoomChangesPerRealDay::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -14235,7 +14337,7 @@ QString ConstraintTeacherMaxRoomChangesPerRealDay::getDetailedDescription(Rules&
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxRoomChangesPerRealDay::fitness(
@@ -14468,9 +14570,10 @@ QString ConstraintTeachersMaxRoomChangesPerRealDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxRoomChangesPerRealDay::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMaxRoomChangesPerRealDay::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -14489,7 +14592,7 @@ QString ConstraintTeachersMaxRoomChangesPerRealDay::getDetailedDescription(Rules
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxRoomChangesPerRealDay::fitness(
@@ -14723,9 +14826,10 @@ QString ConstraintStudentsMaxBuildingChangesPerRealDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxBuildingChangesPerRealDay::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMaxBuildingChangesPerRealDay::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -14744,7 +14848,7 @@ QString ConstraintStudentsMaxBuildingChangesPerRealDay::getDetailedDescription(R
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMaxBuildingChangesPerRealDay::fitness(
@@ -15028,9 +15132,10 @@ QString ConstraintStudentsSetMaxBuildingChangesPerRealDay::getDescription(Rules&
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxBuildingChangesPerRealDay::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMaxBuildingChangesPerRealDay::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -15051,7 +15156,7 @@ QString ConstraintStudentsSetMaxBuildingChangesPerRealDay::getDetailedDescriptio
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMaxBuildingChangesPerRealDay::fitness(
@@ -15295,9 +15400,10 @@ QString ConstraintTeacherMaxBuildingChangesPerRealDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxBuildingChangesPerRealDay::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMaxBuildingChangesPerRealDay::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -15318,7 +15424,7 @@ QString ConstraintTeacherMaxBuildingChangesPerRealDay::getDetailedDescription(Ru
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxBuildingChangesPerRealDay::fitness(
@@ -15551,9 +15657,10 @@ QString ConstraintTeachersMaxBuildingChangesPerRealDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxBuildingChangesPerRealDay::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMaxBuildingChangesPerRealDay::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -15572,7 +15679,7 @@ QString ConstraintTeachersMaxBuildingChangesPerRealDay::getDetailedDescription(R
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxBuildingChangesPerRealDay::fitness(
@@ -15876,9 +15983,10 @@ QString ConstraintStudentsSetMaxBuildingChangesPerDayInInterval::getDescription(
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxBuildingChangesPerDayInInterval::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMaxBuildingChangesPerDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -15906,7 +16014,7 @@ QString ConstraintStudentsSetMaxBuildingChangesPerDayInInterval::getDetailedDesc
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMaxBuildingChangesPerDayInInterval::fitness(
@@ -16158,9 +16266,10 @@ QString ConstraintStudentsMaxBuildingChangesPerDayInInterval::getDescription(Rul
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxBuildingChangesPerDayInInterval::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMaxBuildingChangesPerDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -16186,7 +16295,7 @@ QString ConstraintStudentsMaxBuildingChangesPerDayInInterval::getDetailedDescrip
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMaxBuildingChangesPerDayInInterval::fitness(
@@ -16453,9 +16562,10 @@ QString ConstraintTeacherMaxBuildingChangesPerDayInInterval::getDescription(Rule
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxBuildingChangesPerDayInInterval::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMaxBuildingChangesPerDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -16483,7 +16593,7 @@ QString ConstraintTeacherMaxBuildingChangesPerDayInInterval::getDetailedDescript
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxBuildingChangesPerDayInInterval::fitness(
@@ -16736,9 +16846,10 @@ QString ConstraintTeachersMaxBuildingChangesPerDayInInterval::getDescription(Rul
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxBuildingChangesPerDayInInterval::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMaxBuildingChangesPerDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -16764,7 +16875,7 @@ QString ConstraintTeachersMaxBuildingChangesPerDayInInterval::getDetailedDescrip
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxBuildingChangesPerDayInInterval::fitness(
@@ -17098,9 +17209,10 @@ QString ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval::getDescript
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -17137,7 +17249,7 @@ QString ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval::getDetailed
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval::fitness(
@@ -17420,9 +17532,10 @@ QString ConstraintStudentsMaxBuildingChangesPerRealDayInInterval::getDescription
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxBuildingChangesPerRealDayInInterval::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMaxBuildingChangesPerRealDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -17457,7 +17570,7 @@ QString ConstraintStudentsMaxBuildingChangesPerRealDayInInterval::getDetailedDes
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMaxBuildingChangesPerRealDayInInterval::fitness(
@@ -17755,9 +17868,10 @@ QString ConstraintTeacherMaxBuildingChangesPerRealDayInInterval::getDescription(
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxBuildingChangesPerRealDayInInterval::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMaxBuildingChangesPerRealDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -17794,7 +17908,7 @@ QString ConstraintTeacherMaxBuildingChangesPerRealDayInInterval::getDetailedDesc
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxBuildingChangesPerRealDayInInterval::fitness(
@@ -18079,9 +18193,10 @@ QString ConstraintTeachersMaxBuildingChangesPerRealDayInInterval::getDescription
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxBuildingChangesPerRealDayInInterval::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMaxBuildingChangesPerRealDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -18116,7 +18231,7 @@ QString ConstraintTeachersMaxBuildingChangesPerRealDayInInterval::getDetailedDes
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxBuildingChangesPerRealDayInInterval::fitness(
@@ -18421,9 +18536,10 @@ QString ConstraintStudentsSetMaxRoomChangesPerDayInInterval::getDescription(Rule
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxRoomChangesPerDayInInterval::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMaxRoomChangesPerDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -18451,7 +18567,7 @@ QString ConstraintStudentsSetMaxRoomChangesPerDayInInterval::getDetailedDescript
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMaxRoomChangesPerDayInInterval::fitness(
@@ -18703,9 +18819,10 @@ QString ConstraintStudentsMaxRoomChangesPerDayInInterval::getDescription(Rules& 
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxRoomChangesPerDayInInterval::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMaxRoomChangesPerDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -18731,7 +18848,7 @@ QString ConstraintStudentsMaxRoomChangesPerDayInInterval::getDetailedDescription
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMaxRoomChangesPerDayInInterval::fitness(
@@ -18998,9 +19115,10 @@ QString ConstraintTeacherMaxRoomChangesPerDayInInterval::getDescription(Rules& r
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxRoomChangesPerDayInInterval::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMaxRoomChangesPerDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -19028,7 +19146,7 @@ QString ConstraintTeacherMaxRoomChangesPerDayInInterval::getDetailedDescription(
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxRoomChangesPerDayInInterval::fitness(
@@ -19281,9 +19399,10 @@ QString ConstraintTeachersMaxRoomChangesPerDayInInterval::getDescription(Rules& 
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxRoomChangesPerDayInInterval::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMaxRoomChangesPerDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -19309,7 +19428,7 @@ QString ConstraintTeachersMaxRoomChangesPerDayInInterval::getDetailedDescription
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxRoomChangesPerDayInInterval::fitness(
@@ -19643,9 +19762,10 @@ QString ConstraintStudentsSetMaxRoomChangesPerRealDayInInterval::getDescription(
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxRoomChangesPerRealDayInInterval::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMaxRoomChangesPerRealDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -19682,7 +19802,7 @@ QString ConstraintStudentsSetMaxRoomChangesPerRealDayInInterval::getDetailedDesc
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMaxRoomChangesPerRealDayInInterval::fitness(
@@ -19965,9 +20085,10 @@ QString ConstraintStudentsMaxRoomChangesPerRealDayInInterval::getDescription(Rul
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxRoomChangesPerRealDayInInterval::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMaxRoomChangesPerRealDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -20002,7 +20123,7 @@ QString ConstraintStudentsMaxRoomChangesPerRealDayInInterval::getDetailedDescrip
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMaxRoomChangesPerRealDayInInterval::fitness(
@@ -20300,9 +20421,10 @@ QString ConstraintTeacherMaxRoomChangesPerRealDayInInterval::getDescription(Rule
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxRoomChangesPerRealDayInInterval::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMaxRoomChangesPerRealDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -20339,7 +20461,7 @@ QString ConstraintTeacherMaxRoomChangesPerRealDayInInterval::getDetailedDescript
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxRoomChangesPerRealDayInInterval::fitness(
@@ -20624,9 +20746,10 @@ QString ConstraintTeachersMaxRoomChangesPerRealDayInInterval::getDescription(Rul
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxRoomChangesPerRealDayInInterval::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMaxRoomChangesPerRealDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -20661,7 +20784,7 @@ QString ConstraintTeachersMaxRoomChangesPerRealDayInInterval::getDetailedDescrip
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxRoomChangesPerRealDayInInterval::fitness(
@@ -20924,8 +21047,9 @@ QString ConstraintRoomMaxActivityTagsPerDayFromSet::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintRoomMaxActivityTagsPerDayFromSet::getDetailedDescription(Rules& r){
+QString ConstraintRoomMaxActivityTagsPerDayFromSet::getDetailedDescription(Rules&r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint");s+="\n";
 	s+=tr("A room must respect a maximum number of activity tags per day from a set");s+="\n";
@@ -20944,7 +21068,7 @@ QString ConstraintRoomMaxActivityTagsPerDayFromSet::getDetailedDescription(Rules
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintRoomMaxActivityTagsPerDayFromSet::fitness(
@@ -21181,8 +21305,9 @@ QString ConstraintRoomMaxActivityTagsPerRealDayFromSet::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintRoomMaxActivityTagsPerRealDayFromSet::getDetailedDescription(Rules& r){
+QString ConstraintRoomMaxActivityTagsPerRealDayFromSet::getDetailedDescription(Rules&r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint");s+="\n";
 	s+=tr("A room must respect a maximum number of activity tags per real day from a set");s+="\n";
@@ -21201,7 +21326,7 @@ QString ConstraintRoomMaxActivityTagsPerRealDayFromSet::getDetailedDescription(R
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintRoomMaxActivityTagsPerRealDayFromSet::fitness(
@@ -21441,8 +21566,9 @@ QString ConstraintRoomMaxActivityTagsPerWeekFromSet::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintRoomMaxActivityTagsPerWeekFromSet::getDetailedDescription(Rules& r){
+QString ConstraintRoomMaxActivityTagsPerWeekFromSet::getDetailedDescription(Rules&r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Space constraint");s+="\n";
 	s+=tr("A room must respect a maximum number of activity tags per week from a set");s+="\n";
@@ -21461,7 +21587,7 @@ QString ConstraintRoomMaxActivityTagsPerWeekFromSet::getDetailedDescription(Rule
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintRoomMaxActivityTagsPerWeekFromSet::fitness(

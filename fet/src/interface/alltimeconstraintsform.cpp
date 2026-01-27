@@ -94,6 +94,22 @@ AllTimeConstraintsForm::AllTimeConstraintsForm(QWidget* parent): QDialog(parent)
 	if(settings.contains(this->metaObject()->className()+QString("/splitter-state")))
 		splitter->restoreState(settings.value(this->metaObject()->className()+QString("/splitter-state")).toByteArray());
 	
+	/*
+	useFilter=false;
+	
+	assert(filterCheckBox->isChecked()==false);
+	assert(sortedCheckBox->isChecked()==false);*/
+	useFilter=settings.value(this->metaObject()->className()+QString("/list-filtered"), "false").toBool();
+	filterCheckBox->setChecked(useFilter);
+	sortedCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/list-sorted"), "false").toBool());
+
+	colorsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/use-colors"), "false").toBool());
+
+	miscellaneousCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/list-miscellaneous-constraints"), "true").toBool());
+	teachersCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/list-teachers-constraints"), "true").toBool());
+	studentsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/list-students-constraints"), "true").toBool());
+	activitiesCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/list-activities-constraints"), "true").toBool());
+
 	QString settingsName="AllTimeConstraintsAdvancedFilterForm";
 	
 	all=settings.value(settingsName+"/all-conditions", "true").toBool();
@@ -114,20 +130,6 @@ AllTimeConstraintsForm::AllTimeConstraintsForm(QWidget* parent): QDialog(parent)
 		text.append(settings.value(settingsName+"/text/"+CustomFETString::number(i+1), QString("")).toString());
 
 	caseSensitive=settings.value(settingsName+"/case-sensitive", "false").toBool();
-	
-	/*
-	useFilter=false;
-	
-	assert(filterCheckBox->isChecked()==false);
-	assert(sortedCheckBox->isChecked()==false);*/
-	useFilter=settings.value(settingsName+"/list-filtered", "false").toBool();
-	sortedCheckBox->setChecked(settings.value(settingsName+"/list-sorted", "false").toBool());
-	filterCheckBox->setChecked(useFilter);
-
-	miscellaneousCheckBox->setChecked(settings.value(settingsName+"/list-miscellaneous-constraints", "true").toBool());
-	teachersCheckBox->setChecked(settings.value(settingsName+"/list-teachers-constraints", "true").toBool());
-	studentsCheckBox->setChecked(settings.value(settingsName+"/list-students-constraints", "true").toBool());
-	activitiesCheckBox->setChecked(settings.value(settingsName+"/list-activities-constraints", "true").toBool());
 
 	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &AllTimeConstraintsForm::constraintChanged);
 
@@ -152,6 +154,8 @@ AllTimeConstraintsForm::AllTimeConstraintsForm(QWidget* parent): QDialog(parent)
 	connect(sortedCheckBox, &QCheckBox::toggled, this, &AllTimeConstraintsForm::sortedChanged);
 	connect(activatePushButton, &QPushButton::clicked, this, &AllTimeConstraintsForm::activateConstraints);
 	connect(deactivatePushButton, &QPushButton::clicked, this, &AllTimeConstraintsForm::deactivateConstraints);
+
+	connect(colorsCheckBox, &QCheckBox::toggled, this, &AllTimeConstraintsForm::useColorsChanged);
 
 	//connect(activateAllPushButton, SIG NAL(clicked()), this, SL OT(activateAllConstraints()));
 	//connect(deactivateAllPushButton, SIG NAL(clicked()), this, SL OT(deactivateAllConstraints()));
@@ -220,6 +224,16 @@ AllTimeConstraintsForm::~AllTimeConstraintsForm()
 	QSettings settings(COMPANY, PROGRAM);
 	settings.setValue(this->metaObject()->className()+QString("/splitter-state"), splitter->saveState());
 
+	settings.setValue(this->metaObject()->className()+QString("/list-filtered"), useFilter);
+	settings.setValue(this->metaObject()->className()+QString("/list-sorted"), sortedCheckBox->isChecked());
+
+	settings.setValue(this->metaObject()->className()+QString("/use-colors"), colorsCheckBox->isChecked());
+
+	settings.setValue(this->metaObject()->className()+QString("/list-miscellaneous-constraints"), miscellaneousCheckBox->isChecked());
+	settings.setValue(this->metaObject()->className()+QString("/list-teachers-constraints"), teachersCheckBox->isChecked());
+	settings.setValue(this->metaObject()->className()+QString("/list-students-constraints"), studentsCheckBox->isChecked());
+	settings.setValue(this->metaObject()->className()+QString("/list-activities-constraints"), activitiesCheckBox->isChecked());
+
 	QString settingsName="AllTimeConstraintsAdvancedFilterForm";
 	
 	settings.setValue(settingsName+"/all-conditions", all);
@@ -240,14 +254,6 @@ AllTimeConstraintsForm::~AllTimeConstraintsForm()
 		settings.setValue(settingsName+"/text/"+CustomFETString::number(i+1), text.at(i));
 	
 	settings.setValue(settingsName+"/case-sensitive", caseSensitive);
-
-	settings.setValue(settingsName+"/list-filtered", useFilter);
-	settings.setValue(settingsName+"/list-sorted", sortedCheckBox->isChecked());
-
-	settings.setValue(settingsName+"/list-miscellaneous-constraints", miscellaneousCheckBox->isChecked());
-	settings.setValue(settingsName+"/list-teachers-constraints", teachersCheckBox->isChecked());
-	settings.setValue(settingsName+"/list-students-constraints", studentsCheckBox->isChecked());
-	settings.setValue(settingsName+"/list-activities-constraints", activitiesCheckBox->isChecked());
 }
 
 bool AllTimeConstraintsForm::filterOk(TimeConstraint* ctr)
@@ -424,7 +430,8 @@ void AllTimeConstraintsForm::moveTimeConstraintUp()
 	visibleTimeConstraintsList[i]=tc2;
 	visibleTimeConstraintsList[i-1]=tc1;
 	
-	gt.rules.addUndoPoint(tr("A constraint was moved up:\n\n%1", "%1 is the detailed description of the constraint").arg(tc1->getDetailedDescription(gt.rules)));
+	gt.rules.addUndoPoint(protect4(tr("A constraint was moved up:", "This is a History item. Following is the detailed description of the constraint which was moved up."))
+	 +QString("<br />\n<br />\n")+tc1->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked()));
 	
 	if(tc2->active){
 		constraintsListWidget->item(i)->setBackground(QBrush());
@@ -510,7 +517,8 @@ void AllTimeConstraintsForm::moveTimeConstraintDown()
 	visibleTimeConstraintsList[i]=tc2;
 	visibleTimeConstraintsList[i+1]=tc1;
 	
-	gt.rules.addUndoPoint(tr("A constraint was moved down:\n\n%1", "%1 is the detailed description of the constraint").arg(tc1->getDetailedDescription(gt.rules)));
+	gt.rules.addUndoPoint(protect4(tr("A constraint was moved down:", "This is a History item. Following is the detailed description of the constraint which was moved down."))
+	 +QString("<br />\n<br />\n")+tc1->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked()));
 	
 	if(tc2->active){
 		constraintsListWidget->item(i)->setBackground(QBrush());
@@ -579,7 +587,7 @@ void AllTimeConstraintsForm::filterChanged()
 	}
 
 	if(constraintsListWidget->count()<=0)
-		currentConstraintTextEdit->setPlainText("");
+		currentConstraintTextEdit->setText("");
 	else
 		constraintsListWidget->setCurrentRow(0);
 	
@@ -602,8 +610,8 @@ void AllTimeConstraintsForm::constraintChanged()
 	assert(index<visibleTimeConstraintsList.count());
 	TimeConstraint* ctr=visibleTimeConstraintsList.at(index);
 	assert(ctr!=nullptr);
-	QString s=ctr->getDetailedDescription(gt.rules);
-	currentConstraintTextEdit->setPlainText(s);
+	QString s=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked()); //'true' means 'richText'
+	currentConstraintTextEdit->setText(s);
 }
 
 void AllTimeConstraintsForm::modifyConstraint()
@@ -685,10 +693,10 @@ void AllTimeConstraintsForm::removeConstraints()
 		}
 
 	QString s;
-	s=tr("Remove these selected time constraints?");
-	s+="\n\n";
+	s=protect4(tr("Remove these selected time constraints?", "Following is the list of detailed descriptions of the constraints marked for removal."));
+	s+=QString("<br />\n<br />\n");
 	for(TimeConstraint* ctr : std::as_const(tl))
-		s+=ctr->getDetailedDescription(gt.rules)+"\n";
+		s+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+QString("<br />\n");
 	int lres=LongTextMessageBox::confirmation(this, tr("FET confirmation"),
 		s, tr("Yes"), tr("No"), QString(), 0, 1 );
 
@@ -699,10 +707,10 @@ void AllTimeConstraintsForm::removeConstraints()
 
 	QString su;
 	if(!tl.isEmpty()){
-		su=tr("Removed %1 time constraints:").arg(tl.count());
-		su+=QString("\n\n");
+		su=protect4(tr("Removed %1 time constraints:").arg(tl.count()));
+		su+=QString("<br />\n<br />\n");
 		for(TimeConstraint* ctr : std::as_const(tl))
-			su+=ctr->getDetailedDescription(gt.rules)+"\n";
+			su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+QString("<br />\n");
 	}
 
 	//The user clicked the OK button or pressed Enter
@@ -822,7 +830,7 @@ void AllTimeConstraintsForm::activateConstraints()
 			assert(i<visibleTimeConstraintsList.count());
 			TimeConstraint* ctr=visibleTimeConstraintsList.at(i);
 			if(!ctr->active){
-				su+=ctr->getDetailedDescription(gt.rules)+QString("\n");
+				su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+QString("<br />\n");
 
 				cnt++;
 				ctr->active=true;
@@ -832,7 +840,7 @@ void AllTimeConstraintsForm::activateConstraints()
 		}
 
 	if(cnt>0){
-		gt.rules.addUndoPoint(tr("Activated %1 time constraints:", "%1 is the number of activated time constraints").arg(cnt)+QString("\n\n")+su);
+		gt.rules.addUndoPoint(protect4(tr("Activated %1 time constraints:", "%1 is the number of activated time constraints").arg(cnt))+QString("<br />\n<br />\n")+su);
 
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
@@ -890,7 +898,7 @@ void AllTimeConstraintsForm::deactivateConstraints()
 			if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_TIME)
 				continue;
 			if(ctr->active){
-				su+=ctr->getDetailedDescription(gt.rules)+QString("\n");
+				su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+QString("<br />\n");
 
 				cnt++;
 				ctr->active=false;
@@ -899,7 +907,7 @@ void AllTimeConstraintsForm::deactivateConstraints()
 			}
 		}
 	if(cnt>0){
-		gt.rules.addUndoPoint(tr("Deactivated %1 time constraints:", "%1 is the number of deactivated time constraints").arg(cnt)+QString("\n\n")+su);
+		gt.rules.addUndoPoint(protect4(tr("Deactivated %1 time constraints:", "%1 is the number of deactivated time constraints").arg(cnt))+QString("<br />\n<br />\n")+su);
 
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
@@ -981,11 +989,19 @@ void AllTimeConstraintsForm::constraintComments()
 	saveFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	if(t==QDialog::Accepted){
-		QString cb=ctr->getDetailedDescription(gt.rules);
+		QString cb=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked());
 
 		ctr->comments=commentsPT->toPlainText();
 	
-		gt.rules.addUndoPoint(tr("Changed a constraint's comments. Constraint before:\n\n%1\nComments after:\n\n%2").arg(cb).arg(ctr->comments));
+		gt.rules.addUndoPoint(protect4(tr("Changed a constraint's comments.", "The user changed the constraint's comments"))
+		 +QString(" ")+protect4(tr("Constraint before:", "The detailed description of a constraint before the change."))
+		 +QString("<br />\n<br />\n")
+		 +cb
+		 +QString("<br />\n")
+		 +protect4(tr("Comments after:", "The comments of the constraint were changed to this new value (Comments after)."))
+		 +QString("<br />\n<br />\n")
+		 +protect4(ctr->comments));
+		//gt.rules.addUndoPoint(tr("Changed a constraint's comments. Constraint before:\n\n%1\nComments after:\n\n%2").arg(cb).arg(ctr->comments));
 
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
@@ -1001,7 +1017,7 @@ void AllTimeConstraintsForm::constraintComments()
 			if(i>=0)
 				constraintsListWidget->setCurrentRow(i);
 			else
-				currentConstraintTextEdit->setPlainText(QString(""));
+				currentConstraintTextEdit->setText(QString(""));
 
 			int n_active=0;
 			for(TimeConstraint* ctr2 : std::as_const(visibleTimeConstraintsList))
@@ -1032,6 +1048,11 @@ void AllTimeConstraintsForm::selectionChanged()
 		}
 	mSLabel->setText(tr("Multiple selection: %1 / %2", "It refers to the list of selected time constraints, %1 is the number of active"
 	 " selected time constraints, %2 is the total number of selected time constraints").arg(nActive).arg(nTotal));
+}
+
+void AllTimeConstraintsForm::useColorsChanged()
+{
+	constraintChanged();
 }
 
 void AllTimeConstraintsForm::changeWeights()
@@ -1093,8 +1114,7 @@ void AllTimeConstraintsForm::changeWeights()
 			assert(i<visibleTimeConstraintsList.count());
 			TimeConstraint* ctr=visibleTimeConstraintsList.at(i);
 			if(ctr->canHaveAnyWeight()){
-				su+=ctr->getDetailedDescription(gt.rules)+QString("\n");
-
+				su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+QString("<br />\n");
 				cnt++;
 				ctr->weightPercentage=nw;
 				if(ctr->active && ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME)
@@ -1106,9 +1126,9 @@ void AllTimeConstraintsForm::changeWeights()
 	assert(cnt==cnt_pre);
 
 	if(cnt>0){
-		gt.rules.addUndoPoint(tr("Changed the weights of the following %1 selected time constraints to %2%:",
+		gt.rules.addUndoPoint(protect4(tr("Changed the weights of the following %1 selected time constraints to %2%:",
 		 "%1 is the number of time constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints")
-		 .arg(cnt).arg(CustomFETString::number(nw))+QString("\n\n")+su);
+		 .arg(cnt).arg(CustomFETString::number(nw)))+QString("<br />\n<br />\n")+su);
 
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);

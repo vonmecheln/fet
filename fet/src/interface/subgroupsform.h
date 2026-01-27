@@ -47,6 +47,8 @@ public Q_SLOTS:
 	void longName();
 	void code();
 	void comments();
+
+	void colorsCheckBoxToggled();
 };
 
 #endif

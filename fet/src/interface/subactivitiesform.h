@@ -72,6 +72,8 @@ public Q_SLOTS:
 	void deactivateAllSubactivities();
 	
 	void subactivityComments();
+
+	void colorsCheckBoxToggled();
 };
 
 #endif

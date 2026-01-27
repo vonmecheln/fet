@@ -1972,8 +1972,8 @@ void setLanguage(QApplication& qapplication, QWidget* parent)
 		FetMessage::warning(parent, QString("FET warning"),
 		 QString("Translation for specified language not loaded - maybe the translation file is missing - setting the language to en_US (US English)")
 		 +"\n\n"+
-		 QString("FET searched for the translation file %1 in the directory %2, then in the directory %3 and "
-		 "then in the directory %4 (under systems that support such a directory), but could not find it.")
+		 QString("FET searched for the translation file %1 in the directory %2, then in the directory %3, and "
+		 "then in the directory %4, but could not find it.")
 		 .arg("fet_"+FET_LANGUAGE+".qm")
 		 .arg(QDir::toNativeSeparators(qapplication.applicationDirPath()))
 		 .arg(QDir::toNativeSeparators(qapplication.applicationDirPath()+"/translations"))

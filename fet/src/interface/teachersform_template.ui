@@ -26,7 +26,20 @@
       <enum>Qt::Horizontal</enum>
      </property>
      <widget class="QListWidget" name="teachersListWidget"/>
-     <widget class="QTextEdit" name="currentTeacherTextEdit"/>
+     <widget class="QWidget" name="">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QTextEdit" name="currentTeacherTextEdit"/>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="colorsCheckBox">
+         <property name="text">
+          <string>Colors</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </widget>
    </item>
    <item row="1" column="0">

@@ -753,47 +753,97 @@ QString Activity::getDetailedDescription(Rules& r)
 	return s;
 }
 
-QString Activity::getDetailedDescriptionWithConstraints(Rules& r)
+QString Activity::getDetailedDescriptionWithConstraints(Rules& r, bool richText, bool colors)
 {
-	QString s=this->getDetailedDescription(r);
+	if(!richText){
+		QString s=this->getDetailedDescription(r);
 
-	s+="--------------------------------------------------\n";
-	s+=tr("Time constraints directly related to this activity:");
-	s+="\n";
-	for(int i=0; i<r.timeConstraintsList.size(); i++){
-		TimeConstraint* c=r.timeConstraintsList[i];
-		if(c->isRelatedToActivity(r, this->id)){
-			s+="\n";
-			s+=c->getDetailedDescription(r);
-		}
-	}
-
-	s+="--------------------------------------------------\n";
-	s+=tr("Space constraints directly related to this activity:");
-	s+="\n";
-	for(int i=0; i<r.spaceConstraintsList.size(); i++){
-		SpaceConstraint* c=r.spaceConstraintsList[i];
-		if(c->isRelatedToActivity(r, this->id)){
-			s+="\n";
-			s+=c->getDetailedDescription(r);
-		}
-	}
-	s+="--------------------------------------------------\n";
-
-	if(r.groupActivitiesInInitialOrderList.count()>0){
-		s+=tr("Timetable generation options directly related to this activity:");
+		s+="--------------------------------------------------\n";
+		s+=tr("Time constraints directly related to this activity:");
 		s+="\n";
-		for(int i=0; i<r.groupActivitiesInInitialOrderList.count(); i++){
-			GroupActivitiesInInitialOrderItem* item=r.groupActivitiesInInitialOrderList[i];
-			if(item->idsSet.contains(id)){
+		for(int i=0; i<r.timeConstraintsList.size(); i++){
+			TimeConstraint* c=r.timeConstraintsList[i];
+			if(c->isRelatedToActivity(r, this->id)){
 				s+="\n";
-				s+=item->getDetailedDescription(r);
+				s+=c->getDetailedDescription(r);
+			}
+		}
+
+		s+="--------------------------------------------------\n";
+		s+=tr("Space constraints directly related to this activity:");
+		s+="\n";
+		for(int i=0; i<r.spaceConstraintsList.size(); i++){
+			SpaceConstraint* c=r.spaceConstraintsList[i];
+			if(c->isRelatedToActivity(r, this->id)){
+				s+="\n";
+				s+=c->getDetailedDescription(r);
 			}
 		}
 		s+="--------------------------------------------------\n";
-	}
 
-	return s;
+		if(r.groupActivitiesInInitialOrderList.count()>0){
+			s+=tr("Timetable generation options directly related to this activity:");
+			s+="\n";
+			for(int i=0; i<r.groupActivitiesInInitialOrderList.count(); i++){
+				GroupActivitiesInInitialOrderItem* item=r.groupActivitiesInInitialOrderList[i];
+				if(item->idsSet.contains(id)){
+					s+="\n";
+					s+=item->getDetailedDescription(r);
+				}
+			}
+			s+="--------------------------------------------------\n";
+		}
+
+		return s;
+	}
+	else{
+		QString s1=this->getDetailedDescription(r);
+
+		s1+="--------------------------------------------------\n";
+		s1+=tr("Time constraints directly related to this activity:");
+		s1+="\n";
+		
+		QString s2;
+		for(int i=0; i<r.timeConstraintsList.size(); i++){
+			TimeConstraint* c=r.timeConstraintsList[i];
+			if(c->isRelatedToActivity(r, this->id)){
+				s2+="<br />\n";
+				s2+=c->getDetailedDescription(r, richText, colors);
+			}
+		}
+
+		QString s3;
+		s3+="--------------------------------------------------\n";
+		s3+=tr("Space constraints directly related to this activity:");
+		s3+="\n";
+		
+		QString s4;
+		for(int i=0; i<r.spaceConstraintsList.size(); i++){
+			SpaceConstraint* c=r.spaceConstraintsList[i];
+			if(c->isRelatedToActivity(r, this->id)){
+				s4+="<br />\n";
+				s4+=c->getDetailedDescription(r, richText, colors);
+			}
+		}
+		
+		QString s5;
+		s5+="--------------------------------------------------\n";
+
+		if(r.groupActivitiesInInitialOrderList.count()>0){
+			s5+=tr("Timetable generation options directly related to this activity:");
+			s5+="\n";
+			for(int i=0; i<r.groupActivitiesInInitialOrderList.count(); i++){
+				GroupActivitiesInInitialOrderItem* item=r.groupActivitiesInInitialOrderList[i];
+				if(item->idsSet.contains(id)){
+					s5+="\n";
+					s5+=item->getDetailedDescription(r);
+				}
+			}
+			s5+="--------------------------------------------------\n";
+		}
+
+		return protect4(s1)+s2+protect4(s3)+s4+protect4(s5);
+	}
 }
 
 bool Activity::isSplit()

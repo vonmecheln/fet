@@ -1153,6 +1153,10 @@ public Q_SLOTS:
 	void shortcutSavePushButton_clicked();
 	void shortcutSaveAsPushButton_clicked();
 	
+	void humanReadableText();
+	void backupSettings();
+	void restoreSettings();
+	
 	void replyFinished(QNetworkReply* networkReply);
 	
 protected:

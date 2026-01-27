@@ -96,6 +96,8 @@ qt_add_executable(fet WIN32 MACOSX_BUNDLE
     helptipsform_template.ui
     hoursform.cpp hoursform.h
     hoursform_template.ui
+    humanreadabledataform.cpp humanreadabledataform.h
+    humanreadabledataform_template.ui
     importinterface.cpp importinterface.h
     institutionnameform.cpp institutionnameform.h
     institutionnameform_template.ui

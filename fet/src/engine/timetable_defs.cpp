@@ -61,7 +61,7 @@ int STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
 /**
 The FET version
 */
-const QString FET_VERSION="7.7.1";
+const QString FET_VERSION="7.7.2";
 
 /**
 The version number of the data format, useful when saving/restoring the history to/from the disk.
@@ -207,6 +207,18 @@ QString protect3(const QString& str) //used for CSS
 	QString p=str;
 	p.replace("/*", "/_*");
 	p.replace("*/", "*_/");
+	return p;
+}
+
+QString protect4(const QString& str) //used for interface rich text format
+{
+	QString p=str;
+	p.replace("&", "&amp;");
+	p.replace("\"", "&quot;");
+	p.replace(">", "&gt;");
+	p.replace("<", "&lt;");
+	p.replace("'", "&#39;"); //note that "&apos;" does not work for HTML 4
+	p.replace("\n", "<br />\n");
 	return p;
 }
 

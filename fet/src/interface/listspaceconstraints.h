@@ -50,9 +50,14 @@ class ListSpaceConstraintsDialog: public QDialog
 
 	QCheckBox* showRelatedCheckBox;
 
+	QCheckBox* colorsCheckBox;
+	
+	QCheckBox* filterCheckBox;
+	QCheckBox* sortedCheckBox;
+
 public:
 	ListSpaceConstraintsDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop, QSplitter* _splitter,
-							   QCheckBox* showRelatedCheckBox);
+							   QCheckBox* _showRelatedCheckBox, QCheckBox* _colorsCheckBox, QCheckBox* _filterCheckBox, QCheckBox* _sortedCheckBox);
 	~ListSpaceConstraintsDialog();
 };
 
@@ -80,6 +85,8 @@ class ListSpaceConstraints: public QObject
 
 	QCheckBox* showRelatedCheckBox;
 
+	QCheckBox* colorsCheckBox;
+
 	QSplitter* splitter;
 
 	QListWidget* constraintsListWidget;
@@ -88,6 +95,10 @@ class ListSpaceConstraints: public QObject
 	QPushButton* addPushButton;
 	QPushButton* modifyPushButton;
 	QPushButton* removePushButton;
+
+	QPushButton* upPushButton;
+	QPushButton* downPushButton;
+
 	QPushButton* helpPushButton;
 	QPushButton* closePushButton;
 
@@ -126,6 +137,10 @@ private:
 	void addClicked();
 	void modifyClicked();
 	void removeClicked();
+
+	void moveSpaceConstraintUp();
+	void moveSpaceConstraintDown();
+
 	void helpClicked();
 	void closeClicked();
 
@@ -146,6 +161,8 @@ private:
 	void selectionChanged();
 
 	void showRelatedCheckBoxToggled();
+
+	void colorsCheckBoxToggled();
 };
 
 #endif

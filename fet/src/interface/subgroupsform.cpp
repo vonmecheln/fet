@@ -87,6 +87,8 @@ SubgroupsForm::SubgroupsForm(QWidget* parent): QDialog(parent)
 	connect(codePushButton, &QPushButton::clicked, this, &SubgroupsForm::code);
 	connect(commentsPushButton, &QPushButton::clicked, this, &SubgroupsForm::comments);
 
+	connect(colorsCheckBox, &QCheckBox::toggled, this, &SubgroupsForm::colorsCheckBoxToggled);
+
 	if(SHORTCUT_PLUS){
 		QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
 		connect(addShortcut, &QShortcut::activated, [=]{addSubgroupPushButton->animateClick();});
@@ -142,6 +144,8 @@ SubgroupsForm::SubgroupsForm(QWidget* parent): QDialog(parent)
 	QSettings settings(COMPANY, PROGRAM);
 	if(settings.contains(this->metaObject()->className()+QString("/splitter-state")))
 		splitter->restoreState(settings.value(this->metaObject()->className()+QString("/splitter-state")).toByteArray());
+
+	colorsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/use-colors"), "false").toBool());
 	
 	yearsListWidget->clear();
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
@@ -163,6 +167,8 @@ SubgroupsForm::~SubgroupsForm()
 	//save splitter state
 	QSettings settings(COMPANY, PROGRAM);
 	settings.setValue(this->metaObject()->className()+QString("/splitter-state"), splitter->saveState());
+
+	settings.setValue(this->metaObject()->className()+QString("/use-colors"), colorsCheckBox->isChecked());
 }
 
 void SubgroupsForm::addSubgroup()
@@ -319,7 +325,7 @@ void SubgroupsForm::removeSubgroup()
 		if(q>=0)
 			subgroupsListWidget->setCurrentRow(q);
 		else
-			subgroupTextEdit->setPlainText(QString(""));
+			subgroupTextEdit->setText(QString(""));
 	}
 
 	/*if(gt.rules.searchStudentsSet(subgroupName)!=nullptr)
@@ -402,7 +408,7 @@ void SubgroupsForm::purgeSubgroup()
 		if(q>=0)
 			subgroupsListWidget->setCurrentRow(q);
 		else
-			subgroupTextEdit->setPlainText(QString(""));
+			subgroupTextEdit->setText(QString(""));
 	}
 
 	/*if(gt.rules.searchStudentsSet(subgroupName)!=nullptr)
@@ -416,7 +422,7 @@ void SubgroupsForm::yearChanged(const QString& yearName)
 	if(yearIndex<0){
 		groupsListWidget->clear();
 		subgroupsListWidget->clear();
-		subgroupTextEdit->setPlainText(QString(""));
+		subgroupTextEdit->setText(QString(""));
 		return;
 	}
 	StudentsYear* sty=gt.rules.yearsList.at(yearIndex);
@@ -431,7 +437,7 @@ void SubgroupsForm::yearChanged(const QString& yearName)
 		groupsListWidget->setCurrentRow(0);
 	else{
 		subgroupsListWidget->clear();
-		subgroupTextEdit->setPlainText(QString(""));
+		subgroupTextEdit->setText(QString(""));
 	}
 }
 
@@ -446,7 +452,7 @@ void SubgroupsForm::groupChanged(const QString& groupName)
 	int groupIndex=gt.rules.searchGroup(yearName, groupName);
 	if(groupIndex<0){
 		subgroupsListWidget->clear();
-		subgroupTextEdit->setPlainText(QString(""));
+		subgroupTextEdit->setText(QString(""));
 		return;
 	}
 
@@ -461,18 +467,18 @@ void SubgroupsForm::groupChanged(const QString& groupName)
 	if(subgroupsListWidget->count()>0)
 		subgroupsListWidget->setCurrentRow(0);
 	else
-		subgroupTextEdit->setPlainText(QString(""));
+		subgroupTextEdit->setText(QString(""));
 }
 
 void SubgroupsForm::subgroupChanged(const QString& subgroupName)
 {
 	StudentsSet* ss=gt.rules.searchStudentsSet(subgroupName);
 	if(ss==nullptr){
-		subgroupTextEdit->setPlainText(QString(""));
+		subgroupTextEdit->setText(QString(""));
 		return;
 	}
 	StudentsSubgroup* s=(StudentsSubgroup*)ss;
-	subgroupTextEdit->setPlainText(s->getDetailedDescriptionWithConstraints(gt.rules));
+	subgroupTextEdit->setPlainText(s->getDetailedDescriptionWithConstraints(gt.rules, true, colorsCheckBox->isChecked()));
 }
 
 void SubgroupsForm::moveSubgroupUp()
@@ -634,7 +640,7 @@ void SubgroupsForm::modifySubgroup()
 	if(q>=0)
 		subgroupsListWidget->setCurrentRow(q);
 	else
-		subgroupTextEdit->setPlainText(QString(""));
+		subgroupTextEdit->setText(QString(""));
 }
 
 void SubgroupsForm::activateStudents()
@@ -889,4 +895,9 @@ void SubgroupsForm::code()
 
 		subgroupChanged(subgroupName);
 	}
+}
+
+void SubgroupsForm::colorsCheckBoxToggled()
+{
+	subgroupChanged(subgroupsListWidget->currentItem()->text());
 }

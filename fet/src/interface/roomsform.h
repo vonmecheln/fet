@@ -52,6 +52,8 @@ public Q_SLOTS:
 	void makeEditVirtual();
 	
 	void help();
+
+	void colorsCheckBoxToggled();
 };
 
 #endif

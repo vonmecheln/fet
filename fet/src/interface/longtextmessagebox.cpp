@@ -71,7 +71,7 @@ int LongTextMessageBox::confirmationWithDimensions
 	
 	QVBoxLayout* vl=new QVBoxLayout(&dialog);
 	QTextEdit* te=new QTextEdit();
-	te->setPlainText(text);
+	te->setText(text);
 	te->setReadOnly(true);
 	
 	QPushButton* pb0=nullptr;
@@ -199,7 +199,7 @@ void LongTextMessageBox::informationWithDimensions
 	
 	QVBoxLayout* vl=new QVBoxLayout(&dialog);
 	QTextEdit* te=new QTextEdit();
-	te->setPlainText(text);
+	te->setText(text);
 	te->setReadOnly(true);
 	
 	QPushButton* pb=new QPushButton(tr("OK"));
@@ -302,7 +302,7 @@ int LongTextMessageBox::largeConfirmationWithDimensionsThreeButtonsYesNoCancel
 	
 	QVBoxLayout* vl=new QVBoxLayout(&dialog);
 	QTextEdit* te=new QTextEdit();
-	te->setPlainText(text);
+	te->setText(text);
 	te->setReadOnly(true);
 	
 	QPushButton* pb0=nullptr;

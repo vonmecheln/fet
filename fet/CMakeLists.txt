@@ -84,7 +84,7 @@ if(TARGET Qt::lupdate AND TARGET Qt::lrelease)
         set(QT_NO_MISSING_CATALOG_LANGUAGE_WARNING ON)
         qt_add_translations(fet
             LUPDATE_TARGET lupdate
-            LUPDATE_OPTIONS -no-obsolete -locations absolute
+            LUPDATE_OPTIONS -locations absolute -no-obsolete
             LRELEASE_TARGET lrelease
             TS_FILE_BASE fet
             TS_OUTPUT_DIRECTORY translations

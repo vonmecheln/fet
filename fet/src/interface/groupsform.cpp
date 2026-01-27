@@ -82,6 +82,8 @@ GroupsForm::GroupsForm(QWidget* parent): QDialog(parent)
 	connect(codePushButton, &QPushButton::clicked, this, &GroupsForm::code);
 	connect(commentsPushButton, &QPushButton::clicked, this, &GroupsForm::comments);
 
+	connect(colorsCheckBox, &QCheckBox::toggled, this, &GroupsForm::colorsCheckBoxToggled);
+
 	if(SHORTCUT_PLUS){
 		QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
 		connect(addShortcut, &QShortcut::activated, [=]{addGroupPushButton->animateClick();});
@@ -137,6 +139,8 @@ GroupsForm::GroupsForm(QWidget* parent): QDialog(parent)
 	QSettings settings(COMPANY, PROGRAM);
 	if(settings.contains(this->metaObject()->className()+QString("/splitter-state")))
 		splitter->restoreState(settings.value(this->metaObject()->className()+QString("/splitter-state")).toByteArray());
+
+	colorsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/use-colors"), "false").toBool());
 	
 	yearsListWidget->clear();
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
@@ -156,6 +160,8 @@ GroupsForm::~GroupsForm()
 	//save splitter state
 	QSettings settings(COMPANY, PROGRAM);
 	settings.setValue(this->metaObject()->className()+QString("/splitter-state"), splitter->saveState());
+
+	settings.setValue(this->metaObject()->className()+QString("/use-colors"), colorsCheckBox->isChecked());
 }
 
 void GroupsForm::addGroup()
@@ -279,7 +285,7 @@ void GroupsForm::removeGroup()
 		if(q>=0)
 			groupsListWidget->setCurrentRow(q);
 		else
-			groupTextEdit->setPlainText(QString(""));
+			groupTextEdit->setText(QString(""));
 	}
 
 	/*if(gt.rules.searchStudentsSet(groupName)!=nullptr)
@@ -352,7 +358,7 @@ void GroupsForm::purgeGroup()
 		if(q>=0)
 			groupsListWidget->setCurrentRow(q);
 		else
-			groupTextEdit->setPlainText(QString(""));
+			groupTextEdit->setText(QString(""));
 	}
 
 	/*if(gt.rules.searchStudentsSet(groupName)!=nullptr)
@@ -365,7 +371,7 @@ void GroupsForm::yearChanged(const QString& yearName)
 	int yearIndex=gt.rules.searchYear(yearName);
 	if(yearIndex<0){
 		groupsListWidget->clear();
-		groupTextEdit->setPlainText(QString(""));
+		groupTextEdit->setText(QString(""));
 		return;
 	}
 
@@ -380,18 +386,18 @@ void GroupsForm::yearChanged(const QString& yearName)
 	if(groupsListWidget->count()>0)
 		groupsListWidget->setCurrentRow(0);
 	else
-		groupTextEdit->setPlainText(QString(""));
+		groupTextEdit->setText(QString(""));
 }
 
 void GroupsForm::groupChanged(const QString& groupName)
 {
 	StudentsSet* ss=gt.rules.searchStudentsSet(groupName);
 	if(ss==nullptr){
-		groupTextEdit->setPlainText(QString(""));
+		groupTextEdit->setText(QString(""));
 		return;
 	}
 	StudentsGroup* sg=(StudentsGroup*)ss;
-	groupTextEdit->setPlainText(sg->getDetailedDescriptionWithConstraints(gt.rules));
+	groupTextEdit->setText(sg->getDetailedDescriptionWithConstraints(gt.rules, true, colorsCheckBox->isChecked()));
 }
 
 void GroupsForm::moveGroupUp()
@@ -531,7 +537,7 @@ void GroupsForm::modifyGroup()
 	if(q>=0)
 		groupsListWidget->setCurrentRow(q);
 	else
-		groupTextEdit->setPlainText(QString(""));
+		groupTextEdit->setText(QString(""));
 }
 
 void GroupsForm::activateStudents()
@@ -768,4 +774,9 @@ void GroupsForm::code()
 
 		groupChanged(groupName);
 	}
+}
+
+void GroupsForm::colorsCheckBoxToggled()
+{
+	groupChanged(groupsListWidget->currentItem()->text());
 }

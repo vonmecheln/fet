@@ -28,6 +28,8 @@ File timeconstraint.cpp
 #include "activitytag.h"
 #include "studentsset.h"
 
+#include "timetableexport.h"
+
 #include "matrix.h"
 
 #include <QString>
@@ -6608,6 +6610,205 @@ QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesMaxTotalNumberO
 	return stream;
 }
 
+QString listsOfDaysAndHoursToTable(Rules& r, const QList<int>& days, const QList<int>& hours, bool direct, bool notAvailable, bool colors)
+{
+	QString s;
+	QSet<int> selectedTimesSet;
+	
+	assert(days.count()==hours.count());
+	
+	for(int i=0; i<days.count(); i++){
+		int d=days.at(i);
+		int h=hours.at(i);
+		assert(d>=0);
+		assert(h>=0);
+		selectedTimesSet.insert(d+h*r.nDaysPerWeek);
+	}
+	
+	s+="<table align=\"center\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\">\n";
+	for(int rh=0; rh<(r.mode!=MORNINGS_AFTERNOONS?r.nHoursPerDay:r.nRealHoursPerDay); rh++){
+		int h=(r.mode!=MORNINGS_AFTERNOONS?rh:rh%r.nHoursPerDay);
+		s+="<tr>";
+		for(int rd=0; rd<(r.mode!=MORNINGS_AFTERNOONS?r.nDaysPerWeek:r.nRealDaysPerWeek); rd++){
+			int d;
+			if(!LANGUAGE_STYLE_RIGHT_TO_LEFT)
+				d=(r.mode!=MORNINGS_AFTERNOONS?rd:2*rd+(rh/r.nHoursPerDay));
+			else
+				d=(r.mode!=MORNINGS_AFTERNOONS?(r.nDaysPerWeek-1-rd):2*(r.nRealDaysPerWeek-1-rd)+(rh/r.nHoursPerDay));
+			if((direct && selectedTimesSet.contains(d+h*r.nDaysPerWeek)) || (!direct && !selectedTimesSet.contains(d+h*r.nDaysPerWeek))){
+				s+="<td width=\"20\" align=\"center\"";
+/*				if(r.mode==MORNINGS_AFTERNOONS && rh==r.nHoursPerDay-1){
+					s+=" border-bottom-width=\"2px\"";
+				}*/
+
+				if(colors){
+					if(notAvailable){
+						s+=" bgcolor=\"darkred\"";
+					}
+					else{
+						s+=" bgcolor=\"darkcyan\"";
+					}
+				}
+				s+=">";
+				s+=notAvailable?"X":"✓";
+				s+="</td>";
+			}
+			else{
+				s+="<td width=\"20\" align=\"center\"";
+				if(colors){
+					if(notAvailable){
+						s+=" bgcolor=\"darkgreen\"";
+					}
+					else{
+						s+=" bgcolor=\"darkgoldenrod\"";
+					}
+				}
+				s+=">&nbsp;</td>";
+			}
+		}
+		s+="</tr>\n";
+		if(r.mode==MORNINGS_AFTERNOONS && rh==r.nHoursPerDay-1) //by g.theodoroy
+			s+="</table><table align=\"center\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin-top:5;\">";
+	}
+	s+="</table>";
+	
+	return s;
+}
+
+QString listsOfListsOfDaysAndHoursToTableOfNumbers(Rules& r, const QList<QList<int>>& days, const QList<QList<int>>& hours, bool colors)
+{
+	QString s;
+	
+	assert(days.count()==hours.count());
+	
+	Matrix2D<int> a;
+	a.resize(r.nDaysPerWeek, r.nHoursPerDay);
+	for(int d=0; d<r.nDaysPerWeek; d++)
+		for(int h=0; h<r.nHoursPerDay; h++)
+			a[d][h]=0;
+			
+	for(int i=0; i<days.count(); i++){
+		const QList<int>& dl=days.at(i);
+		const QList<int>& hl=hours.at(i);
+		
+		assert(dl.count()==hl.count());
+		
+		for(int j=0; j<dl.count(); j++){
+			int d=dl.at(j);
+			int h=hl.at(j);
+			a[d][h]=i+1;
+		}
+	}
+	
+	s+="<table align=\"center\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\">\n";
+	for(int rh=0; rh<(r.mode!=MORNINGS_AFTERNOONS?r.nHoursPerDay:r.nRealHoursPerDay); rh++){
+		int h=(r.mode!=MORNINGS_AFTERNOONS?rh:rh%r.nHoursPerDay);
+		s+="<tr>";
+		for(int rd=0; rd<(r.mode!=MORNINGS_AFTERNOONS?r.nDaysPerWeek:r.nRealDaysPerWeek); rd++){
+			int d;
+			if(!LANGUAGE_STYLE_RIGHT_TO_LEFT)
+				d=(r.mode!=MORNINGS_AFTERNOONS?rd:2*rd+(rh/r.nHoursPerDay));
+			else
+				d=(r.mode!=MORNINGS_AFTERNOONS?(r.nDaysPerWeek-1-rd):2*(r.nRealDaysPerWeek-1-rd)+(rh/r.nHoursPerDay));
+			if(a[d][h]>0){
+				s+="<td width=\"20\" align=\"center\"";
+				if(colors){
+					QString bgColor;
+					//QString fgColor;
+					
+					switch(a[d][h]){
+						case 1:
+							bgColor="darkblue";
+							//fgColor="white";
+
+							break;
+							
+						case 2:
+							bgColor="darkorange";
+							//fgColor="black";
+
+							break;
+							
+						case 3:
+							bgColor="darkcyan";
+							//fgColor="white";
+
+							break;
+							
+						case 4:
+							bgColor="darkmagenta";
+							//fgColor="white";
+
+							break;
+							
+						case 5:
+							bgColor="darksalmon";
+							//fgColor="black";
+
+							break;
+							
+						case 6:
+							bgColor="chartreuse";
+							//fgColor="black";
+
+							break;
+							
+						case 7:
+							bgColor="darkgrey";
+							//fgColor="black";
+
+							break;
+							
+						case 8:
+							bgColor="gold";
+							//fgColor="black";
+
+							break;
+							
+						case 9:
+							bgColor="#b25ec7"; //rgb(178, 94, 199)
+							//fgColor="black";
+
+							break;
+							
+						case 10:
+							bgColor="#935f35"; //rgb(147, 95, 53)
+							//fgColor="white";
+
+							break;
+							
+						default:
+							int r, g, b;
+							TimetableExport::stringToColor(QString::number(a[d][h]), r, g, b);
+							//double brightness = double(r)*0.299 + double(g)*0.587 + double(b)*0.114;
+							//bgColor="rgb("+QString::number(r)+", "+QString::number(g)+", "+QString::number(b)+")";
+							bgColor="#"+QString::number(r, 16)+QString::number(g, 16)+QString::number(b, 16);
+							/*if(brightness<127.5)
+								fgColor="white";
+							else
+								fgColor="black";*/
+
+							break;
+					}
+					s+=" bgcolor=\""+bgColor+"\"";// "fgcolor=\""+fgColor+"\""*/;
+				}
+				s+=">";
+				s+=QString::number(a[d][h]);
+				s+="</td>";
+			}
+			else{
+				s+="<td width=\"20\" align=\"center\">&nbsp;</td>";
+			}
+		}
+		s+="</tr>\n";
+		if(r.mode==MORNINGS_AFTERNOONS && rh==r.nHoursPerDay-1) //by g.theodoroy
+			s+="</table><table align=\"center\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin-top:5;\">";
+	}
+	s+="</table>";
+	
+	return s;
+}
+
 static QString trueFalse(bool x){
 	if(!x)
 		return QString("false");
@@ -8445,9 +8646,10 @@ QString ConstraintBasicCompulsoryTime::getDescription(Rules& r)
 	return begin+tr("Basic compulsory constraints (time)") + translatedCommaSpace() + tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage))+end;
 }
 
-QString ConstraintBasicCompulsoryTime::getDetailedDescription(Rules& r)
+QString ConstraintBasicCompulsoryTime::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("These are the basic compulsory constraints (referring to time allocation) for any timetable");
 	s+="\n";
@@ -8466,7 +8668,7 @@ QString ConstraintBasicCompulsoryTime::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString){
@@ -8959,39 +9161,65 @@ QString ConstraintTeacherNotAvailableTimes::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherNotAvailableTimes::getDetailedDescription(Rules& r)
+QString ConstraintTeacherNotAvailableTimes::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
-	QString s=tr("Time constraint");s+="\n";
-	s+=tr("A teacher is not available");s+="\n";
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
-	s+=tr("Teacher=%1").arg(this->teacher);s+="\n";
+	if(!richText){
+		QString s=tr("Time constraint");s+="\n";
+		s+=tr("A teacher is not available");s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+		s+=tr("Teacher=%1").arg(this->teacher);s+="\n";
 
-	s+=tr("Not available at:", "It refers to a teacher");
-	s+="\n";
-	assert(days.count()==hours.count());
-	for(int i=0; i<days.count(); i++){
-		if(this->days.at(i)>=0){
-			s+=r.daysOfTheWeek[this->days.at(i)];
-			s+=" ";
-		}
-		if(this->hours.at(i)>=0){
-			s+=r.hoursOfTheDay[this->hours.at(i)];
-		}
-		if(i<days.count()-1)
-			s+=translatedSemicolonSpace();
-	}
-	s+="\n";
-
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+=tr("Not available at:", "It refers to a teacher");
 		s+="\n";
-	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
+		assert(days.count()==hours.count());
+		for(int i=0; i<days.count(); i++){
+			if(this->days.at(i)>=0){
+				s+=r.daysOfTheWeek[this->days.at(i)];
+				s+=" ";
+			}
+			if(this->hours.at(i)>=0){
+				s+=r.hoursOfTheDay[this->hours.at(i)];
+			}
+			if(i<days.count()-1)
+				s+=translatedSemicolonSpace();
+		}
 		s+="\n";
-	}
 
-	return s;
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+
+		return s;
+	}
+	else{
+		QString begin=tr("Time constraint");begin+="\n";
+		begin+=tr("A teacher is not available");begin+="\n";
+		begin+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));begin+="\n";
+		begin+=tr("Teacher=%1").arg(this->teacher);begin+="\n";
+
+		begin+=tr("Not available at:", "It refers to a teacher");
+		begin+="\n";
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString middle=listsOfDaysAndHoursToTable(r, days, hours, true, true, colors);
+		QString end;
+		end+="\n";
+
+		if(!active){
+			end+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+		
+		return protect4(begin)+middle+protect4(end);
+	}
 }
 
 bool ConstraintTeacherNotAvailableTimes::computeInternalStructure(QWidget* parent, Rules& r){
@@ -9332,40 +9560,67 @@ QString ConstraintStudentsSetNotAvailableTimes::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetNotAvailableTimes::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetNotAvailableTimes::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
-	QString s=tr("Time constraint");s+="\n";
-	s+=tr("A students set is not available");s+="\n";
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	if(!richText){
+		QString s=tr("Time constraint");s+="\n";
+		s+=tr("A students set is not available");s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
-	s+=tr("Students=%1").arg(this->students);s+="\n";
+		s+=tr("Students=%1").arg(this->students);s+="\n";
 
-	s+=tr("Not available at:", "It refers to a students set");s+="\n";
+		s+=tr("Not available at:", "It refers to a students set");s+="\n";
 	
-	assert(days.count()==hours.count());
-	for(int i=0; i<days.count(); i++){
-		if(this->days.at(i)>=0){
-			s+=r.daysOfTheWeek[this->days.at(i)];
-			s+=" ";
+		assert(days.count()==hours.count());
+		for(int i=0; i<days.count(); i++){
+			if(this->days.at(i)>=0){
+				s+=r.daysOfTheWeek[this->days.at(i)];
+				s+=" ";
+			}
+			if(this->hours.at(i)>=0){
+				s+=r.hoursOfTheDay[this->hours.at(i)];
+			}
+			if(i<days.count()-1)
+				s+=translatedSemicolonSpace();
 		}
-		if(this->hours.at(i)>=0){
-			s+=r.hoursOfTheDay[this->hours.at(i)];
+		s+="\n";
+
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
 		}
-		if(i<days.count()-1)
-			s+=translatedSemicolonSpace();
-	}
-	s+="\n";
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
 
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
-		s+="\n";
+		return s;
 	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
-		s+="\n";
-	}
+	else{
+		QString begin=tr("Time constraint");begin+="\n";
+		begin+=tr("A students set is not available");begin+="\n";
+		begin+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));begin+="\n";
 
-	return s;
+		begin+=tr("Students=%1").arg(this->students);begin+="\n";
+
+		begin+=tr("Not available at:", "It refers to a students set");begin+="\n";
+		
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString middle=listsOfDaysAndHoursToTable(r, days, hours, true, true, colors);
+		QString end;
+		end+="\n";
+
+		if(!active){
+			end+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+
+		return protect4(begin)+middle+protect4(end);
+	}
 }
 
 double ConstraintStudentsSetNotAvailableTimes::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -9649,10 +9904,12 @@ QString ConstraintActivitiesSameStartingTime::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesSameStartingTime::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesSameStartingTime::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s;
-	
+
 	s=tr("Time constraint");s+="\n";
 	s+=tr("Activities must have the same starting time");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -9671,7 +9928,7 @@ QString ConstraintActivitiesSameStartingTime::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivitiesSameStartingTime::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -9969,8 +10226,10 @@ QString ConstraintActivitiesNotOverlapping::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesNotOverlapping::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesNotOverlapping::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Activities must not overlap");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -9990,7 +10249,7 @@ QString ConstraintActivitiesNotOverlapping::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivitiesNotOverlapping::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -10267,9 +10526,10 @@ QString ConstraintActivityTagsNotOverlapping::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivityTagsNotOverlapping::getDetailedDescription(Rules& r)
+QString ConstraintActivityTagsNotOverlapping::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Activity tags must not overlap");s+="\n";
@@ -10289,7 +10549,7 @@ QString ConstraintActivityTagsNotOverlapping::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivityTagsNotOverlapping::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -10595,8 +10855,10 @@ QString ConstraintMinDaysBetweenActivities::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintMinDaysBetweenActivities::getDetailedDescription(Rules& r)
+QString ConstraintMinDaysBetweenActivities::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Minimum number of days between activities");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -10619,7 +10881,7 @@ QString ConstraintMinDaysBetweenActivities::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintMinDaysBetweenActivities::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -11016,8 +11278,10 @@ QString ConstraintMaxDaysBetweenActivities::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintMaxDaysBetweenActivities::getDetailedDescription(Rules& r)
+QString ConstraintMaxDaysBetweenActivities::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Maximum number of days between activities");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -11039,7 +11303,7 @@ QString ConstraintMaxDaysBetweenActivities::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintMaxDaysBetweenActivities::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -11377,8 +11641,10 @@ QString ConstraintActivitiesMaxHourlySpan::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesMaxHourlySpan::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesMaxHourlySpan::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Activities max hourly span");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -11400,7 +11666,7 @@ QString ConstraintActivitiesMaxHourlySpan::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivitiesMaxHourlySpan::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -11742,8 +12008,10 @@ QString ConstraintMinGapsBetweenActivities::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintMinGapsBetweenActivities::getDetailedDescription(Rules& r)
+QString ConstraintMinGapsBetweenActivities::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Minimum gaps between activities (if the activities are on the same day)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -11765,7 +12033,7 @@ QString ConstraintMinGapsBetweenActivities::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintMinGapsBetweenActivities::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -12056,7 +12324,9 @@ QString ConstraintMaxGapsBetweenActivities::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintMaxGapsBetweenActivities::getDetailedDescription(Rules& r){
+QString ConstraintMaxGapsBetweenActivities::getDetailedDescription(Rules& r, bool richText, bool colors){
+	Q_UNUSED(colors);
+
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Maximum gaps between activities (if the activities are on the same day)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -12078,7 +12348,7 @@ QString ConstraintMaxGapsBetweenActivities::getDetailedDescription(Rules& r){
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintMaxGapsBetweenActivities::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -12291,9 +12561,10 @@ QString ConstraintTeachersMaxHoursDaily::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxHoursDaily::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMaxHoursDaily::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the maximum number of hours daily");s+="\n";
@@ -12309,7 +12580,7 @@ QString ConstraintTeachersMaxHoursDaily::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxHoursDaily::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -12519,9 +12790,10 @@ QString ConstraintTeacherMaxHoursDaily::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxHoursDaily::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMaxHoursDaily::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the maximum number of hours daily");s+="\n";
@@ -12538,7 +12810,7 @@ QString ConstraintTeacherMaxHoursDaily::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxHoursDaily::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -12741,9 +13013,10 @@ QString ConstraintTeachersMaxHoursContinuously::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxHoursContinuously::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMaxHoursContinuously::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the maximum number of hours continuously");s+="\n";
@@ -12759,7 +13032,7 @@ QString ConstraintTeachersMaxHoursContinuously::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxHoursContinuously::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -12978,9 +13251,10 @@ QString ConstraintTeacherMaxHoursContinuously::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxHoursContinuously::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMaxHoursContinuously::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the maximum number of hours continuously");s+="\n";
@@ -12997,7 +13271,7 @@ QString ConstraintTeacherMaxHoursContinuously::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxHoursContinuously::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -13230,9 +13504,10 @@ QString ConstraintTeachersActivityTagMaxHoursContinuously::getDescription(Rules&
 	return begin+s+end;
 }
 
-QString ConstraintTeachersActivityTagMaxHoursContinuously::getDetailedDescription(Rules& r)
+QString ConstraintTeachersActivityTagMaxHoursContinuously::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers, for an activity tag, must respect the maximum number of hours continuously");s+="\n";
@@ -13249,7 +13524,7 @@ QString ConstraintTeachersActivityTagMaxHoursContinuously::getDetailedDescriptio
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersActivityTagMaxHoursContinuously::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -13511,9 +13786,10 @@ QString ConstraintTeacherActivityTagMaxHoursContinuously::getDescription(Rules& 
 	return begin+s+end;
 }
 
-QString ConstraintTeacherActivityTagMaxHoursContinuously::getDetailedDescription(Rules& r)
+QString ConstraintTeacherActivityTagMaxHoursContinuously::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher for an activity tag must respect the maximum number of hours continuously");s+="\n";
@@ -13531,7 +13807,7 @@ QString ConstraintTeacherActivityTagMaxHoursContinuously::getDetailedDescription
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherActivityTagMaxHoursContinuously::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -13771,9 +14047,10 @@ QString ConstraintTeacherMaxDaysPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxDaysPerWeek::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMaxDaysPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the maximum number of days per week");s+="\n";
@@ -13790,7 +14067,7 @@ QString ConstraintTeacherMaxDaysPerWeek::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -14013,9 +14290,10 @@ QString ConstraintTeachersMaxDaysPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxDaysPerWeek::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMaxDaysPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the maximum number of days per week");s+="\n";
@@ -14031,7 +14309,7 @@ QString ConstraintTeachersMaxDaysPerWeek::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -14266,9 +14544,10 @@ QString ConstraintTeachersMaxGapsPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxGapsPerWeek::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMaxGapsPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the maximum number of gaps per week");s+="\n";
@@ -14285,7 +14564,7 @@ QString ConstraintTeachersMaxGapsPerWeek::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -14483,9 +14762,10 @@ QString ConstraintTeacherMaxGapsPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxGapsPerWeek::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMaxGapsPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint"); s+="\n";
 	s+=tr("A teacher must respect the maximum number of gaps per week"); s+="\n";
@@ -14503,7 +14783,7 @@ QString ConstraintTeacherMaxGapsPerWeek::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -14695,9 +14975,10 @@ QString ConstraintTeachersMaxGapsPerDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxGapsPerDay::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMaxGapsPerDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the maximum gaps per day");s+="\n";
@@ -14714,7 +14995,7 @@ QString ConstraintTeachersMaxGapsPerDay::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxGapsPerDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -14911,9 +15192,10 @@ QString ConstraintTeacherMaxGapsPerDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxGapsPerDay::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMaxGapsPerDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint"); s+="\n";
 	s+=tr("A teacher must respect the maximum number of gaps per day"); s+="\n";
@@ -14931,7 +15213,7 @@ QString ConstraintTeacherMaxGapsPerDay::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxGapsPerDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -15124,9 +15406,10 @@ QString ConstraintTeachersMaxGapsPerMorningAndAfternoon::getDescription(Rules& r
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxGapsPerMorningAndAfternoon::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMaxGapsPerMorningAndAfternoon::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the maximum gaps per morning and afternoon");s+="\n";
@@ -15143,7 +15426,7 @@ QString ConstraintTeachersMaxGapsPerMorningAndAfternoon::getDetailedDescription(
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxGapsPerMorningAndAfternoon::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -15357,9 +15640,10 @@ QString ConstraintTeacherMaxGapsPerMorningAndAfternoon::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxGapsPerMorningAndAfternoon::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMaxGapsPerMorningAndAfternoon::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint"); s+="\n";
 	s+=tr("A teacher must respect the maximum number of gaps per morning and afternoon"); s+="\n";
@@ -15377,7 +15661,7 @@ QString ConstraintTeacherMaxGapsPerMorningAndAfternoon::getDetailedDescription(R
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxGapsPerMorningAndAfternoon::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -15601,37 +15885,62 @@ QString ConstraintBreakTimes::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintBreakTimes::getDetailedDescription(Rules& r)
+QString ConstraintBreakTimes::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
-	QString s=tr("Time constraint");s+="\n";
-	s+=tr("Break times");s+="\n";
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	if(!richText){
+		QString s=tr("Time constraint");s+="\n";
+		s+=tr("Break times");s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
-	s+=tr("Break at:"); s+="\n";
-	assert(days.count()==hours.count());
-	for(int i=0; i<days.count(); i++){
-		if(this->days.at(i)>=0){
-			s+=r.daysOfTheWeek[this->days.at(i)];
-			s+=" ";
+		s+=tr("Break at:"); s+="\n";
+		assert(days.count()==hours.count());
+		for(int i=0; i<days.count(); i++){
+			if(this->days.at(i)>=0){
+				s+=r.daysOfTheWeek[this->days.at(i)];
+				s+=" ";
+			}
+			if(this->hours.at(i)>=0){
+				s+=r.hoursOfTheDay[this->hours.at(i)];
+			}
+			if(i<days.count()-1)
+				s+=translatedSemicolonSpace();
 		}
-		if(this->hours.at(i)>=0){
-			s+=r.hoursOfTheDay[this->hours.at(i)];
-		}
-		if(i<days.count()-1)
-			s+=translatedSemicolonSpace();
-	}
-	s+="\n";
+		s+="\n";
 
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
-		s+="\n";
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+		
+		return s;
 	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
-		s+="\n";
+	else{
+		QString begin=tr("Time constraint");begin+="\n";
+		begin+=tr("Break times");begin+="\n";
+		begin+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));begin+="\n";
+
+		begin+=tr("Break at:"); begin+="\n";
+
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString middle=listsOfDaysAndHoursToTable(r, days, hours, true, true, colors);
+		QString end;
+		end+="\n";
+
+		if(!active){
+			end+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+		
+		return protect4(begin)+middle+protect4(end);
 	}
-	
-	return s;
 }
 
 bool ConstraintBreakTimes::computeInternalStructure(QWidget* parent, Rules& r)
@@ -15870,9 +16179,10 @@ QString ConstraintStudentsMaxGapsPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxGapsPerWeek::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMaxGapsPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the maximum number of gaps per week");s+="\n";
@@ -15889,7 +16199,7 @@ QString ConstraintStudentsMaxGapsPerWeek::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -16139,9 +16449,10 @@ QString ConstraintStudentsSetMaxGapsPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxGapsPerWeek::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMaxGapsPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the maximum number of gaps per week");s+="\n";
@@ -16159,7 +16470,7 @@ QString ConstraintStudentsSetMaxGapsPerWeek::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 	
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -16356,9 +16667,10 @@ QString ConstraintStudentsEarlyMaxBeginningsAtSecondHour::getDescription(Rules& 
 	return begin+s+end;
 }
 
-QString ConstraintStudentsEarlyMaxBeginningsAtSecondHour::getDetailedDescription(Rules& r)
+QString ConstraintStudentsEarlyMaxBeginningsAtSecondHour::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must begin their activities early, respecting maximum %1 later beginnings, at second hour")
@@ -16375,7 +16687,7 @@ QString ConstraintStudentsEarlyMaxBeginningsAtSecondHour::getDetailedDescription
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsEarlyMaxBeginningsAtSecondHour::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -16662,9 +16974,10 @@ QString ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::getDescription(Rule
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 
@@ -16683,7 +16996,7 @@ QString ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::getDetailedDescript
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -16916,9 +17229,10 @@ QString ConstraintStudentsMaxHoursDaily::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxHoursDaily::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMaxHoursDaily::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the maximum number of hours daily");s+="\n";
@@ -16934,7 +17248,7 @@ QString ConstraintStudentsMaxHoursDaily::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMaxHoursDaily::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -17117,9 +17431,10 @@ QString ConstraintStudentsSetMaxHoursDaily::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxHoursDaily::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMaxHoursDaily::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the maximum number of hours daily");s+="\n";
@@ -17136,7 +17451,7 @@ QString ConstraintStudentsSetMaxHoursDaily::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsSetMaxHoursDaily::computeInternalStructure(QWidget* parent, Rules& r)
@@ -17383,9 +17698,10 @@ QString ConstraintStudentsMaxHoursContinuously::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxHoursContinuously::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMaxHoursContinuously::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the maximum number of hours continuously");s+="\n";
@@ -17401,7 +17717,7 @@ QString ConstraintStudentsMaxHoursContinuously::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMaxHoursContinuously::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -17609,9 +17925,10 @@ QString ConstraintStudentsSetMaxHoursContinuously::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxHoursContinuously::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMaxHoursContinuously::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the maximum number of hours continuously");s+="\n";
@@ -17628,7 +17945,7 @@ QString ConstraintStudentsSetMaxHoursContinuously::getDetailedDescription(Rules&
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsSetMaxHoursContinuously::computeInternalStructure(QWidget* parent, Rules& r)
@@ -17922,9 +18239,10 @@ QString ConstraintStudentsActivityTagMaxHoursContinuously::getDescription(Rules&
 	return begin+s+end;
 }
 
-QString ConstraintStudentsActivityTagMaxHoursContinuously::getDetailedDescription(Rules& r)
+QString ConstraintStudentsActivityTagMaxHoursContinuously::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students, for an activity tag, must respect the maximum number of hours continuously"); s+="\n";
@@ -17941,7 +18259,7 @@ QString ConstraintStudentsActivityTagMaxHoursContinuously::getDetailedDescriptio
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsActivityTagMaxHoursContinuously::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -18174,9 +18492,10 @@ QString ConstraintStudentsSetActivityTagMaxHoursContinuously::getDescription(Rul
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetActivityTagMaxHoursContinuously::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetActivityTagMaxHoursContinuously::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set, for an activity tag, must respect the maximum number of hours continuously"); s+="\n";
@@ -18194,7 +18513,7 @@ QString ConstraintStudentsSetActivityTagMaxHoursContinuously::getDetailedDescrip
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsSetActivityTagMaxHoursContinuously::computeInternalStructure(QWidget* parent, Rules& r)
@@ -18520,9 +18839,10 @@ QString ConstraintStudentsMinHoursDaily::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMinHoursDaily::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMinHoursDaily::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the minimum number of hours daily");s+="\n";
@@ -18539,7 +18859,7 @@ QString ConstraintStudentsMinHoursDaily::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMinHoursDaily::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -18823,9 +19143,10 @@ QString ConstraintStudentsSetMinHoursDaily::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMinHoursDaily::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMinHoursDaily::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the minimum number of hours daily");s+="\n";
@@ -18843,7 +19164,7 @@ QString ConstraintStudentsSetMinHoursDaily::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsSetMinHoursDaily::computeInternalStructure(QWidget* parent, Rules& r)
@@ -19246,8 +19567,10 @@ QString ConstraintActivityPreferredStartingTime::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivityPreferredStartingTime::getDetailedDescription(Rules& r)
+QString ConstraintActivityPreferredStartingTime::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
 		.arg(this->activityId)
@@ -19281,7 +19604,7 @@ QString ConstraintActivityPreferredStartingTime::getDetailedDescription(Rules& r
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivityPreferredStartingTime::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -19534,41 +19857,71 @@ QString ConstraintActivityPreferredTimeSlots::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivityPreferredTimeSlots::getDetailedDescription(Rules& r)
+QString ConstraintActivityPreferredTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
-	QString s=tr("Time constraint");s+="\n";
-	s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-		.arg(this->p_activityId)
-		.arg(getActivityDetailedDescription(r, this->p_activityId));
-	s+="\n";
-
-	s+=tr("has a set of preferred time slots (all hours of the activity must be in the allowed slots):");
-	s+="\n";
-	for(int i=0; i<this->p_nPreferredTimeSlots_L; i++){
-		if(this->p_days_L[i]>=0){
-			s+=r.daysOfTheWeek[this->p_days_L[i]];
-			s+=" ";
-		}
-		if(this->p_hours_L[i]>=0){
-			s+=r.hoursOfTheDay[this->p_hours_L[i]];
-		}
-		if(i<this->p_nPreferredTimeSlots_L-1)
-			s+=translatedSemicolonSpace();
-	}
-	s+="\n";
-
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
-
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+	if(!richText){
+		QString s=tr("Time constraint");s+="\n";
+		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			.arg(this->p_activityId)
+			.arg(getActivityDetailedDescription(r, this->p_activityId));
 		s+="\n";
-	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
-		s+="\n";
-	}
 
-	return s;
+		s+=tr("has a set of preferred time slots (all hours of the activity must be in the allowed slots):");
+		s+="\n";
+		for(int i=0; i<this->p_nPreferredTimeSlots_L; i++){
+			if(this->p_days_L[i]>=0){
+				s+=r.daysOfTheWeek[this->p_days_L[i]];
+				s+=" ";
+			}
+			if(this->p_hours_L[i]>=0){
+				s+=r.hoursOfTheDay[this->p_hours_L[i]];
+			}
+			if(i<this->p_nPreferredTimeSlots_L-1)
+				s+=translatedSemicolonSpace();
+		}
+		s+="\n";
+
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+
+		return s;
+	}
+	else{
+		QString begin=tr("Time constraint");begin+="\n";
+		begin+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			.arg(this->p_activityId)
+			.arg(getActivityDetailedDescription(r, this->p_activityId));
+		begin+="\n";
+
+		begin+=tr("has a set of preferred time slots (all hours of the activity must be in the allowed slots):");
+		begin+="\n";
+		
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString middle=listsOfDaysAndHoursToTable(r, p_days_L, p_hours_L, false, true, colors);
+		QString end;
+		end+="\n";
+
+		end+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));end+="\n";
+
+		if(!active){
+			end+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+
+		return protect4(begin)+middle+protect4(end);
+	}
 }
 
 double ConstraintActivityPreferredTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -19980,65 +20333,119 @@ QString ConstraintActivitiesPreferredTimeSlots::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesPreferredTimeSlots::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesPreferredTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
-	QString s=tr("Time constraint");s+="\n";
-	s+=tr("Activities with:");s+="\n";
+	if(!richText){
+		QString s=tr("Time constraint");s+="\n";
+		s+=tr("Activities with:");s+="\n";
 
-	if(this->p_teacherName!="")
-		s+=tr("Teacher=%1").arg(this->p_teacherName);
-	else
-		s+=tr("All teachers");
-	s+="\n";
-	if(this->p_studentsName!="")
-		s+=tr("Students=%1").arg(this->p_studentsName);
-	else
-		s+=tr("All students");
-	s+="\n";
-	if(this->p_subjectName!="")
-		s+=tr("Subject=%1").arg(this->p_subjectName);
-	else
-		s+=tr("All subjects");
-	s+="\n";
-	if(this->p_activityTagName!="")
-		s+=tr("Activity tag=%1").arg(this->p_activityTagName);
-	else
-		s+=tr("All activity tags");
-	s+="\n";
-
-	if(duration>=1)
-		s+=tr("Duration=%1").arg(duration);
-	else
-		s+=tr("All durations");
-	s+="\n";
-
-	s+=tr("have a set of preferred time slots (all hours of each affected activity must be in the allowed slots):");
-	s+="\n";
-	for(int i=0; i<this->p_nPreferredTimeSlots_L; i++){
-		if(this->p_days_L[i]>=0){
-			s+=r.daysOfTheWeek[this->p_days_L[i]];
-			s+=" ";
-		}
-		if(this->p_hours_L[i]>=0){
-			s+=r.hoursOfTheDay[this->p_hours_L[i]];
-		}
-		if(i<this->p_nPreferredTimeSlots_L-1)
-			s+=translatedSemicolonSpace();
-	}
-	s+="\n";
-
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
-
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		if(this->p_teacherName!="")
+			s+=tr("Teacher=%1").arg(this->p_teacherName);
+		else
+			s+=tr("All teachers");
 		s+="\n";
-	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
+		if(this->p_studentsName!="")
+			s+=tr("Students=%1").arg(this->p_studentsName);
+		else
+			s+=tr("All students");
 		s+="\n";
-	}
+		if(this->p_subjectName!="")
+			s+=tr("Subject=%1").arg(this->p_subjectName);
+		else
+			s+=tr("All subjects");
+		s+="\n";
+		if(this->p_activityTagName!="")
+			s+=tr("Activity tag=%1").arg(this->p_activityTagName);
+		else
+			s+=tr("All activity tags");
+		s+="\n";
 
-	return s;
+		if(duration>=1)
+			s+=tr("Duration=%1").arg(duration);
+		else
+			s+=tr("All durations");
+		s+="\n";
+
+		s+=tr("have a set of preferred time slots (all hours of each affected activity must be in the allowed slots):");
+		s+="\n";
+		for(int i=0; i<this->p_nPreferredTimeSlots_L; i++){
+			if(this->p_days_L[i]>=0){
+				s+=r.daysOfTheWeek[this->p_days_L[i]];
+				s+=" ";
+			}
+			if(this->p_hours_L[i]>=0){
+				s+=r.hoursOfTheDay[this->p_hours_L[i]];
+			}
+			if(i<this->p_nPreferredTimeSlots_L-1)
+				s+=translatedSemicolonSpace();
+		}
+		s+="\n";
+
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+
+		return s;
+	}
+	else{
+		QString begin=tr("Time constraint");begin+="\n";
+		begin+=tr("Activities with:");begin+="\n";
+
+		if(this->p_teacherName!="")
+			begin+=tr("Teacher=%1").arg(this->p_teacherName);
+		else
+			begin+=tr("All teachers");
+		begin+="\n";
+		if(this->p_studentsName!="")
+			begin+=tr("Students=%1").arg(this->p_studentsName);
+		else
+			begin+=tr("All students");
+		begin+="\n";
+		if(this->p_subjectName!="")
+			begin+=tr("Subject=%1").arg(this->p_subjectName);
+		else
+			begin+=tr("All subjects");
+		begin+="\n";
+		if(this->p_activityTagName!="")
+			begin+=tr("Activity tag=%1").arg(this->p_activityTagName);
+		else
+			begin+=tr("All activity tags");
+		begin+="\n";
+
+		if(duration>=1)
+			begin+=tr("Duration=%1").arg(duration);
+		else
+			begin+=tr("All durations");
+		begin+="\n";
+
+		begin+=tr("have a set of preferred time slots (all hours of each affected activity must be in the allowed slots):");
+		begin+="\n";
+
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString middle=listsOfDaysAndHoursToTable(r, p_days_L, p_hours_L, false, true, colors);
+		QString end;
+		end+="\n";
+
+		end+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));end+="\n";
+
+		if(!active){
+			end+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+
+		return protect4(begin)+middle+protect4(end);
+	}
 }
 
 double ConstraintActivitiesPreferredTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -20498,71 +20905,131 @@ QString ConstraintSubactivitiesPreferredTimeSlots::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintSubactivitiesPreferredTimeSlots::getDetailedDescription(Rules& r)
+QString ConstraintSubactivitiesPreferredTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
-	QString s=tr("Time constraint");s+="\n";
-	s+=tr("Subactivities with:");s+="\n";
-	
-	s+=tr("Component number=%1").arg(this->componentNumber);
-	s+="\n";
-
-	if(this->p_teacherName!="")
-		s+=tr("Teacher=%1").arg(this->p_teacherName);
-	else
-		s+=tr("All teachers");
-	s+="\n";
+	if(!richText){
+		QString s=tr("Time constraint");s+="\n";
+		s+=tr("Subactivities with:");s+="\n";
 		
-	if(this->p_studentsName!="")
-		s+=tr("Students=%1").arg(this->p_studentsName);
-	else
-		s+=tr("All students");
-	s+="\n";
-	
-	if(this->p_subjectName!="")
-		s+=tr("Subject=%1").arg(this->p_subjectName);
-	else
-		s+=tr("All subjects");
-	s+="\n";
-	
-	if(this->p_activityTagName!="")
-		s+=tr("Activity tag=%1").arg(this->p_activityTagName);
-	else
-		s+=tr("All activity tags");
-	s+="\n";
-
-	if(duration>=1)
-		s+=tr("Duration=%1").arg(duration);
-	else
-		s+=tr("All durations");
-	s+="\n";
-
-	s+=tr("have a set of preferred time slots (all hours of each affected subactivity must be in the allowed slots):");
-	s+="\n";
-	for(int i=0; i<this->p_nPreferredTimeSlots_L; i++){
-		if(this->p_days_L[i]>=0){
-			s+=r.daysOfTheWeek[this->p_days_L[i]];
-			s+=" ";
-		}
-		if(this->p_hours_L[i]>=0){
-			s+=r.hoursOfTheDay[this->p_hours_L[i]];
-		}
-		if(i<this->p_nPreferredTimeSlots_L-1)
-			s+=translatedSemicolonSpace();
-	}
-	s+="\n";
-
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
-
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+=tr("Component number=%1").arg(this->componentNumber);
 		s+="\n";
-	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
-		s+="\n";
-	}
 
-	return s;
+		if(this->p_teacherName!="")
+			s+=tr("Teacher=%1").arg(this->p_teacherName);
+		else
+			s+=tr("All teachers");
+		s+="\n";
+		
+		if(this->p_studentsName!="")
+			s+=tr("Students=%1").arg(this->p_studentsName);
+		else
+			s+=tr("All students");
+		s+="\n";
+		
+		if(this->p_subjectName!="")
+			s+=tr("Subject=%1").arg(this->p_subjectName);
+		else
+			s+=tr("All subjects");
+		s+="\n";
+		
+		if(this->p_activityTagName!="")
+			s+=tr("Activity tag=%1").arg(this->p_activityTagName);
+		else
+			s+=tr("All activity tags");
+		s+="\n";
+
+		if(duration>=1)
+			s+=tr("Duration=%1").arg(duration);
+		else
+			s+=tr("All durations");
+		s+="\n";
+
+		s+=tr("have a set of preferred time slots (all hours of each affected subactivity must be in the allowed slots):");
+		s+="\n";
+		for(int i=0; i<this->p_nPreferredTimeSlots_L; i++){
+			if(this->p_days_L[i]>=0){
+				s+=r.daysOfTheWeek[this->p_days_L[i]];
+				s+=" ";
+			}
+			if(this->p_hours_L[i]>=0){
+				s+=r.hoursOfTheDay[this->p_hours_L[i]];
+			}
+			if(i<this->p_nPreferredTimeSlots_L-1)
+				s+=translatedSemicolonSpace();
+		}
+		s+="\n";
+
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+
+		return s;
+	}
+	else{
+		QString begin=tr("Time constraint");begin+="\n";
+		begin+=tr("Subactivities with:");begin+="\n";
+		
+		begin+=tr("Component number=%1").arg(this->componentNumber);
+		begin+="\n";
+
+		if(this->p_teacherName!="")
+			begin+=tr("Teacher=%1").arg(this->p_teacherName);
+		else
+			begin+=tr("All teachers");
+		begin+="\n";
+		
+		if(this->p_studentsName!="")
+			begin+=tr("Students=%1").arg(this->p_studentsName);
+		else
+			begin+=tr("All students");
+		begin+="\n";
+		
+		if(this->p_subjectName!="")
+			begin+=tr("Subject=%1").arg(this->p_subjectName);
+		else
+			begin+=tr("All subjects");
+		begin+="\n";
+		
+		if(this->p_activityTagName!="")
+			begin+=tr("Activity tag=%1").arg(this->p_activityTagName);
+		else
+			begin+=tr("All activity tags");
+		begin+="\n";
+
+		if(duration>=1)
+			begin+=tr("Duration=%1").arg(duration);
+		else
+			begin+=tr("All durations");
+		begin+="\n";
+
+		begin+=tr("have a set of preferred time slots (all hours of each affected subactivity must be in the allowed slots):");
+		begin+="\n";
+
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString middle=listsOfDaysAndHoursToTable(r, p_days_L, p_hours_L, false, true, colors);
+		QString end;
+		end+="\n";
+
+		end+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));end+="\n";
+
+		if(!active){
+			end+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+
+		return protect4(begin)+middle+protect4(end);
+	}
 }
 
 double ConstraintSubactivitiesPreferredTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -20887,41 +21354,71 @@ QString ConstraintActivityPreferredStartingTimes::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivityPreferredStartingTimes::getDetailedDescription(Rules& r)
+QString ConstraintActivityPreferredStartingTimes::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
-	QString s=tr("Time constraint");s+="\n";
-	s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-		.arg(this->activityId)
-		.arg(getActivityDetailedDescription(r, this->activityId));
-	
-	s+="\n";
-	s+=tr("has a set of preferred starting times:");
-	s+="\n";
-	for(int i=0; i<this->nPreferredStartingTimes_L; i++){
-		if(this->days_L[i]>=0){
-			s+=r.daysOfTheWeek[this->days_L[i]];
-			s+=" ";
-		}
-		if(this->hours_L[i]>=0){
-			s+=r.hoursOfTheDay[this->hours_L[i]];
-		}
-		if(i<this->nPreferredStartingTimes_L-1)
-			s+=translatedSemicolonSpace();
-	}
-	s+="\n";
-
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
-
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+	if(!richText){
+		QString s=tr("Time constraint");s+="\n";
+		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			.arg(this->activityId)
+			.arg(getActivityDetailedDescription(r, this->activityId));
+		
 		s+="\n";
-	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
+		s+=tr("has a set of preferred starting times:");
 		s+="\n";
-	}
+		for(int i=0; i<this->nPreferredStartingTimes_L; i++){
+			if(this->days_L[i]>=0){
+				s+=r.daysOfTheWeek[this->days_L[i]];
+				s+=" ";
+			}
+			if(this->hours_L[i]>=0){
+				s+=r.hoursOfTheDay[this->hours_L[i]];
+			}
+			if(i<this->nPreferredStartingTimes_L-1)
+				s+=translatedSemicolonSpace();
+		}
+		s+="\n";
 
-	return s;
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+
+		return s;
+	}
+	else{
+		QString begin=tr("Time constraint");begin+="\n";
+		begin+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			.arg(this->activityId)
+			.arg(getActivityDetailedDescription(r, this->activityId));
+		
+		begin+="\n";
+		begin+=tr("has a set of preferred starting times:");
+		begin+="\n";
+
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString middle=listsOfDaysAndHoursToTable(r, days_L, hours_L, false, true, colors);
+		QString end;
+		end+="\n";
+
+		end+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));end+="\n";
+
+		if(!active){
+			end+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+
+		return protect4(begin)+middle+protect4(end);
+	}
 }
 
 double ConstraintActivityPreferredStartingTimes::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -21320,68 +21817,125 @@ QString ConstraintActivitiesPreferredStartingTimes::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesPreferredStartingTimes::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesPreferredStartingTimes::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
-	QString s=tr("Time constraint");s+="\n";
-	s+=tr("Activities with:");s+="\n";
+	if(!richText){
+		QString s=tr("Time constraint");s+="\n";
+		s+=tr("Activities with:");s+="\n";
 
-	if(this->teacherName!="")
-		s+=tr("Teacher=%1").arg(this->teacherName);
-	else
-		s+=tr("All teachers");
-	s+="\n";
-	
-	if(this->studentsName!="")
-		s+=tr("Students=%1").arg(this->studentsName);
-	else
-		s+=tr("All students");
-	s+="\n";
+		if(this->teacherName!="")
+			s+=tr("Teacher=%1").arg(this->teacherName);
+		else
+			s+=tr("All teachers");
+		s+="\n";
 		
-	if(this->subjectName!="")
-		s+=tr("Subject=%1").arg(this->subjectName);
-	else
-		s+=tr("All subjects");
-	s+="\n";
-	
-	if(this->activityTagName!="")
-		s+=tr("Activity tag=%1").arg(this->activityTagName);
-	else
-		s+=tr("All activity tags");
-	s+="\n";
-
-	if(duration>=1)
-		s+=tr("Duration=%1").arg(duration);
-	else
-		s+=tr("All durations");
-	s+="\n";
-
-	s+=tr("have a set of preferred starting times:");
-	s+="\n";
-	for(int i=0; i<this->nPreferredStartingTimes_L; i++){
-		if(this->days_L[i]>=0){
-			s+=r.daysOfTheWeek[this->days_L[i]];
-			s+=" ";
-		}
-		if(this->hours_L[i]>=0){
-			s+=r.hoursOfTheDay[this->hours_L[i]];
-		}
-		if(i<this->nPreferredStartingTimes_L-1)
-			s+=translatedSemicolonSpace();
-	}
-	s+="\n";
-
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
-
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		if(this->studentsName!="")
+			s+=tr("Students=%1").arg(this->studentsName);
+		else
+			s+=tr("All students");
 		s+="\n";
-	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
+		
+		if(this->subjectName!="")
+			s+=tr("Subject=%1").arg(this->subjectName);
+		else
+			s+=tr("All subjects");
 		s+="\n";
-	}
+		
+		if(this->activityTagName!="")
+			s+=tr("Activity tag=%1").arg(this->activityTagName);
+		else
+			s+=tr("All activity tags");
+		s+="\n";
 
-	return s;
+		if(duration>=1)
+			s+=tr("Duration=%1").arg(duration);
+		else
+			s+=tr("All durations");
+		s+="\n";
+
+		s+=tr("have a set of preferred starting times:");
+		s+="\n";
+		for(int i=0; i<this->nPreferredStartingTimes_L; i++){
+			if(this->days_L[i]>=0){
+				s+=r.daysOfTheWeek[this->days_L[i]];
+				s+=" ";
+			}
+			if(this->hours_L[i]>=0){
+				s+=r.hoursOfTheDay[this->hours_L[i]];
+			}
+			if(i<this->nPreferredStartingTimes_L-1)
+				s+=translatedSemicolonSpace();
+		}
+		s+="\n";
+
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+
+		return s;
+	}
+	else{
+		QString begin=tr("Time constraint");begin+="\n";
+		begin+=tr("Activities with:");begin+="\n";
+
+		if(this->teacherName!="")
+			begin+=tr("Teacher=%1").arg(this->teacherName);
+		else
+			begin+=tr("All teachers");
+		begin+="\n";
+		
+		if(this->studentsName!="")
+			begin+=tr("Students=%1").arg(this->studentsName);
+		else
+			begin+=tr("All students");
+		begin+="\n";
+		
+		if(this->subjectName!="")
+			begin+=tr("Subject=%1").arg(this->subjectName);
+		else
+			begin+=tr("All subjects");
+		begin+="\n";
+		
+		if(this->activityTagName!="")
+			begin+=tr("Activity tag=%1").arg(this->activityTagName);
+		else
+			begin+=tr("All activity tags");
+		begin+="\n";
+
+		if(duration>=1)
+			begin+=tr("Duration=%1").arg(duration);
+		else
+			begin+=tr("All durations");
+		begin+="\n";
+
+		begin+=tr("have a set of preferred starting times:");
+		begin+="\n";
+
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString middle=listsOfDaysAndHoursToTable(r, days_L, hours_L, false, true, colors);
+		QString end;
+		end+="\n";
+
+		end+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));end+="\n";
+
+		if(!active){
+			end+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+
+		return protect4(begin)+middle+protect4(end);
+	}
 }
 
 double ConstraintActivitiesPreferredStartingTimes::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -21825,70 +22379,129 @@ QString ConstraintSubactivitiesPreferredStartingTimes::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintSubactivitiesPreferredStartingTimes::getDetailedDescription(Rules& r)
+QString ConstraintSubactivitiesPreferredStartingTimes::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
-	QString s=tr("Time constraint");s+="\n";
-	s+=tr("Subactivities with:");s+="\n";
+	if(!richText){
+		QString s=tr("Time constraint");s+="\n";
+		s+=tr("Subactivities with:");s+="\n";
 
-	s+=tr("Component number=%1").arg(this->componentNumber);s+="\n";
+		s+=tr("Component number=%1").arg(this->componentNumber);s+="\n";
 
-	if(this->teacherName!="")
-		s+=tr("Teacher=%1").arg(this->teacherName);
-	else
-		s+=tr("All teachers");
-	s+="\n";
-		
-	if(this->studentsName!="")
-		s+=tr("Students=%1").arg(this->studentsName);
-	else
-		s+=tr("All students");
-	s+="\n";
-		
-	if(this->subjectName!="")
-		s+=tr("Subject=%1").arg(this->subjectName);
-	else
-		s+=tr("All subjects");
-	s+="\n";
-	
-	if(this->activityTagName!="")
-		s+=tr("Activity tag=%1").arg(this->activityTagName);
-	else
-		s+=tr("All activity tags");
-	s+="\n";
-
-	if(duration>=1)
-		s+=tr("Duration=%1").arg(duration);
-	else
-		s+=tr("All durations");
-	s+="\n";
-
-	s+=tr("have a set of preferred starting times:");
-	s+="\n";
-	for(int i=0; i<this->nPreferredStartingTimes_L; i++){
-		if(this->days_L[i]>=0){
-			s+=r.daysOfTheWeek[this->days_L[i]];
-			s+=" ";
-		}
-		if(this->hours_L[i]>=0){
-			s+=r.hoursOfTheDay[this->hours_L[i]];
-		}
-		if(i<this->nPreferredStartingTimes_L-1)
-			s+=translatedSemicolonSpace();
-	}
-	s+="\n";
-
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
-
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		if(this->teacherName!="")
+			s+=tr("Teacher=%1").arg(this->teacherName);
+		else
+			s+=tr("All teachers");
 		s+="\n";
-	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
+		
+		if(this->studentsName!="")
+			s+=tr("Students=%1").arg(this->studentsName);
+		else
+			s+=tr("All students");
 		s+="\n";
-	}
+		
+		if(this->subjectName!="")
+			s+=tr("Subject=%1").arg(this->subjectName);
+		else
+			s+=tr("All subjects");
+		s+="\n";
+		
+		if(this->activityTagName!="")
+			s+=tr("Activity tag=%1").arg(this->activityTagName);
+		else
+			s+=tr("All activity tags");
+		s+="\n";
 
-	return s;
+		if(duration>=1)
+			s+=tr("Duration=%1").arg(duration);
+		else
+			s+=tr("All durations");
+		s+="\n";
+
+		s+=tr("have a set of preferred starting times:");
+		s+="\n";
+		for(int i=0; i<this->nPreferredStartingTimes_L; i++){
+			if(this->days_L[i]>=0){
+				s+=r.daysOfTheWeek[this->days_L[i]];
+				s+=" ";
+			}
+			if(this->hours_L[i]>=0){
+				s+=r.hoursOfTheDay[this->hours_L[i]];
+			}
+			if(i<this->nPreferredStartingTimes_L-1)
+				s+=translatedSemicolonSpace();
+		}
+		s+="\n";
+
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+
+		return s;
+	}
+	else{
+		QString begin=tr("Time constraint");begin+="\n";
+		begin+=tr("Subactivities with:");begin+="\n";
+
+		begin+=tr("Component number=%1").arg(this->componentNumber);begin+="\n";
+
+		if(this->teacherName!="")
+			begin+=tr("Teacher=%1").arg(this->teacherName);
+		else
+			begin+=tr("All teachers");
+		begin+="\n";
+		
+		if(this->studentsName!="")
+			begin+=tr("Students=%1").arg(this->studentsName);
+		else
+			begin+=tr("All students");
+		begin+="\n";
+		
+		if(this->subjectName!="")
+			begin+=tr("Subject=%1").arg(this->subjectName);
+		else
+			begin+=tr("All subjects");
+		begin+="\n";
+		
+		if(this->activityTagName!="")
+			begin+=tr("Activity tag=%1").arg(this->activityTagName);
+		else
+			begin+=tr("All activity tags");
+		begin+="\n";
+
+		if(duration>=1)
+			begin+=tr("Duration=%1").arg(duration);
+		else
+			begin+=tr("All durations");
+		begin+="\n";
+
+		begin+=tr("have a set of preferred starting times:");
+		begin+="\n";
+
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString middle=listsOfDaysAndHoursToTable(r, days_L, hours_L, false, true, colors);
+		QString end;
+		end+="\n";
+
+		end+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));end+="\n";
+
+		if(!active){
+			end+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+
+		return protect4(begin)+middle+protect4(end);
+	}
 }
 
 double ConstraintSubactivitiesPreferredStartingTimes::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -22216,8 +22829,10 @@ QString ConstraintActivitiesSameStartingHour::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesSameStartingHour::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesSameStartingHour::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s;
 	
 	s=tr("Time constraint");s+="\n";
@@ -22240,7 +22855,7 @@ QString ConstraintActivitiesSameStartingHour::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivitiesSameStartingHour::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -22536,8 +23151,10 @@ QString ConstraintActivitiesSameStartingDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesSameStartingDay::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesSameStartingDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s;
 	
 	s=tr("Time constraint");s+="\n";
@@ -22560,7 +23177,7 @@ QString ConstraintActivitiesSameStartingDay::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivitiesSameStartingDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -22828,8 +23445,10 @@ QString ConstraintTwoActivitiesConsecutive::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTwoActivitiesConsecutive::getDetailedDescription(Rules& r)
+QString ConstraintTwoActivitiesConsecutive::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Two activities consecutive (second activity must be placed immediately after the first"
 	 " activity, on the same day; no gaps are allowed between them, except for break constraints)"); s+="\n";
@@ -22855,7 +23474,7 @@ QString ConstraintTwoActivitiesConsecutive::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 	
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTwoActivitiesConsecutive::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -23107,8 +23726,10 @@ QString ConstraintTwoActivitiesGrouped::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTwoActivitiesGrouped::getDetailedDescription(Rules& r)
+QString ConstraintTwoActivitiesGrouped::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Two activities grouped (the activities must be placed on the same day, "
 	 "one immediately following the other, in any order; no gaps are allowed between them, except for break constraints)"); s+="\n";
@@ -23134,7 +23755,7 @@ QString ConstraintTwoActivitiesGrouped::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 	
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTwoActivitiesGrouped::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -23423,8 +24044,10 @@ QString ConstraintThreeActivitiesGrouped::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintThreeActivitiesGrouped::getDetailedDescription(Rules& r)
+QString ConstraintThreeActivitiesGrouped::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Three activities grouped (the activities must be placed on the same day, "
 	 "one immediately following the other, as a block of three activities, in any order; no gaps are allowed between them, except for break constraints)"); s+="\n";
@@ -23455,7 +24078,7 @@ QString ConstraintThreeActivitiesGrouped::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintThreeActivitiesGrouped::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -23772,8 +24395,10 @@ QString ConstraintTwoActivitiesOrdered::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTwoActivitiesOrdered::getDetailedDescription(Rules& r)
+QString ConstraintTwoActivitiesOrdered::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Two activities ordered (the second activity must begin at any time in the week later than the first"
 	 " activity has finished)"); s+="\n";
@@ -23799,7 +24424,7 @@ QString ConstraintTwoActivitiesOrdered::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTwoActivitiesOrdered::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -24067,8 +24692,10 @@ QString ConstraintTwoSetsOfActivitiesOrdered::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTwoSetsOfActivitiesOrdered::getDetailedDescription(Rules& r)
+QString ConstraintTwoSetsOfActivitiesOrdered::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Two sets of activities ordered (each activity from the second set must begin at any time in the week later than each activity"
 	 " from the first set has finished)"); s+="\n";
@@ -24102,7 +24729,7 @@ QString ConstraintTwoSetsOfActivitiesOrdered::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTwoSetsOfActivitiesOrdered::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -24393,8 +25020,10 @@ QString ConstraintTwoActivitiesOrderedIfSameDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTwoActivitiesOrderedIfSameDay::getDetailedDescription(Rules& r)
+QString ConstraintTwoActivitiesOrderedIfSameDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Two activities are ordered if they are on the same day (the second activity must begin later than the first"
 	 " activity has finished if they are on the same day)");
@@ -24422,7 +25051,7 @@ QString ConstraintTwoActivitiesOrderedIfSameDay::getDetailedDescription(Rules& r
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTwoActivitiesOrderedIfSameDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -24623,8 +25252,10 @@ QString ConstraintActivityEndsStudentsDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivityEndsStudentsDay::getDetailedDescription(Rules& r)
+QString ConstraintActivityEndsStudentsDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Activity must end students' day");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -24641,7 +25272,7 @@ QString ConstraintActivityEndsStudentsDay::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivityEndsStudentsDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -24844,9 +25475,10 @@ QString ConstraintTeachersMinHoursDaily::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMinHoursDaily::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMinHoursDaily::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the minimum number of hours daily"); s+="\n";
@@ -24863,7 +25495,7 @@ QString ConstraintTeachersMinHoursDaily::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMinHoursDaily::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -25094,9 +25726,10 @@ QString ConstraintTeacherMinHoursDaily::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMinHoursDaily::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMinHoursDaily::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the minimum number of hours daily");s+="\n";
@@ -25114,7 +25747,7 @@ QString ConstraintTeacherMinHoursDaily::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMinHoursDaily::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -25326,9 +25959,10 @@ QString ConstraintTeacherMinDaysPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMinDaysPerWeek::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMinDaysPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the minimum number of days per week");s+="\n";
@@ -25345,7 +25979,7 @@ QString ConstraintTeacherMinDaysPerWeek::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMinDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -25533,9 +26167,10 @@ QString ConstraintTeachersMinDaysPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMinDaysPerWeek::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMinDaysPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the minimum number of days per week");s+="\n";
@@ -25551,7 +26186,7 @@ QString ConstraintTeachersMinDaysPerWeek::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMinDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -25782,9 +26417,10 @@ QString ConstraintTeacherIntervalMaxDaysPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r)
+QString ConstraintTeacherIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher respects working in an hourly interval a maximum number of days per week");s+="\n";
@@ -25809,7 +26445,7 @@ QString ConstraintTeacherIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherIntervalMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -26043,9 +26679,10 @@ QString ConstraintTeachersIntervalMaxDaysPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r)
+QString ConstraintTeachersIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers respect working in an hourly interval a maximum number of days per week");s+="\n";
@@ -26069,7 +26706,7 @@ QString ConstraintTeachersIntervalMaxDaysPerWeek::getDetailedDescription(Rules& 
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersIntervalMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -26359,9 +26996,10 @@ QString ConstraintStudentsSetIntervalMaxDaysPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set respects working in an hourly interval a maximum number of days per week");s+="\n";
@@ -26386,7 +27024,7 @@ QString ConstraintStudentsSetIntervalMaxDaysPerWeek::getDetailedDescription(Rule
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetIntervalMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -26617,9 +27255,10 @@ QString ConstraintStudentsIntervalMaxDaysPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r)
+QString ConstraintStudentsIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students respect working in an hourly interval a maximum number of days per week");s+="\n";
@@ -26643,7 +27282,7 @@ QString ConstraintStudentsIntervalMaxDaysPerWeek::getDetailedDescription(Rules& 
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsIntervalMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -26916,9 +27555,10 @@ QString ConstraintActivitiesEndStudentsDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesEndStudentsDay::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesEndStudentsDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Activities with:");s+="\n";
@@ -26961,7 +27601,7 @@ QString ConstraintActivitiesEndStudentsDay::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivitiesEndStudentsDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -27192,8 +27832,10 @@ QString ConstraintActivityEndsTeachersDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivityEndsTeachersDay::getDetailedDescription(Rules& r)
+QString ConstraintActivityEndsTeachersDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Activity must end teachers' day");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -27210,7 +27852,7 @@ QString ConstraintActivityEndsTeachersDay::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivityEndsTeachersDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString> &dl, FakeString* conflictsString)
@@ -27470,9 +28112,10 @@ QString ConstraintActivitiesEndTeachersDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesEndTeachersDay::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesEndTeachersDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Activities with:");s+="\n";
@@ -27515,7 +28158,7 @@ QString ConstraintActivitiesEndTeachersDay::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivitiesEndTeachersDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString> &dl, FakeString* conflictsString)
@@ -27750,9 +28393,10 @@ QString ConstraintTeachersActivityTagMaxHoursDaily::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersActivityTagMaxHoursDaily::getDetailedDescription(Rules& r)
+QString ConstraintTeachersActivityTagMaxHoursDaily::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers, for an activity tag, must respect the maximum number of hours daily");s+="\n";
@@ -27769,7 +28413,7 @@ QString ConstraintTeachersActivityTagMaxHoursDaily::getDetailedDescription(Rules
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersActivityTagMaxHoursDaily::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -27998,9 +28642,10 @@ QString ConstraintTeacherActivityTagMaxHoursDaily::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherActivityTagMaxHoursDaily::getDetailedDescription(Rules& r)
+QString ConstraintTeacherActivityTagMaxHoursDaily::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher for an activity tag must respect the maximum number of hours daily");s+="\n";
@@ -28018,7 +28663,7 @@ QString ConstraintTeacherActivityTagMaxHoursDaily::getDetailedDescription(Rules&
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherActivityTagMaxHoursDaily::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -28247,9 +28892,10 @@ QString ConstraintStudentsActivityTagMaxHoursDaily::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsActivityTagMaxHoursDaily::getDetailedDescription(Rules& r)
+QString ConstraintStudentsActivityTagMaxHoursDaily::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students, for an activity tag, must respect the maximum number of hours daily"); s+="\n";
@@ -28266,7 +28912,7 @@ QString ConstraintStudentsActivityTagMaxHoursDaily::getDetailedDescription(Rules
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsActivityTagMaxHoursDaily::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -28466,9 +29112,10 @@ QString ConstraintStudentsSetActivityTagMaxHoursDaily::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetActivityTagMaxHoursDaily::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetActivityTagMaxHoursDaily::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set, for an activity tag, must respect the maximum number of hours daily"); s+="\n";
@@ -28486,7 +29133,7 @@ QString ConstraintStudentsSetActivityTagMaxHoursDaily::getDetailedDescription(Ru
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsSetActivityTagMaxHoursDaily::computeInternalStructure(QWidget* parent, Rules& r)
@@ -28790,9 +29437,10 @@ QString ConstraintTeachersActivityTagMinHoursDaily::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersActivityTagMinHoursDaily::getDetailedDescription(Rules& r)
+QString ConstraintTeachersActivityTagMinHoursDaily::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers, for an activity tag, must respect the minimum number of hours daily");s+="\n";
@@ -28810,7 +29458,7 @@ QString ConstraintTeachersActivityTagMinHoursDaily::getDetailedDescription(Rules
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersActivityTagMinHoursDaily::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -29054,9 +29702,10 @@ QString ConstraintTeacherActivityTagMinHoursDaily::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherActivityTagMinHoursDaily::getDetailedDescription(Rules& r)
+QString ConstraintTeacherActivityTagMinHoursDaily::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher for an activity tag must respect the minimum number of hours daily");s+="\n";
@@ -29075,7 +29724,7 @@ QString ConstraintTeacherActivityTagMinHoursDaily::getDetailedDescription(Rules&
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherActivityTagMinHoursDaily::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -29321,9 +29970,10 @@ QString ConstraintStudentsActivityTagMinHoursDaily::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsActivityTagMinHoursDaily::getDetailedDescription(Rules& r)
+QString ConstraintStudentsActivityTagMinHoursDaily::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students, for an activity tag, must respect the minimum number of hours daily"); s+="\n";
@@ -29341,7 +29991,7 @@ QString ConstraintStudentsActivityTagMinHoursDaily::getDetailedDescription(Rules
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsActivityTagMinHoursDaily::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -29557,9 +30207,10 @@ QString ConstraintStudentsSetActivityTagMinHoursDaily::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetActivityTagMinHoursDaily::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetActivityTagMinHoursDaily::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set, for an activity tag, must respect the minimum number of hours daily"); s+="\n";
@@ -29578,7 +30229,7 @@ QString ConstraintStudentsSetActivityTagMinHoursDaily::getDetailedDescription(Ru
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsSetActivityTagMinHoursDaily::computeInternalStructure(QWidget* parent, Rules& r)
@@ -29869,9 +30520,10 @@ QString ConstraintStudentsMaxGapsPerDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxGapsPerDay::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMaxGapsPerDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the maximum number of gaps per day");s+="\n";
@@ -29888,7 +30540,7 @@ QString ConstraintStudentsMaxGapsPerDay::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMaxGapsPerDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -30140,9 +30792,10 @@ QString ConstraintStudentsSetMaxGapsPerDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxGapsPerDay::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMaxGapsPerDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the maximum number of gaps per day");s+="\n";
@@ -30160,7 +30813,7 @@ QString ConstraintStudentsSetMaxGapsPerDay::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 	
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMaxGapsPerDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -30454,7 +31107,7 @@ QString ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::getDescription(Rule
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	assert(this->selectedDays.count()==this->selectedHours.count());
 
@@ -30463,34 +31116,67 @@ QString ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::getDetailedDescript
 		actids+=CustomFETString::number(aid)+QString(", ");
 	actids.chop(2);*/
 	
-	QString timeslots=QString("");
-	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(translatedCommaSpace().size());
-	
-	QString s=tr("Time constraint"); s+="\n";
-	s+=tr("Activities occupy max time slots from selection"); s+="\n";
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
-	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
-	for(int id : std::as_const(this->activitiesIds)){
-		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-		 .arg(id)
-		 .arg(getActivityDetailedDescription(r, id));
-		s+="\n";
-	}
-	s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
-	s+=tr("Maximum number of occupied slots from selection=%1").arg(CustomFETString::number(this->maxOccupiedTimeSlots)); s+="\n";
+	if(!richText){
+		QString timeslots=QString("");
+		for(int i=0; i<this->selectedDays.count(); i++)
+			timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
+		timeslots.chop(translatedCommaSpace().size());
+		
+		QString s=tr("Time constraint"); s+="\n";
+		s+=tr("Activities occupy max time slots from selection"); s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
+		s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
+		for(int id : std::as_const(this->activitiesIds)){
+			s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			 .arg(id)
+			 .arg(getActivityDetailedDescription(r, id));
+			s+="\n";
+		}
+		s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
+		s+=tr("Maximum number of occupied slots from selection=%1").arg(CustomFETString::number(this->maxOccupiedTimeSlots)); s+="\n";
 
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
-		s+="\n";
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+		
+		return s;
 	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
-		s+="\n";
+	else{
+		QString begin=tr("Time constraint"); begin+="\n";
+		begin+=tr("Activities occupy max time slots from selection"); begin+="\n";
+		begin+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); begin+="\n";
+		begin+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); begin+="\n";
+		for(int id : std::as_const(this->activitiesIds)){
+			begin+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			 .arg(id)
+			 .arg(getActivityDetailedDescription(r, id));
+			begin+="\n";
+		}
+
+		begin+=tr("Selected time slots:"); begin+="\n";
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString middle=listsOfDaysAndHoursToTable(r, selectedDays, selectedHours, true, false, colors);
+		QString end;
+		end+="\n";
+
+		end+=tr("Maximum number of occupied slots from selection=%1").arg(CustomFETString::number(this->maxOccupiedTimeSlots)); end+="\n";
+
+		if(!active){
+			end+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+		
+		return protect4(begin)+middle+protect4(end);
 	}
-	
-	return s;
 }
 
 double ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -30803,18 +31489,18 @@ QString ConstraintActivitiesOccupyMinTimeSlotsFromSelection::getDescription(Rule
 	QString begin=QString("");
 	if(!active)
 		begin="X - ";
-		
+	
 	QString end=QString("");
 	if(!comments.isEmpty())
 		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
-		
+	
 	assert(this->selectedDays.count()==this->selectedHours.count());
 
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
 		actids+=getActivityDescription(r, aid)+translatedCommaSpace();
 	actids.chop(translatedCommaSpace().size());
-		
+	
 	QString timeslots=QString("");
 	for(int i=0; i<this->selectedDays.count(); i++)
 		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
@@ -30831,7 +31517,7 @@ QString ConstraintActivitiesOccupyMinTimeSlotsFromSelection::getDescription(Rule
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesOccupyMinTimeSlotsFromSelection::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesOccupyMinTimeSlotsFromSelection::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	assert(this->selectedDays.count()==this->selectedHours.count());
 
@@ -30840,34 +31526,67 @@ QString ConstraintActivitiesOccupyMinTimeSlotsFromSelection::getDetailedDescript
 		actids+=CustomFETString::number(aid)+QString(", ");
 	actids.chop(2);*/
 	
-	QString timeslots=QString("");
-	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(translatedCommaSpace().size());
-	
-	QString s=tr("Time constraint"); s+="\n";
-	s+=tr("Activities occupy min time slots from selection"); s+="\n";
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
-	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
-	for(int id : std::as_const(this->activitiesIds)){
-		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-		 .arg(id)
-		 .arg(getActivityDetailedDescription(r, id));
-		s+="\n";
-	}
-	s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
-	s+=tr("Minimum number of occupied slots from selection=%1").arg(CustomFETString::number(this->minOccupiedTimeSlots)); s+="\n";
+	if(!richText){
+		QString timeslots=QString("");
+		for(int i=0; i<this->selectedDays.count(); i++)
+			timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
+		timeslots.chop(translatedCommaSpace().size());
+		
+		QString s=tr("Time constraint"); s+="\n";
+		s+=tr("Activities occupy min time slots from selection"); s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
+		s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
+		for(int id : std::as_const(this->activitiesIds)){
+			s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			 .arg(id)
+			 .arg(getActivityDetailedDescription(r, id));
+			s+="\n";
+		}
+		s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
+		s+=tr("Minimum number of occupied slots from selection=%1").arg(CustomFETString::number(this->minOccupiedTimeSlots)); s+="\n";
 
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
-		s+="\n";
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+		
+		return s;
 	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
-		s+="\n";
+	else{
+		QString begin=tr("Time constraint"); begin+="\n";
+		begin+=tr("Activities occupy min time slots from selection"); begin+="\n";
+		begin+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); begin+="\n";
+		begin+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); begin+="\n";
+		for(int id : std::as_const(this->activitiesIds)){
+			begin+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			 .arg(id)
+			 .arg(getActivityDetailedDescription(r, id));
+			begin+="\n";
+		}
+
+		begin+=tr("Selected time slots:"); begin+="\n";
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString middle=listsOfDaysAndHoursToTable(r, selectedDays, selectedHours, true, false, colors);
+		QString end;
+		end+="\n";
+		
+		end+=tr("Minimum number of occupied slots from selection=%1").arg(CustomFETString::number(this->minOccupiedTimeSlots)); end+="\n";
+
+		if(!active){
+			end+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+		
+		return protect4(begin)+middle+protect4(end);
 	}
-	
-	return s;
 }
 
 double ConstraintActivitiesOccupyMinTimeSlotsFromSelection::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -31217,7 +31936,7 @@ QString ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::getDescription(R
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	assert(this->selectedDays.count()==this->selectedHours.count());
 
@@ -31226,34 +31945,67 @@ QString ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::getDetailedDescr
 		actids+=CustomFETString::number(aid)+QString(", ");
 	actids.chop(2);*/
 	
-	QString timeslots=QString("");
-	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(translatedCommaSpace().size());
-	
-	QString s=tr("Time constraint"); s+="\n";
-	s+=tr("Activities max simultaneous in selected time slots"); s+="\n";
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
-	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
-	for(int id : std::as_const(this->activitiesIds)){
-		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-		 .arg(id)
-		 .arg(getActivityDetailedDescription(r, id));
-		s+="\n";
+	if(!richText){
+		QString timeslots=QString("");
+		for(int i=0; i<this->selectedDays.count(); i++)
+			timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
+		timeslots.chop(translatedCommaSpace().size());
+		
+		QString s=tr("Time constraint"); s+="\n";
+		s+=tr("Activities max simultaneous in selected time slots"); s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
+		s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
+		for(int id : std::as_const(this->activitiesIds)){
+			s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			 .arg(id)
+			 .arg(getActivityDetailedDescription(r, id));
+			s+="\n";
+		}
+		s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
+		s+=tr("Maximum number of simultaneous activities in each selected time slot=%1").arg(CustomFETString::number(this->maxSimultaneous)); s+="\n";
+		
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+		
+		return s;
 	}
-	s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
-	s+=tr("Maximum number of simultaneous activities in each selected time slot=%1").arg(CustomFETString::number(this->maxSimultaneous)); s+="\n";
-	
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
-		s+="\n";
+	else{
+		QString begin=tr("Time constraint"); begin+="\n";
+		begin+=tr("Activities max simultaneous in selected time slots"); begin+="\n";
+		begin+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); begin+="\n";
+		begin+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); begin+="\n";
+		for(int id : std::as_const(this->activitiesIds)){
+			begin+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			 .arg(id)
+			 .arg(getActivityDetailedDescription(r, id));
+			begin+="\n";
+		}
+
+		begin+=tr("Selected time slots:"); begin+="\n";
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString middle=listsOfDaysAndHoursToTable(r, selectedDays, selectedHours, true, false, colors);
+		QString end;
+		end+="\n";
+		
+		end+=tr("Maximum number of simultaneous activities in each selected time slot=%1").arg(CustomFETString::number(this->maxSimultaneous)); end+="\n";
+		
+		if(!active){
+			end+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+		
+		return protect4(begin)+middle+protect4(end);
 	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
-		s+="\n";
-	}
-	
-	return s;
 }
 
 double ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -31594,7 +32346,7 @@ QString ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::getDescription(R
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	assert(this->selectedDays.count()==this->selectedHours.count());
 
@@ -31603,35 +32355,69 @@ QString ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::getDetailedDescr
 		actids+=CustomFETString::number(aid)+QString(", ");
 	actids.chop(2);*/
 	
-	QString timeslots=QString("");
-	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(translatedCommaSpace().size());
-	
-	QString s=tr("Time constraint"); s+="\n";
-	s+=tr("Activities min simultaneous in selected time slots"); s+="\n";
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
-	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
-	for(int id : std::as_const(this->activitiesIds)){
-		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-		 .arg(id)
-		 .arg(getActivityDetailedDescription(r, id));
-		s+="\n";
+	if(!richText){
+		QString timeslots=QString("");
+		for(int i=0; i<this->selectedDays.count(); i++)
+			timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
+		timeslots.chop(translatedCommaSpace().size());
+		
+		QString s=tr("Time constraint"); s+="\n";
+		s+=tr("Activities min simultaneous in selected time slots"); s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
+		s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
+		for(int id : std::as_const(this->activitiesIds)){
+			s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			 .arg(id)
+			 .arg(getActivityDetailedDescription(r, id));
+			s+="\n";
+		}
+		s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
+		s+=tr("Minimum number of simultaneous activities in each selected time slot=%1").arg(CustomFETString::number(this->minSimultaneous)); s+="\n";
+		s+=tr("Allow empty slots=%1").arg(yesNoTranslated(allowEmptySlots)); s+="\n";
+		
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+		
+		return s;
 	}
-	s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
-	s+=tr("Minimum number of simultaneous activities in each selected time slot=%1").arg(CustomFETString::number(this->minSimultaneous)); s+="\n";
-	s+=tr("Allow empty slots=%1").arg(yesNoTranslated(allowEmptySlots)); s+="\n";
-	
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
-		s+="\n";
+	else{
+		QString begin=tr("Time constraint"); begin+="\n";
+		begin+=tr("Activities min simultaneous in selected time slots"); begin+="\n";
+		begin+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); begin+="\n";
+		begin+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); begin+="\n";
+		for(int id : std::as_const(this->activitiesIds)){
+			begin+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			 .arg(id)
+			 .arg(getActivityDetailedDescription(r, id));
+			begin+="\n";
+		}
+
+		begin+=tr("Selected time slots:"); begin+="\n";
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString middle=listsOfDaysAndHoursToTable(r, selectedDays, selectedHours, true, false, colors);
+		QString end;
+		end+="\n";
+
+		end+=tr("Minimum number of simultaneous activities in each selected time slot=%1").arg(CustomFETString::number(this->minSimultaneous)); end+="\n";
+		end+=tr("Allow empty slots=%1").arg(yesNoTranslated(allowEmptySlots)); end+="\n";
+		
+		if(!active){
+			end+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+		
+		return protect4(begin)+middle+protect4(end);
 	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
-		s+="\n";
-	}
-	
-	return s;
 }
 
 double ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -31979,7 +32765,7 @@ QString ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::getDescription(R
 	return begin+s+end;
 }
 
-QString ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::getDetailedDescription(Rules& r)
+QString ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	assert(this->selectedDays.count()==this->selectedHours.count());
 
@@ -31988,34 +32774,67 @@ QString ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::getDetailedDescr
 		actids+=CustomFETString::number(aid)+QString(", ");
 	actids.chop(2);*/
 
-	QString timeslots=QString("");
-	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(translatedCommaSpace().size());
+	if(!richText){
+		QString timeslots=QString("");
+		for(int i=0; i<this->selectedDays.count(); i++)
+			timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
+		timeslots.chop(translatedCommaSpace().size());
 
-	QString s=tr("Time constraint"); s+="\n";
-	s+=tr("Max total activities from set in selected time slots"); s+="\n";
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
-	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
-	for(int id : std::as_const(this->activitiesIds)){
-		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-		 .arg(id)
-		 .arg(getActivityDetailedDescription(r, id));
-		s+="\n";
-	}
-	s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
-	s+=tr("Maximum total number of activities in selected time slots=%1").arg(CustomFETString::number(this->maxActivities)); s+="\n";
+		QString s=tr("Time constraint"); s+="\n";
+		s+=tr("Max total activities from set in selected time slots"); s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
+		s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
+		for(int id : std::as_const(this->activitiesIds)){
+			s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			 .arg(id)
+			 .arg(getActivityDetailedDescription(r, id));
+			s+="\n";
+		}
+		s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
+		s+=tr("Maximum total number of activities in selected time slots=%1").arg(CustomFETString::number(this->maxActivities)); s+="\n";
 
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
-		s+="\n";
-	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
-		s+="\n";
-	}
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
 
-	return s;
+		return s;
+	}
+	else{
+		QString begin=tr("Time constraint"); begin+="\n";
+		begin+=tr("Max total activities from set in selected time slots"); begin+="\n";
+		begin+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); begin+="\n";
+		begin+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); begin+="\n";
+		for(int id : std::as_const(this->activitiesIds)){
+			begin+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			 .arg(id)
+			 .arg(getActivityDetailedDescription(r, id));
+			begin+="\n";
+		}
+
+		begin+=tr("Selected time slots:"); begin+="\n";
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString middle=listsOfDaysAndHoursToTable(r, selectedDays, selectedHours, true, false, colors);
+		QString end;
+		end+="\n";
+
+		end+=tr("Maximum total number of activities in selected time slots=%1").arg(CustomFETString::number(this->maxActivities)); end+="\n";
+
+		if(!active){
+			end+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+
+		return protect4(begin)+middle+protect4(end);
+	}
 }
 
 double ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -32294,8 +33113,10 @@ QString ConstraintActivitiesMaxInATerm::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesMaxInATerm::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesMaxInATerm::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	/*QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+QString(", ");
@@ -32322,7 +33143,7 @@ QString ConstraintActivitiesMaxInATerm::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivitiesMaxInATerm::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -32566,8 +33387,10 @@ QString ConstraintActivitiesOccupyMaxTerms::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesOccupyMaxTerms::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesOccupyMaxTerms::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	/*QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+QString(", ");
@@ -32594,7 +33417,7 @@ QString ConstraintActivitiesOccupyMaxTerms::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivitiesOccupyMaxTerms::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -32850,9 +33673,10 @@ QString ConstraintStudentsSetMaxDaysPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxDaysPerWeek::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMaxDaysPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the maximum number of days per week");s+="\n";
@@ -32870,7 +33694,7 @@ QString ConstraintStudentsSetMaxDaysPerWeek::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -33054,9 +33878,10 @@ QString ConstraintStudentsMaxDaysPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxDaysPerWeek::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMaxDaysPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the maximum number of days per week");s+="\n";
@@ -33072,7 +33897,7 @@ QString ConstraintStudentsMaxDaysPerWeek::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -33272,9 +34097,10 @@ QString ConstraintTeacherMaxSpanPerDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxSpanPerDay::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMaxSpanPerDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the maximum number of span (in hours) per day");s+="\n";
@@ -33292,7 +34118,7 @@ QString ConstraintTeacherMaxSpanPerDay::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxSpanPerDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -33488,9 +34314,10 @@ QString ConstraintTeachersMaxSpanPerDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxSpanPerDay::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMaxSpanPerDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the maximum number of span (in hours) per day");s+="\n";
@@ -33507,7 +34334,7 @@ QString ConstraintTeachersMaxSpanPerDay::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxSpanPerDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -33693,9 +34520,10 @@ QString ConstraintStudentsSetMaxSpanPerDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxSpanPerDay::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMaxSpanPerDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 	
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the maximum number of span (in hours) per day");s+="\n";
@@ -33712,7 +34540,7 @@ QString ConstraintStudentsSetMaxSpanPerDay::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsSetMaxSpanPerDay::computeInternalStructure(QWidget* parent, Rules& r)
@@ -33940,9 +34768,10 @@ QString ConstraintStudentsMaxSpanPerDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxSpanPerDay::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMaxSpanPerDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 	
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the maximum number of span (in hours) per day");s+="\n";
@@ -33958,7 +34787,7 @@ QString ConstraintStudentsMaxSpanPerDay::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsMaxSpanPerDay::computeInternalStructure(QWidget* parent, Rules& r)
@@ -34158,9 +34987,10 @@ QString ConstraintTeacherMinRestingHours::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMinRestingHours::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMinRestingHours::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the minimum resting hours (between days)");s+="\n";
@@ -34178,7 +35008,7 @@ QString ConstraintTeacherMinRestingHours::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMinRestingHours::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -34361,9 +35191,10 @@ QString ConstraintTeachersMinRestingHours::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMinRestingHours::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMinRestingHours::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the minimum resting hours (between days)");s+="\n";
@@ -34380,7 +35211,7 @@ QString ConstraintTeachersMinRestingHours::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMinRestingHours::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -34558,9 +35389,10 @@ QString ConstraintStudentsSetMinRestingHours::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMinRestingHours::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMinRestingHours::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 	
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the minimum resting hours (between days)");s+="\n";
@@ -34578,7 +35410,7 @@ QString ConstraintStudentsSetMinRestingHours::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsSetMinRestingHours::computeInternalStructure(QWidget* parent, Rules& r)
@@ -34808,9 +35640,10 @@ QString ConstraintStudentsMinRestingHours::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMinRestingHours::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMinRestingHours::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 	
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the minimum resting hours (between days)");s+="\n";
@@ -34827,7 +35660,7 @@ QString ConstraintStudentsMinRestingHours::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsMinRestingHours::computeInternalStructure(QWidget* parent, Rules& r)
@@ -35021,9 +35854,10 @@ QString ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::getDescrip
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the minimum gaps between an ordered pair of activity tags");s+="\n";
@@ -35042,7 +35876,7 @@ QString ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::getDetaile
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::computeInternalStructure(QWidget* parent, Rules& r)
@@ -35352,9 +36186,10 @@ QString ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::getDescriptio
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the minimum gaps between an ordered pair of activity tags");s+="\n";
@@ -35372,7 +36207,7 @@ QString ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::getDetailedDe
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::computeInternalStructure(QWidget* parent, Rules& r)
@@ -35636,9 +36471,10 @@ QString ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::getDescription
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the minimum gaps between an ordered pair of activity tags");s+="\n";
@@ -35657,7 +36493,7 @@ QString ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::getDetailedDes
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::computeInternalStructure(QWidget* parent, Rules& r)
@@ -35927,9 +36763,10 @@ QString ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::getDescriptio
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the minimum gaps between an ordered pair of activity tags");s+="\n";
@@ -35947,7 +36784,7 @@ QString ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::getDetailedDe
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::computeInternalStructure(QWidget* parent, Rules& r)
@@ -36209,9 +37046,10 @@ QString ConstraintStudentsSetMinGapsBetweenActivityTag::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMinGapsBetweenActivityTag::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMinGapsBetweenActivityTag::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the minimum gaps between an activity tag");s+="\n";
@@ -36229,7 +37067,7 @@ QString ConstraintStudentsSetMinGapsBetweenActivityTag::getDetailedDescription(R
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsSetMinGapsBetweenActivityTag::computeInternalStructure(QWidget* parent, Rules& r)
@@ -36533,9 +37371,10 @@ QString ConstraintStudentsMinGapsBetweenActivityTag::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMinGapsBetweenActivityTag::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMinGapsBetweenActivityTag::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the minimum gaps between an activity tag");s+="\n";
@@ -36552,7 +37391,7 @@ QString ConstraintStudentsMinGapsBetweenActivityTag::getDetailedDescription(Rule
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsMinGapsBetweenActivityTag::computeInternalStructure(QWidget* parent, Rules& r)
@@ -36809,9 +37648,10 @@ QString ConstraintTeacherMinGapsBetweenActivityTag::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMinGapsBetweenActivityTag::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMinGapsBetweenActivityTag::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the minimum gaps between an activity tag");s+="\n";
@@ -36829,7 +37669,7 @@ QString ConstraintTeacherMinGapsBetweenActivityTag::getDetailedDescription(Rules
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintTeacherMinGapsBetweenActivityTag::computeInternalStructure(QWidget* parent, Rules& r)
@@ -37092,9 +37932,10 @@ QString ConstraintTeachersMinGapsBetweenActivityTag::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMinGapsBetweenActivityTag::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMinGapsBetweenActivityTag::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the minimum gaps between an activity tag");s+="\n";
@@ -37111,7 +37952,7 @@ QString ConstraintTeachersMinGapsBetweenActivityTag::getDetailedDescription(Rule
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintTeachersMinGapsBetweenActivityTag::computeInternalStructure(QWidget* parent, Rules& r)
@@ -37375,9 +38216,10 @@ QString ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the minimum gaps between an ordered pair of activity tags per real day");s+="\n";
@@ -37396,7 +38238,7 @@ QString ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::computeInternalStructure(QWidget* parent, Rules& r)
@@ -37706,9 +38548,10 @@ QString ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::get
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the minimum gaps between an ordered pair of activity tags per real day");s+="\n";
@@ -37726,7 +38569,7 @@ QString ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::get
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::computeInternalStructure(QWidget* parent, Rules& r)
@@ -37990,9 +38833,10 @@ QString ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::getD
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the minimum gaps between an ordered pair of activity tags per real day");s+="\n";
@@ -38011,7 +38855,7 @@ QString ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::getD
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::computeInternalStructure(QWidget* parent, Rules& r)
@@ -38281,9 +39125,10 @@ QString ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::get
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the minimum gaps between an ordered pair of activity tags per real day");s+="\n";
@@ -38301,7 +39146,7 @@ QString ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::get
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::computeInternalStructure(QWidget* parent, Rules& r)
@@ -38563,9 +39408,10 @@ QString ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay::getDescription
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the minimum gaps between an activity tag per real day");s+="\n";
@@ -38583,7 +39429,7 @@ QString ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay::getDetailedDes
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay::computeInternalStructure(QWidget* parent, Rules& r)
@@ -38887,9 +39733,10 @@ QString ConstraintStudentsMinGapsBetweenActivityTagPerRealDay::getDescription(Ru
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMinGapsBetweenActivityTagPerRealDay::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMinGapsBetweenActivityTagPerRealDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the minimum gaps between an activity tag per real day");s+="\n";
@@ -38906,7 +39753,7 @@ QString ConstraintStudentsMinGapsBetweenActivityTagPerRealDay::getDetailedDescri
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsMinGapsBetweenActivityTagPerRealDay::computeInternalStructure(QWidget* parent, Rules& r)
@@ -39163,9 +40010,10 @@ QString ConstraintTeacherMinGapsBetweenActivityTagPerRealDay::getDescription(Rul
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMinGapsBetweenActivityTagPerRealDay::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMinGapsBetweenActivityTagPerRealDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the minimum gaps between an activity tag per real day");s+="\n";
@@ -39183,7 +40031,7 @@ QString ConstraintTeacherMinGapsBetweenActivityTagPerRealDay::getDetailedDescrip
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintTeacherMinGapsBetweenActivityTagPerRealDay::computeInternalStructure(QWidget* parent, Rules& r)
@@ -39446,9 +40294,10 @@ QString ConstraintTeachersMinGapsBetweenActivityTagPerRealDay::getDescription(Ru
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMinGapsBetweenActivityTagPerRealDay::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMinGapsBetweenActivityTagPerRealDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the minimum gaps between an activity tag per real day");s+="\n";
@@ -39465,7 +40314,7 @@ QString ConstraintTeachersMinGapsBetweenActivityTagPerRealDay::getDetailedDescri
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintTeachersMinGapsBetweenActivityTagPerRealDay::computeInternalStructure(QWidget* parent, Rules& r)
@@ -39729,9 +40578,10 @@ QString ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorni
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the minimum gaps between an ordered pair of activity tags between morning and afternoon");s+="\n";
@@ -39750,7 +40600,7 @@ QString ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorni
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon::computeInternalStructure(QWidget* parent, Rules& r)
@@ -40062,9 +40912,10 @@ QString ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningA
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the minimum gaps between an ordered pair of activity tags between morning and afternoon");s+="\n";
@@ -40082,7 +40933,7 @@ QString ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningA
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon::computeInternalStructure(QWidget* parent, Rules& r)
@@ -40348,9 +41199,10 @@ QString ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAn
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the minimum gaps between an ordered pair of activity tags between morning and afternoon");s+="\n";
@@ -40369,7 +41221,7 @@ QString ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAn
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon::computeInternalStructure(QWidget* parent, Rules& r)
@@ -40641,9 +41493,10 @@ QString ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningA
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the minimum gaps between an ordered pair of activity tags between morning and afternoon");s+="\n";
@@ -40661,7 +41514,7 @@ QString ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningA
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon::computeInternalStructure(QWidget* parent, Rules& r)
@@ -40925,9 +41778,10 @@ QString ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the minimum gaps between an activity tag between morning and afternoon");s+="\n";
@@ -40945,7 +41799,7 @@ QString ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon::computeInternalStructure(QWidget* parent, Rules& r)
@@ -41243,9 +42097,10 @@ QString ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon::g
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the minimum gaps between an activity tag between morning and afternoon");s+="\n";
@@ -41262,7 +42117,7 @@ QString ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon::g
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon::computeInternalStructure(QWidget* parent, Rules& r)
@@ -41513,9 +42368,10 @@ QString ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon::ge
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the minimum gaps between an activity tag between morning and afternoon");s+="\n";
@@ -41533,7 +42389,7 @@ QString ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon::ge
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon::computeInternalStructure(QWidget* parent, Rules& r)
@@ -41790,9 +42646,10 @@ QString ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon::g
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the minimum gaps between an activity tag between morning and afternoon");s+="\n";
@@ -41809,7 +42666,7 @@ QString ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon::g
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon::computeInternalStructure(QWidget* parent, Rules& r)
@@ -42063,8 +42920,9 @@ QString ConstraintTeachersMaxHoursDailyRealDays::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxHoursDailyRealDays::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMaxHoursDailyRealDays::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the maximum number of hours daily per real day");s+="\n";
@@ -42080,7 +42938,7 @@ QString ConstraintTeachersMaxHoursDailyRealDays::getDetailedDescription(Rules& r
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxHoursDailyRealDays::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -42294,8 +43152,9 @@ QString ConstraintTeacherMaxHoursDailyRealDays::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxHoursDailyRealDays::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMaxHoursDailyRealDays::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the maximum number of hours daily per real day");s+="\n";
@@ -42312,7 +43171,7 @@ QString ConstraintTeacherMaxHoursDailyRealDays::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxHoursDailyRealDays::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -42522,8 +43381,9 @@ QString ConstraintTeacherMaxRealDaysPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxRealDaysPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMaxRealDaysPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the maximum number of real days per week");s+="\n";
@@ -42540,7 +43400,7 @@ QString ConstraintTeacherMaxRealDaysPerWeek::getDetailedDescription(Rules& r){
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxRealDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -42771,8 +43631,9 @@ QString ConstraintTeachersMaxRealDaysPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxRealDaysPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMaxRealDaysPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the maximum number of real days per week");s+="\n";
@@ -42788,7 +43649,7 @@ QString ConstraintTeachersMaxRealDaysPerWeek::getDetailedDescription(Rules& r){
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxRealDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -43034,8 +43895,9 @@ QString ConstraintTeachersMaxGapsPerRealDay::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxGapsPerRealDay::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMaxGapsPerRealDay::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the maximum gaps per real day");s+="\n";
@@ -43053,7 +43915,7 @@ QString ConstraintTeachersMaxGapsPerRealDay::getDetailedDescription(Rules& r){
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxGapsPerRealDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -43296,8 +44158,9 @@ QString ConstraintTeacherMaxGapsPerRealDay::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxGapsPerRealDay::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMaxGapsPerRealDay::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint"); s+="\n";
 	s+=tr("A teacher must respect the maximum number of gaps per real day"); s+="\n";
@@ -43316,7 +44179,7 @@ QString ConstraintTeacherMaxGapsPerRealDay::getDetailedDescription(Rules& r){
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxGapsPerRealDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -43554,9 +44417,10 @@ QString ConstraintStudentsMaxHoursDailyRealDays::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxHoursDailyRealDays::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMaxHoursDailyRealDays::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the maximum number of hours daily per real day");s+="\n";
@@ -43572,7 +44436,7 @@ QString ConstraintStudentsMaxHoursDailyRealDays::getDetailedDescription(Rules& r
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMaxHoursDailyRealDays::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -43756,9 +44620,10 @@ QString ConstraintStudentsSetMaxHoursDailyRealDays::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxHoursDailyRealDays::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMaxHoursDailyRealDays::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the maximum number of hours daily per real day");s+="\n";
@@ -43775,7 +44640,7 @@ QString ConstraintStudentsSetMaxHoursDailyRealDays::getDetailedDescription(Rules
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsSetMaxHoursDailyRealDays::computeInternalStructure(QWidget* parent, Rules& r)
@@ -44038,8 +44903,9 @@ QString ConstraintTeachersMinHoursPerMorning::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMinHoursPerMorning::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMinHoursPerMorning::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the minimum number of hours per morning"); s+="\n";
@@ -44056,7 +44922,7 @@ QString ConstraintTeachersMinHoursPerMorning::getDetailedDescription(Rules& r){
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMinHoursPerMorning::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -44289,8 +45155,9 @@ QString ConstraintTeacherMinHoursPerMorning::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMinHoursPerMorning::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMinHoursPerMorning::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the minimum number of hours per morning");s+="\n";
@@ -44308,7 +45175,7 @@ QString ConstraintTeacherMinHoursPerMorning::getDetailedDescription(Rules& r){
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMinHoursPerMorning::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -44535,8 +45402,9 @@ QString ConstraintTeachersMinHoursDailyRealDays::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMinHoursDailyRealDays::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMinHoursDailyRealDays::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the minimum number of hours daily for real days"); s+="\n";
@@ -44553,7 +45421,7 @@ QString ConstraintTeachersMinHoursDailyRealDays::getDetailedDescription(Rules& r
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMinHoursDailyRealDays::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -44788,8 +45656,9 @@ QString ConstraintTeacherMinHoursDailyRealDays::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMinHoursDailyRealDays::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMinHoursDailyRealDays::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the minimum number of hours daily for real days");s+="\n";
@@ -44807,7 +45676,7 @@ QString ConstraintTeacherMinHoursDailyRealDays::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMinHoursDailyRealDays::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -45023,8 +45892,9 @@ QString ConstraintTeacherMinRealDaysPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMinRealDaysPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMinRealDaysPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the minimum number of real days per week");s+="\n";
@@ -45041,7 +45911,7 @@ QString ConstraintTeacherMinRealDaysPerWeek::getDetailedDescription(Rules& r){
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMinRealDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -45227,8 +46097,9 @@ QString ConstraintTeachersMinRealDaysPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMinRealDaysPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMinRealDaysPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the minimum number of real days per week");s+="\n";
@@ -45244,7 +46115,7 @@ QString ConstraintTeachersMinRealDaysPerWeek::getDetailedDescription(Rules& r){
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMinRealDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -45476,8 +46347,9 @@ QString ConstraintTeacherMorningIntervalMaxDaysPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMorningIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMorningIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher respects working in an hourly morning interval a maximum number of days per week");s+="\n";
@@ -45502,7 +46374,7 @@ QString ConstraintTeacherMorningIntervalMaxDaysPerWeek::getDetailedDescription(R
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMorningIntervalMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -45736,8 +46608,9 @@ QString ConstraintTeachersMorningIntervalMaxDaysPerWeek::getDescription(Rules& r
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMorningIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMorningIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers respect working in an hourly morning interval a maximum number of days per week");s+="\n";
@@ -45761,7 +46634,7 @@ QString ConstraintTeachersMorningIntervalMaxDaysPerWeek::getDetailedDescription(
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMorningIntervalMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -45999,8 +46872,9 @@ QString ConstraintTeacherAfternoonIntervalMaxDaysPerWeek::getDescription(Rules& 
 	return begin+s+end;
 }
 
-QString ConstraintTeacherAfternoonIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintTeacherAfternoonIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher respects working in an hourly afternoon interval a maximum number of days per week");s+="\n";
@@ -46025,7 +46899,7 @@ QString ConstraintTeacherAfternoonIntervalMaxDaysPerWeek::getDetailedDescription
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherAfternoonIntervalMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -46259,8 +47133,9 @@ QString ConstraintTeachersAfternoonIntervalMaxDaysPerWeek::getDescription(Rules&
 	return begin+s+end;
 }
 
-QString ConstraintTeachersAfternoonIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintTeachersAfternoonIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers respect working in an hourly afternoon interval a maximum number of days per week");s+="\n";
@@ -46284,7 +47159,7 @@ QString ConstraintTeachersAfternoonIntervalMaxDaysPerWeek::getDetailedDescriptio
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersAfternoonIntervalMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -46500,8 +47375,9 @@ QString ConstraintTeachersActivityTagMaxHoursDailyRealDays::getDescription(Rules
 	return begin+s+end;
 }
 
-QString ConstraintTeachersActivityTagMaxHoursDailyRealDays::getDetailedDescription(Rules& r){
+QString ConstraintTeachersActivityTagMaxHoursDailyRealDays::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers, for an activity tag, must respect the maximum number of hours daily per real day");s+="\n";
@@ -46518,7 +47394,7 @@ QString ConstraintTeachersActivityTagMaxHoursDailyRealDays::getDetailedDescripti
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersActivityTagMaxHoursDailyRealDays::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -46749,8 +47625,9 @@ QString ConstraintTeacherActivityTagMaxHoursDailyRealDays::getDescription(Rules&
 	return begin+s+end;
 }
 
-QString ConstraintTeacherActivityTagMaxHoursDailyRealDays::getDetailedDescription(Rules& r){
+QString ConstraintTeacherActivityTagMaxHoursDailyRealDays::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher for an activity tag must respect the maximum number of hours daily per real day");s+="\n";
@@ -46768,7 +47645,7 @@ QString ConstraintTeacherActivityTagMaxHoursDailyRealDays::getDetailedDescriptio
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherActivityTagMaxHoursDailyRealDays::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -47001,9 +47878,10 @@ QString ConstraintStudentsActivityTagMaxHoursDailyRealDays::getDescription(Rules
 	return begin+s+end;
 }
 
-QString ConstraintStudentsActivityTagMaxHoursDailyRealDays::getDetailedDescription(Rules& r)
+QString ConstraintStudentsActivityTagMaxHoursDailyRealDays::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students, for an activity tag, must respect the maximum number of hours daily per real day"); s+="\n";
@@ -47020,7 +47898,7 @@ QString ConstraintStudentsActivityTagMaxHoursDailyRealDays::getDetailedDescripti
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsActivityTagMaxHoursDailyRealDays::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -47224,9 +48102,10 @@ QString ConstraintStudentsSetActivityTagMaxHoursDailyRealDays::getDescription(Ru
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetActivityTagMaxHoursDailyRealDays::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetActivityTagMaxHoursDailyRealDays::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set, for an activity tag, must respect the maximum number of hours daily per real day"); s+="\n";
@@ -47244,7 +48123,7 @@ QString ConstraintStudentsSetActivityTagMaxHoursDailyRealDays::getDetailedDescri
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsSetActivityTagMaxHoursDailyRealDays::computeInternalStructure(QWidget* parent, Rules& r)
@@ -47528,9 +48407,10 @@ QString ConstraintStudentsMaxGapsPerRealDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxGapsPerRealDay::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMaxGapsPerRealDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the maximum number of gaps per real day");s+="\n";
@@ -47547,7 +48427,7 @@ QString ConstraintStudentsMaxGapsPerRealDay::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMaxGapsPerRealDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -47814,8 +48694,9 @@ QString ConstraintStudentsSetMaxGapsPerRealDay::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxGapsPerRealDay::getDetailedDescription(Rules& r){
+QString ConstraintStudentsSetMaxGapsPerRealDay::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the maximum number of gaps per real day");s+="\n";
@@ -47833,7 +48714,7 @@ QString ConstraintStudentsSetMaxGapsPerRealDay::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMaxGapsPerRealDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -48099,8 +48980,9 @@ QString ConstraintStudentsSetMaxRealDaysPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxRealDaysPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintStudentsSetMaxRealDaysPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the maximum number of real days per week");s+="\n";
@@ -48118,7 +49000,7 @@ QString ConstraintStudentsSetMaxRealDaysPerWeek::getDetailedDescription(Rules& r
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMaxRealDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -48309,8 +49191,9 @@ QString ConstraintStudentsMaxRealDaysPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxRealDaysPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintStudentsMaxRealDaysPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the maximum number of real days per week");s+="\n";
@@ -48326,7 +49209,7 @@ QString ConstraintStudentsMaxRealDaysPerWeek::getDetailedDescription(Rules& r){
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMaxRealDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -48532,8 +49415,9 @@ QString ConstraintTeacherMaxSpanPerRealDay::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxSpanPerRealDay::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMaxSpanPerRealDay::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the maximum number of span (in hours) per real day");s+="\n";
@@ -48551,7 +49435,7 @@ QString ConstraintTeacherMaxSpanPerRealDay::getDetailedDescription(Rules& r){
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxSpanPerRealDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -48751,8 +49635,9 @@ QString ConstraintTeachersMaxSpanPerRealDay::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxSpanPerRealDay::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMaxSpanPerRealDay::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the maximum number of span (in hours) per real day");s+="\n";
@@ -48769,7 +49654,7 @@ QString ConstraintTeachersMaxSpanPerRealDay::getDetailedDescription(Rules& r){
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxSpanPerRealDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -48961,9 +49846,10 @@ QString ConstraintStudentsSetMaxSpanPerRealDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxSpanPerRealDay::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMaxSpanPerRealDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the maximum number of span (in hours) per real day");s+="\n";
@@ -48980,7 +49866,7 @@ QString ConstraintStudentsSetMaxSpanPerRealDay::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsSetMaxSpanPerRealDay::computeInternalStructure(QWidget* parent, Rules& r)
@@ -49214,9 +50100,10 @@ QString ConstraintStudentsMaxSpanPerRealDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxSpanPerRealDay::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMaxSpanPerRealDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the maximum number of span (in hours) per real day");s+="\n";
@@ -49232,7 +50119,7 @@ QString ConstraintStudentsMaxSpanPerRealDay::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsMaxSpanPerRealDay::computeInternalStructure(QWidget* parent, Rules& r)
@@ -49429,8 +50316,9 @@ QString ConstraintTeacherMaxAfternoonsPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxAfternoonsPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMaxAfternoonsPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the maximum number of afternoons per week");s+="\n";
@@ -49447,7 +50335,7 @@ QString ConstraintTeacherMaxAfternoonsPerWeek::getDetailedDescription(Rules& r){
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxAfternoonsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -49676,8 +50564,9 @@ QString ConstraintTeachersMaxAfternoonsPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxAfternoonsPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMaxAfternoonsPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the maximum number of afternoons per week");s+="\n";
@@ -49693,7 +50582,7 @@ QString ConstraintTeachersMaxAfternoonsPerWeek::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxAfternoonsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -49937,8 +50826,9 @@ QString ConstraintTeacherMaxMorningsPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxMorningsPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMaxMorningsPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the maximum number of mornings per week");s+="\n";
@@ -49955,7 +50845,7 @@ QString ConstraintTeacherMaxMorningsPerWeek::getDetailedDescription(Rules& r){
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxMorningsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -50184,8 +51074,9 @@ QString ConstraintTeachersMaxMorningsPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxMorningsPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMaxMorningsPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the maximum number of mornings per week");s+="\n";
@@ -50201,7 +51092,7 @@ QString ConstraintTeachersMaxMorningsPerWeek::getDetailedDescription(Rules& r){
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxMorningsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -50469,8 +51360,9 @@ QString ConstraintTeacherMaxActivityTagsPerDayFromSet::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxActivityTagsPerDayFromSet::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMaxActivityTagsPerDayFromSet::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect a maximum number of activity tags per day from a set");s+="\n";
@@ -50489,7 +51381,7 @@ QString ConstraintTeacherMaxActivityTagsPerDayFromSet::getDetailedDescription(Ru
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxActivityTagsPerDayFromSet::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -50703,8 +51595,9 @@ QString ConstraintTeachersMaxActivityTagsPerDayFromSet::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxActivityTagsPerDayFromSet::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMaxActivityTagsPerDayFromSet::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect a maximum number of activity tags per day from a set");s+="\n";
@@ -50722,7 +51615,7 @@ QString ConstraintTeachersMaxActivityTagsPerDayFromSet::getDetailedDescription(R
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxActivityTagsPerDayFromSet::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -50918,8 +51811,9 @@ QString ConstraintTeacherMinMorningsPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMinMorningsPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMinMorningsPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the minimum number of mornings per week");s+="\n";
@@ -50936,7 +51830,7 @@ QString ConstraintTeacherMinMorningsPerWeek::getDetailedDescription(Rules& r){
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMinMorningsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -51122,8 +52016,9 @@ QString ConstraintTeachersMinMorningsPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMinMorningsPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMinMorningsPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the minimum number of mornings per week");s+="\n";
@@ -51139,7 +52034,7 @@ QString ConstraintTeachersMinMorningsPerWeek::getDetailedDescription(Rules& r){
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMinMorningsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -51334,8 +52229,9 @@ QString ConstraintTeacherMinAfternoonsPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMinAfternoonsPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMinAfternoonsPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the minimum number of afternoons per week");s+="\n";
@@ -51352,7 +52248,7 @@ QString ConstraintTeacherMinAfternoonsPerWeek::getDetailedDescription(Rules& r){
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMinAfternoonsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -51538,8 +52434,9 @@ QString ConstraintTeachersMinAfternoonsPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMinAfternoonsPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMinAfternoonsPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the minimum number of afternoons per week");s+="\n";
@@ -51555,7 +52452,7 @@ QString ConstraintTeachersMinAfternoonsPerWeek::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMinAfternoonsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -51745,8 +52642,9 @@ QString ConstraintTeacherMaxTwoConsecutiveMornings::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxTwoConsecutiveMornings::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMaxTwoConsecutiveMornings::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect maximum two consecutive mornings");s+="\n";
@@ -51762,7 +52660,7 @@ QString ConstraintTeacherMaxTwoConsecutiveMornings::getDetailedDescription(Rules
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxTwoConsecutiveMornings::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -52013,8 +52911,9 @@ QString ConstraintTeachersMaxTwoConsecutiveMornings::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxTwoConsecutiveMornings::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMaxTwoConsecutiveMornings::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect maximum two consecutive mornings");s+="\n";
@@ -52030,7 +52929,7 @@ QString ConstraintTeachersMaxTwoConsecutiveMornings::getDetailedDescription(Rule
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxTwoConsecutiveMornings::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -52282,8 +53181,9 @@ QString ConstraintTeacherMaxTwoConsecutiveAfternoons::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxTwoConsecutiveAfternoons::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMaxTwoConsecutiveAfternoons::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect maximum two consecutive afternoons");s+="\n";
@@ -52299,7 +53199,7 @@ QString ConstraintTeacherMaxTwoConsecutiveAfternoons::getDetailedDescription(Rul
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxTwoConsecutiveAfternoons::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -52550,8 +53450,9 @@ QString ConstraintTeachersMaxTwoConsecutiveAfternoons::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxTwoConsecutiveAfternoons::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMaxTwoConsecutiveAfternoons::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect maximum two consecutive afternoons");s+="\n";
@@ -52567,7 +53468,7 @@ QString ConstraintTeachersMaxTwoConsecutiveAfternoons::getDetailedDescription(Ru
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxTwoConsecutiveAfternoons::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -52821,9 +53722,10 @@ QString ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour::getDescripti
 	return begin+s+end;
 }
 
-QString ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour::getDetailedDescription(Rules& r)
+QString ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must begin the afternoons early, respecting maximum %1 later beginnings, at second hour")
@@ -52840,7 +53742,7 @@ QString ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour::getDetailedD
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -53083,9 +53985,10 @@ QString ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour::getDescriptio
 	return begin+s+end;
 }
 
-QString ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour::getDetailedDescription(Rules& r)
+QString ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 
@@ -53104,7 +54007,7 @@ QString ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour::getDetailedDe
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -53354,9 +54257,10 @@ QString ConstraintStudentsMinHoursPerMorning::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMinHoursPerMorning::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMinHoursPerMorning::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the minimum number of hours per morning");s+="\n";
@@ -53373,7 +54277,7 @@ QString ConstraintStudentsMinHoursPerMorning::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMinHoursPerMorning::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -53606,9 +54510,10 @@ QString ConstraintStudentsSetMinHoursPerMorning::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMinHoursPerMorning::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMinHoursPerMorning::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the minimum number of hours per morning");s+="\n";
@@ -53626,7 +54531,7 @@ QString ConstraintStudentsSetMinHoursPerMorning::getDetailedDescription(Rules& r
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsSetMinHoursPerMorning::computeInternalStructure(QWidget* parent, Rules& r)
@@ -53910,8 +54815,9 @@ QString ConstraintTeacherMaxZeroGapsPerAfternoon::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxZeroGapsPerAfternoon::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMaxZeroGapsPerAfternoon::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint"); s+="\n";
 	s+=tr("A teacher must respect a number of zero gaps per afternoon"); s+="\n";
@@ -53928,7 +54834,7 @@ QString ConstraintTeacherMaxZeroGapsPerAfternoon::getDetailedDescription(Rules& 
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxZeroGapsPerAfternoon::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -54114,8 +55020,9 @@ QString ConstraintTeachersMaxZeroGapsPerAfternoon::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxZeroGapsPerAfternoon::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMaxZeroGapsPerAfternoon::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint"); s+="\n";
 	s+=tr("All teachers must respect a number of zero gaps per afternoon"); s+="\n";
@@ -54131,7 +55038,7 @@ QString ConstraintTeachersMaxZeroGapsPerAfternoon::getDetailedDescription(Rules&
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxZeroGapsPerAfternoon::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -54374,8 +55281,9 @@ QString ConstraintStudentsSetMaxAfternoonsPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxAfternoonsPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintStudentsSetMaxAfternoonsPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the maximum number of afternoons per week");s+="\n";
@@ -54393,7 +55301,7 @@ QString ConstraintStudentsSetMaxAfternoonsPerWeek::getDetailedDescription(Rules&
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMaxAfternoonsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -54584,8 +55492,9 @@ QString ConstraintStudentsMaxAfternoonsPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxAfternoonsPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintStudentsMaxAfternoonsPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the maximum number of afternoons per week");s+="\n";
@@ -54602,7 +55511,7 @@ QString ConstraintStudentsMaxAfternoonsPerWeek::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMaxAfternoonsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -54849,8 +55758,9 @@ QString ConstraintStudentsSetMaxMorningsPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxMorningsPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintStudentsSetMaxMorningsPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the maximum number of mornings per week");s+="\n";
@@ -54868,7 +55778,7 @@ QString ConstraintStudentsSetMaxMorningsPerWeek::getDetailedDescription(Rules& r
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMaxMorningsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -55059,8 +55969,9 @@ QString ConstraintStudentsMaxMorningsPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxMorningsPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintStudentsMaxMorningsPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the maximum number of mornings per week");s+="\n";
@@ -55077,7 +55988,7 @@ QString ConstraintStudentsMaxMorningsPerWeek::getDetailedDescription(Rules& r){
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMaxMorningsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -55325,8 +56236,9 @@ QString ConstraintStudentsSetMinAfternoonsPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMinAfternoonsPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintStudentsSetMinAfternoonsPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the minimum number of afternoons per week");s+="\n";
@@ -55344,7 +56256,7 @@ QString ConstraintStudentsSetMinAfternoonsPerWeek::getDetailedDescription(Rules&
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMinAfternoonsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -55535,8 +56447,9 @@ QString ConstraintStudentsMinAfternoonsPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMinAfternoonsPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintStudentsMinAfternoonsPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the minimum number of afternoons per week");s+="\n";
@@ -55553,7 +56466,7 @@ QString ConstraintStudentsMinAfternoonsPerWeek::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMinAfternoonsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -55800,8 +56713,9 @@ QString ConstraintStudentsSetMinMorningsPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMinMorningsPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintStudentsSetMinMorningsPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the minimum number of mornings per week");s+="\n";
@@ -55819,7 +56733,7 @@ QString ConstraintStudentsSetMinMorningsPerWeek::getDetailedDescription(Rules& r
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMinMorningsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -56010,8 +56924,9 @@ QString ConstraintStudentsMinMorningsPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMinMorningsPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintStudentsMinMorningsPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the minimum number of mornings per week");s+="\n";
@@ -56028,7 +56943,7 @@ QString ConstraintStudentsMinMorningsPerWeek::getDetailedDescription(Rules& r){
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMinMorningsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -56318,8 +57233,9 @@ QString ConstraintStudentsSetMorningIntervalMaxDaysPerWeek::getDescription(Rules
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMorningIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintStudentsSetMorningIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set respects working in an hourly morning interval a maximum number of days per week");s+="\n";
@@ -56344,7 +57260,7 @@ QString ConstraintStudentsSetMorningIntervalMaxDaysPerWeek::getDetailedDescripti
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMorningIntervalMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -56574,8 +57490,9 @@ QString ConstraintStudentsMorningIntervalMaxDaysPerWeek::getDescription(Rules& r
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMorningIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintStudentsMorningIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students respect working in an hourly morning interval a maximum number of days per week");s+="\n";
@@ -56599,7 +57516,7 @@ QString ConstraintStudentsMorningIntervalMaxDaysPerWeek::getDetailedDescription(
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMorningIntervalMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -56889,8 +57806,9 @@ QString ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek::getDescription(Rul
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set respects working in an hourly afternoon interval a maximum number of days per week");s+="\n";
@@ -56915,7 +57833,7 @@ QString ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek::getDetailedDescrip
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -57145,8 +58063,9 @@ QString ConstraintStudentsAfternoonIntervalMaxDaysPerWeek::getDescription(Rules&
 	return begin+s+end;
 }
 
-QString ConstraintStudentsAfternoonIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintStudentsAfternoonIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students respect working in an hourly afternoon interval a maximum number of days per week");s+="\n";
@@ -57170,7 +58089,7 @@ QString ConstraintStudentsAfternoonIntervalMaxDaysPerWeek::getDetailedDescriptio
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsAfternoonIntervalMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -57374,8 +58293,9 @@ QString ConstraintTeacherMaxHoursPerAllAfternoons::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxHoursPerAllAfternoons::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMaxHoursPerAllAfternoons::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the maximum number of hours per all afternoons");s+="\n";
@@ -57392,7 +58312,7 @@ QString ConstraintTeacherMaxHoursPerAllAfternoons::getDetailedDescription(Rules&
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxHoursPerAllAfternoons::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -57560,8 +58480,9 @@ QString ConstraintTeachersMaxHoursPerAllAfternoons::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxHoursPerAllAfternoons::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMaxHoursPerAllAfternoons::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the maximum number of hours per all afternoons");s+="\n";
@@ -57577,7 +58498,7 @@ QString ConstraintTeachersMaxHoursPerAllAfternoons::getDetailedDescription(Rules
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxHoursPerAllAfternoons::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -57800,8 +58721,9 @@ QString ConstraintStudentsSetMaxHoursPerAllAfternoons::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxHoursPerAllAfternoons::getDetailedDescription(Rules& r){
+QString ConstraintStudentsSetMaxHoursPerAllAfternoons::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the maximum number of hours per all afternoons");s+="\n";
@@ -57818,7 +58740,7 @@ QString ConstraintStudentsSetMaxHoursPerAllAfternoons::getDetailedDescription(Ru
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMaxHoursPerAllAfternoons::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -57984,8 +58906,9 @@ QString ConstraintStudentsMaxHoursPerAllAfternoons::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxHoursPerAllAfternoons::getDetailedDescription(Rules& r){
+QString ConstraintStudentsMaxHoursPerAllAfternoons::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the maximum number of hours per all afternoons");s+="\n";
@@ -58001,7 +58924,7 @@ QString ConstraintStudentsMaxHoursPerAllAfternoons::getDetailedDescription(Rules
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMaxHoursPerAllAfternoons::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -58176,8 +59099,9 @@ QString ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon::getDescripti
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the minimum resting hours (between morning and afternoon)");s+="\n";
@@ -58194,7 +59118,7 @@ QString ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon::getDetailedD
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -58371,8 +59295,9 @@ QString ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoon::getDescript
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoon::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoon::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the minimum resting hours (between morning and afternoon)");s+="\n";
@@ -58388,7 +59313,7 @@ QString ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoon::getDetailed
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoon::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -58562,9 +59487,10 @@ QString ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon::getDescr
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the minimum resting hours (between morning and afternoon)");s+="\n";
@@ -58581,7 +59507,7 @@ QString ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon::getDetai
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon::computeInternalStructure(QWidget* parent, Rules& r)
@@ -58807,9 +59733,10 @@ QString ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon::getDescript
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the minimum resting hours (between morning and afternoon)");s+="\n";
@@ -58825,7 +59752,7 @@ QString ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon::getDetailed
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon::computeInternalStructure(QWidget* parent, Rules& r)
@@ -59012,9 +59939,10 @@ QString ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour::getDescripti
 	return begin+s+end;
 }
 
-QString ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour::getDetailedDescription(Rules& r)
+QString ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must begin the afternoons early, respecting maximum %1 later beginnings, at second hour")
@@ -59031,7 +59959,7 @@ QString ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour::getDetailedD
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -59321,9 +60249,10 @@ QString ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour::getDescri
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 
@@ -59342,7 +60271,7 @@ QString ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour::getDetail
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -59574,8 +60503,9 @@ QString ConstraintTeachersMaxGapsPerWeekForRealDays::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxGapsPerWeekForRealDays::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMaxGapsPerWeekForRealDays::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the maximum gaps per week for real days");s+="\n";
@@ -59592,7 +60522,7 @@ QString ConstraintTeachersMaxGapsPerWeekForRealDays::getDetailedDescription(Rule
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxGapsPerWeekForRealDays::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -59805,8 +60735,9 @@ QString ConstraintTeacherMaxGapsPerWeekForRealDays::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxGapsPerWeekForRealDays::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMaxGapsPerWeekForRealDays::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint"); s+="\n";
 	s+=tr("A teacher must respect the maximum number of gaps per week for real days"); s+="\n";
@@ -59824,7 +60755,7 @@ QString ConstraintTeacherMaxGapsPerWeekForRealDays::getDetailedDescription(Rules
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxGapsPerWeekForRealDays::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -60031,9 +60962,10 @@ QString ConstraintStudentsMaxGapsPerWeekForRealDays::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxGapsPerWeekForRealDays::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMaxGapsPerWeekForRealDays::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the maximum number of gaps per week for real days");s+="\n";
@@ -60050,7 +60982,7 @@ QString ConstraintStudentsMaxGapsPerWeekForRealDays::getDetailedDescription(Rule
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMaxGapsPerWeekForRealDays::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -60315,8 +61247,9 @@ QString ConstraintStudentsSetMaxGapsPerWeekForRealDays::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxGapsPerWeekForRealDays::getDetailedDescription(Rules& r){
+QString ConstraintStudentsSetMaxGapsPerWeekForRealDays::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the maximum number of gaps per week for real days");s+="\n";
@@ -60334,7 +61267,7 @@ QString ConstraintStudentsSetMaxGapsPerWeekForRealDays::getDetailedDescription(R
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMaxGapsPerWeekForRealDays::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -60549,9 +61482,10 @@ QString ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::getDescription
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must begin the mornings early, respecting maximum %1 later beginnings, at second hour")
@@ -60568,7 +61502,7 @@ QString ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::getDetailedDes
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -60811,9 +61745,10 @@ QString ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::getDescription(
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 
@@ -60832,7 +61767,7 @@ QString ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::getDetailedDesc
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -61068,9 +62003,10 @@ QString ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::getDescription
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must begin the mornings early, respecting maximum %1 later beginnings, at second hour")
@@ -61087,7 +62023,7 @@ QString ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::getDetailedDes
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -61377,9 +62313,10 @@ QString ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::getDescript
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 
@@ -61398,7 +62335,7 @@ QString ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::getDetailed
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -61635,9 +62572,10 @@ QString ConstraintTeacherMaxThreeConsecutiveDays::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxThreeConsecutiveDays::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMaxThreeConsecutiveDays::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect a maximum of three consecutive working days");s+="\n";
@@ -61654,7 +62592,7 @@ QString ConstraintTeacherMaxThreeConsecutiveDays::getDetailedDescription(Rules& 
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxThreeConsecutiveDays::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -61839,9 +62777,10 @@ QString ConstraintTeachersMaxThreeConsecutiveDays::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxThreeConsecutiveDays::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMaxThreeConsecutiveDays::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect a maximum of three consecutive working days");s+="\n";
@@ -61857,7 +62796,7 @@ QString ConstraintTeachersMaxThreeConsecutiveDays::getDetailedDescription(Rules&
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxThreeConsecutiveDays::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -62100,9 +63039,10 @@ QString ConstraintStudentsSetMaxThreeConsecutiveDays::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxThreeConsecutiveDays::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMaxThreeConsecutiveDays::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect a maximum of three consecutive working days");s+="\n";
@@ -62119,7 +63059,7 @@ QString ConstraintStudentsSetMaxThreeConsecutiveDays::getDetailedDescription(Rul
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMaxThreeConsecutiveDays::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -62307,9 +63247,10 @@ QString ConstraintStudentsMaxThreeConsecutiveDays::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxThreeConsecutiveDays::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMaxThreeConsecutiveDays::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect a maximum of three consecutive working days");s+="\n";
@@ -62325,7 +63266,7 @@ QString ConstraintStudentsMaxThreeConsecutiveDays::getDetailedDescription(Rules&
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMaxThreeConsecutiveDays::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -62618,8 +63559,10 @@ QString ConstraintMinHalfDaysBetweenActivities::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintMinHalfDaysBetweenActivities::getDetailedDescription(Rules& r)
+QString ConstraintMinHalfDaysBetweenActivities::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Minimum number of half days between activities");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -62642,7 +63585,7 @@ QString ConstraintMinHalfDaysBetweenActivities::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintMinHalfDaysBetweenActivities::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -62962,8 +63905,10 @@ QString ConstraintActivityPreferredDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivityPreferredDay::getDetailedDescription(Rules& r)
+QString ConstraintActivityPreferredDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
 		.arg(this->activityId)
@@ -62995,7 +63940,7 @@ QString ConstraintActivityPreferredDay::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivityPreferredDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -63222,8 +64167,10 @@ QString ConstraintActivitiesMinInATerm::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesMinInATerm::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesMinInATerm::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	/*QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+QString(", ");
@@ -63252,7 +64199,7 @@ QString ConstraintActivitiesMinInATerm::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivitiesMinInATerm::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -63545,8 +64492,10 @@ QString ConstraintMaxTermsBetweenActivities::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintMaxTermsBetweenActivities::getDetailedDescription(Rules& r)
+QString ConstraintMaxTermsBetweenActivities::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Maximum number of terms between activities");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -63568,7 +64517,7 @@ QString ConstraintMaxTermsBetweenActivities::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintMaxTermsBetweenActivities::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -63830,8 +64779,9 @@ QString ConstraintStudentsSetMaxActivityTagsPerDayFromSet::getDescription(Rules&
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxActivityTagsPerDayFromSet::getDetailedDescription(Rules& r){
+QString ConstraintStudentsSetMaxActivityTagsPerDayFromSet::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect a maximum number of activity tags per day from a set");s+="\n";
@@ -63850,7 +64800,7 @@ QString ConstraintStudentsSetMaxActivityTagsPerDayFromSet::getDetailedDescriptio
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMaxActivityTagsPerDayFromSet::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -64060,8 +65010,9 @@ QString ConstraintStudentsMaxActivityTagsPerDayFromSet::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxActivityTagsPerDayFromSet::getDetailedDescription(Rules& r){
+QString ConstraintStudentsMaxActivityTagsPerDayFromSet::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect a maximum number of activity tags per day from a set");s+="\n";
@@ -64079,7 +65030,7 @@ QString ConstraintStudentsMaxActivityTagsPerDayFromSet::getDetailedDescription(R
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMaxActivityTagsPerDayFromSet::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -64297,8 +65248,9 @@ QString ConstraintTeacherMaxActivityTagsPerRealDayFromSet::getDescription(Rules&
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxActivityTagsPerRealDayFromSet::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMaxActivityTagsPerRealDayFromSet::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect a maximum number of activity tags per real day from a set");s+="\n";
@@ -64317,7 +65269,7 @@ QString ConstraintTeacherMaxActivityTagsPerRealDayFromSet::getDetailedDescriptio
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxActivityTagsPerRealDayFromSet::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -64534,8 +65486,9 @@ QString ConstraintTeachersMaxActivityTagsPerRealDayFromSet::getDescription(Rules
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxActivityTagsPerRealDayFromSet::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMaxActivityTagsPerRealDayFromSet::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect a maximum number of activity tags per real day from a set");s+="\n";
@@ -64553,7 +65506,7 @@ QString ConstraintTeachersMaxActivityTagsPerRealDayFromSet::getDetailedDescripti
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxActivityTagsPerRealDayFromSet::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -64782,8 +65735,9 @@ QString ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet::getDescription(Ru
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet::getDetailedDescription(Rules& r){
+QString ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect a maximum number of activity tags per real day from a set");s+="\n";
@@ -64802,7 +65756,7 @@ QString ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet::getDetailedDescri
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -65015,8 +65969,9 @@ QString ConstraintStudentsMaxActivityTagsPerRealDayFromSet::getDescription(Rules
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxActivityTagsPerRealDayFromSet::getDetailedDescription(Rules& r){
+QString ConstraintStudentsMaxActivityTagsPerRealDayFromSet::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect a maximum number of activity tags per real day from a set");s+="\n";
@@ -65034,7 +65989,7 @@ QString ConstraintStudentsMaxActivityTagsPerRealDayFromSet::getDetailedDescripti
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMaxActivityTagsPerRealDayFromSet::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -65311,8 +66266,10 @@ QString ConstraintMaxHalfDaysBetweenActivities::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintMaxHalfDaysBetweenActivities::getDetailedDescription(Rules& r)
+QString ConstraintMaxHalfDaysBetweenActivities::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Maximum number of half days between activities");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -65334,7 +66291,7 @@ QString ConstraintMaxHalfDaysBetweenActivities::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintMaxHalfDaysBetweenActivities::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -65594,8 +66551,10 @@ QString ConstraintActivityBeginsStudentsDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivityBeginsStudentsDay::getDetailedDescription(Rules& r)
+QString ConstraintActivityBeginsStudentsDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Activity must begin students' day");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -65612,7 +66571,7 @@ QString ConstraintActivityBeginsStudentsDay::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivityBeginsStudentsDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -65872,9 +66831,10 @@ QString ConstraintActivitiesBeginStudentsDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesBeginStudentsDay::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesBeginStudentsDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Activities with:");s+="\n";
@@ -65917,7 +66877,7 @@ QString ConstraintActivitiesBeginStudentsDay::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivitiesBeginStudentsDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -66148,8 +67108,10 @@ QString ConstraintActivityBeginsTeachersDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivityBeginsTeachersDay::getDetailedDescription(Rules& r)
+QString ConstraintActivityBeginsTeachersDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Activity must begin teachers' day");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -66166,7 +67128,7 @@ QString ConstraintActivityBeginsTeachersDay::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivityBeginsTeachersDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString> &dl, FakeString* conflictsString)
@@ -66426,9 +67388,10 @@ QString ConstraintActivitiesBeginTeachersDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesBeginTeachersDay::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesBeginTeachersDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Activities with:");s+="\n";
@@ -66471,7 +67434,7 @@ QString ConstraintActivitiesBeginTeachersDay::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivitiesBeginTeachersDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString> &dl, FakeString* conflictsString)
@@ -66703,8 +67666,9 @@ QString ConstraintTeachersMinHoursPerAfternoon::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMinHoursPerAfternoon::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMinHoursPerAfternoon::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the minimum number of hours per afternoon"); s+="\n";
@@ -66721,7 +67685,7 @@ QString ConstraintTeachersMinHoursPerAfternoon::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMinHoursPerAfternoon::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -66954,8 +67918,9 @@ QString ConstraintTeacherMinHoursPerAfternoon::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMinHoursPerAfternoon::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMinHoursPerAfternoon::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the minimum number of hours per afternoon");s+="\n";
@@ -66973,7 +67938,7 @@ QString ConstraintTeacherMinHoursPerAfternoon::getDetailedDescription(Rules& r){
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMinHoursPerAfternoon::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -67196,9 +68161,10 @@ QString ConstraintStudentsMinHoursPerAfternoon::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMinHoursPerAfternoon::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMinHoursPerAfternoon::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the minimum number of hours per afternoon");s+="\n";
@@ -67215,7 +68181,7 @@ QString ConstraintStudentsMinHoursPerAfternoon::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsMinHoursPerAfternoon::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -67448,9 +68414,10 @@ QString ConstraintStudentsSetMinHoursPerAfternoon::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMinHoursPerAfternoon::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMinHoursPerAfternoon::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the minimum number of hours per afternoon");s+="\n";
@@ -67468,7 +68435,7 @@ QString ConstraintStudentsSetMinHoursPerAfternoon::getDetailedDescription(Rules&
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsSetMinHoursPerAfternoon::computeInternalStructure(QWidget* parent, Rules& r)
@@ -67779,9 +68746,10 @@ QString ConstraintTeacherMaxHoursDailyInInterval::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxHoursDailyInInterval::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMaxHoursDailyInInterval::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the maximum number of hours daily in an hourly interval");s+="\n";
@@ -67806,7 +68774,7 @@ QString ConstraintTeacherMaxHoursDailyInInterval::getDetailedDescription(Rules& 
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxHoursDailyInInterval::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -68038,9 +69006,10 @@ QString ConstraintTeachersMaxHoursDailyInInterval::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxHoursDailyInInterval::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMaxHoursDailyInInterval::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the maximum number of hours daily in an hourly interval");s+="\n";
@@ -68064,7 +69033,7 @@ QString ConstraintTeachersMaxHoursDailyInInterval::getDetailedDescription(Rules&
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxHoursDailyInInterval::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -68294,9 +69263,10 @@ QString ConstraintStudentsSetMaxHoursDailyInInterval::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxHoursDailyInInterval::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetMaxHoursDailyInInterval::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the maximum number of hours daily in an hourly interval");s+="\n";
@@ -68321,7 +69291,7 @@ QString ConstraintStudentsSetMaxHoursDailyInInterval::getDetailedDescription(Rul
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsSetMaxHoursDailyInInterval::computeInternalStructure(QWidget* parent, Rules& r)
@@ -68587,9 +69557,10 @@ QString ConstraintStudentsMaxHoursDailyInInterval::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxHoursDailyInInterval::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMaxHoursDailyInInterval::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the maximum number of hours daily in an hourly interval");s+="\n";
@@ -68613,7 +69584,7 @@ QString ConstraintStudentsMaxHoursDailyInInterval::getDetailedDescription(Rules&
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 bool ConstraintStudentsMaxHoursDailyInInterval::computeInternalStructure(QWidget* parent, Rules& r)
@@ -68818,9 +69789,10 @@ QString ConstraintTeacherNoTwoConsecutiveDays::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherNoTwoConsecutiveDays::getDetailedDescription(Rules& r)
+QString ConstraintTeacherNoTwoConsecutiveDays::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must not work two consecutive days");s+="\n";
@@ -68836,7 +69808,7 @@ QString ConstraintTeacherNoTwoConsecutiveDays::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherNoTwoConsecutiveDays::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -69013,9 +69985,10 @@ QString ConstraintTeachersNoTwoConsecutiveDays::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersNoTwoConsecutiveDays::getDetailedDescription(Rules& r)
+QString ConstraintTeachersNoTwoConsecutiveDays::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must not work two consecutive days");s+="\n";
@@ -69030,7 +70003,7 @@ QString ConstraintTeachersNoTwoConsecutiveDays::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersNoTwoConsecutiveDays::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -69272,9 +70245,10 @@ QString ConstraintTeacherPairOfMutuallyExclusiveTimeSlots::getDescription(Rules&
 	return begin+s+end;
 }
 
-QString ConstraintTeacherPairOfMutuallyExclusiveTimeSlots::getDetailedDescription(Rules& r)
+QString ConstraintTeacherPairOfMutuallyExclusiveTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher has a pair of mutually exclusive time slots");s+="\n";
@@ -69293,7 +70267,7 @@ QString ConstraintTeacherPairOfMutuallyExclusiveTimeSlots::getDetailedDescriptio
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherPairOfMutuallyExclusiveTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -69524,9 +70498,10 @@ QString ConstraintTeachersPairOfMutuallyExclusiveTimeSlots::getDescription(Rules
 	return begin+s+end;
 }
 
-QString ConstraintTeachersPairOfMutuallyExclusiveTimeSlots::getDetailedDescription(Rules& r)
+QString ConstraintTeachersPairOfMutuallyExclusiveTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers have a pair of mutually exclusive time slots");s+="\n";
@@ -69544,7 +70519,7 @@ QString ConstraintTeachersPairOfMutuallyExclusiveTimeSlots::getDetailedDescripti
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersPairOfMutuallyExclusiveTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -69792,9 +70767,10 @@ QString ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots::getDescription(Ru
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set has a pair of mutually exclusive time slots");s+="\n";
@@ -69813,7 +70789,7 @@ QString ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots::getDetailedDescri
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -70043,9 +71019,10 @@ QString ConstraintStudentsPairOfMutuallyExclusiveTimeSlots::getDescription(Rules
 	return begin+s+end;
 }
 
-QString ConstraintStudentsPairOfMutuallyExclusiveTimeSlots::getDetailedDescription(Rules& r)
+QString ConstraintStudentsPairOfMutuallyExclusiveTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students have a pair of mutually exclusive time slots");s+="\n";
@@ -70063,7 +71040,7 @@ QString ConstraintStudentsPairOfMutuallyExclusiveTimeSlots::getDetailedDescripti
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintStudentsPairOfMutuallyExclusiveTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -70375,56 +71352,106 @@ QString ConstraintTwoSetsOfActivitiesSameSections::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTwoSetsOfActivitiesSameSections::getDetailedDescription(Rules& r)
+QString ConstraintTwoSetsOfActivitiesSameSections::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	assert(this->oDays.count()==this->oHours.count());
 
-	QString actAids=QString("");
-	for(int aid : std::as_const(this->activitiesAIds))
-		actAids+=CustomFETString::number(aid)+translatedCommaSpace();
-	actAids.chop(translatedCommaSpace().size());
+	if(!richText){
+		QString actAids=QString("");
+		for(int aid : std::as_const(this->activitiesAIds))
+			actAids+=CustomFETString::number(aid)+translatedCommaSpace();
+		actAids.chop(translatedCommaSpace().size());
 
-	QString actBids=QString("");
-	for(int aid : std::as_const(this->activitiesBIds))
-		actBids+=CustomFETString::number(aid)+translatedCommaSpace();
-	actBids.chop(translatedCommaSpace().size());
+		QString actBids=QString("");
+		for(int aid : std::as_const(this->activitiesBIds))
+			actBids+=CustomFETString::number(aid)+translatedCommaSpace();
+		actBids.chop(translatedCommaSpace().size());
 
-	QString timeslots=QString("");
-	for(int i=0; i<this->oDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[oDays.at(i)]+QString(" ")+r.hoursOfTheDay[oHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(translatedCommaSpace().size());
+		QString timeslots=QString("");
+		for(int i=0; i<this->oDays.count(); i++)
+			timeslots+=r.daysOfTheWeek[oDays.at(i)]+QString(" ")+r.hoursOfTheDay[oHours.at(i)]+translatedCommaSpace();
+		timeslots.chop(translatedCommaSpace().size());
 
-	QString s=tr("Time constraint"); s+="\n";
-	s+=tr("Two sets of activities have the same sections"); s+="\n";
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
-	s+=tr("Number of activities in the first set=%1").arg(QString::number(this->activitiesAIds.count())); s+="\n";
-	for(int id : std::as_const(this->activitiesAIds)){
-		s+=tr("First set: activity with id=%1 (%2)", "An activity in the first set of activities of this constraint. "
-		 "%1 is the id, %2 is the detailed description of the activity")
-		 .arg(id)
-		 .arg(getActivityDetailedDescription(r, id));
-		s+="\n";
+		QString s=tr("Time constraint"); s+="\n";
+		s+=tr("Two sets of activities have the same sections"); s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
+		s+=tr("Number of activities in the first set=%1").arg(QString::number(this->activitiesAIds.count())); s+="\n";
+		for(int id : std::as_const(this->activitiesAIds)){
+			s+=tr("First set: activity with id=%1 (%2)", "An activity in the first set of activities of this constraint. "
+			 "%1 is the id, %2 is the detailed description of the activity")
+			 .arg(id)
+			 .arg(getActivityDetailedDescription(r, id));
+			s+="\n";
+		}
+		s+=tr("Number of activities in the second set=%1").arg(QString::number(this->activitiesBIds.count())); s+="\n";
+		for(int id : std::as_const(this->activitiesBIds)){
+			s+=tr("Second set: activity with id=%1 (%2)", "An activity in the second set of activities of this constraint. "
+			 "%1 is the id, %2 is the detailed description of the activity")
+			 .arg(id)
+			 .arg(getActivityDetailedDescription(r, id));
+			s+="\n";
+		}
+		s+=tr("Exception time slots: %1", "The selected time slots constitute an exception").arg(timeslots); s+="\n";
+
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+
+		return s;
 	}
-	s+=tr("Number of activities in the second set=%1").arg(QString::number(this->activitiesBIds.count())); s+="\n";
-	for(int id : std::as_const(this->activitiesBIds)){
-		s+=tr("Second set: activity with id=%1 (%2)", "An activity in the second set of activities of this constraint. "
-		 "%1 is the id, %2 is the detailed description of the activity")
-		 .arg(id)
-		 .arg(getActivityDetailedDescription(r, id));
-		s+="\n";
-	}
-	s+=tr("Exception time slots: %1", "The selected time slots constitute an exception").arg(timeslots); s+="\n";
+	else{
+		QString actAids=QString("");
+		for(int aid : std::as_const(this->activitiesAIds))
+			actAids+=CustomFETString::number(aid)+translatedCommaSpace();
+		actAids.chop(translatedCommaSpace().size());
 
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
-		s+="\n";
-	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
-		s+="\n";
-	}
+		QString actBids=QString("");
+		for(int aid : std::as_const(this->activitiesBIds))
+			actBids+=CustomFETString::number(aid)+translatedCommaSpace();
+		actBids.chop(translatedCommaSpace().size());
 
-	return s;
+		QString begin=tr("Time constraint"); begin+="\n";
+		begin+=tr("Two sets of activities have the same sections"); begin+="\n";
+		begin+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); begin+="\n";
+		begin+=tr("Number of activities in the first set=%1").arg(QString::number(this->activitiesAIds.count())); begin+="\n";
+		for(int id : std::as_const(this->activitiesAIds)){
+			begin+=tr("First set: activity with id=%1 (%2)", "An activity in the first set of activities of this constraint. "
+			 "%1 is the id, %2 is the detailed description of the activity")
+			 .arg(id)
+			 .arg(getActivityDetailedDescription(r, id));
+			begin+="\n";
+		}
+		begin+=tr("Number of activities in the second set=%1").arg(QString::number(this->activitiesBIds.count())); begin+="\n";
+		for(int id : std::as_const(this->activitiesBIds)){
+			begin+=tr("Second set: activity with id=%1 (%2)", "An activity in the second set of activities of this constraint. "
+			 "%1 is the id, %2 is the detailed description of the activity")
+			 .arg(id)
+			 .arg(getActivityDetailedDescription(r, id));
+			begin+="\n";
+		}
+
+		begin+=tr("Exception time slots:", "The selected time slots constitute an exception");
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString middle=listsOfDaysAndHoursToTable(r, oDays, oHours, true, false, colors);
+		QString end;
+		end+="\n";
+
+		if(!active){
+			end+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+
+		return protect4(begin)+middle+protect4(end);
+	}
 }
 
 double ConstraintTwoSetsOfActivitiesSameSections::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -70770,35 +71797,63 @@ QString ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::getDescription(Ru
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::getDetailedDescription(Rules& r){
+QString ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
 
 	assert(this->selectedDays.count()==this->selectedHours.count());
 
-	QString s=tr("Time constraint");s+="\n";
-	s+=tr("A students set must respect a maximum number of single gaps in the selected time slots");s+="\n";
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
-	s+=tr("Students=%1").arg(this->students);s+="\n";
+	if(!richText){
+		QString s=tr("Time constraint");s+="\n";
+		s+=tr("A students set must respect a maximum number of single gaps in the selected time slots");s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+		s+=tr("Students=%1").arg(this->students);s+="\n";
 
-	s+=tr("Maximum number of single gaps=%1").arg(maxSingleGaps);s+="\n";
+		s+=tr("Maximum number of single gaps=%1").arg(maxSingleGaps);s+="\n";
 
-	QString timeslots=QString("");
-	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(translatedCommaSpace().size());
+		QString timeslots=QString("");
+		for(int i=0; i<this->selectedDays.count(); i++)
+			timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
+		timeslots.chop(translatedCommaSpace().size());
 
-	s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
-	
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
-		s+="\n";
+		s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
+		
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+
+		return s;
 	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
-		s+="\n";
-	}
+	else{
+		QString begin=tr("Time constraint");begin+="\n";
+		begin+=tr("A students set must respect a maximum number of single gaps in the selected time slots");begin+="\n";
+		begin+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));begin+="\n";
+		begin+=tr("Students=%1").arg(this->students);begin+="\n";
 
-	return s;
+		begin+=tr("Maximum number of single gaps=%1").arg(maxSingleGaps);begin+="\n";
+
+		begin+=tr("Selected time slots:"); begin+="\n";
+		
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString middle=listsOfDaysAndHoursToTable(r, selectedDays, selectedHours, true, false, colors);
+		QString end;
+		end+="\n";
+		
+		if(!active){
+			end+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+
+		return protect4(begin)+middle+protect4(end);
+	}
 }
 
 double ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -71068,34 +72123,61 @@ QString ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::getDescription(Rules
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::getDetailedDescription(Rules& r){
+QString ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
 
 	assert(this->selectedDays.count()==this->selectedHours.count());
 
-	QString s=tr("Time constraint");s+="\n";
-	s+=tr("All students must respect a maximum number of single gaps in the selected time slots");s+="\n";
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	if(!richText){
+		QString s=tr("Time constraint");s+="\n";
+		s+=tr("All students must respect a maximum number of single gaps in the selected time slots");s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
-	s+=tr("Maximum number of single gaps=%1").arg(maxSingleGaps);s+="\n";
+		s+=tr("Maximum number of single gaps=%1").arg(maxSingleGaps);s+="\n";
 
-	QString timeslots=QString("");
-	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(translatedCommaSpace().size());
+		QString timeslots=QString("");
+		for(int i=0; i<this->selectedDays.count(); i++)
+			timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
+		timeslots.chop(translatedCommaSpace().size());
 
-	s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
-	
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
-		s+="\n";
+		s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
+		
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+
+		return s;
 	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
-		s+="\n";
-	}
+	else{
+		QString begin=tr("Time constraint");begin+="\n";
+		begin+=tr("All students must respect a maximum number of single gaps in the selected time slots");begin+="\n";
+		begin+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));begin+="\n";
 
-	return s;
+		begin+=tr("Maximum number of single gaps=%1").arg(maxSingleGaps);begin+="\n";
+
+		begin+=tr("Selected time slots:"); begin+="\n";
+		
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString middle=listsOfDaysAndHoursToTable(r, selectedDays, selectedHours, true, false, colors);
+		QString end;
+		end+="\n";
+		
+		if(!active){
+			end+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+		
+		return protect4(begin)+middle+protect4(end);
+	}
 }
 
 double ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -71368,34 +72450,61 @@ QString ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::getDescription(Rules
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
 
 	assert(this->selectedDays.count()==this->selectedHours.count());
 
-	QString s=tr("Time constraint");s+="\n";
-	s+=tr("All teachers must respect a maximum number of single gaps in the selected time slots");s+="\n";
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	if(!richText){
+		QString s=tr("Time constraint");s+="\n";
+		s+=tr("All teachers must respect a maximum number of single gaps in the selected time slots");s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
-	s+=tr("Maximum number of single gaps=%1").arg(maxSingleGaps);s+="\n";
+		s+=tr("Maximum number of single gaps=%1").arg(maxSingleGaps);s+="\n";
 
-	QString timeslots=QString("");
-	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(translatedCommaSpace().size());
+		QString timeslots=QString("");
+		for(int i=0; i<this->selectedDays.count(); i++)
+			timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
+		timeslots.chop(translatedCommaSpace().size());
 
-	s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
+		s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
 	
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
-		s+="\n";
-	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
-		s+="\n";
-	}
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
 
-	return s;
+		return s;
+	}
+	else{
+		QString begin=tr("Time constraint");begin+="\n";
+		begin+=tr("All teachers must respect a maximum number of single gaps in the selected time slots");begin+="\n";
+		begin+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));begin+="\n";
+
+		begin+=tr("Maximum number of single gaps=%1").arg(maxSingleGaps);begin+="\n";
+
+		begin+=tr("Selected time slots:"); begin+="\n";
+
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString middle=listsOfDaysAndHoursToTable(r, selectedDays, selectedHours, true, false, colors);
+		QString end;
+		end+="\n";
+
+		if(!active){
+			end+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+
+		return protect4(begin)+middle+protect4(end);
+	}
 }
 
 double ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -71685,35 +72794,63 @@ QString ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::getDescription(Rules&
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors){
 	Q_UNUSED(r);
 
 	assert(this->selectedDays.count()==this->selectedHours.count());
-
-	QString s=tr("Time constraint");s+="\n";
-	s+=tr("A teacher must respect a maximum number of single gaps in the selected time slots");s+="\n";
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
-	s+=tr("Teacher=%1").arg(this->teacher);s+="\n";
-
-	s+=tr("Maximum number of single gaps=%1").arg(maxSingleGaps);s+="\n";
-
-	QString timeslots=QString("");
-	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(translatedCommaSpace().size());
-
-	s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
 	
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
-		s+="\n";
-	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
-		s+="\n";
-	}
+	if(!richText){
+		QString s=tr("Time constraint");s+="\n";
+		s+=tr("A teacher must respect a maximum number of single gaps in the selected time slots");s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+		s+=tr("Teacher=%1").arg(this->teacher);s+="\n";
 
-	return s;
+		s+=tr("Maximum number of single gaps=%1").arg(maxSingleGaps);s+="\n";
+
+		QString timeslots=QString("");
+		for(int i=0; i<this->selectedDays.count(); i++)
+			timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
+		timeslots.chop(translatedCommaSpace().size());
+
+		s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
+		
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+		
+		return s;
+	}
+	else{
+		QString begin=tr("Time constraint");begin+="\n";
+		begin+=tr("A teacher must respect a maximum number of single gaps in the selected time slots");begin+="\n";
+		begin+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));begin+="\n";
+		begin+=tr("Teacher=%1").arg(this->teacher);begin+="\n";
+
+		begin+=tr("Maximum number of single gaps=%1").arg(maxSingleGaps);begin+="\n";
+
+		begin+=tr("Selected time slots:"); begin+="\n";
+
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString middle=listsOfDaysAndHoursToTable(r, selectedDays, selectedHours, true, false, colors);
+		QString end;
+		end+="\n";
+		
+		if(!active){
+			end+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+		
+		return protect4(begin)+middle+protect4(end);
+	}
 }
 
 double ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
@@ -71935,9 +73072,10 @@ QString ConstraintTeacherMaxHoursPerTerm::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxHoursPerTerm::getDetailedDescription(Rules& r)
+QString ConstraintTeacherMaxHoursPerTerm::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the maximum number of hours per term");s+="\n";
@@ -71954,7 +73092,7 @@ QString ConstraintTeacherMaxHoursPerTerm::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeacherMaxHoursPerTerm::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -72122,9 +73260,10 @@ QString ConstraintTeachersMaxHoursPerTerm::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxHoursPerTerm::getDetailedDescription(Rules& r)
+QString ConstraintTeachersMaxHoursPerTerm::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the maximum number of hours per term");s+="\n";
@@ -72140,7 +73279,7 @@ QString ConstraintTeachersMaxHoursPerTerm::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintTeachersMaxHoursPerTerm::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -72394,38 +73533,69 @@ QString ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots::getDescription(
 	return begin+s+end;
 }
 
-QString ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots::getDetailedDescription(Rules& r)
+QString ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
 
-	QString s=tr("Time constraint");s+="\n";
-	s+=tr("A teacher has a pair of mutually exclusive sets of time slots");s+="\n";
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
-	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
+	if(!richText){
+		QString s=tr("Time constraint");s+="\n";
+		s+=tr("A teacher has a pair of mutually exclusive sets of time slots");s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+		s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 
-	QString timeslots1=QString("");
-	for(int i=0; i<this->selectedDays1.count(); i++)
-		timeslots1+=r.daysOfTheWeek[selectedDays1.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours1.at(i)]+translatedCommaSpace();
-	timeslots1.chop(translatedCommaSpace().size());
+		QString timeslots1=QString("");
+		for(int i=0; i<this->selectedDays1.count(); i++)
+			timeslots1+=r.daysOfTheWeek[selectedDays1.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours1.at(i)]+translatedCommaSpace();
+		timeslots1.chop(translatedCommaSpace().size());
 
-	QString timeslots2=QString("");
-	for(int i=0; i<this->selectedDays2.count(); i++)
-		timeslots2+=r.daysOfTheWeek[selectedDays2.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours2.at(i)]+translatedCommaSpace();
-	timeslots2.chop(translatedCommaSpace().size());
+		QString timeslots2=QString("");
+		for(int i=0; i<this->selectedDays2.count(); i++)
+			timeslots2+=r.daysOfTheWeek[selectedDays2.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours2.at(i)]+translatedCommaSpace();
+		timeslots2.chop(translatedCommaSpace().size());
 
-	s+=tr("First set of selected time slots=%1").arg(timeslots1);s+="\n";
-	s+=tr("Second set of selected time slots=%1").arg(timeslots2);s+="\n";
+		s+=tr("First set of selected time slots=%1").arg(timeslots1);s+="\n";
+		s+=tr("Second set of selected time slots=%1").arg(timeslots2);s+="\n";
 
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
-		s+="\n";
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+
+		return s;
 	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
-		s+="\n";
-	}
+	else{
+		QString s1=tr("Time constraint");s1+="\n";
+		s1+=tr("A teacher has a pair of mutually exclusive sets of time slots");s1+="\n";
+		s1+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s1+="\n";
+		s1+=tr("Teacher=%1").arg(this->teacherName);s1+="\n";
 
-	return s;
+		s1+=tr("First set of selected time slots:");
+		s1+="\n";
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString s2=listsOfDaysAndHoursToTable(r, selectedDays1, selectedHours1, true, false, colors);
+		QString s3;
+		s3+="\n";
+		s3+=tr("Second set of selected time slots:");
+		s3+="\n";
+		QString s4=listsOfDaysAndHoursToTable(r, selectedDays2, selectedHours2, true, false, colors);
+		QString s5;
+		s5+="\n";
+
+		if(!active){
+			s5+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s5+="\n";
+		}
+		if(!comments.isEmpty()){
+			s5+=tr("Comments=%1").arg(comments);
+			s5+="\n";
+		}
+
+		return protect4(s1)+s2+protect4(s3)+s4+protect4(s5);
+	}
 }
 
 double ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -72738,37 +73908,67 @@ QString ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots::getDescription
 	return begin+s+end;
 }
 
-QString ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots::getDetailedDescription(Rules& r)
+QString ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
 
-	QString s=tr("Time constraint");s+="\n";
-	s+=tr("All teachers have a pair of mutually exclusive sets of time slots");s+="\n";
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	if(!richText){
+		QString s=tr("Time constraint");s+="\n";
+		s+=tr("All teachers have a pair of mutually exclusive sets of time slots");s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
-	QString timeslots1=QString("");
-	for(int i=0; i<this->selectedDays1.count(); i++)
-		timeslots1+=r.daysOfTheWeek[selectedDays1.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours1.at(i)]+translatedCommaSpace();
-	timeslots1.chop(translatedCommaSpace().size());
+		QString timeslots1=QString("");
+		for(int i=0; i<this->selectedDays1.count(); i++)
+			timeslots1+=r.daysOfTheWeek[selectedDays1.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours1.at(i)]+translatedCommaSpace();
+		timeslots1.chop(translatedCommaSpace().size());
 
-	QString timeslots2=QString("");
-	for(int i=0; i<this->selectedDays2.count(); i++)
-		timeslots2+=r.daysOfTheWeek[selectedDays2.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours2.at(i)]+translatedCommaSpace();
-	timeslots2.chop(translatedCommaSpace().size());
+		QString timeslots2=QString("");
+		for(int i=0; i<this->selectedDays2.count(); i++)
+			timeslots2+=r.daysOfTheWeek[selectedDays2.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours2.at(i)]+translatedCommaSpace();
+		timeslots2.chop(translatedCommaSpace().size());
 
-	s+=tr("First set of selected time slots=%1").arg(timeslots1);s+="\n";
-	s+=tr("Second set of selected time slots=%1").arg(timeslots2);s+="\n";
+		s+=tr("First set of selected time slots=%1").arg(timeslots1);s+="\n";
+		s+=tr("Second set of selected time slots=%1").arg(timeslots2);s+="\n";
 
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
-		s+="\n";
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+
+		return s;
 	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
-		s+="\n";
-	}
+	else{
+		QString s1=tr("Time constraint");s1+="\n";
+		s1+=tr("All teachers have a pair of mutually exclusive sets of time slots");s1+="\n";
+		s1+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s1+="\n";
 
-	return s;
+		s1+=tr("First set of selected time slots:");
+		s1+="\n";
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString s2=listsOfDaysAndHoursToTable(r, selectedDays1, selectedHours1, true, false, colors);
+		QString s3;
+		s3+="\n";
+		s3+=tr("Second set of selected time slots:");
+		s3+="\n";
+		QString s4=listsOfDaysAndHoursToTable(r, selectedDays2, selectedHours2, true, false, colors);
+		QString s5;
+		s5+="\n";
+
+		if(!active){
+			s5+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s5+="\n";
+		}
+		if(!comments.isEmpty()){
+			s5+=tr("Comments=%1").arg(comments);
+			s5+="\n";
+		}
+
+		return protect4(s1)+s2+protect4(s3)+s4+protect4(s5);
+	}
 }
 
 double ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -73099,39 +74299,71 @@ QString ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots::getDescript
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
 
-	QString s=tr("Time constraint");s+="\n";
-	s+=tr("A students set has a pair of mutually exclusive sets of time slots");s+="\n";
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	if(!richText){
+		QString s=tr("Time constraint");s+="\n";
+		s+=tr("A students set has a pair of mutually exclusive sets of time slots");s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
-	s+=tr("Students=%1").arg(this->students);s+="\n";
+		s+=tr("Students=%1").arg(this->students);s+="\n";
 
-	QString timeslots1=QString("");
-	for(int i=0; i<this->selectedDays1.count(); i++)
-		timeslots1+=r.daysOfTheWeek[selectedDays1.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours1.at(i)]+translatedCommaSpace();
-	timeslots1.chop(translatedCommaSpace().size());
+		QString timeslots1=QString("");
+		for(int i=0; i<this->selectedDays1.count(); i++)
+			timeslots1+=r.daysOfTheWeek[selectedDays1.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours1.at(i)]+translatedCommaSpace();
+		timeslots1.chop(translatedCommaSpace().size());
 
-	QString timeslots2=QString("");
-	for(int i=0; i<this->selectedDays2.count(); i++)
-		timeslots2+=r.daysOfTheWeek[selectedDays2.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours2.at(i)]+translatedCommaSpace();
-	timeslots2.chop(translatedCommaSpace().size());
+		QString timeslots2=QString("");
+		for(int i=0; i<this->selectedDays2.count(); i++)
+			timeslots2+=r.daysOfTheWeek[selectedDays2.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours2.at(i)]+translatedCommaSpace();
+		timeslots2.chop(translatedCommaSpace().size());
 
-	s+=tr("First set of selected time slots=%1").arg(timeslots1);s+="\n";
-	s+=tr("Second set of selected time slots=%1").arg(timeslots2);s+="\n";
+		s+=tr("First set of selected time slots=%1").arg(timeslots1);s+="\n";
+		s+=tr("Second set of selected time slots=%1").arg(timeslots2);s+="\n";
 
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
-		s+="\n";
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+
+		return s;
 	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
-		s+="\n";
-	}
+	else{
+		QString s1=tr("Time constraint");s1+="\n";
+		s1+=tr("A students set has a pair of mutually exclusive sets of time slots");s1+="\n";
+		s1+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s1+="\n";
 
-	return s;
+		s1+=tr("Students=%1").arg(this->students);s1+="\n";
+
+		s1+=tr("First set of selected time slots:");
+		s1+="\n";
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString s2=listsOfDaysAndHoursToTable(r, selectedDays1, selectedHours1, true, false, colors);
+		QString s3;
+		s3+="\n";
+		s3+=tr("Second set of selected time slots:");
+		s3+="\n";
+		QString s4=listsOfDaysAndHoursToTable(r, selectedDays2, selectedHours2, true, false, colors);
+		QString s5;
+		s5+="\n";
+
+		if(!active){
+			s5+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s5+="\n";
+		}
+		if(!comments.isEmpty()){
+			s5+=tr("Comments=%1").arg(comments);
+			s5+="\n";
+		}
+
+		return protect4(s1)+s2+protect4(s3)+s4+protect4(s5);
+	}
 }
 
 double ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -73441,37 +74673,67 @@ QString ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots::getDescription
 	return begin+s+end;
 }
 
-QString ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots::getDetailedDescription(Rules& r)
+QString ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
 
-	QString s=tr("Time constraint");s+="\n";
-	s+=tr("All students have a pair of mutually exclusive sets of time slots");s+="\n";
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	if(!richText){
+		QString s=tr("Time constraint");s+="\n";
+		s+=tr("All students have a pair of mutually exclusive sets of time slots");s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
-	QString timeslots1=QString("");
-	for(int i=0; i<this->selectedDays1.count(); i++)
-		timeslots1+=r.daysOfTheWeek[selectedDays1.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours1.at(i)]+translatedCommaSpace();
-	timeslots1.chop(translatedCommaSpace().size());
+		QString timeslots1=QString("");
+		for(int i=0; i<this->selectedDays1.count(); i++)
+			timeslots1+=r.daysOfTheWeek[selectedDays1.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours1.at(i)]+translatedCommaSpace();
+		timeslots1.chop(translatedCommaSpace().size());
 
-	QString timeslots2=QString("");
-	for(int i=0; i<this->selectedDays2.count(); i++)
-		timeslots2+=r.daysOfTheWeek[selectedDays2.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours2.at(i)]+translatedCommaSpace();
-	timeslots2.chop(translatedCommaSpace().size());
+		QString timeslots2=QString("");
+		for(int i=0; i<this->selectedDays2.count(); i++)
+			timeslots2+=r.daysOfTheWeek[selectedDays2.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours2.at(i)]+translatedCommaSpace();
+		timeslots2.chop(translatedCommaSpace().size());
 
-	s+=tr("First set of selected time slots=%1").arg(timeslots1);s+="\n";
-	s+=tr("Second set of selected time slots=%1").arg(timeslots2);s+="\n";
+		s+=tr("First set of selected time slots=%1").arg(timeslots1);s+="\n";
+		s+=tr("Second set of selected time slots=%1").arg(timeslots2);s+="\n";
 
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
-		s+="\n";
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+
+		return s;
 	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
-		s+="\n";
-	}
+	else{
+		QString s1=tr("Time constraint");s1+="\n";
+		s1+=tr("All students have a pair of mutually exclusive sets of time slots");s1+="\n";
+		s1+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s1+="\n";
 
-	return s;
+		s1+=tr("First set of selected time slots:");
+		s1+="\n";
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString s2=listsOfDaysAndHoursToTable(r, selectedDays1, selectedHours1, true, false, colors);
+		QString s3;
+		s3+="\n";
+		s3+=tr("Second set of selected time slots:");
+		s3+="\n";
+		QString s4=listsOfDaysAndHoursToTable(r, selectedDays2, selectedHours2, true, false, colors);
+		QString s5;
+		s5+="\n";
+
+		if(!active){
+			s5+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s5+="\n";
+		}
+		if(!comments.isEmpty()){
+			s5+=tr("Comments=%1").arg(comments);
+			s5+="\n";
+		}
+
+		return protect4(s1)+s2+protect4(s3)+s4+protect4(s5);
+	}
 }
 
 double ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -73814,42 +75076,79 @@ QString ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots::getDescripti
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
-	QString s=tr("Time constraint"); s+="\n";
-	s+=tr("Activities have a pair of mutually exclusive sets of time slots"); s+="\n";
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
-	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
-	for(int id : std::as_const(this->activitiesIds)){
-		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-		 .arg(id)
-		 .arg(getActivityDetailedDescription(r, id));
-		s+="\n";
+	if(!richText){
+		QString s=tr("Time constraint"); s+="\n";
+		s+=tr("Activities have a pair of mutually exclusive sets of time slots"); s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
+		s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
+		for(int id : std::as_const(this->activitiesIds)){
+			s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			 .arg(id)
+			 .arg(getActivityDetailedDescription(r, id));
+			s+="\n";
+		}
+
+		QString timeslots1=QString("");
+		for(int i=0; i<this->selectedDays1.count(); i++)
+			timeslots1+=r.daysOfTheWeek[selectedDays1.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours1.at(i)]+translatedCommaSpace();
+		timeslots1.chop(translatedCommaSpace().size());
+
+		QString timeslots2=QString("");
+		for(int i=0; i<this->selectedDays2.count(); i++)
+			timeslots2+=r.daysOfTheWeek[selectedDays2.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours2.at(i)]+translatedCommaSpace();
+		timeslots2.chop(translatedCommaSpace().size());
+
+		s+=tr("First set of selected time slots=%1").arg(timeslots1);s+="\n";
+		s+=tr("Second set of selected time slots=%1").arg(timeslots2);s+="\n";
+
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+		
+		return s;
 	}
+	else{
+		QString s1=tr("Time constraint"); s1+="\n";
+		s1+=tr("Activities have a pair of mutually exclusive sets of time slots"); s1+="\n";
+		s1+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s1+="\n";
+		s1+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s1+="\n";
+		for(int id : std::as_const(this->activitiesIds)){
+			s1+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			 .arg(id)
+			 .arg(getActivityDetailedDescription(r, id));
+			s1+="\n";
+		}
 
-	QString timeslots1=QString("");
-	for(int i=0; i<this->selectedDays1.count(); i++)
-		timeslots1+=r.daysOfTheWeek[selectedDays1.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours1.at(i)]+translatedCommaSpace();
-	timeslots1.chop(translatedCommaSpace().size());
+		s1+=tr("First set of selected time slots:");
+		s1+="\n";
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString s2=listsOfDaysAndHoursToTable(r, selectedDays1, selectedHours1, true, false, colors);
+		QString s3;
+		s3+="\n";
+		s3+=tr("Second set of selected time slots:");
+		s3+="\n";
+		QString s4=listsOfDaysAndHoursToTable(r, selectedDays2, selectedHours2, true, false, colors);
+		QString s5;
+		s5+="\n";
 
-	QString timeslots2=QString("");
-	for(int i=0; i<this->selectedDays2.count(); i++)
-		timeslots2+=r.daysOfTheWeek[selectedDays2.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours2.at(i)]+translatedCommaSpace();
-	timeslots2.chop(translatedCommaSpace().size());
+		if(!active){
+			s5+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s5+="\n";
+		}
+		if(!comments.isEmpty()){
+			s5+=tr("Comments=%1").arg(comments);
+			s5+="\n";
+		}
 
-	s+=tr("First set of selected time slots=%1").arg(timeslots1);s+="\n";
-	s+=tr("Second set of selected time slots=%1").arg(timeslots2);s+="\n";
-
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
-		s+="\n";
+		return protect4(s1)+s2+protect4(s3)+s4+protect4(s5);
 	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
-		s+="\n";
-	}
-	
-	return s;
 }
 
 double ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -74208,8 +75507,11 @@ QString ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots::getDescription(Rul
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(richText);
+	Q_UNUSED(colors);
+
 	QString s=tr("Time constraint"); s+="\n";
 	s+=tr("Activities have a pair of mutually exclusive time slots"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
@@ -74233,7 +75535,7 @@ QString ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots::getDetailedDescrip
 		s+="\n";
 	}
 	
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -74552,41 +75854,71 @@ QString ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection::getDescription
 	return begin+s+end;
 }
 
-QString ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection::getDetailedDescription(Rules& r)
+QString ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
 
-	QString s=tr("Time constraint");s+="\n";
-	s+=tr("A teacher occupies a max number of sets of time slots from a selection");s+="\n";
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
-	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
+	if(!richText){
+		QString s=tr("Time constraint");s+="\n";
+		s+=tr("A teacher occupies a max number of sets of time slots from a selection");s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+		s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 
-	s+=tr("Max number of occupied sets=%1").arg(this->maxOccupiedSets);s+="\n";
+		s+=tr("Max number of occupied sets=%1").arg(this->maxOccupiedSets);s+="\n";
 
-	s+=tr("Number of sets=%1").arg(this->selectedDays.count());s+="\n";
+		s+=tr("Number of sets=%1").arg(this->selectedDays.count());s+="\n";
 	
-	for(int i=0; i<this->selectedDays.count(); i++){
-		const QList<int>& days=selectedDays.at(i);
-		const QList<int>& hours=selectedHours.at(i);
+		for(int i=0; i<this->selectedDays.count(); i++){
+			const QList<int>& days=selectedDays.at(i);
+			const QList<int>& hours=selectedHours.at(i);
 
-		QString timeslots=QString("");
-		for(int j=0; j<days.count(); j++)
-			timeslots+=r.daysOfTheWeek[days.at(j)]+QString(" ")+r.hoursOfTheDay[hours.at(j)]+translatedCommaSpace();
-		timeslots.chop(translatedCommaSpace().size());
+			QString timeslots=QString("");
+			for(int j=0; j<days.count(); j++)
+				timeslots+=r.daysOfTheWeek[days.at(j)]+QString(" ")+r.hoursOfTheDay[hours.at(j)]+translatedCommaSpace();
+			timeslots.chop(translatedCommaSpace().size());
 
-		s+=tr("Set of selected time slots number %1=%2", "The set of selected time slots number %1 is composed of the list of selected time slots %2.").arg(i+1).arg(timeslots)+"\n";
+			s+=tr("Set of selected time slots number %1=%2", "The set of selected time slots number %1 is composed of the list of selected time slots %2.").arg(i+1).arg(timeslots)+"\n";
+		}
+
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+
+		return s;
 	}
+	else{
+		QString begin=tr("Time constraint");begin+="\n";
+		begin+=tr("A teacher occupies a max number of sets of time slots from a selection");begin+="\n";
+		begin+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));begin+="\n";
+		begin+=tr("Teacher=%1").arg(this->teacherName);begin+="\n";
 
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
-		s+="\n";
-	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
-		s+="\n";
-	}
+		begin+=tr("Max number of occupied sets=%1").arg(this->maxOccupiedSets);begin+="\n";
 
-	return s;
+		begin+=tr("Number of sets=%1").arg(this->selectedDays.count()); begin+="\n";
+		begin+=tr("Sets:", "Sets of time slots"); begin+="\n";
+		
+		//the Boolean is 'color'.
+		QString middle=listsOfListsOfDaysAndHoursToTableOfNumbers(r, selectedDays, selectedHours, colors);
+
+		QString end;
+		end+="\n";
+
+		if(!active){
+			end+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+
+		return protect4(begin)+middle+protect4(end);
+	}
 }
 
 double ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -74918,40 +76250,70 @@ QString ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection::getDescription(
 	return begin+s+end;
 }
 
-QString ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection::getDetailedDescription(Rules& r)
+QString ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
 
-	QString s=tr("Time constraint");s+="\n";
-	s+=tr("All teachers occupy a max number of sets of time slots from a selection");s+="\n";
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	if(!richText){
+		QString s=tr("Time constraint");s+="\n";
+		s+=tr("All teachers occupy a max number of sets of time slots from a selection");s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
-	s+=tr("Max number of occupied sets=%1").arg(this->maxOccupiedSets);s+="\n";
+		s+=tr("Max number of occupied sets=%1").arg(this->maxOccupiedSets);s+="\n";
 
-	s+=tr("Number of sets=%1").arg(this->selectedDays.count());s+="\n";
-	
-	for(int i=0; i<this->selectedDays.count(); i++){
-		const QList<int>& days=selectedDays.at(i);
-		const QList<int>& hours=selectedHours.at(i);
+		s+=tr("Number of sets=%1").arg(this->selectedDays.count());s+="\n";
+		
+		for(int i=0; i<this->selectedDays.count(); i++){
+			const QList<int>& days=selectedDays.at(i);
+			const QList<int>& hours=selectedHours.at(i);
 
-		QString timeslots=QString("");
-		for(int j=0; j<days.count(); j++)
-			timeslots+=r.daysOfTheWeek[days.at(j)]+QString(" ")+r.hoursOfTheDay[hours.at(j)]+translatedCommaSpace();
-		timeslots.chop(translatedCommaSpace().size());
+			QString timeslots=QString("");
+			for(int j=0; j<days.count(); j++)
+				timeslots+=r.daysOfTheWeek[days.at(j)]+QString(" ")+r.hoursOfTheDay[hours.at(j)]+translatedCommaSpace();
+			timeslots.chop(translatedCommaSpace().size());
 
-		s+=tr("Set of selected time slots number %1=%2", "The set of selected time slots number %1 is composed of the list of selected time slots %2.").arg(i+1).arg(timeslots)+"\n";
+			s+=tr("Set of selected time slots number %1=%2", "The set of selected time slots number %1 is composed of the list of selected time slots %2.").arg(i+1).arg(timeslots)+"\n";
+		}
+
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+
+		return s;
 	}
+	else{
+		QString begin=tr("Time constraint");begin+="\n";
+		begin+=tr("All teachers occupy a max number of sets of time slots from a selection");begin+="\n";
+		begin+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));begin+="\n";
 
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
-		s+="\n";
-	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
-		s+="\n";
-	}
+		begin+=tr("Max number of occupied sets=%1").arg(this->maxOccupiedSets);begin+="\n";
 
-	return s;
+		begin+=tr("Number of sets=%1").arg(this->selectedDays.count());begin+="\n";
+		
+		begin+=tr("Sets:", "Sets of time slots"); begin+="\n";
+		
+		//the Boolean is 'color'.
+		QString middle=listsOfListsOfDaysAndHoursToTableOfNumbers(r, selectedDays, selectedHours, colors);
+
+		QString end;
+		end+="\n";
+
+		if(!active){
+			end+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+
+		return protect4(begin)+middle+protect4(end);
+	}
 }
 
 double ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -75301,41 +76663,72 @@ QString ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection::getDescrip
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
 
-	QString s=tr("Time constraint");s+="\n";
-	s+=tr("A students set occupies a max number of sets of time slots from a selection");s+="\n";
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
-	s+=tr("Students=%1").arg(this->students);s+="\n";
+	if(!richText){
+		QString s=tr("Time constraint");s+="\n";
+		s+=tr("A students set occupies a max number of sets of time slots from a selection");s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+		s+=tr("Students=%1").arg(this->students);s+="\n";
 
-	s+=tr("Max number of occupied sets=%1").arg(this->maxOccupiedSets);s+="\n";
+		s+=tr("Max number of occupied sets=%1").arg(this->maxOccupiedSets);s+="\n";
 
-	s+=tr("Number of sets=%1").arg(this->selectedDays.count());s+="\n";
-	
-	for(int i=0; i<this->selectedDays.count(); i++){
-		const QList<int>& days=selectedDays.at(i);
-		const QList<int>& hours=selectedHours.at(i);
+		s+=tr("Number of sets=%1").arg(this->selectedDays.count());s+="\n";
+		
+		for(int i=0; i<this->selectedDays.count(); i++){
+			const QList<int>& days=selectedDays.at(i);
+			const QList<int>& hours=selectedHours.at(i);
 
-		QString timeslots=QString("");
-		for(int j=0; j<days.count(); j++)
-			timeslots+=r.daysOfTheWeek[days.at(j)]+QString(" ")+r.hoursOfTheDay[hours.at(j)]+translatedCommaSpace();
-		timeslots.chop(translatedCommaSpace().size());
+			QString timeslots=QString("");
+			for(int j=0; j<days.count(); j++)
+				timeslots+=r.daysOfTheWeek[days.at(j)]+QString(" ")+r.hoursOfTheDay[hours.at(j)]+translatedCommaSpace();
+			timeslots.chop(translatedCommaSpace().size());
 
-		s+=tr("Set of selected time slots number %1=%2", "The set of selected time slots number %1 is composed of the list of selected time slots %2.").arg(i+1).arg(timeslots)+"\n";
+			s+=tr("Set of selected time slots number %1=%2", "The set of selected time slots number %1 is composed of the list of selected time slots %2.").arg(i+1).arg(timeslots)+"\n";
+		}
+
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+
+		return s;
 	}
+	else{
+		QString begin=tr("Time constraint");begin+="\n";
+		begin+=tr("A students set occupies a max number of sets of time slots from a selection");begin+="\n";
+		begin+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));begin+="\n";
+		begin+=tr("Students=%1").arg(this->students);begin+="\n";
 
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
-		s+="\n";
-	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
-		s+="\n";
-	}
+		begin+=tr("Max number of occupied sets=%1").arg(this->maxOccupiedSets);begin+="\n";
 
-	return s;
+		begin+=tr("Number of sets=%1").arg(this->selectedDays.count());begin+="\n";
+		
+		begin+=tr("Sets:", "Sets of time slots"); begin+="\n";
+		
+		//the Boolean is 'color'.
+		QString middle=listsOfListsOfDaysAndHoursToTableOfNumbers(r, selectedDays, selectedHours, colors);
+
+		QString end;
+		end+="\n";
+
+		if(!active){
+			end+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+
+		return protect4(begin)+middle+protect4(end);
+	}
 }
 
 double ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -75664,40 +77057,70 @@ QString ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection::getDescription(
 	return begin+s+end;
 }
 
-QString ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection::getDetailedDescription(Rules& r)
+QString ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
 
-	QString s=tr("Time constraint");s+="\n";
-	s+=tr("All students occupy a max number of sets of time slots from a selection");s+="\n";
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	if(!richText){
+		QString s=tr("Time constraint");s+="\n";
+		s+=tr("All students occupy a max number of sets of time slots from a selection");s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
-	s+=tr("Max number of occupied sets=%1").arg(this->maxOccupiedSets);s+="\n";
+		s+=tr("Max number of occupied sets=%1").arg(this->maxOccupiedSets);s+="\n";
 
-	s+=tr("Number of sets=%1").arg(this->selectedDays.count());s+="\n";
-	
-	for(int i=0; i<this->selectedDays.count(); i++){
-		const QList<int>& days=selectedDays.at(i);
-		const QList<int>& hours=selectedHours.at(i);
+		s+=tr("Number of sets=%1").arg(this->selectedDays.count());s+="\n";
+		
+		for(int i=0; i<this->selectedDays.count(); i++){
+			const QList<int>& days=selectedDays.at(i);
+			const QList<int>& hours=selectedHours.at(i);
 
-		QString timeslots=QString("");
-		for(int j=0; j<days.count(); j++)
-			timeslots+=r.daysOfTheWeek[days.at(j)]+QString(" ")+r.hoursOfTheDay[hours.at(j)]+translatedCommaSpace();
-		timeslots.chop(translatedCommaSpace().size());
+			QString timeslots=QString("");
+			for(int j=0; j<days.count(); j++)
+				timeslots+=r.daysOfTheWeek[days.at(j)]+QString(" ")+r.hoursOfTheDay[hours.at(j)]+translatedCommaSpace();
+			timeslots.chop(translatedCommaSpace().size());
 
-		s+=tr("Set of selected time slots number %1=%2", "The set of selected time slots number %1 is composed of the list of selected time slots %2.").arg(i+1).arg(timeslots)+"\n";
+			s+=tr("Set of selected time slots number %1=%2", "The set of selected time slots number %1 is composed of the list of selected time slots %2.").arg(i+1).arg(timeslots)+"\n";
+		}
+
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+
+		return s;
 	}
+	else{
+		QString begin=tr("Time constraint");begin+="\n";
+		begin+=tr("All students occupy a max number of sets of time slots from a selection");begin+="\n";
+		begin+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));begin+="\n";
 
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
-		s+="\n";
-	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
-		s+="\n";
-	}
+		begin+=tr("Max number of occupied sets=%1").arg(this->maxOccupiedSets);begin+="\n";
 
-	return s;
+		begin+=tr("Number of sets=%1").arg(this->selectedDays.count());begin+="\n";
+		
+		begin+=tr("Sets:", "Sets of time slots"); begin+="\n";
+		
+		//the Boolean is 'color'.
+		QString middle=listsOfListsOfDaysAndHoursToTableOfNumbers(r, selectedDays, selectedHours, colors);
+
+		QString end;
+		end+="\n";
+
+		if(!active){
+			end+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+
+		return protect4(begin)+middle+protect4(end);
+	}
 }
 
 double ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -75985,8 +77408,10 @@ QString ConstraintActivitiesOverlapCompletelyOrDoNotOverlap::getDescription(Rule
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesOverlapCompletelyOrDoNotOverlap::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesOverlapCompletelyOrDoNotOverlap::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s=tr("Time constraint"); s+="\n";
 	s+=tr("Activities overlap completely or do not overlap"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
@@ -76007,7 +77432,7 @@ QString ConstraintActivitiesOverlapCompletelyOrDoNotOverlap::getDetailedDescript
 		s+="\n";
 	}
 	
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivitiesOverlapCompletelyOrDoNotOverlap::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -76341,47 +77766,84 @@ QString ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection::getDescriptio
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
 
-	QString s=tr("Time constraint");s+="\n";
-	s+=tr("Activities occupy a max number of sets of time slots from a selection");s+="\n";
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
-	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
-	for(int id : std::as_const(this->activitiesIds)){
-		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-		 .arg(id)
-		 .arg(getActivityDetailedDescription(r, id));
-		s+="\n";
-	}
+	if(!richText){
+		QString s=tr("Time constraint");s+="\n";
+		s+=tr("Activities occupy a max number of sets of time slots from a selection");s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+		s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
+		for(int id : std::as_const(this->activitiesIds)){
+			s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			 .arg(id)
+			 .arg(getActivityDetailedDescription(r, id));
+			s+="\n";
+		}
 
-	s+=tr("Max number of occupied sets=%1").arg(this->maxOccupiedSets);s+="\n";
+		s+=tr("Max number of occupied sets=%1").arg(this->maxOccupiedSets);s+="\n";
 
-	s+=tr("Number of sets=%1").arg(this->selectedDays.count());s+="\n";
+		s+=tr("Number of sets=%1").arg(this->selectedDays.count());s+="\n";
 	
-	for(int i=0; i<this->selectedDays.count(); i++){
-		const QList<int>& days=selectedDays.at(i);
-		const QList<int>& hours=selectedHours.at(i);
+		for(int i=0; i<this->selectedDays.count(); i++){
+			const QList<int>& days=selectedDays.at(i);
+			const QList<int>& hours=selectedHours.at(i);
 
-		QString timeslots=QString("");
-		for(int j=0; j<days.count(); j++)
-			timeslots+=r.daysOfTheWeek[days.at(j)]+QString(" ")+r.hoursOfTheDay[hours.at(j)]+translatedCommaSpace();
-		timeslots.chop(translatedCommaSpace().size());
+			QString timeslots=QString("");
+			for(int j=0; j<days.count(); j++)
+				timeslots+=r.daysOfTheWeek[days.at(j)]+QString(" ")+r.hoursOfTheDay[hours.at(j)]+translatedCommaSpace();
+			timeslots.chop(translatedCommaSpace().size());
 
-		s+=tr("Set of selected time slots number %1=%2", "The set of selected time slots number %1 is composed of the list of selected time slots %2.").arg(i+1).arg(timeslots)+"\n";
+			s+=tr("Set of selected time slots number %1=%2", "The set of selected time slots number %1 is composed of the list of selected time slots %2.").arg(i+1).arg(timeslots)+"\n";
+		}
+
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+
+		return s;
 	}
+	else{
+		QString begin=tr("Time constraint");begin+="\n";
+		begin+=tr("Activities occupy a max number of sets of time slots from a selection");begin+="\n";
+		begin+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));begin+="\n";
+		begin+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); begin+="\n";
+		for(int id : std::as_const(this->activitiesIds)){
+			begin+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			 .arg(id)
+			 .arg(getActivityDetailedDescription(r, id));
+			begin+="\n";
+		}
 
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
-		s+="\n";
-	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
-		s+="\n";
-	}
+		begin+=tr("Max number of occupied sets=%1").arg(this->maxOccupiedSets);begin+="\n";
 
-	return s;
+		begin+=tr("Number of sets=%1").arg(this->selectedDays.count());begin+="\n";
+
+		begin+=tr("Sets:", "Sets of time slots"); begin+="\n";
+		
+		//the Boolean is 'color'.
+		QString middle=listsOfListsOfDaysAndHoursToTableOfNumbers(r, selectedDays, selectedHours, colors);
+
+		QString end;
+		end+="\n";
+
+		if(!active){
+			end+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+
+		return protect4(begin)+middle+protect4(end);
+	}
 }
 
 double ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -76682,8 +78144,10 @@ QString ConstraintActivityBeginsOrEndsStudentsDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivityBeginsOrEndsStudentsDay::getDetailedDescription(Rules& r)
+QString ConstraintActivityBeginsOrEndsStudentsDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Activity must begin or end students' day");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -76700,7 +78164,7 @@ QString ConstraintActivityBeginsOrEndsStudentsDay::getDetailedDescription(Rules&
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivityBeginsOrEndsStudentsDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -76969,9 +78433,10 @@ QString ConstraintActivitiesBeginOrEndStudentsDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesBeginOrEndStudentsDay::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesBeginOrEndStudentsDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Activities with:");s+="\n";
@@ -77014,7 +78479,7 @@ QString ConstraintActivitiesBeginOrEndStudentsDay::getDetailedDescription(Rules&
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivitiesBeginOrEndStudentsDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
@@ -77256,8 +78721,10 @@ QString ConstraintActivityBeginsOrEndsTeachersDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivityBeginsOrEndsTeachersDay::getDetailedDescription(Rules& r)
+QString ConstraintActivityBeginsOrEndsTeachersDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
+	Q_UNUSED(colors);
+
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Activity must begin or end teachers' day");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -77274,7 +78741,7 @@ QString ConstraintActivityBeginsOrEndsTeachersDay::getDetailedDescription(Rules&
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivityBeginsOrEndsTeachersDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString> &dl, FakeString* conflictsString)
@@ -77545,9 +79012,10 @@ QString ConstraintActivitiesBeginOrEndTeachersDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesBeginOrEndTeachersDay::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesBeginOrEndTeachersDay::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(colors);
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Activities with:");s+="\n";
@@ -77590,7 +79058,7 @@ QString ConstraintActivitiesBeginOrEndTeachersDay::getDetailedDescription(Rules&
 		s+="\n";
 	}
 
-	return s;
+	return richText?protect4(s):s;
 }
 
 double ConstraintActivitiesBeginOrEndTeachersDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString> &dl, FakeString* conflictsString)
@@ -77912,7 +79380,7 @@ QString ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::getDesc
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	assert(this->selectedDays.count()==this->selectedHours.count());
 
@@ -77921,36 +79389,71 @@ QString ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::getDeta
 		actids+=CustomFETString::number(aid)+QString(", ");
 	actids.chop(2);*/
 	
-	QString timeslots=QString("");
-	for(int i=0; i<this->selectedDays.count(); i++)
-		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
-	timeslots.chop(translatedCommaSpace().size());
-	
-	QString s;
-	s+=tr("Warning: this constraint might slow down very much the generation! Please use only if strictly necessary, and with care!"); s+="\n";
-	s+=tr("Time constraint"); s+="\n";
-	s+=tr("Activities max total number of students in selected time slots"); s+="\n";
-	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
-	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
-	for(int id : std::as_const(this->activitiesIds)){
-		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-		 .arg(id)
-		 .arg(getActivityDetailedDescription(r, id));
-		s+="\n";
-	}
-	s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
-	s+=tr("Maximum total number of students=%1").arg(CustomFETString::number(this->maxNumberOfStudents)); s+="\n";
+	if(!richText){
+		QString timeslots=QString("");
+		for(int i=0; i<this->selectedDays.count(); i++)
+			timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
+		timeslots.chop(translatedCommaSpace().size());
+		
+		QString s;
+		s+=tr("Warning: this constraint might slow down very much the generation! Please use only if strictly necessary, and with care!"); s+="\n";
+		s+=tr("Time constraint"); s+="\n";
+		s+=tr("Activities max total number of students in selected time slots"); s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
+		s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
+		for(int id : std::as_const(this->activitiesIds)){
+			s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			 .arg(id)
+			 .arg(getActivityDetailedDescription(r, id));
+			s+="\n";
+		}
+		s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
+		s+=tr("Maximum total number of students=%1").arg(CustomFETString::number(this->maxNumberOfStudents)); s+="\n";
 
-	if(!active){
-		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
-		s+="\n";
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+		
+		return s;
 	}
-	if(!comments.isEmpty()){
-		s+=tr("Comments=%1").arg(comments);
-		s+="\n";
+	else{
+		QString begin;
+		begin+=tr("Warning: this constraint might slow down very much the generation! Please use only if strictly necessary, and with care!"); begin+="\n";
+		begin+=tr("Time constraint"); begin+="\n";
+		begin+=tr("Activities max total number of students in selected time slots"); begin+="\n";
+		begin+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); begin+="\n";
+		begin+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); begin+="\n";
+		for(int id : std::as_const(this->activitiesIds)){
+			begin+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			 .arg(id)
+			 .arg(getActivityDetailedDescription(r, id));
+			begin+="\n";
+		}
+		begin+=tr("Selected time slots:"); begin+="\n";
+		
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString middle=listsOfDaysAndHoursToTable(r, selectedDays, selectedHours, true, false, colors);
+		QString end;
+		end+="\n";
+
+		end+=tr("Maximum total number of students=%1").arg(CustomFETString::number(this->maxNumberOfStudents)); end+="\n";
+
+		if(!active){
+			end+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+		
+		return protect4(begin)+middle+protect4(end);
 	}
-	
-	return s;
 }
 
 double ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)

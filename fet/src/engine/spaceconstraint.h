@@ -231,7 +231,7 @@ public:
 	/**
 	Returns a detailed description string for this constraint
 	*/
-	virtual QString getDetailedDescription(Rules& r)=0;
+	virtual QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false)=0;
 	
 	/**
 	Returns true if this constraint is related to this activity
@@ -290,7 +290,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -343,7 +343,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -400,7 +400,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -468,7 +468,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -525,7 +525,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -574,7 +574,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -625,7 +625,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -674,7 +674,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -725,7 +725,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -778,7 +778,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -830,7 +830,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -885,7 +885,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -939,7 +939,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -989,7 +989,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1037,7 +1037,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1084,7 +1084,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1126,7 +1126,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1175,7 +1175,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1219,7 +1219,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1268,7 +1268,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1312,7 +1312,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1361,7 +1361,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1405,7 +1405,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1454,7 +1454,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1498,7 +1498,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1544,7 +1544,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1586,7 +1586,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1632,7 +1632,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1674,7 +1674,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1720,7 +1720,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1769,7 +1769,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1813,7 +1813,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1862,7 +1862,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1906,7 +1906,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1955,7 +1955,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1999,7 +1999,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2048,7 +2048,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2092,7 +2092,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2134,7 +2134,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2180,7 +2180,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2222,7 +2222,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2268,7 +2268,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2310,7 +2310,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2357,7 +2357,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2399,7 +2399,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2445,7 +2445,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2487,7 +2487,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2533,7 +2533,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2575,7 +2575,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2621,7 +2621,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2663,7 +2663,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2709,7 +2709,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2751,7 +2751,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2797,7 +2797,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2839,7 +2839,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2887,7 +2887,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -2937,7 +2937,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -2983,7 +2983,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -3029,7 +3029,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -3075,7 +3075,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -3117,7 +3117,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -3159,7 +3159,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -3205,7 +3205,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -3251,7 +3251,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -3293,7 +3293,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -3349,7 +3349,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -3405,7 +3405,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -3461,7 +3461,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r);
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	

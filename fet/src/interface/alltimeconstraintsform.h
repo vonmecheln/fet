@@ -68,6 +68,8 @@ public Q_SLOTS:
 	void changeWeights();
 	
 	void selectionChanged();
+
+	void useColorsChanged();
 };
 
 #endif

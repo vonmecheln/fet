@@ -75,13 +75,18 @@ const int NOTREGEXP=3;
 int timeConstraintsAscendingByDescription(TimeConstraint* t1, TimeConstraint* t2); //defined in alltimeconstraints.cpp
 
 ListTimeConstraintsDialog::ListTimeConstraintsDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop, QSplitter* _splitter,
-													 QCheckBox* _showRelatedCheckBox): QDialog(parent)
+													 QCheckBox* _showRelatedCheckBox, QCheckBox* _colorsCheckBox, QCheckBox* _filterCheckBox, QCheckBox* _sortedCheckBox): QDialog(parent)
 {
 	dialogName=_dialogName;
 	dialogTitle=_dialogTitle;
 	eventLoop=_eventLoop;
 	
 	showRelatedCheckBox=_showRelatedCheckBox;
+
+	colorsCheckBox=_colorsCheckBox;
+
+	filterCheckBox=_filterCheckBox;
+	sortedCheckBox=_sortedCheckBox;
 
 	setWindowTitle(dialogTitle);
 	
@@ -105,6 +110,14 @@ ListTimeConstraintsDialog::~ListTimeConstraintsDialog()
 	if(showRelatedCheckBox!=nullptr)
 		settings.setValue(dialogName+QString("/show-related"), showRelatedCheckBox->isChecked());
 
+	if(colorsCheckBox!=nullptr)
+		settings.setValue(dialogName+QString("/use-colors"), colorsCheckBox->isChecked());
+
+	if(filterCheckBox!=nullptr)
+		settings.setValue(dialogName+QString("/list-filtered"), filterCheckBox->isChecked());
+	if(sortedCheckBox!=nullptr)
+		settings.setValue(dialogName+QString("/list-sorted"), sortedCheckBox->isChecked());
+
 	eventLoop->quit();
 }
 
@@ -113,6 +126,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 	type=_type;
 
 	showRelatedCheckBox=nullptr;
+
+	colorsCheckBox=nullptr;
 
 	filterCheckBox=nullptr;
 	sortedCheckBox=nullptr;
@@ -3163,12 +3178,6 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 	caseSensitive=settings.value(settingsName+"/case-sensitive", "false").toBool();
 
-	useFilter=false;
-
-	//not yet created!!!
-	//assert(filterCheckBox->isChecked()==false);
-	///////
-	
 	if(firstInstructionsLabel!=nullptr){
 		firstInstructionsLabel->setWordWrap(true);
 		//firstInstructionsLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
@@ -3263,7 +3272,7 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 		if(studentsComboBox!=nullptr){
 			showRelatedCheckBox=new QCheckBox(tr("Show related"));
 
-			QSettings settings(COMPANY, PROGRAM);
+			//QSettings settings(COMPANY, PROGRAM);
 			showRelatedCheckBox->setChecked(settings.value(dialogName+QString("/show-related"), "false").toBool());
 
 			connect(showRelatedCheckBox, &QCheckBox::toggled, this, &ListTimeConstraints::showRelatedCheckBoxToggled);
@@ -3292,8 +3301,19 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 	splitter=new QSplitter;
 	splitter->setSizePolicy(splitter->sizePolicy().horizontalPolicy(), QSizePolicy::Expanding);
 
+	colorsCheckBox=new QCheckBox(tr("Colors"));
+	//QSettings settings(COMPANY, PROGRAM);
+	colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors"), "false").toBool());
+	connect(colorsCheckBox, &QCheckBox::toggled, this, &ListTimeConstraints::colorsCheckBoxToggled);
+
+	useFilter=settings.value(dialogName+QString("/list-filtered"), "false").toBool();
+	filterCheckBox=new QCheckBox(tr("Filter"));
+	filterCheckBox->setChecked(useFilter);
+	sortedCheckBox=new QCheckBox(tr("Sorted", "It refers to time constraints"));
+	sortedCheckBox->setChecked(settings.value(dialogName+QString("/list-sorted"), "false").toBool());
+
 	dialog=new ListTimeConstraintsDialog(parent, dialogName, dialogTitle, eventLoop, splitter,
-										 showRelatedCheckBox);
+										 showRelatedCheckBox, colorsCheckBox, filterCheckBox, sortedCheckBox);
 
 	//dialog->setWindowTitle(dialogTitle);
 	
@@ -3304,11 +3324,6 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 	constraintsListWidget->setSelectionMode(QAbstractItemView::ExtendedSelection);
 	constraintDescriptionTextEdit=new QTextEdit;
 	constraintDescriptionTextEdit->setReadOnly(true);
-
-	filterCheckBox=new QCheckBox(tr("Filter"));
-	filterCheckBox->setChecked(false);
-	sortedCheckBox=new QCheckBox(tr("Sorted", "It refers to time constraints"));
-	sortedCheckBox->setChecked(false);
 
 	countOfConstraintsLabel=new QLabel;
 	mSLabel=new QLabel;
@@ -3381,10 +3396,17 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 	}
 	
 	removePushButton=new QPushButton(tr("Remove"));
+
+	upPushButton=new QPushButton(tr("Up"));
+	downPushButton=new QPushButton(tr("Down"));
+
 	closePushButton=new QPushButton(tr("Close"));
 
 	QVBoxLayout* filterAndDescriptionLayout=new QVBoxLayout;
+	assert(constraintDescriptionTextEdit!=nullptr);
 	filterAndDescriptionLayout->addWidget(constraintDescriptionTextEdit);
+	assert(colorsCheckBox!=nullptr);
+	filterAndDescriptionLayout->addWidget(colorsCheckBox);
 	if(filterGroupBox!=nullptr)
 		filterAndDescriptionLayout->addWidget(filterGroupBox);
 
@@ -3416,6 +3438,10 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 	if(modifyMultiplePushButton!=nullptr)
 		buttons1Layout->addWidget(modifyMultiplePushButton);
 	buttons1Layout->addWidget(removePushButton);
+
+	buttons1Layout->addWidget(upPushButton);
+	buttons1Layout->addWidget(downPushButton);
+
 	if(helpPushButton!=nullptr)
 		buttons1Layout->addWidget(helpPushButton);
 	buttons1Layout->addWidget(commentsPushButton);
@@ -3460,6 +3486,9 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ListTimeConstraints::modifyClicked);
 	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &ListTimeConstraints::constraintChanged);
 	connect(removePushButton, &QPushButton::clicked, this, &ListTimeConstraints::removeClicked);
+
+	connect(upPushButton, &QPushButton::clicked, this, &ListTimeConstraints::moveTimeConstraintUp);
+	connect(downPushButton, &QPushButton::clicked, this, &ListTimeConstraints::moveTimeConstraintDown);
 	
 	if(helpPushButton!=nullptr)
 		connect(helpPushButton, &QPushButton::clicked, this, &ListTimeConstraints::helpClicked);
@@ -3516,6 +3545,18 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 		connect(commentsShortcut, &QShortcut::activated, [=]{commentsPushButton->animateClick();});
 		//if(SHOW_TOOL_TIPS)
 		//	commentsPushButton->setToolTip(QString("C"));
+	}
+	if(SHORTCUT_U){
+		QShortcut* upShortcut=new QShortcut(QKeySequence(Qt::Key_U), dialog);
+		connect(upShortcut, &QShortcut::activated, [=]{upPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	moveSpaceConstraintUpPushButton->setToolTip(QString("U"));
+	}
+	if(SHORTCUT_J){
+		QShortcut* downShortcut=new QShortcut(QKeySequence(Qt::Key_J), dialog);
+		connect(downShortcut, &QShortcut::activated, [=]{downPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	moveSpaceConstraintDownPushButton->setToolTip(QString("J"));
 	}
 	if(SHORTCUT_W){
 		QShortcut* weightsShortcut=new QShortcut(QKeySequence(Qt::Key_W), dialog);
@@ -7822,10 +7863,10 @@ void ListTimeConstraints::removeClicked()
 		}
 
 	QString s;
-	s=tr("Remove these selected time constraints?");
-	s+=QString("\n\n");
+	s=protect4(tr("Remove these selected time constraints?", "Following is the list of detailed descriptions of the constraints marked for removal."));
+	s+=QString("<br />\n<br />\n");
 	for(TimeConstraint* ctr : std::as_const(tl))
-		s+=ctr->getDetailedDescription(gt.rules)+"\n";
+		s+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+QString("<br />\n");
 	int lres=LongTextMessageBox::confirmation(dialog, tr("FET confirmation"),
 		s, tr("Yes"), tr("No"), QString(), 0, 1 );
 
@@ -7836,10 +7877,10 @@ void ListTimeConstraints::removeClicked()
 
 	QString su;
 	if(!tl.isEmpty()){
-		su=tr("Removed %1 time constraints:").arg(tl.count());
-		su+=QString("\n\n");
+		su=protect4(tr("Removed %1 time constraints:").arg(tl.count()));
+		su+=QString("<br />\n<br />\n");
 		for(TimeConstraint* ctr : std::as_const(tl))
-			su+=ctr->getDetailedDescription(gt.rules)+"\n";
+			su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+"<br />\n";
 	}
 
 	//The user clicked the OK button or pressed Enter
@@ -8524,7 +8565,7 @@ void ListTimeConstraints::filter()
 	}
 
 	if(constraintsListWidget->count()<=0)
-		constraintDescriptionTextEdit->setPlainText("");
+		constraintDescriptionTextEdit->setText("");
 	else
 		constraintsListWidget->setCurrentRow(0);
 
@@ -8547,8 +8588,182 @@ void ListTimeConstraints::constraintChanged()
 	assert(index<visibleTimeConstraintsList.count());
 	TimeConstraint* ctr=visibleTimeConstraintsList.at(index);
 	assert(ctr!=nullptr);
-	QString s=ctr->getDetailedDescription(gt.rules);
-	constraintDescriptionTextEdit->setPlainText(s);
+	QString s=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked()); //'true' means 'richText'
+	constraintDescriptionTextEdit->setText(s);
+}
+
+void ListTimeConstraints::moveTimeConstraintUp()
+{
+	/*if(filterCheckBox->isChecked()){
+		QMessageBox::information(this, tr("FET information"), tr("To move a time constraint up, the 'Filter' check box must not be checked."));
+		return;
+	}*/
+	if(sortedCheckBox->isChecked()){
+		QMessageBox::information(dialog, tr("FET information"), tr("To move a time constraint up, the 'Sorted' check box must not be checked."));
+		return;
+	}
+	
+	if(constraintsListWidget->count()<=1)
+		return;
+	int i=constraintsListWidget->currentRow();
+	if(i<0 || i>=constraintsListWidget->count())
+		return;
+	if(i==0)
+		return;
+		
+	QString s1=constraintsListWidget->item(i)->text();
+	QString s2=constraintsListWidget->item(i-1)->text();
+	
+	/*assert(gt.rules.timeConstraintsList.count()==visibleTimeConstraintsList.count());
+	TimeConstraint* tc1=gt.rules.timeConstraintsList.at(i);
+	assert(tc1==visibleTimeConstraintsList.at(i));
+	TimeConstraint* tc2=gt.rules.timeConstraintsList.at(i-1);
+	assert(tc2==visibleTimeConstraintsList.at(i-1));*/
+
+	TimeConstraint* tc1=visibleTimeConstraintsList.at(i);
+	TimeConstraint* tc2=visibleTimeConstraintsList.at(i-1);
+	
+	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
+	
+	constraintsListWidget->item(i)->setText(s2);
+	constraintsListWidget->item(i-1)->setText(s1);
+	
+	int j=-1;
+	int k=-1;
+	for(int q=0; q<gt.rules.timeConstraintsList.count(); q++){
+		if(gt.rules.timeConstraintsList.at(q)==tc2){
+			assert(j==-1);
+			j=q;
+		}
+		if(gt.rules.timeConstraintsList.at(q)==tc1){
+			assert(k==-1);
+			k=q;
+		}
+	}
+	assert(k>=0);
+	assert(j>=0);
+	assert(k>j);
+	//gt.rules.timeConstraintsList[i]=tc2;
+	//gt.rules.timeConstraintsList[i-1]=tc1;
+	//std::rotate(&gt.rules.timeConstraintsList[j], &gt.rules.timeConstraintsList[k], &gt.rules.timeConstraintsList[k+1]); -> might be unsafe/incorrect
+	for(int q=k; q>j; q--)
+		gt.rules.timeConstraintsList[q]=gt.rules.timeConstraintsList[q-1];
+	gt.rules.timeConstraintsList[j]=tc1;
+	
+	visibleTimeConstraintsList[i]=tc2;
+	visibleTimeConstraintsList[i-1]=tc1;
+	
+	gt.rules.addUndoPoint(protect4(tr("A constraint was moved up:", "This is a History item. Following is the detailed description of the constraint which was moved up."))
+	 +QString("<br />\n<br />\n")+tc1->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked()));
+	
+	if(tc2->active){
+		constraintsListWidget->item(i)->setBackground(QBrush());
+		constraintsListWidget->item(i)->setForeground(QBrush());
+	}
+	else{
+		constraintsListWidget->item(i)->setBackground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+		constraintsListWidget->item(i)->setForeground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+	}
+
+	if(tc1->active){
+		constraintsListWidget->item(i-1)->setBackground(QBrush());
+		constraintsListWidget->item(i-1)->setForeground(QBrush());
+	}
+	else{
+		constraintsListWidget->item(i-1)->setBackground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+		constraintsListWidget->item(i-1)->setForeground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+	}
+
+	constraintsListWidget->setCurrentRow(i-1);
+	constraintChanged(/*i-1*/);
+}
+
+void ListTimeConstraints::moveTimeConstraintDown()
+{
+	/*if(filterCheckBox->isChecked()){
+		QMessageBox::information(this, tr("FET information"), tr("To move a time constraint down, the 'Filter' check box must not be checked."));
+		return;
+	}*/
+	if(sortedCheckBox->isChecked()){
+		QMessageBox::information(dialog, tr("FET information"), tr("To move a time constraint down, the 'Sorted' check box must not be checked."));
+		return;
+	}
+	
+	if(constraintsListWidget->count()<=1)
+		return;
+	int i=constraintsListWidget->currentRow();
+	if(i<0 || i>=constraintsListWidget->count())
+		return;
+	if(i==constraintsListWidget->count()-1)
+		return;
+		
+	QString s1=constraintsListWidget->item(i)->text();
+	QString s2=constraintsListWidget->item(i+1)->text();
+	
+	/*assert(gt.rules.timeConstraintsList.count()==visibleTimeConstraintsList.count());
+	TimeConstraint* tc1=gt.rules.timeConstraintsList.at(i);
+	assert(tc1==visibleTimeConstraintsList.at(i));
+	TimeConstraint* tc2=gt.rules.timeConstraintsList.at(i+1);
+	assert(tc2==visibleTimeConstraintsList.at(i+1));*/
+
+	TimeConstraint* tc1=visibleTimeConstraintsList.at(i);
+	TimeConstraint* tc2=visibleTimeConstraintsList.at(i+1);
+	
+	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
+	
+	constraintsListWidget->item(i)->setText(s2);
+	constraintsListWidget->item(i+1)->setText(s1);
+	
+	int j=-1;
+	int k=-1;
+	for(int q=0; q<gt.rules.timeConstraintsList.count(); q++){
+		if(gt.rules.timeConstraintsList.at(q)==tc2){
+			assert(j==-1);
+			j=q;
+		}
+		if(gt.rules.timeConstraintsList.at(q)==tc1){
+			assert(k==-1);
+			k=q;
+		}
+	}
+	assert(k>=0);
+	assert(j>=0);
+	assert(k<j);
+	//gt.rules.timeConstraintsList[i]=tc2;
+	//gt.rules.timeConstraintsList[i+1]=tc1;
+	//std::rotate(&gt.rules.timeConstraintsList[k], &gt.rules.timeConstraintsList[k+1], &gt.rules.timeConstraintsList[j+1]); -> might be unsafe/incorrect
+	for(int q=k; q<j; q++)
+		gt.rules.timeConstraintsList[q]=gt.rules.timeConstraintsList[q+1];
+	gt.rules.timeConstraintsList[j]=tc1;
+	
+	visibleTimeConstraintsList[i]=tc2;
+	visibleTimeConstraintsList[i+1]=tc1;
+	
+	gt.rules.addUndoPoint(protect4(tr("A constraint was moved down:", "This is a History item. Following is the detailed description of the constraint which was moved down."))
+	 +QString("<br />\n<br />\n")+tc1->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked()));
+	
+	if(tc2->active){
+		constraintsListWidget->item(i)->setBackground(QBrush());
+		constraintsListWidget->item(i)->setForeground(QBrush());
+	}
+	else{
+		constraintsListWidget->item(i)->setBackground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+		constraintsListWidget->item(i)->setForeground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+	}
+
+	if(tc1->active){
+		constraintsListWidget->item(i+1)->setBackground(QBrush());
+		constraintsListWidget->item(i+1)->setForeground(QBrush());
+	}
+	else{
+		constraintsListWidget->item(i+1)->setBackground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+		constraintsListWidget->item(i+1)->setForeground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+	}
+
+	constraintsListWidget->setCurrentRow(i+1);
+	constraintChanged(/*i+1*/);
 }
 
 void ListTimeConstraints::sortedChanged(bool checked)
@@ -8582,7 +8797,7 @@ void ListTimeConstraints::activateConstraints()
 			assert(i<visibleTimeConstraintsList.count());
 			TimeConstraint* ctr=visibleTimeConstraintsList.at(i);
 			if(!ctr->active){
-				su+=ctr->getDetailedDescription(gt.rules)+QString("\n");
+				su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+QString("<br />\n");
 
 				cnt++;
 				ctr->active=true;
@@ -8592,7 +8807,7 @@ void ListTimeConstraints::activateConstraints()
 		}
 
 	if(cnt>0){
-		gt.rules.addUndoPoint(tr("Activated %1 time constraints:", "%1 is the number of activated time constraints").arg(cnt)+QString("\n\n")+su);
+		gt.rules.addUndoPoint(protect4(tr("Activated %1 time constraints:", "%1 is the number of activated time constraints").arg(cnt))+QString("<br />\n<br />\n")+su);
 
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
@@ -8650,7 +8865,7 @@ void ListTimeConstraints::deactivateConstraints()
 			if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_TIME)
 				continue;
 			if(ctr->active){
-				su+=ctr->getDetailedDescription(gt.rules)+QString("\n");
+				su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+QString("<br />\n");
 
 				cnt++;
 				ctr->active=false;
@@ -8659,7 +8874,7 @@ void ListTimeConstraints::deactivateConstraints()
 			}
 		}
 	if(cnt>0){
-		gt.rules.addUndoPoint(tr("Deactivated %1 time constraints:", "%1 is the number of deactivated time constraints").arg(cnt)+QString("\n\n")+su);
+		gt.rules.addUndoPoint(protect4(tr("Deactivated %1 time constraints:", "%1 is the number of deactivated time constraints").arg(cnt))+QString("<br />\n<br />\n")+su);
 
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
@@ -8744,11 +8959,19 @@ void ListTimeConstraints::constraintComments()
 	saveFETDialogGeometry(&getCommentsDialog, settingsName);
 
 	if(t==QDialog::Accepted){
-		QString cb=ctr->getDetailedDescription(gt.rules);
+		QString cb=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked());
 
 		ctr->comments=commentsPT->toPlainText();
 
-		gt.rules.addUndoPoint(tr("Changed a constraint's comments. Constraint before:\n\n%1\nComments after:\n\n%2").arg(cb).arg(ctr->comments));
+		gt.rules.addUndoPoint(protect4(tr("Changed a constraint's comments.", "The user changed the constraint's comments"))
+		 +QString(" ")+protect4(tr("Constraint before:", "The detailed description of a constraint before the change."))
+		 +QString("<br />\n<br />\n")
+		 +cb
+		 +QString("<br />\n")
+		 +protect4(tr("Comments after:", "The comments of the constraint were changed to this new value (Comments after)."))
+		 +QString("<br />\n<br />\n")
+		 +protect4(ctr->comments));
+		//gt.rules.addUndoPoint(tr("Changed a constraint's comments. Constraint before:\n\n%1\nComments after:\n\n%2").arg(cb).arg(ctr->comments));
 
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
@@ -8764,7 +8987,7 @@ void ListTimeConstraints::constraintComments()
 			if(i>=0)
 				constraintsListWidget->setCurrentRow(i);
 			else
-				constraintDescriptionTextEdit->setPlainText(QString(""));
+				constraintDescriptionTextEdit->setText(QString(""));
 
 			int n_active=0;
 			for(TimeConstraint* ctr2 : std::as_const(visibleTimeConstraintsList))
@@ -8860,7 +9083,7 @@ void ListTimeConstraints::changeWeights()
 			assert(i<visibleTimeConstraintsList.count());
 			TimeConstraint* ctr=visibleTimeConstraintsList.at(i);
 			if(ctr->canHaveAnyWeight()){
-				su+=ctr->getDetailedDescription(gt.rules)+QString("\n");
+				su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+QString("<br />\n");
 
 				cnt++;
 				ctr->weightPercentage=nw;
@@ -8873,9 +9096,9 @@ void ListTimeConstraints::changeWeights()
 	assert(cnt==cnt_pre);
 
 	if(cnt>0){
-		gt.rules.addUndoPoint(tr("Changed the weights of the following %1 selected time constraints to %2%:",
+		gt.rules.addUndoPoint(protect4(tr("Changed the weights of the following %1 selected time constraints to %2%:",
 		 "%1 is the number of time constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints")
-		 .arg(cnt).arg(CustomFETString::number(nw))+QString("\n\n")+su);
+		 .arg(cnt).arg(CustomFETString::number(nw)))+QString("<br />\n<br />\n")+su);
 
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
@@ -8903,6 +9126,11 @@ void ListTimeConstraints::changeWeights()
 	}
 
 	//constraintsListWidget->setFocus();
+}
+
+void ListTimeConstraints::colorsCheckBoxToggled()
+{
+	constraintChanged();
 }
 
 void ListTimeConstraints::showRelatedCheckBoxToggled()

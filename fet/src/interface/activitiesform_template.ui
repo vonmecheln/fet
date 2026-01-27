@@ -88,6 +88,13 @@
         <widget class="QTextEdit" name="currentActivityTextEdit"/>
        </item>
        <item>
+        <widget class="QCheckBox" name="colorsCheckBox">
+         <property name="text">
+          <string>Colors</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QGroupBox" name="filterGroupBox">
          <property name="title">
           <string comment="Filter the activities by teacher, students, subject, or activity tag">Filter</string>

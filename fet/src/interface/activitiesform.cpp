@@ -99,6 +99,8 @@ ActivitiesForm::ActivitiesForm(QWidget* parent, const QString& teacherName, cons
 		splitter->restoreState(settings.value(this->metaObject()->className()+QString("/splitter-state")).toByteArray());
 	showRelatedCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/show-related-check-box-state"), "false").toBool());
 
+	colorsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/use-colors"), "false").toBool());
+
 	/*invertedTeacherCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/inverted-teacher-check-box-state"), "false").toBool());
 	invertedStudentsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/inverted-students-check-box-state"), "false").toBool());
 	invertedSubjectCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/inverted-subject-check-box-state"), "false").toBool());
@@ -130,6 +132,8 @@ ActivitiesForm::ActivitiesForm(QWidget* parent, const QString& teacherName, cons
 	connect(commentsPushButton, &QPushButton::clicked, this, &ActivitiesForm::activityComments);
 	
 	connect(activityTagsPushButton, &QPushButton::clicked, this, &ActivitiesForm::changeActivityTags);
+
+	connect(colorsCheckBox, &QCheckBox::toggled, this, &ActivitiesForm::colorsCheckBoxToggled);
 
 	if(SHORTCUT_PLUS){
 		QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
@@ -288,6 +292,8 @@ ActivitiesForm::~ActivitiesForm()
 	settings.setValue(this->metaObject()->className()+QString("/splitter-state"), splitter->saveState());
 
 	settings.setValue(this->metaObject()->className()+QString("/show-related-check-box-state"), showRelatedCheckBox->isChecked());
+
+	settings.setValue(this->metaObject()->className()+QString("/use-colors"), colorsCheckBox->isChecked());
 
 	/*settings.setValue(this->metaObject()->className()+QString("/inverted-teacher-check-box-state"), invertedTeacherCheckBox->isChecked());
 	settings.setValue(this->metaObject()->className()+QString("/inverted-students-check-box-state"), invertedStudentsCheckBox->isChecked());
@@ -621,7 +627,7 @@ void ActivitiesForm::filterChanged()
 	if(activitiesListWidget->count()>0)
 		activitiesListWidget->setCurrentRow(0);
 	else
-		currentActivityTextEdit->setPlainText(QString(""));
+		currentActivityTextEdit->setText(QString(""));
 	
 	selectionChanged();
 	connect(activitiesListWidget, &QListWidget::itemSelectionChanged, this, &ActivitiesForm::selectionChanged);
@@ -848,11 +854,11 @@ void ActivitiesForm::activityChanged()
 	int index=activitiesListWidget->currentRow();
 	
 	if(index<0){
-		currentActivityTextEdit->setPlainText(QString(""));
+		currentActivityTextEdit->setText(QString(""));
 		return;
 	}
 	if(index>=visibleActivitiesList.count()){
-		currentActivityTextEdit->setPlainText(tr("Invalid activity"));
+		currentActivityTextEdit->setText(tr("Invalid activity"));
 		return;
 	}
 
@@ -860,8 +866,8 @@ void ActivitiesForm::activityChanged()
 	Activity* act=visibleActivitiesList[index];
 
 	assert(act!=nullptr);
-	s=act->getDetailedDescriptionWithConstraints(gt.rules);
-	currentActivityTextEdit->setPlainText(s);
+	s=act->getDetailedDescriptionWithConstraints(gt.rules, true, colorsCheckBox->isChecked());
+	currentActivityTextEdit->setText(s);
 }
 
 void ActivitiesForm::help()
@@ -1230,4 +1236,9 @@ void ActivitiesForm::changeActivityTags()
 	activitiesListWidget->horizontalScrollBar()->setValue(valh);
 
 	activitiesListWidget->setFocus();
+}
+
+void ActivitiesForm::colorsCheckBoxToggled()
+{
+	activityChanged();
 }

@@ -12495,7 +12495,7 @@ yea why not
 805---------------------------------------------------------
 From Michael Chourdakis (on Facebook):
 
-Get rid of Qt classes in FET-CL.
+Eliminate the need for Qt classes in FET-CL.
 
 806---------------------------------------------------------
 From Michael Towers:
@@ -12625,3 +12625,76 @@ From GUEFFAZ REDA (on Facebook):
 
 He sent Liviu Lalescu two modified screenshots: When adding a teacher not available times constraint (and in all types of teacher's constraints), and
 in students not available times, write Number of hours = ... .
+
+808---------------------------------------------------------
+From Michael Chourdakis (on Facebook):
+
+about the state save/opening, you can do that in the same fet-cl by launching a new thread on request that has the same memory to start
+so in same fet you have more than 1 thread searching from a good start
+
+809---------------------------------------------------------
+From GUEFFAZ REDA (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6729.0
+
+Show image if timetable is locked. To get the user's attention. (modified screenshot provided, with the Locking push button having a closed lock symbol on it.)
+
+810---------------------------------------------------------
+From GUEFFAZ REDA (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6730.0
+
+Conflicts to Form Constraints
+Separate each line of conflicts form and double click to show constraints form.
+
+(modified screenshot provided.)
+
+811---------------------------------------------------------
+From GUEFFAZ REDA (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6731.0
+
+Add button swap between name and code or long name.
+
+(modified screenshot provided.)
+
+812---------------------------------------------------------
+From kilindor (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6732.0
+
+I have a suggestion, which is adding a tab that allows importing random seeds from txt file instead of do it manually,
+because sometimes we need to start generating from exact seed number.
+
+813---------------------------------------------------------
+From GUEFFAZ REDA (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6734.0
+
+Add jump button to deplace Activities.
+
+(modified screenshot provided.)
+
+Note Liviu Lalescu: I think GUEFFAZ means to move up/down the constraints with 5/10 positions.
+
+814---------------------------------------------------------
+From GUEFFAZ REDA (on Facebook):
+
+Screenshot provided, in which he would like to synchronize the check boxes "Colors" in modify constraint dialog
+and view constraints.
+
+815---------------------------------------------------------
+From GUEFFAZ REDA (on Facebook):
+
+export and import work perfect but ...
+Set a condition for importing files to avoid errors. For example, I want to import subjects files, but I mistakenly select the teachers file,
+yet the program proceeds with the import without displaying an error.
+
+816---------------------------------------------------------
+From GUEFFAZ REDA (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6733.msg37308#msg37308
+
+separate morning/afternoon
+
+(Liviu Lalescu: when viewing the detailed description with constraints in the Mornings-Afternoons mode.)

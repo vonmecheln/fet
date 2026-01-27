@@ -1,3 +1,13 @@
+ 7.7.2
+	- Improvements in the interface: the constraints with tables will be shown in human-readable form (suggested by GUEFFAZ REDA, and maybe other
+	users in the past). g.theodoroy had useful suggestions and contributions, and wrote the code to divide the tables in the Mornings-Afternoons
+	mode.
+	- The detailed description of the teachers now include their 'not available times' constraints, in human-readable form (suggested by
+	GUEFFAZ REDA).
+	- Improvements in the interface: all the 'list constraints' dialogs now contain Up/Down buttons.
+	- The user can view/save the file in a human-readable text form (it was DT's suggestion to allow saving the data as an HTML file).
+	- The user can backup or restore the settings to/from an INI file (suggested in the past by Bobby Wise, and maybe by other users).
+	- Minor interface bug fixes.
  7.7.1
 	- Improved the CMake build files, by Michael Towers. Volker Dirr (assisted by Gemini and ChatGPT) also had some useful suggestions.
 	- The FET translations now include also the Qt translations (suggested by Michael Towers).

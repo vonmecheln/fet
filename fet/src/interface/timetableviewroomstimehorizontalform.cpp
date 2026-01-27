@@ -1066,7 +1066,7 @@ void TimetableViewRoomsTimeHorizontalForm::currentItemChanged(QTableWidgetItem* 
 
 void TimetableViewRoomsTimeHorizontalForm::detailActivity(QTableWidgetItem* item){
 	if(item==nullptr){
-		detailsTextEdit->setPlainText(QString(""));
+		detailsTextEdit->setText(QString(""));
 		return;
 	}
 
@@ -1188,7 +1188,7 @@ void TimetableViewRoomsTimeHorizontalForm::detailActivity(QTableWidgetItem* item
 				}
 			}
 		}
-		detailsTextEdit->setPlainText(s);
+		detailsTextEdit->setText(s);
 	}
 }
 

@@ -49,10 +49,15 @@ class ListTimeConstraintsDialog: public QDialog
 	QSplitter* splitter;
 
 	QCheckBox* showRelatedCheckBox;
+	
+	QCheckBox* colorsCheckBox;
+	
+	QCheckBox* filterCheckBox;
+	QCheckBox* sortedCheckBox;
 
 public:
 	ListTimeConstraintsDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop, QSplitter* _splitter,
-							  QCheckBox* showRelatedCheckBox);
+							  QCheckBox* _showRelatedCheckBox, QCheckBox* _colorsCheckBox, QCheckBox* _filterCheckBox, QCheckBox* _sortedCheckBox);
 	~ListTimeConstraintsDialog();
 };
 
@@ -80,6 +85,8 @@ class ListTimeConstraints: public QObject
 
 	QCheckBox* showRelatedCheckBox;
 
+	QCheckBox* colorsCheckBox;
+
 	QSplitter* splitter;
 	
 	QListWidget* constraintsListWidget;
@@ -89,6 +96,10 @@ class ListTimeConstraints: public QObject
 	QPushButton* modifyPushButton;
 	QPushButton* modifyMultiplePushButton;
 	QPushButton* removePushButton;
+	
+	QPushButton* upPushButton;
+	QPushButton* downPushButton;
+	
 	QPushButton* helpPushButton;
 	QPushButton* closePushButton;
 
@@ -132,6 +143,10 @@ private:
 	void modifyClicked();
 	void modifyMultipleClicked();
 	void removeClicked();
+
+	void moveTimeConstraintUp();
+	void moveTimeConstraintDown();
+
 	void helpClicked();
 	void closeClicked();
 
@@ -153,6 +168,8 @@ private:
 	void selectionChanged();
 
 	void showRelatedCheckBoxToggled();
+
+	void colorsCheckBoxToggled();
 };
 
 #endif

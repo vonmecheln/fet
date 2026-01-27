@@ -14,34 +14,6 @@
    <string extracomment="This is the title of the dialog to see the list of all constraints of this type">Related space constraints</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="2" column="1">
-    <layout class="QVBoxLayout" name="verticalLayout_4">
-     <item>
-      <widget class="QPushButton" name="removeConstraintsPushButton">
-       <property name="text">
-        <string>Remove</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="sortedCheckBox">
-       <property name="text">
-        <string comment="It refers to space constraints">Sorted</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="0" column="0" colspan="4">
-    <widget class="QLabel" name="currentItemLabel">
-     <property name="text">
-      <string notr="true">Current item type and name</string>
-     </property>
-     <property name="wordWrap">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
    <item row="2" column="0">
     <layout class="QVBoxLayout" name="verticalLayout_3">
      <item>
@@ -61,35 +33,6 @@
     </layout>
    </item>
    <item row="2" column="3">
-    <layout class="QVBoxLayout" name="verticalLayout_7">
-     <item>
-      <widget class="QPushButton" name="commentsPushButton">
-       <property name="text">
-        <string>Comments</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
-       <item>
-        <widget class="QPushButton" name="weightsPushButton">
-         <property name="text">
-          <string comment="With this button we can change the weights of all the selected space constraints">Weights</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="closePushButton">
-         <property name="text">
-          <string>Close</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </item>
-   <item row="2" column="2">
     <layout class="QVBoxLayout" name="verticalLayout_6">
      <item>
       <widget class="QPushButton" name="activatePushButton">
@@ -107,7 +50,24 @@
      </item>
     </layout>
    </item>
-   <item row="1" column="0" colspan="4">
+   <item row="3" column="0" colspan="5">
+    <widget class="QPushButton" name="addConstraintPushButton">
+     <property name="text">
+      <string comment="Add a new constraint of type 'activity preferred rooms'">Add activity preferred rooms</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="5">
+    <widget class="QLabel" name="currentItemLabel">
+     <property name="text">
+      <string notr="true">Current item type and name</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="5">
     <widget class="QSplitter" name="splitter">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -173,16 +133,81 @@
        <item>
         <widget class="QTextEdit" name="currentConstraintTextEdit"/>
        </item>
+       <item>
+        <widget class="QCheckBox" name="colorsCheckBox">
+         <property name="text">
+          <string>Colors</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
     </widget>
    </item>
-   <item row="3" column="0" colspan="4">
-    <widget class="QPushButton" name="addConstraintPushButton">
-     <property name="text">
-      <string comment="Add a new constraint of type 'activity preferred rooms'">Add activity preferred rooms</string>
-     </property>
-    </widget>
+   <item row="2" column="1">
+    <layout class="QVBoxLayout" name="verticalLayout_4">
+     <item>
+      <widget class="QPushButton" name="removeConstraintsPushButton">
+       <property name="text">
+        <string>Remove</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="sortedCheckBox">
+       <property name="text">
+        <string comment="It refers to space constraints">Sorted</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="4">
+    <layout class="QVBoxLayout" name="verticalLayout_7">
+     <item>
+      <widget class="QPushButton" name="commentsPushButton">
+       <property name="text">
+        <string>Comments</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QPushButton" name="weightsPushButton">
+         <property name="text">
+          <string comment="With this button we can change the weights of all the selected space constraints">Weights</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="closePushButton">
+         <property name="text">
+          <string>Close</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="2">
+    <layout class="QVBoxLayout" name="verticalLayout_8">
+     <item>
+      <widget class="QPushButton" name="moveSpaceConstraintUpPushButton">
+       <property name="text">
+        <string comment="It means move the item up in the list">Up</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="moveSpaceConstraintDownPushButton">
+       <property name="text">
+        <string comment="It means move the item down in the list">Down</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>

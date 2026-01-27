@@ -103,9 +103,14 @@ ListOfRelatedSpaceConstraintsForm::ListOfRelatedSpaceConstraintsForm(QWidget* pa
 	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ListOfRelatedSpaceConstraintsForm::modifyConstraint);
 	connect(filterCheckBox, &QCheckBox::toggled, this, &ListOfRelatedSpaceConstraintsForm::filter);
 
+	connect(moveSpaceConstraintUpPushButton, &QPushButton::clicked, this, &ListOfRelatedSpaceConstraintsForm::moveSpaceConstraintUp);
+	connect(moveSpaceConstraintDownPushButton, &QPushButton::clicked, this, &ListOfRelatedSpaceConstraintsForm::moveSpaceConstraintDown);
+
 	connect(sortedCheckBox, &QCheckBox::toggled, this, &ListOfRelatedSpaceConstraintsForm::sortedChanged);
 	connect(activatePushButton, &QPushButton::clicked, this, &ListOfRelatedSpaceConstraintsForm::activateConstraints);
 	connect(deactivatePushButton, &QPushButton::clicked, this, &ListOfRelatedSpaceConstraintsForm::deactivateConstraints);
+
+	connect(colorsCheckBox, &QCheckBox::toggled, this, &ListOfRelatedSpaceConstraintsForm::useColorsChanged);
 
 	connect(commentsPushButton, &QPushButton::clicked, this, &ListOfRelatedSpaceConstraintsForm::constraintComments);
 
@@ -155,6 +160,18 @@ ListOfRelatedSpaceConstraintsForm::ListOfRelatedSpaceConstraintsForm(QWidget* pa
 		//if(SHOW_TOOL_TIPS)
 		//	commentsPushButton->setToolTip(QString("C"));
 	}
+	if(SHORTCUT_U){
+		QShortcut* upShortcut=new QShortcut(QKeySequence(Qt::Key_U), this);
+		connect(upShortcut, &QShortcut::activated, [=]{moveSpaceConstraintUpPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	moveSpaceConstraintUpPushButton->setToolTip(QString("U"));
+	}
+	if(SHORTCUT_J){
+		QShortcut* downShortcut=new QShortcut(QKeySequence(Qt::Key_J), this);
+		connect(downShortcut, &QShortcut::activated, [=]{moveSpaceConstraintDownPushButton->animateClick();});
+		//if(SHOW_TOOL_TIPS)
+		//	moveSpaceConstraintDownPushButton->setToolTip(QString("J"));
+	}
 	if(SHORTCUT_W){
 		QShortcut* weightsShortcut=new QShortcut(QKeySequence(Qt::Key_W), this);
 		connect(weightsShortcut, &QShortcut::activated, [=]{weightsPushButton->animateClick();});
@@ -190,10 +207,15 @@ ListOfRelatedSpaceConstraintsForm::ListOfRelatedSpaceConstraintsForm(QWidget* pa
 
 	caseSensitive=settings.value(settingsName+"/case-sensitive", "false").toBool();
 
-	useFilter=false;
+	/*useFilter=false;
 	
 	assert(filterCheckBox->isChecked()==false);
-	assert(sortedCheckBox->isChecked()==false);
+	assert(sortedCheckBox->isChecked()==false);*/
+	useFilter=settings.value(this->metaObject()->className()+QString("/list-filtered"), "false").toBool();
+	filterCheckBox->setChecked(useFilter);
+	sortedCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/list-sorted"), "false").toBool());
+
+	colorsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/use-colors"), "false").toBool());
 	
 	filterChanged();
 }
@@ -225,6 +247,11 @@ ListOfRelatedSpaceConstraintsForm::~ListOfRelatedSpaceConstraintsForm()
 		settings.setValue(settingsName+"/text/"+CustomFETString::number(i+1), text.at(i));
 
 	settings.setValue(settingsName+"/case-sensitive", caseSensitive);
+
+	settings.setValue(this->metaObject()->className()+QString("/list-filtered"), useFilter);
+	settings.setValue(this->metaObject()->className()+QString("/list-sorted"), sortedCheckBox->isChecked());
+
+	settings.setValue(this->metaObject()->className()+QString("/use-colors"), colorsCheckBox->isChecked());
 }
 
 bool ListOfRelatedSpaceConstraintsForm::filterOk(SpaceConstraint* ctr)
@@ -308,6 +335,180 @@ bool ListOfRelatedSpaceConstraintsForm::filterOk(SpaceConstraint* ctr)
 	return all;
 }
 
+void ListOfRelatedSpaceConstraintsForm::moveSpaceConstraintUp()
+{
+	/*if(filterCheckBox->isChecked()){
+		QMessageBox::information(this, tr("FET information"), tr("To move a space constraint up, the 'Filter' check box must not be checked."));
+		return;
+	}*/
+	if(sortedCheckBox->isChecked()){
+		QMessageBox::information(this, tr("FET information"), tr("To move a space constraint up, the 'Sorted' check box must not be checked."));
+		return;
+	}
+	
+	if(constraintsListWidget->count()<=1)
+		return;
+	int i=constraintsListWidget->currentRow();
+	if(i<0 || i>=constraintsListWidget->count())
+		return;
+	if(i==0)
+		return;
+	
+	QString s1=constraintsListWidget->item(i)->text();
+	QString s2=constraintsListWidget->item(i-1)->text();
+	
+	/*assert(gt.rules.spaceConstraintsList.count()==visibleSpaceConstraintsList.count());
+	SpaceConstraint* sc1=gt.rules.spaceConstraintsList.at(i);
+	assert(sc1==visibleSpaceConstraintsList.at(i));
+	SpaceConstraint* sc2=gt.rules.spaceConstraintsList.at(i-1);
+	assert(sc2==visibleSpaceConstraintsList.at(i-1));*/
+
+	SpaceConstraint* sc1=visibleSpaceConstraintsList.at(i);
+	SpaceConstraint* sc2=visibleSpaceConstraintsList.at(i-1);
+	
+	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
+	
+	constraintsListWidget->item(i)->setText(s2);
+	constraintsListWidget->item(i-1)->setText(s1);
+	
+	int j=-1;
+	int k=-1;
+	for(int q=0; q<gt.rules.spaceConstraintsList.count(); q++){
+		if(gt.rules.spaceConstraintsList.at(q)==sc2){
+			assert(j==-1);
+			j=q;
+		}
+		if(gt.rules.spaceConstraintsList.at(q)==sc1){
+			assert(k==-1);
+			k=q;
+		}
+	}
+	assert(k>=0);
+	assert(j>=0);
+	assert(k>j);
+	//gt.rules.spaceConstraintsList[i]=sc2;
+	//gt.rules.spaceConstraintsList[i-1]=sc1;
+	//std::rotate(&gt.rules.spaceConstraintsList[j], &gt.rules.spaceConstraintsList[k], &gt.rules.spaceConstraintsList[k+1]); -> might be unsafe/incorrect
+	for(int q=k; q>j; q--)
+		gt.rules.spaceConstraintsList[q]=gt.rules.spaceConstraintsList[q-1];
+	gt.rules.spaceConstraintsList[j]=sc1;
+	
+	visibleSpaceConstraintsList[i]=sc2;
+	visibleSpaceConstraintsList[i-1]=sc1;
+	
+	gt.rules.addUndoPoint(protect4(tr("A constraint was moved up:", "This is a History item. Following is the detailed description of the constraint which was moved up."))
+	 +QString("<br />\n<br />\n")+sc1->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked()));
+	
+	if(sc2->active){
+		constraintsListWidget->item(i)->setBackground(QBrush());
+		constraintsListWidget->item(i)->setForeground(QBrush());
+	}
+	else{
+		constraintsListWidget->item(i)->setBackground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+		constraintsListWidget->item(i)->setForeground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+	}
+
+	if(sc1->active){
+		constraintsListWidget->item(i-1)->setBackground(QBrush());
+		constraintsListWidget->item(i-1)->setForeground(QBrush());
+	}
+	else{
+		constraintsListWidget->item(i-1)->setBackground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+		constraintsListWidget->item(i-1)->setForeground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+	}
+
+	constraintsListWidget->setCurrentRow(i-1);
+	constraintChanged(/*i-1*/);
+}
+
+void ListOfRelatedSpaceConstraintsForm::moveSpaceConstraintDown()
+{
+	/*if(filterCheckBox->isChecked()){
+		QMessageBox::information(this, tr("FET information"), tr("To move a space constraint down, the 'Filter' check box must not be checked."));
+		return;
+	}*/
+	if(sortedCheckBox->isChecked()){
+		QMessageBox::information(this, tr("FET information"), tr("To move a space constraint down, the 'Sorted' check box must not be checked."));
+		return;
+	}
+	
+	if(constraintsListWidget->count()<=1)
+		return;
+	int i=constraintsListWidget->currentRow();
+	if(i<0 || i>=constraintsListWidget->count())
+		return;
+	if(i==constraintsListWidget->count()-1)
+		return;
+	
+	QString s1=constraintsListWidget->item(i)->text();
+	QString s2=constraintsListWidget->item(i+1)->text();
+	
+	/*assert(gt.rules.spaceConstraintsList.count()==visibleSpaceConstraintsList.count());
+	SpaceConstraint* sc1=gt.rules.spaceConstraintsList.at(i);
+	assert(sc1==visibleSpaceConstraintsList.at(i));
+	SpaceConstraint* sc2=gt.rules.spaceConstraintsList.at(i+1);
+	assert(sc2==visibleSpaceConstraintsList.at(i+1));*/
+
+	SpaceConstraint* sc1=visibleSpaceConstraintsList.at(i);
+	SpaceConstraint* sc2=visibleSpaceConstraintsList.at(i+1);
+
+	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
+	
+	constraintsListWidget->item(i)->setText(s2);
+	constraintsListWidget->item(i+1)->setText(s1);
+	
+	int j=-1;
+	int k=-1;
+	for(int q=0; q<gt.rules.spaceConstraintsList.count(); q++){
+		if(gt.rules.spaceConstraintsList.at(q)==sc2){
+			assert(j==-1);
+			j=q;
+		}
+		if(gt.rules.spaceConstraintsList.at(q)==sc1){
+			assert(k==-1);
+			k=q;
+		}
+	}
+	assert(k>=0);
+	assert(j>=0);
+	assert(k<j);
+	//gt.rules.spaceConstraintsList[i]=sc2;
+	//gt.rules.spaceConstraintsList[i+1]=sc1;
+	//std::rotate(&gt.rules.spaceConstraintsList[k], &gt.rules.spaceConstraintsList[k+1], &gt.rules.spaceConstraintsList[j+1]); -> might be unsafe/incorrect
+	for(int q=k; q<j; q++)
+		gt.rules.spaceConstraintsList[q]=gt.rules.spaceConstraintsList[q+1];
+	gt.rules.spaceConstraintsList[j]=sc1;
+	
+	visibleSpaceConstraintsList[i]=sc2;
+	visibleSpaceConstraintsList[i+1]=sc1;
+	
+	gt.rules.addUndoPoint(protect4(tr("A constraint was moved down:", "This is a History item. Following is the detailed description of the constraint which was moved down."))
+	 +QString("<br />\n<br />\n")+sc1->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked()));
+	
+	if(sc2->active){
+		constraintsListWidget->item(i)->setBackground(QBrush());
+		constraintsListWidget->item(i)->setForeground(QBrush());
+	}
+	else{
+		constraintsListWidget->item(i)->setBackground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+		constraintsListWidget->item(i)->setForeground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+	}
+
+	if(sc1->active){
+		constraintsListWidget->item(i+1)->setBackground(QBrush());
+		constraintsListWidget->item(i+1)->setForeground(QBrush());
+	}
+	else{
+		constraintsListWidget->item(i+1)->setBackground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+		constraintsListWidget->item(i+1)->setForeground(constraintsListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+	}
+
+	constraintsListWidget->setCurrentRow(i+1);
+	constraintChanged(/*i+1*/);
+}
+
 void ListOfRelatedSpaceConstraintsForm::sortedChanged(bool checked)
 {
 	Q_UNUSED(checked);
@@ -345,7 +546,7 @@ void ListOfRelatedSpaceConstraintsForm::filterChanged()
 	}
 
 	if(constraintsListWidget->count()<=0)
-		currentConstraintTextEdit->setPlainText("");
+		currentConstraintTextEdit->setText("");
 	else
 		constraintsListWidget->setCurrentRow(0);
 	
@@ -368,8 +569,8 @@ void ListOfRelatedSpaceConstraintsForm::constraintChanged()
 	assert(index<visibleSpaceConstraintsList.count());
 	SpaceConstraint* ctr=visibleSpaceConstraintsList.at(index);
 	assert(ctr!=nullptr);
-	QString s=ctr->getDetailedDescription(gt.rules);
-	currentConstraintTextEdit->setPlainText(s);
+	QString s=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked()); //'true' means 'richText'
+	currentConstraintTextEdit->setText(s);
 }
 
 void ListOfRelatedSpaceConstraintsForm::addConstraint()
@@ -489,10 +690,10 @@ void ListOfRelatedSpaceConstraintsForm::removeConstraints()
 		}
 
 	QString s;
-	s=tr("Remove these selected space constraints?");
-	s+="\n\n";
+	s=protect4(tr("Remove these selected space constraints?", "Following is the list of detailed descriptions of the constraints marked for removal."));
+	s+=QString("<br />\n<br />\n");
 	for(SpaceConstraint* ctr : std::as_const(tl))
-		s+=ctr->getDetailedDescription(gt.rules)+"\n";
+		s+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+QString("<br />\n");
 	int lres=LongTextMessageBox::confirmation(this, tr("FET confirmation"),
 		s, tr("Yes"), tr("No"), QString(), 0, 1 );
 
@@ -503,10 +704,10 @@ void ListOfRelatedSpaceConstraintsForm::removeConstraints()
 
 	QString su;
 	if(!tl.isEmpty()){
-		su=tr("Removed %1 space constraints:").arg(tl.count());
-		su+=QString("\n\n");
+		su=protect4(tr("Removed %1 space constraints:").arg(tl.count()));
+		su+=QString("<br />\n<br />\n");
 		for(SpaceConstraint* ctr : std::as_const(tl))
-			su+=ctr->getDetailedDescription(gt.rules)+"\n";
+			su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+QString("<br />\n");
 	}
 
 	//The user clicked the OK button or pressed Enter
@@ -636,7 +837,7 @@ void ListOfRelatedSpaceConstraintsForm::activateConstraints()
 			assert(i<visibleSpaceConstraintsList.count());
 			SpaceConstraint* ctr=visibleSpaceConstraintsList.at(i);
 			if(!ctr->active){
-				su+=ctr->getDetailedDescription(gt.rules)+QString("\n");
+				su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+QString("<br />\n");
 
 				cnt++;
 				ctr->active=true;
@@ -646,7 +847,7 @@ void ListOfRelatedSpaceConstraintsForm::activateConstraints()
 		}
 
 	if(cnt>0){
-		gt.rules.addUndoPoint(tr("Activated %1 space constraints:", "%1 is the number of activated space constraints").arg(cnt)+QString("\n\n")+su);
+		gt.rules.addUndoPoint(protect4(tr("Activated %1 space constraints:", "%1 is the number of activated space constraints").arg(cnt))+QString("<br />\n<br />\n")+su);
 
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
@@ -704,7 +905,7 @@ void ListOfRelatedSpaceConstraintsForm::deactivateConstraints()
 			if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_SPACE)
 				continue;
 			if(ctr->active){
-				su+=ctr->getDetailedDescription(gt.rules)+QString("\n");
+				su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+QString("<br />\n");
 
 				cnt++;
 				ctr->active=false;
@@ -713,7 +914,7 @@ void ListOfRelatedSpaceConstraintsForm::deactivateConstraints()
 			}
 		}
 	if(cnt>0){
-		gt.rules.addUndoPoint(tr("Deactivated %1 space constraints:", "%1 is the number of deactivated space constraints").arg(cnt)+QString("\n\n")+su);
+		gt.rules.addUndoPoint(protect4(tr("Deactivated %1 space constraints:", "%1 is the number of deactivated space constraints").arg(cnt))+QString("<br />\n<br />\n")+su);
 
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
@@ -795,11 +996,19 @@ void ListOfRelatedSpaceConstraintsForm::constraintComments()
 	saveFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	if(t==QDialog::Accepted){
-		QString cb=ctr->getDetailedDescription(gt.rules);
+		QString cb=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked());
 
 		ctr->comments=commentsPT->toPlainText();
 	
-		gt.rules.addUndoPoint(tr("Changed a constraint's comments. Constraint before:\n\n%1\nComments after:\n\n%2").arg(cb).arg(ctr->comments));
+		gt.rules.addUndoPoint(protect4(tr("Changed a constraint's comments.", "The user changed the constraint's comments"))
+		 +QString(" ")+protect4(tr("Constraint before:", "The detailed description of a constraint before the change."))
+		 +QString("<br />\n<br />\n")
+		 +cb
+		 +QString("<br />\n")
+		 +protect4(tr("Comments after:", "The comments of the constraint were changed to this new value (Comments after)."))
+		 +QString("<br />\n<br />\n")
+		 +protect4(ctr->comments));
+		//gt.rules.addUndoPoint(tr("Changed a constraint's comments. Constraint before:\n\n%1\nComments after:\n\n%2").arg(cb).arg(ctr->comments));
 
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
@@ -815,7 +1024,7 @@ void ListOfRelatedSpaceConstraintsForm::constraintComments()
 			if(i>=0)
 				constraintsListWidget->setCurrentRow(i);
 			else
-				currentConstraintTextEdit->setPlainText(QString(""));
+				currentConstraintTextEdit->setText(QString(""));
 
 			int n_active=0;
 			for(SpaceConstraint* ctr2 : std::as_const(visibleSpaceConstraintsList))
@@ -846,6 +1055,11 @@ void ListOfRelatedSpaceConstraintsForm::selectionChanged()
 		}
 	mSLabel->setText(tr("Multiple selection: %1 / %2", "It refers to the list of selected space constraints, %1 is the number of active"
 	 " selected space constraints, %2 is the total number of selected space constraints").arg(nActive).arg(nTotal));
+}
+
+void ListOfRelatedSpaceConstraintsForm::useColorsChanged()
+{
+	constraintChanged();
 }
 
 void ListOfRelatedSpaceConstraintsForm::changeWeights()
@@ -907,7 +1121,7 @@ void ListOfRelatedSpaceConstraintsForm::changeWeights()
 			assert(i<visibleSpaceConstraintsList.count());
 			SpaceConstraint* ctr=visibleSpaceConstraintsList.at(i);
 			if(ctr->canHaveAnyWeight()){
-				su+=ctr->getDetailedDescription(gt.rules)+QString("\n");
+				su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+QString("<br />\n");
 
 				cnt++;
 				ctr->weightPercentage=nw;
@@ -920,9 +1134,9 @@ void ListOfRelatedSpaceConstraintsForm::changeWeights()
 	assert(cnt==cnt_pre);
 
 	if(cnt>0){
-		gt.rules.addUndoPoint(tr("Changed the weights of the following %1 selected space constraints to %2%:",
+		gt.rules.addUndoPoint(protect4(tr("Changed the weights of the following %1 selected space constraints to %2%:",
 		 "%1 is the number of space constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints")
-		 .arg(cnt).arg(CustomFETString::number(nw))+QString("\n\n")+su);
+		 .arg(cnt).arg(CustomFETString::number(nw)))+QString("<br />\n<br />\n")+su);
 
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);

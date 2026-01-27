@@ -47,6 +47,8 @@ public Q_SLOTS:
 	void sortTeachers();
 	
 	void teacherChanged(int index);
+
+	void colorsCheckBoxToggled();
 	
 	void activateTeacher();
 	void deactivateTeacher();

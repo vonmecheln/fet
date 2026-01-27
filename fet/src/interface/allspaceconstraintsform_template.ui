@@ -126,6 +126,13 @@
        <item>
         <widget class="QTextEdit" name="currentConstraintTextEdit"/>
        </item>
+       <item>
+        <widget class="QCheckBox" name="colorsCheckBox">
+         <property name="text">
+          <string>Colors</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
     </widget>

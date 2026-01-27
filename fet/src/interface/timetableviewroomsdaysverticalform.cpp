@@ -848,7 +848,7 @@ void TimetableViewRoomsDaysVerticalForm::currentItemChanged(QTableWidgetItem* cu
 
 void TimetableViewRoomsDaysVerticalForm::detailActivity(QTableWidgetItem* item){
 	if(item==nullptr){
-		detailsTextEdit->setPlainText(QString(""));
+		detailsTextEdit->setText(QString(""));
 		return;
 	}
 	
@@ -913,7 +913,7 @@ void TimetableViewRoomsDaysVerticalForm::detailActivity(QTableWidgetItem* item){
 		if(ai!=UNALLOCATED_ACTIVITY){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
 			assert(act!=nullptr);
-			s += act->getDetailedDescriptionWithConstraints(gt.rules);
+			s += act->getDetailedDescriptionWithConstraints(gt.rules, true, colorsCheckBox->isChecked());
 			//s += act->getDetailedDescription(gt.rules);
 
 			int r=best_solution.rooms[ai];
@@ -976,7 +976,7 @@ void TimetableViewRoomsDaysVerticalForm::detailActivity(QTableWidgetItem* item){
 			}
 		}
 	}
-	detailsTextEdit->setPlainText(s);
+	detailsTextEdit->setText(s);
 }
 
 void TimetableViewRoomsDaysVerticalForm::lockTimeSpace()

@@ -984,6 +984,9 @@ A function used in CSS saving
 */
 QString protect3(const QString& str);
 
+//Used in the interface rich text format
+QString protect4(const QString& str);
+
 QString translatedComma();
 QString translatedCommaSpace();
 QString translatedSemicolon();

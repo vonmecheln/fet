@@ -79,6 +79,8 @@ RoomsForm::RoomsForm(QWidget* parent): QDialog(parent)
 	connect(makeEditVirtualPushButton, &QPushButton::clicked, this, &RoomsForm::makeEditVirtual);
 	connect(helpPushButton, &QPushButton::clicked, this, &RoomsForm::help);
 
+	connect(colorsCheckBox, &QCheckBox::toggled, this, &RoomsForm::colorsCheckBoxToggled);
+
 	if(SHORTCUT_PLUS){
 		QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
 		connect(addShortcut, &QShortcut::activated, [=]{addRoomPushButton->animateClick();});
@@ -122,6 +124,8 @@ RoomsForm::RoomsForm(QWidget* parent): QDialog(parent)
 	QSettings settings(COMPANY, PROGRAM);
 	if(settings.contains(this->metaObject()->className()+QString("/splitter-state")))
 		splitter->restoreState(settings.value(this->metaObject()->className()+QString("/splitter-state")).toByteArray());
+
+	colorsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/use-colors"), "false").toBool());
 	
 	this->filterChanged();
 }
@@ -132,6 +136,8 @@ RoomsForm::~RoomsForm()
 	//save splitter state
 	QSettings settings(COMPANY, PROGRAM);
 	settings.setValue(this->metaObject()->className()+QString("/splitter-state"), splitter->saveState());
+
+	settings.setValue(this->metaObject()->className()+QString("/use-colors"), colorsCheckBox->isChecked());
 }
 
 bool RoomsForm::filterOk(Room* rm)
@@ -239,13 +245,13 @@ void RoomsForm::removeRoom()
 	if(ind>=0)
 		roomsListWidget->setCurrentRow(ind);
 	else
-		currentRoomTextEdit->setPlainText(QString(""));
+		currentRoomTextEdit->setText(QString(""));
 }
 
 void RoomsForm::roomChanged(int index)
 {
 	if(index<0){
-		currentRoomTextEdit->setPlainText("");
+		currentRoomTextEdit->setText("");
 		return;
 	}
 
@@ -253,8 +259,8 @@ void RoomsForm::roomChanged(int index)
 	Room* room=visibleRoomsList.at(index);
 
 	assert(room!=nullptr);
-	s=room->getDetailedDescriptionWithConstraints(gt.rules);
-	currentRoomTextEdit->setPlainText(s);
+	s=room->getDetailedDescriptionWithConstraints(gt.rules, true, colorsCheckBox->isChecked());
+	currentRoomTextEdit->setText(s);
 }
 
 void RoomsForm::moveRoomUp()
@@ -703,4 +709,9 @@ void RoomsForm::code()
 
 		roomChanged(ind);
 	}
+}
+
+void RoomsForm::colorsCheckBoxToggled()
+{
+	roomChanged(roomsListWidget->currentRow());
 }

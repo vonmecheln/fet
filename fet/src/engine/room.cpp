@@ -237,23 +237,44 @@ QString Room::getXmlDescription()
 	return s;
 }
 
-QString Room::getDetailedDescriptionWithConstraints(Rules& r)
+QString Room::getDetailedDescriptionWithConstraints(Rules& r, bool richText, bool colors)
 {
-	QString s=this->getDetailedDescription();
+	if(!richText){
+		QString s=this->getDetailedDescription();
 
-	s+="--------------------------------------------------\n";
-	s+=tr("Space constraints directly related to this room:");
-	s+="\n";
-	for(int i=0; i<r.spaceConstraintsList.size(); i++){
-		SpaceConstraint* c=r.spaceConstraintsList[i];
-		if(c->isRelatedToRoom(this->name)){
-			s+="\n";
-			s+=c->getDetailedDescription(r);
+		s+="--------------------------------------------------\n";
+		s+=tr("Space constraints directly related to this room:");
+		s+="\n";
+		for(int i=0; i<r.spaceConstraintsList.size(); i++){
+			SpaceConstraint* c=r.spaceConstraintsList[i];
+			if(c->isRelatedToRoom(this->name)){
+				s+="\n";
+				s+=c->getDetailedDescription(r);
+			}
 		}
-	}
-	s+="--------------------------------------------------\n";
+		s+="--------------------------------------------------\n";
 
-	return s;
+		return s;
+	}
+	else{
+		QString s1=this->getDetailedDescription();
+
+		s1+="--------------------------------------------------\n";
+		s1+=tr("Space constraints directly related to this room:");
+		s1+="\n";
+		QString s2;
+		for(int i=0; i<r.spaceConstraintsList.size(); i++){
+			SpaceConstraint* c=r.spaceConstraintsList[i];
+			if(c->isRelatedToRoom(this->name)){
+				s2+="<br />\n";
+				s2+=c->getDetailedDescription(r, richText, colors);
+			}
+		}
+		QString s3;
+		s3+="--------------------------------------------------\n";
+
+		return protect4(s1)+s2+protect4(s3);
+	}
 }
 
 int roomsAscending(const Room* r1, const Room* r2)

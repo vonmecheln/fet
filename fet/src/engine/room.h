@@ -76,7 +76,7 @@ public:
 	QString getXmlDescription();
 	QString getDescription();
 	QString getDetailedDescription();
-	QString getDetailedDescriptionWithConstraints(Rules& r);
+	QString getDetailedDescriptionWithConstraints(Rules& r, bool richText=false, bool colors=false);
 };
 
 int roomsAscending(const Room* r1, const Room* r2);

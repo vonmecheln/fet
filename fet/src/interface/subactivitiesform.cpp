@@ -93,6 +93,8 @@ SubactivitiesForm::SubactivitiesForm(QWidget* parent, const QString& teacherName
 		splitter->restoreState(settings.value(this->metaObject()->className()+QString("/splitter-state")).toByteArray());
 	showRelatedCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/show-related-check-box-state"), "false").toBool());
 
+	colorsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/use-colors"), "false").toBool());
+
 	/*invertedTeacherCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/inverted-teacher-check-box-state"), "false").toBool());
 	invertedStudentsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/inverted-students-check-box-state"), "false").toBool());
 	invertedSubjectCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/inverted-subject-check-box-state"), "false").toBool());
@@ -115,6 +117,8 @@ SubactivitiesForm::SubactivitiesForm(QWidget* parent, const QString& teacherName
 	connect(deactivateAllPushButton, &QPushButton::clicked, this, &SubactivitiesForm::deactivateAllSubactivities);
 
 	connect(commentsPushButton, &QPushButton::clicked, this, &SubactivitiesForm::subactivityComments);
+
+	connect(colorsCheckBox, &QCheckBox::toggled, this, &SubactivitiesForm::colorsCheckBoxToggled);
 
 	//////////////////
 	QString settingsName="SubactivitiesAdvancedFilterForm";
@@ -236,6 +240,8 @@ SubactivitiesForm::~SubactivitiesForm()
 	settings.setValue(this->metaObject()->className()+QString("/splitter-state"), splitter->saveState());
 
 	settings.setValue(this->metaObject()->className()+QString("/show-related-check-box-state"), showRelatedCheckBox->isChecked());
+
+	settings.setValue(this->metaObject()->className()+QString("/use-colors"), colorsCheckBox->isChecked());
 
 	/*settings.setValue(this->metaObject()->className()+QString("/inverted-teacher-check-box-state"), invertedTeacherCheckBox->isChecked());
 	settings.setValue(this->metaObject()->className()+QString("/inverted-students-check-box-state"), invertedStudentsCheckBox->isChecked());
@@ -566,7 +572,7 @@ void SubactivitiesForm::filterChanged()
 	if(subactivitiesListWidget->count()>0)
 		subactivitiesListWidget->setCurrentRow(0);
 	else
-		currentSubactivityTextEdit->setPlainText(QString(""));
+		currentSubactivityTextEdit->setText(QString(""));
 }
 
 void SubactivitiesForm::modifySubactivity()
@@ -613,11 +619,11 @@ void SubactivitiesForm::subactivityChanged()
 	int index=subactivitiesListWidget->currentRow();
 
 	if(index<0){
-		currentSubactivityTextEdit->setPlainText(QString(""));
+		currentSubactivityTextEdit->setText(QString(""));
 		return;
 	}
 	if(index>=visibleSubactivitiesList.count()){
-		currentSubactivityTextEdit->setPlainText(QString("Invalid subactivity"));
+		currentSubactivityTextEdit->setText(QString("Invalid subactivity"));
 		return;
 	}
 
@@ -625,8 +631,8 @@ void SubactivitiesForm::subactivityChanged()
 	Activity* act=visibleSubactivitiesList[index];
 
 	assert(act!=nullptr);
-	s=act->getDetailedDescriptionWithConstraints(gt.rules);
-	currentSubactivityTextEdit->setPlainText(s);
+	s=act->getDetailedDescriptionWithConstraints(gt.rules, true, colorsCheckBox->isChecked());
+	currentSubactivityTextEdit->setText(s);
 }
 
 void SubactivitiesForm::help()
@@ -849,7 +855,7 @@ void SubactivitiesForm::activateSubactivity()
 			if(i>=0)
 				subactivitiesListWidget->setCurrentRow(i);
 			else
-				currentSubactivityTextEdit->setPlainText(QString(""));
+				currentSubactivityTextEdit->setText(QString(""));
 		}
 		else{
 			subactivitiesListWidget->currentItem()->setText(act->getDescription(gt.rules));
@@ -911,7 +917,7 @@ void SubactivitiesForm::deactivateSubactivity()
 			if(i>=0)
 				subactivitiesListWidget->setCurrentRow(i);
 			else
-				currentSubactivityTextEdit->setPlainText(QString(""));
+				currentSubactivityTextEdit->setText(QString(""));
 		}
 		else{
 			subactivitiesListWidget->currentItem()->setText(act->getDescription(gt.rules));
@@ -1012,4 +1018,9 @@ void SubactivitiesForm::deactivateAllSubactivities()
 	}
 
 	subactivitiesListWidget->setFocus();
+}
+
+void SubactivitiesForm::colorsCheckBoxToggled()
+{
+	subactivityChanged();
 }

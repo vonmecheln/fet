@@ -1188,7 +1188,7 @@ void TimetableViewStudentsTimeHorizontalForm::currentItemChanged(QTableWidgetIte
 
 void TimetableViewStudentsTimeHorizontalForm::detailActivity(QTableWidgetItem* item){
 	if(item==nullptr){
-		detailsTextEdit->setPlainText(QString(""));
+		detailsTextEdit->setText(QString(""));
 		return;
 	}
 
@@ -1287,7 +1287,7 @@ void TimetableViewStudentsTimeHorizontalForm::detailActivity(QTableWidgetItem* i
 		if(ok){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
 			assert(act!=nullptr);
-			s += act->getDetailedDescriptionWithConstraints(gt.rules);
+			s += act->getDetailedDescriptionWithConstraints(gt.rules, true, colorsCheckBox->isChecked());
 			//s += act->getDetailedDescription(gt.rules);
 
 			int r=best_solution.rooms[ai];
@@ -1350,7 +1350,7 @@ void TimetableViewStudentsTimeHorizontalForm::detailActivity(QTableWidgetItem* i
 			}
 		}
 	}
-	detailsTextEdit->setPlainText(s);
+	detailsTextEdit->setText(s);
 }
 
 void TimetableViewStudentsTimeHorizontalForm::lockTime()

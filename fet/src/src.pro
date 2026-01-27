@@ -61,6 +61,7 @@ SOURCES += \
 	interface/helptermsform.cpp \
 	interface/helptipsform.cpp \
 	interface/hoursform.cpp \
+	interface/humanreadabledataform.cpp \
 	interface/importinterface.cpp \
 	interface/institutionnameform.cpp \
 	interface/listofrelatedspaceconstraintsform.cpp \
@@ -186,6 +187,7 @@ HEADERS += \
 	interface/helptermsform.h \
 	interface/helptipsform.h \
 	interface/hoursform.h \
+	interface/humanreadabledataform.h \
 	interface/importinterface.h \
 	interface/institutionnameform.h \
 	interface/listofrelatedspaceconstraintsform.h \
@@ -297,6 +299,7 @@ FORMS += \
 	interface/helptermsform_template.ui \
 	interface/helptipsform_template.ui \
 	interface/hoursform_template.ui \
+	interface/humanreadabledataform_template.ui \
 	interface/institutionnameform_template.ui \
 	interface/listofrelatedspaceconstraintsform_template.ui \
 	interface/listofrelatedtimeconstraintsform_template.ui \

@@ -78,6 +78,8 @@ YearsForm::YearsForm(QWidget* parent): QDialog(parent)
 	connect(codePushButton, &QPushButton::clicked, this, &YearsForm::code);
 	connect(commentsPushButton, &QPushButton::clicked, this, &YearsForm::comments);
 
+	connect(colorsCheckBox, &QCheckBox::toggled, this, &YearsForm::colorsCheckBoxToggled);
+
 	if(SHORTCUT_PLUS){
 		QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
 		connect(addShortcut, &QShortcut::activated, [=]{addYearPushButton->animateClick();});
@@ -133,6 +135,8 @@ YearsForm::YearsForm(QWidget* parent): QDialog(parent)
 	QSettings settings(COMPANY, PROGRAM);
 	if(settings.contains(this->metaObject()->className()+QString("/splitter-state")))
 		splitter->restoreState(settings.value(this->metaObject()->className()+QString("/splitter-state")).toByteArray());
+
+	colorsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/use-colors"), "false").toBool());
 	
 	yearsListWidget->clear();
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
@@ -150,6 +154,8 @@ YearsForm::~YearsForm()
 	//save splitter state
 	QSettings settings(COMPANY, PROGRAM);
 	settings.setValue(this->metaObject()->className()+QString("/splitter-state"), splitter->saveState());
+
+	settings.setValue(this->metaObject()->className()+QString("/use-colors"), colorsCheckBox->isChecked());
 }
 
 void YearsForm::addYear()
@@ -205,18 +211,18 @@ void YearsForm::removeYear()
 		if(q>=0)
 			yearsListWidget->setCurrentRow(q);
 		else
-			detailsTextEdit->setPlainText(QString(""));
+			detailsTextEdit->setText(QString(""));
 	}
 }
 
 void YearsForm::yearChanged()
 {
 	if(yearsListWidget->currentRow()<0){
-		detailsTextEdit->setPlainText("");
+		detailsTextEdit->setText("");
 		return;
 	}
 	StudentsYear* sty=gt.rules.yearsList.at(yearsListWidget->currentRow());
-	detailsTextEdit->setPlainText(sty->getDetailedDescriptionWithConstraints(gt.rules));
+	detailsTextEdit->setText(sty->getDetailedDescriptionWithConstraints(gt.rules, true, colorsCheckBox->isChecked()));
 }
 
 void YearsForm::moveYearUp()
@@ -339,7 +345,7 @@ void YearsForm::modifyYear()
 	if(q>=0)
 		yearsListWidget->setCurrentRow(q);
 	else
-		detailsTextEdit->setPlainText(QString(""));
+		detailsTextEdit->setText(QString(""));
 }
 
 void YearsForm::activateStudents()
@@ -576,4 +582,9 @@ void YearsForm::code()
 
 		yearChanged();
 	}
+}
+
+void YearsForm::colorsCheckBoxToggled()
+{
+	yearChanged();
 }

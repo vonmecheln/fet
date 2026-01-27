@@ -229,34 +229,70 @@ QString StudentsYear::getDetailedDescription()
 	return s;
 }
 
-QString StudentsYear::getDetailedDescriptionWithConstraints(Rules& r)
+QString StudentsYear::getDetailedDescriptionWithConstraints(Rules& r, bool richText, bool colors)
 {
-	QString s=this->getDetailedDescription();
+	if(!richText){
+		QString s=this->getDetailedDescription();
 
-	s+="--------------------------------------------------\n";
-	s+=tr("Time constraints directly related to this students year:");
-	s+="\n";
-	for(int i=0; i<r.timeConstraintsList.size(); i++){
-		TimeConstraint* c=r.timeConstraintsList[i];
-		if(c->isRelatedToStudentsSet(r, this->name)){
-			s+="\n";
-			s+=c->getDetailedDescription(r);
+		s+="--------------------------------------------------\n";
+		s+=tr("Time constraints directly related to this students year:");
+		s+="\n";
+		for(int i=0; i<r.timeConstraintsList.size(); i++){
+			TimeConstraint* c=r.timeConstraintsList[i];
+			if(c->isRelatedToStudentsSet(r, this->name)){
+				s+="\n";
+				s+=c->getDetailedDescription(r);
+			}
 		}
-	}
 
-	s+="--------------------------------------------------\n";
-	s+=tr("Space constraints directly related to this students year:");
-	s+="\n";
-	for(int i=0; i<r.spaceConstraintsList.size(); i++){
-		SpaceConstraint* c=r.spaceConstraintsList[i];
-		if(c->isRelatedToStudentsSet(r, this->name)){
-			s+="\n";
-			s+=c->getDetailedDescription(r);
+		s+="--------------------------------------------------\n";
+		s+=tr("Space constraints directly related to this students year:");
+		s+="\n";
+		for(int i=0; i<r.spaceConstraintsList.size(); i++){
+			SpaceConstraint* c=r.spaceConstraintsList[i];
+			if(c->isRelatedToStudentsSet(r, this->name)){
+				s+="\n";
+				s+=c->getDetailedDescription(r);
+			}
 		}
-	}
-	s+="--------------------------------------------------\n";
+		s+="--------------------------------------------------\n";
 
-	return s;
+		return s;
+	}
+	else{
+		QString s1=this->getDetailedDescription();
+
+		s1+="--------------------------------------------------\n";
+		s1+=tr("Time constraints directly related to this students year:");
+		s1+="\n";
+		
+		QString s2;
+		for(int i=0; i<r.timeConstraintsList.size(); i++){
+			TimeConstraint* c=r.timeConstraintsList[i];
+			if(c->isRelatedToStudentsSet(r, this->name)){
+				s2+="<br />\n";
+				s2+=c->getDetailedDescription(r, richText, colors);
+			}
+		}
+
+		QString s3;
+		s3+="--------------------------------------------------\n";
+		s3+=tr("Space constraints directly related to this students year:");
+		s3+="\n";
+		
+		QString s4;
+		for(int i=0; i<r.spaceConstraintsList.size(); i++){
+			SpaceConstraint* c=r.spaceConstraintsList[i];
+			if(c->isRelatedToStudentsSet(r, this->name)){
+				s4+="<br />\n";
+				s4+=c->getDetailedDescription(r, richText, colors);
+			}
+		}
+		QString s5;
+		s5+="--------------------------------------------------\n";
+
+		return protect4(s1)+s2+protect4(s3)+s4+protect4(s5);
+	}
 }
 
 
@@ -331,34 +367,69 @@ QString StudentsGroup::getDetailedDescription()
 	return s;
 }
 
-QString StudentsGroup::getDetailedDescriptionWithConstraints(Rules& r)
+QString StudentsGroup::getDetailedDescriptionWithConstraints(Rules& r, bool richText, bool colors)
 {
-	QString s=this->getDetailedDescription();
+	if(!richText){
+		QString s=this->getDetailedDescription();
 
-	s+="--------------------------------------------------\n";
-	s+=tr("Time constraints directly related to this students group:");
-	s+="\n";
-	for(int i=0; i<r.timeConstraintsList.size(); i++){
-		TimeConstraint* c=r.timeConstraintsList[i];
-		if(c->isRelatedToStudentsSet(r, this->name)){
-			s+="\n";
-			s+=c->getDetailedDescription(r);
+		s+="--------------------------------------------------\n";
+		s+=tr("Time constraints directly related to this students group:");
+		s+="\n";
+		for(int i=0; i<r.timeConstraintsList.size(); i++){
+			TimeConstraint* c=r.timeConstraintsList[i];
+			if(c->isRelatedToStudentsSet(r, this->name)){
+				s+="\n";
+				s+=c->getDetailedDescription(r);
+			}
 		}
-	}
 
-	s+="--------------------------------------------------\n";
-	s+=tr("Space constraints directly related to this students group:");
-	s+="\n";
-	for(int i=0; i<r.spaceConstraintsList.size(); i++){
-		SpaceConstraint* c=r.spaceConstraintsList[i];
-		if(c->isRelatedToStudentsSet(r, this->name)){
-			s+="\n";
-			s+=c->getDetailedDescription(r);
+		s+="--------------------------------------------------\n";
+		s+=tr("Space constraints directly related to this students group:");
+		s+="\n";
+		for(int i=0; i<r.spaceConstraintsList.size(); i++){
+			SpaceConstraint* c=r.spaceConstraintsList[i];
+			if(c->isRelatedToStudentsSet(r, this->name)){
+				s+="\n";
+				s+=c->getDetailedDescription(r);
+			}
 		}
-	}
-	s+="--------------------------------------------------\n";
+		s+="--------------------------------------------------\n";
 
-	return s;
+		return s;
+	}
+	else{
+		QString s1=this->getDetailedDescription();
+
+		s1+="--------------------------------------------------\n";
+		s1+=tr("Time constraints directly related to this students group:");
+		s1+="\n";
+		QString s2;
+		for(int i=0; i<r.timeConstraintsList.size(); i++){
+			TimeConstraint* c=r.timeConstraintsList[i];
+			if(c->isRelatedToStudentsSet(r, this->name)){
+				s2+="<br />\n";
+				s2+=c->getDetailedDescription(r, richText, colors);
+			}
+		}
+
+		QString s3;
+		s3+="--------------------------------------------------\n";
+		s3+=tr("Space constraints directly related to this students group:");
+		s3+="\n";
+		
+		QString s4;
+		for(int i=0; i<r.spaceConstraintsList.size(); i++){
+			SpaceConstraint* c=r.spaceConstraintsList[i];
+			if(c->isRelatedToStudentsSet(r, this->name)){
+				s4+="<br />\n";
+				s4+=c->getDetailedDescription(r, richText, colors);
+			}
+		}
+		QString s5;
+		s5+="--------------------------------------------------\n";
+
+		return protect4(s1)+s2+protect4(s3)+s4+protect4(s5);
+	}
 }
 
 
@@ -429,34 +500,68 @@ QString StudentsSubgroup::getDetailedDescription()
 	return s;
 }
 
-QString StudentsSubgroup::getDetailedDescriptionWithConstraints(Rules& r)
+QString StudentsSubgroup::getDetailedDescriptionWithConstraints(Rules& r, bool richText, bool colors)
 {
-	QString s=this->getDetailedDescription();
+	if(!richText){
+		QString s=this->getDetailedDescription();
 
-	s+="--------------------------------------------------\n";
-	s+=tr("Time constraints directly related to this students subgroup:");
-	s+="\n";
-	for(int i=0; i<r.timeConstraintsList.size(); i++){
-		TimeConstraint* c=r.timeConstraintsList[i];
-		if(c->isRelatedToStudentsSet(r, this->name)){
-			s+="\n";
-			s+=c->getDetailedDescription(r);
+		s+="--------------------------------------------------\n";
+		s+=tr("Time constraints directly related to this students subgroup:");
+		s+="\n";
+		for(int i=0; i<r.timeConstraintsList.size(); i++){
+			TimeConstraint* c=r.timeConstraintsList[i];
+			if(c->isRelatedToStudentsSet(r, this->name)){
+				s+="\n";
+				s+=c->getDetailedDescription(r);
+			}
 		}
-	}
 
-	s+="--------------------------------------------------\n";
-	s+=tr("Space constraints directly related to this students subgroup:");
-	s+="\n";
-	for(int i=0; i<r.spaceConstraintsList.size(); i++){
-		SpaceConstraint* c=r.spaceConstraintsList[i];
-		if(c->isRelatedToStudentsSet(r, this->name)){
-			s+="\n";
-			s+=c->getDetailedDescription(r);
+		s+="--------------------------------------------------\n";
+		s+=tr("Space constraints directly related to this students subgroup:");
+		s+="\n";
+		for(int i=0; i<r.spaceConstraintsList.size(); i++){
+			SpaceConstraint* c=r.spaceConstraintsList[i];
+			if(c->isRelatedToStudentsSet(r, this->name)){
+				s+="\n";
+				s+=c->getDetailedDescription(r);
+			}
 		}
-	}
-	s+="--------------------------------------------------\n";
+		s+="--------------------------------------------------\n";
 
-	return s;
+		return s;
+	}
+	else{
+		QString s1=this->getDetailedDescription();
+
+		s1+="--------------------------------------------------\n";
+		s1+=tr("Time constraints directly related to this students subgroup:");
+		s1+="\n";
+		QString s2;
+		for(int i=0; i<r.timeConstraintsList.size(); i++){
+			TimeConstraint* c=r.timeConstraintsList[i];
+			if(c->isRelatedToStudentsSet(r, this->name)){
+				s2+="<br />\n";
+				s2+=c->getDetailedDescription(r, richText, colors);
+			}
+		}
+
+		QString s3;
+		s2+="--------------------------------------------------\n";
+		s2+=tr("Space constraints directly related to this students subgroup:");
+		s2+="\n";
+		QString s4;
+		for(int i=0; i<r.spaceConstraintsList.size(); i++){
+			SpaceConstraint* c=r.spaceConstraintsList[i];
+			if(c->isRelatedToStudentsSet(r, this->name)){
+				s4+="\n";
+				s4+=c->getDetailedDescription(r, richText, colors);
+			}
+		}
+		QString s5;
+		s5+="--------------------------------------------------\n";
+
+		return protect4(s1)+s2+protect4(s3)+s4+protect4(s5);
+	}
 }
 
 int studentsSetsAscending(const StudentsSet* st1, const StudentsSet* st2)

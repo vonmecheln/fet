@@ -58,6 +58,8 @@
 #include "exportinterface.h"
 #include "importinterface.h"
 
+#include "humanreadabledataform.h"
+
 #include "institutionnameform.h"
 #include "commentsform.h"
 #include "daysform.h"
@@ -1769,6 +1771,10 @@ FetMainForm::FetMainForm()
 	connect(shortcutNewPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutNewPushButton_clicked);
 	connect(shortcutSavePushButton, &QPushButton::clicked, this, &FetMainForm::shortcutSavePushButton_clicked);
 	connect(shortcutSaveAsPushButton, &QPushButton::clicked, this, &FetMainForm::shortcutSaveAsPushButton_clicked);
+	
+	connect(humanReadableTextFileAction, &QAction::triggered, this, &FetMainForm::humanReadableText);
+	connect(backupSettingsToFileAction, &QAction::triggered, this, &FetMainForm::backupSettings);
+	connect(restoreSettingsFromFileAction, &QAction::triggered, this, &FetMainForm::restoreSettings);
 
 	/*settingsShowShortcutsOnMainWindowAction_toggled();
 	settingsFontIsUserSelectableAction_toggled();
@@ -5991,7 +5997,7 @@ bool FetMainForm::fileSaveAs()
 	QString s = QFileDialog::getSaveFileName(this, tr("Choose a filename to save under"),
 		predefFileName, tr("FET XML files", "Instructions for translators: FET XML is a type of file format (using text mode). "
 		"So this field means files in the FET XML format")+" (*.fet)"+";;"+tr("All files")+" (*)",
-		0, QFileDialog::DontConfirmOverwrite);
+		nullptr, QFileDialog::DontConfirmOverwrite);
 	if(s==QString())
 		return false;
 
@@ -6329,7 +6335,7 @@ void FetMainForm::timetableSaveTimetableAsAction_triggered()
 			s = QFileDialog::getSaveFileName(parent, tr("Choose a filename for data and timetable"),
 				INPUT_FILENAME_XML, tr("FET XML files", "Instructions for translators: FET XML is a type of file format (using text mode). "
 				"So this field means files in the FET XML format")+" (*.fet)"+";;"+tr("All files")+" (*)",
-				0, QFileDialog::DontConfirmOverwrite);
+				nullptr, QFileDialog::DontConfirmOverwrite);
 			if(s==QString())
 				return;
 
@@ -16247,4 +16253,1135 @@ void FetMainForm::shortcutSavePushButton_clicked()
 void FetMainForm::shortcutSaveAsPushButton_clicked()
 {
 	fileSaveAsAction_triggered();
+}
+
+void FetMainForm::humanReadableText()
+{
+	HumanReadableDataForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::backupSettings()
+{
+	QString fileName = QFileDialog::getSaveFileName(this, tr("Choose a filename to save the FET settings"),
+	 QString("untitled.ini"),
+	 tr("INI files", "Instructions for translators: INI is a type of settings file format (using text mode). "
+	 "So this field means files in the INI format")+" (*.ini)"+";;"+tr("All files")+" (*)",
+	 nullptr, QFileDialog::DontConfirmOverwrite);
+	if(fileName.isEmpty())
+		return;
+
+	if(QFile::exists(fileName))
+		if(QMessageBox::warning( this, tr("FET"),
+		 tr("File %1 exists - are you sure you want to overwrite it?").arg(fileName),
+		 QMessageBox::Yes|QMessageBox::No) == QMessageBox::No)
+			return;
+
+	QSettings fetSettings(COMPANY, PROGRAM);
+	QSettings fileSettings(fileName, QSettings::IniFormat);
+	if(fetSettings.allKeys().count()>0){
+		fileSettings.clear();
+		QStringList keys=fetSettings.allKeys();
+		for(int i=0; i<keys.count(); i++)
+			fileSettings.setValue(keys.at(i), fetSettings.value(keys.at(i)));
+	}
+
+	if(pFetMainForm!=nullptr)
+		pFetMainForm->statusBar()->showMessage(tr("FET settings saved to file"), STATUS_BAR_MILLISECONDS);
+}
+
+void FetMainForm::restoreSettings()
+{
+	QString fileName = QFileDialog::getOpenFileName(this, tr("Choose a file containing FET interface settings"),
+	 QString(""),
+	 tr("INI files", "Instructions for translators: INI is a type of settings file format (using text mode). "
+	 "So this field means files in the INI format")+" (*.ini)"+";;"+tr("All files")+" (*)");
+	
+	if(fileName.isEmpty())
+		return;
+	
+	QMessageBox::StandardButton res = QMessageBox::question(this, tr("FET confirmation"), tr("Are you sure you want to restore the FET settings from the "
+	 "file %1?").arg(fileName), QMessageBox::Yes|QMessageBox::No);
+	if(res==QMessageBox::Yes){
+		QSettings fetSettings(COMPANY, PROGRAM);
+		QSettings fileSettings(fileName, QSettings::IniFormat);
+		if(fileSettings.allKeys().count()>0){
+			fetSettings.clear();
+			QStringList keys=fileSettings.allKeys();
+			for(int i=0; i<keys.count(); i++)
+				fetSettings.setValue(keys.at(i), fileSettings.value(keys.at(i)));
+		}
+	}
+	
+	const QString predefDir=QDir::homePath()+FILE_SEP+"fet-results";
+
+	QSettings settings(COMPANY, PROGRAM);
+
+#ifndef USE_SYSTEM_LOCALE
+	FET_LANGUAGE=settings.value("language", "en_US").toString();
+#else
+	if(settings.contains("language")){
+		FET_LANGUAGE=settings.value("language").toString();
+	}
+	else{
+		FET_LANGUAGE=QLocale::system().name();
+
+		bool ok=false;
+		for(const QString& s : std::as_const(languagesSet)){
+			if(FET_LANGUAGE.left(s.length())==s){
+				FET_LANGUAGE=s;
+				ok=true;
+				break;
+			}
+		}
+		if(!ok)
+			FET_LANGUAGE="en_US";
+	}
+#endif
+	
+	if(FET_LANGUAGE=="ar")
+		FET_LANGUAGE_WITH_LOCALE="ar_DZ";
+	else
+		FET_LANGUAGE_WITH_LOCALE=FET_LANGUAGE;
+	
+	setLanguage(*pqapplication, this);
+	setCurrentFile(INPUT_FILENAME_XML);
+	
+	/*QString s=settings.value("mode", "official").toString();
+	if(s==QString("official"))
+		gt.rules.mode=OFFICIAL;
+	else if(s==QString("mornings-afternoons"))
+		gt.rules.mode=MORNINGS_AFTERNOONS;
+	else if(s==QString("block-planning"))
+		gt.rules.mode=BLOCK_PLANNING;
+	else if(s==QString("terms"))
+		gt.rules.mode=TERMS;
+	else{
+		QMessageBox::warning(nullptr, FetTranslate::tr("FET warning"), FetTranslate::tr("Incorrect startup mode read from the settings - making"
+		 " it %1.").arg(FetTranslate::tr("Official")));
+		gt.rules.mode=OFFICIAL;
+		//assert(0);
+	}*/
+
+	if(settings.contains("output-directory")){
+		OUTPUT_DIR=settings.value("output-directory").toString();
+		QDir dir;
+		if(!dir.exists(OUTPUT_DIR)){
+			bool t=dir.mkpath(OUTPUT_DIR);
+			if(!t){
+				QMessageBox::warning(nullptr, tr("FET warning"), tr("Output directory %1 does not exist and cannot be"
+				 " created - output directory will be made the default value %2")
+				 .arg(QDir::toNativeSeparators(OUTPUT_DIR)).arg(QDir::toNativeSeparators(predefDir)));
+				OUTPUT_DIR=predefDir;
+			}
+		}
+	}
+	else{
+		OUTPUT_DIR=predefDir;
+	}
+	
+	WORKING_DIRECTORY=settings.value("working-directory", "examples").toString();
+	IMPORT_DIRECTORY=settings.value("import-directory", OUTPUT_DIR).toString();
+	
+	QDir d(WORKING_DIRECTORY);
+	if(!d.exists())
+		WORKING_DIRECTORY="examples";
+	QDir d2(WORKING_DIRECTORY);
+	if(!d2.exists())
+		WORKING_DIRECTORY=QDir::homePath();
+	else
+		WORKING_DIRECTORY=d2.absolutePath();
+
+	QDir i(IMPORT_DIRECTORY);
+	if(!i.exists())
+		IMPORT_DIRECTORY=OUTPUT_DIR;
+	
+	checkForUpdates=settings.value("check-for-updates", "false").toBool();
+
+	QString ver=settings.value("version", "-1").toString();
+	
+	OVERWRITE_SINGLE_GENERATION_FILES=settings.value("overwrite-single-generation-files", "false").toBool();
+
+	TIMETABLE_HTML_LEVEL=settings.value("html-level", "2").toInt();
+	if(TIMETABLE_HTML_LEVEL<0 || TIMETABLE_HTML_LEVEL>7){
+		QMessageBox::warning(nullptr, tr("FET warning"), tr("Incorrect HTML level read from the settings - making it %1.").arg(2));
+		TIMETABLE_HTML_LEVEL=2;
+	}
+	TIMETABLES_SUBGROUPS_SORTED=settings.value("timetables-subgroups-sorted", "false").toBool();
+	TIMETABLE_HTML_PRINT_ACTIVITY_TAGS=settings.value("print-activity-tags", "true").toBool();
+	
+	TIMETABLE_HTML_PRINT_SUBJECTS=settings.value("print-subjects", "true").toBool();
+	TIMETABLE_HTML_PRINT_TEACHERS=settings.value("print-teachers", "true").toBool();
+	TIMETABLE_HTML_PRINT_STUDENTS=settings.value("print-students", "true").toBool();
+	TIMETABLE_HTML_PRINT_ROOMS=settings.value("print-rooms", "true").toBool();
+	
+	PRINT_DETAILED_HTML_TIMETABLES=settings.value("print-detailed-timetables", "true").toBool();
+	PRINT_DETAILED_HTML_TEACHERS_FREE_PERIODS=settings.value("print-detailed-teachers-free-periods-timetables", "true").toBool();
+	PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME=settings.value("print-activities-with-same-starting-time", "false").toBool();
+	PRINT_NOT_AVAILABLE_TIME_SLOTS=settings.value("print-not-available", "true").toBool();
+	PRINT_BREAK_TIME_SLOTS=settings.value("print-break", "true").toBool();
+	DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS=settings.value("divide-html-timetables-with-time-axis-by-days", "false").toBool();
+	TIMETABLE_HTML_REPEAT_NAMES=settings.value("timetables-repeat-vertical-names", "false").toBool();
+	
+	INTERFACE_STYLE=settings.value("interface-style", "").toString();
+	INTERFACE_COLOR_SCHEME=settings.value("interface-color-scheme", "automatic").toString();
+	if(INTERFACE_COLOR_SCHEME=="auto") //old name, in FET-6.27.0
+		INTERFACE_COLOR_SCHEME="automatic";
+	//To avoid assert(0) in fetmainform.cpp if the setting is corrupt (I am not sure I kept the assert, but does not hurt).
+	if(INTERFACE_COLOR_SCHEME!="automatic" && INTERFACE_COLOR_SCHEME!="light" && INTERFACE_COLOR_SCHEME!="dark")
+		INTERFACE_COLOR_SCHEME="automatic";
+
+	SHOW_SUBGROUPS_IN_COMBO_BOXES=settings.value("show-subgroups-in-combo-boxes", "true").toBool();
+	SHOW_SUBGROUPS_IN_ACTIVITY_PLANNING=settings.value("show-subgroups-in-activity-planning", "true").toBool();
+	
+	WRITE_TIMETABLE_CONFLICTS=settings.value("write-timetable-conflicts", "true").toBool();
+
+	WRITE_TIMETABLES_STATISTICS=settings.value("write-timetables-statistics", "true").toBool();
+	WRITE_TIMETABLES_XML=settings.value("write-timetables-xml", "true").toBool();
+	WRITE_TIMETABLES_DAYS_HORIZONTAL=settings.value("write-timetables-days-horizontal", "true").toBool();
+	WRITE_TIMETABLES_DAYS_VERTICAL=settings.value("write-timetables-days-vertical", "true").toBool();
+	WRITE_TIMETABLES_TIME_HORIZONTAL=settings.value("write-timetables-time-horizontal", "true").toBool();
+	WRITE_TIMETABLES_TIME_VERTICAL=settings.value("write-timetables-time-vertical", "true").toBool();
+
+	WRITE_TIMETABLES_SUBGROUPS=settings.value("write-timetables-subgroups", "true").toBool();
+	WRITE_TIMETABLES_GROUPS=settings.value("write-timetables-groups", "true").toBool();
+	WRITE_TIMETABLES_YEARS=settings.value("write-timetables-years", "true").toBool();
+	WRITE_TIMETABLES_TEACHERS=settings.value("write-timetables-teachers", "true").toBool();
+	WRITE_TIMETABLES_TEACHERS_FREE_PERIODS=settings.value("write-timetables-teachers-free-periods", "true").toBool();
+	WRITE_TIMETABLES_BUILDINGS=settings.value("write-timetables-buildings", "true").toBool();
+	WRITE_TIMETABLES_ROOMS=settings.value("write-timetables-rooms", "true").toBool();
+	WRITE_TIMETABLES_SUBJECTS=settings.value("write-timetables-subjects", "true").toBool();
+	WRITE_TIMETABLES_ACTIVITY_TAGS=settings.value("write-timetables-activity-tags", "true").toBool();
+	WRITE_TIMETABLES_ACTIVITIES=settings.value("write-timetables-activities", "true").toBool();
+	
+	if(settings.contains("students-combo-boxes-style"))
+		STUDENTS_COMBO_BOXES_STYLE=settings.value("students-combo-boxes-style").toInt();
+	else
+		STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
+
+/////////confirmations
+	CONFIRM_ACTIVITY_PLANNING=settings.value("confirm-activity-planning", "true").toBool();
+	CONFIRM_SPREAD_ACTIVITIES=settings.value("confirm-spread-activities", "true").toBool();
+	CONFIRM_REMOVE_REDUNDANT=settings.value("confirm-remove-redundant", "true").toBool();
+	CONFIRM_SAVE_TIMETABLE=settings.value("confirm-save-data-and-timetable", "true").toBool();
+	CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS=settings.value("confirm-activate-deactivate-activities-constraints", "true").toBool();
+/////////
+
+	SHORTCUT_PLUS=settings.value("shorcut-plus", "false").toBool();
+	SHORTCUT_M=settings.value("shorcut-m", "false").toBool();
+	SHORTCUT_DELETE=settings.value("shorcut-delete", "false").toBool();
+	SHORTCUT_A=settings.value("shorcut-a", "false").toBool();
+	SHORTCUT_D=settings.value("shorcut-d", "false").toBool();
+	SHORTCUT_C=settings.value("shorcut-c", "false").toBool();
+	SHORTCUT_U=settings.value("shorcut-u", "false").toBool();
+	SHORTCUT_J=settings.value("shorcut-j", "false").toBool();
+	SHORTCUT_W=settings.value("shorcut-w", "false").toBool();
+
+	SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES=settings.value("warn-subgroups-with-the-same-activities", "true").toBool();
+	SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME=settings.value("warn-activities-not-fixed-time-fixed-space-virtual-real", "true").toBool();
+	SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT=settings.value("warn-max-hours-daily-with-under-100-weight", "true").toBool();
+
+	ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER=settings.value("enable-group-activities-in-initial-order", "false").toBool();
+	SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER=settings.value("warn-if-using-group-activities-in-initial-order", "true").toBool();
+
+	SHOW_VIRTUAL_ROOMS_IN_TIMETABLES=settings.value("show-virtual-rooms-in-timetables", "false").toBool();
+
+	//2024-06-12 begin
+	//
+	SETTINGS_TIMETABLES_SEPARATE_DAYS_NAME_LONG_NAME_BY_BREAK=settings.value("settings-timetables-separate-days-name-long-name-by-break", "false").toBool();
+	SETTINGS_TIMETABLES_SEPARATE_HOURS_NAME_LONG_NAME_BY_BREAK=settings.value("settings-timetables-separate-hours-name-long-name-by-break", "false").toBool();
+	SETTINGS_TIMETABLES_SEPARATE_SUBJECTS_NAME_LONG_NAME_CODE_BY_BREAK=settings.value("settings-timetables-separate-subjects-name-long-name-code-by-break", "false").toBool();
+	SETTINGS_TIMETABLES_SEPARATE_ACTIVITY_TAGS_NAME_LONG_NAME_CODE_BY_BREAK=settings.value("settings-timetables-separate-activity-tags-name-long-name-code-by-break", "false").toBool();
+	SETTINGS_TIMETABLES_SEPARATE_TEACHERS_NAME_LONG_NAME_CODE_BY_BREAK=settings.value("settings-timetables-separate-teachers-name-long-name-code-by-break", "false").toBool();
+	SETTINGS_TIMETABLES_SEPARATE_STUDENTS_NAME_LONG_NAME_CODE_BY_BREAK=settings.value("settings-timetables-separate-students-name-long-name-code-by-break", "false").toBool();
+	SETTINGS_TIMETABLES_SEPARATE_BUILDINGS_NAME_LONG_NAME_CODE_BY_BREAK=settings.value("settings-timetables-separate-buildings-name-long-name-code-by-break", "false").toBool();
+	SETTINGS_TIMETABLES_SEPARATE_ROOMS_NAME_LONG_NAME_CODE_BY_BREAK=settings.value("settings-timetables-separate-rooms-name-long-name-code-by-break", "false").toBool();
+
+	//only in days horizontal and days vertical.
+	SETTINGS_TIMETABLES_PRINT_SUBJECTS_COMMENTS=settings.value("settings-timetables-print-subjects-comments", "false").toBool();
+	SETTINGS_TIMETABLES_PRINT_ACTIVITY_TAGS_COMMENTS=settings.value("settings-timetables-print-activity-tags-comments", "false").toBool();
+	SETTINGS_TIMETABLES_PRINT_TEACHERS_COMMENTS=settings.value("settings-timetables-print-teachers-comments", "false").toBool();
+	SETTINGS_TIMETABLES_PRINT_SUBGROUPS_COMMENTS=settings.value("settings-timetables-print-subgroups-comments", "false").toBool();
+	SETTINGS_TIMETABLES_PRINT_GROUPS_COMMENTS=settings.value("settings-timetables-print-groups-comments", "false").toBool();
+	SETTINGS_TIMETABLES_PRINT_YEARS_COMMENTS=settings.value("settings-timetables-print-years-comments", "false").toBool();
+	SETTINGS_TIMETABLES_PRINT_BUILDINGS_COMMENTS=settings.value("settings-timetables-print-buildings-comments", "false").toBool();
+	SETTINGS_TIMETABLES_PRINT_ROOMS_COMMENTS=settings.value("settings-timetables-print-rooms-comments", "false").toBool();
+
+	/////subgroups days horizontal and days vertical.
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_DAYS_NAMES=settings.value("settings-timetables-subgroups-days-hv-print-days-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_DAYS_LONG_NAMES=settings.value("settings-timetables-subgroups-days-hv-print-days-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_HOURS_NAMES=settings.value("settings-timetables-subgroups-days-hv-print-hours-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_HOURS_LONG_NAMES=settings.value("settings-timetables-subgroups-days-hv-print-hours-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_SUBJECTS_NAMES=settings.value("settings-timetables-subgroups-days-hv-print-subjects-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=settings.value("settings-timetables-subgroups-days-hv-print-subjects-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_SUBJECTS_CODES=settings.value("settings-timetables-subgroups-days-hv-print-subjects-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=settings.value("settings-timetables-subgroups-days-hv-print-activity-tags-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=settings.value("settings-timetables-subgroups-days-hv-print-activity-tags-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=settings.value("settings-timetables-subgroups-days-hv-print-activity-tags-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_TEACHERS_NAMES=settings.value("settings-timetables-subgroups-days-hv-print-teachers-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=settings.value("settings-timetables-subgroups-days-hv-print-teachers-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_TEACHERS_CODES=settings.value("settings-timetables-subgroups-days-hv-print-teachers-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_NAMES=settings.value("settings-timetables-subgroups-days-hv-print-students-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=settings.value("settings-timetables-subgroups-days-hv-print-students-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_CODES=settings.value("settings-timetables-subgroups-days-hv-print-students-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_NAMES=settings.value("settings-timetables-subgroups-days-hv-print-rooms-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_LONG_NAMES=settings.value("settings-timetables-subgroups-days-hv-print-rooms-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_CODES=settings.value("settings-timetables-subgroups-days-hv-print-rooms-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_SUBJECTS_LEGEND=settings.value("settings-timetables-subgroups-days-hv-print-subjects-legend", "false").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=settings.value("settings-timetables-subgroups-days-hv-print-activity-tags-legend", "false").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_TEACHERS_LEGEND=settings.value("settings-timetables-subgroups-days-hv-print-teachers-legend", "false").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_LEGEND=settings.value("settings-timetables-subgroups-days-hv-print-students-legend", "false").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_LEGEND=settings.value("settings-timetables-subgroups-days-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=settings.value("settings-timetables-subgroups-days-hv-print-legend-codes-first", "false").toBool();
+	/////
+
+	/////subgroups time horizontal and time vertical.
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_NAMES=settings.value("settings-timetables-subgroups-time-hv-print-days-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES=settings.value("settings-timetables-subgroups-time-hv-print-days-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_HOURS_NAMES=settings.value("settings-timetables-subgroups-time-hv-print-hours-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_HOURS_LONG_NAMES=settings.value("settings-timetables-subgroups-time-hv-print-hours-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_SUBJECTS_NAMES=settings.value("settings-timetables-subgroups-time-hv-print-subjects-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=settings.value("settings-timetables-subgroups-time-hv-print-subjects-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_SUBJECTS_CODES=settings.value("settings-timetables-subgroups-time-hv-print-subjects-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=settings.value("settings-timetables-subgroups-time-hv-print-activity-tags-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=settings.value("settings-timetables-subgroups-time-hv-print-activity-tags-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=settings.value("settings-timetables-subgroups-time-hv-print-activity-tags-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_TEACHERS_NAMES=settings.value("settings-timetables-subgroups-time-hv-print-teachers-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_TEACHERS_LONG_NAMES=settings.value("settings-timetables-subgroups-time-hv-print-teachers-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_TEACHERS_CODES=settings.value("settings-timetables-subgroups-time-hv-print-teachers-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_NAMES=settings.value("settings-timetables-subgroups-time-hv-print-students-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_LONG_NAMES=settings.value("settings-timetables-subgroups-time-hv-print-students-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_CODES=settings.value("settings-timetables-subgroups-time-hv-print-students-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ROOMS_NAMES=settings.value("settings-timetables-subgroups-time-hv-print-rooms-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ROOMS_LONG_NAMES=settings.value("settings-timetables-subgroups-time-hv-print-rooms-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ROOMS_CODES=settings.value("settings-timetables-subgroups-time-hv-print-rooms-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_SUBJECTS_LEGEND=settings.value("settings-timetables-subgroups-time-hv-print-subjects-legend", "false").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=settings.value("settings-timetables-subgroups-time-hv-print-activity-tags-legend", "false").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_TEACHERS_LEGEND=settings.value("settings-timetables-subgroups-time-hv-print-teachers-legend", "false").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_LEGEND=settings.value("settings-timetables-subgroups-time-hv-print-students-legend", "false").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ROOMS_LEGEND=settings.value("settings-timetables-subgroups-time-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_LEGEND_CODES_FIRST=settings.value("settings-timetables-subgroups-time-hv-print-legend-codes-first", "false").toBool();
+	/////
+
+	/////groups days horizontal and days vertical.
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_DAYS_NAMES=settings.value("settings-timetables-groups-days-hv-print-days-names", "true").toBool();
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_DAYS_LONG_NAMES=settings.value("settings-timetables-groups-days-hv-print-days-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_HOURS_NAMES=settings.value("settings-timetables-groups-days-hv-print-hours-names", "true").toBool();
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_HOURS_LONG_NAMES=settings.value("settings-timetables-groups-days-hv-print-hours-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_SUBJECTS_NAMES=settings.value("settings-timetables-groups-days-hv-print-subjects-names", "true").toBool();
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=settings.value("settings-timetables-groups-days-hv-print-subjects-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_SUBJECTS_CODES=settings.value("settings-timetables-groups-days-hv-print-subjects-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=settings.value("settings-timetables-groups-days-hv-print-activity-tags-names", "true").toBool();
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=settings.value("settings-timetables-groups-days-hv-print-activity-tags-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=settings.value("settings-timetables-groups-days-hv-print-activity-tags-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_TEACHERS_NAMES=settings.value("settings-timetables-groups-days-hv-print-teachers-names", "true").toBool();
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=settings.value("settings-timetables-groups-days-hv-print-teachers-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_TEACHERS_CODES=settings.value("settings-timetables-groups-days-hv-print-teachers-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_NAMES=settings.value("settings-timetables-groups-days-hv-print-students-names", "true").toBool();
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=settings.value("settings-timetables-groups-days-hv-print-students-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_CODES=settings.value("settings-timetables-groups-days-hv-print-students-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ROOMS_NAMES=settings.value("settings-timetables-groups-days-hv-print-rooms-names", "true").toBool();
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ROOMS_LONG_NAMES=settings.value("settings-timetables-groups-days-hv-print-rooms-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ROOMS_CODES=settings.value("settings-timetables-groups-days-hv-print-rooms-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_SUBJECTS_LEGEND=settings.value("settings-timetables-groups-days-hv-print-subjects-legend", "false").toBool();
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=settings.value("settings-timetables-groups-days-hv-print-activity-tags-legend", "false").toBool();
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_TEACHERS_LEGEND=settings.value("settings-timetables-groups-days-hv-print-teachers-legend", "false").toBool();
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_LEGEND=settings.value("settings-timetables-groups-days-hv-print-students-legend", "false").toBool();
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ROOMS_LEGEND=settings.value("settings-timetables-groups-days-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=settings.value("settings-timetables-groups-days-hv-print-legend-codes-first", "false").toBool();
+	/////
+
+	/////groups time horizontal and time vertical.
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_NAMES=settings.value("settings-timetables-groups-time-hv-print-days-names", "true").toBool();
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES=settings.value("settings-timetables-groups-time-hv-print-days-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_HOURS_NAMES=settings.value("settings-timetables-groups-time-hv-print-hours-names", "true").toBool();
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_HOURS_LONG_NAMES=settings.value("settings-timetables-groups-time-hv-print-hours-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_NAMES=settings.value("settings-timetables-groups-time-hv-print-subjects-names", "true").toBool();
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=settings.value("settings-timetables-groups-time-hv-print-subjects-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_CODES=settings.value("settings-timetables-groups-time-hv-print-subjects-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=settings.value("settings-timetables-groups-time-hv-print-activity-tags-names", "true").toBool();
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=settings.value("settings-timetables-groups-time-hv-print-activity-tags-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=settings.value("settings-timetables-groups-time-hv-print-activity-tags-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_TEACHERS_NAMES=settings.value("settings-timetables-groups-time-hv-print-teachers-names", "true").toBool();
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_TEACHERS_LONG_NAMES=settings.value("settings-timetables-groups-time-hv-print-teachers-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_TEACHERS_CODES=settings.value("settings-timetables-groups-time-hv-print-teachers-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_NAMES=settings.value("settings-timetables-groups-time-hv-print-students-names", "true").toBool();
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_LONG_NAMES=settings.value("settings-timetables-groups-time-hv-print-students-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_CODES=settings.value("settings-timetables-groups-time-hv-print-students-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ROOMS_NAMES=settings.value("settings-timetables-groups-time-hv-print-rooms-names", "true").toBool();
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ROOMS_LONG_NAMES=settings.value("settings-timetables-groups-time-hv-print-rooms-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ROOMS_CODES=settings.value("settings-timetables-groups-time-hv-print-rooms-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_LEGEND=settings.value("settings-timetables-groups-time-hv-print-subjects-legend", "false").toBool();
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=settings.value("settings-timetables-groups-time-hv-print-activity-tags-legend", "false").toBool();
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_TEACHERS_LEGEND=settings.value("settings-timetables-groups-time-hv-print-teachers-legend", "false").toBool();
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_LEGEND=settings.value("settings-timetables-groups-time-hv-print-students-legend", "false").toBool();
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ROOMS_LEGEND=settings.value("settings-timetables-groups-time-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_LEGEND_CODES_FIRST=settings.value("settings-timetables-groups-time-hv-print-legend-codes-first", "false").toBool();
+	/////
+
+	/////years days horizontal and days vertical.
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_DAYS_NAMES=settings.value("settings-timetables-years-days-hv-print-days-names", "true").toBool();
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_DAYS_LONG_NAMES=settings.value("settings-timetables-years-days-hv-print-days-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_HOURS_NAMES=settings.value("settings-timetables-years-days-hv-print-hours-names", "true").toBool();
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_HOURS_LONG_NAMES=settings.value("settings-timetables-years-days-hv-print-hours-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_SUBJECTS_NAMES=settings.value("settings-timetables-years-days-hv-print-subjects-names", "true").toBool();
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=settings.value("settings-timetables-years-days-hv-print-subjects-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_SUBJECTS_CODES=settings.value("settings-timetables-years-days-hv-print-subjects-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=settings.value("settings-timetables-years-days-hv-print-activity-tags-names", "true").toBool();
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=settings.value("settings-timetables-years-days-hv-print-activity-tags-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=settings.value("settings-timetables-years-days-hv-print-activity-tags-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_TEACHERS_NAMES=settings.value("settings-timetables-years-days-hv-print-teachers-names", "true").toBool();
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=settings.value("settings-timetables-years-days-hv-print-teachers-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_TEACHERS_CODES=settings.value("settings-timetables-years-days-hv-print-teachers-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_NAMES=settings.value("settings-timetables-years-days-hv-print-students-names", "true").toBool();
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=settings.value("settings-timetables-years-days-hv-print-students-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_CODES=settings.value("settings-timetables-years-days-hv-print-students-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ROOMS_NAMES=settings.value("settings-timetables-years-days-hv-print-rooms-names", "true").toBool();
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ROOMS_LONG_NAMES=settings.value("settings-timetables-years-days-hv-print-rooms-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ROOMS_CODES=settings.value("settings-timetables-years-days-hv-print-rooms-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_SUBJECTS_LEGEND=settings.value("settings-timetables-years-days-hv-print-subjects-legend", "false").toBool();
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=settings.value("settings-timetables-years-days-hv-print-activity-tags-legend", "false").toBool();
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_TEACHERS_LEGEND=settings.value("settings-timetables-years-days-hv-print-teachers-legend", "false").toBool();
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_LEGEND=settings.value("settings-timetables-years-days-hv-print-students-legend", "false").toBool();
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ROOMS_LEGEND=settings.value("settings-timetables-years-days-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=settings.value("settings-timetables-years-days-hv-print-legend-codes-first", "false").toBool();
+	/////
+
+	/////years time horizontal and time vertical.
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_NAMES=settings.value("settings-timetables-years-time-hv-print-days-names", "true").toBool();
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_LONG_NAMES=settings.value("settings-timetables-years-time-hv-print-days-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_HOURS_NAMES=settings.value("settings-timetables-years-time-hv-print-hours-names", "true").toBool();
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_HOURS_LONG_NAMES=settings.value("settings-timetables-years-time-hv-print-hours-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_NAMES=settings.value("settings-timetables-years-time-hv-print-subjects-names", "true").toBool();
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=settings.value("settings-timetables-years-time-hv-print-subjects-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_CODES=settings.value("settings-timetables-years-time-hv-print-subjects-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=settings.value("settings-timetables-years-time-hv-print-activity-tags-names", "true").toBool();
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=settings.value("settings-timetables-years-time-hv-print-activity-tags-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=settings.value("settings-timetables-years-time-hv-print-activity-tags-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_TEACHERS_NAMES=settings.value("settings-timetables-years-time-hv-print-teachers-names", "true").toBool();
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_TEACHERS_LONG_NAMES=settings.value("settings-timetables-years-time-hv-print-teachers-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_TEACHERS_CODES=settings.value("settings-timetables-years-time-hv-print-teachers-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_NAMES=settings.value("settings-timetables-years-time-hv-print-students-names", "true").toBool();
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_LONG_NAMES=settings.value("settings-timetables-years-time-hv-print-students-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_CODES=settings.value("settings-timetables-years-time-hv-print-students-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ROOMS_NAMES=settings.value("settings-timetables-years-time-hv-print-rooms-names", "true").toBool();
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ROOMS_LONG_NAMES=settings.value("settings-timetables-years-time-hv-print-rooms-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ROOMS_CODES=settings.value("settings-timetables-years-time-hv-print-rooms-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_LEGEND=settings.value("settings-timetables-years-time-hv-print-subjects-legend", "false").toBool();
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=settings.value("settings-timetables-years-time-hv-print-activity-tags-legend", "false").toBool();
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_TEACHERS_LEGEND=settings.value("settings-timetables-years-time-hv-print-teachers-legend", "false").toBool();
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_LEGEND=settings.value("settings-timetables-years-time-hv-print-students-legend", "false").toBool();
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ROOMS_LEGEND=settings.value("settings-timetables-years-time-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_LEGEND_CODES_FIRST=settings.value("settings-timetables-years-time-hv-print-legend-codes-first", "false").toBool();
+	/////
+
+	/////teachers days horizontal and days vertical.
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_DAYS_NAMES=settings.value("settings-timetables-teachers-days-hv-print-days-names", "true").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_DAYS_LONG_NAMES=settings.value("settings-timetables-teachers-days-hv-print-days-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_HOURS_NAMES=settings.value("settings-timetables-teachers-days-hv-print-hours-names", "true").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_HOURS_LONG_NAMES=settings.value("settings-timetables-teachers-days-hv-print-hours-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_SUBJECTS_NAMES=settings.value("settings-timetables-teachers-days-hv-print-subjects-names", "true").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=settings.value("settings-timetables-teachers-days-hv-print-subjects-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_SUBJECTS_CODES=settings.value("settings-timetables-teachers-days-hv-print-subjects-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=settings.value("settings-timetables-teachers-days-hv-print-activity-tags-names", "true").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=settings.value("settings-timetables-teachers-days-hv-print-activity-tags-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=settings.value("settings-timetables-teachers-days-hv-print-activity-tags-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_NAMES=settings.value("settings-timetables-teachers-days-hv-print-teachers-names", "true").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=settings.value("settings-timetables-teachers-days-hv-print-teachers-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_CODES=settings.value("settings-timetables-teachers-days-hv-print-teachers-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_STUDENTS_NAMES=settings.value("settings-timetables-teachers-days-hv-print-students-names", "true").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=settings.value("settings-timetables-teachers-days-hv-print-students-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_STUDENTS_CODES=settings.value("settings-timetables-teachers-days-hv-print-students-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_NAMES=settings.value("settings-timetables-teachers-days-hv-print-rooms-names", "true").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_LONG_NAMES=settings.value("settings-timetables-teachers-days-hv-print-rooms-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_CODES=settings.value("settings-timetables-teachers-days-hv-print-rooms-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_SUBJECTS_LEGEND=settings.value("settings-timetables-teachers-days-hv-print-subjects-legend", "false").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=settings.value("settings-timetables-teachers-days-hv-print-activity-tags-legend", "false").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_LEGEND=settings.value("settings-timetables-teachers-days-hv-print-teachers-legend", "false").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_STUDENTS_LEGEND=settings.value("settings-timetables-teachers-days-hv-print-students-legend", "false").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_LEGEND=settings.value("settings-timetables-teachers-days-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=settings.value("settings-timetables-teachers-days-hv-print-legend-codes-first", "false").toBool();
+	/////
+
+	/////teachers time horizontal and time vertical.
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_NAMES=settings.value("settings-timetables-teachers-time-hv-print-days-names", "true").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_LONG_NAMES=settings.value("settings-timetables-teachers-time-hv-print-days-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_HOURS_NAMES=settings.value("settings-timetables-teachers-time-hv-print-hours-names", "true").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_HOURS_LONG_NAMES=settings.value("settings-timetables-teachers-time-hv-print-hours-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_SUBJECTS_NAMES=settings.value("settings-timetables-teachers-time-hv-print-subjects-names", "true").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=settings.value("settings-timetables-teachers-time-hv-print-subjects-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_SUBJECTS_CODES=settings.value("settings-timetables-teachers-time-hv-print-subjects-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=settings.value("settings-timetables-teachers-time-hv-print-activity-tags-names", "true").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=settings.value("settings-timetables-teachers-time-hv-print-activity-tags-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=settings.value("settings-timetables-teachers-time-hv-print-activity-tags-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_NAMES=settings.value("settings-timetables-teachers-time-hv-print-teachers-names", "true").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_LONG_NAMES=settings.value("settings-timetables-teachers-time-hv-print-teachers-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_CODES=settings.value("settings-timetables-teachers-time-hv-print-teachers-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_STUDENTS_NAMES=settings.value("settings-timetables-teachers-time-hv-print-students-names", "true").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_STUDENTS_LONG_NAMES=settings.value("settings-timetables-teachers-time-hv-print-students-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_STUDENTS_CODES=settings.value("settings-timetables-teachers-time-hv-print-students-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ROOMS_NAMES=settings.value("settings-timetables-teachers-time-hv-print-rooms-names", "true").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ROOMS_LONG_NAMES=settings.value("settings-timetables-teachers-time-hv-print-rooms-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ROOMS_CODES=settings.value("settings-timetables-teachers-time-hv-print-rooms-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_SUBJECTS_LEGEND=settings.value("settings-timetables-teachers-time-hv-print-subjects-legend", "false").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=settings.value("settings-timetables-teachers-time-hv-print-activity-tags-legend", "false").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_LEGEND=settings.value("settings-timetables-teachers-time-hv-print-teachers-legend", "false").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_STUDENTS_LEGEND=settings.value("settings-timetables-teachers-time-hv-print-students-legend", "false").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ROOMS_LEGEND=settings.value("settings-timetables-teachers-time-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_LEGEND_CODES_FIRST=settings.value("settings-timetables-teachers-time-hv-print-legend-codes-first", "false").toBool();
+	/////
+
+	/////rooms days horizontal and days vertical.
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_DAYS_NAMES=settings.value("settings-timetables-rooms-days-hv-print-days-names", "true").toBool();
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_DAYS_LONG_NAMES=settings.value("settings-timetables-rooms-days-hv-print-days-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_HOURS_NAMES=settings.value("settings-timetables-rooms-days-hv-print-hours-names", "true").toBool();
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_HOURS_LONG_NAMES=settings.value("settings-timetables-rooms-days-hv-print-hours-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_SUBJECTS_NAMES=settings.value("settings-timetables-rooms-days-hv-print-subjects-names", "true").toBool();
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=settings.value("settings-timetables-rooms-days-hv-print-subjects-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_SUBJECTS_CODES=settings.value("settings-timetables-rooms-days-hv-print-subjects-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=settings.value("settings-timetables-rooms-days-hv-print-activity-tags-names", "true").toBool();
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=settings.value("settings-timetables-rooms-days-hv-print-activity-tags-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=settings.value("settings-timetables-rooms-days-hv-print-activity-tags-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_TEACHERS_NAMES=settings.value("settings-timetables-rooms-days-hv-print-teachers-names", "true").toBool();
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=settings.value("settings-timetables-rooms-days-hv-print-teachers-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_TEACHERS_CODES=settings.value("settings-timetables-rooms-days-hv-print-teachers-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_STUDENTS_NAMES=settings.value("settings-timetables-rooms-days-hv-print-students-names", "true").toBool();
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=settings.value("settings-timetables-rooms-days-hv-print-students-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_STUDENTS_CODES=settings.value("settings-timetables-rooms-days-hv-print-students-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_NAMES=settings.value("settings-timetables-rooms-days-hv-print-rooms-names", "true").toBool();
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_LONG_NAMES=settings.value("settings-timetables-rooms-days-hv-print-rooms-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_CODES=settings.value("settings-timetables-rooms-days-hv-print-rooms-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_SUBJECTS_LEGEND=settings.value("settings-timetables-rooms-days-hv-print-subjects-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=settings.value("settings-timetables-rooms-days-hv-print-activity-tags-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_TEACHERS_LEGEND=settings.value("settings-timetables-rooms-days-hv-print-teachers-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_STUDENTS_LEGEND=settings.value("settings-timetables-rooms-days-hv-print-students-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_LEGEND=settings.value("settings-timetables-rooms-days-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=settings.value("settings-timetables-rooms-days-hv-print-legend-codes-first", "false").toBool();
+	/////
+
+	/////rooms time horizontal and time vertical.
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_NAMES=settings.value("settings-timetables-rooms-time-hv-print-days-names", "true").toBool();
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_LONG_NAMES=settings.value("settings-timetables-rooms-time-hv-print-days-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_HOURS_NAMES=settings.value("settings-timetables-rooms-time-hv-print-hours-names", "true").toBool();
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_HOURS_LONG_NAMES=settings.value("settings-timetables-rooms-time-hv-print-hours-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_SUBJECTS_NAMES=settings.value("settings-timetables-rooms-time-hv-print-subjects-names", "true").toBool();
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=settings.value("settings-timetables-rooms-time-hv-print-subjects-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_SUBJECTS_CODES=settings.value("settings-timetables-rooms-time-hv-print-subjects-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=settings.value("settings-timetables-rooms-time-hv-print-activity-tags-names", "true").toBool();
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=settings.value("settings-timetables-rooms-time-hv-print-activity-tags-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=settings.value("settings-timetables-rooms-time-hv-print-activity-tags-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_TEACHERS_NAMES=settings.value("settings-timetables-rooms-time-hv-print-teachers-names", "true").toBool();
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_TEACHERS_LONG_NAMES=settings.value("settings-timetables-rooms-time-hv-print-teachers-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_TEACHERS_CODES=settings.value("settings-timetables-rooms-time-hv-print-teachers-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_STUDENTS_NAMES=settings.value("settings-timetables-rooms-time-hv-print-students-names", "true").toBool();
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_STUDENTS_LONG_NAMES=settings.value("settings-timetables-rooms-time-hv-print-students-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_STUDENTS_CODES=settings.value("settings-timetables-rooms-time-hv-print-students-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_NAMES=settings.value("settings-timetables-rooms-time-hv-print-rooms-names", "true").toBool();
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_LONG_NAMES=settings.value("settings-timetables-rooms-time-hv-print-rooms-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_CODES=settings.value("settings-timetables-rooms-time-hv-print-rooms-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_SUBJECTS_LEGEND=settings.value("settings-timetables-rooms-time-hv-print-subjects-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=settings.value("settings-timetables-rooms-time-hv-print-activity-tags-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_TEACHERS_LEGEND=settings.value("settings-timetables-rooms-time-hv-print-teachers-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_STUDENTS_LEGEND=settings.value("settings-timetables-rooms-time-hv-print-students-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_LEGEND=settings.value("settings-timetables-rooms-time-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_LEGEND_CODES_FIRST=settings.value("settings-timetables-rooms-time-hv-print-legend-codes-first", "false").toBool();
+	/////
+
+	/////buildings days horizontal and days vertical.
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_DAYS_NAMES=settings.value("settings-timetables-buildings-days-hv-print-days-names", "true").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_DAYS_LONG_NAMES=settings.value("settings-timetables-buildings-days-hv-print-days-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_HOURS_NAMES=settings.value("settings-timetables-buildings-days-hv-print-hours-names", "true").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_HOURS_LONG_NAMES=settings.value("settings-timetables-buildings-days-hv-print-hours-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_SUBJECTS_NAMES=settings.value("settings-timetables-buildings-days-hv-print-subjects-names", "true").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=settings.value("settings-timetables-buildings-days-hv-print-subjects-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_SUBJECTS_CODES=settings.value("settings-timetables-buildings-days-hv-print-subjects-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=settings.value("settings-timetables-buildings-days-hv-print-activity-tags-names", "true").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=settings.value("settings-timetables-buildings-days-hv-print-activity-tags-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=settings.value("settings-timetables-buildings-days-hv-print-activity-tags-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_TEACHERS_NAMES=settings.value("settings-timetables-buildings-days-hv-print-teachers-names", "true").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=settings.value("settings-timetables-buildings-days-hv-print-teachers-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_TEACHERS_CODES=settings.value("settings-timetables-buildings-days-hv-print-teachers-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_STUDENTS_NAMES=settings.value("settings-timetables-buildings-days-hv-print-students-names", "true").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=settings.value("settings-timetables-buildings-days-hv-print-students-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_STUDENTS_CODES=settings.value("settings-timetables-buildings-days-hv-print-students-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_NAMES=settings.value("settings-timetables-buildings-days-hv-print-rooms-names", "true").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_LONG_NAMES=settings.value("settings-timetables-buildings-days-hv-print-rooms-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_CODES=settings.value("settings-timetables-buildings-days-hv-print-rooms-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_SUBJECTS_LEGEND=settings.value("settings-timetables-buildings-days-hv-print-subjects-legend", "false").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=settings.value("settings-timetables-buildings-days-hv-print-activity-tags-legend", "false").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_TEACHERS_LEGEND=settings.value("settings-timetables-buildings-days-hv-print-teachers-legend", "false").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_STUDENTS_LEGEND=settings.value("settings-timetables-buildings-days-hv-print-students-legend", "false").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_LEGEND=settings.value("settings-timetables-buildings-days-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=settings.value("settings-timetables-buildings-days-hv-print-legend-codes-first", "false").toBool();
+	/////
+
+	/////buildings time horizontal and time vertical.
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_NAMES=settings.value("settings-timetables-buildings-time-hv-print-days-names", "true").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_LONG_NAMES=settings.value("settings-timetables-buildings-time-hv-print-days-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_HOURS_NAMES=settings.value("settings-timetables-buildings-time-hv-print-hours-names", "true").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_HOURS_LONG_NAMES=settings.value("settings-timetables-buildings-time-hv-print-hours-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_NAMES=settings.value("settings-timetables-buildings-time-hv-print-subjects-names", "true").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=settings.value("settings-timetables-buildings-time-hv-print-subjects-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_CODES=settings.value("settings-timetables-buildings-time-hv-print-subjects-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=settings.value("settings-timetables-buildings-time-hv-print-activity-tags-names", "true").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=settings.value("settings-timetables-buildings-time-hv-print-activity-tags-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=settings.value("settings-timetables-buildings-time-hv-print-activity-tags-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_TEACHERS_NAMES=settings.value("settings-timetables-buildings-time-hv-print-teachers-names", "true").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_TEACHERS_LONG_NAMES=settings.value("settings-timetables-buildings-time-hv-print-teachers-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_TEACHERS_CODES=settings.value("settings-timetables-buildings-time-hv-print-teachers-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_STUDENTS_NAMES=settings.value("settings-timetables-buildings-time-hv-print-students-names", "true").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_STUDENTS_LONG_NAMES=settings.value("settings-timetables-buildings-time-hv-print-students-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_STUDENTS_CODES=settings.value("settings-timetables-buildings-time-hv-print-students-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ROOMS_NAMES=settings.value("settings-timetables-buildings-time-hv-print-rooms-names", "true").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ROOMS_LONG_NAMES=settings.value("settings-timetables-buildings-time-hv-print-rooms-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ROOMS_CODES=settings.value("settings-timetables-buildings-time-hv-print-rooms-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_LEGEND=settings.value("settings-timetables-buildings-time-hv-print-subjects-legend", "false").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=settings.value("settings-timetables-buildings-time-hv-print-activity-tags-legend", "false").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_TEACHERS_LEGEND=settings.value("settings-timetables-buildings-time-hv-print-teachers-legend", "false").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_STUDENTS_LEGEND=settings.value("settings-timetables-buildings-time-hv-print-students-legend", "false").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ROOMS_LEGEND=settings.value("settings-timetables-buildings-time-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_LEGEND_CODES_FIRST=settings.value("settings-timetables-buildings-time-hv-print-legend-codes-first", "false").toBool();
+	/////
+
+	/////subjects days horizontal and days vertical.
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_DAYS_NAMES=settings.value("settings-timetables-subjects-days-hv-print-days-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_DAYS_LONG_NAMES=settings.value("settings-timetables-subjects-days-hv-print-days-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_HOURS_NAMES=settings.value("settings-timetables-subjects-days-hv-print-hours-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_HOURS_LONG_NAMES=settings.value("settings-timetables-subjects-days-hv-print-hours-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_SUBJECTS_NAMES=settings.value("settings-timetables-subjects-days-hv-print-subjects-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=settings.value("settings-timetables-subjects-days-hv-print-subjects-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_SUBJECTS_CODES=settings.value("settings-timetables-subjects-days-hv-print-subjects-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=settings.value("settings-timetables-subjects-days-hv-print-activity-tags-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=settings.value("settings-timetables-subjects-days-hv-print-activity-tags-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=settings.value("settings-timetables-subjects-days-hv-print-activity-tags-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_TEACHERS_NAMES=settings.value("settings-timetables-subjects-days-hv-print-teachers-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=settings.value("settings-timetables-subjects-days-hv-print-teachers-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_TEACHERS_CODES=settings.value("settings-timetables-subjects-days-hv-print-teachers-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_NAMES=settings.value("settings-timetables-subjects-days-hv-print-students-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=settings.value("settings-timetables-subjects-days-hv-print-students-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_CODES=settings.value("settings-timetables-subjects-days-hv-print-students-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_NAMES=settings.value("settings-timetables-subjects-days-hv-print-rooms-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_LONG_NAMES=settings.value("settings-timetables-subjects-days-hv-print-rooms-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_CODES=settings.value("settings-timetables-subjects-days-hv-print-rooms-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_SUBJECTS_LEGEND=settings.value("settings-timetables-subjects-days-hv-print-subjects-legend", "false").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=settings.value("settings-timetables-subjects-days-hv-print-activity-tags-legend", "false").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_TEACHERS_LEGEND=settings.value("settings-timetables-subjects-days-hv-print-teachers-legend", "false").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_LEGEND=settings.value("settings-timetables-subjects-days-hv-print-students-legend", "false").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_LEGEND=settings.value("settings-timetables-subjects-days-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=settings.value("settings-timetables-subjects-days-hv-print-legend-codes-first", "false").toBool();
+	/////
+
+	/////subjects time horizontal and time vertical.
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_NAMES=settings.value("settings-timetables-subjects-time-hv-print-days-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_LONG_NAMES=settings.value("settings-timetables-subjects-time-hv-print-days-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_HOURS_NAMES=settings.value("settings-timetables-subjects-time-hv-print-hours-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_HOURS_LONG_NAMES=settings.value("settings-timetables-subjects-time-hv-print-hours-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_NAMES=settings.value("settings-timetables-subjects-time-hv-print-subjects-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=settings.value("settings-timetables-subjects-time-hv-print-subjects-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_CODES=settings.value("settings-timetables-subjects-time-hv-print-subjects-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=settings.value("settings-timetables-subjects-time-hv-print-activity-tags-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=settings.value("settings-timetables-subjects-time-hv-print-activity-tags-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=settings.value("settings-timetables-subjects-time-hv-print-activity-tags-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_TEACHERS_NAMES=settings.value("settings-timetables-subjects-time-hv-print-teachers-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_TEACHERS_LONG_NAMES=settings.value("settings-timetables-subjects-time-hv-print-teachers-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_TEACHERS_CODES=settings.value("settings-timetables-subjects-time-hv-print-teachers-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_STUDENTS_NAMES=settings.value("settings-timetables-subjects-time-hv-print-students-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_STUDENTS_LONG_NAMES=settings.value("settings-timetables-subjects-time-hv-print-students-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_STUDENTS_CODES=settings.value("settings-timetables-subjects-time-hv-print-students-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ROOMS_NAMES=settings.value("settings-timetables-subjects-time-hv-print-rooms-names", "true").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ROOMS_LONG_NAMES=settings.value("settings-timetables-subjects-time-hv-print-rooms-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ROOMS_CODES=settings.value("settings-timetables-subjects-time-hv-print-rooms-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LEGEND=settings.value("settings-timetables-subjects-time-hv-print-subjects-legend", "false").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=settings.value("settings-timetables-subjects-time-hv-print-activity-tags-legend", "false").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_TEACHERS_LEGEND=settings.value("settings-timetables-subjects-time-hv-print-teachers-legend", "false").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_STUDENTS_LEGEND=settings.value("settings-timetables-subjects-time-hv-print-students-legend", "false").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ROOMS_LEGEND=settings.value("settings-timetables-subjects-time-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_LEGEND_CODES_FIRST=settings.value("settings-timetables-subjects-time-hv-print-legend-codes-first", "false").toBool();
+	/////
+
+	/////activity tags days horizontal and days vertical.
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_DAYS_NAMES=settings.value("settings-timetables-activity-tags-days-hv-print-days-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_DAYS_LONG_NAMES=settings.value("settings-timetables-activity-tags-days-hv-print-days-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_HOURS_NAMES=settings.value("settings-timetables-activity-tags-days-hv-print-hours-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_HOURS_LONG_NAMES=settings.value("settings-timetables-activity-tags-days-hv-print-hours-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_SUBJECTS_NAMES=settings.value("settings-timetables-activity-tags-days-hv-print-subjects-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=settings.value("settings-timetables-activity-tags-days-hv-print-subjects-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_SUBJECTS_CODES=settings.value("settings-timetables-activity-tags-days-hv-print-subjects-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=settings.value("settings-timetables-activity-tags-days-hv-print-activity-tags-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=settings.value("settings-timetables-activity-tags-days-hv-print-activity-tags-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=settings.value("settings-timetables-activity-tags-days-hv-print-activity-tags-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_TEACHERS_NAMES=settings.value("settings-timetables-activity-tags-days-hv-print-teachers-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=settings.value("settings-timetables-activity-tags-days-hv-print-teachers-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_TEACHERS_CODES=settings.value("settings-timetables-activity-tags-days-hv-print-teachers-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_NAMES=settings.value("settings-timetables-activity-tags-days-hv-print-students-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=settings.value("settings-timetables-activity-tags-days-hv-print-students-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_CODES=settings.value("settings-timetables-activity-tags-days-hv-print-students-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_NAMES=settings.value("settings-timetables-activity-tags-days-hv-print-rooms-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_LONG_NAMES=settings.value("settings-timetables-activity-tags-days-hv-print-rooms-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_CODES=settings.value("settings-timetables-activity-tags-days-hv-print-rooms-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_SUBJECTS_LEGEND=settings.value("settings-timetables-activity-tags-days-hv-print-subjects-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=settings.value("settings-timetables-activity-tags-days-hv-print-activity-tags-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_TEACHERS_LEGEND=settings.value("settings-timetables-activity-tags-days-hv-print-teachers-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_LEGEND=settings.value("settings-timetables-activity-tags-days-hv-print-students-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_LEGEND=settings.value("settings-timetables-activity-tags-days-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=settings.value("settings-timetables-activity-tags-days-hv-print-legend-codes-first", "false").toBool();
+	/////
+
+	/////activity tags time horizontal and time vertical.
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_NAMES=settings.value("settings-timetables-activity-tags-time-hv-print-days-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_LONG_NAMES=settings.value("settings-timetables-activity-tags-time-hv-print-days-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_HOURS_NAMES=settings.value("settings-timetables-activity-tags-time-hv-print-hours-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_HOURS_LONG_NAMES=settings.value("settings-timetables-activity-tags-time-hv-print-hours-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_SUBJECTS_NAMES=settings.value("settings-timetables-activity-tags-time-hv-print-subjects-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=settings.value("settings-timetables-activity-tags-time-hv-print-subjects-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_SUBJECTS_CODES=settings.value("settings-timetables-activity-tags-time-hv-print-subjects-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=settings.value("settings-timetables-activity-tags-time-hv-print-activity-tags-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=settings.value("settings-timetables-activity-tags-time-hv-print-activity-tags-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=settings.value("settings-timetables-activity-tags-time-hv-print-activity-tags-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_TEACHERS_NAMES=settings.value("settings-timetables-activity-tags-time-hv-print-teachers-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_TEACHERS_LONG_NAMES=settings.value("settings-timetables-activity-tags-time-hv-print-teachers-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_TEACHERS_CODES=settings.value("settings-timetables-activity-tags-time-hv-print-teachers-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_STUDENTS_NAMES=settings.value("settings-timetables-activity-tags-time-hv-print-students-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_STUDENTS_LONG_NAMES=settings.value("settings-timetables-activity-tags-time-hv-print-students-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_STUDENTS_CODES=settings.value("settings-timetables-activity-tags-time-hv-print-students-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ROOMS_NAMES=settings.value("settings-timetables-activity-tags-time-hv-print-rooms-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ROOMS_LONG_NAMES=settings.value("settings-timetables-activity-tags-time-hv-print-rooms-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ROOMS_CODES=settings.value("settings-timetables-activity-tags-time-hv-print-rooms-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_SUBJECTS_LEGEND=settings.value("settings-timetables-activity-tags-time-hv-print-subjects-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=settings.value("settings-timetables-activity-tags-time-hv-print-activity-tags-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_TEACHERS_LEGEND=settings.value("settings-timetables-activity-tags-time-hv-print-teachers-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_STUDENTS_LEGEND=settings.value("settings-timetables-activity-tags-time-hv-print-students-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ROOMS_LEGEND=settings.value("settings-timetables-activity-tags-time-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_LEGEND_CODES_FIRST=settings.value("settings-timetables-activity-tags-time-hv-print-legend-codes-first", "false").toBool();
+	/////
+
+	/////activities days horizontal and days vertical.
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_DAYS_NAMES=settings.value("settings-timetables-activities-days-hv-print-days-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_DAYS_LONG_NAMES=settings.value("settings-timetables-activities-days-hv-print-days-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_HOURS_NAMES=settings.value("settings-timetables-activities-days-hv-print-hours-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_HOURS_LONG_NAMES=settings.value("settings-timetables-activities-days-hv-print-hours-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_SUBJECTS_NAMES=settings.value("settings-timetables-activities-days-hv-print-subjects-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=settings.value("settings-timetables-activities-days-hv-print-subjects-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_SUBJECTS_CODES=settings.value("settings-timetables-activities-days-hv-print-subjects-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=settings.value("settings-timetables-activities-days-hv-print-activity-tags-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=settings.value("settings-timetables-activities-days-hv-print-activity-tags-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=settings.value("settings-timetables-activities-days-hv-print-activity-tags-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_TEACHERS_NAMES=settings.value("settings-timetables-activities-days-hv-print-teachers-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=settings.value("settings-timetables-activities-days-hv-print-teachers-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_TEACHERS_CODES=settings.value("settings-timetables-activities-days-hv-print-teachers-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_NAMES=settings.value("settings-timetables-activities-days-hv-print-students-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=settings.value("settings-timetables-activities-days-hv-print-students-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_CODES=settings.value("settings-timetables-activities-days-hv-print-students-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_NAMES=settings.value("settings-timetables-activities-days-hv-print-rooms-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_LONG_NAMES=settings.value("settings-timetables-activities-days-hv-print-rooms-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_CODES=settings.value("settings-timetables-activities-days-hv-print-rooms-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_SUBJECTS_LEGEND=settings.value("settings-timetables-activities-days-hv-print-subjects-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=settings.value("settings-timetables-activities-days-hv-print-activity-tags-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_TEACHERS_LEGEND=settings.value("settings-timetables-activities-days-hv-print-teachers-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_LEGEND=settings.value("settings-timetables-activities-days-hv-print-students-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_LEGEND=settings.value("settings-timetables-activities-days-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_LEGEND_CODES_FIRST=settings.value("settings-timetables-activities-days-hv-print-legend-codes-first", "false").toBool();
+	/////
+
+	/////activities time horizontal and time vertical.
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_NAMES=settings.value("settings-timetables-activities-time-hv-print-days-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_LONG_NAMES=settings.value("settings-timetables-activities-time-hv-print-days-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_HOURS_NAMES=settings.value("settings-timetables-activities-time-hv-print-hours-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_HOURS_LONG_NAMES=settings.value("settings-timetables-activities-time-hv-print-hours-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_SUBJECTS_NAMES=settings.value("settings-timetables-activities-time-hv-print-subjects-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=settings.value("settings-timetables-activities-time-hv-print-subjects-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_SUBJECTS_CODES=settings.value("settings-timetables-activities-time-hv-print-subjects-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=settings.value("settings-timetables-activities-time-hv-print-activity-tags-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=settings.value("settings-timetables-activities-time-hv-print-activity-tags-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=settings.value("settings-timetables-activities-time-hv-print-activity-tags-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_TEACHERS_NAMES=settings.value("settings-timetables-activities-time-hv-print-teachers-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_TEACHERS_LONG_NAMES=settings.value("settings-timetables-activities-time-hv-print-teachers-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_TEACHERS_CODES=settings.value("settings-timetables-activities-time-hv-print-teachers-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_STUDENTS_NAMES=settings.value("settings-timetables-activities-time-hv-print-students-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_STUDENTS_LONG_NAMES=settings.value("settings-timetables-activities-time-hv-print-students-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_STUDENTS_CODES=settings.value("settings-timetables-activities-time-hv-print-students-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ROOMS_NAMES=settings.value("settings-timetables-activities-time-hv-print-rooms-names", "true").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ROOMS_LONG_NAMES=settings.value("settings-timetables-activities-time-hv-print-rooms-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ROOMS_CODES=settings.value("settings-timetables-activities-time-hv-print-rooms-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_SUBJECTS_LEGEND=settings.value("settings-timetables-activities-time-hv-print-subjects-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=settings.value("settings-timetables-activities-time-hv-print-activity-tags-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_TEACHERS_LEGEND=settings.value("settings-timetables-activities-time-hv-print-teachers-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_STUDENTS_LEGEND=settings.value("settings-timetables-activities-time-hv-print-students-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ROOMS_LEGEND=settings.value("settings-timetables-activities-time-hv-print-rooms-legend", "false").toBool();
+	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_LEGEND_CODES_FIRST=settings.value("settings-timetables-activities-time-hv-print-legend-codes-first", "false").toBool();
+	/////
+	//
+	//2024-06-12 end
+	
+	//main form
+	QRect rect=settings.value("FetMainForm/geometry", QRect(0,0,0,0)).toRect();
+	mainFormSettingsRect=rect;
+	//MAIN_FORM_SHORTCUTS_TAB_POSITION=settings.value("FetMainForm/shortcuts-tab-position", "0").toInt();
+	MAIN_FORM_SHORTCUTS_TAB_POSITION=0; //always restoring to the first page, as suggested by a user
+	
+	if(settings.contains("FetMainForm/show-shortcut-buttons")){
+		SHOW_SHORTCUTS_ON_MAIN_WINDOW=settings.value("FetMainForm/show-shortcut-buttons").toBool();
+	}
+	else if(settings.contains("FetMainForm/show-shortcuts")){ //obsolete style
+		SHOW_SHORTCUTS_ON_MAIN_WINDOW=settings.value("FetMainForm/show-shortcuts").toBool();
+		//settings.remove("FetMainForm/show-shortcuts");
+	}
+	else{
+		SHOW_SHORTCUTS_ON_MAIN_WINDOW=true;
+	}
+
+	if(settings.contains("show-tooltips-for-constraints-with-tables")){
+		SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES=settings.value("show-tooltips-for-constraints-with-tables").toBool();
+	}
+	else if(settings.contains("FetMainForm/show-tooltips-for-constraints-with-tables")){ //obsolete style
+		SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES=settings.value("FetMainForm/show-tooltips-for-constraints-with-tables").toBool();
+		//settings.remove("FetMainForm/show-tooltips-for-constraints-with-tables");
+	}
+	else{
+		SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES=false;
+	}
+	
+	BEEP_AT_END_OF_GENERATION=settings.value("beep-at-the-end-of-generation", "true").toBool();
+	ENABLE_COMMAND_AT_END_OF_GENERATION=settings.value("enable-command-at-the-end-of-generation", "false").toBool();
+	commandAtEndOfGeneration=settings.value("command-at-the-end-of-generation", "").toString();
+
+	BEEP_AT_END_OF_GENERATION_EACH_TIMETABLE=settings.value("beep-at-the-end-of-generation-each-timetable", "false").toBool();
+	ENABLE_COMMAND_AT_END_OF_GENERATION_EACH_TIMETABLE=settings.value("enable-command-at-the-end-of-generation-each-timetable", "false").toBool();
+	commandAtEndOfGenerationEachTimetable=settings.value("command-at-the-end-of-generation-each-timetable", "").toString();
+
+	///////
+
+	if(INTERFACE_STYLE!="")
+		setCurrentStyle();
+	if(INTERFACE_COLOR_SCHEME!="automatic")
+		setCurrentColorScheme();
+
+	USE_UNDO_REDO=settings.value(QString("enable-data-states-recording"), QString("true")).toBool();
+	UNDO_REDO_STEPS=settings.value(QString("number-of-data-steps-to-record"), QString("100")).toInt();
+	if(UNDO_REDO_STEPS>1000)
+		UNDO_REDO_STEPS=1000;
+	if(UNDO_REDO_STEPS<=0)
+		UNDO_REDO_STEPS=1;
+	//UNDO_REDO_COMPRESSION_LEVEL=settings.value(QString("data-states-compression-level"), QString("-1")).toInt();
+
+	USE_UNDO_REDO_SAVE=settings.value(QString("enable-data-states-recording-on-disk"), QString("false")).toBool();
+	UNDO_REDO_STEPS_SAVE=settings.value(QString("number-of-data-steps-to-record-on-disk"), QString("20")).toInt();
+	if(UNDO_REDO_STEPS_SAVE>100)
+		UNDO_REDO_STEPS=100;
+	if(UNDO_REDO_STEPS_SAVE<=0)
+		UNDO_REDO_STEPS_SAVE=1;
+	SUFFIX_FILENAME_SAVE_HISTORY=settings.value(QString("filename-suffix-save-history"), QString(".his")).toString();
+	if(SUFFIX_FILENAME_SAVE_HISTORY!=QString(".his"))
+		SUFFIX_FILENAME_SAVE_HISTORY=QString(".his");
+
+	USE_AUTOSAVE=settings.value(QString("enable-file-autosave"), QString("false")).toBool();
+	MINUTES_AUTOSAVE=settings.value(QString("minutes-for-autosave"), QString("3")).toInt();
+	if(MINUTES_AUTOSAVE>15)
+		MINUTES_AUTOSAVE=15;
+	if(MINUTES_AUTOSAVE<1)
+		MINUTES_AUTOSAVE=1;
+	OPERATIONS_AUTOSAVE=settings.value(QString("operations-for-autosave"), QString("1")).toInt();
+	if(OPERATIONS_AUTOSAVE>100)
+		OPERATIONS_AUTOSAVE=100;
+	if(OPERATIONS_AUTOSAVE<1)
+		OPERATIONS_AUTOSAVE=1;
+		
+	QString das=settings.value(QString("directory-for-autosave"), QString("")).toString();
+	if(das.isEmpty()){
+		DIRECTORY_AUTOSAVE=QString("");
+	}
+	else{
+		DIRECTORY_AUTOSAVE=QDir(das).canonicalPath();
+		if(!QDir(DIRECTORY_AUTOSAVE).exists())
+			DIRECTORY_AUTOSAVE=QString("");
+	}
+	
+	SUFFIX_FILENAME_AUTOSAVE=settings.value(QString("filename-suffix-for-autosave"), QString("_AUTOSAVE")).toString();
+	if(SUFFIX_FILENAME_AUTOSAVE!=QString("_AUTOSAVE"))
+		SUFFIX_FILENAME_AUTOSAVE=QString("_AUTOSAVE");
+
+	//originalFont=qApp->font();
+	fontIsUserSelectable=settings.value(QString("font-is-user-selectable"), QString("false")).toBool();
+	userChoseAFont=false;
+	if(fontIsUserSelectable){
+		if(settings.contains(QString("font"))){
+			QString s=settings.value(QString("font")).toString();
+			if(s!=QString("")){
+				QFont interfaceFont;
+				bool ok=interfaceFont.fromString(s);
+				if(ok){
+					qApp->setFont(interfaceFont);
+					userChoseAFont=true;
+				}
+			}
+		}
+	}
+	
+	int nRec=settings.value(QString("FetMainForm/number-of-recent-files"), 0).toInt();
+	if(nRec>MAX_RECENT_FILES)
+		nRec=MAX_RECENT_FILES;
+	recentFiles.clear();
+	for(int i=0; i<nRec; i++)
+		if(settings.contains(QString("FetMainForm/recent-file/")+CustomFETString::number(i+1)))
+			recentFiles.append(settings.value(QString("FetMainForm/recent-file/")+CustomFETString::number(i+1)).toString());
+	
+	recentSeparatorAction=fileOpenRecentMenu->insertSeparator(fileClearRecentFilesListAction);
+	for(int i=0; i<MAX_RECENT_FILES; i++){
+		recentFileActions[i]=new QAction(this);
+		recentFileActions[i]->setVisible(false);
+		connect(recentFileActions[i], &QAction::triggered, this, &FetMainForm::openRecentFile);
+		
+		fileOpenRecentMenu->insertAction(recentSeparatorAction, recentFileActions[i]);
+	}
+	
+	updateRecentFileActions();
+	
+	//INPUT_FILENAME_XML=QString("");
+	//setCurrentFile(INPUT_FILENAME_XML);
+
+	//toolBox->setCurrentIndex(0);
+	tabWidget->setVisible(SHOW_SHORTCUTS_ON_MAIN_WINDOW);
+	tabWidget->setCurrentIndex(MAIN_FORM_SHORTCUTS_TAB_POSITION);
+	
+	if(rect.isValid()){
+		bool ok=false;
+		for(QScreen* screen : QGuiApplication::screens()){
+			if(screen->availableGeometry().intersects(rect)){
+				ok=true;
+				break;
+			}
+		}
+	
+		if(ok){
+			this->setGeometry(rect);
+		}
+		else{
+			forceCenterWidgetOnScreen(this);
+		}
+	}
+	else{
+		forceCenterWidgetOnScreen(this);
+	}
+	
+	//settingsFontIsUserSelectableAction->setCheckable(true);
+	settingsFontIsUserSelectableAction->setChecked(fontIsUserSelectable);
+	
+	//settingsShowShortcutsOnMainWindowAction->setCheckable(true);
+	settingsShowShortcutsOnMainWindowAction->setChecked(SHOW_SHORTCUTS_ON_MAIN_WINDOW);
+	
+	//settingsShowToolTipsForConstraintsWithTablesAction->setCheckable(true);
+	settingsShowToolTipsForConstraintsWithTablesAction->setChecked(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES);
+
+	//overwriteSingleGenerationFilesAction->setCheckable(true);
+	overwriteSingleGenerationFilesAction->setChecked(OVERWRITE_SINGLE_GENERATION_FILES);
+
+	//checkForUpdatesAction->setCheckable(true);
+	checkForUpdatesAction->setChecked(checkForUpdates);
+	
+	//settingsShowSubgroupsInComboBoxesAction->setCheckable(true);
+	settingsShowSubgroupsInComboBoxesAction->setChecked(SHOW_SUBGROUPS_IN_COMBO_BOXES);
+	//settingsShowSubgroupsInActivityPlanningAction->setCheckable(true);
+	settingsShowSubgroupsInActivityPlanningAction->setChecked(SHOW_SUBGROUPS_IN_ACTIVITY_PLANNING);
+	
+	////////confirmations
+	//settingsConfirmActivityPlanningAction->setCheckable(true);
+	settingsConfirmActivityPlanningAction->setChecked(CONFIRM_ACTIVITY_PLANNING);
+	
+	//settingsConfirmSpreadActivitiesAction->setCheckable(true);
+	settingsConfirmSpreadActivitiesAction->setChecked(CONFIRM_SPREAD_ACTIVITIES);
+	
+	//settingsConfirmRemoveRedundantAction->setCheckable(true);
+	settingsConfirmRemoveRedundantAction->setChecked(CONFIRM_REMOVE_REDUNDANT);
+	
+	//settingsConfirmSaveTimetableAction->setCheckable(true);
+	settingsConfirmSaveTimetableAction->setChecked(CONFIRM_SAVE_TIMETABLE);
+
+	//settingsConfirmActivateDeactivateActivitiesConstraintsAction->setCheckable(true);
+	settingsConfirmActivateDeactivateActivitiesConstraintsAction->setChecked(CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS);
+	///////
+	
+	//settingsDivideTimetablesByDaysAction->setCheckable(true);
+	settingsDivideTimetablesByDaysAction->setChecked(DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS);
+	
+	//settingsDuplicateVerticalNamesAction->setCheckable(true);
+	settingsDuplicateVerticalNamesAction->setChecked(TIMETABLE_HTML_REPEAT_NAMES);
+	
+	//settingsShowVirtualRoomsInTimetablesAction->setCheckable(true);
+	settingsShowVirtualRoomsInTimetablesAction->setChecked(SHOW_VIRTUAL_ROOMS_IN_TIMETABLES);
+
+	//settingsOrderSubgroupsInTimetablesAction->setCheckable(true);
+	settingsOrderSubgroupsInTimetablesAction->setChecked(TIMETABLES_SUBGROUPS_SORTED);
+
+	//settingsPrintDetailedTimetablesAction->setCheckable(true);
+	settingsPrintDetailedTimetablesAction->setChecked(PRINT_DETAILED_HTML_TIMETABLES);
+	//settingsPrintDetailedTeachersFreePeriodsTimetablesAction->setCheckable(true);
+	settingsPrintDetailedTeachersFreePeriodsTimetablesAction->setChecked(PRINT_DETAILED_HTML_TEACHERS_FREE_PERIODS);
+
+	//settingsPrintNotAvailableSlotsAction->setCheckable(true);
+	settingsPrintNotAvailableSlotsAction->setChecked(PRINT_NOT_AVAILABLE_TIME_SLOTS);
+
+	//settingsPrintBreakSlotsAction->setCheckable(true);
+	settingsPrintBreakSlotsAction->setChecked(PRINT_BREAK_TIME_SLOTS);
+
+	//settingsPrintActivitiesWithSameStartingTimeAction->setCheckable(true);
+	settingsPrintActivitiesWithSameStartingTimeAction->setChecked(PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME);
+
+	//needed to sync the view table forms
+	LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
+	LockUnlock::increaseCommunicationSpinBox();
+	
+	//showWarningForSubgroupsWithTheSameActivitiesAction->setCheckable(true);
+	//showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction->setCheckable(true);
+	//showWarningForMaxHoursDailyWithUnder100WeightAction->setCheckable(true);
+	
+	//enableGroupActivitiesInInitialOrderAction->setCheckable(true);
+	//showWarningForGroupActivitiesInInitialOrderAction->setCheckable(true);
+	
+	showWarningForSubgroupsWithTheSameActivitiesAction->setChecked(SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES);
+
+	showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction->setChecked(SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME);
+
+	showWarningForMaxHoursDailyWithUnder100WeightAction->setChecked(SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT);
+
+	enableGroupActivitiesInInitialOrderAction->setChecked(ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
+	showWarningForGroupActivitiesInInitialOrderAction->setChecked(SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
+	
+	setEnabledIcon(groupActivitiesInInitialOrderAction, ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
+
+	clearHistory();
+	if(gt.rules.initialized && USE_UNDO_REDO){
+		gt.rules.addUndoPoint(tr("Cleared the history, because the history settings were modified when restoring the settings from a file."), false, false);
+		if(!gt.rules.modified)
+			savedStateIterator=cntUndoRedoStackIterator;
+	}
+
+	if(pFetMainForm!=nullptr)
+		pFetMainForm->statusBar()->showMessage(tr("FET settings restored from file"), STATUS_BAR_MILLISECONDS);
 }
