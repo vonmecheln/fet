@@ -1,7 +1,7 @@
 #!/bin/bash
 
 FET_VERSION=""
-OUTPUT_FILE="fet.tar.bz2"
+OUTPUT_FILE="fet.tar.xz"
 
 check_arguments()
 {
@@ -19,17 +19,17 @@ download_file(){
     URL_MORE_OLD="https://www.timetabling.de/download/old/"
     
 
-    URL="${URL_DEFAULT}fet-${FET_VERSION}.tar.bz2"
+    URL="${URL_DEFAULT}fet-${FET_VERSION}.tar.xz"
     wget -Nq -O $OUTPUT_FILE $URL
     if [ $? -ne 0 ]
     then
 
-        URL="${URL_OLD}fet-${FET_VERSION}.tar.bz2"
+        URL="${URL_OLD}fet-${FET_VERSION}.tar.xz"
         wget -Nq -O $OUTPUT_FILE $URL
         if [ $? -ne 0 ]
         then
 
-            URL="${URL_MORE_OLD}fet-${FET_VERSION}.tar.bz2"
+            URL="${URL_MORE_OLD}fet-${FET_VERSION}.tar.xz"
             wget -Nq -O $OUTPUT_FILE $URL
             if [ $? -ne 0 ]
             then
@@ -53,7 +53,7 @@ download_file
 rm -rf fet/
 
 #descompactar na pasta fet
-tar xjf $OUTPUT_FILE
+tar xf $OUTPUT_FILE
 mv "fet-${FET_VERSION}" fet/
 rm -rf $OUTPUT_FILE
 
